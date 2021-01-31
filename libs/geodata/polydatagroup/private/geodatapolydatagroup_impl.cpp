@@ -54,6 +54,7 @@ GeoDataPolyDataGroup::Impl::Impl(GeoDataPolyDataGroup* group) :
 	m_moveToBottomAction {new QAction(QIcon(":/libs/guibase/images/iconItemMoveBottom.png"), GeoDataPolyDataGroup::tr("Move to bottom"), group)},
 	m_moveUpAction {new QAction(QIcon(":/libs/guibase/images/iconItemMoveUp.png"), GeoDataPolyDataGroup::tr("Move up"), group)},
 	m_moveDownAction {new QAction(QIcon(":/libs/guibase/images/iconItemMoveDown.png"), GeoDataPolyDataGroup::tr("Move down"), group)},
+	m_copyAction {new QAction(GeoDataPolyDataGroup::tr("Copy..."), group)},
 	m_attributeBrowser {new GeoDataPolyDataGroupAttributeBrowser(group->preProcessorWindow())},
 	m_attributeBrowserIsShown {true},
 	m_mode {Mode::Normal},

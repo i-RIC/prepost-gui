@@ -29,6 +29,7 @@
 #include "private/geodatariversurvey_translateriverpathpointcommand.h"
 
 #include <geodata/pointmap/geodatapointmap.h>
+#include <geodata/pointmap/geodatapointmaprealbuilder.h>
 #include <guibase/polyline/polylineaddvertexcommand.h>
 #include <guibase/polyline/polylinecontrollerutil.h>
 #include <guibase/polyline/polylinemovevertexcommand.h>
@@ -41,6 +42,7 @@
 #include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
 #include <guicore/pre/base/preprocessorwindowinterface.h>
+#include <guicore/pre/geodata/geodatacreator.h>
 #include <guicore/project/colorsource.h>
 #include <guicore/project/projectdata.h>
 #include <misc/informationdialog.h>
@@ -67,6 +69,7 @@
 #include <vtkActorCollection.h>
 #include <vtkActor2DCollection.h>
 #include <vtkCellArray.h>
+#include <vtkDoubleArray.h>
 #include <vtkPointData.h>
 #include <vtkPolyData.h>
 #include <vtkProperty.h>
@@ -139,6 +142,7 @@ void GeoDataRiverSurvey::setEditMode()
 	impl->m_mode = Impl::Mode::EditMode;
 	impl->m_editMouseEventMode = Impl::EditMouseEventMode::Normal;
 	impl->m_menuIsSetup = false;
+	impl->setupMenu();
 	impl->updateMouseCursor(graphicsView());
 }
 
@@ -347,6 +351,8 @@ void GeoDataRiverSurvey::mouseReleaseEvent(QMouseEvent* event, PreProcessorGraph
 void GeoDataRiverSurvey::addCustomMenuItems(QMenu* menu)
 {
 	menu->addAction(m_editNameAction);
+	menu->addSeparator();
+	menu->addAction(impl->m_generatePointMapAction);
 }
 
 void GeoDataRiverSurvey::doLoadFromProjectMainFile(const QDomNode& node)
@@ -1488,6 +1494,35 @@ void GeoDataRiverSurvey::mapPointsData()
 	updateInterpolators();
 
 	iRICUndoStack::instance().clear();
+}
+
+void GeoDataRiverSurvey::generatePointMap()
+{
+	auto gItem = dynamic_cast<PreProcessorGeoDataGroupDataItemInterface*>(parent()->parent());
+	GeoDataCreator* creator = gItem->getPointMapCreator();
+	if (creator == nullptr) {return;}
+
+	auto points = impl->m_backgroundGrid->GetPoints();
+	auto vals = vtkDoubleArray::SafeDownCast(impl->m_backgroundGrid->GetPointData()->GetArray("Data"));
+
+	GeoDataPointmapRealBuilder builder;
+	builder.begin();
+
+	for (vtkIdType i = 0; i < points->GetNumberOfPoints(); ++i) {
+		double v[3], val;
+		points->GetPoint(i, v);
+		val = vals->GetValue(i);
+		builder.addPoint(v[0], v[1], val);
+	}
+
+	auto item = gItem->buildGeoDataDataItem();
+	GeoData* data = builder.end(item, creator, gItem->condition());
+	creator->setNameAndDefaultCaption(gItem->childItems(), data);
+
+	item->setGeoData(data);
+	gItem->addGeoData(item);
+
+	QMessageBox::information(preProcessorWindow(), tr("Information"), tr("%1 generated.").arg(data->caption()));
 }
 
 void GeoDataRiverSurvey::setColoredPoints(GeoDataRiverPathPoint* black)

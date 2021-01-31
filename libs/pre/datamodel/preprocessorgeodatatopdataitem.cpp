@@ -46,7 +46,7 @@
 // namespace for local functions
 namespace {
 
-void setupReferenceInformation(
+PreProcessorGeoDataGroupDataItem* setupReferenceInformation(
 		std::vector <GraphicsWindowDataItem*>* children,
 		std::map<std::string, PreProcessorGeoDataGroupDataItemInterface*>* nameMap,
 		SolverDefinitionGridAttribute* refAtt,
@@ -55,6 +55,7 @@ void setupReferenceInformation(
 	auto i = new PreProcessorGeoDataGroupDataItem(refAtt, parent);
 	children->push_back(i);
 	nameMap->insert({refAtt->name(), i});
+	return i;
 }
 
 void setupChildrenInGroups(
@@ -120,7 +121,8 @@ void setupChildrenInOrder(
 		nameMap->insert({att->name(), i});
 		itemsInOrder.insert({att->order(), i});
 	}
-	setupReferenceInformation(children, nameMap, refAtt, parent);
+	auto ref = setupReferenceInformation(children, nameMap, refAtt, parent);
+	itemsInOrder.insert({10000, ref}); // Reference Information should be the last
 
 	int rowC = parent->standardItem()->rowCount();
 	for (int i = 0; i < rowC; ++i) {

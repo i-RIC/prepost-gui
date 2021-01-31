@@ -1,6 +1,7 @@
 #include "geodatapolydatagroup.h"
 #include "geodatapolydatagroupattributebrowser.h"
 #include "geodatapolydatagroupcreator.h"
+#include "geodatapolydatagroupcopysettingdialog.h"
 #include "geodatapolydatagroupmergesettingdialog.h"
 #include "geodatapolydatagrouppolydata.h"
 #include "private/geodatapolydatagroup_impl.h"
@@ -13,6 +14,7 @@
 #include <guicore/misc/mouseboundingbox.h>
 #include <guicore/pre/base/preprocessorgeodatadataiteminterface.h>
 #include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
+#include <guicore/pre/base/preprocessorgeodatatopdataiteminterface.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
 #include <guicore/pre/base/preprocessorwindowinterface.h>
 #include <guicore/pre/gridcond/base/gridattributeeditnameandvaluedialog.h>
@@ -24,6 +26,7 @@
 #include <QMenu>
 #include <QMessageBox>
 #include <QMouseEvent>
+#include <QStandardItem>
 
 #include <vtkActorCollection.h>
 #include <vtkRenderWindow.h>
@@ -139,6 +142,8 @@ void GeoDataPolyDataGroup::addCustomMenuItems(QMenu* menu)
 	menu->addAction(impl->m_addAction);
 	menu->addSeparator();
 	menu->addAction(m_editNameAction);
+	menu->addSeparator();
+	menu->addAction(impl->m_copyAction);
 	menu->addSeparator();
 }
 
@@ -585,6 +590,55 @@ void GeoDataPolyDataGroup::moveSelectedDataDown()
 	}
 }
 
+void GeoDataPolyDataGroup::copy()
+{
+	mergeEditTargetData();
+
+	auto gItem = dynamic_cast<PreProcessorGeoDataGroupDataItemInterface*>(parent()->parent());
+	auto tItem = dynamic_cast<PreProcessorGeoDataTopDataItemInterface*>(gItem->parent());
+
+	std::vector<PreProcessorGeoDataGroupDataItemInterface*> targetGroups;
+	QStringList targetNames;
+
+	for (PreProcessorGeoDataGroupDataItemInterface* item : tItem->groupDataItems()) {
+		if (item == gItem) {continue;}
+
+		targetGroups.push_back(item);
+		targetNames.push_back(item->standardItem()->text());
+	}
+
+	bool ok;
+	QString item = QInputDialog::getItem(preProcessorWindow(), tr("Select Geographic Data"), tr("Please select which geographic data to copy this %1.").arg(creator()->shapeName()), targetNames, 0, false, &ok);
+	if (! ok) {return;} // canceled
+
+	PreProcessorGeoDataGroupDataItemInterface* targetGroup = targetGroups[targetNames.indexOf(item)];
+
+	auto geoDataItem = targetGroup->buildGeoDataDataItem();
+
+	auto copyGroup = createInstanceForCopy(geoDataItem);
+	for (GeoDataPolyDataGroupPolyData* data : impl->m_data) {
+		copyGroup->impl->m_data.push_back(data->copy(copyGroup));
+	}
+
+	creator()->setNameAndDefaultCaption(targetGroup->childItems(), copyGroup);
+	if (! copyGroup->gridAttribute()->isReferenceInformation()) {
+		GeoDataPolyDataGroupCopySettingDialog dialog(this, copyGroup, preProcessorWindow());
+		int ret = dialog.exec();
+		if (ret == QDialog::Rejected) {
+			delete copyGroup;
+			delete geoDataItem;
+			return;
+		}
+	}
+
+	copyGroup->updateVtkObjects();
+	copyGroup->updateIndex();
+	copyGroup->updateMenu();
+	copyGroup->impl->updateAttributeBrowser(true);
+
+	geoDataItem->setGeoData(copyGroup);
+	targetGroup->addGeoData(geoDataItem);
+}
 
 const std::vector<GeoDataPolyDataGroupPolyData*>& GeoDataPolyDataGroup::data() const
 {
@@ -706,6 +760,11 @@ QAction* GeoDataPolyDataGroup::moveDownAction() const
 	return impl->m_moveDownAction;
 }
 
+QAction* GeoDataPolyDataGroup::copyAction() const
+{
+	return impl->m_copyAction;
+}
+
 void GeoDataPolyDataGroup::setColorSetting(const GeoDataPolyDataGroupColorSettingDialog::Setting& setting)
 {
 	impl->m_colorSetting = setting;
@@ -745,6 +804,7 @@ void GeoDataPolyDataGroup::makeConnections()
 	connect(impl->m_moveToBottomAction, SIGNAL(triggered()), this, SLOT(moveSelectedDataToBottom()));
 	connect(impl->m_moveUpAction, SIGNAL(triggered()), this, SLOT(moveSelectedDataUp()));
 	connect(impl->m_moveDownAction, SIGNAL(triggered()), this, SLOT(moveSelectedDataDown()));
+	connect(impl->m_copyAction, SIGNAL(triggered()), this, SLOT(copy()));
 	connect(impl->m_attributeBrowser, SIGNAL(visibilityChanged(bool)), this, SLOT(handleAttributeBrowserVisibilityChange(bool)));
 }
 
@@ -931,6 +991,10 @@ void GeoDataPolyDataGroup::doApplyOffset(double x, double y)
 	for (auto d : impl->m_data) {
 		d->applyOffset(x, y);
 	}
+	if (impl->m_editTargetData != nullptr) {
+		impl->m_editTargetData->applyOffset(x, y);
+	}
+
 	updateVtkObjects();
 	updateSelectedDataVtkObjects();
 	updateIndex();

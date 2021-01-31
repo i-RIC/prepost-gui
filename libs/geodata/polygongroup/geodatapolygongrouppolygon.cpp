@@ -52,7 +52,7 @@ geos::geom::LinearRing* applyOffset(const geos::geom::LineString* string, double
 {
 	auto pol = buildPolygon(string);
 	for (auto& p : pol) {
-		p += QPointF(x, y);
+		p -= QPointF(x, y);
 	}
 	return buildRing(pol);
 }
@@ -248,6 +248,18 @@ void GeoDataPolygonGroupPolygon::applyOffset(double x, double y)
 
 	auto f = geos::geom::GeometryFactory::getDefaultInstance();
 	impl->m_polygon.reset(f->createPolygon(elr, holes));
+
+	setupBoundingRect();
+}
+
+GeoDataPolyDataGroupPolyData* GeoDataPolygonGroupPolygon::copy(GeoDataPolyDataGroup* group) const
+{
+	auto ret = new GeoDataPolygonGroupPolygon(dynamic_cast<GeoDataPolygonGroup*> (group));
+	ret->setName(name());
+	ret->setGeosPolygon(dynamic_cast<geos::geom::Polygon*> (geosPolygon()->clone()));
+	ret->setValue(value());
+
+	return ret;
 }
 
 void GeoDataPolygonGroupPolygon::setupBoundingRect()

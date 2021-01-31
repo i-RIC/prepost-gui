@@ -8,11 +8,13 @@
 #include <QIcon>
 
 class Grid;
+class GeoDataCreator;
 class GeoDataPolygon;
 class GeoDataRiverSurvey;
 class PreProcessorGeoDataDataItemInterface;
 class GridAttributeDimensionsContainer;
 class GridAttributeEditWidget;
+class GridAttributeStringConverter;
 class GeoDataRiverSurveyCrosssectionWindowProjectDataItem;
 
 class GUICOREDLL_EXPORT PreProcessorGeoDataGroupDataItemInterface : public PreProcessorDataItem
@@ -26,11 +28,14 @@ public:
 	ProjectData* projectData() const {return ProjectDataItem::projectData();}
 
 	virtual bool getValueRange(double* min, double* max) = 0;
+	virtual void setupStringConverter(GridAttributeStringConverter* converter) = 0;
 	virtual void setupEditWidget(GridAttributeEditWidget* widget) = 0;
 	virtual void addCopyPolygon(GeoDataPolygon* polygon) = 0;
 	virtual const QList<PreProcessorGeoDataDataItemInterface*> geoDatas() const = 0;
 	virtual GridAttributeDimensionsContainer* dimensions() const = 0;
 	virtual PreProcessorGeoDataDataItemInterface* buildGeoDataDataItem() = 0;
+	virtual void addGeoData(PreProcessorGeoDataDataItemInterface *geoData) = 0;
+	virtual GeoDataCreator* getPointMapCreator() = 0;
 
 	// @todo ugly interface!
 	virtual void openCrossSectionWindow(GeoDataRiverSurvey* rs, const QString& crosssection) = 0;

@@ -7,13 +7,13 @@
     <x>0</x>
     <y>0</y>
     <width>429</width>
-    <height>519</height>
+    <height>612</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout_5">
+  <layout class="QVBoxLayout" name="verticalLayout_6">
    <item>
     <widget class="QGroupBox" name="langGroupBox">
      <property name="title">
@@ -82,6 +82,25 @@
        <widget class="QCheckBox" name="folderCopyCheckBox">
         <property name="text">
          <string>Copy folder project to Working Directory when opened</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="pythonGroupBox">
+     <property name="title">
+      <string>Python path</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_5">
+      <item>
+       <widget class="FilenameEditWidget" name="pythonPathWidget" native="true"/>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_3">
+        <property name="text">
+         <string>Note: Used to run solvers written in Python.</string>
         </property>
        </widget>
       </item>
@@ -380,6 +399,12 @@
    <class>DirnameEditWidget</class>
    <extends>QWidget</extends>
    <header>guibase/widget/dirnameeditwidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>FilenameEditWidget</class>
+   <extends>QWidget</extends>
+   <header>guibase/widget/filenameeditwidget.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

@@ -179,7 +179,6 @@ void GeoDataPolyLine::mouseDoubleClickEvent(QMouseEvent* /*event*/, PreProcessor
 	}
 }
 
-
 void GeoDataPolyLine::mouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
 {
 	switch (impl->m_mouseEventMode) {
@@ -386,7 +385,7 @@ void GeoDataPolyLine::definePolyLine(bool doubleClick, bool noEditVal)
 	stack.push(new FinishPolyLineDefiningCommand(this));
 	stack.endMacro();
 	if (! noEditVal) {
-//		editValue();
+		editValue();
 	}
 }
 
@@ -683,7 +682,7 @@ void GeoDataPolyLine::copyShape(GeoDataPolyLine* polyline)
 
 void GeoDataPolyLine::doApplyOffset(double x, double y)
 {
-	std::vector<QPointF> pol = impl->m_polyLine->polyLine(QPointF(x, y));
+	std::vector<QPointF> pol = impl->m_polyLine->polyLine(QPointF(-x, -y));
 	impl->m_polyLine->setPolyLine(pol);
 }
 

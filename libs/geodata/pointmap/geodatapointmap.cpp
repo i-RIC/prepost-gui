@@ -7,6 +7,7 @@
 #include "geodatapointmapdelptslessthandialog.h"
 #include "geodatapointmapeditptsdialog.h"
 #include "geodatapointmapinterpolatepointsdialog.h"
+#include "geodatapointmapmergesettingdialog.h"
 #include "geodatapointmaprepresentationdialog.h"
 #include "private/geodatapointmap_addpointscommand.h"
 #include "private/geodatapointmap_breaklineaddcommand.h"
@@ -28,6 +29,7 @@
 #include <guicore/pre/base/preprocessordatamodelinterface.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
 #include <guicore/pre/base/preprocessorgeodatadataiteminterface.h>
+#include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
 #include <guicore/pre/base/preprocessorwindowinterface.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/scalarstocolors/scalarstocolorscontainer.h>
@@ -35,8 +37,9 @@
 #include <misc/iricundostack.h>
 #include <misc/keyboardsupport.h>
 #include <misc/lastiodirectory.h>
-#include <misc/stringtool.h>
 #include <misc/mathsupport.h>
+#include <misc/qpointfcompare.h>
+#include <misc/stringtool.h>
 #include <misc/versionnumber.h>
 #include <misc/zdepthrange.h>
 #include <triangle/triangle.h>
@@ -77,7 +80,12 @@
 #include <vtkVersionMacros.h>
 #include <vtkVertex.h>
 
+#include <geos/geom/Envelope.h>
+#include <geos/index/quadtree/Quadtree.h>
+
 #include <iriclib_pointmap.h>
+
+#include <set>
 
 namespace {
 
@@ -98,6 +106,7 @@ const char* GeoDataPointmap::VALUES = "values";
 
 GeoDataPointmap::GeoDataPointmap(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGridAttribute* att) :
 	GeoData {d, creator, att},
+	m_qTree {nullptr},
 	m_opacityPercent {50},
 	m_representation {GeoDataPointmapRepresentationDialog::Points},
 	m_addPixmap {":/libs/guibase/images/cursorAdd.png"},
@@ -109,10 +118,9 @@ GeoDataPointmap::GeoDataPointmap(ProjectDataItem* d, GeoDataCreator* creator, So
 	m_interpPointCtrlAddPixmap {":/images/cursorCtrlAdd.png"},
 	m_interpPointCtrlAddCursor {m_interpPointCtrlAddPixmap, 0, 0},
 	lastInterpPointKnown {false},
+	doubleclick {false},
 	m_longEdgeRemover {nullptr}
 {
-	doubleclick = false;
-
 	m_vtkGrid = vtkSmartPointer<vtkPolyData>::New();
 	vtkPoints* points = vtkPoints::New();
 	points->SetDataTypeToDouble();
@@ -134,7 +142,7 @@ GeoDataPointmap::GeoDataPointmap(ProjectDataItem* d, GeoDataCreator* creator, So
 	setupActions();
 
 	m_activeBreakLine = 0;
-	this->selectionModePoint(true);
+	selectionModePoint(true);
 
 	m_pointSize = 3;
 	m_needRemeshing = false;
@@ -155,6 +163,8 @@ GeoDataPointmap::~GeoDataPointmap()
 
 	vtkActorCollection* col = actorCollection();
 	col->RemoveAllItems();
+
+	delete m_qTree;
 }
 
 vtkPolyData* GeoDataPointmap::vtkGrid() const
@@ -333,6 +343,7 @@ void GeoDataPointmap::loadExternalData(const QString& filename)
 		breaklinesFile.close();
 	}
 
+	rebuildQTree();
 	updateActorSettings();
 }
 
@@ -467,44 +478,20 @@ bool GeoDataPointmap::getValueAt(double x, double y, double* value)
 		remeshTINS(true);
 	}
 
-	vtkPolyData* delaunayedData = delaunayedPolyData();
-	vtkDoubleArray* values = vtkDoubleArray::SafeDownCast(delaunayedData->GetPointData()->GetArray(VALUES));
-	double bounds[6];
-
-	delaunayedData->GetBounds(bounds);
-	if (x < bounds[0]) {return false;}
-	if (x > bounds[1]) {return false;}
-	if (y < bounds[2]) {return false;}
-	if (y > bounds[3]) {return false;}
-
-	vtkIdType cellid;
-	double pcoords[3];
 	double weights[3];
-	double point[3];
-	int subid;
+	vtkCell* cell = findCell(x, y, weights);
 
-	point[0] = x;
-	point[1] = y;
-	point[2] = 0;
+	if (cell == nullptr) {return false;}
 
-	// Fast search with vtkPolyData::FindCell
-	cellid = delaunayedData->FindCell(point, 0, 0, 1e-4, subid, pcoords, weights);
-	if (cellid >= 0) {
-		*value = interpolatedValue(delaunayedData, cellid, weights, values);
-		return true;
+	double v = 0;
+	auto values = vtkDoubleArray::SafeDownCast(delaunayedPolyData()->GetPointData()->GetArray(VALUES));
+
+	for (vtkIdType i = 0; i < cell->GetNumberOfPoints(); ++i) {
+		vtkIdType vid = cell->GetPointId(i);
+		v += *(weights + i) * values->GetValue(vid);
 	}
-
-	// Slow search: try all cells
-	for (vtkIdType j = 0; j < delaunayedData->GetNumberOfCells(); ++j) {
-		double closestPoint[3];
-		double dist;
-		vtkCell* probeCell = delaunayedData->GetCell(j);
-		if (1 == probeCell->EvaluatePosition(point, closestPoint, subid, pcoords, dist, weights)) {
-			*value = interpolatedValue(delaunayedData, j, weights, values);
-			return true;
-		}
-	}
-	return false;
+	*value = v;
+	return true;
 }
 
 bool GeoDataPointmap::getValueAt(const QPointF& pos, double* value)
@@ -533,15 +520,15 @@ bool GeoDataPointmap::doDelaunay(bool allowCancel)
 		}
 	}
 	in.pointlist = new double[m_vtkGrid->GetPoints()->GetNumberOfPoints() * 2];
-	in.pointattributelist = NULL;
-	in.pointmarkerlist = NULL;
+	in.pointattributelist = nullptr;
+	in.pointmarkerlist = nullptr;
 	in.numberofpoints = m_vtkGrid->GetPoints()->GetNumberOfPoints();
 	in.numberofpointattributes = 0;
 
-	in.trianglelist = NULL;
-	in.triangleattributelist = NULL;
-	in.trianglearealist = NULL;
-	in.neighborlist = NULL;
+	in.trianglelist = nullptr;
+	in.triangleattributelist = nullptr;
+	in.trianglearealist = nullptr;
+	in.neighborlist = nullptr;
 	in.numberoftriangles = 0;
 	in.numberofcorners = 0;
 	in.numberoftriangleattributes = 0;
@@ -555,15 +542,15 @@ bool GeoDataPointmap::doDelaunay(bool allowCancel)
 		in.numberofsegments = segmentCount;
 	}
 
-	in.holelist = NULL;
+	in.holelist = nullptr;
 	in.numberofholes = 0;
 
-	in.regionlist = NULL;
+	in.regionlist = nullptr;
 	in.numberofregions = 0;
 
-	in.edgelist = NULL;
-	in.edgemarkerlist = NULL;
-	in.normlist = NULL;
+	in.edgelist = nullptr;
+	in.edgemarkerlist = nullptr;
+	in.normlist = nullptr;
 	in.numberofedges = 0;
 
 	for (vtkIdType i = 0; i < m_vtkGrid->GetPoints()->GetNumberOfPoints(); ++i) {
@@ -611,19 +598,19 @@ bool GeoDataPointmap::doDelaunay(bool allowCancel)
 		f.close();
 	*/
 	out.pointlist = in.pointlist;
-	out.pointattributelist = NULL;
-	out.pointmarkerlist = NULL;
-	out.trianglelist = NULL;
-	out.triangleattributelist = NULL;
-	out.trianglearealist = NULL;
-	out.neighborlist = NULL;
-	out.segmentlist = NULL;
-	out.segmentmarkerlist = NULL;
-	out.holelist = NULL;
-	out.regionlist = NULL;
-	out.edgelist = NULL;
-	out.edgemarkerlist = NULL;
-	out.normlist = NULL;
+	out.pointattributelist = nullptr;
+	out.pointmarkerlist = nullptr;
+	out.trianglelist = nullptr;
+	out.triangleattributelist = nullptr;
+	out.trianglearealist = nullptr;
+	out.neighborlist = nullptr;
+	out.segmentlist = nullptr;
+	out.segmentmarkerlist = nullptr;
+	out.holelist = nullptr;
+	out.regionlist = nullptr;
+	out.edgelist = nullptr;
+	out.edgemarkerlist = nullptr;
+	out.normlist = nullptr;
 
 	QString args("pcj");
 
@@ -714,6 +701,9 @@ bool GeoDataPointmap::doDelaunay(bool allowCancel)
 	trifree(out.trianglelist);
 	trifree(out.segmentlist);
 	trifree(out.segmentmarkerlist);
+
+	rebuildQTree();
+
 	return (! m_canceled);
 }
 
@@ -737,6 +727,11 @@ void GeoDataPointmap::buildGridFromPolydata()
 
 void GeoDataPointmap::setupActors()
 {
+	if (m_vtkMapper.Get() != nullptr) {
+		// already setup.
+		return;
+	}
+
 	m_vtkMapper = vtkSmartPointer<vtkPolyDataMapper>::New();
 	m_vtkMapper->SetLookupTable(scalarsToColorsContainer()->vtkObj());
 	m_vtkMapper->SetUseLookupTableScalarRange(true);
@@ -810,7 +805,7 @@ void GeoDataPointmap::setupActors()
 
 	m_selectedMapper = vtkSmartPointer<vtkPolyDataMapper>::New();
 	m_selectedMapper->SetScalarVisibility(false);
-	m_selectedMapper->SetInputData(this->m_selectedVerticesGrid);
+	m_selectedMapper->SetInputData(m_selectedVerticesGrid);
 #if (VTK_MAJOR_VERSION == 6) && (VTK_MINOR_VERSION == 1)
 	m_selectedMapper->ImmediateModeRenderingOn();
 #endif
@@ -847,48 +842,52 @@ void GeoDataPointmap::setupMenu()
 	m_menu->setTitle(tr("P&ointset Data"));
 	m_menu->addAction(m_editNameAction);
 	m_menu->addSeparator();
-	m_menu->addAction(this->m_selectionModePolygon);
+	m_menu->addAction(m_selectionModePolygon);
 	m_menu->addSeparator();
-	m_menu->addAction(this->m_editPointsAction);
-	m_menu->addAction(this->m_editPointsExportAction);
+	m_menu->addAction(m_editPointsAction);
+	m_menu->addAction(m_editPointsExportAction);
 	m_menu->addSeparator();
-	m_menu->addAction(this->m_addPointAction);
-	m_menu->addAction(this->m_interpolatePointAction);
+	m_menu->addAction(m_addPointAction);
+	m_menu->addAction(m_interpolatePointAction);
 	m_menu->addSeparator();
-	m_menu->addAction(this->m_editPointsDeleteAction);
-	m_menu->addAction(this->m_editPointsLessThanAction);
-	m_menu->addAction(this->m_editPointsGreaterThanAction);
+	m_menu->addAction(m_editPointsDeleteAction);
+	m_menu->addAction(m_editPointsLessThanAction);
+	m_menu->addAction(m_editPointsGreaterThanAction);
 	m_menu->addSeparator();
-	m_menu->addAction(this->m_addBreakLineAction);
-	m_menu->addAction(this->m_removeBreakLineAction);
-	m_menu->addAction(this->m_removeAllBreakLinesAction);
+	m_menu->addAction(m_addBreakLineAction);
+	m_menu->addAction(m_removeBreakLineAction);
+	m_menu->addAction(m_removeAllBreakLinesAction);
 	m_menu->addSeparator();
-	m_menu->addAction(this->m_remeshAction);
-	m_menu->addAction(this->m_removeTrianglesWithLongEdgeAction);
+	m_menu->addAction(m_remeshAction);
+	m_menu->addAction(m_removeTrianglesWithLongEdgeAction);
+	m_menu->addSeparator();
+	m_menu->addAction(m_mergeAction);
 	m_menu->addSeparator();
 	m_menu->addAction(m_displaySettingAction);
 	m_menu->addSeparator();
 	m_menu->addAction(deleteAction());
 
 	m_rightClickingMenu = new QMenu();
-	m_rightClickingMenu->addAction(this->m_selectionModePolygon);
+	m_rightClickingMenu->addAction(m_selectionModePolygon);
 	m_rightClickingMenu->addSeparator();
-	m_rightClickingMenu->addAction(this->m_editPointsAction);
-	m_rightClickingMenu->addAction(this->m_editPointsExportAction);
+	m_rightClickingMenu->addAction(m_editPointsAction);
+	m_rightClickingMenu->addAction(m_editPointsExportAction);
 	m_rightClickingMenu->addSeparator();
-	m_rightClickingMenu->addAction(this->m_addPointAction);
-	m_rightClickingMenu->addAction(this->m_interpolatePointAction);
+	m_rightClickingMenu->addAction(m_addPointAction);
+	m_rightClickingMenu->addAction(m_interpolatePointAction);
 	m_rightClickingMenu->addSeparator();
-	m_rightClickingMenu->addAction(this->m_editPointsDeleteAction);
-	m_rightClickingMenu->addAction(this->m_editPointsLessThanAction);
-	m_rightClickingMenu->addAction(this->m_editPointsGreaterThanAction);
+	m_rightClickingMenu->addAction(m_editPointsDeleteAction);
+	m_rightClickingMenu->addAction(m_editPointsLessThanAction);
+	m_rightClickingMenu->addAction(m_editPointsGreaterThanAction);
 	m_rightClickingMenu->addSeparator();
-	m_rightClickingMenu->addAction(this->m_addBreakLineAction);
-	m_rightClickingMenu->addAction(this->m_removeBreakLineAction);
-	m_rightClickingMenu->addAction(this->m_removeAllBreakLinesAction);
+	m_rightClickingMenu->addAction(m_addBreakLineAction);
+	m_rightClickingMenu->addAction(m_removeBreakLineAction);
+	m_rightClickingMenu->addAction(m_removeAllBreakLinesAction);
 	m_rightClickingMenu->addSeparator();
-	m_rightClickingMenu->addAction(this->m_remeshAction);
-	m_rightClickingMenu->addAction(this->m_removeTrianglesWithLongEdgeAction);
+	m_rightClickingMenu->addAction(m_remeshAction);
+	m_rightClickingMenu->addAction(m_removeTrianglesWithLongEdgeAction);
+	m_rightClickingMenu->addSeparator();
+	m_rightClickingMenu->addAction(m_mergeAction);
 	m_rightClickingMenu->addSeparator();
 	m_rightClickingMenu->addAction(m_displaySettingAction);
 	m_rightClickingMenu->addSeparator();
@@ -900,11 +899,11 @@ bool GeoDataPointmap::addToolBarButtons(QToolBar* tb)
 	tb->addAction(m_selectionModePoint);
 	tb->addAction(m_selectionModePolygon);
 	tb->addSeparator();
-	tb->addAction(this->m_addPointAction);
-	tb->addAction(this->m_interpolatePointAction);
+	tb->addAction(m_addPointAction);
+	tb->addAction(m_interpolatePointAction);
 	tb->addSeparator();
-	tb->addAction(this->m_addBreakLineAction);
-	tb->addAction(this->m_removeBreakLineAction);
+	tb->addAction(m_addBreakLineAction);
+	tb->addAction(m_removeBreakLineAction);
 	return true;
 }
 
@@ -1122,6 +1121,9 @@ void GeoDataPointmap::setupActions()
 
 	m_removeTrianglesWithLongEdgeAction = new QAction(tr("Remove Triangles &with Long edge..."), this);
 	connect(m_removeTrianglesWithLongEdgeAction, SIGNAL(triggered()), this, SLOT(removeTrianglesWithLongEdgeStart()));
+
+	m_mergeAction = new QAction(tr("Merge..."), this);
+	connect(m_mergeAction, SIGNAL(triggered()), this, SLOT(mergePointmaps()));
 }
 
 void GeoDataPointmap::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
@@ -1287,13 +1289,13 @@ void GeoDataPointmap::mouseDoubleClickEvent(QMouseEvent* event, PreProcessorGrap
 		definePolygon(true, xOr);
 
 	} else if (m_mouseEventMode == meSMAddCtrlPoint) {
-		this->finishAddPoint();
-	} else if (this->m_mouseEventMode == this->meSMInterpPointPrepare || m_mouseEventMode == meSMInterpPoint) {
-		this->finishInterpPoint();
+		finishAddPoint();
+	} else if (m_mouseEventMode == meSMInterpPointPrepare || m_mouseEventMode == meSMInterpPoint) {
+		finishInterpPoint();
 	} else if (m_mouseEventMode == meBreakLineAdd || m_mouseEventMode == meBreakLineAddNotPossible) {
 		pushRenderCommand(new BreakLineFinishDefinitionCommand(this));
 	}
-	this->updateMouseCursor(v);
+	updateMouseCursor(v);
 }
 void GeoDataPointmap::keyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* v)
 {
@@ -1322,7 +1324,7 @@ void GeoDataPointmap::keyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewIn
 			definePolygon(false, xOr);
 		} else if (m_mouseEventMode == meSMAddCtrlPoint) {
 			finishAddPoint();
-		} else if (this->m_mouseEventMode == this->meSMInterpPointPrepare || m_mouseEventMode == meSMInterpPoint) {
+		} else if (m_mouseEventMode == meSMInterpPointPrepare || m_mouseEventMode == meSMInterpPoint) {
 			finishInterpPoint();
 		} else if (m_mouseEventMode == meBreakLineAdd || m_mouseEventMode == meBreakLineAddNotPossible) {
 			pushRenderCommand(new BreakLineFinishDefinitionCommand(this));
@@ -1531,18 +1533,18 @@ void GeoDataPointmap::selectPointsInsidePolygon(bool xOr)
 	m_selectedVerticesGrid->Reset();
 	m_selectedVerticesGrid->SetPoints(m_vtkGrid->GetPoints());
 
-	for (int i = 0; i < this->m_selectedVerticesGrid->GetNumberOfPoints(); i++) {
+	for (int i = 0; i < m_selectedVerticesGrid->GetNumberOfPoints(); i++) {
 		double x[3];
-		this->m_selectedVerticesGrid->GetPoint(i, x);
+		m_selectedVerticesGrid->GetPoint(i, x);
 		bool inside = m_selectionPolygonController.isAreaSelectable(QPointF(x[0], x[1]));
 		if (inside || oldSelectedVertices.contains(i)) {
 			vtkSmartPointer<vtkVertex> v = vtkSmartPointer<vtkVertex>::New();
 			v->GetPointIds()->SetId(0, i);
-			this->m_selectedVerticesGrid->InsertNextCell(v->GetCellType(), v->GetPointIds());
+			m_selectedVerticesGrid->InsertNextCell(v->GetCellType(), v->GetPointIds());
 		}
 	}
-	this->m_selectedVerticesGrid->Modified();
-	this->enablePointSelectedActions(true);
+	m_selectedVerticesGrid->Modified();
+	enablePointSelectedActions(true);
 }
 void GeoDataPointmap::selectionModePoint(bool on)
 {
@@ -1556,7 +1558,7 @@ void GeoDataPointmap::selectionModePoint(bool on)
 
 void GeoDataPointmap::selectionModePolygon(bool on)
 {
-	this->clearPointsSelection();
+	clearPointsSelection();
 
 	if (on) {
 		m_mouseEventMode = meSMPolygonPrepare;
@@ -1568,47 +1570,47 @@ void GeoDataPointmap::selectionModePolygon(bool on)
 
 void GeoDataPointmap::updateActionStatus()
 {
-	this->m_selectionModePoint->setDisabled(true);
-	this->m_selectionModePoint->setChecked(false);
+	m_selectionModePoint->setDisabled(true);
+	m_selectionModePoint->setChecked(false);
 
-	this->m_selectionModePolygon->setDisabled(true);
-	this->m_selectionModePolygon->setChecked(false);
+	m_selectionModePolygon->setDisabled(true);
+	m_selectionModePolygon->setChecked(false);
 
-	this->m_addPointAction->setDisabled(true);
-	this->m_addPointAction->setChecked(false);
+	m_addPointAction->setDisabled(true);
+	m_addPointAction->setChecked(false);
 
-	this->m_interpolatePointAction->setDisabled(true);
-	this->m_interpolatePointAction->setChecked(false);
+	m_interpolatePointAction->setDisabled(true);
+	m_interpolatePointAction->setChecked(false);
 
-	this->m_addBreakLineAction->setDisabled(true);
-	this->m_addBreakLineAction->setChecked(false);
+	m_addBreakLineAction->setDisabled(true);
+	m_addBreakLineAction->setChecked(false);
 
-	this->m_removeBreakLineAction->setDisabled(true);
-	this->m_removeBreakLineAction->setChecked(false);
+	m_removeBreakLineAction->setDisabled(true);
+	m_removeBreakLineAction->setChecked(false);
 
-	this->m_removeAllBreakLinesAction->setDisabled(true);
-	this->m_removeAllBreakLinesAction->setChecked(false);
+	m_removeAllBreakLinesAction->setDisabled(true);
+	m_removeAllBreakLinesAction->setChecked(false);
 
 	switch (m_mouseEventMode) {
 	case meNormal:
 	case meNormalWithShift:
-		this->m_selectionModePoint->setEnabled(true);
-		this->m_selectionModePoint->setChecked(true);
+		m_selectionModePoint->setEnabled(true);
+		m_selectionModePoint->setChecked(true);
 
-		this->m_selectionModePolygon->setEnabled(true);
-		this->m_addPointAction->setEnabled(true);
-		this->m_interpolatePointAction->setEnabled(true);
-		this->m_addBreakLineAction->setEnabled(true);
-		this->m_addBreakLineAction->setEnabled(true);
-		this->m_removeBreakLineAction->setEnabled(true);
-		this->m_removeAllBreakLinesAction->setEnabled(true);
+		m_selectionModePolygon->setEnabled(true);
+		m_addPointAction->setEnabled(true);
+		m_interpolatePointAction->setEnabled(true);
+		m_addBreakLineAction->setEnabled(true);
+		m_addBreakLineAction->setEnabled(true);
+		m_removeBreakLineAction->setEnabled(true);
+		m_removeAllBreakLinesAction->setEnabled(true);
 		break;
 	case meSMPolygonPrepare:
 	case meSMPolygon:
-		this->m_selectionModePoint->setEnabled(false);
+		m_selectionModePoint->setEnabled(false);
 
-		this->m_selectionModePolygon->setEnabled(true);
-		this->m_selectionModePolygon->setChecked(true);
+		m_selectionModePolygon->setEnabled(true);
+		m_selectionModePolygon->setChecked(true);
 		break;
 	case meSMInterpPoint:
 		m_interpolatePointAction->setEnabled(true);
@@ -1620,13 +1622,13 @@ void GeoDataPointmap::updateActionStatus()
 		break;
 	case meBreakLineAdd:
 	case meBreakLineAddNotPossible:
-		this->m_addBreakLineAction->setEnabled(true);
-		this->m_addBreakLineAction->setChecked(true);
+		m_addBreakLineAction->setEnabled(true);
+		m_addBreakLineAction->setChecked(true);
 		break;
 	case meBreakLineRemove:
 	case meBreakLineRemoveNotPossible:
-		this->m_removeBreakLineAction->setEnabled(true);
-		this->m_removeBreakLineAction->setChecked(true);
+		m_removeBreakLineAction->setEnabled(true);
+		m_removeBreakLineAction->setChecked(true);
 		break;
 	default:
 		break;
@@ -1639,7 +1641,7 @@ void GeoDataPointmap::updateMouseEventMode()
 	dx = m_mouseMovePoint.x();
 	dy = m_mouseMovePoint.y();
 	graphicsView()->viewportToWorld(dx, dy);
-	QVector2D worldPos(dx, dy);
+	QPointF worldPos(dx, dy);
 	double tmppos[3] = {dx, dy, 0};
 	switch (m_mouseEventMode) {
 	case meNormal:
@@ -1678,15 +1680,15 @@ void GeoDataPointmap::updateMouseEventMode()
 	case meBreakLineAdd:
 	case meBreakLineAddNotPossible:
 		m_mouseEventMode = meBreakLineAddNotPossible;
-		m_selectedVertexId = this->m_vtkPointLocator->FindClosestPoint(tmppos);
+		m_selectedVertexId = m_vtkPointLocator->FindClosestPoint(tmppos);
 		m_mouseEventMode = meBreakLineAdd;
 		pushRenderCommand(new BreakLineAddPointCommand(true, m_selectedVertexId, this));
 		break;
 	case meBreakLineRemove:
 	case meBreakLineRemoveNotPossible:
 		m_mouseEventMode = meBreakLineRemoveNotPossible;
-		if (m_activeBreakLine != 0) {m_activeBreakLine->setActive(false);}
-		m_activeBreakLine = 0;
+		if (m_activeBreakLine != nullptr) {m_activeBreakLine->setActive(false);}
+		m_activeBreakLine = nullptr;
 		for (int i = 0; i < m_breakLines.count(); ++i) {
 			GeoDataPointmapBreakLine* breakLine = m_breakLines[i];
 			if (breakLine->isEdgeSelectable(worldPos, graphicsView()->stdRadius(iRIC::nearRadius()))) {
@@ -1701,22 +1703,22 @@ void GeoDataPointmap::updateMouseEventMode()
 	}
 }
 
-bool GeoDataPointmap::isVertexSelectable(const QVector2D& pos)
+bool GeoDataPointmap::isVertexSelectable(const QPointF& pos)
 {
 	double point2[3] = {pos.x(), pos.y(), 0.0};
 	m_selectedVertexId = m_vtkPointLocator->FindClosestPoint(point2);
 	double point[3];
 	m_vtkGrid->GetPoint(m_selectedVertexId, point);
 	m_selectedZPos = m_vtkGrid->GetPointData()->GetArray(VALUES)->GetTuple1(m_selectedVertexId);
-	QVector2D vertexPos(point[0], point[1]);
+	QPointF vertexPos(point[0], point[1]);
 	double limitdist = graphicsView()->stdRadius(iRIC::nearRadius());
-	double dist = (vertexPos - pos).length();
+	double dist = iRIC::distance(pos, vertexPos);
 	return (dist < limitdist);
 }
 
 void GeoDataPointmap::updateMouseCursor(PreProcessorGraphicsViewInterface* v)
 {
-	switch (this->m_mouseEventMode) {
+	switch (m_mouseEventMode) {
 	case meNormal:
 		v->setCursor(Qt::ArrowCursor);
 		break;
@@ -1733,7 +1735,7 @@ void GeoDataPointmap::updateMouseCursor(PreProcessorGraphicsViewInterface* v)
 		v->setCursor(Qt::ArrowCursor);
 		break;
 	case meSMInterpPointPrepare:
-		v->setCursor(this->m_interpPointAddCursor);
+		v->setCursor(m_interpPointAddCursor);
 		break;
 	case meSMInterpCtrlPoint:
 		v->setCursor(Qt::CrossCursor);
@@ -1745,7 +1747,7 @@ void GeoDataPointmap::updateMouseCursor(PreProcessorGraphicsViewInterface* v)
 		v->setCursor(Qt::ArrowCursor);
 		break;
 	case meSMAddPointPrepare:
-		v->setCursor(this->m_interpPointAddCursor);
+		v->setCursor(m_interpPointAddCursor);
 		break;
 	case meSMAddCtrlPoint:
 		v->setCursor(Qt::CrossCursor);
@@ -1754,13 +1756,13 @@ void GeoDataPointmap::updateMouseCursor(PreProcessorGraphicsViewInterface* v)
 		v->setCursor(Qt::ArrowCursor);
 		break;
 	case meBreakLineAdd:
-		v->setCursor(this->m_addCursor);
+		v->setCursor(m_addCursor);
 		break;
 	case meBreakLineRemoveNotPossible:
 		v->setCursor(Qt::ArrowCursor);
 		break;
 	case meBreakLineRemove:
-		v->setCursor(this->m_removeCursor);
+		v->setCursor(m_removeCursor);
 		break;
 	default:
 		break;
@@ -1910,7 +1912,7 @@ void GeoDataPointmap::editPointsDelete()
 		return;
 	}
 	pushRenderCommand(new DeletePointsCommand(tr("Delete Points"), selectedVertices(), this));
-	this->clearPointsSelection();
+	clearPointsSelection();
 }
 
 void GeoDataPointmap::editPointsExport()
@@ -1930,9 +1932,9 @@ void GeoDataPointmap::editPointsExport()
 	outs.setRealNumberNotation(QTextStream::SmartNotation);
 	outs.setRealNumberPrecision(10);
 
-	outs << this->m_selectedVerticesGrid->GetNumberOfCells() << endl;
-	vtkPoints* points = this->m_vtkGrid->GetPoints();
-	vtkDoubleArray* values = vtkDoubleArray::SafeDownCast(this->m_vtkGrid->GetPointData()->GetArray(VALUES));
+	outs << m_selectedVerticesGrid->GetNumberOfCells() << endl;
+	vtkPoints* points = m_vtkGrid->GetPoints();
+	vtkDoubleArray* values = vtkDoubleArray::SafeDownCast(m_vtkGrid->GetPointData()->GetArray(VALUES));
 	double v[3], val;
 	vtkIdType* pts = 0, npts2;
 	m_selectedVerticesGrid->GetVerts()->InitTraversal();
@@ -1996,6 +1998,93 @@ void GeoDataPointmap::editPointsGreaterThan()
 	}
 	pushRenderCommand(new DeletePointsCommand(title.arg(dialog.limitValue()), deletedPoints, this));
 	clearPointsSelection();
+}
+
+void GeoDataPointmap::mergePointmaps()
+{
+	auto gItem = dynamic_cast<PreProcessorGeoDataGroupDataItemInterface*> (parent()->parent());
+	std::vector<PreProcessorGeoDataDataItemInterface*> dataToMerge;
+
+	for (auto item : gItem->childItems()) {
+		auto p = dynamic_cast<PreProcessorGeoDataDataItemInterface*> (item);
+		auto geoData = p->geoData();
+		if (geoData == this) {continue;}
+
+		if (dynamic_cast<GeoDataPointmap*> (geoData) != nullptr) {
+			dataToMerge.push_back(p);
+		}
+	}
+	if (dataToMerge.size() == 0) {
+		QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("There is no other data to merge in \"%1\" group.").arg(gItem->condition()->caption()));
+		return;
+	}
+
+	GeoDataPointmapMergeSettingDialog dialog(preProcessorWindow());
+	dialog.setItems(dataToMerge);
+
+	int ret = dialog.exec();
+	if (ret == QDialog::Rejected) {return;}
+
+	dataToMerge = dialog.selectedItems();
+
+	std::set<QPointF, QPointFCompare> pointSet;
+
+	// insert points in this data to pointSet first
+	auto myPoints = m_vtkGrid->GetPoints();
+	auto myValues = vtkDoubleArray::SafeDownCast(m_vtkGrid->GetPointData()->GetArray(VALUES));
+	auto myVerts = m_vtkGrid->GetVerts();
+
+	double v[3];
+	for (vtkIdType i = 0; i < myPoints->GetNumberOfPoints(); ++i) {
+		myPoints->GetPoint(i, v);
+		pointSet.insert(QPointF(v[0], v[1]));
+	}
+
+	auto duplicatePoints = 0;
+	for (auto item : dataToMerge) {
+		auto geoData = item->geoData();
+		auto pointMap = dynamic_cast<GeoDataPointmap*> (geoData);
+
+		auto points = pointMap->m_vtkGrid->GetPoints();
+		auto vals = vtkDoubleArray::SafeDownCast(pointMap->m_vtkGrid->GetPointData()->GetArray(VALUES));
+
+		double val;
+		vtkIdType vId;
+		for (vtkIdType i = 0; i < points->GetNumberOfPoints(); ++i) {
+			points->GetPoint(i, v);
+			val = vals->GetValue(i);
+			QPointF p(v[0], v[1]);
+			auto it = pointSet.find(p);
+			if (it != pointSet.end()) {
+				++ duplicatePoints;
+				continue;
+			}
+			vId = myPoints->GetNumberOfPoints();
+
+			myPoints->InsertNextPoint(v);
+			myValues->InsertNextValue(val);
+			myVerts->InsertNextCell(1, &vId);
+			pointSet.insert(p);
+		}
+
+		item->setDeleteSilently(true);
+		delete item;
+	}
+	m_vtkGrid->Modified();
+	myPoints->Modified();
+	myValues->Modified();
+	myVerts->Modified();
+
+	doDelaunay();
+	updateActorSettings();
+	renderGraphicsView();
+
+	if (duplicatePoints > 0) {
+		QMessageBox::information(preProcessorWindow(), tr("Information"), tr("%1 duplicate points were found in merge targets, and omitted.").arg(duplicatePoints));
+	}
+
+	// merge operation is not undoable.
+	iRICUndoStack::instance().clear();
 }
 
 void GeoDataPointmap::clearPointsSelection()
@@ -2437,10 +2526,40 @@ void GeoDataPointmap::finishInterpPoint()
 	}
 }
 
+vtkCell* GeoDataPointmap::findCell(double x, double y, double *weights)
+{
+	auto env = new geos::geom::Envelope(x, x, y, y);
+	std::vector<void*> ret;
+	m_qTree->query(env, ret);
+	delete env;
+
+	double point[3], closestPoint[3], pcoords[3], dist;
+	double bounds[6];
+	int subId;
+
+	point[0] = x;
+	point[1] = y;
+	point[2] = 0;
+
+	for (void* vptr : ret) {
+		vtkIdType cellId = reinterpret_cast<vtkIdType> (vptr);
+		m_vtkDelaunayedPolyData->GetCellBounds(cellId, bounds);
+		if (point[0] < bounds[0]) {continue;}
+		if (point[0] > bounds[1]) {continue;}
+		if (point[1] < bounds[2]) {continue;}
+		if (point[1] > bounds[3]) {continue;}
+		vtkCell* cell = m_vtkDelaunayedPolyData->GetCell(cellId);
+		if (1 == cell->EvaluatePosition(point, closestPoint, subId, pcoords, dist, weights)) {
+			return cell;
+		}
+	}
+	return nullptr;
+}
+
 void GeoDataPointmap::doApplyOffset(double x, double y)
 {
-	vtkPoints* points = this->m_vtkDelaunayedPolyData->GetPoints();
-	vtkPoints* gridPoints = this->m_vtkGrid->GetPoints();
+	vtkPoints* points = m_vtkDelaunayedPolyData->GetPoints();
+	vtkPoints* gridPoints = m_vtkGrid->GetPoints();
 	if (points == gridPoints) {
 		// opened file was (projectData()->version().build() >= 3607)
 		// see GeoDataPointmap::loadExternalData
@@ -2468,5 +2587,19 @@ void GeoDataPointmap::doApplyOffset(double x, double y)
 		}
 		points->Modified();
 		gridPoints->Modified();
+	}
+}
+
+void GeoDataPointmap::rebuildQTree()
+{
+	delete m_qTree;
+	m_qTree = new geos::index::quadtree::Quadtree();
+
+	double bounds[6];
+	for (vtkIdType i = 0; i < m_vtkDelaunayedPolyData->GetNumberOfCells(); ++i) {
+		m_vtkDelaunayedPolyData->GetCellBounds(i, bounds);
+
+		auto env = new geos::geom::Envelope(bounds[0], bounds[1], bounds[2], bounds[3]);
+		m_qTree->insert(env, reinterpret_cast<void*>(i));
 	}
 }

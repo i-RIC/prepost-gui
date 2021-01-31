@@ -14,6 +14,8 @@ class QTextCodec;
 
 class GD_POLYDATAGROUP_EXPORT GeoDataPolyDataGroupShpImporter : public GeoDataImporter
 {
+	Q_OBJECT
+
 public:
 	GeoDataPolyDataGroupShpImporter(const std::string& name, const QString& caption, GeoDataCreator* creator);
 	~GeoDataPolyDataGroupShpImporter() override;
@@ -33,6 +35,7 @@ protected:
 	// std::vector<PolygonShapeInfo> m_shapeInfos;
 	int m_valueAttribute;
 	QVariant m_specifiedValue;
+	QTextCodec* m_codec;
 };
 
 #endif // GEODATAPOLYDATAGROUPSHPIMPORTER_H

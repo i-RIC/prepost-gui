@@ -20,6 +20,14 @@
 
 #include <vector>
 
+namespace geos {
+namespace index{
+namespace quadtree {
+class Quadtree;
+} // quadtree
+} // index
+} // geos
+
 class QAction;
 class QPolygonF;
 
@@ -124,6 +132,7 @@ public:
 	void finishAddPoint();
 	void finishInterpPoint();
 	bool needRemeshing() {return m_needRemeshing;}
+	vtkCell* findCell(double x, double y, double* weights);
 
 public slots:
 	void remeshTINS(bool nodialog = false);
@@ -147,7 +156,7 @@ private:
 	void buildGridFromPolydata();
 	void updateActionStatus();
 	void updateMouseEventMode();
-	bool isVertexSelectable(const QVector2D& pos);
+	bool isVertexSelectable(const QPointF& pos);
 	int m_selectedVertexId;
 	double m_selectedZPos;
 	bool m_canceled;
@@ -172,6 +181,8 @@ private slots:
 	void editPointsGreaterThan();
 	void cancel() {m_canceled = true;}
 
+	void mergePointmaps();
+
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
@@ -181,8 +192,11 @@ protected:
 	void updateMouseCursor(PreProcessorGraphicsViewInterface* v);
 	void doApplyOffset(double x, double y) override;
 
+	void rebuildQTree();
+
 	vtkSmartPointer<vtkPolyData> m_vtkGrid;
 	vtkSmartPointer<vtkPolyData> m_vtkDelaunayedPolyData;
+	geos::index::quadtree::Quadtree* m_qTree;
 
 	QList<GeoDataPointmapBreakLine*> m_breakLines;
 	GeoDataPointmapBreakLine* m_activeBreakLine;
@@ -244,6 +258,7 @@ protected:
 	QAction* m_addBreakLineAction;
 	QAction* m_removeBreakLineAction;
 	QAction* m_removeAllBreakLinesAction;
+	QAction* m_mergeAction;
 
 	QMenu*   m_rightClickingMenu;
 

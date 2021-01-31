@@ -361,6 +361,18 @@
         <source>Dialog</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Target:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Modifications you made will be discarded.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GridComplexConditionGroupRealEditWidget</name>
@@ -490,6 +502,13 @@ Do you really want to import this file?</source>
     <name>InputConditionPageList</name>
     <message>
         <source>Groups</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>InputConditionWidgetCheckbox</name>
+    <message>
+        <source>Enabled</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1399,15 +1418,15 @@ Do you really want to import this file?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Elevation grid attribute is not defined for grid type %1. Grid I/O functions, grid creating functions may not work correnctly for these grid types.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Saving project...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Opening project...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Elevation grid attribute is not defined for grid type %1. Grid I/O functions, grid creating functions may not work correctly for these grid types.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -1,7 +1,9 @@
 #include "geodatapolylinegroup.h"
 #include "geodatapolylinegroupcreator.h"
-#include "geodatapolylinegroupshpimporter.h"
+#include "geodatapolylinegroupcsvexporter.h"
+#include "geodatapolylinegroupcsvimporter.h"
 #include "geodatapolylinegroupshpexporter.h"
+#include "geodatapolylinegroupshpimporter.h"
 
 #include <guicore/pre/base/preprocessorgeodatadataiteminterface.h>
 
@@ -11,7 +13,9 @@ GeoDataPolyLineGroupCreator::GeoDataPolyLineGroupCreator(const QString& typeName
 	GeoDataPolyDataGroupCreator {typeName, tr("Polyline Group")}
 {
 	importers().push_back(new GeoDataPolyLineGroupShpImporter(this));
+	importers().push_back(new GeoDataPolyLineGroupCsvImporter(this));
 	exporters().push_back(new GeoDataPolyLineGroupShpExporter(this));
+	exporters().push_back(new GeoDataPolyLineGroupCsvExporter(this));
 }
 
 QString GeoDataPolyLineGroupCreator::name(unsigned int index) const

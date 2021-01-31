@@ -3,6 +3,7 @@
 
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
+#include <misc/tpoexporter.h>
 
 #include <QFile>
 #include <QMessageBox>
@@ -20,28 +21,24 @@ bool GeoDataPointmapRealExporter::doExport(GeoData* data, const QString& filenam
 	// Allocate objects to hold points and vertex cells.
 	GeoDataPointMapT<double, vtkDoubleArray>* pmap = dynamic_cast<GeoDataPointMapT<double, vtkDoubleArray>*>(data);
 	if (selectedFilter == tr("Topography File (*.tpo)")) {
-		QFile file(filename);
-		if (! file.open(QIODevice::WriteOnly)) {
+		TpoExporter exporter(w);
+		if (! exporter.open(filename)) {
 			QMessageBox::critical(w, tr("Error"), tr("Error occured while exporting to %1.").arg(filename));
 			return false;
 		}
-		QTextStream outs(&file);
-		outs.setRealNumberNotation(QTextStream::SmartNotation);
-		outs.setRealNumberPrecision(10);
 
-		outs << pmap->vtkGrid()->GetPoints()->GetNumberOfPoints() << endl;
+		exporter.setOffset(pd->mainfile()->offset());
+
 		vtkPoints* points = pmap->vtkGrid()->GetPoints();
 		vtkDoubleArray* values = vtkDoubleArray::SafeDownCast(pmap->vtkGrid()->GetPointData()->GetArray("values"));
-		auto offset = pd->mainfile()->offset();
+
 		double v[3], val;
 		for (vtkIdType i = 0; i < points->GetNumberOfPoints(); ++i) {
 			points->GetPoint(i, v);
 			val = values->GetValue(i);
-			v[0] += offset.x();
-			v[1] += offset.y();
-			outs << v[0] << " " << v[1] << " " << val << endl;
+			exporter.addPoint(v[0], v[1], val);
 		}
-		file.close();
+		exporter.close();
 	}
 	return true;
 }

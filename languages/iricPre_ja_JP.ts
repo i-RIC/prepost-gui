@@ -967,6 +967,42 @@ Do you really want to import grid from this file?</source>
         <source>Input the %1 of %2 at the selected grid cells.</source>
         <translation>選択されたセルにおける %2 の %1 を入力してください。</translation>
     </message>
+    <message>
+        <source>Export...</source>
+        <translation>エクスポート...</translation>
+    </message>
+    <message>
+        <source>Generate points data</source>
+        <translation>このデータから点群データを生成</translation>
+    </message>
+    <message>
+        <source>Topography File (*.tpo)</source>
+        <translation>地勢データ (*.tpo)</translation>
+    </message>
+    <message>
+        <source>Export as Topography Data</source>
+        <translation>地勢データとしてエクスポート</translation>
+    </message>
+    <message>
+        <source>Error occured while opening the file.</source>
+        <translation>ファイルを開く時にエラーが発生しました。</translation>
+    </message>
+    <message>
+        <source>Grid condition successfully exported to %1.</source>
+        <translation>格子属性は %1 にエクスポートされました。</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>エラー</translation>
+    </message>
+    <message>
+        <source>Information</source>
+        <translation>情報</translation>
+    </message>
+    <message>
+        <source>%1 generated.</source>
+        <translation>%1 が生成されました。</translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeCellDisplaySettingDialog</name>
@@ -1047,11 +1083,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarted. Do you really want to execute mapping?</source>
-        <translation>格子属性 &quot;%1&quot; が、手動で編集されています。マッピングを実行すると、手動で行った全ての編集内容は破棄されます。本当にマッピングを実行しますか?</translation>
+        <translation type="vanished">格子属性 &quot;%1&quot; が、手動で編集されています。マッピングを実行すると、手動で行った全ての編集内容は破棄されます。本当にマッピングを実行しますか?</translation>
     </message>
     <message>
         <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarted. Do you really want to execute mapping?</source>
-        <translation>境界条件 &quot;%1&quot; が、手動で編集されています。マッピングを実行すると、手動で行った全ての編集内容は破棄されます。本当にマッピングを実行しますか?</translation>
+        <translation type="vanished">境界条件 &quot;%1&quot; が、手動で編集されています。マッピングを実行すると、手動で行った全ての編集内容は破棄されます。本当にマッピングを実行しますか?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1064,6 +1100,14 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Mapping geographic data finished</source>
         <translation>地形データマッピングの完了</translation>
+    </message>
+    <message>
+        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>格子属性 &quot;%1&quot; が、手動で編集されています。マッピングを実行すると、手動で行った全ての編集内容は破棄されます。本当にマッピングを実行しますか?</translation>
+    </message>
+    <message>
+        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>境界条件 &quot;%1&quot; が、手動で編集されています。マッピングを実行すると、手動で行った全ての編集内容は破棄されます。本当にマッピングを実行しますか?</translation>
     </message>
 </context>
 <context>
@@ -1244,6 +1288,14 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Input the %1 of %2 at the selected grid nodes.</source>
         <translation>選択された格子点における %2 の %1 を入力してください。</translation>
+    </message>
+    <message>
+        <source>Generate points data</source>
+        <translation>このデータから地勢データを生成</translation>
+    </message>
+    <message>
+        <source>%1 generated.</source>
+        <translation>%1 が生成されました。</translation>
     </message>
 </context>
 <context>

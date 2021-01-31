@@ -110,3 +110,19 @@ int main(int argc, char* argv[])
 		return 0;
 	}
 }
+
+#ifdef WIN32
+#include <windows.h>
+// see https://stackoverflow.com/questions/55435230/how-to-ensure-directx-11-app-use-the-discrete-gpu-on-a-dual-gpu-laptop-with-c
+// dumpbin /exports iRIC.exe | findstr "NvOptimusEnablement"
+// dumpbin /exports iRIC.exe | findstr "AmdPowerXpressRequestHighPerformance"
+
+// Indicates to hybrid graphics systems to prefer the discrete part by default
+extern "C"
+{
+	__declspec(dllexport) DWORD NvOptimusEnablement = 0x00000001;
+	__declspec(dllexport) int AmdPowerXpressRequestHighPerformance = 1;
+}
+// also see https://docs.microsoft.com/en-us/windows/win32/api/dxgi1_6/nf-dxgi1_6-idxgifactory6-enumadapterbygpupreference
+#endif
+

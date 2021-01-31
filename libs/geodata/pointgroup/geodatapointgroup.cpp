@@ -5,6 +5,8 @@
 #include <geodata/point/geodatapoint.h>
 #include <geodata/polydatagroup/geodatapolydatagroupcreator.h>
 #include <geoio/polygonutil.h>
+#include <guicore/pre/base/preprocessorgeodatadataiteminterface.h>
+#include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
 #include <guicore/scalarstocolors/scalarstocolorscontainer.h>
 #include <misc/mathsupport.h>
@@ -197,6 +199,14 @@ QString GeoDataPointGroup::captionForData(int number)
 	return tr("Point%1").arg(number);
 }
 
+GeoDataPolyDataGroup* GeoDataPointGroup::createInstanceForCopy(PreProcessorGeoDataDataItemInterface* d)
+{
+	auto gItem = dynamic_cast<PreProcessorGeoDataGroupDataItemInterface*>(d->parent());
+	auto newGroup = new GeoDataPointGroup(d, creator(), gItem->condition());
+
+	return newGroup;
+}
+
 void GeoDataPointGroup::setupMenu()
 {
 	m_menu->setTitle(tr("P&oint Group"));
@@ -301,6 +311,7 @@ void GeoDataPointGroup::updateMenu()
 
 	m->addSeparator();
 	m->addAction(mergeAction());
+	m->addAction(copyAction());
 	m->addAction(editColorSettingAction());
 	m->addAction(attributeBrowserAction());
 
@@ -341,6 +352,7 @@ void GeoDataPointGroup::updateMenu()
 
 	m->addSeparator();
 	m->addAction(mergeAction());
+	m->addAction(copyAction());
 	m->addAction(editColorSettingAction());
 	m->addAction(attributeBrowserAction());
 

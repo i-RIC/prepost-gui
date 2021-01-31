@@ -130,6 +130,17 @@ double calcHWMAtCrossSection(CrossSection* cs, BaseLine& bl, Points& hwm)
 	return interpolate(vals, pos);
 }
 
+int count(std::multimap<double, double>::const_iterator& b, std::multimap<double, double>::const_iterator& e)
+{
+	int ret = 0;
+	auto it = b;
+	while (it != e) {
+		++ it;
+		++ ret;
+	}
+	return ret;
+}
+
 } // namespace
 
 Project::Impl::Impl(Project *project) :
@@ -472,7 +483,20 @@ void Project::calcCrossSectionElevations(bool* all_internal)
 		if (it2 != posMap.end()) {
 			it_e = vals.upper_bound(it2->first);
 		}
-
+		if (count(it_b, it_e) < 2) {
+			if (it_b == vals.begin()) {
+				while (count(it_b, it_e) < 2 && it_e != vals.end()) {
+					++ it_e;
+				}
+			} else if (it_e == vals.end()) {
+				while (count(it_b, it_e) < 2 && it_b != vals.begin()) {
+					-- it_b;
+				}
+			} else {
+				-- it_b;
+				++ it_e;
+			}
+		}
 		std::vector<double> xvec, yvec;
 		for (auto tmp_it = it_b; tmp_it != it_e; ++ tmp_it) {
 			xvec.push_back(tmp_it->first);

@@ -9,6 +9,7 @@ class SolverDefinitionGridAttributeRealOptionNode : public SolverDefinitionGridA
 public:
 	SolverDefinitionGridAttributeRealOptionNode(QDomElement node, SolverDefinition* solverDef, int order);
 
+	GridAttributeStringConverter* stringConverter() const override;
 	GridAttributeEditWidget* editWidget(QWidget* parent) override;
 	GridAttributeVariationEditWidget* variationEditWidget(QWidget* parent) override;
 

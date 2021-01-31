@@ -5,8 +5,11 @@
 #include <misc/boolcontainer.h>
 #include <guicore/pre/gridcond/base/gridattributevariationeditwidget.h>
 
+class PreProcessorGeoDataGroupDataItemInterface;
 class SolverDefinitionGridAttribute;
+
 class QAction;
+
 class vtkMapper;
 class vtkStructuredGrid;
 
@@ -37,11 +40,14 @@ private slots:
 	void editDifference();
 	void editRatio();
 	void showDisplaySettingDialog() {showPropertyDialog();}
+	void exportToFile();
+	void generatePointMap();
 
 protected:
 	void loadFromCgnsFile(const int fn) override;
 
 private:
+	PreProcessorGeoDataGroupDataItemInterface* geoDataGroup() const;
 	void editVariation(GridAttributeVariationEditWidget::Mode mode, const QString& typeName);
 
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
@@ -53,6 +59,8 @@ private:
 
 	bool m_definingBoundingBox;
 	QAction* m_editValueAction;
+	QAction* m_exportAction;
+	QAction* m_generatePointMapAction;
 	QAction* m_editDifferenceAction;
 	QAction* m_editRatioAction;
 };

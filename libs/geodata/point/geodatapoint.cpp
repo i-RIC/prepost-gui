@@ -1,5 +1,6 @@
 #include "geodatapoint.h"
 
+#include "private/geodatapoint_coordinateseditor.h"
 #include "private/geodatapoint_finishpointdefinitioncommand.h"
 #include "private/geodatapoint_impl.h"
 
@@ -95,17 +96,11 @@ bool GeoDataPoint::addToolBarButtons(QToolBar* /*parent*/)
 
 void GeoDataPoint::informSelection(PreProcessorGraphicsViewInterface* v)
 {
-	// @todo
-	// impl->m_polyLine->setActive(true);
-
 	updateMouseCursor(v);
 }
 
 void GeoDataPoint::informDeselection(PreProcessorGraphicsViewInterface* v)
 {
-	// @todo
-	// impl->m_polyLine->setActive(false);
-
 	v->unsetCursor();
 }
 
@@ -244,14 +239,14 @@ void GeoDataPoint::restoreMouseEventMode()
 
 void GeoDataPoint::editCoordinates()
 {
-	// @todo implement this!
+	CoordinatesEditor::edit(this);
 }
 
 void GeoDataPoint::doApplyOffset(double x, double y)
 {
 	auto p = point();
-	p.setX(p.x() + x);
-	p.setY(p.y() + y);
+	p.setX(p.x() - x);
+	p.setY(p.y() - y);
 	setPoint(p);
 }
 

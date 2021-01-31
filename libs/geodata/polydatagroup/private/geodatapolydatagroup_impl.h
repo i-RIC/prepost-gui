@@ -43,6 +43,7 @@ public:
 	QAction* m_moveToBottomAction;
 	QAction* m_moveUpAction;
 	QAction* m_moveDownAction;
+	QAction* m_copyAction;
 
 	GeoDataPolyDataGroupAttributeBrowser* m_attributeBrowser;
 	bool m_attributeBrowserIsShown;

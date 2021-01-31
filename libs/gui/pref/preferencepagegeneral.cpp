@@ -6,8 +6,9 @@
 #include <guicore/project/projectworkspace.h>
 #include <guicore/pre/grid/grid.h>
 #include <solverconsole/solverconsolewindowprojectdataitem.h>
-#include <misc/stringtool.h>
 #include <misc/iricundostack.h>
+#include <misc/pythonutil.h>
+#include <misc/stringtool.h>
 
 #include <QDir>
 #include <QList>
@@ -33,6 +34,9 @@ PreferencePageGeneral::PreferencePageGeneral(QWidget* parent) :
 	ui->workDirWidget->setDirname(workspace);
 	bool copyFolderProject = settings.value("general/copyfolderproject", true).toBool();
 	ui->folderCopyCheckBox->setChecked(copyFolderProject);
+
+	QString pythonPath = settings.value("general/pythonpath", PythonUtil::defaultPath()).value<QString>();
+	ui->pythonPathWidget->setFilename(pythonPath);
 
 	bool checkPeriodically = settings.value("general/periodicalUpdate", true).toBool();
 	ui->checkUpdatePeriodicallyCheckBox->setChecked(checkPeriodically);
@@ -82,6 +86,7 @@ void PreferencePageGeneral::update()
 	settings.setValue("general/locale", loc.name());
 	settings.setValue("general/workspace", ui->workDirWidget->dirname());
 	settings.setValue("general/copyfolderproject", ui->folderCopyCheckBox->isChecked());
+	settings.setValue("general/pythonpath", ui->pythonPathWidget->filename());
 	settings.setValue("general/periodicalUpdate", ui->checkUpdatePeriodicallyCheckBox->isChecked());
 	settings.setValue("general/periodicalUpdateInterval", ui->checkIntervalSpinBox->value());
 	settings.setValue("general/cullcellenable", ui->cullEnableCheckBox->isChecked());

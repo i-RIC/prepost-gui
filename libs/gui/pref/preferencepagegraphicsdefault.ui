@@ -71,7 +71,7 @@
        </property>
        <layout class="QVBoxLayout" name="verticalLayout_2">
         <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_8" stretch="0,1">
+         <layout class="QHBoxLayout" name="horizontalLayout_8" stretch="0,1,0">
           <item>
            <widget class="QLabel" name="backgroundSizeLabel">
             <property name="text">
@@ -88,7 +88,14 @@
              <number>300</number>
             </property>
             <property name="maximum">
-             <number>100000</number>
+             <number>9999999</number>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="backgroundSizeUnitLabel">
+            <property name="text">
+             <string>pixels</string>
             </property>
            </widget>
           </item>

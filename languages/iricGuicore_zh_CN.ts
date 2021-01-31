@@ -361,6 +361,18 @@
         <source>Dialog</source>
         <translation>对话框</translation>
     </message>
+    <message>
+        <source>Target:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">警告</translation>
+    </message>
+    <message>
+        <source>Modifications you made will be discarded.</source>
+        <translation type="unfinished">您所做的修改将被丢弃。</translation>
+    </message>
 </context>
 <context>
     <name>GridComplexConditionGroupRealEditWidget</name>
@@ -493,6 +505,13 @@ Do you really want to import this file?</source>
     <message>
         <source>Groups</source>
         <translation>组</translation>
+    </message>
+</context>
+<context>
+    <name>InputConditionWidgetCheckbox</name>
+    <message>
+        <source>Enabled</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1442,7 +1461,7 @@ Do you really want to import this file?</source>
         <translation>警告</translation>
     </message>
     <message>
-        <source>Elevation grid attribute is not defined for grid type %1. Grid I/O functions, grid creating functions may not work correnctly for these grid types.</source>
+        <source>Elevation grid attribute is not defined for grid type %1. Grid I/O functions, grid creating functions may not work correctly for these grid types.</source>
         <translation>未为网格类型%1定义高程网格属性。 对于这些网格类型，网格I / O功能，网格创建功能可能无法正确工作</translation>
     </message>
     <message>

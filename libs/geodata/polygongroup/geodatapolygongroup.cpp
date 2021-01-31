@@ -5,6 +5,8 @@
 #include <geodata/polydatagroup/geodatapolydatagroupcreator.h>
 #include <geodata/polygon/geodatapolygon.h>
 #include <geoio/polygonutil.h>
+#include <guicore/pre/base/preprocessorgeodatadataiteminterface.h>
+#include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
 #include <guicore/scalarstocolors/scalarstocolorscontainer.h>
 #include <misc/zdepthrange.h>
 
@@ -34,10 +36,12 @@ std::string VALUE = "value";
 
 } // namespace
 
-GeoDataPolygonGroup::GeoDataPolygonGroup(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGridAttribute* condition) :
-	GeoDataPolyDataGroup(d, creator, condition),
+GeoDataPolygonGroup::GeoDataPolygonGroup(ProjectDataItem* d, GeoDataCreator* gdcreator, SolverDefinitionGridAttribute* condition) :
+	GeoDataPolyDataGroup(d, gdcreator, condition),
 	impl {new Impl {this}}
 {
+	addAction()->setText(tr("&Add New %1...").arg(creator()->shapeNameCamelCase()));
+
 	ScalarsToColorsContainer* stcc = scalarsToColorsContainer();
 	if (stcc != nullptr) {
 		auto mapper = impl->m_paintActor->GetMapper();
@@ -166,7 +170,10 @@ void GeoDataPolygonGroup::updateSelectedDataVtkObjects()
 	auto pointValues = vtkSmartPointer<vtkDoubleArray>::New();
 	pointValues->SetName(VALUE.c_str());
 
-	for (auto d : selectedData()) {
+	auto sData = selectedData();
+	if (sData.size() == 0) {return;}
+
+	for (auto d : sData) {
 		auto pol = dynamic_cast<GeoDataPolygonGroupPolygon*> (d);
 		double v = pol->value().toDouble();
 		auto offset = pol->indexOffset();
@@ -184,6 +191,7 @@ void GeoDataPolygonGroup::updateSelectedDataVtkObjects()
 			edgeValues->InsertNextValue(v);
 		}
 	}
+
 	impl->m_selectedPolygonsPointsPolyData->SetPoints(impl->m_points);
 	impl->m_selectedPolygonsPointsPolyData->SetVerts(points);
 	impl->m_selectedPolygonsPointsPolyData->GetCellData()->AddArray(pointValues);
@@ -255,6 +263,14 @@ bool GeoDataPolygonGroup::isMergablePolyDataGroup(GeoData* geoData)
 QString GeoDataPolygonGroup::captionForData(int number)
 {
 	return tr("Polygon%1").arg(number);
+}
+
+GeoDataPolyDataGroup* GeoDataPolygonGroup::createInstanceForCopy(PreProcessorGeoDataDataItemInterface *d)
+{
+	auto gItem = dynamic_cast<PreProcessorGeoDataGroupDataItemInterface*>(d->parent());
+	auto newGroup = new GeoDataPolygonGroup(d, creator(), gItem->condition());
+
+	return newGroup;
 }
 
 void GeoDataPolygonGroup::setupMenu()
@@ -378,6 +394,7 @@ void GeoDataPolygonGroup::updateMenu()
 
 	m->addSeparator();
 	m->addAction(mergeAction());
+	m->addAction(copyAction());
 	m->addAction(editColorSettingAction());
 	m->addAction(attributeBrowserAction());
 
@@ -424,6 +441,7 @@ void GeoDataPolygonGroup::updateMenu()
 
 	m->addSeparator();
 	m->addAction(mergeAction());
+	m->addAction(copyAction());
 	m->addAction(editColorSettingAction());
 	m->addAction(attributeBrowserAction());
 

@@ -68,7 +68,7 @@ void GeoDataRiverCrosssectionAltitudeMoveDialog::accept()
 	updateCrosssection();
 	GeoDataRiverCrosssection::AltitudeList after = m_point->crosssection().AltitudeInfo();
 
-	iRICUndoStack::instance().push(new GeoDataRiverSurvey::EditCrosssectionCommand(false, tr("Move Elevation Points"), m_point, after, before, m_window, m_rs));
+	iRICUndoStack::instance().push(new GeoDataRiverSurvey::EditCrosssectionCommand(false, tr("Move Elevation Points"), m_point, after, GeoDataRiverSurvey::EditCrosssectionCommand::NO_SEL, before, GeoDataRiverSurvey::EditCrosssectionCommand::NO_SEL, m_window, m_rs));
 	QDialog::accept();
 }
 
@@ -108,7 +108,7 @@ void GeoDataRiverCrosssectionAltitudeMoveDialog::apply()
 	updateCrosssection();
 	GeoDataRiverCrosssection::AltitudeList after = m_point->crosssection().AltitudeInfo();
 
-	iRICUndoStack::instance().push(new GeoDataRiverSurvey::EditCrosssectionCommand(true, tr("Move Elevation Points"), m_point, after, before, m_window, m_rs));
+	iRICUndoStack::instance().push(new GeoDataRiverSurvey::EditCrosssectionCommand(true, tr("Move Elevation Points"), m_point, after, GeoDataRiverSurvey::EditCrosssectionCommand::NO_SEL, before, GeoDataRiverSurvey::EditCrosssectionCommand::NO_SEL, m_window, m_rs));
 	m_applyed = true;
 }
 

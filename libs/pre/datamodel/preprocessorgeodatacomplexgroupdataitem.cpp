@@ -11,6 +11,7 @@
 #include <guicore/pre/complex/gridcomplexconditionwidget.h>
 #include <guicore/pre/gridcond/complex/gridcomplexattributecontainer.h>
 #include <guicore/pre/gridcond/complex/gridcomplexattributeeditwidget.h>
+#include <guicore/pre/gridcond/stringconverter/gridattributestringconverterenumerate.h>
 #include <guicore/pre/geodata/geodatacreator.h>
 #include <guicore/pre/geodatabackground/geodatabackgroundcomplex.h>
 #include <guicore/project/inputcond/inputconditionwidgetfilename.h>
@@ -300,9 +301,21 @@ void PreProcessorGeoDataComplexGroupDataItem::showEditGroupDialog()
 	renderGraphicsView();
 }
 
+void PreProcessorGeoDataComplexGroupDataItem::setupStringConverter(GridAttributeStringConverter* converter)
+{
+	auto c = dynamic_cast<GridAttributeStringConverterEnumerate*> (converter);
+	QMap<QVariant, QString> enums;
+
+	for (int i = 0; i < m_groups.size(); ++i) {
+		enums.insert(QVariant(i + 1), m_groups[i]->caption());
+	}
+
+	c->setEnumerations(enums);
+}
+
 void PreProcessorGeoDataComplexGroupDataItem::setupEditWidget(GridAttributeEditWidget* widget)
 {
-	GridComplexAttributeEditWidget* w = dynamic_cast<GridComplexAttributeEditWidget*>(widget);
+	auto w = dynamic_cast<GridComplexAttributeEditWidget*>(widget);
 	QMap<int, QString> enums;
 	int defIndex = 0;
 	for (int i = 0; i < m_groups.size(); ++i) {

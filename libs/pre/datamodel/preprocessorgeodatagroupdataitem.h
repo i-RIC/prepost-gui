@@ -57,8 +57,10 @@ public:
 	bool addImportFromWebAction(QMenu* menu);
 	QStringList getGeoDatasNotMapped();
 	void addCopyPolygon(GeoDataPolygon* polygon) override;
+	void addGeoData(PreProcessorGeoDataDataItemInterface *geoData) override;
 	GridAttributeDimensionsContainer* dimensions() const override;
 	PreProcessorGeoDataDataItemInterface* buildGeoDataDataItem() override;
+	GeoDataCreator* getPointMapCreator() override;
 
 	void informSelection(VTKGraphicsView* v) override;
 	void informDeselection(VTKGraphicsView* v) override;
@@ -71,6 +73,7 @@ public:
 	bool polygonExists() const;
 	void saveToCgnsFile(const int fn) override;
 	virtual void saveComplexGroupsToCgnsFile(const int fn);
+	void setupStringConverter(GridAttributeStringConverter* converter) override;
 	void setupEditWidget(GridAttributeEditWidget* widget) override;
 	void updateCrossectionWindows() override;
 	void openCrossSectionWindow(GeoDataRiverSurvey* rs, const QString& crosssection) override;
@@ -81,7 +84,6 @@ public:
 	QStringList containedFiles() override;
 	void setDimensionsToFirst();
 
-	void addGeoData(PreProcessorGeoDataDataItemInterface *geoData);
 	std::vector<GeoDataImporter*> importers() const;
 	GeoDataImporter* importer(const std::string& name) const;
 

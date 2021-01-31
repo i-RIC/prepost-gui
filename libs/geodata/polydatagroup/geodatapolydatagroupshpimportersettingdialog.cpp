@@ -171,3 +171,8 @@ QVariant GeoDataPolyDataGroupShpImporterSettingDialog::specifiedValue() const
 {
 	return ui->valueWidget->widget()->variantValue();
 }
+
+QString GeoDataPolyDataGroupShpImporterSettingDialog::codecName() const
+{
+	return ui->encodingComboBox->currentText();
+}

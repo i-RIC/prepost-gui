@@ -107,6 +107,7 @@ GeoDataRiverSurvey::Impl::Impl(GeoDataRiverSurvey* rs) :
 	m_interpolateSplineAction {new QAction(GeoDataRiverSurvey::tr("Spline"), rs)},
 	m_interpolateLinearAction {new QAction(GeoDataRiverSurvey::tr("Linear Curve"), rs)},
 	m_mapPointsAction {new QAction(GeoDataRiverSurvey::tr("Map points data"), rs)},
+	m_generatePointMapAction {new QAction(GeoDataRiverSurvey::tr("Generate points data"), rs)},
 	m_pixmapAdd {":/libs/guibase/images/cursorAdd.png"},
 	m_pixmapRemove {":/libs/guibase/images/cursorRemove.png"},
 	m_pixmapMove {":/libs/guibase/images/cursorItemMove.png"},
@@ -218,6 +219,7 @@ void GeoDataRiverSurvey::Impl::setupActions()
 	connect(m_showBackgroundAction, SIGNAL(triggered()), m_rs, SLOT(displaySetting()));
 	connect(m_interpolateSplineAction, SIGNAL(triggered()), m_rs, SLOT(switchInterpolateModeToSpline()));
 	connect(m_mapPointsAction, SIGNAL(triggered()), m_rs, SLOT(mapPointsData()));
+	connect(m_generatePointMapAction, SIGNAL(triggered()), m_rs, SLOT(generatePointMap()));
 	m_interpolateSplineAction->setCheckable(true);
 	m_interpolateSplineAction->setChecked(true);
 	connect(m_interpolateLinearAction, SIGNAL(triggered()), m_rs, SLOT(switchInterpolateModeToLinear()));
@@ -453,6 +455,7 @@ void GeoDataRiverSurvey::Impl::setupEditModeMenu(QMenu* m)
 
 	m->addSeparator();
 	m->addAction(m_mapPointsAction);
+	m->addAction(m_generatePointMapAction);
 
 	m->addSeparator();
 	m->addAction(m_rs->deleteAction());
@@ -551,6 +554,7 @@ void GeoDataRiverSurvey::Impl::createModeUpdateActionStatus()
 	m_generateAction->setEnabled(
 				m_leftBankLineController.polyLine().size() >= 2 &&
 				m_rightBankLineController.polyLine().size() >= 2);
+	m_generatePointMapAction->setDisabled(true);
 }
 
 void GeoDataRiverSurvey::Impl::editModeUpdateActionStatus()
@@ -577,6 +581,7 @@ void GeoDataRiverSurvey::Impl::editModeUpdateActionStatus()
 	m_removeRightExtensionPointAction->setEnabled(singleSelection && selected->crosssection().fixedPointRSet());
 	m_mapPointsAction->setEnabled(selectionExists);
 	m_openCrossSectionWindowAction->setEnabled(selectionExists);
+	m_generatePointMapAction->setEnabled(true);
 }
 
 void GeoDataRiverSurvey::Impl::updateVtkPointsObjects()

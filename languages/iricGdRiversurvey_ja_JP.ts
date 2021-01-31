@@ -401,6 +401,14 @@ If you want to adjust cross section position and map Points data again, you can 
         <source>Finish Defining Polyline</source>
         <translation>中心線の定義の終了</translation>
     </message>
+    <message>
+        <source>%1 generated.</source>
+        <translation>%1 が生成されました。</translation>
+    </message>
+    <message>
+        <source>Generate points data</source>
+        <translation>このデータから地勢データを生成</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataRiverSurvey::Impl</name>
@@ -1179,7 +1187,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>#x-section data contained data with same distances. Data distance is shifted slightly so that you can import both points.</source>
-        <translation>#x-section データに、同じ距離のデータが複数あります。距離を若干変更することにより、両方の点をインポートします。:%1</translation>
+        <translation>#x-section データに、同じ距離のデータが複数あります。距離を若干変更することにより、両方の点をインポートします。</translation>
     </message>
     <message>
         <source>River Survey data (*.riv)</source>
@@ -1391,6 +1399,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>Japan MLIT river survey data (*.csv)</source>
         <translation>日本 国土交通省 河川測量データ (*.csv)</translation>
+    </message>
+    <message>
+        <source>%1 Line %2: The number of values should be 5, but %3 values found.</source>
+        <translation>%1 %2行目: 5個の値がある必要がありますが、%3個しかありません。</translation>
     </message>
 </context>
 <context>

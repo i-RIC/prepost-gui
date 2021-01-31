@@ -30,6 +30,9 @@ public:
 	GeoDataPolyLineGroupPolyLine(geos::geom::LineString* lineString, GeoDataPolyLineGroup* group);
 	~GeoDataPolyLineGroupPolyLine();
 
+	bool intersectWithLine(const QPointF& p1, const QPointF& p2, QPointF* intersection, double* r) const;
+	bool intersectWithPolygon(const QPolygonF& polygon) const;
+
 	geos::geom::LineString* getGeosLineString() const;
 	void setGeosLineString(geos::geom::LineString* ls);
 
@@ -39,10 +42,12 @@ public:
 	void copyShapeFrom(GeoDataPolyData* data) override;
 	void copyShapeTo(GeoDataPolyData* data) override;
 
-	void loadExternalData(QDataStream* stream);
-	void saveExternalData(QDataStream* stream);
+	void loadExternalData(QDataStream* stream) override;
+	void saveExternalData(QDataStream* stream) override;
 
-	void applyOffset(double x, double y);
+	void applyOffset(double x, double y) override;
+
+	GeoDataPolyDataGroupPolyData* copy(GeoDataPolyDataGroup* group) const override;
 
 private slots:
 	void applyShape();

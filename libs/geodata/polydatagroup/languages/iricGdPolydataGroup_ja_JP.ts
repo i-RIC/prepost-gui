@@ -91,6 +91,18 @@
         <source>Sort data</source>
         <translation>データの並べ替え</translation>
     </message>
+    <message>
+        <source>Select Geographic Data</source>
+        <translation>地理情報の選択</translation>
+    </message>
+    <message>
+        <source>Please select which geographic data to copy this %1.</source>
+        <translation>この%1をコピーする先の地理情報を選択してください。</translation>
+    </message>
+    <message>
+        <source>Copy...</source>
+        <translation>コピー...</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolyDataGroupAttributeBrowser</name>
@@ -143,6 +155,25 @@
     <message>
         <source>Custom Color</source>
         <translation>色を指定</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyDataGroupCopySettingDialog</name>
+    <message>
+        <source>Copy Setting</source>
+        <translation>コピー設定</translation>
+    </message>
+    <message>
+        <source>Please specify values for copied data.</source>
+        <translation>コピーされたデータの値を指定してください。</translation>
+    </message>
+    <message>
+        <source>For all</source>
+        <translation>共通の値を指定</translation>
+    </message>
+    <message>
+        <source>For each</source>
+        <translation>個別の値を指定</translation>
     </message>
 </context>
 <context>

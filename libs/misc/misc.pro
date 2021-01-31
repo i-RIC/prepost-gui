@@ -44,10 +44,13 @@ HEADERS += anms.h \
            numericvaluecontainert.h \
            opacitycontainer.h \
            primitiveview.h \
+           pythonutil.h \
            qfontcontainer.h \
+           qpointfcompare.h \
            qpointfcontainer.h \
            qttool.h \
            qundocommandhelper.h \
+           rangecontainert.h \
            simplevaluecontainert.h \
            slowmotionspeededitdialog.h \
            splineinterpolator.h \
@@ -55,6 +58,7 @@ HEADERS += anms.h \
            stringcontainer.h \
            stringtool.h \
            threadwithprogressinfo.h \
+           tpoexporter.h \
            valuearraycontainert.h \
            valuechangert.h \
            valuerestorert.h \
@@ -73,7 +77,9 @@ HEADERS += anms.h \
            private/networksetting_impl.h \
            private/numericvaluecontainert_detail.h \
            private/qpointfcontainer_impl.h \
+           private/rangecontainert_detail.h \
            private/simplevaluecontainert_detail.h \
+           private/tpoexporter_impl.h \
            private/valuearraycontainert_detail.h \
            private/valuechangert_detail.h \
            private/valuerestorert_detail.h \
@@ -106,7 +112,9 @@ SOURCES += anms.cpp \
            networksetting.cpp \
            opacitycontainer.cpp \
            primitiveview.cpp \
+           pythonutil.cpp \
            qfontcontainer.cpp \
+           qpointfcompare.cpp \
            qpointfcontainer.cpp \
            qttool.cpp \
            qundocommandhelper.cpp \
@@ -116,6 +124,7 @@ SOURCES += anms.cpp \
            stringcontainer.cpp \
            stringtool.cpp \
            threadwithprogressinfo.cpp \
+           tpoexporter.cpp \
            versionnumber.cpp \
            windowgeometrycontainer.cpp \
            xmlattributecontainer.cpp \

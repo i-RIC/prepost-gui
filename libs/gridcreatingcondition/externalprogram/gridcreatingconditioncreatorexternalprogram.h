@@ -24,6 +24,8 @@ public:
 	static QList<GridCreatingConditionCreator*> getList(const QLocale& locale, QWidget* mainWindow);
 
 private:
+	static void addToList(const QString& dirName, const QLocale& locale, QWidget* w, QList<GridCreatingConditionCreator*>* list);
+
 	QString m_folderName;
 	SolverDefinitionGridType::GridType m_gridType;
 };

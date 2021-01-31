@@ -13,7 +13,8 @@
 #include <shapefil.h>
 
 GeoDataPolyDataGroupShpImporter::GeoDataPolyDataGroupShpImporter(const std::string& name, const QString& caption, GeoDataCreator* creator) :
-	GeoDataImporter {name, caption, creator}
+	GeoDataImporter {name, caption, creator},
+	m_codec {nullptr}
 {}
 
 GeoDataPolyDataGroupShpImporter::~GeoDataPolyDataGroupShpImporter()
@@ -103,5 +104,7 @@ bool GeoDataPolyDataGroupShpImporter::doInit(const QString& filename, const QStr
 	m_valueSetting = dialog.valueSetting();
 	m_valueAttribute = dialog.valueIndex();
 	m_specifiedValue = dialog.specifiedValue();
+	m_codec = QTextCodec::codecForName(dialog.codecName().toLatin1());
+
 	return true;
 }

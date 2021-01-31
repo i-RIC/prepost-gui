@@ -91,6 +91,18 @@
         <source>Sort data</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Select Geographic Data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please select which geographic data to copy this %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy...</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolyDataGroupAttributeBrowser</name>
@@ -143,6 +155,25 @@
     <message>
         <source>Custom Color</source>
         <translation>Color Personalizado</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyDataGroupCopySettingDialog</name>
+    <message>
+        <source>Copy Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please specify values for copied data.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>For all</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>For each</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

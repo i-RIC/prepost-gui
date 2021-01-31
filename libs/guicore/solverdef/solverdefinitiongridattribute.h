@@ -17,6 +17,7 @@ class GridAttributeContainer;
 class GridAttributeEditDialog;
 class GridAttributeEditNameAndValueDialog;
 class GridAttributeEditWidget;
+class GridAttributeStringConverter;
 class GridAttributeVariationEditWidget;
 class GridAttributeVariationEditDialog;
 class GeoData;
@@ -62,6 +63,8 @@ public:
 	/// @name Interface building functions
 	//@{
 	GridAttributeContainer* container(Grid* grid);
+
+	virtual GridAttributeStringConverter* stringConverter() const = 0;
 
 	GridAttributeEditDialog* editDialog(QWidget* parent);
 	GridAttributeEditNameAndValueDialog* editNameAndValueDialog(QWidget* parent);

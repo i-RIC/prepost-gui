@@ -31,6 +31,14 @@
         <source>Finish Defining Point</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Point Coordinates</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit Point Coordinates</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointColorSimpleSettingDialog</name>

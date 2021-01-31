@@ -10,6 +10,7 @@
 #include <QList>
 
 class GridComplexConditionGroupEditDialog;
+class PreProcessorGeoDataGroupDataItemInterface;
 class PreProcessorGridCrosssectionWindowProjectDataItem;
 class SolverDefinitionGridAttribute;
 class Structured2DGridCrosssectionEditCommand;
@@ -58,6 +59,7 @@ private slots:
 	void editRatio();
 	void showDisplaySettingDialog() {showPropertyDialog();}
 	void exportToFile();
+	void generatePointMap();
 
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
@@ -66,6 +68,7 @@ protected:
 	void doApplyOffset(double x, double y) override;
 
 private:
+	PreProcessorGeoDataGroupDataItemInterface* geoDataGroup() const;
 	void editVariation(GridAttributeVariationEditWidget::Mode mode, const QString& typeName);
 
 	SolverDefinitionGridAttribute* m_condition;
@@ -75,6 +78,7 @@ private:
 	bool m_isCustomModified;
 	QAction* m_editValueAction;
 	QAction* m_exportAction;
+	QAction* m_generatePointMapAction;
 	QAction* m_editDifferenceAction;
 	QAction* m_editRatioAction;
 	QAction* m_openXsectionWindowAction;

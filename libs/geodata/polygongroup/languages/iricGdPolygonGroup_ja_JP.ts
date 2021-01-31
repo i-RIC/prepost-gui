@@ -205,6 +205,116 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPolygonGroupCsvExporter</name>
+    <message>
+        <source>CSV file</source>
+        <translation>CSV ファイル</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>エラー</translation>
+    </message>
+    <message>
+        <source>Error occured while exporting to %1.</source>
+        <translation>%1 へのエクスポートでエラーが発生しました。</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>警告</translation>
+    </message>
+    <message>
+        <source>Some polygon in this polygon group has holes, but holes are not exported to CSV file. If you want to export holes, please export to ESRI Shapefile.</source>
+        <translation>ポリゴンに、穴が空いているものがありますが、 CSVファイルには穴の情報をエクスポートできません。穴の情報をエクスポートしたい場合、ESRIシェープファイルにエクスポートしてください。</translation>
+    </message>
+    <message>
+        <source>CSV file (*.csv)</source>
+        <translation>CSV ファイル (*.csv)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroupCsvImporter</name>
+    <message>
+        <source>CSV file (Polygons)</source>
+        <translation>CSV ファイル (ポリゴン)</translation>
+    </message>
+    <message>
+        <source>CSV file (Polygons) (*.csv)</source>
+        <translation>CSV ファイル (ポリゴン) (*.csv)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>エラー</translation>
+    </message>
+    <message>
+        <source>Error occured while opening %1</source>
+        <translation>%1 を開けませんでした。</translation>
+    </message>
+    <message>
+        <source>Error occured while reading header line. Make sure the file is saved in UTF-8 encoding.</source>
+        <translation>ヘッダ行の読み込み中にエラーが発生しました。UTF-8 エンコーディングで保存されているか確認してください。</translation>
+    </message>
+    <message>
+        <source>Error occured while reading header line. Header should have 5 columns at least.</source>
+        <translation>ヘッダ行の読み込み中にエラーが発生しました。ヘッダには5列以上データがなくてはいけません。</translation>
+    </message>
+    <message>
+        <source>Error occured while reading header line. Header should have 6 columns at least.</source>
+        <translation>ヘッダ行の読み込み中にエラーが発生しました。ヘッダには5列以上データがなくてはいけません。</translation>
+    </message>
+    <message>
+        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
+        <translation>ヘッダ行の読み込み中にエラーが発生しました。ヘッダには6列以上データがなくてはいけません。</translation>
+    </message>
+    <message>
+        <source>Error occured while reading line %1. There is no data.</source>
+        <translation>%1行目の読み込み中にエラーが発生しました。データがありません。</translation>
+    </message>
+    <message>
+        <source>Error occured while reading line %1. Polygon should have three points at least.</source>
+        <translation>ヘッダ行の読み込み中にエラーが発生しました。%1 列目の値は &quot;%2&quot; のはずですが、&quot;%3&quot; が指定されています。</translation>
+    </message>
+    <message>
+        <source>Error occured while reading line %1. Make sure the file is saved in UTF-8 encoding.</source>
+        <translation>%1行目の読み込み中にエラーが発生しました。UTF-8 エンコーディングで保存されているか確認してください。</translation>
+    </message>
+    <message>
+        <source>Error occured while reading line %1. Data should have 5 columns at least.</source>
+        <translation>%1行目の読み込み中にエラーが発生しました。5列以上データがなくてはいけません。</translation>
+    </message>
+    <message>
+        <source>Error occured while reading line %1. Data should have 6 columns at least.</source>
+        <translation>%1行目の読み込み中にエラーが発生しました。6列以上データがなくてはいけません。</translation>
+    </message>
+    <message>
+        <source>Error occured while reading &quot;pid&quot; value in line %1. &quot;pid&quot; should be integer value but &quot;%2&quot; is specified.</source>
+        <translation>%1行目の &quot;pid&quot; の読み込み中にエラーが発生しました。 &quot;pid&quot; は整数値でなくてはいけませんが、 &quot;%2&quot; が指定されました。</translation>
+    </message>
+    <message>
+        <source>Error occured while reading &quot;vid&quot; value in line %1. &quot;vid&quot; should be integer value but &quot;%2&quot; is specified.</source>
+        <translation>%1行目の &quot;vid&quot; の読み込み中にエラーが発生しました。 &quot;vid&quot; は整数値でなくてはいけませんが、 &quot;%2&quot; が指定されました。</translation>
+    </message>
+    <message>
+        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>%1行目の &quot;x&quot; の読み込み中にエラーが発生しました。 &quot;x&quot; は実数値でなくてはいけませんが、 &quot;%2&quot; が指定されました。</translation>
+    </message>
+    <message>
+        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>%1行目の &quot;y&quot; の読み込み中にエラーが発生しました。 &quot;y&quot; は実数値でなくてはいけませんが、 &quot;%2&quot; が指定されました。</translation>
+    </message>
+    <message>
+        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>%1行目の &quot;value&quot; の読み込み中にエラーが発生しました。 &quot;value&quot; は実数値でなくてはいけませんが、 &quot;%2&quot; が指定されました。</translation>
+    </message>
+    <message>
+        <source>Error occured while reading line %1. &quot;name&quot; should be the same for lines where &quot;pid&quot; values are the same.</source>
+        <translation>%1行目の読み込み中にエラーが発生しました。 &quot;name&quot; は同じ &quot;pid&quot; の行で共通である必要があります。</translation>
+    </message>
+    <message>
+        <source>Error occured while reading line %1. &quot;value&quot; should be the same for lines where &quot;pid&quot; values are the same.</source>
+        <translation>%1行目の読み込み中にエラーが発生しました。 &quot;value&quot; は同じ &quot;pid&quot; の行で共通である必要があります。</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPolygonGroupMergeSettingDialog</name>
     <message>
         <source>Select data to merge</source>

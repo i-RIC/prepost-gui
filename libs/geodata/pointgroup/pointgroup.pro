@@ -95,6 +95,8 @@ HEADERS += gd_pointgroup_global.h \
            geodatapointgroupcellmappert.h \
            geodatapointgroupcreator.h \
            geodatapointgroupcreatort.h \
+           geodatapointgroupcsvexporter.h \
+           geodatapointgroupcsvimporter.h \
            geodatapointgroupintegercreator.h \
            geodatapointgroupnodemappert.h \
            geodatapointgrouppoint.h \
@@ -109,6 +111,8 @@ HEADERS += gd_pointgroup_global.h \
 FORMS +=
 SOURCES += geodatapointgroup.cpp \
            geodatapointgroupcreator.cpp \
+           geodatapointgroupcsvexporter.cpp \
+           geodatapointgroupcsvimporter.cpp \
            geodatapointgroupintegercreator.cpp \
            geodatapointgrouppoint.cpp \
            geodatapointgrouprealcreator.cpp \
