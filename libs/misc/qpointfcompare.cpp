@@ -5,7 +5,7 @@
 QPointFCompare::QPointFCompare()
 {}
 
-bool QPointFCompare::operator()(const QPointF& a, const QPointF& b)
+bool QPointFCompare::operator()(const QPointF& a, const QPointF& b)const
 {
 	if (a.x() == b.x()) {
 		return a.y() < b.y();

@@ -10,7 +10,7 @@ class MISCDLL_EXPORT QPointFCompare
 public:
 	QPointFCompare();
 
-	bool operator()(const QPointF& a, const QPointF& b);
+	bool operator()(const QPointF& a, const QPointF& b)const;
 };
 
 #endif // QPOINTFCOMPARE_H

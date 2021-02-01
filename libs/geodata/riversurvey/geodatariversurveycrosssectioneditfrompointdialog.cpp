@@ -7,6 +7,7 @@
 
 #include <misc/iricundostack.h>
 
+#include <QItemSelectionModel>
 #include <QMessageBox>
 
 namespace {
