@@ -78,7 +78,7 @@ def mergeLangFiles(lang):
 
     lines.append("</TS>\n")
 
-    f = open(LANG_FOLDER + '/' + MERGED_NAME + lang + '.ts', 'w', encoding='utf-8')
+    f = open(LANG_FOLDER + '/' + MERGED_NAME + lang + '.ts', 'w', encoding='utf-8', newline="\n")
     f.write("".join(lines))
     f.close()
 
@@ -104,7 +104,7 @@ def splitLangFile(lang):
             result = re.search(r"<!\-\- (.+) ", l)
             if result or '</TS>' in l:
                 lines.append("</TS>\n")
-                f2 = open(LANG_FOLDER + '/' + fileName, 'w', encoding='utf-8')
+                f2 = open(LANG_FOLDER + '/' + fileName, 'w', encoding='utf-8', newline="\n")
                 f2.write("".join(lines))
                 f2.close()
 
@@ -135,7 +135,7 @@ def shrinkdics(path):
         lines.append(l)
     f.close()
 
-    f = open(path, 'w', encoding='utf-8')
+    f = open(path, 'w', encoding='utf-8', newline="\n")
     f.write(''.join(lines))
     f.close()
 
