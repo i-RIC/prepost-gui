@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>384</width>
-    <height>233</height>
+    <width>419</width>
+    <height>227</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -36,6 +36,27 @@
          <string>Where the elevation is the smallest</string>
         </property>
        </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QRadioButton" name="csvFileRadioButton">
+          <property name="text">
+           <string>Import center line from CSV file</string>
+          </property>
+          <property name="checked">
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="FilenameEditWidget" name="csvFilenameEdit">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
       </item>
      </layout>
     </widget>
@@ -94,6 +115,13 @@
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>FilenameEditWidget</class>
+   <extends>QLineEdit</extends>
+   <header>guibase/widget/filenameeditwidget.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections>
   <connection>
@@ -103,8 +131,8 @@
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>248</x>
-     <y>254</y>
+     <x>164</x>
+     <y>368</y>
     </hint>
     <hint type="destinationlabel">
      <x>157</x>
@@ -119,12 +147,28 @@
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>316</x>
-     <y>260</y>
+     <x>164</x>
+     <y>368</y>
     </hint>
     <hint type="destinationlabel">
      <x>286</x>
      <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>csvFileRadioButton</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>csvFilenameEdit</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>116</x>
+     <y>87</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>160</x>
+     <y>88</y>
     </hint>
    </hints>
   </connection>

@@ -9,6 +9,7 @@
 #include <misc/mathsupport.h>
 #include <misc/stringtool.h>
 
+#include <QDir>
 #include <QFile>
 #include <QFileInfo>
 #include <QMessageBox>
@@ -24,6 +25,7 @@ namespace {
 
 const double WRONG_KP = -9999;
 const double SHIFT_LEN = 0.001;
+const double DELTA = 1.0e-6;
 
 GeoDataRiverSurveyImporter::RivPathPoint* getPoint(double kp, std::string& kpStr, std::vector<GeoDataRiverSurveyImporter::RivPathPoint*>* points)
 {
@@ -260,6 +262,75 @@ GeoDataRiverSurveyImporter::Alt lowestAlt(const std::vector<GeoDataRiverSurveyIm
 	return ret;
 }
 
+// load coordinates of points from csvFileName and store the data to points
+bool loadPoints(const QString& csvFileName, std::vector<QPointF>* points, QWidget* parent)
+{
+	QFile f(csvFileName);
+	if (! f.open(QIODevice::ReadOnly | QIODevice::Text)) {
+		QMessageBox::critical(parent, GeoDataRiverSurveyImporter::tr("Error"), GeoDataRiverSurveyImporter::tr("Error occured while opening %1").arg(QDir::toNativeSeparators(csvFileName)));
+		return false;
+	}
+	int lineNo = 1;
+
+	points->clear();
+	QTextStream stream(&f);
+	while (true) {
+		if (stream.atEnd()) {break;}
+
+		QString str = stream.readLine();
+		auto frags = str.split(",");
+		if (frags.size() < 2) {
+			QMessageBox::critical(parent, GeoDataRiverSurveyImporter::tr("Error"), GeoDataRiverSurveyImporter::tr("%1 Line %2: Read error. Needs at least two values.").arg(QDir::toNativeSeparators(csvFileName)).arg(lineNo));
+			return false;
+		}
+		bool ok;
+		double x = frags.at(0).toDouble(&ok);
+		if (! ok) {
+			if (lineNo == 1) {
+				// first line can be a header line. Skip this line.
+				continue;
+			}
+			QMessageBox::critical(parent, GeoDataRiverSurveyImporter::tr("Error"), GeoDataRiverSurveyImporter::tr("%1 Line %2: Read error. Not real number value \"%3\".").arg(QDir::toNativeSeparators(csvFileName)).arg(lineNo).arg(frags.at(0)));
+			return false;
+		}
+		double y = frags.at(1).toDouble(&ok);
+		if (! ok) {
+			if (lineNo == 1) {
+				// first line can be a header line. Skip this line.
+				continue;
+			}
+			QMessageBox::critical(parent, GeoDataRiverSurveyImporter::tr("Error"), GeoDataRiverSurveyImporter::tr("%1 Line %2: Read error. Not real number value \"%3\".").arg(QDir::toNativeSeparators(csvFileName)).arg(lineNo).arg(frags.at(1)));
+			return false;
+		}
+		points->push_back(QPointF(x, y));
+		++ lineNo;
+	}
+	return true;
+}
+
+bool findCrossSection(const GeoDataRiverSurveyImporter::RivPathPoint& p, const std::vector<QPointF>& points, double* pos)
+{
+	for (int i = 0; i < points.size() - 1; ++i) {
+		QPointF p1 = points.at(i);
+		QPointF p2 = points.at(i + 1);
+
+		QPointF left = p.leftBank;
+		QPointF right = p.rightBank;
+
+		QPointF intersection;
+		double r, s;
+
+		bool ok = iRIC::intersectionPoint(left, right, p1, p2, &intersection, &r, &s);
+
+		if (! ok) {continue;}
+		if (r < -DELTA || r > 1 + DELTA || s < -DELTA || s > 1 + DELTA) {continue;}
+
+		*pos = iRIC::distance(left, intersection);
+		return true;
+	}
+	return false;
+}
+
 } // namespace
 
 GeoDataRiverSurveyImporter::Alt::Alt() :
@@ -307,6 +378,7 @@ bool GeoDataRiverSurveyImporter::doInit(const QString& filename, const QString& 
 	GeoDataRiverSurveyImporterSettingDialog dialog(w);
 	dialog.setWith4Points(m_with4Points);
 	dialog.setAllNamesAreNumber(m_allNamesAreNumber);
+	dialog.setFileName(filename);
 	int ret = dialog.exec();
 	if (ret == QDialog::Rejected) {
 		clearPoints(&m_points);
@@ -314,6 +386,7 @@ bool GeoDataRiverSurveyImporter::doInit(const QString& filename, const QString& 
 	}
 
 	m_cpSetting = dialog.centerPointSetting();
+	m_csvFilename = dialog.csvFileName();
 	if (m_allNamesAreNumber) {
 		sortByKP(&m_points);
 	} else if (dialog.reverseOrder()) {
@@ -328,7 +401,7 @@ bool GeoDataRiverSurveyImporter::importData(GeoData* data, int /*index*/, QWidge
 	GeoDataRiverSurvey* rs = dynamic_cast<GeoDataRiverSurvey*>(data);
 	rs->setEditMode();
 
-	return importData(rs, &m_points, m_cpSetting, m_with4Points, w);
+	return importData(rs, &m_points, m_cpSetting, m_with4Points, m_csvFilename, w);
 }
 
 const QStringList GeoDataRiverSurveyImporter::fileDialogFilters()
@@ -345,13 +418,18 @@ const QStringList GeoDataRiverSurveyImporter::acceptableExtensions()
 	return ret;
 }
 
-bool GeoDataRiverSurveyImporter::importData(GeoDataRiverSurvey* rs, std::vector<RivPathPoint*>* points, GeoDataRiverSurveyImporterSettingDialog::CenterPointSetting cpSetting, bool with4Points, QWidget* w)
+bool GeoDataRiverSurveyImporter::importData(GeoDataRiverSurvey* rs, std::vector<RivPathPoint*>* points, GeoDataRiverSurveyImporterSettingDialog::CenterPointSetting cpSetting, bool with4Points, const QString &csvFileName, QWidget* w)
 {
 	GeoDataRiverPathPoint *tail = rs->m_headPoint;
 
 	double left = 0, right = 0;
 	double minpos = 0, minval = 0;
 	bool ok = true;
+
+	std::vector<QPointF> centerPoints;
+	if (cpSetting == GeoDataRiverSurveyImporterSettingDialog::cpFile) {
+		if (! loadPoints(csvFileName, &centerPoints, w)) {return false;}
+	}
 
 	for (int i = 0; i < points->size(); ++i) {
 		RivPathPoint* p = points->at(i);
@@ -391,6 +469,15 @@ bool GeoDataRiverSurveyImporter::importData(GeoDataRiverSurvey* rs, std::vector<
 				shiftValue = (left + right) * 0.5;
 			} else if (cpSetting == GeoDataRiverSurveyImporterSettingDialog::cpElevation) {
 				shiftValue = minpos;
+			} else if (cpSetting == GeoDataRiverSurveyImporterSettingDialog::cpFile) {
+				bool found = findCrossSection(*p, centerPoints, &shiftValue);
+				if (! found) {
+					QMessageBox::warning(w, tr("Warning"), tr("Cross section %1 does not cross the center line. Center point is set to be the middle point of low water way.").arg(p->strKP.c_str()));
+					shiftValue = (left + right) * 0.5;
+				} else if (shiftValue < left || shiftValue > right) {
+					QMessageBox::warning(w, tr("Warning"), tr("On cross section %1, the center line does not cross in the low water way. Center point is set to be the middle point of low water way.").arg(p->strKP.c_str()));
+					shiftValue = (left + right) * 0.5;
+				}
 			}
 			double leftPoint = (left - shiftValue) /
 				(newPoint->crosssection().leftBank().position() - shiftValue);
@@ -422,6 +509,14 @@ bool GeoDataRiverSurveyImporter::importData(GeoDataRiverSurvey* rs, std::vector<
 				shiftValue = (left + right) * 0.5;
 			} else if (cpSetting == GeoDataRiverSurveyImporterSettingDialog::cpElevation) {
 				shiftValue = minpos;
+			} else if (cpSetting == GeoDataRiverSurveyImporterSettingDialog::cpFile) {
+				bool found = findCrossSection(*p, centerPoints, &shiftValue);
+				if (! found) {
+					QMessageBox::warning(w, tr("Warning"), tr("Cross section %1 does not cross the center line. Center point is set to be the middle point of left bank and right bank.").arg(p->strKP.c_str()));
+					left = newPoint->crosssection().leftBank().position();
+					right = newPoint->crosssection().rightBank().position();
+					shiftValue = (left + right) * 0.5;
+				}
 			}
 			newPoint->shiftCenter(shiftValue);
 		}

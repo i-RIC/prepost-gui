@@ -16,6 +16,7 @@ public:
 	enum CenterPointSetting {
 		cpMiddle,
 		cpElevation,
+		cpFile,
 	};
 
 	explicit GeoDataRiverSurveyImporterSettingDialog(QWidget* parent = nullptr);
@@ -23,9 +24,11 @@ public:
 
 	void setWith4Points(bool with4points);
 	void setAllNamesAreNumber(bool allNumber);
+	void setFileName(const QString& name);
 
 	CenterPointSetting centerPointSetting() const;
 	bool reverseOrder() const;
+	QString csvFileName() const;
 
 private:
 	Ui::GeoDataRiverSurveyImporterSettingDialog* ui;

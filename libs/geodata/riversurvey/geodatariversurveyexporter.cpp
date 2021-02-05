@@ -26,7 +26,6 @@ bool GeoDataRiverSurveyExporter::doExport(GeoData* data, const QString& filename
 	outstream.setRealNumberPrecision(10);
 
 	GeoDataRiverSurvey* rs = dynamic_cast<GeoDataRiverSurvey*>(data);
-	GeoDataRiverPathPoint* lastp = rs->headPoint()->nextPoint();
 	auto offset = pd->mainfile()->offset();
 
 	// now, export from the first one.
@@ -66,6 +65,29 @@ bool GeoDataRiverSurveyExporter::doExport(GeoData* data, const QString& filename
 		if (tmpp == nullptr) {break;}
 	}
 	file.close();
+
+	// export centerpoints
+	auto csvFilename = filename;
+	csvFilename.append(".csv"); // @todo check and fix the name.
+	QFile csvFile(csvFilename);
+	if (! csvFile.open(QIODevice::WriteOnly)) {
+		return false;
+	}
+	QTextStream csvOutstream(&csvFile);
+	csvOutstream.setRealNumberNotation(QTextStream::SmartNotation);
+	csvOutstream.setRealNumberPrecision(10);
+	csvOutstream << "x" << "," << "y" << "," << "name" << endl;
+
+	tmpp = rs->headPoint()->nextPoint();
+	while (true) {
+		QPointF center = tmpp->position();
+		csvOutstream << center.x() + offset.x() << "," << center.y() + offset.y() << "," << tmpp->name() << endl;
+
+		tmpp = tmpp->nextPoint();
+		if (tmpp == nullptr) {break;}
+	}
+	csvFile.close();
+
 	return true;
 }
 

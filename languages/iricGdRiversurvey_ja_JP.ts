@@ -1179,7 +1179,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>#x-section data contained data with same distances. Data with lowest elevation is used.: %1</source>
-        <translation>#x-section データに、同じ距離のデータが複数あります。最も標高の低い値を使用します。:%1</translation>
+        <translation type="vanished">#x-section データに、同じ距離のデータが複数あります。最も標高の低い値を使用します。:%1</translation>
     </message>
     <message>
         <source>#x-section data is not correctly ordered. Will be sorted automatically.</source>
@@ -1208,6 +1208,46 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>Cross Section data contained data with same distances. Data with lowest elevation is used.: %1</source>
         <translation type="vanished">横断データに、同じ距離のデータが複数あります。最も標高の低い値を使用します。:%1</translation>
+    </message>
+    <message>
+        <source>Error occured while opening %1</source>
+        <translation>%1 を開く処理でエラーが発生しました。</translation>
+    </message>
+    <message>
+        <source>%1 Line %2: Read error. Needs at least two values.</source>
+        <translation>%1 %2行目: 読み込みエラー。2つの値が必要です。</translation>
+    </message>
+    <message>
+        <source>%1 Line %2: Read error. Not real number value &quot;%3&quot;.</source>
+        <translation>%1 %2行目: 読み込みエラー。&quot;%3&quot; は実数として読み込めませんでした。</translation>
+    </message>
+    <message>
+        <source>Cross section %1 does not cross the centerline. Center point is set to be the middle point of left bank and right bank.</source>
+        <translation type="vanished">横断面 %1 は、ファイルから読み込んだ中心線と交差しませんでした。この横断面の中心点は、左岸と右岸の中点に設定されます。</translation>
+    </message>
+    <message>
+        <source>Cross section %1 does not cross the centerline. Center point is set to be the middle point of low water way.</source>
+        <translation type="vanished">横断面 %1 は、ファイルから読み込んだ中心線と交差しませんでした。この横断面の中心点は、低水敷の中央に設定されます。</translation>
+    </message>
+    <message>
+        <source>The centerline does not cross in the low water way. Center point is set to be the middle point of low water way.</source>
+        <translation type="obsolete">中心線は低水敷を通っていません。をマウスクリックにより定義してください。ダブルクリックするか、改行キーを押して完了します。</translation>
+    </message>
+    <message>
+        <source>On cross section %1, the centerline does not cross in the low water way. Center point is set to be the middle point of low water way.</source>
+        <translation type="vanished">横断面 %1 で、中心線が低水敷で交差しませんでした。この横断面の中心点は、低水敷の中央に設定されます。</translation>
+    </message>
+    <message>
+        <source>Cross section %1 does not cross the center line. Center point is set to be the middle point of low water way.</source>
+        <translation>横断面 %1 は、ファイルから読み込んだ中心線と交差しませんでした。この横断面の中心点は、低水敷の中央に設定されます。</translation>
+    </message>
+    <message>
+        <source>On cross section %1, the center line does not cross in the low water way. Center point is set to be the middle point of low water way.</source>
+        <translation>横断面 %1 で、中心線が低水敷で交差しませんでした。この横断面の中心点は、低水敷の中央に設定されます。</translation>
+    </message>
+    <message>
+        <source>Cross section %1 does not cross the center line. Center point is set to be the middle point of left bank and right bank.</source>
+        <translation>横断面 %1 は、ファイルから読み込んだ中心線と交差しませんでした。この横断面の中心点は、左岸と右岸の中点に設定されます。</translation>
     </message>
 </context>
 <context>
@@ -1251,6 +1291,14 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>Upstream to downstream</source>
         <translation>上流側から下流側へ</translation>
+    </message>
+    <message>
+        <source>Import from CSV file</source>
+        <translation type="vanished">CSVファイルからインポート</translation>
+    </message>
+    <message>
+        <source>Import center line from CSV file</source>
+        <translation>CSVファイルから中心線をインポート</translation>
     </message>
 </context>
 <context>

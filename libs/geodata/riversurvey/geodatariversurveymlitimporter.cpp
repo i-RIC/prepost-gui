@@ -240,7 +240,7 @@ bool GeoDataRiverSurveyMlitImporter::importData(GeoData* data, int /* index */, 
 	auto rs = dynamic_cast<GeoDataRiverSurvey*> (data);
 	rs->setEditMode();
 
-	return GeoDataRiverSurveyImporter::importData(rs, &m_points, m_cpSetting, m_with4Points, w);
+	return GeoDataRiverSurveyImporter::importData(rs, &m_points, m_cpSetting, m_with4Points, m_csvFilename, w);
 }
 
 const QStringList GeoDataRiverSurveyMlitImporter::fileDialogFilters()
@@ -271,6 +271,8 @@ bool GeoDataRiverSurveyMlitImporter::doInit(const QString& filename, const QStri
 	}
 
 	m_cpSetting = dialog.centerPointSetting();
+	m_csvFilename = dialog.csvFileName();
+
 	GeoDataRiverSurveyImporter::sortByKP(&m_points);
 	*count = 1;
 	return true;
