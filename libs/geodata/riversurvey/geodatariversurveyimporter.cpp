@@ -308,14 +308,14 @@ bool loadPoints(const QString& csvFileName, std::vector<QPointF>* points, QWidge
 	return true;
 }
 
-bool findCrossSection(GeoDataRiverSurveyImporter::RivPathPoint* p, const std::vector<QPointF>& points, double* pos)
+bool findCrossSection(const GeoDataRiverSurveyImporter::RivPathPoint& p, const std::vector<QPointF>& points, double* pos)
 {
 	for (int i = 0; i < points.size() - 1; ++i) {
 		QPointF p1 = points.at(i);
 		QPointF p2 = points.at(i + 1);
 
-		QPointF left = p->leftBank;
-		QPointF right = p->rightBank;
+		QPointF left = p.leftBank;
+		QPointF right = p.rightBank;
 
 		QPointF intersection;
 		double r, s;
@@ -470,7 +470,7 @@ bool GeoDataRiverSurveyImporter::importData(GeoDataRiverSurvey* rs, std::vector<
 			} else if (cpSetting == GeoDataRiverSurveyImporterSettingDialog::cpElevation) {
 				shiftValue = minpos;
 			} else if (cpSetting == GeoDataRiverSurveyImporterSettingDialog::cpFile) {
-				bool found = findCrossSection(p, centerPoints, &shiftValue);
+				bool found = findCrossSection(*p, centerPoints, &shiftValue);
 				if (! found) {
 					QMessageBox::warning(w, tr("Warning"), tr("Cross section %1 does not cross the center line. Center point is set to be the middle point of low water way.").arg(p->strKP.c_str()));
 					shiftValue = (left + right) * 0.5;
@@ -510,7 +510,7 @@ bool GeoDataRiverSurveyImporter::importData(GeoDataRiverSurvey* rs, std::vector<
 			} else if (cpSetting == GeoDataRiverSurveyImporterSettingDialog::cpElevation) {
 				shiftValue = minpos;
 			} else if (cpSetting == GeoDataRiverSurveyImporterSettingDialog::cpFile) {
-				bool found = findCrossSection(p, centerPoints, &shiftValue);
+				bool found = findCrossSection(*p, centerPoints, &shiftValue);
 				if (! found) {
 					QMessageBox::warning(w, tr("Warning"), tr("Cross section %1 does not cross the center line. Center point is set to be the middle point of left bank and right bank.").arg(p->strKP.c_str()));
 					left = newPoint->crosssection().leftBank().position();
