@@ -280,7 +280,7 @@ bool loadPoints(const QString& csvFileName, std::vector<QPointF>* points, QWidge
 		QString str = stream.readLine();
 		auto frags = str.split(",");
 		if (frags.size() < 2) {
-			QMessageBox::critical(parent, GeoDataRiverSurveyImporter::tr("Error"), GeoDataRiverSurveyImporter::tr("%1 Line %2: Read error. Needs two value at least.").arg(QDir::toNativeSeparators(csvFileName)).arg(lineNo));
+			QMessageBox::critical(parent, GeoDataRiverSurveyImporter::tr("Error"), GeoDataRiverSurveyImporter::tr("%1 Line %2: Read error. Needs at least two values.").arg(QDir::toNativeSeparators(csvFileName)).arg(lineNo));
 			return false;
 		}
 		bool ok;

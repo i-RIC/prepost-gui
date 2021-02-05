@@ -8430,7 +8430,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>%1 を開く処理でエラーが発生しました。</translation>
     </message>
     <message>
-        <source>%1 Line %2: Read error. Needs two value at least.</source>
+        <source>%1 Line %2: Read error. Needs at least two values.</source>
         <translation>%1 %2行目: 読み込みエラー。2つの値が必要です。</translation>
     </message>
     <message>

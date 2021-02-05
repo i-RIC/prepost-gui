@@ -1088,7 +1088,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>%1 Line %2: Read error. Needs two value at least.</source>
+        <source>%1 Line %2: Read error. Needs at least two values.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
