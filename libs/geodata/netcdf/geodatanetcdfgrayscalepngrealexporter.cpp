@@ -45,7 +45,7 @@ bool GeoDataNetcdfGrayscalePngRealExporter::doExportPng(GeoDataNetcdfReal* netcd
 	}
 
 	if (netcdf->dimensions()->containers().size() > 0) {
-		QMessageBox::critical(w, tr("Error"), tr("This data can not be exported. Data with \"Time\" dimension can not be exported to *.png"));
+		QMessageBox::critical(w, tr("Error"), tr("This data cannot be exported. Data with \"Time\" dimension cannot be exported to *.png"));
 		return false;
 	}
 

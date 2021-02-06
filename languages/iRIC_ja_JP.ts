@@ -2772,7 +2772,7 @@ p, li { white-space: pre-wrap; }
         <translation>このファイルはエクスポートできません。 PNG ファイルからインポートしたデータはありません。</translation>
     </message>
     <message>
-        <source>This data can not be exported. Data with &quot;Time&quot; dimension can not be exported to *.png</source>
+        <source>This data cannot be exported. Data with &quot;Time&quot; dimension cannot be exported to *.png</source>
         <translation>このデータはエクスポートできません。「時間」の次元を持つデータは *.png にエクスポートできません。</translation>
     </message>
     <message>
