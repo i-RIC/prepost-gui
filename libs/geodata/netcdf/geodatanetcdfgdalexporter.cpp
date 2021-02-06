@@ -35,7 +35,7 @@ bool GeoDataNetcdfGdalExporter::doExport(GeoData* data, const QString& filename,
 	}
 
 	GDALAllRegister();
-	char** papszOptions = NULL;
+	char** papszOptions = nullptr;
 
 	auto driverManager = GetGDALDriverManager();
 	GDALDriver* memDriver = driverManager->GetDriverByName("MEM");
@@ -75,7 +75,7 @@ bool GeoDataNetcdfGdalExporter::doExport(GeoData* data, const QString& filename,
 	copyData(netcdf, ncid, varid, starts, ends, band);
 	nc_close(ncid);
 
-	auto dataset2 = driver->CreateCopy(fname.c_str(), dataset, FALSE, NULL, NULL, NULL);
+	auto dataset2 = driver->CreateCopy(fname.c_str(), dataset, FALSE, nullptr, nullptr, nullptr);
 
 	delete dataset2;
 	delete dataset;
