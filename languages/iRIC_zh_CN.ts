@@ -2432,7 +2432,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>This data can not be exported. Data with &quot;Time&quot; dimension can not be exported to *.tif or *.asc.</source>
+        <source>This data cannot be exported. Data with &quot;Time&quot; dimension cannot be exported to *.tif or *.asc.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
