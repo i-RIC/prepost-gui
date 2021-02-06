@@ -25,7 +25,7 @@ bool GeoDataNetcdfGdalExporter::doExport(GeoData* data, const QString& filename,
 {
 	GeoDataNetcdf* netcdf = dynamic_cast<GeoDataNetcdf*> (data);
 	if (! netcdf->geoTransformExists()) {
-		QMessageBox::critical(w, tr("Error"), tr("This data can not be exported. It seems that is it not imported from *.tif or *.asc."));
+		QMessageBox::critical(w, tr("Error"), tr("This data cannot be exported. It seems that it was not imported from *.tif or *.asc."));
 		return false;
 	}
 

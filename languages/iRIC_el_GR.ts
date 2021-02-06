@@ -2350,7 +2350,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>This data can not be exported. It seems that is it not imported from *.tif or *.asc.</source>
+        <source>This data cannot be exported. It seems that it was not imported from *.tif or *.asc.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
