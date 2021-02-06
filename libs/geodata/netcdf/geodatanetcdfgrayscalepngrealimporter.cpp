@@ -53,7 +53,7 @@ bool GeoDataNetcdfGrayscalePngRealImporter::importData(GeoData* data, int /*inde
 	return true;
 }
 
-bool GeoDataNetcdfGrayscalePngRealImporter::doInit(const QString& /*filename*/, const QString& /*selectedFilter*/, int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemInterface* item, QWidget* w)
+bool GeoDataNetcdfGrayscalePngRealImporter::doInit(const QString& /*filename*/, const QString& /*selectedFilter*/, int* /*count*/, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemInterface* item, QWidget* w)
 {
 	if (condition->dimensions().size() > 0) {
 		QMessageBox::warning(w, tr("Warning"), tr("Grayscale 16bit PNG files can be imported for grid conditions without dimensions."));
