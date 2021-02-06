@@ -52,13 +52,14 @@ bool GeoDataNetcdfGdalExporter::doExport(GeoData* data, const QString& filename,
 	dataset->SetGeoTransform(netcdf->geoTransform());
 
 	auto csName = netcdf->coordinateSystemName();
-	auto csNameStr = iRIC::toStr(csName);
-
-	OGRSpatialReference SRC;
-	SRC.importFromProj4(csNameStr.c_str());
-	char* wktStr;
-	SRC.exportToWkt(&wktStr);
-	dataset->SetProjection(wktStr);
+	auto cs = netcdf->projectData()->mainWindow()->coordinateSystemBuilder()->system(csName);
+	if (cs != nullptr) {
+		OGRSpatialReference SRC;
+		SRC.importFromProj4(iRIC::toStr(cs->proj4PlaneStr()).c_str());
+		char* wktStr;
+		SRC.exportToWkt(&wktStr);
+		dataset->SetProjection(wktStr);
+	}
 
 	GDALRasterBand* band = dataset->GetRasterBand(1);
 
