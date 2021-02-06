@@ -169,7 +169,7 @@
         <translation type="unfinished">Erro</translation>
     </message>
     <message>
-        <source>This data can not be exported. It seems that is it not imported from *.png.</source>
+        <source>This data cannot be exported. It seems that it was not imported from *.png.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

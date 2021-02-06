@@ -40,7 +40,7 @@ const QStringList GeoDataNetcdfGrayscalePngRealExporter::fileDialogFilters()
 bool GeoDataNetcdfGrayscalePngRealExporter::doExportPng(GeoDataNetcdfReal* netcdf, const QString& filename, QWidget* w)
 {
 	if (! netcdf->geoTransformExists() || ! netcdf->baseAndResolutionExists()) {
-		QMessageBox::critical(w, tr("Error"), tr("This data can not be exported. It seems that is it not imported from *.png."));
+		QMessageBox::critical(w, tr("Error"), tr("This data cannot be exported. It seems that it was not imported from *.png."));
 		return false;
 	}
 
