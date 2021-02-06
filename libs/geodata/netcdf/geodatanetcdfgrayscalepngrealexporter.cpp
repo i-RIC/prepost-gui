@@ -70,7 +70,7 @@ bool GeoDataNetcdfGrayscalePngRealExporter::doExportPng(GeoDataNetcdfReal* netcd
 		return false;
 	}
 
-	png_struct* png_ptr = png_create_write_struct(PNG_LIBPNG_VER_STRING, NULL, NULL, NULL);
+	png_struct* png_ptr = png_create_write_struct(PNG_LIBPNG_VER_STRING, nullptr, nullptr, nullptr);
 	if (! png_ptr) {
 		QMessageBox::critical(w, tr("Error"), tr("Error occured while initializing libpng."));
 		return false;
@@ -100,7 +100,7 @@ bool GeoDataNetcdfGrayscalePngRealExporter::doExportPng(GeoDataNetcdfReal* netcd
 		png_write_row(png_ptr, reinterpret_cast<png_const_bytep>(row_buffer.data()));
 	}
 
-	png_write_end(png_ptr, NULL);
+	png_write_end(png_ptr, nullptr);
 
 	png_destroy_write_struct(&png_ptr, &png_info);
 

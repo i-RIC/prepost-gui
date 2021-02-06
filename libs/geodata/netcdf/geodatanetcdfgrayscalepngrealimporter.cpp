@@ -78,7 +78,7 @@ bool GeoDataNetcdfGrayscalePngRealImporter::importPng(GeoDataNetcdfReal* netcdf,
 		return false;
 	}
 
-	png_struct* png_ptr = png_create_read_struct(PNG_LIBPNG_VER_STRING, NULL,NULL, NULL);
+	png_struct* png_ptr = png_create_read_struct(PNG_LIBPNG_VER_STRING, nullptr, nullptr, nullptr);
 	png_info* png_info = png_create_info_struct(png_ptr);
 	png_init_io(png_ptr, fp);
 	png_set_sig_bytes(png_ptr, 8);
@@ -181,7 +181,7 @@ bool GeoDataNetcdfGrayscalePngRealImporter::importPng(GeoDataNetcdfReal* netcdf,
 
 	nc_close(ncid_out);
 
-	png_destroy_read_struct(&png_ptr, &png_info, NULL);
+	png_destroy_read_struct(&png_ptr, &png_info, nullptr);
 
 	netcdf->updateShapeData();
 	netcdf->handleDimensionCurrentIndexChange(0, 0);
