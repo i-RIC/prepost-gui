@@ -682,22 +682,22 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Target:</source>
-        <translation type="unfinished"></translation>
+        <translation>対象</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">警告</translation>
+        <translation>警告</translation>
     </message>
     <message>
         <source>Modifications you made will be discarded.</source>
-        <translation type="unfinished">行った変更は破棄されます。</translation>
+        <translation>行った変更は破棄されます。</translation>
     </message>
 </context>
 <context>
     <name>GridComplexConditionGroupRealEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">フォーム</translation>
+        <translation>フォーム</translation>
     </message>
     <message>
         <source>Targets</source>
@@ -920,6 +920,64 @@ Do you really want to import this file?</source>
     <message>
         <source>Groups</source>
         <translation>グループ</translation>
+    </message>
+</context>
+<context>
+    <name>InputConditionWidgetCgnsFile</name>
+    <message>
+        <source>Form</source>
+        <translation>フォーム</translation>
+    </message>
+    <message>
+        <source>...</source>
+        <translation>...</translation>
+    </message>
+    <message>
+        <source>Solver Name:</source>
+        <translation>ソルバー名:</translation>
+    </message>
+    <message>
+        <source>---</source>
+        <translation>---</translation>
+    </message>
+    <message>
+        <source>Solver Version:</source>
+        <translation>ソルバーバージョン:</translation>
+    </message>
+    <message>
+        <source>Grid Type:</source>
+        <translation>格子種類:</translation>
+    </message>
+    <message>
+        <source>Grid Size:</source>
+        <translation>格子サイズ:</translation>
+    </message>
+    <message>
+        <source>Number of results:</source>
+        <translation>計算結果の数:</translation>
+    </message>
+    <message>
+        <source>Structured</source>
+        <translation>構造格子</translation>
+    </message>
+    <message>
+        <source>Unstructured</source>
+        <translation>非構造格子</translation>
+    </message>
+    <message>
+        <source>Select File</source>
+        <translation>ファイルを選択してください</translation>
+    </message>
+</context>
+<context>
+    <name>InputConditionWidgetCgnsResult</name>
+    <message>
+        <source>(CGNS file is not selected)</source>
+        <translation>(CGNS ファイルが選択されていません)</translation>
+    </message>
+    <message>
+        <source>(There is no result)</source>
+        <translation>(計算結果がありません)</translation>
     </message>
 </context>
 <context>
