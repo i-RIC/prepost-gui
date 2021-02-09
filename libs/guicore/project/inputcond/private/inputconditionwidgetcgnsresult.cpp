@@ -86,10 +86,8 @@ void InputConditionWidgetCgnsResult::updateEnums()
 	m_comboBox->clear();
 	QStringList enums = getEnums();
 	if (enums.size() == 0) {
-		m_comboBox->blockSignals(true);
 		m_comboBox->addItem(tr("(There is no result)"));
 		m_comboBox->setCurrentIndex(0);
-		m_comboBox->blockSignals(true);
 		m_container->setValue("");
 	} else {
 		for (int i = 0; i < enums.size(); ++i) {
