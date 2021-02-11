@@ -127,7 +127,14 @@ void InputConditionContainerSet::setupContaner(const QDomNode& itemNode, const S
 				m_reals.insert(std::make_pair(parameterName, InputConditionContainerReal(parameterName, parameterCaption, defNode)));
 				m_containers.insert(std::make_pair(parameterName, &(m_reals[parameterName])));
 				connect(&(m_reals[parameterName]), SIGNAL(valueChanged()), this, SIGNAL(modified()));
-			} else if (valuetype == "string" || valuetype == "filename" || valuetype == "filename_all" || valuetype == "foldername") {
+			} else if (valuetype == "string" || valuetype == "filename" || valuetype == "filename_all" || valuetype == "foldername" ||
+								 valuetype == "cgns_filename" ||
+								 valuetype == "result_gridNodeInteger" || valuetype == "result_gridNodeReal" ||
+								 valuetype == "result_gridCellInteger" || valuetype == "result_gridCellReal" ||
+								 valuetype == "result_gridEdgeIInteger" || valuetype == "result_gridEdgeIReal" ||
+								 valuetype == "result_gridEdgeJInteger" || valuetype == "result_gridEdgeJReal" ||
+								 valuetype == "result_baseIterativeInteger" || valuetype == "result_baseIterativeReal"
+								 ) {
 				m_strings.insert(std::make_pair(parameterName, InputConditionContainerString(parameterName, parameterCaption, defNode)));
 				m_containers.insert(std::make_pair(parameterName, &(m_strings[parameterName])));
 				connect(&(m_strings[parameterName]), SIGNAL(valueChanged()), this, SIGNAL(modified()));
