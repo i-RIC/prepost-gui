@@ -488,10 +488,6 @@ Do you really want to import grid from this file?</source>
         <translation type="vanished">&amp;多边形组</translation>
     </message>
     <message>
-        <source>&amp;Polygon Group</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>&amp;Color Setting...</source>
         <translation>&amp;颜色设置...</translation>
     </message>
@@ -605,6 +601,10 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>&amp;Cross-Section Data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Polygons</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

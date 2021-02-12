@@ -8,7 +8,7 @@
 #include <shapefil.h>
 
 GeoDataPolygonGroupCreator::GeoDataPolygonGroupCreator(const QString& typeName) :
-	GeoDataPolyDataGroupCreator {typeName, tr("Polygon Group")}
+	GeoDataPolyDataGroupCreator {typeName, tr("Polygons")}
 {
 	importers().push_back(new GeoDataPolygonGroupShpImporter(this));
 	importers().push_back(new GeoDataPolygonGroupCsvImporter(this));
@@ -18,12 +18,12 @@ GeoDataPolygonGroupCreator::GeoDataPolygonGroupCreator(const QString& typeName) 
 
 QString GeoDataPolygonGroupCreator::name(unsigned int index) const
 {
-	return QString("polygonGroup%1").arg(index);
+	return QString("polygons%1").arg(index);
 }
 
 QString GeoDataPolygonGroupCreator::defaultCaption(unsigned int index) const
 {
-	return QString(tr("Polygon Group%1")).arg(index);
+	return QString(tr("Polygons%1")).arg(index);
 }
 
 bool GeoDataPolygonGroupCreator::isCreatable() const

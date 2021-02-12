@@ -478,10 +478,6 @@ Do you really want to import grid from this file?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&amp;Polygon Group</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Poly&amp;line</source>
         <translation type="unfinished"></translation>
     </message>
@@ -587,6 +583,10 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>&amp;Cross-Section Data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Polygons</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

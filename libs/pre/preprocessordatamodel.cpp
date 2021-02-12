@@ -338,7 +338,7 @@ void PreProcessorDataModel::setupGeoDataMenus()
 		m_geographicDataMenu->addMenu(dummy);
 
 		GeoDataPolygonGroup* polGroup = dynamic_cast<GeoDataPolygonGroup*>(raw);
-		dummy = new QMenu(tr("&Polygon Group"), m_geographicDataMenu);
+		dummy = new QMenu(tr("&Polygons"), m_geographicDataMenu);
 		if (polGroup != nullptr) {
 			connect(dummy, SIGNAL(aboutToShow()), this, SLOT(setupGeoDataSubMenu()));
 		} else {
@@ -378,7 +378,7 @@ void PreProcessorDataModel::setupGeoDataMenus()
 			dummy = new QMenu(tr("P&ointset Data"), m_geographicDataMenu);
 			dummy->setDisabled(true);
 			m_geographicDataMenu->addMenu(dummy);
-			dummy = new QMenu(tr("&Polygon Group"), m_geographicDataMenu);
+			dummy = new QMenu(tr("&Polygons"), m_geographicDataMenu);
 			dummy->addAction(m_geoDataAddActions.value(polygonGroupCreator));
 			m_geographicDataMenu->addMenu(dummy);
 			dummy = new QMenu(tr("Poly&line"), m_geographicDataMenu);
@@ -402,7 +402,7 @@ void PreProcessorDataModel::setupGeoDataMenus()
 			dummy = new QMenu(tr("P&ointset Data"), mainWindow());
 			dummy->setDisabled(true);
 			m_geographicDataMenu->addMenu(dummy);
-			dummy = new QMenu(tr("&Polygon Group"), mainWindow());
+			dummy = new QMenu(tr("&Polygons"), mainWindow());
 			dummy->setDisabled(true);
 			m_geographicDataMenu->addMenu(dummy);
 			dummy = new QMenu(tr("Poly&line"), mainWindow());

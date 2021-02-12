@@ -275,7 +275,7 @@ GeoDataPolyDataGroup* GeoDataPolygonGroup::createInstanceForCopy(PreProcessorGeo
 
 void GeoDataPolygonGroup::setupMenu()
 {
-	m_menu->setTitle(tr("P&olygon Group"));
+	m_menu->setTitle(tr("P&olygons"));
 
 	updateMenu();
 }

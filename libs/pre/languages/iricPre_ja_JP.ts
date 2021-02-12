@@ -509,11 +509,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>&amp;Polygon Group</source>
-        <translation>ポリゴングループ (&amp;P)</translation>
+        <translation type="vanished">ポリゴングループ (&amp;P)</translation>
     </message>
     <message>
         <source>&amp;Polygons</source>
-        <translation type="vanished">ポリゴングループ (&amp;P)</translation>
+        <translation>ポリゴンデータ (&amp;P)</translation>
     </message>
     <message>
         <source>&amp;Polygon</source>
