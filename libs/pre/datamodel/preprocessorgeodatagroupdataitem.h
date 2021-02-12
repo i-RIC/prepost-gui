@@ -52,7 +52,6 @@ public:
 	void editScalarBarLegendBox(PreProcessorScalarBarLegendBoxSettingDialog* dialog);
 	ScalarBarSetting& scalarBarSetting();
 	const QString& scalarBarTitle() const;
-	QAction* importAction() const;
 	bool addImportAction(QMenu* menu);
 	bool addImportFromWebAction(QMenu* menu);
 	QStringList getGeoDatasNotMapped();
@@ -88,6 +87,7 @@ public:
 	GeoDataImporter* importer(const std::string& name) const;
 
 public slots:
+	void importGeoData(QObject* creator);
 	void addGeoData(QObject* creator);
 	virtual void editScalarsToColors();
 	void import();
@@ -104,6 +104,8 @@ signals:
 	void selectGeoData(const QModelIndex& current);
 
 protected:
+	void importGeoData(GeoDataImporter* importer, const QString& filename, const QString& selectedFilter);
+
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	void loadExternalData(const QString& filename) override;
@@ -112,14 +114,15 @@ protected:
 
 	void addBackground();
 
+	QMenu* m_importMenu;
 	QMenu* m_addMenu;
-	QAction* m_importAction;
 	QAction* m_webImportAction;
 	QAction* m_editColorMapAction;
 	QAction* m_setupScalarBarAction;
 	QAction* m_exportAllPolygonsAction;
 	QAction* m_deleteSelectedAction;
 	QAction* m_deleteAllAction;
+	QSignalMapper* m_importSignalMapper;
 	QSignalMapper* m_addSignalMapper;
 	SolverDefinitionGridAttribute* m_condition;
 	GridAttributeDimensionsContainer* m_dimensions;
