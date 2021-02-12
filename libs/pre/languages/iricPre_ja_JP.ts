@@ -675,6 +675,10 @@ Do you really want to import grid from this file?</source>
         <source>&amp;Cross-Section Data</source>
         <translation>横断測量データ(&amp;C)</translation>
     </message>
+    <message>
+        <source>&amp;Lines</source>
+        <translation>ラインデータ(&amp;L)</translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGeoDataComplexGroupDataItem</name>

@@ -168,7 +168,11 @@
     </message>
     <message>
         <source>Polyline Group</source>
-        <translation>折れ線グループ</translation>
+        <translation type="vanished">折れ線グループ</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>ラインデータ</translation>
     </message>
 </context>
 <context>

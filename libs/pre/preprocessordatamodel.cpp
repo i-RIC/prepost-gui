@@ -381,7 +381,7 @@ void PreProcessorDataModel::setupGeoDataMenus()
 			dummy = new QMenu(tr("&Polygons"), m_geographicDataMenu);
 			dummy->addAction(m_geoDataAddActions.value(polygonGroupCreator));
 			m_geographicDataMenu->addMenu(dummy);
-			dummy = new QMenu(tr("Poly&line"), m_geographicDataMenu);
+			dummy = new QMenu(tr("&Lines"), m_geographicDataMenu);
 			dummy->addAction(m_geoDataAddActions.value(polylineCreator));
 			m_geographicDataMenu->addMenu(dummy);
 
@@ -405,7 +405,7 @@ void PreProcessorDataModel::setupGeoDataMenus()
 			dummy = new QMenu(tr("&Polygons"), mainWindow());
 			dummy->setDisabled(true);
 			m_geographicDataMenu->addMenu(dummy);
-			dummy = new QMenu(tr("Poly&line"), mainWindow());
+			dummy = new QMenu(tr("&Lines"), mainWindow());
 			dummy->setDisabled(true);
 			m_geographicDataMenu->addMenu(dummy);
 			deleteAllAction->setDisabled(true);

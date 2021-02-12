@@ -264,7 +264,7 @@ bool GeoDataPolyLineGroup::isMergablePolyDataGroup(GeoData* geoData)
 
 QString GeoDataPolyLineGroup::captionForData(int number)
 {
-	return tr("Polyline%1").arg(number);
+	return tr("Line%1").arg(number);
 }
 
 GeoDataPolyDataGroup* GeoDataPolyLineGroup::createInstanceForCopy(PreProcessorGeoDataDataItemInterface* d)
@@ -277,7 +277,7 @@ GeoDataPolyDataGroup* GeoDataPolyLineGroup::createInstanceForCopy(PreProcessorGe
 
 void GeoDataPolyLineGroup::setupMenu()
 {
-	m_menu->setTitle(tr("Poly&line Group"));
+	m_menu->setTitle(tr("&Lines"));
 
 	updateMenu();
 }

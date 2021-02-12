@@ -167,7 +167,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Polyline Group</source>
+        <source>Lines</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -589,6 +589,10 @@ Do you really want to import grid from this file?</source>
         <source>&amp;Polygons</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>&amp;Lines</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGeoDataComplexGroupDataItem</name>

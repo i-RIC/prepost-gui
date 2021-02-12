@@ -428,7 +428,7 @@ void Graph2dHybridWindowResultSetting::setupMap()
 	}
 	m_dataTypeInfoMap.insert(xaK, tmpmap);
 
-	// for Polyline and Polyline group
+	// for Polyline and lines
 	tmpmap.clear();
 	tmpmap.insert(dimBase, emptylist);
 	tmpmap.insert(dim1D, emptylist);
@@ -834,7 +834,7 @@ QString Graph2dHybridWindowResultSetting::autoXAxisLabel(Graph2dHybridWindowResu
 		return Graph2dHybridWindow::tr("Polyline");
 		break;
 	case Graph2dHybridWindowResultSetting::xaPolyLineGroup:
-		return Graph2dHybridWindow::tr("Polyline Group");
+		return Graph2dHybridWindow::tr("Lines");
 		break;
 	}
 	return "";
