@@ -209,7 +209,7 @@ GeoDataPolyDataGroup* GeoDataPointGroup::createInstanceForCopy(PreProcessorGeoDa
 
 void GeoDataPointGroup::setupMenu()
 {
-	m_menu->setTitle(tr("P&oint Group"));
+	m_menu->setTitle(tr("P&oint"));
 
 	updateMenu();
 }
