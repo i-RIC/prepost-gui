@@ -15942,6 +15942,10 @@ Do you really want to import grid from this file?</source>
         <source>&amp;Add</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>&amp;Import</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGeoDataDataItem</name>
@@ -15964,10 +15968,6 @@ Do you really want to import grid from this file?</source>
 </context>
 <context>
     <name>PreProcessorGeoDataGroupDataItem</name>
-    <message>
-        <source>&amp;Import...</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message>
         <source>&amp;Import from web...</source>
         <translation type="unfinished"></translation>
@@ -16095,6 +16095,10 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Are you sure you want to delete all items in %1 group?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Import</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
