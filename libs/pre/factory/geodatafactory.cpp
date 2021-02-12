@@ -25,21 +25,27 @@ GeoDataFactory::GeoDataFactory() :
 	// @todo add GeoDataCreator instances into
 	// m_creators here when you added new
 	// classes those inherits GeoDataCreator.
+
+	// river survey data, points data, rasterdata
 	m_creators.push_back(new GeoDataRiverSurveyCreator());
-	m_creators.push_back(new GeoDataPointRealCreator());
-	m_creators.push_back(new GeoDataPointGroupIntegerCreator());
-	m_creators.push_back(new GeoDataPointGroupRealCreator());
 	m_creators.push_back(new GeoDataPointmapRealCreator());
+	m_creators.push_back(new GeoDataNetcdfIntegerCreator());
+	m_creators.push_back(new GeoDataNetcdfRealCreator());
+
+	// vector data
 	m_creators.push_back(new GeoDataPolygonIntegerCreator());
 	m_creators.push_back(new GeoDataPolygonRealCreator());
 	m_creators.push_back(new GeoDataPolygonGroupIntegerCreator());
 	m_creators.push_back(new GeoDataPolygonGroupRealCreator());
+
 	m_creators.push_back(new GeoDataPolyLineIntegerCreator());
 	m_creators.push_back(new GeoDataPolyLineRealCreator());
 	m_creators.push_back(new GeoDataPolyLineGroupIntegerCreator);
 	m_creators.push_back(new GeoDataPolyLineGroupRealCreator);
-	m_creators.push_back(new GeoDataNetcdfIntegerCreator());
-	m_creators.push_back(new GeoDataNetcdfRealCreator());
+
+	m_creators.push_back(new GeoDataPointRealCreator());
+	m_creators.push_back(new GeoDataPointGroupIntegerCreator());
+	m_creators.push_back(new GeoDataPointGroupRealCreator());
 }
 
 GeoDataFactory& GeoDataFactory::instance()
