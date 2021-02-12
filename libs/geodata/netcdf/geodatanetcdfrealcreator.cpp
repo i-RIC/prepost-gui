@@ -15,7 +15,6 @@ GeoDataNetcdfRealCreator::GeoDataNetcdfRealCreator() :
 {
 	importers().push_back(new GeoDataNetcdfGdalRealImporter(this));
 	importers().push_back(new GeoDataNetcdfRealImporter(this));
-	importers().push_back(new GeoDataNetcdfXbandImporter(this));
 	importers().push_back(new GeoDataNetcdfGrayscalePngRealImporter(this));
 
 	exporters().push_back(new GeoDataNetcdfGdalRealExporter(this));

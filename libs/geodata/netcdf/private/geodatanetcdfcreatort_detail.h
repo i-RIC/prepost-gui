@@ -18,6 +18,7 @@ bool GeoDataNetcdfCreatorT<V, DA>::isCompatibleWith(SolverDefinitionGridAttribut
 {
 	auto cond = dynamic_cast<SolverDefinitionGridAttributeT<V>* >(condition);
 	if (cond == nullptr) {return false;}
+	if (cond->dimensions().size() > 0) {return false;}
 
 	return true;
 }

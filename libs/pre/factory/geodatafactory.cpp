@@ -3,6 +3,8 @@
 #include <guicore/pre/geodata/geodatacreator.h>
 #include <geodata/netcdf/geodatanetcdfintegercreator.h>
 #include <geodata/netcdf/geodatanetcdfrealcreator.h>
+#include <geodata/netcdf/geodatanetcdftimeseriesintegercreator.h>
+#include <geodata/netcdf/geodatanetcdftimeseriesrealcreator.h>
 #include <geodata/point/geodatapointrealcreator.h>
 #include <geodata/pointgroup/geodatapointgroupintegercreator.h>
 #include <geodata/pointgroup/geodatapointgrouprealcreator.h>
@@ -31,6 +33,8 @@ GeoDataFactory::GeoDataFactory() :
 	m_creators.push_back(new GeoDataPointmapRealCreator());
 	m_creators.push_back(new GeoDataNetcdfIntegerCreator());
 	m_creators.push_back(new GeoDataNetcdfRealCreator());
+	m_creators.push_back(new GeoDataNetcdfTimeSeriesIntegerCreator());
+	m_creators.push_back(new GeoDataNetcdfTimeSeriesRealCreator());
 
 	// vector data
 	m_creators.push_back(new GeoDataPolygonIntegerCreator());
