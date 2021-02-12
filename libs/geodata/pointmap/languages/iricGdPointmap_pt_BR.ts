@@ -72,7 +72,7 @@
     </message>
     <message>
         <source>P&amp;ointset Data</source>
-        <translation>Dados DEM (&amp;O)</translation>
+        <translation type="vanished">Dados DEM (&amp;O)</translation>
     </message>
     <message>
         <source>Information</source>
@@ -266,6 +266,10 @@
         <source>To interpolate points, you must specify more than two points, and the last point should be existing point. Do you want to retry, or cancel the operation?</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>P&amp;oint Cloud Data</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointmapAddPointDialog</name>
@@ -443,18 +447,26 @@
     <name>GeoDataPointmapRealCreator</name>
     <message>
         <source>Points</source>
-        <translation>Pontos</translation>
+        <translation type="vanished">Pontos</translation>
     </message>
     <message>
         <source>Points%1</source>
-        <translation>Dados do terreno %1</translation>
+        <translation type="vanished">Dados do terreno %1</translation>
+    </message>
+    <message>
+        <source>Point Cloud Data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Cloud Data%1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapRealExporter</name>
     <message>
         <source>Pointset (DEM etc.)</source>
-        <translation>Dados do terreno (DEM etc.)</translation>
+        <translation type="vanished">Dados do terreno (DEM etc.)</translation>
     </message>
     <message>
         <source>Topography File (*.tpo)</source>
@@ -471,6 +483,10 @@
     <message>
         <source>RIC-Nays DEM (*.dat)</source>
         <translation type="vanished">Dados de RIC-Nays DEM (*.dat)</translation>
+    </message>
+    <message>
+        <source>Point Cloud Data (DEM etc.)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

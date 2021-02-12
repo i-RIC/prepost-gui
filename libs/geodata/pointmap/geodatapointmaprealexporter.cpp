@@ -13,7 +13,7 @@
 #include <vtkDoubleArray.h>
 
 GeoDataPointmapRealExporter::GeoDataPointmapRealExporter(GeoDataCreator* creator) :
-	GeoDataExporter(tr("Pointset (DEM etc.)"), creator)
+	GeoDataExporter(tr("Point Cloud Data (DEM etc.)"), creator)
 {}
 
 bool GeoDataPointmapRealExporter::doExport(GeoData* data, const QString& filename, const QString& selectedFilter, QWidget* w, ProjectData* pd)

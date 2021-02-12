@@ -72,7 +72,7 @@
     </message>
     <message>
         <source>P&amp;ointset Data</source>
-        <translation>DEM データ(&amp;O)</translation>
+        <translation type="vanished">DEM データ(&amp;O)</translation>
     </message>
     <message>
         <source>Information</source>
@@ -286,6 +286,10 @@
         <source>To interpolate points, you must specify more than two points, and the last point should be existing point. Do you want to retry, or cancel the operation?</source>
         <translation>点の補間を実行するには、2つ以上の点を指定する必要があり、また最初と最後の点は既存の点である必要があります。再試行しますか?それとも操作をキャンセルしますか?</translation>
     </message>
+    <message>
+        <source>P&amp;oint Cloud Data</source>
+        <translation>点群データ(&amp;O)</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointmapAddPointDialog</name>
@@ -463,18 +467,26 @@
     <name>GeoDataPointmapRealCreator</name>
     <message>
         <source>Points</source>
-        <translation>点群データ</translation>
+        <translation type="vanished">点群データ</translation>
     </message>
     <message>
         <source>Points%1</source>
-        <translation>地勢データ%1</translation>
+        <translation type="vanished">地勢データ%1</translation>
+    </message>
+    <message>
+        <source>Point Cloud Data</source>
+        <translation>点群データ</translation>
+    </message>
+    <message>
+        <source>Point Cloud Data%1</source>
+        <translation>点群データ%1</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapRealExporter</name>
     <message>
         <source>Pointset (DEM etc.)</source>
-        <translation>地勢データ (DEM など)</translation>
+        <translation type="vanished">地勢データ (DEM など)</translation>
     </message>
     <message>
         <source>Topography File (*.tpo)</source>
@@ -491,6 +503,10 @@
     <message>
         <source>RIC-Nays DEM (*.dat)</source>
         <translation type="vanished">RIC-Nays DEM データ (*.dat)</translation>
+    </message>
+    <message>
+        <source>Point Cloud Data (DEM etc.)</source>
+        <translation>点群データ (DEMなど)</translation>
     </message>
 </context>
 <context>

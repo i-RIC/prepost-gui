@@ -329,7 +329,7 @@ void PreProcessorDataModel::setupGeoDataMenus()
 		m_geographicDataMenu->addMenu(dummy);
 
 		GeoDataPointmap* pm = dynamic_cast<GeoDataPointmap*>(raw);
-		dummy = new QMenu(tr("P&ointset Data"), m_geographicDataMenu);
+		dummy = new QMenu(tr("P&oint Cloud Data"), m_geographicDataMenu);
 		if (pm == nullptr) {
 			dummy->setDisabled(true);
 		} else {
@@ -375,7 +375,7 @@ void PreProcessorDataModel::setupGeoDataMenus()
 			dummy = new QMenu(tr("&Cross-Section Data"), m_geographicDataMenu);
 			dummy->setDisabled(true);
 			m_geographicDataMenu->addMenu(dummy);
-			dummy = new QMenu(tr("P&ointset Data"), m_geographicDataMenu);
+			dummy = new QMenu(tr("P&oint Cloud Data"), m_geographicDataMenu);
 			dummy->setDisabled(true);
 			m_geographicDataMenu->addMenu(dummy);
 			dummy = new QMenu(tr("&Polygons"), m_geographicDataMenu);
@@ -399,7 +399,7 @@ void PreProcessorDataModel::setupGeoDataMenus()
 			dummy = new QMenu(tr("&Cross-Section Data"), m_geographicDataMenu);
 			dummy->setDisabled(true);
 			m_geographicDataMenu->addMenu(dummy);
-			dummy = new QMenu(tr("P&ointset Data"), mainWindow());
+			dummy = new QMenu(tr("P&oint Cloud Data"), mainWindow());
 			dummy->setDisabled(true);
 			m_geographicDataMenu->addMenu(dummy);
 			dummy = new QMenu(tr("&Polygons"), mainWindow());

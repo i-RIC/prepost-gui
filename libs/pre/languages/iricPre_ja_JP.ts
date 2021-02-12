@@ -679,6 +679,10 @@ Do you really want to import grid from this file?</source>
         <source>&amp;Lines</source>
         <translation>ラインデータ(&amp;L)</translation>
     </message>
+    <message>
+        <source>P&amp;oint Cloud Data</source>
+        <translation>点群データ(&amp;O)</translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGeoDataComplexGroupDataItem</name>
@@ -989,7 +993,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Generate points data</source>
-        <translation>このデータから点群データを生成</translation>
+        <translation type="vanished">このデータから点群データを生成</translation>
     </message>
     <message>
         <source>Topography File (*.tpo)</source>
@@ -1018,6 +1022,10 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>%1 generated.</source>
         <translation>%1 が生成されました。</translation>
+    </message>
+    <message>
+        <source>Generate point cloud data</source>
+        <translation>このデータから点群データを生成</translation>
     </message>
 </context>
 <context>
@@ -1307,11 +1315,15 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Generate points data</source>
-        <translation>このデータから地勢データを生成</translation>
+        <translation type="vanished">このデータから地勢データを生成</translation>
     </message>
     <message>
         <source>%1 generated.</source>
         <translation>%1 が生成されました。</translation>
+    </message>
+    <message>
+        <source>Generate point cloud data</source>
+        <translation>このデータから点群データを生成</translation>
     </message>
 </context>
 <context>

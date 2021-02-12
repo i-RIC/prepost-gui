@@ -621,6 +621,10 @@ Do you really want to import grid from this file?</source>
         <source>&amp;Lines</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>P&amp;oint Cloud Data</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGeoDataComplexGroupDataItem</name>
@@ -921,10 +925,6 @@ Do you really want to import grid from this file?</source>
         <translation type="unfinished">Exportar...</translation>
     </message>
     <message>
-        <source>Generate points data</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Topography File (*.tpo)</source>
         <translation type="unfinished">Dados de terreno  (*.tpo)</translation>
     </message>
@@ -950,6 +950,10 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>%1 generated.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Generate point cloud data</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1217,11 +1221,11 @@ This algorithm can be used only for structured grids.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Generate points data</source>
+        <source>%1 generated.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>%1 generated.</source>
+        <source>Generate point cloud data</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

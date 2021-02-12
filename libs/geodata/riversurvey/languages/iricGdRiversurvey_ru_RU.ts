@@ -320,10 +320,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Map points data</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>%1 is not defined yet</source>
         <translation type="unfinished"></translation>
     </message>
@@ -372,20 +368,28 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Generate points data</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Cross-section data is generated using Points data.
-If you want to adjust cross section position and map Points data again, you can use &quot;Map points data&quot;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Cross-section data need at least 2 center points.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Generate Cross-Section Data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No point cloud data to map is found. Please import point cloud data.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cross-section data is generated using point cloud data.
+If you want to adjust cross section position and map point clouod data again, you can use &quot;Map point cloud data&quot;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Map point cloud data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Generate point cloud data</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -337,7 +337,7 @@
     </message>
     <message>
         <source>Map points data</source>
-        <translation>地勢データのマッピング</translation>
+        <translation type="vanished">地勢データのマッピング</translation>
     </message>
     <message>
         <source>%1 is not defined yet</source>
@@ -407,12 +407,12 @@ If you want to adjust cross section position and map Points data again, you can 
     </message>
     <message>
         <source>Generate points data</source>
-        <translation>このデータから地勢データを生成</translation>
+        <translation type="vanished">このデータから地勢データを生成</translation>
     </message>
     <message>
         <source>Cross-section data is generated using Points data.
 If you want to adjust cross section position and map Points data again, you can use &quot;Map points data&quot;</source>
-        <translation>地勢データから、横断測量データが生成されました。
+        <translation type="vanished">地勢データから、横断測量データが生成されました。
 横断線の位置や向きを調整して再度マッピングを行いたい場合、「地勢データのマッピング」メニューを使用してください。</translation>
     </message>
     <message>
@@ -422,6 +422,24 @@ If you want to adjust cross section position and map Points data again, you can 
     <message>
         <source>Generate Cross-Section Data</source>
         <translation>横断測量データの生成</translation>
+    </message>
+    <message>
+        <source>No point cloud data to map is found. Please import point cloud data.</source>
+        <translation>点群データが見つかりません。点群データをインポートして下さい。</translation>
+    </message>
+    <message>
+        <source>Cross-section data is generated using point cloud data.
+If you want to adjust cross section position and map point clouod data again, you can use &quot;Map point cloud data&quot;</source>
+        <translation>点群データから、横断測量データが生成されました。
+横断線の位置や向きを調整して再度マッピングを行いたい場合、「点群データのマッピング」メニューを使用してください。</translation>
+    </message>
+    <message>
+        <source>Map point cloud data</source>
+        <translation>点群データのマッピング</translation>
+    </message>
+    <message>
+        <source>Generate point cloud data</source>
+        <translation>このデータから点群データを生成</translation>
     </message>
 </context>
 <context>
