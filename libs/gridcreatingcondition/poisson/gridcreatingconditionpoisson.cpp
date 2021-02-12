@@ -82,7 +82,7 @@ GeoDataRiverSurvey* findRiverSurveyData(GridCreatingCondition* cond)
 		for (auto rItem : rItems) {
 			auto riverSurvey = dynamic_cast<GeoDataRiverSurvey*>(rItem->geoData());
 			if (riverSurvey != nullptr) {
-				// this is a river survey data!
+				// this is a cross-section data!
 				return riverSurvey;
 			}
 		}
@@ -551,7 +551,7 @@ void GridCreatingConditionPoisson::showInitialDialog()
 			impl->copyCenterLine(rs, dialog.value());
 		}
 	} else {
-		QMessageBox::information(preProcessorWindow(), tr("Warning"), tr("River Survey data not found. Please define Center Line by yourself."));
+		QMessageBox::information(preProcessorWindow(), tr("Warning"), tr("Cross-section data not found. Please define Center Line by yourself."));
 		impl->m_mouseEventMode = Impl::MouseEventMode::BeforeDefining;
 	}
 }

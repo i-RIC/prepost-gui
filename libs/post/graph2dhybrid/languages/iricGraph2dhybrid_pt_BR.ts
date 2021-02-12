@@ -452,7 +452,11 @@
     </message>
     <message>
         <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm &quot;Create grid from from river survey data&quot;&lt;/li&gt;&lt;/ul&gt;</source>
-        <translation>Esta funcao podera ser usada somente quando as seguintes condicoes forem atendidas: &lt;ul&gt;&lt;li&gt;  Delineado o grafico sobre o resultado de calculo da grade estruturada com a dimensao 2. &lt;/li&gt;&lt;li&gt; O eixo X configurado para a direcao I na grade. &lt;/li&gt;&lt;li&gt;  A grade procriada com o algoritmo &quot;Criacao da grade atraves de dados do levantamento do rio&quot;  &quot;&lt;/li&gt;&lt;/ul&gt;</translation>
+        <translation type="vanished">Esta funcao podera ser usada somente quando as seguintes condicoes forem atendidas: &lt;ul&gt;&lt;li&gt;  Delineado o grafico sobre o resultado de calculo da grade estruturada com a dimensao 2. &lt;/li&gt;&lt;li&gt; O eixo X configurado para a direcao I na grade. &lt;/li&gt;&lt;li&gt;  A grade procriada com o algoritmo &quot;Criacao da grade atraves de dados do levantamento do rio&quot;  &quot;&lt;/li&gt;&lt;/ul&gt;</translation>
+    </message>
+    <message>
+        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm &quot;Create grid from from cross-section data&quot;&lt;/li&gt;&lt;/ul&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

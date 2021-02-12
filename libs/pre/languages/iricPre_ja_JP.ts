@@ -501,7 +501,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>&amp;River Survey</source>
-        <translation>河川測量データ (&amp;R)</translation>
+        <translation type="vanished">河川測量データ (&amp;R)</translation>
     </message>
     <message>
         <source>P&amp;ointset Data</source>
@@ -670,6 +670,10 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Importing %1 failed.</source>
         <translation type="vanished">%1 のインポートが失敗しました。</translation>
+    </message>
+    <message>
+        <source>&amp;Cross-Section Data</source>
+        <translation>横断測量データ(&amp;C)</translation>
     </message>
 </context>
 <context>

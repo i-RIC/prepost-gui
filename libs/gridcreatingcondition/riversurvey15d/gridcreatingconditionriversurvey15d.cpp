@@ -257,11 +257,11 @@ bool GridCreatingConditionRiverSurvey15D::init()
 		for (auto rit = rItems.begin(); ! found && rit != rItems.end(); ++rit) {
 			PreProcessorGeoDataDataItemInterface* rItem = *rit;
 			if (dynamic_cast<GeoDataRiverSurvey*>(rItem->geoData()) != nullptr) {
-				// this is a river survey data!
+				// this is a cross-section data!
 
-				// @todo currently, the river survey data found first, is
+				// @todo currently, the cross-section data found first, is
 				// automatically selected.
-				// For cases when there are multiple river survey data, this
+				// For cases when there are multiple cross-section data, this
 				// implementation should be changed.
 				m_riverSurvey = dynamic_cast<GeoDataRiverSurvey*>(rItem->geoData());
 				connect(m_riverSurvey, SIGNAL(dataUpdated()), this, SLOT(handleDataChange()));
@@ -271,8 +271,8 @@ bool GridCreatingConditionRiverSurvey15D::init()
 		}
 	}
 	if (! found) {
-		// there is no river survey data.
-		QMessageBox::warning(dataModel()->mainWindow(), tr("Error"), tr("There is no river survey data. This grid creating condition is not available."));
+		// there is no cross-section data.
+		QMessageBox::warning(dataModel()->mainWindow(), tr("Error"), tr("There is no cross-section data. This grid creating condition is not available."));
 		return false;
 	}
 	// delete division points on cross sections
@@ -299,7 +299,7 @@ void GridCreatingConditionRiverSurvey15D::setupVtkContainers()
 	// setup grid. (for graphic data)
 	m_riverCenterLine = vtkSmartPointer<vtkStructuredGrid>::New();
 
-	m_fixedPoints = vtkSmartPointer<vtkUnstructuredGrid>::New();            // points which consist of river survey lines.
+	m_fixedPoints = vtkSmartPointer<vtkUnstructuredGrid>::New();            // points which consist of cross-section lines.
 	m_ctrlPoints = vtkSmartPointer<vtkUnstructuredGrid>::New();             // control points.
 	m_selectedCtrlPoints = vtkSmartPointer<vtkUnstructuredGrid>::New();     // selected control points
 	m_selectedCtrlZone = vtkSmartPointer<vtkStructuredGrid>::New();         // selected zone
@@ -1368,7 +1368,7 @@ void GridCreatingConditionRiverSurvey15D::handleDataChange()
 
 void GridCreatingConditionRiverSurvey15D::handleDataDestroy()
 {
-	// River survey data is destroyed.
+	// Cross-section data is destroyed.
 	// This algorithm is no longer available.
 	PreProcessorGridCreatingConditionDataItemInterface* item = dynamic_cast<PreProcessorGridCreatingConditionDataItemInterface*>(parent());
 	item->setCondition(0);

@@ -249,7 +249,7 @@
     </message>
     <message>
         <source>Generate River Survey data</source>
-        <translation>河川測量データの生成</translation>
+        <translation type="vanished">河川測量データの生成</translation>
     </message>
     <message>
         <source>Build Left bank and Right bank lines</source>
@@ -362,7 +362,7 @@
     <message>
         <source>River survey data is generated using Points data.
 If you want to adjust cross section position and map Points data again, you can use &quot;Map points data&quot;</source>
-        <translation>地勢データから、河川測量データが生成されました。
+        <translation type="vanished">地勢データから、河川測量データが生成されました。
 横断線の位置や向きを調整して再度マッピングを行いたい場合、「地勢データのマッピング」メニューを使用してください。</translation>
     </message>
     <message>
@@ -375,7 +375,7 @@ If you want to adjust cross section position and map Points data again, you can 
     </message>
     <message>
         <source>River survey data need at least 2 center points.</source>
-        <translation>最低2つの河川横断せんがなくてはいけません。</translation>
+        <translation type="vanished">最低2つの河川横断せんがなくてはいけません。</translation>
     </message>
     <message>
         <source>Please define center line by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
@@ -409,16 +409,34 @@ If you want to adjust cross section position and map Points data again, you can 
         <source>Generate points data</source>
         <translation>このデータから地勢データを生成</translation>
     </message>
+    <message>
+        <source>Cross-section data is generated using Points data.
+If you want to adjust cross section position and map Points data again, you can use &quot;Map points data&quot;</source>
+        <translation>地勢データから、横断測量データが生成されました。
+横断線の位置や向きを調整して再度マッピングを行いたい場合、「地勢データのマッピング」メニューを使用してください。</translation>
+    </message>
+    <message>
+        <source>Cross-section data need at least 2 center points.</source>
+        <translation>最低2つの河川横断線がなくてはいけません。</translation>
+    </message>
+    <message>
+        <source>Generate Cross-Section Data</source>
+        <translation>横断測量データの生成</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataRiverSurvey::Impl</name>
     <message>
         <source>&amp;River Survey</source>
-        <translation>河川測量データ (&amp;R)</translation>
+        <translation type="vanished">河川測量データ (&amp;R)</translation>
     </message>
     <message>
         <source>  </source>
         <translation>  </translation>
+    </message>
+    <message>
+        <source>&amp;Cross-Section Data</source>
+        <translation>横断測量データ(&amp;C)</translation>
     </message>
 </context>
 <context>
@@ -448,11 +466,19 @@ If you want to adjust cross section position and map Points data again, you can 
     <name>GeoDataRiverSurveyCreator</name>
     <message>
         <source>River Survey data</source>
-        <translation>河川測量データ</translation>
+        <translation type="vanished">河川測量データ</translation>
     </message>
     <message>
         <source>RiverSurvey %1</source>
-        <translation>河川測量データ %1</translation>
+        <translation type="vanished">河川測量データ %1</translation>
+    </message>
+    <message>
+        <source>Cross-Section Data</source>
+        <translation>横断測量データ</translation>
+    </message>
+    <message>
+        <source>Cross-Section Data%1</source>
+        <translation>横断測量データ%1</translation>
     </message>
 </context>
 <context>
@@ -817,7 +843,7 @@ If you want to adjust cross section position and map Points data again, you can 
     </message>
     <message>
         <source>River Survey Data</source>
-        <translation>河川測量データ</translation>
+        <translation type="vanished">河川測量データ</translation>
     </message>
     <message>
         <source>Color</source>
@@ -846,6 +872,10 @@ If you want to adjust cross section position and map Points data again, you can 
     <message>
         <source>Select Water Surface Elevation to use</source>
         <translation>使用する水位を選択</translation>
+    </message>
+    <message>
+        <source>Cross-Section Data</source>
+        <translation>横断測量データ</translation>
     </message>
 </context>
 <context>
@@ -967,11 +997,15 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <name>GeoDataRiverSurveyExporter</name>
     <message>
         <source>River Survey data (*.riv)</source>
-        <translation>河川測量データ (*.riv)</translation>
+        <translation type="vanished">河川測量データ (*.riv)</translation>
     </message>
     <message>
         <source>River Survey data(*.riv)</source>
-        <translation>河川測量データ(*.riv)</translation>
+        <translation type="vanished">河川測量データ(*.riv)</translation>
+    </message>
+    <message>
+        <source>Cross-Section Data (*.riv)</source>
+        <translation>横断測量データ (*.riv)</translation>
     </message>
 </context>
 <context>
@@ -1191,7 +1225,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>River Survey data (*.riv)</source>
-        <translation>河川測量データ (*.riv)</translation>
+        <translation type="vanished">河川測量データ (*.riv)</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -1248,6 +1282,14 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>Cross section %1 does not cross the center line. Center point is set to be the middle point of left bank and right bank.</source>
         <translation>横断面 %1 は、ファイルから読み込んだ中心線と交差しませんでした。この横断面の中心点は、左岸と右岸の中点に設定されます。</translation>
+    </message>
+    <message>
+        <source>Cross-Section data (*.riv)</source>
+        <translation>横断測量データ (*.riv)</translation>
+    </message>
+    <message>
+        <source>Cross-Section Data (*.riv)</source>
+        <translation>横断測量データ (*.riv)</translation>
     </message>
 </context>
 <context>
@@ -1442,15 +1484,23 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>MLIT River Survey Data(*.csv)</source>
-        <translation>国土交通省 河川測量データ (*.csv)</translation>
+        <translation type="vanished">国土交通省 河川測量データ (*.csv)</translation>
     </message>
     <message>
         <source>Japan MLIT river survey data (*.csv)</source>
-        <translation>日本 国土交通省 河川測量データ (*.csv)</translation>
+        <translation type="vanished">日本 国土交通省 河川測量データ (*.csv)</translation>
     </message>
     <message>
         <source>%1 Line %2: The number of values should be 5, but %3 values found.</source>
         <translation>%1 %2行目: 5個の値がある必要がありますが、%3個しかありません。</translation>
+    </message>
+    <message>
+        <source>MLIT Cross-Section Data (*.csv)</source>
+        <translation>国土交通省 横断測量データ (*.csv)</translation>
+    </message>
+    <message>
+        <source>Japan MLIT Cross-Section Data (*.csv)</source>
+        <translation>国土交通省 横断測量データ (*.csv)</translation>
     </message>
 </context>
 <context>

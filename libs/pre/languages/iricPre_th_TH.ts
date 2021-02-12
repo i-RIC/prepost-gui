@@ -466,10 +466,6 @@ Do you really want to import grid from this file?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&amp;River Survey</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>P&amp;ointset Data</source>
         <translation type="unfinished"></translation>
     </message>
@@ -587,6 +583,10 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Mapping geographic data, boundary condition finished successfully.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Cross-Section Data</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

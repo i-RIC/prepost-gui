@@ -769,10 +769,6 @@
         <translation>输入要导出的文件名</translation>
     </message>
     <message>
-        <source>River Survey Data(*.riv)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Error</source>
         <translation>错误</translation>
     </message>
@@ -795,6 +791,10 @@
     <message>
         <source>%1 is updated.</source>
         <translation>%1已更新</translation>
+    </message>
+    <message>
+        <source>Cross-Section Data (*.riv)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

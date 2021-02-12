@@ -5,13 +5,13 @@
     <name>GridCreatingConditionCreatorRiverSurvey15D</name>
     <message>
         <source>Create 1.5D grid from river survey data</source>
-        <translation>河川測量データから 1.5次元格子を生成</translation>
+        <translation type="vanished">河川測量データから 1.5次元格子を生成</translation>
     </message>
     <message>
         <source>The grid shape is automatically defined using river survey data. You can specify the grid division number, by adding grid creation control points on river center.
 Note: This algorithm is available only when river survey data is loaded!Please switch algorithm to this, after importing river survey data.
 </source>
-        <translation>格子形状は、河川測量データから自動的に定義されます。格子制御点を河川中心線に追加することにより、格子の分割数を指定できます。
+        <translation type="vanished">格子形状は、河川測量データから自動的に定義されます。格子制御点を河川中心線に追加することにより、格子の分割数を指定できます。
 注意: このアルゴリズムは、河川総量データを読み込んだ場合のみ利用できます。河川測量データを読み込んでから、このアルゴリズムを選択してください。
 </translation>
     </message>
@@ -21,7 +21,23 @@ Note: This algorithm is available only when river survey data is loaded!Please s
     </message>
     <message>
         <source>No river survey data exists in geographic data now. This algorithm is not available.</source>
-        <translation>河川測量データが、地理情報に読み込まれていません。このアルゴリズムは利用できません。</translation>
+        <translation type="vanished">河川測量データが、地理情報に読み込まれていません。このアルゴリズムは利用できません。</translation>
+    </message>
+    <message>
+        <source>Create 1.5D grid from cross-section data</source>
+        <translation>横断測量データから 1.5次元格子を生成</translation>
+    </message>
+    <message>
+        <source>The grid shape is automatically defined using cross-section data. You can specify the grid division number, by adding grid creation control points on river center.
+Note: This algorithm is available only when cross-section data is loaded!Please switch algorithm to this, after importing cross-section data.
+</source>
+        <translation>格子形状は、横断測量データから自動的に定義されます。格子制御点を河川中心線に追加することにより、格子の分割数を指定できます。
+注意: このアルゴリズムは、横断測量データを読み込んだ場合のみ利用できます。横断測量データを読み込んでから、このアルゴリズムを選択してください。
+</translation>
+    </message>
+    <message>
+        <source>No cross-section data exists in geographic data now. This algorithm is not available.</source>
+        <translation>横断測量データがありません。この格子生成条件は利用できません。</translation>
     </message>
 </context>
 <context>
@@ -36,7 +52,7 @@ Note: This algorithm is available only when river survey data is loaded!Please s
     </message>
     <message>
         <source>There is no river survey data. This grid creating condition is not available.</source>
-        <translation>河川測量データがありません。この格子生成条件は利用できません。</translation>
+        <translation type="vanished">河川測量データがありません。この格子生成条件は利用できません。</translation>
     </message>
     <message>
         <source>&amp;Add Division Points...</source>
@@ -85,6 +101,10 @@ Note: This algorithm is available only when river survey data is loaded!Please s
     <message>
         <source>Reposition Control Points</source>
         <translation>格子生成制御点の再配置</translation>
+    </message>
+    <message>
+        <source>There is no cross-section data. This grid creating condition is not available.</source>
+        <translation>横断測量データがありません。この格子生成条件は利用できません。</translation>
     </message>
 </context>
 <context>

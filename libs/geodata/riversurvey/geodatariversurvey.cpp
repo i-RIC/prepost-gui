@@ -703,7 +703,7 @@ void GeoDataRiverSurvey::generateData()
 	informSelection(graphicsView());
 	renderGraphicsView();
 
-	InformationDialog::information(preProcessorWindow(), tr("Information"), tr("River survey data is generated using Points data.\n"
+	InformationDialog::information(preProcessorWindow(), tr("Information"), tr("Cross-section data is generated using Points data.\n"
 																																						 "If you want to adjust cross section position and map Points data again, you can use \"Map points data\""), "riversurvey_mapping_dem");
 }
 
@@ -838,7 +838,7 @@ void GeoDataRiverSurvey::deleteSelectedPoints()
 	}
 
 	if (num - selectedNum < 2) {
-		QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("River survey data need at least 2 center points."), QMessageBox::Ok, QMessageBox::Ok);
+		QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("Cross-section data need at least 2 center points."), QMessageBox::Ok, QMessageBox::Ok);
 	} else {
 		iRICUndoStack::instance().push(new DeleteRiverPathPointCommand(this));
 	}

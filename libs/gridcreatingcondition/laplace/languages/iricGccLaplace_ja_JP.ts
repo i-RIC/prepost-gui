@@ -24,7 +24,7 @@
     </message>
     <message>
         <source>River Survey data not found. Please define Center Line by yourself.</source>
-        <translation>河川測量データが見つかりません。中心線を、自分で作成してください。</translation>
+        <translation type="vanished">河川測量データが見つかりません。中心線を、自分で作成してください。</translation>
     </message>
     <message>
         <source>Information</source>
@@ -209,6 +209,10 @@
     <message>
         <source>Edge Coordinates</source>
         <translation>線の座標</translation>
+    </message>
+    <message>
+        <source>Cross-section data not found. Please define Center Line by yourself.</source>
+        <translation>横断測量データが見つかりません。中心線を、自分で作成してください。</translation>
     </message>
 </context>
 <context>

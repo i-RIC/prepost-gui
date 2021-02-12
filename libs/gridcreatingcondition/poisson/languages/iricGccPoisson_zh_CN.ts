@@ -72,7 +72,7 @@
     </message>
     <message>
         <source>River Survey data not found. Please define Center Line by yourself.</source>
-        <translation>找不到河流测量数据。请自行定义中心线。</translation>
+        <translation type="vanished">找不到河流测量数据。请自行定义中心线。</translation>
     </message>
     <message>
         <source>Grid region not defined yet.</source>
@@ -125,6 +125,10 @@
     <message>
         <source>Edit %1 Coordinates</source>
         <translation>编辑 %1 坐标</translation>
+    </message>
+    <message>
+        <source>Cross-section data not found. Please define Center Line by yourself.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

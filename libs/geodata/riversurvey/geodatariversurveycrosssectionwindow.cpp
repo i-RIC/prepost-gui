@@ -889,7 +889,7 @@ void GeoDataRiverSurveyCrosssectionWindow::setupSurveyTable()
 	ui->surveysTableWidget->setColumnCount(3);
 	QList<QString> labels;
 	labels.append("");
-	labels.append(tr("River Survey Data"));
+	labels.append(tr("Cross-Section Data"));
 	labels.append(tr("Color"));
 	ui->surveysTableWidget->setHorizontalHeaderLabels(labels);
 	ui->surveysTableWidget->setColumnWidth(0, TABLE_CHECK_WIDTH);

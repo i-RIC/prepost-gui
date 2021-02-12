@@ -320,7 +320,7 @@ void PreProcessorDataModel::setupGeoDataMenus()
 
 		GeoData* raw = item->geoData();
 		GeoDataRiverSurvey* s = dynamic_cast<GeoDataRiverSurvey*>(raw);
-		dummy = new QMenu(tr("&River Survey"), m_geographicDataMenu);
+		dummy = new QMenu(tr("&Cross-Section Data"), m_geographicDataMenu);
 		if (s == nullptr) {
 			dummy->setDisabled(true);
 		} else {
@@ -372,7 +372,7 @@ void PreProcessorDataModel::setupGeoDataMenus()
 			}
 			setupGeoDataAddActions(gitem);
 			QMenu* dummy;
-			dummy = new QMenu(tr("&River Survey"), m_geographicDataMenu);
+			dummy = new QMenu(tr("&Cross-Section Data"), m_geographicDataMenu);
 			dummy->setDisabled(true);
 			m_geographicDataMenu->addMenu(dummy);
 			dummy = new QMenu(tr("P&ointset Data"), m_geographicDataMenu);
@@ -396,7 +396,7 @@ void PreProcessorDataModel::setupGeoDataMenus()
 		} else {
 			// no raw data selected. create dummy menus.
 			QMenu* dummy;
-			dummy = new QMenu(tr("&River Survey"), m_geographicDataMenu);
+			dummy = new QMenu(tr("&Cross-Section Data"), m_geographicDataMenu);
 			dummy->setDisabled(true);
 			m_geographicDataMenu->addMenu(dummy);
 			dummy = new QMenu(tr("P&ointset Data"), mainWindow());

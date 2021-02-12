@@ -84,7 +84,7 @@ GeoDataRiverSurvey::Impl::Impl(GeoDataRiverSurvey* rs) :
 	m_backgroundActor {vtkActor::New()},
 	m_rightClickingMenu {nullptr},
 	m_menuIsSetup {false},
-	m_generateAction {new QAction(GeoDataRiverSurvey::tr("Generate River Survey data"), rs)},
+	m_generateAction {new QAction(GeoDataRiverSurvey::tr("Generate Cross-Section Data"), rs)},
 	m_buildBankLinesAction {new QAction(GeoDataRiverSurvey::tr("Build Left bank and Right bank lines"), rs)},
 	m_addVertexAction {new QAction(QIcon(":/libs/guibase/images/iconAddPolygonVertex.png"), GeoDataRiverSurvey::tr("&Add Vertex"), rs)},
 	m_removeVertexAction {new QAction(QIcon(":/libs/guibase/images/iconRemovePolygonVertex.png"), GeoDataRiverSurvey::tr("&Remove Vertex"), rs)},
@@ -391,7 +391,7 @@ void GeoDataRiverSurvey::Impl::setupMenu()
 	delete m_rightClickingMenu;
 	m_rightClickingMenu = new QMenu();
 
-	m->setTitle(tr("&River Survey"));
+	m->setTitle(tr("&Cross-Section Data"));
 	m->addAction(m_rs->m_editNameAction);
 
 	if (m_mode == Mode::CreateMode) {

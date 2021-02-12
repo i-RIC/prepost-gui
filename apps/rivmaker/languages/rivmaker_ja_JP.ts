@@ -799,7 +799,7 @@
     </message>
     <message>
         <source>River Survey Data(*.riv)</source>
-        <translation>河川測量データ (*.riv)</translation>
+        <translation type="vanished">河川測量データ (*.riv)</translation>
     </message>
     <message>
         <source>Error</source>
@@ -824,6 +824,10 @@
     <message>
         <source>%1 is updated.</source>
         <translation>%1 が更新されました。</translation>
+    </message>
+    <message>
+        <source>Cross-Section Data (*.riv)</source>
+        <translation>横断測量データ (*.riv)</translation>
     </message>
 </context>
 <context>

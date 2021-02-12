@@ -15,13 +15,13 @@ GridCreatingConditionCreatorRiverSurvey15D::GridCreatingConditionCreatorRiverSur
 	GridCreatingConditionCreator()
 {
 	m_name = "riversurvey15d";
-	m_caption = tr("Create 1.5D grid from river survey data");
+	m_caption = tr("Create 1.5D grid from cross-section data");
 	m_description = tr(
-		"The grid shape is automatically defined using river survey data. "
+		"The grid shape is automatically defined using cross-section data. "
 		"You can specify the grid division number, by adding grid creation "
 		"control points on river center.\n"
-		"Note: This algorithm is available only when river survey data is loaded!"
-		"Please switch algorithm to this, after importing river survey data.\n");
+		"Note: This algorithm is available only when cross-section data is loaded!"
+		"Please switch algorithm to this, after importing cross-section data.\n");
 }
 
 GridCreatingConditionCreatorRiverSurvey15D::~GridCreatingConditionCreatorRiverSurvey15D()
@@ -49,9 +49,9 @@ bool GridCreatingConditionCreatorRiverSurvey15D::checkAvailability(PreProcessorG
 		}
 	}
 	if (! riverSurveyFound) {
-		// No river survey data exists. Not available.
+		// No cross-section data exists. Not available.
 		QWidget* w = condDataItem->mainWindow();
-		QMessageBox::warning(w, tr("Warning"), tr("No river survey data exists in geographic data now. This algorithm is not available."));
+		QMessageBox::warning(w, tr("Warning"), tr("No cross-section data exists in geographic data now. This algorithm is not available."));
 		return false;
 	}
 	return true;
