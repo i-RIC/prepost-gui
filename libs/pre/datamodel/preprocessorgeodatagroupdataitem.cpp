@@ -123,13 +123,14 @@ void PreProcessorGeoDataGroupDataItem::addCustomMenuItems(QMenu* menu)
 
 	for (GeoDataCreator* creator : factory.compatibleCreators(m_condition)) {
 		QString title = creator->caption();
+		title += "...";
 		if (creator->importers().size() > 0) {
-			QAction* importAction = m_importMenu->addAction(title.append("..."));
+			QAction* importAction = m_importMenu->addAction(title);
 			m_importSignalMapper->setMapping(importAction, creator);
 			connect(importAction, SIGNAL(triggered()), m_importSignalMapper, SLOT(map()));
 		}
 		if (creator->isCreatable()) {
-			QAction* addAction = m_addMenu->addAction(title.append("..."));
+			QAction* addAction = m_addMenu->addAction(title);
 			m_addSignalMapper->setMapping(addAction, creator);
 			connect(addAction, SIGNAL(triggered()), m_addSignalMapper, SLOT(map()));
 		}
