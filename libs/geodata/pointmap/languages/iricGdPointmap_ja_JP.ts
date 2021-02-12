@@ -463,7 +463,7 @@
     <name>GeoDataPointmapRealCreator</name>
     <message>
         <source>Points</source>
-        <translation>点</translation>
+        <translation>点群データ</translation>
     </message>
     <message>
         <source>Points%1</source>
