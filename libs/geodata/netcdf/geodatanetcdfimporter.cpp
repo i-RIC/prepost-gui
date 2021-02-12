@@ -34,6 +34,25 @@ private:
 	int m_id;
 };
 
+int getVarLen(int ncid, int varid)
+{
+	char nameBuffer[200];
+	nc_type ncType;
+	int ndims;
+	int dimids[10];
+	int natts;
+
+	nc_inq_var(ncid, varid, nameBuffer, &ncType, &ndims, &(dimids[0]), &natts);
+	int size = 1;
+	for (int i = 0; i < ndims; ++i) {
+		int dimid = dimids[i];
+		size_t s;
+		nc_inq_dimlen(ncid, dimid, &s);
+		size = size * s;
+	}
+	return size;
+}
+
 } // namespace
 
 GeoDataNetcdfImporter::GeoDataNetcdfImporter(GeoDataCreator* creator) :
@@ -110,15 +129,13 @@ bool GeoDataNetcdfImporter::doInit(const QString& filename, const QString& /*sel
 		}
 	}
 
-	if (m_lonDimId == -1 || m_latDimId == -1) {
-		QMessageBox::critical(w, tr("Error"), tr("%1 does not have longitude and latitude data.").arg(QDir::toNativeSeparators(filename)));
-		return false;
-	}
-
 	if (m_xDimId != -1 && m_yDimId != -1) {
 		m_csType = GeoDataNetcdf::XY;
-	} else {
+	} else if (m_latDimId != -1 && m_lonDimId != -1){
 		m_csType = GeoDataNetcdf::LonLat;
+	} else {
+		QMessageBox::critical(w, tr("Error"), tr("%1 does not have longitude, latitude nor x, y data.").arg(QDir::toNativeSeparators(filename)));
+		return false;
 	}
 
 	std::vector<int> varids(nvars);
@@ -132,6 +149,15 @@ bool GeoDataNetcdfImporter::doInit(const QString& filename, const QString& /*sel
 	std::vector<GeoDataNetcdfImporterSettingDialog::NcVariable> variables;
 	for (int i = 0; i < nvars; ++i) {
 		ret = nc_inq_var(ncid, varids[i], &(nameBuffer[0]), &ncType, &nDims, dimids.data(), &nAtts);
+		QString name = QString(nameBuffer).toLower();
+		if (m_csType == GeoDataNetcdf::XY && (name == "lon" || name == "longitude")) {
+			m_lonVarId = i;
+			continue;
+		}
+		if (m_csType == GeoDataNetcdf::XY && (name == "lat" || name == "latitude")) {
+			m_latVarId = i;
+			continue;
+		}
 		if (nDims != 2 + condition->dimensions().size()) {
 			// this is not a variable for value.
 			continue;
@@ -237,19 +263,14 @@ bool GeoDataNetcdfImporter::importData(GeoData* data, int /*index*/, QWidget* w)
 		// load Lon and Lat
 		size_t lonLen, latLen;
 
-		ret = nc_inq_dimlen(ncid_in, m_lonDimId, &lonLen);
-		ret = nc_inq_dimlen(ncid_in, m_latDimId, &latLen);
+		lonLen = getVarLen(ncid_in, m_lonVarId);
+		latLen = getVarLen(ncid_in, m_latVarId);
 
 		std::vector<double> lons(lonLen);
 		std::vector<double> lats(latLen);
 
-		ret = nc_inq_dimname(ncid_in, m_lonDimId, nameBuffer);
-		ret = nc_inq_varid(ncid_in, nameBuffer, &varid);
-		ret = ncGetVariableAsDouble(ncid_in, varid, lonLen, lons.data());
-
-		ret = nc_inq_dimname(ncid_in, m_latDimId, nameBuffer);
-		ret = nc_inq_varid(ncid_in, nameBuffer, &varid);
-		ret = ncGetVariableAsDouble(ncid_in, varid, latLen, lats.data());
+		ret = ncGetVariableAsDouble(ncid_in, m_lonVarId, lonLen, lons.data());
+		ret = ncGetVariableAsDouble(ncid_in, m_latVarId, latLen, lats.data());
 
 		netcdf->m_lonValues.clear();
 		for (size_t i = 0; i < lonLen; ++i) {
