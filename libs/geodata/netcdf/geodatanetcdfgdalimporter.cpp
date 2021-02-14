@@ -98,10 +98,13 @@ bool GeoDataNetcdfGdalImporter::doInit(const QString& filename, const QString& s
 
 bool GeoDataNetcdfGdalImporter::importData(GeoData* data, int /*index*/, QWidget* w)
 {
+	auto netcdf = dynamic_cast<GeoDataNetcdf*> (data);
+	netcdf->setGeoTransform(m_transform);
+
 	if (m_mode == Mode::Single) {
-		return importDataForSingleMode(data, w);
+		return importDataForSingleMode(netcdf, w);
 	} else {
-		return importDataForTimeMode(data, w);
+		return importDataForTimeMode(netcdf, w);
 	}
 }
 
@@ -195,13 +198,12 @@ bool GeoDataNetcdfGdalImporter::doInitForTimeMode(const QString& filename, const
 	return true;
 }
 
-bool GeoDataNetcdfGdalImporter::importDataForSingleMode(GeoData* data, QWidget* /*w*/)
+bool GeoDataNetcdfGdalImporter::importDataForSingleMode(GeoDataNetcdf* netcdf, QWidget* /*w*/)
 {
 	auto filename = *(m_filenames.begin());
 	auto dataset = (GDALDataset*)(GDALOpen(iRIC::toStr(filename).c_str(), GA_ReadOnly));
 	if (dataset == NULL) {return false;}
 
-	GeoDataNetcdf* netcdf = dynamic_cast<GeoDataNetcdf*>(data);
 	GDALRasterBand* band = dataset->GetRasterBand(1);
 	setupCoordinates(netcdf, band);
 
@@ -245,9 +247,8 @@ bool GeoDataNetcdfGdalImporter::importDataForSingleMode(GeoData* data, QWidget* 
 	return true;
 }
 
-bool GeoDataNetcdfGdalImporter::importDataForTimeMode(GeoData* data, QWidget* w)
+bool GeoDataNetcdfGdalImporter::importDataForTimeMode(GeoDataNetcdf* netcdf, QWidget* w)
 {
-	GeoDataNetcdf* netcdf = dynamic_cast<GeoDataNetcdf*>(data);
 	// Get Time dimension container here
 
 	int ncid_out;
@@ -352,12 +353,14 @@ bool GeoDataNetcdfGdalImporter::setCoordinateSystem(const QString& filename, GDA
 		if (ret == QDialog::Rejected) {return false;}
 		m_coordinateSystem = csDialog.coordinateSystem();
 	}
+
 	return true;
 }
 
 bool GeoDataNetcdfGdalImporter::setTransform(GDALDataset* dataset)
 {
 	OGRErr err = dataset->GetGeoTransform(m_transform);
+
 	return (err == CE_None);
 }
 

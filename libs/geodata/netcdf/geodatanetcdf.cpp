@@ -16,6 +16,7 @@
 #include <guicore/solverdef/solverdefinitiongridattributereal.h>
 #include <guicore/solverdef/solverdefinitiongridattributerealdimension.h>
 #include <misc/stringtool.h>
+#include <misc/xmlsupport.h>
 #include <misc/zdepthrange.h>
 
 #include <vtkCellArray.h>
@@ -28,8 +29,11 @@
 #include <vtkStructuredGrid.h>
 
 #include <QDir>
+#include <QDomElement>
+#include <QDomNode>
 #include <QLineF>
 #include <QMessageBox>
+#include <QXmlStreamWriter>
 
 #include <netcdf.h>
 #include <vector>
@@ -70,6 +74,10 @@ bool GeoDataNetcdf::RectRegion::intersect(const QLineF& line) const
 
 GeoDataNetcdf::GeoDataNetcdf(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGridAttribute* att) :
 	GeoData {d, creator, att},
+	m_geoTransformExists {false},
+	m_baseAndResolutionExists {false},
+	m_base {0},
+	m_resolution {0},
 	m_isMasked {false}
 {
 	m_grid = vtkSmartPointer<vtkStructuredGrid>::New();
@@ -84,6 +92,108 @@ GeoDataNetcdf::~GeoDataNetcdf()
 	actorCollection()->RemoveItem(m_actor);
 	renderer()->RemoveActor(m_regionActor);
 	renderer()->RemoveActor(m_actor);
+}
+
+const std::vector<double> GeoDataNetcdf::lonValues() const
+{
+	return m_lonValues;
+}
+
+const std::vector<double> GeoDataNetcdf::latValues() const
+{
+	return m_latValues;
+}
+
+std::vector<double> GeoDataNetcdf::lonValues()
+{
+	return m_lonValues;
+}
+
+std::vector<double> GeoDataNetcdf::latValues()
+{
+	return m_latValues;
+}
+
+const std::vector<double> GeoDataNetcdf::xValues() const
+{
+	return m_xValues;
+}
+
+const std::vector<double> GeoDataNetcdf::yValues() const
+{
+	return m_yValues;
+}
+
+std::vector<double> GeoDataNetcdf::xValues()
+{
+	return m_xValues;
+}
+
+std::vector<double> GeoDataNetcdf::yValues()
+{
+	return m_yValues;
+}
+
+GeoDataNetcdf::CoordinateSystemType GeoDataNetcdf::coordinateSystemType() const
+{
+	return m_coordinateSystemType;
+}
+
+QString GeoDataNetcdf::coordinateSystemName() const
+{
+	return m_coordinateSystemName;
+}
+
+bool GeoDataNetcdf::geoTransformExists() const
+{
+	return m_geoTransformExists;
+}
+
+double* GeoDataNetcdf::geoTransform()
+{
+	return &(m_geoTransform[0]);
+}
+
+void GeoDataNetcdf::setGeoTransform(double* t)
+{
+	m_geoTransformExists = true;
+
+	for (int i = 0; i < 6; ++i) {
+		m_geoTransform[i] = *(t + i);
+	}
+}
+
+bool GeoDataNetcdf::baseAndResolutionExists() const
+{
+	return m_baseAndResolutionExists;
+}
+
+void GeoDataNetcdf::setBaseAndResolution(double base, double resolution)
+{
+	m_baseAndResolutionExists = true;
+	m_base = base;
+	m_resolution = resolution;
+}
+
+double GeoDataNetcdf::base() const
+{
+	return m_base;
+}
+
+double GeoDataNetcdf::resolution() const
+{
+	return m_resolution;
+}
+
+
+bool GeoDataNetcdf::requestCoordinateSystem() const
+{
+	return true;
+}
+
+vtkStructuredGrid* GeoDataNetcdf::grid() const
+{
+	return m_grid;
 }
 
 void GeoDataNetcdf::setupActors()
@@ -310,12 +420,18 @@ void GeoDataNetcdf::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	GeoData::doLoadFromProjectMainFile(node);
 	m_colorSetting.load(node);
+	m_coordinateSystemName = node.toElement().attribute("cs");
+	loadGeoTransform(node);
+	loadBaseAndResolution(node);
 }
 
 void GeoDataNetcdf::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
 	GeoData::doSaveToProjectMainFile(writer);
 	m_colorSetting.save(writer);
+	writer.writeAttribute("cs", m_coordinateSystemName);
+	saveGeoTransform(writer);
+	saveBaseAndResolution(writer);
 }
 
 void GeoDataNetcdf::doApplyOffset(double x, double y)
@@ -1120,4 +1236,39 @@ int GeoDataNetcdf::ySize() const
 		return static_cast<int> (m_lonValues.size());
 	}
 	return 0;
+}
+
+void GeoDataNetcdf::loadGeoTransform(const QDomNode& node)
+{
+	m_geoTransformExists = false;
+
+	for (int i = 0; i < 6; ++i) {
+		m_geoTransform[i] = iRIC::getDoubleAttribute(node, QString("geotransform%1").arg(i + 1));
+		m_geoTransformExists = m_geoTransformExists || (m_geoTransform[i] != 0);
+	}
+}
+
+void GeoDataNetcdf::saveGeoTransform(QXmlStreamWriter& writer)
+{
+	if (! m_geoTransformExists) {return;}
+
+	for (int i = 0; i < 6; ++i) {
+		iRIC::setDoubleAttribute(writer, QString("geotransform%1").arg(i + 1), m_geoTransform[i]);
+	}
+}
+
+void GeoDataNetcdf::loadBaseAndResolution(const QDomNode& node)
+{
+	m_base = iRIC::getDoubleAttribute(node, "base");
+	m_resolution = iRIC::getDoubleAttribute(node, "resolution");
+
+	m_baseAndResolutionExists = (m_base != 0 || m_resolution != 0);
+}
+
+void GeoDataNetcdf::saveBaseAndResolution(QXmlStreamWriter& writer)
+{
+	if (! m_baseAndResolutionExists) {return;}
+
+	iRIC::setDoubleAttribute(writer, "base", m_base);
+	iRIC::setDoubleAttribute(writer, "resolution", m_resolution);
 }

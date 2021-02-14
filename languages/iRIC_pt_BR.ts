@@ -2352,6 +2352,33 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>GeoDataNetcdfGdalExporter</name>
+    <message>
+        <source>GDAL</source>
+        <translation type="unfinished">GDAL</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Erro</translation>
+    </message>
+    <message>
+        <source>This data cannot be exported. It seems that it was not imported from *.tif or *.asc.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This data cannot be exported. Data with &quot;Time&quot; dimension cannot be exported to *.tif or *.asc.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ArcInfo ASCII files(*.asc)</source>
+        <translation type="unfinished">Arquivos de Arcinfo ASCII  (*.asc)</translation>
+    </message>
+    <message>
+        <source>GeoTiff files(*.tif)</source>
+        <translation type="unfinished">Arquivos GeoTiff (*.tif)</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataNetcdfGdalImporter</name>
     <message>
         <source>Importing data...</source>
@@ -2388,6 +2415,80 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Coordinate system is not specified for %1. Please select coordinate system manually.</source>
         <translation>O sistema de coordenadas nao esta especificado para % 1. Selecione manualmente o sistema de coordenadas.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataNetcdfGrayscalePngRealExporter</name>
+    <message>
+        <source>Grayscale 16bit PNG files(*.png)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Erro</translation>
+    </message>
+    <message>
+        <source>This data cannot be exported. It seems that it was not imported from *.png.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This data cannot be exported. Data with &quot;Time&quot; dimension cannot be exported to *.png</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error occured while opening %1</source>
+        <translation type="unfinished">Ocorreu um erro ao abrir %1. {1?}</translation>
+    </message>
+    <message>
+        <source>Error occured while initializing libpng.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataNetcdfGrayscalePngRealImporter</name>
+    <message>
+        <source>Grayscale 16bit PNG (for Unreal Engine 4)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Grayscale 16bit PNG files(*.png)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Atencao</translation>
+    </message>
+    <message>
+        <source>Grayscale 16bit PNG files can be imported for grid conditions without dimensions.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Erro</translation>
+    </message>
+    <message>
+        <source>Error occured while opening %1</source>
+        <translation type="unfinished">Ocorreu um erro ao abrir %1. {1?}</translation>
+    </message>
+    <message>
+        <source>Error occured while opening %1. It seems not to be a PNG file.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 is not a 16bit grayscale image.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 does not exists.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error occured while reading %1. It is not a valid world file.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error occured while parsing %1.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2481,6 +2582,13 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Dimensions</source>
         <translation>Dimensoes</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataNetcdfNcExporter</name>
+    <message>
+        <source>NetCDF files (*.nc)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

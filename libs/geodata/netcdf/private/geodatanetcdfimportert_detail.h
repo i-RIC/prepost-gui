@@ -99,29 +99,43 @@ int GeoDataNetcdfImporterT<V, DA>::importSingleLayerValues(int ncid_in, int ncid
 {
 	GeoDataNetcdfT<V, DA>* netcdf = dynamic_cast<GeoDataNetcdfT<V, DA>* >(ncdf);
 	GridAttributeDimensionsContainer* dims = m_groupDataItem->dimensions();
-	GridAttributeDimensionContainer* c = dims->containers().at(loopid);
-	int ret;
-	for (int i = 0; i < c->count(); ++i) {
-		if (loopid == dims->containers().size() - 1) {
-			*(start_in + *(dimMap + loopid)) = i;
-			*(start_out + dims->containers().size() - 1 - loopid) = i;
-			ret = ncGetVarConvert(ncid_in, varIdIn, start_in, len_in, buffer);
-			if (ret != NC_NOERR) {return ret;}
-			for (size_t j = 0; j < bufferSize; ++j) {
-				if (*(buffer + j) == missingValue) {
-					*(buffer + j) = netcdf->missingValue();
-				} else {
-					*(buffer + j) = *(buffer + j) * scale + offset;
-				}
+	if (dims->containers().size() == 0) {
+		*(start_in) = 0;
+		*(start_out) = 0;
+		return importValues(ncid_in, ncid_out, varIdIn, varIdOut, start_in, start_out, len_in, len_out, bufferSize, buffer, missingValue, netcdf->missingValue(), scale, offset);
+	} else {
+		GridAttributeDimensionContainer* c = dims->containers().at(loopid);
+		int ret;
+		for (int i = 0; i < c->count(); ++i) {
+			if (loopid == dims->containers().size() - 1) {
+				*(start_in + *(dimMap + loopid)) = i;
+				*(start_out + dims->containers().size() - 1 - loopid) = i;
+				ret = importValues(ncid_in, ncid_out, varIdIn, varIdOut, start_in, start_out, len_in, len_out, bufferSize, buffer, missingValue, netcdf->missingValue(), scale, offset);
+				if (ret != NC_NOERR) { return ret; }
+			} else {
+				// recursive call
+				ret = importSingleLayerValues(ncid_in, ncid_out, loopid + 1, dimMap, varIdIn, varIdOut, start_in, start_out, len_in, len_out, bufferSize, buffer, missingValue, scale, offset, ncdf);
+				if (ret != NC_NOERR) { return ret; }
 			}
-			ret = ncPutVarConvert(ncid_out, varIdOut, start_out, len_out, buffer);
-			if (ret != NC_NOERR) {return ret;}
-		}	else {
-			// recursive call
-			ret = importSingleLayerValues(ncid_in, ncid_out, loopid + 1, dimMap, varIdIn, varIdOut, start_in, start_out, len_in, len_out, bufferSize, buffer, missingValue, scale, offset, ncdf);
-			if (ret != NC_NOERR) { return ret; }
+		}
+		return NC_NOERR;
+	}
+}
+
+template <class V, class DA>
+int GeoDataNetcdfImporterT<V, DA>::importValues(int ncid_in, int ncid_out, int varIdIn, int varIdOut, size_t* start_in, size_t* start_out, size_t* len_in, size_t* len_out, size_t bufferSize, V* buffer, V missingValue, V newMissingValue, V scale, V offset)
+{
+	int ret = ncGetVarConvert(ncid_in, varIdIn, start_in, len_in, buffer);
+	if (ret != NC_NOERR) { return ret; }
+	for (size_t j = 0; j < bufferSize; ++j) {
+		if (*(buffer + j) == missingValue) {
+			*(buffer + j) = newMissingValue;
+		} else {
+			*(buffer + j) = *(buffer + j) * scale + offset;
 		}
 	}
+	ret = ncPutVarConvert(ncid_out, varIdOut, start_out, len_out, buffer);
+	if (ret != NC_NOERR) { return ret; }
 	return NC_NOERR;
 }
 

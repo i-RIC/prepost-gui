@@ -34,6 +34,9 @@ CONFIG(debug, debug|release) {
 
 	# udunits
 	LIBS += -L"E:/iricdev_2013/lib/install/udunits-2.2.26/debug/lib"
+
+	# libpng
+	LIBS += -L"E:/iricdev_2013/lib/install/libpng-1.6.37/debug/lib"
 }
 else {
 	# gdal
@@ -71,6 +74,9 @@ else {
 
 	# udunits
 	LIBS += -L"E:/iricdev_2013/lib/install/udunits-2.2.26/release/lib"
+
+	# libpng
+	LIBS += -L"E:/iricdev_2013/lib/install/libpng-1.6.37/release/lib"
 }
 
 INCLUDEPATH += .
@@ -113,6 +119,9 @@ INCLUDEPATH += "C:/usr/src/boost-1.59.0"
 
 # udunits
 INCLUDEPATH += "E:/iricdev_2013/lib/install/udunits-2.2.26/release/include"
+
+# libpng
+INCLUDEPATH += "E:/iricdev_2013/lib/install/libpng-1.6.37/release/include"
 
 #internal libs
 INCLUDEPATH += "E:/iricdev_2013/src/libs"

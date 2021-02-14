@@ -5,6 +5,9 @@ INCLUDEPATH += ../..
 DEFINES += GD_NETCDF_LIBRARY
 
 DEFINES += ANSI_DECLARATORS
+win32 {
+	DEFINES += YAML_CPP_DLL
+}
 
 include( ../../../paths.pri )
 
@@ -84,6 +87,29 @@ unix {
 
 LIBS += -ludunits2
 
+# libpng
+
+win32 {
+    CONFIG(debug, debug|release) {
+        LIBS += -llibpng16d
+    } else {
+        LIBS += -llibpng16
+    }
+}
+
+unix {
+    LIBS += -llibpng16
+}
+
+# yaml-cpp
+
+win32 {
+	LIBS += -lyaml-cpp
+}
+unix {
+	LIBS += -lyaml-cpp
+}
+
 win32 {
 	DESTDIR = $(SolutionDir)/libdlls/$(Configuration)
 	LIBS += -L$(SolutionDir)/libdlls/$(Configuration)
@@ -99,9 +125,14 @@ HEADERS += gd_netcdf_global.h \
            geodatanetcdffilelistdialog.h \
            geodatanetcdffilenamematcher.h \
            geodatanetcdffilenamepatterndialog.h \
+           geodatanetcdfgdalexporter.h \
            geodatanetcdfgdalimporter.h \
+           geodatanetcdfgdalintegerexporter.h \
            geodatanetcdfgdalintegerimporter.h \
+           geodatanetcdfgdalrealexporter.h \
            geodatanetcdfgdalrealimporter.h \
+           geodatanetcdfgrayscalepngrealexporter.h \
+           geodatanetcdfgrayscalepngrealimporter.h \
            geodatanetcdfimporter.h \
            geodatanetcdfimporterdateselectdialog.h \
            geodatanetcdfimportersettingdialog.h \
@@ -109,6 +140,7 @@ HEADERS += gd_netcdf_global.h \
            geodatanetcdfinteger.h \
            geodatanetcdfintegercreator.h \
            geodatanetcdfintegerimporter.h \
+           geodatanetcdfncexporter.h \
            geodatanetcdfnodemappert.h \
            geodatanetcdfreal.h \
            geodatanetcdfrealcreator.h \
@@ -132,15 +164,21 @@ SOURCES += geodatanetcdf.cpp \
            geodatanetcdffilelistdialog.cpp \
            geodatanetcdffilenamematcher.cpp \
            geodatanetcdffilenamepatterndialog.cpp \
+           geodatanetcdfgdalexporter.cpp \
            geodatanetcdfgdalimporter.cpp \
+           geodatanetcdfgdalintegerexporter.cpp \
            geodatanetcdfgdalintegerimporter.cpp \
+           geodatanetcdfgdalrealexporter.cpp \
            geodatanetcdfgdalrealimporter.cpp \
+           geodatanetcdfgrayscalepngrealexporter.cpp \
+           geodatanetcdfgrayscalepngrealimporter.cpp \
            geodatanetcdfimporter.cpp \
            geodatanetcdfimporterdateselectdialog.cpp \
            geodatanetcdfimportersettingdialog.cpp \
            geodatanetcdfinteger.cpp \
            geodatanetcdfintegercreator.cpp \
            geodatanetcdfintegerimporter.cpp \
+           geodatanetcdfncexporter.cpp \
            geodatanetcdfreal.cpp \
            geodatanetcdfrealcreator.cpp \
            geodatanetcdfrealimporter.cpp \

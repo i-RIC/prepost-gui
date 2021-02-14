@@ -42,8 +42,8 @@ private:
 	bool doInitForSingleMode(const QString& filename, const QString& selectedFilter, int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemInterface* item, QWidget* w);
 	bool doInitForTimeMode(const QString& filename, const QString& selectedFilter, int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemInterface* item, QWidget* w);
 
-	bool importDataForSingleMode(GeoData* data, QWidget* w);
-	bool importDataForTimeMode(GeoData* data, QWidget* w);
+	bool importDataForSingleMode(GeoDataNetcdf* data, QWidget* w);
+	bool importDataForTimeMode(GeoDataNetcdf* data, QWidget* w);
 
 	bool setMode(SolverDefinitionGridAttribute* condition, QWidget* w);
 	bool setCoordinateSystem(const QString& filename, GDALDataset* dataset, PreProcessorGeoDataGroupDataItemInterface* item, QWidget* w);
