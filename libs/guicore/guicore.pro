@@ -330,6 +330,7 @@ HEADERS += guicore_global.h \
            pre/geodata/geodatacellmappert.h \
            pre/geodata/geodatacreator.h \
            pre/geodata/geodataexporter.h \
+           pre/geodata/geodatafactoryinterface.h
            pre/geodata/geodataimporter.h \
            pre/geodata/geodatamapper.h \
            pre/geodata/geodatamappersettingi.h \

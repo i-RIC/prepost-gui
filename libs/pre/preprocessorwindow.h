@@ -88,6 +88,7 @@ public:
 	bool isSetupCorrectly() const;
 	bool checkMappingStatus() override;
 	PreProcessorDataModelInterface* dataModel() const override;
+	GeoDataFactoryInterface* geoDataFactory() const override;
 
 	void updateTmsList() override;
 
