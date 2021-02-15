@@ -371,6 +371,7 @@ void GeoDataRiverSurvey::doLoadFromProjectMainFile(const QDomNode& node)
 		impl->m_interpolateLinearAction->setChecked(true);
 	}
 	impl->m_menuIsSetup = false;
+	impl->setupMenu();
 	impl->updateMouseCursor(graphicsView());
 }
 
