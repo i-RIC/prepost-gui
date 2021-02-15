@@ -1,4 +1,5 @@
 #include "geodatapolylinegroup.h"
+#include "geodatapolylinegroupcreator.h"
 #include "geodatapolylinegrouppolyline.h"
 #include "private/geodatapolylinegroup_impl.h"
 
@@ -9,6 +10,8 @@
 #include <guicore/pre/base/preprocessorgeodatadataiteminterface.h>
 #include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
+#include <guicore/pre/base/preprocessorwindowinterface.h>
+#include <guicore/pre/geodata/geodatafactoryinterface.h>
 #include <guicore/scalarstocolors/scalarstocolorscontainer.h>
 #include <misc/mathsupport.h>
 #include <misc/zdepthrange.h>
@@ -37,6 +40,17 @@
 namespace {
 
 std::string VALUE = "value";
+
+GeoDataCreator* getPolyLineGroupCreator(PreProcessorGeoDataDataItemInterface* geoData, SolverDefinitionGridAttribute* att)
+{
+		auto factory = geoData->preProcessorWindow()->geoDataFactory();
+		auto creators = factory->compatibleCreators(att);
+		for (auto c : creators) {
+				auto c2 = dynamic_cast <GeoDataPolyLineGroupCreator*> (c);
+				if (c2 != nullptr) {return c2;}
+		}
+		return nullptr;
+}
 
 } // namespace
 
@@ -270,9 +284,7 @@ QString GeoDataPolyLineGroup::captionForData(int number)
 GeoDataPolyDataGroup* GeoDataPolyLineGroup::createInstanceForCopy(PreProcessorGeoDataDataItemInterface* d)
 {
 	auto gItem = dynamic_cast<PreProcessorGeoDataGroupDataItemInterface*>(d->parent());
-	auto newGroup = new GeoDataPolyLineGroup(d, creator(), gItem->condition());
-
-	return newGroup;
+	return dynamic_cast<GeoDataPolyDataGroup*> (getPolyLineGroupCreator(d, gItem->condition())->create(d, gItem->condition()));
 }
 
 void GeoDataPolyLineGroup::setupMenu()
