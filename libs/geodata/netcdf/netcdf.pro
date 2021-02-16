@@ -146,13 +146,18 @@ HEADERS += gd_netcdf_global.h \
            geodatanetcdfrealcreator.h \
            geodatanetcdfrealimporter.h \
            geodatanetcdft.h \
+           geodatanetcdftimeseriescreator.h \
+           geodatanetcdftimeseriescreatort.h \
+           geodatanetcdftimeseriesintegercreator.h \
+           geodatanetcdftimeseriesrealcreator.h \
            geodatanetcdfxbandimporter.h \
            private/geodatanetcdf_editpropertycommand.h \
            private/geodatanetcdfcellmappert_detail.h \
            private/geodatanetcdfcreatort_detail.h \
            private/geodatanetcdfimportert_detail.h \
            private/geodatanetcdfnodemappert_detail.h \
-           private/geodatanetcdft_detail.h
+           private/geodatanetcdft_detail.h \
+           private/geodatanetcdftimeseriescreatort_detail.h
 FORMS += geodatanetcdfcolorsettingdialog.ui \
          geodatanetcdffilelistdialog.ui \
          geodatanetcdffilenamepatterndialog.ui \
@@ -182,6 +187,9 @@ SOURCES += geodatanetcdf.cpp \
            geodatanetcdfreal.cpp \
            geodatanetcdfrealcreator.cpp \
            geodatanetcdfrealimporter.cpp \
+           geodatanetcdftimeseriescreator.cpp \
+           geodatanetcdftimeseriesintegercreator.cpp \
+           geodatanetcdftimeseriesrealcreator.cpp \
            geodatanetcdfxbandimporter.cpp \
            private/geodatanetcdf_editpropertycommand.cpp
 TRANSLATIONS += languages/iricGdNetcdf_ar_EG.ts \

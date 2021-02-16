@@ -628,6 +628,10 @@ Do you really want to import grid from this file?</source>
         <source>&amp;Add</source>
         <translation>Adicionar(&amp;A)</translation>
     </message>
+    <message>
+        <source>&amp;Import</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGeoDataDataItem</name>
@@ -652,7 +656,7 @@ Do you really want to import grid from this file?</source>
     <name>PreProcessorGeoDataGroupDataItem</name>
     <message>
         <source>&amp;Import...</source>
-        <translation>Importar (&amp;I)...</translation>
+        <translation type="vanished">Importar (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Import from web...</source>
@@ -786,6 +790,10 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Are you sure you want to delete all items in %1 group?</source>
         <translation>Tem certeza de que deseja excluir todos os itens do grupo % 1 ?</translation>
+    </message>
+    <message>
+        <source>&amp;Import</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

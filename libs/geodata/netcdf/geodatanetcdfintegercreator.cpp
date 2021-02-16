@@ -8,8 +8,8 @@
 GeoDataNetcdfIntegerCreator::GeoDataNetcdfIntegerCreator() :
 	GeoDataNetcdfCreatorT<int, vtkIntArray> {"integerNetcdf"}
 {
-	importers().push_back(new GeoDataNetcdfIntegerImporter(this));
 	importers().push_back(new GeoDataNetcdfGdalIntegerImporter(this));
+	importers().push_back(new GeoDataNetcdfIntegerImporter(this));
 
 	exporters().push_back(new GeoDataNetcdfGdalIntegerExporter(this));
 	exporters().push_back(new GeoDataNetcdfNcExporter(this));

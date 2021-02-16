@@ -43,7 +43,7 @@ public:
 };
 
 GeoDataRiverSurveyNodeMapper::GeoDataRiverSurveyNodeMapper(GeoDataCreator* parent) :
-	GeoDataNodeMapperT<double, vtkDoubleArray>("River survey node mapper", parent)
+	GeoDataNodeMapperT<double, vtkDoubleArray>("Cross-section data node mapper", parent)
 {}
 
 GeoDataMapperSettingI* GeoDataRiverSurveyNodeMapper::initialize(bool* boolMap)

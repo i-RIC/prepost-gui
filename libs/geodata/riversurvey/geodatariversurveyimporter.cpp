@@ -367,7 +367,7 @@ QPointF GeoDataRiverSurveyImporter::RivPathPoint::leftToRight() const
 }
 
 GeoDataRiverSurveyImporter::GeoDataRiverSurveyImporter(GeoDataCreator* creator) :
-	GeoDataImporter("riversurvey", tr("River Survey data (*.riv)"), creator)
+	GeoDataImporter("riversurvey", tr("Cross-Section data (*.riv)"), creator)
 {}
 
 bool GeoDataRiverSurveyImporter::doInit(const QString& filename, const QString& /*selectedFilter*/, int* count, SolverDefinitionGridAttribute* /*condition*/, PreProcessorGeoDataGroupDataItemInterface* /*item*/, QWidget* w)
@@ -407,7 +407,7 @@ bool GeoDataRiverSurveyImporter::importData(GeoData* data, int /*index*/, QWidge
 const QStringList GeoDataRiverSurveyImporter::fileDialogFilters()
 {
 	QStringList ret;
-	ret << tr("River Survey data (*.riv)");
+	ret << tr("Cross-Section Data (*.riv)");
 	return ret;
 }
 

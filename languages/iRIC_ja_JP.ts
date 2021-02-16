@@ -3753,7 +3753,7 @@ p, li { white-space: pre-wrap; }
     <name>GeoDataPointmapRealCreator</name>
     <message>
         <source>Points</source>
-        <translation>点</translation>
+        <translation>点群データ</translation>
     </message>
     <message>
         <source>Points%1</source>
@@ -36420,6 +36420,10 @@ Do you really want to import grid from this file?</source>
         <source>&amp;Add</source>
         <translation>追加(&amp;A)</translation>
     </message>
+    <message>
+        <source>&amp;Import</source>
+        <translation>インポート (&amp;I)</translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGeoDataDataItem</name>
@@ -36444,7 +36448,7 @@ Do you really want to import grid from this file?</source>
     <name>PreProcessorGeoDataGroupDataItem</name>
     <message>
         <source>&amp;Import...</source>
-        <translation>インポート(&amp;I)...</translation>
+        <translation type="vanished">インポート(&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Import from web...</source>
@@ -36587,6 +36591,10 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Are you sure you want to delete all items in %1 group?</source>
         <translation>本当に %1 に含まれるすべての項目を削除していいですか?</translation>
+    </message>
+    <message>
+        <source>&amp;Import</source>
+        <translation>インポート (&amp;I)</translation>
     </message>
 </context>
 <context>

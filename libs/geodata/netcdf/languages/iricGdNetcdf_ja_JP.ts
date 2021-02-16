@@ -39,11 +39,19 @@
     <name>GeoDataNetcdfCreator</name>
     <message>
         <source>Raster data</source>
-        <translation>ラスターデータ</translation>
+        <translation type="vanished">ラスターデータ</translation>
     </message>
     <message>
         <source>Raster data%1</source>
-        <translation>ラスターデータ%1</translation>
+        <translation type="vanished">ラスターデータ%1</translation>
+    </message>
+    <message>
+        <source>Raster Data</source>
+        <translation>ラスタデータ</translation>
+    </message>
+    <message>
+        <source>Raster Data%1</source>
+        <translation>ラスタデータ%1</translation>
     </message>
 </context>
 <context>
@@ -256,7 +264,7 @@
     </message>
     <message>
         <source>%1 does not have longitude and latitude data.</source>
-        <translation>%1 は、経度と緯度のデータを持っていません。</translation>
+        <translation type="vanished">%1 は、経度と緯度のデータを持っていません。</translation>
     </message>
     <message>
         <source>%1 does not have variable that can be imported.</source>
@@ -269,6 +277,10 @@
     <message>
         <source>Error occured while parsing time definition: %1</source>
         <translation>日付定義の読み込みでエラーが発生しました: %1</translation>
+    </message>
+    <message>
+        <source>%1 does not have longitude, latitude nor x, y data.</source>
+        <translation>%1 には、緯度・経度, X・Yデータがありません。</translation>
     </message>
 </context>
 <context>
@@ -338,6 +350,17 @@
     <message>
         <source>NetCDF files (*.nc)</source>
         <translation>NetCDF ファイル (*.nc)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataNetcdfTimeSeriesCreator</name>
+    <message>
+        <source>Time Series Raster Data</source>
+        <translation>時系列ラスタデータ</translation>
+    </message>
+    <message>
+        <source>Time Series Raster Data%1</source>
+        <translation>時系列ラスタデータ%1</translation>
     </message>
 </context>
 <context>

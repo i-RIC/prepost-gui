@@ -828,7 +828,7 @@ void GeoDataPointmap::setupActors()
 
 void GeoDataPointmap::setupMenu()
 {
-	m_menu->setTitle(tr("P&ointset Data"));
+	m_menu->setTitle(tr("P&oint Cloud Data"));
 	m_menu->addAction(m_editNameAction);
 	m_menu->addSeparator();
 	m_menu->addAction(m_selectionModePolygon);

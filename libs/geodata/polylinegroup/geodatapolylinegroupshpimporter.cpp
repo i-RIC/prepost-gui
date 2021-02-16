@@ -49,7 +49,7 @@ GeoDataPolyLineGroupShpImporter::GeoDataPolyLineGroupShpImporter(GeoDataCreator*
 const QStringList GeoDataPolyLineGroupShpImporter::fileDialogFilters()
 {
 	QStringList ret;
-	ret.append(tr("ESRI Shapefile (Polylines) (*.shp)"));
+	ret.append(tr("ESRI Shapefile (Lines) (*.shp)"));
 	return ret;
 }
 

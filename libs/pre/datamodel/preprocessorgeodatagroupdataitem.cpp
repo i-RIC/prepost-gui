@@ -63,24 +63,21 @@
 
 PreProcessorGeoDataGroupDataItem::PreProcessorGeoDataGroupDataItem(SolverDefinitionGridAttribute* cond, PreProcessorDataItem* parent) :
 	PreProcessorGeoDataGroupDataItemInterface {cond, parent},
-	m_importAction {new QAction(QIcon(":/libs/guibase/images/iconImport.png"), PreProcessorGeoDataGroupDataItem::tr("&Import..."), this)},
 	m_webImportAction {new QAction(QIcon(":/libs/guibase/images/iconImport.png"), PreProcessorGeoDataGroupDataItem::tr("&Import from web..."), this)},
 	m_editColorMapAction {new QAction(QIcon(":/libs/guibase/images/iconColor.png"), PreProcessorGeoDataGroupDataItem::tr("&Color Setting..."), this)},
 	m_setupScalarBarAction {new QAction(PreProcessorGeoDataGroupDataItem::tr("Set Up Scalarbar..."), this)},
 	m_exportAllPolygonsAction {new QAction(QIcon(":/libs/guibase/images/iconExport.png"), PreProcessorGeoDataGroupDataItem::tr("Export All Polygons..."), this)},
 	m_deleteSelectedAction {new QAction(QIcon(":/libs/guibase/images/iconDeleteItem.png"), PreProcessorGeoDataGroupDataItem::tr("Delete &Selected..."), this)},
 	m_deleteAllAction {new QAction(QIcon(":/libs/guibase/images/iconDeleteItem.png"), PreProcessorGeoDataGroupDataItem::tr("Delete &All..."), this)},
+	m_importSignalMapper {nullptr},
+	m_addSignalMapper {nullptr},
 	m_condition {cond}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 	setSubPath(cond->name().c_str());
 
-	m_addSignalMapper = nullptr;
-
-	m_importAction->setEnabled(importAvailable());
 	m_webImportAction->setEnabled(webImportAvailable());
 
-	connect(m_importAction, SIGNAL(triggered()), this, SLOT(import()));
 	connect(m_webImportAction, SIGNAL(triggered()), this, SLOT(importFromWeb()));
 	connect(m_deleteSelectedAction, SIGNAL(triggered()), this, SLOT(deleteSelected()));
 	connect(m_deleteAllAction, SIGNAL(triggered()), this, SLOT(deleteAll()));
@@ -113,22 +110,35 @@ PreProcessorGeoDataGroupDataItem::~PreProcessorGeoDataGroupDataItem()
 void PreProcessorGeoDataGroupDataItem::addCustomMenuItems(QMenu* menu)
 {
 	GeoDataFactory& factory = GeoDataFactory::instance();
-	// create add menu.
+	// create import menu and add menu.
+	m_importMenu = new QMenu(tr("&Import"), menu);
+	m_importMenu->setIcon(QIcon(":/libs/guibase/images/iconImport.png"));
 	m_addMenu = new QMenu(tr("&Add"), menu);
+
+	if (m_importSignalMapper) {delete m_importSignalMapper;}
+	m_importSignalMapper = new QSignalMapper(this);
 
 	if (m_addSignalMapper) {delete m_addSignalMapper;}
 	m_addSignalMapper = new QSignalMapper(this);
 
-	for (auto creator : factory.compatibleCreators(m_condition)) {
-		if (! creator->isCreatable()) {continue;}
-
+	for (GeoDataCreator* creator : factory.compatibleCreators(m_condition)) {
 		QString title = creator->caption();
-		QAction* addAction = m_addMenu->addAction(title.append("..."));
-		m_addSignalMapper->setMapping(addAction, creator);
-		connect(addAction, SIGNAL(triggered()), m_addSignalMapper, SLOT(map()));
+		title += "...";
+		if (creator->importers().size() > 0) {
+			QAction* importAction = m_importMenu->addAction(title);
+			m_importSignalMapper->setMapping(importAction, creator);
+			connect(importAction, SIGNAL(triggered()), m_importSignalMapper, SLOT(map()));
+		}
+		if (creator->isCreatable()) {
+			QAction* addAction = m_addMenu->addAction(title);
+			m_addSignalMapper->setMapping(addAction, creator);
+			connect(addAction, SIGNAL(triggered()), m_addSignalMapper, SLOT(map()));
+		}
 	}
+	connect(m_importSignalMapper, SIGNAL(mapped(QObject*)), this, SLOT(importGeoData(QObject*)));
 	connect(m_addSignalMapper, SIGNAL(mapped(QObject*)), this, SLOT(addGeoData(QObject*)));
-	menu->addAction(m_importAction);
+
+	menu->addMenu(m_importMenu);
 	menu->addAction(m_webImportAction);
 	if (m_addMenu->actions().count() != 0) {
 		menu->addMenu(m_addMenu);
@@ -225,134 +235,7 @@ void PreProcessorGeoDataGroupDataItem::import()
 	}
 	Q_ASSERT(importer != nullptr);
 
-	// execute import.
-	int dataCount;
-	QWidget* w = preProcessorWindow();
-	bool ret = importer->importInit(filename, selectedFilter, &dataCount, m_condition, this, w);
-	if (! ret) {
-		QMessageBox::warning(preProcessorWindow(), tr("Import failed"), tr("Importing data from %1 failed.").arg(QDir::toNativeSeparators(filename)));
-		return;
-	}
-	if (dataCount == 0){
-		QMessageBox::warning(preProcessorWindow(), tr("Import failed"), tr("%1 contains no data to import.").arg(QDir::toNativeSeparators(filename)));
-		return;
-	}
-
-	PreProcessorGeoDataDataItemInterface* item = nullptr;
-	std::vector<int> failedIds;
-
-	WaitDialog* wDialog = nullptr;
-	m_cancelImport = false;
-	if (dataCount >= 5) {
-		wDialog = new WaitDialog(mainWindow());
-		wDialog->setRange(0, dataCount - 1);
-		wDialog->setProgress(0);
-		wDialog->setMessage(tr("Importing data..."));
-		wDialog->showProgressBar();
-		connect(wDialog, SIGNAL(canceled()), this, SLOT(cancelImport()));
-		wDialog->show();
-		qApp->processEvents();
-	}
-	QFileInfo finfo(filename);
-	for (int i = 0; i < dataCount; ++i) {
-		if (m_cancelImport) {
-			QMessageBox::warning(preProcessorWindow(), tr("Canceled"), tr("Importing canceled."));
-			goto ERROR;
-		}
-		item = buildGeoDataDataItem();
-		// first, create an empty geodata.
-		GeoData* geodata = importer->creator()->create(item, m_condition);
-		item->setGeoData(geodata);
-		// set name and caption
-		importer->creator()->setNameAndDefaultCaption(this->childItems(), geodata);
-		geodata->setupDataItem();
-		if (geodata->requestCoordinateSystem()) {
-			if (projectData()->mainfile()->coordinateSystem() == nullptr) {
-				QMessageBox::information(preProcessorWindow(), tr("Information"), tr("To import the geographic data, specify coordinate system first."), QMessageBox::Ok);
-				int dialogRet = projectData()->mainfile()->showCoordinateSystemDialog(true);
-				if (dialogRet == QDialog::Rejected) {
-					delete item;
-					item = nullptr;
-					goto ERROR;
-				}
-			}
-		}
-		// import data from the specified file
-		QWidget *w = wDialog;
-		if (w == nullptr) w = mainWindow();
-		bool ret = importer->importData(geodata, i, w);
-		if (! ret) {
-			// failed.
-			delete item;
-			item = nullptr;
-			failedIds.push_back(i + 1);
-		} else {
-			auto o = offset();
-			geodata->applyOffset(o.x(), o.y());
-			// the standarditem is set at the last position, so make it the first.
-			QList<QStandardItem*> takenItems = m_standardItem->takeRow(item->standardItem()->row());
-			m_standardItem->insertRows(0, takenItems);
-			// add the item, in the front.
-			m_childItems.insert(m_childItems.begin(), item);
-			if (i != dataCount - 1) {
-				geodata->informDeselection(dataModel()->graphicsView());
-			}
-			setupConnectionToGeoData(geodata);
-		}
-		if (wDialog != nullptr) {
-			wDialog->setProgress(i + 1);
-			qApp->processEvents();
-		}
-	}
-	if (wDialog != nullptr) {
-		wDialog->hide();
-		delete wDialog;
-	}
-	// All imports succeeded.
-	LastIODirectory::set(finfo.absolutePath());
-
-	updateItemMap();
-	updateZDepthRange();
-
-	informValueRangeChange();
-	informDataChange();
-
-	if (failedIds.size() > 0 && dataCount > 1) {
-		QStringList idStrs;
-		for (int i = 0; i < failedIds.size(); ++i) {
-			idStrs.push_back(QString::number(failedIds[i]));
-		}
-		QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("Specified file has invalid data, and those were ignored. Ignored data is as follows:\n%1").arg(idStrs.join("\n")));
-	}
-
-	if (item != nullptr) {
-		dataModel()->objectBrowserView()->select(item->standardItem()->index());
-		emit selectGeoData(item->standardItem()->index());
-	}
-	dataModel()->graphicsView()->cameraFit();
-	setModified();
-
-	// import is not undo-able.
-	iRICUndoStack::instance().clear();
-	return;
-
-ERROR:
-	if (wDialog != nullptr) {
-		wDialog->hide();
-		delete wDialog;
-	}
-	updateItemMap();
-	updateZDepthRange();
-
-	informValueRangeChange();
-	informDataChange();
-
-	dataModel()->graphicsView()->cameraFit();
-	setModified();
-
-	// import is not undo-able.
-	iRICUndoStack::instance().clear();
-	return;
+	importGeoData(importer, filename, selectedFilter);
 }
 
 void PreProcessorGeoDataGroupDataItem::importFromWeb()
@@ -572,6 +455,76 @@ GeoDataImporter* PreProcessorGeoDataGroupDataItem::importer(const std::string& n
 	return nullptr;
 }
 
+void PreProcessorGeoDataGroupDataItem::importGeoData(QObject* c)
+{
+	GeoDataCreator* creator = dynamic_cast<GeoDataCreator*>(c);
+
+	QStringList filters;
+	std::vector<GeoDataImporter*> importers;
+	QStringList availableExtensions;
+	QMap<QString, std::vector<GeoDataImporter*> > extMap;
+
+	for (auto importer : creator->importers()) {
+		QStringList fils = importer->fileDialogFilters();
+		QStringList exts = importer->acceptableExtensions();
+		for (auto filter : fils) {
+			filters.append(filter);
+			importers.push_back(importer);
+		}
+		for (auto ext : exts) {
+			availableExtensions << QString("*.").append(ext);
+			if (extMap.contains(ext)) {
+				extMap[ext].push_back(importer);
+			} else {
+				std::vector<GeoDataImporter*> importers;
+				importers.push_back(importer);
+				extMap.insert(ext, importers);
+			}
+		}
+	}
+	filters.push_front(QString(tr("All importable files (%1)")).arg(availableExtensions.join(" ")));
+
+	QString dir = LastIODirectory::get();
+	QString selectedFilter;
+	// Select the file to import.
+	QString filename = QFileDialog::getOpenFileName(preProcessorWindow(), tr("Select file to import"), dir, filters.join(";;"), &selectedFilter);
+	if (filename.isNull()) {return;}
+
+	GeoDataImporter* importer = nullptr;
+	for (int i = 0; i < filters.count(); ++i) {
+		if (filters[i] == selectedFilter) {
+			if (i == 0) {
+				QFileInfo finfo(filename);
+				QString extension = finfo.suffix();
+				if (extMap.contains(extension)) {
+					auto importers = extMap.value(extension);
+					if (importers.size() == 1) {
+						importer = importers.at(0);
+					} else {
+						QStringList names;
+						for (GeoDataImporter* imp : importers) {
+							names.push_back(imp->caption());
+						}
+						bool ok;
+						QString selected = QInputDialog::getItem(preProcessorWindow(), tr("Select algorithm"), tr("Please select algorithm to import data"), names, 0, false, &ok);
+						if (! ok) {return;}
+						int idx = names.indexOf(selected);
+						importer = importers.at(idx);
+					}
+				} else {
+					QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("File type cannot be recognized from the file extension. : %1").arg(finfo.fileName()));
+					return;
+				}
+			} else {
+				importer = importers[i - 1];
+			}
+		}
+	}
+	Q_ASSERT(importer != nullptr);
+
+	importGeoData(importer, filename, selectedFilter);
+}
+
 void PreProcessorGeoDataGroupDataItem::addGeoData(QObject* c)
 {
 	GeoDataCreator* creator = dynamic_cast<GeoDataCreator*>(c);
@@ -618,6 +571,137 @@ void PreProcessorGeoDataGroupDataItem::addBackground()
 void PreProcessorGeoDataGroupDataItem::cancelImport()
 {
 	m_cancelImport = true;
+}
+
+void PreProcessorGeoDataGroupDataItem::importGeoData(GeoDataImporter* importer, const QString& filename, const QString& selectedFilter)
+{
+	// execute import.
+	int dataCount;
+	QWidget* w = preProcessorWindow();
+	bool ret = importer->importInit(filename, selectedFilter, &dataCount, m_condition, this, w);
+	if (! ret) {
+		QMessageBox::warning(preProcessorWindow(), tr("Import failed"), tr("Importing data from %1 failed.").arg(QDir::toNativeSeparators(filename)));
+		return;
+	}
+	if (dataCount == 0){
+		QMessageBox::warning(preProcessorWindow(), tr("Import failed"), tr("%1 contains no data to import.").arg(QDir::toNativeSeparators(filename)));
+		return;
+	}
+
+	PreProcessorGeoDataDataItemInterface* item = nullptr;
+	std::vector<int> failedIds;
+
+	WaitDialog* wDialog = nullptr;
+	m_cancelImport = false;
+	if (dataCount >= 5) {
+		wDialog = new WaitDialog(mainWindow());
+		wDialog->setRange(0, dataCount - 1);
+		wDialog->setProgress(0);
+		wDialog->setMessage(tr("Importing data..."));
+		wDialog->showProgressBar();
+		connect(wDialog, SIGNAL(canceled()), this, SLOT(cancelImport()));
+		wDialog->show();
+		qApp->processEvents();
+	}
+	QFileInfo finfo(filename);
+	for (int i = 0; i < dataCount; ++i) {
+		if (m_cancelImport) {
+			QMessageBox::warning(preProcessorWindow(), tr("Canceled"), tr("Importing canceled."));
+			goto ERROR;
+		}
+		item = buildGeoDataDataItem();
+		// first, create an empty geodata.
+		GeoData* geodata = importer->creator()->create(item, m_condition);
+		item->setGeoData(geodata);
+		// set name and caption
+		importer->creator()->setNameAndDefaultCaption(this->childItems(), geodata);
+		geodata->setupDataItem();
+		if (geodata->requestCoordinateSystem()) {
+			if (projectData()->mainfile()->coordinateSystem() == nullptr) {
+				QMessageBox::information(preProcessorWindow(), tr("Information"), tr("To import the geographic data, specify coordinate system first."), QMessageBox::Ok);
+				int dialogRet = projectData()->mainfile()->showCoordinateSystemDialog(true);
+				if (dialogRet == QDialog::Rejected) {
+					delete item;
+					item = nullptr;
+					goto ERROR;
+				}
+			}
+		}
+		// import data from the specified file
+		QWidget *w = wDialog;
+		if (w == nullptr) w = mainWindow();
+		bool ret = importer->importData(geodata, i, w);
+		if (! ret) {
+			// failed.
+			delete item;
+			item = nullptr;
+			failedIds.push_back(i + 1);
+		} else {
+			auto o = offset();
+			geodata->applyOffset(o.x(), o.y());
+			// the standarditem is set at the last position, so make it the first.
+			QList<QStandardItem*> takenItems = m_standardItem->takeRow(item->standardItem()->row());
+			m_standardItem->insertRows(0, takenItems);
+			// add the item, in the front.
+			m_childItems.insert(m_childItems.begin(), item);
+			if (i != dataCount - 1) {
+				geodata->informDeselection(dataModel()->graphicsView());
+			}
+			setupConnectionToGeoData(geodata);
+		}
+		if (wDialog != nullptr) {
+			wDialog->setProgress(i + 1);
+			qApp->processEvents();
+		}
+	}
+	if (wDialog != nullptr) {
+		wDialog->hide();
+		delete wDialog;
+	}
+	// All imports succeeded.
+	LastIODirectory::set(finfo.absolutePath());
+
+	updateItemMap();
+	updateZDepthRange();
+
+	informValueRangeChange();
+	informDataChange();
+
+	if (failedIds.size() > 0 && dataCount > 1) {
+		QStringList idStrs;
+		for (int i = 0; i < failedIds.size(); ++i) {
+			idStrs.push_back(QString::number(failedIds[i]));
+		}
+		QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("Specified file has invalid data, and those were ignored. Ignored data is as follows:\n%1").arg(idStrs.join("\n")));
+	}
+
+	if (item != nullptr) {
+		dataModel()->objectBrowserView()->select(item->standardItem()->index());
+		emit selectGeoData(item->standardItem()->index());
+	}
+	dataModel()->graphicsView()->cameraFit();
+	setModified();
+
+	// import is not undo-able.
+	iRICUndoStack::instance().clear();
+	return;
+
+ERROR:
+	if (wDialog != nullptr) {
+		wDialog->hide();
+		delete wDialog;
+	}
+	updateItemMap();
+	updateZDepthRange();
+
+	informValueRangeChange();
+	informDataChange();
+
+	dataModel()->graphicsView()->cameraFit();
+	setModified();
+
+	// import is not undo-able.
+	iRICUndoStack::instance().clear();
 }
 
 void PreProcessorGeoDataGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
@@ -932,11 +1016,6 @@ ScalarBarSetting& PreProcessorGeoDataGroupDataItem::scalarBarSetting()
 const QString& PreProcessorGeoDataGroupDataItem::scalarBarTitle() const
 {
 	return m_scalarBarTitle;
-}
-
-QAction* PreProcessorGeoDataGroupDataItem::importAction() const
-{
-	return m_importAction;
 }
 
 bool PreProcessorGeoDataGroupDataItem::addImportAction(QMenu* menu)

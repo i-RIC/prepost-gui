@@ -5,7 +5,7 @@
     <name>GeoDataPolygonGroup</name>
     <message>
         <source>P&amp;olygon Group</source>
-        <translation>多边形组</translation>
+        <translation type="vanished">多边形组</translation>
     </message>
     <message>
         <source>Polygon%1</source>
@@ -50,6 +50,10 @@
     <message>
         <source>Color &amp;Setting...</source>
         <translation type="vanished">色彩设置 (&amp;S)...</translation>
+    </message>
+    <message>
+        <source>P&amp;olygons</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -97,19 +101,19 @@
         <translation type="obsolete">多边形%1</translation>
     </message>
     <message>
-        <source>Polygon Group</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Polygon Group%1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>polygon</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Polygon</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Polygons</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Polygons%1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -132,11 +136,11 @@
         <translation type="unfinished">警告</translation>
     </message>
     <message>
-        <source>Some polygon in this polygon group has holes, but holes are not exported to CSV file. If you want to export holes, please export to ESRI Shapefile.</source>
+        <source>CSV file (*.csv)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>CSV file (*.csv)</source>
+        <source>Some polygon in this data has holes, but holes are not exported to CSV file. If you want to export holes, please export to ESRI Shapefile.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

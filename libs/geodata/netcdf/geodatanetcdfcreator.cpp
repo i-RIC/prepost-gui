@@ -10,7 +10,7 @@
 #include <QIcon>
 
 GeoDataNetcdfCreator::GeoDataNetcdfCreator(const QString& typeName) :
-	GeoDataCreator {typeName, tr("Raster data")}
+	GeoDataCreator {typeName, tr("Raster Data")}
 {}
 
 QString GeoDataNetcdfCreator::name(unsigned int index) const
@@ -20,5 +20,5 @@ QString GeoDataNetcdfCreator::name(unsigned int index) const
 
 QString GeoDataNetcdfCreator::defaultCaption(unsigned int index) const
 {
-	return QString(tr("Raster data%1")).arg(index);
+	return QString(tr("Raster Data%1")).arg(index);
 }

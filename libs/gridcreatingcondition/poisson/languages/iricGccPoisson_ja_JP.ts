@@ -116,7 +116,7 @@
     </message>
     <message>
         <source>River Survey data not found. Please define Center Line by yourself.</source>
-        <translation>河川測量データが見つかりません。中心線を自分で定義して下さい。</translation>
+        <translation type="vanished">河川測量データが見つかりません。中心線を自分で定義して下さい。</translation>
     </message>
     <message>
         <source>Grid region not defined yet.</source>
@@ -161,6 +161,10 @@
     <message>
         <source>Edit %1 Coordinates</source>
         <translation>%1の座標編集</translation>
+    </message>
+    <message>
+        <source>Cross-section data not found. Please define Center Line by yourself.</source>
+        <translation>横断測量データが見つかりません。中心線を自分で定義して下さい。</translation>
     </message>
 </context>
 <context>

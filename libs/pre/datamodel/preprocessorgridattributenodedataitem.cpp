@@ -76,7 +76,7 @@ PreProcessorGridAttributeNodeDataItem::PreProcessorGridAttributeNodeDataItem(Sol
 	m_exportAction = new QAction(QIcon(":/libs/guibase/images/iconExport.png"),PreProcessorGridAttributeNodeDataItem::tr("Export..."), this);
 	connect(m_exportAction, SIGNAL(triggered()), this, SLOT(exportToFile()));
 
-	m_generatePointMapAction = new QAction(PreProcessorGridAttributeNodeDataItem::tr("Generate points data"), this);
+	m_generatePointMapAction = new QAction(PreProcessorGridAttributeNodeDataItem::tr("Generate point cloud data"), this);
 	connect(m_generatePointMapAction, SIGNAL(triggered()), this, SLOT(generatePointMap()));
 
 	m_editDifferenceAction = new QAction(PreProcessorGridAttributeNodeDataItem::tr("Edit value by specifying difference..."), this);

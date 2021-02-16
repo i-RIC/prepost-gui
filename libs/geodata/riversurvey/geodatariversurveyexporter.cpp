@@ -10,7 +10,7 @@
 #include <QTextStream>
 
 GeoDataRiverSurveyExporter::GeoDataRiverSurveyExporter(GeoDataCreator* creator) :
-	GeoDataExporter(tr("River Survey data (*.riv)"), creator)
+	GeoDataExporter(tr("Cross-Section Data (*.riv)"), creator)
 {}
 
 bool GeoDataRiverSurveyExporter::doExport(GeoData* data, const QString& filename, const QString& /*selectedFilter*/, QWidget* /*w*/, ProjectData* pd)
@@ -94,6 +94,6 @@ bool GeoDataRiverSurveyExporter::doExport(GeoData* data, const QString& filename
 const QStringList GeoDataRiverSurveyExporter::fileDialogFilters()
 {
 	QStringList ret;
-	ret << tr("River Survey data(*.riv)");
+	ret << tr("Cross-Section Data (*.riv)");
 	return ret;
 }

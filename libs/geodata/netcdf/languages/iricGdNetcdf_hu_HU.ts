@@ -38,11 +38,11 @@
 <context>
     <name>GeoDataNetcdfCreator</name>
     <message>
-        <source>Raster data</source>
+        <source>Raster Data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Raster data%1</source>
+        <source>Raster Data%1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -247,10 +247,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>%1 does not have longitude and latitude data.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>%1 does not have variable that can be imported.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -260,6 +256,10 @@
     </message>
     <message>
         <source>Error occured while parsing time definition: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 does not have longitude, latitude nor x, y data.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -329,6 +329,17 @@
     <name>GeoDataNetcdfNcExporter</name>
     <message>
         <source>NetCDF files (*.nc)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataNetcdfTimeSeriesCreator</name>
+    <message>
+        <source>Time Series Raster Data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Time Series Raster Data%1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

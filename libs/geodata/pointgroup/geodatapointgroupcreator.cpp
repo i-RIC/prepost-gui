@@ -10,7 +10,7 @@
 #include <QStandardItem>
 
 GeoDataPointGroupCreator::GeoDataPointGroupCreator(const QString& typeName) :
-	GeoDataPolyDataGroupCreator {typeName, tr("Point Group")}
+	GeoDataPolyDataGroupCreator {typeName, tr("Points")}
 {
 	importers().push_back(new GeoDataPointGroupShpImporter(this));
 	importers().push_back(new GeoDataPointGroupCsvImporter(this));
@@ -25,7 +25,7 @@ QString GeoDataPointGroupCreator::name(unsigned int index) const
 
 QString GeoDataPointGroupCreator::defaultCaption(unsigned int index) const
 {
-	return QString(tr("Point Group%1")).arg(index);
+	return QString(tr("Points%1")).arg(index);
 }
 
 bool GeoDataPointGroupCreator::isCreatable() const
