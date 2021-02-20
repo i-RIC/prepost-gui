@@ -41,6 +41,7 @@ bool TpoExporter::open(const QString& fileName)
 
 	impl->m_stream = new QTextStream(impl->m_file);
 	impl->m_stream->setRealNumberNotation(QTextStream::RealNumberNotation::FixedNotation);
+	impl->m_stream->setRealNumberPrecision(3);
 
 	return true;
 }
@@ -56,13 +57,8 @@ void TpoExporter::addPoint(double x, double y, double z)
 {
 	if (! impl->m_stream) {return;}
 
-	impl->m_stream->setRealNumberPrecision(impl->m_xPrecision);
 	*(impl->m_stream) << x + impl->m_offset.x() << " ";
-
-	impl->m_stream->setRealNumberPrecision(impl->m_yPrecision);
 	*(impl->m_stream) << y + impl->m_offset.y() << " ";
-
-	impl->m_stream->setRealNumberPrecision(impl->m_zPrecision);
 	*(impl->m_stream) << z << endl;
 }
 

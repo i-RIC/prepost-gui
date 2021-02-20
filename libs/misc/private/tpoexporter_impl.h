@@ -19,10 +19,6 @@ public:
 
 	QFile* m_file;
 	QTextStream* m_stream;
-	int m_xPrecision;
-	int m_yPrecision;
-	int m_zPrecision;
-
 	QWidget* m_widget;
 };
 
