@@ -31,7 +31,7 @@ bool GeoDataPolygonGroupShpExporter::doExport(GeoData* data, const QString& file
 	DBFHandle dbfh = getDBFHandle(dbfFilename, data->gridAttribute(), &valueIsDouble);
 
 	auto offset = pd->mainfile()->offset();
-	QTextCodec* codec = QTextCodec::codecForLocale();
+	QTextCodec* codec = QTextCodec::codecForName("UTF-8");
 
 	int idx = 0;
 	for (auto d : group->allData()) {
