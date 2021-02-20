@@ -535,7 +535,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Text file (*.csv *.txt)</source>
+        <source>Text file (*.csv *.txt *.xyz)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
