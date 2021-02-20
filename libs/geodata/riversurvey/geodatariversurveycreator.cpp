@@ -21,7 +21,6 @@ GeoDataRiverSurveyCreator::GeoDataRiverSurveyCreator() :
 	importers().push_back(new GeoDataRiverSurveyMlitImporter(this));
 
 	exporters().push_back(new GeoDataRiverSurveyExporter(this));
-	exporters().push_back(new GeoDataRiverSurveyVTKExporter(this));
 	exporters().push_back(new GeoDataRiverSurveyHonryuExporter(this));
 	exporters().push_back(new GeoDataRiverSurveyLandXmlExporter(this));
 
