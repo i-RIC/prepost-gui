@@ -647,7 +647,11 @@
     </message>
     <message>
         <source>Text file (*.csv *.txt)</source>
-        <translation>テキストファイル (*.csv *.txt)</translation>
+        <translation type="vanished">テキストファイル (*.csv *.txt)</translation>
+    </message>
+    <message>
+        <source>Text file (*.csv *.txt *.xyz)</source>
+        <translation>テキストファイル (*.csv *.txt, *.xyz)</translation>
     </message>
 </context>
 <context>

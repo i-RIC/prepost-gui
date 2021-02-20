@@ -3,7 +3,10 @@
 
 #include "misc_global.h"
 
-class QPointF;
+#include <QPointF>
+#include <QTextStream>
+
+class QFile;
 class QString;
 class QWidget;
 
@@ -17,14 +20,26 @@ public:
 
 	void close();
 
-	void addPoint(double x, double y, double z);
+	inline void addPoint(double x, double y, double z);
 
 	void setOffset(double x, double y);
 	void setOffset(const QPointF& offset);
 
 private:
-	class Impl;
-	Impl* impl;
+	QPointF m_offset;
+
+	QFile* m_file;
+	QTextStream* m_stream;
+	QWidget* m_widget;
 };
+
+void TpoExporter::addPoint(double x, double y, double z)
+{
+	if (! m_stream) {return;}
+
+	*(m_stream) << x + m_offset.x() << " ";
+	*(m_stream) << y + m_offset.y() << " ";
+	*(m_stream) << z << endl;
+}
 
 #endif // TPOEXPORTER_H

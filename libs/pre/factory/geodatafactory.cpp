@@ -29,8 +29,8 @@ GeoDataFactory::GeoDataFactory() :
 	// classes those inherits GeoDataCreator.
 
 	// cross-section data, point cloud data, rasterdata
-	m_creators.push_back(new GeoDataRiverSurveyCreator());
 	m_creators.push_back(new GeoDataPointmapRealCreator());
+	m_creators.push_back(new GeoDataRiverSurveyCreator());
 	m_creators.push_back(new GeoDataNetcdfIntegerCreator());
 	m_creators.push_back(new GeoDataNetcdfRealCreator());
 	m_creators.push_back(new GeoDataNetcdfTimeSeriesIntegerCreator());
