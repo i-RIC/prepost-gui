@@ -94,7 +94,16 @@ void InputConditionWidgetCgnsResult::updateEnums()
 			const QString& e = enums.at(i);
 			m_comboBox->addItem(e);
 		}
-		setValue(m_container->value());
+		auto v = m_container->value();
+		if (v.isEmpty()) {
+			if (enums.size() > 0) {
+				auto newValue = enums.at(0);
+				setValue(newValue);
+				m_container->setValue(newValue);
+			}
+		} else {
+			setValue(v);
+		}
 	}
 	m_comboBox->blockSignals(false);
 }
