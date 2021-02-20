@@ -28,5 +28,5 @@ void GeoDataNetcdfGdalIntegerExporter::copyData(GeoDataNetcdf* netcdf, int ncid,
 		}
 	}
 
-	GDALRasterIO(band, GF_Write, 0, 0, netcdf->xSize(), netcdf->ySize(), buffer.data(), netcdf->xSize(), netcdf->ySize(), GDT_Int32, 0, 0);
+	GDALRasterIO(band, GF_Write, 0, 0, netcdf->xSize(), netcdf->ySize(), buffer2.data(), netcdf->xSize(), netcdf->ySize(), GDT_Int32, 0, 0);
 }
