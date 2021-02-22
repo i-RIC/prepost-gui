@@ -1,7 +1,7 @@
 #ifndef GEODATAFACTORY_H
 #define GEODATAFACTORY_H
 
-#include <QObject>
+#include <guicore/pre/geodata/geodatafactoryinterface.h>
 
 #include <vector>
 
@@ -11,7 +11,7 @@ class GeoDataCreator;
 class ProjectDataItem;
 class SolverDefinitionGridAttribute;
 
-class GeoDataFactory : public QObject
+class GeoDataFactory : public GeoDataFactoryInterface
 {
 private:
 	GeoDataFactory();
@@ -19,8 +19,8 @@ private:
 public:
 	static GeoDataFactory& instance();
 
-	const std::vector<GeoDataCreator*>& creators() const;
-	std::vector<GeoDataCreator*> compatibleCreators(SolverDefinitionGridAttribute* condition) const;
+	const std::vector<GeoDataCreator*>& creators() const override;
+	std::vector<GeoDataCreator*> compatibleCreators(SolverDefinitionGridAttribute* condition) const override;
 
 	GeoData* restore(const QDomNode& node, ProjectDataItem* item, SolverDefinitionGridAttribute* cond) const;
 

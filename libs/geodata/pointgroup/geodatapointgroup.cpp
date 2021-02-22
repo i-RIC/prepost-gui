@@ -1,4 +1,5 @@
 #include "geodatapointgroup.h"
+#include "geodatapointgroupcreator.h"
 #include "geodatapointgrouppoint.h"
 #include "private/geodatapointgroup_impl.h"
 
@@ -8,6 +9,8 @@
 #include <guicore/pre/base/preprocessorgeodatadataiteminterface.h>
 #include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
+#include <guicore/pre/base/preprocessorwindowinterface.h>
+#include <guicore/pre/geodata/geodatafactoryinterface.h>
 #include <guicore/scalarstocolors/scalarstocolorscontainer.h>
 #include <misc/mathsupport.h>
 #include <misc/zdepthrange.h>
@@ -35,6 +38,17 @@
 namespace {
 
 std::string VALUE = "value";
+
+GeoDataCreator* getPointGroupCreator(PreProcessorGeoDataDataItemInterface* geoData, SolverDefinitionGridAttribute* att)
+{
+	auto factory = geoData->preProcessorWindow()->geoDataFactory();
+	auto creators = factory->compatibleCreators(att);
+	for (auto c : creators) {
+		auto c2 = dynamic_cast <GeoDataPointGroupCreator*> (c);
+		if (c2 != nullptr) {return c2;}
+	}
+	return nullptr;
+}
 
 } // namespace
 
@@ -201,10 +215,8 @@ QString GeoDataPointGroup::captionForData(int number)
 
 GeoDataPolyDataGroup* GeoDataPointGroup::createInstanceForCopy(PreProcessorGeoDataDataItemInterface* d)
 {
-	auto gItem = dynamic_cast<PreProcessorGeoDataGroupDataItemInterface*>(d->parent());
-	auto newGroup = new GeoDataPointGroup(d, creator(), gItem->condition());
-
-	return newGroup;
+	auto gItem = dynamic_cast<PreProcessorGeoDataGroupDataItemInterface*> (d->parent());
+	return dynamic_cast<GeoDataPolyDataGroup*> (getPointGroupCreator(d, gItem->condition())->create(d, gItem->condition()));
 }
 
 void GeoDataPointGroup::setupMenu()

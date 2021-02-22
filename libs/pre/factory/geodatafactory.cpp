@@ -22,7 +22,7 @@
 GeoDataFactory* GeoDataFactory::m_instance = nullptr;
 
 GeoDataFactory::GeoDataFactory() :
-	QObject(nullptr)
+	GeoDataFactoryInterface {}
 {
 	// @todo add GeoDataCreator instances into
 	// m_creators here when you added new
