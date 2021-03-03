@@ -60,14 +60,14 @@ bool Structured15DGridWithCrossSectionHecRasExporter::doExport(Grid* grid, const
 	o << "QT" << endl;
 	o << "*" << endl;
 
-	double distanceFromFirst = 0;
+	double distance = 0;
 	auto att = dynamic_cast<GridComplexAttributeContainer*> (g->gridAttribute("Crosssection"));
 	for (int i = 0; i < g->crossSections().size(); ++i) {
 		Structured15DGridWithCrossSectionCrossSection* cs = g->crossSections().at(i);
 		if (i != 0) {
 			auto prev = g->vertex(i - 1);
 			auto curr = g->vertex(i);
-			distanceFromFirst += iRIC::distance(prev, curr);
+			distance = iRIC::distance(prev, curr);
 		}
 		// X1 record
 		o.setFieldWidth(0);
@@ -81,7 +81,7 @@ bool Structured15DGridWithCrossSectionHecRasExporter::doExport(Grid* grid, const
 		double lb = cs->altitudeInfo().first().m_position;
 		double rb = cs->altitudeInfo().last().m_position;
 		o << rb - lb;  // right bank stationing
-		o << distanceFromFirst << distanceFromFirst << distanceFromFirst;
+		o << distance << distance << distance;
 		o.setFieldWidth(0);
 		o << endl;
 
