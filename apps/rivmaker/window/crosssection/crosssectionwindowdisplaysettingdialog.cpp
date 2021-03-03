@@ -10,7 +10,7 @@ CrossSectionWindowDisplaySettingDialog::CrossSectionWindowDisplaySettingDialog(Q
 	ui->setupUi(this);
 	connect(ui->distanceMarkersFontButton, SIGNAL(clicked()), this, SLOT(editScalesFont()));
 	connect(ui->aspectRatioFontButton, SIGNAL(clicked()), this, SLOT(editAspectRatioFont()));
-	connect(ui->HWMsFontButton, SIGNAL(clicked()), this, SLOT(editHWMsFont()));
+	// connect(ui->HWMsFontButton, SIGNAL(clicked()), this, SLOT(editHWMsFont()));
 }
 
 CrossSectionWindowDisplaySettingDialog::~CrossSectionWindowDisplaySettingDialog()
@@ -22,9 +22,9 @@ CrossSectionWindowDisplaySetting CrossSectionWindowDisplaySettingDialog::crossSe
 {
 	auto s = m_crossSectionWindowDisplaySetting;
 	s.XSColor = ui->crossSectionPointColorWidget->color();
-	s.WSEColor = ui->WSEColorWidget->color();
-	s.LeftHWMColor = ui->LeftHWMColorWidget->color();
-	s.RightHWMColor = ui->RightHWMColorWidget->color();
+	// s.WSEColor = ui->WSEColorWidget->color();
+	// s.LeftHWMColor = ui->LeftHWMColorWidget->color();
+	// s.RightHWMColor = ui->RightHWMColorWidget->color();
 
 	return s;
 }
@@ -62,9 +62,9 @@ void CrossSectionWindowDisplaySettingDialog::setSettings(const CrossSectionWindo
 	m_chartGraphicsViewDisplaySetting = chartds;
 
 	ui->crossSectionPointColorWidget->setColor(csds.XSColor);
-	ui->WSEColorWidget->setColor(csds.WSEColor);
-	ui->LeftHWMColorWidget->setColor(csds.LeftHWMColor);
-	ui->RightHWMColorWidget->setColor(csds.RightHWMColor);
+	// ui->WSEColorWidget->setColor(csds.WSEColor);
+	// ui->LeftHWMColorWidget->setColor(csds.LeftHWMColor);
+	// ui->RightHWMColorWidget->setColor(csds.RightHWMColor);
 
 	ui->BackgroundColorWidget->setColor(chartds.bgColor);
 
