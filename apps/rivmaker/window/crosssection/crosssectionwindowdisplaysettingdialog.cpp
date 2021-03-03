@@ -23,7 +23,8 @@ CrossSectionWindowDisplaySetting CrossSectionWindowDisplaySettingDialog::crossSe
 	auto s = m_crossSectionWindowDisplaySetting;
 	s.XSColor = ui->crossSectionPointColorWidget->color();
 	s.WSEColor = ui->WSEColorWidget->color();
-	s.HWMColor = ui->HWMsColorWidget->color();
+	s.LeftHWMColor = ui->LeftHWMColorWidget->color();
+	s.RightHWMColor = ui->RightHWMColorWidget->color();
 
 	return s;
 }
@@ -62,7 +63,8 @@ void CrossSectionWindowDisplaySettingDialog::setSettings(const CrossSectionWindo
 
 	ui->crossSectionPointColorWidget->setColor(csds.XSColor);
 	ui->WSEColorWidget->setColor(csds.WSEColor);
-	ui->HWMsColorWidget->setColor(csds.HWMColor);
+	ui->LeftHWMColorWidget->setColor(csds.LeftHWMColor);
+	ui->RightHWMColorWidget->setColor(csds.RightHWMColor);
 
 	ui->BackgroundColorWidget->setColor(chartds.bgColor);
 

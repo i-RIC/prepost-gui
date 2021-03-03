@@ -2,7 +2,8 @@
 
 CrossSectionWindowDisplaySetting::CrossSectionWindowDisplaySetting() :
 	XSColor {Qt::red},
-	WSEColor {Qt::blue},
-	HWMColor {Qt::darkBlue},
+	WSEColor {Qt::black},
+	LeftHWMColor {Qt::blue},
+	RightHWMColor {Qt::red},
 	HWMFont {"Helvetica", 10}
 {}

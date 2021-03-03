@@ -6,14 +6,14 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>441</width>
-    <height>411</height>
+    <width>434</width>
+    <height>461</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Cross Section Window Display Setting</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout_9">
+  <layout class="QVBoxLayout" name="verticalLayout_7" stretch="0,0,0,1,0">
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout_6">
      <item>
@@ -467,7 +467,7 @@
     </layout>
    </item>
    <item>
-    <layout class="QHBoxLayout" name="horizontalLayout_7">
+    <layout class="QHBoxLayout" name="horizontalLayout_10" stretch="0,0,1">
      <item>
       <layout class="QVBoxLayout" name="verticalLayout_6">
        <item>
@@ -526,79 +526,53 @@
       </layout>
      </item>
      <item>
-      <layout class="QVBoxLayout" name="verticalLayout_7">
-       <item>
-        <widget class="QGroupBox" name="WSEGroupBox">
-         <property name="title">
-          <string>WSE</string>
-         </property>
-         <layout class="QGridLayout" name="gridLayout_7">
-          <item row="0" column="1">
-           <layout class="QHBoxLayout" name="horizontalLayout_12">
-            <item>
-             <widget class="ColorEditWidget" name="WSEColorWidget">
-              <property name="text">
-               <string/>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <spacer name="horizontalSpacer_11">
-              <property name="orientation">
-               <enum>Qt::Horizontal</enum>
-              </property>
-              <property name="sizeHint" stdset="0">
-               <size>
-                <width>18</width>
-                <height>20</height>
-               </size>
-              </property>
-             </spacer>
-            </item>
-           </layout>
-          </item>
-          <item row="0" column="0">
-           <widget class="QLabel" name="WSEColorLabel">
-            <property name="text">
-             <string>Color:</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item>
-        <spacer name="verticalSpacer_4">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>20</width>
-           <height>13</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-      </layout>
-     </item>
-     <item>
       <widget class="QGroupBox" name="HWMsGroupBox">
        <property name="title">
-        <string>HWMs</string>
+        <string>WSE and HWMs</string>
        </property>
-       <layout class="QGridLayout" name="gridLayout_8">
-        <item row="0" column="0">
-         <widget class="QLabel" name="HWMsColorLabel">
+       <layout class="QGridLayout" name="gridLayout_5">
+        <item row="0" column="0" colspan="2">
+         <widget class="QLabel" name="WSEColorLabel">
           <property name="text">
-           <string>Color:</string>
+           <string>WSE Color:</string>
           </property>
          </widget>
         </item>
-        <item row="0" column="1">
+        <item row="0" column="2">
+         <layout class="QHBoxLayout" name="horizontalLayout_12">
+          <item>
+           <widget class="ColorEditWidget" name="WSEColorWidget">
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_11">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>18</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+        <item row="1" column="0" colspan="2">
+         <widget class="QLabel" name="LeftHWMColorLabel">
+          <property name="text">
+           <string>Left HWM Color:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="2">
          <layout class="QHBoxLayout" name="horizontalLayout_13">
           <item>
-           <widget class="ColorEditWidget" name="HWMsColorWidget">
+           <widget class="ColorEditWidget" name="LeftHWMColorWidget">
             <property name="text">
              <string/>
             </property>
@@ -619,15 +593,46 @@
           </item>
          </layout>
         </item>
-        <item row="1" column="0">
+        <item row="2" column="0" colspan="2">
+         <widget class="QLabel" name="RightHWMColorLabel">
+          <property name="text">
+           <string>Right HWM Color:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="2">
+         <layout class="QHBoxLayout" name="horizontalLayout_14">
+          <item>
+           <widget class="ColorEditWidget" name="RightHWMColorWidget">
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_16">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>18</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+        <item row="3" column="0">
          <widget class="QLabel" name="HWMsFontLabel">
           <property name="text">
            <string>Font:</string>
           </property>
          </widget>
         </item>
-        <item row="1" column="1">
-         <layout class="QHBoxLayout" name="horizontalLayout_14">
+        <item row="3" column="1" colspan="2">
+         <layout class="QHBoxLayout" name="horizontalLayout_7">
           <item>
            <widget class="QPushButton" name="HWMsFontButton">
             <property name="text">
@@ -709,8 +714,8 @@
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>257</x>
-     <y>399</y>
+     <x>266</x>
+     <y>451</y>
     </hint>
     <hint type="destinationlabel">
      <x>157</x>
@@ -725,8 +730,8 @@
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>325</x>
-     <y>399</y>
+     <x>334</x>
+     <y>451</y>
     </hint>
     <hint type="destinationlabel">
      <x>286</x>
@@ -738,7 +743,7 @@
    <sender>horizontalAutoCheckBox</sender>
    <signal>toggled(bool)</signal>
    <receiver>horizontalScaleSpinBox</receiver>
-   <slot>setEnabled(bool)</slot>
+   <slot>setDisabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>138</x>
@@ -754,7 +759,7 @@
    <sender>horizontalAutoCheckBox</sender>
    <signal>toggled(bool)</signal>
    <receiver>horizontalSubScaleSpinBox</receiver>
-   <slot>setEnabled(bool)</slot>
+   <slot>setDisabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>126</x>
@@ -770,7 +775,7 @@
    <sender>verticalAutoCheckBox</sender>
    <signal>toggled(bool)</signal>
    <receiver>verticalScaleSpinBox</receiver>
-   <slot>setEnabled(bool)</slot>
+   <slot>setDisabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>267</x>
@@ -786,7 +791,7 @@
    <sender>verticalAutoCheckBox</sender>
    <signal>toggled(bool)</signal>
    <receiver>verticalSubScaleSpinBox</receiver>
-   <slot>setEnabled(bool)</slot>
+   <slot>setDisabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>281</x>
