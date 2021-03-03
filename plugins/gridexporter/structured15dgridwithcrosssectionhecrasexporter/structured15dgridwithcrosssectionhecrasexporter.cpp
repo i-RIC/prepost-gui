@@ -37,7 +37,7 @@ bool Structured15DGridWithCrossSectionHecRasExporter::isGridTypeSupported(Solver
 QStringList Structured15DGridWithCrossSectionHecRasExporter::fileDialogFilters() const
 {
 	QStringList ret;
-	ret << QObject::tr("HEC-RAS text files (*.txt)");
+	ret << QObject::tr("HEC-RAS text files (*.dat)");
 	return ret;
 }
 
