@@ -15,6 +15,38 @@
 
 namespace {
 
+void outputSingleSpace(QTextStream *s)
+{
+	s->setFieldWidth(0);
+	*s << " ";
+}
+
+void outputRealValue(QTextStream* s, double value, int fieldWidth, int precision)
+{
+	s->setRealNumberPrecision(precision);
+	s->setFieldWidth(fieldWidth);
+	*s << value;
+}
+
+void outputPosValue(QTextStream* s, double value, int fieldWidth)
+{
+	int precision = 2;
+
+	if (fieldWidth == 5) {
+		if (value >= 1000) {
+			precision = 0;
+		} else if (value  >= 100) {
+			precision = 1;
+		}
+	}
+	outputRealValue(s, value, fieldWidth, precision);
+}
+
+void outputNValue(QTextStream* s, double value)
+{
+	outputRealValue(s, value, 7, 3);
+}
+
 } // namespace
 
 Structured15DGridWithCrossSectionHecRasExporter::Structured15DGridWithCrossSectionHecRasExporter() :
@@ -62,11 +94,12 @@ bool Structured15DGridWithCrossSectionHecRasExporter::doExport(Grid* grid, const
 
 	double distance = 0;
 	auto att = dynamic_cast<GridComplexAttributeContainer*> (g->gridAttribute("Crosssection"));
+	const auto gsize = g->crossSections().size();
 	for (int i = 0; i < g->crossSections().size(); ++i) {
-		Structured15DGridWithCrossSectionCrossSection* cs = g->crossSections().at(i);
+		Structured15DGridWithCrossSectionCrossSection* cs = g->crossSections().at(gsize - 1 - i);
 		if (i != 0) {
-			auto prev = g->vertex(i - 1);
-			auto curr = g->vertex(i);
+			auto prev = g->vertex(gsize - i);
+			auto curr = g->vertex(gsize - 1 - i);
 			distance = iRIC::distance(prev, curr);
 		}
 		// X1 record
@@ -137,14 +170,13 @@ bool Structured15DGridWithCrossSectionHecRasExporter::doExport(Grid* grid, const
 			o << "NH ";
 			o.setFieldWidth(5);
 			o << 1;
-			o.setFieldWidth(0);
-			o << " ";
-			o.setFieldWidth(7);
-			o << n;
-			o.setFieldWidth(0);
-			o << " ";
-			o.setFieldWidth(7);
-			o << rb - lb;
+
+			outputSingleSpace(&o);
+			outputNValue(&o, n);
+
+			outputSingleSpace(&o);
+			outputPosValue(&o, rb - lb, 7);
+
 			o.setFieldWidth(0);
 			o << endl;
 		} else {
@@ -153,44 +185,30 @@ bool Structured15DGridWithCrossSectionHecRasExporter::doExport(Grid* grid, const
 				if (idx == 0) {
 					o.setFieldWidth(0);
 					o << "NH ";
+
 					o.setFieldWidth(5);
 					o << n_vec.size();
-					o.setFieldWidth(0);
-					o << " ";
-					o.setFieldWidth(7);
-					o << n_vec.at(0);
-					o.setFieldWidth(0);
-					o << " ";
-					o.setFieldWidth(7);
-					o << pos_vec.at(0);
+
+					outputSingleSpace(&o);
+					outputNValue(&o, n_vec.at(0));
+
+					outputSingleSpace(&o);
+					outputPosValue(&o, pos_vec.at(0), 7);
 				} else if ((idx + 1) % 5 == 0) {
-					o.setFieldWidth(0);
-					o << " ";
-					o.setFieldWidth(7);
-					o << n_vec.at(idx);
+					outputSingleSpace(&o);
+					outputNValue(&o, n_vec.at(idx));
+
 					o.setFieldWidth(0);
 					o << endl;
 					o << "NH ";
-					if (pos_vec.at(idx) >= 1000) {
-						o.setRealNumberPrecision(0);
-					} else if (pos_vec.at(idx) >= 100) {
-						o.setRealNumberPrecision(1);
-					} else {
-						o.setRealNumberPrecision(2);
-					}
-					o.setFieldWidth(5);
-					o << pos_vec.at(idx);
-					o.setRealNumberPrecision(2);
-				}
-				else {
-					o.setFieldWidth(0);
-					o << " ";
-					o.setFieldWidth(7);
-					o << n_vec.at(idx);
-					o.setFieldWidth(0);
-					o << " ";
-					o.setFieldWidth(7);
-					o << pos_vec.at(idx);
+
+					outputPosValue(&o, pos_vec.at(idx), 5);
+				} else {
+					outputSingleSpace(&o);
+					outputNValue(&o, n_vec.at(idx));
+
+					outputSingleSpace(&o);
+					outputPosValue(&o, pos_vec.at(idx), 7);
 				}
 				++ idx;
 			}
