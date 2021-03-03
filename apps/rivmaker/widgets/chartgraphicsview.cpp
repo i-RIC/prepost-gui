@@ -107,17 +107,32 @@ void ChartGraphicsView::setChartDisplaySetting(const ChartGraphicsViewDisplaySet
 
 void ChartGraphicsView::cameraFit()
 {
+	if (chartWindow()->fixRegion()) {return;}
+
 	auto r = getRegion();
 
 	m_center.setX((r.left() + r.right()) * 0.5);
 	m_center.setY((r.top() + r.bottom()) * 0.5);
 
+	if (chartWindow()->fixAspectRatio()) {
+		double scaleX = (width() - iLeftMargin - iRightMargin) / (r.width() * (1 + fLeftMargin + fRightMargin));
+		double scaleY = (height() - iTopMargin - iBottomMargin) / (r.height() * (1 + fTopMargin + fBottomMargin));
+		if (scaleX <= 0) {scaleX = 1;}
+		if (scaleY <= 0) {scaleY = 1;}
 
-	if (! chartWindow()->fixRegion() && ! chartWindow()->fixAspectRatio()) {
+		double ar = aspectRatio();
+		if (scaleY > scaleX * ar) {
+			scaleY = scaleX * ar;
+		} else {
+			scaleX = scaleY / ar;
+		}
+		m_scaleX = scaleX;
+		m_scaleY = scaleY;
+	} else {
 		m_scaleX = (width() - iLeftMargin - iRightMargin) / (r.width() * (1 + fLeftMargin + fRightMargin));
 		m_scaleY = (height() - iTopMargin - iBottomMargin) / (r.height() * (1 + fTopMargin + fBottomMargin));
-		if (m_scaleX < 0) {m_scaleX = 1;}
-		if (m_scaleY < 0) {m_scaleY = 1;}
+		if (m_scaleX <= 0) {m_scaleX = 1;}
+		if (m_scaleY <= 0) {m_scaleY = 1;}
 	}
 
 	update();

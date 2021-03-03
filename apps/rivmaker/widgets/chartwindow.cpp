@@ -169,6 +169,9 @@ void ChartWindow::addViewToolBar()
 	connect(m_fixRegionCheckBox, SIGNAL(toggled(bool)), this, SLOT(updateAspectRatioStatus()));
 
 	addToolBar(m_viewToolBar);
+
+	m_fixAspectRatioCheckBox->setChecked(true);
+	setAspectRatio(5.0);
 }
 
 ChartGraphicsView* ChartWindow::graphicsView()
