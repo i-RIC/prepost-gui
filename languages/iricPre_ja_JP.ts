@@ -501,7 +501,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>&amp;River Survey</source>
-        <translation>河川測量データ (&amp;R)</translation>
+        <translation type="vanished">河川測量データ (&amp;R)</translation>
     </message>
     <message>
         <source>P&amp;ointset Data</source>
@@ -509,11 +509,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>&amp;Polygon Group</source>
-        <translation>ポリゴングループ (&amp;P)</translation>
+        <translation type="vanished">ポリゴングループ (&amp;P)</translation>
     </message>
     <message>
         <source>&amp;Polygons</source>
-        <translation type="vanished">ポリゴングループ (&amp;P)</translation>
+        <translation>ポリゴンデータ (&amp;P)</translation>
     </message>
     <message>
         <source>&amp;Polygon</source>
@@ -670,6 +670,18 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Importing %1 failed.</source>
         <translation type="vanished">%1 のインポートが失敗しました。</translation>
+    </message>
+    <message>
+        <source>&amp;Cross-Section Data</source>
+        <translation>横断測量データ(&amp;C)</translation>
+    </message>
+    <message>
+        <source>&amp;Lines</source>
+        <translation>ラインデータ(&amp;L)</translation>
+    </message>
+    <message>
+        <source>P&amp;oint Cloud Data</source>
+        <translation>点群データ(&amp;O)</translation>
     </message>
 </context>
 <context>
@@ -981,7 +993,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Generate points data</source>
-        <translation>このデータから点群データを生成</translation>
+        <translation type="vanished">このデータから点群データを生成</translation>
     </message>
     <message>
         <source>Topography File (*.tpo)</source>
@@ -1010,6 +1022,10 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>%1 generated.</source>
         <translation>%1 が生成されました。</translation>
+    </message>
+    <message>
+        <source>Generate point cloud data</source>
+        <translation>このデータから点群データを生成</translation>
     </message>
 </context>
 <context>
@@ -1299,11 +1315,15 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Generate points data</source>
-        <translation>このデータから地勢データを生成</translation>
+        <translation type="vanished">このデータから地勢データを生成</translation>
     </message>
     <message>
         <source>%1 generated.</source>
         <translation>%1 が生成されました。</translation>
+    </message>
+    <message>
+        <source>Generate point cloud data</source>
+        <translation>このデータから点群データを生成</translation>
     </message>
 </context>
 <context>

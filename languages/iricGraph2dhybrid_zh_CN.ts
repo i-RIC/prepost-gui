@@ -167,7 +167,7 @@
         <translation>距离</translation>
     </message>
     <message>
-        <source>Polyline Group</source>
+        <source>Lines</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -452,7 +452,11 @@
     </message>
     <message>
         <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm &quot;Create grid from from river survey data&quot;&lt;/li&gt;&lt;/ul&gt;</source>
-        <translation>满足以下条件时可以使用此功能:绘制二维结构化网格结果的图形； X轴为网格中的I方向。使用根据河流测量数据创建网格的算法创建网格</translation>
+        <translation type="vanished">满足以下条件时可以使用此功能:绘制二维结构化网格结果的图形； X轴为网格中的I方向。使用根据河流测量数据创建网格的算法创建网格</translation>
+    </message>
+    <message>
+        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm &quot;Create grid from from cross-section data&quot;&lt;/li&gt;&lt;/ul&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

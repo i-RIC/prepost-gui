@@ -179,11 +179,15 @@
     </message>
     <message>
         <source>Invalid name for cross section. The name should be &quot;X1&quot;, &quot;X2&quot;, ...</source>
-        <translation>无效的横截面名称。 名称应该为 &quot;X1&quot;, &quot;X2&quot;, ...</translation>
+        <translation type="vanished">无效的横截面名称。 名称应该为 &quot;X1&quot;, &quot;X2&quot;, ...</translation>
     </message>
     <message>
         <source>Cross Section is not defined yet.</source>
         <translation>横截面未定义</translation>
+    </message>
+    <message>
+        <source>Invalid name for cross section. The name should be &quot;X1&quot;, &quot;X2&quot;, ...　or &quot;XS1&quot;, &quot;XS2&quot;, ...</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -351,14 +355,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>WSE</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>HWMs</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Scales font</source>
         <translation type="unfinished"></translation>
     </message>
@@ -372,6 +368,10 @@
     <message>
         <source>Right bank HWM</source>
         <translation type="unfinished">右河岸HWM</translation>
+    </message>
+    <message>
+        <source>WSE</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -769,10 +769,6 @@
         <translation>输入要导出的文件名</translation>
     </message>
     <message>
-        <source>River Survey Data(*.riv)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Error</source>
         <translation>错误</translation>
     </message>
@@ -795,6 +791,10 @@
     <message>
         <source>%1 is updated.</source>
         <translation>%1已更新</translation>
+    </message>
+    <message>
+        <source>Cross-Section Data (*.riv)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

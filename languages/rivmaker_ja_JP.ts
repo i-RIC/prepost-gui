@@ -194,11 +194,15 @@
     </message>
     <message>
         <source>Invalid name for cross section. The name should be &quot;X1&quot;, &quot;X2&quot;, ...</source>
-        <translation>不正な名前です。名前は &quot;X1&quot;, &quot;X2&quot;,などとして下さい。</translation>
+        <translation type="vanished">不正な名前です。名前は &quot;X1&quot;, &quot;X2&quot;,などとして下さい。</translation>
     </message>
     <message>
         <source>Cross Section is not defined yet.</source>
         <translation>断面がまだ定義されていません。</translation>
+    </message>
+    <message>
+        <source>Invalid name for cross section. The name should be &quot;X1&quot;, &quot;X2&quot;, ...　or &quot;XS1&quot;, &quot;XS2&quot;, ...</source>
+        <translation>不正な名前です。名前は &quot;X1&quot;, &quot;X2&quot;,もしくは &quot;XS1&quot;, &quot;XS2&quot; などとして下さい。</translation>
     </message>
 </context>
 <context>
@@ -367,11 +371,11 @@
     </message>
     <message>
         <source>WSE</source>
-        <translation>水面標高</translation>
+        <translation type="vanished">水面標高</translation>
     </message>
     <message>
         <source>HWMs</source>
-        <translation>HWMs</translation>
+        <translation type="vanished">HWMs</translation>
     </message>
     <message>
         <source>Scales font</source>
@@ -387,6 +391,10 @@
     <message>
         <source>Right bank HWM</source>
         <translation>右岸側水面標高</translation>
+    </message>
+    <message>
+        <source>WSE</source>
+        <translation>水面標高</translation>
     </message>
 </context>
 <context>
@@ -799,7 +807,7 @@
     </message>
     <message>
         <source>River Survey Data(*.riv)</source>
-        <translation>河川測量データ (*.riv)</translation>
+        <translation type="vanished">河川測量データ (*.riv)</translation>
     </message>
     <message>
         <source>Error</source>
@@ -824,6 +832,10 @@
     <message>
         <source>%1 is updated.</source>
         <translation>%1 が更新されました。</translation>
+    </message>
+    <message>
+        <source>Cross-Section Data (*.riv)</source>
+        <translation>横断測量データ (*.riv)</translation>
     </message>
 </context>
 <context>

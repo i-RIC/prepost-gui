@@ -71,10 +71,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>River Survey data not found. Please define Center Line by yourself.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Grid region not defined yet.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -124,6 +120,10 @@
     </message>
     <message>
         <source>Remove Vertex</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cross-section data not found. Please define Center Line by yourself.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -5,7 +5,7 @@
     <name>GridCreatingConditionCreatorRiverSurvey15D</name>
     <message>
         <source>Create 1.5D grid from river survey data</source>
-        <translation>Criar grade de 1.5 dimensoes atraves dos dados de levantamento fluvial</translation>
+        <translation type="vanished">Criar grade de 1.5 dimensoes atraves dos dados de levantamento fluvial</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -13,12 +13,20 @@
     </message>
     <message>
         <source>No river survey data exists in geographic data now. This algorithm is not available.</source>
-        <translation>Os dados de levantamento do curso fluvial nao foram importados aos dados geograficos. Esse algoritmo nao sera disponivel.</translation>
+        <translation type="vanished">Os dados de levantamento do curso fluvial nao foram importados aos dados geograficos. Esse algoritmo nao sera disponivel.</translation>
     </message>
     <message>
-        <source>The grid shape is automatically defined using river survey data. You can specify the grid division number, by adding grid creation control points on river center.
-Note: This algorithm is available only when river survey data is loaded!Please switch algorithm to this, after importing river survey data.
+        <source>Create 1.5D grid from cross-section data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The grid shape is automatically defined using cross-section data. You can specify the grid division number, by adding grid creation control points on river center.
+Note: This algorithm is available only when cross-section data is loaded!Please switch algorithm to this, after importing cross-section data.
 </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No cross-section data exists in geographic data now. This algorithm is not available.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -34,7 +42,7 @@ Note: This algorithm is available only when river survey data is loaded!Please s
     </message>
     <message>
         <source>There is no river survey data. This grid creating condition is not available.</source>
-        <translation>Nao ha dados sobre o levantamento do rio. Esta condicao para a criacao de grade nao podera ser utilizada. </translation>
+        <translation type="vanished">Nao ha dados sobre o levantamento do rio. Esta condicao para a criacao de grade nao podera ser utilizada. </translation>
     </message>
     <message>
         <source>&amp;Add Division Points...</source>
@@ -83,6 +91,10 @@ Note: This algorithm is available only when river survey data is loaded!Please s
     <message>
         <source>Reposition Control Points</source>
         <translation>Reposicionamento dos pontos de controle para criacao da grade</translation>
+    </message>
+    <message>
+        <source>There is no cross-section data. This grid creating condition is not available.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

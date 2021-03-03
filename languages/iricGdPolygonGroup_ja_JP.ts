@@ -13,7 +13,7 @@
     </message>
     <message>
         <source>P&amp;olygon Group</source>
-        <translation>ポリゴングループ(&amp;O)</translation>
+        <translation type="vanished">ポリゴングループ(&amp;O)</translation>
     </message>
     <message>
         <source>Polygon%1</source>
@@ -111,6 +111,10 @@
         <source>Edit name and value of polygons</source>
         <translation type="vanished">ポリゴンの名前と値の編集</translation>
     </message>
+    <message>
+        <source>P&amp;olygons</source>
+        <translation>ポリゴンデータ(&amp;O)</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolygonGroupAttributeBrowser</name>
@@ -181,11 +185,11 @@
     </message>
     <message>
         <source>Polygons</source>
-        <translation type="vanished">ポリゴングループ</translation>
+        <translation>ポリゴンデータ</translation>
     </message>
     <message>
         <source>Polygons%1</source>
-        <translation type="vanished">ポリゴングループ%1</translation>
+        <translation>ポリゴンデータ%1</translation>
     </message>
     <message>
         <source>Polygon%1</source>
@@ -193,11 +197,11 @@
     </message>
     <message>
         <source>Polygon Group</source>
-        <translation>ポリゴングループ</translation>
+        <translation type="vanished">ポリゴングループ</translation>
     </message>
     <message>
         <source>Polygon Group%1</source>
-        <translation>ポリゴングループ%1</translation>
+        <translation type="vanished">ポリゴングループ%1</translation>
     </message>
     <message>
         <source>polygon</source>
@@ -224,22 +228,26 @@
     </message>
     <message>
         <source>Some polygon in this polygon group has holes, but holes are not exported to CSV file. If you want to export holes, please export to ESRI Shapefile.</source>
-        <translation>ポリゴンに、穴が空いているものがありますが、 CSVファイルには穴の情報をエクスポートできません。穴の情報をエクスポートしたい場合、ESRIシェープファイルにエクスポートしてください。</translation>
+        <translation type="vanished">ポリゴンに、穴が空いているものがありますが、 CSVファイルには穴の情報をエクスポートできません。穴の情報をエクスポートしたい場合、ESRIシェープファイルにエクスポートしてください。</translation>
     </message>
     <message>
         <source>CSV file (*.csv)</source>
         <translation>CSV ファイル (*.csv)</translation>
+    </message>
+    <message>
+        <source>Some polygon in this data has holes, but holes are not exported to CSV file. If you want to export holes, please export to ESRI Shapefile.</source>
+        <translation>ポリゴンに、穴が空いているものがありますが、 CSVファイルには穴の情報をエクスポートできません。穴の情報をエクスポートしたい場合、ESRIシェープファイルにエクスポートしてください。</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolygonGroupCsvImporter</name>
     <message>
         <source>CSV file (Polygons)</source>
-        <translation>CSV ファイル (ポリゴン)</translation>
+        <translation>CSV ファイル (ポリゴンデータ)</translation>
     </message>
     <message>
         <source>CSV file (Polygons) (*.csv)</source>
-        <translation>CSV ファイル (ポリゴン) (*.csv)</translation>
+        <translation>CSV ファイル (ポリゴンデータ) (*.csv)</translation>
     </message>
     <message>
         <source>Error</source>
@@ -376,7 +384,7 @@
     </message>
     <message>
         <source>ESRI Shapefile (Polygons) (*.shp)</source>
-        <translation>ESRI シェープファイル (ポリゴン) (*.shp)</translation>
+        <translation>ESRI シェープファイル (ポリゴンデータ) (*.shp)</translation>
     </message>
     <message>
         <source>%1 th polygon can not be imported. Polygon like below can not be imported:

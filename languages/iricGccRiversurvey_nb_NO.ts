@@ -4,21 +4,21 @@
 <context>
     <name>GridCreatingConditionCreatorRiverSurvey</name>
     <message>
-        <source>Create grid from river survey data</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>The grid shape is automatically defined using river survey data. You can specify the grid division number, by adding grid creation control points on river crosssections, river center, left bank, and right bank.
-Note: This algorithm is available only when river survey data is loaded!Please switch algorithm to this, after importing river survey data.
-</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>No river survey data exists in geographic data now. This algorithmn is not available.</source>
+        <source>Create grid from cross-section data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The grid shape is automatically defined using cross-section data. You can specify the grid division number, by adding grid creation control points on river crosssections, river center, left bank, and right bank.
+Note: This algorithm is available only when cross-section data is loaded!Please switch algorithm to this, after importing cross-section data.
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No cross-section data exists in geographic data now. This algorithmn is not available.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -30,10 +30,6 @@ Note: This algorithm is available only when river survey data is loaded!Please s
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>There is no river survey data. This grid creating condition is not available.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -82,6 +78,10 @@ Note: This algorithm is available only when river survey data is loaded!Please s
     </message>
     <message>
         <source>Reposition Control Points</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>There is no cross-section data. This grid creating condition is not available.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
