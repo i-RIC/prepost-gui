@@ -39,7 +39,10 @@ std::vector<GridComplexConditionGroupRealEditWidget::SubItem> buildFunctionalSub
 		if (vType != "real") {continue;}
 
 		auto subName = e.attribute("name");
-		auto subCap = t.translate(e.attribute("caption"));
+		auto subCapEng = e.attribute("caption");
+		auto subCap = t.translate(subCapEng);
+
+		if (subCapEng == "X" || subCapEng == "Y") {continue;}
 
 		if (subName == "") {
 			if (e.nodeName() == "Parameter") {
