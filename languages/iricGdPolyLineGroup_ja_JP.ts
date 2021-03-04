@@ -49,7 +49,7 @@
     </message>
     <message>
         <source>Poly&amp;line Group</source>
-        <translation>折れ線グループ (&amp;L)</translation>
+        <translation type="vanished">折れ線グループ (&amp;L)</translation>
     </message>
     <message>
         <source>&amp;Sort</source>
@@ -113,7 +113,7 @@
     </message>
     <message>
         <source>Polyline%1</source>
-        <translation>折れ線%1</translation>
+        <translation type="vanished">折れ線%1</translation>
     </message>
     <message>
         <source>Sort polygons</source>
@@ -126,6 +126,14 @@
     <message>
         <source>Sort polylines</source>
         <translation type="vanished">折れ線の並べ替え</translation>
+    </message>
+    <message>
+        <source>&amp;Lines</source>
+        <translation>ラインデータ(&amp;L)</translation>
+    </message>
+    <message>
+        <source>Line%1</source>
+        <translation>ライン%1</translation>
     </message>
 </context>
 <context>
@@ -197,23 +205,43 @@
     </message>
     <message>
         <source>Polyline Group</source>
-        <translation>折れ線グループ</translation>
+        <translation type="vanished">折れ線グループ</translation>
     </message>
     <message>
         <source>Polyline Group%1</source>
-        <translation>折れ線グループ%1</translation>
+        <translation type="vanished">折れ線グループ%1</translation>
     </message>
     <message>
         <source>Deleting this item will also remove any graph windows associated with this polyline group.  Are you sure you want to delete this item?</source>
-        <translation>この項目を削除すると、折れ線に関連付けられたグラフウィンドウも同時に削除されます。本当にこの項目を削除していいですか?</translation>
+        <translation type="vanished">この項目を削除すると、折れ線に関連付けられたグラフウィンドウも同時に削除されます。本当にこの項目を削除していいですか?</translation>
     </message>
     <message>
         <source>polyline</source>
-        <translation>折れ線</translation>
+        <translation type="vanished">折れ線</translation>
     </message>
     <message>
         <source>Polyline</source>
-        <translation>折れ線</translation>
+        <translation type="vanished">折れ線</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>ラインデータ</translation>
+    </message>
+    <message>
+        <source>Lines%1</source>
+        <translation>ラインデータ%1</translation>
+    </message>
+    <message>
+        <source>Deleting this item will also remove any graph windows associated with this data.  Are you sure you want to delete this item?</source>
+        <translation>この項目を削除すると、ラインデータに関連付けられたグラフウィンドウも同時に削除されます。本当にこの項目を削除していいですか?</translation>
+    </message>
+    <message>
+        <source>line</source>
+        <translation>ライン</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>ライン</translation>
     </message>
 </context>
 <context>
@@ -243,7 +271,7 @@
     </message>
     <message>
         <source>CSV file (Polylines) (*.csv)</source>
-        <translation>CSV ファイル (線) (*.csv)</translation>
+        <translation type="vanished">CSV ファイル (線) (*.csv)</translation>
     </message>
     <message>
         <source>Error</source>
@@ -317,6 +345,10 @@
         <source>Error occured while reading line %1. &quot;value&quot; should be the same for lines where &quot;lid&quot; values are the same.</source>
         <translation>%1行目の読み込み中にエラーが発生しました。 &quot;value&quot; は同じ &quot;lid&quot; の行で共通である必要があります。</translation>
     </message>
+    <message>
+        <source>CSV file (Lines) (*.csv)</source>
+        <translation>CSV ファイル (ラインデータ) (*.csv)</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolyLineGroupMergeSettingDialog</name>
@@ -364,7 +396,7 @@
     </message>
     <message>
         <source>ESRI Shapefile (Polylines) (*.shp)</source>
-        <translation>ESRI シェープファイル (折れ線) (*.shp)</translation>
+        <translation type="vanished">ESRI シェープファイル (折れ線) (*.shp)</translation>
     </message>
     <message>
         <source>Error</source>
@@ -389,6 +421,10 @@
     <message>
         <source>Poly Line%1</source>
         <translation type="vanished">折れ線%1</translation>
+    </message>
+    <message>
+        <source>ESRI Shapefile (Lines) (*.shp)</source>
+        <translation>ESRI シェープファイル (ラインデータ) (*.shp)</translation>
     </message>
 </context>
 <context>

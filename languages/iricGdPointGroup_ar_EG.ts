@@ -8,30 +8,30 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>P&amp;oint Group</source>
+        <source>&amp;Sort</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&amp;Sort</source>
+        <source>P&amp;oint</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointGroupCreator</name>
     <message>
-        <source>Point Group</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Point Group%1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>point</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Point</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Points%1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

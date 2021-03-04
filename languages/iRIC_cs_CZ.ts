@@ -936,10 +936,6 @@ The low water channel region should be included in grid creation region, andRive
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>River Survey data not found. Please define Center Line by yourself.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Information</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1061,6 +1057,10 @@ The low water channel region should be included in grid creation region, andRive
     </message>
     <message>
         <source>Remove Vertex</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cross-section data not found. Please define Center Line by yourself.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1292,10 +1292,6 @@ The low water channel region should be included in grid creation region, andRive
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>River Survey data not found. Please define Center Line by yourself.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Grid region not defined yet.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1345,6 +1341,10 @@ The low water channel region should be included in grid creation region, andRive
     </message>
     <message>
         <source>Remove Vertex</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cross-section data not found. Please define Center Line by yourself.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1516,21 +1516,21 @@ The low water channel region should be included in grid creation region, andRive
 <context>
     <name>GridCreatingConditionCreatorRiverSurvey15D</name>
     <message>
-        <source>Create 1.5D grid from river survey data</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>The grid shape is automatically defined using river survey data. You can specify the grid division number, by adding grid creation control points on river center.
-Note: This algorithm is available only when river survey data is loaded!Please switch algorithm to this, after importing river survey data.
-</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>No river survey data exists in geographic data now. This algorithm is not available.</source>
+        <source>Create 1.5D grid from cross-section data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The grid shape is automatically defined using cross-section data. You can specify the grid division number, by adding grid creation control points on river center.
+Note: This algorithm is available only when cross-section data is loaded!Please switch algorithm to this, after importing cross-section data.
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No cross-section data exists in geographic data now. This algorithm is not available.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1542,10 +1542,6 @@ Note: This algorithm is available only when river survey data is loaded!Please s
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>There is no river survey data. This grid creating condition is not available.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1594,6 +1590,10 @@ Note: This algorithm is available only when river survey data is loaded!Please s
     </message>
     <message>
         <source>Reposition Control Points</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>There is no cross-section data. This grid creating condition is not available.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1740,21 +1740,21 @@ Note: This algorithm is available only when river survey data is loaded!Please s
 <context>
     <name>GridCreatingConditionCreatorRiverSurvey</name>
     <message>
-        <source>Create grid from river survey data</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>The grid shape is automatically defined using river survey data. You can specify the grid division number, by adding grid creation control points on river crosssections, river center, left bank, and right bank.
-Note: This algorithm is available only when river survey data is loaded!Please switch algorithm to this, after importing river survey data.
-</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>No river survey data exists in geographic data now. This algorithmn is not available.</source>
+        <source>Create grid from cross-section data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The grid shape is automatically defined using cross-section data. You can specify the grid division number, by adding grid creation control points on river crosssections, river center, left bank, and right bank.
+Note: This algorithm is available only when cross-section data is loaded!Please switch algorithm to this, after importing cross-section data.
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No cross-section data exists in geographic data now. This algorithmn is not available.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1766,10 +1766,6 @@ Note: This algorithm is available only when river survey data is loaded!Please s
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>There is no river survey data. This grid creating condition is not available.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1818,6 +1814,10 @@ Note: This algorithm is available only when river survey data is loaded!Please s
     </message>
     <message>
         <source>Reposition Control Points</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>There is no cross-section data. This grid creating condition is not available.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2285,11 +2285,11 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>GeoDataNetcdfCreator</name>
     <message>
-        <source>Raster data</source>
+        <source>Raster Data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Raster data%1</source>
+        <source>Raster Data%1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2494,10 +2494,6 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>%1 does not have longitude and latitude data.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>%1 does not have variable that can be imported.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2507,6 +2503,10 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Error occured while parsing time definition: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 does not have longitude, latitude nor x, y data.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2580,6 +2580,17 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>GeoDataNetcdfTimeSeriesCreator</name>
+    <message>
+        <source>Time Series Raster Data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Time Series Raster Data%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>GeoDataNetcdfXbandImporter</name>
     <message>
         <source>XBand MP RADER data</source>
@@ -2622,30 +2633,30 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>P&amp;oint Group</source>
+        <source>&amp;Sort</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&amp;Sort</source>
+        <source>P&amp;oint</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointGroupCreator</name>
     <message>
-        <source>Point Group</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Point Group%1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>point</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Point</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Points%1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2793,10 +2804,6 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Remeshing TINs...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>P&amp;ointset Data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3011,6 +3018,10 @@ p, li { white-space: pre-wrap; }
         <source>To interpolate points, you must specify more than two points, and the last point should be existing point. Do you want to retry, or cancel the operation?</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>P&amp;oint Cloud Data</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointmapDelPtsGreaterThanDialog</name>
@@ -3164,20 +3175,16 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>GeoDataPointmapRealCreator</name>
     <message>
-        <source>Points</source>
+        <source>Point Cloud Data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Points%1</source>
+        <source>Point Cloud Data%1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapRealExporter</name>
-    <message>
-        <source>Pointset (DEM etc.)</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message>
         <source>Topography File (*.tpo)</source>
         <translation type="unfinished"></translation>
@@ -3188,6 +3195,10 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Error occured while exporting to %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Cloud Data (DEM etc.)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -3288,7 +3299,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Text file (*.csv *.txt)</source>
+        <source>Text file (*.csv *.txt *.xyz)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -4016,10 +4027,6 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>GeoDataPolygonGroup</name>
     <message>
-        <source>P&amp;olygon Group</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>&amp;Sort</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4027,23 +4034,27 @@ p, li { white-space: pre-wrap; }
         <source>Polygon%1</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>P&amp;olygons</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolygonGroupCreator</name>
-    <message>
-        <source>Polygon Group</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Polygon Group%1</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message>
         <source>polygon</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Polygon</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Polygons</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Polygons%1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -4066,11 +4077,11 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Some polygon in this polygon group has holes, but holes are not exported to CSV file. If you want to export holes, please export to ESRI Shapefile.</source>
+        <source>CSV file (*.csv)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>CSV file (*.csv)</source>
+        <source>Some polygon in this data has holes, but holes are not exported to CSV file. If you want to export holes, please export to ESRI Shapefile.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -4432,38 +4443,38 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>GeoDataPolyLineGroup</name>
     <message>
-        <source>Polyline%1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Poly&amp;line Group</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>&amp;Sort</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Lines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Line%1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyLineGroupCreator</name>
     <message>
-        <source>Polyline Group</source>
+        <source>Lines</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Polyline Group%1</source>
+        <source>Lines%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Deleting this item will also remove any graph windows associated with this polyline group.  Are you sure you want to delete this item?</source>
+        <source>Deleting this item will also remove any graph windows associated with this data.  Are you sure you want to delete this item?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>polyline</source>
+        <source>line</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Polyline</source>
+        <source>Line</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -4490,10 +4501,6 @@ p, li { white-space: pre-wrap; }
     <name>GeoDataPolyLineGroupCsvImporter</name>
     <message>
         <source>CSV file (Polylines)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>CSV file (Polylines) (*.csv)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4568,6 +4575,10 @@ p, li { white-space: pre-wrap; }
         <source>Error occured while reading line %1. &quot;value&quot; should be the same for lines where &quot;lid&quot; values are the same.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>CSV file (Lines) (*.csv)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolyLineGroupShpExporter</name>
@@ -4587,11 +4598,11 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>ESRI Shapefile (Polylines) (*.shp)</source>
+        <source>Polyline%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Polyline%1</source>
+        <source>ESRI Shapefile (Lines) (*.shp)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -4963,20 +4974,11 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>River survey data is generated using Points data.
-If you want to adjust cross section position and map Points data again, you can use &quot;Map points data&quot;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Center Line is not defined yet.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Center line</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>River survey data need at least 2 center points.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4997,10 +4999,6 @@ If you want to adjust cross section position and map Points data again, you can 
     </message>
     <message>
         <source>Expand Traversal Lines</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Generate River Survey data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5088,10 +5086,6 @@ If you want to adjust cross section position and map Points data again, you can 
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Map points data</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Interpolation Mode</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5148,18 +5142,39 @@ If you want to adjust cross section position and map Points data again, you can 
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Generate points data</source>
+        <source>Cross-section data need at least 2 center points.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Generate Cross-Section Data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No point cloud data to map is found. Please import point cloud data.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cross-section data is generated using point cloud data.
+If you want to adjust cross section position and map point clouod data again, you can use &quot;Map point cloud data&quot;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Map point cloud data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Generate point cloud data</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurvey::Impl</name>
     <message>
-        <source>&amp;River Survey</source>
+        <source>  </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>  </source>
+        <source>&amp;Cross-Section Data</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -5189,11 +5204,11 @@ If you want to adjust cross section position and map Points data again, you can 
 <context>
     <name>GeoDataRiverSurveyCreator</name>
     <message>
-        <source>River Survey data</source>
+        <source>Cross-Section Data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>RiverSurvey %1</source>
+        <source>Cross-Section Data%1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -5518,10 +5533,6 @@ If you want to adjust cross section position and map Points data again, you can 
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>River Survey Data</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Color</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5543,6 +5554,10 @@ If you want to adjust cross section position and map Points data again, you can 
     </message>
     <message>
         <source>Select Water Surface Elevation to use</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cross-Section Data</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -5659,11 +5674,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
 <context>
     <name>GeoDataRiverSurveyExporter</name>
     <message>
-        <source>River Survey data (*.riv)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>River Survey data(*.riv)</source>
+        <source>Cross-Section Data (*.riv)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -5831,10 +5842,6 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>River Survey data (*.riv)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5868,6 +5875,14 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Cross section %1 does not cross the center line. Center point is set to be the middle point of left bank and right bank.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cross-Section data (*.riv)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cross-Section Data (*.riv)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -6026,15 +6041,15 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>MLIT River Survey Data(*.csv)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Japan MLIT river survey data (*.csv)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>%1 Line %2: The number of values should be 5, but %3 values found.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>MLIT Cross-Section Data (*.csv)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Japan MLIT Cross-Section Data (*.csv)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -6392,7 +6407,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Polyline Group</source>
+        <source>Lines</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -6676,7 +6691,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm &quot;Create grid from from river survey data&quot;&lt;/li&gt;&lt;/ul&gt;</source>
+        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm &quot;Create grid from from cross-section data&quot;&lt;/li&gt;&lt;/ul&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -15812,15 +15827,7 @@ Do you really want to import grid from this file?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&amp;River Survey</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>P&amp;ointset Data</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&amp;Polygon Group</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -15925,6 +15932,22 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Mapping geographic data, boundary condition finished successfully.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Cross-Section Data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Polygons</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Lines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>P&amp;oint Cloud Data</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -16207,10 +16230,6 @@ Do you really want to import grid from this file?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Generate points data</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Topography File (*.tpo)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -16236,6 +16255,10 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>%1 generated.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Generate point cloud data</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -16479,11 +16502,11 @@ This algorithm can be used only for structured grids.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Generate points data</source>
+        <source>%1 generated.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>%1 generated.</source>
+        <source>Generate point cloud data</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -17636,11 +17659,11 @@ This algorithm can be used only for structured grids.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Invalid name for cross section. The name should be &quot;X1&quot;, &quot;X2&quot;, ...</source>
+        <source>Cross Section is not defined yet.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Cross Section is not defined yet.</source>
+        <source>Invalid name for cross section. The name should be &quot;X1&quot;, &quot;X2&quot;, ...　or &quot;XS1&quot;, &quot;XS2&quot;, ...</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -17785,14 +17808,6 @@ This algorithm can be used only for structured grids.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>WSE</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>HWMs</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Scales font</source>
         <translation type="unfinished"></translation>
     </message>
@@ -17805,6 +17820,10 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Right bank HWM</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>WSE</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -18203,10 +18222,6 @@ This algorithm can be used only for structured grids.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>River Survey Data(*.riv)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
@@ -18228,6 +18243,10 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>%1 is updated.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cross-Section Data (*.riv)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -18833,6 +18852,21 @@ This algorithm can be used only for structured grids.</source>
     <name>WaterSurfaceElevationPoints</name>
     <message>
         <source>Water Elevation Points</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<!-- structured15dgridwithcrosssectionhecrasexporter_cs_CZ.ts -->
+<context>
+    <name>QObject</name>
+    <message>
+        <source>HEC-RAS text files (*.dat)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Structured15DGridWithCrossSectionHecRasExporter</name>
+    <message>
+        <source>HEC-RAS</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -466,15 +466,7 @@ Do you really want to import grid from this file?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&amp;River Survey</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>P&amp;ointset Data</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&amp;Polygon Group</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -587,6 +579,22 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Mapping geographic data, boundary condition finished successfully.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Cross-Section Data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Polygons</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Lines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>P&amp;oint Cloud Data</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -869,10 +877,6 @@ Do you really want to import grid from this file?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Generate points data</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Topography File (*.tpo)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -898,6 +902,10 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>%1 generated.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Generate point cloud data</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1141,11 +1149,11 @@ This algorithm can be used only for structured grids.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Generate points data</source>
+        <source>%1 generated.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>%1 generated.</source>
+        <source>Generate point cloud data</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -72,7 +72,7 @@
     </message>
     <message>
         <source>River Survey data not found. Please define Center Line by yourself.</source>
-        <translation>Nao foram encontrados os dados de levantamento do rio. Crie a linha central por iniciativa propria.</translation>
+        <translation type="vanished">Nao foram encontrados os dados de levantamento do rio. Crie a linha central por iniciativa propria.</translation>
     </message>
     <message>
         <source>Grid region not defined yet.</source>
@@ -125,6 +125,10 @@
     <message>
         <source>Edit %1 Coordinates</source>
         <translation>Edicao de coordenadas de %1</translation>
+    </message>
+    <message>
+        <source>Cross-section data not found. Please define Center Line by yourself.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

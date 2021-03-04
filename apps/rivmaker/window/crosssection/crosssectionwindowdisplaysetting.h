@@ -11,7 +11,8 @@ public:
 
 	QColor XSColor;
 	QColor WSEColor;
-	QColor HWMColor;
+	QColor LeftHWMColor;
+	QColor RightHWMColor;
 	QFont HWMFont;
 };
 

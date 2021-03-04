@@ -174,11 +174,11 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Invalid name for cross section. The name should be &quot;X1&quot;, &quot;X2&quot;, ...</source>
+        <source>Cross Section is not defined yet.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Cross Section is not defined yet.</source>
+        <source>Invalid name for cross section. The name should be &quot;X1&quot;, &quot;X2&quot;, ...　or &quot;XS1&quot;, &quot;XS2&quot;, ...</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -323,14 +323,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>WSE</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>HWMs</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Scales font</source>
         <translation type="unfinished"></translation>
     </message>
@@ -343,6 +335,10 @@
     </message>
     <message>
         <source>Right bank HWM</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>WSE</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

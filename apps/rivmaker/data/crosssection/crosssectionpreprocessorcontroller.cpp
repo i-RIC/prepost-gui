@@ -100,7 +100,7 @@ void CrossSectionPreProcessorController::setupViewRightClickMenu(QMenu* menu)
 void CrossSectionPreProcessorController::handleStandardItemChange(QStandardItem* sitem)
 {
 	QString newName = sitem->text();
-	QRegExp xnum("X[0-9]+");
+	QRegExp xnum("XS{0,1}[0-9]+");
 	QRegExp num("[0-9\\.]+");
 	bool isDouble;
 
@@ -114,7 +114,7 @@ void CrossSectionPreProcessorController::handleStandardItemChange(QStandardItem*
 		cs->setName(newName);
 		cs->project()->setModified();
 	} else {
-		QMessageBox::warning(view(), tr("Warning"), tr("Invalid name for cross section. The name should be \"X1\", \"X2\", ..."));
+		QMessageBox::warning(view(), tr("Warning"), tr("Invalid name for cross section. The name should be \"X1\", \"X2\", ...　or \"XS1\", \"XS2\", ..."));
 		sitem->setText(cs->name());
 	}
 }
