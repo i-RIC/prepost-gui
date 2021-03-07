@@ -18,7 +18,7 @@ vtkTextPropertySettingWidget::~vtkTextPropertySettingWidget()
 vtkTextPropertySettingContainer vtkTextPropertySettingWidget::setting() const
 {
 	vtkTextPropertySettingContainer c;
-	c.setPrefix(m_prefix);
+	c.addPrefix(m_prefix);
 	c.fontFamily = static_cast<vtkTextPropertySettingContainer::FontFamily>(ui->fontComboBox->currentIndex());
 	c.fontSize = ui->sizeSpinBox->value();
 	c.fontColor = ui->colorWidget->color();

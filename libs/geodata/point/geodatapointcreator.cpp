@@ -27,7 +27,6 @@ bool GeoDataPointCreator::isCreatable() const
 GeoData* GeoDataPointCreator::create(ProjectDataItem* parent, SolverDefinitionGridAttribute* condition)
 {
 	GeoDataPoint* point = new GeoDataPoint(parent, this, condition);
-	PreProcessorGeoDataDataItemInterface* item = dynamic_cast<PreProcessorGeoDataDataItemInterface*>(parent);
 	point->setPosition(condition->position());
 	point->setDefaultMapper();
 	return point;

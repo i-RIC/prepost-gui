@@ -42,7 +42,7 @@ public:
 	void setValue(const QPointF& val);
 	//@}
 
-	void setPrefix(const QString& prefix) override;
+	void addPrefix(const QString& prefix) override;
 
 private:
 	void copyValue(const XmlAttributeContainer& c) override;

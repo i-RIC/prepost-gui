@@ -7,7 +7,7 @@ Post2dWindowContourSetting::Post2dWindowContourSetting() :
 	addContainer(&regionMode);
 	addContainer(&range);
 
-	range.setPrefix("region");
+	range.addPrefix("region");
 }
 
 Post2dWindowContourSetting::Post2dWindowContourSetting(const Post2dWindowContourSetting& s) :

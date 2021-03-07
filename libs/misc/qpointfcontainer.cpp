@@ -9,7 +9,7 @@ QPointFContainer::QPointFContainer() :
 QPointFContainer::QPointFContainer(const QString& name) :
 	QPointFContainer {}
 {
-	setPrefix(name);
+	addPrefix(name);
 }
 
 QPointFContainer::QPointFContainer(const QPointF& val) :
@@ -93,11 +93,11 @@ void QPointFContainer::setValue(const QPointF& val)
 	impl->m_yValue = val.y();
 }
 
-void QPointFContainer::setPrefix(const QString& prefix)
+void QPointFContainer::addPrefix(const QString& prefix)
 {
-	impl->m_xValue.setPrefix(prefix);
-	impl->m_yValue.setPrefix(prefix);
-	XmlAttributeContainer::setPrefix(prefix);
+	impl->m_xValue.addPrefix(prefix);
+	impl->m_yValue.addPrefix(prefix);
+	XmlAttributeContainer::addPrefix(prefix);
 }
 
 void QPointFContainer::copyValue(const XmlAttributeContainer& c)
