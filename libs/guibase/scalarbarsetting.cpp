@@ -26,8 +26,8 @@ ScalarBarSetting::ScalarBarSetting() :
 	positionY {"positionY", 0.1},
 	labelFormat {"labelFormat", DEFAULT_LABELFORMAT}
 {
-	titleTextSetting.setPrefix("titleText");
-	labelTextSetting.setPrefix("labelText");
+	titleTextSetting.addPrefix("titleText");
+	labelTextSetting.addPrefix("labelText");
 }
 
 ScalarBarSetting::ScalarBarSetting(const ScalarBarSetting& setting) :

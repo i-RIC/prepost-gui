@@ -102,9 +102,9 @@ const QString& ColorContainer::prefix() const
 	return impl->prefix();
 }
 
-void ColorContainer::setPrefix(const QString& prefix)
+void ColorContainer::addPrefix(const QString& prefix)
 {
-	impl->setPrefix(prefix);
+	impl->addPrefix(prefix);
 }
 
 QString ColorContainer::attName(const QString& name) const

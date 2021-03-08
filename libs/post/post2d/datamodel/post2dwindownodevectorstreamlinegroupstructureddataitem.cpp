@@ -28,7 +28,7 @@ Post2dWindowNodeVectorStreamlineGroupStructuredDataItem::Setting::Setting() :
 	QSettings settings;
 	color = settings.value("post2d/particlecolor", QColor(Qt::black)).value<QColor>();
 
-	range.setPrefix("region");
+	range.addPrefix("region");
 }
 
 Post2dWindowNodeVectorStreamlineGroupStructuredDataItem::Setting::Setting(const Setting& s) :

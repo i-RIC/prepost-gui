@@ -160,8 +160,8 @@ PreProcessorGeoDataTopDataItem::PreProcessorGeoDataTopDataItem(PreProcessorDataI
 	setSubPath("geographicdata");
 	buildReferenceInformationAttribute();
 
-	m_titleTextSetting.setPrefix("title");
-	m_labelTextSetting.setPrefix("label");
+	m_titleTextSetting.addPrefix("title");
+	m_labelTextSetting.addPrefix("label");
 
 	if (gridType()->isKeepOrder()) {
 		setupChildrenInOrder(gridType()->gridAttributes(), gridType()->gridComplexAttributes(), &m_childItems, &m_itemNameMap, m_referenceInformationAttribute, this);
