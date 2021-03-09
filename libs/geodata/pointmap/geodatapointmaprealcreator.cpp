@@ -54,5 +54,6 @@ bool GeoDataPointmapRealCreator::isCompatibleWith(SolverDefinitionGridAttribute*
 {
 	if (dynamic_cast<SolverDefinitionGridAttributeT<double>* >(condition) == nullptr) {return false;}
 	if (condition->dimensions().size() > 0) {return false;}
+	if (condition->isReferenceInformation()) {return false;}
 	return true;
 }
