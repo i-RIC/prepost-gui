@@ -1,6 +1,7 @@
 #include "../post3dwindowdatamodel.h"
 #include "../post3dwindowgraphicsview.h"
 #include "post3dwindowarrowgroupdataitem.h"
+#include "post3dwindowcellcontourgrouptopdataitem.h"
 #include "post3dwindowcontourgroupdataitem.h"
 #include "post3dwindowcontourgrouptopdataitem.h"
 #include "post3dwindowgridshapedataitem.h"
@@ -51,6 +52,7 @@ Post3dWindowZoneDataItem::Post3dWindowZoneDataItem(const std::string& zoneName, 
 	Post3dWindowDataItem {zoneName.c_str(), QIcon(":/images/iconGrid.png"), parent},
 	m_shapeDataItem {nullptr},
 	m_contourGroupTopItem {nullptr},
+	m_cellContourGroupTopItem {nullptr},
 	m_scalarGroupDataItem {nullptr},
 	m_arrowGroupDataItem {nullptr},
 	m_streamlineGroupDataItem {nullptr},
@@ -69,6 +71,10 @@ Post3dWindowZoneDataItem::Post3dWindowZoneDataItem(const std::string& zoneName, 
 	if (cont->scalarValueExists()) {
 		m_contourGroupTopItem = new Post3dWindowContourGroupTopDataItem(this);
 		m_scalarGroupDataItem = new Post3dWindowNodeScalarGroupTopDataItem(this);
+	}
+
+	if (cont->cellScalarValueExists()) {
+		m_cellContourGroupTopItem = new Post3dWindowCellContourGroupTopDataItem(this);
 	}
 
 	if (cont->vectorValueExists()) {
@@ -94,6 +100,10 @@ Post3dWindowZoneDataItem::Post3dWindowZoneDataItem(const std::string& zoneName, 
 		m_childItems.push_back(m_scalarGroupDataItem);
 	}
 
+	if (cont->cellScalarValueExists()) {
+		m_childItems.push_back(m_cellContourGroupTopItem);
+	}
+
 	if (cont->vectorValueExists()) {
 		m_childItems.push_back(m_arrowGroupDataItem);
 		m_childItems.push_back(m_streamlineGroupDataItem);
@@ -112,6 +122,56 @@ Post3dWindowZoneDataItem::Post3dWindowZoneDataItem(const std::string& zoneName, 
 Post3dWindowZoneDataItem::~Post3dWindowZoneDataItem()
 {
 	delete m_stringDataItem;
+}
+
+
+int Post3dWindowZoneDataItem::zoneNumber() const {
+	return m_zoneNumber;
+}
+
+const std::string& Post3dWindowZoneDataItem::zoneName() const
+{
+	return m_zoneName;
+}
+
+Post3dWindowGridShapeDataItem* Post3dWindowZoneDataItem::gridShapeDataItem() const
+{
+	return m_shapeDataItem;
+}
+
+Post3dWindowContourGroupTopDataItem* Post3dWindowZoneDataItem::contourGroupTopItem() const
+{
+	return m_contourGroupTopItem;
+}
+
+Post3dWindowCellContourGroupTopDataItem* Post3dWindowZoneDataItem::cellContourGroupTopItem() const
+{
+	return m_cellContourGroupTopItem;
+}
+
+Post3dWindowNodeScalarGroupTopDataItem* Post3dWindowZoneDataItem::scalarGroupDataItem() const
+{
+	return m_scalarGroupDataItem;
+}
+
+Post3dWindowArrowGroupDataItem* Post3dWindowZoneDataItem::arrowGroupDataItem() const
+{
+	return m_arrowGroupDataItem;
+}
+
+Post3dWindowNodeVectorStreamlineGroupDataItem* Post3dWindowZoneDataItem::streamlineGroupDataItem() const
+{
+	return m_streamlineGroupDataItem;
+}
+
+Post3dWindowNodeVectorParticleGroupDataItem* Post3dWindowZoneDataItem::particleGroupDataItem() const
+{
+	return m_particleGroupDataItem;
+}
+
+Post3dWindowParticlesTopDataItem* Post3dWindowZoneDataItem::particlesDataItem() const
+{
+	return m_particlesDataItem;
 }
 
 PostStringResultDataItem* Post3dWindowZoneDataItem::stringDataItem() const
@@ -225,6 +285,9 @@ void Post3dWindowZoneDataItem::update()
 
 	if (m_contourGroupTopItem != nullptr) {
 		m_contourGroupTopItem->update();
+	}
+	if (m_cellContourGroupTopItem != nullptr) {
+		m_cellContourGroupTopItem->update();
 	}
 	if (m_scalarGroupDataItem != nullptr) {
 		m_scalarGroupDataItem->update();

@@ -34,9 +34,11 @@ public:
 
 private:
 	void updateNodeLookupTableRanges();
+	void updateCellLookupTableRanges();
 	void updateParticleLookupTableRanges();
 
 	void setupNodeScalarsToColors(const std::string& name);
+	void setupCellScalarsToColors(const std::string& name);
 	void setupParticleScalarsToColors(const std::string& name);
 
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
@@ -44,6 +46,7 @@ private:
 
 	SolverDefinitionGridType* m_gridType;
 	QMap<std::string, LookupTableContainer*> m_nodeLookupTables;
+	QMap<std::string, LookupTableContainer*> m_cellLookupTables;
 	QMap<std::string, LookupTableContainer*> m_particleLookupTables;
 	QMap<std::string, Post3dWindowZoneDataItem*> m_zoneDataNameMap;
 	QList<Post3dWindowZoneDataItem*> m_zoneDatas;

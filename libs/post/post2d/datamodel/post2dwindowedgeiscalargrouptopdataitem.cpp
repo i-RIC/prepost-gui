@@ -39,7 +39,7 @@ Post2dWindowEdgeIScalarGroupTopDataItem::Post2dWindowEdgeIScalarGroupTopDataItem
 		m_scalarmap[val] = item;
 		m_childItems.push_back(item);
 		item->setTarget(val);
-		item->m_lookupTableContainer = gtItem->nodeLookupTable(val);
+		item->m_lookupTableContainer = *(gtItem->nodeLookupTable(val));
 	}
 
 }

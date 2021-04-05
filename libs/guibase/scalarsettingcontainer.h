@@ -13,6 +13,10 @@
 #include <misc/opacitycontainer.h>
 #include <misc/stringcontainer.h>
 
+class LookupTableContainer;
+class vtkPointSet;
+class vtkUnstructuredGrid;
+
 class GUIBASEDLL_EXPORT ScalarSettingContainer : public CompositeContainer
 {
 public:
@@ -24,6 +28,8 @@ public:
 
 	ScalarSettingContainer& operator=(const ScalarSettingContainer& c);
 	XmlAttributeContainer& operator=(const XmlAttributeContainer& c) override;
+
+	vtkPointSet* filterCellsWithUpperLower(vtkPointSet* ps, const LookupTableContainer& lut) const;
 
 	StringContainer target;
 

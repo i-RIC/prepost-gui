@@ -53,6 +53,7 @@ LIBS += \
 	-lvtkCommonDataModel-6.1 \
 	-lvtkCommonExecutionModel-6.1 \
 	-lvtkCommonMath-6.1 \
+	-lvtkFiltersExtraction-6.1 \
 	-lvtkFiltersFlowPaths-6.1 \
 	-lvtkInteractionStyle-6.1 \
 	-lvtkInteractionWidgets-6.1 \
