@@ -1,4 +1,3 @@
-#include "datamodel/post3dwindowarrowgroupdataitem.h"
 #include "datamodel/post3dwindowcontourgrouptopdataitem.h"
 #include "datamodel/post3dwindowgridshapedataitem.h"
 #include "datamodel/post3dwindowgridtypedataitem.h"

@@ -96,8 +96,6 @@ HEADERS += post3d_global.h \
            post3dwindowdatamodel.h \
            post3dwindowgraphicsview.h \
            post3dwindowprojectdataitem.h \
-           datamodel/post3dwindowarrowgroupdataitem.h \
-           datamodel/post3dwindowarrowgroupsettingdialog.h \
            datamodel/post3dwindowcellcontourdataitem.h \
            datamodel/post3dwindowcellcontourgroupdataitem.h \
            datamodel/post3dwindowcellcontourgroupsettingdialog.h \
@@ -138,9 +136,6 @@ HEADERS += post3d_global.h \
            datamodel/post3dwindowsurfacedataitem.h \
            datamodel/post3dwindowsurfacegroupdataitem.h \
            datamodel/post3dwindowzonedataitem.h \
-           datamodel/private/post3dwindowarrowgroupdataitem_setsettingcommand.h \
-           datamodel/private/post3dwindowarrowgroupdataitem_updateonredocommand.h \
-           datamodel/private/post3dwindowarrowgroupdataitem_updateonundocommand.h \
            datamodel/private/post3dwindowcellcontourgroupdataitem_setsettingcommand.h \
            datamodel/private/post3dwindowcellcontourgrouptopdataitem_createcommand.h \
            datamodel/private/post3dwindowcontourgroupdataitem_setsettingcommand.h \
@@ -151,8 +146,7 @@ HEADERS += post3d_global.h \
            datamodel/private/post3dwindowparticlesbasescalargroupdataitem_setsettingcommand.h \
            datamodel/private/post3dwindowparticlesbasetopdataitem_setsettingcommand.h \
            datamodel/private/post3dwindowparticlesbasevectorgroupdataitem_setsettingcommand.h
-FORMS += datamodel/post3dwindowarrowgroupsettingdialog.ui \
-         datamodel/post3dwindowcellcontourgroupsettingdialog.ui \
+FORMS += datamodel/post3dwindowcellcontourgroupsettingdialog.ui \
          datamodel/post3dwindowcellrangesettingwidget.ui \
          datamodel/post3dwindowcontourgroupsettingdialog.ui \
          datamodel/post3dwindowfacesettingwidget.ui \
@@ -172,8 +166,6 @@ SOURCES += post3dcellrangesettingcontainer.cpp \
            post3dwindowdatamodel.cpp \
            post3dwindowgraphicsview.cpp \
            post3dwindowprojectdataitem.cpp \
-           datamodel/post3dwindowarrowgroupdataitem.cpp \
-           datamodel/post3dwindowarrowgroupsettingdialog.cpp \
            datamodel/post3dwindowcellcontourdataitem.cpp \
            datamodel/post3dwindowcellcontourgroupdataitem.cpp \
            datamodel/post3dwindowcellcontourgroupsettingdialog.cpp \
@@ -214,9 +206,6 @@ SOURCES += post3dcellrangesettingcontainer.cpp \
            datamodel/post3dwindowsurfacedataitem.cpp \
            datamodel/post3dwindowsurfacegroupdataitem.cpp \
            datamodel/post3dwindowzonedataitem.cpp \
-           datamodel/private/post3dwindowarrowgroupdataitem_setsettingcommand.cpp \
-           datamodel/private/post3dwindowarrowgroupdataitem_updateonredocommand.cpp \
-           datamodel/private/post3dwindowarrowgroupdataitem_updateonundocommand.cpp \
            datamodel/private/post3dwindowcellcontourgroupdataitem_setsettingcommand.cpp \
            datamodel/private/post3dwindowcellcontourgrouptopdataitem_createcommand.cpp \
            datamodel/private/post3dwindowcontourgroupdataitem_setsettingcommand.cpp \
