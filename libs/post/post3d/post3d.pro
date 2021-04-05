@@ -111,6 +111,7 @@ HEADERS += post3d_global.h \
            datamodel/post3dwindowisosurfacesettingdialog.h \
            datamodel/post3dwindownodescalargroupdataitem.h \
            datamodel/post3dwindownodescalargrouptopdataitem.h \
+           datamodel/post3dwindownodevectorarrowtopdataitem.h \
            datamodel/post3dwindownodevectorparticledataitem.h \
            datamodel/post3dwindownodevectorparticlegroupdataitem.h \
            datamodel/post3dwindownodevectorparticlegroupstructureddataitem.h \
@@ -176,6 +177,7 @@ SOURCES += post3dcellrangesettingcontainer.cpp \
            datamodel/post3dwindowisosurfacesettingdialog.cpp \
            datamodel/post3dwindownodescalargroupdataitem.cpp \
            datamodel/post3dwindownodescalargrouptopdataitem.cpp \
+           datamodel/post3dwindownodevectorarrowtopdataitem.cpp \
            datamodel/post3dwindownodevectorparticledataitem.cpp \
            datamodel/post3dwindownodevectorparticlegroupdataitem.cpp \
            datamodel/post3dwindownodevectorparticlegroupstructureddataitem.cpp \

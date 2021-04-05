@@ -21,6 +21,7 @@ class Post3dWindowContourGroupTopDataItem;
 class Post3dWindowNodeScalarGroupDataItem;
 class Post3dWindowNodeScalarGroupTopDataItem;
 class Post3dWindowArrowGroupDataItem;
+class Post3dWindowNodeVectorArrowTopDataItem;
 class Post3dWindowNodeVectorStreamlineGroupDataItem;
 class Post3dWindowNodeVectorParticleGroupDataItem;
 class Post3dWindowParticleGroupRootDataItem;
@@ -64,6 +65,7 @@ private:
 	Post3dWindowContourGroupTopDataItem* m_contourGroupTopItem;
 	Post3dWindowCellContourGroupTopDataItem* m_cellContourGroupTopItem;
 	Post3dWindowNodeScalarGroupTopDataItem* m_scalarGroupDataItem;
+	Post3dWindowNodeVectorArrowTopDataItem* m_arrowTopDataItem;
 	Post3dWindowArrowGroupDataItem* m_arrowGroupDataItem;
 	Post3dWindowNodeVectorStreamlineGroupDataItem* m_streamlineGroupDataItem;
 	Post3dWindowNodeVectorParticleGroupDataItem* m_particleGroupDataItem;
