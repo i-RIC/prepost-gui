@@ -20,7 +20,6 @@ class Post3dWindowCellContourGroupTopDataItem;
 class Post3dWindowContourGroupTopDataItem;
 class Post3dWindowNodeScalarGroupDataItem;
 class Post3dWindowNodeScalarGroupTopDataItem;
-class Post3dWindowArrowGroupDataItem;
 class Post3dWindowNodeVectorArrowTopDataItem;
 class Post3dWindowNodeVectorStreamlineGroupDataItem;
 class Post3dWindowNodeVectorParticleGroupDataItem;
@@ -50,7 +49,7 @@ public:
 	Post3dWindowContourGroupTopDataItem* contourGroupTopItem() const;
 	Post3dWindowCellContourGroupTopDataItem* cellContourGroupTopItem() const;
 	Post3dWindowNodeScalarGroupTopDataItem* scalarGroupDataItem() const;
-	Post3dWindowArrowGroupDataItem* arrowGroupDataItem() const;
+	Post3dWindowNodeVectorArrowTopDataItem* arrowTopDataItem() const;
 	Post3dWindowNodeVectorStreamlineGroupDataItem* streamlineGroupDataItem() const;
 	Post3dWindowNodeVectorParticleGroupDataItem* particleGroupDataItem() const;
 	Post3dWindowParticlesTopDataItem* particlesDataItem() const;
@@ -66,7 +65,6 @@ private:
 	Post3dWindowCellContourGroupTopDataItem* m_cellContourGroupTopItem;
 	Post3dWindowNodeScalarGroupTopDataItem* m_scalarGroupDataItem;
 	Post3dWindowNodeVectorArrowTopDataItem* m_arrowTopDataItem;
-	Post3dWindowArrowGroupDataItem* m_arrowGroupDataItem;
 	Post3dWindowNodeVectorStreamlineGroupDataItem* m_streamlineGroupDataItem;
 	Post3dWindowNodeVectorParticleGroupDataItem* m_particleGroupDataItem;
 	Post3dWindowParticlesTopDataItem* m_particlesDataItem;

@@ -53,8 +53,11 @@ LIBS += \
 	-lvtkCommonDataModel-6.1 \
 	-lvtkCommonExecutionModel-6.1 \
 	-lvtkCommonMath-6.1 \
+    -lvtkFilterScore-6.1 \
 	-lvtkFiltersExtraction-6.1 \
 	-lvtkFiltersFlowPaths-6.1 \
+	-lvtkFiltersGeneral-6.1 \
+	-lvtkFiltersSources-6.1 \
 	-lvtkInteractionStyle-6.1 \
 	-lvtkInteractionWidgets-6.1 \
 	-lvtkRenderingAnnotation-6.1 \
@@ -147,6 +150,8 @@ HEADERS += arrowsettingcontainer.h \
            timeformat/timeformateditwidget.h \
            timeformat/timeformatutil.h \
            vtktool/vtkactorpolydatamapperpair.h \
+           vtktool/vtkarrowlegendactors.h \
+           vtktool/vtkarrowsactor.h \
            vtktool/vtklabel2dactor.h \
            vtktool/vtklineactor.h \
            vtktool/vtklinesactor.h \
@@ -185,6 +190,8 @@ HEADERS += arrowsettingcontainer.h \
            polygon/private/polygoncontroller_impl.h \
            polyline/private/polylinecontroller_impl.h \
            vtktool/private/vtkactorpolydatamapperpair_impl.h \
+           vtktool/private/vtkarrowlegendactors_impl.h \
+           vtktool/private/vtkarrowsactor_impl.h \
            vtktool/private/vtklabel2dactor_impl.h \
            vtktool/private/vtklineactor_impl.h \
            vtktool/private/vtklinesactor_impl.h \
@@ -288,6 +295,8 @@ SOURCES += arrowsettingcontainer.cpp \
            timeformat/timeformateditwidget.cpp \
            timeformat/timeformatutil.cpp \
            vtktool/vtkactorpolydatamapperpair.cpp \
+           vtktool/vtkarrowlegendactors.cpp \
+           vtktool/vtkarrowsactor.cpp \
            vtktool/vtklabel2dactor.cpp \
            vtktool/vtklineactor.cpp \
            vtktool/vtklinesactor.cpp \

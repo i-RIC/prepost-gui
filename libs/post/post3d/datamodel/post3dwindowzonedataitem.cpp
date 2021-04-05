@@ -56,7 +56,6 @@ Post3dWindowZoneDataItem::Post3dWindowZoneDataItem(const std::string& zoneName, 
 	m_cellContourGroupTopItem {nullptr},
 	m_scalarGroupDataItem {nullptr},
 	m_arrowTopDataItem {nullptr},
-	m_arrowGroupDataItem {nullptr},
 	m_streamlineGroupDataItem {nullptr},
 	m_particleGroupDataItem {nullptr},
 	m_particlesDataItem {nullptr},
@@ -81,7 +80,6 @@ Post3dWindowZoneDataItem::Post3dWindowZoneDataItem(const std::string& zoneName, 
 
 	if (cont->vectorValueExists()) {
 		m_arrowTopDataItem = new Post3dWindowNodeVectorArrowTopDataItem(this);
-		m_arrowGroupDataItem = new Post3dWindowArrowGroupDataItem(this);
 		m_streamlineGroupDataItem = new Post3dWindowNodeVectorStreamlineGroupStructuredDataItem(this);
 		m_particleGroupDataItem = new Post3dWindowNodeVectorParticleGroupStructuredDataItem(this);
 	}
@@ -109,7 +107,6 @@ Post3dWindowZoneDataItem::Post3dWindowZoneDataItem(const std::string& zoneName, 
 
 	if (cont->vectorValueExists()) {
 		m_childItems.push_back(m_arrowTopDataItem);
-		m_childItems.push_back(m_arrowGroupDataItem);
 		m_childItems.push_back(m_streamlineGroupDataItem);
 		m_childItems.push_back(m_particleGroupDataItem);
 	}
@@ -128,8 +125,8 @@ Post3dWindowZoneDataItem::~Post3dWindowZoneDataItem()
 	delete m_stringDataItem;
 }
 
-
-int Post3dWindowZoneDataItem::zoneNumber() const {
+int Post3dWindowZoneDataItem::zoneNumber() const
+{
 	return m_zoneNumber;
 }
 
@@ -158,9 +155,9 @@ Post3dWindowNodeScalarGroupTopDataItem* Post3dWindowZoneDataItem::scalarGroupDat
 	return m_scalarGroupDataItem;
 }
 
-Post3dWindowArrowGroupDataItem* Post3dWindowZoneDataItem::arrowGroupDataItem() const
+Post3dWindowNodeVectorArrowTopDataItem* Post3dWindowZoneDataItem::arrowTopDataItem() const
 {
-	return m_arrowGroupDataItem;
+	return m_arrowTopDataItem;
 }
 
 Post3dWindowNodeVectorStreamlineGroupDataItem* Post3dWindowZoneDataItem::streamlineGroupDataItem() const
@@ -211,9 +208,9 @@ void Post3dWindowZoneDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 			m_scalarGroupDataItem->loadFromProjectMainFile(scalarGroupNode);
 		}
 	}
-	QDomNode arrowGroupNode = iRIC::getChildNode(node, "ArrowGroup");
-	if (! arrowGroupNode.isNull() && m_arrowGroupDataItem != nullptr) {
-		m_arrowGroupDataItem->loadFromProjectMainFile(arrowGroupNode);
+	QDomNode arrowGroupTopNode = iRIC::getChildNode(node, "ArrowGroupTop");
+	if (! arrowGroupTopNode.isNull() && m_arrowTopDataItem != nullptr) {
+		m_arrowTopDataItem->loadFromProjectMainFile(arrowGroupTopNode);
 	}
 	QDomNode streamlineGroupNode = iRIC::getChildNode(node, "StreamlineGroup");
 	if (! streamlineGroupNode.isNull() && m_streamlineGroupDataItem != nullptr) {
@@ -246,9 +243,9 @@ void Post3dWindowZoneDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 		m_scalarGroupDataItem->saveToProjectMainFile(writer);
 		writer.writeEndElement();
 	}
-	if (m_arrowGroupDataItem != nullptr) {
-		writer.writeStartElement("ArrowGroup");
-		m_arrowGroupDataItem->saveToProjectMainFile(writer);
+	if (m_arrowTopDataItem != nullptr) {
+		writer.writeStartElement("ArrowGroupTop");
+		m_arrowTopDataItem->saveToProjectMainFile(writer);
 		writer.writeEndElement();
 	}
 	if (m_streamlineGroupDataItem != nullptr) {
@@ -296,8 +293,8 @@ void Post3dWindowZoneDataItem::update()
 	if (m_scalarGroupDataItem != nullptr) {
 		m_scalarGroupDataItem->update();
 	}
-	if (m_arrowGroupDataItem != nullptr) {
-		m_arrowGroupDataItem->update();
+	if (m_arrowTopDataItem != nullptr) {
+		m_arrowTopDataItem->update();
 	}
 	if (m_streamlineGroupDataItem != nullptr) {
 		m_streamlineGroupDataItem->update();

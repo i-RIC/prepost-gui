@@ -6,6 +6,8 @@
 #include "post3dwindowfacedataitem.h"
 
 #include <guibase/arrowsettingcontainer.h>
+#include <guibase/vtktool/vtkarrowlegendactors.h>
+#include <guibase/vtktool/vtkarrowsactor.h>
 
 #include <vtkSmartPointer.h>
 #include <vtkActor.h>
@@ -33,8 +35,6 @@ class Post3dWindowArrowGroupDataItem : public Post3dWindowDataItem
 	Q_OBJECT
 
 public:
-	const static int AUTO_AVERAGECOUNT = 20;
-
 	Post3dWindowArrowGroupDataItem(Post3dWindowDataItem* parent);
 	void setSetting(const ArrowSettingContainer& setting);
 
@@ -47,8 +47,6 @@ protected:
 	void innerUpdateZScale(double scale) override;
 	void innerUpdate2Ds() override;
 	void updateVisibility() override {GraphicsWindowDataItem::updateVisibility();}
-
-	void updateScaleFactor();
 
 private:
 	void setupActors();
@@ -63,28 +61,15 @@ private:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
-	vtkSmartPointer<vtkActor> m_arrowActor;
-	vtkSmartPointer<vtkPolyDataMapper> m_arrowMapper;
+	vtkArrowsActor m_arrowsActor;
+        vtkArrowLegendActors m_legendActors;
+
 	vtkSmartPointer<vtkAppendPolyData> m_appendPolyData;
 	vtkSmartPointer<vtkMaskPoints> m_maskPoints;
-	vtkSmartPointer<vtkPolyData> m_polyData;
 	vtkSmartPointer<vtkAppendFilter> m_appendFilter;
 	vtkSmartPointer<vtkTransformFilter> m_transformFilter;
 
-	vtkSmartPointer<vtkHedgeHog> m_hedgeHog;
-	vtkSmartPointer<vtkGlyph3D> m_arrowGlyph;
-	vtkSmartPointer<vtkWarpVector> m_warpVector;
-	vtkSmartPointer<vtkConeSource> m_arrowSource;
-
-	vtkSmartPointer<vtkTextActor> m_legendTextActor;
-
-	vtkSmartPointer<vtkUnstructuredGrid> m_baseArrowPolyData;
-	vtkSmartPointer<vtkPolyData> m_activePoints;
-	vtkSmartPointer<vtkActor2D> m_baseArrowActor;
-
 	ArrowSettingContainer m_setting;
-
-	double m_scaleFactor;
 
 	class SetSettingCommand;
 	class UpdateOnUndoCommand;
