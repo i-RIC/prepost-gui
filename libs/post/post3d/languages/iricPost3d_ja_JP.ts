@@ -161,6 +161,105 @@
     </message>
 </context>
 <context>
+    <name>Post3dWindowCellContourDataItem</name>
+    <message>
+        <source>Range</source>
+        <translation>範囲</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowCellContourGroupDataItem</name>
+    <message>
+        <source>Range%1</source>
+        <translation>範囲%1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowCellContourGroupSettingDialog</name>
+    <message>
+        <source>Contour Setting (cell center)</source>
+        <translation>コンター設定 (セル中心)</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation>値:</translation>
+    </message>
+    <message>
+        <source>Regions</source>
+        <translation>範囲</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>追加 (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>削除 (&amp;R)</translation>
+    </message>
+    <message>
+        <source>&amp;Color Bar Setting</source>
+        <translation>カラーバー設定(&amp;C)</translation>
+    </message>
+    <message>
+        <source>Range%1</source>
+        <translation>範囲%1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowCellContourGroupTopDataItem</name>
+    <message>
+        <source>Contours (cell center)</source>
+        <translation>コンター (セル中心)</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>警告</translation>
+    </message>
+    <message>
+        <source>A maximum of four contours may be defined.</source>
+        <translation>コンターは最大で4つまでしか描画できません。</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowCellRangeSettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>フォーム</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>範囲</translation>
+    </message>
+    <message>
+        <source>I Min</source>
+        <translation>I 最小</translation>
+    </message>
+    <message>
+        <source>I Max</source>
+        <translation>I 最大</translation>
+    </message>
+    <message>
+        <source>J Min</source>
+        <translation>J 最小</translation>
+    </message>
+    <message>
+        <source>J Max</source>
+        <translation>J 最大</translation>
+    </message>
+    <message>
+        <source>K Min</source>
+        <translation>K 最小</translation>
+    </message>
+    <message>
+        <source>K Max</source>
+        <translation>K 最大</translation>
+    </message>
+    <message>
+        <source>Enabled</source>
+        <translation>有効</translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowContourGroupDataItem</name>
     <message>
         <source>Contour</source>

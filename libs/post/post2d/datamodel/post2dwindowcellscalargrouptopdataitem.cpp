@@ -40,7 +40,7 @@ Post2dWindowCellScalarGroupTopDataItem::Post2dWindowCellScalarGroupTopDataItem(P
 		m_scalarmap[val] = item;
 		m_childItems.push_back(item);
 		item->setTarget(val);
-		item->m_lookupTableContainer = gtItem->nodeLookupTable(val);
+		item->m_lookupTableContainer = *(gtItem->nodeLookupTable(val));
 	}
 }
 

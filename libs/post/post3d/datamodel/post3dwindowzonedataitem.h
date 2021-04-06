@@ -16,6 +16,7 @@
 class QSignalMapper;
 
 class Post3dWindowGridShapeDataItem;
+class Post3dWindowCellContourGroupTopDataItem;
 class Post3dWindowContourGroupTopDataItem;
 class Post3dWindowNodeScalarGroupDataItem;
 class Post3dWindowNodeScalarGroupTopDataItem;
@@ -40,16 +41,18 @@ public:
 	void informDeselection(VTKGraphicsView*) override;
 
 	PostZoneDataContainer* dataContainer() override;
-	int zoneNumber() const {return m_zoneNumber;}
-	const std::string& zoneName() const {return m_zoneName;}
+	int zoneNumber() const;
+	const std::string& zoneName() const;
 	void update();
-	Post3dWindowGridShapeDataItem* gridShapeDataItem() const {return m_shapeDataItem;}
-	Post3dWindowContourGroupTopDataItem* contourGroupTopItem() const {return m_contourGroupTopItem;}
-	Post3dWindowNodeScalarGroupTopDataItem* scalarGroupDataItem() const {return m_scalarGroupDataItem;}
-	Post3dWindowArrowGroupDataItem* arrowGroupDataItem() const {return m_arrowGroupDataItem;}
-	Post3dWindowNodeVectorStreamlineGroupDataItem* streamlineGroupDataItem() const {return m_streamlineGroupDataItem;}
-	Post3dWindowNodeVectorParticleGroupDataItem* particleGroupDataItem() const {return m_particleGroupDataItem;}
-	Post3dWindowParticlesTopDataItem* particlesDataItem() const {return m_particlesDataItem;}
+
+	Post3dWindowGridShapeDataItem* gridShapeDataItem() const;
+	Post3dWindowContourGroupTopDataItem* contourGroupTopItem() const;
+	Post3dWindowCellContourGroupTopDataItem* cellContourGroupTopItem() const;
+	Post3dWindowNodeScalarGroupTopDataItem* scalarGroupDataItem() const;
+	Post3dWindowArrowGroupDataItem* arrowGroupDataItem() const;
+	Post3dWindowNodeVectorStreamlineGroupDataItem* streamlineGroupDataItem() const;
+	Post3dWindowNodeVectorParticleGroupDataItem* particleGroupDataItem() const;
+	Post3dWindowParticlesTopDataItem* particlesDataItem() const;
 	PostStringResultDataItem* stringDataItem() const;
 
 protected:
@@ -59,6 +62,7 @@ protected:
 private:
 	Post3dWindowGridShapeDataItem* m_shapeDataItem;
 	Post3dWindowContourGroupTopDataItem* m_contourGroupTopItem;
+	Post3dWindowCellContourGroupTopDataItem* m_cellContourGroupTopItem;
 	Post3dWindowNodeScalarGroupTopDataItem* m_scalarGroupDataItem;
 	Post3dWindowArrowGroupDataItem* m_arrowGroupDataItem;
 	Post3dWindowNodeVectorStreamlineGroupDataItem* m_streamlineGroupDataItem;
