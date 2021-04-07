@@ -363,8 +363,8 @@ QDialog* Post3dWindowContourGroupDataItem::propertyDialog(QWidget* p)
 	Post3dWindowContourGroupTopDataItem* topitem = dynamic_cast<Post3dWindowContourGroupTopDataItem*>(parent());
 	dialog->setColorBarTitleMap(topitem->m_colorBarTitleMap);
 
-	dialog->setScalarSetting(m_scalarSetting);
 	dialog->setLookupTable(*(lookupTable()));
+	dialog->setScalarSetting(m_scalarSetting);
 	dialog->setFaceMap(faceMap());
 
 	return dialog;
