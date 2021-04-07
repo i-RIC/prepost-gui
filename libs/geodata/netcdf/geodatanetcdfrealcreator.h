@@ -12,7 +12,6 @@ public:
 	GeoDataNetcdfRealCreator();
 
 	GeoData* create(ProjectDataItem* parent, SolverDefinitionGridAttribute* condition) override;
-	bool isCompatibleWith(SolverDefinitionGridAttribute* condition) const override;
 };
 
 #endif // GEODATANETCDFREALCREATOR_H

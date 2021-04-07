@@ -30,9 +30,3 @@ GeoData* GeoDataNetcdfRealCreator::create(ProjectDataItem* parent, SolverDefinit
 
 	return data;
 }
-
-bool GeoDataNetcdfRealCreator::isCompatibleWith(SolverDefinitionGridAttribute* condition) const
-{
-	if (condition->isReferenceInformation()) {return false;}
-	return true;
-}
