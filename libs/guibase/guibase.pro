@@ -53,7 +53,7 @@ LIBS += \
 	-lvtkCommonDataModel-6.1 \
 	-lvtkCommonExecutionModel-6.1 \
 	-lvtkCommonMath-6.1 \
-    -lvtkFilterScore-6.1 \
+	-lvtkFiltersCore-6.1 \
 	-lvtkFiltersExtraction-6.1 \
 	-lvtkFiltersFlowPaths-6.1 \
 	-lvtkFiltersGeneral-6.1 \
