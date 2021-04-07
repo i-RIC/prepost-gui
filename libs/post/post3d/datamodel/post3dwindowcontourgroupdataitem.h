@@ -38,7 +38,7 @@ public:
 	void setFaceMap(const QMap<QString, Post3dWindowFaceDataItem::Setting>& map, QString target);
 
 	void updateChildActors();
-	vtkActor* setupActorAndMapper(vtkAlgorithmOutput* algo);
+	vtkActor* setupActorAndMapper(vtkPolyData* data);
 
 	void setupScalarBarActor();
 	void updateScalarBarActorSetting();
@@ -63,9 +63,9 @@ private:
 
 	void saveContourToProjectMainFile(QXmlStreamWriter& writer);
 	void loadContourFromProjectMainFile(const QDomNode& node);
-	vtkActor* setupIsolinesActorAndMapper(vtkAlgorithmOutput* algo);
-	vtkActor* setupContourFigureActorAndMapper(vtkAlgorithmOutput* algo);
-	vtkActor* setupColorFringeActorAndMapper(vtkAlgorithmOutput* algo);
+	vtkActor* setupIsolinesActorAndMapper(vtkPolyData* data);
+	vtkActor* setupContourFigureActorAndMapper(vtkPolyData* data);
+	vtkActor* setupColorFringeActorAndMapper(vtkPolyData* data);
 
 	vtkSmartPointer<vtkScalarBarWidget> m_scalarBarWidget;
 	double m_zScale;
