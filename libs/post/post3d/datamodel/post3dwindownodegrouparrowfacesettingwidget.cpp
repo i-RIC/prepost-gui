@@ -9,6 +9,7 @@
 #include <guibase/vtkdatasetattributestool.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
+#include <misc/stringtool.h>
 
 #include <vtkPointData.h>
 #include <vtkStructuredGrid.h>
@@ -72,6 +73,12 @@ void Post3dWindowNodeGroupArrowFaceSettingWidget::setSettings(bool enabled, cons
 		ui->specificRadioButton->setChecked(true);
 	} else if (arrowSetting.colorMode == ArrowSettingContainer::ColorMode::ByScalar) {
 		ui->scalarRadioButton->setChecked(true);
+
+		auto it = std::find(m_scalars.begin(), m_scalars.end(), iRIC::toStr(arrowSetting.colorTarget));
+		if (it != m_scalars.end()) {
+			auto index = it - m_scalars.begin();
+			ui->scalarComboBox->setCurrentIndex(index);
+		}
 	}
 	ui->colorEditWidget->setColor(arrowSetting.customColor);
 

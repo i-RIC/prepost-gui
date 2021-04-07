@@ -1,6 +1,5 @@
 #include "../post3dwindowdatamodel.h"
 #include "../post3dwindowgraphicsview.h"
-#include "post3dwindowarrowgroupdataitem.h"
 #include "post3dwindowcellcontourgrouptopdataitem.h"
 #include "post3dwindowcontourgroupdataitem.h"
 #include "post3dwindowcontourgrouptopdataitem.h"
