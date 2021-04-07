@@ -1,6 +1,7 @@
 #include "geodatarivercrosssection.h"
 #include "geodatariverpathpoint.h"
 #include "geodatarivershapeinterpolator.h"
+#include "geodatariversurvey.h"
 
 #include <guicore/pre/grid/structured2dgrid.h>
 #include <guicore/pre/gridcond/base/gridattributecontainert.h>
@@ -18,25 +19,28 @@
 
 const QString GeoDataRiverPathPoint::NAME_REGEXP = "[A-Za-z0-9_\\-\\.]+";
 
-GeoDataRiverPathPoint::GeoDataRiverPathPoint()
+GeoDataRiverPathPoint::GeoDataRiverPathPoint(GeoDataRiverSurvey* rs) :
+	m_rs {rs}
 {
 	initializeInnerValues();
 	initializeInterpolators();
 }
 
-GeoDataRiverPathPoint::GeoDataRiverPathPoint(double x, double y)
+GeoDataRiverPathPoint::GeoDataRiverPathPoint(double x, double y, GeoDataRiverSurvey* rs) :
+	m_position {QPointF(x, y)},
+	m_rs {rs}
 {
 	initializeInnerValues();
 	initializeInterpolators();
-	m_position = QPointF(x, y);
 }
 
-GeoDataRiverPathPoint::GeoDataRiverPathPoint(const QString& name, double x, double y)
+GeoDataRiverPathPoint::GeoDataRiverPathPoint(const QString& name, double x, double y, GeoDataRiverSurvey* rs) :
+	m_name {name},
+	m_position {QPointF(x, y)},
+	m_rs {rs}
 {
 	initializeInnerValues();
 	initializeInterpolators();
-	m_name = name;
-	m_position = QPointF(x, y);
 }
 
 GeoDataRiverPathPoint::~GeoDataRiverPathPoint()
@@ -955,7 +959,9 @@ const QPointF& GeoDataRiverPathPoint::crosssectionDirectionR() const
 
 void GeoDataRiverPathPoint::createGrid(Structured2DGrid* grid, unsigned int initcount, bool elevmapping, bool last)
 {
-	GridAttributeContainerT<double>* elev = dynamic_cast<GridAttributeContainerT<double>*>(grid->gridAttribute("Elevation"));
+	auto attName = m_rs->gridAttribute()->name();
+
+	GridAttributeContainerT<double>* elev = dynamic_cast<GridAttributeContainerT<double>*>(grid->gridAttribute(attName));
 	QPointF vec2d;
 	int index;
 	if (last) {

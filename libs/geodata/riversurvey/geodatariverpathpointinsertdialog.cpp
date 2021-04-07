@@ -34,7 +34,7 @@ GeoDataRiverPathPointInsertDialog::GeoDataRiverPathPointInsertDialog(GeoDataRive
 	} else {
 		m_insertTarget = target;
 	}
-	m_newPoint = new GeoDataRiverPathPoint();
+	m_newPoint = new GeoDataRiverPathPoint(rs);
 	m_rs = rs;
 	if ((insert && target->previousPoint()->firstPoint()) || (! insert && target->nextPoint() == nullptr)) {
 		ui->coordRatioRadioButton->setDisabled(true);
