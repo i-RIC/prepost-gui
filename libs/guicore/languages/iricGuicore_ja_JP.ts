@@ -842,6 +842,29 @@ Do you really want to import this file?</source>
     </message>
 </context>
 <context>
+    <name>InputConditionCgnsFileSelectDialog</name>
+    <message>
+        <source>Select Input CGNS File</source>
+        <translation>入力用CGNSファイルの選択</translation>
+    </message>
+    <message>
+        <source>Information</source>
+        <translation>情報</translation>
+    </message>
+    <message>
+        <source>Do you want to import grid from the CGNS file?</source>
+        <translation>CGNSファイルから更新をインポートしますか?</translation>
+    </message>
+    <message>
+        <source>Select CGNS file</source>
+        <translation>CGNSファイルの選択</translation>
+    </message>
+    <message>
+        <source>Please select from which CGNS file to read grid.</source>
+        <translation>どのCGNSファイルから格子をインポートするか選択してください。</translation>
+    </message>
+</context>
+<context>
     <name>InputConditionContainerSet</name>
     <message>
         <source>Definition node is not stored</source>
