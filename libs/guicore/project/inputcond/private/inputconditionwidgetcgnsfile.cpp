@@ -11,8 +11,8 @@
 #include <QFileDialog>
 #include <QFileInfo>
 
-InputConditionWidgetCgnsFile::InputConditionWidgetCgnsFile(QDomNode defnode, const SolverDefinitionTranslator& t, InputConditionContainerString* cont, InputConditionCgnsFile* file) :
-	InputConditionWidget(defnode),
+InputConditionWidgetCgnsFile::InputConditionWidgetCgnsFile(InputConditionContainerString* cont, InputConditionCgnsFile* file) :
+	InputConditionWidget(),
 	m_container {cont},
 	m_cgnsFile {file},
 	ui(new Ui::InputConditionWidgetCgnsFile)
@@ -27,6 +27,10 @@ InputConditionWidgetCgnsFile::InputConditionWidgetCgnsFile(QDomNode defnode, con
 	connect(file, SIGNAL(changed()), this, SLOT(handleFileChange()));
 }
 
+InputConditionWidgetCgnsFile::InputConditionWidgetCgnsFile(QDomNode defnode, const SolverDefinitionTranslator& t, InputConditionContainerString* cont, InputConditionCgnsFile* file) :
+	InputConditionWidgetCgnsFile(cont, file)
+{}
+
 InputConditionWidgetCgnsFile::~InputConditionWidgetCgnsFile()
 {
 	delete ui;
@@ -38,6 +42,11 @@ void InputConditionWidgetCgnsFile::addTooltip(const QString& tooltip)
 
 	QHBoxLayout* l = dynamic_cast<QHBoxLayout*>(ui->nameEditLayout);
 	l->insertWidget(0, tt);
+}
+
+InputConditionWidgetCgnsFile* InputConditionWidgetCgnsFile::clone() const
+{
+	return new InputConditionWidgetCgnsFile(m_container, m_cgnsFile);
 }
 
 void InputConditionWidgetCgnsFile::setValue(const QString& newvalue)
@@ -110,4 +119,5 @@ void InputConditionWidgetCgnsFile::openFileDialog()
 void InputConditionWidgetCgnsFile::informChanged()
 {
 	m_cgnsFile->setFileName(m_container->value());
+	emit valueChanged();
 }

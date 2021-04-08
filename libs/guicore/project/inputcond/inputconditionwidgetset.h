@@ -53,5 +53,9 @@ private:
 
 	QMap<std::string, InputConditionCgnsFile*> m_cgnsFiles;
 	QMap<std::string, InputConditionWidget*> m_widgets;
+
+public:
+	friend class InputConditionDialog;
+	friend class InputConditionCgnsFileSelectDialog;
 };
 #endif // INPUTCONDITIONWIDGETSET_H

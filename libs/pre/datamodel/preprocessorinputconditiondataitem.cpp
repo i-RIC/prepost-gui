@@ -123,6 +123,11 @@ bool PreProcessorInputConditionDataItem::exportInputCondition(const QString& fil
 	}
 }
 
+bool PreProcessorInputConditionDataItem::setupCgnsFilesIfNeeded(QString *cgnsFileForGrid, bool* updated)
+{
+	return m_dialog->setupCgnsFilesIfNeeded(cgnsFileForGrid, updated);
+}
+
 bool PreProcessorInputConditionDataItem::isSet() const
 {
 	return m_isSet;

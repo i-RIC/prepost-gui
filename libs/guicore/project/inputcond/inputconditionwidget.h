@@ -17,6 +17,7 @@ class GUICOREDLL_EXPORT InputConditionWidget : public QWidget
 	Q_OBJECT
 
 public:
+	InputConditionWidget();
 	InputConditionWidget(QDomNode n);
 	virtual ~InputConditionWidget();
 

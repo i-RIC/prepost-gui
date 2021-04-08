@@ -495,6 +495,7 @@ HEADERS += guicore_global.h \
            pre/hydraulicdata/private/hydraulicdataimporter_impl.h \
            pre/hydraulicdata/private/hydraulicdatamultiexporter_impl.h \
            project/inputcond/private/inputconditioncgnsfile.h \
+           project/inputcond/private/inputconditioncgnsfileselectdialog.h \
            project/inputcond/private/inputconditioncontainer_impl.h \
            project/inputcond/private/inputconditioncontainerfunctional_impl.h \
            project/inputcond/private/inputconditioncontainerinteger_impl.h \
@@ -578,6 +579,7 @@ FORMS += datamodel/propertybrowserview.ui \
          pre/gridcond/base/gridattributeeditnameandvaluedialog.ui \
          pre/gridcond/base/gridattributevariationeditdialog.ui \
          pre/gridcond/dimensionselectwidget/gridattributedimensioncomboboxselectwidget.ui \
+         project/inputcond/private/inputconditioncgnsfileselectdialog.ui \
          project/inputcond/private/inputconditionwidgetcgnsfile.ui \
          project/inputcond/private/inputconditionwidgetfunctionaldialog.ui \
          project/inputcond/private/inputconditionwidgetfunctionaldownloaddialog.ui
@@ -833,6 +835,7 @@ SOURCES += base/iricmainwindowinterface.cpp \
            pre/gridcond/stringconverter/gridattributestringconverterinteger.cpp \
            pre/gridcond/stringconverter/gridattributestringconverterreal.cpp \
            project/inputcond/private/inputconditioncgnsfile.cpp \
+           project/inputcond/private/inputconditioncgnsfileselectdialog.cpp \
            project/inputcond/private/inputconditiondependencychecksubcaptions.cpp \
            project/inputcond/private/inputconditiondependencychecksubimages.cpp \
            project/inputcond/private/inputconditiondependencyconditionalways.cpp \

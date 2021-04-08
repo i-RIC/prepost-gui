@@ -69,6 +69,11 @@ InputConditionCgnsFile::InputConditionCgnsFile() :
 	m_gridEdgeJRealResults{}
 {}
 
+QString InputConditionCgnsFile::fileName() const
+{
+	return m_fileName;
+}
+
 void InputConditionCgnsFile::setFileName(const QString& filename)
 {
 	bool c = (filename != m_fileName);
