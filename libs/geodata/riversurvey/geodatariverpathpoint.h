@@ -22,6 +22,7 @@ class Interpolator2D1;
 class LinearLXSecInterpolator;
 class LinearRXSecInterpolator;
 class Structured2DGrid;
+class GeoDataRiverSurvey;
 class GeoDataRiverSurveyBackgroundGridCreateThread;
 class HydraulicDataRiverSurveyWaterElevation;
 
@@ -72,10 +73,10 @@ public:
 
 	const static QString NAME_REGEXP;
 
-	GeoDataRiverPathPoint();
-	GeoDataRiverPathPoint(double x, double y);
-	GeoDataRiverPathPoint(const QString& name, double x, double y);
-	virtual ~GeoDataRiverPathPoint();
+	GeoDataRiverPathPoint(GeoDataRiverSurvey* rs);
+	GeoDataRiverPathPoint(double x, double y, GeoDataRiverSurvey* rs);
+	GeoDataRiverPathPoint(const QString& name, double x, double y, GeoDataRiverSurvey* rs);
+	~GeoDataRiverPathPoint();
 
 	/// River center position
 	const QPointF& position() const;
@@ -274,6 +275,8 @@ private:
 	std::vector<Interpolator2D1*> m_RGridLines;
 	std::vector<Interpolator2D1*> m_backgroundLGridLines;
 	std::vector<Interpolator2D1*> m_backgroundRGridLines;
+
+	GeoDataRiverSurvey* m_rs;
 
 public:
 	friend class GeoDataRiverSurveyBackgroundGridCreateThread;

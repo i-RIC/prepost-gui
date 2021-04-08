@@ -123,7 +123,7 @@ GeoDataRiverSurvey::GeoDataRiverSurvey(ProjectDataItem* d, GeoDataCreator* creat
 	GeoData(d, creator, att),
 	impl {new Impl {this}}
 {
-	m_headPoint = new GeoDataRiverPathPoint("Dummy", 0, 0);
+	m_headPoint = new GeoDataRiverPathPoint("Dummy", 0, 0, this);
 	connect(impl->m_gridThread, SIGNAL(gridUpdated()), this, SLOT(updateBackgroundGrid()));
 
 	impl->setupActions();
@@ -408,7 +408,7 @@ void GeoDataRiverSurvey::loadExternalData(const QString& filename)
 			GeoDataRiverPathPoint* newPoint;
 			for (unsigned int i = 0; i < rs->points.size(); ++i) {
 				iRICLib::RiverPathPoint* libp = rs->points.at(i);
-				newPoint = new GeoDataRiverPathPoint();
+				newPoint = new GeoDataRiverPathPoint(this);
 				newPoint->loadFromiRICLibObject(libp);
 				before->addPathPoint(newPoint);
 				before = newPoint;
@@ -443,7 +443,7 @@ void GeoDataRiverSurvey::loadExternalData(const QString& filename)
 		bool nextExist;
 		s >> nextExist;
 		while (nextExist) {
-			newPoint = new GeoDataRiverPathPoint();
+			newPoint = new GeoDataRiverPathPoint(this);
 			newPoint->load(s, projectData()->version());
 			before->addPathPoint(newPoint);
 			before = newPoint;
@@ -626,7 +626,7 @@ void GeoDataRiverSurvey::generateData()
 
 	double nextName = upstreamName;
 	for (int i = 0; i < centerLine.size(); ++i) {
-		auto newPoint = new GeoDataRiverPathPoint();
+		auto newPoint = new GeoDataRiverPathPoint(this);
 		newPoint->InhibitInterpolatorUpdate = true;
 		newPoint->setName(QString::number(nextName, 'f', 1));
 		newPoint->setPosition(centerLine.at(i));

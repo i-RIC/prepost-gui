@@ -435,7 +435,7 @@ bool GeoDataRiverSurveyImporter::importData(GeoDataRiverSurvey* rs, std::vector<
 		RivPathPoint* p = points->at(i);
 
 		auto leftp = p->leftBank;
-		auto newPoint = new GeoDataRiverPathPoint(leftp.x(), leftp.y());
+		auto newPoint = new GeoDataRiverPathPoint(leftp.x(), leftp.y(), rs);
 
 		newPoint->setName(p->strKP.c_str());
 		newPoint->InhibitInterpolatorUpdate = true;
