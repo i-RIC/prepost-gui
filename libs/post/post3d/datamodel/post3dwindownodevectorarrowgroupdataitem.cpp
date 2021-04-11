@@ -138,4 +138,7 @@ void Post3dWindowNodeVectorArrowGroupDataItem::updateActorSettings()
 
 	m_legendActors.update(iRIC::toStr(s.target), s.legendLength, s.standardValue, s.arrowSize, 15.0);
 	m_legendActors.setLineWidth(s.lineWidth);
+
+	m_standardItem->setText(s.target);
+	m_standardItemCopy->setText(s.target);
 }
