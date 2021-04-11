@@ -58,7 +58,7 @@ void Post3dWindowNodeVectorArrowDataItem::setSetting(const Post3dWindowNodeVecto
 	m_isCommandExecuting = true;
 
 	standardItem()->setText(faceSetting.caption);
-	standardItem()->setCheckState(Qt::Checked);
+	standardItem()->setCheckState(faceSetting.enabled ? Qt::Checked : Qt::Unchecked);
 
 	m_arrowSetting = faceSetting.arrowSetting;
 	m_faceSetting = faceSetting.faceSetting;
