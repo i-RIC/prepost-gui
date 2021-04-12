@@ -64,24 +64,37 @@ bool GeoDataPointmapLandXmlImporter::importData(GeoData* data, int /*index*/, QW
 
 	auto defNode = iRIC::getChildNode(surfaceNode, "Definition");
 	auto pntsNode = iRIC::getChildNode(defNode, "Pnts");
+
+	std::map<int, int> pointIdMap;
+
+	int numPoints = 0;
 	for (int i = 0; i < pntsNode.childNodes().count(); ++i) {
 		auto pNode = pntsNode.childNodes().at(i);
-		QStringList frags = pNode.toElement().text().split(" ");
+		auto pElem = pNode.toElement();
+		auto pIdStr = pElem.attribute("id");
+		int pointId = numPoints + 1;
+		if (! pIdStr.isEmpty()) {
+			pointId = pIdStr.toInt();
+		}
+		QStringList frags = pElem.text().split(" ");
 		double y = frags.at(0).toDouble();
 		double x = frags.at(1).toDouble();
 		double z = frags.at(2).toDouble();
 
 		points->InsertNextPoint(x, y, 0);
 		values->InsertNextValue(z);
+
+		pointIdMap.insert({pointId, numPoints});
+		++ numPoints;
 	}
 	auto facesNode = iRIC::getChildNode(defNode, "Faces");
 	for (int i = 0; i < facesNode.childNodes().count(); ++i) {
 		vtkIdType ids[3];
 		auto fNode = facesNode.childNodes().at(i);
 		QStringList frags = fNode.toElement().text().split(" ");
-		ids[0] = frags.at(0).toInt() - 1;
-		ids[1] = frags.at(1).toInt() - 1;
-		ids[2] = frags.at(2).toInt() - 1;
+		ids[0] = pointIdMap.at(frags.at(0).toInt());
+		ids[1] = pointIdMap.at(frags.at(1).toInt());
+		ids[2] = pointIdMap.at(frags.at(2).toInt());
 		cellArray->InsertNextCell(3, ids);
 	}
 	polyData->SetPolys(cellArray);
