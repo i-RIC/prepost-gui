@@ -64,12 +64,11 @@ void InputConditionCgnsFileSelectDialog::accept()
 				QStringList cgnsNames;
 				for (auto cgnsFile : m_cgnsFiles) {
 					cgnsNames.push_back(cgnsFile->fileName());
-					bool ok;
-					QString selected = QInputDialog::getItem(this, tr("Select CGNS file"), tr("Please select from which CGNS file to read grid."), cgnsNames, 0, false, &ok);
-					if (! ok) {return;}
-
-					*m_cgnsFileForGrid = selected;
 				}
+				bool ok;
+				QString selected = QInputDialog::getItem(this, tr("Select CGNS file"), tr("Please select from which CGNS file to read grid."), cgnsNames, 0, false, &ok);
+				if (!ok) { return; }
+				*m_cgnsFileForGrid = selected;
 			}
 		}
 	}
