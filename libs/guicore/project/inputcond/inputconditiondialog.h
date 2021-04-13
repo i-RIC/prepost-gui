@@ -43,6 +43,8 @@ public:
 
 	void checkImportSourceUpdate();
 
+	bool setupCgnsFilesIfNeeded(QString* cgnsFileForGrid, bool *updated);
+
 public slots:
 	void accept() override;
 	void reject() override;

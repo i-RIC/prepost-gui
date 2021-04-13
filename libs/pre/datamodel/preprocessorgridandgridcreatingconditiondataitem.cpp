@@ -451,6 +451,20 @@ void PreProcessorGridAndGridCreatingConditionDataItem::importGrid()
 	dynamic_cast<PreProcessorGridDataItem*> (m_gridDataItem)->informGridChange();
 }
 
+bool PreProcessorGridAndGridCreatingConditionDataItem::importGridFromCgnsFile(const QString& filename)
+{
+	PreProcessorGridTypeDataItem* gTypeItem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent());
+	auto importerList = GridImporterFactory::instance().list(*(gTypeItem->gridType()));
+	for (auto importer : importerList) {
+		auto cgnsImporter = dynamic_cast<CgnsGridImporter*> (importer);
+		if (cgnsImporter == nullptr) {continue;}
+
+		auto filters = cgnsImporter->fileDialogFilters();
+		return importFromImporter(importer, filename, filters.first());
+	}
+	return false;
+}
+
 void PreProcessorGridAndGridCreatingConditionDataItem::informGridCreation()
 {
 	// set default values first. this is done, always.

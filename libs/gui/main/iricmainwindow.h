@@ -5,8 +5,9 @@
 
 #include "../continuoussnapshot/continuoussnapshotwizard.h"
 
-#include <misc/versionnumber.h>
 #include <guicore/base/iricmainwindowinterface.h>
+#include <misc/versionnumber.h>
+#include <pre/preprocessorwindow.h>
 
 #include <QMainWindow>
 #include <QLocale>
@@ -30,6 +31,7 @@ class iRICMetaData;
 class AnimationController;
 class SolverConsoleWindow;
 class PostProcessorWindow;
+class PreProcessorWindow;
 class SolverDefinitionList;
 class SolverDefinition;
 class SolverDefinitionAbstract;
@@ -58,7 +60,7 @@ public:
 	~iRICMainWindow();
 
 	/// The PreProcessorWindow
-	PreProcessorWindowInterface* preProcessorWindow() const override;
+	PreProcessorWindow* preProcessorWindow() const override;
 	/// The SolverConsoleWindow
 	SolverConsoleWindow* solverConsoleWindow() const;
 
@@ -114,7 +116,7 @@ private:
 	/// The central widget
 	QMdiArea* m_centralWidget;
 	// pointers to inner windows
-	PreProcessorWindowInterface* m_preProcessorWindow;
+	PreProcessorWindow* m_preProcessorWindow;
 	SolverConsoleWindow* m_solverConsoleWindow;
 
 protected:

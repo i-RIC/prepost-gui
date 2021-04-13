@@ -121,6 +121,38 @@ bool PreProcessorDataModel::exportInputCondition(const QString& filename)
 	return root->m_inputConditionDataItem->exportInputCondition(filename);
 }
 
+bool PreProcessorDataModel::setupCgnsFilesIfNeeded(bool readgrid)
+{
+	PreProcessorRootDataItem* root = dynamic_cast<PreProcessorRootDataItem*>(m_rootDataItem);
+
+	QString cgnsFileForGrid;
+	QString* cgnsFilePointer = nullptr;
+
+	if (readgrid) {
+		cgnsFilePointer = &cgnsFileForGrid;
+	}
+
+	bool updated;
+	bool ok = root->m_inputConditionDataItem->setupCgnsFilesIfNeeded(cgnsFilePointer, &updated);
+	if (! ok) {return false;}
+
+	if (! cgnsFileForGrid.isEmpty() && updated) {
+		// import the grid to the first grid.
+		auto types = root->gridTypeDataItems();
+		if (types.size() == 0) {return true;}
+		auto firstType = types.at(0);
+
+		auto conditions = firstType->conditions();
+		if (conditions.size() == 0) {return true;}
+		auto firstCond = conditions.at(0);
+
+		auto firstCondImpl = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItem*> (firstCond);
+		return firstCondImpl->importGridFromCgnsFile(cgnsFileForGrid);
+	}
+
+	return true;
+}
+
 bool PreProcessorDataModel::isInputConditionSet()
 {
 	PreProcessorRootDataItem* root = dynamic_cast<PreProcessorRootDataItem*>(m_rootDataItem);

@@ -8,7 +8,7 @@ CONFIG   += console
 CONFIG   += c++11
 
 CONFIG(debug, debug|release) {
-	QT += gui widgets network
+	QT += gui widgets network xml
 } else {
 	QT += gui widgets
 }

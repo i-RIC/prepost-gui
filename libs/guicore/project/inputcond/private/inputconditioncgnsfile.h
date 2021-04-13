@@ -22,6 +22,7 @@ public:
 
 	InputConditionCgnsFile();
 
+	QString fileName() const;
 	void setFileName(const QString& filename);
 
 	bool isEffective() const;
