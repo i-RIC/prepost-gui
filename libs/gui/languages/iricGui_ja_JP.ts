@@ -11750,7 +11750,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Warning: If you disable culling and create a very big grid, maybe iRIC GUI will crash because of lack of memory.</source>
-        <translation>警告: もし間引きを無効にし、非常に大きい格子を作成した倍、メモリ不足により iRIC GUI が異常終了する可能性があります。</translation>
+        <translation>警告: もし間引きを無効にし、非常に大きい格子を作成した場合、メモリ不足により iRIC GUI が異常終了する可能性があります。</translation>
     </message>
     <message>
         <source>Undo</source>
