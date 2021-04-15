@@ -15,6 +15,7 @@
 #include <QStandardItem>
 #include <QUndoCommand>
 
+#include <vtkGeometryFilter.h>
 #include <vtkPointData.h>
 #include <vtkRenderer.h>
 
@@ -108,7 +109,7 @@ void Post3dWindowFaceDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 void Post3dWindowFaceDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
 	writer.writeAttribute("name", m_standardItem->text());
-	iRIC::setBooleanAttribute(writer, "enabled", m_enabled);
+	iRIC::setBooleanAttribute(writer, "enabled", m_standardItem->checkState() == Qt::Checked);
 	QString dirStr;
 	switch (m_direction) {
 	case dirI:
@@ -169,6 +170,94 @@ void Post3dWindowFaceDataItem::setSetting(Setting news, bool draw)
 	m_isCommandExecuting = false;
 }
 
+bool Post3dWindowFaceDataItem::enabled() const
+{
+	return m_standardItem->checkState() == Qt::Checked;
+}
+
+void Post3dWindowFaceDataItem::setEnabled(bool e)
+{
+	m_standardItem->setCheckState(e ? Qt::Checked : Qt::Unchecked);
+
+	delete m_standardItemCopy;
+	m_standardItemCopy = m_standardItem->clone();
+}
+
+Post3dWindowFaceDataItem::Direction Post3dWindowFaceDataItem::direction() const
+{
+	return m_direction;
+}
+
+void Post3dWindowFaceDataItem::setDirection(Direction dir)
+{
+	m_direction = dir;
+}
+
+unsigned int Post3dWindowFaceDataItem::iMin() const
+{
+	return m_iMin;
+}
+
+unsigned int Post3dWindowFaceDataItem::iMax() const
+{
+	return m_iMax;
+}
+
+unsigned int Post3dWindowFaceDataItem::jMin() const
+{
+	return m_jMin;
+}
+
+unsigned int Post3dWindowFaceDataItem::jMax() const
+{
+	return m_jMax;
+}
+
+unsigned int Post3dWindowFaceDataItem::kMin() const
+{
+	return m_kMin;
+}
+
+unsigned int Post3dWindowFaceDataItem::kMax() const
+{
+	return m_kMax;
+}
+
+void Post3dWindowFaceDataItem::setIMin(unsigned int val)
+{
+	m_iMin = val;
+}
+
+void Post3dWindowFaceDataItem::setIMax(unsigned int val)
+{
+	m_iMax = val;
+}
+
+void Post3dWindowFaceDataItem::setJMin(unsigned int val)
+{
+	m_jMin = val;
+}
+
+void Post3dWindowFaceDataItem::setJMax(unsigned int val)
+{
+	m_jMax = val;
+}
+
+void Post3dWindowFaceDataItem::setKMin(unsigned int val)
+{
+	m_kMin = val;
+}
+
+void Post3dWindowFaceDataItem::setKMax(unsigned int val)
+{
+	m_kMax = val;
+}
+
+vtkExtractGrid* Post3dWindowFaceDataItem::filter() const
+{
+	return m_filter;
+}
+
 void Post3dWindowFaceDataItem::setActor(vtkActor* actor)
 {
 	if (m_actor != nullptr) {
@@ -183,6 +272,17 @@ void Post3dWindowFaceDataItem::setActor(vtkActor* actor)
 	} else {
 		m_actor->VisibilityOff();
 	}
+}
+
+vtkPolyData* Post3dWindowFaceDataItem::getOutputPolyData()
+{
+	auto geometryFilter = vtkSmartPointer<vtkGeometryFilter>::New();
+	geometryFilter->SetInputConnection(getOutputPort());
+	geometryFilter->Update();
+
+	vtkPolyData* output = geometryFilter->GetOutput();
+	output->Register(nullptr);
+	return output;
 }
 
 vtkAlgorithmOutput* Post3dWindowFaceDataItem::getOutputPort()

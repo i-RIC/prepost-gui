@@ -100,8 +100,13 @@ void Post3dWindowContourGroupDataItem::updateChildActors()
 	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
 		Post3dWindowFaceDataItem* f = dynamic_cast<Post3dWindowFaceDataItem*>(*it);
 		f->update();
-		vtkAlgorithmOutput* algo = f->getOutputPort();
-		vtkActor* a = setupActorAndMapper(algo);
+		auto data1 = f->getOutputPolyData();
+		auto data2 = m_scalarSetting.filterPolyDataWithUpperLower(data1, *(lookupTable()));
+		data1->Delete();
+
+		vtkActor* a = setupActorAndMapper(data2);
+		data2->Delete();
+
 		f->setActor(a);
 		f->updateZScale(m_zScale);
 		a->Delete();
@@ -110,24 +115,29 @@ void Post3dWindowContourGroupDataItem::updateChildActors()
 	updateVisibilityWithoutRendering();
 }
 
-vtkActor* Post3dWindowContourGroupDataItem::setupActorAndMapper(vtkAlgorithmOutput* algo)
+vtkActor* Post3dWindowContourGroupDataItem::setupActorAndMapper(vtkPolyData* data)
 {
+	vtkActor* actor = nullptr;
+
 	switch (m_scalarSetting.contour.value()) {
 	case ContourSettingWidget::Points:
 		// do nothing
 		break;
 	case ContourSettingWidget::Isolines:
-		return setupIsolinesActorAndMapper(algo);
+		actor = setupIsolinesActorAndMapper(data);
+		break;
 	case ContourSettingWidget::ContourFigure:
-		return setupContourFigureActorAndMapper(algo);
+		actor = setupContourFigureActorAndMapper(data);
+		break;
 	case ContourSettingWidget::ColorFringe:
-	default:
-		return setupColorFringeActorAndMapper(algo);
+		actor = setupColorFringeActorAndMapper(data);
+		break;
 	}
-	return 0;
+
+	return actor;
 }
 
-vtkActor* Post3dWindowContourGroupDataItem::setupIsolinesActorAndMapper(vtkAlgorithmOutput* algo)
+vtkActor* Post3dWindowContourGroupDataItem::setupIsolinesActorAndMapper(vtkPolyData *data)
 {
 	LookupTableContainer* lookup = lookupTable();
 	double range[2];
@@ -135,7 +145,7 @@ vtkActor* Post3dWindowContourGroupDataItem::setupIsolinesActorAndMapper(vtkAlgor
 
 	// setup filter.
 	vtkContourFilter* contourFilter = vtkContourFilter::New();
-	contourFilter->SetInputConnection(algo);
+	contourFilter->SetInputData(data);
 	contourFilter->SetInputArrayToProcess(0, 0, 0, vtkDataObject::FIELD_ASSOCIATION_POINTS, iRIC::toStr(m_scalarSetting.target).c_str());
 	contourFilter->GenerateValues(m_scalarSetting.numberOfDivisions + 1, range);
 
@@ -158,60 +168,14 @@ vtkActor* Post3dWindowContourGroupDataItem::setupIsolinesActorAndMapper(vtkAlgor
 	return actor;
 }
 
-vtkActor* Post3dWindowContourGroupDataItem::setupContourFigureActorAndMapper(vtkAlgorithmOutput* algo)
+vtkActor* Post3dWindowContourGroupDataItem::setupContourFigureActorAndMapper(vtkPolyData *data)
 {
 	LookupTableContainer* lookup = lookupTable();
-
-	// correspond to Post2dWindowNodeScalarGroupDataItem::createRangeClippedPolyData()
-	vtkStructuredGridGeometryFilter* filter = vtkStructuredGridGeometryFilter::New();
-	filter->SetInputConnection(algo);
-	filter->Update();
-	vtkPolyData* rangeClippedPolyData = vtkPolyData::New();
-	rangeClippedPolyData->DeepCopy(filter->GetOutput());
-	filter->Delete();
-
-	// correspond to Post2dWindowNodeScalarGroupDataItem::createValueClippedPolyData()
-	vtkPolyData* upperClipped = vtkPolyData::New();
-	vtkPolyData* lowerClipped = vtkPolyData::New();
 	double min, max;
 	lookup->getValueRange(&min, &max);
-	if (m_scalarSetting.fillLower) {
-		lowerClipped->DeepCopy(rangeClippedPolyData);
-		rangeClippedPolyData->Delete();
-	} else {
-		vtkClipPolyData* lowerClipper = vtkClipPolyData::New();
-		lowerClipper->SetValue(min);
-		lowerClipper->SetInputData(rangeClippedPolyData);
-		lowerClipper->InsideOutOff();
-		rangeClippedPolyData->GetPointData()->SetActiveScalars(iRIC::toStr(m_scalarSetting.target).c_str());
-
-		lowerClipper->Update();
-		lowerClipped->DeepCopy(lowerClipper->GetOutput());
-		lowerClipped->GetPointData()->SetActiveScalars("");
-		lowerClipper->Delete();
-		rangeClippedPolyData->Delete();
-	}
-	if (m_scalarSetting.fillUpper) {
-		upperClipped->DeepCopy(lowerClipped);
-		lowerClipped->Delete();
-	} else {
-		vtkClipPolyData* upperClipper = vtkClipPolyData::New();
-		upperClipper->SetValue(max);
-		upperClipper->SetInputData(lowerClipped);
-		upperClipper->InsideOutOn();
-		lowerClipped->GetPointData()->SetActiveScalars(iRIC::toStr(m_scalarSetting.target).c_str());
-		upperClipper->Update();
-		upperClipped->DeepCopy(upperClipper->GetOutput());
-		upperClipped->GetPointData()->SetActiveScalars("");
-		upperClipper->Delete();
-		lowerClipped->Delete();
-	}
-	vtkPolyData* valueClippedPolyData = vtkPolyData::New();
-	valueClippedPolyData->DeepCopy(upperClipped);
-	upperClipped->Delete();
 
 	// setup filter
-	valueClippedPolyData->GetPointData()->SetActiveScalars(iRIC::toStr(m_scalarSetting.target).c_str());
+	data->GetPointData()->SetActiveScalars(iRIC::toStr(m_scalarSetting.target).c_str());
 	vtkAppendPolyData* appendFilledContours = vtkAppendPolyData::New();
 	double delta = (max - min) / static_cast<double>(m_scalarSetting.numberOfDivisions);
 	std::vector<vtkClipPolyData*> clippersLo;
@@ -223,8 +187,7 @@ vtkActor* Post3dWindowContourGroupDataItem::setupContourFigureActorAndMapper(vtk
 		clippersLo.push_back(vtkClipPolyData::New());
 		if (i == 0) {
 			clippersLo[i]->SetValue(-HUGE_VAL);
-			clippersLo[i]->SetInputData(valueClippedPolyData);
-			valueClippedPolyData->Delete();
+			clippersLo[i]->SetInputData(data);
 		} else {
 			clippersLo[i]->SetValue(valueLo);
 			clippersLo[i]->SetInputConnection(clippersLo[i - 1]->GetOutputPort());
@@ -284,13 +247,13 @@ vtkActor* Post3dWindowContourGroupDataItem::setupContourFigureActorAndMapper(vtk
 	return actor;
 }
 
-vtkActor* Post3dWindowContourGroupDataItem::setupColorFringeActorAndMapper(vtkAlgorithmOutput* algo)
+vtkActor* Post3dWindowContourGroupDataItem::setupColorFringeActorAndMapper(vtkPolyData *data)
 {
 	LookupTableContainer* lookup =  lookupTable();
 
 	// setup mapper
 	vtkDataSetMapper* mapper = vtkDataSetMapper::New();
-	mapper->SetInputConnection(algo);
+	mapper->SetInputData(data);
 	mapper->SetScalarModeToUsePointFieldData();
 	mapper->SelectColorArray(iRIC::toStr(m_scalarSetting.target).c_str());
 	mapper->SetLookupTable(lookup->vtkObj());
@@ -400,8 +363,8 @@ QDialog* Post3dWindowContourGroupDataItem::propertyDialog(QWidget* p)
 	Post3dWindowContourGroupTopDataItem* topitem = dynamic_cast<Post3dWindowContourGroupTopDataItem*>(parent());
 	dialog->setColorBarTitleMap(topitem->m_colorBarTitleMap);
 
-	dialog->setScalarSetting(m_scalarSetting);
 	dialog->setLookupTable(*(lookupTable()));
+	dialog->setScalarSetting(m_scalarSetting);
 	dialog->setFaceMap(faceMap());
 
 	return dialog;
