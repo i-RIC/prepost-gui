@@ -69,7 +69,6 @@ protected:
 	void updateFilter();
 	Post3dWindowZoneDataItem* getZoneDataItem();
 
-	bool m_enabled;
 	bool m_dataOK;
 
 	unsigned int m_iMin;

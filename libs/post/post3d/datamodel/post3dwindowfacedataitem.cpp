@@ -109,7 +109,7 @@ void Post3dWindowFaceDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 void Post3dWindowFaceDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
 	writer.writeAttribute("name", m_standardItem->text());
-	iRIC::setBooleanAttribute(writer, "enabled", m_enabled);
+	iRIC::setBooleanAttribute(writer, "enabled", m_standardItem->checkState() == Qt::Checked);
 	QString dirStr;
 	switch (m_direction) {
 	case dirI:
@@ -172,12 +172,15 @@ void Post3dWindowFaceDataItem::setSetting(Setting news, bool draw)
 
 bool Post3dWindowFaceDataItem::enabled() const
 {
-	return m_enabled;
+	return m_standardItem->checkState() == Qt::Checked;
 }
 
 void Post3dWindowFaceDataItem::setEnabled(bool e)
 {
-	m_enabled = e;
+	m_standardItem->setCheckState(e ? Qt::Checked : Qt::Unchecked);
+
+	delete m_standardItemCopy;
+	m_standardItemCopy = m_standardItem->clone();
 }
 
 Post3dWindowFaceDataItem::Direction Post3dWindowFaceDataItem::direction() const
