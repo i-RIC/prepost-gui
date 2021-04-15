@@ -53,7 +53,7 @@ LIBS += \
 	-lvtkCommonDataModel-$${VTK_MAJ_MIN} \
 	-lvtkCommonExecutionModel-$${VTK_MAJ_MIN} \
 	-lvtkCommonMath-$${VTK_MAJ_MIN} \
-	-lvtkFilterScore-$${VTK_MAJ_MIN} \
+	-lvtkFiltersCore-$${VTK_MAJ_MIN} \
 	-lvtkFiltersExtraction-$${VTK_MAJ_MIN} \
 	-lvtkFiltersFlowPaths-$${VTK_MAJ_MIN} \
 	-lvtkFiltersGeneral-$${VTK_MAJ_MIN} \

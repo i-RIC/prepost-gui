@@ -4,9 +4,12 @@
 #include <misc/stringtool.h>
 
 #include <vtkCellData.h>
+#include <vtkClipPolyData.h>
 #include <vtkExtractCells.h>
 #include <vtkIdList.h>
+#include <vtkPointData.h>
 #include <vtkPointSet.h>
+#include <vtkPolyData.h>
 #include <vtkSmartPointer.h>
 #include <vtkUnstructuredGrid.h>
 
@@ -46,6 +49,51 @@ ScalarSettingContainer& ScalarSettingContainer::operator=(const ScalarSettingCon
 XmlAttributeContainer& ScalarSettingContainer::operator=(const XmlAttributeContainer& c)
 {
 	return operator=(dynamic_cast<const ScalarSettingContainer&>(c));
+}
+
+
+vtkPolyData* ScalarSettingContainer::filterPolyDataWithUpperLower(vtkPolyData* pd, const LookupTableContainer& lut) const
+{
+	if (fillUpper & fillLower) {
+		// no filtering.
+		pd->Register(nullptr);
+		return pd;
+	}
+
+	double min, max;
+	lut.getValueRange(&min, &max);
+
+	vtkSmartPointer<vtkPolyData> upperClipped;
+	vtkSmartPointer<vtkPolyData> lowerClipped;
+
+	if (fillLower) {
+		lowerClipped = pd;
+	} else {
+		auto lowerClipper = vtkSmartPointer<vtkClipPolyData>::New();
+		lowerClipper->SetValue(min);
+		lowerClipper->SetInputData(pd);
+		lowerClipper->InsideOutOff();
+		pd->GetPointData()->SetActiveScalars(iRIC::toStr(target).c_str());
+		lowerClipper->Update();
+		lowerClipped = lowerClipper->GetOutput();
+		pd->GetPointData()->SetActiveScalars("");
+	}
+
+	if (fillUpper) {
+		upperClipped = lowerClipped;
+	} else {
+		auto upperClipper = vtkSmartPointer<vtkClipPolyData>::New();
+		upperClipper->SetValue(max);
+		upperClipper->SetInputData(lowerClipped);
+		upperClipper->InsideOutOn();
+		lowerClipped->GetPointData()->SetActiveScalars(iRIC::toStr(target).c_str());
+		upperClipper->Update();
+		upperClipped = upperClipper->GetOutput();
+		lowerClipped->GetPointData()->SetActiveScalars("");
+	}
+
+	upperClipped->Register(nullptr);
+	return upperClipped;
 }
 
 vtkPointSet* ScalarSettingContainer::filterCellsWithUpperLower(vtkPointSet* ps, const LookupTableContainer& lut) const

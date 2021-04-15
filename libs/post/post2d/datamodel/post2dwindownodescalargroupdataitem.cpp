@@ -137,6 +137,7 @@ void Post2dWindowNodeScalarGroupDataItem::updateActorSettings()
 	vtkPolyData* rcp = createRangeClippedPolyData(polyData);
 	vtkPolyData* vcp = createValueClippedPolyData(rcp);
 	rcp->Delete();
+
 	switch (ContourSettingWidget::Contour(m_setting.contour)) {
 	case ContourSettingWidget::Points:
 		// do nothing
@@ -513,38 +514,7 @@ vtkPolyData* Post2dWindowNodeScalarGroupDataItem::createRangeClippedPolyData(vtk
 
 vtkPolyData* Post2dWindowNodeScalarGroupDataItem::createValueClippedPolyData(vtkPolyData* polyData)
 {
-	vtkSmartPointer<vtkPolyData> upperClipped;
-	vtkSmartPointer<vtkPolyData> lowerClipped;
-
-	double min, max;
-	m_lookupTableContainer.getValueRange(&min, &max);
-	if (m_setting.fillLower) {
-		lowerClipped = polyData;
-	} else {
-		vtkSmartPointer<vtkClipPolyData> lowerClipper = vtkSmartPointer<vtkClipPolyData>::New();
-		lowerClipper->SetValue(min);
-		lowerClipper->SetInputData(polyData);
-		lowerClipper->InsideOutOff();
-		polyData->GetPointData()->SetActiveScalars(iRIC::toStr(m_setting.target).c_str());
-
-		lowerClipper->Update();
-		lowerClipped = lowerClipper->GetOutput();
-		polyData->GetPointData()->SetActiveScalars("");
-	}
-	if (m_setting.fillUpper) {
-		upperClipped = lowerClipped;
-	} else {
-		vtkSmartPointer<vtkClipPolyData> upperClipper = vtkSmartPointer<vtkClipPolyData>::New();
-		upperClipper->SetValue(max);
-		upperClipper->SetInputData(lowerClipped);
-		upperClipper->InsideOutOn();
-		lowerClipped->GetPointData()->SetActiveScalars(iRIC::toStr(m_setting.target).c_str());
-		upperClipper->Update();
-		upperClipped = upperClipper->GetOutput();
-		lowerClipped->GetPointData()->SetActiveScalars("");
-	}
-	upperClipped->Register(0);
-	return upperClipped;
+	return m_setting.filterPolyDataWithUpperLower(polyData, m_lookupTableContainer);
 }
 
 vtkPolyData* Post2dWindowNodeScalarGroupDataItem::createColorContourPolyData(vtkPolyData* polyData)

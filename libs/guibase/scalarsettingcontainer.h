@@ -15,6 +15,7 @@
 
 class LookupTableContainer;
 class vtkPointSet;
+class vtkPolyData;
 class vtkUnstructuredGrid;
 
 class GUIBASEDLL_EXPORT ScalarSettingContainer : public CompositeContainer
@@ -29,6 +30,7 @@ public:
 	ScalarSettingContainer& operator=(const ScalarSettingContainer& c);
 	XmlAttributeContainer& operator=(const XmlAttributeContainer& c) override;
 
+	vtkPolyData* filterPolyDataWithUpperLower(vtkPolyData* pd, const LookupTableContainer& lut) const;
 	vtkPointSet* filterCellsWithUpperLower(vtkPointSet* ps, const LookupTableContainer& lut) const;
 
 	StringContainer target;

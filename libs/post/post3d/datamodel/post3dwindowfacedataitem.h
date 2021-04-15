@@ -7,6 +7,7 @@
 
 class vtkActor;
 class vtkAlgorithmOutput;
+class vtkPolyData;
 class Post3dWindowFaceDataSetSetting;
 
 class Post3dWindowFaceDataItem : public Post3dWindowDataItem
@@ -28,32 +29,38 @@ public:
 		unsigned int kMin;
 		unsigned int kMax;
 	};
-	/// Constructor
 	Post3dWindowFaceDataItem(const QString& label, GraphicsWindowDataItem* parent);
 	~Post3dWindowFaceDataItem();
+
 	Setting setting();
 	void setSetting(Setting setting, bool draw);
-	bool enabled() const {return m_enabled;}
-	void setEnabled(bool e) {m_enabled = e;}
-	Direction direction() const {return m_direction;}
-	void setDirection(Direction dir) {m_direction = dir;}
-	unsigned int iMin() const {return m_iMin;}
-	unsigned int iMax() const {return m_iMax;}
-	unsigned int jMin() const {return m_jMin;}
-	unsigned int jMax() const {return m_jMax;}
-	unsigned int kMin() const {return m_kMin;}
-	unsigned int kMax() const {return m_kMax;}
-	void setIMin(unsigned int val) {m_iMin = val;}
-	void setIMax(unsigned int val) {m_iMax = val;}
-	void setJMin(unsigned int val) {m_jMin = val;}
-	void setJMax(unsigned int val) {m_jMax = val;}
-	void setKMin(unsigned int val) {m_kMin = val;}
-	void setKMax(unsigned int val) {m_kMax = val;}
+
+	bool enabled() const;
+	void setEnabled(bool e);
+
+	Direction direction() const;
+	void setDirection(Direction dir);
+
+	unsigned int iMin() const;
+	unsigned int iMax() const;
+	unsigned int jMin() const;
+	unsigned int jMax() const;
+	unsigned int kMin() const;
+	unsigned int kMax() const;
+	void setIMin(unsigned int val);
+	void setIMax(unsigned int val);
+	void setJMin(unsigned int val);
+	void setJMax(unsigned int val);
+	void setKMin(unsigned int val);
+	void setKMax(unsigned int val);
+
 	void setActor(vtkActor* actor);
+	vtkPolyData* getOutputPolyData();
 	vtkAlgorithmOutput* getOutputPort();
 	void handleStandardItemChange() override;
 	void innerUpdateZScale(double scale) override;
-	vtkExtractGrid* filter() const {return m_filter;}
+
+	vtkExtractGrid* filter() const;
 	void update();
 
 protected:
@@ -62,7 +69,6 @@ protected:
 	void updateFilter();
 	Post3dWindowZoneDataItem* getZoneDataItem();
 
-	bool m_enabled;
 	bool m_dataOK;
 
 	unsigned int m_iMin;
