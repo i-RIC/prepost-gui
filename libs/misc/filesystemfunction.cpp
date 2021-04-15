@@ -34,7 +34,7 @@ bool iRIC::rmdirRecursively(const QString& dirname)
 		if (! ok) { return false; }
 	}
 	// remove files
-	QStringList files = dir.entryList(QStringList(), QDir::Files, QDir::Name);
+	QStringList files = dir.entryList(QStringList(), QDir::Files | QDir::Hidden, QDir::Name);
 	for (int i = 0; i < files.size(); ++i) {
 		bool ok = dir.remove(files.at(i));
 		if (! ok) { return false; }

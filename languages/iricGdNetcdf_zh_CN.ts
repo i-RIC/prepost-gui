@@ -39,11 +39,19 @@
     <name>GeoDataNetcdfCreator</name>
     <message>
         <source>Raster data</source>
-        <translation>栅格数据</translation>
+        <translation type="vanished">栅格数据</translation>
     </message>
     <message>
         <source>Raster data%1</source>
-        <translation>栅格数据 %1</translation>
+        <translation type="vanished">栅格数据 %1</translation>
+    </message>
+    <message>
+        <source>Raster Data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Raster Data%1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -93,6 +101,33 @@
     </message>
 </context>
 <context>
+    <name>GeoDataNetcdfGdalExporter</name>
+    <message>
+        <source>GDAL</source>
+        <translation type="unfinished">GDAL</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">错误</translation>
+    </message>
+    <message>
+        <source>This data cannot be exported. It seems that it was not imported from *.tif or *.asc.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This data cannot be exported. Data with &quot;Time&quot; dimension cannot be exported to *.tif or *.asc.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ArcInfo ASCII files(*.asc)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>GeoTiff files(*.tif)</source>
+        <translation type="unfinished">GeoTiff 文件 (*.tif)</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataNetcdfGdalImporter</name>
     <message>
         <source>Importing data...</source>
@@ -136,6 +171,80 @@
     </message>
 </context>
 <context>
+    <name>GeoDataNetcdfGrayscalePngRealExporter</name>
+    <message>
+        <source>Grayscale 16bit PNG files(*.png)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">错误</translation>
+    </message>
+    <message>
+        <source>This data cannot be exported. It seems that it was not imported from *.png.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This data cannot be exported. Data with &quot;Time&quot; dimension cannot be exported to *.png</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error occured while opening %1</source>
+        <translation type="unfinished">打开 %1时发生错误 {1?}</translation>
+    </message>
+    <message>
+        <source>Error occured while initializing libpng.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataNetcdfGrayscalePngRealImporter</name>
+    <message>
+        <source>Grayscale 16bit PNG (for Unreal Engine 4)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Grayscale 16bit PNG files(*.png)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">警告</translation>
+    </message>
+    <message>
+        <source>Grayscale 16bit PNG files can be imported for grid conditions without dimensions.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">错误</translation>
+    </message>
+    <message>
+        <source>Error occured while opening %1</source>
+        <translation type="unfinished">打开 %1时发生错误 {1?}</translation>
+    </message>
+    <message>
+        <source>Error occured while opening %1. It seems not to be a PNG file.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 is not a 16bit grayscale image.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 does not exists.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error occured while reading %1. It is not a valid world file.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error occured while parsing %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>GeoDataNetcdfImporter</name>
     <message>
         <source>NetCDF</source>
@@ -151,7 +260,7 @@
     </message>
     <message>
         <source>%1 does not have longitude and latitude data.</source>
-        <translation> %1 无经纬度数据</translation>
+        <translation type="vanished"> %1 无经纬度数据</translation>
     </message>
     <message>
         <source>%1 does not have variable that can be imported.</source>
@@ -163,6 +272,10 @@
     </message>
     <message>
         <source>Error occured while parsing time definition: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 does not have longitude, latitude nor x, y data.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -226,6 +339,24 @@
     <message>
         <source>Dimensions</source>
         <translation>维度</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataNetcdfNcExporter</name>
+    <message>
+        <source>NetCDF files (*.nc)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataNetcdfTimeSeriesCreator</name>
+    <message>
+        <source>Time Series Raster Data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Time Series Raster Data%1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

@@ -9,6 +9,9 @@
 #include "inputconditionwidgetset.h"
 #include "inputconditionwidgetset.h"
 
+#include "private/inputconditioncgnsfile.h"
+#include "private/inputconditioncgnsfileselectdialog.h"
+
 #include <misc/filesystemfunction.h>
 #include <misc/stringtool.h>
 #include <misc/xmlsupport.h>
@@ -279,4 +282,21 @@ void InputConditionDialog::checkImportSourceUpdate()
 	}
 	save(fn);
 	cg_close(fn);
+}
+
+bool InputConditionDialog::setupCgnsFilesIfNeeded(QString* cgnsFileForGrid, bool* updated)
+{
+	*updated = false;
+	bool allOK = true;
+	auto cgnsFiles = m_widgetSet->m_cgnsFiles;
+	for (auto it = cgnsFiles.begin(); it != cgnsFiles.end(); ++it) {
+		allOK &= it.value()->isEffective();
+	}
+	// already setup correctly
+	if (allOK) {return true;}
+
+	InputConditionCgnsFileSelectDialog dialog(cgnsFileForGrid, m_widgetSet, this);
+	int ret = dialog.exec();
+	*updated = true;
+	return (ret == QDialog::Accepted);
 }

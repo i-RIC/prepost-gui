@@ -58,102 +58,197 @@
     <name>Post3dWindowArrowGroupDataItem</name>
     <message>
         <source>Arrow</source>
-        <translation>箭头</translation>
+        <translation type="vanished">箭头</translation>
     </message>
     <message>
         <source>Arrow Setting</source>
-        <translation>箭头设置</translation>
+        <translation type="vanished">箭头设置</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowArrowGroupSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>箭头设置</translation>
+        <translation type="vanished">箭头设置</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>物理值：</translation>
+        <translation type="vanished">物理值：</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>长度</translation>
+        <translation type="vanished">长度</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>自动</translation>
+        <translation type="vanished">自动</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>标准值：</translation>
-    </message>
-    <message>
-        <source>[m/s]</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">标准值：</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>屏幕长度：</translation>
+        <translation type="vanished">屏幕长度：</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[像素]</translation>
+        <translation type="vanished">[像素]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>绘制最小值</translation>
+        <translation type="vanished">绘制最小值</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>采样</translation>
+        <translation type="vanished">采样</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation>所有顶点</translation>
+        <translation type="vanished">所有顶点</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>采样率：</translation>
+        <translation type="vanished">采样率：</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>颜色</translation>
+        <translation type="vanished">颜色</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>自定义颜色</translation>
+        <translation type="vanished">自定义颜色</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>根据标量值</translation>
+        <translation type="vanished">根据标量值</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>箭头形状</translation>
+        <translation type="vanished">箭头形状</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>箭头大小</translation>
+        <translation type="vanished">箭头大小</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>线宽：</translation>
+        <translation type="vanished">线宽：</translation>
     </message>
     <message>
         <source>Faces</source>
-        <translation>面</translation>
+        <translation type="vanished">面</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>&amp;添加</translation>
+        <translation type="vanished">&amp;添加</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>&amp;移除</translation>
+        <translation type="vanished">&amp;移除</translation>
     </message>
     <message>
         <source>Face%1</source>
-        <translation>面%1</translation>
+        <translation type="vanished">面%1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowCellContourDataItem</name>
+    <message>
+        <source>Range</source>
+        <translation type="unfinished">区间</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowCellContourGroupDataItem</name>
+    <message>
+        <source>Range%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowCellContourGroupSettingDialog</name>
+    <message>
+        <source>Contour Setting (cell center)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Regions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation type="unfinished">&amp;添加</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation type="unfinished">&amp;移除</translation>
+    </message>
+    <message>
+        <source>&amp;Color Bar Setting</source>
+        <translation type="unfinished">&amp;色彩条设置</translation>
+    </message>
+    <message>
+        <source>Range%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowCellContourGroupTopDataItem</name>
+    <message>
+        <source>Contours (cell center)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">警告</translation>
+    </message>
+    <message>
+        <source>A maximum of four contours may be defined.</source>
+        <translation type="unfinished">最多可定义四个轮廓</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowCellRangeSettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">形式</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="unfinished">区间</translation>
+    </message>
+    <message>
+        <source>I Min</source>
+        <translation type="unfinished">I最小</translation>
+    </message>
+    <message>
+        <source>I Max</source>
+        <translation type="unfinished">I最大</translation>
+    </message>
+    <message>
+        <source>J Min</source>
+        <translation type="unfinished">J最小</translation>
+    </message>
+    <message>
+        <source>J Max</source>
+        <translation type="unfinished">J最大</translation>
+    </message>
+    <message>
+        <source>K Min</source>
+        <translation type="unfinished">K最小</translation>
+    </message>
+    <message>
+        <source>K Max</source>
+        <translation type="unfinished">K最大</translation>
+    </message>
+    <message>
+        <source>Enabled</source>
+        <translation type="unfinished">启用</translation>
     </message>
 </context>
 <context>
@@ -361,6 +456,109 @@
     </message>
 </context>
 <context>
+    <name>Post3dWindowNodeGroupArrowFaceSettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">形式</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation type="unfinished">方向</translation>
+    </message>
+    <message>
+        <source>I</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>J</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>K</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="unfinished">区间</translation>
+    </message>
+    <message>
+        <source>I Min</source>
+        <translation type="unfinished">I最小</translation>
+    </message>
+    <message>
+        <source>I Max</source>
+        <translation type="unfinished">I最大</translation>
+    </message>
+    <message>
+        <source>J Min</source>
+        <translation type="unfinished">J最小</translation>
+    </message>
+    <message>
+        <source>J Max</source>
+        <translation type="unfinished">J最大</translation>
+    </message>
+    <message>
+        <source>K Min</source>
+        <translation type="unfinished">K最小</translation>
+    </message>
+    <message>
+        <source>K Max</source>
+        <translation type="unfinished">K最大</translation>
+    </message>
+    <message>
+        <source>Enabled</source>
+        <translation type="unfinished">启用</translation>
+    </message>
+    <message>
+        <source>Sampling</source>
+        <translation type="unfinished">采样</translation>
+    </message>
+    <message>
+        <source>All vertices</source>
+        <translation type="unfinished">所有顶点</translation>
+    </message>
+    <message>
+        <source>Sampling rate:</source>
+        <translation type="unfinished">采样率：</translation>
+    </message>
+    <message>
+        <source>I-direction</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>J-direction</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>K-direction</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">颜色</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation type="unfinished">自定义颜色</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation type="unfinished">根据标量值</translation>
+    </message>
+    <message>
+        <source>Arrow Shape</source>
+        <translation type="unfinished">箭头形状</translation>
+    </message>
+    <message>
+        <source>Arrow size:</source>
+        <translation type="unfinished">箭头大小</translation>
+    </message>
+    <message>
+        <source>Line width:</source>
+        <translation type="unfinished">线宽：</translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowNodeScalarGroupDataItem</name>
     <message>
         <source>Isosurface</source>
@@ -380,6 +578,87 @@
     <message>
         <source>Isosurfaces</source>
         <translation>等值面</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorArrowDataItem</name>
+    <message>
+        <source>Face</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorArrowSettingDialog</name>
+    <message>
+        <source>Arrow Setting</source>
+        <translation type="unfinished">箭头设置</translation>
+    </message>
+    <message>
+        <source>Common Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Physical Value:</source>
+        <translation type="unfinished">物理值：</translation>
+    </message>
+    <message>
+        <source>Length</source>
+        <translation type="unfinished">长度</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation type="unfinished">自动</translation>
+    </message>
+    <message>
+        <source>Standard value:</source>
+        <translation type="unfinished">标准值：</translation>
+    </message>
+    <message>
+        <source>[m/s]</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Length on screen:</source>
+        <translation type="unfinished">屏幕长度：</translation>
+    </message>
+    <message>
+        <source>[pixel]</source>
+        <translation type="unfinished">[像素]</translation>
+    </message>
+    <message>
+        <source>Minimum value to draw:</source>
+        <translation type="unfinished">绘制最小值</translation>
+    </message>
+    <message>
+        <source>Faces</source>
+        <translation type="unfinished">面</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation type="unfinished">&amp;添加</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation type="unfinished">&amp;移除</translation>
+    </message>
+    <message>
+        <source>Face%1</source>
+        <translation type="unfinished">面%1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorArrowTopDataItem</name>
+    <message>
+        <source>Arrows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">警告</translation>
+    </message>
+    <message>
+        <source>A maximum of four arrows may be defined.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

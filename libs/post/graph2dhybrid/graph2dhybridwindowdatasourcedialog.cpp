@@ -246,7 +246,7 @@ void Graph2dHybridWindowDataSourceDialog::handleXAxisComboBoxChange(int index)
 	// update xaxis label.
 	m_setting.setAutoXAxisLabel();
 
-	// update combo box for polyline group and polyline
+	// update combo box for lines and polyline
 	if (newAxis == Graph2dHybridWindowResultSetting::xaPolyLineGroup) {
 		auto g = m_setting.polyLineGroups().at(0);
 		auto l = dynamic_cast<GeoDataPolyLineGroupPolyLine*> (g->allData().at(0));

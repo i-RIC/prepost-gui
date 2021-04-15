@@ -31,7 +31,6 @@ Post3dWindowFaceSettingWidget::~Post3dWindowFaceSettingWidget()
 	delete ui;
 }
 
-
 void Post3dWindowFaceSettingWidget::setZoneData(PostZoneDataContainer* zd)
 {
 	vtkStructuredGrid* grid = dynamic_cast<vtkStructuredGrid*>(zd->data());

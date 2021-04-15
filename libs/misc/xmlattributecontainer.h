@@ -32,7 +32,7 @@ public:
 	/// @name Property setting functions
 	//@{
 	virtual const QString& prefix() const;
-	virtual void setPrefix(const QString& prefix);
+	virtual void addPrefix(const QString& prefix);
 	virtual QString attName(const QString& name) const;
 	//@}
 

@@ -114,22 +114,36 @@ void PreProcessorGeoDataComplexGroupDataItem::saveComplexGroupsToCgnsFile(const 
 
 void PreProcessorGeoDataComplexGroupDataItem::addCustomMenuItems(QMenu* menu)
 {
+	GeoDataFactory& factory = GeoDataFactory::instance();
+	// create import menu and add menu.
+	m_importMenu = new QMenu(tr("&Import"), menu);
+	m_importMenu->setIcon(QIcon(":/libs/guibase/images/iconImport.png"));
 	m_addMenu = new QMenu(tr("&Add"), menu);
+
+	if (m_importSignalMapper) {delete m_importSignalMapper;}
+	m_importSignalMapper = new QSignalMapper(this);
 
 	if (m_addSignalMapper) {delete m_addSignalMapper;}
 	m_addSignalMapper = new QSignalMapper(this);
 
-	GeoDataFactory& factory = GeoDataFactory::instance();
-	for (auto creator : factory.compatibleCreators(m_condition)) {
+	for (GeoDataCreator* creator : factory.compatibleCreators(m_condition)) {
+		QString title = creator->caption();
+		if (creator->importers().size() > 0) {
+			QAction* importAction = m_importMenu->addAction(title.append("..."));
+			m_importSignalMapper->setMapping(importAction, creator);
+			connect(importAction, SIGNAL(triggered()), m_importSignalMapper, SLOT(map()));
+		}
 		if (creator->isCreatable()) {
-			QString title = creator->caption();
 			QAction* addAction = m_addMenu->addAction(title.append("..."));
 			m_addSignalMapper->setMapping(addAction, creator);
 			connect(addAction, SIGNAL(triggered()), m_addSignalMapper, SLOT(map()));
 		}
 	}
+	connect(m_importSignalMapper, SIGNAL(mapped(QObject*)), this, SLOT(importGeoData(QObject*)));
 	connect(m_addSignalMapper, SIGNAL(mapped(QObject*)), this, SLOT(addGeoData(QObject*)));
-	menu->addAction(m_importAction);
+
+	menu->addMenu(m_importMenu);
+	menu->addAction(m_webImportAction);
 	if (m_addMenu->actions().count() != 0) {
 		menu->addMenu(m_addMenu);
 	}
@@ -138,14 +152,18 @@ void PreProcessorGeoDataComplexGroupDataItem::addCustomMenuItems(QMenu* menu)
 	menu->addAction(m_editGroupAction);
 
 	menu->addSeparator();
+
 	m_exportAllPolygonsAction->setEnabled(polygonExists());
 	menu->addAction(m_exportAllPolygonsAction);
-	menu->addSeparator();
-	menu->addAction(m_deleteAllAction);
 
+	if (! m_condition->isReferenceInformation()) {
+		menu->addSeparator();
+		menu->addAction(m_editColorMapAction);
+		menu->addAction(m_setupScalarBarAction);
+	}
 	menu->addSeparator();
-	menu->addAction(m_editColorMapAction);
-	menu->addAction(m_setupScalarBarAction);
+	menu->addAction(m_deleteSelectedAction);
+	menu->addAction(m_deleteAllAction);
 }
 
 ProjectData* PreProcessorGeoDataComplexGroupDataItem::projectData() const

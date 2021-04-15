@@ -9,7 +9,7 @@ CONFIG += debug_and_release
 
 include( ../../paths.pri )
 
-QT += widgets network
+QT += network widgets xml
 RC_FILE = iricgui.rc
 
 ######################

@@ -89,6 +89,10 @@ void GridCreatingConditionLaplace::CommonRatioOptimizeThread::run()
 		std::vector<double> streamWiseCommonRatios;
 		std::vector<double> crossSectionCommonRatios;
 
+		if (m_impl->m_editMode == Impl::EditMode::CenterLineOnly) {
+			continue;
+		}
+
 		streamWiseCommonRatios.assign((m_impl->m_ctrlPointCountI - 1) * m_impl->m_ctrlPointCountJ, 1.0);
 		crossSectionCommonRatios.assign(m_impl->m_ctrlPointCountI * (m_impl->m_ctrlPointCountJ - 1), 1.0);
 

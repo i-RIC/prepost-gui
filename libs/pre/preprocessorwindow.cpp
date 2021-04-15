@@ -3,6 +3,7 @@
 #include "datamodel/preprocessorgridtypedataitem.h"
 #include "datamodel/preprocessorinputconditiondataitem.h"
 #include "datamodel/preprocessorrootdataitem.h"
+#include "factory/geodatafactory.h"
 #include "preobjectbrowser.h"
 #include "preobjectbrowserview.h"
 #include "preprocessordatamodel.h"
@@ -421,7 +422,6 @@ void PreProcessorWindow::setupHydraulicDataImportMenu()
 	m->setupHydraulicDataImportMenu(menu);
 }
 
-
 void PreProcessorWindow::informUnfocusRiverCrosssectionWindows()
 {
 	PreProcessorDataModel* m = model();
@@ -444,6 +444,16 @@ PreProcessorDataModelInterface* PreProcessorWindow::dataModel() const
 	return m_dataModel;
 }
 
+GeoDataFactoryInterface* PreProcessorWindow::geoDataFactory() const
+{
+	return &(GeoDataFactory::instance());
+}
+
+bool PreProcessorWindow::setupCgnsFilesIfNeeded(bool readGrid)
+{
+	return m_dataModel->setupCgnsFilesIfNeeded(readGrid);
+}
+
 void PreProcessorWindow::updateTmsList()
 {
 	auto m = model();
@@ -454,8 +464,7 @@ void PreProcessorWindow::updateTmsList()
 
 PreProcessorDataModel* PreProcessorWindow::model() const
 {
-	if (m_dataModel == nullptr){return nullptr;}
-	return dynamic_cast<PreProcessorDataModel*>(m_dataModel);
+	return m_dataModel;
 }
 
 VTKGraphicsView* PreProcessorWindow::viewForBackgroundColor() const

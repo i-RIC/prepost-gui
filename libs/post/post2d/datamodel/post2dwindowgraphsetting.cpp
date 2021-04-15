@@ -22,10 +22,10 @@ Post2dWindowGraphSetting::Post2dWindowGraphSetting() :
 	graphLineStyle {},
 	graphValueFix {"valueFix", NoFix}
 {
-	gridLineStyle.setPrefix("grid");
+	gridLineStyle.addPrefix("grid");
 	gridLineStyle.color = Qt::gray;
 
-	graphLineStyle.setPrefix("graph");
+	graphLineStyle.addPrefix("graph");
 	graphLineStyle.color = Qt::black;
 }
 

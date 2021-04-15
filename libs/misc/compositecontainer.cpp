@@ -26,11 +26,11 @@ void CompositeContainer::save(QXmlStreamWriter& writer) const
 	}
 }
 
-void CompositeContainer::setPrefix(const QString& prefix)
+void CompositeContainer::addPrefix(const QString& prefix)
 {
-	XmlAttributeContainer::setPrefix(prefix);
+	XmlAttributeContainer::addPrefix(prefix);
 	for (XmlAttributeContainer* c : impl->m_containers) {
-		c->setPrefix(prefix);
+		c->addPrefix(prefix);
 	}
 }
 

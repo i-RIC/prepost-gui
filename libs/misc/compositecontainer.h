@@ -22,8 +22,8 @@ public:
 
 	/// @name Property setting functions
 	//@{
-	/// Set prefix for XML attributes
-	void setPrefix(const QString& prefix) override;
+	/// Add prefix for XML attributes
+	void addPrefix(const QString& prefix) override;
 	//@}
 
 protected:

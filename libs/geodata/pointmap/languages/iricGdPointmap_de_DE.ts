@@ -43,10 +43,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>P&amp;ointset Data</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Information</source>
         <translation type="unfinished"></translation>
     </message>
@@ -258,6 +254,10 @@
         <source>To interpolate points, you must specify more than two points, and the last point should be existing point. Do you want to retry, or cancel the operation?</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>P&amp;oint Cloud Data</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointmapDelPtsGreaterThanDialog</name>
@@ -411,20 +411,16 @@
 <context>
     <name>GeoDataPointmapRealCreator</name>
     <message>
-        <source>Points</source>
+        <source>Point Cloud Data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Points%1</source>
+        <source>Point Cloud Data%1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapRealExporter</name>
-    <message>
-        <source>Pointset (DEM etc.)</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message>
         <source>Topography File (*.tpo)</source>
         <translation type="unfinished"></translation>
@@ -435,6 +431,10 @@
     </message>
     <message>
         <source>Error occured while exporting to %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Cloud Data (DEM etc.)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -535,7 +535,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Text file (*.csv *.txt)</source>
+        <source>Text file (*.csv *.txt *.xyz)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

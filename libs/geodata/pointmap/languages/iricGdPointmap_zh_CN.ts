@@ -72,7 +72,7 @@
     </message>
     <message>
         <source>P&amp;ointset Data</source>
-        <translation>点集数据</translation>
+        <translation type="vanished">点集数据</translation>
     </message>
     <message>
         <source>Information</source>
@@ -266,6 +266,10 @@
         <source>To interpolate points, you must specify more than two points, and the last point should be existing point. Do you want to retry, or cancel the operation?</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>P&amp;oint Cloud Data</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointmapAddPointDialog</name>
@@ -443,18 +447,26 @@
     <name>GeoDataPointmapRealCreator</name>
     <message>
         <source>Points</source>
-        <translation>点</translation>
+        <translation type="vanished">点</translation>
     </message>
     <message>
         <source>Points%1</source>
-        <translation>点 %1</translation>
+        <translation type="vanished">点 %1</translation>
+    </message>
+    <message>
+        <source>Point Cloud Data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Cloud Data%1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapRealExporter</name>
     <message>
         <source>Pointset (DEM etc.)</source>
-        <translation>点集 (DEM等）</translation>
+        <translation type="vanished">点集 (DEM等）</translation>
     </message>
     <message>
         <source>Topography File (*.tpo)</source>
@@ -467,6 +479,10 @@
     <message>
         <source>Error occured while exporting to %1.</source>
         <translation>导出到 %1时发生错误。</translation>
+    </message>
+    <message>
+        <source>Point Cloud Data (DEM etc.)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -566,7 +582,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Text file (*.csv *.txt)</source>
+        <source>Text file (*.csv *.txt *.xyz)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

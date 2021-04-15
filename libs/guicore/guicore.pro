@@ -330,6 +330,7 @@ HEADERS += guicore_global.h \
            pre/geodata/geodatacellmappert.h \
            pre/geodata/geodatacreator.h \
            pre/geodata/geodataexporter.h \
+           pre/geodata/geodatafactoryinterface.h \
            pre/geodata/geodataimporter.h \
            pre/geodata/geodatamapper.h \
            pre/geodata/geodatamappersettingi.h \
@@ -493,6 +494,8 @@ HEADERS += guicore_global.h \
            pre/hydraulicdata/private/hydraulicdataexporter_impl.h \
            pre/hydraulicdata/private/hydraulicdataimporter_impl.h \
            pre/hydraulicdata/private/hydraulicdatamultiexporter_impl.h \
+           project/inputcond/private/inputconditioncgnsfile.h \
+           project/inputcond/private/inputconditioncgnsfileselectdialog.h \
            project/inputcond/private/inputconditioncontainer_impl.h \
            project/inputcond/private/inputconditioncontainerfunctional_impl.h \
            project/inputcond/private/inputconditioncontainerinteger_impl.h \
@@ -511,6 +514,18 @@ HEADERS += guicore_global.h \
            project/inputcond/private/inputconditiondependencyconditionor.h \
            project/inputcond/private/inputconditiondependencysetsubcaptionaction.h \
            project/inputcond/private/inputconditiondependencysetsubimageaction.h \
+           project/inputcond/private/inputconditionwidgetcgnsbaseiterativeintegerresult.h \
+           project/inputcond/private/inputconditionwidgetcgnsbaseiterativerealresult.h \
+           project/inputcond/private/inputconditionwidgetcgnsfile.h \
+           project/inputcond/private/inputconditionwidgetcgnsgridcellintegerresult.h \
+           project/inputcond/private/inputconditionwidgetcgnsgridcellrealresult.h \
+           project/inputcond/private/inputconditionwidgetcgnsgridedgeiintegerresult.h \
+           project/inputcond/private/inputconditionwidgetcgnsgridedgeirealresult.h \
+           project/inputcond/private/inputconditionwidgetcgnsgridedgejintegerresult.h \
+           project/inputcond/private/inputconditionwidgetcgnsgridedgejrealresult.h \
+           project/inputcond/private/inputconditionwidgetcgnsgridnodeintegerresult.h \
+           project/inputcond/private/inputconditionwidgetcgnsgridnoderealresult.h \
+           project/inputcond/private/inputconditionwidgetcgnsresult.h \
            project/inputcond/private/inputconditionwidgetcheckbox.h \
            project/inputcond/private/inputconditionwidgetfoldername.h \
            project/inputcond/private/inputconditionwidgetfunctional.h \
@@ -564,6 +579,8 @@ FORMS += datamodel/propertybrowserview.ui \
          pre/gridcond/base/gridattributeeditnameandvaluedialog.ui \
          pre/gridcond/base/gridattributevariationeditdialog.ui \
          pre/gridcond/dimensionselectwidget/gridattributedimensioncomboboxselectwidget.ui \
+         project/inputcond/private/inputconditioncgnsfileselectdialog.ui \
+         project/inputcond/private/inputconditionwidgetcgnsfile.ui \
          project/inputcond/private/inputconditionwidgetfunctionaldialog.ui \
          project/inputcond/private/inputconditionwidgetfunctionaldownloaddialog.ui
 SOURCES += base/iricmainwindowinterface.cpp \
@@ -817,6 +834,8 @@ SOURCES += base/iricmainwindowinterface.cpp \
            pre/gridcond/stringconverter/gridattributestringconverterenumerate.cpp \
            pre/gridcond/stringconverter/gridattributestringconverterinteger.cpp \
            pre/gridcond/stringconverter/gridattributestringconverterreal.cpp \
+           project/inputcond/private/inputconditioncgnsfile.cpp \
+           project/inputcond/private/inputconditioncgnsfileselectdialog.cpp \
            project/inputcond/private/inputconditiondependencychecksubcaptions.cpp \
            project/inputcond/private/inputconditiondependencychecksubimages.cpp \
            project/inputcond/private/inputconditiondependencyconditionalways.cpp \
@@ -830,6 +849,18 @@ SOURCES += base/iricmainwindowinterface.cpp \
            project/inputcond/private/inputconditiondependencyconditionor.cpp \
            project/inputcond/private/inputconditiondependencysetsubcaptionaction.cpp \
            project/inputcond/private/inputconditiondependencysetsubimageaction.cpp \
+           project/inputcond/private/inputconditionwidgetcgnsbaseiterativeintegerresult.cpp \
+           project/inputcond/private/inputconditionwidgetcgnsbaseiterativerealresult.cpp \
+           project/inputcond/private/inputconditionwidgetcgnsfile.cpp \
+           project/inputcond/private/inputconditionwidgetcgnsgridcellintegerresult.cpp \
+           project/inputcond/private/inputconditionwidgetcgnsgridcellrealresult.cpp \
+           project/inputcond/private/inputconditionwidgetcgnsgridedgeiintegerresult.cpp \
+           project/inputcond/private/inputconditionwidgetcgnsgridedgeirealresult.cpp \
+           project/inputcond/private/inputconditionwidgetcgnsgridedgejintegerresult.cpp \
+           project/inputcond/private/inputconditionwidgetcgnsgridedgejrealresult.cpp \
+           project/inputcond/private/inputconditionwidgetcgnsgridnodeintegerresult.cpp \
+           project/inputcond/private/inputconditionwidgetcgnsgridnoderealresult.cpp \
+           project/inputcond/private/inputconditionwidgetcgnsresult.cpp \
            project/inputcond/private/inputconditionwidgetcheckbox.cpp \
            project/inputcond/private/inputconditionwidgetfoldername.cpp \
            project/inputcond/private/inputconditionwidgetfunctional.cpp \

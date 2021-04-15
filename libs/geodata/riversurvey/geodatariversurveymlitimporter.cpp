@@ -232,7 +232,7 @@ bool readMlitRivFile(const QString& filename, std::vector<GeoDataRiverSurveyImpo
 } // namespace
 
 GeoDataRiverSurveyMlitImporter::GeoDataRiverSurveyMlitImporter(GeoDataCreator* creator) :
-	GeoDataImporter("mlit_csv", tr("MLIT River Survey Data(*.csv)"), creator)
+	GeoDataImporter("mlit_csv", tr("MLIT Cross-Section Data (*.csv)"), creator)
 {}
 
 bool GeoDataRiverSurveyMlitImporter::importData(GeoData* data, int /* index */, QWidget* w)
@@ -240,13 +240,13 @@ bool GeoDataRiverSurveyMlitImporter::importData(GeoData* data, int /* index */, 
 	auto rs = dynamic_cast<GeoDataRiverSurvey*> (data);
 	rs->setEditMode();
 
-	return GeoDataRiverSurveyImporter::importData(rs, &m_points, m_cpSetting, m_with4Points, w);
+	return GeoDataRiverSurveyImporter::importData(rs, &m_points, m_cpSetting, m_with4Points, m_csvFilename, w);
 }
 
 const QStringList GeoDataRiverSurveyMlitImporter::fileDialogFilters()
 {
 	QStringList ret;
-	ret << tr("Japan MLIT river survey data (*.csv)");
+	ret << tr("Japan MLIT Cross-Section Data (*.csv)");
 	return ret;
 }
 
@@ -271,6 +271,8 @@ bool GeoDataRiverSurveyMlitImporter::doInit(const QString& filename, const QStri
 	}
 
 	m_cpSetting = dialog.centerPointSetting();
+	m_csvFilename = dialog.csvFileName();
+
 	GeoDataRiverSurveyImporter::sortByKP(&m_points);
 	*count = 1;
 	return true;

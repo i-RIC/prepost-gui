@@ -15,7 +15,7 @@
 #include <vtkDoubleArray.h>
 
 GeoDataPointmapRealCreator::GeoDataPointmapRealCreator() :
-	GeoDataCreator {"realPointmap", tr("Points")}
+	GeoDataCreator {"realPointmap", tr("Point Cloud Data")}
 {
 	importers().push_back(new GeoDataPointmapRealImporter(this));
 	importers().push_back(new GeoDataPointmapRealTextImporter(this));
@@ -42,17 +42,18 @@ GeoData* GeoDataPointmapRealCreator::create(ProjectDataItem* parent, SolverDefin
 
 QString GeoDataPointmapRealCreator::name(unsigned int index) const
 {
-	return QString("pointset%1").arg(index);
+	return QString("pointcloud%1").arg(index);
 }
 
 QString GeoDataPointmapRealCreator::defaultCaption(unsigned int index) const
 {
-	return QString(tr("Points%1")).arg(index);
+	return QString(tr("Point Cloud Data%1")).arg(index);
 }
 
 bool GeoDataPointmapRealCreator::isCompatibleWith(SolverDefinitionGridAttribute* condition) const
 {
 	if (dynamic_cast<SolverDefinitionGridAttributeT<double>* >(condition) == nullptr) {return false;}
 	if (condition->dimensions().size() > 0) {return false;}
+	if (condition->isReferenceInformation()) {return false;}
 	return true;
 }

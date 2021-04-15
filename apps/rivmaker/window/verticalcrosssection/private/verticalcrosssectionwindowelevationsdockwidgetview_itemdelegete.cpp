@@ -12,7 +12,7 @@ QWidget* VerticalCrossSectionWindowElevationsDockWidgetView::ItemDelegete::creat
 		return nullptr;
 	} else {
 		auto spinBox = new QDoubleSpinBox(parent);
-		spinBox->setDecimals(3);
+		spinBox->setDecimals(2);
 		spinBox->setSingleStep(0.01);
 		spinBox->setMinimum(-1000);
 		spinBox->setMaximum(10000);

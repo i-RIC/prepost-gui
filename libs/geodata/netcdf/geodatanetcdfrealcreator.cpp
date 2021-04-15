@@ -1,4 +1,8 @@
+#include "geodatanetcdfgdalrealexporter.h"
 #include "geodatanetcdfgdalrealimporter.h"
+#include "geodatanetcdfncexporter.h"
+#include "geodatanetcdfgrayscalepngrealexporter.h"
+#include "geodatanetcdfgrayscalepngrealimporter.h"
 #include "geodatanetcdfreal.h"
 #include "geodatanetcdfrealcreator.h"
 #include "geodatanetcdfrealimporter.h"
@@ -9,9 +13,13 @@
 GeoDataNetcdfRealCreator::GeoDataNetcdfRealCreator() :
 	GeoDataNetcdfCreatorT<double, vtkDoubleArray> {"realNetcdf"}
 {
-	importers().push_back(new GeoDataNetcdfRealImporter(this));
-	importers().push_back(new GeoDataNetcdfXbandImporter(this));
 	importers().push_back(new GeoDataNetcdfGdalRealImporter(this));
+	importers().push_back(new GeoDataNetcdfRealImporter(this));
+	importers().push_back(new GeoDataNetcdfGrayscalePngRealImporter(this));
+
+	exporters().push_back(new GeoDataNetcdfGdalRealExporter(this));
+	exporters().push_back(new GeoDataNetcdfGrayscalePngRealExporter(this));
+	exporters().push_back(new GeoDataNetcdfNcExporter(this));
 }
 
 GeoData* GeoDataNetcdfRealCreator::create(ProjectDataItem* parent, SolverDefinitionGridAttribute* condition)

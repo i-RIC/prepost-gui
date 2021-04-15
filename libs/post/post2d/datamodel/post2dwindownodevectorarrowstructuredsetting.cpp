@@ -10,7 +10,7 @@ Post2dWindowNodeVectorArrowStructuredSetting::Post2dWindowNodeVectorArrowStructu
 	addContainer(&jSampleRate);
 	addContainer(&range);
 
-	range.setPrefix("region");
+	range.addPrefix("region");
 }
 
 Post2dWindowNodeVectorArrowStructuredSetting::Post2dWindowNodeVectorArrowStructuredSetting(const Post2dWindowNodeVectorArrowStructuredSetting &c) :

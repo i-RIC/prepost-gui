@@ -1,8 +1,8 @@
-#include "datamodel/post3dwindowarrowgroupdataitem.h"
 #include "datamodel/post3dwindowcontourgrouptopdataitem.h"
 #include "datamodel/post3dwindowgridshapedataitem.h"
 #include "datamodel/post3dwindowgridtypedataitem.h"
 #include "datamodel/post3dwindownodescalargroupdataitem.h"
+#include "datamodel/post3dwindownodevectorarrowtopdataitem.h"
 #include "datamodel/post3dwindownodevectorparticlegroupdataitem.h"
 #include "datamodel/post3dwindownodevectorstreamlinegroupdataitem.h"
 #include "datamodel/post3dwindowrootdataitem.h"
@@ -119,8 +119,8 @@ void Post3dWindowDataModel::arrowSetting()
 {
 	Post3dWindowZoneDataItem* item = getZoneDataItem();
 	if (item == nullptr) {return;}
-	Post3dWindowArrowGroupDataItem* aitem = item->arrowGroupDataItem();
-	aitem->showPropertyDialog();
+	Post3dWindowNodeVectorArrowTopDataItem* aitem = item->arrowTopDataItem();
+	aitem->showAddDialog();
 }
 
 void Post3dWindowDataModel::streamlineSetting()

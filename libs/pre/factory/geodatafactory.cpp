@@ -3,6 +3,8 @@
 #include <guicore/pre/geodata/geodatacreator.h>
 #include <geodata/netcdf/geodatanetcdfintegercreator.h>
 #include <geodata/netcdf/geodatanetcdfrealcreator.h>
+#include <geodata/netcdf/geodatanetcdftimeseriesintegercreator.h>
+#include <geodata/netcdf/geodatanetcdftimeseriesrealcreator.h>
 #include <geodata/point/geodatapointrealcreator.h>
 #include <geodata/pointgroup/geodatapointgroupintegercreator.h>
 #include <geodata/pointgroup/geodatapointgrouprealcreator.h>
@@ -20,26 +22,34 @@
 GeoDataFactory* GeoDataFactory::m_instance = nullptr;
 
 GeoDataFactory::GeoDataFactory() :
-	QObject(nullptr)
+	GeoDataFactoryInterface {}
 {
 	// @todo add GeoDataCreator instances into
 	// m_creators here when you added new
 	// classes those inherits GeoDataCreator.
-	m_creators.push_back(new GeoDataRiverSurveyCreator());
-	m_creators.push_back(new GeoDataPointRealCreator());
-	m_creators.push_back(new GeoDataPointGroupIntegerCreator());
-	m_creators.push_back(new GeoDataPointGroupRealCreator());
+
+	// cross-section data, point cloud data, rasterdata
 	m_creators.push_back(new GeoDataPointmapRealCreator());
+	m_creators.push_back(new GeoDataRiverSurveyCreator());
+	m_creators.push_back(new GeoDataNetcdfIntegerCreator());
+	m_creators.push_back(new GeoDataNetcdfRealCreator());
+	m_creators.push_back(new GeoDataNetcdfTimeSeriesIntegerCreator());
+	m_creators.push_back(new GeoDataNetcdfTimeSeriesRealCreator());
+
+	// vector data
 	m_creators.push_back(new GeoDataPolygonIntegerCreator());
 	m_creators.push_back(new GeoDataPolygonRealCreator());
 	m_creators.push_back(new GeoDataPolygonGroupIntegerCreator());
 	m_creators.push_back(new GeoDataPolygonGroupRealCreator());
+
 	m_creators.push_back(new GeoDataPolyLineIntegerCreator());
 	m_creators.push_back(new GeoDataPolyLineRealCreator());
 	m_creators.push_back(new GeoDataPolyLineGroupIntegerCreator);
 	m_creators.push_back(new GeoDataPolyLineGroupRealCreator);
-	m_creators.push_back(new GeoDataNetcdfIntegerCreator());
-	m_creators.push_back(new GeoDataNetcdfRealCreator());
+
+	m_creators.push_back(new GeoDataPointRealCreator());
+	m_creators.push_back(new GeoDataPointGroupIntegerCreator());
+	m_creators.push_back(new GeoDataPointGroupRealCreator());
 }
 
 GeoDataFactory& GeoDataFactory::instance()

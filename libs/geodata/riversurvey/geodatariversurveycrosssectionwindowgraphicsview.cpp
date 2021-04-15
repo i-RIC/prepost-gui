@@ -146,6 +146,7 @@ GeoDataRiverSurveyCrosssectionWindowGraphicsView::GeoDataRiverSurveyCrosssection
 	m_mouseEventMode {meNormal},
 	m_viewMouseEventMode {vmeNormal},
 	m_modelessDialogIsOpen {false},
+	m_oldLine (nullptr),
 	m_gridMode {false}
 {
 	// Set cursors for mouse view change events.

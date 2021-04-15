@@ -37,6 +37,9 @@ protected:
 	int m_lonDimId;
 	int m_latDimId;
 
+	int m_lonVarId;
+	int m_latVarId;
+
 	PreProcessorGeoDataGroupDataItemInterface* m_groupDataItem;
 };
 

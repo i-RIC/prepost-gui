@@ -20,7 +20,7 @@ InputConditionWidgetImage::InputConditionWidgetImage(QDomNode defNode, const Sol
 	QString src = defElem.attribute("src");
 	QString localeSrc = t.imageFilename(src);
 
-	if (QFile(localeSrc).exists()) {
+	if (QFile(dir.absoluteFilePath(localeSrc)).exists()) {
 		m_image = QPixmap(dir.absoluteFilePath(localeSrc));
 	} else {
 		m_image = QPixmap(dir.absoluteFilePath(src));
@@ -37,7 +37,7 @@ InputConditionWidgetImage::InputConditionWidgetImage(QDomNode defNode, const Sol
 		localeSrc = t.imageFilename(src);
 
 		QPixmap subPixmap;
-		if (QFile(localeSrc).exists()) {
+		if (QFile(dir.absoluteFilePath(localeSrc)).exists()) {
 			subPixmap = QPixmap(dir.absoluteFilePath(localeSrc));
 		} else {
 			subPixmap = QPixmap(dir.absoluteFilePath(src));

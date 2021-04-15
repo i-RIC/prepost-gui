@@ -121,6 +121,38 @@ bool PreProcessorDataModel::exportInputCondition(const QString& filename)
 	return root->m_inputConditionDataItem->exportInputCondition(filename);
 }
 
+bool PreProcessorDataModel::setupCgnsFilesIfNeeded(bool readgrid)
+{
+	PreProcessorRootDataItem* root = dynamic_cast<PreProcessorRootDataItem*>(m_rootDataItem);
+
+	QString cgnsFileForGrid;
+	QString* cgnsFilePointer = nullptr;
+
+	if (readgrid) {
+		cgnsFilePointer = &cgnsFileForGrid;
+	}
+
+	bool updated;
+	bool ok = root->m_inputConditionDataItem->setupCgnsFilesIfNeeded(cgnsFilePointer, &updated);
+	if (! ok) {return false;}
+
+	if (! cgnsFileForGrid.isEmpty() && updated) {
+		// import the grid to the first grid.
+		auto types = root->gridTypeDataItems();
+		if (types.size() == 0) {return true;}
+		auto firstType = types.at(0);
+
+		auto conditions = firstType->conditions();
+		if (conditions.size() == 0) {return true;}
+		auto firstCond = conditions.at(0);
+
+		auto firstCondImpl = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItem*> (firstCond);
+		return firstCondImpl->importGridFromCgnsFile(cgnsFileForGrid);
+	}
+
+	return true;
+}
+
 bool PreProcessorDataModel::isInputConditionSet()
 {
 	PreProcessorRootDataItem* root = dynamic_cast<PreProcessorRootDataItem*>(m_rootDataItem);
@@ -320,7 +352,7 @@ void PreProcessorDataModel::setupGeoDataMenus()
 
 		GeoData* raw = item->geoData();
 		GeoDataRiverSurvey* s = dynamic_cast<GeoDataRiverSurvey*>(raw);
-		dummy = new QMenu(tr("&River Survey"), m_geographicDataMenu);
+		dummy = new QMenu(tr("&Cross-Section Data"), m_geographicDataMenu);
 		if (s == nullptr) {
 			dummy->setDisabled(true);
 		} else {
@@ -329,7 +361,7 @@ void PreProcessorDataModel::setupGeoDataMenus()
 		m_geographicDataMenu->addMenu(dummy);
 
 		GeoDataPointmap* pm = dynamic_cast<GeoDataPointmap*>(raw);
-		dummy = new QMenu(tr("P&ointset Data"), m_geographicDataMenu);
+		dummy = new QMenu(tr("P&oint Cloud Data"), m_geographicDataMenu);
 		if (pm == nullptr) {
 			dummy->setDisabled(true);
 		} else {
@@ -338,7 +370,7 @@ void PreProcessorDataModel::setupGeoDataMenus()
 		m_geographicDataMenu->addMenu(dummy);
 
 		GeoDataPolygonGroup* polGroup = dynamic_cast<GeoDataPolygonGroup*>(raw);
-		dummy = new QMenu(tr("&Polygon Group"), m_geographicDataMenu);
+		dummy = new QMenu(tr("&Polygons"), m_geographicDataMenu);
 		if (polGroup != nullptr) {
 			connect(dummy, SIGNAL(aboutToShow()), this, SLOT(setupGeoDataSubMenu()));
 		} else {
@@ -372,16 +404,16 @@ void PreProcessorDataModel::setupGeoDataMenus()
 			}
 			setupGeoDataAddActions(gitem);
 			QMenu* dummy;
-			dummy = new QMenu(tr("&River Survey"), m_geographicDataMenu);
+			dummy = new QMenu(tr("&Cross-Section Data"), m_geographicDataMenu);
 			dummy->setDisabled(true);
 			m_geographicDataMenu->addMenu(dummy);
-			dummy = new QMenu(tr("P&ointset Data"), m_geographicDataMenu);
+			dummy = new QMenu(tr("P&oint Cloud Data"), m_geographicDataMenu);
 			dummy->setDisabled(true);
 			m_geographicDataMenu->addMenu(dummy);
-			dummy = new QMenu(tr("&Polygon Group"), m_geographicDataMenu);
+			dummy = new QMenu(tr("&Polygons"), m_geographicDataMenu);
 			dummy->addAction(m_geoDataAddActions.value(polygonGroupCreator));
 			m_geographicDataMenu->addMenu(dummy);
-			dummy = new QMenu(tr("Poly&line"), m_geographicDataMenu);
+			dummy = new QMenu(tr("&Lines"), m_geographicDataMenu);
 			dummy->addAction(m_geoDataAddActions.value(polylineCreator));
 			m_geographicDataMenu->addMenu(dummy);
 
@@ -396,16 +428,16 @@ void PreProcessorDataModel::setupGeoDataMenus()
 		} else {
 			// no raw data selected. create dummy menus.
 			QMenu* dummy;
-			dummy = new QMenu(tr("&River Survey"), m_geographicDataMenu);
+			dummy = new QMenu(tr("&Cross-Section Data"), m_geographicDataMenu);
 			dummy->setDisabled(true);
 			m_geographicDataMenu->addMenu(dummy);
-			dummy = new QMenu(tr("P&ointset Data"), mainWindow());
+			dummy = new QMenu(tr("P&oint Cloud Data"), mainWindow());
 			dummy->setDisabled(true);
 			m_geographicDataMenu->addMenu(dummy);
-			dummy = new QMenu(tr("&Polygon Group"), mainWindow());
+			dummy = new QMenu(tr("&Polygons"), mainWindow());
 			dummy->setDisabled(true);
 			m_geographicDataMenu->addMenu(dummy);
-			dummy = new QMenu(tr("Poly&line"), mainWindow());
+			dummy = new QMenu(tr("&Lines"), mainWindow());
 			dummy->setDisabled(true);
 			m_geographicDataMenu->addMenu(dummy);
 			deleteAllAction->setDisabled(true);

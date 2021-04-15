@@ -15,13 +15,12 @@
 #include <QIcon>
 
 GeoDataRiverSurveyCreator::GeoDataRiverSurveyCreator() :
-	GeoDataCreator {"riversurvey", tr("River Survey data")}
+	GeoDataCreator {"riversurvey", tr("Cross-Section Data")}
 {
 	importers().push_back(new GeoDataRiverSurveyImporter(this));
 	importers().push_back(new GeoDataRiverSurveyMlitImporter(this));
 
 	exporters().push_back(new GeoDataRiverSurveyExporter(this));
-	exporters().push_back(new GeoDataRiverSurveyVTKExporter(this));
 	exporters().push_back(new GeoDataRiverSurveyHonryuExporter(this));
 	exporters().push_back(new GeoDataRiverSurveyLandXmlExporter(this));
 
@@ -43,7 +42,7 @@ QString GeoDataRiverSurveyCreator::name(unsigned int index) const
 
 QString GeoDataRiverSurveyCreator::defaultCaption(unsigned int index) const
 {
-	return QString(tr("RiverSurvey %1")).arg(index);
+	return QString(tr("Cross-Section Data%1")).arg(index);
 }
 
 GeoData* GeoDataRiverSurveyCreator::restore(const QDomNode& node, ProjectDataItem* parent, SolverDefinitionGridAttribute* condition)

@@ -13,6 +13,9 @@
 
 #include <QColor>
 
+class vtkPointSet;
+class vtkPolyData;
+
 /// Container for arrow settings
 class GUIBASEDLL_EXPORT ArrowSettingContainer : public CompositeContainer
 {
@@ -49,6 +52,10 @@ public:
 
 	ArrowSettingContainer& operator=(const ArrowSettingContainer& c);
 	XmlAttributeContainer& operator=(const XmlAttributeContainer& c) override;
+
+	double scaleFactor(double stdDistance) const;
+	vtkPolyData* buildFilteredData(vtkPointSet* data) const;
+	void updateStandardValueIfNeeded(vtkPointSet* data);
 
 	StringContainer target;
 

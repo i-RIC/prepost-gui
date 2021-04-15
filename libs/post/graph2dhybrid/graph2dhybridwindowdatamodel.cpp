@@ -1571,7 +1571,7 @@ CONDITIONERROR:
 											 tr("This function can be used when the following conditions are satisfied: <ul>"
 													"<li>Graph for two-dimensional structured grid result is drawn.</li>"
 													"<li>X-axis is I-direction in the grid.</li>"
-													"<li>The grid is created using the algorithm \"Create grid from from river survey data\"</li>"
+													"<li>The grid is created using the algorithm \"Create grid from from cross-section data\"</li>"
 													"</ul>"));
 	return;
 

@@ -427,6 +427,29 @@
     </message>
 </context>
 <context>
+    <name>InputConditionCgnsFileSelectDialog</name>
+    <message>
+        <source>Select Input CGNS File</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Information</source>
+        <translation type="unfinished">Informacao</translation>
+    </message>
+    <message>
+        <source>Do you want to import grid from the CGNS file?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select CGNS file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please select from which CGNS file to read grid.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>InputConditionContainerSet</name>
     <message>
         <source>Definition node is not stored</source>
@@ -511,6 +534,64 @@ Do you really want to import this file?</source>
     <message>
         <source>Groups</source>
         <translation>Grupos</translation>
+    </message>
+</context>
+<context>
+    <name>InputConditionWidgetCgnsFile</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Forma</translation>
+    </message>
+    <message>
+        <source>...</source>
+        <translation type="unfinished">...</translation>
+    </message>
+    <message>
+        <source>Solver Name:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>---</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Solver Version:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Grid Type:</source>
+        <translation type="unfinished">Tipo de grade</translation>
+    </message>
+    <message>
+        <source>Grid Size:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Number of results:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Structured</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unstructured</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select File</source>
+        <translation type="unfinished">Selecionar o arquivo</translation>
+    </message>
+</context>
+<context>
+    <name>InputConditionWidgetCgnsResult</name>
+    <message>
+        <source>(CGNS file is not selected)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>(There is no result)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

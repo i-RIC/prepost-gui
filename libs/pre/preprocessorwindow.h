@@ -88,6 +88,8 @@ public:
 	bool isSetupCorrectly() const;
 	bool checkMappingStatus() override;
 	PreProcessorDataModelInterface* dataModel() const override;
+	GeoDataFactoryInterface* geoDataFactory() const override;
+	bool setupCgnsFilesIfNeeded(bool readGrid);
 
 	void updateTmsList() override;
 
@@ -121,7 +123,7 @@ private:
 	VTKGraphicsView* viewForBackgroundColor() const override;
 	/// Object browser
 	PreObjectBrowser* m_objectBrowser;
-	PreProcessorDataModelInterface* m_dataModel;
+	PreProcessorDataModel* m_dataModel;
 	PreProcessorWindowProjectDataItem* m_projectDataItem;
 	PreProcessorWindowActionManager* m_actionManager;
 	PreProcessorGraphicsView* m_graphicsView;

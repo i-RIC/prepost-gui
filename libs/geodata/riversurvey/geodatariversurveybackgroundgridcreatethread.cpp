@@ -406,7 +406,9 @@ bool GeoDataRiverSurveyBackgroundGridCreateThread::runUsingDivisionPoints()
 	m_grid = vtkSmartPointer<vtkStructuredGrid>::New();
 	m_grid->SetDimensions(gridISize, gridJSize, 1);
 	m_grid->SetPoints(tmpgrid->vtkGrid()->GetPoints());
-	vtkDataArray* tmpData = tmpgrid->vtkGrid()->GetPointData()->GetArray("Elevation");
+	auto attName = rs->gridAttribute()->name();
+
+	vtkDataArray* tmpData = tmpgrid->vtkGrid()->GetPointData()->GetArray(attName.c_str());
 	if (tmpData != nullptr) {
 		vtkSmartPointer<vtkDoubleArray> data = vtkSmartPointer<vtkDoubleArray>::New();
 		data->DeepCopy(tmpData);

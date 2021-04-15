@@ -2,7 +2,6 @@
 #include "../post3dwindowdatamodel.h"
 #include "post3dwindowgridtypedataitem.h"
 #include "post3dwindowisosurfacesettingdialog.h"
-#include "post3dwindownodescalardataitem.h"
 #include "post3dwindownodescalargroupdataitem.h"
 #include "post3dwindowzonedataitem.h"
 #include "private/post3dwindownodescalargroupdataitem_setsettingcommand.h"

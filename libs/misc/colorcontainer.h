@@ -40,7 +40,7 @@ public:
 	/// @name Prefix
 	//@{
 	const QString& prefix() const override;
-	void setPrefix(const QString& prefix) override;
+	void addPrefix(const QString& prefix) override;
 	/// Attributes name (Prefix added if set)
 	QString attName(const QString& name) const override;
 	//@}

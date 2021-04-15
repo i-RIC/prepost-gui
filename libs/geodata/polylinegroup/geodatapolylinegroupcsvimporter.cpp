@@ -26,7 +26,7 @@ GeoDataPolyLineGroupCsvImporter::GeoDataPolyLineGroupCsvImporter(GeoDataCreator*
 const QStringList GeoDataPolyLineGroupCsvImporter::fileDialogFilters()
 {
 	QStringList ret;
-	ret.append(tr("CSV file (Polylines) (*.csv)"));
+	ret.append(tr("CSV file (Lines) (*.csv)"));
 	return ret;
 }
 

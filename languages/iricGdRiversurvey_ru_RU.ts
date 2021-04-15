@@ -236,10 +236,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Generate River Survey data</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Build Left bank and Right bank lines</source>
         <translation type="unfinished"></translation>
     </message>
@@ -324,10 +320,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Map points data</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>%1 is not defined yet</source>
         <translation type="unfinished"></translation>
     </message>
@@ -348,20 +340,11 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>River survey data is generated using Points data.
-If you want to adjust cross section position and map Points data again, you can use &quot;Map points data&quot;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Center Line is not defined yet.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Center line</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>River survey data need at least 2 center points.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -385,18 +368,39 @@ If you want to adjust cross section position and map Points data again, you can 
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Generate points data</source>
+        <source>Cross-section data need at least 2 center points.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Generate Cross-Section Data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No point cloud data to map is found. Please import point cloud data.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cross-section data is generated using point cloud data.
+If you want to adjust cross section position and map point clouod data again, you can use &quot;Map point cloud data&quot;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Map point cloud data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Generate point cloud data</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurvey::Impl</name>
     <message>
-        <source>&amp;River Survey</source>
+        <source>  </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>  </source>
+        <source>&amp;Cross-Section Data</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -426,11 +430,11 @@ If you want to adjust cross section position and map Points data again, you can 
 <context>
     <name>GeoDataRiverSurveyCreator</name>
     <message>
-        <source>River Survey data</source>
+        <source>Cross-Section Data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>RiverSurvey %1</source>
+        <source>Cross-Section Data%1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -755,10 +759,6 @@ If you want to adjust cross section position and map Points data again, you can 
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>River Survey Data</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Color</source>
         <translation type="unfinished"></translation>
     </message>
@@ -780,6 +780,10 @@ If you want to adjust cross section position and map Points data again, you can 
     </message>
     <message>
         <source>Select Water Surface Elevation to use</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cross-Section Data</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -896,11 +900,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
 <context>
     <name>GeoDataRiverSurveyExporter</name>
     <message>
-        <source>River Survey data (*.riv)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>River Survey data(*.riv)</source>
+        <source>Cross-Section Data (*.riv)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1060,19 +1060,11 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>#x-section data contained data with same distances. Data with lowest elevation is used.: %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>#x-section data is not correctly ordered. Will be sorted automatically.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>#x-section data contained data with same distances. Data distance is shifted slightly so that you can import both points.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>River Survey data (*.riv)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1085,6 +1077,38 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Crosssection data is not ordered correctly at %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error occured while opening %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 Line %2: Read error. Needs at least two values.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 Line %2: Read error. Not real number value &quot;%3&quot;.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cross section %1 does not cross the center line. Center point is set to be the middle point of low water way.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>On cross section %1, the center line does not cross in the low water way. Center point is set to be the middle point of low water way.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cross section %1 does not cross the center line. Center point is set to be the middle point of left bank and right bank.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cross-Section data (*.riv)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cross-Section Data (*.riv)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1124,6 +1148,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Upstream to downstream</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Import center line from CSV file</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1239,15 +1267,15 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>MLIT River Survey Data(*.csv)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Japan MLIT river survey data (*.csv)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>%1 Line %2: The number of values should be 5, but %3 values found.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>MLIT Cross-Section Data (*.csv)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Japan MLIT Cross-Section Data (*.csv)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

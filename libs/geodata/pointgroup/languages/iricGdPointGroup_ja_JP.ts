@@ -17,22 +17,26 @@
     </message>
     <message>
         <source>P&amp;oint Group</source>
-        <translation>点グループ (&amp;O)</translation>
+        <translation type="vanished">点グループ (&amp;O)</translation>
     </message>
     <message>
         <source>&amp;Sort</source>
         <translation>並べ替え (&amp;S)</translation>
+    </message>
+    <message>
+        <source>P&amp;oint</source>
+        <translation>点データ(&amp;O)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointGroupCreator</name>
     <message>
         <source>Point Group</source>
-        <translation>点グループ</translation>
+        <translation type="vanished">点グループ</translation>
     </message>
     <message>
         <source>Point Group%1</source>
-        <translation>点グループ%1</translation>
+        <translation type="vanished">点グループ%1</translation>
     </message>
     <message>
         <source>point</source>
@@ -41,6 +45,14 @@
     <message>
         <source>Point</source>
         <translation>点</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation>点データ</translation>
+    </message>
+    <message>
+        <source>Points%1</source>
+        <translation>点データ%1</translation>
     </message>
 </context>
 <context>
@@ -66,11 +78,11 @@
     <name>GeoDataPointGroupCsvImporter</name>
     <message>
         <source>CSV file (Points)</source>
-        <translation>CSV ファイル (点)</translation>
+        <translation>CSV ファイル (点データ)</translation>
     </message>
     <message>
         <source>CSV file (Points) (*.csv)</source>
-        <translation>CSV ファイル (点) (*.csv)</translation>
+        <translation>CSV ファイル (点データ) (*.csv)</translation>
     </message>
     <message>
         <source>Error</source>
@@ -140,7 +152,7 @@
     </message>
     <message>
         <source>ESRI Shapefile (Points) (*.shp)</source>
-        <translation>ESRI シェープファイル (点) (*.shp)</translation>
+        <translation>ESRI シェープファイル (点データ) (*.shp)</translation>
     </message>
     <message>
         <source>Error</source>

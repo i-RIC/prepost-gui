@@ -1092,7 +1092,7 @@ The low water channel region should be included in grid creation region, andRive
     </message>
     <message>
         <source>River Survey data not found. Please define Center Line by yourself.</source>
-        <translation>河川測量データが見つかりません。中心線を、自分で作成してください。</translation>
+        <translation type="vanished">河川測量データが見つかりません。中心線を、自分で作成してください。</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1277,6 +1277,10 @@ The low water channel region should be included in grid creation region, andRive
     <message>
         <source>Edge Coordinates</source>
         <translation>線の座標</translation>
+    </message>
+    <message>
+        <source>Cross-section data not found. Please define Center Line by yourself.</source>
+        <translation>横断測量データが見つかりません。中心線を、自分で作成してください。</translation>
     </message>
 </context>
 <context>
@@ -1584,7 +1588,7 @@ The low water channel region should be included in grid creation region, andRive
     </message>
     <message>
         <source>River Survey data not found. Please define Center Line by yourself.</source>
-        <translation>河川測量データが見つかりません。中心線を自分で定義して下さい。</translation>
+        <translation type="vanished">河川測量データが見つかりません。中心線を自分で定義して下さい。</translation>
     </message>
     <message>
         <source>Grid region not defined yet.</source>
@@ -1629,6 +1633,10 @@ The low water channel region should be included in grid creation region, andRive
     <message>
         <source>Edit %1 Coordinates</source>
         <translation>%1の座標編集</translation>
+    </message>
+    <message>
+        <source>Cross-section data not found. Please define Center Line by yourself.</source>
+        <translation>横断測量データが見つかりません。中心線を自分で定義して下さい。</translation>
     </message>
 </context>
 <context>
@@ -1804,13 +1812,13 @@ The low water channel region should be included in grid creation region, andRive
     <name>GridCreatingConditionCreatorRiverSurvey15D</name>
     <message>
         <source>Create 1.5D grid from river survey data</source>
-        <translation>河川測量データから 1.5次元格子を生成</translation>
+        <translation type="vanished">河川測量データから 1.5次元格子を生成</translation>
     </message>
     <message>
         <source>The grid shape is automatically defined using river survey data. You can specify the grid division number, by adding grid creation control points on river center.
 Note: This algorithm is available only when river survey data is loaded!Please switch algorithm to this, after importing river survey data.
 </source>
-        <translation>格子形状は、河川測量データから自動的に定義されます。格子制御点を河川中心線に追加することにより、格子の分割数を指定できます。
+        <translation type="vanished">格子形状は、河川測量データから自動的に定義されます。格子制御点を河川中心線に追加することにより、格子の分割数を指定できます。
 注意: このアルゴリズムは、河川総量データを読み込んだ場合のみ利用できます。河川測量データを読み込んでから、このアルゴリズムを選択してください。
 </translation>
     </message>
@@ -1820,7 +1828,23 @@ Note: This algorithm is available only when river survey data is loaded!Please s
     </message>
     <message>
         <source>No river survey data exists in geographic data now. This algorithm is not available.</source>
-        <translation>河川測量データが、地理情報に読み込まれていません。このアルゴリズムは利用できません。</translation>
+        <translation type="vanished">河川測量データが、地理情報に読み込まれていません。このアルゴリズムは利用できません。</translation>
+    </message>
+    <message>
+        <source>Create 1.5D grid from cross-section data</source>
+        <translation>横断測量データから 1.5次元格子を生成</translation>
+    </message>
+    <message>
+        <source>The grid shape is automatically defined using cross-section data. You can specify the grid division number, by adding grid creation control points on river center.
+Note: This algorithm is available only when cross-section data is loaded!Please switch algorithm to this, after importing cross-section data.
+</source>
+        <translation>格子形状は、横断測量データから自動的に定義されます。格子制御点を河川中心線に追加することにより、格子の分割数を指定できます。
+注意: このアルゴリズムは、横断測量データを読み込んだ場合のみ利用できます。横断測量データを読み込んでから、このアルゴリズムを選択してください。
+</translation>
+    </message>
+    <message>
+        <source>No cross-section data exists in geographic data now. This algorithm is not available.</source>
+        <translation>横断測量データがありません。この格子生成条件は利用できません。</translation>
     </message>
 </context>
 <context>
@@ -1835,7 +1859,7 @@ Note: This algorithm is available only when river survey data is loaded!Please s
     </message>
     <message>
         <source>There is no river survey data. This grid creating condition is not available.</source>
-        <translation>河川測量データがありません。この格子生成条件は利用できません。</translation>
+        <translation type="vanished">河川測量データがありません。この格子生成条件は利用できません。</translation>
     </message>
     <message>
         <source>&amp;Add Division Points...</source>
@@ -1884,6 +1908,10 @@ Note: This algorithm is available only when river survey data is loaded!Please s
     <message>
         <source>Reposition Control Points</source>
         <translation>格子生成制御点の再配置</translation>
+    </message>
+    <message>
+        <source>There is no cross-section data. This grid creating condition is not available.</source>
+        <translation>横断測量データがありません。この格子生成条件は利用できません。</translation>
     </message>
 </context>
 <context>
@@ -2034,13 +2062,13 @@ Note: This algorithm is available only when river survey data is loaded!Please s
     </message>
     <message>
         <source>Create grid from river survey data</source>
-        <translation>河川測量データから生成</translation>
+        <translation type="vanished">河川測量データから生成</translation>
     </message>
     <message>
         <source>The grid shape is automatically defined using river survey data. You can specify the grid division number, by adding grid creation control points on river crosssections, river center, left bank, and right bank.
 Note: This algorithm is available only when river survey data is loaded!Please switch algorithm to this, after importing river survey data.
 </source>
-        <translation>格子の形状は、河川測量データから自動的に定義されます。格子の分割数は、格子制御点を横断線、河川中心線、左岸線、右岸線に追加することで制御できます。
+        <translation type="vanished">格子の形状は、河川測量データから自動的に定義されます。格子の分割数は、格子制御点を横断線、河川中心線、左岸線、右岸線に追加することで制御できます。
 注意: このアルゴリズムは、河川測量データが読み込まれている時のみ利用できます! このアルゴリズムに切り替えるより先に、河川測量データを読み込んでください。</translation>
     </message>
     <message>
@@ -2049,7 +2077,22 @@ Note: This algorithm is available only when river survey data is loaded!Please s
     </message>
     <message>
         <source>No river survey data exists in geographic data now. This algorithmn is not available.</source>
-        <translation>地理情報に河川測量データが読み込まれていないため、このアルゴリズムは利用できません。</translation>
+        <translation type="vanished">地理情報に河川測量データが読み込まれていないため、このアルゴリズムは利用できません。</translation>
+    </message>
+    <message>
+        <source>Create grid from cross-section data</source>
+        <translation>横断測量データから生成</translation>
+    </message>
+    <message>
+        <source>The grid shape is automatically defined using cross-section data. You can specify the grid division number, by adding grid creation control points on river crosssections, river center, left bank, and right bank.
+Note: This algorithm is available only when cross-section data is loaded!Please switch algorithm to this, after importing cross-section data.
+</source>
+        <translation>格子の形状は、横断測量データから自動的に定義されます。格子の分割数は、格子制御点を横断線、河川中心線、左岸線、右岸線に追加することで制御できます。
+注意: このアルゴリズムは、横断測量データが読み込まれている時のみ利用できます! このアルゴリズムに切り替えるより先に、横断測量データを読み込んでください。</translation>
+    </message>
+    <message>
+        <source>No cross-section data exists in geographic data now. This algorithmn is not available.</source>
+        <translation>横断測量データがありません。この格子生成条件は利用できません。</translation>
     </message>
 </context>
 <context>
@@ -2064,7 +2107,7 @@ Note: This algorithm is available only when river survey data is loaded!Please s
     </message>
     <message>
         <source>There is no river survey data. This grid creating condition is not available.</source>
-        <translation>河川測量データがありません。この格子生成条件は利用できません。</translation>
+        <translation type="vanished">河川測量データがありません。この格子生成条件は利用できません。</translation>
     </message>
     <message>
         <source>&amp;Add Division Points...</source>
@@ -2114,6 +2157,10 @@ Note: This algorithm is available only when river survey data is loaded!Please s
         <source>Reposition Control Points</source>
         <translation>格子生成制御点の再配置</translation>
     </message>
+    <message>
+        <source>There is no cross-section data. This grid creating condition is not available.</source>
+        <translation>横断測量データがありません。この格子生成条件は利用できません。</translation>
+    </message>
 </context>
 <context>
     <name>GridCreatingConditionRiverSurveyPointAddDialog</name>
@@ -2154,7 +2201,7 @@ Note: This algorithm is available only when river survey data is loaded!Please s
     </message>
     <message>
         <source>-1 &lt; s &lt; 1</source>
-        <translation type="unfinished"></translation>
+        <translation>-1 &lt; s &lt; 1</translation>
     </message>
 </context>
 <context>
@@ -2630,11 +2677,19 @@ p, li { white-space: pre-wrap; }
     <name>GeoDataNetcdfCreator</name>
     <message>
         <source>Raster data</source>
-        <translation>ラスターデータ</translation>
+        <translation type="vanished">ラスターデータ</translation>
     </message>
     <message>
         <source>Raster data%1</source>
-        <translation>ラスターデータ%1</translation>
+        <translation type="vanished">ラスターデータ%1</translation>
+    </message>
+    <message>
+        <source>Raster Data</source>
+        <translation>ラスタデータ</translation>
+    </message>
+    <message>
+        <source>Raster Data%1</source>
+        <translation>ラスタデータ%1</translation>
     </message>
 </context>
 <context>
@@ -2688,6 +2743,33 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>GeoDataNetcdfGdalExporter</name>
+    <message>
+        <source>GDAL</source>
+        <translation>GDAL</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>エラー</translation>
+    </message>
+    <message>
+        <source>This data cannot be exported. It seems that it was not imported from *.tif or *.asc.</source>
+        <translation>このデータはエクスポートできません。*.tif, *.asc からインポートしたデータではありません。</translation>
+    </message>
+    <message>
+        <source>This data cannot be exported. Data with &quot;Time&quot; dimension cannot be exported to *.tif or *.asc.</source>
+        <translation>このデータはエクスポートできません。「時間」の次元を持つデータは *.tif, *.asc にエクスポートできません。</translation>
+    </message>
+    <message>
+        <source>ArcInfo ASCII files(*.asc)</source>
+        <translation>ArcInfo ASCII ファイル (*.asc)</translation>
+    </message>
+    <message>
+        <source>GeoTiff files(*.tif)</source>
+        <translation>GeoTiff ファイル (*.tif)</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataNetcdfGdalImporter</name>
     <message>
         <source>Importing data...</source>
@@ -2731,6 +2813,80 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>GeoDataNetcdfGrayscalePngRealExporter</name>
+    <message>
+        <source>Grayscale 16bit PNG files(*.png)</source>
+        <translation>グレースケール 16bit PNGファイル (*.png)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>エラー</translation>
+    </message>
+    <message>
+        <source>This data cannot be exported. It seems that it was not imported from *.png.</source>
+        <translation>このファイルはエクスポートできません。 PNG ファイルからインポートしたデータはありません。</translation>
+    </message>
+    <message>
+        <source>This data cannot be exported. Data with &quot;Time&quot; dimension cannot be exported to *.png</source>
+        <translation>このデータはエクスポートできません。「時間」の次元を持つデータは *.png にエクスポートできません。</translation>
+    </message>
+    <message>
+        <source>Error occured while opening %1</source>
+        <translation>%1 を開くときにエラーが発生しました。</translation>
+    </message>
+    <message>
+        <source>Error occured while initializing libpng.</source>
+        <translation>libpng の初期化処理中にエラーが発生しました。</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataNetcdfGrayscalePngRealImporter</name>
+    <message>
+        <source>Grayscale 16bit PNG (for Unreal Engine 4)</source>
+        <translation>グレースケール 16bit PNGファイル (Unreal Englne 4用)</translation>
+    </message>
+    <message>
+        <source>Grayscale 16bit PNG files(*.png)</source>
+        <translation>グレースケール 16bit PNGファイル (*.png)</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>警告</translation>
+    </message>
+    <message>
+        <source>Grayscale 16bit PNG files can be imported for grid conditions without dimensions.</source>
+        <translation>グレースケール 16bit PNG ファイルは、「時間」次元のない地理情報にしかインポートできません。</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>エラー</translation>
+    </message>
+    <message>
+        <source>Error occured while opening %1</source>
+        <translation>%1 を開くときにエラーが発生しました。</translation>
+    </message>
+    <message>
+        <source>Error occured while opening %1. It seems not to be a PNG file.</source>
+        <translation>%1 を開く処理でエラーが発生しました。これは PNG ファイルではないようです。</translation>
+    </message>
+    <message>
+        <source>%1 is not a 16bit grayscale image.</source>
+        <translation>%1 は 16bit グレースケールの画像ではありません。</translation>
+    </message>
+    <message>
+        <source>%1 does not exists.</source>
+        <translation>%1 が存在しません。</translation>
+    </message>
+    <message>
+        <source>Error occured while reading %1. It is not a valid world file.</source>
+        <translation>%1 の読み込み中にエラーが発生しました。これは正しいワールドファイルではありません。</translation>
+    </message>
+    <message>
+        <source>Error occured while parsing %1.</source>
+        <translation>%1 の読み込み中にエラーが発生しました。</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataNetcdfImporter</name>
     <message>
         <source>NetCDF</source>
@@ -2746,7 +2902,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>%1 does not have longitude and latitude data.</source>
-        <translation>%1 は、経度と緯度のデータを持っていません。</translation>
+        <translation type="vanished">%1 は、経度と緯度のデータを持っていません。</translation>
     </message>
     <message>
         <source>%1 does not have variable that can be imported.</source>
@@ -2759,6 +2915,10 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Error occured while parsing time definition: %1</source>
         <translation>日付定義の読み込みでエラーが発生しました: %1</translation>
+    </message>
+    <message>
+        <source>%1 does not have longitude, latitude nor x, y data.</source>
+        <translation>%1 には、緯度・経度, X・Yデータがありません。</translation>
     </message>
 </context>
 <context>
@@ -2821,6 +2981,24 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Dimensions</source>
         <translation>次元</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataNetcdfNcExporter</name>
+    <message>
+        <source>NetCDF files (*.nc)</source>
+        <translation>NetCDF ファイル (*.nc)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataNetcdfTimeSeriesCreator</name>
+    <message>
+        <source>Time Series Raster Data</source>
+        <translation>時系列ラスタデータ</translation>
+    </message>
+    <message>
+        <source>Time Series Raster Data%1</source>
+        <translation>時系列ラスタデータ%1</translation>
     </message>
 </context>
 <context>
@@ -2997,22 +3175,26 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>P&amp;oint Group</source>
-        <translation>点グループ (&amp;O)</translation>
+        <translation type="vanished">点グループ (&amp;O)</translation>
     </message>
     <message>
         <source>&amp;Sort</source>
         <translation>並べ替え (&amp;S)</translation>
+    </message>
+    <message>
+        <source>P&amp;oint</source>
+        <translation>点データ(&amp;O)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointGroupCreator</name>
     <message>
         <source>Point Group</source>
-        <translation>点グループ</translation>
+        <translation type="vanished">点グループ</translation>
     </message>
     <message>
         <source>Point Group%1</source>
-        <translation>点グループ%1</translation>
+        <translation type="vanished">点グループ%1</translation>
     </message>
     <message>
         <source>point</source>
@@ -3021,6 +3203,14 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Point</source>
         <translation>点</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation>点データ</translation>
+    </message>
+    <message>
+        <source>Points%1</source>
+        <translation>点データ%1</translation>
     </message>
 </context>
 <context>
@@ -3046,11 +3236,11 @@ p, li { white-space: pre-wrap; }
     <name>GeoDataPointGroupCsvImporter</name>
     <message>
         <source>CSV file (Points)</source>
-        <translation>CSV ファイル (点)</translation>
+        <translation>CSV ファイル (点データ)</translation>
     </message>
     <message>
         <source>CSV file (Points) (*.csv)</source>
-        <translation>CSV ファイル (点) (*.csv)</translation>
+        <translation>CSV ファイル (点データ) (*.csv)</translation>
     </message>
     <message>
         <source>Error</source>
@@ -3120,7 +3310,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>ESRI Shapefile (Points) (*.shp)</source>
-        <translation>ESRI シェープファイル (点) (*.shp)</translation>
+        <translation>ESRI シェープファイル (点データ) (*.shp)</translation>
     </message>
     <message>
         <source>Error</source>
@@ -3254,7 +3444,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>P&amp;ointset Data</source>
-        <translation>DEM データ(&amp;O)</translation>
+        <translation type="vanished">DEM データ(&amp;O)</translation>
     </message>
     <message>
         <source>Information</source>
@@ -3468,6 +3658,10 @@ p, li { white-space: pre-wrap; }
         <source>To interpolate points, you must specify more than two points, and the last point should be existing point. Do you want to retry, or cancel the operation?</source>
         <translation>点の補間を実行するには、2つ以上の点を指定する必要があり、また最初と最後の点は既存の点である必要があります。再試行しますか?それとも操作をキャンセルしますか?</translation>
     </message>
+    <message>
+        <source>P&amp;oint Cloud Data</source>
+        <translation>点群データ(&amp;O)</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointmapAddPointDialog</name>
@@ -3645,18 +3839,26 @@ p, li { white-space: pre-wrap; }
     <name>GeoDataPointmapRealCreator</name>
     <message>
         <source>Points</source>
-        <translation>点</translation>
+        <translation type="vanished">点群データ</translation>
     </message>
     <message>
         <source>Points%1</source>
-        <translation>地勢データ%1</translation>
+        <translation type="vanished">地勢データ%1</translation>
+    </message>
+    <message>
+        <source>Point Cloud Data</source>
+        <translation>点群データ</translation>
+    </message>
+    <message>
+        <source>Point Cloud Data%1</source>
+        <translation>点群データ%1</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapRealExporter</name>
     <message>
         <source>Pointset (DEM etc.)</source>
-        <translation>地勢データ (DEM など)</translation>
+        <translation type="vanished">地勢データ (DEM など)</translation>
     </message>
     <message>
         <source>Topography File (*.tpo)</source>
@@ -3673,6 +3875,10 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>RIC-Nays DEM (*.dat)</source>
         <translation type="vanished">RIC-Nays DEM データ (*.dat)</translation>
+    </message>
+    <message>
+        <source>Point Cloud Data (DEM etc.)</source>
+        <translation>点群データ (DEMなど)</translation>
     </message>
 </context>
 <context>
@@ -3813,7 +4019,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Text file (*.csv *.txt)</source>
-        <translation>テキストファイル (*.csv *.txt)</translation>
+        <translation type="vanished">テキストファイル (*.csv *.txt)</translation>
+    </message>
+    <message>
+        <source>Text file (*.csv *.txt *.xyz)</source>
+        <translation>テキストファイル (*.csv *.txt, *.xyz)</translation>
     </message>
 </context>
 <context>
@@ -5122,7 +5332,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>P&amp;olygon Group</source>
-        <translation>ポリゴングループ(&amp;O)</translation>
+        <translation type="vanished">ポリゴングループ(&amp;O)</translation>
     </message>
     <message>
         <source>Polygon%1</source>
@@ -5220,6 +5430,10 @@ p, li { white-space: pre-wrap; }
         <source>Edit name and value of polygons</source>
         <translation type="vanished">ポリゴンの名前と値の編集</translation>
     </message>
+    <message>
+        <source>P&amp;olygons</source>
+        <translation>ポリゴンデータ(&amp;O)</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolygonGroupAttributeBrowser</name>
@@ -5290,11 +5504,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Polygons</source>
-        <translation type="vanished">ポリゴングループ</translation>
+        <translation>ポリゴンデータ</translation>
     </message>
     <message>
         <source>Polygons%1</source>
-        <translation type="vanished">ポリゴングループ%1</translation>
+        <translation>ポリゴンデータ%1</translation>
     </message>
     <message>
         <source>Polygon%1</source>
@@ -5302,11 +5516,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Polygon Group</source>
-        <translation>ポリゴングループ</translation>
+        <translation type="vanished">ポリゴングループ</translation>
     </message>
     <message>
         <source>Polygon Group%1</source>
-        <translation>ポリゴングループ%1</translation>
+        <translation type="vanished">ポリゴングループ%1</translation>
     </message>
     <message>
         <source>polygon</source>
@@ -5333,22 +5547,26 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Some polygon in this polygon group has holes, but holes are not exported to CSV file. If you want to export holes, please export to ESRI Shapefile.</source>
-        <translation>ポリゴンに、穴が空いているものがありますが、 CSVファイルには穴の情報をエクスポートできません。穴の情報をエクスポートしたい場合、ESRIシェープファイルにエクスポートしてください。</translation>
+        <translation type="vanished">ポリゴンに、穴が空いているものがありますが、 CSVファイルには穴の情報をエクスポートできません。穴の情報をエクスポートしたい場合、ESRIシェープファイルにエクスポートしてください。</translation>
     </message>
     <message>
         <source>CSV file (*.csv)</source>
         <translation>CSV ファイル (*.csv)</translation>
+    </message>
+    <message>
+        <source>Some polygon in this data has holes, but holes are not exported to CSV file. If you want to export holes, please export to ESRI Shapefile.</source>
+        <translation>ポリゴンに、穴が空いているものがありますが、 CSVファイルには穴の情報をエクスポートできません。穴の情報をエクスポートしたい場合、ESRIシェープファイルにエクスポートしてください。</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolygonGroupCsvImporter</name>
     <message>
         <source>CSV file (Polygons)</source>
-        <translation>CSV ファイル (ポリゴン)</translation>
+        <translation>CSV ファイル (ポリゴンデータ)</translation>
     </message>
     <message>
         <source>CSV file (Polygons) (*.csv)</source>
-        <translation>CSV ファイル (ポリゴン) (*.csv)</translation>
+        <translation>CSV ファイル (ポリゴンデータ) (*.csv)</translation>
     </message>
     <message>
         <source>Error</source>
@@ -5485,7 +5703,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>ESRI Shapefile (Polygons) (*.shp)</source>
-        <translation>ESRI シェープファイル (ポリゴン) (*.shp)</translation>
+        <translation>ESRI シェープファイル (ポリゴンデータ) (*.shp)</translation>
     </message>
     <message>
         <source>%1 th polygon can not be imported. Polygon like below can not be imported:
@@ -6207,7 +6425,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Poly&amp;line Group</source>
-        <translation>折れ線グループ (&amp;L)</translation>
+        <translation type="vanished">折れ線グループ (&amp;L)</translation>
     </message>
     <message>
         <source>&amp;Sort</source>
@@ -6271,7 +6489,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Polyline%1</source>
-        <translation>折れ線%1</translation>
+        <translation type="vanished">折れ線%1</translation>
     </message>
     <message>
         <source>Sort polygons</source>
@@ -6284,6 +6502,14 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Sort polylines</source>
         <translation type="vanished">折れ線の並べ替え</translation>
+    </message>
+    <message>
+        <source>&amp;Lines</source>
+        <translation>ラインデータ(&amp;L)</translation>
+    </message>
+    <message>
+        <source>Line%1</source>
+        <translation>ライン%1</translation>
     </message>
 </context>
 <context>
@@ -6355,23 +6581,43 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Polyline Group</source>
-        <translation>折れ線グループ</translation>
+        <translation type="vanished">折れ線グループ</translation>
     </message>
     <message>
         <source>Polyline Group%1</source>
-        <translation>折れ線グループ%1</translation>
+        <translation type="vanished">折れ線グループ%1</translation>
     </message>
     <message>
         <source>Deleting this item will also remove any graph windows associated with this polyline group.  Are you sure you want to delete this item?</source>
-        <translation>この項目を削除すると、折れ線に関連付けられたグラフウィンドウも同時に削除されます。本当にこの項目を削除していいですか?</translation>
+        <translation type="vanished">この項目を削除すると、折れ線に関連付けられたグラフウィンドウも同時に削除されます。本当にこの項目を削除していいですか?</translation>
     </message>
     <message>
         <source>polyline</source>
-        <translation>折れ線</translation>
+        <translation type="vanished">折れ線</translation>
     </message>
     <message>
         <source>Polyline</source>
-        <translation>折れ線</translation>
+        <translation type="vanished">折れ線</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>ラインデータ</translation>
+    </message>
+    <message>
+        <source>Lines%1</source>
+        <translation>ラインデータ%1</translation>
+    </message>
+    <message>
+        <source>Deleting this item will also remove any graph windows associated with this data.  Are you sure you want to delete this item?</source>
+        <translation>この項目を削除すると、ラインデータに関連付けられたグラフウィンドウも同時に削除されます。本当にこの項目を削除していいですか?</translation>
+    </message>
+    <message>
+        <source>line</source>
+        <translation>ライン</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>ライン</translation>
     </message>
 </context>
 <context>
@@ -6401,7 +6647,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>CSV file (Polylines) (*.csv)</source>
-        <translation>CSV ファイル (線) (*.csv)</translation>
+        <translation type="vanished">CSV ファイル (線) (*.csv)</translation>
     </message>
     <message>
         <source>Error</source>
@@ -6475,6 +6721,10 @@ p, li { white-space: pre-wrap; }
         <source>Error occured while reading line %1. &quot;value&quot; should be the same for lines where &quot;lid&quot; values are the same.</source>
         <translation>%1行目の読み込み中にエラーが発生しました。 &quot;value&quot; は同じ &quot;lid&quot; の行で共通である必要があります。</translation>
     </message>
+    <message>
+        <source>CSV file (Lines) (*.csv)</source>
+        <translation>CSV ファイル (ラインデータ) (*.csv)</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolyLineGroupMergeSettingDialog</name>
@@ -6522,7 +6772,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>ESRI Shapefile (Polylines) (*.shp)</source>
-        <translation>ESRI シェープファイル (折れ線) (*.shp)</translation>
+        <translation type="vanished">ESRI シェープファイル (折れ線) (*.shp)</translation>
     </message>
     <message>
         <source>Error</source>
@@ -6547,6 +6797,10 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Poly Line%1</source>
         <translation type="vanished">折れ線%1</translation>
+    </message>
+    <message>
+        <source>ESRI Shapefile (Lines) (*.shp)</source>
+        <translation>ESRI シェープファイル (ラインデータ) (*.shp)</translation>
     </message>
 </context>
 <context>
@@ -7465,7 +7719,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Generate River Survey data</source>
-        <translation>河川測量データの生成</translation>
+        <translation type="vanished">河川測量データの生成</translation>
     </message>
     <message>
         <source>Build Left bank and Right bank lines</source>
@@ -7553,7 +7807,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Map points data</source>
-        <translation>地勢データのマッピング</translation>
+        <translation type="vanished">地勢データのマッピング</translation>
     </message>
     <message>
         <source>%1 is not defined yet</source>
@@ -7578,7 +7832,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>River survey data is generated using Points data.
 If you want to adjust cross section position and map Points data again, you can use &quot;Map points data&quot;</source>
-        <translation>地勢データから、河川測量データが生成されました。
+        <translation type="vanished">地勢データから、河川測量データが生成されました。
 横断線の位置や向きを調整して再度マッピングを行いたい場合、「地勢データのマッピング」メニューを使用してください。</translation>
     </message>
     <message>
@@ -7591,7 +7845,7 @@ If you want to adjust cross section position and map Points data again, you can 
     </message>
     <message>
         <source>River survey data need at least 2 center points.</source>
-        <translation>最低2つの河川横断せんがなくてはいけません。</translation>
+        <translation type="vanished">最低2つの河川横断せんがなくてはいけません。</translation>
     </message>
     <message>
         <source>Please define center line by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
@@ -7623,18 +7877,54 @@ If you want to adjust cross section position and map Points data again, you can 
     </message>
     <message>
         <source>Generate points data</source>
-        <translation>このデータから地勢データを生成</translation>
+        <translation type="vanished">このデータから地勢データを生成</translation>
+    </message>
+    <message>
+        <source>Cross-section data is generated using Points data.
+If you want to adjust cross section position and map Points data again, you can use &quot;Map points data&quot;</source>
+        <translation type="vanished">地勢データから、横断測量データが生成されました。
+横断線の位置や向きを調整して再度マッピングを行いたい場合、「地勢データのマッピング」メニューを使用してください。</translation>
+    </message>
+    <message>
+        <source>Cross-section data need at least 2 center points.</source>
+        <translation>最低2つの河川横断線がなくてはいけません。</translation>
+    </message>
+    <message>
+        <source>Generate Cross-Section Data</source>
+        <translation>横断測量データの生成</translation>
+    </message>
+    <message>
+        <source>No point cloud data to map is found. Please import point cloud data.</source>
+        <translation>点群データが見つかりません。点群データをインポートして下さい。</translation>
+    </message>
+    <message>
+        <source>Cross-section data is generated using point cloud data.
+If you want to adjust cross section position and map point clouod data again, you can use &quot;Map point cloud data&quot;</source>
+        <translation>点群データから、横断測量データが生成されました。
+横断線の位置や向きを調整して再度マッピングを行いたい場合、「点群データのマッピング」メニューを使用してください。</translation>
+    </message>
+    <message>
+        <source>Map point cloud data</source>
+        <translation>点群データのマッピング</translation>
+    </message>
+    <message>
+        <source>Generate point cloud data</source>
+        <translation>このデータから点群データを生成</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurvey::Impl</name>
     <message>
         <source>&amp;River Survey</source>
-        <translation>河川測量データ (&amp;R)</translation>
+        <translation type="vanished">河川測量データ (&amp;R)</translation>
     </message>
     <message>
         <source>  </source>
         <translation>  </translation>
+    </message>
+    <message>
+        <source>&amp;Cross-Section Data</source>
+        <translation>横断測量データ(&amp;C)</translation>
     </message>
 </context>
 <context>
@@ -7664,11 +7954,19 @@ If you want to adjust cross section position and map Points data again, you can 
     <name>GeoDataRiverSurveyCreator</name>
     <message>
         <source>River Survey data</source>
-        <translation>河川測量データ</translation>
+        <translation type="vanished">河川測量データ</translation>
     </message>
     <message>
         <source>RiverSurvey %1</source>
-        <translation>河川測量データ %1</translation>
+        <translation type="vanished">河川測量データ %1</translation>
+    </message>
+    <message>
+        <source>Cross-Section Data</source>
+        <translation>横断測量データ</translation>
+    </message>
+    <message>
+        <source>Cross-Section Data%1</source>
+        <translation>横断測量データ%1</translation>
     </message>
 </context>
 <context>
@@ -8033,7 +8331,7 @@ If you want to adjust cross section position and map Points data again, you can 
     </message>
     <message>
         <source>River Survey Data</source>
-        <translation>河川測量データ</translation>
+        <translation type="vanished">河川測量データ</translation>
     </message>
     <message>
         <source>Color</source>
@@ -8062,6 +8360,10 @@ If you want to adjust cross section position and map Points data again, you can 
     <message>
         <source>Select Water Surface Elevation to use</source>
         <translation>使用する水位を選択</translation>
+    </message>
+    <message>
+        <source>Cross-Section Data</source>
+        <translation>横断測量データ</translation>
     </message>
 </context>
 <context>
@@ -8183,11 +8485,15 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <name>GeoDataRiverSurveyExporter</name>
     <message>
         <source>River Survey data (*.riv)</source>
-        <translation>河川測量データ (*.riv)</translation>
+        <translation type="vanished">河川測量データ (*.riv)</translation>
     </message>
     <message>
         <source>River Survey data(*.riv)</source>
-        <translation>河川測量データ(*.riv)</translation>
+        <translation type="vanished">河川測量データ(*.riv)</translation>
+    </message>
+    <message>
+        <source>Cross-Section Data (*.riv)</source>
+        <translation>横断測量データ (*.riv)</translation>
     </message>
 </context>
 <context>
@@ -8395,7 +8701,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>#x-section data contained data with same distances. Data with lowest elevation is used.: %1</source>
-        <translation>#x-section データに、同じ距離のデータが複数あります。最も標高の低い値を使用します。:%1</translation>
+        <translation type="vanished">#x-section データに、同じ距離のデータが複数あります。最も標高の低い値を使用します。:%1</translation>
     </message>
     <message>
         <source>#x-section data is not correctly ordered. Will be sorted automatically.</source>
@@ -8407,7 +8713,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>River Survey data (*.riv)</source>
-        <translation>河川測量データ (*.riv)</translation>
+        <translation type="vanished">河川測量データ (*.riv)</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -8424,6 +8730,54 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>Cross Section data contained data with same distances. Data with lowest elevation is used.: %1</source>
         <translation type="vanished">横断データに、同じ距離のデータが複数あります。最も標高の低い値を使用します。:%1</translation>
+    </message>
+    <message>
+        <source>Error occured while opening %1</source>
+        <translation>%1 を開く処理でエラーが発生しました。</translation>
+    </message>
+    <message>
+        <source>%1 Line %2: Read error. Needs at least two values.</source>
+        <translation>%1 %2行目: 読み込みエラー。2つの値が必要です。</translation>
+    </message>
+    <message>
+        <source>%1 Line %2: Read error. Not real number value &quot;%3&quot;.</source>
+        <translation>%1 %2行目: 読み込みエラー。&quot;%3&quot; は実数として読み込めませんでした。</translation>
+    </message>
+    <message>
+        <source>Cross section %1 does not cross the centerline. Center point is set to be the middle point of left bank and right bank.</source>
+        <translation type="vanished">横断面 %1 は、ファイルから読み込んだ中心線と交差しませんでした。この横断面の中心点は、左岸と右岸の中点に設定されます。</translation>
+    </message>
+    <message>
+        <source>Cross section %1 does not cross the centerline. Center point is set to be the middle point of low water way.</source>
+        <translation type="vanished">横断面 %1 は、ファイルから読み込んだ中心線と交差しませんでした。この横断面の中心点は、低水敷の中央に設定されます。</translation>
+    </message>
+    <message>
+        <source>The centerline does not cross in the low water way. Center point is set to be the middle point of low water way.</source>
+        <translation type="obsolete">中心線は低水敷を通っていません。をマウスクリックにより定義してください。ダブルクリックするか、改行キーを押して完了します。</translation>
+    </message>
+    <message>
+        <source>On cross section %1, the centerline does not cross in the low water way. Center point is set to be the middle point of low water way.</source>
+        <translation type="vanished">横断面 %1 で、中心線が低水敷で交差しませんでした。この横断面の中心点は、低水敷の中央に設定されます。</translation>
+    </message>
+    <message>
+        <source>Cross section %1 does not cross the center line. Center point is set to be the middle point of low water way.</source>
+        <translation>横断面 %1 は、ファイルから読み込んだ中心線と交差しませんでした。この横断面の中心点は、低水敷の中央に設定されます。</translation>
+    </message>
+    <message>
+        <source>On cross section %1, the center line does not cross in the low water way. Center point is set to be the middle point of low water way.</source>
+        <translation>横断面 %1 で、中心線が低水敷で交差しませんでした。この横断面の中心点は、低水敷の中央に設定されます。</translation>
+    </message>
+    <message>
+        <source>Cross section %1 does not cross the center line. Center point is set to be the middle point of left bank and right bank.</source>
+        <translation>横断面 %1 は、ファイルから読み込んだ中心線と交差しませんでした。この横断面の中心点は、左岸と右岸の中点に設定されます。</translation>
+    </message>
+    <message>
+        <source>Cross-Section data (*.riv)</source>
+        <translation>横断測量データ (*.riv)</translation>
+    </message>
+    <message>
+        <source>Cross-Section Data (*.riv)</source>
+        <translation>横断測量データ (*.riv)</translation>
     </message>
 </context>
 <context>
@@ -8467,6 +8821,14 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>Upstream to downstream</source>
         <translation>上流側から下流側へ</translation>
+    </message>
+    <message>
+        <source>Import from CSV file</source>
+        <translation type="vanished">CSVファイルからインポート</translation>
+    </message>
+    <message>
+        <source>Import center line from CSV file</source>
+        <translation>CSVファイルから中心線をインポート</translation>
     </message>
 </context>
 <context>
@@ -8610,15 +8972,23 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>MLIT River Survey Data(*.csv)</source>
-        <translation>国土交通省 河川測量データ (*.csv)</translation>
+        <translation type="vanished">国土交通省 河川測量データ (*.csv)</translation>
     </message>
     <message>
         <source>Japan MLIT river survey data (*.csv)</source>
-        <translation>日本 国土交通省 河川測量データ (*.csv)</translation>
+        <translation type="vanished">日本 国土交通省 河川測量データ (*.csv)</translation>
     </message>
     <message>
         <source>%1 Line %2: The number of values should be 5, but %3 values found.</source>
         <translation>%1 %2行目: 5個の値がある必要がありますが、%3個しかありません。</translation>
+    </message>
+    <message>
+        <source>MLIT Cross-Section Data (*.csv)</source>
+        <translation>国土交通省 横断測量データ (*.csv)</translation>
+    </message>
+    <message>
+        <source>Japan MLIT Cross-Section Data (*.csv)</source>
+        <translation>国土交通省 横断測量データ (*.csv)</translation>
     </message>
 </context>
 <context>
@@ -9535,7 +9905,11 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Polyline Group</source>
-        <translation>折れ線グループ</translation>
+        <translation type="vanished">折れ線グループ</translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation>ラインデータ</translation>
     </message>
 </context>
 <context>
@@ -9819,7 +10193,11 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm &quot;Create grid from from river survey data&quot;&lt;/li&gt;&lt;/ul&gt;</source>
-        <translation>この機能は、以下の条件を満たすときのみ使用できます。 &lt;ul&gt;&lt;li&gt;二次元構造格子の計算結果を描画している&lt;/li&gt;&lt;li&gt;X軸を、格子のI方向に設定している&lt;/li&gt;&lt;li&gt;格子を、「河川測量データから作成」アルゴリズムで作成した&lt;/li&gt;&lt;/ul&gt;</translation>
+        <translation type="vanished">この機能は、以下の条件を満たすときのみ使用できます。 &lt;ul&gt;&lt;li&gt;二次元構造格子の計算結果を描画している&lt;/li&gt;&lt;li&gt;X軸を、格子のI方向に設定している&lt;/li&gt;&lt;li&gt;格子を、「河川測量データから作成」アルゴリズムで作成した&lt;/li&gt;&lt;/ul&gt;</translation>
+    </message>
+    <message>
+        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm &quot;Create grid from from cross-section data&quot;&lt;/li&gt;&lt;/ul&gt;</source>
+        <translation>この機能は、以下の条件を満たすときのみ使用できます。 &lt;ul&gt;&lt;li&gt;二次元構造格子の計算結果を描画している&lt;/li&gt;&lt;li&gt;X軸を、格子のI方向に設定している&lt;/li&gt;&lt;li&gt;格子を、「横断測量データから作成」アルゴリズムで作成した&lt;/li&gt;&lt;/ul&gt;</translation>
     </message>
 </context>
 <context>
@@ -13282,22 +13660,22 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Target:</source>
-        <translation type="unfinished"></translation>
+        <translation>対象</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">警告</translation>
+        <translation>警告</translation>
     </message>
     <message>
         <source>Modifications you made will be discarded.</source>
-        <translation type="unfinished">行った変更は破棄されます。</translation>
+        <translation>行った変更は破棄されます。</translation>
     </message>
 </context>
 <context>
     <name>GridComplexConditionGroupRealEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">フォーム</translation>
+        <translation>フォーム</translation>
     </message>
     <message>
         <source>Targets</source>
@@ -13520,6 +13898,64 @@ Do you really want to import this file?</source>
     <message>
         <source>Groups</source>
         <translation>グループ</translation>
+    </message>
+</context>
+<context>
+    <name>InputConditionWidgetCgnsFile</name>
+    <message>
+        <source>Form</source>
+        <translation>フォーム</translation>
+    </message>
+    <message>
+        <source>...</source>
+        <translation>...</translation>
+    </message>
+    <message>
+        <source>Solver Name:</source>
+        <translation>ソルバー名:</translation>
+    </message>
+    <message>
+        <source>---</source>
+        <translation>---</translation>
+    </message>
+    <message>
+        <source>Solver Version:</source>
+        <translation>ソルバーバージョン:</translation>
+    </message>
+    <message>
+        <source>Grid Type:</source>
+        <translation>格子種類:</translation>
+    </message>
+    <message>
+        <source>Grid Size:</source>
+        <translation>格子サイズ:</translation>
+    </message>
+    <message>
+        <source>Number of results:</source>
+        <translation>計算結果の数:</translation>
+    </message>
+    <message>
+        <source>Structured</source>
+        <translation>構造格子</translation>
+    </message>
+    <message>
+        <source>Unstructured</source>
+        <translation>非構造格子</translation>
+    </message>
+    <message>
+        <source>Select File</source>
+        <translation>ファイルを選択してください</translation>
+    </message>
+</context>
+<context>
+    <name>InputConditionWidgetCgnsResult</name>
+    <message>
+        <source>(CGNS file is not selected)</source>
+        <translation>(CGNS ファイルが選択されていません)</translation>
+    </message>
+    <message>
+        <source>(There is no result)</source>
+        <translation>(計算結果がありません)</translation>
     </message>
 </context>
 <context>
@@ -36021,7 +36457,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>&amp;River Survey</source>
-        <translation>河川測量データ (&amp;R)</translation>
+        <translation type="vanished">河川測量データ (&amp;R)</translation>
     </message>
     <message>
         <source>P&amp;ointset Data</source>
@@ -36029,11 +36465,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>&amp;Polygon Group</source>
-        <translation>ポリゴングループ (&amp;P)</translation>
+        <translation type="vanished">ポリゴングループ (&amp;P)</translation>
     </message>
     <message>
         <source>&amp;Polygons</source>
-        <translation type="vanished">ポリゴングループ (&amp;P)</translation>
+        <translation>ポリゴンデータ (&amp;P)</translation>
     </message>
     <message>
         <source>&amp;Polygon</source>
@@ -36191,6 +36627,18 @@ Do you really want to import grid from this file?</source>
         <source>Importing %1 failed.</source>
         <translation type="vanished">%1 のインポートが失敗しました。</translation>
     </message>
+    <message>
+        <source>&amp;Cross-Section Data</source>
+        <translation>横断測量データ(&amp;C)</translation>
+    </message>
+    <message>
+        <source>&amp;Lines</source>
+        <translation>ラインデータ(&amp;L)</translation>
+    </message>
+    <message>
+        <source>P&amp;oint Cloud Data</source>
+        <translation>点群データ(&amp;O)</translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGeoDataComplexGroupDataItem</name>
@@ -36205,6 +36653,10 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>&amp;Add</source>
         <translation>追加(&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Import</source>
+        <translation>インポート (&amp;I)</translation>
     </message>
 </context>
 <context>
@@ -36230,7 +36682,7 @@ Do you really want to import grid from this file?</source>
     <name>PreProcessorGeoDataGroupDataItem</name>
     <message>
         <source>&amp;Import...</source>
-        <translation>インポート(&amp;I)...</translation>
+        <translation type="vanished">インポート(&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Import from web...</source>
@@ -36374,6 +36826,10 @@ Do you really want to import grid from this file?</source>
         <source>Are you sure you want to delete all items in %1 group?</source>
         <translation>本当に %1 に含まれるすべての項目を削除していいですか?</translation>
     </message>
+    <message>
+        <source>&amp;Import</source>
+        <translation>インポート (&amp;I)</translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGeoDataTopDataItem</name>
@@ -36493,7 +36949,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Generate points data</source>
-        <translation>このデータから点群データを生成</translation>
+        <translation type="vanished">このデータから点群データを生成</translation>
     </message>
     <message>
         <source>Topography File (*.tpo)</source>
@@ -36522,6 +36978,10 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>%1 generated.</source>
         <translation>%1 が生成されました。</translation>
+    </message>
+    <message>
+        <source>Generate point cloud data</source>
+        <translation>このデータから点群データを生成</translation>
     </message>
 </context>
 <context>
@@ -36811,11 +37271,15 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Generate points data</source>
-        <translation>このデータから地勢データを生成</translation>
+        <translation type="vanished">このデータから地勢データを生成</translation>
     </message>
     <message>
         <source>%1 generated.</source>
         <translation>%1 が生成されました。</translation>
+    </message>
+    <message>
+        <source>Generate point cloud data</source>
+        <translation>このデータから点群データを生成</translation>
     </message>
 </context>
 <context>
@@ -38346,11 +38810,15 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Invalid name for cross section. The name should be &quot;X1&quot;, &quot;X2&quot;, ...</source>
-        <translation>不正な名前です。名前は &quot;X1&quot;, &quot;X2&quot;,などとして下さい。</translation>
+        <translation type="vanished">不正な名前です。名前は &quot;X1&quot;, &quot;X2&quot;,などとして下さい。</translation>
     </message>
     <message>
         <source>Cross Section is not defined yet.</source>
         <translation>断面がまだ定義されていません。</translation>
+    </message>
+    <message>
+        <source>Invalid name for cross section. The name should be &quot;X1&quot;, &quot;X2&quot;, ...　or &quot;XS1&quot;, &quot;XS2&quot;, ...</source>
+        <translation>不正な名前です。名前は &quot;X1&quot;, &quot;X2&quot;,もしくは &quot;XS1&quot;, &quot;XS2&quot; などとして下さい。</translation>
     </message>
 </context>
 <context>
@@ -38519,11 +38987,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>WSE</source>
-        <translation>水面標高</translation>
+        <translation type="vanished">水面標高</translation>
     </message>
     <message>
         <source>HWMs</source>
-        <translation>HWMs</translation>
+        <translation type="vanished">HWMs</translation>
     </message>
     <message>
         <source>Scales font</source>
@@ -38539,6 +39007,10 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Right bank HWM</source>
         <translation>右岸側水面標高</translation>
+    </message>
+    <message>
+        <source>WSE</source>
+        <translation>水面標高</translation>
     </message>
 </context>
 <context>
@@ -38951,7 +39423,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>River Survey Data(*.riv)</source>
-        <translation>河川測量データ (*.riv)</translation>
+        <translation type="vanished">河川測量データ (*.riv)</translation>
     </message>
     <message>
         <source>Error</source>
@@ -38976,6 +39448,10 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>%1 is updated.</source>
         <translation>%1 が更新されました。</translation>
+    </message>
+    <message>
+        <source>Cross-Section Data (*.riv)</source>
+        <translation>横断測量データ (*.riv)</translation>
     </message>
 </context>
 <context>
@@ -39635,6 +40111,21 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Water Elevation Points</source>
         <translation>水面標高点</translation>
+    </message>
+</context>
+<!-- structured15dgridwithcrosssectionhecrasexporter_ja_JP.ts -->
+<context>
+    <name>QObject</name>
+    <message>
+        <source>HEC-RAS text files (*.dat)</source>
+        <translation>HEC-RAS テキストファイル (*.dat)</translation>
+    </message>
+</context>
+<context>
+    <name>Structured15DGridWithCrossSectionHecRasExporter</name>
+    <message>
+        <source>HEC-RAS</source>
+        <translation>HEC-RAS</translation>
     </message>
 </context>
 <!-- structured2dgridgdalimporter_ja_JP.ts -->

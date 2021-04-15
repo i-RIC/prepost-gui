@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>332</width>
-    <height>146</height>
+    <width>353</width>
+    <height>154</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -38,14 +38,14 @@
           </font>
          </property>
          <property name="text">
-          <string>rivmaker 2.0</string>
+          <string>rivmaker 2.0.2</string>
          </property>
         </widget>
        </item>
        <item>
         <widget class="QLabel" name="labelRelease">
          <property name="text">
-          <string>Release Date: 2021/1/30</string>
+          <string>Release Date: 2021/3/2</string>
          </property>
         </widget>
        </item>

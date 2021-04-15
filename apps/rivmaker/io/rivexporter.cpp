@@ -19,7 +19,7 @@ RivExporter::RivExporter()
 
 bool RivExporter::exportData(Project* project, QWidget* w)
 {
-	QString fname = QFileDialog::getSaveFileName(w, tr("Input File name to export"), project->rivFileName(), tr("River Survey Data(*.riv)"));
+	QString fname = QFileDialog::getSaveFileName(w, tr("Input File name to export"), project->rivFileName(), tr("Cross-Section Data (*.riv)"));
 	if (fname.isNull()) {return false;}
 
 	project->setRivFileName(fname);

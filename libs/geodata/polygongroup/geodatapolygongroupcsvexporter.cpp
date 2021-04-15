@@ -66,7 +66,7 @@ bool GeoDataPolygonGroupCsvExporter::doExport(GeoData* data, const QString& file
 	file.close();
 
 	if (holeExists) {
-		InformationDialog::warning(w, tr("Warning"), tr("Some polygon in this polygon group has holes, but holes are not exported to CSV file. If you want to export holes, please export to ESRI Shapefile."), "polygongroup_csv_export_hole");
+		InformationDialog::warning(w, tr("Warning"), tr("Some polygon in this data has holes, but holes are not exported to CSV file. If you want to export holes, please export to ESRI Shapefile."), "polygongroup_csv_export_hole");
 	}
 
 	return true;

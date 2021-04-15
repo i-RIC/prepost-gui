@@ -10,7 +10,7 @@ def lrelease(pro_filename):
   os.chdir(str(parentPath))
   try:
     subprocess.check_output('lrelease ' + proPath.name)
-    print('qmake executed for ' + proPath.name)
+    print('lrelease executed for ' + proPath.name)
   except subprocess.CalledProcessError:
     pass
   os.chdir(cwd)

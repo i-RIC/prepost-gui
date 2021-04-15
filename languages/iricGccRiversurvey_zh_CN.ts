@@ -5,13 +5,13 @@
     <name>GridCreatingConditionCreatorRiverSurvey</name>
     <message>
         <source>Create grid from river survey data</source>
-        <translation>根据河流调查数据创建网格</translation>
+        <translation type="vanished">根据河流调查数据创建网格</translation>
     </message>
     <message>
         <source>The grid shape is automatically defined using river survey data. You can specify the grid division number, by adding grid creation control points on river crosssections, river center, left bank, and right bank.
 Note: This algorithm is available only when river survey data is loaded!Please switch algorithm to this, after importing river survey data.
 </source>
-        <translation>网格形状是使用河流调查数据自动定义的。 通过在河流横截面，河流中心，左岸和右岸上添加网格创建控制点，可以指定网格划分号。
+        <translation type="vanished">网格形状是使用河流调查数据自动定义的。 通过在河流横截面，河流中心，左岸和右岸上添加网格创建控制点，可以指定网格划分号。
 注意：此算法仅在加载河流测量数据时才可用！导入河流测量数据后，请切换到该算法。</translation>
     </message>
     <message>
@@ -20,7 +20,21 @@ Note: This algorithm is available only when river survey data is loaded!Please s
     </message>
     <message>
         <source>No river survey data exists in geographic data now. This algorithmn is not available.</source>
-        <translation>现在，地理数据中不存在河流调查数据。 该算法不可用。</translation>
+        <translation type="vanished">现在，地理数据中不存在河流调查数据。 该算法不可用。</translation>
+    </message>
+    <message>
+        <source>Create grid from cross-section data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The grid shape is automatically defined using cross-section data. You can specify the grid division number, by adding grid creation control points on river crosssections, river center, left bank, and right bank.
+Note: This algorithm is available only when cross-section data is loaded!Please switch algorithm to this, after importing cross-section data.
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No cross-section data exists in geographic data now. This algorithmn is not available.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -35,7 +49,7 @@ Note: This algorithm is available only when river survey data is loaded!Please s
     </message>
     <message>
         <source>There is no river survey data. This grid creating condition is not available.</source>
-        <translation>没有河流调查数据。 此网格创建条件不可用。</translation>
+        <translation type="vanished">没有河流调查数据。 此网格创建条件不可用。</translation>
     </message>
     <message>
         <source>&amp;Add Division Points...</source>
@@ -83,6 +97,10 @@ Note: This algorithm is available only when river survey data is loaded!Please s
     </message>
     <message>
         <source>Reposition Control Points</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>There is no cross-section data. This grid creating condition is not available.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

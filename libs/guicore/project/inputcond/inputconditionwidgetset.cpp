@@ -5,10 +5,22 @@
 #include "inputconditionwidgetfilename.h"
 #include "inputconditionwidgetset.h"
 
+#include "private/inputconditioncgnsfile.h"
 #include "private/inputconditiondependencysetsubcaptionaction.h"
 #include "private/inputconditiondependencysetsubimageaction.h"
 #include "private/inputconditiondependencychecksubcaptions.h"
 #include "private/inputconditiondependencychecksubimages.h"
+#include "private/inputconditionwidgetcgnsbaseiterativeintegerresult.h"
+#include "private/inputconditionwidgetcgnsbaseiterativerealresult.h"
+#include "private/inputconditionwidgetcgnsfile.h"
+#include "private/inputconditionwidgetcgnsgridcellintegerresult.h"
+#include "private/inputconditionwidgetcgnsgridcellrealresult.h"
+#include "private/inputconditionwidgetcgnsgridedgeiintegerresult.h"
+#include "private/inputconditionwidgetcgnsgridedgeirealresult.h"
+#include "private/inputconditionwidgetcgnsgridedgejintegerresult.h"
+#include "private/inputconditionwidgetcgnsgridedgejrealresult.h"
+#include "private/inputconditionwidgetcgnsgridnodeintegerresult.h"
+#include "private/inputconditionwidgetcgnsgridnoderealresult.h"
 #include "private/inputconditionwidgetcheckbox.h"
 #include "private/inputconditionwidgetfoldername.h"
 #include "private/inputconditionwidgetfunctional.h"
@@ -147,6 +159,7 @@ void InputConditionWidgetSet::buildWidget(QDomNode& itemNode, InputConditionCont
 		m_widgets.insert(parameterName, widget);
 	} else if (type == "constant" || type == "") {
 		QString valuetype = defElem.attribute("valueType");
+		std::string cgnsFile = iRIC::toStr(defElem.attribute("cgnsFile"));
 		if (valuetype == "integer") {
 			if (defElem.attribute("checkBox", "false") == "true") {
 				widget = new InputConditionWidgetCheckbox(defNode, t, &(cset.integer(parameterName)));
@@ -173,6 +186,38 @@ void InputConditionWidgetSet::buildWidget(QDomNode& itemNode, InputConditionCont
 				w->setCaption(parameterCaption);
 			}
 			widget = w;
+		} else if (valuetype == "cgns_filename") {
+			widget = new InputConditionWidgetCgnsFile(defNode, t, &(cset.string(parameterName)), getCgnsFile(parameterName));
+		} else if (valuetype == "result_gridNodeInteger") {
+			if (cgnsFile.size() == 0) {throw (ErrorMessage(QString("cgnsFile attribute is not set for %1").arg(parameterName.c_str())));}
+			widget = new InputConditionWidgetCgnsGridNodeIntegerResult(defNode, t, &(cset.string(parameterName)), getCgnsFile(cgnsFile));
+		} else if (valuetype == "result_gridNodeReal") {
+			if (cgnsFile.size() == 0) {throw (ErrorMessage(QString("cgnsFile attribute is not set for %1").arg(parameterName.c_str())));}
+			widget = new InputConditionWidgetCgnsGridNodeRealResult(defNode, t, &(cset.string(parameterName)), getCgnsFile(cgnsFile));
+		} else if (valuetype == "result_gridCellInteger") {
+			if (cgnsFile.size() == 0) {throw (ErrorMessage(QString("cgnsFile attribute is not set for %1").arg(parameterName.c_str())));}
+			widget = new InputConditionWidgetCgnsGridCellIntegerResult(defNode, t, &(cset.string(parameterName)), getCgnsFile(cgnsFile));
+		} else if (valuetype == "result_gridCellReal") {
+			if (cgnsFile.size() == 0) {throw (ErrorMessage(QString("cgnsFile attribute is not set for %1").arg(parameterName.c_str())));}
+			widget = new InputConditionWidgetCgnsGridCellRealResult(defNode, t, &(cset.string(parameterName)), getCgnsFile(cgnsFile));
+		} else if (valuetype == "result_gridEdgeIInteger") {
+			if (cgnsFile.size() == 0) {throw (ErrorMessage(QString("cgnsFile attribute is not set for %1").arg(parameterName.c_str())));}
+			widget = new InputConditionWidgetCgnsGridEdgeIIntegerResult(defNode, t, &(cset.string(parameterName)), getCgnsFile(cgnsFile));
+		} else if (valuetype == "result_gridEdgeIReal") {
+			if (cgnsFile.size() == 0) {throw (ErrorMessage(QString("cgnsFile attribute is not set for %1").arg(parameterName.c_str())));}
+			widget = new InputConditionWidgetCgnsGridEdgeIRealResult(defNode, t, &(cset.string(parameterName)), getCgnsFile(cgnsFile));
+		} else if (valuetype == "result_gridEdgeJInteger") {
+			if (cgnsFile.size() == 0) {throw (ErrorMessage(QString("cgnsFile attribute is not set for %1").arg(parameterName.c_str())));}
+			widget = new InputConditionWidgetCgnsGridEdgeJIntegerResult(defNode, t, &(cset.string(parameterName)), getCgnsFile(cgnsFile));
+		} else if (valuetype == "result_gridEdgeJReal") {
+			if (cgnsFile.size() == 0) {throw (ErrorMessage(QString("cgnsFile attribute is not set for %1").arg(parameterName.c_str())));}
+			widget = new InputConditionWidgetCgnsGridEdgeJRealResult(defNode, t, &(cset.string(parameterName)), getCgnsFile(cgnsFile));
+		} else if (valuetype == "result_baseIterativeInteger") {
+			if (cgnsFile.size() == 0) {throw (ErrorMessage(QString("cgnsFile attribute is not set for %1").arg(parameterName.c_str())));}
+			widget = new InputConditionWidgetCgnsBaseIterativeIntegerResult(defNode, t, &(cset.string(parameterName)), getCgnsFile(cgnsFile));
+		} else if (valuetype == "result_baseIterativeReal") {
+			if (cgnsFile.size() == 0) {throw (ErrorMessage(QString("cgnsFile attribute is not set for %1").arg(parameterName.c_str())));}
+			widget = new InputConditionWidgetCgnsBaseIterativeRealResult(defNode, t, &(cset.string(parameterName)), getCgnsFile(cgnsFile));
 		} else {
 			throw(ErrorMessage("Wrong conditionType is set."));
 		}
@@ -382,4 +427,15 @@ QString InputConditionWidgetSet::labelName(const QDomNode& itemNode)
 	} else {
 		return "caption_default";
 	}
+}
+
+InputConditionCgnsFile* InputConditionWidgetSet::getCgnsFile(const std::string& name)
+{
+	auto it = m_cgnsFiles.find(name);
+	if (it != m_cgnsFiles.end()) {
+		return *it;
+	}
+	auto cgnsFile = new InputConditionCgnsFile();
+	m_cgnsFiles.insert(name, cgnsFile);
+	return cgnsFile;
 }

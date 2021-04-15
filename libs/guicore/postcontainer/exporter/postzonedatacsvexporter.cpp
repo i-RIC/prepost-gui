@@ -5,6 +5,7 @@
 #include <QTextStream>
 #include <QVector2D>
 
+#include <vtkCellData.h>
 #include <vtkStructuredGrid.h>
 #include <vtkUnstructuredGrid.h>
 #include <vtkPointData.h>
@@ -43,6 +44,22 @@ void exportStructuredGrid(PostZoneDataContainer* c, QTextStream& stream, vtkStru
 			}
 		}
 	}
+	vtkCellData* cData = sgrid->GetCellData();
+	for (int i = 0; i < cData->GetNumberOfArrays(); ++i){
+		vtkDataArray* array = cData->GetArray(i);
+		int comps = array->GetNumberOfComponents();
+		QString name = cData->GetArrayName(i);
+		if (comps == 1){
+			stream << "," << name;
+		} else if (comps == 2){
+			stream << "," << name << "X," << name << "Y";
+		} else if (comps == 3){
+			stream << "," << name << "X," << name << "Y";
+			if (dim[2] != 1){
+				stream << "," << name << "Z";
+			}
+		}
+	}
 	stream << "\r\n";
 
 	// data
@@ -66,6 +83,27 @@ void exportStructuredGrid(PostZoneDataContainer* c, QTextStream& stream, vtkStru
 						stream << "," << *tuples << "," << *(tuples + 1);
 					} else if (comps == 3){
 						double* tuples = array->GetTuple3(c->nodeIndex(i, j, k));
+						stream << "," << *tuples << "," << *(tuples + 1);
+						if (dim[2] != 1){
+							stream << "," << *(tuples + 2);
+						}
+					}
+				}
+				if (i == imax || j == jmax || (dim[2] != 1 && k == kmax)) {
+					stream << "\r\n";
+					continue;
+				}
+
+				for (int l = 0; l < cData->GetNumberOfArrays(); ++l) {
+					vtkDataArray* array = cData->GetArray(l);
+					int comps = array->GetNumberOfComponents();
+					if (comps == 1){
+						stream << "," << array->GetTuple1(c->cellIndex(i, j, k));
+					} else if (comps == 2){
+						double* tuples = array->GetTuple2(c->cellIndex(i, j, k));
+						stream << "," << *tuples << "," << *(tuples + 1);
+					} else if (comps == 3){
+						double* tuples = array->GetTuple3(c->cellIndex(i, j, k));
 						stream << "," << *tuples << "," << *(tuples + 1);
 						if (dim[2] != 1){
 							stream << "," << *(tuples + 2);

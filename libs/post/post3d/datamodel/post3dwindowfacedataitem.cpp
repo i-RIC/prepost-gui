@@ -1,4 +1,3 @@
-#include "post3dwindowarrowgroupdataitem.h"
 #include "post3dwindowcontourgroupdataitem.h"
 #include "post3dwindowfacedataitem.h"
 #include "post3dwindowzonedataitem.h"
@@ -33,12 +32,6 @@ public:
 
 		m_command->redoStandardItem();
 
-		Post3dWindowArrowGroupDataItem* p2 = dynamic_cast<Post3dWindowArrowGroupDataItem*>(m_item->parent());
-		if (p2 != nullptr) {
-			p2->setupAppendFilter();
-			p2->updatePolyData();
-		}
-		p2->updateVisibility();
 		m_item->setIsCommandExecuting(false);
 	}
 	void undo() {
@@ -46,12 +39,6 @@ public:
 
 		m_command->undoStandardItem();
 
-		Post3dWindowArrowGroupDataItem* p2 = dynamic_cast<Post3dWindowArrowGroupDataItem*>(m_item->parent());
-		if (p2 != nullptr) {
-			p2->setupAppendFilter();
-			p2->updatePolyData();
-		}
-		p2->updateVisibility();
 		m_item->setIsCommandExecuting(false);
 	}
 private:
@@ -92,11 +79,6 @@ Post3dWindowFaceDataItem::~Post3dWindowFaceDataItem()
 	m_isCommandExecuting = true;
 	m_standardItem->setCheckState(Qt::Unchecked);
 	m_isCommandExecuting = false;
-
-	Post3dWindowArrowGroupDataItem* p2 = dynamic_cast<Post3dWindowArrowGroupDataItem*>(parent());
-	if (p2 != nullptr) {
-		iRICUndoStack::instance().push(new Post3dWindowFaceDataItemChangeCommand(this));
-	}
 }
 
 void Post3dWindowFaceDataItem::doLoadFromProjectMainFile(const QDomNode& node)
@@ -232,10 +214,6 @@ void Post3dWindowFaceDataItem::handleStandardItemChange()
 	if (m_isCommandExecuting == true) {return;}
 	Post3dWindowContourGroupDataItem* p1 = dynamic_cast<Post3dWindowContourGroupDataItem*>(parent());
 	if (p1 != nullptr) {GraphicsWindowDataItem::handleStandardItemChange();}
-	Post3dWindowArrowGroupDataItem* p2 = dynamic_cast<Post3dWindowArrowGroupDataItem*>(parent());
-	if (p2 != nullptr) {
-		iRICUndoStack::instance().push(new Post3dWindowFaceDataItemChangeCommand(this));
-	}
 }
 
 void Post3dWindowFaceDataItem::innerUpdateZScale(double scale)

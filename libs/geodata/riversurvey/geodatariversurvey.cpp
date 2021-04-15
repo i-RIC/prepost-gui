@@ -123,7 +123,7 @@ GeoDataRiverSurvey::GeoDataRiverSurvey(ProjectDataItem* d, GeoDataCreator* creat
 	GeoData(d, creator, att),
 	impl {new Impl {this}}
 {
-	m_headPoint = new GeoDataRiverPathPoint("Dummy", 0, 0);
+	m_headPoint = new GeoDataRiverPathPoint("Dummy", 0, 0, this);
 	connect(impl->m_gridThread, SIGNAL(gridUpdated()), this, SLOT(updateBackgroundGrid()));
 
 	impl->setupActions();
@@ -376,6 +376,7 @@ void GeoDataRiverSurvey::doLoadFromProjectMainFile(const QDomNode& node)
 		impl->m_interpolateLinearAction->setChecked(true);
 	}
 	impl->m_menuIsSetup = false;
+	impl->setupMenu();
 	impl->updateMouseCursor(graphicsView());
 }
 
@@ -407,7 +408,7 @@ void GeoDataRiverSurvey::loadExternalData(const QString& filename)
 			GeoDataRiverPathPoint* newPoint;
 			for (unsigned int i = 0; i < rs->points.size(); ++i) {
 				iRICLib::RiverPathPoint* libp = rs->points.at(i);
-				newPoint = new GeoDataRiverPathPoint();
+				newPoint = new GeoDataRiverPathPoint(this);
 				newPoint->loadFromiRICLibObject(libp);
 				before->addPathPoint(newPoint);
 				before = newPoint;
@@ -442,7 +443,7 @@ void GeoDataRiverSurvey::loadExternalData(const QString& filename)
 		bool nextExist;
 		s >> nextExist;
 		while (nextExist) {
-			newPoint = new GeoDataRiverPathPoint();
+			newPoint = new GeoDataRiverPathPoint(this);
 			newPoint->load(s, projectData()->version());
 			before->addPathPoint(newPoint);
 			before = newPoint;
@@ -594,7 +595,7 @@ void GeoDataRiverSurvey::generateData()
 	}
 
 	if (pointMapDataList.size() == 0) {
-		QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("No points data to map is found. Please import points data."));
+		QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("No point cloud data to map is found. Please import point cloud data."));
 		return;
 	}
 
@@ -625,7 +626,7 @@ void GeoDataRiverSurvey::generateData()
 
 	double nextName = upstreamName;
 	for (int i = 0; i < centerLine.size(); ++i) {
-		auto newPoint = new GeoDataRiverPathPoint();
+		auto newPoint = new GeoDataRiverPathPoint(this);
 		newPoint->InhibitInterpolatorUpdate = true;
 		newPoint->setName(QString::number(nextName, 'f', 1));
 		newPoint->setPosition(centerLine.at(i));
@@ -703,8 +704,8 @@ void GeoDataRiverSurvey::generateData()
 	informSelection(graphicsView());
 	renderGraphicsView();
 
-	InformationDialog::information(preProcessorWindow(), tr("Information"), tr("River survey data is generated using Points data.\n"
-																																						 "If you want to adjust cross section position and map Points data again, you can use \"Map points data\""), "riversurvey_mapping_dem");
+	InformationDialog::information(preProcessorWindow(), tr("Information"), tr("Cross-section data is generated using point cloud data.\n"
+																																						 "If you want to adjust cross section position and map point clouod data again, you can use \"Map point cloud data\""), "riversurvey_mapping_dem");
 }
 
 void GeoDataRiverSurvey::buildBankLines()
@@ -838,7 +839,7 @@ void GeoDataRiverSurvey::deleteSelectedPoints()
 	}
 
 	if (num - selectedNum < 2) {
-		QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("River survey data need at least 2 center points."), QMessageBox::Ok, QMessageBox::Ok);
+		QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("Cross-section data need at least 2 center points."), QMessageBox::Ok, QMessageBox::Ok);
 	} else {
 		iRICUndoStack::instance().push(new DeleteRiverPathPointCommand(this));
 	}

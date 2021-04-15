@@ -53,7 +53,11 @@ LIBS += \
 	-lvtkCommonDataModel-$${VTK_MAJ_MIN} \
 	-lvtkCommonExecutionModel-$${VTK_MAJ_MIN} \
 	-lvtkCommonMath-$${VTK_MAJ_MIN} \
+	-lvtkFilterScore-$${VTK_MAJ_MIN} \
+	-lvtkFiltersExtraction-$${VTK_MAJ_MIN} \
 	-lvtkFiltersFlowPaths-$${VTK_MAJ_MIN} \
+	-lvtkFiltersGeneral-$${VTK_MAJ_MIN} \
+	-lvtkFiltersSources-$${VTK_MAJ_MIN} \
 	-lvtkInteractionStyle-$${VTK_MAJ_MIN} \
 	-lvtkInteractionWidgets-$${VTK_MAJ_MIN} \
 	-lvtkRenderingAnnotation-$${VTK_MAJ_MIN} \
@@ -144,6 +148,8 @@ HEADERS += arrowsettingcontainer.h \
            timeformat/timeformateditwidget.h \
            timeformat/timeformatutil.h \
            vtktool/vtkactorpolydatamapperpair.h \
+           vtktool/vtkarrowlegendactors.h \
+           vtktool/vtkarrowsactor.h \
            vtktool/vtklabel2dactor.h \
            vtktool/vtklineactor.h \
            vtktool/vtklinesactor.h \
@@ -182,6 +188,8 @@ HEADERS += arrowsettingcontainer.h \
            polygon/private/polygoncontroller_impl.h \
            polyline/private/polylinecontroller_impl.h \
            vtktool/private/vtkactorpolydatamapperpair_impl.h \
+           vtktool/private/vtkarrowlegendactors_impl.h \
+           vtktool/private/vtkarrowsactor_impl.h \
            vtktool/private/vtklabel2dactor_impl.h \
            vtktool/private/vtklineactor_impl.h \
            vtktool/private/vtklinesactor_impl.h \
@@ -292,6 +300,8 @@ SOURCES += arrowsettingcontainer.cpp \
            timeformat/timeformateditwidget.cpp \
            timeformat/timeformatutil.cpp \
            vtktool/vtkactorpolydatamapperpair.cpp \
+           vtktool/vtkarrowlegendactors.cpp \
+           vtktool/vtkarrowsactor.cpp \
            vtktool/vtklabel2dactor.cpp \
            vtktool/vtklineactor.cpp \
            vtktool/vtklinesactor.cpp \

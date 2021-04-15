@@ -79,7 +79,6 @@ HEADERS += anms.h \
            private/qpointfcontainer_impl.h \
            private/rangecontainert_detail.h \
            private/simplevaluecontainert_detail.h \
-           private/tpoexporter_impl.h \
            private/valuearraycontainert_detail.h \
            private/valuechangert_detail.h \
            private/valuerestorert_detail.h \

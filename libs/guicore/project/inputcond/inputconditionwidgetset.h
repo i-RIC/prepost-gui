@@ -9,6 +9,7 @@
 
 class QWidget;
 class QDomNode;
+class InputConditionCgnsFile;
 class InputConditionContainerSet;
 class InputConditionWidget;
 class SolverDefinition;
@@ -48,6 +49,13 @@ private:
 	void buildDep(const QDomNode&, InputConditionContainerSet& cset, InputConditionWidget* w);
 	void addTooltip(InputConditionWidget* widget, QDomNode defNode, const SolverDefinitionTranslator& t);
 
+	InputConditionCgnsFile* getCgnsFile(const std::string& name);
+
+	QMap<std::string, InputConditionCgnsFile*> m_cgnsFiles;
 	QMap<std::string, InputConditionWidget*> m_widgets;
+
+public:
+	friend class InputConditionDialog;
+	friend class InputConditionCgnsFileSelectDialog;
 };
 #endif // INPUTCONDITIONWIDGETSET_H

@@ -173,7 +173,7 @@ iRICMainWindow::~iRICMainWindow()
 	saveWindowState();
 }
 
-PreProcessorWindowInterface* iRICMainWindow::preProcessorWindow() const
+PreProcessorWindow* iRICMainWindow::preProcessorWindow() const
 {
 	return m_preProcessorWindow;
 }
@@ -267,6 +267,13 @@ void iRICMainWindow::newProject(SolverDefinitionAbstract* solver)
 	setupForNewProjectData();
 
 	m_projectData->switchToDefaultCgnsFile();
+
+	bool ok = m_preProcessorWindow->setupCgnsFilesIfNeeded(true);
+	if (!ok) {
+		closeProject();
+		return;
+	}
+
 	connect(m_projectData->mainfile()->postSolutionInfo(), SIGNAL(allPostProcessorsUpdated()), this, SIGNAL(allPostProcessorsUpdated()));
 	connect(m_projectData->mainfile()->postSolutionInfo(), SIGNAL(updated()), this, SLOT(updatePostActionStatus()));
 	connect(m_actionManager->openWorkFolderAction, SIGNAL(triggered()), m_projectData, SLOT(openWorkDirectory()));
@@ -402,6 +409,12 @@ void iRICMainWindow::openProject(const QString& filename)
 		return;
 	}
 
+	ok = m_preProcessorWindow->setupCgnsFilesIfNeeded(true);
+	if (!ok) {
+		closeProject();
+		return;
+	}
+
 	connect(m_projectData->mainfile()->postSolutionInfo(), SIGNAL(allPostProcessorsUpdated()), this, SIGNAL(allPostProcessorsUpdated()));
 	connect(m_projectData->mainfile()->postSolutionInfo(), SIGNAL(updated()), this, SLOT(updatePostActionStatus()));
 	connect(m_actionManager->openWorkFolderAction, SIGNAL(triggered()), m_projectData, SLOT(openWorkDirectory()));
@@ -429,6 +442,8 @@ void iRICMainWindow::openProject(const QString& filename)
 	}
 
 	iRICUndoStack::instance().clear();
+
+	m_preProcessorWindow->setupCgnsFilesIfNeeded(false);
 
 	m_isOpening = false;
 	LastIODirectory::set(QFileInfo(filename).absolutePath());

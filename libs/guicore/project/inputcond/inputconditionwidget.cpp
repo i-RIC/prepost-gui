@@ -3,6 +3,9 @@
 
 #include <misc/xmlsupport.h>
 
+InputConditionWidget::InputConditionWidget()
+{}
+
 InputConditionWidget::InputConditionWidget(QDomNode)
 {}
 

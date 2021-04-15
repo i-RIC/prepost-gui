@@ -20,7 +20,7 @@
     </message>
     <message>
         <source>River Survey data not found. Please define Center Line by yourself.</source>
-        <translation>Nao foram encontrados os dados de levantamento do rio. Crie a linha central por iniciativa propria.</translation>
+        <translation type="vanished">Nao foram encontrados os dados de levantamento do rio. Crie a linha central por iniciativa propria.</translation>
     </message>
     <message>
         <source>Information</source>
@@ -145,6 +145,10 @@
     <message>
         <source>Edge Coordinates</source>
         <translation>Coordenadas das linhas</translation>
+    </message>
+    <message>
+        <source>Cross-section data not found. Please define Center Line by yourself.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

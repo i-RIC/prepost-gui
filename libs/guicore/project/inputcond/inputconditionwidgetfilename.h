@@ -20,14 +20,16 @@ public:
 	void addTooltip(const QString& tooltip) override;
 
 public slots:
-	void setValue(const QString& newvalue);
+	virtual void setValue(const QString& newvalue);
 
-private slots:
-	void handleEditingFinished();
+protected slots:
+	virtual void handleEditingFinished();
 	void openFileDialog();
 
-private:
+protected:
 	InputConditionContainerString* m_container;
+
+private:
 	AsciiOnlyLineEdit* m_lineEdit;
 	bool m_all;
 };

@@ -139,6 +139,9 @@ double CrossSection::waterElevation() const
 
 void CrossSection::setWaterElevation(double e)
 {
+	// round to two decimals
+	e = int(e * 100 + 0.5) / 100.0;
+
 	impl->m_waterElevation = e;
 	project()->setModified();
 }

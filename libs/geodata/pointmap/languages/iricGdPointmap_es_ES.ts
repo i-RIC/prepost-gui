@@ -72,7 +72,7 @@
     </message>
     <message>
         <source>P&amp;ointset Data</source>
-        <translation>Datos de Conjunto de &amp;Puntos</translation>
+        <translation type="vanished">Datos de Conjunto de &amp;Puntos</translation>
     </message>
     <message>
         <source>Information</source>
@@ -266,6 +266,10 @@
         <source>To interpolate points, you must specify more than two points, and the last point should be existing point. Do you want to retry, or cancel the operation?</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>P&amp;oint Cloud Data</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointmapAddPointDialog</name>
@@ -443,19 +447,23 @@
     <name>GeoDataPointmapRealCreator</name>
     <message>
         <source>Points</source>
-        <translation>Puntos</translation>
+        <translation type="vanished">Puntos</translation>
     </message>
     <message>
         <source>Points%1</source>
-        <translation>Puntos%1</translation>
+        <translation type="vanished">Puntos%1</translation>
+    </message>
+    <message>
+        <source>Point Cloud Data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Cloud Data%1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapRealExporter</name>
-    <message>
-        <source>Pointset (DEM etc.)</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message>
         <source>Topography File (*.tpo)</source>
         <translation>Archivo de Topografia (*.tpo)</translation>
@@ -467,6 +475,10 @@
     <message>
         <source>Error occured while exporting to %1.</source>
         <translation>Error ocurrio mientras exportandando a %1.</translation>
+    </message>
+    <message>
+        <source>Point Cloud Data (DEM etc.)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -570,7 +582,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Text file (*.csv *.txt)</source>
+        <source>Text file (*.csv *.txt *.xyz)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

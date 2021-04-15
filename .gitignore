@@ -28,6 +28,7 @@ apps/solvers
 apps/gridcreators
 apps/gridexporter_plugins
 apps/gridimporter_plugins
+apps/Miniconda3
 Makefile
 Makefile.*
 *.vcxproj.user

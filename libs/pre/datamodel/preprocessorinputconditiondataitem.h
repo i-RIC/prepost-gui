@@ -26,6 +26,7 @@ public:
 
 	bool importInputCondition(const QString& filename);
 	bool exportInputCondition(const QString& filename);
+	bool setupCgnsFilesIfNeeded(QString* cgnsFileForGrid, bool *updated);
 	bool isSet() const;
 	bool isSetupCorrectly() const;
 

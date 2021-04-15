@@ -473,7 +473,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>&amp;River Survey</source>
-        <translation>&amp;河流勘测</translation>
+        <translation type="vanished">&amp;河流勘测</translation>
     </message>
     <message>
         <source>P&amp;ointset Data</source>
@@ -486,10 +486,6 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Polygon&amp;Group</source>
         <translation type="vanished">&amp;多边形组</translation>
-    </message>
-    <message>
-        <source>&amp;Polygon Group</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&amp;Color Setting...</source>
@@ -603,6 +599,22 @@ Do you really want to import grid from this file?</source>
         <source>Mapping geographic data, boundary condition finished successfully.</source>
         <translation>地理数据制图，边界条件成功完成</translation>
     </message>
+    <message>
+        <source>&amp;Cross-Section Data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Polygons</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Lines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>P&amp;oint Cloud Data</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGeoDataComplexGroupDataItem</name>
@@ -617,6 +629,10 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>&amp;Add</source>
         <translation>&amp;添加</translation>
+    </message>
+    <message>
+        <source>&amp;Import</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -642,7 +658,7 @@ Do you really want to import grid from this file?</source>
     <name>PreProcessorGeoDataGroupDataItem</name>
     <message>
         <source>&amp;Import...</source>
-        <translation>&amp;导入...</translation>
+        <translation type="vanished">&amp;导入...</translation>
     </message>
     <message>
         <source>&amp;Import from web...</source>
@@ -774,6 +790,10 @@ Do you really want to import grid from this file?</source>
         <source>Are you sure you want to delete all items in %1 group?</source>
         <translation>确定删除%1组内的全部项目？</translation>
     </message>
+    <message>
+        <source>&amp;Import</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGeoDataTopDataItem</name>
@@ -892,10 +912,6 @@ Do you really want to import grid from this file?</source>
         <translation type="unfinished">导出...</translation>
     </message>
     <message>
-        <source>Generate points data</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Topography File (*.tpo)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -921,6 +937,10 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>%1 generated.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Generate point cloud data</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1185,11 +1205,11 @@ This algorithm can be used only for structured grids.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Generate points data</source>
+        <source>%1 generated.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>%1 generated.</source>
+        <source>Generate point cloud data</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

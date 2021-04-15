@@ -55,92 +55,31 @@
     </message>
 </context>
 <context>
-    <name>Post3dWindowArrowGroupDataItem</name>
+    <name>Post3dWindowCellContourDataItem</name>
     <message>
-        <source>Arrow</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Arrow Setting</source>
+        <source>Range</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
-    <name>Post3dWindowArrowGroupSettingDialog</name>
+    <name>Post3dWindowCellContourGroupDataItem</name>
     <message>
-        <source>Arrow Setting</source>
+        <source>Range%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowCellContourGroupSettingDialog</name>
+    <message>
+        <source>Contour Setting (cell center)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Physical Value:</source>
+        <source>Value:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Length</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Auto</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Standard value:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>[m/s]</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Length on screen:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>[pixel]</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Minimum value to draw:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Sampling</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>All vertices</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Sampling rate:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Color</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Custom color</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>By scalar value</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Arrow Shape</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Arrow size:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Line width:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Faces</source>
+        <source>Regions</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -152,7 +91,65 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Face%1</source>
+        <source>&amp;Color Bar Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Range%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowCellContourGroupTopDataItem</name>
+    <message>
+        <source>Contours (cell center)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A maximum of four contours may be defined.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowCellRangeSettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>I Min</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>I Max</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>J Min</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>J Max</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>K Min</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>K Max</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enabled</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -361,6 +358,109 @@
     </message>
 </context>
 <context>
+    <name>Post3dWindowNodeGroupArrowFaceSettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>I</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>J</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>K</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>I Min</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>I Max</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>J Min</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>J Max</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>K Min</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>K Max</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enabled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sampling</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All vertices</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sampling rate:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>I-direction</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>J-direction</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>K-direction</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Arrow Shape</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Arrow size:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Line width:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowNodeScalarGroupDataItem</name>
     <message>
         <source>Isosurface</source>
@@ -379,6 +479,87 @@
     <name>Post3dWindowNodeScalarGroupTopDataItem</name>
     <message>
         <source>Isosurfaces</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorArrowDataItem</name>
+    <message>
+        <source>Face</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorArrowSettingDialog</name>
+    <message>
+        <source>Arrow Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Common Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Physical Value:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Length</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Standard value:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>[m/s]</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Length on screen:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>[pixel]</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Minimum value to draw:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Faces</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Face%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorArrowTopDataItem</name>
+    <message>
+        <source>Arrows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A maximum of four arrows may be defined.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

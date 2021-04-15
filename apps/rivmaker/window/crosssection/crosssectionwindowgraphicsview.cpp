@@ -15,6 +15,7 @@ int HWM_BOTTOM_MARGIN = 6;
 
 enum Position {
 	Left,
+	Center,
 	Right
 };
 
@@ -29,11 +30,13 @@ void drawHWM(const QString& label, double y, Position pos, QWidget* widget, QPai
 
 	QFontMetrics metrics(painter->font());
 	auto rect = metrics.boundingRect(label);
-	double left;
+	double left = 0;
 	if (pos == Left) {
 		left = HWM_RIGHT_MARGIN;
 	} else if (pos == Right) {
 		left = widget->width() - HWM_RIGHT_MARGIN - rect.width();
+	} else if (pos == Center) {
+		left = (widget->width() - rect.width()) * 0.5;
 	}
 	auto top = y - HWM_BOTTOM_MARGIN - rect.height();
 	QRectF fontRect(left, top, rect.width() + 1, rect.height() + 1);
@@ -87,17 +90,19 @@ void CrossSectionWindowGraphicsView::drawHWMs(QPainter* painter, const QMatrix& 
 	painter->setPen(m_crossSectionWindowDisplaySetting.WSEColor);
 	auto p = matrix.map(QPointF(0, cs->waterElevation()));
 
+	painter->setPen(QPen(QBrush(m_crossSectionWindowDisplaySetting.WSEColor), 1, Qt::SolidLine));
 	if (cw->showWSE()) {
+		drawHWM(tr("WSE"), p.y(), Center, this, painter);
 		painter->drawLine(QPointF(0, p.y()), QPointF(width(), p.y()));
 	}
 
-	painter->setPen(QPen(QBrush(m_crossSectionWindowDisplaySetting.HWMColor), 1, Qt::DashLine));
-
+	painter->setPen(QPen(QBrush(m_crossSectionWindowDisplaySetting.LeftHWMColor), 1, Qt::SolidLine));
 	double lbhwm = cw->project()->calcLeftBankHWMAtCrossSection(cs);
 	if (lbhwm != Project::INVALID_HWM && cw->showLBHWM()) {
 		auto p = matrix.map(QPointF(0, lbhwm));
 		drawHWM(tr("Left bank HWM"), p.y(), Left, this, painter);
 	}
+	painter->setPen(QPen(QBrush(m_crossSectionWindowDisplaySetting.RightHWMColor), 1, Qt::SolidLine));
 	double rbhwm = cw->project()->calcRightBankHWMAtCrossSection(cs);
 	if (rbhwm != Project::INVALID_HWM && cw->showRBHWM()) {
 		auto p = matrix.map(QPointF(0, rbhwm));

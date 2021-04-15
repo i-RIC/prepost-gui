@@ -34,17 +34,30 @@ void GeoDataRiverSurveyImporterSettingDialog::setAllNamesAreNumber(bool allNumbe
 	}
 }
 
+void GeoDataRiverSurveyImporterSettingDialog::setFileName(const QString& name)
+{
+	ui->csvFilenameEdit->setFilename(name + ".csv");
+}
+
 GeoDataRiverSurveyImporterSettingDialog::CenterPointSetting GeoDataRiverSurveyImporterSettingDialog::centerPointSetting() const
 {
 	if (ui->middlePointRadioButton->isChecked()) {
 		return cpMiddle;
 	} else if (ui->smallestRadioButton->isChecked()) {
 		return cpElevation;
+	} else if (ui->csvFileRadioButton->isChecked()) {
+		return cpFile;
 	}
+
 	return cpMiddle;
 }
 
 bool GeoDataRiverSurveyImporterSettingDialog::reverseOrder() const
 {
 	return ui->downToUpRadioButton->isChecked();
+}
+
+QString GeoDataRiverSurveyImporterSettingDialog::csvFileName() const
+{
+	return ui->csvFilenameEdit->filename();
 }
