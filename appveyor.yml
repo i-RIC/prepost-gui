@@ -20,7 +20,7 @@ skip_commits:
     - tools/*
 
 image:
-  - Visual Studio 2013
+##  - Visual Studio 2013
   - Visual Studio 2019
 
 # called before clone
@@ -45,7 +45,7 @@ init:
   - ps: Write-Output $CommitAndPush
 
 configuration:
-  - Debug
+##  - Debug
   - Release
 
 matrix:
@@ -59,19 +59,21 @@ before_build:
   - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2019" ( call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvars64.bat" )
   - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2013" ( call "C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\vcvarsall.bat" x86_amd64 )
   - cd %APPVEYOR_BUILD_FOLDER%
-  - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2019" ( curl -L -O https://github.com/i-RIC/iricdev-2019/archive/master.zip )
+  - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2019" ( curl -L -O https://github.com/i-RIC/iricdev-2019/archive/2019.zip )
   - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2013" ( curl -L -O https://github.com/i-RIC/iricdev/archive/master.zip )
   - cd \
-  - 7z x %APPVEYOR_BUILD_FOLDER%\master.zip
-  - del %APPVEYOR_BUILD_FOLDER%\master.zip
-  - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2019" ( cd \iricdev-2019-master )
+  - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2019" ( 7z x %APPVEYOR_BUILD_FOLDER%\2019.zip )
+  - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2013" ( 7z x %APPVEYOR_BUILD_FOLDER%\master.zip )
+  - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2019" ( del %APPVEYOR_BUILD_FOLDER%\2019.zip )
+  - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2013" ( del %APPVEYOR_BUILD_FOLDER%\master.zip )
+  - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2019" ( cd \iricdev-2019-2019 )
   - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2013" ( cd \iricdev-master )
   - md lib
   - cd lib
   - ps: |
       if ($env:APPVEYOR_BUILD_WORKER_IMAGE -eq "Visual Studio 2019") {
-        (New-Object Net.WebClient).DownloadFile("https://ci.appveyor.com/api/projects/i-RIC/iricdev-2019/artifacts/lib/install.zip?branch=2019&job=Configuration:+Debug", "\iricdev-2019-master\lib\install-Debug.zip")
-        (New-Object Net.WebClient).DownloadFile("https://ci.appveyor.com/api/projects/i-RIC/iricdev-2019/artifacts/lib/install.zip?branch=2019r&job=Configuration:+Release", "\iricdev-2019-master\lib\install-Release.zip")
+        (New-Object Net.WebClient).DownloadFile("https://ci.appveyor.com/api/projects/i-RIC/iricdev-2019/artifacts/lib/install.zip?branch=2019&job=Configuration:+Debug", "\iricdev-2019-2019\lib\install-Debug.zip")
+        (New-Object Net.WebClient).DownloadFile("https://ci.appveyor.com/api/projects/i-RIC/iricdev-2019/artifacts/lib/install.zip?branch=2019r&job=Configuration:+Release", "\iricdev-2019-2019\lib\install-Release.zip")
       }
   - ps: |
       if ($env:APPVEYOR_BUILD_WORKER_IMAGE -eq "Visual Studio 2013") {
@@ -82,18 +84,18 @@ before_build:
   - cd install
   - 7z x -aoa ..\install-Debug.zip
   - 7z x -aoa ..\install-Release.zip
-  - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2019" ( cd \iricdev-2019-master )
+  - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2019" ( cd \iricdev-2019-2019 )
   - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2013" ( cd \iricdev-master )
   - call create-files.cmd
   - cd %APPVEYOR_BUILD_FOLDER%
   - if not exist libdlls (md libdlls)
   - if not exist libdlls\Debug (md libdlls\Debug)
   - if not exist libdlls\Release (md libdlls\Release)
-  - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2019" ( copy /y \iricdev-2019-master\paths.pri . )
-  - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2019" ( copy /y \iricdev-2019-master\dirExt.prop .\tools\data\. )
+  - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2019" ( copy /y \iricdev-2019-2019\paths.pri . )
+  - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2019" ( copy /y \iricdev-2019-2019\dirExt.prop .\tools\data\. )
   - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2013" ( copy /y \iricdev-master\paths.pri . )
   - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2013" ( copy /y \iricdev-master\dirExt.prop .\tools\data\. )
-  - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2019" ( dir /s \iricdev-2019-master )
+  - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2019" ( dir /s \iricdev-2019-2019 )
   - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2013" ( dir /s \iricdev-master )
   - ps: 'Get-Command qmake'
   - qmake -recursive -tp vc
