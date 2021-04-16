@@ -20,7 +20,7 @@ skip_commits:
     - tools/*
 
 image:
-##  - Visual Studio 2013
+  - Visual Studio 2013
   - Visual Studio 2019
 
 # called before clone
@@ -45,7 +45,7 @@ init:
   - ps: Write-Output $CommitAndPush
 
 configuration:
-##  - Debug
+  - Debug
   - Release
 
 matrix:
