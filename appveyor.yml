@@ -20,7 +20,7 @@ skip_commits:
     - tools/*
 
 image:
-##  - Visual Studio 2013
+  - Visual Studio 2013
   - Visual Studio 2019
 
 # called before clone
@@ -45,7 +45,7 @@ init:
   - ps: Write-Output $CommitAndPush
 
 configuration:
-##  - Debug
+  - Debug
   - Release
 
 matrix:
@@ -73,7 +73,7 @@ before_build:
   - ps: |
       if ($env:APPVEYOR_BUILD_WORKER_IMAGE -eq "Visual Studio 2019") {
         (New-Object Net.WebClient).DownloadFile("https://ci.appveyor.com/api/projects/i-RIC/iricdev-2019/artifacts/lib/install.zip?branch=2019&job=Configuration:+Debug", "\iricdev-2019-2019\lib\install-Debug.zip")
-        (New-Object Net.WebClient).DownloadFile("https://ci.appveyor.com/api/projects/i-RIC/iricdev-2019/artifacts/lib/install.zip?branch=2019r&job=Configuration:+Release", "\iricdev-2019-2019\lib\install-Release.zip")
+        (New-Object Net.WebClient).DownloadFile("https://ci.appveyor.com/api/projects/i-RIC/iricdev-2019/artifacts/lib/install.zip?branch=2019&job=Configuration:+Release", "\iricdev-2019-2019\lib\install-Release.zip")
       }
   - ps: |
       if ($env:APPVEYOR_BUILD_WORKER_IMAGE -eq "Visual Studio 2013") {
