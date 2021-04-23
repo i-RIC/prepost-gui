@@ -21,11 +21,19 @@
     </message>
     <message>
         <source>rivmaker 2.0</source>
-        <translation>rivmaker 2.0</translation>
+        <translation type="vanished">rivmaker 2.0</translation>
     </message>
     <message>
         <source>Release Date: 2021/1/30</source>
-        <translation>リリース日: 2021/1/30</translation>
+        <translation type="vanished">リリース日: 2021/1/30</translation>
+    </message>
+    <message>
+        <source>rivmaker 2.0.2</source>
+        <translation>rivmaker 2.0.2</translation>
+    </message>
+    <message>
+        <source>Release Date: 2021/3/2</source>
+        <translation>リリース日: 2021/3/2</translation>
     </message>
 </context>
 <context>
@@ -107,7 +115,11 @@
     <name>ChartGraphicsView</name>
     <message>
         <source>Aspect ratio: 1 / %1</source>
-        <translation>縦横比 1 / %1</translation>
+        <translation type="vanished">縦横比 1 / %1</translation>
+    </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / %1</source>
+        <translation>縦横比: 1 / %1</translation>
     </message>
 </context>
 <context>
@@ -134,7 +146,7 @@
     </message>
     <message>
         <source>Aspect ratio: 1 / </source>
-        <translation>縦横比: 1 / </translation>
+        <translation type="vanished">縦横比: 1 / </translation>
     </message>
     <message>
         <source>Fix aspect ratio</source>
@@ -143,6 +155,10 @@
     <message>
         <source>Fix region</source>
         <translation>領域を固定</translation>
+    </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / </source>
+        <translation>縦横比 1 / </translation>
     </message>
 </context>
 <context>
