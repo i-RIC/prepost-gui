@@ -63,7 +63,13 @@ void TopView::paramsFit()
 	double centerX = 0, centerY = 0;
 	double width = 1, height = 1;
 
-	QRectF bb = model()->rootDataItemView()->boundingBox();
+	QRectF bb;
+	auto view = model()->rootDataItemView();
+
+	if (view != nullptr) {
+		bb = view->boundingBox();
+	}
+
 	if (! bb.isNull()) {
 		auto c = bb.center();
 		centerX = c.x();
