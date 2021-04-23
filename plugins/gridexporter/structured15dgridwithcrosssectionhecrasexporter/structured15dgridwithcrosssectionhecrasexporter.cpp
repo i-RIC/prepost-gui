@@ -221,8 +221,8 @@ bool Structured15DGridWithCrossSectionHecRasExporter::doExport(Grid* grid, const
 		for (const Structured15DGridWithCrossSectionCrossSection::Altitude& alt : cs->altitudeInfo()) {
 			if (row_idx == 0) {
 				o.setFieldWidth(0);
-				o << "GR ";
-				o.setFieldWidth(5);
+				o << "GR";
+				o.setFieldWidth(6);
 				o << alt.m_height;
 				o.setFieldWidth(0);
 				o << " ";
