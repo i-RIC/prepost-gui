@@ -822,7 +822,7 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawAspectRatio(QPainter&
 
 	QSize windowSize = size();
 
-	auto aspectRatioStr = tr("Aspect ratio: 1 / %1").arg(aspectRatio());
+	auto aspectRatioStr = tr("Aspect ratio (V/H): 1 / %1").arg(aspectRatio());
 	QFontMetricsF metrics(painter.font());
 	auto rect = metrics.boundingRect(aspectRatioStr);
 
