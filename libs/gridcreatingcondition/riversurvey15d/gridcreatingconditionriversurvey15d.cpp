@@ -181,21 +181,18 @@ private:
 	std::list<GeoDataRiverSurveyCtrlPointBackup*> m_after;
 };
 
-
 // constructor
-GridCreatingConditionRiverSurvey15D::GridCreatingConditionRiverSurvey15D(ProjectDataItem* parent, GridCreatingConditionCreator* creator)
-	: GridCreatingCondition(parent, creator)
+GridCreatingConditionRiverSurvey15D::GridCreatingConditionRiverSurvey15D(ProjectDataItem* parent, GridCreatingConditionCreator* creator) :
+	GridCreatingCondition(parent, creator),
+	m_lastStartPoint {nullptr},
+	m_lastEndPoint {nullptr},
+	m_lastRegionAddStartPoint {nullptr},
+	m_lastRegionAddEndPoint {nullptr},
+	m_positionMode {GridCreatingConditionRiverSurvey15DRegionDialog::PositionMode::LeftBank},
+	m_rightClickingMenu {nullptr},
+	m_mouseEventMode {meNormal}
 {
-	m_lastStartPoint = nullptr;
-	m_lastEndPoint = nullptr;
-
-	m_lastRegionAddStartPoint = nullptr;
-	m_lastRegionAddEndPoint = nullptr;
-	m_positionMode = GridCreatingConditionRiverSurvey15DRegionDialog::PositionMode::CenterPoint;
-
 	m_selectedZone.point = nullptr;
-	m_mouseEventMode = meNormal;
-	m_rightClickingMenu = nullptr;
 	setupVtkContainers();
 	setupActions();
 	setActionStatus();
