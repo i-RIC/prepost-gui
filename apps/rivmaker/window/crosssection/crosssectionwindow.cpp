@@ -205,6 +205,9 @@ void CrossSectionWindow::setupToolBars()
 
 	m_displaySettingButton = new QPushButton("&Display Setting", this);
 	tb->addWidget(m_displaySettingButton);
+
+	m_fixAspectRatioCheckBox->setChecked(true);
+	setAspectRatio(5.0);
 }
 
 void CrossSectionWindow::updateWindowTitle()

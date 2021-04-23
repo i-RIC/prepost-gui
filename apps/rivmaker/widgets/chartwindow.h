@@ -54,6 +54,8 @@ protected:
 	QToolBar* displayToolBar() const;
 	QToolBar* viewToolBar() const;
 
+	QCheckBox* m_fixAspectRatioCheckBox;
+
 private:
 	void addDisplayToolBar();
 	void addViewToolBar();
@@ -67,7 +69,6 @@ private:
 	QCheckBox* m_showScalesCheckBox;
 	QCheckBox* m_showAspectRatioCheckBox;
 	QLineEdit* m_aspectRatioEdit;
-	QCheckBox* m_fixAspectRatioCheckBox;
 	QCheckBox* m_fixRegionCheckBox;
 };
 
