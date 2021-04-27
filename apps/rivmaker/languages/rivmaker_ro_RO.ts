@@ -12,11 +12,11 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>rivmaker 2.0</source>
+        <source>rivmaker 2.0.2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Release Date: 2021/1/30</source>
+        <source>Release Date: 2021/3/2</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -98,7 +98,7 @@
 <context>
     <name>ChartGraphicsView</name>
     <message>
-        <source>Aspect ratio: 1 / %1</source>
+        <source>Aspect ratio (V/H): 1 / %1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -125,15 +125,15 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Aspect ratio: 1 / </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Fix aspect ratio</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Fix region</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / </source>
         <translation type="unfinished"></translation>
     </message>
 </context>

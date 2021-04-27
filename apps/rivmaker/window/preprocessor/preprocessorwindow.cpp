@@ -52,6 +52,8 @@ PreProcessorWindow::~PreProcessorWindow()
 void PreProcessorWindow::setProject(Project* project)
 {
 	impl->m_model.setProject(project);
+	if (project == nullptr) {return;}
+
 	connect(project, SIGNAL(updated()), this, SLOT(update()));
 }
 

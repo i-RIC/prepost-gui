@@ -207,7 +207,7 @@ void GeoDataRiverSurveyCrosssectionWindow::setupToolBars()
 	spacer->setFixedWidth(10);
 	ui->viewToolBar->addWidget(spacer);
 
-	l = new QLabel(tr("Aspect ratio: 1 / "), this);
+	l = new QLabel(tr("Aspect ratio (V/H): 1 / "), this);
 	ui->viewToolBar->addWidget(l);
 
 	impl->m_aspectRatioEdit = new RealNumberEditWidget(this);

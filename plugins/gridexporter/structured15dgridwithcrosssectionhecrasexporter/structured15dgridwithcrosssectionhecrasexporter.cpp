@@ -180,35 +180,47 @@ bool Structured15DGridWithCrossSectionHecRasExporter::doExport(Grid* grid, const
 			o.setFieldWidth(0);
 			o << endl;
 		} else {
+			std::vector<double> pos_vec2, n_vec2;
 			int idx = 0;
 			while (idx < pos_vec.size()) {
+				if (idx < n_vec.size() - 1 && n_vec.at(idx) == n_vec.at(idx + 1)) {
+					++ idx;
+					continue;
+				}
+				pos_vec2.push_back(pos_vec.at(idx));
+				n_vec2.push_back(n_vec.at(idx));
+				++ idx;
+			}
+
+			idx = 0;
+			while (idx < pos_vec2.size()) {
 				if (idx == 0) {
 					o.setFieldWidth(0);
 					o << "NH ";
 
 					o.setFieldWidth(5);
-					o << n_vec.size();
+					o << n_vec2.size();
 
 					outputSingleSpace(&o);
-					outputNValue(&o, n_vec.at(0));
+					outputNValue(&o, n_vec2.at(idx));
 
 					outputSingleSpace(&o);
-					outputPosValue(&o, pos_vec.at(0), 7);
+					outputPosValue(&o, pos_vec2.at(idx), 7);
 				} else if ((idx + 1) % 5 == 0) {
 					outputSingleSpace(&o);
-					outputNValue(&o, n_vec.at(idx));
+					outputNValue(&o, n_vec2.at(idx));
 
 					o.setFieldWidth(0);
 					o << endl;
 					o << "NH ";
 
-					outputPosValue(&o, pos_vec.at(idx), 5);
+					outputPosValue(&o, pos_vec2.at(idx), 5);
 				} else {
 					outputSingleSpace(&o);
-					outputNValue(&o, n_vec.at(idx));
+					outputNValue(&o, n_vec2.at(idx));
 
 					outputSingleSpace(&o);
-					outputPosValue(&o, pos_vec.at(idx), 7);
+					outputPosValue(&o, pos_vec2.at(idx), 7);
 				}
 				++ idx;
 			}
@@ -221,8 +233,8 @@ bool Structured15DGridWithCrossSectionHecRasExporter::doExport(Grid* grid, const
 		for (const Structured15DGridWithCrossSectionCrossSection::Altitude& alt : cs->altitudeInfo()) {
 			if (row_idx == 0) {
 				o.setFieldWidth(0);
-				o << "GR ";
-				o.setFieldWidth(5);
+				o << "GR";
+				o.setFieldWidth(6);
 				o << alt.m_height;
 				o.setFieldWidth(0);
 				o << " ";
