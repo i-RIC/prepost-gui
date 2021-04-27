@@ -460,7 +460,11 @@ bool PreProcessorGridAndGridCreatingConditionDataItem::importGridFromCgnsFile(co
 		if (cgnsImporter == nullptr) {continue;}
 
 		auto filters = cgnsImporter->fileDialogFilters();
-		return importFromImporter(importer, filename, filters.first());
+		bool ok = importFromImporter(importer, filename, filters.first());
+		if (ok) {
+			dataModel()->graphicsView()->cameraFit();
+		}
+		return ok;
 	}
 	return false;
 }
