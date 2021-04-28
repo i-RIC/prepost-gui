@@ -68,8 +68,6 @@ private:
 	SolverDefinitionGridAttribute* m_condition;
 
 	BoolContainer m_visible;
-	vtkTextPropertySettingContainer m_titleTextSetting;
-	vtkTextPropertySettingContainer m_labelTextSetting;
 
 	SolverDefinitionGridAttribute* m_referenceInformationAttribute;
 };

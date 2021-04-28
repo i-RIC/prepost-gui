@@ -160,9 +160,6 @@ PreProcessorGeoDataTopDataItem::PreProcessorGeoDataTopDataItem(PreProcessorDataI
 	setSubPath("geographicdata");
 	buildReferenceInformationAttribute();
 
-	m_titleTextSetting.addPrefix("title");
-	m_labelTextSetting.addPrefix("label");
-
 	if (gridType()->isKeepOrder()) {
 		setupChildrenInOrder(gridType()->gridAttributes(), gridType()->gridComplexAttributes(), &m_childItems, &m_itemNameMap, m_referenceInformationAttribute, this);
 	} else {
@@ -184,8 +181,12 @@ PreProcessorGeoDataTopDataItem::~PreProcessorGeoDataTopDataItem()
 void PreProcessorGeoDataTopDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	m_visible.load(node);
-	m_titleTextSetting.load(node);
-	m_labelTextSetting.load(node);
+	auto elem = node.toElement();
+	auto cond = elem.attribute("condition");
+	if (cond != "") {
+		auto item = groupDataItem(iRIC::toStr(cond));
+		m_condition = item->condition();
+	}
 	QDomNodeList children = node.childNodes();
 	for (int i = 0; i < children.count(); ++i) {
 		QDomElement child = children.at(i).toElement();
@@ -195,14 +196,31 @@ void PreProcessorGeoDataTopDataItem::doLoadFromProjectMainFile(const QDomNode& n
 			it->second->loadFromProjectMainFile(child);
 		}
 	}
+
 	GeoDataPolygonTriangleThread::instance()->setLastJobDraw();
+
+	updateActorSettings();
 }
 
 void PreProcessorGeoDataTopDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
 	m_visible.save(writer);
-	m_titleTextSetting.save(writer);
-	m_labelTextSetting.save(writer);
+
+	if (m_condition != nullptr) {
+		writer.writeAttribute("condition", m_condition->name().c_str());
+		auto gItem = groupDataItem(m_condition->name());
+		auto gItem2 = dynamic_cast<PreProcessorGeoDataGroupDataItem*>(gItem);
+		ScalarBarSetting& sbSetting = gItem2->scalarBarSetting();
+
+		if (dynamic_cast<SolverDefinitionGridComplexAttribute*>(m_condition) != nullptr  || m_condition->isOption()) {
+			// discrete
+			sbSetting.loadFromRepresentation(m_legendBoxWidget->GetLegendBoxRepresentation());
+		} else {
+			// continuous
+			sbSetting.loadFromRepresentation(m_scalarBarWidget->GetScalarBarRepresentation());
+		}
+	}
+
 	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
 		writer.writeStartElement("GeoDataGroup");
 		(*it)->saveToProjectMainFile(writer);
@@ -279,11 +297,11 @@ void PreProcessorGeoDataTopDataItem::setupScalarBar()
 	PreProcessorScalarBarLegendBoxSettingDialog dialog(preProcessorWindow());
 	if (m_condition != nullptr) {
 		if (dynamic_cast<SolverDefinitionGridComplexAttribute*>(m_condition) != nullptr || m_condition->isOption()) {
-			PreProcessorGeoDataGroupDataItem* gItem = dynamic_cast<PreProcessorGeoDataGroupDataItem*>(groupDataItem(m_condition->name()));
+			auto gItem = dynamic_cast<PreProcessorGeoDataGroupDataItem*>(groupDataItem(m_condition->name()));
 			ScalarBarSetting& setting = gItem->scalarBarSetting();
 			setting.loadFromRepresentation(m_legendBoxWidget->GetLegendBoxRepresentation());
 		} else {
-			PreProcessorGeoDataGroupDataItem* gItem = dynamic_cast<PreProcessorGeoDataGroupDataItem*>(groupDataItem(m_condition->name()));
+			auto gItem = dynamic_cast<PreProcessorGeoDataGroupDataItem*>(groupDataItem(m_condition->name()));
 			ScalarBarSetting& setting = gItem->scalarBarSetting();
 			setting.loadFromRepresentation(m_scalarBarWidget->GetScalarBarRepresentation());
 		}
@@ -291,15 +309,13 @@ void PreProcessorGeoDataTopDataItem::setupScalarBar()
 	dialog.setupComboBox(this);
 	dialog.setActor2DVisibility(m_visible);
 	dialog.setCondition(m_condition);
-	dialog.setTitleTextSetting(m_titleTextSetting);
-	dialog.setLabelTextSetting(m_labelTextSetting);
-	if (dialog.exec() == QDialog::Accepted) {
-		m_visible = dialog.actor2DVisibility();
-		m_condition = dialog.condition();
-		m_titleTextSetting = dialog.titleTextSetting();
-		m_labelTextSetting = dialog.labelTextSetting();
-		updateActorSettings();
-	}
+
+	if (dialog.exec() == QDialog::Rejected) {return;}
+
+	m_visible = dialog.actor2DVisibility();
+	m_condition = dialog.condition();
+
+	updateActorSettings();
 }
 
 void PreProcessorGeoDataTopDataItem::setupActors()
@@ -342,11 +358,12 @@ void PreProcessorGeoDataTopDataItem::updateActorSettings()
 		if (! m_visible) {return;}
 		m_legendBoxWidget->SetEnabled(1);
 
-		PreProcessorGeoDataGroupDataItemInterface* gItem = groupDataItem(m_condition->name());
+		auto gItem = groupDataItem(m_condition->name());
 		if (gItem == nullptr) { return; }
-		ScalarBarSetting& sbSetting = dynamic_cast<PreProcessorGeoDataGroupDataItem*>(gItem)->scalarBarSetting();
+		auto gItem2 = dynamic_cast<PreProcessorGeoDataGroupDataItem*>(gItem);
+		ScalarBarSetting& sbSetting = gItem2->scalarBarSetting();
 		sbSetting.saveToRepresentation(m_legendBoxWidget->GetLegendBoxRepresentation());
-		m_labelTextSetting.applySetting(m_legendBoxWidget->GetLegendBoxActor()->GetEntryTextProperty());
+		sbSetting.labelTextSetting.applySetting(m_legendBoxWidget->GetLegendBoxActor()->GetEntryTextProperty());
 
 		updateLegendBoxItems();
 	} else {
@@ -357,16 +374,17 @@ void PreProcessorGeoDataTopDataItem::updateActorSettings()
 		if (gItem == nullptr) { return; }
 		ScalarBarSetting& sbSetting = dynamic_cast<PreProcessorGeoDataGroupDataItem*>(gItem)->scalarBarSetting();
 		sbSetting.saveToRepresentation(m_scalarBarWidget->GetScalarBarRepresentation());
-		PreProcessorGridTypeDataItem* gtItem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent());
-		LookupTableContainer* cont = dynamic_cast<LookupTableContainer*>(gtItem->scalarsToColors(m_condition->name()));
+		auto gtItem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent());
+		auto cont = dynamic_cast<LookupTableContainer*>(gtItem->scalarsToColors(m_condition->name()));
 		if (cont == nullptr) { return; }
+
 		vtkScalarBarActor* scalarBarActor = m_scalarBarWidget->GetScalarBarActor();
 		scalarBarActor->SetLookupTable(cont->vtkObj());
 		scalarBarActor->SetNumberOfLabels(sbSetting.numberOfLabels);
 		scalarBarActor->SetTitle(iRIC::toStr(rdgItem->scalarBarTitle()).c_str());
 		scalarBarActor->SetLabelFormat(iRIC::toStr(sbSetting.labelFormat).c_str());
-		m_titleTextSetting.applySetting(scalarBarActor->GetTitleTextProperty());
-		m_labelTextSetting.applySetting(scalarBarActor->GetLabelTextProperty());
+		sbSetting.titleTextSetting.applySetting(scalarBarActor->GetTitleTextProperty());
+		sbSetting.labelTextSetting.applySetting(scalarBarActor->GetLabelTextProperty());
 	}
 }
 
