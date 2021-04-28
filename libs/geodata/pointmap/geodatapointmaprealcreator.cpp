@@ -19,8 +19,6 @@ GeoDataPointmapRealCreator::GeoDataPointmapRealCreator() :
 {
 	importers().push_back(new GeoDataPointmapRealImporter(this));
 	importers().push_back(new GeoDataPointmapRealTextImporter(this));
-	importers().push_back(new GeoDataPointmapSTLImporter(this));
-	importers().push_back(new GeoDataPointmapLandXmlImporter(this));
 
 	webImporters().push_back(new GeoDataPointmapWebImporter(this));
 

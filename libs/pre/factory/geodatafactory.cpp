@@ -9,6 +9,7 @@
 #include <geodata/pointgroup/geodatapointgroupintegercreator.h>
 #include <geodata/pointgroup/geodatapointgrouprealcreator.h>
 #include <geodata/pointmap/geodatapointmaprealcreator.h>
+#include <geodata/pointmap/geodatapointmaptincreator.h>
 #include <geodata/polygon/geodatapolygonintegercreator.h>
 #include <geodata/polygon/geodatapolygonrealcreator.h>
 #include <geodata/polygongroup/geodatapolygongroupintegercreator.h>
@@ -30,6 +31,7 @@ GeoDataFactory::GeoDataFactory() :
 
 	// cross-section data, point cloud data, rasterdata
 	m_creators.push_back(new GeoDataPointmapRealCreator());
+	m_creators.push_back(new GeoDataPointmapTINCreator());
 	m_creators.push_back(new GeoDataRiverSurveyCreator());
 	m_creators.push_back(new GeoDataNetcdfIntegerCreator());
 	m_creators.push_back(new GeoDataNetcdfRealCreator());
