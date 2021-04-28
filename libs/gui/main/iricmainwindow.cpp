@@ -619,8 +619,15 @@ bool iRICMainWindow::closeProject()
 	m_actionManager->unregisterAdditionalToolBar();
 	addToolBarBreak(Qt::TopToolBarArea);
 	m_actionManager->projectFileClose();
-	m_preProcessorWindow->parentWidget()->hide();
-	m_solverConsoleWindow->parentWidget()->hide();
+
+	auto preParent = m_preProcessorWindow->parentWidget();
+	preParent->showNormal();
+	preParent->hide();
+
+	auto consoleParent = m_solverConsoleWindow->parentWidget();
+	consoleParent->showNormal();
+	consoleParent->hide();
+
 	m_postWindowFactory->resetWindowCounts();
 	ActiveSubwindowChanged(dynamic_cast<QMdiSubWindow*>(m_solverConsoleWindow->parentWidget()));
 	delete m_projectData;
