@@ -9,7 +9,6 @@ ContinuousSnapshotSetting::ContinuousSnapshotSetting() :
 	imageExtention {".png"},
 	suffixLength {4},
 
-	timeSteps {},
 	startTimeStep {-1},
 	stopTimeStep {-1},
 	samplingRate {1},

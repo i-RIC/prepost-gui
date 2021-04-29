@@ -9,7 +9,7 @@
 class BackgroundImageInfo;
 class iRICMainWindow;
 class ContinuousSnapshotWizard;
-class CoordinateSystem;
+class ProjectMainFile;
 
 class QMdiSubWindow;
 
@@ -25,12 +25,12 @@ public:
 
 	ContinuousSnapshotSetting setting() const;
 
-	void setCoordinateSystem(CoordinateSystem* cs) {m_coordinateSystem = cs;}
+	void setProjectMainFile(ProjectMainFile* mainFile);
 	void setSnapshotSize(QSize s) {m_snapshotSize = s;}
 	void setBeginPosition(QPoint p) {m_beginPosition = p;}
 	void setTargetWindow(int i) {m_targetWindow = i;}
 
-	CoordinateSystem* coordinateSystem() const {return m_coordinateSystem;}
+	ProjectMainFile* projectMainFile() const;
 	QSize snapshotSize() {return m_snapshotSize;}
 	QPoint beginPosition() {return m_beginPosition;}
 	int targetWindow() {return m_targetWindow;}
@@ -55,7 +55,7 @@ private:
 
 	// window selection
 	QList<QMdiSubWindow*> m_windowList;
-	CoordinateSystem* m_coordinateSystem;
+	ProjectMainFile* m_projectMainFile;
 	QSize m_snapshotSize;
 	QPoint m_beginPosition;     // snapshot top-left position
 

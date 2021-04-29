@@ -936,10 +936,9 @@ void iRICMainWindow::continuousSnapshot()
 	if (enableWindow != nullptr) {
 		ContinuousSnapshotWizard* wizard = new ContinuousSnapshotWizard(this);
 
-		m_continuousSnapshotSetting.timeSteps = m_projectData->mainfile()->postSolutionInfo()->timeSteps()->timesteps();
 		wizard->setSetting(m_continuousSnapshotSetting);
 
-		wizard->setCoordinateSystem(m_projectData->mainfile()->coordinateSystem());
+		wizard->setProjectMainFile(m_projectData->mainfile());
 		wizard->setTargetWindow(0);
 
 		if (wizard->exec() == QDialog::Accepted) {
@@ -1327,7 +1326,6 @@ void iRICMainWindow::exportCurrentCgnsFile()
 	// export the current CGNS file.
 	m_projectData->mainfile()->exportCurrentCgnsFile();
 }
-
 
 void iRICMainWindow::setCurrentStep(unsigned int newstep)
 {

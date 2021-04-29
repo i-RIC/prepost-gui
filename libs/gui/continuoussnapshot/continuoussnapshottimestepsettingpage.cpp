@@ -3,6 +3,11 @@
 #include "continuoussnapshottimestepsettingpage.h"
 #include "continuoussnapshotwizard.h"
 
+#include <guibase/timeformat/timeformatutil.h>
+#include <guicore/project/projectmainfile.h>
+#include <guicore/postcontainer/postsolutioninfo.h>
+#include <guicore/postcontainer/posttimesteps.h>
+
 ContinuousSnapshotTimestepSettingPage::ContinuousSnapshotTimestepSettingPage(QWidget* parent) :
 	QWizardPage(parent),
 	ui(new Ui::ContinuousSnapshotTimestepSettingPage)
@@ -11,8 +16,8 @@ ContinuousSnapshotTimestepSettingPage::ContinuousSnapshotTimestepSettingPage(QWi
 
 	m_wizard = dynamic_cast<ContinuousSnapshotWizard*>(parent);
 
-	connect(ui->startSlider, SIGNAL(valueChanged(int)), this, SLOT(modifyStop(int)));
-	connect(ui->stopSlider, SIGNAL(valueChanged(int)), this, SLOT(modifyStart(int)));
+	connect(ui->startSlider, SIGNAL(valueChanged(int)), this, SLOT(handleStartChange(int)));
+	connect(ui->stopSlider, SIGNAL(valueChanged(int)), this, SLOT(handleStopChange(int)));
 }
 
 ContinuousSnapshotTimestepSettingPage::~ContinuousSnapshotTimestepSettingPage()
@@ -22,16 +27,26 @@ ContinuousSnapshotTimestepSettingPage::~ContinuousSnapshotTimestepSettingPage()
 
 void ContinuousSnapshotTimestepSettingPage::initializePage()
 {
+	const auto& timeSteps = m_wizard->projectMainFile()->postSolutionInfo()->timeSteps()->timesteps();
+
 	const auto& s = m_wizard->setting();
-	ui->startSlider->setValues(s.timeSteps);
-	ui->stopSlider->setValues(s.timeSteps);
-	ui->samplingSpinBox->setMaximum(s.timeSteps.size());
+
+	ui->startSlider->setMinimum(0);
+	ui->startSlider->setMaximum(timeSteps.size() - 1);
+
+	ui->stopSlider->setMinimum(0);
+	ui->stopSlider->setMaximum(timeSteps.size() - 1);
+
+	ui->samplingSpinBox->setMaximum(timeSteps.size());
 
 	ui->startSlider->setValue(s.startTimeStep);
 	if (s.startTimeStep == -1) {ui->startSlider->setValue(0);}
 	ui->stopSlider->setValue(s.stopTimeStep);
 	if (s.stopTimeStep == -1) {ui->stopSlider->setValue(ui->stopSlider->maximum());}
 	ui->samplingSpinBox->setValue(s.samplingRate);
+
+	updateStartLabel();
+	updateStopLabel();
 }
 
 bool ContinuousSnapshotTimestepSettingPage::validatePage()
@@ -46,16 +61,45 @@ bool ContinuousSnapshotTimestepSettingPage::validatePage()
 	return true;
 }
 
-void ContinuousSnapshotTimestepSettingPage::modifyStart(int time)
+void ContinuousSnapshotTimestepSettingPage::handleStartChange(int time)
 {
+	updateStartLabel();
+
+	if (ui->stopSlider->value() < time) {
+		ui->stopSlider->setValue(time);
+	}
+}
+
+void ContinuousSnapshotTimestepSettingPage::handleStopChange(int time)
+{
+	updateStopLabel();
+
 	if (ui->startSlider->value() > time) {
 		ui->startSlider->setValue(time);
 	}
 }
 
-void ContinuousSnapshotTimestepSettingPage::modifyStop(int time)
+void ContinuousSnapshotTimestepSettingPage::updateStartLabel()
 {
-	if (ui->stopSlider->value() < time) {
-		ui->stopSlider->setValue(time);
-	}
+	const auto& timeSteps = m_wizard->projectMainFile()->postSolutionInfo()->timeSteps()->timesteps();
+	double time = timeSteps.at(ui->startSlider->value());
+	updateTimeLabel(time, ui->startValueLabel);
+}
+
+void ContinuousSnapshotTimestepSettingPage::updateStopLabel()
+{
+	const auto& timeSteps = m_wizard->projectMainFile()->postSolutionInfo()->timeSteps()->timesteps();
+	double time = timeSteps.at(ui->stopSlider->value());
+	updateTimeLabel(time, ui->stopValueLabel);
+}
+
+void ContinuousSnapshotTimestepSettingPage::updateTimeLabel(double timeValue, QLabel* label)
+{
+	auto mainFile = m_wizard->projectMainFile();
+
+	auto zt = mainFile->zeroDateTime();
+	auto f = mainFile->timeFormat();
+	auto cf = mainFile->customTimeFormat();
+
+	label->setText(TimeFormatUtil::formattedString(zt, timeValue, f, cf));
 }

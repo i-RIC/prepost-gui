@@ -25,7 +25,6 @@ public:
 	int suffixLength;
 
 	// timestep setting
-	QList<double> timeSteps;
 	int startTimeStep;
 	int stopTimeStep;
 	int samplingRate;

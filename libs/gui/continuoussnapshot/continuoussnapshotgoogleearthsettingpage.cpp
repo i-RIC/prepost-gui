@@ -10,6 +10,7 @@
 #include <cs/coordinatesystem.h>
 #include <guicore/post/postprocessorwindow.h>
 #include <guicore/project/backgroundimageinfo.h>
+#include <guicore/project/projectmainfile.h>
 #include <misc/mathsupport.h>
 #include <post/post2d/post2dwindow.h>
 #include <post/post2d/post2dwindowgraphicsview.h>
@@ -35,7 +36,7 @@ void ContinuousSnapshotGoogleEarthSettingPage::initializePage()
 {
 	auto setting = m_wizard->setting();
 
-	if (m_wizard->coordinateSystem() == nullptr) {
+	if (m_wizard->projectMainFile()->coordinateSystem() == nullptr) {
 		ui->googleEarthCheckBox->setChecked(false);
 		this->setEnabled(false);
 	} else {
@@ -120,7 +121,7 @@ void ContinuousSnapshotGoogleEarthSettingPage::snapshotToWorld(QPointF& p)
 
 void ContinuousSnapshotGoogleEarthSettingPage::worldToLatLong(QPointF& p)
 {
-	auto cs = m_wizard->coordinateSystem();
+	auto cs = m_wizard->projectMainFile()->coordinateSystem();
 	double x, y, lon, lat;
 	x = p.x();
 	y = p.y();
@@ -199,6 +200,7 @@ QSize ContinuousSnapshotGoogleEarthSettingPage::targetSnapshotSize()
 		ret.setWidth(m_wizard->snapshotSize().width());
 		ret.setHeight(m_wizard->snapshotSize().height());
 		break;
+
 	case ContinuousSnapshotSetting::FileOutputSetting::Respectively:
 		auto it = m_wizard->windowList().begin() + m_wizard->targetWindow();
 		QWidget* w = dynamic_cast<QMainWindow*>((*it)->widget())->centralWidget();
