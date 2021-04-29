@@ -52,9 +52,6 @@ class GUI_API iRICMainWindow : public iRICMainWindowInterface
 {
 	Q_OBJECT
 
-private:
-	static const int MAX_RECENT_SOLVERS;
-
 public:
 	iRICMainWindow(bool cuiMode = false, QWidget* parent = nullptr);
 	~iRICMainWindow();
@@ -242,8 +239,6 @@ private:
 	void updateWindowTitle();
 	void setupAnimationToolbar();
 	void setupStatusBar();
-	void updateRecentSolvers(const QString& filename);
-	void removeFromRecentSolvers(const QString& foldername);
 	void setupAboutDialog();
 	void saveContinuousSnapshot(ContinuousSnapshotWizard* wizard, QXmlStreamWriter* writer = nullptr);
 	void addKMLElement(int time, QString url, double north, double south, double west, double east, double angle, QXmlStreamWriter* writer);

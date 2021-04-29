@@ -10,6 +10,7 @@
 #include "../misc/newprojectsolverselectingdialog.h"
 #include "../misc/projecttypeselectdialog.h"
 #include "../misc/recentprojectsmanager.h"
+#include "../misc/recentsolversmanager.h"
 #include "../pref/preferencedialog.h"
 #include "../projectproperty/projectpropertydialog.h"
 #include "../solverdef/solverdefinitionlist.h"
@@ -94,8 +95,6 @@
 #include <QThread>
 #include <QTime>
 #include <QXmlStreamWriter>
-
-const int iRICMainWindow::MAX_RECENT_SOLVERS = 10;
 
 iRICMainWindow::iRICMainWindow(bool cuiMode, QWidget* parent) :
 	iRICMainWindowInterface(parent),
@@ -216,19 +215,20 @@ void iRICMainWindow::newProject()
 		warnSolverRunning();
 		return;
 	}
+
 	NewProjectSolverSelectingDialog dialog(m_solverDefinitionList, this);
 
-	QSettings settings;
-	QStringList recentSolvers = settings.value("general/recentsolvers", QStringList()).toStringList();
-	if (recentSolvers.count() > 0) {
-		QString firstSolver = recentSolvers.at(0);
-		dialog.setSolver(firstSolver);
+	auto mostRecentSolver = RecentSolversManager::mostRecentSolver();
+	if (! mostRecentSolver.isEmpty()) {
+		dialog.setSolver(mostRecentSolver);
 	}
-	if (dialog.exec() == QDialog::Accepted) {
-		auto selectedSolver = dialog.selectedSolver();
-		updateRecentSolvers(selectedSolver->folderName());
-		newProject(selectedSolver);
-	}
+
+	if (dialog.exec() == QDialog::Rejected) {return;}
+
+	auto selectedSolver = dialog.selectedSolver();
+	RecentSolversManager::append(selectedSolver->folderName());
+
+	newProject(selectedSolver);
 }
 
 void iRICMainWindow::newProject(SolverDefinitionAbstract* solver)
@@ -247,7 +247,7 @@ void iRICMainWindow::newProject(SolverDefinitionAbstract* solver)
 	m_projectData->mainfile()->setSolverInformation(*solver);
 
 	// save the solver to recent solver list.
-	updateRecentSolvers(solver->folderName());
+	RecentSolversManager::append(solver->folderName());
 
 	// create solver definition data
 	QString solFolder = solver->absoluteFolderName();
@@ -1538,29 +1538,6 @@ void iRICMainWindow::openRecentProject()
 	if (action) {
 		openProject(action->data().toString());
 	}
-}
-
-void iRICMainWindow::updateRecentSolvers(const QString& foldername)
-{
-	QSettings setting;
-	QStringList recentSolvers = setting.value("general/recentsolvers", QStringList()).toStringList();
-	recentSolvers.removeAll(foldername);
-	recentSolvers.prepend(foldername);
-	while (recentSolvers.size() > MAX_RECENT_SOLVERS) {
-		recentSolvers.removeLast();
-	}
-	setting.setValue("general/recentsolvers", recentSolvers);
-}
-
-void iRICMainWindow::removeFromRecentSolvers(const QString& foldername)
-{
-	QSettings setting;
-	QStringList recentSolvers = setting.value("general/recentsolvers", QStringList()).toStringList();
-	recentSolvers.removeAll(foldername);
-	while (recentSolvers.size() > MAX_RECENT_SOLVERS) {
-		recentSolvers.removeLast();
-	}
-	setting.setValue("general/recentsolvers", recentSolvers);
 }
 
 void iRICMainWindow::updateWindowZIndices()
