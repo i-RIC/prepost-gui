@@ -29,13 +29,11 @@ public:
 	void setSnapshotSize(QSize s) {m_snapshotSize = s;}
 	void setBeginPosition(QPoint p) {m_beginPosition = p;}
 	void setTargetWindow(int i) {m_targetWindow = i;}
-	void setBackgroundList(const std::vector<BackgroundImageInfo*>& list) {m_backgroundList = list;}
 
 	CoordinateSystem* coordinateSystem() const {return m_coordinateSystem;}
 	QSize snapshotSize() {return m_snapshotSize;}
 	QPoint beginPosition() {return m_beginPosition;}
 	int targetWindow() {return m_targetWindow;}
-	const std::vector<BackgroundImageInfo*>& backgroundList() {return m_backgroundList;}
 
 	void clearWindowList() {m_windowList.clear();}
 	void addWindowList(QMdiSubWindow* sub) {m_windowList.append(sub);}
@@ -66,7 +64,6 @@ private:
 
 	// google earth
 	int m_targetWindow;
-	std::vector<BackgroundImageInfo*> m_backgroundList;
 
 	// confirm the result
 	QStringList m_fileList;

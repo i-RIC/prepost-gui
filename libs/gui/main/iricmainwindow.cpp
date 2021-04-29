@@ -941,7 +941,6 @@ void iRICMainWindow::continuousSnapshot()
 
 		wizard->setCoordinateSystem(m_projectData->mainfile()->coordinateSystem());
 		wizard->setTargetWindow(0);
-		wizard->setBackgroundList(m_projectData->mainfile()->backgroundImages());
 
 		if (wizard->exec() == QDialog::Accepted) {
 			m_continuousSnapshotSetting = wizard->setting();
