@@ -199,6 +199,7 @@ HEADERS += gui_api.h \
            misc/newprojectsolverselectingdialog.h \
            misc/periodicalupdatechecker.h \
            misc/projecttypeselectdialog.h \
+           misc/recentprojectsmanager.h \
            misc/wrongsettingexception.h \
            pref/preferencedialog.h \
            pref/preferencepage.h \
@@ -286,6 +287,7 @@ SOURCES += continuoussnapshot/continuoussnapshotconfirmpage.cpp \
            misc/newprojectsolverselectingdialog.cpp \
            misc/periodicalupdatechecker.cpp \
            misc/projecttypeselectdialog.cpp \
+           misc/recentprojectsmanager.cpp \
            pref/preferencedialog.cpp \
            pref/preferencepage.cpp \
            pref/preferencepagebackgroundgrid.cpp \

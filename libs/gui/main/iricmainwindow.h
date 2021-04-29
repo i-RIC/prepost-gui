@@ -53,7 +53,6 @@ class GUI_API iRICMainWindow : public iRICMainWindowInterface
 	Q_OBJECT
 
 private:
-	static const int MAX_RECENT_PROJECTS;
 	static const int MAX_RECENT_SOLVERS;
 
 public:
@@ -243,9 +242,6 @@ private:
 	void updateWindowTitle();
 	void setupAnimationToolbar();
 	void setupStatusBar();
-	/// Update Recent Projects list
-	void updateRecentProjects(const QString& filename);
-	void removeFromRecentProjects(const QString& foldername);
 	void updateRecentSolvers(const QString& filename);
 	void removeFromRecentSolvers(const QString& foldername);
 	void setupAboutDialog();

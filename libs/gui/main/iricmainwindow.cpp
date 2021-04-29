@@ -9,6 +9,7 @@
 #include "../misc/iricmainwindowmiscdialogmanager.h"
 #include "../misc/newprojectsolverselectingdialog.h"
 #include "../misc/projecttypeselectdialog.h"
+#include "../misc/recentprojectsmanager.h"
 #include "../pref/preferencedialog.h"
 #include "../projectproperty/projectpropertydialog.h"
 #include "../solverdef/solverdefinitionlist.h"
@@ -94,7 +95,6 @@
 #include <QTime>
 #include <QXmlStreamWriter>
 
-const int iRICMainWindow::MAX_RECENT_PROJECTS = 10;
 const int iRICMainWindow::MAX_RECENT_SOLVERS = 10;
 
 iRICMainWindow::iRICMainWindow(bool cuiMode, QWidget* parent) :
@@ -318,7 +318,7 @@ void iRICMainWindow::openProject(const QString& filename)
 	if (! QFile::exists(filename)) {
 		// the project file does not exists!
 		QMessageBox::warning(this, tr("Warning"), tr("Project file %1 does not exists.").arg(QDir::toNativeSeparators(filename)));
-		removeFromRecentProjects(filename);
+		RecentProjectsManager::remove(filename);
 		return;
 	}
 
@@ -454,8 +454,7 @@ void iRICMainWindow::openProject(const QString& filename)
 	m_projectData->mainfile()->clearModified();
 	m_mousePositionWidget->setProjectData(m_projectData);
 
-	// update recently opened projects.
-	updateRecentProjects(filename);
+	RecentProjectsManager::append(filename);
 	updatePostActionStatus();
 }
 
@@ -835,7 +834,7 @@ bool iRICMainWindow::saveProject(const QString& filename, bool folder)
 	}
 	updateWindowTitle();
 	LastIODirectory::set(QFileInfo(filename).absolutePath());
-	updateRecentProjects(filename);
+	RecentProjectsManager::append(filename);
 	statusBar()->showMessage(tr("Project successfully saved to %1.").arg(QDir::toNativeSeparators(filename)), STATUSBAR_DISPLAYTIME);
 	return true;
 }
@@ -1526,20 +1525,10 @@ void iRICMainWindow::initSetting()
 void iRICMainWindow::setupRecentProjectsMenu()
 {
 	QMenu* menu = m_actionManager->recentProjectsMenu();
-	QList<QAction*> actions = menu->actions();
-	for (auto a : menu->actions()) {
-		delete a;
-	}
-	menu->clear();
-	QSettings setting;
-	QStringList recentProjects = setting.value("general/recentprojects", QStringList()).toStringList();
-	int numRecentFiles = qMin(recentProjects.size(), MAX_RECENT_PROJECTS);
-	for (int i = 0; i < numRecentFiles; ++i) {
-		QString text = tr("&%1 %2").arg(i + 1).arg(QDir::toNativeSeparators(recentProjects.at(i)));
-		QAction* action = new QAction(text, this);
-		action->setData(recentProjects.at(i));
+	RecentProjectsManager::setupMenu(menu);
+
+	for (QAction* action : menu->actions()) {
 		connect(action, SIGNAL(triggered()), this, SLOT(openRecentProject()));
-		menu->addAction(action);
 	}
 }
 
@@ -1549,29 +1538,6 @@ void iRICMainWindow::openRecentProject()
 	if (action) {
 		openProject(action->data().toString());
 	}
-}
-
-void iRICMainWindow::updateRecentProjects(const QString& filename)
-{
-	QSettings setting;
-	QStringList recentProjects = setting.value("general/recentprojects", QStringList()).toStringList();
-	recentProjects.removeAll(filename);
-	recentProjects.prepend(filename);
-	while (recentProjects.size() > MAX_RECENT_PROJECTS) {
-		recentProjects.removeLast();
-	}
-	setting.setValue("general/recentprojects", recentProjects);
-}
-
-void iRICMainWindow::removeFromRecentProjects(const QString& filename)
-{
-	QSettings setting;
-	QStringList recentProjects = setting.value("general/recentprojects", QStringList()).toStringList();
-	recentProjects.removeAll(filename);
-	while (recentProjects.size() > MAX_RECENT_PROJECTS) {
-		recentProjects.removeLast();
-	}
-	setting.setValue("general/recentprojects", recentProjects);
 }
 
 void iRICMainWindow::updateRecentSolvers(const QString& foldername)
@@ -1591,7 +1557,7 @@ void iRICMainWindow::removeFromRecentSolvers(const QString& foldername)
 	QSettings setting;
 	QStringList recentSolvers = setting.value("general/recentsolvers", QStringList()).toStringList();
 	recentSolvers.removeAll(foldername);
-	while (recentSolvers.size() > MAX_RECENT_PROJECTS) {
+	while (recentSolvers.size() > MAX_RECENT_SOLVERS) {
 		recentSolvers.removeLast();
 	}
 	setting.setValue("general/recentsolvers", recentSolvers);
