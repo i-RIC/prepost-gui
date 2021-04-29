@@ -182,6 +182,7 @@ HEADERS += gui_api.h \
            continuoussnapshot/continuoussnapshotgoogleearthsettingpage.h \
            continuoussnapshot/continuoussnapshotintroductionpage.h \
            continuoussnapshot/continuoussnapshotmoviepropertypage.h \
+           continuoussnapshot/continuoussnapshotsetting.h \
            continuoussnapshot/continuoussnapshottimestepsettingpage.h \
            continuoussnapshot/continuoussnapshotwindowselectionpage.h \
            continuoussnapshot/continuoussnapshotwizard.h \
@@ -269,6 +270,7 @@ SOURCES += continuoussnapshot/continuoussnapshotconfirmpage.cpp \
            continuoussnapshot/continuoussnapshotgoogleearthsettingpage.cpp \
            continuoussnapshot/continuoussnapshotintroductionpage.cpp \
            continuoussnapshot/continuoussnapshotmoviepropertypage.cpp \
+           continuoussnapshot/continuoussnapshotsetting.cpp \
            continuoussnapshot/continuoussnapshottimestepsettingpage.cpp \
            continuoussnapshot/continuoussnapshotwindowselectionpage.cpp \
            continuoussnapshot/continuoussnapshotwizard.cpp \

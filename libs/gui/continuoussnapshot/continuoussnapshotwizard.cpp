@@ -38,3 +38,13 @@ void ContinuousSnapshotWizard::accept()
 {
 	QWizard::accept();
 }
+
+void ContinuousSnapshotWizard::setSetting(const ContinuousSnapshotSetting& setting)
+{
+	m_setting = setting;
+}
+
+ContinuousSnapshotSetting ContinuousSnapshotWizard::setting() const
+{
+	return m_setting;
+}

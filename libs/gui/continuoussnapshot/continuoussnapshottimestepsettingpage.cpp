@@ -22,22 +22,27 @@ ContinuousSnapshotTimestepSettingPage::~ContinuousSnapshotTimestepSettingPage()
 
 void ContinuousSnapshotTimestepSettingPage::initializePage()
 {
-	ui->startSlider->setValues(m_wizard->timeSteps());
-	ui->stopSlider->setValues(m_wizard->timeSteps());
-	ui->samplingSpinBox->setMaximum(m_wizard->timeSteps().size());
+	const auto& s = m_wizard->setting();
+	ui->startSlider->setValues(s.timeSteps);
+	ui->stopSlider->setValues(s.timeSteps);
+	ui->samplingSpinBox->setMaximum(s.timeSteps.size());
 
-	ui->startSlider->setValue(m_wizard->start());
-	if (m_wizard->start() == -1) {ui->startSlider->setValue(0);}
-	ui->stopSlider->setValue(m_wizard->stop());
-	if (m_wizard->stop() == -1) {ui->stopSlider->setValue(ui->stopSlider->maximum());}
-	ui->samplingSpinBox->setValue(m_wizard->samplingRate());
+	ui->startSlider->setValue(s.startTimeStep);
+	if (s.startTimeStep == -1) {ui->startSlider->setValue(0);}
+	ui->stopSlider->setValue(s.stopTimeStep);
+	if (s.stopTimeStep == -1) {ui->stopSlider->setValue(ui->stopSlider->maximum());}
+	ui->samplingSpinBox->setValue(s.samplingRate);
 }
 
 bool ContinuousSnapshotTimestepSettingPage::validatePage()
 {
-	m_wizard->setStart(ui->startSlider->value());
-	m_wizard->setStop(ui->stopSlider->value());
-	m_wizard->setSamplingRate(ui->samplingSpinBox->value());
+	auto s = m_wizard->setting();
+
+	s.startTimeStep = ui->startSlider->value();
+	s.stopTimeStep = ui->stopSlider->value();
+	s.samplingRate = ui->samplingSpinBox->value();
+
+	m_wizard->setSetting(s);
 	return true;
 }
 

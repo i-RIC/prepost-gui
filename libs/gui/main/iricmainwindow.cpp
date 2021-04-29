@@ -3,6 +3,7 @@
 #include "../factory/postprocessorwindowfactory.h"
 #include "../factory/postprocessorwindowfactory.h"
 #include "../misc/animationcontroller.h"
+#include "../misc/filesystemfunction.h"
 #include "../misc/flushrequester.h"
 #include "../misc/iricmainwindowactionmanager.h"
 #include "../misc/iricmainwindowmiscdialogmanager.h"
@@ -98,14 +99,16 @@ const int iRICMainWindow::MAX_RECENT_SOLVERS = 10;
 
 iRICMainWindow::iRICMainWindow(bool cuiMode, QWidget* parent) :
 	iRICMainWindowInterface(parent),
-	m_workspace {new ProjectWorkspace {this}},
-	m_metaData {nullptr},
-	m_projectData {nullptr},
-	m_postWindowFactory {new PostProcessorWindowFactory {this}},
-	m_coordinateSystemBuilder {new CoordinateSystemBuilder {this}},
 	m_miscDialogManager {new iRICMainWindowMiscDialogManager {this}},
+	m_workspace {new ProjectWorkspace {this}},
+	m_projectData {nullptr},
+	m_coordinateSystemBuilder {new CoordinateSystemBuilder {this}},
 	m_animationController {new AnimationController {this}},
-	m_cuiMode {cuiMode}
+	m_isOpening {false},
+	m_isSaving {false},
+	m_cuiMode {cuiMode},
+	m_metaData {nullptr},
+	m_postWindowFactory {new PostProcessorWindowFactory {this}}
 {
 	// setup undo stack
 	iRICUndoStack::initialize(this);
@@ -933,32 +936,20 @@ void iRICMainWindow::continuousSnapshot()
 	if (enableWindow != nullptr) {
 		ContinuousSnapshotWizard* wizard = new ContinuousSnapshotWizard(this);
 
+		m_continuousSnapshotSetting.timeSteps = m_projectData->mainfile()->postSolutionInfo()->timeSteps()->timesteps();
+		wizard->setSetting(m_continuousSnapshotSetting);
+
 		wizard->setCoordinateSystem(m_projectData->mainfile()->coordinateSystem());
-		wizard->setOutput(m_output);
-		wizard->setLayout(m_layout);
-		wizard->setTransparent(m_transparent);
-		wizard->setFileIODirectory(m_directory);
-		wizard->setExtension(m_extension);
-		wizard->setSuffixLength(m_suffixLength);
-		wizard->setOutputMovie(m_outputMovie);
-		wizard->setMovieLengthMode(m_movieLengthMode);
-		wizard->setMovieLength(m_movieLength);
-		wizard->setFramesPerSecond(m_framesPerSecond);
-		wizard->setMovieProfile(m_movieProfile);
-		wizard->setTimesteps(m_projectData->mainfile()->postSolutionInfo()->timeSteps()->timesteps());
-		wizard->setStart(m_start);
-		wizard->setStop(m_stop);
-		wizard->setSamplingRate(m_samplingRate);
-		wizard->setGoogleEarth(m_googleEarth);
 		wizard->setTargetWindow(0);
-		wizard->setKMLFilename(m_kmlFilename);
 		wizard->setBackgroundList(m_projectData->mainfile()->backgroundImages());
 
 		if (wizard->exec() == QDialog::Accepted) {
-			handleWizardAccepted(wizard);
-			if (m_googleEarth) {
+			m_continuousSnapshotSetting = wizard->setting();
+
+			const auto& s = m_continuousSnapshotSetting;
+			if (s.outputKml) {
 				// opne kml file
-				QString kml = QDir(m_directory).absoluteFilePath(m_kmlFilename);
+				QString kml = QDir(s.exportTargetFolder).absoluteFilePath(s.kmlFilename);
 				QFile f(kml);
 				f.open(QFile::WriteOnly);
 				QXmlStreamWriter writer(&f);
@@ -987,37 +978,22 @@ void iRICMainWindow::continuousSnapshot()
 	}
 }
 
-void iRICMainWindow::handleWizardAccepted(ContinuousSnapshotWizard* wizard)
-{
-	m_output = wizard->output();
-	m_layout = wizard->layout();
-	m_transparent = wizard->transparent();
-
-	m_directory = wizard->fileIODirectory();
-	m_extension = wizard->extension();
-	m_suffixLength = wizard->suffixLength();
-
-	m_outputMovie = wizard->outputMovie();
-	m_movieLengthMode = wizard->movieLengthMode();
-	m_movieLength = wizard->movieLength();
-	m_framesPerSecond = wizard->framesPerSecond();
-	m_movieProfile = wizard->movieProfile();
-
-	m_start = wizard->start();
-	m_stop = wizard->stop();
-	m_samplingRate = wizard->samplingRate();
-
-	m_googleEarth = wizard->googleEarth();
-	m_kmlFilename = wizard->kmlFilename();
-	m_angle = wizard->angle();
-	m_north = wizard->north();
-	m_south = wizard->south();
-	m_east = wizard->east();
-	m_west = wizard->west();
-}
-
 void iRICMainWindow::saveContinuousSnapshot(ContinuousSnapshotWizard* wizard, QXmlStreamWriter* writer)
 {
+	const auto& setting = m_continuousSnapshotSetting;
+
+	// clear the folder to output files
+	auto dir = setting.exportTargetFolder;
+
+	if (! iRIC::isDirEmpty(dir)) {
+		int ret = QMessageBox::warning(wizard, tr("Warning"), tr("All files in %1 is deleted.").arg(QDir::toNativeSeparators(dir)), QMessageBox::Ok | QMessageBox::Cancel, QMessageBox::Cancel);
+		if (ret == QMessageBox::Cancel) {return;}
+
+		iRIC::rmdirRecursively(dir);
+	}
+
+	iRIC::mkdirRecursively(dir);
+
 	bool isAutoParticleOutput = false;
 	for (auto sub : wizard->windowList())
 	{
@@ -1028,14 +1004,14 @@ void iRICMainWindow::saveContinuousSnapshot(ContinuousSnapshotWizard* wizard, QX
 
 	m_continuousSnapshotInProgress = true;
 	QProgressDialog dialog(wizard);
-	dialog.setRange(0, m_stop - m_start);
+	dialog.setRange(0, setting.stopTimeStep - setting.startTimeStep);
 	dialog.setWindowTitle(tr("Continuous Snapshot"));
 	dialog.setLabelText(tr("saving continuous snapshot..."));
 	dialog.setFixedSize(300, 100);
 	dialog.setModal(true);
 	dialog.show();
 
-	int step = m_start;
+	int step = setting.startTimeStep;
 	auto fit = wizard->fileList().begin();
 	QPoint position = wizard->beginPosition();
 	QSize size = wizard->snapshotSize();
@@ -1043,8 +1019,8 @@ void iRICMainWindow::saveContinuousSnapshot(ContinuousSnapshotWizard* wizard, QX
 	bool first = true;
 	int imgCount = 0;
 	m_animationController->setCurrentStepIndex(step);
-	while (step <= m_stop) {
-		dialog.setValue(step - m_start);
+	while (step <= setting.stopTimeStep) {
+		dialog.setValue(step - setting.startTimeStep);
 		qApp->processEvents();
 		if (dialog.wasCanceled()) {
 			m_continuousSnapshotInProgress = false;
@@ -1059,13 +1035,14 @@ void iRICMainWindow::saveContinuousSnapshot(ContinuousSnapshotWizard* wizard, QX
 			// skip directry to step
 			m_animationController->setCurrentStepIndex(step);
 		}
-		switch (m_output) {
-		case ContinuousSnapshotWizard::Onefile: {
+
+		switch (setting.fileOutputSetting) {
+		case ContinuousSnapshotSetting::FileOutputSetting::Onefile: {
 				if (first) {sizes.append(size);}
 				QImage image = QImage(size, QImage::Format_ARGB32);
 				QPixmap pixmap;
 				QPainter painter;
-				if (m_transparent) {
+				if (setting.imageIsTransparent) {
 					image.fill(qRgba(0, 0, 0, 0));
 					pixmap = QPixmap::fromImage(image);
 					painter.begin(&pixmap);
@@ -1080,18 +1057,20 @@ void iRICMainWindow::saveContinuousSnapshot(ContinuousSnapshotWizard* wizard, QX
 				for (QMdiSubWindow* sub : wizard->windowList()) {
 					SnapshotEnabledWindowInterface* window = dynamic_cast<SnapshotEnabledWindowInterface*>(sub->widget());
 					QWidget* center = dynamic_cast<QMainWindow*>(sub->widget())->centralWidget();
-					window->setTransparent(m_transparent);
+					window->setTransparent(setting.imageIsTransparent);
 
-					switch (m_layout) {
-					case ContinuousSnapshotWizard::Asis:
+					switch (setting.outputLayout) {
+					case ContinuousSnapshotSetting::OutputLayout::AsIs:
 						begin = sub->pos() + sub->widget()->pos() + center->pos();
 						painter.drawPixmap(begin.x() - position.x(), begin.y() - position.y(), window->snapshot());
 						break;
-					case ContinuousSnapshotWizard::Horizontally:
+
+					case ContinuousSnapshotSetting::OutputLayout::Horizontally:
 						painter.drawPixmap(begin.x(), begin.y(), window->snapshot());
 						begin.setX(begin.x() + center->width());
 						break;
-					case ContinuousSnapshotWizard::Vertically:
+
+					case ContinuousSnapshotSetting::OutputLayout::Vertically:
 						painter.drawPixmap(begin.x(), begin.y(), window->snapshot());
 						begin.setY(begin.y() + center->height());
 						break;
@@ -1099,48 +1078,54 @@ void iRICMainWindow::saveContinuousSnapshot(ContinuousSnapshotWizard* wizard, QX
 				}
 				pixmap.save(*fit);
 				QString url = QFileInfo(*fit).fileName();
-				addKMLElement(step, url, m_north, m_south, m_west, m_east, m_angle, writer);
+				const auto& s = m_continuousSnapshotSetting;
+				addKMLElement(step, url,  s.north, s.south, s.west, s.east, s.angle, writer);
 				++fit;
 				break;
 			}
-		case ContinuousSnapshotWizard::Respectively:
+		case ContinuousSnapshotSetting::FileOutputSetting::Respectively:
 			int i = 0;
 			for (QMdiSubWindow* sub : wizard->windowList()) {
 				SnapshotEnabledWindowInterface* window = dynamic_cast<SnapshotEnabledWindowInterface*>(sub->widget());
-				window->setTransparent(m_transparent);
+				window->setTransparent(setting.imageIsTransparent);
 				QPixmap pixmap = window->snapshot();
 				pixmap.save(*fit);
 				if (first) {sizes.append(pixmap.size());}
 				if (wizard->targetWindow() == i) {
 					QString url = QFileInfo(*fit).fileName();
-					addKMLElement(step, url, m_north, m_south, m_west, m_east, m_angle, writer);
+					const auto& s = m_continuousSnapshotSetting;
+					addKMLElement(step, url, s.north, s.south, s.west, s.east, s.angle, writer);
 				}
 				++fit;
 				++ i;
 			}
 			break;
 		}
-		step += m_samplingRate;
+		step += setting.samplingRate;
 		first = false;
 		++ imgCount;
 	}
 	// output Movie.
-	if (wizard->outputMovie()) {
+	if (setting.outputMovie) {
 		QStringList inputFilenames;
 		QStringList outputFilenames;
 		QString inputFilename;
 		QString outputFilename;
-		switch (wizard->output()) {
-		case ContinuousSnapshotWizard::Onefile:
-			inputFilename = QString("img_%%1d%2").arg(wizard->suffixLength()).arg(wizard->extension());
+
+		auto setting = wizard->setting();
+
+		switch (setting.fileOutputSetting) {
+		case ContinuousSnapshotSetting::FileOutputSetting::Onefile:
+			inputFilename = QString("img_%%1d%2").arg(setting.suffixLength).arg(setting.imageExtention);
 			outputFilename = QString("img.mp4");
 			inputFilenames.append(inputFilename);
 			outputFilenames.append(outputFilename);
 			break;
-		case ContinuousSnapshotWizard::Respectively:
+
+		case ContinuousSnapshotSetting::FileOutputSetting::Respectively:
 			int idx = 0;
 			for (auto it = wizard->windowList().begin(); it != wizard->windowList().end(); ++it) {
-				inputFilename = QString("window%1_%%2d%3").arg(idx + 1).arg(wizard->suffixLength()).arg(wizard->extension());
+				inputFilename = QString("window%1_%%2d%3").arg(idx + 1).arg(setting.suffixLength).arg(setting.imageExtention);
 				outputFilename = QString("window%1.mp4").arg(idx + 1);
 				inputFilenames.append(inputFilename);
 				outputFilenames.append(outputFilename);
@@ -1148,11 +1133,11 @@ void iRICMainWindow::saveContinuousSnapshot(ContinuousSnapshotWizard* wizard, QX
 			}
 			break;
 		}
-		QStringList profileString = ContinuousSnapshotMoviePropertyPage::getProfile(wizard->movieProfile());
+		QStringList profileString = ContinuousSnapshotMoviePropertyPage::getProfile(setting.movieProfile);
 		for (int i = 0; i < inputFilenames.count(); ++i) {
 			QString inFile  = inputFilenames.at(i);
 			QString outFile = outputFilenames.at(i);
-			QString absOutFile = QDir(wizard->fileIODirectory()).absoluteFilePath(outFile);
+			QString absOutFile = QDir(setting.exportTargetFolder).absoluteFilePath(outFile);
 			if (QFile::exists(absOutFile)) {
 				bool ok = QFile::remove(absOutFile);
 				if (! ok) {
@@ -1163,14 +1148,14 @@ void iRICMainWindow::saveContinuousSnapshot(ContinuousSnapshotWizard* wizard, QX
 			QString exepath = QCoreApplication::instance()->applicationDirPath();
 			QString ffmpegexe = QDir(exepath).absoluteFilePath("ffmpeg.exe");
 			QProcess* ffprocess = new QProcess();
-			ffprocess->setWorkingDirectory(wizard->fileIODirectory());
+			ffprocess->setWorkingDirectory(setting.exportTargetFolder);
 			QStringList args;
-			if (m_movieLengthMode == 0) {
+			if (setting.movieLengthMode == ContinuousSnapshotSetting::MovieLengthMode::Length) {
 				// specify length
-				args << "-r" << QString("%1/%2").arg(imgCount).arg(wizard->movieLength());
+				args << "-r" << QString("%1/%2").arg(imgCount).arg(setting.movieLengthSeconds);
 			} else {
 				// specify fps
-				args << "-r" << QString("%1").arg(wizard->framesPerSecond());
+				args << "-r" << QString("%1").arg(setting.movieFramesPerSeconds);
 			}
 			args << "-i" << inFile;
 			args << profileString;
@@ -1534,27 +1519,7 @@ void iRICMainWindow::initSetting()
 	LastIODirectory::set(lastio);
 
 	// for continuous snapshot
-	m_output = ContinuousSnapshotWizard::Onefile;
-	m_layout = ContinuousSnapshotWizard::Asis;
-	m_transparent = false;
-	m_directory = LastIODirectory::get();
-	m_extension = QString(".png");
-	m_suffixLength = 4;
-	m_outputMovie = false;
-	m_movieLengthMode = 0;
-	m_movieLength = 10;
-	m_framesPerSecond = 5;
-	m_movieProfile = 0;
-	m_start = -1;
-	m_stop = -1;
-	m_samplingRate = 1;
-	m_googleEarth = false;
-	m_kmlFilename = QString("output.kml");
-	m_angle = 0;
-	m_north = 0;
-	m_south = 0;
-	m_east = 0;
-	m_west = 0;
+	m_continuousSnapshotSetting.exportTargetFolder = QDir(LastIODirectory::get()).filePath("snapshots");
 
 	m_metaData = new iRICMetaData(iRIC::toStr(iRICRootPath::get()), m_locale);
 

@@ -24,18 +24,20 @@ ContinuousSnapshotMoviePropertyPage::~ContinuousSnapshotMoviePropertyPage()
 
 void ContinuousSnapshotMoviePropertyPage::initializePage()
 {
+	const auto s = m_wizard->setting();
+
 	// Output Movie
-	ui->movieCheckBox->setChecked(m_wizard->outputMovie());
+	ui->movieCheckBox->setChecked(s.outputMovie);
 	// Table view
 	ui->filenameTableWidget->setColumnCount(1);
 	ui->filenameTableWidget->setHorizontalHeaderItem(0, new QTableWidgetItem(tr("File name")));
-	switch (m_wizard->output()) {
-	case ContinuousSnapshotWizard::Onefile:
+	switch (s.fileOutputSetting) {
+	case ContinuousSnapshotSetting::FileOutputSetting::Onefile:
 		ui->filenameTableWidget->setRowCount(1);
 		ui->filenameTableWidget->setVerticalHeaderItem(0, new QTableWidgetItem(tr("Output file")));
 		ui->filenameTableWidget->setItem(0, 0, new QTableWidgetItem("img.mp4"));
 		break;
-	case ContinuousSnapshotWizard::Respectively:
+	case ContinuousSnapshotSetting::FileOutputSetting::Respectively:
 		ui->filenameTableWidget->setRowCount(m_wizard->windowList().size());
 		int idx = 0;
 		for (QMdiSubWindow* sub : m_wizard->windowList()) {
@@ -49,43 +51,48 @@ void ContinuousSnapshotMoviePropertyPage::initializePage()
 	for (int i = 0; i < size; i++) {
 		ui->filenameTableWidget->setRowHeight(i, 20);
 	}
-	if (m_wizard->movieLengthMode() == 0) {
+	if (s.movieLengthMode == ContinuousSnapshotSetting::MovieLengthMode::Length) {
 		// specify length
 		ui->lengthRadioButton->setChecked(true);
-		ui->lengthSpinBox->setValue(m_wizard->movieLength());
+		ui->lengthSpinBox->setValue(s.movieLengthSeconds);
 	} else {
 		// specify FPS
 		ui->fpsRadioButton->setChecked(true);
-		ui->fpsSpinBox->setValue(m_wizard->framesPerSecond());
+		ui->fpsSpinBox->setValue(s.movieFramesPerSeconds);
 	}
 	// Profiles
 	ui->profileComboBox->addItem(tr("Default"));
-	ui->profileComboBox->setCurrentIndex(m_wizard->movieProfile());
+	ui->profileComboBox->setCurrentIndex(static_cast<int> (s.movieProfile));
 }
 
 bool ContinuousSnapshotMoviePropertyPage::validatePage()
 {
+	auto s = m_wizard->setting();
+
 	// Output Movie
-	m_wizard->setOutputMovie(ui->movieCheckBox->isChecked());
+	s.outputMovie = ui->movieCheckBox->isChecked();
 	if (ui->lengthRadioButton->isChecked()) {
 		// Length
-		m_wizard->setMovieLengthMode(0);
-		m_wizard->setMovieLength(ui->lengthSpinBox->value());
+		s.movieLengthMode = ContinuousSnapshotSetting::MovieLengthMode::Length;
+		s.movieLengthSeconds = ui->lengthSpinBox->value();
 	} else {
 		// FPS
-		m_wizard->setMovieLengthMode(1);
-		m_wizard->setFramesPerSecond(ui->fpsSpinBox->value());
+		s.movieLengthMode = ContinuousSnapshotSetting::MovieLengthMode::FPS;
+		s.movieFramesPerSeconds = ui->fpsSpinBox->value();
 	}
 	// Profile
-	m_wizard->setMovieProfile(ui->profileComboBox->currentIndex());
+	s.movieProfile = static_cast<ContinuousSnapshotSetting::MovieProfile> (ui->profileComboBox->currentIndex());
+
+	m_wizard->setSetting(s);
+
 	return true;
 }
 
-QStringList ContinuousSnapshotMoviePropertyPage::getProfile(int profileid)
+QStringList ContinuousSnapshotMoviePropertyPage::getProfile(ContinuousSnapshotSetting::MovieProfile profile)
 {
 	QStringList ret;
-	switch (profileid) {
-	case 0:
+	switch (profile) {
+	case ContinuousSnapshotSetting::MovieProfile::MP4:
 	default:
 		ret << "-qscale" << "0" << "-vcodec" << "libx264" << "-pix_fmt" << "yuv420p";
 		break;

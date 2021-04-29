@@ -4,6 +4,7 @@
 #include "../gui_api.h"
 
 #include "../continuoussnapshot/continuoussnapshotwizard.h"
+#include "../continuoussnapshot/continuoussnapshotsetting.h"
 
 #include <guicore/base/iricmainwindowinterface.h>
 #include <misc/versionnumber.h>
@@ -248,7 +249,6 @@ private:
 	void updateRecentSolvers(const QString& filename);
 	void removeFromRecentSolvers(const QString& foldername);
 	void setupAboutDialog();
-	void handleWizardAccepted(ContinuousSnapshotWizard* wizard);
 	void saveContinuousSnapshot(ContinuousSnapshotWizard* wizard, QXmlStreamWriter* writer = nullptr);
 	void addKMLElement(int time, QString url, double north, double south, double west, double east, double angle, QXmlStreamWriter* writer);
 	void setupProcessEnvironment();
@@ -288,41 +288,13 @@ private:
 
 	AnimationController* m_animationController;
 
-	// This value is true only when opening a project file.
-	bool m_isOpening {false};
-	// This value is true only when saving a project file.
-	bool m_isSaving {false};
+	bool m_isOpening; // true when opening a project file.
+	bool m_isSaving; // true when saving a project file.
 
 	VersionNumber m_versionNumber;
 
-	// for continuous snapshot
-	ContinuousSnapshotWizard::Output m_output;
-	ContinuousSnapshotWizard::Layout m_layout;
-	bool m_transparent;
-
-	QString m_directory;
-	QString m_extension;
-	int m_suffixLength;
-
-	bool m_outputMovie;
-	int m_movieLengthMode;
-	int m_movieLength;
-	int m_framesPerSecond;
-	int m_movieProfile;
-
-	int m_start;
-	int m_stop;
-	int m_samplingRate;
-
+	ContinuousSnapshotSetting m_continuousSnapshotSetting;
 	bool m_continuousSnapshotInProgress;
-
-	bool m_googleEarth;
-	QString m_kmlFilename;
-	double m_angle;
-	double m_north;
-	double m_south;
-	double m_east;
-	double m_west;
 
 	bool m_cuiMode;
 
