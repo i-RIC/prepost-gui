@@ -355,9 +355,6 @@ void PreProcessorGeoDataTopDataItem::updateActorSettings()
 
 	if (dynamic_cast<SolverDefinitionGridComplexAttribute*>(m_condition) != nullptr  || m_condition->isOption()) {
 		// discrete
-		if (! m_visible) {return;}
-		m_legendBoxWidget->SetEnabled(1);
-
 		auto gItem = groupDataItem(m_condition->name());
 		if (gItem == nullptr) { return; }
 		auto gItem2 = dynamic_cast<PreProcessorGeoDataGroupDataItem*>(gItem);
@@ -366,10 +363,13 @@ void PreProcessorGeoDataTopDataItem::updateActorSettings()
 		sbSetting.labelTextSetting.applySetting(m_legendBoxWidget->GetLegendBoxActor()->GetEntryTextProperty());
 
 		updateLegendBoxItems();
+
+		if (m_visible) {
+			m_legendBoxWidget->SetEnabled(1);
+		}
+
 	} else {
 		// continuous
-		if (! m_visible) {return;}
-		m_scalarBarWidget->SetEnabled(1);
 		PreProcessorGeoDataGroupDataItemInterface* gItem = groupDataItem(m_condition->name());
 		if (gItem == nullptr) { return; }
 		ScalarBarSetting& sbSetting = dynamic_cast<PreProcessorGeoDataGroupDataItem*>(gItem)->scalarBarSetting();
@@ -385,6 +385,10 @@ void PreProcessorGeoDataTopDataItem::updateActorSettings()
 		scalarBarActor->SetLabelFormat(iRIC::toStr(sbSetting.labelFormat).c_str());
 		sbSetting.titleTextSetting.applySetting(scalarBarActor->GetTitleTextProperty());
 		sbSetting.labelTextSetting.applySetting(scalarBarActor->GetLabelTextProperty());
+
+		if (m_visible) {
+			m_scalarBarWidget->SetEnabled(1);
+		}
 	}
 }
 
