@@ -106,6 +106,7 @@ iRICMainWindow::iRICMainWindow(bool cuiMode, QWidget* parent) :
 	m_animationController {new AnimationController {this}},
 	m_isOpening {false},
 	m_isSaving {false},
+	m_continuousSnapshotInProgress {false},
 	m_cuiMode {cuiMode},
 	m_metaData {nullptr},
 	m_postWindowFactory {new PostProcessorWindowFactory {this}}
@@ -1002,7 +1003,7 @@ void iRICMainWindow::saveContinuousSnapshot(ContinuousSnapshotWizard* wizard, QX
 		isAutoParticleOutput = isAutoParticleOutput || w->isAutoParticleOutput();
 	}
 
-	m_continuousSnapshotInProgress = true;
+	ValueChangerT<bool> snapShotInProgressChanger(&m_continuousSnapshotInProgress, true);
 	QProgressDialog dialog(wizard);
 	dialog.setRange(0, setting.stopTimeStep - setting.startTimeStep);
 	dialog.setWindowTitle(tr("Continuous Snapshot"));
@@ -1023,7 +1024,6 @@ void iRICMainWindow::saveContinuousSnapshot(ContinuousSnapshotWizard* wizard, QX
 		dialog.setValue(step - setting.startTimeStep);
 		qApp->processEvents();
 		if (dialog.wasCanceled()) {
-			m_continuousSnapshotInProgress = false;
 			return;
 		}
 		if (isAutoParticleOutput) {
@@ -1166,7 +1166,6 @@ void iRICMainWindow::saveContinuousSnapshot(ContinuousSnapshotWizard* wizard, QX
 			ffprocess->waitForFinished(-1);
 		}
 	}
-	m_continuousSnapshotInProgress = false;
 }
 
 void iRICMainWindow::addKMLElement(int time, QString url, double north, double south, double west, double east, double angle, QXmlStreamWriter* writer)
@@ -1522,8 +1521,6 @@ void iRICMainWindow::initSetting()
 	m_continuousSnapshotSetting.exportTargetFolder = QDir(LastIODirectory::get()).filePath("snapshots");
 
 	m_metaData = new iRICMetaData(iRIC::toStr(iRICRootPath::get()), m_locale);
-
-	m_continuousSnapshotInProgress = false;
 }
 
 void iRICMainWindow::setupRecentProjectsMenu()
@@ -1927,7 +1924,7 @@ void iRICMainWindow::exportParticles()
 	dialog.setModal(true);
 	dialog.show();
 
-	m_continuousSnapshotInProgress = true;
+	ValueChangerT<bool> continuousSnapshotInProgressChanger(&m_continuousSnapshotInProgress, true);
 
 	int step = s.startStep;
 	int fileIndex = 1;
@@ -1935,23 +1932,18 @@ void iRICMainWindow::exportParticles()
 	while (step <= s.endStep) {
 		dialog.setValue(step);
 		qApp->processEvents();
-		if (dialog.wasCanceled()) {
-			m_continuousSnapshotInProgress = false;
-			return;
-		}
+		if (dialog.wasCanceled()) {return;}
 		m_animationController->setCurrentStepIndex(step);
 		QString prefixName = pInfo->particleExportPrefix();
 		double time = m_projectData->mainfile()->postSolutionInfo()->currentTimeStep();
 		bool ok = ew->exportParticles(outputFolder.absoluteFilePath(prefixName), fileIndex, time, zoneName);
 		if (! ok) {
 			QMessageBox::critical(this, tr("Error"), tr("Error occured while saving."));
-			m_continuousSnapshotInProgress = false;
 			return;
 		}
 		step += s.skipRate;
 		++ fileIndex;
 	}
-	m_continuousSnapshotInProgress = false;
 }
 
 void iRICMainWindow::exportCfShape()
@@ -2023,7 +2015,7 @@ void iRICMainWindow::exportCfShape()
 	dialog.setModal(true);
 	dialog.show();
 
-	m_continuousSnapshotInProgress = true;
+	ValueChangerT<bool> continuousSnapshotInProgressChanger(&m_continuousSnapshotInProgress, true);
 
 	int step = s.startStep;
 	int fileIndex = 1;
@@ -2031,23 +2023,20 @@ void iRICMainWindow::exportCfShape()
 	while (step <= s.endStep) {
 		dialog.setValue(step);
 		qApp->processEvents();
-		if (dialog.wasCanceled()) {
-			m_continuousSnapshotInProgress = false;
-			return;
-		}
+
+		if (dialog.wasCanceled()) {return;}
+
 		m_animationController->setCurrentStepIndex(step);
 		QString prefixName = s.prefix;
 		double time = m_projectData->mainfile()->postSolutionInfo()->currentTimeStep();
 		bool ok = ew->exportContourFigureToShape(outputFolder.absoluteFilePath(prefixName), fileIndex, time, zoneName);
 		if (! ok) {
 			QMessageBox::critical(this, tr("Error"), tr("Error occured while saving."));
-			m_continuousSnapshotInProgress = false;
 			return;
 		}
 		step += s.skipRate;
 		++ fileIndex;
 	}
-	m_continuousSnapshotInProgress = false;
 }
 
 void iRICMainWindow::exportStKMZ()
@@ -2142,7 +2131,7 @@ void iRICMainWindow::exportStKMZ()
 	dialog.setModal(true);
 	dialog.show();
 
-	m_continuousSnapshotInProgress = true;
+	ValueChangerT<bool> continuousSnapshotInProgressChanger(&m_continuousSnapshotInProgress, true);
 
 	int step = s.startStep;
 	int fileIndex = 1;
@@ -2150,16 +2139,14 @@ void iRICMainWindow::exportStKMZ()
 	while (step <= s.endStep) {
 		dialog.setValue(step);
 		qApp->processEvents();
-		if (dialog.wasCanceled()) {
-			m_continuousSnapshotInProgress = false;
-			return;
-		}
+
+		if (dialog.wasCanceled()) {return;}
+
 		m_animationController->setCurrentStepIndex(step);
 		double time = m_projectData->mainfile()->postSolutionInfo()->currentTimeStep();
 		bool ok = ew->exportKMLForTimestep(w, fileIndex, time, zoneName, oneShot);
 		if (! ok) {
 			QMessageBox::critical(this, tr("Error"), tr("Error occured while saving."));
-			m_continuousSnapshotInProgress = false;
 			return;
 		}
 		step += s.skipRate;
@@ -2181,8 +2168,6 @@ void iRICMainWindow::exportStKMZ()
 	mainKML.remove();
 
 	statusBar()->showMessage(tr("Google Earth KMZ is exported to %1 successfully.").arg(QDir::toNativeSeparators(outputFileName)), STATUSBAR_DISPLAYTIME);
-
-	m_continuousSnapshotInProgress = false;
 }
 
 QString iRICMainWindow::tmpFileName(int len) const
