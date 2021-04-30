@@ -31,7 +31,6 @@ GeoDataFactory::GeoDataFactory() :
 
 	// cross-section data, point cloud data, rasterdata
 	m_creators.push_back(new GeoDataPointmapRealCreator());
-	m_creators.push_back(new GeoDataPointmapTINCreator());
 	m_creators.push_back(new GeoDataRiverSurveyCreator());
 	m_creators.push_back(new GeoDataNetcdfIntegerCreator());
 	m_creators.push_back(new GeoDataNetcdfRealCreator());
@@ -52,6 +51,8 @@ GeoDataFactory::GeoDataFactory() :
 	m_creators.push_back(new GeoDataPointRealCreator());
 	m_creators.push_back(new GeoDataPointGroupIntegerCreator());
 	m_creators.push_back(new GeoDataPointGroupRealCreator());
+
+	m_creators.push_back(new GeoDataPointmapTINCreator());
 }
 
 GeoDataFactory& GeoDataFactory::instance()
