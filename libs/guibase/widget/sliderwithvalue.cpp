@@ -1,8 +1,9 @@
 #include "sliderwithvalue.h"
 
+#include <misc/qspinboxwithfocussignals.h>
+
 #include <QHBoxLayout>
 #include <QLabel>
-#include <QSpinBox>
 
 SliderWithValue::SliderWithValue(QWidget* parent) :
 	QWidget(parent)
@@ -11,7 +12,7 @@ SliderWithValue::SliderWithValue(QWidget* parent) :
 	m_label = new QLabel(this);
 	m_label->setFrameShape(QFrame::Panel);
 	m_label->setFrameShadow(QFrame::Sunken);
-	m_spinBox = new QSpinBox(this);
+	m_spinBox = new QSpinBoxWithFocusSignals(this);
 
 	connect(m_slider, SIGNAL(actionTriggered(int)), this, SIGNAL(actionTriggered(int)));
 	connect(m_slider, SIGNAL(rangeChanged(int, int)), this, SIGNAL(rangeChanged(int, int)));
@@ -20,7 +21,7 @@ SliderWithValue::SliderWithValue(QWidget* parent) :
 	connect(m_slider, SIGNAL(sliderReleased()), this, SIGNAL(sliderReleased()));
 	connect(m_slider, SIGNAL(valueChanged(int)), this, SLOT(handleValueChange(int)));
 
-	connect(m_spinBox, SIGNAL(valueChanged(int)), this, SLOT(setValue(int)));
+	connect(m_spinBox, SIGNAL(focusOutOccured()), this, SLOT(applySpinBoxValue()));
 
 	QHBoxLayout* l = new QHBoxLayout(this);
 	l->setMargin(0);
@@ -28,9 +29,7 @@ SliderWithValue::SliderWithValue(QWidget* parent) :
 }
 
 SliderWithValue::~SliderWithValue()
-{
-
-}
+{}
 
 void SliderWithValue::setValue(int val)
 {
@@ -193,6 +192,11 @@ void SliderWithValue::handleValueChange(int val)
 	updateLabel();
 	updateSpinBox();
 	emit valueChanged(val);
+}
+
+void SliderWithValue::applySpinBoxValue()
+{
+	setValue(m_spinBox->value());
 }
 
 void SliderWithValue::setOrientation(Qt::Orientation o)

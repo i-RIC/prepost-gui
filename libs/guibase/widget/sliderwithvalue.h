@@ -7,7 +7,7 @@
 #include <QWidget>
 
 class QLabel;
-class QSpinBox;
+class QSpinBoxWithFocusSignals;
 
 /// Slider with label that displays the value that corresponds to the current selection
 class GUIBASEDLL_EXPORT SliderWithValue : public QWidget
@@ -49,6 +49,7 @@ public slots:
 private slots:
 	void handleSliderMove(int val);
 	void handleValueChange(int val);
+	void applySpinBoxValue();
 
 signals:
 	void actionTriggered(int action);
@@ -65,7 +66,7 @@ private:
 
 	QSlider* m_slider;
 	QLabel* m_label;
-	QSpinBox* m_spinBox;
+	QSpinBoxWithFocusSignals* m_spinBox;
 	QList<double> m_values;
 };
 
