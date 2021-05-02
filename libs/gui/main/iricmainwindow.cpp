@@ -1514,7 +1514,7 @@ void iRICMainWindow::initSetting()
 	LastIODirectory::set(lastio);
 
 	// for continuous snapshot
-	m_continuousSnapshotSetting.exportTargetFolder = QDir(LastIODirectory::get()).filePath("snapshots");
+	m_continuousSnapshotSetting.exportTargetFolder = QDir(LastIODirectory::get()).filePath("imgs");
 
 	m_metaData = new iRICMetaData(iRIC::toStr(iRICRootPath::get()), m_locale);
 }
