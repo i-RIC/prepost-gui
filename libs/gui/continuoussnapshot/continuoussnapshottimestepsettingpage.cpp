@@ -31,17 +31,18 @@ void ContinuousSnapshotTimestepSettingPage::initializePage()
 
 	const auto& s = m_wizard->setting();
 
-	ui->startSlider->setMinimum(0);
-	ui->startSlider->setMaximum(timeSteps.size() - 1);
+	ui->startSlider->setMinimum(1);
+	ui->startSlider->setMaximum(timeSteps.size());
 
-	ui->stopSlider->setMinimum(0);
-	ui->stopSlider->setMaximum(timeSteps.size() - 1);
+	ui->stopSlider->setMinimum(1);
+	ui->stopSlider->setMaximum(timeSteps.size());
 
+	ui->samplingSpinBox->setMinimum(1);
 	ui->samplingSpinBox->setMaximum(timeSteps.size());
 
-	ui->startSlider->setValue(s.startTimeStep);
-	if (s.startTimeStep == -1) {ui->startSlider->setValue(0);}
-	ui->stopSlider->setValue(s.stopTimeStep);
+	ui->startSlider->setValue(s.startTimeStep + 1);
+	if (s.startTimeStep == -1) {ui->startSlider->setValue(1);}
+	ui->stopSlider->setValue(s.stopTimeStep + 1);
 	if (s.stopTimeStep == -1) {ui->stopSlider->setValue(ui->stopSlider->maximum());}
 	ui->samplingSpinBox->setValue(s.samplingRate);
 
@@ -53,8 +54,8 @@ bool ContinuousSnapshotTimestepSettingPage::validatePage()
 {
 	auto s = m_wizard->setting();
 
-	s.startTimeStep = ui->startSlider->value();
-	s.stopTimeStep = ui->stopSlider->value();
+	s.startTimeStep = ui->startSlider->value() - 1;
+	s.stopTimeStep = ui->stopSlider->value() - 1;
 	s.samplingRate = ui->samplingSpinBox->value();
 
 	m_wizard->setSetting(s);
@@ -82,14 +83,14 @@ void ContinuousSnapshotTimestepSettingPage::handleStopChange(int time)
 void ContinuousSnapshotTimestepSettingPage::updateStartLabel()
 {
 	const auto& timeSteps = m_wizard->projectMainFile()->postSolutionInfo()->timeSteps()->timesteps();
-	double time = timeSteps.at(ui->startSlider->value());
+	double time = timeSteps.at(ui->startSlider->value() - 1);
 	updateTimeLabel(time, ui->startValueLabel);
 }
 
 void ContinuousSnapshotTimestepSettingPage::updateStopLabel()
 {
 	const auto& timeSteps = m_wizard->projectMainFile()->postSolutionInfo()->timeSteps()->timesteps();
-	double time = timeSteps.at(ui->stopSlider->value());
+	double time = timeSteps.at(ui->stopSlider->value() - 1);
 	updateTimeLabel(time, ui->stopValueLabel);
 }
 
