@@ -1,130 +1,130 @@
 CONFIG(debug, debug|release) {
 	# gdal
-	LIBS += -L"E:/iricdev_2013/lib/src/gdal-1.11.2"
+	LIBS += -L"D:/iRIC/dev_vc2019_64/iricdev-2019/lib/install/gdal-3.0.4/debug/lib"
 
 	# vtk
-	LIBS += -L"E:/iricdev_2013/lib/install/vtk-6.1.0/debug/lib"
+	LIBS += -L"D:/iRIC/dev_vc2019_64/iricdev-2019/lib/install/vtk-8.2.0/debug/lib"
 
 	# cgnslib
-	LIBS += -L"E:/iricdev_2013/lib/install/cgnslib-3.2.1/debug/lib"
+	LIBS += -L"D:/iRIC/dev_vc2019_64/iricdev-2019/lib/install/cgnslib-4.1.1-patch1/debug/lib"
 
 	# iriclib
-	LIBS += -L"E:/iricdev_2013/src/iriclib/debug"
+	LIBS += -L"D:/iRIC/dev_vc2019_64/iricdev-2019/lib/install/iriclib-0.2.7/debug/lib"
 
 	# Qwt
-	LIBS += -L"E:/iricdev_2013/lib/install/Qwt-6.1.0/lib"
+	LIBS += -L"D:/iRIC/dev_vc2019_64/iricdev-2019/lib/install/Qwt-6.1.5/lib"
 
 	# proj.4
-	LIBS += -L"E:/iricdev_2013/lib/install/proj-4.8.0/release/lib"
+	LIBS += -L"D:/iRIC/dev_vc2019_64/iricdev-2019/lib/install/proj-7.0.1/debug"
 
 	# shapefile
-	LIBS += -L"E:/iricdev_2013/lib/install/shapelib-1.3.0/debug"
+	LIBS += -L"D:/iRIC/dev_vc2019_64/iricdev-2019/lib/install/shapelib-1.5.0/debug"
 
 	# hdf5
-	LIBS += -L"E:/iricdev_2013/lib/install/hdf5-1.8.13/debug/lib"
+	LIBS += -L"D:/iRIC/dev_vc2019_64/iricdev-2019/lib/install/hdf5-1.8.21/debug/lib"
 
 	# netcdf
-	LIBS += -L"E:/iricdev_2013/lib/install/netcdf-4.3.2/debug/lib"
+	LIBS += -L"D:/iRIC/dev_vc2019_64/iricdev-2019/lib/install/netcdf-c-4.7.4/debug/lib"
 
 	# geos
-	LIBS += -L"E:/iricdev_2013/lib/install/geos-3.4.2/debug/lib"
+	LIBS += -L"D:/iRIC/dev_vc2019_64/iricdev-2019/lib/install/geos-3.4.3/debug/lib"
 
 	# yaml-cpp
-	LIBS += -L"E:/iricdev_2013/lib/install/yaml-cpp-0.5.2/debug/lib"
+	LIBS += -L"D:/iRIC/dev_vc2019_64/iricdev-2019/lib/install/yaml-cpp-0.6.3/debug/lib"
 
 	# udunits
-	LIBS += -L"E:/iricdev_2013/lib/install/udunits-2.2.26/debug/lib"
+	LIBS += -L"D:/iRIC/dev_vc2019_64/iricdev-2019/lib/install/udunits-2.2.26/debug/lib"
 
 	# libpng
-	LIBS += -L"E:/iricdev_2013/lib/install/libpng-1.6.37/debug/lib"
+	LIBS += -L"D:/iRIC/dev_vc2019_64/iricdev-2019/lib/install/libpng-1.6.37/debug/lib"
 }
 else {
 	# gdal
-	LIBS += -L"E:/iricdev_2013/lib/install/gdal-1.11.2/release/lib"
+	LIBS += -L"D:/iRIC/dev_vc2019_64/iricdev-2019/lib/install/gdal-3.0.4/release/lib"
 
 	# vtk
-	LIBS += -L"E:/iricdev_2013/lib/install/vtk-6.1.0/release/lib"
+	LIBS += -L"D:/iRIC/dev_vc2019_64/iricdev-2019/lib/install/vtk-8.2.0/release/lib"
 
 	# cgnslib
-	LIBS += -L"E:/iricdev_2013/lib/install/cgnslib-3.2.1/release/lib"
+	LIBS += -L"D:/iRIC/dev_vc2019_64/iricdev-2019/lib/install/cgnslib-4.1.1-patch1/release/lib"
 
 	# iriclib
-	LIBS += -L"E:/iricdev_2013/src/iriclib/release"
+	LIBS += -L"D:/iRIC/dev_vc2019_64/iricdev-2019/lib/install/iriclib-0.2.7/release/lib"
 
 	# Qwt
-	LIBS += -L"E:/iricdev_2013/lib/install/Qwt-6.1.0/lib"
+	LIBS += -L"D:/iRIC/dev_vc2019_64/iricdev-2019/lib/install/qwt-6.1.5/lib"
 
 	# proj.4
-	LIBS += -L"E:/iricdev_2013/lib/install/proj-4.8.0/release/lib"
+	LIBS += -L"D:/iRIC/dev_vc2019_64/iricdev-2019/lib/install/proj-7.0.1/release/lib"
 
 	# shapefile
-	LIBS += -L"E:/iricdev_2013/lib/install/shapelib-1.3.0/release"
+	LIBS += -L"D:/iRIC/dev_vc2019_64/iricdev-2019/lib/install/shapelib-1.5.0/release"
 
 	# hdf5
-	LIBS += -L"E:/iricdev_2013/lib/install/hdf5-1.8.13/release/lib"
+	LIBS += -L"D:/iRIC/dev_vc2019_64/iricdev-2019/lib/install/hdf5-1.8.21/release/lib"
 
 	# netcdf
-	LIBS += -L"E:/iricdev_2013/lib/install/netcdf-4.3.2/release/lib"
+	LIBS += -L"D:/iRIC/dev_vc2019_64/iricdev-2019/lib/install/netcdf-c-4.7.4/release/lib"
 
 	# geos
-	LIBS += -L"E:/iricdev_2013/lib/install/geos-3.4.2/release/lib"
+	LIBS += -L"D:/iRIC/dev_vc2019_64/iricdev-2019/lib/install/geos-3.4.3/release/lib"
 
 	# yaml-cpp
-	LIBS += -L"E:/iricdev_2013/lib/install/yaml-cpp-0.5.2/release/lib"
+	LIBS += -L"D:/iRIC/dev_vc2019_64/iricdev-2019/lib/install/yaml-cpp-0.6.3/release/lib"
 
 	# udunits
-	LIBS += -L"E:/iricdev_2013/lib/install/udunits-2.2.26/release/lib"
+	LIBS += -L"D:/iRIC/dev_vc2019_64/iricdev-2019/lib/install/udunits-2.2.26/release/lib"
 
 	# libpng
-	LIBS += -L"E:/iricdev_2013/lib/install/libpng-1.6.37/release/lib"
+	LIBS += -L"D:/iRIC/dev_vc2019_64/iricdev-2019/lib/install/libpng-1.6.37/release/lib"
 }
 
 INCLUDEPATH += .
 
 # gdal
-INCLUDEPATH += "E:/iricdev_2013/lib/install/gdal-1.11.2/debug/include"
+INCLUDEPATH += "D:/iRIC/dev_vc2019_64/iricdev-2019/lib/install/gdal-3.0.4/debug/include"
 
 # vtk
-INCLUDEPATH += "E:/iricdev_2013/lib/install/vtk-6.1.0/debug/include/vtk-6.1"
+INCLUDEPATH += "D:/iRIC/dev_vc2019_64/iricdev-2019/lib/install/vtk-8.2.0/debug/include/vtk-8.2"
 
 # hdf5
-INCLUDEPATH += "E:/iricdev_2013/lib/install/hdf5-1.8.14/release/include"
+INCLUDEPATH += "D:/iRIC/dev_vc2019_64/iricdev-2019/lib/install/hdf5-1.8.21/release/include"
 
 # cgnslib
-INCLUDEPATH += "E:/iricdev_2013/lib/install/cgnslib-3.2.1/debug/include"
+INCLUDEPATH += "D:/iRIC/dev_vc2019_64/iricdev-2019/lib/install/cgnslib-4.1.1-patch1/debug/include"
 
 # iriclib
-INCLUDEPATH += "E:/iricdev_2013/src/iriclib"
+INCLUDEPATH += "D:/iRIC/dev_vc2019_64/iricdev-2019/lib/install/iriclib-0.2.7/debug/include"
 
 # Qwt
-INCLUDEPATH += "E:/iricdev_2013/lib/install/Qwt-6.1.0/include"
+INCLUDEPATH += "D:/iRIC/dev_vc2019_64/iricdev-2019/lib/install/qwt-6.1.5/include"
 
 # shapelib
-INCLUDEPATH += "E:/iricdev_2013/lib/install/shapelib-1.3.0/release"
+INCLUDEPATH += "D:/iRIC/dev_vc2019_64/iricdev-2019/lib/install/shapelib-1.5.0/release"
 
 # proj.4
-INCLUDEPATH += "E:/iricdev_2013/lib/install/proj-4.8.0/release/include"
+INCLUDEPATH += "D:/iRIC/dev_vc2019_64/iricdev-2019/lib/install/proj-7.0.1/release/include"
 
 # netcdf
-INCLUDEPATH += "E:/iricdev_2013/lib/install/netcdf-4.3.2/release/include"
+INCLUDEPATH += "D:/iRIC/dev_vc2019_64/iricdev-2019/lib/install/netcdf-c-4.7.4/release/include"
 
 # geos
-INCLUDEPATH += "E:/iricdev_2013/lib/install/geos-3.4.2/release/include"
+INCLUDEPATH += "D:/iRIC/dev_vc2019_64/iricdev-2019/lib/install/geos-3.4.3/release/include"
 
 # yaml-cpp
-INCLUDEPATH += "E:/iricdev_2013/lib/install/yaml-cpp-0.5.2/release/include"
+INCLUDEPATH += "D:/iRIC/dev_vc2019_64/iricdev-2019/lib/install/yaml-cpp-0.6.3/release/include"
 
 # boost
-INCLUDEPATH += "C:/usr/src/boost-1.59.0"
+INCLUDEPATH += "D:/iRIC/dev_vc2013_64/iricdev/lib/src/boost-1.73.0"
 
 # udunits
-INCLUDEPATH += "E:/iricdev_2013/lib/install/udunits-2.2.26/release/include"
+INCLUDEPATH += "D:/iRIC/dev_vc2019_64/iricdev-2019/lib/install/udunits-2.2.26/release/include"
 
 # libpng
-INCLUDEPATH += "E:/iricdev_2013/lib/install/libpng-1.6.37/release/include"
+INCLUDEPATH += "D:/iRIC/dev_vc2019_64/iricdev-2019/lib/install/libpng-1.6.37/release/include"
 
 #internal libs
-INCLUDEPATH += "E:/iricdev_2013/src/libs"
+INCLUDEPATH += "$$PWD/libs"
 
 CONFIG += c++11
 
