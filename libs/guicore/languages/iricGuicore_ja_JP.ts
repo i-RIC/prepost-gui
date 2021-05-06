@@ -853,7 +853,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Do you want to import grid from the CGNS file?</source>
-        <translation>CGNSファイルから更新をインポートしますか?</translation>
+        <translation>CGNSファイルから格子をインポートしますか?</translation>
     </message>
     <message>
         <source>Select CGNS file</source>
