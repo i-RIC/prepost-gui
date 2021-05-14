@@ -639,15 +639,16 @@ bool ProjectMainFile::loadCgnsFile(const QString& name)
 		auto fname = iRIC::toStr(m_projectData->workCgnsFileName(name));
 		iRICLib::H5CgnsFile cgnsFile(fname, iRICLib::H5CgnsFile::Mode::OpenReadOnly);
 		ValueChangerT<iRICLib::H5CgnsFile*> fileChanger(&(impl->m_cgnsFile), &cgnsFile);
-
 		int fn = 0; // @todo dummy value. Remove this.
 		loadFromCgnsFile(fn);
-		return true;
 	} catch (...) {
 		auto shortFilename = name + ".cgn";
 		QMessageBox::critical(m_projectData->mainWindow(), tr("Error"), tr("Error occured while opening CGNS file in project file : %1").arg(shortFilename));
 		return false;
 	}
+
+	postSolutionInfo()->loadFromCgnsFile(0);
+	return true;
 }
 
 bool ProjectMainFile::saveCgnsFile()
@@ -717,9 +718,9 @@ ERROR:
 void ProjectMainFile::loadFromCgnsFile(const int fn)
 {
 	// Init iriclib for reading
-	cg_iRIC_InitRead(fn);
+	// cg_iRIC_InitRead(fn);
 	m_projectData->mainWindow()->loadFromCgnsFile(fn);
-	impl->m_postSolutionInfo->loadFromCgnsFile(fn);
+	//impl->m_postSolutionInfo->loadFromCgnsFile(fn);
 }
 
 void ProjectMainFile::saveToCgnsFile(const int fn)
