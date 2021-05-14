@@ -4,7 +4,7 @@
 #include <QPointF>
 
 #include <vtkCellArray.h>
-#include <vtkCellData.h>
+#include <vtkPointData.h>
 #include <vtkPoints.h>
 
 #include <h5cgnsbase.h>
