@@ -4,6 +4,8 @@
 
 #include <cgnslib.h>
 
+#include <h5cgnszone.h>
+
 Unstructured2DGridCgnsImporter::Unstructured2DGridCgnsImporter() :
 	CgnsGridImporter()
 {}
@@ -13,17 +15,7 @@ SolverDefinitionGridType::GridType Unstructured2DGridCgnsImporter::supportedGrid
 	return SolverDefinitionGridType::gtUnstructured2DGrid;
 }
 
-bool Unstructured2DGridCgnsImporter::isZoneCompatible(int fn, int B, int Z)
+bool Unstructured2DGridCgnsImporter::isZoneCompatible(const iRICLib::H5CgnsZone& zone)
 {
-	ZoneType_t type;
-	int ret, celldim, physdim;
-	char basename[ProjectCgnsFile::BUFFERLEN];
-
-	ret = cg_base_read(fn, B, basename, &celldim, &physdim);
-	if (ret != 0) {return false;}
-	if (celldim != 2) {return false;}
-	ret = cg_zone_type(fn, B, Z, &type);
-	if (ret != 0) {return false;}
-	if (type != Unstructured) {return false;}
-	return true;
+	return (zone.type() == iRICLib::H5CgnsZone::Type::Unstructured);
 }

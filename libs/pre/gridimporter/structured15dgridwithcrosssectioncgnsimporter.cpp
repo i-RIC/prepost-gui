@@ -2,7 +2,10 @@
 
 #include <guicore/project/projectcgnsfile.h>
 
-#include <cgnslib.h>
+#include <h5cgnszone.h>
+#include <h5groupcloser.h>
+#include <h5util.h>
+#include <iriclib_errorcodes.h>
 
 Structured15DGridWithCrossSectionCgnsImporter::Structured15DGridWithCrossSectionCgnsImporter() :
 	CgnsGridImporter()
@@ -13,28 +16,30 @@ SolverDefinitionGridType::GridType Structured15DGridWithCrossSectionCgnsImporter
 	return SolverDefinitionGridType::gtNormal1_5DGridWithCrosssection;
 }
 
-bool Structured15DGridWithCrossSectionCgnsImporter::isZoneCompatible(int fn, int B, int Z)
+bool Structured15DGridWithCrossSectionCgnsImporter::isZoneCompatible(const iRICLib::H5CgnsZone& zone)
 {
-	ZoneType_t type;
-	int ret, celldim, physdim;
-	char buffer[ProjectCgnsFile::BUFFERLEN];
+	if (zone.type() != iRICLib::H5CgnsZone::Type::Unstructured) {return false;}
 
-	ret = cg_base_read(fn, B, buffer, &celldim, &physdim);
-	if (ret != 0) {return false;}
-	if (celldim != 2) {return false;}
-	ret = cg_zone_type(fn, B, Z, &type);
-	if (ret != 0) {return false;}
-	if (type != Structured) {return false;}
-	cgsize_t size[9];
-	ret = cg_zone_read(fn, B, Z, buffer, size);
-	if (ret != 0) {return false;}
-	int riversize = size[0];
-	// find "GridCrosssections" under the grid.
-	ret = cg_goto(fn, B, "Base_t", B, "Zone_t", Z, "GridCrosssections", 0, "end");
-	if (ret != 0) {return false;}
-	int narrays;
-	ret = cg_narrays(&narrays);
-	if (ret != 0) {return false;}
-	if (riversize != narrays) {return false;}
+	auto size = zone.size();
+	int riversize = size.at(0);
+
+	std::set<std::string> names;
+	int ier = iRICLib::H5Util::getGroupNames(zone.groupId(), &names);
+	if (ier != IRIC_NO_ERROR) {return false;}
+	if (names.find("GridCrosssections") == names.end()) {return false;}
+
+	hid_t csGroup;
+
+	ier = iRICLib::H5Util::openGroup(zone.groupId(), "GridCrosssections", iRICLib::H5Util::userDefinedDataLabel(), &csGroup);
+	if (ier != IRIC_NO_ERROR) {return false;}
+
+	iRICLib::H5GroupCloser closer(csGroup);
+
+	std::vector<std::string> childNames;
+	ier = iRICLib::H5Util::getGroupNames(csGroup, &childNames);
+	if (ier != IRIC_NO_ERROR) {return false;}
+
+	if (riversize != static_cast<int>(childNames.size())) {return false;}
+
 	return true;
 }

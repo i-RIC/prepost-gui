@@ -1,6 +1,7 @@
 #include "cgnsgridimporter.h"
+#include "../datamodel/preprocessorbcgroupdataitem.h"
+#include "../datamodel/preprocessorgriddataitem.h"
 
-#include <guibase/widget/cgnszoneselectdialog.h>
 #include <guicore/pre/grid/grid.h>
 #include <guicore/project/projectcgnsfile.h>
 #include <guicore/project/projectdata.h>
@@ -21,8 +22,12 @@
 #include <iriclib.h>
 #include <sstream>
 
+#include <h5cgnsbase.h>
+#include <h5cgnsfile.h>
+
 CgnsGridImporter::CgnsGridImporter() :
-	GridInternalImporter {}
+	GridInternalImporter {},
+	m_gridDataItem {nullptr}
 {}
 
 QStringList CgnsGridImporter::fileDialogFilters() const
@@ -41,102 +46,89 @@ bool CgnsGridImporter::import(Grid* grid, const QString& filename, const QString
 {
 	// copy CGNS file to temporary file.
 	QString tmpname;
-	int fn, base, zoneid;
 
-	bool bret = openCgnsFileForImporting(grid, filename, tmpname, fn, base, zoneid, parent);
-	if (! bret) {goto ERROR_OPENING;}
+	auto projectData = getProjectData(grid);
 
-	// load grid.
-	bret = grid->loadFromCgnsFile(fn, base, zoneid);
-	if (! bret) {
-		QMessageBox::critical(parent, tr("Error"),
-													tr("Error occured while importing grid."));
-		goto ERROR_AFTER_OPENING;
+	auto tmpName = projectData->tmpFileName();
+	try {
+		iRICLib::H5CgnsFile file(iRIC::toStr(tmpName), iRICLib::H5CgnsFile::Mode::OpenReadOnly);
+		iRICLib::H5CgnsZone* zone;
+
+		bool ok = selectZoneForImporting(file, &zone, parent);
+		if (! ok) {return false;}
+
+		// Check the compatibility.
+		std::string solverName;
+		VersionNumber versionNumber;
+		ok = ProjectCgnsFile::readSolverInfo(file, &solverName, &versionNumber);
+		if (ok == true) {
+			SolverDefinition* solverDef = projectData->solverDefinition();
+			if (solverDef->name() != solverName || (! solverDef->version().compatibleWith(versionNumber))) {
+				int ret = QMessageBox::warning(parent, tr("Error"),
+						tr("This CGNS file is created for %1 version %2. It is not compatible with the current solver. "
+						"Maybe only some part of the grid will be imported.\nDo you really want to import grid from this file?").arg(solverName.c_str()).arg(versionNumber.toString()),
+																			 QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
+				if (ret == QMessageBox::No) {return false;}
+			}
+		} else {
+			// error occured reading solver information.
+			int ret = QMessageBox::warning(parent, tr("Warning"),
+																		 tr("This CGNS file does not have solver information. "
+																				"We can not check whether this CGNS file is compatible with the solver. If it is not compatible, maybe only some part of the grid will be imported.\nDo you really want to import grid from this file?"),
+																		 QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
+			if (ret == QMessageBox::No) {return false;}
+		}
+
+		ok = grid->loadFromCgnsFile(*zone);
+		if (ok) {
+			m_gridDataItem->setGrid(grid);
+			// if boundary condition exists, import it.
+			auto bc = m_gridDataItem->bcGroupDataItem();
+			if (bc != nullptr) {
+				bc->clear();
+				bc->loadFromCgnsFile(*zone);
+			}
+		}
+
+		if (! ok) {
+			QMessageBox::critical(parent, tr("Error"), tr("Error occured while importing grid."));
+			return false;
+		}
+		return true;
+	} catch (...) {
+		return false;
 	}
-	closeAndRemoveTempCgnsFile(fn, tmpname);
-	return true;
-
-ERROR_AFTER_OPENING:
-	closeAndRemoveTempCgnsFile(fn, tmpname);
-ERROR_OPENING:
-	return false;
 }
 
-bool CgnsGridImporter::openCgnsFileForImporting(Grid* grid, const QString& filename, QString& tmpname, int& fn, int& base, int& zoneid, QWidget* parent)
+bool CgnsGridImporter::selectZoneForImporting(const iRICLib::H5CgnsFile& file, iRICLib::H5CgnsZone** selectedZone, QWidget* parent)
 {
-	// copy CGNS file to temporary file.
-	tmpname = getProjectData(grid)->tmpFileName();
-	// Copy to a temporary file.
-	bool bret = QFile::copy(filename, tmpname);
-	if (! bret) {return false;}
-	std::string solverName;
-	VersionNumber versionNumber;
-	QList<int> zoneids;
-	QStringList zonenames;
+	auto ccBase = file.ccBase();
+	auto zones = ccBase->zoneNames();
 
-	int iret;
-	iret = cg_open(iRIC::toStr(tmpname).c_str(), CG_MODE_READ, &fn);
-	if (iret != 0) {goto OPEN_ERROR_OPENING;}
-	iret = cg_iRIC_GotoBase(fn, &base);
-	if (iret != 0) {goto OPEN_ERROR_AFTER_OPENING;}
-	// Count the number of zones in the base.
-	int nzones;
-	iret = cg_nzones(fn, base, &nzones);
-	if (iret != 0) {goto OPEN_ERROR_AFTER_OPENING;}
-	for (int Z = 1; Z <= nzones; ++Z) {
-		char buffer[ProjectCgnsFile::BUFFERLEN];
-		cgsize_t size[9];
-		iret = cg_zone_read(fn, base, Z, buffer, size);
-		if (iret != 0) {goto OPEN_ERROR_AFTER_OPENING;}
-		if (isZoneCompatible(fn, base, Z)) {
-			zonenames.append(QString(buffer));
-			zoneids.append(Z);
+	QStringList compatibleZoneNames;
+	for (auto zname : zones) {
+		auto z = ccBase->zone(zname);
+		if (isZoneCompatible(*z)) {
+			compatibleZoneNames.push_back(zname.c_str());
 		}
 	}
-	if (zonenames.count() == 0) {
-		// there is no compatible zone.
-		goto OPEN_ERROR_AFTER_OPENING;
-	}
-	if (zonenames.count() == 1) {
-		// there is only one grid that can be imported.
-		zoneid = zoneids.at(0);
+	if (compatibleZoneNames.size() == 0) {
+		QMessageBox::warning(parent, tr("Warning"), tr("This file does not contain grid that can be imported."));
+		return false;
+	} else if (compatibleZoneNames.size() == 1) {
+		auto name = iRIC::toStr(compatibleZoneNames[0]);
+		*selectedZone = ccBase->zone(name);
 	} else {
-		// there are more than 1 zones that has compatible grid.
-		// we have to select.
-		CgnsZoneSelectDialog dialog(parent);
-		dialog.setZones(zoneids, zonenames);
-		iret = dialog.exec();
-		if (iret == QDialog::Rejected) {goto OPEN_ERROR_AFTER_OPENING;}
-		zoneid = dialog.zoneId();
-	}
-	cg_iRIC_Set_ZoneId_Mul(fn, zoneid);
-	// Check the compatibility.
-	bret = ProjectCgnsFile::readSolverInfo(fn, &solverName, &versionNumber);
-	if (bret == true) {
-		SolverDefinition* solverDef = getProjectData(grid)->solverDefinition();
-		if (solverDef->name() != solverName || (! solverDef->version().compatibleWith(versionNumber))) {
-			int ret = QMessageBox::warning(parent, tr("Error"),
-					tr("This CGNS file is created for %1 version %2. It is not compatible with the current solver. Maybe only some part of the grid will be imported.\nDo you really want to import grid from this file?").arg(solverName.c_str()).arg(versionNumber.toString()), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
-			if (ret == QMessageBox::No) {goto OPEN_ERROR_AFTER_OPENING;}
-		}
-	} else {
-		// error occured reading solver information.
-		int ret = QMessageBox::warning(parent, tr("Warning"),
-																	 tr("This CGNS file does not have solver information. "
-																			"We can not check whether this CGNS file is compatible with the solver. If it is not compatible, maybe only some part of the grid will be imported.\nDo you really want to import grid from this file?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
-		if (ret == QMessageBox::No) {goto OPEN_ERROR_AFTER_OPENING;}
+		bool ok;
+		auto zoneName = QInputDialog::getItem(parent, tr("Select grid"), tr("Select grid to import."), compatibleZoneNames, 0, false, &ok);
+		if (! ok) {return false;}
+
+		*selectedZone = ccBase->zone(iRIC::toStr(zoneName));
 	}
 	return true;
-
-OPEN_ERROR_AFTER_OPENING:
-	closeAndRemoveTempCgnsFile(fn, tmpname);
-OPEN_ERROR_OPENING:
-	return false;
 }
 
-void CgnsGridImporter::closeAndRemoveTempCgnsFile(int fn, const QString& filename)
+void CgnsGridImporter::setGridDataItem(PreProcessorGridDataItem* gridDataItem)
 {
-	cg_close(fn);
-	// Delete the temporary file
-	QFile::remove(filename);
+	m_gridDataItem = gridDataItem;
 }
