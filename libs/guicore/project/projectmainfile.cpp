@@ -1267,9 +1267,3 @@ int ProjectMainFile::showCoordinateSystemDialog(bool forceSelect)
 	setCoordinateSystem(cs);
 	return QDialog::Accepted;
 }
-
-void ProjectMainFile::showTimeSettingDialog()
-{
-	auto mainW = projectData()->mainWindow();
-
-}

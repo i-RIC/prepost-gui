@@ -132,7 +132,6 @@ public:
 	/// Create background image
 	void addBackgroundImage(BackgroundImageInfo* image);
 	int showCoordinateSystemDialog(bool forceSelect = false);
-	void showTimeSettingDialog();
 
 public slots:
 	void exportCurrentCgnsFile();
