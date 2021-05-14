@@ -46,6 +46,12 @@
 #include <cgnslib.h>
 #include <iriclib.h>
 
+#include <h5cgnsbase.h>
+#include <h5cgnsbaseiterativedata.h>
+#include <h5cgnsfile.h>
+#include <h5cgnsfilesolutionreader.h>
+#include <iriclib_errorcodes.h>
+
 namespace {
 
 void writeZonesToProjectMainFile(int dim, const QList<PostZoneDataContainer*>& zones, QXmlStreamWriter& writer)
@@ -82,6 +88,7 @@ PostSolutionInfo::PostSolutionInfo(ProjectDataItem* parent) :
 	m_currentStep {0},
 	m_timerId {0},
 	m_opener {nullptr},
+	m_cgnsFile {nullptr},
 	m_exportFormat {PostDataExportDialog::Format::VTKASCII},
 	m_disableCalculatedResult {false},
 	m_particleExportPrefix {"Particle_"},
@@ -454,10 +461,10 @@ void PostSolutionInfo::checkCgnsStepsUpdate()
 		return;
 	}
 	if (m_timeSteps != nullptr) {
-		m_timeSteps->checkStepsUpdate(m_opener->fileId());
+		m_timeSteps->checkStepsUpdate(*m_cgnsFile);
 	}
 	if (m_iterationSteps != nullptr) {
-		m_iterationSteps->checkStepsUpdate(m_opener->fileId());
+		m_iterationSteps->checkStepsUpdate(*m_cgnsFile);
 	}
 	checking = false;
 }
@@ -494,15 +501,17 @@ void PostSolutionInfo::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 
 void PostSolutionInfo::loadFromCgnsFile(const int fn)
 {
+	open();
+
 	m_currentStep = 0;
 	if (m_timeSteps != nullptr) {
 		m_timeSteps->blockSignals(true);
-		m_timeSteps->loadFromCgnsFile(fn);
+		m_timeSteps->loadFromCgnsFile(*cgnsFile());
 		m_timeSteps->blockSignals(false);
 	}
 	if (m_iterationSteps != nullptr) {
 		m_iterationSteps->blockSignals(true);
-		m_iterationSteps->loadFromCgnsFile(fn);
+		m_iterationSteps->loadFromCgnsFile(*cgnsFile());
 		m_iterationSteps->blockSignals(false);
 	}
 	setCurrentStep(currentStep(), fn);
@@ -700,8 +709,8 @@ PostSolutionInfo::Dimension PostSolutionInfo::fromIntDimension(int dim)
 
 void PostSolutionInfo::close()
 {
-	delete m_opener;
-	m_opener = nullptr;
+	delete m_cgnsFile;
+	m_cgnsFile = nullptr;
 }
 
 const PostExportSetting& PostSolutionInfo::exportSetting() const
@@ -726,9 +735,12 @@ void PostSolutionInfo::setParticleExportPrefix(const QString& prefix)
 
 int PostSolutionInfo::fileId() const
 {
-	if (m_opener == nullptr) {return 0;}
+	return 0;
+}
 
-	return m_opener->fileId();
+iRICLib::H5CgnsFile* PostSolutionInfo::cgnsFile() const
+{
+	return m_cgnsFile;
 }
 
 void PostSolutionInfo::setCalculatedResultDisabled(bool disabled)
@@ -945,17 +957,14 @@ void PostSolutionInfo::exportCalculationResult(const std::string& folder, const 
 
 bool PostSolutionInfo::open()
 {
-	if (m_opener != nullptr) {
-		return true;
-	}
+	if (m_cgnsFile != nullptr) {return true;}
 
 	try {
-		m_opener = new CgnsFileOpener(iRIC::toStr(currentCgnsFileName()), CG_MODE_READ);
-	} catch (const std::runtime_error&) {
+		m_cgnsFile = new iRICLib::H5CgnsFile(iRIC::toStr(currentCgnsFileName()), iRICLib::H5CgnsFile::Mode::OpenReadOnly);
+		return true;
+	} catch (...) {
 		return false;
 	}
-
-	return true;
 }
 
 void PostSolutionInfo::clearContainers(QList<PostZoneDataContainer*>* conts)

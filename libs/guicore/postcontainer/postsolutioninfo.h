@@ -11,11 +11,14 @@
 #include <QMap>
 #include <QStringList>
 
+namespace iRICLib {
+	class H5CgnsFile;
+} // namespace iRICLib
+
 class CgnsFileOpener;
 class PostBaseIterativeNumericalDataContainer;
 class PostBaseIterativeStringDataContainer;
 class PostCalculatedResult;
-class PostDataContainer;
 class PostIterationSteps;
 class PostTimeSteps;
 class PostZoneDataContainer;
@@ -77,6 +80,7 @@ public:
 
 	/// File ID that can be used with cgnslib functions.
 	int fileId() const;
+	iRICLib::H5CgnsFile* cgnsFile() const;
 	void setCalculatedResultDisabled(bool disabled);
 
 	void exportCalculationResult(const std::string& folder, const std::string& prefix, const std::vector<int> steps, PostDataExportDialog::Format format);
@@ -135,7 +139,7 @@ private:
 	QMap<std::string, PostZoneDataContainer*> m_zoneContainerNameMap3D;
 
 	int m_timerId;
-	CgnsFileOpener* m_opener;
+	iRICLib::H5CgnsFile* m_cgnsFile;
 
 	QMap<std::string, std::vector<PostCalculatedResult*> > m_calculatedResults1D;
 	QMap<std::string, std::vector<PostCalculatedResult*> > m_calculatedResults2D;
