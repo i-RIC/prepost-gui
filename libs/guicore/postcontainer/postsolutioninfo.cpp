@@ -164,6 +164,9 @@ bool PostSolutionInfo::setCurrentStep(unsigned int step, int fn)
 
 	int tmpfn = 0;
 
+	return true;
+
+
 	time.start();
 	setupZoneDataContainers(tmpfn);
 	setupBaseIterativeResults(tmpfn, 1);
@@ -384,6 +387,8 @@ void PostSolutionInfo::clearBaseIterativeResults()
 
 void PostSolutionInfo::setupZoneDataContainers(int fn)
 {
+	return;
+
 	bool ret;
 	// setup 1D containers.
 	ret = innerSetupZoneDataContainers(fn, 1, &m_zoneContainers1D, &m_zoneContainerNameMap1D, &m_calculatedResults1D);
