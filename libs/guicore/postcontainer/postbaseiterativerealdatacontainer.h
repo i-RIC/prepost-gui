@@ -6,10 +6,10 @@
 class PostBaseIterativeRealDataContainer : public PostBaseIterativeNumericalDataContainer
 {
 public:
-	PostBaseIterativeRealDataContainer(int baseId, const std::string& name, PostSolutionInfo* parent);
+	PostBaseIterativeRealDataContainer(const std::string& name, PostSolutionInfo* parent);
 
 	double data() const override;
-	bool handleCurrentStepUpdate(const int fn, const int timeStep) override;
+	bool handleCurrentStepUpdate(iRICLib::H5CgnsFile* file, const int timeStep) override;
 
 private:
 	double m_data;

@@ -6,7 +6,7 @@
 class PostBaseIterativeNumericalDataContainer : public PostBaseIterativeDataContainer
 {
 public:
-	PostBaseIterativeNumericalDataContainer(int baseId, const std::string& name, PostSolutionInfo* parent);
+	PostBaseIterativeNumericalDataContainer(const std::string& name, PostSolutionInfo* parent);
 
 	virtual double data() const = 0;
 };

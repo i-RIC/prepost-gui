@@ -321,7 +321,6 @@ bool PostSolutionInfo::innerSetupZoneDataContainers(int fn, int dim, QList<PostZ
 bool PostSolutionInfo::setupBaseIterativeResults(int fn, int baseId)
 {
 	clearBaseIterativeResults();
-	/*
 
 	auto file = cgnsFile();
 	auto biterData = file->ccBase()->biterData();
@@ -351,7 +350,6 @@ bool PostSolutionInfo::setupBaseIterativeResults(int fn, int baseId)
 			m_baseIterativeStringResults.insert({c->name(), c});
 		}
 	}
-	*/
 
 	return true;
 }
