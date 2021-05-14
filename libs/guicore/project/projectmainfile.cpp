@@ -26,6 +26,7 @@
 #include <misc/iricundostack.h>
 #include <misc/lastiodirectory.h>
 #include <misc/stringtool.h>
+#include <misc/valuechangert.h>
 #include <misc/xmlsupport.h>
 
 #include <QApplication>
@@ -56,6 +57,8 @@
 #include <cgnslib.h>
 #include <iriclib.h>
 #include <cmath>
+
+#include <h5cgnsfile.h>
 
 namespace {
 
@@ -114,6 +117,7 @@ ProjectMainFile::Impl::Impl(ProjectMainFile *parent) :
 	m_timeFormat {TimeFormat::elapsed_SS_sec},
 	m_offset {QPointF(0, 0)},
 	m_isModified {false},
+	m_cgnsFile {nullptr},
 	m_parent {parent}
 {}
 
@@ -631,21 +635,19 @@ QString ProjectMainFile::currentCgnsFileName() const
 
 bool ProjectMainFile::loadCgnsFile(const QString& name)
 {
-	bool ret = false;
 	try {
-		// CGNS file name
-		QString fname = m_projectData->workCgnsFileName(name);
-		CgnsFileOpener opener(iRIC::toStr(fname), CG_MODE_READ);
-		// load data.
-		ret = true;
-		loadFromCgnsFile(opener.fileId());
-	}
-	catch (const std::runtime_error&) {
-		QString shortFilename = name;
-		shortFilename.append(".cgn");
+		auto fname = iRIC::toStr(m_projectData->workCgnsFileName(name));
+		iRICLib::H5CgnsFile cgnsFile(fname, iRICLib::H5CgnsFile::Mode::OpenReadOnly);
+		ValueChangerT<iRICLib::H5CgnsFile*> fileChanger(&(impl->m_cgnsFile), &cgnsFile);
+
+		int fn = 0; // @todo dummy value. Remove this.
+		loadFromCgnsFile(fn);
+		return true;
+	} catch (...) {
+		auto shortFilename = name + ".cgn";
 		QMessageBox::critical(m_projectData->mainWindow(), tr("Error"), tr("Error occured while opening CGNS file in project file : %1").arg(shortFilename));
+		return false;
 	}
-	return ret;
 }
 
 bool ProjectMainFile::saveCgnsFile()
@@ -1204,6 +1206,11 @@ void ProjectMainFile::setOffset(double x, double y)
 	impl->m_postProcessors->applyOffset(x_diff, y_diff);
 	impl->m_offset.setX(x);
 	impl->m_offset.setY(y);
+}
+
+iRICLib::H5CgnsFile* ProjectMainFile::cgnsFile() const
+{
+	return impl->m_cgnsFile;
 }
 
 class ProjectSetOffsetCommand : public QUndoCommand

@@ -13,6 +13,10 @@ namespace Ui
 	class InputConditionDialog;
 }
 
+namespace iRICLib {
+	class H5CgnsConditionGroup;
+} // namespace iRICLib
+
 class InputConditionContainerSet;
 class InputConditionWidgetSet;
 
@@ -27,7 +31,7 @@ public:
 	void setFileName(const QString& fileName) {m_fileName = fileName;}
 	void setWorkFolder(const QString& workFolder) {m_workFolder = workFolder;}
 	/// Load data fron CGNS file.
-	void load(const int fn);
+	void load(const iRICLib::H5CgnsConditionGroup& group);
 	/// Save data into CGNS file.
 	void save(const int fn);
 	/// Import input condition from CGNS file.

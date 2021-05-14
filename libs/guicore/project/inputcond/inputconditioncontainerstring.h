@@ -25,7 +25,7 @@ public:
 	const QString& defaultValue() const;
 	void setDefaultValue(const QString& v);
 
-	int load() override;
+	int load(const iRICLib::H5CgnsConditionGroup& group) override;
 	int save() override;
 	void clear() override;
 

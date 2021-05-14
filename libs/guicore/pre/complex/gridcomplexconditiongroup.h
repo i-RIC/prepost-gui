@@ -12,6 +12,10 @@ class InputConditionContainerSet;
 class QDomElement;
 class QWidget;
 
+namespace iRICLib {
+	class H5CgnsConditionGroup;
+} // namespace iRICLib
+
 class GUICOREDLL_EXPORT GridComplexConditionGroup
 {
 public:
@@ -34,7 +38,7 @@ public:
 
 	void setNameAndNumber(const std::string& name, int number);
 
-	void load();
+	void load(const iRICLib::H5CgnsConditionGroup& group);
 	void save();
 
 	QWidget* widget() const;

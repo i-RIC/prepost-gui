@@ -19,6 +19,9 @@
 #include <cgnslib.h>
 #include <iriclib.h>
 
+#include <h5cgnsbase.h>
+#include <h5cgnsfile.h>
+
 GridCreatingConditionExternalProgramSettingDialog::GridCreatingConditionExternalProgramSettingDialog(SolverDefinition* def, const QLocale& locale, iRICMainWindowInterface* /*mainW*/, QWidget* parent) :
 	QDialog(parent),
 	ui(new Ui::GridCreatingConditionExternalProgramSettingDialog)
@@ -77,23 +80,17 @@ void GridCreatingConditionExternalProgramSettingDialog::setup(const SolverDefini
 
 bool GridCreatingConditionExternalProgramSettingDialog::load()
 {
-	int fn;
-	int ret;
-	ret = cg_open(iRIC::toStr(m_filename).c_str(), CG_MODE_READ, &fn);
-	if (ret != 0) {return false;}
-	cg_iRIC_Init(fn);
-	if (ret != 0) {goto ERROR;}
-	ret = cg_iRIC_GotoCC(fn);
-	if (ret != 0) {goto ERROR;}
-	m_containerSet->load();
-	// select the first page.
-	ui->m_pageList->selectFirstItem();
-	cg_close(fn);
-	return true;
+	try {
+		iRICLib::H5CgnsFile file(iRIC::toStr(m_filename), iRICLib::H5CgnsFile::Mode::OpenReadOnly);
+		auto ccGroup = file.ccBase()->ccGroup();
+		m_containerSet->load(*ccGroup);
 
-ERROR:
-	cg_close(fn);
-	return false;
+		// select the first page.
+		ui->m_pageList->selectFirstItem();
+		return true;
+	} catch (...) {
+		return false;
+	}
 }
 
 bool GridCreatingConditionExternalProgramSettingDialog::save()

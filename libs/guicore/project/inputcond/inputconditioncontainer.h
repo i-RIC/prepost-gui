@@ -15,6 +15,10 @@ namespace YAML {
 	class Node;
 } // namespace YAML
 
+namespace iRICLib {
+	class H5CgnsConditionGroup;
+} // namespace iRICLib
+
 class GUICOREDLL_EXPORT InputConditionContainer : public QObject
 {
 	Q_OBJECT
@@ -31,7 +35,7 @@ public:
 
 	void copyValues(const InputConditionContainer& c);
 
-	virtual int load() = 0;
+	virtual int load(const iRICLib::H5CgnsConditionGroup& group) = 0;
 	virtual int save() = 0;
 	virtual void clear() = 0;
 

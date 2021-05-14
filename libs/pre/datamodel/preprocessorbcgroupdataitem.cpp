@@ -21,6 +21,10 @@
 
 #include <iriclib.h>
 
+#include <h5cgnsbc.h>
+#include <h5cgnszone.h>
+#include <h5cgnszonebc.h>
+
 PreProcessorBCGroupDataItem::PreProcessorBCGroupDataItem(PreProcessorDataItem* parent) :
 	PreProcessorDataItem {tr("Boundary Condition"), QIcon(":/libs/guibase/images/iconFolder.png"), parent},
 	m_deleteSelectedAction {new QAction(QIcon(":/libs/guibase/images/iconDeleteItem.png"), PreProcessorBCGroupDataItem::tr("Delete &Selected..."), this)},
@@ -59,9 +63,39 @@ PreProcessorBCGroupDataItem::~PreProcessorBCGroupDataItem()
 	delete m_colorSource;
 }
 
+void PreProcessorBCGroupDataItem::loadFromCgnsFile(const iRICLib::H5CgnsZone& zone)
+{
+
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
+		auto bcItem = dynamic_cast<PreProcessorBCDataItem*>(*it);
+		bcItem->loadFromCgnsFile(zone);
+	}
+
+	PreProcessorGridTypeDataItem* gtItem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent()->parent());
+	auto zoneBc = zone.zoneBc();
+	if (zoneBc == nullptr) {return;}
+
+	auto bcs = gtItem->gridType()->boundaryConditions();
+	for (SolverDefinitionBoundaryCondition* bc : bcs) {
+		auto count = zoneBc->bcCount(bc->name());
+		for (int i = 0; i < count; ++i) {
+			auto bcItem = new PreProcessorBCDataItem(projectData()->solverDefinition(), bc, this, true);
+			bcItem->setCgnsNumber(i + 1);
+			bcItem->loadFromCgnsFile(zone);
+			m_childItems.push_back(bcItem);
+		}
+	}
+
+	assignActorZValues(m_zDepthRange);
+	updateItemMap();
+
+	emit itemsUpdated();
+	emit itemsLoaded();
+}
+
 void PreProcessorBCGroupDataItem::loadFromCgnsFile(const int fn)
 {
-	cg_iRIC_Init_BC_Names();
+	// cg_iRIC_Init_BC_Names();
 	Grid* grid = dynamic_cast<PreProcessorGridDataItem*>(parent())->grid();
 
 	if (m_projectBuildNumber > 3507) {

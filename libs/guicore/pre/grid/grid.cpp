@@ -93,6 +93,8 @@ void Grid::setParent(QObject* parent)
 
 void Grid::loadFromCgnsFile(const int fn)
 {
+	// todo remove this function.
+	/*
 	int B;
 	// goto Base.
 	cg_iRIC_GotoBase(fn, &B);
@@ -106,10 +108,13 @@ void Grid::loadFromCgnsFile(const int fn)
 	loadFromCgnsFile(fn, B, zoneid);
 	cg_iRIC_Set_ZoneId(zoneid);
 	impl->m_isModified = false;
+	*/
 }
 
 void Grid::saveToCgnsFile(const int fn)
 {
+	// todo remove this function.
+	/*
 	// if not modified, do nothing.
 	if (! impl->m_isModified) {return;}
 
@@ -122,6 +127,7 @@ void Grid::saveToCgnsFile(const int fn)
 	cg_ziter_write(fn, B, Z, "ZoneIterativeData");
 	cg_iRIC_Set_ZoneId(Z);
 	impl->m_isModified = false;
+	*/
 }
 
 vtkPointSet* Grid::vtkGrid() const
@@ -316,14 +322,12 @@ void Grid::getCullSetting(bool* enable, int* cellLimit, int* indexLimit)
 	*indexLimit = settings.value("general/cullindexlimit", Grid::MAX_DRAWINDEXCOUNT).toInt();
 }
 
-bool Grid::loadGridAttributes(int fn, int B, int Z)
+bool Grid::loadGridAttributes(const iRICLib::H5CgnsZone& zone)
 {
-	// Grid coordinates are loaded.
-	// Next, grid related condition data is loaded.
 	bool allok = true;
-	for (auto it = impl->m_gridAttributes.begin(); it != impl->m_gridAttributes.end(); ++it) {
-		(*it)->allocate();
-		bool ret = (*it)->loadFromCgnsFile(fn, B, Z);
+	for (auto att : impl->m_gridAttributes) {
+		att->allocate();
+		bool ret = att->loadFromCgnsFile(zone);
 		allok = allok && ret;
 	}
 	return allok;

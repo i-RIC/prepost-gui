@@ -24,7 +24,7 @@ public:
 	double defaultValue() const;
 	void setDefaultValue(double d);
 
-	int load() override;
+	int load(const iRICLib::H5CgnsConditionGroup& group) override;
 	int save() override;
 	void clear() override;
 

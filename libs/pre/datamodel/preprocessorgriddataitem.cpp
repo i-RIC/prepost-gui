@@ -71,6 +71,10 @@
 #include <cgnslib.h>
 #include <iriclib.h>
 
+#include <h5cgnsbase.h>
+#include <h5cgnsfile.h>
+#include <h5cgnszone.h>
+
 PreProcessorGridDataItem::Impl::Impl() :
 	m_grid {nullptr},
 	m_nodeDataItem {nullptr},
@@ -158,28 +162,22 @@ void PreProcessorGridDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 void PreProcessorGridDataItem::loadFromCgnsFile(const int fn)
 {
 	std::string zoneName = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItem*>(parent())->zoneName();
-	// There is only one base_t node.
-	int B;
-	int nzones;
-	cg_iRIC_GotoBase(fn, &B);
-	cg_nzones(fn, B, &nzones);
-	char zonename[ProjectCgnsFile::BUFFERLEN];
-	cgsize_t size[9];
-	for (int i = 1; i <= nzones; ++i) {
-		// read zone information.
-		cg_zone_read(fn, 1, i, zonename, size);
-		if (zoneName == zonename) {
-			impl->m_grid = GridCgnsEstimater::buildGrid(fn, B, i, 0);
-			SolverDefinitionGridType* gridType = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent())->gridType();
-			gridType->buildGridAttributes(impl->m_grid);
-			impl->m_grid->setParent(this);
-			impl->m_grid->setDataItem(this);
-			impl->m_grid->setZoneName(zoneName);
 
-			// Now, memory is allocated. load data.
-			impl->m_grid->loadFromCgnsFile(fn);
-		}
-	}
+	auto mainFile = dataModel()->iricMainWindow()->projectData()->mainfile();
+	auto ccBase = mainFile->cgnsFile()->ccBase();
+	auto zone = ccBase->zone(zoneName);
+	if (zone == nullptr) {return;}
+
+	impl->m_grid = GridCgnsEstimater::buildGrid(*zone, nullptr);
+	SolverDefinitionGridType* gridType = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent())->gridType();
+	gridType->buildGridAttributes(impl->m_grid);
+	impl->m_grid->setParent(this);
+	impl->m_grid->setDataItem(this);
+	impl->m_grid->setZoneName(zoneName);
+
+	// Now, memory is allocated. load data.
+	impl->m_grid->loadFromCgnsFile(*zone);
+
 	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
 		(*it)->loadFromCgnsFile(fn);
 	}

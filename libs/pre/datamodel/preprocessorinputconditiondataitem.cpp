@@ -20,6 +20,9 @@
 
 #include <cgnslib.h>
 
+#include <h5cgnsbase.h>
+#include <h5cgnsfile.h>
+
 PreProcessorInputConditionDataItem::PreProcessorInputConditionDataItem(GraphicsWindowDataItem* parent) :
 	PreProcessorDataItem {parent}
 {
@@ -54,7 +57,8 @@ void PreProcessorInputConditionDataItem::doSaveToProjectMainFile(QXmlStreamWrite
 
 void PreProcessorInputConditionDataItem::loadFromCgnsFile(const int fn)
 {
-	m_dialog->load(fn);
+	auto cgnsFile = projectData()->mainfile()->cgnsFile();
+	m_dialog->load(*(cgnsFile->ccBase()->ccGroup()));
 }
 
 void PreProcessorInputConditionDataItem::saveToCgnsFile(const int fn)

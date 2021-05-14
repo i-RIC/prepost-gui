@@ -12,6 +12,11 @@
 
 #include <cgnslib.h>
 #include <iriclib.h>
+
+#include <h5cgnsgridcoordinates.h>
+#include <h5cgnszone.h>
+#include <iriclib_errorcodes.h>
+
 #include <vector>
 
 Structured15DGridWithCrossSection::Structured15DGridWithCrossSection(ProjectDataItem* parent) :
@@ -118,6 +123,43 @@ void Structured15DGridWithCrossSection::setModified(bool modified)
 	}
 }
 
+bool Structured15DGridWithCrossSection::loadFromCgnsFile(const iRICLib::H5CgnsZone& zone)
+{
+	auto size = zone.size();
+
+	int riversize = size[0];
+
+	auto grid = vtkGrid();
+
+	std::vector<double> xvec, yvec;
+	int ier = 0;
+
+	ier = zone.gridCoordinates()->readCoordinatesX(&xvec);
+	if (ier != IRIC_NO_ERROR) {return false;}
+
+	ier = zone.gridCoordinates()->readCoordinatesY(&yvec);
+	if (ier != IRIC_NO_ERROR) {return false;}
+
+	auto points = vtkSmartPointer<vtkPoints>::New();
+	points->SetDataTypeToDouble();
+	auto offset = this->offset();
+	for (unsigned int i = 0; i < xvec.size(); ++i) {
+		points->InsertNextPoint(xvec[i] - offset.x(), yvec[i] - offset.y(), 0);
+	}
+	grid->SetPoints(points);
+
+	loadGridAttributes(zone);
+
+	// load cross section data
+	for (int i = 1; i <= riversize; i++) {
+		QString str = QString::number(i);
+		auto cs = new Structured15DGridWithCrossSectionCrossSection(str, this);
+		cs->loadFromCgnsFile(zone, i);
+		m_crossSections.push_back(cs);
+	}
+	return true;
+}
+
 bool Structured15DGridWithCrossSection::loadFromCgnsFile(const int fn, int B, int Z)
 {
 	int ier;
@@ -156,7 +198,7 @@ bool Structured15DGridWithCrossSection::loadFromCgnsFile(const int fn, int B, in
 
 	// Grid coordinates are loaded.
 	// Next, grid related condition data is loaded.
-	loadGridAttributes(fn, B, Z);
+	// loadGridAttributes(fn, B, Z);
 
 	// Grid related conditions are loaded.
 	// Next, cross section data is loaded.

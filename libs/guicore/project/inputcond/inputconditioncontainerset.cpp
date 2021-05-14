@@ -162,11 +162,10 @@ void InputConditionContainerSet::setDefaultValues()
 	}
 }
 
-int InputConditionContainerSet::load()
+int InputConditionContainerSet::load(const iRICLib::H5CgnsConditionGroup& group)
 {
-	// @todo no error checking (for example, wrong value, lacking nodes..) are implemented.
 	for (auto& pair : m_containers) {
-		pair.second->load();
+		pair.second->load(group);
 	}
 	return 0;
 }

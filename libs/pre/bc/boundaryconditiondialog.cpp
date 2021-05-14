@@ -89,15 +89,35 @@ void BoundaryConditionDialog::setNameAndNumber(const std::string& name, int numb
 	m_pointSizeContainer.setBCProperty(name, number);
 }
 
+void BoundaryConditionDialog::load(const iRICLib::H5CgnsConditionGroup& group)
+{
+	m_containerSet->load(group);
+	m_captionContainer.load(group);
+	m_colorContainer.load(group);
+	m_opacityContainer.load(group);
+	m_showNameContainer.load(group);
+	m_pointSizeContainer.load(group);
+
+	setCaption(m_captionContainer.value());
+	QColor color(m_colorContainer.value());
+	ui->colorWidget->setColor(color);
+	ui->transparencyWidget->setOpacityPercent(m_opacityContainer.value());
+	ui->showNameCheckBox->setChecked(m_showNameContainer.value() == 1);
+	ui->pointSizeSpinBox->setValue(m_pointSizeContainer.value());
+
+	m_modified = false;
+}
+
 void BoundaryConditionDialog::load(const int /*fn*/)
 {
+/*
 	m_containerSet->load();
 	m_captionContainer.load();
 	m_colorContainer.load();
 	m_opacityContainer.load();
 	m_showNameContainer.load();
 	m_pointSizeContainer.load();
-
+*/
 	setCaption(m_captionContainer.value());
 	QColor color(m_colorContainer.value());
 	ui->colorWidget->setColor(color);

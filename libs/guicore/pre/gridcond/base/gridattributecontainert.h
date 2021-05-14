@@ -16,8 +16,8 @@ public:
 	virtual V value(unsigned int index) const = 0;
 	virtual void setValue(unsigned int index, V value) = 0;
 
-	bool loadFromCgnsFile(int fn, int B, int Z) override;
-	bool loadFromCgnsFileForIndex(int fn, int B, int Z, int index);
+	bool loadFromCgnsFile(const iRICLib::H5CgnsZone& zone) override;
+	bool loadFromCgnsFileForIndex(const iRICLib::H5CgnsZone& zone, int index);
 	bool saveToCgnsFile(int fn, int B, int Z) override;
 	bool saveToCgnsFileForIndex(int index);
 

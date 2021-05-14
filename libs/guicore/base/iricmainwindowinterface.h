@@ -47,7 +47,10 @@ public:
 	virtual ProjectWorkspace* workspace() = 0;
 	virtual const VersionNumber& versionNumber() const = 0;
 	virtual bool clearResultsIfGridIsEdited() = 0;
+
+	virtual ProjectData* projectData() const = 0;
 	virtual void setProjectData(ProjectData* projectData) = 0;
+
 	virtual const QLocale locale() const = 0;
 	virtual const QProcessEnvironment& processEnvironment() const = 0;
 	virtual void updateCrosssectionWindows() = 0;

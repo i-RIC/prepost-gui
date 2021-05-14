@@ -12,6 +12,10 @@
 #include <string>
 #include <vector>
 
+namespace iRICLib {
+	class H5CgnsFile;
+} // namespace iRICLib
+
 class QDomDocument;
 class QPointF;
 
@@ -121,6 +125,8 @@ public:
 
 	QPointF offset() const;
 	void setOffset(double x, double y);
+
+	iRICLib::H5CgnsFile* cgnsFile() const;
 
 	bool mkdirBGDIR();
 	/// Create background image

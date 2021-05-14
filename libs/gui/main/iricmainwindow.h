@@ -90,7 +90,7 @@ public:
 	void clearResults() override;
 	bool clearResultsIfGridIsEdited() override;
 
-	ProjectData* projectData() const;
+	ProjectData* projectData() const override;
 	void setProjectData(ProjectData* projectData) override;
 
 	/// Check whether work folder is set to a good folder. If it is good returns true.

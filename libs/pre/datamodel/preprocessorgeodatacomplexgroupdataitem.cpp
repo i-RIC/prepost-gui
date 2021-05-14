@@ -16,6 +16,7 @@
 #include <guicore/pre/geodatabackground/geodatabackgroundcomplex.h>
 #include <guicore/project/inputcond/inputconditionwidgetfilename.h>
 #include <guicore/project/projectdata.h>
+#include <guicore/project/projectmainfile.h>
 #include <guicore/scalarstocolors/colortransferfunctioncontainer.h>
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
 #include <guicore/solverdef/solverdefinitiongridcomplexattribute.h>
@@ -29,6 +30,11 @@
 #include <QMenu>
 
 #include <iriclib.h>
+
+#include <h5cgnsbase.h>
+#include <h5cgnsfile.h>
+#include <h5cgnsgridcomplexconditiongroup.h>
+#include <h5cgnsgridcomplexconditiontop.h>
 
 #include <algorithm>
 
@@ -71,7 +77,6 @@ PreProcessorGeoDataComplexGroupDataItem::~PreProcessorGeoDataComplexGroupDataIte
 
 void PreProcessorGeoDataComplexGroupDataItem::loadFromCgnsFile(const int)
 {
-	int count = 0;
 	int defId = -1;
 
 	auto solverDef = projectData()->solverDefinition();
@@ -79,15 +84,21 @@ void PreProcessorGeoDataComplexGroupDataItem::loadFromCgnsFile(const int)
 	auto elem = compCond->element();
 
 	clearGroups();
-	int ret = cg_iRIC_Read_Complex_Count(const_cast<char*>(m_condition->name().c_str()), &count);
-	if (ret != 0) {
+
+	auto gccTop = projectData()->mainfile()->cgnsFile()->ccBase()->gccTop();
+
+	if (! gccTop->groupExists(m_condition->name())) {
 		goto INITGROUPS;
 	}
 
-	for (int i = 0; i < count; ++i) {
+	auto group = gccTop->group(m_condition->name());
+
+	for (int i = 0; i < group->itemCount(); ++i) {
 		auto g = new GridComplexConditionGroup(solverDef, elem);
-		g->setNameAndNumber(m_condition->name(), i + 1);
-		g->load();
+		auto item = group->item(i + 1);
+
+		g->load(*item);
+
 		if (g->isDefault()) {defId = i;}
 		m_groups.push_back(g);
 	}

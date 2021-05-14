@@ -16,6 +16,7 @@
 #include <vtkMaskPoints.h>
 #include <vtkExtractGrid.h>
 #include <vtkCellArray.h>
+#include <vtkSmartPointer.h>
 #include <vtkStringArray.h>
 #include <vtkPointData.h>
 #include <vtkTrivialProducer.h>
@@ -28,6 +29,10 @@
 #include <QPointF>
 #include <QSettings>
 #include <QTextStream>
+
+#include <h5cgnsgridcoordinates.h>
+#include <h5cgnszone.h>
+#include <iriclib_errorcodes.h>
 
 #include <vector>
 
@@ -110,8 +115,45 @@ void Structured2DGrid::setVertex(unsigned int index, const QPointF& v)
 	vtkGrid()->GetPoints()->SetPoint(index, v.x(), v.y(), 0);
 }
 
+bool Structured2DGrid::loadFromCgnsFile(const iRICLib::H5CgnsZone& zone)
+{
+	auto size = zone.size();
+
+	m_dimensionI = size.at(0);
+	m_dimensionJ = size.at(1);
+
+	auto grid = vtkGrid();
+	grid->SetDimensions(m_dimensionI, m_dimensionJ, 1);
+
+	std::vector<double> xvec, yvec;
+	int ier = 0;
+
+	ier = zone.gridCoordinates()->readCoordinatesX(&xvec);
+	if (ier != IRIC_NO_ERROR) {return false;}
+
+	ier = zone.gridCoordinates()->readCoordinatesY(&yvec);
+	if (ier != IRIC_NO_ERROR) {return false;}
+
+	auto points = vtkSmartPointer<vtkPoints>::New();
+	points->SetDataTypeToDouble();
+	auto offset = this->offset();
+	for (unsigned int j = 0; j < m_dimensionJ; ++j) {
+		for (unsigned int i = 0; i < m_dimensionI; ++i) {
+			points->InsertNextPoint(xvec[m_dimensionI * j + i] - offset.x(), yvec[m_dimensionI * j + i] - offset.y(), 0);
+		}
+	}
+	grid->SetPoints(points);
+
+	loadGridAttributes(zone);
+
+	return true;
+}
+
 bool Structured2DGrid::loadFromCgnsFile(const int fn, int base, int zoneid)
 {
+	return true;
+
+	/*
 	m_dimensionI = 0;
 	m_dimensionJ = 0;
 
@@ -160,6 +202,7 @@ bool Structured2DGrid::loadFromCgnsFile(const int fn, int base, int zoneid)
 	// Next, grid related condition data is loaded.
 	loadGridAttributes(fn, base, zoneid);
 	return true;
+	*/
 }
 
 bool Structured2DGrid::saveToCgnsFile(const int fn, int B, const char* zonename)

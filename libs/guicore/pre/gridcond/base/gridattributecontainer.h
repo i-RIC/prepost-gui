@@ -11,6 +11,10 @@
 class PreProcessorGeoDataGroupDataItemInterface;
 class GridAttributeDimensionsContainer;
 
+namespace iRICLib {
+	class H5CgnsZone;
+} // namespace iRICLib
+
 class GUICOREDLL_EXPORT GridAttributeContainer : public GridAttributeBaseObject
 {
 	Q_OBJECT
@@ -34,7 +38,7 @@ public:
 
 	virtual void allocate() = 0;
 
-	virtual bool loadFromCgnsFile(int fn, int B, int Z) = 0;
+	virtual bool loadFromCgnsFile(const iRICLib::H5CgnsZone& zone) = 0;
 	virtual bool saveToCgnsFile(int fn, int B, int Z) = 0;
 
 	void updateConnections();

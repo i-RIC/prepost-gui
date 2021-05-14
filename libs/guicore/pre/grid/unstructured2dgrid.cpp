@@ -21,6 +21,10 @@
 #include <iriclib.h>
 #include <vector>
 
+#include <h5cgnsgridcoordinates.h>
+#include <h5cgnszone.h>
+#include <iriclib_errorcodes.h>
+
 #define ELEMNODENAME "Element"
 
 Unstructured2DGrid::Unstructured2DGrid(ProjectDataItem* parent) :
@@ -59,6 +63,51 @@ QPointF Unstructured2DGrid::vertex(unsigned int index) const
 void Unstructured2DGrid::setVertex(unsigned int index, const QPointF& v)
 {
 	vtkGrid()->GetPoints()->SetPoint(index, v.x(), v.y(), 0);
+}
+
+bool Unstructured2DGrid::loadFromCgnsFile(const iRICLib::H5CgnsZone& zone)
+{
+	auto size = zone.size();
+
+	auto grid = dynamic_cast<vtkUnstructuredGrid*> (vtkGrid());
+	grid->Initialize();
+
+	std::vector<double> xvec, yvec;
+	int ier = 0;
+
+	ier = zone.gridCoordinates()->readCoordinatesX(&xvec);
+	if (ier != IRIC_NO_ERROR) {return false;}
+
+	ier = zone.gridCoordinates()->readCoordinatesY(&yvec);
+	if (ier != IRIC_NO_ERROR) {return false;}
+
+	auto points = vtkSmartPointer<vtkPoints>::New();
+	points->SetDataTypeToDouble();
+	auto offset = this->offset();
+	for (unsigned int i = 0; i < xvec.size(); ++i) {
+		points->InsertNextPoint(xvec[i] - offset.x(), yvec[i] - offset.y(), 0);
+	}
+	grid->SetPoints(points);
+
+	// load connectivity data
+	std::vector<int> indices;
+	zone.readTriangleElements(&indices);
+	for (unsigned int i = 0; i < indices.size(); i += 3) {
+		int id0 = indices.at(i * 3 + 0);
+		int id1 = indices.at(i * 3 + 1);
+		int id2 = indices.at(i * 3 + 2);
+
+		auto triangle = vtkSmartPointer<vtkTriangle>::New();
+		triangle->GetPointIds()->SetId(0, id0);
+		triangle->GetPointIds()->SetId(1, id1);
+		triangle->GetPointIds()->SetId(2, id2);
+		grid->InsertNextCell(triangle->GetCellType(), triangle->GetPointIds());
+	}
+
+	loadGridAttributes(zone);
+
+	grid->BuildLinks();
+	return true;
 }
 
 bool Unstructured2DGrid::loadFromCgnsFile(const int fn, int B, int Z)
@@ -131,7 +180,7 @@ bool Unstructured2DGrid::loadFromCgnsFile(const int fn, int B, int Z)
 			}
 		}
 	}
-	loadGridAttributes(fn, B, Z);
+	// loadGridAttributes(fn, B, Z);
 
 	grid->BuildLinks();
 	return true;

@@ -77,12 +77,12 @@ void GridComplexConditionGroup::setNameAndNumber(const std::string& name, int nu
 	impl->m_containerSet.setComplexProperty(name, number);
 }
 
-void GridComplexConditionGroup::load()
+void GridComplexConditionGroup::load(const iRICLib::H5CgnsConditionGroup& group)
 {
-	impl->m_caption.load();
-	impl->m_color.load();
-	impl->m_isDefault.load();
-	impl->m_containerSet.load();
+	impl->m_caption.load(group);
+	impl->m_color.load(group);
+	impl->m_isDefault.load(group);
+	impl->m_containerSet.load(group);
 }
 
 void GridComplexConditionGroup::save()

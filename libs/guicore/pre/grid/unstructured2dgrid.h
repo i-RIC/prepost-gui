@@ -23,6 +23,7 @@ public:
 	QPointF vertex(unsigned int index) const override;
 	void setVertex(unsigned int index, const QPointF& v) override;
 
+	bool loadFromCgnsFile(const iRICLib::H5CgnsZone& zone) override;
 	bool loadFromCgnsFile(const int fn, int B, int Z) override;
 	bool saveToCgnsFile(const int fn, int B, const char* zonename) override;
 

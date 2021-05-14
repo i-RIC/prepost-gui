@@ -10,6 +10,8 @@
 
 #include <iriclib.h>
 
+#include <h5cgnsconditiongroup.h>
+
 InputConditionContainerInteger::Impl::Impl() :
 	m_value {0},
 	m_default {0}
@@ -69,16 +71,10 @@ void InputConditionContainerInteger::setDefaultValue(int d)
 	impl->m_default = d;
 }
 
-int InputConditionContainerInteger::load()
+int InputConditionContainerInteger::load(const iRICLib::H5CgnsConditionGroup& group)
 {
-	int ret;
-	if (isBoundaryCondition()) {
-		ret = cg_iRIC_Read_BC_Integer(toC(bcName()), bcIndex(), toC(name()), &(impl->m_value));
-	} else if (isComplexCondition()) {
-		ret = cg_iRIC_Read_Complex_Integer(toC(complexName()), complexIndex(), toC(name()), &(impl->m_value));
-	} else {
-		ret = cg_iRIC_Read_Integer(toC(name()), &(impl->m_value));
-	}
+	int ret = group.readIntegerValue(name(), &(impl->m_value));
+
 	if (ret != 0) {
 		clear();
 	} else {

@@ -5,6 +5,12 @@
 
 #include <cgnslib.h>
 
+#include <h5cgnszone.h>
+#include <h5util.h>
+#include <iriclib_errorcodes.h>
+
+#include <sstream>
+
 Structured15DGridWithCrossSectionCrossSection::Structured15DGridWithCrossSectionCrossSection(QString name, Grid* grid) :
 	QObject(grid),
 	m_grid {grid},
@@ -14,6 +20,27 @@ Structured15DGridWithCrossSectionCrossSection::Structured15DGridWithCrossSection
 Grid* Structured15DGridWithCrossSectionCrossSection::grid() const
 {
 	return m_grid;
+}
+
+int Structured15DGridWithCrossSectionCrossSection::loadFromCgnsFile(const iRICLib::H5CgnsZone& zone, int index)
+{
+	std::vector<double> data;
+	std::ostringstream ss;
+
+	// read data
+	ss << "GridCrosssections/Crosssection" << index;
+	int ier = iRICLib::H5Util::readDataArrayValue(zone.groupId(), ss.str(), &data);
+	if (ier != IRIC_NO_ERROR) {return ier;}
+
+	auto count = data.size() / 2;
+	for (unsigned int i = 0; i < count; ++i) {
+		Altitude alt;
+		alt.m_position = data[i];
+		alt.m_height = data[i + count];
+		m_altitudeInfo.push_back(alt);
+	}
+
+	return IRIC_NO_ERROR;
 }
 
 void Structured15DGridWithCrossSectionCrossSection::loadFromCgnsFile(int fn, int B, int Z, int index)

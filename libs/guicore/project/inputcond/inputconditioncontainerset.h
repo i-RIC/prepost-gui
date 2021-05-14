@@ -13,6 +13,10 @@
 #include <string>
 #include <map>
 
+namespace iRICLib {
+	class H5CgnsConditionGroup;
+} // namespace iRICLib
+
 class QDomNode;
 class QWidget;
 class InputConditionDialog;
@@ -32,7 +36,7 @@ public:
 	InputConditionContainerSet* clone() const;
 	void copyValues(const InputConditionContainerSet* set);
 
-	int load();
+	int load(const iRICLib::H5CgnsConditionGroup& group);
 	int save();
 	void reset();
 	void setDefaultValues();

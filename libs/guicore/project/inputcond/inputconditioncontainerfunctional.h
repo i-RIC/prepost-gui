@@ -67,7 +67,7 @@ public:
 
 	void removeAllValues();
 
-	int load() override;
+	int load(const iRICLib::H5CgnsConditionGroup& group) override;
 	int save() override;
 	void clear() override;
 
@@ -79,7 +79,7 @@ public:
 	bool loadDataFromCsvFile(const QString& filename);
 	bool saveDataToCsvFile(const QString& filename);
 
-	bool loadFunctionalString(const char* paramname, QString& str);
+	bool loadFunctionalString(const char* paramname, QString* str, const iRICLib::H5CgnsConditionGroup& group);
 	bool saveFunctionalString(const char* paramname, const QString& str);
 
 signals:

@@ -16,6 +16,10 @@ namespace Ui
 	class BoundaryConditionDialog;
 }
 
+namespace iRICLib {
+	class H5CgnsConditionGroup;
+} // namespace iRICLib
+
 class PreProcessorBCDataItem;
 class InputConditionContainerSet;
 class InputConditionWidgetSet;
@@ -32,6 +36,7 @@ public:
 	void setNameAndNumber(const std::string& name, int number);
 
 	void setup(SolverDefinition* def, const QDomElement& elem, const QLocale& locale);
+	void load(const iRICLib::H5CgnsConditionGroup& group);
 	void load(const int fn);
 	void save(const int fn);
 

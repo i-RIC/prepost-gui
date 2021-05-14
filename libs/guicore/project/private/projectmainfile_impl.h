@@ -44,6 +44,8 @@ public:
 
 	bool m_isModified;
 
+	iRICLib::H5CgnsFile* m_cgnsFile;
+
 private:
 	ProjectMainFile* m_parent;
 };

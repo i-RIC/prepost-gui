@@ -10,6 +10,11 @@
 #include <iriclib.h>
 #include <vector>
 
+#include <h5cgnsfile.h>
+#include <h5cgnsbase.h>
+#include <h5cgnssolverinformation.h>
+#include <iriclib_errorcodes.h>
+
 #if CGNS_VERSION < 3100
 #define cgsize_t int
 #endif
@@ -181,6 +186,20 @@ bool ProjectCgnsFile::readSolverInfo(int fn, std::string* solverName, VersionNum
 	if (ret != 0) {return false;}
 	*version = VersionNumber {buffer.data()};
 
+	return true;
+}
+
+bool ProjectCgnsFile::readSolverInfo(const iRICLib::H5CgnsFile& file, std::string* solverName, VersionNumber* version)
+{
+	auto info = file.ccBase()->solverInformation();
+
+	int ier = info->readSolverName(solverName);
+	if (ier != IRIC_NO_ERROR) {return false;}
+
+	std::string versionStr;
+	ier = info->readSolverVersion(&versionStr);
+	if (ier != IRIC_NO_ERROR) {return false;}
+	*version = VersionNumber(versionStr.c_str());
 	return true;
 }
 

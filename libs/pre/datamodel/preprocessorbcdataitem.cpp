@@ -1,6 +1,7 @@
 #include "../bc/boundaryconditiondialog.h"
 #include "preprocessorbcdataitem.h"
 #include "preprocessorbcgroupdataitem.h"
+#include "preprocessorgridandgridcreatingconditiondataitem.h"
 #include "preprocessorgriddataitem.h"
 #include "private/preprocessorbcdataitem_impl.h"
 
@@ -11,6 +12,7 @@
 #include <guicore/project/inputcond/inputconditionwidgetfilename.h>
 #include <guicore/project/projectcgnsfile.h>
 #include <guicore/project/projectdata.h>
+#include <guicore/project/projectmainfile.h>
 #include <guicore/solverdef/solverdefinitionboundarycondition.h>
 #include <misc/errormessage.h>
 #include <misc/iricundostack.h>
@@ -37,6 +39,12 @@
 
 #include <cgnslib.h>
 #include <iriclib.h>
+
+#include <h5cgnsbase.h>
+#include <h5cgnsbc.h>
+#include <h5cgnsfile.h>
+#include <h5cgnszone.h>
+#include <h5cgnszonebc.h>
 
 #define TMPBCNAME "bc"
 
@@ -146,21 +154,20 @@ void PreProcessorBCDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 void PreProcessorBCDataItem::loadExternalData(const QString& filename)
 {
 	if (buildNumber() <= 3507) {return;}
-	int fn;
-	int ier = cg_open(iRIC::toStr(filename).c_str(), CG_MODE_MODIFY, &fn);
-	if (ier != 0) {
-		// Opening CGNS file failed.
-		return;
-	}
-	cg_iRIC_Init(fn);
-	// when loading, use 1 for number.
-	auto d = impl->m_dialog;
-	d->setNameAndNumber(TMPBCNAME, 1);
-	d->load(fn);
-	cg_close(fn);
 
-	setName(d->caption());
-	impl->m_opacityPercent = d->opacityPercent();
+	try {
+		iRICLib::H5CgnsFile file(iRIC::toStr(filename), iRICLib::H5CgnsFile::Mode::OpenReadOnly);
+		auto bc = file.ccBase()->defaultZone()->zoneBc()->bc(TMPBCNAME, 1);
+		if (bc == nullptr) {return;}
+
+		auto d = impl->m_dialog;
+		d->load(*bc);
+
+		setName(d->caption());
+		impl->m_opacityPercent = d->opacityPercent();
+	} catch (...) {
+		// do nothing
+	}
 }
 
 void PreProcessorBCDataItem::saveExternalData(const QString& filename)
@@ -176,7 +183,7 @@ void PreProcessorBCDataItem::saveExternalData(const QString& filename)
 	size[2] = size[3] = 1;
 	size[4] = size[5] = 0;
 	cg_zone_write(fn, 1, "iRICZone", size, Structured, &Z);
-	cg_iRIC_Set_ZoneId(Z);
+	// cg_iRIC_Set_ZoneId(Z); // @todo fix this
 	// dummy indices.
 	cgsize_t indices[1];
 	indices[0] = 1;
@@ -532,70 +539,41 @@ void PreProcessorBCDataItem::handleStandardItemChange()
 	emit itemUpdated();
 }
 
+void PreProcessorBCDataItem::loadFromCgnsFile(const iRICLib::H5CgnsZone& zone)
+{
+	if (impl->m_cgnsNumber == 0) {
+		// There is no need to load from CGNS file.
+		return;
+	}
+
+	auto bc = zone.zoneBc()->bc(impl->m_condition->name(), impl->m_cgnsNumber);
+
+	std::vector<int> indices;
+	bc->readIndices(&indices);
+	setupIndicesAndEdges(indices);
+
+	impl->m_dialog->load(*bc);
+
+	updateElements();
+	updateActorSettings();
+}
+
 void PreProcessorBCDataItem::loadFromCgnsFile(const int fn)
 {
 	if (impl->m_cgnsNumber == 0) {
 		// There is no need to load from CGNS file.
 		return;
 	}
-	PreProcessorGridDataItem* gitem = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
-	Structured2DGrid* sgrid = dynamic_cast<Structured2DGrid*>(gitem->grid());
-	cgsize_t size;
-	int err = cg_iRIC_Read_BC_IndicesSize(const_cast<char*>(impl->m_condition->name().c_str()), impl->m_cgnsNumber, &size);
-	if (err != 0) {return;}
-	if (sgrid == nullptr) {
-		// this is an unstructured grid.
-		std::vector<cgsize_t> indices (size, 0);
-		cg_iRIC_Read_BC_Indices(const_cast<char*>(impl->m_condition->name().c_str()), impl->m_cgnsNumber, indices.data());
 
-		if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pNode ||
-				impl->m_condition->position() == SolverDefinitionBoundaryCondition::pCell) {
-			impl->m_indices.clear();
-			for (int i = 0; i < size; ++i) {
-				impl->m_indices.insert(indices[i] - 1);
-			}
-		} else if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pEdge) {
-			for (int i = 0; i < size / 2; ++i) {
-				Edge e(indices[i * 2] - 1, indices[i * 2 + 1] - 1);
-				impl->m_edges.insert(e);
-			}
-		}
-	} else {
-		// this is a structured grid.
-		std::vector<cgsize_t> indices(size * 2, 0);
-		cg_iRIC_Read_BC_Indices(const_cast<char*>(impl->m_condition->name().c_str()), impl->m_cgnsNumber, indices.data());
-		impl->m_indices.clear();
-		if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pNode) {
-			for (int idx = 0; idx < size; ++idx) {
-				int i = indices[idx * 2];
-				int j = indices[idx * 2 + 1];
-				impl->m_indices.insert(sgrid->vertexIndex(i - 1, j - 1));
-			}
+	auto gccItem = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItem*>(parent()->parent()->parent());
+	auto zoneName = gccItem->zoneName();
 
-		} else if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pCell) {
-			for (int idx = 0; idx < size; ++idx) {
-				int i = indices[idx * 2];
-				int j = indices[idx * 2 + 1];
-				impl->m_indices.insert(sgrid->cellIndex(i - 1, j - 1));
-			}
-		} else if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pEdge) {
-			for (int idx = 0; idx < size / 2; ++idx) {
-				int i1 = indices[idx * 4];
-				int j1 = indices[idx * 4 + 1];
-				int i2 = indices[idx * 4 + 2];
-				int j2 = indices[idx * 4 + 3];
-				Edge e(sgrid->vertexIndex(i1 - 1, j1 - 1), sgrid->vertexIndex(i2 - 1, j2 - 1));
-				impl->m_edges.insert(e);
-			}
-		}
-	}
-	if (buildNumber() <= 3507) {
-		auto d = impl->m_dialog;
-		d->setNameAndNumber(impl->m_condition->name(), impl->m_cgnsNumber);
-		d->load(fn);
-		setName(d->caption());
-		impl->m_opacityPercent = d->opacityPercent();
-	}
+	auto zone = projectData()->mainfile()->cgnsFile()->ccBase()->zone(zoneName);
+	auto bc = zone->zoneBc()->bc(impl->m_condition->name(), impl->m_cgnsNumber);
+
+	std::vector<int> indices;
+	bc->readIndices(&indices);
+	setupIndicesAndEdges(indices);
 
 	updateElements();
 	updateActorSettings();
@@ -796,6 +774,53 @@ int PreProcessorBCDataItem::buildNumber() const
 {
 	PreProcessorBCGroupDataItem* gItem = dynamic_cast<PreProcessorBCGroupDataItem*>(parent());
 	return gItem->m_projectBuildNumber;
+}
+
+void PreProcessorBCDataItem::setupIndicesAndEdges(const std::vector<int> indices)
+{
+	auto gitem = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
+
+	Structured2DGrid* sgrid = dynamic_cast<Structured2DGrid*>(gitem->grid());
+	if (sgrid == nullptr) {
+		// unstructured grid.
+		if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pNode ||
+				impl->m_condition->position() == SolverDefinitionBoundaryCondition::pCell) {
+			impl->m_indices.clear();
+			for (int i = 0; i < indices.size(); ++i) {
+				impl->m_indices.insert(indices[i] - 1);
+			}
+		} else if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pEdge) {
+			for (int i = 0; i < indices.size() / 2; ++i) {
+				Edge e(indices[i * 2] - 1, indices[i * 2 + 1] - 1);
+				impl->m_edges.insert(e);
+			}
+		}
+	} else {
+		// structured grid.
+		impl->m_indices.clear();
+		if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pNode) {
+			for (int idx = 0; idx < indices.size(); ++idx) {
+				int i = indices[idx * 2];
+				int j = indices[idx * 2 + 1];
+				impl->m_indices.insert(sgrid->vertexIndex(i - 1, j - 1));
+			}
+		} else if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pCell) {
+			for (int idx = 0; idx < indices.size(); ++idx) {
+				int i = indices[idx * 2];
+				int j = indices[idx * 2 + 1];
+				impl->m_indices.insert(sgrid->cellIndex(i - 1, j - 1));
+			}
+		} else if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pEdge) {
+			for (int idx = 0; idx < indices.size() / 2; ++idx) {
+				int i1 = indices[idx * 4];
+				int j1 = indices[idx * 4 + 1];
+				int i2 = indices[idx * 4 + 2];
+				int j2 = indices[idx * 4 + 3];
+				Edge e(sgrid->vertexIndex(i1 - 1, j1 - 1), sgrid->vertexIndex(i2 - 1, j2 - 1));
+				impl->m_edges.insert(e);
+			}
+		}
+	}
 }
 
 QString PreProcessorBCDataItem::caption() const

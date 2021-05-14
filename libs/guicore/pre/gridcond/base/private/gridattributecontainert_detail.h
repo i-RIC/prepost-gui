@@ -12,6 +12,10 @@
 #include <QFile>
 #include <QFileInfo>
 
+#include <h5cgnsgridattributes.h>
+#include <h5cgnszone.h>
+#include <iriclib_errorcodes.h>
+
 template <class V>
 GridAttributeContainerT<V>::GridAttributeContainerT(Grid* grid, SolverDefinitionGridAttributeT<V>* cond) :
 	GridAttributeContainer(grid, cond)
@@ -22,15 +26,15 @@ GridAttributeContainerT<V>::~GridAttributeContainerT()
 {}
 
 template <class V>
-bool GridAttributeContainerT<V>::loadFromCgnsFile(int fn, int B, int Z)
+bool GridAttributeContainerT<V>::loadFromCgnsFile(const iRICLib::H5CgnsZone& zone)
 {
 	GridAttributeDimensionsContainer* dims = dimensions();
 	bool allok = true;
 	if (dims == 0 || dims->containers().size() == 0) {
-		allok = loadFromCgnsFileForIndex(fn, B, Z, 0);
+		allok = loadFromCgnsFileForIndex(zone, 0);
 	} else {
 		for (int index = 0; index <= dims->maxIndex(); ++index) {
-			bool ok = loadFromCgnsFileForIndex(fn, B, Z, index);
+			bool ok = loadFromCgnsFileForIndex(zone, index);
 			if (ok) {
 				auto fileName = temporaryExternalFilename(index);
 				QFileInfo finfo(fileName);
@@ -47,55 +51,24 @@ bool GridAttributeContainerT<V>::loadFromCgnsFile(int fn, int B, int Z)
 }
 
 template <class V>
-bool GridAttributeContainerT<V>::loadFromCgnsFileForIndex(int fn, int B, int Z, int index)
+bool GridAttributeContainerT<V>::loadFromCgnsFileForIndex(const iRICLib::H5CgnsZone& zone, int index)
 {
-	// Goto "GridConditions" node.
-	int ier;
-	bool found = false;
-	cgsize_t count = dataCount();
-	ier = cg_goto(fn, B, "Zone_t", Z, "GridConditions", 0, name().c_str(), 0, "end");
-	QString aName = arrayNameForIndex(index);
-	if (ier != 0) {return false;}
+	auto atts = zone.gridAttributes();
 
-	// the corresponding node found.
-	// Find "Value" array.
-	int narrays;
-	cg_narrays(&narrays);
-	for (int i = 1; i <= narrays; ++i) {
-		char arrayName[ProjectCgnsFile::BUFFERLEN];
-		DataType_t dt;
-		int dataDimension;
-		cgsize_t dimensionVector[3];
-		cg_array_info(i, arrayName, &dt, &dataDimension, dimensionVector);
-
-		if (dataDimension != 1 || dimensionVector[0] != count) {continue;}
-
-		if (dt == dataType() && QString(arrayName) == aName) {
-			std::vector<V> data(count, 0);
-			ier = cg_array_read(i, data.data());
-			for (cgsize_t j = 0; j < count; ++j) {
-				setValue(j, data[j]);
-			}
-			found = true;
-			break;
-		} else if (dt == RealSingle && dataType() == RealDouble && QString(arrayName) == aName) {
-			std::vector<float> data(count, 0);
-			ier = cg_array_read(i, data.data());
-			for (cgsize_t j = 0; j < count; ++j) {
-				setValue(j, data[j]);
-			}
-			found = true;
-			break;
+	std::vector<V> buffer;
+	int ier = atts->readFunctional(name(), index + 1, &buffer);
+	if (ier == IRIC_NO_ERROR) {
+		for (unsigned int i = 0; i < buffer.size(); ++i) {
+			setValue(i, buffer[i]);
 		}
-	}
-	if (! found) {
-		// not found.
-		// use default value.
-		SolverDefinitionGridAttributeT<V>* cond = dynamic_cast<SolverDefinitionGridAttributeT<V>*>(gridAttribute());
+	} else {
+		// use default value
+		auto count = dataCount();
+		auto cond = dynamic_cast<SolverDefinitionGridAttributeT<V>*>(gridAttribute());
 
 		V defaultVal = cond->defaultValue();
-		for (cgsize_t j = 0; j < count; ++j) {
-			setValue(j, defaultVal);
+		for (unsigned int i = 0; i < count; ++i) {
+			setValue(i, defaultVal);
 		}
 	}
 	return true;

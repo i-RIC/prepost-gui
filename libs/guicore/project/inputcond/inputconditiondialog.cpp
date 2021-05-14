@@ -27,6 +27,10 @@
 #include <cgnslib.h>
 #include <iriclib.h>
 
+#include <h5cgnsbase.h>
+#include <h5cgnsfile.h>
+#include <iriclib_errorcodes.h>
+
 InputConditionDialog::InputConditionDialog(SolverDefinition* solverDef, const QLocale& locale, QWidget* parent) :
 	QDialog(parent),
 	m_containerSet {new InputConditionContainerSet()},
@@ -91,10 +95,9 @@ void InputConditionDialog::setup(const SolverDefinition& def, const QLocale& loc
 	ui->m_pageList->selectFirstItem();
 }
 
-void InputConditionDialog::load(const int fn)
+void InputConditionDialog::load(const iRICLib::H5CgnsConditionGroup& group)
 {
-	cg_iRIC_GotoCC(fn);
-	m_containerSet->load();
+	m_containerSet->load(group);
 	m_containerSetBackup->copyValues(m_containerSet);
 
 	// select the first page.
@@ -138,36 +141,27 @@ bool InputConditionDialog::importFromCgns(const QString& filename)
 		if (ret == QMessageBox::No) {return false;}
 	}
 
-	// open cgns file
-	ret = cg_open(iRIC::toStr(tmpname).c_str(), CG_MODE_READ, &fn);
-	if (ret != 0) {return false;}
+	try {
+		iRICLib::H5CgnsFile cgnsFile(iRIC::toStr(tmpname), iRICLib::H5CgnsFile::Mode::OpenReadOnly);
+		auto ccGroup = cgnsFile.ccBase()->ccGroup();
+		if (ccGroup == nullptr) {
+			// there is no calculation data in this CGNS file.
+			QMessageBox::critical(parentWidget(), tr("Error"),
+														tr("This CGNS file does not contain calculation condition data."));
+			return false;
+		}
+		ret = m_containerSet->load(*ccGroup);
+		if (ret == IRIC_NO_ERROR) {
+			m_modified = false;
+		}
+		QFile::remove(tmpname);
+		return ret == IRIC_NO_ERROR;
+	}  catch (...) {
+		QMessageBox::critical(parentWidget(), tr("Error"), tr("Opening the CGNS file failed."));
 
-	ret = cg_iRIC_GotoCC(fn);
-	if (ret != 0) {goto ERROR_BEFORE_CLOSE;}
-	// check the number of user defined data items under the CalculationConditions node.
-	int nuser_data;
-	ret = cg_nuser_data(&nuser_data);
-	if (ret != 0) {goto ERROR_BEFORE_CLOSE;}
-	if (nuser_data == 0) {
-		// there is no calculation data in this CGNS file.
-		QMessageBox::critical(parentWidget(), tr("Error"),
-													tr("This CGNS file does not contain calculation condition data."));
-		goto ERROR_BEFORE_CLOSE;
+		QFile::remove(tmpname);
+		return false;
 	}
-	ret = m_containerSet->load();
-	if (ret != 0) {goto ERROR_BEFORE_CLOSE;}
-
-	ret = cg_close(fn);
-	if (ret != 0) {return false;}
-
-	m_modified = false;
-	QFile::remove(tmpname);
-	return true;
-
-ERROR_BEFORE_CLOSE:
-	cg_close(fn);
-	QFile::remove(tmpname);
-	return false;
 }
 
 bool InputConditionDialog::importFromYaml(const QString& filename)
