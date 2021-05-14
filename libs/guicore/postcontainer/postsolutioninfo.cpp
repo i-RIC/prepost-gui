@@ -87,7 +87,6 @@ PostSolutionInfo::PostSolutionInfo(ProjectDataItem* parent) :
 	m_timeSteps {nullptr},
 	m_currentStep {0},
 	m_timerId {0},
-	m_opener {nullptr},
 	m_cgnsFile {nullptr},
 	m_exportFormat {PostDataExportDialog::Format::VTKASCII},
 	m_disableCalculatedResult {false},

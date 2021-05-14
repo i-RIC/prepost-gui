@@ -33,6 +33,7 @@ void PostIterationSteps::loadFromCgnsFile(iRICLib::H5CgnsFile &file)
 	bool changed = (tmplist != m_iterationSteps);
 	m_iterationSteps = tmplist;
 	if (changed) {
+		int fn = 0;
 		emit stepsUpdated(m_iterationSteps);
 		emit stepsUpdated(fn);
 	}

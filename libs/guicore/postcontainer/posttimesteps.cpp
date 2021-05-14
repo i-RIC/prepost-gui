@@ -33,6 +33,7 @@ void PostTimeSteps::loadFromCgnsFile(iRICLib::H5CgnsFile &file)
 	bool changed = (tmplist != m_timesteps);
 	m_timesteps = tmplist;
 	if (changed) {
+		int fn = 0;
 		emit stepsUpdated(m_timesteps);
 		emit stepsUpdated(fn);
 	}
