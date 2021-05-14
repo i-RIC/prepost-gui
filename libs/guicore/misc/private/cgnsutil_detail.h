@@ -3,187 +3,205 @@
 
 #include "../cgnsutil.h"
 
+#include <vtkDataSetAttributes.h>
+#include <vtkDoubleArray.h>
+#include <vtkSmartPointer.h>
+
 #include <cgnslib.h>
 
-template<typename V>
-int CgnsUtil::loadArrayWithName(const std::string& name, std::vector<V>* vals)
-{
-	int id = arrayIdWithName(name);
-	if (id == 0) {return 1;}
-
-	char n[ProjectCgnsFile::BUFFERLEN];
-	DataType_t dataType;
-	int dim;
-	cgsize_t dimVec;
-	int ier;
-
-	ier = cg_array_info(id, n, &dataType, &dim, &dimVec);
-	if (ier != 0) {return ier;}
-
-	vals->assign(dimVec, 0);
-	return cg_array_read(id, vals->data());
-}
-
-template<typename V>
-int CgnsUtil::loadArrayWithName(const std::string& name, const std::string& suffix, std::vector<V>* vals)
-{
-	std::string tmpname = name;
-	tmpname.append("_");
-	tmpname.append(suffix);
-
-	return loadArrayWithName(tmpname, vals);
-}
+#include <h5cgnsflowsolution.h>
+#include <h5cgnszone.h>
+#include <iriclib_errorcodes.h>
 
 template<class T, class DA>
-void CgnsUtil::loadScalarDataT(const QString& name, vtkDataSetAttributes* atts, int index, int datalen, const QString& IBCName)
+int CgnsUtil::addScalarDataT(const std::vector<T>& values, const std::string& name, vtkDataSetAttributes* atts, const std::string& IBCName)
 {
-	std::vector<T> data(datalen, 0);
-	cg_array_read(index, data.data());
-	vtkSmartPointer<DA> tmpArray = vtkSmartPointer<DA>::New();
-	tmpArray->SetName(iRIC::toStr(name).c_str());
-	tmpArray->Allocate(datalen);
+	auto tmpArray = vtkSmartPointer<DA>::New();
+	tmpArray->SetName(name.c_str());
+
+	tmpArray->Allocate(values.size());
 	if (IBCName == name) {
 		// for IBC values, special handling is done: 0 is inactive the others are all active.
-		for (int i = 0; i < datalen; ++i) {
-			int val = static_cast<int>(data[i]);
-			if (val != 0) {data[i] = 1;}
-			tmpArray->InsertNextValue(data[i]);
+		for (int i = 0; i < values.size(); ++i) {
+			auto origV = values[i];
+			int val = static_cast<int>(origV);
+			if (val != 0) {origV = 1;}
+			tmpArray->InsertNextValue(origV);
 		}
 	} else {
-		for (int i = 0; i < datalen; ++i) {
-			tmpArray->InsertNextValue(data[i]);
+		for (int i = 0; i < values.size(); ++i) {
+			tmpArray->InsertNextValue(values[i]);
 		}
 	}
 	atts->AddArray(tmpArray);
+
+	return IRIC_NO_ERROR;
 }
 
 template<class T, class DA>
-void CgnsUtil::loadEdgeIScalarDataT(const QString& name, vtkDataSetAttributes* atts, int index, int datalen, cgsize_t dims[3], const QString& IBCName)
+int CgnsUtil::loadScalarDataT(iRICLib::H5CgnsSolutionI* sol, const std::string& name, vtkDataSetAttributes* atts, const std::string& IBCName)
 {
-	std::vector<T> edgeIArray(datalen, 0);
-	cg_array_read(index, edgeIArray.data());
+	std::vector<T> data;
+	int ier = sol->readValue(name, &data);
+	if (ier != IRIC_NO_ERROR) {return ier;}
 
-	cgsize_t ni = dims[0];
-	cgsize_t nj = dims[1] + 1;
+	return addScalarDataT<T, DA>(data, name, atts, IBCName);
+}
+
+template<class T, class DA>
+int CgnsUtil::loadEdgeIScalarDataT(iRICLib::H5CgnsSolutionI* sol, const std::string& name, vtkDataSetAttributes* atts, const std::string& IBCName)
+{
+	std::vector<T> edgeIArray;
+	int ier = sol->readValue(name, &edgeIArray);
+	if (ier != IRIC_NO_ERROR) {return ier;}
+
+	auto size = sol->zone()->size();
+
+	int ni = size[0];
+	int nj = size[1];
 
 	vtkSmartPointer<DA> tmpArray = vtkSmartPointer<DA>::New();
-	tmpArray->SetName(iRIC::toStr(name).c_str());
+	tmpArray->SetName(name.c_str());
 	tmpArray->Allocate(ni * nj);
 
 	if (IBCName == name) {
 		// for IBC values, special handling is done: 0 is inactive the others are all active.
-		for (cgsize_t i = 0; i < datalen; ++i) {
+		for (int i = 0; i < edgeIArray.size(); ++i) {
 			int val = static_cast<int>(edgeIArray[i]);
 			if (val != 0) { edgeIArray[i] = 1; }
 		}
 	}
 
-	for (cgsize_t j = 0; j < nj; ++j) {
-		for (cgsize_t i = 0; i < ni; ++i) {
+	for (int j = 0; j < nj; ++j) {
+		for (int i = 0; i < ni; ++i) {
 			if (j == 0) {
-				cgsize_t vdx = i;
+				int vdx = i;
 				tmpArray->InsertNextValue(edgeIArray[vdx]);
-			}
-			else if (j == (nj - 1)) {
-				cgsize_t vdx = (j - 1) * ni + i;
+			}	else if (j == (nj - 1)) {
+				int vdx = (j - 1) * ni + i;
 				tmpArray->InsertNextValue(edgeIArray[vdx]);
-			}
-			else {
-				cgsize_t i1 = (j - 1) * ni + i;
-				cgsize_t i2 = j * ni + i;
+			}	else {
+				int i1 = (j - 1) * ni + i;
+				int i2 = j * ni + i;
 				T v = (edgeIArray[i1] + edgeIArray[i2]) * 0.5;
 				tmpArray->InsertNextValue(v);
 			}
 		}
 	}
 	atts->AddArray(tmpArray);
+
+	return IRIC_NO_ERROR;
 }
 
 template<class T, class DA>
-void CgnsUtil::loadEdgeJScalarDataT(const QString& name, vtkDataSetAttributes* atts, int index, int datalen, cgsize_t dims[3], const QString& IBCName)
+int CgnsUtil::loadEdgeJScalarDataT(iRICLib::H5CgnsSolutionI* sol, const std::string& name, vtkDataSetAttributes* atts, const std::string& IBCName)
 {
-	std::vector<T> edgeJArray(datalen, 0);
-	cg_array_read(index, edgeJArray.data());
+	std::vector<T> edgeJArray;
+	int ier = sol->readValue(name, &edgeJArray);
+	if (ier != IRIC_NO_ERROR) {return ier;}
 
-	cgsize_t ni = dims[0] + 1;
-	cgsize_t nj = dims[1];
+	auto size = sol->zone()->size();
+
+	int ni = size[0];
+	int nj = size[1];
 
 	vtkSmartPointer<DA> tmpArray = vtkSmartPointer<DA>::New();
-	tmpArray->SetName(iRIC::toStr(name).c_str());
+	tmpArray->SetName(name.c_str());
 	tmpArray->Allocate(ni * nj);
 
 	if (IBCName == name) {
 		// for IBC values, special handling is done: 0 is inactive the others are all active.
-		for (cgsize_t i = 0; i < datalen; ++i) {
+		for (int i = 0; i < edgeJArray.size(); ++i) {
 			int val = static_cast<int>(edgeJArray[i]);
 			if (val != 0) { edgeJArray[i] = 1; }
 		}
 	}
 
-	for (cgsize_t j = 0; j < nj; ++j) {
-		for (cgsize_t i = 0; i < ni; ++i) {
+	for (int j = 0; j < nj; ++j) {
+		for (int i = 0; i < ni; ++i) {
 			if (i == 0) {
-				cgsize_t vdx = j * (ni - 1);
+				int vdx = j * (ni - 1);
 				tmpArray->InsertNextValue(edgeJArray[vdx]);
-			}
-			else if (i == (ni - 1)) {
-				cgsize_t vdx = j * (ni - 1) + i - 1;
+			} else if (i == (ni - 1)) {
+				int vdx = j * (ni - 1) + i - 1;
 				tmpArray->InsertNextValue(edgeJArray[vdx]);
-			}
-			else {
-				cgsize_t i1 = j * (ni - 1) + i - 1;
-				cgsize_t i2 = j * (ni - 1) + i;
+			}	else {
+				int i1 = j * (ni - 1) + i - 1;
+				int i2 = j * (ni - 1) + i;
 				T v = (edgeJArray[i1] + edgeJArray[i2]) * 0.5;
 				tmpArray->InsertNextValue(v);
 			}
 		}
 	}
 	atts->AddArray(tmpArray);
+
+	return IRIC_NO_ERROR;
 }
 
 template<class T, class DA>
-void CgnsUtil::loadVectorDataT(const QString& name, vtkDataSetAttributes* atts, int iX, int iY, int iZ, int datalen)
+int CgnsUtil::loadVectorDataT(iRICLib::H5CgnsSolutionI* sol, const std::string& name, vtkDataSetAttributes* atts)
 {
-	std::vector<T> dataX(datalen, 0);
-	std::vector<T> dataY(datalen, 0);
-	std::vector<T> dataZ(datalen, 0);
-	std::vector<double> dataMag(datalen, 0);
-	// read x.
-	cg_array_read(iX, dataX.data());
-	// read y.
-	if (iY != 0) {
-		cg_array_read(iY, dataY.data());
-	}
+	std::vector<T> dataX;
+	std::vector<T> dataY;
+	std::vector<T> dataZ;
+	std::vector<double> dataMag;
+
+	std::set<std::string> valueNames;
+	int ier = sol->readValueNames(&valueNames);
+	if (ier != IRIC_NO_ERROR) {return ier;}
+
+	// read x
+	auto xName = name;
+	xName.append("X");
+	ier = sol->readValue(xName, &dataX);
+	if (ier != IRIC_NO_ERROR) {return ier;}
+
+	// read y
+	auto yName = name;
+	yName.append("Y");
+	ier = sol->readValue(yName, &dataY);
+	if (ier != IRIC_NO_ERROR) {return ier;}
+
 	// read z
-	if (iZ != 0){
-		cg_array_read(iZ, dataZ.data());
+	auto zName = name;
+	zName.append("Z");
+	if (valueNames.find(zName) == valueNames.end()) {
+		dataZ.assign(dataX.size(), 0);
+	} else {
+		ier = sol->readValue(zName, &dataZ);
+		if (ier != IRIC_NO_ERROR) {return ier;}
 	}
-	for (int i = 0; i < datalen; ++i) {
+
+	// calculate magnitude
+	dataMag.assign(dataX.size(), 0);
+	for (int i = 0; i < dataX.size(); ++i) {
 		double sum = 0;
 		sum += dataX[i] * dataX[i];
 		sum += dataY[i] * dataY[i];
 		sum += dataZ[i] * dataZ[i];
 		dataMag[i] = std::sqrt(sum);
 	}
-	vtkSmartPointer<DA> tmpArray = vtkSmartPointer<DA>::New();
-	tmpArray->SetName(iRIC::toStr(name).c_str());
+
+	auto tmpArray = vtkSmartPointer<DA>::New();
+	tmpArray->SetName(name.c_str());
 	tmpArray->SetNumberOfComponents(3);
-	tmpArray->Allocate(datalen);
-	for (int i = 0; i < datalen; ++i) {
+	tmpArray->Allocate(dataX.size());
+	for (int i = 0; i < dataX.size(); ++i) {
 		tmpArray->InsertNextTuple3(dataX[i], dataY[i], dataZ[i]);
 	}
 	atts->AddArray(tmpArray);
 
-	vtkSmartPointer<vtkDoubleArray> magArray = vtkSmartPointer<vtkDoubleArray>::New();
-	QString magName = name;
+	auto magArray = vtkSmartPointer<vtkDoubleArray>::New();
+	std::string magName = name;
 	magName.append(" (magnitude)");
-	magArray->SetName(iRIC::toStr(magName).c_str());
-	magArray->Allocate(datalen);
-	for (int i = 0; i < datalen; ++i) {
+	magArray->SetName(magName.c_str());
+	magArray->Allocate(dataMag.size());
+	for (int i = 0; i < dataMag.size(); ++i) {
 		magArray->InsertNextValue(dataMag[i]);
 	}
 	atts->AddArray(magArray);
+
+	return IRIC_NO_ERROR;
 }
 
 #endif // CGNSUTIL_DETAIL_H
-

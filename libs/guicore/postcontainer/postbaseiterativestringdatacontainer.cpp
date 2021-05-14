@@ -14,6 +14,8 @@ std::string PostBaseIterativeStringDataContainer::data() const
 
 bool PostBaseIterativeStringDataContainer::handleCurrentStepUpdate(const int fn, const int timeStep)
 {
+	return true;
+	/*
 	int ier, nArrays;
 
 	bool ok = getNumArrays(fn, &nArrays);
@@ -39,4 +41,5 @@ bool PostBaseIterativeStringDataContainer::handleCurrentStepUpdate(const int fn,
 	}
 	m_data = buffer2.data();
 	return true;
+	*/
 }

@@ -164,8 +164,9 @@ bool PostSolutionInfo::setCurrentStep(unsigned int step, int fn)
 
 	int tmpfn = 0;
 
-	return true;
-
+	auto f = cgnsFile();
+	f->solutionReader()->setSolutionId(step + 1);
+	f = f->solutionReader()->targetFile();
 
 	time.start();
 	setupZoneDataContainers(tmpfn);
@@ -176,17 +177,20 @@ bool PostSolutionInfo::setCurrentStep(unsigned int step, int fn)
 
 	bool errorOccured = false;
 
-	for (auto it = m_zoneContainers1D.begin(); it != m_zoneContainers1D.end(); ++it) {
-		errorOccured = errorOccured || (!(*it)->handleCurrentStepUpdate(tmpfn, step, m_disableCalculatedResult));
+	for (auto zone : m_zoneContainers1D) {
+		auto z = f->base(1)->zone(zone->zoneName());
+		errorOccured = errorOccured || (! zone->handleCurrentStepUpdate(z, m_disableCalculatedResult));
 	}
-	for (auto it = m_zoneContainers2D.begin(); it != m_zoneContainers2D.end(); ++it) {
+	for (auto zone : m_zoneContainers2D) {
 		time.start();
-		errorOccured = errorOccured || (!(*it)->handleCurrentStepUpdate(tmpfn, step, m_disableCalculatedResult));
+		auto z = f->base(2)->zone(zone->zoneName());
+		errorOccured = errorOccured || (! zone->handleCurrentStepUpdate(z, m_disableCalculatedResult));
 		qDebug("handleCurrentStepUpdate() for 2D: %d", time.elapsed());
 	}
-	for (auto it = m_zoneContainers3D.begin(); it != m_zoneContainers3D.end(); ++it) {
+	for (auto zone : m_zoneContainers3D) {
 		time.start();
-		errorOccured = errorOccured || (!(*it)->handleCurrentStepUpdate(tmpfn, step, m_disableCalculatedResult));
+		auto z = f->base(3)->zone(zone->zoneName());
+		errorOccured = errorOccured || (! zone->handleCurrentStepUpdate(z, m_disableCalculatedResult));
 		qDebug("handleCurrentStepUpdate() for 3D: %d", time.elapsed());
 	}
 
@@ -217,75 +221,63 @@ void PostSolutionInfo::informStepsUpdated()
 
 bool PostSolutionInfo::innerSetupZoneDataContainers(int fn, int dim, QList<PostZoneDataContainer*>* containers, QMap<std::string, PostZoneDataContainer*>* containerNameMap, QMap<std::string, std::vector<PostCalculatedResult*> > *results)
 {
+	auto file = cgnsFile();
+
+	if (! file->baseExists(dim)) {
+		clearContainers(containers);
+		containerNameMap->clear();
+		return true;
+	}
+
 	std::vector<std::string> zoneNames;
 	for (PostZoneDataContainer* c : *containers) {
 		zoneNames.push_back(c->zoneName());
 	}
 
-	int ier, nbases;
-	ier = cg_nbases(fn, &nbases);
-	if (ier != 0) {return false;}
-	int baseid = 0;
-	std::string baseName;
-	for (int B = 1; B <= nbases; ++B) {
-		char bname[ProjectCgnsFile::BUFFERLEN];
-		int cell_dim;
-		int phys_dim;
-		ier = cg_base_read(fn, B, bname, &cell_dim, &phys_dim);
-		if (ier != 0) {return false;}
-		if (cell_dim == dim) {
-			// target base found!
-			baseid = B;
-			baseName = bname;
-		}
-	}
-	if (baseid == 0) {
-		clearContainers(containers);
-		containerNameMap->clear();
-		return true;
-	}
-	int nzones;
-	ier = cg_nzones(fn, baseid, &nzones);
-	if (ier != 0) {return false;}
+	auto base = file->base(dim);
 	std::vector<std::string> tmpZoneNames;
-	for (int Z = 1; Z <= nzones; ++Z) {
-		cgsize_t sizes[9];
-		char zoneName[ProjectCgnsFile::BUFFERLEN];
-		ier = cg_zone_read(fn, baseid, Z, zoneName, sizes);
 
-		bool hasSolution;
-		bool ok = zoneHasSolution(fn, baseid, Z, &hasSolution);
-		if (! ok) {return false;}
-		if (! hasSolution) {continue;}
+	for (const auto& zName : base->zoneNames()) {
+		auto z = base->zone(zName);
 
-		tmpZoneNames.push_back(std::string(zoneName));
+		bool solExists = false;
+		int ier = z->getSolutionExists(&solExists);
+		if (ier != IRIC_NO_ERROR) {return false;}
+
+		if (! solExists) {continue;}
+
+		tmpZoneNames.push_back(zName);
 	}
+
 	if (zoneNames == tmpZoneNames) {
 		// zone names are equal to those already read.
-		for (int i = 0; i < containers->count(); ++i) {
-			(*containers)[i]->loadIfEmpty(fn);
+		for (auto c : *containers) {
+			c->loadIfEmpty(base->zone(c->zoneName()));
 		}
 		return false;
 	}
+
 	zoneNames = tmpZoneNames;
 
 	// clear the current zone containers first.
 	for (auto c : *containers) {
 		results->insert(c->zoneName(), c->detachCalculatedResult());
 	}
+
 	clearContainers(containers);
 	containerNameMap->clear();
-	QList<SolverDefinitionGridType*> gtypes = projectData()->solverDefinition()->gridTypes();
+	auto gtypes = projectData()->solverDefinition()->gridTypes();
 
 	int step = currentStep();
 
 	for (const auto& zoneName : zoneNames) {
 		bool found = false;
+		auto zone = base->zone(zoneName);
 		if (zoneName == "iRICZone") {
-			for (auto gtit = gtypes.begin(); gtit != gtypes.end(); ++gtit) {
-				if ((*gtit)->isPrimary() && !(*gtit)->isOptional()) {
-					PostZoneDataContainer* cont = new PostZoneDataContainer(baseName, zoneName, *gtit, this);
-					cont->loadFromCgnsFile(fn, step);
+			for (auto gridType : gtypes) {
+				if (gridType->isPrimary() && ! (gridType->isOptional())) {
+					PostZoneDataContainer* cont = new PostZoneDataContainer(zoneName, gridType, this);
+					cont->loadFromCgnsFile(zone, step);
 					containers->push_back(cont);
 					containerNameMap->insert(zoneName, cont);
 					found = true;
@@ -293,10 +285,10 @@ bool PostSolutionInfo::innerSetupZoneDataContainers(int fn, int dim, QList<PostZ
 				}
 			}
 		} else {
-			for (auto gtit = gtypes.begin(); gtit != gtypes.end(); ++gtit) {
-				if (zoneName.find((*gtit)->name()) != std::string::npos) {
-					PostZoneDataContainer* cont = new PostZoneDataContainer(baseName, zoneName, *gtit, this);
-					cont->loadFromCgnsFile(fn, step);
+			for (auto gridType : gtypes) {
+				if (zoneName.find(gridType->name()) != std::string::npos) {
+					PostZoneDataContainer* cont = new PostZoneDataContainer(zoneName, gridType, this);
+					cont->loadFromCgnsFile(zone, step);
 					containers->append(cont);
 					containerNameMap->insert(zoneName, cont);
 					found = true;
@@ -306,8 +298,8 @@ bool PostSolutionInfo::innerSetupZoneDataContainers(int fn, int dim, QList<PostZ
 		}
 		if (! found) {
 			// no appropriate gridtype found. use the dummy grid type.
-			PostZoneDataContainer* cont = new PostZoneDataContainer(baseName, zoneName, projectData()->solverDefinition()->dummyGridType(), this);
-			cont->loadFromCgnsFile(fn, step);
+			PostZoneDataContainer* cont = new PostZoneDataContainer(zoneName, projectData()->solverDefinition()->dummyGridType(), this);
+			cont->loadFromCgnsFile(zone, step);
 			containers->append(cont);
 			containerNameMap->insert(zoneName, cont);
 		}
@@ -329,46 +321,38 @@ bool PostSolutionInfo::innerSetupZoneDataContainers(int fn, int dim, QList<PostZ
 bool PostSolutionInfo::setupBaseIterativeResults(int fn, int baseId)
 {
 	clearBaseIterativeResults();
+	/*
 
-	int ier, nSteps;
-	char iterName[ProjectCgnsFile::BUFFERLEN];
+	auto file = cgnsFile();
+	auto biterData = file->ccBase()->biterData();
 
-	ier = cg_biter_read(fn, baseId, iterName, &nSteps);
-	if (ier != 0) {return false;}
-	ier = cg_goto(fn, baseId, iterName, 0, nullptr);
-	if (ier != 0) {return false;}
-
-	int nArrays;
-	ier = cg_narrays(&nArrays);
-	if (ier != 0) {return false;}
-
+	std::vector<std::string> resultNames;
+	int ier = biterData->getResultNames(&resultNames);
+	if (ier != IRIC_NO_ERROR) {return false;}
 
 	int step = currentStep();
 
-	for (int i = 1; i <= nArrays; ++i) {
-		char arrayname[ProjectCgnsFile::BUFFERLEN];
-		DataType_t datatype;
-		int datadim;
-		cgsize_t dimVec[3];
-		ier = cg_array_info(i, arrayname, &datatype, &datadim, dimVec);
-		if (ier != 0) {return false;}
-		QString name(arrayname);
-		if (name == "TimeValues" || name == "IterationValues") {continue;}
+	for (const auto& name : resultNames) {
+		iRICLib::H5Util::DataArrayValueType type;
+		ier = biterData->readValueType(name, &type);
+		if (ier != IRIC_NO_ERROR) {return false;}
 
-		if (datatype == Character) {
-			auto c = new PostBaseIterativeStringDataContainer(baseId, arrayname, this);
-			c->handleCurrentStepUpdate(fn, step);
+		if (type == iRICLib::H5Util::DataArrayValueType::RealDouble) {
+			auto c = new PostBaseIterativeRealDataContainer(name, this);
+			c->handleCurrentStepUpdate(file, step);
+			m_baseIterativeNumericalResults.insert({c->name(), c});
+		} else if (type == iRICLib::H5Util::DataArrayValueType::Int) {
+			auto c = new PostBaseIterativeIntegerDataContainer(name, this);
+			c->handleCurrentStepUpdate(file, step);
+			m_baseIterativeNumericalResults.insert({c->name(), c});
+		} else if (type == iRICLib::H5Util::DataArrayValueType::Char) {
+			auto c = new PostBaseIterativeStringDataContainer(name, this);
+			c->handleCurrentStepUpdate(file, step);
 			m_baseIterativeStringResults.insert({c->name(), c});
-		} else if (datatype == Integer) {
-			auto c = new PostBaseIterativeIntegerDataContainer(baseId, arrayname, this);
-			c->handleCurrentStepUpdate(fn, step);
-			m_baseIterativeNumericalResults.insert({c->name(), c});
-		} else if (datatype == RealDouble) {
-			auto c = new PostBaseIterativeRealDataContainer(baseId, arrayname, this);
-			c->handleCurrentStepUpdate(fn, step);
-			m_baseIterativeNumericalResults.insert({c->name(), c});
 		}
 	}
+	*/
+
 	return true;
 }
 
@@ -387,8 +371,6 @@ void PostSolutionInfo::clearBaseIterativeResults()
 
 void PostSolutionInfo::setupZoneDataContainers(int fn)
 {
-	return;
-
 	bool ret;
 	// setup 1D containers.
 	ret = innerSetupZoneDataContainers(fn, 1, &m_zoneContainers1D, &m_zoneContainerNameMap1D, &m_calculatedResults1D);
@@ -852,6 +834,9 @@ void PostSolutionInfo::exportCalculationResult()
 		break;
 	case PostDataExportDialog::Format::ESRIShape:
 		dialog.setLabelText(tr("Saving calculation result as ESRI Shapefiles..."));
+		break;
+	case PostDataExportDialog::Format::TPO:
+		dialog.setLabelText(tr("Saving calculation result as TPO files..."));
 		break;
 	}
 	dialog.setFixedSize(300, 100);

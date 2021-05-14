@@ -299,7 +299,7 @@ bool Graph2dHybridWindowResultSetting::init(PostSolutionInfo* sol, const QString
 				}
 			}
 			ti.gridType = cont->gridType();
-			ti.zoneId = cont->zoneId();
+			// ti.zoneId = cont->zoneId();
 			ti.zoneName = cont->zoneName();
 			if (cont->data() == nullptr) {return false;}
 

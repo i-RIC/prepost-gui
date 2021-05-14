@@ -16,12 +16,14 @@
 #include <cgnslib.h>
 #include <iriclib.h>
 
-#include <sstream>
 #include <vector>
+
+#include <h5cgnspolydatasolution.h>
+#include <public/h5cgnspolydatasolution_groupreader.h>
 
 namespace {
 
-int loadPolyData(const std::string& name, vtkPolyData* polyData, std::vector<int>* ids, const QPointF& offset)
+int loadPolyData(const std::string& name, vtkPolyData* polyData, std::vector<int>* ids, iRICLib::H5CgnsPolyDataSolution* sol, const QPointF& offset)
 {
 	std::vector<int> typeVec;
 	std::vector<int> sizeVec;
@@ -32,18 +34,18 @@ int loadPolyData(const std::string& name, vtkPolyData* polyData, std::vector<int
 	std::vector<int> cellIntVals;
 	std::vector<double> cellRealVals;
 
-	CgnsUtil::loadArrayWithName(name, "type", &typeVec);
-	CgnsUtil::loadArrayWithName(name, "size", &sizeVec);
-	CgnsUtil::loadArrayWithName(name, "coordinateX", &coordXVec);
-	CgnsUtil::loadArrayWithName(name, "coordinateY", &coordYVec);
+	sol->readTypes(name, &typeVec);
+	sol->readSizes(name, &sizeVec);
+	sol->readCoordinatesX(name, &coordXVec);
+	sol->readCoordinatesY(name, &coordYVec);
 
-	vtkSmartPointer<vtkPoints> points = vtkSmartPointer<vtkPoints>::New();
+	auto points = vtkSmartPointer<vtkPoints>::New();
 	points->SetDataTypeToDouble();
-	vtkSmartPointer<vtkCellArray> lines = vtkSmartPointer<vtkCellArray>::New();
-	vtkSmartPointer<vtkCellArray> polys = vtkSmartPointer<vtkCellArray>::New();
+	auto lines = vtkSmartPointer<vtkCellArray>::New();
+	auto polys = vtkSmartPointer<vtkCellArray>::New();
 
 	int startIdx = 0;
-	for (int i = 0; i < typeVec.size(); ++i) {
+	for (unsigned int i = 0; i < typeVec.size(); ++i) {
 		int t = typeVec.at(i);
 		int s = sizeVec.at(i);
 
@@ -57,10 +59,11 @@ int loadPolyData(const std::string& name, vtkPolyData* polyData, std::vector<int
 				polygonPoints->InsertNextPoint(coordXVec.at(startIdx + j) - offset.x(), coordYVec.at(startIdx + j) - offset.y(), 0);
 				polygonIds->InsertNextId(j);
 			}
-			vtkSmartPointer<vtkIdList> triIds = vtkSmartPointer<vtkIdList>::New();
+			auto triIds = vtkSmartPointer<vtkIdList>::New();
 			vtkPol->Triangulate(triIds);
 			vtkIdType tri_ids[3];
 			vtkIdType triFirst = 0;
+
 			int cellCount = 0;
 			while (triFirst < triIds->GetNumberOfIds()) {
 				for (int j = 0; j < 3; ++j) {
@@ -89,93 +92,33 @@ int loadPolyData(const std::string& name, vtkPolyData* polyData, std::vector<int
 	polyData->SetPolys(polys);
 
 	// load values
-	int numArray;
-
-	auto exp = QString("^%1__(.+)$").arg(name.c_str());
-	QRegExp re(exp);
-
-	cg_narrays(&numArray);
-	for (int A = 1; A <= numArray; ++A) {
-		int ier;
-		char n[ProjectCgnsFile::BUFFERLEN];
-		DataType_t dataType;
-		int dim;
-		cgsize_t dimVec;
-
-		ier = cg_array_info(A, n, &dataType, &dim, &dimVec);
-		if (ier != 0) {return ier;}
-		if (re.indexIn(n) == -1) {continue;}
-
-		vtkSmartPointer<vtkDoubleArray> vals = vtkSmartPointer<vtkDoubleArray>::New();
-		vals->SetName(iRIC::toStr(re.cap(1)).c_str());
-
-		if (dataType == Integer) {
-			cellIntVals.assign(dimVec, 0);
-			cg_array_read(A, cellIntVals.data());
-			for (int j = 0; j < cellIntVals.size(); ++j) {
-				for (int k = 0; k < cellCounts[j]; ++k) {
-					vals->InsertNextValue(cellIntVals.at(j));
-				}
-			}
-		} else {
-			cellRealVals.assign(dimVec, 0);
-			cg_array_read(A, cellRealVals.data());
-			for (int j = 0; j < cellRealVals.size(); ++j) {
-				for (int k = 0; k < cellCounts[j]; ++k) {
-					vals->InsertNextValue(cellRealVals.at(j));
-				}
-			}
-		}
-		polyData->GetCellData()->AddArray(vals);
-	}
+	auto reader = sol->groupReader(name);
+	reader.setCellCounts(cellCounts);
+	int ier = CgnsUtil::loadScalarData(&reader, polyData->GetCellData());
+	if (ier != 0) {return ier;}
 
 	return 0;
 }
 
-std::vector<std::string> loadPolyDataNames()
-{
-	int ier;
-	int numArrays;
-	std::vector<std::string> names;
-
-	ier = cg_narrays(&numArrays);
-	QRegExp re("^(.+)_type$");
-
-	for (int A = 1; A <= numArrays; ++A) {
-		char name[ProjectCgnsFile::BUFFERLEN];
-		DataType_t dataType;
-		int dim;
-		cgsize_t dimVec;
-
-		ier = cg_array_info(A, name, &dataType, &dim, &dimVec);
-		int idx = re.indexIn(name);
-		if (idx == 0) {
-			names.push_back(iRIC::toStr(re.cap(1)));
-		}
-	}
-
-	return names;
-}
-
 } // namespace
 
-bool PostZoneDataContainer::PolyDataLoader::load(int fid, int bid, int zid, int step, std::map<std::string, vtkSmartPointer<vtkPolyData> >* polyDataMap, std::map<std::string, std::vector<int> >* polyDataCellIdsMap, const QPointF& offset)
+bool PostZoneDataContainer::PolyDataLoader::load(std::map<std::string, vtkSmartPointer<vtkPolyData> >* polyDataMap, std::map<std::string, std::vector<int> >* polyDataCellIdsMap, iRICLib::H5CgnsPolyDataSolution* sol, const QPointF& offset)
 {
 	polyDataMap->clear();
-	std::ostringstream ss;
-	ss << "PolydataSolution" << (step + 1);
-	int ier = cg_goto(fid, bid, "Zone_t", zid, ss.str().c_str(), 0, "end");
-	if (ier != 0) {return true;}
 
-	auto names = loadPolyDataNames();
-	for (auto name : names) {
-		vtkSmartPointer<vtkPolyData> polyData = vtkSmartPointer<vtkPolyData>::New();
+	std::vector<std::string> groupNames;
+	int ier = sol->readGroupNames(&groupNames);
+	if (ier != 0) {return false;}
+
+	for (auto name : groupNames) {
+		auto polyData = vtkSmartPointer<vtkPolyData>::New();
 		std::vector<int> ids;
-		int ret = loadPolyData(name, polyData.Get(), &ids, offset);
+		int ret = loadPolyData(name, polyData.Get(), &ids, sol, offset);
 		if (ret != 0) {return false;}
 
 		polyDataMap->insert({name, polyData});
 		polyDataCellIdsMap->insert({name, ids});
 	}
+
 	return true;
 }

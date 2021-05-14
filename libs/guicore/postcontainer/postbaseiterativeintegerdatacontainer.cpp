@@ -12,6 +12,8 @@ double PostBaseIterativeIntegerDataContainer::data() const
 
 bool PostBaseIterativeIntegerDataContainer::handleCurrentStepUpdate(const int fn, const int timeStep)
 {
+	return true;
+	/*
 	int ier, nArrays;
 
 	bool ok = getNumArrays(fn, &nArrays);
@@ -29,4 +31,5 @@ bool PostBaseIterativeIntegerDataContainer::handleCurrentStepUpdate(const int fn
 
 	m_data = buffer.at(timeStep);
 	return true;
+	*/
 }

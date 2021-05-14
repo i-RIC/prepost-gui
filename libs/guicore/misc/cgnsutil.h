@@ -6,35 +6,36 @@
 #include <string>
 #include <vector>
 
-class QString;
+namespace iRICLib {
+	class H5CgnsSolutionI;
+} // namespace iRICLib
 
 class vtkDataSetAttributes;
 
 class CgnsUtil
 {
 public:
-	static int arrayIdWithName(const std::string& name);
-
-	static int findArray(const QString& name, DataType_t dt, int dim, int narrays);
-	static int findArray(const QString& name, DataType_t* dt, int* dim, cgsize_t* dimVec, int narrays);
-
-	template<typename V>
-	static int loadArrayWithName(const std::string& name, std::vector<V>* vals);
-
-	template<typename V>
-	static int loadArrayWithName(const std::string& name, const std::string& suffix, std::vector<V>* vals);
+	static bool isScalarName(const std::string& name);
+	static bool isGridLocation(const std::string& name);
+	static int loadScalarData(iRICLib::H5CgnsSolutionI* sol, vtkDataSetAttributes* atts, const std::string& IBCName = "");
+	static int loadEdgeIScalarData(iRICLib::H5CgnsSolutionI* sol, vtkDataSetAttributes* atts, const std::string& IBCName = "");
+	static int loadEdgeJScalarData(iRICLib::H5CgnsSolutionI* sol, vtkDataSetAttributes* atts, const std::string& IBCName = "");
+	static int loadVectorData(iRICLib::H5CgnsSolutionI* sol, vtkDataSetAttributes* atts);
 
 	template<class T, class DA>
-	static void loadScalarDataT(const QString& name, vtkDataSetAttributes* atts, int index, int datalen, const QString& IBCName = "");
+	static int addScalarDataT(const std::vector<T>& values, const std::string& name, vtkDataSetAttributes* atts, const std::string& IBCName = "");
 
 	template<class T, class DA>
-	static void loadEdgeIScalarDataT(const QString& name, vtkDataSetAttributes* atts, int index, int datalen, cgsize_t dims[3], const QString& IBCName = "");
+	static int loadScalarDataT(iRICLib::H5CgnsSolutionI* sol, const std::string& name, vtkDataSetAttributes* atts, const std::string& IBCName = "");
 
 	template<class T, class DA>
-	static void loadEdgeJScalarDataT(const QString& name, vtkDataSetAttributes* atts, int index, int datalen, cgsize_t dims[3], const QString& IBCName = "");
+	static int loadEdgeIScalarDataT(iRICLib::H5CgnsSolutionI* sol, const std::string& name, vtkDataSetAttributes* atts, const std::string& IBCName = "");
 
 	template<class T, class DA>
-	static void loadVectorDataT(const QString& name, vtkDataSetAttributes* atts, int iX, int iY, int iZ, int datalen);
+	static int loadEdgeJScalarDataT(iRICLib::H5CgnsSolutionI* sol, const std::string& name, vtkDataSetAttributes* atts, const std::string& IBCName = "");
+
+	template<class T, class DA>
+	static int loadVectorDataT(iRICLib::H5CgnsSolutionI* sol, const std::string& name, vtkDataSetAttributes* atts);
 
 private:
 	CgnsUtil();

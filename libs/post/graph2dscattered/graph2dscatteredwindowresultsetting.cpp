@@ -59,7 +59,7 @@ bool Graph2dScatteredWindowResultSetting::init(PostSolutionInfo* sol)
 	}
 	m_dimension = dialog.dimension();
 	PostZoneDataContainer* cont = dialog.container();
-	m_zoneId = cont->zoneId();
+	// m_zoneId = cont->zoneId();
 	m_zoneName = cont->zoneName();
 	return true;
 }
