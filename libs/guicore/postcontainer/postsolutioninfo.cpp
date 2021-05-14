@@ -156,24 +156,15 @@ int PostSolutionInfo::currentStep() const
 
 bool PostSolutionInfo::setCurrentStep(unsigned int step, int fn)
 {
+	bool ok = open();
+
 	static bool dialogShowing = false;
 	m_currentStep = step;
 	QTime time, wholetime;
 	wholetime.start();
 
 	int tmpfn = 0;
-	if (fn == 0) {
-		bool ok = open();
-		if (ok) {
-			tmpfn = m_opener->fileId();
-		}
-	} else {
-		tmpfn = fn;
-	}
-	if (tmpfn == 0) {
-		// opening failed.
-		return false;
-	}
+
 	time.start();
 	setupZoneDataContainers(tmpfn);
 	setupBaseIterativeResults(tmpfn, 1);
@@ -215,8 +206,8 @@ void PostSolutionInfo::informStepsUpdated()
 {
 	bool ok = open();
 	if (!ok) {return;}
-	setupZoneDataContainers(m_opener->fileId());
-	setupBaseIterativeResults(m_opener->fileId(), 1);
+	setupZoneDataContainers(0);
+	setupBaseIterativeResults(0, 1);
 
 	emit updated();
 	emit allPostProcessorsUpdated();
