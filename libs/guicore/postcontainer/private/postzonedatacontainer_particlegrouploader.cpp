@@ -68,8 +68,11 @@ int PostZoneDataContainer::ParticleGroupLoader::loadParticleGroup(const std::str
 
 	// load values
 	auto reader = sol->groupReader(name);
-	CgnsUtil::loadScalarData(&reader, polyData->GetCellData());
-	CgnsUtil::loadVectorData(&reader, polyData->GetCellData());
+
+	auto pd = polyData->GetPointData();
+
+	CgnsUtil::loadScalarData(&reader, pd);
+	CgnsUtil::loadVectorData(&reader, pd);
 
 	return 0;
 }
