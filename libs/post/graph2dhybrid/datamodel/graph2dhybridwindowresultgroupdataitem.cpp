@@ -55,9 +55,7 @@ Graph2dHybridWindowResultGroupDataItem::Graph2dHybridWindowResultGroupDataItem(G
 }
 
 Graph2dHybridWindowResultGroupDataItem::~Graph2dHybridWindowResultGroupDataItem()
-{
-
-}
+{}
 
 void Graph2dHybridWindowResultGroupDataItem::updateData(int fn)
 {
@@ -66,9 +64,10 @@ void Graph2dHybridWindowResultGroupDataItem::updateData(int fn)
 		return;
 	}
 	updating = true;
+
 	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
-		Graph2dHybridWindowResultDataItem* item = dynamic_cast<Graph2dHybridWindowResultDataItem*>(*it);
-		item->update(fn);
+		auto item = dynamic_cast<Graph2dHybridWindowResultDataItem*>(*it);
+		item->update();
 	}
 	updating = false;
 }

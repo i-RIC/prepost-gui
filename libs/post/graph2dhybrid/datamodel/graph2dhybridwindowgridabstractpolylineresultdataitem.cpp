@@ -102,7 +102,7 @@ void Graph2dHybridWindowGridAbstractPolylineResultDataItem::doSaveToProjectMainF
 	// void Graph2dHybridWindowResultSetting::loadFromProjectMainFile(const QDomNode& node)
 }
 
-void Graph2dHybridWindowGridAbstractPolylineResultDataItem::updateValues(int /*fn*/)
+void Graph2dHybridWindowGridAbstractPolylineResultDataItem::updateValues()
 {
 	m_xValues.clear();
 	m_yValues.clear();
@@ -216,10 +216,10 @@ void Graph2dHybridWindowGridAbstractPolylineResultDataItem::updateValuesVertex(v
 			start_pt[0] = (*amap.cbegin()).second[0];
 			start_pt[1] = (*amap.cbegin()).second[1];
 			QVector3D d(prev_end_pt[0] - start_pt[0], prev_end_pt[1] - start_pt[1], 0.0);
-			offset = m_xValues.last() + d.length();
+			offset = m_xValues.at(m_xValues.size() - 1) + d.length();
 		}
 		double distance = 0;
-		if (m_xValues.size() > 0) distance = m_xValues.last();
+		if (m_xValues.size() > 0) distance = m_xValues.at(m_xValues.size() - 1);
 		for (const auto& pr : amap) {
 			distance = pr.first - amap.cbegin()->first;
 			m_xValues.push_back(distance + offset);
@@ -332,10 +332,10 @@ void Graph2dHybridWindowGridAbstractPolylineResultDataItem::updateValuesCellCent
 			start_pt[0] = (*amap.cbegin()).second[0];
 			start_pt[1] = (*amap.cbegin()).second[1];
 			QVector3D d(prev_end_pt[0] - start_pt[0], prev_end_pt[1] - start_pt[1], 0.0);
-			offset = m_xValues.last() + d.length();
+			offset = m_xValues.at(m_xValues.size() - 1) + d.length();
 		}
 		double distance = 0;
-		if (m_xValues.size() > 0) distance = m_xValues.last();
+		if (m_xValues.size() > 0) distance = m_xValues.at(m_xValues.size() - 1);
 		for (const auto& pr : amap) {
 			distance = pr.first - amap.cbegin()->first;
 			m_xValues.push_back(distance + offset);

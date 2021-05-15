@@ -74,7 +74,7 @@ private:
 	const QList<PostZoneDataContainer*>& zoneContainers();
 	QString formattedNumber(int number, int max);
 	bool exportCsv(const QString& filename) const;
-	template <typename DataItem> void getXY(DataItem* dataItem, QVector<double>* x, QVector<double>* y) const;
+	template <typename DataItem> void getXY(DataItem* dataItem, std::vector<double>* x, std::vector<double>* y) const;
 
 	QwtPlotMarker* m_timeMarker;
 	Graph2dHybridWindowResultSetting m_setting;

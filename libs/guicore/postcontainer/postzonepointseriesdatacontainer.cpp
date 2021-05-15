@@ -123,7 +123,7 @@ bool PostZonePointSeriesDataContainer::loadData(const int fn)
 	file->ccBase()->biterData()->readTime(&timeValues);
 
 	auto reader = file->solutionReader();
-	for (int i = 0; i <= static_cast<int> (timeValues.size()); ++i) {
+	for (int i = 0; i < static_cast<int> (timeValues.size()); ++i) {
 		reader->setSolutionId(i + 1);
 		auto zone = reader->targetFile()->base(PostSolutionInfo::toIntDimension(m_dimension))->zone(m_zoneName);
 

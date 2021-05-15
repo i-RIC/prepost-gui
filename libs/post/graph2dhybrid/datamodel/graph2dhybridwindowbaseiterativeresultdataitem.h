@@ -18,10 +18,9 @@ public:
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	Graph2dHybridWindowResultCopyDataItem* copy(Graph2dHybridWindowResultCopyGroupDataItem* parent) override;
 
-protected:
-	void updateValues(int fn) override;
-
 private:
+	void updateValues() override;
+
 	PostBaseIterativeSeriesDataContainer* m_dataContainer;
 };
 

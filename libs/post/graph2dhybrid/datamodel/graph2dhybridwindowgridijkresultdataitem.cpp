@@ -46,7 +46,7 @@ void Graph2dHybridWindowGridIJKResultDataItem::doSaveToProjectMainFile(QXmlStrea
 
 }
 
-void Graph2dHybridWindowGridIJKResultDataItem::updateValues(int /*fn*/)
+void Graph2dHybridWindowGridIJKResultDataItem::updateValues()
 {
 	m_xValues.clear();
 	m_yValues.clear();
@@ -115,8 +115,8 @@ void Graph2dHybridWindowGridIJKResultDataItem::updateValuesVertex(vtkStructuredG
 	int numT = da->GetNumberOfTuples();
 	Q_ASSERT(extractedGrid->GetNumberOfPoints() == numT);
 
-	m_xValues.fill(0, numT);
-	m_yValues.fill(0, numT);
+	m_xValues.assign(numT, 0);
+	m_yValues.assign(numT, 0);
 
 	double distance = 0;
 	double oldp[3];
@@ -190,12 +190,12 @@ void Graph2dHybridWindowGridIJKResultDataItem::updateValuesCellCenterStepWise(vt
 		}
 
 		if (i == 0) {
-			m_xValues.append(distance); m_yValues.append(value);
+			m_xValues.push_back(distance); m_yValues.push_back(value);
 		} else if (i == npts - 1) {
-			m_xValues.append(distance); m_yValues.append(previous_value);
+			m_xValues.push_back(distance); m_yValues.push_back(previous_value);
 		} else {
-			m_xValues.append(distance); m_yValues.append(previous_value);
-			m_xValues.append(distance); m_yValues.append(value);
+			m_xValues.push_back(distance); m_yValues.push_back(previous_value);
+			m_xValues.push_back(distance); m_yValues.push_back(value);
 		}
 
 		previous_value = value;
@@ -237,7 +237,7 @@ void Graph2dHybridWindowGridIJKResultDataItem::updateValuesCellCenter(vtkStructu
 			v = da->GetTuple3(i);
 			value = std::sqrt(*v * *v + *(v + 1) * *(v + 1) + *(v + 2) * *(v + 2));
 		}
-		m_xValues.append(distance); m_yValues.append(value);
+		m_xValues.push_back(distance); m_yValues.push_back(value);
 
 		oldp[0] = p[0];
 		oldp[1] = p[1];

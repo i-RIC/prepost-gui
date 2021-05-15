@@ -40,17 +40,18 @@ void Graph2dHybridWindowBaseIterativeResultDataItem::doLoadFromProjectMainFile(c
 void Graph2dHybridWindowBaseIterativeResultDataItem::doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/)
 {}
 
-void Graph2dHybridWindowBaseIterativeResultDataItem::updateValues(int fn)
+void Graph2dHybridWindowBaseIterativeResultDataItem::updateValues()
 {
 	m_xValues.clear();
 	m_yValues.clear();
 
+	int fn = 0;
 	m_dataContainer->update(fn);
-	QList<double> timesteps = dataModel()->postSolutionInfo()->timeSteps()->timesteps();
-	if (m_dataContainer->data().count() != timesteps.count()) {return;}
+	auto timesteps = dataModel()->postSolutionInfo()->timeSteps()->timesteps();
+	if (m_dataContainer->data().size() != timesteps.size()) {return;}
 
-	m_xValues.fill(0, timesteps.count());
-	m_yValues.fill(0, timesteps.count());
+	m_xValues.assign(timesteps.count(), 0);
+	m_yValues.assign(timesteps.count(), 0);
 
 	for (int i = 0; i < timesteps.count(); ++i) {
 		m_xValues[i] = timesteps.at(i);

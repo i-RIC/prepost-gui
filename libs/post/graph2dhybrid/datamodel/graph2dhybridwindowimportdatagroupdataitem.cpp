@@ -11,8 +11,8 @@
 #include <QStandardItem>
 #include <QTextStream>
 
-Graph2dHybridWindowImportDataGroupDataItem::Graph2dHybridWindowImportDataGroupDataItem(Graph2dWindowDataItem* parent)
-	: Graph2dHybridWindowDataItem(tr("External Data"), QIcon(":/libs/guibase/images/iconFolder.png"), parent)
+Graph2dHybridWindowImportDataGroupDataItem::Graph2dHybridWindowImportDataGroupDataItem(Graph2dWindowDataItem* parent) :
+	Graph2dHybridWindowDataItem(tr("External Data"), QIcon(":/libs/guibase/images/iconFolder.png"), parent)
 {
 	m_standardItem->setCheckable(true);
 	m_standardItem->setCheckState(Qt::Checked);
@@ -22,9 +22,7 @@ Graph2dHybridWindowImportDataGroupDataItem::Graph2dHybridWindowImportDataGroupDa
 }
 
 Graph2dHybridWindowImportDataGroupDataItem::~Graph2dHybridWindowImportDataGroupDataItem()
-{
-
-}
+{}
 
 void Graph2dHybridWindowImportDataGroupDataItem::updateData()
 {
@@ -65,7 +63,6 @@ void Graph2dHybridWindowImportDataGroupDataItem::handlePropertyDialogAccepted(QD
 {
 }
 
-
 void Graph2dHybridWindowImportDataGroupDataItem::clear()
 {
 	for (int i = m_childItems.count() - 1; i >= 0; --i) {
@@ -85,8 +82,8 @@ void Graph2dHybridWindowImportDataGroupDataItem::importCsv(const QString& filena
 	QTextStream csvStream(&csvFile);
 
 	QList<QString> titles = iRIC::parseCSVLine(csvStream.readLine());
-	QList<QVector<double> > values;
-	QVector<double> emptyVec;
+	QList<std::vector<double> > values;
+	std::vector<double> emptyVec;
 	for (int i = 0; i < titles.count(); ++i) {
 		values.append(emptyVec);
 	}
@@ -97,7 +94,7 @@ void Graph2dHybridWindowImportDataGroupDataItem::importCsv(const QString& filena
 			QString f = frags[i].trimmed();
 			if (! f.isEmpty()) {
 				double val = f.toDouble();
-				values[i].append(val);
+				values[i].push_back(val);
 			}
 		}
 	}
@@ -107,8 +104,8 @@ void Graph2dHybridWindowImportDataGroupDataItem::importCsv(const QString& filena
 		QMessageBox::critical(mainWindow(), tr("Error"), tr("The title of the first column has to be \"X\""));
 		return;
 	}
-	QVector<double> xVals;
-	QVector<double> yVals;
+	std::vector<double> xVals;
+	std::vector<double> yVals;
 
 	QFileInfo finfo(filename);
 	QString fname = finfo.fileName();
@@ -120,7 +117,7 @@ void Graph2dHybridWindowImportDataGroupDataItem::importCsv(const QString& filena
 			continue;
 		}
 		yVals = values.at(i);
-		if (xVals.count() != yVals.count()) {
+		if (xVals.size() != yVals.size()) {
 			// skip this data.
 			QMessageBox::warning(mainWindow(), tr("Warning"), tr("The number of data of %1 and %2 mismatch. Data %1 is skipped."));
 			continue;

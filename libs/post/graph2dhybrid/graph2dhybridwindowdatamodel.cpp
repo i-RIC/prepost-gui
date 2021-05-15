@@ -905,7 +905,7 @@ void Graph2dHybridWindowDataModel::exportCsv()
 }
 
 template <typename DataItem>
-void Graph2dHybridWindowDataModel::getXY(DataItem* dataItem, QVector<double>* x, QVector<double>* y) const
+void Graph2dHybridWindowDataModel::getXY(DataItem* dataItem, std::vector<double>* x, std::vector<double>* y) const
 {
 	*x = dataItem->xValues();
 	*y = dataItem->yValues();
@@ -913,7 +913,7 @@ void Graph2dHybridWindowDataModel::getXY(DataItem* dataItem, QVector<double>* x,
 	int timeStepCount = projectData()->mainfile()->postSolutionInfo()->timeSteps()->timesteps().count();
 
 	if (m_timeStart == 0 && m_timeEnd == timeStepCount - 1 && m_timeSkip == 1) {return;}
-	QVector<double> clippedX, clippedY;
+	std::vector<double> clippedX, clippedY;
 
 	for (int i = m_timeStart; i <= m_timeEnd; i += m_timeSkip) {
 		clippedX.push_back(x->at(i));
@@ -927,15 +927,15 @@ bool Graph2dHybridWindowDataModel::exportCsv(const QString& filename) const
 {
 	int maxCount = 0;
 	QList<QString> titles;
-	QList<QVector<double> > values;
-	QVector<double> prevX;
+	QList<std::vector<double> > values;
+	std::vector<double> prevX;
 
 	Graph2dHybridWindowRootDataItem* root = dynamic_cast<Graph2dHybridWindowRootDataItem*>(m_rootDataItem);
 	Graph2dHybridWindowResultGroupDataItem* rgroup = root->resultGroupItem();
 	QList <Graph2dWindowDataItem*> resultList = rgroup->childItems();
 	for (int i = 0; i < resultList.count(); ++i) {
 		Graph2dHybridWindowResultDataItem* item = dynamic_cast<Graph2dHybridWindowResultDataItem*>(resultList.at(i));
-		QVector<double> tmpX, tmpY;
+		std::vector<double> tmpX, tmpY;
 		getXY(item, &tmpX, &tmpY);
 		if (prevX != tmpX) {
 			titles.append("X");
@@ -944,13 +944,13 @@ bool Graph2dHybridWindowDataModel::exportCsv(const QString& filename) const
 		}
 		titles.append(item->title());
 		values.append(tmpY);
-		if (maxCount < tmpY.count()) {maxCount = tmpY.count();}
+		if (maxCount < tmpY.size()) { maxCount = tmpY.size(); }
 	}
 	Graph2dHybridWindowResultCopyGroupDataItem* cgroup = root->resultCopyGroupItem();
 	QList <Graph2dWindowDataItem*> resultCopyList = cgroup->childItems();
 	for (int i = 0; i < resultCopyList.count(); ++i) {
 		Graph2dHybridWindowResultCopyDataItem* cdi = dynamic_cast<Graph2dHybridWindowResultCopyDataItem*>(resultCopyList.at(i));
-		QVector<double> tmpX, tmpY;
+		std::vector<double> tmpX, tmpY;
 		getXY(cdi, &tmpX, &tmpY);
 		if (prevX != tmpX) {
 			titles.append("X");
@@ -958,22 +958,22 @@ bool Graph2dHybridWindowDataModel::exportCsv(const QString& filename) const
 		}
 		titles.append(cdi->title());
 		values.append(tmpY);
-		if (maxCount < tmpY.count()) {maxCount = tmpY.count();}
+		if (maxCount < tmpY.size()) { maxCount = tmpY.size(); }
 	}
 
 	Graph2dHybridWindowImportDataGroupDataItem* igroup = root->importDataGroupItem();
 	QList <Graph2dWindowDataItem*> importDataList = igroup->childItems();
 	for (int i = 0; i < importDataList.count(); ++i) {
 		Graph2dHybridWindowImportDataDataItem* ddi = dynamic_cast<Graph2dHybridWindowImportDataDataItem*>(importDataList.at(i));
-		QVector<double> tmpX = ddi->xValues();
-		QVector<double> tmpY = ddi->yValues();
+		auto tmpX = ddi->xValues();
+		auto tmpY = ddi->yValues();
 		if (prevX != tmpX) {
-			titles.append("X");
-			values.append(tmpX);
+			titles.push_back("X");
+			values.push_back(tmpX);
 		}
-		titles.append(ddi->title());
-		values.append(tmpY);
-		if (maxCount < tmpY.count()) {maxCount = tmpY.count();}
+		titles.push_back(ddi->title());
+		values.push_back(tmpY);
+		if (maxCount < tmpY.size()) { maxCount = tmpY.size(); }
 	}
 
 	QFile csvFile(filename);
@@ -991,12 +991,12 @@ bool Graph2dHybridWindowDataModel::exportCsv(const QString& filename) const
 	for (int i = 0; i < maxCount; ++i) {
 		QList<QString> tmpvals;
 		for (int j = 0; j < values.count(); ++j) {
-			const QVector<double>& vals = values.at(j);
-			if (i < vals.count()) {
+			const auto& vals = values.at(j);
+			if (i < vals.size()) {
 				double v = vals.at(i);
-				tmpvals.append(QString::number(v));
+				tmpvals.push_back(QString::number(v));
 			} else {
-				tmpvals.append("");
+				tmpvals.push_back("");
 			}
 		}
 		for (int j = 0; j < tmpvals.count(); ++j) {

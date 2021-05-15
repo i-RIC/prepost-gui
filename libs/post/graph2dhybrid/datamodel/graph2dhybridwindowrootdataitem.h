@@ -20,35 +20,25 @@ class Graph2dHybridWindowRootDataItem : public Graph2dWindowRootDataItem
 	Q_OBJECT
 
 public:
-	/// Constructor
 	Graph2dHybridWindowRootDataItem(Graph2dHybridWindow* window, ProjectDataItem* parent);
-	/// Destructor
 	~Graph2dHybridWindowRootDataItem();
 
 	void setupStandardModel(QStandardItemModel* model);
-	Graph2dHybridWindowResultGroupDataItem* resultGroupItem() {
-		return m_resultGroupItem;
-	}
-	Graph2dHybridWindowResultCopyGroupDataItem* resultCopyGroupItem() {
-		return m_resultCopyGroupItem;
-	}
-	Graph2dHybridWindowImportDataGroupDataItem* importDataGroupItem() {
-		return m_importDataGroupItem;
-	}
-	Graph2dWindowMarkerGroupDataItem* markerGroupItem() {
-		return m_markerGroupItem;
-	}
+	Graph2dHybridWindowResultGroupDataItem* resultGroupItem() const;
+	Graph2dHybridWindowResultCopyGroupDataItem* resultCopyGroupItem() const;
+	Graph2dHybridWindowImportDataGroupDataItem* importDataGroupItem() const;
+	Graph2dWindowMarkerGroupDataItem* markerGroupItem() const;
+
 	void updateData(int fn);
 	bool axisNeeded(Graph2dHybridWindowResultSetting::AxisSide as) const;
 
 signals:
 	void standardModelSetuped();
 
-protected:
+private:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
-private:
 	Graph2dHybridWindowResultGroupDataItem* m_resultGroupItem;
 	Graph2dHybridWindowResultCopyGroupDataItem* m_resultCopyGroupItem;
 	Graph2dHybridWindowImportDataGroupDataItem* m_importDataGroupItem;

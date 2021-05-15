@@ -94,6 +94,27 @@ void Graph2dHybridWindowRootDataItem::doSaveToProjectMainFile(QXmlStreamWriter& 
 	writer.writeEndElement();
 }
 
+
+Graph2dHybridWindowResultGroupDataItem* Graph2dHybridWindowRootDataItem::resultGroupItem() const
+{
+	return m_resultGroupItem;
+}
+
+Graph2dHybridWindowResultCopyGroupDataItem* Graph2dHybridWindowRootDataItem::resultCopyGroupItem() const
+{
+	return m_resultCopyGroupItem;
+}
+
+Graph2dHybridWindowImportDataGroupDataItem* Graph2dHybridWindowRootDataItem::importDataGroupItem() const
+{
+	return m_importDataGroupItem;
+}
+
+Graph2dWindowMarkerGroupDataItem* Graph2dHybridWindowRootDataItem::markerGroupItem() const
+{
+	return m_markerGroupItem;
+}
+
 void Graph2dHybridWindowRootDataItem::updateData(int fn)
 {
 	m_resultGroupItem->updateData(fn);

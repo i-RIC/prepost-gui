@@ -17,7 +17,7 @@ public:
 private:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
-	void updateValues(int fn) override;
+	void updateValues() override;
 
 	void updateValuesVertex(vtkPointSet* grid);
 	void updateValuesCellCenter(vtkPointSet* grid);
