@@ -64,16 +64,6 @@ void writeZonesToProjectMainFile(int dim, const QList<PostZoneDataContainer*>& z
 	writer.writeEndElement();
 }
 
-bool zoneHasSolution(int fid, int bid, int zid, bool* haveSolution)
-{
-	int nsols, ier;
-	ier = cg_nsols(fid, bid, zid, &nsols);
-	if (ier != 0) {return false;}
-
-	*haveSolution = (nsols > 0);
-	return true;
-}
-
 } // namespace
 
 PostSolutionInfo::PostSolutionInfo(ProjectDataItem* parent) :

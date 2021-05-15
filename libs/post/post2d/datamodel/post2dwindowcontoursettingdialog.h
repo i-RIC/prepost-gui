@@ -9,11 +9,11 @@
 #include <guicore/scalarstocolors/lookuptablecontainer.h>
 #include <postbase/post2dwindowcontoursetting.h>
 
-#include <cgnslib.h>
-
 #include <QDialog>
 #include <QMap>
 #include <QList>
+
+#include <h5cgnszone.h>
 
 #include <string>
 #include <vector>
@@ -36,7 +36,7 @@ public:
 	~Post2dWindowContourSettingDialog();
 
 	void setGridTypeDataItem(PostWindowGridTypeDataItemInterface* item);
-	void setZoneData(PostZoneDataContainer* zoneData, GridLocation_t gridLocation);
+	void setZoneData(PostZoneDataContainer* zoneData, iRICLib::H5CgnsZone::SolutionPosition position);
 	void disableActive();
 	void disablePhysicalValueComboBox();
 	void hideOpacity();
@@ -65,7 +65,7 @@ private:
 	LookupTableContainer m_lookupTable;
 	bool m_activeAvailable;
 	bool m_unstructured;
-	GridLocation_t m_gridLocation;
+	iRICLib::H5CgnsZone::SolutionPosition m_position;
 
 	Post2dWindowContourSetting m_setting;
 	QMap<std::string, QString> m_colorBarTitleMap;

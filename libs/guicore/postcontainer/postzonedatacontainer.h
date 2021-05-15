@@ -3,12 +3,13 @@
 
 #include "../guicore_global.h"
 #include "postdatacontainer.h"
-#include "../pre/grid/grid.h"
 
 #include <QString>
 #include <vtkPointSet.h>
 #include <vtkPolyData.h>
 #include <vtkSmartPointer.h>
+
+#include <h5cgnszone.h>
 
 #include <map>
 #include <string>
@@ -20,7 +21,6 @@ class PostExportSetting;
 
 namespace iRICLib {
 	class H5CgnsFlowSolution;
-	class H5CgnsZone;
 } // namespace iRICLib
 
 class GUICOREDLL_EXPORT PostZoneDataContainer : public PostDataContainer
@@ -39,7 +39,7 @@ public:
 	vtkPointSet* data() const;
 	vtkPointSet* edgeidata() const;
 	vtkPointSet* edgejdata() const;
-	vtkPointSet* data(GridLocation_t gridLocation) const;
+	vtkPointSet* data(iRICLib::H5CgnsZone::SolutionPosition position) const;
 	vtkPointSet* ifacedata() const;
 	vtkPointSet* jfacedata() const;
 	vtkPointSet* labelData() const;
@@ -86,7 +86,7 @@ public:
 	bool IBCEdgeIExists() const;
 	bool IBCEdgeJExists() const;
 	bool IBCExists() const;
-	bool IBCExists(GridLocation_t gridLocation) const;
+	bool IBCExists(iRICLib::H5CgnsZone::SolutionPosition position) const;
 
 	QString elevationName() const;
 

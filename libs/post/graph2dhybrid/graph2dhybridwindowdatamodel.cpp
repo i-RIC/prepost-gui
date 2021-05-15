@@ -57,12 +57,10 @@
 
 #include <vtkStructuredGrid.h>
 
-#include <cgnslib.h>
-
 #include <stdexcept>
 
-Graph2dHybridWindowDataModel::Graph2dHybridWindowDataModel(Graph2dHybridWindow* w, ProjectDataItem* parent)
-	: Graph2dWindowDataModel(w, parent)
+Graph2dHybridWindowDataModel::Graph2dHybridWindowDataModel(Graph2dHybridWindow* w, ProjectDataItem* parent) :
+	Graph2dWindowDataModel(w, parent)
 {
 	init();
 }

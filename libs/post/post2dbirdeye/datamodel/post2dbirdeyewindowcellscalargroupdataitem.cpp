@@ -343,7 +343,7 @@ QDialog* Post2dBirdEyeWindowCellScalarGroupDataItem::propertyDialog(QWidget* p)
 		delete dialog;
 		return nullptr;
 	}
-	dialog->setZoneData(zItem->dataContainer(), CellCenter);
+	dialog->setZoneData(zItem->dataContainer(), iRICLib::H5CgnsZone::SolutionPosition::Cell);
 	dialog->disablePhysicalValueComboBox();
 	dialog->hideOpacity();
 	// region setting

@@ -18,12 +18,11 @@
 
 Post2dWindowContourSettingDialog::Post2dWindowContourSettingDialog(QWidget* parent) :
 	QDialog(parent),
-	ui(new Ui::Post2dWindowContourSettingDialog)
+	ui(new Ui::Post2dWindowContourSettingDialog),
+	m_activeAvailable {true},
+	m_unstructured {false},
+	m_position {iRICLib::H5CgnsZone::SolutionPosition::Null}
 {
-	m_activeAvailable = true;
-	m_unstructured = false;
-	m_gridLocation = GridLocationNull;
-
 	ui->setupUi(this);
 	ui->contourWidget->hidePointsRadioButton();
 
@@ -38,18 +37,18 @@ Post2dWindowContourSettingDialog::~Post2dWindowContourSettingDialog()
 	delete ui;
 }
 
-void Post2dWindowContourSettingDialog::setZoneData(PostZoneDataContainer* zoneData, GridLocation_t gridLocation)
+void Post2dWindowContourSettingDialog::setZoneData(PostZoneDataContainer* zoneData, iRICLib::H5CgnsZone::SolutionPosition position)
 {
 	SolverDefinitionGridType* gtype = m_gridTypeDataItem->gridType();
 
-	if (gridLocation == Vertex || gridLocation == IFaceCenter || gridLocation == JFaceCenter) {
-		vtkPointData* pd = zoneData->data(gridLocation)->GetPointData();
+	if (position == iRICLib::H5CgnsZone::SolutionPosition::Node || position == iRICLib::H5CgnsZone::SolutionPosition::IFace || position == iRICLib::H5CgnsZone::SolutionPosition::JFace) {
+		vtkPointData* pd = zoneData->data(position)->GetPointData();
 		m_solutions.clear();
 		for (const auto& name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(pd)) {
 			if (PostZoneDataContainer::hasInputDataPrefix(name)) {continue;}
 			m_solutions.push_back(name);
 		}
-	} else if (gridLocation == CellCenter) {
+	} else if (position == iRICLib::H5CgnsZone::SolutionPosition::Cell) {
 		vtkCellData* cd = zoneData->data()->GetCellData();
 		m_solutions.clear();
 		for (const auto& name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(cd)) {
@@ -59,7 +58,7 @@ void Post2dWindowContourSettingDialog::setZoneData(PostZoneDataContainer* zoneDa
 		ui->contourWidget->hideRadioButton(ContourSettingWidget::ContourFigure);
 	}
 
-	m_gridLocation = gridLocation;
+	m_position = position;
 
 	ComboBoxTool::setupItems(gtype->solutionCaptions(m_solutions), ui->physicalValueComboBox);
 
@@ -147,16 +146,16 @@ void Post2dWindowContourSettingDialog::targetChanged(int index)
 {
 	std::string sol = m_solutions.at(index);
 	LookupTableContainer* c;
-	if (m_gridLocation == Vertex) {
+	if (m_position == iRICLib::H5CgnsZone::SolutionPosition::Node) {
 		c = m_gridTypeDataItem->nodeLookupTable(sol);
 	}
-	else if (m_gridLocation == CellCenter) {
+	else if (m_position == iRICLib::H5CgnsZone::SolutionPosition::Cell) {
 		c = m_gridTypeDataItem->cellLookupTable(sol);
 	}
-	else if (m_gridLocation == IFaceCenter) {
+	else if (m_position == iRICLib::H5CgnsZone::SolutionPosition::IFace) {
 		c = m_gridTypeDataItem->nodeLookupTable(sol);
 	}
-	else if (m_gridLocation == JFaceCenter) {
+	else if (m_position == iRICLib::H5CgnsZone::SolutionPosition::JFace) {
 		c = m_gridTypeDataItem->nodeLookupTable(sol);
 	}
 	else {

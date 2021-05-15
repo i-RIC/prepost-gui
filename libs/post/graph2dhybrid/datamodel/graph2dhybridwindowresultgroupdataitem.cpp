@@ -32,7 +32,6 @@
 #include <vtkPointData.h>
 #include <vtkStructuredGrid.h>
 
-#include <cgnslib.h>
 #include <qwt_plot_curve.h>
 #include <qwt_plot_marker.h>
 #include <qwt_scale_div.h>

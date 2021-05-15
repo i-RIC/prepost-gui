@@ -71,29 +71,6 @@ vtkDoubleArray* buildDoubleArray(const std::string& name, vtkIdType size)
 	return ret;
 }
 
-bool findArrayWithName(const std::string& name, bool *found, int *arrayId, int* numDims, cgsize_t* dims)
-{
-	int ier, numArrays;
-	char tmpName[ProjectCgnsFile::BUFFERLEN];
-
-	ier = cg_narrays(&numArrays);
-	if (ier != 0) {return false;}
-
-	*found = false;
-	for (int A = 1; A <= numArrays; ++A) {
-		DataType_t dtype;
-		ier = cg_array_info(A, tmpName, &dtype, numDims, dims);
-		if (ier != 0) {return false;}
-
-		if (name == std::string(tmpName)) {
-			*arrayId = A;
-			*found = true;
-			return true;
-		}
-	}
-	return true;
-}
-
 } // namespace
 
 const QString PostZoneDataContainer::labelName {"_LABEL"};
@@ -149,15 +126,15 @@ vtkPointSet* PostZoneDataContainer::jfacedata() const
 	return m_jfacedata;
 }
 
-vtkPointSet* PostZoneDataContainer::data(GridLocation_t gridLocation) const
+vtkPointSet* PostZoneDataContainer::data(iRICLib::H5CgnsZone::SolutionPosition position) const
 {
-	if (gridLocation == Vertex || gridLocation == CellCenter) {
+	if (position == iRICLib::H5CgnsZone::SolutionPosition::Node || position == iRICLib::H5CgnsZone::SolutionPosition::Cell) {
 		return m_data;
 	}
-	if (gridLocation == IFaceCenter) {
+	if (position == iRICLib::H5CgnsZone::SolutionPosition::IFace) {
 		return m_edgeidata;
 	}
-	if (gridLocation == JFaceCenter) {
+	if (position == iRICLib::H5CgnsZone::SolutionPosition::JFace) {
 		return m_edgejdata;
 	}
 	return nullptr;
@@ -854,12 +831,12 @@ const std::vector<PostCalculatedResult*>& PostZoneDataContainer::calculatedResul
 }
 
 
-bool PostZoneDataContainer::IBCExists(GridLocation_t gridLocation) const
+bool PostZoneDataContainer::IBCExists(iRICLib::H5CgnsZone::SolutionPosition position) const
 {
-	if (gridLocation == CellCenter) {
+	if (position == iRICLib::H5CgnsZone::SolutionPosition::Cell) {
 		return IBCCellExists();
 	} else {
-		for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(data(gridLocation)->GetPointData())) {
+		for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(data(position)->GetPointData())) {
 			if (IBC == name.c_str()) { return true; }
 		}
 	}

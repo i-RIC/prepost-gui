@@ -29,12 +29,10 @@
 #include <qwt_plot_marker.h>
 #include <qwt_scale_engine.h>
 
-#include <cgnslib.h>
-
 #include <stdexcept>
 
-Graph2dScatteredWindowDataModel::Graph2dScatteredWindowDataModel(Graph2dScatteredWindow* w, ProjectDataItem* parent)
-	: Graph2dWindowDataModel(w, parent)
+Graph2dScatteredWindowDataModel::Graph2dScatteredWindowDataModel(Graph2dScatteredWindow* w, ProjectDataItem* parent) :
+	Graph2dWindowDataModel(w, parent)
 {
 	init();
 }

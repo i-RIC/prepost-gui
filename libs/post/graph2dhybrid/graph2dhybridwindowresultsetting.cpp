@@ -46,7 +46,6 @@
 #include <vtkStructuredGrid.h>
 #include <vtkUnstructuredGrid.h>
 
-#include <cgnslib.h>
 #include <qwt_plot.h>
 
 #include <h5cgnsbase.h>

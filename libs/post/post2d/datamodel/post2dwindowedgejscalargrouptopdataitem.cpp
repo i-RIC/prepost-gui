@@ -35,7 +35,7 @@ Post2dWindowEdgeJScalarGroupTopDataItem::Post2dWindowEdgeJScalarGroupTopDataItem
 	Post2dWindowGridTypeDataItem* gtItem = dynamic_cast<Post2dWindowGridTypeDataItem*>(parent()->parent());
 	for (std::string val : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(cont->edgejdata()->GetPointData())) {
 		colorbarTitleMap().insert(val, val.c_str());
-		auto item = new Post2dWindowNodeScalarGroupDataItem(this, NotChecked, NotReorderable, NotDeletable, JFaceCenter);
+		auto item = new Post2dWindowNodeScalarGroupDataItem(this, NotChecked, NotReorderable, NotDeletable, iRICLib::H5CgnsZone::SolutionPosition::JFace);
 		m_scalarmap[val] = item;
 		m_childItems.push_back(item);
 		item->setTarget(val);
@@ -149,13 +149,13 @@ QDialog* Post2dWindowEdgeJScalarGroupTopDataItem::addDialog(QWidget* p)
 		delete dialog;
 		return nullptr;
 	}
-	dialog->setZoneData(zItem->dataContainer(), JFaceCenter);
-	if (! zItem->dataContainer()->IBCExists(JFaceCenter)) {
+	dialog->setZoneData(zItem->dataContainer(), iRICLib::H5CgnsZone::SolutionPosition::JFace);
+	if (! zItem->dataContainer()->IBCExists(iRICLib::H5CgnsZone::SolutionPosition::JFace)) {
 		dialog->disableActive();
 	}
 
 	Post2dWindowContourSetting setting;
-	setting.target = zItem->dataContainer()->data(JFaceCenter)->GetPointData()->GetArrayName(0);
+	setting.target = zItem->dataContainer()->data(iRICLib::H5CgnsZone::SolutionPosition::JFace)->GetPointData()->GetArrayName(0);
 
 	if (! nextScalarBarSetting(setting.scalarBarSetting)) {
 		return nullptr;
@@ -225,7 +225,7 @@ public:
 		}
 	}
 	void redo() {
-		m_item = new Post2dWindowNodeScalarGroupDataItem(m_topItem, Checked, NotReorderable, Deletable, JFaceCenter);
+		m_item = new Post2dWindowNodeScalarGroupDataItem(m_topItem, Checked, NotReorderable, Deletable, iRICLib::H5CgnsZone::SolutionPosition::JFace);
 		m_topItem->m_childItems.push_back(m_item);
 		delete m_undoCommand;
 		m_undoCommand = new QUndoCommand();
