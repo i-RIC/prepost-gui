@@ -40,12 +40,6 @@ public slots:
 	void dataSourceSetting();
 	void axisSetting();
 	void drawSetting();
-//	void markerSettiing() override;
-//	void addKPMarkers() override;
-//	void specialSnapshot() override;
-//	void specialCsvExport() override;
-//	void copyCalculationResult() override;
-//	void exportCsv() override;
 
 private slots:
 	void updateTime();
@@ -70,8 +64,6 @@ private:
 
 	QwtPlotMarker* m_timeMarker;
 	Graph2dScatteredWindowResultSetting m_setting;
-
-	// parameters related to special snapshot.
 
 public:
 	friend class Graph2dScatteredWindowDataModelProjectDataItem;

@@ -4,7 +4,8 @@
 #include "../graph2dscatteredwindowdataitem.h"
 #include "../graph2dscatteredwindowresultsetting.h"
 #include "graph2dscatteredwindowresultdataitem.h"
-#include <QVector>
+
+#include <vector>
 
 class vtkPointSet;
 
@@ -21,7 +22,7 @@ protected:
 	void updateValues(int fn) override;
 
 private:
-	static void setupData(QVector<double>& vals, const QString& name, vtkPointSet* ps);
+	static void setupData(std::vector<double>& vals, const QString& name, vtkPointSet* ps);
 
 	QString m_yAxis;
 };

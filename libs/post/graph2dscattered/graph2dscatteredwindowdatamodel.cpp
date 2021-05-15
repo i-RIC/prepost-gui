@@ -316,7 +316,6 @@ void Graph2dScatteredWindowDataModel::getYAxisValueRange(Graph2dWindowDataModel:
 void Graph2dScatteredWindowDataModel::updateTime()
 {
 	updateData();
-	updateTitle();
 	view()->replot();
 }
 
@@ -346,32 +345,14 @@ void Graph2dScatteredWindowDataModel::applySettings()
 	// update axis setting.
 	applyAxisSetting();
 	updateData();
-	// update title setting.
-	updateTitle();
 }
 
 void Graph2dScatteredWindowDataModel::updateData()
 {
-	int fn;
-	CgnsFileOpener* opener = nullptr;
-	fn = postSolutionInfo()->fileId();
-	if (fn == 0) {
-		// file not opened.
-		try {
-			opener = new CgnsFileOpener(iRIC::toStr(currentCgnsFileName()), CG_MODE_READ);
-			fn = opener->fileId();
-		} catch (const std::runtime_error&) {
-			return;
-		}
-	}
+	int fn = 0;
 
 	updateData(fn);
-
-	delete opener;
-
-	updateTitle();
 }
-
 
 void Graph2dScatteredWindowDataModel::updateData(int fn)
 {
@@ -383,6 +364,8 @@ void Graph2dScatteredWindowDataModel::updateData(int fn)
 	Graph2dScatteredWindowRootDataItem* root = dynamic_cast<Graph2dScatteredWindowRootDataItem*>(m_rootDataItem);
 	root->updateData(fn);
 	updating = false;
+
+	updateTitle();
 }
 
 void Graph2dScatteredWindowDataModel::doLoadFromProjectMainFile(const QDomNode& node)

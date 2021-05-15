@@ -84,7 +84,6 @@ public:
 	bool init(PostSolutionInfo* sol);
 
 	PostSolutionInfo::Dimension dimension() const {return m_dimension;}
-	int zoneId() const {return m_zoneId;}
 	const std::string& zoneName() const {return m_zoneName;}
 
 	QList<Graph2dWindowDataItem*> setupItems(Graph2dScatteredWindowResultGroupDataItem* gItem) const;
@@ -151,7 +150,6 @@ public:
 
 private:
 	PostSolutionInfo::Dimension m_dimension;
-	int m_zoneId;
 	std::string m_zoneName;
 
 	QList<Setting> m_targetDatas;

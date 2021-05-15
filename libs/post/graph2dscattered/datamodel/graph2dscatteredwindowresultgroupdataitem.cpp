@@ -30,7 +30,7 @@ void Graph2dScatteredWindowResultGroupDataItem::updateData(int fn)
 	}
 	updating = true;
 	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
-		Graph2dScatteredWindowResultDataItem* item = dynamic_cast<Graph2dScatteredWindowResultDataItem*>(*it);
+		auto item = dynamic_cast<Graph2dScatteredWindowResultDataItem*>(*it);
 		item->update(fn);
 	}
 	updating = false;

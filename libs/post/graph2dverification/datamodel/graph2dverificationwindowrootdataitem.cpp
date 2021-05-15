@@ -1,8 +1,8 @@
 #include "../graph2dverificationwindow.h"
 #include "graph2dverificationwindowrootdataitem.h"
 
-Graph2dVerificationWindowRootDataItem::Graph2dVerificationWindowRootDataItem(Graph2dVerificationWindow* window, ProjectDataItem* parent)
-	: Graph2dWindowRootDataItem(window, parent)
+Graph2dVerificationWindowRootDataItem::Graph2dVerificationWindowRootDataItem(Graph2dVerificationWindow* window, ProjectDataItem* parent) :
+	Graph2dWindowRootDataItem(window, parent)
 {
 	updateItemMap();
 }

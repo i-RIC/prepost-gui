@@ -34,8 +34,8 @@
 #include <vtkPointData.h>
 #include <vtkStructuredGrid.h>
 
-Graph2dVerificationWindowDataModel::Graph2dVerificationWindowDataModel(Graph2dVerificationWindow* w, ProjectDataItem* parent)
-	: Graph2dWindowDataModel(w, parent)
+Graph2dVerificationWindowDataModel::Graph2dVerificationWindowDataModel(Graph2dVerificationWindow* w, ProjectDataItem* parent) :
+	Graph2dWindowDataModel(w, parent)
 {
 	init();
 }
@@ -183,23 +183,9 @@ void Graph2dVerificationWindowDataModel::applySettings()
 
 void Graph2dVerificationWindowDataModel::updateData()
 {
-	int fn;
-	CgnsFileOpener* opener = nullptr;
-	fn = postSolutionInfo()->fileId();
-	if (fn == 0) {
-		// file not opened.
-		QString cgnsFilename = currentCgnsFileName();
-		try {
-			opener = new CgnsFileOpener(iRIC::toStr(cgnsFilename), CG_MODE_READ);
-			fn = opener->fileId();
-		} catch (const std::runtime_error&) {
-			return;
-		}
-	}
+	int fn = 0;
 
 	updateData(fn);
-
-	delete opener;
 }
 
 
