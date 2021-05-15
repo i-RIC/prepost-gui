@@ -5,22 +5,20 @@
 #include "postsolutioninfo.h"
 #include "postdatacontainer.h"
 
+#include <vector>
+
 class GUICOREDLL_EXPORT PostSeriesDataContainer : public PostDataContainer
 {
 
 public:
 	PostSeriesDataContainer(PostSolutionInfo::Dimension dim, PostSolutionInfo* parent);
-	const QList<double>& data() const;
-	bool handleCurrentStepUpdate(const int fn, const int timeStep) override;
+	const std::vector<double>& data() const;
 	void update(const int fn);
 	void loadFromCgnsFile(const int fn) override;
 
 protected:
-	bool setBaseId(const int fn);
-	QList<double> m_data;
+	std::vector<double> m_data;
 	PostSolutionInfo::Dimension m_dimension;
-	int m_baseId;
-	int m_cellDim;
 
 private:
 	virtual bool loadData(const int fn) = 0;

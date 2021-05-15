@@ -12,7 +12,7 @@ class GUICOREDLL_EXPORT PostDataContainer : public ProjectDataItem
 
 public:
 	PostDataContainer(PostSolutionInfo* parent);
-	virtual bool handleCurrentStepUpdate(const int fn, const int timeStep);
+
 	PostSolutionInfo* solutionInfo() const;
 
 signals:
