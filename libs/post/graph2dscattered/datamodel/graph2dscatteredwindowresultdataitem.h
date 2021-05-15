@@ -18,7 +18,7 @@ public:
 	~Graph2dScatteredWindowResultDataItem() override;
 
 	QwtPlotCustomCurve* curve() const;
-	void update();
+	void update(int fn);
 	QString title() const;
 
 	const Graph2dScatteredWindowResultSetting::Setting& setting() const;
