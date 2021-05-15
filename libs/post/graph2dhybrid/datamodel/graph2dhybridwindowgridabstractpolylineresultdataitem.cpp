@@ -116,10 +116,10 @@ void Graph2dHybridWindowGridAbstractPolylineResultDataItem::updateValues(int /*f
 
 	vtkPointSet* grid = vtkPointSet::SafeDownCast(cont->data());
 
-	if (info->gridLocation == Vertex) {
+	if (info->gridLocation == iRICLib::H5CgnsZone::SolutionPosition::Node) {
 		updateValuesVertex(grid);
 	}
-	else if (info->gridLocation == CellCenter) {
+	else if (info->gridLocation == iRICLib::H5CgnsZone::SolutionPosition::Cell) {
 		updateValuesCellCenter(grid);
 	} else {
 		Q_ASSERT(false);   //   Unhandled GridLocation_t
@@ -134,7 +134,7 @@ void Graph2dHybridWindowGridAbstractPolylineResultDataItem::updateValuesVertex(v
 		return;
 	}
 
-	std::vector<QPointF>& pts = getPolyLine();
+	auto pts = getPolyLine();
 
 	double origin[3];
 	std::map<double, std::vector<double> > amap;

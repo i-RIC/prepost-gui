@@ -50,15 +50,20 @@
 #include <cgnslib.h>
 #include <qwt_plot.h>
 
+#include <h5cgnsbase.h>
+#include <h5cgnsbaseiterativedata.h>
+#include <h5cgnsfile.h>
+#include <h5cgnszone.h>
+
 #include <stdexcept>
 
 Graph2dHybridWindowResultSetting::Setting::Setting() :
 	m_name {""},
 	m_axisSide {asLeft},
+	m_lineWidth {1},
 	m_customColor {Qt::black},
 	m_styleType {stLine},
 	m_lineType {ltSolidLine},
-	m_lineWidth {1},
 	m_symbolType {symCircle},
 	m_barChart {false}
 {}
@@ -153,7 +158,6 @@ bool Graph2dHybridWindowResultSetting::DataTypeInfo::operator==(const DataTypeIn
 {
 	if (dataType != info.dataType) {return false;}
 	if (dimension != info.dimension) {return false;}
-	if (zoneId != info.zoneId) {return false;}
 	if (zoneName != info.zoneName) {return false;}
 	return true;
 }
@@ -199,75 +203,43 @@ Graph2dHybridWindowResultSetting::~Graph2dHybridWindowResultSetting()
 	delete m_colorSource;
 }
 
-bool Graph2dHybridWindowResultSetting::init(PostSolutionInfo* sol, const QString& cgnsFilename)
+bool Graph2dHybridWindowResultSetting::init(PostSolutionInfo* sol)
 {
-	int fn, ier;
-	CgnsFileOpener* opener = nullptr;
-
-	if (sol->fileId() == 0) {
-		try {
-			opener = new CgnsFileOpener(iRIC::toStr(cgnsFilename), CG_MODE_READ);
-			fn = opener->fileId();
-		} catch (std::runtime_error&) {
-			return false;
-		}
-	} else {
-		fn = sol->fileId();
-	}
-
-	int nbases;
-	ier = cg_nbases(fn, &nbases);
-	if (ier != 0) {
-		delete opener;
-		return false;
-	}
-
 	m_postSolutionInfo = sol;
+	auto file = m_postSolutionInfo->cgnsFile();
 
-	for (int baseid = 1; baseid <= nbases; ++baseid) {
-		int celldim, physdim;
-		char basename[ProjectCgnsFile::BUFFERLEN];
-		char bitername[ProjectCgnsFile::BUFFERLEN];
-		int nsteps;
-		cg_base_read(fn, baseid, basename, &celldim, &physdim);
+	// setup baseIterative
+	DataTypeInfo ti;
+	ti.dimension = PostSolutionInfo::fromIntDimension(2);
+	ti.dataType = dtBaseIterative;
+	ti.gridType = nullptr;
+	ti.gridLocation = iRICLib::H5CgnsZone::SolutionPosition::Null;
 
-		// setup baseIterative.
-		ier = cg_biter_read(fn, baseid, bitername, &nsteps);
-		if (ier == 0) {
-			cg_goto(fn, baseid, bitername, 0, "end");
-			int narrays;
-			cg_narrays(&narrays);
-			DataTypeInfo ti;
-			ti.dimension = PostSolutionInfo::fromIntDimension(celldim);
-			ti.dataType = dtBaseIterative;
-			ti.gridType = 0;
-			ti.zoneId = 0;
-			ti.gridLocation = GridLocationNull;
-			for (int i = 1; i <= narrays; ++i) {
-				char arrayname[ProjectCgnsFile::BUFFERLEN];
-				DataType_t datatype;
-				int datadim;
-				cgsize_t dimVec[3];
-				cg_array_info(i, arrayname, &datatype, &datadim, dimVec);
-				QString aName(arrayname);
-				if (aName != "TimeValues" && aName != "IterationValues") {
-					ti.dataNamesMap[ti.gridLocation].append(aName);
-				}
-			}
-			if (ti.dataNamesMap[ti.gridLocation].count() > 0) {
-				m_dataTypeInfos.append(ti);
-			}
-		}
+	std::vector<std::string> valueNames;
+	auto biter = file->ccBase()->biterData();
+	int ier = biter->getResultNames(&valueNames);
+	if (ier != 0) {return false;}
+
+	for (const auto& name : valueNames) {
+		ti.dataNamesMap[ti.gridLocation].append(name.c_str());
+	}
+	if (valueNames.size() > 0) {
+		m_dataTypeInfos.push_back(ti);
+	}
+
+	for (int bid = 1; bid <= file->baseNum(); ++bid) {
+		auto base = file->baseById(bid);
+
 		// setup zone datas.
-		// for zone datas, use sol.
-		PostSolutionInfo::Dimension dim = PostSolutionInfo::fromIntDimension(celldim);
-		QList<PostZoneDataContainer*> conts = sol->zoneContainers(dim);
-		for (int i = 0; i < conts.count(); ++i) {
-			PostZoneDataContainer* cont = conts.at(i);
+		PostSolutionInfo::Dimension dim = PostSolutionInfo::fromIntDimension(base->dimension());
+
+		auto conts = sol->zoneContainers(dim);
+		for (auto cont : conts) {
 			DataTypeInfo ti;
 			ti.dimension = dim;
-			vtkStructuredGrid* sgrid = dynamic_cast<vtkStructuredGrid*>(cont->data());
-			if (sgrid != nullptr) {
+			auto zone = base->zone(cont->zoneName());
+
+			if (zone->type() == iRICLib::H5CgnsZone::Type::Structured) {
 				// structured data.
 				switch (dim) {
 				case PostSolutionInfo::dim1D:
@@ -299,42 +271,39 @@ bool Graph2dHybridWindowResultSetting::init(PostSolutionInfo* sol, const QString
 				}
 			}
 			ti.gridType = cont->gridType();
-			// ti.zoneId = cont->zoneId();
 			ti.zoneName = cont->zoneName();
 			if (cont->data() == nullptr) {return false;}
 
 			for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(cont->data()->GetPointData())) {
-				ti.dataNamesMap[Vertex].append(name.c_str());
+				ti.dataNamesMap[iRICLib::H5CgnsZone::SolutionPosition::Node].append(name.c_str());
 			}
 			for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(cont->data()->GetCellData())) {
-				ti.dataNamesMap[CellCenter].append(name.c_str());
+				ti.dataNamesMap[iRICLib::H5CgnsZone::SolutionPosition::Cell].append(name.c_str());
 			}
 			auto edgeIData = cont->edgeidata();
 			if (edgeIData != nullptr) {
 				for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(edgeIData->GetPointData())) {
-					ti.dataNamesMap[IFaceCenter].append(name.c_str());
+					ti.dataNamesMap[iRICLib::H5CgnsZone::SolutionPosition::IFace].append(name.c_str());
 				}
 			}
 			auto edgeJData = cont->edgejdata();
 			if (edgeJData != nullptr) {
 				for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(cont->edgejdata()->GetPointData())) {
-					ti.dataNamesMap[JFaceCenter].append(name.c_str());
+					ti.dataNamesMap[iRICLib::H5CgnsZone::SolutionPosition::JFace].append(name.c_str());
 				}
 			}
-			if (ti.dataNamesMap.find(Vertex) != ti.dataNamesMap.end() && ti.dataNamesMap[Vertex].size() > 0) {
-				ti.gridLocation = Vertex;
-			} else if (ti.dataNamesMap.find(CellCenter) != ti.dataNamesMap.end() && ti.dataNamesMap[CellCenter].size() > 0) {
-				ti.gridLocation = CellCenter;
-			} else if (ti.dataNamesMap.find(IFaceCenter) != ti.dataNamesMap.end() && ti.dataNamesMap[IFaceCenter].size() > 0) {
-				ti.gridLocation = IFaceCenter;
-			} else if (ti.dataNamesMap.find(JFaceCenter) != ti.dataNamesMap.end() && ti.dataNamesMap[IFaceCenter].size() > 0) {
-				ti.gridLocation = JFaceCenter;
+			if (ti.dataNamesMap.find(iRICLib::H5CgnsZone::SolutionPosition::Node) != ti.dataNamesMap.end() && ti.dataNamesMap[iRICLib::H5CgnsZone::SolutionPosition::Node].size() > 0) {
+				ti.gridLocation = iRICLib::H5CgnsZone::SolutionPosition::Node;
+			} else if (ti.dataNamesMap.find(iRICLib::H5CgnsZone::SolutionPosition::Cell) != ti.dataNamesMap.end() && ti.dataNamesMap[iRICLib::H5CgnsZone::SolutionPosition::Cell].size() > 0) {
+				ti.gridLocation = iRICLib::H5CgnsZone::SolutionPosition::Cell;
+			} else if (ti.dataNamesMap.find(iRICLib::H5CgnsZone::SolutionPosition::IFace) != ti.dataNamesMap.end() && ti.dataNamesMap[iRICLib::H5CgnsZone::SolutionPosition::IFace].size() > 0) {
+				ti.gridLocation = iRICLib::H5CgnsZone::SolutionPosition::IFace;
+			} else if (ti.dataNamesMap.find(iRICLib::H5CgnsZone::SolutionPosition::JFace) != ti.dataNamesMap.end() && ti.dataNamesMap[iRICLib::H5CgnsZone::SolutionPosition::JFace].size() > 0) {
+				ti.gridLocation = iRICLib::H5CgnsZone::SolutionPosition::JFace;
 			}
 			m_dataTypeInfos.append(ti);
 		}
 	}
-
-	delete opener;
 
 	setupMap();
 	setupPolyLines();
@@ -1113,57 +1082,48 @@ QwtSymbol::Style Graph2dHybridWindowResultSetting::getSymbolStyle(SymbolType st)
 	}
 }
 
-GridLocation_t Graph2dHybridWindowResultSetting::getGridLocation(QString string)
+iRICLib::H5CgnsZone::SolutionPosition Graph2dHybridWindowResultSetting::getGridLocation(QString string)
 {
-	static QMap<QString, GridLocation_t> map{
-		{ "GridLocationNull", GridLocationNull },
-		{ "Vertex",           Vertex },
-		{ "CellCenter",       CellCenter },
-		{ "EdgeI",            IFaceCenter },
-		{ "EdgeJ",            JFaceCenter }
-	};
-	Q_ASSERT(map.find(string) != map.end());
-	return map[string];
+	if (string == "GridLocationNull") {return iRICLib::H5CgnsZone::SolutionPosition::Null;}
+	if (string == "Vertex") {return iRICLib::H5CgnsZone::SolutionPosition::Node;}
+	if (string == "CellCenter") {return iRICLib::H5CgnsZone::SolutionPosition::Cell;}
+	if (string == "EdgeI") {return iRICLib::H5CgnsZone::SolutionPosition::IFace;}
+	if (string == "EdgeJ") {return iRICLib::H5CgnsZone::SolutionPosition::JFace;}
+
+	return iRICLib::H5CgnsZone::SolutionPosition::Null;
 }
 
-QString Graph2dHybridWindowResultSetting::getGridLocationString(GridLocation_t location)
+QString Graph2dHybridWindowResultSetting::getGridLocationString(iRICLib::H5CgnsZone::SolutionPosition location)
 {
-	static QMap<GridLocation_t, QString> map{
-		{ GridLocationNull, "GridLocationNull" },
-		{ Vertex,           "Vertex" },
-		{ CellCenter,       "CellCenter" },
-		{ IFaceCenter,      "EdgeI" },
-		{ JFaceCenter,      "EdgeJ" }
-	};
-	Q_ASSERT(map.find(location) != map.end());
-	return map[location];
+	if (location == iRICLib::H5CgnsZone::SolutionPosition::Null) {return "GridLocationNull";}
+	if (location == iRICLib::H5CgnsZone::SolutionPosition::Node) {return "Vertex";}
+	if (location == iRICLib::H5CgnsZone::SolutionPosition::Cell) {return "CellCenter";}
+	if (location == iRICLib::H5CgnsZone::SolutionPosition::IFace) {return "EdgeI";}
+	if (location == iRICLib::H5CgnsZone::SolutionPosition::JFace) {return "EdgeJ";}
+
+	return "";
 }
 
-GridLocation_t Graph2dHybridWindowResultSetting::getGridLocationTranslated(QString string)
+iRICLib::H5CgnsZone::SolutionPosition Graph2dHybridWindowResultSetting::getGridLocationTranslated(QString string)
 {
-	static QMap<QString, GridLocation_t> map{
-		{ QObject::tr("GridLocationNull"), GridLocationNull },
-		{ QObject::tr("Vertex"),           Vertex },
-		{ QObject::tr("CellCenter"),       CellCenter },
-		{ QObject::tr("EdgeI"),            IFaceCenter },
-		{ QObject::tr("EdgeJ"),            JFaceCenter }
+	if (string == QObject::tr("GridLocationNull")) {return iRICLib::H5CgnsZone::SolutionPosition::Null;}
+	if (string == QObject::tr("Vertex")) {return iRICLib::H5CgnsZone::SolutionPosition::Node;}
+	if (string == QObject::tr("CellCenter")) {return iRICLib::H5CgnsZone::SolutionPosition::Cell;}
+	if (string == QObject::tr("EdgeI")) {return iRICLib::H5CgnsZone::SolutionPosition::IFace;}
+	if (string == QObject::tr("EdgeJ")) {return iRICLib::H5CgnsZone::SolutionPosition::JFace;}
 
-	};
-	Q_ASSERT(map.find(string) != map.end());
-	return map[string];
+	return iRICLib::H5CgnsZone::SolutionPosition::Null;
 }
 
-QString Graph2dHybridWindowResultSetting::getGridLocationStringTranslated(GridLocation_t location)
+QString Graph2dHybridWindowResultSetting::getGridLocationStringTranslated(iRICLib::H5CgnsZone::SolutionPosition location)
 {
-	static QMap<GridLocation_t, QString> map{
-		{ GridLocationNull, QObject::tr("GridLocationNull") },
-		{ Vertex,           QObject::tr("Vertex") },
-		{ CellCenter,       QObject::tr("CellCenter") },
-		{ IFaceCenter,      QObject::tr("EdgeI") },
-		{ JFaceCenter,      QObject::tr("EdgeJ") }
-	};
-	Q_ASSERT(map.find(location) != map.end());
-	return map[location];
+	if (location == iRICLib::H5CgnsZone::SolutionPosition::Null) {return QObject::tr("GridLocationNull");}
+	if (location == iRICLib::H5CgnsZone::SolutionPosition::Node) {return QObject::tr("Vertex");}
+	if (location == iRICLib::H5CgnsZone::SolutionPosition::Cell) {return QObject::tr("CellCenter");}
+	if (location == iRICLib::H5CgnsZone::SolutionPosition::IFace) {return QObject::tr("EdgeI");}
+	if (location == iRICLib::H5CgnsZone::SolutionPosition::JFace) {return QObject::tr("EdgeJ");}
+
+	return "";
 }
 
 void Graph2dHybridWindowResultSetting::Setting::setupCurve(QwtPlotCustomCurve* curve) const
@@ -1371,16 +1331,15 @@ void Graph2dHybridWindowResultSetting::DataTypeInfo::loadFromProjectMainFile(con
 	QDomElement elem = node.toElement();	// targetDataType
 	dataType = static_cast<DataType>(iRIC::getIntAttribute(node, "dataType"));
 	dimension = static_cast<PostSolutionInfo::Dimension>(iRIC::getIntAttribute(node, "dimension"));
-	zoneId = iRIC::getIntAttribute(node, "zoneId");
 	zoneName = iRIC::toStr(elem.attribute("zoneName"));
-	QString loc = elem.attribute("gridLocation", Graph2dHybridWindowResultSetting::getGridLocationString(Vertex));
+	QString loc = elem.attribute("gridLocation", Graph2dHybridWindowResultSetting::getGridLocationString(iRICLib::H5CgnsZone::SolutionPosition::Node));
 	gridLocation = Graph2dHybridWindowResultSetting::getGridLocation(loc);
 
 	QDomNode namesNode = node.firstChild();
 	while (! namesNode.isNull()) {
 		if (namesNode.nodeName() == "DataNames") {
-			QString att = namesNode.toElement().attribute("gridLocation", Graph2dHybridWindowResultSetting::getGridLocationString(Vertex));
-			GridLocation_t loc = Graph2dHybridWindowResultSetting::getGridLocation(att);
+			QString att = namesNode.toElement().attribute("gridLocation", Graph2dHybridWindowResultSetting::getGridLocationString(iRICLib::H5CgnsZone::SolutionPosition::Node));
+			auto loc = Graph2dHybridWindowResultSetting::getGridLocation(att);
 			QDomNodeList names = namesNode.childNodes();
 			for (int i = 0; i < names.count(); ++i) {
 				QDomElement elem = names.at(i).toElement();
@@ -1396,7 +1355,6 @@ void Graph2dHybridWindowResultSetting::DataTypeInfo::saveToProjectMainFile(QXmlS
 {
 	iRIC::setIntAttribute(writer, "dataType", static_cast<int>(dataType));
 	iRIC::setIntAttribute(writer, "dimension", static_cast<int>(dimension));
-	iRIC::setIntAttribute(writer, "zoneId", zoneId);
 	writer.writeAttribute("zoneName", zoneName.c_str());
 	writer.writeAttribute("gridLocation", Graph2dHybridWindowResultSetting::getGridLocationString(gridLocation));
 

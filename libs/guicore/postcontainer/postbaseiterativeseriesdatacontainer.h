@@ -4,19 +4,21 @@
 #include "../guicore_global.h"
 #include "postseriesdatacontainer.h"
 #include "postsolutioninfo.h"
-#include <QString>
+
+#include <string>
 
 class GUICOREDLL_EXPORT PostBaseIterativeSeriesDataContainer : public PostSeriesDataContainer
 {
 public:
-	PostBaseIterativeSeriesDataContainer(PostSolutionInfo::Dimension dim, const QString& biName, PostSolutionInfo* parent);
+	PostBaseIterativeSeriesDataContainer(const std::string& name, PostSolutionInfo* parent);
 
 private:
 	bool loadData(const int fn) override;
+
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
-	QString m_baseIterativeName;
+	std::string m_baseIterativeName;
 };
 
 #endif // POSTBASEITERATIVESERIESDATACONTAINER_H

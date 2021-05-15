@@ -26,7 +26,7 @@ Graph2dHybridWindowBaseIterativeResultDataItem::Graph2dHybridWindowBaseIterative
 {
 	const Graph2dHybridWindowResultSetting& s = dataModel()->setting();
 	Graph2dHybridWindowResultSetting::DataTypeInfo* info = s.targetDataTypeInfo();
-	m_dataContainer = new PostBaseIterativeSeriesDataContainer(info->dimension, setting.name(), projectData()->mainfile()->postSolutionInfo());
+	m_dataContainer = new PostBaseIterativeSeriesDataContainer(iRIC::toStr(setting.name()), projectData()->mainfile()->postSolutionInfo());
 }
 
 Graph2dHybridWindowBaseIterativeResultDataItem::~Graph2dHybridWindowBaseIterativeResultDataItem()

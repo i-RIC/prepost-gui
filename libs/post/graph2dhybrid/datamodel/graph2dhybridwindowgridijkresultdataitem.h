@@ -12,10 +12,11 @@ class Graph2dHybridWindowGridIJKResultDataItem : public Graph2dHybridWindowResul
 
 public:
 	Graph2dHybridWindowGridIJKResultDataItem(const Graph2dHybridWindowResultSetting::Setting& setting, int index, Graph2dWindowDataItem* parent);
-	virtual ~Graph2dHybridWindowGridIJKResultDataItem();
+	~Graph2dHybridWindowGridIJKResultDataItem() override;
+
 	Graph2dHybridWindowResultCopyDataItem* copy(Graph2dHybridWindowResultCopyGroupDataItem* parent) override;
 
-protected:
+private:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	void updateValues(int fn) override;

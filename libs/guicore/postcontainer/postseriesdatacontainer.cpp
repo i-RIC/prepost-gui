@@ -34,25 +34,7 @@ void PostSeriesDataContainer::update(const int fn)
 
 bool PostSeriesDataContainer::setBaseId(const int fn)
 {
-	// if m_baseID is already set, we do not have to do it again.
-	if (m_baseId != 0) {return true;}
-
-	int ier;
-	int numBases;
-	int targetDim = PostSolutionInfo::toIntDimension(m_dimension);
-	ier = cg_nbases(fn, &numBases);
-	if (ier != 0) {return false;}
-	for (int B = 1; B <= numBases; ++B) {
-		char basename[ProjectCgnsFile::BUFFERLEN];
-		int phys_dim;
-		ier = cg_base_read(fn, B, basename, &m_cellDim, &phys_dim);
-		if (ier != 0) {return false;}
-		if (targetDim == m_cellDim) {
-			m_baseId = B;
-			return true;
-		}
-	}
-	return false;
+	return true;
 }
 
 void PostSeriesDataContainer::loadFromCgnsFile(const int fn)

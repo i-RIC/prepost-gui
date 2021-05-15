@@ -28,13 +28,15 @@
 Graph2dHybridWindowGridPointResultDataItem::Graph2dHybridWindowGridPointResultDataItem(const Graph2dHybridWindowResultSetting::Setting& setting, int index, Graph2dWindowDataItem* parent) :
 	Graph2dHybridWindowResultDataItem(setting.name(), index, setting, parent)
 {
-	const Graph2dHybridWindowResultSetting& s = dataModel()->setting();
-	Graph2dHybridWindowResultSetting::DataTypeInfo* info = s.targetDataTypeInfo();
-	m_dataContainer = new PostZonePointSeriesDataContainer(info->dimension, info->zoneName, setting.name(), s.gridIndex(), info->gridLocation, postSolutionInfo());
+	const auto& s = dataModel()->setting();
+	auto info = s.targetDataTypeInfo();
+	m_dataContainer = new PostZonePointSeriesDataContainer(info->dimension, info->zoneName, iRIC::toStr(setting.name()), s.gridIndex(), info->gridLocation, postSolutionInfo());
 }
 
 Graph2dHybridWindowGridPointResultDataItem::~Graph2dHybridWindowGridPointResultDataItem()
-{}
+{
+	delete m_dataContainer;
+}
 
 void Graph2dHybridWindowGridPointResultDataItem::doLoadFromProjectMainFile(const QDomNode& /*node*/)
 {}
@@ -46,10 +48,11 @@ void Graph2dHybridWindowGridPointResultDataItem::updateValues(int fn)
 {
 	m_xValues.clear();
 	m_yValues.clear();
+	delete m_dataContainer;
+
 	const Graph2dHybridWindowResultSetting& s = dataModel()->setting();
-	m_dataContainer->setPointIndex(s.gridIndex());
-	Graph2dHybridWindowResultSetting::DataTypeInfo* info = s.targetDataTypeInfo();
-	m_dataContainer->setGridLocation(info->gridLocation);
+	auto info = s.targetDataTypeInfo();
+	m_dataContainer = new PostZonePointSeriesDataContainer(info->dimension, info->zoneName, iRIC::toStr(title()), s.gridIndex(), info->gridLocation, postSolutionInfo());
 	m_dataContainer->update(fn);
 	QList<double> timesteps = dataModel()->postSolutionInfo()->timeSteps()->timesteps();
 

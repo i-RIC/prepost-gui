@@ -10,18 +10,16 @@ class PostZonePointSeriesDataContainer;
 
 class Graph2dHybridWindowGridPointResultDataItem : public Graph2dHybridWindowResultDataItem
 {
-
 public:
 	Graph2dHybridWindowGridPointResultDataItem(const Graph2dHybridWindowResultSetting::Setting& setting, int index, Graph2dWindowDataItem* parent);
 	virtual ~Graph2dHybridWindowGridPointResultDataItem();
-	void doLoadFromProjectMainFile(const QDomNode& node) override;
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	Graph2dHybridWindowResultCopyDataItem* copy(Graph2dHybridWindowResultCopyGroupDataItem* parent) override;
 
-protected:
-	void updateValues(int fn) override;
-
 private:
+	void updateValues(int fn) override;
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+
 	PostZonePointSeriesDataContainer* m_dataContainer;
 };
 

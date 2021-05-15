@@ -17,11 +17,13 @@ public:
 
 protected:
 	bool setBaseId(const int fn);
-	virtual bool loadData(const int fn) = 0;
 	QList<double> m_data;
 	PostSolutionInfo::Dimension m_dimension;
 	int m_baseId;
 	int m_cellDim;
+
+private:
+	virtual bool loadData(const int fn) = 0;
 };
 
 #endif // POSTSERIESDATACONTAINER_H

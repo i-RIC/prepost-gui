@@ -60,13 +60,13 @@ void Graph2dHybridWindowGridIJKResultDataItem::updateValues(int /*fn*/)
 
 	vtkStructuredGrid* grid;
 	switch (info->gridLocation) {
-	case Vertex: case CellCenter:
+	case iRICLib::H5CgnsZone::SolutionPosition::Node: case iRICLib::H5CgnsZone::SolutionPosition::Cell:
 		grid = vtkStructuredGrid::SafeDownCast(cont->data());
 		break;
-	case IFaceCenter:
+	case iRICLib::H5CgnsZone::SolutionPosition::IFace:
 		grid = vtkStructuredGrid::SafeDownCast(cont->ifacedata());	// use IFaceCenter grid
 		break;
-	case JFaceCenter:
+	case iRICLib::H5CgnsZone::SolutionPosition::JFace:
 		grid = vtkStructuredGrid::SafeDownCast(cont->jfacedata());	// use JFaceCenter grid
 		break;
 	default:
@@ -94,13 +94,13 @@ void Graph2dHybridWindowGridIJKResultDataItem::updateValues(int /*fn*/)
 	extract->Update();
 
 	vtkSmartPointer<vtkStructuredGrid> extractedGrid = extract->GetOutput();
-	if (info->gridLocation == Vertex) {
+	if (info->gridLocation == iRICLib::H5CgnsZone::SolutionPosition::Node) {
 		updateValuesVertex(extractedGrid);
-	} else if (info->gridLocation == CellCenter) {
+	} else if (info->gridLocation == iRICLib::H5CgnsZone::SolutionPosition::Cell) {
 		updateValuesCellCenter(extractedGrid);
-	} else if (info->gridLocation == IFaceCenter) {
+	} else if (info->gridLocation == iRICLib::H5CgnsZone::SolutionPosition::IFace) {
 		updateValuesVertex(extractedGrid);
-	} else if (info->gridLocation == JFaceCenter) {
+	} else if (info->gridLocation == iRICLib::H5CgnsZone::SolutionPosition::JFace) {
 		updateValuesVertex(extractedGrid);
 	}
 }

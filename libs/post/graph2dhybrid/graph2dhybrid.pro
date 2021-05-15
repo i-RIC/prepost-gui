@@ -119,6 +119,10 @@ unix {
 	LIBS += -lcgns
 }
 
+# iriclib
+
+LIBS += -liriclib
+
 win32 {
 	DESTDIR = $(SolutionDir)/libdlls/$(Configuration)
 	LIBS += -L$(SolutionDir)/libdlls/$(Configuration)

@@ -25,9 +25,10 @@ class Graph2dHybridWindowDataModel : public Graph2dWindowDataModel
 
 public:
 	static const int MOVEWIDTH = 1;
-	/// Constructor
+
 	Graph2dHybridWindowDataModel(Graph2dHybridWindow* w, ProjectDataItem* parent);
 	~Graph2dHybridWindowDataModel();
+
 	/// The view to display 2d post-processor main region
 	Graph2dHybridWindowView* view() const;
 	PostSolutionInfo* postSolutionInfo();
@@ -35,7 +36,7 @@ public:
 	void showSettingDialog();
 	void getXAxisValueRange(double* min, double* max);
 	void getYAxisValueRange(Graph2dWindowDataModel::AxisSide as, double* min, double* max) override;
-	const Graph2dHybridWindowResultSetting& setting() const {return m_setting;}
+	const Graph2dHybridWindowResultSetting& setting() const;
 
 public slots:
 	void sliderChanged();

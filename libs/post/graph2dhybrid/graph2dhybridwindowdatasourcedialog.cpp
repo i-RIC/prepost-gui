@@ -387,7 +387,7 @@ void Graph2dHybridWindowDataSourceDialog::updateLists(QListWidget* listWidget)
 	}
 	// update listWidget
 	listWidget->clear();
-	GridLocation_t loc = m_setting.targetDataTypeInfo()->gridLocation;
+	auto loc = m_setting.targetDataTypeInfo()->gridLocation;
 	Q_ASSERT(m_setting.targetDataTypeInfo()->dataNamesMap.find(loc) != m_setting.targetDataTypeInfo()->dataNamesMap.end());
 	QStringList names = m_setting.targetDataTypeInfo()->dataNamesMap[loc];
 	for (auto name : names) {
@@ -697,7 +697,7 @@ void Graph2dHybridWindowDataSourceDialog::setupTargetDataTypeInfo()
 		// point data selected
 		QList<Graph2dHybridWindowResultSetting::DataTypeInfo*> list = m[Graph2dHybridWindowResultSetting::dimBase];
 		Graph2dHybridWindowResultSetting::DataTypeInfo* type = list[ui->pointDataComboBox->currentIndex()];
-		Q_ASSERT(type->gridLocation == GridLocationNull);
+		Q_ASSERT(type->gridLocation == iRICLib::H5CgnsZone::SolutionPosition::Null);
 		m_setting.setTargetDataTypeInfo(type);
 		dataListWidget = ui->pointDataListWidget;
 	}

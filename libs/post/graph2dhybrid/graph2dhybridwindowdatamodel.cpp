@@ -1113,7 +1113,7 @@ bool Graph2dHybridWindowDataModel::setupInitialSetting()
 		return false;
 	}
 	// initially, setup physical value settings.
-	bool loaded = m_setting.init(postSolutionInfo(), currentCgnsFileName());
+	bool loaded = m_setting.init(postSolutionInfo());
 	if (! loaded) {
 		QMessageBox::critical(mainWindow(), tr("Error"), tr("Graph window setup fail. Calculation result is not loaded properly."));
 		return false;
@@ -1238,6 +1238,11 @@ void Graph2dHybridWindowDataModel::getYAxisValueRange(Graph2dWindowDataModel::Ax
 	*max = qMax(sDiv.lowerBound(), sDiv.upperBound());
 }
 
+const Graph2dHybridWindowResultSetting& Graph2dHybridWindowDataModel::setting() const
+{
+	return m_setting;
+}
+
 void Graph2dHybridWindowDataModel::updateTime()
 {
 	if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaTime) {
@@ -1337,16 +1342,16 @@ void Graph2dHybridWindowDataModel::sliderChanged()
 	case Graph2dHybridWindowResultSetting::dtDim2DStructured:
 	case Graph2dHybridWindowResultSetting::dtDim3DStructured:
 		switch (tinfo->gridLocation) {
-		case Vertex:
+		case iRICLib::H5CgnsZone::SolutionPosition::Node:
 			index = cont->nodeIndex(c->iValue(), c->jValue(), c->kValue());
 			break;
-		case CellCenter:
+		case iRICLib::H5CgnsZone::SolutionPosition::Cell:
 			index = cont->cellIndex(c->iValue(), c->jValue(), c->kValue());
 			break;
-		case IFaceCenter:
+		case iRICLib::H5CgnsZone::SolutionPosition::IFace:
 			index = cont->ifaceIndex(c->iValue(), c->jValue(), c->kValue());
 			break;
-		case JFaceCenter:
+		case iRICLib::H5CgnsZone::SolutionPosition::JFace:
 			index = cont->jfaceIndex(c->iValue(), c->jValue(), c->kValue());
 			break;
 		default:
@@ -1403,15 +1408,15 @@ void Graph2dHybridWindowDataModel::getDims(int dims[4])
 		if (sGrid != nullptr) {
 			// structured
 			sGrid->GetDimensions(dims);
-			if (tinfo->gridLocation == CellCenter) {
+			if (tinfo->gridLocation == iRICLib::H5CgnsZone::SolutionPosition::Cell) {
 				sGrid->GetCellDims(dims);
 			}
-			else if (tinfo->gridLocation == IFaceCenter) {
-				vtkStructuredGrid* ifacegrid = dynamic_cast<vtkStructuredGrid*>(cont->ifacedata());
+			else if (tinfo->gridLocation == iRICLib::H5CgnsZone::SolutionPosition::IFace) {
+				auto ifacegrid = dynamic_cast<vtkStructuredGrid*>(cont->ifacedata());
 				ifacegrid->GetDimensions(dims);
 			}
-			else if (tinfo->gridLocation == JFaceCenter) {
-				vtkStructuredGrid* jfacegrid = dynamic_cast<vtkStructuredGrid*>(cont->jfacedata());
+			else if (tinfo->gridLocation == iRICLib::H5CgnsZone::SolutionPosition::JFace) {
+				auto jfacegrid = dynamic_cast<vtkStructuredGrid*>(cont->jfacedata());
 				jfacegrid->GetDimensions(dims);
 			}
 			dims[3] = 1;
@@ -1421,7 +1426,7 @@ void Graph2dHybridWindowDataModel::getDims(int dims[4])
 			dims[1] = 1;
 			dims[2] = 1;
 			dims[3] = cont->data()->GetNumberOfPoints();
-			if (tinfo->gridLocation == CellCenter) {
+			if (tinfo->gridLocation == iRICLib::H5CgnsZone::SolutionPosition::Cell) {
 				dims[3] = cont->data()->GetNumberOfCells();
 			}
 		}
@@ -1461,26 +1466,9 @@ void Graph2dHybridWindowDataModel::applySettings()
 void Graph2dHybridWindowDataModel::updateData()
 {
 	int fn;
-	CgnsFileOpener* opener = nullptr;
-	fn = postSolutionInfo()->fileId();
-	if (fn == 0) {
-		// file not opened.
-		QString cgnsFilename = currentCgnsFileName();
-		try {
-			opener = new CgnsFileOpener(iRIC::toStr(cgnsFilename), CG_MODE_READ);
-			fn = opener->fileId();
-		} catch (const std::runtime_error&) {
-			return;
-		}
-	}
 
 	updateData(fn);
-
-	delete opener;
-
-	updateTitle();
 }
-
 
 void Graph2dHybridWindowDataModel::updateData(int fn)
 {
@@ -1505,7 +1493,7 @@ void Graph2dHybridWindowDataModel::addKPMarkers()
 
 	Graph2dHybridWindowRootDataItem* root = dynamic_cast<Graph2dHybridWindowRootDataItem*>(m_rootDataItem);
 	Graph2dHybridWindowResultDataItem* ditem = dynamic_cast<Graph2dHybridWindowResultDataItem*>(root->resultGroupItem()->childItems().at(0));
-	QVector<double> xvalues = ditem->xValues();
+	auto xvalues = ditem->xValues();
 	int iValue = 0;
 	GeoDataRiverPathPoint* start = 0;
 	GeoDataRiverPathPoint* end = 0;
@@ -1579,7 +1567,7 @@ CONDITIONERROR:
 
 void Graph2dHybridWindowDataModel::doLoadFromProjectMainFile(const QDomNode& node)
 {
-	bool ok = m_setting.init(postSolutionInfo(), currentCgnsFileName());
+	bool ok = m_setting.init(postSolutionInfo());
 	if (! ok) {
 		throw ErrorMessage("No solution found.");
 	}
