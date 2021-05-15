@@ -45,9 +45,6 @@
 #include <vtkTriangle.h>
 #include <vtkVertex.h>
 
-#include <cgnslib.h>
-#include <iriclib.h>
-
 Post3dWindowZoneDataItem::Post3dWindowZoneDataItem(const std::string& zoneName, int zoneNumber, Post3dWindowDataItem* parent) :
 	Post3dWindowDataItem {zoneName.c_str(), QIcon(":/images/iconGrid.png"), parent},
 	m_shapeDataItem {nullptr},

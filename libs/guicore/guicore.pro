@@ -180,7 +180,6 @@ HEADERS += guicore_global.h \
            datamodel/vtk3dgraphicsview.h \
            datamodel/vtkgraphicsview.h \
            executer/iricmainwindowexecuterwatcher.h \
-           misc/cgnslinkfollower.h \
            misc/cgnsutil.h \
            misc/iricmetadata.h \
            misc/mouseboundingbox.h \
@@ -287,7 +286,6 @@ HEADERS += guicore_global.h \
            datamodel/private/graphicswindowrootdataitem_movedowncommand.h \
            datamodel/private/graphicswindowrootdataitem_moveupcommand.h \
            datamodel/private/vtkgraphicsview_impl.h \
-           misc/private/cgnslinkfollower_impl.h \
            misc/private/cgnsutil_detail.h \
            misc/targeted/targeteditemi.h \
            misc/targeted/targeteditemsettargetcommand.h \
@@ -603,7 +601,6 @@ SOURCES += base/iricmainwindowinterface.cpp \
            datamodel/vtk3dgraphicsview.cpp \
            datamodel/vtkgraphicsview.cpp \
            executer/iricmainwindowexecuterwatcher.cpp \
-           misc/cgnslinkfollower.cpp \
            misc/cgnsutil.cpp \
            misc/iricmetadata.cpp \
            misc/mouseboundingbox.cpp \
