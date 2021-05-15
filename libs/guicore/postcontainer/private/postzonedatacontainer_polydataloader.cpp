@@ -13,7 +13,6 @@
 #include <vtkPoints.h>
 #include <vtkPolygon.h>
 
-#include <cgnslib.h>
 #include <iriclib.h>
 
 #include <vector>

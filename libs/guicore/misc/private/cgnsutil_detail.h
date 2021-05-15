@@ -7,8 +7,6 @@
 #include <vtkDoubleArray.h>
 #include <vtkSmartPointer.h>
 
-#include <cgnslib.h>
-
 #include <h5cgnsflowsolution.h>
 #include <h5cgnszone.h>
 #include <iriclib_errorcodes.h>

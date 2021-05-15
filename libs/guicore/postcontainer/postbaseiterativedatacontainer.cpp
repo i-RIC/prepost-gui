@@ -1,6 +1,5 @@
 #include "postbaseiterativedatacontainer.h"
 #include "../project/projectcgnsfile.h"
-#include <cgnslib.h>
 
 PostBaseIterativeDataContainer::PostBaseIterativeDataContainer(const std::string& name, PostSolutionInfo* parent) :
 	PostDataContainer {parent},

@@ -1,8 +1,6 @@
 #ifndef CGNSUTIL_H
 #define CGNSUTIL_H
 
-#include <cgnslib.h>
-
 #include <string>
 #include <vector>
 
