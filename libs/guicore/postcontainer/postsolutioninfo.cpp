@@ -43,9 +43,6 @@
 #include <string>
 #include <vector>
 
-#include <cgnslib.h>
-#include <iriclib.h>
-
 #include <h5cgnsbase.h>
 #include <h5cgnsbaseiterativedata.h>
 #include <h5cgnsfile.h>

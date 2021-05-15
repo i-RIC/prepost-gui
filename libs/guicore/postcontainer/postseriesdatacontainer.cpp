@@ -6,9 +6,6 @@
 
 #include <QRegExp>
 
-#include <cgnslib.h>
-#include <iriclib.h>
-
 PostSeriesDataContainer::PostSeriesDataContainer(PostSolutionInfo::Dimension dim, PostSolutionInfo* parent) :
 	PostDataContainer {parent},
 	m_dimension {dim},

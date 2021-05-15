@@ -43,8 +43,6 @@
 #include <vtkTriangle.h>
 #include <vtkUnstructuredGrid.h>
 
-#include <cgnslib.h>
-#include <iriclib.h>
 #include <ogr_spatialref.h>
 #include <shapefil.h>
 

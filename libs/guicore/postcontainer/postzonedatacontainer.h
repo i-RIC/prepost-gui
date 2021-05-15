@@ -9,7 +9,6 @@
 #include <vtkPointSet.h>
 #include <vtkPolyData.h>
 #include <vtkSmartPointer.h>
-#include <cgnslib.h>
 
 #include <map>
 #include <string>

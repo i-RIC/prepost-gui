@@ -4,8 +4,6 @@
 #include <vtkDoubleArray.h>
 #include <vtkIntArray.h>
 
-#include <cgnslib.h>
-
 bool CgnsUtil::isScalarName(const std::string& name)
 {
 	char last = name.at(name.size() - 1);

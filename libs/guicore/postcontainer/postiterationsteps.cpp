@@ -6,8 +6,6 @@
 #include <QMessageBox>
 #include <QString>
 
-#include <cgnslib.h>
-
 #include <h5cgnsfile.h>
 #include <h5cgnsbase.h>
 #include <h5cgnsbaseiterativedata.h>
