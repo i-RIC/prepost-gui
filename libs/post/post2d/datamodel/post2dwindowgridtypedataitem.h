@@ -3,8 +3,6 @@
 
 #include "../post2dwindowdataitem.h"
 
-#include <cgnslib.h>
-
 #include <postbase/postwindowgridtypedataiteminterface.h>
 
 #include <QList>

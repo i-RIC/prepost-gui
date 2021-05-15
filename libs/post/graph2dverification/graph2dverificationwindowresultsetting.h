@@ -10,8 +10,6 @@
 #include <QMap>
 #include <QColor>
 
-#include <cgnslib.h>
-
 class GeoDataPolyLine;
 class MeasuredData;
 class Graph2dVerificationWindowResultGroupDataItem;
