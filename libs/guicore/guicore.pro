@@ -180,7 +180,6 @@ HEADERS += guicore_global.h \
            datamodel/vtk3dgraphicsview.h \
            datamodel/vtkgraphicsview.h \
            executer/iricmainwindowexecuterwatcher.h \
-           misc/cgnsfileopener.h \
            misc/cgnslinkfollower.h \
            misc/cgnsutil.h \
            misc/iricmetadata.h \
@@ -288,7 +287,6 @@ HEADERS += guicore_global.h \
            datamodel/private/graphicswindowrootdataitem_movedowncommand.h \
            datamodel/private/graphicswindowrootdataitem_moveupcommand.h \
            datamodel/private/vtkgraphicsview_impl.h \
-           misc/private/cgnsfileopener_impl.h \
            misc/private/cgnslinkfollower_impl.h \
            misc/private/cgnsutil_detail.h \
            misc/targeted/targeteditemi.h \
@@ -605,7 +603,6 @@ SOURCES += base/iricmainwindowinterface.cpp \
            datamodel/vtk3dgraphicsview.cpp \
            datamodel/vtkgraphicsview.cpp \
            executer/iricmainwindowexecuterwatcher.cpp \
-           misc/cgnsfileopener.cpp \
            misc/cgnslinkfollower.cpp \
            misc/cgnsutil.cpp \
            misc/iricmetadata.cpp \

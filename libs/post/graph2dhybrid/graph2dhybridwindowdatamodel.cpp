@@ -27,7 +27,6 @@
 #include <guibase/objectbrowserview.h>
 #include <guicore/base/animationcontrollerinterface.h>
 #include <guicore/base/iricmainwindowinterface.h>
-#include <guicore/misc/cgnsfileopener.h>
 #include <guicore/post/postzoneselectingdialog.h>
 #include <guicore/postcontainer/postsolutioninfo.h>
 #include <guicore/postcontainer/posttimesteps.h>

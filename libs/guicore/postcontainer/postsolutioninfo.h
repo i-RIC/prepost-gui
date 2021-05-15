@@ -15,7 +15,6 @@ namespace iRICLib {
 	class H5CgnsFile;
 } // namespace iRICLib
 
-class CgnsFileOpener;
 class PostBaseIterativeNumericalDataContainer;
 class PostBaseIterativeStringDataContainer;
 class PostCalculatedResult;

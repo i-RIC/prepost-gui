@@ -32,7 +32,6 @@
 #pragma warning( pop )
 #endif
 
-#include <guicore/misc/cgnsfileopener.h>
 #include <guicore/project/colorsource.h>
 #include <guicore/project/projectcgnsfile.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>

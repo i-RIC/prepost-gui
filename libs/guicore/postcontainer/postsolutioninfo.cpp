@@ -1,5 +1,4 @@
 #include "../base/iricmainwindowinterface.h"
-#include "../misc/cgnsfileopener.h"
 #include "../project/projectcgnsfile.h"
 #include "../project/projectdata.h"
 #include "../solverdef/solverdefinition.h"

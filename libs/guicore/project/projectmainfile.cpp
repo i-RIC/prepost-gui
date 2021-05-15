@@ -1,5 +1,4 @@
 #include "../base/iricmainwindowinterface.h"
-#include "../misc/cgnsfileopener.h"
 #include "../postcontainer/postsolutioninfo.h"
 #include "../pre/base/preprocessordatamodelinterface.h"
 #include "../pre/base/preprocessorwindowinterface.h"

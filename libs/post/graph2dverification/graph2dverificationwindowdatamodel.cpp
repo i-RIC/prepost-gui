@@ -15,7 +15,6 @@
 #include <guibase/objectbrowserview.h>
 #include <guicore/base/animationcontrollerinterface.h>
 #include <guicore/base/iricmainwindowinterface.h>
-#include <guicore/misc/cgnsfileopener.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/project/measured/measureddata.h>
 #include <guicore/project/projectmainfile.h>

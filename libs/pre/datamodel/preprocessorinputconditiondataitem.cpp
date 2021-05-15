@@ -1,7 +1,6 @@
 #include "preprocessorinputconditiondataitem.h"
 
 #include <guicore/base/iricmainwindowinterface.h>
-#include <guicore/misc/cgnsfileopener.h>
 #include <guicore/postcontainer/postsolutioninfo.h>
 #include <guicore/project/inputcond/inputconditiondialog.h>
 #include <guicore/project/inputcond/inputconditionwidgetfilename.h>

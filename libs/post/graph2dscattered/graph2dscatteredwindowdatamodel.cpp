@@ -12,7 +12,6 @@
 #include "graph2dscatteredwindowview.h"
 
 #include <guicore/base/iricmainwindowinterface.h>
-#include <guicore/misc/cgnsfileopener.h>
 #include <guicore/postcontainer/posttimesteps.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
