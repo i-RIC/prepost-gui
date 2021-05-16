@@ -2482,9 +2482,3 @@ void iRICMainWindow::updateTmsListForAllWindows()
 		tmsW->updateTmsList();
 	}
 }
-
-bool iRICMainWindow::isPostOnlyMode() const
-{
-	if (m_projectData == 0) {return false;}
-	return m_projectData->isPostOnlyMode();
-}
