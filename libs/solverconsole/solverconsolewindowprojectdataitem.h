@@ -26,7 +26,7 @@ public:
 
 	void open();
 	void close();
-	void clear();
+	void clearLogFile();
 	void append(const QString& line);
 
 public slots:

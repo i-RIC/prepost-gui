@@ -299,7 +299,7 @@ QPixmap SolverConsoleWindow::snapshot()
 void SolverConsoleWindow::clear()
 {
 	impl->m_console->clear();
-	impl->m_projectDataItem->clear();
+	impl->m_projectDataItem->clearLogFile();
 }
 
 void SolverConsoleWindow::applyPreferenceSetting()
