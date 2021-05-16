@@ -1817,6 +1817,8 @@ void iRICMainWindow::clearCalculationResult()
 	if (ret == QMessageBox::No) {return;}
 
 	m_projectData->mainfile()->clearResults();
+	m_solverConsoleWindow->clear();
+
 	statusBar()->showMessage(tr("Calculation result cleared."), STATUSBAR_DISPLAYTIME);
 }
 
@@ -2404,11 +2406,6 @@ void iRICMainWindow::toggleGridEditFlag()
 {
 	PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*>(m_preProcessorWindow);
 	pre->projectDataItem()->setGridEdited();
-}
-
-void iRICMainWindow::clearResults()
-{
-	m_solverConsoleWindow->clear();
 }
 
 bool iRICMainWindow::clearResultsIfGridIsEdited()

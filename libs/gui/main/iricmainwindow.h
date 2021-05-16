@@ -87,7 +87,6 @@ public:
 	void saveToCgnsFile(const int fn) override;
 	void closeCgnsFile() override;
 	void toggleGridEditFlag() override;
-	void clearResults() override;
 	bool clearResultsIfGridIsEdited() override;
 
 	ProjectData* projectData() const override;

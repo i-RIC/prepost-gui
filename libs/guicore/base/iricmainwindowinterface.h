@@ -42,7 +42,6 @@ public:
 	virtual void saveToCgnsFile(const int fn) = 0;
 	virtual void closeCgnsFile() = 0;
 	virtual void toggleGridEditFlag() = 0;
-	virtual void clearResults() = 0;
 	virtual QStringList containedFiles() const = 0;
 	virtual ProjectWorkspace* workspace() = 0;
 	virtual const VersionNumber& versionNumber() const = 0;

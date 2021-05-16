@@ -150,6 +150,7 @@ void SolverConsoleWindow::startSolver()
 	// discard result, and save now.
 	try {
 		impl->m_projectData->mainfile()->clearResults();
+		clear();
 	} catch (ErrorMessage& m) {
 		QMessageBox::warning(this, tr("Warning"), tr("Error occured. %1").arg(m));
 		return;
