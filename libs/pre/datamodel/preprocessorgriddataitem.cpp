@@ -194,9 +194,8 @@ void PreProcessorGridDataItem::loadFromCgnsFile(const int fn)
 void PreProcessorGridDataItem::saveToCgnsFile(const int fn)
 {
 	if (impl->m_grid != nullptr) {
-		bool modified = impl->m_grid->isModified();
 		impl->m_grid->saveToCgnsFile(fn);
-		if (m_bcGroupDataItem != nullptr && modified) {
+		if (m_bcGroupDataItem != nullptr) {
 			try {
 				m_bcGroupDataItem->saveToCgnsFile(fn);
 			} catch (ErrorMessage& m) {
@@ -204,12 +203,8 @@ void PreProcessorGridDataItem::saveToCgnsFile(const int fn)
 				throw m;
 			}
 		}
-	} else if (impl->m_gridIsDeleted) {
-		int B;
-		cg_iRIC_GotoBase(fn, &B);
-		std::string zoneName = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItem*>(parent())->zoneName();
-		cg_delete_node(zoneName.c_str());
 	}
+
 	impl->m_gridIsDeleted = false;
 }
 

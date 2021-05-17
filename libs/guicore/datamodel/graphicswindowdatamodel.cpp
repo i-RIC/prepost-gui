@@ -63,6 +63,11 @@ void GraphicsWindowDataModel::saveToCgnsFile(const int fn)
 	m_rootDataItem->saveToCgnsFile(fn);
 }
 
+int GraphicsWindowDataModel::updateCgnsFileOtherThanGrids()
+{
+	return m_rootDataItem->updateCgnsFileOtherThanGrids();
+}
+
 void GraphicsWindowDataModel::closeCgnsFile()
 {
 	m_rootDataItem->closeCgnsFile();

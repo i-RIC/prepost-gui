@@ -151,26 +151,9 @@ void ProjectData::initForSolverDefinition()
 	mainWindow()->initForSolverDefinition();
 }
 
-void ProjectData::load()
-{
-	// load project.xml.
-	mainfile()->load();
-}
-
 void ProjectData::loadCgnsList()
 {
 	mainfile()->loadCgnsList();
-}
-
-bool ProjectData::save()
-{
-	mainWindow()->enterModelessDialogMode();
-	qApp->processEvents();
-	mainWindow()->setCursor(Qt::WaitCursor);
-	bool ret = mainfile()->save();
-	mainWindow()->setCursor(Qt::ArrowCursor);
-	mainWindow()->exitModelessDialogMode();
-	return ret;
 }
 
 ProjectMainFile* ProjectData::mainfile() const

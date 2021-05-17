@@ -34,6 +34,7 @@ public:
 
 	void loadFromCgnsFile(const int fn) override;
 	void saveToCgnsFile(const int fn) override;
+	int updateCgnsFileOtherThanGrids() override;
 	void closeCgnsFile() override;
 
 	void updateExpandState(ObjectBrowserView* view);

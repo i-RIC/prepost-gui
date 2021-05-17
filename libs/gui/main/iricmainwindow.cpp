@@ -14,6 +14,7 @@
 #include "../startpage/startpagedialog.h"
 #include "iricmainwindow.h"
 #include "private/iricmainwindow_calculatedresultmanager.h"
+#include "private/iricmainwindow_modelessdialogmodechanger.h"
 #include "private/iricmainwindow_snapshotsaver.h"
 
 #include <cs/coordinatesystembuilder.h>
@@ -92,6 +93,8 @@
 #include <QThread>
 #include <QTime>
 #include <QXmlStreamWriter>
+
+#include <iriclib_errorcodes.h>
 
 const int iRICMainWindow::MAX_RECENT_PROJECTS = 10;
 const int iRICMainWindow::MAX_RECENT_SOLVERS = 10;
@@ -322,6 +325,8 @@ void iRICMainWindow::openProject(const QString& filename)
 	if (! closeProject()) {return;}
 
 	CursorChanger cursorChanger(QCursor(Qt::WaitCursor), this);
+	ModelessDialogModeChanger modeChanger(this);
+
 	m_isOpening = true;
 	// create projectdata
 	QFileInfo fileinfo(filename);
@@ -393,7 +398,7 @@ void iRICMainWindow::openProject(const QString& filename)
 
 	try {
 		setCursor(Qt::WaitCursor);
-		m_projectData->load();
+		m_projectData->mainfile()->load();
 	} catch (ErrorMessage& m) {
 		QMessageBox::warning(this, tr("Error"), m);
 		closeProject();
@@ -763,13 +768,31 @@ bool iRICMainWindow::saveProject()
 bool iRICMainWindow::saveProject(const QString& filename, bool folder)
 {
 	ValueChangerT<bool> savingChanger(&m_isSaving, true);
-	bool ret;
 	CursorChanger cursorChanger(QCursor(Qt::WaitCursor), this);
+	ModelessDialogModeChanger modeChanger(this);
+
+	bool ret;
+	auto mainfile = m_projectData->mainfile();
 	if (m_projectData->isPostOnlyMode()) {
 		// do not save CGNS file, but only projext.xml.
-		ret = m_projectData->mainfile()->saveExceptCGNS();
+		ret = mainfile->saveExceptCGNS();
 	} else {
-		ret = m_projectData->save();
+		auto pre = dynamic_cast<PreProcessorWindow*>(m_preProcessorWindow);
+		auto gridEdited = pre->projectDataItem()->isGridEdited();
+		auto hasResult = m_projectData->mainfile()->postSolutionInfo()->hasResults();
+
+		if (gridEdited && hasResult) {
+			int ret = QMessageBox::warning(m_preProcessorWindow, tr("Warning"), tr("The grids are edited or deleted. When you save, the calculation result is discarded."), QMessageBox::Ok | QMessageBox::Cancel, QMessageBox::Cancel);
+			if (ret == QMessageBox::Cancel) {return false;}
+		}
+
+		if (gridEdited || (! hasResult)) {
+			ret = mainfile->saveCgnsFile();
+		} else {
+			int ier = mainfile->updateCgnsFileOtherThanGrids();
+			ret = (ier == iRIC_NO_ERROR);
+		}
+		if (ret) {ret = m_projectData->mainfile()->saveExceptCGNS();}
 	}
 
 	if (! ret) {
@@ -2396,6 +2419,12 @@ void iRICMainWindow::saveToCgnsFile(const int fn)
 	pre->projectDataItem()->saveToCgnsFile(fn);
 }
 
+int iRICMainWindow::updateCgnsFileOtherThanGrids()
+{
+	auto pre = dynamic_cast<PreProcessorWindow*>(m_preProcessorWindow);
+	return pre->projectDataItem()->updateCgnsFileOtherThanGrids();
+}
+
 void iRICMainWindow::closeCgnsFile()
 {
 	PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*>(m_preProcessorWindow);
@@ -2406,20 +2435,6 @@ void iRICMainWindow::toggleGridEditFlag()
 {
 	PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*>(m_preProcessorWindow);
 	pre->projectDataItem()->setGridEdited();
-}
-
-bool iRICMainWindow::clearResultsIfGridIsEdited()
-{
-	PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*>(m_preProcessorWindow);
-	bool gridEdited = pre->projectDataItem()->isGridEdited();
-	bool hasResult = m_projectData->mainfile()->postSolutionInfo()->hasResults();
-	if (gridEdited && hasResult) {
-		// grid is edited, and the CGNS has calculation result.
-		int ret = QMessageBox::warning(m_preProcessorWindow, tr("Warning"), tr("The grids are edited or deleted. When you save, the calculation result is discarded."), QMessageBox::Ok | QMessageBox::Cancel, QMessageBox::Cancel);
-		if (ret == QMessageBox::Cancel) {return false;}
-		m_projectData->mainfile()->clearResults();
-	}
-	return true;
 }
 
 ProjectData* iRICMainWindow::projectData() const

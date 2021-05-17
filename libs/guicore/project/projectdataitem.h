@@ -51,6 +51,8 @@ public:
 	virtual void loadFromCgnsFile(const int fn);
 	/// Save data into CGNS file
 	virtual void saveToCgnsFile(const int fn);
+	/// Update data in CGNS file other than grids
+	virtual int updateCgnsFileOtherThanGrids();
 	/// Discard data loaded from CGNS file.
 	virtual void closeCgnsFile();
 	//@}

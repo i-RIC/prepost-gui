@@ -186,7 +186,6 @@ void PreProcessorBCGroupDataItem::renumberItemsForCgns()
 void PreProcessorBCGroupDataItem::saveToCgnsFile(const int fn)
 {
 	renumberItemsForCgns();
-	cg_iRIC_Clear_BC();
 	for (int i = 0; i < m_childItems.size(); ++i) {
 		m_childItems[i]->saveToCgnsFile(fn);
 	}

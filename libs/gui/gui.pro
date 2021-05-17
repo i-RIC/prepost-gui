@@ -188,6 +188,7 @@ HEADERS += gui_api.h \
            factory/postprocessorwindowfactory.h \
            main/iricmainwindow.h \
            main/iricmergablecommands.h \
+           main/private/iricmainwindow_modelessdialogmodechanger.h \
            misc/animationcontroller.h \
            misc/flushrequester.h \
            misc/installertool.h \
@@ -274,6 +275,7 @@ SOURCES += continuoussnapshot/continuoussnapshotconfirmpage.cpp \
            continuoussnapshot/continuoussnapshotwizard.cpp \
            factory/postprocessorwindowfactory.cpp \
            main/iricmainwindow.cpp \
+           main/private/iricmainwindow_modelessdialogmodechanger.cpp \
            misc/animationcontroller.cpp \
            misc/flushrequester.cpp \
            misc/installertool.cpp \

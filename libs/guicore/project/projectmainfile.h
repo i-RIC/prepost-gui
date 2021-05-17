@@ -88,6 +88,7 @@ public:
 	void clearResults();
 	/// Save current cgns file.
 	bool saveCgnsFile();
+	int updateCgnsFileOtherThanGrids() override;
 	/// Return true when the work data is modified.
 	bool isModified() const;
 	/// PostProcessors.
@@ -171,8 +172,6 @@ private:
 
 	ProjectData* projectData() const override;
 	QString relativeSubPath() const override;
-
-	bool clearResultsIfGridIsEdited();
 
 	/// Cgns file list
 	CgnsFileList* m_cgnsFileList;

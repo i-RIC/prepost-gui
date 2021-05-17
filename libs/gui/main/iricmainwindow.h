@@ -85,9 +85,9 @@ public:
 	QStringList containedFiles() const override;
 	void loadFromCgnsFile(const int fn) override;
 	void saveToCgnsFile(const int fn) override;
+	int updateCgnsFileOtherThanGrids() override;
 	void closeCgnsFile() override;
 	void toggleGridEditFlag() override;
-	bool clearResultsIfGridIsEdited() override;
 
 	ProjectData* projectData() const override;
 	void setProjectData(ProjectData* projectData) override;
@@ -333,6 +333,7 @@ private:
 	QProcessEnvironment m_processEnvironment;
 
 	class CalculatedResultManager;
+	class ModelessDialogModeChanger;
 	class SnapshotSaver;
 
 public:

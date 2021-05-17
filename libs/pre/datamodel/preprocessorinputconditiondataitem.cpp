@@ -65,6 +65,12 @@ void PreProcessorInputConditionDataItem::saveToCgnsFile(const int fn)
 	m_dialog->save(fn);
 }
 
+int PreProcessorInputConditionDataItem::updateCgnsFileOtherThanGrids()
+{
+	int fn = 0;
+	m_dialog->save(fn);
+}
+
 void PreProcessorInputConditionDataItem::showDialog(bool readonly)
 {
 	projectData()->mainfile()->postSolutionInfo()->close();

@@ -40,12 +40,12 @@ public:
 	virtual void saveSubWindowsToProjectMainFile(QXmlStreamWriter& writer) = 0;
 	virtual void loadFromCgnsFile(const int fn) = 0;
 	virtual void saveToCgnsFile(const int fn) = 0;
+	virtual int updateCgnsFileOtherThanGrids() = 0;
 	virtual void closeCgnsFile() = 0;
 	virtual void toggleGridEditFlag() = 0;
 	virtual QStringList containedFiles() const = 0;
 	virtual ProjectWorkspace* workspace() = 0;
 	virtual const VersionNumber& versionNumber() const = 0;
-	virtual bool clearResultsIfGridIsEdited() = 0;
 
 	virtual ProjectData* projectData() const = 0;
 	virtual void setProjectData(ProjectData* projectData) = 0;

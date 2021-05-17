@@ -16,6 +16,8 @@
 
 #include <vtkCamera.h>
 
+#include <iriclib_errorcodes.h>
+
 // Public interfaces
 
 const QDataStream::Version ProjectDataItem::dataStreamVersion = QDataStream::Qt_4_6;
@@ -71,6 +73,11 @@ void ProjectDataItem::loadFromCgnsFile(int)
 
 void ProjectDataItem::saveToCgnsFile(int)
 {}
+
+int ProjectDataItem::updateCgnsFileOtherThanGrids()
+{
+	return IRIC_NO_ERROR;
+}
 
 void ProjectDataItem::closeCgnsFile()
 {}

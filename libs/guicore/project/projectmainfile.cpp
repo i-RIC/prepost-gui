@@ -55,9 +55,12 @@
 
 #include <cgnslib.h>
 #include <iriclib.h>
-#include <cmath>
 
 #include <h5cgnsfile.h>
+#include <iriclib_errorcodes.h>
+
+#include <cmath>
+
 
 namespace {
 
@@ -655,6 +658,19 @@ bool ProjectMainFile::saveCgnsFile()
 	return saveCgnsFile(m_cgnsFileList->current()->filename());
 }
 
+int ProjectMainFile::updateCgnsFileOtherThanGrids()
+{
+	try {
+		auto fname = iRIC::toStr(m_projectData->workCgnsFileName("Case1"));
+		iRICLib::H5CgnsFile cgnsFile(fname, iRICLib::H5CgnsFile::Mode::OpenModify);
+		ValueChangerT<iRICLib::H5CgnsFile*> fileChanger(&(impl->m_cgnsFile), &cgnsFile);
+		return m_projectData->mainWindow()->updateCgnsFileOtherThanGrids();
+	} catch (...) {
+		QMessageBox::critical(m_projectData->mainWindow(), tr("Error"), tr("Error occured while opening CGNS file in project file : Case1.cgn"));
+		return IRIC_H5_OPEN_FAIL;
+	}
+}
+
 bool ProjectMainFile::isModified() const
 {
 	return impl->m_isModified;
@@ -669,18 +685,6 @@ bool ProjectMainFile::saveCgnsFile(const QString& name)
 {
 	QTime time;
 	// close CGNS file when the solution opened it.
-	impl->m_postSolutionInfo->close();
-
-	// check grid status
-	try {
-		if (! clearResultsIfGridIsEdited()) {
-			return false;
-		}
-	} catch (ErrorMessage& m) {
-		QMessageBox::warning(iricMainWindow(), tr("Warning"), tr("%1 Saving project file failed.").arg(m));
-		return false;
-	}
-	// close CGNS file when the solution opened it, again.
 	impl->m_postSolutionInfo->close();
 
 	// CGNS file name
@@ -1033,11 +1037,6 @@ void ProjectMainFile::updateActorVisibility(int idx, bool vis)
 		bg->setVisible(vis);
 	}
 	emit backgroundActorVisibilityChanged(idx, vis);
-}
-
-bool ProjectMainFile::clearResultsIfGridIsEdited()
-{
-	return m_projectData->mainWindow()->clearResultsIfGridIsEdited();
 }
 
 void ProjectMainFile::addMeasuredData()

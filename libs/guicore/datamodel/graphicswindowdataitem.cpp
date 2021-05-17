@@ -30,6 +30,8 @@
 #include <vtkCollectionIterator.h>
 #include <vtkRenderWindow.h>
 
+#include <iriclib_errorcodes.h>
+
 GraphicsWindowDataItem::GraphicsWindowDataItem(const QString& itemlabel, GraphicsWindowDataItem* parent) :
 	ProjectDataItem {parent},
 	m_standardItem {new QStandardItem(itemlabel)}
@@ -166,9 +168,18 @@ void GraphicsWindowDataItem::loadFromCgnsFile(const int fn)
 
 void GraphicsWindowDataItem::saveToCgnsFile(const int fn)
 {
-	for (GraphicsWindowDataItem* child : m_childItems) {
+	for (auto child : m_childItems) {
 		child->saveToCgnsFile(fn);
 	}
+}
+
+int GraphicsWindowDataItem::updateCgnsFileOtherThanGrids()
+{
+	for (auto child : m_childItems) {
+		int ier = child->updateCgnsFileOtherThanGrids();
+		if (ier != IRIC_NO_ERROR) {return ier;}
+	}
+	return IRIC_NO_ERROR;
 }
 
 void GraphicsWindowDataItem::closeCgnsFile()

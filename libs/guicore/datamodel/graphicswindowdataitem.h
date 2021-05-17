@@ -71,7 +71,8 @@ public:
 	/// Load data from CGNS file
 	virtual void loadFromCgnsFile(const int fn) override;
 	/// Save data into CGNS file
-	virtual void saveToCgnsFile(const int fn) override;
+	void saveToCgnsFile(const int fn) override;
+	int updateCgnsFileOtherThanGrids() override;
 	/// Discard data loaded from CGNS file.
 	virtual void closeCgnsFile() override;
 	/// Returns true if this item is deletable.
