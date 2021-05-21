@@ -68,11 +68,15 @@ QString ProjectDataItem::currentCgnsFileName() const
 	return parent()->currentCgnsFileName();
 }
 
-void ProjectDataItem::loadFromCgnsFile(int)
-{}
+int ProjectDataItem::loadFromCgnsFile()
+{
+	return IRIC_NO_ERROR;
+}
 
-void ProjectDataItem::saveToCgnsFile(int)
-{}
+int ProjectDataItem::saveToCgnsFile()
+{
+	return IRIC_NO_ERROR;
+}
 
 int ProjectDataItem::updateCgnsFileOtherThanGrids()
 {

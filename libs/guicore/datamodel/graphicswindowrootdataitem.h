@@ -26,7 +26,7 @@ public:
 	void updateItemMap() override;
 	GraphicsWindowDataItem* modelItemFromItem(QStandardItem* item);
 
-	void loadFromCgnsFile(const int fn) override;
+	int loadFromCgnsFile() override;
 	void closeCgnsFile() override;
 
 protected:

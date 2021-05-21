@@ -37,7 +37,7 @@ public:
 	void copyValues(const InputConditionContainerSet* set);
 
 	int load(const iRICLib::H5CgnsConditionGroup& group);
-	int save();
+	int save(iRICLib::H5CgnsConditionGroup* group);
 	void reset();
 	void setDefaultValues();
 

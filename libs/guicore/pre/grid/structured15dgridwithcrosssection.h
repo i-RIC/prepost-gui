@@ -22,9 +22,8 @@ public:
 	QPointF vertex(unsigned int index) const override;
 	void setVertex(unsigned int index, const QPointF& v) override;
 
-	bool loadFromCgnsFile(const iRICLib::H5CgnsZone& zone) override;
-	bool loadFromCgnsFile(const int fn, int B, int Z) override;
-	bool saveToCgnsFile(const int fn, int B, const char* zonename) override;
+	int loadFromCgnsFile(const iRICLib::H5CgnsZone& zone) override;
+	int saveToCgnsFile(iRICLib::H5CgnsBase* base, const std::string& zoneName) override;
 
 	void setPoints(vtkPoints* points);
 	QList<Structured15DGridWithCrossSectionCrossSection*>& crossSections();

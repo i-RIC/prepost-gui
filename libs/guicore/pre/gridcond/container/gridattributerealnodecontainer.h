@@ -11,9 +11,6 @@ public:
 	GridAttributeRealNodeContainer(Grid* grid, SolverDefinitionGridAttributeT<double>* cond)
 		: GridAttributeNodeContainerT<double, vtkDoubleArray>(grid, cond)
 	{}
-
-protected:
-	DataType_t dataType() const override {return RealDouble;}
 };
 
 #endif // GRIDATTRIBUTEREALNODECONTAINER_H

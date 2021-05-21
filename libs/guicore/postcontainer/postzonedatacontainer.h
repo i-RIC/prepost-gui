@@ -60,7 +60,6 @@ public:
 	bool handleCurrentStepUpdate(iRICLib::H5CgnsZone* zone, bool disableCalculatedResult);
 
 	void loadFromCgnsFile(iRICLib::H5CgnsZone* zone);
-	void loadFromCgnsFile(const int fn) override;
 	void loadFromCgnsFile(iRICLib::H5CgnsZone* zone, bool disableCalculatedResult);
 
 	bool cellScalarValueExists() const;

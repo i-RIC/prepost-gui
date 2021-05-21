@@ -169,10 +169,10 @@ int InputConditionContainerSet::load(const iRICLib::H5CgnsConditionGroup& group)
 	}
 	return 0;
 }
-int InputConditionContainerSet::save()
+int InputConditionContainerSet::save(iRICLib::H5CgnsConditionGroup* group)
 {
 	for (auto& pair : m_containers) {
-		int ret = pair.second->save();
+		int ret = pair.second->save(group);
 		if (ret != 0) {return ret;}
 	}
 	return 0;

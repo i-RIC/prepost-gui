@@ -86,15 +86,9 @@ int InputConditionContainerReal::load(const iRICLib::H5CgnsConditionGroup& group
 	return ret;
 }
 
-int InputConditionContainerReal::save()
+int InputConditionContainerReal::save(iRICLib::H5CgnsConditionGroup* group)
 {
-	if (isBoundaryCondition()) {
-		return cg_iRIC_Write_BC_Real(toC(bcName()), bcIndex(), toC(name()), impl->m_value);
-	} else if (isComplexCondition()) {
-		return cg_iRIC_Write_Complex_Real(toC(complexName()), complexIndex(), toC(name()), impl->m_value);
-	} else {
-		return cg_iRIC_Write_Real(toC(name()), impl->m_value);
-	}
+	group->writeRealValue(name(), impl->m_value);
 }
 
 void InputConditionContainerReal::clear()

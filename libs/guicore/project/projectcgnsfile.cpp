@@ -95,6 +95,20 @@ bool ProjectCgnsFile::writeSolverInfo(int fn, const SolverDefinitionAbstract* so
 	return true;
 }
 
+
+int ProjectCgnsFile::writeSolverInfo(iRICLib::H5CgnsFile* file, const SolverDefinitionAbstract& solverDef)
+{
+	auto info = file->ccBase()->solverInformation();
+
+	int ier = info->writeSolverName(solverDef.name());
+	if (ier != IRIC_NO_ERROR) {return ier;}
+
+	ier = info->writeSolverVersion(iRIC::toStr(solverDef.version().toString()));
+	if (ier != IRIC_NO_ERROR) {return ier;}
+
+	return IRIC_NO_ERROR;
+}
+
 bool ProjectCgnsFile::checkSolverInfo(int fn, const SolverDefinitionAbstract* solverDef)
 {
 	int ret;
@@ -189,18 +203,19 @@ bool ProjectCgnsFile::readSolverInfo(int fn, std::string* solverName, VersionNum
 	return true;
 }
 
-bool ProjectCgnsFile::readSolverInfo(const iRICLib::H5CgnsFile& file, std::string* solverName, VersionNumber* version)
+int ProjectCgnsFile::readSolverInfo(const iRICLib::H5CgnsFile& file, std::string* solverName, VersionNumber* version)
 {
 	auto info = file.ccBase()->solverInformation();
 
 	int ier = info->readSolverName(solverName);
-	if (ier != IRIC_NO_ERROR) {return false;}
+	if (ier != IRIC_NO_ERROR) {return ier;}
 
 	std::string versionStr;
 	ier = info->readSolverVersion(&versionStr);
-	if (ier != IRIC_NO_ERROR) {return false;}
+	if (ier != IRIC_NO_ERROR) {return ier;}
 	*version = VersionNumber(versionStr.c_str());
-	return true;
+
+	return IRIC_NO_ERROR;
 }
 
 QString ProjectCgnsFile::acceptablePattern()

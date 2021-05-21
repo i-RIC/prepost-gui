@@ -594,14 +594,6 @@ void PostZoneDataContainer::loadFromCgnsFile(iRICLib::H5CgnsZone* zone)
 	loadFromCgnsFile(zone, false);
 }
 
-void PostZoneDataContainer::loadFromCgnsFile(const int /*fn*/)
-{
-	/*
-	int currentStep = dynamic_cast<PostSolutionInfo*>(parent())->currentStep();
-	loadFromCgnsFile(fn, currentStep, false);
-	*/
-}
-
 void PostZoneDataContainer::loadFromCgnsFile(iRICLib::H5CgnsZone* zone, bool disableCalculatedResult)
 {
 	m_loadOK = true;

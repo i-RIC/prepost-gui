@@ -3,6 +3,8 @@
 
 #include "../gridattributedimensioncontainert.h"
 
+#include <h5cgnsgridattributes.h>
+
 #include <QFile>
 
 template <class V>
@@ -130,68 +132,15 @@ bool GridAttributeDimensionContainerT<V>::saveToExternalFile(const QString& file
 }
 
 template <class V>
-bool GridAttributeDimensionContainerT<V>::loadFromCgnsFile(int fn, int B, int Z)
+int GridAttributeDimensionContainerT<V>::loadFromCgnsFile(const iRICLib::H5CgnsGridAttributes& atts)
 {
-	// Goto "GridConditions" node.
-	int ier;
-	bool found = false;
-	ier = cg_goto(fn, B, "Zone_t", Z, "GridConditions", 0, gridAttribute()->name().c_str(), 0, "end");
-	if (ier != 0) {
-		return false;
-	}
-	// the corresponding node found.
-	// Find "Dimension_(name)" array.
-	QString targetName = QString("Dimension_%1").arg(name().c_str());
-	int narrays;
-	cg_narrays(&narrays);
-	for (int i = 1; i <= narrays; ++i) {
-		char arrayName[ProjectCgnsFile::BUFFERLEN];
-		DataType_t dt;
-		int dataDimension;
-		cgsize_t dimensionVector[3];
-		cgsize_t dataCount;
-		cg_array_info(i, arrayName, &dt, &dataDimension, dimensionVector);
-
-		if (dataDimension != 1) {continue;}
-		if (dt != dataType() || QString(arrayName) != targetName) {continue;}
-
-		// We've found the array!
-		dataCount = dimensionVector[0];
-		// load data.
-		std::vector<V> data(dataCount, 0);
-		ier = cg_array_read(i, data.data());
-		m_values.clear();
-		m_values.reserve(dataCount);
-		for (auto j = 0; j < dataCount; ++j) {
-			m_values.push_back(data[j]);
-		}
-		found = true;
-		break;
-	}
-	return found;
+	return atts.readFunctionalDimension(gridAttribute()->name(), name(), &m_values);
 }
 
 template <class V>
-bool GridAttributeDimensionContainerT<V>::saveToCgnsFile(int fn, int B, int Z)
+int GridAttributeDimensionContainerT<V>::saveToCgnsFile(iRICLib::H5CgnsGridAttributes* atts)
 {
-	QString arrayName = QString("Dimension_%1").arg(name().c_str());
-
-	int ier;
-	// Goto "GridConditions" node.
-	ier = cg_goto(fn, B, "Zone_t", Z, "GridConditions", 0, gridAttribute()->name().c_str(), 0, "end");
-	if (ier != 0) {return false;}
-	// Delete the array if it already exists.
-	cg_delete_node(const_cast<char*>(iRIC::toStr(arrayName).c_str()));
-	// Create the "array" array
-	int dataCount = count();
-	cgsize_t dimensions = static_cast<cgsize_t> (m_values.size());
-	std::vector<V> data(dataCount, 0);
-	for (int i = 0; i < dataCount; ++i) {
-		data[i] = m_values.at(i);
-	}
-	ier = cg_array_write(iRIC::toStr(arrayName).c_str(), dataType(), 1, &dimensions, data.data());
-	if (ier != 0) {return false;}
-	return true;
+	return atts->writeFunctionalDimension(gridAttribute()->name(), name(), m_values);
 }
 
 #endif // GRIDATTRIBUTEDIMENSIONCONTAINERT_DETAIL_H

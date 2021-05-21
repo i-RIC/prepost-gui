@@ -686,9 +686,9 @@ void GeoDataPolyLine::doApplyOffset(double x, double y)
 	impl->m_polyLine->setPolyLine(pol);
 }
 
-int GeoDataPolyLine::iRICLibType() const
+iRICLib::H5CgnsGeographicDataGroup::Type GeoDataPolyLine::iRICLibType() const
 {
-	return IRIC_GEO_POLYLINE;
+	return iRICLib::H5CgnsGeographicDataGroup::Type::Polyline;
 }
 
 geos::geom::LineString* GeoDataPolyLine::getGeosLineString(const QPointF& offset)

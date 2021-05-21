@@ -18,8 +18,7 @@
 #include <vtkPoints.h>
 #include <vtkPolyData.h>
 
-#include <cgnslib.h>
-#include <iriclib.h>
+#include <iriclib_errorcodes.h>
 
 const int Grid::MAX_DRAWCELLCOUNT = 40000;
 const int Grid::MAX_DRAWINDEXCOUNT = 300;
@@ -89,45 +88,6 @@ void Grid::setParent(QObject* parent)
 		GridAttributeContainer* c = impl->m_gridAttributes[i];
 		c->updateConnections();
 	}
-}
-
-void Grid::loadFromCgnsFile(const int fn)
-{
-	// todo remove this function.
-	/*
-	int B;
-	// goto Base.
-	cg_iRIC_GotoBase(fn, &B);
-
-	cgsize_t sizes[9];
-	int zoneid = zoneId(impl->m_zoneName, fn, B, sizes);
-	if (zoneid == 0) {
-		// Error. No corresponding zone found.
-		return;
-	}
-	loadFromCgnsFile(fn, B, zoneid);
-	cg_iRIC_Set_ZoneId(zoneid);
-	impl->m_isModified = false;
-	*/
-}
-
-void Grid::saveToCgnsFile(const int fn)
-{
-	// todo remove this function.
-	/*
-	// if not modified, do nothing.
-	if (! impl->m_isModified) {return;}
-
-	int B;
-	// goto Base.
-	cg_iRIC_GotoBase(fn, &B);
-	saveToCgnsFile(fn, B, const_cast<char*>(impl->m_zoneName.c_str()));
-	cgsize_t size[9];
-	int Z = zoneId(impl->m_zoneName, fn, B, size);
-	cg_ziter_write(fn, B, Z, "ZoneIterativeData");
-	cg_iRIC_Set_ZoneId(Z);
-	impl->m_isModified = false;
-	*/
 }
 
 vtkPointSet* Grid::vtkGrid() const
@@ -273,21 +233,6 @@ bool Grid::isMasked() const
 	return impl->m_isMasked;
 }
 
-int Grid::zoneId(const std::string& zonename, int fn, int B, cgsize_t sizes[9])
-{
-	char zn[ProjectCgnsFile::BUFFERLEN];
-	// get the number of zones;
-	int nzones;
-	cg_nzones(fn, B, &nzones);
-	for (int zoneid = 1; zoneid <= nzones; ++zoneid) {
-		cg_zone_read(fn, B, zoneid, zn, sizes);
-		if (zonename == zn) {
-			return zoneid;
-		}
-	}
-	return 0;
-}
-
 void Grid::setMasked(bool masked)
 {
 	impl->m_isMasked = masked;
@@ -322,29 +267,21 @@ void Grid::getCullSetting(bool* enable, int* cellLimit, int* indexLimit)
 	*indexLimit = settings.value("general/cullindexlimit", Grid::MAX_DRAWINDEXCOUNT).toInt();
 }
 
-bool Grid::loadGridAttributes(const iRICLib::H5CgnsZone& zone)
+int Grid::loadGridAttributes(const iRICLib::H5CgnsGridAttributes& atts)
 {
-	bool allok = true;
 	for (auto att : impl->m_gridAttributes) {
 		att->allocate();
-		bool ret = att->loadFromCgnsFile(zone);
-		allok = allok && ret;
+		int ier = att->loadFromCgnsFile(atts);
+		if (ier != IRIC_NO_ERROR) {return ier;}
 	}
-	return allok;
+	return IRIC_NO_ERROR;
 }
 
-bool Grid::saveGridAttributes(int fn, int B, int Z)
+int Grid::saveGridAttributes(iRICLib::H5CgnsGridAttributes* atts)
 {
-	// Grid coordinates are saved.
-	// Next grid related condition data is saved.
-	// Create "GridConditions" node under the zone node.
-	cg_goto(fn, B, "Zone_t", Z, "end");
-	cg_user_data_write("GridConditions");
-
-	bool allok = true;
-	for (auto it = impl->m_gridAttributes.begin(); it != impl->m_gridAttributes.end(); ++it) {
-		bool ret = (*it)->saveToCgnsFile(fn, B, Z);
-		allok = allok && ret;
+	for (auto att : impl->m_gridAttributes) {
+		int ier = att->saveToCgnsFile(atts);
+		if (ier != IRIC_NO_ERROR) {return ier;}
 	}
-	return allok;
+	return IRIC_NO_ERROR;
 }

@@ -38,8 +38,8 @@ public:
 	virtual CoordinateSystemBuilder* coordinateSystemBuilder() const = 0;
 	virtual void loadSubWindowsFromProjectMainFile(const QDomNode& node) = 0;
 	virtual void saveSubWindowsToProjectMainFile(QXmlStreamWriter& writer) = 0;
-	virtual void loadFromCgnsFile(const int fn) = 0;
-	virtual void saveToCgnsFile(const int fn) = 0;
+	virtual int loadFromCgnsFile() = 0;
+	virtual int saveToCgnsFile() = 0;
 	virtual int updateCgnsFileOtherThanGrids() = 0;
 	virtual void closeCgnsFile() = 0;
 	virtual void toggleGridEditFlag() = 0;

@@ -83,8 +83,8 @@ public:
 	void saveSubWindowsToProjectMainFile(QXmlStreamWriter& writer) override;
 
 	QStringList containedFiles() const override;
-	void loadFromCgnsFile(const int fn) override;
-	void saveToCgnsFile(const int fn) override;
+	int loadFromCgnsFile() override;
+	int saveToCgnsFile() override;
 	int updateCgnsFileOtherThanGrids() override;
 	void closeCgnsFile() override;
 	void toggleGridEditFlag() override;

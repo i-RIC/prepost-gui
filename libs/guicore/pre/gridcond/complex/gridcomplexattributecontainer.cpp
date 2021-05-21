@@ -115,11 +115,6 @@ std::vector<GridComplexConditionGroup*> GridComplexAttributeContainer::groups() 
 	return gItem3->groups();
 }
 
-DataType_t GridComplexAttributeContainer::dataType() const
-{
-	return Integer;
-}
-
 SolverDefinitionGridComplexAttribute* GridComplexAttributeContainer::gridAttribute() const
 {
 	return dynamic_cast<SolverDefinitionGridComplexAttribute*>(GridAttributeBaseObject::gridAttribute());

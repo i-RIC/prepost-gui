@@ -54,21 +54,22 @@ void PreProcessorInputConditionDataItem::doSaveToProjectMainFile(QXmlStreamWrite
 	writer.writeAttribute("isSet", isSetStr);
 }
 
-void PreProcessorInputConditionDataItem::loadFromCgnsFile(const int fn)
+int PreProcessorInputConditionDataItem::loadFromCgnsFile()
 {
 	auto cgnsFile = projectData()->mainfile()->cgnsFile();
-	m_dialog->load(*(cgnsFile->ccBase()->ccGroup()));
+	return m_dialog->load(*(cgnsFile->ccBase()->ccGroup()));
 }
 
-void PreProcessorInputConditionDataItem::saveToCgnsFile(const int fn)
+int PreProcessorInputConditionDataItem::saveToCgnsFile()
 {
-	m_dialog->save(fn);
+	auto cgnsFile = projectData()->mainfile()->cgnsFile();
+	return m_dialog->save(cgnsFile->ccBase()->ccGroup());
 }
 
 int PreProcessorInputConditionDataItem::updateCgnsFileOtherThanGrids()
 {
-	int fn = 0;
-	m_dialog->save(fn);
+	auto cgnsFile = projectData()->mainfile()->cgnsFile();
+	return m_dialog->save(cgnsFile->ccBase()->ccGroup());
 }
 
 void PreProcessorInputConditionDataItem::showDialog(bool readonly)

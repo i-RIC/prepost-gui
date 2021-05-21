@@ -36,7 +36,7 @@ public:
 	void copyValues(const InputConditionContainer& c);
 
 	virtual int load(const iRICLib::H5CgnsConditionGroup& group) = 0;
-	virtual int save() = 0;
+	virtual int save(iRICLib::H5CgnsConditionGroup* group) = 0;
 	virtual void clear() = 0;
 
 	virtual QVariant variantValue() const = 0;

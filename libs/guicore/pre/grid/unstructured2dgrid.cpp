@@ -21,6 +21,7 @@
 #include <iriclib.h>
 #include <vector>
 
+#include <h5cgnsbase.h>
 #include <h5cgnsgridcoordinates.h>
 #include <h5cgnszone.h>
 #include <iriclib_errorcodes.h>
@@ -65,7 +66,7 @@ void Unstructured2DGrid::setVertex(unsigned int index, const QPointF& v)
 	vtkGrid()->GetPoints()->SetPoint(index, v.x(), v.y(), 0);
 }
 
-bool Unstructured2DGrid::loadFromCgnsFile(const iRICLib::H5CgnsZone& zone)
+int Unstructured2DGrid::loadFromCgnsFile(const iRICLib::H5CgnsZone& zone)
 {
 	auto size = zone.size();
 
@@ -76,10 +77,10 @@ bool Unstructured2DGrid::loadFromCgnsFile(const iRICLib::H5CgnsZone& zone)
 	int ier = 0;
 
 	ier = zone.gridCoordinates()->readCoordinatesX(&xvec);
-	if (ier != IRIC_NO_ERROR) {return false;}
+	if (ier != IRIC_NO_ERROR) {return ier;}
 
 	ier = zone.gridCoordinates()->readCoordinatesY(&yvec);
-	if (ier != IRIC_NO_ERROR) {return false;}
+	if (ier != IRIC_NO_ERROR) {return ier;}
 
 	auto points = vtkSmartPointer<vtkPoints>::New();
 	points->SetDataTypeToDouble();
@@ -91,7 +92,9 @@ bool Unstructured2DGrid::loadFromCgnsFile(const iRICLib::H5CgnsZone& zone)
 
 	// load connectivity data
 	std::vector<int> indices;
-	zone.readTriangleElements(&indices);
+	ier = zone.readTriangleElements(&indices);
+	if (ier != IRIC_NO_ERROR) {return ier;}
+
 	for (unsigned int i = 0; i < indices.size(); i += 3) {
 		int id0 = indices.at(i * 3 + 0);
 		int id1 = indices.at(i * 3 + 1);
@@ -104,114 +107,23 @@ bool Unstructured2DGrid::loadFromCgnsFile(const iRICLib::H5CgnsZone& zone)
 		grid->InsertNextCell(triangle->GetCellType(), triangle->GetPointIds());
 	}
 
-	loadGridAttributes(zone);
+	ier = loadGridAttributes(*(zone.gridAttributes()));
+	if (ier != IRIC_NO_ERROR) {return ier;}
 
 	grid->BuildLinks();
-	return true;
+
+	return IRIC_NO_ERROR;;
 }
 
-bool Unstructured2DGrid::loadFromCgnsFile(const int fn, int B, int Z)
+int Unstructured2DGrid::saveToCgnsFile(iRICLib::H5CgnsBase* base, const std::string& zoneName)
 {
 	int ier;
-	cgsize_t size[9];
-	char buffer[ProjectCgnsFile::BUFFERLEN];
-	ier = cg_zone_read(fn, B, Z, buffer, size);
+	std::vector<int> sizes;
+	sizes.push_back(vtkGrid()->GetNumberOfPoints());
+	sizes.push_back(vtkGrid()->GetNumberOfCells());
 
-	if (ier != 0) {return false;}
-	// for unstructured 2d grid, size[0] = NVertex, size[1] = NCell
-	vtkUnstructuredGrid* grid = dynamic_cast<vtkUnstructuredGrid*>(vtkGrid());
-	grid->Initialize();
+	auto zone = base->createZone(zoneName, iRICLib::H5CgnsZone::Type::Unstructured, sizes);
 
-	ier = cg_goto(fn, B, "Zone_t", Z, "GridCoordinates", 0, "end");
-	if (ier != 0) {
-		// grid data does not exists.
-		return false;
-	}
-	// the first one must be X.
-	DataType_t dType;
-	int narrays;
-	int dim;
-	cgsize_t dimV[3];
-	cg_narrays(&narrays);
-	ier = cg_array_info(1, buffer, &dType, &dim, dimV);
-	std::vector<double> dataX(size[0], 0);
-	std::vector<double> dataY(size[0], 0);
-	ier = cg_array_read_as(1, RealDouble, dataX.data());
-	ier = cg_array_read_as(2, RealDouble, dataY.data());
-
-	vtkPoints* points = vtkPoints::New();
-	points->SetDataTypeToDouble();
-	auto offset = this->offset();
-	for (int i = 0; i < size[0]; ++i) {
-		points->InsertNextPoint(dataX[i] - offset.x(), dataY[i] - offset.y(), 0);
-	}
-	grid->SetPoints(points);
-	points->Delete();
-
-	// Grid coordinates are loaded.
-	// load grid node connectivity data.
-	// Unstructured grid that consists of triangles is supported.
-
-	int numSections;
-	cg_nsections(fn, B, Z, &numSections);
-	for (int S = 1; S <= numSections; ++S) {
-		ElementType_t eType;
-		cgsize_t startIndex, endIndex;
-		int nBndry, parent_flag;
-		cg_section_read(fn, B, Z, S, buffer, &eType, &startIndex, &endIndex, &nBndry, &parent_flag);
-		if (QString(buffer) == ELEMNODENAME) {
-			// the target element node found!
-			// eType must be TRI3.
-			cgsize_t numCells;
-			cg_ElementDataSize(fn, B, Z, S, &numCells);
-			numCells = numCells / 3;
-			std::vector<cgsize_t> elements(3 * numCells, 0);
-			cg_elements_read(fn, B, Z, S, elements.data(), NULL);
-			grid->Allocate(numCells);
-			for (int i = 0; i < numCells; ++i) {
-				vtkSmartPointer<vtkTriangle> triangle = vtkSmartPointer<vtkTriangle>::New();
-				int id0 = elements[i * 3] - 1;
-				int id1 = elements[i * 3 + 1] - 1;
-				int id2 = elements[i * 3 + 2] - 1;
-				triangle->GetPointIds()->SetId(0, id0);
-				triangle->GetPointIds()->SetId(1, id1);
-				triangle->GetPointIds()->SetId(2, id2);
-				grid->InsertNextCell(triangle->GetCellType(), triangle->GetPointIds());
-			}
-		}
-	}
-	// loadGridAttributes(fn, B, Z);
-
-	grid->BuildLinks();
-	return true;
-}
-
-bool Unstructured2DGrid::saveToCgnsFile(const int fn, int B, const char* zonename)
-{
-	int ier;
-	cgsize_t sizes[9];
-	// Check whether the corresponsing zone already exists.
-	int zoneid = zoneId(zonename, fn, B, sizes);
-	if (zoneid != 0) {
-		// Zone already exists! remove this zone first!
-		ier = cg_delete_node(const_cast<char*>(iRIC::toStr(zonename).c_str()));
-		if (ier != 0) {return false;}
-	}
-	// Now, create new zone.
-	sizes[0] = vtkGrid()->GetNumberOfPoints();
-	sizes[1] = vtkGrid()->GetNumberOfCells();
-	sizes[2] = 0;
-	sizes[3] = 0;
-	sizes[4] = 0;
-	sizes[5] = 0;
-	ier = cg_zone_write(fn, B, iRIC::toStr(zonename).c_str(), sizes, Unstructured, &zoneid);
-	if (ier != 0) {return false;}
-
-	// save grid coordinates.
-	int G;
-	ier = cg_grid_write(fn, B, zoneid, "GridCoordinates", &G);
-	if (ier != 0) {return false;}
-	int C;
 	// save coordinates.
 	std::vector<double> dataX(vtkGrid()->GetNumberOfPoints(), 0);
 	std::vector<double> dataY(vtkGrid()->GetNumberOfPoints(), 0);
@@ -223,32 +135,27 @@ bool Unstructured2DGrid::saveToCgnsFile(const int fn, int B, const char* zonenam
 		dataX[i] = points[0] + offset.x();
 		dataY[i] = points[1] + offset.y();
 	}
-	ier = cg_coord_write(fn, B, zoneid, RealDouble, "CoordinateX", dataX.data(), &C);
-	if (ier != 0) {return false;}
-	ier = cg_coord_write(fn, B, zoneid, RealDouble, "CoordinateY", dataY.data(), &C);
-	if (ier != 0) {return false;}
+	ier = zone->gridCoordinates()->writeCoordinatesX(dataX);
+	if (ier != IRIC_NO_ERROR) {return ier;}
 
-	// Grid coordinates are saved.
+	ier = zone->gridCoordinates()->writeCoordinatesY(dataY);
+	if (ier != IRIC_NO_ERROR) {return ier;}
+
 	// Save grid node connectivity data.
 	// Unstructured grid that consists of triangles is supported.
-
-	std::vector<cgsize_t> elements(3 * vtkGrid()->GetNumberOfCells());
+	std::vector<int> indices(vtkGrid()->GetNumberOfCells() * 3, 0);
 	for (int i = 0; i < vtkGrid()->GetNumberOfCells(); ++i) {
 		vtkTriangle* tri = dynamic_cast<vtkTriangle*>(vtkGrid()->GetCell(i));
-		elements[i * 3]     = tri->GetPointId(0) + 1;
-		elements[i * 3 + 1] = tri->GetPointId(1) + 1;
-		elements[i * 3 + 2] = tri->GetPointId(2) + 1;
+		indices[i * 3]     = tri->GetPointId(0) + 1;
+		indices[i * 3 + 1] = tri->GetPointId(1) + 1;
+		indices[i * 3 + 2] = tri->GetPointId(2) + 1;
 	}
-	int startIndex = 1;
-	int endIndex = startIndex + vtkGrid()->GetNumberOfCells() - 1;
-	int S;
-	ier = cg_section_write(fn, B, zoneid, ELEMNODENAME, TRI_3, startIndex, endIndex, 0, elements.data(), &S);
-	if (ier != 0) {return false;}
+	zone->writeTriangleElements(indices);
 
-	// Next grid related condition data is saved.
-	// Create "GridConditions" node under the zone node.
-	saveGridAttributes(fn, B, zoneid);
-	return true;
+	ier = saveGridAttributes(zone->gridAttributes());
+	if (ier != IRIC_NO_ERROR) {return ier;}
+
+	return IRIC_NO_ERROR;
 }
 
 void Unstructured2DGrid::updateSimplifiedGrid(double xmin, double xmax, double ymin, double ymax)

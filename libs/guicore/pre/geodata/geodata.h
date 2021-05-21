@@ -42,6 +42,8 @@ class QMouseEvent;
 class QWidget;
 class GridAttributeDimensionsContainer;
 
+#include <h5cgnsgeographicdatagroup.h>
+
 class GUICOREDLL_EXPORT GeoData : public ProjectDataItem
 {
 	Q_OBJECT
@@ -125,7 +127,6 @@ public:
 
 	virtual GeoDataProxy* getProxy();
 
-	void saveToCgnsFile(const int fn) override;
 	void applyOffset(double x, double y);
 	virtual bool requestCoordinateSystem() const;
 
@@ -163,9 +164,11 @@ protected:
 
 	MouseBoundingBox* mouseBoundingBox();
 	PreProcessorDataModelInterface* dataModel() const;
+
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
-	virtual int iRICLibType() const;
+
+	virtual iRICLib::H5CgnsGeographicDataGroup::Type iRICLibType() const;
 	GridAttributeDimensionsContainer* dimensions() const;
 
 	Setting m_setting;

@@ -20,7 +20,7 @@ public:
 	void initForSolverDefinition();
 	void loadFromCgnsFile(const int fn) override;
 	void saveToCgnsFile(const int fn) override;
-	void updateCgnsFileOtherThanGrids() override;
+	int updateCgnsFileOtherThanGrids() override;
 	void closeCgnsFile() override;
 	QStringList containedFiles() override;
 	bool isGridEdited() const;

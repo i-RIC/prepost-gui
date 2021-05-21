@@ -2291,6 +2291,11 @@ bool GeoDataPointmap::pointsUsedForBreakLines(const QVector<vtkIdType>& points)
 	return false;
 }
 
+iRICLib::H5CgnsGeographicDataGroup::Type GeoDataPointmap::iRICLibType() const
+{
+	return iRICLib::H5CgnsGeographicDataGroup::Type::Pointmap;
+}
+
 void GeoDataPointmap::TSplineSTL(std::vector<double>& x, std::vector<double>& y, int n,
 								std::vector<double>& xout, std::vector<double>& yout, int iout, float sigma,
 								std::vector<double>& yp, std::vector<double>& temp)

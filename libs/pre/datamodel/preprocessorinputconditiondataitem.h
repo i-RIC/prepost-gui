@@ -15,8 +15,8 @@ public:
 	PreProcessorInputConditionDataItem(GraphicsWindowDataItem* parent);
 	~PreProcessorInputConditionDataItem();
 
-	void loadFromCgnsFile(const int fn) override;
-	void saveToCgnsFile(const int fn) override;
+	int loadFromCgnsFile() override;
+	int saveToCgnsFile() override;
 	int updateCgnsFileOtherThanGrids() override;
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;

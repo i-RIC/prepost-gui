@@ -30,6 +30,7 @@
 #include <QSettings>
 #include <QTextStream>
 
+#include <h5cgnsbase.h>
 #include <h5cgnsgridcoordinates.h>
 #include <h5cgnszone.h>
 #include <iriclib_errorcodes.h>
@@ -115,7 +116,7 @@ void Structured2DGrid::setVertex(unsigned int index, const QPointF& v)
 	vtkGrid()->GetPoints()->SetPoint(index, v.x(), v.y(), 0);
 }
 
-bool Structured2DGrid::loadFromCgnsFile(const iRICLib::H5CgnsZone& zone)
+int Structured2DGrid::loadFromCgnsFile(const iRICLib::H5CgnsZone& zone)
 {
 	auto size = zone.size();
 
@@ -129,10 +130,10 @@ bool Structured2DGrid::loadFromCgnsFile(const iRICLib::H5CgnsZone& zone)
 	int ier = 0;
 
 	ier = zone.gridCoordinates()->readCoordinatesX(&xvec);
-	if (ier != IRIC_NO_ERROR) {return false;}
+	if (ier != IRIC_NO_ERROR) {return ier;}
 
 	ier = zone.gridCoordinates()->readCoordinatesY(&yvec);
-	if (ier != IRIC_NO_ERROR) {return false;}
+	if (ier != IRIC_NO_ERROR) {return ier;}
 
 	auto points = vtkSmartPointer<vtkPoints>::New();
 	points->SetDataTypeToDouble();
@@ -144,116 +145,44 @@ bool Structured2DGrid::loadFromCgnsFile(const iRICLib::H5CgnsZone& zone)
 	}
 	grid->SetPoints(points);
 
-	loadGridAttributes(zone);
+	ier = loadGridAttributes(*(zone.gridAttributes()));
+	if (ier != IRIC_NO_ERROR) {return ier;}
 
-	return true;
+	return IRIC_NO_ERROR;
 }
 
-bool Structured2DGrid::loadFromCgnsFile(const int fn, int base, int zoneid)
-{
-	return true;
-
-	/*
-	m_dimensionI = 0;
-	m_dimensionJ = 0;
-
-	int ier;
-	cgsize_t size[9];
-	char buffer[ProjectCgnsFile::BUFFERLEN];
-	ier = cg_zone_read(fn, base, zoneid, buffer, size);
-	if (ier != 0) {return false;}
-	// for structured 2d grid, size[0] = NVertexI, size[1] = NVertexJ.
-	m_dimensionI = size[0];
-	m_dimensionJ = size[1];
-
-	// prepare memory area.
-	vtkStructuredGrid* grid = vtkGrid();
-	grid->SetDimensions(m_dimensionI, m_dimensionJ, 1);
-	ier = cg_goto(fn, base, "Zone_t", zoneid, "GridCoordinates", 0, "end");
-	if (ier != 0) {
-		// grid data does not exists.
-		return false;
-	}
-	// the first one must be X.
-	DataType_t dType;
-	int narrays;
-	int dim;
-	cgsize_t dimV[3];
-	cg_narrays(&narrays);
-	ier = cg_array_info(1, buffer, &dType, &dim, dimV);
-	std::vector<double> dataX(m_dimensionI * m_dimensionJ, 0);
-	std::vector<double> dataY(m_dimensionI * m_dimensionJ, 0);
-
-	cg_array_read_as(1, RealDouble, dataX.data());
-	cg_array_read_as(2, RealDouble, dataY.data());
-
-	vtkPoints* points = vtkPoints::New();
-	points->SetDataTypeToDouble();
-	auto offset = this->offset();
-	for (unsigned int j = 0; j < m_dimensionJ; ++j) {
-		for (unsigned int i = 0; i < m_dimensionI; ++i) {
-			points->InsertNextPoint(dataX[m_dimensionI * j + i] - offset.x(), dataY[m_dimensionI * j + i] - offset.y(), 0);
-		}
-	}
-	grid->SetPoints(points);
-	points->Delete();
-
-	// Grid coordinates are loaded.
-	// Next, grid related condition data is loaded.
-	loadGridAttributes(fn, base, zoneid);
-	return true;
-	*/
-}
-
-bool Structured2DGrid::saveToCgnsFile(const int fn, int B, const char* zonename)
+int Structured2DGrid::saveToCgnsFile(iRICLib::H5CgnsBase* base, const std::string& zoneName)
 {
 	int ier;
-	cgsize_t sizes[9];
-	// Check whether the corresponsing zone already exists.
-	int zoneid = zoneId(zonename, fn, B, sizes);
-	if (zoneid != 0) {
-		// Zone already exists! remove this zone first!
-		ier = cg_delete_node(const_cast<char*>(iRIC::toStr(zonename).c_str()));
-		if (ier != 0) {return false;}
-	}
-	// Now, create new zone.
-	sizes[0] = m_dimensionI;
-	sizes[1] = m_dimensionJ;
-	sizes[2] = m_dimensionI - 1;
-	sizes[3] = m_dimensionJ - 1;
-	sizes[4] = 0;
-	sizes[5] = 0;
-	ier = cg_zone_write(fn, B, iRIC::toStr(zonename).c_str(), sizes, Structured, &zoneid);
-	if (ier != 0) {return false;}
+	std::vector<int> sizes;
+	sizes.push_back(m_dimensionI);
+	sizes.push_back(m_dimensionJ);
+	sizes.push_back(m_dimensionI - 1);
+	sizes.push_back(m_dimensionJ - 1);
 
-	// save grid coordinates.
-	int G;
-	ier = cg_grid_write(fn, B, zoneid, "GridCoordinates", &G);
-	if (ier != 0) {return false;}
-	int C;
+	auto zone = base->createZone(zoneName, iRICLib::H5CgnsZone::Type::Structured, sizes);
+
 	// save coordinates.
-	std::vector<double> dataX(m_dimensionI * m_dimensionJ, 0);
-	std::vector<double> dataY(m_dimensionI * m_dimensionJ, 0);
+	std::vector<double> dataX(vtkGrid()->GetNumberOfPoints(), 0);
+	std::vector<double> dataY(vtkGrid()->GetNumberOfPoints(), 0);
 	auto offset = this->offset();
 	double points[3];
 
-	for (unsigned int i = 0; i < m_dimensionI; ++i) {
-		for (unsigned int j = 0; j < m_dimensionJ; ++j) {
-			vtkGrid()->GetPoints()->GetPoint(i + m_dimensionI * j, points);
-			dataX[i + m_dimensionI * j] = points[0] + offset.x();
-			dataY[i + m_dimensionI * j] = points[1] + offset.y();
-		}
+	for (int i = 0; i < vtkGrid()->GetNumberOfPoints(); ++i) {
+		vtkGrid()->GetPoints()->GetPoint(i, points);
+		dataX[i] = points[0] + offset.x();
+		dataY[i] = points[1] + offset.y();
 	}
-	ier = cg_coord_write(fn, B, zoneid, RealDouble, "CoordinateX", dataX.data(), &C);
-	if (ier != 0) {return false;}
-	ier = cg_coord_write(fn, B, zoneid, RealDouble, "CoordinateY", dataY.data(), &C);
-	if (ier != 0) {return false;}
+	ier = zone->gridCoordinates()->writeCoordinatesX(dataX);
+	if (ier != IRIC_NO_ERROR) {return ier;}
 
-	// Grid coordinates are saved.
-	// Next grid related condition data is saved.
-	// Create "GridConditions" node under the zone node.
-	saveGridAttributes(fn, B, zoneid);
-	return true;
+	ier = zone->gridCoordinates()->writeCoordinatesY(dataY);
+	if (ier != IRIC_NO_ERROR) {return ier;}
+
+	ier = saveGridAttributes(zone->gridAttributes());
+	if (ier != IRIC_NO_ERROR) {return ier;}
+
+	return IRIC_NO_ERROR;
 }
 
 void Structured2DGrid::dimensions(unsigned int* i, unsigned int* j)

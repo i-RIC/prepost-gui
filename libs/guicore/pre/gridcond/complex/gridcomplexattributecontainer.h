@@ -29,9 +29,6 @@ public:
 
 	std::vector<GridComplexConditionGroup*> groups() const;
 
-protected:
-	DataType_t dataType() const override;
-
 private:
 	SolverDefinitionGridComplexAttribute* gridAttribute() const;
 };

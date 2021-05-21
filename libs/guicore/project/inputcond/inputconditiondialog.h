@@ -31,9 +31,9 @@ public:
 	void setFileName(const QString& fileName) {m_fileName = fileName;}
 	void setWorkFolder(const QString& workFolder) {m_workFolder = workFolder;}
 	/// Load data fron CGNS file.
-	void load(const iRICLib::H5CgnsConditionGroup& group);
+	int load(const iRICLib::H5CgnsConditionGroup& group);
 	/// Save data into CGNS file.
-	void save(const int fn);
+	int save(iRICLib::H5CgnsConditionGroup* group);
 	/// Import input condition from CGNS file.
 	bool importFromCgns(const QString& filename);
 	/// Import input condition from yaml file.

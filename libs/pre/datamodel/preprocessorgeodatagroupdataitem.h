@@ -70,8 +70,8 @@ public:
 	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	bool polygonExists() const;
-	void saveToCgnsFile(const int fn) override;
-	virtual void saveComplexGroupsToCgnsFile(const int fn);
+	int saveToCgnsFile() override;
+	virtual int saveComplexGroupsToCgnsFile();
 	void setupStringConverter(GridAttributeStringConverter* converter) override;
 	void setupEditWidget(GridAttributeEditWidget* widget) override;
 	void updateCrossectionWindows() override;

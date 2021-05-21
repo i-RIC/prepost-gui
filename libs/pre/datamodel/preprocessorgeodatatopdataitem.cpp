@@ -39,7 +39,7 @@
 #include <vtkSphereSource.h>
 #include <vtkTextProperty.h>
 
-#include <iriclib.h>
+#include <iriclib_errorcodes.h>
 
 #include <map>
 
@@ -466,16 +466,17 @@ void PreProcessorGeoDataTopDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGr
 	v->standardMouseReleaseEvent(event);
 }
 
-void PreProcessorGeoDataTopDataItem::saveToCgnsFile(const int fn)
+int PreProcessorGeoDataTopDataItem::saveToCgnsFile()
 {
-	cg_iRIC_GotoRawDataTop(fn);
-	GraphicsWindowDataItem::saveToCgnsFile(fn);
+	int ier = GraphicsWindowDataItem::saveToCgnsFile();
+	if (ier != IRIC_NO_ERROR) {return ier;}
 
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
-		PreProcessorGeoDataGroupDataItem* gItem =
-			dynamic_cast<PreProcessorGeoDataGroupDataItem*>(*it);
-		gItem->saveComplexGroupsToCgnsFile(fn);
+	for (auto child : m_childItems) {
+		auto gItem = dynamic_cast<PreProcessorGeoDataGroupDataItem*>(child);
+		int ier = gItem->saveComplexGroupsToCgnsFile();
+		if (ier != IRIC_NO_ERROR) {return ier;}
 	}
+	return IRIC_NO_ERROR;
 }
 
 void PreProcessorGeoDataTopDataItem::setDimensionsToFirst()

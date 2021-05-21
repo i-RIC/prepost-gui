@@ -17,13 +17,15 @@ const std::vector<double>& PostSeriesDataContainer::data() const
 	return m_data;
 }
 
-void PostSeriesDataContainer::update(const int fn)
+int PostSeriesDataContainer::update()
 {
-	loadFromCgnsFile(fn);
+	return loadFromCgnsFile();
 }
 
-void PostSeriesDataContainer::loadFromCgnsFile(const int fn)
+int PostSeriesDataContainer::loadFromCgnsFile()
 {
-	loadData(fn);
+	int ier = loadData();
 	emit dataUpdated();
+
+	return ier;
 }

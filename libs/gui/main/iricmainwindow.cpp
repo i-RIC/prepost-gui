@@ -790,7 +790,7 @@ bool iRICMainWindow::saveProject(const QString& filename, bool folder)
 			ret = mainfile->saveCgnsFile();
 		} else {
 			int ier = mainfile->updateCgnsFileOtherThanGrids();
-			ret = (ier == iRIC_NO_ERROR);
+			ret = (ier == IRIC_NO_ERROR);
 		}
 		if (ret) {ret = m_projectData->mainfile()->saveExceptCGNS();}
 	}
@@ -2407,16 +2407,16 @@ QStringList iRICMainWindow::containedFiles() const
 	return pre->projectDataItem()->containedFiles();
 }
 
-void iRICMainWindow::loadFromCgnsFile(const int fn)
+int iRICMainWindow::loadFromCgnsFile()
 {
-	PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*>(m_preProcessorWindow);
-	pre->projectDataItem()->loadFromCgnsFile(fn);
+	auto pre = dynamic_cast<PreProcessorWindow*>(m_preProcessorWindow);
+	return pre->projectDataItem()->loadFromCgnsFile();
 }
 
-void iRICMainWindow::saveToCgnsFile(const int fn)
+int iRICMainWindow::saveToCgnsFile()
 {
-	PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*>(m_preProcessorWindow);
-	pre->projectDataItem()->saveToCgnsFile(fn);
+	auto pre = dynamic_cast<PreProcessorWindow*>(m_preProcessorWindow);
+	return pre->projectDataItem()->saveToCgnsFile();
 }
 
 int iRICMainWindow::updateCgnsFileOtherThanGrids()

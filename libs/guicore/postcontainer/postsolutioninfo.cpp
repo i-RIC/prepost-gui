@@ -139,9 +139,10 @@ int PostSolutionInfo::currentStep() const
 	return m_currentStep;
 }
 
-bool PostSolutionInfo::setCurrentStep(unsigned int step, int fn)
+int PostSolutionInfo::setCurrentStep(unsigned int step)
 {
-	bool ok = open();
+	int ier = open();
+	if (ier != IRIC_NO_ERROR) {return ier;}
 
 	static bool dialogShowing = false;
 	m_currentStep = step;
@@ -191,7 +192,8 @@ bool PostSolutionInfo::setCurrentStep(unsigned int step, int fn)
 		QMessageBox::critical(projectData()->mainWindow(), tr("Error"), tr("Error occured while loading calculation result."));
 		dialogShowing = false;
 	}
-	return true;
+
+	return IRIC_NO_ERROR;
 }
 
 void PostSolutionInfo::informStepsUpdated()
@@ -460,9 +462,10 @@ void PostSolutionInfo::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 	writeZonesToProjectMainFile(3, zoneContainers3D(), writer);
 }
 
-void PostSolutionInfo::loadFromCgnsFile(const int fn)
+int PostSolutionInfo::loadFromCgnsFile()
 {
-	open();
+	int ier = open();
+	if (ier != IRIC_NO_ERROR) {return ier;}
 
 	m_currentStep = 0;
 	if (m_timeSteps != nullptr) {
@@ -475,6 +478,7 @@ void PostSolutionInfo::loadFromCgnsFile(const int fn)
 		m_iterationSteps->loadFromCgnsFile(*cgnsFile());
 		m_iterationSteps->blockSignals(false);
 	}
+	int fn = 0;
 	setCurrentStep(currentStep(), fn);
 }
 
@@ -919,15 +923,15 @@ void PostSolutionInfo::exportCalculationResult(const std::string& folder, const 
 	setCurrentStep(stepBackup);
 }
 
-bool PostSolutionInfo::open()
+int PostSolutionInfo::open()
 {
-	if (m_cgnsFile != nullptr) {return true;}
+	if (m_cgnsFile != nullptr) {return IRIC_NO_ERROR;}
 
 	try {
 		m_cgnsFile = new iRICLib::H5CgnsFile(iRIC::toStr(currentCgnsFileName()), iRICLib::H5CgnsFile::Mode::OpenReadOnly);
-		return true;
+		return IRIC_NO_ERROR;
 	} catch (...) {
-		return false;
+		return IRIC_H5_OPEN_FAIL;
 	}
 }
 

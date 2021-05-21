@@ -277,16 +277,6 @@ GeoDataProxy* GeoData::getProxy()
 	return nullptr;
 }
 
-void GeoData::saveToCgnsFile(const int)
-{
-	QString filename = relativeFilename();
-	cgsize_t strlen = filename.length() + 1;
-	int type = iRICLibType();
-	cgsize_t valuelen = 1;
-	cg_array_write("filename", Character, 1, &strlen, iRIC::toStr(filename).c_str());
-	cg_array_write("type", Integer, 1, &valuelen, &type);
-}
-
 void GeoData::viewOperationEndedGlobal(PreProcessorGraphicsViewInterface*)
 {}
 
@@ -428,9 +418,9 @@ void GeoData::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 	m_setting.save(writer);
 }
 
-int GeoData::iRICLibType() const
+iRICLib::H5CgnsGeographicDataGroup::Type GeoData::iRICLibType() const
 {
-	return IRIC_GEO_UNKNOWN;
+	return iRICLib::H5CgnsGeographicDataGroup::Type::Unknown;
 }
 
 GridAttributeDimensionsContainer* GeoData::dimensions() const

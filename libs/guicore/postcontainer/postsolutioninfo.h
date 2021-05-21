@@ -43,7 +43,7 @@ public:
 	bool hasResults();
 	/// Emit signal cgnsStepsUpdated().
 	void informCgnsSteps();
-	void loadFromCgnsFile(const int fn) override;
+	int loadFromCgnsFile() override;
 	void closeCgnsFile() override;
 
 	const QList<PostZoneDataContainer*>& zoneContainers1D() const;
@@ -69,7 +69,7 @@ public:
 
 	static int toIntDimension(Dimension dim);
 	static Dimension fromIntDimension(int dim);
-	bool open();
+	int open();
 	void close();
 
 	const PostExportSetting& exportSetting() const;
@@ -89,7 +89,7 @@ public:
 public slots:
 	void informSolverStart();
 	void informSolverFinish();
-	bool setCurrentStep(unsigned int step, int fn = 0);
+	int setCurrentStep(unsigned int step);
 	void checkCgnsStepsUpdate();
 	void exportCalculationResult();
 

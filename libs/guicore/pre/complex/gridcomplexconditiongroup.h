@@ -36,10 +36,8 @@ public:
 	GridComplexConditionGroup(SolverDefinition* def, const QDomElement& elem);
 	~GridComplexConditionGroup();
 
-	void setNameAndNumber(const std::string& name, int number);
-
-	void load(const iRICLib::H5CgnsConditionGroup& group);
-	void save();
+	int load(const iRICLib::H5CgnsConditionGroup& group);
+	int save(iRICLib::H5CgnsConditionGroup* group);
 
 	QWidget* widget() const;
 	InputConditionContainerSet* containerSet() const;

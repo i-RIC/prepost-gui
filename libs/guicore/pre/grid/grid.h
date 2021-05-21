@@ -7,13 +7,8 @@
 
 #include <QList>
 #include <QMap>
-#include <cgnslib.h>
 
 #include <string>
-
-#if CGNS_VERSION < 3100
-#define cgsize_t int
-#endif
 
 class SolverDefinition;
 class QLocale;
@@ -28,6 +23,8 @@ class vtkAlgorithm;
 class vtkPointSet;
 
 namespace iRICLib {
+	class H5CgnsBase;
+	class H5CgnsGridAttributes;
 	class H5CgnsZone;
 } // namespace iRICLib
 
@@ -54,11 +51,8 @@ public:
 
 	void setParent(QObject* parent);
 
-	void loadFromCgnsFile(const int fn) override;
-	virtual bool loadFromCgnsFile(const iRICLib::H5CgnsZone& zone) = 0;
-	virtual bool loadFromCgnsFile(const int fn, int base, int zoneid) = 0;
-	void saveToCgnsFile(const int fn) override;
-	virtual bool saveToCgnsFile(const int fn, int base, const char* zonename) = 0;
+	virtual int loadFromCgnsFile(const iRICLib::H5CgnsZone& zone) = 0;
+	virtual int saveToCgnsFile(iRICLib::H5CgnsBase* base, const std::string& zoneName) = 0;
 
 	vtkPointSet* vtkGrid() const;
 
@@ -91,9 +85,8 @@ public:
 	static void getCullSetting(bool* enable, int* cellLimit, int* indexLimit);
 
 protected:
-	bool loadGridAttributes(const iRICLib::H5CgnsZone& zone);
-	bool saveGridAttributes(int fn, int B, int Z);
-	static int zoneId(const std::string& zonename, int fn, int B, cgsize_t sizes[9]);
+	int loadGridAttributes(const iRICLib::H5CgnsGridAttributes& atts);
+	int saveGridAttributes(iRICLib::H5CgnsGridAttributes* atts);
 
 	void setMasked(bool masked);
 	void setFilteredShapeAlgorithm(vtkAlgorithm* algo);

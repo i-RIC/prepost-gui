@@ -29,8 +29,6 @@
 #include <QToolBar>
 #include <QXmlStreamWriter>
 
-#include <cgnslib.h>
-
 PreProcessorGeoDataDataItem::PreProcessorGeoDataDataItem(PreProcessorDataItem* parent) :
 	PreProcessorGeoDataDataItemInterface {"", QIcon(":/libs/guibase/images/iconPaper.png"), parent},
 	m_geoData {nullptr},
@@ -121,7 +119,7 @@ void PreProcessorGeoDataDataItem::exportGeoData()
 {
 	QMainWindow* mainW = projectData()->mainWindow();
 
-	auto& exps = m_geoData->exporters();
+	auto exps = m_geoData->exporters();
 	QStringList filters;
 	QList<GeoDataExporter*> exporters;
 	for (auto exp_it = exps.begin(); exp_it != exps.end(); ++exp_it) {
@@ -294,15 +292,6 @@ bool PreProcessorGeoDataDataItem::isExportAvailable()
 void PreProcessorGeoDataDataItem::innerUpdate2Ds()
 {
 	m_geoData->update2Ds();
-}
-
-void PreProcessorGeoDataDataItem::saveToCgnsFile(const int fn)
-{
-	std::string idxstr =  iRIC::toStr(QString::number(m_index));
-	cg_user_data_write(idxstr.c_str());
-	cg_gorel(fn, idxstr.c_str(), 0, NULL);
-	m_geoData->saveToCgnsFile(fn);
-	cg_gorel(fn, "..", 0, NULL);
 }
 
 void PreProcessorGeoDataDataItem::doViewOperationEndedGlobal(VTKGraphicsView* v)

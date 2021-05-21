@@ -15,7 +15,7 @@ class GridAttributeDimensionContainerT : public GridAttributeDimensionContainer
 {
 public:
 	GridAttributeDimensionContainerT(SolverDefinitionGridAttributeDimension* def);
-	virtual ~GridAttributeDimensionContainerT();
+	~GridAttributeDimensionContainerT() override;
 
 	const std::vector<V>& values() const;
 	std::vector<V>& values();
@@ -33,8 +33,8 @@ public:
 
 	bool loadFromExternalFile(const QString& filename) override;
 	bool saveToExternalFile(const QString& filename) override;
-	bool loadFromCgnsFile(int fn, int B, int Z) override;
-	bool saveToCgnsFile(int fn, int B, int Z) override;
+	int loadFromCgnsFile(const iRICLib::H5CgnsGridAttributes& atts) override;
+	int saveToCgnsFile(iRICLib::H5CgnsGridAttributes* atts) override;
 
 private:
 	virtual DataType_t dataType() const = 0;

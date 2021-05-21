@@ -94,22 +94,27 @@ void InputConditionDialog::setup(const SolverDefinition& def, const QLocale& loc
 	ui->m_pageList->selectFirstItem();
 }
 
-void InputConditionDialog::load(const iRICLib::H5CgnsConditionGroup& group)
+int InputConditionDialog::load(const iRICLib::H5CgnsConditionGroup& group)
 {
-	m_containerSet->load(group);
+	int ier = m_containerSet->load(group);
+	if (ier != IRIC_NO_ERROR) {return ier;}
 	m_containerSetBackup->copyValues(m_containerSet);
 
 	// select the first page.
 	ui->m_pageList->selectFirstItem();
 	m_modified = false;
+
+	return IRIC_NO_ERROR;
 }
 
-void InputConditionDialog::save(const int fn)
+int InputConditionDialog::save(iRICLib::H5CgnsConditionGroup* group)
 {
-	cg_iRIC_GotoCC(fn);
-	m_containerSet->save();
+	int ier = m_containerSet->save(group);
+	if (ier != IRIC_NO_ERROR) {return ier;}
 	m_containerSetBackup->copyValues(m_containerSet);
 	m_modified = false;
+
+	return IRIC_NO_ERROR;
 }
 
 bool InputConditionDialog::importFromCgns(const QString& filename)

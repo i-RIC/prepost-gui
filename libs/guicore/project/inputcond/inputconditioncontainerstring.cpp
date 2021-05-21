@@ -89,16 +89,9 @@ int InputConditionContainerString::load(const iRICLib::H5CgnsConditionGroup& gro
 	return ret;
 }
 
-int InputConditionContainerString::save()
+int InputConditionContainerString::save(iRICLib::H5CgnsConditionGroup* group)
 {
-	std::string value = impl->m_value.toUtf8().constData();
-	if (isBoundaryCondition()) {
-		return cg_iRIC_Write_BC_String(toC(bcName()), bcIndex(), toC(name()), toC(value));
-	} else if (isComplexCondition()) {
-		return cg_iRIC_Write_Complex_String(toC(complexName()), complexIndex(), toC(name()), toC(value));
-	} else {
-		return cg_iRIC_Write_String(toC(name()), toC(value));
-	}
+	return group->writeString(name(), iRIC::toStr(impl->m_value));
 }
 
 void InputConditionContainerString::clear()

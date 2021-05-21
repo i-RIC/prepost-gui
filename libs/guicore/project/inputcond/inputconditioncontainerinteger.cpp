@@ -84,15 +84,9 @@ int InputConditionContainerInteger::load(const iRICLib::H5CgnsConditionGroup& gr
 	return ret;
 }
 
-int InputConditionContainerInteger::save()
+int InputConditionContainerInteger::save(iRICLib::H5CgnsConditionGroup* group)
 {
-	if (isBoundaryCondition()) {
-		return cg_iRIC_Write_BC_Integer(toC(bcName()), bcIndex(), toC(name()), impl->m_value);
-	} else if (isComplexCondition()) {
-		return cg_iRIC_Write_Complex_Integer(toC(complexName()), complexIndex(), toC(name()), impl->m_value);
-	} else {
-		return cg_iRIC_Write_Integer(toC(name()), impl->m_value);
-	}
+	return group->writeIntegerValue(name(), impl->m_value);
 }
 
 void InputConditionContainerInteger::clear()

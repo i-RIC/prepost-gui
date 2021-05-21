@@ -21,8 +21,6 @@ public:
 	GeoData* geoData() const override {return m_geoData;}
 	void setGeoData(GeoData* geodata);
 
-	int index() const {return m_index;}
-	void setIndex(int index) {m_index = index;}
 	void addCustomMenuItems(QMenu* menu) override;
 	bool addToolBarButtons(QToolBar* /*parent*/) override;
 	void updateMoveUpDownActions(ObjectBrowserView* view) override;
@@ -48,7 +46,6 @@ public:
 	void moveDown() override;
 	bool setupExportMenu(QMenu* menu);
 	bool isExportAvailable();
-	void saveToCgnsFile(const int fn) override;
 	void setDeleteSilently(bool silent) override;
 	void removeFile();
 
@@ -71,7 +68,6 @@ protected:
 private:
 	/// Action to export current data
 	QAction* m_exportAction;
-	int m_index;
 	bool m_deleteSilently;
 };
 

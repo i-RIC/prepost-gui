@@ -159,18 +159,22 @@ void GraphicsWindowDataItem::handleStandardItemChange()
 	iRICUndoStack::instance().push(new GraphicsWindowDataItemStandardItemChangeCommand(this));
 }
 
-void GraphicsWindowDataItem::loadFromCgnsFile(const int fn)
-{
-	for (GraphicsWindowDataItem* child : m_childItems) {
-		child->loadFromCgnsFile(fn);
-	}
-}
-
-void GraphicsWindowDataItem::saveToCgnsFile(const int fn)
+int GraphicsWindowDataItem::loadFromCgnsFile()
 {
 	for (auto child : m_childItems) {
-		child->saveToCgnsFile(fn);
+		int ier = child->loadFromCgnsFile();
+		if (ier != IRIC_NO_ERROR) {return ier;}
 	}
+	return IRIC_NO_ERROR;
+}
+
+int GraphicsWindowDataItem::saveToCgnsFile()
+{
+	for (auto child : m_childItems) {
+		int ier = child->saveToCgnsFile();
+		if (ier != IRIC_NO_ERROR) {return ier;}
+	}
+	return IRIC_NO_ERROR;
 }
 
 int GraphicsWindowDataItem::updateCgnsFileOtherThanGrids()

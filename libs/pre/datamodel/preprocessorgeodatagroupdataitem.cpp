@@ -61,6 +61,11 @@
 
 #include <cgnslib.h>
 
+#include <h5cgnsbase.h>
+#include <h5cgnsfile.h>
+#include <h5cgnsgeographicdatagroup.h>
+#include <h5cgnsgeographicdatatop.h>
+
 PreProcessorGeoDataGroupDataItem::PreProcessorGeoDataGroupDataItem(SolverDefinitionGridAttribute* cond, PreProcessorDataItem* parent) :
 	PreProcessorGeoDataGroupDataItemInterface {cond, parent},
 	m_webImportAction {new QAction(QIcon(":/libs/guibase/images/iconImport.png"), PreProcessorGeoDataGroupDataItem::tr("&Import from web..."), this)},
@@ -1332,22 +1337,26 @@ bool PreProcessorGeoDataGroupDataItem::polygonExists() const
 	return ret;
 }
 
-void PreProcessorGeoDataGroupDataItem::saveToCgnsFile(const int fn)
+int PreProcessorGeoDataGroupDataItem::saveToCgnsFile()
 {
-	int index = 1;
-	cg_user_data_write(m_condition->name().c_str());
-	cg_gorel(fn, m_condition->name().c_str(), 0, NULL);
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
-		PreProcessorGeoDataDataItem* ritem = dynamic_cast<PreProcessorGeoDataDataItem*>(*it);
-		ritem->setIndex(index);
-		ritem->saveToCgnsFile(fn);
-		++ index;
+	auto cgnsfile = projectData()->mainfile()->cgnsFile();
+	auto gdt = cgnsfile->ccBase()->geoDataTop();
+	auto group = gdt->group(m_condition->name());
+
+	for (auto child : m_childItems) {
+		auto item = dynamic_cast<PreProcessorGeoDataDataItem*>(child);
+		auto geoData = item->geoData();
+
+		int ier = group->add(iRIC::toStr(geoData->relativeFilename()), geoData->type());
+		if (ier != IRIC_NO_ERROR) {return ier;}
 	}
-	cg_gorel(fn, "..", 0, NULL);
+	return IRIC_NO_ERROR;
 }
 
-void PreProcessorGeoDataGroupDataItem::saveComplexGroupsToCgnsFile(const int /*fn*/)
-{}
+int PreProcessorGeoDataGroupDataItem::saveComplexGroupsToCgnsFile()
+{
+	return IRIC_NO_ERROR;
+}
 
 void PreProcessorGeoDataGroupDataItem::setupStringConverter(GridAttributeStringConverter* /*converter*/)
 {}

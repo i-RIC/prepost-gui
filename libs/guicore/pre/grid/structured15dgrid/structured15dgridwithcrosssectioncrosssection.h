@@ -35,8 +35,7 @@ public:
 	Grid* grid() const;
 
 	int loadFromCgnsFile(const iRICLib::H5CgnsZone& zone, int index);
-	void loadFromCgnsFile(int fn, int B, int Z, int index);
-	void saveToCgnsFile(int fn, int B, int Z, int index);
+	int saveToCgnsFile(iRICLib::H5CgnsZone* zone, int index);
 
 	const QString& name() const;
 	const QVector<Altitude>& altitudeInfo() const;

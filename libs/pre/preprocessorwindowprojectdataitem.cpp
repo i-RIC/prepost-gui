@@ -140,9 +140,9 @@ void PreProcessorWindowProjectDataItem::saveToCgnsFile(const int fn)
 	m_preProcessorWindow->m_dataModel->saveToCgnsFile(fn);
 }
 
-void PreProcessorWindowProjectDataItem::updateCgnsFileOtherThanGrids()
+int PreProcessorWindowProjectDataItem::updateCgnsFileOtherThanGrids()
 {
-	m_preProcessorWindow->m_dataModel->updateCgnsFileOtherThanGrids();
+	return m_preProcessorWindow->m_dataModel->updateCgnsFileOtherThanGrids();
 }
 
 void PreProcessorWindowProjectDataItem::closeCgnsFile()

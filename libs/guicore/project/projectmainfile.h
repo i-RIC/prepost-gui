@@ -86,17 +86,17 @@ public:
 	QString currentCgnsFileName() const override;
 	/// Clear the results stored in the current CGNS file.
 	void clearResults();
-	/// Save current cgns file.
-	bool saveCgnsFile();
+
+	int loadFromCgnsFile() override;
+	int saveToCgnsFile() override;
 	int updateCgnsFileOtherThanGrids() override;
+	void closeCgnsFile() override;
+
 	/// Return true when the work data is modified.
 	bool isModified() const;
 	/// PostProcessors.
 	ProjectPostProcessors* postProcessors() const;
-	void loadFromCgnsFile(const int fn) override;
-	void saveToCgnsFile(const int fn) override;
 	void toggleGridEditFlag();
-	void closeCgnsFile() override;
 	/// Background images
 	const std::vector<BackgroundImageInfo*>& backgroundImages() const;
 	/// Measured data
