@@ -1835,7 +1835,7 @@ void iRICMainWindow::exportParticles()
 
 	PostSolutionInfo* pInfo = m_projectData->mainfile()->postSolutionInfo();
 	expDialog.hideFormat();
-	expDialog.setTimeValues(pInfo->timeSteps()->timesteps());
+	expDialog.setProjectMainFile(m_projectData->mainfile());
 
 	PostExportSetting s = pInfo->exportSetting();
 	if (s.folder == "") {
@@ -1929,7 +1929,7 @@ void iRICMainWindow::exportCfShape()
 
 	PostSolutionInfo* pInfo = m_projectData->mainfile()->postSolutionInfo();
 	expDialog.hideFormat();
-	expDialog.setTimeValues(pInfo->timeSteps()->timesteps());
+	expDialog.setProjectMainFile(m_projectData->mainfile());
 
 	PostExportSetting s = pInfo->exportSetting();
 	if (s.folder == "") {
@@ -2030,7 +2030,7 @@ void iRICMainWindow::exportStKMZ()
 	expDialog.hideFormat();
 	expDialog.hideDataRange();
 	expDialog.setFileMode();
-	expDialog.setTimeValues(pInfo->timeSteps()->timesteps());
+	expDialog.setProjectMainFile(m_projectData->mainfile());
 	PostExportSetting s = pInfo->exportSetting();
 	s.filename = outputFileName;
 	expDialog.setExportSetting(s);

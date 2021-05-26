@@ -1,13 +1,19 @@
 #include "ui_postdataexportdialog.h"
 
 #include "postdataexportdialog.h"
+#include "postsolutioninfo.h"
+#include "posttimesteps.h"
+#include "../project/projectmainfile.h"
+
+#include <guibase/timeformat/timeformatutil.h>
 
 #include <QFileDialog>
 #include <QMessageBox>
 
 PostDataExportDialog::PostDataExportDialog(QWidget* parent) :
 	QDialog {parent},
-	ui {new Ui::PostDataExportDialog}
+	ui {new Ui::PostDataExportDialog},
+	m_projectMainFile {nullptr}
 {
 	ui->setupUi(this);
 	ui->fileEdit->setSaveMode(true);
@@ -37,6 +43,18 @@ PostDataExportDialog::~PostDataExportDialog()
 	delete ui;
 }
 
+void PostDataExportDialog::setProjectMainFile(ProjectMainFile* mainFile)
+{
+	m_projectMainFile = mainFile;
+
+	const auto& timeValues = mainFile->postSolutionInfo()->timeSteps()->timesteps();
+
+	ui->dataStartSlider->setMinimum(1);
+	ui->dataStartSlider->setMaximum(timeValues.size());
+	ui->dataEndSlider->setMinimum(1);
+	ui->dataEndSlider->setMaximum(timeValues.size());
+}
+
 void PostDataExportDialog::setFileMode()
 {
 	ui->folderLabel->hide();
@@ -48,12 +66,6 @@ void PostDataExportDialog::setFileMode()
 	ui->fileLabel->show();
 	ui->fileEdit->show();
 	updateGeometry();
-}
-
-void PostDataExportDialog::setTimeValues(QList<double> timevalues)
-{
-	ui->dataStartSlider->setValues(timevalues);
-	ui->dataEndSlider->setValues(timevalues);
 }
 
 void PostDataExportDialog::setIJKRange(int inum, int jnum, int knum)
@@ -123,9 +135,12 @@ void PostDataExportDialog::setExportSetting(const PostExportSetting &setting)
 		ui->dataStartSlider->setValue(ui->dataStartSlider->minimum());
 		ui->dataEndSlider->setValue(ui->dataEndSlider->maximum());
 	} else {
-		ui->dataStartSlider->setValue(setting.startStep);
-		ui->dataEndSlider->setValue(setting.endStep);
+		ui->dataStartSlider->setValue(setting.startStep + 1);
+		ui->dataEndSlider->setValue(setting.endStep + 1);
 	}
+	updateStartTimeLabel();
+	updateEndTimeLabel();
+
 	ui->samplingSpinBox->setValue(setting.skipRate);
 
 	ui->fullRegionCheckBox->setChecked(setting.fullRange);
@@ -185,8 +200,8 @@ PostExportSetting PostDataExportDialog::exportSetting() const
 	ret.filename = ui->fileEdit->filename();
 
 	ret.allSteps = ui->dataAllCheckBox->isChecked();
-	ret.startStep = ui->dataStartSlider->value();
-	ret.endStep = ui->dataEndSlider->value();
+	ret.startStep = ui->dataStartSlider->value() - 1;
+	ret.endStep = ui->dataEndSlider->value() - 1;
 	ret.skipRate = ui->samplingSpinBox->value();
 
 	ret.fullRange = ui->fullRegionCheckBox->isChecked();
@@ -225,6 +240,7 @@ void PostDataExportDialog::handleStartChange(int val)
 	if (val > ui->dataEndSlider->value()) {
 		ui->dataEndSlider->setValue(val);
 	}
+	updateStartTimeLabel();
 	updateSkipRateMaximum();
 }
 
@@ -233,6 +249,7 @@ void PostDataExportDialog::handleEndChange(int val)
 	if (val < ui->dataStartSlider->value()) {
 		ui->dataStartSlider->setValue(val);
 	}
+	updateEndTimeLabel();
 	updateSkipRateMaximum();
 }
 
@@ -317,7 +334,6 @@ void PostDataExportDialog::accept()
 	QDialog::accept();
 }
 
-
 void PostDataExportDialog::toggleRangeGroupBox()
 {
 	bool visible = ! ui->dataRangeGroupBox->isVisible();
@@ -328,6 +344,30 @@ void PostDataExportDialog::toggleRangeGroupBox()
 	}
 	ui->dataRangeGroupBox->setVisible(visible);
 	adjustSize();
+}
+
+void PostDataExportDialog::updateStartTimeLabel()
+{
+	auto timeSteps = m_projectMainFile->postSolutionInfo()->timeSteps()->timesteps();
+	auto time = timeSteps.at(ui->dataStartSlider->value() - 1);
+	updateTimeLabel(time, ui->dataStartValueLabel);
+}
+
+void PostDataExportDialog::updateEndTimeLabel()
+{
+	auto timeSteps = m_projectMainFile->postSolutionInfo()->timeSteps()->timesteps();
+	auto time = timeSteps.at(ui->dataEndSlider->value() - 1);
+	updateTimeLabel(time, ui->dataEndValueLabel);
+}
+
+void PostDataExportDialog::updateTimeLabel(double timeValue, QLabel* label)
+{
+	auto mf = m_projectMainFile;
+	auto zt = mf->zeroDateTime();
+	auto f = mf->timeFormat();
+	auto cf = mf->customTimeFormat();
+
+	label->setText(TimeFormatUtil::formattedString(zt, timeValue, f, cf));
 }
 
 void PostDataExportDialog::updateSkipRateMaximum()
