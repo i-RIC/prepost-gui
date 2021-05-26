@@ -7,6 +7,7 @@
 
 #include <guibase/timeformat/timeformatutil.h>
 
+#include <QDateTime>
 #include <QFileDialog>
 #include <QMessageBox>
 

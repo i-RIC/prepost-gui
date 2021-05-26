@@ -8,6 +8,8 @@
 #include <guicore/postcontainer/postsolutioninfo.h>
 #include <guicore/postcontainer/posttimesteps.h>
 
+#include <QDateTime>
+
 ContinuousSnapshotTimestepSettingPage::ContinuousSnapshotTimestepSettingPage(QWidget* parent) :
 	QWizardPage(parent),
 	ui(new Ui::ContinuousSnapshotTimestepSettingPage)
