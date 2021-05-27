@@ -79,6 +79,10 @@
         <source>Please input the interval of slow animation steps in seconds.</source>
         <translation type="obsolete">スロー再生時のステップ間隔を、秒で指定して下さい。</translation>
     </message>
+    <message>
+        <source>L&amp;oop Animation</source>
+        <translation>ループ再生 (&amp;L)</translation>
+    </message>
 </context>
 <context>
     <name>ArrowEditDialog</name>
