@@ -43,6 +43,10 @@
         <source>&amp;Animation Speed Setting...</source>
         <translation>Configuracao de velocidade para reproducao (&amp;A)...</translation>
     </message>
+    <message>
+        <source>L&amp;oop Animation</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ConfirmPage</name>

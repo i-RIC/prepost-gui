@@ -41,6 +41,8 @@ public:
 	bool followLastStep() const;
 	/// Returns the index of current step
 	unsigned int currentStepIndex() const;
+	bool loop() const;
+
 	/// Animation menu
 	QMenu* animationMenu() const;
 	/// Animation toolbar
@@ -107,12 +109,14 @@ public:
 	public:
 		/// Constructor
 		AnimationActions(QObject* parent);
+
 		QAction* actionStepBackward;
 		QAction* actionStepForward;
 		QAction* actionStepFirst;
 		QAction* actionStepLast;
 		QAction* actionStartAnimation;
 		QAction* actionStopAnimation;
+		QAction* actionLoop;
 		QAction* actionEditSpeed;
 		QAction* actionToggleFollowLastStep;
 	};
