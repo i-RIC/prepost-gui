@@ -5,6 +5,8 @@
 
 class ContinuousSnapshotWizard;
 
+class QLabel;
+
 namespace Ui
 {
 	class ContinuousSnapshotTimestepSettingPage;
@@ -22,10 +24,15 @@ public:
 	bool validatePage() override;
 
 private slots:
-	void modifyStart(int time);
-	void modifyStop(int time);
+	void handleStartChange(int time);
+	void handleStopChange(int time);
 
 private:
+	void updateStartLabel();
+	void updateStopLabel();
+
+	void updateTimeLabel(double timeValue, QLabel* label);
+
 	ContinuousSnapshotWizard* m_wizard;
 	int m_startTimestep;
 	int m_stopTimestep;

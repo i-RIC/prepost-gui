@@ -6,133 +6,137 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>346</width>
-    <height>569</height>
+    <width>335</width>
+    <height>564</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Export Calculation Result</string>
   </property>
-  <layout class="QGridLayout" name="gridLayout_3">
-   <item row="0" column="0">
-    <widget class="QLabel" name="formatLabel">
-     <property name="text">
-      <string>Format:</string>
-     </property>
-    </widget>
-   </item>
-   <item row="0" column="1">
-    <layout class="QHBoxLayout" name="horizontalLayout_3">
-     <item>
-      <widget class="QComboBox" name="formatComboBox">
-       <item>
-        <property name="text">
-         <string>VTK files (ASCII)</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>VTK files (Binary)</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>CSV files</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>Topography Files (*.tpo)</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>ESRI Shapefiles</string>
-        </property>
-       </item>
-      </widget>
-     </item>
-     <item>
-      <spacer name="horizontalSpacer_2">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>40</width>
-         <height>0</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-    </layout>
-   </item>
-   <item row="1" column="0">
-    <widget class="QLabel" name="folderLabel">
-     <property name="text">
-      <string>Output folder:</string>
-     </property>
-    </widget>
-   </item>
-   <item row="1" column="1">
-    <layout class="QHBoxLayout" name="horizontalLayout">
-     <item>
-      <widget class="QLineEdit" name="folderEdit"/>
-     </item>
-     <item>
-      <widget class="QPushButton" name="folderRefButton">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>0</width>
-         <height>0</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>30</width>
-         <height>16777215</height>
-        </size>
-       </property>
-       <property name="baseSize">
-        <size>
-         <width>30</width>
-         <height>0</height>
-        </size>
-       </property>
+  <layout class="QVBoxLayout" name="verticalLayout_2">
+   <item>
+    <layout class="QGridLayout" name="gridLayout_3">
+     <item row="0" column="0">
+      <widget class="QLabel" name="formatLabel">
        <property name="text">
-        <string>...</string>
+        <string>Format:</string>
        </property>
       </widget>
      </item>
+     <item row="0" column="1">
+      <layout class="QHBoxLayout" name="horizontalLayout_3">
+       <item>
+        <widget class="QComboBox" name="formatComboBox">
+         <item>
+          <property name="text">
+           <string>VTK files (ASCII)</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>VTK files (Binary)</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>CSV files</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Topography Files (*.tpo)</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>ESRI Shapefiles</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>0</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="folderLabel">
+       <property name="text">
+        <string>Output folder:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QLineEdit" name="folderEdit"/>
+       </item>
+       <item>
+        <widget class="QPushButton" name="folderRefButton">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>30</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="baseSize">
+          <size>
+           <width>30</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="prefixLabel">
+       <property name="text">
+        <string>Prefix:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QLineEdit" name="prefixEdit"/>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLabel" name="fileLabel">
+       <property name="text">
+        <string>Output file:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="FilenameEditWidget" name="fileEdit"/>
+     </item>
     </layout>
    </item>
-   <item row="2" column="0">
-    <widget class="QLabel" name="prefixLabel">
-     <property name="text">
-      <string>Prefix:</string>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="1">
-    <widget class="QLineEdit" name="prefixEdit"/>
-   </item>
-   <item row="3" column="0">
-    <widget class="QLabel" name="fileLabel">
-     <property name="text">
-      <string>Output file:</string>
-     </property>
-    </widget>
-   </item>
-   <item row="3" column="1">
-    <widget class="FilenameEditWidget" name="fileEdit"/>
-   </item>
-   <item row="4" column="0" colspan="2">
+   <item>
     <widget class="QGroupBox" name="timeRangeGroupBox">
      <property name="title">
       <string>Time</string>
@@ -164,6 +168,19 @@
           </property>
          </widget>
         </item>
+        <item row="0" column="2">
+         <widget class="QLabel" name="dataStartValueLabel">
+          <property name="frameShape">
+           <enum>QFrame::Panel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Sunken</enum>
+          </property>
+          <property name="text">
+           <string>--</string>
+          </property>
+         </widget>
+        </item>
         <item row="1" column="0">
          <widget class="QLabel" name="dataEndLabel">
           <property name="text">
@@ -181,46 +198,59 @@
           </property>
          </widget>
         </item>
-        <item row="2" column="0">
+        <item row="1" column="2">
+         <widget class="QLabel" name="dataEndValueLabel">
+          <property name="frameShape">
+           <enum>QFrame::Panel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Sunken</enum>
+          </property>
+          <property name="text">
+           <string>--</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="0,0,1">
+        <item>
          <widget class="QLabel" name="samplingLabel">
           <property name="text">
            <string>Skip rate :</string>
           </property>
          </widget>
         </item>
-        <item row="2" column="1">
-         <layout class="QHBoxLayout" name="horizontalLayout_2">
-          <item>
-           <widget class="QSpinBox" name="samplingSpinBox">
-            <property name="alignment">
-             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-            </property>
-            <property name="minimum">
-             <number>1</number>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <spacer name="horizontalSpacer">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>40</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-         </layout>
+        <item>
+         <widget class="QSpinBox" name="samplingSpinBox">
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+          <property name="minimum">
+           <number>1</number>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
         </item>
        </layout>
       </item>
      </layout>
     </widget>
    </item>
-   <item row="5" column="0" colspan="2">
+   <item>
     <widget class="QGroupBox" name="dataRangeGroupBox">
      <property name="title">
       <string>Region</string>
@@ -374,7 +404,7 @@
      </layout>
     </widget>
    </item>
-   <item row="6" column="0">
+   <item>
     <spacer name="verticalSpacer_2">
      <property name="orientation">
       <enum>Qt::Vertical</enum>
@@ -387,7 +417,7 @@
      </property>
     </spacer>
    </item>
-   <item row="7" column="0" colspan="2">
+   <item>
     <layout class="QHBoxLayout" name="horizontalLayout_4">
      <item>
       <widget class="QPushButton" name="detailButton">

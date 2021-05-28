@@ -34,18 +34,20 @@ ContinuousSnapshotFilePropertyPage::~ContinuousSnapshotFilePropertyPage()
 
 void ContinuousSnapshotFilePropertyPage::initializePage()
 {
+	const auto setting = m_wizard->setting();
+
 	// Directory
-	ui->directoryEditWidget->setDirname(m_wizard->fileIODirectory());
+	ui->directoryEditWidget->setDirname(setting.exportTargetFolder);
 	// Table view
 	ui->prefixTableWidget->setColumnCount(1);
 	ui->prefixTableWidget->setHorizontalHeaderItem(0, new QTableWidgetItem(tr("Prefix")));
-	switch (m_wizard->output()) {
-	case ContinuousSnapshotWizard::Onefile:
+	switch (setting.fileOutputSetting) {
+	case ContinuousSnapshotSetting::FileOutputSetting::Onefile:
 		ui->prefixTableWidget->setRowCount(1);
 		ui->prefixTableWidget->setVerticalHeaderItem(0, new QTableWidgetItem(tr("Output file")));
 		ui->prefixTableWidget->setItem(0, 0, new QTableWidgetItem(tr("img_")));
 		break;
-	case ContinuousSnapshotWizard::Respectively:
+	case ContinuousSnapshotSetting::FileOutputSetting::Respectively:
 		ui->prefixTableWidget->setRowCount(m_wizard->windowList().size());
 		int idx = 0;
 		for (QMdiSubWindow* sub : m_wizard->windowList()) {
@@ -60,9 +62,9 @@ void ContinuousSnapshotFilePropertyPage::initializePage()
 		ui->prefixTableWidget->setRowHeight(i, 20);
 	}
 	// Suffix length
-	ui->suffixSpinBox->setValue(m_wizard->suffixLength());
+	ui->suffixSpinBox->setValue(setting.suffixLength);
 	// Format
-	QString ext = m_wizard->extension();
+	auto ext = setting.imageExtention;
 	if (ext == ".png") {
 		ui->formatComboBox->setCurrentIndex(0);
 	} else if (ext == ".jpg") {
@@ -78,6 +80,8 @@ void ContinuousSnapshotFilePropertyPage::initializePage()
 
 bool ContinuousSnapshotFilePropertyPage::validatePage()
 {
+	auto setting = m_wizard->setting();
+
 	// Directory
 	QDir dir(ui->directoryEditWidget->dirname());
 	if (! dir.exists()) {
@@ -92,7 +96,8 @@ bool ContinuousSnapshotFilePropertyPage::validatePage()
 		}
 	}
 	if (ui->directoryEditWidget->dirname() == "") { return false; }
-	m_wizard->setFileIODirectory(ui->directoryEditWidget->dirname());
+
+	setting.exportTargetFolder = ui->directoryEditWidget->dirname();
 	// Table view
 	int size = ui->prefixTableWidget->rowCount();
 	m_wizard->clearPrefixList();
@@ -101,11 +106,13 @@ bool ContinuousSnapshotFilePropertyPage::validatePage()
 		m_wizard->addPrefixList(prefix);
 	}
 	// Suffix length
-	m_wizard->setSuffixLength(ui->suffixSpinBox->value());
+	setting.suffixLength = ui->suffixSpinBox->value();
+
 	// Format
-	if (ui->formatComboBox->currentIndex() < 0) { return false; }
-	QString ex = m_extensionList.at(ui->formatComboBox->currentIndex());
-	m_wizard->setExtension(ex);
+	if (ui->formatComboBox->currentIndex() < 0) {return false;}
+	setting.imageExtention = m_extensionList.at(ui->formatComboBox->currentIndex());
+
+	m_wizard->setSetting(setting);
 
 	return true;
 }

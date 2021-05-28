@@ -10,6 +10,7 @@
 #include <cs/coordinatesystem.h>
 #include <guicore/post/postprocessorwindow.h>
 #include <guicore/project/backgroundimageinfo.h>
+#include <guicore/project/projectmainfile.h>
 #include <misc/mathsupport.h>
 #include <post/post2d/post2dwindow.h>
 #include <post/post2d/post2dwindowgraphicsview.h>
@@ -33,22 +34,26 @@ ContinuousSnapshotGoogleEarthSettingPage::~ContinuousSnapshotGoogleEarthSettingP
 
 void ContinuousSnapshotGoogleEarthSettingPage::initializePage()
 {
-	if (m_wizard->coordinateSystem() == nullptr) {
+	auto setting = m_wizard->setting();
+
+	if (m_wizard->projectMainFile()->coordinateSystem() == nullptr) {
 		ui->googleEarthCheckBox->setChecked(false);
 		this->setEnabled(false);
 	} else {
-		ui->googleEarthCheckBox->setChecked(m_wizard->googleEarth());
-		ui->kmlEdit->setText(m_wizard->kmlFilename());
+		ui->googleEarthCheckBox->setChecked(setting.outputKml);
+		ui->kmlEdit->setText(setting.kmlFilename);
 		this->setEnabled(true);
 	}
 }
 
 bool ContinuousSnapshotGoogleEarthSettingPage::validatePage()
 {
-	m_wizard->setGoogleEarth(ui->googleEarthCheckBox->isChecked());
-	m_wizard->setKMLFilename(ui->kmlEdit->text());
+	auto setting = m_wizard->setting();
+	setting.outputKml = ui->googleEarthCheckBox->isChecked();
+	setting.kmlFilename = ui->kmlEdit->text();
+	m_wizard->setSetting(setting);
 
-	if (! m_wizard->googleEarth()) {return true;}
+	if (! setting.outputKml) {return true;}
 
 	// calculate angle/north/south/east/west
 	calculateKMLInformation();
@@ -65,17 +70,20 @@ void ContinuousSnapshotGoogleEarthSettingPage::snapshotToWorld(QPointF& p)
 	int tmpX = 0;
 	int tmpY = 0;
 	QPoint offset(0, 0);
-	switch (m_wizard->output()) {
-	case ContinuousSnapshotWizard::Onefile:
+
+	const auto s = m_wizard->setting();
+
+	switch (s.fileOutputSetting) {
+	case ContinuousSnapshotSetting::FileOutputSetting::Onefile:
 		// calculate the offset
-		switch (m_wizard->layout()) {
-		case ContinuousSnapshotWizard::Asis:
+		switch (s.outputLayout) {
+		case ContinuousSnapshotSetting::OutputLayout::AsIs:
 			it = m_wizard->windowList().begin() + target;
 			center = dynamic_cast<QMainWindow*>((*it)->widget())->centralWidget();
 			offset = (*it)->pos() + (*it)->widget()->pos() + center->pos();
 			offset -= m_wizard->beginPosition();
 			break;
-		case ContinuousSnapshotWizard::Horizontally:
+		case ContinuousSnapshotSetting::OutputLayout::Horizontally:
 			for (it = m_wizard->windowList().begin(), idx = 0;
 			     it != m_wizard->windowList().end(), idx < target;
 			     ++it, ++idx) {
@@ -84,7 +92,7 @@ void ContinuousSnapshotGoogleEarthSettingPage::snapshotToWorld(QPointF& p)
 			}
 			offset.setX(tmpX);
 			break;
-		case ContinuousSnapshotWizard::Vertically:
+		case ContinuousSnapshotSetting::OutputLayout::Vertically:
 			for (it = m_wizard->windowList().begin(), idx = 0;
 			     it != m_wizard->windowList().end(), idx < target;
 			     ++it, ++idx) {
@@ -95,7 +103,7 @@ void ContinuousSnapshotGoogleEarthSettingPage::snapshotToWorld(QPointF& p)
 			break;
 		}
 		break;
-	case ContinuousSnapshotWizard::Respectively:
+	case ContinuousSnapshotSetting::FileOutputSetting::Respectively:
 		it = m_wizard->windowList().begin() + target;
 		break;
 	}
@@ -113,7 +121,7 @@ void ContinuousSnapshotGoogleEarthSettingPage::snapshotToWorld(QPointF& p)
 
 void ContinuousSnapshotGoogleEarthSettingPage::worldToLatLong(QPointF& p)
 {
-	auto cs = m_wizard->coordinateSystem();
+	auto cs = m_wizard->projectMainFile()->coordinateSystem();
 	double x, y, lon, lat;
 	x = p.x();
 	y = p.y();
@@ -131,6 +139,8 @@ void ContinuousSnapshotGoogleEarthSettingPage::snapshotToLatLong(QPointF& p)
 
 void ContinuousSnapshotGoogleEarthSettingPage::calculateKMLInformation()
 {
+	auto setting = m_wizard->setting();
+
 	QPointF center, centerRight;
 	auto snapshotSize = targetSnapshotSize();
 
@@ -142,7 +152,7 @@ void ContinuousSnapshotGoogleEarthSettingPage::calculateKMLInformation()
 	// calculate angle (radian)
 	QPointF dv = centerRight - center;
 	double angle = std::atan(dv.y() / dv.x());
-	m_wizard->setAngle(angle * 180 / M_PI);
+	setting.angle = (angle * 180 / M_PI);
 
 	// calculate north/south/east/west
 	QPointF centerV(snapshotSize.width() / 2., snapshotSize.height() / 2.);
@@ -156,8 +166,8 @@ void ContinuousSnapshotGoogleEarthSettingPage::calculateKMLInformation()
 	dy.setY(- dy.y());
 
 	// rotation
-	iRIC::rotateVector(dx, - m_wizard->angle());
-	iRIC::rotateVector(dy, - m_wizard->angle());
+	iRIC::rotateVector(dx, - setting.angle);
+	iRIC::rotateVector(dy, - setting.angle);
 
 	// reflection
 	dx.setY(- dx.y());
@@ -172,21 +182,26 @@ void ContinuousSnapshotGoogleEarthSettingPage::calculateKMLInformation()
 	snapshotToLatLong(rightTop);
 	snapshotToLatLong(leftBottom);
 
-	m_wizard->setNorth(rightTop.y());
-	m_wizard->setSouth(leftBottom.y());
-	m_wizard->setEast(rightTop.x());
-	m_wizard->setWest(leftBottom.x());
+	setting.north = rightTop.y();
+	setting.south = leftBottom.y();
+	setting.east = rightTop.x();
+	setting.west = leftBottom.x();
+
+	m_wizard->setSetting(setting);
 }
 
 QSize ContinuousSnapshotGoogleEarthSettingPage::targetSnapshotSize()
 {
+	const auto& s = m_wizard->setting();
+
 	QSize ret;
-	switch (m_wizard->output()) {
-	case ContinuousSnapshotWizard::Onefile:
+	switch (s.fileOutputSetting) {
+	case ContinuousSnapshotSetting::FileOutputSetting::Onefile:
 		ret.setWidth(m_wizard->snapshotSize().width());
 		ret.setHeight(m_wizard->snapshotSize().height());
 		break;
-	case ContinuousSnapshotWizard::Respectively:
+
+	case ContinuousSnapshotSetting::FileOutputSetting::Respectively:
 		auto it = m_wizard->windowList().begin() + m_wizard->targetWindow();
 		QWidget* w = dynamic_cast<QMainWindow*>((*it)->widget())->centralWidget();
 		ret.setWidth(w->width());

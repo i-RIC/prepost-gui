@@ -1,67 +1,49 @@
 #ifndef CONTINUOUSSNAPSHOTSETTING_H
 #define CONTINUOUSSNAPSHOTSETTING_H
 
-
-#include <vector>
-
-class BackgroundImageInfo;
+#include <QList>
+#include <QString>
 
 class ContinuousSnapshotSetting
 {
 public:
-	enum class OutputType {Onefile, Respectively};
-	enum class Layout {Asis, Horizontally, Vertically};
-	enum class MovieLengthMode {LengthAsSeconds, FramesPerSecond};
+	enum class FileOutputSetting {Onefile, Respectively};
+	enum class OutputLayout {AsIs, Horizontally, Vertically};
+	enum class MovieLengthMode {Length, FPS};
+	enum class MovieProfile {MP4 = 0};
 
 	ContinuousSnapshotSetting();
-	~ContinuousSnapshotSetting();
 
-	OutputType outputType;
-	Layout layout;
-	QSize snapshotSize;
-	QPoint beginPosition;
-	bool isTransparent;
+	// window and layout
+	FileOutputSetting fileOutputSetting;
+	OutputLayout outputLayout;
 
 	// file properties
-	QString fileIODirectory;
-	QStringList prefixList;
-	QString extension;
+	QString exportTargetFolder;
+	bool imageIsTransparent;
+	QString imageExtention;
 	int suffixLength;
 
-	// movie properties
-	bool isMovieOutput;
-	MovieLengthMode movieLengthMode;
-	int framesPerSecond;
-	int movieLength;
-	// @todo check this and fix!
-	int movieProfile;
-
 	// timestep setting
-	std::vector<double> timeSteps;
-	int start;
-	int stop;
+	int startTimeStep;
+	int stopTimeStep;
 	int samplingRate;
 
-	// google earth output setting
-	bool isGoogleEarthOutput;
-	double leftLatitude;
-	double leftLongitude;
-	double rightLatitude;
-	double rightLongitude;
-	int coordinateSystemTargetWindowIndex;
-	int targetBackgroundImageIndex;
-	QString kmlFileName;
+	// movie output
+	bool outputMovie;
+	MovieLengthMode movieLengthMode;
+	int movieFramesPerSeconds;
+	int movieLengthSeconds;
+	MovieProfile movieProfile;
 
-	std::vector<BackgroundImageInfo*> backgroundList;
-
-	// google earth related parameters that are automatically calculated
-	double angleDegree;
+	// google earth
+	bool outputKml;
+	QString kmlFilename;
+	double angle;
 	double north;
 	double south;
 	double east;
 	double west;
-
-	QStringList fileList;
 };
 
 #endif // CONTINUOUSSNAPSHOTSETTING_H

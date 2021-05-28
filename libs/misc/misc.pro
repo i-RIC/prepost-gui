@@ -48,6 +48,7 @@ HEADERS += anms.h \
            qfontcontainer.h \
            qpointfcompare.h \
            qpointfcontainer.h \
+           qspinboxwithfocussignals.h \
            qttool.h \
            qundocommandhelper.h \
            rangecontainert.h \
@@ -115,6 +116,7 @@ SOURCES += anms.cpp \
            qfontcontainer.cpp \
            qpointfcompare.cpp \
            qpointfcontainer.cpp \
+           qspinboxwithfocussignals.cpp \
            qttool.cpp \
            qundocommandhelper.cpp \
            slowmotionspeededitdialog.cpp \
