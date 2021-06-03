@@ -45,9 +45,7 @@ private:
 	static const int OLDMENULIST_MAX = 5;
 
 public:
-	/// Constructor
 	PreProcessorDataModel(PreProcessorWindow* w, ProjectDataItem* parent);
-	/// Destructor
 	~PreProcessorDataModel();
 
 	/// The view to display pre-processor main region

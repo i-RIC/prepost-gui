@@ -19,9 +19,8 @@ public:
 	PreProcessorBCGroupDataItem(PreProcessorDataItem* parent);
 	~PreProcessorBCGroupDataItem();
 
-	void loadFromCgnsFile(const iRICLib::H5CgnsZone& zone); // for importing grid from CGNS file
-	void loadFromCgnsFile(const int fn) override;
-	void saveToCgnsFile(const int fn) override;
+	int loadFromCgnsFile(const iRICLib::H5CgnsZone& zone);
+	int saveToCgnsFile(iRICLib::H5CgnsZone* zone);
 	void informGridUpdate();
 	const QList<PreProcessorBCDataItem*> conditions() const;
 	void addCustomMenuItems(QMenu* menu) override;

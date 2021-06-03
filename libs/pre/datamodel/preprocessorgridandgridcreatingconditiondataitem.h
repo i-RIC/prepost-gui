@@ -35,7 +35,7 @@ public:
 	bool isGridEdited() const  override;
 	void setGridEdited() override;
 	void setupGridDataItem(Grid* grid);
-	void loadFromCgnsFile(const int fn) override;
+	int loadFromCgnsFile() override;
 
 	bool importGridFromCgnsFile(const QString& filename);
 

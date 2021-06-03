@@ -49,19 +49,17 @@
 #include <vtkStructuredGrid.h>
 #include <vtkUnstructuredGrid.h>
 
-#include <cgnslib.h>
-#include <iriclib.h>
-
 #include <h5cgnsbase.h>
 #include <h5cgnsfile.h>
 #include <h5cgnszone.h>
+#include <iriclib_errorcodes.h>
 
 #include <typeinfo>
 
 PreProcessorGridAndGridCreatingConditionDataItem::PreProcessorGridAndGridCreatingConditionDataItem(const std::string& zoneName, const QString& caption, PreProcessorDataItem* p) :
 	PreProcessorGridAndGridCreatingConditionDataItemInterface {caption, p},
-	m_zoneName (zoneName),
 	m_caption {caption},
+	m_zoneName (zoneName),
 	m_gridDataItem {nullptr}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
@@ -234,18 +232,18 @@ void PreProcessorGridAndGridCreatingConditionDataItem::setupGridDataItem(Grid* g
 	qApp->processEvents();
 }
 
-void PreProcessorGridAndGridCreatingConditionDataItem::loadFromCgnsFile(const int fn)
+int PreProcessorGridAndGridCreatingConditionDataItem::loadFromCgnsFile()
 {
 	auto mainFile = dataModel()->iricMainWindow()->projectData()->mainfile();
 	auto zone = mainFile->cgnsFile()->ccBase()->zone(m_zoneName);
-	if (zone == nullptr) {return;}
+	if (zone == nullptr) {return IRIC_NO_DATA;}
 
 	Grid* grid = GridCgnsEstimater::buildGrid(*zone, nullptr);
-	if (grid == nullptr) {return;}
-
+	if (grid == nullptr) {return IRIC_INVALID_GRIDTYPE;}
 	setupGridDataItem(grid);
-	m_gridDataItem->loadFromCgnsFile(fn);
 	delete grid;
+
+	return m_gridDataItem->loadFromCgnsFile();
 }
 
 void PreProcessorGridAndGridCreatingConditionDataItem::doLoadFromProjectMainFile(const QDomNode& node)

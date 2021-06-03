@@ -21,18 +21,15 @@ class GridCreatingConditionExternalProgramSettingDialog : public QDialog
 	Q_OBJECT
 
 public:
-	/// Constructor
 	GridCreatingConditionExternalProgramSettingDialog(SolverDefinition* def, const QLocale& locale, iRICMainWindowInterface* mainW, QWidget* parent);
-	/// Destructor
 	~GridCreatingConditionExternalProgramSettingDialog();
-	/// Load data fron CGNS file.
+
 	bool load();
-	/// Save data into CGNS file.
 	bool save();
 	/// Reset to store default values.
 	void reset(bool nodialog = false);
 	/// Set the file name to use for CGNS.
-	void setFilename(const QString& filename) {m_filename = filename;}
+	void setFilename(const QString& filename);
 	QString errorMessage(int errorcode) const;
 
 public slots:

@@ -44,12 +44,10 @@ QString CgnsGridImporter::caption() const
 
 bool CgnsGridImporter::import(Grid* grid, const QString& filename, const QString& /*selectedFilter*/, QWidget* parent)
 {
-	// copy CGNS file to temporary file.
-	QString tmpname;
-
 	auto projectData = getProjectData(grid);
-
 	auto tmpName = projectData->tmpFileName();
+	QFile::copy(filename, tmpName);
+
 	try {
 		iRICLib::H5CgnsFile file(iRIC::toStr(tmpName), iRICLib::H5CgnsFile::Mode::OpenReadOnly);
 		iRICLib::H5CgnsZone* zone;

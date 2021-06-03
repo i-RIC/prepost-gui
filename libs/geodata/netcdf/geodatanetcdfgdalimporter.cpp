@@ -40,7 +40,7 @@ void setupWaitDialog(WaitDialog* dialog, const std::vector<QString>& filenames)
 {
 	if (filenames.size() < 5) {return;}
 
-	dialog->setRange(0, filenames.size() - 1);
+	dialog->setRange(0, static_cast<int> (filenames.size()) - 1);
 	dialog->setProgress(0);
 	dialog->setMessage(GeoDataNetcdfGdalImporter::tr("Importing data..."));
 	dialog->showProgressBar();

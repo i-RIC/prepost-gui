@@ -26,9 +26,9 @@ public:
 	PreProcessorBCDataItem(SolverDefinition* def, SolverDefinitionBoundaryCondition* cond, GraphicsWindowDataItem* parent, bool hideSetting = false);
 	~PreProcessorBCDataItem() override;
 
-	void loadFromCgnsFile(const iRICLib::H5CgnsZone& zone);
-	void loadFromCgnsFile(const int fn) override;
-	void saveToCgnsFile(const int fn) override;
+	int loadFromCgnsFile(const iRICLib::H5CgnsZone& zone);
+	int saveToCgnsFile(iRICLib::H5CgnsZone* zone);
+
 	void handleStandardItemDoubleClicked() override;
 	void handleStandardItemChange() override;
 
@@ -97,6 +97,7 @@ private:
 	void updateElements();
 	int buildNumber() const;
 	void setupIndicesAndEdges(const std::vector<int> indices);
+	void buildIndices(std::vector<int>* indices);
 
 	class Impl;
 	Impl* impl;

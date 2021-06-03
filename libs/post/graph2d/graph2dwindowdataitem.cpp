@@ -16,29 +16,31 @@
 #include <QUndoCommand>
 #include <QXmlStreamWriter>
 
-Graph2dWindowDataItem::Graph2dWindowDataItem(const QString& itemlabel, Graph2dWindowDataItem* parent)
-	: ProjectDataItem(parent)
+#include <iriclib_errorcodes.h>
+
+Graph2dWindowDataItem::Graph2dWindowDataItem(const QString& itemlabel, Graph2dWindowDataItem* parent) :
+	ProjectDataItem(parent),
+	m_standardItem {new QStandardItem(itemlabel)}
 {
-	m_standardItem = new QStandardItem(itemlabel);
 	if (dynamic_cast<Graph2dWindowRootDataItem*>(parent) == nullptr) {
 		parent->standardItem()->appendRow(m_standardItem);
 	}
 	init();
 }
-Graph2dWindowDataItem::Graph2dWindowDataItem(const QString& itemlabel, const QIcon& icon, Graph2dWindowDataItem* parent)
-	: ProjectDataItem(parent)
+Graph2dWindowDataItem::Graph2dWindowDataItem(const QString& itemlabel, const QIcon& icon, Graph2dWindowDataItem* parent) :
+	ProjectDataItem(parent),
+	m_standardItem {new QStandardItem(icon, itemlabel)}
 {
-	m_standardItem = new QStandardItem(icon, itemlabel);
 	if (dynamic_cast<Graph2dWindowRootDataItem*>(parent) == nullptr) {
 		parent->standardItem()->appendRow(m_standardItem);
 	}
 	init();
 }
 
-Graph2dWindowDataItem::Graph2dWindowDataItem(ProjectDataItem* parent)
-	: ProjectDataItem(parent)
+Graph2dWindowDataItem::Graph2dWindowDataItem(ProjectDataItem* parent) :
+	ProjectDataItem(parent),
+	m_standardItem {nullptr}
 {
-	m_standardItem = nullptr;
 	init();
 }
 
@@ -129,24 +131,28 @@ void Graph2dWindowDataItem::handleStandardItemChange()
 	iRICUndoStack::instance().push(new StandardItemChangeCommand(this));
 }
 
-void Graph2dWindowDataItem::loadFromCgnsFile(const int fn)
+int Graph2dWindowDataItem::loadFromCgnsFile()
 {
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
-		(*it)->loadFromCgnsFile(fn);
+	for (auto child : m_childItems) {
+		int ier = child->loadFromCgnsFile();
+		if (ier != 0) {return ier;}
 	}
+	return IRIC_NO_ERROR;
 }
 
-void Graph2dWindowDataItem::saveToCgnsFile(const int fn)
+int Graph2dWindowDataItem::saveToCgnsFile()
 {
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
-		(*it)->saveToCgnsFile(fn);
+	for (auto child : m_childItems) {
+		int ier = child->saveToCgnsFile();
+		if (ier != 0) {return ier;}
 	}
+	return IRIC_NO_ERROR;
 }
 
 void Graph2dWindowDataItem::closeCgnsFile()
 {
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
-		(*it)->closeCgnsFile();
+	for (auto child : m_childItems) {
+		child->closeCgnsFile();
 	}
 }
 

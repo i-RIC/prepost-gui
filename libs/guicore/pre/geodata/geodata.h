@@ -129,6 +129,7 @@ public:
 
 	void applyOffset(double x, double y);
 	virtual bool requestCoordinateSystem() const;
+	virtual iRICLib::H5CgnsGeographicDataGroup::Type iRICLibType() const;
 
 signals:
 	void graphicsUpdated();
@@ -168,7 +169,6 @@ protected:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
-	virtual iRICLib::H5CgnsGeographicDataGroup::Type iRICLibType() const;
 	GridAttributeDimensionsContainer* dimensions() const;
 
 	Setting m_setting;

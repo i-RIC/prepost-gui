@@ -48,7 +48,6 @@ public:
 	void setGridEdited();
 
 	void deleteItem(QStandardItem* item, bool noDraw = false) override;
-	void saveToCgnsFile(const int fn) override;
 
 private slots:
 	void editGridAttributeMappingSetting();

@@ -33,12 +33,9 @@ public:
 	BoundaryConditionDialog(PreProcessorBCDataItem* dataitem, iRICMainWindowInterface* mw, QWidget* parent = nullptr);
 	~BoundaryConditionDialog();
 
-	void setNameAndNumber(const std::string& name, int number);
-
 	void setup(SolverDefinition* def, const QDomElement& elem, const QLocale& locale);
-	void load(const iRICLib::H5CgnsConditionGroup& group);
-	void load(const int fn);
-	void save(const int fn);
+	int load(const iRICLib::H5CgnsConditionGroup& group);
+	int save(iRICLib::H5CgnsConditionGroup* group);
 
 	void setType(const QString& type);
 

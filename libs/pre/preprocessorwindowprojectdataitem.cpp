@@ -130,14 +130,14 @@ void PreProcessorWindowProjectDataItem::doSaveToProjectMainFile(QXmlStreamWriter
 	writer.writeEndElement();
 }
 
-void PreProcessorWindowProjectDataItem::loadFromCgnsFile(const int fn)
+int PreProcessorWindowProjectDataItem::loadFromCgnsFile()
 {
-	m_preProcessorWindow->m_dataModel->loadFromCgnsFile(fn);
+	return m_preProcessorWindow->m_dataModel->loadFromCgnsFile();
 }
 
-void PreProcessorWindowProjectDataItem::saveToCgnsFile(const int fn)
+int PreProcessorWindowProjectDataItem::saveToCgnsFile()
 {
-	m_preProcessorWindow->m_dataModel->saveToCgnsFile(fn);
+	return m_preProcessorWindow->m_dataModel->saveToCgnsFile();
 }
 
 int PreProcessorWindowProjectDataItem::updateCgnsFileOtherThanGrids()

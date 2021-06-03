@@ -14,12 +14,13 @@ class PREDLL_EXPORT PreProcessorWindowProjectDataItem : public ProjectDataItem
 
 public:
 	/// constructor
-	explicit PreProcessorWindowProjectDataItem(PreProcessorWindow* w, ProjectMainFile* parent);
+	PreProcessorWindowProjectDataItem(PreProcessorWindow* w, ProjectMainFile* parent);
 	~PreProcessorWindowProjectDataItem();
+
 	/// Initializes pre-processor window for the specified solver definition.
 	void initForSolverDefinition();
-	void loadFromCgnsFile(const int fn) override;
-	void saveToCgnsFile(const int fn) override;
+	int loadFromCgnsFile() override;
+	int saveToCgnsFile() override;
 	int updateCgnsFileOtherThanGrids() override;
 	void closeCgnsFile() override;
 	QStringList containedFiles() override;

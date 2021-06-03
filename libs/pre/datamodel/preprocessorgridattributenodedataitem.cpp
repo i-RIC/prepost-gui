@@ -58,6 +58,8 @@
 #include <vtkRenderer.h>
 #include <vtkVariant.h>
 
+#include <iriclib_errorcodes.h>
+
 #include <cfloat>
 #include <string>
 
@@ -171,13 +173,16 @@ void PreProcessorGridAttributeNodeDataItem::doSaveToProjectMainFile(QXmlStreamWr
 	writer.writeEndElement();
 }
 
-void PreProcessorGridAttributeNodeDataItem::loadFromCgnsFile(const int /*fn*/)
+int PreProcessorGridAttributeNodeDataItem::loadFromCgnsFile()
 {
 	PreProcessorGridDataItem* tmpparent = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
 	Grid* g = tmpparent->grid();
-	if (g == nullptr) {return;}
+	if (g == nullptr) {return IRIC_NO_ERROR;}
+
 	GridAttributeContainer* cont = g->gridAttribute(m_condition->name());
 	cont->setCustomModified(m_isCustomModified);
+
+	return IRIC_NO_ERROR;
 }
 
 void PreProcessorGridAttributeNodeDataItem::loadContourFromProjectMainFile(const QDomNode& node)

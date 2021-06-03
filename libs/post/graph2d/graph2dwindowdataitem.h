@@ -53,9 +53,9 @@ public:
 	/// Handle the event that the corresponding standardItem is double-clicked.
 	virtual void handleStandardItemDoubleClicked() {}
 	/// Load data from CGNS file
-	virtual void loadFromCgnsFile(const int fn) override;
+	int loadFromCgnsFile() override;
 	/// Save data into CGNS file
-	virtual void saveToCgnsFile(const int fn) override;
+	int saveToCgnsFile() override;
 	/// Discard data loaded from CGNS file.
 	virtual void closeCgnsFile() override;
 	/// Returns true if this item is deletable.

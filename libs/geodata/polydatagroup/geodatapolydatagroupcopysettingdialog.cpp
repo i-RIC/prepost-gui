@@ -23,7 +23,7 @@ GeoDataPolyDataGroupCopySettingDialog::GeoDataPolyDataGroupCopySettingDialog(Geo
 	int copyValCol = 2;
 
 	auto origAlldata = orig->allData();
-	m_model->setRowCount(origAlldata.size());
+	m_model->setRowCount(static_cast<int> (origAlldata.size()));
 
 	if (orig->gridAttribute()->isReferenceInformation()) {
 		copyValCol = 1;

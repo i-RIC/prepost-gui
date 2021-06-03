@@ -250,11 +250,6 @@ void GeoDataPoint::doApplyOffset(double x, double y)
 	setPoint(p);
 }
 
-int GeoDataPoint::iRICLibType() const
-{
-	return 0;
-}
-
 GeoDataPoint::MouseEventMode GeoDataPoint::mouseEventMode() const
 {
 	return impl->m_mouseEventMode;

@@ -22,8 +22,7 @@
 #include <QPushButton>
 #include <QTextCodec>
 
-#include <cgnslib.h>
-#include <iriclib.h>
+#include <iriclib_errorcodes.h>
 
 BoundaryConditionDialog::BoundaryConditionDialog(PreProcessorBCDataItem* dataitem, iRICMainWindowInterface* mw, QWidget* parent) :
 	QDialog(parent),
@@ -79,24 +78,27 @@ void BoundaryConditionDialog::setup(SolverDefinition* def, const QDomElement& el
 	ui->settingGroupBox->setLayout(layout);
 }
 
-void BoundaryConditionDialog::setNameAndNumber(const std::string& name, int number)
+int BoundaryConditionDialog::load(const iRICLib::H5CgnsConditionGroup& group)
 {
-	m_containerSet->setBCProperty(name, number);
-	m_captionContainer.setBCProperty(name, number);
-	m_colorContainer.setBCProperty(name, number);
-	m_opacityContainer.setBCProperty(name, number);
-	m_showNameContainer.setBCProperty(name, number);
-	m_pointSizeContainer.setBCProperty(name, number);
-}
+	int ier = 0;
 
-void BoundaryConditionDialog::load(const iRICLib::H5CgnsConditionGroup& group)
-{
-	m_containerSet->load(group);
-	m_captionContainer.load(group);
-	m_colorContainer.load(group);
-	m_opacityContainer.load(group);
-	m_showNameContainer.load(group);
-	m_pointSizeContainer.load(group);
+	ier = m_containerSet->load(group);
+	if (ier != IRIC_NO_ERROR) {return ier;}
+
+	ier = m_captionContainer.load(group);
+	if (ier != IRIC_NO_ERROR) {return ier;}
+
+	ier = m_colorContainer.load(group);
+	if (ier != IRIC_NO_ERROR) {return ier;}
+
+	ier = m_opacityContainer.load(group);
+	if (ier != IRIC_NO_ERROR) {return ier;}
+
+	ier = m_showNameContainer.load(group);
+	if (ier != IRIC_NO_ERROR) {return ier;}
+
+	ier = m_pointSizeContainer.load(group);
+	if (ier != IRIC_NO_ERROR) {return ier;}
 
 	setCaption(m_captionContainer.value());
 	QColor color(m_colorContainer.value());
@@ -106,47 +108,42 @@ void BoundaryConditionDialog::load(const iRICLib::H5CgnsConditionGroup& group)
 	ui->pointSizeSpinBox->setValue(m_pointSizeContainer.value());
 
 	m_modified = false;
+
+	return IRIC_NO_ERROR;
 }
 
-void BoundaryConditionDialog::load(const int /*fn*/)
+int BoundaryConditionDialog::save(iRICLib::H5CgnsConditionGroup* group)
 {
-/*
-	m_containerSet->load();
-	m_captionContainer.load();
-	m_colorContainer.load();
-	m_opacityContainer.load();
-	m_showNameContainer.load();
-	m_pointSizeContainer.load();
-*/
-	setCaption(m_captionContainer.value());
-	QColor color(m_colorContainer.value());
-	ui->colorWidget->setColor(color);
-	ui->transparencyWidget->setOpacityPercent(m_opacityContainer.value());
-	ui->showNameCheckBox->setChecked(m_showNameContainer.value() == 1);
-	ui->pointSizeSpinBox->setValue(m_pointSizeContainer.value());
+	int ier = 0;
+	ier = m_containerSet->save(group);
+	if (ier != IRIC_NO_ERROR) {return ier;}
 
-	m_modified = false;
-}
-
-void BoundaryConditionDialog::save(const int /*fn*/)
-{
-	m_containerSet->save();
 	m_captionContainer.setValue(ui->nameEdit->text());
-	m_captionContainer.save();
+	ier = m_captionContainer.save(group);
+
 	m_colorContainer.setValue(ui->colorWidget->color().name());
-	m_colorContainer.save();
+	m_colorContainer.save(group);
+	if (ier != IRIC_NO_ERROR) {return ier;}
+
 	m_opacityContainer.setValue(ui->transparencyWidget->opacityPercent());
-	m_opacityContainer.save();
+	m_opacityContainer.save(group);
+	if (ier != IRIC_NO_ERROR) {return ier;}
+
 	if (ui->showNameCheckBox->isChecked()) {
 		m_showNameContainer.setValue(1);
 	} else {
 		m_showNameContainer.setValue(0);
 	}
-	m_showNameContainer.save();
+	ier = m_showNameContainer.save(group);
+	if (ier != IRIC_NO_ERROR) {return ier;}
+
 	m_pointSizeContainer.setValue(ui->pointSizeSpinBox->value());
-	m_pointSizeContainer.save();
+	ier = m_pointSizeContainer.save(group);
+	if (ier != IRIC_NO_ERROR) {return ier;}
 
 	m_modified = false;
+
+	return IRIC_NO_ERROR;
 }
 
 void BoundaryConditionDialog::accept()

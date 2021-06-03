@@ -280,9 +280,6 @@ void PreProcessorGeoDataComplexGroupDataItem::showEditGroupDialog()
 		}
 		++ newindex;
 	}
-	for (int i = 0; i < m_groups.size(); ++i) {
-		m_groups[i]->setNameAndNumber(m_condition->name(), i + 1);
-	}
 
 	// modify the geodata values.
 	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
@@ -399,7 +396,6 @@ void PreProcessorGeoDataComplexGroupDataItem::createDefaultGroup()
 	g->setCaption("Default");
 	g->setColor(m_undefinedColor);
 	g->setIsDefault(true);
-	g->setNameAndNumber(m_condition->name(), 1);
 	m_groups.push_back(g);
 }
 

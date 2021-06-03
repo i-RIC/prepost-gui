@@ -1347,7 +1347,7 @@ int PreProcessorGeoDataGroupDataItem::saveToCgnsFile()
 		auto item = dynamic_cast<PreProcessorGeoDataDataItem*>(child);
 		auto geoData = item->geoData();
 
-		int ier = group->add(iRIC::toStr(geoData->relativeFilename()), geoData->type());
+		int ier = group->add(iRIC::toStr(geoData->relativeFilename()), geoData->iRICLibType());
 		if (ier != IRIC_NO_ERROR) {return ier;}
 	}
 	return IRIC_NO_ERROR;

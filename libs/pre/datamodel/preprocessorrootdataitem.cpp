@@ -334,13 +334,6 @@ void PreProcessorRootDataItem::deleteItem(QStandardItem* item, bool noDraw)
 	}
 }
 
-void PreProcessorRootDataItem::saveToCgnsFile(const int fn)
-{
-	cg_iRIC_InitRead(fn);
-	cg_iRIC_Clear_Complex();
-	GraphicsWindowDataItem::saveToCgnsFile(fn);
-}
-
 PreProcessorDataModel* PreProcessorRootDataItem::dataModel() const
 {
 	return dynamic_cast<PreProcessorDataModel*>(GraphicsWindowRootDataItem::dataModel());

@@ -44,12 +44,6 @@ PreProcessorBCSettingGroupDataItem::PreProcessorBCSettingGroupDataItem(PreProces
 PreProcessorBCSettingGroupDataItem::~PreProcessorBCSettingGroupDataItem()
 {}
 
-void PreProcessorBCSettingGroupDataItem::loadFromCgnsFile(const int /*fn*/)
-{}
-
-void PreProcessorBCSettingGroupDataItem::saveToCgnsFile(const int /*fn*/)
-{}
-
 void PreProcessorBCSettingGroupDataItem::deleteSelected()
 {
 	if (m_childItems.size() == 0) {

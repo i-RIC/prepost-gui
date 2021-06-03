@@ -49,20 +49,6 @@ void InputConditionContainerSet::setup(const QDomNode& condNode, const SolverDef
 	}
 }
 
-void InputConditionContainerSet::setBCProperty(const std::string& bcname, int bcindex)
-{
-	for (auto& pair : m_containers) {
-		pair.second->setBCProperty(bcname, bcindex);
-	}
-}
-
-void InputConditionContainerSet::setComplexProperty(const std::string& compname, int compindex)
-{
-	for (auto& pair : m_containers) {
-		pair.second->setComplexProperty(compname, compindex);
-	}
-}
-
 void InputConditionContainerSet::setupSimple(const QDomNode& contNode, const SolverDefinition& def, const SolverDefinitionTranslator& t)
 {
 	QDomNode itemsNode = iRIC::getChildNode(contNode, "Items");

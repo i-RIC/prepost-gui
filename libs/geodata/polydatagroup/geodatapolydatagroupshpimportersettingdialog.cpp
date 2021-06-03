@@ -53,7 +53,7 @@ void GeoDataPolyDataGroupShpImporterSettingDialog::setLabels(const QStringList& 
 
 void GeoDataPolyDataGroupShpImporterSettingDialog::setData(const std::vector<std::vector<QVariant> >& data)
 {
-	ui->tableWidget->setRowCount(data.size());
+	ui->tableWidget->setRowCount(static_cast<int> (data.size()));
 	for (int i = 0; i < data.size(); ++i) {
 		const auto& d2 = data.at(i);
 		for (int j = 0; j < d2.size(); ++j) {

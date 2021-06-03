@@ -24,6 +24,7 @@
 #include <h5cgnsbc.h>
 #include <h5cgnszone.h>
 #include <h5cgnszonebc.h>
+#include <iriclib_errorcodes.h>
 
 PreProcessorBCGroupDataItem::PreProcessorBCGroupDataItem(PreProcessorDataItem* parent) :
 	PreProcessorDataItem {tr("Boundary Condition"), QIcon(":/libs/guibase/images/iconFolder.png"), parent},
@@ -63,7 +64,7 @@ PreProcessorBCGroupDataItem::~PreProcessorBCGroupDataItem()
 	delete m_colorSource;
 }
 
-void PreProcessorBCGroupDataItem::loadFromCgnsFile(const iRICLib::H5CgnsZone& zone)
+int PreProcessorBCGroupDataItem::loadFromCgnsFile(const iRICLib::H5CgnsZone& zone)
 {
 
 	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
@@ -73,7 +74,7 @@ void PreProcessorBCGroupDataItem::loadFromCgnsFile(const iRICLib::H5CgnsZone& zo
 
 	PreProcessorGridTypeDataItem* gtItem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent()->parent());
 	auto zoneBc = zone.zoneBc();
-	if (zoneBc == nullptr) {return;}
+	if (zoneBc == nullptr) {return IRIC_NO_DATA;}
 
 	auto bcs = gtItem->gridType()->boundaryConditions();
 	for (SolverDefinitionBoundaryCondition* bc : bcs) {
@@ -91,39 +92,20 @@ void PreProcessorBCGroupDataItem::loadFromCgnsFile(const iRICLib::H5CgnsZone& zo
 
 	emit itemsUpdated();
 	emit itemsLoaded();
+
+	return IRIC_NO_ERROR;
 }
 
-void PreProcessorBCGroupDataItem::loadFromCgnsFile(const int fn)
+int PreProcessorBCGroupDataItem::saveToCgnsFile(iRICLib::H5CgnsZone* zone)
 {
-	// cg_iRIC_Init_BC_Names();
-	Grid* grid = dynamic_cast<PreProcessorGridDataItem*>(parent())->grid();
+	renumberItemsForCgns();
 
-	if (m_projectBuildNumber > 3507) {
-		for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
-			PreProcessorBCDataItem* bcItem = dynamic_cast<PreProcessorBCDataItem*>(*it);
-			bcItem->loadFromCgnsFile(fn);
-		}
-	} else {
-		// for backward compatibility.
-		PreProcessorGridTypeDataItem* gtItem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent()->parent());
-		const QList<SolverDefinitionBoundaryCondition*>& conditions = gtItem->gridType()->boundaryConditions();
-		for (int i = 0; i < conditions.count(); ++i) {
-			SolverDefinitionBoundaryCondition* bc = conditions.at(i);
-			int number;
-			cg_iRIC_Read_BC_Count(const_cast<char*>(bc->name().c_str()), &number);
-			for (int j = 0; j < number; ++j) {
-				PreProcessorBCDataItem* bcItem = new PreProcessorBCDataItem(projectData()->solverDefinition(), bc, this);
-				bcItem->setProjectNumber(j + 1);
-				bcItem->setCgnsNumber(j + 1);
-				bcItem->loadFromCgnsFile(fn);
-				m_childItems.push_back(bcItem);
-			}
-		}
-		assignActorZValues(m_zDepthRange);
-		updateItemMap();
-		emit itemsUpdated();
-		emit itemsLoaded();
+	for (auto child : m_childItems) {
+		auto bcItem = dynamic_cast<PreProcessorBCDataItem*> (child);
+		int ier = bcItem->saveToCgnsFile(zone);
+		if (ier != IRIC_NO_ERROR) {return ier;}
 	}
+	return IRIC_NO_ERROR;
 }
 
 void PreProcessorBCGroupDataItem::renumberItemsForProject()
@@ -180,14 +162,6 @@ void PreProcessorBCGroupDataItem::renumberItemsForCgns()
 			tmpItem->setCgnsNumber(0);
 		}
 		++ it;
-	}
-}
-
-void PreProcessorBCGroupDataItem::saveToCgnsFile(const int fn)
-{
-	renumberItemsForCgns();
-	for (int i = 0; i < m_childItems.size(); ++i) {
-		m_childItems[i]->saveToCgnsFile(fn);
 	}
 }
 

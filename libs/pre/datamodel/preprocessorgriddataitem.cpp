@@ -68,12 +68,10 @@
 #include <vtkTriangle.h>
 #include <vtkVertex.h>
 
-#include <cgnslib.h>
-#include <iriclib.h>
-
 #include <h5cgnsbase.h>
 #include <h5cgnsfile.h>
 #include <h5cgnszone.h>
+#include <iriclib_errorcodes.h>
 
 PreProcessorGridDataItem::Impl::Impl() :
 	m_grid {nullptr},
@@ -159,18 +157,19 @@ void PreProcessorGridDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 	}
 }
 
-void PreProcessorGridDataItem::loadFromCgnsFile(const int fn)
+int PreProcessorGridDataItem::loadFromCgnsFile()
 {
-	std::string zoneName = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItem*>(parent())->zoneName();
+	auto gccItem = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItem*> (parent());
+	auto zoneName = gccItem->zoneName();
 
 	auto mainFile = dataModel()->iricMainWindow()->projectData()->mainfile();
-	auto ccBase = mainFile->cgnsFile()->ccBase();
-	auto zone = ccBase->zone(zoneName);
-	if (zone == nullptr) {return;}
+	auto zone = mainFile->cgnsFile()->ccBase()->zone(zoneName);
+	if (zone == nullptr) {return IRIC_NO_DATA;}
 
 	impl->m_grid = GridCgnsEstimater::buildGrid(*zone, nullptr);
 	SolverDefinitionGridType* gridType = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent())->gridType();
 	gridType->buildGridAttributes(impl->m_grid);
+
 	impl->m_grid->setParent(this);
 	impl->m_grid->setDataItem(this);
 	impl->m_grid->setZoneName(zoneName);
@@ -178,8 +177,13 @@ void PreProcessorGridDataItem::loadFromCgnsFile(const int fn)
 	// Now, memory is allocated. load data.
 	impl->m_grid->loadFromCgnsFile(*zone);
 
+	if (m_bcGroupDataItem != nullptr) {
+		int ier = m_bcGroupDataItem->loadFromCgnsFile(*zone);
+	}
+
 	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
-		(*it)->loadFromCgnsFile(fn);
+		int ier = (*it)->loadFromCgnsFile();
+		if (ier != IRIC_NO_ERROR) {return ier;}
 	}
 	impl->m_gridIsDeleted = false;
 
@@ -189,15 +193,24 @@ void PreProcessorGridDataItem::loadFromCgnsFile(const int fn)
 	finishGridLoading();
 	updateActionStatus();
 	updateObjectBrowserTree();
+
+	return IRIC_NO_ERROR;
 }
 
-void PreProcessorGridDataItem::saveToCgnsFile(const int fn)
+int PreProcessorGridDataItem::saveToCgnsFile()
 {
+	auto gccItem = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItem*> (parent());
+	auto zoneName = gccItem->zoneName();
+
+	auto mainFile = dataModel()->iricMainWindow()->projectData()->mainfile();
+	auto ccBase = mainFile->cgnsFile()->ccBase();
+
 	if (impl->m_grid != nullptr) {
-		impl->m_grid->saveToCgnsFile(fn);
+		impl->m_grid->saveToCgnsFile(ccBase, zoneName);
 		if (m_bcGroupDataItem != nullptr) {
 			try {
-				m_bcGroupDataItem->saveToCgnsFile(fn);
+				auto zone = ccBase->zone(zoneName);
+				m_bcGroupDataItem->saveToCgnsFile(zone);
 			} catch (ErrorMessage& m) {
 				impl->m_grid->setModified();
 				throw m;
@@ -293,36 +306,29 @@ void PreProcessorGridDataItem::exportGrid()
 	if (cgnsExporter != nullptr) {
 		// CGNS exporter is a little special.
 		// Boundary condition should be exported too.
-		QString tmpname;
-		int fn, B;
-		// create temporary CGNS file.
-		bool internal_ret = cgnsExporter->createTempCgns(impl->m_grid, tmpname, fn, B);
-		if (! internal_ret) {goto EXPORT_ERROR_BEFORE_OPEN;}
+		auto tmpname = projectData()->tmpFileName();
+		try {
+			ret = true;
+			auto file = new iRICLib::H5CgnsFile(iRIC::toStr(tmpname), iRICLib::H5CgnsFile::Mode::Create);
+			impl->m_grid->saveToCgnsFile(file->ccBase(), "iRICZone");
+			auto zone = file->ccBase()->zone("IRICZone");
+			m_bcGroupDataItem->saveToCgnsFile(zone);
+			delete file;
 
-		// write to the iRICZone.
-		internal_ret = impl->m_grid->saveToCgnsFile(fn, B, "iRICZone");
-		if (! internal_ret) {goto EXPORT_ERROR_AFTER_OPEN;}
-
-		// output boundary condition
-		if (m_bcGroupDataItem != nullptr) {
-			try {
-				cg_iRIC_Init(fn);
-				m_bcGroupDataItem->saveToCgnsFile(fn);
-			} catch (ErrorMessage& m) {
-				QMessageBox::critical(mainWindow(), tr("Error"), m);
-				goto EXPORT_ERROR_AFTER_OPEN;
+			// if it already exists, remove it first.
+			QFile cgnsfile(filename);
+			if (cgnsfile.exists()) {
+				cgnsfile.remove();
 			}
-		}
-		ret = cgnsExporter->closeAndMoveCgns(tmpname, fn, filename);
-		goto EXPORT_SUCCEED;
+			// copy to the specified file.
+			bool ok = QFile::copy(tmpname, filename);
+			if (! ok) {ret = false;}
 
-EXPORT_ERROR_AFTER_OPEN:
-		cg_close(fn);
-		QFile::remove(tmpname);
-EXPORT_ERROR_BEFORE_OPEN:
-		ret = false;
-EXPORT_SUCCEED:
-		;
+			// Delete the temporary file
+			QFile::remove(tmpname);
+		}  catch (...) {
+			ret = false;
+		}
 	} else {
 		auto cs = projectData()->mainfile()->coordinateSystem();
 		ret = exporter->doExport(impl->m_grid, filename, selectedFilter, cs, projectData()->mainWindow());
@@ -1050,7 +1056,7 @@ void PreProcessorGridDataItem::informGridAttributeChangeAll()
 void PreProcessorGridDataItem::informGridAttributeChange(const std::string& name)
 {
 	emit gridAttributeChanged(name);
-	PreProcessorGridAttributeNodeDataItem* nItem = m_nodeGroupDataItem->nodeDataItem(name);
+	auto nItem = m_nodeGroupDataItem->nodeDataItem(name);
 	if (nItem != nullptr) {nItem->updateCrossectionWindows();}
 }
 

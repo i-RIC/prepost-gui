@@ -95,21 +95,13 @@ bool GridCreatingConditionExternalProgramSettingDialog::load()
 
 bool GridCreatingConditionExternalProgramSettingDialog::save()
 {
-	int fn;
-	int ret;
-	ret = cg_open(iRIC::toStr(m_filename).c_str(), CG_MODE_MODIFY, &fn);
-	if (ret != 0) {return false;}
-	cg_iRIC_Init(fn);
-	if (ret != 0) {goto ERROR;}
-	ret = cg_iRIC_GotoCC(fn);
-	if (ret != 0) {goto ERROR;}
-	m_containerSet->save();
-	cg_close(fn);
-	return true;
-
-ERROR:
-	cg_close(fn);
-	return false;
+	try {
+		iRICLib::H5CgnsFile file(iRIC::toStr(m_filename), iRICLib::H5CgnsFile::Mode::Create);
+		m_containerSet->save(file.ccBase()->ccGroup());
+		return true;
+	}  catch (...) {
+		return false;
+	}
 }
 
 void GridCreatingConditionExternalProgramSettingDialog::handleButtonClick(QAbstractButton* button)
@@ -134,7 +126,13 @@ void GridCreatingConditionExternalProgramSettingDialog::accept()
 	if (! ok) {
 		QMessageBox::critical(parentWidget(), tr("Error"), tr("Error occured while saving."));
 	}
+
 	QDialog::accept();
+}
+
+void GridCreatingConditionExternalProgramSettingDialog::setFilename(const QString& filename)
+{
+	m_filename = filename;
 }
 
 QString GridCreatingConditionExternalProgramSettingDialog::errorMessage(int errorcode) const

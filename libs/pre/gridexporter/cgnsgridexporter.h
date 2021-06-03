@@ -10,15 +10,12 @@ class CgnsGridExporter : public GridInternalExporter
 
 public:
 	CgnsGridExporter();
-	virtual ~CgnsGridExporter() {}
-	virtual QString caption() const override;
+	~CgnsGridExporter() override;
+
+	QString caption() const override;
 	QStringList fileDialogFilters() const override;
-	bool isGridTypeSupported(SolverDefinitionGridType::GridType /*gt*/) const override {
-		return true;
-	}
+	bool isGridTypeSupported(SolverDefinitionGridType::GridType gt) const override;
 	bool doExport(Grid* grid, const QString& filename, const QString& selectedFilter, CoordinateSystem* cs, QWidget* parent) override;
-	bool createTempCgns(Grid* grid, QString& tmpname, int& fn, int& B);
-	bool closeAndMoveCgns(const QString& tmpname, int fn, const QString& cgnsname);
 };
 
 #endif // CGNSGRIDEXPORTER_H
