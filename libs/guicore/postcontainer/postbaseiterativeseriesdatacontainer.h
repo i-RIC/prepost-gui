@@ -13,7 +13,7 @@ public:
 	PostBaseIterativeSeriesDataContainer(const std::string& name, PostSolutionInfo* parent);
 
 private:
-	bool loadData(const int fn) override;
+	int loadData() override;
 
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;

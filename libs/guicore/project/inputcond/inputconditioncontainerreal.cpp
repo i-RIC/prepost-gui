@@ -88,7 +88,7 @@ int InputConditionContainerReal::load(const iRICLib::H5CgnsConditionGroup& group
 
 int InputConditionContainerReal::save(iRICLib::H5CgnsConditionGroup* group)
 {
-	group->writeRealValue(name(), impl->m_value);
+	return group->writeRealValue(name(), impl->m_value);
 }
 
 void InputConditionContainerReal::clear()

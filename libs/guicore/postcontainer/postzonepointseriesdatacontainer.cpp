@@ -15,6 +15,7 @@
 #include <h5cgnsfilesolutionreader.h>
 #include <h5cgnsflowsolution.h>
 #include <h5cgnszone.h>
+#include <iriclib_errorcodes.h>
 
 #include <cmath>
 
@@ -41,7 +42,7 @@ int PostZonePointSeriesDataContainer::pointIndex() const
 	return m_pointIndex;
 }
 
-bool PostZonePointSeriesDataContainer::loadData(const std::string &name, iRICLib::H5CgnsZone* zone, double* value)
+int PostZonePointSeriesDataContainer::loadData(const std::string &name, iRICLib::H5CgnsZone* zone, double* value)
 {
 	auto zc = zoneDataContainer();
 	std::vector<PostCalculatedResult*> calcResults = zc->calculatedResults();
@@ -53,20 +54,20 @@ bool PostZonePointSeriesDataContainer::loadData(const std::string &name, iRICLib
 	return loadResultData(name, zone, value);
 }
 
-bool PostZonePointSeriesDataContainer::loadCalculatedData(PostCalculatedResult* result, iRICLib::H5CgnsZone* zone, double* value)
+int PostZonePointSeriesDataContainer::loadCalculatedData(PostCalculatedResult* result, iRICLib::H5CgnsZone* zone, double* value)
 {
 	std::vector<double> args;
 	for (PostCalculatedResultArgument* arg : result->arguments()) {
 		double argVal;
-		bool ok = loadData(arg->name(), zone, &argVal);
-		if (! ok) {return false;}
+		int ier = loadData(arg->name(), zone, &argVal);
+		if (! ier) {return ier;}
 		args.push_back(argVal);
 	}
 	*value = result->calculateValue(args);
-	return true;
+	return IRIC_NO_ERROR;
 }
 
-bool PostZonePointSeriesDataContainer::loadResultData(const std::string& name, iRICLib::H5CgnsZone* zone, double* value)
+int PostZonePointSeriesDataContainer::loadResultData(const std::string& name, iRICLib::H5CgnsZone* zone, double* value)
 {
 	int ier;
 	QRegExp rx("^(.+) \\(magnitude\\)$");
@@ -99,7 +100,7 @@ bool PostZonePointSeriesDataContainer::loadResultData(const std::string& name, i
 		sol->readValueAsDouble(name, &buffer);
 		*value = buffer[m_pointIndex];
 	}
-	return true;
+	return IRIC_NO_ERROR;
 }
 
 PostZoneDataContainer* PostZonePointSeriesDataContainer::zoneDataContainer() const
@@ -107,7 +108,7 @@ PostZoneDataContainer* PostZonePointSeriesDataContainer::zoneDataContainer() con
 	return solutionInfo()->zoneContainer(m_dimension, m_zoneName);
 }
 
-bool PostZonePointSeriesDataContainer::loadData(const int fn)
+int PostZonePointSeriesDataContainer::loadData()
 {
 	m_data.clear();
 	auto zc = zoneDataContainer();
@@ -132,7 +133,7 @@ bool PostZonePointSeriesDataContainer::loadData(const int fn)
 		if (! ok) {return false;}
 		m_data.push_back(val);
 	}
-	return true;
+	return IRIC_NO_ERROR;
 }
 
 void PostZonePointSeriesDataContainer::doLoadFromProjectMainFile(const QDomNode& /*node*/)

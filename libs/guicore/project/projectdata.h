@@ -53,8 +53,6 @@ public:
 	bool unzipFrom(const QString& zipFilename);
 	/// Load solver information from a project file.
 	void loadSolverInformation();
-	/// Load only CGNS file list from a project file.
-	void loadCgnsList();
 	/// Compress the workfolder content to specified zip file..
 	bool zipTo(const QString& filename);
 	/// Main file (project.xml)
@@ -63,8 +61,6 @@ public:
 	SolverDefinition* solverDefinition() const;
 	/// Setter function for solver definition
 	void setSolverDefinition(SolverDefinition* def);
-	/// Switch to the default cgns file.
-	bool switchToDefaultCgnsFile();
 	/// Set iRIC version number
 	void setVersion(const VersionNumber& v);
 	/// Get iRIC version number that created this project.

@@ -24,11 +24,11 @@ public:
 	int pointIndex() const;
 
 private:
-	bool loadData(const int fn) override;
-	bool loadData(const std::string& name, iRICLib::H5CgnsZone* zone, double* value);
+	int loadData() override;
+	int loadData(const std::string& name, iRICLib::H5CgnsZone* zone, double* value);
 
-	bool loadCalculatedData(PostCalculatedResult* result, iRICLib::H5CgnsZone* zone, double* value);
-	bool loadResultData(const std::string& name, iRICLib::H5CgnsZone* zone, double* value);
+	int loadCalculatedData(PostCalculatedResult* result, iRICLib::H5CgnsZone* zone, double* value);
+	int loadResultData(const std::string& name, iRICLib::H5CgnsZone* zone, double* value);
 
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;

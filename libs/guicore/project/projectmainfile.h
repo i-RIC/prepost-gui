@@ -20,7 +20,6 @@ class QDomDocument;
 class QPointF;
 
 class BackgroundImageInfo;
-class CgnsFileList;
 class CoordinateSystem;
 class iRICMainWindowInterface;
 class MeasuredData;
@@ -43,16 +42,12 @@ public:
 	/// Constructor
 	ProjectMainFile(ProjectData* parent);
 	virtual ~ProjectMainFile();
-	/// Create first Cgns file.
-	void createDefaultCgnsFile();
 	/// Initializes for the specified solver definition.
 	void initForSolverDefinition();
 	/// Load solver information from file
 	void loadSolverInformation();
 	/// Load data from file
 	void load();
-	/// Load only CGNS file list from a project file.
-	void loadCgnsList();
 	/// Load Post-processor settings from a project file.
 	void openPostProcessors();
 	/// Save data into file
@@ -77,8 +72,6 @@ public:
 	const VersionNumber& iRICVersion() const;
 	void setIRICVersion(const VersionNumber& v);
 
-	/// Cgns file list
-	CgnsFileList* cgnsFileList() const {return m_cgnsFileList;}
 	/// Solution information
 	PostSolutionInfo* postSolutionInfo() const;
 	bool hasResults();
@@ -105,7 +98,6 @@ public:
 	const std::vector<vtkRenderer*>& renderers() const;
 
 	void updateActorVisibility(int idx, bool vis);
-	bool importCgnsFile(const QString& filename, const QString& newname);
 	/// Import Measured data from CSV files.
 	void addMeasuredData();
 	virtual void setModified(bool modified = true) override;
@@ -136,7 +128,6 @@ public:
 
 public slots:
 	void exportCurrentCgnsFile();
-	bool switchCgnsFile(const QString& name);
 
 	void addBackgroundImage();
 	void moveUpImage(const QModelIndex& index);
@@ -154,7 +145,6 @@ public slots:
 	void setupOffset();
 
 signals:
-	void cgnsFileSwitched();
 	void backgroundImageAdded();
 	void backgroundImageDeleted(int i);
 	void backgroundImageMovedUp(int i);
@@ -173,16 +163,10 @@ private:
 	ProjectData* projectData() const override;
 	QString relativeSubPath() const override;
 
-	/// Cgns file list
-	CgnsFileList* m_cgnsFileList;
 	/// ProjectData
 	ProjectData* m_projectData;
 	/// Renderers for background images
 	std::vector<vtkRenderer*> m_renderers;
-	/// Load data from CGNS file
-	bool loadCgnsFile(const QString& name);
-	/// Soad data from CGNS file
-	bool saveCgnsFile(const QString& name);
 	void checkVersionCompatibility();
 	/// Load DOM document
 	void loadDom(QDomDocument& doc);

@@ -27,9 +27,6 @@ public:
 	QMenu* calcCondMenu() const;
 	void connectWithDataModel();
 
-private slots:
-	void informCgnsListUpdate(const QList<CgnsFileEntry*>& list);
-
 private:
 	/// Initialization
 	void init();

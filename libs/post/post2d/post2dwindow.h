@@ -42,8 +42,6 @@ public:
 	Post2dWindow(QWidget* parent, int index, Post2dWindowProjectDataItem* pdi);
 	~Post2dWindow();
 
-	/// Informed that CGNS file is switched.
-	void handleCgnsSwitch() {}
 	/// switch to the new index.
 	void changeIndex(uint /*newindex*/) {}
 	QPixmap snapshot() override;

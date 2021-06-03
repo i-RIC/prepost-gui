@@ -7,6 +7,7 @@
 #include <h5cgnsbase.h>
 #include <h5cgnsbaseiterativedata.h>
 #include <h5cgnsfile.h>
+#include <iriclib_errorcodes.h>
 
 #include <set>
 
@@ -15,25 +16,25 @@ PostBaseIterativeSeriesDataContainer::PostBaseIterativeSeriesDataContainer(const
 	m_baseIterativeName (name)
 {}
 
-bool PostBaseIterativeSeriesDataContainer::loadData(const int fn)
+int PostBaseIterativeSeriesDataContainer::loadData()
 {
 	auto solInfo = solutionInfo();
 
 	auto biter = solInfo->cgnsFile()->ccBase()->biterData();
 	std::set<std::string> resultNames;
 	int ier = biter->getResultNames(&resultNames);
-	if (ier != 0) {return false;}
+	if (ier != 0) {return ier;}
 
-	if (resultNames.find(m_baseIterativeName) == resultNames.end()) {return false;}
+	if (resultNames.find(m_baseIterativeName) == resultNames.end()) {return IRIC_DATA_NOT_FOUND;}
 
 	iRICLib::H5Util::DataArrayValueType type;
 	ier = biter->readValueType(m_baseIterativeName, &type);
-	if (ier != 0) {return false;}
+	if (ier != 0) {return ier;}
 
 	if (type == iRICLib::H5Util::DataArrayValueType::RealDouble) {
 		std::vector<double> buffer;
 		ier = biter->readValues(m_baseIterativeName, &buffer);
-		if (ier != 0) {return false;}
+		if (ier != 0) {return ier;}
 		m_data.clear();
 		for (double v : buffer) {
 			m_data.push_back(v);
@@ -41,13 +42,13 @@ bool PostBaseIterativeSeriesDataContainer::loadData(const int fn)
 	}	else if (type == iRICLib::H5Util::DataArrayValueType::Int) {
 		std::vector<int> buffer;
 		ier = biter->readValues(m_baseIterativeName, &buffer);
-		if (ier != 0) {return false;}
+		if (ier != 0) {return ier;}
 		m_data.clear();
 		for (int v : buffer) {
 			m_data.push_back(v);
 		}
 	}
-	return true;
+	return IRIC_NO_ERROR;
 }
 
 void PostBaseIterativeSeriesDataContainer::doLoadFromProjectMainFile(const QDomNode& /*node*/)

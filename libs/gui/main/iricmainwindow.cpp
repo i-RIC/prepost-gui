@@ -266,10 +266,9 @@ void iRICMainWindow::newProject(SolverDefinitionAbstract* solver)
 	}
 
 	m_mousePositionWidget->setProjectData(m_projectData);
-	m_projectData->mainfile()->createDefaultCgnsFile();
 	setupForNewProjectData();
 
-	m_projectData->switchToDefaultCgnsFile();
+	handleCgnsSwitch();
 
 	bool ok = m_preProcessorWindow->setupCgnsFilesIfNeeded(true);
 	if (!ok) {
@@ -408,14 +407,11 @@ void iRICMainWindow::openProject(const QString& filename)
 	m_projectData->setVersion(m_versionNumber);
 	setupForNewProjectData();
 
-	bool ok = m_projectData->switchToDefaultCgnsFile();
-	if (! ok) {
-		closeProject();
-		return;
-	}
+	m_projectData->mainfile()->loadFromCgnsFile();
+	handleCgnsSwitch();
 
-	ok = m_preProcessorWindow->setupCgnsFilesIfNeeded(true);
-	if (!ok) {
+	bool ok = m_preProcessorWindow->setupCgnsFilesIfNeeded(true);
+	if (! ok) {
 		closeProject();
 		return;
 	}
@@ -1307,20 +1303,6 @@ const QLocale iRICMainWindow::locale() const
 bool iRICMainWindow::isSolverRunning() const
 {
 	return m_solverConsoleWindow->isSolverRunning();
-}
-
-void iRICMainWindow::switchCgnsFile(const QString& newcgns)
-{
-	if (isSolverRunning()) {
-		warnSolverRunning();
-		return;
-	}
-	// clear animation tool bar steps.
-	auto ac = m_animationController;
-	ac->clearSteps();
-	// switch cgns file.
-	m_projectData->mainfile()->switchCgnsFile(newcgns);
-	updatePostActionStatus();
 }
 
 ProjectWorkspace* iRICMainWindow::workspace()

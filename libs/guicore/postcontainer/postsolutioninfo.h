@@ -109,12 +109,12 @@ signals:
 
 private:
 	bool stepsExist() const;
-	void setupZoneDataContainers(int fn);
+	void setupZoneDataContainers();
 	void loadCalculatedResult();
 	void clearCalculatedResults(QMap<std::string, std::vector<PostCalculatedResult*> >* results);
-	bool innerSetupZoneDataContainers(int fn, int dimension, QList<PostZoneDataContainer*>* containers, QMap<std::string, PostZoneDataContainer*>* containerNameMap, QMap<std::string, std::vector<PostCalculatedResult*> > *results);
+	bool innerSetupZoneDataContainers(int dimension, QList<PostZoneDataContainer*>* containers, QMap<std::string, PostZoneDataContainer*>* containerNameMap, QMap<std::string, std::vector<PostCalculatedResult*> > *results);
 
-	bool setupBaseIterativeResults(int fn, int baseId);
+	bool setupBaseIterativeResults();
 	void clearBaseIterativeResults();
 
 	void doLoadFromProjectMainFile(const QDomNode& node) override;

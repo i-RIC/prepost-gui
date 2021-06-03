@@ -67,7 +67,6 @@ public:
 	const QLocale locale() const override;
 	bool isSolverRunning() const override;
 	void warnSolverRunning() const override;
-	void switchCgnsFile(const QString& newcgns);
 	ProjectWorkspace* workspace() override;
 	const VersionNumber& versionNumber() const override;
 	void setDebugMode(bool debug);

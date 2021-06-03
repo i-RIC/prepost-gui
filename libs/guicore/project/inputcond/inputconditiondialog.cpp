@@ -94,6 +94,17 @@ void InputConditionDialog::setup(const SolverDefinition& def, const QLocale& loc
 	ui->m_pageList->selectFirstItem();
 }
 
+
+void InputConditionDialog::setFileName(const QString& fileName)
+{
+	m_fileName = fileName;
+}
+
+void InputConditionDialog::setWorkFolder(const QString& workFolder)
+{
+	m_workFolder = workFolder;
+}
+
 int InputConditionDialog::load(const iRICLib::H5CgnsConditionGroup& group)
 {
 	int ier = m_containerSet->load(group);
@@ -120,7 +131,7 @@ int InputConditionDialog::save(iRICLib::H5CgnsConditionGroup* group)
 bool InputConditionDialog::importFromCgns(const QString& filename)
 {
 	// load from the specified file.
-	int fn, ret;
+	int ret;
 	QString tmpname = iRIC::getTempFileName(m_workFolder);
 	// Copy to a temporary file.
 	bool bret = QFile::copy(filename, tmpname);
@@ -179,34 +190,29 @@ bool InputConditionDialog::exportToCgns(const QString& filename)
 	// because cg_open() does not supports file names with Non-ASCII characters.
 	QString tmpname = iRIC::getTempFileName(m_workFolder);
 
-	bool bret = ProjectCgnsFile::createNewFile(tmpname, 2, 2);
-	if (! bret) {return false;}
-	bret = ProjectCgnsFile::writeSolverInfo(tmpname, &(m_solverDefinition->abstract()));
-	if (! bret) {return false;}
-	// Save into the specified file.
-	int fn, ret;
-	// Open cgns file
-	ret = cg_open(iRIC::toStr(tmpname).c_str(), CG_MODE_MODIFY, &fn);
-	if (ret != 0) {return false;}
-	ret = cg_iRIC_GotoCC(fn);
-	if (ret != 0) {return false;}
-	// Save calculation condition.
-	m_containerSet->save();
-	ret = cg_close(fn);
-	if (ret != 0) {return false;}
+	bool ok = true;
+	try {
+		iRICLib::H5CgnsFile file(iRIC::toStr(tmpname), iRICLib::H5CgnsFile::Mode::Create);
+		ProjectCgnsFile::writeSolverInfo(&file, m_solverDefinition->abstract());
+		int ret = m_containerSet->save(file.ccBase()->ccGroup());
+		ok = (ret == IRIC_NO_ERROR);
+	} catch (...) {
+		ok = false;
+	}
+	if (! ok) {return false;}
 
 	// Saved into temporary file.
 	// Copy into the specified file.
 	if (QFile::exists(filename)) {
 		// this file already exists. remove it first.
-		bret = QFile::remove(filename);
-		if (! bret) {return false;}
+		ok = QFile::remove(filename);
+		if (! ok ) {return false;}
 	}
-	bret = QFile::copy(tmpname, filename);
-	if (! bret) {return false;}
+	ok = QFile::copy(tmpname, filename);
+	if (! ok) {return false;}
 	// Delete the temporary file.
-	bret = QFile::remove(tmpname);
-	if (! bret) {return false;}
+	ok = QFile::remove(tmpname);
+	if (! ok) {return false;}
 	return true;
 }
 
@@ -272,14 +278,17 @@ void InputConditionDialog::checkImportSourceUpdate()
 
 	if (! ret) {return;}
 
-	int fn, ier;
-	ier = cg_open(iRIC::toStr(m_fileName).c_str(), CG_MODE_MODIFY, &fn);
-	if (ier != 0) {
-		QMessageBox::critical(parentWidget(), tr("Error"), tr("Error occured while saving."));
-		return;
+	bool ok = true;
+	try {
+		iRICLib::H5CgnsFile cgnsFile(iRIC::toStr(m_fileName), iRICLib::H5CgnsFile::Mode::OpenModify);
+		int ier = save(cgnsFile.ccBase()->ccGroup());
+		ok = (ier == IRIC_NO_ERROR);
+	}  catch (...) {
+		ok = false;
 	}
-	save(fn);
-	cg_close(fn);
+	if (! ok) {
+		QMessageBox::critical(parentWidget(), tr("Error"), tr("Error occured while saving."));
+	}
 }
 
 bool InputConditionDialog::setupCgnsFilesIfNeeded(QString* cgnsFileForGrid, bool* updated)

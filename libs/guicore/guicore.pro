@@ -221,8 +221,6 @@ HEADERS += guicore_global.h \
            project/backgroundimageinfo.h \
            project/backgroundimageinfodialog.h \
            project/backgroundimageinfogeoreferencedialog.h \
-           project/cgnsfileentry.h \
-           project/cgnsfilelist.h \
            project/colorsource.h \
            project/gcptablemodel.h \
            project/gcptablerow.h \
@@ -642,8 +640,6 @@ SOURCES += base/iricmainwindowinterface.cpp \
            project/backgroundimageinfo.cpp \
            project/backgroundimageinfodialog.cpp \
            project/backgroundimageinfogeoreferencedialog.cpp \
-           project/cgnsfileentry.cpp \
-           project/cgnsfilelist.cpp \
            project/colorsource.cpp \
            project/gcptablemodel.cpp \
            project/georeferenceview.cpp \

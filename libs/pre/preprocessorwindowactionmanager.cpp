@@ -2,7 +2,6 @@
 #include "preprocessorwindow.h"
 #include "preprocessorwindowactionmanager.h"
 
-#include <guicore/project/cgnsfilelist.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
 
@@ -10,10 +9,10 @@
 #include <QIcon>
 #include <QMenu>
 
-PreProcessorWindowActionManager::PreProcessorWindowActionManager(PreProcessorWindow* parent)
-	: QObject(parent)
+PreProcessorWindowActionManager::PreProcessorWindowActionManager(PreProcessorWindow* parent) :
+	QObject(parent),
+	m_preWindow {parent}
 {
-	m_preWindow = parent;
 	init();
 }
 
@@ -52,11 +51,4 @@ void PreProcessorWindowActionManager::connectWithDataModel()
 
 	connect(calcCondImportAction, SIGNAL(triggered()), model, SLOT(importCalcCondition()));
 	connect(calcCondExportAction, SIGNAL(triggered()), model, SLOT(exportCalcCondition()));
-
-	connect(model->projectData()->mainfile()->cgnsFileList(), SIGNAL(cgnsFilesUpdated(QList<CgnsFileEntry*>)), this, SLOT(informCgnsListUpdate(QList<CgnsFileEntry*>)));
-}
-
-void PreProcessorWindowActionManager::informCgnsListUpdate(const QList<CgnsFileEntry*>& /*list*/)
-{
-//	calcCondImportFromCase->setEnabled(list.count() > 1);
 }

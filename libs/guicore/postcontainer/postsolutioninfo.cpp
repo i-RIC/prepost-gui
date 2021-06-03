@@ -149,15 +149,13 @@ int PostSolutionInfo::setCurrentStep(unsigned int step)
 	QTime time, wholetime;
 	wholetime.start();
 
-	int tmpfn = 0;
-
 	auto f = cgnsFile();
 	f->solutionReader()->setSolutionId(step + 1);
 	f = f->solutionReader()->targetFile();
 
 	time.start();
-	setupZoneDataContainers(tmpfn);
-	setupBaseIterativeResults(tmpfn, 1);
+	setupZoneDataContainers();
+	setupBaseIterativeResults();
 	qDebug("setupZoneDataContainer(): %d", time.elapsed());
 
 	loadCalculatedResult();
@@ -200,14 +198,14 @@ void PostSolutionInfo::informStepsUpdated()
 {
 	bool ok = open();
 	if (!ok) {return;}
-	setupZoneDataContainers(0);
-	setupBaseIterativeResults(0, 1);
+	setupZoneDataContainers();
+	setupBaseIterativeResults();
 
 	emit updated();
 	emit allPostProcessorsUpdated();
 }
 
-bool PostSolutionInfo::innerSetupZoneDataContainers(int fn, int dim, QList<PostZoneDataContainer*>* containers, QMap<std::string, PostZoneDataContainer*>* containerNameMap, QMap<std::string, std::vector<PostCalculatedResult*> > *results)
+bool PostSolutionInfo::innerSetupZoneDataContainers(int dim, QList<PostZoneDataContainer*>* containers, QMap<std::string, PostZoneDataContainer*>* containerNameMap, QMap<std::string, std::vector<PostCalculatedResult*> > *results)
 {
 	auto file = cgnsFile();
 
@@ -306,7 +304,7 @@ bool PostSolutionInfo::innerSetupZoneDataContainers(int fn, int dim, QList<PostZ
 	return true;
 }
 
-bool PostSolutionInfo::setupBaseIterativeResults(int fn, int baseId)
+bool PostSolutionInfo::setupBaseIterativeResults()
 {
 	clearBaseIterativeResults();
 
@@ -355,17 +353,17 @@ void PostSolutionInfo::clearBaseIterativeResults()
 	m_baseIterativeStringResults.clear();
 }
 
-void PostSolutionInfo::setupZoneDataContainers(int fn)
+void PostSolutionInfo::setupZoneDataContainers()
 {
 	bool ret;
 	// setup 1D containers.
-	ret = innerSetupZoneDataContainers(fn, 1, &m_zoneContainers1D, &m_zoneContainerNameMap1D, &m_calculatedResults1D);
+	ret = innerSetupZoneDataContainers(1, &m_zoneContainers1D, &m_zoneContainerNameMap1D, &m_calculatedResults1D);
 	if (ret) {emit zoneList1DUpdated();}
 	// setup 2D containers;
-	ret = innerSetupZoneDataContainers(fn, 2, &m_zoneContainers2D, &m_zoneContainerNameMap2D, &m_calculatedResults2D);
+	ret = innerSetupZoneDataContainers(2, &m_zoneContainers2D, &m_zoneContainerNameMap2D, &m_calculatedResults2D);
 	if (ret) {emit zoneList2DUpdated();}
 	// setup 3D containers;
-	ret = innerSetupZoneDataContainers(fn, 3, &m_zoneContainers3D, &m_zoneContainerNameMap3D, &m_calculatedResults3D);
+	ret = innerSetupZoneDataContainers(3, &m_zoneContainers3D, &m_zoneContainerNameMap3D, &m_calculatedResults3D);
 	if (ret) {emit zoneList3DUpdated();}
 }
 
@@ -478,8 +476,9 @@ int PostSolutionInfo::loadFromCgnsFile()
 		m_iterationSteps->loadFromCgnsFile(*cgnsFile());
 		m_iterationSteps->blockSignals(false);
 	}
-	int fn = 0;
-	setCurrentStep(currentStep(), fn);
+	setCurrentStep(currentStep());
+
+	return IRIC_NO_ERROR;
 }
 
 void PostSolutionInfo::closeCgnsFile()

@@ -28,8 +28,9 @@ public:
 	InputConditionDialog(SolverDefinition* solverDef, const QLocale& locale, QWidget* parent = nullptr);
 	~InputConditionDialog();
 
-	void setFileName(const QString& fileName) {m_fileName = fileName;}
-	void setWorkFolder(const QString& workFolder) {m_workFolder = workFolder;}
+	void setFileName(const QString& fileName);
+	void setWorkFolder(const QString& workFolder);
+
 	/// Load data fron CGNS file.
 	int load(const iRICLib::H5CgnsConditionGroup& group);
 	/// Save data into CGNS file.
