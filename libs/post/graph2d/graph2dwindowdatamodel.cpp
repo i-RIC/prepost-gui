@@ -33,8 +33,8 @@
 #include <qwt_plot_canvas.h>
 #include <qwt_legend.h>
 
-Graph2dWindowDataModel::Graph2dWindowDataModel(QMainWindow* w, ProjectDataItem* parent)
-	: ProjectDataItem(parent)
+Graph2dWindowDataModel::Graph2dWindowDataModel(QMainWindow* w, ProjectDataItem* parent) :
+	ProjectDataItem(parent)
 {
 	m_rootDataItem = nullptr;
 	m_mainWindow = w;
@@ -54,14 +54,14 @@ Graph2dWindowDataModel::~Graph2dWindowDataModel()
 	delete m_operationToolBar;
 }
 
-void Graph2dWindowDataModel::loadFromCgnsFile(const int fn)
+int Graph2dWindowDataModel::loadFromCgnsFile()
 {
-	m_rootDataItem->loadFromCgnsFile(fn);
+	return m_rootDataItem->loadFromCgnsFile();
 }
 
-void Graph2dWindowDataModel::saveToCgnsFile(const int fn)
+int Graph2dWindowDataModel::saveToCgnsFile()
 {
-	m_rootDataItem->saveToCgnsFile(fn);
+	return m_rootDataItem->saveToCgnsFile();
 }
 
 void Graph2dWindowDataModel::closeCgnsFile()

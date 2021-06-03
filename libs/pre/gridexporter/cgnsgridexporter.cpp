@@ -18,6 +18,9 @@ CgnsGridExporter::CgnsGridExporter() :
 	GridInternalExporter {}
 {}
 
+CgnsGridExporter::~CgnsGridExporter()
+{}
+
 QString CgnsGridExporter::caption() const
 {
 	return tr("CGNS file");

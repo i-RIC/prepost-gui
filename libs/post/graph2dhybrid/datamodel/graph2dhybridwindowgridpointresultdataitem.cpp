@@ -53,8 +53,7 @@ void Graph2dHybridWindowGridPointResultDataItem::updateValues()
 	const auto& s = dataModel()->setting();
 	auto info = s.targetDataTypeInfo();
 	m_dataContainer = new PostZonePointSeriesDataContainer(info->dimension, info->zoneName, iRIC::toStr(title()), s.gridIndex(), info->gridLocation, postSolutionInfo());
-	int fn = 0;
-	m_dataContainer->update(fn);
+	m_dataContainer->update();
 	auto timesteps = dataModel()->postSolutionInfo()->timeSteps()->timesteps();
 
 	if (m_dataContainer->data().size() > timesteps.size()) {

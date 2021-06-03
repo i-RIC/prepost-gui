@@ -501,6 +501,32 @@ QStringList ProjectMainFile::containedFiles()
 	return ret;
 }
 
+bool ProjectMainFile::importCgnsFile(const QString& fname, const QString& newname)
+{
+	QString to = m_projectData->workCgnsFileName(newname);
+
+	copyCgnsFile(fname, to);
+
+	std::string solverName;
+	VersionNumber versionNumber;
+
+	bool ret = ProjectCgnsFile::readSolverInfo(to, &solverName, &versionNumber);
+	if (ret == true) {
+		if (impl->m_solverName != solverName || (! impl->m_solverVersion.compatibleWith(versionNumber))) {
+			projectData()->setPostOnlyMode();
+		}
+	} else {
+		// error occured reading solver information.
+		projectData()->setPostOnlyMode();
+	}
+	QFileInfo finfo(fname);
+	LastIODirectory::set(finfo.absolutePath());
+
+	// CGNS file import is not undo-able.
+	iRICUndoStack::instance().clear();
+	return true;
+}
+
 void ProjectMainFile::exportCurrentCgnsFile()
 {
 	QString fname = QFileDialog::getSaveFileName(

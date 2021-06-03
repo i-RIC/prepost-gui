@@ -45,8 +45,7 @@ void Graph2dHybridWindowBaseIterativeResultDataItem::updateValues()
 	m_xValues.clear();
 	m_yValues.clear();
 
-	int fn = 0;
-	m_dataContainer->update(fn);
+	m_dataContainer->update();
 	auto timesteps = dataModel()->postSolutionInfo()->timeSteps()->timesteps();
 	if (m_dataContainer->data().size() != timesteps.size()) {return;}
 

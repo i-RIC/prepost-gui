@@ -140,10 +140,12 @@ Graph2dWindowDataItem* Graph2dWindowRootDataItem::modelItemFromItem(QStandardIte
 	return m_itemMap.value(item, nullptr);
 }
 
-void Graph2dWindowRootDataItem::loadFromCgnsFile(const int fn)
+int Graph2dWindowRootDataItem::loadFromCgnsFile()
 {
-	Graph2dWindowDataItem::loadFromCgnsFile(fn);
+	int ier = Graph2dWindowDataItem::loadFromCgnsFile();
 	updateItemMap();
+
+	return ier;
 }
 
 void Graph2dWindowRootDataItem::closeCgnsFile()

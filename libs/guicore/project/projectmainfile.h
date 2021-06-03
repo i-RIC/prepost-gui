@@ -98,6 +98,7 @@ public:
 	const std::vector<vtkRenderer*>& renderers() const;
 
 	void updateActorVisibility(int idx, bool vis);
+	bool importCgnsFile(const QString& filename, const QString& newname);
 	/// Import Measured data from CSV files.
 	void addMeasuredData();
 	virtual void setModified(bool modified = true) override;

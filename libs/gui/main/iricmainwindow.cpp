@@ -36,7 +36,6 @@
 #include <guicore/postcontainer/postdataexportdialog.h>
 #include <guicore/postcontainer/postsolutioninfo.h>
 #include <guicore/postcontainer/posttimesteps.h>
-#include <guicore/project/cgnsfilelist.h>
 #include <guicore/project/projectcgnsfile.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
@@ -523,9 +522,10 @@ void iRICMainWindow::importCalculationResult(const QString& fname)
 
 	setupForNewProjectData();
 
-	QString newname = m_projectData->mainfile()->cgnsFileList()->proposeFilename();
-	bret = m_projectData->mainfile()->importCgnsFile(fname, newname);
+	bret = m_projectData->mainfile()->importCgnsFile(fname, "Case1");
 	if (! bret) {return;}
+
+	handleCgnsSwitch();
 
 	connect(m_projectData->mainfile()->postSolutionInfo(), SIGNAL(allPostProcessorsUpdated()), this, SIGNAL(allPostProcessorsUpdated()));
 	connect(m_projectData->mainfile()->postSolutionInfo(), SIGNAL(updated()), this, SLOT(updatePostActionStatus()));
@@ -534,7 +534,7 @@ void iRICMainWindow::importCalculationResult(const QString& fname)
 	// show pre-processor window first.
 	if (! m_projectData->isPostOnlyMode()) {
 		// show pre-processor window first.
-		PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*> (m_preProcessorWindow);
+		auto pre = dynamic_cast<PreProcessorWindow*> (m_preProcessorWindow);
 		pre->setupDefaultGeometry();
 		pre->parentWidget()->show();
 		m_actionManager->informSubWindowChange(m_preProcessorWindow);
@@ -783,7 +783,8 @@ bool iRICMainWindow::saveProject(const QString& filename, bool folder)
 		}
 
 		if (gridEdited || (! hasResult)) {
-			ret = mainfile->saveCgnsFile();
+			int ier = mainfile->saveToCgnsFile();
+			ret = (ier == IRIC_NO_ERROR);
 		} else {
 			int ier = mainfile->updateCgnsFileOtherThanGrids();
 			ret = (ier == IRIC_NO_ERROR);

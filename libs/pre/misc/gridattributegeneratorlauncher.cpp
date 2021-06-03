@@ -17,6 +17,9 @@
 #include <QProcess>
 #include <QWidget>
 
+#include <h5cgnsbase.h>
+#include <h5cgnsfile.h>
+
 #include <iriclib.h>
 #include <cgnslib.h>
 
@@ -24,15 +27,13 @@ bool GridAttributeGeneratorLauncher::launchGenerator(PreProcessorGridDataItem* g
 {
 	QString fname = iRIC::getTempFileName(workDir);
 
-	cg_set_file_type(CG_FILE_ADF2);
-	ProjectCgnsFile::createNewFile(fname, 2, 2);
-	cg_set_file_type(CG_FILE_NONE);
-
-	int fn, ier;
-	ier = cg_open(iRIC::toStr(fname).c_str(), CG_MODE_MODIFY, &fn);
-	gItem->grid()->setModified(true);
-	gItem->saveToCgnsFile(fn);
-	cg_close(fn);
+	try {
+		iRICLib::H5CgnsFile file(iRIC::toStr(fname), iRICLib::H5CgnsFile::Mode::Create);
+		auto base = file.ccBase();
+		gItem->saveToCgnsFile(base, base->nextDefaultName());
+	} catch (...) {
+		return false;
+	}
 
 	Grid* grid = gItem->grid();
 	QString generatorName = grid->gridAttribute(attName)->gridAttribute()->mapping();
@@ -56,9 +57,13 @@ bool GridAttributeGeneratorLauncher::launchGenerator(PreProcessorGridDataItem* g
 	process.start(path, args);
 	process.waitForFinished();
 
-	ier = cg_open(iRIC::toStr(fname).c_str(), CG_MODE_READ, &fn);
-	gItem->loadFromCgnsFile(fn);
-	cg_close(fn);
+	try {
+		iRICLib::H5CgnsFile file(iRIC::toStr(fname), iRICLib::H5CgnsFile::Mode::OpenReadOnly);
+		auto zone = file.ccBase()->zoneById(1);
+		gItem->loadFromCgnsFile(*zone);
+	}  catch (...) {
+		return false;
+	}
 	gItem->grid()->setModified(true);
 	QFile(fname).remove();
 

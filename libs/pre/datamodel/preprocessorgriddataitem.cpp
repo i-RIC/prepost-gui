@@ -166,19 +166,25 @@ int PreProcessorGridDataItem::loadFromCgnsFile()
 	auto zone = mainFile->cgnsFile()->ccBase()->zone(zoneName);
 	if (zone == nullptr) {return IRIC_NO_DATA;}
 
-	impl->m_grid = GridCgnsEstimater::buildGrid(*zone, nullptr);
+	return loadFromCgnsFile(*zone);
+}
+
+int PreProcessorGridDataItem::loadFromCgnsFile(const iRICLib::H5CgnsZone& zone)
+{
+	impl->m_grid = GridCgnsEstimater::buildGrid(zone, nullptr);
 	SolverDefinitionGridType* gridType = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent())->gridType();
 	gridType->buildGridAttributes(impl->m_grid);
 
 	impl->m_grid->setParent(this);
 	impl->m_grid->setDataItem(this);
-	impl->m_grid->setZoneName(zoneName);
+	impl->m_grid->setZoneName(zone.name());
 
 	// Now, memory is allocated. load data.
-	impl->m_grid->loadFromCgnsFile(*zone);
+	impl->m_grid->loadFromCgnsFile(zone);
 
 	if (m_bcGroupDataItem != nullptr) {
-		int ier = m_bcGroupDataItem->loadFromCgnsFile(*zone);
+		int ier = m_bcGroupDataItem->loadFromCgnsFile(zone);
+		if (ier != IRIC_NO_ERROR) {return ier;}
 	}
 
 	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
@@ -205,20 +211,27 @@ int PreProcessorGridDataItem::saveToCgnsFile()
 	auto mainFile = dataModel()->iricMainWindow()->projectData()->mainfile();
 	auto ccBase = mainFile->cgnsFile()->ccBase();
 
+	return saveToCgnsFile(ccBase, zoneName);
+}
+
+int PreProcessorGridDataItem::saveToCgnsFile(iRICLib::H5CgnsBase* base, const std::string& zoneName)
+{
 	if (impl->m_grid != nullptr) {
-		impl->m_grid->saveToCgnsFile(ccBase, zoneName);
+		impl->m_grid->saveToCgnsFile(base, zoneName);
 		if (m_bcGroupDataItem != nullptr) {
 			try {
-				auto zone = ccBase->zone(zoneName);
+				auto zone = base->zone(zoneName);
 				m_bcGroupDataItem->saveToCgnsFile(zone);
 			} catch (ErrorMessage& m) {
 				impl->m_grid->setModified();
-				throw m;
+				return IRIC_H5_CALL_ERROR;
 			}
 		}
 	}
 
 	impl->m_gridIsDeleted = false;
+
+	return IRIC_NO_ERROR;
 }
 
 void PreProcessorGridDataItem::closeCgnsFile()

@@ -8,7 +8,6 @@
 #include <guicore/base/propertybrowser.h>
 #include <guicore/base/windowwithobjectbrowserinterface.h>
 #include <guicore/post/postprocessorwindow.h>
-#include <guicore/project/cgnsfilelist.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
 #include <guicore/solverdef/solverdefinition.h>

@@ -6,8 +6,6 @@
 #include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/postcontainer/postsolutioninfo.h>
 #include <guicore/pre/base/preprocessorwindowinterface.h>
-#include <guicore/project/cgnsfileentry.h>
-#include <guicore/project/cgnsfilelist.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
 #include <guicore/solverdef/solverdefinition.h>
@@ -314,8 +312,7 @@ void SolverConsoleWindow::startSolverSilently()
 {
 	impl->m_projectData->mainfile()->postSolutionInfo()->close();
 
-	QString cgnsname = impl->m_projectData->mainfile()->cgnsFileList()->current()->filename();
-	cgnsname.append(".cgn");
+	QString cgnsname = "Case1.cgn";
 
 	impl->m_process = new QProcess(this);
 	QString wd = impl->m_projectData->workDirectory();

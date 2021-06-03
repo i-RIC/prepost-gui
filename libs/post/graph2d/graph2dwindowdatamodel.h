@@ -32,12 +32,11 @@ public:
 		asRight
 	};
 	static const int MOVEWIDTH = 1;
-	/// Constructor
 	Graph2dWindowDataModel(QMainWindow* w, ProjectDataItem* parent);
-	/// Destructor
 	~Graph2dWindowDataModel();
-	void loadFromCgnsFile(const int fn) override;
-	void saveToCgnsFile(const int fn) override;
+
+	int loadFromCgnsFile() override;
+	int saveToCgnsFile() override;
 	void closeCgnsFile() override;
 
 	/// The view to display pre-processor main region
