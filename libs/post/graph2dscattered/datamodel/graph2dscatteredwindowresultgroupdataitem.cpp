@@ -22,16 +22,16 @@ Graph2dScatteredWindowResultGroupDataItem::~Graph2dScatteredWindowResultGroupDat
 
 }
 
-void Graph2dScatteredWindowResultGroupDataItem::updateData(int fn)
+void Graph2dScatteredWindowResultGroupDataItem::updateData()
 {
 	static bool updating = false;
 	if (updating == true) {
 		return;
 	}
 	updating = true;
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
-		auto item = dynamic_cast<Graph2dScatteredWindowResultDataItem*>(*it);
-		item->update(fn);
+	for (auto child : m_childItems) {
+		auto item = dynamic_cast<Graph2dScatteredWindowResultDataItem*>(child);
+		item->update();
 	}
 	updating = false;
 }

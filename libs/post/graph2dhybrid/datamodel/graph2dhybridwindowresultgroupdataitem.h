@@ -22,14 +22,13 @@ class Graph2dHybridWindowResultGroupDataItem : public Graph2dHybridWindowDataIte
 public:
 	Graph2dHybridWindowResultGroupDataItem(Graph2dWindowDataItem* parent);
 	~Graph2dHybridWindowResultGroupDataItem();
-	void updateData(int fn);
+
+	void updateData();
 	bool setupInitialSetting();
 	void applyHorizontalAxisSettings();
 	void getAxisValueRange(Graph2dWindowDataModel::AxisSide as, double* min, double* max);
 	void showHorizontalAxisSettingDialog();
-	Graph2dHybridWindowHorizontalAxisSetting* horizontalAxisSetting() {
-		return m_hAxisSetting;
-	}
+	Graph2dHybridWindowHorizontalAxisSetting* horizontalAxisSetting();
 	void updateChildren(const Graph2dHybridWindowResultSetting& setting);
 	void copy(Graph2dHybridWindowResultCopyGroupDataItem* parent);
 	bool axisNeeded(Graph2dHybridWindowResultSetting::AxisSide as) const ;

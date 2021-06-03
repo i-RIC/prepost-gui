@@ -58,7 +58,7 @@ void Graph2dVerificationWindowDataModel::init()
 
 	PostSolutionInfo* post = postSolutionInfo();
 	connect(post, SIGNAL(currentStepUpdated()), this, SLOT(updateTime()));
-	connect(post, SIGNAL(cgnsStepsUpdated(int)), this, SLOT(updateData(int)));
+	connect(post, SIGNAL(cgnsStepsUpdated()), this, SLOT(updateData()));
 	connect(post, SIGNAL(zoneList2DUpdated()), this, SLOT(updateZoneList()));
 
 	m_pointsCurve  = nullptr;
@@ -182,21 +182,13 @@ void Graph2dVerificationWindowDataModel::applySettings()
 
 void Graph2dVerificationWindowDataModel::updateData()
 {
-	int fn = 0;
-
-	updateData(fn);
-}
-
-
-void Graph2dVerificationWindowDataModel::updateData(int fn)
-{
 	static bool updating = false;
 	if (updating == true) {
 		return;
 	}
 	updating = true;
 	Graph2dVerificationWindowRootDataItem* root = dynamic_cast<Graph2dVerificationWindowRootDataItem*>(m_rootDataItem);
-	root->updateData(fn);
+	root->updateData();
 	updating = false;
 }
 

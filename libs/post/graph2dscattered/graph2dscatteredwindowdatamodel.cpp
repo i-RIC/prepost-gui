@@ -56,7 +56,7 @@ void Graph2dScatteredWindowDataModel::init()
 
 	PostSolutionInfo* post = postSolutionInfo();
 	connect(post, SIGNAL(currentStepUpdated()), this, SLOT(updateTime()));
-	connect(post, SIGNAL(cgnsStepsUpdated(int)), this, SLOT(updateData(int)));
+	connect(post, SIGNAL(cgnsStepsUpdated()), this, SLOT(updateData()));
 }
 
 Graph2dScatteredWindowView* Graph2dScatteredWindowDataModel::view() const
@@ -346,20 +346,13 @@ void Graph2dScatteredWindowDataModel::applySettings()
 
 void Graph2dScatteredWindowDataModel::updateData()
 {
-	int fn = 0;
-
-	updateData(fn);
-}
-
-void Graph2dScatteredWindowDataModel::updateData(int fn)
-{
 	static bool updating = false;
 	if (updating == true) {
 		return;
 	}
 	updating = true;
 	Graph2dScatteredWindowRootDataItem* root = dynamic_cast<Graph2dScatteredWindowRootDataItem*>(m_rootDataItem);
-	root->updateData(fn);
+	root->updateData();
 	updating = false;
 
 	updateTitle();

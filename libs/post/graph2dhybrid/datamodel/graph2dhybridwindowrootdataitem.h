@@ -29,7 +29,7 @@ public:
 	Graph2dHybridWindowImportDataGroupDataItem* importDataGroupItem() const;
 	Graph2dWindowMarkerGroupDataItem* markerGroupItem() const;
 
-	void updateData(int fn);
+	void updateData();
 	bool axisNeeded(Graph2dHybridWindowResultSetting::AxisSide as) const;
 
 signals:

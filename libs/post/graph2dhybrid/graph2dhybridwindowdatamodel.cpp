@@ -84,7 +84,7 @@ void Graph2dHybridWindowDataModel::init()
 
 	PostSolutionInfo* post = postSolutionInfo();
 	connect(post, SIGNAL(currentStepUpdated()), this, SLOT(updateTime()));
-	connect(post, SIGNAL(cgnsStepsUpdated(int)), this, SLOT(updateData(int)));
+	connect(post, SIGNAL(cgnsStepsUpdated()), this, SLOT(updateData()));
 
 	m_regionMode = Graph2dHybridWindowContinuousExportDialog::rmCurrentOnly;
 	m_timeMode = Graph2dHybridWindowContinuousExportDialog::tmCurrentOnly;
@@ -1462,20 +1462,13 @@ void Graph2dHybridWindowDataModel::applySettings()
 
 void Graph2dHybridWindowDataModel::updateData()
 {
-	int fn;
-
-	updateData(fn);
-}
-
-void Graph2dHybridWindowDataModel::updateData(int fn)
-{
 	static bool updating = false;
 	if (updating == true) {
 		return;
 	}
 	updating = true;
 	Graph2dHybridWindowRootDataItem* root = dynamic_cast<Graph2dHybridWindowRootDataItem*>(m_rootDataItem);
-	root->updateData(fn);
+	root->updateData();
 	updating = false;
 }
 

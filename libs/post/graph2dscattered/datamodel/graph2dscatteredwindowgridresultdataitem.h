@@ -16,12 +16,11 @@ public:
 	Graph2dScatteredWindowGridResultDataItem(const Graph2dScatteredWindowResultSetting::Setting& setting, int index, Graph2dWindowDataItem* parent);
 	virtual ~Graph2dScatteredWindowGridResultDataItem();
 
-protected:
+private:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
-	void updateValues(int fn) override;
+	void updateValues() override;
 
-private:
 	static void setupData(std::vector<double>& vals, const QString& name, vtkPointSet* ps);
 
 	QString m_yAxis;

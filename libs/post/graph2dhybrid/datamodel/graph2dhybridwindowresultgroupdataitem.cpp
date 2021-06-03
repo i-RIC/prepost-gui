@@ -56,7 +56,7 @@ Graph2dHybridWindowResultGroupDataItem::Graph2dHybridWindowResultGroupDataItem(G
 Graph2dHybridWindowResultGroupDataItem::~Graph2dHybridWindowResultGroupDataItem()
 {}
 
-void Graph2dHybridWindowResultGroupDataItem::updateData(int fn)
+void Graph2dHybridWindowResultGroupDataItem::updateData()
 {
 	static bool updating = false;
 	if (updating == true) {
@@ -64,21 +64,22 @@ void Graph2dHybridWindowResultGroupDataItem::updateData(int fn)
 	}
 	updating = true;
 
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
-		auto item = dynamic_cast<Graph2dHybridWindowResultDataItem*>(*it);
+	for (auto child : m_childItems) {
+		auto item = dynamic_cast<Graph2dHybridWindowResultDataItem*>(child);
 		item->update();
 	}
 	updating = false;
 }
 
 void Graph2dHybridWindowResultGroupDataItem::doLoadFromProjectMainFile(const QDomNode& /*node*/)
-{
-
-}
+{}
 
 void Graph2dHybridWindowResultGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/)
-{
+{}
 
+Graph2dHybridWindowHorizontalAxisSetting* Graph2dHybridWindowResultGroupDataItem::horizontalAxisSetting()
+{
+	return m_hAxisSetting;
 }
 
 void Graph2dHybridWindowResultGroupDataItem::updateChildren(const Graph2dHybridWindowResultSetting& setting)

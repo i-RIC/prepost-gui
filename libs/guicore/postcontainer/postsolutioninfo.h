@@ -102,7 +102,7 @@ signals:
 	void allPostProcessorsUpdated();
 	void cgnsTimeStepsUpdated(const QList<double>& steps);
 	void cgnsIterationStepsUpdated(const QList<int>& steps);
-	void cgnsStepsUpdated(int fn);
+	void cgnsStepsUpdated();
 	void zoneList1DUpdated();
 	void zoneList2DUpdated();
 	void zoneList3DUpdated();

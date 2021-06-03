@@ -30,7 +30,7 @@ protected:
 
 signals:
 	void stepsUpdated(QList<double> steps);
-	void stepsUpdated(int fn);
+	void stepsUpdated();
 
 private:
 	QList<double> m_timesteps;

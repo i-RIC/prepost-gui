@@ -18,7 +18,7 @@ public:
 	~Graph2dScatteredWindowResultDataItem() override;
 
 	QwtPlotCustomCurve* curve() const;
-	void update(int fn);
+	void update();
 	QString title() const;
 
 	const Graph2dScatteredWindowResultSetting::Setting& setting() const;
@@ -29,7 +29,7 @@ public:
 	bool axisNeeded(Graph2dScatteredWindowResultSetting::AxisSide as) const;
 
 protected:
-	virtual void updateValues(int fn) = 0;
+	virtual void updateValues() = 0;
 	void setVisible(bool visible) override;
 	QwtPlotCustomCurve* m_curve;
 

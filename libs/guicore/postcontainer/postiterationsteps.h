@@ -30,7 +30,7 @@ protected:
 
 signals:
 	void stepsUpdated(const QList<int>& steps);
-	void stepsUpdated(int fn);
+	void stepsUpdated();
 
 private:
 	QList<int> m_iterationSteps;

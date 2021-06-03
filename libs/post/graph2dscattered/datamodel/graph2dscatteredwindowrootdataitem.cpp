@@ -51,9 +51,9 @@ void Graph2dScatteredWindowRootDataItem::doSaveToProjectMainFile(QXmlStreamWrite
 	writer.writeEndElement();
 }
 
-void Graph2dScatteredWindowRootDataItem::updateData(int fn)
+void Graph2dScatteredWindowRootDataItem::updateData()
 {
-	m_resultGroupItem->updateData(fn);
+	m_resultGroupItem->updateData();
 	renderView();
 }
 

@@ -115,9 +115,9 @@ Graph2dWindowMarkerGroupDataItem* Graph2dHybridWindowRootDataItem::markerGroupIt
 	return m_markerGroupItem;
 }
 
-void Graph2dHybridWindowRootDataItem::updateData(int fn)
+void Graph2dHybridWindowRootDataItem::updateData()
 {
-	m_resultGroupItem->updateData(fn);
+	m_resultGroupItem->updateData();
 	m_resultCopyGroupItem->updateData();
 	m_importDataGroupItem->updateData();
 	renderView();

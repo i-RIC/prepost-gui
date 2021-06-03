@@ -24,9 +24,10 @@ class Graph2dScatteredWindowDataModel : public Graph2dWindowDataModel
 
 public:
 	static const int MOVEWIDTH = 1;
-	/// Constructor
+
 	Graph2dScatteredWindowDataModel(Graph2dScatteredWindow* w, ProjectDataItem* parent);
 	~Graph2dScatteredWindowDataModel();
+
 	/// The view to display 2d post-processor main region
 	Graph2dScatteredWindowView* view() const;
 	PostSolutionInfo* postSolutionInfo();
@@ -43,7 +44,7 @@ public slots:
 
 private slots:
 	void updateTime();
-	void updateData(int fn);
+	void updateData();
 
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
@@ -51,7 +52,6 @@ protected:
 	void applyAxisSetting() override;
 
 private:
-	void updateData();
 	void init();
 	void setupTimeMarker();
 	void applySettings();

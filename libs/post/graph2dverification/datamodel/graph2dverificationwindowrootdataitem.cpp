@@ -8,13 +8,10 @@ Graph2dVerificationWindowRootDataItem::Graph2dVerificationWindowRootDataItem(Gra
 }
 
 Graph2dVerificationWindowRootDataItem::~Graph2dVerificationWindowRootDataItem()
-{
-}
+{}
 
 void Graph2dVerificationWindowRootDataItem::setupStandardModel(QStandardItemModel* /* model */)
-{
-}
+{}
 
-void Graph2dVerificationWindowRootDataItem::updateData(int /* fn */)
-{
-}
+void Graph2dVerificationWindowRootDataItem::updateData()
+{}

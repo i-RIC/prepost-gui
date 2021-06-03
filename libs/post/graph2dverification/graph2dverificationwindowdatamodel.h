@@ -43,7 +43,7 @@ public slots:
 
 private slots:
 	void updateTime();
-	void updateData(int fn);
+	void updateData();
 	void updateZoneList();
 
 protected:
@@ -55,7 +55,6 @@ private:
 	void updateGraph();
 	void clearData();
 
-	void updateData();
 	void init();
 	void applySettings();
 	const QList<PostZoneDataContainer*>& zoneContainers();

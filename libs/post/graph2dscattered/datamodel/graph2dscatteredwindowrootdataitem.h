@@ -26,7 +26,7 @@ public:
 	Graph2dScatteredWindowResultGroupDataItem* resultGroupItem() {
 		return m_resultGroupItem;
 	}
-	void updateData(int fn);
+	void updateData();
 	bool axisNeeded(Graph2dScatteredWindowResultSetting::AxisSide as) const;
 
 signals:

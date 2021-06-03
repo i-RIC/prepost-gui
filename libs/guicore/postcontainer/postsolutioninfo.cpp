@@ -110,13 +110,13 @@ void PostSolutionInfo::setIterationType(SolverDefinition::IterationType type)
 		m_iterationSteps = new PostIterationSteps(this);
 		connect(m_iterationSteps, SIGNAL(stepsUpdated(QList<int>)), this, SIGNAL(cgnsIterationStepsUpdated(QList<int>)));
 		connect(m_iterationSteps, SIGNAL(stepsUpdated(QList<int>)), this, SLOT(informStepsUpdated()));
-		connect(m_iterationSteps, SIGNAL(stepsUpdated(int)), this, SIGNAL(cgnsStepsUpdated(int)));
+		connect(m_iterationSteps, SIGNAL(stepsUpdated()), this, SIGNAL(cgnsStepsUpdated()));
 		break;
 	case SolverDefinition::TimeIteration:
 		m_timeSteps = new PostTimeSteps(this);
 		connect(m_timeSteps, SIGNAL(stepsUpdated(QList<double>)), this, SIGNAL(cgnsTimeStepsUpdated(QList<double>)));
 		connect(m_timeSteps, SIGNAL(stepsUpdated(QList<double>)), this, SLOT(informStepsUpdated()));
-		connect(m_timeSteps, SIGNAL(stepsUpdated(int)), this, SIGNAL(cgnsStepsUpdated(int)));
+		connect(m_timeSteps, SIGNAL(stepsUpdated()), this, SIGNAL(cgnsStepsUpdated()));
 		break;
 	case SolverDefinition::NoIteration:
 	default:

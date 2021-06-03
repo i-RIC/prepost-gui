@@ -25,10 +25,8 @@ void Graph2dScatteredWindowGridResultDataItem::doLoadFromProjectMainFile(const Q
 void Graph2dScatteredWindowGridResultDataItem::doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/)
 {}
 
-void Graph2dScatteredWindowGridResultDataItem::updateValues(int fn)
+void Graph2dScatteredWindowGridResultDataItem::updateValues()
 {
-	Q_UNUSED(fn)
-
 	m_xValues.clear();
 	m_yValues.clear();
 

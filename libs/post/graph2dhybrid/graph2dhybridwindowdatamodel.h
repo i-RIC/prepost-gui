@@ -55,7 +55,7 @@ public slots:
 	
 private slots:
 	void updateTime();
-	void updateData(int fn);
+	void updateData();
 
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
@@ -64,7 +64,6 @@ protected:
 
 private:
 	void getDims(int dims[4]);
-	void updateData();
 	void init();
 	void setupTimeMarker();
 	void applySettings();

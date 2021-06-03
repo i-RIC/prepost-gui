@@ -61,9 +61,9 @@ void Graph2dScatteredWindowResultDataItem::setVisible(bool visible)
 	}
 }
 
-void Graph2dScatteredWindowResultDataItem::update(int fn)
+void Graph2dScatteredWindowResultDataItem::update()
 {
-	updateValues(fn);
+	updateValues();
 
 	m_curve->setSamples(m_xValues.data(), m_yValues.data(), m_xValues.size());
 }
