@@ -3,8 +3,6 @@
 
 #include <misc/stringtool.h>
 
-#include <cgnslib.h>
-
 #include <h5cgnszone.h>
 #include <h5util.h>
 #include <iriclib_errorcodes.h>

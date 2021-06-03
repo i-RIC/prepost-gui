@@ -51,14 +51,10 @@
 #include <vtkRenderWindow.h>
 #include <vtkRenderer.h>
 
-#include <cgnslib.h>
-#include <iriclib.h>
-
 #include <h5cgnsfile.h>
 #include <iriclib_errorcodes.h>
 
 #include <cmath>
-
 
 namespace {
 

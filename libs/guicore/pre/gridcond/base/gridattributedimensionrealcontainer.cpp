@@ -6,8 +6,3 @@ GridAttributeDimensionRealContainer::GridAttributeDimensionRealContainer(SolverD
 
 GridAttributeDimensionRealContainer::~GridAttributeDimensionRealContainer()
 {}
-
-DataType_t GridAttributeDimensionRealContainer::dataType() const
-{
-	return RealDouble;
-}

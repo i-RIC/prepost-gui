@@ -10,8 +10,6 @@
 #include <QRegExp>
 #include <QTextStream>
 
-#include <cgnslib.h>
-#include <iriclib.h>
 #include <stdlib.h>
 
 #include <yaml-cpp/yaml.h>

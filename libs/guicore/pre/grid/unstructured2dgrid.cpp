@@ -17,16 +17,12 @@
 #include <vtkTriangle.h>
 #include <vtkTrivialProducer.h>
 
-#include <cgnslib.h>
-#include <iriclib.h>
-#include <vector>
-
 #include <h5cgnsbase.h>
 #include <h5cgnsgridcoordinates.h>
 #include <h5cgnszone.h>
 #include <iriclib_errorcodes.h>
 
-#define ELEMNODENAME "Element"
+#include <vector>
 
 Unstructured2DGrid::Unstructured2DGrid(ProjectDataItem* parent) :
 	Unstructured2DGrid("", parent)

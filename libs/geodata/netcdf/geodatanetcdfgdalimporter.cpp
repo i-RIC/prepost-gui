@@ -91,9 +91,10 @@ bool GeoDataNetcdfGdalImporter::doInit(const QString& filename, const QString& s
 
 	if (m_mode == Mode::Single) {
 		return doInitForSingleMode(filename, selectedFilter, count, condition, item, w);
-	}	 else if (m_mode == Mode::Time) {
+	} else if (m_mode == Mode::Time) {
 		return doInitForTimeMode(filename, selectedFilter, count, condition, item, w);
 	}
+	return false;
 }
 
 bool GeoDataNetcdfGdalImporter::importData(GeoData* data, int /*index*/, QWidget* w)

@@ -37,9 +37,6 @@
 #include <vtkTextMapper.h>
 #include <vtkTextProperty.h>
 
-#include <cgnslib.h>
-#include <iriclib.h>
-
 #include <h5cgnsbase.h>
 #include <h5cgnsbc.h>
 #include <h5cgnsfile.h>

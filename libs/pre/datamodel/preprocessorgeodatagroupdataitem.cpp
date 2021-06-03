@@ -59,8 +59,6 @@
 #include <QXmlStreamWriter>
 #include <QtGlobal>
 
-#include <cgnslib.h>
-
 #include <h5cgnsbase.h>
 #include <h5cgnsfile.h>
 #include <h5cgnsgeographicdatagroup.h>

@@ -14,9 +14,6 @@
 #include <QPushButton>
 #include <QTextCodec>
 
-#include <cgnslib.h>
-#include <iriclib.h>
-
 GridComplexConditionWidget::Impl::Impl() :
 	m_group {nullptr}
 {}

@@ -247,14 +247,6 @@ LIBS += \
 	-lvtkRenderingLabel-6.1 \
 	-lvtkRenderingLOD-6.1
 
-# cgnslib
-win32 {
-	LIBS += -lcgnsdll
-}
-unix {
-	LIBS += -lcgns
-}
-
 # iriclib
 
 LIBS += -liriclib

@@ -24,8 +24,6 @@
 #include <QStandardItem>
 #include <QXmlStreamWriter>
 
-#include <cgnslib.h>
-
 GeoData::Setting::Setting() :
 	CompositeContainer ({&name, &caption, &mapped}),
 	name {"name"},

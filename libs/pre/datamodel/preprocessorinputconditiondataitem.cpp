@@ -17,8 +17,6 @@
 #include <QStandardItem>
 #include <QXmlStreamWriter>
 
-#include <cgnslib.h>
-
 #include <h5cgnsbase.h>
 #include <h5cgnsfile.h>
 

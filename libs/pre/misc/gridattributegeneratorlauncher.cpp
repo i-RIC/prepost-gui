@@ -20,9 +20,6 @@
 #include <h5cgnsbase.h>
 #include <h5cgnsfile.h>
 
-#include <iriclib.h>
-#include <cgnslib.h>
-
 bool GridAttributeGeneratorLauncher::launchGenerator(PreProcessorGridDataItem* gItem, const std::string& attName, const QString& workDir, QWidget* parent)
 {
 	QString fname = iRIC::getTempFileName(workDir);

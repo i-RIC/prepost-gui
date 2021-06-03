@@ -18,12 +18,10 @@
 #include <QTextStream>
 #include <QVector2D>
 
-#include <cgnslib.h>
-#include <iriclib.h>
-#include <sstream>
-
 #include <h5cgnsbase.h>
 #include <h5cgnsfile.h>
+
+#include <sstream>
 
 CgnsGridImporter::CgnsGridImporter() :
 	GridInternalImporter {},

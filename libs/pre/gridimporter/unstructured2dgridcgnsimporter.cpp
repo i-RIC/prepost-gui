@@ -2,8 +2,6 @@
 
 #include <guicore/project/projectcgnsfile.h>
 
-#include <cgnslib.h>
-
 #include <h5cgnszone.h>
 
 Unstructured2DGridCgnsImporter::Unstructured2DGridCgnsImporter() :

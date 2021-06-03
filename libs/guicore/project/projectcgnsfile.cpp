@@ -19,83 +19,6 @@
 #define cgsize_t int
 #endif
 
-bool ProjectCgnsFile::createNewFile(const QString& filename, int cell_dim, int phys_dim)
-{
-	int fn;
-	int ret;
-	// open cgns file with write mode.
-	ret = cg_open(iRIC::toStr(filename).c_str(), CG_MODE_WRITE, &fn);
-	if (ret != 0) {goto ERROR_OPENING;}
-	// create "iRIC" base.
-	int base;
-	ret = cg_base_write(fn, "iRIC", cell_dim, phys_dim, &base);
-	if (ret != 0) {goto ERROR_AFTER_OPENING;}
-	// create "CalculationConditions" node just under iRIC base.
-	ret = cg_gopath(fn, "/iRIC");
-	if (ret != 0) {goto ERROR_AFTER_OPENING;}
-	ret = cg_user_data_write("CalculationConditions");
-	if (ret != 0) {goto ERROR_AFTER_OPENING;}
-	// That's all, for initialization. so close it.
-	ret = cg_close(fn);
-	return (ret == 0);
-
-ERROR_AFTER_OPENING:
-	cg_close(fn);
-ERROR_OPENING:
-	return false;
-}
-
-bool ProjectCgnsFile::writeSolverInfo(const QString& filename, const SolverDefinitionAbstract* solverDef)
-{
-	int fn;
-	int ret;
-	bool bret;
-
-	ret = cg_open(iRIC::toStr(filename).c_str(), CG_MODE_MODIFY, &fn);
-	if (ret != 0) {return false;}
-	bret = writeSolverInfo(fn, solverDef);
-	cg_close(fn);
-	return bret;
-}
-
-bool ProjectCgnsFile::writeSolverInfo(int fn, const SolverDefinitionAbstract* solverDef)
-{
-	if (checkSolverInfo(fn, solverDef)) {
-		// check passed. it means that right solver information is already written.
-		return true;
-	}
-	int ret;
-	cgsize_t dim[3];
-	QString versionString;
-
-	std::string solverName = solverDef->name();
-	VersionNumber version = solverDef->version();
-
-	// goto "iRIC" base".
-	ret = cg_gopath(fn, "/iRIC");
-	if (ret != 0) {return false;}
-	// remove "SolverInformation" node if it exists.
-	// we do know check the result because it returns other than 1 when
-	// the node does not exists.
-	cg_delete_node("SolverInformation");
-	// add new SolverInformation node
-	ret = cg_user_data_write("SolverInformation");
-	if (ret != 0) {return false;}
-	ret = cg_gopath(fn, "/iRIC/SolverInformation");
-	if (ret != 0) {return false;}
-	// add name node
-	dim[0] = static_cast<cgsize_t>(solverName.length()) + 1;
-	ret = cg_array_write("Name", Character, 1, dim, solverName.c_str());
-	if (ret != 0) {return false;}
-	// add version node
-	versionString = version.toString();
-	dim[0] = versionString.length() + 1;
-	ret = cg_array_write("Version", Character, 1, dim, iRIC::toStr(versionString).c_str());
-	if (ret != 0) {return false;}
-	return true;
-}
-
-
 int ProjectCgnsFile::writeSolverInfo(iRICLib::H5CgnsFile* file, const SolverDefinitionAbstract& solverDef)
 {
 	auto info = file->ccBase()->solverInformation();
@@ -147,7 +70,6 @@ bool ProjectCgnsFile::checkSolverInfo(int fn, const SolverDefinitionAbstract* so
 	}
 	return true;
 }
-
 
 bool ProjectCgnsFile::readSolverInfo(const QString& filename, std::string* solverName, VersionNumber* version)
 {

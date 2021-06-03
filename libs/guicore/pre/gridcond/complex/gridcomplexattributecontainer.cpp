@@ -10,7 +10,6 @@
 #include "../../grid/grid.h"
 #include <misc/stringtool.h>
 
-#include <cgnslib.h>
 #include <vtkDataArray.h>
 #include <vtkIntArray.h>
 #include <vtkPointData.h>

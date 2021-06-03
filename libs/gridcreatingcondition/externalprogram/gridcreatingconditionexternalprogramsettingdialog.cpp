@@ -16,9 +16,6 @@
 #include <QMessageBox>
 #include <QPushButton>
 
-#include <cgnslib.h>
-#include <iriclib.h>
-
 #include <h5cgnsbase.h>
 #include <h5cgnsfile.h>
 

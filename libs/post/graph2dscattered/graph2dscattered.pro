@@ -77,14 +77,6 @@ LIBS += \
 	-lvtkCommonExecutionModel-6.1 \
 	-lvtkFiltersExtraction-6.1
 
-# cgnslib
-win32 {
-	LIBS += -lcgnsdll
-}
-unix {
-	LIBS += -lcgns
-}
-
 win32 {
 	DESTDIR = $(SolutionDir)/libdlls/$(Configuration)
 	LIBS += -L$(SolutionDir)/libdlls/$(Configuration)

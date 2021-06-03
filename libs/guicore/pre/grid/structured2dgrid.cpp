@@ -8,8 +8,6 @@
 #include <misc/mathsupport.h>
 #include <guibase/graphicsmisc.h>
 
-#include <cgnslib.h>
-#include <iriclib.h>
 #include <vtkPoints.h>
 #include <vtkSmartPointer.h>
 #include <vtkGeometryFilter.h>

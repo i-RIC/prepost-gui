@@ -3,12 +3,11 @@
 
 #include "../../../guicore_global.h"
 #include "../../../project/projectcgnsfile.h"
+#include "../../../solverdef/solverdefinitiongridattribute.h"
 #include "gridattributecontainer.h"
 #include "gridattributedimensioncontainer.h"
-#include "../../../solverdef/solverdefinitiongridattribute.h"
-#include <misc/stringtool.h>
 
-#include <cgnslib.h>
+#include <misc/stringtool.h>
 
 template <class V>
 class GridAttributeDimensionContainerT : public GridAttributeDimensionContainer
@@ -35,9 +34,6 @@ public:
 	bool saveToExternalFile(const QString& filename) override;
 	int loadFromCgnsFile(const iRICLib::H5CgnsGridAttributes& atts) override;
 	int saveToCgnsFile(iRICLib::H5CgnsGridAttributes* atts) override;
-
-private:
-	virtual DataType_t dataType() const = 0;
 
 private:
 	std::vector<V> m_values;
