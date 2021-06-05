@@ -196,8 +196,9 @@ int PostSolutionInfo::setCurrentStep(unsigned int step)
 
 void PostSolutionInfo::informStepsUpdated()
 {
-	bool ok = open();
-	if (!ok) {return;}
+	int ier = open();
+	if (ier != IRIC_NO_ERROR) {return;}
+
 	setupZoneDataContainers();
 	setupBaseIterativeResults();
 
@@ -310,6 +311,10 @@ bool PostSolutionInfo::setupBaseIterativeResults()
 
 	auto file = cgnsFile();
 	auto biterData = file->ccBase()->biterData();
+	if (biterData == nullptr) {
+		// no result exists
+		return true;
+	}
 
 	std::vector<std::string> resultNames;
 	int ier = biterData->getResultNames(&resultNames);
@@ -413,9 +418,8 @@ void PostSolutionInfo::checkCgnsStepsUpdate()
 	checking = true;
 	close();
 
-	QThread::msleep(1000);
-	bool ok = open();
-	if (! ok) {
+	int ier = open();
+	if (ier != IRIC_NO_ERROR) {
 		// error occured while opening.
 		checking = false;
 		QMessageBox::warning(projectData()->mainWindow(), tr("Warning"), tr("Loading calculation result for visualization failed. Please try again later, or wait until end of calculation."));

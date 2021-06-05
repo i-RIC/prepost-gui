@@ -20,12 +20,14 @@ void PostIterationSteps::loadFromCgnsFile(iRICLib::H5CgnsFile &file)
 {
 	auto biterData = file.ccBase()->biterData();
 
-	std::vector<int> buffer;
-	biterData->readIteration(&buffer);
-
 	QList<int> tmplist;
-	for (auto v : buffer) {
-		tmplist.push_back(v);
+	if (biterData != nullptr) {
+		std::vector<int> buffer;
+		biterData->readIteration(&buffer);
+
+		for (auto v : buffer) {
+			tmplist.push_back(v);
+		}
 	}
 
 	bool changed = (tmplist != m_iterationSteps);
@@ -34,10 +36,6 @@ void PostIterationSteps::loadFromCgnsFile(iRICLib::H5CgnsFile &file)
 		emit stepsUpdated(m_iterationSteps);
 		emit stepsUpdated();
 	}
-}
-
-void PostIterationSteps::loadFromCgnsFile(const int fn)
-{
 }
 
 const QList<int>& PostIterationSteps::iterationSteps() const

@@ -19,7 +19,6 @@ public:
 	PostIterationSteps(ProjectDataItem* parent);
 
 	void loadFromCgnsFile(iRICLib::H5CgnsFile& file);
-	void loadFromCgnsFile(const int fn) override;
 	const QList<int>& iterationSteps() const;
 	bool dataExists() const override;
 	void checkStepsUpdate(iRICLib::H5CgnsFile& file);

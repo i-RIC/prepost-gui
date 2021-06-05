@@ -19,7 +19,6 @@ public:
 	PostTimeSteps(ProjectDataItem* parent);
 
 	void loadFromCgnsFile(iRICLib::H5CgnsFile& file);
-	void loadFromCgnsFile(const int fn) override;
 	const QList<double>& timesteps() const;
 	bool dataExists() const override;
 	void checkStepsUpdate(iRICLib::H5CgnsFile& file);
