@@ -40,8 +40,9 @@ GridCreatingConditionExternalProgramSettingDialog::GridCreatingConditionExternal
 GridCreatingConditionExternalProgramSettingDialog::~GridCreatingConditionExternalProgramSettingDialog()
 {
 	delete ui;
-	m_containerSet->clear();;
+	m_containerSet->clear();
 	delete m_containerSet;
+
 	m_widgetSet->clear();
 	delete m_widgetSet;
 }

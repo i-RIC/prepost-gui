@@ -62,7 +62,8 @@ bool GridCreatingConditionExternalProgram::create(QWidget* /*parent*/)
 		QDir projDir(projectData()->workDirectory());
 		QString relativePath = projDir.relativeFilePath(finfo.absolutePath());
 		projDir.mkpath(relativePath);
-		ProjectCgnsFile::createNewFile(fname, 2, 2);
+
+		iRICLib::H5CgnsFile file(iRIC::toStr(fname), iRICLib::H5CgnsFile::Mode::Create);
 	}
 	GridCreatingConditionExternalProgramSettingDialog dialog(m_definition, m_locale, iricMainWindow(), preProcessorWindow());
 	dialog.setFilename(fname);
