@@ -9,14 +9,6 @@
 #include <misc/errormessage.h>
 #include <misc/stringtool.h>
 
-#include <QFile>
-#include <QMessageBox>
-#include <QObject>
-#include <QString>
-#include <QTextStream>
-#include <QVector2D>
-
-#include <cgnslib.h>
 #include <sstream>
 
 ProjectGridImporter::ProjectGridImporter() :

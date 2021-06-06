@@ -91,7 +91,7 @@ int Unstructured2DGrid::loadFromCgnsFile(const iRICLib::H5CgnsZone& zone)
 	ier = zone.readTriangleElements(&indices);
 	if (ier != IRIC_NO_ERROR) {return ier;}
 
-	int numCells = indices.size() / 3;
+	int numCells = static_cast<int> (indices.size()) / 3;
 	grid->Allocate(numCells);
 	for (unsigned int i = 0; i < numCells; ++i) {
 		int id0 = indices.at(i * 3 + 0) - 1;

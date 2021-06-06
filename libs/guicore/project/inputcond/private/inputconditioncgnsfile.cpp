@@ -17,6 +17,8 @@ namespace {
 
 bool loadSolutionData(iRICLib::H5CgnsFlowSolution* solution, QStringList* realResults, QStringList* integerResults)
 {
+	if (solution == nullptr) {return true;}
+
 	std::vector<std::string> names;
 	int ier = solution->readValueNames(&names);
 	if (ier != IRIC_NO_ERROR) {return false;}
@@ -196,14 +198,18 @@ bool InputConditionCgnsFile::loadData()
 				m_solverInformation.gridType = SolverInformation::GridType::Unstructured;
 				m_solverInformation.size = size[0];
 			}
-			ier = loadSolutionData(zone->nodeSolution(), &m_gridNodeRealResults, &m_gridNodeIntegerResults);
-			if (ier != IRIC_NO_ERROR) {return false;}
-			ier = loadSolutionData(zone->cellSolution(), &m_gridCellRealResults, &m_gridCellIntegerResults);
-			if (ier != IRIC_NO_ERROR) {return false;}
-			ier = loadSolutionData(zone->iFaceSolution(), &m_gridEdgeIRealResults, &m_gridEdgeIIntegerResults);
-			if (ier != IRIC_NO_ERROR) {return false;}
-			ier = loadSolutionData(zone->jFaceSolution(), &m_gridEdgeJRealResults, &m_gridEdgeJIntegerResults);
-			if (ier != IRIC_NO_ERROR) {return false;}
+			if (timeValues.size() > 0) {
+				file.setSolutionId(1);
+
+				ier = loadSolutionData(zone->nodeSolution(), &m_gridNodeRealResults, &m_gridNodeIntegerResults);
+				if (ier != IRIC_NO_ERROR) {return false;}
+				ier = loadSolutionData(zone->cellSolution(), &m_gridCellRealResults, &m_gridCellIntegerResults);
+				if (ier != IRIC_NO_ERROR) {return false;}
+				ier = loadSolutionData(zone->iFaceSolution(), &m_gridEdgeIRealResults, &m_gridEdgeIIntegerResults);
+				if (ier != IRIC_NO_ERROR) {return false;}
+				ier = loadSolutionData(zone->jFaceSolution(), &m_gridEdgeJRealResults, &m_gridEdgeJIntegerResults);
+				if (ier != IRIC_NO_ERROR) {return false;}
+			}
 		}
 		m_isEffective = true;
 		return true;

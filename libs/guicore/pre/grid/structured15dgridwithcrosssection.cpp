@@ -6,6 +6,7 @@
 #include <misc/stringtool.h>
 
 #include <vtkLine.h>
+#include <vtkSmartPointer.h>
 #include <vtkVertex.h>
 
 #include <QVector2D>
@@ -128,8 +129,6 @@ int Structured15DGridWithCrossSection::loadFromCgnsFile(const iRICLib::H5CgnsZon
 	auto size = zone.size();
 
 	int riversize = size[0];
-
-	auto grid = vtkGrid();
 
 	std::vector<double> xvec, yvec;
 	int ier = 0;
