@@ -435,6 +435,7 @@ void ProjectMainFile::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 
 	// write cgns file list
 	writer.writeStartElement("CgnsFileList");
+	writer.writeAttribute("current", "Case1");
 	writer.writeStartElement("CgnsFileEntry");
 	writer.writeAttribute("filename", "Case1");
 	writer.writeAttribute("comment", "");

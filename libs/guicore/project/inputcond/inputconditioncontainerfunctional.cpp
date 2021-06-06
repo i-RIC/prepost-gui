@@ -340,6 +340,8 @@ ERROR:
 int InputConditionContainerFunctional::save(iRICLib::H5CgnsConditionGroup* group)
 {
 	auto length = static_cast<int>(impl->m_param.values.size());
+	if (length == 0) {return IRIC_NO_ERROR;}
+
 	auto tmplength = length;
 	if (tmplength == 0) {tmplength = 1;}
 	std::vector<double> data (tmplength, 0);
@@ -366,7 +368,7 @@ int InputConditionContainerFunctional::save(iRICLib::H5CgnsConditionGroup* group
 		saveFunctionalString("_endDate", iRIC::toStr(impl->m_endDate), group);
 	}
 
-	return 0;
+	return IRIC_NO_ERROR;
 }
 
 void InputConditionContainerFunctional::clear()

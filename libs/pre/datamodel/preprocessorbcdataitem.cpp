@@ -723,19 +723,19 @@ void PreProcessorBCDataItem::setupIndicesAndEdges(const std::vector<int> indices
 		// structured grid.
 		impl->m_indices.clear();
 		if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pNode) {
-			for (int idx = 0; idx < indices.size(); ++idx) {
+			for (int idx = 0; idx < indices.size() / 2; ++idx) {
 				int i = indices[idx * 2];
 				int j = indices[idx * 2 + 1];
 				impl->m_indices.insert(sgrid->vertexIndex(i - 1, j - 1));
 			}
 		} else if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pCell) {
-			for (int idx = 0; idx < indices.size(); ++idx) {
+			for (int idx = 0; idx < indices.size() / 2; ++idx) {
 				int i = indices[idx * 2];
 				int j = indices[idx * 2 + 1];
 				impl->m_indices.insert(sgrid->cellIndex(i - 1, j - 1));
 			}
 		} else if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pEdge) {
-			for (int idx = 0; idx < indices.size() / 2; ++idx) {
+			for (int idx = 0; idx < indices.size() / 4; ++idx) {
 				int i1 = indices[idx * 4];
 				int j1 = indices[idx * 4 + 1];
 				int i2 = indices[idx * 4 + 2];

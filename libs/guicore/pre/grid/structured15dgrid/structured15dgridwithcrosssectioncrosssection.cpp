@@ -20,14 +20,14 @@ Grid* Structured15DGridWithCrossSectionCrossSection::grid() const
 	return m_grid;
 }
 
-int Structured15DGridWithCrossSectionCrossSection::loadFromCgnsFile(const iRICLib::H5CgnsZone& zone, int index)
+int Structured15DGridWithCrossSectionCrossSection::loadFromCgnsFile(hid_t groupId, int index)
 {
 	std::vector<double> data;
 	std::ostringstream ss;
 
 	// read data
-	ss << "GridCrosssections/Crosssection" << index;
-	int ier = iRICLib::H5Util::readDataArrayValue(zone.groupId(), ss.str(), &data);
+	ss << "Crosssection" << index;
+	int ier = iRICLib::H5Util::readDataArrayValue(groupId, ss.str(), &data);
 	if (ier != IRIC_NO_ERROR) {return ier;}
 
 	auto count = data.size() / 2;
@@ -41,21 +41,21 @@ int Structured15DGridWithCrossSectionCrossSection::loadFromCgnsFile(const iRICLi
 	return IRIC_NO_ERROR;
 }
 
-int Structured15DGridWithCrossSectionCrossSection::saveToCgnsFile(iRICLib::H5CgnsZone* zone, int index)
+int Structured15DGridWithCrossSectionCrossSection::saveToCgnsFile(hid_t groupId, int index)
 {
 	std::ostringstream ss;
-	ss << "GridCrosssections/Crosssection" << index;
+	ss << "Crosssection" << index;
 
 	std::vector<hsize_t> dims(2);
 	int size = m_altitudeInfo.size();
-	dims[0] = size;
-	dims[1] = 2;
+	dims[0] = 2;
+	dims[1] = size;
 	std::vector<double> data(size * 2);
 	for (int i = 0; i < size; i++) {
 		data[i] = m_altitudeInfo.at(i).m_position;
 		data[size + i] = m_altitudeInfo.at(i).m_height;
 	}
-	return iRICLib::H5Util::writeData(zone->groupId(), ss.str(), data, dims);
+	return iRICLib::H5Util::createDataArray(groupId, ss.str(), data, dims);
 }
 
 const QString& Structured15DGridWithCrossSectionCrossSection::name() const

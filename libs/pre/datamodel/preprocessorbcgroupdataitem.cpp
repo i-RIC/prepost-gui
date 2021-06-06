@@ -66,32 +66,10 @@ PreProcessorBCGroupDataItem::~PreProcessorBCGroupDataItem()
 
 int PreProcessorBCGroupDataItem::loadFromCgnsFile(const iRICLib::H5CgnsZone& zone)
 {
-
 	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
 		auto bcItem = dynamic_cast<PreProcessorBCDataItem*>(*it);
 		bcItem->loadFromCgnsFile(zone);
 	}
-
-	PreProcessorGridTypeDataItem* gtItem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent()->parent());
-	auto zoneBc = zone.zoneBc();
-	if (zoneBc == nullptr) {return IRIC_NO_DATA;}
-
-	auto bcs = gtItem->gridType()->boundaryConditions();
-	for (SolverDefinitionBoundaryCondition* bc : bcs) {
-		auto count = zoneBc->bcCount(bc->name());
-		for (int i = 0; i < count; ++i) {
-			auto bcItem = new PreProcessorBCDataItem(projectData()->solverDefinition(), bc, this, true);
-			bcItem->setCgnsNumber(i + 1);
-			bcItem->loadFromCgnsFile(zone);
-			m_childItems.push_back(bcItem);
-		}
-	}
-
-	assignActorZValues(m_zDepthRange);
-	updateItemMap();
-
-	emit itemsUpdated();
-	emit itemsLoaded();
 
 	return IRIC_NO_ERROR;
 }

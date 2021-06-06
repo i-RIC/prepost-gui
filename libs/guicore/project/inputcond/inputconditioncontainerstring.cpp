@@ -8,8 +8,8 @@
 
 #include <yaml-cpp/yaml.h>
 
-#include <iriclib.h>
 #include <h5cgnsconditiongroup.h>
+#include <iriclib_errorcodes.h>
 
 InputConditionContainerString::InputConditionContainerString() :
 	InputConditionContainer(),
@@ -72,7 +72,7 @@ int InputConditionContainerString::load(const iRICLib::H5CgnsConditionGroup& gro
 
 	if (ret != 0){
 		clear();
-		return ret;
+		return IRIC_NO_ERROR;
 	}
 
 	std::vector<char> buffer(length + 1);
@@ -86,11 +86,13 @@ int InputConditionContainerString::load(const iRICLib::H5CgnsConditionGroup& gro
 		emit valueChanged();
 	}
 
-	return ret;
+	return IRIC_NO_ERROR;
 }
 
 int InputConditionContainerString::save(iRICLib::H5CgnsConditionGroup* group)
 {
+	if (impl->m_value.length() == 0) {return IRIC_NO_ERROR;}
+
 	return group->writeString(name(), iRIC::toStr(impl->m_value));
 }
 

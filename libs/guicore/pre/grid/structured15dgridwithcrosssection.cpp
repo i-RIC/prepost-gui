@@ -13,6 +13,8 @@
 #include <h5cgnsbase.h>
 #include <h5cgnsgridcoordinates.h>
 #include <h5cgnszone.h>
+#include <h5groupcloser.h>
+#include <h5util.h>
 #include <iriclib_errorcodes.h>
 
 #include <vector>
@@ -144,15 +146,21 @@ int Structured15DGridWithCrossSection::loadFromCgnsFile(const iRICLib::H5CgnsZon
 	for (unsigned int i = 0; i < xvec.size(); ++i) {
 		points->InsertNextPoint(xvec[i] - offset.x(), yvec[i] - offset.y(), 0);
 	}
-	grid->SetPoints(points);
+	setPoints(points);
 
 	loadGridAttributes(*(zone.gridAttributes()));
 
 	// load cross section data
+	hid_t groupId;
+	ier = iRICLib::H5Util::openGroup(zone.groupId(), "GridCrosssections", iRICLib::H5Util::userDefinedDataLabel(), &groupId);
+	if (ier != IRIC_NO_ERROR) {return ier;}
+
+	iRICLib::H5GroupCloser groupCloser(groupId);
+
 	for (int i = 1; i <= riversize; i++) {
 		QString str = QString::number(i);
 		auto cs = new Structured15DGridWithCrossSectionCrossSection(str, this);
-		cs->loadFromCgnsFile(zone, i);
+		cs->loadFromCgnsFile(groupId, i);
 		m_crossSections.push_back(cs);
 	}
 	return true;
@@ -191,9 +199,15 @@ int Structured15DGridWithCrossSection::saveToCgnsFile(iRICLib::H5CgnsBase* base,
 	if (ier != IRIC_NO_ERROR) {return ier;}
 
 	// Next cross section data is saved.
+	hid_t groupId;
+	ier = iRICLib::H5Util::createUserDefinedDataGroup(zone->groupId(), "GridCrosssections", &groupId);
+	if (ier != IRIC_NO_ERROR) {return ier;}
+
+	iRICLib::H5GroupCloser groupCloser(groupId);
+
 	int index = 1;
 	for (auto xsec : m_crossSections) {
-		ier = xsec->saveToCgnsFile(zone, index);
+		ier = xsec->saveToCgnsFile(groupId, index);
 		if (ier != IRIC_NO_ERROR) {return ier;}
 
 		index++;

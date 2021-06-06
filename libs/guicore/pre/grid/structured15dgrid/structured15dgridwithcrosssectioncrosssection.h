@@ -7,13 +7,10 @@
 #include <QObject>
 #include <QVector>
 
-namespace iRICLib {
-	class H5CgnsZone;
-} // namespace iRICLib
+#include <hdf5.h>
 
 class GUICOREDLL_EXPORT Structured15DGridWithCrossSectionCrossSection : public QObject
 {
-
 public:
 	struct Altitude {
 
@@ -34,8 +31,8 @@ public:
 	Structured15DGridWithCrossSectionCrossSection(QString name, Grid* grid);
 	Grid* grid() const;
 
-	int loadFromCgnsFile(const iRICLib::H5CgnsZone& zone, int index);
-	int saveToCgnsFile(iRICLib::H5CgnsZone* zone, int index);
+	int loadFromCgnsFile(hid_t groupId, int index);
+	int saveToCgnsFile(hid_t groupId, int index);
 
 	const QString& name() const;
 	const QVector<Altitude>& altitudeInfo() const;

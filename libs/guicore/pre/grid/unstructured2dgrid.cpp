@@ -91,10 +91,12 @@ int Unstructured2DGrid::loadFromCgnsFile(const iRICLib::H5CgnsZone& zone)
 	ier = zone.readTriangleElements(&indices);
 	if (ier != IRIC_NO_ERROR) {return ier;}
 
-	for (unsigned int i = 0; i < indices.size(); i += 3) {
-		int id0 = indices.at(i * 3 + 0);
-		int id1 = indices.at(i * 3 + 1);
-		int id2 = indices.at(i * 3 + 2);
+	int numCells = indices.size() / 3;
+	grid->Allocate(numCells);
+	for (unsigned int i = 0; i < numCells; ++i) {
+		int id0 = indices.at(i * 3 + 0) - 1;
+		int id1 = indices.at(i * 3 + 1) - 1;
+		int id2 = indices.at(i * 3 + 2) - 1;
 
 		auto triangle = vtkSmartPointer<vtkTriangle>::New();
 		triangle->GetPointIds()->SetId(0, id0);
