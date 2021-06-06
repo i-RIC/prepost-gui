@@ -8,8 +8,6 @@
 
 #include <yaml-cpp/yaml.h>
 
-#include <iriclib.h>
-
 #include <h5cgnsconditiongroup.h>
 
 InputConditionContainerInteger::Impl::Impl() :

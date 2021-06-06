@@ -29,8 +29,6 @@
 #include <QLocale>
 #include <QMenu>
 
-#include <iriclib.h>
-
 #include <h5cgnsbase.h>
 #include <h5cgnsfile.h>
 #include <h5cgnsgridcomplexconditiongroup.h>

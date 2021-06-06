@@ -15,8 +15,6 @@
 
 #include <QPoint>
 
-#include <iriclib.h>
-
 class vtkPolyData;
 
 class GridCreatingConditionRiverSurveyInterface;

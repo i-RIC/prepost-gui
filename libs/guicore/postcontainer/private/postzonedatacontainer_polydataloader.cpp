@@ -13,12 +13,11 @@
 #include <vtkPoints.h>
 #include <vtkPolygon.h>
 
-#include <iriclib.h>
-
 #include <vector>
 
 #include <h5cgnspolydatasolution.h>
 #include <public/h5cgnspolydatasolution_groupreader.h>
+#include <iriclib.h>
 
 namespace {
 

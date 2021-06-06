@@ -9,8 +9,6 @@
 #include <misc/stringcontainer.h>
 #include <misc/boolcontainer.h>
 
-#include <iriclib.h>
-
 class GeoDataCreator;
 class GeoDataImporter;
 class GeoDataExporter;

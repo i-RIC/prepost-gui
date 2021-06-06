@@ -132,15 +132,6 @@ win32 {
 	}
 }
 
-# cgnslib
-
-win32{
-LIBS += -lcgnsdll
-}
-unix{
-LIBS += -lcgns
-}
-
 # iriclib
 
 LIBS += -liriclib

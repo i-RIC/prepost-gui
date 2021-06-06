@@ -27,7 +27,7 @@ InputConditionWidgetCgnsFile::InputConditionWidgetCgnsFile(InputConditionContain
 	connect(file, SIGNAL(changed()), this, SLOT(handleFileChange()));
 }
 
-InputConditionWidgetCgnsFile::InputConditionWidgetCgnsFile(QDomNode defnode, const SolverDefinitionTranslator& t, InputConditionContainerString* cont, InputConditionCgnsFile* file) :
+InputConditionWidgetCgnsFile::InputConditionWidgetCgnsFile(QDomNode defnode, const SolverDefinitionTranslator& /*t*/, InputConditionContainerString* cont, InputConditionCgnsFile* file) :
 	InputConditionWidgetCgnsFile(cont, file)
 {}
 

@@ -19,8 +19,6 @@
 #include <QStandardItem>
 #include <QXmlStreamWriter>
 
-#include <iriclib.h>
-
 #include <h5cgnsbc.h>
 #include <h5cgnszone.h>
 #include <h5cgnszonebc.h>
