@@ -346,7 +346,7 @@ void SolverConsoleWindow::startSolverSilently()
 		auto pythonPathStr = iRIC::toStr(pythonPath);
 
 		QStringList args;
-		args << solver << cgnsname;
+		args << "-u" << solver << cgnsname;
 
 		// add path for python libraries
 		QFileInfo finfo(pythonPath);
