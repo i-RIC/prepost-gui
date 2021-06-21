@@ -235,10 +235,7 @@ QString ProjectData::flushCopyCgnsFileName() const
 	QDir wdir(m_workDirectory);
 	wdir.mkdir("tmp");
 
-	QString tmpstr = "Case1";
-	QString fname = QDir(m_workDirectory).absoluteFilePath(QString("tmp/").append(tmpstr).append(".cgn"));
-	fname.append(".copy");
-	fname.append(QString::number(m_flushIndex));
+	QString fname = QDir(m_workDirectory).absoluteFilePath(QString("tmp/Case1.cgn.copy"));
 	return fname;
 }
 
@@ -480,14 +477,4 @@ void ProjectData::setIsSolverRunning(bool running)
 bool ProjectData::isSolverRunning() const
 {
 	return m_isSolverRunning;
-}
-
-int ProjectData::flushIndex() const
-{
-	return m_flushIndex;
-}
-
-void ProjectData::incrementFlushIndex()
-{
-	++ m_flushIndex;
 }

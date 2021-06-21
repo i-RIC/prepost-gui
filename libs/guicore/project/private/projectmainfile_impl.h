@@ -39,6 +39,7 @@ public:
 	QDateTime m_zeroDateTime; // time that corresponds to t = 0
 	TimeFormat m_timeFormat;
 	QString m_customTimeFormat;
+	bool m_separateResult;
 
 	QPointF m_offset;
 

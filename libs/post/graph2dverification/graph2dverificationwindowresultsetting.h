@@ -52,7 +52,7 @@ public:
 	Graph2dVerificationWindowResultSetting();
 	~Graph2dVerificationWindowResultSetting();
 
-	bool init(PostSolutionInfo* sol, const std::vector<MeasuredData*>& measuredData, const QString& cgnsFilename);
+	bool init(PostSolutionInfo* sol, const std::vector<MeasuredData*>& measuredData);
 
 	Graph2dVerificationWindowResultSetting& operator=(const Graph2dVerificationWindowResultSetting& s);
 

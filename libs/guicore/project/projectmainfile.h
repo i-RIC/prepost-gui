@@ -72,6 +72,9 @@ public:
 	const VersionNumber& iRICVersion() const;
 	void setIRICVersion(const VersionNumber& v);
 
+	bool separateResult() const;
+	void setSeparateResult(bool separate);
+
 	/// Solution information
 	PostSolutionInfo* postSolutionInfo() const;
 	bool hasResults();

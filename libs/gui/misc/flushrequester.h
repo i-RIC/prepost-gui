@@ -11,10 +11,10 @@ class FlushRequester : public QObject
 	Q_OBJECT
 
 public:
-	static bool requestFlush(const QString& projectFolder, int idx, QWidget* parent);
+	static bool requestFlush(const QString& projectFolder, QWidget* parent);
 
 private:
-	static void createFlushFile(const QString& filename, int idx);
+	static void createFlushFile(const QString& filename);
 	static bool flushIsCopying(const QString& filename);
 	static bool waitUntilFlushFileRemoved(const QString& filename, QWidget* parent);
 	static QString flushFileName(const QString& projectFolder);

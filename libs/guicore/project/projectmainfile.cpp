@@ -52,6 +52,7 @@
 #include <vtkRenderer.h>
 
 #include <h5cgnsfile.h>
+#include <h5cgnsfileseparatesolutionutil.h>
 #include <iriclib_errorcodes.h>
 
 #include <cmath>
@@ -111,6 +112,7 @@ ProjectMainFile::Impl::Impl(ProjectMainFile *parent) :
 	m_coordinateSystem {nullptr},
 	m_zeroDateTime {},
 	m_timeFormat {TimeFormat::elapsed_SS_sec},
+	m_separateResult {false},
 	m_offset {QPointF(0, 0)},
 	m_isModified {false},
 	m_cgnsFile {nullptr},
@@ -394,6 +396,9 @@ void ProjectMainFile::doLoadFromProjectMainFile(const QDomNode& node)
 	impl->m_offset.setX(offsetX);
 	impl->m_offset.setY(offsetY);
 
+	// separeteResult
+	impl->m_separateResult = iRIC::getBooleanAttribute(node, "separateResult", false);
+
 	// read measured data
 	auto tmpNode = iRIC::getChildNode(node, "MeasuredDatas");
 	if (! tmpNode.isNull()) {
@@ -432,6 +437,9 @@ void ProjectMainFile::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 
 	iRIC::setDoubleAttribute(writer, "offsetX", impl->m_offset.x());
 	iRIC::setDoubleAttribute(writer, "offsetY", impl->m_offset.y());
+
+	// separeteResult
+	iRIC::setBooleanAttribute(writer, "separateResult", impl->m_separateResult);
 
 	// write cgns file list
 	writer.writeStartElement("CgnsFileList");
@@ -647,7 +655,19 @@ void ProjectMainFile::clearResults()
 	int ier = saveToCgnsFile();
 	if (ier != IRIC_NO_ERROR) {return;}
 
+	iRICLib::H5CgnsFileSeparateSolutionUtil::clearResultFolder(iRIC::toStr(currentCgnsFileName()));
+
 	impl->m_postSolutionInfo->checkCgnsStepsUpdate();
+}
+
+bool ProjectMainFile::separateResult() const
+{
+	return impl->m_separateResult;
+}
+
+void ProjectMainFile::setSeparateResult(bool separate)
+{
+	impl->m_separateResult = separate;
 }
 
 PostSolutionInfo* ProjectMainFile::postSolutionInfo() const

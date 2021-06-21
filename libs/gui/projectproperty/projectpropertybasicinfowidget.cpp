@@ -23,6 +23,7 @@ ProjectPropertyBasicInfoWidget::ProjectPropertyBasicInfoWidget(QWidget* parent) 
 	connect(ui->csEditButton, SIGNAL(clicked()), this, SLOT(showSelectCoordinateSystemDialog()));
 	connect(ui->coEditButton, SIGNAL(clicked()), this, SLOT(showSetOffsetDialog()));
 	connect(ui->timeEditButton, SIGNAL(clicked()), this, SLOT(showTimeDialog()));
+	connect(ui->separateOutputCheckBox, SIGNAL(toggled(bool)), this, SLOT(setSeparateResult(bool)));
 }
 
 ProjectPropertyBasicInfoWidget::~ProjectPropertyBasicInfoWidget()
@@ -77,6 +78,8 @@ void ProjectPropertyBasicInfoWidget::setProjectData(ProjectData* data)
 	updateCoordinateSystem();
 	updateCoordinateOffset();
 	updateTimeString();
+
+	ui->separateOutputCheckBox->setChecked(data->mainfile()->separateResult());
 }
 
 void ProjectPropertyBasicInfoWidget::showSelectCoordinateSystemDialog()
@@ -103,6 +106,11 @@ void ProjectPropertyBasicInfoWidget::showTimeDialog()
 	mainFile->setCustomTimeFormat(dialog.customTimeFormat());
 
 	updateTimeString();
+}
+
+void ProjectPropertyBasicInfoWidget::setSeparateResult(bool separate)
+{
+	m_projectData->mainfile()->setSeparateResult(separate);
 }
 
 void ProjectPropertyBasicInfoWidget::updateCoordinateSystem()

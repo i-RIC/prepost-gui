@@ -92,9 +92,6 @@ public:
 	void setIsSolverRunning(bool running);
 	bool isSolverRunning() const;
 
-	int flushIndex() const;
-	void incrementFlushIndex();
-
 public slots:
 	/// Open work directory with Explorer.
 	void openWorkDirectory();

@@ -41,7 +41,7 @@ bool ProjectGridImporter::import(Grid* grid, const QString& filename, const QStr
 	} catch (ErrorMessage& /*m*/) {
 		return false;
 	}
-	QString cgnsFile = tmpProj.currentCgnsFileName();
+	QString cgnsFile = tmpProj.masterCgnsFileName();
 
 	CgnsGridImporter* importer = getCgnsImporter();
 	// load grid from CGNS file.

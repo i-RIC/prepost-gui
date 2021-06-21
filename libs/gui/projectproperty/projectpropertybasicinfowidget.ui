@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>370</width>
-    <height>288</height>
+    <width>407</width>
+    <height>313</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -330,6 +330,20 @@
         </spacer>
        </item>
       </layout>
+     </item>
+     <item row="9" column="0">
+      <widget class="QLabel" name="outputSettingLabel">
+       <property name="text">
+        <string>Output Setting</string>
+       </property>
+      </widget>
+     </item>
+     <item row="9" column="1">
+      <widget class="QCheckBox" name="separateOutputCheckBox">
+       <property name="text">
+        <string>Output calculation results in separate files</string>
+       </property>
+      </widget>
      </item>
     </layout>
    </item>

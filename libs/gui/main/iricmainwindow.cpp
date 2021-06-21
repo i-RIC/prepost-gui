@@ -2261,12 +2261,12 @@ void iRICMainWindow::checkCgnsStepsUpdate()
 {
 	if (m_projectData == nullptr) {return;}
 	if (! m_projectData->isSolverRunning()) {return;}
+
 	CursorChanger cursorChanger(QCursor(Qt::WaitCursor), this);
 	m_projectData->mainfile()->postSolutionInfo()->close();
 	QFile::remove(m_projectData->flushCopyCgnsFileName());
 
-	m_projectData->incrementFlushIndex();
-	bool ok = FlushRequester::requestFlush(m_projectData->workDirectory(), m_projectData->flushIndex(), this);
+	bool ok = FlushRequester::requestFlush(m_projectData->workDirectory(), this);
 	if (! ok) {return;}
 
 	m_projectData->mainfile()->postSolutionInfo()->checkCgnsStepsUpdate();

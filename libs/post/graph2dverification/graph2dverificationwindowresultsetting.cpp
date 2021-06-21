@@ -23,7 +23,7 @@ Graph2dVerificationWindowResultSetting::~Graph2dVerificationWindowResultSetting(
 {
 }
 
-bool Graph2dVerificationWindowResultSetting::init(PostSolutionInfo* sol, const std::vector<MeasuredData*>& measuredData, const QString& /* cgnsFilename */)
+bool Graph2dVerificationWindowResultSetting::init(PostSolutionInfo* sol, const std::vector<MeasuredData*>& measuredData)
 {
 	m_measuredData = measuredData;
 	m_postSolutionInfo = sol;

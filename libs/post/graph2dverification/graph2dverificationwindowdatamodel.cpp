@@ -99,7 +99,7 @@ bool Graph2dVerificationWindowDataModel::setupInitialSetting()
 		return false;
 	}
 	// initially, setup physical value settings.
-	bool loaded = m_setting.init(postSolutionInfo(), measuredData(), currentCgnsFileName());
+	bool loaded = m_setting.init(postSolutionInfo(), measuredData());
 	if (! loaded) {
 		QMessageBox::critical(mainWindow(), tr("Error"), tr("Graph window setup fail. Calculation result is not loaded properly."));
 		return false;
@@ -194,7 +194,7 @@ void Graph2dVerificationWindowDataModel::updateData()
 
 void Graph2dVerificationWindowDataModel::doLoadFromProjectMainFile(const QDomNode& node)
 {
-	bool ok = m_setting.init(postSolutionInfo(), measuredData(), currentCgnsFileName());
+	bool ok = m_setting.init(postSolutionInfo(), measuredData());
 	if (! ok) {
 		throw ErrorMessage("No solution found.");
 	}

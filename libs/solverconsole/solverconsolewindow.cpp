@@ -325,6 +325,10 @@ void SolverConsoleWindow::startSolverSilently()
 	QProcessEnvironment env = impl->m_projectData->mainWindow()->processEnvironment();
 	env.insert("iRIC_LANG", locale);
 
+	if (impl->m_projectData->mainfile()->separateResult()) {
+		env.insert("IRIC_SEPARATE_OUTPUT", "1");
+	}
+	env.insert("IRIC_LOG_LEVEL", "FATAL");
 
 	// create connections.
 	connect(impl->m_process, SIGNAL(readyReadStandardError()), this, SLOT(readStderr()));

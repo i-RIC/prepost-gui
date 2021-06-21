@@ -25,6 +25,7 @@ private slots:
 	void showSelectCoordinateSystemDialog();
 	void showSetOffsetDialog();
 	void showTimeDialog();
+	void setSeparateResult(bool separate);
 
 private:
 	void updateCoordinateSystem();

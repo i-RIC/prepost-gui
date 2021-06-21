@@ -208,7 +208,7 @@ void PostSolutionInfo::informStepsUpdated()
 
 bool PostSolutionInfo::innerSetupZoneDataContainers(int dim, QList<PostZoneDataContainer*>* containers, QMap<std::string, PostZoneDataContainer*>* containerNameMap, QMap<std::string, std::vector<PostCalculatedResult*> > *results)
 {
-	auto file = cgnsFile();
+	auto file = cgnsFile()->solutionReader()->targetFile();
 
 	if (! file->baseExists(dim)) {
 		clearContainers(containers);
@@ -931,7 +931,12 @@ int PostSolutionInfo::open()
 	if (m_cgnsFile != nullptr) {return IRIC_NO_ERROR;}
 
 	try {
-		m_cgnsFile = new iRICLib::H5CgnsFile(iRIC::toStr(currentCgnsFileName()), iRICLib::H5CgnsFile::Mode::OpenReadOnly);
+		auto pd = projectData();
+		if (pd->isSolverRunning()) {
+			m_cgnsFile = new iRICLib::H5CgnsFile(iRIC::toStr(pd->flushCopyCgnsFileName()), iRICLib::H5CgnsFile::Mode::OpenReadOnly, "../result");
+		} else {
+			m_cgnsFile = new iRICLib::H5CgnsFile(iRIC::toStr(pd->masterCgnsFileName()), iRICLib::H5CgnsFile::Mode::OpenReadOnly);
+		}
 		return IRIC_NO_ERROR;
 	} catch (...) {
 		return IRIC_H5_OPEN_FAIL;
