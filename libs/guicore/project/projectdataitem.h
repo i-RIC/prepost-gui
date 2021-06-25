@@ -48,9 +48,11 @@ public:
 	/// Currently opened CGNS file name
 	virtual QString currentCgnsFileName() const;
 	/// Load data from CGNS file
-	virtual void loadFromCgnsFile(const int fn);
+	virtual int loadFromCgnsFile();
 	/// Save data into CGNS file
-	virtual void saveToCgnsFile(const int fn);
+	virtual int saveToCgnsFile();
+	/// Update data in CGNS file other than grids
+	virtual int updateCgnsFileOtherThanGrids();
 	/// Discard data loaded from CGNS file.
 	virtual void closeCgnsFile();
 	//@}

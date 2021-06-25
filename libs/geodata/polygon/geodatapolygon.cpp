@@ -1328,9 +1328,9 @@ void GeoDataPolygon::doApplyOffset(double x, double y)
 	updatePolyData(true);
 }
 
-int GeoDataPolygon::iRICLibType() const
+iRICLib::H5CgnsGeographicDataGroup::Type GeoDataPolygon::iRICLibType() const
 {
-	return IRIC_GEO_POLYGON;
+	return iRICLib::H5CgnsGeographicDataGroup::Type::Polygon;
 }
 
 void GeoDataPolygon::applyOffsetToAbstractPolygon(GeoDataPolygonAbstractPolygon* polygon, double x, double y)

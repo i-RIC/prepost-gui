@@ -11,9 +11,6 @@ public:
 	GridAttributeRealCellContainer(Grid* grid, SolverDefinitionGridAttributeT<double>* cond)
 		: GridAttributeCellContainerT<double, vtkDoubleArray>(grid, cond)
 	{}
-
-protected:
-	DataType_t dataType() const override {return RealDouble;}
 };
 
 #endif // GRIDATTRIBUTEREALCELLCONTAINER_H

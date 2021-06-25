@@ -9,14 +9,6 @@
 #include <misc/errormessage.h>
 #include <misc/stringtool.h>
 
-#include <QFile>
-#include <QMessageBox>
-#include <QObject>
-#include <QString>
-#include <QTextStream>
-#include <QVector2D>
-
-#include <cgnslib.h>
 #include <sstream>
 
 ProjectGridImporter::ProjectGridImporter() :
@@ -49,8 +41,7 @@ bool ProjectGridImporter::import(Grid* grid, const QString& filename, const QStr
 	} catch (ErrorMessage& /*m*/) {
 		return false;
 	}
-	tmpProj.loadCgnsList();
-	QString cgnsFile = tmpProj.currentCgnsFileName();
+	QString cgnsFile = tmpProj.masterCgnsFileName();
 
 	CgnsGridImporter* importer = getCgnsImporter();
 	// load grid from CGNS file.

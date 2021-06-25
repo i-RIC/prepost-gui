@@ -111,13 +111,9 @@ LIBS += \
 	-lvtkFiltersCore-$${VTK_MAJ_MIN} \
 	-lvtkFiltersExtraction-$${VTK_MAJ_MIN}
 
-# cgnslib
-win32 {
-	LIBS += -lcgnsdll
-}
-unix {
-	LIBS += -lcgns
-}
+# iriclib
+
+LIBS += -liriclib
 
 win32 {
 	DESTDIR = $(SolutionDir)/libdlls/$(Configuration)

@@ -57,15 +57,15 @@ void Post2dBirdEyeWindowCellScalarGroupTopDataItem::update()
 
 QDialog* Post2dBirdEyeWindowCellScalarGroupTopDataItem::addDialog(QWidget* p)
 {
-	Post2dWindowContourSettingDialog* dialog = new Post2dWindowContourSettingDialog(p);
-	Post2dBirdEyeWindowGridTypeDataItem* gtItem = dynamic_cast<Post2dBirdEyeWindowGridTypeDataItem*>(parent()->parent());
+	auto dialog = new Post2dWindowContourSettingDialog(p);
+	auto gtItem = dynamic_cast<Post2dBirdEyeWindowGridTypeDataItem*>(parent()->parent());
 	dialog->setGridTypeDataItem(gtItem);
-	Post2dBirdEyeWindowZoneDataItem* zItem = dynamic_cast<Post2dBirdEyeWindowZoneDataItem*>(parent());
+	auto zItem = dynamic_cast<Post2dBirdEyeWindowZoneDataItem*>(parent());
 	if (zItem->dataContainer() == nullptr || zItem->dataContainer()->data() == nullptr) {
 		delete dialog;
 		return nullptr;
 	}
-	dialog->setZoneData(zItem->dataContainer(), CellCenter);
+	dialog->setZoneData(zItem->dataContainer(), iRICLib::H5CgnsZone::SolutionPosition::Cell);
 	dialog->hideOpacity();
 	// region setting
 	if (! zItem->dataContainer()->IBCCellExists()) {
@@ -90,7 +90,7 @@ bool Post2dBirdEyeWindowCellScalarGroupTopDataItem::nextScalarBarSetting(ScalarB
 	std::set<ScalarBarSetting::Quadrant> quads = ScalarBarSetting::getQuadrantSet();
 
 	for (auto item : m_childItems) {
-		Post2dBirdEyeWindowCellScalarGroupDataItem* typedi = dynamic_cast<Post2dBirdEyeWindowCellScalarGroupDataItem*>(item);
+		auto typedi = dynamic_cast<Post2dBirdEyeWindowCellScalarGroupDataItem*>(item);
 		// note use m_standardItemCopy which hasn't been changed yet
 		if (typedi->m_standardItemCopy->checkState() == Qt::Checked) {
 			auto it = quads.find(typedi->m_setting.scalarBarSetting.quadrant);

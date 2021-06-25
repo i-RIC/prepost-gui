@@ -20,8 +20,8 @@ public:
 	PreProcessorGeoDataComplexGroupDataItem(SolverDefinitionGridAttribute* cond, PreProcessorDataItem* parent);
 	~PreProcessorGeoDataComplexGroupDataItem();
 
-	void loadFromCgnsFile(const int fn) override;
-	void saveComplexGroupsToCgnsFile(const int fn) override;
+	int loadFromCgnsFile() override;
+	int saveComplexGroupsToCgnsFile() override;
 	void addCustomMenuItems(QMenu* menu) override;
 
 	SolverDefinitionGridAttribute* condition() override;

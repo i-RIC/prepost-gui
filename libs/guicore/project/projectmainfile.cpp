@@ -1,12 +1,9 @@
 #include "../base/iricmainwindowinterface.h"
-#include "../misc/cgnsfileopener.h"
 #include "../postcontainer/postsolutioninfo.h"
 #include "../pre/base/preprocessordatamodelinterface.h"
 #include "../pre/base/preprocessorwindowinterface.h"
 #include "../solverdef/solverdefinitionabstract.h"
 #include "backgroundimageinfo.h"
-#include "cgnsfileentry.h"
-#include "cgnsfilelist.h"
 #include "measured/measureddata.h"
 #include "measured/measureddatacsvimporter.h"
 #include "offsetsettingdialog.h"
@@ -26,6 +23,7 @@
 #include <misc/iricundostack.h>
 #include <misc/lastiodirectory.h>
 #include <misc/stringtool.h>
+#include <misc/valuechangert.h>
 #include <misc/xmlsupport.h>
 
 #include <QApplication>
@@ -53,8 +51,10 @@
 #include <vtkRenderWindow.h>
 #include <vtkRenderer.h>
 
-#include <cgnslib.h>
-#include <iriclib.h>
+#include <h5cgnsfile.h>
+#include <h5cgnsfileseparatesolutionutil.h>
+#include <iriclib_errorcodes.h>
+
 #include <cmath>
 
 namespace {
@@ -112,8 +112,10 @@ ProjectMainFile::Impl::Impl(ProjectMainFile *parent) :
 	m_coordinateSystem {nullptr},
 	m_zeroDateTime {},
 	m_timeFormat {TimeFormat::elapsed_SS_sec},
+	m_separateResult {false},
 	m_offset {QPointF(0, 0)},
 	m_isModified {false},
+	m_cgnsFile {nullptr},
 	m_parent {parent}
 {}
 
@@ -232,9 +234,6 @@ ProjectMainFile::ProjectMainFile(ProjectData* parent) :
 	impl {new Impl(this)}
 {
 	m_projectData = parent;
-	// @todo we should get iRIC version through parent->mainWindow(),
-	// and set it to m_iRICVersion.
-	m_cgnsFileList = new CgnsFileList(this);
 }
 
 ProjectMainFile::~ProjectMainFile()
@@ -248,42 +247,6 @@ ProjectMainFile::~ProjectMainFile()
 void ProjectMainFile::setModified(bool modified)
 {
 	impl->m_isModified = modified;
-}
-
-void ProjectMainFile::createDefaultCgnsFile()
-{
-	QString defaultName = m_cgnsFileList->proposeFilename();
-	m_cgnsFileList->add(defaultName);
-	// create template CGNS file.
-	QString fname = m_projectData->workCgnsFileName(defaultName);
-	// @todo currently, cell_dim, phys_dim are hard-coded to be 2 fore each.
-	// we must read it from Solver definition file in the future.
-	ProjectCgnsFile::createNewFile(fname, 2, 2);
-	ProjectCgnsFile::writeSolverInfo(fname, &(projectData()->solverDefinition()->abstract()));
-
-	m_cgnsFileList->setCurrent(defaultName);
-}
-
-bool ProjectMainFile::switchCgnsFile(const QString& name)
-{
-	CgnsFileEntry* c = m_cgnsFileList->current();
-	m_cgnsFileList->setCurrent(name);
-
-	// save data to the old cgns file.
-	if (c != nullptr && c->filename() != name) {
-		bool ret = saveCgnsFile(c->filename());
-		if (! ret) {return false;}
-	}
-
-	// discard data loaded from cgns file.
-	closeCgnsFile();
-
-	// load data from the new cgns file.
-	bool ok = loadCgnsFile(name);
-	if (! ok) {return false;}
-
-	emit cgnsFileSwitched();
-	return true;
 }
 
 void ProjectMainFile::loadSolverInformation()
@@ -332,35 +295,12 @@ void ProjectMainFile::load()
 	loadFromProjectMainFile(doc.documentElement());
 }
 
-void ProjectMainFile::loadCgnsList()
-{
-	QString fname = filename();
-	QFile f(fname);
-	QDomDocument doc;
-	QString errorStr;
-	int errorLine;
-	int errorColumn;
-	QString errorHeader = "Error occured while loading %1\n";
-	bool ok = doc.setContent(&f, &errorStr, &errorLine, &errorColumn);
-
-	if (! ok) {
-		QString msg = errorHeader;
-		msg.append("Parse error %2 at line %3, column %4");
-		msg = msg.arg(fname).arg(errorStr).arg(errorLine).arg(errorColumn);
-		throw ErrorMessage(msg);
-	}
-	// read cgns file list
-	QDomNode tmpNode = iRIC::getChildNode(doc.documentElement(), "CgnsFileList");
-	if (! tmpNode.isNull()) {
-		m_cgnsFileList->loadFromProjectMainFile(tmpNode);
-	}
-}
-
 bool ProjectMainFile::save()
 {
 	// save cgns file.
-	bool ret = saveCgnsFile();
-	if (! ret) {return false;}
+	int ret = saveToCgnsFile();
+	if (ret != IRIC_NO_ERROR) {return false;}
+
 	ret = saveExceptCGNS();
 	impl->m_isModified = false;
 	return ret;
@@ -456,14 +396,11 @@ void ProjectMainFile::doLoadFromProjectMainFile(const QDomNode& node)
 	impl->m_offset.setX(offsetX);
 	impl->m_offset.setY(offsetY);
 
-	// read cgns file list
-	QDomNode tmpNode = iRIC::getChildNode(node, "CgnsFileList");
-	if (! tmpNode.isNull()) {
-		m_cgnsFileList->loadFromProjectMainFile(tmpNode);
-	}
+	// separeteResult
+	impl->m_separateResult = iRIC::getBooleanAttribute(node, "separateResult", false);
 
 	// read measured data
-	tmpNode = iRIC::getChildNode(node, "MeasuredDatas");
+	auto tmpNode = iRIC::getChildNode(node, "MeasuredDatas");
 	if (! tmpNode.isNull()) {
 		impl->loadMeasuredDatas(tmpNode);
 	}
@@ -501,10 +438,16 @@ void ProjectMainFile::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 	iRIC::setDoubleAttribute(writer, "offsetX", impl->m_offset.x());
 	iRIC::setDoubleAttribute(writer, "offsetY", impl->m_offset.y());
 
+	// separeteResult
+	iRIC::setBooleanAttribute(writer, "separateResult", impl->m_separateResult);
+
 	// write cgns file list
 	writer.writeStartElement("CgnsFileList");
-	// delegate to CgnsFileList
-	m_cgnsFileList->saveToProjectMainFile(writer);
+	writer.writeAttribute("current", "Case1");
+	writer.writeStartElement("CgnsFileEntry");
+	writer.writeAttribute("filename", "Case1");
+	writer.writeAttribute("comment", "");
+	writer.writeEndElement();
 	writer.writeEndElement();
 
 	// write measured data
@@ -552,7 +495,7 @@ QStringList ProjectMainFile::containedFiles()
 		ret << filename;
 	}
 	// Add CGNS files.
-	ret << m_cgnsFileList->containedFiles();
+	ret << "Case1.cgn";
 
 	// Add External files in MainWindow
 	ret << m_projectData->mainWindow()->containedFiles();
@@ -565,19 +508,7 @@ QStringList ProjectMainFile::containedFiles()
 
 bool ProjectMainFile::importCgnsFile(const QString& fname, const QString& newname)
 {
-	QString fnamebody = QFileInfo(newname).baseName();
-	if (m_cgnsFileList->exists(fnamebody)) {
-		QMessageBox::critical(m_projectData->mainWindow(), tr("Error"), QString(tr("Solution %1 already exists.").arg(fnamebody)));
-		return false;
-	}
-	QRegExp rx(ProjectCgnsFile::acceptablePattern());
-	if (rx.indexIn(fnamebody) == - 1) {
-		QMessageBox::critical(m_projectData->mainWindow(), tr("Error"), QString(tr("CGNS file whose name contains characters other than alphabets and numbers can not be imported.")));
-		return false;
-	}
-
-	m_cgnsFileList->add(fnamebody);
-	QString to = m_projectData->workCgnsFileName(fnamebody);
+	QString to = m_projectData->workCgnsFileName(newname);
 
 	copyCgnsFile(fname, to);
 
@@ -595,7 +526,6 @@ bool ProjectMainFile::importCgnsFile(const QString& fname, const QString& newnam
 	}
 	QFileInfo finfo(fname);
 	LastIODirectory::set(finfo.absolutePath());
-	switchCgnsFile(fnamebody);
 
 	// CGNS file import is not undo-able.
 	iRICUndoStack::instance().clear();
@@ -616,10 +546,9 @@ void ProjectMainFile::exportCurrentCgnsFile()
 		}
 	}
 	// save first.
-	saveCgnsFile();
+	saveToCgnsFile();
 	// copy to the specified file.
-	QString from = m_projectData->workCgnsFileName(m_cgnsFileList->current()->filename());
-	QFile::copy(from, fname);
+	QFile::copy(currentCgnsFileName(), fname);
 	QFileInfo finfo(fname);
 	LastIODirectory::set(finfo.absolutePath());
 }
@@ -629,28 +558,56 @@ QString ProjectMainFile::currentCgnsFileName() const
 	return m_projectData->currentCgnsFileName();
 }
 
-bool ProjectMainFile::loadCgnsFile(const QString& name)
+int ProjectMainFile::loadFromCgnsFile()
 {
-	bool ret = false;
 	try {
-		// CGNS file name
-		QString fname = m_projectData->workCgnsFileName(name);
-		CgnsFileOpener opener(iRIC::toStr(fname), CG_MODE_READ);
-		// load data.
-		ret = true;
-		loadFromCgnsFile(opener.fileId());
+		auto fname = iRIC::toStr(m_projectData->workCgnsFileName("Case1"));
+		iRICLib::H5CgnsFile cgnsFile(fname, iRICLib::H5CgnsFile::Mode::OpenReadOnly);
+		ValueChangerT<iRICLib::H5CgnsFile*> fileChanger(&(impl->m_cgnsFile), &cgnsFile);
+		int ier = m_projectData->mainWindow()->loadFromCgnsFile();
+		if (ier != IRIC_NO_ERROR) {return ier;}
+	} catch (...) {
+		QMessageBox::critical(m_projectData->mainWindow(), tr("Error"), tr("Error occured while opening CGNS file in project file : %1").arg("Case1.cgn"));
+		return false;
 	}
-	catch (const std::runtime_error&) {
-		QString shortFilename = name;
-		shortFilename.append(".cgn");
-		QMessageBox::critical(m_projectData->mainWindow(), tr("Error"), tr("Error occured while opening CGNS file in project file : %1").arg(shortFilename));
-	}
-	return ret;
+
+	postSolutionInfo()->loadFromCgnsFile();
+	return true;
 }
 
-bool ProjectMainFile::saveCgnsFile()
+int ProjectMainFile::saveToCgnsFile()
 {
-	return saveCgnsFile(m_cgnsFileList->current()->filename());
+	// close CGNS file when the solution opened it.
+	impl->m_postSolutionInfo->close();
+
+	try {
+		auto fname = iRIC::toStr(m_projectData->workCgnsFileName("Case1"));
+		iRICLib::H5CgnsFile cgnsFile(fname, iRICLib::H5CgnsFile::Mode::Create);
+		ValueChangerT<iRICLib::H5CgnsFile*> fileChanger(&(impl->m_cgnsFile), &cgnsFile);
+
+		int ier = ProjectCgnsFile::writeSolverInfo(&cgnsFile, m_projectData->solverDefinition()->abstract());
+		if (ier != IRIC_NO_ERROR) {return ier;}
+
+		return m_projectData->mainWindow()->saveToCgnsFile();
+	} catch (...) {
+		QMessageBox::critical(m_projectData->mainWindow(), tr("Error"), tr("Error occured while opening CGNS file in project file : Case1.cgn"));
+		return IRIC_H5_OPEN_FAIL;
+	}
+}
+
+int ProjectMainFile::updateCgnsFileOtherThanGrids()
+{
+	impl->m_postSolutionInfo->close();
+
+	try {
+		auto fname = iRIC::toStr(m_projectData->workCgnsFileName("Case1"));
+		iRICLib::H5CgnsFile cgnsFile(fname, iRICLib::H5CgnsFile::Mode::OpenModify);
+		ValueChangerT<iRICLib::H5CgnsFile*> fileChanger(&(impl->m_cgnsFile), &cgnsFile);
+		return m_projectData->mainWindow()->updateCgnsFileOtherThanGrids();
+	} catch (...) {
+		QMessageBox::critical(m_projectData->mainWindow(), tr("Error"), tr("Error occured while opening CGNS file in project file : Case1.cgn"));
+		return IRIC_H5_OPEN_FAIL;
+	}
 }
 
 bool ProjectMainFile::isModified() const
@@ -661,69 +618,6 @@ bool ProjectMainFile::isModified() const
 ProjectPostProcessors* ProjectMainFile::postProcessors() const
 {
 	return impl->m_postProcessors;
-}
-
-bool ProjectMainFile::saveCgnsFile(const QString& name)
-{
-	QTime time;
-	// close CGNS file when the solution opened it.
-	impl->m_postSolutionInfo->close();
-
-	// check grid status
-	try {
-		if (! clearResultsIfGridIsEdited()) {
-			return false;
-		}
-	} catch (ErrorMessage& m) {
-		QMessageBox::warning(iricMainWindow(), tr("Warning"), tr("%1 Saving project file failed.").arg(m));
-		return false;
-	}
-	// close CGNS file when the solution opened it, again.
-	impl->m_postSolutionInfo->close();
-
-	// CGNS file name
-	QString fname = m_projectData->workCgnsFileName(name);
-	// save to current cgns file.
-	int fn, ier;
-	time.start();
-	ier = cg_open(iRIC::toStr(fname).c_str(), CG_MODE_MODIFY, &fn);
-	qDebug("cg_open(): %d", time.elapsed());
-	if (ier != 0) {return false;}
-	// write solver information
-	bool ret = ProjectCgnsFile::writeSolverInfo(fn, &(m_projectData->solverDefinition()->abstract()));
-	if (ret == false) {goto ERROR;}
-	// save data.
-	time.start();
-	try {
-		saveToCgnsFile(fn);
-	} catch (ErrorMessage& m) {
-		QMessageBox::warning(iricMainWindow(), tr("Warning"), tr("%1 Saving project file failed.").arg(m));
-		goto ERROR;
-	}
-	qDebug("saveToCgnsFile(): %d", time.elapsed());
-	time.start();
-	ier = cg_configure(CG_CONFIG_COMPRESS, reinterpret_cast<void*>(0));
-	if (ier != 0) {goto ERROR;}
-	cg_close(fn);
-	qDebug("cg_close(): %d", time.elapsed());
-	return true;
-ERROR:
-	cg_close(fn);
-	return false;
-}
-
-void ProjectMainFile::loadFromCgnsFile(const int fn)
-{
-	// Init iriclib for reading
-	cg_iRIC_InitRead(fn);
-	m_projectData->mainWindow()->loadFromCgnsFile(fn);
-	impl->m_postSolutionInfo->loadFromCgnsFile(fn);
-}
-
-void ProjectMainFile::saveToCgnsFile(const int fn)
-{
-	if (projectData()->isPostOnlyMode()) {return;}
-	m_projectData->mainWindow()->saveToCgnsFile(fn);
 }
 
 void ProjectMainFile::toggleGridEditFlag()
@@ -758,30 +652,22 @@ void ProjectMainFile::clearResults()
 	// close CGNS file when the solution opened it.
 	impl->m_postSolutionInfo->close();
 
-	// CGNS file name
-	QString fname = currentCgnsFileName();
-	// delete old file
-	deleteCgnsFile(fname);
+	int ier = saveToCgnsFile();
+	if (ier != IRIC_NO_ERROR) {return;}
 
-	// save to current cgns file, with write mode.
-	ProjectCgnsFile::createNewFile(fname, 2, 2);
-	int fn, ier;
-	ier = cg_open(iRIC::toStr(fname).c_str(), CG_MODE_MODIFY, &fn);
-	if (ier != 0) {return;}
-	// write solver information
-	bool ret = ProjectCgnsFile::writeSolverInfo(fn, &(m_projectData->solverDefinition()->abstract()));
-	if (ret == false) {goto ERROR;}
-	// save data.
-	toggleGridEditFlag();
-	saveToCgnsFile(fn);
-	cg_close(fn);
+	iRICLib::H5CgnsFileSeparateSolutionUtil::clearResultFolder(iRIC::toStr(currentCgnsFileName()));
+
 	impl->m_postSolutionInfo->checkCgnsStepsUpdate();
-	projectData()->mainWindow()->clearResults();
-	return;
+}
 
-ERROR:
-	cg_close(fn);
-	return;
+bool ProjectMainFile::separateResult() const
+{
+	return impl->m_separateResult;
+}
+
+void ProjectMainFile::setSeparateResult(bool separate)
+{
+	impl->m_separateResult = separate;
 }
 
 PostSolutionInfo* ProjectMainFile::postSolutionInfo() const
@@ -1034,11 +920,6 @@ void ProjectMainFile::updateActorVisibility(int idx, bool vis)
 	emit backgroundActorVisibilityChanged(idx, vis);
 }
 
-bool ProjectMainFile::clearResultsIfGridIsEdited()
-{
-	return m_projectData->mainWindow()->clearResultsIfGridIsEdited();
-}
-
 void ProjectMainFile::addMeasuredData()
 {
 	QString dir = LastIODirectory::get();
@@ -1206,6 +1087,11 @@ void ProjectMainFile::setOffset(double x, double y)
 	impl->m_offset.setY(y);
 }
 
+iRICLib::H5CgnsFile* ProjectMainFile::cgnsFile() const
+{
+	return impl->m_cgnsFile;
+}
+
 class ProjectSetOffsetCommand : public QUndoCommand
 {
 public:
@@ -1259,10 +1145,4 @@ int ProjectMainFile::showCoordinateSystemDialog(bool forceSelect)
 
 	setCoordinateSystem(cs);
 	return QDialog::Accepted;
-}
-
-void ProjectMainFile::showTimeSettingDialog()
-{
-	auto mainW = projectData()->mainWindow();
-
 }

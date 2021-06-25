@@ -67,7 +67,6 @@ public:
 	const QLocale locale() const override;
 	bool isSolverRunning() const override;
 	void warnSolverRunning() const override;
-	void switchCgnsFile(const QString& newcgns);
 	ProjectWorkspace* workspace() override;
 	const VersionNumber& versionNumber() const override;
 	void setDebugMode(bool debug);
@@ -83,19 +82,17 @@ public:
 	void saveSubWindowsToProjectMainFile(QXmlStreamWriter& writer) override;
 
 	QStringList containedFiles() const override;
-	void loadFromCgnsFile(const int fn) override;
-	void saveToCgnsFile(const int fn) override;
+	int loadFromCgnsFile() override;
+	int saveToCgnsFile() override;
+	int updateCgnsFileOtherThanGrids() override;
 	void closeCgnsFile() override;
 	void toggleGridEditFlag() override;
-	void clearResults() override;
-	bool clearResultsIfGridIsEdited() override;
 
-	ProjectData* projectData() const;
+	ProjectData* projectData() const override;
 	void setProjectData(ProjectData* projectData) override;
 
 	/// Check whether work folder is set to a good folder. If it is good returns true.
 	bool checkWorkFolderWorks();
-	bool isPostOnlyMode() const;
 	void importCalculationResult(const QString& filename);
 	const QProcessEnvironment& processEnvironment() const override;
 	void updateCrosssectionWindows() override;
@@ -335,6 +332,7 @@ private:
 	QProcessEnvironment m_processEnvironment;
 
 	class CalculatedResultManager;
+	class ModelessDialogModeChanger;
 	class SnapshotSaver;
 
 public:

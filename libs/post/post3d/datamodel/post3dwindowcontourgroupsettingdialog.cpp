@@ -7,6 +7,7 @@
 #include <guibase/vtkdatasetattributestool.h>
 #include <guibase/scalarbardialog.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
+#include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/stringtool.h>
 
 #include <vtkPointData.h>

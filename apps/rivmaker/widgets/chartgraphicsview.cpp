@@ -476,7 +476,7 @@ void ChartGraphicsView::drawAspectRatio(QPainter* painter)
 
 	QSize s = size();
 
-	auto str = tr("Aspect ratio: 1 / %1").arg(aspectRatio());
+	auto str = tr("Aspect ratio (V/H): 1 / %1").arg(aspectRatio());
 	QFontMetricsF metrics(painter->font());
 	auto rect = metrics.boundingRect(str);
 

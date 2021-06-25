@@ -6,6 +6,10 @@
 
 #include <QList>
 
+namespace iRICLib {
+	class H5CgnsFile;
+} // namespace iRICLib
+
 /// This class stores the iterationsteps included in cgns file.
 class GUICOREDLL_EXPORT PostIterationSteps : public PostAbstractSteps
 {
@@ -14,10 +18,10 @@ class GUICOREDLL_EXPORT PostIterationSteps : public PostAbstractSteps
 public:
 	PostIterationSteps(ProjectDataItem* parent);
 
-	void loadFromCgnsFile(const int fn) override;
+	void loadFromCgnsFile(iRICLib::H5CgnsFile& file);
 	const QList<int>& iterationSteps() const;
 	bool dataExists() const override;
-	void checkStepsUpdate(int fn);
+	void checkStepsUpdate(iRICLib::H5CgnsFile& file);
 	void informSteps();
 
 protected:
@@ -25,7 +29,7 @@ protected:
 
 signals:
 	void stepsUpdated(const QList<int>& steps);
-	void stepsUpdated(int fn);
+	void stepsUpdated();
 
 private:
 	QList<int> m_iterationSteps;

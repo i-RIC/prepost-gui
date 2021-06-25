@@ -49,20 +49,6 @@ void InputConditionContainerSet::setup(const QDomNode& condNode, const SolverDef
 	}
 }
 
-void InputConditionContainerSet::setBCProperty(const std::string& bcname, int bcindex)
-{
-	for (auto& pair : m_containers) {
-		pair.second->setBCProperty(bcname, bcindex);
-	}
-}
-
-void InputConditionContainerSet::setComplexProperty(const std::string& compname, int compindex)
-{
-	for (auto& pair : m_containers) {
-		pair.second->setComplexProperty(compname, compindex);
-	}
-}
-
 void InputConditionContainerSet::setupSimple(const QDomNode& contNode, const SolverDefinition& def, const SolverDefinitionTranslator& t)
 {
 	QDomNode itemsNode = iRIC::getChildNode(contNode, "Items");
@@ -162,18 +148,17 @@ void InputConditionContainerSet::setDefaultValues()
 	}
 }
 
-int InputConditionContainerSet::load()
+int InputConditionContainerSet::load(const iRICLib::H5CgnsConditionGroup& group)
 {
-	// @todo no error checking (for example, wrong value, lacking nodes..) are implemented.
 	for (auto& pair : m_containers) {
-		pair.second->load();
+		pair.second->load(group);
 	}
 	return 0;
 }
-int InputConditionContainerSet::save()
+int InputConditionContainerSet::save(iRICLib::H5CgnsConditionGroup* group)
 {
 	for (auto& pair : m_containers) {
-		int ret = pair.second->save();
+		int ret = pair.second->save(group);
 		if (ret != 0) {return ret;}
 	}
 	return 0;

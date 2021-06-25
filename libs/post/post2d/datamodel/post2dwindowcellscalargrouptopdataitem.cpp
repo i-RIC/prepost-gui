@@ -149,7 +149,7 @@ QDialog* Post2dWindowCellScalarGroupTopDataItem::addDialog(QWidget* p)
 		delete dialog;
 		return nullptr;
 	}
-	dialog->setZoneData(zItem->dataContainer(), CellCenter);
+	dialog->setZoneData(zItem->dataContainer(), iRICLib::H5CgnsZone::SolutionPosition::Cell);
 	if (! zItem->dataContainer()->IBCCellExists()) {
 		dialog->disableActive();
 	}

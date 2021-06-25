@@ -12,11 +12,14 @@
 #include <string>
 #include <vector>
 
+namespace iRICLib {
+	class H5CgnsFile;
+} // namespace iRICLib
+
 class QDomDocument;
 class QPointF;
 
 class BackgroundImageInfo;
-class CgnsFileList;
 class CoordinateSystem;
 class iRICMainWindowInterface;
 class MeasuredData;
@@ -39,16 +42,12 @@ public:
 	/// Constructor
 	ProjectMainFile(ProjectData* parent);
 	virtual ~ProjectMainFile();
-	/// Create first Cgns file.
-	void createDefaultCgnsFile();
 	/// Initializes for the specified solver definition.
 	void initForSolverDefinition();
 	/// Load solver information from file
 	void loadSolverInformation();
 	/// Load data from file
 	void load();
-	/// Load only CGNS file list from a project file.
-	void loadCgnsList();
 	/// Load Post-processor settings from a project file.
 	void openPostProcessors();
 	/// Save data into file
@@ -73,8 +72,9 @@ public:
 	const VersionNumber& iRICVersion() const;
 	void setIRICVersion(const VersionNumber& v);
 
-	/// Cgns file list
-	CgnsFileList* cgnsFileList() const {return m_cgnsFileList;}
+	bool separateResult() const;
+	void setSeparateResult(bool separate);
+
 	/// Solution information
 	PostSolutionInfo* postSolutionInfo() const;
 	bool hasResults();
@@ -82,16 +82,17 @@ public:
 	QString currentCgnsFileName() const override;
 	/// Clear the results stored in the current CGNS file.
 	void clearResults();
-	/// Save current cgns file.
-	bool saveCgnsFile();
+
+	int loadFromCgnsFile() override;
+	int saveToCgnsFile() override;
+	int updateCgnsFileOtherThanGrids() override;
+	void closeCgnsFile() override;
+
 	/// Return true when the work data is modified.
 	bool isModified() const;
 	/// PostProcessors.
 	ProjectPostProcessors* postProcessors() const;
-	void loadFromCgnsFile(const int fn) override;
-	void saveToCgnsFile(const int fn) override;
 	void toggleGridEditFlag();
-	void closeCgnsFile() override;
 	/// Background images
 	const std::vector<BackgroundImageInfo*>& backgroundImages() const;
 	/// Measured data
@@ -122,15 +123,15 @@ public:
 	QPointF offset() const;
 	void setOffset(double x, double y);
 
+	iRICLib::H5CgnsFile* cgnsFile() const;
+
 	bool mkdirBGDIR();
 	/// Create background image
 	void addBackgroundImage(BackgroundImageInfo* image);
 	int showCoordinateSystemDialog(bool forceSelect = false);
-	void showTimeSettingDialog();
 
 public slots:
 	void exportCurrentCgnsFile();
-	bool switchCgnsFile(const QString& name);
 
 	void addBackgroundImage();
 	void moveUpImage(const QModelIndex& index);
@@ -148,7 +149,6 @@ public slots:
 	void setupOffset();
 
 signals:
-	void cgnsFileSwitched();
 	void backgroundImageAdded();
 	void backgroundImageDeleted(int i);
 	void backgroundImageMovedUp(int i);
@@ -167,18 +167,10 @@ private:
 	ProjectData* projectData() const override;
 	QString relativeSubPath() const override;
 
-	bool clearResultsIfGridIsEdited();
-
-	/// Cgns file list
-	CgnsFileList* m_cgnsFileList;
 	/// ProjectData
 	ProjectData* m_projectData;
 	/// Renderers for background images
 	std::vector<vtkRenderer*> m_renderers;
-	/// Load data from CGNS file
-	bool loadCgnsFile(const QString& name);
-	/// Soad data from CGNS file
-	bool saveCgnsFile(const QString& name);
 	void checkVersionCompatibility();
 	/// Load DOM document
 	void loadDom(QDomDocument& doc);

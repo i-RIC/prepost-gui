@@ -27,7 +27,6 @@
 #include <guibase/objectbrowserview.h>
 #include <guicore/base/animationcontrollerinterface.h>
 #include <guicore/base/iricmainwindowinterface.h>
-#include <guicore/misc/cgnsfileopener.h>
 #include <guicore/post/postzoneselectingdialog.h>
 #include <guicore/postcontainer/postsolutioninfo.h>
 #include <guicore/postcontainer/posttimesteps.h>
@@ -58,12 +57,10 @@
 
 #include <vtkStructuredGrid.h>
 
-#include <cgnslib.h>
-
 #include <stdexcept>
 
-Graph2dHybridWindowDataModel::Graph2dHybridWindowDataModel(Graph2dHybridWindow* w, ProjectDataItem* parent)
-	: Graph2dWindowDataModel(w, parent)
+Graph2dHybridWindowDataModel::Graph2dHybridWindowDataModel(Graph2dHybridWindow* w, ProjectDataItem* parent) :
+	Graph2dWindowDataModel(w, parent)
 {
 	init();
 }
@@ -87,7 +84,7 @@ void Graph2dHybridWindowDataModel::init()
 
 	PostSolutionInfo* post = postSolutionInfo();
 	connect(post, SIGNAL(currentStepUpdated()), this, SLOT(updateTime()));
-	connect(post, SIGNAL(cgnsStepsUpdated(int)), this, SLOT(updateData(int)));
+	connect(post, SIGNAL(cgnsStepsUpdated()), this, SLOT(updateData()));
 
 	m_regionMode = Graph2dHybridWindowContinuousExportDialog::rmCurrentOnly;
 	m_timeMode = Graph2dHybridWindowContinuousExportDialog::tmCurrentOnly;
@@ -905,7 +902,7 @@ void Graph2dHybridWindowDataModel::exportCsv()
 }
 
 template <typename DataItem>
-void Graph2dHybridWindowDataModel::getXY(DataItem* dataItem, QVector<double>* x, QVector<double>* y) const
+void Graph2dHybridWindowDataModel::getXY(DataItem* dataItem, std::vector<double>* x, std::vector<double>* y) const
 {
 	*x = dataItem->xValues();
 	*y = dataItem->yValues();
@@ -913,7 +910,7 @@ void Graph2dHybridWindowDataModel::getXY(DataItem* dataItem, QVector<double>* x,
 	int timeStepCount = projectData()->mainfile()->postSolutionInfo()->timeSteps()->timesteps().count();
 
 	if (m_timeStart == 0 && m_timeEnd == timeStepCount - 1 && m_timeSkip == 1) {return;}
-	QVector<double> clippedX, clippedY;
+	std::vector<double> clippedX, clippedY;
 
 	for (int i = m_timeStart; i <= m_timeEnd; i += m_timeSkip) {
 		clippedX.push_back(x->at(i));
@@ -927,15 +924,15 @@ bool Graph2dHybridWindowDataModel::exportCsv(const QString& filename) const
 {
 	int maxCount = 0;
 	QList<QString> titles;
-	QList<QVector<double> > values;
-	QVector<double> prevX;
+	QList<std::vector<double> > values;
+	std::vector<double> prevX;
 
 	Graph2dHybridWindowRootDataItem* root = dynamic_cast<Graph2dHybridWindowRootDataItem*>(m_rootDataItem);
 	Graph2dHybridWindowResultGroupDataItem* rgroup = root->resultGroupItem();
 	QList <Graph2dWindowDataItem*> resultList = rgroup->childItems();
 	for (int i = 0; i < resultList.count(); ++i) {
 		Graph2dHybridWindowResultDataItem* item = dynamic_cast<Graph2dHybridWindowResultDataItem*>(resultList.at(i));
-		QVector<double> tmpX, tmpY;
+		std::vector<double> tmpX, tmpY;
 		getXY(item, &tmpX, &tmpY);
 		if (prevX != tmpX) {
 			titles.append("X");
@@ -944,13 +941,13 @@ bool Graph2dHybridWindowDataModel::exportCsv(const QString& filename) const
 		}
 		titles.append(item->title());
 		values.append(tmpY);
-		if (maxCount < tmpY.count()) {maxCount = tmpY.count();}
+		if (maxCount < tmpY.size()) { maxCount = tmpY.size(); }
 	}
 	Graph2dHybridWindowResultCopyGroupDataItem* cgroup = root->resultCopyGroupItem();
 	QList <Graph2dWindowDataItem*> resultCopyList = cgroup->childItems();
 	for (int i = 0; i < resultCopyList.count(); ++i) {
 		Graph2dHybridWindowResultCopyDataItem* cdi = dynamic_cast<Graph2dHybridWindowResultCopyDataItem*>(resultCopyList.at(i));
-		QVector<double> tmpX, tmpY;
+		std::vector<double> tmpX, tmpY;
 		getXY(cdi, &tmpX, &tmpY);
 		if (prevX != tmpX) {
 			titles.append("X");
@@ -958,22 +955,22 @@ bool Graph2dHybridWindowDataModel::exportCsv(const QString& filename) const
 		}
 		titles.append(cdi->title());
 		values.append(tmpY);
-		if (maxCount < tmpY.count()) {maxCount = tmpY.count();}
+		if (maxCount < tmpY.size()) { maxCount = tmpY.size(); }
 	}
 
 	Graph2dHybridWindowImportDataGroupDataItem* igroup = root->importDataGroupItem();
 	QList <Graph2dWindowDataItem*> importDataList = igroup->childItems();
 	for (int i = 0; i < importDataList.count(); ++i) {
 		Graph2dHybridWindowImportDataDataItem* ddi = dynamic_cast<Graph2dHybridWindowImportDataDataItem*>(importDataList.at(i));
-		QVector<double> tmpX = ddi->xValues();
-		QVector<double> tmpY = ddi->yValues();
+		auto tmpX = ddi->xValues();
+		auto tmpY = ddi->yValues();
 		if (prevX != tmpX) {
-			titles.append("X");
-			values.append(tmpX);
+			titles.push_back("X");
+			values.push_back(tmpX);
 		}
-		titles.append(ddi->title());
-		values.append(tmpY);
-		if (maxCount < tmpY.count()) {maxCount = tmpY.count();}
+		titles.push_back(ddi->title());
+		values.push_back(tmpY);
+		if (maxCount < tmpY.size()) { maxCount = tmpY.size(); }
 	}
 
 	QFile csvFile(filename);
@@ -991,12 +988,12 @@ bool Graph2dHybridWindowDataModel::exportCsv(const QString& filename) const
 	for (int i = 0; i < maxCount; ++i) {
 		QList<QString> tmpvals;
 		for (int j = 0; j < values.count(); ++j) {
-			const QVector<double>& vals = values.at(j);
-			if (i < vals.count()) {
+			const auto& vals = values.at(j);
+			if (i < vals.size()) {
 				double v = vals.at(i);
-				tmpvals.append(QString::number(v));
+				tmpvals.push_back(QString::number(v));
 			} else {
-				tmpvals.append("");
+				tmpvals.push_back("");
 			}
 		}
 		for (int j = 0; j < tmpvals.count(); ++j) {
@@ -1113,7 +1110,7 @@ bool Graph2dHybridWindowDataModel::setupInitialSetting()
 		return false;
 	}
 	// initially, setup physical value settings.
-	bool loaded = m_setting.init(postSolutionInfo(), currentCgnsFileName());
+	bool loaded = m_setting.init(postSolutionInfo());
 	if (! loaded) {
 		QMessageBox::critical(mainWindow(), tr("Error"), tr("Graph window setup fail. Calculation result is not loaded properly."));
 		return false;
@@ -1238,6 +1235,11 @@ void Graph2dHybridWindowDataModel::getYAxisValueRange(Graph2dWindowDataModel::Ax
 	*max = qMax(sDiv.lowerBound(), sDiv.upperBound());
 }
 
+const Graph2dHybridWindowResultSetting& Graph2dHybridWindowDataModel::setting() const
+{
+	return m_setting;
+}
+
 void Graph2dHybridWindowDataModel::updateTime()
 {
 	if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaTime) {
@@ -1337,16 +1339,16 @@ void Graph2dHybridWindowDataModel::sliderChanged()
 	case Graph2dHybridWindowResultSetting::dtDim2DStructured:
 	case Graph2dHybridWindowResultSetting::dtDim3DStructured:
 		switch (tinfo->gridLocation) {
-		case Vertex:
+		case iRICLib::H5CgnsZone::SolutionPosition::Node:
 			index = cont->nodeIndex(c->iValue(), c->jValue(), c->kValue());
 			break;
-		case CellCenter:
+		case iRICLib::H5CgnsZone::SolutionPosition::Cell:
 			index = cont->cellIndex(c->iValue(), c->jValue(), c->kValue());
 			break;
-		case IFaceCenter:
+		case iRICLib::H5CgnsZone::SolutionPosition::IFace:
 			index = cont->ifaceIndex(c->iValue(), c->jValue(), c->kValue());
 			break;
-		case JFaceCenter:
+		case iRICLib::H5CgnsZone::SolutionPosition::JFace:
 			index = cont->jfaceIndex(c->iValue(), c->jValue(), c->kValue());
 			break;
 		default:
@@ -1403,15 +1405,15 @@ void Graph2dHybridWindowDataModel::getDims(int dims[4])
 		if (sGrid != nullptr) {
 			// structured
 			sGrid->GetDimensions(dims);
-			if (tinfo->gridLocation == CellCenter) {
+			if (tinfo->gridLocation == iRICLib::H5CgnsZone::SolutionPosition::Cell) {
 				sGrid->GetCellDims(dims);
 			}
-			else if (tinfo->gridLocation == IFaceCenter) {
-				vtkStructuredGrid* ifacegrid = dynamic_cast<vtkStructuredGrid*>(cont->ifacedata());
+			else if (tinfo->gridLocation == iRICLib::H5CgnsZone::SolutionPosition::IFace) {
+				auto ifacegrid = dynamic_cast<vtkStructuredGrid*>(cont->ifacedata());
 				ifacegrid->GetDimensions(dims);
 			}
-			else if (tinfo->gridLocation == JFaceCenter) {
-				vtkStructuredGrid* jfacegrid = dynamic_cast<vtkStructuredGrid*>(cont->jfacedata());
+			else if (tinfo->gridLocation == iRICLib::H5CgnsZone::SolutionPosition::JFace) {
+				auto jfacegrid = dynamic_cast<vtkStructuredGrid*>(cont->jfacedata());
 				jfacegrid->GetDimensions(dims);
 			}
 			dims[3] = 1;
@@ -1421,7 +1423,7 @@ void Graph2dHybridWindowDataModel::getDims(int dims[4])
 			dims[1] = 1;
 			dims[2] = 1;
 			dims[3] = cont->data()->GetNumberOfPoints();
-			if (tinfo->gridLocation == CellCenter) {
+			if (tinfo->gridLocation == iRICLib::H5CgnsZone::SolutionPosition::Cell) {
 				dims[3] = cont->data()->GetNumberOfCells();
 			}
 		}
@@ -1460,37 +1462,13 @@ void Graph2dHybridWindowDataModel::applySettings()
 
 void Graph2dHybridWindowDataModel::updateData()
 {
-	int fn;
-	CgnsFileOpener* opener = nullptr;
-	fn = postSolutionInfo()->fileId();
-	if (fn == 0) {
-		// file not opened.
-		QString cgnsFilename = currentCgnsFileName();
-		try {
-			opener = new CgnsFileOpener(iRIC::toStr(cgnsFilename), CG_MODE_READ);
-			fn = opener->fileId();
-		} catch (const std::runtime_error&) {
-			return;
-		}
-	}
-
-	updateData(fn);
-
-	delete opener;
-
-	updateTitle();
-}
-
-
-void Graph2dHybridWindowDataModel::updateData(int fn)
-{
 	static bool updating = false;
 	if (updating == true) {
 		return;
 	}
 	updating = true;
 	Graph2dHybridWindowRootDataItem* root = dynamic_cast<Graph2dHybridWindowRootDataItem*>(m_rootDataItem);
-	root->updateData(fn);
+	root->updateData();
 	updating = false;
 }
 
@@ -1505,7 +1483,7 @@ void Graph2dHybridWindowDataModel::addKPMarkers()
 
 	Graph2dHybridWindowRootDataItem* root = dynamic_cast<Graph2dHybridWindowRootDataItem*>(m_rootDataItem);
 	Graph2dHybridWindowResultDataItem* ditem = dynamic_cast<Graph2dHybridWindowResultDataItem*>(root->resultGroupItem()->childItems().at(0));
-	QVector<double> xvalues = ditem->xValues();
+	auto xvalues = ditem->xValues();
 	int iValue = 0;
 	GeoDataRiverPathPoint* start = 0;
 	GeoDataRiverPathPoint* end = 0;
@@ -1579,7 +1557,7 @@ CONDITIONERROR:
 
 void Graph2dHybridWindowDataModel::doLoadFromProjectMainFile(const QDomNode& node)
 {
-	bool ok = m_setting.init(postSolutionInfo(), currentCgnsFileName());
+	bool ok = m_setting.init(postSolutionInfo());
 	if (! ok) {
 		throw ErrorMessage("No solution found.");
 	}

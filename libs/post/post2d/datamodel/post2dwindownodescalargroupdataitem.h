@@ -7,7 +7,8 @@
 #include <postbase/post2dwindowcontoursetting.h>
 #include <guicore/scalarstocolors/lookuptablecontainer.h>
 
-#include <cgnslib.h>
+#include <h5cgnszone.h>
+
 #include <QMap>
 
 class NamedGraphicWindowDataItem;
@@ -29,7 +30,7 @@ private:
 	static const int DEFAULT_NUMOFDIV = 15;
 
 public:
-	Post2dWindowNodeScalarGroupDataItem(Post2dWindowDataItem* parent, CheckFlag cflag, ReorderFlag rflag, DeleteFlag dflag, GridLocation_t gridLocation);
+	Post2dWindowNodeScalarGroupDataItem(Post2dWindowDataItem* parent, CheckFlag cflag, ReorderFlag rflag, DeleteFlag dflag, iRICLib::H5CgnsZone::SolutionPosition position);
 	~Post2dWindowNodeScalarGroupDataItem();
 
 	std::string target() const;
@@ -61,7 +62,7 @@ public:
 
 	ScalarBarSetting::Quadrant quadrant() const override;
 
-	GridLocation_t gridLocation() const;
+	iRICLib::H5CgnsZone::SolutionPosition solutionPosition() const;
 
 protected:
 	void updateVisibility(bool visible) override;
@@ -86,7 +87,7 @@ private:
 	// Settings
 	Post2dWindowContourSetting m_setting;
 	LookupTableContainer m_lookupTableContainer;
-	GridLocation_t m_gridLocation;
+	iRICLib::H5CgnsZone::SolutionPosition m_solutionPosition;
 
 	vtkLODActor* m_contourActor;
 	vtkDataSetMapper* m_contourMapper;

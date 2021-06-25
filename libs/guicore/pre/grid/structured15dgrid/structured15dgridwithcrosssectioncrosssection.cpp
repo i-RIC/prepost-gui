@@ -3,7 +3,11 @@
 
 #include <misc/stringtool.h>
 
-#include <cgnslib.h>
+#include <h5cgnszone.h>
+#include <h5util.h>
+#include <iriclib_errorcodes.h>
+
+#include <sstream>
 
 Structured15DGridWithCrossSectionCrossSection::Structured15DGridWithCrossSectionCrossSection(QString name, Grid* grid) :
 	QObject(grid),
@@ -16,68 +20,42 @@ Grid* Structured15DGridWithCrossSectionCrossSection::grid() const
 	return m_grid;
 }
 
-void Structured15DGridWithCrossSectionCrossSection::loadFromCgnsFile(int fn, int B, int Z, int index)
+int Structured15DGridWithCrossSectionCrossSection::loadFromCgnsFile(hid_t groupId, int index)
 {
-	// Goto "GridCrosssections" node.
-	int ier;
-	ier = cg_goto(fn, B, "Zone_t", Z, "GridCrosssections", 0, "end");
-	if (ier != 0) {
-		// the corresponding node does not exists.
-		return;
+	std::vector<double> data;
+	std::ostringstream ss;
+
+	// read data
+	ss << "Crosssection" << index;
+	int ier = iRICLib::H5Util::readDataArrayValue(groupId, ss.str(), &data);
+	if (ier != IRIC_NO_ERROR) {return ier;}
+
+	auto count = data.size() / 2;
+	for (unsigned int i = 0; i < count; ++i) {
+		Altitude alt;
+		alt.m_position = data[i];
+		alt.m_height = data[i + count];
+		m_altitudeInfo.push_back(alt);
 	}
 
-	// load data in the index-th array.
-	char arrayName[ProjectCgnsFile::BUFFERLEN];
-	DataType_t dt;
-	int dataDimension;
-	cgsize_t dimensionVector[3];
-	ier = cg_array_info(index, arrayName, &dt, &dataDimension, dimensionVector);
-	if (ier) { return; }
-	int size = dimensionVector[0];
-	if (dt == RealSingle) {
-		std::vector<float> data (size * dimensionVector[1]);
-		ier = cg_array_read(index, data.data());
-		for (int i = 0; i < size; i++) {
-			Altitude alt;
-			alt.m_position = data[i];
-			alt.m_height = data[i + size];
-			m_altitudeInfo.push_back(alt);
-		}
-	} else {
-		std::vector<double> data(size * dimensionVector[1]);
-		ier = cg_array_read(index, data.data());
-		for (int i = 0; i < size; i++) {
-			Altitude alt;
-			alt.m_position = data[i];
-			alt.m_height = data[i + size];
-			m_altitudeInfo.push_back(alt);
-		}
-	}
+	return IRIC_NO_ERROR;
 }
 
-void Structured15DGridWithCrossSectionCrossSection::saveToCgnsFile(int fn, int B, int Z, int index)
+int Structured15DGridWithCrossSectionCrossSection::saveToCgnsFile(hid_t groupId, int index)
 {
-	// Go to "GridCrosssections" node.
-	cg_goto(fn, B, "Zone_t", Z, "GridCrosssections", 0, "end");
+	std::ostringstream ss;
+	ss << "Crosssection" << index;
 
-	QString name("Crosssection");
-	name.append(QString::number(index));
-
-	// Delete the array if it already exists.
-	cg_delete_node(const_cast<char*>(iRIC::toStr(name).c_str()));
-	// Create the array of index-th cross section data.
-	cgsize_t dimensions[3];
-//	int size = m_distance.size();
+	std::vector<hsize_t> dims(2);
 	int size = m_altitudeInfo.size();
-	dimensions[0] = size;
-	dimensions[1] = 2;
-	dimensions[2] = 0;
+	dims[0] = 2;
+	dims[1] = size;
 	std::vector<double> data(size * 2);
 	for (int i = 0; i < size; i++) {
 		data[i] = m_altitudeInfo.at(i).m_position;
 		data[size + i] = m_altitudeInfo.at(i).m_height;
 	}
-	cg_array_write(iRIC::toStr(name).c_str(), RealDouble, 2, dimensions, data.data());
+	return iRICLib::H5Util::createDataArray(groupId, ss.str(), data, dims);
 }
 
 const QString& Structured15DGridWithCrossSectionCrossSection::name() const

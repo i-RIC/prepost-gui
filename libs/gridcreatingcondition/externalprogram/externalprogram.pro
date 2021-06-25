@@ -41,14 +41,6 @@ LIBS += -liricGuicore
 # External libraries #
 ######################
 
-# cgnslib
-win32 {
-	LIBS += -lcgnsdll
-}
-unix {
-	LIBS += -lcgns
-}
-
 # iriclib
 
 LIBS += -liriclib

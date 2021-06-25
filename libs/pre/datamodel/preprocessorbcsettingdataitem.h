@@ -34,8 +34,6 @@ public:
 	PreProcessorBCSettingDataItem(PreProcessorBCDataItem* item, GraphicsWindowDataItem* parent);
 	~PreProcessorBCSettingDataItem() override;
 
-	void loadFromCgnsFile(const int fn) override;
-	void saveToCgnsFile(const int fn) override;
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	void handleStandardItemDoubleClicked() override;

@@ -5,6 +5,7 @@
 #include <guibase/comboboxtool.h>
 #include <guibase/vtkdatasetattributestool.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
+#include <guicore/solverdef/solverdefinitiongridtype.h>
 
 #include <vtkPolyData.h>
 #include <vtkPointData.h>

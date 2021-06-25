@@ -337,7 +337,7 @@ void PreProcessorGridAttributeNodeGroupDataItem::informGridUpdate()
 	Grid* g = dynamic_cast<PreProcessorGridDataItem*>(parent())->grid();
 	if (g != 0) {
 		vtkAlgorithm* cellsAlgo = g->vtkFilteredCellsAlgorithm();
-		if (cellsAlgo != 0) {
+		if (cellsAlgo != nullptr) {
 			m_isolineFilter->SetInputConnection(cellsAlgo->GetOutputPort());
 			m_fringeMapper->SetInputConnection(cellsAlgo->GetOutputPort());
 		}

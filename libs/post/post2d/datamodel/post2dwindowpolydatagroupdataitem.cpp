@@ -9,8 +9,9 @@
 #include <guibase/vtkCustomScalarBarActor.h>
 #include <guicore/datamodel/vtkgraphicsview.h>
 #include <guicore/named/namedgraphicswindowdataitemtool.h>
-#include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/misc/targeted/targeteditemsettargetcommandtool.h>
+#include <guicore/postcontainer/postzonedatacontainer.h>
+#include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/stringtool.h>
 #include <postbase/polydata/postpolydatabasicsettingdialog.h>
 #include <postbase/polydata/postpolydatascalarpropertydialog.h>

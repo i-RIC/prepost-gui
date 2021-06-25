@@ -35,7 +35,7 @@ Post2dWindowNodeScalarGroupTopDataItem::Post2dWindowNodeScalarGroupTopDataItem(P
 	Post2dWindowGridTypeDataItem* gtItem = dynamic_cast<Post2dWindowGridTypeDataItem*>(parent()->parent());
 	for (std::string val : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(cont->data()->GetPointData())) {
 		colorbarTitleMap().insert(val, val.c_str());
-		auto item = new Post2dWindowNodeScalarGroupDataItem(this, NotChecked, NotReorderable, NotDeletable, Vertex);
+		auto item = new Post2dWindowNodeScalarGroupDataItem(this, NotChecked, NotReorderable, NotDeletable, iRICLib::H5CgnsZone::SolutionPosition::Node);
 		m_scalarmap[val] = item;
 		m_childItems.push_back(item);
 		item->setTarget(val);
@@ -163,7 +163,7 @@ QDialog* Post2dWindowNodeScalarGroupTopDataItem::addDialog(QWidget* p)
 		delete dialog;
 		return nullptr;
 	}
-	dialog->setZoneData(zItem->dataContainer(), Vertex);
+	dialog->setZoneData(zItem->dataContainer(), iRICLib::H5CgnsZone::SolutionPosition::Node);
 	if (! zItem->dataContainer()->IBCExists()) {
 		dialog->disableActive();
 	}
@@ -239,7 +239,7 @@ public:
 		}
 	}
 	void redo() {
-		m_item = new Post2dWindowNodeScalarGroupDataItem(m_topItem, Checked, NotReorderable, Deletable, Vertex);
+		m_item = new Post2dWindowNodeScalarGroupDataItem(m_topItem, Checked, NotReorderable, Deletable, iRICLib::H5CgnsZone::SolutionPosition::Node);
 		m_topItem->m_childItems.push_back(m_item);
 		delete m_undoCommand;
 		m_undoCommand = new QUndoCommand();

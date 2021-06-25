@@ -119,6 +119,7 @@ HEADERS += gd_pointmap_global.h \
            geodatapointmapt.h \
            geodatapointmaptemplatemappingsetting.h \
            geodatapointmaptemplatenodemappert.h \
+           geodatapointmaptincreator.h \
            geodatapointmapvtkexporter.h \
            geodatapointmapwebimporter.h \
            geodatapointmapwebimporterregionselectdialog.h \
@@ -177,6 +178,7 @@ SOURCES += geodatapointmap.cpp \
            geodatapointmapstlexporter.cpp \
            geodatapointmapstlimporter.cpp \
            geodatapointmaptemplatemappingsetting.cpp \
+           geodatapointmaptincreator.cpp \
            geodatapointmapvtkexporter.cpp \
            geodatapointmapwebimporter.cpp \
            geodatapointmapwebimporterregionselectdialog.cpp \

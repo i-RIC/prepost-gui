@@ -5,12 +5,24 @@
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
 
+Graph2dHybridWindowDataItem::Graph2dHybridWindowDataItem(Graph2dWindowDataItem* parent) :
+	Graph2dWindowDataItem(parent)
+{}
+
+Graph2dHybridWindowDataItem::Graph2dHybridWindowDataItem(const QString& itemlabel, Graph2dWindowDataItem* parent) :
+	Graph2dWindowDataItem(itemlabel, parent)
+{}
+
+Graph2dHybridWindowDataItem::Graph2dHybridWindowDataItem(const QString& itemlabel, const QIcon& icon, Graph2dWindowDataItem* parent) :
+	Graph2dWindowDataItem(itemlabel, icon, parent)
+{}
+
 Graph2dHybridWindow* Graph2dHybridWindowDataItem::graphWindow()
 {
 	return dynamic_cast<Graph2dHybridWindow*>(dataModel()->mainWindow());
 }
 
-PostSolutionInfo* Graph2dHybridWindowDataItem::postSolutionInfo()
+PostSolutionInfo* Graph2dHybridWindowDataItem::postSolutionInfo() const
 {
 	return projectData()->mainfile()->postSolutionInfo();
 }
@@ -21,13 +33,13 @@ Graph2dHybridWindowDataModel* Graph2dHybridWindowDataItem::dataModel()
 }
 
 void Graph2dHybridWindowDataItem::buildData(
-	const QVector<double>& xvals, const QVector<double>& yvals,
+	const std::vector<double>& xvals, const std::vector<double>& yvals,
 	const Graph2dHybridWindowResultSetting& s1,
 	const Graph2dHybridWindowResultSetting::Setting& s2,
-	QVector<double>& modxvals, QVector<double>& modyvals)
+	std::vector<double>* modxvals, std::vector<double>* modyvals)
 {
-	QVector<double> indexvals;
-	QVector<double> srcxvals;
+	std::vector<double> indexvals;
+	std::vector<double> srcxvals;
 	bool xIsIndex = false;
 
 	if (s1.xAxisMode() == Graph2dHybridWindowResultSetting::xaTime) {
@@ -37,59 +49,50 @@ void Graph2dHybridWindowDataItem::buildData(
 	}
 	if (xIsIndex) {
 		indexvals.reserve(xvals.size());
-		for (int i = 0; i < xvals.count(); ++i) {
-			indexvals.append(i + 1);
+		for (unsigned int i = 0; i < xvals.size(); ++i) {
+			indexvals.push_back(i + 1);
 		}
 		srcxvals = indexvals;
 	} else {
 		srcxvals = xvals;
 	}
+
 	if (s2.isBarChart()) {
 		buildBarXYValues(srcxvals, yvals, modxvals, modyvals);
 	} else {
-		modxvals = srcxvals;
-		modyvals = yvals;
-	}
-}
-
-void Graph2dHybridWindowDataItem::buildXY(const QVector<double>& xvals, const QVector<double>& yvals, double** x, double** y)
-{
-	*x = new double[xvals.size()];
-	*y = new double[yvals.size()];
-	for (int i = 0; i < xvals.size(); ++i) {
-		*(*x + i) = xvals.at(i);
-		*(*y + i) = yvals.at(i);
+		*modxvals = srcxvals;
+		*modyvals = yvals;
 	}
 }
 
 void Graph2dHybridWindowDataItem::buildBarXYValues(
-	const QVector<double>& xvals, const QVector<double>& yvals,
-	QVector<double>& modxvals, QVector<double>& modyvals)
+	const std::vector<double>& xvals, const std::vector<double>& yvals,
+	std::vector<double>* modxvals, std::vector<double>* modyvals)
 {
-	modxvals.reserve(xvals.size() * 3 + 1);
-	modyvals.reserve(yvals.size() * 3 + 1);
+	modxvals->assign(xvals.size() * 3 + 1, 0);
+	modyvals->assign(yvals.size() * 3 + 1, 0);
 	double firstx = 0;
-	if (xvals.count() == 1) {
+	if (xvals.size() == 1) {
 		firstx = xvals.at(0) - 1;
-	} else if (xvals.count() > 1) {
+	} else if (xvals.size() > 1) {
 		double firstwidth = xvals.at(1) - xvals.at(0);
 		firstx = xvals.at(0) - firstwidth;
 	}
 	double xstart = firstx;
-	modxvals.append(xstart);
-	modyvals.append(0);
+	modxvals->push_back(xstart);
+	modyvals->push_back(0);
 
-	for (int i = 0; i < xvals.size(); ++i) {
+	for (unsigned int i = 0; i < xvals.size(); ++i) {
 		double xend = xvals.at(i);
 		double yval = yvals.at(i);
 		double xdelta = 0;
 
-		modxvals.append(xstart + xdelta);
-		modyvals.append(yval);
-		modxvals.append(xend - xdelta);
-		modyvals.append(yval);
-		modxvals.append(xend);
-		modyvals.append(0);
+		modxvals->push_back(xstart + xdelta);
+		modyvals->push_back(yval);
+		modxvals->push_back(xend - xdelta);
+		modyvals->push_back(yval);
+		modxvals->push_back(xend);
+		modyvals->push_back(0);
 		xstart = xend;
 	}
 }

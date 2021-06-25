@@ -6,11 +6,8 @@
 #include "postseriesdatacontainer.h"
 #include <QString>
 #include <QList>
-#include <cgnslib.h>
 
-#if CGNS_VERSION < 3100
-#define cgsize_t int
-#endif
+#include <h5cgnszone.h>
 
 class PostCalculatedResult;
 class SolverDefinitionGridType;
@@ -19,43 +16,31 @@ class ScalarsToColorsEditDialog;
 
 class GUICOREDLL_EXPORT PostZonePointSeriesDataContainer : public PostSeriesDataContainer
 {
-
 public:
-	PostZonePointSeriesDataContainer(PostSolutionInfo::Dimension dim, const std::string& zoneName, const QString& pName, int pointIndex, GridLocation_t gridLocation, PostSolutionInfo* sinfo);
-	const QList<double>& data() const;
+	PostZonePointSeriesDataContainer(PostSolutionInfo::Dimension dim, const std::string& zoneName, const std::string valueName, int index, iRICLib::H5CgnsZone::SolutionPosition position, PostSolutionInfo* sinfo);
 
-	void update(const int fn);
 	const std::string& zoneName() const;
-	/// Caption is the region name in pre-processor.
-	/// Currently, zone name is used instead, temporally.
-	QString caption() const;
-	void setPointIndex(int index);
+	QString caption() const;	/// Caption is the region name in pre-processor.
 	int pointIndex() const;
-	void setGridLocation(GridLocation_t location);
-	GridLocation_t gridLocation() const;
 
-protected:
-	bool loadData(const int fn) override;
+private:
+	int loadData() override;
+	int loadData(const std::string& name, iRICLib::H5CgnsZone* zone, double* value);
+
+	int loadCalculatedData(PostCalculatedResult* result, iRICLib::H5CgnsZone* zone, double* value);
+	int loadResultData(const std::string& name, iRICLib::H5CgnsZone* zone, double* value);
+
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
-	bool loadData(const int fn, GridLocation_t location);
-
-private:
-	bool setZoneId(const int fn);
-	bool loadData(int fn, int solId, const QString& name, double* value);
-	bool loadCalculatedData(int fn, int solId, PostCalculatedResult* result, double* value);
-	bool loadResultData(int fn, int solId, const QString& name, double* value);
 	PostZoneDataContainer* zoneDataContainer() const;
 
 protected:
-	QList<double> m_data;
 	std::string m_zoneName;
-	int m_zoneId;
-	QString m_physName;
+	std::string m_valueName;
+
 	int m_pointIndex;
-	GridLocation_t m_gridLocation;
-	cgsize_t m_sizes[9];
+	iRICLib::H5CgnsZone::SolutionPosition m_position;
 };
 
 #endif // POSTZONEPOINTSERIESDATACONTAINER_H

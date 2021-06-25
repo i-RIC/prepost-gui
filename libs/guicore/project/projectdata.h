@@ -53,22 +53,14 @@ public:
 	bool unzipFrom(const QString& zipFilename);
 	/// Load solver information from a project file.
 	void loadSolverInformation();
-	/// Load project data from a project file.
-	void load();
-	/// Load only CGNS file list from a project file.
-	void loadCgnsList();
 	/// Compress the workfolder content to specified zip file..
 	bool zipTo(const QString& filename);
-	/// Save project data into the work folder.
-	bool save();
 	/// Main file (project.xml)
 	ProjectMainFile* mainfile() const;
 	/// Solver definition
 	SolverDefinition* solverDefinition() const;
 	/// Setter function for solver definition
 	void setSolverDefinition(SolverDefinition* def);
-	/// Switch to the default cgns file.
-	bool switchToDefaultCgnsFile();
 	/// Set iRIC version number
 	void setVersion(const VersionNumber& v);
 	/// Get iRIC version number that created this project.
@@ -99,9 +91,6 @@ public:
 
 	void setIsSolverRunning(bool running);
 	bool isSolverRunning() const;
-
-	int flushIndex() const;
-	void incrementFlushIndex();
 
 public slots:
 	/// Open work directory with Explorer.

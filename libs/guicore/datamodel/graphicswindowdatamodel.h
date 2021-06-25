@@ -32,8 +32,9 @@ public:
 	QToolBar* operationToolBar() const;
 	QStandardItemModel* itemModel() const;
 
-	void loadFromCgnsFile(const int fn) override;
-	void saveToCgnsFile(const int fn) override;
+	int loadFromCgnsFile() override;
+	int saveToCgnsFile() override;
+	int updateCgnsFileOtherThanGrids() override;
 	void closeCgnsFile() override;
 
 	void updateExpandState(ObjectBrowserView* view);

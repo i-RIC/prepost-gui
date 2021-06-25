@@ -69,7 +69,7 @@ void SolverConsoleWindowProjectDataItem::doSaveToProjectMainFile(QXmlStreamWrite
 	ProjectDataItem::writeBackgroundColor(m_solverConsoleWindow->backgroundColor(), writer);
 }
 
-void SolverConsoleWindowProjectDataItem::clear()
+void SolverConsoleWindowProjectDataItem::clearLogFile()
 {
 	QString fname = filename();
 	QFile f(fname);

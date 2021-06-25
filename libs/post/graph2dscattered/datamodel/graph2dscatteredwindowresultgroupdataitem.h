@@ -14,7 +14,8 @@ class Graph2dScatteredWindowResultGroupDataItem : public Graph2dScatteredWindowD
 public:
 	Graph2dScatteredWindowResultGroupDataItem(Graph2dWindowDataItem* parent);
 	~Graph2dScatteredWindowResultGroupDataItem();
-	void updateData(int fn);
+
+	void updateData();
 	bool setupInitialSetting();
 	void getAxisValueRange(Graph2dWindowDataModel::AxisSide as, double* min, double* max);
 	void updateChildren(const Graph2dScatteredWindowResultSetting& setting);

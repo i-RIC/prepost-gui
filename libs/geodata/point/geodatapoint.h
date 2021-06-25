@@ -58,7 +58,6 @@ private slots:
 
 private:
 	void doApplyOffset(double x, double y) override;
-	int iRICLibType() const override;
 
 	MouseEventMode mouseEventMode() const;
 	void setMouseEventMode(MouseEventMode mode);

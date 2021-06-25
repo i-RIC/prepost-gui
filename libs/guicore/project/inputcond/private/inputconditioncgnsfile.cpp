@@ -4,50 +4,35 @@
 #include <misc/stringtool.h>
 #include <misc/versionnumber.h>
 
-#include <cgnslib.h>
-#include <iriclib.h>
+#include <h5cgnsbase.h>
+#include <h5cgnsbaseiterativedata.h>
+#include <h5cgnsfile.h>
+#include <h5cgnsflowsolution.h>
+#include <h5cgnszone.h>
+#include <iriclib_errorcodes.h>
 
 #include <string>
 
 namespace {
 
-static const int NAME_MAXLENGTH = 200;
-static const std::string iRICBASE = "iRIC";
-
-bool loadGridData(int fid, int bid, int zid, GridLocation_t location, QStringList* realResults, QStringList* integerResults)
+bool loadSolutionData(iRICLib::H5CgnsFlowSolution* solution, QStringList* realResults, QStringList* integerResults)
 {
-	int ier;
-	int nsols;
-	ier = cg_nsols(fid, bid, zid, &nsols);
-	if (ier != 0) {return false;}
+	if (solution == nullptr) {return true;}
 
-	for (int S = 1; S <= nsols; ++S) {
-		char name[NAME_MAXLENGTH];
-		GridLocation_t l;
-		cg_sol_info(fid, bid, zid, S, name, &l);
-		if (l != location) {continue;}
+	std::vector<std::string> names;
+	int ier = solution->readValueNames(&names);
+	if (ier != IRIC_NO_ERROR) {return false;}
 
-		ier = cg_goto(fid, bid, "Zone_t", zid, "FlowSolution_t", S, NULL);
-		if (ier != 0) {return false;}
+	for (const auto& name : names) {
+		iRICLib::H5Util::DataArrayValueType type;
+		ier = solution->readValueType(name, &type);
+		if (ier != IRIC_NO_ERROR) {return false;}
 
-		int narrays;
-		ier = cg_narrays(&narrays);
-		if (ier != 0) {return false;}
-
-		for (int A = 1; A <= narrays; ++A) {
-			DataType_t type;
-			int dim;
-			cgsize_t dimVec[3];
-			ier = cg_array_info(A, name, &type, &dim, &(dimVec[0]));
-			if (ier != 0) {return false;}
-
-			if (type == Integer) {
-				integerResults->push_back(name);
-			} else if (type == RealDouble) {
-				realResults->push_back(name);
-			}
+		if (type == iRICLib::H5Util::DataArrayValueType::RealDouble) {
+			realResults->push_back(name.c_str());
+		} else if (type == iRICLib::H5Util::DataArrayValueType::Int) {
+			integerResults->push_back(name.c_str());
 		}
-		return true;
 	}
 	return true;
 }
@@ -161,93 +146,74 @@ bool InputConditionCgnsFile::loadData()
 	m_gridEdgeJIntegerResults.clear();
 	m_gridEdgeJRealResults.clear();
 
-	std::string fname = iRIC::toStr(m_fileName);
-	int ier, fid;
-	ier = cg_open(fname.c_str(), CG_MODE_READ, &fid);
-	if (ier != 0) {
-		// opening failed. this is not a valid cgns file.
-		return false;
-	}
+	try {
+		iRICLib::H5CgnsFile file(iRIC::toStr(m_fileName), iRICLib::H5CgnsFile::Mode::OpenReadOnly);
 
-	std::string solverName;
-	VersionNumber solverVersion;
+		std::string solverName;
+		VersionNumber solverVersion;
 
-	bool ok = ProjectCgnsFile::readSolverInfo(fid, &solverName, &solverVersion);
-	if (ok) {
+		int ier = ProjectCgnsFile::readSolverInfo(file, &solverName, &solverVersion);
+		if (ier != IRIC_NO_ERROR) {return false;}
+
 		m_solverInformation.solverName = solverName.c_str();
 		m_solverInformation.solverVersion = solverVersion.toAboutString();
-	}
 
-	int bid = 0;
-	int nbases;
-	char name[NAME_MAXLENGTH];
-	int celldim, physdim;
-	ier = cg_nbases(fid, &nbases);
-	if (ier != 0) {return false;}
-
-	for (int B = 1; B <= nbases; ++B) {
-		ier = cg_base_read(fid, B, name, &celldim, &physdim);
-		if (ier != 0) {return false;}
-		if (iRICBASE == std::string(name)) {
-			bid = B;
+		auto ccBase = file.ccBase();
+		auto biterData = ccBase->biterData();
+		if (biterData == nullptr) {
+			// no result
+			return true;
 		}
-	}
-	if (bid == 0) {return false;}
 
-	// read base iterative data
-	ier = cg_goto(fid, bid, "BaseIterativeData_t", 1, NULL);
-	if (ier != 0) {return false;}
-	int narrays;
-	ier = cg_narrays(&narrays);
-	if (ier != 0) {return false;}
-	for (int A = 1; A <= narrays; ++A) {
-		DataType_t dtype;
-		int dim;
-		cgsize_t dimVec;
-		cg_array_info(A, name, &dtype, &dim, &dimVec);
-		if (dtype == Character) {
-			continue;
-		} else if (dtype == RealDouble) {
-			if (std::string(name) == "TimeValues") {
-				m_solverInformation.timeSteps = dimVec;
-				continue;
+		std::vector<std::string> resultNames;
+		ier = biterData->getResultNames(&resultNames);
+		if (ier != IRIC_NO_ERROR) {return false;}
+
+		std::vector<double> timeValues;
+		ier = biterData->readTime(&timeValues);
+		if (ier != IRIC_NO_ERROR) {return false;}
+
+		m_solverInformation.timeSteps = static_cast<int> (timeValues.size());
+
+		for (const auto& name : resultNames) {
+			iRICLib::H5Util::DataArrayValueType vType;
+			ier = biterData->readValueType(name, &vType);
+			if (ier != IRIC_NO_ERROR) {return false;}
+			if (vType == iRICLib::H5Util::DataArrayValueType::Int) {
+				m_baseIterativeIntegerResults.push_back(name.c_str());
+			} else if (vType == iRICLib::H5Util::DataArrayValueType::RealDouble) {
+				m_baseIterativeRealResults.push_back(name.c_str());
 			}
-			m_baseIterativeRealResults.push_back(name);
-		} else if (dtype == Integer) {
-			m_baseIterativeIntegerResults.push_back(name);
 		}
+
+		int zones = ccBase->zoneNum();
+		if (zones > 0) {
+			auto zone = ccBase->zoneById(1);
+			auto size = zone->size();
+			if (zone->type() == iRICLib::H5CgnsZone::Type::Structured) {
+				m_solverInformation.gridType = SolverInformation::GridType::Structured;
+				m_solverInformation.iSize = size[0];
+				m_solverInformation.jSize = size[1];
+			} else {
+				m_solverInformation.gridType = SolverInformation::GridType::Unstructured;
+				m_solverInformation.size = size[0];
+			}
+			if (timeValues.size() > 0) {
+				file.setSolutionId(1);
+
+				ier = loadSolutionData(zone->nodeSolution(), &m_gridNodeRealResults, &m_gridNodeIntegerResults);
+				if (ier != IRIC_NO_ERROR) {return false;}
+				ier = loadSolutionData(zone->cellSolution(), &m_gridCellRealResults, &m_gridCellIntegerResults);
+				if (ier != IRIC_NO_ERROR) {return false;}
+				ier = loadSolutionData(zone->iFaceSolution(), &m_gridEdgeIRealResults, &m_gridEdgeIIntegerResults);
+				if (ier != IRIC_NO_ERROR) {return false;}
+				ier = loadSolutionData(zone->jFaceSolution(), &m_gridEdgeJRealResults, &m_gridEdgeJIntegerResults);
+				if (ier != IRIC_NO_ERROR) {return false;}
+			}
+		}
+		m_isEffective = true;
+		return true;
+	}  catch (...) {
+		return false;
 	}
-
-	// zone id is currently fixed to 1.
-	int zid = 1;
-
-	ZoneType_t zoneType;
-	ier = cg_zone_type(fid, bid, zid, &zoneType);
-	if (ier != 0) {return false;}
-
-	cgsize_t size[9];
-	ier = cg_zone_read(fid, bid, zid, name, &(size[0]));
-	if (ier != 0) {return false;}
-
-	if (zoneType == Structured) {
-		m_solverInformation.gridType = SolverInformation::GridType::Structured;
-		m_solverInformation.iSize = size[0];
-		m_solverInformation.jSize = size[1];
-	} else {
-		m_solverInformation.gridType = SolverInformation::GridType::Unstructured;
-		m_solverInformation.size = size[0];
-	}
-
-	ok = loadGridData(fid, bid, zid, Vertex, &m_gridNodeRealResults, &m_gridNodeIntegerResults);
-	if (! ok) {return false;}
-	ok = loadGridData(fid, bid, zid, CellCenter, &m_gridCellRealResults, &m_gridCellIntegerResults);
-	if (! ok) {return false;}
-	ok = loadGridData(fid, bid, zid, IFaceCenter, &m_gridEdgeIRealResults, &m_gridEdgeIIntegerResults);
-	if (! ok) {return false;}
-	ok = loadGridData(fid, bid, zid, JFaceCenter, &m_gridEdgeJRealResults, &m_gridEdgeJIntegerResults);
-	if (! ok) {return false;}
-
-	m_isEffective = true;
-	cg_close(fid);
-	return true;
 }

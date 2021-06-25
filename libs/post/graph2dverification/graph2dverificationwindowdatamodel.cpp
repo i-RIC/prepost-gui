@@ -15,7 +15,6 @@
 #include <guibase/objectbrowserview.h>
 #include <guicore/base/animationcontrollerinterface.h>
 #include <guicore/base/iricmainwindowinterface.h>
-#include <guicore/misc/cgnsfileopener.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/project/measured/measureddata.h>
 #include <guicore/project/projectmainfile.h>
@@ -34,8 +33,8 @@
 #include <vtkPointData.h>
 #include <vtkStructuredGrid.h>
 
-Graph2dVerificationWindowDataModel::Graph2dVerificationWindowDataModel(Graph2dVerificationWindow* w, ProjectDataItem* parent)
-	: Graph2dWindowDataModel(w, parent)
+Graph2dVerificationWindowDataModel::Graph2dVerificationWindowDataModel(Graph2dVerificationWindow* w, ProjectDataItem* parent) :
+	Graph2dWindowDataModel(w, parent)
 {
 	init();
 }
@@ -59,7 +58,7 @@ void Graph2dVerificationWindowDataModel::init()
 
 	PostSolutionInfo* post = postSolutionInfo();
 	connect(post, SIGNAL(currentStepUpdated()), this, SLOT(updateTime()));
-	connect(post, SIGNAL(cgnsStepsUpdated(int)), this, SLOT(updateData(int)));
+	connect(post, SIGNAL(cgnsStepsUpdated()), this, SLOT(updateData()));
 	connect(post, SIGNAL(zoneList2DUpdated()), this, SLOT(updateZoneList()));
 
 	m_pointsCurve  = nullptr;
@@ -100,7 +99,7 @@ bool Graph2dVerificationWindowDataModel::setupInitialSetting()
 		return false;
 	}
 	// initially, setup physical value settings.
-	bool loaded = m_setting.init(postSolutionInfo(), measuredData(), currentCgnsFileName());
+	bool loaded = m_setting.init(postSolutionInfo(), measuredData());
 	if (! loaded) {
 		QMessageBox::critical(mainWindow(), tr("Error"), tr("Graph window setup fail. Calculation result is not loaded properly."));
 		return false;
@@ -183,41 +182,19 @@ void Graph2dVerificationWindowDataModel::applySettings()
 
 void Graph2dVerificationWindowDataModel::updateData()
 {
-	int fn;
-	CgnsFileOpener* opener = nullptr;
-	fn = postSolutionInfo()->fileId();
-	if (fn == 0) {
-		// file not opened.
-		QString cgnsFilename = currentCgnsFileName();
-		try {
-			opener = new CgnsFileOpener(iRIC::toStr(cgnsFilename), CG_MODE_READ);
-			fn = opener->fileId();
-		} catch (const std::runtime_error&) {
-			return;
-		}
-	}
-
-	updateData(fn);
-
-	delete opener;
-}
-
-
-void Graph2dVerificationWindowDataModel::updateData(int fn)
-{
 	static bool updating = false;
 	if (updating == true) {
 		return;
 	}
 	updating = true;
 	Graph2dVerificationWindowRootDataItem* root = dynamic_cast<Graph2dVerificationWindowRootDataItem*>(m_rootDataItem);
-	root->updateData(fn);
+	root->updateData();
 	updating = false;
 }
 
 void Graph2dVerificationWindowDataModel::doLoadFromProjectMainFile(const QDomNode& node)
 {
-	bool ok = m_setting.init(postSolutionInfo(), measuredData(), currentCgnsFileName());
+	bool ok = m_setting.init(postSolutionInfo(), measuredData());
 	if (! ok) {
 		throw ErrorMessage("No solution found.");
 	}

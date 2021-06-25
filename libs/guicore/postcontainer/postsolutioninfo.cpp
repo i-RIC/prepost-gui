@@ -1,5 +1,4 @@
 #include "../base/iricmainwindowinterface.h"
-#include "../misc/cgnsfileopener.h"
 #include "../project/projectcgnsfile.h"
 #include "../project/projectdata.h"
 #include "../solverdef/solverdefinition.h"
@@ -43,8 +42,11 @@
 #include <string>
 #include <vector>
 
-#include <cgnslib.h>
-#include <iriclib.h>
+#include <h5cgnsbase.h>
+#include <h5cgnsbaseiterativedata.h>
+#include <h5cgnsfile.h>
+#include <h5cgnsfilesolutionreader.h>
+#include <iriclib_errorcodes.h>
 
 namespace {
 
@@ -62,16 +64,6 @@ void writeZonesToProjectMainFile(int dim, const QList<PostZoneDataContainer*>& z
 	writer.writeEndElement();
 }
 
-bool zoneHasSolution(int fid, int bid, int zid, bool* haveSolution)
-{
-	int nsols, ier;
-	ier = cg_nsols(fid, bid, zid, &nsols);
-	if (ier != 0) {return false;}
-
-	*haveSolution = (nsols > 0);
-	return true;
-}
-
 } // namespace
 
 PostSolutionInfo::PostSolutionInfo(ProjectDataItem* parent) :
@@ -81,7 +73,7 @@ PostSolutionInfo::PostSolutionInfo(ProjectDataItem* parent) :
 	m_timeSteps {nullptr},
 	m_currentStep {0},
 	m_timerId {0},
-	m_opener {nullptr},
+	m_cgnsFile {nullptr},
 	m_exportFormat {PostDataExportDialog::Format::VTKASCII},
 	m_disableCalculatedResult {false},
 	m_particleExportPrefix {"Particle_"},
@@ -118,13 +110,13 @@ void PostSolutionInfo::setIterationType(SolverDefinition::IterationType type)
 		m_iterationSteps = new PostIterationSteps(this);
 		connect(m_iterationSteps, SIGNAL(stepsUpdated(QList<int>)), this, SIGNAL(cgnsIterationStepsUpdated(QList<int>)));
 		connect(m_iterationSteps, SIGNAL(stepsUpdated(QList<int>)), this, SLOT(informStepsUpdated()));
-		connect(m_iterationSteps, SIGNAL(stepsUpdated(int)), this, SIGNAL(cgnsStepsUpdated(int)));
+		connect(m_iterationSteps, SIGNAL(stepsUpdated()), this, SIGNAL(cgnsStepsUpdated()));
 		break;
 	case SolverDefinition::TimeIteration:
 		m_timeSteps = new PostTimeSteps(this);
 		connect(m_timeSteps, SIGNAL(stepsUpdated(QList<double>)), this, SIGNAL(cgnsTimeStepsUpdated(QList<double>)));
 		connect(m_timeSteps, SIGNAL(stepsUpdated(QList<double>)), this, SLOT(informStepsUpdated()));
-		connect(m_timeSteps, SIGNAL(stepsUpdated(int)), this, SIGNAL(cgnsStepsUpdated(int)));
+		connect(m_timeSteps, SIGNAL(stepsUpdated()), this, SIGNAL(cgnsStepsUpdated()));
 		break;
 	case SolverDefinition::NoIteration:
 	default:
@@ -147,46 +139,43 @@ int PostSolutionInfo::currentStep() const
 	return m_currentStep;
 }
 
-bool PostSolutionInfo::setCurrentStep(unsigned int step, int fn)
+int PostSolutionInfo::setCurrentStep(unsigned int step)
 {
+	int ier = open();
+	if (ier != IRIC_NO_ERROR) {return ier;}
+
 	static bool dialogShowing = false;
 	m_currentStep = step;
 	QTime time, wholetime;
 	wholetime.start();
 
-	int tmpfn = 0;
-	if (fn == 0) {
-		bool ok = open();
-		if (ok) {
-			tmpfn = m_opener->fileId();
-		}
-	} else {
-		tmpfn = fn;
-	}
-	if (tmpfn == 0) {
-		// opening failed.
-		return false;
-	}
+	auto f = cgnsFile();
+	f->solutionReader()->setSolutionId(step + 1);
+	f = f->solutionReader()->targetFile();
+
 	time.start();
-	setupZoneDataContainers(tmpfn);
-	setupBaseIterativeResults(tmpfn, 1);
+	setupZoneDataContainers();
+	setupBaseIterativeResults();
 	qDebug("setupZoneDataContainer(): %d", time.elapsed());
 
 	loadCalculatedResult();
 
 	bool errorOccured = false;
 
-	for (auto it = m_zoneContainers1D.begin(); it != m_zoneContainers1D.end(); ++it) {
-		errorOccured = errorOccured || (!(*it)->handleCurrentStepUpdate(tmpfn, step, m_disableCalculatedResult));
+	for (auto zone : m_zoneContainers1D) {
+		auto z = f->base(1)->zone(zone->zoneName());
+		errorOccured = errorOccured || (! zone->handleCurrentStepUpdate(z, m_disableCalculatedResult));
 	}
-	for (auto it = m_zoneContainers2D.begin(); it != m_zoneContainers2D.end(); ++it) {
+	for (auto zone : m_zoneContainers2D) {
 		time.start();
-		errorOccured = errorOccured || (!(*it)->handleCurrentStepUpdate(tmpfn, step, m_disableCalculatedResult));
+		auto z = f->base(2)->zone(zone->zoneName());
+		errorOccured = errorOccured || (! zone->handleCurrentStepUpdate(z, m_disableCalculatedResult));
 		qDebug("handleCurrentStepUpdate() for 2D: %d", time.elapsed());
 	}
-	for (auto it = m_zoneContainers3D.begin(); it != m_zoneContainers3D.end(); ++it) {
+	for (auto zone : m_zoneContainers3D) {
 		time.start();
-		errorOccured = errorOccured || (!(*it)->handleCurrentStepUpdate(tmpfn, step, m_disableCalculatedResult));
+		auto z = f->base(3)->zone(zone->zoneName());
+		errorOccured = errorOccured || (! zone->handleCurrentStepUpdate(z, m_disableCalculatedResult));
 		qDebug("handleCurrentStepUpdate() for 3D: %d", time.elapsed());
 	}
 
@@ -201,91 +190,81 @@ bool PostSolutionInfo::setCurrentStep(unsigned int step, int fn)
 		QMessageBox::critical(projectData()->mainWindow(), tr("Error"), tr("Error occured while loading calculation result."));
 		dialogShowing = false;
 	}
-	return true;
+
+	return IRIC_NO_ERROR;
 }
 
 void PostSolutionInfo::informStepsUpdated()
 {
-	bool ok = open();
-	if (!ok) {return;}
-	setupZoneDataContainers(m_opener->fileId());
-	setupBaseIterativeResults(m_opener->fileId(), 1);
+	int ier = open();
+	if (ier != IRIC_NO_ERROR) {return;}
+
+	setupZoneDataContainers();
+	setupBaseIterativeResults();
 
 	emit updated();
 	emit allPostProcessorsUpdated();
 }
 
-bool PostSolutionInfo::innerSetupZoneDataContainers(int fn, int dim, QList<PostZoneDataContainer*>* containers, QMap<std::string, PostZoneDataContainer*>* containerNameMap, QMap<std::string, std::vector<PostCalculatedResult*> > *results)
+bool PostSolutionInfo::innerSetupZoneDataContainers(int dim, QList<PostZoneDataContainer*>* containers, QMap<std::string, PostZoneDataContainer*>* containerNameMap, QMap<std::string, std::vector<PostCalculatedResult*> > *results)
 {
+	auto file = cgnsFile()->solutionReader()->targetFile();
+
+	if (! file->baseExists(dim)) {
+		clearContainers(containers);
+		containerNameMap->clear();
+		return true;
+	}
+
 	std::vector<std::string> zoneNames;
 	for (PostZoneDataContainer* c : *containers) {
 		zoneNames.push_back(c->zoneName());
 	}
 
-	int ier, nbases;
-	ier = cg_nbases(fn, &nbases);
-	if (ier != 0) {return false;}
-	int baseid = 0;
-	std::string baseName;
-	for (int B = 1; B <= nbases; ++B) {
-		char bname[ProjectCgnsFile::BUFFERLEN];
-		int cell_dim;
-		int phys_dim;
-		ier = cg_base_read(fn, B, bname, &cell_dim, &phys_dim);
-		if (ier != 0) {return false;}
-		if (cell_dim == dim) {
-			// target base found!
-			baseid = B;
-			baseName = bname;
-		}
-	}
-	if (baseid == 0) {
-		clearContainers(containers);
-		containerNameMap->clear();
-		return true;
-	}
-	int nzones;
-	ier = cg_nzones(fn, baseid, &nzones);
-	if (ier != 0) {return false;}
+	auto base = file->base(dim);
 	std::vector<std::string> tmpZoneNames;
-	for (int Z = 1; Z <= nzones; ++Z) {
-		cgsize_t sizes[9];
-		char zoneName[ProjectCgnsFile::BUFFERLEN];
-		ier = cg_zone_read(fn, baseid, Z, zoneName, sizes);
 
-		bool hasSolution;
-		bool ok = zoneHasSolution(fn, baseid, Z, &hasSolution);
-		if (! ok) {return false;}
-		if (! hasSolution) {continue;}
+	for (const auto& zName : base->zoneNames()) {
+		auto z = base->zone(zName);
 
-		tmpZoneNames.push_back(std::string(zoneName));
+		bool solExists = false;
+		int ier = z->getSolutionExists(&solExists);
+		if (ier != IRIC_NO_ERROR) {return false;}
+
+		if (! solExists) {continue;}
+
+		tmpZoneNames.push_back(zName);
 	}
+
 	if (zoneNames == tmpZoneNames) {
 		// zone names are equal to those already read.
-		for (int i = 0; i < containers->count(); ++i) {
-			(*containers)[i]->loadIfEmpty(fn);
+		for (auto c : *containers) {
+			c->loadIfEmpty(base->zone(c->zoneName()));
 		}
 		return false;
 	}
+
 	zoneNames = tmpZoneNames;
 
 	// clear the current zone containers first.
 	for (auto c : *containers) {
 		results->insert(c->zoneName(), c->detachCalculatedResult());
 	}
+
 	clearContainers(containers);
 	containerNameMap->clear();
-	QList<SolverDefinitionGridType*> gtypes = projectData()->solverDefinition()->gridTypes();
+	auto gtypes = projectData()->solverDefinition()->gridTypes();
 
 	int step = currentStep();
 
 	for (const auto& zoneName : zoneNames) {
 		bool found = false;
+		auto zone = base->zone(zoneName);
 		if (zoneName == "iRICZone") {
-			for (auto gtit = gtypes.begin(); gtit != gtypes.end(); ++gtit) {
-				if ((*gtit)->isPrimary() && !(*gtit)->isOptional()) {
-					PostZoneDataContainer* cont = new PostZoneDataContainer(baseName, zoneName, *gtit, this);
-					cont->loadFromCgnsFile(fn, step);
+			for (auto gridType : gtypes) {
+				if (gridType->isPrimary() && ! (gridType->isOptional())) {
+					PostZoneDataContainer* cont = new PostZoneDataContainer(zoneName, gridType, this);
+					cont->loadFromCgnsFile(zone, step);
 					containers->push_back(cont);
 					containerNameMap->insert(zoneName, cont);
 					found = true;
@@ -293,10 +272,10 @@ bool PostSolutionInfo::innerSetupZoneDataContainers(int fn, int dim, QList<PostZ
 				}
 			}
 		} else {
-			for (auto gtit = gtypes.begin(); gtit != gtypes.end(); ++gtit) {
-				if (zoneName.find((*gtit)->name()) != std::string::npos) {
-					PostZoneDataContainer* cont = new PostZoneDataContainer(baseName, zoneName, *gtit, this);
-					cont->loadFromCgnsFile(fn, step);
+			for (auto gridType : gtypes) {
+				if (zoneName.find(gridType->name()) != std::string::npos) {
+					PostZoneDataContainer* cont = new PostZoneDataContainer(zoneName, gridType, this);
+					cont->loadFromCgnsFile(zone, step);
 					containers->append(cont);
 					containerNameMap->insert(zoneName, cont);
 					found = true;
@@ -306,8 +285,8 @@ bool PostSolutionInfo::innerSetupZoneDataContainers(int fn, int dim, QList<PostZ
 		}
 		if (! found) {
 			// no appropriate gridtype found. use the dummy grid type.
-			PostZoneDataContainer* cont = new PostZoneDataContainer(baseName, zoneName, projectData()->solverDefinition()->dummyGridType(), this);
-			cont->loadFromCgnsFile(fn, step);
+			PostZoneDataContainer* cont = new PostZoneDataContainer(zoneName, projectData()->solverDefinition()->dummyGridType(), this);
+			cont->loadFromCgnsFile(zone, step);
 			containers->append(cont);
 			containerNameMap->insert(zoneName, cont);
 		}
@@ -326,49 +305,43 @@ bool PostSolutionInfo::innerSetupZoneDataContainers(int fn, int dim, QList<PostZ
 	return true;
 }
 
-bool PostSolutionInfo::setupBaseIterativeResults(int fn, int baseId)
+bool PostSolutionInfo::setupBaseIterativeResults()
 {
 	clearBaseIterativeResults();
 
-	int ier, nSteps;
-	char iterName[ProjectCgnsFile::BUFFERLEN];
+	auto file = cgnsFile();
+	auto biterData = file->ccBase()->biterData();
+	if (biterData == nullptr) {
+		// no result exists
+		return true;
+	}
 
-	ier = cg_biter_read(fn, baseId, iterName, &nSteps);
-	if (ier != 0) {return false;}
-	ier = cg_goto(fn, baseId, iterName, 0, nullptr);
-	if (ier != 0) {return false;}
-
-	int nArrays;
-	ier = cg_narrays(&nArrays);
-	if (ier != 0) {return false;}
-
+	std::vector<std::string> resultNames;
+	int ier = biterData->getResultNames(&resultNames);
+	if (ier != IRIC_NO_ERROR) {return false;}
 
 	int step = currentStep();
 
-	for (int i = 1; i <= nArrays; ++i) {
-		char arrayname[ProjectCgnsFile::BUFFERLEN];
-		DataType_t datatype;
-		int datadim;
-		cgsize_t dimVec[3];
-		ier = cg_array_info(i, arrayname, &datatype, &datadim, dimVec);
-		if (ier != 0) {return false;}
-		QString name(arrayname);
-		if (name == "TimeValues" || name == "IterationValues") {continue;}
+	for (const auto& name : resultNames) {
+		iRICLib::H5Util::DataArrayValueType type;
+		ier = biterData->readValueType(name, &type);
+		if (ier != IRIC_NO_ERROR) {return false;}
 
-		if (datatype == Character) {
-			auto c = new PostBaseIterativeStringDataContainer(baseId, arrayname, this);
-			c->handleCurrentStepUpdate(fn, step);
+		if (type == iRICLib::H5Util::DataArrayValueType::RealDouble) {
+			auto c = new PostBaseIterativeRealDataContainer(name, this);
+			c->handleCurrentStepUpdate(file, step);
+			m_baseIterativeNumericalResults.insert({c->name(), c});
+		} else if (type == iRICLib::H5Util::DataArrayValueType::Int) {
+			auto c = new PostBaseIterativeIntegerDataContainer(name, this);
+			c->handleCurrentStepUpdate(file, step);
+			m_baseIterativeNumericalResults.insert({c->name(), c});
+		} else if (type == iRICLib::H5Util::DataArrayValueType::Char) {
+			auto c = new PostBaseIterativeStringDataContainer(name, this);
+			c->handleCurrentStepUpdate(file, step);
 			m_baseIterativeStringResults.insert({c->name(), c});
-		} else if (datatype == Integer) {
-			auto c = new PostBaseIterativeIntegerDataContainer(baseId, arrayname, this);
-			c->handleCurrentStepUpdate(fn, step);
-			m_baseIterativeNumericalResults.insert({c->name(), c});
-		} else if (datatype == RealDouble) {
-			auto c = new PostBaseIterativeRealDataContainer(baseId, arrayname, this);
-			c->handleCurrentStepUpdate(fn, step);
-			m_baseIterativeNumericalResults.insert({c->name(), c});
 		}
 	}
+
 	return true;
 }
 
@@ -385,17 +358,17 @@ void PostSolutionInfo::clearBaseIterativeResults()
 	m_baseIterativeStringResults.clear();
 }
 
-void PostSolutionInfo::setupZoneDataContainers(int fn)
+void PostSolutionInfo::setupZoneDataContainers()
 {
 	bool ret;
 	// setup 1D containers.
-	ret = innerSetupZoneDataContainers(fn, 1, &m_zoneContainers1D, &m_zoneContainerNameMap1D, &m_calculatedResults1D);
+	ret = innerSetupZoneDataContainers(1, &m_zoneContainers1D, &m_zoneContainerNameMap1D, &m_calculatedResults1D);
 	if (ret) {emit zoneList1DUpdated();}
 	// setup 2D containers;
-	ret = innerSetupZoneDataContainers(fn, 2, &m_zoneContainers2D, &m_zoneContainerNameMap2D, &m_calculatedResults2D);
+	ret = innerSetupZoneDataContainers(2, &m_zoneContainers2D, &m_zoneContainerNameMap2D, &m_calculatedResults2D);
 	if (ret) {emit zoneList2DUpdated();}
 	// setup 3D containers;
-	ret = innerSetupZoneDataContainers(fn, 3, &m_zoneContainers3D, &m_zoneContainerNameMap3D, &m_calculatedResults3D);
+	ret = innerSetupZoneDataContainers(3, &m_zoneContainers3D, &m_zoneContainerNameMap3D, &m_calculatedResults3D);
 	if (ret) {emit zoneList3DUpdated();}
 }
 
@@ -445,19 +418,18 @@ void PostSolutionInfo::checkCgnsStepsUpdate()
 	checking = true;
 	close();
 
-	QThread::msleep(1000);
-	bool ok = open();
-	if (! ok) {
+	int ier = open();
+	if (ier != IRIC_NO_ERROR) {
 		// error occured while opening.
 		checking = false;
 		QMessageBox::warning(projectData()->mainWindow(), tr("Warning"), tr("Loading calculation result for visualization failed. Please try again later, or wait until end of calculation."));
 		return;
 	}
 	if (m_timeSteps != nullptr) {
-		m_timeSteps->checkStepsUpdate(m_opener->fileId());
+		m_timeSteps->checkStepsUpdate(*m_cgnsFile);
 	}
 	if (m_iterationSteps != nullptr) {
-		m_iterationSteps->checkStepsUpdate(m_opener->fileId());
+		m_iterationSteps->checkStepsUpdate(*m_cgnsFile);
 	}
 	checking = false;
 }
@@ -492,20 +464,25 @@ void PostSolutionInfo::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 	writeZonesToProjectMainFile(3, zoneContainers3D(), writer);
 }
 
-void PostSolutionInfo::loadFromCgnsFile(const int fn)
+int PostSolutionInfo::loadFromCgnsFile()
 {
+	int ier = open();
+	if (ier != IRIC_NO_ERROR) {return ier;}
+
 	m_currentStep = 0;
 	if (m_timeSteps != nullptr) {
 		m_timeSteps->blockSignals(true);
-		m_timeSteps->loadFromCgnsFile(fn);
+		m_timeSteps->loadFromCgnsFile(*cgnsFile());
 		m_timeSteps->blockSignals(false);
 	}
 	if (m_iterationSteps != nullptr) {
 		m_iterationSteps->blockSignals(true);
-		m_iterationSteps->loadFromCgnsFile(fn);
+		m_iterationSteps->loadFromCgnsFile(*cgnsFile());
 		m_iterationSteps->blockSignals(false);
 	}
-	setCurrentStep(currentStep(), fn);
+	setCurrentStep(currentStep());
+
+	return IRIC_NO_ERROR;
 }
 
 void PostSolutionInfo::closeCgnsFile()
@@ -700,8 +677,8 @@ PostSolutionInfo::Dimension PostSolutionInfo::fromIntDimension(int dim)
 
 void PostSolutionInfo::close()
 {
-	delete m_opener;
-	m_opener = nullptr;
+	delete m_cgnsFile;
+	m_cgnsFile = nullptr;
 }
 
 const PostExportSetting& PostSolutionInfo::exportSetting() const
@@ -726,9 +703,12 @@ void PostSolutionInfo::setParticleExportPrefix(const QString& prefix)
 
 int PostSolutionInfo::fileId() const
 {
-	if (m_opener == nullptr) {return 0;}
+	return 0;
+}
 
-	return m_opener->fileId();
+iRICLib::H5CgnsFile* PostSolutionInfo::cgnsFile() const
+{
+	return m_cgnsFile;
 }
 
 void PostSolutionInfo::setCalculatedResultDisabled(bool disabled)
@@ -846,6 +826,9 @@ void PostSolutionInfo::exportCalculationResult()
 	case PostDataExportDialog::Format::ESRIShape:
 		dialog.setLabelText(tr("Saving calculation result as ESRI Shapefiles..."));
 		break;
+	case PostDataExportDialog::Format::TPO:
+		dialog.setLabelText(tr("Saving calculation result as TPO files..."));
+		break;
 	}
 	dialog.setFixedSize(300, 100);
 	dialog.setModal(true);
@@ -943,19 +926,21 @@ void PostSolutionInfo::exportCalculationResult(const std::string& folder, const 
 	setCurrentStep(stepBackup);
 }
 
-bool PostSolutionInfo::open()
+int PostSolutionInfo::open()
 {
-	if (m_opener != nullptr) {
-		return true;
-	}
+	if (m_cgnsFile != nullptr) {return IRIC_NO_ERROR;}
 
 	try {
-		m_opener = new CgnsFileOpener(iRIC::toStr(currentCgnsFileName()), CG_MODE_READ);
-	} catch (const std::runtime_error&) {
-		return false;
+		auto pd = projectData();
+		if (pd->isSolverRunning()) {
+			m_cgnsFile = new iRICLib::H5CgnsFile(iRIC::toStr(pd->flushCopyCgnsFileName()), iRICLib::H5CgnsFile::Mode::OpenReadOnly, "../result");
+		} else {
+			m_cgnsFile = new iRICLib::H5CgnsFile(iRIC::toStr(pd->masterCgnsFileName()), iRICLib::H5CgnsFile::Mode::OpenReadOnly);
+		}
+		return IRIC_NO_ERROR;
+	} catch (...) {
+		return IRIC_H5_OPEN_FAIL;
 	}
-
-	return true;
 }
 
 void PostSolutionInfo::clearContainers(QList<PostZoneDataContainer*>* conts)

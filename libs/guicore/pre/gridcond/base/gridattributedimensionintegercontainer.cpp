@@ -6,8 +6,3 @@ GridAttributeDimensionIntegerContainer::GridAttributeDimensionIntegerContainer(S
 
 GridAttributeDimensionIntegerContainer::~GridAttributeDimensionIntegerContainer()
 {}
-
-DataType_t GridAttributeDimensionIntegerContainer::dataType() const
-{
-	return Integer;
-}

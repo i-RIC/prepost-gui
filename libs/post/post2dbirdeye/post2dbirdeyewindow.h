@@ -29,8 +29,6 @@ public:
 	Post2dBirdEyeWindow(QWidget* parent, int index, Post2dBirdEyeWindowProjectDataItem* pdi);
 	~Post2dBirdEyeWindow();
 
-	/// Informed that CGNS file is switched.
-	void handleCgnsSwitch() {}
 	/// switch to the new index.
 	void changeIndex(uint /*newindex*/) {}
 	QPixmap snapshot() override;

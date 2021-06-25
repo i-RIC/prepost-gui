@@ -10,10 +10,12 @@
 #include <QRegExp>
 #include <QTextStream>
 
-#include <iriclib.h>
 #include <stdlib.h>
 
 #include <yaml-cpp/yaml.h>
+
+#include <h5cgnsconditiongroup.h>
+#include <iriclib_errorcodes.h>
 
 namespace {
 
@@ -270,153 +272,103 @@ void InputConditionContainerFunctional::removeAllValues(){
 	}
 }
 
-bool InputConditionContainerFunctional::loadFunctionalString(const char* paramname, QString& str)
+int InputConditionContainerFunctional::loadFunctionalString(const std::string& paramname, std::string* str, const iRICLib::H5CgnsConditionGroup& group)
 {
 	int length;
-	std::vector<char> vstr;
-	if (isBoundaryCondition()) {
-		if (cg_iRIC_Read_BC_FunctionalWithName_StringLen(toC(bcName()), bcIndex(), toC(name()), paramname, &length) == 0) {
-			vstr.assign(' ', length + 1);
-			if (cg_iRIC_Read_BC_FunctionalWithName_String(toC(bcName()), bcIndex(), toC(name()), paramname, vstr.data()) == 0) {
-				str = QString::fromStdString(vstr.data());
-				return true;
-			}
-		}
-	}
-	else if (isComplexCondition()) {
-		if (cg_iRIC_Read_Complex_FunctionalWithName_StringLen(toC(complexName()), complexIndex(), toC(name()), paramname, &length) == 0) {
-			vstr.assign(' ', length + 1);
-			if (cg_iRIC_Read_Complex_FunctionalWithName_String(toC(complexName()), complexIndex(), toC(name()), paramname, vstr.data()) == 0) {
-				str = QString::fromStdString(vstr.data());
-				return true;
-			}
-		}
-	}
-	else {
-		if (cg_iRIC_Read_FunctionalWithName_StringLen(toC(name()), paramname, &length) == 0) {
-			vstr.assign(' ', length + 1);
-			if (cg_iRIC_Read_FunctionalWithName_String(toC(name()), paramname, vstr.data()) == 0) {
-				str = QString::fromStdString(vstr.data());
-				return true;
-			}
-		}
-	}
-	return false;
+
+	int ier = group.readFunctionalWithNameStringLen(name(), paramname, &length);
+	if (ier != IRIC_NO_ERROR) {return ier;}
+
+	std::vector<char> buffer(length + 1, 0);
+
+	ier = group.readFunctionalWithNameString(name(), paramname, buffer.data());
+	if (ier != IRIC_NO_ERROR) {return ier;}
+
+	*str = buffer.data();
+
+	return IRIC_NO_ERROR;
 }
 
-bool InputConditionContainerFunctional::saveFunctionalString(const char* paramname, const QString& str)
+int InputConditionContainerFunctional::saveFunctionalString(const std::string& paramname, const std::string& str, iRICLib::H5CgnsConditionGroup* group)
 {
-	int result;
-	if (isBoundaryCondition()) {
-		result = cg_iRIC_Write_BC_FunctionalWithName_String(toC(bcName()), bcIndex(), toC(name()), paramname, toC(str.toStdString()));
-	}
-	else if (isComplexCondition()) {
-		result = cg_iRIC_Write_Complex_FunctionalWithName_String(toC(complexName()), complexIndex(), toC(name()), paramname, toC(str.toStdString()));
-	}
-	else {
-		result = cg_iRIC_Write_FunctionalWithName_String(toC(name()), paramname, toC(str.toStdString()));
-	}
-	return (result == 0);
+	return group->writeFunctionalWithNameString(name(), paramname, str);
 }
 
-int InputConditionContainerFunctional::load()
+int InputConditionContainerFunctional::load(const iRICLib::H5CgnsConditionGroup& group)
 {
-	cgsize_t length;
-	int result;
-
+	int length;
 	std::vector<double> data;
+	std::string tmpStr;
 
-	if (isBoundaryCondition()) {
-		result = cg_iRIC_Read_BC_FunctionalSize(toC(bcName()), bcIndex(), toC(name()), &length);
-	} else if (isComplexCondition()) {
-		result = cg_iRIC_Read_Complex_FunctionalSize(toC(complexName()), complexIndex(), toC(name()), &length);
-	} else {
-		result = cg_iRIC_Read_FunctionalSize(toC(name()), &length);
-	}
-	if (result != 0 || length == 0) {goto ERROR;}
+	int ret = group.readFunctionalSize(name(), &length);
+	if (ret != IRIC_NO_ERROR || length == 0) {goto ERROR;}
+
 	data.assign(length, 0);
 
 	// load parameter.
-	if (isBoundaryCondition()) {
-		result = cg_iRIC_Read_BC_FunctionalWithName(toC(bcName()), bcIndex(), toC(name()), toC(impl->m_param.name), data.data());
-	} else if (isComplexCondition()) {
-		result = cg_iRIC_Read_Complex_FunctionalWithName(toC(complexName()), complexIndex(), toC(name()), toC(impl->m_param.name), data.data());
-	} else {
-		result = cg_iRIC_Read_FunctionalWithName(toC(name()), toC(impl->m_param.name), data.data());
-	}
-	if (result != 0) {goto ERROR;}
+	ret = group.readFunctionalWithName(name(), impl->m_param.name, data.data());
+	if (ret != IRIC_NO_ERROR) {goto ERROR;}
 
 	impl->m_param.values = data;
+
 	// load values.
-	for (int i = 0; i < impl->m_values.size(); ++i) {
+	for (int i = 0; i < static_cast<int> (impl->m_values.size()); ++i) {
 		Data& val = impl->m_values[i];
-		if (isBoundaryCondition()) {
-			result = cg_iRIC_Read_BC_FunctionalWithName(toC(bcName()), bcIndex(), toC(name()), toC(val.name), data.data());
-		} else if (isComplexCondition()) {
-			result = cg_iRIC_Read_Complex_FunctionalWithName(toC(complexName()), complexIndex(), toC(name()), toC(val.name), data.data());
-		} else {
-			result = cg_iRIC_Read_FunctionalWithName(toC(name()), toC(val.name), data.data());
-		}
-		if (result != 0) {goto ERROR;}
+		ret = group.readFunctionalWithName(name(), val.name, data.data());
+		if (ret != IRIC_NO_ERROR) {goto ERROR;}
 
 		val.values = data;
 	}
 
 	// load wml2 info
-	loadFunctionalString("_siteID", impl->m_siteID);
-	loadFunctionalString("_startDate", impl->m_startDate);
-	loadFunctionalString("_endDate", impl->m_endDate);
+	loadFunctionalString("_siteID", &tmpStr, group);
+	impl->m_siteID = tmpStr.c_str();
+	loadFunctionalString("_startDate", &tmpStr, group);
+	impl->m_startDate = tmpStr.c_str();
+	loadFunctionalString("_endDate", &tmpStr, group);
+	impl->m_endDate = tmpStr.c_str();
 
 	emit valueChanged();
-	return 0;
+	return IRIC_NO_ERROR;
 
 ERROR:
 	clear();
 	emit valueChanged();
-	return 0;
+	return IRIC_NO_ERROR;;
 }
 
-int InputConditionContainerFunctional::save()
+int InputConditionContainerFunctional::save(iRICLib::H5CgnsConditionGroup* group)
 {
-	cgsize_t length = static_cast<cgsize_t>(impl->m_param.values.size());
-	cgsize_t tmplength = length;
+	auto length = static_cast<int>(impl->m_param.values.size());
+	if (length == 0) {return IRIC_NO_ERROR;}
+
+	auto tmplength = length;
 	if (tmplength == 0) {tmplength = 1;}
 	std::vector<double> data (tmplength, 0);
+
 	// write parameter.
 	for (int i = 0; i < length; ++i) {
 		data[i] = impl->m_param.values.at(i);
 	}
-	if (isBoundaryCondition()) {
-		cg_iRIC_Write_BC_FunctionalWithName(toC(bcName()), bcIndex(), toC(name()), toC(impl->m_param.name), length, data.data());
-	} else if (isComplexCondition()) {
-		cg_iRIC_Write_Complex_FunctionalWithName(toC(complexName()), complexIndex(), toC(name()), toC(impl->m_param.name), length, data.data());
-	} else {
-		cg_iRIC_Write_FunctionalWithName(toC(name()), toC(impl->m_param.name), length, data.data());
-	}
+	group->writeFunctionalWithName(name(), impl->m_param.name, length, data.data());
 
 	// write values;
-	for (int i = 0; i < impl->m_values.size(); ++i) {
+	for (int i = 0; i < static_cast<int> (impl->m_values.size()); ++i) {
 		Data& val = impl->m_values[i];
 		for (int i = 0; i < length; ++i) {
 			data[i] = val.values.at(i);
 		}
-		if (isBoundaryCondition()) {
-			cg_iRIC_Write_BC_FunctionalWithName(toC(bcName()), bcIndex(), toC(name()), toC(val.name), length, data.data());
-		} else if (isComplexCondition()) {
-			cg_iRIC_Write_Complex_FunctionalWithName(toC(complexName()), complexIndex(), toC(name()), toC(val.name), length, data.data());
-		} else {
-			cg_iRIC_Write_FunctionalWithName(toC(name()), toC(val.name), length, data.data());
-		}
+		group->writeFunctionalWithName(name(), val.name, length, data.data());
 	}
 
 	// save wml2 info
-	if (!impl->m_siteID.isEmpty()) {
-		saveFunctionalString("_siteID", impl->m_siteID);
-		saveFunctionalString("_startDate", impl->m_startDate);
-		saveFunctionalString("_endDate", impl->m_endDate);
+	if (! impl->m_siteID.isEmpty()) {
+		saveFunctionalString("_siteID", iRIC::toStr(impl->m_siteID), group);
+		saveFunctionalString("_startDate", iRIC::toStr(impl->m_startDate), group);
+		saveFunctionalString("_endDate", iRIC::toStr(impl->m_endDate), group);
 	}
 
-	return 0;
+	return IRIC_NO_ERROR;
 }
 
 void InputConditionContainerFunctional::clear()

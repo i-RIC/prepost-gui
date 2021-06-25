@@ -247,14 +247,6 @@ LIBS += \
 	-lvtkRenderingLabel-$${VTK_MAJ_MIN} \
 	-lvtkRenderingLOD-$${VTK_MAJ_MIN}
 
-# cgnslib
-win32 {
-	LIBS += -lcgnsdll
-}
-unix {
-	LIBS += -lcgns
-}
-
 # iriclib
 
 LIBS += -liriclib

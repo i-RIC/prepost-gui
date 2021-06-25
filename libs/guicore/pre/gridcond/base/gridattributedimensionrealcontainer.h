@@ -8,10 +8,7 @@ class GUICOREDLL_EXPORT GridAttributeDimensionRealContainer : public GridAttribu
 {
 public:
 	GridAttributeDimensionRealContainer(SolverDefinitionGridAttributeDimension* def);
-	~GridAttributeDimensionRealContainer();
-
-private:
-	DataType_t dataType() const override;
+	~GridAttributeDimensionRealContainer() override;
 };
 
 #endif // GRIDATTRIBUTEDIMENSIONREALCONTAINER_H

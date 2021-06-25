@@ -43,7 +43,7 @@ public:
 	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
-	void saveToCgnsFile(const int fn) override;
+	int saveToCgnsFile() override;
 	/// Set all dimensions to the first.
 	void setDimensionsToFirst() override;
 	void clearDimensionsIfNoDataExists() override;
@@ -68,8 +68,6 @@ private:
 	SolverDefinitionGridAttribute* m_condition;
 
 	BoolContainer m_visible;
-	vtkTextPropertySettingContainer m_titleTextSetting;
-	vtkTextPropertySettingContainer m_labelTextSetting;
 
 	SolverDefinitionGridAttribute* m_referenceInformationAttribute;
 };

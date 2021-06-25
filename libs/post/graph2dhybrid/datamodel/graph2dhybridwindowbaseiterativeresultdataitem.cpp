@@ -26,7 +26,7 @@ Graph2dHybridWindowBaseIterativeResultDataItem::Graph2dHybridWindowBaseIterative
 {
 	const Graph2dHybridWindowResultSetting& s = dataModel()->setting();
 	Graph2dHybridWindowResultSetting::DataTypeInfo* info = s.targetDataTypeInfo();
-	m_dataContainer = new PostBaseIterativeSeriesDataContainer(info->dimension, setting.name(), projectData()->mainfile()->postSolutionInfo());
+	m_dataContainer = new PostBaseIterativeSeriesDataContainer(iRIC::toStr(setting.name()), projectData()->mainfile()->postSolutionInfo());
 }
 
 Graph2dHybridWindowBaseIterativeResultDataItem::~Graph2dHybridWindowBaseIterativeResultDataItem()
@@ -40,17 +40,17 @@ void Graph2dHybridWindowBaseIterativeResultDataItem::doLoadFromProjectMainFile(c
 void Graph2dHybridWindowBaseIterativeResultDataItem::doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/)
 {}
 
-void Graph2dHybridWindowBaseIterativeResultDataItem::updateValues(int fn)
+void Graph2dHybridWindowBaseIterativeResultDataItem::updateValues()
 {
 	m_xValues.clear();
 	m_yValues.clear();
 
-	m_dataContainer->update(fn);
-	QList<double> timesteps = dataModel()->postSolutionInfo()->timeSteps()->timesteps();
-	if (m_dataContainer->data().count() != timesteps.count()) {return;}
+	m_dataContainer->update();
+	auto timesteps = dataModel()->postSolutionInfo()->timeSteps()->timesteps();
+	if (m_dataContainer->data().size() != timesteps.size()) {return;}
 
-	m_xValues.fill(0, timesteps.count());
-	m_yValues.fill(0, timesteps.count());
+	m_xValues.assign(timesteps.count(), 0);
+	m_yValues.assign(timesteps.count(), 0);
 
 	for (int i = 0; i < timesteps.count(); ++i) {
 		m_xValues[i] = timesteps.at(i);

@@ -8,13 +8,17 @@
 
 #include <vtkSmartPointer.h>
 
+namespace iRICLib {
+	class H5CgnsPolyDataSolution;
+} // namespace iRICLib
+
 class QPointF;
 class vtkPolyData;
 
 class PostZoneDataContainer::PolyDataLoader
 {
 public:
-	static bool load(int fid, int bid, int zid, int step, std::map<std::string, vtkSmartPointer<vtkPolyData> >* polyDataMap, std::map<std::string, std::vector<int> >* polyDataCellIdsMap, const QPointF& offset);
+	static bool load(std::map<std::string, vtkSmartPointer<vtkPolyData> >* polyDataMap, std::map<std::string, std::vector<int> >* polyDataCellIdsMap, iRICLib::H5CgnsPolyDataSolution* sol, const QPointF& offset);
 
 private:
 	PolyDataLoader();

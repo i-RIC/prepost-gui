@@ -145,7 +145,7 @@ void ChartWindow::addViewToolBar()
 {
 	m_viewToolBar = new QToolBar(tr("View ToolBar"), this);
 
-	auto l = new QLabel(tr("Aspect ratio: 1 / "), this);
+	auto l = new QLabel(tr("Aspect ratio (V/H): 1 / "), this);
 	m_viewToolBar->addWidget(l);
 
 	m_aspectRatioEdit = new QLineEdit(this);
@@ -169,9 +169,6 @@ void ChartWindow::addViewToolBar()
 	connect(m_fixRegionCheckBox, SIGNAL(toggled(bool)), this, SLOT(updateAspectRatioStatus()));
 
 	addToolBar(m_viewToolBar);
-
-	m_fixAspectRatioCheckBox->setChecked(true);
-	setAspectRatio(5.0);
 }
 
 ChartGraphicsView* ChartWindow::graphicsView()

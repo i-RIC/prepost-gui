@@ -61,15 +61,14 @@ private slots:
 	void exportToFile();
 	void generatePointMap();
 
-protected:
-	void doLoadFromProjectMainFile(const QDomNode& node) override;
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
-	void loadFromCgnsFile(const int fn) override;
-	void doApplyOffset(double x, double y) override;
-
 private:
 	PreProcessorGeoDataGroupDataItemInterface* geoDataGroup() const;
 	void editVariation(GridAttributeVariationEditWidget::Mode mode, const QString& typeName);
+
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+	int loadFromCgnsFile() override;
+	void doApplyOffset(double x, double y) override;
 
 	SolverDefinitionGridAttribute* m_condition;
 

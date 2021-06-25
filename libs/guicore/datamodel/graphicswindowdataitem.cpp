@@ -30,6 +30,8 @@
 #include <vtkCollectionIterator.h>
 #include <vtkRenderWindow.h>
 
+#include <iriclib_errorcodes.h>
+
 GraphicsWindowDataItem::GraphicsWindowDataItem(const QString& itemlabel, GraphicsWindowDataItem* parent) :
 	ProjectDataItem {parent},
 	m_standardItem {new QStandardItem(itemlabel)}
@@ -157,18 +159,31 @@ void GraphicsWindowDataItem::handleStandardItemChange()
 	iRICUndoStack::instance().push(new GraphicsWindowDataItemStandardItemChangeCommand(this));
 }
 
-void GraphicsWindowDataItem::loadFromCgnsFile(const int fn)
+int GraphicsWindowDataItem::loadFromCgnsFile()
 {
-	for (GraphicsWindowDataItem* child : m_childItems) {
-		child->loadFromCgnsFile(fn);
+	for (auto child : m_childItems) {
+		int ier = child->loadFromCgnsFile();
+		if (ier != IRIC_NO_ERROR) {return ier;}
 	}
+	return IRIC_NO_ERROR;
 }
 
-void GraphicsWindowDataItem::saveToCgnsFile(const int fn)
+int GraphicsWindowDataItem::saveToCgnsFile()
 {
-	for (GraphicsWindowDataItem* child : m_childItems) {
-		child->saveToCgnsFile(fn);
+	for (auto child : m_childItems) {
+		int ier = child->saveToCgnsFile();
+		if (ier != IRIC_NO_ERROR) {return ier;}
 	}
+	return IRIC_NO_ERROR;
+}
+
+int GraphicsWindowDataItem::updateCgnsFileOtherThanGrids()
+{
+	for (auto child : m_childItems) {
+		int ier = child->updateCgnsFileOtherThanGrids();
+		if (ier != IRIC_NO_ERROR) {return ier;}
+	}
+	return IRIC_NO_ERROR;
 }
 
 void GraphicsWindowDataItem::closeCgnsFile()

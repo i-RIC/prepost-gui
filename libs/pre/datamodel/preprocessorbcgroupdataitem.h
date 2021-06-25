@@ -7,6 +7,10 @@ class PreProcessorBCDataItem;
 class ColorSource;
 class Grid;
 
+namespace iRICLib {
+	class H5CgnsZone;
+} // namespace iRICLib
+
 class PreProcessorBCGroupDataItem : public PreProcessorDataItem
 {
 	Q_OBJECT
@@ -14,8 +18,9 @@ class PreProcessorBCGroupDataItem : public PreProcessorDataItem
 public:
 	PreProcessorBCGroupDataItem(PreProcessorDataItem* parent);
 	~PreProcessorBCGroupDataItem();
-	void loadFromCgnsFile(const int fn) override;
-	void saveToCgnsFile(const int fn) override;
+
+	int loadFromCgnsFile(const iRICLib::H5CgnsZone& zone);
+	int saveToCgnsFile(iRICLib::H5CgnsZone* zone);
 	void informGridUpdate();
 	const QList<PreProcessorBCDataItem*> conditions() const;
 	void addCustomMenuItems(QMenu* menu) override;

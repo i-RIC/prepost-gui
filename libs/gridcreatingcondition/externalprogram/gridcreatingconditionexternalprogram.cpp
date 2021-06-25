@@ -29,19 +29,19 @@
 #include <vtkRenderWindow.h>
 #include <vtkRenderer.h>
 
-#include <cgnslib.h>
-#include <iriclib.h>
+#include <h5cgnsbase.h>
+#include <h5cgnsfile.h>
 
-GridCreatingConditionExternalProgram::GridCreatingConditionExternalProgram(const QString& folderName, const QLocale& locale, ProjectDataItem* parent, GridCreatingConditionCreator* creator)
-	: GridCreatingCondition(parent, creator)
+GridCreatingConditionExternalProgram::GridCreatingConditionExternalProgram(const QString& folderName, const QLocale& locale, ProjectDataItem* parent, GridCreatingConditionCreator* creator) :
+	GridCreatingCondition(parent, creator),
+	m_definition {new SolverDefinition(folderName, locale)},
+	m_name (m_definition->name()),
+	m_locale {locale},
+	m_rightClickingMenu {new QMenu()}
 {
-	m_definition = new SolverDefinition(folderName, locale);
-	m_locale = locale;
-	m_name = m_definition->name();
 	setFilename("gridcreate.cgn");
 
 	PreProcessorGridCreatingConditionDataItemInterface* p = dynamic_cast<PreProcessorGridCreatingConditionDataItemInterface*>(parent);
-	m_rightClickingMenu = new QMenu();
 	m_rightClickingMenu->addAction(p->createAction());
 	m_rightClickingMenu->addSeparator();
 	m_rightClickingMenu->addAction(p->clearAction());
@@ -62,16 +62,14 @@ bool GridCreatingConditionExternalProgram::create(QWidget* /*parent*/)
 		QDir projDir(projectData()->workDirectory());
 		QString relativePath = projDir.relativeFilePath(finfo.absolutePath());
 		projDir.mkpath(relativePath);
-		ProjectCgnsFile::createNewFile(fname, 2, 2);
+
+		iRICLib::H5CgnsFile file(iRIC::toStr(fname), iRICLib::H5CgnsFile::Mode::Create);
 	}
 	GridCreatingConditionExternalProgramSettingDialog dialog(m_definition, m_locale, iricMainWindow(), preProcessorWindow());
 	dialog.setFilename(fname);
 	dialog.load();
 	int ret = dialog.exec();
 	if (ret != QDialog::Accepted) {return false;}
-
-	// delete grid.
-	deleteGrid(fname);
 
 	// CGNS File OK. exexute the external program.
 	QString externalProgram = m_definition->executableFilename();
@@ -123,31 +121,32 @@ bool GridCreatingConditionExternalProgram::create(QWidget* /*parent*/)
 	Grid* grid = gType->createEmptyGrid();
 
 	// load create grid from cgnsfile. it is always loaded from the first zone in the first base.
-	int fn;
-	ret = cg_open(iRIC::toStr(fname).c_str(), CG_MODE_READ, &fn);
-	// load error code first.
-	int errorCode = readErrorCode(fn);
-	if (errorCode != 0) {
-		cg_close(fn);
-		// error occured while grid is generated.
-		QString msg = dialog.errorMessage(errorCode);
-		QMessageBox::critical(preProcessorWindow(), tr("Error"), msg);
-		return false;
-	}
-	bool ok = grid->loadFromCgnsFile(fn, 1, 1);
+	try {
+		iRICLib::H5CgnsFile file(iRIC::toStr(fname), iRICLib::H5CgnsFile::Mode::OpenReadOnly);
+		int ier = 0;
 
-	auto points = grid->vtkGrid()->GetPoints();
-	for (vtkIdType i = 0; i < points->GetNumberOfPoints(); ++i) {
-		double v[3];
-		points->GetPoint(i, v);
-		v[0] -= offset().x();
-		v[1] -= offset().y();
-		points->SetPoint(i, v);
-	}
+		int errorCode = 0;
+		ier = file.ccBase()->readErrorCode(&errorCode);
+		if (errorCode != 0) {
+			QString msg = dialog.errorMessage(errorCode);
+			QMessageBox::critical(preProcessorWindow(), tr("Error"), msg);
+			return false;
+		}
 
-	cg_close(fn);
-	if (! ok) {
-		// grid generator did not create grid correctly.
+		auto firstZone = file.ccBase()->zoneById(1);
+		grid->loadFromCgnsFile(*firstZone);
+
+		// apply offset
+		auto o = offset();
+		auto points = grid->vtkGrid()->GetPoints();
+		for (vtkIdType i = 0; i < points->GetNumberOfPoints(); ++i) {
+			double v[3];
+			points->GetPoint(i, v);
+			v[0] -= o.x();
+			v[1] -= o.y();
+			points->SetPoint(i, v);
+		}
+	}  catch (...) {
 		QMessageBox::critical(preProcessorWindow(), tr("Error"), tr("Grid Creation failed."));
 		return false;
 	}
@@ -172,57 +171,6 @@ void GridCreatingConditionExternalProgram::clear()
 	GridCreatingConditionExternalProgramSettingDialog dialog(m_definition, m_locale, iricMainWindow(), preProcessorWindow());
 	dialog.reset(true);
 	dialog.save();
-}
-
-void GridCreatingConditionExternalProgram::deleteGrid(const QString& fname)
-{
-	int ret;
-	int fn;
-	int B;
-
-	Q_UNUSED(ret)
-
-	ret = cg_open(iRIC::toStr(fname).c_str(), CG_MODE_MODIFY, &fn);
-	cg_iRIC_GotoBase(fn, &B);
-	QStringList zoneNames;
-	int nzones;
-	ret = cg_nzones(fn, B, &nzones);
-	for (int Z = 1; Z <= nzones; ++Z) {
-		char zonename[ProjectCgnsFile::BUFFERLEN];
-		cgsize_t size[9];
-		cg_zone_read(fn, B, Z, zonename, &(size[0]));
-		zoneNames.append(zonename);
-	}
-	// zone names are known, so remove them.
-	cg_goto(fn, B, "end");
-	for (const QString& zoneName : zoneNames) {
-		cg_delete_node(const_cast<char*>(iRIC::toStr(zoneName).c_str()));
-	}
-	cg_close(fn);
-}
-
-int GridCreatingConditionExternalProgram::readErrorCode(int fn)
-{
-	int ret;
-	DataType_t dataType;
-	int dim;
-	cgsize_t dimVec[3];
-	char tmpname[ProjectCgnsFile::BUFFERLEN];
-	ret = cg_goto(fn, 1, "ErrorCode", 0, "end");
-	if (ret != 0) {
-		// no error code.
-		return 0;
-	}
-
-	int narrays;
-	ret = cg_narrays(&narrays);
-	if (ret != 0) {return 0;}
-	if (narrays < 1) {return 0;}
-	cg_array_info(1, tmpname, &dataType, &dim, &(dimVec[0]));
-	if (QString(tmpname) != "Value") {return 0;}
-	int errorcode;
-	cg_array_read(1, &errorcode);
-	return errorcode;
 }
 
 void GridCreatingConditionExternalProgram::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* /*v*/)

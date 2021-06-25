@@ -69,8 +69,8 @@ public:
 	void setVertex(unsigned int i, unsigned int j, const QPointF& v);
 	void setVertex(unsigned int index, const QPointF& v) override;
 
-	bool loadFromCgnsFile(const int fn, int base, int zoneid) override;
-	bool saveToCgnsFile(const int fn, int base, const char* zonename) override;
+	int loadFromCgnsFile(const iRICLib::H5CgnsZone& zone) override;
+	int saveToCgnsFile(iRICLib::H5CgnsBase* base, const std::string& zoneName) override;
 
 	void dimensions(unsigned int* i, unsigned int* j);
 	unsigned int dimensionI() const;

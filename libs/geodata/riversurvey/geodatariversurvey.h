@@ -15,8 +15,6 @@
 
 #include <QPoint>
 
-#include <iriclib.h>
-
 class vtkPolyData;
 
 class GridCreatingConditionRiverSurveyInterface;
@@ -121,7 +119,7 @@ protected:
 	void loadExternalData(const QString& filename) override;
 	void saveExternalData(const QString& filename) override;
 	void updateFilename() override;
-	int iRICLibType() const override;
+	iRICLib::H5CgnsGeographicDataGroup::Type iRICLibType() const override;
 	void doApplyOffset(double x, double y) override;
 
 private:

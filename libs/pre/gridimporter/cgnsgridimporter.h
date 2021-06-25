@@ -4,6 +4,13 @@
 #include <guicore/pre/grid/gridinternalimporter.h>
 #include <QObject>
 
+namespace iRICLib {
+	class H5CgnsFile;
+	class H5CgnsZone;
+} // namespase iRICLib
+
+class PreProcessorGridDataItem;
+
 class CgnsGridImporter : public GridInternalImporter
 {
 	Q_OBJECT
@@ -11,16 +18,19 @@ class CgnsGridImporter : public GridInternalImporter
 
 public:
 	CgnsGridImporter();
-	virtual ~CgnsGridImporter() {}
+
 	QString caption() const override;
 	QStringList fileDialogFilters() const override;
 	bool import(Grid* grid, const QString& filename, const QString& selectedFilter, QWidget* parent) override;
 
-	bool openCgnsFileForImporting(Grid* grid, const QString& filename, QString& tmpname, int& fn, int& base, int& zoneid, QWidget* parent);
-	void closeAndRemoveTempCgnsFile(int fn, const QString& filename);
+	bool selectZoneForImporting(const iRICLib::H5CgnsFile& file, iRICLib::H5CgnsZone** selectedZone, QWidget* parent);
+	void setGridDataItem(PreProcessorGridDataItem* gridDataItem);
 
 protected:
-	virtual bool isZoneCompatible(int fn, int base, int Z) = 0;
+	virtual bool isZoneCompatible(const iRICLib::H5CgnsZone& zone) = 0;
+
+private:
+	PreProcessorGridDataItem* m_gridDataItem;
 };
 
 #endif // CGNSGRIDIMPORTER_H

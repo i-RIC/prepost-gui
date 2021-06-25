@@ -62,8 +62,9 @@
 #include <vtkStructuredGrid.h>
 #include <vtkStructuredGridGeometryFilter.h>
 #include <vtkTextProperty.h>
-
 #include <vtkPolyDataWriter.h>
+
+#include <h5cgnszone.h>
 
 Post2dWindowCellScalarGroupDataItem::Post2dWindowCellScalarGroupDataItem(Post2dWindowDataItem* p, CheckFlag cflag, ReorderFlag rflag, DeleteFlag dflag) :
 	Post2dWindowDataItem {tr("Scalar (cell center)"), QIcon(":/libs/guibase/images/iconPaper.png"), p}
@@ -415,7 +416,7 @@ QDialog* Post2dWindowCellScalarGroupDataItem::propertyDialog(QWidget* p)
 		delete dialog;
 		return nullptr;
 	}
-	dialog->setZoneData(zItem->dataContainer(), CellCenter);
+	dialog->setZoneData(zItem->dataContainer(), iRICLib::H5CgnsZone::SolutionPosition::Cell);
 	dialog->disablePhysicalValueComboBox();
 	if (! zItem->dataContainer()->IBCCellExists()) {
 		dialog->disableActive();

@@ -16,6 +16,7 @@
 #include <guicore/pre/geodatabackground/geodatabackgroundcomplex.h>
 #include <guicore/project/inputcond/inputconditionwidgetfilename.h>
 #include <guicore/project/projectdata.h>
+#include <guicore/project/projectmainfile.h>
 #include <guicore/scalarstocolors/colortransferfunctioncontainer.h>
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
 #include <guicore/solverdef/solverdefinitiongridcomplexattribute.h>
@@ -28,7 +29,10 @@
 #include <QLocale>
 #include <QMenu>
 
-#include <iriclib.h>
+#include <h5cgnsbase.h>
+#include <h5cgnsfile.h>
+#include <h5cgnsgridcomplexconditiongroup.h>
+#include <h5cgnsgridcomplexconditiontop.h>
 
 #include <algorithm>
 
@@ -69,9 +73,8 @@ PreProcessorGeoDataComplexGroupDataItem::~PreProcessorGeoDataComplexGroupDataIte
 	delete m_dialog;
 }
 
-void PreProcessorGeoDataComplexGroupDataItem::loadFromCgnsFile(const int)
+int PreProcessorGeoDataComplexGroupDataItem::loadFromCgnsFile()
 {
-	int count = 0;
 	int defId = -1;
 
 	auto solverDef = projectData()->solverDefinition();
@@ -79,15 +82,22 @@ void PreProcessorGeoDataComplexGroupDataItem::loadFromCgnsFile(const int)
 	auto elem = compCond->element();
 
 	clearGroups();
-	int ret = cg_iRIC_Read_Complex_Count(const_cast<char*>(m_condition->name().c_str()), &count);
-	if (ret != 0) {
+
+	auto gccTop = projectData()->mainfile()->cgnsFile()->ccBase()->gccTop();
+
+	if (! gccTop->groupExists(m_condition->name())) {
 		goto INITGROUPS;
 	}
 
-	for (int i = 0; i < count; ++i) {
+	auto group = gccTop->group(m_condition->name());
+
+	for (int i = 0; i < group->itemCount(); ++i) {
 		auto g = new GridComplexConditionGroup(solverDef, elem);
-		g->setNameAndNumber(m_condition->name(), i + 1);
-		g->load();
+		auto item = group->item(i + 1);
+
+		int ier = g->load(*item);
+		if (ier != IRIC_NO_ERROR) {return ier;}
+
 		if (g->isDefault()) {defId = i;}
 		m_groups.push_back(g);
 	}
@@ -101,15 +111,23 @@ INITGROUPS:
 		createDefaultGroup();
 	}
 	updateColorMap();
+
+	return IRIC_NO_ERROR;
 }
 
-void PreProcessorGeoDataComplexGroupDataItem::saveComplexGroupsToCgnsFile(const int fn)
+int PreProcessorGeoDataComplexGroupDataItem::saveComplexGroupsToCgnsFile()
 {
-	for (int i = 0; i < m_groups.size(); ++i) {
+	auto gccTop = projectData()->mainfile()->cgnsFile()->ccBase()->gccTop();
+	auto group = gccTop->group(m_condition->name());
+
+	for (int i = 0; i < static_cast<int> (m_groups.size()); ++i) {
 		auto g = m_groups.at(i);
-		g->setNameAndNumber(m_condition->name(), i + 1);
-		g->save();
+		auto item = group->item(i + 1);
+		int ier = g->save(item);
+
+		if (ier != IRIC_NO_ERROR) {return ier;}
 	}
+	return IRIC_NO_ERROR;
 }
 
 void PreProcessorGeoDataComplexGroupDataItem::addCustomMenuItems(QMenu* menu)
@@ -260,9 +278,6 @@ void PreProcessorGeoDataComplexGroupDataItem::showEditGroupDialog()
 		}
 		++ newindex;
 	}
-	for (int i = 0; i < m_groups.size(); ++i) {
-		m_groups[i]->setNameAndNumber(m_condition->name(), i + 1);
-	}
 
 	// modify the geodata values.
 	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
@@ -379,7 +394,6 @@ void PreProcessorGeoDataComplexGroupDataItem::createDefaultGroup()
 	g->setCaption("Default");
 	g->setColor(m_undefinedColor);
 	g->setIsDefault(true);
-	g->setNameAndNumber(m_condition->name(), 1);
 	m_groups.push_back(g);
 }
 

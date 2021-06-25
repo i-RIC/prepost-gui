@@ -40,7 +40,7 @@ void setupWaitDialog(WaitDialog* dialog, const std::vector<QString>& filenames)
 {
 	if (filenames.size() < 5) {return;}
 
-	dialog->setRange(0, filenames.size() - 1);
+	dialog->setRange(0, static_cast<int> (filenames.size()) - 1);
 	dialog->setProgress(0);
 	dialog->setMessage(GeoDataNetcdfGdalImporter::tr("Importing data..."));
 	dialog->showProgressBar();
@@ -91,9 +91,10 @@ bool GeoDataNetcdfGdalImporter::doInit(const QString& filename, const QString& s
 
 	if (m_mode == Mode::Single) {
 		return doInitForSingleMode(filename, selectedFilter, count, condition, item, w);
-	}	 else if (m_mode == Mode::Time) {
+	} else if (m_mode == Mode::Time) {
 		return doInitForTimeMode(filename, selectedFilter, count, condition, item, w);
 	}
+	return false;
 }
 
 bool GeoDataNetcdfGdalImporter::importData(GeoData* data, int /*index*/, QWidget* w)

@@ -18,8 +18,8 @@
 
 #include <cmath>
 
-Graph2dScatteredWindowResultDataItem::Graph2dScatteredWindowResultDataItem(const QString& title, int index, const Graph2dScatteredWindowResultSetting::Setting& setting, Graph2dWindowDataItem* parent)
-	: Graph2dScatteredWindowDataItem(title, QIcon(":/images/iconPaper.png"), parent)
+Graph2dScatteredWindowResultDataItem::Graph2dScatteredWindowResultDataItem(const QString& title, int index, const Graph2dScatteredWindowResultSetting::Setting& setting, Graph2dWindowDataItem* parent) :
+	Graph2dScatteredWindowDataItem(title, QIcon(":/images/iconPaper.png"), parent)
 {
 	Q_UNUSED(index)
 
@@ -44,6 +44,11 @@ Graph2dScatteredWindowResultDataItem::~Graph2dScatteredWindowResultDataItem()
 	delete m_curve;
 }
 
+QwtPlotCustomCurve* Graph2dScatteredWindowResultDataItem::curve() const
+{
+	return m_curve;
+}
+
 void Graph2dScatteredWindowResultDataItem::setVisible(bool visible)
 {
 	if (visible && ! m_attached) {
@@ -56,16 +61,16 @@ void Graph2dScatteredWindowResultDataItem::setVisible(bool visible)
 	}
 }
 
-void Graph2dScatteredWindowResultDataItem::update(int fn)
+void Graph2dScatteredWindowResultDataItem::update()
 {
-	updateValues(fn);
+	updateValues();
 
-	double* x, *y;
-	buildXY(m_xValues, m_yValues, &x, &y);
+	m_curve->setSamples(m_xValues.data(), m_yValues.data(), m_xValues.size());
+}
 
-	m_curve->setSamples(x, y, m_xValues.count());
-	delete x;
-	delete y;
+const Graph2dScatteredWindowResultSetting::Setting& Graph2dScatteredWindowResultDataItem::setting() const
+{
+	return m_setting;
 }
 
 void Graph2dScatteredWindowResultDataItem::setSetting(const Graph2dScatteredWindowResultSetting::Setting& s)
@@ -77,6 +82,17 @@ void Graph2dScatteredWindowResultDataItem::setSetting(const Graph2dScatteredWind
 QString Graph2dScatteredWindowResultDataItem::title() const
 {
 	return m_standardItem->text();
+}
+
+
+const std::vector<double>& Graph2dScatteredWindowResultDataItem::xValues() const
+{
+	return m_xValues;
+}
+
+const std::vector<double>& Graph2dScatteredWindowResultDataItem::yValues() const
+{
+	return m_yValues;
 }
 
 bool Graph2dScatteredWindowResultDataItem::axisNeeded(Graph2dScatteredWindowResultSetting::AxisSide as) const

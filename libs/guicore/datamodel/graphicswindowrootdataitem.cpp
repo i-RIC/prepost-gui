@@ -16,6 +16,8 @@
 #include <QVTKWidget.h>
 #include <vtkRenderWindow.h>
 
+#include <iriclib_errorcodes.h>
+
 GraphicsWindowRootDataItem::GraphicsWindowRootDataItem(QMainWindow* window, ProjectDataItem* parent) :
 	GraphicsWindowDataItem(parent),
 	m_mainWindow {window},
@@ -78,10 +80,13 @@ GraphicsWindowDataItem* GraphicsWindowRootDataItem::modelItemFromItem(QStandardI
 	return m_itemMap.value(item, nullptr);
 }
 
-void GraphicsWindowRootDataItem::loadFromCgnsFile(const int fn)
+int GraphicsWindowRootDataItem::loadFromCgnsFile()
 {
-	GraphicsWindowDataItem::loadFromCgnsFile(fn);
+	int ier = GraphicsWindowDataItem::loadFromCgnsFile();
+	if (ier != IRIC_NO_ERROR) {return ier;}
 	updateItemMap();
+
+	return IRIC_NO_ERROR;
 }
 
 void GraphicsWindowRootDataItem::closeCgnsFile()

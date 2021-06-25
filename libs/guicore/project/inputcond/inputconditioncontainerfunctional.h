@@ -67,8 +67,8 @@ public:
 
 	void removeAllValues();
 
-	int load() override;
-	int save() override;
+	int load(const iRICLib::H5CgnsConditionGroup& group) override;
+	int save(iRICLib::H5CgnsConditionGroup* group) override;
 	void clear() override;
 
 	QVariant variantValue() const override;
@@ -79,8 +79,8 @@ public:
 	bool loadDataFromCsvFile(const QString& filename);
 	bool saveDataToCsvFile(const QString& filename);
 
-	bool loadFunctionalString(const char* paramname, QString& str);
-	bool saveFunctionalString(const char* paramname, const QString& str);
+	int loadFunctionalString(const std::string& paramname, std::string* str, const iRICLib::H5CgnsConditionGroup& group);
+	int saveFunctionalString(const std::string& paramname, const std::string& str, iRICLib::H5CgnsConditionGroup* group);
 
 signals:
 	void valueChanged();

@@ -7,9 +7,10 @@
 #include <QObject>
 #include <QVector>
 
+#include <hdf5.h>
+
 class GUICOREDLL_EXPORT Structured15DGridWithCrossSectionCrossSection : public QObject
 {
-
 public:
 	struct Altitude {
 
@@ -30,8 +31,8 @@ public:
 	Structured15DGridWithCrossSectionCrossSection(QString name, Grid* grid);
 	Grid* grid() const;
 
-	void loadFromCgnsFile(int fn, int B, int Z, int index);
-	void saveToCgnsFile(int fn, int B, int Z, int index);
+	int loadFromCgnsFile(hid_t groupId, int index);
+	int saveToCgnsFile(hid_t groupId, int index);
 
 	const QString& name() const;
 	const QVector<Altitude>& altitudeInfo() const;

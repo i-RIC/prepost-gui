@@ -4,49 +4,51 @@
 
 #include <misc/stringtool.h>
 
-#include <cgnslib.h>
-#include <vector>
+#include <h5cgnsbase.h>
+#include <h5cgnsbaseiterativedata.h>
+#include <h5cgnsfile.h>
+#include <iriclib_errorcodes.h>
 
-#if CGNS_VERSION < 3100
-#define cgsize_t int
-#endif
+#include <set>
 
-PostBaseIterativeSeriesDataContainer::PostBaseIterativeSeriesDataContainer(PostSolutionInfo::Dimension dim, const QString& biName, PostSolutionInfo* parent) :
-	PostSeriesDataContainer {dim, parent},
-	m_baseIterativeName {biName}
+PostBaseIterativeSeriesDataContainer::PostBaseIterativeSeriesDataContainer(const std::string& name, PostSolutionInfo* parent) :
+	PostSeriesDataContainer {PostSolutionInfo::dim2D, parent},
+	m_baseIterativeName (name)
 {}
 
-bool PostBaseIterativeSeriesDataContainer::loadData(const int fn)
+int PostBaseIterativeSeriesDataContainer::loadData()
 {
-	int ier, nSteps;
-	char iterName[ProjectCgnsFile::BUFFERLEN];
-	m_data.clear();
+	auto solInfo = solutionInfo();
 
-	ier = cg_biter_read(fn, m_baseId, iterName, &nSteps);
-	if (ier != 0) {return false;}
-	ier = cg_goto(fn, m_baseId, iterName, 0, "end");
-	if (ier != 0) {return false;}
-	int numArrays;
-	cg_narrays(&numArrays);
-	for (int i = 1; i <= numArrays; ++i) {
-		DataType_t datatype;
-		int dimension;
-		cgsize_t dimVector[3];
-		char arrayname[ProjectCgnsFile::BUFFERLEN];
-		cg_array_info(i, arrayname, &datatype, &dimension, dimVector);
-		if (m_baseIterativeName == arrayname) {
-			// load data.
-			// it must be an array with dimension 1.
-			std::vector<double> buffer(dimVector[0], 0);
-			ier = cg_array_read_as(i, RealDouble, buffer.data());
-			if (ier != 0) {return false;}
-			for (double d : buffer) {
-				m_data.append(d);
-			}
-			return true;
+	auto biter = solInfo->cgnsFile()->ccBase()->biterData();
+	std::set<std::string> resultNames;
+	int ier = biter->getResultNames(&resultNames);
+	if (ier != 0) {return ier;}
+
+	if (resultNames.find(m_baseIterativeName) == resultNames.end()) {return IRIC_DATA_NOT_FOUND;}
+
+	iRICLib::H5Util::DataArrayValueType type;
+	ier = biter->readValueType(m_baseIterativeName, &type);
+	if (ier != 0) {return ier;}
+
+	if (type == iRICLib::H5Util::DataArrayValueType::RealDouble) {
+		std::vector<double> buffer;
+		ier = biter->readValues(m_baseIterativeName, &buffer);
+		if (ier != 0) {return ier;}
+		m_data.clear();
+		for (double v : buffer) {
+			m_data.push_back(v);
+		}
+	}	else if (type == iRICLib::H5Util::DataArrayValueType::Int) {
+		std::vector<int> buffer;
+		ier = biter->readValues(m_baseIterativeName, &buffer);
+		if (ier != 0) {return ier;}
+		m_data.clear();
+		for (int v : buffer) {
+			m_data.push_back(v);
 		}
 	}
-	return false;
+	return IRIC_NO_ERROR;
 }
 
 void PostBaseIterativeSeriesDataContainer::doLoadFromProjectMainFile(const QDomNode& /*node*/)

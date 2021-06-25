@@ -273,5 +273,9 @@ void PreProcessorModel::setupStandatdItemModel()
 
 RootDataItem* PreProcessorModel::rootDataItem() const
 {
+	if (impl->m_project == nullptr) {
+		return nullptr;
+	}
+
 	return impl->m_project->rootDataItem();
 }

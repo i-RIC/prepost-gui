@@ -27,6 +27,7 @@
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectcgnsfile.h>
+#include <guicore/project/projectmainfile.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/filesystemfunction.h>
 #include <misc/iricundostack.h>
@@ -48,15 +49,17 @@
 #include <vtkStructuredGrid.h>
 #include <vtkUnstructuredGrid.h>
 
-#include <cgnslib.h>
-#include <iriclib.h>
+#include <h5cgnsbase.h>
+#include <h5cgnsfile.h>
+#include <h5cgnszone.h>
+#include <iriclib_errorcodes.h>
 
 #include <typeinfo>
 
 PreProcessorGridAndGridCreatingConditionDataItem::PreProcessorGridAndGridCreatingConditionDataItem(const std::string& zoneName, const QString& caption, PreProcessorDataItem* p) :
 	PreProcessorGridAndGridCreatingConditionDataItemInterface {caption, p},
-	m_zoneName (zoneName),
 	m_caption {caption},
+	m_zoneName (zoneName),
 	m_gridDataItem {nullptr}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
@@ -229,28 +232,18 @@ void PreProcessorGridAndGridCreatingConditionDataItem::setupGridDataItem(Grid* g
 	qApp->processEvents();
 }
 
-void PreProcessorGridAndGridCreatingConditionDataItem::loadFromCgnsFile(const int fn)
+int PreProcessorGridAndGridCreatingConditionDataItem::loadFromCgnsFile()
 {
-	int B;
-	int nzones;
-	cg_iRIC_GotoBase(fn, &B);
-	cg_nzones(fn, B, &nzones);
-	char zonename[ProjectCgnsFile::BUFFERLEN];
-	cgsize_t size[9];
-	for (int i = 1; i <= nzones; ++i){
-		// read zone information.
-		cg_zone_read(fn, 1, i, zonename, size);
-		if (m_zoneName == zonename){
-			Grid* grid = GridCgnsEstimater::buildGrid(fn, B, i, 0);
-			if (grid == nullptr) {return;}
+	auto mainFile = dataModel()->iricMainWindow()->projectData()->mainfile();
+	auto zone = mainFile->cgnsFile()->ccBase()->zone(m_zoneName);
+	if (zone == nullptr) {return IRIC_NO_DATA;}
 
-			setupGridDataItem(grid);
-			m_gridDataItem->loadFromCgnsFile(fn);
-			delete grid;
+	Grid* grid = GridCgnsEstimater::buildGrid(*zone, nullptr);
+	if (grid == nullptr) {return IRIC_INVALID_GRIDTYPE;}
+	setupGridDataItem(grid);
+	delete grid;
 
-			break;
-		}
-	}
+	return m_gridDataItem->loadFromCgnsFile();
 }
 
 void PreProcessorGridAndGridCreatingConditionDataItem::doLoadFromProjectMainFile(const QDomNode& node)
@@ -327,38 +320,14 @@ bool PreProcessorGridAndGridCreatingConditionDataItem::importFromImporter(GridIm
 
 	// now, import grid data.
 	bool ret = true;
-	CgnsGridImporter* cgnsImpoter = dynamic_cast<CgnsGridImporter*> (importer);
+	CgnsGridImporter* cgnsImporter = dynamic_cast<CgnsGridImporter*> (importer);
 
 	auto gridItem = dynamic_cast<PreProcessorGridDataItem*> (m_gridDataItem);
 	importedGrid->setParent(gridItem);
-	if (cgnsImpoter != nullptr){
-		// CGNS importer is a little special.
-		// Boundary condition should be imported too.
-		QString tmpname;
-		int fn, B, zoneid;
-		// create temporary CGNS file.
-		bool internal_ret = cgnsImpoter->openCgnsFileForImporting(importedGrid, filename, tmpname, fn, B, zoneid, mainWindow());
-		if (! internal_ret){goto IMPORT_ERROR_BEFORE_OPEN;}
-
-		// load grid
-		internal_ret = importedGrid->loadFromCgnsFile(fn, B, zoneid);
-		if (! internal_ret){goto IMPORT_ERROR_AFTER_OPEN;}
-
-		gridItem->setGrid(importedGrid);
-		// import boundary condition
-		if (gridItem->bcGroupDataItem() != 0) {
-			gridItem->bcGroupDataItem()->clear();
-			gridItem->bcGroupDataItem()->loadFromCgnsFile(fn);
-		}
-		cgnsImpoter->closeAndRemoveTempCgnsFile(fn, tmpname);
-		goto IMPORT_SUCCEED;
-
-IMPORT_ERROR_AFTER_OPEN:
-		cgnsImpoter->closeAndRemoveTempCgnsFile(fn, tmpname);
-IMPORT_ERROR_BEFORE_OPEN:
-		ret = false;
-IMPORT_SUCCEED:
-		;
+	if (cgnsImporter != nullptr){
+		// In case of CGNS file, import both grid and boundary condition.
+		cgnsImporter->setGridDataItem(gridItem);
+		ret = cgnsImporter->import(importedGrid, filename, selectedFilter, projectData()->mainWindow());
 	} else {
 		ret = importer->import(importedGrid, filename, selectedFilter, projectData()->mainWindow());
 		if (ret) {
@@ -460,7 +429,11 @@ bool PreProcessorGridAndGridCreatingConditionDataItem::importGridFromCgnsFile(co
 		if (cgnsImporter == nullptr) {continue;}
 
 		auto filters = cgnsImporter->fileDialogFilters();
-		return importFromImporter(importer, filename, filters.first());
+		bool ok = importFromImporter(importer, filename, filters.first());
+		if (ok) {
+			dataModel()->graphicsView()->cameraFit();
+		}
+		return ok;
 	}
 	return false;
 }

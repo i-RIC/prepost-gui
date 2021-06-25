@@ -1,10 +1,14 @@
 #include "postbaseiterativestringdatacontainer.h"
 #include "../misc/cgnsutil.h"
 
-#include <cgnslib.h>
+#include <h5cgnsbase.h>
+#include <h5cgnsbaseiterativedata.h>
+#include <h5cgnsfile.h>
+#include <h5cgnsfilesolutionreader.h>
+#include <iriclib_errorcodes.h>
 
-PostBaseIterativeStringDataContainer::PostBaseIterativeStringDataContainer(int baseId, const std::string& name, PostSolutionInfo* parent) :
-	PostBaseIterativeDataContainer {baseId, name, parent}
+PostBaseIterativeStringDataContainer::PostBaseIterativeStringDataContainer(const std::string& name, PostSolutionInfo* parent) :
+	PostBaseIterativeDataContainer {name, parent}
 {}
 
 std::string PostBaseIterativeStringDataContainer::data() const
@@ -12,31 +16,10 @@ std::string PostBaseIterativeStringDataContainer::data() const
 	return m_data;
 }
 
-bool PostBaseIterativeStringDataContainer::handleCurrentStepUpdate(const int fn, const int timeStep)
+bool PostBaseIterativeStringDataContainer::handleCurrentStepUpdate(iRICLib::H5CgnsFile* file, const int timeStep)
 {
-	int ier, nArrays;
+	int ier = file->ccBase()->biterData()->readValue(timeStep + 1, name(), &m_data);
+	if (ier != IRIC_NO_ERROR) {return false;}
 
-	bool ok = getNumArrays(fn, &nArrays);
-	if (! ok) {return false;}
-
-	DataType_t dt;
-	int dim;
-	cgsize_t dimVec[3];
-	int aid = CgnsUtil::findArray(name().c_str(), &dt, &dim, dimVec, nArrays);
-	if (aid == 0) {return false;}
-
-	std::vector<char> buffer;
-	buffer.assign(dimVec[0] * dimVec[1], ' ');
-	ier = cg_array_read(aid, buffer.data());
-
-	std::vector<char> buffer2;
-	buffer2.assign(dimVec[0] + 1, '\0');
-	memcpy(buffer2.data(), buffer.data() + dimVec[0] * timeStep, dimVec[0]);
-	int j = 0;
-	while (j <= dimVec[0] && *(buffer2.data() + dimVec[0] - j) == ' ') {
-		*(buffer2.data() + dimVec[0] - j) = '\0';
-		++ j;
-	}
-	m_data = buffer2.data();
 	return true;
 }

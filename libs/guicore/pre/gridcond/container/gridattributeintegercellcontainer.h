@@ -11,9 +11,6 @@ public:
 	GridAttributeIntegerCellContainer(Grid* grid, SolverDefinitionGridAttributeT<int>* cond)
 		: GridAttributeCellContainerT<int, vtkIntArray>(grid, cond)
 	{}
-
-protected:
-	DataType_t dataType() const override {return Integer;}
 };
 
 #endif // GRIDATTRIBUTEINTEGERCELLCONTAINER_H

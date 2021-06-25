@@ -1,4 +1,3 @@
-#include "../misc/cgnslinkfollower.h"
 #include "../misc/cgnsutil.h"
 #include "../pre/grid/structured2dgrid.h"
 #include "../project/projectcgnsfile.h"
@@ -43,10 +42,14 @@
 #include <vtkTriangle.h>
 #include <vtkUnstructuredGrid.h>
 
-#include <cgnslib.h>
-#include <iriclib.h>
 #include <ogr_spatialref.h>
 #include <shapefil.h>
+
+#include <h5cgnsbase.h>
+#include <h5cgnsgridattributes.h>
+#include <h5cgnsgridcoordinates.h>
+#include <h5cgnszone.h>
+#include <iriclib_errorcodes.h>
 
 #include <sstream>
 #include <vector>
@@ -55,42 +58,6 @@
 
 // namespace for local funcitions
 namespace {
-
-void setPointIds(vtkIdList* idlist, cgsize_t* points, int num)
-{
-	for (int i = 0; i < num; ++i) {
-		int id = *(points + i) - 1;
-		idlist->SetId(i, id);
-	}
-}
-
-void insertTriangleCells(int fn, int baseId, int zoneId, int secId, vtkUnstructuredGrid* grid)
-{
-	cgsize_t numCells;
-	cg_ElementDataSize(fn, baseId, zoneId, secId, &numCells);
-	numCells = numCells / 3;
-	std::vector<cgsize_t> elements(3 * numCells, 0);
-	cg_elements_read(fn, baseId, zoneId, secId, elements.data(), NULL);
-	vtkSmartPointer<vtkTriangle> tri = vtkSmartPointer<vtkTriangle>::New();
-	for (int i = 0; i < numCells; ++i) {
-		setPointIds(tri->GetPointIds(), &(elements[i * 3]), 3);
-		grid->InsertNextCell(tri->GetCellType(), tri->GetPointIds());
-	}
-}
-
-void insertQuadCells(int fn, int baseId, int zoneId, int secId, vtkUnstructuredGrid* grid)
-{
-	cgsize_t numCells;
-	cg_ElementDataSize(fn, baseId, zoneId, secId, &numCells);
-	numCells = numCells / 4;
-	std::vector<cgsize_t> elements(4 * numCells, 0);
-	cg_elements_read(fn, baseId, zoneId, secId, elements.data(), NULL);
-	vtkSmartPointer<vtkQuad> quad = vtkSmartPointer<vtkQuad>::New();
-	for (int i = 0; i < numCells; ++i) {
-		setPointIds(quad->GetPointIds(), &(elements[i * 4]), 4);
-		grid->InsertNextCell(quad->GetCellType(), quad->GetPointIds());
-	}
-}
 
 vtkDoubleArray* buildDoubleArray(const std::string& name, vtkIdType size)
 {
@@ -103,44 +70,17 @@ vtkDoubleArray* buildDoubleArray(const std::string& name, vtkIdType size)
 	return ret;
 }
 
-bool findArrayWithName(const std::string& name, bool *found, int *arrayId, int* numDims, cgsize_t* dims)
-{
-	int ier, numArrays;
-	char tmpName[ProjectCgnsFile::BUFFERLEN];
-
-	ier = cg_narrays(&numArrays);
-	if (ier != 0) {return false;}
-
-	*found = false;
-	for (int A = 1; A <= numArrays; ++A) {
-		DataType_t dtype;
-		ier = cg_array_info(A, tmpName, &dtype, numDims, dims);
-		if (ier != 0) {return false;}
-
-		if (name == std::string(tmpName)) {
-			*arrayId = A;
-			*found = true;
-			return true;
-		}
-	}
-	return true;
-}
-
 } // namespace
 
 const QString PostZoneDataContainer::labelName {"_LABEL"};
 const QString PostZoneDataContainer::IBC {"IBC"};
 const double PostZoneDataContainer::IBCLimit {0.99};
 
-PostZoneDataContainer::PostZoneDataContainer(const std::string& baseName, const std::string& zoneName, SolverDefinitionGridType* gridtype, PostSolutionInfo* parent) :
+PostZoneDataContainer::PostZoneDataContainer(const std::string& zoneName, SolverDefinitionGridType* gridtype, PostSolutionInfo* parent) :
 	PostDataContainer {parent},
 	m_gridType {gridtype},
 	m_particleData {nullptr},
-	m_baseName (baseName),
 	m_zoneName (zoneName),
-	m_baseId {0},
-	m_zoneId {0},
-	m_cellDim {0},
 	m_loadedOnce {false}
 {}
 PostZoneDataContainer::~PostZoneDataContainer()
@@ -148,6 +88,11 @@ PostZoneDataContainer::~PostZoneDataContainer()
 	for (auto r : m_calculatedResults) {
 		delete r;
 	}
+}
+
+const std::string& PostZoneDataContainer::zoneName() const
+{
+	return m_zoneName;
 }
 
 SolverDefinitionGridType* PostZoneDataContainer::gridType() const
@@ -180,15 +125,15 @@ vtkPointSet* PostZoneDataContainer::jfacedata() const
 	return m_jfacedata;
 }
 
-vtkPointSet* PostZoneDataContainer::data(GridLocation_t gridLocation) const
+vtkPointSet* PostZoneDataContainer::data(iRICLib::H5CgnsZone::SolutionPosition position) const
 {
-	if (gridLocation == Vertex || gridLocation == CellCenter) {
+	if (position == iRICLib::H5CgnsZone::SolutionPosition::Node || position == iRICLib::H5CgnsZone::SolutionPosition::Cell) {
 		return m_data;
 	}
-	if (gridLocation == IFaceCenter) {
+	if (position == iRICLib::H5CgnsZone::SolutionPosition::IFace) {
 		return m_edgeidata;
 	}
-	if (gridLocation == JFaceCenter) {
+	if (position == iRICLib::H5CgnsZone::SolutionPosition::JFace) {
 		return m_edgejdata;
 	}
 	return nullptr;
@@ -240,89 +185,18 @@ const std::vector<int>& PostZoneDataContainer::polyDataCellIds(const std::string
 	return it->second;
 }
 
-int PostZoneDataContainer::baseId() const
-{
-	return m_baseId;
-}
-
-int PostZoneDataContainer::zoneId() const
-{
-	return m_zoneId;
-}
-
-const std::string& PostZoneDataContainer::zoneName() const
-{
-	return m_zoneName;
-}
-
 QString PostZoneDataContainer::caption() const
 {
 	return zoneName().c_str();
 }
 
-bool PostZoneDataContainer::handleCurrentStepUpdate(const int fn, const int timeStep)
+bool PostZoneDataContainer::handleCurrentStepUpdate(iRICLib::H5CgnsZone* zone, bool disableCalculatedResult)
 {
-	return handleCurrentStepUpdate(fn, timeStep, false);
-}
-
-bool PostZoneDataContainer::handleCurrentStepUpdate(const int fn, const int timeStep, bool disableCalculatedResult)
-{
-	loadFromCgnsFile(fn, timeStep, disableCalculatedResult);
+	loadFromCgnsFile(zone, disableCalculatedResult);
 	return m_loadOK;
 }
 
-bool PostZoneDataContainer::setBaseId(const int fn)
-{
-	// if m_baseID is already set, we do not have to do it again.
-	if (m_baseId != 0) {return true;}
-
-	int ier;
-	int numBases;
-	ier = cg_nbases(fn, &numBases);
-	if (ier != 0) {return false;}
-	for (int B = 1; B <= numBases; ++B) {
-		char basename[ProjectCgnsFile::BUFFERLEN];
-		int phys_dim;
-		ier = cg_base_read(fn, B, basename, &m_cellDim, &phys_dim);
-		if (ier != 0) {return false;}
-		if (m_baseName == basename) {
-			m_baseId = B;
-			return true;
-		}
-	}
-	return false;
-}
-
-bool PostZoneDataContainer::setZoneId(const int fn)
-{
-	// if m_zoneID is already set, we do not have to do it again.
-	if (m_zoneId != 0) {return true;}
-
-	int ier;
-	int numZones;
-	ier = cg_nzones(fn, m_baseId, &numZones);
-	if (ier != 0) {return false;}
-	for (int Z = 1; Z <= numZones; ++Z) {
-		char zonename[ProjectCgnsFile::BUFFERLEN];
-		ier = cg_zone_read(fn, m_baseId, Z, zonename, m_sizes);
-		if (ier != 0) {return false;}
-		if (m_zoneName == zonename) {
-			m_zoneId = Z;
-			return true;
-		}
-	}
-	return false;
-}
-
-bool PostZoneDataContainer::loadZoneSize(const int fn)
-{
-	int ier;
-	char zonename[ProjectCgnsFile::BUFFERLEN];
-	ier = cg_zone_read(fn, m_baseId, m_zoneId, zonename, m_sizes);
-	return (ier == 0);
-}
-
-bool PostZoneDataContainer::loadStructuredGrid(const int fn, const int currentStep)
+bool PostZoneDataContainer::loadStructuredGrid(iRICLib::H5CgnsZone* zone)
 {
 	if (m_data != nullptr) {
 		m_data->Initialize();
@@ -342,19 +216,24 @@ bool PostZoneDataContainer::loadStructuredGrid(const int fn, const int currentSt
 	vtkPointSet* p1 = m_data;
 	vtkStructuredGrid* grid = dynamic_cast<vtkStructuredGrid*>(p1);
 	int NVertexI = 0, NVertexJ = 0, NVertexK = 0;
-	if (m_cellDim == 1) {
-		NVertexI = m_sizes[0];
+
+	int dim = zone->base()->dimension();
+	m_size = zone->size();
+
+	if (dim == 1) {
+		NVertexI = m_size[0];
 		NVertexJ = 1;
 		NVertexK = 1;
-	} else if (m_cellDim == 2) {
-		NVertexI = m_sizes[0];
-		NVertexJ = m_sizes[1];
+	} else if (dim == 2) {
+		NVertexI = m_size[0];
+		NVertexJ = m_size[1];
 		NVertexK = 1;
-	} else if (m_cellDim == 3) {
-		NVertexI = m_sizes[0];
-		NVertexJ = m_sizes[1];
-		NVertexK = m_sizes[2];
+	} else if (dim == 3) {
+		NVertexI = m_size[0];
+		NVertexJ = m_size[1];
+		NVertexK = m_size[2];
 	}
+
 	grid->SetDimensions(NVertexI, NVertexJ, NVertexK);
 
 	vtkStructuredGrid* igrid = dynamic_cast<vtkStructuredGrid*>(m_edgeidata.Get());
@@ -369,78 +248,31 @@ bool PostZoneDataContainer::loadStructuredGrid(const int fn, const int currentSt
 	vtkStructuredGrid* jfacegrid = dynamic_cast<vtkStructuredGrid*>(m_jfacedata.Get());
 	jfacegrid->SetDimensions(NVertexI-1, NVertexJ, NVertexK);
 
+	int numPoints = NVertexI * NVertexJ * NVertexK;
+	std::vector<double> dataX(numPoints, 0), dataY(numPoints, 0), dataZ(numPoints, 0);
 
-	// Find zone iterative data.
-	char zoneItername[ProjectCgnsFile::BUFFERLEN];
+	iRICLib::H5CgnsGridCoordinates* coords = nullptr;
+
+	if (zone->gridCoordinatesForSolutionExists()) {
+		coords = zone->gridCoordinatesForSolution();
+	} else {
+		coords = zone->gridCoordinates();
+	}
+
 	int ier;
+	ier = coords->readCoordinatesX(&dataX);
+	if (ier != IRIC_NO_ERROR) {return false;}
 
-	/// only for test!
-
-	ier = cg_ziter_read(fn, m_baseId, m_zoneId, zoneItername);
-	bool iterativeCoordinates = false;
-	if (ier == 0) {
-		// zone iterative data exists.
-		// try to read the array information of GridCoordinagesPointers.
-		ier = cg_goto(fn, m_baseId, "Zone_t", m_zoneId, zoneItername, 0, "end");
-		if (ier != 0) {return false;}
-		int narrays;
-		ier = cg_narrays(&narrays);
-		if (ier != 0) {return false;}
-		for (int i = 1; i <= narrays; ++i) {
-			char arrayname[ProjectCgnsFile::BUFFERLEN];
-			DataType_t dataType;
-			int dimension;
-			cgsize_t dimVector[3];
-			cg_array_info(i, arrayname, &dataType, &dimension, dimVector);
-			if (QString(arrayname) == "GridCoordinatesPointers") {
-				// GridCoordinatesPointers found.
-				std::vector<char> pointers(dimVector[0] * dimVector[1]);
-				cg_array_read(i, pointers.data());
-				char currentCoordinates[32];
-				memcpy(currentCoordinates, &(pointers[32 * currentStep]), 32);
-				// currentCoordinates is not null terminated.
-				currentCoordinates[31] = '\0';
-				QString curCoord = QString(currentCoordinates).trimmed();
-				// now, goto the specified coordinates node.
-				ier = cg_goto(fn, m_baseId, "Zone_t", m_zoneId, iRIC::toStr(curCoord).c_str(), 0, "end");
-				iterativeCoordinates = true;
-			}
-		}
+	if (dim >= 2) {
+		ier = coords->readCoordinatesY(&dataY);
+		if (ier != IRIC_NO_ERROR) {return false;}
 	}
-	if (! iterativeCoordinates) {
-		// The grid shape used as input grid is also used as result grid.
-		ier = cg_goto(fn, m_baseId, "Zone_t", m_zoneId, "GridCoordinates", 0, "end");
-	}
-	if (ier != 0) {
-		// grid data does not exists.
-		return false;
-	}
-	// get array info in order to know what data type is used.
-	// assume that x, y and z are the same type.
-	char aName[ProjectCgnsFile::BUFFERLEN];
-	DataType_t dType;
-	int d;
-	cgsize_t dVector[3];
-	cg_array_info(1, aName, &dType, &d, dVector);
-
-	size_t numPoints = NVertexI * NVertexJ * NVertexK;
-	std::vector<double> dataX(numPoints, 0);
-	std::vector<double> dataY(numPoints, 0);
-	std::vector<double> dataZ(numPoints, 0);
-
-	ier = cg_array_read_as(1, RealDouble, dataX.data());
-	if (ier != 0) {return false;}
-
-	if (m_cellDim >= 2) {
-		ier = cg_array_read_as(2, RealDouble, dataY.data());
-		if (ier != 0) {return false;}
-	}
-	if (m_cellDim == 3) {
-		ier = cg_array_read_as(3, RealDouble, dataZ.data());
-		if (ier != 0) {return false;}
+	if (dim == 3) {
+		ier = coords->readCoordinatesZ(&dataZ);
+		if (ier != IRIC_NO_ERROR) {return false;}
 	}
 
-	vtkSmartPointer<vtkPoints> points = vtkSmartPointer<vtkPoints>::New();
+	auto points = vtkSmartPointer<vtkPoints>::New();
 	points->SetDataTypeToDouble();
 	auto offset = this->offset();
 	for (int k = 0; k < NVertexK; ++k) {
@@ -454,7 +286,6 @@ bool PostZoneDataContainer::loadStructuredGrid(const int fn, const int currentSt
 
 	grid->SetPoints(points);
 	grid->Modified();
-
 
 	//
 	//  Vertex(Ni=5, Nj=3) (m_data m_edgeidata m_edgejdata)
@@ -517,24 +348,23 @@ bool PostZoneDataContainer::loadStructuredGrid(const int fn, const int currentSt
 	//
 	//
 
-	if (m_cellDim >= 2) {
+	if (dim >= 2) {
 
 		m_edgeidata->SetPoints(points);
 		m_edgeidata->Modified();
 		m_edgejdata->SetPoints(points);
 		m_edgejdata->Modified();
 
-		vtkSmartPointer<vtkPoints> iface_points = vtkSmartPointer<vtkPoints>::New();
+		auto iface_points = vtkSmartPointer<vtkPoints>::New();
 		iface_points->SetDataTypeToDouble();
 		for (int k = 0; k < NVertexK - 1; ++k) {
 			for (int j = 0; j < (NVertexJ - 1); ++j) {
 				for (int i = 0; i < NVertexI; ++i) {
 					int idx1 = i + NVertexI * (j + NVertexJ * k);
 					int idx2 = i + NVertexI * ((j + 1) + NVertexJ * k); // j + 1
-					if (m_cellDim == 2) {
+					if (dim == 2) {
 						iface_points->InsertNextPoint((dataX[idx1] + dataX[idx2]) * 0.5 - offset.x(), (dataY[idx1] + dataY[idx2]) * 0.5 - offset.y(), dataZ[idx1]);
-					}
-					else {
+					} else {
 						int idx3 = i + NVertexI * (j + NVertexJ * (k + 1)); // k + 1
 						iface_points->InsertNextPoint((dataX[idx1] + dataX[idx2]) * 0.5 - offset.x(), (dataY[idx1] + dataY[idx2]) * 0.5 - offset.y(), (dataZ[idx1] + dataZ[idx3]) * 0.5);
 					}
@@ -542,14 +372,14 @@ bool PostZoneDataContainer::loadStructuredGrid(const int fn, const int currentSt
 			}
 		}
 
-		vtkSmartPointer<vtkPoints> jface_points = vtkSmartPointer<vtkPoints>::New();
+		auto jface_points = vtkSmartPointer<vtkPoints>::New();
 		jface_points->SetDataTypeToDouble();
 		for (int k = 0; k < NVertexK - 1; ++k) {
 			for (int j = 0; j < NVertexJ; ++j) {
 				for (int i = 0; i < (NVertexI - 1); ++i) {
 					int idx1 = i + NVertexI * (j + NVertexJ * k);
 					int idx2 = 1 + i + NVertexI * (j + NVertexJ * k); // i + 1
-					if (m_cellDim == 2) {
+					if (dim == 2) {
 						jface_points->InsertNextPoint((dataX[idx1] + dataX[idx2]) * 0.5 - offset.x(), (dataY[idx1] + dataY[idx2]) * 0.5 - offset.y(), dataZ[idx1]);
 					}
 					else {
@@ -568,7 +398,7 @@ bool PostZoneDataContainer::loadStructuredGrid(const int fn, const int currentSt
 	return true;
 }
 
-bool PostZoneDataContainer::loadUnstructuredGrid(const int fn, const int currentStep)
+bool PostZoneDataContainer::loadUnstructuredGrid(iRICLib::H5CgnsZone* zone)
 {
 	if (m_data != 0) {
 		vtkUnstructuredGrid::SafeDownCast(m_data)->Reset();
@@ -577,419 +407,89 @@ bool PostZoneDataContainer::loadUnstructuredGrid(const int fn, const int current
 		m_labelData = m_data;
 	}
 	vtkPointSet* p1 = m_data;
-	vtkUnstructuredGrid* grid = dynamic_cast<vtkUnstructuredGrid*>(p1);
-	int NVertex = m_sizes[0];
-	// Find zone iterative data.
-	char zoneItername[ProjectCgnsFile::BUFFERLEN];
+	auto grid = dynamic_cast<vtkUnstructuredGrid*>(p1);
+
+	int dim = zone->base()->dimension();
+	m_size = zone->size();
+	auto size = zone->size();
+	int NVertex = m_size[0];
+
+	std::vector<double> dataX(NVertex, 0), dataY(NVertex, 0), dataZ(NVertex, 0);
+
+	iRICLib::H5CgnsGridCoordinates* coords = nullptr;
+
+	if (zone->gridCoordinatesForSolutionExists()) {
+		coords = zone->gridCoordinatesForSolution();
+	} else {
+		coords = zone->gridCoordinates();
+	}
+
 	int ier;
-	ier = cg_ziter_read(fn, m_baseId, m_zoneId, zoneItername);
-	bool iterativeCoordinates = false;
-	if (ier == 0) {
-		// zone iterative data exists.
-		// try to read the array information of GridCoordinagesPointers.
-		ier = cg_goto(fn, m_baseId, "Zone_t", m_zoneId, zoneItername, 0, "end");
-		if (ier != 0) {return false;}
-		int narrays;
-		ier = cg_narrays(&narrays);
-		if (ier != 0) {return false;}
-		for (int i = 1; i <= narrays; ++i) {
-			char arrayname[ProjectCgnsFile::BUFFERLEN];
-			DataType_t dataType;
-			int dimension;
-			cgsize_t dimVector[3];
-			cg_array_info(i, arrayname, &dataType, &dimension, dimVector);
-			if (QString(arrayname) == "GridCoordinatesPointers") {
-				// GridCoordinatesPointers found.
-				std::vector<char> pointers(dimVector[0] * dimVector[1]);
-				cg_array_read(i, pointers.data());
-				char currentCoordinates[32];
-				memcpy(currentCoordinates, &(pointers[32 * currentStep]), 32);
-				// currentCoordinates is not null terminated.
-				currentCoordinates[31] = '\0';
-				QString curCoord = QString(currentCoordinates).trimmed();
-				// now, goto the specified coordinates node.
-				ier = cg_goto(fn, m_baseId, "Zone_t", m_zoneId, iRIC::toStr(curCoord).c_str(), 0, "end");
-				iterativeCoordinates = true;
-			}
-		}
-	}
-	if (! iterativeCoordinates) {
-		// The grid shape used as input grid is also used as result grid.
-		ier = cg_goto(fn, m_baseId, "Zone_t", m_zoneId, "GridCoordinates", 0, "end");
-	}
-	if (ier != 0) {
-		// grid data does not exists.
-		return false;
-	}
-	// get array info in order to know what data type is used.
-	// assume that x, y and z are the same type.
-	char aName[ProjectCgnsFile::BUFFERLEN];
-	DataType_t dType;
-	int d;
-	cgsize_t dVector[3];
-	cg_array_info(1, aName, &dType, &d, dVector);
+	ier = coords->readCoordinatesX(&dataX);
+	if (ier != IRIC_NO_ERROR) {return false;}
 
-	size_t numPoints = NVertex;
-	std::vector<double> dataX(numPoints, 0);
-	std::vector<double> dataY(numPoints, 0);
-	std::vector<double> dataZ(numPoints, 0);
-
-	ier = cg_array_read_as(1, RealDouble, dataX.data());
-	if (ier != 0) {return false;}
-
-	if (m_cellDim >= 2) {
-		ier = cg_array_read_as(2, RealDouble, dataY.data());
-		if (ier != 0) {return false;}
+	if (dim >= 2) {
+		ier = coords->readCoordinatesY(&dataY);
+		if (ier != IRIC_NO_ERROR) {return false;}
 	}
-	if (m_cellDim == 3) {
-		ier = cg_array_read_as(3, RealDouble, dataZ.data());
-		if (ier != 0) {return false;}
+	if (dim == 3) {
+		ier = coords->readCoordinatesZ(&dataZ);
+		if (ier != IRIC_NO_ERROR) {return false;}
 	}
 
-	vtkSmartPointer<vtkPoints> points = vtkSmartPointer<vtkPoints>::New();
+	auto points = vtkSmartPointer<vtkPoints>::New();
 	points->SetDataTypeToDouble();
-	auto offset = this->offset(); 
+	auto offset = this->offset();
 	for (int i = 0; i < NVertex; ++i) {
 		points->InsertNextPoint(dataX[i] - offset.x(), dataY[i] - offset.y(), dataZ[i]);
 	}
 	grid->SetPoints(points);
-
 	grid->Modified();
 
 	// Grid coordinates are loaded.
 	// load grid node connectivity data.
 	// Unstructured grid that consists of triangles is supported.
 
-	int numSections;
-	cg_nsections(fn, m_baseId, m_zoneId, &numSections);
-	for (int S = 1; S <= numSections; ++S) {
-		ElementType_t eType;
-		cgsize_t startIndex, endIndex;
-		int nBndry, parent_flag;
-		char buffer[32];
-		cg_section_read(fn, m_baseId, m_zoneId, S, buffer, &eType, &startIndex, &endIndex, &nBndry, &parent_flag);
-		if (eType == TRI_3) {
-			// Triangle
-			insertTriangleCells(fn, m_baseId, m_zoneId, S, grid);
-		} else if (eType == QUAD_4) {
-			// Quadrangle
-			insertQuadCells(fn, m_baseId, m_zoneId, S, grid);
+	std::vector<int> indices;
+	zone->readTriangleElements(&indices);
+
+	int numCells = static_cast<int> (indices.size()) / 3;
+	for (int i = 0; i < numCells; ++i) {
+		auto tri = vtkSmartPointer<vtkTriangle>::New();
+		auto ids = tri->GetPointIds();
+		for (int j = 0; j < 3; ++j) {
+			ids->SetId(j, indices[i * 3 + j] - 1);
 		}
+		grid->InsertNextCell(tri->GetCellType(), ids);
 	}
 	return true;
 }
 
-bool PostZoneDataContainer::findSolutionId(const int fn, const int currentStep, int* solId, const char* arrName)
+bool PostZoneDataContainer::loadUnstructuredGrid(const int /*fn*/, const int /*currentStep*/)
 {
-	int ier;
-	char zoneItername[ProjectCgnsFile::BUFFERLEN];
-	ier = cg_ziter_read(fn, m_baseId, m_zoneId, zoneItername);
-	bool ziterExist = (ier == 0);
-	bool pointerArrayFound = false;
-	int pointerArrayId = 0;
-	int numDims;
-	cgsize_t dims[9];
-
-	if (ziterExist) {
-		ier = cg_goto(fn, m_baseId, "Zone_t", m_zoneId, zoneItername, 0, "end");
-		if (ier != 0) {return false;}
-
-		// try to find array like "FlowSolutionPointers".
-		// arrName is like "FlowSolution", so we add "Pointers" to arrName;
-		std::string pointersName = arrName;
-		pointersName.append("Pointers");
-
-		bool ok;
-		ok = findArrayWithName(pointersName.c_str(), &pointerArrayFound, &pointerArrayId, &numDims, dims);
-		if (! ok) {return false;}
-	}
-
-	std::string solutionName;
-	if (! ziterExist || ! pointerArrayFound) {
-		// When pointer array is not found, try to find solution with standard name, like "FlowSolution1", "FlowSolution2", ...
-		std::ostringstream ss;
-		ss << arrName << (currentStep + 1);
-		solutionName = ss.str();
-	} else {
-		// when pointer array is found, read name from it.
-		// arrName found.
-		char* pointers;
-		// dimension = 2, dimVector = [32, NumberOfSteps].
-		pointers = new char[dims[0] * dims[1]];
-		cg_array_read(pointerArrayId, pointers);
-		char curSol[32];
-		memcpy(curSol, &(pointers[32 * currentStep]), 32);
-		// the currentSolution is not null terminated.
-		curSol[31] = '\0';
-		solutionName = iRIC::toStr(QString(curSol).trimmed());
-		delete pointers;
-	}
-
-	// now, find the solution data and set solId.
-	int nsols;
-	cg_nsols(fn, m_baseId, m_zoneId, &nsols);
-	for (int j = 1; j <= nsols; ++j) {
-		char solname[ProjectCgnsFile::BUFFERLEN];
-		GridLocation_t location;
-		ier = cg_sol_info(fn, m_baseId, m_zoneId, j, solname, &location);
-		if (ier != 0) {return false;}
-		if (solutionName == solname) {
-			*solId = j;
-			return true;
-		}
-	}
-	return false;
-}
-
-bool PostZoneDataContainer::getSolutionId(const int fn, const int currentStep, int* solId)
-{
-	return findSolutionId(fn, currentStep, solId, "FlowSolution");
-}
-
-bool PostZoneDataContainer::getCellSolutionId(const int fn, const int currentStep, int* solId)
-{
-	return findSolutionId(fn, currentStep, solId, "FlowCellSolution");
-}
-
-bool PostZoneDataContainer::getEdgeISolutionId(const int fn, const int currentStep, int* solId)
-{
-	return findSolutionId(fn, currentStep, solId, "FlowIFaceSolution");
-}
-
-bool PostZoneDataContainer::getEdgeJSolutionId(const int fn, const int currentStep, int* solId)
-{
-	return findSolutionId(fn, currentStep, solId, "FlowJFaceSolution");
-}
-
-bool PostZoneDataContainer::loadScalarData(vtkDataSetAttributes* atts, int firstAtt)
-{
-	int narrays;
-	cg_narrays(&narrays);
-	for (int i = firstAtt; i <= narrays; ++i) {
-		DataType_t datatype;
-		int dimension;
-		cgsize_t dimVector[3];
-		char arrayname[ProjectCgnsFile::BUFFERLEN];
-		cg_array_info(i, arrayname, &datatype, &dimension, dimVector);
-		QString name(arrayname);
-
-		// skip vector values.
-		QRegExp rx;
-		// For example, "VelocityX", "VelocityY", "VelocityZ"
-		rx = QRegExp("(.*)(X|Y|Z)$");
-		if (rx.indexIn(name) != -1) {continue;}
-		int datalen = 1;
-		for (int j = 0; j < dimension; ++j) {
-			datalen *= dimVector[j];
-		}
-		if (datatype == Integer) {
-			CgnsUtil::loadScalarDataT<int, vtkIntArray>(arrayname, atts, i, datalen, IBC);
-		} else if (datatype == RealSingle) {
-			CgnsUtil::loadScalarDataT<float, vtkFloatArray>(arrayname, atts, i, datalen, IBC);
-		} else if (datatype == RealDouble) {
-			CgnsUtil::loadScalarDataT<double, vtkDoubleArray>(arrayname, atts, i, datalen, IBC);
-		}
-	}
-	atts->Modified();
 	return true;
 }
 
-bool PostZoneDataContainer::loadEdgeIScalarData(vtkDataSetAttributes* atts, int firstAtt)
+bool PostZoneDataContainer::loadCellFlagData(iRICLib::H5CgnsZone *zone)
 {
-	int narrays;
-	cg_narrays(&narrays);
-	for (int i = firstAtt; i <= narrays; ++i) {
-		DataType_t datatype;
-		int dimension;
-		cgsize_t dimVector[3];
-		char arrayname[ProjectCgnsFile::BUFFERLEN];
-		cg_array_info(i, arrayname, &datatype, &dimension, dimVector);
-		QString name(arrayname);
-
-		// skip vector values.
-		QRegExp rx;
-		// For example, "VelocityX", "VelocityY", "VelocityZ"
-		rx = QRegExp("(.*)(X|Y|Z)$");
-		if (rx.indexIn(name) != -1) { continue; }
-		int datalen = 1;
-		for (int j = 0; j < dimension; ++j) {
-			datalen *= dimVector[j];
-		}
-		if (datatype == Integer) {
-			CgnsUtil::loadEdgeIScalarDataT<int, vtkIntArray>(arrayname, atts, i, datalen, dimVector, IBC);
-		} else if (datatype == RealSingle) {
-			CgnsUtil::loadEdgeIScalarDataT<float, vtkFloatArray>(arrayname, atts, i, datalen, dimVector, IBC);
-		} else if (datatype == RealDouble) {
-			CgnsUtil::loadEdgeIScalarDataT<double, vtkDoubleArray>(arrayname, atts, i, datalen, dimVector, IBC);
-		}
-	}
-	atts->Modified();
-	return true;
-}
-
-bool PostZoneDataContainer::loadEdgeJScalarData(vtkDataSetAttributes* atts, int firstAtt)
-{
-	int narrays;
-	cg_narrays(&narrays);
-	for (int i = firstAtt; i <= narrays; ++i) {
-		DataType_t datatype;
-		int dimension;
-		cgsize_t dimVector[3];
-		char arrayname[ProjectCgnsFile::BUFFERLEN];
-		cg_array_info(i, arrayname, &datatype, &dimension, dimVector);
-		QString name(arrayname);
-
-		// skip vector values.
-		QRegExp rx;
-		// For example, "VelocityX", "VelocityY", "VelocityZ"
-		rx = QRegExp("(.*)(X|Y|Z)$");
-		if (rx.indexIn(name) != -1) { continue; }
-		int datalen = 1;
-		for (int j = 0; j < dimension; ++j) {
-			datalen *= dimVector[j];
-		}
-		if (datatype == Integer) {
-			CgnsUtil::loadEdgeJScalarDataT<int, vtkIntArray>(arrayname, atts, i, datalen, dimVector, IBC);
-		} else if (datatype == RealSingle) {
-			CgnsUtil::loadEdgeJScalarDataT<float, vtkFloatArray>(arrayname, atts, i, datalen, dimVector, IBC);
-		} else if (datatype == RealDouble) {
-			CgnsUtil::loadEdgeJScalarDataT<double, vtkDoubleArray>(arrayname, atts, i, datalen, dimVector, IBC);
-		}
-	}
-	atts->Modified();
-	return true;
-}
-
-bool PostZoneDataContainer::loadVectorData(vtkDataSetAttributes* atts, int firstAtt)
-{
-	int narrays;
-	cg_narrays(&narrays);
-
-	// try to find vector attributes.
-	for (int i = firstAtt; i <= narrays; ++i) {
-		char arrayname[ProjectCgnsFile::BUFFERLEN];
-		DataType_t datatype;
-		int dimension;
-		cgsize_t dimVector[3];
-		cg_array_info(i, arrayname, &datatype, &dimension, dimVector);
-		QString name(arrayname);
-
-		QRegExp rx;
-		// find solution with name "VelocityX", for example.
-		rx = QRegExp("(.*)X$");
-		if (rx.indexIn(name) != -1) {
-			int indexX, indexY, indexZ;
-			// vector data found.
-			QString vectorName = rx.cap(1);
-
-			indexX = i;
-			indexY = 0;
-			indexZ = 0;
-			// try to find Y component. i.e. "VelocityY"
-			QString yname = vectorName;
-			yname.append("Y");
-			indexY = CgnsUtil::findArray(yname, datatype, dimension, narrays);
-			if (indexY != 0) {
-				// try to find Z component. i.e. "VelocityZ"
-				QString zname = vectorName;
-				zname.append("Z");
-				indexZ = CgnsUtil::findArray(zname, datatype, dimension, narrays);
-			}
-			// indexX, indexY, indexZ are set correctly.
-			unsigned int datalen = 1;
-			for (int j = 0; j < dimension; ++j) {
-				datalen *= dimVector[j];
-			}
-			if (datatype == Integer) {
-				CgnsUtil::loadVectorDataT<int, vtkIntArray> (vectorName, atts, indexX, indexY, indexZ, datalen);
-			} else if (datatype == RealSingle) {
-				CgnsUtil::loadVectorDataT<float, vtkFloatArray> (vectorName, atts, indexX, indexY, indexZ, datalen);
-			} else if (datatype == RealDouble) {
-				CgnsUtil::loadVectorDataT<double, vtkDoubleArray> (vectorName, atts, indexX, indexY, indexZ, datalen);
-			}
-		}
-	}
-	return true;
-}
-
-bool PostZoneDataContainer::loadGridScalarData(const int fn, const int solid)
-{
-	int ier;
-	char solname[ProjectCgnsFile::BUFFERLEN];
-	GridLocation_t location;
-	ier = cg_sol_info(fn, m_baseId, m_zoneId, solid, solname, &location);
-	if (ier != 0) {return false;}
-	ier = cg_goto(fn, m_baseId, "Zone_t", m_zoneId, "FlowSolution_t", solid, "end");
-	if (ier != 0) {return false;}
-
-	CgnsLinkFollower linkFollower;
-
-	vtkDataSetAttributes* atts;
-	if (location == Vertex) {
-		// vertex.
-		atts = data(Vertex)->GetPointData();
-	} else if (location == CellCenter) {
-		// cell center.
-		atts = data(CellCenter)->GetCellData();
-	} else if (location == IFaceCenter) {
-		// edgeI
-		atts = data(IFaceCenter)->GetPointData();  // for Post2d
-		loadEdgeIScalarData(atts);
-		atts = ifacedata()->GetPointData();        // for Charts
-	} else if (location == JFaceCenter) {
-		// edgeJ
-		atts = data(JFaceCenter)->GetPointData();  // for Post2d
-		loadEdgeJScalarData(atts);
-		atts = jfacedata()->GetPointData();        // for Charts
-	} else {
-		Q_ASSERT_X(false, "PostZoneDataContainer::loadGridScalarData", "Unhandled GridLocation");
-
-	}
-	return loadScalarData(atts);
-}
-
-bool PostZoneDataContainer::loadGridVectorData(const int fn, const int solid)
-{
-	int ier;
-	char solname[ProjectCgnsFile::BUFFERLEN];
-	GridLocation_t location;
-	ier = cg_sol_info(fn, m_baseId, m_zoneId, solid, solname, &location);
-	if (ier != 0) {return false;}
-	ier = cg_goto(fn, m_baseId, "Zone_t", m_zoneId, "FlowSolution_t", solid, "end");
-	if (ier != 0) {return false;}
-
-	CgnsLinkFollower linkFollower;
-
-	vtkDataSetAttributes* data;
-	if (location == Vertex) {
-		// vertex.
-		data = m_data->GetPointData();
-	} else {
-		// cell center.
-		data = m_data->GetCellData();
-	}
-	return loadVectorData(data);
-}
-
-bool PostZoneDataContainer::loadCellFlagData(const int fn)
-{
-	if (m_cellDim != 2) {
+	if (zone->base()->dimension() != 2) {
 		// cell flag data can be loaded only when m_cellDim == 2.
 		return true;
 	}
 
 	const QList<SolverDefinitionGridAttribute*>& conds = m_gridType->gridAttributes();
+	std::set<std::string> valueNames;
+	int ier = zone->gridAttributes()->getValueNames(&valueNames);
+
 	for (auto it = conds.begin(); it != conds.end(); ++it) {
 		const SolverDefinitionGridAttribute* cond = *it;
 		if (cond->position() != SolverDefinitionGridAttribute::CellCenter) {continue;}
 		if (! cond->isOption()) {continue;}
+
 		const SolverDefinitionGridAttributeInteger* icond = dynamic_cast<const SolverDefinitionGridAttributeInteger*>(cond);
 		if (icond == 0) {continue;}
 
-		// this is a cell flag to load.
-		int ier;
-		ier = cg_goto(fn, m_baseId, "Zone_t", m_zoneId, "GridConditions", 0, cond->name().c_str(), 0, "end");
-		if (ier != 0) {
+		if (valueNames.find(cond->name()) == valueNames.end()) {
 			// Corresponding node does not exists.
 			// Maybe user is trying to load calculation results in project file created
 			// using older solver.
@@ -1004,33 +504,19 @@ bool PostZoneDataContainer::loadCellFlagData(const int fn)
 			iarray->SetName(addInputDataPrefix(cond->name()).c_str());
 
 			m_data->GetCellData()->AddArray(iarray);
-
 			continue;
 		}
-		// Find "Value" array.
-		int narrays;
-		cg_narrays(&narrays);
-		for (int i = 1; i <= narrays; ++i) {
-			char arrayName[ProjectCgnsFile::BUFFERLEN];
-			DataType_t dt;
-			int dataDimension;
-			cgsize_t dimensionVector[3];
-			cg_array_info(i, arrayName, &dt, &dataDimension, dimensionVector);
-			if (QString(arrayName) == "Value") {
-				// We've found the array!
-				// load data.
-				vtkSmartPointer<vtkIntArray> iarray = vtkSmartPointer<vtkIntArray>::New();
-				unsigned int count = m_data->GetNumberOfCells();
-				std::vector<int> data(count);
-				ier = cg_array_read(i, data.data());
-				for (int val : data) {
-					iarray->InsertNextValue(val);
-				}
-				iarray->SetName(addInputDataPrefix(cond->name()).c_str());
 
-				m_data->GetCellData()->AddArray(iarray);
-			}
+		std::vector<int> data;
+		ier = zone->gridAttributes()->readValue(cond->name(), &data);
+		// load data.
+		vtkSmartPointer<vtkIntArray> iarray = vtkSmartPointer<vtkIntArray>::New();
+		for (int val : data) {
+			iarray->InsertNextValue(val);
 		}
+		iarray->SetName(addInputDataPrefix(cond->name()).c_str());
+
+		m_data->GetCellData()->AddArray(iarray);
 	}
 	return true;
 }
@@ -1103,72 +589,79 @@ bool PostZoneDataContainer::setupIndexData()
 	return true;
 }
 
-void PostZoneDataContainer::loadFromCgnsFile(const int fn)
+void PostZoneDataContainer::loadFromCgnsFile(iRICLib::H5CgnsZone* zone)
 {
-	int currentStep = dynamic_cast<PostSolutionInfo*>(parent())->currentStep();
-	loadFromCgnsFile(fn, currentStep, false);
+	loadFromCgnsFile(zone, false);
 }
 
-void PostZoneDataContainer::loadFromCgnsFile(const int fn, const int timeStep, bool disableCalculatedResult)
+void PostZoneDataContainer::loadFromCgnsFile(iRICLib::H5CgnsZone* zone, bool disableCalculatedResult)
 {
 	m_loadOK = true;
 
 	bool ret;
-	// set baseId.
-	ret = setBaseId(fn);
-	if (ret == false) {goto ERROR;}
-	// set zoneId.
-	ret = setZoneId(fn);
-	if (ret == false) {goto ERROR;}
-	// first, check whether structured or unstructured.
-	ZoneType_t type;
-	cg_zone_type(fn, m_baseId, m_zoneId, &type);
-	ret = loadZoneSize(fn);
-	if (ret == false) {goto ERROR;}
-	if (type == Structured) {
-		ret = loadStructuredGrid(fn, timeStep);
-		if (ret == false) {goto ERROR;}
+	if (zone->type() == iRICLib::H5CgnsZone::Type::Structured) {
+		ret = loadStructuredGrid(zone);
+		if (! ret) {goto ERROR;}
 	} else {
-		ret = loadUnstructuredGrid(fn, timeStep);
-		if (ret == false) {goto ERROR;}
-	}
-	// load solution data.
-	int solId;
-	ret = getSolutionId(fn, timeStep, &solId);
-	if (ret == false) {goto ERROR;}
-	ret = loadGridScalarData(fn, solId);
-	if (ret == false) {goto ERROR;}
-
-	// load cell-centered data.
-	int cellSolId;
-	if (getCellSolutionId(fn, timeStep, &cellSolId)) {
-		loadGridScalarData(fn, cellSolId);
+		ret = loadUnstructuredGrid(zone);
+		if (! ret) {goto ERROR;}
 	}
 
-	// load edgeI data
-	int edgeISolId;
-	if (getEdgeISolutionId(fn, timeStep, &edgeISolId)) {
-		loadGridScalarData(fn, edgeISolId);
+	int ier;
+	// node scalar data
+	if (zone->nodeSolutionExists()) {
+		ier = CgnsUtil::loadScalarData(zone->nodeSolution(), m_data->GetPointData(), iRIC::toStr(IBC));
+		if (ier != 0) {goto ERROR;}
 	}
 
-	// load jface data
-	int edgeJSolId;
-	if (getEdgeJSolutionId(fn, timeStep, &edgeJSolId)) {
-		loadGridScalarData(fn, edgeJSolId);
+	// cell scalar data
+	if (zone->cellSolutionExists()) {
+		ier = CgnsUtil::loadScalarData(zone->cellSolution(), m_data->GetCellData(), iRIC::toStr(IBC));
+		if (ier != 0) {goto ERROR;}
 	}
 
-	ret = loadGridVectorData(fn, solId);
+	// edgeI scalar data
+	if (zone->iFaceSolutionExists()) {
+		ier = CgnsUtil::loadEdgeIScalarData(zone->iFaceSolution(), m_edgeidata->GetPointData(), iRIC::toStr(IBC)); // post2d
+		if (ier != 0) {goto ERROR;}
+		ier = CgnsUtil::loadScalarData(zone->iFaceSolution(), m_ifacedata->GetPointData(), iRIC::toStr(IBC)); // for charts
+		if (ier != 0) {goto ERROR;}
+	}
+
+	// edgeJ scalar data
+	if (zone->jFaceSolutionExists()) {
+		ier = CgnsUtil::loadEdgeJScalarData(zone->jFaceSolution(), m_edgeidata->GetPointData(), iRIC::toStr(IBC)); // for post2d
+		if (ier != 0) {goto ERROR;}
+		ier = CgnsUtil::loadScalarData(zone->jFaceSolution(), m_jfacedata->GetPointData(), iRIC::toStr(IBC)); // for charts
+		if (ier != 0) {goto ERROR;}
+	}
+
+	// node vector data
+	if (zone->nodeSolutionExists()) {
+		ier = CgnsUtil::loadVectorData(zone->nodeSolution(), m_data->GetPointData());
+		if (ier != 0) {goto ERROR;}
+	}
+
+	ret = loadCellFlagData(zone);
 	if (ret == false) {goto ERROR;}
-	ret = loadCellFlagData(fn);
-	if (ret == false) {goto ERROR;}
+
 	ret = setupIndexData();
 
 	// load particles
-	ret = ParticleLoader::load(fn, m_baseId, m_zoneId, timeStep, &m_particleData, this->offset());
+	if (zone->particleSolutionExists()) {
+		ret = ParticleLoader::load(&m_particleData, zone->particleSolution(), offset());
+		if (ret == false) {goto ERROR;}
+	}
 	// load particleGroup
-	ret = ParticleGroupLoader::load(fn, m_baseId, m_zoneId, timeStep, &m_particleGroupMap, this->offset());
+	if (zone->particleGroupSolutionExists()) {
+		ret = ParticleGroupLoader::load(&m_particleGroupMap, zone->particleGroupSolution(), offset());
+		if (ret == false) {goto ERROR;}
+	}
 	// load polydata
-	ret = PolyDataLoader::load(fn, m_baseId, m_zoneId, timeStep, &m_polyDataMap, &m_polyDataCellIdsMap, this->offset());
+	if (zone->polyDataSolutionExists()) {
+		ret = PolyDataLoader::load(&m_polyDataMap, &m_polyDataCellIdsMap, zone->polyDataSolution(), offset());
+		if (ret == false) {goto ERROR;}
+	}
 
 	if (! disableCalculatedResult) {
 		addCalculatedResultArrays();
@@ -1185,10 +678,10 @@ ERROR:
 	m_data = nullptr;
 }
 
-void PostZoneDataContainer::loadIfEmpty(const int fn)
+void PostZoneDataContainer::loadIfEmpty(iRICLib::H5CgnsZone* zone)
 {
 	if (m_data != nullptr) {return;}
-	loadFromCgnsFile(fn);
+	loadFromCgnsFile(zone);
 }
 
 int PostZoneDataContainer::index(int dim[3], int i, int j, int k)
@@ -1329,12 +822,12 @@ const std::vector<PostCalculatedResult*>& PostZoneDataContainer::calculatedResul
 }
 
 
-bool PostZoneDataContainer::IBCExists(GridLocation_t gridLocation) const
+bool PostZoneDataContainer::IBCExists(iRICLib::H5CgnsZone::SolutionPosition position) const
 {
-	if (gridLocation == CellCenter) {
+	if (position == iRICLib::H5CgnsZone::SolutionPosition::Cell) {
 		return IBCCellExists();
 	} else {
-		for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(data(gridLocation)->GetPointData())) {
+		for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(data(position)->GetPointData())) {
 			if (IBC == name.c_str()) { return true; }
 		}
 	}
@@ -1460,11 +953,11 @@ vtkPolyData* PostZoneDataContainer::filteredDataStructured(vtkSmartPointer<vtkPo
 		lineLimitIMin = lineLimitI(centerJ, centerI, 0, region);
 	}
 	// test I = imax
-	data->GetPoint(nodeIndex(m_sizes[0] - 1, centerJ, 0), tmpv);
+	data->GetPoint(nodeIndex(m_size[0] - 1, centerJ, 0), tmpv);
 	if (region.pointIsInside(tmpv[0], tmpv[1])) {
-		lineLimitIMax = m_sizes[0] - 1;
+		lineLimitIMax = m_size[0] - 1;
 	} else {
-		lineLimitIMax = lineLimitI(centerJ, centerI, m_sizes[0] - 1, region);
+		lineLimitIMax = lineLimitI(centerJ, centerI, m_size[0] - 1, region);
 	}
 	// test J = 0
 	data->GetPoint(nodeIndex(centerI, 0, 0), tmpv);
@@ -1474,11 +967,11 @@ vtkPolyData* PostZoneDataContainer::filteredDataStructured(vtkSmartPointer<vtkPo
 		lineLimitJMin = lineLimitJ(centerI, centerJ, 0, region);
 	}
 	// test J = jmax
-	data->GetPoint(nodeIndex(centerI, m_sizes[1] - 1, 0), tmpv);
+	data->GetPoint(nodeIndex(centerI, m_size[1] - 1, 0), tmpv);
 	if (region.pointIsInside(tmpv[0], tmpv[1])) {
-		lineLimitJMax = m_sizes[1] - 1;
+		lineLimitJMax = m_size[1] - 1;
 	} else {
-		lineLimitJMax = lineLimitJ(centerI, centerJ, m_sizes[1] - 1, region);
+		lineLimitJMax = lineLimitJ(centerI, centerJ, m_size[1] - 1, region);
 	}
 
 	int lineLimitIMin2, lineLimitIMax2, lineLimitJMin2, lineLimitJMax2;
@@ -1494,13 +987,13 @@ vtkPolyData* PostZoneDataContainer::filteredDataStructured(vtkSmartPointer<vtkPo
 		}
 	}
 	// test I max direction
-	if (lineLimitIMax == m_sizes[0] - 1) {
-		lineLimitIMax2 = m_sizes[0] - 1;
+	if (lineLimitIMax == m_size[0] - 1) {
+		lineLimitIMax2 = m_size[0] - 1;
 	} else {
-		if (lineAtIIntersect(m_sizes[0] - 1, region)) {
-			lineLimitIMax2 = m_sizes[0] - 1;
+		if (lineAtIIntersect(m_size[0] - 1, region)) {
+			lineLimitIMax2 = m_size[0] - 1;
 		} else {
-			lineLimitIMax2 = lineLimitI2(lineLimitIMax, m_sizes[0] - 1, region);
+			lineLimitIMax2 = lineLimitI2(lineLimitIMax, m_size[0] - 1, region);
 		}
 	}
 
@@ -1515,13 +1008,13 @@ vtkPolyData* PostZoneDataContainer::filteredDataStructured(vtkSmartPointer<vtkPo
 		}
 	}
 	// test J max direction
-	if (lineLimitJMax == m_sizes[1] - 1) {
-		lineLimitJMax2 = m_sizes[1] - 1;
+	if (lineLimitJMax == m_size[1] - 1) {
+		lineLimitJMax2 = m_size[1] - 1;
 	} else {
-		if (lineAtJIntersect(m_sizes[1] - 1, region)) {
-			lineLimitJMax2 = m_sizes[1] - 1;
+		if (lineAtJIntersect(m_size[1] - 1, region)) {
+			lineLimitJMax2 = m_size[1] - 1;
 		} else {
-			lineLimitJMax2 = lineLimitI2(lineLimitJMax, m_sizes[1] - 1, region);
+			lineLimitJMax2 = lineLimitI2(lineLimitJMax, m_size[1] - 1, region);
 		}
 	}
 
@@ -1629,7 +1122,7 @@ bool PostZoneDataContainer::lineAtIIntersect(int i, const RectRegion& region) co
 	double tmpv[3];
 	m_data->GetPoint(nodeIndex(i, 0, 0), tmpv);
 	p1 = QPointF(tmpv[0], tmpv[1]);
-	for (int j = 1; j < m_sizes[1]; ++j) {
+	for (int j = 1; j < m_size[1]; ++j) {
 		m_data->GetPoint(nodeIndex(i, j, 0), tmpv);
 		p2 = QPointF(tmpv[0], tmpv[1]);
 		QLineF line(p1, p2);
@@ -1644,7 +1137,7 @@ bool PostZoneDataContainer::lineAtJIntersect(int j, const RectRegion& region) co
 	double tmpv[3];
 	m_data->GetPoint(nodeIndex(0, j, 0), tmpv);
 	p1 = QPointF(tmpv[0], tmpv[1]);
-	for (int i = 1; i < m_sizes[0]; ++i) {
+	for (int i = 1; i < m_size[0]; ++i) {
 		m_data->GetPoint(nodeIndex(i, j, 0), tmpv);
 		p2 = QPointF(tmpv[0], tmpv[1]);
 		QLineF line(p1, p2);

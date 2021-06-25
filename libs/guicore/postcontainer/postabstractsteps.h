@@ -10,10 +10,7 @@ class GUICOREDLL_EXPORT PostAbstractSteps : public ProjectDataItem
 {
 
 public:
-	/// Constructor
 	PostAbstractSteps(ProjectDataItem* parent);
-	/// Load data from CGNS file.
-	virtual void loadFromCgnsFile(const int fn) = 0;
 	/// Returns true if the current CGNS file containes more than one result step.
 	virtual bool dataExists() const = 0;
 

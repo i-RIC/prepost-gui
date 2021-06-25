@@ -3,13 +3,13 @@
 
 #include "../guicore_global.h"
 #include "postdatacontainer.h"
-#include "../pre/grid/grid.h"
 
 #include <QString>
 #include <vtkPointSet.h>
 #include <vtkPolyData.h>
 #include <vtkSmartPointer.h>
-#include <cgnslib.h>
+
+#include <h5cgnszone.h>
 
 #include <map>
 #include <string>
@@ -19,6 +19,10 @@ class SolverDefinitionGridType;
 class PostCalculatedResult;
 class PostExportSetting;
 
+namespace iRICLib {
+	class H5CgnsFlowSolution;
+} // namespace iRICLib
+
 class GUICOREDLL_EXPORT PostZoneDataContainer : public PostDataContainer
 {
 
@@ -27,14 +31,15 @@ public:
 	const static QString IBC;
 	const static double IBCLimit;
 
-	PostZoneDataContainer(const std::string& baseName, const std::string& zoneName, SolverDefinitionGridType* gridtype, PostSolutionInfo* parent);
+	PostZoneDataContainer(const std::string& zoneName, SolverDefinitionGridType* gridtype, PostSolutionInfo* parent);
 	~PostZoneDataContainer();
 
+	const std::string& zoneName() const;
 	SolverDefinitionGridType* gridType() const;
 	vtkPointSet* data() const;
 	vtkPointSet* edgeidata() const;
 	vtkPointSet* edgejdata() const;
-	vtkPointSet* data(GridLocation_t gridLocation) const;
+	vtkPointSet* data(iRICLib::H5CgnsZone::SolutionPosition position) const;
 	vtkPointSet* ifacedata() const;
 	vtkPointSet* jfacedata() const;
 	vtkPointSet* labelData() const;
@@ -49,17 +54,13 @@ public:
 	vtkPolyData* filteredEdgeIData(double xmin, double xmax, double ymin, double ymax, bool& masked) const;
 	vtkPolyData* filteredEdgeJData(double xmin, double xmax, double ymin, double ymax, bool& masked) const;
 
-	int baseId() const;
-	int zoneId() const;
-	const std::string& zoneName() const;
-	/// Caption is the region name in pre-processor.
 	/// Currently, zone name is used instead, temporally.
 	QString caption() const;
 
-	bool handleCurrentStepUpdate(const int fn, const int timeStep) override;
-	bool handleCurrentStepUpdate(const int fn, const int timeStep, bool disableCalculatedResult);
-	void loadFromCgnsFile(const int fn) override;
-	void loadFromCgnsFile(const int fn, const int timeStep, bool disableCalculatedResult = false);
+	bool handleCurrentStepUpdate(iRICLib::H5CgnsZone* zone, bool disableCalculatedResult);
+
+	void loadFromCgnsFile(iRICLib::H5CgnsZone* zone);
+	void loadFromCgnsFile(iRICLib::H5CgnsZone* zone, bool disableCalculatedResult);
 
 	bool cellScalarValueExists() const;
 	bool edgeIScalarValueExists() const;
@@ -79,12 +80,12 @@ public:
 	int jfaceIndex(int i, int j, int k) const;
 	void getjfaceIJKIndex(int index, int* i, int* j, int* k) const;
 
-	void loadIfEmpty(const int fn);
+	void loadIfEmpty(iRICLib::H5CgnsZone* zone);
 	bool IBCCellExists() const;
 	bool IBCEdgeIExists() const;
 	bool IBCEdgeJExists() const;
 	bool IBCExists() const;
-	bool IBCExists(GridLocation_t gridLocation) const;
+	bool IBCExists(iRICLib::H5CgnsZone::SolutionPosition position) const;
 
 	QString elevationName() const;
 
@@ -102,25 +103,11 @@ public:
 	static void getIJKIndex(int dim[3], int idx, int* i, int* j, int* k);
 
 private:
-	bool setBaseId(const int fn);
-	bool setZoneId(const int fn);
-	bool loadZoneSize(const int fn);
-	virtual bool loadStructuredGrid(const int fn, const int currentStep);
+	bool loadStructuredGrid(iRICLib::H5CgnsZone* zone);
+	bool loadUnstructuredGrid(iRICLib::H5CgnsZone* zone);
 	bool loadUnstructuredGrid(const int fn, const int currentStep);
-	bool findSolutionId(const int fn, const int currentStep, int* solId, const char* arrayName);
-	bool getCellSolutionId(const int fn, const int currentStep, int* solId);
-	bool getEdgeISolutionId(const int fn, const int currentStep, int* solId);
-	bool getEdgeJSolutionId(const int fn, const int currentStep, int* solId);
-	bool getSolutionId(const int fn, const int currentStep, int* solId);
-	virtual bool loadGridScalarData(const int fn, const int solid);
-	virtual bool loadGridVectorData(const int fn, const int solid);
 
-	static bool loadScalarData(vtkDataSetAttributes* atts, int firstAtt = 1);
-	static bool loadEdgeIScalarData(vtkDataSetAttributes* atts, int firstAtt = 1);
-	static bool loadEdgeJScalarData(vtkDataSetAttributes* atts, int firstAtt = 1);
-	static bool loadVectorData(vtkDataSetAttributes* atts, int firstAtt = 1);
-
-	bool loadCellFlagData(const int fn);
+	bool loadCellFlagData(iRICLib::H5CgnsZone* zone);
 	void loadStringResultData();
 	bool setupIndexData();
 
@@ -153,12 +140,9 @@ private:
 	std::map<std::string, vtkSmartPointer<vtkPolyData> > m_particleGroupMap;
 	std::map<std::string, vtkSmartPointer<vtkPolyData> > m_polyDataMap;
 	std::map<std::string, std::vector<int> > m_polyDataCellIdsMap;
-	std::string m_baseName;
+
 	std::string m_zoneName;
-	int m_baseId;
-	int m_zoneId;
-	int m_cellDim;
-	cgsize_t m_sizes[9];
+	std::vector<int> m_size;
 
 	bool m_loadOK;
 	bool m_loadedOnce;

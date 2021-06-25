@@ -30,30 +30,34 @@ public:
 
 	Graph2dHybridWindowResultCopyDataItem(Graph2dWindowDataItem* parent);
 	~Graph2dHybridWindowResultCopyDataItem();
+
 	void setTitle(const QString& title);
 	void setIndex(int index);
-	void setData(const QVector<double>& xvals, const QVector<double>& yvals);
+	void setData(const std::vector<double>& xvals, const std::vector<double>& yvals);
+
 	void setSetting(const Graph2dHybridWindowResultSetting::Setting& setting);
-	const Graph2dHybridWindowResultSetting::Setting& setting() const {return m_setting;}
-	QwtPlotCustomCurve* curve() const {return m_curve;}
+	const Graph2dHybridWindowResultSetting::Setting& setting() const;
+
+	QwtPlotCustomCurve* curve() const;
 	void update();
 	void setId(IDType idtype, const QStringList args);
 	QString id() const;
-	const QVector<double>& xValues() const {return m_xValues;}
-	const QVector<double>& yValues() const {return m_yValues;}
+	const std::vector<double>& xValues() const;
+	const std::vector<double>& yValues() const;
 	QString title() const;
 	bool axisNeeded(Graph2dHybridWindowResultSetting::AxisSide as) const;
 
 protected:
-	void doLoadFromProjectMainFile(const QDomNode& node) override;
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	void setVisible(bool visible) override;
 	QwtPlotCustomCurve* m_curve;
 	QwtSeriesData<double>* m_data;
 
 private:
-	QVector<double> m_xValues;
-	QVector<double> m_yValues;
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+
+	std::vector<double> m_xValues;
+	std::vector<double> m_yValues;
 	bool m_attached;
 	int m_index;
 	IDType m_idType;

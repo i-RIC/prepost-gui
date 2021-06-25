@@ -12,7 +12,6 @@
 #include "graph2dscatteredwindowview.h"
 
 #include <guicore/base/iricmainwindowinterface.h>
-#include <guicore/misc/cgnsfileopener.h>
 #include <guicore/postcontainer/posttimesteps.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
@@ -30,12 +29,10 @@
 #include <qwt_plot_marker.h>
 #include <qwt_scale_engine.h>
 
-#include <cgnslib.h>
-
 #include <stdexcept>
 
-Graph2dScatteredWindowDataModel::Graph2dScatteredWindowDataModel(Graph2dScatteredWindow* w, ProjectDataItem* parent)
-	: Graph2dWindowDataModel(w, parent)
+Graph2dScatteredWindowDataModel::Graph2dScatteredWindowDataModel(Graph2dScatteredWindow* w, ProjectDataItem* parent) :
+	Graph2dWindowDataModel(w, parent)
 {
 	init();
 }
@@ -59,7 +56,7 @@ void Graph2dScatteredWindowDataModel::init()
 
 	PostSolutionInfo* post = postSolutionInfo();
 	connect(post, SIGNAL(currentStepUpdated()), this, SLOT(updateTime()));
-	connect(post, SIGNAL(cgnsStepsUpdated(int)), this, SLOT(updateData(int)));
+	connect(post, SIGNAL(cgnsStepsUpdated()), this, SLOT(updateData()));
 }
 
 Graph2dScatteredWindowView* Graph2dScatteredWindowDataModel::view() const
@@ -316,7 +313,6 @@ void Graph2dScatteredWindowDataModel::getYAxisValueRange(Graph2dWindowDataModel:
 void Graph2dScatteredWindowDataModel::updateTime()
 {
 	updateData();
-	updateTitle();
 	view()->replot();
 }
 
@@ -346,34 +342,9 @@ void Graph2dScatteredWindowDataModel::applySettings()
 	// update axis setting.
 	applyAxisSetting();
 	updateData();
-	// update title setting.
-	updateTitle();
 }
 
 void Graph2dScatteredWindowDataModel::updateData()
-{
-	int fn;
-	CgnsFileOpener* opener = nullptr;
-	fn = postSolutionInfo()->fileId();
-	if (fn == 0) {
-		// file not opened.
-		try {
-			opener = new CgnsFileOpener(iRIC::toStr(currentCgnsFileName()), CG_MODE_READ);
-			fn = opener->fileId();
-		} catch (const std::runtime_error&) {
-			return;
-		}
-	}
-
-	updateData(fn);
-
-	delete opener;
-
-	updateTitle();
-}
-
-
-void Graph2dScatteredWindowDataModel::updateData(int fn)
 {
 	static bool updating = false;
 	if (updating == true) {
@@ -381,8 +352,10 @@ void Graph2dScatteredWindowDataModel::updateData(int fn)
 	}
 	updating = true;
 	Graph2dScatteredWindowRootDataItem* root = dynamic_cast<Graph2dScatteredWindowRootDataItem*>(m_rootDataItem);
-	root->updateData(fn);
+	root->updateData();
 	updating = false;
+
+	updateTitle();
 }
 
 void Graph2dScatteredWindowDataModel::doLoadFromProjectMainFile(const QDomNode& node)

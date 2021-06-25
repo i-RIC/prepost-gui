@@ -52,15 +52,21 @@ QStandardItemModel* GraphicsWindowDataModel::itemModel() const
 	return m_itemModel;
 }
 
-void GraphicsWindowDataModel::loadFromCgnsFile(const int fn)
+int GraphicsWindowDataModel::loadFromCgnsFile()
 {
-	m_rootDataItem->loadFromCgnsFile(fn);
+	int ier = m_rootDataItem->loadFromCgnsFile();
 	graphicsView()->cameraFit();
+	return ier;
 }
 
-void GraphicsWindowDataModel::saveToCgnsFile(const int fn)
+int GraphicsWindowDataModel::saveToCgnsFile()
 {
-	m_rootDataItem->saveToCgnsFile(fn);
+	return m_rootDataItem->saveToCgnsFile();
+}
+
+int GraphicsWindowDataModel::updateCgnsFileOtherThanGrids()
+{
+	return m_rootDataItem->updateCgnsFileOtherThanGrids();
 }
 
 void GraphicsWindowDataModel::closeCgnsFile()

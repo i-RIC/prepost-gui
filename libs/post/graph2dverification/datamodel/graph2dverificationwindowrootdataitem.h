@@ -16,7 +16,7 @@ public:
 	~Graph2dVerificationWindowRootDataItem();
 
 	void setupStandardModel(QStandardItemModel* model);
-	void updateData(int fn);
+	void updateData();
 
 signals:
 	void standardModelSetuped();

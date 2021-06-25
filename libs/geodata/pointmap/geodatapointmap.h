@@ -142,6 +142,7 @@ private:
 	void updateBreakLinesOnDelete(QVector<vtkIdType>& deletedPoints);
 	void updateBreakLinesOnInsert(QVector<vtkIdType>& deletedPoints);
 	bool pointsUsedForBreakLines(const QVector<vtkIdType>& points);
+	iRICLib::H5CgnsGeographicDataGroup::Type iRICLibType() const override;
 
 	static void TSplineSTL(std::vector<double>& x, std::vector<double>& y, int n,
 										std::vector<double>& xout, std::vector<double>& yout, int iout, float sigma,

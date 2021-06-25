@@ -33,8 +33,7 @@ public:
 	Post3dWindow(QWidget* parent, int index, Post3dWindowProjectDataItem* pdi);
 	/// Destructor
 	~Post3dWindow();
-	/// Informed that CGNS file is switched.
-	void handleCgnsSwitch() {}
+
 	/// switch to the new index.
 	void changeIndex(uint /*newindex*/) {}
 	QPixmap snapshot() override;

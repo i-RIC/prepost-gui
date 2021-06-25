@@ -58,9 +58,6 @@
 #include <vtkTriangle.h>
 #include <vtkVertex.h>
 
-#include <cgnslib.h>
-#include <iriclib.h>
-
 Post2dWindowZoneDataItem::Post2dWindowZoneDataItem(const std::string& zoneName, int zoneNumber, Post2dWindowDataItem* parent) :
 	Post2dWindowDataItem {zoneName.c_str(), QIcon(":/libs/guibase/images/iconFolder.png"), parent},
 	m_shapeDataItem {nullptr},
@@ -346,13 +343,13 @@ vtkPolyData* Post2dWindowZoneDataItem::filteredData() const
 	return m_filteredData;
 }
 
-vtkPolyData* Post2dWindowZoneDataItem::filteredData(GridLocation_t location) const
+vtkPolyData* Post2dWindowZoneDataItem::filteredData(iRICLib::H5CgnsZone::SolutionPosition position) const
 {
-	switch (location) {
-	case IFaceCenter:
+	switch (position) {
+	case iRICLib::H5CgnsZone::SolutionPosition::IFace:
 		return m_filteredEdgeIData;
 		break;
-	case JFaceCenter:
+	case iRICLib::H5CgnsZone::SolutionPosition::JFace:
 		return m_filteredEdgeJData;
 		break;
 	}
@@ -681,7 +678,7 @@ void Post2dWindowZoneDataItem::clearNodeResultAttributeBrowser()
 	m_attributeBrowserFixed = false;
 }
 
-void Post2dWindowZoneDataItem::fixNodeResultAttributeBrowser(const QPoint& p, VTKGraphicsView* v, GridLocation_t gridLocation)
+void Post2dWindowZoneDataItem::fixNodeResultAttributeBrowser(const QPoint& p, VTKGraphicsView* v, iRICLib::H5CgnsZone::SolutionPosition position)
 {
 	Post2dWindow* w = dynamic_cast<Post2dWindow*>(mainWindow());
 	PropertyBrowser* pb = w->propertyBrowser();
@@ -695,27 +692,27 @@ void Post2dWindowZoneDataItem::fixNodeResultAttributeBrowser(const QPoint& p, VT
 		return;
 	}
 	double vertex[3];
-	dataContainer()->data(gridLocation)->GetPoint(vid, vertex);
+	dataContainer()->data(position)->GetPoint(vid, vertex);
 
-	updateNodeResultAttributeBrowser(vid, vertex[0], vertex[1], v, gridLocation);
+	updateNodeResultAttributeBrowser(vid, vertex[0], vertex[1], v, position);
 }
 
 void Post2dWindowZoneDataItem::fixNodeResultAttributeBrowser(const QPoint& p, VTKGraphicsView* v)
 {
-	fixNodeResultAttributeBrowser(p, v, Vertex);
+	fixNodeResultAttributeBrowser(p, v, iRICLib::H5CgnsZone::SolutionPosition::Node);
 }
 
 void Post2dWindowZoneDataItem::fixEdgeIResultAttributeBrowser(const QPoint& p, VTKGraphicsView* v)
 {
-	fixNodeResultAttributeBrowser(p, v, IFaceCenter);
+	fixNodeResultAttributeBrowser(p, v, iRICLib::H5CgnsZone::SolutionPosition::IFace);
 }
 
 void Post2dWindowZoneDataItem::fixEdgeJResultAttributeBrowser(const QPoint& p, VTKGraphicsView* v)
 {
-	fixNodeResultAttributeBrowser(p, v, JFaceCenter);
+	fixNodeResultAttributeBrowser(p, v, iRICLib::H5CgnsZone::SolutionPosition::JFace);
 }
 
-void Post2dWindowZoneDataItem::updateNodeResultAttributeBrowser(const QPoint& p, VTKGraphicsView* v, GridLocation_t gridLocation)
+void Post2dWindowZoneDataItem::updateNodeResultAttributeBrowser(const QPoint& p, VTKGraphicsView* v, iRICLib::H5CgnsZone::SolutionPosition position)
 {
 	Post2dWindow* w = dynamic_cast<Post2dWindow*>(mainWindow());
 	PropertyBrowser* pb = w->propertyBrowser();
@@ -729,24 +726,24 @@ void Post2dWindowZoneDataItem::updateNodeResultAttributeBrowser(const QPoint& p,
 		return;
 	}
 	double vertex[3];
-	dataContainer()->data(gridLocation)->GetPoint(vid, vertex);
+	dataContainer()->data(position)->GetPoint(vid, vertex);
 
-	updateNodeResultAttributeBrowser(vid, vertex[0], vertex[1], v, gridLocation);
+	updateNodeResultAttributeBrowser(vid, vertex[0], vertex[1], v, position);
 }
 
 void Post2dWindowZoneDataItem::updateNodeResultAttributeBrowser(const QPoint& p, VTKGraphicsView* v)
 {
-	updateNodeResultAttributeBrowser(p, v, Vertex);
+	updateNodeResultAttributeBrowser(p, v, iRICLib::H5CgnsZone::SolutionPosition::Node);
 }
 
 void Post2dWindowZoneDataItem::updateEdgeIResultAttributeBrowser(const QPoint& p, VTKGraphicsView* v)
 {
-	updateNodeResultAttributeBrowser(p, v, IFaceCenter);
+	updateNodeResultAttributeBrowser(p, v, iRICLib::H5CgnsZone::SolutionPosition::IFace);
 }
 
 void Post2dWindowZoneDataItem::updateEdgeJResultAttributeBrowser(const QPoint& p, VTKGraphicsView* v)
 {
-	updateNodeResultAttributeBrowser(p, v, JFaceCenter);
+	updateNodeResultAttributeBrowser(p, v, iRICLib::H5CgnsZone::SolutionPosition::JFace);
 }
 
 void Post2dWindowZoneDataItem::initCellResultAttributeBrowser()
@@ -832,14 +829,15 @@ vtkIdType Post2dWindowZoneDataItem::findVertex(const QPoint& p, VTKGraphicsView*
 	return vid;
 }
 
-void Post2dWindowZoneDataItem::updateNodeResultAttributeBrowser(vtkIdType vid, double x, double y, VTKGraphicsView* /*v*/, GridLocation_t gridLocation)
+void Post2dWindowZoneDataItem::updateNodeResultAttributeBrowser(vtkIdType vid, double x, double y, VTKGraphicsView* /*v*/, iRICLib::H5CgnsZone::SolutionPosition position)
 {
 	PostZoneDataContainer* cont = dataContainer();
 	QList<PropertyBrowserAttribute> atts;
 
-	int count = cont->data(gridLocation)->GetPointData()->GetNumberOfArrays();
+	auto ps = cont->data(position);
+	int count = ps->GetPointData()->GetNumberOfArrays();
 	for (int i = 0; i < count; ++i) {
-		vtkAbstractArray* arr = cont->data(gridLocation)->GetPointData()->GetAbstractArray(i);
+		vtkAbstractArray* arr = ps->GetPointData()->GetAbstractArray(i);
 		vtkDataArray* da = dynamic_cast<vtkDataArray*>(arr);
 		if (da == nullptr) {continue;}
 		if (da->GetNumberOfComponents() == 1) {
@@ -862,11 +860,11 @@ void Post2dWindowZoneDataItem::updateNodeResultAttributeBrowser(vtkIdType vid, d
 			atts.append(att);
 		}
 	}
-	vtkStructuredGrid* sgrid = dynamic_cast<vtkStructuredGrid*>(cont->data(gridLocation));
-	vtkUnstructuredGrid* usgrid = dynamic_cast<vtkUnstructuredGrid*>(cont->data(gridLocation));
+	auto sgrid = dynamic_cast<vtkStructuredGrid*>(ps);
+	auto usgrid = dynamic_cast<vtkUnstructuredGrid*>(ps);
 
-	Post2dWindow* w = dynamic_cast<Post2dWindow*>(mainWindow());
-	PropertyBrowser* pb = w->propertyBrowser();
+	auto w = dynamic_cast<Post2dWindow*>(mainWindow());
+	auto pb = w->propertyBrowser();
 	if (sgrid != nullptr) {
 		int i, j, k;
 		cont->getNodeIJKIndex(vid, &i, &j, &k);
@@ -878,7 +876,7 @@ void Post2dWindowZoneDataItem::updateNodeResultAttributeBrowser(vtkIdType vid, d
 
 void Post2dWindowZoneDataItem::updateNodeResultAttributeBrowser(vtkIdType vid, double x, double y, VTKGraphicsView* v)
 {
-	updateNodeResultAttributeBrowser(vid, x, y, v, Vertex);
+	updateNodeResultAttributeBrowser(vid, x, y, v, iRICLib::H5CgnsZone::SolutionPosition::Node);
 }
 
 void Post2dWindowZoneDataItem::updateCellResultAttributeBrowser(vtkIdType cellid, VTKGraphicsView*)

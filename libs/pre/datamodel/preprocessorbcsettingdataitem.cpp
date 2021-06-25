@@ -71,14 +71,6 @@ PreProcessorBCSettingDataItem::~PreProcessorBCSettingDataItem()
 	delete m_rightClickingMenu;
 }
 
-void PreProcessorBCSettingDataItem::loadFromCgnsFile(const int /*fn*/)
-{
-}
-
-void PreProcessorBCSettingDataItem::saveToCgnsFile(const int /*fn*/)
-{
-}
-
 void PreProcessorBCSettingDataItem::doLoadFromProjectMainFile(const QDomNode& /*node*/)
 {
 }

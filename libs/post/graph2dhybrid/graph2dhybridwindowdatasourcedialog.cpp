@@ -387,7 +387,7 @@ void Graph2dHybridWindowDataSourceDialog::updateLists(QListWidget* listWidget)
 	}
 	// update listWidget
 	listWidget->clear();
-	GridLocation_t loc = m_setting.targetDataTypeInfo()->gridLocation;
+	auto loc = m_setting.targetDataTypeInfo()->gridLocation;
 	Q_ASSERT(m_setting.targetDataTypeInfo()->dataNamesMap.find(loc) != m_setting.targetDataTypeInfo()->dataNamesMap.end());
 	QStringList names = m_setting.targetDataTypeInfo()->dataNamesMap[loc];
 	for (auto name : names) {
@@ -697,7 +697,7 @@ void Graph2dHybridWindowDataSourceDialog::setupTargetDataTypeInfo()
 		// point data selected
 		QList<Graph2dHybridWindowResultSetting::DataTypeInfo*> list = m[Graph2dHybridWindowResultSetting::dimBase];
 		Graph2dHybridWindowResultSetting::DataTypeInfo* type = list[ui->pointDataComboBox->currentIndex()];
-		Q_ASSERT(type->gridLocation == GridLocationNull);
+		Q_ASSERT(type->gridLocation == iRICLib::H5CgnsZone::SolutionPosition::Null);
 		m_setting.setTargetDataTypeInfo(type);
 		dataListWidget = ui->pointDataListWidget;
 	}
@@ -851,10 +851,10 @@ void Graph2dHybridWindowDataSourceDialog::importCsv()
 	QTextStream csvStream(&csvFile);
 
 	QList<QString> titles = iRIC::parseCSVLine(csvStream.readLine());
-	QList<QVector<double> > values;
-	QVector<double> emptyVec;
+	QList<std::vector<double> > values;
+	std::vector<double> emptyVec;
 	for (int i = 0; i < titles.count(); ++i) {
-		values.append(emptyVec);
+		values.push_back(emptyVec);
 	}
 	while (! csvStream.atEnd()) {
 		QString line = csvStream.readLine();
@@ -863,7 +863,7 @@ void Graph2dHybridWindowDataSourceDialog::importCsv()
 			QString f = frags[i].trimmed();
 			if (! f.isEmpty()) {
 				double val = f.toDouble();
-				values[i].append(val);
+				values[i].push_back(val);
 			}
 		}
 	}
@@ -873,8 +873,8 @@ void Graph2dHybridWindowDataSourceDialog::importCsv()
 		QMessageBox::critical(this, tr("Error"), tr("The title of the first column has to be \"X\""));
 		return;
 	}
-	QVector<double> xVals;
-	QVector<double> yVals;
+	std::vector<double> xVals;
+	std::vector<double> yVals;
 
 	QFileInfo finfo(fname);
 	QString shortname = finfo.fileName();
@@ -886,7 +886,7 @@ void Graph2dHybridWindowDataSourceDialog::importCsv()
 			continue;
 		}
 		yVals = values.at(i);
-		if (xVals.count() != yVals.count()) {
+		if (xVals.size() != yVals.size()) {
 			// skip this data.
 			QMessageBox::warning(this, tr("Warning"), tr("The number of data of %1 and %2 mismatch. Data %1 is skipped."));
 			continue;

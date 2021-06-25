@@ -12,12 +12,16 @@ class QVariant;
 
 class SolverDefinitionGridAttributeDimension;
 
+namespace iRICLib {
+	class H5CgnsGridAttributes;
+} // namespace iRICLib
+
 class GUICOREDLL_EXPORT GridAttributeDimensionContainer : public GridAttributeBaseObject
 {
 	Q_OBJECT
 public:
 	GridAttributeDimensionContainer(SolverDefinitionGridAttributeDimension* def);
-	virtual ~GridAttributeDimensionContainer();
+	~GridAttributeDimensionContainer() override;
 
 	// basic properties
 	std::string name() const;
@@ -38,8 +42,8 @@ public:
 	// I/O functions
 	virtual bool loadFromExternalFile(const QString& filename) = 0;
 	virtual bool saveToExternalFile(const QString& filename) = 0;
-	virtual bool loadFromCgnsFile(int fn, int B, int Z) = 0;
-	virtual bool saveToCgnsFile(int fn, int B, int Z) = 0;
+	virtual int loadFromCgnsFile(const iRICLib::H5CgnsGridAttributes& atts) = 0;
+	virtual int saveToCgnsFile(iRICLib::H5CgnsGridAttributes* atts) = 0;
 
 public slots:
 	void setCurrentIndex(int index, bool noDraw = false);

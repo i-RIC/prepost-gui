@@ -16,8 +16,8 @@
 #include <QMessageBox>
 #include <QPushButton>
 
-#include <cgnslib.h>
-#include <iriclib.h>
+#include <h5cgnsbase.h>
+#include <h5cgnsfile.h>
 
 GridCreatingConditionExternalProgramSettingDialog::GridCreatingConditionExternalProgramSettingDialog(SolverDefinition* def, const QLocale& locale, iRICMainWindowInterface* /*mainW*/, QWidget* parent) :
 	QDialog(parent),
@@ -40,8 +40,9 @@ GridCreatingConditionExternalProgramSettingDialog::GridCreatingConditionExternal
 GridCreatingConditionExternalProgramSettingDialog::~GridCreatingConditionExternalProgramSettingDialog()
 {
 	delete ui;
-	m_containerSet->clear();;
+	m_containerSet->clear();
 	delete m_containerSet;
+
 	m_widgetSet->clear();
 	delete m_widgetSet;
 }
@@ -77,42 +78,28 @@ void GridCreatingConditionExternalProgramSettingDialog::setup(const SolverDefini
 
 bool GridCreatingConditionExternalProgramSettingDialog::load()
 {
-	int fn;
-	int ret;
-	ret = cg_open(iRIC::toStr(m_filename).c_str(), CG_MODE_READ, &fn);
-	if (ret != 0) {return false;}
-	cg_iRIC_Init(fn);
-	if (ret != 0) {goto ERROR;}
-	ret = cg_iRIC_GotoCC(fn);
-	if (ret != 0) {goto ERROR;}
-	m_containerSet->load();
-	// select the first page.
-	ui->m_pageList->selectFirstItem();
-	cg_close(fn);
-	return true;
+	try {
+		iRICLib::H5CgnsFile file(iRIC::toStr(m_filename), iRICLib::H5CgnsFile::Mode::OpenReadOnly);
+		auto ccGroup = file.ccBase()->ccGroup();
+		m_containerSet->load(*ccGroup);
 
-ERROR:
-	cg_close(fn);
-	return false;
+		// select the first page.
+		ui->m_pageList->selectFirstItem();
+		return true;
+	} catch (...) {
+		return false;
+	}
 }
 
 bool GridCreatingConditionExternalProgramSettingDialog::save()
 {
-	int fn;
-	int ret;
-	ret = cg_open(iRIC::toStr(m_filename).c_str(), CG_MODE_MODIFY, &fn);
-	if (ret != 0) {return false;}
-	cg_iRIC_Init(fn);
-	if (ret != 0) {goto ERROR;}
-	ret = cg_iRIC_GotoCC(fn);
-	if (ret != 0) {goto ERROR;}
-	m_containerSet->save();
-	cg_close(fn);
-	return true;
-
-ERROR:
-	cg_close(fn);
-	return false;
+	try {
+		iRICLib::H5CgnsFile file(iRIC::toStr(m_filename), iRICLib::H5CgnsFile::Mode::Create);
+		m_containerSet->save(file.ccBase()->ccGroup());
+		return true;
+	}  catch (...) {
+		return false;
+	}
 }
 
 void GridCreatingConditionExternalProgramSettingDialog::handleButtonClick(QAbstractButton* button)
@@ -137,7 +124,13 @@ void GridCreatingConditionExternalProgramSettingDialog::accept()
 	if (! ok) {
 		QMessageBox::critical(parentWidget(), tr("Error"), tr("Error occured while saving."));
 	}
+
 	QDialog::accept();
+}
+
+void GridCreatingConditionExternalProgramSettingDialog::setFilename(const QString& filename)
+{
+	m_filename = filename;
 }
 
 QString GridCreatingConditionExternalProgramSettingDialog::errorMessage(int errorcode) const

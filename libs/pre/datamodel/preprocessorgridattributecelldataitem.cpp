@@ -49,6 +49,8 @@
 #include <vtkCollectionIterator.h>
 #include <vtkRenderer.h>
 
+#include <iriclib_errorcodes.h>
+
 #include <string>
 
 PreProcessorGridAttributeCellDataItem::PreProcessorGridAttributeCellDataItem(SolverDefinitionGridAttribute* cond, GraphicsWindowDataItem* parent) :
@@ -129,13 +131,16 @@ void PreProcessorGridAttributeCellDataItem::doSaveToProjectMainFile(QXmlStreamWr
 	}
 }
 
-void PreProcessorGridAttributeCellDataItem::loadFromCgnsFile(const int /*fn*/)
+int PreProcessorGridAttributeCellDataItem::loadFromCgnsFile()
 {
 	PreProcessorGridDataItem* tmpparent = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
 	Grid* g = tmpparent->grid();
-	if (g == nullptr) {return;}
+	if (g == nullptr) {return IRIC_NO_ERROR;}
+
 	GridAttributeContainer* cont = g->gridAttribute(m_condition->name());
 	cont->setCustomModified(m_isCustomModified);
+
+	return IRIC_NO_ERROR;
 }
 
 void PreProcessorGridAttributeCellDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)

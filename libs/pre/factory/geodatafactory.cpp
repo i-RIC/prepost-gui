@@ -9,6 +9,7 @@
 #include <geodata/pointgroup/geodatapointgroupintegercreator.h>
 #include <geodata/pointgroup/geodatapointgrouprealcreator.h>
 #include <geodata/pointmap/geodatapointmaprealcreator.h>
+#include <geodata/pointmap/geodatapointmaptincreator.h>
 #include <geodata/polygon/geodatapolygonintegercreator.h>
 #include <geodata/polygon/geodatapolygonrealcreator.h>
 #include <geodata/polygongroup/geodatapolygongroupintegercreator.h>
@@ -50,6 +51,8 @@ GeoDataFactory::GeoDataFactory() :
 	m_creators.push_back(new GeoDataPointRealCreator());
 	m_creators.push_back(new GeoDataPointGroupIntegerCreator());
 	m_creators.push_back(new GeoDataPointGroupRealCreator());
+
+	m_creators.push_back(new GeoDataPointmapTINCreator());
 }
 
 GeoDataFactory& GeoDataFactory::instance()

@@ -23,19 +23,28 @@ class GridAttributeEditCommand;
 
 class vtkPolyData;
 
+namespace iRICLib {
+	class H5CgnsBase;
+	class H5CgnsZone;
+} // namespace iRICLib
+
 class PreProcessorGridDataItem : public PreProcessorGridDataItemInterface
 {
 	Q_OBJECT
 
 public:
-	/// Constructor
 	PreProcessorGridDataItem(PreProcessorDataItem* parent);
 	~PreProcessorGridDataItem();
+
 	Grid* grid() const override;
 	bool setGrid(Grid* newGrid) override;
-	void loadFromCgnsFile(const int fn) override;
-	void saveToCgnsFile(const int fn) override;
+
+	int loadFromCgnsFile() override;
+	int loadFromCgnsFile(const iRICLib::H5CgnsZone& zone);
+	int saveToCgnsFile() override;
+	int saveToCgnsFile(iRICLib::H5CgnsBase* base, const std::string& zoneName);
 	void closeCgnsFile() override;
+
 	void addCustomMenuItems(QMenu* menu) override;
 
 	// Standard mouse event handlers

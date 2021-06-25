@@ -14,6 +14,7 @@
 #include "../startpage/startpagedialog.h"
 #include "iricmainwindow.h"
 #include "private/iricmainwindow_calculatedresultmanager.h"
+#include "private/iricmainwindow_modelessdialogmodechanger.h"
 #include "private/iricmainwindow_snapshotsaver.h"
 
 #include <cs/coordinatesystembuilder.h>
@@ -35,7 +36,6 @@
 #include <guicore/postcontainer/postdataexportdialog.h>
 #include <guicore/postcontainer/postsolutioninfo.h>
 #include <guicore/postcontainer/posttimesteps.h>
-#include <guicore/project/cgnsfilelist.h>
 #include <guicore/project/projectcgnsfile.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
@@ -92,6 +92,8 @@
 #include <QThread>
 #include <QTime>
 #include <QXmlStreamWriter>
+
+#include <iriclib_errorcodes.h>
 
 const int iRICMainWindow::MAX_RECENT_PROJECTS = 10;
 const int iRICMainWindow::MAX_RECENT_SOLVERS = 10;
@@ -263,10 +265,9 @@ void iRICMainWindow::newProject(SolverDefinitionAbstract* solver)
 	}
 
 	m_mousePositionWidget->setProjectData(m_projectData);
-	m_projectData->mainfile()->createDefaultCgnsFile();
 	setupForNewProjectData();
 
-	m_projectData->switchToDefaultCgnsFile();
+	handleCgnsSwitch();
 
 	bool ok = m_preProcessorWindow->setupCgnsFilesIfNeeded(true);
 	if (!ok) {
@@ -322,6 +323,8 @@ void iRICMainWindow::openProject(const QString& filename)
 	if (! closeProject()) {return;}
 
 	CursorChanger cursorChanger(QCursor(Qt::WaitCursor), this);
+	ModelessDialogModeChanger modeChanger(this);
+
 	m_isOpening = true;
 	// create projectdata
 	QFileInfo fileinfo(filename);
@@ -393,7 +396,7 @@ void iRICMainWindow::openProject(const QString& filename)
 
 	try {
 		setCursor(Qt::WaitCursor);
-		m_projectData->load();
+		m_projectData->mainfile()->load();
 	} catch (ErrorMessage& m) {
 		QMessageBox::warning(this, tr("Error"), m);
 		closeProject();
@@ -403,14 +406,11 @@ void iRICMainWindow::openProject(const QString& filename)
 	m_projectData->setVersion(m_versionNumber);
 	setupForNewProjectData();
 
-	bool ok = m_projectData->switchToDefaultCgnsFile();
-	if (! ok) {
-		closeProject();
-		return;
-	}
+	m_projectData->mainfile()->loadFromCgnsFile();
+	handleCgnsSwitch();
 
-	ok = m_preProcessorWindow->setupCgnsFilesIfNeeded(true);
-	if (!ok) {
+	bool ok = m_preProcessorWindow->setupCgnsFilesIfNeeded(true);
+	if (! ok) {
 		closeProject();
 		return;
 	}
@@ -522,9 +522,10 @@ void iRICMainWindow::importCalculationResult(const QString& fname)
 
 	setupForNewProjectData();
 
-	QString newname = m_projectData->mainfile()->cgnsFileList()->proposeFilename();
-	bret = m_projectData->mainfile()->importCgnsFile(fname, newname);
+	bret = m_projectData->mainfile()->importCgnsFile(fname, "Case1");
 	if (! bret) {return;}
+
+	handleCgnsSwitch();
 
 	connect(m_projectData->mainfile()->postSolutionInfo(), SIGNAL(allPostProcessorsUpdated()), this, SIGNAL(allPostProcessorsUpdated()));
 	connect(m_projectData->mainfile()->postSolutionInfo(), SIGNAL(updated()), this, SLOT(updatePostActionStatus()));
@@ -533,7 +534,7 @@ void iRICMainWindow::importCalculationResult(const QString& fname)
 	// show pre-processor window first.
 	if (! m_projectData->isPostOnlyMode()) {
 		// show pre-processor window first.
-		PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*> (m_preProcessorWindow);
+		auto pre = dynamic_cast<PreProcessorWindow*> (m_preProcessorWindow);
 		pre->setupDefaultGeometry();
 		pre->parentWidget()->show();
 		m_actionManager->informSubWindowChange(m_preProcessorWindow);
@@ -619,8 +620,15 @@ bool iRICMainWindow::closeProject()
 	m_actionManager->unregisterAdditionalToolBar();
 	addToolBarBreak(Qt::TopToolBarArea);
 	m_actionManager->projectFileClose();
-	m_preProcessorWindow->parentWidget()->hide();
-	m_solverConsoleWindow->parentWidget()->hide();
+
+	auto preParent = m_preProcessorWindow->parentWidget();
+	preParent->showNormal();
+	preParent->hide();
+
+	auto consoleParent = m_solverConsoleWindow->parentWidget();
+	consoleParent->showNormal();
+	consoleParent->hide();
+
 	m_postWindowFactory->resetWindowCounts();
 	ActiveSubwindowChanged(dynamic_cast<QMdiSubWindow*>(m_solverConsoleWindow->parentWidget()));
 	delete m_projectData;
@@ -756,13 +764,32 @@ bool iRICMainWindow::saveProject()
 bool iRICMainWindow::saveProject(const QString& filename, bool folder)
 {
 	ValueChangerT<bool> savingChanger(&m_isSaving, true);
-	bool ret;
 	CursorChanger cursorChanger(QCursor(Qt::WaitCursor), this);
+	ModelessDialogModeChanger modeChanger(this);
+
+	bool ret;
+	auto mainfile = m_projectData->mainfile();
 	if (m_projectData->isPostOnlyMode()) {
 		// do not save CGNS file, but only projext.xml.
-		ret = m_projectData->mainfile()->saveExceptCGNS();
+		ret = mainfile->saveExceptCGNS();
 	} else {
-		ret = m_projectData->save();
+		auto pre = dynamic_cast<PreProcessorWindow*>(m_preProcessorWindow);
+		auto gridEdited = pre->projectDataItem()->isGridEdited();
+		auto hasResult = m_projectData->mainfile()->postSolutionInfo()->hasResults();
+
+		if (gridEdited && hasResult) {
+			int ret = QMessageBox::warning(m_preProcessorWindow, tr("Warning"), tr("The grids are edited or deleted. When you save, the calculation result is discarded."), QMessageBox::Ok | QMessageBox::Cancel, QMessageBox::Cancel);
+			if (ret == QMessageBox::Cancel) {return false;}
+		}
+
+		if (gridEdited || (! hasResult)) {
+			int ier = mainfile->saveToCgnsFile();
+			ret = (ier == IRIC_NO_ERROR);
+		} else {
+			int ier = mainfile->updateCgnsFileOtherThanGrids();
+			ret = (ier == IRIC_NO_ERROR);
+		}
+		if (ret) {ret = m_projectData->mainfile()->saveExceptCGNS();}
 	}
 
 	if (! ret) {
@@ -1277,20 +1304,6 @@ const QLocale iRICMainWindow::locale() const
 bool iRICMainWindow::isSolverRunning() const
 {
 	return m_solverConsoleWindow->isSolverRunning();
-}
-
-void iRICMainWindow::switchCgnsFile(const QString& newcgns)
-{
-	if (isSolverRunning()) {
-		warnSolverRunning();
-		return;
-	}
-	// clear animation tool bar steps.
-	auto ac = m_animationController;
-	ac->clearSteps();
-	// switch cgns file.
-	m_projectData->mainfile()->switchCgnsFile(newcgns);
-	updatePostActionStatus();
 }
 
 ProjectWorkspace* iRICMainWindow::workspace()
@@ -1810,6 +1823,8 @@ void iRICMainWindow::clearCalculationResult()
 	if (ret == QMessageBox::No) {return;}
 
 	m_projectData->mainfile()->clearResults();
+	m_solverConsoleWindow->clear();
+
 	statusBar()->showMessage(tr("Calculation result cleared."), STATUSBAR_DISPLAYTIME);
 }
 
@@ -2246,12 +2261,12 @@ void iRICMainWindow::checkCgnsStepsUpdate()
 {
 	if (m_projectData == nullptr) {return;}
 	if (! m_projectData->isSolverRunning()) {return;}
+
 	CursorChanger cursorChanger(QCursor(Qt::WaitCursor), this);
 	m_projectData->mainfile()->postSolutionInfo()->close();
 	QFile::remove(m_projectData->flushCopyCgnsFileName());
 
-	m_projectData->incrementFlushIndex();
-	bool ok = FlushRequester::requestFlush(m_projectData->workDirectory(), m_projectData->flushIndex(), this);
+	bool ok = FlushRequester::requestFlush(m_projectData->workDirectory(), this);
 	if (! ok) {return;}
 
 	m_projectData->mainfile()->postSolutionInfo()->checkCgnsStepsUpdate();
@@ -2375,16 +2390,22 @@ QStringList iRICMainWindow::containedFiles() const
 	return pre->projectDataItem()->containedFiles();
 }
 
-void iRICMainWindow::loadFromCgnsFile(const int fn)
+int iRICMainWindow::loadFromCgnsFile()
 {
-	PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*>(m_preProcessorWindow);
-	pre->projectDataItem()->loadFromCgnsFile(fn);
+	auto pre = dynamic_cast<PreProcessorWindow*>(m_preProcessorWindow);
+	return pre->projectDataItem()->loadFromCgnsFile();
 }
 
-void iRICMainWindow::saveToCgnsFile(const int fn)
+int iRICMainWindow::saveToCgnsFile()
 {
-	PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*>(m_preProcessorWindow);
-	pre->projectDataItem()->saveToCgnsFile(fn);
+	auto pre = dynamic_cast<PreProcessorWindow*>(m_preProcessorWindow);
+	return pre->projectDataItem()->saveToCgnsFile();
+}
+
+int iRICMainWindow::updateCgnsFileOtherThanGrids()
+{
+	auto pre = dynamic_cast<PreProcessorWindow*>(m_preProcessorWindow);
+	return pre->projectDataItem()->updateCgnsFileOtherThanGrids();
 }
 
 void iRICMainWindow::closeCgnsFile()
@@ -2397,25 +2418,6 @@ void iRICMainWindow::toggleGridEditFlag()
 {
 	PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*>(m_preProcessorWindow);
 	pre->projectDataItem()->setGridEdited();
-}
-
-void iRICMainWindow::clearResults()
-{
-	m_solverConsoleWindow->clear();
-}
-
-bool iRICMainWindow::clearResultsIfGridIsEdited()
-{
-	PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*>(m_preProcessorWindow);
-	bool gridEdited = pre->projectDataItem()->isGridEdited();
-	bool hasResult = m_projectData->mainfile()->postSolutionInfo()->hasResults();
-	if (gridEdited && hasResult) {
-		// grid is edited, and the CGNS has calculation result.
-		int ret = QMessageBox::warning(m_preProcessorWindow, tr("Warning"), tr("The grids are edited or deleted. When you save, the calculation result is discarded."), QMessageBox::Ok | QMessageBox::Cancel, QMessageBox::Cancel);
-		if (ret == QMessageBox::Cancel) {return false;}
-		m_projectData->mainfile()->clearResults();
-	}
-	return true;
 }
 
 ProjectData* iRICMainWindow::projectData() const
@@ -2474,10 +2476,4 @@ void iRICMainWindow::updateTmsListForAllWindows()
 
 		tmsW->updateTmsList();
 	}
-}
-
-bool iRICMainWindow::isPostOnlyMode() const
-{
-	if (m_projectData == 0) {return false;}
-	return m_projectData->isPostOnlyMode();
 }

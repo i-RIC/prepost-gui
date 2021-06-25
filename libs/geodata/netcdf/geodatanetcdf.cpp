@@ -478,8 +478,8 @@ void GeoDataNetcdf::updateShapeData()
 		longitudes.assign((m_xValues.size() + 1) * (m_yValues.size() + 1), 0);
 		latitudes.assign((m_xValues.size() + 1) * (m_yValues.size() + 1), 0);
 
-		int xsize = m_xValues.size();
-		int ysize = m_yValues.size();
+		int xsize = static_cast<int> (m_xValues.size());
+		int ysize = static_cast<int> (m_yValues.size());
 
 		// middle points
 		for (int j = 1; j < ysize; ++j) {

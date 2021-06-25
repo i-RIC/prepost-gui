@@ -24,8 +24,8 @@ public:
 	double defaultValue() const;
 	void setDefaultValue(double d);
 
-	int load() override;
-	int save() override;
+	int load(const iRICLib::H5CgnsConditionGroup& group) override;
+	int save(iRICLib::H5CgnsConditionGroup* group) override;
 	void clear() override;
 
 	virtual QVariant variantValue() const override;

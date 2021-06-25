@@ -30,9 +30,6 @@
 #include <vtkTriangle.h>
 #include <vtkVertex.h>
 
-#include <cgnslib.h>
-#include <iriclib.h>
-
 Post2dBirdEyeWindowZoneDataItem::Post2dBirdEyeWindowZoneDataItem(const std::string& zoneName, int zoneNumber, GraphicsWindowDataItem* parent) :
 	Post2dBirdEyeWindowDataItem {zoneName.c_str(), QIcon(":/libs/guibase/images/iconFolder.png"), parent},
 	m_zoneName (zoneName),

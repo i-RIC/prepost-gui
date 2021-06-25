@@ -17,8 +17,6 @@ public:
 	PreProcessorBCSettingGroupDataItem(PreProcessorDataItem* parent);
 	~PreProcessorBCSettingGroupDataItem() override;
 
-	void loadFromCgnsFile(const int fn) override;
-	void saveToCgnsFile(const int fn) override;
 	void informGridUpdate();
 	const QList<PreProcessorBCSettingDataItem*> conditions() const;
 	PreProcessorBCSettingDataItem* condition(const QString& type, int num) const;

@@ -42,6 +42,11 @@ void GeoDataBackground::setupDataItem()
 	pItem->takeRow(item->standardItem()->row());
 }
 
+const QVariant& GeoDataBackground::customValue() const
+{
+	return m_customValue;
+}
+
 void GeoDataBackground::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	GeoData::doLoadFromProjectMainFile(node);
@@ -132,4 +137,13 @@ QVariant GeoDataBackground::variantValue()
 		m_customValue = min;
 	}
 	return m_customValue;
+}
+
+GeoDataBackground::Type GeoDataBackground::type() const
+{
+	return m_type;
+}
+
+void GeoDataBackground::setType(Type t) {
+	m_type = t;
 }

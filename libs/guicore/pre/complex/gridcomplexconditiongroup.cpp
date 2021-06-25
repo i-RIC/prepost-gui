@@ -6,6 +6,8 @@
 
 #include <QDomElement>
 
+#include <iriclib_errorcodes.h>
+
 GridComplexConditionGroup::Impl::Impl(SolverDefinition* def, const QDomElement& elem) :
 	m_page {nullptr},
 	m_widgetSet {},
@@ -69,28 +71,40 @@ GridComplexConditionGroup::~GridComplexConditionGroup()
 	delete impl;
 }
 
-void GridComplexConditionGroup::setNameAndNumber(const std::string& name, int number)
+int GridComplexConditionGroup::load(const iRICLib::H5CgnsConditionGroup& group)
 {
-	impl->m_caption.setComplexProperty(name, number);
-	impl->m_color.setComplexProperty(name, number);
-	impl->m_isDefault.setComplexProperty(name, number);
-	impl->m_containerSet.setComplexProperty(name, number);
+	int ier = 0;
+	ier = impl->m_caption.load(group);
+	if (ier != IRIC_NO_ERROR) {return ier;}
+
+	ier = impl->m_color.load(group);
+	if (ier != IRIC_NO_ERROR) {return ier;}
+
+	ier = impl->m_isDefault.load(group);
+	if (ier != IRIC_NO_ERROR) {return ier;}
+
+	ier = impl->m_containerSet.load(group);
+	if (ier != IRIC_NO_ERROR) {return ier;}
+
+	return IRIC_NO_ERROR;
 }
 
-void GridComplexConditionGroup::load()
+int GridComplexConditionGroup::save(iRICLib::H5CgnsConditionGroup* group)
 {
-	impl->m_caption.load();
-	impl->m_color.load();
-	impl->m_isDefault.load();
-	impl->m_containerSet.load();
-}
+	int ier = 0;
+	ier = impl->m_caption.save(group);
+	if (ier != IRIC_NO_ERROR) {return ier;}
 
-void GridComplexConditionGroup::save()
-{
-	impl->m_caption.save();
-	impl->m_color.save();
-	impl->m_isDefault.save();
-	impl->m_containerSet.save();
+	impl->m_color.save(group);
+	if (ier != IRIC_NO_ERROR) {return ier;}
+
+	impl->m_isDefault.save(group);
+	if (ier != IRIC_NO_ERROR) {return ier;}
+
+	impl->m_containerSet.save(group);
+	if (ier != IRIC_NO_ERROR) {return ier;}
+
+	return IRIC_NO_ERROR;
 }
 
 QWidget* GridComplexConditionGroup::widget() const

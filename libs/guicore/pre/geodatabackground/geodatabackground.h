@@ -16,31 +16,33 @@ public:
 		Minimum,
 		Custom
 	};
-	/// Constructor
+
 	GeoDataBackground(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGridAttribute* condition);
+
 	void addCustomMenuItems(QMenu* menu) override;
 	void handleStandardItemDoubleClicked() override {editValue();}
 	void setupDataItem() override;
-	const QVariant& customValue() const {return m_customValue;}
+	const QVariant& customValue() const;
 	virtual QVariant variantValue();
-	Type type() const {return m_type;}
-	void setType(Type t) {m_type = t;}
+
+	Type type() const;
+	void setType(Type t);
+
 	bool getValueRange(double* min, double* max) override;
 
-protected:
-	void doLoadFromProjectMainFile(const QDomNode& /*node*/) override;
-	void doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/) override;
+private:
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	void loadExternalData(const QString& filename) override;
 	void saveExternalData(const QString& filename) override;
 
 private slots:
 	void editValue();
 
-protected:
+private:
 	QVariant m_customValue;
 	Type m_type;
 
-private:
 	QAction* m_editValueAction;
 
 	class EditValueCommand;

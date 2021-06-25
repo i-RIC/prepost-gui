@@ -11,20 +11,20 @@
 #include <QThread>
 #include <QWidget>
 
-bool FlushRequester::requestFlush(const QString& projectFolder, int idx, QWidget* parent)
+bool FlushRequester::requestFlush(const QString& projectFolder, QWidget* parent)
 {
 	QString fname = flushFileName(projectFolder);
-	createFlushFile(fname, idx);
+	createFlushFile(fname);
 	return waitUntilFlushFileRemoved(fname, parent);
 }
 
-void FlushRequester::createFlushFile(const QString& filename, int idx)
+void FlushRequester::createFlushFile(const QString& filename)
 {
 	QFile f(filename);
 	f.open(QFile::WriteOnly);
 	QTextStream stream(&f);
 
-	stream << idx;
+	stream << "flush";
 
 	f.close();
 }

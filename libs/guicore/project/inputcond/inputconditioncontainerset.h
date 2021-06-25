@@ -13,6 +13,10 @@
 #include <string>
 #include <map>
 
+namespace iRICLib {
+	class H5CgnsConditionGroup;
+} // namespace iRICLib
+
 class QDomNode;
 class QWidget;
 class InputConditionDialog;
@@ -27,13 +31,11 @@ public:
 	InputConditionContainerSet();
 	void clear();
 	void setup(const QDomNode& condNode, const SolverDefinition& def, const SolverDefinitionTranslator &t, bool forBC = false);
-	void setBCProperty(const std::string& bcname, int bcindex);
-	void setComplexProperty(const std::string& compname, int compindex);
 	InputConditionContainerSet* clone() const;
 	void copyValues(const InputConditionContainerSet* set);
 
-	int load();
-	int save();
+	int load(const iRICLib::H5CgnsConditionGroup& group);
+	int save(iRICLib::H5CgnsConditionGroup* group);
 	void reset();
 	void setDefaultValues();
 

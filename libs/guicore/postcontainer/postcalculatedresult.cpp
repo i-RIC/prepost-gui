@@ -191,6 +191,8 @@ vtkDataSetAttributes* PostCalculatedResult::dataSetAttributes() const
 		return nullptr;
 		break;
 	}
+	// to avoid compiler warning
+	return nullptr;
 }
 
 vtkDataArray* PostCalculatedResult::dataSetAttributeArray(const std::string& name) const

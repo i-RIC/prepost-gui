@@ -3,8 +3,6 @@
 #include "../pre/base/preprocessorwindowinterface.h"
 #include "../solverdef/solverdefinitiongridattribute.h"
 #include "../solverdef/solverdefinitiongridtype.h"
-#include "cgnsfileentry.h"
-#include "cgnsfilelist.h"
 #include "projectdata.h"
 #include "projectmainfile.h"
 #include "projectworkspace.h"
@@ -39,13 +37,13 @@ const QString ProjectData::LOCKFILENAME = "lock";
 
 ProjectData::ProjectData(const QString& workdir, iRICMainWindowInterface* parent) :
 	QObject(parent),
-	m_mainWindow {parent},
 	m_workDirectory {workdir},
-	m_solverDefinition {nullptr},
 	m_folderProject {false},
-	m_isPostOnlyMode {false},
-	m_lockFile {nullptr},
 	m_mainfile {new ProjectMainFile(this)},
+	m_solverDefinition {nullptr},
+	m_lockFile {nullptr},
+	m_mainWindow {parent},
+	m_isPostOnlyMode {false},
 	m_isSolverRunning {false},
 	m_flushIndex {1}
 {
@@ -151,28 +149,6 @@ void ProjectData::initForSolverDefinition()
 	mainWindow()->initForSolverDefinition();
 }
 
-void ProjectData::load()
-{
-	// load project.xml.
-	mainfile()->load();
-}
-
-void ProjectData::loadCgnsList()
-{
-	mainfile()->loadCgnsList();
-}
-
-bool ProjectData::save()
-{
-	mainWindow()->enterModelessDialogMode();
-	qApp->processEvents();
-	mainWindow()->setCursor(Qt::WaitCursor);
-	bool ret = mainfile()->save();
-	mainWindow()->setCursor(Qt::ArrowCursor);
-	mainWindow()->exitModelessDialogMode();
-	return ret;
-}
-
 ProjectMainFile* ProjectData::mainfile() const
 {
 	return m_mainfile;
@@ -234,12 +210,6 @@ QString ProjectData::newWorkfolderName(const QDir& workspace)
 	return iRIC::getTempFileName(workspace.absolutePath());
 }
 
-bool ProjectData::switchToDefaultCgnsFile()
-{
-	QString current = m_mainfile->cgnsFileList()->current()->filename();
-	return m_mainfile->switchCgnsFile(current);
-}
-
 QString ProjectData::workCgnsFileName(const QString& name) const
 {
 	QString tmpstr = name;
@@ -257,8 +227,7 @@ QString ProjectData::currentCgnsFileName() const
 
 QString ProjectData::masterCgnsFileName() const
 {
-	QString filename = m_mainfile->cgnsFileList()->current()->filename();
-	return workCgnsFileName(filename);
+	return workCgnsFileName("Case1");
 }
 
 QString ProjectData::flushCopyCgnsFileName() const
@@ -266,10 +235,7 @@ QString ProjectData::flushCopyCgnsFileName() const
 	QDir wdir(m_workDirectory);
 	wdir.mkdir("tmp");
 
-	QString tmpstr = m_mainfile->cgnsFileList()->current()->filename();
-	QString fname = QDir(m_workDirectory).absoluteFilePath(QString("tmp/").append(tmpstr).append(".cgn"));
-	fname.append(".copy");
-	fname.append(QString::number(m_flushIndex));
+	QString fname = QDir(m_workDirectory).absoluteFilePath(QString("tmp/Case1.cgn.copy"));
 	return fname;
 }
 
@@ -464,14 +430,10 @@ ERROR:
 
 bool ProjectData::hasHugeCgns() const
 {
-	QList<CgnsFileEntry*> cgnsFiles = m_mainfile->cgnsFileList()->cgnsFiles();
-	for (int i = 0; i < cgnsFiles.count(); ++i) {
-		CgnsFileEntry* entry = cgnsFiles.at(i);
-		QString filename = workCgnsFileName(entry->filename());
-		QFileInfo finfo(filename);
-		if (finfo.size() > 2000000000) {
-			return true;
-		}
+	QString filename = workCgnsFileName("Case1");
+	QFileInfo finfo(filename);
+	if (finfo.size() > 2000000000) {
+		return true;
 	}
 	return false;
 }
@@ -515,14 +477,4 @@ void ProjectData::setIsSolverRunning(bool running)
 bool ProjectData::isSolverRunning() const
 {
 	return m_isSolverRunning;
-}
-
-int ProjectData::flushIndex() const
-{
-	return m_flushIndex;
-}
-
-void ProjectData::incrementFlushIndex()
-{
-	++ m_flushIndex;
 }

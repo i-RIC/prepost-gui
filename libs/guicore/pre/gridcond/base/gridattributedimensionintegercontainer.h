@@ -8,10 +8,7 @@ class GUICOREDLL_EXPORT GridAttributeDimensionIntegerContainer : public GridAttr
 {
 public:
 	GridAttributeDimensionIntegerContainer(SolverDefinitionGridAttributeDimension* def);
-	~GridAttributeDimensionIntegerContainer();
-
-private:
-	DataType_t dataType() const override;
+	~GridAttributeDimensionIntegerContainer() override;
 };
 
 #endif // GRIDATTRIBUTEDIMENSIONINTEGERCONTAINER_H

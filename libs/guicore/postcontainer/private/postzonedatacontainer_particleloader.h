@@ -5,10 +5,14 @@
 
 #include <vtkSmartPointer.h>
 
+namespace iRICLib {
+	class H5CgnsParticleSolution;
+} // namespace iRICLib
+
 class PostZoneDataContainer::ParticleLoader
 {
 public:
-	static bool load(int fid, int bid, int zid, int step, vtkSmartPointer<vtkPolyData>* data, const QPointF& offset);
+	static bool load(vtkSmartPointer<vtkPolyData>* data, iRICLib::H5CgnsParticleSolution* sol, const QPointF& offset);
 
 private:
 	ParticleLoader();

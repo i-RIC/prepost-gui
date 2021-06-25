@@ -11,14 +11,14 @@ GeoDataPointCellMapperT<V, DA>::GeoDataPointCellMapperT(GeoDataCreator* parent) 
 {}
 
 template <class V, class DA>
-GeoDataMapperSettingI* GeoDataPointCellMapperT<V, DA>::initialize(bool* boolMap)
+GeoDataMapperSettingI* GeoDataPointCellMapperT<V, DA>::initialize(bool* /*boolMap*/)
 {
 	GeoDataPointCellMapperSetting* s = new GeoDataPointCellMapperSetting();
 	return s;
 }
 
 template <class V, class DA>
-void GeoDataPointCellMapperT<V, DA>::map(bool* boolMap, GeoDataMapperSettingI* s)
+void GeoDataPointCellMapperT<V, DA>::map(bool* /*boolMap*/, GeoDataMapperSettingI* /*s*/)
 {}
 
 template <class V, class DA>

@@ -15,6 +15,10 @@ namespace YAML {
 	class Node;
 } // namespace YAML
 
+namespace iRICLib {
+	class H5CgnsConditionGroup;
+} // namespace iRICLib
+
 class GUICOREDLL_EXPORT InputConditionContainer : public QObject
 {
 	Q_OBJECT
@@ -26,13 +30,11 @@ public:
 	virtual ~InputConditionContainer();
 
 	void setName(const std::string& name);
-	void setBCProperty(const std::string& bcname, int bcindex);
-	void setComplexProperty(const std::string& compname, int compindex);
 
 	void copyValues(const InputConditionContainer& c);
 
-	virtual int load() = 0;
-	virtual int save() = 0;
+	virtual int load(const iRICLib::H5CgnsConditionGroup& group) = 0;
+	virtual int save(iRICLib::H5CgnsConditionGroup* group) = 0;
 	virtual void clear() = 0;
 
 	virtual QVariant variantValue() const = 0;
@@ -46,14 +48,6 @@ signals:
 protected:
 	const std::string& name() const;
 	const QString& caption() const;
-
-	bool isBoundaryCondition() const;
-	const std::string& bcName() const;
-	int bcIndex() const;
-
-	bool isComplexCondition() const;
-	const std::string& complexName() const;
-	int complexIndex() const;
 
 	static char* toC(const std::string& str);
 

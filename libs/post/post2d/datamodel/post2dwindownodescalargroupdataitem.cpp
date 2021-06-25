@@ -63,9 +63,9 @@
 
 #include <vtkPolyDataWriter.h>
 
-Post2dWindowNodeScalarGroupDataItem::Post2dWindowNodeScalarGroupDataItem(Post2dWindowDataItem* p, CheckFlag cflag, ReorderFlag rflag, DeleteFlag dflag, GridLocation_t gridLocation) :
+Post2dWindowNodeScalarGroupDataItem::Post2dWindowNodeScalarGroupDataItem(Post2dWindowDataItem* p, CheckFlag cflag, ReorderFlag rflag, DeleteFlag dflag, iRICLib::H5CgnsZone::SolutionPosition position) :
 	Post2dWindowDataItem {tr(""), QIcon(":/libs/guibase/images/iconPaper.png"), p},
-	m_gridLocation {gridLocation}
+	m_solutionPosition {position}
 {
 	setupStandardItem(cflag, rflag, dflag);
 
@@ -118,7 +118,7 @@ void Post2dWindowNodeScalarGroupDataItem::updateActorSettings()
 	m_actor2DCollection->RemoveAllItems();
 	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->dataContainer();
 	if (cont == nullptr || cont->data() == nullptr) {return;}
-	vtkPointSet* ps = cont->data(m_gridLocation);
+	vtkPointSet* ps = cont->data(m_solutionPosition);
 	if (m_setting.target == "") {return;}
 	// update current active scalar
 	vtkPointData* pd = ps->GetPointData();
@@ -132,7 +132,7 @@ void Post2dWindowNodeScalarGroupDataItem::updateActorSettings()
 	m_standardItem->setText(topitem->colorbarTitleMap().value(targetStr));
 	m_standardItemCopy->setText(topitem->colorbarTitleMap().value(targetStr));
 
-	vtkPolyData* polyData = dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->filteredData(m_gridLocation);
+	vtkPolyData* polyData = dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->filteredData(m_solutionPosition);
 	if (polyData == nullptr) return;
 	vtkPolyData* rcp = createRangeClippedPolyData(polyData);
 	vtkPolyData* vcp = createValueClippedPolyData(rcp);
@@ -415,9 +415,9 @@ QDialog* Post2dWindowNodeScalarGroupDataItem::propertyDialog(QWidget* p)
 		delete dialog;
 		return nullptr;
 	}
-	dialog->setZoneData(zItem->dataContainer(), gridLocation());
+	dialog->setZoneData(zItem->dataContainer(), solutionPosition());
 	dialog->disablePhysicalValueComboBox();
-	if (! zItem->dataContainer()->IBCExists(gridLocation())) {
+	if (! zItem->dataContainer()->IBCExists(solutionPosition())) {
 		dialog->disableActive();
 	}
 	m_setting.scalarBarSetting.loadFromRepresentation(m_scalarBarWidget->GetScalarBarRepresentation());
@@ -500,7 +500,7 @@ vtkPolyData* Post2dWindowNodeScalarGroupDataItem::createRangeClippedPolyData(vtk
 		return clippedData;
 	} else if (m_setting.regionMode == StructuredGridRegion::rmCustom) {
 		vtkSmartPointer<vtkStructuredGridGeometryFilter> geoFilter = vtkSmartPointer<vtkStructuredGridGeometryFilter>::New();
-		geoFilter->SetInputData(cont->data(gridLocation()));
+		geoFilter->SetInputData(cont->data(solutionPosition()));
 		StructuredGridRegion::Range2d r = m_setting.range;
 		geoFilter->SetExtent(r.iMin, r.iMax, r.jMin, r.jMax, 0, 0);
 		geoFilter->Update();
@@ -598,14 +598,14 @@ void Post2dWindowNodeScalarGroupDataItem::informDeselection(VTKGraphicsView* /*v
 void Post2dWindowNodeScalarGroupDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
 	v->standardMouseMoveEvent(event);
-	switch (m_gridLocation) {
-	case Vertex:
+	switch (m_solutionPosition) {
+	case iRICLib::H5CgnsZone::SolutionPosition::Node:
 		dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->updateNodeResultAttributeBrowser(event->pos(), v);
 		break;
-	case IFaceCenter:
+	case iRICLib::H5CgnsZone::SolutionPosition::IFace:
 		dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->updateEdgeIResultAttributeBrowser(event->pos(), v);
 		break;
-	case JFaceCenter:
+	case iRICLib::H5CgnsZone::SolutionPosition::JFace:
 		dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->updateEdgeJResultAttributeBrowser(event->pos(), v);
 		break;
 	}
@@ -827,7 +827,7 @@ ScalarBarSetting::Quadrant Post2dWindowNodeScalarGroupDataItem::quadrant() const
 	return ScalarBarSetting::Quadrant::None;
 }
 
-GridLocation_t Post2dWindowNodeScalarGroupDataItem::gridLocation() const
+iRICLib::H5CgnsZone::SolutionPosition Post2dWindowNodeScalarGroupDataItem::solutionPosition() const
 {
-	return m_gridLocation;
+	return m_solutionPosition;
 }

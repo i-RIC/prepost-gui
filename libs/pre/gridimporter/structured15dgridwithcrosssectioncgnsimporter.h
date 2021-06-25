@@ -11,7 +11,7 @@ public:
 	SolverDefinitionGridType::GridType supportedGridType() const override;
 
 protected:
-	bool isZoneCompatible(int fn, int B, int Z) override;
+	bool isZoneCompatible(const iRICLib::H5CgnsZone& zone) override;
 };
 
 #endif // STRUCTURED15DGRIDWITHCROSSSECTIONCGNSIMPORTER_H

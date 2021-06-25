@@ -8,7 +8,7 @@
 
 #include <yaml-cpp/yaml.h>
 
-#include <iriclib.h>
+#include <h5cgnsconditiongroup.h>
 
 InputConditionContainerInteger::Impl::Impl() :
 	m_value {0},
@@ -69,16 +69,10 @@ void InputConditionContainerInteger::setDefaultValue(int d)
 	impl->m_default = d;
 }
 
-int InputConditionContainerInteger::load()
+int InputConditionContainerInteger::load(const iRICLib::H5CgnsConditionGroup& group)
 {
-	int ret;
-	if (isBoundaryCondition()) {
-		ret = cg_iRIC_Read_BC_Integer(toC(bcName()), bcIndex(), toC(name()), &(impl->m_value));
-	} else if (isComplexCondition()) {
-		ret = cg_iRIC_Read_Complex_Integer(toC(complexName()), complexIndex(), toC(name()), &(impl->m_value));
-	} else {
-		ret = cg_iRIC_Read_Integer(toC(name()), &(impl->m_value));
-	}
+	int ret = group.readIntegerValue(name(), &(impl->m_value));
+
 	if (ret != 0) {
 		clear();
 	} else {
@@ -88,15 +82,9 @@ int InputConditionContainerInteger::load()
 	return ret;
 }
 
-int InputConditionContainerInteger::save()
+int InputConditionContainerInteger::save(iRICLib::H5CgnsConditionGroup* group)
 {
-	if (isBoundaryCondition()) {
-		return cg_iRIC_Write_BC_Integer(toC(bcName()), bcIndex(), toC(name()), impl->m_value);
-	} else if (isComplexCondition()) {
-		return cg_iRIC_Write_Complex_Integer(toC(complexName()), complexIndex(), toC(name()), impl->m_value);
-	} else {
-		return cg_iRIC_Write_Integer(toC(name()), impl->m_value);
-	}
+	return group->writeIntegerValue(name(), impl->m_value);
 }
 
 void InputConditionContainerInteger::clear()

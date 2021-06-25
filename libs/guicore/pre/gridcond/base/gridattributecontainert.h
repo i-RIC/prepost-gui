@@ -16,10 +16,10 @@ public:
 	virtual V value(unsigned int index) const = 0;
 	virtual void setValue(unsigned int index, V value) = 0;
 
-	bool loadFromCgnsFile(int fn, int B, int Z) override;
-	bool loadFromCgnsFileForIndex(int fn, int B, int Z, int index);
-	bool saveToCgnsFile(int fn, int B, int Z) override;
-	bool saveToCgnsFileForIndex(int index);
+	int loadFromCgnsFile(const iRICLib::H5CgnsGridAttributes& atts) override;
+	int loadFromCgnsFileForIndex(const iRICLib::H5CgnsGridAttributes& atts, int index);
+	int saveToCgnsFile(iRICLib::H5CgnsGridAttributes* atts) override;
+	int saveToCgnsFileForIndex(iRICLib::H5CgnsGridAttributes* atts, int index);
 
 	virtual vtkDataArray* dataArray() const = 0;
 	virtual vtkDataArray* dataArrayCopy() const = 0;
@@ -28,10 +28,6 @@ public:
 	bool loadFromExternalFile(const QString& filename) override;
 	bool saveToExternalFile(const QString& filename) override;
 	bool getValueRange(double* min, double* max) override;
-
-protected:
-	QString arrayNameForIndex(int index) const;
-	virtual DataType_t dataType() const = 0;
 };
 
 #include "private/gridattributecontainert_detail.h"

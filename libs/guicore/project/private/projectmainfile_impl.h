@@ -39,10 +39,13 @@ public:
 	QDateTime m_zeroDateTime; // time that corresponds to t = 0
 	TimeFormat m_timeFormat;
 	QString m_customTimeFormat;
+	bool m_separateResult;
 
 	QPointF m_offset;
 
 	bool m_isModified;
+
+	iRICLib::H5CgnsFile* m_cgnsFile;
 
 private:
 	ProjectMainFile* m_parent;

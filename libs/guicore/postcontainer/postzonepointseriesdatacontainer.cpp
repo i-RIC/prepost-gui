@@ -9,27 +9,23 @@
 
 #include <QRegExp>
 
-#include <cgnslib.h>
+#include <h5cgnsbase.h>
+#include <h5cgnsbaseiterativedata.h>
+#include <h5cgnsfile.h>
+#include <h5cgnsfilesolutionreader.h>
+#include <h5cgnsflowsolution.h>
+#include <h5cgnszone.h>
+#include <iriclib_errorcodes.h>
+
 #include <cmath>
 
-PostZonePointSeriesDataContainer::PostZonePointSeriesDataContainer(PostSolutionInfo::Dimension dim, const std::string& zoneName, const QString& pName, int pointIndex, GridLocation_t gridLocation, PostSolutionInfo* sinfo) :
+PostZonePointSeriesDataContainer::PostZonePointSeriesDataContainer(PostSolutionInfo::Dimension dim, const std::string& zoneName, const std::string valueName, int index, iRICLib::H5CgnsZone::SolutionPosition position, PostSolutionInfo* sinfo) :
 	PostSeriesDataContainer(dim, sinfo),
 	m_zoneName (zoneName),
-	m_zoneId {0},
-	m_physName {pName},
-	m_pointIndex {pointIndex},
-	m_gridLocation {gridLocation}
+	m_valueName (valueName),
+	m_pointIndex {index},
+	m_position {position}
 {}
-
-const QList<double>& PostZonePointSeriesDataContainer::data() const
-{
-	return m_data;
-}
-
-void PostZonePointSeriesDataContainer::update(const int fn)
-{
-	loadFromCgnsFile(fn);
-}
 
 const std::string& PostZonePointSeriesDataContainer::zoneName() const
 {
@@ -41,126 +37,70 @@ QString PostZonePointSeriesDataContainer::caption() const
 	return zoneName().c_str();
 }
 
-void PostZonePointSeriesDataContainer::setPointIndex(int index)
-{
-	m_pointIndex = index;
-}
-
 int PostZonePointSeriesDataContainer::pointIndex() const
 {
 	return m_pointIndex;
 }
 
-void PostZonePointSeriesDataContainer::setGridLocation(GridLocation_t location)
-{
-	m_gridLocation = location;
-}
-
-GridLocation_t PostZonePointSeriesDataContainer::gridLocation() const
-{
-	return m_gridLocation;
-}
-
-bool PostZonePointSeriesDataContainer::setZoneId(const int fn)
-{
-	// if m_zoneID is already set, we do not have to do it again.
-	if (m_zoneId != 0) {return true;}
-
-	int ier;
-	int numZones;
-	ier = cg_nzones(fn, m_baseId, &numZones);
-	if (ier != 0) {return false;}
-	for (int Z = 1; Z <= numZones; ++Z) {
-		char zonename[ProjectCgnsFile::BUFFERLEN];
-		ier = cg_zone_read(fn, m_baseId, Z, zonename, m_sizes);
-		if (ier != 0) {return false;}
-		if (m_zoneName == zonename) {
-			m_zoneId = Z;
-			return true;
-		}
-	}
-	return false;
-}
-
-bool PostZonePointSeriesDataContainer::loadData(int fn, int solId, const QString& name, double* value)
+int PostZonePointSeriesDataContainer::loadData(const std::string &name, iRICLib::H5CgnsZone* zone, double* value)
 {
 	auto zc = zoneDataContainer();
 	std::vector<PostCalculatedResult*> calcResults = zc->calculatedResults();
 	for (PostCalculatedResult* result : calcResults) {
-		if (name == result->name().c_str()) {
-			return loadCalculatedData(fn, solId, result, value);
+		if (m_valueName == result->name()) {
+			return loadCalculatedData(result, zone, value);
 		}
 	}
-	return loadResultData(fn, solId, name, value);
+	return loadResultData(name, zone, value);
 }
 
-bool PostZonePointSeriesDataContainer::loadCalculatedData(int fn, int solId, PostCalculatedResult* result, double* value)
+int PostZonePointSeriesDataContainer::loadCalculatedData(PostCalculatedResult* result, iRICLib::H5CgnsZone* zone, double* value)
 {
-	// calculated value
 	std::vector<double> args;
 	for (PostCalculatedResultArgument* arg : result->arguments()) {
 		double argVal;
-		bool ok = loadData(fn, solId, arg->name().c_str(), &argVal);
-		if (! ok) {return false;}
+		int ier = loadData(arg->name(), zone, &argVal);
+		if (! ier) {return ier;}
 		args.push_back(argVal);
 	}
 	*value = result->calculateValue(args);
-	return true;
+	return IRIC_NO_ERROR;
 }
 
-bool PostZonePointSeriesDataContainer::loadResultData(int fn, int solId, const QString& name, double* value)
+int PostZonePointSeriesDataContainer::loadResultData(const std::string& name, iRICLib::H5CgnsZone* zone, double* value)
 {
-	bool ret;
 	int ier;
-	ret = setZoneId(fn);
-	if (! ret) {return false;}
-
 	QRegExp rx("^(.+) \\(magnitude\\)$");
-	bool magnitude = (rx.indexIn(name) != -1);
+	bool magnitude = (rx.indexIn(name.c_str()) != -1);
 
-	QString tmpPhysName = name;
-	if (magnitude) {tmpPhysName = rx.cap(1);}
-
-	ier = cg_goto(fn, m_baseId, "Zone_t", m_zoneId, "FlowSolution_t", solId, "end");
-	if (ier != 0) {return false;}
-	int numArrays;
-	ier = cg_narrays(&numArrays);
-	if (ier != 0) {return false;}
-	*value = 0;
-	for (int j = 1; j <= numArrays; ++j) {
-		DataType_t datatype;
-		int dimension;
-		cgsize_t dimVector[3];
-		char arrayname[ProjectCgnsFile::BUFFERLEN];
-		ier = cg_array_info(j, arrayname, &datatype, &dimension, dimVector);
-		if (ier != 0) {return false;}
-		QString name(arrayname);
-		int dataLen = 1;
-		for (int dim = 1; dim <= dimension; ++dim) {
-			dataLen = dataLen * dimVector[dim - 1];
-		}
-		setPointIndex(std::min(m_pointIndex, dataLen - 1));
-		std::vector<double> buffer(dataLen);
-		ier = cg_array_read_as(j, RealDouble, buffer.data());
-		if (magnitude) {
-			if (
-				name == QString(tmpPhysName).append("X") ||
-				name == QString(tmpPhysName).append("Y") ||
-				name == QString(tmpPhysName).append("Z")
-			) {
-				double currVal = buffer[m_pointIndex];
-				*value += currVal * currVal;
-			}
-		} else {
-			if (tmpPhysName == name) {
-				*value = buffer[m_pointIndex];
-			}
-		}
-	}
+	auto sol = zone->solution(m_position);
 	if (magnitude) {
+		auto tmpPhysName = iRIC::toStr(rx.cap(1));
+		std::set<std::string> resultNames;
+		ier = sol->readValueNames(&resultNames);
+		if (ier != 0) {return false;}
+		std::vector<std::string> suffixes;
+		suffixes.push_back("X");
+		suffixes.push_back("Y");
+		suffixes.push_back("Z");
+
+		*value = 0;
+		for (const auto& suffix : suffixes) {
+			auto compName = tmpPhysName + suffix;
+			if (resultNames.find(compName) != resultNames.end()) {
+				std::vector<double> buffer;
+				sol->readValueAsDouble(compName, &buffer);
+				double v = buffer[m_pointIndex];
+				*value += v * v;
+			}
+		}
 		*value = std::sqrt(*value);
+	} else {
+		std::vector<double> buffer;
+		sol->readValueAsDouble(name, &buffer);
+		*value = buffer[m_pointIndex];
 	}
-	return true;
+	return IRIC_NO_ERROR;
 }
 
 PostZoneDataContainer* PostZonePointSeriesDataContainer::zoneDataContainer() const
@@ -168,7 +108,7 @@ PostZoneDataContainer* PostZonePointSeriesDataContainer::zoneDataContainer() con
 	return solutionInfo()->zoneContainer(m_dimension, m_zoneName);
 }
 
-bool PostZonePointSeriesDataContainer::loadData(const int fn, GridLocation_t location)
+int PostZonePointSeriesDataContainer::loadData()
 {
 	m_data.clear();
 	auto zc = zoneDataContainer();
@@ -178,31 +118,22 @@ bool PostZonePointSeriesDataContainer::loadData(const int fn, GridLocation_t loc
 		r->updateFunction();
 	}
 
-	int ier;
-	int numSols;
-	bool ret = setZoneId(fn);
-	if (! ret) {return false;}
-	ier = cg_nsols(fn, m_baseId, m_zoneId, &numSols);
-	if (ier != 0) {return false;}
+	auto file = solutionInfo()->cgnsFile();
 
-	GridLocation_t loc;
-	char solname[32];
-	for (int i = 1; i <= numSols; ++i) {
-		ier = cg_sol_info(fn, m_baseId, m_zoneId, i, solname, &loc);
-		if (ier != 0) {return false;}
-		if (location != loc) {continue;}
+	std::vector<double> timeValues;
+	file->ccBase()->biterData()->readTime(&timeValues);
+
+	auto reader = file->solutionReader();
+	for (int i = 0; i < static_cast<int> (timeValues.size()); ++i) {
+		reader->setSolutionId(i + 1);
+		auto zone = reader->targetFile()->base(PostSolutionInfo::toIntDimension(m_dimension))->zone(m_zoneName);
 
 		double val;
-		bool ok = loadData(fn, i, m_physName, &val);
+		bool ok = loadData(m_valueName, zone, &val);
 		if (! ok) {return false;}
-		m_data.append(val);
+		m_data.push_back(val);
 	}
-	return true;
-}
-
-bool PostZonePointSeriesDataContainer::loadData(const int fn)
-{
-	return loadData(fn, m_gridLocation);
+	return IRIC_NO_ERROR;
 }
 
 void PostZonePointSeriesDataContainer::doLoadFromProjectMainFile(const QDomNode& /*node*/)

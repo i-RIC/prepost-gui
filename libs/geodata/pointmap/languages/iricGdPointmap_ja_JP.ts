@@ -871,6 +871,17 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmapTINCreator</name>
+    <message>
+        <source>TIN</source>
+        <translation>TIN</translation>
+    </message>
+    <message>
+        <source>Point Cloud Data%1</source>
+        <translation>点群データ%1</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmapVTKExporter</name>
     <message>
         <source>Pointset (DEM etc.)</source>

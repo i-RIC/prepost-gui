@@ -8,7 +8,6 @@
 #include <guicore/base/propertybrowser.h>
 #include <guicore/base/windowwithobjectbrowserinterface.h>
 #include <guicore/post/postprocessorwindow.h>
-#include <guicore/project/cgnsfilelist.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
 #include <guicore/solverdef/solverdefinition.h>
@@ -1106,9 +1105,13 @@ void iRICMainWindowActionManager::updateWindowList()
 	m_windowsToolBar->clear();
 
 	int i = 1;
+	bool postOnly = true;
+	auto pd = m_parent->projectData();
+	if (pd != nullptr) {postOnly = pd->isPostOnlyMode();}
+
 	QPainter painter;
 	for (QMdiSubWindow* w : windowList) {
-		if (m_parent->isPostOnlyMode()) {
+		if (postOnly) {
 			if (dynamic_cast<PreProcessorWindow*> (w->widget()) != 0) {continue;}
 			if (dynamic_cast<SolverConsoleWindow*> (w->widget()) != 0) {continue;}
 		}

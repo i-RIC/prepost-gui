@@ -10,17 +10,16 @@
 #include <misc/stringtool.h>
 
 #include <QStandardItem>
-#include <QVector3D>
 
-#include <vtkDoubleArray.h>
-#include <vtkPointData.h>
-#include <vtkSmartPointer.h>
-#include <vtkStructuredGrid.h>
+//#include <vtkDoubleArray.h>
+//#include <vtkPointData.h>
+//#include <vtkSmartPointer.h>
+//#include <vtkStructuredGrid.h>
 
 #include <cmath>
 
-Graph2dHybridWindowResultDataItem::Graph2dHybridWindowResultDataItem(const QString& title, int index, const Graph2dHybridWindowResultSetting::Setting& setting, Graph2dWindowDataItem* parent)
-	: Graph2dHybridWindowDataItem(title, QIcon(":/libs/guibase/images/iconPaper.png"), parent)
+Graph2dHybridWindowResultDataItem::Graph2dHybridWindowResultDataItem(const QString& title, int index, const Graph2dHybridWindowResultSetting::Setting& setting, Graph2dWindowDataItem* parent) :
+	Graph2dHybridWindowDataItem(title, QIcon(":/libs/guibase/images/iconPaper.png"), parent)
 {
 	Q_UNUSED(index)
 
@@ -34,7 +33,6 @@ Graph2dHybridWindowResultDataItem::Graph2dHybridWindowResultDataItem(const QStri
 	m_curve = new QwtPlotCustomCurve(title);
 	m_curve->setXAxis(QwtPlot::xBottom);
 
-//	m_data = 0;
 	setSetting(setting);
 
 	Graph2dHybridWindowView* view = dataModel()->view();
@@ -59,23 +57,18 @@ void Graph2dHybridWindowResultDataItem::setVisible(bool visible)
 	}
 }
 
-void Graph2dHybridWindowResultDataItem::update(int fn)
+void Graph2dHybridWindowResultDataItem::update()
 {
-	updateValues(fn);
+	updateValues();
 
-	QVector<double> xvals;
-	QVector<double> yvals;
+	std::vector<double> xvals;
+	std::vector<double> yvals;
 
 	const Graph2dHybridWindowResultSetting& s = dataModel()->setting();
 	Graph2dHybridWindowDataItem::buildData(
-		m_xValues, m_yValues, s, m_setting, xvals, yvals);
+		m_xValues, m_yValues, s, m_setting, &xvals, &yvals);
 
-	double* x, *y;
-	buildXY(xvals, yvals, &x, &y);
-
-	m_curve->setSamples(x, y, xvals.count());
-	delete x;
-	delete y;
+	m_curve->setSamples(xvals.data(), yvals.data(), xvals.size());
 }
 
 Graph2dHybridWindowResultCopyDataItem* Graph2dHybridWindowResultDataItem::copy(Graph2dHybridWindowResultCopyGroupDataItem* parent)
@@ -86,15 +79,35 @@ Graph2dHybridWindowResultCopyDataItem* Graph2dHybridWindowResultDataItem::copy(G
 	return ret;
 }
 
+const Graph2dHybridWindowResultSetting::Setting& Graph2dHybridWindowResultDataItem::setting() const
+{
+	return m_setting;
+}
+
 void Graph2dHybridWindowResultDataItem::setSetting(const Graph2dHybridWindowResultSetting::Setting& s)
 {
 	m_setting = s;
 	m_setting.setupCurve(m_curve);
 }
 
+QwtPlotCustomCurve* Graph2dHybridWindowResultDataItem::curve() const
+{
+	return m_curve;
+}
+
 QString Graph2dHybridWindowResultDataItem::title() const
 {
 	return m_standardItem->text();
+}
+
+const std::vector<double>& Graph2dHybridWindowResultDataItem::xValues() const
+{
+	return m_xValues;
+}
+
+const std::vector<double>& Graph2dHybridWindowResultDataItem::yValues() const
+{
+	return m_yValues;
 }
 
 bool Graph2dHybridWindowResultDataItem::axisNeeded(Graph2dHybridWindowResultSetting::AxisSide as) const

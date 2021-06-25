@@ -14,7 +14,6 @@ class GRAPH2D_EXPORT Graph2dWindowRootDataItem : public Graph2dWindowDataItem
 {
 
 public:
-	/// Constructor
 	Graph2dWindowRootDataItem(QMainWindow* window, ProjectDataItem* parent);
 	~Graph2dWindowRootDataItem();
 
@@ -25,7 +24,8 @@ public:
 	void moveDownItem(QStandardItem* item);
 	void updateItemMap() override;
 	Graph2dWindowDataItem* modelItemFromItem(QStandardItem* item);
-	void loadFromCgnsFile(const int fn) override;
+
+	int loadFromCgnsFile() override;
 	void closeCgnsFile() override;
 
 protected:

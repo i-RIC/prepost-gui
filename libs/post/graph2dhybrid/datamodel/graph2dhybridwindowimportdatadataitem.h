@@ -4,7 +4,7 @@
 #include "../graph2dhybridwindowdataitem.h"
 #include "../graph2dhybridwindowresultsetting.h"
 
-#include <QVector>
+#include <vector>
 
 class QwtPlotCustomCurve;
 
@@ -15,17 +15,22 @@ class Graph2dHybridWindowImportDataDataItem : public Graph2dHybridWindowDataItem
 public:
 	Graph2dHybridWindowImportDataDataItem(Graph2dWindowDataItem* parent);
 	~Graph2dHybridWindowImportDataDataItem();
+
 	void setTitle(const QString& title);
 	void setIndex(int index);
-	void setData(const QVector<double>& xvals, const QVector<double>& yvals);
+	void setData(const std::vector<double>& xvals, const std::vector<double>& yvals);
+
+	const Graph2dHybridWindowResultSetting::Setting& setting() const;
 	void setSetting(const Graph2dHybridWindowResultSetting::Setting& setting);
-	const Graph2dHybridWindowResultSetting::Setting& setting() const {return m_setting;}
-	QwtPlotCustomCurve* curve() const {return m_curve;}
+
+	QwtPlotCustomCurve* curve() const;
 	void update();
 	void setId(const QString filename, const QString name);
+
 	QString id() const;
-	const QVector<double>& xValues() const {return m_xValues;}
-	const QVector<double>& yValues() const {return m_yValues;}
+	const std::vector<double>& xValues() const;
+	const std::vector<double>& yValues() const;
+
 	QString title() const;
 	bool axisNeeded(Graph2dHybridWindowResultSetting::AxisSide as) const;
 
@@ -36,10 +41,12 @@ protected:
 	QwtPlotCustomCurve* m_curve;
 
 private:
-	QVector<double> m_xValues;
-	QVector<double> m_yValues;
+	std::vector<double> m_xValues;
+	std::vector<double> m_yValues;
+
 	bool m_attached;
 	int m_index;
+
 	QString m_filename;
 	QString m_name;
 	Graph2dHybridWindowResultSetting::Setting m_setting;

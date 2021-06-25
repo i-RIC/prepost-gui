@@ -4,8 +4,6 @@
 #include <QObject>
 #include <QList>
 
-#include <guicore/project/cgnsfilelist.h>
-
 class iRICMainWindow;
 class ProjectData;
 class SolverDefinitionList;

@@ -23,8 +23,8 @@ public:
 	QPointF vertex(unsigned int index) const override;
 	void setVertex(unsigned int index, const QPointF& v) override;
 
-	bool loadFromCgnsFile(const int fn, int B, int Z) override;
-	bool saveToCgnsFile(const int fn, int B, const char* zonename) override;
+	int loadFromCgnsFile(const iRICLib::H5CgnsZone& zone) override;
+	int saveToCgnsFile(iRICLib::H5CgnsBase* base, const std::string& zoneName) override;
 
 	void updateSimplifiedGrid(double xmin, double xmax, double ymin, double ymax) override;
 

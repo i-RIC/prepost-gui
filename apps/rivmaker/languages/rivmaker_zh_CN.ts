@@ -16,12 +16,16 @@
         <translation>版权: USGS</translation>
     </message>
     <message>
-        <source>rivmaker 2.0</source>
+        <source>Release Date: 2021/1/30</source>
+        <translation type="obsolete">发布日期: 2021/1/30</translation>
+    </message>
+    <message>
+        <source>rivmaker 2.0.2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Release Date: 2021/1/30</source>
-        <translation type="unfinished">发布日期: 2021/1/30</translation>
+        <source>Release Date: 2021/3/2</source>
+        <translation type="unfinished">发布日期: 2021/3/2</translation>
     </message>
 </context>
 <context>
@@ -102,7 +106,7 @@
 <context>
     <name>ChartGraphicsView</name>
     <message>
-        <source>Aspect ratio: 1 / %1</source>
+        <source>Aspect ratio (V/H): 1 / %1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -129,15 +133,15 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Aspect ratio: 1 / </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Fix aspect ratio</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Fix region</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / </source>
         <translation type="unfinished"></translation>
     </message>
 </context>

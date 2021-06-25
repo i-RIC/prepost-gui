@@ -1,7 +1,6 @@
 #include "preprocessorinputconditiondataitem.h"
 
 #include <guicore/base/iricmainwindowinterface.h>
-#include <guicore/misc/cgnsfileopener.h>
 #include <guicore/postcontainer/postsolutioninfo.h>
 #include <guicore/project/inputcond/inputconditiondialog.h>
 #include <guicore/project/inputcond/inputconditionwidgetfilename.h>
@@ -18,7 +17,8 @@
 #include <QStandardItem>
 #include <QXmlStreamWriter>
 
-#include <cgnslib.h>
+#include <h5cgnsbase.h>
+#include <h5cgnsfile.h>
 
 PreProcessorInputConditionDataItem::PreProcessorInputConditionDataItem(GraphicsWindowDataItem* parent) :
 	PreProcessorDataItem {parent}
@@ -52,14 +52,22 @@ void PreProcessorInputConditionDataItem::doSaveToProjectMainFile(QXmlStreamWrite
 	writer.writeAttribute("isSet", isSetStr);
 }
 
-void PreProcessorInputConditionDataItem::loadFromCgnsFile(const int fn)
+int PreProcessorInputConditionDataItem::loadFromCgnsFile()
 {
-	m_dialog->load(fn);
+	auto cgnsFile = projectData()->mainfile()->cgnsFile();
+	return m_dialog->load(*(cgnsFile->ccBase()->ccGroup()));
 }
 
-void PreProcessorInputConditionDataItem::saveToCgnsFile(const int fn)
+int PreProcessorInputConditionDataItem::saveToCgnsFile()
 {
-	m_dialog->save(fn);
+	auto cgnsFile = projectData()->mainfile()->cgnsFile();
+	return m_dialog->save(cgnsFile->ccBase()->ccGroup());
+}
+
+int PreProcessorInputConditionDataItem::updateCgnsFileOtherThanGrids()
+{
+	auto cgnsFile = projectData()->mainfile()->cgnsFile();
+	return m_dialog->save(cgnsFile->ccBase()->ccGroup());
 }
 
 void PreProcessorInputConditionDataItem::showDialog(bool readonly)

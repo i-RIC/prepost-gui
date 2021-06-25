@@ -11,11 +11,13 @@
 #include <QMap>
 #include <QStringList>
 
-class CgnsFileOpener;
+namespace iRICLib {
+	class H5CgnsFile;
+} // namespace iRICLib
+
 class PostBaseIterativeNumericalDataContainer;
 class PostBaseIterativeStringDataContainer;
 class PostCalculatedResult;
-class PostDataContainer;
 class PostIterationSteps;
 class PostTimeSteps;
 class PostZoneDataContainer;
@@ -41,7 +43,7 @@ public:
 	bool hasResults();
 	/// Emit signal cgnsStepsUpdated().
 	void informCgnsSteps();
-	void loadFromCgnsFile(const int fn) override;
+	int loadFromCgnsFile() override;
 	void closeCgnsFile() override;
 
 	const QList<PostZoneDataContainer*>& zoneContainers1D() const;
@@ -67,7 +69,7 @@ public:
 
 	static int toIntDimension(Dimension dim);
 	static Dimension fromIntDimension(int dim);
-	bool open();
+	int open();
 	void close();
 
 	const PostExportSetting& exportSetting() const;
@@ -77,6 +79,7 @@ public:
 
 	/// File ID that can be used with cgnslib functions.
 	int fileId() const;
+	iRICLib::H5CgnsFile* cgnsFile() const;
 	void setCalculatedResultDisabled(bool disabled);
 
 	void exportCalculationResult(const std::string& folder, const std::string& prefix, const std::vector<int> steps, PostDataExportDialog::Format format);
@@ -86,7 +89,7 @@ public:
 public slots:
 	void informSolverStart();
 	void informSolverFinish();
-	bool setCurrentStep(unsigned int step, int fn = 0);
+	int setCurrentStep(unsigned int step);
 	void checkCgnsStepsUpdate();
 	void exportCalculationResult();
 
@@ -99,19 +102,19 @@ signals:
 	void allPostProcessorsUpdated();
 	void cgnsTimeStepsUpdated(const QList<double>& steps);
 	void cgnsIterationStepsUpdated(const QList<int>& steps);
-	void cgnsStepsUpdated(int fn);
+	void cgnsStepsUpdated();
 	void zoneList1DUpdated();
 	void zoneList2DUpdated();
 	void zoneList3DUpdated();
 
 private:
 	bool stepsExist() const;
-	void setupZoneDataContainers(int fn);
+	void setupZoneDataContainers();
 	void loadCalculatedResult();
 	void clearCalculatedResults(QMap<std::string, std::vector<PostCalculatedResult*> >* results);
-	bool innerSetupZoneDataContainers(int fn, int dimension, QList<PostZoneDataContainer*>* containers, QMap<std::string, PostZoneDataContainer*>* containerNameMap, QMap<std::string, std::vector<PostCalculatedResult*> > *results);
+	bool innerSetupZoneDataContainers(int dimension, QList<PostZoneDataContainer*>* containers, QMap<std::string, PostZoneDataContainer*>* containerNameMap, QMap<std::string, std::vector<PostCalculatedResult*> > *results);
 
-	bool setupBaseIterativeResults(int fn, int baseId);
+	bool setupBaseIterativeResults();
 	void clearBaseIterativeResults();
 
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
@@ -135,7 +138,7 @@ private:
 	QMap<std::string, PostZoneDataContainer*> m_zoneContainerNameMap3D;
 
 	int m_timerId;
-	CgnsFileOpener* m_opener;
+	iRICLib::H5CgnsFile* m_cgnsFile;
 
 	QMap<std::string, std::vector<PostCalculatedResult*> > m_calculatedResults1D;
 	QMap<std::string, std::vector<PostCalculatedResult*> > m_calculatedResults2D;

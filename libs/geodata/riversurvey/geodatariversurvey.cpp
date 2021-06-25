@@ -1620,9 +1620,9 @@ void GeoDataRiverSurvey::updateFilename()
 	setFilename(name().append(".dat"));
 }
 
-int GeoDataRiverSurvey::iRICLibType() const
+iRICLib::H5CgnsGeographicDataGroup::Type GeoDataRiverSurvey::iRICLibType() const
 {
-	return IRIC_GEO_RIVERSURVEY;
+	return iRICLib::H5CgnsGeographicDataGroup::Type::RiverSurvey;
 }
 
 void GeoDataRiverSurvey::doApplyOffset(double x, double y)

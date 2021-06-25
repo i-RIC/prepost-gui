@@ -10,7 +10,6 @@
 #include "../../grid/grid.h"
 #include <misc/stringtool.h>
 
-#include <cgnslib.h>
 #include <vtkDataArray.h>
 #include <vtkIntArray.h>
 #include <vtkPointData.h>
@@ -113,11 +112,6 @@ std::vector<GridComplexConditionGroup*> GridComplexAttributeContainer::groups() 
 	if (gItem3 == nullptr) {return empty;}
 
 	return gItem3->groups();
-}
-
-DataType_t GridComplexAttributeContainer::dataType() const
-{
-	return Integer;
 }
 
 SolverDefinitionGridComplexAttribute* GridComplexAttributeContainer::gridAttribute() const

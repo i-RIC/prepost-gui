@@ -10,7 +10,7 @@
 #include <QMap>
 #include <QColor>
 
-#include <cgnslib.h>
+#include <h5cgnszone.h>
 
 class GeoDataPolyLine;
 class GeoDataPolyLineGroup;
@@ -98,11 +98,11 @@ public:
 	static Qt::PenStyle getPenStyle(LineType lt);
 	static QwtSymbol::Style getSymbolStyle(SymbolType st);
 
-	static GridLocation_t getGridLocation(QString string);
-	static QString getGridLocationString(GridLocation_t location);
+	static iRICLib::H5CgnsZone::SolutionPosition getGridLocation(QString string);
+	static QString getGridLocationString(iRICLib::H5CgnsZone::SolutionPosition location);
 
-	static GridLocation_t getGridLocationTranslated(QString string);
-	static QString getGridLocationStringTranslated(GridLocation_t location);
+	static iRICLib::H5CgnsZone::SolutionPosition getGridLocationTranslated(QString string);
+	static QString getGridLocationStringTranslated(iRICLib::H5CgnsZone::SolutionPosition location);
 
 	struct DataTypeInfo;
 	class Setting
@@ -146,11 +146,10 @@ public:
 	struct DataTypeInfo {
 		DataType dataType;
 		PostSolutionInfo::Dimension dimension;
-		int zoneId;
 		std::string zoneName;
-		QMap<GridLocation_t, QStringList> dataNamesMap;
+		QMap<iRICLib::H5CgnsZone::SolutionPosition, QStringList> dataNamesMap;
 		SolverDefinitionGridType* gridType;
-		GridLocation_t gridLocation;
+		iRICLib::H5CgnsZone::SolutionPosition gridLocation;
 		void loadFromProjectMainFile(const QDomNode& node);
 		void saveToProjectMainFile(QXmlStreamWriter& writer) const;
 		bool operator==(const DataTypeInfo& info);
@@ -159,7 +158,8 @@ public:
 	// constructor
 	Graph2dHybridWindowResultSetting();
 	~Graph2dHybridWindowResultSetting();
-	bool init(PostSolutionInfo* sol, const QString& cgnsFilename);
+
+	bool init(PostSolutionInfo* sol);
 	bool settingExists();
 
 	QList<Graph2dWindowDataItem*> setupItems(Graph2dHybridWindowResultGroupDataItem* gItem) const ;

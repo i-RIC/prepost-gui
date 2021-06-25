@@ -8,7 +8,8 @@
 
 #include <yaml-cpp/yaml.h>
 
-#include <iriclib.h>
+#include <h5cgnsconditiongroup.h>
+#include <iriclib_errorcodes.h>
 
 InputConditionContainerString::InputConditionContainerString() :
 	InputConditionContainer(),
@@ -64,56 +65,35 @@ void InputConditionContainerString::setDefaultValue(const QString& v)
 	impl->m_default = v;
 }
 
-int InputConditionContainerString::load()
+int InputConditionContainerString::load(const iRICLib::H5CgnsConditionGroup& group)
 {
-	char* buffer;
-	int ret;
 	int length;
-
-	if (isBoundaryCondition()){
-		ret = cg_iRIC_Read_BC_StringLen(const_cast<char*>(bcName().c_str()), bcIndex(), const_cast<char*>(name().c_str()), &length);
-	} else if (isComplexCondition()){
-		ret = cg_iRIC_Read_Complex_StringLen(const_cast<char*>(complexName().c_str()), complexIndex(), const_cast<char*>(name().c_str()), &length);
-	} else {
-		ret = cg_iRIC_Read_StringLen(const_cast<char*>(name().c_str()), &length);
-	}
+	int ret = group.readStringLen(name(), &length);
 
 	if (ret != 0){
 		clear();
-		return ret;
+		return IRIC_NO_ERROR;
 	}
 
-	buffer = new char[length + 1];
+	std::vector<char> buffer(length + 1);
+	ret = group.readString(name(), buffer.data());
 
-	if (isBoundaryCondition()){
-		ret = cg_iRIC_Read_BC_String(const_cast<char*>(bcName().c_str()), bcIndex(), const_cast<char*>(name().c_str()), buffer);
-	} else if (isComplexCondition()){
-		ret = cg_iRIC_Read_Complex_String(const_cast<char*>(complexName().c_str()), complexIndex(), const_cast<char*>(name().c_str()), buffer);
-	} else {
-		ret = cg_iRIC_Read_String(const_cast<char*>(name().c_str()), buffer);
-	}
 	if (ret != 0){
 		clear();
 	} else {
-		impl->m_value = buffer;
+		impl->m_value = buffer.data();
 		emit valueChanged(impl->m_value);
 		emit valueChanged();
 	}
-	delete buffer;
 
-	return ret;
+	return IRIC_NO_ERROR;
 }
 
-int InputConditionContainerString::save()
+int InputConditionContainerString::save(iRICLib::H5CgnsConditionGroup* group)
 {
-	std::string value = impl->m_value.toUtf8().constData();
-	if (isBoundaryCondition()) {
-		return cg_iRIC_Write_BC_String(toC(bcName()), bcIndex(), toC(name()), toC(value));
-	} else if (isComplexCondition()) {
-		return cg_iRIC_Write_Complex_String(toC(complexName()), complexIndex(), toC(name()), toC(value));
-	} else {
-		return cg_iRIC_Write_String(toC(name()), toC(value));
-	}
+	if (impl->m_value.length() == 0) {return IRIC_NO_ERROR;}
+
+	return group->writeString(name(), iRIC::toStr(impl->m_value));
 }
 
 void InputConditionContainerString::clear()

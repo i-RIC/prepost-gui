@@ -21,6 +21,7 @@ class GridCreatingConditionExternalProgram : public GridCreatingCondition
 public:
 	GridCreatingConditionExternalProgram(const QString& folderName, const QLocale& locale, ProjectDataItem* parent, GridCreatingConditionCreator* creator);
 	~GridCreatingConditionExternalProgram();
+
 	bool create(QWidget* parent) override;
 	bool ready() const override;
 	void clear() override;
@@ -35,12 +36,9 @@ protected:
 	void mousePressEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) override;
 	void mouseReleaseEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) override;
 
-private:
-	static int readErrorCode(int fn);
-	void deleteGrid(const QString& fname);
+	SolverDefinition* m_definition;
 	std::string m_name;
 	QLocale m_locale;
-	SolverDefinition* m_definition;
 	bool m_canceled;
 
 	QPoint m_dragStartPoint;

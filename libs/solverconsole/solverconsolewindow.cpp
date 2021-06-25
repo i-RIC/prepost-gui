@@ -6,8 +6,6 @@
 #include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/postcontainer/postsolutioninfo.h>
 #include <guicore/pre/base/preprocessorwindowinterface.h>
-#include <guicore/project/cgnsfileentry.h>
-#include <guicore/project/cgnsfilelist.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
 #include <guicore/solverdef/solverdefinition.h>
@@ -150,6 +148,7 @@ void SolverConsoleWindow::startSolver()
 	// discard result, and save now.
 	try {
 		impl->m_projectData->mainfile()->clearResults();
+		clear();
 	} catch (ErrorMessage& m) {
 		QMessageBox::warning(this, tr("Warning"), tr("Error occured. %1").arg(m));
 		return;
@@ -299,7 +298,7 @@ QPixmap SolverConsoleWindow::snapshot()
 void SolverConsoleWindow::clear()
 {
 	impl->m_console->clear();
-	impl->m_projectDataItem->clear();
+	impl->m_projectDataItem->clearLogFile();
 }
 
 void SolverConsoleWindow::applyPreferenceSetting()
@@ -313,8 +312,7 @@ void SolverConsoleWindow::startSolverSilently()
 {
 	impl->m_projectData->mainfile()->postSolutionInfo()->close();
 
-	QString cgnsname = impl->m_projectData->mainfile()->cgnsFileList()->current()->filename();
-	cgnsname.append(".cgn");
+	QString cgnsname = "Case1.cgn";
 
 	impl->m_process = new QProcess(this);
 	QString wd = impl->m_projectData->workDirectory();
@@ -327,6 +325,10 @@ void SolverConsoleWindow::startSolverSilently()
 	QProcessEnvironment env = impl->m_projectData->mainWindow()->processEnvironment();
 	env.insert("iRIC_LANG", locale);
 
+	if (impl->m_projectData->mainfile()->separateResult()) {
+		env.insert("IRIC_SEPARATE_OUTPUT", "1");
+	}
+	env.insert("IRIC_LOG_LEVEL", "FATAL");
 
 	// create connections.
 	connect(impl->m_process, SIGNAL(readyReadStandardError()), this, SLOT(readStderr()));

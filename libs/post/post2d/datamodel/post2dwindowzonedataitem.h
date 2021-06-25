@@ -11,7 +11,8 @@
 #include <vtkUnstructuredGrid.h>
 #include <vtkPolyData.h>
 #include <vtkDataSetMapper.h>
-#include <cgnslib.h>
+
+#include <h5cgnszone.h>
 
 class QAction;
 class QSignalMapper;
@@ -50,7 +51,7 @@ public:
 
 	PostZoneDataContainer* dataContainer() override;
 	vtkPolyData* filteredData() const;
-	vtkPolyData* filteredData(GridLocation_t location) const;
+	vtkPolyData* filteredData(iRICLib::H5CgnsZone::SolutionPosition position) const;
 	bool isMasked() const;
 	int zoneNumber() const;
 	std::string zoneName() const;
@@ -127,9 +128,9 @@ private:
 	void updateCellResultAttributeBrowser(vtkIdType cellid, VTKGraphicsView* v);
 	void updateParticleResultAttributeBrowser(vtkIdType particleid, double x, double y, VTKGraphicsView* v);
 	void updatePolyDataResultAttributeBrowser(const std::string& name, int cellid, VTKGraphicsView* v);
-	void updateNodeResultAttributeBrowser(const QPoint& p, VTKGraphicsView* v, GridLocation_t gridLocation);
-	void updateNodeResultAttributeBrowser(vtkIdType vid, double x, double y, VTKGraphicsView* /*v*/, GridLocation_t gridLocation);
-	void fixNodeResultAttributeBrowser(const QPoint& p, VTKGraphicsView* v, GridLocation_t gridLocation);
+	void updateNodeResultAttributeBrowser(const QPoint& p, VTKGraphicsView* v, iRICLib::H5CgnsZone::SolutionPosition position);
+	void updateNodeResultAttributeBrowser(vtkIdType vid, double x, double y, VTKGraphicsView* /*v*/, iRICLib::H5CgnsZone::SolutionPosition position);
+	void fixNodeResultAttributeBrowser(const QPoint& p, VTKGraphicsView* v, iRICLib::H5CgnsZone::SolutionPosition position);
 
 	Post2dWindowGridShapeDataItem* m_shapeDataItem;
 	Post2dWindowNodeScalarGroupTopDataItem* m_scalarGroupTopDataItem;

@@ -6,12 +6,18 @@
 #include <misc/stringtool.h>
 
 #include <vtkLine.h>
+#include <vtkSmartPointer.h>
 #include <vtkVertex.h>
 
 #include <QVector2D>
 
-#include <cgnslib.h>
-#include <iriclib.h>
+#include <h5cgnsbase.h>
+#include <h5cgnsgridcoordinates.h>
+#include <h5cgnszone.h>
+#include <h5groupcloser.h>
+#include <h5util.h>
+#include <iriclib_errorcodes.h>
+
 #include <vector>
 
 Structured15DGridWithCrossSection::Structured15DGridWithCrossSection(ProjectDataItem* parent) :
@@ -118,84 +124,59 @@ void Structured15DGridWithCrossSection::setModified(bool modified)
 	}
 }
 
-bool Structured15DGridWithCrossSection::loadFromCgnsFile(const int fn, int B, int Z)
+int Structured15DGridWithCrossSection::loadFromCgnsFile(const iRICLib::H5CgnsZone& zone)
 {
-	int ier;
-	cgsize_t size[9];
-	char buffer[ProjectCgnsFile::BUFFERLEN];
-	ier = cg_zone_read(fn, B, Z, buffer, size);
-	if (ier != 0) {return false;}
+	auto size = zone.size();
+
 	int riversize = size[0];
 
-	ier = cg_goto(fn, B, "Zone_t", Z, "GridCoordinates", 0, "end");
-	if (ier != 0) {
-		// grid data does not exists.
-		return false;
-	}
-	// the first one must be X.
-	DataType_t dType;
-	int narrays;
-	int dim;
-	cgsize_t dimV[3];
-	cg_narrays(&narrays);
-	ier = cg_array_info(1, buffer, &dType, &dim, dimV);
+	std::vector<double> xvec, yvec;
+	int ier = 0;
 
-	std::vector<double> dataX(riversize, 0);
-	std::vector<double> dataY(riversize, 0);
+	ier = zone.gridCoordinates()->readCoordinatesX(&xvec);
+	if (ier != IRIC_NO_ERROR) {return ier;}
 
-	ier = cg_array_read_as(1, RealDouble, dataX.data());
-	ier = cg_array_read_as(2, RealDouble, dataY.data());
+	ier = zone.gridCoordinates()->readCoordinatesY(&yvec);
+	if (ier != IRIC_NO_ERROR) {return ier;}
 
-	vtkPoints* points = vtkPoints::New();
+	auto points = vtkSmartPointer<vtkPoints>::New();
 	points->SetDataTypeToDouble();
-	for (int i = 0; i < riversize; i++) {
-		points->InsertNextPoint(dataX[i], dataY[i], 0);
+	auto offset = this->offset();
+	for (unsigned int i = 0; i < xvec.size(); ++i) {
+		points->InsertNextPoint(xvec[i] - offset.x(), yvec[i] - offset.y(), 0);
 	}
 	setPoints(points);
-	points->Delete();
 
-	// Grid coordinates are loaded.
-	// Next, grid related condition data is loaded.
-	loadGridAttributes(fn, B, Z);
+	loadGridAttributes(*(zone.gridAttributes()));
 
-	// Grid related conditions are loaded.
-	// Next, cross section data is loaded.
+	// load cross section data
+	hid_t groupId;
+	ier = iRICLib::H5Util::openGroup(zone.groupId(), "GridCrosssections", iRICLib::H5Util::userDefinedDataLabel(), &groupId);
+	if (ier != IRIC_NO_ERROR) {return ier;}
+
+	iRICLib::H5GroupCloser groupCloser(groupId);
+
 	for (int i = 1; i <= riversize; i++) {
 		QString str = QString::number(i);
-		Structured15DGridWithCrossSectionCrossSection* crossSection = new Structured15DGridWithCrossSectionCrossSection(str, this);
-		crossSection->loadFromCgnsFile(fn, B, Z, i);
-		m_crossSections << crossSection;
+		auto cs = new Structured15DGridWithCrossSectionCrossSection(str, this);
+		cs->loadFromCgnsFile(groupId, i);
+		m_crossSections.push_back(cs);
 	}
 	return true;
 }
 
-bool Structured15DGridWithCrossSection::saveToCgnsFile(const int fn, int B, const char* zonename)
+int Structured15DGridWithCrossSection::saveToCgnsFile(iRICLib::H5CgnsBase* base, const std::string& zoneName)
 {
 	int ier;
-	cgsize_t sizes[9];
-
-	// Check whether the corresponding zone already exists.
-	int zoneid = zoneId(zonename, fn, B, sizes);
-	if (zoneid != 0) {
-		// Zone already exists! remove this zone first!
-		ier = cg_delete_node(zonename);
-		if (ier != 0) {return false;}
-	}
-	// Now, create new zone.
+	std::vector<int> sizes;
 	int num = vtkGrid()->GetNumberOfPoints();
-	sizes[0] = num;
-	sizes[1] = 1;
-	sizes[2] = num - 1;
-	sizes[3] = 0;
-	sizes[4] = 0;
-	sizes[5] = 0;
-	cg_zone_write(fn, B, zonename, sizes, Structured, &zoneid);
+	sizes.push_back(num);
+	sizes.push_back(1);
+	sizes.push_back(num - 1);
+	sizes.push_back(0);
 
-	// save grid coordinates.
-	int G;
-	ier = cg_grid_write(fn, B, zoneid, "GridCoordinates", &G);
-	if (ier != 0) {return false;}
-	int C;
+	auto zone = base->createZone(zoneName, iRICLib::H5CgnsZone::Type::Structured, sizes);
+
 	// save coordinates.
 	std::vector<double> dataX(num, 0);
 	std::vector<double> dataY(num, 0);
@@ -206,23 +187,28 @@ bool Structured15DGridWithCrossSection::saveToCgnsFile(const int fn, int B, cons
 		dataX[i] = points[0];
 		dataY[i] = points[1];
 	}
-	ier = cg_coord_write(fn, B, zoneid, RealDouble, "CoordinateX", dataX.data(), &C);
-	if (ier != 0) {return false;}
-	ier = cg_coord_write(fn, B, zoneid, RealDouble, "CoordinateY", dataY.data(), &C);
-	if (ier != 0) {return false;}
 
-	// Grid coordinates are saved.
-	// Next grid related condition data is saved.
-	// Create "GridConditions" node under the zone node.
-	saveGridAttributes(fn, B, zoneid);
+	ier = zone->gridCoordinates()->writeCoordinatesX(dataX);
+	if (ier != IRIC_NO_ERROR) {return ier;}
 
-	// Grid related conditions are saved.
+	ier = zone->gridCoordinates()->writeCoordinatesY(dataY);
+	if (ier != IRIC_NO_ERROR) {return ier;}
+
+	ier = saveGridAttributes(zone->gridAttributes());
+	if (ier != IRIC_NO_ERROR) {return ier;}
+
 	// Next cross section data is saved.
-	cg_goto(fn, B, "Zone_t", zoneid, "end");
-	cg_user_data_write("GridCrosssections");
+	hid_t groupId;
+	ier = iRICLib::H5Util::createUserDefinedDataGroup(zone->groupId(), "GridCrosssections", &groupId);
+	if (ier != IRIC_NO_ERROR) {return ier;}
+
+	iRICLib::H5GroupCloser groupCloser(groupId);
+
 	int index = 1;
-	for (Structured15DGridWithCrossSectionCrossSection* xsec : m_crossSections) {
-		xsec->saveToCgnsFile(fn, B, zoneid, index);
+	for (auto xsec : m_crossSections) {
+		ier = xsec->saveToCgnsFile(groupId, index);
+		if (ier != IRIC_NO_ERROR) {return ier;}
+
 		index++;
 	}
 	return true;
