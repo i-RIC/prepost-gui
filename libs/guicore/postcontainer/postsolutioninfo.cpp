@@ -787,7 +787,7 @@ void PostSolutionInfo::exportCalculationResult()
 	PostDataExportDialog expDialog(iricMainWindow());
 
 	expDialog.setFormat(m_exportFormat);
-	expDialog.setTimeValues(m_timeSteps->timesteps());
+	expDialog.setProjectMainFile(projectData()->mainfile());
 
 	vtkStructuredGrid* sGrid = vtkStructuredGrid::SafeDownCast(zoneC->data());
 	if (sGrid != nullptr) {

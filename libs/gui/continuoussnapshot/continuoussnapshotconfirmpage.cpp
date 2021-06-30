@@ -1,4 +1,5 @@
 #include "continuoussnapshotconfirmpage.h"
+#include "continuoussnapshotsetting.h"
 #include "continuoussnapshotwizard.h"
 
 #include <QDir>
@@ -26,36 +27,39 @@ ContinuousSnapshotConfirmPage::ContinuousSnapshotConfirmPage(QWidget* parent) :
 
 void ContinuousSnapshotConfirmPage::initializePage()
 {
+	const auto s = m_wizard->setting();
+
 	m_fileList->clear();
 	m_wizard->clearFileList();
 
-	int len = m_wizard->suffixLength();
-	int step = m_wizard->start();
-	int rate = m_wizard->samplingRate();
+	int len = s.suffixLength;
+	int step = s.startTimeStep;
+	int rate = s.samplingRate;
 	int index = 1;
-	while (step <= m_wizard->stop()) {
+	while (step <= s.stopTimeStep) {
 		for (QString prefix : m_wizard->prefixList()) {
 			prefix.append(QString("%1").arg(index, len, 10, QChar('0')));
-			prefix.append(m_wizard->extension());
-			QString absolute = QDir(m_wizard->fileIODirectory()).absoluteFilePath(prefix);
+			prefix.append(s.imageExtention);
+			QString absolute = QDir(s.exportTargetFolder).absoluteFilePath(prefix);
 			m_fileList->addItem(QDir::toNativeSeparators(absolute));
 			m_wizard->addFileList(absolute);
 		}
 		++index;
 		step += rate;
 	}
-	if (m_wizard->outputMovie()) {
+	if (s.outputMovie) {
 		for (const QString& prefix : m_wizard->prefixList()) {
 			QString movieFilename = QString("%1.mp4").arg(prefix);
-			QString absMovieFilename = QDir(m_wizard->fileIODirectory()).absoluteFilePath(movieFilename);
+			QString absMovieFilename = QDir(s.exportTargetFolder).absoluteFilePath(movieFilename);
 			m_fileList->addItem(QDir::toNativeSeparators(absMovieFilename));
 		}
 	}
 	m_fileList->sortItems();
 
+	auto setting = m_wizard->setting();
 	// kml file
-	if (m_wizard->googleEarth()) {
-		QString kml = QDir(m_wizard->fileIODirectory()).absoluteFilePath(m_wizard->kmlFilename());
+	if (setting.outputKml) {
+		QString kml = QDir(s.exportTargetFolder).absoluteFilePath(setting.kmlFilename);
 		m_fileList->addItem(QDir::toNativeSeparators(kml));
 	}
 }

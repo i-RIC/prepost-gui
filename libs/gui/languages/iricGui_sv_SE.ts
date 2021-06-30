@@ -43,6 +43,10 @@
         <source>&amp;Animation Speed Setting...</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>L&amp;oop Animation</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ConfirmPage</name>

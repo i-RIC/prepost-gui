@@ -19,7 +19,7 @@
 
 ContinuousSnapshotWizard::ContinuousSnapshotWizard(QWidget* parent) :
 	QWizard(parent),
-	m_coordinateSystem {nullptr}
+	m_projectMainFile {nullptr}
 {
 	addPage(new ContinuousSnapshotIntroductionPage(this));
 	addPage(new ContinuousSnapshotWindowSelectionPage(this));
@@ -37,4 +37,24 @@ ContinuousSnapshotWizard::ContinuousSnapshotWizard(QWidget* parent) :
 void ContinuousSnapshotWizard::accept()
 {
 	QWizard::accept();
+}
+
+void ContinuousSnapshotWizard::setProjectMainFile(ProjectMainFile* mainFile)
+{
+	m_projectMainFile = mainFile;
+}
+
+ProjectMainFile* ContinuousSnapshotWizard::projectMainFile() const
+{
+	return m_projectMainFile;
+}
+
+void ContinuousSnapshotWizard::setSetting(const ContinuousSnapshotSetting& setting)
+{
+	m_setting = setting;
+}
+
+ContinuousSnapshotSetting ContinuousSnapshotWizard::setting() const
+{
+	return m_setting;
 }
