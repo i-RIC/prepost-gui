@@ -23,6 +23,7 @@ public:
 	iRICMetaData(const std::string& appPath, const QLocale& locale);
 	~iRICMetaData();
 
+	const QString& caption() const;
 	const VersionNumber& versionNumber() const;
 	QString displayVersionNumber() const;
 	QDate releaseDate() const;
@@ -34,6 +35,7 @@ private:
 	void loadMetaData(const std::string& appPath, const QLocale& locale);
 	void checkVersionNumber();
 
+	QString m_caption;
 	VersionNumber m_versionNumber;
 	QString m_displayVersionNumber;
 	QDate m_releaseDate;

@@ -12,6 +12,11 @@ iRICMetaData::iRICMetaData(const std::string &appPath, const QLocale& locale)
 iRICMetaData::~iRICMetaData()
 {}
 
+const QString& iRICMetaData::caption() const
+{
+	return m_caption;
+}
+
 const VersionNumber& iRICMetaData::versionNumber() const
 {
 	return m_versionNumber;
@@ -47,6 +52,7 @@ void iRICMetaData::loadMetaData(const std::string &appPath, const QLocale& local
 	try {
 		SolverDefinitionAbstract abst(appPath.c_str(), locale, nullptr);
 
+		m_caption = abst.caption();
 		m_versionNumber = abst.version();
 		m_displayVersionNumber = m_versionNumber.toAboutString();
 		m_releaseDate = abst.release();
