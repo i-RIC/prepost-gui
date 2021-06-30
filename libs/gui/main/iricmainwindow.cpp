@@ -1232,7 +1232,7 @@ void iRICMainWindow::updateWindowTitle()
 {
 	QString fname = "";
 	if (m_projectData == nullptr) {
-		setWindowTitle(tr("iRIC %1").arg(m_versionNumber.toString()));
+		setWindowTitle(tr("%1 %2").arg(m_metaData->caption()).arg(m_versionNumber.toString()));
 		return;
 	}
 	if (m_projectData->filename() == "") {
@@ -1247,8 +1247,8 @@ void iRICMainWindow::updateWindowTitle()
 		}
 	}
 	QString solverName = m_projectData->solverDefinition()->caption();
-	QString title = tr("%1 - iRIC %2 [%3]");
-	setWindowTitle(title.arg(QDir::toNativeSeparators(fname)).arg(m_versionNumber.toString()).arg(solverName));
+	QString title = tr("%1 - %2 %3 [%4]");
+	setWindowTitle(title.arg(QDir::toNativeSeparators(fname)).arg(m_metaData->caption()).arg(m_versionNumber.toString()).arg(solverName));
 }
 
 void iRICMainWindow::warnSolverRunning() const
