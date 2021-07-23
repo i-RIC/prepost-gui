@@ -20,7 +20,7 @@ skip_commits:
     - tools/*
 
 image:
-  - Visual Studio 2013
+##  - Visual Studio 2013
   - Visual Studio 2019
 
 # called before clone
