@@ -14,6 +14,8 @@
 
 cmake_minimum_required(VERSION 3.1)
 
+project(dist)
+
 if(CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
   set(CMAKE_INSTALL_PREFIX c:/online_update CACHE PATH "Top level directory of online_update workspace" FORCE)
 endif()
