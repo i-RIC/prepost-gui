@@ -27,6 +27,7 @@ image:
 # Note that environment variables don't seem to transfer correctly from cmd to ps when
 # they contain spaces
 init:
+  - dir C:\Qt\Tools\QtInstallerFramework\
   - echo %APPVEYOR_BUILD_WORKER_IMAGE%
   - echo %Configuration%
   - if "%Configuration%"=="Debug"   (set config=debug)
@@ -212,7 +213,8 @@ on_success:
           # run repogen to build packages and Updates.xml
           Set-Location \online_update\yasu_src -ErrorAction Stop
           # run repogen
-          C:\Qt\Tools\QtInstallerFramework\2.0\bin\repogen.exe -p packages --update --include gui.prepost ..\yasu
+          ##C:\Qt\Tools\QtInstallerFramework\2.0\bin\repogen.exe -p packages --update --include gui.prepost ..\yasu
+          C:\Qt\Tools\QtInstallerFramework\4.0\bin\repogen.exe -p packages --update --include gui.prepost ..\yasu
           if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
         }
 
