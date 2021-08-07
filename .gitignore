@@ -1,3 +1,4 @@
+.vs
 *.obj
 *.tlog
 moc_*.cpp
