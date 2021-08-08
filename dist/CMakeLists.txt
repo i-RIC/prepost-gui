@@ -459,24 +459,10 @@ set(IRIC_EXE
 
 # IRIC_DLLS
 set(IRIC_DLLS
-  ${PREPOST_GUI}/libdlls/Release/iricCs.dll
   ${PREPOST_GUI}/libdlls/Release/iricAxis2d.dll
   ${PREPOST_GUI}/libdlls/Release/iricAxis3d.dll
+  ${PREPOST_GUI}/libdlls/Release/iricCs.dll
   ${PREPOST_GUI}/libdlls/Release/iricDistancemeasure.dll
-  ${PREPOST_GUI}/libdlls/Release/iricMeasureddata.dll
-  ${PREPOST_GUI}/libdlls/Release/iricGdNetcdf.dll
-  ${PREPOST_GUI}/libdlls/Release/iricGdPoint.dll
-  ${PREPOST_GUI}/libdlls/Release/iricGdPolyLine.dll
-  ${PREPOST_GUI}/libdlls/Release/iricGdPointGroup.dll
-  ${PREPOST_GUI}/libdlls/Release/iricGdPointmap.dll
-  ${PREPOST_GUI}/libdlls/Release/iricGdPolydata.dll
-  ${PREPOST_GUI}/libdlls/Release/iricGdPolydataGroup.dll
-  ${PREPOST_GUI}/libdlls/Release/iricGdPolygon.dll
-  ${PREPOST_GUI}/libdlls/Release/iricGdPolygonGroup.dll
-  ${PREPOST_GUI}/libdlls/Release/iricGdPolyLine.dll
-  ${PREPOST_GUI}/libdlls/Release/iricGdPolyLineGroup.dll
-  ${PREPOST_GUI}/libdlls/Release/iricGdRiversurvey.dll
-  ${PREPOST_GUI}/libdlls/Release/iricGeoio.dll
   ${PREPOST_GUI}/libdlls/Release/iricGccCenterandwidth.dll
   ${PREPOST_GUI}/libdlls/Release/iricGccCompoundchannel.dll
   ${PREPOST_GUI}/libdlls/Release/iricGccExternalprogram.dll
@@ -489,21 +475,34 @@ set(IRIC_DLLS
   ${PREPOST_GUI}/libdlls/Release/iricGccRiversurvey.dll
   ${PREPOST_GUI}/libdlls/Release/iricGccRiversurvey15d.dll
   ${PREPOST_GUI}/libdlls/Release/iricGccTriangle.dll
-  ${PREPOST_GUI}/libdlls/Release/iricGui.dll
-  ${PREPOST_GUI}/libdlls/Release/iricGuibase.dll
-  ${PREPOST_GUI}/libdlls/Release/iricGuicore.dll
-  ${PREPOST_GUI}/libdlls/Release/iricHdRiversurveywaterelevation.dll
-  ${PREPOST_GUI}/libdlls/Release/iricPython.dll
-  ${PREPOST_GUI}/libdlls/Release/iricMisc.dll
+  ${PREPOST_GUI}/libdlls/Release/iricGdNetcdf.dll
+  ${PREPOST_GUI}/libdlls/Release/iricGdPoint.dll
+  ${PREPOST_GUI}/libdlls/Release/iricGdPointGroup.dll
+  ${PREPOST_GUI}/libdlls/Release/iricGdPointmap.dll
+  ${PREPOST_GUI}/libdlls/Release/iricGdPolydata.dll
+  ${PREPOST_GUI}/libdlls/Release/iricGdPolydataGroup.dll
+  ${PREPOST_GUI}/libdlls/Release/iricGdPolygon.dll
+  ${PREPOST_GUI}/libdlls/Release/iricGdPolygonGroup.dll
+  ${PREPOST_GUI}/libdlls/Release/iricGdPolyLine.dll
+  ${PREPOST_GUI}/libdlls/Release/iricGdPolyLineGroup.dll
+  ${PREPOST_GUI}/libdlls/Release/iricGdRiversurvey.dll
+  ${PREPOST_GUI}/libdlls/Release/iricGeoio.dll
   ${PREPOST_GUI}/libdlls/Release/iricGraph2d.dll
   ${PREPOST_GUI}/libdlls/Release/iricGraph2dhybrid.dll
   ${PREPOST_GUI}/libdlls/Release/iricGraph2dscattered.dll
   ${PREPOST_GUI}/libdlls/Release/iricGraph2dVerification.dll
+  ${PREPOST_GUI}/libdlls/Release/iricGui.dll
+  ${PREPOST_GUI}/libdlls/Release/iricGuibase.dll
+  ${PREPOST_GUI}/libdlls/Release/iricGuicore.dll
+  ${PREPOST_GUI}/libdlls/Release/iricHdRiversurveywaterelevation.dll
+  ${PREPOST_GUI}/libdlls/Release/iricMeasureddata.dll
+  ${PREPOST_GUI}/libdlls/Release/iricMisc.dll
   ${PREPOST_GUI}/libdlls/Release/iricPost2d.dll
   ${PREPOST_GUI}/libdlls/Release/iricPost2dbirdeye.dll
   ${PREPOST_GUI}/libdlls/Release/iricPost3d.dll
   ${PREPOST_GUI}/libdlls/Release/iricPostbase.dll
   ${PREPOST_GUI}/libdlls/Release/iricPre.dll
+  ${PREPOST_GUI}/libdlls/Release/iricPython.dll
   ${PREPOST_GUI}/libdlls/Release/iricSolverconsole.dll
   ${PREPOST_GUI}/libdlls/Release/iricTmsLoader.dll
   ${PREPOST_GUI}/libdlls/Release/iricTriangle.dll
