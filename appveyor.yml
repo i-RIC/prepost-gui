@@ -127,7 +127,7 @@ after_build:
               $env:iriclib_DIR="c:/iricdev-2019-2019/lib/install/iriclib-" + $matches[1] + "/lib/cmake/iriclib"
             }
           }
-          cmake -DPREPOST_GUI=$env:APPVEYOR_BUILD_FOLDER -DSRC_FOLDER=yasu_src -Diriclib_DIR=$env:iriclib_DIR -G $env:psgenerator ..
+          cmake -DPREPOST_GUI:PATH=$env:APPVEYOR_BUILD_FOLDER -DSRC_FOLDER:STRING=yasu_src -Diriclib_DIR:PATH=$env:iriclib_DIR -G $env:psgenerator ..
         }
         if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
       }
@@ -205,7 +205,7 @@ on_success:
 
         # distribute files built by prepost-gui
         Set-Location $env:APPVEYOR_BUILD_FOLDER\dist\_build -ErrorAction Stop
-        msbuild /nologo /verbosity:minimal /p:Configuration=Release INSTALL.vcxproj
+        cmake --build . --config release --target install
         if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
 
         if ($env:APPVEYOR_REPO_BRANCH -eq "master") {
