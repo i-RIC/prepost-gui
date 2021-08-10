@@ -11,10 +11,12 @@
 #   cmake --build . --config release --target install
 #
 
-
-cmake_minimum_required(VERSION 3.1)
+cmake_minimum_required(VERSION 3.15)  # list(POP_BACK)
 
 project(dist)
+
+# set CMAKE_PREFIX_PATH or iriclib_DIR to location of iriclibConfig.cmake
+find_package(iriclib 4 REQUIRED)
 
 if(CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
   set(CMAKE_INSTALL_PREFIX c:/online_update CACHE PATH "Top level directory of online_update workspace" FORCE)
@@ -2215,3 +2217,53 @@ install(FILES ${IRIC_PY}
   DESTINATION ${CMAKE_INSTALL_PREFIX}/${SRC_FOLDER}/packages/gui.runtime/data/pythonmodule
 )
 
+# iriclib properties
+get_target_property(IRICLIB_INCLUDE_DIRS iriclib::iriclib INTERFACE_INCLUDE_DIRECTORIES)
+list(POP_BACK IRICLIB_INCLUDE_DIRS IRICLIB_INCLUDE_DIR)
+
+# c iriclib SDK include
+install(
+  FILES
+    ${IRICLIB_INCLUDE_DIR}/iriclib.h
+    ${IRICLIB_INCLUDE_DIR}/iriclib_bc.h
+    ${IRICLIB_INCLUDE_DIR}/iriclib_cc.h
+    ${IRICLIB_INCLUDE_DIR}/iriclib_combine.h
+    ${IRICLIB_INCLUDE_DIR}/iriclib_complex.h
+    ${IRICLIB_INCLUDE_DIR}/iriclib_errorcodes.h
+    ${IRICLIB_INCLUDE_DIR}/iriclib_geo.h
+    ${IRICLIB_INCLUDE_DIR}/iriclib_geoutil.h
+    ${IRICLIB_INCLUDE_DIR}/iriclib_global.h
+    ${IRICLIB_INCLUDE_DIR}/iriclib_grid.h
+    ${IRICLIB_INCLUDE_DIR}/iriclib_grid_solverlib.h
+    ${IRICLIB_INCLUDE_DIR}/iriclib_gui_coorp.h
+    ${IRICLIB_INCLUDE_DIR}/iriclib_init.h
+    ${IRICLIB_INCLUDE_DIR}/iriclib_not_withbaseid.h
+    ${IRICLIB_INCLUDE_DIR}/iriclib_not_withgridid.h
+    ${IRICLIB_INCLUDE_DIR}/iriclib_solution.h
+    ${IRICLIB_INCLUDE_DIR}/iriclib_sol_cell.h
+    ${IRICLIB_INCLUDE_DIR}/iriclib_sol_gridcoord.h
+    ${IRICLIB_INCLUDE_DIR}/iriclib_sol_iface.h
+    ${IRICLIB_INCLUDE_DIR}/iriclib_sol_jface.h
+    ${IRICLIB_INCLUDE_DIR}/iriclib_sol_kface.h
+    ${IRICLIB_INCLUDE_DIR}/iriclib_sol_node.h
+    ${IRICLIB_INCLUDE_DIR}/iriclib_sol_particle.h
+    ${IRICLIB_INCLUDE_DIR}/iriclib_sol_particlegroup.h
+    ${IRICLIB_INCLUDE_DIR}/iriclib_sol_polydata.h
+  DESTINATION
+    ${CMAKE_INSTALL_PREFIX}/${SRC_FOLDER}/packages/sdk/data/c/include
+)
+
+# c iriclib SDK lib
+install(FILES $<TARGET_PROPERTY:iriclib::iriclib,IMPORTED_IMPLIB_RELEASE>
+  DESTINATION ${CMAKE_INSTALL_PREFIX}/${SRC_FOLDER}/packages/sdk/data/c/lib
+)
+
+# fortran iriclib SDK lib
+install(FILES $<TARGET_PROPERTY:iriclib::iriclib,IMPORTED_IMPLIB_RELEASE>
+  DESTINATION ${CMAKE_INSTALL_PREFIX}/${SRC_FOLDER}/packages/sdk/data/fortran/lib
+)
+
+# fortran iriclib SDK src
+install(FILES $<TARGET_PROPERTY:iriclib::iriclib,INTERFACE_SOURCES>
+  DESTINATION ${CMAKE_INSTALL_PREFIX}/${SRC_FOLDER}/packages/sdk/data/fortran/src
+)
