@@ -96,8 +96,6 @@ before_build:
   - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2019" ( copy /y \iricdev-2019-2019\dirExt.prop .\tools\data\. )
   - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2013" ( copy /y \iricdev-master\paths.pri . )
   - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2013" ( copy /y \iricdev-master\dirExt.prop .\tools\data\. )
-  # - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2019" ( dir /s \iricdev-2019-2019 )
-  # - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2013" ( dir /s \iricdev-master )
   - ps: 'Get-Command qmake'
   - qmake -recursive -tp vc
 
@@ -218,7 +216,6 @@ on_success:
           # run repogen to build packages and Updates.xml
           Set-Location \online_update\yasu_src -ErrorAction Stop
           # run repogen
-          ##C:\Qt\Tools\QtInstallerFramework\2.0\bin\repogen.exe -p packages --update --include gui.prepost ..\yasu
           C:\Qt\Tools\QtInstallerFramework\4.1\bin\repogen.exe -p packages --update --include gui.prepost ..\yasu
           if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
         }
