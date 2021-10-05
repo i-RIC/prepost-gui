@@ -196,7 +196,6 @@ on_success:
                -replace "`" version=`"([^`"]*)`"",                    "`" version=`"$env:VERSION`"" `
                -replace "(?<=<ReleaseDate>)(.*)(?=</ReleaseDate>)",   "$env:RELEASE_DATE" `
                -replace "release=`"([^`"]*)`"",                       "release=`"$env:RELEASE`"" `
-               -replace "caption=`"([^`"]*)`"",                       "caption=`"$env:CAPTION`"" `
                -replace "github-sha1=`"([^`"]*)`"",                   "github-sha1=`"$env:APPVEYOR_REPO_COMMIT`""
           } | Set-Content $file
         }
