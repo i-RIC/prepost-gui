@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="cs_CZ">
 <context>
     <name>AnimationController</name>
@@ -286,6 +288,10 @@
         <source>Skip rate :</source>
         <translation>Přeskočit sazbu:</translation>
     </message>
+    <message>
+        <source>--</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ContinuousSnapshotWindowSelectionPage</name>
@@ -356,6 +362,13 @@
     <message>
         <source>No window is currently selected.</source>
         <translation>Aktuálně není vybráno žádné okno.</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard</name>
+    <message>
+        <source>Continuous Snapshot / Movie / Google Earth Export Wizard</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -438,7 +451,7 @@ This wizard will generate or update translation files for solver definition file
         <translation>Vyberte Řešitel</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
         <translation>Když vytváříte nový projekt, musíte vybrat řešič, který se použije pro výpočet. Vyberte prosím řešitele a stiskněte tlačítko „OK“.</translation>
     </message>
 </context>
@@ -1044,6 +1057,14 @@ Do you want to launch iRIC Maintainance?</source>
         <source>(Not specified)</source>
         <translation>(Nespecifikováno)</translation>
     </message>
+    <message>
+        <source>Output Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Output calculation results in separate files</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ProjectPropertyDialog</name>
@@ -1187,9 +1208,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>Varování</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
+        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
 %2</source>
-        <translation>Při načítání definičního souboru řešiče do složky došlo k chybě "%1". Tento řešitel je ignorován." %2</translation>
+        <translation>Při načítání definičního souboru řešiče do složky došlo k chybě &quot;%1&quot;. Tento řešitel je ignorován.&quot; %2</translation>
     </message>
 </context>
 <context>
@@ -1308,7 +1329,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Zdá se, že tento projekt otevírá jiné okno GUI iRIC. Složku projektu nelze otevřít z více oken GUI.</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation>Otevřený projekt není zkopírován do pracovního adresáře a budete nuceni uložit změny, které v tomto projektu provedete. Pokud chcete zachovat aktuální projekt, uložte jej nejprve do jiného projektu.</translation>
     </message>
     <message>
@@ -1397,7 +1418,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>iRIC %1</source>
-        <translation>iRIC %1</translation>
+        <translation type="vanished">iRIC %1</translation>
     </message>
     <message>
         <source>Untitled</source>
@@ -1405,7 +1426,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>%1 - iRIC %2 [%3]</source>
-        <translation>%1 - IRIC %2 [ %3 ]</translation>
+        <translation type="vanished">%1 - IRIC %2 [ %3 ]</translation>
     </message>
     <message>
         <source>The solver is running now. Please stop solver, to do this action.</source>
@@ -1413,7 +1434,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>&amp;%1 %2</source>
-        <translation>%1 %2 (&amp;%)</translation>
+        <translation type="vanished">%1 %2 (&amp;%)</translation>
     </message>
     <message>
         <source>http://iric-gui-user-manual.readthedocs.io/en/latest/</source>
@@ -1468,7 +1489,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Aktuálně aktivní podokno nepodporuje export obrysového obrázku.</translation>
     </message>
     <message>
-        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
+        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
         <translation>Chcete -li exportovat soubor tvaru, přepněte „Nastavení zobrazení“ na „Obrysový obrázek“, nikoli „Barevné okraje“ nebo „Izolíny“.</translation>
     </message>
     <message>
@@ -1591,6 +1612,18 @@ Option -&gt; Preferences</source>
     <message>
         <source>Snapshot successfully saved to %1.</source>
         <translation>Snímek byl úspěšně uložen do %1.</translation>
+    </message>
+    <message>
+        <source>All files in %1 is deleted.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 - %2 %3 [%4]</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1937,7 +1970,7 @@ Option -&gt; Preferences</source>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&amp;Solver Information...</source>
@@ -1964,8 +1997,8 @@ Option -&gt; Preferences</source>
         <translation>Otevřete nové okno 2D zpracování</translation>
     </message>
     <message>
-        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
-        <translation>Otevřete nové okno postprocesingu 2D Bird's Eye</translation>
+        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
+        <translation>Otevřete nové okno postprocesingu 2D Bird&apos;s Eye</translation>
     </message>
     <message>
         <source>Open new 3D Post-Processing Window</source>
@@ -2066,6 +2099,14 @@ Option -&gt; Preferences</source>
     <message>
         <source>Ctrl+C</source>
         <translation>Ctrl+C.</translation>
+    </message>
+    <message>
+        <source>Reload &amp;CGNS file...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reload CGNS file</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

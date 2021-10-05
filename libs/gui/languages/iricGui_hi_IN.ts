@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="hi_IN">
 <context>
     <name>AnimationController</name>
@@ -286,6 +288,10 @@
         <source>Skip rate :</source>
         <translation>छोड़ें दर:</translation>
     </message>
+    <message>
+        <source>--</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ContinuousSnapshotWindowSelectionPage</name>
@@ -356,6 +362,13 @@
     <message>
         <source>No window is currently selected.</source>
         <translation>वर्तमान में कोई विंडो चयनित नहीं है।</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard</name>
+    <message>
+        <source>Continuous Snapshot / Movie / Google Earth Export Wizard</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -438,8 +451,8 @@ This wizard will generate or update translation files for solver definition file
         <translation>सॉल्वर का चयन करें</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
-        <translation>जब आप एक नया प्रोजेक्ट बनाते हैं, तो आपको गणना के लिए उपयोग करने के लिए सॉल्वर का चयन करना होगा। कृपया एक सॉल्वर चुनें, और "ओके" बटन दबाएं।</translation>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
+        <translation>जब आप एक नया प्रोजेक्ट बनाते हैं, तो आपको गणना के लिए उपयोग करने के लिए सॉल्वर का चयन करना होगा। कृपया एक सॉल्वर चुनें, और &quot;ओके&quot; बटन दबाएं।</translation>
     </message>
 </context>
 <context>
@@ -1044,6 +1057,14 @@ Do you want to launch iRIC Maintainance?</source>
         <source>(Not specified)</source>
         <translation>(निर्दिष्ट नहीं है)</translation>
     </message>
+    <message>
+        <source>Output Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Output calculation results in separate files</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ProjectPropertyDialog</name>
@@ -1187,9 +1208,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>चेतावनी</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
+        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
 %2</source>
-        <translation>फ़ोल्डर में सॉल्वर परिभाषा फ़ाइल लोड करते समय त्रुटि हुई "%1"। इस सॉल्वर की उपेक्षा की जाती है। %2</translation>
+        <translation>फ़ोल्डर में सॉल्वर परिभाषा फ़ाइल लोड करते समय त्रुटि हुई &quot;%1&quot;। इस सॉल्वर की उपेक्षा की जाती है। %2</translation>
     </message>
 </context>
 <context>
@@ -1308,7 +1329,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>ऐसा लगता है कि यह प्रोजेक्ट किसी अन्य iRIC GUI विंडो द्वारा खोला गया है। आप एकाधिक GUI विंडो से प्रोजेक्ट फ़ोल्डर नहीं खोल सकते हैं।</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation>खोले गए प्रोजेक्ट को कार्य निर्देशिका में कॉपी नहीं किया गया है, और आप इस प्रोजेक्ट में किए गए संशोधनों को सहेजने के लिए बाध्य होंगे। यदि आप वर्तमान प्रोजेक्ट को रखना चाहते हैं, तो कृपया इसे पहले किसी अन्य प्रोजेक्ट में सहेजें।</translation>
     </message>
     <message>
@@ -1397,7 +1418,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>iRIC %1</source>
-        <translation>आईआरआईसी %1</translation>
+        <translation type="vanished">आईआरआईसी %1</translation>
     </message>
     <message>
         <source>Untitled</source>
@@ -1405,7 +1426,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>%1 - iRIC %2 [%3]</source>
-        <translation>%1 - आईआरआईसी %2 [ %3 ]</translation>
+        <translation type="vanished">%1 - आईआरआईसी %2 [ %3 ]</translation>
     </message>
     <message>
         <source>The solver is running now. Please stop solver, to do this action.</source>
@@ -1413,7 +1434,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>&amp;%1 %2</source>
-        <translation>%1 %2 (&amp;%)</translation>
+        <translation type="vanished">%1 %2 (&amp;%)</translation>
     </message>
     <message>
         <source>http://iric-gui-user-manual.readthedocs.io/en/latest/</source>
@@ -1468,8 +1489,8 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>वर्तमान में सक्रिय उप-विंडो निर्यात समोच्च आकृति का समर्थन नहीं करती है।</translation>
     </message>
     <message>
-        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation>आकार फ़ाइल निर्यात करने के लिए, "डिस्प्ले सेटिंग" को "कंटूर फिगर" पर स्विच करें, न कि "कलर फ्रिंज" या "आइसोलिन्स" पर।</translation>
+        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
+        <translation>आकार फ़ाइल निर्यात करने के लिए, &quot;डिस्प्ले सेटिंग&quot; को &quot;कंटूर फिगर&quot; पर स्विच करें, न कि &quot;कलर फ्रिंज&quot; या &quot;आइसोलिन्स&quot; पर।</translation>
     </message>
     <message>
         <source>Export contour figure to ESRI Shapefiles</source>
@@ -1591,6 +1612,18 @@ Option -&gt; Preferences</source>
     <message>
         <source>Snapshot successfully saved to %1.</source>
         <translation>स्नैपशॉट सफलतापूर्वक सहेजा गया %1.</translation>
+    </message>
+    <message>
+        <source>All files in %1 is deleted.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 - %2 %3 [%4]</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1937,7 +1970,7 @@ Option -&gt; Preferences</source>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&amp;Solver Information...</source>
@@ -1964,7 +1997,7 @@ Option -&gt; Preferences</source>
         <translation>नई 2D पोस्ट-प्रोसेसिंग विंडो खोलें</translation>
     </message>
     <message>
-        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
+        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
         <translation>नई 2डी बर्ड्स-आई पोस्ट-प्रोसेसिंग विंडो खोलें</translation>
     </message>
     <message>
@@ -2066,6 +2099,14 @@ Option -&gt; Preferences</source>
     <message>
         <source>Ctrl+C</source>
         <translation>Ctrl+C</translation>
+    </message>
+    <message>
+        <source>Reload &amp;CGNS file...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reload CGNS file</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

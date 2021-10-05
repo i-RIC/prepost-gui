@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="hu_HU">
 <context>
     <name>AnimationController</name>
@@ -286,6 +288,10 @@
         <source>Skip rate :</source>
         <translation>Kihagyási arány:</translation>
     </message>
+    <message>
+        <source>--</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ContinuousSnapshotWindowSelectionPage</name>
@@ -356,6 +362,13 @@
     <message>
         <source>No window is currently selected.</source>
         <translation>Jelenleg nincs ablak kiválasztva.</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard</name>
+    <message>
+        <source>Continuous Snapshot / Movie / Google Earth Export Wizard</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -438,8 +451,8 @@ This wizard will generate or update translation files for solver definition file
         <translation>Válassza a Megoldó lehetőséget</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
-        <translation>Új projekt létrehozásakor ki kell választania a számításhoz használandó megoldót. Kérjük, válasszon megoldást, és nyomja meg az "OK" gombot.</translation>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
+        <translation>Új projekt létrehozásakor ki kell választania a számításhoz használandó megoldót. Kérjük, válasszon megoldást, és nyomja meg az &quot;OK&quot; gombot.</translation>
     </message>
 </context>
 <context>
@@ -1044,6 +1057,14 @@ Do you want to launch iRIC Maintainance?</source>
         <source>(Not specified)</source>
         <translation>(Nem meghatározott)</translation>
     </message>
+    <message>
+        <source>Output Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Output calculation results in separate files</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ProjectPropertyDialog</name>
@@ -1187,9 +1208,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>Figyelem</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
+        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
 %2</source>
-        <translation>Hiba történt a megoldásmeghatározó fájl betöltése közben a mappába " %1 Ezt a megoldót figyelmen kívül hagyják. %2</translation>
+        <translation>Hiba történt a megoldásmeghatározó fájl betöltése közben a mappába &quot; %1 Ezt a megoldót figyelmen kívül hagyják. %2</translation>
     </message>
 </context>
 <context>
@@ -1308,7 +1329,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Úgy tűnik, hogy ezt a projektet egy másik iRIC GUI ablak nyitja meg. Nem nyithat meg projektmappát több GUI ablakból.</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation>A megnyitott projekt nem kerül átmásolásra a munkakönyvtárba, és kénytelen lesz menteni a projektben végrehajtott módosításokat. Ha meg szeretné tartani az aktuális projektet, először mentse el egy másik projektbe.</translation>
     </message>
     <message>
@@ -1397,7 +1418,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>iRIC %1</source>
-        <translation>iRIC %1</translation>
+        <translation type="vanished">iRIC %1</translation>
     </message>
     <message>
         <source>Untitled</source>
@@ -1405,7 +1426,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>%1 - iRIC %2 [%3]</source>
-        <translation>%1 - iRIC %2 [ %3 ]</translation>
+        <translation type="vanished">%1 - iRIC %2 [ %3 ]</translation>
     </message>
     <message>
         <source>The solver is running now. Please stop solver, to do this action.</source>
@@ -1413,7 +1434,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>&amp;%1 %2</source>
-        <translation>%1 %2 (&amp;%)</translation>
+        <translation type="vanished">%1 %2 (&amp;%)</translation>
     </message>
     <message>
         <source>http://iric-gui-user-manual.readthedocs.io/en/latest/</source>
@@ -1468,8 +1489,8 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>A jelenleg aktív alablak nem támogatja a kontúr ábra exportálását.</translation>
     </message>
     <message>
-        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation>Alakzatfájl exportálásához kapcsolja a "Kijelző beállítása" "Kontúr ábra" -ra, nem pedig "Színes szegély" vagy "Izolines".</translation>
+        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
+        <translation>Alakzatfájl exportálásához kapcsolja a &quot;Kijelző beállítása&quot; &quot;Kontúr ábra&quot; -ra, nem pedig &quot;Színes szegély&quot; vagy &quot;Izolines&quot;.</translation>
     </message>
     <message>
         <source>Export contour figure to ESRI Shapefiles</source>
@@ -1591,6 +1612,18 @@ Option -&gt; Preferences</source>
     <message>
         <source>Snapshot successfully saved to %1.</source>
         <translation>A pillanatkép sikeresen mentve ide: %1.</translation>
+    </message>
+    <message>
+        <source>All files in %1 is deleted.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 - %2 %3 [%4]</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1937,7 +1970,7 @@ Option -&gt; Preferences</source>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&amp;Solver Information...</source>
@@ -1964,7 +1997,7 @@ Option -&gt; Preferences</source>
         <translation>Nyissa meg az új 2D utófeldolgozó ablakot</translation>
     </message>
     <message>
-        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
+        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
         <translation>Nyissa meg az új 2D madártávlatú utófeldolgozó ablakot</translation>
     </message>
     <message>
@@ -2066,6 +2099,14 @@ Option -&gt; Preferences</source>
     <message>
         <source>Ctrl+C</source>
         <translation>Ctrl+C</translation>
+    </message>
+    <message>
+        <source>Reload &amp;CGNS file...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reload CGNS file</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

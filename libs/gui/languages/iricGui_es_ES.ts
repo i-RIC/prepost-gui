@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="es_ES">
 <context>
     <name>AnimationController</name>
@@ -286,6 +288,10 @@
         <source>Skip rate :</source>
         <translation>Tasa de saltar :</translation>
     </message>
+    <message>
+        <source>--</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ContinuousSnapshotWindowSelectionPage</name>
@@ -356,6 +362,13 @@
     <message>
         <source>No window is currently selected.</source>
         <translation>No hay ventana seleccionada.</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard</name>
+    <message>
+        <source>Continuous Snapshot / Movie / Google Earth Export Wizard</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -438,8 +451,8 @@ This wizard will generate or update translation files for solver definition file
         <translation>Seleccionar Solucionador</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
-        <translation>Cuando crea un nuevo proyecto, debe seleccionar el solucionador que se utilizará para el cálculo. Seleccione un solucionador y presione el botón "Aceptar".</translation>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
+        <translation>Cuando crea un nuevo proyecto, debe seleccionar el solucionador que se utilizará para el cálculo. Seleccione un solucionador y presione el botón &quot;Aceptar&quot;.</translation>
     </message>
 </context>
 <context>
@@ -1044,6 +1057,14 @@ Do you want to launch iRIC Maintainance?</source>
         <source>(Not specified)</source>
         <translation>(No Especificado)</translation>
     </message>
+    <message>
+        <source>Output Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Output calculation results in separate files</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ProjectPropertyDialog</name>
@@ -1187,9 +1208,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>Aviso</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
+        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
 %2</source>
-        <translation>Se produjo un error al cargar el archivo de definición del solucionador en la carpeta "%1". Este solucionador se ignora. %2</translation>
+        <translation>Se produjo un error al cargar el archivo de definición del solucionador en la carpeta &quot;%1&quot;. Este solucionador se ignora. %2</translation>
     </message>
 </context>
 <context>
@@ -1304,7 +1325,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Este proyecto parece estar abierto por otra ventana de la GUI de iRIC. No puede abrir una carpeta de proyecto desde varias ventanas GUI.</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation>El proyecto abierto no se copia en el directorio de trabajo y se verá obligado a guardar las modificaciones que realice en este proyecto. Si desea conservar el proyecto actual, guárdelo primero en otro proyecto.</translation>
     </message>
     <message>
@@ -1457,11 +1478,11 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>iRIC %1</source>
-        <translation>iRIC %1</translation>
+        <translation type="vanished">iRIC %1</translation>
     </message>
     <message>
         <source>%1 - iRIC %2 [%3]</source>
-        <translation>%1 - iRIC %2 [ %3 ]</translation>
+        <translation type="vanished">%1 - iRIC %2 [ %3 ]</translation>
     </message>
     <message>
         <source>http://iric-gui-user-manual.readthedocs.io/en/latest/</source>
@@ -1472,8 +1493,8 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>La subventana actualmente activa no admite la exportación de figuras de contorno.</translation>
     </message>
     <message>
-        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation>Para exportar un archivo de forma, cambie "Configuración de pantalla" a "Figura de contorno", no "Franja de color" o "Isolíneas".</translation>
+        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
+        <translation>Para exportar un archivo de forma, cambie &quot;Configuración de pantalla&quot; a &quot;Figura de contorno&quot;, no &quot;Franja de color&quot; o &quot;Isolíneas&quot;.</translation>
     </message>
     <message>
         <source>Export contour figure</source>
@@ -1502,7 +1523,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>&amp;%1 %2</source>
-        <translation>%1 %2 (&amp;%)</translation>
+        <translation type="vanished">%1 %2 (&amp;%)</translation>
     </message>
     <message>
         <source>Unknown options specified. They are neglected. %1</source>
@@ -1591,6 +1612,18 @@ Option -&gt; Preferences</source>
     <message>
         <source>Dimension</source>
         <translation>Dimensión</translation>
+    </message>
+    <message>
+        <source>All files in %1 is deleted.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 - %2 %3 [%4]</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1964,7 +1997,7 @@ Option -&gt; Preferences</source>
         <translation>Abrir Ventana 2D Post-Procesamiento Nueva</translation>
     </message>
     <message>
-        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
+        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
         <translation>Abrir nueva ventana de posprocesamiento a vista de pájaro 2D</translation>
     </message>
     <message>
@@ -2066,6 +2099,14 @@ Option -&gt; Preferences</source>
     <message>
         <source>Ctrl+C</source>
         <translation>Ctrl + C</translation>
+    </message>
+    <message>
+        <source>Reload &amp;CGNS file...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reload CGNS file</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>
