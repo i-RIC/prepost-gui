@@ -120,6 +120,7 @@ void PreferencePageGeneral::setupLanguageComboBox()
 	m_locales.append(QLocale(QLocale::Czech));
 	m_locales.append(QLocale(QLocale::Danish));
 	m_locales.append(QLocale(QLocale::Dutch));
+	m_locales.append(QLocale(QLocale::English));
 	m_locales.append(QLocale(QLocale::Estonian));
 	m_locales.append(QLocale(QLocale::Finnish));
 	m_locales.append(QLocale(QLocale::French));
