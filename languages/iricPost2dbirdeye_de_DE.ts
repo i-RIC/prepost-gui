@@ -1,161 +1,159 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="de_DE">
 <context>
     <name>Post2dBirdEyeObjectBrowser</name>
     <message>
         <source>Object Browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Objektbrowser</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindow</name>
     <message>
-        <source>Bird&apos;s-Eye Post-processing (2D): %1</source>
-        <translation type="unfinished"></translation>
+        <source>Bird's-Eye Post-processing (2D): %1</source>
+        <translation>Nachbearbeitung aus der Vogelperspektive (2D): %1</translation>
     </message>
     <message>
         <source>Background Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Hintergrundfarbe</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowActionManager</name>
     <message>
         <source>&amp;Draw</source>
-        <translation type="unfinished"></translation>
+        <translation>Zeichnen (&amp;D)</translation>
     </message>
     <message>
         <source>&amp;Grid Shape...</source>
-        <translation type="unfinished"></translation>
+        <translation>Gitterform (&amp;G)...</translation>
     </message>
     <message>
         <source>&amp;Contours (node)...</source>
-        <translation type="unfinished"></translation>
+        <translation>Konturen (Knoten) (&amp;C)...</translation>
     </message>
     <message>
         <source>Contours (ce&amp;ll center)...</source>
-        <translation type="unfinished"></translation>
+        <translation>Konturen (Zellmitte) (&amp;L)...</translation>
     </message>
     <message>
         <source>&amp;Title...</source>
-        <translation type="unfinished"></translation>
+        <translation>Titel (&amp;T)...</translation>
     </message>
     <message>
         <source>Ti&amp;me...</source>
-        <translation type="unfinished"></translation>
+        <translation>Zeit (&amp;M)...</translation>
     </message>
     <message>
         <source>&amp;Background Color...</source>
-        <translation type="unfinished"></translation>
+        <translation>Hintergrundfarbe (&amp;B)...</translation>
     </message>
     <message>
         <source>&amp;Z-direction Scale...</source>
-        <translation type="unfinished"></translation>
+        <translation>Z-Richtungsskala (&amp;Z)...</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowAxesDataItem</name>
     <message>
         <source>Axes</source>
-        <translation type="unfinished"></translation>
+        <translation>Achsen</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
-        <translation type="unfinished"></translation>
+        <translation>Skalar</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Kontureinstellung aktualisieren</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowCellScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (cell center)</source>
-        <translation type="unfinished"></translation>
+        <translation>Skalar (Zellzentrum)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Warnung</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation type="unfinished"></translation>
+        <translation>Es können maximal vier Konturen definiert werden.</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowDataModel</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Warnung</translation>
     </message>
     <message>
         <source>Contour setting is not available, because this result does not contain scalar values.</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Kontureinstellung ist nicht verfügbar, da dieses Ergebnis keine Skalarwerte enthält.</translation>
     </message>
     <message>
         <source>Contour setting is not available, because this result does not contain cell scalar values.</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Kontureinstellung ist nicht verfügbar, da dieses Ergebnis keine Zellskalarwerte enthält.</translation>
     </message>
     <message>
         <source>Z-direction Scale</source>
-        <translation type="unfinished"></translation>
+        <translation>Z-Richtungsskala</translation>
     </message>
     <message>
         <source>Input new Z-direction scale.</source>
-        <translation type="unfinished"></translation>
+        <translation>Geben Sie einen neuen Maßstab in Z-Richtung ein.</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowGridShapeDataItem</name>
     <message>
         <source>Grid shape</source>
-        <translation type="unfinished"></translation>
+        <translation>Gitterform</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowNodeScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
-        <translation type="unfinished"></translation>
+        <translation>Skalar</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Kontureinstellung aktualisieren</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowNodeScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (node)</source>
-        <translation type="unfinished"></translation>
+        <translation>Skalar (Knoten)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Warnung</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation type="unfinished"></translation>
+        <translation>Es können maximal vier Konturen definiert werden.</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
         <source>Create Contour</source>
-        <translation type="unfinished"></translation>
+        <translation>Kontur erstellen</translation>
     </message>
     <message>
         <source>Update Grid Shape Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Rasterform-Einstellung aktualisieren</translation>
     </message>
     <message>
         <source>Edit Background Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Hintergrundfarbe bearbeiten</translation>
     </message>
 </context>
 </TS>

@@ -1,23 +1,21 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="cs_CZ">
 <context>
     <name>Unstructured2dGridTriangleImporter</name>
     <message>
         <source>TRIANGLE node files (*.node)</source>
-        <translation type="unfinished"></translation>
+        <translation>Soubory uzlů TRIANGLE (*.node)</translation>
     </message>
     <message>
         <source>TRIANGLE output (*.node, *.ele)</source>
-        <translation type="unfinished"></translation>
+        <translation>Výstup TRIANGLE (*.node, *.ele)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Varování</translation>
     </message>
     <message>
         <source>%1 does not exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 neexistuje.</translation>
     </message>
 </context>
 </TS>

@@ -1,170 +1,168 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ru_RU">
 <context>
     <name>GeoDataPolygonGroup</name>
     <message>
         <source>Polygon%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Многоугольник %1</translation>
     </message>
     <message>
         <source>&amp;Sort</source>
-        <translation type="unfinished"></translation>
+        <translation>Сортировать (&amp;S)</translation>
     </message>
     <message>
         <source>P&amp;olygons</source>
-        <translation type="unfinished"></translation>
+        <translation>Полигоны (&amp;O)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolygonGroupCreator</name>
     <message>
         <source>polygon</source>
-        <translation type="unfinished"></translation>
+        <translation>многоугольник</translation>
     </message>
     <message>
         <source>Polygon</source>
-        <translation type="unfinished"></translation>
+        <translation>Многоугольник</translation>
     </message>
     <message>
         <source>Polygons</source>
-        <translation type="unfinished"></translation>
+        <translation>Полигоны</translation>
     </message>
     <message>
         <source>Polygons%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Полигоны %1</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolygonGroupCsvExporter</name>
     <message>
         <source>CSV file</source>
-        <translation type="unfinished"></translation>
+        <translation>CSV файл</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Ошибка</translation>
     </message>
     <message>
         <source>Error occured while exporting to %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Произошла ошибка при экспорте в %1.</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Предупреждение</translation>
     </message>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>CSV файл (*.csv)</translation>
     </message>
     <message>
         <source>Some polygon in this data has holes, but holes are not exported to CSV file. If you want to export holes, please export to ESRI Shapefile.</source>
-        <translation type="unfinished"></translation>
+        <translation>В некоторых многоугольниках в этих данных есть дыры, но дыры не экспортируются в файл CSV. Если вы хотите экспортировать отверстия, выполните экспорт в шейп-файл ESRI.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolygonGroupCsvImporter</name>
     <message>
         <source>CSV file (Polygons)</source>
-        <translation type="unfinished"></translation>
+        <translation>CSV-файл (полигоны)</translation>
     </message>
     <message>
         <source>CSV file (Polygons) (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>CSV-файл (полигоны) (*.csv)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Ошибка</translation>
     </message>
     <message>
         <source>Error occured while opening %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Произошла ошибка при открытии %1</translation>
     </message>
     <message>
         <source>Error occured while reading header line. Make sure the file is saved in UTF-8 encoding.</source>
-        <translation type="unfinished"></translation>
+        <translation>Произошла ошибка при чтении строки заголовка. Убедитесь, что файл сохранен в кодировке UTF-8.</translation>
     </message>
     <message>
         <source>Error occured while reading header line. Header should have 5 columns at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>Произошла ошибка при чтении строки заголовка. В заголовке должно быть не менее 5 столбцов.</translation>
     </message>
     <message>
         <source>Error occured while reading header line. Header should have 6 columns at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>Произошла ошибка при чтении строки заголовка. В заголовке должно быть не менее 6 столбцов.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
-        <translation type="unfinished"></translation>
+        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
+        <translation>Произошла ошибка при чтении строки заголовка. Столбец %1 должно быть "%2", но "%3" дано.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. There is no data.</source>
-        <translation type="unfinished"></translation>
+        <translation>Произошла ошибка при чтении строки %1. Нет данных.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Polygon should have three points at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>Произошла ошибка при чтении строки %1. У многоугольника должно быть не менее трех точек.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Make sure the file is saved in UTF-8 encoding.</source>
-        <translation type="unfinished"></translation>
+        <translation>Произошла ошибка при чтении строки %1. Убедитесь, что файл сохранен в кодировке UTF-8.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Data should have 5 columns at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>Произошла ошибка при чтении строки %1. В данных должно быть не менее 5 столбцов.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Data should have 6 columns at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>Произошла ошибка при чтении строки %1. В данных должно быть не менее 6 столбцов.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;pid&quot; value in line %1. &quot;pid&quot; should be integer value but &quot;%2&quot; is specified.</source>
-        <translation type="unfinished"></translation>
+        <source>Error occured while reading "pid" value in line %1. "pid" should be integer value but "%2" is specified.</source>
+        <translation>Произошла ошибка при чтении значения "pid" в строке %1. "pid" должно быть целым числом, но "%2"указано.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;vid&quot; value in line %1. &quot;vid&quot; should be integer value but &quot;%2&quot; is specified.</source>
-        <translation type="unfinished"></translation>
+        <source>Error occured while reading "vid" value in line %1. "vid" should be integer value but "%2" is specified.</source>
+        <translation>Произошла ошибка при чтении значения vid в строке %1. "vid" должно быть целым числом, но "%2"указано.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation type="unfinished"></translation>
+        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
+        <translation>Произошла ошибка при чтении значения "x" в строке %1. "x" должно быть реальным значением, но "%2"указано.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation type="unfinished"></translation>
+        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
+        <translation>Произошла ошибка при чтении значения "y" в строке %1. "y" должно быть реальным значением, но "%2"указано.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation type="unfinished"></translation>
+        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
+        <translation>Произошла ошибка при чтении значения "значение" в строке %1. "значение" должно быть реальным значением, но "%2"указано.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. &quot;name&quot; should be the same for lines where &quot;pid&quot; values are the same.</source>
-        <translation type="unfinished"></translation>
+        <source>Error occured while reading line %1. "name" should be the same for lines where "pid" values are the same.</source>
+        <translation>Произошла ошибка при чтении строки %1. "name" должно быть одинаковым для строк, в которых одинаковы значения "pid".</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. &quot;value&quot; should be the same for lines where &quot;pid&quot; values are the same.</source>
-        <translation type="unfinished"></translation>
+        <source>Error occured while reading line %1. "value" should be the same for lines where "pid" values are the same.</source>
+        <translation>Произошла ошибка при чтении строки %1. "value" должно быть одинаковым для строк, в которых одинаковы значения "pid".</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolygonGroupShpExporter</name>
     <message>
         <source>ESRI Shapefile</source>
-        <translation type="unfinished"></translation>
+        <translation>Шейп-файл ESRI</translation>
     </message>
     <message>
         <source>ESRI Shapefile (*.shp)</source>
-        <translation type="unfinished"></translation>
+        <translation>Шейп-файл ESRI (*.shp)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolygonGroupShpImporter</name>
     <message>
         <source>ESRI Shapefile (Polygons)</source>
-        <translation type="unfinished"></translation>
+        <translation>Шейп-файл ESRI (полигоны)</translation>
     </message>
     <message>
         <source>ESRI Shapefile (Polygons) (*.shp)</source>
-        <translation type="unfinished"></translation>
+        <translation>Шейп-файл ESRI (полигоны) (*.shp)</translation>
     </message>
     <message>
         <source>%1 th polygon can not be imported. Polygon like below can not be imported:
@@ -173,15 +171,15 @@
 - Lines of polygon intersect each other
 - Hole polygon is outside of region polygon
 - Polygon passes the same point several times</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 -й полигон не может быть импортирован. Полигон, подобный приведенному ниже, не может быть импортирован: - Он имеет менее трех точек - Он не замкнут - Линии многоугольника пересекают друг друга - Многоугольник отверстия находится за пределами многоугольника области - Многоугольник проходит одну и ту же точку несколько раз</translation>
     </message>
     <message>
         <source>Polygon%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Многоугольник %1</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Предупреждение</translation>
     </message>
 </context>
 </TS>

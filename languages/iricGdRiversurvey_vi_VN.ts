@@ -1,1330 +1,1328 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="vi_VN">
 <context>
     <name>GeoDataRiverCrosssectionAltitudeMoveDialog</name>
     <message>
         <source>Move Elevation Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Di chuyển điểm nâng cao</translation>
     </message>
     <message>
         <source>Horizontal variation (H): </source>
-        <translation type="unfinished"></translation>
+        <translation>Biến thiên theo chiều ngang (H):</translation>
     </message>
     <message>
         <source>TextLabel</source>
-        <translation type="unfinished"></translation>
+        <translation>Nhãn văn bản</translation>
     </message>
     <message>
         <source>Vertical Variation:</source>
-        <translation type="unfinished"></translation>
+        <translation>Biến thể dọc:</translation>
     </message>
     <message>
         <source>%1 &lt; </source>
-        <translation type="unfinished"></translation>
+        <translation>%1 &lt;</translation>
     </message>
     <message>
         <source>H</source>
-        <translation type="unfinished"></translation>
+        <translation>NS</translation>
     </message>
     <message>
         <source> &lt; %1</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt; %1</translation>
     </message>
     <message>
         <source>Move Elevation Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Di chuyển điểm độ cao</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverPathPointExpandDialog</name>
     <message>
         <source>Extend Traversal Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Kéo dài đường ngang</translation>
     </message>
     <message>
         <source>Set Distance between River Center and Left Bank</source>
-        <translation type="unfinished"></translation>
+        <translation>Đặt khoảng cách giữa River Center và Left Bank</translation>
     </message>
     <message>
         <source>Increment</source>
-        <translation type="unfinished"></translation>
+        <translation>Tăng</translation>
     </message>
     <message>
         <source>Extension Ratio</source>
-        <translation type="unfinished"></translation>
+        <translation>Tỷ lệ mở rộng</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverPathPointExtensionAddDialog</name>
     <message>
         <source>Add Extension Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Thêm dòng mở rộng</translation>
     </message>
     <message>
         <source>End Point of Extension Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Điểm cuối của đường mở rộng</translation>
     </message>
     <message>
         <source>Mouse Click</source>
-        <translation type="unfinished"></translation>
+        <translation>Click chuột</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished"></translation>
+        <translation>Chức vụ</translation>
     </message>
     <message>
         <source>,</source>
-        <translation type="unfinished"></translation>
+        <translation>,</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverPathPointInsertDialog</name>
     <message>
         <source>Insert Traversal Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Chèn đường truyền ngang</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tên:</translation>
     </message>
     <message>
         <source>River Center Point Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Tọa độ điểm trung tâm sông</translation>
     </message>
     <message>
         <source>Mouse Click</source>
-        <translation type="unfinished"></translation>
+        <translation>Click chuột</translation>
     </message>
     <message>
         <source>Coordinate Values</source>
-        <translation type="unfinished"></translation>
+        <translation>Giá trị Tọa độ</translation>
     </message>
     <message>
         <source>, </source>
-        <translation type="unfinished"></translation>
+        <translation>,</translation>
     </message>
     <message>
         <source>Ratio between Back and Forth (0-1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Tỷ lệ giữa Lùi và Lùi (0-1)</translation>
     </message>
     <message>
         <source>Cross Section Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Thông tin về mặt cắt ngang</translation>
     </message>
     <message>
         <source>Inserts Three Point of Altitude 0</source>
-        <translation type="unfinished"></translation>
+        <translation>Chèn ba điểm cao độ 0</translation>
     </message>
     <message>
         <source>Copy Next River Cross Section</source>
-        <translation type="unfinished"></translation>
+        <translation>Sao chép đoạn sông tiếp theo</translation>
     </message>
     <message>
         <source>Create Cross section of Back and Forth: Number of the Interpolation Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Tạo mặt cắt của Back and Forth: Số lượng dữ liệu nội suy</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverPathPointMoveDialog</name>
     <message>
         <source>Move Traversal Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Di chuyển đường ngang</translation>
     </message>
     <message>
         <source>,</source>
-        <translation type="unfinished"></translation>
+        <translation>,</translation>
     </message>
     <message>
         <source>Transfer Quantity</source>
-        <translation type="unfinished"></translation>
+        <translation>Số lượng chuyển</translation>
     </message>
     <message>
         <source>Center Point Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Tọa độ điểm trung tâm</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverPathPointRenameDialog</name>
     <message>
         <source>Rename Traversal Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Đổi tên đường truyền tải</translation>
     </message>
     <message>
         <source>New Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tên mới:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverPathPointRotateDialog</name>
     <message>
         <source>Rotate Traversal Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Xoay đường ngang</translation>
     </message>
     <message>
         <source>Relative Angle</source>
-        <translation type="unfinished"></translation>
+        <translation>Góc tương đối</translation>
     </message>
     <message>
         <source>Increment Angle</source>
-        <translation type="unfinished"></translation>
+        <translation>Góc tăng dần</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverPathPointShiftDialog</name>
     <message>
         <source>Shift River Center</source>
-        <translation type="unfinished"></translation>
+        <translation>Shift River Center</translation>
     </message>
     <message>
         <source>Transfer Quantity</source>
-        <translation type="unfinished"></translation>
+        <translation>Số lượng chuyển</translation>
     </message>
     <message>
         <source>Transfer Quality s (%1 &lt; s &lt; %2)</source>
-        <translation type="unfinished"></translation>
+        <translation>Chất lượng chuyển giao s ( %1 &lt;s &lt; %2 )</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurvey</name>
     <message>
         <source>Expand Traversal Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Mở rộng các đường truyền tải</translation>
     </message>
     <message>
         <source>Add Extension Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Thêm dòng mở rộng</translation>
     </message>
     <message>
         <source>Insert Traversal Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Chèn đường truyền ngang</translation>
     </message>
     <message>
         <source>Move Traversal Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Di chuyển đường truyền</translation>
     </message>
     <message>
         <source>Rename Traversal Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Đổi tên đường truyền tải</translation>
     </message>
     <message>
         <source>Rotate Traversal Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Xoay đường ngang</translation>
     </message>
     <message>
         <source>Shift River Center Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Shift River Center Points</translation>
     </message>
     <message>
         <source>Interpolation Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Chế độ nội suy</translation>
     </message>
     <message>
         <source>Move Traversal Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Di chuyển đường ngang</translation>
     </message>
     <message>
         <source>Shift Center Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Shift Center Point</translation>
     </message>
     <message>
         <source>Move Extension Line End</source>
-        <translation type="unfinished"></translation>
+        <translation>Di chuyển kết thúc dòng mở rộng</translation>
     </message>
     <message>
         <source>Selection Change</source>
-        <translation type="unfinished"></translation>
+        <translation>Thay đổi lựa chọn</translation>
     </message>
     <message>
         <source>Build Left bank and Right bank lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Xây dựng đường bờ trái và bờ phải</translation>
     </message>
     <message>
         <source>&amp;Add Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Thêm đỉnh (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Loại bỏ Vertex (&amp;R)</translation>
     </message>
     <message>
         <source>Import C&amp;enter Line...</source>
-        <translation type="unfinished"></translation>
+        <translation>Dòng Trung tâm Nhập khẩu (&amp;E)...</translation>
     </message>
     <message>
         <source>Export Ce&amp;nter Line...</source>
-        <translation type="unfinished"></translation>
+        <translation>Đường trung tâm xuất khẩu (&amp;N)...</translation>
     </message>
     <message>
         <source>Insert Upstream Side(&amp;B)...</source>
-        <translation type="unfinished"></translation>
+        <translation>Chèn phía thượng lưu (B) (&amp;B)...</translation>
     </message>
     <message>
         <source>Insert Downstream Side(&amp;A)...</source>
-        <translation type="unfinished"></translation>
+        <translation>Chèn phía hạ lưu (A) (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Move...</source>
-        <translation type="unfinished"></translation>
+        <translation>Di chuyển (&amp;M)...</translation>
     </message>
     <message>
         <source>&amp;Rotate...</source>
-        <translation type="unfinished"></translation>
+        <translation>Quay (&amp;R)...</translation>
     </message>
     <message>
         <source>S&amp;hift Center...</source>
-        <translation type="unfinished"></translation>
+        <translation>Trung tâm Shift (&amp;H)...</translation>
     </message>
     <message>
         <source>E&amp;xtend Horizontally...</source>
-        <translation type="unfinished"></translation>
+        <translation>Mở rộng theo chiều ngang (&amp;X)...</translation>
     </message>
     <message>
         <source>Dele&amp;te Cross Section</source>
-        <translation type="unfinished"></translation>
+        <translation>Xóa mặt cắt ngang (&amp;T)</translation>
     </message>
     <message>
         <source>R&amp;ename Cross Section...</source>
-        <translation type="unfinished"></translation>
+        <translation>Đổi tên mặt cắt ngang (&amp;E)...</translation>
     </message>
     <message>
         <source>Add &amp;Left Bank Extension Line...</source>
-        <translation type="unfinished"></translation>
+        <translation>Thêm dòng mở rộng bờ bên trái (&amp;L)...</translation>
     </message>
     <message>
         <source>Add &amp;Right Bank Extension Line...</source>
-        <translation type="unfinished"></translation>
+        <translation>Thêm Dòng Mở rộng Ngân hàng Bên phải (&amp;R)...</translation>
     </message>
     <message>
         <source>Remo&amp;ve Left Bank Extension Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Loại bỏ Dòng mở rộng Ngân hàng Bên trái (&amp;V)</translation>
     </message>
     <message>
         <source>Rem&amp;ove Right Bank Extension Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Loại bỏ Dòng mở rộng Ngân hàng Bên phải (&amp;O)</translation>
     </message>
     <message>
         <source>Display &amp;Cross Section</source>
-        <translation type="unfinished"></translation>
+        <translation>Hiển thị mặt cắt ngang (&amp;C)</translation>
     </message>
     <message>
         <source>Display &amp;Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Thiết lập màn hình (&amp;S)</translation>
     </message>
     <message>
         <source>Spline</source>
-        <translation type="unfinished"></translation>
+        <translation>Spline</translation>
     </message>
     <message>
         <source>Linear Curve</source>
-        <translation type="unfinished"></translation>
+        <translation>Đường cong tuyến tính</translation>
     </message>
     <message>
         <source>%1 is not defined yet</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 vẫn chưa được xác định</translation>
     </message>
     <message>
         <source>Delete Traversal Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Xóa đường truyền tải</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Cảnh báo</translation>
     </message>
     <message>
         <source>No points data to map is found. Please import points data.</source>
-        <translation type="unfinished"></translation>
+        <translation>Không tìm thấy dữ liệu điểm cho bản đồ. Vui lòng nhập dữ liệu điểm.</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Thông tin</translation>
     </message>
     <message>
         <source>Center Line is not defined yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dòng trung tâm vẫn chưa được xác định.</translation>
     </message>
     <message>
         <source>Center line</source>
-        <translation type="unfinished"></translation>
+        <translation>Đường trung tâm</translation>
     </message>
     <message>
         <source>Please define center line by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vui lòng xác định đường trung tâm bằng cách nhấp chuột. Kết thúc xác định bằng cách nhấp đúp hoặc nhấn phím quay lại.</translation>
     </message>
     <message>
         <source>Remove Extension Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Xóa dòng mở rộng</translation>
     </message>
     <message>
         <source>Edit Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Chỉnh sửa cài đặt hiển thị</translation>
     </message>
     <message>
         <source>Finish Defining Polyline</source>
-        <translation type="unfinished"></translation>
+        <translation>Kết thúc xác định Polyline</translation>
     </message>
     <message>
         <source>%1 generated.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 được tạo ra.</translation>
     </message>
     <message>
         <source>Cross-section data need at least 2 center points.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dữ liệu mặt cắt cần ít nhất 2 điểm trung tâm.</translation>
     </message>
     <message>
         <source>Generate Cross-Section Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Tạo dữ liệu mặt cắt ngang</translation>
     </message>
     <message>
         <source>No point cloud data to map is found. Please import point cloud data.</source>
-        <translation type="unfinished"></translation>
+        <translation>Không tìm thấy dữ liệu đám mây điểm để lập bản đồ. Vui lòng nhập dữ liệu đám mây điểm.</translation>
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
-If you want to adjust cross section position and map point clouod data again, you can use &quot;Map point cloud data&quot;</source>
-        <translation type="unfinished"></translation>
+If you want to adjust cross section position and map point clouod data again, you can use "Map point cloud data"</source>
+        <translation>Dữ liệu mặt cắt ngang được tạo bằng dữ liệu đám mây điểm. Nếu bạn muốn điều chỉnh lại vị trí mặt cắt và dữ liệu đám mây điểm trên bản đồ, bạn có thể sử dụng "Dữ liệu đám mây điểm bản đồ"</translation>
     </message>
     <message>
         <source>Map point cloud data</source>
-        <translation type="unfinished"></translation>
+        <translation>Dữ liệu đám mây điểm bản đồ</translation>
     </message>
     <message>
         <source>Generate point cloud data</source>
-        <translation type="unfinished"></translation>
+        <translation>Tạo dữ liệu đám mây điểm</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurvey::Impl</name>
     <message>
         <source>  </source>
-        <translation type="unfinished"></translation>
+        <translation />
     </message>
     <message>
         <source>&amp;Cross-Section Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Dữ liệu mặt cắt ngang (&amp;C)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyBuildBankLinesDialog</name>
     <message>
         <source>Build Bank Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Xây dựng đường dây ngân hàng</translation>
     </message>
     <message>
         <source>Input the distance from center line</source>
-        <translation type="unfinished"></translation>
+        <translation>Nhập khoảng cách từ đường tâm</translation>
     </message>
     <message>
         <source>Left bank:</source>
-        <translation type="unfinished"></translation>
+        <translation>Bờ trái:</translation>
     </message>
     <message>
         <source>Right bank:</source>
-        <translation type="unfinished"></translation>
+        <translation>Bơ bên phải:</translation>
     </message>
     <message>
         <source>Hint: Left bank and Right bank lines are created as line that consists of points that are away from center line to direction perpendicular to the center line.</source>
-        <translation type="unfinished"></translation>
+        <translation>Gợi ý: Các đường bờ trái và bờ phải được tạo thành một đoạn thẳng bao gồm các điểm nằm cách xa đường tâm đến hướng vuông góc với đường tâm.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyCreator</name>
     <message>
         <source>Cross-Section Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Dữ liệu mặt cắt ngang</translation>
     </message>
     <message>
         <source>Cross-Section Data%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Dữ liệu mặt cắt ngang %1</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyCrossSectionDisplaySettingDialog</name>
     <message>
         <source>Cross Section Window Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Cài đặt hiển thị cửa sổ mặt cắt ngang</translation>
     </message>
     <message>
         <source>Background grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Lưới nền</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation type="unfinished"></translation>
+        <translation>Kiểu</translation>
     </message>
     <message>
         <source>Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Dòng</translation>
     </message>
     <message>
         <source>Dots</source>
-        <translation type="unfinished"></translation>
+        <translation>Dấu chấm</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation type="unfinished"></translation>
+        <translation>Nằm ngang</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation>Tự động</translation>
     </message>
     <message>
         <source>Scale</source>
-        <translation type="unfinished"></translation>
+        <translation>Tỉ lệ</translation>
     </message>
     <message>
         <source>Sub scale</source>
-        <translation type="unfinished"></translation>
+        <translation>Quy mô phụ</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation type="unfinished"></translation>
+        <translation>Thẳng đứng</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Màu sắc:</translation>
     </message>
     <message>
         <source>Scales</source>
-        <translation type="unfinished"></translation>
+        <translation>Quy mô</translation>
     </message>
     <message>
         <source>Font:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nét chữ:</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation type="unfinished"></translation>
+        <translation>Chỉnh sửa...</translation>
     </message>
     <message>
         <source>Left/right bank markers</source>
-        <translation type="unfinished"></translation>
+        <translation>Điểm đánh dấu ngân hàng trái / phải</translation>
     </message>
     <message>
         <source>Aspect ratio</source>
-        <translation type="unfinished"></translation>
+        <translation>Tỷ lệ khung hình</translation>
     </message>
     <message>
         <source>Left/right bank markers font</source>
-        <translation type="unfinished"></translation>
+        <translation>Phông chữ đánh dấu ngân hàng trái / phải</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyCrossSectionEditFromPointDialog</name>
     <message>
         <source>Edit Cross Section From Selected Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Chỉnh sửa mặt cắt từ điểm đã chọn</translation>
     </message>
     <message>
         <source>Direction to Edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Hướng chỉnh sửa</translation>
     </message>
     <message>
         <source>Left bank side</source>
-        <translation type="unfinished"></translation>
+        <translation>Bờ trái</translation>
     </message>
     <message>
         <source>Right bank side</source>
-        <translation type="unfinished"></translation>
+        <translation>Bờ bên phải</translation>
     </message>
     <message>
         <source>Distance to Edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Khoảng cách để chỉnh sửa</translation>
     </message>
     <message>
         <source>Specify horizontal distance</source>
-        <translation type="unfinished"></translation>
+        <translation>Chỉ định khoảng cách ngang</translation>
     </message>
     <message>
         <source>m</source>
-        <translation type="unfinished"></translation>
+        <translation>NS</translation>
     </message>
     <message>
         <source>Specify vertical distance</source>
-        <translation type="unfinished"></translation>
+        <translation>Chỉ định khoảng cách dọc</translation>
     </message>
     <message>
         <source>Specify elevation of end point</source>
-        <translation type="unfinished"></translation>
+        <translation>Chỉ định độ cao của điểm cuối</translation>
     </message>
     <message>
         <source>To the point where it crosses the cross section</source>
-        <translation type="unfinished"></translation>
+        <translation>Tới điểm mà nó cắt ngang mặt cắt</translation>
     </message>
     <message>
         <source>Gradient</source>
-        <translation type="unfinished"></translation>
+        <translation>Dốc</translation>
     </message>
     <message>
         <source>Specify slope</source>
-        <translation type="unfinished"></translation>
+        <translation>Chỉ định độ dốc</translation>
     </message>
     <message>
         <source>%</source>
-        <translation type="unfinished"></translation>
+        <translation>%</translation>
     </message>
     <message>
         <source>Specify fraction  1:</source>
-        <translation type="unfinished"></translation>
+        <translation>Chỉ định phân số 1:</translation>
     </message>
     <message>
         <source>Specify the fraction between vertical distance and horizontal distance. For example inputting 10 means 10% slope, and 20 means 5% slope.</source>
-        <translation type="unfinished"></translation>
+        <translation>Chỉ định phân số giữa khoảng cách dọc và khoảng cách ngang. Ví dụ, nhập 10 có nghĩa là độ dốc 10% và 20 có nghĩa là độ dốc 5%.</translation>
     </message>
     <message>
         <source>Upward</source>
-        <translation type="unfinished"></translation>
+        <translation>Trở lên</translation>
     </message>
     <message>
         <source>Downward</source>
-        <translation type="unfinished"></translation>
+        <translation>Xuống</translation>
     </message>
     <message>
         <source>Edit &amp;Next</source>
-        <translation type="unfinished"></translation>
+        <translation>Chỉnh sửa tiếp theo (&amp;N)</translation>
     </message>
     <message>
         <source>Edit Crosssection</source>
-        <translation type="unfinished"></translation>
+        <translation>Chỉnh sửa mặt cắt ngang</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Cảnh báo</translation>
     </message>
     <message>
         <source>There is no cross point. Please check the setting.</source>
-        <translation type="unfinished"></translation>
+        <translation>Không có điểm chéo. Vui lòng kiểm tra cài đặt.</translation>
     </message>
     <message>
         <source>When you specify vertical distance, the slope should not be 0.</source>
-        <translation type="unfinished"></translation>
+        <translation>Khi bạn chỉ định khoảng cách thẳng đứng, độ dốc không được bằng 0.</translation>
     </message>
     <message>
         <source>The settings of elevation and gradient are invalid.</source>
-        <translation type="unfinished"></translation>
+        <translation>Cài đặt độ cao và độ dốc không hợp lệ.</translation>
     </message>
     <message>
-        <source>When you specify elevation of end point, it can not be same to the start point. If you want to draw horizontal line, please select &quot;Specify horizontal distance&quot;.</source>
-        <translation type="unfinished"></translation>
+        <source>When you specify elevation of end point, it can not be same to the start point. If you want to draw horizontal line, please select "Specify horizontal distance".</source>
+        <translation>Khi bạn chỉ định độ cao của điểm cuối, nó không thể giống với điểm bắt đầu. Nếu bạn muốn vẽ đường ngang, vui lòng chọn "Chỉ định khoảng cách ngang".</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyCrosssectionWindow</name>
     <message>
         <source>MainWindow</source>
-        <translation type="unfinished"></translation>
+        <translation>Cửa sổ chính</translation>
     </message>
     <message>
         <source>Cross Section ToolBar</source>
-        <translation type="unfinished"></translation>
+        <translation>Thanh công cụ cắt ngang</translation>
     </message>
     <message>
         <source>View Setting ToolBar</source>
-        <translation type="unfinished"></translation>
+        <translation>Xem thanh công cụ cài đặt</translation>
     </message>
     <message>
         <source>Display Setting ToolBar</source>
-        <translation type="unfinished"></translation>
+        <translation>Thanh công cụ cài đặt hiển thị</translation>
     </message>
     <message>
         <source>&amp;This cross-section only</source>
-        <translation type="unfinished"></translation>
+        <translation>Chỉ mặt cắt ngang này (&amp;T)</translation>
     </message>
     <message>
         <source>All cross-sections</source>
-        <translation type="unfinished"></translation>
+        <translation>Tất cả các mặt cắt</translation>
     </message>
     <message>
         <source>&amp;Edit cross section from the selected point</source>
-        <translation type="unfinished"></translation>
+        <translation>Chỉnh sửa mặt cắt từ điểm đã chọn (&amp;E)</translation>
     </message>
     <message>
         <source>&amp;Edit from Dialog...</source>
-        <translation type="unfinished"></translation>
+        <translation>Chỉnh sửa từ Hộp thoại (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Xóa bỏ (&amp;D)</translation>
     </message>
     <message>
         <source>&amp;Elevation Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Điểm độ cao (&amp;E)</translation>
     </message>
     <message>
         <source>Inactivate using &amp;water elevation</source>
-        <translation type="unfinished"></translation>
+        <translation>Ngừng kích hoạt bằng cách sử dụng độ cao của nước (&amp;W)</translation>
     </message>
     <message>
         <source>Crosssection: </source>
-        <translation type="unfinished"></translation>
+        <translation>Mặt cắt ngang:</translation>
     </message>
     <message>
         <source>Reference</source>
-        <translation type="unfinished"></translation>
+        <translation>Thẩm quyền giải quyết</translation>
     </message>
     <message>
         <source>Auto rescale</source>
-        <translation type="unfinished"></translation>
+        <translation>Tự động bán lại</translation>
     </message>
     <message>
         <source>Aspect ratio: 1 / </source>
-        <translation type="unfinished"></translation>
+        <translation>Tỷ lệ co: 1 /</translation>
     </message>
     <message>
         <source>Fix aspect ratio</source>
-        <translation type="unfinished"></translation>
+        <translation>Sửa tỷ lệ khung hình</translation>
     </message>
     <message>
         <source>Fix region</source>
-        <translation type="unfinished"></translation>
+        <translation>Sửa vùng</translation>
     </message>
     <message>
         <source>Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Lưới</translation>
     </message>
     <message>
         <source>Scale</source>
-        <translation type="unfinished"></translation>
+        <translation>Tỉ lệ</translation>
     </message>
     <message>
         <source>Left/right bank markers</source>
-        <translation type="unfinished"></translation>
+        <translation>Điểm đánh dấu ngân hàng trái / phải</translation>
     </message>
     <message>
         <source>Aspect ratio</source>
-        <translation type="unfinished"></translation>
+        <translation>Tỷ lệ khung hình</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Thiết lập màn hình</translation>
     </message>
     <message>
         <source>Active</source>
-        <translation type="unfinished"></translation>
+        <translation>Tích cực</translation>
     </message>
     <message>
         <source>Distance from left bank</source>
-        <translation type="unfinished"></translation>
+        <translation>Khoảng cách từ bờ trái</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished"></translation>
+        <translation>Chức vụ</translation>
     </message>
     <message>
         <source>Elevation</source>
-        <translation type="unfinished"></translation>
+        <translation>Độ cao</translation>
     </message>
     <message>
         <source>Crosssection Window : %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Cửa sổ cắt ngang: %2</translation>
     </message>
     <message>
         <source>Edit Elevation Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Chỉnh sửa điểm độ cao</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Cảnh báo</translation>
     </message>
     <message>
         <source>At least, two points should be active.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ít nhất, hai điểm nên hoạt động.</translation>
     </message>
     <message>
         <source>Fixed points and end points cannot be deleted.</source>
-        <translation type="unfinished"></translation>
+        <translation>Điểm cố định và điểm kết thúc không thể bị xóa.</translation>
     </message>
     <message>
         <source>There should be more than one point in the right bank side and the left bank side.</source>
-        <translation type="unfinished"></translation>
+        <translation>Phải có nhiều hơn một điểm ở phía hữu ngạn và bờ bên trái.</translation>
     </message>
     <message>
         <source>Delete Elevation Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Xóa điểm độ cao</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Thông tin</translation>
     </message>
     <message>
         <source>To use this function, please select only one point.</source>
-        <translation type="unfinished"></translation>
+        <translation>Để sử dụng chức năng này, vui lòng chỉ chọn một điểm.</translation>
     </message>
     <message>
         <source>Inactivate Elevation Points using water elevation</source>
-        <translation type="unfinished"></translation>
+        <translation>Vô hiệu hóa các Điểm nâng cao bằng cách sử dụng độ cao của nước</translation>
     </message>
     <message>
         <source>Fixed points and end points cannot be inactivated.</source>
-        <translation type="unfinished"></translation>
+        <translation>Điểm cố định và điểm kết thúc không thể bị hủy kích hoạt.</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Màu sắc</translation>
     </message>
     <message>
         <source>Delete Water Surface Elevation</source>
-        <translation type="unfinished"></translation>
+        <translation>Xóa độ cao mặt nước</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation type="unfinished"></translation>
+        <translation>Bạn có chắc chắn muốn xóa %1 ?</translation>
     </message>
     <message>
         <source>Water surface elevation data does not exist.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dữ liệu về độ cao mặt nước không tồn tại.</translation>
     </message>
     <message>
         <source>Select Water Surface Elevation</source>
-        <translation type="unfinished"></translation>
+        <translation>Chọn độ cao mặt nước</translation>
     </message>
     <message>
         <source>Select Water Surface Elevation to use</source>
-        <translation type="unfinished"></translation>
+        <translation>Chọn Độ cao bề mặt nước để sử dụng</translation>
     </message>
     <message>
         <source>Cross-Section Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Dữ liệu mặt cắt ngang</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyCrosssectionWindowGraphicsView</name>
     <message>
         <source>&amp;Activate</source>
-        <translation type="unfinished"></translation>
+        <translation>Hoạt động (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Inactivate</source>
-        <translation type="unfinished"></translation>
+        <translation>Hủy kích hoạt (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Move</source>
-        <translation type="unfinished"></translation>
+        <translation>Di chuyển (&amp;M)</translation>
     </message>
     <message>
         <source>Inactivate using &amp;water elevation</source>
-        <translation type="unfinished"></translation>
+        <translation>Ngừng kích hoạt bằng cách sử dụng độ cao của nước (&amp;W)</translation>
     </message>
     <message>
         <source>Left Bank Side</source>
-        <translation type="unfinished"></translation>
+        <translation>Bờ bên trái</translation>
     </message>
     <message>
         <source>Right Bank Side</source>
-        <translation type="unfinished"></translation>
+        <translation>Bờ bên phải</translation>
     </message>
     <message>
         <source>Aspect ratio: 1 / %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Tỷ lệ co: 1 / %1</translation>
     </message>
     <message>
         <source>Edit Cross Section</source>
-        <translation type="unfinished"></translation>
+        <translation>Chỉnh sửa mặt cắt ngang</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Thông tin</translation>
     </message>
     <message>
         <source>Edit the cross section by mouse-clicking. Finish editing by double clicking, or pressing return key.
-You can precisely edit the cross section by inputting values from dialog. Please enter dialog edit mode from &quot;Edit from Dialog&quot; in the right-clicking menu.</source>
-        <translation type="unfinished"></translation>
+You can precisely edit the cross section by inputting values from dialog. Please enter dialog edit mode from "Edit from Dialog" in the right-clicking menu.</source>
+        <translation>Chỉnh sửa mặt cắt bằng cách nhấp chuột. Hoàn tất chỉnh sửa bằng cách nhấp đúp hoặc nhấn phím quay lại. Bạn có thể chỉnh sửa chính xác mặt cắt bằng cách nhập các giá trị từ hộp thoại. Vui lòng nhập chế độ chỉnh sửa hộp thoại từ "Chỉnh sửa từ Hộp thoại" trong menu chuột phải.</translation>
     </message>
     <message>
         <source>Altitude Points Move</source>
-        <translation type="unfinished"></translation>
+        <translation>Di chuyển điểm cao độ</translation>
     </message>
     <message>
         <source>Inactivate Elevation Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Hủy kích hoạt các điểm nâng cao</translation>
     </message>
     <message>
         <source>Edit Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Chỉnh sửa cài đặt hiển thị</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyCrosssectionWindowWseTableWidget</name>
     <message>
         <source>WSE Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Tên WSE</translation>
     </message>
     <message>
         <source>Elevation</source>
-        <translation type="unfinished"></translation>
+        <translation>Độ cao</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Màu sắc</translation>
     </message>
     <message>
         <source>Move &amp;Up</source>
-        <translation type="unfinished"></translation>
+        <translation>Đi lên (&amp;U)</translation>
     </message>
     <message>
         <source>Move &amp;Down</source>
-        <translation type="unfinished"></translation>
+        <translation>Đi xuống (&amp;D)</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Xóa bỏ</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyDisplaySettingDialog</name>
     <message>
         <source>Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Thiết lập màn hình</translation>
     </message>
     <message>
         <source>Background Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Màu nền</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation type="unfinished"></translation>
+        <translation>Dễ thấy</translation>
     </message>
     <message>
         <source>Crosssection Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Đường cắt ngang</translation>
     </message>
     <message>
         <source>Z Scale: </source>
-        <translation type="unfinished"></translation>
+        <translation>Quy mô Z:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Màu sắc:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyExporter</name>
     <message>
         <source>Cross-Section Data (*.riv)</source>
-        <translation type="unfinished"></translation>
+        <translation>Dữ liệu mặt cắt ngang (*.riv)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyGenerateDialog</name>
     <message>
         <source>Generate River Survey Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Tạo dữ liệu khảo sát sông</translation>
     </message>
     <message>
         <source>Number of cross sections:</source>
-        <translation type="unfinished"></translation>
+        <translation>Số lượng mặt cắt ngang:</translation>
     </message>
     <message>
         <source>Distance between cross sections [m]:</source>
-        <translation type="unfinished"></translation>
+        <translation>Khoảng cách giữa các mặt cắt [m]:</translation>
     </message>
     <message>
         <source>Distance between elevation points[m]:</source>
-        <translation type="unfinished"></translation>
+        <translation>Khoảng cách giữa các điểm độ cao [m]:</translation>
     </message>
     <message>
         <source>Name of most upstream cross section</source>
-        <translation type="unfinished"></translation>
+        <translation>Tên của hầu hết mặt cắt thượng lưu</translation>
     </message>
     <message>
         <source>Points data to map:</source>
-        <translation type="unfinished"></translation>
+        <translation>Dữ liệu điểm vào bản đồ:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyHonryuExporter</name>
     <message>
         <source>RiverSurvey data HONRYU export</source>
-        <translation type="unfinished"></translation>
+        <translation>Xuất dữ liệu RiverSurvey HONRYU</translation>
     </message>
     <message>
         <source>CSV File (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>Tệp CSV (*.csv)</translation>
     </message>
     <message>
         <source>Text File (*.txt)</source>
-        <translation type="unfinished"></translation>
+        <translation>Tệp văn bản (*.txt)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyHonryuExporterSettingDialog</name>
     <message>
         <source>Export Format Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Cài đặt định dạng xuất khẩu</translation>
     </message>
     <message>
         <source>Comma</source>
-        <translation type="unfinished"></translation>
+        <translation>Dấu phẩy</translation>
     </message>
     <message>
         <source>Tab</source>
-        <translation type="unfinished"></translation>
+        <translation>Chuyển hướng</translation>
     </message>
     <message>
         <source>Space</source>
-        <translation type="unfinished"></translation>
+        <translation>Không gian</translation>
     </message>
     <message>
         <source>Separator:</source>
-        <translation type="unfinished"></translation>
+        <translation>Dấu phân cách:</translation>
     </message>
     <message>
         <source>Header:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tiêu đề:</translation>
     </message>
     <message>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Thêm vào</translation>
     </message>
     <message>
         <source>Longitudinal Distance:</source>
-        <translation type="unfinished"></translation>
+        <translation>Khoảng cách dọc:</translation>
     </message>
     <message>
         <source>Distance from previous Cross Section</source>
-        <translation type="unfinished"></translation>
+        <translation>Khoảng cách từ Mặt cắt ngang trước đó</translation>
     </message>
     <message>
         <source>Distance from first Cross Section</source>
-        <translation type="unfinished"></translation>
+        <translation>Khoảng cách từ mặt cắt ngang đầu tiên</translation>
     </message>
     <message>
         <source>Columns:</source>
-        <translation type="unfinished"></translation>
+        <translation>Cột:</translation>
     </message>
     <message>
         <source>Name, Longitudinal Distance, Cross Section Distance, Elevation</source>
-        <translation type="unfinished"></translation>
+        <translation>Tên, Khoảng cách dọc, Khoảng cách mặt cắt ngang, Độ cao</translation>
     </message>
     <message>
         <source>Longitudinal Distance, Name, Cross Section Distance, Elevation</source>
-        <translation type="unfinished"></translation>
+        <translation>Khoảng cách dọc, Tên, Khoảng cách mặt cắt ngang, Độ cao</translation>
     </message>
     <message>
         <source>Cross Section Distance, Elevation, Name, Longitudinal Distance</source>
-        <translation type="unfinished"></translation>
+        <translation>Khoảng cách mặt cắt ngang, Độ cao, Tên, Khoảng cách dọc</translation>
     </message>
     <message>
         <source>Cross Section Distance, Elevation, Longitudinal Distance, Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Khoảng cách mặt cắt ngang, Độ cao, Khoảng cách dọc, Tên</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyImporter</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Lỗi</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: LX value is invalid</source>
-        <translation type="unfinished"></translation>
+        <source>%1 line %2 "%3": LX value is invalid</source>
+        <translation>%1 hàng %2 "%3": Giá trị LX không hợp lệ</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: LY value is invalid</source>
-        <translation type="unfinished"></translation>
+        <source>%1 line %2 "%3": LY value is invalid</source>
+        <translation>%1 hàng %2 "%3": Giá trị LY không hợp lệ</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: RX value is invalid</source>
-        <translation type="unfinished"></translation>
+        <source>%1 line %2 "%3": RX value is invalid</source>
+        <translation>%1 hàng %2 "%3": Giá trị RX không hợp lệ</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: RY value is invalid</source>
-        <translation type="unfinished"></translation>
+        <source>%1 line %2 "%3": RY value is invalid</source>
+        <translation>%1 hàng %2 "%3": Giá trị RY không hợp lệ</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Point count is invalid</source>
-        <translation type="unfinished"></translation>
+        <source>%1 line %2 "%3": Point count is invalid</source>
+        <translation>%1 hàng %2 "%3": Số điểm không hợp lệ</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Invalid index value</source>
-        <translation type="unfinished"></translation>
+        <source>%1 line %2 "%3": Invalid index value</source>
+        <translation>%1 hàng %2 "%3": Giá trị chỉ mục không hợp lệ</translation>
     </message>
     <message>
         <source>%1 line %2: cross section data for %3 not enough</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 hàng %2 : dữ liệu mặt cắt cho %3 không đủ</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Distance value is invalid</source>
-        <translation type="unfinished"></translation>
+        <source>%1 line %2 "%3": Distance value is invalid</source>
+        <translation>%1 hàng %2 "%3": Giá trị khoảng cách không hợp lệ</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Elevation value is invalid</source>
-        <translation type="unfinished"></translation>
+        <source>%1 line %2 "%3": Elevation value is invalid</source>
+        <translation>%1 hàng %2 "%3": Giá trị độ cao không hợp lệ</translation>
     </message>
     <message>
         <source>#survey data is not found. Will be ignored.</source>
-        <translation type="unfinished"></translation>
+        <translation>#survey dữ liệu không được tìm thấy. Sẽ được bỏ qua.</translation>
     </message>
     <message>
         <source>#x-section data is not found. Will be ignored.</source>
-        <translation type="unfinished"></translation>
+        <translation># x-section dữ liệu không được tìm thấy. Sẽ được bỏ qua.</translation>
     </message>
     <message>
         <source>#x-section data is not correctly ordered. Will be sorted automatically.</source>
-        <translation type="unfinished"></translation>
+        <translation># dữ liệu phần x không được sắp xếp chính xác. Sẽ được sắp xếp tự động.</translation>
     </message>
     <message>
         <source>#x-section data contained data with same distances. Data distance is shifted slightly so that you can import both points.</source>
-        <translation type="unfinished"></translation>
+        <translation># dữ liệu phần x chứa dữ liệu có cùng khoảng cách. Khoảng cách dữ liệu được dịch chuyển một chút để bạn có thể nhập cả hai điểm.</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Cảnh báo</translation>
     </message>
     <message>
         <source>Cross Section data is not ordered correctly at %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dữ liệu mặt cắt không được sắp xếp chính xác tại %1.</translation>
     </message>
     <message>
         <source>Crosssection data is not ordered correctly at %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dữ liệu giao cắt không được sắp xếp chính xác tại %1.</translation>
     </message>
     <message>
         <source>Error occured while opening %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Đã xảy ra lỗi khi mở %1</translation>
     </message>
     <message>
         <source>%1 Line %2: Read error. Needs at least two values.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 Hàng %2 : Đọc lỗi. Cần ít nhất hai giá trị.</translation>
     </message>
     <message>
-        <source>%1 Line %2: Read error. Not real number value &quot;%3&quot;.</source>
-        <translation type="unfinished"></translation>
+        <source>%1 Line %2: Read error. Not real number value "%3".</source>
+        <translation>%1 Hàng %2 : Đọc lỗi. Không phải giá trị số thực "%3".</translation>
     </message>
     <message>
         <source>Cross section %1 does not cross the center line. Center point is set to be the middle point of low water way.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mặt cắt ngang %1 không vượt qua đường tâm. Điểm trung tâm được đặt là điểm giữa của đường nước thấp.</translation>
     </message>
     <message>
         <source>On cross section %1, the center line does not cross in the low water way. Center point is set to be the middle point of low water way.</source>
-        <translation type="unfinished"></translation>
+        <translation>Trên mặt cắt ngang %1, đường tâm không cắt ngang ở vùng nước thấp. Điểm trung tâm được đặt là điểm giữa của đường nước thấp.</translation>
     </message>
     <message>
         <source>Cross section %1 does not cross the center line. Center point is set to be the middle point of left bank and right bank.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mặt cắt ngang %1 không vượt qua đường tâm. Điểm trung tâm được đặt là điểm giữa của bờ trái và bờ phải.</translation>
     </message>
     <message>
         <source>Cross-Section data (*.riv)</source>
-        <translation type="unfinished"></translation>
+        <translation>Dữ liệu mặt cắt ngang (*.riv)</translation>
     </message>
     <message>
         <source>Cross-Section Data (*.riv)</source>
-        <translation type="unfinished"></translation>
+        <translation>Dữ liệu mặt cắt ngang (*.riv)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyImporterSettingDialog</name>
     <message>
         <source>River Survey Data Import Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Cài đặt nhập dữ liệu khảo sát sông</translation>
     </message>
     <message>
         <source>Where to define River center point</source>
-        <translation type="unfinished"></translation>
+        <translation>Nơi xác định điểm trung tâm sông</translation>
     </message>
     <message>
         <source>Middle point of left bank and right bank</source>
-        <translation type="unfinished"></translation>
+        <translation>Điểm giữa của bờ trái và bờ phải</translation>
     </message>
     <message>
         <source>Where the elevation is the smallest</source>
-        <translation type="unfinished"></translation>
+        <translation>Trường hợp độ cao là nhỏ nhất</translation>
     </message>
     <message>
         <source>Middle point of Low water way</source>
-        <translation type="unfinished"></translation>
+        <translation>Điểm giữa của Đường nước thấp</translation>
     </message>
     <message>
         <source>Where the elevation is the smallest in low water way</source>
-        <translation type="unfinished"></translation>
+        <translation>Nơi có độ cao nhỏ nhất ở vùng nước thấp</translation>
     </message>
     <message>
         <source>Order of cross sections</source>
-        <translation type="unfinished"></translation>
+        <translation>Thứ tự các mặt cắt</translation>
     </message>
     <message>
         <source>Downstream to upstream</source>
-        <translation type="unfinished"></translation>
+        <translation>Xuôi dòng lên thượng nguồn</translation>
     </message>
     <message>
         <source>Upstream to downstream</source>
-        <translation type="unfinished"></translation>
+        <translation>Thượng nguồn đến hạ lưu</translation>
     </message>
     <message>
         <source>Import center line from CSV file</source>
-        <translation type="unfinished"></translation>
+        <translation>Nhập dòng trung tâm từ tệp CSV</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyImporter_ProblemsDialog</name>
     <message>
         <source>Problems Found in Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Các vấn đề được tìm thấy trong dữ liệu</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Tên</translation>
     </message>
     <message>
         <source>Problem</source>
-        <translation type="unfinished"></translation>
+        <translation>Vấn đề</translation>
     </message>
     <message>
         <source>The problems above is found. Do you want to continue importing?</source>
-        <translation type="unfinished"></translation>
+        <translation>Các vấn đề trên được tìm thấy. Bạn có muốn tiếp tục nhập không?</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyLandXmlExporter</name>
     <message>
         <source>LandXml (*.xml)</source>
-        <translation type="unfinished"></translation>
+        <translation>LandXml (*.xml)</translation>
     </message>
     <message>
         <source>LandXml file(*.xml)</source>
-        <translation type="unfinished"></translation>
+        <translation>Tệp LandXml (*.xml)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyMapPointsDialog</name>
     <message>
         <source>Map points data</source>
-        <translation type="unfinished"></translation>
+        <translation>Bản đồ dữ liệu điểm</translation>
     </message>
     <message>
         <source>Distance between elevation points[m]:</source>
-        <translation type="unfinished"></translation>
+        <translation>Khoảng cách giữa các điểm độ cao [m]:</translation>
     </message>
     <message>
         <source>Points data to map:</source>
-        <translation type="unfinished"></translation>
+        <translation>Dữ liệu điểm vào bản đồ:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyMlitImporter</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Lỗi</translation>
     </message>
     <message>
         <source>Opening %1 failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Khai mạc %1 thất bại.</translation>
     </message>
     <message>
         <source>%1 Line %2: KP is not input</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 Hàng %2 : KP không phải là đầu vào</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: LX value is invalid</source>
-        <translation type="unfinished"></translation>
+        <source>%1 Line %2 "%3": LX value is invalid</source>
+        <translation>%1 Hàng %2 "%3": Giá trị LX không hợp lệ</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: LY value is invalid</source>
-        <translation type="unfinished"></translation>
+        <source>%1 Line %2 "%3": LY value is invalid</source>
+        <translation>%1 Hàng %2 "%3": Giá trị LY không hợp lệ</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: RX value is invalid</source>
-        <translation type="unfinished"></translation>
+        <source>%1 Line %2 "%3": RX value is invalid</source>
+        <translation>%1 Hàng %2 "%3": Giá trị RX không hợp lệ</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: RY value is invalid</source>
-        <translation type="unfinished"></translation>
+        <source>%1 Line %2 "%3": RY value is invalid</source>
+        <translation>%1 Hàng %2 "%3": Giá trị RY không hợp lệ</translation>
     </message>
     <message>
         <source>Distance marker data is not found. Will be ignored.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dữ liệu đánh dấu khoảng cách không được tìm thấy. Sẽ được bỏ qua.</translation>
     </message>
     <message>
-        <source>%1 line %2: &quot;%3&quot;: Flag data is invalid.</source>
-        <translation type="unfinished"></translation>
+        <source>%1 line %2: "%3": Flag data is invalid.</source>
+        <translation>%1 hàng %2 : "%3": Dữ liệu cờ không hợp lệ.</translation>
     </message>
     <message>
-        <source>%1 line %2: &quot;%3&quot;: Distance data is invalid.</source>
-        <translation type="unfinished"></translation>
+        <source>%1 line %2: "%3": Distance data is invalid.</source>
+        <translation>%1 hàng %2 : "%3": Dữ liệu khoảng cách không hợp lệ.</translation>
     </message>
     <message>
-        <source>%1 line %2: &quot;%3&quot;: Elevation data is invalid.</source>
-        <translation type="unfinished"></translation>
+        <source>%1 line %2: "%3": Elevation data is invalid.</source>
+        <translation>%1 hàng %2 : "%3": Dữ liệu độ cao không hợp lệ.</translation>
     </message>
     <message>
         <source>Select folder where cross section data exists</source>
-        <translation type="unfinished"></translation>
+        <translation>Chọn thư mục có dữ liệu mặt cắt ngang</translation>
     </message>
     <message>
         <source>Cross Section data is not found. Will be ignored.</source>
-        <translation type="unfinished"></translation>
+        <translation>Không tìm thấy dữ liệu Mặt cắt ngang. Sẽ được bỏ qua.</translation>
     </message>
     <message>
         <source>Cross Section data contained data with same distances. Data with lowest elevation is used.: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Dữ liệu mặt cắt chứa dữ liệu có cùng khoảng cách. Dữ liệu có độ cao thấp nhất được sử dụng: %1</translation>
     </message>
     <message>
         <source>Cross Section data is not correctly ordered. Will be sorted automatically.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dữ liệu mặt cắt không được sắp xếp chính xác. Sẽ được sắp xếp tự động.</translation>
     </message>
     <message>
         <source>Cross Section data contained data with same distances. Data distance is shifted slightly so that you can import both points.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dữ liệu mặt cắt chứa dữ liệu có cùng khoảng cách. Khoảng cách dữ liệu được dịch chuyển một chút để bạn có thể nhập cả hai điểm.</translation>
     </message>
     <message>
         <source>%1 Line %2: The number of values should be 5, but %3 values found.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 Hàng %2 : Số lượng giá trị phải là 5, nhưng %3 các giá trị được tìm thấy.</translation>
     </message>
     <message>
         <source>MLIT Cross-Section Data (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>Dữ liệu mặt cắt ngang MLIT (*.csv)</translation>
     </message>
     <message>
         <source>Japan MLIT Cross-Section Data (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>Dữ liệu mặt cắt MLIT của Nhật Bản (*.csv)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyMlitImporter_ProblemsDialog</name>
     <message>
         <source>Problems Found in Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Các vấn đề được tìm thấy trong dữ liệu</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Tên</translation>
     </message>
     <message>
         <source>Related File</source>
-        <translation type="unfinished"></translation>
+        <translation>Tệp liên quan</translation>
     </message>
     <message>
         <source>Problem</source>
-        <translation type="unfinished"></translation>
+        <translation>Vấn đề</translation>
     </message>
     <message>
         <source>The problems above is found. Do you want to continue importing?</source>
-        <translation type="unfinished"></translation>
+        <translation>Các vấn đề trên được tìm thấy. Bạn có muốn tiếp tục nhập không?</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Chỉnh sửa cài đặt hiển thị</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyVTKExporter</name>
     <message>
         <source>RiverSurvey data</source>
-        <translation type="unfinished"></translation>
+        <translation>Dữ liệu RiverSurvey</translation>
     </message>
     <message>
         <source>VTK File (*.vtk)</source>
-        <translation type="unfinished"></translation>
+        <translation>Tệp VTK (*.vtk)</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionRiverSurveyInterface</name>
     <message>
         <source>Move Control Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Di chuyển điểm kiểm soát</translation>
     </message>
 </context>
 </TS>

@@ -1,170 +1,168 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="es_ES">
 <context>
     <name>GeoDataPolyLineGroup</name>
     <message>
         <source>&amp;Sort</source>
-        <translation type="unfinished"></translation>
+        <translation>Clasificar (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Líneas (&amp;L)</translation>
     </message>
     <message>
         <source>Line%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Línea %1</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyLineGroupCreator</name>
     <message>
         <source>Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Líneas</translation>
     </message>
     <message>
         <source>Lines%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Líneas %1</translation>
     </message>
     <message>
         <source>Deleting this item will also remove any graph windows associated with this data.  Are you sure you want to delete this item?</source>
-        <translation type="unfinished"></translation>
+        <translation>Al eliminar este elemento, también se eliminarán las ventanas de gráficos asociadas con estos datos. ¿Está seguro de que desea eliminar este elemento?</translation>
     </message>
     <message>
         <source>line</source>
-        <translation type="unfinished"></translation>
+        <translation>línea</translation>
     </message>
     <message>
         <source>Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Línea</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyLineGroupCsvExporter</name>
     <message>
         <source>CSV file</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo CSV</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>Error occured while exporting to %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ocurrió un error al exportar a %1.</translation>
     </message>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo CSV (*.csv)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyLineGroupCsvImporter</name>
     <message>
         <source>CSV file (Polylines)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo CSV (polilíneas)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>Error occured while opening %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Ocurrió un error al abrir %1</translation>
     </message>
     <message>
         <source>Error occured while reading header line. Make sure the file is saved in UTF-8 encoding.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ocurrió un error al leer la línea del encabezado. Asegúrese de que el archivo esté guardado en codificación UTF-8.</translation>
     </message>
     <message>
         <source>Error occured while reading header line. Header should have 5 columns at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ocurrió un error al leer la línea del encabezado. El encabezado debe tener al menos 5 columnas.</translation>
     </message>
     <message>
         <source>Error occured while reading header line. Header should have 6 columns at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ocurrió un error al leer la línea del encabezado. El encabezado debe tener al menos 6 columnas.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
-        <translation type="unfinished"></translation>
+        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
+        <translation>Ocurrió un error al leer la línea del encabezado. Columna %1 debiera ser "%2", pero "%3" es dado.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. There is no data.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ocurrió un error al leer la línea %1. No hay datos.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Line should have two points at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ocurrió un error al leer la línea %1. La línea debe tener al menos dos puntos.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Make sure the file is saved in UTF-8 encoding.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ocurrió un error al leer la línea %1. Asegúrese de que el archivo esté guardado en codificación UTF-8.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Data should have 5 columns at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ocurrió un error al leer la línea %1. Los datos deben tener al menos 5 columnas.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Data should have 6 columns at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ocurrió un error al leer la línea %1. Los datos deben tener al menos 6 columnas.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;lid&quot; value in line %1. &quot;lid&quot; should be integer value but &quot;%2&quot; is specified.</source>
-        <translation type="unfinished"></translation>
+        <source>Error occured while reading "lid" value in line %1. "lid" should be integer value but "%2" is specified.</source>
+        <translation>Se produjo un error al leer el valor de la "tapa" en la línea %1. "tapa" debe ser un valor entero pero "%2" está especificado.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;vid&quot; value in line %1. &quot;vid&quot; should be integer value but &quot;%2&quot; is specified.</source>
-        <translation type="unfinished"></translation>
+        <source>Error occured while reading "vid" value in line %1. "vid" should be integer value but "%2" is specified.</source>
+        <translation>Se produjo un error al leer el valor "vid" en la línea %1. "vid" debe ser un valor entero pero "%2" está especificado.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation type="unfinished"></translation>
+        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
+        <translation>Se produjo un error al leer el valor "x" en la línea %1. "x" debería ser un valor real pero "%2" está especificado.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation type="unfinished"></translation>
+        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
+        <translation>Se produjo un error al leer el valor "y" en la línea %1. "y" debería ser un valor real pero "%2" está especificado.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation type="unfinished"></translation>
+        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
+        <translation>Se produjo un error al leer el valor del "valor" en la línea %1. "valor" debe ser un valor real pero "%2" está especificado.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. &quot;name&quot; should be the same for lines where &quot;lid&quot; values are the same.</source>
-        <translation type="unfinished"></translation>
+        <source>Error occured while reading line %1. "name" should be the same for lines where "lid" values are the same.</source>
+        <translation>Ocurrió un error al leer la línea %1. "nombre" debe ser el mismo para las líneas donde los valores de "tapa" son los mismos.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. &quot;value&quot; should be the same for lines where &quot;lid&quot; values are the same.</source>
-        <translation type="unfinished"></translation>
+        <source>Error occured while reading line %1. "value" should be the same for lines where "lid" values are the same.</source>
+        <translation>Ocurrió un error al leer la línea %1. "valor" debe ser el mismo para las líneas donde los valores de "tapa" son los mismos.</translation>
     </message>
     <message>
         <source>CSV file (Lines) (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo CSV (líneas) (*.csv)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyLineGroupShpExporter</name>
     <message>
         <source>ESRI Shapefile</source>
-        <translation type="unfinished"></translation>
+        <translation>Shapefile ESRI</translation>
     </message>
     <message>
         <source>ESRI Shapefile (*.shp)</source>
-        <translation type="unfinished"></translation>
+        <translation>Shapefile ESRI (*.shp)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyLineGroupShpImporter</name>
     <message>
         <source>ESRI Shapefile (Polylines)</source>
-        <translation type="unfinished"></translation>
+        <translation>Shapefile ESRI (polilíneas)</translation>
     </message>
     <message>
         <source>Polyline%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Polilínea %1</translation>
     </message>
     <message>
         <source>ESRI Shapefile (Lines) (*.shp)</source>
-        <translation type="unfinished"></translation>
+        <translation>Shapefile ESRI (líneas) (*.shp)</translation>
     </message>
 </context>
 </TS>

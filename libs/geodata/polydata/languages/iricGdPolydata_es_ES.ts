@@ -1,11 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="es_ES">
 <context>
     <name>GeoDataPolyData</name>
     <message>
         <source>Edit &amp;Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar nombre (&amp;N)</translation>
     </message>
     <message>
         <source>Edit &amp;Value...</source>
@@ -13,7 +11,7 @@
     </message>
     <message>
         <source>Edit &amp;Name and Value...</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar nombre y valor (&amp;N)...</translation>
     </message>
     <message>
         <source>Color &amp;Setting...</source>
@@ -25,7 +23,7 @@
     </message>
     <message>
         <source>Edit name</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar nombre</translation>
     </message>
     <message>
         <source>Name:</source>
@@ -37,26 +35,26 @@
     </message>
     <message>
         <source>Please input new value in this %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ingrese un nuevo valor en este %1.</translation>
     </message>
     <message>
         <source>Edit color setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar configuración de color</translation>
     </message>
     <message>
         <source>%1 name and value change</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 cambio de nombre y valor</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyDataColorSettingDialog</name>
     <message>
         <source>PolyData Color Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración de color de PolyData</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Color</translation>
     </message>
     <message>
         <source>Color by value</source>

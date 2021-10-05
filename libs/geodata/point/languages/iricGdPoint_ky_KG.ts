@@ -1,65 +1,63 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ky_KG">
 <context>
     <name>GeoDataPoint</name>
     <message>
         <source>Edit &amp;Coordinates...</source>
-        <translation type="unfinished"></translation>
+        <translation>Координаттарды түзөтүү (&amp;C)...</translation>
     </message>
     <message>
         <source>Po&amp;int</source>
-        <translation type="unfinished"></translation>
+        <translation>Пункт (&amp;I)</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Маалымат</translation>
     </message>
     <message>
         <source>Please define point by mouse-clicking.</source>
-        <translation type="unfinished"></translation>
+        <translation>Сураныч, чекитти чычканды басуу менен аныктаңыз.</translation>
     </message>
     <message>
         <source>point</source>
-        <translation type="unfinished"></translation>
+        <translation>чекит</translation>
     </message>
     <message>
         <source>Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Пункт</translation>
     </message>
     <message>
         <source>Finish Defining Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Аныктоочу чекитти бүтүрүү</translation>
     </message>
     <message>
         <source>Point Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Пойнт координаттары</translation>
     </message>
     <message>
         <source>Edit Point Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Түзөтүү Пойнт Координаттары</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointColorSimpleSettingDialog</name>
     <message>
         <source>Point Color Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Түстүн түсүн жөндөө</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Түс:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointCreator</name>
     <message>
         <source>Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Пункт</translation>
     </message>
     <message>
         <source>Point%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Пункт %1</translation>
     </message>
 </context>
 </TS>

@@ -1,157 +1,155 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="pl_PL">
 <context>
     <name>DistanceMeasureDataItem</name>
     <message>
         <source>Property</source>
-        <translation type="unfinished"></translation>
+        <translation>Nieruchomość</translation>
     </message>
     <message>
         <source>Redefine</source>
-        <translation type="unfinished"></translation>
+        <translation>Przedefiniuj</translation>
     </message>
     <message>
         <source>Define Distance Measure</source>
-        <translation type="unfinished"></translation>
+        <translation>Zdefiniuj miarę odległości</translation>
     </message>
     <message>
         <source>Move Distance Measure Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Przenieś punkt pomiaru odległości</translation>
     </message>
     <message>
         <source>Redefine Distance Measure</source>
-        <translation type="unfinished"></translation>
+        <translation>Przedefiniuj miarę odległości</translation>
     </message>
     <message>
         <source>Edit Distance Measure Property</source>
-        <translation type="unfinished"></translation>
+        <translation>Edytuj właściwość pomiaru odległości</translation>
     </message>
     <message>
         <source>Translate Distance Measure</source>
-        <translation type="unfinished"></translation>
+        <translation>Przetłumacz pomiar odległości</translation>
     </message>
 </context>
 <context>
     <name>DistanceMeasureGroupDataItem</name>
     <message>
         <source>&amp;Add Measure...</source>
-        <translation type="unfinished"></translation>
+        <translation>Dodaj miarę (&amp;A)...</translation>
     </message>
     <message>
         <source>Distance Measures</source>
-        <translation type="unfinished"></translation>
+        <translation>Miary odległości</translation>
     </message>
     <message>
         <source>Measure%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Mierzyć %1</translation>
     </message>
     <message>
         <source>Delete &amp;Selected...</source>
-        <translation type="unfinished"></translation>
+        <translation>Usuń zaznaczone (&amp;S)...</translation>
     </message>
     <message>
         <source>Delete &amp;All...</source>
-        <translation type="unfinished"></translation>
+        <translation>Usuń wszystko (&amp;A)...</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informacja</translation>
     </message>
     <message>
         <source>There is no distance measure.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nie ma miary odległości.</translation>
     </message>
     <message>
         <source>Delete selected distance measures</source>
-        <translation type="unfinished"></translation>
+        <translation>Usuń wybrane miary odległości</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Ostrzeżenie</translation>
     </message>
     <message>
         <source>Are you sure you want to delete all distance measures?</source>
-        <translation type="unfinished"></translation>
+        <translation>Czy na pewno chcesz usunąć wszystkie miary odległości?</translation>
     </message>
 </context>
 <context>
     <name>DistanceMeasurePropertyDialog</name>
     <message>
         <source>Distance Measure Property</source>
-        <translation type="unfinished"></translation>
+        <translation>Właściwość pomiaru odległości</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nazwa:</translation>
     </message>
     <message>
         <source>Start Point:</source>
-        <translation type="unfinished"></translation>
+        <translation>Punkt startu:</translation>
     </message>
     <message>
         <source>, </source>
-        <translation type="unfinished"></translation>
+        <translation>,</translation>
     </message>
     <message>
         <source>End Point:</source>
-        <translation type="unfinished"></translation>
+        <translation>Punkt końcowy:</translation>
     </message>
     <message>
         <source>Label</source>
-        <translation type="unfinished"></translation>
+        <translation>Etykieta</translation>
     </message>
     <message>
         <source>Show Label</source>
-        <translation type="unfinished"></translation>
+        <translation>Pokaż etykietę</translation>
     </message>
     <message>
         <source>Content</source>
-        <translation type="unfinished"></translation>
+        <translation>Zadowolony</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation>Automatyczny</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation type="unfinished"></translation>
+        <translation>Zwyczaj</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished"></translation>
+        <translation>Pozycja</translation>
     </message>
     <message>
         <source>Center-Top</source>
-        <translation type="unfinished"></translation>
+        <translation>Środek-góra</translation>
     </message>
     <message>
         <source>Middle-Left</source>
-        <translation type="unfinished"></translation>
+        <translation>Środkowy lewy</translation>
     </message>
     <message>
         <source>Middle-Right</source>
-        <translation type="unfinished"></translation>
+        <translation>Środkowy prawy</translation>
     </message>
     <message>
         <source>Center-Bottom</source>
-        <translation type="unfinished"></translation>
+        <translation>Środek-dół</translation>
     </message>
     <message>
         <source>Font Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Ustawienie czcionki</translation>
     </message>
     <message>
         <source>Show End Markers</source>
-        <translation type="unfinished"></translation>
+        <translation>Pokaż znaczniki końca</translation>
     </message>
     <message>
         <source>Marker Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Rozmiar znacznika:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Kolor:</translation>
     </message>
 </context>
 </TS>

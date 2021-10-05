@@ -1,816 +1,814 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="sv_SE">
 <context>
     <name>AsciiOnlyLineEdit</name>
     <message>
         <source>String has to consist of only English characters.</source>
-        <translation type="unfinished"></translation>
+        <translation>Strängen måste endast bestå av engelska tecken.</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Varning</translation>
     </message>
 </context>
 <context>
     <name>AsciiOnlyTextEdit</name>
     <message>
         <source>String has to consist of only English characters.</source>
-        <translation type="unfinished"></translation>
+        <translation>Strängen måste endast bestå av engelska tecken.</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Varning</translation>
     </message>
 </context>
 <context>
     <name>CgnsZoneSelectDialog</name>
     <message>
         <source>Select grid to import</source>
-        <translation type="unfinished"></translation>
+        <translation>Välj rutnät som ska importeras</translation>
     </message>
     <message>
         <source>Please select which grid to import</source>
-        <translation type="unfinished"></translation>
+        <translation>Välj vilket rutnät som ska importeras</translation>
     </message>
 </context>
 <context>
     <name>ColorMapCustomSettingDialog</name>
     <message>
         <source>Custom Color Map</source>
-        <translation type="unfinished"></translation>
+        <translation>Anpassad färgkarta</translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation type="unfinished"></translation>
+        <translation>Typ:</translation>
     </message>
     <message>
         <source>Two Colors</source>
-        <translation type="unfinished"></translation>
+        <translation>Två färger</translation>
     </message>
     <message>
         <source>Three Colors</source>
-        <translation type="unfinished"></translation>
+        <translation>Tre färger</translation>
     </message>
     <message>
         <source>Arbitrary</source>
-        <translation type="unfinished"></translation>
+        <translation>Slumpmässig</translation>
     </message>
     <message>
         <source>Two Colors/ Three Colors</source>
-        <translation type="unfinished"></translation>
+        <translation>Två färger/ tre färger</translation>
     </message>
     <message>
         <source>Maximum Value</source>
-        <translation type="unfinished"></translation>
+        <translation>Maximalt värde</translation>
     </message>
     <message>
         <source>Medium Value</source>
-        <translation type="unfinished"></translation>
+        <translation>Medelvärde</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation type="unfinished"></translation>
+        <translation>Värde</translation>
     </message>
     <message>
         <source>Minimum Value</source>
-        <translation type="unfinished"></translation>
+        <translation>Minsta värde</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Färg</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Lägg till (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Avlägsna (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation type="unfinished"></translation>
+        <translation>Importera (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportera (&amp;E)</translation>
     </message>
     <message>
         <source>Import Colormap Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Importera Colormap Setting</translation>
     </message>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>CSV -fil (*.csv)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Varning</translation>
     </message>
     <message>
         <source>File %1 does not exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fil %1 existerar inte.</translation>
     </message>
     <message>
         <source>File %1 could not be opened.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fil %1 kunde inte öppnas.</translation>
     </message>
     <message>
         <source>Export Colormap Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportera Colormap Setting</translation>
     </message>
 </context>
 <context>
     <name>ColorMapSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Form</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation type="unfinished"></translation>
+        <translation>Beställnings</translation>
     </message>
     <message>
         <source>Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Miljö...</translation>
     </message>
 </context>
 <context>
     <name>ContourSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Form</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Poäng</translation>
     </message>
     <message>
         <source>Color Fringe</source>
-        <translation type="unfinished"></translation>
+        <translation>Color Fringe</translation>
     </message>
     <message>
         <source>Contour Figure</source>
-        <translation type="unfinished"></translation>
+        <translation>Konturfigur</translation>
     </message>
     <message>
         <source>Isolines</source>
-        <translation type="unfinished"></translation>
+        <translation>Isoliner</translation>
     </message>
 </context>
 <context>
     <name>CoordinateEditWidget</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Fel</translation>
     </message>
     <message>
         <source>It is not a real value</source>
-        <translation type="unfinished"></translation>
+        <translation>Det är inte ett verkligt värde</translation>
     </message>
 </context>
 <context>
     <name>CoordinatesEditDialog</name>
     <message>
         <source>Edit Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Redigera koordinater</translation>
     </message>
     <message>
         <source>X</source>
-        <translation type="unfinished"></translation>
+        <translation>X</translation>
     </message>
     <message>
         <source>Y</source>
-        <translation type="unfinished"></translation>
+        <translation>Y</translation>
     </message>
 </context>
 <context>
     <name>DirnameEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Form</translation>
     </message>
     <message>
         <source>...</source>
-        <translation type="unfinished"></translation>
+        <translation>...</translation>
     </message>
     <message>
         <source>Select Directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Välj katalog</translation>
     </message>
 </context>
 <context>
     <name>DoubleSpinBoxWithHelp</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Form</translation>
     </message>
     <message>
         <source>Min: %1, Max: %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Min: %1, Max: %2</translation>
     </message>
 </context>
 <context>
     <name>FilenameEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Form</translation>
     </message>
     <message>
         <source>...</source>
-        <translation type="unfinished"></translation>
+        <translation>...</translation>
     </message>
     <message>
         <source>All files (*.*)</source>
-        <translation type="unfinished"></translation>
+        <translation>Alla filer (*.*)</translation>
     </message>
     <message>
         <source>Select File</source>
-        <translation type="unfinished"></translation>
+        <translation>Välj fil</translation>
     </message>
 </context>
 <context>
     <name>GridShapeEditDialog</name>
     <message>
         <source>Grid Shape Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Visningsinställning för gallerform</translation>
     </message>
     <message>
         <source>Grid lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Rutnät</translation>
     </message>
     <message>
         <source>All</source>
-        <translation type="unfinished"></translation>
+        <translation>Allt</translation>
     </message>
     <message>
         <source>Outline Only</source>
-        <translation type="unfinished"></translation>
+        <translation>Endast kontur</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Färg:</translation>
     </message>
     <message>
         <source>Grid indices</source>
-        <translation type="unfinished"></translation>
+        <translation>Rasterindex</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation type="unfinished"></translation>
+        <translation>Synlig</translation>
     </message>
 </context>
 <context>
     <name>IntegerNumberDisplayLabel</name>
     <message>
         <source>------</source>
-        <translation type="unfinished"></translation>
+        <translation>------</translation>
     </message>
 </context>
 <context>
     <name>ItemMultiSelectingDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Dialog</translation>
     </message>
     <message>
         <source>Check &amp;All</source>
-        <translation type="unfinished"></translation>
+        <translation>Markera alla (&amp;A)</translation>
     </message>
 </context>
 <context>
     <name>ItemSelectingDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Dialog</translation>
     </message>
     <message>
         <source>TextLabel</source>
-        <translation type="unfinished"></translation>
+        <translation>TextLabel</translation>
     </message>
 </context>
 <context>
     <name>ObjectBrowserView</name>
     <message>
         <source>&amp;Add...</source>
-        <translation type="unfinished"></translation>
+        <translation>Lägg till (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Delete...</source>
-        <translation type="unfinished"></translation>
+        <translation>Radera (&amp;D)...</translation>
     </message>
     <message>
         <source>Move up</source>
-        <translation type="unfinished"></translation>
+        <translation>Flytta upp</translation>
     </message>
     <message>
         <source>Move down</source>
-        <translation type="unfinished"></translation>
+        <translation>Flytta ner</translation>
     </message>
     <message>
         <source>&amp;Property...</source>
-        <translation type="unfinished"></translation>
+        <translation>Fast egendom (&amp;P)...</translation>
     </message>
     <message>
         <source>Are you sure you want to delete this item?</source>
-        <translation type="unfinished"></translation>
+        <translation>Är du säker på att du vill ta bort det här objektet?</translation>
     </message>
     <message>
         <source>Delete item</source>
-        <translation type="unfinished"></translation>
+        <translation>Radera sak</translation>
     </message>
 </context>
 <context>
     <name>PointClearCommand</name>
     <message>
         <source>Clear Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Tydlig punkt</translation>
     </message>
 </context>
 <context>
     <name>PointMoveCommand</name>
     <message>
         <source>Move Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Flytta punkt</translation>
     </message>
 </context>
 <context>
     <name>PointSetCommand</name>
     <message>
         <source>Set Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Börvärde</translation>
     </message>
 </context>
 <context>
     <name>PolyLineAddVertexCommand</name>
     <message>
         <source>Insert Line Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Infoga Line Vertex</translation>
     </message>
 </context>
 <context>
     <name>PolyLineEditCoordinatesCommand</name>
     <message>
         <source>Edit Line Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Redigera linjekoordinater</translation>
     </message>
 </context>
 <context>
     <name>PolyLineMoveVertexCommand</name>
     <message>
         <source>Move Line Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Move Line Vertex</translation>
     </message>
 </context>
 <context>
     <name>PolyLinePushVertexCommand</name>
     <message>
         <source>Add New Line Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Lägg till ny radpunkt</translation>
     </message>
 </context>
 <context>
     <name>PolyLineRemoveVertexCommand</name>
     <message>
         <source>Remove Line Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Ta bort Line Vertex</translation>
     </message>
 </context>
 <context>
     <name>PolygonAddVertexCommand</name>
     <message>
         <source>Insert Polygon Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Sätt in Polygon Vertex</translation>
     </message>
 </context>
 <context>
     <name>PolygonEditCoordinatesCommand</name>
     <message>
         <source>Edit Polygon Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Redigera polygonkoordinater</translation>
     </message>
 </context>
 <context>
     <name>PolygonMoveVertexCommand</name>
     <message>
         <source>Move Polygon Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Flytta Polygon Vertex</translation>
     </message>
 </context>
 <context>
     <name>PolygonPushVertexCommand</name>
     <message>
         <source>Add New Polygon Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Lägg till ny polygonpunkt</translation>
     </message>
 </context>
 <context>
     <name>PolygonRemoveVertexCommand</name>
     <message>
         <source>Remove Polygon Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Ta bort Polygon Vertex</translation>
     </message>
 </context>
 <context>
     <name>RealNumberDisplayLabel</name>
     <message>
         <source>------</source>
-        <translation type="unfinished"></translation>
+        <translation>------</translation>
     </message>
 </context>
 <context>
     <name>RealNumberEditWidget</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Varning</translation>
     </message>
     <message>
         <source>It is not a real value</source>
-        <translation type="unfinished"></translation>
+        <translation>Det är inte ett verkligt värde</translation>
     </message>
     <message>
         <source>Minimum value is %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Minsta värde är %1.</translation>
     </message>
     <message>
         <source>Maximum value is %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Högsta värde är %1.</translation>
     </message>
 </context>
 <context>
     <name>ScalarBarDialog</name>
     <message>
         <source>Color Legend Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Färgförklaring</translation>
     </message>
 </context>
 <context>
     <name>ScalarBarWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Form</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation type="unfinished"></translation>
+        <translation>Synlig</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Titel</translation>
     </message>
     <message>
         <source>Title :</source>
-        <translation type="unfinished"></translation>
+        <translation>Titel:</translation>
     </message>
     <message>
         <source>Font Setting:</source>
-        <translation type="unfinished"></translation>
+        <translation>Teckensnittsinställning:</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation type="unfinished"></translation>
+        <translation>Redigera...</translation>
     </message>
     <message>
         <source>Label Display</source>
-        <translation type="unfinished"></translation>
+        <translation>Etikettvisning</translation>
     </message>
     <message>
         <source>Number of labels :</source>
-        <translation type="unfinished"></translation>
+        <translation>Antal etiketter:</translation>
     </message>
     <message>
         <source>Format:</source>
-        <translation type="unfinished"></translation>
+        <translation>Formatera:</translation>
     </message>
     <message>
         <source>Specify the number format in printf format. For example:
-   &quot;%5.2f&quot; for 3.141592 --&gt; 3.14
-   &quot;%4.2e&quot; for 12300  --&gt; 1.23e+004</source>
-        <translation type="unfinished"></translation>
+   "%5.2f" for 3.141592 --&gt; 3.14
+   "%4.2e" for 12300  --&gt; 1.23e+004</source>
+        <translation>Ange nummerformatet i printf -format. Till exempel: " %5.2f "för 3.141592 -&gt; 3.14" %4.2e "för 12300 -&gt; 1.23e+004</translation>
     </message>
     <message>
         <source>Orientation :</source>
-        <translation type="unfinished"></translation>
+        <translation>Orientering:</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation type="unfinished"></translation>
+        <translation>Vertikal</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation type="unfinished"></translation>
+        <translation>Horisontell</translation>
     </message>
     <message>
         <source>Size</source>
-        <translation type="unfinished"></translation>
+        <translation>Storlek</translation>
     </message>
     <message>
         <source>Specify Color bar size as rate against window size.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ange färgfältets storlek som hastighet mot fönsterstorlek.</translation>
     </message>
     <message>
         <source>Width :</source>
-        <translation type="unfinished"></translation>
+        <translation>Bredd :</translation>
     </message>
     <message>
         <source>If you specify 1, Color bar width is the same to window width.</source>
-        <translation type="unfinished"></translation>
+        <translation>Om du anger 1 är färgfältets bredd detsamma som fönsterbredden.</translation>
     </message>
     <message>
         <source>Height :</source>
-        <translation type="unfinished"></translation>
+        <translation>Höjd:</translation>
     </message>
     <message>
         <source>If you specify 1, Color bar height is the same to window height.</source>
-        <translation type="unfinished"></translation>
+        <translation>Om du anger 1 är höjden på färgfältet densamma som fönsterhöjden.</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished"></translation>
+        <translation>Placera</translation>
     </message>
     <message>
         <source>Specify Color bar left bottom position as rate against window size.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ange färgfältets vänstra nedre position som hastighet mot fönsterstorlek.</translation>
     </message>
     <message>
         <source>X :</source>
-        <translation type="unfinished"></translation>
+        <translation>X:</translation>
     </message>
     <message>
         <source>If you specify 0, Color bar left edge is located at window left edge.</source>
-        <translation type="unfinished"></translation>
+        <translation>Om du anger 0, finns färgfältets vänstra kant i fönsterets vänstra kant.</translation>
     </message>
     <message>
         <source>Y :</source>
-        <translation type="unfinished"></translation>
+        <translation>Y:</translation>
     </message>
     <message>
         <source>If you specify 0, Color bar bottom is located at window bottom.</source>
-        <translation type="unfinished"></translation>
+        <translation>Om du anger 0, finns färgfältets botten längst ner i fönstret.</translation>
     </message>
 </context>
 <context>
     <name>StructuredGridRegionSelectWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Form</translation>
     </message>
     <message>
         <source>I Min:</source>
-        <translation type="unfinished"></translation>
+        <translation>Jag är i:</translation>
     </message>
     <message>
         <source>I Max:</source>
-        <translation type="unfinished"></translation>
+        <translation>I Max:</translation>
     </message>
     <message>
         <source>J Min:</source>
-        <translation type="unfinished"></translation>
+        <translation>J Min:</translation>
     </message>
     <message>
         <source>J Max:</source>
-        <translation type="unfinished"></translation>
+        <translation>J Max:</translation>
     </message>
 </context>
 <context>
     <name>TimeFormatEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Form</translation>
     </message>
     <message>
         <source>Value type</source>
-        <translation type="unfinished"></translation>
+        <translation>Värde typ</translation>
     </message>
     <message>
         <source>Show elapsed time</source>
-        <translation type="unfinished"></translation>
+        <translation>Visa förfluten tid</translation>
     </message>
     <message>
         <source>Show actual time</source>
-        <translation type="unfinished"></translation>
+        <translation>Visa aktuell tid</translation>
     </message>
     <message>
         <source>Elapsed time format</source>
-        <translation type="unfinished"></translation>
+        <translation>Förflutet tidsformat</translation>
     </message>
     <message>
         <source>SS sec</source>
-        <translation type="unfinished"></translation>
+        <translation>SS sek</translation>
     </message>
     <message>
         <source>MM:SS</source>
-        <translation type="unfinished"></translation>
+        <translation>MM: SS</translation>
     </message>
     <message>
         <source>HH:MM:SS</source>
-        <translation type="unfinished"></translation>
+        <translation>HH: MM: SS</translation>
     </message>
     <message>
         <source>DD:HH:MM:SS</source>
-        <translation type="unfinished"></translation>
+        <translation>DD: HH: MM: SS</translation>
     </message>
     <message>
         <source>Actual time format</source>
-        <translation type="unfinished"></translation>
+        <translation>Faktiskt tidsformat</translation>
     </message>
     <message>
         <source>yyyy/mm/dd HH:MM:SS</source>
-        <translation type="unfinished"></translation>
+        <translation>åååå/mm/dd HH: MM: SS</translation>
     </message>
     <message>
         <source>yyyy/mm/dd HH:MM</source>
-        <translation type="unfinished"></translation>
+        <translation>åååå/mm/dd HH: MM</translation>
     </message>
     <message>
         <source>mm/dd HH:MM:SS</source>
-        <translation type="unfinished"></translation>
+        <translation>mm/dd HH: MM: SS</translation>
     </message>
     <message>
         <source>mm/dd HH:MM</source>
-        <translation type="unfinished"></translation>
+        <translation>mm/dd HH: MM</translation>
     </message>
     <message>
         <source>HH:MM</source>
-        <translation type="unfinished"></translation>
+        <translation>HH: MM</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation type="unfinished"></translation>
+        <translation>Beställnings</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can use following symbols to define custom time format:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Year: YYYY, YY&lt;/li&gt;&lt;li&gt;Month: M, MM, MMM, MMMM (MMM for Jan etc., MMMM for January etc.)&lt;/li&gt;&lt;li&gt;Day: d, dd, ddd, dddd (ddd for Mon etc., dddd for Monday etc.)&lt;/li&gt;&lt;li&gt;Hour: H, HH, h, hh (h, hh for AM / PM display)&lt;/li&gt;&lt;li&gt;Minute: m, mm&lt;/li&gt;&lt;li&gt;Second: s, ss&lt;/li&gt;&lt;li&gt;AM / PM: A, a&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Du kan använda följande symboler för att definiera anpassat tidsformat: &lt;/p&gt; &lt;ul&gt; &lt;li&gt; År: ÅÅÅÅ, ÅÅ &lt;/li&gt; &lt;li&gt; Månad: M, MM, MMM, MMMM (MMM för Jan etc., MMMM för januari etc.) &lt;/li&gt; &lt;li&gt; Dag: d, dd, ddd, dddd (ddd för mån etc., dddd för måndag etc.) &lt;/li &gt; &lt;li&gt; Timmar: H, HH, h, hh (h, hh för AM/PM -display) &lt;/li&gt; &lt;li&gt; Minut: m, mm &lt;/li&gt; &lt;li&gt; Andra: s, ss &lt;/li &gt; &lt;li&gt; AM/PM: A, a &lt;/li&gt; &lt;/ul&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
 </context>
 <context>
     <name>TooltipLabel</name>
     <message>
         <source>Help</source>
-        <translation type="unfinished"></translation>
+        <translation>Hjälp</translation>
     </message>
 </context>
 <context>
     <name>TransparencyWidget</name>
     <message>
         <source>Transparent</source>
-        <translation type="unfinished"></translation>
+        <translation>Transparent</translation>
     </message>
 </context>
 <context>
     <name>WaitDialog</name>
     <message>
         <source>Please wait</source>
-        <translation type="unfinished"></translation>
+        <translation>Vänta</translation>
     </message>
     <message>
         <source>Please wait...</source>
-        <translation type="unfinished"></translation>
+        <translation>Vänta...</translation>
     </message>
 </context>
 <context>
     <name>XYAxisDisplaySettingDialog</name>
     <message>
         <source>Axis Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Axis Display Setting</translation>
     </message>
     <message>
         <source>X-Axis</source>
-        <translation type="unfinished"></translation>
+        <translation>X-axel</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation>Bil</translation>
     </message>
     <message>
         <source>Max:</source>
-        <translation type="unfinished"></translation>
+        <translation>Max:</translation>
     </message>
     <message>
         <source>Min:</source>
-        <translation type="unfinished"></translation>
+        <translation>Min:</translation>
     </message>
     <message>
         <source>Number of labels:</source>
-        <translation type="unfinished"></translation>
+        <translation>Antal etiketter:</translation>
     </message>
     <message>
         <source>min</source>
-        <translation type="unfinished"></translation>
+        <translation>min</translation>
     </message>
     <message>
         <source>max</source>
-        <translation type="unfinished"></translation>
+        <translation>max</translation>
     </message>
     <message>
         <source>Y-Axis</source>
-        <translation type="unfinished"></translation>
+        <translation>Y-axel</translation>
     </message>
     <message>
         <source>Format:</source>
-        <translation type="unfinished"></translation>
+        <translation>Formatera:</translation>
     </message>
     <message>
         <source>Standard (ex. 13800)</source>
-        <translation type="unfinished"></translation>
+        <translation>Standard (ex 13800)</translation>
     </message>
     <message>
         <source>Scientific notation (ex. 1.38E+04)</source>
-        <translation type="unfinished"></translation>
+        <translation>Vetenskaplig notering (ex. 1.38E+04)</translation>
     </message>
 </context>
 <context>
     <name>vtkLineStyleWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Form</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Färg:</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Bredd:</translation>
     </message>
     <message>
         <source>Style:</source>
-        <translation type="unfinished"></translation>
+        <translation>Stil:</translation>
     </message>
     <message>
         <source>Solid</source>
-        <translation type="unfinished"></translation>
+        <translation>Fast</translation>
     </message>
     <message>
         <source>Dashed</source>
-        <translation type="unfinished"></translation>
+        <translation>Streckad</translation>
     </message>
     <message>
         <source>Dotted</source>
-        <translation type="unfinished"></translation>
+        <translation>Prickad</translation>
     </message>
 </context>
 <context>
     <name>vtkTextPropertySettingDialog</name>
     <message>
         <source>Font Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Teckensnittsinställning</translation>
     </message>
 </context>
 <context>
     <name>vtkTextPropertySettingWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Form</translation>
     </message>
     <message>
         <source>Font:</source>
-        <translation type="unfinished"></translation>
+        <translation>Font:</translation>
     </message>
     <message>
         <source>Arial</source>
-        <translation type="unfinished"></translation>
+        <translation>Arial</translation>
     </message>
     <message>
         <source>Courier</source>
-        <translation type="unfinished"></translation>
+        <translation>Kurir</translation>
     </message>
     <message>
         <source>Times</source>
-        <translation type="unfinished"></translation>
+        <translation>Tider</translation>
     </message>
     <message>
         <source>Bold</source>
-        <translation type="unfinished"></translation>
+        <translation>Djärv</translation>
     </message>
     <message>
         <source>B</source>
-        <translation type="unfinished"></translation>
+        <translation>B</translation>
     </message>
     <message>
         <source>Italic</source>
-        <translation type="unfinished"></translation>
+        <translation>Kursiv</translation>
     </message>
     <message>
         <source>I</source>
-        <translation type="unfinished"></translation>
+        <translation>I</translation>
     </message>
     <message>
         <source>Shadow</source>
-        <translation type="unfinished"></translation>
+        <translation>Skugga</translation>
     </message>
     <message>
         <source>S</source>
-        <translation type="unfinished"></translation>
+        <translation>S</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Färg:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Storlek:</translation>
     </message>
 </context>
 </TS>

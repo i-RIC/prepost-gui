@@ -1,2008 +1,2006 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="uk_UA">
 <context>
     <name>BoundaryConditionDialog</name>
     <message>
         <source>Boundary Condition</source>
-        <translation type="unfinished"></translation>
+        <translation>Межовий стан</translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation type="unfinished"></translation>
+        <translation>Тип:</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ім'я:</translation>
     </message>
     <message>
         <source>Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Налаштування</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Колір:</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Розмір точки:</translation>
     </message>
     <message>
         <source>Show name</source>
-        <translation type="unfinished"></translation>
+        <translation>Показати назву</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ширина лінії:</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Увага</translation>
     </message>
     <message>
         <source>Name has to consist of only English characters.</source>
-        <translation type="unfinished"></translation>
+        <translation>Назва має складатися тільки з англійських символів.</translation>
     </message>
     <message>
         <source>Boundary Condition Property</source>
-        <translation type="unfinished"></translation>
+        <translation>Межа власності</translation>
     </message>
 </context>
 <context>
     <name>CgnsGridExporter</name>
     <message>
         <source>CGNS file</source>
-        <translation type="unfinished"></translation>
+        <translation>Файл CGNS</translation>
     </message>
 </context>
 <context>
     <name>CgnsGridImporter</name>
     <message>
         <source>CGNS files (*.cgn *.cgns)</source>
-        <translation type="unfinished"></translation>
+        <translation>Файли CGNS (*.cgn *.cgns)</translation>
     </message>
     <message>
         <source>CGNS file</source>
-        <translation type="unfinished"></translation>
+        <translation>Файл CGNS</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Помилка</translation>
     </message>
     <message>
         <source>Error occured while importing grid.</source>
-        <translation type="unfinished"></translation>
+        <translation>Під час імпорту сітки сталася помилка.</translation>
     </message>
     <message>
         <source>This CGNS file is created for %1 version %2. It is not compatible with the current solver. Maybe only some part of the grid will be imported.
 Do you really want to import grid from this file?</source>
-        <translation type="unfinished"></translation>
+        <translation>Цей файл CGNS створено для %1 версії %2. Він не сумісний з поточним розв'язувачем. Можливо, буде імпортовано лише якусь частину сітки. Ви дійсно хочете імпортувати сітку з цього файлу?</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Увага</translation>
     </message>
     <message>
         <source>This CGNS file does not have solver information. We can not check whether this CGNS file is compatible with the solver. If it is not compatible, maybe only some part of the grid will be imported.
 Do you really want to import grid from this file?</source>
-        <translation type="unfinished"></translation>
+        <translation>Цей файл CGNS не містить інформації про розв’язувач. Ми не можемо перевірити, чи сумісний цей файл CGNS з розв’язувачем. Якщо він не сумісний, можливо, буде імпортовано лише деяку частину сітки. Ви дійсно хочете імпортувати сітку з цього файлу?</translation>
     </message>
 </context>
 <context>
     <name>GridAttributeGeneratorLauncher</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Помилка</translation>
     </message>
     <message>
         <source>Attribute Generator %1 does not exist.</source>
-        <translation type="unfinished"></translation>
+        <translation>Генератор атрибутів %1 не існує.</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindow</name>
     <message>
-        <source>Grid Bird&apos;s-Eye View Window</source>
-        <translation type="unfinished"></translation>
+        <source>Grid Bird's-Eye View Window</source>
+        <translation>Вікно сітки з пташиного ока</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowActionManager</name>
     <message>
         <source>&amp;Draw</source>
-        <translation type="unfinished"></translation>
+        <translation>Нічия (&amp;D)</translation>
     </message>
     <message>
         <source>&amp;Display Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Налаштування дисплея (&amp;D)...</translation>
     </message>
     <message>
         <source>&amp;Background Color...</source>
-        <translation type="unfinished"></translation>
+        <translation>Колір фону (&amp;B)...</translation>
     </message>
     <message>
         <source>&amp;Z-direction Scale...</source>
-        <translation type="unfinished"></translation>
+        <translation>Масштаб Z-напрямку (&amp;Z)...</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowAxesSettingDialog</name>
     <message>
         <source>Axes Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Налаштування осей</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation type="unfinished"></translation>
+        <translation>Видно</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Колір:</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowColorSettingDialog</name>
     <message>
         <source>Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Налаштування дисплея</translation>
     </message>
     <message>
         <source>Grid Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Колір сітки</translation>
     </message>
     <message>
         <source>Node attribute</source>
-        <translation type="unfinished"></translation>
+        <translation>Атрибут вузла</translation>
     </message>
     <message>
         <source>Cell attribute</source>
-        <translation type="unfinished"></translation>
+        <translation>Атрибут комірки</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Користувацький колір</translation>
     </message>
     <message>
         <source>Axes</source>
-        <translation type="unfinished"></translation>
+        <translation>Сокири</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation type="unfinished"></translation>
+        <translation>Видно</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Колір:</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowDataModel</name>
     <message>
         <source>Edit Z-direction Scale</source>
-        <translation type="unfinished"></translation>
+        <translation>Редагувати масштаб Z-напрямку</translation>
     </message>
     <message>
         <source>Z-direction Scale</source>
-        <translation type="unfinished"></translation>
+        <translation>Масштаб Z-напрямку</translation>
     </message>
     <message>
         <source>Input new Z-direction scale.</source>
-        <translation type="unfinished"></translation>
+        <translation>Введіть нову шкалу Z-напрямку.</translation>
     </message>
     <message>
         <source>Edit Color Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Змінити налаштування кольору</translation>
     </message>
 </context>
 <context>
     <name>PreObjectBrowser</name>
     <message>
         <source>Object Browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Переглядач об’єктів</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorBCDataItem</name>
     <message>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation>Новий товар</translation>
     </message>
     <message>
         <source>&amp;Edit Condition...</source>
-        <translation type="unfinished"></translation>
+        <translation>Редагувати умову (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Assign Condition</source>
-        <translation type="unfinished"></translation>
+        <translation>Призначити умову (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Release Condition</source>
-        <translation type="unfinished"></translation>
+        <translation>Умова випуску (&amp;R)</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorBCGroupDataItem</name>
     <message>
         <source>Boundary Condition</source>
-        <translation type="unfinished"></translation>
+        <translation>Межовий стан</translation>
     </message>
     <message>
         <source>Add %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Додати %1</translation>
     </message>
     <message>
         <source>&amp;Edit Condition...</source>
-        <translation type="unfinished"></translation>
+        <translation>Редагувати умову (&amp;E)...</translation>
     </message>
     <message>
         <source>Delete &amp;Selected...</source>
-        <translation type="unfinished"></translation>
+        <translation>Видалити вибране (&amp;S)...</translation>
     </message>
     <message>
         <source>Delete &amp;All...</source>
-        <translation type="unfinished"></translation>
+        <translation>Видалити всі (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Delete...</source>
-        <translation type="unfinished"></translation>
+        <translation>Видалити (&amp;D)...</translation>
     </message>
     <message>
         <source>&amp;Assign Condition</source>
-        <translation type="unfinished"></translation>
+        <translation>Призначити умову (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Release Condition</source>
-        <translation type="unfinished"></translation>
+        <translation>Умова випуску (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Boundary Condition</source>
-        <translation type="unfinished"></translation>
+        <translation>Межовий стан (&amp;B)</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Інформація</translation>
     </message>
     <message>
         <source>There is no boundary condition.</source>
-        <translation type="unfinished"></translation>
+        <translation>Крайової умови немає.</translation>
     </message>
     <message>
         <source>Delete selected boundary conditions</source>
-        <translation type="unfinished"></translation>
+        <translation>Видалити вибрані граничні умови</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Увага</translation>
     </message>
     <message>
         <source>Are you sure you want to delete all boundary conditions?</source>
-        <translation type="unfinished"></translation>
+        <translation>Ви впевнені, що хочете видалити всі граничні умови?</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorBCSettingDataItem</name>
     <message>
         <source>&amp;Edit Condition...</source>
-        <translation type="unfinished"></translation>
+        <translation>Редагувати умову (&amp;E)...</translation>
     </message>
     <message>
         <source>Polygon</source>
-        <translation type="unfinished"></translation>
+        <translation>Багатокутник</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Увага</translation>
     </message>
     <message>
         <source>Mapping can not be executed when there is no grid.</source>
-        <translation type="unfinished"></translation>
+        <translation>Зіставлення неможливо виконати, якщо немає сітки.</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorBCSettingGroupDataItem</name>
     <message>
         <source>Boundary Condition Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Налаштування граничних умов</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Інформація</translation>
     </message>
     <message>
         <source>There is no boundary condition setting.</source>
-        <translation type="unfinished"></translation>
+        <translation>Не існує встановлення граничних умов.</translation>
     </message>
     <message>
         <source>Delete selected boundary condition settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Видалити вибрані налаштування граничних умов</translation>
     </message>
     <message>
         <source>Are you sure you want to delete all boundary condition settings?</source>
-        <translation type="unfinished"></translation>
+        <translation>Ви впевнені, що хочете видалити всі налаштування граничних умов?</translation>
     </message>
     <message>
         <source>Add %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Додати %1</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Увага</translation>
     </message>
     <message>
         <source>Mapping can not be executed when there is no grid.</source>
-        <translation type="unfinished"></translation>
+        <translation>Зіставлення неможливо виконати, якщо немає сітки.</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorBackgroundImageDataItem</name>
     <message>
         <source>&amp;Georeference...</source>
-        <translation type="unfinished"></translation>
+        <translation>Геопосилання (&amp;G)...</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorBackgroundImagesDataItem</name>
     <message>
         <source>Background Images</source>
-        <translation type="unfinished"></translation>
+        <translation>Фонові зображення</translation>
     </message>
     <message>
         <source>&amp;Add Image...</source>
-        <translation type="unfinished"></translation>
+        <translation>Додати зображення (&amp;A)...</translation>
     </message>
     <message>
         <source>Delete &amp;Selected...</source>
-        <translation type="unfinished"></translation>
+        <translation>Видалити вибране (&amp;S)...</translation>
     </message>
     <message>
         <source>Delete &amp;All...</source>
-        <translation type="unfinished"></translation>
+        <translation>Видалити всі (&amp;A)...</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Інформація</translation>
     </message>
     <message>
         <source>There is no background image.</source>
-        <translation type="unfinished"></translation>
+        <translation>Немає фонового зображення.</translation>
     </message>
     <message>
         <source>Delete selected background images</source>
-        <translation type="unfinished"></translation>
+        <translation>Видалити вибрані фонові зображення</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Увага</translation>
     </message>
     <message>
         <source>Are you sure you want to delete all background images?</source>
-        <translation type="unfinished"></translation>
+        <translation>Ви впевнені, що хочете видалити всі фонові зображення?</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorDataModel</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Увага</translation>
     </message>
     <message>
         <source>The solver is running. You can see the calculation condition settings, but can not overwrite.</source>
-        <translation type="unfinished"></translation>
+        <translation>Розв’язувач працює. Ви можете побачити налаштування умов обчислення, але не можете перезаписати.</translation>
     </message>
     <message>
         <source>Select file to import</source>
-        <translation type="unfinished"></translation>
+        <translation>Виберіть файл для імпорту</translation>
     </message>
     <message>
         <source>All importable files(*.cgn *.cgns *.ipro *.yml);;iRIC project file (*.ipro);;CGNS file (*.cgn *.cgns);;YAML file (*.yml)</source>
-        <translation type="unfinished"></translation>
+        <translation>Усі імпортовані файли (*.cgn *.cgns *.ipro *.yml);;iRIC project file (*.ipro);;CGNS file (*.cgn *.cgns);;YAML file (*.yml)</translation>
     </message>
     <message>
         <source>iRIC project file (*.ipro)</source>
-        <translation type="unfinished"></translation>
+        <translation>файл проекту iRIC (*.ipro)</translation>
     </message>
     <message>
         <source>CGNS file (*.cgn *.cgns)</source>
-        <translation type="unfinished"></translation>
+        <translation>Файл CGNS (*.cgn *.cgns)</translation>
     </message>
     <message>
         <source>YAML file (*.yml)</source>
-        <translation type="unfinished"></translation>
+        <translation>Файл YAML (*.yml)</translation>
     </message>
     <message>
         <source>Select case</source>
-        <translation type="unfinished"></translation>
+        <translation>Виберіть футляр</translation>
     </message>
     <message>
         <source>Please select from which case in %1 to import calculation conditions.</source>
-        <translation type="unfinished"></translation>
+        <translation>Виберіть, у якому випадку %1 імпортувати умови розрахунку.</translation>
     </message>
     <message>
         <source>Success</source>
-        <translation type="unfinished"></translation>
+        <translation>Успіх</translation>
     </message>
     <message>
         <source>Calculation Condition is successfully imported from the specified file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Умова обчислення успішно імпортовано з зазначеного файлу.</translation>
     </message>
     <message>
         <source>Calculation Condition is successfully imported from %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Умова розрахунку успішно імпортовано з %1.</translation>
     </message>
     <message>
         <source>Fail</source>
-        <translation type="unfinished"></translation>
+        <translation>Невдача</translation>
     </message>
     <message>
         <source>Importing calculation condition failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Не вдалося імпортувати обчислення.</translation>
     </message>
     <message>
         <source>Select File to Export</source>
-        <translation type="unfinished"></translation>
+        <translation>Виберіть Файл для експорту</translation>
     </message>
     <message>
         <source>CGNS file (*.cgns);;YAML file (*.yml)</source>
-        <translation type="unfinished"></translation>
+        <translation>Файл CGNS (*.cgns);;YAML file (*.yml)</translation>
     </message>
     <message>
         <source>Exporting calculation condition...</source>
-        <translation type="unfinished"></translation>
+        <translation>Експорт умов розрахунку...</translation>
     </message>
     <message>
         <source>Calculation Condition is successfully exported to %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Умова розрахунку успішно експортовано в %1.</translation>
     </message>
     <message>
         <source>Exporting calculation condition failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Не вдалося експортувати умови обчислення.</translation>
     </message>
     <message>
         <source>G&amp;eographic Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Географічні дані (&amp;E)</translation>
     </message>
     <message>
         <source>Edit &amp;Groups...</source>
-        <translation type="unfinished"></translation>
+        <translation>Редагувати групи (&amp;G)...</translation>
     </message>
     <message>
         <source>Delete &amp;All...</source>
-        <translation type="unfinished"></translation>
+        <translation>Видалити всі (&amp;A)...</translation>
     </message>
     <message>
         <source>Export All Polygons...</source>
-        <translation type="unfinished"></translation>
+        <translation>Експортувати всі полігони...</translation>
     </message>
     <message>
         <source>P&amp;ointset Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Дані набору точок (&amp;O)</translation>
     </message>
     <message>
         <source>Poly&amp;line</source>
-        <translation type="unfinished"></translation>
+        <translation>Полілінія (&amp;L)</translation>
     </message>
     <message>
         <source>&amp;Color Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Налаштування кольору (&amp;C)...</translation>
     </message>
     <message>
         <source>Set Up Scalarbar...</source>
-        <translation type="unfinished"></translation>
+        <translation>Налаштування скаляра...</translation>
     </message>
     <message>
         <source>Import</source>
-        <translation type="unfinished"></translation>
+        <translation>Імпорт</translation>
     </message>
     <message>
         <source>Export</source>
-        <translation type="unfinished"></translation>
+        <translation>Експорт</translation>
     </message>
     <message>
         <source>&amp;Grid Creating Condition</source>
-        <translation type="unfinished"></translation>
+        <translation>Умова створення сітки (&amp;G)</translation>
     </message>
     <message>
         <source>B&amp;oundary Condition Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Налаштування граничних умов (&amp;O)</translation>
     </message>
     <message>
         <source>&amp;Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Сітка (&amp;G)</translation>
     </message>
     <message>
         <source>&amp;Attributes Mapping</source>
-        <translation type="unfinished"></translation>
+        <translation>Відображення атрибутів (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Measured Values</source>
-        <translation type="unfinished"></translation>
+        <translation>Вимірювані значення (&amp;M)</translation>
     </message>
     <message>
         <source>&amp;Scalar...</source>
-        <translation type="unfinished"></translation>
+        <translation>Скалярна (&amp;S)...</translation>
     </message>
     <message>
         <source>&amp;Arrows...</source>
-        <translation type="unfinished"></translation>
+        <translation>Стрілки (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation type="unfinished"></translation>
+        <translation>Імпорт (&amp;I)...</translation>
     </message>
     <message>
         <source>Gr&amp;id Creating Condition...</source>
-        <translation type="unfinished"></translation>
+        <translation>Умова створення сітки (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Grid...</source>
-        <translation type="unfinished"></translation>
+        <translation>Сітка (&amp;G)...</translation>
     </message>
     <message>
         <source>Gr&amp;id Creating Condition</source>
-        <translation type="unfinished"></translation>
+        <translation>Умова створення сітки (&amp;I)</translation>
     </message>
     <message>
         <source>Grid Creating Condition</source>
-        <translation type="unfinished"></translation>
+        <translation>Умова створення сітки</translation>
     </message>
     <message>
         <source>(No data to import)</source>
-        <translation type="unfinished"></translation>
+        <translation>(Немає даних для імпорту)</translation>
     </message>
     <message>
         <source>(No data to export)</source>
-        <translation type="unfinished"></translation>
+        <translation>(Немає даних для експорту)</translation>
     </message>
     <message>
         <source>(No algorithm is selected yet)</source>
-        <translation type="unfinished"></translation>
+        <translation>(Алгоритм ще не обраний)</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation type="unfinished"></translation>
+        <translation>Експорт (&amp;E)...</translation>
     </message>
     <message>
         <source>Add New %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Додати новий %1</translation>
     </message>
     <message>
         <source>%1 are not mapped after they are edited last time. Do you want to execute mapping now?</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 не відображаються після останнього редагування. Ви хочете виконати зіставлення зараз?</translation>
     </message>
     <message>
-        <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
-        <translation type="unfinished"></translation>
+        <source>Boundary Condition Setting "%1" is not mapped after it is edited last time. Do you want to execute mapping now?</source>
+        <translation>Налаштування граничних умов "%1"не відображається після останнього редагування. Виконати відображення зараз?</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Інформація</translation>
     </message>
     <message>
         <source>Mapping geographic data, boundary condition finished successfully.</source>
-        <translation type="unfinished"></translation>
+        <translation>Зіставлення географічних даних, гранична умова успішно завершена.</translation>
     </message>
     <message>
         <source>&amp;Cross-Section Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Поперечні дані (&amp;C)</translation>
     </message>
     <message>
         <source>&amp;Polygons</source>
-        <translation type="unfinished"></translation>
+        <translation>Полігони (&amp;P)</translation>
     </message>
     <message>
         <source>&amp;Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Лінії (&amp;L)</translation>
     </message>
     <message>
         <source>P&amp;oint Cloud Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Дані хмари точок (&amp;O)</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGeoDataComplexGroupDataItem</name>
     <message>
         <source>%1 Group Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 Налаштування групи</translation>
     </message>
     <message>
         <source>Edit &amp;Groups...</source>
-        <translation type="unfinished"></translation>
+        <translation>Редагувати групи (&amp;G)...</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Додати (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation type="unfinished"></translation>
+        <translation>Імпорт (&amp;I)</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGeoDataDataItem</name>
     <message>
         <source>&amp;Export...</source>
-        <translation type="unfinished"></translation>
+        <translation>Експорт (&amp;E)...</translation>
     </message>
     <message>
         <source>Failure</source>
-        <translation type="unfinished"></translation>
+        <translation>Невдача</translation>
     </message>
     <message>
         <source>You cannot use this name for this data. A geographic data with the same name already exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ви не можете використовувати цю назву для цих даних. Географічні дані з такою ж назвою вже існують.</translation>
     </message>
     <message>
         <source>Select File to Export</source>
-        <translation type="unfinished"></translation>
+        <translation>Виберіть Файл для експорту</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGeoDataGroupDataItem</name>
     <message>
         <source>&amp;Import from web...</source>
-        <translation type="unfinished"></translation>
+        <translation>Імпорт з Інтернету (&amp;I)...</translation>
     </message>
     <message>
         <source>Delete &amp;All...</source>
-        <translation type="unfinished"></translation>
+        <translation>Видалити всі (&amp;A)...</translation>
     </message>
     <message>
         <source>Export All Polygons...</source>
-        <translation type="unfinished"></translation>
+        <translation>Експортувати всі полігони...</translation>
     </message>
     <message>
         <source>&amp;Color Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Налаштування кольору (&amp;C)...</translation>
     </message>
     <message>
         <source>Set Up Scalarbar...</source>
-        <translation type="unfinished"></translation>
+        <translation>Налаштування скаляра...</translation>
     </message>
     <message>
         <source>Delete &amp;Selected...</source>
-        <translation type="unfinished"></translation>
+        <translation>Видалити вибране (&amp;S)...</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Додати (&amp;A)</translation>
     </message>
     <message>
         <source>All importable files (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Усі імпортовані файли (%1))</translation>
     </message>
     <message>
         <source>Select file to import</source>
-        <translation type="unfinished"></translation>
+        <translation>Виберіть файл для імпорту</translation>
     </message>
     <message>
         <source>Select algorithm</source>
-        <translation type="unfinished"></translation>
+        <translation>Виберіть алгоритм</translation>
     </message>
     <message>
         <source>Please select algorithm to import data</source>
-        <translation type="unfinished"></translation>
+        <translation>Виберіть алгоритм імпорту даних</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Увага</translation>
     </message>
     <message>
         <source>File type cannot be recognized from the file extension. : %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Тип файлу не можна розпізнати за розширенням файлу. : %1</translation>
     </message>
     <message>
         <source>Import failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Не вдалося імпортувати</translation>
     </message>
     <message>
         <source>Importing data from %1 failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Імпортування даних із %1 не вдалося.</translation>
     </message>
     <message>
         <source>%1 contains no data to import.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 не містить даних для імпорту.</translation>
     </message>
     <message>
         <source>Importing data...</source>
-        <translation type="unfinished"></translation>
+        <translation>Імпортування даних...</translation>
     </message>
     <message>
         <source>Canceled</source>
-        <translation type="unfinished"></translation>
+        <translation>Скасовано</translation>
     </message>
     <message>
         <source>Importing canceled.</source>
-        <translation type="unfinished"></translation>
+        <translation>Імпорт скасовано.</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Інформація</translation>
     </message>
     <message>
         <source>To import the geographic data, specify coordinate system first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Щоб імпортувати географічні дані, спочатку вкажіть систему координат.</translation>
     </message>
     <message>
         <source>Specified file has invalid data, and those were ignored. Ignored data is as follows:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>У зазначеному файлі є недійсні дані, і вони були проігноровані. Ігноруються такі дані: %1</translation>
     </message>
     <message>
         <source>Importing data failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Не вдалося імпортувати дані.</translation>
     </message>
     <message>
         <source>No data to import.</source>
-        <translation type="unfinished"></translation>
+        <translation>Немає даних для імпорту.</translation>
     </message>
     <message>
         <source>Select data to export</source>
-        <translation type="unfinished"></translation>
+        <translation>Виберіть дані для експорту</translation>
     </message>
     <message>
         <source>Please select which data to export.</source>
-        <translation type="unfinished"></translation>
+        <translation>Виберіть, які дані експортувати.</translation>
     </message>
     <message>
         <source>%1 Color Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 Налаштування кольору</translation>
     </message>
     <message>
         <source>Export Polygons</source>
-        <translation type="unfinished"></translation>
+        <translation>Експорт полігонів</translation>
     </message>
     <message>
         <source>ESRI Shapefile (*.shp)</source>
-        <translation type="unfinished"></translation>
+        <translation>Файл формату ESRI (*.shp)</translation>
     </message>
     <message>
         <source>There is no geographic data.</source>
-        <translation type="unfinished"></translation>
+        <translation>Географічних даних немає.</translation>
     </message>
     <message>
         <source>Delete selected geograhic data</source>
-        <translation type="unfinished"></translation>
+        <translation>Видалити вибрані географічні дані</translation>
     </message>
     <message>
         <source>Are you sure you want to delete all items in %1 group?</source>
-        <translation type="unfinished"></translation>
+        <translation>Ви впевнені, що хочете видалити всі елементи у %1 група?</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation type="unfinished"></translation>
+        <translation>Імпорт (&amp;I)</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGeoDataTopDataItem</name>
     <message>
         <source>Geographic Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Географічні дані</translation>
     </message>
     <message>
         <source>Reference Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Довідкова інформація</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAndGridCreatingConditionDataItem</name>
     <message>
         <source>&amp;Delete Grid Creating Condition and Grid Shape...</source>
-        <translation type="unfinished"></translation>
+        <translation>Видалити умову створення сітки та форму сітки (&amp;D)...</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Увага</translation>
     </message>
     <message>
         <source>Are you sure you want to discard grid creating condition and grid?</source>
-        <translation type="unfinished"></translation>
+        <translation>Ви впевнені, що хочете відхилити умову створення сітки та сітку?</translation>
     </message>
     <message>
         <source>All importable files (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Усі імпортовані файли (%1))</translation>
     </message>
     <message>
         <source>Select file to import</source>
-        <translation type="unfinished"></translation>
+        <translation>Виберіть файл для імпорту</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Помилка</translation>
     </message>
     <message>
         <source>Importing grid failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Не вдалося імпортувати сітку.</translation>
     </message>
     <message>
         <source>Confirmation</source>
-        <translation type="unfinished"></translation>
+        <translation>Підтвердження</translation>
     </message>
     <message>
         <source>Do you want to map geographic data to grid attributes now?</source>
-        <translation type="unfinished"></translation>
+        <translation>Ви хочете зіставити географічні дані з атрибутами сітки зараз?</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeCellDataItem</name>
     <message>
         <source>Edit value...</source>
-        <translation type="unfinished"></translation>
+        <translation>Змінити значення...</translation>
     </message>
     <message>
         <source>Grid Cell Attribute Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Налаштування відображення атрибутів осередків сітки</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Увага</translation>
     </message>
     <message>
         <source>Please select only one node.</source>
-        <translation type="unfinished"></translation>
+        <translation>Виберіть лише один вузол.</translation>
     </message>
     <message>
         <source>Edit %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Редагувати %1</translation>
     </message>
     <message>
         <source>Input the new value of %1 at the selected grid cells.</source>
-        <translation type="unfinished"></translation>
+        <translation>Введіть нове значення %1 у вибраних осередках сітки.</translation>
     </message>
     <message>
         <source>Edit value by specifying difference...</source>
-        <translation type="unfinished"></translation>
+        <translation>Відредагуйте значення, вказавши різницю...</translation>
     </message>
     <message>
         <source>Edit value by specifying ratio...</source>
-        <translation type="unfinished"></translation>
+        <translation>Відредагуйте значення, вказавши коефіцієнт...</translation>
     </message>
     <message>
         <source>difference</source>
-        <translation type="unfinished"></translation>
+        <translation>різниця</translation>
     </message>
     <message>
         <source>ratio</source>
-        <translation type="unfinished"></translation>
+        <translation>співвідношення</translation>
     </message>
     <message>
         <source>Apply %1 to %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Застосувати %1 до %2</translation>
     </message>
     <message>
         <source>Input the %1 of %2 at the selected grid cells.</source>
-        <translation type="unfinished"></translation>
+        <translation>Введіть %1 з %2 у вибраних осередках сітки.</translation>
     </message>
     <message>
         <source>Export...</source>
-        <translation type="unfinished"></translation>
+        <translation>Експорт...</translation>
     </message>
     <message>
         <source>Topography File (*.tpo)</source>
-        <translation type="unfinished"></translation>
+        <translation>Файл топографії (*.tpo)</translation>
     </message>
     <message>
         <source>Export as Topography Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Експортувати як дані рельєфу</translation>
     </message>
     <message>
         <source>Error occured while opening the file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Під час відкриття файлу сталася помилка.</translation>
     </message>
     <message>
         <source>Grid condition successfully exported to %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Стан сітки успішно експортовано в %1.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Помилка</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Інформація</translation>
     </message>
     <message>
         <source>%1 generated.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 генерується.</translation>
     </message>
     <message>
         <source>Generate point cloud data</source>
-        <translation type="unfinished"></translation>
+        <translation>Створення даних хмари точок</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeCellDisplaySettingDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Діалог</translation>
     </message>
     <message>
         <source>Attribute</source>
-        <translation type="unfinished"></translation>
+        <translation>Атрибут</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Колір</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeCellGroupDataItem</name>
     <message>
         <source>Cell attributes</source>
-        <translation type="unfinished"></translation>
+        <translation>Атрибути комірки</translation>
     </message>
     <message>
         <source>Show Attribute Browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Показати браузер атрибутів</translation>
     </message>
     <message>
         <source>Cell Attribute Change</source>
-        <translation type="unfinished"></translation>
+        <translation>Зміна атрибутів комірки</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeCustomMappingDialog</name>
     <message>
         <source>Attribute Mapping</source>
-        <translation type="unfinished"></translation>
+        <translation>Відображення атрибутів</translation>
     </message>
     <message>
         <source>Check &amp;All</source>
-        <translation type="unfinished"></translation>
+        <translation>Перевірити все (&amp;A)</translation>
     </message>
     <message>
         <source>Geographic Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Географічні дані</translation>
     </message>
     <message>
         <source>Boundary Condition Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Налаштування граничних умов</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeMappingSettingTopDataItem</name>
     <message>
         <source>Execute mapping</source>
-        <translation type="unfinished"></translation>
+        <translation>Виконати відображення</translation>
     </message>
     <message>
         <source>&amp;Execute...</source>
-        <translation type="unfinished"></translation>
+        <translation>Виконати (&amp;E)...</translation>
     </message>
     <message>
-        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.
+        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Наведені нижче атрибути не були відображені, оскільки вихідні значення генератора сітки для них. Якщо ви хочете відобразити географічні дані для них примусово, будь ласка, зіставте їх вручну за допомогою меню "Сітка" -&gt; "Зіставлення атрибутів" -&gt; "Виконати".</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Інформація</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Увага</translation>
     </message>
     <message>
         <source>Mapping geographic data finished successfully.</source>
-        <translation type="unfinished"></translation>
+        <translation>Зіставлення географічних даних успішно завершено.</translation>
     </message>
     <message>
         <source>Mapping geographic data finished</source>
-        <translation type="unfinished"></translation>
+        <translation>Картування географічних даних завершено</translation>
     </message>
     <message>
-        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation type="unfinished"></translation>
+        <source>The grid attribute "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Атрибут сітки "%1"редагується вручну. Коли ви виконуєте зіставлення, усі внесені вами зміни будуть відкинуті. Ви дійсно хочете виконати відображення?</translation>
     </message>
     <message>
-        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation type="unfinished"></translation>
+        <source>The boundary condition "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Гранична умова "%1"редагується вручну. Коли ви виконуєте зіставлення, усі внесені вами зміни будуть відкинуті. Ви дійсно хочете виконати відображення?</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeMappingSettingTopEditDialog</name>
     <message>
         <source>Grid Attribute Mapping Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Налаштування відображення атрибутів сітки</translation>
     </message>
     <message>
         <source>Execute mapping</source>
-        <translation type="unfinished"></translation>
+        <translation>Виконати відображення</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation>Авто</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;мета назва = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Коли створюється сітка, вас запитують, чи щоразу виконувати відображення атрибутів. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Manual</source>
-        <translation type="unfinished"></translation>
+        <translation>Посібник</translation>
     </message>
     <message>
-        <source>Attribute mapping is executed only when you manually select &quot;Execute&quot; menu.</source>
-        <translation type="unfinished"></translation>
+        <source>Attribute mapping is executed only when you manually select "Execute" menu.</source>
+        <translation>Зіставлення атрибутів виконується лише тоді, коли ви вручну вибираєте меню «Виконати».</translation>
     </message>
     <message>
         <source>Geographic data mapping</source>
-        <translation type="unfinished"></translation>
+        <translation>Відображення географічних даних</translation>
     </message>
     <message>
         <source>Mapping with TINs</source>
-        <translation type="unfinished"></translation>
+        <translation>Відображення за допомогою ІПН</translation>
     </message>
     <message>
         <source>TINs created from geographic data are used for mapping. Grid nodes attribute values are calculated as weighted average of the values at the TIN nodes.</source>
-        <translation type="unfinished"></translation>
+        <translation>ІПН, створені на основі географічних даних, використовуються для картографування. Значення атрибутів вузлів сітки розраховуються як середньозважене значення значень у вузлах ІПН.</translation>
     </message>
     <message>
         <source>Template mapping</source>
-        <translation type="unfinished"></translation>
+        <translation>Зіставлення шаблонів</translation>
     </message>
     <message>
         <source>Find geographic data points that are near to the grid nodes, regarding the grid cell shapes, and use the values at those points for interpolation.
 This algorithm can be used only for structured grids.</source>
-        <translation type="unfinished"></translation>
+        <translation>Знайдіть точки географічних даних, які знаходяться поблизу вузлів сітки, щодо форм осередків сітки та використовуйте значення в цих точках для інтерполяції. Цей алгоритм можна використовувати лише для структурованих сіток.</translation>
     </message>
     <message>
         <source>&amp;Detail...</source>
-        <translation type="unfinished"></translation>
+        <translation>Деталь (&amp;D)...</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeNodeDataItem</name>
     <message>
         <source>Edit value...</source>
-        <translation type="unfinished"></translation>
+        <translation>Змінити значення...</translation>
     </message>
     <message>
         <source>Export...</source>
-        <translation type="unfinished"></translation>
+        <translation>Експорт...</translation>
     </message>
     <message>
         <source>Open &amp;Cross Section Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Відкрити вікно перетину (&amp;C)</translation>
     </message>
     <message>
         <source>Open &amp;Longitudinal Cross Section Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Відкрийте вікно поздовжнього перерізу (&amp;L)</translation>
     </message>
     <message>
         <source>Edit %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Редагувати %1</translation>
     </message>
     <message>
         <source>Grid Node Attribute Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Налаштування відображення атрибутів сітки</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Увага</translation>
     </message>
     <message>
         <source>Please select only one node.</source>
-        <translation type="unfinished"></translation>
+        <translation>Виберіть лише один вузол.</translation>
     </message>
     <message>
         <source>Input the new value of %1 at the selected grid nodes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Введіть нове значення %1 у вибраних вузлах сітки.</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Інформація</translation>
     </message>
     <message>
         <source>To open a Cross Section Window, Please select only one grid node.</source>
-        <translation type="unfinished"></translation>
+        <translation>Щоб відкрити вікно перетину, виберіть лише один вузол сітки.</translation>
     </message>
     <message>
         <source>To open a Longitudinal Cross Section Window, Please select only one grid node.</source>
-        <translation type="unfinished"></translation>
+        <translation>Щоб відкрити вікно поздовжнього перерізу, будь ласка, виберіть лише один вузол сітки.</translation>
     </message>
     <message>
         <source>Topography File (*.tpo)</source>
-        <translation type="unfinished"></translation>
+        <translation>Файл топографії (*.tpo)</translation>
     </message>
     <message>
         <source>Export as Topography Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Експортувати як дані рельєфу</translation>
     </message>
     <message>
         <source>Error occured while opening the file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Під час відкриття файлу сталася помилка.</translation>
     </message>
     <message>
         <source>Grid condition successfully exported to %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Стан сітки успішно експортовано в %1.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Помилка</translation>
     </message>
     <message>
         <source>Edit value by specifying difference...</source>
-        <translation type="unfinished"></translation>
+        <translation>Відредагуйте значення, вказавши різницю...</translation>
     </message>
     <message>
         <source>Edit value by specifying ratio...</source>
-        <translation type="unfinished"></translation>
+        <translation>Відредагуйте значення, вказавши коефіцієнт...</translation>
     </message>
     <message>
         <source>difference</source>
-        <translation type="unfinished"></translation>
+        <translation>різниця</translation>
     </message>
     <message>
         <source>ratio</source>
-        <translation type="unfinished"></translation>
+        <translation>співвідношення</translation>
     </message>
     <message>
         <source>Apply %1 to %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Застосувати %1 до %2</translation>
     </message>
     <message>
         <source>Input the %1 of %2 at the selected grid nodes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Введіть %1 з %2 у вибраних вузлах сітки.</translation>
     </message>
     <message>
         <source>%1 generated.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 генерується.</translation>
     </message>
     <message>
         <source>Generate point cloud data</source>
-        <translation type="unfinished"></translation>
+        <translation>Створення даних хмари точок</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeNodeGroupDataItem</name>
     <message>
         <source>Node attributes</source>
-        <translation type="unfinished"></translation>
+        <translation>Атрибути вузла</translation>
     </message>
     <message>
         <source>Show Attribute Browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Показати браузер атрибутів</translation>
     </message>
     <message>
         <source>Node Attribute Change</source>
-        <translation type="unfinished"></translation>
+        <translation>Зміна атрибутів вузла</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeTemplateMappingSettingDialog</name>
     <message>
         <source>Template Mapping Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Налаштування відображення шаблону</translation>
     </message>
     <message>
         <source>Search region</source>
-        <translation type="unfinished"></translation>
+        <translation>Регіон пошуку</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation>Авто</translation>
     </message>
     <message>
         <source>Manual</source>
-        <translation type="unfinished"></translation>
+        <translation>Посібник</translation>
     </message>
     <message>
         <source>Stream-wise length[m]:</source>
-        <translation type="unfinished"></translation>
+        <translation>Довжина потоку [м]:</translation>
     </message>
     <message>
         <source>Cross-stream width[m]:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ширина поперечного потоку [м]:</translation>
     </message>
     <message>
         <source>Number of Template Expansions:</source>
-        <translation type="unfinished"></translation>
+        <translation>Кількість розширень шаблонів:</translation>
     </message>
     <message>
         <source>Weighting Exponent:</source>
-        <translation type="unfinished"></translation>
+        <translation>Експонента зважування:</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCreatingConditionAlgorithmSelectDialog</name>
     <message>
         <source>Select Grid Creating Algorithm</source>
-        <translation type="unfinished"></translation>
+        <translation>Виберіть алгоритм створення сітки</translation>
     </message>
     <message>
         <source>Algorithm:</source>
-        <translation type="unfinished"></translation>
+        <translation>Алгоритм:</translation>
     </message>
     <message>
         <source>Description:</source>
-        <translation type="unfinished"></translation>
+        <translation>Опис:</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCreatingConditionDataItem</name>
     <message>
         <source>&amp;Create Grid...</source>
-        <translation type="unfinished"></translation>
+        <translation>Створити сітку (&amp;C)...</translation>
     </message>
     <message>
         <source>&amp;Select Algorithm to Create Grid...</source>
-        <translation type="unfinished"></translation>
+        <translation>Виберіть Алгоритм для створення сітки (&amp;S)...</translation>
     </message>
     <message>
         <source>Reset to &amp;Default...</source>
-        <translation type="unfinished"></translation>
+        <translation>Скинути за умовчанням (&amp;D)...</translation>
     </message>
     <message>
         <source>&amp;Delete Grid Creating Condition...</source>
-        <translation type="unfinished"></translation>
+        <translation>Видалити умову створення сітки (&amp;D)...</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation type="unfinished"></translation>
+        <translation>Імпорт (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation type="unfinished"></translation>
+        <translation>Експорт (&amp;E)...</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Увага</translation>
     </message>
     <message>
         <source>This operation will discard the grid that already exists. Are you sure?</source>
-        <translation type="unfinished"></translation>
+        <translation>Ця операція відкине існуючу сітку. Ти впевнений?</translation>
     </message>
     <message>
         <source>Are you sure you want to discard the grid creating condition?</source>
-        <translation type="unfinished"></translation>
+        <translation>Ви впевнені, що хочете скасувати умову створення сітки?</translation>
     </message>
     <message>
         <source>Confirm</source>
-        <translation type="unfinished"></translation>
+        <translation>Підтвердити</translation>
     </message>
     <message>
         <source>Are you sure you want to reset the grid creating condition to the default status?</source>
-        <translation type="unfinished"></translation>
+        <translation>Ви впевнені, що хочете скинути умови створення сітки до стану за замовчуванням?</translation>
     </message>
     <message>
         <source>When you switch algorithm to create grid, the grid and the grid creating condition you created will be discarded.</source>
-        <translation type="unfinished"></translation>
+        <translation>Коли ви перемикаєте алгоритм для створення сітки, сітка та створені вами умови створення сітки будуть відкинуті.</translation>
     </message>
     <message>
         <source>Select file to import</source>
-        <translation type="unfinished"></translation>
+        <translation>Виберіть файл для імпорту</translation>
     </message>
     <message>
         <source>iRIC grid creating condition file(*.igcc)</source>
-        <translation type="unfinished"></translation>
+        <translation>iRIC сітка створює файл умов (*.igcc)</translation>
     </message>
     <message>
         <source>The grid creating condition in this file is not compatible with the solver</source>
-        <translation type="unfinished"></translation>
+        <translation>Умова створення сітки у цьому файлі несумісна з вирішувачем</translation>
     </message>
     <message>
         <source>No data to export.</source>
-        <translation type="unfinished"></translation>
+        <translation>Немає даних для експорту.</translation>
     </message>
     <message>
         <source>Select file to export</source>
-        <translation type="unfinished"></translation>
+        <translation>Виберіть файл для експорту</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow</name>
     <message>
         <source>MainWindow</source>
-        <translation type="unfinished"></translation>
+        <translation>Головне вікно</translation>
     </message>
     <message>
         <source>toolBar</source>
-        <translation type="unfinished"></translation>
+        <translation>toolBar</translation>
     </message>
     <message>
         <source>Direction: </source>
-        <translation type="unfinished"></translation>
+        <translation>Напрямок:</translation>
     </message>
     <message>
         <source>Black line: </source>
-        <translation type="unfinished"></translation>
+        <translation>Чорна лінія:</translation>
     </message>
     <message>
         <source>Red line: </source>
-        <translation type="unfinished"></translation>
+        <translation>Червона лінія:</translation>
     </message>
     <message>
         <source>Blue line: </source>
-        <translation type="unfinished"></translation>
+        <translation>Синя лінія:</translation>
     </message>
     <message>
         <source>(No data)</source>
-        <translation type="unfinished"></translation>
+        <translation>(Немає даних)</translation>
     </message>
     <message>
         <source>Grid Crosssection (%1): J = %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Перетин сітки (%1): J = %2</translation>
     </message>
     <message>
         <source>Grid Crosssection (%1): I = %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Перетин сітки (%1): Я = %2</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindowGraphicsView</name>
     <message>
         <source>&amp;Edit...</source>
-        <translation type="unfinished"></translation>
+        <translation>Редагувати (&amp;E)...</translation>
     </message>
     <message>
         <source>Left Bank Side</source>
-        <translation type="unfinished"></translation>
+        <translation>Лівий берег</translation>
     </message>
     <message>
         <source>Right Bank Side</source>
-        <translation type="unfinished"></translation>
+        <translation>Правий берег</translation>
     </message>
     <message>
         <source>Edit %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Редагувати %1</translation>
     </message>
     <message>
         <source>Input the new value of %1 at the selected grid nodes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Введіть нове значення %1 у вибраних вузлах сітки.</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridDataItem</name>
     <message>
         <source>The following problems found in this grid. Do you really want to export the grid?</source>
-        <translation type="unfinished"></translation>
+        <translation>У цій сітці виявлено такі проблеми. Ви дійсно хочете експортувати сітку?</translation>
     </message>
     <message>
         <source>Show Detail</source>
-        <translation type="unfinished"></translation>
+        <translation>Показати подробиці</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Увага</translation>
     </message>
     <message>
         <source>Select File to Export</source>
-        <translation type="unfinished"></translation>
+        <translation>Виберіть Файл для експорту</translation>
     </message>
     <message>
         <source>Exporting Grid...</source>
-        <translation type="unfinished"></translation>
+        <translation>Експорт сітки...</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Помилка</translation>
     </message>
     <message>
         <source>Grid successfully exported to %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Сітку успішно експортовано до %1.</translation>
     </message>
     <message>
         <source>Exporting grid to %1 failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Експорт сітки до %1 не вдалося.</translation>
     </message>
     <message>
         <source>Are you sure you want to discard the grid?</source>
-        <translation type="unfinished"></translation>
+        <translation>Ви впевнені, що хочете відхилити сітку?</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation type="unfinished"></translation>
+        <translation>Імпорт (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation type="unfinished"></translation>
+        <translation>Експорт (&amp;E)...</translation>
     </message>
     <message>
         <source>Grid &amp;Shape...</source>
-        <translation type="unfinished"></translation>
+        <translation>Форма сітки (&amp;S)...</translation>
     </message>
     <message>
         <source>&amp;Select Polygon Region</source>
-        <translation type="unfinished"></translation>
+        <translation>Виберіть Регіон полігону (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;Delete...</source>
-        <translation type="unfinished"></translation>
+        <translation>Видалити (&amp;D)...</translation>
     </message>
     <message>
         <source>&amp;Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Сітка (&amp;G)</translation>
     </message>
     <message>
         <source>&amp;Node Attribute...</source>
-        <translation type="unfinished"></translation>
+        <translation>Атрибут вузла (&amp;N)...</translation>
     </message>
     <message>
         <source>&amp;Cell Attribute...</source>
-        <translation type="unfinished"></translation>
+        <translation>Атрибут клітинки (&amp;C)...</translation>
     </message>
     <message>
         <source>Set &amp;Up Scalarbar...</source>
-        <translation type="unfinished"></translation>
+        <translation>Налаштуйте Скалярну панель (&amp;U)...</translation>
     </message>
     <message>
-        <source>Open &amp;Bird&apos;s-Eye View Window</source>
-        <translation type="unfinished"></translation>
+        <source>Open &amp;Bird's-Eye View Window</source>
+        <translation>Відкрийте вікно перегляду пташиного погляду (&amp;B)</translation>
     </message>
     <message>
         <source>Attributes &amp;Generating</source>
-        <translation type="unfinished"></translation>
+        <translation>Створення атрибутів (&amp;G)</translation>
     </message>
     <message>
         <source>Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Сітка</translation>
     </message>
     <message>
         <source> [No Data]</source>
-        <translation type="unfinished"></translation>
+        <translation>[Немає даних]</translation>
     </message>
     <message>
         <source> (%1 x %2 = %3)</source>
-        <translation type="unfinished"></translation>
+        <translation>( %1 x %2 = %3 ))</translation>
     </message>
     <message>
         <source> (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>(%1))</translation>
     </message>
     <message>
         <source>Generate %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Генерувати %1</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridShapeDataItem</name>
     <message>
         <source>Grid shape</source>
-        <translation type="unfinished"></translation>
+        <translation>Форма сітки</translation>
     </message>
     <message>
         <source>&amp;Edit Coordinates...</source>
-        <translation type="unfinished"></translation>
+        <translation>Редагувати координати (&amp;E)...</translation>
     </message>
     <message>
         <source>Open &amp;Cross Section Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Відкрити вікно перетину (&amp;C)</translation>
     </message>
     <message>
         <source>Open &amp;Longitudinal Cross Section Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Відкрийте вікно поздовжнього перерізу (&amp;L)</translation>
     </message>
     <message>
         <source>Move Grid Point(s)</source>
-        <translation type="unfinished"></translation>
+        <translation>Перемістити точки сітки</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridShapeDeltaDialog</name>
     <message>
         <source>Edit Grid Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Редагувати координати сітки</translation>
     </message>
     <message>
         <source>Please input the delta coordinates of the selected grid nodes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Будь ласка, введіть дельта -координати вибраних вузлів сітки.</translation>
     </message>
     <message>
         <source>x:</source>
-        <translation type="unfinished"></translation>
+        <translation>x:</translation>
     </message>
     <message>
         <source>y:</source>
-        <translation type="unfinished"></translation>
+        <translation>y:</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridShapeNewPositionDialog</name>
     <message>
         <source>Edit Grid Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Редагувати координати сітки</translation>
     </message>
     <message>
         <source>Please input the new coordinates of the selected grid node.</source>
-        <translation type="unfinished"></translation>
+        <translation>Будь ласка, введіть нові координати вибраного вузла сітки.</translation>
     </message>
     <message>
         <source>x: </source>
-        <translation type="unfinished"></translation>
+        <translation>x:</translation>
     </message>
     <message>
         <source>y:</source>
-        <translation type="unfinished"></translation>
+        <translation>y:</translation>
     </message>
     <message>
         <source>x(%1):</source>
-        <translation type="unfinished"></translation>
+        <translation>x (%1):</translation>
     </message>
     <message>
         <source>y(%1):</source>
-        <translation type="unfinished"></translation>
+        <translation>y (%1):</translation>
     </message>
     <message>
         <source>x(%1, %2):</source>
-        <translation type="unfinished"></translation>
+        <translation>x ( %1, %2 ):</translation>
     </message>
     <message>
         <source>y(%1, %2):</source>
-        <translation type="unfinished"></translation>
+        <translation>y ( %1, %2 ):</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridTypeDataItem</name>
     <message>
         <source>Add New Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Додати нову сітку</translation>
     </message>
     <message>
         <source>Region</source>
-        <translation type="unfinished"></translation>
+        <translation>Регіон</translation>
     </message>
     <message>
         <source>Region%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Регіон %1</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorHydraulicDataGroupDataItem</name>
     <message>
         <source>All importable files (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Усі імпортовані файли (%1))</translation>
     </message>
     <message>
         <source>Select file to import</source>
-        <translation type="unfinished"></translation>
+        <translation>Виберіть файл для імпорту</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Увага</translation>
     </message>
     <message>
         <source>File type cannot be recognized from the file extension. : %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Тип файлу не можна розпізнати за розширенням файлу. : %1</translation>
     </message>
     <message>
         <source>Import failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Не вдалося імпортувати</translation>
     </message>
     <message>
         <source>Importing data from %1 failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Імпортування даних із %1 не вдалося.</translation>
     </message>
     <message>
         <source>%1 contains no data to import.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 не містить даних для імпорту.</translation>
     </message>
     <message>
         <source>Specified file has invalid data, and those were ignored. Ignored data is as follows:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>У зазначеному файлі є недійсні дані, і вони були проігноровані. Ігноруються такі дані: %1</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Інформація</translation>
     </message>
     <message>
         <source>Data is successfully imported from %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Дані успішно імпортуються з %1.</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorLegendBoxEditDialog</name>
     <message>
         <source>Color Legend Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Налаштування легенди кольору</translation>
     </message>
     <message>
         <source>Legend box</source>
-        <translation type="unfinished"></translation>
+        <translation>Скринька з легендами</translation>
     </message>
     <message>
         <source>Font Setting:</source>
-        <translation type="unfinished"></translation>
+        <translation>Налаштування шрифту:</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation type="unfinished"></translation>
+        <translation>Редагувати...</translation>
     </message>
     <message>
         <source>Size (rate)</source>
-        <translation type="unfinished"></translation>
+        <translation>Розмір (норма)</translation>
     </message>
     <message>
         <source>Width :</source>
-        <translation type="unfinished"></translation>
+        <translation>Ширина:</translation>
     </message>
     <message>
         <source>Hight :</source>
-        <translation type="unfinished"></translation>
+        <translation>Висота:</translation>
     </message>
     <message>
         <source>Position (rate)</source>
-        <translation type="unfinished"></translation>
+        <translation>Посада (ставка)</translation>
     </message>
     <message>
         <source>X :</source>
-        <translation type="unfinished"></translation>
+        <translation>X:</translation>
     </message>
     <message>
         <source>Y :</source>
-        <translation type="unfinished"></translation>
+        <translation>Y:</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorMeasuredDataTopDataItem</name>
     <message>
         <source>Measured Values</source>
-        <translation type="unfinished"></translation>
+        <translation>Вимірювані значення</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation type="unfinished"></translation>
+        <translation>Імпорт (&amp;I)...</translation>
     </message>
     <message>
         <source>Delete &amp;Selected...</source>
-        <translation type="unfinished"></translation>
+        <translation>Видалити вибране (&amp;S)...</translation>
     </message>
     <message>
         <source>Delete &amp;All...</source>
-        <translation type="unfinished"></translation>
+        <translation>Видалити всі (&amp;A)...</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Інформація</translation>
     </message>
     <message>
         <source>There is no measured data.</source>
-        <translation type="unfinished"></translation>
+        <translation>Вимірюваних даних немає.</translation>
     </message>
     <message>
         <source>Delete selected measured data</source>
-        <translation type="unfinished"></translation>
+        <translation>Видалити вибрані виміряні дані</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Увага</translation>
     </message>
     <message>
         <source>Are you sure you want to delete all measured data?</source>
-        <translation type="unfinished"></translation>
+        <translation>Ви впевнені, що хочете видалити всі виміряні дані?</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorNormal15DGridWithCrossSectionDataItem</name>
     <message>
         <source>&amp;Edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Редагувати (&amp;E)</translation>
     </message>
     <message>
         <source>Dis&amp;play Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Налаштування дисплея (&amp;P)...</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorNormal15DGridWithCrossSectionShapeDataItem</name>
     <message>
         <source>Display &amp;Cross Section</source>
-        <translation type="unfinished"></translation>
+        <translation>Відображення поперечного перерізу (&amp;C)</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorRootDataItem</name>
     <message>
         <source>&amp;Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Налаштування (&amp;S)...</translation>
     </message>
     <message>
         <source>Change Attribute Mapping Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Змінити налаштування відображення атрибутів</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorScalarBarEditDialog</name>
     <message>
         <source>Color Legend Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Налаштування легенди кольору</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorScalarBarLegendBoxSettingDialog</name>
     <message>
         <source>Scalarbar Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Налаштування скаляра</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation type="unfinished"></translation>
+        <translation>Видно</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation type="unfinished"></translation>
+        <translation>Цінність</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation type="unfinished"></translation>
+        <translation>Редагувати...</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorStructured2dGridDataItem</name>
     <message>
         <source>Select I-J &amp;Region...</source>
-        <translation type="unfinished"></translation>
+        <translation>Виберіть Регіон IJ (&amp;R)...</translation>
     </message>
     <message>
         <source>&amp;Edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Редагувати (&amp;E)</translation>
     </message>
     <message>
         <source>Dis&amp;play Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Налаштування дисплея (&amp;P)...</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorUnstructured2dGridDataItem</name>
     <message>
         <source>&amp;Select vertices</source>
-        <translation type="unfinished"></translation>
+        <translation>Виберіть вершини (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;Edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Редагувати (&amp;E)</translation>
     </message>
     <message>
         <source>Dis&amp;play Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Налаштування дисплея (&amp;P)...</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorWindow</name>
     <message>
         <source>Pre-processing Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Вікно попередньої обробки</translation>
     </message>
     <message>
         <source>Grid is not created or imported yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Сітку ще не створено та не імпортовано.</translation>
     </message>
     <message>
         <source>Checking grid %1 ...</source>
-        <translation type="unfinished"></translation>
+        <translation>Перевірка сітки %1...</translation>
     </message>
     <message>
         <source>Gr&amp;id Creating Condition...</source>
-        <translation type="unfinished"></translation>
+        <translation>Умова створення сітки (&amp;I)...</translation>
     </message>
     <message>
         <source>Grid...</source>
-        <translation type="unfinished"></translation>
+        <translation>Сітка...</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorWindowActionManager</name>
     <message>
         <source>&amp;Calculation Condition</source>
-        <translation type="unfinished"></translation>
+        <translation>Умова розрахунку (&amp;C)</translation>
     </message>
     <message>
         <source>&amp;Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Налаштування (&amp;S)...</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation type="unfinished"></translation>
+        <translation>Імпорт (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation type="unfinished"></translation>
+        <translation>Експорт (&amp;E)...</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorWindowScalarBarSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Форма</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation type="unfinished"></translation>
+        <translation>Видно</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Заголовок</translation>
     </message>
     <message>
         <source>Title :</source>
-        <translation type="unfinished"></translation>
+        <translation>Назва:</translation>
     </message>
     <message>
         <source>Font Setting:</source>
-        <translation type="unfinished"></translation>
+        <translation>Налаштування шрифту:</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation type="unfinished"></translation>
+        <translation>Редагувати...</translation>
     </message>
     <message>
         <source>Label Display</source>
-        <translation type="unfinished"></translation>
+        <translation>Відображення етикетки</translation>
     </message>
     <message>
         <source>Number of labels :</source>
-        <translation type="unfinished"></translation>
+        <translation>Кількість міток:</translation>
     </message>
     <message>
         <source>Format:</source>
-        <translation type="unfinished"></translation>
+        <translation>Формат:</translation>
     </message>
     <message>
         <source>Orientation :</source>
-        <translation type="unfinished"></translation>
+        <translation>Орієнтація:</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation type="unfinished"></translation>
+        <translation>Вертикальні</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation type="unfinished"></translation>
+        <translation>Горизонтальні</translation>
     </message>
     <message>
         <source>Size</source>
-        <translation type="unfinished"></translation>
+        <translation>Розмір</translation>
     </message>
     <message>
         <source>Specify Color bar size as rate against window size.</source>
-        <translation type="unfinished"></translation>
+        <translation>Вкажіть розмір смужки кольору як розмір вікна.</translation>
     </message>
     <message>
         <source>Width :</source>
-        <translation type="unfinished"></translation>
+        <translation>Ширина:</translation>
     </message>
     <message>
         <source>If you specify 1, Color bar width is the same to window width.</source>
-        <translation type="unfinished"></translation>
+        <translation>Якщо вказати 1, ширина колірної смуги збігається з шириною вікна.</translation>
     </message>
     <message>
         <source>Height :</source>
-        <translation type="unfinished"></translation>
+        <translation>Висота:</translation>
     </message>
     <message>
         <source>If you specify 1, Color bar height is the same to window height.</source>
-        <translation type="unfinished"></translation>
+        <translation>Якщо вказати 1, висота колірної смуги збігається з висотою вікна.</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished"></translation>
+        <translation>Позиція</translation>
     </message>
     <message>
         <source>Specify Color bar left bottom position as rate against window size.</source>
-        <translation type="unfinished"></translation>
+        <translation>Вкажіть нижню ліву нижню позицію кольорової смуги як коефіцієнт розміру вікна.</translation>
     </message>
     <message>
         <source>X :</source>
-        <translation type="unfinished"></translation>
+        <translation>X:</translation>
     </message>
     <message>
         <source>If you specify 0, Color bar left edge is located at window left edge.</source>
-        <translation type="unfinished"></translation>
+        <translation>Якщо вказати 0, лівий край колірної панелі розташований біля лівого краю вікна.</translation>
     </message>
     <message>
         <source>Y :</source>
-        <translation type="unfinished"></translation>
+        <translation>Y:</translation>
     </message>
     <message>
         <source>If you specify 0, Color bar bottom is located at window bottom.</source>
-        <translation type="unfinished"></translation>
+        <translation>Якщо вказати 0, нижня панель кольорів розташовуватиметься внизу вікна.</translation>
     </message>
 </context>
 <context>
     <name>ProjectGridImporter</name>
     <message>
         <source>Project file</source>
-        <translation type="unfinished"></translation>
+        <translation>Файл проекту</translation>
     </message>
     <message>
         <source>iRIC Project files (*.ipro)</source>
-        <translation type="unfinished"></translation>
+        <translation>Файли проекту iRIC (*.ipro)</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
         <source>Object Browser Item Change</source>
-        <translation type="unfinished"></translation>
+        <translation>Зміна елемента браузера об’єктів</translation>
     </message>
     <message>
         <source>CGNS files (*.cgns)</source>
-        <translation type="unfinished"></translation>
+        <translation>Файли CGNS (*.cgns)</translation>
     </message>
     <message>
         <source>Close PreProcessor Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Закрийте вікно попереднього процесора</translation>
     </message>
 </context>
 <context>
     <name>Structured15DGridWithCrossSectionCrossSectionAltitudeMoveDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Діалог</translation>
     </message>
     <message>
         <source>Horizontal variation (H): </source>
-        <translation type="unfinished"></translation>
+        <translation>Відхилення по горизонталі (H):</translation>
     </message>
     <message>
         <source>TextLabel</source>
-        <translation type="unfinished"></translation>
+        <translation>TextLabel</translation>
     </message>
     <message>
         <source>Vertical Variation:</source>
-        <translation type="unfinished"></translation>
+        <translation>Вертикальні варіації:</translation>
     </message>
     <message>
         <source>%1 &lt; </source>
-        <translation type="unfinished"></translation>
+        <translation>%1 &lt;</translation>
     </message>
     <message>
         <source>H</source>
-        <translation type="unfinished"></translation>
+        <translation>H</translation>
     </message>
     <message>
         <source> &lt; %1</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt; %1</translation>
     </message>
     <message>
         <source>Move Elevation Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Переміщення точок висот</translation>
     </message>
 </context>
 <context>
     <name>Structured15DGridWithCrossSectionCrossSectionWindow</name>
     <message>
         <source>MainWindow</source>
-        <translation type="unfinished"></translation>
+        <translation>Головне вікно</translation>
     </message>
     <message>
         <source>toolBar</source>
-        <translation type="unfinished"></translation>
+        <translation>toolBar</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Видалити (&amp;D)</translation>
     </message>
     <message>
         <source>Black line: </source>
-        <translation type="unfinished"></translation>
+        <translation>Чорна лінія:</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished"></translation>
+        <translation>Позиція</translation>
     </message>
     <message>
         <source>Elevation</source>
-        <translation type="unfinished"></translation>
+        <translation>Піднесення</translation>
     </message>
     <message>
         <source>%1 : CrossSection %2</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 : Перехресний %2</translation>
     </message>
     <message>
         <source>Edit Elevation Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Редагувати точку висоти</translation>
     </message>
 </context>
 <context>
     <name>Structured15DGridWithCrossSectionCrossSectionWindowGraphicsView</name>
     <message>
         <source>&amp;Move</source>
-        <translation type="unfinished"></translation>
+        <translation>Рухатися (&amp;M)</translation>
     </message>
 </context>
 </TS>

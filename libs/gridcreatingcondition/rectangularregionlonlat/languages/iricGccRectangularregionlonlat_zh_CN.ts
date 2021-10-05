@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="zh_CN">
 <context>
     <name>GridCreatingConditionCreatorRectangularRegionLonLat</name>
@@ -20,34 +18,34 @@
     </message>
     <message>
         <source>The maximum number of grid nodes is %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>最大网格节点数为 %1.</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>信息</translation>
     </message>
     <message>
         <source>Please define grid region by mouse-dragging.</source>
-        <translation type="unfinished"></translation>
+        <translation>请通过鼠标拖动定义网格区域。</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionRectangularRegionLonLatSettingDialog</name>
     <message>
         <source>Grid Creation</source>
-        <translation type="unfinished"></translation>
+        <translation>网格创建</translation>
     </message>
     <message>
         <source>Input</source>
-        <translation type="unfinished"></translation>
+        <translation>输入</translation>
     </message>
     <message>
         <source>Resulting grid</source>
-        <translation type="unfinished"></translation>
+        <translation>结果网格</translation>
     </message>
     <message>
         <source>--</source>
-        <translation type="unfinished"></translation>
+        <translation>——</translation>
     </message>
 </context>
 </TS>

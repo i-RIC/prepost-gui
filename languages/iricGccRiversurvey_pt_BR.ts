@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="pt_BR">
 <context>
     <name>GridCreatingConditionCreatorRiverSurvey</name>
@@ -21,17 +19,17 @@
     </message>
     <message>
         <source>Create grid from cross-section data</source>
-        <translation type="unfinished"></translation>
+        <translation>Criar grade de dados de seção cruzada</translation>
     </message>
     <message>
         <source>The grid shape is automatically defined using cross-section data. You can specify the grid division number, by adding grid creation control points on river crosssections, river center, left bank, and right bank.
 Note: This algorithm is available only when cross-section data is loaded!Please switch algorithm to this, after importing cross-section data.
 </source>
-        <translation type="unfinished"></translation>
+        <translation>A forma da grade é definida automaticamente usando dados de seção transversal. Você pode especificar o número da divisão da grade, adicionando pontos de controle de criação da grade nas seções transversais do rio, centro do rio, margem esquerda e margem direita. Nota: Este algoritmo está disponível apenas quando os dados da seção transversal são carregados! Mude o algoritmo para este, após importar os dados da seção transversal.</translation>
     </message>
     <message>
         <source>No cross-section data exists in geographic data now. This algorithmn is not available.</source>
-        <translation type="unfinished"></translation>
+        <translation>Não existem dados de seção cruzada em dados geográficos agora. Este algoritmo não está disponível.</translation>
     </message>
 </context>
 <context>
@@ -98,7 +96,7 @@ Note: This algorithm is available only when cross-section data is loaded!Please 
     </message>
     <message>
         <source>There is no cross-section data. This grid creating condition is not available.</source>
-        <translation type="unfinished"></translation>
+        <translation>Não há dados de seção transversal. Esta condição de criação de grade não está disponível.</translation>
     </message>
 </context>
 <context>

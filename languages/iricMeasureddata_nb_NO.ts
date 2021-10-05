@@ -1,143 +1,141 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="nb_NO">
 <context>
     <name>MeasuredDataFileDataItem</name>
     <message>
         <source>File</source>
-        <translation type="unfinished"></translation>
+        <translation>Fil</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation type="unfinished"></translation>
+        <translation>Eksport (&amp;E)...</translation>
     </message>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>CSV -fil (*.csv)</translation>
     </message>
     <message>
         <source>Export Measured Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Eksporter målte data</translation>
     </message>
     <message>
         <source>Measured Data successfully exported to %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Målte data ble eksportert til %1.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Feil</translation>
     </message>
 </context>
 <context>
     <name>MeasuredDataPointGroupDataItem</name>
     <message>
         <source>Scalar</source>
-        <translation type="unfinished"></translation>
+        <translation>Skalar</translation>
     </message>
     <message>
         <source>Contour Physical Value Change</source>
-        <translation type="unfinished"></translation>
+        <translation>Kontur Fysisk verdiendring</translation>
     </message>
 </context>
 <context>
     <name>MeasuredDataPointSettingDialog</name>
     <message>
         <source>Scalar Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Skalarinnstilling</translation>
     </message>
     <message>
         <source>Measured Value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Målt verdi:</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Skjerminnstilling</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Punktstørrelse:</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Innstilling av fargelinje (&amp;C)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Feil</translation>
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
-        <translation type="unfinished"></translation>
+        <translation>For verdiområde er maks verdi mindre enn min.</translation>
     </message>
 </context>
 <context>
     <name>MeasuredDataVectorGroupDataItem</name>
     <message>
         <source>Arrow</source>
-        <translation type="unfinished"></translation>
+        <translation>Pil</translation>
     </message>
     <message>
         <source>Arrow Physical Value Change</source>
-        <translation type="unfinished"></translation>
+        <translation>Arrow Physical Value Change</translation>
     </message>
     <message>
         <source>Update Arrow Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Oppdater pilinnstilling</translation>
     </message>
 </context>
 <context>
     <name>MeasuredDataVectorSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Pilinnstilling</translation>
     </message>
     <message>
         <source>Physical value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Fysisk verdi:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation type="unfinished"></translation>
+        <translation>Lengde</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation>Auto</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Standard verdi:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation type="unfinished"></translation>
+        <translation>[m/s]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation type="unfinished"></translation>
+        <translation>Lengde på skjermen:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation type="unfinished"></translation>
+        <translation>[piksel]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation type="unfinished"></translation>
+        <translation>Minste verdi å trekke:</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Farge</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation type="unfinished"></translation>
+        <translation>Egendefinert farge</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation type="unfinished"></translation>
+        <translation>Etter skalarverdi</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Innstilling av fargelinje (&amp;C)</translation>
     </message>
 </context>
 </TS>

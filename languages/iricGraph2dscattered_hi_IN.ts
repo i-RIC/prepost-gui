@@ -1,317 +1,315 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="hi_IN">
 <context>
     <name>Graph2dScatteredAxisSettingDialog</name>
     <message>
         <source>Axis Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>एक्सिस सेटिंग</translation>
     </message>
     <message>
         <source>X Axis</source>
-        <translation type="unfinished"></translation>
+        <translation>एक्स एक्सिस</translation>
     </message>
     <message>
         <source>Value Range</source>
-        <translation type="unfinished"></translation>
+        <translation>मूल्य सीमा</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation>ऑटो</translation>
     </message>
     <message>
         <source>Max:</source>
-        <translation type="unfinished"></translation>
+        <translation>अधिकतम:</translation>
     </message>
     <message>
         <source>Min:</source>
-        <translation type="unfinished"></translation>
+        <translation>न्यूनतम:</translation>
     </message>
     <message>
         <source>Logarithmic axis</source>
-        <translation type="unfinished"></translation>
+        <translation>लघुगणक अक्ष</translation>
     </message>
     <message>
         <source>Label: </source>
-        <translation type="unfinished"></translation>
+        <translation>लेबल:</translation>
     </message>
     <message>
         <source>Reverse Direction</source>
-        <translation type="unfinished"></translation>
+        <translation>विपरीत दिशा</translation>
     </message>
     <message>
         <source>General</source>
-        <translation type="unfinished"></translation>
+        <translation>आम</translation>
     </message>
     <message>
         <source>Title: </source>
-        <translation type="unfinished"></translation>
+        <translation>शीर्षक:</translation>
     </message>
     <message>
         <source>Add Time to Title</source>
-        <translation type="unfinished"></translation>
+        <translation>शीर्षक में समय जोड़ें</translation>
     </message>
     <message>
         <source>Y Axis</source>
-        <translation type="unfinished"></translation>
+        <translation>वाई एक्सिस</translation>
     </message>
     <message>
         <source>Left</source>
-        <translation type="unfinished"></translation>
+        <translation>बाएं</translation>
     </message>
     <message>
         <source>Right</source>
-        <translation type="unfinished"></translation>
+        <translation>सही</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>चेतावनी</translation>
     </message>
     <message>
         <source>X-axes range is invalid.</source>
-        <translation type="unfinished"></translation>
+        <translation>एक्स-अक्ष श्रेणी अमान्य है।</translation>
     </message>
     <message>
         <source>Left Y-axes range is invalid.</source>
-        <translation type="unfinished"></translation>
+        <translation>बायां Y-अक्ष श्रेणी अमान्य है।</translation>
     </message>
     <message>
         <source>Right Y-axes range is invalid.</source>
-        <translation type="unfinished"></translation>
+        <translation>दायां Y-अक्ष श्रेणी अमान्य है।</translation>
     </message>
 </context>
 <context>
     <name>Graph2dScatteredWindow</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>प्रपत्र</translation>
     </message>
     <message>
         <source>I:</source>
-        <translation type="unfinished"></translation>
+        <translation>मैं:</translation>
     </message>
     <message>
         <source>J:</source>
-        <translation type="unfinished"></translation>
+        <translation>जे:</translation>
     </message>
     <message>
         <source>K:</source>
-        <translation type="unfinished"></translation>
+        <translation>क:</translation>
     </message>
     <message>
         <source>Select &amp;Data Source</source>
-        <translation type="unfinished"></translation>
+        <translation>डेटा स्रोत का चयन करें (&amp;D)</translation>
     </message>
     <message>
         <source>&amp;Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>स्थापना (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;Close</source>
-        <translation type="unfinished"></translation>
+        <translation>बंद करे (&amp;C)</translation>
     </message>
     <message>
         <source>Scattered Chart Window: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>बिखरी हुई चार्ट विंडो: %1</translation>
     </message>
     <message>
         <source>Controller</source>
-        <translation type="unfinished"></translation>
+        <translation>नियंत्रक</translation>
     </message>
 </context>
 <context>
     <name>Graph2dScatteredWindowActionManager</name>
     <message>
         <source>&amp;Draw</source>
-        <translation type="unfinished"></translation>
+        <translation>खींचना (&amp;D)</translation>
     </message>
     <message>
         <source>&amp;Data Source Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>डेटा स्रोत सेटिंग (&amp;D)...</translation>
     </message>
     <message>
         <source>&amp;Axis Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>एक्सिस सेटिंग (&amp;A)...</translation>
     </message>
     <message>
         <source>D&amp;raw Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>ड्रा सेटिंग (&amp;R)...</translation>
     </message>
     <message>
         <source>&amp;Legend</source>
-        <translation type="unfinished"></translation>
+        <translation>दंतकथा (&amp;L)</translation>
     </message>
 </context>
 <context>
     <name>Graph2dScatteredWindowControlWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>प्रपत्र</translation>
     </message>
     <message>
         <source>&amp;Data Source</source>
-        <translation type="unfinished"></translation>
+        <translation>डेटा स्रोत (&amp;D)</translation>
     </message>
     <message>
         <source>Axis &amp;Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>एक्सिस सेटिंग (&amp;S)</translation>
     </message>
     <message>
         <source>Draw &amp;Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>ड्रा सेटिंग (&amp;S)</translation>
     </message>
 </context>
 <context>
     <name>Graph2dScatteredWindowDataModel</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>त्रुटि</translation>
     </message>
     <message>
         <source>Saving snapshot image to %1 failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>स्नैपशॉट छवि को इसमें सहेजा जा रहा है %1 अनुत्तीर्ण होना।</translation>
     </message>
     <message>
         <source>Time = %1 sec</source>
-        <translation type="unfinished"></translation>
+        <translation>समय = %1 सेकंड</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>चेतावनी</translation>
     </message>
     <message>
         <source>No calculation result exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>कोई गणना परिणाम मौजूद नहीं है।</translation>
     </message>
     <message>
         <source>Graph window setup fail. Calculation result is not loaded properly.</source>
-        <translation type="unfinished"></translation>
+        <translation>ग्राफ़ विंडो सेटअप विफल। गणना परिणाम ठीक से लोड नहीं होता है।</translation>
     </message>
 </context>
 <context>
     <name>Graph2dScatteredWindowDataSourceDialog</name>
     <message>
         <source>Data Source Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>डेटा स्रोत सेटिंग</translation>
     </message>
     <message>
         <source>X Axis:</source>
-        <translation type="unfinished"></translation>
+        <translation>एक्स एक्सिस:</translation>
     </message>
     <message>
         <source>Y Axis:</source>
-        <translation type="unfinished"></translation>
+        <translation>वाई अक्ष:</translation>
     </message>
     <message>
         <source>Position X</source>
-        <translation type="unfinished"></translation>
+        <translation>स्थिति X</translation>
     </message>
     <message>
         <source>Position Y</source>
-        <translation type="unfinished"></translation>
+        <translation>स्थिति Y</translation>
     </message>
     <message>
         <source>Position Z</source>
-        <translation type="unfinished"></translation>
+        <translation>स्थिति Z</translation>
     </message>
 </context>
 <context>
     <name>Graph2dScatteredWindowDrawSettingDialog</name>
     <message>
         <source>Draw Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>ड्रा सेटिंग</translation>
     </message>
 </context>
 <context>
     <name>Graph2dScatteredWindowObjectBrowser</name>
     <message>
         <source>Object Browser</source>
-        <translation type="unfinished"></translation>
+        <translation>ऑब्जेक्ट ब्राउज़र</translation>
     </message>
 </context>
 <context>
     <name>Graph2dScatteredWindowResultDataItem</name>
     <message>
         <source>Position X</source>
-        <translation type="unfinished"></translation>
+        <translation>स्थिति X</translation>
     </message>
     <message>
         <source>Position Y</source>
-        <translation type="unfinished"></translation>
+        <translation>स्थिति Y</translation>
     </message>
     <message>
         <source>Position Z</source>
-        <translation type="unfinished"></translation>
+        <translation>स्थिति Z</translation>
     </message>
     <message>
         <source>Stream-wise Distance</source>
-        <translation type="unfinished"></translation>
+        <translation>धारा-वार दूरी</translation>
     </message>
 </context>
 <context>
     <name>Graph2dScatteredWindowResultGroupDataItem</name>
     <message>
         <source>Calcuation Results</source>
-        <translation type="unfinished"></translation>
+        <translation>गणना परिणाम</translation>
     </message>
 </context>
 <context>
     <name>Graph2dScatteredWindowSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>प्रपत्र</translation>
     </message>
     <message>
         <source>Label:</source>
-        <translation type="unfinished"></translation>
+        <translation>लेबल:</translation>
     </message>
     <message>
         <source>Y Axis:</source>
-        <translation type="unfinished"></translation>
+        <translation>वाई अक्ष:</translation>
     </message>
     <message>
         <source>Left</source>
-        <translation type="unfinished"></translation>
+        <translation>बाएं</translation>
     </message>
     <message>
         <source>Right</source>
-        <translation type="unfinished"></translation>
+        <translation>सही</translation>
     </message>
     <message>
         <source>Symbol Style:</source>
-        <translation type="unfinished"></translation>
+        <translation>प्रतीक शैली:</translation>
     </message>
     <message>
         <source>Circle</source>
-        <translation type="unfinished"></translation>
+        <translation>वृत्त</translation>
     </message>
     <message>
         <source>Rectangle</source>
-        <translation type="unfinished"></translation>
+        <translation>आयत</translation>
     </message>
     <message>
         <source>Diamond</source>
-        <translation type="unfinished"></translation>
+        <translation>हीरा</translation>
     </message>
     <message>
         <source>Triangle</source>
-        <translation type="unfinished"></translation>
+        <translation>त्रिकोण</translation>
     </message>
     <message>
         <source>Cross</source>
-        <translation type="unfinished"></translation>
+        <translation>पार करना</translation>
     </message>
     <message>
         <source>XCross</source>
-        <translation type="unfinished"></translation>
+        <translation>एक्सक्रॉस</translation>
     </message>
     <message>
         <source>Symbol Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>प्रतीक आकार:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>रंग:</translation>
     </message>
 </context>
 </TS>

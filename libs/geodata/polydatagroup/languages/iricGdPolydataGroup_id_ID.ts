@@ -1,260 +1,258 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="id_ID">
 <context>
     <name>GeoDataPolyDataGroup</name>
     <message>
         <source>Add New %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Tambah baru %1</translation>
     </message>
     <message>
         <source>%1 Group Attribute Browser</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 Peramban Atribut Grup</translation>
     </message>
     <message>
         <source>Edit name</source>
-        <translation type="unfinished"></translation>
+        <translation>Edit nama</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nama:</translation>
     </message>
     <message>
         <source>Edit %1 value</source>
-        <translation type="unfinished"></translation>
+        <translation>Sunting %1 nilai</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Peringatan</translation>
     </message>
     <message>
         <source>Are you sure you want to delete selected %1s?</source>
-        <translation type="unfinished"></translation>
+        <translation>Apakah Anda yakin ingin menghapus yang dipilih? %1 S?</translation>
     </message>
     <message>
-        <source>There is no other data to merge in &quot;%1&quot; group.</source>
-        <translation type="unfinished"></translation>
+        <source>There is no other data to merge in "%1" group.</source>
+        <translation>Tidak ada data lain untuk digabungkan dalam "%1"kelompok.</translation>
     </message>
     <message>
         <source>Edit name and value of polydatas</source>
-        <translation type="unfinished"></translation>
+        <translation>Edit nama dan nilai polydatas</translation>
     </message>
     <message>
         <source>&amp;Add New Polygon...</source>
-        <translation type="unfinished"></translation>
+        <translation>Tambahkan Poligon Baru (&amp;A)...</translation>
     </message>
     <message>
         <source>Edit &amp;Name...</source>
-        <translation type="unfinished"></translation>
+        <translation>Edit Nama (&amp;N)...</translation>
     </message>
     <message>
         <source>Edit &amp;Name and Value...</source>
-        <translation type="unfinished"></translation>
+        <translation>Edit Nama dan Nilai (&amp;N)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Menghapus (&amp;D)</translation>
     </message>
     <message>
         <source>&amp;Merge...</source>
-        <translation type="unfinished"></translation>
+        <translation>Menggabungkan (&amp;M)...</translation>
     </message>
     <message>
         <source>Color &amp;Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Pengaturan Warna (&amp;S)...</translation>
     </message>
     <message>
         <source>Show Attribute &amp;Browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Tampilkan Browser Atribut (&amp;B)</translation>
     </message>
     <message>
         <source>Move to top</source>
-        <translation type="unfinished"></translation>
+        <translation>Pindah ke atas</translation>
     </message>
     <message>
         <source>Move to bottom</source>
-        <translation type="unfinished"></translation>
+        <translation>Pindah ke bawah</translation>
     </message>
     <message>
         <source>Move up</source>
-        <translation type="unfinished"></translation>
+        <translation>Naik</translation>
     </message>
     <message>
         <source>Move down</source>
-        <translation type="unfinished"></translation>
+        <translation>Turunkan</translation>
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Pengeditan Pengaturan Warna</translation>
     </message>
     <message>
         <source>Sort data</source>
-        <translation type="unfinished"></translation>
+        <translation>Urutkan data</translation>
     </message>
     <message>
         <source>Select Geographic Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Pilih Data Geografis</translation>
     </message>
     <message>
         <source>Please select which geographic data to copy this %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Silakan pilih data geografis mana yang akan disalin %1.</translation>
     </message>
     <message>
         <source>Copy...</source>
-        <translation type="unfinished"></translation>
+        <translation>Salinan...</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyDataGroupAttributeBrowser</name>
     <message>
         <source>PolyData Group Attribute Browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Peramban Atribut Grup PolyData</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nama</translation>
     </message>
     <message>
         <source>Show</source>
-        <translation type="unfinished"></translation>
+        <translation>Menunjukkan</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation type="unfinished"></translation>
+        <translation>Nilai</translation>
     </message>
     <message>
         <source>Sort toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Sortir bilah alat</translation>
     </message>
     <message>
         <source>%1 Group Attribute Browser</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 Peramban Atribut Grup</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyDataGroupAttributeBrowser::TableItemDelegate</name>
     <message>
         <source>Show</source>
-        <translation type="unfinished"></translation>
+        <translation>Menunjukkan</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyDataGroupColorSettingDialog</name>
     <message>
         <source>PolyData Color Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Pengaturan Warna PolyData</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Warna</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished"></translation>
+        <translation>Warnai berdasarkan nilai</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Warna Kustom</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyDataGroupCopySettingDialog</name>
     <message>
         <source>Copy Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Salin Pengaturan</translation>
     </message>
     <message>
         <source>Please specify values for copied data.</source>
-        <translation type="unfinished"></translation>
+        <translation>Harap tentukan nilai untuk data yang disalin.</translation>
     </message>
     <message>
         <source>For all</source>
-        <translation type="unfinished"></translation>
+        <translation>Untuk semua</translation>
     </message>
     <message>
         <source>For each</source>
-        <translation type="unfinished"></translation>
+        <translation>Untuk setiap</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyDataGroupMergeSettingDialog</name>
     <message>
         <source>Select data to merge</source>
-        <translation type="unfinished"></translation>
+        <translation>Pilih data untuk digabungkan</translation>
     </message>
     <message>
         <source>Please select data to merge this group.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pilih data untuk menggabungkan grup ini.</translation>
     </message>
     <message>
         <source>&amp;Select all</source>
-        <translation type="unfinished"></translation>
+        <translation>Pilih Semua (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;Unselect all</source>
-        <translation type="unfinished"></translation>
+        <translation>Batalkan pilihan semua (&amp;U)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyDataGroupShpImporter</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Kesalahan</translation>
     </message>
     <message>
         <source>The shape type contained in this shape file is not %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Jenis bentuk yang terkandung dalam file bentuk ini bukan %1.</translation>
     </message>
     <message>
         <source>Opening %1 failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pembukaan %1 gagal.</translation>
     </message>
     <message>
         <source>The number of data mismatches between shp file and dbf file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Jumlah ketidaksesuaian data antara file shp dan file dbf.</translation>
     </message>
     <message>
         <source>%1 Group Import Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 Pengaturan Impor Grup</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyDataGroupShpImporterSettingDialog</name>
     <message>
         <source>PolyData Import Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Pengaturan Impor PolyData</translation>
     </message>
     <message>
         <source>Encoding:</source>
-        <translation type="unfinished"></translation>
+        <translation>Pengkodean:</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nama</translation>
     </message>
     <message>
         <source>Load from Shape file attribute</source>
-        <translation type="unfinished"></translation>
+        <translation>Muat dari atribut file Bentuk</translation>
     </message>
     <message>
         <source>Name is set automatically (ex. PolyData1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Nama diatur secara otomatis (mis. PolyData1)</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation type="unfinished"></translation>
+        <translation>Nilai</translation>
     </message>
     <message>
         <source>Specify value</source>
-        <translation type="unfinished"></translation>
+        <translation>Tentukan nilai</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Peringatan</translation>
     </message>
     <message>
         <source>You cannot specify the same column for both Name and Value.</source>
-        <translation type="unfinished"></translation>
+        <translation>Anda tidak dapat menentukan kolom yang sama untuk Nama dan Nilai.</translation>
     </message>
 </context>
 </TS>

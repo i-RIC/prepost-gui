@@ -1,241 +1,239 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="eu_ES">
 <context>
     <name>Graph2dVerificationSettingDialog</name>
     <message>
         <source>Verification Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Egiaztapen ezarpena</translation>
     </message>
     <message>
         <source>Timestep</source>
-        <translation type="unfinished"></translation>
+        <translation>Denbora-pasoa</translation>
     </message>
     <message>
         <source>Select the timestep of calculation result</source>
-        <translation type="unfinished"></translation>
+        <translation>Aukeratu kalkuluaren emaitzaren denbora-tartea</translation>
     </message>
     <message>
         <source>Calculation Result</source>
-        <translation type="unfinished"></translation>
+        <translation>Kalkuluaren emaitza</translation>
     </message>
     <message>
         <source>Select which physical value to use for comparison.</source>
-        <translation type="unfinished"></translation>
+        <translation>Aukeratu zein balio fisiko erabili konparaziorako.</translation>
     </message>
     <message>
         <source>Grid:</source>
-        <translation type="unfinished"></translation>
+        <translation>Sareta:</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Balio fisikoa:</translation>
     </message>
     <message>
         <source>Measured Values</source>
-        <translation type="unfinished"></translation>
+        <translation>Neurtutako Balioak</translation>
     </message>
     <message>
         <source>Select which measured value to use for comparison.</source>
-        <translation type="unfinished"></translation>
+        <translation>Aukeratu zein balio neurtu erabili konparaziorako.</translation>
     </message>
     <message>
         <source>File:</source>
-        <translation type="unfinished"></translation>
+        <translation>Fitxategia:</translation>
     </message>
     <message>
         <source>Value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Balioa:</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Abisua</translation>
     </message>
     <message>
         <source>No Physical Value is selected.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ez da balio fisikorik hautatzen.</translation>
     </message>
     <message>
         <source>No Value is selected.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ez dago Baliorik hautatuta.</translation>
     </message>
 </context>
 <context>
     <name>Graph2dVerificationWindow</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma</translation>
     </message>
     <message>
         <source>I:</source>
-        <translation type="unfinished"></translation>
+        <translation>I:</translation>
     </message>
     <message>
         <source>J:</source>
-        <translation type="unfinished"></translation>
+        <translation>J:</translation>
     </message>
     <message>
         <source>K:</source>
-        <translation type="unfinished"></translation>
+        <translation>K:</translation>
     </message>
     <message>
         <source>Select &amp;Data Source</source>
-        <translation type="unfinished"></translation>
+        <translation>Aukeratu Datu iturria (&amp;D)</translation>
     </message>
     <message>
         <source>&amp;Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Ezarpena (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;Close</source>
-        <translation type="unfinished"></translation>
+        <translation>Itxi (&amp;C)</translation>
     </message>
     <message>
         <source>Verification Window: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Egiaztapen leihoa: %1</translation>
     </message>
     <message>
         <source>Top</source>
-        <translation type="unfinished"></translation>
+        <translation>Gora</translation>
     </message>
     <message>
         <source>Controller</source>
-        <translation type="unfinished"></translation>
+        <translation>Kontrolatzailea</translation>
     </message>
 </context>
 <context>
     <name>Graph2dVerificationWindowActionManager</name>
     <message>
         <source>&amp;Draw</source>
-        <translation type="unfinished"></translation>
+        <translation>Marraztu (&amp;D)</translation>
     </message>
     <message>
         <source>&amp;Data Source Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Datu iturriaren ezarpena (&amp;D)...</translation>
     </message>
     <message>
         <source>&amp;Legend</source>
-        <translation type="unfinished"></translation>
+        <translation>Kondaira (&amp;L)</translation>
     </message>
 </context>
 <context>
     <name>Graph2dVerificationWindowControlWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma</translation>
     </message>
     <message>
         <source>TextLabel</source>
-        <translation type="unfinished"></translation>
+        <translation>TestuLabel</translation>
     </message>
     <message>
         <source>Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Ezartzen...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation type="unfinished"></translation>
+        <translation>Esportatu (&amp;E)...</translation>
     </message>
 </context>
 <context>
     <name>Graph2dVerificationWindowDataModel</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Abisua</translation>
     </message>
     <message>
         <source>No calculation result exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ez dago kalkulu emaitzarik.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Errorea</translation>
     </message>
     <message>
         <source>Graph window setup fail. Calculation result is not loaded properly.</source>
-        <translation type="unfinished"></translation>
+        <translation>Grafikoaren leihoaren konfigurazioak huts egin du. Kalkuluaren emaitza ez da behar bezala kargatu.</translation>
     </message>
     <message>
         <source>Export CSV file</source>
-        <translation type="unfinished"></translation>
+        <translation>Esportatu CSV fitxategia</translation>
     </message>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>CSV fitxategia (*.csv)</translation>
     </message>
     <message>
         <source>%1 cound not be opened.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 ezin da ireki.</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informazioa</translation>
     </message>
     <message>
         <source>Data successfully exported to %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Datuak behar bezala esportatu dira %1.</translation>
     </message>
     <message>
         <source>Root Mean Squared Error: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Erroko batez besteko karratuaren errorea: %1</translation>
     </message>
     <message>
         <source>Measured Values (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Balio neurtuak (%1)</translation>
     </message>
     <message>
         <source>Calculation Result (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Kalkuluaren emaitza (%1)</translation>
     </message>
     <message>
         <source>Stream-wise Distance</source>
-        <translation type="unfinished"></translation>
+        <translation>Erreka bidezko Distantzia</translation>
     </message>
     <message>
         <source>Values</source>
-        <translation type="unfinished"></translation>
+        <translation>Balioak</translation>
     </message>
     <message>
         <source>Residual Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Hondar akatsa</translation>
     </message>
     <message>
         <source>Measured Value (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Neurtutako balioa (%1)</translation>
     </message>
 </context>
 <context>
     <name>Graph2dVerificationWindowObjectBrowser</name>
     <message>
         <source>Object Browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Objektu arakatzailea</translation>
     </message>
 </context>
 <context>
     <name>Graph2dVerificationWindowTopWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma</translation>
     </message>
     <message>
         <source>Chart Type:</source>
-        <translation type="unfinished"></translation>
+        <translation>Diagrama mota:</translation>
     </message>
     <message>
         <source>Stream-wise Distance vs. Measured Values and Calculation Result</source>
-        <translation type="unfinished"></translation>
+        <translation>Korrontearen araberako distantzia vs. Neurtutako balioak eta kalkuluaren emaitza</translation>
     </message>
     <message>
         <source>Stream-wise Distance vs. Residual Errors</source>
-        <translation type="unfinished"></translation>
+        <translation>Korronte bidezko distantzia eta hondar akatsak</translation>
     </message>
     <message>
         <source>Measured Values vs. Calculation Result</source>
-        <translation type="unfinished"></translation>
+        <translation>Balio neurtuak vs kalkuluaren emaitza</translation>
     </message>
     <message>
         <source>Measured Values vs. Residual Errors</source>
-        <translation type="unfinished"></translation>
+        <translation>Balio neurtuak eta hondar-akatsak</translation>
     </message>
 </context>
 </TS>

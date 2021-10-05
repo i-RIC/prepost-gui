@@ -1,838 +1,836 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="gl_ES">
 <context>
     <name>Graph2dHybridSettingDialog</name>
     <message>
         <source>Axis Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Axuste do eixo</translation>
     </message>
     <message>
         <source>X Axis</source>
-        <translation type="unfinished"></translation>
+        <translation>Eixo X.</translation>
     </message>
     <message>
         <source>Unit</source>
-        <translation type="unfinished"></translation>
+        <translation>Unidade</translation>
     </message>
     <message>
         <source>Time</source>
-        <translation type="unfinished"></translation>
+        <translation>Tempo</translation>
     </message>
     <message>
         <source>Count</source>
-        <translation type="unfinished"></translation>
+        <translation>Contar</translation>
     </message>
     <message>
         <source>Distance</source>
-        <translation type="unfinished"></translation>
+        <translation>Distancia</translation>
     </message>
     <message>
         <source>Grid index</source>
-        <translation type="unfinished"></translation>
+        <translation>Índice de cuadrícula</translation>
     </message>
     <message>
         <source>Value Range</source>
-        <translation type="unfinished"></translation>
+        <translation>Rango de valores</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation>Automático</translation>
     </message>
     <message>
         <source>Max:</source>
-        <translation type="unfinished"></translation>
+        <translation>Máx.:</translation>
     </message>
     <message>
         <source>Min:</source>
-        <translation type="unfinished"></translation>
+        <translation>Min:</translation>
     </message>
     <message>
         <source>Logarithmic axis</source>
-        <translation type="unfinished"></translation>
+        <translation>Eixo logarítmico</translation>
     </message>
     <message>
         <source>Label: </source>
-        <translation type="unfinished"></translation>
+        <translation>Etiqueta:</translation>
     </message>
     <message>
         <source>Reverse Direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Dirección inversa</translation>
     </message>
     <message>
         <source>General</source>
-        <translation type="unfinished"></translation>
+        <translation>Xerais</translation>
     </message>
     <message>
         <source>Title: </source>
-        <translation type="unfinished"></translation>
+        <translation>Título:</translation>
     </message>
     <message>
         <source>Add Grid Indices etc. to Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Engade índices de grade etc. ao título</translation>
     </message>
     <message>
         <source>Y Axis</source>
-        <translation type="unfinished"></translation>
+        <translation>Eixo Y</translation>
     </message>
     <message>
         <source>Left</source>
-        <translation type="unfinished"></translation>
+        <translation>Á esquerda</translation>
     </message>
     <message>
         <source>Right</source>
-        <translation type="unfinished"></translation>
+        <translation>Certo</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Aviso</translation>
     </message>
     <message>
         <source>X-axes range is invalid.</source>
-        <translation type="unfinished"></translation>
+        <translation>O rango de eixos X non é válido.</translation>
     </message>
     <message>
         <source>Left Y-axes range is invalid.</source>
-        <translation type="unfinished"></translation>
+        <translation>O intervalo de eixos Y esquerdo non é válido.</translation>
     </message>
     <message>
         <source>Right Y-axes range is invalid.</source>
-        <translation type="unfinished"></translation>
+        <translation>O intervalo de eixos Y dereito non é válido.</translation>
     </message>
 </context>
 <context>
     <name>Graph2dHybridWindow</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma</translation>
     </message>
     <message>
         <source>I:</source>
-        <translation type="unfinished"></translation>
+        <translation>Eu:</translation>
     </message>
     <message>
         <source>J:</source>
-        <translation type="unfinished"></translation>
+        <translation>J:</translation>
     </message>
     <message>
         <source>K:</source>
-        <translation type="unfinished"></translation>
+        <translation>K:</translation>
     </message>
     <message>
         <source>Select &amp;Data Source</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccione Fonte de datos (&amp;D)</translation>
     </message>
     <message>
         <source>&amp;Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;Close</source>
-        <translation type="unfinished"></translation>
+        <translation>Pechar (&amp;C)</translation>
     </message>
     <message>
         <source>Graph Window: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Xanela gráfica: %1</translation>
     </message>
     <message>
         <source>Controller</source>
-        <translation type="unfinished"></translation>
+        <translation>Controlador</translation>
     </message>
     <message>
         <source>Time</source>
-        <translation type="unfinished"></translation>
+        <translation>Tempo</translation>
     </message>
     <message>
         <source>I</source>
-        <translation type="unfinished"></translation>
+        <translation>Eu</translation>
     </message>
     <message>
         <source>J</source>
-        <translation type="unfinished"></translation>
+        <translation>J</translation>
     </message>
     <message>
         <source>K</source>
-        <translation type="unfinished"></translation>
+        <translation>K</translation>
     </message>
     <message>
         <source>Polyline</source>
-        <translation type="unfinished"></translation>
+        <translation>Polilínea</translation>
     </message>
     <message>
         <source>Count</source>
-        <translation type="unfinished"></translation>
+        <translation>Contar</translation>
     </message>
     <message>
         <source>Distance</source>
-        <translation type="unfinished"></translation>
+        <translation>Distancia</translation>
     </message>
     <message>
         <source>Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Liñas</translation>
     </message>
 </context>
 <context>
     <name>Graph2dHybridWindowActionManager</name>
     <message>
         <source>&amp;Draw</source>
-        <translation type="unfinished"></translation>
+        <translation>Debuxar (&amp;D)</translation>
     </message>
     <message>
         <source>&amp;Data Source Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración da fonte de datos (&amp;D)...</translation>
     </message>
     <message>
         <source>&amp;Axis Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Axuste do eixo (&amp;A)...</translation>
     </message>
     <message>
         <source>D&amp;raw Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Debuxar a configuración (&amp;R)...</translation>
     </message>
     <message>
         <source>&amp;Marker Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración de marcador (&amp;M)...</translation>
     </message>
     <message>
         <source>Add &amp;KP Markers</source>
-        <translation type="unfinished"></translation>
+        <translation>Engade marcadores KP (&amp;K)</translation>
     </message>
     <message>
         <source>&amp;Copy</source>
-        <translation type="unfinished"></translation>
+        <translation>Copiar (&amp;C)</translation>
     </message>
     <message>
         <source>&amp;Legend</source>
-        <translation type="unfinished"></translation>
+        <translation>Lenda (&amp;L)</translation>
     </message>
 </context>
 <context>
     <name>Graph2dHybridWindowContinuousExportDialog</name>
     <message>
         <source>Snapshot Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración de instantáneas</translation>
     </message>
     <message>
         <source>Folder &amp;&amp; Prefix</source>
-        <translation type="unfinished"></translation>
+        <translation>Cartafol e prefixo (&amp; )</translation>
     </message>
     <message>
         <source>Folder:</source>
-        <translation type="unfinished"></translation>
+        <translation>Cartafol:</translation>
     </message>
     <message>
         <source>Prefix:</source>
-        <translation type="unfinished"></translation>
+        <translation>Prefixo:</translation>
     </message>
     <message>
         <source>Region</source>
-        <translation type="unfinished"></translation>
+        <translation>Rexión</translation>
     </message>
     <message>
         <source>Current Only</source>
-        <translation type="unfinished"></translation>
+        <translation>Só actual</translation>
     </message>
     <message>
         <source>Full Region</source>
-        <translation type="unfinished"></translation>
+        <translation>Rexión completa</translation>
     </message>
     <message>
         <source>I Min:</source>
-        <translation type="unfinished"></translation>
+        <translation>Estou dentro:</translation>
     </message>
     <message>
         <source>I Max:</source>
-        <translation type="unfinished"></translation>
+        <translation>I Max:</translation>
     </message>
     <message>
         <source>J Min:</source>
-        <translation type="unfinished"></translation>
+        <translation>J Min:</translation>
     </message>
     <message>
         <source>J Max:</source>
-        <translation type="unfinished"></translation>
+        <translation>J Max:</translation>
     </message>
     <message>
         <source>K Min:</source>
-        <translation type="unfinished"></translation>
+        <translation>K min:</translation>
     </message>
     <message>
         <source>K Max:</source>
-        <translation type="unfinished"></translation>
+        <translation>K Max:</translation>
     </message>
     <message>
         <source>Index Min:</source>
-        <translation type="unfinished"></translation>
+        <translation>Índice mínimo:</translation>
     </message>
     <message>
         <source>Index Max:</source>
-        <translation type="unfinished"></translation>
+        <translation>Índice máximo:</translation>
     </message>
     <message>
         <source>Time</source>
-        <translation type="unfinished"></translation>
+        <translation>Tempo</translation>
     </message>
     <message>
         <source>All Timesteps</source>
-        <translation type="unfinished"></translation>
+        <translation>Todos os horarios</translation>
     </message>
     <message>
         <source>Start:</source>
-        <translation type="unfinished"></translation>
+        <translation>Inicio:</translation>
     </message>
     <message>
         <source>End:</source>
-        <translation type="unfinished"></translation>
+        <translation>Fin:</translation>
     </message>
     <message>
         <source>Skip rate :</source>
-        <translation type="unfinished"></translation>
+        <translation>Omitir taxa:</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Aviso</translation>
     </message>
     <message>
         <source>Folder %1 does not exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>Cartafol %1 non existe.</translation>
     </message>
     <message>
         <source>Please input prefix.</source>
-        <translation type="unfinished"></translation>
+        <translation>Introduza o prefixo.</translation>
     </message>
 </context>
 <context>
     <name>Graph2dHybridWindowControlWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma</translation>
     </message>
     <message>
         <source>I:</source>
-        <translation type="unfinished"></translation>
+        <translation>Eu:</translation>
     </message>
     <message>
         <source>J:</source>
-        <translation type="unfinished"></translation>
+        <translation>J:</translation>
     </message>
     <message>
         <source>K:</source>
-        <translation type="unfinished"></translation>
+        <translation>K:</translation>
     </message>
     <message>
         <source>Index:</source>
-        <translation type="unfinished"></translation>
+        <translation>Índice:</translation>
     </message>
     <message>
         <source>&amp;Data Source</source>
-        <translation type="unfinished"></translation>
+        <translation>Fonte de datos (&amp;D)</translation>
     </message>
     <message>
         <source>Axis &amp;Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Axuste do eixo (&amp;S)</translation>
     </message>
     <message>
         <source>Draw &amp;Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Debuxar a configuración (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;Marker Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración de marcador (&amp;M)</translation>
     </message>
     <message>
         <source>&amp;Copy</source>
-        <translation type="unfinished"></translation>
+        <translation>Copiar (&amp;C)</translation>
     </message>
     <message>
         <source>S&amp;napshot</source>
-        <translation type="unfinished"></translation>
+        <translation>Instantánea (&amp;N)</translation>
     </message>
     <message>
         <source>CSV &amp;Export</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportación CSV (&amp;E)</translation>
     </message>
 </context>
 <context>
     <name>Graph2dHybridWindowDataModel</name>
     <message>
         <source>Snapshot</source>
-        <translation type="unfinished"></translation>
+        <translation>Instantánea</translation>
     </message>
     <message>
         <source>Saving snapshots...</source>
-        <translation type="unfinished"></translation>
+        <translation>Gardando instantáneas...</translation>
     </message>
     <message>
         <source>CSV Export Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración de exportación CSV</translation>
     </message>
     <message>
         <source>CSV Export</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportación CSV</translation>
     </message>
     <message>
         <source>Saving csv files...</source>
-        <translation type="unfinished"></translation>
+        <translation>Gardando ficheiros csv...</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Erro</translation>
     </message>
     <message>
         <source>Saving snapshot image to %1 failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Gardando a imaxe instantánea en %1 fallou.</translation>
     </message>
     <message>
         <source>Export CSV file</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportar ficheiro CSV</translation>
     </message>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>Arquivo CSV (*.csv)</translation>
     </message>
     <message>
         <source>Saving %1 failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Aforrando %1 fallou.</translation>
     </message>
     <message>
         <source>CSV file successfully exported.</source>
-        <translation type="unfinished"></translation>
+        <translation>O ficheiro CSV exportouse correctamente.</translation>
     </message>
     <message>
         <source>I = %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Eu = %1</translation>
     </message>
     <message>
         <source>I = %1, J = %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Eu = %1, J = %2</translation>
     </message>
     <message>
         <source>I = %1, J = %2, K = %3</source>
-        <translation type="unfinished"></translation>
+        <translation>Eu = %1, J = %2, K = %3</translation>
     </message>
     <message>
         <source>Index = %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Índice = %1</translation>
     </message>
     <message>
         <source>Time = %1 sec</source>
-        <translation type="unfinished"></translation>
+        <translation>Tempo = %1 seg</translation>
     </message>
     <message>
         <source>Time = %1 sec, J = %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Tempo = %1 seg, J = %2</translation>
     </message>
     <message>
         <source>Time = %1 sec, J = %2, K = %3</source>
-        <translation type="unfinished"></translation>
+        <translation>Tempo = %1 seg, J = %2, K = %3</translation>
     </message>
     <message>
         <source>Time = %1 sec, I = %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Tempo = %1 seg, I = %2</translation>
     </message>
     <message>
         <source>Time = %1 sec, I = %2, K = %3</source>
-        <translation type="unfinished"></translation>
+        <translation>Tempo = %1 seg, I = %2, K = %3</translation>
     </message>
     <message>
         <source>Time = %1 sec, I = %2, J = %3</source>
-        <translation type="unfinished"></translation>
+        <translation>Tempo = %1 seg, I = %2, J = %3</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Aviso</translation>
     </message>
     <message>
         <source>No calculation result exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>Non existe ningún resultado de cálculo.</translation>
     </message>
     <message>
         <source>Graph window setup fail. Calculation result is not loaded properly.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fallou a configuración da xanela gráfica. O resultado do cálculo non se cargou correctamente.</translation>
     </message>
     <message>
-        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm &quot;Create grid from from cross-section data&quot;&lt;/li&gt;&lt;/ul&gt;</source>
-        <translation type="unfinished"></translation>
+        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm "Create grid from from cross-section data"&lt;/li&gt;&lt;/ul&gt;</source>
+        <translation>Esta función pódese empregar cando se cumpren as seguintes condicións: &lt;ul&gt; &lt;li&gt; Debúxase o gráfico do resultado da cuadrícula estruturada en dúas dimensións. &lt;/li&gt; &lt;li&gt; O eixo X é a dirección I na cuadrícula. &lt;/ Li &gt; &lt;li&gt; A cuadrícula créase usando o algoritmo "Crear cuadrícula a partir de datos de sección transversal" &lt;/li&gt; &lt;/ul&gt;</translation>
     </message>
 </context>
 <context>
     <name>Graph2dHybridWindowDataSourceDialog</name>
     <message>
         <source>Data Source Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración da fonte de datos</translation>
     </message>
     <message>
         <source>X Axis:</source>
-        <translation type="unfinished"></translation>
+        <translation>Eixo X:</translation>
     </message>
     <message>
         <source>Polyline:</source>
-        <translation type="unfinished"></translation>
+        <translation>Polilínea:</translation>
     </message>
     <message>
         <source>Calculation Result</source>
-        <translation type="unfinished"></translation>
+        <translation>Resultado do cálculo</translation>
     </message>
     <message>
         <source>Point Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Datos puntuais</translation>
     </message>
     <message>
         <source>One dimensional Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Datos unidimensionais</translation>
     </message>
     <message>
         <source>Grid Location:</source>
-        <translation type="unfinished"></translation>
+        <translation>Localización da rede:</translation>
     </message>
     <message>
         <source>Two dimensional Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Datos bidimensionais</translation>
     </message>
     <message>
         <source>Three dimensional Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Datos tridimensionais</translation>
     </message>
     <message>
         <source>Add &gt;&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Engadir &gt;&gt;</translation>
     </message>
     <message>
         <source>&lt;&lt; Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;&lt; Eliminar</translation>
     </message>
     <message>
         <source>Selected Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Datos seleccionados</translation>
     </message>
     <message>
         <source>&amp;Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración (&amp;S)</translation>
     </message>
     <message>
         <source>External</source>
-        <translation type="unfinished"></translation>
+        <translation>Externa</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation type="unfinished"></translation>
+        <translation>Importar (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Delete...</source>
-        <translation type="unfinished"></translation>
+        <translation>Eliminar (&amp;D)...</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Aviso</translation>
     </message>
     <message>
         <source>Current setting will be discarded, are you sure?</source>
-        <translation type="unfinished"></translation>
+        <translation>Seguro que se descartará a configuración actual?</translation>
     </message>
     <message>
         <source>No data is selected.</source>
-        <translation type="unfinished"></translation>
+        <translation>Non hai datos seleccionados.</translation>
     </message>
     <message>
         <source>Import CSV file</source>
-        <translation type="unfinished"></translation>
+        <translation>Importar ficheiro CSV</translation>
     </message>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>Arquivo CSV (*.csv)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Erro</translation>
     </message>
     <message>
-        <source>The title of the first column has to be &quot;X&quot;</source>
-        <translation type="unfinished"></translation>
+        <source>The title of the first column has to be "X"</source>
+        <translation>O título da primeira columna ten que ser "X"</translation>
     </message>
     <message>
         <source>The number of data of %1 and %2 mismatch. Data %1 is skipped.</source>
-        <translation type="unfinished"></translation>
+        <translation>O número de datos de %1 e %2 desaxuste. Datos %1 omítese.</translation>
     </message>
     <message>
         <source>Polyline Group:</source>
-        <translation type="unfinished"></translation>
+        <translation>Grupo de polilíneas:</translation>
     </message>
 </context>
 <context>
     <name>Graph2dHybridWindowDrawSettingDialog</name>
     <message>
         <source>Draw Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Debuxar a configuración</translation>
     </message>
     <message>
         <source>Calculation Result</source>
-        <translation type="unfinished"></translation>
+        <translation>Resultado do cálculo</translation>
     </message>
     <message>
         <source>Copy</source>
-        <translation type="unfinished"></translation>
+        <translation>Copiar</translation>
     </message>
     <message>
         <source>External</source>
-        <translation type="unfinished"></translation>
+        <translation>Externa</translation>
     </message>
 </context>
 <context>
     <name>Graph2dHybridWindowImportDataDataItem</name>
     <message>
         <source>%1 - %2</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 - %2</translation>
     </message>
 </context>
 <context>
     <name>Graph2dHybridWindowImportDataGroupDataItem</name>
     <message>
         <source>External Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Datos externos</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Erro</translation>
     </message>
     <message>
-        <source>The title of the first column has to be &quot;X&quot;</source>
-        <translation type="unfinished"></translation>
+        <source>The title of the first column has to be "X"</source>
+        <translation>O título da primeira columna ten que ser "X"</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Aviso</translation>
     </message>
     <message>
         <source>The number of data of %1 and %2 mismatch. Data %1 is skipped.</source>
-        <translation type="unfinished"></translation>
+        <translation>O número de datos de %1 e %2 desaxuste. Datos %1 omítese.</translation>
     </message>
 </context>
 <context>
     <name>Graph2dHybridWindowLineSettingDialog</name>
     <message>
         <source>Data Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración de datos</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Cor:</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ancho:</translation>
     </message>
     <message>
         <source>Y Axis</source>
-        <translation type="unfinished"></translation>
+        <translation>Eixo Y</translation>
     </message>
     <message>
         <source>Left</source>
-        <translation type="unfinished"></translation>
+        <translation>Á esquerda</translation>
     </message>
     <message>
         <source>Right</source>
-        <translation type="unfinished"></translation>
+        <translation>Certo</translation>
     </message>
 </context>
 <context>
     <name>Graph2dHybridWindowObjectBrowser</name>
     <message>
         <source>Object Browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Explorador de obxectos</translation>
     </message>
 </context>
 <context>
     <name>Graph2dHybridWindowResultCopyDataItem</name>
     <message>
         <source>%1</source>
-        <translation type="unfinished"></translation>
+        <translation>%1</translation>
     </message>
     <message>
         <source>%1 (I = %2)</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 (I = %2 )</translation>
     </message>
     <message>
         <source>%1 (I = %2, J = %3)</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 (I = %2, J = %3 )</translation>
     </message>
     <message>
         <source>%1 (I = %2, J = %3, K = %4)</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 (I = %2, J = %3, K = %4 )</translation>
     </message>
     <message>
         <source>%1 (Index = %2)</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 (Índice = %2 )</translation>
     </message>
     <message>
         <source>%1 (t = %2)</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 (t = %2 )</translation>
     </message>
     <message>
         <source>%1 (t = %2, J = %3)</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 (t = %2, J = %3 )</translation>
     </message>
     <message>
         <source>%1 (t = %2, J = %3, K = %4)</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 (t = %2, J = %3, K = %4 )</translation>
     </message>
     <message>
         <source>%1 (t = %2, I = %3)</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 (t = %2, Eu = %3 )</translation>
     </message>
     <message>
         <source>%1 (t = %2, I = %3, K = %4)</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 (t = %2, Eu = %3, K = %4 )</translation>
     </message>
     <message>
         <source>%1 (t = %2, I = %3, J = %4)</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 (t = %2, Eu = %3, J = %4 )</translation>
     </message>
 </context>
 <context>
     <name>Graph2dHybridWindowResultCopyGroupDataItem</name>
     <message>
         <source>Calcuation Results Copys</source>
-        <translation type="unfinished"></translation>
+        <translation>Resultados do cálculo Copias</translation>
     </message>
 </context>
 <context>
     <name>Graph2dHybridWindowResultGroupDataItem</name>
     <message>
         <source>Calcuation Results</source>
-        <translation type="unfinished"></translation>
+        <translation>Resultados do cálculo</translation>
     </message>
 </context>
 <context>
     <name>Graph2dHybridWindowRootDataItem</name>
     <message>
         <source>x</source>
-        <translation type="unfinished"></translation>
+        <translation>x</translation>
     </message>
 </context>
 <context>
     <name>Graph2dHybridWindowSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma</translation>
     </message>
     <message>
         <source>Label:</source>
-        <translation type="unfinished"></translation>
+        <translation>Etiqueta:</translation>
     </message>
     <message>
         <source>Y Axis</source>
-        <translation type="unfinished"></translation>
+        <translation>Eixo Y</translation>
     </message>
     <message>
         <source>Left</source>
-        <translation type="unfinished"></translation>
+        <translation>Á esquerda</translation>
     </message>
     <message>
         <source>Right</source>
-        <translation type="unfinished"></translation>
+        <translation>Certo</translation>
     </message>
     <message>
         <source>Display Style</source>
-        <translation type="unfinished"></translation>
+        <translation>Estilo de visualización</translation>
     </message>
     <message>
         <source>Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Liña</translation>
     </message>
     <message>
         <source>Symbol</source>
-        <translation type="unfinished"></translation>
+        <translation>Símbolo</translation>
     </message>
     <message>
         <source>Line Style:</source>
-        <translation type="unfinished"></translation>
+        <translation>Estilo de liña:</translation>
     </message>
     <message>
         <source>Solid Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Liña continua</translation>
     </message>
     <message>
         <source>Dashed Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Liña discontinua</translation>
     </message>
     <message>
         <source>Dotted Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Liña de puntos</translation>
     </message>
     <message>
         <source>Dots and Dashes</source>
-        <translation type="unfinished"></translation>
+        <translation>Puntos e guións</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ancho de liña:</translation>
     </message>
     <message>
         <source>Bar Chart:</source>
-        <translation type="unfinished"></translation>
+        <translation>Gráfico de barras:</translation>
     </message>
     <message>
         <source>Show as Bar Chart</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostrar como gráfico de barras</translation>
     </message>
     <message>
         <source>Symbol Style:</source>
-        <translation type="unfinished"></translation>
+        <translation>Estilo de símbolo:</translation>
     </message>
     <message>
         <source>Circle</source>
-        <translation type="unfinished"></translation>
+        <translation>Círculo</translation>
     </message>
     <message>
         <source>Rectangle</source>
-        <translation type="unfinished"></translation>
+        <translation>Rectángulo</translation>
     </message>
     <message>
         <source>Diamond</source>
-        <translation type="unfinished"></translation>
+        <translation>Diamante</translation>
     </message>
     <message>
         <source>Cross</source>
-        <translation type="unfinished"></translation>
+        <translation>Cruz</translation>
     </message>
     <message>
         <source>XCross</source>
-        <translation type="unfinished"></translation>
+        <translation>XCross</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Cor:</translation>
     </message>
     <message>
         <source>ID:</source>
-        <translation type="unfinished"></translation>
+        <translation>ID:</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Eliminar (&amp;D)</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
         <source>GridLocationNull</source>
-        <translation type="unfinished"></translation>
+        <translation>GridLocationNull</translation>
     </message>
     <message>
         <source>Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Vértice</translation>
     </message>
     <message>
         <source>CellCenter</source>
-        <translation type="unfinished"></translation>
+        <translation>CellCenter</translation>
     </message>
     <message>
         <source>EdgeI</source>
-        <translation type="unfinished"></translation>
+        <translation>EdgeI</translation>
     </message>
     <message>
         <source>EdgeJ</source>
-        <translation type="unfinished"></translation>
+        <translation>EdgeJ</translation>
     </message>
 </context>
 </TS>

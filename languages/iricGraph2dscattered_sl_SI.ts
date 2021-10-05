@@ -1,317 +1,315 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="sl_SI">
 <context>
     <name>Graph2dScatteredAxisSettingDialog</name>
     <message>
         <source>Axis Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastavitev osi</translation>
     </message>
     <message>
         <source>X Axis</source>
-        <translation type="unfinished"></translation>
+        <translation>Os X</translation>
     </message>
     <message>
         <source>Value Range</source>
-        <translation type="unfinished"></translation>
+        <translation>Razpon vrednosti</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation>Samodejno</translation>
     </message>
     <message>
         <source>Max:</source>
-        <translation type="unfinished"></translation>
+        <translation>Max:</translation>
     </message>
     <message>
         <source>Min:</source>
-        <translation type="unfinished"></translation>
+        <translation>Min:</translation>
     </message>
     <message>
         <source>Logarithmic axis</source>
-        <translation type="unfinished"></translation>
+        <translation>Logaritemska os</translation>
     </message>
     <message>
         <source>Label: </source>
-        <translation type="unfinished"></translation>
+        <translation>Oznaka:</translation>
     </message>
     <message>
         <source>Reverse Direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Obratna smer</translation>
     </message>
     <message>
         <source>General</source>
-        <translation type="unfinished"></translation>
+        <translation>Splošno</translation>
     </message>
     <message>
         <source>Title: </source>
-        <translation type="unfinished"></translation>
+        <translation>Naslov:</translation>
     </message>
     <message>
         <source>Add Time to Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Dodajte čas naslovu</translation>
     </message>
     <message>
         <source>Y Axis</source>
-        <translation type="unfinished"></translation>
+        <translation>Os Y</translation>
     </message>
     <message>
         <source>Left</source>
-        <translation type="unfinished"></translation>
+        <translation>Levo</translation>
     </message>
     <message>
         <source>Right</source>
-        <translation type="unfinished"></translation>
+        <translation>Prav</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Opozorilo</translation>
     </message>
     <message>
         <source>X-axes range is invalid.</source>
-        <translation type="unfinished"></translation>
+        <translation>Razpon osi X ni veljaven.</translation>
     </message>
     <message>
         <source>Left Y-axes range is invalid.</source>
-        <translation type="unfinished"></translation>
+        <translation>Obseg leve osi Y ni veljaven.</translation>
     </message>
     <message>
         <source>Right Y-axes range is invalid.</source>
-        <translation type="unfinished"></translation>
+        <translation>Razpon desnih osi Y ni veljaven.</translation>
     </message>
 </context>
 <context>
     <name>Graph2dScatteredWindow</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Oblika</translation>
     </message>
     <message>
         <source>I:</source>
-        <translation type="unfinished"></translation>
+        <translation>JAZ:</translation>
     </message>
     <message>
         <source>J:</source>
-        <translation type="unfinished"></translation>
+        <translation>J:</translation>
     </message>
     <message>
         <source>K:</source>
-        <translation type="unfinished"></translation>
+        <translation>K:</translation>
     </message>
     <message>
         <source>Select &amp;Data Source</source>
-        <translation type="unfinished"></translation>
+        <translation>Izberite vir podatkov (&amp;D)</translation>
     </message>
     <message>
         <source>&amp;Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastavitev (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;Close</source>
-        <translation type="unfinished"></translation>
+        <translation>Zapri (&amp;C)</translation>
     </message>
     <message>
         <source>Scattered Chart Window: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Razpršeno okno grafikona: %1</translation>
     </message>
     <message>
         <source>Controller</source>
-        <translation type="unfinished"></translation>
+        <translation>Krmilnik</translation>
     </message>
 </context>
 <context>
     <name>Graph2dScatteredWindowActionManager</name>
     <message>
         <source>&amp;Draw</source>
-        <translation type="unfinished"></translation>
+        <translation>Žrebanje (&amp;D)</translation>
     </message>
     <message>
         <source>&amp;Data Source Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastavitev vira podatkov (&amp;D)...</translation>
     </message>
     <message>
         <source>&amp;Axis Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastavitev osi (&amp;A)...</translation>
     </message>
     <message>
         <source>D&amp;raw Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastavitev risbe (&amp;R)...</translation>
     </message>
     <message>
         <source>&amp;Legend</source>
-        <translation type="unfinished"></translation>
+        <translation>Legenda (&amp;L)</translation>
     </message>
 </context>
 <context>
     <name>Graph2dScatteredWindowControlWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Oblika</translation>
     </message>
     <message>
         <source>&amp;Data Source</source>
-        <translation type="unfinished"></translation>
+        <translation>Vir podatkov (&amp;D)</translation>
     </message>
     <message>
         <source>Axis &amp;Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastavitev osi (&amp;S)</translation>
     </message>
     <message>
         <source>Draw &amp;Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastavitev risbe (&amp;S)</translation>
     </message>
 </context>
 <context>
     <name>Graph2dScatteredWindowDataModel</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Napaka</translation>
     </message>
     <message>
         <source>Saving snapshot image to %1 failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Shranjevanje posnetka v %1 ni uspelo.</translation>
     </message>
     <message>
         <source>Time = %1 sec</source>
-        <translation type="unfinished"></translation>
+        <translation>Čas = %1 sek</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Opozorilo</translation>
     </message>
     <message>
         <source>No calculation result exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>Rezultat izračuna ni.</translation>
     </message>
     <message>
         <source>Graph window setup fail. Calculation result is not loaded properly.</source>
-        <translation type="unfinished"></translation>
+        <translation>Namestitev okna grafikona ni uspela. Rezultat izračuna ni pravilno naložen.</translation>
     </message>
 </context>
 <context>
     <name>Graph2dScatteredWindowDataSourceDialog</name>
     <message>
         <source>Data Source Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastavitev vira podatkov</translation>
     </message>
     <message>
         <source>X Axis:</source>
-        <translation type="unfinished"></translation>
+        <translation>Os X:</translation>
     </message>
     <message>
         <source>Y Axis:</source>
-        <translation type="unfinished"></translation>
+        <translation>Os Y:</translation>
     </message>
     <message>
         <source>Position X</source>
-        <translation type="unfinished"></translation>
+        <translation>Položaj X</translation>
     </message>
     <message>
         <source>Position Y</source>
-        <translation type="unfinished"></translation>
+        <translation>Položaj Y</translation>
     </message>
     <message>
         <source>Position Z</source>
-        <translation type="unfinished"></translation>
+        <translation>Položaj Z</translation>
     </message>
 </context>
 <context>
     <name>Graph2dScatteredWindowDrawSettingDialog</name>
     <message>
         <source>Draw Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastavitev risbe</translation>
     </message>
 </context>
 <context>
     <name>Graph2dScatteredWindowObjectBrowser</name>
     <message>
         <source>Object Browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Brskalnik objektov</translation>
     </message>
 </context>
 <context>
     <name>Graph2dScatteredWindowResultDataItem</name>
     <message>
         <source>Position X</source>
-        <translation type="unfinished"></translation>
+        <translation>Položaj X</translation>
     </message>
     <message>
         <source>Position Y</source>
-        <translation type="unfinished"></translation>
+        <translation>Položaj Y</translation>
     </message>
     <message>
         <source>Position Z</source>
-        <translation type="unfinished"></translation>
+        <translation>Položaj Z</translation>
     </message>
     <message>
         <source>Stream-wise Distance</source>
-        <translation type="unfinished"></translation>
+        <translation>Razdalja po toku</translation>
     </message>
 </context>
 <context>
     <name>Graph2dScatteredWindowResultGroupDataItem</name>
     <message>
         <source>Calcuation Results</source>
-        <translation type="unfinished"></translation>
+        <translation>Rezultati izračuna</translation>
     </message>
 </context>
 <context>
     <name>Graph2dScatteredWindowSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Oblika</translation>
     </message>
     <message>
         <source>Label:</source>
-        <translation type="unfinished"></translation>
+        <translation>Oznaka:</translation>
     </message>
     <message>
         <source>Y Axis:</source>
-        <translation type="unfinished"></translation>
+        <translation>Os Y:</translation>
     </message>
     <message>
         <source>Left</source>
-        <translation type="unfinished"></translation>
+        <translation>Levo</translation>
     </message>
     <message>
         <source>Right</source>
-        <translation type="unfinished"></translation>
+        <translation>Prav</translation>
     </message>
     <message>
         <source>Symbol Style:</source>
-        <translation type="unfinished"></translation>
+        <translation>Slog simbola:</translation>
     </message>
     <message>
         <source>Circle</source>
-        <translation type="unfinished"></translation>
+        <translation>Krog</translation>
     </message>
     <message>
         <source>Rectangle</source>
-        <translation type="unfinished"></translation>
+        <translation>Pravokotnik</translation>
     </message>
     <message>
         <source>Diamond</source>
-        <translation type="unfinished"></translation>
+        <translation>Diamant</translation>
     </message>
     <message>
         <source>Triangle</source>
-        <translation type="unfinished"></translation>
+        <translation>Trikotnik</translation>
     </message>
     <message>
         <source>Cross</source>
-        <translation type="unfinished"></translation>
+        <translation>Križ</translation>
     </message>
     <message>
         <source>XCross</source>
-        <translation type="unfinished"></translation>
+        <translation>XCross</translation>
     </message>
     <message>
         <source>Symbol Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Velikost simbola:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Barva:</translation>
     </message>
 </context>
 </TS>

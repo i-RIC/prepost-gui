@@ -1,157 +1,155 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="nl_NL">
 <context>
     <name>DistanceMeasureDataItem</name>
     <message>
         <source>Property</source>
-        <translation type="unfinished"></translation>
+        <translation>Eigendom</translation>
     </message>
     <message>
         <source>Redefine</source>
-        <translation type="unfinished"></translation>
+        <translation>Herdefiniëren</translation>
     </message>
     <message>
         <source>Define Distance Measure</source>
-        <translation type="unfinished"></translation>
+        <translation>Definieer afstandsmaat</translation>
     </message>
     <message>
         <source>Move Distance Measure Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Verplaats afstand Meetpunt</translation>
     </message>
     <message>
         <source>Redefine Distance Measure</source>
-        <translation type="unfinished"></translation>
+        <translation>Herdefinieer afstandsmaat</translation>
     </message>
     <message>
         <source>Edit Distance Measure Property</source>
-        <translation type="unfinished"></translation>
+        <translation>Eigenschap afstandsmeting bewerken</translation>
     </message>
     <message>
         <source>Translate Distance Measure</source>
-        <translation type="unfinished"></translation>
+        <translation>Vertalen Afstandsmaat</translation>
     </message>
 </context>
 <context>
     <name>DistanceMeasureGroupDataItem</name>
     <message>
         <source>&amp;Add Measure...</source>
-        <translation type="unfinished"></translation>
+        <translation>Maatregel toevoegen (&amp;A)...</translation>
     </message>
     <message>
         <source>Distance Measures</source>
-        <translation type="unfinished"></translation>
+        <translation>Afstand Maatregelen:</translation>
     </message>
     <message>
         <source>Measure%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Meeteenheid %1</translation>
     </message>
     <message>
         <source>Delete &amp;Selected...</source>
-        <translation type="unfinished"></translation>
+        <translation>Verwijder geselecteerde (&amp;S)...</translation>
     </message>
     <message>
         <source>Delete &amp;All...</source>
-        <translation type="unfinished"></translation>
+        <translation>Verwijder alles (&amp;A)...</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informatie</translation>
     </message>
     <message>
         <source>There is no distance measure.</source>
-        <translation type="unfinished"></translation>
+        <translation>Er is geen afstandsmaatstaf.</translation>
     </message>
     <message>
         <source>Delete selected distance measures</source>
-        <translation type="unfinished"></translation>
+        <translation>Geselecteerde afstandsmaten verwijderen</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Waarschuwing</translation>
     </message>
     <message>
         <source>Are you sure you want to delete all distance measures?</source>
-        <translation type="unfinished"></translation>
+        <translation>Weet je zeker dat je alle afstandsmetingen wilt verwijderen?</translation>
     </message>
 </context>
 <context>
     <name>DistanceMeasurePropertyDialog</name>
     <message>
         <source>Distance Measure Property</source>
-        <translation type="unfinished"></translation>
+        <translation>Afstand Maatregel Eigenschap</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Naam:</translation>
     </message>
     <message>
         <source>Start Point:</source>
-        <translation type="unfinished"></translation>
+        <translation>Startpunt:</translation>
     </message>
     <message>
         <source>, </source>
-        <translation type="unfinished"></translation>
+        <translation>,</translation>
     </message>
     <message>
         <source>End Point:</source>
-        <translation type="unfinished"></translation>
+        <translation>Eindpunt:</translation>
     </message>
     <message>
         <source>Label</source>
-        <translation type="unfinished"></translation>
+        <translation>Label</translation>
     </message>
     <message>
         <source>Show Label</source>
-        <translation type="unfinished"></translation>
+        <translation>Toon label</translation>
     </message>
     <message>
         <source>Content</source>
-        <translation type="unfinished"></translation>
+        <translation>Inhoud</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation>Auto</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation type="unfinished"></translation>
+        <translation>Aangepast</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished"></translation>
+        <translation>Positie</translation>
     </message>
     <message>
         <source>Center-Top</source>
-        <translation type="unfinished"></translation>
+        <translation>Center-Top</translation>
     </message>
     <message>
         <source>Middle-Left</source>
-        <translation type="unfinished"></translation>
+        <translation>Midden-Links</translation>
     </message>
     <message>
         <source>Middle-Right</source>
-        <translation type="unfinished"></translation>
+        <translation>Midden-Rechts</translation>
     </message>
     <message>
         <source>Center-Bottom</source>
-        <translation type="unfinished"></translation>
+        <translation>Midden-onder</translation>
     </message>
     <message>
         <source>Font Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Lettertype-instelling</translation>
     </message>
     <message>
         <source>Show End Markers</source>
-        <translation type="unfinished"></translation>
+        <translation>Eindmarkeringen tonen</translation>
     </message>
     <message>
         <source>Marker Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Markeringsgrootte:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Kleur:</translation>
     </message>
 </context>
 </TS>

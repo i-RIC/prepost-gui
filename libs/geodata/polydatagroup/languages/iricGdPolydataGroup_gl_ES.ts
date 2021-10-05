@@ -1,260 +1,258 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="gl_ES">
 <context>
     <name>GeoDataPolyDataGroup</name>
     <message>
         <source>Add New %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Engadir novo %1</translation>
     </message>
     <message>
         <source>%1 Group Attribute Browser</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 Explorador de atributos de grupo</translation>
     </message>
     <message>
         <source>Edit name</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar nome</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nome:</translation>
     </message>
     <message>
         <source>Edit %1 value</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar %1 valor</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Aviso</translation>
     </message>
     <message>
         <source>Are you sure you want to delete selected %1s?</source>
-        <translation type="unfinished"></translation>
+        <translation>Seguro que queres eliminar o seleccionado %1 s?</translation>
     </message>
     <message>
-        <source>There is no other data to merge in &quot;%1&quot; group.</source>
-        <translation type="unfinished"></translation>
+        <source>There is no other data to merge in "%1" group.</source>
+        <translation>Non hai outros datos nos que combinar "%1"grupo.</translation>
     </message>
     <message>
         <source>Edit name and value of polydatas</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar nome e valor dos polidatos</translation>
     </message>
     <message>
         <source>&amp;Add New Polygon...</source>
-        <translation type="unfinished"></translation>
+        <translation>Engadir novo polígono (&amp;A)...</translation>
     </message>
     <message>
         <source>Edit &amp;Name...</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar nome (&amp;N)...</translation>
     </message>
     <message>
         <source>Edit &amp;Name and Value...</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar nome e valor (&amp;N)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Eliminar (&amp;D)</translation>
     </message>
     <message>
         <source>&amp;Merge...</source>
-        <translation type="unfinished"></translation>
+        <translation>Combinar (&amp;M)...</translation>
     </message>
     <message>
         <source>Color &amp;Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración da cor (&amp;S)...</translation>
     </message>
     <message>
         <source>Show Attribute &amp;Browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostrar navegador de atributos (&amp;B)</translation>
     </message>
     <message>
         <source>Move to top</source>
-        <translation type="unfinished"></translation>
+        <translation>Mover arriba</translation>
     </message>
     <message>
         <source>Move to bottom</source>
-        <translation type="unfinished"></translation>
+        <translation>Mover cara abaixo</translation>
     </message>
     <message>
         <source>Move up</source>
-        <translation type="unfinished"></translation>
+        <translation>Móvete</translation>
     </message>
     <message>
         <source>Move down</source>
-        <translation type="unfinished"></translation>
+        <translation>Baixar</translation>
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Edición de configuración de cor</translation>
     </message>
     <message>
         <source>Sort data</source>
-        <translation type="unfinished"></translation>
+        <translation>Ordenar datos</translation>
     </message>
     <message>
         <source>Select Geographic Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccione Datos xeográficos</translation>
     </message>
     <message>
         <source>Please select which geographic data to copy this %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Selecciona que datos xeográficos copiarás %1.</translation>
     </message>
     <message>
         <source>Copy...</source>
-        <translation type="unfinished"></translation>
+        <translation>Copiar...</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyDataGroupAttributeBrowser</name>
     <message>
         <source>PolyData Group Attribute Browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Explorador de atributos do grupo PolyData</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nome</translation>
     </message>
     <message>
         <source>Show</source>
-        <translation type="unfinished"></translation>
+        <translation>Amosar</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation type="unfinished"></translation>
+        <translation>Valor</translation>
     </message>
     <message>
         <source>Sort toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Barra de ferramentas Ordenar</translation>
     </message>
     <message>
         <source>%1 Group Attribute Browser</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 Explorador de atributos de grupo</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyDataGroupAttributeBrowser::TableItemDelegate</name>
     <message>
         <source>Show</source>
-        <translation type="unfinished"></translation>
+        <translation>Amosar</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyDataGroupColorSettingDialog</name>
     <message>
         <source>PolyData Color Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración de cor PolyData</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Cor</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished"></translation>
+        <translation>Cor por valor</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Cor personalizada</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyDataGroupCopySettingDialog</name>
     <message>
         <source>Copy Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Copiar configuración</translation>
     </message>
     <message>
         <source>Please specify values for copied data.</source>
-        <translation type="unfinished"></translation>
+        <translation>Especifique valores para os datos copiados.</translation>
     </message>
     <message>
         <source>For all</source>
-        <translation type="unfinished"></translation>
+        <translation>Para todos</translation>
     </message>
     <message>
         <source>For each</source>
-        <translation type="unfinished"></translation>
+        <translation>Para cada un</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyDataGroupMergeSettingDialog</name>
     <message>
         <source>Select data to merge</source>
-        <translation type="unfinished"></translation>
+        <translation>Selecciona datos para combinar</translation>
     </message>
     <message>
         <source>Please select data to merge this group.</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccione datos para combinar este grupo.</translation>
     </message>
     <message>
         <source>&amp;Select all</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccionar todo (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;Unselect all</source>
-        <translation type="unfinished"></translation>
+        <translation>Deselecciona todos (&amp;U)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyDataGroupShpImporter</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Erro</translation>
     </message>
     <message>
         <source>The shape type contained in this shape file is not %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>O tipo de forma contido neste ficheiro de forma non o é %1.</translation>
     </message>
     <message>
         <source>Opening %1 failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Apertura %1 fallou.</translation>
     </message>
     <message>
         <source>The number of data mismatches between shp file and dbf file.</source>
-        <translation type="unfinished"></translation>
+        <translation>O número de desaxustes de datos entre o ficheiro shp e o ficheiro dbf.</translation>
     </message>
     <message>
         <source>%1 Group Import Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 Configuración de importación de grupo</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyDataGroupShpImporterSettingDialog</name>
     <message>
         <source>PolyData Import Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración de importación de PolyData</translation>
     </message>
     <message>
         <source>Encoding:</source>
-        <translation type="unfinished"></translation>
+        <translation>Codificación:</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nome</translation>
     </message>
     <message>
         <source>Load from Shape file attribute</source>
-        <translation type="unfinished"></translation>
+        <translation>Cargar desde o atributo do ficheiro Shape</translation>
     </message>
     <message>
         <source>Name is set automatically (ex. PolyData1)</source>
-        <translation type="unfinished"></translation>
+        <translation>O nome configúrase automaticamente (por exemplo, PolyData1)</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation type="unfinished"></translation>
+        <translation>Valor</translation>
     </message>
     <message>
         <source>Specify value</source>
-        <translation type="unfinished"></translation>
+        <translation>Especifique o valor</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Aviso</translation>
     </message>
     <message>
         <source>You cannot specify the same column for both Name and Value.</source>
-        <translation type="unfinished"></translation>
+        <translation>Non pode especificar a mesma columna tanto para Nome como para Valor.</translation>
     </message>
 </context>
 </TS>

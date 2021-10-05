@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="es_ES">
 <context>
     <name>Unstructured2dGridTriangleImporter</name>
@@ -9,7 +7,7 @@
     </message>
     <message>
         <source>TRIANGLE output (*.node, *.ele)</source>
-        <translation type="unfinished"></translation>
+        <translation>Salida TRIÁNGULO (*.node, *.ele)</translation>
     </message>
     <message>
         <source>Warning</source>

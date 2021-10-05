@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="zh_CN">
 <context>
     <name>MeasuredDataFileDataItem</name>
@@ -13,7 +11,7 @@
     </message>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>CSV 文件 (*.csv)</translation>
     </message>
     <message>
         <source>Export Measured Data</source>
@@ -109,7 +107,7 @@
     </message>
     <message>
         <source>[m/s]</source>
-        <translation type="unfinished"></translation>
+        <translation>[多发性硬化症]</translation>
     </message>
     <message>
         <source>Length on screen:</source>

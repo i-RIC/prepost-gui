@@ -1,363 +1,361 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="zh_TW">
 <context>
     <name>ParticleArbitraryTimeEditDialog</name>
     <message>
         <source>Particle generate time setting</source>
-        <translation type="unfinished"></translation>
+        <translation>粒子生成時間設置</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation type="unfinished"></translation>
+        <translation>添加 (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>刪除 (&amp;D)</translation>
     </message>
     <message>
         <source>Add time step</source>
-        <translation type="unfinished"></translation>
+        <translation>添加時間步長</translation>
     </message>
     <message>
         <source>Select Time step to add</source>
-        <translation type="unfinished"></translation>
+        <translation>選擇要添加的時間步</translation>
     </message>
 </context>
 <context>
     <name>PostAllZoneSelectingDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>對話</translation>
     </message>
     <message>
         <source>Dimension:</source>
-        <translation type="unfinished"></translation>
+        <translation>尺寸：</translation>
     </message>
     <message>
         <source>Grid Type:</source>
-        <translation type="unfinished"></translation>
+        <translation>網格類型：</translation>
     </message>
     <message>
         <source>&amp;Region:</source>
-        <translation type="unfinished"></translation>
+        <translation>地區： (&amp;R)</translation>
     </message>
     <message>
         <source>One dimensional data</source>
-        <translation type="unfinished"></translation>
+        <translation>一維數據</translation>
     </message>
     <message>
         <source>Two dimensional data</source>
-        <translation type="unfinished"></translation>
+        <translation>二維數據</translation>
     </message>
     <message>
         <source>Three dimensional data</source>
-        <translation type="unfinished"></translation>
+        <translation>三維數據</translation>
     </message>
 </context>
 <context>
     <name>PostParticleBasicSettingDialog</name>
     <message>
         <source>Particles Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>粒子設置</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>顏色：</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>尺寸：</translation>
     </message>
 </context>
 <context>
     <name>PostParticleScalarPropertyDialog</name>
     <message>
         <source>Particle Scalar Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>粒子標量設置</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished"></translation>
+        <translation>自定義顏色</translation>
     </message>
     <message>
         <source>Color by attribute value</source>
-        <translation type="unfinished"></translation>
+        <translation>按屬性值著色</translation>
     </message>
     <message>
         <source>Attribute:</source>
-        <translation type="unfinished"></translation>
+        <translation>屬性：</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>尺寸：</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>彩條設置 (&amp;C)</translation>
     </message>
 </context>
 <context>
     <name>PostParticleVectorPropertyDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>箭頭設置</translation>
     </message>
     <message>
         <source>Attribute value:</source>
-        <translation type="unfinished"></translation>
+        <translation>屬性值：</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation type="unfinished"></translation>
+        <translation>長度</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation>汽車</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation type="unfinished"></translation>
+        <translation>標準值：</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation type="unfinished"></translation>
+        <translation>[多發性硬化症]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation type="unfinished"></translation>
+        <translation>屏幕長度：</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation type="unfinished"></translation>
+        <translation>[像素]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation type="unfinished"></translation>
+        <translation>要繪製的最小值：</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation type="unfinished"></translation>
+        <translation>採樣</translation>
     </message>
     <message>
         <source>All particles</source>
-        <translation type="unfinished"></translation>
+        <translation>所有粒子</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation type="unfinished"></translation>
+        <translation>採樣率：</translation>
     </message>
     <message>
         <source>Specify number of particles</source>
-        <translation type="unfinished"></translation>
+        <translation>指定粒子數</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>顏色</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation type="unfinished"></translation>
+        <translation>自定義顏色</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation type="unfinished"></translation>
+        <translation>按標量值</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation type="unfinished"></translation>
+        <translation>箭頭形狀</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation type="unfinished"></translation>
+        <translation>箭頭大小：</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation type="unfinished"></translation>
+        <translation>行寬：</translation>
     </message>
 </context>
 <context>
     <name>PostPolyDataBasicSettingDialog</name>
     <message>
         <source>Polygon Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>多邊形設置</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>顏色：</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>行寬：</translation>
     </message>
 </context>
 <context>
     <name>PostPolyDataScalarPropertyDialog</name>
     <message>
         <source>Polygon Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>多邊形設置</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished"></translation>
+        <translation>自定義顏色</translation>
     </message>
     <message>
         <source>Color by attribute value</source>
-        <translation type="unfinished"></translation>
+        <translation>按屬性值著色</translation>
     </message>
     <message>
         <source>Attribute:</source>
-        <translation type="unfinished"></translation>
+        <translation>屬性：</translation>
     </message>
     <message>
         <source>Line Width</source>
-        <translation type="unfinished"></translation>
+        <translation>行寬</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>彩條設置 (&amp;C)</translation>
     </message>
 </context>
 <context>
     <name>PostStringResultDataItem</name>
     <message>
         <source>Label</source>
-        <translation type="unfinished"></translation>
+        <translation>標籤</translation>
     </message>
     <message>
         <source>Move label</source>
-        <translation type="unfinished"></translation>
+        <translation>移動標籤</translation>
     </message>
     <message>
         <source>Resize label</source>
-        <translation type="unfinished"></translation>
+        <translation>調整標籤大小</translation>
     </message>
     <message>
         <source>Edit Label Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>編輯標籤設置</translation>
     </message>
 </context>
 <context>
     <name>PostStringResultSettingDialog</name>
     <message>
         <source>Label Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>標籤設置</translation>
     </message>
     <message>
         <source>Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>環境</translation>
     </message>
     <message>
         <source>Position and Size</source>
-        <translation type="unfinished"></translation>
+        <translation>位置和大小</translation>
     </message>
     <message>
         <source>Margin</source>
-        <translation type="unfinished"></translation>
+        <translation>利潤</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation type="unfinished"></translation>
+        <translation>水平的</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation type="unfinished"></translation>
+        <translation>垂直的</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished"></translation>
+        <translation>位置</translation>
     </message>
     <message>
         <source>Left:</source>
-        <translation type="unfinished"></translation>
+        <translation>剩下：</translation>
     </message>
     <message>
         <source>Top:</source>
-        <translation type="unfinished"></translation>
+        <translation>最佳：</translation>
     </message>
     <message>
         <source>Size</source>
-        <translation type="unfinished"></translation>
+        <translation>尺寸</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation>汽車</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>寬度：</translation>
     </message>
     <message>
         <source>Height:</source>
-        <translation type="unfinished"></translation>
+        <translation>高度：</translation>
     </message>
     <message>
         <source>Font and Color</source>
-        <translation type="unfinished"></translation>
+        <translation>字體和顏色</translation>
     </message>
     <message>
         <source>Font:</source>
-        <translation type="unfinished"></translation>
+        <translation>字體：</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation type="unfinished"></translation>
+        <translation>編輯...</translation>
     </message>
     <message>
         <source>Font color:</source>
-        <translation type="unfinished"></translation>
+        <translation>字體顏色：</translation>
     </message>
     <message>
         <source>Background color:</source>
-        <translation type="unfinished"></translation>
+        <translation>背景顏色：</translation>
     </message>
 </context>
 <context>
     <name>PostTimeDataItem</name>
     <message>
         <source>Time</source>
-        <translation type="unfinished"></translation>
+        <translation>時間</translation>
     </message>
     <message>
         <source>Edit time setting</source>
-        <translation type="unfinished"></translation>
+        <translation>編輯時間設置</translation>
     </message>
 </context>
 <context>
     <name>PostTimeEditDialog</name>
     <message>
         <source>Time Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>時間設定</translation>
     </message>
     <message>
         <source>Use project setting</source>
-        <translation type="unfinished"></translation>
+        <translation>使用項目設置</translation>
     </message>
     <message>
         <source>Time Format</source>
-        <translation type="unfinished"></translation>
+        <translation>時間格式</translation>
     </message>
 </context>
 <context>
     <name>PostTitleDataItem</name>
     <message>
         <source>Title</source>
-        <translation type="unfinished"></translation>
+        <translation>標題</translation>
     </message>
 </context>
 <context>
     <name>PostTitleEditDialog</name>
     <message>
         <source>Title Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>標題設置</translation>
     </message>
     <message>
         <source>Title:</source>
-        <translation type="unfinished"></translation>
+        <translation>標題：</translation>
     </message>
     <message>
         <source>Note: Only English Characters can be used for title.</source>
-        <translation type="unfinished"></translation>
+        <translation>注意：標題只能使用英文字符。</translation>
     </message>
 </context>
 </TS>

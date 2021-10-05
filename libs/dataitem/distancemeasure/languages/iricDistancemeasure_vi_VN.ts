@@ -1,157 +1,155 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="vi_VN">
 <context>
     <name>DistanceMeasureDataItem</name>
     <message>
         <source>Property</source>
-        <translation type="unfinished"></translation>
+        <translation>Bất động sản</translation>
     </message>
     <message>
         <source>Redefine</source>
-        <translation type="unfinished"></translation>
+        <translation>Xác định lại</translation>
     </message>
     <message>
         <source>Define Distance Measure</source>
-        <translation type="unfinished"></translation>
+        <translation>Xác định số đo khoảng cách</translation>
     </message>
     <message>
         <source>Move Distance Measure Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Di chuyển điểm đo khoảng cách</translation>
     </message>
     <message>
         <source>Redefine Distance Measure</source>
-        <translation type="unfinished"></translation>
+        <translation>Xác định lại số đo khoảng cách</translation>
     </message>
     <message>
         <source>Edit Distance Measure Property</source>
-        <translation type="unfinished"></translation>
+        <translation>Chỉnh sửa thuộc tính đo khoảng cách</translation>
     </message>
     <message>
         <source>Translate Distance Measure</source>
-        <translation type="unfinished"></translation>
+        <translation>Đo khoảng cách dịch</translation>
     </message>
 </context>
 <context>
     <name>DistanceMeasureGroupDataItem</name>
     <message>
         <source>&amp;Add Measure...</source>
-        <translation type="unfinished"></translation>
+        <translation>Thêm số đo (&amp;A)...</translation>
     </message>
     <message>
         <source>Distance Measures</source>
-        <translation type="unfinished"></translation>
+        <translation>Các phép đo khoảng cách</translation>
     </message>
     <message>
         <source>Measure%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Đo lường %1</translation>
     </message>
     <message>
         <source>Delete &amp;Selected...</source>
-        <translation type="unfinished"></translation>
+        <translation>Xóa đã chọn (&amp;S)...</translation>
     </message>
     <message>
         <source>Delete &amp;All...</source>
-        <translation type="unfinished"></translation>
+        <translation>Xóa hết (&amp;A)...</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Thông tin</translation>
     </message>
     <message>
         <source>There is no distance measure.</source>
-        <translation type="unfinished"></translation>
+        <translation>Không có thước đo khoảng cách.</translation>
     </message>
     <message>
         <source>Delete selected distance measures</source>
-        <translation type="unfinished"></translation>
+        <translation>Xóa các số đo khoảng cách đã chọn</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Cảnh báo</translation>
     </message>
     <message>
         <source>Are you sure you want to delete all distance measures?</source>
-        <translation type="unfinished"></translation>
+        <translation>Bạn có chắc chắn muốn xóa tất cả các thước đo khoảng cách không?</translation>
     </message>
 </context>
 <context>
     <name>DistanceMeasurePropertyDialog</name>
     <message>
         <source>Distance Measure Property</source>
-        <translation type="unfinished"></translation>
+        <translation>Thuộc tính đo khoảng cách</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tên:</translation>
     </message>
     <message>
         <source>Start Point:</source>
-        <translation type="unfinished"></translation>
+        <translation>Điểm xuất phát:</translation>
     </message>
     <message>
         <source>, </source>
-        <translation type="unfinished"></translation>
+        <translation>,</translation>
     </message>
     <message>
         <source>End Point:</source>
-        <translation type="unfinished"></translation>
+        <translation>Điểm cuối:</translation>
     </message>
     <message>
         <source>Label</source>
-        <translation type="unfinished"></translation>
+        <translation>Nhãn mác</translation>
     </message>
     <message>
         <source>Show Label</source>
-        <translation type="unfinished"></translation>
+        <translation>Hiển thị nhãn</translation>
     </message>
     <message>
         <source>Content</source>
-        <translation type="unfinished"></translation>
+        <translation>Nội dung</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation>Tự động</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation type="unfinished"></translation>
+        <translation>Tập quán</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished"></translation>
+        <translation>Chức vụ</translation>
     </message>
     <message>
         <source>Center-Top</source>
-        <translation type="unfinished"></translation>
+        <translation>Trung tâm trên cùng</translation>
     </message>
     <message>
         <source>Middle-Left</source>
-        <translation type="unfinished"></translation>
+        <translation>Trung tâm bên trái</translation>
     </message>
     <message>
         <source>Middle-Right</source>
-        <translation type="unfinished"></translation>
+        <translation>Trung phải</translation>
     </message>
     <message>
         <source>Center-Bottom</source>
-        <translation type="unfinished"></translation>
+        <translation>Center-Bottom</translation>
     </message>
     <message>
         <source>Font Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Cài đặt Phông chữ</translation>
     </message>
     <message>
         <source>Show End Markers</source>
-        <translation type="unfinished"></translation>
+        <translation>Hiển thị điểm đánh dấu kết thúc</translation>
     </message>
     <message>
         <source>Marker Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Kích thước điểm đánh dấu:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Màu sắc:</translation>
     </message>
 </context>
 </TS>

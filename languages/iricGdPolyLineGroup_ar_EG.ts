@@ -1,170 +1,168 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ar_EG">
 <context>
     <name>GeoDataPolyLineGroup</name>
     <message>
         <source>&amp;Sort</source>
-        <translation type="unfinished"></translation>
+        <translation>نوع (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>خطوط (&amp;L)</translation>
     </message>
     <message>
         <source>Line%1</source>
-        <translation type="unfinished"></translation>
+        <translation>خط %1</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyLineGroupCreator</name>
     <message>
         <source>Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>خطوط</translation>
     </message>
     <message>
         <source>Lines%1</source>
-        <translation type="unfinished"></translation>
+        <translation>خطوط %1</translation>
     </message>
     <message>
         <source>Deleting this item will also remove any graph windows associated with this data.  Are you sure you want to delete this item?</source>
-        <translation type="unfinished"></translation>
+        <translation>سيؤدي حذف هذا العنصر أيضًا إلى إزالة أي نوافذ رسم بياني مرتبطة بهذه البيانات. هل أنت متأكد أنك تريد حذف هذا البند؟</translation>
     </message>
     <message>
         <source>line</source>
-        <translation type="unfinished"></translation>
+        <translation>خط</translation>
     </message>
     <message>
         <source>Line</source>
-        <translation type="unfinished"></translation>
+        <translation>خط</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyLineGroupCsvExporter</name>
     <message>
         <source>CSV file</source>
-        <translation type="unfinished"></translation>
+        <translation>ملف CSV</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>خطأ</translation>
     </message>
     <message>
         <source>Error occured while exporting to %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>حدث خطأ أثناء التصدير إلى %1.</translation>
     </message>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>ملف CSV (*.csv)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyLineGroupCsvImporter</name>
     <message>
         <source>CSV file (Polylines)</source>
-        <translation type="unfinished"></translation>
+        <translation>ملف CSV (خطوط متعددة)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>خطأ</translation>
     </message>
     <message>
         <source>Error occured while opening %1</source>
-        <translation type="unfinished"></translation>
+        <translation>حدث خطأ أثناء الفتح %1</translation>
     </message>
     <message>
         <source>Error occured while reading header line. Make sure the file is saved in UTF-8 encoding.</source>
-        <translation type="unfinished"></translation>
+        <translation>حدث خطأ أثناء قراءة سطر العنوان. تأكد من حفظ الملف بترميز UTF-8.</translation>
     </message>
     <message>
         <source>Error occured while reading header line. Header should have 5 columns at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>حدث خطأ أثناء قراءة سطر العنوان. يجب أن يحتوي الرأس على 5 أعمدة على الأقل.</translation>
     </message>
     <message>
         <source>Error occured while reading header line. Header should have 6 columns at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>حدث خطأ أثناء قراءة سطر العنوان. يجب أن يحتوي الرأس على 6 أعمدة على الأقل.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
-        <translation type="unfinished"></translation>
+        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
+        <translation>حدث خطأ أثناء قراءة سطر العنوان. عمودي %1 يجب ان يكون "%2"، لكن "%3" معطى.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. There is no data.</source>
-        <translation type="unfinished"></translation>
+        <translation>حدث خطأ أثناء قراءة السطر %1. ليس هنالك معلومات.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Line should have two points at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>حدث خطأ أثناء قراءة السطر %1. يجب أن يحتوي الخط على نقطتين على الأقل.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Make sure the file is saved in UTF-8 encoding.</source>
-        <translation type="unfinished"></translation>
+        <translation>حدث خطأ أثناء قراءة السطر %1. تأكد من حفظ الملف بترميز UTF-8.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Data should have 5 columns at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>حدث خطأ أثناء قراءة السطر %1. يجب أن تحتوي البيانات على 5 أعمدة على الأقل.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Data should have 6 columns at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>حدث خطأ أثناء قراءة السطر %1. يجب أن تحتوي البيانات على 6 أعمدة على الأقل.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;lid&quot; value in line %1. &quot;lid&quot; should be integer value but &quot;%2&quot; is specified.</source>
-        <translation type="unfinished"></translation>
+        <source>Error occured while reading "lid" value in line %1. "lid" should be integer value but "%2" is specified.</source>
+        <translation>حدث خطأ أثناء قراءة قيمة "الغطاء" في السطر %1. يجب أن تكون "lid" قيمة عددية ولكن "%2" محدد.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;vid&quot; value in line %1. &quot;vid&quot; should be integer value but &quot;%2&quot; is specified.</source>
-        <translation type="unfinished"></translation>
+        <source>Error occured while reading "vid" value in line %1. "vid" should be integer value but "%2" is specified.</source>
+        <translation>حدث خطأ أثناء قراءة قيمة "vid" في السطر %1. يجب أن يكون "vid" قيمة عددية ولكن "%2" محدد.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation type="unfinished"></translation>
+        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
+        <translation>حدث خطأ أثناء قراءة قيمة "x" في السطر %1. يجب أن تكون "x" قيمة حقيقية ولكن "%2" محدد.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation type="unfinished"></translation>
+        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
+        <translation>حدث خطأ أثناء قراءة قيمة "y" في السطر %1. يجب أن تكون "y" قيمة حقيقية ولكن "%2" محدد.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation type="unfinished"></translation>
+        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
+        <translation>حدث خطأ أثناء قراءة قيمة "القيمة" في السطر %1. يجب أن تكون "القيمة" قيمة حقيقية ولكن "%2" محدد.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. &quot;name&quot; should be the same for lines where &quot;lid&quot; values are the same.</source>
-        <translation type="unfinished"></translation>
+        <source>Error occured while reading line %1. "name" should be the same for lines where "lid" values are the same.</source>
+        <translation>حدث خطأ أثناء قراءة السطر %1. يجب أن يكون "الاسم" هو نفسه بالنسبة للأسطر حيث تكون قيم "الغطاء" هي نفسها.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. &quot;value&quot; should be the same for lines where &quot;lid&quot; values are the same.</source>
-        <translation type="unfinished"></translation>
+        <source>Error occured while reading line %1. "value" should be the same for lines where "lid" values are the same.</source>
+        <translation>حدث خطأ أثناء قراءة السطر %1. يجب أن تكون "القيمة" هي نفسها بالنسبة للخطوط التي تكون فيها قيم "الغطاء" هي نفسها.</translation>
     </message>
     <message>
         <source>CSV file (Lines) (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>ملف CSV (خطوط) (*.csv)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyLineGroupShpExporter</name>
     <message>
         <source>ESRI Shapefile</source>
-        <translation type="unfinished"></translation>
+        <translation>ESRI بحلقات</translation>
     </message>
     <message>
         <source>ESRI Shapefile (*.shp)</source>
-        <translation type="unfinished"></translation>
+        <translation>ESRI بحلقات (*.shp)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyLineGroupShpImporter</name>
     <message>
         <source>ESRI Shapefile (Polylines)</source>
-        <translation type="unfinished"></translation>
+        <translation>ESRI Shapefile (Polylines)</translation>
     </message>
     <message>
         <source>Polyline%1</source>
-        <translation type="unfinished"></translation>
+        <translation>متعدد الخطوط %1</translation>
     </message>
     <message>
         <source>ESRI Shapefile (Lines) (*.shp)</source>
-        <translation type="unfinished"></translation>
+        <translation>ESRI Shapefile (خطوط) (*.shp)</translation>
     </message>
 </context>
 </TS>

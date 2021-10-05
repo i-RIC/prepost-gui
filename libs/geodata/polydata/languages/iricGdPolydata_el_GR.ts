@@ -1,70 +1,68 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="el_GR">
 <context>
     <name>GeoDataPolyData</name>
     <message>
         <source>Edit &amp;Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Επεξεργασία ονόματος (&amp;N)</translation>
     </message>
     <message>
         <source>Edit &amp;Value...</source>
-        <translation type="unfinished"></translation>
+        <translation>Επεξεργασία τιμής (&amp;V)...</translation>
     </message>
     <message>
         <source>Edit &amp;Name and Value...</source>
-        <translation type="unfinished"></translation>
+        <translation>Επεξεργασία ονόματος και τιμής (&amp;N)...</translation>
     </message>
     <message>
         <source>Color &amp;Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Ρύθμιση χρώματος (&amp;S)...</translation>
     </message>
     <message>
         <source>%1 Color Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 Ρύθμιση χρώματος</translation>
     </message>
     <message>
         <source>Edit name</source>
-        <translation type="unfinished"></translation>
+        <translation>Επεξεργασία ονόματος</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ονομα:</translation>
     </message>
     <message>
         <source>Edit %1 value</source>
-        <translation type="unfinished"></translation>
+        <translation>Επεξεργασία %1 αξία</translation>
     </message>
     <message>
         <source>Please input new value in this %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Παρακαλώ εισάγετε νέα τιμή σε αυτό %1 Το</translation>
     </message>
     <message>
         <source>%1 name and value change</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 αλλαγή ονόματος και τιμής</translation>
     </message>
     <message>
         <source>Edit color setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Επεξεργασία ρύθμισης χρώματος</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyDataColorSettingDialog</name>
     <message>
         <source>PolyData Color Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Ρύθμιση χρώματος PolyData</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Χρώμα</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished"></translation>
+        <translation>Χρώμα ανά τιμή</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Προσαρμοσμένο χρώμα</translation>
     </message>
 </context>
 </TS>

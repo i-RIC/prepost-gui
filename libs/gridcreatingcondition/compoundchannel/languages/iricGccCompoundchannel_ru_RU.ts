@@ -1,177 +1,175 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ru_RU">
 <context>
     <name>GridCreatingConditionCompoundChannel</name>
     <message>
         <source>Finish Defining Polygon or Polygonal line</source>
-        <translation type="unfinished"></translation>
+        <translation>Завершить определение многоугольника или многоугольной линии</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Информация</translation>
     </message>
     <message>
         <source>Next, please define low water channel region. Water channel can be defined as polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
-        <translation type="unfinished"></translation>
+        <translation>Далее, пожалуйста, определите область русла с низким уровнем воды. Водный канал можно определить как многоугольник, щелкнув мышью. Завершите определение двойным щелчком или нажатием клавиши возврата.</translation>
     </message>
     <message>
         <source>Next, please define grid center line. Grid center line can be defined as polygonal line by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
-        <translation type="unfinished"></translation>
+        <translation>Затем определите центральную линию сетки. Центральную линию сетки можно определить как ломаную, щелкнув мышью. Завершите определение двойным щелчком или нажатием клавиши возврата.</translation>
     </message>
     <message>
         <source>Add New Polygon Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Добавить новую точку многоугольника</translation>
     </message>
     <message>
         <source>Move Polygon</source>
-        <translation type="unfinished"></translation>
+        <translation>Переместить многоугольник</translation>
     </message>
     <message>
         <source>Move Polygon Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Переместить вершину многоугольника</translation>
     </message>
     <message>
         <source>Insert Polygon Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Вставить вершину многоугольника</translation>
     </message>
     <message>
         <source>Add New Center Line Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Добавить новую точку центральной линии</translation>
     </message>
     <message>
         <source>Move Polygonal Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Переместить многоугольную линию</translation>
     </message>
     <message>
         <source>Move Polygonal Line Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Переместить вершину полигональной линии</translation>
     </message>
     <message>
         <source>Insert Polygonal Line Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Вставить вершину ломаной линии</translation>
     </message>
     <message>
         <source>Remove Polygon Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Удалить вершину многоугольника</translation>
     </message>
     <message>
         <source>Remove Polygonal Line Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Удалить вершину полигональной линии</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Предупреждение</translation>
     </message>
     <message>
         <source>Polygon must have three vertices at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>У многоугольника должно быть не менее трех вершин.</translation>
     </message>
     <message>
         <source>Finish Defining Polygon</source>
-        <translation type="unfinished"></translation>
+        <translation>Завершить определение многоугольника</translation>
     </message>
     <message>
         <source>Polygonal line must have two vertices at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ломаная должна иметь не менее двух вершин.</translation>
     </message>
     <message>
         <source>Finish Defining Polygonal line</source>
-        <translation type="unfinished"></translation>
+        <translation>Завершить определение многоугольной линии</translation>
     </message>
     <message>
         <source>Please define grid creating region. Grid creating region can be defined as polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
-        <translation type="unfinished"></translation>
+        <translation>Определите область создания сетки. Область создания сетки можно определить как многоугольник, щелкнув мышью. Завершите определение двойным щелчком или нажатием клавиши возврата.</translation>
     </message>
     <message>
         <source>Generating grid...</source>
-        <translation type="unfinished"></translation>
+        <translation>Генерация сетки...</translation>
     </message>
     <message>
         <source>Grid creating condition definition not finished yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Определение условия создания сетки еще не завершено.</translation>
     </message>
     <message>
         <source>Grid creating region polygon shape is invalid.</source>
-        <translation type="unfinished"></translation>
+        <translation>Неверная форма многоугольника области создания сетки.</translation>
     </message>
     <message>
         <source>Low water channel region polygon shape is invalid.</source>
-        <translation type="unfinished"></translation>
+        <translation>Недопустимая форма многоугольника области канала с низким уровнем воды.</translation>
     </message>
     <message>
         <source>Low water channel region have to be inside grid region.</source>
-        <translation type="unfinished"></translation>
+        <translation>Область русла с низким уровнем воды должна находиться внутри области сетки.</translation>
     </message>
     <message>
         <source>Center line have to be inside low water channel region.</source>
-        <translation type="unfinished"></translation>
+        <translation>Центральная линия должна быть внутри области канала с низким уровнем воды.</translation>
     </message>
     <message>
         <source>Edit Polygon Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Изменить координаты многоугольника</translation>
     </message>
     <message>
         <source>Edit Center Line Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Изменить координаты центральной линии</translation>
     </message>
     <message>
         <source>Polygon Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Координаты многоугольника</translation>
     </message>
     <message>
         <source>Polyline Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Координаты полилинии</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionCompoundChannelAbstractPolygon</name>
     <message>
         <source>Please specify a closed polygon!</source>
-        <translation type="unfinished"></translation>
+        <translation>Укажите замкнутый многоугольник!</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionCompoundChannelSettingDialog</name>
     <message>
         <source>Grid Creation</source>
-        <translation type="unfinished"></translation>
+        <translation>Создание сетки</translation>
     </message>
     <message>
         <source>Grid division setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Настройка деления сетки</translation>
     </message>
     <message>
         <source>Optimization</source>
-        <translation type="unfinished"></translation>
+        <translation>Оптимизация</translation>
     </message>
     <message>
         <source>&amp;Relaxation:</source>
-        <translation type="unfinished"></translation>
+        <translation>Расслабление: (&amp;R)</translation>
     </message>
     <message>
         <source>When grid shape looks divergent, please make this value smaller.</source>
-        <translation type="unfinished"></translation>
+        <translation>Если форма сетки выглядит расходящейся, уменьшите это значение.</translation>
     </message>
     <message>
         <source>&amp;Number of Iterations:</source>
-        <translation type="unfinished"></translation>
+        <translation>Количество итераций: (&amp;N)</translation>
     </message>
     <message>
         <source>When you feel the grid is not optimized enough, please try increasing this value.</source>
-        <translation type="unfinished"></translation>
+        <translation>Если вы чувствуете, что сетка недостаточно оптимизирована, попробуйте увеличить это значение.</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionCreatorCompoundChannel</name>
     <message>
         <source>Create compound channel grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Создать составную сетку каналов</translation>
     </message>
     <message>
         <source>Please define a polygon as the region to create grid, and another polygon as the low water channel region. Then, please add a polygonal line as river center.
 The low water channel region should be included in grid creation region, andRiver center line should be included in the low water channel region.</source>
-        <translation type="unfinished"></translation>
+        <translation>Определите многоугольник как область для создания сетки, а другой многоугольник как область канала с низким уровнем воды. Затем добавьте многоугольную линию в качестве центра реки. Область русла низкого уровня воды должна быть включена в область создания сетки, а осевая линия реки должна быть включена в область русла низкого уровня воды.</translation>
     </message>
 </context>
 </TS>

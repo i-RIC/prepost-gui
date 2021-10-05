@@ -1,363 +1,361 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="da_DK">
 <context>
     <name>ParticleArbitraryTimeEditDialog</name>
     <message>
         <source>Particle generate time setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Partikel genererer tidsindstilling</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation type="unfinished"></translation>
+        <translation>Tilføje (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Slet (&amp;D)</translation>
     </message>
     <message>
         <source>Add time step</source>
-        <translation type="unfinished"></translation>
+        <translation>Tilføj tidstrin</translation>
     </message>
     <message>
         <source>Select Time step to add</source>
-        <translation type="unfinished"></translation>
+        <translation>Vælg Tidstrin for at tilføje</translation>
     </message>
 </context>
 <context>
     <name>PostAllZoneSelectingDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Dialog</translation>
     </message>
     <message>
         <source>Dimension:</source>
-        <translation type="unfinished"></translation>
+        <translation>Dimension:</translation>
     </message>
     <message>
         <source>Grid Type:</source>
-        <translation type="unfinished"></translation>
+        <translation>Gittertype:</translation>
     </message>
     <message>
         <source>&amp;Region:</source>
-        <translation type="unfinished"></translation>
+        <translation>Område: (&amp;R)</translation>
     </message>
     <message>
         <source>One dimensional data</source>
-        <translation type="unfinished"></translation>
+        <translation>Endimensionelle data</translation>
     </message>
     <message>
         <source>Two dimensional data</source>
-        <translation type="unfinished"></translation>
+        <translation>To -dimensionelle data</translation>
     </message>
     <message>
         <source>Three dimensional data</source>
-        <translation type="unfinished"></translation>
+        <translation>Tredimensionelle data</translation>
     </message>
 </context>
 <context>
     <name>PostParticleBasicSettingDialog</name>
     <message>
         <source>Particles Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Indstilling af partikler</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Farve:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Størrelse:</translation>
     </message>
 </context>
 <context>
     <name>PostParticleScalarPropertyDialog</name>
     <message>
         <source>Particle Scalar Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Partikel skalarindstilling</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Brugerdefineret farve</translation>
     </message>
     <message>
         <source>Color by attribute value</source>
-        <translation type="unfinished"></translation>
+        <translation>Farve efter attributværdi</translation>
     </message>
     <message>
         <source>Attribute:</source>
-        <translation type="unfinished"></translation>
+        <translation>Attribut:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Størrelse:</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Indstilling af farvebjælke (&amp;C)</translation>
     </message>
 </context>
 <context>
     <name>PostParticleVectorPropertyDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Indstilling af pil</translation>
     </message>
     <message>
         <source>Attribute value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Attributværdi:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation type="unfinished"></translation>
+        <translation>Længde</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation>Auto</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Standardværdi:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation type="unfinished"></translation>
+        <translation>[Frk]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation type="unfinished"></translation>
+        <translation>Længde på skærmen:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation type="unfinished"></translation>
+        <translation>[pixel]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation type="unfinished"></translation>
+        <translation>Mindste værdi at trække:</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation type="unfinished"></translation>
+        <translation>Prøveudtagning</translation>
     </message>
     <message>
         <source>All particles</source>
-        <translation type="unfinished"></translation>
+        <translation>Alle partikler</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation type="unfinished"></translation>
+        <translation>Prøveudtagningshastighed:</translation>
     </message>
     <message>
         <source>Specify number of particles</source>
-        <translation type="unfinished"></translation>
+        <translation>Angiv antal partikler</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Farve</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation type="unfinished"></translation>
+        <translation>Brugerdefineret farve</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation type="unfinished"></translation>
+        <translation>Efter skalær værdi</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation type="unfinished"></translation>
+        <translation>Pilform</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Pilestørrelse:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Linjebredde:</translation>
     </message>
 </context>
 <context>
     <name>PostPolyDataBasicSettingDialog</name>
     <message>
         <source>Polygon Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Polygon -indstilling</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Farve:</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Linjebredde:</translation>
     </message>
 </context>
 <context>
     <name>PostPolyDataScalarPropertyDialog</name>
     <message>
         <source>Polygon Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Polygon -indstilling</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Brugerdefineret farve</translation>
     </message>
     <message>
         <source>Color by attribute value</source>
-        <translation type="unfinished"></translation>
+        <translation>Farve efter attributværdi</translation>
     </message>
     <message>
         <source>Attribute:</source>
-        <translation type="unfinished"></translation>
+        <translation>Attribut:</translation>
     </message>
     <message>
         <source>Line Width</source>
-        <translation type="unfinished"></translation>
+        <translation>Linjebredde</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Indstilling af farvebjælke (&amp;C)</translation>
     </message>
 </context>
 <context>
     <name>PostStringResultDataItem</name>
     <message>
         <source>Label</source>
-        <translation type="unfinished"></translation>
+        <translation>Etiket</translation>
     </message>
     <message>
         <source>Move label</source>
-        <translation type="unfinished"></translation>
+        <translation>Flyt etiketten</translation>
     </message>
     <message>
         <source>Resize label</source>
-        <translation type="unfinished"></translation>
+        <translation>Ændre størrelsen på etiketten</translation>
     </message>
     <message>
         <source>Edit Label Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Rediger etiketindstilling</translation>
     </message>
 </context>
 <context>
     <name>PostStringResultSettingDialog</name>
     <message>
         <source>Label Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Etiketindstilling</translation>
     </message>
     <message>
         <source>Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Indstilling</translation>
     </message>
     <message>
         <source>Position and Size</source>
-        <translation type="unfinished"></translation>
+        <translation>Position og størrelse</translation>
     </message>
     <message>
         <source>Margin</source>
-        <translation type="unfinished"></translation>
+        <translation>Margen</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation type="unfinished"></translation>
+        <translation>Vandret</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation type="unfinished"></translation>
+        <translation>Lodret</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished"></translation>
+        <translation>Position</translation>
     </message>
     <message>
         <source>Left:</source>
-        <translation type="unfinished"></translation>
+        <translation>Venstre:</translation>
     </message>
     <message>
         <source>Top:</source>
-        <translation type="unfinished"></translation>
+        <translation>Top:</translation>
     </message>
     <message>
         <source>Size</source>
-        <translation type="unfinished"></translation>
+        <translation>Størrelse</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation>Auto</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Bredde:</translation>
     </message>
     <message>
         <source>Height:</source>
-        <translation type="unfinished"></translation>
+        <translation>Højde:</translation>
     </message>
     <message>
         <source>Font and Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Skrifttype og farve</translation>
     </message>
     <message>
         <source>Font:</source>
-        <translation type="unfinished"></translation>
+        <translation>Skrifttype:</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation type="unfinished"></translation>
+        <translation>Redigere...</translation>
     </message>
     <message>
         <source>Font color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Skrift farve:</translation>
     </message>
     <message>
         <source>Background color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Baggrundsfarve:</translation>
     </message>
 </context>
 <context>
     <name>PostTimeDataItem</name>
     <message>
         <source>Time</source>
-        <translation type="unfinished"></translation>
+        <translation>Tid</translation>
     </message>
     <message>
         <source>Edit time setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Rediger tidsindstilling</translation>
     </message>
 </context>
 <context>
     <name>PostTimeEditDialog</name>
     <message>
         <source>Time Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Tidsindstilling</translation>
     </message>
     <message>
         <source>Use project setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Brug projektindstilling</translation>
     </message>
     <message>
         <source>Time Format</source>
-        <translation type="unfinished"></translation>
+        <translation>Tidsformat</translation>
     </message>
 </context>
 <context>
     <name>PostTitleDataItem</name>
     <message>
         <source>Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Titel</translation>
     </message>
 </context>
 <context>
     <name>PostTitleEditDialog</name>
     <message>
         <source>Title Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Indstilling af titel</translation>
     </message>
     <message>
         <source>Title:</source>
-        <translation type="unfinished"></translation>
+        <translation>Titel:</translation>
     </message>
     <message>
         <source>Note: Only English Characters can be used for title.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bemærk: Kun engelske tegn kan bruges til titel.</translation>
     </message>
 </context>
 </TS>

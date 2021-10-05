@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="es_ES">
 <context>
     <name>Graph2dScatteredAxisSettingDialog</name>
@@ -17,7 +15,7 @@
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation>Auto</translation>
     </message>
     <message>
         <source>Min:</source>
@@ -41,7 +39,7 @@
     </message>
     <message>
         <source>General</source>
-        <translation type="unfinished"></translation>
+        <translation>General</translation>
     </message>
     <message>
         <source>Title: </source>
@@ -49,7 +47,7 @@
     </message>
     <message>
         <source>Add Time to Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Agregar tiempo al título</translation>
     </message>
     <message>
         <source>Y Axis</source>
@@ -88,15 +86,15 @@
     </message>
     <message>
         <source>I:</source>
-        <translation type="unfinished"></translation>
+        <translation>I:</translation>
     </message>
     <message>
         <source>J:</source>
-        <translation type="unfinished"></translation>
+        <translation>J:</translation>
     </message>
     <message>
         <source>K:</source>
-        <translation type="unfinished"></translation>
+        <translation>K:</translation>
     </message>
     <message>
         <source>Select &amp;Data Source</source>
@@ -112,7 +110,7 @@
     </message>
     <message>
         <source>Scattered Chart Window: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Ventana de gráfico disperso: %1</translation>
     </message>
     <message>
         <source>Controller</source>
@@ -165,7 +163,7 @@
     <name>Graph2dScatteredWindowDataModel</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>Saving snapshot image to %1 failed.</source>
@@ -200,19 +198,19 @@
     </message>
     <message>
         <source>Y Axis:</source>
-        <translation type="unfinished"></translation>
+        <translation>Eje Y:</translation>
     </message>
     <message>
         <source>Position X</source>
-        <translation type="unfinished"></translation>
+        <translation>Posición X</translation>
     </message>
     <message>
         <source>Position Y</source>
-        <translation type="unfinished"></translation>
+        <translation>Posición Y</translation>
     </message>
     <message>
         <source>Position Z</source>
-        <translation type="unfinished"></translation>
+        <translation>Posición Z</translation>
     </message>
 </context>
 <context>
@@ -233,15 +231,15 @@
     <name>Graph2dScatteredWindowResultDataItem</name>
     <message>
         <source>Position X</source>
-        <translation type="unfinished"></translation>
+        <translation>Posición X</translation>
     </message>
     <message>
         <source>Position Y</source>
-        <translation type="unfinished"></translation>
+        <translation>Posición Y</translation>
     </message>
     <message>
         <source>Position Z</source>
-        <translation type="unfinished"></translation>
+        <translation>Posición Z</translation>
     </message>
     <message>
         <source>Stream-wise Distance</source>
@@ -267,7 +265,7 @@
     </message>
     <message>
         <source>Y Axis:</source>
-        <translation type="unfinished"></translation>
+        <translation>Eje Y:</translation>
     </message>
     <message>
         <source>Left</source>
@@ -295,7 +293,7 @@
     </message>
     <message>
         <source>Triangle</source>
-        <translation type="unfinished"></translation>
+        <translation>Triángulo</translation>
     </message>
     <message>
         <source>Cross</source>
@@ -307,11 +305,11 @@
     </message>
     <message>
         <source>Symbol Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tamaño del símbolo:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Color:</translation>
     </message>
 </context>
 </TS>

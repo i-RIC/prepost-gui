@@ -1,171 +1,169 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="eu_ES">
 <context>
     <name>Graph2dWindowDataModel</name>
     <message>
         <source>Title Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Izenburua ezartzea</translation>
     </message>
     <message>
         <source>Please input the title.</source>
-        <translation type="unfinished"></translation>
+        <translation>Idatzi izenburua.</translation>
     </message>
 </context>
 <context>
     <name>Graph2dWindowMarkerGroupDataItem</name>
     <message>
         <source>Markers</source>
-        <translation type="unfinished"></translation>
+        <translation>Markatzaileak</translation>
     </message>
 </context>
 <context>
     <name>Graph2dWindowMarkerSettingDialog</name>
     <message>
         <source>Marker Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Markatzaileen ezarpena</translation>
     </message>
     <message>
         <source>Orientation</source>
-        <translation type="unfinished"></translation>
+        <translation>Orientazio</translation>
     </message>
     <message>
         <source>X-axis</source>
-        <translation type="unfinished"></translation>
+        <translation>X ardatza</translation>
     </message>
     <message>
         <source>Y-axis</source>
-        <translation type="unfinished"></translation>
+        <translation>Y ardatza</translation>
     </message>
     <message>
         <source>Axis</source>
-        <translation type="unfinished"></translation>
+        <translation>Ardatza</translation>
     </message>
     <message>
         <source>Left</source>
-        <translation type="unfinished"></translation>
+        <translation>Ezkerra</translation>
     </message>
     <message>
         <source>Right</source>
-        <translation type="unfinished"></translation>
+        <translation>Eskubidea</translation>
     </message>
     <message>
         <source>Marker Value</source>
-        <translation type="unfinished"></translation>
+        <translation>Markatzailearen balioa</translation>
     </message>
     <message>
         <source>Value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Balioa:</translation>
     </message>
     <message>
         <source>Label</source>
-        <translation type="unfinished"></translation>
+        <translation>Etiketa</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation>Automatikoa</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation type="unfinished"></translation>
+        <translation>Pertsonalizatua</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished"></translation>
+        <translation>Posizioa</translation>
     </message>
     <message>
         <source>Center</source>
-        <translation type="unfinished"></translation>
+        <translation>Erdigunea</translation>
     </message>
     <message>
         <source>Above Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Lerroaren gainetik</translation>
     </message>
     <message>
         <source>Style</source>
-        <translation type="unfinished"></translation>
+        <translation>Estiloa</translation>
     </message>
     <message>
         <source>Color: </source>
-        <translation type="unfinished"></translation>
+        <translation>Kolore:</translation>
     </message>
     <message>
         <source>Show line</source>
-        <translation type="unfinished"></translation>
+        <translation>Erakutsi lerroa</translation>
     </message>
     <message>
         <source>Solid Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Lerro sendoa</translation>
     </message>
     <message>
         <source>Dashed Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Lerro etena</translation>
     </message>
     <message>
         <source>Dotted Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Puntu puntua</translation>
     </message>
     <message>
         <source>Dots and Dashes</source>
-        <translation type="unfinished"></translation>
+        <translation>Puntuak eta marrak</translation>
     </message>
     <message>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Gehitu</translation>
     </message>
     <message>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Kendu</translation>
     </message>
     <message>
         <source>y</source>
-        <translation type="unfinished"></translation>
+        <translation>y</translation>
     </message>
 </context>
 <context>
     <name>Graph2dWindowVerticalAxisSettingDialog</name>
     <message>
         <source>Vertical Axis Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Ardatz Bertikalaren Ezarpena</translation>
     </message>
     <message>
         <source>Value Range</source>
-        <translation type="unfinished"></translation>
+        <translation>Balio Tartea</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation>Automatikoa</translation>
     </message>
     <message>
         <source>Max</source>
-        <translation type="unfinished"></translation>
+        <translation>Gehienez</translation>
     </message>
     <message>
         <source>Min</source>
-        <translation type="unfinished"></translation>
+        <translation>Min</translation>
     </message>
     <message>
         <source>Label</source>
-        <translation type="unfinished"></translation>
+        <translation>Etiketa</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation type="unfinished"></translation>
+        <translation>Pertsonalizatua</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
         <source>Move up item</source>
-        <translation type="unfinished"></translation>
+        <translation>Mugitu gora elementua</translation>
     </message>
     <message>
         <source>Move down item</source>
-        <translation type="unfinished"></translation>
+        <translation>Mugitu behera elementua</translation>
     </message>
     <message>
         <source>Object Browser Item Change</source>
-        <translation type="unfinished"></translation>
+        <translation>Objektuen arakatzailearen elementuen aldaketa</translation>
     </message>
 </context>
 </TS>

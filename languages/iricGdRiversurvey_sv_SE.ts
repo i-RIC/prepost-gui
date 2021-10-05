@@ -1,1330 +1,1328 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="sv_SE">
 <context>
     <name>GeoDataRiverCrosssectionAltitudeMoveDialog</name>
     <message>
         <source>Move Elevation Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Flytta höjdpunkt</translation>
     </message>
     <message>
         <source>Horizontal variation (H): </source>
-        <translation type="unfinished"></translation>
+        <translation>Horisontell variation (H):</translation>
     </message>
     <message>
         <source>TextLabel</source>
-        <translation type="unfinished"></translation>
+        <translation>TextLabel</translation>
     </message>
     <message>
         <source>Vertical Variation:</source>
-        <translation type="unfinished"></translation>
+        <translation>Vertikal variation:</translation>
     </message>
     <message>
         <source>%1 &lt; </source>
-        <translation type="unfinished"></translation>
+        <translation>%1 &lt;</translation>
     </message>
     <message>
         <source>H</source>
-        <translation type="unfinished"></translation>
+        <translation>H</translation>
     </message>
     <message>
         <source> &lt; %1</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt; %1</translation>
     </message>
     <message>
         <source>Move Elevation Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Flytta höjdpunkter</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverPathPointExpandDialog</name>
     <message>
         <source>Extend Traversal Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Förläng Traversal Line</translation>
     </message>
     <message>
         <source>Set Distance between River Center and Left Bank</source>
-        <translation type="unfinished"></translation>
+        <translation>Ange avståndet mellan flodcentret och vänstra stranden</translation>
     </message>
     <message>
         <source>Increment</source>
-        <translation type="unfinished"></translation>
+        <translation>Ökning</translation>
     </message>
     <message>
         <source>Extension Ratio</source>
-        <translation type="unfinished"></translation>
+        <translation>Förlängningsförhållande</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverPathPointExtensionAddDialog</name>
     <message>
         <source>Add Extension Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Lägg till förlängningsrad</translation>
     </message>
     <message>
         <source>End Point of Extension Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Slutpunkt för förlängningslinje</translation>
     </message>
     <message>
         <source>Mouse Click</source>
-        <translation type="unfinished"></translation>
+        <translation>Musklick</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished"></translation>
+        <translation>Placera</translation>
     </message>
     <message>
         <source>,</source>
-        <translation type="unfinished"></translation>
+        <translation>,</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverPathPointInsertDialog</name>
     <message>
         <source>Insert Traversal Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Sätt in tvärgående linje</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Namn:</translation>
     </message>
     <message>
         <source>River Center Point Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>River Center Point -koordinater</translation>
     </message>
     <message>
         <source>Mouse Click</source>
-        <translation type="unfinished"></translation>
+        <translation>Musklick</translation>
     </message>
     <message>
         <source>Coordinate Values</source>
-        <translation type="unfinished"></translation>
+        <translation>Koordinera värden</translation>
     </message>
     <message>
         <source>, </source>
-        <translation type="unfinished"></translation>
+        <translation>,</translation>
     </message>
     <message>
         <source>Ratio between Back and Forth (0-1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Förhållande mellan Back och Forth (0-1)</translation>
     </message>
     <message>
         <source>Cross Section Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Tvärsnittsinformation</translation>
     </message>
     <message>
         <source>Inserts Three Point of Altitude 0</source>
-        <translation type="unfinished"></translation>
+        <translation>Infogar tre höjdpunkter 0</translation>
     </message>
     <message>
         <source>Copy Next River Cross Section</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopiera Next River Cross Section</translation>
     </message>
     <message>
         <source>Create Cross section of Back and Forth: Number of the Interpolation Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Skapa tvärsnitt av Back and Forth: Number of the Interpolation Data</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverPathPointMoveDialog</name>
     <message>
         <source>Move Traversal Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Flytta tvärgående linje</translation>
     </message>
     <message>
         <source>,</source>
-        <translation type="unfinished"></translation>
+        <translation>,</translation>
     </message>
     <message>
         <source>Transfer Quantity</source>
-        <translation type="unfinished"></translation>
+        <translation>Överföringskvantitet</translation>
     </message>
     <message>
         <source>Center Point Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Mittpunktskoordinater</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverPathPointRenameDialog</name>
     <message>
         <source>Rename Traversal Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Byt namn på Traversal Line</translation>
     </message>
     <message>
         <source>New Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nytt namn:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverPathPointRotateDialog</name>
     <message>
         <source>Rotate Traversal Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Rotera tvärgående linje</translation>
     </message>
     <message>
         <source>Relative Angle</source>
-        <translation type="unfinished"></translation>
+        <translation>Relativ vinkel</translation>
     </message>
     <message>
         <source>Increment Angle</source>
-        <translation type="unfinished"></translation>
+        <translation>Ökningsvinkel</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverPathPointShiftDialog</name>
     <message>
         <source>Shift River Center</source>
-        <translation type="unfinished"></translation>
+        <translation>Shift River Center</translation>
     </message>
     <message>
         <source>Transfer Quantity</source>
-        <translation type="unfinished"></translation>
+        <translation>Överföringskvantitet</translation>
     </message>
     <message>
         <source>Transfer Quality s (%1 &lt; s &lt; %2)</source>
-        <translation type="unfinished"></translation>
+        <translation>Överföringskvalitet s ( %1 &lt;s &lt; %2 )</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurvey</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Varning</translation>
     </message>
     <message>
         <source>No points data to map is found. Please import points data.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ingen punktdata att kartlägga hittades. Vänligen importera poängdata.</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Information</translation>
     </message>
     <message>
         <source>Center Line is not defined yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mittlinje är inte definierad än.</translation>
     </message>
     <message>
         <source>Center line</source>
-        <translation type="unfinished"></translation>
+        <translation>Mittlinje</translation>
     </message>
     <message>
         <source>Please define center line by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
-        <translation type="unfinished"></translation>
+        <translation>Definiera mittlinjen genom att klicka med musen. Slutför definieringen genom att dubbelklicka eller trycka på returtangenten.</translation>
     </message>
     <message>
         <source>Add Extension Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Lägg till förlängningsrad</translation>
     </message>
     <message>
         <source>Selection Change</source>
-        <translation type="unfinished"></translation>
+        <translation>Urvalsändring</translation>
     </message>
     <message>
         <source>Delete Traversal Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Radera Traversal Lines</translation>
     </message>
     <message>
         <source>Expand Traversal Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Expandera Traversal Lines</translation>
     </message>
     <message>
         <source>Build Left bank and Right bank lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Bygg vänster bank och höger bank linjer</translation>
     </message>
     <message>
         <source>&amp;Add Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Lägg till Vertex (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Ta bort Vertex (&amp;R)</translation>
     </message>
     <message>
         <source>Import C&amp;enter Line...</source>
-        <translation type="unfinished"></translation>
+        <translation>Importera mittlinje (&amp;E)...</translation>
     </message>
     <message>
         <source>Export Ce&amp;nter Line...</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportera mittlinje (&amp;N)...</translation>
     </message>
     <message>
         <source>Insert Upstream Side(&amp;B)...</source>
-        <translation type="unfinished"></translation>
+        <translation>Infoga uppströms sida (B) (&amp;B)...</translation>
     </message>
     <message>
         <source>Insert Downstream Side(&amp;A)...</source>
-        <translation type="unfinished"></translation>
+        <translation>Infoga nedströms sida (A) (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Move...</source>
-        <translation type="unfinished"></translation>
+        <translation>Flytta (&amp;M)...</translation>
     </message>
     <message>
         <source>&amp;Rotate...</source>
-        <translation type="unfinished"></translation>
+        <translation>Rotera (&amp;R)...</translation>
     </message>
     <message>
         <source>S&amp;hift Center...</source>
-        <translation type="unfinished"></translation>
+        <translation>Skiftcenter (&amp;H)...</translation>
     </message>
     <message>
         <source>E&amp;xtend Horizontally...</source>
-        <translation type="unfinished"></translation>
+        <translation>Förläng horisontellt (&amp;X)...</translation>
     </message>
     <message>
         <source>Dele&amp;te Cross Section</source>
-        <translation type="unfinished"></translation>
+        <translation>Ta bort tvärsnitt (&amp;T)</translation>
     </message>
     <message>
         <source>R&amp;ename Cross Section...</source>
-        <translation type="unfinished"></translation>
+        <translation>Byt namn på tvärsnitt (&amp;E)...</translation>
     </message>
     <message>
         <source>Add &amp;Left Bank Extension Line...</source>
-        <translation type="unfinished"></translation>
+        <translation>Lägg till vänsterbankens förlängningslinje (&amp;L)...</translation>
     </message>
     <message>
         <source>Add &amp;Right Bank Extension Line...</source>
-        <translation type="unfinished"></translation>
+        <translation>Lägg till högerbankens förlängningslinje (&amp;R)...</translation>
     </message>
     <message>
         <source>Remo&amp;ve Left Bank Extension Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Ta bort vänsterbankens förlängningslinje (&amp;V)</translation>
     </message>
     <message>
         <source>Rem&amp;ove Right Bank Extension Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Ta bort högerbankens förlängningslinje (&amp;O)</translation>
     </message>
     <message>
         <source>Display &amp;Cross Section</source>
-        <translation type="unfinished"></translation>
+        <translation>Visa tvärsnitt (&amp;C)</translation>
     </message>
     <message>
         <source>Display &amp;Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Skärminställning (&amp;S)</translation>
     </message>
     <message>
         <source>Spline</source>
-        <translation type="unfinished"></translation>
+        <translation>Spline</translation>
     </message>
     <message>
         <source>Linear Curve</source>
-        <translation type="unfinished"></translation>
+        <translation>Linjär kurva</translation>
     </message>
     <message>
         <source>Interpolation Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Interpolationsläge</translation>
     </message>
     <message>
         <source>%1 is not defined yet</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 är inte definierad än</translation>
     </message>
     <message>
         <source>Insert Traversal Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Sätt in tvärgående linje</translation>
     </message>
     <message>
         <source>Move Extension Line End</source>
-        <translation type="unfinished"></translation>
+        <translation>Flytta förlängningslinje slut</translation>
     </message>
     <message>
         <source>Rotate Traversal Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Rotera tvärgående linje</translation>
     </message>
     <message>
         <source>Shift Center Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Skift mittpunkt</translation>
     </message>
     <message>
         <source>Move Traversal Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Move Traversal Lines</translation>
     </message>
     <message>
         <source>Finish Defining Polyline</source>
-        <translation type="unfinished"></translation>
+        <translation>Finish Definiera Polyline</translation>
     </message>
     <message>
         <source>Remove Extension Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Ta bort förlängningslinjen</translation>
     </message>
     <message>
         <source>Rename Traversal Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Byt namn på Traversal Line</translation>
     </message>
     <message>
         <source>Edit Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Redigera visningsinställning</translation>
     </message>
     <message>
         <source>Shift River Center Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Shift River Center -poäng</translation>
     </message>
     <message>
         <source>Move Traversal Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Flytta tvärgående linje</translation>
     </message>
     <message>
         <source>%1 generated.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 genererad.</translation>
     </message>
     <message>
         <source>Cross-section data need at least 2 center points.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tvärsnittsdata behöver minst 2 mittpunkter.</translation>
     </message>
     <message>
         <source>Generate Cross-Section Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Generera tvärsnittsdata</translation>
     </message>
     <message>
         <source>No point cloud data to map is found. Please import point cloud data.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ingen punktmolndata att kartlägga hittas. Vänligen importera punktmolndata.</translation>
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
-If you want to adjust cross section position and map point clouod data again, you can use &quot;Map point cloud data&quot;</source>
-        <translation type="unfinished"></translation>
+If you want to adjust cross section position and map point clouod data again, you can use "Map point cloud data"</source>
+        <translation>Tvärsnittsdata genereras med hjälp av punktmolndata. Om du vill justera tvärsnittsposition och kartpunktsdata igen kan du använda "Map point cloud data"</translation>
     </message>
     <message>
         <source>Map point cloud data</source>
-        <translation type="unfinished"></translation>
+        <translation>Kartpunktsmolndata</translation>
     </message>
     <message>
         <source>Generate point cloud data</source>
-        <translation type="unfinished"></translation>
+        <translation>Generera punktmolndata</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurvey::Impl</name>
     <message>
         <source>  </source>
-        <translation type="unfinished"></translation>
+        <translation />
     </message>
     <message>
         <source>&amp;Cross-Section Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Tvärsnittsdata (&amp;C)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyBuildBankLinesDialog</name>
     <message>
         <source>Build Bank Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Skapa banker</translation>
     </message>
     <message>
         <source>Input the distance from center line</source>
-        <translation type="unfinished"></translation>
+        <translation>Ange avståndet från mittlinjen</translation>
     </message>
     <message>
         <source>Left bank:</source>
-        <translation type="unfinished"></translation>
+        <translation>Vänster strand:</translation>
     </message>
     <message>
         <source>Right bank:</source>
-        <translation type="unfinished"></translation>
+        <translation>Höger bank:</translation>
     </message>
     <message>
         <source>Hint: Left bank and Right bank lines are created as line that consists of points that are away from center line to direction perpendicular to the center line.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tips: Vänstra banken och höger banklinjer skapas som en linje som består av punkter som är borta från mittlinjen till riktningen vinkelrätt mot mittlinjen.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyCreator</name>
     <message>
         <source>Cross-Section Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Tvärsnittsdata</translation>
     </message>
     <message>
         <source>Cross-Section Data%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Tvärsnittsdata %1</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyCrossSectionDisplaySettingDialog</name>
     <message>
         <source>Cross Section Window Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Inställning av tvärsnittsfönster</translation>
     </message>
     <message>
         <source>Background grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Bakgrund rutnät</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation type="unfinished"></translation>
+        <translation>Typ</translation>
     </message>
     <message>
         <source>Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Rader</translation>
     </message>
     <message>
         <source>Dots</source>
-        <translation type="unfinished"></translation>
+        <translation>Prickar</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation type="unfinished"></translation>
+        <translation>Horisontell</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation>Bil</translation>
     </message>
     <message>
         <source>Scale</source>
-        <translation type="unfinished"></translation>
+        <translation>Skala</translation>
     </message>
     <message>
         <source>Sub scale</source>
-        <translation type="unfinished"></translation>
+        <translation>Undervåg</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation type="unfinished"></translation>
+        <translation>Vertikal</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Färg:</translation>
     </message>
     <message>
         <source>Scales</source>
-        <translation type="unfinished"></translation>
+        <translation>Vågar</translation>
     </message>
     <message>
         <source>Font:</source>
-        <translation type="unfinished"></translation>
+        <translation>Font:</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation type="unfinished"></translation>
+        <translation>Redigera...</translation>
     </message>
     <message>
         <source>Left/right bank markers</source>
-        <translation type="unfinished"></translation>
+        <translation>Vänster/höger bankmarkörer</translation>
     </message>
     <message>
         <source>Aspect ratio</source>
-        <translation type="unfinished"></translation>
+        <translation>Bildförhållande</translation>
     </message>
     <message>
         <source>Left/right bank markers font</source>
-        <translation type="unfinished"></translation>
+        <translation>Vänster/höger bankmarkörer typsnitt</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyCrossSectionEditFromPointDialog</name>
     <message>
         <source>Edit Cross Section From Selected Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Redigera tvärsnittet från vald punkt</translation>
     </message>
     <message>
         <source>Direction to Edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Riktning till Redigera</translation>
     </message>
     <message>
         <source>Left bank side</source>
-        <translation type="unfinished"></translation>
+        <translation>Vänster bredd</translation>
     </message>
     <message>
         <source>Right bank side</source>
-        <translation type="unfinished"></translation>
+        <translation>Höger banksida</translation>
     </message>
     <message>
         <source>Distance to Edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Avstånd till Redigera</translation>
     </message>
     <message>
         <source>Specify horizontal distance</source>
-        <translation type="unfinished"></translation>
+        <translation>Ange horisontellt avstånd</translation>
     </message>
     <message>
         <source>m</source>
-        <translation type="unfinished"></translation>
+        <translation>m</translation>
     </message>
     <message>
         <source>Specify vertical distance</source>
-        <translation type="unfinished"></translation>
+        <translation>Ange vertikalt avstånd</translation>
     </message>
     <message>
         <source>Specify elevation of end point</source>
-        <translation type="unfinished"></translation>
+        <translation>Ange höjd på slutpunkten</translation>
     </message>
     <message>
         <source>To the point where it crosses the cross section</source>
-        <translation type="unfinished"></translation>
+        <translation>Till den punkt där den korsar tvärsnittet</translation>
     </message>
     <message>
         <source>Gradient</source>
-        <translation type="unfinished"></translation>
+        <translation>Lutning</translation>
     </message>
     <message>
         <source>Specify slope</source>
-        <translation type="unfinished"></translation>
+        <translation>Ange lutning</translation>
     </message>
     <message>
         <source>%</source>
-        <translation type="unfinished"></translation>
+        <translation>%</translation>
     </message>
     <message>
         <source>Specify fraction  1:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ange bråk 1:</translation>
     </message>
     <message>
         <source>Specify the fraction between vertical distance and horizontal distance. For example inputting 10 means 10% slope, and 20 means 5% slope.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ange fraktionen mellan vertikalt avstånd och horisontellt avstånd. Till exempel betyder inmatning 10 10% lutning och 20 betyder 5% lutning.</translation>
     </message>
     <message>
         <source>Upward</source>
-        <translation type="unfinished"></translation>
+        <translation>Uppåt</translation>
     </message>
     <message>
         <source>Downward</source>
-        <translation type="unfinished"></translation>
+        <translation>Nedåt</translation>
     </message>
     <message>
         <source>Edit &amp;Next</source>
-        <translation type="unfinished"></translation>
+        <translation>Redigera Nästa (&amp;N)</translation>
     </message>
     <message>
         <source>Edit Crosssection</source>
-        <translation type="unfinished"></translation>
+        <translation>Redigera korsning</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Varning</translation>
     </message>
     <message>
         <source>There is no cross point. Please check the setting.</source>
-        <translation type="unfinished"></translation>
+        <translation>Det finns ingen korspunkt. Kontrollera inställningen.</translation>
     </message>
     <message>
         <source>When you specify vertical distance, the slope should not be 0.</source>
-        <translation type="unfinished"></translation>
+        <translation>När du anger vertikalt avstånd bör lutningen inte vara 0.</translation>
     </message>
     <message>
         <source>The settings of elevation and gradient are invalid.</source>
-        <translation type="unfinished"></translation>
+        <translation>Inställningarna för höjd och lutning är ogiltiga.</translation>
     </message>
     <message>
-        <source>When you specify elevation of end point, it can not be same to the start point. If you want to draw horizontal line, please select &quot;Specify horizontal distance&quot;.</source>
-        <translation type="unfinished"></translation>
+        <source>When you specify elevation of end point, it can not be same to the start point. If you want to draw horizontal line, please select "Specify horizontal distance".</source>
+        <translation>När du anger höjdpunkten för slutpunkten kan det inte vara samma som startpunkten. Om du vill rita horisontell linje, välj "Ange horisontellt avstånd".</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyCrosssectionWindow</name>
     <message>
         <source>MainWindow</source>
-        <translation type="unfinished"></translation>
+        <translation>MainWindow</translation>
     </message>
     <message>
         <source>Cross Section ToolBar</source>
-        <translation type="unfinished"></translation>
+        <translation>Tvärsnittsverktygsfält</translation>
     </message>
     <message>
         <source>View Setting ToolBar</source>
-        <translation type="unfinished"></translation>
+        <translation>Visa inställningsverktygsfält</translation>
     </message>
     <message>
         <source>Display Setting ToolBar</source>
-        <translation type="unfinished"></translation>
+        <translation>Displayinställningsverktygsfält</translation>
     </message>
     <message>
         <source>&amp;This cross-section only</source>
-        <translation type="unfinished"></translation>
+        <translation>Endast detta tvärsnitt (&amp;T)</translation>
     </message>
     <message>
         <source>All cross-sections</source>
-        <translation type="unfinished"></translation>
+        <translation>Alla tvärsnitt</translation>
     </message>
     <message>
         <source>&amp;Edit cross section from the selected point</source>
-        <translation type="unfinished"></translation>
+        <translation>Redigera tvärsnittet från den valda punkten (&amp;E)</translation>
     </message>
     <message>
         <source>&amp;Edit from Dialog...</source>
-        <translation type="unfinished"></translation>
+        <translation>Redigera från dialog (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Radera (&amp;D)</translation>
     </message>
     <message>
         <source>&amp;Elevation Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Höjdpunkt (&amp;E)</translation>
     </message>
     <message>
         <source>Inactivate using &amp;water elevation</source>
-        <translation type="unfinished"></translation>
+        <translation>Inaktivera med vattenhöjning (&amp;W)</translation>
     </message>
     <message>
         <source>Crosssection: </source>
-        <translation type="unfinished"></translation>
+        <translation>Tvärsnitt:</translation>
     </message>
     <message>
         <source>Reference</source>
-        <translation type="unfinished"></translation>
+        <translation>Referens</translation>
     </message>
     <message>
         <source>Auto rescale</source>
-        <translation type="unfinished"></translation>
+        <translation>Automatisk skalning</translation>
     </message>
     <message>
         <source>Aspect ratio: 1 / </source>
-        <translation type="unfinished"></translation>
+        <translation>Bildförhållande: 1 /</translation>
     </message>
     <message>
         <source>Fix aspect ratio</source>
-        <translation type="unfinished"></translation>
+        <translation>Fixa bildförhållandet</translation>
     </message>
     <message>
         <source>Fix region</source>
-        <translation type="unfinished"></translation>
+        <translation>Fixa regionen</translation>
     </message>
     <message>
         <source>Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Rutnät</translation>
     </message>
     <message>
         <source>Scale</source>
-        <translation type="unfinished"></translation>
+        <translation>Skala</translation>
     </message>
     <message>
         <source>Left/right bank markers</source>
-        <translation type="unfinished"></translation>
+        <translation>Vänster/höger bankmarkörer</translation>
     </message>
     <message>
         <source>Aspect ratio</source>
-        <translation type="unfinished"></translation>
+        <translation>Bildförhållande</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Skärminställning</translation>
     </message>
     <message>
         <source>Active</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktiva</translation>
     </message>
     <message>
         <source>Distance from left bank</source>
-        <translation type="unfinished"></translation>
+        <translation>Avstånd från vänster strand</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished"></translation>
+        <translation>Placera</translation>
     </message>
     <message>
         <source>Elevation</source>
-        <translation type="unfinished"></translation>
+        <translation>Elevation</translation>
     </message>
     <message>
         <source>Crosssection Window : %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Tvärsnittsfönster: %2</translation>
     </message>
     <message>
         <source>Edit Elevation Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Redigera höjdpunkt</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Varning</translation>
     </message>
     <message>
         <source>At least, two points should be active.</source>
-        <translation type="unfinished"></translation>
+        <translation>Minst två punkter ska vara aktiva.</translation>
     </message>
     <message>
         <source>Fixed points and end points cannot be deleted.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fasta punkter och slutpunkter kan inte raderas.</translation>
     </message>
     <message>
         <source>There should be more than one point in the right bank side and the left bank side.</source>
-        <translation type="unfinished"></translation>
+        <translation>Det bör finnas mer än en punkt på höger banksida och vänster bank.</translation>
     </message>
     <message>
         <source>Delete Elevation Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Ta bort höjdpunkter</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Information</translation>
     </message>
     <message>
         <source>To use this function, please select only one point.</source>
-        <translation type="unfinished"></translation>
+        <translation>För att använda denna funktion, välj bara en punkt.</translation>
     </message>
     <message>
         <source>Inactivate Elevation Points using water elevation</source>
-        <translation type="unfinished"></translation>
+        <translation>Inaktivera höjdpunkter med vattenhöjning</translation>
     </message>
     <message>
         <source>Fixed points and end points cannot be inactivated.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fasta punkter och slutpunkter kan inte inaktiveras.</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Färg</translation>
     </message>
     <message>
         <source>Delete Water Surface Elevation</source>
-        <translation type="unfinished"></translation>
+        <translation>Ta bort vattenytans höjd</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation type="unfinished"></translation>
+        <translation>Är du säker att du vill radera %1 ?</translation>
     </message>
     <message>
         <source>Water surface elevation data does not exist.</source>
-        <translation type="unfinished"></translation>
+        <translation>Data för vattenytans höjd finns inte.</translation>
     </message>
     <message>
         <source>Select Water Surface Elevation</source>
-        <translation type="unfinished"></translation>
+        <translation>Välj Vattenytans höjd</translation>
     </message>
     <message>
         <source>Select Water Surface Elevation to use</source>
-        <translation type="unfinished"></translation>
+        <translation>Välj vattenytans höjd att använda</translation>
     </message>
     <message>
         <source>Cross-Section Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Tvärsnittsdata</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyCrosssectionWindowGraphicsView</name>
     <message>
         <source>&amp;Activate</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktivera (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Inactivate</source>
-        <translation type="unfinished"></translation>
+        <translation>Inaktivera (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Move</source>
-        <translation type="unfinished"></translation>
+        <translation>Flytta (&amp;M)</translation>
     </message>
     <message>
         <source>Inactivate using &amp;water elevation</source>
-        <translation type="unfinished"></translation>
+        <translation>Inaktivera med vattenhöjning (&amp;W)</translation>
     </message>
     <message>
         <source>Left Bank Side</source>
-        <translation type="unfinished"></translation>
+        <translation>Vänstra stranden</translation>
     </message>
     <message>
         <source>Right Bank Side</source>
-        <translation type="unfinished"></translation>
+        <translation>Höger bank</translation>
     </message>
     <message>
         <source>Aspect ratio: 1 / %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Bildförhållande: 1 / %1</translation>
     </message>
     <message>
         <source>Inactivate Elevation Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Inaktivera höjdpunkter</translation>
     </message>
     <message>
         <source>Edit Cross Section</source>
-        <translation type="unfinished"></translation>
+        <translation>Redigera tvärsnitt</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Information</translation>
     </message>
     <message>
         <source>Edit the cross section by mouse-clicking. Finish editing by double clicking, or pressing return key.
-You can precisely edit the cross section by inputting values from dialog. Please enter dialog edit mode from &quot;Edit from Dialog&quot; in the right-clicking menu.</source>
-        <translation type="unfinished"></translation>
+You can precisely edit the cross section by inputting values from dialog. Please enter dialog edit mode from "Edit from Dialog" in the right-clicking menu.</source>
+        <translation>Redigera tvärsnittet genom att klicka med musen. Avsluta redigeringen genom att dubbelklicka eller trycka på returtangenten. Du kan exakt redigera tvärsnittet genom att mata in värden från dialogrutan. Vänligen öppna dialogredigeringsläget från "Redigera från dialog" i högerklickningsmenyn.</translation>
     </message>
     <message>
         <source>Altitude Points Move</source>
-        <translation type="unfinished"></translation>
+        <translation>Höjdpunkter flyttas</translation>
     </message>
     <message>
         <source>Edit Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Redigera visningsinställning</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyCrosssectionWindowWseTableWidget</name>
     <message>
         <source>WSE Name</source>
-        <translation type="unfinished"></translation>
+        <translation>WSE -namn</translation>
     </message>
     <message>
         <source>Elevation</source>
-        <translation type="unfinished"></translation>
+        <translation>Elevation</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Färg</translation>
     </message>
     <message>
         <source>Move &amp;Up</source>
-        <translation type="unfinished"></translation>
+        <translation>Flytta upp (&amp;U)</translation>
     </message>
     <message>
         <source>Move &amp;Down</source>
-        <translation type="unfinished"></translation>
+        <translation>Flytta ner (&amp;D)</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Radera</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyDisplaySettingDialog</name>
     <message>
         <source>Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Skärminställning</translation>
     </message>
     <message>
         <source>Background Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Bakgrundsfärg</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation type="unfinished"></translation>
+        <translation>Synlig</translation>
     </message>
     <message>
         <source>Crosssection Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Tvärsnittslinjer</translation>
     </message>
     <message>
         <source>Z Scale: </source>
-        <translation type="unfinished"></translation>
+        <translation>Z -skala:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Färg:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyExporter</name>
     <message>
         <source>Cross-Section Data (*.riv)</source>
-        <translation type="unfinished"></translation>
+        <translation>Tvärsnittsdata (*.riv)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyGenerateDialog</name>
     <message>
         <source>Generate River Survey Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Generera River Survey Data</translation>
     </message>
     <message>
         <source>Number of cross sections:</source>
-        <translation type="unfinished"></translation>
+        <translation>Antal tvärsnitt:</translation>
     </message>
     <message>
         <source>Distance between cross sections [m]:</source>
-        <translation type="unfinished"></translation>
+        <translation>Avstånd mellan tvärsnitt [m]:</translation>
     </message>
     <message>
         <source>Distance between elevation points[m]:</source>
-        <translation type="unfinished"></translation>
+        <translation>Avstånd mellan höjdpunkter [m]:</translation>
     </message>
     <message>
         <source>Name of most upstream cross section</source>
-        <translation type="unfinished"></translation>
+        <translation>Namn på de flesta uppströms tvärsnitt</translation>
     </message>
     <message>
         <source>Points data to map:</source>
-        <translation type="unfinished"></translation>
+        <translation>Poängdata att kartlägga:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyHonryuExporter</name>
     <message>
         <source>RiverSurvey data HONRYU export</source>
-        <translation type="unfinished"></translation>
+        <translation>RiverSurvey data HONRYU export</translation>
     </message>
     <message>
         <source>CSV File (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>CSV -fil (*.csv)</translation>
     </message>
     <message>
         <source>Text File (*.txt)</source>
-        <translation type="unfinished"></translation>
+        <translation>Textfil (*.txt)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyHonryuExporterSettingDialog</name>
     <message>
         <source>Export Format Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Inställning för exportformat</translation>
     </message>
     <message>
         <source>Separator:</source>
-        <translation type="unfinished"></translation>
+        <translation>Separator:</translation>
     </message>
     <message>
         <source>Comma</source>
-        <translation type="unfinished"></translation>
+        <translation>Kommatecken</translation>
     </message>
     <message>
         <source>Tab</source>
-        <translation type="unfinished"></translation>
+        <translation>Flik</translation>
     </message>
     <message>
         <source>Space</source>
-        <translation type="unfinished"></translation>
+        <translation>Plats</translation>
     </message>
     <message>
         <source>Header:</source>
-        <translation type="unfinished"></translation>
+        <translation>Rubrik:</translation>
     </message>
     <message>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Lägg till</translation>
     </message>
     <message>
         <source>Columns:</source>
-        <translation type="unfinished"></translation>
+        <translation>Kolumner:</translation>
     </message>
     <message>
         <source>Name, Longitudinal Distance, Cross Section Distance, Elevation</source>
-        <translation type="unfinished"></translation>
+        <translation>Namn, längdavstånd, tvärsnittsavstånd, höjd</translation>
     </message>
     <message>
         <source>Longitudinal Distance, Name, Cross Section Distance, Elevation</source>
-        <translation type="unfinished"></translation>
+        <translation>Längdsträcka, namn, tvärsnittsavstånd, höjd</translation>
     </message>
     <message>
         <source>Cross Section Distance, Elevation, Name, Longitudinal Distance</source>
-        <translation type="unfinished"></translation>
+        <translation>Tvärsnittsavstånd, höjd, namn, längdavstånd</translation>
     </message>
     <message>
         <source>Cross Section Distance, Elevation, Longitudinal Distance, Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Tvärsnittsavstånd, höjd, längdsträcka, namn</translation>
     </message>
     <message>
         <source>Longitudinal Distance:</source>
-        <translation type="unfinished"></translation>
+        <translation>Längdavstånd:</translation>
     </message>
     <message>
         <source>Distance from previous Cross Section</source>
-        <translation type="unfinished"></translation>
+        <translation>Avstånd från tidigare tvärsnitt</translation>
     </message>
     <message>
         <source>Distance from first Cross Section</source>
-        <translation type="unfinished"></translation>
+        <translation>Avstånd från första tvärsnittet</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyImporter</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Fel</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: LX value is invalid</source>
-        <translation type="unfinished"></translation>
+        <source>%1 line %2 "%3": LX value is invalid</source>
+        <translation>%1 linje %2 "%3": LX -värdet är ogiltigt</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: LY value is invalid</source>
-        <translation type="unfinished"></translation>
+        <source>%1 line %2 "%3": LY value is invalid</source>
+        <translation>%1 linje %2 "%3": LY -värdet är ogiltigt</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: RX value is invalid</source>
-        <translation type="unfinished"></translation>
+        <source>%1 line %2 "%3": RX value is invalid</source>
+        <translation>%1 linje %2 "%3": RX -värdet är ogiltigt</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: RY value is invalid</source>
-        <translation type="unfinished"></translation>
+        <source>%1 line %2 "%3": RY value is invalid</source>
+        <translation>%1 linje %2 "%3": RY -värdet är ogiltigt</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Point count is invalid</source>
-        <translation type="unfinished"></translation>
+        <source>%1 line %2 "%3": Point count is invalid</source>
+        <translation>%1 linje %2 "%3": Poängräkningen är ogiltig</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Invalid index value</source>
-        <translation type="unfinished"></translation>
+        <source>%1 line %2 "%3": Invalid index value</source>
+        <translation>%1 linje %2 "%3": Ogiltigt indexvärde</translation>
     </message>
     <message>
         <source>%1 line %2: cross section data for %3 not enough</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 linje %2 : tvärsnittsdata för %3 inte tillräckligt</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Distance value is invalid</source>
-        <translation type="unfinished"></translation>
+        <source>%1 line %2 "%3": Distance value is invalid</source>
+        <translation>%1 linje %2 "%3": Avståndsvärdet är ogiltigt</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Elevation value is invalid</source>
-        <translation type="unfinished"></translation>
+        <source>%1 line %2 "%3": Elevation value is invalid</source>
+        <translation>%1 linje %2 "%3": Höjdvärdet är ogiltigt</translation>
     </message>
     <message>
         <source>#survey data is not found. Will be ignored.</source>
-        <translation type="unfinished"></translation>
+        <translation>#sundersökningsdata hittades inte. Kommer att ignoreras.</translation>
     </message>
     <message>
         <source>#x-section data is not found. Will be ignored.</source>
-        <translation type="unfinished"></translation>
+        <translation>#x-sektionsdata hittades inte. Kommer att ignoreras.</translation>
     </message>
     <message>
         <source>#x-section data is not correctly ordered. Will be sorted automatically.</source>
-        <translation type="unfinished"></translation>
+        <translation>#x-sektionsdata är inte korrekt ordnade. Sorteras automatiskt.</translation>
     </message>
     <message>
         <source>#x-section data contained data with same distances. Data distance is shifted slightly so that you can import both points.</source>
-        <translation type="unfinished"></translation>
+        <translation>#x-sektionsdata innehöll data med samma avstånd. Datavståndet flyttas något så att du kan importera båda punkterna.</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Varning</translation>
     </message>
     <message>
         <source>Cross Section data is not ordered correctly at %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tvärsnittsdata beställs inte korrekt kl %1.</translation>
     </message>
     <message>
         <source>Crosssection data is not ordered correctly at %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tvärsnittsdata är inte ordnade korrekt kl %1.</translation>
     </message>
     <message>
         <source>Error occured while opening %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Ett fel uppstod vid öppning %1</translation>
     </message>
     <message>
         <source>%1 Line %2: Read error. Needs at least two values.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 Linje %2 : Läsfel. Behöver minst två värden.</translation>
     </message>
     <message>
-        <source>%1 Line %2: Read error. Not real number value &quot;%3&quot;.</source>
-        <translation type="unfinished"></translation>
+        <source>%1 Line %2: Read error. Not real number value "%3".</source>
+        <translation>%1 Linje %2 : Läsfel. Inte riktigt talvärde "%3".</translation>
     </message>
     <message>
         <source>Cross section %1 does not cross the center line. Center point is set to be the middle point of low water way.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tvärsnitt %1 går inte över mittlinjen. Mittpunkten är inställd på att vara mittpunkten för lågvattenväg.</translation>
     </message>
     <message>
         <source>On cross section %1, the center line does not cross in the low water way. Center point is set to be the middle point of low water way.</source>
-        <translation type="unfinished"></translation>
+        <translation>I tvärsnitt %1, mittlinjen korsar inte på lågvatten. Mittpunkten är inställd på att vara mittpunkten för lågvattenväg.</translation>
     </message>
     <message>
         <source>Cross section %1 does not cross the center line. Center point is set to be the middle point of left bank and right bank.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tvärsnitt %1 går inte över mittlinjen. Mittpunkten är inställd på att vara mittpunkten på vänster bank och höger bank.</translation>
     </message>
     <message>
         <source>Cross-Section data (*.riv)</source>
-        <translation type="unfinished"></translation>
+        <translation>Tvärsnittsdata (*.riv)</translation>
     </message>
     <message>
         <source>Cross-Section Data (*.riv)</source>
-        <translation type="unfinished"></translation>
+        <translation>Tvärsnittsdata (*.riv)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyImporterSettingDialog</name>
     <message>
         <source>River Survey Data Import Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Inställning för import av River Survey -data</translation>
     </message>
     <message>
         <source>Where to define River center point</source>
-        <translation type="unfinished"></translation>
+        <translation>Var man ska definiera flodens mittpunkt</translation>
     </message>
     <message>
         <source>Middle point of left bank and right bank</source>
-        <translation type="unfinished"></translation>
+        <translation>Mittpunkten på vänster bank och höger bank</translation>
     </message>
     <message>
         <source>Where the elevation is the smallest</source>
-        <translation type="unfinished"></translation>
+        <translation>Där höjden är den minsta</translation>
     </message>
     <message>
         <source>Order of cross sections</source>
-        <translation type="unfinished"></translation>
+        <translation>Tvärsnittsordning</translation>
     </message>
     <message>
         <source>Upstream to downstream</source>
-        <translation type="unfinished"></translation>
+        <translation>Uppströms till nedströms</translation>
     </message>
     <message>
         <source>Downstream to upstream</source>
-        <translation type="unfinished"></translation>
+        <translation>Nedströms till uppströms</translation>
     </message>
     <message>
         <source>Middle point of Low water way</source>
-        <translation type="unfinished"></translation>
+        <translation>Mittpunkt för Lågvattenväg</translation>
     </message>
     <message>
         <source>Where the elevation is the smallest in low water way</source>
-        <translation type="unfinished"></translation>
+        <translation>Där höjden är den minsta i lågvatten</translation>
     </message>
     <message>
         <source>Import center line from CSV file</source>
-        <translation type="unfinished"></translation>
+        <translation>Importera mittlinje från CSV -fil</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyImporter_ProblemsDialog</name>
     <message>
         <source>Problems Found in Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Problem som finns i data</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>namn</translation>
     </message>
     <message>
         <source>Problem</source>
-        <translation type="unfinished"></translation>
+        <translation>Problem</translation>
     </message>
     <message>
         <source>The problems above is found. Do you want to continue importing?</source>
-        <translation type="unfinished"></translation>
+        <translation>Problemen ovan finns. Vill du fortsätta importera?</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyLandXmlExporter</name>
     <message>
         <source>LandXml (*.xml)</source>
-        <translation type="unfinished"></translation>
+        <translation>LandXml (*.xml)</translation>
     </message>
     <message>
         <source>LandXml file(*.xml)</source>
-        <translation type="unfinished"></translation>
+        <translation>LandXml -fil (*.xml)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyMapPointsDialog</name>
     <message>
         <source>Map points data</source>
-        <translation type="unfinished"></translation>
+        <translation>Kartpunktsdata</translation>
     </message>
     <message>
         <source>Distance between elevation points[m]:</source>
-        <translation type="unfinished"></translation>
+        <translation>Avstånd mellan höjdpunkter [m]:</translation>
     </message>
     <message>
         <source>Points data to map:</source>
-        <translation type="unfinished"></translation>
+        <translation>Poängdata att kartlägga:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyMlitImporter</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Fel</translation>
     </message>
     <message>
         <source>Opening %1 failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Öppning %1 misslyckades.</translation>
     </message>
     <message>
         <source>%1 Line %2: KP is not input</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 Linje %2 : KP matas inte in</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: LX value is invalid</source>
-        <translation type="unfinished"></translation>
+        <source>%1 Line %2 "%3": LX value is invalid</source>
+        <translation>%1 Linje %2 "%3": LX -värdet är ogiltigt</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: LY value is invalid</source>
-        <translation type="unfinished"></translation>
+        <source>%1 Line %2 "%3": LY value is invalid</source>
+        <translation>%1 Linje %2 "%3": LY -värdet är ogiltigt</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: RX value is invalid</source>
-        <translation type="unfinished"></translation>
+        <source>%1 Line %2 "%3": RX value is invalid</source>
+        <translation>%1 Linje %2 "%3": RX -värdet är ogiltigt</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: RY value is invalid</source>
-        <translation type="unfinished"></translation>
+        <source>%1 Line %2 "%3": RY value is invalid</source>
+        <translation>%1 Linje %2 "%3": RY -värdet är ogiltigt</translation>
     </message>
     <message>
         <source>Distance marker data is not found. Will be ignored.</source>
-        <translation type="unfinished"></translation>
+        <translation>Distansmarkördata hittades inte. Kommer att ignoreras.</translation>
     </message>
     <message>
-        <source>%1 line %2: &quot;%3&quot;: Flag data is invalid.</source>
-        <translation type="unfinished"></translation>
+        <source>%1 line %2: "%3": Flag data is invalid.</source>
+        <translation>%1 linje %2 : "%3": Flaggdata är ogiltiga.</translation>
     </message>
     <message>
-        <source>%1 line %2: &quot;%3&quot;: Distance data is invalid.</source>
-        <translation type="unfinished"></translation>
+        <source>%1 line %2: "%3": Distance data is invalid.</source>
+        <translation>%1 linje %2 : "%3": Avståndsdata är ogiltiga.</translation>
     </message>
     <message>
-        <source>%1 line %2: &quot;%3&quot;: Elevation data is invalid.</source>
-        <translation type="unfinished"></translation>
+        <source>%1 line %2: "%3": Elevation data is invalid.</source>
+        <translation>%1 linje %2 : "%3": Höjddata är ogiltiga.</translation>
     </message>
     <message>
         <source>Select folder where cross section data exists</source>
-        <translation type="unfinished"></translation>
+        <translation>Välj mapp där tvärsnittsdata finns</translation>
     </message>
     <message>
         <source>Cross Section data is not found. Will be ignored.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tvärsnittsdata hittades inte. Kommer att ignoreras.</translation>
     </message>
     <message>
         <source>Cross Section data contained data with same distances. Data with lowest elevation is used.: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Tvärsnittsdata innehöll data med samma avstånd. Data med lägsta höjd används.: %1</translation>
     </message>
     <message>
         <source>Cross Section data is not correctly ordered. Will be sorted automatically.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tvärsnittsdata är inte korrekt ordnade. Sorteras automatiskt.</translation>
     </message>
     <message>
         <source>Cross Section data contained data with same distances. Data distance is shifted slightly so that you can import both points.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tvärsnittsdata innehöll data med samma avstånd. Datavståndet flyttas något så att du kan importera båda punkterna.</translation>
     </message>
     <message>
         <source>%1 Line %2: The number of values should be 5, but %3 values found.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 Linje %2 : Antalet värden bör vara 5, men %3 värden hittade.</translation>
     </message>
     <message>
         <source>MLIT Cross-Section Data (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>MLIT-tvärsnittsdata (*.csv)</translation>
     </message>
     <message>
         <source>Japan MLIT Cross-Section Data (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>Japan MLIT-tvärsnittsdata (*.csv)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyMlitImporter_ProblemsDialog</name>
     <message>
         <source>Problems Found in Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Problem som finns i data</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>namn</translation>
     </message>
     <message>
         <source>Related File</source>
-        <translation type="unfinished"></translation>
+        <translation>Relaterad fil</translation>
     </message>
     <message>
         <source>Problem</source>
-        <translation type="unfinished"></translation>
+        <translation>Problem</translation>
     </message>
     <message>
         <source>The problems above is found. Do you want to continue importing?</source>
-        <translation type="unfinished"></translation>
+        <translation>Problemen ovan finns. Vill du fortsätta importera?</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Redigera visningsinställningen</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyVTKExporter</name>
     <message>
         <source>RiverSurvey data</source>
-        <translation type="unfinished"></translation>
+        <translation>RiverSurvey -data</translation>
     </message>
     <message>
         <source>VTK File (*.vtk)</source>
-        <translation type="unfinished"></translation>
+        <translation>VTK -fil (*.vtk)</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionRiverSurveyInterface</name>
     <message>
         <source>Move Control Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Flytta kontrollpunkter</translation>
     </message>
 </context>
 </TS>

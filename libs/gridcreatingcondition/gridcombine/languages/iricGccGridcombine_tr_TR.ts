@@ -1,125 +1,123 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="tr_TR">
 <context>
     <name>GridCreatingConditionCreatorGridCombine</name>
     <message>
         <source>Create grid by combining two grids</source>
-        <translation type="unfinished"></translation>
+        <translation>İki ızgarayı birleştirerek ızgara oluşturun</translation>
     </message>
     <message>
         <source>Grid with shape of river meeting point can be created using this algorithm. Please create or import two grids first. Selecting the main channel grid and sub channel grid, and specifying some parameters, you can create a river meeting point grid.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bu algoritma kullanılarak nehir buluşma noktası şeklinde ızgara oluşturulabilir. Lütfen önce iki ızgara oluşturun veya içe aktarın. Ana kanal ızgarasını ve alt kanal ızgarasını seçerek ve bazı parametreleri belirterek bir nehir buluşma noktası ızgarası oluşturabilirsiniz.</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionGridCombine</name>
     <message>
         <source>(No additional operation available)</source>
-        <translation type="unfinished"></translation>
+        <translation>(Ek işlem yok)</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionGridCombineSettingDialog</name>
     <message>
         <source>Grid Creation</source>
-        <translation type="unfinished"></translation>
+        <translation>Izgara Oluşturma</translation>
     </message>
     <message>
         <source>Basis</source>
-        <translation type="unfinished"></translation>
+        <translation>temel</translation>
     </message>
     <message>
         <source>Confluence type</source>
-        <translation type="unfinished"></translation>
+        <translation>izdiham türü</translation>
     </message>
     <message>
         <source>Bind together (left : tributary, right : mainstream)</source>
-        <translation type="unfinished"></translation>
+        <translation>Birbirine bağlayın (solda: yan, sağda: ana akım)</translation>
     </message>
     <message>
         <source>Flow into the left bank (left : tributary, right : mainstream)</source>
-        <translation type="unfinished"></translation>
+        <translation>Sol kıyıya doğru akış (sol: kol, sağ: ana akım)</translation>
     </message>
     <message>
         <source>Flow into the right bank (left : mainstream, right : tributary)</source>
-        <translation type="unfinished"></translation>
+        <translation>Sağ kıyıya doğru akış (sol: ana akım, sağ: yan kol)</translation>
     </message>
     <message>
         <source>Input grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Giriş ızgarası</translation>
     </message>
     <message>
         <source>Mainstream :</source>
-        <translation type="unfinished"></translation>
+        <translation>ana akım:</translation>
     </message>
     <message>
         <source>Tributary :</source>
-        <translation type="unfinished"></translation>
+        <translation>Bağımlılık:</translation>
     </message>
     <message>
         <source>Confluence information</source>
-        <translation type="unfinished"></translation>
+        <translation>izdiham bilgisi</translation>
     </message>
     <message>
         <source>Mainstream crossing directional beginning index :</source>
-        <translation type="unfinished"></translation>
+        <translation>Ana akım geçiş yönlü başlangıç indeksi:</translation>
     </message>
     <message>
         <source>Mainstream crossing directional ending index :</source>
-        <translation type="unfinished"></translation>
+        <translation>Ana akım geçiş yönlü bitiş endeksi:</translation>
     </message>
     <message>
         <source>Tributary crossing directional beginning index :</source>
-        <translation type="unfinished"></translation>
+        <translation>Kol geçişi yönlü başlangıç endeksi:</translation>
     </message>
     <message>
         <source>Tributary crossing directional ending index :</source>
-        <translation type="unfinished"></translation>
+        <translation>Kol geçişi yönlü bitiş endeksi:</translation>
     </message>
     <message>
         <source>Mainstream flow directional tributary beginning index :</source>
-        <translation type="unfinished"></translation>
+        <translation>Ana akım yönlü bağımlı başlangıç endeksi:</translation>
     </message>
     <message>
         <source>Mainstream flow directional tributary ending index :</source>
-        <translation type="unfinished"></translation>
+        <translation>Ana akım yönlü bağımlı bitiş endeksi:</translation>
     </message>
     <message>
         <source>Obstacle information</source>
-        <translation type="unfinished"></translation>
+        <translation>Engel bilgisi</translation>
     </message>
     <message>
         <source>Obstacle coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Engel koordinatları</translation>
     </message>
     <message>
         <source>Upstream</source>
-        <translation type="unfinished"></translation>
+        <translation>yukarı akış</translation>
     </message>
     <message>
         <source>x :</source>
-        <translation type="unfinished"></translation>
+        <translation>x :</translation>
     </message>
     <message>
         <source>y :</source>
-        <translation type="unfinished"></translation>
+        <translation>y:</translation>
     </message>
     <message>
         <source>Downstream</source>
-        <translation type="unfinished"></translation>
+        <translation>akıntı yönünde</translation>
     </message>
     <message>
         <source>Correction value for setting obstacle cells :</source>
-        <translation type="unfinished"></translation>
+        <translation>Engel hücrelerinin ayarlanması için düzeltme değeri:</translation>
     </message>
     <message>
         <source>(smaller value for complex channel form)</source>
-        <translation type="unfinished"></translation>
+        <translation>(karmaşık kanal formu için daha küçük değer)</translation>
     </message>
     <message>
         <source>Elevation of obstacle cells :</source>
-        <translation type="unfinished"></translation>
+        <translation>Engel hücrelerinin yüksekliği:</translation>
     </message>
 </context>
 </TS>

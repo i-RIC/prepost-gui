@@ -1,143 +1,141 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="hi_IN">
 <context>
     <name>MeasuredDataFileDataItem</name>
     <message>
         <source>File</source>
-        <translation type="unfinished"></translation>
+        <translation>फ़ाइल</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation type="unfinished"></translation>
+        <translation>निर्यात (&amp;E)...</translation>
     </message>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>सीएसवी फ़ाइल (*.csv)</translation>
     </message>
     <message>
         <source>Export Measured Data</source>
-        <translation type="unfinished"></translation>
+        <translation>निर्यात मापा डेटा</translation>
     </message>
     <message>
         <source>Measured Data successfully exported to %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>मापा गया डेटा सफलतापूर्वक निर्यात किया गया %1.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>त्रुटि</translation>
     </message>
 </context>
 <context>
     <name>MeasuredDataPointGroupDataItem</name>
     <message>
         <source>Scalar</source>
-        <translation type="unfinished"></translation>
+        <translation>अदिश</translation>
     </message>
     <message>
         <source>Contour Physical Value Change</source>
-        <translation type="unfinished"></translation>
+        <translation>कंटूर भौतिक मूल्य परिवर्तन</translation>
     </message>
 </context>
 <context>
     <name>MeasuredDataPointSettingDialog</name>
     <message>
         <source>Scalar Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>अदिश सेटिंग</translation>
     </message>
     <message>
         <source>Measured Value:</source>
-        <translation type="unfinished"></translation>
+        <translation>मापित मान:</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>डिस्प्ले सेटिंग</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>बिंदु आकार:</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>कलर बार सेटिंग (&amp;C)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>त्रुटि</translation>
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
-        <translation type="unfinished"></translation>
+        <translation>मान श्रेणी के लिए, अधिकतम मान न्यूनतम मान से छोटा होता है।</translation>
     </message>
 </context>
 <context>
     <name>MeasuredDataVectorGroupDataItem</name>
     <message>
         <source>Arrow</source>
-        <translation type="unfinished"></translation>
+        <translation>तीर</translation>
     </message>
     <message>
         <source>Arrow Physical Value Change</source>
-        <translation type="unfinished"></translation>
+        <translation>एरो फिजिकल वैल्यू चेंज</translation>
     </message>
     <message>
         <source>Update Arrow Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>तीर सेटिंग अपडेट करें</translation>
     </message>
 </context>
 <context>
     <name>MeasuredDataVectorSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>तीर सेटिंग</translation>
     </message>
     <message>
         <source>Physical value:</source>
-        <translation type="unfinished"></translation>
+        <translation>भौतिक मूल्य:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation type="unfinished"></translation>
+        <translation>लंबाई</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation>ऑटो</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation type="unfinished"></translation>
+        <translation>मानक मूल्य:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation type="unfinished"></translation>
+        <translation>[एमएस]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation type="unfinished"></translation>
+        <translation>स्क्रीन पर लंबाई:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation type="unfinished"></translation>
+        <translation>[पिक्सेल]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation type="unfinished"></translation>
+        <translation>आकर्षित करने के लिए न्यूनतम मूल्य:</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>रंग</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation type="unfinished"></translation>
+        <translation>कस्टम रंग</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation type="unfinished"></translation>
+        <translation>अदिश मान द्वारा</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>कलर बार सेटिंग (&amp;C)</translation>
     </message>
 </context>
 </TS>

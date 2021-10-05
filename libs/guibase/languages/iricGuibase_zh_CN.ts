@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="zh_CN">
 <context>
     <name>AsciiOnlyLineEdit</name>
@@ -102,7 +100,7 @@
     </message>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>CSV 文件 (*.csv)</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -174,15 +172,15 @@
     <name>CoordinatesEditDialog</name>
     <message>
         <source>Edit Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>编辑坐标</translation>
     </message>
     <message>
         <source>X</source>
-        <translation type="unfinished"></translation>
+        <translation>X</translation>
     </message>
     <message>
         <source>Y</source>
-        <translation type="unfinished"></translation>
+        <translation>是</translation>
     </message>
 </context>
 <context>
@@ -193,7 +191,7 @@
     </message>
     <message>
         <source>...</source>
-        <translation type="unfinished"></translation>
+        <translation>...</translation>
     </message>
     <message>
         <source>Select Directory</source>
@@ -219,7 +217,7 @@
     </message>
     <message>
         <source>...</source>
-        <translation type="unfinished"></translation>
+        <translation>...</translation>
     </message>
     <message>
         <source>All files (*.*)</source>
@@ -265,18 +263,18 @@
     <name>IntegerNumberDisplayLabel</name>
     <message>
         <source>------</source>
-        <translation type="unfinished"></translation>
+        <translation>------</translation>
     </message>
 </context>
 <context>
     <name>ItemMultiSelectingDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished">对话框</translation>
+        <translation>对话</translation>
     </message>
     <message>
         <source>Check &amp;All</source>
-        <translation type="unfinished"></translation>
+        <translation>选择所有 (&amp;A)</translation>
     </message>
 </context>
 <context>
@@ -325,98 +323,98 @@
     <name>PointClearCommand</name>
     <message>
         <source>Clear Point</source>
-        <translation type="unfinished"></translation>
+        <translation>清点</translation>
     </message>
 </context>
 <context>
     <name>PointMoveCommand</name>
     <message>
         <source>Move Point</source>
-        <translation type="unfinished"></translation>
+        <translation>移动点</translation>
     </message>
 </context>
 <context>
     <name>PointSetCommand</name>
     <message>
         <source>Set Point</source>
-        <translation type="unfinished"></translation>
+        <translation>设定点</translation>
     </message>
 </context>
 <context>
     <name>PolyLineAddVertexCommand</name>
     <message>
         <source>Insert Line Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>插入线顶点</translation>
     </message>
 </context>
 <context>
     <name>PolyLineEditCoordinatesCommand</name>
     <message>
         <source>Edit Line Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>编辑线坐标</translation>
     </message>
 </context>
 <context>
     <name>PolyLineMoveVertexCommand</name>
     <message>
         <source>Move Line Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>移动线顶点</translation>
     </message>
 </context>
 <context>
     <name>PolyLinePushVertexCommand</name>
     <message>
         <source>Add New Line Point</source>
-        <translation type="unfinished"></translation>
+        <translation>添加新线点</translation>
     </message>
 </context>
 <context>
     <name>PolyLineRemoveVertexCommand</name>
     <message>
         <source>Remove Line Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>删除线顶点</translation>
     </message>
 </context>
 <context>
     <name>PolygonAddVertexCommand</name>
     <message>
         <source>Insert Polygon Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>插入多边形顶点</translation>
     </message>
 </context>
 <context>
     <name>PolygonEditCoordinatesCommand</name>
     <message>
         <source>Edit Polygon Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>编辑多边形坐标</translation>
     </message>
 </context>
 <context>
     <name>PolygonMoveVertexCommand</name>
     <message>
         <source>Move Polygon Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>移动多边形顶点</translation>
     </message>
 </context>
 <context>
     <name>PolygonPushVertexCommand</name>
     <message>
         <source>Add New Polygon Point</source>
-        <translation type="unfinished"></translation>
+        <translation>添加新的多边形点</translation>
     </message>
 </context>
 <context>
     <name>PolygonRemoveVertexCommand</name>
     <message>
         <source>Remove Polygon Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>移除多边形顶点</translation>
     </message>
 </context>
 <context>
     <name>RealNumberDisplayLabel</name>
     <message>
         <source>------</source>
-        <translation type="unfinished"></translation>
+        <translation>------</translation>
     </message>
 </context>
 <context>
@@ -485,11 +483,11 @@
     </message>
     <message>
         <source>Specify the number format in printf format. For example:
-   &quot;%5.2f&quot; for 3.141592 --&gt; 3.14
-   &quot;%4.2e&quot; for 12300  --&gt; 1.23e+004</source>
+   "%5.2f" for 3.141592 --&gt; 3.14
+   "%4.2e" for 12300  --&gt; 1.23e+004</source>
         <translation>. 以printf格式指定数字格式。例如:
-   &quot;%5.2f&quot; for 3.141592 --&gt; 3.14
-   &quot;%4.2e&quot; for 12300  --&gt; 1.23e+004</translation>
+   "%5.2f" for 3.141592 --&gt; 3.14
+   "%4.2e" for 12300  --&gt; 1.23e+004</translation>
     </message>
     <message>
         <source>Orientation :</source>
@@ -537,7 +535,7 @@
     </message>
     <message>
         <source>X :</source>
-        <translation type="unfinished"></translation>
+        <translation>X ：</translation>
     </message>
     <message>
         <source>If you specify 0, Color bar left edge is located at window left edge.</source>
@@ -545,7 +543,7 @@
     </message>
     <message>
         <source>Y :</source>
-        <translation type="unfinished"></translation>
+        <translation>:</translation>
     </message>
     <message>
         <source>If you specify 0, Color bar bottom is located at window bottom.</source>
@@ -603,15 +601,15 @@
     </message>
     <message>
         <source>MM:SS</source>
-        <translation type="unfinished"></translation>
+        <translation>MM:SS</translation>
     </message>
     <message>
         <source>HH:MM:SS</source>
-        <translation type="unfinished"></translation>
+        <translation>时:分:秒</translation>
     </message>
     <message>
         <source>DD:HH:MM:SS</source>
-        <translation type="unfinished"></translation>
+        <translation>DD:HH:MM:SS</translation>
     </message>
     <message>
         <source>Actual time format</source>
@@ -619,23 +617,23 @@
     </message>
     <message>
         <source>yyyy/mm/dd HH:MM:SS</source>
-        <translation type="unfinished"></translation>
+        <translation>yyyy/mm/dd HH:MM:SS</translation>
     </message>
     <message>
         <source>yyyy/mm/dd HH:MM</source>
-        <translation type="unfinished"></translation>
+        <translation>yyyy/mm/dd HH:MM</translation>
     </message>
     <message>
         <source>mm/dd HH:MM:SS</source>
-        <translation type="unfinished"></translation>
+        <translation>毫米/日高：分：秒</translation>
     </message>
     <message>
         <source>mm/dd HH:MM</source>
-        <translation type="unfinished"></translation>
+        <translation>毫米/日高：毫米</translation>
     </message>
     <message>
         <source>HH:MM</source>
-        <translation type="unfinished"></translation>
+        <translation>时:分</translation>
     </message>
     <message>
         <source>Custom</source>
@@ -779,15 +777,15 @@
     </message>
     <message>
         <source>Arial</source>
-        <translation type="unfinished"></translation>
+        <translation>宋体</translation>
     </message>
     <message>
         <source>Courier</source>
-        <translation type="unfinished"></translation>
+        <translation>导游</translation>
     </message>
     <message>
         <source>Times</source>
-        <translation type="unfinished"></translation>
+        <translation>时代</translation>
     </message>
     <message>
         <source>Bold</source>
@@ -795,7 +793,7 @@
     </message>
     <message>
         <source>B</source>
-        <translation type="unfinished"></translation>
+        <translation>乙</translation>
     </message>
     <message>
         <source>Italic</source>
@@ -803,7 +801,7 @@
     </message>
     <message>
         <source>I</source>
-        <translation type="unfinished"></translation>
+        <translation>一世</translation>
     </message>
     <message>
         <source>Shadow</source>
@@ -811,7 +809,7 @@
     </message>
     <message>
         <source>S</source>
-        <translation type="unfinished"></translation>
+        <translation>秒</translation>
     </message>
     <message>
         <source>Color:</source>

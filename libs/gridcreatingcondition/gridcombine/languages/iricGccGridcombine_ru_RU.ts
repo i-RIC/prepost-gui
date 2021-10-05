@@ -1,125 +1,123 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ru_RU">
 <context>
     <name>GridCreatingConditionCreatorGridCombine</name>
     <message>
         <source>Create grid by combining two grids</source>
-        <translation type="unfinished"></translation>
+        <translation>Создайте сетку, объединив две сетки</translation>
     </message>
     <message>
         <source>Grid with shape of river meeting point can be created using this algorithm. Please create or import two grids first. Selecting the main channel grid and sub channel grid, and specifying some parameters, you can create a river meeting point grid.</source>
-        <translation type="unfinished"></translation>
+        <translation>С помощью этого алгоритма можно создать сетку с формой точки встречи реки. Сначала создайте или импортируйте две сетки. Выбрав сетку основного канала и сетку вспомогательного канала и указав некоторые параметры, вы можете создать сетку точек встречи реки.</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionGridCombine</name>
     <message>
         <source>(No additional operation available)</source>
-        <translation type="unfinished"></translation>
+        <translation>(Дополнительная операция недоступна)</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionGridCombineSettingDialog</name>
     <message>
         <source>Grid Creation</source>
-        <translation type="unfinished"></translation>
+        <translation>Создание сетки</translation>
     </message>
     <message>
         <source>Basis</source>
-        <translation type="unfinished"></translation>
+        <translation>Основа</translation>
     </message>
     <message>
         <source>Confluence type</source>
-        <translation type="unfinished"></translation>
+        <translation>Тип слияния</translation>
     </message>
     <message>
         <source>Bind together (left : tributary, right : mainstream)</source>
-        <translation type="unfinished"></translation>
+        <translation>Свяжите вместе (слева: приток, справа: основной поток)</translation>
     </message>
     <message>
         <source>Flow into the left bank (left : tributary, right : mainstream)</source>
-        <translation type="unfinished"></translation>
+        <translation>Приток в левый берег (слева: приток, справа: основное русло)</translation>
     </message>
     <message>
         <source>Flow into the right bank (left : mainstream, right : tributary)</source>
-        <translation type="unfinished"></translation>
+        <translation>Приток в правый берег (слева: основное русло, справа: приток)</translation>
     </message>
     <message>
         <source>Input grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Входная сетка</translation>
     </message>
     <message>
         <source>Mainstream :</source>
-        <translation type="unfinished"></translation>
+        <translation>Основное направление :</translation>
     </message>
     <message>
         <source>Tributary :</source>
-        <translation type="unfinished"></translation>
+        <translation>Приток:</translation>
     </message>
     <message>
         <source>Confluence information</source>
-        <translation type="unfinished"></translation>
+        <translation>Информация о Confluence</translation>
     </message>
     <message>
         <source>Mainstream crossing directional beginning index :</source>
-        <translation type="unfinished"></translation>
+        <translation>Индекс направленности пересечения мейнстрима:</translation>
     </message>
     <message>
         <source>Mainstream crossing directional ending index :</source>
-        <translation type="unfinished"></translation>
+        <translation>Индекс направленного окончания пересечения мейнстрима:</translation>
     </message>
     <message>
         <source>Tributary crossing directional beginning index :</source>
-        <translation type="unfinished"></translation>
+        <translation>Указатель направления начала пересечения притока:</translation>
     </message>
     <message>
         <source>Tributary crossing directional ending index :</source>
-        <translation type="unfinished"></translation>
+        <translation>Индекс направленного окончания пересечения притока:</translation>
     </message>
     <message>
         <source>Mainstream flow directional tributary beginning index :</source>
-        <translation type="unfinished"></translation>
+        <translation>Индекс начала направленного притока основного потока:</translation>
     </message>
     <message>
         <source>Mainstream flow directional tributary ending index :</source>
-        <translation type="unfinished"></translation>
+        <translation>Индекс окончания направленного притока основного потока:</translation>
     </message>
     <message>
         <source>Obstacle information</source>
-        <translation type="unfinished"></translation>
+        <translation>Информация о препятствии</translation>
     </message>
     <message>
         <source>Obstacle coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Координаты препятствия</translation>
     </message>
     <message>
         <source>Upstream</source>
-        <translation type="unfinished"></translation>
+        <translation>Upstream</translation>
     </message>
     <message>
         <source>x :</source>
-        <translation type="unfinished"></translation>
+        <translation>Икс :</translation>
     </message>
     <message>
         <source>y :</source>
-        <translation type="unfinished"></translation>
+        <translation>y:</translation>
     </message>
     <message>
         <source>Downstream</source>
-        <translation type="unfinished"></translation>
+        <translation>Вниз по течению</translation>
     </message>
     <message>
         <source>Correction value for setting obstacle cells :</source>
-        <translation type="unfinished"></translation>
+        <translation>Величина поправки для установки ячеек препятствий:</translation>
     </message>
     <message>
         <source>(smaller value for complex channel form)</source>
-        <translation type="unfinished"></translation>
+        <translation>(меньшее значение для сложной формы канала)</translation>
     </message>
     <message>
         <source>Elevation of obstacle cells :</source>
-        <translation type="unfinished"></translation>
+        <translation>Высота ячеек препятствий:</translation>
     </message>
 </context>
 </TS>

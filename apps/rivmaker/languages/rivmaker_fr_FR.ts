@@ -1,1373 +1,1371 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="fr_FR">
 <context>
     <name>AboutDialog</name>
     <message>
         <source>About rivmaker</source>
-        <translation type="unfinished"></translation>
+        <translation>À propos de rivmaker</translation>
     </message>
     <message>
         <source>Copyright: USGS</source>
-        <translation type="unfinished"></translation>
+        <translation>Droits d'auteur : USGS</translation>
     </message>
     <message>
         <source>rivmaker 2.0.2</source>
-        <translation type="unfinished"></translation>
+        <translation>rivmaker 2.0.2</translation>
     </message>
     <message>
         <source>Release Date: 2021/3/2</source>
-        <translation type="unfinished"></translation>
+        <translation>Date de sortie : 2021/3/2</translation>
     </message>
 </context>
 <context>
     <name>ArbitraryHWM</name>
     <message>
         <source>Arbitrary HWM</source>
-        <translation type="unfinished"></translation>
+        <translation>HWM arbitraire</translation>
     </message>
 </context>
 <context>
     <name>BaseLine</name>
     <message>
         <source>Base Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Ligne de base</translation>
     </message>
 </context>
 <context>
     <name>BaseLinePreProcessorController</name>
     <message>
         <source>&amp;Import...</source>
-        <translation type="unfinished"></translation>
+        <translation>Importer (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportation (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Add Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Ajouter un sommet (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Supprimer le sommet (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Edit Coordinates...</source>
-        <translation type="unfinished"></translation>
+        <translation>Modifier les coordonnées (&amp;E)...</translation>
     </message>
     <message>
         <source>Reverse &amp;Direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Direction inverse (&amp;D)</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Effacer</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Avertissement</translation>
     </message>
     <message>
         <source>Base line is not defined yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>La ligne de base n'est pas encore définie.</translation>
     </message>
     <message>
         <source>Point can not be deleted when there are only two points.</source>
-        <translation type="unfinished"></translation>
+        <translation>Le point ne peut pas être supprimé lorsqu'il n'y a que deux points.</translation>
     </message>
 </context>
 <context>
     <name>BaseLinePreProcessorViewLabelHelper</name>
     <message>
         <source>Downstream</source>
-        <translation type="unfinished"></translation>
+        <translation>En aval</translation>
     </message>
     <message>
         <source>Upstream</source>
-        <translation type="unfinished"></translation>
+        <translation>En amont</translation>
     </message>
 </context>
 <context>
     <name>Benchmark</name>
     <message>
         <source>Benchmark</source>
-        <translation type="unfinished"></translation>
+        <translation>Référence</translation>
     </message>
 </context>
 <context>
     <name>ChartGraphicsView</name>
     <message>
         <source>Aspect ratio (V/H): 1 / %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Rapport d'aspect (V/H): 1 / %1</translation>
     </message>
 </context>
 <context>
     <name>ChartWindow</name>
     <message>
         <source>Display ToolBar</source>
-        <translation type="unfinished"></translation>
+        <translation>Afficher la barre d'outils</translation>
     </message>
     <message>
         <source>Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Grille</translation>
     </message>
     <message>
         <source>Scale</source>
-        <translation type="unfinished"></translation>
+        <translation>Escalader</translation>
     </message>
     <message>
         <source>Aspect ratio</source>
-        <translation type="unfinished"></translation>
+        <translation>Ratio d'aspect</translation>
     </message>
     <message>
         <source>View ToolBar</source>
-        <translation type="unfinished"></translation>
+        <translation>Afficher la barre d'outils</translation>
     </message>
     <message>
         <source>Fix aspect ratio</source>
-        <translation type="unfinished"></translation>
+        <translation>Corriger les proportions</translation>
     </message>
     <message>
         <source>Fix region</source>
-        <translation type="unfinished"></translation>
+        <translation>Corriger la région</translation>
     </message>
     <message>
         <source>Aspect ratio (V/H): 1 / </source>
-        <translation type="unfinished"></translation>
+        <translation>Rapport d'aspect (V/H): 1 /</translation>
     </message>
 </context>
 <context>
     <name>CoordinateEditWidget</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Erreur</translation>
     </message>
     <message>
         <source>It is not a real value</source>
-        <translation type="unfinished"></translation>
+        <translation>Ce n'est pas une vraie valeur</translation>
     </message>
 </context>
 <context>
     <name>CoordinatesEditDialog</name>
     <message>
         <source>Edit Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Modifier les coordonnées</translation>
     </message>
     <message>
         <source>X</source>
-        <translation type="unfinished"></translation>
+        <translation>X</translation>
     </message>
     <message>
         <source>Y</source>
-        <translation type="unfinished"></translation>
+        <translation>Oui</translation>
     </message>
 </context>
 <context>
     <name>CrossSectionPreProcessorController</name>
     <message>
         <source>&amp;Edit Coordinates...</source>
-        <translation type="unfinished"></translation>
+        <translation>Modifier les coordonnées (&amp;E)...</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Avertissement</translation>
     </message>
     <message>
         <source>Cross Section is not defined yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>La section transversale n'est pas encore définie.</translation>
     </message>
     <message>
-        <source>Invalid name for cross section. The name should be &quot;X1&quot;, &quot;X2&quot;, ...　or &quot;XS1&quot;, &quot;XS2&quot;, ...</source>
-        <translation type="unfinished"></translation>
+        <source>Invalid name for cross section. The name should be "X1", "X2", ...　or "XS1", "XS2", ...</source>
+        <translation>Nom non valide pour la section transversale. Le nom doit être "X1", "X2",... ou "XS1", "XS2",...</translation>
     </message>
 </context>
 <context>
     <name>CrossSectionPreProcessorViewLabelHelper</name>
     <message>
         <source>%1 LB</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 KG</translation>
     </message>
     <message>
         <source>%1 RB</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 RB</translation>
     </message>
 </context>
 <context>
     <name>CrossSectionWindow</name>
     <message>
         <source>Cross Section Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Fenêtre de coupe transversale</translation>
     </message>
     <message>
         <source>Cross Section Window : %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Fenêtre en coupe : %1</translation>
     </message>
     <message>
         <source>Save SVG file</source>
-        <translation type="unfinished"></translation>
+        <translation>Enregistrer le fichier SVG</translation>
     </message>
     <message>
         <source>SVG files (*.svg)</source>
-        <translation type="unfinished"></translation>
+        <translation>Fichiers SVG (*.svg)</translation>
     </message>
     <message>
         <source>Save CSV file</source>
-        <translation type="unfinished"></translation>
+        <translation>Enregistrer le fichier CSV</translation>
     </message>
     <message>
         <source>CSV files (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>fichiers CSV (*.csv)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Erreur</translation>
     </message>
     <message>
         <source>%1 could note be opened.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 pourrait noter être ouvert.</translation>
     </message>
     <message>
         <source>Cross Section: </source>
-        <translation type="unfinished"></translation>
+        <translation>La Coupe transversale:</translation>
     </message>
     <message>
         <source>Export &amp;SVG...</source>
-        <translation type="unfinished"></translation>
+        <translation>Exporter SVG (&amp;S)...</translation>
     </message>
     <message>
         <source>Export &amp;CSV...</source>
-        <translation type="unfinished"></translation>
+        <translation>Exporter au format CSV (&amp;C)...</translation>
     </message>
     <message>
         <source>WSE</source>
-        <translation type="unfinished"></translation>
+        <translation>WSE</translation>
     </message>
     <message>
         <source>Left Bank HWM</source>
-        <translation type="unfinished"></translation>
+        <translation>HWM rive gauche</translation>
     </message>
     <message>
         <source>Right Bank HWM</source>
-        <translation type="unfinished"></translation>
+        <translation>HWM rive droite</translation>
     </message>
 </context>
 <context>
     <name>CrossSectionWindowDisplaySettingDialog</name>
     <message>
         <source>Cross Section Window Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Paramètre d'affichage de la fenêtre de coupe</translation>
     </message>
     <message>
         <source>Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Grille</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation type="unfinished"></translation>
+        <translation>Taper</translation>
     </message>
     <message>
         <source>Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Lignes</translation>
     </message>
     <message>
         <source>Dots</source>
-        <translation type="unfinished"></translation>
+        <translation>Points</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation type="unfinished"></translation>
+        <translation>Horizontal</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation>Auto</translation>
     </message>
     <message>
         <source>Scale</source>
-        <translation type="unfinished"></translation>
+        <translation>Escalader</translation>
     </message>
     <message>
         <source>Sub scale</source>
-        <translation type="unfinished"></translation>
+        <translation>Sous-échelle</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation type="unfinished"></translation>
+        <translation>Verticale</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Couleur:</translation>
     </message>
     <message>
         <source>Background</source>
-        <translation type="unfinished"></translation>
+        <translation>Fond</translation>
     </message>
     <message>
         <source>Scales</source>
-        <translation type="unfinished"></translation>
+        <translation>Balance</translation>
     </message>
     <message>
         <source>Font:</source>
-        <translation type="unfinished"></translation>
+        <translation>Police de caractère:</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation type="unfinished"></translation>
+        <translation>Éditer...</translation>
     </message>
     <message>
         <source>Aspect ratio</source>
-        <translation type="unfinished"></translation>
+        <translation>Ratio d'aspect</translation>
     </message>
     <message>
         <source>Cross Section Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Points de coupe</translation>
     </message>
     <message>
         <source>Scales font</source>
-        <translation type="unfinished"></translation>
+        <translation>Police des échelles</translation>
     </message>
 </context>
 <context>
     <name>CrossSectionWindowGraphicsView</name>
     <message>
         <source>Left bank HWM</source>
-        <translation type="unfinished"></translation>
+        <translation>HWM rive gauche</translation>
     </message>
     <message>
         <source>Right bank HWM</source>
-        <translation type="unfinished"></translation>
+        <translation>HWM rive droite</translation>
     </message>
     <message>
         <source>WSE</source>
-        <translation type="unfinished"></translation>
+        <translation>WSE</translation>
     </message>
 </context>
 <context>
     <name>CrossSections</name>
     <message>
         <source>Cross Sections</source>
-        <translation type="unfinished"></translation>
+        <translation>Des sections transversales</translation>
     </message>
 </context>
 <context>
     <name>CrossSectionsCsvExporter</name>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>fichier CSV (*.csv)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Erreur</translation>
     </message>
     <message>
         <source>%1 could not be opened.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 ne peut pas être ouvert.</translation>
     </message>
 </context>
 <context>
     <name>CrossSectionsCsvImporter</name>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>fichier CSV (*.csv)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Erreur</translation>
     </message>
     <message>
         <source>%1 could not be opened.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 ne peut pas être ouvert.</translation>
     </message>
 </context>
 <context>
     <name>CrossSectionsExporter</name>
     <message>
         <source>Input file name to export</source>
-        <translation type="unfinished"></translation>
+        <translation>Saisissez le nom du fichier à exporter</translation>
     </message>
 </context>
 <context>
     <name>CrossSectionsImporter</name>
     <message>
         <source>Select file to import</source>
-        <translation type="unfinished"></translation>
+        <translation>Sélectionnez le fichier à importer</translation>
     </message>
 </context>
 <context>
     <name>CrossSectionsPreProcessorController</name>
     <message>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Ajouter</translation>
     </message>
     <message>
         <source>&amp;Import..</source>
-        <translation type="unfinished"></translation>
+        <translation>Importer.. (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Export..</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportation.. (&amp;E)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Avertissement</translation>
     </message>
     <message>
         <source>Cross Section lines not defined yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Les lignes de coupe ne sont pas encore définies.</translation>
     </message>
 </context>
 <context>
     <name>ElevationPoints</name>
     <message>
         <source>Elevation Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Points d'élévation</translation>
     </message>
 </context>
 <context>
     <name>GraphicsSettingDialog</name>
     <message>
         <source>Graphics Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Paramètres graphiques</translation>
     </message>
     <message>
         <source>Elevation Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Points d'élévation</translation>
     </message>
     <message>
         <source>Size</source>
-        <translation type="unfinished"></translation>
+        <translation>Taille</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation>Auto</translation>
     </message>
     <message>
         <source>Manual</source>
-        <translation type="unfinished"></translation>
+        <translation>Manuel</translation>
     </message>
     <message>
         <source>Transparency:</source>
-        <translation type="unfinished"></translation>
+        <translation>Transparence:</translation>
     </message>
     <message>
         <source>%</source>
-        <translation type="unfinished"></translation>
+        <translation>%</translation>
     </message>
     <message>
         <source>Water Elevation Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Points d'élévation de l'eau</translation>
     </message>
 </context>
 <context>
     <name>Hub</name>
     <message>
         <source>Surveying or turning point</source>
-        <translation type="unfinished"></translation>
+        <translation>Arpentage ou tournant</translation>
     </message>
 </context>
 <context>
     <name>LeftBankHWM</name>
     <message>
         <source>Left Bank HWM</source>
-        <translation type="unfinished"></translation>
+        <translation>HWM rive gauche</translation>
     </message>
 </context>
 <context>
     <name>MappingSettingDialog</name>
     <message>
         <source>Mapping Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Paramètre de mappage</translation>
     </message>
     <message>
         <source>All points are mapped to the nearest CrossSection</source>
-        <translation type="unfinished"></translation>
+        <translation>Tous les points sont mappés à la section transversale la plus proche</translation>
     </message>
     <message>
         <source>Appropriate for data in which points are all near CrossSections</source>
-        <translation type="unfinished"></translation>
+        <translation>Convient aux données dans lesquelles les points sont tous proches des sections transversales</translation>
     </message>
     <message>
         <source>TIN is used for interpolation at CrossSections</source>
-        <translation type="unfinished"></translation>
+        <translation>Le TIN est utilisé pour l'interpolation aux sections transversales</translation>
     </message>
     <message>
         <source>Appropriate for data in which the density of points are almost the same in whole area</source>
-        <translation type="unfinished"></translation>
+        <translation>Convient aux données dans lesquelles la densité de points est presque la même dans toute la zone</translation>
     </message>
     <message>
         <source>Template mapping</source>
-        <translation type="unfinished"></translation>
+        <translation>Mappage de modèle</translation>
     </message>
     <message>
         <source>Appropriate for data for which we can not generate good TIN</source>
-        <translation type="unfinished"></translation>
+        <translation>Convient aux données pour lesquelles nous ne pouvons pas générer un bon TIN</translation>
     </message>
     <message>
         <source>Cross section resolution[m]</source>
-        <translation type="unfinished"></translation>
+        <translation>Résolution de la section transversale[m]</translation>
     </message>
     <message>
         <source>Stream-wise length[m]</source>
-        <translation type="unfinished"></translation>
+        <translation>Longueur dans le sens du flux[m]</translation>
     </message>
     <message>
         <source>Cross-stream width[m]</source>
-        <translation type="unfinished"></translation>
+        <translation>Largeur transversale[m]</translation>
     </message>
     <message>
         <source>Number of Template Expansions:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nombre d'extensions de modèles :</translation>
     </message>
     <message>
         <source>Weighting Exponent:</source>
-        <translation type="unfinished"></translation>
+        <translation>Exposant de pondération :</translation>
     </message>
 </context>
 <context>
     <name>Model</name>
     <message>
         <source>Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Effacer</translation>
     </message>
 </context>
 <context>
     <name>MouseHelpDialog</name>
     <message>
         <source>Mouse Hint</source>
-        <translation type="unfinished"></translation>
+        <translation>Astuce de souris</translation>
     </message>
 </context>
 <context>
     <name>MousePositionWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Former</translation>
     </message>
     <message>
         <source>X: </source>
-        <translation type="unfinished"></translation>
+        <translation>X:</translation>
     </message>
     <message>
         <source>Y: </source>
-        <translation type="unfinished"></translation>
+        <translation>Y :</translation>
     </message>
     <message>
         <source>X: ------</source>
-        <translation type="unfinished"></translation>
+        <translation>X: ------</translation>
     </message>
     <message>
         <source>Y: ------</source>
-        <translation type="unfinished"></translation>
+        <translation>Y : ------</translation>
     </message>
 </context>
 <context>
     <name>ObjectBrowser</name>
     <message>
         <source>Object Browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Navigateur d'objets</translation>
     </message>
 </context>
 <context>
     <name>PointsCsvImporter</name>
     <message>
         <source>Topography File (*.tpo)</source>
-        <translation type="unfinished"></translation>
+        <translation>Fichier de topographie (*.tpo)</translation>
     </message>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>fichier CSV (*.csv)</translation>
     </message>
     <message>
         <source>Filtering Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Paramètre de filtrage</translation>
     </message>
     <message>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation>Filtre</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Erreur</translation>
     </message>
     <message>
         <source>%1 could not be opened.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 ne peut pas être ouvert.</translation>
     </message>
 </context>
 <context>
     <name>PointsImporter</name>
     <message>
         <source>All importable files (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Tous les fichiers importables (%1)</translation>
     </message>
     <message>
         <source>Select file to import</source>
-        <translation type="unfinished"></translation>
+        <translation>Sélectionnez le fichier à importer</translation>
     </message>
 </context>
 <context>
     <name>PointsPreProcessorController</name>
     <message>
         <source>&amp;Import...</source>
-        <translation type="unfinished"></translation>
+        <translation>Importer (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Effacer (&amp;D)</translation>
     </message>
 </context>
 <context>
     <name>PolyLineCsvExporter</name>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>fichier CSV (*.csv)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Erreur</translation>
     </message>
     <message>
         <source>%1 could not be opened.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 ne peut pas être ouvert.</translation>
     </message>
 </context>
 <context>
     <name>PolyLineCsvImporter</name>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>fichier CSV (*.csv)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Erreur</translation>
     </message>
     <message>
         <source>%1 could not be opened.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 ne peut pas être ouvert.</translation>
     </message>
 </context>
 <context>
     <name>PolyLineExporter</name>
     <message>
         <source>Input file name to export</source>
-        <translation type="unfinished"></translation>
+        <translation>Saisissez le nom du fichier à exporter</translation>
     </message>
 </context>
 <context>
     <name>PolyLineImporter</name>
     <message>
         <source>Select file to import</source>
-        <translation type="unfinished"></translation>
+        <translation>Sélectionnez le fichier à importer</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorModel</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Avertissement</translation>
     </message>
     <message>
         <source>To delete a Cross Section, select it at Object Browser.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pour supprimer une coupe transversale, sélectionnez-la dans le navigateur d'objets.</translation>
     </message>
     <message>
         <source>To edit Cross Section coordinates, select it at Object Browser.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pour modifier les coordonnées de la section transversale, sélectionnez-la dans le navigateur d'objets.</translation>
     </message>
     <message>
         <source>Base line should be long enough to cover extents of HWMs</source>
-        <translation type="unfinished"></translation>
+        <translation>La ligne de base doit être suffisamment longue pour couvrir l'étendue des HWM</translation>
     </message>
     <message>
         <source>Not all Cross Sections cross Base line</source>
-        <translation type="unfinished"></translation>
+        <translation>Toutes les sections transversales ne croisent pas la ligne de base</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorWindow</name>
     <message>
         <source>Main Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Fenêtre principale</translation>
     </message>
 </context>
 <context>
     <name>Project</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Avertissement</translation>
     </message>
     <message>
         <source>Calculating initial WSE for Cross-section %1 failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Calcul du WSE initial pour la section transversale %1 échoué</translation>
     </message>
 </context>
 <context>
     <name>ReferenceMark</name>
     <message>
         <source>Reference mark</source>
-        <translation type="unfinished"></translation>
+        <translation>Marque de référence</translation>
     </message>
 </context>
 <context>
     <name>RightBankHWM</name>
     <message>
         <source>Right Bank HWM</source>
-        <translation type="unfinished"></translation>
+        <translation>HWM rive droite</translation>
     </message>
 </context>
 <context>
     <name>RivCsvExporter</name>
     <message>
         <source>Select directory to save CSV files</source>
-        <translation type="unfinished"></translation>
+        <translation>Sélectionnez le répertoire pour enregistrer les fichiers CSV</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Erreur</translation>
     </message>
     <message>
         <source>%1 could not be opened.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 ne peut pas être ouvert.</translation>
     </message>
 </context>
 <context>
     <name>RivExporter</name>
     <message>
         <source>Input File name to export</source>
-        <translation type="unfinished"></translation>
+        <translation>Nom du fichier d'entrée à exporter</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Erreur</translation>
     </message>
     <message>
         <source>%1 could not be opened.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 ne peut pas être ouvert.</translation>
     </message>
     <message>
         <source>CSV File name to export</source>
-        <translation type="unfinished"></translation>
+        <translation>Nom du fichier CSV à exporter</translation>
     </message>
     <message>
         <source>CSV file(*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>fichier CSV (*.csv)</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informations</translation>
     </message>
     <message>
         <source>%1 is updated.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 Est mis à jour.</translation>
     </message>
     <message>
         <source>Cross-Section Data (*.riv)</source>
-        <translation type="unfinished"></translation>
+        <translation>Données de section transversale (*.riv)</translation>
     </message>
 </context>
 <context>
     <name>RivmakerMainWindow</name>
     <message>
         <source>Rivmaker 1.0</source>
-        <translation type="unfinished"></translation>
+        <translation>Rivmaker 1.0</translation>
     </message>
     <message>
         <source>&amp;File</source>
-        <translation type="unfinished"></translation>
+        <translation>Déposer (&amp;F)</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation type="unfinished"></translation>
+        <translation>Importer (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Geographic Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Données géographiques (&amp;G)</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportation (&amp;E)</translation>
     </message>
     <message>
         <source>&amp;Recent Projects</source>
-        <translation type="unfinished"></translation>
+        <translation>les projets récents (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Base Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Ligne de base (&amp;B)</translation>
     </message>
     <message>
         <source>&amp;Cross Section</source>
-        <translation type="unfinished"></translation>
+        <translation>La Coupe transversale (&amp;C)</translation>
     </message>
     <message>
         <source>&amp;River Survey Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Données d'enquête sur la rivière (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;View</source>
-        <translation type="unfinished"></translation>
+        <translation>Vue (&amp;V)</translation>
     </message>
     <message>
         <source>&amp;Help</source>
-        <translation type="unfinished"></translation>
+        <translation>Aider (&amp;H)</translation>
     </message>
     <message>
         <source>&amp;Option</source>
-        <translation type="unfinished"></translation>
+        <translation>Option (&amp;O)</translation>
     </message>
     <message>
         <source>toolBar</source>
-        <translation type="unfinished"></translation>
+        <translation>barre d'outils</translation>
     </message>
     <message>
         <source>&amp;New Project...</source>
-        <translation type="unfinished"></translation>
+        <translation>Nouveau projet (&amp;N)...</translation>
     </message>
     <message>
         <source>Ctrl+N</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+N</translation>
     </message>
     <message>
         <source>Save &amp;As...</source>
-        <translation type="unfinished"></translation>
+        <translation>Enregistrer sous (&amp;A)...</translation>
     </message>
     <message>
         <source>Property...</source>
-        <translation type="unfinished"></translation>
+        <translation>Biens...</translation>
     </message>
     <message>
         <source>E&amp;xit</source>
-        <translation type="unfinished"></translation>
+        <translation>Sortir (&amp;X)</translation>
     </message>
     <message>
         <source>Ctrl+Q</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Q</translation>
     </message>
     <message>
         <source>Dummy</source>
-        <translation type="unfinished"></translation>
+        <translation>Factice</translation>
     </message>
     <message>
         <source>&amp;Elevation...</source>
-        <translation type="unfinished"></translation>
+        <translation>Élévation (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Water Surface Elevation...</source>
-        <translation type="unfinished"></translation>
+        <translation>Élévation de la surface de l'eau (&amp;W)...</translation>
     </message>
     <message>
         <source>&amp;Background Image...</source>
-        <translation type="unfinished"></translation>
+        <translation>Image de fond (&amp;B)...</translation>
     </message>
     <message>
         <source>&amp;SAC GUI Input File...</source>
-        <translation type="unfinished"></translation>
+        <translation>Fichier d'entrée de l'interface graphique SAC (&amp;S)...</translation>
     </message>
     <message>
         <source>&amp;Elevation</source>
-        <translation type="unfinished"></translation>
+        <translation>Élévation (&amp;E)</translation>
     </message>
     <message>
         <source>&amp;Water Surface Elevation</source>
-        <translation type="unfinished"></translation>
+        <translation>Élévation de la surface de l'eau (&amp;W)</translation>
     </message>
     <message>
         <source>&amp;SAC GUI Input File</source>
-        <translation type="unfinished"></translation>
+        <translation>Fichier d'entrée de l'interface graphique SAC (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;Create...</source>
-        <translation type="unfinished"></translation>
+        <translation>Créer (&amp;C)...</translation>
     </message>
     <message>
         <source>&amp;Delete...</source>
-        <translation type="unfinished"></translation>
+        <translation>Effacer (&amp;D)...</translation>
     </message>
     <message>
         <source>&amp;Add Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Ajouter un sommet (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Supprimer le sommet (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Edit Coordinates...</source>
-        <translation type="unfinished"></translation>
+        <translation>Modifier les coordonnées (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation type="unfinished"></translation>
+        <translation>Importer (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportation (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Ajouter (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Effacer (&amp;D)</translation>
     </message>
     <message>
         <source>&amp;Mouse Hint...</source>
-        <translation type="unfinished"></translation>
+        <translation>Astuce de souris (&amp;M)...</translation>
     </message>
     <message>
         <source>&amp;About...</source>
-        <translation type="unfinished"></translation>
+        <translation>Sur (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Base Line...</source>
-        <translation type="unfinished"></translation>
+        <translation>Ligne de base (&amp;B)...</translation>
     </message>
     <message>
         <source>&amp;Cross Section...</source>
-        <translation type="unfinished"></translation>
+        <translation>La Coupe transversale (&amp;C)...</translation>
     </message>
     <message>
         <source>&amp;River Survey Data...</source>
-        <translation type="unfinished"></translation>
+        <translation>Données d'enquête sur la rivière (&amp;R)...</translation>
     </message>
     <message>
         <source>&amp;Main Toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Barre d'outils principale (&amp;M)</translation>
     </message>
     <message>
         <source>&amp;Windows Toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Barre d'outils Windows (&amp;W)</translation>
     </message>
     <message>
         <source>&amp;Mapping Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Paramètre de mappage (&amp;M)...</translation>
     </message>
     <message>
         <source>&amp;Graphics Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Paramètres graphiques (&amp;G)...</translation>
     </message>
     <message>
         <source>&amp;Open...</source>
-        <translation type="unfinished"></translation>
+        <translation>Ouvert (&amp;O)...</translation>
     </message>
     <message>
         <source>Ctrl+O</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+O</translation>
     </message>
     <message>
         <source>Save</source>
-        <translation type="unfinished"></translation>
+        <translation>sauvegarder</translation>
     </message>
     <message>
         <source>Ctrl+S</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+S</translation>
     </message>
     <message>
         <source>dummy</source>
-        <translation type="unfinished"></translation>
+        <translation>factice</translation>
     </message>
     <message>
         <source>&amp;Status Bar</source>
-        <translation type="unfinished"></translation>
+        <translation>Barre d'état (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;Open &amp;New Crosssection Window</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Ouvrir une nouvelle fenêtre de coupe (&amp;N)</translation>
     </message>
     <message>
         <source>Fit</source>
-        <translation type="unfinished"></translation>
+        <translation>Ajuster</translation>
     </message>
     <message>
         <source>Reset Rotation</source>
-        <translation type="unfinished"></translation>
+        <translation>Réinitialiser la rotation</translation>
     </message>
     <message>
         <source>Rotate 90 degrees</source>
-        <translation type="unfinished"></translation>
+        <translation>Rotation de 90 degrés</translation>
     </message>
     <message>
         <source>Zoom In</source>
-        <translation type="unfinished"></translation>
+        <translation>Agrandir</translation>
     </message>
     <message>
         <source>Zoom Out</source>
-        <translation type="unfinished"></translation>
+        <translation>Dézoomer</translation>
     </message>
     <message>
         <source>Focus Main Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Fenêtre principale de mise au point</translation>
     </message>
     <message>
         <source>Focus Vertical Crosssection Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Mettre au point la fenêtre de coupe verticale</translation>
     </message>
     <message>
         <source>Open Crosssection Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Ouvrir la fenêtre de coupe</translation>
     </message>
     <message>
         <source>Reverse &amp;Direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Direction inverse (&amp;D)</translation>
     </message>
     <message>
         <source>Open project file</source>
-        <translation type="unfinished"></translation>
+        <translation>Ouvrir le fichier de projet</translation>
     </message>
     <message>
         <source>RivMaker project file (*.rpro)</source>
-        <translation type="unfinished"></translation>
+        <translation>Fichier de projet RivMaker (*.rpro)</translation>
     </message>
     <message>
         <source>Project saved to %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Projet enregistré dans %1.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Erreur</translation>
     </message>
     <message>
         <source>Saving project file to %1 failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Enregistrement du fichier de projet dans %1 échoué.</translation>
     </message>
     <message>
         <source>Save project file</source>
-        <translation type="unfinished"></translation>
+        <translation>Enregistrer le fichier de projet</translation>
     </message>
     <message>
         <source>No data to export exists</source>
-        <translation type="unfinished"></translation>
+        <translation>Aucune donnée à exporter n'existe</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Avertissement</translation>
     </message>
     <message>
         <source>&amp;%1 %2</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 %2 (&amp;%)</translation>
     </message>
     <message>
         <source>Opening project file failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>L'ouverture du fichier de projet a échoué.</translation>
     </message>
     <message>
         <source>The project data is modified. Do you want to save?</source>
-        <translation type="unfinished"></translation>
+        <translation>Les données du projet sont modifiées. Voulez-vous enregistrer?</translation>
     </message>
     <message>
         <source>Window List Toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Barre d'outils de la liste des fenêtres</translation>
     </message>
     <message>
         <source>Cross Section Window can not be opened when no Cross Section is defined.</source>
-        <translation type="unfinished"></translation>
+        <translation>La fenêtre de coupe ne peut pas être ouverte si aucune coupe n'est définie.</translation>
     </message>
     <message>
         <source>River Survey Data as CSV files...</source>
-        <translation type="unfinished"></translation>
+        <translation>Données River Survey sous forme de fichiers CSV...</translation>
     </message>
     <message>
         <source>Export as CSV files...</source>
-        <translation type="unfinished"></translation>
+        <translation>Exporter sous forme de fichiers CSV...</translation>
     </message>
     <message>
         <source>Zoom In in X Direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Zoom avant dans la direction X</translation>
     </message>
     <message>
         <source>Zoom In in X direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Zoom avant dans la direction X</translation>
     </message>
     <message>
         <source>Zoom In in Y Direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Zoom avant dans la direction Y</translation>
     </message>
     <message>
         <source>Zoom Out in X Direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Zoom arrière dans la direction X</translation>
     </message>
     <message>
         <source>Zoom Out in Y Direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Zoom arrière dans la direction Y</translation>
     </message>
 </context>
 <context>
     <name>SACGUIImporter</name>
     <message>
         <source>Select SAC GUI input file</source>
-        <translation type="unfinished"></translation>
+        <translation>Sélectionnez le fichier d'entrée de l'interface graphique SAC</translation>
     </message>
     <message>
         <source>SAC GUI input file (*.txt *.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>Fichier d'entrée de l'interface graphique SAC (*.txt *.csv)</translation>
     </message>
 </context>
 <context>
     <name>StreamGage</name>
     <message>
         <source>Stream gage</source>
-        <translation type="unfinished"></translation>
+        <translation>Jauge de flux</translation>
     </message>
 </context>
 <context>
     <name>ValueWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Former</translation>
     </message>
     <message>
         <source>Value: </source>
-        <translation type="unfinished"></translation>
+        <translation>Valeur:</translation>
     </message>
     <message>
         <source>Value: ------</source>
-        <translation type="unfinished"></translation>
+        <translation>Valeur: ------</translation>
     </message>
 </context>
 <context>
     <name>VerticalCrossSectionWindow</name>
     <message>
         <source>Elevation View Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Fenêtre de vue d'élévation</translation>
     </message>
     <message>
         <source>&amp;Reset zoom</source>
-        <translation type="unfinished"></translation>
+        <translation>Réinitialiser le zoom (&amp;R)</translation>
     </message>
     <message>
         <source>Arbitrary HWM</source>
-        <translation type="unfinished"></translation>
+        <translation>HWM arbitraire</translation>
     </message>
     <message>
         <source>Benchmark</source>
-        <translation type="unfinished"></translation>
+        <translation>Référence</translation>
     </message>
     <message>
         <source>Reference mark</source>
-        <translation type="unfinished"></translation>
+        <translation>Marque de référence</translation>
     </message>
     <message>
         <source>Surveying or turning point</source>
-        <translation type="unfinished"></translation>
+        <translation>Arpentage ou tournant</translation>
     </message>
     <message>
         <source>Left Bank HWM</source>
-        <translation type="unfinished"></translation>
+        <translation>HWM rive gauche</translation>
     </message>
     <message>
         <source>Right Bank HWM</source>
-        <translation type="unfinished"></translation>
+        <translation>HWM rive droite</translation>
     </message>
     <message>
         <source>Stream gage</source>
-        <translation type="unfinished"></translation>
+        <translation>Jauge de flux</translation>
     </message>
     <message>
         <source>&amp;Export to CSV</source>
-        <translation type="unfinished"></translation>
+        <translation>Exporter au format CSV (&amp;E)</translation>
     </message>
     <message>
         <source>Save SVG file</source>
-        <translation type="unfinished"></translation>
+        <translation>Enregistrer le fichier SVG</translation>
     </message>
     <message>
         <source>SVG files (*.svg)</source>
-        <translation type="unfinished"></translation>
+        <translation>Fichiers SVG (*.svg)</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informations</translation>
     </message>
     <message>
         <source>Data for checked Check Boxes are exported.</source>
-        <translation type="unfinished"></translation>
+        <translation>Les données des cases à cocher cochées sont exportées.</translation>
     </message>
     <message>
         <source>Save CSV file</source>
-        <translation type="unfinished"></translation>
+        <translation>Enregistrer le fichier CSV</translation>
     </message>
     <message>
         <source>CSV files (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>fichiers CSV (*.csv)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Erreur</translation>
     </message>
     <message>
         <source>%1 could note be opened.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 pourrait noter être ouvert.</translation>
     </message>
     <message>
         <source>Export &amp;SVG...</source>
-        <translation type="unfinished"></translation>
+        <translation>Exporter SVG (&amp;S)...</translation>
     </message>
     <message>
         <source>Export &amp;CSV...</source>
-        <translation type="unfinished"></translation>
+        <translation>Exporter au format CSV (&amp;C)...</translation>
     </message>
 </context>
 <context>
     <name>VerticalCrossSectionWindowDisplaySettingDialog</name>
     <message>
         <source>Elevation View Window Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Paramètre d'affichage de la fenêtre de vue d'élévation</translation>
     </message>
     <message>
         <source>Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Grille</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation type="unfinished"></translation>
+        <translation>Taper</translation>
     </message>
     <message>
         <source>Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Lignes</translation>
     </message>
     <message>
         <source>Dots</source>
-        <translation type="unfinished"></translation>
+        <translation>Points</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation type="unfinished"></translation>
+        <translation>Horizontal</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation>Auto</translation>
     </message>
     <message>
         <source>Scale</source>
-        <translation type="unfinished"></translation>
+        <translation>Escalader</translation>
     </message>
     <message>
         <source>Sub scale</source>
-        <translation type="unfinished"></translation>
+        <translation>Sous-échelle</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation type="unfinished"></translation>
+        <translation>Verticale</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Couleur:</translation>
     </message>
     <message>
         <source>Background</source>
-        <translation type="unfinished"></translation>
+        <translation>Fond</translation>
     </message>
     <message>
         <source>Scales</source>
-        <translation type="unfinished"></translation>
+        <translation>Balance</translation>
     </message>
     <message>
         <source>Font:</source>
-        <translation type="unfinished"></translation>
+        <translation>Police de caractère:</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation type="unfinished"></translation>
+        <translation>Éditer...</translation>
     </message>
     <message>
         <source>Aspect ratio</source>
-        <translation type="unfinished"></translation>
+        <translation>Ratio d'aspect</translation>
     </message>
     <message>
         <source>Scales font</source>
-        <translation type="unfinished"></translation>
+        <translation>Police des échelles</translation>
     </message>
 </context>
 <context>
     <name>VerticalCrossSectionWindowDisplaySettingDockWidget</name>
     <message>
         <source>Visibility Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Paramètre de visibilité</translation>
     </message>
 </context>
 <context>
     <name>VerticalCrossSectionWindowDisplaySettingDockWidgetView</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Former</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Points</translation>
     </message>
     <message>
         <source>Arbitrary HWM</source>
-        <translation type="unfinished"></translation>
+        <translation>HWM arbitraire</translation>
     </message>
     <message>
         <source>Benchmark</source>
-        <translation type="unfinished"></translation>
+        <translation>Référence</translation>
     </message>
     <message>
         <source>Reference mark</source>
-        <translation type="unfinished"></translation>
+        <translation>Marque de référence</translation>
     </message>
     <message>
         <source>Surveying or turning point</source>
-        <translation type="unfinished"></translation>
+        <translation>Arpentage ou tournant</translation>
     </message>
     <message>
         <source>Left Bank HWM</source>
-        <translation type="unfinished"></translation>
+        <translation>HWM rive gauche</translation>
     </message>
     <message>
         <source>Right Bank HWM</source>
-        <translation type="unfinished"></translation>
+        <translation>HWM rive droite</translation>
     </message>
     <message>
         <source>Stream gage</source>
-        <translation type="unfinished"></translation>
+        <translation>Jauge de flux</translation>
     </message>
     <message>
         <source>Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Lignes</translation>
     </message>
     <message>
         <source>Cross Section</source>
-        <translation type="unfinished"></translation>
+        <translation>La Coupe transversale</translation>
     </message>
     <message>
         <source>WSE</source>
-        <translation type="unfinished"></translation>
+        <translation>WSE</translation>
     </message>
 </context>
 <context>
     <name>VerticalCrossSectionWindowElevationsDockWidget</name>
     <message>
         <source>WSE Edit Tool</source>
-        <translation type="unfinished"></translation>
+        <translation>Outil d'édition WSE</translation>
     </message>
 </context>
 <context>
     <name>VerticalCrossSectionWindowElevationsDockWidgetView</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Former</translation>
     </message>
     <message>
         <source>&amp;Export to CSV</source>
-        <translation type="unfinished"></translation>
+        <translation>Exporter au format CSV (&amp;E)</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nom</translation>
     </message>
     <message>
         <source>Elevation</source>
-        <translation type="unfinished"></translation>
+        <translation>Élévation</translation>
     </message>
 </context>
 <context>
     <name>WaterSurfaceElevationPoints</name>
     <message>
         <source>Water Elevation Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Points d'élévation de l'eau</translation>
     </message>
 </context>
 </TS>

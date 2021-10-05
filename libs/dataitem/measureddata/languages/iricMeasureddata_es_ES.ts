@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="es_ES">
 <context>
     <name>MeasuredDataFileDataItem</name>
@@ -25,7 +23,7 @@
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
 </context>
 <context>
@@ -63,7 +61,7 @@
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
@@ -101,7 +99,7 @@
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation>Auto</translation>
     </message>
     <message>
         <source>Standard value:</source>
@@ -109,7 +107,7 @@
     </message>
     <message>
         <source>[m/s]</source>
-        <translation type="unfinished"></translation>
+        <translation>[Sra]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
@@ -117,7 +115,7 @@
     </message>
     <message>
         <source>[pixel]</source>
-        <translation type="unfinished"></translation>
+        <translation>[píxel]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
@@ -125,7 +123,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Color</translation>
     </message>
     <message>
         <source>Custom color</source>

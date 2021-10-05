@@ -1,66 +1,64 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="nb_NO">
 <context>
     <name>GridCreatingConditionCreatorExternalProgram</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Advarsel</translation>
     </message>
     <message>
-        <source>Error occured while loading grid creator definition file in folder &quot;%1&quot;. This grid creator is ignored.
+        <source>Error occured while loading grid creator definition file in folder "%1". This grid creator is ignored.
 %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Det oppstod en feil under lasting av definisjonsfilen for rutenettet i mappen "%1". Denne rutenettet ble ignorert. %2</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionExternalProgram</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Feil</translation>
     </message>
     <message>
         <source>Grid generation program %1 does not exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>Program for nettgenerering %1 eksisterer ikke.</translation>
     </message>
     <message>
         <source>Generating grid...</source>
-        <translation type="unfinished"></translation>
+        <translation>Genererer rutenett...</translation>
     </message>
     <message>
         <source>Grid Creation failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Opprettelse av rutenett mislyktes.</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionExternalProgramSettingDialog</name>
     <message>
         <source>Grid Creation</source>
-        <translation type="unfinished"></translation>
+        <translation>Grid Creation</translation>
     </message>
     <message>
         <source>&amp;Create Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Lag rutenett (&amp;C)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Advarsel</translation>
     </message>
     <message>
         <source>Are you sure you want to reset all grid creating conditions to default values?</source>
-        <translation type="unfinished"></translation>
+        <translation>Er du sikker på at du vil tilbakestille alle betingelser for opprettelse av rutenett til standardverdier?</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Feil</translation>
     </message>
     <message>
         <source>Error occured while saving.</source>
-        <translation type="unfinished"></translation>
+        <translation>Det oppsto en feil under lagring.</translation>
     </message>
     <message>
         <source>Unknown error (Error code: %1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ukjent feil (feilkode: %1 )</translation>
     </message>
 </context>
 </TS>

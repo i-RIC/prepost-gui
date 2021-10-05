@@ -1,15 +1,13 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="es_ES">
 <context>
     <name>ParticleArbitraryTimeEditDialog</name>
     <message>
         <source>Particle generate time setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración del tiempo de generación de partículas</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation type="unfinished"></translation>
+        <translation>Agregar (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
@@ -17,11 +15,11 @@
     </message>
     <message>
         <source>Add time step</source>
-        <translation type="unfinished"></translation>
+        <translation>Agregar paso de tiempo</translation>
     </message>
     <message>
         <source>Select Time step to add</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccione Paso de tiempo para agregar</translation>
     </message>
 </context>
 <context>
@@ -32,7 +30,7 @@
     </message>
     <message>
         <source>Dimension:</source>
-        <translation type="unfinished"></translation>
+        <translation>Dimensión:</translation>
     </message>
     <message>
         <source>Grid Type:</source>
@@ -44,26 +42,26 @@
     </message>
     <message>
         <source>One dimensional data</source>
-        <translation type="unfinished"></translation>
+        <translation>Datos unidimensionales</translation>
     </message>
     <message>
         <source>Two dimensional data</source>
-        <translation type="unfinished"></translation>
+        <translation>Datos bidimensionales</translation>
     </message>
     <message>
         <source>Three dimensional data</source>
-        <translation type="unfinished"></translation>
+        <translation>Datos tridimensionales</translation>
     </message>
 </context>
 <context>
     <name>PostParticleBasicSettingDialog</name>
     <message>
         <source>Particles Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración de partículas</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Color:</translation>
     </message>
     <message>
         <source>Size:</source>
@@ -74,7 +72,7 @@
     <name>PostParticleScalarPropertyDialog</name>
     <message>
         <source>Particle Scalar Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración escalar de partículas</translation>
     </message>
     <message>
         <source>Custom Color</source>
@@ -82,11 +80,11 @@
     </message>
     <message>
         <source>Color by attribute value</source>
-        <translation type="unfinished"></translation>
+        <translation>Color por valor de atributo</translation>
     </message>
     <message>
         <source>Attribute:</source>
-        <translation type="unfinished"></translation>
+        <translation>Atributo:</translation>
     </message>
     <message>
         <source>Size:</source>
@@ -105,7 +103,7 @@
     </message>
     <message>
         <source>Attribute value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Valor de atributo:</translation>
     </message>
     <message>
         <source>Length</source>
@@ -113,7 +111,7 @@
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation>Auto</translation>
     </message>
     <message>
         <source>Standard value:</source>
@@ -121,7 +119,7 @@
     </message>
     <message>
         <source>[m/s]</source>
-        <translation type="unfinished"></translation>
+        <translation>[Sra]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
@@ -129,7 +127,7 @@
     </message>
     <message>
         <source>[pixel]</source>
-        <translation type="unfinished"></translation>
+        <translation>[píxel]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
@@ -141,7 +139,7 @@
     </message>
     <message>
         <source>All particles</source>
-        <translation type="unfinished"></translation>
+        <translation>Todas las partículas</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
@@ -149,11 +147,11 @@
     </message>
     <message>
         <source>Specify number of particles</source>
-        <translation type="unfinished"></translation>
+        <translation>Especificar el número de partículas</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Color</translation>
     </message>
     <message>
         <source>Custom color</source>
@@ -165,26 +163,26 @@
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma de flecha</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tamaño de la flecha:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ancho de línea:</translation>
     </message>
 </context>
 <context>
     <name>PostPolyDataBasicSettingDialog</name>
     <message>
         <source>Polygon Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración de polígono</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Color:</translation>
     </message>
     <message>
         <source>Line Width:</source>
@@ -195,7 +193,7 @@
     <name>PostPolyDataScalarPropertyDialog</name>
     <message>
         <source>Polygon Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración de polígono</translation>
     </message>
     <message>
         <source>Custom Color</source>
@@ -203,15 +201,15 @@
     </message>
     <message>
         <source>Color by attribute value</source>
-        <translation type="unfinished"></translation>
+        <translation>Color por valor de atributo</translation>
     </message>
     <message>
         <source>Attribute:</source>
-        <translation type="unfinished"></translation>
+        <translation>Atributo:</translation>
     </message>
     <message>
         <source>Line Width</source>
-        <translation type="unfinished"></translation>
+        <translation>Ancho de línea</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
@@ -226,22 +224,22 @@
     </message>
     <message>
         <source>Move label</source>
-        <translation type="unfinished"></translation>
+        <translation>Mover etiqueta</translation>
     </message>
     <message>
         <source>Resize label</source>
-        <translation type="unfinished"></translation>
+        <translation>Cambiar el tamaño de la etiqueta</translation>
     </message>
     <message>
         <source>Edit Label Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar configuración de etiqueta</translation>
     </message>
 </context>
 <context>
     <name>PostStringResultSettingDialog</name>
     <message>
         <source>Label Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración de etiqueta</translation>
     </message>
     <message>
         <source>Setting</source>
@@ -249,19 +247,19 @@
     </message>
     <message>
         <source>Position and Size</source>
-        <translation type="unfinished"></translation>
+        <translation>Posición y tamaño</translation>
     </message>
     <message>
         <source>Margin</source>
-        <translation type="unfinished"></translation>
+        <translation>Margen</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation type="unfinished"></translation>
+        <translation>Horizontal</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation type="unfinished"></translation>
+        <translation>Vertical</translation>
     </message>
     <message>
         <source>Position</source>
@@ -269,11 +267,11 @@
     </message>
     <message>
         <source>Left:</source>
-        <translation type="unfinished"></translation>
+        <translation>Izquierda:</translation>
     </message>
     <message>
         <source>Top:</source>
-        <translation type="unfinished"></translation>
+        <translation>Cima:</translation>
     </message>
     <message>
         <source>Size</source>
@@ -281,7 +279,7 @@
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation>Auto</translation>
     </message>
     <message>
         <source>Width:</source>
@@ -289,15 +287,15 @@
     </message>
     <message>
         <source>Height:</source>
-        <translation type="unfinished"></translation>
+        <translation>Altura:</translation>
     </message>
     <message>
         <source>Font and Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Fuente y color</translation>
     </message>
     <message>
         <source>Font:</source>
-        <translation type="unfinished"></translation>
+        <translation>Fuente:</translation>
     </message>
     <message>
         <source>Edit...</source>
@@ -305,11 +303,11 @@
     </message>
     <message>
         <source>Font color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Color de fuente:</translation>
     </message>
     <message>
         <source>Background color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Color de fondo:</translation>
     </message>
 </context>
 <context>
@@ -331,11 +329,11 @@
     </message>
     <message>
         <source>Use project setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Usar configuración de proyecto</translation>
     </message>
     <message>
         <source>Time Format</source>
-        <translation type="unfinished"></translation>
+        <translation>Formato de tiempo</translation>
     </message>
 </context>
 <context>

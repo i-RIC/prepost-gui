@@ -1,241 +1,239 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="is_IS">
 <context>
     <name>Graph2dVerificationSettingDialog</name>
     <message>
         <source>Verification Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Staðfestingarstilling</translation>
     </message>
     <message>
         <source>Timestep</source>
-        <translation type="unfinished"></translation>
+        <translation>Tímamælir</translation>
     </message>
     <message>
         <source>Select the timestep of calculation result</source>
-        <translation type="unfinished"></translation>
+        <translation>Veldu tímapunkt útreikningsniðurstaðna</translation>
     </message>
     <message>
         <source>Calculation Result</source>
-        <translation type="unfinished"></translation>
+        <translation>Niðurstaða útreikninga</translation>
     </message>
     <message>
         <source>Select which physical value to use for comparison.</source>
-        <translation type="unfinished"></translation>
+        <translation>Veldu hvaða líkamlega gildi á að nota til samanburðar.</translation>
     </message>
     <message>
         <source>Grid:</source>
-        <translation type="unfinished"></translation>
+        <translation>Rist:</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Líkamlegt gildi:</translation>
     </message>
     <message>
         <source>Measured Values</source>
-        <translation type="unfinished"></translation>
+        <translation>Mæld gildi</translation>
     </message>
     <message>
         <source>Select which measured value to use for comparison.</source>
-        <translation type="unfinished"></translation>
+        <translation>Veldu hvaða mæligildi skal nota til samanburðar.</translation>
     </message>
     <message>
         <source>File:</source>
-        <translation type="unfinished"></translation>
+        <translation>Skrá:</translation>
     </message>
     <message>
         <source>Value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Gildi:</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Viðvörun</translation>
     </message>
     <message>
         <source>No Physical Value is selected.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ekkert líkamlegt gildi er valið.</translation>
     </message>
     <message>
         <source>No Value is selected.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ekkert gildi er valið.</translation>
     </message>
 </context>
 <context>
     <name>Graph2dVerificationWindow</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Eyðublað</translation>
     </message>
     <message>
         <source>I:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ég:</translation>
     </message>
     <message>
         <source>J:</source>
-        <translation type="unfinished"></translation>
+        <translation>J:</translation>
     </message>
     <message>
         <source>K:</source>
-        <translation type="unfinished"></translation>
+        <translation>K:</translation>
     </message>
     <message>
         <source>Select &amp;Data Source</source>
-        <translation type="unfinished"></translation>
+        <translation>Veldu gagnagjafa (&amp;D)</translation>
     </message>
     <message>
         <source>&amp;Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Stilling (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;Close</source>
-        <translation type="unfinished"></translation>
+        <translation>Loka (&amp;C)</translation>
     </message>
     <message>
         <source>Verification Window: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Staðfestingargluggi: %1</translation>
     </message>
     <message>
         <source>Top</source>
-        <translation type="unfinished"></translation>
+        <translation>Efst</translation>
     </message>
     <message>
         <source>Controller</source>
-        <translation type="unfinished"></translation>
+        <translation>Stjórnandi</translation>
     </message>
 </context>
 <context>
     <name>Graph2dVerificationWindowActionManager</name>
     <message>
         <source>&amp;Draw</source>
-        <translation type="unfinished"></translation>
+        <translation>Teikna (&amp;D)</translation>
     </message>
     <message>
         <source>&amp;Data Source Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Uppsetning gagnagrunns (&amp;D)...</translation>
     </message>
     <message>
         <source>&amp;Legend</source>
-        <translation type="unfinished"></translation>
+        <translation>Þjóðsaga (&amp;L)</translation>
     </message>
 </context>
 <context>
     <name>Graph2dVerificationWindowControlWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Eyðublað</translation>
     </message>
     <message>
         <source>TextLabel</source>
-        <translation type="unfinished"></translation>
+        <translation>Textalabel</translation>
     </message>
     <message>
         <source>Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Setur...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation type="unfinished"></translation>
+        <translation>Útflutningur (&amp;E)...</translation>
     </message>
 </context>
 <context>
     <name>Graph2dVerificationWindowDataModel</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Viðvörun</translation>
     </message>
     <message>
         <source>No calculation result exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>Engin útreikningsniðurstaða er til.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Villa</translation>
     </message>
     <message>
         <source>Graph window setup fail. Calculation result is not loaded properly.</source>
-        <translation type="unfinished"></translation>
+        <translation>Uppsetning grafglugga mistekst. Niðurstaða útreikninga er ekki hlaðinn rétt.</translation>
     </message>
     <message>
         <source>Export CSV file</source>
-        <translation type="unfinished"></translation>
+        <translation>Flytja út CSV skrá</translation>
     </message>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>CSV skrá (*.csv)</translation>
     </message>
     <message>
         <source>%1 cound not be opened.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 má ekki opna.</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Upplýsingar</translation>
     </message>
     <message>
         <source>Data successfully exported to %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Gögnum hefur verið flutt til %1.</translation>
     </message>
     <message>
         <source>Root Mean Squared Error: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Root Mean veldi villa: %1</translation>
     </message>
     <message>
         <source>Measured Values (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Mæld gildi (%1)</translation>
     </message>
     <message>
         <source>Calculation Result (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Niðurstaða útreikninga (%1)</translation>
     </message>
     <message>
         <source>Stream-wise Distance</source>
-        <translation type="unfinished"></translation>
+        <translation>Straumvitur Fjarlægð</translation>
     </message>
     <message>
         <source>Values</source>
-        <translation type="unfinished"></translation>
+        <translation>Gildi</translation>
     </message>
     <message>
         <source>Residual Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Leifavilla</translation>
     </message>
     <message>
         <source>Measured Value (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Mælt gildi (%1)</translation>
     </message>
 </context>
 <context>
     <name>Graph2dVerificationWindowObjectBrowser</name>
     <message>
         <source>Object Browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Hlutavafri</translation>
     </message>
 </context>
 <context>
     <name>Graph2dVerificationWindowTopWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Eyðublað</translation>
     </message>
     <message>
         <source>Chart Type:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tegund töflu:</translation>
     </message>
     <message>
         <source>Stream-wise Distance vs. Measured Values and Calculation Result</source>
-        <translation type="unfinished"></translation>
+        <translation>Streymislega fjarlægð á móti mældum gildum og útreikningsniðurstöðu</translation>
     </message>
     <message>
         <source>Stream-wise Distance vs. Residual Errors</source>
-        <translation type="unfinished"></translation>
+        <translation>Straumvitur Fjarlægð vs Leifarvillur</translation>
     </message>
     <message>
         <source>Measured Values vs. Calculation Result</source>
-        <translation type="unfinished"></translation>
+        <translation>Mæligildi vs útreikningsniðurstaða</translation>
     </message>
     <message>
         <source>Measured Values vs. Residual Errors</source>
-        <translation type="unfinished"></translation>
+        <translation>Mæld gildi á móti leifarvillum</translation>
     </message>
 </context>
 </TS>

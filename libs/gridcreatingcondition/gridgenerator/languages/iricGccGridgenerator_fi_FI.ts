@@ -1,225 +1,223 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="fi_FI">
 <context>
     <name>GridCreatingConditionCreatorGridGenerator</name>
     <message>
         <source>Create geometric shape grids</source>
-        <translation type="unfinished"></translation>
+        <translation>Luo geometrisia muotokuvioita</translation>
     </message>
     <message>
         <source>You can create straight grids or sine curve grids by specifying parameters.</source>
-        <translation type="unfinished"></translation>
+        <translation>Voit luoda suoria tai sinikäyräruudukkoja määrittämällä parametrit.</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionGridGenerator</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Varoitus</translation>
     </message>
     <message>
         <source>The maximum number of grid nodes is %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ruudukkosolmujen enimmäismäärä on %1.</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionGridGeneratorSettingDialog</name>
     <message>
         <source>Grid Creation</source>
-        <translation type="unfinished"></translation>
+        <translation>Ruudukon luominen</translation>
     </message>
     <message>
         <source>Channel and Bed shape</source>
-        <translation type="unfinished"></translation>
+        <translation>Kanavan ja sängyn muoto</translation>
     </message>
     <message>
         <source>Channel Shape</source>
-        <translation type="unfinished"></translation>
+        <translation>Kanavan muoto</translation>
     </message>
     <message>
         <source>Simple cross section</source>
-        <translation type="unfinished"></translation>
+        <translation>Yksinkertainen poikkileikkaus</translation>
     </message>
     <message>
         <source>Simple compound channel</source>
-        <translation type="unfinished"></translation>
+        <translation>Yksinkertainen yhdistelmäkanava</translation>
     </message>
     <message>
         <source>Complex compound channel</source>
-        <translation type="unfinished"></translation>
+        <translation>Monimutkainen yhdistelmäkanava</translation>
     </message>
     <message>
         <source>Channel Property</source>
-        <translation type="unfinished"></translation>
+        <translation>Kanavan ominaisuus</translation>
     </message>
     <message>
         <source>Fixed bed (only flood channels)</source>
-        <translation type="unfinished"></translation>
+        <translation>Kiinteä sänky (vain tulokanavat)</translation>
     </message>
     <message>
         <source>Movable bed</source>
-        <translation type="unfinished"></translation>
+        <translation>Siirrettävä sänky</translation>
     </message>
     <message>
         <source>Bed Shape</source>
-        <translation type="unfinished"></translation>
+        <translation>Sängyn muoto</translation>
     </message>
     <message>
         <source>Flat</source>
-        <translation type="unfinished"></translation>
+        <translation>Tasainen</translation>
     </message>
     <message>
         <source>Alternate bar shape in low water channel</source>
-        <translation type="unfinished"></translation>
+        <translation>Vaihtoehtoinen palkin muoto matalan veden kanavassa</translation>
     </message>
     <message>
         <source>Parabolic shape cross section</source>
-        <translation type="unfinished"></translation>
+        <translation>Parabolisen muodon poikkileikkaus</translation>
     </message>
     <message>
         <source>Amplitude (Depth)</source>
-        <translation type="unfinished"></translation>
+        <translation>Amplitudi (syvyys)</translation>
     </message>
     <message>
         <source>Alternate bar : Amplitude of cross sectional bed shape [m]</source>
-        <translation type="unfinished"></translation>
+        <translation>Vaihtoehtoinen palkki: Sängyn poikkileikkauksen amplitudi [m]</translation>
     </message>
     <message>
         <source>Parabolic shape : Depth of center of cross section [m]</source>
-        <translation type="unfinished"></translation>
+        <translation>Parabolinen muoto: Poikkileikkauksen keskipisteen syvyys [m]</translation>
     </message>
     <message>
         <source>Lag</source>
-        <translation type="unfinished"></translation>
+        <translation>Viive</translation>
     </message>
     <message>
         <source>Lag between channel geometry and bar location [m]</source>
-        <translation type="unfinished"></translation>
+        <translation>Kanavan geometrian ja palkin sijainnin välinen viive [m]</translation>
     </message>
     <message>
         <source>Common parameters</source>
-        <translation type="unfinished"></translation>
+        <translation>Yleiset parametrit</translation>
     </message>
     <message>
         <source>Meander wave length [m] :</source>
-        <translation type="unfinished"></translation>
+        <translation>Meander -aallonpituus [m]:</translation>
     </message>
     <message>
         <source>Wave number :</source>
-        <translation type="unfinished"></translation>
+        <translation>Aallon numero:</translation>
     </message>
     <message>
         <source>Meander angle (degree, zero for a straight channel) :</source>
-        <translation type="unfinished"></translation>
+        <translation>Meander -kulma (aste, nolla suorassa kanavassa):</translation>
     </message>
     <message>
         <source>Channel slope :</source>
-        <translation type="unfinished"></translation>
+        <translation>Kanavan kaltevuus:</translation>
     </message>
     <message>
         <source>Number of grids for one wave length in the longitudinal direction :</source>
-        <translation type="unfinished"></translation>
+        <translation>Ristikkojen lukumäärä yhdellä aallonpituudella pitkittäissuunnassa:</translation>
     </message>
     <message>
         <source>Channel shape</source>
-        <translation type="unfinished"></translation>
+        <translation>Kanavan muoto</translation>
     </message>
     <message>
         <source>Simple channel</source>
-        <translation type="unfinished"></translation>
+        <translation>Yksinkertainen kanava</translation>
     </message>
     <message>
         <source>Channel width [m] :</source>
-        <translation type="unfinished"></translation>
+        <translation>Kanavan leveys [m]:</translation>
     </message>
     <message>
         <source>Number of grids in the cross sectional direction :</source>
-        <translation type="unfinished"></translation>
+        <translation>Ristikkojen määrä poikkileikkaussuunnassa:</translation>
     </message>
     <message>
         <source>Simple compound</source>
-        <translation type="unfinished"></translation>
+        <translation>Yksinkertainen yhdistelmä</translation>
     </message>
     <message>
         <source>Width of the left flood channel [m] :</source>
-        <translation type="unfinished"></translation>
+        <translation>Vasemman tulvakanavan leveys [m]:</translation>
     </message>
     <message>
         <source>Width of the low water channel [m] :</source>
-        <translation type="unfinished"></translation>
+        <translation>Alhaisen vesikanavan leveys [m]:</translation>
     </message>
     <message>
         <source>Width of the right flood channel [m] :</source>
-        <translation type="unfinished"></translation>
+        <translation>Oikean tulvakanavan leveys [m]:</translation>
     </message>
     <message>
         <source>Complex compound</source>
-        <translation type="unfinished"></translation>
+        <translation>Monimutkainen yhdiste</translation>
     </message>
     <message>
         <source>Total width between banks [m] :</source>
-        <translation type="unfinished"></translation>
+        <translation>Kokonaisleveys pankkien välillä [m]:</translation>
     </message>
     <message>
         <source>Compound channel</source>
-        <translation type="unfinished"></translation>
+        <translation>Yhdistetty kanava</translation>
     </message>
     <message>
         <source>Number of grids for the left flood channel :</source>
-        <translation type="unfinished"></translation>
+        <translation>Vasemman tulvakanavan ruudukkojen määrä:</translation>
     </message>
     <message>
         <source>Number of grids for the low water channel :</source>
-        <translation type="unfinished"></translation>
+        <translation>Matalan veden kanavan verkkojen lukumäärä:</translation>
     </message>
     <message>
         <source>Number of grids for the right flood channel :</source>
-        <translation type="unfinished"></translation>
+        <translation>Oikean tulvakanavan ruudukkojen määrä:</translation>
     </message>
     <message>
         <source>Depth of the low water channel [m] :</source>
-        <translation type="unfinished"></translation>
+        <translation>Alhaisen vesikanavan syvyys [m]:</translation>
     </message>
     <message>
         <source>Slope of the low water channel banks :</source>
-        <translation type="unfinished"></translation>
+        <translation>Alhaisen vesikanavan kaltevuus:</translation>
     </message>
     <message>
         <source>Number of grids for the low water channel banks :</source>
-        <translation type="unfinished"></translation>
+        <translation>Matalan vesikanavan pankkien verkkojen lukumäärä:</translation>
     </message>
     <message>
         <source>Width change</source>
-        <translation type="unfinished"></translation>
+        <translation>Leveyden muutos</translation>
     </message>
     <message>
         <source>Constant</source>
-        <translation type="unfinished"></translation>
+        <translation>Jatkuva</translation>
     </message>
     <message>
         <source>Change in flow direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Muutos virtaussuunnassa</translation>
     </message>
     <message>
         <source>Width change type</source>
-        <translation type="unfinished"></translation>
+        <translation>Leveyden muutostyyppi</translation>
     </message>
     <message>
         <source>Left and right banks</source>
-        <translation type="unfinished"></translation>
+        <translation>Vasen ja oikea pankki</translation>
     </message>
     <message>
         <source>Left bank only</source>
-        <translation type="unfinished"></translation>
+        <translation>Vain vasen pankki</translation>
     </message>
     <message>
         <source>Right bank only</source>
-        <translation type="unfinished"></translation>
+        <translation>Vain oikea pankki</translation>
     </message>
     <message>
         <source>Width variation [m] :</source>
-        <translation type="unfinished"></translation>
+        <translation>Leveysvaihtelu [m]:</translation>
     </message>
 </context>
 </TS>

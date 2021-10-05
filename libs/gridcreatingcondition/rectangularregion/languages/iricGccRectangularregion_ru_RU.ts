@@ -1,53 +1,51 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ru_RU">
 <context>
     <name>GridCreatingConditionCreatorRectangularRegion</name>
     <message>
         <source>Create grid by dividing rectangular region</source>
-        <translation type="unfinished"></translation>
+        <translation>Создайте сетку, разделив прямоугольную область</translation>
     </message>
     <message>
         <source>Specify a rectangular region where to create a grid, and the cell width. The cell width is used for both X-direction and Y-direction.</source>
-        <translation type="unfinished"></translation>
+        <translation>Укажите прямоугольную область, в которой нужно создать сетку, и ширину ячейки. Ширина ячейки используется как для направления X, так и для направления Y.</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionRectangularRegion</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Предупреждение</translation>
     </message>
     <message>
         <source>The maximum number of grid nodes is %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Максимальное количество узлов сетки составляет %1.</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Информация</translation>
     </message>
     <message>
         <source>Please define grid region by mouse-dragging.</source>
-        <translation type="unfinished"></translation>
+        <translation>Определите область сетки перетаскиванием мышью.</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionRectangularRegionSettingDialog</name>
     <message>
         <source>Grid Creation</source>
-        <translation type="unfinished"></translation>
+        <translation>Создание сетки</translation>
     </message>
     <message>
         <source>Input</source>
-        <translation type="unfinished"></translation>
+        <translation>Вход</translation>
     </message>
     <message>
         <source>Resulting grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Результирующая сетка</translation>
     </message>
     <message>
         <source>--</source>
-        <translation type="unfinished"></translation>
+        <translation>-</translation>
     </message>
 </context>
 </TS>

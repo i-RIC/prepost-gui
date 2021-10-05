@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="pt_BR">
 <context>
     <name>GridCreatingConditionCreatorPoisson</name>
@@ -128,7 +126,7 @@
     </message>
     <message>
         <source>Cross-section data not found. Please define Center Line by yourself.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dados de seção transversal não encontrados. Defina você mesmo a Linha Central.</translation>
     </message>
 </context>
 <context>

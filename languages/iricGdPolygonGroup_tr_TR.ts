@@ -1,170 +1,168 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="tr_TR">
 <context>
     <name>GeoDataPolygonGroup</name>
     <message>
         <source>&amp;Sort</source>
-        <translation type="unfinished"></translation>
+        <translation>Çeşit (&amp;S)</translation>
     </message>
     <message>
         <source>Polygon%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Çokgen %1</translation>
     </message>
     <message>
         <source>P&amp;olygons</source>
-        <translation type="unfinished"></translation>
+        <translation>çokgenler (&amp;O)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolygonGroupCreator</name>
     <message>
         <source>polygon</source>
-        <translation type="unfinished"></translation>
+        <translation>çokgen</translation>
     </message>
     <message>
         <source>Polygon</source>
-        <translation type="unfinished"></translation>
+        <translation>Çokgen</translation>
     </message>
     <message>
         <source>Polygons</source>
-        <translation type="unfinished"></translation>
+        <translation>çokgenler</translation>
     </message>
     <message>
         <source>Polygons%1</source>
-        <translation type="unfinished"></translation>
+        <translation>çokgenler %1</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolygonGroupCsvExporter</name>
     <message>
         <source>CSV file</source>
-        <translation type="unfinished"></translation>
+        <translation>CSV dosyası</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Hata</translation>
     </message>
     <message>
         <source>Error occured while exporting to %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dışa aktarılırken hata oluştu %1.</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Uyarı</translation>
     </message>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>CSV dosyası (*.csv)</translation>
     </message>
     <message>
         <source>Some polygon in this data has holes, but holes are not exported to CSV file. If you want to export holes, please export to ESRI Shapefile.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bu verilerdeki bazı çokgenlerde delikler vardır, ancak delikler CSV dosyasına aktarılmaz. Delikleri dışa aktarmak istiyorsanız, lütfen ESRI Shapefile'a dışa aktarın.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolygonGroupCsvImporter</name>
     <message>
         <source>CSV file (Polygons)</source>
-        <translation type="unfinished"></translation>
+        <translation>CSV dosyası (Çokgenler)</translation>
     </message>
     <message>
         <source>CSV file (Polygons) (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>CSV dosyası (Çokgenler) (*.csv)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Hata</translation>
     </message>
     <message>
         <source>Error occured while opening %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Açılırken hata oluştu %1</translation>
     </message>
     <message>
         <source>Error occured while reading header line. Make sure the file is saved in UTF-8 encoding.</source>
-        <translation type="unfinished"></translation>
+        <translation>Başlık satırı okunurken hata oluştu. Dosyanın UTF-8 kodlamasında kaydedildiğinden emin olun.</translation>
     </message>
     <message>
         <source>Error occured while reading header line. Header should have 5 columns at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>Başlık satırı okunurken hata oluştu. Başlıkta en az 5 sütun olmalıdır.</translation>
     </message>
     <message>
         <source>Error occured while reading header line. Header should have 6 columns at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>Başlık satırı okunurken hata oluştu. Başlıkta en az 6 sütun olmalıdır.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
-        <translation type="unfinished"></translation>
+        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
+        <translation>Başlık satırı okunurken hata oluştu. Kolon %1 olmalı "%2", ancak "%3" verilmiş.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. There is no data.</source>
-        <translation type="unfinished"></translation>
+        <translation>Satır okunurken hata oluştu %1. Veri yok.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Polygon should have three points at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>Satır okunurken hata oluştu %1. Çokgenin en az üç noktası olmalıdır.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Make sure the file is saved in UTF-8 encoding.</source>
-        <translation type="unfinished"></translation>
+        <translation>Satır okunurken hata oluştu %1. Dosyanın UTF-8 kodlamasında kaydedildiğinden emin olun.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Data should have 5 columns at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>Satır okunurken hata oluştu %1. Veriler en az 5 sütun içermelidir.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Data should have 6 columns at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>Satır okunurken hata oluştu %1. Veriler en az 6 sütuna sahip olmalıdır.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;pid&quot; value in line %1. &quot;pid&quot; should be integer value but &quot;%2&quot; is specified.</source>
-        <translation type="unfinished"></translation>
+        <source>Error occured while reading "pid" value in line %1. "pid" should be integer value but "%2" is specified.</source>
+        <translation>Satırda "pid" değeri okunurken hata oluştu %1. "pid" tamsayı olmalıdır, ancak "%2"belirtilmiştir.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;vid&quot; value in line %1. &quot;vid&quot; should be integer value but &quot;%2&quot; is specified.</source>
-        <translation type="unfinished"></translation>
+        <source>Error occured while reading "vid" value in line %1. "vid" should be integer value but "%2" is specified.</source>
+        <translation>Satırda "vid" değeri okunurken hata oluştu %1. "vid" tamsayı olmalıdır, ancak "%2"belirtilmiştir.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation type="unfinished"></translation>
+        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
+        <translation>Satırda "x" değeri okunurken hata oluştu %1. "x" gerçek değer olmalı ama "%2"belirtilmiştir.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation type="unfinished"></translation>
+        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
+        <translation>Satırda "y" değeri okunurken hata oluştu %1. "y" gerçek değer olmalı ama "%2"belirtilmiştir.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation type="unfinished"></translation>
+        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
+        <translation>Satırda "değer" değeri okunurken hata oluştu %1. "değer" gerçek değer olmalı ama "%2"belirtilmiştir.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. &quot;name&quot; should be the same for lines where &quot;pid&quot; values are the same.</source>
-        <translation type="unfinished"></translation>
+        <source>Error occured while reading line %1. "name" should be the same for lines where "pid" values are the same.</source>
+        <translation>Satır okunurken hata oluştu %1. "pid" değerlerinin aynı olduğu satırlar için "name" aynı olmalıdır.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. &quot;value&quot; should be the same for lines where &quot;pid&quot; values are the same.</source>
-        <translation type="unfinished"></translation>
+        <source>Error occured while reading line %1. "value" should be the same for lines where "pid" values are the same.</source>
+        <translation>Satır okunurken hata oluştu %1. "pid" değerlerinin aynı olduğu satırlar için "değer" aynı olmalıdır.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolygonGroupShpExporter</name>
     <message>
         <source>ESRI Shapefile</source>
-        <translation type="unfinished"></translation>
+        <translation>ESRI Şekil Dosyası</translation>
     </message>
     <message>
         <source>ESRI Shapefile (*.shp)</source>
-        <translation type="unfinished"></translation>
+        <translation>ESRI Şekil Dosyası (*.shp)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolygonGroupShpImporter</name>
     <message>
         <source>ESRI Shapefile (Polygons)</source>
-        <translation type="unfinished"></translation>
+        <translation>ESRI Şekil Dosyası (Çokgenler)</translation>
     </message>
     <message>
         <source>ESRI Shapefile (Polygons) (*.shp)</source>
-        <translation type="unfinished"></translation>
+        <translation>ESRI Şekil Dosyası (Çokgenler) (*.shp)</translation>
     </message>
     <message>
         <source>%1 th polygon can not be imported. Polygon like below can not be imported:
@@ -173,15 +171,15 @@
 - Lines of polygon intersect each other
 - Hole polygon is outside of region polygon
 - Polygon passes the same point several times</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 inci çokgen içe aktarılamaz. Aşağıdaki gibi çokgen içe aktarılamaz: - Üçten az noktası vardır - Kapalı değildir - Çokgenin doğruları birbiriyle kesişir - Delik çokgen bölge poligonunun dışındadır - Çokgen aynı noktadan birkaç kez geçer</translation>
     </message>
     <message>
         <source>Polygon%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Çokgen %1</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Uyarı</translation>
     </message>
 </context>
 </TS>

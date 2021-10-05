@@ -1,171 +1,169 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="pl_PL">
 <context>
     <name>GeoDataPolyLine</name>
     <message>
         <source>&amp;Add Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Dodaj wierzchołek (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Usuń wierzchołek (&amp;R)</translation>
     </message>
     <message>
         <source>Edit &amp;Coordinates...</source>
-        <translation type="unfinished"></translation>
+        <translation>Edytuj współrzędne (&amp;C)...</translation>
     </message>
     <message>
         <source>Poly&amp;line</source>
-        <translation type="unfinished"></translation>
+        <translation>Polilinia (&amp;L)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Ostrzeżenie</translation>
     </message>
     <message>
         <source>Polyline must have two vertices at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>Polilinia musi mieć co najmniej dwa wierzchołki.</translation>
     </message>
     <message>
         <source>Finish Defining Polyline</source>
-        <translation type="unfinished"></translation>
+        <translation>Zakończ definiowanie polilinii</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informacja</translation>
     </message>
     <message>
         <source>Please define polyline by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
-        <translation type="unfinished"></translation>
+        <translation>Proszę zdefiniować polilinię poprzez kliknięcie myszką. Zakończ definiowanie przez dwukrotne kliknięcie lub naciśnięcie klawisza powrotu.</translation>
     </message>
     <message>
         <source>polyline</source>
-        <translation type="unfinished"></translation>
+        <translation>polilinia</translation>
     </message>
     <message>
         <source>Polyline</source>
-        <translation type="unfinished"></translation>
+        <translation>Polilinia</translation>
     </message>
     <message>
         <source>Insert PolyLine Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Wstaw wierzchołek polilinii</translation>
     </message>
     <message>
         <source>PolyLine Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Współrzędne polilinii</translation>
     </message>
     <message>
         <source>Edit PolyLine Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Edytuj współrzędne polilinii</translation>
     </message>
     <message>
         <source>Finish Defining PolyLine</source>
-        <translation type="unfinished"></translation>
+        <translation>Zakończ definiowanie polilinii</translation>
     </message>
     <message>
         <source>Move PolyLine</source>
-        <translation type="unfinished"></translation>
+        <translation>Przenieś polilinię</translation>
     </message>
     <message>
         <source>Move PolyLine Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Przenieś wierzchołek polilinii</translation>
     </message>
     <message>
         <source>Add New PolyLine Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Dodaj nowy punkt polilinii</translation>
     </message>
     <message>
         <source>Remove PolyLine Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Usuń wierzchołek polilinii</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyLineCreator</name>
     <message>
         <source>Polyline</source>
-        <translation type="unfinished"></translation>
+        <translation>Polilinia</translation>
     </message>
     <message>
         <source>Polyline%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Polilinia %1</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyLineImporter</name>
     <message>
         <source>ESRI Shapefile (Polyline)</source>
-        <translation type="unfinished"></translation>
+        <translation>Plik kształtu ESRI (polilinia)</translation>
     </message>
     <message>
         <source>ESRI Shapefile (*.shp) (Polyline)</source>
-        <translation type="unfinished"></translation>
+        <translation>Plik kształtu ESRI (*.shp) (Polyline)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Błąd</translation>
     </message>
     <message>
         <source>The shape type contained in this shape file is not polyline.</source>
-        <translation type="unfinished"></translation>
+        <translation>Typ kształtu zawarty w tym pliku kształtu nie jest polilinią.</translation>
     </message>
     <message>
         <source>Opening %1 failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Otwarcie %1 przegrany.</translation>
     </message>
     <message>
         <source>The number of polylines mismatches between shp file and dbf file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Liczba niezgodności polilinii między plikiem shp a plikiem dbf.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyLineImporterSettingDialog</name>
     <message>
         <source>PolyLine Import Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Ustawienia importu polilinii</translation>
     </message>
     <message>
         <source>Encoding:</source>
-        <translation type="unfinished"></translation>
+        <translation>Kodowanie:</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nazwa</translation>
     </message>
     <message>
         <source>Load from Shape file attribute</source>
-        <translation type="unfinished"></translation>
+        <translation>Załaduj z atrybutu pliku kształtu</translation>
     </message>
     <message>
         <source>Name is set automatically (ex. Polyline1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Nazwa jest ustawiana automatycznie (np. Polilinia1)</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation type="unfinished"></translation>
+        <translation>Wartość</translation>
     </message>
     <message>
         <source>Specify value</source>
-        <translation type="unfinished"></translation>
+        <translation>Określ wartość</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Ostrzeżenie</translation>
     </message>
     <message>
         <source>You cannot specify the same column for both Name and Value.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nie można określić tej samej kolumny zarówno dla nazwy, jak i wartości.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyLineShapeExporter</name>
     <message>
         <source>ESRI Shapefile</source>
-        <translation type="unfinished"></translation>
+        <translation>Plik kształtu ESRI</translation>
     </message>
     <message>
         <source>ESRI Shape file (*.shp)</source>
-        <translation type="unfinished"></translation>
+        <translation>Plik kształtu ESRI (*.shp)</translation>
     </message>
 </context>
 </TS>

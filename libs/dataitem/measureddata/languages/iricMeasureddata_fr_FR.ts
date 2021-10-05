@@ -1,143 +1,141 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="fr_FR">
 <context>
     <name>MeasuredDataFileDataItem</name>
     <message>
         <source>File</source>
-        <translation type="unfinished"></translation>
+        <translation>Déposer</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportation (&amp;E)...</translation>
     </message>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>fichier CSV (*.csv)</translation>
     </message>
     <message>
         <source>Export Measured Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Exporter les données mesurées</translation>
     </message>
     <message>
         <source>Measured Data successfully exported to %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Données mesurées exportées avec succès vers %1.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Erreur</translation>
     </message>
 </context>
 <context>
     <name>MeasuredDataPointGroupDataItem</name>
     <message>
         <source>Scalar</source>
-        <translation type="unfinished"></translation>
+        <translation>Scalaire</translation>
     </message>
     <message>
         <source>Contour Physical Value Change</source>
-        <translation type="unfinished"></translation>
+        <translation>Modification de la valeur physique du contour</translation>
     </message>
 </context>
 <context>
     <name>MeasuredDataPointSettingDialog</name>
     <message>
         <source>Scalar Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Paramètre scalaire</translation>
     </message>
     <message>
         <source>Measured Value:</source>
-        <translation type="unfinished"></translation>
+        <translation>La valeur de mesure:</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Réglage de l'affichage</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Taille des points :</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Réglage de la barre de couleur (&amp;C)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Erreur</translation>
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pour la plage de valeurs, la valeur max est inférieure à la valeur min.</translation>
     </message>
 </context>
 <context>
     <name>MeasuredDataVectorGroupDataItem</name>
     <message>
         <source>Arrow</source>
-        <translation type="unfinished"></translation>
+        <translation>Flèche</translation>
     </message>
     <message>
         <source>Arrow Physical Value Change</source>
-        <translation type="unfinished"></translation>
+        <translation>Flèche Changement de valeur physique</translation>
     </message>
     <message>
         <source>Update Arrow Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Mettre à jour le paramètre de flèche</translation>
     </message>
 </context>
 <context>
     <name>MeasuredDataVectorSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Réglage de la flèche</translation>
     </message>
     <message>
         <source>Physical value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Valeur physique :</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation type="unfinished"></translation>
+        <translation>Longueur</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation>Auto</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Valeur standard:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation type="unfinished"></translation>
+        <translation>[Mme]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation type="unfinished"></translation>
+        <translation>Durée à l'écran :</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation type="unfinished"></translation>
+        <translation>[pixel]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation type="unfinished"></translation>
+        <translation>Valeur minimale à tirer :</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Couleur</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation type="unfinished"></translation>
+        <translation>Couleur personnalisée</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation type="unfinished"></translation>
+        <translation>Par valeur scalaire</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Réglage de la barre de couleur (&amp;C)</translation>
     </message>
 </context>
 </TS>

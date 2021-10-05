@@ -1,65 +1,63 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ca_ES">
 <context>
     <name>GeoDataPoint</name>
     <message>
         <source>Edit &amp;Coordinates...</source>
-        <translation type="unfinished"></translation>
+        <translation>Edita coordenades (&amp;C)...</translation>
     </message>
     <message>
         <source>Po&amp;int</source>
-        <translation type="unfinished"></translation>
+        <translation>Punt (&amp;I)</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informació</translation>
     </message>
     <message>
         <source>Please define point by mouse-clicking.</source>
-        <translation type="unfinished"></translation>
+        <translation>Definiu el punt fent clic amb el ratolí.</translation>
     </message>
     <message>
         <source>point</source>
-        <translation type="unfinished"></translation>
+        <translation>punt</translation>
     </message>
     <message>
         <source>Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Punt</translation>
     </message>
     <message>
         <source>Finish Defining Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Finalitza el punt de definició</translation>
     </message>
     <message>
         <source>Point Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Coordenades de punts</translation>
     </message>
     <message>
         <source>Edit Point Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Edita les coordenades del punt</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointColorSimpleSettingDialog</name>
     <message>
         <source>Point Color Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuració del color del punt</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Color:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointCreator</name>
     <message>
         <source>Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Punt</translation>
     </message>
     <message>
         <source>Point%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Punt %1</translation>
     </message>
 </context>
 </TS>

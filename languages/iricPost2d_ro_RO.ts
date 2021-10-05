@@ -1,1334 +1,1332 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ro_RO">
 <context>
     <name>Post2dGridRegionSelectDialog</name>
     <message>
         <source>Region Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Setarea regiunii</translation>
     </message>
     <message>
         <source>Full Region</source>
-        <translation type="unfinished"></translation>
+        <translation>Regiune completă</translation>
     </message>
     <message>
         <source>Active Region</source>
-        <translation type="unfinished"></translation>
+        <translation>Regiune activă</translation>
     </message>
     <message>
         <source>Custom Region</source>
-        <translation type="unfinished"></translation>
+        <translation>Regiune personalizată</translation>
     </message>
 </context>
 <context>
     <name>Post2dObjectBrowser</name>
     <message>
         <source>Object Browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Browser de obiecte</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindow</name>
     <message>
         <source>Post-processing (2D): %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Post-procesare (2D): %1</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Eroare</translation>
     </message>
     <message>
         <source>No contours have been defined</source>
-        <translation type="unfinished"></translation>
+        <translation>Nu au fost definite contururi</translation>
     </message>
     <message>
         <source>Please select which scalar to export:</source>
-        <translation type="unfinished"></translation>
+        <translation>Vă rugăm să selectați ce scalar să exportați:</translation>
     </message>
     <message>
         <source>No Contour Figure is drawn now.</source>
-        <translation type="unfinished"></translation>
+        <translation>Acum nu este desenată nicio figură de contur.</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowActionManager</name>
     <message>
         <source>&amp;Draw</source>
-        <translation type="unfinished"></translation>
+        <translation>A desena (&amp;D)</translation>
     </message>
     <message>
         <source>&amp;Grid Shape...</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma grilei (&amp;G)...</translation>
     </message>
     <message>
         <source>&amp;Contours (node)...</source>
-        <translation type="unfinished"></translation>
+        <translation>Contururi (nod) (&amp;C)...</translation>
     </message>
     <message>
         <source>&amp;Arrows...</source>
-        <translation type="unfinished"></translation>
+        <translation>Săgeți (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Streamlines...</source>
-        <translation type="unfinished"></translation>
+        <translation>Optimizează (&amp;S)...</translation>
     </message>
     <message>
         <source>&amp;Particles...</source>
-        <translation type="unfinished"></translation>
+        <translation>Particule (&amp;P)...</translation>
     </message>
     <message>
         <source>P&amp;olygons...</source>
-        <translation type="unfinished"></translation>
+        <translation>Poligoane (&amp;O)...</translation>
     </message>
     <message>
         <source>&amp;Cell Attributes...</source>
-        <translation type="unfinished"></translation>
+        <translation>Atribute ale celulei (&amp;C)...</translation>
     </message>
     <message>
         <source>Contours (ce&amp;ll center)...</source>
-        <translation type="unfinished"></translation>
+        <translation>Contururi (centrul celulei) (&amp;L)...</translation>
     </message>
     <message>
         <source>&amp;Title...</source>
-        <translation type="unfinished"></translation>
+        <translation>Titlu (&amp;T)...</translation>
     </message>
     <message>
         <source>Ti&amp;me...</source>
-        <translation type="unfinished"></translation>
+        <translation>Timp (&amp;M)...</translation>
     </message>
     <message>
         <source>&amp;Measured Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Date măsurate (&amp;M)</translation>
     </message>
     <message>
         <source>&amp;Scalar...</source>
-        <translation type="unfinished"></translation>
+        <translation>Scalar (&amp;S)...</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation type="unfinished"></translation>
+        <translation>Import (&amp;I)...</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowArrowStructuredSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Setarea săgeții</translation>
     </message>
     <message>
         <source>Physical value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Valoare fizică:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation type="unfinished"></translation>
+        <translation>Lungime</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation>Auto</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Valoare standard:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation type="unfinished"></translation>
+        <translation>[Domnișoară]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation type="unfinished"></translation>
+        <translation>Lungimea pe ecran:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation type="unfinished"></translation>
+        <translation>[pixel]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation type="unfinished"></translation>
+        <translation>Valoare minimă de trasat:</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation type="unfinished"></translation>
+        <translation>Prelevarea de probe</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation type="unfinished"></translation>
+        <translation>Toate vârfurile</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation type="unfinished"></translation>
+        <translation>Rata de eșantionare:</translation>
     </message>
     <message>
         <source>I-direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Direcția I</translation>
     </message>
     <message>
         <source>J-direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Direcția J</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Culoare</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation type="unfinished"></translation>
+        <translation>Culoare personalizată</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation type="unfinished"></translation>
+        <translation>După valoarea scalară</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma săgeții</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Dimensiunea săgeții:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Lățimea liniei:</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Setarea regiunii (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Setarea barei de culoare (&amp;C)</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowArrowUnstructuredSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Setarea săgeții</translation>
     </message>
     <message>
         <source>Physical value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Valoare fizică:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation type="unfinished"></translation>
+        <translation>Lungime</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation>Auto</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Valoare standard:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation type="unfinished"></translation>
+        <translation>[Domnișoară]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation type="unfinished"></translation>
+        <translation>Lungimea pe ecran:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation type="unfinished"></translation>
+        <translation>[pixel]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation type="unfinished"></translation>
+        <translation>Valoare minimă de trasat:</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation type="unfinished"></translation>
+        <translation>Prelevarea de probe</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation type="unfinished"></translation>
+        <translation>Toate vârfurile</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation type="unfinished"></translation>
+        <translation>Rata de eșantionare:</translation>
     </message>
     <message>
         <source>Specify number of vertices</source>
-        <translation type="unfinished"></translation>
+        <translation>Specificați numărul de vârfuri</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Culoare</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation type="unfinished"></translation>
+        <translation>Culoare personalizată</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation type="unfinished"></translation>
+        <translation>După valoarea scalară</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma săgeții</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Dimensiunea săgeții:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Lățimea liniei:</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Setarea regiunii (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Setarea barei de culoare (&amp;C)</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowBackgroundImageDataItem</name>
     <message>
         <source>&amp;Georeference...</source>
-        <translation type="unfinished"></translation>
+        <translation>Georeferență (&amp;G)...</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowBackgroundImagesDataItem</name>
     <message>
         <source>Background Images</source>
-        <translation type="unfinished"></translation>
+        <translation>Imagini de fundal</translation>
     </message>
     <message>
         <source>&amp;Add Image</source>
-        <translation type="unfinished"></translation>
+        <translation>Adauga imagine (&amp;A)</translation>
     </message>
     <message>
         <source>Delete &amp;Selected...</source>
-        <translation type="unfinished"></translation>
+        <translation>Sterge selectia (&amp;S)...</translation>
     </message>
     <message>
         <source>Delete &amp;All...</source>
-        <translation type="unfinished"></translation>
+        <translation>Sterge tot (&amp;A)...</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>informație</translation>
     </message>
     <message>
         <source>There is no background image.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nu există nicio imagine de fundal.</translation>
     </message>
     <message>
         <source>Delete selected background images</source>
-        <translation type="unfinished"></translation>
+        <translation>Ștergeți imaginile de fundal selectate</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Avertizare</translation>
     </message>
     <message>
         <source>Are you sure you want to delete all background images?</source>
-        <translation type="unfinished"></translation>
+        <translation>Sigur doriți să ștergeți toate imaginile de fundal?</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowCellFlagGroupDataItem</name>
     <message>
         <source>Cell attributes</source>
-        <translation type="unfinished"></translation>
+        <translation>Atributele celulei</translation>
     </message>
     <message>
         <source>Cell Flag Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Setarea steagului celulei</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowCellFlagSettingDialog</name>
     <message>
         <source>Cell Attributes</source>
-        <translation type="unfinished"></translation>
+        <translation>Atribute ale celulei</translation>
     </message>
     <message>
         <source>&amp;Up</source>
-        <translation type="unfinished"></translation>
+        <translation>Sus (&amp;U)</translation>
     </message>
     <message>
         <source>&amp;Down</source>
-        <translation type="unfinished"></translation>
+        <translation>Jos (&amp;D)</translation>
     </message>
     <message>
         <source>Attribute</source>
-        <translation type="unfinished"></translation>
+        <translation>Atribut</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Culoare</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar (cell center)</source>
-        <translation type="unfinished"></translation>
+        <translation>Scalar (centrul celulei)</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Actualizați setarea conturului</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Avertizare</translation>
     </message>
     <message>
         <source>To export KML for street view, display with Contour Figure.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pentru a exporta KML pentru vedere de stradă, afișați cu Figura contur.</translation>
     </message>
     <message>
         <source>To export KML for street view, value range should be set up manually.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pentru a exporta KML pentru vedere de stradă, intervalul de valori trebuie configurat manual.</translation>
     </message>
     <message>
         <source>To export KML for street view, coordinate system should be specified.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pentru a exporta KML pentru vedere de stradă, trebuie specificat sistemul de coordonate.</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowCellScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (cell center)</source>
-        <translation type="unfinished"></translation>
+        <translation>Scalar (centrul celulei)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Avertizare</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation type="unfinished"></translation>
+        <translation>Se pot defini maximum patru contururi.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Eroare</translation>
     </message>
     <message>
-        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
-        <translation type="unfinished"></translation>
+        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
+        <translation>Pentru a exporta fișierul de formă, comutați „Setare afișaj” la „Figura contur”, nu „Franjuri de culoare” sau „Izolate”.</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowContourSettingDialog</name>
     <message>
         <source>Scalar Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Setarea scalară</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Valoare fizică:</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Arata setarile</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Setarea regiunii (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Setarea barei de culoare (&amp;C)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Eroare</translation>
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pentru intervalul de valori, valoarea maximă este mai mică decât valoarea minimă.</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowDataModel</name>
     <message>
         <source>Z-direction Scale</source>
-        <translation type="unfinished"></translation>
+        <translation>Scala direcției Z</translation>
     </message>
     <message>
         <source>Input new Z-direction scale.</source>
-        <translation type="unfinished"></translation>
+        <translation>Introduceți o nouă scală în direcția Z.</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Avertizare</translation>
     </message>
     <message>
         <source>Contour setting is not available, because this result does not contain scalar values.</source>
-        <translation type="unfinished"></translation>
+        <translation>Setarea conturului nu este disponibilă, deoarece acest rezultat nu conține valori scalare.</translation>
     </message>
     <message>
         <source>Arrow setting is not available, because this result does not contain vector values.</source>
-        <translation type="unfinished"></translation>
+        <translation>Setarea săgeții nu este disponibilă, deoarece acest rezultat nu conține valori vectoriale.</translation>
     </message>
     <message>
         <source>Streamline setting is not available, because this result does not contain vector values.</source>
-        <translation type="unfinished"></translation>
+        <translation>Setarea Streamline nu este disponibilă, deoarece acest rezultat nu conține valori vectoriale.</translation>
     </message>
     <message>
         <source>Particle setting is not available, because this result does not contain vector values.</source>
-        <translation type="unfinished"></translation>
+        <translation>Setarea particulelor nu este disponibilă, deoarece acest rezultat nu conține valori vectoriale.</translation>
     </message>
     <message>
         <source>Contour setting is not available, because this result does not contain cell scalar values.</source>
-        <translation type="unfinished"></translation>
+        <translation>Setarea conturului nu este disponibilă, deoarece acest rezultat nu conține valori scalare ale celulei.</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowEdgeIScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (edgeI)</source>
-        <translation type="unfinished"></translation>
+        <translation>Scalar (edgeI)</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowEdgeJScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (edgeJ)</source>
-        <translation type="unfinished"></translation>
+        <translation>Scalar (edgeJ)</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowGeoDataTopDataItem</name>
     <message>
         <source>Geographic Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Date geografice</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowGraphGroupDataItem</name>
     <message>
         <source>Graph</source>
-        <translation type="unfinished"></translation>
+        <translation>Grafic</translation>
     </message>
     <message>
         <source>Graph Physical Value Change</source>
-        <translation type="unfinished"></translation>
+        <translation>Grafic Schimbarea valorii fizice</translation>
     </message>
     <message>
         <source>Update Graph Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Actualizați setarea graficului</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowGraphSettingCustomRegionDialog</name>
     <message>
         <source>Custom Region Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Setare regiune personalizată</translation>
     </message>
     <message>
         <source>&amp;Select All</source>
-        <translation type="unfinished"></translation>
+        <translation>Selectează tot (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;Unselect All</source>
-        <translation type="unfinished"></translation>
+        <translation>Deselectează tot (&amp;U)</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowGraphSettingDialog</name>
     <message>
         <source>Graph Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Setarea graficului</translation>
     </message>
     <message>
         <source>Direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Direcţie</translation>
     </message>
     <message>
         <source>I direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Eu direcție</translation>
     </message>
     <message>
         <source>J direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Direcția J</translation>
     </message>
     <message>
         <source>Region</source>
-        <translation type="unfinished"></translation>
+        <translation>Regiune</translation>
     </message>
     <message>
         <source>All</source>
-        <translation type="unfinished"></translation>
+        <translation>Toate</translation>
     </message>
     <message>
         <source>Partial region</source>
-        <translation type="unfinished"></translation>
+        <translation>Regiune parțială</translation>
     </message>
     <message>
         <source>Start:</source>
-        <translation type="unfinished"></translation>
+        <translation>Start:</translation>
     </message>
     <message>
         <source>End:</source>
-        <translation type="unfinished"></translation>
+        <translation>Sfârșit:</translation>
     </message>
     <message>
         <source>Skip:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ocolire:</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation type="unfinished"></translation>
+        <translation>Personalizat</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation type="unfinished"></translation>
+        <translation>Editați | × (&amp;E)...</translation>
     </message>
     <message>
         <source>Draw Direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Desenați direcția</translation>
     </message>
     <message>
         <source>Vertical to grid lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Vertical la liniile de grilă</translation>
     </message>
     <message>
         <source>Parallel to grid lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Paralel cu liniile de grilă</translation>
     </message>
     <message>
         <source>Grid Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Linii de rețea</translation>
     </message>
     <message>
         <source>Draw</source>
-        <translation type="unfinished"></translation>
+        <translation>A desena</translation>
     </message>
     <message>
         <source>Graph Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Linii grafice</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Valoare fizică:</translation>
     </message>
     <message>
         <source>Scale:</source>
-        <translation type="unfinished"></translation>
+        <translation>Scară:</translation>
     </message>
     <message>
         <source>No modification</source>
-        <translation type="unfinished"></translation>
+        <translation>Nicio modificare</translation>
     </message>
     <message>
         <source>Subtract maximum value in each line</source>
-        <translation type="unfinished"></translation>
+        <translation>Scădeți valoarea maximă în fiecare linie</translation>
     </message>
     <message>
         <source>Subtract minimum value in each line</source>
-        <translation type="unfinished"></translation>
+        <translation>Scădeți valoarea minimă în fiecare linie</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowGridShapeDataItem</name>
     <message>
         <source>Grid shape</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma grilei</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowMeasuredDataTopDataItem</name>
     <message>
         <source>Measured Values</source>
-        <translation type="unfinished"></translation>
+        <translation>Valori măsurate</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation type="unfinished"></translation>
+        <translation>Import (&amp;I)...</translation>
     </message>
     <message>
         <source>Delete &amp;Selected...</source>
-        <translation type="unfinished"></translation>
+        <translation>Sterge selectia (&amp;S)...</translation>
     </message>
     <message>
         <source>Delete &amp;All...</source>
-        <translation type="unfinished"></translation>
+        <translation>Sterge tot (&amp;A)...</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>informație</translation>
     </message>
     <message>
         <source>There is no measured data.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nu există date măsurate.</translation>
     </message>
     <message>
         <source>Delete selected measured data</source>
-        <translation type="unfinished"></translation>
+        <translation>Ștergeți datele măsurate selectate</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Avertizare</translation>
     </message>
     <message>
         <source>Are you sure you want to delete all measured data?</source>
-        <translation type="unfinished"></translation>
+        <translation>Sigur doriți să ștergeți toate datele măsurate?</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeScalarGroupDataItem</name>
     <message>
         <source>Update Contour Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Actualizați setarea conturului</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Avertizare</translation>
     </message>
     <message>
         <source>To export KML for street view, display with Contour Figure.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pentru a exporta KML pentru vedere de stradă, afișați cu Figura contur.</translation>
     </message>
     <message>
         <source>To export KML for street view, value range should be set up manually.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pentru a exporta KML pentru vedere de stradă, intervalul de valori trebuie configurat manual.</translation>
     </message>
     <message>
         <source>To export KML for street view, coordinate system should be specified.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pentru a exporta KML pentru vedere de stradă, trebuie specificat sistemul de coordonate.</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (node)</source>
-        <translation type="unfinished"></translation>
+        <translation>Scalar (nod)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Eroare</translation>
     </message>
     <message>
-        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
-        <translation type="unfinished"></translation>
+        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
+        <translation>Pentru a exporta fișierul de formă, comutați „Setare afișaj” la „Figura contur”, nu „Franjuri de culoare” sau „Izolate”.</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorArrowGroupDataItem</name>
     <message>
         <source>Arrow</source>
-        <translation type="unfinished"></translation>
+        <translation>Săgeată</translation>
     </message>
     <message>
         <source>Arrow Physical Value Change</source>
-        <translation type="unfinished"></translation>
+        <translation>Săgeată Schimbarea valorii fizice</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorArrowGroupStructuredDataItem</name>
     <message>
         <source>Update Arrow Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Actualizați setarea săgeții</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorArrowGroupUnstructuredDataItem</name>
     <message>
         <source>Update Arrow Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Actualizați setarea săgeții</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorParticleGroupDataItem</name>
     <message>
         <source>Particles (auto)</source>
-        <translation type="unfinished"></translation>
+        <translation>Particule (auto)</translation>
     </message>
     <message>
         <source>Particle Physical Value Change</source>
-        <translation type="unfinished"></translation>
+        <translation>Schimbarea valorii fizice a particulelor</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorParticleGroupStructuredDataItem</name>
     <message>
         <source>Update Particle Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Actualizați setarea particulelor</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorParticleGroupUnstructuredDataItem</name>
     <message>
         <source>Update Particle Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Actualizați setarea particulelor</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorStreamlineGroupDataItem</name>
     <message>
         <source>Streamlines</source>
-        <translation type="unfinished"></translation>
+        <translation>Optimizează</translation>
     </message>
     <message>
         <source>Streamline Physical Value Change</source>
-        <translation type="unfinished"></translation>
+        <translation>Simplificați modificarea valorii fizice</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem</name>
     <message>
         <source>Update Streamline Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Actualizați setarea Streamline</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowParticleGroupRootDataItem</name>
     <message>
         <source>Particles</source>
-        <translation type="unfinished"></translation>
+        <translation>Particule</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowParticleStructuredSettingDialog</name>
     <message>
         <source>Particle Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Setarea particulelor</translation>
     </message>
     <message>
         <source>Common Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Setările comune</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Valoare fizică:</translation>
     </message>
     <message>
         <source>Generate periodically</source>
-        <translation type="unfinished"></translation>
+        <translation>Generați periodic</translation>
     </message>
     <message>
         <source>Generation time interval</source>
-        <translation type="unfinished"></translation>
+        <translation>Interval de timp de generare</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap;}
 p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
 &lt;p&gt;If you specify 1, particles are generated for every time steps.&lt;/p&gt;
 &lt;p&gt;If you specify 2, particles are generated twice equally separated, for every time steps,&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other time steps.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
         <extracomment>If you specify 1, particles are generated for every time steps. If you specify 2, particles are generated twice equally separated, for every time steps, If you specify 1/2, particles are generated for every other time steps.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>-</source>
-        <translation type="unfinished"></translation>
+        <translation>-</translation>
     </message>
     <message>
         <source>+</source>
-        <translation type="unfinished"></translation>
+        <translation>+</translation>
     </message>
     <message>
         <source>min</source>
-        <translation type="unfinished"></translation>
+        <translation>min</translation>
     </message>
     <message>
         <source>1</source>
-        <translation type="unfinished"></translation>
+        <translation>1</translation>
     </message>
     <message>
         <source>max</source>
-        <translation type="unfinished"></translation>
+        <translation>max</translation>
     </message>
     <message>
         <source>Generate at arbitrary time</source>
-        <translation type="unfinished"></translation>
+        <translation>Generați la un moment arbitrar</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation type="unfinished"></translation>
+        <translation>Editați | ×...</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation type="unfinished"></translation>
+        <translation>Poziția de pornire</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation type="unfinished"></translation>
+        <translation>Gamă</translation>
     </message>
     <message>
         <source>Specify the area to generate particles.</source>
-        <translation type="unfinished"></translation>
+        <translation>Specificați zona de generare a particulelor.</translation>
     </message>
     <message>
         <source>Specify the area to generate particles, by grid indices range (I, J).</source>
-        <translation type="unfinished"></translation>
+        <translation>Specificați zona de generare a particulelor, în funcție de intervalul indicilor de rețea (I, J).</translation>
     </message>
     <message>
         <source>I Min</source>
-        <translation type="unfinished"></translation>
+        <translation>Sunt în</translation>
     </message>
     <message>
         <source>I Max</source>
-        <translation type="unfinished"></translation>
+        <translation>Eu Max</translation>
     </message>
     <message>
         <source>J Min</source>
-        <translation type="unfinished"></translation>
+        <translation>J Min</translation>
     </message>
     <message>
         <source>J Max</source>
-        <translation type="unfinished"></translation>
+        <translation>J Max</translation>
     </message>
     <message>
         <source>Generation space interval</source>
-        <translation type="unfinished"></translation>
+        <translation>Interval de spațiu de generație</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
 p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
 &lt;p&gt;If you specify 1, particles are generated at grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 2, particles are generated at grid nodes, and middle points of grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other grid nodes.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {white-space: pre-wrap; } p {margin-top: 3px; margin-bottom: 3px;} &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p&gt; Dacă specificați 1, particulele sunt generate la nodurile de rețea. &lt;/p&gt; &lt;p&gt; Dacă specificați 2, particulele sunt generate la nodurile de rețea și punctele de mijloc ale nodurilor de rețea. &lt;/p&gt; &lt;p&gt; Dacă specifică 1/2, particulele sunt generate pentru toate celelalte noduri ale rețelei. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Culoare:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Mărimea:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Specificați un număr de pixeli afișați. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Adăuga (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Elimina (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Setarea regiunii (&amp;R)</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowParticleUnstructuredSettingDialog</name>
     <message>
         <source>Particle Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Setarea particulelor</translation>
     </message>
     <message>
         <source>Common Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Setările comune</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Valoare fizică:</translation>
     </message>
     <message>
         <source>Generate periodically</source>
-        <translation type="unfinished"></translation>
+        <translation>Generați periodic</translation>
     </message>
     <message>
         <source>Generation interval</source>
-        <translation type="unfinished"></translation>
+        <translation>Interval de generare</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap;}
 p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
 &lt;p&gt;If you specify 1, particles are generated for every time steps.&lt;/p&gt;
 &lt;p&gt;If you specify 2, particles are generated twice equally separated, for every time steps,&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other time steps.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
         <extracomment>If you specify 1, particles are generated for every time steps. If you specify 2, particles are generated twice equally separated, for every time steps, If you specify 1/2, particles are generated for every other time steps.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>-</source>
-        <translation type="unfinished"></translation>
+        <translation>-</translation>
     </message>
     <message>
         <source>+</source>
-        <translation type="unfinished"></translation>
+        <translation>+</translation>
     </message>
     <message>
         <source>min</source>
-        <translation type="unfinished"></translation>
+        <translation>min</translation>
     </message>
     <message>
         <source>1</source>
-        <translation type="unfinished"></translation>
+        <translation>1</translation>
     </message>
     <message>
         <source>max</source>
-        <translation type="unfinished"></translation>
+        <translation>max</translation>
     </message>
     <message>
         <source>Generate at arbitrary time</source>
-        <translation type="unfinished"></translation>
+        <translation>Generați la un moment arbitrar</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation type="unfinished"></translation>
+        <translation>Editați | ×...</translation>
     </message>
     <message>
         <source>Start Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Puncte de pornire</translation>
     </message>
     <message>
         <source>Specify two points. Particles start from points generated equally separated between these two points.</source>
-        <translation type="unfinished"></translation>
+        <translation>Specificați două puncte. Particulele pornesc de la puncte generate în mod egal separate între aceste două puncte.</translation>
     </message>
     <message>
         <source>Mouse Drag</source>
-        <translation type="unfinished"></translation>
+        <translation>Mouse Drag</translation>
     </message>
     <message>
         <source>Coordinate Values</source>
-        <translation type="unfinished"></translation>
+        <translation>Valori coordonate</translation>
     </message>
     <message>
         <source>Point 1:</source>
-        <translation type="unfinished"></translation>
+        <translation>Punctul 1:</translation>
     </message>
     <message>
         <source>,</source>
-        <translation type="unfinished"></translation>
+        <translation>,</translation>
     </message>
     <message>
         <source>Point 2:</source>
-        <translation type="unfinished"></translation>
+        <translation>Punctul 2:</translation>
     </message>
     <message>
         <source>Number of points:</source>
-        <translation type="unfinished"></translation>
+        <translation>Număr de puncte:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Culoare:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Mărimea:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Specificați un număr de pixeli afișați. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Adăuga (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Elimina (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Setarea regiunii (&amp;R)</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowParticlesBaseScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
-        <translation type="unfinished"></translation>
+        <translation>Scalar</translation>
     </message>
     <message>
         <source>Particle Scalar value change</source>
-        <translation type="unfinished"></translation>
+        <translation>Schimbarea valorii scalare a particulelor</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowParticlesBaseTopDataItem</name>
     <message>
         <source>Edit Particle Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Editați setarea particulelor</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowParticlesBaseVectorGroupDataItem</name>
     <message>
         <source>Vector</source>
-        <translation type="unfinished"></translation>
+        <translation>Vector</translation>
     </message>
     <message>
         <source>Vector Attribute Select Change</source>
-        <translation type="unfinished"></translation>
+        <translation>Schimbare selectare atribut vector</translation>
     </message>
     <message>
         <source>Update Vector Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Actualizați setarea vectorială</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowParticlesTopDataItem</name>
     <message>
         <source>Particles</source>
-        <translation type="unfinished"></translation>
+        <translation>Particule</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowPolyDataGroupDataItem</name>
     <message>
         <source>PolyData value change</source>
-        <translation type="unfinished"></translation>
+        <translation>Modificarea valorii PolyData</translation>
     </message>
     <message>
         <source>Edit Polygon Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Editați setarea poligonului</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowPolyDataTopDataItem</name>
     <message>
         <source>Polygon</source>
-        <translation type="unfinished"></translation>
+        <translation>Poligon</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowScalarGroupTopDataItem</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Avertizare</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation type="unfinished"></translation>
+        <translation>Se pot defini maximum patru contururi.</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowStreamlineStructuredSettingDialog</name>
     <message>
         <source>Streamline Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Setarea simplifică</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Valoare fizică:</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation type="unfinished"></translation>
+        <translation>Poziția de pornire</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation type="unfinished"></translation>
+        <translation>Gamă</translation>
     </message>
     <message>
         <source>Specify the area to start streamlines</source>
-        <translation type="unfinished"></translation>
+        <translation>Specificați zona pentru a începe raționalizarea</translation>
     </message>
     <message>
         <source>Specify the area to start streamlines, by grid indices range (I, J).</source>
-        <translation type="unfinished"></translation>
+        <translation>Specificați zona pentru a începe raționalizarea, în funcție de intervalul indicilor de grilă (I, J).</translation>
     </message>
     <message>
         <source>I Min</source>
-        <translation type="unfinished"></translation>
+        <translation>Sunt în</translation>
     </message>
     <message>
         <source>I Max</source>
-        <translation type="unfinished"></translation>
+        <translation>Eu Max</translation>
     </message>
     <message>
         <source>J Min</source>
-        <translation type="unfinished"></translation>
+        <translation>J Min</translation>
     </message>
     <message>
         <source>J Max</source>
-        <translation type="unfinished"></translation>
+        <translation>J Max</translation>
     </message>
     <message>
         <source>Generation space interval</source>
-        <translation type="unfinished"></translation>
+        <translation>Interval de spațiu de generație</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Dacă specificați 1, raționalizările încep de la nodurile grilei. &lt;/p&gt; &lt;p style = "margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px;" &gt; Dacă specificați 2, raționalizările încep de la nodurile de rețea și punctele de mijloc ale nodurilor de rețea. &lt;/p&gt; &lt;p style = "margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Dacă specificați 1/2, raționalizările încep la toate celelalte noduri ale grilei. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>-</source>
-        <translation type="unfinished"></translation>
+        <translation>-</translation>
     </message>
     <message>
         <source>+</source>
-        <translation type="unfinished"></translation>
+        <translation>+</translation>
     </message>
     <message>
         <source>min</source>
-        <translation type="unfinished"></translation>
+        <translation>min</translation>
     </message>
     <message>
         <source>1</source>
-        <translation type="unfinished"></translation>
+        <translation>1</translation>
     </message>
     <message>
         <source>max</source>
-        <translation type="unfinished"></translation>
+        <translation>max</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Culoare:</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Lăţime:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Specificați un număr de pixeli afișați. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Adăuga (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Elimina (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Setarea regiunii (&amp;R)</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowStreamlineUnstructuredSettingDialog</name>
     <message>
         <source>Streamline Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Setarea simplifică</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Valoare fizică:</translation>
     </message>
     <message>
         <source>Start Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Puncte de pornire</translation>
     </message>
     <message>
         <source>Specify two points. Particles start from points generated equally separated between these two points.</source>
-        <translation type="unfinished"></translation>
+        <translation>Specificați două puncte. Particulele pornesc de la puncte generate în mod egal separate între aceste două puncte.</translation>
     </message>
     <message>
         <source>Mouse Drag</source>
-        <translation type="unfinished"></translation>
+        <translation>Mouse Drag</translation>
     </message>
     <message>
         <source>Coordinate Values</source>
-        <translation type="unfinished"></translation>
+        <translation>Valori coordonate</translation>
     </message>
     <message>
         <source>Point 1:</source>
-        <translation type="unfinished"></translation>
+        <translation>Punctul 1:</translation>
     </message>
     <message>
         <source>,</source>
-        <translation type="unfinished"></translation>
+        <translation>,</translation>
     </message>
     <message>
         <source>Point 2:</source>
-        <translation type="unfinished"></translation>
+        <translation>Punctul 2:</translation>
     </message>
     <message>
         <source>Number of points:</source>
-        <translation type="unfinished"></translation>
+        <translation>Număr de puncte:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Culoare:</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Lăţime:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Specificați un număr de pixeli afișați. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Adăuga (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Elimina (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Setarea regiunii (&amp;R)</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowZoneDataItem</name>
     <message>
         <source>Show Attribute Browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Afișați browserul cu atribute</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
         <source>Create Cell Contour</source>
-        <translation type="unfinished"></translation>
+        <translation>Creați conturul celulei</translation>
     </message>
     <message>
         <source>Create Contour</source>
-        <translation type="unfinished"></translation>
+        <translation>Creați contur</translation>
     </message>
     <message>
         <source>Update Streamline Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Actualizați setarea Streamline</translation>
     </message>
     <message>
         <source>Update Grid Shape Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Actualizați setarea formei grilei</translation>
     </message>
     <message>
         <source>Update Particles Scalar Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Actualizați setarea scalară a particulelor</translation>
     </message>
     <message>
         <source>Update Polygon Scalar Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Actualizați setarea scalară a poligonului</translation>
     </message>
 </context>
 </TS>

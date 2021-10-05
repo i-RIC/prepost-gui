@@ -1,125 +1,123 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="sv_SE">
 <context>
     <name>GridCreatingConditionCreatorGridCombine</name>
     <message>
         <source>Create grid by combining two grids</source>
-        <translation type="unfinished"></translation>
+        <translation>Skapa rutnät genom att kombinera två rutnät</translation>
     </message>
     <message>
         <source>Grid with shape of river meeting point can be created using this algorithm. Please create or import two grids first. Selecting the main channel grid and sub channel grid, and specifying some parameters, you can create a river meeting point grid.</source>
-        <translation type="unfinished"></translation>
+        <translation>Grid med form av flodens mötesplats kan skapas med denna algoritm. Skapa eller importera två rutnät först. Genom att välja huvudkanalnät och subkanalnät och ange vissa parametrar kan du skapa ett mötesplatsnät för flod.</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionGridCombine</name>
     <message>
         <source>(No additional operation available)</source>
-        <translation type="unfinished"></translation>
+        <translation>(Ingen ytterligare operation tillgänglig)</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionGridCombineSettingDialog</name>
     <message>
         <source>Grid Creation</source>
-        <translation type="unfinished"></translation>
+        <translation>Grid Creation</translation>
     </message>
     <message>
         <source>Basis</source>
-        <translation type="unfinished"></translation>
+        <translation>Grund</translation>
     </message>
     <message>
         <source>Confluence type</source>
-        <translation type="unfinished"></translation>
+        <translation>Konfluens typ</translation>
     </message>
     <message>
         <source>Bind together (left : tributary, right : mainstream)</source>
-        <translation type="unfinished"></translation>
+        <translation>Bind ihop (vänster: biflod, höger: mainstream)</translation>
     </message>
     <message>
         <source>Flow into the left bank (left : tributary, right : mainstream)</source>
-        <translation type="unfinished"></translation>
+        <translation>Flöde in i vänster strand (vänster: biflod, höger: mainstream)</translation>
     </message>
     <message>
         <source>Flow into the right bank (left : mainstream, right : tributary)</source>
-        <translation type="unfinished"></translation>
+        <translation>Flöde in i höger strand (vänster: mainstream, höger: biflod)</translation>
     </message>
     <message>
         <source>Input grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Inmatningsnät</translation>
     </message>
     <message>
         <source>Mainstream :</source>
-        <translation type="unfinished"></translation>
+        <translation>Vanliga :</translation>
     </message>
     <message>
         <source>Tributary :</source>
-        <translation type="unfinished"></translation>
+        <translation>Biflod:</translation>
     </message>
     <message>
         <source>Confluence information</source>
-        <translation type="unfinished"></translation>
+        <translation>Konfluensinformation</translation>
     </message>
     <message>
         <source>Mainstream crossing directional beginning index :</source>
-        <translation type="unfinished"></translation>
+        <translation>Mainstream crossing riktningsstartindex:</translation>
     </message>
     <message>
         <source>Mainstream crossing directional ending index :</source>
-        <translation type="unfinished"></translation>
+        <translation>Mainstream crossing directional ending index:</translation>
     </message>
     <message>
         <source>Tributary crossing directional beginning index :</source>
-        <translation type="unfinished"></translation>
+        <translation>Tvärgående korsningsriktningsstartindex:</translation>
     </message>
     <message>
         <source>Tributary crossing directional ending index :</source>
-        <translation type="unfinished"></translation>
+        <translation>Tvärgående korsningsriktningsändindex:</translation>
     </message>
     <message>
         <source>Mainstream flow directional tributary beginning index :</source>
-        <translation type="unfinished"></translation>
+        <translation>Mainstream flödesriktat biflödesindex:</translation>
     </message>
     <message>
         <source>Mainstream flow directional tributary ending index :</source>
-        <translation type="unfinished"></translation>
+        <translation>Mainstream flödesriktat biflod slutindex:</translation>
     </message>
     <message>
         <source>Obstacle information</source>
-        <translation type="unfinished"></translation>
+        <translation>Hinderinformation</translation>
     </message>
     <message>
         <source>Obstacle coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Hinderkoordinater</translation>
     </message>
     <message>
         <source>Upstream</source>
-        <translation type="unfinished"></translation>
+        <translation>Uppströms</translation>
     </message>
     <message>
         <source>x :</source>
-        <translation type="unfinished"></translation>
+        <translation>x:</translation>
     </message>
     <message>
         <source>y :</source>
-        <translation type="unfinished"></translation>
+        <translation>y:</translation>
     </message>
     <message>
         <source>Downstream</source>
-        <translation type="unfinished"></translation>
+        <translation>Nedströms</translation>
     </message>
     <message>
         <source>Correction value for setting obstacle cells :</source>
-        <translation type="unfinished"></translation>
+        <translation>Korrigeringsvärde för inställning av hinderceller:</translation>
     </message>
     <message>
         <source>(smaller value for complex channel form)</source>
-        <translation type="unfinished"></translation>
+        <translation>(mindre värde för komplex kanalform)</translation>
     </message>
     <message>
         <source>Elevation of obstacle cells :</source>
-        <translation type="unfinished"></translation>
+        <translation>Höjning av hinderceller:</translation>
     </message>
 </context>
 </TS>

@@ -1,241 +1,239 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ca_ES">
 <context>
     <name>Graph2dVerificationSettingDialog</name>
     <message>
         <source>Verification Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuració de verificació</translation>
     </message>
     <message>
         <source>Timestep</source>
-        <translation type="unfinished"></translation>
+        <translation>Pas de temps</translation>
     </message>
     <message>
         <source>Select the timestep of calculation result</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccioneu el resultat temporal del càlcul</translation>
     </message>
     <message>
         <source>Calculation Result</source>
-        <translation type="unfinished"></translation>
+        <translation>Resultat del càlcul</translation>
     </message>
     <message>
         <source>Select which physical value to use for comparison.</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccioneu el valor físic que voleu utilitzar per a la comparació.</translation>
     </message>
     <message>
         <source>Grid:</source>
-        <translation type="unfinished"></translation>
+        <translation>Graella:</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Valor físic:</translation>
     </message>
     <message>
         <source>Measured Values</source>
-        <translation type="unfinished"></translation>
+        <translation>Valors mesurats</translation>
     </message>
     <message>
         <source>Select which measured value to use for comparison.</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccioneu el valor mesurat que voleu utilitzar per a la comparació.</translation>
     </message>
     <message>
         <source>File:</source>
-        <translation type="unfinished"></translation>
+        <translation>Dossier:</translation>
     </message>
     <message>
         <source>Value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Valor:</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Advertiment</translation>
     </message>
     <message>
         <source>No Physical Value is selected.</source>
-        <translation type="unfinished"></translation>
+        <translation>No s'ha seleccionat cap valor físic.</translation>
     </message>
     <message>
         <source>No Value is selected.</source>
-        <translation type="unfinished"></translation>
+        <translation>No s'ha seleccionat cap valor.</translation>
     </message>
 </context>
 <context>
     <name>Graph2dVerificationWindow</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formulari</translation>
     </message>
     <message>
         <source>I:</source>
-        <translation type="unfinished"></translation>
+        <translation>Jo:</translation>
     </message>
     <message>
         <source>J:</source>
-        <translation type="unfinished"></translation>
+        <translation>J:</translation>
     </message>
     <message>
         <source>K:</source>
-        <translation type="unfinished"></translation>
+        <translation>K:</translation>
     </message>
     <message>
         <source>Select &amp;Data Source</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccioneu Font de dades (&amp;D)</translation>
     </message>
     <message>
         <source>&amp;Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuració (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;Close</source>
-        <translation type="unfinished"></translation>
+        <translation>Tanca (&amp;C)</translation>
     </message>
     <message>
         <source>Verification Window: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Finestra de verificació: %1</translation>
     </message>
     <message>
         <source>Top</source>
-        <translation type="unfinished"></translation>
+        <translation>Superior</translation>
     </message>
     <message>
         <source>Controller</source>
-        <translation type="unfinished"></translation>
+        <translation>Controlador</translation>
     </message>
 </context>
 <context>
     <name>Graph2dVerificationWindowActionManager</name>
     <message>
         <source>&amp;Draw</source>
-        <translation type="unfinished"></translation>
+        <translation>Dibuixar (&amp;D)</translation>
     </message>
     <message>
         <source>&amp;Data Source Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuració de la font de dades (&amp;D)...</translation>
     </message>
     <message>
         <source>&amp;Legend</source>
-        <translation type="unfinished"></translation>
+        <translation>Llegenda (&amp;L)</translation>
     </message>
 </context>
 <context>
     <name>Graph2dVerificationWindowControlWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formulari</translation>
     </message>
     <message>
         <source>TextLabel</source>
-        <translation type="unfinished"></translation>
+        <translation>Etiqueta de text</translation>
     </message>
     <message>
         <source>Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>S'està configurant...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation type="unfinished"></translation>
+        <translation>Exporta (&amp;E)...</translation>
     </message>
 </context>
 <context>
     <name>Graph2dVerificationWindowDataModel</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Advertiment</translation>
     </message>
     <message>
         <source>No calculation result exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>No existeix cap resultat de càlcul.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>Graph window setup fail. Calculation result is not loaded properly.</source>
-        <translation type="unfinished"></translation>
+        <translation>La configuració de la finestra del gràfic ha fallat. El resultat del càlcul no es carrega correctament.</translation>
     </message>
     <message>
         <source>Export CSV file</source>
-        <translation type="unfinished"></translation>
+        <translation>Exporta el fitxer CSV</translation>
     </message>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>Fitxer CSV (*.csv)</translation>
     </message>
     <message>
         <source>%1 cound not be opened.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 no s’obri.</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informació</translation>
     </message>
     <message>
         <source>Data successfully exported to %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Les dades s’han exportat correctament a %1.</translation>
     </message>
     <message>
         <source>Root Mean Squared Error: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Error quadrat de la mitjana de l'arrel: %1</translation>
     </message>
     <message>
         <source>Measured Values (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Valors mesurats (%1)</translation>
     </message>
     <message>
         <source>Calculation Result (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Resultat del càlcul (%1)</translation>
     </message>
     <message>
         <source>Stream-wise Distance</source>
-        <translation type="unfinished"></translation>
+        <translation>Distància corrent</translation>
     </message>
     <message>
         <source>Values</source>
-        <translation type="unfinished"></translation>
+        <translation>Valors</translation>
     </message>
     <message>
         <source>Residual Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error residual</translation>
     </message>
     <message>
         <source>Measured Value (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Valor mesurat (%1)</translation>
     </message>
 </context>
 <context>
     <name>Graph2dVerificationWindowObjectBrowser</name>
     <message>
         <source>Object Browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Navegador d'objectes</translation>
     </message>
 </context>
 <context>
     <name>Graph2dVerificationWindowTopWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formulari</translation>
     </message>
     <message>
         <source>Chart Type:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tipus de gràfic:</translation>
     </message>
     <message>
         <source>Stream-wise Distance vs. Measured Values and Calculation Result</source>
-        <translation type="unfinished"></translation>
+        <translation>Distància en funció del flux vs. valors mesurats i resultat del càlcul</translation>
     </message>
     <message>
         <source>Stream-wise Distance vs. Residual Errors</source>
-        <translation type="unfinished"></translation>
+        <translation>Distància en funció del flux i errors residuals</translation>
     </message>
     <message>
         <source>Measured Values vs. Calculation Result</source>
-        <translation type="unfinished"></translation>
+        <translation>Valors mesurats vs. Resultat del càlcul</translation>
     </message>
     <message>
         <source>Measured Values vs. Residual Errors</source>
-        <translation type="unfinished"></translation>
+        <translation>Valors mesurats vs. Errors residuals</translation>
     </message>
 </context>
 </TS>

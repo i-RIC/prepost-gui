@@ -1,194 +1,192 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="da_DK">
 <context>
     <name>GridCreatingConditionCreatorPoisson</name>
     <message>
         <source>Create grid shape solving Poisson equation</source>
-        <translation type="unfinished"></translation>
+        <translation>Opret gitterform, der løser Poisson -ligning</translation>
     </message>
     <message>
         <source>You can create smooth grid shape solving poisson equation.</source>
-        <translation type="unfinished"></translation>
+        <translation>Du kan oprette en glat gitterform, der løser poisson -ligning.</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionPoisson</name>
     <message>
         <source>Build Left bank and Right bank lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Byg venstre bredde og højre banklinje</translation>
     </message>
     <message>
         <source>&amp;Add Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Tilføj Vertex (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Fjern Vertex (&amp;R)</translation>
     </message>
     <message>
         <source>Import C&amp;enter Line...</source>
-        <translation type="unfinished"></translation>
+        <translation>Importer midterlinje (&amp;E)...</translation>
     </message>
     <message>
         <source>Export Ce&amp;nter Line...</source>
-        <translation type="unfinished"></translation>
+        <translation>Eksporter midterlinje (&amp;N)...</translation>
     </message>
     <message>
         <source>Edit Cen&amp;ter Line Coordinates...</source>
-        <translation type="unfinished"></translation>
+        <translation>Rediger midterlinjekoordinater (&amp;T)...</translation>
     </message>
     <message>
         <source>Import &amp;Left Bank Line...</source>
-        <translation type="unfinished"></translation>
+        <translation>Importer venstre banklinje (&amp;L)...</translation>
     </message>
     <message>
         <source>Export Le&amp;ft Bank Line...</source>
-        <translation type="unfinished"></translation>
+        <translation>Eksporter venstre bred (&amp;F)...</translation>
     </message>
     <message>
         <source>Edit Left Bank Line &amp;Coordinates...</source>
-        <translation type="unfinished"></translation>
+        <translation>Rediger linjekoordinater på venstre bank (&amp;C)...</translation>
     </message>
     <message>
         <source>&amp;Import Right Bank Line...</source>
-        <translation type="unfinished"></translation>
+        <translation>Importer højre banklinje (&amp;I)...</translation>
     </message>
     <message>
         <source>Export Ri&amp;ght Bank Line...</source>
-        <translation type="unfinished"></translation>
+        <translation>Eksporter højre banklinje (&amp;G)...</translation>
     </message>
     <message>
         <source>Edit Rig&amp;ht Bank Line Coordinates...</source>
-        <translation type="unfinished"></translation>
+        <translation>Rediger højre banklinjekoordinater (&amp;H)...</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Advarsel</translation>
     </message>
     <message>
         <source>%1 not defined yet</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 ikke defineret endnu</translation>
     </message>
     <message>
         <source>Grid region not defined yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Gitterområde er ikke defineret endnu.</translation>
     </message>
     <message>
         <source>Center Line is not defined yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Midterlinje er ikke defineret endnu.</translation>
     </message>
     <message>
         <source>Center line</source>
-        <translation type="unfinished"></translation>
+        <translation>Midterlinje</translation>
     </message>
     <message>
         <source>Left bank line</source>
-        <translation type="unfinished"></translation>
+        <translation>Venstre bredde</translation>
     </message>
     <message>
         <source>Right bank line</source>
-        <translation type="unfinished"></translation>
+        <translation>Højre banklinje</translation>
     </message>
     <message>
         <source>Insert Line Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Indsæt Line Vertex</translation>
     </message>
     <message>
         <source>%1 Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 Koordinater</translation>
     </message>
     <message>
         <source>Add New Line Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Tilføj nyt linjepunkt</translation>
     </message>
     <message>
         <source>Edit %1 Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Redigere %1 Koordinater</translation>
     </message>
     <message>
         <source>Finish Defining Polyline</source>
-        <translation type="unfinished"></translation>
+        <translation>Afslut Definere Polyline</translation>
     </message>
     <message>
         <source>Move Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Flyt linje</translation>
     </message>
     <message>
         <source>Move Line Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Move Line Vertex</translation>
     </message>
     <message>
         <source>Remove Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Fjern Vertex</translation>
     </message>
     <message>
         <source>Cross-section data not found. Please define Center Line by yourself.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tværsnitsdata blev ikke fundet. Definer venligst centerlinjen selv.</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionPoisson::Impl</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Advarsel</translation>
     </message>
     <message>
         <source>The maximum number of grid nodes is %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Det maksimale antal gitternoder er %1.</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionPoissonBuildBankLinesDialog</name>
     <message>
         <source>Build Bank Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Byg banklinjer</translation>
     </message>
     <message>
         <source>Input the distance from center line</source>
-        <translation type="unfinished"></translation>
+        <translation>Indtast afstanden fra midterlinjen</translation>
     </message>
     <message>
         <source>Left bank:</source>
-        <translation type="unfinished"></translation>
+        <translation>Venstre bred:</translation>
     </message>
     <message>
         <source>Right bank:</source>
-        <translation type="unfinished"></translation>
+        <translation>Højre bred:</translation>
     </message>
     <message>
         <source>Hint: Left bank and Right bank lines are created as line that consists of points that are away from center line to direction perpendicular to the center line.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tip: Venstre bredde og højre banklinje oprettes som en linje, der består af punkter, der er væk fra midterlinjen til retning vinkelret på midterlinjen.</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionPoissonCtrlPointsDialog</name>
     <message>
         <source>Specity the Number Of Control Cross Sections</source>
-        <translation type="unfinished"></translation>
+        <translation>Angiv antallet af kontroltværsnit</translation>
     </message>
     <message>
         <source>Number of Control Cross Sections:</source>
-        <translation type="unfinished"></translation>
+        <translation>Antal kontroltværsnit:</translation>
     </message>
     <message>
         <source>Hints: Control Cross Sections are the cross sections whose center points are used as the center line of the grid.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tip: Kontroltværsnit er de tværsnit, hvis midterpunkter bruges som gitterets midterlinje.</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionPoissonGridGenerateDialog</name>
     <message>
         <source>Grid Creation</source>
-        <translation type="unfinished"></translation>
+        <translation>Oprettelse af gitter</translation>
     </message>
     <message>
         <source>m</source>
-        <translation type="unfinished"></translation>
+        <translation>m</translation>
     </message>
     <message>
         <source>Max number of iteration:</source>
-        <translation type="unfinished"></translation>
+        <translation>Maks. Antal iterationer:</translation>
     </message>
 </context>
 </TS>

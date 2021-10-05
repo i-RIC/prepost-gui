@@ -1,2073 +1,2071 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="nb_NO">
 <context>
     <name>AnimationController</name>
     <message>
         <source>Animation ToolBar</source>
-        <translation type="unfinished"></translation>
+        <translation>Animasjonsverktøylinje</translation>
     </message>
     <message>
         <source>&amp;Animation</source>
-        <translation type="unfinished"></translation>
+        <translation>Animasjon (&amp;A)</translation>
     </message>
     <message>
         <source>Step &amp;Backward</source>
-        <translation type="unfinished"></translation>
+        <translation>Gå tilbake (&amp;B)</translation>
     </message>
     <message>
         <source>Step &amp;Forward</source>
-        <translation type="unfinished"></translation>
+        <translation>Skritt fremover (&amp;F)</translation>
     </message>
     <message>
         <source>&amp;Reset</source>
-        <translation type="unfinished"></translation>
+        <translation>Nullstille (&amp;R)</translation>
     </message>
     <message>
         <source>Go to &amp;Last Step</source>
-        <translation type="unfinished"></translation>
+        <translation>Gå til Siste trinn (&amp;L)</translation>
     </message>
     <message>
         <source>&amp;Start/Stop Animation</source>
-        <translation type="unfinished"></translation>
+        <translation>Start/stopp animasjon (&amp;S)</translation>
     </message>
     <message>
         <source>S&amp;top Animation</source>
-        <translation type="unfinished"></translation>
+        <translation>Stopp animasjonen (&amp;T)</translation>
     </message>
     <message>
         <source>Toggle &amp;following last step</source>
-        <translation type="unfinished"></translation>
+        <translation>Veksle etter siste trinn (&amp;F)</translation>
     </message>
     <message>
         <source>&amp;Animation Speed Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Innstilling av animasjonshastighet (&amp;A)...</translation>
     </message>
     <message>
         <source>L&amp;oop Animation</source>
-        <translation type="unfinished"></translation>
+        <translation>Loop Animasjon (&amp;O)</translation>
     </message>
 </context>
 <context>
     <name>ConfirmPage</name>
     <message>
         <source>Confirm the result</source>
-        <translation type="unfinished"></translation>
+        <translation>Bekreft resultatet</translation>
     </message>
     <message>
         <source>The files in the list below will be created or updated. Please open these files with Qt Linguist, and complete the translation dictionary.</source>
-        <translation type="unfinished"></translation>
+        <translation>Filene i listen nedenfor vil bli opprettet eller oppdatert. Vennligst åpne disse filene med Qt Linguist, og fullfør oversettelsesordlisten.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotConfirmPage</name>
     <message>
         <source>Confirm the result</source>
-        <translation type="unfinished"></translation>
+        <translation>Bekreft resultatet</translation>
     </message>
     <message>
         <source>The files in the list below will be created or updated. </source>
-        <translation type="unfinished"></translation>
+        <translation>Filene i listen nedenfor vil bli opprettet eller oppdatert.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotFilePropertyPage</name>
     <message>
         <source>WizardPage</source>
-        <translation type="unfinished"></translation>
+        <translation>WizardPage</translation>
     </message>
     <message>
         <source>File Properties</source>
-        <translation type="unfinished"></translation>
+        <translation>Filegenskaper</translation>
     </message>
     <message>
         <source>Please specify the properties of output files.</source>
-        <translation type="unfinished"></translation>
+        <translation>Angi egenskapene til utdatafiler.</translation>
     </message>
     <message>
         <source>Directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Katalog</translation>
     </message>
     <message>
         <source>File name</source>
-        <translation type="unfinished"></translation>
+        <translation>Filnavn</translation>
     </message>
     <message>
         <source>Prefix :</source>
-        <translation type="unfinished"></translation>
+        <translation>Prefiks:</translation>
     </message>
     <message>
         <source>Suffix length :</source>
-        <translation type="unfinished"></translation>
+        <translation>Suffikslengde:</translation>
     </message>
     <message>
         <source>Format :</source>
-        <translation type="unfinished"></translation>
+        <translation>Format:</translation>
     </message>
     <message>
         <source>PNG (*.png)</source>
-        <translation type="unfinished"></translation>
+        <translation>PNG (*.png)</translation>
     </message>
     <message>
         <source>.png</source>
-        <translation type="unfinished"></translation>
+        <translation>.png</translation>
     </message>
     <message>
         <source>JPEG (*.jpg)</source>
-        <translation type="unfinished"></translation>
+        <translation>JPEG (*.jpg)</translation>
     </message>
     <message>
         <source>.jpg</source>
-        <translation type="unfinished"></translation>
+        <translation>.jpg</translation>
     </message>
     <message>
         <source>Windows Bitmap (*.bmp)</source>
-        <translation type="unfinished"></translation>
+        <translation>Windows Bitmap (*.bmp)</translation>
     </message>
     <message>
         <source>.bmp</source>
-        <translation type="unfinished"></translation>
+        <translation>.bmp</translation>
     </message>
     <message>
         <source>Portable Bitmap (*.ppm)</source>
-        <translation type="unfinished"></translation>
+        <translation>Bærbart bitmap (*.ppm)</translation>
     </message>
     <message>
         <source>.ppm</source>
-        <translation type="unfinished"></translation>
+        <translation>.ppm</translation>
     </message>
     <message>
         <source>X11 Bitmap (*.xbm)</source>
-        <translation type="unfinished"></translation>
+        <translation>X11 Bitmap (*.xbm)</translation>
     </message>
     <message>
         <source>.xbm</source>
-        <translation type="unfinished"></translation>
+        <translation>.xbm</translation>
     </message>
     <message>
         <source>Prefix</source>
-        <translation type="unfinished"></translation>
+        <translation>Prefiks</translation>
     </message>
     <message>
         <source>Output file</source>
-        <translation type="unfinished"></translation>
+        <translation>Output-fil</translation>
     </message>
     <message>
         <source>img_</source>
-        <translation type="unfinished"></translation>
+        <translation>img_</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Advarsel</translation>
     </message>
     <message>
         <source>Folder %1 does not exists. Do you want to it now?</source>
-        <translation type="unfinished"></translation>
+        <translation>Mappe %1 eksisterer ikke. Vil du det nå?</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Feil</translation>
     </message>
     <message>
         <source>Creating folder %1 failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Oppretter mappe %1 mislyktes.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotGoogleEarthSettingPage</name>
     <message>
         <source>WizardPage</source>
-        <translation type="unfinished"></translation>
+        <translation>WizardPage</translation>
     </message>
     <message>
         <source>Output to the Google Earth</source>
-        <translation type="unfinished"></translation>
+        <translation>Utdata til Google Earth</translation>
     </message>
     <message>
         <source>Please specify the properties of output files.</source>
-        <translation type="unfinished"></translation>
+        <translation>Angi egenskapene til utdatafiler.</translation>
     </message>
     <message>
         <source>Note: This feature is available only when a coordinate system has been specified.</source>
-        <translation type="unfinished"></translation>
+        <translation>Merk: Denne funksjonen er bare tilgjengelig når et koordinatsystem er spesifisert.</translation>
     </message>
     <message>
         <source>KML file name</source>
-        <translation type="unfinished"></translation>
+        <translation>KML -filnavn</translation>
     </message>
     <message>
         <source>Name :</source>
-        <translation type="unfinished"></translation>
+        <translation>Navn :</translation>
     </message>
     <message>
         <source>output.kml</source>
-        <translation type="unfinished"></translation>
+        <translation>output.kml</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotIntroductionPage</name>
     <message>
         <source>Introduction</source>
-        <translation type="unfinished"></translation>
+        <translation>Introduksjon</translation>
     </message>
     <message>
         <source>Use this wizard to specify the requirements to generate continuous snapshot output.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bruk denne veiviseren til å angi kravene for å generere kontinuerlig øyeblikksbildeutdata.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotMoviePropertyPage</name>
     <message>
         <source>WizardPage</source>
-        <translation type="unfinished"></translation>
+        <translation>WizardPage</translation>
     </message>
     <message>
         <source>Movie Properties</source>
-        <translation type="unfinished"></translation>
+        <translation>Filmegenskaper</translation>
     </message>
     <message>
         <source>Please specify the properties of output files.</source>
-        <translation type="unfinished"></translation>
+        <translation>Angi egenskapene til utdatafiler.</translation>
     </message>
     <message>
         <source>Output movie files</source>
-        <translation type="unfinished"></translation>
+        <translation>Send ut filmfiler</translation>
     </message>
     <message>
         <source>File name</source>
-        <translation type="unfinished"></translation>
+        <translation>Filnavn</translation>
     </message>
     <message>
         <source>Play speed</source>
-        <translation type="unfinished"></translation>
+        <translation>Spillhastighet</translation>
     </message>
     <message>
         <source>Specify movie length[sec]</source>
-        <translation type="unfinished"></translation>
+        <translation>Angi filmlengde [sek]</translation>
     </message>
     <message>
         <source>Specify frames per second</source>
-        <translation type="unfinished"></translation>
+        <translation>Angi rammer per sekund</translation>
     </message>
     <message>
         <source>Profile:</source>
-        <translation type="unfinished"></translation>
+        <translation>Profil:</translation>
     </message>
     <message>
         <source>Output file</source>
-        <translation type="unfinished"></translation>
+        <translation>Output-fil</translation>
     </message>
     <message>
         <source>Default</source>
-        <translation type="unfinished"></translation>
+        <translation>Misligholde</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotTimestepSettingPage</name>
     <message>
         <source>WizardPage</source>
-        <translation type="unfinished"></translation>
+        <translation>WizardPage</translation>
     </message>
     <message>
         <source>Timestep Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Tidsinnstilling</translation>
     </message>
     <message>
         <source>Please specify the start time step, stop time step, and the skip rate.</source>
-        <translation type="unfinished"></translation>
+        <translation>Angi trinnet for starttid, stopptid og hoppefrekvens.</translation>
     </message>
     <message>
         <source>start :</source>
-        <translation type="unfinished"></translation>
+        <translation>start :</translation>
     </message>
     <message>
         <source>stop :</source>
-        <translation type="unfinished"></translation>
+        <translation>Stoppe :</translation>
     </message>
     <message>
         <source>Skip rate :</source>
-        <translation type="unfinished"></translation>
+        <translation>Hopp over rate:</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWindowSelectionPage</name>
     <message>
         <source>WizardPage</source>
-        <translation type="unfinished"></translation>
+        <translation>WizardPage</translation>
     </message>
     <message>
         <source>Window Selection</source>
-        <translation type="unfinished"></translation>
+        <translation>Valg av vindu</translation>
     </message>
     <message>
         <source>Please select target windows and specify how you want to output files.</source>
-        <translation type="unfinished"></translation>
+        <translation>Velg målvinduer og angi hvordan du vil sende filer.</translation>
     </message>
     <message>
         <source>Target windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Målvinduer</translation>
     </message>
     <message>
         <source>Output file</source>
-        <translation type="unfinished"></translation>
+        <translation>Output-fil</translation>
     </message>
     <message>
         <source>In one file</source>
-        <translation type="unfinished"></translation>
+        <translation>I en fil</translation>
     </message>
     <message>
         <source>Respectively</source>
-        <translation type="unfinished"></translation>
+        <translation>Henholdsvis</translation>
     </message>
     <message>
         <source>Layout</source>
-        <translation type="unfinished"></translation>
+        <translation>Oppsett</translation>
     </message>
     <message>
         <source>As is</source>
-        <translation type="unfinished"></translation>
+        <translation>Som det er</translation>
     </message>
     <message>
         <source>Horizontally</source>
-        <translation type="unfinished"></translation>
+        <translation>Horisontalt</translation>
     </message>
     <message>
         <source>Vertically</source>
-        <translation type="unfinished"></translation>
+        <translation>Vertikalt</translation>
     </message>
     <message>
         <source>Background</source>
-        <translation type="unfinished"></translation>
+        <translation>Bakgrunn</translation>
     </message>
     <message>
         <source>white</source>
-        <translation type="unfinished"></translation>
+        <translation>hvit</translation>
     </message>
     <message>
         <source>transparent</source>
-        <translation type="unfinished"></translation>
+        <translation>gjennomsiktig</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Advarsel</translation>
     </message>
     <message>
         <source>More than one visualization window has transparent region. They can not saved into transparent background images. Please select white background, or cancel and disable transparency for contours etc.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mer enn ett visualiseringsvindu har gjennomsiktig region. De kan ikke lagres i gjennomsiktige bakgrunnsbilder. Velg hvit bakgrunn, eller avbryt og deaktiver gjennomsiktighet for konturer etc.</translation>
     </message>
     <message>
         <source>No window is currently selected.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ingen vinduer er valgt for øyeblikket.</translation>
     </message>
 </context>
 <context>
     <name>FlushRequester</name>
     <message>
         <source>Waiting for solver to copy CGNS file...</source>
-        <translation type="unfinished"></translation>
+        <translation>Venter på at løseren skal kopiere CGNS -filen...</translation>
     </message>
 </context>
 <context>
     <name>GoogleMapImageImportSettingDialog</name>
     <message>
         <source>Google Map Image Import Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Innstilling for bildeimport for Google Map</translation>
     </message>
     <message>
         <source>Zoom:</source>
-        <translation type="unfinished"></translation>
+        <translation>Zoom:</translation>
     </message>
     <message>
         <source>Map Type:</source>
-        <translation type="unfinished"></translation>
+        <translation>Karttype:</translation>
     </message>
     <message>
         <source>Satellite Photo</source>
-        <translation type="unfinished"></translation>
+        <translation>Satellittfoto</translation>
     </message>
     <message>
         <source>Roadmap</source>
-        <translation type="unfinished"></translation>
+        <translation>Veikart</translation>
     </message>
     <message>
         <source>Terrain</source>
-        <translation type="unfinished"></translation>
+        <translation>Terreng</translation>
     </message>
     <message>
         <source>Hybrid</source>
-        <translation type="unfinished"></translation>
+        <translation>Hybrid</translation>
     </message>
 </context>
 <context>
     <name>InstallerTool</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Advarsel</translation>
     </message>
     <message>
         <source>When you update iRIC, you need to close iRIC before launching iRIC Maintainance.
 When you have iRIC windows other than this, close them manually.</source>
-        <translation type="unfinished"></translation>
+        <translation>Når du oppdaterer iRIC, må du lukke iRIC før du starter iRIC Maintainance. Når du har andre iRIC -vinduer enn dette, lukker du dem manuelt.</translation>
     </message>
     <message>
         <source>Close iRIC and launch iRIC Maintainance</source>
-        <translation type="unfinished"></translation>
+        <translation>Lukk iRIC og start iRIC Maintainance</translation>
     </message>
 </context>
 <context>
     <name>IntroductionPage</name>
     <message>
         <source>Introduction</source>
-        <translation type="unfinished"></translation>
+        <translation>Introduksjon</translation>
     </message>
     <message>
         <source>This function is intended to be used by solver developers or grid creating program developers, not users.
 This wizard will generate or update translation files for solver definition files and grid creating program definition files those are registered to iRIC system. You need to specify the solver (or grid creating program) name, and the list of languages for those you want to create or update translation files.</source>
-        <translation type="unfinished"></translation>
+        <translation>Denne funksjonen er beregnet på å bli brukt av løsningsutviklere eller programutviklere som utvikler rutenett, ikke brukere. Denne veiviseren vil generere eller oppdatere oversettelsesfiler for løsningsdefinisjonsfiler og rutenettopprettende programdefinisjonsfiler som er registrert i iRIC -systemet. Du må spesifisere navnet på løseren (eller rutenettopprettingsprogrammet) og listen over språk for de du vil opprette eller oppdatere oversettelsesfiler.</translation>
     </message>
 </context>
 <context>
     <name>MouseHelpDialog</name>
     <message>
         <source>Mouse Hint</source>
-        <translation type="unfinished"></translation>
+        <translation>Musetips</translation>
     </message>
 </context>
 <context>
     <name>NewProjectSolverSelectingDialog</name>
     <message>
         <source>Select Solver</source>
-        <translation type="unfinished"></translation>
+        <translation>Velg Solver</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
-        <translation type="unfinished"></translation>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
+        <translation>Når du oppretter et nytt prosjekt, må du velge løsningen som skal brukes til beregning. Velg en løsning, og trykk "OK" -knappen.</translation>
     </message>
 </context>
 <context>
     <name>PeriodicalUpdateChecker</name>
     <message>
         <source>Check for Update</source>
-        <translation type="unfinished"></translation>
+        <translation>Se etter oppdatering</translation>
     </message>
     <message>
         <source>%1 days have passed after launching iRIC Maintainance for the last time.
 Do you want to launch iRIC Maintainance?</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 dager har gått etter at iRIC Maintainance ble lansert for siste gang. Vil du lansere iRIC Maintainance?</translation>
     </message>
     <message>
         <source>Launch iRIC Maintainance</source>
-        <translation type="unfinished"></translation>
+        <translation>Start iRIC -vedlikehold</translation>
     </message>
 </context>
 <context>
     <name>PreferenceDialog</name>
     <message>
         <source>Preferences</source>
-        <translation type="unfinished"></translation>
+        <translation>Preferanser</translation>
     </message>
     <message>
         <source>General</source>
-        <translation type="unfinished"></translation>
+        <translation>Generell</translation>
     </message>
     <message>
         <source>Graphics Default</source>
-        <translation type="unfinished"></translation>
+        <translation>Grafikk Standard</translation>
     </message>
     <message>
         <source>Grid Checking</source>
-        <translation type="unfinished"></translation>
+        <translation>Nettkontroll</translation>
     </message>
     <message>
         <source>River Survey Data</source>
-        <translation type="unfinished"></translation>
+        <translation>River Survey Data</translation>
     </message>
     <message>
         <source>Network Proxy</source>
-        <translation type="unfinished"></translation>
+        <translation>Nettverksproxy</translation>
     </message>
     <message>
         <source>Background Images (Internet)</source>
-        <translation type="unfinished"></translation>
+        <translation>Bakgrunnsbilder (Internett)</translation>
     </message>
     <message>
         <source>Web Elevation Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Webhøyde data</translation>
     </message>
     <message>
         <source>Background Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Bakgrunnsnett</translation>
     </message>
 </context>
 <context>
     <name>PreferencePageBackgroundGrid</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Skjema</translation>
     </message>
     <message>
         <source>River Survey Data</source>
-        <translation type="unfinished"></translation>
+        <translation>River Survey Data</translation>
     </message>
     <message>
         <source>Cross Section Direction:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tverrsnittsretning:</translation>
     </message>
     <message>
         <source>Between Cross Sections:</source>
-        <translation type="unfinished"></translation>
+        <translation>Mellom tverrsnitt:</translation>
     </message>
 </context>
 <context>
     <name>PreferencePageGeneral</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Skjema</translation>
     </message>
     <message>
         <source>Language</source>
-        <translation type="unfinished"></translation>
+        <translation>Språk</translation>
     </message>
     <message>
         <source>Note: Language setting is applied when iRIC is launched next time.</source>
-        <translation type="unfinished"></translation>
+        <translation>Merk: Språkinnstillingen brukes når iRIC lanseres neste gang.</translation>
     </message>
     <message>
         <source>Working Directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Arbeidsregister</translation>
     </message>
     <message>
         <source>Note: Working Directory is used to store files used by iRIC.</source>
-        <translation type="unfinished"></translation>
+        <translation>Merk: Working Directory brukes til å lagre filer som brukes av iRIC.</translation>
     </message>
     <message>
         <source>Copy folder project to Working Directory when opened</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopier mapprosjektet til Working Directory når det åpnes</translation>
     </message>
     <message>
         <source>Checking for Update</source>
-        <translation type="unfinished"></translation>
+        <translation>Søker etter oppdatering</translation>
     </message>
     <message>
         <source>Check for update periodically</source>
-        <translation type="unfinished"></translation>
+        <translation>Se etter oppdatering med jevne mellomrom</translation>
     </message>
     <message>
         <source>Interval between checking (days):</source>
-        <translation type="unfinished"></translation>
+        <translation>Intervall mellom kontroll (dager):</translation>
     </message>
     <message>
         <source>Cell Culling on Drawing Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Cell Culling på Drawing Grid</translation>
     </message>
     <message>
         <source>Enable</source>
-        <translation type="unfinished"></translation>
+        <translation>Muliggjøre</translation>
     </message>
     <message>
         <source>Maximum numbers of cells drawn:</source>
-        <translation type="unfinished"></translation>
+        <translation>Maksimalt antall celler trukket:</translation>
     </message>
     <message>
         <source>Maximum numbers of indices drawn:</source>
-        <translation type="unfinished"></translation>
+        <translation>Maksimalt antall indekser trukket:</translation>
     </message>
     <message>
         <source>Warning: If you disable culling and create a very big grid, maybe iRIC GUI will crash because of lack of memory.</source>
-        <translation type="unfinished"></translation>
+        <translation>Advarsel: Hvis du deaktiverer culling og oppretter et veldig stort rutenett, kan det hende at iRIC GUI krasjer på grunn av mangel på minne.</translation>
     </message>
     <message>
         <source>Undo</source>
-        <translation type="unfinished"></translation>
+        <translation>Angre</translation>
     </message>
     <message>
         <source>Undo Limit:</source>
-        <translation type="unfinished"></translation>
+        <translation>Angre grense:</translation>
     </message>
     <message>
         <source>Solver console</source>
-        <translation type="unfinished"></translation>
+        <translation>Løsningskonsoll</translation>
     </message>
     <message>
         <source>Maximum lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Maksimale linjer</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Feil</translation>
     </message>
     <message>
         <source>Working directory contains non-ASCII characters.</source>
-        <translation type="unfinished"></translation>
+        <translation>Arbeidskatalogen inneholder ikke-ASCII-tegn.</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Advarsel</translation>
     </message>
     <message>
         <source>Working directory is changed, but the new working directory is used AFTER exiting iRIC GUI!</source>
-        <translation type="unfinished"></translation>
+        <translation>Arbeidskatalogen er endret, men den nye arbeidskatalogen brukes etter at du har avsluttet iRIC GUI!</translation>
     </message>
     <message>
         <source>Python path</source>
-        <translation type="unfinished"></translation>
+        <translation>Python -bane</translation>
     </message>
     <message>
         <source>Note: Used to run solvers written in Python.</source>
-        <translation type="unfinished"></translation>
+        <translation>Merk: Brukes til å kjøre løsere skrevet i Python.</translation>
     </message>
 </context>
 <context>
     <name>PreferencePageGraphicsDefault</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Skjema</translation>
     </message>
     <message>
         <source>Grid Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Rutenettfarge</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Farge:</translation>
     </message>
     <message>
         <source>Color Map</source>
-        <translation type="unfinished"></translation>
+        <translation>Fargekart</translation>
     </message>
     <message>
         <source>Background Image</source>
-        <translation type="unfinished"></translation>
+        <translation>Bakgrunnsbilde</translation>
     </message>
     <message>
         <source>Max Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Maks størrelse:</translation>
     </message>
     <message>
         <source>Note: Loading an image whose width (or height) is larger than the maximum, will be automatically resized.</source>
-        <translation type="unfinished"></translation>
+        <translation>Merk: Hvis du laster inn et bilde hvis bredde (eller høyde) er større enn maksimum, blir størrelsen automatisk endret.</translation>
     </message>
     <message>
         <source>Vector</source>
-        <translation type="unfinished"></translation>
+        <translation>Vector</translation>
     </message>
     <message>
         <source>Factor:</source>
-        <translation type="unfinished"></translation>
+        <translation>Faktor:</translation>
     </message>
     <message>
         <source>Arrow Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Pilstørrelse:</translation>
     </message>
     <message>
         <source>Stream Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Strømlinjer</translation>
     </message>
     <message>
         <source>Particles</source>
-        <translation type="unfinished"></translation>
+        <translation>Partikler</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Størrelse:</translation>
     </message>
     <message>
         <source>pixels</source>
-        <translation type="unfinished"></translation>
+        <translation>piksler</translation>
     </message>
 </context>
 <context>
     <name>PreferencePageGridCheck</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Skjema</translation>
     </message>
     <message>
         <source>Checking Timing</source>
-        <translation type="unfinished"></translation>
+        <translation>Kontrollerer timingen</translation>
     </message>
     <message>
         <source>Before Running Solver</source>
-        <translation type="unfinished"></translation>
+        <translation>Før du kjører Solver</translation>
     </message>
     <message>
         <source>Before Exporting Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Før du eksporterer rutenett</translation>
     </message>
     <message>
         <source>Attributes to Check</source>
-        <translation type="unfinished"></translation>
+        <translation>Attributter for å sjekke</translation>
     </message>
     <message>
         <source>Whether cell edges intersect</source>
-        <translation type="unfinished"></translation>
+        <translation>Om cellekanter krysser hverandre</translation>
     </message>
     <message>
         <source>Check aspect ratio of cell edges is less than</source>
-        <translation type="unfinished"></translation>
+        <translation>Sjekk størrelsesforholdet mellom cellekanter er mindre enn</translation>
     </message>
     <message>
         <source>Check variation of cell edge length is less than</source>
-        <translation type="unfinished"></translation>
+        <translation>Sjekk variasjonen av cellens kantlengde er mindre enn</translation>
     </message>
     <message>
         <source>I-direction: </source>
-        <translation type="unfinished"></translation>
+        <translation>I-retning:</translation>
     </message>
     <message>
         <source>J-direction: </source>
-        <translation type="unfinished"></translation>
+        <translation>J-retning:</translation>
     </message>
     <message>
         <source>Check angle of cell is more than</source>
-        <translation type="unfinished"></translation>
+        <translation>Sjekk cellevinkelen er mer enn</translation>
     </message>
     <message>
         <source>Note: Settings on this page are applied only to structured grids.</source>
-        <translation type="unfinished"></translation>
+        <translation>Merk: Innstillingene på denne siden gjelder bare for strukturerte rutenett.</translation>
     </message>
 </context>
 <context>
     <name>PreferencePageProxy</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Skjema</translation>
     </message>
     <message>
         <source>Do not use proxy</source>
-        <translation type="unfinished"></translation>
+        <translation>Ikke bruk proxy</translation>
     </message>
     <message>
         <source>Use system proxy setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Bruk system proxy -innstilling</translation>
     </message>
     <message>
         <source>Use custom proxy setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Bruk tilpasset proxy -innstilling</translation>
     </message>
     <message>
         <source>HTTP Proxy: </source>
-        <translation type="unfinished"></translation>
+        <translation>HTTP -proxy:</translation>
     </message>
     <message>
         <source>Port:</source>
-        <translation type="unfinished"></translation>
+        <translation>Havn:</translation>
     </message>
     <message>
         <source>Need authentication for HTTP proxy</source>
-        <translation type="unfinished"></translation>
+        <translation>Trenger autentisering for HTTP -proxy</translation>
     </message>
     <message>
         <source>User name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Brukernavn:</translation>
     </message>
     <message>
         <source>Password:</source>
-        <translation type="unfinished"></translation>
+        <translation>Passord:</translation>
     </message>
 </context>
 <context>
     <name>PreferencePageRiverSurvey</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Skjema</translation>
     </message>
     <message>
         <source>List of fractions for cross section editing:</source>
-        <translation type="unfinished"></translation>
+        <translation>Liste over brøkdeler for tverrsnittsredigering:</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation type="unfinished"></translation>
+        <translation>Legge til (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Slett (&amp;D)</translation>
     </message>
     <message>
         <source>&amp;Restore Default</source>
-        <translation type="unfinished"></translation>
+        <translation>Gjenopprette standard (&amp;R)</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informasjon</translation>
     </message>
     <message>
         <source>This value already exists in the list.</source>
-        <translation type="unfinished"></translation>
+        <translation>Denne verdien finnes allerede på listen.</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Advarsel</translation>
     </message>
     <message>
         <source>Are you sure you want to delete the selected item?</source>
-        <translation type="unfinished"></translation>
+        <translation>Er du sikker på at du vil slette det valgte elementet?</translation>
     </message>
     <message>
         <source>Are you sure you want to restore default values?</source>
-        <translation type="unfinished"></translation>
+        <translation>Er du sikker på at du vil gjenopprette standardverdiene?</translation>
     </message>
 </context>
 <context>
     <name>PreferencePageRiverSurveyFractionAddDialog</name>
     <message>
         <source>Add fraction</source>
-        <translation type="unfinished"></translation>
+        <translation>Legg til brøkdel</translation>
     </message>
     <message>
         <source>Specify the fraction to add:</source>
-        <translation type="unfinished"></translation>
+        <translation>Angi brøkdelen som skal legges til:</translation>
     </message>
     <message>
         <source>1:</source>
-        <translation type="unfinished"></translation>
+        <translation>1:</translation>
     </message>
 </context>
 <context>
     <name>PreferencePageTms</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Skjema</translation>
     </message>
     <message>
         <source>&amp;Up</source>
-        <translation type="unfinished"></translation>
+        <translation>Opp (&amp;U)</translation>
     </message>
     <message>
         <source>&amp;Down</source>
-        <translation type="unfinished"></translation>
+        <translation>Ned (&amp;D)</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation type="unfinished"></translation>
+        <translation>Legge til (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation type="unfinished"></translation>
+        <translation>Redigere (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Slett (&amp;D)</translation>
     </message>
     <message>
         <source>&amp;Restore Default</source>
-        <translation type="unfinished"></translation>
+        <translation>Gjenopprette standard (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Input Google Maps API key</source>
-        <translation type="unfinished"></translation>
+        <translation>Skriv inn Google Maps API -nøkkel (&amp;I)</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Google Maps Platform now need API key to use Google Maps through iRIC. Please get your own Google Maps API key and input here, to use Google Maps images as background images on Pre-processor and on 2D Post-Processing Windows.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Google Maps Platform trenger nå API -nøkkel for å bruke Google Maps gjennom iRIC. Få din egen Google Maps API-nøkkel og input her, for å bruke Google Maps-bilder som bakgrunnsbilder på forprosessoren og på 2D-etterbehandlingsvinduer. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Background Image (Internet) Edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Bakgrunnsbilde (Internett) Rediger</translation>
     </message>
     <message>
         <source>Input Google Maps API Key</source>
-        <translation type="unfinished"></translation>
+        <translation>Skriv inn Google Maps API -nøkkel</translation>
     </message>
     <message>
         <source>API Key: </source>
-        <translation type="unfinished"></translation>
+        <translation>API -nøkkel:</translation>
     </message>
 </context>
 <context>
     <name>PreferencePageTmsAddDialog</name>
     <message>
         <source>Background Image (Internet) Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Bakgrunnsbilde (Internett) Legg til</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Navn:</translation>
     </message>
     <message>
         <source>URL:</source>
-        <translation type="unfinished"></translation>
+        <translation>URL:</translation>
     </message>
     <message>
         <source>Example: http://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png</source>
-        <translation type="unfinished"></translation>
+        <translation>Eksempel: http://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png</translation>
     </message>
     <message>
         <source>Max Zoom Level:</source>
-        <translation type="unfinished"></translation>
+        <translation>Maks zoomnivå:</translation>
     </message>
 </context>
 <context>
     <name>PreferencePageWebCsvTile</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Skjema</translation>
     </message>
     <message>
         <source>&amp;Up</source>
-        <translation type="unfinished"></translation>
+        <translation>Opp (&amp;U)</translation>
     </message>
     <message>
         <source>&amp;Down</source>
-        <translation type="unfinished"></translation>
+        <translation>Ned (&amp;D)</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation type="unfinished"></translation>
+        <translation>Legge til (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation type="unfinished"></translation>
+        <translation>Redigere (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Slett (&amp;D)</translation>
     </message>
     <message>
         <source>&amp;Restore Default</source>
-        <translation type="unfinished"></translation>
+        <translation>Gjenopprette standard (&amp;R)</translation>
     </message>
     <message>
         <source>Edit Web Elevation Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Rediger Web Elevation Data</translation>
     </message>
 </context>
 <context>
     <name>PreferencePageWebCsvTileAddDialog</name>
     <message>
         <source>Add Web Elevation Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Legg til data for webhøyde</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Navn:</translation>
     </message>
     <message>
         <source>Min zoom level:</source>
-        <translation type="unfinished"></translation>
+        <translation>Min. Zoomnivå:</translation>
     </message>
     <message>
         <source>Max zoom level:</source>
-        <translation type="unfinished"></translation>
+        <translation>Maks zoomnivå:</translation>
     </message>
     <message>
         <source>URL:</source>
-        <translation type="unfinished"></translation>
+        <translation>URL:</translation>
     </message>
     <message>
         <source>Example: http://cyberjapandata.gsi.go.jp/xyz/dem/{z}/{x}/{y}.txt</source>
-        <translation type="unfinished"></translation>
+        <translation>Eksempel: http://cyberjapandata.gsi.go.jp/xyz/dem/{z}/{x}/{y}.txt</translation>
     </message>
 </context>
 <context>
     <name>ProjectPropertyBasicInfoWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Skjema</translation>
     </message>
     <message>
         <source>Filename:</source>
-        <translation type="unfinished"></translation>
+        <translation>Filnavn:</translation>
     </message>
     <message>
         <source>Last update time:</source>
-        <translation type="unfinished"></translation>
+        <translation>Siste oppdateringstid:</translation>
     </message>
     <message>
         <source>Solver:</source>
-        <translation type="unfinished"></translation>
+        <translation>Løser:</translation>
     </message>
     <message>
         <source>Grid(s):</source>
-        <translation type="unfinished"></translation>
+        <translation>Rutenett (er):</translation>
     </message>
     <message>
         <source>Calculation condition:</source>
-        <translation type="unfinished"></translation>
+        <translation>Beregningstilstand:</translation>
     </message>
     <message>
         <source>Calculation result:</source>
-        <translation type="unfinished"></translation>
+        <translation>Beregningsresultat:</translation>
     </message>
     <message>
         <source>Coordinate System:</source>
-        <translation type="unfinished"></translation>
+        <translation>Koordinatsystem:</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation type="unfinished"></translation>
+        <translation>Redigere (&amp;E)...</translation>
     </message>
     <message>
         <source>Coordinate Offset:</source>
-        <translation type="unfinished"></translation>
+        <translation>Koordinatforskyvning:</translation>
     </message>
     <message>
         <source>Date for t = 0:</source>
-        <translation type="unfinished"></translation>
+        <translation>Dato for t = 0:</translation>
     </message>
     <message>
         <source>(No data)</source>
-        <translation type="unfinished"></translation>
+        <translation>(Ingen data)</translation>
     </message>
     <message>
         <source>(Not saved yet)</source>
-        <translation type="unfinished"></translation>
+        <translation>(Ikke lagret ennå)</translation>
     </message>
     <message>
         <source>Setup finished</source>
-        <translation type="unfinished"></translation>
+        <translation>Oppsettet er ferdig</translation>
     </message>
     <message>
         <source>Setup unfinished</source>
-        <translation type="unfinished"></translation>
+        <translation>Oppsettet uferdig</translation>
     </message>
     <message>
         <source>Setup partially unfinished</source>
-        <translation type="unfinished"></translation>
+        <translation>Oppsettet delvis uferdig</translation>
     </message>
     <message>
         <source>Already set</source>
-        <translation type="unfinished"></translation>
+        <translation>Allerede satt</translation>
     </message>
     <message>
         <source>Not set yet</source>
-        <translation type="unfinished"></translation>
+        <translation>Ikke satt ennå</translation>
     </message>
     <message>
         <source>Data exists</source>
-        <translation type="unfinished"></translation>
+        <translation>Data finnes</translation>
     </message>
     <message>
         <source>No data</source>
-        <translation type="unfinished"></translation>
+        <translation>Ingen data</translation>
     </message>
     <message>
         <source>(Not specified)</source>
-        <translation type="unfinished"></translation>
+        <translation>(Ikke spesifisert)</translation>
     </message>
 </context>
 <context>
     <name>ProjectPropertyDialog</name>
     <message>
         <source>Project Property</source>
-        <translation type="unfinished"></translation>
+        <translation>Prosjekt eiendom</translation>
     </message>
     <message>
         <source>Basic Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Grunnleggende informasjon</translation>
     </message>
 </context>
 <context>
     <name>ProjectTypeSelectDialog</name>
     <message>
         <source>Select How to Save Project</source>
-        <translation type="unfinished"></translation>
+        <translation>Velg Hvordan lagre prosjekt</translation>
     </message>
     <message>
         <source>Please select how to save project from the followings:</source>
-        <translation type="unfinished"></translation>
+        <translation>Velg hvordan du vil lagre prosjektet fra følgende:</translation>
     </message>
     <message>
         <source>Save as File (*.ipro)</source>
-        <translation type="unfinished"></translation>
+        <translation>Lagre som fil (*.ipro)</translation>
     </message>
     <message>
         <source>Save as Project</source>
-        <translation type="unfinished"></translation>
+        <translation>Lagre som prosjekt</translation>
     </message>
 </context>
 <context>
     <name>SettingPage</name>
     <message>
         <source>Select Program and Languages</source>
-        <translation type="unfinished"></translation>
+        <translation>Velg Program og språk</translation>
     </message>
     <message>
         <source>Specify for which solver (or grid creating program) you want to create or update translation files.</source>
-        <translation type="unfinished"></translation>
+        <translation>Angi for hvilken løsningsmaskin (eller rutenettopprettingsprogram) du vil opprette eller oppdatere oversettelsesfiler.</translation>
     </message>
     <message>
         <source>Target Program</source>
-        <translation type="unfinished"></translation>
+        <translation>Målprogram</translation>
     </message>
     <message>
         <source>&amp;Solver</source>
-        <translation type="unfinished"></translation>
+        <translation>Løser (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;Grid Creating Program</source>
-        <translation type="unfinished"></translation>
+        <translation>Program for opprettelse av rutenett (&amp;G)</translation>
     </message>
     <message>
         <source>Languages</source>
-        <translation type="unfinished"></translation>
+        <translation>Språk</translation>
     </message>
 </context>
 <context>
     <name>SolverDefinitionAbstractDialog</name>
     <message>
         <source>Solver Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Løserinformasjon</translation>
     </message>
     <message>
         <source>Basic Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Grunnleggende informasjon</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Navn</translation>
     </message>
     <message>
         <source>Version</source>
-        <translation type="unfinished"></translation>
+        <translation>Versjon</translation>
     </message>
     <message>
         <source>Copyright</source>
-        <translation type="unfinished"></translation>
+        <translation>opphavsrett</translation>
     </message>
     <message>
         <source>Release</source>
-        <translation type="unfinished"></translation>
+        <translation>Utgivelse</translation>
     </message>
     <message>
         <source>Homepage</source>
-        <translation type="unfinished"></translation>
+        <translation>Hjemmeside</translation>
     </message>
     <message>
         <source>Description</source>
-        <translation type="unfinished"></translation>
+        <translation>Beskrivelse</translation>
     </message>
     <message>
         <source>License</source>
-        <translation type="unfinished"></translation>
+        <translation>Tillatelse</translation>
     </message>
 </context>
 <context>
     <name>SolverDefinitionAbstractWidget</name>
     <message>
         <source>Solver Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Løserinformasjon</translation>
     </message>
     <message>
         <source>Basic Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Grunnleggende informasjon</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Navn</translation>
     </message>
     <message>
         <source>Version</source>
-        <translation type="unfinished"></translation>
+        <translation>Versjon</translation>
     </message>
     <message>
         <source>Copyright</source>
-        <translation type="unfinished"></translation>
+        <translation>opphavsrett</translation>
     </message>
     <message>
         <source>Release</source>
-        <translation type="unfinished"></translation>
+        <translation>Utgivelse</translation>
     </message>
     <message>
         <source>Homepage</source>
-        <translation type="unfinished"></translation>
+        <translation>Hjemmeside</translation>
     </message>
     <message>
         <source>Description</source>
-        <translation type="unfinished"></translation>
+        <translation>Beskrivelse</translation>
     </message>
     <message>
         <source>License</source>
-        <translation type="unfinished"></translation>
+        <translation>Tillatelse</translation>
     </message>
 </context>
 <context>
     <name>SolverDefinitionList</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Advarsel</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
+        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
 %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Det oppsto en feil under lasting av løsningsdefinisjonsfil i mappen "%1". Denne løsningen blir ignorert. %2</translation>
     </message>
 </context>
 <context>
     <name>SolverDefinitionListDialog</name>
     <message>
         <source>Solver List</source>
-        <translation type="unfinished"></translation>
+        <translation>Løserliste</translation>
     </message>
     <message>
         <source>&amp;Show Detail...</source>
-        <translation type="unfinished"></translation>
+        <translation>Vis detaljer (&amp;S)...</translation>
     </message>
     <message>
         <source>Select solver to open project</source>
-        <translation type="unfinished"></translation>
+        <translation>Velg løsning for å åpne prosjektet</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Navn</translation>
     </message>
     <message>
         <source>Version</source>
-        <translation type="unfinished"></translation>
+        <translation>Versjon</translation>
     </message>
 </context>
 <context>
     <name>SolverDefinitionTranslationUpdateWizard</name>
     <message>
         <source>Definition File Translation Update Wizard</source>
-        <translation type="unfinished"></translation>
+        <translation>Veiviser for oppdatering av definisjon av filoversettelse</translation>
     </message>
 </context>
 <context>
     <name>StartPageDialog</name>
     <message>
         <source>iRIC Start Page</source>
-        <translation type="unfinished"></translation>
+        <translation>iRIC Startside</translation>
     </message>
     <message>
         <source>iRIC </source>
-        <translation type="unfinished"></translation>
+        <translation>iRIC</translation>
     </message>
     <message>
         <source>Welcome to iRIC!
 iRIC can simulate rivers from Colorado River to the Nile.</source>
-        <translation type="unfinished"></translation>
+        <translation>Velkommen til iRIC! iRIC kan simulere elver fra Colorado River til Nilen.</translation>
     </message>
     <message>
         <source>Start Simulation Project</source>
-        <translation type="unfinished"></translation>
+        <translation>Start simuleringsprosjekt</translation>
     </message>
     <message>
         <source>Support</source>
-        <translation type="unfinished"></translation>
+        <translation>Brukerstøtte</translation>
     </message>
 </context>
 <context>
     <name>StartPageLaunchTabWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Skjema</translation>
     </message>
     <message>
         <source>Create &amp;New Project...</source>
-        <translation type="unfinished"></translation>
+        <translation>Lag nytt prosjekt (&amp;N)...</translation>
     </message>
     <message>
         <source>&amp;Open Project File...</source>
-        <translation type="unfinished"></translation>
+        <translation>Åpne prosjektfil (&amp;O)...</translation>
     </message>
     <message>
         <source>Recent Solvers:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nylige løsere:</translation>
     </message>
     <message>
         <source>Recent Projects:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nylige prosjekter:</translation>
     </message>
 </context>
 <context>
     <name>iRICMainWindow</name>
     <message>
         <source>Ready</source>
-        <translation type="unfinished"></translation>
+        <translation>Klar</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Feil</translation>
     </message>
     <message>
         <source>Error occured while loading Solver definition file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Det oppsto en feil under lasting av Solver -definisjonsfil.</translation>
     </message>
     <message>
         <source>Open iRIC project file</source>
-        <translation type="unfinished"></translation>
+        <translation>Åpne iRIC prosjektfil</translation>
     </message>
     <message>
         <source>iRIC project file (*.ipro project.xml)</source>
-        <translation type="unfinished"></translation>
+        <translation>iRIC prosjektfil (*.ipro project.xml)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Advarsel</translation>
     </message>
     <message>
         <source>Project file %1 does not exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>Prosjektfil %1 eksisterer ikke.</translation>
     </message>
     <message>
         <source>Project folder path has to consist of only English characters. Please move or rename the project folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>Prosjektmappebanen må bare bestå av engelske tegn. Flytt eller gi nytt navn til prosjektmappen.</translation>
     </message>
     <message>
         <source>This project seems to be opened by another iRIC GUI window. You can not open a project folder from multiple GUI windows.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dette prosjektet ser ut til å bli åpnet av et annet iRIC GUI -vindu. Du kan ikke åpne en prosjektmappe fra flere GUI -vinduer.</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
-        <translation type="unfinished"></translation>
+        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <translation>Det åpnede prosjektet blir ikke kopiert til arbeidskatalogen, og du blir tvunget til å lagre endringene du gjør i dette prosjektet. Hvis du vil beholde det nåværende prosjektet, må du først lagre det i et annet prosjekt.</translation>
     </message>
     <message>
         <source>Open Calculation result</source>
-        <translation type="unfinished"></translation>
+        <translation>Åpne beregningsresultat</translation>
     </message>
     <message>
         <source>CGNS file (*.cgn *.cgns)</source>
-        <translation type="unfinished"></translation>
+        <translation>CGNS -fil (*.cgn *.cgns)</translation>
     </message>
     <message>
         <source>CGNS file %1 does not exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>CGNS -fil %1 eksisterer ikke.</translation>
     </message>
     <message>
         <source>This Project is modified. Do you want to save?</source>
-        <translation type="unfinished"></translation>
+        <translation>Dette prosjektet er endret. Vil du spare?</translation>
     </message>
     <message>
         <source>Save iRIC project file</source>
-        <translation type="unfinished"></translation>
+        <translation>Lagre iRIC -prosjektfil</translation>
     </message>
     <message>
         <source>iRIC project file (*.ipro)</source>
-        <translation type="unfinished"></translation>
+        <translation>iRIC prosjektfil (*.ipro)</translation>
     </message>
     <message>
         <source>Save iRIC project</source>
-        <translation type="unfinished"></translation>
+        <translation>Lagre iRIC -prosjektet</translation>
     </message>
     <message>
         <source>Project folder path has to consist of only English characters.</source>
-        <translation type="unfinished"></translation>
+        <translation>Prosjektmappebanen må bare bestå av engelske tegn.</translation>
     </message>
     <message>
         <source>The project folder has to be empty.</source>
-        <translation type="unfinished"></translation>
+        <translation>Prosjektmappen må være tom.</translation>
     </message>
     <message>
         <source>Saving project failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Lagring av prosjekt mislyktes.</translation>
     </message>
     <message>
         <source>This project has HUGE calculation result, so it cannot be saved as a file (*.ipro). Please save as a project.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dette prosjektet har ENORMT beregningsresultat, så det kan ikke lagres som en fil (*.ipro). Vennligst lagre som et prosjekt.</translation>
     </message>
     <message>
         <source>This project has too many files, so it cannot be saved as a file (*.ipro). Please save as a project.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dette prosjektet har for mange filer, så det kan ikke lagres som en fil (*.ipro). Vennligst lagre som et prosjekt.</translation>
     </message>
     <message>
         <source>Project successfully saved to %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Prosjektet er lagret på %1.</translation>
     </message>
     <message>
         <source>The solver is still running. Really quit?</source>
-        <translation type="unfinished"></translation>
+        <translation>Løsningen kjører fortsatt. Slutt virkelig?</translation>
     </message>
     <message>
         <source>This windows does not support snapshot function.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dette vinduet støtter ikke øyeblikksbildefunksjon.</translation>
     </message>
     <message>
         <source>Copied snapshot to clipboard.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopierte øyeblikksbildet til utklippstavlen.</translation>
     </message>
     <message>
         <source>This menu is not available while the solver is running.</source>
-        <translation type="unfinished"></translation>
+        <translation>Denne menyen er ikke tilgjengelig mens løseren er i gang.</translation>
     </message>
     <message>
         <source>This windows does not support continuous snapshot function.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dette vinduet støtter ikke kontinuerlig øyeblikksbildefunksjon.</translation>
     </message>
     <message>
         <source>Continuous Snapshot</source>
-        <translation type="unfinished"></translation>
+        <translation>Kontinuerlig øyeblikksbilde</translation>
     </message>
     <message>
         <source>saving continuous snapshot...</source>
-        <translation type="unfinished"></translation>
+        <translation>lagrer kontinuerlig øyeblikksbilde...</translation>
     </message>
     <message>
         <source>%1 already exists, and failed to remove it. Movie file is not output.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 eksisterer allerede, og klarte ikke å fjerne den. Filmfilen sendes ikke ut.</translation>
     </message>
     <message>
         <source>iRIC %1</source>
-        <translation type="unfinished"></translation>
+        <translation>iRIC %1</translation>
     </message>
     <message>
         <source>Untitled</source>
-        <translation type="unfinished"></translation>
+        <translation>Uten navn</translation>
     </message>
     <message>
         <source>%1 - iRIC %2 [%3]</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 - iRIC %2 [ %3 ]</translation>
     </message>
     <message>
         <source>The solver is running now. Please stop solver, to do this action.</source>
-        <translation type="unfinished"></translation>
+        <translation>Løseren kjører nå. Vennligst stopp løsningen for å utføre denne handlingen.</translation>
     </message>
     <message>
         <source>&amp;%1 %2</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 %2 (&amp;%)</translation>
     </message>
     <message>
         <source>http://iric-gui-user-manual.readthedocs.io/en/latest/</source>
-        <translation type="unfinished"></translation>
+        <translation>http://iric-gui-user-manual.readthedocs.io/en/latest/</translation>
     </message>
     <message>
         <source>Unknown options specified. They are neglected. %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Ukjente alternativer er angitt. De blir neglisjert. %1</translation>
     </message>
     <message>
         <source>More than two project files are passed as arguments. They are neglected. %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Mer enn to prosjektfiler sendes som argumenter. De blir neglisjert. %1</translation>
     </message>
     <message>
         <source>Are you sure you want to delete the calculation result?</source>
-        <translation type="unfinished"></translation>
+        <translation>Er du sikker på at du vil slette beregningsresultatet?</translation>
     </message>
     <message>
         <source>Calculation result cleared.</source>
-        <translation type="unfinished"></translation>
+        <translation>Beregningsresultatet er slettet.</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informasjon</translation>
     </message>
     <message>
         <source>Calculation result does not exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>Beregningsresultatet eksisterer ikke.</translation>
     </message>
     <message>
         <source>Please select this menu when Visualization Window is active.</source>
-        <translation type="unfinished"></translation>
+        <translation>Velg denne menyen når visualiseringsvinduet er aktivt.</translation>
     </message>
     <message>
         <source>No particle is drawn now.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ingen partikkel trekkes nå.</translation>
     </message>
     <message>
         <source>Export Particles</source>
-        <translation type="unfinished"></translation>
+        <translation>Eksporter partikler</translation>
     </message>
     <message>
         <source>Saving particles as VTK files...</source>
-        <translation type="unfinished"></translation>
+        <translation>Lagre partikler som VTK -filer...</translation>
     </message>
     <message>
         <source>Error occured while saving.</source>
-        <translation type="unfinished"></translation>
+        <translation>Det oppsto en feil under lagring.</translation>
     </message>
     <message>
         <source>Currently active sub-window does not support exporting contour figure.</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktivt undervindu støtter ikke eksport av konturfigur.</translation>
     </message>
     <message>
-        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
-        <translation type="unfinished"></translation>
+        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
+        <translation>For å eksportere formfil, bytt "Displayinnstilling" til "Konturfigur", ikke "Color Fringe" eller "Isolines".</translation>
     </message>
     <message>
         <source>Export contour figure to ESRI Shapefiles</source>
-        <translation type="unfinished"></translation>
+        <translation>Eksporter konturfigur til ESRI Shapefiles</translation>
     </message>
     <message>
         <source>Export contour figure</source>
-        <translation type="unfinished"></translation>
+        <translation>Eksporter konturfigur</translation>
     </message>
     <message>
         <source>Saving contour figure as ESRI Shapefiles...</source>
-        <translation type="unfinished"></translation>
+        <translation>Lagrer konturfigur som ESRI Shapefiles...</translation>
     </message>
     <message>
         <source>No Contour Figure is drawn now.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ingen konturfigur er tegnet nå.</translation>
     </message>
     <message>
         <source>Please select which zone to use:</source>
-        <translation type="unfinished"></translation>
+        <translation>Velg hvilken sone du vil bruke:</translation>
     </message>
     <message>
         <source>Export Google Earth KMZ for street view</source>
-        <translation type="unfinished"></translation>
+        <translation>Eksporter Google Earth KMZ for gatevisning</translation>
     </message>
     <message>
         <source>%1 can not be overwritten.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 kan ikke overskrives.</translation>
     </message>
     <message>
         <source>Saving KMZ file...</source>
-        <translation type="unfinished"></translation>
+        <translation>Lagrer KMZ -filen...</translation>
     </message>
     <message>
         <source>Google Earth KMZ is exported to %1 successfully.</source>
-        <translation type="unfinished"></translation>
+        <translation>Google Earth KMZ eksporteres til %1 vellykket.</translation>
     </message>
     <message>
         <source>Import Visualization/Graph Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Importer visualisering/grafinnstillinger</translation>
     </message>
     <message>
         <source>Setting file (*.vgsetting)</source>
-        <translation type="unfinished"></translation>
+        <translation>Innstilling av fil (*.vgsetting)</translation>
     </message>
     <message>
         <source>File %1 does not exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fil %1 eksisterer ikke.</translation>
     </message>
     <message>
         <source>Export Visualization/Graph Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Eksporter visualisering/grafinnstillinger</translation>
     </message>
     <message>
         <source>The grids are edited or deleted. When you save, the calculation result is discarded.</source>
-        <translation type="unfinished"></translation>
+        <translation>Rutenettene redigeres eller slettes. Når du lagrer, blir beregningsresultatet forkastet.</translation>
     </message>
     <message>
         <source>Current working directory (%1) contains non-ASCII characters. Before starting a new project, change working directory from the following menu: 
 Option -&gt; Preferences</source>
-        <translation type="unfinished"></translation>
+        <translation>Gjeldende arbeidskatalog (%1) inneholder ikke-ASCII-tegn. Før du starter et nytt prosjekt, må du endre arbeidskatalog fra følgende meny: Alternativ -&gt; Innstillinger</translation>
     </message>
     <message>
         <source>One dimension</source>
-        <translation type="unfinished"></translation>
+        <translation>En dimensjon</translation>
     </message>
     <message>
         <source>Two dimensions</source>
-        <translation type="unfinished"></translation>
+        <translation>To dimensjoner</translation>
     </message>
     <message>
         <source>Three dimensions</source>
-        <translation type="unfinished"></translation>
+        <translation>Tre dimensjoner</translation>
     </message>
     <message>
         <source>There is no calculation data, so you can not define simple operation results.</source>
-        <translation type="unfinished"></translation>
+        <translation>Det er ingen beregningsdata, så du kan ikke definere enkle operasjonsresultater.</translation>
     </message>
     <message>
         <source>Select dimension</source>
-        <translation type="unfinished"></translation>
+        <translation>Velg dimensjon</translation>
     </message>
     <message>
         <source>Dimension</source>
-        <translation type="unfinished"></translation>
+        <translation>Dimensjon</translation>
     </message>
     <message>
         <source>PNG files (*.png);;JPEG file (*.jpg);;Windows BMP file (*.bmp)</source>
-        <translation type="unfinished"></translation>
+        <translation>PNG -filer (*.png);;JPEG file (*.jpg);;Windows BMP file (*.bmp)</translation>
     </message>
     <message>
         <source>;;Encapsulated Post Script file (*.eps);;Portable Document Format file (*.pdf);;Scalable Vector Graphics file (*.svg)</source>
-        <translation type="unfinished"></translation>
+        <translation>;; Innkapslet Post Script -fil (*.eps);;Portable Document Format file (*.pdf);;Scalable Vector Graphics file (*.svg)</translation>
     </message>
     <message>
         <source>Save Snapshot</source>
-        <translation type="unfinished"></translation>
+        <translation>Lagre øyeblikksbilde</translation>
     </message>
     <message>
         <source>Transparency Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Innstilling for åpenhet</translation>
     </message>
     <message>
         <source>Do you want to make the background transparent?</source>
-        <translation type="unfinished"></translation>
+        <translation>Vil du gjøre bakgrunnen gjennomsiktig?</translation>
     </message>
     <message>
         <source>This window do not support snapshot with this file type.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dette vinduet støtter ikke øyeblikksbilde med denne filtypen.</translation>
     </message>
     <message>
         <source>Saving snapshot failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Lagre øyeblikksbildet mislyktes.</translation>
     </message>
     <message>
         <source>Wrong file name specified.</source>
-        <translation type="unfinished"></translation>
+        <translation>Feil filnavn er angitt.</translation>
     </message>
     <message>
         <source>Snapshot successfully saved to %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Øyeblikksbildet ble lagret på %1.</translation>
     </message>
 </context>
 <context>
     <name>iRICMainWindowAboutDialog</name>
     <message>
         <source>About iRIC</source>
-        <translation type="unfinished"></translation>
+        <translation>Om iRIC</translation>
     </message>
     <message>
         <source>imglabel</source>
-        <translation type="unfinished"></translation>
+        <translation>imglabel</translation>
     </message>
     <message>
         <source>title</source>
-        <translation type="unfinished"></translation>
+        <translation>tittel</translation>
     </message>
     <message>
         <source>TextLabel</source>
-        <translation type="unfinished"></translation>
+        <translation>TextLabel</translation>
     </message>
     <message>
         <source>copyright</source>
-        <translation type="unfinished"></translation>
+        <translation>opphavsrett</translation>
     </message>
     <message>
         <source>iRIC %1</source>
-        <translation type="unfinished"></translation>
+        <translation>iRIC %1</translation>
     </message>
     <message>
         <source>Released on %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Utgitt på %1</translation>
     </message>
     <message>
         <source>Copyright %1</source>
-        <translation type="unfinished"></translation>
+        <translation>opphavsrett %1</translation>
     </message>
     <message>
         <source>Terms of use: </source>
-        <translation type="unfinished"></translation>
+        <translation>Vilkår for bruk:</translation>
     </message>
     <message>
         <source> (Japanese)</source>
-        <translation type="unfinished"></translation>
+        <translation>(Japansk)</translation>
     </message>
 </context>
 <context>
     <name>iRICMainWindowActionManager</name>
     <message>
         <source>&amp;File</source>
-        <translation type="unfinished"></translation>
+        <translation>Fil (&amp;F)</translation>
     </message>
     <message>
         <source>&amp;New Project...</source>
-        <translation type="unfinished"></translation>
+        <translation>Nytt prosjekt (&amp;N)...</translation>
     </message>
     <message>
         <source>Ctrl+N</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+N</translation>
     </message>
     <message>
         <source>&amp;Open...</source>
-        <translation type="unfinished"></translation>
+        <translation>Åpen (&amp;O)...</translation>
     </message>
     <message>
         <source>Ctrl+O</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+O.</translation>
     </message>
     <message>
         <source>Open iRIC Project files</source>
-        <translation type="unfinished"></translation>
+        <translation>Åpne iRIC Project -filer</translation>
     </message>
     <message>
         <source>&amp;Save</source>
-        <translation type="unfinished"></translation>
+        <translation>Lagre (&amp;S)</translation>
     </message>
     <message>
         <source>Ctrl+S</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+S</translation>
     </message>
     <message>
         <source>Save &amp;As File(*.ipro)...</source>
-        <translation type="unfinished"></translation>
+        <translation>Lagre som fil (*.ipro) (&amp;A)...</translation>
     </message>
     <message>
         <source>Save As &amp;Project...</source>
-        <translation type="unfinished"></translation>
+        <translation>Lagre som prosjekt (&amp;P)...</translation>
     </message>
     <message>
         <source>&amp;Property...</source>
-        <translation type="unfinished"></translation>
+        <translation>Eiendom (&amp;P)...</translation>
     </message>
     <message>
         <source>Save S&amp;napshot...</source>
-        <translation type="unfinished"></translation>
+        <translation>Lagre øyeblikksbilde (&amp;N)...</translation>
     </message>
     <message>
         <source>Copy Snapshot to Clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopier øyeblikksbilde til utklippstavlen</translation>
     </message>
     <message>
         <source>Continuous Snapshot / Movie / Google Earth Export...</source>
-        <translation type="unfinished"></translation>
+        <translation>Kontinuerlig øyeblikksbilde / film / Google Earth -eksport...</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation type="unfinished"></translation>
+        <translation>Import (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Calculation Condition...</source>
-        <translation type="unfinished"></translation>
+        <translation>Beregningstilstand (&amp;C)...</translation>
     </message>
     <message>
         <source>Calculation &amp;Result...</source>
-        <translation type="unfinished"></translation>
+        <translation>Beregningsresultat (&amp;R)...</translation>
     </message>
     <message>
         <source>&amp;Measured Values...</source>
-        <translation type="unfinished"></translation>
+        <translation>Målte verdier (&amp;M)...</translation>
     </message>
     <message>
         <source>&amp;Background Image...</source>
-        <translation type="unfinished"></translation>
+        <translation>Bakgrunnsbilde (&amp;B)...</translation>
     </message>
     <message>
         <source>&amp;Visualization/Graph Settings...</source>
-        <translation type="unfinished"></translation>
+        <translation>Visualisering/grafinnstillinger (&amp;V)...</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation type="unfinished"></translation>
+        <translation>Eksport (&amp;E)</translation>
     </message>
     <message>
         <source>&amp;Particles...</source>
-        <translation type="unfinished"></translation>
+        <translation>Partikler (&amp;P)...</translation>
     </message>
     <message>
         <source>&amp;Contour Figure as ESRI Shapefiles...</source>
-        <translation type="unfinished"></translation>
+        <translation>Konturfigur som ESRI Shapefiles (&amp;C)...</translation>
     </message>
     <message>
         <source>&amp;Google Earth KMZ for street view</source>
-        <translation type="unfinished"></translation>
+        <translation>Google Earth KMZ for gatevisning (&amp;G)</translation>
     </message>
     <message>
         <source>Open &amp;Work Directory...</source>
-        <translation type="unfinished"></translation>
+        <translation>Åpne Work Directory (&amp;W)...</translation>
     </message>
     <message>
         <source>&amp;Recent Projects</source>
-        <translation type="unfinished"></translation>
+        <translation>Nylige prosjekter (&amp;R)</translation>
     </message>
     <message>
         <source>Show iRIC Start Page...</source>
-        <translation type="unfinished"></translation>
+        <translation>Vis iRIC -startsiden...</translation>
     </message>
     <message>
         <source>E&amp;xit</source>
-        <translation type="unfinished"></translation>
+        <translation>Exit (&amp;X)</translation>
     </message>
     <message>
         <source>G&amp;eographic Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Geografiske data (&amp;E)</translation>
     </message>
     <message>
         <source>Geographic Data (from web)</source>
-        <translation type="unfinished"></translation>
+        <translation>Geografiske data (fra web)</translation>
     </message>
     <message>
         <source>&amp;Hydraulic Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Hydrauliske data (&amp;H)</translation>
     </message>
     <message>
         <source>Solver Console &amp;Log...</source>
-        <translation type="unfinished"></translation>
+        <translation>Solver Console Log (&amp;L)...</translation>
     </message>
     <message>
         <source>&amp;Edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Redigere (&amp;E)</translation>
     </message>
     <message>
         <source>Ctrl+Z</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Z</translation>
     </message>
     <message>
         <source>Ctrl+Y</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Y</translation>
     </message>
     <message>
         <source>Cu&amp;t</source>
-        <translation type="unfinished"></translation>
+        <translation>Skjære (&amp;T)</translation>
     </message>
     <message>
         <source>&amp;Copy</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopiere (&amp;C)</translation>
     </message>
     <message>
         <source>&amp;Paste</source>
-        <translation type="unfinished"></translation>
+        <translation>Lim inn (&amp;P)</translation>
     </message>
     <message>
         <source>&amp;View</source>
-        <translation type="unfinished"></translation>
+        <translation>Utsikt (&amp;V)</translation>
     </message>
     <message>
         <source>&amp;Toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Verktøylinje (&amp;T)</translation>
     </message>
     <message>
         <source>&amp;Main Toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Hovedverktøylinje (&amp;M)</translation>
     </message>
     <message>
         <source>&amp;Windows list Toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Windows -liste Verktøylinje (&amp;W)</translation>
     </message>
     <message>
         <source>&amp;Animation Toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Animasjonsverktøylinje (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Object Browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Objektleser (&amp;O)</translation>
     </message>
     <message>
         <source>&amp;Attribute Browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Attributtleser (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Status Bar</source>
-        <translation type="unfinished"></translation>
+        <translation>Statuslinjen (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;Background Color...</source>
-        <translation type="unfinished"></translation>
+        <translation>Bakgrunnsfarge (&amp;B)...</translation>
     </message>
     <message>
         <source>&amp;Z-direction Scale...</source>
-        <translation type="unfinished"></translation>
+        <translation>Z-retning skala (&amp;Z)...</translation>
     </message>
     <message>
         <source>Set &amp;Projection To</source>
-        <translation type="unfinished"></translation>
+        <translation>Sett projeksjon til (&amp;P)</translation>
     </message>
     <message>
         <source>Para&amp;llel</source>
-        <translation type="unfinished"></translation>
+        <translation>Parallell (&amp;L)</translation>
     </message>
     <message>
         <source>Ctrl+L</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+L</translation>
     </message>
     <message>
         <source>&amp;Perspective</source>
-        <translation type="unfinished"></translation>
+        <translation>Perspektiv (&amp;P)</translation>
     </message>
     <message>
         <source>Ctrl+Shift+L</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Shift+L</translation>
     </message>
     <message>
         <source>&amp;Tile Windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Tile Windows (&amp;T)</translation>
     </message>
     <message>
         <source>Ca&amp;mera Control</source>
-        <translation type="unfinished"></translation>
+        <translation>Kamerakontroll (&amp;M)</translation>
     </message>
     <message>
         <source>&amp;Fit</source>
-        <translation type="unfinished"></translation>
+        <translation>Passe (&amp;F)</translation>
     </message>
     <message>
         <source>&amp;Reset Rotation</source>
-        <translation type="unfinished"></translation>
+        <translation>Tilbakestill rotasjon (&amp;R)</translation>
     </message>
     <message>
         <source>R&amp;otate 90</source>
-        <translation type="unfinished"></translation>
+        <translation>Roter 90 (&amp;O)</translation>
     </message>
     <message>
         <source>XY Plane</source>
-        <translation type="unfinished"></translation>
+        <translation>XY -fly</translation>
     </message>
     <message>
         <source>YZ Plane</source>
-        <translation type="unfinished"></translation>
+        <translation>YZ -fly</translation>
     </message>
     <message>
         <source>XZ Plane</source>
-        <translation type="unfinished"></translation>
+        <translation>XZ -fly</translation>
     </message>
     <message>
         <source>Move &amp;Left</source>
-        <translation type="unfinished"></translation>
+        <translation>Gå til venstre (&amp;L)</translation>
     </message>
     <message>
         <source>Move &amp;Right</source>
-        <translation type="unfinished"></translation>
+        <translation>Flytt til høyre (&amp;R)</translation>
     </message>
     <message>
         <source>Move &amp;Up</source>
-        <translation type="unfinished"></translation>
+        <translation>Flytte opp (&amp;U)</translation>
     </message>
     <message>
         <source>Move &amp;Down</source>
-        <translation type="unfinished"></translation>
+        <translation>Flytt ned (&amp;D)</translation>
     </message>
     <message>
         <source>Zoom &amp;In</source>
-        <translation type="unfinished"></translation>
+        <translation>Zoom inn (&amp;I)</translation>
     </message>
     <message>
         <source>Zoom &amp;Out</source>
-        <translation type="unfinished"></translation>
+        <translation>Zoome ut (&amp;O)</translation>
     </message>
     <message>
         <source>Zoom In in X Direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Zoom inn X -retning</translation>
     </message>
     <message>
         <source>Zoom Out in X Direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Zoom ut i X -retning</translation>
     </message>
     <message>
         <source>Zoom In in Y Direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Zoom inn Y -retning</translation>
     </message>
     <message>
         <source>Zoom Out in Y Direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Zoom ut i Y -retning</translation>
     </message>
     <message>
         <source>&amp;Simulation</source>
-        <translation type="unfinished"></translation>
+        <translation>Simulering (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;Run</source>
-        <translation type="unfinished"></translation>
+        <translation>Løpe (&amp;R)</translation>
     </message>
     <message>
         <source>Ctrl+R</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+R</translation>
     </message>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>&amp;Solver Information...</source>
-        <translation type="unfinished"></translation>
+        <translation>Løserinformasjon (&amp;S)...</translation>
     </message>
     <message>
         <source>Focus &amp;PreProcessor Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Fokus PreProcessor -vindu (&amp;P)</translation>
     </message>
     <message>
         <source>Focus &amp;Solver Console Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Vinduet Focus Solver Console (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;Tool</source>
-        <translation type="unfinished"></translation>
+        <translation>Verktøy (&amp;T)</translation>
     </message>
     <message>
         <source>Calculation &amp;Result</source>
-        <translation type="unfinished"></translation>
+        <translation>Beregningsresultat (&amp;R)</translation>
     </message>
     <message>
         <source>Open new 2D Post-Processing Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Åpne nytt 2D-vindu for etterbehandling</translation>
     </message>
     <message>
-        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
-        <translation type="unfinished"></translation>
+        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
+        <translation>Åpne nytt 2D Bird's-Eye Post-Processing Window</translation>
     </message>
     <message>
         <source>Open new 3D Post-Processing Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Åpne nytt 3D-etterbehandlingsvindu</translation>
     </message>
     <message>
         <source>Open new Graph Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Åpne nytt grafvindu</translation>
     </message>
     <message>
         <source>Open new Scattered Chart Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Åpne det nye spredte diagramvinduet</translation>
     </message>
     <message>
         <source>Open new Verification Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Åpne nytt bekreftelsesvindu</translation>
     </message>
     <message>
         <source>&amp;Reload</source>
-        <translation type="unfinished"></translation>
+        <translation>Last på nytt (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Reload Calculation Result</source>
-        <translation type="unfinished"></translation>
+        <translation>Last inn beregningsresultatet på nytt (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Delete...</source>
-        <translation type="unfinished"></translation>
+        <translation>Slett (&amp;D)...</translation>
     </message>
     <message>
         <source>&amp;Manage simple operation results</source>
-        <translation type="unfinished"></translation>
+        <translation>Administrer enkle operasjonsresultater (&amp;M)</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation type="unfinished"></translation>
+        <translation>Import (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation type="unfinished"></translation>
+        <translation>Eksport (&amp;E)...</translation>
     </message>
     <message>
         <source>Import Visualization/Graph Settings...</source>
-        <translation type="unfinished"></translation>
+        <translation>Importer visualisering/grafinnstillinger...</translation>
     </message>
     <message>
         <source>Export Visualization/Graph Settings...</source>
-        <translation type="unfinished"></translation>
+        <translation>Eksporter visualisering/grafinnstillinger...</translation>
     </message>
     <message>
         <source>&amp;Option</source>
-        <translation type="unfinished"></translation>
+        <translation>Alternativ (&amp;O)</translation>
     </message>
     <message>
         <source>&amp;Preferences...</source>
-        <translation type="unfinished"></translation>
+        <translation>Preferanser (&amp;P)...</translation>
     </message>
     <message>
         <source>&amp;Tools</source>
-        <translation type="unfinished"></translation>
+        <translation>Verktøy (&amp;T)</translation>
     </message>
     <message>
         <source>&amp;Maintainance</source>
-        <translation type="unfinished"></translation>
+        <translation>Vedlikehold (&amp;M)</translation>
     </message>
     <message>
         <source>&amp;Create/Update Translation Files...</source>
-        <translation type="unfinished"></translation>
+        <translation>Opprett/oppdater oversettelsesfiler (&amp;C)...</translation>
     </message>
     <message>
         <source>&amp;Help</source>
-        <translation type="unfinished"></translation>
+        <translation>Hjelp (&amp;H)</translation>
     </message>
     <message>
         <source>&amp;Help...</source>
-        <translation type="unfinished"></translation>
+        <translation>Hjelp (&amp;H)...</translation>
     </message>
     <message>
         <source>&amp;Solver List...</source>
-        <translation type="unfinished"></translation>
+        <translation>Løserliste (&amp;S)...</translation>
     </message>
     <message>
         <source>&amp;Mouse Hint...</source>
-        <translation type="unfinished"></translation>
+        <translation>Musetips (&amp;M)...</translation>
     </message>
     <message>
         <source>&amp;About...</source>
-        <translation type="unfinished"></translation>
+        <translation>Om (&amp;A)...</translation>
     </message>
     <message>
         <source>Main ToolBar</source>
-        <translation type="unfinished"></translation>
+        <translation>Hovedverktøylinje</translation>
     </message>
     <message>
         <source>Window list Toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Vindusliste Verktøylinje</translation>
     </message>
     <message>
         <source>Ctrl+C</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+C</translation>
     </message>
 </context>
 </TS>

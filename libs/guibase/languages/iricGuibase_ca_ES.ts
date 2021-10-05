@@ -1,816 +1,814 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ca_ES">
 <context>
     <name>AsciiOnlyLineEdit</name>
     <message>
         <source>String has to consist of only English characters.</source>
-        <translation type="unfinished"></translation>
+        <translation>La cadena ha de constar només de caràcters anglesos.</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Advertiment</translation>
     </message>
 </context>
 <context>
     <name>AsciiOnlyTextEdit</name>
     <message>
         <source>String has to consist of only English characters.</source>
-        <translation type="unfinished"></translation>
+        <translation>La cadena ha de constar només de caràcters anglesos.</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Advertiment</translation>
     </message>
 </context>
 <context>
     <name>CgnsZoneSelectDialog</name>
     <message>
         <source>Select grid to import</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccioneu la quadrícula per importar</translation>
     </message>
     <message>
         <source>Please select which grid to import</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccioneu quina quadrícula voleu importar</translation>
     </message>
 </context>
 <context>
     <name>ColorMapCustomSettingDialog</name>
     <message>
         <source>Custom Color Map</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapa de colors personalitzat</translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tipus:</translation>
     </message>
     <message>
         <source>Two Colors</source>
-        <translation type="unfinished"></translation>
+        <translation>Dos colors</translation>
     </message>
     <message>
         <source>Three Colors</source>
-        <translation type="unfinished"></translation>
+        <translation>Tres colors</translation>
     </message>
     <message>
         <source>Arbitrary</source>
-        <translation type="unfinished"></translation>
+        <translation>Arbitrari</translation>
     </message>
     <message>
         <source>Two Colors/ Three Colors</source>
-        <translation type="unfinished"></translation>
+        <translation>Dos colors / Tres colors</translation>
     </message>
     <message>
         <source>Maximum Value</source>
-        <translation type="unfinished"></translation>
+        <translation>Valor màxim</translation>
     </message>
     <message>
         <source>Medium Value</source>
-        <translation type="unfinished"></translation>
+        <translation>Valor mitjà</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation type="unfinished"></translation>
+        <translation>Valor</translation>
     </message>
     <message>
         <source>Minimum Value</source>
-        <translation type="unfinished"></translation>
+        <translation>Valor mínim</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Color</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Afegeix (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Elimina (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation type="unfinished"></translation>
+        <translation>Importar (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation type="unfinished"></translation>
+        <translation>Exporta (&amp;E)</translation>
     </message>
     <message>
         <source>Import Colormap Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Importa la configuració del mapa de colors</translation>
     </message>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>Fitxer CSV (*.csv)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Advertiment</translation>
     </message>
     <message>
         <source>File %1 does not exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dossier %1 no existeix.</translation>
     </message>
     <message>
         <source>File %1 could not be opened.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dossier %1 no s'ha pogut obrir.</translation>
     </message>
     <message>
         <source>Export Colormap Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Exporta la configuració del mapa de colors</translation>
     </message>
 </context>
 <context>
     <name>ColorMapSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formulari</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation type="unfinished"></translation>
+        <translation>Personalitzat</translation>
     </message>
     <message>
         <source>Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>S'està configurant...</translation>
     </message>
 </context>
 <context>
     <name>ContourSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formulari</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Punts</translation>
     </message>
     <message>
         <source>Color Fringe</source>
-        <translation type="unfinished"></translation>
+        <translation>Fringe de color</translation>
     </message>
     <message>
         <source>Contour Figure</source>
-        <translation type="unfinished"></translation>
+        <translation>Figura de contorn</translation>
     </message>
     <message>
         <source>Isolines</source>
-        <translation type="unfinished"></translation>
+        <translation>Isolines</translation>
     </message>
 </context>
 <context>
     <name>CoordinateEditWidget</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>It is not a real value</source>
-        <translation type="unfinished"></translation>
+        <translation>No és un valor real</translation>
     </message>
 </context>
 <context>
     <name>CoordinatesEditDialog</name>
     <message>
         <source>Edit Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Edita coordenades</translation>
     </message>
     <message>
         <source>X</source>
-        <translation type="unfinished"></translation>
+        <translation>X</translation>
     </message>
     <message>
         <source>Y</source>
-        <translation type="unfinished"></translation>
+        <translation>Y</translation>
     </message>
 </context>
 <context>
     <name>DirnameEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formulari</translation>
     </message>
     <message>
         <source>...</source>
-        <translation type="unfinished"></translation>
+        <translation>...</translation>
     </message>
     <message>
         <source>Select Directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccioneu Directori</translation>
     </message>
 </context>
 <context>
     <name>DoubleSpinBoxWithHelp</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formulari</translation>
     </message>
     <message>
         <source>Min: %1, Max: %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Min: %1, Màxim: %2</translation>
     </message>
 </context>
 <context>
     <name>FilenameEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formulari</translation>
     </message>
     <message>
         <source>...</source>
-        <translation type="unfinished"></translation>
+        <translation>...</translation>
     </message>
     <message>
         <source>All files (*.*)</source>
-        <translation type="unfinished"></translation>
+        <translation>Tots els fitxers (*.*)</translation>
     </message>
     <message>
         <source>Select File</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccioneu Fitxer</translation>
     </message>
 </context>
 <context>
     <name>GridShapeEditDialog</name>
     <message>
         <source>Grid Shape Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuració de visualització de forma de quadrícula</translation>
     </message>
     <message>
         <source>Grid lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Línies de quadrícula</translation>
     </message>
     <message>
         <source>All</source>
-        <translation type="unfinished"></translation>
+        <translation>Tots</translation>
     </message>
     <message>
         <source>Outline Only</source>
-        <translation type="unfinished"></translation>
+        <translation>Només esbós</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Color:</translation>
     </message>
     <message>
         <source>Grid indices</source>
-        <translation type="unfinished"></translation>
+        <translation>Índexs de quadrícula</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation type="unfinished"></translation>
+        <translation>Visible</translation>
     </message>
 </context>
 <context>
     <name>IntegerNumberDisplayLabel</name>
     <message>
         <source>------</source>
-        <translation type="unfinished"></translation>
+        <translation>------</translation>
     </message>
 </context>
 <context>
     <name>ItemMultiSelectingDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Diàleg</translation>
     </message>
     <message>
         <source>Check &amp;All</source>
-        <translation type="unfinished"></translation>
+        <translation>Marqueu-ho tot (&amp;A)</translation>
     </message>
 </context>
 <context>
     <name>ItemSelectingDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Diàleg</translation>
     </message>
     <message>
         <source>TextLabel</source>
-        <translation type="unfinished"></translation>
+        <translation>Etiqueta de text</translation>
     </message>
 </context>
 <context>
     <name>ObjectBrowserView</name>
     <message>
         <source>&amp;Add...</source>
-        <translation type="unfinished"></translation>
+        <translation>Afegeix (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Delete...</source>
-        <translation type="unfinished"></translation>
+        <translation>Suprimeix (&amp;D)...</translation>
     </message>
     <message>
         <source>Move up</source>
-        <translation type="unfinished"></translation>
+        <translation>Mou-te</translation>
     </message>
     <message>
         <source>Move down</source>
-        <translation type="unfinished"></translation>
+        <translation>Moure cap avall</translation>
     </message>
     <message>
         <source>&amp;Property...</source>
-        <translation type="unfinished"></translation>
+        <translation>Propietat (&amp;P)...</translation>
     </message>
     <message>
         <source>Are you sure you want to delete this item?</source>
-        <translation type="unfinished"></translation>
+        <translation>Esteu segur que voleu suprimir aquest element?</translation>
     </message>
     <message>
         <source>Delete item</source>
-        <translation type="unfinished"></translation>
+        <translation>Suprimeix l’element</translation>
     </message>
 </context>
 <context>
     <name>PointClearCommand</name>
     <message>
         <source>Clear Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Punt clar</translation>
     </message>
 </context>
 <context>
     <name>PointMoveCommand</name>
     <message>
         <source>Move Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Punt de moviment</translation>
     </message>
 </context>
 <context>
     <name>PointSetCommand</name>
     <message>
         <source>Set Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Punt d'ajust</translation>
     </message>
 </context>
 <context>
     <name>PolyLineAddVertexCommand</name>
     <message>
         <source>Insert Line Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Inseriu el vèrtex de línia</translation>
     </message>
 </context>
 <context>
     <name>PolyLineEditCoordinatesCommand</name>
     <message>
         <source>Edit Line Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Edita les coordenades de línia</translation>
     </message>
 </context>
 <context>
     <name>PolyLineMoveVertexCommand</name>
     <message>
         <source>Move Line Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Mou el vèrtex de línia</translation>
     </message>
 </context>
 <context>
     <name>PolyLinePushVertexCommand</name>
     <message>
         <source>Add New Line Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Afegeix un nou punt de línia</translation>
     </message>
 </context>
 <context>
     <name>PolyLineRemoveVertexCommand</name>
     <message>
         <source>Remove Line Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Elimineu el vèrtex de línia</translation>
     </message>
 </context>
 <context>
     <name>PolygonAddVertexCommand</name>
     <message>
         <source>Insert Polygon Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Inseriu el vèrtex del polígon</translation>
     </message>
 </context>
 <context>
     <name>PolygonEditCoordinatesCommand</name>
     <message>
         <source>Edit Polygon Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Edita les coordenades del polígon</translation>
     </message>
 </context>
 <context>
     <name>PolygonMoveVertexCommand</name>
     <message>
         <source>Move Polygon Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Mou el vèrtex del polígon</translation>
     </message>
 </context>
 <context>
     <name>PolygonPushVertexCommand</name>
     <message>
         <source>Add New Polygon Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Afegeix un nou punt de polígon</translation>
     </message>
 </context>
 <context>
     <name>PolygonRemoveVertexCommand</name>
     <message>
         <source>Remove Polygon Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Elimineu el vèrtex del polígon</translation>
     </message>
 </context>
 <context>
     <name>RealNumberDisplayLabel</name>
     <message>
         <source>------</source>
-        <translation type="unfinished"></translation>
+        <translation>------</translation>
     </message>
 </context>
 <context>
     <name>RealNumberEditWidget</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Advertiment</translation>
     </message>
     <message>
         <source>It is not a real value</source>
-        <translation type="unfinished"></translation>
+        <translation>No és un valor real</translation>
     </message>
     <message>
         <source>Minimum value is %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>El valor mínim és %1.</translation>
     </message>
     <message>
         <source>Maximum value is %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>El valor màxim és %1.</translation>
     </message>
 </context>
 <context>
     <name>ScalarBarDialog</name>
     <message>
         <source>Color Legend Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuració de la llegenda del color</translation>
     </message>
 </context>
 <context>
     <name>ScalarBarWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formulari</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation type="unfinished"></translation>
+        <translation>Visible</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Títol</translation>
     </message>
     <message>
         <source>Title :</source>
-        <translation type="unfinished"></translation>
+        <translation>Títol:</translation>
     </message>
     <message>
         <source>Font Setting:</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuració del tipus de lletra:</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation type="unfinished"></translation>
+        <translation>Edita...</translation>
     </message>
     <message>
         <source>Label Display</source>
-        <translation type="unfinished"></translation>
+        <translation>Visualització d'etiquetes</translation>
     </message>
     <message>
         <source>Number of labels :</source>
-        <translation type="unfinished"></translation>
+        <translation>Nombre d'etiquetes:</translation>
     </message>
     <message>
         <source>Format:</source>
-        <translation type="unfinished"></translation>
+        <translation>Format:</translation>
     </message>
     <message>
         <source>Specify the number format in printf format. For example:
-   &quot;%5.2f&quot; for 3.141592 --&gt; 3.14
-   &quot;%4.2e&quot; for 12300  --&gt; 1.23e+004</source>
-        <translation type="unfinished"></translation>
+   "%5.2f" for 3.141592 --&gt; 3.14
+   "%4.2e" for 12300  --&gt; 1.23e+004</source>
+        <translation>Especifiqueu el format numèric en format printf. Per exemple: " %5.2f "per a 3.141592 -&gt; 3,14" %4.2e "per a 12300 -&gt; 1,23e + 004</translation>
     </message>
     <message>
         <source>Orientation :</source>
-        <translation type="unfinished"></translation>
+        <translation>Orientació:</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation type="unfinished"></translation>
+        <translation>Vertical</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation type="unfinished"></translation>
+        <translation>Horitzontal</translation>
     </message>
     <message>
         <source>Size</source>
-        <translation type="unfinished"></translation>
+        <translation>Mida</translation>
     </message>
     <message>
         <source>Specify Color bar size as rate against window size.</source>
-        <translation type="unfinished"></translation>
+        <translation>Especifiqueu la mida de la barra de color com a taxa respecte a la mida de la finestra.</translation>
     </message>
     <message>
         <source>Width :</source>
-        <translation type="unfinished"></translation>
+        <translation>Amplada:</translation>
     </message>
     <message>
         <source>If you specify 1, Color bar width is the same to window width.</source>
-        <translation type="unfinished"></translation>
+        <translation>Si especifiqueu 1, l'amplada de la barra de color és la mateixa que l'amplada de la finestra.</translation>
     </message>
     <message>
         <source>Height :</source>
-        <translation type="unfinished"></translation>
+        <translation>Alçada:</translation>
     </message>
     <message>
         <source>If you specify 1, Color bar height is the same to window height.</source>
-        <translation type="unfinished"></translation>
+        <translation>Si especifiqueu 1, l'alçada de la barra de color és la mateixa que l'alçada de la finestra.</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished"></translation>
+        <translation>Posició</translation>
     </message>
     <message>
         <source>Specify Color bar left bottom position as rate against window size.</source>
-        <translation type="unfinished"></translation>
+        <translation>Especifiqueu la barra inferior de color a la posició inferior esquerra com a velocitat respecte a la mida de la finestra.</translation>
     </message>
     <message>
         <source>X :</source>
-        <translation type="unfinished"></translation>
+        <translation>X:</translation>
     </message>
     <message>
         <source>If you specify 0, Color bar left edge is located at window left edge.</source>
-        <translation type="unfinished"></translation>
+        <translation>Si especifiqueu 0, la barra de color vora esquerra es troba a la vora esquerra de la finestra.</translation>
     </message>
     <message>
         <source>Y :</source>
-        <translation type="unfinished"></translation>
+        <translation>S:</translation>
     </message>
     <message>
         <source>If you specify 0, Color bar bottom is located at window bottom.</source>
-        <translation type="unfinished"></translation>
+        <translation>Si especifiqueu 0, la barra de color inferior es troba a la part inferior de la finestra.</translation>
     </message>
 </context>
 <context>
     <name>StructuredGridRegionSelectWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formulari</translation>
     </message>
     <message>
         <source>I Min:</source>
-        <translation type="unfinished"></translation>
+        <translation>M'hi apunto:</translation>
     </message>
     <message>
         <source>I Max:</source>
-        <translation type="unfinished"></translation>
+        <translation>I Max:</translation>
     </message>
     <message>
         <source>J Min:</source>
-        <translation type="unfinished"></translation>
+        <translation>J Min:</translation>
     </message>
     <message>
         <source>J Max:</source>
-        <translation type="unfinished"></translation>
+        <translation>J Max:</translation>
     </message>
 </context>
 <context>
     <name>TimeFormatEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formulari</translation>
     </message>
     <message>
         <source>Value type</source>
-        <translation type="unfinished"></translation>
+        <translation>Tipus de valor</translation>
     </message>
     <message>
         <source>Show elapsed time</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostra el temps transcorregut</translation>
     </message>
     <message>
         <source>Show actual time</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostra l'hora real</translation>
     </message>
     <message>
         <source>Elapsed time format</source>
-        <translation type="unfinished"></translation>
+        <translation>Format de temps transcorregut</translation>
     </message>
     <message>
         <source>SS sec</source>
-        <translation type="unfinished"></translation>
+        <translation>SS sec</translation>
     </message>
     <message>
         <source>MM:SS</source>
-        <translation type="unfinished"></translation>
+        <translation>MM: SS</translation>
     </message>
     <message>
         <source>HH:MM:SS</source>
-        <translation type="unfinished"></translation>
+        <translation>HH: MM: SS</translation>
     </message>
     <message>
         <source>DD:HH:MM:SS</source>
-        <translation type="unfinished"></translation>
+        <translation>DD: HH: MM: SS</translation>
     </message>
     <message>
         <source>Actual time format</source>
-        <translation type="unfinished"></translation>
+        <translation>Format d'hora real</translation>
     </message>
     <message>
         <source>yyyy/mm/dd HH:MM:SS</source>
-        <translation type="unfinished"></translation>
+        <translation>aaaa / mm / dd HH: MM: SS</translation>
     </message>
     <message>
         <source>yyyy/mm/dd HH:MM</source>
-        <translation type="unfinished"></translation>
+        <translation>aaaa / mm / dd HH: MM</translation>
     </message>
     <message>
         <source>mm/dd HH:MM:SS</source>
-        <translation type="unfinished"></translation>
+        <translation>mm / dd HH: MM: SS</translation>
     </message>
     <message>
         <source>mm/dd HH:MM</source>
-        <translation type="unfinished"></translation>
+        <translation>mm / dd HH: MM</translation>
     </message>
     <message>
         <source>HH:MM</source>
-        <translation type="unfinished"></translation>
+        <translation>HH: MM</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation type="unfinished"></translation>
+        <translation>Personalitzat</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can use following symbols to define custom time format:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Year: YYYY, YY&lt;/li&gt;&lt;li&gt;Month: M, MM, MMM, MMMM (MMM for Jan etc., MMMM for January etc.)&lt;/li&gt;&lt;li&gt;Day: d, dd, ddd, dddd (ddd for Mon etc., dddd for Monday etc.)&lt;/li&gt;&lt;li&gt;Hour: H, HH, h, hh (h, hh for AM / PM display)&lt;/li&gt;&lt;li&gt;Minute: m, mm&lt;/li&gt;&lt;li&gt;Second: s, ss&lt;/li&gt;&lt;li&gt;AM / PM: A, a&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Podeu utilitzar els símbols següents per definir el format d'hora personalitzat: &lt;/p&gt; &lt;ul&gt; &lt;li&gt; Any: AAAA, AA &lt;/li&gt; &lt;li&gt; Mes: M, MM, MMM, MMMM (MMM per al gener, etc., MMMM per al gener, etc.) &lt;/li&gt; &lt;li&gt; Dia: d, dd, ddd, dddd (ddd per dilluns, dddd per dilluns, etc.) &lt;/ li &gt; &lt;li&gt; Hora: H, HH, h, hh (h, hh per a la visualització AM / PM) &lt;/li&gt; &lt;li&gt; Minut: m, mm &lt;/li&gt; &lt;li&gt; Segon: s, ss &lt;/ li &gt; &lt;li&gt; AM / PM: A, a &lt;/li&gt; &lt;/ul&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
 </context>
 <context>
     <name>TooltipLabel</name>
     <message>
         <source>Help</source>
-        <translation type="unfinished"></translation>
+        <translation>Ajuda</translation>
     </message>
 </context>
 <context>
     <name>TransparencyWidget</name>
     <message>
         <source>Transparent</source>
-        <translation type="unfinished"></translation>
+        <translation>Transparent</translation>
     </message>
 </context>
 <context>
     <name>WaitDialog</name>
     <message>
         <source>Please wait</source>
-        <translation type="unfinished"></translation>
+        <translation>Espereu, si us plau</translation>
     </message>
     <message>
         <source>Please wait...</source>
-        <translation type="unfinished"></translation>
+        <translation>Espereu si us plau...</translation>
     </message>
 </context>
 <context>
     <name>XYAxisDisplaySettingDialog</name>
     <message>
         <source>Axis Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuració de la pantalla de l'eix</translation>
     </message>
     <message>
         <source>X-Axis</source>
-        <translation type="unfinished"></translation>
+        <translation>Eix X.</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation>Automàtic</translation>
     </message>
     <message>
         <source>Max:</source>
-        <translation type="unfinished"></translation>
+        <translation>Màx.:</translation>
     </message>
     <message>
         <source>Min:</source>
-        <translation type="unfinished"></translation>
+        <translation>Min:</translation>
     </message>
     <message>
         <source>Number of labels:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nombre d'etiquetes:</translation>
     </message>
     <message>
         <source>min</source>
-        <translation type="unfinished"></translation>
+        <translation>mín</translation>
     </message>
     <message>
         <source>max</source>
-        <translation type="unfinished"></translation>
+        <translation>màx</translation>
     </message>
     <message>
         <source>Y-Axis</source>
-        <translation type="unfinished"></translation>
+        <translation>Eix Y</translation>
     </message>
     <message>
         <source>Format:</source>
-        <translation type="unfinished"></translation>
+        <translation>Format:</translation>
     </message>
     <message>
         <source>Standard (ex. 13800)</source>
-        <translation type="unfinished"></translation>
+        <translation>Estàndard (ex. 13800)</translation>
     </message>
     <message>
         <source>Scientific notation (ex. 1.38E+04)</source>
-        <translation type="unfinished"></translation>
+        <translation>Notació científica (ex. 1.38E + 04)</translation>
     </message>
 </context>
 <context>
     <name>vtkLineStyleWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formulari</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Color:</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Amplada:</translation>
     </message>
     <message>
         <source>Style:</source>
-        <translation type="unfinished"></translation>
+        <translation>Estil:</translation>
     </message>
     <message>
         <source>Solid</source>
-        <translation type="unfinished"></translation>
+        <translation>Sòlid</translation>
     </message>
     <message>
         <source>Dashed</source>
-        <translation type="unfinished"></translation>
+        <translation>Guió</translation>
     </message>
     <message>
         <source>Dotted</source>
-        <translation type="unfinished"></translation>
+        <translation>Puntejat</translation>
     </message>
 </context>
 <context>
     <name>vtkTextPropertySettingDialog</name>
     <message>
         <source>Font Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuració del tipus de lletra</translation>
     </message>
 </context>
 <context>
     <name>vtkTextPropertySettingWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formulari</translation>
     </message>
     <message>
         <source>Font:</source>
-        <translation type="unfinished"></translation>
+        <translation>Font:</translation>
     </message>
     <message>
         <source>Arial</source>
-        <translation type="unfinished"></translation>
+        <translation>Arial</translation>
     </message>
     <message>
         <source>Courier</source>
-        <translation type="unfinished"></translation>
+        <translation>Missatgeria</translation>
     </message>
     <message>
         <source>Times</source>
-        <translation type="unfinished"></translation>
+        <translation>Temps</translation>
     </message>
     <message>
         <source>Bold</source>
-        <translation type="unfinished"></translation>
+        <translation>Atrevit</translation>
     </message>
     <message>
         <source>B</source>
-        <translation type="unfinished"></translation>
+        <translation>B</translation>
     </message>
     <message>
         <source>Italic</source>
-        <translation type="unfinished"></translation>
+        <translation>Cursiva</translation>
     </message>
     <message>
         <source>I</source>
-        <translation type="unfinished"></translation>
+        <translation>Jo</translation>
     </message>
     <message>
         <source>Shadow</source>
-        <translation type="unfinished"></translation>
+        <translation>Ombra</translation>
     </message>
     <message>
         <source>S</source>
-        <translation type="unfinished"></translation>
+        <translation>S</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Color:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Mida:</translation>
     </message>
 </context>
 </TS>

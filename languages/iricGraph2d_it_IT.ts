@@ -1,171 +1,169 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="it_IT">
 <context>
     <name>Graph2dWindowDataModel</name>
     <message>
         <source>Title Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Impostazione del titolo</translation>
     </message>
     <message>
         <source>Please input the title.</source>
-        <translation type="unfinished"></translation>
+        <translation>Si prega di inserire il titolo.</translation>
     </message>
 </context>
 <context>
     <name>Graph2dWindowMarkerGroupDataItem</name>
     <message>
         <source>Markers</source>
-        <translation type="unfinished"></translation>
+        <translation>marcatori</translation>
     </message>
 </context>
 <context>
     <name>Graph2dWindowMarkerSettingDialog</name>
     <message>
         <source>Marker Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Impostazione marcatore</translation>
     </message>
     <message>
         <source>Orientation</source>
-        <translation type="unfinished"></translation>
+        <translation>Orientamento</translation>
     </message>
     <message>
         <source>X-axis</source>
-        <translation type="unfinished"></translation>
+        <translation>Asse X</translation>
     </message>
     <message>
         <source>Y-axis</source>
-        <translation type="unfinished"></translation>
+        <translation>Asse Y</translation>
     </message>
     <message>
         <source>Axis</source>
-        <translation type="unfinished"></translation>
+        <translation>Asse</translation>
     </message>
     <message>
         <source>Left</source>
-        <translation type="unfinished"></translation>
+        <translation>Sinistra</translation>
     </message>
     <message>
         <source>Right</source>
-        <translation type="unfinished"></translation>
+        <translation>Destra</translation>
     </message>
     <message>
         <source>Marker Value</source>
-        <translation type="unfinished"></translation>
+        <translation>Valore marcatore</translation>
     </message>
     <message>
         <source>Value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Valore:</translation>
     </message>
     <message>
         <source>Label</source>
-        <translation type="unfinished"></translation>
+        <translation>Etichetta</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation>Auto</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation type="unfinished"></translation>
+        <translation>Costume</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished"></translation>
+        <translation>Posizione</translation>
     </message>
     <message>
         <source>Center</source>
-        <translation type="unfinished"></translation>
+        <translation>Centro</translation>
     </message>
     <message>
         <source>Above Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Sopra la linea</translation>
     </message>
     <message>
         <source>Style</source>
-        <translation type="unfinished"></translation>
+        <translation>Stile</translation>
     </message>
     <message>
         <source>Color: </source>
-        <translation type="unfinished"></translation>
+        <translation>Colore:</translation>
     </message>
     <message>
         <source>Show line</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostra linea</translation>
     </message>
     <message>
         <source>Solid Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Linea continua</translation>
     </message>
     <message>
         <source>Dashed Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Linea tratteggiata</translation>
     </message>
     <message>
         <source>Dotted Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Linea tratteggiata</translation>
     </message>
     <message>
         <source>Dots and Dashes</source>
-        <translation type="unfinished"></translation>
+        <translation>Punti e linee</translation>
     </message>
     <message>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Aggiungere</translation>
     </message>
     <message>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Rimuovere</translation>
     </message>
     <message>
         <source>y</source>
-        <translation type="unfinished"></translation>
+        <translation>sì</translation>
     </message>
 </context>
 <context>
     <name>Graph2dWindowVerticalAxisSettingDialog</name>
     <message>
         <source>Vertical Axis Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Impostazione dell'asse verticale</translation>
     </message>
     <message>
         <source>Value Range</source>
-        <translation type="unfinished"></translation>
+        <translation>Intervallo di valori</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation>Auto</translation>
     </message>
     <message>
         <source>Max</source>
-        <translation type="unfinished"></translation>
+        <translation>Max</translation>
     </message>
     <message>
         <source>Min</source>
-        <translation type="unfinished"></translation>
+        <translation>min</translation>
     </message>
     <message>
         <source>Label</source>
-        <translation type="unfinished"></translation>
+        <translation>Etichetta</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation type="unfinished"></translation>
+        <translation>Costume</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
         <source>Move up item</source>
-        <translation type="unfinished"></translation>
+        <translation>Sposta in alto l'elemento</translation>
     </message>
     <message>
         <source>Move down item</source>
-        <translation type="unfinished"></translation>
+        <translation>Sposta in basso l'elemento</translation>
     </message>
     <message>
         <source>Object Browser Item Change</source>
-        <translation type="unfinished"></translation>
+        <translation>Modifica elemento del browser degli oggetti</translation>
     </message>
 </context>
 </TS>

@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="es_ES">
 <context>
     <name>DistanceMeasureCopyPropertyDialog</name>
@@ -123,94 +121,94 @@
     </message>
     <message>
         <source>Delete &amp;Selected...</source>
-        <translation type="unfinished"></translation>
+        <translation>Eliminar seleccionado (&amp;S)...</translation>
     </message>
     <message>
         <source>Delete &amp;All...</source>
-        <translation type="unfinished"></translation>
+        <translation>Eliminar todos (&amp;A)...</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Información</translation>
     </message>
     <message>
         <source>There is no distance measure.</source>
-        <translation type="unfinished"></translation>
+        <translation>No hay medida de distancia.</translation>
     </message>
     <message>
         <source>Delete selected distance measures</source>
-        <translation type="unfinished"></translation>
+        <translation>Eliminar medidas de distancia seleccionadas</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Advertencia</translation>
     </message>
     <message>
         <source>Are you sure you want to delete all distance measures?</source>
-        <translation type="unfinished"></translation>
+        <translation>¿Está seguro de que desea eliminar todas las medidas de distancia?</translation>
     </message>
 </context>
 <context>
     <name>DistanceMeasurePropertyDialog</name>
     <message>
         <source>Distance Measure Property</source>
-        <translation type="unfinished">Propiedad de Medido de Distancia</translation>
+        <translation>Propiedad de medida de distancia</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished">Nombre:</translation>
+        <translation>Nombre:</translation>
     </message>
     <message>
         <source>Start Point:</source>
-        <translation type="unfinished">Punto de Empieza:</translation>
+        <translation>Punto de partida:</translation>
     </message>
     <message>
         <source>, </source>
-        <translation type="unfinished">, </translation>
+        <translation>,</translation>
     </message>
     <message>
         <source>End Point:</source>
-        <translation type="unfinished">Punto Final:</translation>
+        <translation>Punto final:</translation>
     </message>
     <message>
         <source>Label</source>
-        <translation type="unfinished">Etiqueta</translation>
+        <translation>Etiqueta</translation>
     </message>
     <message>
         <source>Show Label</source>
-        <translation type="unfinished">Ensenar Etiqueta</translation>
+        <translation>Mostrar etiqueta</translation>
     </message>
     <message>
         <source>Content</source>
-        <translation type="unfinished">Contenido</translation>
+        <translation>Contenido</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished">Auto</translation>
+        <translation>Auto</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation type="unfinished">Personalizado</translation>
+        <translation>Personalizado</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished">Posicion</translation>
+        <translation>Posición</translation>
     </message>
     <message>
         <source>Center-Top</source>
-        <translation type="unfinished">Centro-Arriba</translation>
+        <translation>Centro-parte superior</translation>
     </message>
     <message>
         <source>Middle-Left</source>
-        <translation type="unfinished">Centro-Izquierda</translation>
+        <translation>Medio-izquierda</translation>
     </message>
     <message>
         <source>Middle-Right</source>
-        <translation type="unfinished">Centro-Derecha</translation>
+        <translation>Medio-Derecha</translation>
     </message>
     <message>
         <source>Center-Bottom</source>
-        <translation type="unfinished">Centro-Abajo</translation>
+        <translation>Centro-Inferior</translation>
     </message>
     <message>
         <source>Font Setting</source>
@@ -218,15 +216,15 @@
     </message>
     <message>
         <source>Show End Markers</source>
-        <translation type="unfinished">Ensenar Marcadores de Fin</translation>
+        <translation>Mostrar marcadores de finalización</translation>
     </message>
     <message>
         <source>Marker Size:</source>
-        <translation type="unfinished">Tamano de Marcador:</translation>
+        <translation>Tamaño del marcador:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Color:</translation>
     </message>
 </context>
 </TS>

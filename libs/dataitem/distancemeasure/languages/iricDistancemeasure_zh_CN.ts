@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="zh_CN">
 <context>
     <name>DistanceMeasureCopyPropertyDialog</name>
@@ -123,110 +121,110 @@
     </message>
     <message>
         <source>Delete &amp;Selected...</source>
-        <translation type="unfinished"></translation>
+        <translation>删除所选 (&amp;S)...</translation>
     </message>
     <message>
         <source>Delete &amp;All...</source>
-        <translation type="unfinished"></translation>
+        <translation>删除所有 (&amp;A)...</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>信息</translation>
     </message>
     <message>
         <source>There is no distance measure.</source>
-        <translation type="unfinished"></translation>
+        <translation>没有距离度量。</translation>
     </message>
     <message>
         <source>Delete selected distance measures</source>
-        <translation type="unfinished"></translation>
+        <translation>删除选定的距离度量</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>警告</translation>
     </message>
     <message>
         <source>Are you sure you want to delete all distance measures?</source>
-        <translation type="unfinished"></translation>
+        <translation>确定要删除所有距离度量吗？</translation>
     </message>
 </context>
 <context>
     <name>DistanceMeasurePropertyDialog</name>
     <message>
         <source>Distance Measure Property</source>
-        <translation type="unfinished">距离测量属性</translation>
+        <translation>距离测量属性</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished">名称</translation>
+        <translation>姓名：</translation>
     </message>
     <message>
         <source>Start Point:</source>
-        <translation type="unfinished">起点</translation>
+        <translation>起点：</translation>
     </message>
     <message>
         <source>, </source>
-        <translation type="unfinished"></translation>
+        <translation>,</translation>
     </message>
     <message>
         <source>End Point:</source>
-        <translation type="unfinished">终点</translation>
+        <translation>终点：</translation>
     </message>
     <message>
         <source>Label</source>
-        <translation type="unfinished">标注</translation>
+        <translation>标签</translation>
     </message>
     <message>
         <source>Show Label</source>
-        <translation type="unfinished">显示标注</translation>
+        <translation>显示标签</translation>
     </message>
     <message>
         <source>Content</source>
-        <translation type="unfinished">文本</translation>
+        <translation>内容</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished">自动</translation>
+        <translation>汽车</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation type="unfinished">自定义</translation>
+        <translation>风俗</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished">位置</translation>
+        <translation>位置</translation>
     </message>
     <message>
         <source>Center-Top</source>
-        <translation type="unfinished">中上</translation>
+        <translation>中上</translation>
     </message>
     <message>
         <source>Middle-Left</source>
-        <translation type="unfinished">左上</translation>
+        <translation>中左</translation>
     </message>
     <message>
         <source>Middle-Right</source>
-        <translation type="unfinished">右上</translation>
+        <translation>中右</translation>
     </message>
     <message>
         <source>Center-Bottom</source>
-        <translation type="unfinished">中下</translation>
+        <translation>中底</translation>
     </message>
     <message>
         <source>Font Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>字体设置</translation>
     </message>
     <message>
         <source>Show End Markers</source>
-        <translation type="unfinished">显示末尾标记</translation>
+        <translation>显示结束标记</translation>
     </message>
     <message>
         <source>Marker Size:</source>
-        <translation type="unfinished">标记大小</translation>
+        <translation>标记尺寸：</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished">颜色</translation>
+        <translation>颜色：</translation>
     </message>
 </context>
 </TS>

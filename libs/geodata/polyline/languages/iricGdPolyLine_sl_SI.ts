@@ -1,171 +1,169 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="sl_SI">
 <context>
     <name>GeoDataPolyLine</name>
     <message>
         <source>&amp;Add Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Dodajte Vertex (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Odstranite Vertex (&amp;R)</translation>
     </message>
     <message>
         <source>Edit &amp;Coordinates...</source>
-        <translation type="unfinished"></translation>
+        <translation>Urejanje koordinat (&amp;C)...</translation>
     </message>
     <message>
         <source>Poly&amp;line</source>
-        <translation type="unfinished"></translation>
+        <translation>Polyline (&amp;L)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Opozorilo</translation>
     </message>
     <message>
         <source>Polyline must have two vertices at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>Polilinija mora imeti vsaj dve točki.</translation>
     </message>
     <message>
         <source>Finish Defining Polyline</source>
-        <translation type="unfinished"></translation>
+        <translation>Dokončaj določanje polilinije</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informacije</translation>
     </message>
     <message>
         <source>Please define polyline by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
-        <translation type="unfinished"></translation>
+        <translation>Prosimo, da s klikom miške določite polilinijo. Dokončanje določite z dvojnim klikom ali pritiskom na tipko za povratek.</translation>
     </message>
     <message>
         <source>polyline</source>
-        <translation type="unfinished"></translation>
+        <translation>polilinije</translation>
     </message>
     <message>
         <source>Polyline</source>
-        <translation type="unfinished"></translation>
+        <translation>Polyline</translation>
     </message>
     <message>
         <source>Insert PolyLine Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Vstavite PolyLine Vertex</translation>
     </message>
     <message>
         <source>PolyLine Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>PolyLine koordinate</translation>
     </message>
     <message>
         <source>Edit PolyLine Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Urejanje koordinat PolyLine</translation>
     </message>
     <message>
         <source>Finish Defining PolyLine</source>
-        <translation type="unfinished"></translation>
+        <translation>Dokončajte definiranje PolyLine</translation>
     </message>
     <message>
         <source>Move PolyLine</source>
-        <translation type="unfinished"></translation>
+        <translation>Premakni PolyLine</translation>
     </message>
     <message>
         <source>Move PolyLine Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Premakni PolyLine Vertex</translation>
     </message>
     <message>
         <source>Add New PolyLine Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Dodajte novo točko PolyLine</translation>
     </message>
     <message>
         <source>Remove PolyLine Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Odstranite PolyLine Vertex</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyLineCreator</name>
     <message>
         <source>Polyline</source>
-        <translation type="unfinished"></translation>
+        <translation>Polyline</translation>
     </message>
     <message>
         <source>Polyline%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Polyline %1</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyLineImporter</name>
     <message>
         <source>ESRI Shapefile (Polyline)</source>
-        <translation type="unfinished"></translation>
+        <translation>ESRI Shapefile (polilinija)</translation>
     </message>
     <message>
         <source>ESRI Shapefile (*.shp) (Polyline)</source>
-        <translation type="unfinished"></translation>
+        <translation>ESRI Shapefile (*.shp) (Polyline)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Napaka</translation>
     </message>
     <message>
         <source>The shape type contained in this shape file is not polyline.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vrsta oblike, ki jo vsebuje ta datoteka z oblikami, ni polilinija.</translation>
     </message>
     <message>
         <source>Opening %1 failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Odpiranje %1 ni uspelo.</translation>
     </message>
     <message>
         <source>The number of polylines mismatches between shp file and dbf file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Število polilinij se ne ujema med datoteko shp in datoteko dbf.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyLineImporterSettingDialog</name>
     <message>
         <source>PolyLine Import Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastavitev uvoza PolyLine</translation>
     </message>
     <message>
         <source>Encoding:</source>
-        <translation type="unfinished"></translation>
+        <translation>Kodiranje:</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Ime</translation>
     </message>
     <message>
         <source>Load from Shape file attribute</source>
-        <translation type="unfinished"></translation>
+        <translation>Naloži iz atributa datoteke oblike</translation>
     </message>
     <message>
         <source>Name is set automatically (ex. Polyline1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ime se nastavi samodejno (npr. Polyline1)</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation type="unfinished"></translation>
+        <translation>Vrednost</translation>
     </message>
     <message>
         <source>Specify value</source>
-        <translation type="unfinished"></translation>
+        <translation>Določite vrednost</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Opozorilo</translation>
     </message>
     <message>
         <source>You cannot specify the same column for both Name and Value.</source>
-        <translation type="unfinished"></translation>
+        <translation>Za ime in vrednost ne morete podati istega stolpca.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyLineShapeExporter</name>
     <message>
         <source>ESRI Shapefile</source>
-        <translation type="unfinished"></translation>
+        <translation>ESRI Shapefile</translation>
     </message>
     <message>
         <source>ESRI Shape file (*.shp)</source>
-        <translation type="unfinished"></translation>
+        <translation>Datoteka oblike ESRI (*.shp)</translation>
     </message>
 </context>
 </TS>

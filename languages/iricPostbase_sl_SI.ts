@@ -1,363 +1,361 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="sl_SI">
 <context>
     <name>ParticleArbitraryTimeEditDialog</name>
     <message>
         <source>Particle generate time setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastavitev časa ustvarjanja delcev</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation type="unfinished"></translation>
+        <translation>Dodaj (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Izbriši (&amp;D)</translation>
     </message>
     <message>
         <source>Add time step</source>
-        <translation type="unfinished"></translation>
+        <translation>Dodajte časovni korak</translation>
     </message>
     <message>
         <source>Select Time step to add</source>
-        <translation type="unfinished"></translation>
+        <translation>Izberite Časovni korak za dodajanje</translation>
     </message>
 </context>
 <context>
     <name>PostAllZoneSelectingDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Dialog</translation>
     </message>
     <message>
         <source>Dimension:</source>
-        <translation type="unfinished"></translation>
+        <translation>Dimenzija:</translation>
     </message>
     <message>
         <source>Grid Type:</source>
-        <translation type="unfinished"></translation>
+        <translation>Vrsta mreže:</translation>
     </message>
     <message>
         <source>&amp;Region:</source>
-        <translation type="unfinished"></translation>
+        <translation>Regija: (&amp;R)</translation>
     </message>
     <message>
         <source>One dimensional data</source>
-        <translation type="unfinished"></translation>
+        <translation>Enodimenzionalni podatki</translation>
     </message>
     <message>
         <source>Two dimensional data</source>
-        <translation type="unfinished"></translation>
+        <translation>Dvodimenzionalni podatki</translation>
     </message>
     <message>
         <source>Three dimensional data</source>
-        <translation type="unfinished"></translation>
+        <translation>Tridimenzionalni podatki</translation>
     </message>
 </context>
 <context>
     <name>PostParticleBasicSettingDialog</name>
     <message>
         <source>Particles Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastavitev delcev</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Barva:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Velikost:</translation>
     </message>
 </context>
 <context>
     <name>PostParticleScalarPropertyDialog</name>
     <message>
         <source>Particle Scalar Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Skalarna nastavitev delcev</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Barva po meri</translation>
     </message>
     <message>
         <source>Color by attribute value</source>
-        <translation type="unfinished"></translation>
+        <translation>Barva po vrednosti atributa</translation>
     </message>
     <message>
         <source>Attribute:</source>
-        <translation type="unfinished"></translation>
+        <translation>Atribut:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Velikost:</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastavitev barvne vrstice (&amp;C)</translation>
     </message>
 </context>
 <context>
     <name>PostParticleVectorPropertyDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastavitev puščice</translation>
     </message>
     <message>
         <source>Attribute value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Vrednost atributa:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation type="unfinished"></translation>
+        <translation>Dolžina</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation>Samodejno</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Standardna vrednost:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation type="unfinished"></translation>
+        <translation>[gospa]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation type="unfinished"></translation>
+        <translation>Dolžina na zaslonu:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation type="unfinished"></translation>
+        <translation>[piksel]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation type="unfinished"></translation>
+        <translation>Najmanjša vrednost za črpanje:</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation type="unfinished"></translation>
+        <translation>Vzorčenje</translation>
     </message>
     <message>
         <source>All particles</source>
-        <translation type="unfinished"></translation>
+        <translation>Vsi delci</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation type="unfinished"></translation>
+        <translation>Stopnja vzorčenja:</translation>
     </message>
     <message>
         <source>Specify number of particles</source>
-        <translation type="unfinished"></translation>
+        <translation>Določite število delcev</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Barva</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation type="unfinished"></translation>
+        <translation>Barva po meri</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation type="unfinished"></translation>
+        <translation>Po skalarni vrednosti</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation type="unfinished"></translation>
+        <translation>Oblika puščice</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Velikost puščice:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Širina črte:</translation>
     </message>
 </context>
 <context>
     <name>PostPolyDataBasicSettingDialog</name>
     <message>
         <source>Polygon Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastavitev poligona</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Barva:</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Širina črte:</translation>
     </message>
 </context>
 <context>
     <name>PostPolyDataScalarPropertyDialog</name>
     <message>
         <source>Polygon Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastavitev poligona</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Barva po meri</translation>
     </message>
     <message>
         <source>Color by attribute value</source>
-        <translation type="unfinished"></translation>
+        <translation>Barva po vrednosti atributa</translation>
     </message>
     <message>
         <source>Attribute:</source>
-        <translation type="unfinished"></translation>
+        <translation>Atribut:</translation>
     </message>
     <message>
         <source>Line Width</source>
-        <translation type="unfinished"></translation>
+        <translation>Širina črte</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastavitev barvne vrstice (&amp;C)</translation>
     </message>
 </context>
 <context>
     <name>PostStringResultDataItem</name>
     <message>
         <source>Label</source>
-        <translation type="unfinished"></translation>
+        <translation>Oznaka</translation>
     </message>
     <message>
         <source>Move label</source>
-        <translation type="unfinished"></translation>
+        <translation>Premakni oznako</translation>
     </message>
     <message>
         <source>Resize label</source>
-        <translation type="unfinished"></translation>
+        <translation>Spremenite velikost nalepke</translation>
     </message>
     <message>
         <source>Edit Label Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Uredi nastavitev oznake</translation>
     </message>
 </context>
 <context>
     <name>PostStringResultSettingDialog</name>
     <message>
         <source>Label Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastavitev oznake</translation>
     </message>
     <message>
         <source>Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastavitev</translation>
     </message>
     <message>
         <source>Position and Size</source>
-        <translation type="unfinished"></translation>
+        <translation>Položaj in velikost</translation>
     </message>
     <message>
         <source>Margin</source>
-        <translation type="unfinished"></translation>
+        <translation>Marža</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation type="unfinished"></translation>
+        <translation>Vodoravno</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation type="unfinished"></translation>
+        <translation>Navpično</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished"></translation>
+        <translation>Položaj</translation>
     </message>
     <message>
         <source>Left:</source>
-        <translation type="unfinished"></translation>
+        <translation>Levo:</translation>
     </message>
     <message>
         <source>Top:</source>
-        <translation type="unfinished"></translation>
+        <translation>Na vrh:</translation>
     </message>
     <message>
         <source>Size</source>
-        <translation type="unfinished"></translation>
+        <translation>Velikost</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation>Samodejno</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Premer:</translation>
     </message>
     <message>
         <source>Height:</source>
-        <translation type="unfinished"></translation>
+        <translation>Višina:</translation>
     </message>
     <message>
         <source>Font and Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Pisava in barva</translation>
     </message>
     <message>
         <source>Font:</source>
-        <translation type="unfinished"></translation>
+        <translation>Pisava:</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation type="unfinished"></translation>
+        <translation>Uredi...</translation>
     </message>
     <message>
         <source>Font color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Barva pisave:</translation>
     </message>
     <message>
         <source>Background color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Barva ozadja:</translation>
     </message>
 </context>
 <context>
     <name>PostTimeDataItem</name>
     <message>
         <source>Time</source>
-        <translation type="unfinished"></translation>
+        <translation>Čas</translation>
     </message>
     <message>
         <source>Edit time setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Uredite nastavitev časa</translation>
     </message>
 </context>
 <context>
     <name>PostTimeEditDialog</name>
     <message>
         <source>Time Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastavitev časa</translation>
     </message>
     <message>
         <source>Use project setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Uporabite nastavitve projekta</translation>
     </message>
     <message>
         <source>Time Format</source>
-        <translation type="unfinished"></translation>
+        <translation>Oblika časa</translation>
     </message>
 </context>
 <context>
     <name>PostTitleDataItem</name>
     <message>
         <source>Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Naslov</translation>
     </message>
 </context>
 <context>
     <name>PostTitleEditDialog</name>
     <message>
         <source>Title Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastavitev naslova</translation>
     </message>
     <message>
         <source>Title:</source>
-        <translation type="unfinished"></translation>
+        <translation>Naslov:</translation>
     </message>
     <message>
         <source>Note: Only English Characters can be used for title.</source>
-        <translation type="unfinished"></translation>
+        <translation>Opomba: Za naslov lahko uporabite samo angleške znake.</translation>
     </message>
 </context>
 </TS>

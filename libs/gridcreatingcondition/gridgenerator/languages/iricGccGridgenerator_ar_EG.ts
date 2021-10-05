@@ -1,225 +1,223 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ar_EG">
 <context>
     <name>GridCreatingConditionCreatorGridGenerator</name>
     <message>
         <source>Create geometric shape grids</source>
-        <translation type="unfinished"></translation>
+        <translation>إنشاء شبكات شكل هندسي</translation>
     </message>
     <message>
         <source>You can create straight grids or sine curve grids by specifying parameters.</source>
-        <translation type="unfinished"></translation>
+        <translation>يمكنك إنشاء شبكات مستقيمة أو شبكات منحنى جيبي عن طريق تحديد المعلمات.</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionGridGenerator</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>تحذير</translation>
     </message>
     <message>
         <source>The maximum number of grid nodes is %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>الحد الأقصى لعدد عقد الشبكة هو %1.</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionGridGeneratorSettingDialog</name>
     <message>
         <source>Grid Creation</source>
-        <translation type="unfinished"></translation>
+        <translation>إنشاء الشبكة</translation>
     </message>
     <message>
         <source>Channel and Bed shape</source>
-        <translation type="unfinished"></translation>
+        <translation>القناة وشكل السرير</translation>
     </message>
     <message>
         <source>Channel Shape</source>
-        <translation type="unfinished"></translation>
+        <translation>شكل القناة</translation>
     </message>
     <message>
         <source>Simple cross section</source>
-        <translation type="unfinished"></translation>
+        <translation>مقطع عرضي بسيط</translation>
     </message>
     <message>
         <source>Simple compound channel</source>
-        <translation type="unfinished"></translation>
+        <translation>قناة مركبة بسيطة</translation>
     </message>
     <message>
         <source>Complex compound channel</source>
-        <translation type="unfinished"></translation>
+        <translation>قناة مركبة معقدة</translation>
     </message>
     <message>
         <source>Channel Property</source>
-        <translation type="unfinished"></translation>
+        <translation>خاصية القناة</translation>
     </message>
     <message>
         <source>Fixed bed (only flood channels)</source>
-        <translation type="unfinished"></translation>
+        <translation>سرير ثابت (قنوات الفيضانات فقط)</translation>
     </message>
     <message>
         <source>Movable bed</source>
-        <translation type="unfinished"></translation>
+        <translation>سرير متحرك</translation>
     </message>
     <message>
         <source>Bed Shape</source>
-        <translation type="unfinished"></translation>
+        <translation>شكل السرير</translation>
     </message>
     <message>
         <source>Flat</source>
-        <translation type="unfinished"></translation>
+        <translation>مسطحة</translation>
     </message>
     <message>
         <source>Alternate bar shape in low water channel</source>
-        <translation type="unfinished"></translation>
+        <translation>شكل شريط بديل في قناة منخفضة المياه</translation>
     </message>
     <message>
         <source>Parabolic shape cross section</source>
-        <translation type="unfinished"></translation>
+        <translation>المقطع العرضي على شكل مكافئ</translation>
     </message>
     <message>
         <source>Amplitude (Depth)</source>
-        <translation type="unfinished"></translation>
+        <translation>السعة (العمق)</translation>
     </message>
     <message>
         <source>Alternate bar : Amplitude of cross sectional bed shape [m]</source>
-        <translation type="unfinished"></translation>
+        <translation>شريط بديل: سعة شكل السرير المقطعي [م]</translation>
     </message>
     <message>
         <source>Parabolic shape : Depth of center of cross section [m]</source>
-        <translation type="unfinished"></translation>
+        <translation>شكل مكافئ: عمق مركز المقطع العرضي [م]</translation>
     </message>
     <message>
         <source>Lag</source>
-        <translation type="unfinished"></translation>
+        <translation>بطئ</translation>
     </message>
     <message>
         <source>Lag between channel geometry and bar location [m]</source>
-        <translation type="unfinished"></translation>
+        <translation>الفجوة بين هندسة القناة وموقع الشريط [م]</translation>
     </message>
     <message>
         <source>Common parameters</source>
-        <translation type="unfinished"></translation>
+        <translation>المعلمات المشتركة</translation>
     </message>
     <message>
         <source>Meander wave length [m] :</source>
-        <translation type="unfinished"></translation>
+        <translation>طول الموجة المتعرجة [م]:</translation>
     </message>
     <message>
         <source>Wave number :</source>
-        <translation type="unfinished"></translation>
+        <translation>رقم الموجة:</translation>
     </message>
     <message>
         <source>Meander angle (degree, zero for a straight channel) :</source>
-        <translation type="unfinished"></translation>
+        <translation>زاوية التعرج (درجة ، صفر لقناة مستقيمة):</translation>
     </message>
     <message>
         <source>Channel slope :</source>
-        <translation type="unfinished"></translation>
+        <translation>منحدر القناة:</translation>
     </message>
     <message>
         <source>Number of grids for one wave length in the longitudinal direction :</source>
-        <translation type="unfinished"></translation>
+        <translation>عدد الشبكات لطول موجة واحد في الاتجاه الطولي:</translation>
     </message>
     <message>
         <source>Channel shape</source>
-        <translation type="unfinished"></translation>
+        <translation>شكل القناة</translation>
     </message>
     <message>
         <source>Simple channel</source>
-        <translation type="unfinished"></translation>
+        <translation>قناة بسيطة</translation>
     </message>
     <message>
         <source>Channel width [m] :</source>
-        <translation type="unfinished"></translation>
+        <translation>عرض القناة [م]:</translation>
     </message>
     <message>
         <source>Number of grids in the cross sectional direction :</source>
-        <translation type="unfinished"></translation>
+        <translation>عدد الشبكات في اتجاه المقطع العرضي:</translation>
     </message>
     <message>
         <source>Simple compound</source>
-        <translation type="unfinished"></translation>
+        <translation>مركب بسيط</translation>
     </message>
     <message>
         <source>Width of the left flood channel [m] :</source>
-        <translation type="unfinished"></translation>
+        <translation>عرض قناة الفيضان اليسرى [م]:</translation>
     </message>
     <message>
         <source>Width of the low water channel [m] :</source>
-        <translation type="unfinished"></translation>
+        <translation>عرض قناة المياه المنخفضة [م]:</translation>
     </message>
     <message>
         <source>Width of the right flood channel [m] :</source>
-        <translation type="unfinished"></translation>
+        <translation>عرض قناة الفيضان اليمنى [م]:</translation>
     </message>
     <message>
         <source>Complex compound</source>
-        <translation type="unfinished"></translation>
+        <translation>مجمع معقد</translation>
     </message>
     <message>
         <source>Total width between banks [m] :</source>
-        <translation type="unfinished"></translation>
+        <translation>العرض الإجمالي بين البنوك [م]:</translation>
     </message>
     <message>
         <source>Compound channel</source>
-        <translation type="unfinished"></translation>
+        <translation>قناة مركبة</translation>
     </message>
     <message>
         <source>Number of grids for the left flood channel :</source>
-        <translation type="unfinished"></translation>
+        <translation>عدد الشبكات لقناة الفيضان اليسرى:</translation>
     </message>
     <message>
         <source>Number of grids for the low water channel :</source>
-        <translation type="unfinished"></translation>
+        <translation>عدد الشبكات لقناة المياه المنخفضة:</translation>
     </message>
     <message>
         <source>Number of grids for the right flood channel :</source>
-        <translation type="unfinished"></translation>
+        <translation>عدد الشبكات لقناة الفيضان اليمنى:</translation>
     </message>
     <message>
         <source>Depth of the low water channel [m] :</source>
-        <translation type="unfinished"></translation>
+        <translation>عمق قناة المياه المنخفضة [م]:</translation>
     </message>
     <message>
         <source>Slope of the low water channel banks :</source>
-        <translation type="unfinished"></translation>
+        <translation>منحدر ضفاف قناة المياه المنخفضة:</translation>
     </message>
     <message>
         <source>Number of grids for the low water channel banks :</source>
-        <translation type="unfinished"></translation>
+        <translation>عدد شبكات قنوات المياه المنخفضة:</translation>
     </message>
     <message>
         <source>Width change</source>
-        <translation type="unfinished"></translation>
+        <translation>تغيير العرض</translation>
     </message>
     <message>
         <source>Constant</source>
-        <translation type="unfinished"></translation>
+        <translation>ثابت</translation>
     </message>
     <message>
         <source>Change in flow direction</source>
-        <translation type="unfinished"></translation>
+        <translation>تغيير في اتجاه التدفق</translation>
     </message>
     <message>
         <source>Width change type</source>
-        <translation type="unfinished"></translation>
+        <translation>نوع تغيير العرض</translation>
     </message>
     <message>
         <source>Left and right banks</source>
-        <translation type="unfinished"></translation>
+        <translation>البنوك اليسرى واليمنى</translation>
     </message>
     <message>
         <source>Left bank only</source>
-        <translation type="unfinished"></translation>
+        <translation>الضفة اليسرى فقط</translation>
     </message>
     <message>
         <source>Right bank only</source>
-        <translation type="unfinished"></translation>
+        <translation>البنك الأيمن فقط</translation>
     </message>
     <message>
         <source>Width variation [m] :</source>
-        <translation type="unfinished"></translation>
+        <translation>عرض الاختلاف [م]:</translation>
     </message>
 </context>
 </TS>

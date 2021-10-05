@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="pt_BR">
 <context>
     <name>GeoDataPolygon</name>
@@ -25,11 +23,11 @@
     </message>
     <message>
         <source>polygon</source>
-        <translation type="unfinished"></translation>
+        <translation>polígono</translation>
     </message>
     <message>
         <source>Polygon</source>
-        <translation type="unfinished">Poligono </translation>
+        <translation>Polígono</translation>
     </message>
     <message>
         <source>Polygon Color Setting</source>
@@ -199,7 +197,7 @@
 - Lines of polygon intersect each other
 - Hole polygon is outside of region polygon
 - Polygon passes the same point several times</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 O polígono não pode ser importado. O polígono como abaixo não pode ser importado: - Tem menos de três pontos - Não é fechado - As linhas do polígono se cruzam - O polígono do furo está fora do polígono da região - O polígono passa pelo mesmo ponto várias vezes</translation>
     </message>
     <message>
         <source>Warning</source>

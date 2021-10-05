@@ -1,317 +1,315 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="eu_ES">
 <context>
     <name>Graph2dScatteredAxisSettingDialog</name>
     <message>
         <source>Axis Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Ardatzaren ezarpena</translation>
     </message>
     <message>
         <source>X Axis</source>
-        <translation type="unfinished"></translation>
+        <translation>X ardatza</translation>
     </message>
     <message>
         <source>Value Range</source>
-        <translation type="unfinished"></translation>
+        <translation>Balio Tartea</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation>Automatikoa</translation>
     </message>
     <message>
         <source>Max:</source>
-        <translation type="unfinished"></translation>
+        <translation>Max:</translation>
     </message>
     <message>
         <source>Min:</source>
-        <translation type="unfinished"></translation>
+        <translation>Min:</translation>
     </message>
     <message>
         <source>Logarithmic axis</source>
-        <translation type="unfinished"></translation>
+        <translation>Ardatz logaritmikoa</translation>
     </message>
     <message>
         <source>Label: </source>
-        <translation type="unfinished"></translation>
+        <translation>Etiketa:</translation>
     </message>
     <message>
         <source>Reverse Direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Alderantzizko norabidea</translation>
     </message>
     <message>
         <source>General</source>
-        <translation type="unfinished"></translation>
+        <translation>Orokorra</translation>
     </message>
     <message>
         <source>Title: </source>
-        <translation type="unfinished"></translation>
+        <translation>Izenburua:</translation>
     </message>
     <message>
         <source>Add Time to Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Gehitu denbora izenburuari</translation>
     </message>
     <message>
         <source>Y Axis</source>
-        <translation type="unfinished"></translation>
+        <translation>Y ardatza</translation>
     </message>
     <message>
         <source>Left</source>
-        <translation type="unfinished"></translation>
+        <translation>Ezkerra</translation>
     </message>
     <message>
         <source>Right</source>
-        <translation type="unfinished"></translation>
+        <translation>Eskubidea</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Abisua</translation>
     </message>
     <message>
         <source>X-axes range is invalid.</source>
-        <translation type="unfinished"></translation>
+        <translation>X ardatzen barrutia baliogabea da.</translation>
     </message>
     <message>
         <source>Left Y-axes range is invalid.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ezkerreko Y ardatzen barrutia baliogabea da.</translation>
     </message>
     <message>
         <source>Right Y-axes range is invalid.</source>
-        <translation type="unfinished"></translation>
+        <translation>Eskuineko Y ardatzen barrutia baliogabea da.</translation>
     </message>
 </context>
 <context>
     <name>Graph2dScatteredWindow</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma</translation>
     </message>
     <message>
         <source>I:</source>
-        <translation type="unfinished"></translation>
+        <translation>I:</translation>
     </message>
     <message>
         <source>J:</source>
-        <translation type="unfinished"></translation>
+        <translation>J:</translation>
     </message>
     <message>
         <source>K:</source>
-        <translation type="unfinished"></translation>
+        <translation>K:</translation>
     </message>
     <message>
         <source>Select &amp;Data Source</source>
-        <translation type="unfinished"></translation>
+        <translation>Aukeratu Datu iturria (&amp;D)</translation>
     </message>
     <message>
         <source>&amp;Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Ezarpena (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;Close</source>
-        <translation type="unfinished"></translation>
+        <translation>Itxi (&amp;C)</translation>
     </message>
     <message>
         <source>Scattered Chart Window: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Diagrama barreiatua: %1</translation>
     </message>
     <message>
         <source>Controller</source>
-        <translation type="unfinished"></translation>
+        <translation>Kontrolatzailea</translation>
     </message>
 </context>
 <context>
     <name>Graph2dScatteredWindowActionManager</name>
     <message>
         <source>&amp;Draw</source>
-        <translation type="unfinished"></translation>
+        <translation>Marraztu (&amp;D)</translation>
     </message>
     <message>
         <source>&amp;Data Source Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Datu iturriaren ezarpena (&amp;D)...</translation>
     </message>
     <message>
         <source>&amp;Axis Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Ardatzaren ezarpena (&amp;A)...</translation>
     </message>
     <message>
         <source>D&amp;raw Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Marraztu ezarpena (&amp;R)...</translation>
     </message>
     <message>
         <source>&amp;Legend</source>
-        <translation type="unfinished"></translation>
+        <translation>Kondaira (&amp;L)</translation>
     </message>
 </context>
 <context>
     <name>Graph2dScatteredWindowControlWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma</translation>
     </message>
     <message>
         <source>&amp;Data Source</source>
-        <translation type="unfinished"></translation>
+        <translation>Datuen iturria (&amp;D)</translation>
     </message>
     <message>
         <source>Axis &amp;Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Ardatzaren ezarpena (&amp;S)</translation>
     </message>
     <message>
         <source>Draw &amp;Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Marraztu ezarpena (&amp;S)</translation>
     </message>
 </context>
 <context>
     <name>Graph2dScatteredWindowDataModel</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Errorea</translation>
     </message>
     <message>
         <source>Saving snapshot image to %1 failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Argazkiaren argazkia gordetzen %1 huts egin du.</translation>
     </message>
     <message>
         <source>Time = %1 sec</source>
-        <translation type="unfinished"></translation>
+        <translation>Denbora = %1 seg</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Abisua</translation>
     </message>
     <message>
         <source>No calculation result exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ez dago kalkulu emaitzarik.</translation>
     </message>
     <message>
         <source>Graph window setup fail. Calculation result is not loaded properly.</source>
-        <translation type="unfinished"></translation>
+        <translation>Grafikoaren leihoaren konfigurazioak huts egin du. Kalkuluaren emaitza ez da behar bezala kargatu.</translation>
     </message>
 </context>
 <context>
     <name>Graph2dScatteredWindowDataSourceDialog</name>
     <message>
         <source>Data Source Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Datu iturriaren ezarpena</translation>
     </message>
     <message>
         <source>X Axis:</source>
-        <translation type="unfinished"></translation>
+        <translation>X ardatza:</translation>
     </message>
     <message>
         <source>Y Axis:</source>
-        <translation type="unfinished"></translation>
+        <translation>Y ardatza:</translation>
     </message>
     <message>
         <source>Position X</source>
-        <translation type="unfinished"></translation>
+        <translation>X posizioa</translation>
     </message>
     <message>
         <source>Position Y</source>
-        <translation type="unfinished"></translation>
+        <translation>Y posizioa</translation>
     </message>
     <message>
         <source>Position Z</source>
-        <translation type="unfinished"></translation>
+        <translation>Z posizioa</translation>
     </message>
 </context>
 <context>
     <name>Graph2dScatteredWindowDrawSettingDialog</name>
     <message>
         <source>Draw Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Marraztu ezarpena</translation>
     </message>
 </context>
 <context>
     <name>Graph2dScatteredWindowObjectBrowser</name>
     <message>
         <source>Object Browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Objektu arakatzailea</translation>
     </message>
 </context>
 <context>
     <name>Graph2dScatteredWindowResultDataItem</name>
     <message>
         <source>Position X</source>
-        <translation type="unfinished"></translation>
+        <translation>X posizioa</translation>
     </message>
     <message>
         <source>Position Y</source>
-        <translation type="unfinished"></translation>
+        <translation>Y posizioa</translation>
     </message>
     <message>
         <source>Position Z</source>
-        <translation type="unfinished"></translation>
+        <translation>Z posizioa</translation>
     </message>
     <message>
         <source>Stream-wise Distance</source>
-        <translation type="unfinished"></translation>
+        <translation>Erreka bidezko Distantzia</translation>
     </message>
 </context>
 <context>
     <name>Graph2dScatteredWindowResultGroupDataItem</name>
     <message>
         <source>Calcuation Results</source>
-        <translation type="unfinished"></translation>
+        <translation>Kalkuluaren emaitzak</translation>
     </message>
 </context>
 <context>
     <name>Graph2dScatteredWindowSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma</translation>
     </message>
     <message>
         <source>Label:</source>
-        <translation type="unfinished"></translation>
+        <translation>Etiketa:</translation>
     </message>
     <message>
         <source>Y Axis:</source>
-        <translation type="unfinished"></translation>
+        <translation>Y ardatza:</translation>
     </message>
     <message>
         <source>Left</source>
-        <translation type="unfinished"></translation>
+        <translation>Ezkerra</translation>
     </message>
     <message>
         <source>Right</source>
-        <translation type="unfinished"></translation>
+        <translation>Eskubidea</translation>
     </message>
     <message>
         <source>Symbol Style:</source>
-        <translation type="unfinished"></translation>
+        <translation>Sinbolo estiloa:</translation>
     </message>
     <message>
         <source>Circle</source>
-        <translation type="unfinished"></translation>
+        <translation>Zirkulu</translation>
     </message>
     <message>
         <source>Rectangle</source>
-        <translation type="unfinished"></translation>
+        <translation>Laukizuzena</translation>
     </message>
     <message>
         <source>Diamond</source>
-        <translation type="unfinished"></translation>
+        <translation>Diamantea</translation>
     </message>
     <message>
         <source>Triangle</source>
-        <translation type="unfinished"></translation>
+        <translation>Triangelua</translation>
     </message>
     <message>
         <source>Cross</source>
-        <translation type="unfinished"></translation>
+        <translation>Gurutzea</translation>
     </message>
     <message>
         <source>XCross</source>
-        <translation type="unfinished"></translation>
+        <translation>XGurutzea</translation>
     </message>
     <message>
         <source>Symbol Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Sinboloaren tamaina:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Kolore:</translation>
     </message>
 </context>
 </TS>

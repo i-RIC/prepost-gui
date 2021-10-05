@@ -1,1867 +1,1888 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="sl_SI">
 <context>
     <name>AttributeBrowserTargetDataItem</name>
     <message>
         <source>Please specify a closed polygon!</source>
-        <translation type="unfinished"></translation>
+        <translation>Prosimo, navedite zaprt poligon!</translation>
     </message>
 </context>
 <context>
     <name>BackgroundImageInfo</name>
     <message>
         <source>Unable to read image %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Slike ni mogoče prebrati %1</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Opozorilo</translation>
     </message>
     <message>
         <source>In file %1, x-coordinate increment per pixel and y-coordinate increment per pixel mismatches. It is acceptable, but it may be wrong.</source>
-        <translation type="unfinished"></translation>
+        <translation>V datoteki %1, prirastek koordinate x na slikovno piko in prirastek koordinate y na slikovno piko. To je sprejemljivo, lahko pa tudi napačno.</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informacije</translation>
     </message>
     <message>
         <source>Select a corresponding point on Main Window.</source>
-        <translation type="unfinished"></translation>
+        <translation>Izberite ustrezno točko v glavnem oknu.</translation>
     </message>
 </context>
 <context>
     <name>BackgroundImageInfoDialog</name>
     <message>
         <source>Background Image Position</source>
-        <translation type="unfinished"></translation>
+        <translation>Položaj slike ozadja</translation>
     </message>
     <message>
         <source>Method of designation</source>
-        <translation type="unfinished"></translation>
+        <translation>Način označevanja</translation>
     </message>
     <message>
         <source>Specify bottom-left vertex position, scale, and rotate angle</source>
-        <translation type="unfinished"></translation>
+        <translation>Določite spodnji levi položaj vrha, lestvico in kot zasuka</translation>
     </message>
     <message>
         <source>Specify bottom-left and bottom-right vertex positions</source>
-        <translation type="unfinished"></translation>
+        <translation>Določite spodnji levi in spodnji desni položaj točk</translation>
     </message>
     <message>
         <source>Bottom-left vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Spodnji levi vrh</translation>
     </message>
     <message>
         <source>X:</source>
-        <translation type="unfinished"></translation>
+        <translation>X:</translation>
     </message>
     <message>
         <source>Y:</source>
-        <translation type="unfinished"></translation>
+        <translation>Y:</translation>
     </message>
     <message>
         <source>Bottom-right vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Spodnji desni vrh</translation>
     </message>
     <message>
         <source>Scale:</source>
-        <translation type="unfinished"></translation>
+        <translation>Lestvica:</translation>
     </message>
     <message>
         <source>Rotate Angle:</source>
-        <translation type="unfinished"></translation>
+        <translation>Kot vrtenja:</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Specify the distance in meters that corresponds to the width of one pixel of the image.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Določite razdaljo v metrih, ki ustreza širini enega piksla slike. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Specify the angle of image bottom edge against X-axis.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Določite kot spodnjega roba slike glede na os X. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
 </context>
 <context>
     <name>BackgroundImageInfoGeoreferenceDialog</name>
     <message>
         <source>Georeference</source>
-        <translation type="unfinished"></translation>
+        <translation>Georeferenca</translation>
     </message>
     <message>
         <source>PushButton</source>
-        <translation type="unfinished"></translation>
+        <translation>Pritisni gumb</translation>
     </message>
     <message>
         <source>Hide</source>
-        <translation type="unfinished"></translation>
+        <translation>Skrij</translation>
     </message>
     <message>
         <source>Show</source>
-        <translation type="unfinished"></translation>
+        <translation>Pokaži</translation>
     </message>
 </context>
 <context>
     <name>ColorTransferFunctionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Oblika</translation>
     </message>
     <message>
         <source>Attribute</source>
-        <translation type="unfinished"></translation>
+        <translation>Atribut</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Barva</translation>
     </message>
 </context>
 <context>
     <name>GcpTableModel</name>
     <message>
         <source>srcX</source>
-        <translation type="unfinished"></translation>
+        <translation>srcX</translation>
     </message>
     <message>
         <source>srcY</source>
-        <translation type="unfinished"></translation>
+        <translation>srcY</translation>
     </message>
     <message>
         <source>dstX</source>
-        <translation type="unfinished"></translation>
+        <translation>dstX</translation>
     </message>
     <message>
         <source>dstY</source>
-        <translation type="unfinished"></translation>
+        <translation>dstY</translation>
     </message>
 </context>
 <context>
     <name>GeoData</name>
     <message>
         <source>Edit &amp;Name...</source>
-        <translation type="unfinished"></translation>
+        <translation>Uredi ime (&amp;N)...</translation>
     </message>
 </context>
 <context>
     <name>GeoDataBackground</name>
     <message>
         <source>Default</source>
-        <translation type="unfinished"></translation>
+        <translation>Privzeto</translation>
     </message>
     <message>
         <source>Edit value...</source>
-        <translation type="unfinished"></translation>
+        <translation>Uredi vrednost...</translation>
     </message>
     <message>
         <source>Edit %1 default value</source>
-        <translation type="unfinished"></translation>
+        <translation>Uredi %1 privzeta vrednost</translation>
     </message>
     <message>
         <source>Please input new default value.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vnesite novo privzeto vrednost.</translation>
     </message>
     <message>
         <source>Background edit value</source>
-        <translation type="unfinished"></translation>
+        <translation>Vrednost urejanja ozadja</translation>
     </message>
 </context>
 <context>
     <name>GeoDataBackgroundComplexCreator</name>
     <message>
         <source>Background</source>
-        <translation type="unfinished"></translation>
+        <translation>Ozadje</translation>
     </message>
 </context>
 <context>
     <name>GeoDataBackgroundEditDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Dialog</translation>
     </message>
     <message>
         <source>Minimum value of geographic data</source>
-        <translation type="unfinished"></translation>
+        <translation>Najmanjša vrednost geografskih podatkov</translation>
     </message>
     <message>
         <source>Maximum value of geographic data</source>
-        <translation type="unfinished"></translation>
+        <translation>Največja vrednost geografskih podatkov</translation>
     </message>
     <message>
         <source>Custom value</source>
-        <translation type="unfinished"></translation>
+        <translation>Vrednost po meri</translation>
     </message>
 </context>
 <context>
     <name>GeoreferenceView::ImageInfo</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Opozorilo</translation>
     </message>
     <message>
         <source>No point is selected.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nobena točka ni izbrana.</translation>
     </message>
     <message>
         <source>No point can be further deleted.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nobene točke ni mogoče več izbrisati.</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informacije</translation>
     </message>
     <message>
         <source>Select a point on Georeference dialog.</source>
-        <translation type="unfinished"></translation>
+        <translation>V pogovornem oknu Georeference izberite točko.</translation>
     </message>
 </context>
 <context>
     <name>GraphicsWindowDataItem</name>
     <message>
         <source>Object Browser Item Change</source>
-        <translation type="unfinished"></translation>
+        <translation>Sprememba postavke brskalnika objektov</translation>
     </message>
 </context>
 <context>
     <name>GraphicsWindowDataModel</name>
     <message>
         <source>Operation ToolBar</source>
-        <translation type="unfinished"></translation>
+        <translation>Orodjarna orodja</translation>
     </message>
 </context>
 <context>
     <name>GridAttributeDimensionComboboxSelectWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Oblika</translation>
     </message>
     <message>
         <source>label:</source>
-        <translation type="unfinished"></translation>
+        <translation>oznaka:</translation>
     </message>
 </context>
 <context>
     <name>GridAttributeDimensionTimeSliderSelectWidget</name>
     <message>
         <source>Step &amp;Backward</source>
-        <translation type="unfinished"></translation>
+        <translation>Korak nazaj (&amp;B)</translation>
     </message>
     <message>
         <source>Step &amp;Forward</source>
-        <translation type="unfinished"></translation>
+        <translation>Korak naprej (&amp;F)</translation>
     </message>
     <message>
         <source>&amp;Reset</source>
-        <translation type="unfinished"></translation>
+        <translation>Ponastaviti (&amp;R)</translation>
     </message>
     <message>
         <source>Go to &amp;Last Step</source>
-        <translation type="unfinished"></translation>
+        <translation>Pojdite na Zadnji korak (&amp;L)</translation>
     </message>
     <message>
         <source>&amp;Start/Stop Animation</source>
-        <translation type="unfinished"></translation>
+        <translation>Začni/ustavi animacijo (&amp;S)</translation>
     </message>
     <message>
         <source>S&amp;top Animation</source>
-        <translation type="unfinished"></translation>
+        <translation>Ustavi animacijo (&amp;T)</translation>
     </message>
     <message>
         <source>&amp;Animation Speed Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastavitev hitrosti animacije (&amp;A)...</translation>
     </message>
 </context>
 <context>
     <name>GridAttributeEditDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Dialog</translation>
     </message>
     <message>
         <source>TextLabel</source>
-        <translation type="unfinished"></translation>
+        <translation>Oznaka besedila</translation>
     </message>
 </context>
 <context>
     <name>GridAttributeEditNameAndValueDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Dialog</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ime:</translation>
     </message>
     <message>
         <source>TextLabel</source>
-        <translation type="unfinished"></translation>
+        <translation>Oznaka besedila</translation>
     </message>
 </context>
 <context>
     <name>GridAttributeEditWidget</name>
     <message>
         <source>Edit grid attribute value(s)</source>
-        <translation type="unfinished"></translation>
+        <translation>Urejanje vrednosti atributov mreže</translation>
     </message>
 </context>
 <context>
     <name>GridAttributeVariationEditDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Dialog</translation>
     </message>
     <message>
         <source>TextLabel</source>
-        <translation type="unfinished"></translation>
+        <translation>Oznaka besedila</translation>
     </message>
 </context>
 <context>
     <name>GridAttributeVariationEditWidget</name>
     <message>
         <source>Edit grid attribute value(s)</source>
-        <translation type="unfinished"></translation>
+        <translation>Urejanje vrednosti atributov mreže</translation>
     </message>
 </context>
 <context>
     <name>GridCellAttributePropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Dialog</translation>
     </message>
 </context>
 <context>
     <name>GridComplexConditionDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Dialog</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Dodaj (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Izbriši (&amp;D)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Opozorilo</translation>
     </message>
     <message>
         <source>Name has to consist of only English characters.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ime mora vsebovati samo angleške znake.</translation>
     </message>
     <message>
         <source>There must be one group at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vsaj ena skupina mora biti.</translation>
     </message>
 </context>
 <context>
     <name>GridComplexConditionGroupEditDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Dialog</translation>
     </message>
     <message>
         <source>Target:</source>
-        <translation type="unfinished"></translation>
+        <translation>Cilj:</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Opozorilo</translation>
     </message>
     <message>
         <source>Modifications you made will be discarded.</source>
-        <translation type="unfinished"></translation>
+        <translation>Spremembe, ki ste jih naredili, bodo zavržene.</translation>
     </message>
 </context>
 <context>
     <name>GridComplexConditionGroupRealEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Oblika</translation>
     </message>
     <message>
         <source>Targets</source>
-        <translation type="unfinished"></translation>
+        <translation>Cilji</translation>
     </message>
 </context>
 <context>
     <name>GridComplexConditionWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Oblika</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ime:</translation>
     </message>
     <message>
         <source>Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastavitev</translation>
     </message>
     <message>
         <source>Use as Default Value</source>
-        <translation type="unfinished"></translation>
+        <translation>Uporabi kot privzeto vrednost</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Barva:</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingCondition</name>
     <message>
         <source>&amp;Grid Creating Condition</source>
-        <translation type="unfinished"></translation>
+        <translation>Pogoj za ustvarjanje mreže (&amp;G)</translation>
     </message>
 </context>
 <context>
     <name>GridNodeAttributePropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Dialog</translation>
     </message>
     <message>
         <source>Contour setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastavitev konture</translation>
+    </message>
+</context>
+<context>
+    <name>InputConditionCgnsFileSelectDialog</name>
+    <message>
+        <source>Select Input CGNS File</source>
+        <translation>Izberite Vhodna datoteka CGNS</translation>
+    </message>
+    <message>
+        <source>Information</source>
+        <translation>Informacije</translation>
+    </message>
+    <message>
+        <source>Do you want to import grid from the CGNS file?</source>
+        <translation>Ali želite uvoziti mrežo iz datoteke CGNS?</translation>
+    </message>
+    <message>
+        <source>Select CGNS file</source>
+        <translation>Izberite datoteko CGNS</translation>
+    </message>
+    <message>
+        <source>Please select from which CGNS file to read grid.</source>
+        <translation>Prosimo, izberite datoteko CGNS za branje mreže.</translation>
     </message>
 </context>
 <context>
     <name>InputConditionContainerSet</name>
     <message>
         <source>Definition node is not stored</source>
-        <translation type="unfinished"></translation>
+        <translation>Vozlišče definicije ni shranjeno</translation>
     </message>
     <message>
-        <source>Wrong valueType &quot;%1&quot; is set.</source>
-        <translation type="unfinished"></translation>
+        <source>Wrong valueType "%1" is set.</source>
+        <translation>Napačna vrednostType "%1"je nastavljeno.</translation>
     </message>
     <message>
-        <source>Wrong conditionType &quot;%1&quot;is set.</source>
-        <translation type="unfinished"></translation>
+        <source>Wrong conditionType "%1"is set.</source>
+        <translation>Napačno stanje Vrsta "%1"je nastavljeno.</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
 %1: %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Pri nalaganju definicijske datoteke reševalca je prišlo do napake. %1 : %2</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Napaka</translation>
     </message>
 </context>
 <context>
     <name>InputConditionDialog</name>
     <message>
         <source>Calculation Condition</source>
-        <translation type="unfinished"></translation>
+        <translation>Izračun pogoj</translation>
     </message>
     <message>
         <source>&amp;Save and Close</source>
-        <translation type="unfinished"></translation>
+        <translation>Shrani in zapri (&amp;S)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Napaka</translation>
     </message>
     <message>
         <source>This CGNS file is created for %1 version %2. It is not compatible with the current solver.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ta datoteka CGNS je ustvarjena za %1 različico %2. Ni združljiv s trenutnim reševalcem.</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Opozorilo</translation>
     </message>
     <message>
         <source>This CGNS file does not have solver information. We can not check whether this CGNS file is compatible with the solver. If it is not compatible, maybe only some part of the conditions will be imported.
 Do you really want to import this file?</source>
-        <translation type="unfinished"></translation>
+        <translation>Ta datoteka CGNS nima informacij o reševanju. Ne moremo preveriti, ali je ta datoteka CGNS združljiva z reševalcem. Če ni združljiv, bo morda uvožen le del pogojev. Ali res želite uvoziti to datoteko?</translation>
     </message>
     <message>
         <source>This CGNS file does not contain calculation condition data.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ta datoteka CGNS ne vsebuje podatkov o pogojih izračuna.</translation>
     </message>
     <message>
         <source>Are you sure you want to reset all calculation conditions to default values?</source>
-        <translation type="unfinished"></translation>
+        <translation>Ali ste prepričani, da želite vse pogoje izračuna ponastaviti na privzete vrednosti?</translation>
     </message>
     <message>
         <source>The solver is running currently, so you can not save calculation condition. Please press Cancel button.</source>
-        <translation type="unfinished"></translation>
+        <translation>Reševalnik trenutno deluje, zato pogoja izračuna ne morete shraniti. Pritisnite gumb Prekliči.</translation>
     </message>
     <message>
         <source>Modifications you made will be discarded.</source>
-        <translation type="unfinished"></translation>
+        <translation>Spremembe, ki ste jih naredili, bodo zavržene.</translation>
     </message>
     <message>
         <source>Error occured while saving.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pri shranjevanju je prišlo do napake.</translation>
     </message>
 </context>
 <context>
     <name>InputConditionPageList</name>
     <message>
         <source>Groups</source>
-        <translation type="unfinished"></translation>
+        <translation>Skupine</translation>
     </message>
 </context>
 <context>
     <name>InputConditionWidgetCgnsFile</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Oblika</translation>
     </message>
     <message>
         <source>...</source>
-        <translation type="unfinished"></translation>
+        <translation>...</translation>
     </message>
     <message>
         <source>Solver Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ime reševalca:</translation>
     </message>
     <message>
         <source>---</source>
-        <translation type="unfinished"></translation>
+        <translation>---</translation>
     </message>
     <message>
         <source>Solver Version:</source>
-        <translation type="unfinished"></translation>
+        <translation>Različica reševalca:</translation>
     </message>
     <message>
         <source>Grid Type:</source>
-        <translation type="unfinished"></translation>
+        <translation>Vrsta mreže:</translation>
     </message>
     <message>
         <source>Grid Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Velikost mreže:</translation>
     </message>
     <message>
         <source>Number of results:</source>
-        <translation type="unfinished"></translation>
+        <translation>Število rezultatov:</translation>
     </message>
     <message>
         <source>Structured</source>
-        <translation type="unfinished"></translation>
+        <translation>Strukturirano</translation>
     </message>
     <message>
         <source>Unstructured</source>
-        <translation type="unfinished"></translation>
+        <translation>Nestrukturirano</translation>
     </message>
     <message>
         <source>Select File</source>
-        <translation type="unfinished"></translation>
+        <translation>Izberite Datoteka</translation>
     </message>
 </context>
 <context>
     <name>InputConditionWidgetCgnsResult</name>
     <message>
         <source>(CGNS file is not selected)</source>
-        <translation type="unfinished"></translation>
+        <translation>(Datoteka CGNS ni izbrana)</translation>
     </message>
     <message>
         <source>(There is no result)</source>
-        <translation type="unfinished"></translation>
+        <translation>(Ni rezultatov)</translation>
     </message>
 </context>
 <context>
     <name>InputConditionWidgetCheckbox</name>
     <message>
         <source>Enabled</source>
-        <translation type="unfinished"></translation>
+        <translation>Omogočeno</translation>
     </message>
 </context>
 <context>
     <name>InputConditionWidgetFilename</name>
     <message>
         <source>Select File</source>
-        <translation type="unfinished"></translation>
+        <translation>Izberite Datoteka</translation>
     </message>
 </context>
 <context>
     <name>InputConditionWidgetFoldername</name>
     <message>
         <source>Select Directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Izberite Imenik</translation>
     </message>
 </context>
 <context>
     <name>InputConditionWidgetFunctionalDialog</name>
     <message>
         <source>Calculation Condition</source>
-        <translation type="unfinished"></translation>
+        <translation>Izračun pogoj</translation>
     </message>
     <message>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Dodaj</translation>
     </message>
     <message>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Odstrani</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation type="unfinished"></translation>
+        <translation>Uvoz (&amp;I)</translation>
     </message>
     <message>
         <source>Import Web</source>
-        <translation type="unfinished"></translation>
+        <translation>Uvozi splet</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation type="unfinished"></translation>
+        <translation>Izvoz (&amp;E)</translation>
     </message>
     <message>
         <source>Clear</source>
-        <translation type="unfinished"></translation>
+        <translation>Jasno</translation>
     </message>
     <message>
         <source>%1 at row %2: The value %3 is smaller than minimum value %4</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 pri vrsti %2 : Vrednost %3 je manjša od minimalne vrednosti %4</translation>
     </message>
     <message>
         <source>%1 at row %2: The value %3 is larger than maximum value %4</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 pri vrsti %2 : Vrednost %3 je večja od največje vrednosti %4</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Napaka</translation>
     </message>
     <message>
         <source>Error occured while opening the file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pri odpiranju datoteke je prišlo do napake.</translation>
     </message>
     <message>
         <source>Ctrl+C</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+C</translation>
     </message>
     <message>
         <source>Ctrl+V</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+V</translation>
     </message>
     <message>
         <source>%1 are values for spans. For example value input at 2nd row is for span between 1st row and 2nd row.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 so vrednosti za razpone. Na primer vnos vrednosti v 2. vrstico je za razpon med 1. vrstico in 2. vrstico.</translation>
     </message>
     <message>
         <source>Choose a text file</source>
-        <translation type="unfinished"></translation>
+        <translation>Izberite besedilno datoteko</translation>
     </message>
     <message>
         <source>Text files (*.csv *.txt);;All files (*.*)</source>
-        <translation type="unfinished"></translation>
+        <translation>Besedilne datoteke (*.csv *.txt);;All files (*.*)</translation>
     </message>
     <message>
         <source>Specify file name to save</source>
-        <translation type="unfinished"></translation>
+        <translation>Določite ime datoteke za shranjevanje</translation>
     </message>
     <message>
         <source>CSV files (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>Datoteke CSV (*.csv)</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informacije</translation>
     </message>
     <message>
         <source>Values are copied to clipboard.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vrednosti se kopirajo v odložišče.</translation>
     </message>
     <message>
         <source>File %1 is updated after imported to calculation condition %2. Do you want to import the updated file?</source>
-        <translation type="unfinished"></translation>
+        <translation>mapa %1 se po uvozu v stanje izračuna izračuna po posodobitvi %2. Ali želite uvoziti posodobljeno datoteko?</translation>
     </message>
     <message>
-        <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
-        <translation type="unfinished"></translation>
+        <source>You can copy and paste the values, with shortcut "Ctrl + C" and "Ctrl + V"</source>
+        <translation>Vrednosti lahko kopirate in prilepite s bližnjico "Ctrl + C" in "Ctrl + V"</translation>
     </message>
     <message>
         <source>The following problems found: 
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Ugotovljene so bile naslednje težave:</translation>
     </message>
     <message>
         <source>
  ... and other %1 errors</source>
-        <translation type="unfinished"></translation>
+        <translation>... in druge %1 napake</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Opozorilo</translation>
     </message>
 </context>
 <context>
     <name>InputConditionWidgetFunctionalDownloadDialog</name>
     <message>
         <source>Download</source>
-        <translation type="unfinished"></translation>
+        <translation>Prenesi</translation>
     </message>
     <message>
         <source>Site Number:</source>
-        <translation type="unfinished"></translation>
+        <translation>Številka spletnega mesta:</translation>
     </message>
     <message>
         <source>Start Date:</source>
-        <translation type="unfinished"></translation>
+        <translation>Začetni datum:</translation>
     </message>
     <message>
         <source>End Date:</source>
-        <translation type="unfinished"></translation>
+        <translation>Končni datum:</translation>
     </message>
     <message>
         <source>Test</source>
-        <translation type="unfinished"></translation>
+        <translation>Test</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Napaka</translation>
     </message>
     <message>
         <source>Please enter a site number.</source>
-        <translation type="unfinished"></translation>
+        <translation>Prosimo, vnesite številko spletnega mesta.</translation>
     </message>
     <message>
         <source>Invalid site number.</source>
-        <translation type="unfinished"></translation>
+        <translation>Neveljavna številka spletnega mesta.</translation>
     </message>
     <message>
         <source>Start date not prior to end date.</source>
-        <translation type="unfinished"></translation>
+        <translation>Začetni datum ne pred končnim datumom.</translation>
     </message>
     <message>
         <source>Import failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Uvoz ni uspel</translation>
     </message>
     <message>
         <source>No data to import.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ni podatkov za uvoz.</translation>
     </message>
 </context>
 <context>
     <name>LookupTableEditWidget</name>
     <message>
         <source>Colormap Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastavitev barvnega zemljevida</translation>
     </message>
     <message>
         <source>Value range</source>
-        <translation type="unfinished"></translation>
+        <translation>Razpon vrednosti</translation>
     </message>
     <message>
         <source>Automatic</source>
-        <translation type="unfinished"></translation>
+        <translation>Samodejno</translation>
     </message>
     <message>
         <source>Fill upper area</source>
-        <translation type="unfinished"></translation>
+        <translation>Izpolnite zgornjo površino</translation>
     </message>
     <message>
         <source>Min:</source>
-        <translation type="unfinished"></translation>
+        <translation>Min:</translation>
     </message>
     <message>
         <source>Fill lower area</source>
-        <translation type="unfinished"></translation>
+        <translation>Izpolnite spodnje območje</translation>
     </message>
     <message>
         <source>Division Number:</source>
-        <translation type="unfinished"></translation>
+        <translation>Številka oddelka:</translation>
     </message>
     <message>
         <source>Max:</source>
-        <translation type="unfinished"></translation>
+        <translation>Max:</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation type="unfinished"></translation>
+        <translation>Barvni zemljevid</translation>
     </message>
 </context>
 <context>
     <name>MeasuredData</name>
     <message>
         <source>Importing Measured Data...</source>
-        <translation type="unfinished"></translation>
+        <translation>Uvoz merjenih podatkov...</translation>
     </message>
     <message>
         <source>Error occured while opening the file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pri odpiranju datoteke je prišlo do napake.</translation>
     </message>
     <message>
-        <source>The first two columns must be &quot;X&quot; and &quot;Y&quot;.</source>
-        <translation type="unfinished"></translation>
+        <source>The first two columns must be "X" and "Y".</source>
+        <translation>Prva dva stolpca morata biti "X" in "Y".</translation>
     </message>
     <message>
         <source>The data file has to consist of only English characters.</source>
-        <translation type="unfinished"></translation>
+        <translation>Podatkovna datoteka mora biti sestavljena samo iz angleških znakov.</translation>
     </message>
     <message>
         <source>Wrong data found: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Najdeni so napačni podatki: %1</translation>
     </message>
 </context>
 <context>
     <name>MousePositionWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Oblika</translation>
     </message>
     <message>
         <source>X: </source>
-        <translation type="unfinished"></translation>
+        <translation>X:</translation>
     </message>
     <message>
         <source>Y: </source>
-        <translation type="unfinished"></translation>
+        <translation>Y:</translation>
     </message>
     <message>
         <source>X: ------</source>
-        <translation type="unfinished"></translation>
+        <translation>X: ------</translation>
     </message>
     <message>
         <source>Y: ------</source>
-        <translation type="unfinished"></translation>
+        <translation>Y: ------</translation>
     </message>
 </context>
 <context>
     <name>OffsetSettingDialog</name>
     <message>
         <source>Offset Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastavitev odmika</translation>
     </message>
     <message>
         <source>X:</source>
-        <translation type="unfinished"></translation>
+        <translation>X:</translation>
     </message>
     <message>
         <source>Y:</source>
-        <translation type="unfinished"></translation>
+        <translation>Y:</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Opozorilo</translation>
     </message>
     <message>
         <source>X value is not appropriate. Please input more simple value.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vrednost X ni primerna. Prosimo, vnesite enostavnejšo vrednost.</translation>
     </message>
     <message>
         <source>Y value is not appropriate. Please input more simple value.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vrednost Y ni primerna. Prosimo, vnesite enostavnejšo vrednost.</translation>
     </message>
 </context>
 <context>
     <name>PostBaseSelectingDialog</name>
     <message>
         <source>Calculation Result Selection</source>
-        <translation type="unfinished"></translation>
+        <translation>Izbira rezultata izračuna</translation>
     </message>
     <message>
         <source>Please select which calculation result to use.</source>
-        <translation type="unfinished"></translation>
+        <translation>Prosimo, izberite rezultat izračuna, ki ga želite uporabiti.</translation>
     </message>
     <message>
         <source>One dimensional calculation</source>
-        <translation type="unfinished"></translation>
+        <translation>Enodimenzionalni izračun</translation>
     </message>
     <message>
         <source>Two dimensional calculation</source>
-        <translation type="unfinished"></translation>
+        <translation>Dvodimenzionalni izračun</translation>
     </message>
     <message>
         <source>Three dimensional calculation</source>
-        <translation type="unfinished"></translation>
+        <translation>Tridimenzionalni izračun</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResult</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Napaka</translation>
     </message>
     <message>
         <source>Error occured: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Prišlo je do napake: %1</translation>
     </message>
     <message>
         <source>Checking argument for %1 failed. Invalid arguments: %2.</source>
-        <translation type="unfinished"></translation>
+        <translation>Preverjanje argumenta za %1 ni uspelo. Neveljavni argumenti: %2.</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultArgumentEditDialog</name>
     <message>
         <source>Edit Simple Operation Result Variable</source>
-        <translation type="unfinished"></translation>
+        <translation>Uredi spremenljivko rezultata enostavnega delovanja</translation>
     </message>
     <message>
         <source>Calculation Result:</source>
-        <translation type="unfinished"></translation>
+        <translation>Rezultat izračuna:</translation>
     </message>
     <message>
         <source>Variable name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ime spremenljivke:</translation>
     </message>
     <message>
         <source>Value for testing:</source>
-        <translation type="unfinished"></translation>
+        <translation>Vrednost za testiranje:</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Opozorilo</translation>
     </message>
     <message>
         <source>Variable name is not input.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ime spremenljivke ni vneseno.</translation>
     </message>
     <message>
         <source>This variable name is already used</source>
-        <translation type="unfinished"></translation>
+        <translation>To ime spremenljivke je že uporabljeno</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultEditDialog</name>
     <message>
         <source>Edit Simple Operation Result</source>
-        <translation type="unfinished"></translation>
+        <translation>Urejanje rezultata preprostega delovanja</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ime:</translation>
     </message>
     <message>
         <source>Position:</source>
-        <translation type="unfinished"></translation>
+        <translation>Položaj:</translation>
     </message>
     <message>
         <source>Calculation results for input</source>
-        <translation type="unfinished"></translation>
+        <translation>Rezultati izračuna za vnos</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation type="unfinished"></translation>
+        <translation>Dodaj (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Izbriši (&amp;D)</translation>
     </message>
     <message>
         <source>Definition of variable</source>
-        <translation type="unfinished"></translation>
+        <translation>Opredelitev spremenljivke</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Spremenljivko lahko definirate z jezikom JavaScript. Glejte &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -decoration: underline; color:#0000ff; "&gt; tukaj &lt;/span&gt; &lt;/a&gt; za podrobnosti. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
-        <translation type="unfinished"></translation>
+        <translation>Test</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can test the definition by clicking this. If error occurs while parsing the definition, the error message is shown. When the definition is parsed successfully, the value calculated using the &amp;quot;Value for testing&amp;quot; for each input is shown.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Definicijo lahko preizkusite s klikom na to. Če pride do napake med razčlenjevanjem definicije, se prikaže sporočilo o napaki. Ko je definicija uspešno razčlenjena, se vrednost izračuna z uporabo &amp; quot; Vrednosti za testiranjequot; za vsak vnos je prikazan. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>----</source>
-        <translation type="unfinished"></translation>
+        <translation>----</translation>
     </message>
     <message>
         <source>Result name</source>
-        <translation type="unfinished"></translation>
+        <translation>Ime rezultata</translation>
     </message>
     <message>
         <source>Variable name</source>
-        <translation type="unfinished"></translation>
+        <translation>Ime spremenljivke</translation>
     </message>
     <message>
         <source>Value for testing</source>
-        <translation type="unfinished"></translation>
+        <translation>Vrednost za testiranje</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation type="unfinished"></translation>
+        <translation>Mrežno vozlišče</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation type="unfinished"></translation>
+        <translation>Mrežna celica</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation type="unfinished"></translation>
+        <translation>Delci</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Opozorilo</translation>
     </message>
     <message>
         <source>Name is not input.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ime ni vneseno.</translation>
     </message>
     <message>
         <source>This name is already used</source>
-        <translation type="unfinished"></translation>
+        <translation>To ime je že uporabljeno</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation type="unfinished"></translation>
+        <translation>Ali ste prepričani, da želite izbrisati %1 ?</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultListDialog</name>
     <message>
         <source>Simple Operation Result List</source>
-        <translation type="unfinished"></translation>
+        <translation>Seznam rezultatov preprostega delovanja</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Ime</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished"></translation>
+        <translation>Položaj</translation>
     </message>
     <message>
         <source>&amp;Up</source>
-        <translation type="unfinished"></translation>
+        <translation>Gor (&amp;U)</translation>
     </message>
     <message>
         <source>&amp;Down</source>
-        <translation type="unfinished"></translation>
+        <translation>Dol (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Opomba &lt;/span&gt;: Vrstni red na seznamu je pomemben. V definiciji lahko uporabite vrednost izračunov enostavnih operacij kot spremenljivko, ki je prikazana prej na seznamu. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation type="unfinished"></translation>
+        <translation>Dodaj (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation type="unfinished"></translation>
+        <translation>Uredi (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Izbriši (&amp;D)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Opozorilo</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation type="unfinished"></translation>
+        <translation>Ali ste prepričani, da želite izbrisati %1 ?</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation type="unfinished"></translation>
+        <translation>Mrežno vozlišče</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation type="unfinished"></translation>
+        <translation>Mrežna celica</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation type="unfinished"></translation>
+        <translation>Delci</translation>
     </message>
 </context>
 <context>
     <name>PostDataExportDialog</name>
     <message>
         <source>Export Calculation Result</source>
-        <translation type="unfinished"></translation>
+        <translation>Izvozni rezultat izračuna</translation>
     </message>
     <message>
         <source>Format:</source>
-        <translation type="unfinished"></translation>
+        <translation>Oblika:</translation>
     </message>
     <message>
         <source>VTK files (ASCII)</source>
-        <translation type="unfinished"></translation>
+        <translation>Datoteke VTK (ASCII)</translation>
     </message>
     <message>
         <source>VTK files (Binary)</source>
-        <translation type="unfinished"></translation>
+        <translation>Datoteke VTK (binarno)</translation>
     </message>
     <message>
         <source>CSV files</source>
-        <translation type="unfinished"></translation>
+        <translation>Datoteke CSV</translation>
     </message>
     <message>
         <source>Topography Files (*.tpo)</source>
-        <translation type="unfinished"></translation>
+        <translation>Topografske datoteke (*.tpo)</translation>
     </message>
     <message>
         <source>ESRI Shapefiles</source>
-        <translation type="unfinished"></translation>
+        <translation>Datoteke oblik ESRI</translation>
     </message>
     <message>
         <source>Output folder:</source>
-        <translation type="unfinished"></translation>
+        <translation>Izhodna mapa:</translation>
     </message>
     <message>
         <source>...</source>
-        <translation type="unfinished"></translation>
+        <translation>...</translation>
     </message>
     <message>
         <source>Prefix:</source>
-        <translation type="unfinished"></translation>
+        <translation>Predpona:</translation>
     </message>
     <message>
         <source>Output file:</source>
-        <translation type="unfinished"></translation>
+        <translation>Izhodna datoteka:</translation>
     </message>
     <message>
         <source>Time</source>
-        <translation type="unfinished"></translation>
+        <translation>Čas</translation>
     </message>
     <message>
         <source>All timesteps</source>
-        <translation type="unfinished"></translation>
+        <translation>Vsi časovni koraki</translation>
     </message>
     <message>
         <source>Start:</source>
-        <translation type="unfinished"></translation>
+        <translation>Začetek:</translation>
     </message>
     <message>
         <source>End:</source>
-        <translation type="unfinished"></translation>
+        <translation>Konec:</translation>
     </message>
     <message>
         <source>Skip rate :</source>
-        <translation type="unfinished"></translation>
+        <translation>Stopnja preskoka:</translation>
     </message>
     <message>
         <source>Region</source>
-        <translation type="unfinished"></translation>
+        <translation>Regija</translation>
     </message>
     <message>
         <source>Full region</source>
-        <translation type="unfinished"></translation>
+        <translation>Celotna regija</translation>
     </message>
     <message>
         <source>I Min</source>
-        <translation type="unfinished"></translation>
+        <translation>I Min</translation>
     </message>
     <message>
         <source>I Max</source>
-        <translation type="unfinished"></translation>
+        <translation>Jaz Maks</translation>
     </message>
     <message>
         <source>J Min</source>
-        <translation type="unfinished"></translation>
+        <translation>J Min</translation>
     </message>
     <message>
         <source>J Max</source>
-        <translation type="unfinished"></translation>
+        <translation>J Max</translation>
     </message>
     <message>
         <source>K Min</source>
-        <translation type="unfinished"></translation>
+        <translation>K Min</translation>
     </message>
     <message>
         <source>K Max</source>
-        <translation type="unfinished"></translation>
+        <translation>K Maks</translation>
     </message>
     <message>
         <source>Show &amp;Detail</source>
-        <translation type="unfinished"></translation>
+        <translation>Prikaži podrobnosti (&amp;D)</translation>
     </message>
     <message>
         <source>Select Folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Izberite mapo</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Opozorilo</translation>
     </message>
     <message>
         <source>Folder %1 does not exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapa %1 ne obstaja.</translation>
     </message>
     <message>
         <source>&amp;Hide Detail</source>
-        <translation type="unfinished"></translation>
+        <translation>Skrij podrobnosti (&amp;H)</translation>
     </message>
 </context>
 <context>
     <name>PostIterationSteps</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Napaka</translation>
     </message>
     <message>
         <source>Error occured while loading calculation result.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pri nalaganju rezultata izračuna je prišlo do napake.</translation>
     </message>
 </context>
 <context>
     <name>PostSolutionInfo</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Napaka</translation>
     </message>
     <message>
         <source>Error occured while loading calculation result.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pri nalaganju rezultata izračuna je prišlo do napake.</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Opozorilo</translation>
     </message>
     <message>
         <source>Loading calculation result for visualization failed. Please try again later, or wait until end of calculation.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nalaganje rezultata izračuna za vizualizacijo ni uspelo. Poskusite znova pozneje ali počakajte do konca izračuna.</translation>
     </message>
     <message>
         <source>No calculation result exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>Rezultat izračuna ni.</translation>
     </message>
     <message>
         <source>Calculation result does not contain grid data.</source>
-        <translation type="unfinished"></translation>
+        <translation>Rezultat izračuna ne vsebuje podatkov o mreži.</translation>
     </message>
     <message>
         <source>Export Calculation Result</source>
-        <translation type="unfinished"></translation>
+        <translation>Izvozni rezultat izračuna</translation>
     </message>
     <message>
         <source>Saving calculation result as VTK files...</source>
-        <translation type="unfinished"></translation>
+        <translation>Shranjevanje rezultata izračuna kot datoteke VTK...</translation>
     </message>
     <message>
         <source>Saving calculation result as CSV files...</source>
-        <translation type="unfinished"></translation>
+        <translation>Shranjevanje rezultata izračuna kot datoteke CSV...</translation>
     </message>
     <message>
         <source>Saving calculation result as ESRI Shapefiles...</source>
-        <translation type="unfinished"></translation>
+        <translation>Shranjevanje rezultata izračuna kot datoteke oblike ESRI...</translation>
     </message>
     <message>
         <source>Error occured while saving %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Pri shranjevanju je prišlo do napake %1</translation>
     </message>
 </context>
 <context>
     <name>PostStringResult</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Napaka</translation>
     </message>
     <message>
         <source>Error occured: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Prišlo je do napake: %1</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Opozorilo</translation>
     </message>
     <message>
         <source>I, J, K, index for label is reset because the grid size is changed.</source>
-        <translation type="unfinished"></translation>
+        <translation>I, J, K, indeks za nalepko se ponastavi, ker se velikost mreže spremeni.</translation>
     </message>
 </context>
 <context>
     <name>PostStringResultArgumentEditDialog</name>
     <message>
         <source>Edit String Result Argument</source>
-        <translation type="unfinished"></translation>
+        <translation>Uredi argument rezultata niza</translation>
     </message>
     <message>
         <source>Position:</source>
-        <translation type="unfinished"></translation>
+        <translation>Položaj:</translation>
     </message>
     <message>
         <source>Result Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ime rezultata:</translation>
     </message>
     <message>
         <source>Variable Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ime spremenljivke:</translation>
     </message>
     <message>
         <source>I:</source>
-        <translation type="unfinished"></translation>
+        <translation>JAZ:</translation>
     </message>
     <message>
         <source>J:</source>
-        <translation type="unfinished"></translation>
+        <translation>J:</translation>
     </message>
     <message>
         <source>K:</source>
-        <translation type="unfinished"></translation>
+        <translation>K:</translation>
     </message>
     <message>
         <source>Index:</source>
-        <translation type="unfinished"></translation>
+        <translation>Indeks:</translation>
     </message>
     <message>
         <source>Value for testing</source>
-        <translation type="unfinished"></translation>
+        <translation>Vrednost za testiranje</translation>
     </message>
     <message>
         <source>Global</source>
-        <translation type="unfinished"></translation>
+        <translation>Globalno</translation>
     </message>
     <message>
         <source>Node</source>
-        <translation type="unfinished"></translation>
+        <translation>Vozlišče</translation>
     </message>
     <message>
         <source>Cell</source>
-        <translation type="unfinished"></translation>
+        <translation>Celica</translation>
     </message>
     <message>
         <source>EdgeI</source>
-        <translation type="unfinished"></translation>
+        <translation>EdgeI</translation>
     </message>
     <message>
         <source>EdgeJ</source>
-        <translation type="unfinished"></translation>
+        <translation>EdgeJ</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Opozorilo</translation>
     </message>
     <message>
         <source>Variable name is empty.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ime spremenljivke je prazno.</translation>
     </message>
 </context>
 <context>
     <name>PostStringResultEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Oblika</translation>
     </message>
     <message>
         <source>Calculation results for input</source>
-        <translation type="unfinished"></translation>
+        <translation>Rezultati izračuna za vnos</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation type="unfinished"></translation>
+        <translation>Vrsta</translation>
     </message>
     <message>
         <source>Result name</source>
-        <translation type="unfinished"></translation>
+        <translation>Ime rezultata</translation>
     </message>
     <message>
         <source>Variable name</source>
-        <translation type="unfinished"></translation>
+        <translation>Ime spremenljivke</translation>
     </message>
     <message>
         <source>Index</source>
-        <translation type="unfinished"></translation>
+        <translation>Kazalo</translation>
     </message>
     <message>
         <source>Value for Testing</source>
-        <translation type="unfinished"></translation>
+        <translation>Vrednost za testiranje</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation type="unfinished"></translation>
+        <translation>Dodaj (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation type="unfinished"></translation>
+        <translation>Uredi (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete...</source>
-        <translation type="unfinished"></translation>
+        <translation>Izbriši (&amp;D)...</translation>
     </message>
     <message>
         <source>Definition of output</source>
-        <translation type="unfinished"></translation>
+        <translation>Opredelitev izhoda</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Spremenljivko lahko definirate z jezikom JavaScript. Glejte &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -decoration: underline; color:#0000ff; "&gt; tukaj &lt;/span&gt; &lt;/a&gt; za podrobnosti. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
-        <translation type="unfinished"></translation>
+        <translation>Test</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Opozorilo</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation type="unfinished"></translation>
+        <translation>Ali ste prepričani, da želite izbrisati %1 ?</translation>
     </message>
     <message>
         <source>Global</source>
-        <translation type="unfinished"></translation>
+        <translation>Globalno</translation>
     </message>
     <message>
         <source>Node</source>
-        <translation type="unfinished"></translation>
+        <translation>Vozlišče</translation>
     </message>
     <message>
         <source>Cell</source>
-        <translation type="unfinished"></translation>
+        <translation>Celica</translation>
     </message>
     <message>
         <source>EdgeI</source>
-        <translation type="unfinished"></translation>
+        <translation>EdgeI</translation>
     </message>
     <message>
         <source>EdgeJ</source>
-        <translation type="unfinished"></translation>
+        <translation>EdgeJ</translation>
     </message>
     <message>
         <source>EdgeK</source>
-        <translation type="unfinished"></translation>
+        <translation>EdgeK</translation>
     </message>
 </context>
 <context>
     <name>PostTimeSteps</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Napaka</translation>
     </message>
     <message>
         <source>Error occured while loading calculation result.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pri nalaganju rezultata izračuna je prišlo do napake.</translation>
     </message>
 </context>
 <context>
     <name>PostZoneSelectingDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Dialog</translation>
     </message>
     <message>
         <source>Grid Type:</source>
-        <translation type="unfinished"></translation>
+        <translation>Vrsta mreže:</translation>
     </message>
     <message>
         <source>&amp;Region:</source>
-        <translation type="unfinished"></translation>
+        <translation>Regija: (&amp;R)</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorDataItem</name>
     <message>
         <source>Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Mreža</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCreatingConditionDataItemInterface</name>
     <message>
         <source>Grid Creating Condition</source>
-        <translation type="unfinished"></translation>
+        <translation>Pogoj za ustvarjanje mreže</translation>
     </message>
 </context>
 <context>
     <name>ProjectData</name>
     <message>
         <source>Loading project file...</source>
-        <translation type="unfinished"></translation>
+        <translation>Nalaganje projektne datoteke...</translation>
     </message>
     <message>
         <source>Saving project file...</source>
-        <translation type="unfinished"></translation>
+        <translation>Shranjevanje projektne datoteke...</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Napaka</translation>
     </message>
     <message>
         <source>Could not overwrite %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Prepisati ni bilo mogoče %1.</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Opozorilo</translation>
     </message>
     <message>
         <source>Saving project...</source>
-        <translation type="unfinished"></translation>
+        <translation>Shranjevanje projekta...</translation>
     </message>
     <message>
         <source>Opening project...</source>
-        <translation type="unfinished"></translation>
+        <translation>Odpiranje projekta...</translation>
     </message>
     <message>
         <source>Elevation grid attribute is not defined for grid type %1. Grid I/O functions, grid creating functions may not work correctly for these grid types.</source>
-        <translation type="unfinished"></translation>
+        <translation>Atribut mreže višine ni določen za vrsto mreže %1. Vhodno/izhodne funkcije mreže, funkcije ustvarjanja mreže morda ne bodo delovale pravilno za te vrste omrežij.</translation>
     </message>
 </context>
 <context>
     <name>ProjectMainFile</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Napaka</translation>
     </message>
     <message>
         <source>Solution %1 already exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>Rešitev %1 že obstaja.</translation>
     </message>
     <message>
         <source>CGNS file whose name contains characters other than alphabets and numbers can not be imported.</source>
-        <translation type="unfinished"></translation>
+        <translation>Datoteke CGNS, katere ime vsebuje druge znake, razen abeced in številk, ni mogoče uvoziti.</translation>
     </message>
     <message>
         <source>Export CGNS file</source>
-        <translation type="unfinished"></translation>
+        <translation>Izvozi datoteko CGNS</translation>
     </message>
     <message>
         <source>CGNS file (*.cgns)</source>
-        <translation type="unfinished"></translation>
+        <translation>CGNS datoteko (*.cgns)</translation>
     </message>
     <message>
         <source>Exporting CGNS file failed. Specified file is locked by other process.</source>
-        <translation type="unfinished"></translation>
+        <translation>Izvoz datoteke CGNS ni uspel. Določena datoteka je zaklenjena z drugim postopkom.</translation>
     </message>
     <message>
         <source>Error occured while opening CGNS file in project file : %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Pri odpiranju datoteke CGNS v datoteki projekta je prišlo do napake: %1</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Opozorilo</translation>
     </message>
     <message>
         <source>%1 Saving project file failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 Shranjevanje projektne datoteke ni uspelo.</translation>
     </message>
     <message>
         <source>All images(*.jpg *.jpeg *.png *.tif);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif)</source>
-        <translation type="unfinished"></translation>
+        <translation>Vse slike (*.jpg *.jpeg *.png *.tif);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif)</translation>
     </message>
     <message>
         <source>Open Image file</source>
-        <translation type="unfinished"></translation>
+        <translation>Odpri slikovno datoteko</translation>
     </message>
     <message>
         <source>A background image with the same name already exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>Slika za ozadje z istim imenom že obstaja.</translation>
     </message>
     <message>
         <source>The background image was not added. Please try again.</source>
-        <translation type="unfinished"></translation>
+        <translation>Slika ozadja ni bila dodana. Prosim poskusite ponovno.</translation>
     </message>
     <message>
         <source>Invalid image file is specified.</source>
-        <translation type="unfinished"></translation>
+        <translation>Podana je neveljavna slikovna datoteka.</translation>
     </message>
     <message>
         <source>This project file cannot be read, because it was created by too old iRIC (version %1).</source>
-        <translation type="unfinished"></translation>
+        <translation>Te projektne datoteke ni mogoče prebrati, ker jo je ustvaril prestar iRIC (različica %1 ).</translation>
     </message>
     <message>
         <source>This project file cannot be read, because it was created by newer iRIC (version %1).</source>
-        <translation type="unfinished"></translation>
+        <translation>Te projektne datoteke ni mogoče prebrati, ker jo je ustvaril novejši iRIC (različica %1 ).</translation>
     </message>
     <message>
         <source>Text Files (*.csv *.txt);;All Files (*.*)</source>
-        <translation type="unfinished"></translation>
+        <translation>Besedilne datoteke (*.csv *.txt);;All Files (*.*)</translation>
     </message>
     <message>
         <source>Open Measured Data File</source>
-        <translation type="unfinished"></translation>
+        <translation>Odprite datoteko z izmerjenimi podatki</translation>
     </message>
     <message>
         <source>Error occured while loading %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pri nalaganju je prišlo do napake %1.</translation>
     </message>
     <message>
         <source>This file is for solver %1 %2. It is not compatible with the solver you are using, so maybe importing this file will fail. Do you really want to import this file?</source>
-        <translation type="unfinished"></translation>
+        <translation>Ta datoteka je za reševanje %1 %2. Ni združljiv z reševalcem, ki ga uporabljate, zato uvoz te datoteke morda ne bo uspel. Ali res želite uvoziti to datoteko?</translation>
     </message>
     <message>
         <source>There is no visualization/graph windows.</source>
-        <translation type="unfinished"></translation>
+        <translation>Okna za vizualizacijo/graf ni.</translation>
     </message>
     <message>
         <source>File %1 could not be opened.</source>
-        <translation type="unfinished"></translation>
+        <translation>mapa %1 ni bilo mogoče odpreti.</translation>
     </message>
     <message>
         <source>Coordinate system not selected.</source>
-        <translation type="unfinished"></translation>
+        <translation>Koordinatni sistem ni izbran.</translation>
     </message>
 </context>
 <context>
     <name>ProjectMainFile::Impl</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Opozorilo</translation>
     </message>
     <message>
         <source> : no such file.</source>
-        <translation type="unfinished"></translation>
+        <translation>: ni take datoteke.</translation>
     </message>
 </context>
 <context>
     <name>ProjectTimeSettingDialog</name>
     <message>
         <source>Date for t = 0 setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Datum za nastavitev t = 0</translation>
     </message>
     <message>
         <source>Time for t = 0:</source>
-        <translation type="unfinished"></translation>
+        <translation>Čas za t = 0:</translation>
     </message>
     <message>
         <source>Not specified</source>
-        <translation type="unfinished"></translation>
+        <translation>Ni določeno</translation>
     </message>
     <message>
         <source>Time display format</source>
-        <translation type="unfinished"></translation>
+        <translation>Oblika prikaza časa</translation>
     </message>
 </context>
 <context>
     <name>ProjectWorkspace</name>
     <message>
-        <source>Workspace &quot;%1&quot; has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
-        <translation type="unfinished"></translation>
+        <source>Workspace "%1" has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
+        <translation>Delovni prostor "%1"ima %2 projektne mape, za katere se zdi, da se ne uporabljajo več. Ali jih želite odstraniti?</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informacije</translation>
     </message>
 </context>
 <context>
     <name>PropertyBrowser</name>
     <message>
         <source>Attribute Browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Brskalnik atributov</translation>
     </message>
 </context>
 <context>
     <name>PropertyBrowserView</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Oblika</translation>
     </message>
     <message>
         <source>Indices</source>
-        <translation type="unfinished"></translation>
+        <translation>Indeksi</translation>
     </message>
     <message>
         <source>1</source>
-        <translation type="unfinished"></translation>
+        <translation>1</translation>
     </message>
     <message>
         <source>J:</source>
-        <translation type="unfinished"></translation>
+        <translation>J:</translation>
     </message>
     <message>
         <source>I:</source>
-        <translation type="unfinished"></translation>
+        <translation>JAZ:</translation>
     </message>
     <message>
         <source>Index:</source>
-        <translation type="unfinished"></translation>
+        <translation>Indeks:</translation>
     </message>
     <message>
         <source>Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Koordinate</translation>
     </message>
     <message>
         <source>X:</source>
-        <translation type="unfinished"></translation>
+        <translation>X:</translation>
     </message>
     <message>
         <source>Y:</source>
-        <translation type="unfinished"></translation>
+        <translation>Y:</translation>
     </message>
     <message>
         <source>Attributes:</source>
-        <translation type="unfinished"></translation>
+        <translation>Lastnosti:</translation>
     </message>
     <message>
         <source>Attribute Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Ime atributa</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation type="unfinished"></translation>
+        <translation>Vrednost</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
         <source>Background Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Barva ozadja</translation>
     </message>
     <message>
         <source>Draw</source>
-        <translation type="unfinished"></translation>
+        <translation>Žrebanje</translation>
     </message>
     <message>
         <source>Move down item</source>
-        <translation type="unfinished"></translation>
+        <translation>Premakni element navzdol</translation>
     </message>
     <message>
         <source>Move up item</source>
-        <translation type="unfinished"></translation>
+        <translation>Premakni element navzgor</translation>
     </message>
     <message>
         <source>Arbitrary Move</source>
-        <translation type="unfinished"></translation>
+        <translation>Samovoljno premikanje</translation>
     </message>
     <message>
         <source>Reallocate Background Image</source>
-        <translation type="unfinished"></translation>
+        <translation>Prerazporedite sliko ozadja</translation>
     </message>
     <message>
         <source>Set offset</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastavi zamik</translation>
     </message>
     <message>
         <source>Default</source>
-        <translation type="unfinished"></translation>
+        <translation>Privzeto</translation>
     </message>
     <message>
         <source>(Undefined)</source>
-        <translation type="unfinished"></translation>
+        <translation>(Nedoločeno)</translation>
     </message>
 </context>
 <context>
     <name>ScalarsToColorsEditDialog</name>
     <message>
         <source>Color Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastavitev barve</translation>
     </message>
 </context>
 <context>
     <name>SolverDefinition::Impl</name>
     <message>
         <source>%1 Grids</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 Mreže</translation>
     </message>
 </context>
 <context>
     <name>Structured2DGrid</name>
     <message>
         <source>An edge line intersects with that of another cell in this grid.</source>
-        <translation type="unfinished"></translation>
+        <translation>Robna črta seka s črto druge celice v tej mreži.</translation>
     </message>
     <message>
         <source>Aspect ratio of grid cell exceed limit value %1 in more than one cell.</source>
-        <translation type="unfinished"></translation>
+        <translation>Razmerje mrežne celice presega mejno vrednost %1 v več kot eni celici.</translation>
     </message>
     <message>
         <source>Variation of grid cell edge lengths exceed limit values (I-direction: %1, J-direction: %2) in more than one cell.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sprememba dolžine robov mrežnih celic presega mejne vrednosti (smer I: %1, Smer J: %2 ) v več celicah.</translation>
     </message>
     <message>
         <source>Angle of grid cell edge fall below limit value %1 in more than one cell.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kot roba mrežne celice pade pod mejno vrednost %1 v več kot eni celici.</translation>
     </message>
     <message>
         <source>* Cells where edges intersect</source>
-        <translation type="unfinished"></translation>
+        <translation>* Celice, kjer se robovi sekajo</translation>
     </message>
     <message>
         <source>Not exist</source>
-        <translation type="unfinished"></translation>
+        <translation>Ne obstaja</translation>
     </message>
     <message>
         <source>* Cells where aspect ratio of cell edges exceed %1</source>
-        <translation type="unfinished"></translation>
+        <translation>* Celice, pri katerih razmerje stranic robov celic presega %1</translation>
     </message>
     <message>
         <source>I, J, Aspect ratio</source>
-        <translation type="unfinished"></translation>
+        <translation>I, J, Razmerje</translation>
     </message>
     <message>
         <source>Edge length too small</source>
-        <translation type="unfinished"></translation>
+        <translation>Dolžina roba je premajhna</translation>
     </message>
     <message>
         <source>* Cells where angle of cell vertex is below %1</source>
-        <translation type="unfinished"></translation>
+        <translation>* Celice, pri katerih je kot vogala celice spodaj %1</translation>
     </message>
     <message>
         <source>I, J, Angle</source>
-        <translation type="unfinished"></translation>
+        <translation>I, J, kot</translation>
     </message>
     <message>
         <source>* Cells where variation of cell length along i-direction exceed %1</source>
-        <translation type="unfinished"></translation>
+        <translation>* Celice, pri katerih sprememba dolžine celic vzdolž smeri i presega %1</translation>
     </message>
     <message>
         <source>I, J, Variation</source>
-        <translation type="unfinished"></translation>
+        <translation>I, J, variacija</translation>
     </message>
     <message>
         <source>* Cells where variation of cell length along j-direction exceed %1</source>
-        <translation type="unfinished"></translation>
+        <translation>* Celice, pri katerih sprememba dolžine celic vzdolž smeri j presega %1</translation>
     </message>
 </context>
 <context>
     <name>TmsImageGroupDataItem</name>
     <message>
         <source>Background Images (Internet)</source>
-        <translation type="unfinished"></translation>
+        <translation>Slike v ozadju (internet)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Opozorilo</translation>
     </message>
     <message>
         <source>To get background image from internet, please specify the coordiyate system of the project, from the following menu.
  File -&gt; Property</source>
-        <translation type="unfinished"></translation>
+        <translation>Če želite dobiti ozadje iz interneta, v naslednjem meniju navedite sistem koordinat projekta. Datoteka -&gt; Lastnost</translation>
     </message>
     <message>
         <source>Background Image change</source>
-        <translation type="unfinished"></translation>
+        <translation>Sprememba slike ozadja</translation>
     </message>
 </context>
 <context>
     <name>TmsImageSettingManager</name>
     <message>
         <source>Google Map (Road)</source>
-        <translation type="unfinished"></translation>
+        <translation>Google Zemljevid (cesta)</translation>
     </message>
     <message>
         <source>Google Map (Satellite)</source>
-        <translation type="unfinished"></translation>
+        <translation>Google Zemljevid (satelit)</translation>
     </message>
     <message>
         <source>Google Map (Hybrid)</source>
-        <translation type="unfinished"></translation>
+        <translation>Google Zemljevid (hibrid)</translation>
     </message>
     <message>
         <source>Google Map (Terrain)</source>
-        <translation type="unfinished"></translation>
+        <translation>Google Zemljevid (teren)</translation>
     </message>
     <message>
         <source>Open Street Map</source>
-        <translation type="unfinished"></translation>
+        <translation>Odprite zemljevid ulic</translation>
     </message>
     <message>
         <source>GSI (Standard) (Japan only)</source>
-        <translation type="unfinished"></translation>
+        <translation>GSI (standardno) (samo na Japonskem)</translation>
     </message>
     <message>
         <source>GSI (Pale) (Japan only)</source>
-        <translation type="unfinished"></translation>
+        <translation>GSI (bledo) (samo na Japonskem)</translation>
     </message>
     <message>
         <source>GSI (English) (Japan only)</source>
-        <translation type="unfinished"></translation>
+        <translation>GSI (angleščina) (samo na Japonskem)</translation>
     </message>
     <message>
         <source>GSI (Relief) (Japan only)</source>
-        <translation type="unfinished"></translation>
+        <translation>GSI (Relief) (samo na Japonskem)</translation>
     </message>
     <message>
         <source>GSI (Ortho images) (Japan only)</source>
-        <translation type="unfinished"></translation>
+        <translation>GSI (Ortho images) (samo na Japonskem)</translation>
     </message>
 </context>
 <context>
     <name>iRICMetaData</name>
     <message>
         <source>Build number of the version number is not specified.</source>
-        <translation type="unfinished"></translation>
+        <translation>Številka gradnje številke različice ni podana.</translation>
     </message>
 </context>
 </TS>

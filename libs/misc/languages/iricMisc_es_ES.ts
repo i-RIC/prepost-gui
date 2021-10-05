@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="es_ES">
 <context>
     <name>InformationDialog</name>
@@ -16,7 +14,7 @@
     <name>QObject</name>
     <message>
         <source> Revision %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Revisión %1</translation>
     </message>
 </context>
 <context>
@@ -34,7 +32,7 @@
     <name>StandardErrorMessages</name>
     <message>
         <source>Opening file %1 failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Abrir archivo %1 fallido.</translation>
     </message>
 </context>
 </TS>

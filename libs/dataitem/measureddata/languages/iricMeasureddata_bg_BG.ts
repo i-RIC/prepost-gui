@@ -1,143 +1,141 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="bg_BG">
 <context>
     <name>MeasuredDataFileDataItem</name>
     <message>
         <source>File</source>
-        <translation type="unfinished"></translation>
+        <translation>Файл</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation type="unfinished"></translation>
+        <translation>Експорт (&amp;E)...</translation>
     </message>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>CSV файл (*.csv)</translation>
     </message>
     <message>
         <source>Export Measured Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Експортиране на измерени данни</translation>
     </message>
     <message>
         <source>Measured Data successfully exported to %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Измерените данни са успешно експортирани в %1.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Грешка</translation>
     </message>
 </context>
 <context>
     <name>MeasuredDataPointGroupDataItem</name>
     <message>
         <source>Scalar</source>
-        <translation type="unfinished"></translation>
+        <translation>Скаларен</translation>
     </message>
     <message>
         <source>Contour Physical Value Change</source>
-        <translation type="unfinished"></translation>
+        <translation>Промяна на физическата стойност на контура</translation>
     </message>
 </context>
 <context>
     <name>MeasuredDataPointSettingDialog</name>
     <message>
         <source>Scalar Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Скаларна настройка</translation>
     </message>
     <message>
         <source>Measured Value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Измерена стойност:</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Настройка на дисплея</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Размер на точката:</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Настройка на цветна лента (&amp;C)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Грешка</translation>
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
-        <translation type="unfinished"></translation>
+        <translation>За диапазона на стойностите максималната стойност е по -малка от минималната стойност.</translation>
     </message>
 </context>
 <context>
     <name>MeasuredDataVectorGroupDataItem</name>
     <message>
         <source>Arrow</source>
-        <translation type="unfinished"></translation>
+        <translation>Стрелка</translation>
     </message>
     <message>
         <source>Arrow Physical Value Change</source>
-        <translation type="unfinished"></translation>
+        <translation>Стрелка Промяна на физическата стойност</translation>
     </message>
     <message>
         <source>Update Arrow Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Актуализирайте настройката на стрелката</translation>
     </message>
 </context>
 <context>
     <name>MeasuredDataVectorSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Настройка на стрелка</translation>
     </message>
     <message>
         <source>Physical value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Физическа стойност:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation type="unfinished"></translation>
+        <translation>Дължина</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation>Автоматичен</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Стандартна стойност:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation type="unfinished"></translation>
+        <translation>[Госпожица]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation type="unfinished"></translation>
+        <translation>Дължина на екрана:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation type="unfinished"></translation>
+        <translation>[пиксел]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation type="unfinished"></translation>
+        <translation>Минимална стойност за теглене:</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Цвят</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation type="unfinished"></translation>
+        <translation>Персонализиран цвят</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation type="unfinished"></translation>
+        <translation>По скаларна стойност</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Настройка на цветна лента (&amp;C)</translation>
     </message>
 </context>
 </TS>

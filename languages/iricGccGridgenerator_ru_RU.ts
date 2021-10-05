@@ -1,225 +1,223 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ru_RU">
 <context>
     <name>GridCreatingConditionCreatorGridGenerator</name>
     <message>
         <source>Create geometric shape grids</source>
-        <translation type="unfinished"></translation>
+        <translation>Создание сеток геометрической формы</translation>
     </message>
     <message>
         <source>You can create straight grids or sine curve grids by specifying parameters.</source>
-        <translation type="unfinished"></translation>
+        <translation>Вы можете создавать прямые сетки или сетки синусоидальной кривой, задав параметры.</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionGridGenerator</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Предупреждение</translation>
     </message>
     <message>
         <source>The maximum number of grid nodes is %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Максимальное количество узлов сетки составляет %1.</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionGridGeneratorSettingDialog</name>
     <message>
         <source>Grid Creation</source>
-        <translation type="unfinished"></translation>
+        <translation>Создание сетки</translation>
     </message>
     <message>
         <source>Channel and Bed shape</source>
-        <translation type="unfinished"></translation>
+        <translation>Форма канала и кровати</translation>
     </message>
     <message>
         <source>Channel Shape</source>
-        <translation type="unfinished"></translation>
+        <translation>Форма канала</translation>
     </message>
     <message>
         <source>Simple cross section</source>
-        <translation type="unfinished"></translation>
+        <translation>Простое сечение</translation>
     </message>
     <message>
         <source>Simple compound channel</source>
-        <translation type="unfinished"></translation>
+        <translation>Простой составной канал</translation>
     </message>
     <message>
         <source>Complex compound channel</source>
-        <translation type="unfinished"></translation>
+        <translation>Сложный составной канал</translation>
     </message>
     <message>
         <source>Channel Property</source>
-        <translation type="unfinished"></translation>
+        <translation>Свойство канала</translation>
     </message>
     <message>
         <source>Fixed bed (only flood channels)</source>
-        <translation type="unfinished"></translation>
+        <translation>Фиксированная грядка (только паводковые каналы)</translation>
     </message>
     <message>
         <source>Movable bed</source>
-        <translation type="unfinished"></translation>
+        <translation>Подвижная кровать</translation>
     </message>
     <message>
         <source>Bed Shape</source>
-        <translation type="unfinished"></translation>
+        <translation>Форма кровати</translation>
     </message>
     <message>
         <source>Flat</source>
-        <translation type="unfinished"></translation>
+        <translation>Плоский</translation>
     </message>
     <message>
         <source>Alternate bar shape in low water channel</source>
-        <translation type="unfinished"></translation>
+        <translation>Альтернативная форма стержня в канале с низким уровнем воды</translation>
     </message>
     <message>
         <source>Parabolic shape cross section</source>
-        <translation type="unfinished"></translation>
+        <translation>Поперечное сечение параболической формы</translation>
     </message>
     <message>
         <source>Amplitude (Depth)</source>
-        <translation type="unfinished"></translation>
+        <translation>Амплитуда (глубина)</translation>
     </message>
     <message>
         <source>Alternate bar : Amplitude of cross sectional bed shape [m]</source>
-        <translation type="unfinished"></translation>
+        <translation>Альтернативный столбик: Амплитуда формы поперечного сечения слоя [м]</translation>
     </message>
     <message>
         <source>Parabolic shape : Depth of center of cross section [m]</source>
-        <translation type="unfinished"></translation>
+        <translation>Параболическая форма: Глубина центра поперечного сечения [м]</translation>
     </message>
     <message>
         <source>Lag</source>
-        <translation type="unfinished"></translation>
+        <translation>Отставание</translation>
     </message>
     <message>
         <source>Lag between channel geometry and bar location [m]</source>
-        <translation type="unfinished"></translation>
+        <translation>Разница между геометрией канала и положением стержня [м]</translation>
     </message>
     <message>
         <source>Common parameters</source>
-        <translation type="unfinished"></translation>
+        <translation>Общие параметры</translation>
     </message>
     <message>
         <source>Meander wave length [m] :</source>
-        <translation type="unfinished"></translation>
+        <translation>Длина меандровой волны [м]:</translation>
     </message>
     <message>
         <source>Wave number :</source>
-        <translation type="unfinished"></translation>
+        <translation>Номер волны:</translation>
     </message>
     <message>
         <source>Meander angle (degree, zero for a straight channel) :</source>
-        <translation type="unfinished"></translation>
+        <translation>Угол меандра (градус, ноль для прямого канала):</translation>
     </message>
     <message>
         <source>Channel slope :</source>
-        <translation type="unfinished"></translation>
+        <translation>Наклон канала:</translation>
     </message>
     <message>
         <source>Number of grids for one wave length in the longitudinal direction :</source>
-        <translation type="unfinished"></translation>
+        <translation>Количество сеток на одну длину волны в продольном направлении:</translation>
     </message>
     <message>
         <source>Channel shape</source>
-        <translation type="unfinished"></translation>
+        <translation>Форма канала</translation>
     </message>
     <message>
         <source>Simple channel</source>
-        <translation type="unfinished"></translation>
+        <translation>Простой канал</translation>
     </message>
     <message>
         <source>Channel width [m] :</source>
-        <translation type="unfinished"></translation>
+        <translation>Ширина канала [м]:</translation>
     </message>
     <message>
         <source>Number of grids in the cross sectional direction :</source>
-        <translation type="unfinished"></translation>
+        <translation>Количество решеток в направлении поперечного сечения:</translation>
     </message>
     <message>
         <source>Simple compound</source>
-        <translation type="unfinished"></translation>
+        <translation>Простое соединение</translation>
     </message>
     <message>
         <source>Width of the left flood channel [m] :</source>
-        <translation type="unfinished"></translation>
+        <translation>Ширина левого паводкового русла [м]:</translation>
     </message>
     <message>
         <source>Width of the low water channel [m] :</source>
-        <translation type="unfinished"></translation>
+        <translation>Ширина маловодного русла [м]:</translation>
     </message>
     <message>
         <source>Width of the right flood channel [m] :</source>
-        <translation type="unfinished"></translation>
+        <translation>Ширина правого паводкового канала [м]:</translation>
     </message>
     <message>
         <source>Complex compound</source>
-        <translation type="unfinished"></translation>
+        <translation>Комплексное соединение</translation>
     </message>
     <message>
         <source>Total width between banks [m] :</source>
-        <translation type="unfinished"></translation>
+        <translation>Общая ширина между берегами [м]:</translation>
     </message>
     <message>
         <source>Compound channel</source>
-        <translation type="unfinished"></translation>
+        <translation>Составной канал</translation>
     </message>
     <message>
         <source>Number of grids for the left flood channel :</source>
-        <translation type="unfinished"></translation>
+        <translation>Количество сеток по левому каналу паводка:</translation>
     </message>
     <message>
         <source>Number of grids for the low water channel :</source>
-        <translation type="unfinished"></translation>
+        <translation>Количество решеток маловодного русла:</translation>
     </message>
     <message>
         <source>Number of grids for the right flood channel :</source>
-        <translation type="unfinished"></translation>
+        <translation>Количество сеток для правого русла паводка:</translation>
     </message>
     <message>
         <source>Depth of the low water channel [m] :</source>
-        <translation type="unfinished"></translation>
+        <translation>Глубина меженного русла [м]:</translation>
     </message>
     <message>
         <source>Slope of the low water channel banks :</source>
-        <translation type="unfinished"></translation>
+        <translation>Уклон берегов низкого русла:</translation>
     </message>
     <message>
         <source>Number of grids for the low water channel banks :</source>
-        <translation type="unfinished"></translation>
+        <translation>Количество решеток берегов маловодного русла:</translation>
     </message>
     <message>
         <source>Width change</source>
-        <translation type="unfinished"></translation>
+        <translation>Изменение ширины</translation>
     </message>
     <message>
         <source>Constant</source>
-        <translation type="unfinished"></translation>
+        <translation>Постоянный</translation>
     </message>
     <message>
         <source>Change in flow direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Изменение направления потока</translation>
     </message>
     <message>
         <source>Width change type</source>
-        <translation type="unfinished"></translation>
+        <translation>Тип изменения ширины</translation>
     </message>
     <message>
         <source>Left and right banks</source>
-        <translation type="unfinished"></translation>
+        <translation>Левый и правый берег</translation>
     </message>
     <message>
         <source>Left bank only</source>
-        <translation type="unfinished"></translation>
+        <translation>Только левый берег</translation>
     </message>
     <message>
         <source>Right bank only</source>
-        <translation type="unfinished"></translation>
+        <translation>Только правый берег</translation>
     </message>
     <message>
         <source>Width variation [m] :</source>
-        <translation type="unfinished"></translation>
+        <translation>Изменение ширины [м]:</translation>
     </message>
 </context>
 </TS>

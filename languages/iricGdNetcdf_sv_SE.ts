@@ -1,381 +1,379 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="sv_SE">
 <context>
     <name>GeoDataNetcdf</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Fel</translation>
     </message>
     <message>
         <source>Error occured while opening %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ett fel uppstod vid öppning %1.</translation>
     </message>
     <message>
         <source>Color setting edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Redigera färginställningar</translation>
     </message>
 </context>
 <context>
     <name>GeoDataNetcdfColorSettingDialog</name>
     <message>
         <source>Raster Data Color Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Rasterdatafärginställning</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Färg</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished"></translation>
+        <translation>Färg efter värde</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Anpassad färg</translation>
     </message>
 </context>
 <context>
     <name>GeoDataNetcdfCreator</name>
     <message>
         <source>Raster Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Rasterdata</translation>
     </message>
     <message>
         <source>Raster Data%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Rasterdata %1</translation>
     </message>
 </context>
 <context>
     <name>GeoDataNetcdfFileListDialog</name>
     <message>
         <source>Confirm File List</source>
-        <translation type="unfinished"></translation>
+        <translation>Bekräfta fillista</translation>
     </message>
     <message>
         <source>The following files will be imported. Is it OK?</source>
-        <translation type="unfinished"></translation>
+        <translation>Följande filer kommer att importeras. Är det ok?</translation>
     </message>
 </context>
 <context>
     <name>GeoDataNetcdfFileNamePatternDialog</name>
     <message>
         <source>File name pattern setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Inställning av filnamnsmönster</translation>
     </message>
     <message>
         <source>Please specify the filename pattern to recognize date and time.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ange filnamnsmönstret för att känna igen datum och tid.</translation>
     </message>
     <message>
         <source>File name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Filnamn:</translation>
     </message>
     <message>
         <source>Pattern:</source>
-        <translation type="unfinished"></translation>
+        <translation>Mönster:</translation>
     </message>
     <message>
         <source>YYYYMMDD_hhmmss</source>
-        <translation type="unfinished"></translation>
+        <translation>ÅÅÅÅMMDD_hhmmss</translation>
     </message>
     <message>
         <source>Recognize result:</source>
-        <translation type="unfinished"></translation>
+        <translation>Känner igen resultatet:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please use the following letters to define pattern:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Year: YYYY&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Month: MM&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Day: DD&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Hour: hh&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Minute: mm&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Second: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please use the following letters to define pattern:&lt;/p&gt;&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;"&gt;&lt;li style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Year: YYYY&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Month: MM&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Day: DD&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Hour: hh&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Minute: mm&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Second: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Använd följande bokstäver för att definiera mönster: &lt;/p&gt; &lt;ul style = "margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin -right: 0px; -qt-list-indent: 1; "&gt; &lt;li style =" margin-top: 12px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block- indent: 0; text-indent: 0px; "&gt; År: ÅÅÅÅ &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt -block-indent: 0; text-indent: 0px; "&gt; Månad: MM &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px ; -qt-block-indent: 0; text-indent: 0px; "&gt; Day: DD &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin- höger: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Timmar: hh &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px ; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Minute: mm &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 12px; margin- vänster: 0px; marginal-höger: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Andra: ss &lt;/li&gt; &lt;/ul&gt; &lt;/body &gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>File name does not match the pattern</source>
-        <translation type="unfinished"></translation>
+        <translation>Filnamnet matchar inte mönstret</translation>
     </message>
 </context>
 <context>
     <name>GeoDataNetcdfGdalExporter</name>
     <message>
         <source>GDAL</source>
-        <translation type="unfinished"></translation>
+        <translation>GDAL</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Fel</translation>
     </message>
     <message>
         <source>This data cannot be exported. It seems that it was not imported from *.tif or *.asc.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dessa data kan inte exporteras. Det verkar som att den inte importerades från *.tif eller *.asc.</translation>
     </message>
     <message>
-        <source>This data cannot be exported. Data with &quot;Time&quot; dimension cannot be exported to *.tif or *.asc.</source>
-        <translation type="unfinished"></translation>
+        <source>This data cannot be exported. Data with "Time" dimension cannot be exported to *.tif or *.asc.</source>
+        <translation>Dessa data kan inte exporteras. Data med dimensionen "Tid" kan inte exporteras till *.tif eller *.asc.</translation>
     </message>
     <message>
         <source>ArcInfo ASCII files(*.asc)</source>
-        <translation type="unfinished"></translation>
+        <translation>ArcInfo ASCII -filer (*.asc)</translation>
     </message>
     <message>
         <source>GeoTiff files(*.tif)</source>
-        <translation type="unfinished"></translation>
+        <translation>GeoTiff -filer (*.tif)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataNetcdfGdalImporter</name>
     <message>
         <source>Importing data...</source>
-        <translation type="unfinished"></translation>
+        <translation>Importera data...</translation>
     </message>
     <message>
         <source>GDAL</source>
-        <translation type="unfinished"></translation>
+        <translation>GDAL</translation>
     </message>
     <message>
         <source>GeoTiff files(*.tif)</source>
-        <translation type="unfinished"></translation>
+        <translation>GeoTiff -filer (*.tif)</translation>
     </message>
     <message>
         <source>ArcInfo ASCII files(*.asc)</source>
-        <translation type="unfinished"></translation>
+        <translation>ArcInfo ASCII -filer (*.asc)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Varning</translation>
     </message>
     <message>
         <source>GDAL data files can be imported for grid conditions without dimensions, and Time dimension only.</source>
-        <translation type="unfinished"></translation>
+        <translation>GDAL -datafiler kan importeras för nätförhållanden utan dimensioner och endast tidsdimension.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Fel</translation>
     </message>
     <message>
         <source>Dimension values for time mismatch.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dimensionsvärden för tidsmatchning.</translation>
     </message>
     <message>
         <source>Coordinate system is not specified for %1. Please select coordinate system manually.</source>
-        <translation type="unfinished"></translation>
+        <translation>Koordinatsystem är inte specificerat för %1. Välj koordinatsystem manuellt.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataNetcdfGrayscalePngRealExporter</name>
     <message>
         <source>Grayscale 16bit PNG files(*.png)</source>
-        <translation type="unfinished"></translation>
+        <translation>16 -bitars PNG -filer i gråskala (*.png)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Fel</translation>
     </message>
     <message>
         <source>This data cannot be exported. It seems that it was not imported from *.png.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dessa data kan inte exporteras. Det verkar som att den inte importerades från *.png.</translation>
     </message>
     <message>
-        <source>This data cannot be exported. Data with &quot;Time&quot; dimension cannot be exported to *.png</source>
-        <translation type="unfinished"></translation>
+        <source>This data cannot be exported. Data with "Time" dimension cannot be exported to *.png</source>
+        <translation>Dessa data kan inte exporteras. Data med dimensionen "Tid" kan inte exporteras till *.png</translation>
     </message>
     <message>
         <source>Error occured while opening %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Ett fel uppstod vid öppning %1</translation>
     </message>
     <message>
         <source>Error occured while initializing libpng.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ett fel uppstod när libpng initierades.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataNetcdfGrayscalePngRealImporter</name>
     <message>
         <source>Grayscale 16bit PNG (for Unreal Engine 4)</source>
-        <translation type="unfinished"></translation>
+        <translation>16 -bitars gråskala PNG (för Unreal Engine 4)</translation>
     </message>
     <message>
         <source>Grayscale 16bit PNG files(*.png)</source>
-        <translation type="unfinished"></translation>
+        <translation>16 -bitars PNG -filer i gråskala (*.png)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Varning</translation>
     </message>
     <message>
         <source>Grayscale 16bit PNG files can be imported for grid conditions without dimensions.</source>
-        <translation type="unfinished"></translation>
+        <translation>16 -bitars PNG -filer i gråskala kan importeras för nätförhållanden utan dimensioner.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Fel</translation>
     </message>
     <message>
         <source>Error occured while opening %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Ett fel uppstod vid öppning %1</translation>
     </message>
     <message>
         <source>Error occured while opening %1. It seems not to be a PNG file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ett fel uppstod vid öppning %1. Det verkar inte vara en PNG -fil.</translation>
     </message>
     <message>
         <source>%1 is not a 16bit grayscale image.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 är inte en 16 -bitars gråskala.</translation>
     </message>
     <message>
         <source>%1 does not exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 existerar inte.</translation>
     </message>
     <message>
         <source>Error occured while reading %1. It is not a valid world file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ett fel uppstod vid läsning %1. Det är inte en giltig världsfil.</translation>
     </message>
     <message>
         <source>Error occured while parsing %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ett fel uppstod vid analys %1.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataNetcdfImporter</name>
     <message>
         <source>NetCDF</source>
-        <translation type="unfinished"></translation>
+        <translation>NetCDF</translation>
     </message>
     <message>
         <source>NetCDF file (*.nc)</source>
-        <translation type="unfinished"></translation>
+        <translation>NetCDF -fil (*.nc)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Fel</translation>
     </message>
     <message>
         <source>%1 does not have variable that can be imported.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 har ingen variabel som kan importeras.</translation>
     </message>
     <message>
         <source>Dimension values for %1 mismatch.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dimensionsvärden för %1 missanpassning.</translation>
     </message>
     <message>
         <source>Error occured while parsing time definition: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Ett fel uppstod vid analys av tidsdefinitionen: %1</translation>
     </message>
     <message>
         <source>%1 does not have longitude, latitude nor x, y data.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 har inte data om longitud, latitud eller x, y.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataNetcdfImporterDateSelectDialog</name>
     <message>
         <source>Specify Original Date</source>
-        <translation type="unfinished"></translation>
+        <translation>Ange originaldatum</translation>
     </message>
     <message>
         <source>Automatic recognition of original time failed. Please specify the original date.</source>
-        <translation type="unfinished"></translation>
+        <translation>Automatisk igenkänning av ursprunglig tid misslyckades. Ange det ursprungliga datumet.</translation>
     </message>
     <message>
         <source>Units:</source>
-        <translation type="unfinished"></translation>
+        <translation>Enheter:</translation>
     </message>
     <message>
         <source>days since 2014-01-01</source>
-        <translation type="unfinished"></translation>
+        <translation>dagar sedan 2014-01-01</translation>
     </message>
     <message>
         <source>Unit:</source>
-        <translation type="unfinished"></translation>
+        <translation>Enhet:</translation>
     </message>
     <message>
         <source>years</source>
-        <translation type="unfinished"></translation>
+        <translation>år</translation>
     </message>
     <message>
         <source>days</source>
-        <translation type="unfinished"></translation>
+        <translation>dagar</translation>
     </message>
     <message>
         <source>hours</source>
-        <translation type="unfinished"></translation>
+        <translation>timmar</translation>
     </message>
     <message>
         <source>minutes</source>
-        <translation type="unfinished"></translation>
+        <translation>minuter</translation>
     </message>
     <message>
         <source>seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>sekunder</translation>
     </message>
     <message>
         <source>Original time:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ursprunglig tid:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataNetcdfImporterSettingDialog</name>
     <message>
         <source>Dimension Mapping Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Dimension Mapping Inställning</translation>
     </message>
     <message>
         <source>Value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Värde:</translation>
     </message>
     <message>
         <source>Dimensions</source>
-        <translation type="unfinished"></translation>
+        <translation>Mått</translation>
     </message>
 </context>
 <context>
     <name>GeoDataNetcdfNcExporter</name>
     <message>
         <source>NetCDF files (*.nc)</source>
-        <translation type="unfinished"></translation>
+        <translation>NetCDF -filer (*.nc)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataNetcdfTimeSeriesCreator</name>
     <message>
         <source>Time Series Raster Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Time Series Raster Data</translation>
     </message>
     <message>
         <source>Time Series Raster Data%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Time Series Raster Data %1</translation>
     </message>
 </context>
 <context>
     <name>GeoDataNetcdfXbandImporter</name>
     <message>
         <source>XBand MP RADER data</source>
-        <translation type="unfinished"></translation>
+        <translation>XBand MP RADER -data</translation>
     </message>
     <message>
         <source>X band MP rader data (*.*)</source>
-        <translation type="unfinished"></translation>
+        <translation>X band MP rader data (*.*)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Varning</translation>
     </message>
     <message>
-        <source>X band MP rader data can be imported for grid conditions with dimension &quot;Time&quot;.</source>
-        <translation type="unfinished"></translation>
+        <source>X band MP rader data can be imported for grid conditions with dimension "Time".</source>
+        <translation>X -band MP -rader -data kan importeras för nätförhållanden med dimensionen "Tid".</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Information</translation>
     </message>
     <message>
         <source>%1 files in the folder %2 are imported.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 filer i mappen %2 importeras.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Fel</translation>
     </message>
     <message>
         <source>Dimension values for time mismatch.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dimensionsvärden för tidsmatchning.</translation>
     </message>
 </context>
 </TS>

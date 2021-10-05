@@ -1,171 +1,169 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="id_ID">
 <context>
     <name>Graph2dWindowDataModel</name>
     <message>
         <source>Title Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Pengaturan Judul</translation>
     </message>
     <message>
         <source>Please input the title.</source>
-        <translation type="unfinished"></translation>
+        <translation>Silahkan masukan judulnya.</translation>
     </message>
 </context>
 <context>
     <name>Graph2dWindowMarkerGroupDataItem</name>
     <message>
         <source>Markers</source>
-        <translation type="unfinished"></translation>
+        <translation>penanda</translation>
     </message>
 </context>
 <context>
     <name>Graph2dWindowMarkerSettingDialog</name>
     <message>
         <source>Marker Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Pengaturan Penanda</translation>
     </message>
     <message>
         <source>Orientation</source>
-        <translation type="unfinished"></translation>
+        <translation>Orientasi</translation>
     </message>
     <message>
         <source>X-axis</source>
-        <translation type="unfinished"></translation>
+        <translation>sumbu X</translation>
     </message>
     <message>
         <source>Y-axis</source>
-        <translation type="unfinished"></translation>
+        <translation>sumbu Y</translation>
     </message>
     <message>
         <source>Axis</source>
-        <translation type="unfinished"></translation>
+        <translation>Sumbu</translation>
     </message>
     <message>
         <source>Left</source>
-        <translation type="unfinished"></translation>
+        <translation>Kiri</translation>
     </message>
     <message>
         <source>Right</source>
-        <translation type="unfinished"></translation>
+        <translation>Benar</translation>
     </message>
     <message>
         <source>Marker Value</source>
-        <translation type="unfinished"></translation>
+        <translation>Nilai Penanda</translation>
     </message>
     <message>
         <source>Value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nilai:</translation>
     </message>
     <message>
         <source>Label</source>
-        <translation type="unfinished"></translation>
+        <translation>Label</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation>Mobil</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation type="unfinished"></translation>
+        <translation>Kebiasaan</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished"></translation>
+        <translation>Posisi</translation>
     </message>
     <message>
         <source>Center</source>
-        <translation type="unfinished"></translation>
+        <translation>Tengah</translation>
     </message>
     <message>
         <source>Above Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Garis Di Atas</translation>
     </message>
     <message>
         <source>Style</source>
-        <translation type="unfinished"></translation>
+        <translation>Gaya</translation>
     </message>
     <message>
         <source>Color: </source>
-        <translation type="unfinished"></translation>
+        <translation>Warna:</translation>
     </message>
     <message>
         <source>Show line</source>
-        <translation type="unfinished"></translation>
+        <translation>Tampilkan garis</translation>
     </message>
     <message>
         <source>Solid Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Garis utuh</translation>
     </message>
     <message>
         <source>Dashed Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Garis putus-putus</translation>
     </message>
     <message>
         <source>Dotted Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Garis putus-putus</translation>
     </message>
     <message>
         <source>Dots and Dashes</source>
-        <translation type="unfinished"></translation>
+        <translation>Titik dan Garis</translation>
     </message>
     <message>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Menambahkan</translation>
     </message>
     <message>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Menghapus</translation>
     </message>
     <message>
         <source>y</source>
-        <translation type="unfinished"></translation>
+        <translation>kamu</translation>
     </message>
 </context>
 <context>
     <name>Graph2dWindowVerticalAxisSettingDialog</name>
     <message>
         <source>Vertical Axis Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Pengaturan Sumbu Vertikal</translation>
     </message>
     <message>
         <source>Value Range</source>
-        <translation type="unfinished"></translation>
+        <translation>Rentang Nilai</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation>Mobil</translation>
     </message>
     <message>
         <source>Max</source>
-        <translation type="unfinished"></translation>
+        <translation>Maks</translation>
     </message>
     <message>
         <source>Min</source>
-        <translation type="unfinished"></translation>
+        <translation>min</translation>
     </message>
     <message>
         <source>Label</source>
-        <translation type="unfinished"></translation>
+        <translation>Label</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation type="unfinished"></translation>
+        <translation>Kebiasaan</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
         <source>Object Browser Item Change</source>
-        <translation type="unfinished"></translation>
+        <translation>Perubahan Item Browser Objek</translation>
     </message>
     <message>
         <source>Move up item</source>
-        <translation type="unfinished"></translation>
+        <translation>Pindahkan item ke atas</translation>
     </message>
     <message>
         <source>Move down item</source>
-        <translation type="unfinished"></translation>
+        <translation>Pindahkan item ke bawah</translation>
     </message>
 </context>
 </TS>

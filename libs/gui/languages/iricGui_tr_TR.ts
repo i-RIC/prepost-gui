@@ -1,2073 +1,2071 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="tr_TR">
 <context>
     <name>AnimationController</name>
     <message>
         <source>Animation ToolBar</source>
-        <translation type="unfinished"></translation>
+        <translation>Animasyon Araç Çubuğu</translation>
     </message>
     <message>
         <source>&amp;Animation</source>
-        <translation type="unfinished"></translation>
+        <translation>Animasyon (&amp;A)</translation>
     </message>
     <message>
         <source>Step &amp;Backward</source>
-        <translation type="unfinished"></translation>
+        <translation>Geri adım (&amp;B)</translation>
     </message>
     <message>
         <source>Step &amp;Forward</source>
-        <translation type="unfinished"></translation>
+        <translation>Öne çık (&amp;F)</translation>
     </message>
     <message>
         <source>&amp;Reset</source>
-        <translation type="unfinished"></translation>
+        <translation>Sıfırla (&amp;R)</translation>
     </message>
     <message>
         <source>Go to &amp;Last Step</source>
-        <translation type="unfinished"></translation>
+        <translation>Son Adıma Git (&amp;L)</translation>
     </message>
     <message>
         <source>&amp;Start/Stop Animation</source>
-        <translation type="unfinished"></translation>
+        <translation>Animasyonu Başlat/Durdur (&amp;S)</translation>
     </message>
     <message>
         <source>S&amp;top Animation</source>
-        <translation type="unfinished"></translation>
+        <translation>Animasyonu Durdur (&amp;T)</translation>
     </message>
     <message>
         <source>Toggle &amp;following last step</source>
-        <translation type="unfinished"></translation>
+        <translation>Son adımdan sonra geçiş yap (&amp;F)</translation>
     </message>
     <message>
         <source>&amp;Animation Speed Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Animasyon Hızı Ayarı (&amp;A)...</translation>
     </message>
     <message>
         <source>L&amp;oop Animation</source>
-        <translation type="unfinished"></translation>
+        <translation>Döngü Animasyonu (&amp;O)</translation>
     </message>
 </context>
 <context>
     <name>ConfirmPage</name>
     <message>
         <source>Confirm the result</source>
-        <translation type="unfinished"></translation>
+        <translation>sonucu onaylayın</translation>
     </message>
     <message>
         <source>The files in the list below will be created or updated. Please open these files with Qt Linguist, and complete the translation dictionary.</source>
-        <translation type="unfinished"></translation>
+        <translation>Aşağıdaki listedeki dosyalar oluşturulacak veya güncellenecektir. Lütfen bu dosyaları Qt Linguist ile açın ve çeviri sözlüğünü tamamlayın.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotConfirmPage</name>
     <message>
         <source>Confirm the result</source>
-        <translation type="unfinished"></translation>
+        <translation>sonucu onaylayın</translation>
     </message>
     <message>
         <source>The files in the list below will be created or updated. </source>
-        <translation type="unfinished"></translation>
+        <translation>Aşağıdaki listedeki dosyalar oluşturulacak veya güncellenecektir.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotFilePropertyPage</name>
     <message>
         <source>WizardPage</source>
-        <translation type="unfinished"></translation>
+        <translation>Sihirbaz Sayfası</translation>
     </message>
     <message>
         <source>File Properties</source>
-        <translation type="unfinished"></translation>
+        <translation>Dosya özellikleri</translation>
     </message>
     <message>
         <source>Please specify the properties of output files.</source>
-        <translation type="unfinished"></translation>
+        <translation>Lütfen çıktı dosyalarının özelliklerini belirtin.</translation>
     </message>
     <message>
         <source>Directory</source>
-        <translation type="unfinished"></translation>
+        <translation>dizin</translation>
     </message>
     <message>
         <source>File name</source>
-        <translation type="unfinished"></translation>
+        <translation>Dosya adı</translation>
     </message>
     <message>
         <source>Prefix :</source>
-        <translation type="unfinished"></translation>
+        <translation>Önek :</translation>
     </message>
     <message>
         <source>Suffix length :</source>
-        <translation type="unfinished"></translation>
+        <translation>Sonek uzunluğu :</translation>
     </message>
     <message>
         <source>Format :</source>
-        <translation type="unfinished"></translation>
+        <translation>Biçim :</translation>
     </message>
     <message>
         <source>PNG (*.png)</source>
-        <translation type="unfinished"></translation>
+        <translation>PNG (*.png)</translation>
     </message>
     <message>
         <source>.png</source>
-        <translation type="unfinished"></translation>
+        <translation>.png</translation>
     </message>
     <message>
         <source>JPEG (*.jpg)</source>
-        <translation type="unfinished"></translation>
+        <translation>JPEG (*.jpg)</translation>
     </message>
     <message>
         <source>.jpg</source>
-        <translation type="unfinished"></translation>
+        <translation>.jpg</translation>
     </message>
     <message>
         <source>Windows Bitmap (*.bmp)</source>
-        <translation type="unfinished"></translation>
+        <translation>Windows Bit Eşlem (*.bmp)</translation>
     </message>
     <message>
         <source>.bmp</source>
-        <translation type="unfinished"></translation>
+        <translation>.bmp</translation>
     </message>
     <message>
         <source>Portable Bitmap (*.ppm)</source>
-        <translation type="unfinished"></translation>
+        <translation>Taşınabilir Bitmap (*.ppm)</translation>
     </message>
     <message>
         <source>.ppm</source>
-        <translation type="unfinished"></translation>
+        <translation>.ppm</translation>
     </message>
     <message>
         <source>X11 Bitmap (*.xbm)</source>
-        <translation type="unfinished"></translation>
+        <translation>X11 Bit eşlem (*.xbm)</translation>
     </message>
     <message>
         <source>.xbm</source>
-        <translation type="unfinished"></translation>
+        <translation>.xbm</translation>
     </message>
     <message>
         <source>Prefix</source>
-        <translation type="unfinished"></translation>
+        <translation>Önek</translation>
     </message>
     <message>
         <source>Output file</source>
-        <translation type="unfinished"></translation>
+        <translation>Çıktı dosyası</translation>
     </message>
     <message>
         <source>img_</source>
-        <translation type="unfinished"></translation>
+        <translation>resim_</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Uyarı</translation>
     </message>
     <message>
         <source>Folder %1 does not exists. Do you want to it now?</source>
-        <translation type="unfinished"></translation>
+        <translation>Dosya %1 Yok. Şimdi istiyor musun?</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Hata</translation>
     </message>
     <message>
         <source>Creating folder %1 failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Klasör oluşturma %1 arızalı.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotGoogleEarthSettingPage</name>
     <message>
         <source>WizardPage</source>
-        <translation type="unfinished"></translation>
+        <translation>Sihirbaz Sayfası</translation>
     </message>
     <message>
         <source>Output to the Google Earth</source>
-        <translation type="unfinished"></translation>
+        <translation>Google Earth'e çıktı</translation>
     </message>
     <message>
         <source>Please specify the properties of output files.</source>
-        <translation type="unfinished"></translation>
+        <translation>Lütfen çıktı dosyalarının özelliklerini belirtin.</translation>
     </message>
     <message>
         <source>Note: This feature is available only when a coordinate system has been specified.</source>
-        <translation type="unfinished"></translation>
+        <translation>Not: Bu özellik yalnızca bir koordinat sistemi belirtildiğinde kullanılabilir.</translation>
     </message>
     <message>
         <source>KML file name</source>
-        <translation type="unfinished"></translation>
+        <translation>KML dosya adı</translation>
     </message>
     <message>
         <source>Name :</source>
-        <translation type="unfinished"></translation>
+        <translation>İsim :</translation>
     </message>
     <message>
         <source>output.kml</source>
-        <translation type="unfinished"></translation>
+        <translation>çıktı.kml</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotIntroductionPage</name>
     <message>
         <source>Introduction</source>
-        <translation type="unfinished"></translation>
+        <translation>Tanıtım</translation>
     </message>
     <message>
         <source>Use this wizard to specify the requirements to generate continuous snapshot output.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sürekli anlık görüntü çıktısı oluşturmak için gereksinimleri belirtmek için bu sihirbazı kullanın.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotMoviePropertyPage</name>
     <message>
         <source>WizardPage</source>
-        <translation type="unfinished"></translation>
+        <translation>Sihirbaz Sayfası</translation>
     </message>
     <message>
         <source>Movie Properties</source>
-        <translation type="unfinished"></translation>
+        <translation>Film Özellikleri</translation>
     </message>
     <message>
         <source>Please specify the properties of output files.</source>
-        <translation type="unfinished"></translation>
+        <translation>Lütfen çıktı dosyalarının özelliklerini belirtin.</translation>
     </message>
     <message>
         <source>Output movie files</source>
-        <translation type="unfinished"></translation>
+        <translation>Çıktı film dosyaları</translation>
     </message>
     <message>
         <source>File name</source>
-        <translation type="unfinished"></translation>
+        <translation>Dosya adı</translation>
     </message>
     <message>
         <source>Play speed</source>
-        <translation type="unfinished"></translation>
+        <translation>oyun hızı</translation>
     </message>
     <message>
         <source>Specify movie length[sec]</source>
-        <translation type="unfinished"></translation>
+        <translation>Film uzunluğunu belirtin[sn]</translation>
     </message>
     <message>
         <source>Specify frames per second</source>
-        <translation type="unfinished"></translation>
+        <translation>Saniyedeki kare sayısını belirtin</translation>
     </message>
     <message>
         <source>Profile:</source>
-        <translation type="unfinished"></translation>
+        <translation>Profil:</translation>
     </message>
     <message>
         <source>Output file</source>
-        <translation type="unfinished"></translation>
+        <translation>Çıktı dosyası</translation>
     </message>
     <message>
         <source>Default</source>
-        <translation type="unfinished"></translation>
+        <translation>Varsayılan</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotTimestepSettingPage</name>
     <message>
         <source>WizardPage</source>
-        <translation type="unfinished"></translation>
+        <translation>Sihirbaz Sayfası</translation>
     </message>
     <message>
         <source>Timestep Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Zaman Adımı Ayarı</translation>
     </message>
     <message>
         <source>Please specify the start time step, stop time step, and the skip rate.</source>
-        <translation type="unfinished"></translation>
+        <translation>Lütfen başlangıç zamanı adımını, bitiş zamanı adımını ve atlama oranını belirtin.</translation>
     </message>
     <message>
         <source>start :</source>
-        <translation type="unfinished"></translation>
+        <translation>Başlat :</translation>
     </message>
     <message>
         <source>stop :</source>
-        <translation type="unfinished"></translation>
+        <translation>Dur :</translation>
     </message>
     <message>
         <source>Skip rate :</source>
-        <translation type="unfinished"></translation>
+        <translation>Atlama oranı :</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWindowSelectionPage</name>
     <message>
         <source>WizardPage</source>
-        <translation type="unfinished"></translation>
+        <translation>Sihirbaz Sayfası</translation>
     </message>
     <message>
         <source>Window Selection</source>
-        <translation type="unfinished"></translation>
+        <translation>Pencere Seçimi</translation>
     </message>
     <message>
         <source>Please select target windows and specify how you want to output files.</source>
-        <translation type="unfinished"></translation>
+        <translation>Lütfen hedef pencereleri seçin ve dosyaların nasıl çıktısını almak istediğinizi belirtin.</translation>
     </message>
     <message>
         <source>Target windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Hedef pencereler</translation>
     </message>
     <message>
         <source>Output file</source>
-        <translation type="unfinished"></translation>
+        <translation>Çıktı dosyası</translation>
     </message>
     <message>
         <source>In one file</source>
-        <translation type="unfinished"></translation>
+        <translation>tek dosyada</translation>
     </message>
     <message>
         <source>Respectively</source>
-        <translation type="unfinished"></translation>
+        <translation>Sırasıyla</translation>
     </message>
     <message>
         <source>Layout</source>
-        <translation type="unfinished"></translation>
+        <translation>Düzen</translation>
     </message>
     <message>
         <source>As is</source>
-        <translation type="unfinished"></translation>
+        <translation>olduğu gibi</translation>
     </message>
     <message>
         <source>Horizontally</source>
-        <translation type="unfinished"></translation>
+        <translation>yatay</translation>
     </message>
     <message>
         <source>Vertically</source>
-        <translation type="unfinished"></translation>
+        <translation>dikey</translation>
     </message>
     <message>
         <source>Background</source>
-        <translation type="unfinished"></translation>
+        <translation>Arka plan</translation>
     </message>
     <message>
         <source>white</source>
-        <translation type="unfinished"></translation>
+        <translation>Beyaz</translation>
     </message>
     <message>
         <source>transparent</source>
-        <translation type="unfinished"></translation>
+        <translation>şeffaf</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Uyarı</translation>
     </message>
     <message>
         <source>More than one visualization window has transparent region. They can not saved into transparent background images. Please select white background, or cancel and disable transparency for contours etc.</source>
-        <translation type="unfinished"></translation>
+        <translation>Birden fazla görselleştirme penceresi saydam bölgeye sahiptir. Şeffaf arka plan resimlerine kaydedilemezler. Lütfen beyaz arka planı seçin veya konturlar için şeffaflığı iptal edin ve devre dışı bırakın.</translation>
     </message>
     <message>
         <source>No window is currently selected.</source>
-        <translation type="unfinished"></translation>
+        <translation>Şu anda seçili pencere yok.</translation>
     </message>
 </context>
 <context>
     <name>FlushRequester</name>
     <message>
         <source>Waiting for solver to copy CGNS file...</source>
-        <translation type="unfinished"></translation>
+        <translation>Çözücünün CGNS dosyasını kopyalaması bekleniyor...</translation>
     </message>
 </context>
 <context>
     <name>GoogleMapImageImportSettingDialog</name>
     <message>
         <source>Google Map Image Import Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Google Harita Resmi İçe Aktarma Ayarı</translation>
     </message>
     <message>
         <source>Zoom:</source>
-        <translation type="unfinished"></translation>
+        <translation>Yakınlaştır:</translation>
     </message>
     <message>
         <source>Map Type:</source>
-        <translation type="unfinished"></translation>
+        <translation>Harita türü:</translation>
     </message>
     <message>
         <source>Satellite Photo</source>
-        <translation type="unfinished"></translation>
+        <translation>Uydu Fotoğrafı</translation>
     </message>
     <message>
         <source>Roadmap</source>
-        <translation type="unfinished"></translation>
+        <translation>Yol Haritası</translation>
     </message>
     <message>
         <source>Terrain</source>
-        <translation type="unfinished"></translation>
+        <translation>Arazi</translation>
     </message>
     <message>
         <source>Hybrid</source>
-        <translation type="unfinished"></translation>
+        <translation>hibrit</translation>
     </message>
 </context>
 <context>
     <name>InstallerTool</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Uyarı</translation>
     </message>
     <message>
         <source>When you update iRIC, you need to close iRIC before launching iRIC Maintainance.
 When you have iRIC windows other than this, close them manually.</source>
-        <translation type="unfinished"></translation>
+        <translation>iRIC'i güncellediğinizde, iRIC Bakımını başlatmadan önce iRIC'i kapatmanız gerekir. Bunun dışında iRIC pencereleriniz olduğunda, bunları manuel olarak kapatın.</translation>
     </message>
     <message>
         <source>Close iRIC and launch iRIC Maintainance</source>
-        <translation type="unfinished"></translation>
+        <translation>iRIC'i kapatın ve iRIC Bakımını başlatın</translation>
     </message>
 </context>
 <context>
     <name>IntroductionPage</name>
     <message>
         <source>Introduction</source>
-        <translation type="unfinished"></translation>
+        <translation>Tanıtım</translation>
     </message>
     <message>
         <source>This function is intended to be used by solver developers or grid creating program developers, not users.
 This wizard will generate or update translation files for solver definition files and grid creating program definition files those are registered to iRIC system. You need to specify the solver (or grid creating program) name, and the list of languages for those you want to create or update translation files.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bu işlev, kullanıcılar tarafından değil, çözücü geliştiriciler veya ızgara oluşturan program geliştiricileri tarafından kullanılmak üzere tasarlanmıştır. Bu sihirbaz, çözücü tanım dosyaları ve iRIC sistemine kayıtlı olan program tanımlama dosyaları oluşturan ızgara için çeviri dosyaları oluşturacak veya güncelleyecektir. Çözücü (veya ızgara oluşturma programı) adını ve çeviri dosyalarını oluşturmak veya güncellemek istediğiniz dillerin listesini belirtmeniz gerekir.</translation>
     </message>
 </context>
 <context>
     <name>MouseHelpDialog</name>
     <message>
         <source>Mouse Hint</source>
-        <translation type="unfinished"></translation>
+        <translation>Fare İpucu</translation>
     </message>
 </context>
 <context>
     <name>NewProjectSolverSelectingDialog</name>
     <message>
         <source>Select Solver</source>
-        <translation type="unfinished"></translation>
+        <translation>Çözücü Seç</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
-        <translation type="unfinished"></translation>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
+        <translation>Yeni bir proje oluşturduğunuzda, hesaplama için kullanılacak çözücüyü seçmeniz gerekir. Lütfen bir çözücü seçin ve "Tamam" düğmesine basın.</translation>
     </message>
 </context>
 <context>
     <name>PeriodicalUpdateChecker</name>
     <message>
         <source>Check for Update</source>
-        <translation type="unfinished"></translation>
+        <translation>Güncellemeleri kontrol ediniz</translation>
     </message>
     <message>
         <source>%1 days have passed after launching iRIC Maintainance for the last time.
 Do you want to launch iRIC Maintainance?</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 iRIC Bakımını son kez başlattıktan sonra günler geçti. iRIC Bakımını başlatmak istiyor musunuz?</translation>
     </message>
     <message>
         <source>Launch iRIC Maintainance</source>
-        <translation type="unfinished"></translation>
+        <translation>iRIC Bakımını Başlatın</translation>
     </message>
 </context>
 <context>
     <name>PreferenceDialog</name>
     <message>
         <source>Preferences</source>
-        <translation type="unfinished"></translation>
+        <translation>Tercihler</translation>
     </message>
     <message>
         <source>General</source>
-        <translation type="unfinished"></translation>
+        <translation>Genel</translation>
     </message>
     <message>
         <source>Graphics Default</source>
-        <translation type="unfinished"></translation>
+        <translation>Grafik Varsayılanı</translation>
     </message>
     <message>
         <source>Grid Checking</source>
-        <translation type="unfinished"></translation>
+        <translation>Izgara Kontrolü</translation>
     </message>
     <message>
         <source>River Survey Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Nehir Araştırma Verileri</translation>
     </message>
     <message>
         <source>Network Proxy</source>
-        <translation type="unfinished"></translation>
+        <translation>Ağ Proxy'si</translation>
     </message>
     <message>
         <source>Background Images (Internet)</source>
-        <translation type="unfinished"></translation>
+        <translation>Arka Plan Resimleri (İnternet)</translation>
     </message>
     <message>
         <source>Web Elevation Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Web Yükseklik Verileri</translation>
     </message>
     <message>
         <source>Background Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Arka Plan Izgarası</translation>
     </message>
 </context>
 <context>
     <name>PreferencePageBackgroundGrid</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Biçim</translation>
     </message>
     <message>
         <source>River Survey Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Nehir Araştırma Verileri</translation>
     </message>
     <message>
         <source>Cross Section Direction:</source>
-        <translation type="unfinished"></translation>
+        <translation>Kesit Yönü:</translation>
     </message>
     <message>
         <source>Between Cross Sections:</source>
-        <translation type="unfinished"></translation>
+        <translation>Kesitler Arası:</translation>
     </message>
 </context>
 <context>
     <name>PreferencePageGeneral</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Biçim</translation>
     </message>
     <message>
         <source>Language</source>
-        <translation type="unfinished"></translation>
+        <translation>Dilim</translation>
     </message>
     <message>
         <source>Note: Language setting is applied when iRIC is launched next time.</source>
-        <translation type="unfinished"></translation>
+        <translation>Not: Dil ayarı, bir sonraki sefer iRIC başlatıldığında uygulanır.</translation>
     </message>
     <message>
         <source>Working Directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Çalışma dizini</translation>
     </message>
     <message>
         <source>Note: Working Directory is used to store files used by iRIC.</source>
-        <translation type="unfinished"></translation>
+        <translation>Not: Çalışma Dizini, iRIC tarafından kullanılan dosyaları depolamak için kullanılır.</translation>
     </message>
     <message>
         <source>Copy folder project to Working Directory when opened</source>
-        <translation type="unfinished"></translation>
+        <translation>Açıldığında klasör projesini Çalışma Dizinine kopyalayın</translation>
     </message>
     <message>
         <source>Checking for Update</source>
-        <translation type="unfinished"></translation>
+        <translation>Güncellemeler kontrol ediliyor</translation>
     </message>
     <message>
         <source>Check for update periodically</source>
-        <translation type="unfinished"></translation>
+        <translation>Güncellemeyi periyodik olarak kontrol edin</translation>
     </message>
     <message>
         <source>Interval between checking (days):</source>
-        <translation type="unfinished"></translation>
+        <translation>Kontrol arasındaki aralık (gün):</translation>
     </message>
     <message>
         <source>Cell Culling on Drawing Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Çizim Izgarasında Hücre Ayırma</translation>
     </message>
     <message>
         <source>Enable</source>
-        <translation type="unfinished"></translation>
+        <translation>Olanak vermek</translation>
     </message>
     <message>
         <source>Maximum numbers of cells drawn:</source>
-        <translation type="unfinished"></translation>
+        <translation>Çizilen maksimum hücre sayısı:</translation>
     </message>
     <message>
         <source>Maximum numbers of indices drawn:</source>
-        <translation type="unfinished"></translation>
+        <translation>Çizilen maksimum endeks sayısı:</translation>
     </message>
     <message>
         <source>Warning: If you disable culling and create a very big grid, maybe iRIC GUI will crash because of lack of memory.</source>
-        <translation type="unfinished"></translation>
+        <translation>Uyarı: Ayırmayı devre dışı bırakır ve çok büyük bir ızgara oluşturursanız, bellek yetersizliği nedeniyle iRIC GUI çökebilir.</translation>
     </message>
     <message>
         <source>Undo</source>
-        <translation type="unfinished"></translation>
+        <translation>Geri alma</translation>
     </message>
     <message>
         <source>Undo Limit:</source>
-        <translation type="unfinished"></translation>
+        <translation>Sınırı Geri Al:</translation>
     </message>
     <message>
         <source>Solver console</source>
-        <translation type="unfinished"></translation>
+        <translation>Çözücü konsolu</translation>
     </message>
     <message>
         <source>Maximum lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Maksimum satır</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Hata</translation>
     </message>
     <message>
         <source>Working directory contains non-ASCII characters.</source>
-        <translation type="unfinished"></translation>
+        <translation>Çalışma dizini ASCII olmayan karakterler içeriyor.</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Uyarı</translation>
     </message>
     <message>
         <source>Working directory is changed, but the new working directory is used AFTER exiting iRIC GUI!</source>
-        <translation type="unfinished"></translation>
+        <translation>Çalışma dizini değiştirilir, ancak yeni çalışma dizini iRIC GUI'den çıkıldıktan SONRA kullanılır!</translation>
     </message>
     <message>
         <source>Python path</source>
-        <translation type="unfinished"></translation>
+        <translation>Python yolu</translation>
     </message>
     <message>
         <source>Note: Used to run solvers written in Python.</source>
-        <translation type="unfinished"></translation>
+        <translation>Not: Python'da yazılmış çözücüleri çalıştırmak için kullanılır.</translation>
     </message>
 </context>
 <context>
     <name>PreferencePageGraphicsDefault</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Biçim</translation>
     </message>
     <message>
         <source>Grid Color</source>
-        <translation type="unfinished"></translation>
+        <translation>ızgara rengi</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Renk:</translation>
     </message>
     <message>
         <source>Color Map</source>
-        <translation type="unfinished"></translation>
+        <translation>Renk Haritası</translation>
     </message>
     <message>
         <source>Background Image</source>
-        <translation type="unfinished"></translation>
+        <translation>Arka plan görüntüsü</translation>
     </message>
     <message>
         <source>Max Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Maksimum Boyut:</translation>
     </message>
     <message>
         <source>Note: Loading an image whose width (or height) is larger than the maximum, will be automatically resized.</source>
-        <translation type="unfinished"></translation>
+        <translation>Not: Genişliği (veya yüksekliği) maksimumdan daha büyük olan bir resim yüklemek otomatik olarak yeniden boyutlandırılacaktır.</translation>
     </message>
     <message>
         <source>Vector</source>
-        <translation type="unfinished"></translation>
+        <translation>Vektör</translation>
     </message>
     <message>
         <source>Factor:</source>
-        <translation type="unfinished"></translation>
+        <translation>faktör:</translation>
     </message>
     <message>
         <source>Arrow Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ok boyutu:</translation>
     </message>
     <message>
         <source>Stream Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Akış Hatları</translation>
     </message>
     <message>
         <source>Particles</source>
-        <translation type="unfinished"></translation>
+        <translation>parçacıklar</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Boy:</translation>
     </message>
     <message>
         <source>pixels</source>
-        <translation type="unfinished"></translation>
+        <translation>piksel</translation>
     </message>
 </context>
 <context>
     <name>PreferencePageGridCheck</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Biçim</translation>
     </message>
     <message>
         <source>Checking Timing</source>
-        <translation type="unfinished"></translation>
+        <translation>Zamanlamayı Kontrol Etme</translation>
     </message>
     <message>
         <source>Before Running Solver</source>
-        <translation type="unfinished"></translation>
+        <translation>Çözücüyü Çalıştırmadan Önce</translation>
     </message>
     <message>
         <source>Before Exporting Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Izgarayı Dışa Aktarmadan Önce</translation>
     </message>
     <message>
         <source>Attributes to Check</source>
-        <translation type="unfinished"></translation>
+        <translation>Kontrol Edilecek Özellikler</translation>
     </message>
     <message>
         <source>Whether cell edges intersect</source>
-        <translation type="unfinished"></translation>
+        <translation>Hücre kenarlarının kesişip kesişmediği</translation>
     </message>
     <message>
         <source>Check aspect ratio of cell edges is less than</source>
-        <translation type="unfinished"></translation>
+        <translation>Hücre kenarlarının en boy oranını kontrol edin</translation>
     </message>
     <message>
         <source>Check variation of cell edge length is less than</source>
-        <translation type="unfinished"></translation>
+        <translation>Hücre kenar uzunluğunun varyasyonunun daha az olup olmadığını kontrol edin.</translation>
     </message>
     <message>
         <source>I-direction: </source>
-        <translation type="unfinished"></translation>
+        <translation>I-yönü:</translation>
     </message>
     <message>
         <source>J-direction: </source>
-        <translation type="unfinished"></translation>
+        <translation>J yönü:</translation>
     </message>
     <message>
         <source>Check angle of cell is more than</source>
-        <translation type="unfinished"></translation>
+        <translation>Hücrenin kontrol açısı daha fazladır</translation>
     </message>
     <message>
         <source>Note: Settings on this page are applied only to structured grids.</source>
-        <translation type="unfinished"></translation>
+        <translation>Not: Bu sayfadaki ayarlar yalnızca yapılandırılmış ızgaralara uygulanır.</translation>
     </message>
 </context>
 <context>
     <name>PreferencePageProxy</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Biçim</translation>
     </message>
     <message>
         <source>Do not use proxy</source>
-        <translation type="unfinished"></translation>
+        <translation>proxy kullanmayın</translation>
     </message>
     <message>
         <source>Use system proxy setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Sistem proxy ayarını kullan</translation>
     </message>
     <message>
         <source>Use custom proxy setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Özel proxy ayarını kullan</translation>
     </message>
     <message>
         <source>HTTP Proxy: </source>
-        <translation type="unfinished"></translation>
+        <translation>HTTP Proxy'si:</translation>
     </message>
     <message>
         <source>Port:</source>
-        <translation type="unfinished"></translation>
+        <translation>Liman:</translation>
     </message>
     <message>
         <source>Need authentication for HTTP proxy</source>
-        <translation type="unfinished"></translation>
+        <translation>HTTP proxy için kimlik doğrulaması gerekiyor</translation>
     </message>
     <message>
         <source>User name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Kullanıcı adı:</translation>
     </message>
     <message>
         <source>Password:</source>
-        <translation type="unfinished"></translation>
+        <translation>Parola:</translation>
     </message>
 </context>
 <context>
     <name>PreferencePageRiverSurvey</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Biçim</translation>
     </message>
     <message>
         <source>List of fractions for cross section editing:</source>
-        <translation type="unfinished"></translation>
+        <translation>Kesit düzenleme için kesirlerin listesi:</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation type="unfinished"></translation>
+        <translation>Ekle (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Silmek (&amp;D)</translation>
     </message>
     <message>
         <source>&amp;Restore Default</source>
-        <translation type="unfinished"></translation>
+        <translation>Varsayılana sıfırla (&amp;R)</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Bilgi</translation>
     </message>
     <message>
         <source>This value already exists in the list.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bu değer listede zaten var.</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Uyarı</translation>
     </message>
     <message>
         <source>Are you sure you want to delete the selected item?</source>
-        <translation type="unfinished"></translation>
+        <translation>Seçili öğeyi silmek istediğinizden emin misiniz?</translation>
     </message>
     <message>
         <source>Are you sure you want to restore default values?</source>
-        <translation type="unfinished"></translation>
+        <translation>Varsayılan değerleri geri yüklemek istediğinizden emin misiniz?</translation>
     </message>
 </context>
 <context>
     <name>PreferencePageRiverSurveyFractionAddDialog</name>
     <message>
         <source>Add fraction</source>
-        <translation type="unfinished"></translation>
+        <translation>kesir ekle</translation>
     </message>
     <message>
         <source>Specify the fraction to add:</source>
-        <translation type="unfinished"></translation>
+        <translation>Eklenecek kesri belirtin:</translation>
     </message>
     <message>
         <source>1:</source>
-        <translation type="unfinished"></translation>
+        <translation>1:</translation>
     </message>
 </context>
 <context>
     <name>PreferencePageTms</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Biçim</translation>
     </message>
     <message>
         <source>&amp;Up</source>
-        <translation type="unfinished"></translation>
+        <translation>Yukarı (&amp;U)</translation>
     </message>
     <message>
         <source>&amp;Down</source>
-        <translation type="unfinished"></translation>
+        <translation>Aşağı (&amp;D)</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation type="unfinished"></translation>
+        <translation>Ekle (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation type="unfinished"></translation>
+        <translation>Düzenlemek (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Silmek (&amp;D)</translation>
     </message>
     <message>
         <source>&amp;Restore Default</source>
-        <translation type="unfinished"></translation>
+        <translation>Varsayılana sıfırla (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Input Google Maps API key</source>
-        <translation type="unfinished"></translation>
+        <translation>Google Haritalar API anahtarını girin (&amp;I)</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Google Maps Platform now need API key to use Google Maps through iRIC. Please get your own Google Maps API key and input here, to use Google Maps images as background images on Pre-processor and on 2D Post-Processing Windows.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Google Haritalar Platformu, artık Google Haritalar'ı iRIC aracılığıyla kullanmak için API anahtarına ihtiyaç duyuyor. Lütfen kendi Google Haritalar API anahtarınızı alın ve Google Haritalar resimlerini Ön İşlemcide ve 2B İşlem Sonrası Windows'ta arka plan resimleri olarak kullanmak için buraya girin.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Background Image (Internet) Edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Arka Plan Resmi (İnternet) Düzenle</translation>
     </message>
     <message>
         <source>Input Google Maps API Key</source>
-        <translation type="unfinished"></translation>
+        <translation>Google Haritalar API Anahtarını Girin</translation>
     </message>
     <message>
         <source>API Key: </source>
-        <translation type="unfinished"></translation>
+        <translation>API Anahtarı:</translation>
     </message>
 </context>
 <context>
     <name>PreferencePageTmsAddDialog</name>
     <message>
         <source>Background Image (Internet) Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Arka Plan Resmi (İnternet) Ekle</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>İsim:</translation>
     </message>
     <message>
         <source>URL:</source>
-        <translation type="unfinished"></translation>
+        <translation>URL:</translation>
     </message>
     <message>
         <source>Example: http://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png</source>
-        <translation type="unfinished"></translation>
+        <translation>Örnek: http://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png</translation>
     </message>
     <message>
         <source>Max Zoom Level:</source>
-        <translation type="unfinished"></translation>
+        <translation>Maksimum Yakınlaştırma Seviyesi:</translation>
     </message>
 </context>
 <context>
     <name>PreferencePageWebCsvTile</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Biçim</translation>
     </message>
     <message>
         <source>&amp;Up</source>
-        <translation type="unfinished"></translation>
+        <translation>Yukarı (&amp;U)</translation>
     </message>
     <message>
         <source>&amp;Down</source>
-        <translation type="unfinished"></translation>
+        <translation>Aşağı (&amp;D)</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation type="unfinished"></translation>
+        <translation>Ekle (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation type="unfinished"></translation>
+        <translation>Düzenlemek (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Silmek (&amp;D)</translation>
     </message>
     <message>
         <source>&amp;Restore Default</source>
-        <translation type="unfinished"></translation>
+        <translation>Varsayılana sıfırla (&amp;R)</translation>
     </message>
     <message>
         <source>Edit Web Elevation Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Web Yüksekliği Verilerini Düzenle</translation>
     </message>
 </context>
 <context>
     <name>PreferencePageWebCsvTileAddDialog</name>
     <message>
         <source>Add Web Elevation Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Web Yüksekliği Verisi Ekle</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>İsim:</translation>
     </message>
     <message>
         <source>Min zoom level:</source>
-        <translation type="unfinished"></translation>
+        <translation>Minimum yakınlaştırma düzeyi:</translation>
     </message>
     <message>
         <source>Max zoom level:</source>
-        <translation type="unfinished"></translation>
+        <translation>Maksimum yakınlaştırma seviyesi:</translation>
     </message>
     <message>
         <source>URL:</source>
-        <translation type="unfinished"></translation>
+        <translation>URL:</translation>
     </message>
     <message>
         <source>Example: http://cyberjapandata.gsi.go.jp/xyz/dem/{z}/{x}/{y}.txt</source>
-        <translation type="unfinished"></translation>
+        <translation>Örnek: http://cyberjapandata.gsi.go.jp/xyz/dem/{z}/{x}/{y}.txt</translation>
     </message>
 </context>
 <context>
     <name>ProjectPropertyBasicInfoWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Biçim</translation>
     </message>
     <message>
         <source>Filename:</source>
-        <translation type="unfinished"></translation>
+        <translation>Dosya adı:</translation>
     </message>
     <message>
         <source>Last update time:</source>
-        <translation type="unfinished"></translation>
+        <translation>Son güncelleme zamanı:</translation>
     </message>
     <message>
         <source>Solver:</source>
-        <translation type="unfinished"></translation>
+        <translation>Çözücü:</translation>
     </message>
     <message>
         <source>Grid(s):</source>
-        <translation type="unfinished"></translation>
+        <translation>Izgara(lar):</translation>
     </message>
     <message>
         <source>Calculation condition:</source>
-        <translation type="unfinished"></translation>
+        <translation>Hesaplama koşulu:</translation>
     </message>
     <message>
         <source>Calculation result:</source>
-        <translation type="unfinished"></translation>
+        <translation>Hesaplama sonucu:</translation>
     </message>
     <message>
         <source>Coordinate System:</source>
-        <translation type="unfinished"></translation>
+        <translation>Koordinat sistemi:</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation type="unfinished"></translation>
+        <translation>Düzenlemek (&amp;E)...</translation>
     </message>
     <message>
         <source>Coordinate Offset:</source>
-        <translation type="unfinished"></translation>
+        <translation>Koordinat Ofseti:</translation>
     </message>
     <message>
         <source>Date for t = 0:</source>
-        <translation type="unfinished"></translation>
+        <translation>t = 0 için tarih:</translation>
     </message>
     <message>
         <source>(No data)</source>
-        <translation type="unfinished"></translation>
+        <translation>(Veri yok)</translation>
     </message>
     <message>
         <source>(Not saved yet)</source>
-        <translation type="unfinished"></translation>
+        <translation>(Henüz kaydedilmedi)</translation>
     </message>
     <message>
         <source>Setup finished</source>
-        <translation type="unfinished"></translation>
+        <translation>Kurulum tamamlandı</translation>
     </message>
     <message>
         <source>Setup unfinished</source>
-        <translation type="unfinished"></translation>
+        <translation>Kurulum tamamlanmadı</translation>
     </message>
     <message>
         <source>Setup partially unfinished</source>
-        <translation type="unfinished"></translation>
+        <translation>Kurulum kısmen tamamlanmadı</translation>
     </message>
     <message>
         <source>Already set</source>
-        <translation type="unfinished"></translation>
+        <translation>zaten ayarlanmış</translation>
     </message>
     <message>
         <source>Not set yet</source>
-        <translation type="unfinished"></translation>
+        <translation>Henüz ayarlanmadı</translation>
     </message>
     <message>
         <source>Data exists</source>
-        <translation type="unfinished"></translation>
+        <translation>Veri var</translation>
     </message>
     <message>
         <source>No data</source>
-        <translation type="unfinished"></translation>
+        <translation>Veri yok</translation>
     </message>
     <message>
         <source>(Not specified)</source>
-        <translation type="unfinished"></translation>
+        <translation>(Belirtilmemiş)</translation>
     </message>
 </context>
 <context>
     <name>ProjectPropertyDialog</name>
     <message>
         <source>Project Property</source>
-        <translation type="unfinished"></translation>
+        <translation>Proje Mülkü</translation>
     </message>
     <message>
         <source>Basic Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Temel Bilgiler</translation>
     </message>
 </context>
 <context>
     <name>ProjectTypeSelectDialog</name>
     <message>
         <source>Select How to Save Project</source>
-        <translation type="unfinished"></translation>
+        <translation>Projenin Nasıl Kaydedileceğini Seçin</translation>
     </message>
     <message>
         <source>Please select how to save project from the followings:</source>
-        <translation type="unfinished"></translation>
+        <translation>Lütfen aşağıdakilerden projeyi nasıl kaydedeceğinizi seçin:</translation>
     </message>
     <message>
         <source>Save as File (*.ipro)</source>
-        <translation type="unfinished"></translation>
+        <translation>Dosya Olarak Kaydet (*.ipro)</translation>
     </message>
     <message>
         <source>Save as Project</source>
-        <translation type="unfinished"></translation>
+        <translation>Proje Olarak Kaydet</translation>
     </message>
 </context>
 <context>
     <name>SettingPage</name>
     <message>
         <source>Select Program and Languages</source>
-        <translation type="unfinished"></translation>
+        <translation>Program ve Dilleri Seçin</translation>
     </message>
     <message>
         <source>Specify for which solver (or grid creating program) you want to create or update translation files.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hangi çözücü (veya ızgara oluşturma programı) için oluşturmak veya çeviri dosyalarını güncellemek istediğinizi belirtin.</translation>
     </message>
     <message>
         <source>Target Program</source>
-        <translation type="unfinished"></translation>
+        <translation>Hedef Program</translation>
     </message>
     <message>
         <source>&amp;Solver</source>
-        <translation type="unfinished"></translation>
+        <translation>çözücü (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;Grid Creating Program</source>
-        <translation type="unfinished"></translation>
+        <translation>Izgara Oluşturma Programı (&amp;G)</translation>
     </message>
     <message>
         <source>Languages</source>
-        <translation type="unfinished"></translation>
+        <translation>Diller</translation>
     </message>
 </context>
 <context>
     <name>SolverDefinitionAbstractDialog</name>
     <message>
         <source>Solver Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Çözücü Bilgileri</translation>
     </message>
     <message>
         <source>Basic Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Temel Bilgiler</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>İsim</translation>
     </message>
     <message>
         <source>Version</source>
-        <translation type="unfinished"></translation>
+        <translation>Sürüm</translation>
     </message>
     <message>
         <source>Copyright</source>
-        <translation type="unfinished"></translation>
+        <translation>Telif hakkı</translation>
     </message>
     <message>
         <source>Release</source>
-        <translation type="unfinished"></translation>
+        <translation>Serbest bırakmak</translation>
     </message>
     <message>
         <source>Homepage</source>
-        <translation type="unfinished"></translation>
+        <translation>Ana Sayfa</translation>
     </message>
     <message>
         <source>Description</source>
-        <translation type="unfinished"></translation>
+        <translation>Açıklama</translation>
     </message>
     <message>
         <source>License</source>
-        <translation type="unfinished"></translation>
+        <translation>Lisans</translation>
     </message>
 </context>
 <context>
     <name>SolverDefinitionAbstractWidget</name>
     <message>
         <source>Solver Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Çözücü Bilgileri</translation>
     </message>
     <message>
         <source>Basic Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Temel Bilgiler</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>İsim</translation>
     </message>
     <message>
         <source>Version</source>
-        <translation type="unfinished"></translation>
+        <translation>Sürüm</translation>
     </message>
     <message>
         <source>Copyright</source>
-        <translation type="unfinished"></translation>
+        <translation>Telif hakkı</translation>
     </message>
     <message>
         <source>Release</source>
-        <translation type="unfinished"></translation>
+        <translation>Serbest bırakmak</translation>
     </message>
     <message>
         <source>Homepage</source>
-        <translation type="unfinished"></translation>
+        <translation>Ana Sayfa</translation>
     </message>
     <message>
         <source>Description</source>
-        <translation type="unfinished"></translation>
+        <translation>Açıklama</translation>
     </message>
     <message>
         <source>License</source>
-        <translation type="unfinished"></translation>
+        <translation>Lisans</translation>
     </message>
 </context>
 <context>
     <name>SolverDefinitionList</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Uyarı</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
+        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
 %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Çözücü tanım dosyası " klasörüne yüklenirken hata oluştu %1 ". Bu çözücü yoksayılır. %2</translation>
     </message>
 </context>
 <context>
     <name>SolverDefinitionListDialog</name>
     <message>
         <source>Solver List</source>
-        <translation type="unfinished"></translation>
+        <translation>Çözücü Listesi</translation>
     </message>
     <message>
         <source>&amp;Show Detail...</source>
-        <translation type="unfinished"></translation>
+        <translation>Detayları göster (&amp;S)...</translation>
     </message>
     <message>
         <source>Select solver to open project</source>
-        <translation type="unfinished"></translation>
+        <translation>Projeyi açmak için çözücü seçin</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>İsim</translation>
     </message>
     <message>
         <source>Version</source>
-        <translation type="unfinished"></translation>
+        <translation>Sürüm</translation>
     </message>
 </context>
 <context>
     <name>SolverDefinitionTranslationUpdateWizard</name>
     <message>
         <source>Definition File Translation Update Wizard</source>
-        <translation type="unfinished"></translation>
+        <translation>Tanım Dosyası Çevirisi Güncelleme Sihirbazı</translation>
     </message>
 </context>
 <context>
     <name>StartPageDialog</name>
     <message>
         <source>iRIC Start Page</source>
-        <translation type="unfinished"></translation>
+        <translation>iRIC Başlangıç Sayfası</translation>
     </message>
     <message>
         <source>iRIC </source>
-        <translation type="unfinished"></translation>
+        <translation>iRIC</translation>
     </message>
     <message>
         <source>Welcome to iRIC!
 iRIC can simulate rivers from Colorado River to the Nile.</source>
-        <translation type="unfinished"></translation>
+        <translation>iRIC'e hoş geldiniz! iRIC, Colorado Nehri'nden Nil'e nehirleri simüle edebilir.</translation>
     </message>
     <message>
         <source>Start Simulation Project</source>
-        <translation type="unfinished"></translation>
+        <translation>Simülasyon Projesine Başlayın</translation>
     </message>
     <message>
         <source>Support</source>
-        <translation type="unfinished"></translation>
+        <translation>Destek</translation>
     </message>
 </context>
 <context>
     <name>StartPageLaunchTabWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Biçim</translation>
     </message>
     <message>
         <source>Create &amp;New Project...</source>
-        <translation type="unfinished"></translation>
+        <translation>Yeni Proje Oluştur (&amp;N)...</translation>
     </message>
     <message>
         <source>&amp;Open Project File...</source>
-        <translation type="unfinished"></translation>
+        <translation>Proje Dosyasını Aç (&amp;O)...</translation>
     </message>
     <message>
         <source>Recent Solvers:</source>
-        <translation type="unfinished"></translation>
+        <translation>Son Çözücüler:</translation>
     </message>
     <message>
         <source>Recent Projects:</source>
-        <translation type="unfinished"></translation>
+        <translation>Son Projeler:</translation>
     </message>
 </context>
 <context>
     <name>iRICMainWindow</name>
     <message>
         <source>Ready</source>
-        <translation type="unfinished"></translation>
+        <translation>Hazır</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Hata</translation>
     </message>
     <message>
         <source>Error occured while loading Solver definition file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Çözücü tanım dosyası yüklenirken hata oluştu.</translation>
     </message>
     <message>
         <source>Open iRIC project file</source>
-        <translation type="unfinished"></translation>
+        <translation>iRIC proje dosyasını açın</translation>
     </message>
     <message>
         <source>iRIC project file (*.ipro project.xml)</source>
-        <translation type="unfinished"></translation>
+        <translation>iRIC proje dosyası (*.ipro project.xml)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Uyarı</translation>
     </message>
     <message>
         <source>Project file %1 does not exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>proje dosyası %1 Yok.</translation>
     </message>
     <message>
         <source>Project folder path has to consist of only English characters. Please move or rename the project folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>Proje klasör yolu sadece İngilizce karakterlerden oluşmalıdır. Lütfen proje klasörünü taşıyın veya yeniden adlandırın.</translation>
     </message>
     <message>
         <source>This project seems to be opened by another iRIC GUI window. You can not open a project folder from multiple GUI windows.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bu proje başka bir iRIC GUI penceresi tarafından açılmış gibi görünüyor. Birden çok GUI penceresinden bir proje klasörü açamazsınız.</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
-        <translation type="unfinished"></translation>
+        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <translation>Açılan proje çalışma dizinine kopyalanmaz ve bu projede yaptığınız değişiklikleri kaydetmek zorunda kalırsınız. Mevcut projeyi saklamak istiyorsanız, lütfen önce başka bir projeye kaydedin.</translation>
     </message>
     <message>
         <source>Open Calculation result</source>
-        <translation type="unfinished"></translation>
+        <translation>Hesaplama sonucunu aç</translation>
     </message>
     <message>
         <source>CGNS file (*.cgn *.cgns)</source>
-        <translation type="unfinished"></translation>
+        <translation>CGNS dosyası (*.cgn *.cgns)</translation>
     </message>
     <message>
         <source>CGNS file %1 does not exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>CGNS dosyası %1 Yok.</translation>
     </message>
     <message>
         <source>This Project is modified. Do you want to save?</source>
-        <translation type="unfinished"></translation>
+        <translation>Bu Proje değiştirildi. kaydetmek istiyor musunuz?</translation>
     </message>
     <message>
         <source>Save iRIC project file</source>
-        <translation type="unfinished"></translation>
+        <translation>iRIC proje dosyasını kaydedin</translation>
     </message>
     <message>
         <source>iRIC project file (*.ipro)</source>
-        <translation type="unfinished"></translation>
+        <translation>iRIC proje dosyası (*.ipro)</translation>
     </message>
     <message>
         <source>Save iRIC project</source>
-        <translation type="unfinished"></translation>
+        <translation>iRIC projesini kaydet</translation>
     </message>
     <message>
         <source>Project folder path has to consist of only English characters.</source>
-        <translation type="unfinished"></translation>
+        <translation>Proje klasör yolu sadece İngilizce karakterlerden oluşmalıdır.</translation>
     </message>
     <message>
         <source>The project folder has to be empty.</source>
-        <translation type="unfinished"></translation>
+        <translation>Proje klasörü boş olmalıdır.</translation>
     </message>
     <message>
         <source>Saving project failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Proje kaydedilemedi.</translation>
     </message>
     <message>
         <source>This project has HUGE calculation result, so it cannot be saved as a file (*.ipro). Please save as a project.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bu projenin BÜYÜK hesaplama sonucu var, bu nedenle dosya olarak kaydedilemez (*.ipro). Lütfen proje olarak kaydedin.</translation>
     </message>
     <message>
         <source>This project has too many files, so it cannot be saved as a file (*.ipro). Please save as a project.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bu projede çok fazla dosya var, bu nedenle dosya olarak kaydedilemez (*.ipro). Lütfen proje olarak kaydedin.</translation>
     </message>
     <message>
         <source>Project successfully saved to %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Proje başarıyla kaydedildi %1.</translation>
     </message>
     <message>
         <source>The solver is still running. Really quit?</source>
-        <translation type="unfinished"></translation>
+        <translation>Çözücü hala çalışıyor. Gerçekten bıraktın mı?</translation>
     </message>
     <message>
         <source>This windows does not support snapshot function.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bu pencereler anlık görüntü işlevini desteklemiyor.</translation>
     </message>
     <message>
         <source>Copied snapshot to clipboard.</source>
-        <translation type="unfinished"></translation>
+        <translation>Anlık görüntü panoya kopyalandı.</translation>
     </message>
     <message>
         <source>This menu is not available while the solver is running.</source>
-        <translation type="unfinished"></translation>
+        <translation>Çözücü çalışırken bu menü kullanılamaz.</translation>
     </message>
     <message>
         <source>This windows does not support continuous snapshot function.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bu pencereler sürekli anlık görüntü işlevini desteklemez.</translation>
     </message>
     <message>
         <source>Continuous Snapshot</source>
-        <translation type="unfinished"></translation>
+        <translation>Sürekli Anlık Görüntü</translation>
     </message>
     <message>
         <source>saving continuous snapshot...</source>
-        <translation type="unfinished"></translation>
+        <translation>sürekli anlık görüntü kaydediliyor...</translation>
     </message>
     <message>
         <source>%1 already exists, and failed to remove it. Movie file is not output.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 zaten var ve kaldırılamadı. Film dosyası çıktısı değil.</translation>
     </message>
     <message>
         <source>iRIC %1</source>
-        <translation type="unfinished"></translation>
+        <translation>iRIC %1</translation>
     </message>
     <message>
         <source>Untitled</source>
-        <translation type="unfinished"></translation>
+        <translation>başlıksız</translation>
     </message>
     <message>
         <source>%1 - iRIC %2 [%3]</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 - iRIC %2 [ %3 ]</translation>
     </message>
     <message>
         <source>The solver is running now. Please stop solver, to do this action.</source>
-        <translation type="unfinished"></translation>
+        <translation>Çözücü şimdi çalışıyor. Bu eylemi yapmak için lütfen çözücüyü durdurun.</translation>
     </message>
     <message>
         <source>&amp;%1 %2</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 %2 (&amp;%)</translation>
     </message>
     <message>
         <source>http://iric-gui-user-manual.readthedocs.io/en/latest/</source>
-        <translation type="unfinished"></translation>
+        <translation>http://iric-gui-user-manual.readthedocs.io/en/latest/</translation>
     </message>
     <message>
         <source>Unknown options specified. They are neglected. %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Bilinmeyen seçenekler belirtildi. Onlar ihmal edilir. %1</translation>
     </message>
     <message>
         <source>More than two project files are passed as arguments. They are neglected. %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Argüman olarak ikiden fazla proje dosyası iletilir. Onlar ihmal edilir. %1</translation>
     </message>
     <message>
         <source>Are you sure you want to delete the calculation result?</source>
-        <translation type="unfinished"></translation>
+        <translation>Hesaplama sonucunu silmek istediğinizden emin misiniz?</translation>
     </message>
     <message>
         <source>Calculation result cleared.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hesaplama sonucu temizlendi.</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Bilgi</translation>
     </message>
     <message>
         <source>Calculation result does not exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hesaplama sonucu mevcut değil.</translation>
     </message>
     <message>
         <source>Please select this menu when Visualization Window is active.</source>
-        <translation type="unfinished"></translation>
+        <translation>Lütfen Görselleştirme Penceresi aktifken bu menüyü seçin.</translation>
     </message>
     <message>
         <source>No particle is drawn now.</source>
-        <translation type="unfinished"></translation>
+        <translation>Şimdi hiçbir parçacık çizilmiyor.</translation>
     </message>
     <message>
         <source>Export Particles</source>
-        <translation type="unfinished"></translation>
+        <translation>Parçacıkları Dışa Aktar</translation>
     </message>
     <message>
         <source>Saving particles as VTK files...</source>
-        <translation type="unfinished"></translation>
+        <translation>Parçacıklar VTK dosyaları olarak kaydediliyor...</translation>
     </message>
     <message>
         <source>Error occured while saving.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kaydederken hata oluştu.</translation>
     </message>
     <message>
         <source>Currently active sub-window does not support exporting contour figure.</source>
-        <translation type="unfinished"></translation>
+        <translation>Şu anda aktif olan alt pencere, kontur figürünün dışa aktarılmasını desteklemiyor.</translation>
     </message>
     <message>
-        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
-        <translation type="unfinished"></translation>
+        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
+        <translation>Şekil dosyasını dışa aktarmak için, "Renk Fringe" veya "Isolines" yerine "Görüntü ayarı"nı "Kontur Figürü" olarak değiştirin.</translation>
     </message>
     <message>
         <source>Export contour figure to ESRI Shapefiles</source>
-        <translation type="unfinished"></translation>
+        <translation>Kontur figürünü ESRI Shapefiles'e aktarın</translation>
     </message>
     <message>
         <source>Export contour figure</source>
-        <translation type="unfinished"></translation>
+        <translation>Kontur figürünü dışa aktar</translation>
     </message>
     <message>
         <source>Saving contour figure as ESRI Shapefiles...</source>
-        <translation type="unfinished"></translation>
+        <translation>Kontur figürü ESRI Shapefiles olarak kaydediliyor...</translation>
     </message>
     <message>
         <source>No Contour Figure is drawn now.</source>
-        <translation type="unfinished"></translation>
+        <translation>Artık Kontur Figürü çizilmiyor.</translation>
     </message>
     <message>
         <source>Please select which zone to use:</source>
-        <translation type="unfinished"></translation>
+        <translation>Lütfen hangi bölgeyi kullanacağınızı seçin:</translation>
     </message>
     <message>
         <source>Export Google Earth KMZ for street view</source>
-        <translation type="unfinished"></translation>
+        <translation>Sokak görünümü için Google Earth KMZ'yi dışa aktarın</translation>
     </message>
     <message>
         <source>%1 can not be overwritten.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 üzerine yazılamaz.</translation>
     </message>
     <message>
         <source>Saving KMZ file...</source>
-        <translation type="unfinished"></translation>
+        <translation>KMZ dosyası kaydediliyor...</translation>
     </message>
     <message>
         <source>Google Earth KMZ is exported to %1 successfully.</source>
-        <translation type="unfinished"></translation>
+        <translation>Google Earth KMZ şuraya aktarılır: %1 başarıyla.</translation>
     </message>
     <message>
         <source>Import Visualization/Graph Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Görselleştirmeyi/Grafik Ayarlarını İçe Aktar</translation>
     </message>
     <message>
         <source>Setting file (*.vgsetting)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ayar dosyası (*.vgsetting)</translation>
     </message>
     <message>
         <source>File %1 does not exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dosya %1 Yok.</translation>
     </message>
     <message>
         <source>Export Visualization/Graph Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Görselleştirmeyi/Grafik Ayarlarını Dışa Aktar</translation>
     </message>
     <message>
         <source>The grids are edited or deleted. When you save, the calculation result is discarded.</source>
-        <translation type="unfinished"></translation>
+        <translation>Izgaralar düzenlenir veya silinir. Kaydettiğinizde, hesaplama sonucu atılır.</translation>
     </message>
     <message>
         <source>Current working directory (%1) contains non-ASCII characters. Before starting a new project, change working directory from the following menu: 
 Option -&gt; Preferences</source>
-        <translation type="unfinished"></translation>
+        <translation>Geçerli çalışma dizini (%1) ASCII olmayan karakterler içeriyor. Yeni bir projeye başlamadan önce, aşağıdaki menüden çalışma dizinini değiştirin: Seçenek -&gt; Tercihler</translation>
     </message>
     <message>
         <source>One dimension</source>
-        <translation type="unfinished"></translation>
+        <translation>tek boyut</translation>
     </message>
     <message>
         <source>Two dimensions</source>
-        <translation type="unfinished"></translation>
+        <translation>İkili boyutlar</translation>
     </message>
     <message>
         <source>Three dimensions</source>
-        <translation type="unfinished"></translation>
+        <translation>Üç boyut</translation>
     </message>
     <message>
         <source>There is no calculation data, so you can not define simple operation results.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hesaplama verisi olmadığı için basit işlem sonuçlarını tanımlayamazsınız.</translation>
     </message>
     <message>
         <source>Select dimension</source>
-        <translation type="unfinished"></translation>
+        <translation>Boyut seçin</translation>
     </message>
     <message>
         <source>Dimension</source>
-        <translation type="unfinished"></translation>
+        <translation>Boyut</translation>
     </message>
     <message>
         <source>PNG files (*.png);;JPEG file (*.jpg);;Windows BMP file (*.bmp)</source>
-        <translation type="unfinished"></translation>
+        <translation>PNG dosyaları (*.png);;JPEG file (*.jpg);;Windows BMP file (*.bmp)</translation>
     </message>
     <message>
         <source>;;Encapsulated Post Script file (*.eps);;Portable Document Format file (*.pdf);;Scalable Vector Graphics file (*.svg)</source>
-        <translation type="unfinished"></translation>
+        <translation>;;Kapsüllenmiş Posta Komut Dosyası dosyası (*.eps);;Portable Document Format file (*.pdf);;Scalable Vector Graphics file (*.svg)</translation>
     </message>
     <message>
         <source>Save Snapshot</source>
-        <translation type="unfinished"></translation>
+        <translation>Anlık Görüntüyü Kaydet</translation>
     </message>
     <message>
         <source>Transparency Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Şeffaflık Ayarı</translation>
     </message>
     <message>
         <source>Do you want to make the background transparent?</source>
-        <translation type="unfinished"></translation>
+        <translation>Arka planı saydam yapmak istiyor musunuz?</translation>
     </message>
     <message>
         <source>This window do not support snapshot with this file type.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bu pencere, bu dosya türüyle anlık görüntüyü desteklemez.</translation>
     </message>
     <message>
         <source>Saving snapshot failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Anlık görüntü kaydedilemedi.</translation>
     </message>
     <message>
         <source>Wrong file name specified.</source>
-        <translation type="unfinished"></translation>
+        <translation>Yanlış dosya adı belirtildi.</translation>
     </message>
     <message>
         <source>Snapshot successfully saved to %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Anlık görüntü başarıyla kaydedildi %1.</translation>
     </message>
 </context>
 <context>
     <name>iRICMainWindowAboutDialog</name>
     <message>
         <source>About iRIC</source>
-        <translation type="unfinished"></translation>
+        <translation>iRIC hakkında</translation>
     </message>
     <message>
         <source>imglabel</source>
-        <translation type="unfinished"></translation>
+        <translation>imglabel</translation>
     </message>
     <message>
         <source>title</source>
-        <translation type="unfinished"></translation>
+        <translation>Başlık</translation>
     </message>
     <message>
         <source>TextLabel</source>
-        <translation type="unfinished"></translation>
+        <translation>Metin Etiketi</translation>
     </message>
     <message>
         <source>copyright</source>
-        <translation type="unfinished"></translation>
+        <translation>telif hakkı</translation>
     </message>
     <message>
         <source>iRIC %1</source>
-        <translation type="unfinished"></translation>
+        <translation>iRIC %1</translation>
     </message>
     <message>
         <source>Released on %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Çıkış tarihi %1</translation>
     </message>
     <message>
         <source>Copyright %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Telif hakkı %1</translation>
     </message>
     <message>
         <source>Terms of use: </source>
-        <translation type="unfinished"></translation>
+        <translation>Kullanım Şartları:</translation>
     </message>
     <message>
         <source> (Japanese)</source>
-        <translation type="unfinished"></translation>
+        <translation>(Japonca)</translation>
     </message>
 </context>
 <context>
     <name>iRICMainWindowActionManager</name>
     <message>
         <source>&amp;File</source>
-        <translation type="unfinished"></translation>
+        <translation>Dosya (&amp;F)</translation>
     </message>
     <message>
         <source>&amp;New Project...</source>
-        <translation type="unfinished"></translation>
+        <translation>Yeni proje (&amp;N)...</translation>
     </message>
     <message>
         <source>Ctrl+N</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+N</translation>
     </message>
     <message>
         <source>&amp;Open...</source>
-        <translation type="unfinished"></translation>
+        <translation>Açık (&amp;O)...</translation>
     </message>
     <message>
         <source>Ctrl+O</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+O</translation>
     </message>
     <message>
         <source>Open iRIC Project files</source>
-        <translation type="unfinished"></translation>
+        <translation>iRIC Proje dosyalarını açın</translation>
     </message>
     <message>
         <source>&amp;Save</source>
-        <translation type="unfinished"></translation>
+        <translation>Kaydetmek (&amp;S)</translation>
     </message>
     <message>
         <source>Ctrl+S</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+S</translation>
     </message>
     <message>
         <source>Save &amp;As File(*.ipro)...</source>
-        <translation type="unfinished"></translation>
+        <translation>Dosya Olarak Kaydet (*.ipro) (&amp;A)...</translation>
     </message>
     <message>
         <source>Save As &amp;Project...</source>
-        <translation type="unfinished"></translation>
+        <translation>Proje Olarak Kaydet (&amp;P)...</translation>
     </message>
     <message>
         <source>&amp;Property...</source>
-        <translation type="unfinished"></translation>
+        <translation>Mülk (&amp;P)...</translation>
     </message>
     <message>
         <source>Save S&amp;napshot...</source>
-        <translation type="unfinished"></translation>
+        <translation>Anlık Görüntüyü Kaydet (&amp;N)...</translation>
     </message>
     <message>
         <source>Copy Snapshot to Clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Anlık Görüntüyü Panoya Kopyala</translation>
     </message>
     <message>
         <source>Continuous Snapshot / Movie / Google Earth Export...</source>
-        <translation type="unfinished"></translation>
+        <translation>Sürekli Anlık Görüntü / Film / Google Earth Dışa Aktarma...</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation type="unfinished"></translation>
+        <translation>İçe aktarmak (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Calculation Condition...</source>
-        <translation type="unfinished"></translation>
+        <translation>Hesaplama Koşulu (&amp;C)...</translation>
     </message>
     <message>
         <source>Calculation &amp;Result...</source>
-        <translation type="unfinished"></translation>
+        <translation>Hesaplama Sonucu (&amp;R)...</translation>
     </message>
     <message>
         <source>&amp;Measured Values...</source>
-        <translation type="unfinished"></translation>
+        <translation>Ölçülmüş değerler (&amp;M)...</translation>
     </message>
     <message>
         <source>&amp;Background Image...</source>
-        <translation type="unfinished"></translation>
+        <translation>Arka plan görüntüsü (&amp;B)...</translation>
     </message>
     <message>
         <source>&amp;Visualization/Graph Settings...</source>
-        <translation type="unfinished"></translation>
+        <translation>Görselleştirme/Grafik Ayarları (&amp;V)...</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation type="unfinished"></translation>
+        <translation>İhracat (&amp;E)</translation>
     </message>
     <message>
         <source>&amp;Particles...</source>
-        <translation type="unfinished"></translation>
+        <translation>parçacıklar (&amp;P)...</translation>
     </message>
     <message>
         <source>&amp;Contour Figure as ESRI Shapefiles...</source>
-        <translation type="unfinished"></translation>
+        <translation>ESRI Şekil Dosyaları Olarak Kontur Figürü (&amp;C)...</translation>
     </message>
     <message>
         <source>&amp;Google Earth KMZ for street view</source>
-        <translation type="unfinished"></translation>
+        <translation>Sokak görünümü için Google Earth KMZ (&amp;G)</translation>
     </message>
     <message>
         <source>Open &amp;Work Directory...</source>
-        <translation type="unfinished"></translation>
+        <translation>İş Dizinini Aç (&amp;W)...</translation>
     </message>
     <message>
         <source>&amp;Recent Projects</source>
-        <translation type="unfinished"></translation>
+        <translation>Son Projeler (&amp;R)</translation>
     </message>
     <message>
         <source>Show iRIC Start Page...</source>
-        <translation type="unfinished"></translation>
+        <translation>iRIC Başlangıç Sayfasını Göster...</translation>
     </message>
     <message>
         <source>E&amp;xit</source>
-        <translation type="unfinished"></translation>
+        <translation>çıkış (&amp;X)</translation>
     </message>
     <message>
         <source>G&amp;eographic Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Coğrafi Veriler (&amp;E)</translation>
     </message>
     <message>
         <source>Geographic Data (from web)</source>
-        <translation type="unfinished"></translation>
+        <translation>Coğrafi Veriler (web'den)</translation>
     </message>
     <message>
         <source>&amp;Hydraulic Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Hidrolik Veriler (&amp;H)</translation>
     </message>
     <message>
         <source>Solver Console &amp;Log...</source>
-        <translation type="unfinished"></translation>
+        <translation>Çözücü Konsol Günlüğü (&amp;L)...</translation>
     </message>
     <message>
         <source>&amp;Edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Düzenlemek (&amp;E)</translation>
     </message>
     <message>
         <source>Ctrl+Z</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Z</translation>
     </message>
     <message>
         <source>Ctrl+Y</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Y</translation>
     </message>
     <message>
         <source>Cu&amp;t</source>
-        <translation type="unfinished"></translation>
+        <translation>Kesmek (&amp;T)</translation>
     </message>
     <message>
         <source>&amp;Copy</source>
-        <translation type="unfinished"></translation>
+        <translation>kopyala (&amp;C)</translation>
     </message>
     <message>
         <source>&amp;Paste</source>
-        <translation type="unfinished"></translation>
+        <translation>Yapıştırmak (&amp;P)</translation>
     </message>
     <message>
         <source>&amp;View</source>
-        <translation type="unfinished"></translation>
+        <translation>görüş (&amp;V)</translation>
     </message>
     <message>
         <source>&amp;Toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>araç çubuğu (&amp;T)</translation>
     </message>
     <message>
         <source>&amp;Main Toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Ana Araç Çubuğu (&amp;M)</translation>
     </message>
     <message>
         <source>&amp;Windows list Toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Windows listesi Araç Çubuğu (&amp;W)</translation>
     </message>
     <message>
         <source>&amp;Animation Toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Animasyon Araç Çubuğu (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Object Browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Nesne Tarayıcı (&amp;O)</translation>
     </message>
     <message>
         <source>&amp;Attribute Browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Özellik Tarayıcısı (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Status Bar</source>
-        <translation type="unfinished"></translation>
+        <translation>Durum çubuğu (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;Background Color...</source>
-        <translation type="unfinished"></translation>
+        <translation>Arka plan rengi (&amp;B)...</translation>
     </message>
     <message>
         <source>&amp;Z-direction Scale...</source>
-        <translation type="unfinished"></translation>
+        <translation>Z-yönü Ölçeği (&amp;Z)...</translation>
     </message>
     <message>
         <source>Set &amp;Projection To</source>
-        <translation type="unfinished"></translation>
+        <translation>Projeksiyonu Ayarla (&amp;P)</translation>
     </message>
     <message>
         <source>Para&amp;llel</source>
-        <translation type="unfinished"></translation>
+        <translation>Paralel (&amp;L)</translation>
     </message>
     <message>
         <source>Ctrl+L</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+L</translation>
     </message>
     <message>
         <source>&amp;Perspective</source>
-        <translation type="unfinished"></translation>
+        <translation>Perspektif (&amp;P)</translation>
     </message>
     <message>
         <source>Ctrl+Shift+L</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Üst Karakter+L</translation>
     </message>
     <message>
         <source>&amp;Tile Windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Döşeme Pencereleri (&amp;T)</translation>
     </message>
     <message>
         <source>Ca&amp;mera Control</source>
-        <translation type="unfinished"></translation>
+        <translation>Kamera Kontrolü (&amp;M)</translation>
     </message>
     <message>
         <source>&amp;Fit</source>
-        <translation type="unfinished"></translation>
+        <translation>Yerleştirmek (&amp;F)</translation>
     </message>
     <message>
         <source>&amp;Reset Rotation</source>
-        <translation type="unfinished"></translation>
+        <translation>Döndürmeyi Sıfırla (&amp;R)</translation>
     </message>
     <message>
         <source>R&amp;otate 90</source>
-        <translation type="unfinished"></translation>
+        <translation>90 döndür (&amp;O)</translation>
     </message>
     <message>
         <source>XY Plane</source>
-        <translation type="unfinished"></translation>
+        <translation>XY Düzlemi</translation>
     </message>
     <message>
         <source>YZ Plane</source>
-        <translation type="unfinished"></translation>
+        <translation>YZ Uçak</translation>
     </message>
     <message>
         <source>XZ Plane</source>
-        <translation type="unfinished"></translation>
+        <translation>XZ Düzlemi</translation>
     </message>
     <message>
         <source>Move &amp;Left</source>
-        <translation type="unfinished"></translation>
+        <translation>Sola hareket et (&amp;L)</translation>
     </message>
     <message>
         <source>Move &amp;Right</source>
-        <translation type="unfinished"></translation>
+        <translation>Sağa hareket et (&amp;R)</translation>
     </message>
     <message>
         <source>Move &amp;Up</source>
-        <translation type="unfinished"></translation>
+        <translation>Yukarı Taşı (&amp;U)</translation>
     </message>
     <message>
         <source>Move &amp;Down</source>
-        <translation type="unfinished"></translation>
+        <translation>Aşağı inmek (&amp;D)</translation>
     </message>
     <message>
         <source>Zoom &amp;In</source>
-        <translation type="unfinished"></translation>
+        <translation>Yakınlaştır (&amp;I)</translation>
     </message>
     <message>
         <source>Zoom &amp;Out</source>
-        <translation type="unfinished"></translation>
+        <translation>Uzaklaştırmak (&amp;O)</translation>
     </message>
     <message>
         <source>Zoom In in X Direction</source>
-        <translation type="unfinished"></translation>
+        <translation>X Yönünde Yakınlaştır</translation>
     </message>
     <message>
         <source>Zoom Out in X Direction</source>
-        <translation type="unfinished"></translation>
+        <translation>X Yönünde Uzaklaştır</translation>
     </message>
     <message>
         <source>Zoom In in Y Direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Y Yönünde Yakınlaştır</translation>
     </message>
     <message>
         <source>Zoom Out in Y Direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Y Yönünde Uzaklaştır</translation>
     </message>
     <message>
         <source>&amp;Simulation</source>
-        <translation type="unfinished"></translation>
+        <translation>simülasyon (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;Run</source>
-        <translation type="unfinished"></translation>
+        <translation>Çalıştırmak (&amp;R)</translation>
     </message>
     <message>
         <source>Ctrl+R</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+R</translation>
     </message>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>&amp;Solver Information...</source>
-        <translation type="unfinished"></translation>
+        <translation>Çözücü Bilgileri (&amp;S)...</translation>
     </message>
     <message>
         <source>Focus &amp;PreProcessor Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Odak Ön İşlemci Penceresi (&amp;P)</translation>
     </message>
     <message>
         <source>Focus &amp;Solver Console Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Odak Çözücü Konsolu Penceresi (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;Tool</source>
-        <translation type="unfinished"></translation>
+        <translation>Alet (&amp;T)</translation>
     </message>
     <message>
         <source>Calculation &amp;Result</source>
-        <translation type="unfinished"></translation>
+        <translation>Hesaplama Sonucu (&amp;R)</translation>
     </message>
     <message>
         <source>Open new 2D Post-Processing Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Yeni 2D İşlem Sonrası Penceresini Aç</translation>
     </message>
     <message>
-        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
-        <translation type="unfinished"></translation>
+        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
+        <translation>Yeni 2D Kuş Bakışı İşleme Sonrası Penceresini Aç</translation>
     </message>
     <message>
         <source>Open new 3D Post-Processing Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Yeni 3D İşlem Sonrası Penceresini Aç</translation>
     </message>
     <message>
         <source>Open new Graph Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Yeni Grafik Penceresini Aç</translation>
     </message>
     <message>
         <source>Open new Scattered Chart Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Yeni Dağınık Grafik Penceresini Aç</translation>
     </message>
     <message>
         <source>Open new Verification Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Yeni Doğrulama Penceresini Aç</translation>
     </message>
     <message>
         <source>&amp;Reload</source>
-        <translation type="unfinished"></translation>
+        <translation>Tekrar yükle (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Reload Calculation Result</source>
-        <translation type="unfinished"></translation>
+        <translation>Hesaplama Sonucunu Yeniden Yükle (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Delete...</source>
-        <translation type="unfinished"></translation>
+        <translation>Silmek (&amp;D)...</translation>
     </message>
     <message>
         <source>&amp;Manage simple operation results</source>
-        <translation type="unfinished"></translation>
+        <translation>Basit işlem sonuçlarını yönetin (&amp;M)</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation type="unfinished"></translation>
+        <translation>İçe aktarmak (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation type="unfinished"></translation>
+        <translation>İhracat (&amp;E)...</translation>
     </message>
     <message>
         <source>Import Visualization/Graph Settings...</source>
-        <translation type="unfinished"></translation>
+        <translation>Görselleştirme/Grafik Ayarlarını İçe Aktar...</translation>
     </message>
     <message>
         <source>Export Visualization/Graph Settings...</source>
-        <translation type="unfinished"></translation>
+        <translation>Görselleştirmeyi/Grafik Ayarlarını Dışa Aktar...</translation>
     </message>
     <message>
         <source>&amp;Option</source>
-        <translation type="unfinished"></translation>
+        <translation>Seçenek (&amp;O)</translation>
     </message>
     <message>
         <source>&amp;Preferences...</source>
-        <translation type="unfinished"></translation>
+        <translation>Tercihler (&amp;P)...</translation>
     </message>
     <message>
         <source>&amp;Tools</source>
-        <translation type="unfinished"></translation>
+        <translation>Aletler (&amp;T)</translation>
     </message>
     <message>
         <source>&amp;Maintainance</source>
-        <translation type="unfinished"></translation>
+        <translation>bakım (&amp;M)</translation>
     </message>
     <message>
         <source>&amp;Create/Update Translation Files...</source>
-        <translation type="unfinished"></translation>
+        <translation>Çeviri Dosyaları Oluştur/Güncelle (&amp;C)...</translation>
     </message>
     <message>
         <source>&amp;Help</source>
-        <translation type="unfinished"></translation>
+        <translation>Yardım (&amp;H)</translation>
     </message>
     <message>
         <source>&amp;Help...</source>
-        <translation type="unfinished"></translation>
+        <translation>Yardım (&amp;H)...</translation>
     </message>
     <message>
         <source>&amp;Solver List...</source>
-        <translation type="unfinished"></translation>
+        <translation>Çözücü Listesi (&amp;S)...</translation>
     </message>
     <message>
         <source>&amp;Mouse Hint...</source>
-        <translation type="unfinished"></translation>
+        <translation>Fare İpucu (&amp;M)...</translation>
     </message>
     <message>
         <source>&amp;About...</source>
-        <translation type="unfinished"></translation>
+        <translation>Hakkında (&amp;A)...</translation>
     </message>
     <message>
         <source>Main ToolBar</source>
-        <translation type="unfinished"></translation>
+        <translation>Ana Araç Çubuğu</translation>
     </message>
     <message>
         <source>Window list Toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Pencere listesi Araç Çubuğu</translation>
     </message>
     <message>
         <source>Ctrl+C</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+C</translation>
     </message>
 </context>
 </TS>

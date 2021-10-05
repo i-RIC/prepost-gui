@@ -1,172 +1,170 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="uk_UA">
 <context>
     <name>GeoDataPolygon</name>
     <message>
         <source>Add &amp;Hole Region</source>
-        <translation type="unfinished"></translation>
+        <translation>Додати регіон діри (&amp;H)</translation>
     </message>
     <message>
         <source>&amp;Delete Hole Region...</source>
-        <translation type="unfinished"></translation>
+        <translation>Видалити область отвору (&amp;D)...</translation>
     </message>
     <message>
         <source>&amp;Copy...</source>
-        <translation type="unfinished"></translation>
+        <translation>Копіювати (&amp;C)...</translation>
     </message>
     <message>
         <source>&amp;Add Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Додайте вершину (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Видалити Vertex (&amp;R)</translation>
     </message>
     <message>
         <source>Edit &amp;Coordinates...</source>
-        <translation type="unfinished"></translation>
+        <translation>Редагувати координати (&amp;C)...</translation>
     </message>
     <message>
         <source>&amp;Polygon</source>
-        <translation type="unfinished"></translation>
+        <translation>Багатокутник (&amp;P)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Увага</translation>
     </message>
     <message>
         <source>Polygon must have three vertices at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>Багатокутник повинен мати принаймні три вершини.</translation>
     </message>
     <message>
         <source>Finish Defining Polygon</source>
-        <translation type="unfinished"></translation>
+        <translation>Завершити визначення багатокутника</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Інформація</translation>
     </message>
     <message>
         <source>Please define hole region. Hole region can be defined as polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
-        <translation type="unfinished"></translation>
+        <translation>Будь ласка, визначте область отвору. Область отвору можна визначити як багатокутник натисканням миші. Завершіть визначення, двічі клацнувши або натиснувши клавішу повернення.</translation>
     </message>
     <message>
         <source>Are you sure you want to remove this polygon?</source>
-        <translation type="unfinished"></translation>
+        <translation>Ви впевнені, що хочете видалити цей багатокутник?</translation>
     </message>
     <message>
         <source>Please define polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
-        <translation type="unfinished"></translation>
+        <translation>Будь ласка, визначте багатокутник, клацнувши мишею. Завершіть визначення, двічі клацнувши або натиснувши клавішу повернення.</translation>
     </message>
     <message>
         <source>polygon</source>
-        <translation type="unfinished"></translation>
+        <translation>багатокутник</translation>
     </message>
     <message>
         <source>Polygon</source>
-        <translation type="unfinished"></translation>
+        <translation>Багатокутник</translation>
     </message>
     <message>
         <source>Select Geographic Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Виберіть Географічні дані</translation>
     </message>
     <message>
         <source>Please select which geographic data to copy this polygon.</source>
-        <translation type="unfinished"></translation>
+        <translation>Виберіть географічні дані для копіювання цього багатокутника.</translation>
     </message>
     <message>
         <source>Add New Hole Polygon</source>
-        <translation type="unfinished"></translation>
+        <translation>Додати багатокутник нової діри</translation>
     </message>
     <message>
         <source>Insert Polygon Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Вставити вершину багатокутника</translation>
     </message>
     <message>
         <source>Polygon Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Координати багатокутника</translation>
     </message>
     <message>
         <source>Edit Polygon Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Редагування координат полігону</translation>
     </message>
     <message>
         <source>Polygon value change</source>
-        <translation type="unfinished"></translation>
+        <translation>Зміна значення багатокутника</translation>
     </message>
     <message>
         <source>Move Polygon</source>
-        <translation type="unfinished"></translation>
+        <translation>Перемістити багатокутник</translation>
     </message>
     <message>
         <source>Move Polygon Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Перемістити вершину багатокутника</translation>
     </message>
     <message>
         <source>Add New Polygon Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Додати нову точку полігону</translation>
     </message>
     <message>
         <source>Remove Polygon Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Видалити вершину багатокутника</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolygonColorSettingDialog</name>
     <message>
         <source>Polygon Color Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Налаштування кольору багатокутника</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Колір</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished"></translation>
+        <translation>Колір за значенням</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Користувацький колір</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolygonCreator</name>
     <message>
         <source>Polygon</source>
-        <translation type="unfinished"></translation>
+        <translation>Багатокутник</translation>
     </message>
     <message>
         <source>Polygon%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Багатокутник %1</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolygonImporter</name>
     <message>
         <source>ESRI Shapefile (Polygon)</source>
-        <translation type="unfinished"></translation>
+        <translation>Файл формату ESRI (багатокутник)</translation>
     </message>
     <message>
         <source>ESRI Shapefile (*.shp) (Polygon)</source>
-        <translation type="unfinished"></translation>
+        <translation>Файл формату ESRI (*.shp) (Polygon)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Помилка</translation>
     </message>
     <message>
         <source>The shape type contained in this shape file is not polygon.</source>
-        <translation type="unfinished"></translation>
+        <translation>Тип фігури, що міститься у цьому файлі фігур, не є багатокутником.</translation>
     </message>
     <message>
         <source>Opening %1 failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Відкриття %1 не вдалося.</translation>
     </message>
     <message>
         <source>The number of polygons mismatches between shp file and dbf file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Кількість несумісних полігонів між файлом shp та файлом dbf.</translation>
     </message>
     <message>
         <source>%1 th polygon can not be imported. Polygon like below can not be imported:
@@ -175,61 +173,61 @@
 - Lines of polygon intersect each other
 - Hole polygon is outside of region polygon
 - Polygon passes the same point several times</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 Полігон неможливо імпортувати. Полігон, як показано нижче, неможливо імпортувати: - Він має менше трьох точок - Він не замкнутий - Лінії багатокутника перетинаються один з одним - Багатокутник дірки знаходиться за межами полігону області - Багатокутник проходить одну і ту ж точку кілька разів</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Увага</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolygonImporterSettingDialog</name>
     <message>
         <source>Polygon Import Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Налаштування імпорту полігонів</translation>
     </message>
     <message>
         <source>Encoding:</source>
-        <translation type="unfinished"></translation>
+        <translation>Кодування:</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Назва</translation>
     </message>
     <message>
         <source>Load from Shape file attribute</source>
-        <translation type="unfinished"></translation>
+        <translation>Завантажити з атрибута файлу Shape</translation>
     </message>
     <message>
         <source>Name is set automatically (ex. Polygon1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Назва встановлюється автоматично (наприклад, Polygon1)</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation type="unfinished"></translation>
+        <translation>Цінність</translation>
     </message>
     <message>
         <source>Specify value</source>
-        <translation type="unfinished"></translation>
+        <translation>Вкажіть значення</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Увага</translation>
     </message>
     <message>
         <source>You cannot specify the same column for both Name and Value.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ви не можете вказати один і той же стовпець як для Імені, так і для Значення.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolygonShapeExporter</name>
     <message>
         <source>ESRI Shapefile</source>
-        <translation type="unfinished"></translation>
+        <translation>Файл формату ESRI</translation>
     </message>
     <message>
         <source>ESRI Shapefile (*.shp)</source>
-        <translation type="unfinished"></translation>
+        <translation>Файл формату ESRI (*.shp)</translation>
     </message>
 </context>
 </TS>

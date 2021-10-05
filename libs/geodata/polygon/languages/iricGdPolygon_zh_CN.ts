@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="zh_CN">
 <context>
     <name>GeoDataPolygon</name>
@@ -29,11 +27,11 @@
     </message>
     <message>
         <source>polygon</source>
-        <translation type="unfinished"></translation>
+        <translation>多边形</translation>
     </message>
     <message>
         <source>Polygon</source>
-        <translation type="unfinished">多边形</translation>
+        <translation>多边形</translation>
     </message>
     <message>
         <source>Add &amp;Hole Region</source>
@@ -178,11 +176,11 @@
     </message>
     <message>
         <source>ESRI Shapefile (Polygon)</source>
-        <translation type="unfinished"></translation>
+        <translation>ESRI 形状文件（多边形）</translation>
     </message>
     <message>
         <source>ESRI Shapefile (*.shp) (Polygon)</source>
-        <translation type="unfinished"></translation>
+        <translation>ESRI 形状文件 (*.shp) (Polygon)</translation>
     </message>
     <message>
         <source>Error</source>
@@ -275,11 +273,11 @@
     </message>
     <message>
         <source>ESRI Shapefile</source>
-        <translation type="unfinished"></translation>
+        <translation>ESRI 形状文件</translation>
     </message>
     <message>
         <source>ESRI Shapefile (*.shp)</source>
-        <translation type="unfinished"></translation>
+        <translation>ESRI 形状文件 (*.shp)</translation>
     </message>
 </context>
 </TS>

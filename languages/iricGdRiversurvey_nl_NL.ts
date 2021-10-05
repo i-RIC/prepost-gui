@@ -1,1330 +1,1328 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="nl_NL">
 <context>
     <name>GeoDataRiverCrosssectionAltitudeMoveDialog</name>
     <message>
         <source>Move Elevation Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Hoogtepunt verplaatsen</translation>
     </message>
     <message>
         <source>Horizontal variation (H): </source>
-        <translation type="unfinished"></translation>
+        <translation>Horizontale variatie (H):</translation>
     </message>
     <message>
         <source>TextLabel</source>
-        <translation type="unfinished"></translation>
+        <translation>TekstLabel</translation>
     </message>
     <message>
         <source>Vertical Variation:</source>
-        <translation type="unfinished"></translation>
+        <translation>Verticale variatie:</translation>
     </message>
     <message>
         <source>%1 &lt; </source>
-        <translation type="unfinished"></translation>
+        <translation>%1 &lt;</translation>
     </message>
     <message>
         <source>H</source>
-        <translation type="unfinished"></translation>
+        <translation>H</translation>
     </message>
     <message>
         <source> &lt; %1</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt; %1</translation>
     </message>
     <message>
         <source>Move Elevation Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Hoogtepunten verplaatsen</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverPathPointExpandDialog</name>
     <message>
         <source>Extend Traversal Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Verleng dwarslijn</translation>
     </message>
     <message>
         <source>Set Distance between River Center and Left Bank</source>
-        <translation type="unfinished"></translation>
+        <translation>Afstand tussen riviercentrum en linkeroever instellen</translation>
     </message>
     <message>
         <source>Increment</source>
-        <translation type="unfinished"></translation>
+        <translation>Verhogen</translation>
     </message>
     <message>
         <source>Extension Ratio</source>
-        <translation type="unfinished"></translation>
+        <translation>Uitbreidingsverhouding:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverPathPointExtensionAddDialog</name>
     <message>
         <source>Add Extension Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Verlenglijn toevoegen</translation>
     </message>
     <message>
         <source>End Point of Extension Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Eindpunt van verlengingslijn</translation>
     </message>
     <message>
         <source>Mouse Click</source>
-        <translation type="unfinished"></translation>
+        <translation>Muis klik</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished"></translation>
+        <translation>Positie</translation>
     </message>
     <message>
         <source>,</source>
-        <translation type="unfinished"></translation>
+        <translation>,</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverPathPointInsertDialog</name>
     <message>
         <source>Insert Traversal Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Tussenlijn invoegen</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Naam:</translation>
     </message>
     <message>
         <source>River Center Point Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Coördinaten van het middelpunt van de rivier</translation>
     </message>
     <message>
         <source>Mouse Click</source>
-        <translation type="unfinished"></translation>
+        <translation>Muis klik</translation>
     </message>
     <message>
         <source>Coordinate Values</source>
-        <translation type="unfinished"></translation>
+        <translation>Coördinaten Waarden</translation>
     </message>
     <message>
         <source>, </source>
-        <translation type="unfinished"></translation>
+        <translation>,</translation>
     </message>
     <message>
         <source>Ratio between Back and Forth (0-1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Verhouding tussen heen en weer (0-1)</translation>
     </message>
     <message>
         <source>Cross Section Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Dwarsdoorsnede-informatie</translation>
     </message>
     <message>
         <source>Inserts Three Point of Altitude 0</source>
-        <translation type="unfinished"></translation>
+        <translation>Voegt drie punten van hoogte 0. in</translation>
     </message>
     <message>
         <source>Copy Next River Cross Section</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopieer volgende rivierdoorsnede</translation>
     </message>
     <message>
         <source>Create Cross section of Back and Forth: Number of the Interpolation Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Maak een doorsnede van heen en weer: nummer van de interpolatiegegevens</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverPathPointMoveDialog</name>
     <message>
         <source>Move Traversal Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Verplaats dwarslijn</translation>
     </message>
     <message>
         <source>,</source>
-        <translation type="unfinished"></translation>
+        <translation>,</translation>
     </message>
     <message>
         <source>Transfer Quantity</source>
-        <translation type="unfinished"></translation>
+        <translation>Overboekingshoeveelheid</translation>
     </message>
     <message>
         <source>Center Point Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Coördinaten middelpunt</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverPathPointRenameDialog</name>
     <message>
         <source>Rename Traversal Line</source>
-        <translation type="unfinished"></translation>
+        <translation>De naam van de doorgangslijn wijzigen</translation>
     </message>
     <message>
         <source>New Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nieuwe naam:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverPathPointRotateDialog</name>
     <message>
         <source>Rotate Traversal Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Traversale lijn roteren</translation>
     </message>
     <message>
         <source>Relative Angle</source>
-        <translation type="unfinished"></translation>
+        <translation>Relatieve hoek</translation>
     </message>
     <message>
         <source>Increment Angle</source>
-        <translation type="unfinished"></translation>
+        <translation>Hoek verhogen</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverPathPointShiftDialog</name>
     <message>
         <source>Shift River Center</source>
-        <translation type="unfinished"></translation>
+        <translation>Shift River Center</translation>
     </message>
     <message>
         <source>Transfer Quantity</source>
-        <translation type="unfinished"></translation>
+        <translation>Overboekingshoeveelheid</translation>
     </message>
     <message>
         <source>Transfer Quality s (%1 &lt; s &lt; %2)</source>
-        <translation type="unfinished"></translation>
+        <translation>Overdrachtskwaliteit s ( %1 &lt; s &lt; %2 )</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurvey</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Waarschuwing</translation>
     </message>
     <message>
         <source>No points data to map is found. Please import points data.</source>
-        <translation type="unfinished"></translation>
+        <translation>Er zijn geen puntengegevens om in kaart te brengen gevonden. Importeer puntengegevens.</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informatie</translation>
     </message>
     <message>
         <source>Center Line is not defined yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Middenlijn is nog niet gedefinieerd.</translation>
     </message>
     <message>
         <source>Center line</source>
-        <translation type="unfinished"></translation>
+        <translation>Middenlijn</translation>
     </message>
     <message>
         <source>Please define center line by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
-        <translation type="unfinished"></translation>
+        <translation>Definieer de middenlijn door te klikken met de muis. Beëindig het definiëren door te dubbelklikken of op de Return-toets te drukken.</translation>
     </message>
     <message>
         <source>Add Extension Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Verlenglijn toevoegen</translation>
     </message>
     <message>
         <source>Selection Change</source>
-        <translation type="unfinished"></translation>
+        <translation>Selectie wijzigen</translation>
     </message>
     <message>
         <source>Delete Traversal Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Traversal Lines verwijderen</translation>
     </message>
     <message>
         <source>Expand Traversal Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Vouw dwarslijnen uit</translation>
     </message>
     <message>
         <source>Build Left bank and Right bank lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Bouw linkeroever en rechteroeverlijnen</translation>
     </message>
     <message>
         <source>&amp;Add Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Vertex toevoegen (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Vertex verwijderen (&amp;R)</translation>
     </message>
     <message>
         <source>Import C&amp;enter Line...</source>
-        <translation type="unfinished"></translation>
+        <translation>Middenlijn importeren (&amp;E)...</translation>
     </message>
     <message>
         <source>Export Ce&amp;nter Line...</source>
-        <translation type="unfinished"></translation>
+        <translation>Middenlijn exporteren (&amp;N)...</translation>
     </message>
     <message>
         <source>Insert Upstream Side(&amp;B)...</source>
-        <translation type="unfinished"></translation>
+        <translation>Stroomopwaartse zijde invoegen (B) (&amp;B)...</translation>
     </message>
     <message>
         <source>Insert Downstream Side(&amp;A)...</source>
-        <translation type="unfinished"></translation>
+        <translation>Stroomafwaartse zijde invoegen (A) (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Move...</source>
-        <translation type="unfinished"></translation>
+        <translation>Beweging (&amp;M)...</translation>
     </message>
     <message>
         <source>&amp;Rotate...</source>
-        <translation type="unfinished"></translation>
+        <translation>Draaien (&amp;R)...</translation>
     </message>
     <message>
         <source>S&amp;hift Center...</source>
-        <translation type="unfinished"></translation>
+        <translation>Shift Center (&amp;H)...</translation>
     </message>
     <message>
         <source>E&amp;xtend Horizontally...</source>
-        <translation type="unfinished"></translation>
+        <translation>Horizontaal uitbreiden (&amp;X)...</translation>
     </message>
     <message>
         <source>Dele&amp;te Cross Section</source>
-        <translation type="unfinished"></translation>
+        <translation>Doorsnede verwijderen (&amp;T)</translation>
     </message>
     <message>
         <source>R&amp;ename Cross Section...</source>
-        <translation type="unfinished"></translation>
+        <translation>Dwarsdoorsnede hernoemen (&amp;E)...</translation>
     </message>
     <message>
         <source>Add &amp;Left Bank Extension Line...</source>
-        <translation type="unfinished"></translation>
+        <translation>Verlengingslijn linkeroever toevoegen (&amp;L)...</translation>
     </message>
     <message>
         <source>Add &amp;Right Bank Extension Line...</source>
-        <translation type="unfinished"></translation>
+        <translation>Verlenglijn rechteroever toevoegen (&amp;R)...</translation>
     </message>
     <message>
         <source>Remo&amp;ve Left Bank Extension Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Verlengingslijn linkeroever verwijderen (&amp;V)</translation>
     </message>
     <message>
         <source>Rem&amp;ove Right Bank Extension Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Verlenglijn rechteroever verwijderen (&amp;O)</translation>
     </message>
     <message>
         <source>Display &amp;Cross Section</source>
-        <translation type="unfinished"></translation>
+        <translation>Dwarsdoorsnede weergeven (&amp;C)</translation>
     </message>
     <message>
         <source>Display &amp;Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Beeldscherm instelling (&amp;S)</translation>
     </message>
     <message>
         <source>Spline</source>
-        <translation type="unfinished"></translation>
+        <translation>Spline</translation>
     </message>
     <message>
         <source>Linear Curve</source>
-        <translation type="unfinished"></translation>
+        <translation>Lineaire curve</translation>
     </message>
     <message>
         <source>Interpolation Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Interpolatiemodus</translation>
     </message>
     <message>
         <source>%1 is not defined yet</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 is nog niet gedefinieerd</translation>
     </message>
     <message>
         <source>Insert Traversal Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Tussenlijn invoegen</translation>
     </message>
     <message>
         <source>Move Extension Line End</source>
-        <translation type="unfinished"></translation>
+        <translation>Verplaats verlenglijneinde</translation>
     </message>
     <message>
         <source>Rotate Traversal Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Traversale lijn roteren</translation>
     </message>
     <message>
         <source>Shift Center Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Verschuiving middelpunt</translation>
     </message>
     <message>
         <source>Move Traversal Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Verplaats dwarslijnen</translation>
     </message>
     <message>
         <source>Finish Defining Polyline</source>
-        <translation type="unfinished"></translation>
+        <translation>Voltooi het definiëren van polylijn</translation>
     </message>
     <message>
         <source>Remove Extension Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Verlenglijn verwijderen</translation>
     </message>
     <message>
         <source>Rename Traversal Line</source>
-        <translation type="unfinished"></translation>
+        <translation>De naam van de doorgangslijn wijzigen</translation>
     </message>
     <message>
         <source>Edit Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Weergave-instelling bewerken</translation>
     </message>
     <message>
         <source>Shift River Center Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Shift River Center Points</translation>
     </message>
     <message>
         <source>Move Traversal Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Verplaats dwarslijn</translation>
     </message>
     <message>
         <source>%1 generated.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 gegenereerd.</translation>
     </message>
     <message>
         <source>Cross-section data need at least 2 center points.</source>
-        <translation type="unfinished"></translation>
+        <translation>Doorsnedegegevens hebben minimaal 2 middelpunten nodig.</translation>
     </message>
     <message>
         <source>Generate Cross-Section Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Doorsnedegegevens genereren</translation>
     </message>
     <message>
         <source>No point cloud data to map is found. Please import point cloud data.</source>
-        <translation type="unfinished"></translation>
+        <translation>Er zijn geen puntenwolkgegevens om in kaart te brengen gevonden. Importeer puntenwolkgegevens.</translation>
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
-If you want to adjust cross section position and map point clouod data again, you can use &quot;Map point cloud data&quot;</source>
-        <translation type="unfinished"></translation>
+If you want to adjust cross section position and map point clouod data again, you can use "Map point cloud data"</source>
+        <translation>Dwarsdoorsnedegegevens worden gegenereerd met behulp van puntenwolkgegevens. Als u de positie van de dwarsdoorsnede en de puntwolkgegevens op de kaart opnieuw wilt aanpassen, kunt u "Kaartpuntenwolkgegevens" gebruiken</translation>
     </message>
     <message>
         <source>Map point cloud data</source>
-        <translation type="unfinished"></translation>
+        <translation>Puntenwolkgegevens in kaart brengen</translation>
     </message>
     <message>
         <source>Generate point cloud data</source>
-        <translation type="unfinished"></translation>
+        <translation>Puntenwolkgegevens genereren</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurvey::Impl</name>
     <message>
         <source>  </source>
-        <translation type="unfinished"></translation>
+        <translation />
     </message>
     <message>
         <source>&amp;Cross-Section Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Dwarsdoorsnedegegevens (&amp;C)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyBuildBankLinesDialog</name>
     <message>
         <source>Build Bank Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Banklijnen bouwen</translation>
     </message>
     <message>
         <source>Input the distance from center line</source>
-        <translation type="unfinished"></translation>
+        <translation>Voer de afstand vanaf de middellijn in</translation>
     </message>
     <message>
         <source>Left bank:</source>
-        <translation type="unfinished"></translation>
+        <translation>Linkeroever:</translation>
     </message>
     <message>
         <source>Right bank:</source>
-        <translation type="unfinished"></translation>
+        <translation>Rechteroever:</translation>
     </message>
     <message>
         <source>Hint: Left bank and Right bank lines are created as line that consists of points that are away from center line to direction perpendicular to the center line.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hint: Linkeroever- en Rechteroeverlijnen worden gecreëerd als een lijn die bestaat uit punten die weg zijn van de middellijn naar een richting loodrecht op de middellijn.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyCreator</name>
     <message>
         <source>Cross-Section Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Dwarsdoorsnedegegevens</translation>
     </message>
     <message>
         <source>Cross-Section Data%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Dwarsdoorsnedegegevens %1</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyCrossSectionDisplaySettingDialog</name>
     <message>
         <source>Cross Section Window Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Weergave-instelling dwarsdoorsnede venster</translation>
     </message>
     <message>
         <source>Background grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Achtergrondraster</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation type="unfinished"></translation>
+        <translation>Type</translation>
     </message>
     <message>
         <source>Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>lijnen</translation>
     </message>
     <message>
         <source>Dots</source>
-        <translation type="unfinished"></translation>
+        <translation>Stippen</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation type="unfinished"></translation>
+        <translation>Horizontaal</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation>Auto</translation>
     </message>
     <message>
         <source>Scale</source>
-        <translation type="unfinished"></translation>
+        <translation>Schaal</translation>
     </message>
     <message>
         <source>Sub scale</source>
-        <translation type="unfinished"></translation>
+        <translation>Subschaal</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation type="unfinished"></translation>
+        <translation>Verticaal</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Kleur:</translation>
     </message>
     <message>
         <source>Scales</source>
-        <translation type="unfinished"></translation>
+        <translation>Schubben</translation>
     </message>
     <message>
         <source>Font:</source>
-        <translation type="unfinished"></translation>
+        <translation>Lettertype:</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation type="unfinished"></translation>
+        <translation>Bewerking...</translation>
     </message>
     <message>
         <source>Left/right bank markers</source>
-        <translation type="unfinished"></translation>
+        <translation>Markeringen op linker-/rechteroever</translation>
     </message>
     <message>
         <source>Aspect ratio</source>
-        <translation type="unfinished"></translation>
+        <translation>Beeldverhouding</translation>
     </message>
     <message>
         <source>Left/right bank markers font</source>
-        <translation type="unfinished"></translation>
+        <translation>Lettertype markeringen linker/rechteroever</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyCrossSectionEditFromPointDialog</name>
     <message>
         <source>Edit Cross Section From Selected Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Bewerk doorsnede vanaf geselecteerd punt</translation>
     </message>
     <message>
         <source>Direction to Edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Richting om te bewerken</translation>
     </message>
     <message>
         <source>Left bank side</source>
-        <translation type="unfinished"></translation>
+        <translation>Linkeroever kant</translation>
     </message>
     <message>
         <source>Right bank side</source>
-        <translation type="unfinished"></translation>
+        <translation>Rechteroever:</translation>
     </message>
     <message>
         <source>Distance to Edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Afstand tot bewerken</translation>
     </message>
     <message>
         <source>Specify horizontal distance</source>
-        <translation type="unfinished"></translation>
+        <translation>Specificeer horizontale afstand</translation>
     </message>
     <message>
         <source>m</source>
-        <translation type="unfinished"></translation>
+        <translation>m</translation>
     </message>
     <message>
         <source>Specify vertical distance</source>
-        <translation type="unfinished"></translation>
+        <translation>Specificeer verticale afstand</translation>
     </message>
     <message>
         <source>Specify elevation of end point</source>
-        <translation type="unfinished"></translation>
+        <translation>Specificeer de hoogte van het eindpunt</translation>
     </message>
     <message>
         <source>To the point where it crosses the cross section</source>
-        <translation type="unfinished"></translation>
+        <translation>Tot het punt waar het de dwarsdoorsnede kruist</translation>
     </message>
     <message>
         <source>Gradient</source>
-        <translation type="unfinished"></translation>
+        <translation>verloop</translation>
     </message>
     <message>
         <source>Specify slope</source>
-        <translation type="unfinished"></translation>
+        <translation>Geef helling op</translation>
     </message>
     <message>
         <source>%</source>
-        <translation type="unfinished"></translation>
+        <translation>%</translation>
     </message>
     <message>
         <source>Specify fraction  1:</source>
-        <translation type="unfinished"></translation>
+        <translation>Specificeer breuk 1:</translation>
     </message>
     <message>
         <source>Specify the fraction between vertical distance and horizontal distance. For example inputting 10 means 10% slope, and 20 means 5% slope.</source>
-        <translation type="unfinished"></translation>
+        <translation>Geef de breuk op tussen verticale afstand en horizontale afstand. Als u bijvoorbeeld 10 invoert, betekent dit 10% helling en 20 betekent 5% helling.</translation>
     </message>
     <message>
         <source>Upward</source>
-        <translation type="unfinished"></translation>
+        <translation>omhoog</translation>
     </message>
     <message>
         <source>Downward</source>
-        <translation type="unfinished"></translation>
+        <translation>neerwaarts</translation>
     </message>
     <message>
         <source>Edit &amp;Next</source>
-        <translation type="unfinished"></translation>
+        <translation>Volgende bewerken (&amp;N)</translation>
     </message>
     <message>
         <source>Edit Crosssection</source>
-        <translation type="unfinished"></translation>
+        <translation>Doorsnede bewerken</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Waarschuwing</translation>
     </message>
     <message>
         <source>There is no cross point. Please check the setting.</source>
-        <translation type="unfinished"></translation>
+        <translation>Er is geen kruispunt. Controleer de instelling.</translation>
     </message>
     <message>
         <source>When you specify vertical distance, the slope should not be 0.</source>
-        <translation type="unfinished"></translation>
+        <translation>Als u de verticale afstand opgeeft, mag de helling niet 0 zijn.</translation>
     </message>
     <message>
         <source>The settings of elevation and gradient are invalid.</source>
-        <translation type="unfinished"></translation>
+        <translation>De instellingen voor hoogte en helling zijn ongeldig.</translation>
     </message>
     <message>
-        <source>When you specify elevation of end point, it can not be same to the start point. If you want to draw horizontal line, please select &quot;Specify horizontal distance&quot;.</source>
-        <translation type="unfinished"></translation>
+        <source>When you specify elevation of end point, it can not be same to the start point. If you want to draw horizontal line, please select "Specify horizontal distance".</source>
+        <translation>Wanneer u de hoogte van het eindpunt opgeeft, kan deze niet hetzelfde zijn als het beginpunt. Als u een horizontale lijn wilt tekenen, selecteert u "Specificeer horizontale afstand".</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyCrosssectionWindow</name>
     <message>
         <source>MainWindow</source>
-        <translation type="unfinished"></translation>
+        <translation>Hoofd venster</translation>
     </message>
     <message>
         <source>Cross Section ToolBar</source>
-        <translation type="unfinished"></translation>
+        <translation>Werkbalk dwarsdoorsnede</translation>
     </message>
     <message>
         <source>View Setting ToolBar</source>
-        <translation type="unfinished"></translation>
+        <translation>Werkbalk Instellingen bekijken</translation>
     </message>
     <message>
         <source>Display Setting ToolBar</source>
-        <translation type="unfinished"></translation>
+        <translation>Werkbalk voor weergave-instellingen</translation>
     </message>
     <message>
         <source>&amp;This cross-section only</source>
-        <translation type="unfinished"></translation>
+        <translation>Alleen deze doorsnede (&amp;T)</translation>
     </message>
     <message>
         <source>All cross-sections</source>
-        <translation type="unfinished"></translation>
+        <translation>Alle doorsneden</translation>
     </message>
     <message>
         <source>&amp;Edit cross section from the selected point</source>
-        <translation type="unfinished"></translation>
+        <translation>Bewerk doorsnede vanaf het geselecteerde punt (&amp;E)</translation>
     </message>
     <message>
         <source>&amp;Edit from Dialog...</source>
-        <translation type="unfinished"></translation>
+        <translation>Bewerken vanuit dialoogvenster (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Verwijderen (&amp;D)</translation>
     </message>
     <message>
         <source>&amp;Elevation Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Hoogtepunt (&amp;E)</translation>
     </message>
     <message>
         <source>Inactivate using &amp;water elevation</source>
-        <translation type="unfinished"></translation>
+        <translation>Inactiveren met waterverhoging (&amp;W)</translation>
     </message>
     <message>
         <source>Crosssection: </source>
-        <translation type="unfinished"></translation>
+        <translation>Dwarsdoorsnede:</translation>
     </message>
     <message>
         <source>Reference</source>
-        <translation type="unfinished"></translation>
+        <translation>Verwijzing</translation>
     </message>
     <message>
         <source>Auto rescale</source>
-        <translation type="unfinished"></translation>
+        <translation>Automatisch herschalen</translation>
     </message>
     <message>
         <source>Aspect ratio: 1 / </source>
-        <translation type="unfinished"></translation>
+        <translation>Beeldverhouding: 1 /</translation>
     </message>
     <message>
         <source>Fix aspect ratio</source>
-        <translation type="unfinished"></translation>
+        <translation>Beeldverhouding corrigeren</translation>
     </message>
     <message>
         <source>Fix region</source>
-        <translation type="unfinished"></translation>
+        <translation>Regio repareren</translation>
     </message>
     <message>
         <source>Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Rooster</translation>
     </message>
     <message>
         <source>Scale</source>
-        <translation type="unfinished"></translation>
+        <translation>Schaal</translation>
     </message>
     <message>
         <source>Left/right bank markers</source>
-        <translation type="unfinished"></translation>
+        <translation>Markeringen op linker-/rechteroever</translation>
     </message>
     <message>
         <source>Aspect ratio</source>
-        <translation type="unfinished"></translation>
+        <translation>Beeldverhouding</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Beeldscherm instelling</translation>
     </message>
     <message>
         <source>Active</source>
-        <translation type="unfinished"></translation>
+        <translation>Actief</translation>
     </message>
     <message>
         <source>Distance from left bank</source>
-        <translation type="unfinished"></translation>
+        <translation>Afstand vanaf linkeroever</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished"></translation>
+        <translation>Positie</translation>
     </message>
     <message>
         <source>Elevation</source>
-        <translation type="unfinished"></translation>
+        <translation>Verhoging</translation>
     </message>
     <message>
         <source>Crosssection Window : %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Doorsnede venster: %2</translation>
     </message>
     <message>
         <source>Edit Elevation Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Hoogtepunt bewerken</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Waarschuwing</translation>
     </message>
     <message>
         <source>At least, two points should be active.</source>
-        <translation type="unfinished"></translation>
+        <translation>Er moeten minimaal twee punten actief zijn.</translation>
     </message>
     <message>
         <source>Fixed points and end points cannot be deleted.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vaste punten en eindpunten kunnen niet worden verwijderd.</translation>
     </message>
     <message>
         <source>There should be more than one point in the right bank side and the left bank side.</source>
-        <translation type="unfinished"></translation>
+        <translation>Er moet meer dan één punt zijn aan de rechteroever en aan de linkeroever.</translation>
     </message>
     <message>
         <source>Delete Elevation Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Hoogtepunten verwijderen</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informatie</translation>
     </message>
     <message>
         <source>To use this function, please select only one point.</source>
-        <translation type="unfinished"></translation>
+        <translation>Selecteer slechts één punt om deze functie te gebruiken.</translation>
     </message>
     <message>
         <source>Inactivate Elevation Points using water elevation</source>
-        <translation type="unfinished"></translation>
+        <translation>Hoogtepunten deactiveren met behulp van waterhoogte</translation>
     </message>
     <message>
         <source>Fixed points and end points cannot be inactivated.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vaste punten en eindpunten kunnen niet worden gedeactiveerd.</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Kleur</translation>
     </message>
     <message>
         <source>Delete Water Surface Elevation</source>
-        <translation type="unfinished"></translation>
+        <translation>Hoogte wateroppervlak verwijderen</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation type="unfinished"></translation>
+        <translation>Weet je zeker dat je wilt verwijderen %1 ?</translation>
     </message>
     <message>
         <source>Water surface elevation data does not exist.</source>
-        <translation type="unfinished"></translation>
+        <translation>Er zijn geen hoogtegegevens van het wateroppervlak.</translation>
     </message>
     <message>
         <source>Select Water Surface Elevation</source>
-        <translation type="unfinished"></translation>
+        <translation>Selecteer Hoogte wateroppervlak</translation>
     </message>
     <message>
         <source>Select Water Surface Elevation to use</source>
-        <translation type="unfinished"></translation>
+        <translation>Selecteer Wateroppervlaktehoogte om te gebruiken</translation>
     </message>
     <message>
         <source>Cross-Section Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Dwarsdoorsnedegegevens</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyCrosssectionWindowGraphicsView</name>
     <message>
         <source>&amp;Activate</source>
-        <translation type="unfinished"></translation>
+        <translation>Activeren (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Inactivate</source>
-        <translation type="unfinished"></translation>
+        <translation>Inactiveren (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Move</source>
-        <translation type="unfinished"></translation>
+        <translation>Beweging (&amp;M)</translation>
     </message>
     <message>
         <source>Inactivate using &amp;water elevation</source>
-        <translation type="unfinished"></translation>
+        <translation>Inactiveren met waterverhoging (&amp;W)</translation>
     </message>
     <message>
         <source>Left Bank Side</source>
-        <translation type="unfinished"></translation>
+        <translation>Linkeroeverzijde</translation>
     </message>
     <message>
         <source>Right Bank Side</source>
-        <translation type="unfinished"></translation>
+        <translation>Rechteroever:</translation>
     </message>
     <message>
         <source>Aspect ratio: 1 / %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Beeldverhouding: 1 / %1</translation>
     </message>
     <message>
         <source>Inactivate Elevation Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Hoogtepunten deactiveren</translation>
     </message>
     <message>
         <source>Edit Cross Section</source>
-        <translation type="unfinished"></translation>
+        <translation>Doorsnede bewerken</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informatie</translation>
     </message>
     <message>
         <source>Edit the cross section by mouse-clicking. Finish editing by double clicking, or pressing return key.
-You can precisely edit the cross section by inputting values from dialog. Please enter dialog edit mode from &quot;Edit from Dialog&quot; in the right-clicking menu.</source>
-        <translation type="unfinished"></translation>
+You can precisely edit the cross section by inputting values from dialog. Please enter dialog edit mode from "Edit from Dialog" in the right-clicking menu.</source>
+        <translation>Bewerk de doorsnede door met de muis te klikken. Beëindig het bewerken door te dubbelklikken of op de Return-toets te drukken. U kunt de doorsnede nauwkeurig bewerken door waarden in te voeren vanuit het dialoogvenster. Ga naar de dialoogbewerkingsmodus via "Bewerken vanuit dialoogvenster" in het rechtsklikmenu.</translation>
     </message>
     <message>
         <source>Altitude Points Move</source>
-        <translation type="unfinished"></translation>
+        <translation>Hoogtepunten Verplaatsen</translation>
     </message>
     <message>
         <source>Edit Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Weergave-instelling bewerken</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyCrosssectionWindowWseTableWidget</name>
     <message>
         <source>WSE Name</source>
-        <translation type="unfinished"></translation>
+        <translation>WSE-naam</translation>
     </message>
     <message>
         <source>Elevation</source>
-        <translation type="unfinished"></translation>
+        <translation>Verhoging</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Kleur</translation>
     </message>
     <message>
         <source>Move &amp;Up</source>
-        <translation type="unfinished"></translation>
+        <translation>Omhoog gaan (&amp;U)</translation>
     </message>
     <message>
         <source>Move &amp;Down</source>
-        <translation type="unfinished"></translation>
+        <translation>Naar beneden verplaatsen (&amp;D)</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Verwijderen</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyDisplaySettingDialog</name>
     <message>
         <source>Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Beeldscherm instelling</translation>
     </message>
     <message>
         <source>Background Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Achtergrond kleur</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation type="unfinished"></translation>
+        <translation>Zichtbaar</translation>
     </message>
     <message>
         <source>Crosssection Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Dwarsdoorsnedelijnen</translation>
     </message>
     <message>
         <source>Z Scale: </source>
-        <translation type="unfinished"></translation>
+        <translation>Z-schaal:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Kleur:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyExporter</name>
     <message>
         <source>Cross-Section Data (*.riv)</source>
-        <translation type="unfinished"></translation>
+        <translation>Dwarsdoorsnedegegevens (*.riv)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyGenerateDialog</name>
     <message>
         <source>Generate River Survey Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Rivieronderzoeksgegevens genereren</translation>
     </message>
     <message>
         <source>Number of cross sections:</source>
-        <translation type="unfinished"></translation>
+        <translation>Aantal doorsneden:</translation>
     </message>
     <message>
         <source>Distance between cross sections [m]:</source>
-        <translation type="unfinished"></translation>
+        <translation>Afstand tussen doorsneden [m]:</translation>
     </message>
     <message>
         <source>Distance between elevation points[m]:</source>
-        <translation type="unfinished"></translation>
+        <translation>Afstand tussen hoogtepunten [m]:</translation>
     </message>
     <message>
         <source>Name of most upstream cross section</source>
-        <translation type="unfinished"></translation>
+        <translation>Naam van de meest stroomopwaartse dwarsdoorsnede</translation>
     </message>
     <message>
         <source>Points data to map:</source>
-        <translation type="unfinished"></translation>
+        <translation>Puntengegevens om in kaart te brengen:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyHonryuExporter</name>
     <message>
         <source>RiverSurvey data HONRYU export</source>
-        <translation type="unfinished"></translation>
+        <translation>RiverSurvey-gegevens HONRYU-export</translation>
     </message>
     <message>
         <source>CSV File (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>CSV-bestand (*.csv)</translation>
     </message>
     <message>
         <source>Text File (*.txt)</source>
-        <translation type="unfinished"></translation>
+        <translation>Tekstbestand (*.txt)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyHonryuExporterSettingDialog</name>
     <message>
         <source>Export Format Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Instelling exportformaat</translation>
     </message>
     <message>
         <source>Separator:</source>
-        <translation type="unfinished"></translation>
+        <translation>scheidingsteken:</translation>
     </message>
     <message>
         <source>Comma</source>
-        <translation type="unfinished"></translation>
+        <translation>Komma</translation>
     </message>
     <message>
         <source>Tab</source>
-        <translation type="unfinished"></translation>
+        <translation>Tab</translation>
     </message>
     <message>
         <source>Space</source>
-        <translation type="unfinished"></translation>
+        <translation>Ruimte</translation>
     </message>
     <message>
         <source>Header:</source>
-        <translation type="unfinished"></translation>
+        <translation>kop:</translation>
     </message>
     <message>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Toevoegen</translation>
     </message>
     <message>
         <source>Columns:</source>
-        <translation type="unfinished"></translation>
+        <translation>kolommen:</translation>
     </message>
     <message>
         <source>Name, Longitudinal Distance, Cross Section Distance, Elevation</source>
-        <translation type="unfinished"></translation>
+        <translation>Naam, lengte-afstand, dwarsdoorsnede-afstand, hoogte</translation>
     </message>
     <message>
         <source>Longitudinal Distance, Name, Cross Section Distance, Elevation</source>
-        <translation type="unfinished"></translation>
+        <translation>Longitudinale afstand, naam, dwarsdoorsnede-afstand, hoogte</translation>
     </message>
     <message>
         <source>Cross Section Distance, Elevation, Name, Longitudinal Distance</source>
-        <translation type="unfinished"></translation>
+        <translation>Dwarsdoorsnede-afstand, hoogte, naam, lengte-afstand</translation>
     </message>
     <message>
         <source>Cross Section Distance, Elevation, Longitudinal Distance, Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Dwarsdoorsnede-afstand, hoogte, lengte-afstand, naam</translation>
     </message>
     <message>
         <source>Longitudinal Distance:</source>
-        <translation type="unfinished"></translation>
+        <translation>Longitudinale afstand:</translation>
     </message>
     <message>
         <source>Distance from previous Cross Section</source>
-        <translation type="unfinished"></translation>
+        <translation>Afstand vanaf vorige doorsnede</translation>
     </message>
     <message>
         <source>Distance from first Cross Section</source>
-        <translation type="unfinished"></translation>
+        <translation>Afstand vanaf eerste dwarsdoorsnede</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyImporter</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Fout</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: LX value is invalid</source>
-        <translation type="unfinished"></translation>
+        <source>%1 line %2 "%3": LX value is invalid</source>
+        <translation>%1 lijn %2 "%3": LX-waarde is ongeldig</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: LY value is invalid</source>
-        <translation type="unfinished"></translation>
+        <source>%1 line %2 "%3": LY value is invalid</source>
+        <translation>%1 lijn %2 "%3": LY-waarde is ongeldig</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: RX value is invalid</source>
-        <translation type="unfinished"></translation>
+        <source>%1 line %2 "%3": RX value is invalid</source>
+        <translation>%1 lijn %2 "%3": RX-waarde is ongeldig</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: RY value is invalid</source>
-        <translation type="unfinished"></translation>
+        <source>%1 line %2 "%3": RY value is invalid</source>
+        <translation>%1 lijn %2 "%3": RY-waarde is ongeldig</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Point count is invalid</source>
-        <translation type="unfinished"></translation>
+        <source>%1 line %2 "%3": Point count is invalid</source>
+        <translation>%1 lijn %2 "%3": Puntentelling is ongeldig</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Invalid index value</source>
-        <translation type="unfinished"></translation>
+        <source>%1 line %2 "%3": Invalid index value</source>
+        <translation>%1 lijn %2 "%3": Ongeldige indexwaarde</translation>
     </message>
     <message>
         <source>%1 line %2: cross section data for %3 not enough</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 lijn %2 : doorsnedegegevens voor %3 niet genoeg</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Distance value is invalid</source>
-        <translation type="unfinished"></translation>
+        <source>%1 line %2 "%3": Distance value is invalid</source>
+        <translation>%1 lijn %2 "%3": Afstandswaarde is ongeldig</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Elevation value is invalid</source>
-        <translation type="unfinished"></translation>
+        <source>%1 line %2 "%3": Elevation value is invalid</source>
+        <translation>%1 lijn %2 "%3": Hoogtewaarde is ongeldig</translation>
     </message>
     <message>
         <source>#survey data is not found. Will be ignored.</source>
-        <translation type="unfinished"></translation>
+        <translation>#enquêtegegevens zijn niet gevonden. Wordt genegeerd.</translation>
     </message>
     <message>
         <source>#x-section data is not found. Will be ignored.</source>
-        <translation type="unfinished"></translation>
+        <translation>#x-sectiegegevens zijn niet gevonden. Wordt genegeerd.</translation>
     </message>
     <message>
         <source>#x-section data is not correctly ordered. Will be sorted automatically.</source>
-        <translation type="unfinished"></translation>
+        <translation>#x-sectiegegevens zijn niet correct geordend. Wordt automatisch gesorteerd.</translation>
     </message>
     <message>
         <source>#x-section data contained data with same distances. Data distance is shifted slightly so that you can import both points.</source>
-        <translation type="unfinished"></translation>
+        <translation>#x-sectiegegevens bevatten gegevens met dezelfde afstanden. De gegevensafstand is iets verschoven, zodat u beide punten kunt importeren.</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Waarschuwing</translation>
     </message>
     <message>
         <source>Cross Section data is not ordered correctly at %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dwarsdoorsnedegegevens zijn niet correct geordend bij %1.</translation>
     </message>
     <message>
         <source>Crosssection data is not ordered correctly at %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dwarsdoorsnedegegevens zijn niet correct geordend bij %1.</translation>
     </message>
     <message>
         <source>Error occured while opening %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Er is een fout opgetreden tijdens het openen %1</translation>
     </message>
     <message>
         <source>%1 Line %2: Read error. Needs at least two values.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 Lijn %2 : Leesfout. Heeft minimaal twee waarden nodig.</translation>
     </message>
     <message>
-        <source>%1 Line %2: Read error. Not real number value &quot;%3&quot;.</source>
-        <translation type="unfinished"></translation>
+        <source>%1 Line %2: Read error. Not real number value "%3".</source>
+        <translation>%1 Lijn %2 : Leesfout. Geen echte getalwaarde "%3".</translation>
     </message>
     <message>
         <source>Cross section %1 does not cross the center line. Center point is set to be the middle point of low water way.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dwarsdoorsnede %1 niet over de middenlijn. Het middelpunt is ingesteld als het middelpunt van de laagwaterweg.</translation>
     </message>
     <message>
         <source>On cross section %1, the center line does not cross in the low water way. Center point is set to be the middle point of low water way.</source>
-        <translation type="unfinished"></translation>
+        <translation>Op dwarsdoorsnede %1, de middellijn kruist niet bij laagwater. Het middelpunt is ingesteld als het middelpunt van de laagwaterweg.</translation>
     </message>
     <message>
         <source>Cross section %1 does not cross the center line. Center point is set to be the middle point of left bank and right bank.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dwarsdoorsnede %1 niet over de middenlijn. Het middelpunt is ingesteld als het middelpunt van de linkeroever en de rechteroever.</translation>
     </message>
     <message>
         <source>Cross-Section data (*.riv)</source>
-        <translation type="unfinished"></translation>
+        <translation>Dwarsdoorsnedegegevens (*.riv)</translation>
     </message>
     <message>
         <source>Cross-Section Data (*.riv)</source>
-        <translation type="unfinished"></translation>
+        <translation>Dwarsdoorsnedegegevens (*.riv)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyImporterSettingDialog</name>
     <message>
         <source>River Survey Data Import Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Instelling voor importeren van gegevens van rivieronderzoek</translation>
     </message>
     <message>
         <source>Where to define River center point</source>
-        <translation type="unfinished"></translation>
+        <translation>Waar het middelpunt van de rivier te definiëren</translation>
     </message>
     <message>
         <source>Middle point of left bank and right bank</source>
-        <translation type="unfinished"></translation>
+        <translation>Middelpunt van linkeroever en rechteroever</translation>
     </message>
     <message>
         <source>Where the elevation is the smallest</source>
-        <translation type="unfinished"></translation>
+        <translation>Waar de hoogte het kleinst is</translation>
     </message>
     <message>
         <source>Order of cross sections</source>
-        <translation type="unfinished"></translation>
+        <translation>Volgorde van doorsneden</translation>
     </message>
     <message>
         <source>Upstream to downstream</source>
-        <translation type="unfinished"></translation>
+        <translation>Stroomopwaarts naar stroomafwaarts</translation>
     </message>
     <message>
         <source>Downstream to upstream</source>
-        <translation type="unfinished"></translation>
+        <translation>Stroomafwaarts naar stroomopwaarts</translation>
     </message>
     <message>
         <source>Middle point of Low water way</source>
-        <translation type="unfinished"></translation>
+        <translation>Middelpunt van laagwaterweg</translation>
     </message>
     <message>
         <source>Where the elevation is the smallest in low water way</source>
-        <translation type="unfinished"></translation>
+        <translation>Waar de hoogte het kleinst is bij laag water</translation>
     </message>
     <message>
         <source>Import center line from CSV file</source>
-        <translation type="unfinished"></translation>
+        <translation>Middenlijn importeren uit CSV-bestand</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyImporter_ProblemsDialog</name>
     <message>
         <source>Problems Found in Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Problemen gevonden in gegevens</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Naam</translation>
     </message>
     <message>
         <source>Problem</source>
-        <translation type="unfinished"></translation>
+        <translation>Probleem</translation>
     </message>
     <message>
         <source>The problems above is found. Do you want to continue importing?</source>
-        <translation type="unfinished"></translation>
+        <translation>Bovenstaande problemen zijn gevonden. Wilt u doorgaan met importeren?</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyLandXmlExporter</name>
     <message>
         <source>LandXml (*.xml)</source>
-        <translation type="unfinished"></translation>
+        <translation>LandXml (*.xml)</translation>
     </message>
     <message>
         <source>LandXml file(*.xml)</source>
-        <translation type="unfinished"></translation>
+        <translation>LandXml-bestand (*.xml)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyMapPointsDialog</name>
     <message>
         <source>Map points data</source>
-        <translation type="unfinished"></translation>
+        <translation>Gegevens kaartpunten</translation>
     </message>
     <message>
         <source>Distance between elevation points[m]:</source>
-        <translation type="unfinished"></translation>
+        <translation>Afstand tussen hoogtepunten [m]:</translation>
     </message>
     <message>
         <source>Points data to map:</source>
-        <translation type="unfinished"></translation>
+        <translation>Puntengegevens om in kaart te brengen:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyMlitImporter</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Fout</translation>
     </message>
     <message>
         <source>Opening %1 failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Opening %1 mislukt.</translation>
     </message>
     <message>
         <source>%1 Line %2: KP is not input</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 Lijn %2 : KP wordt niet ingevoerd</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: LX value is invalid</source>
-        <translation type="unfinished"></translation>
+        <source>%1 Line %2 "%3": LX value is invalid</source>
+        <translation>%1 Lijn %2 "%3": LX-waarde is ongeldig</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: LY value is invalid</source>
-        <translation type="unfinished"></translation>
+        <source>%1 Line %2 "%3": LY value is invalid</source>
+        <translation>%1 Lijn %2 "%3": LY-waarde is ongeldig</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: RX value is invalid</source>
-        <translation type="unfinished"></translation>
+        <source>%1 Line %2 "%3": RX value is invalid</source>
+        <translation>%1 Lijn %2 "%3": RX-waarde is ongeldig</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: RY value is invalid</source>
-        <translation type="unfinished"></translation>
+        <source>%1 Line %2 "%3": RY value is invalid</source>
+        <translation>%1 Lijn %2 "%3": RY-waarde is ongeldig</translation>
     </message>
     <message>
         <source>Distance marker data is not found. Will be ignored.</source>
-        <translation type="unfinished"></translation>
+        <translation>Afstandsmarkeringsgegevens zijn niet gevonden. Wordt genegeerd.</translation>
     </message>
     <message>
-        <source>%1 line %2: &quot;%3&quot;: Flag data is invalid.</source>
-        <translation type="unfinished"></translation>
+        <source>%1 line %2: "%3": Flag data is invalid.</source>
+        <translation>%1 lijn %2 : "%3": Vlaggegevens zijn ongeldig.</translation>
     </message>
     <message>
-        <source>%1 line %2: &quot;%3&quot;: Distance data is invalid.</source>
-        <translation type="unfinished"></translation>
+        <source>%1 line %2: "%3": Distance data is invalid.</source>
+        <translation>%1 lijn %2 : "%3": Afstandsgegevens zijn ongeldig.</translation>
     </message>
     <message>
-        <source>%1 line %2: &quot;%3&quot;: Elevation data is invalid.</source>
-        <translation type="unfinished"></translation>
+        <source>%1 line %2: "%3": Elevation data is invalid.</source>
+        <translation>%1 lijn %2 : "%3": Hoogtegegevens zijn ongeldig.</translation>
     </message>
     <message>
         <source>Select folder where cross section data exists</source>
-        <translation type="unfinished"></translation>
+        <translation>Selecteer map waar doorsnedegegevens bestaan</translation>
     </message>
     <message>
         <source>Cross Section data is not found. Will be ignored.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dwarsdoorsnedegegevens zijn niet gevonden. Wordt genegeerd.</translation>
     </message>
     <message>
         <source>Cross Section data contained data with same distances. Data with lowest elevation is used.: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Dwarsdoorsnedegegevens bevatten gegevens met dezelfde afstanden. Gegevens met de laagste hoogte worden gebruikt.: %1</translation>
     </message>
     <message>
         <source>Cross Section data is not correctly ordered. Will be sorted automatically.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dwarsdoorsnedegegevens zijn niet correct geordend. Wordt automatisch gesorteerd.</translation>
     </message>
     <message>
         <source>Cross Section data contained data with same distances. Data distance is shifted slightly so that you can import both points.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dwarsdoorsnedegegevens bevatten gegevens met dezelfde afstanden. De gegevensafstand is iets verschoven, zodat u beide punten kunt importeren.</translation>
     </message>
     <message>
         <source>%1 Line %2: The number of values should be 5, but %3 values found.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 Lijn %2 : Het aantal waarden moet 5 zijn, maar %3 waarden gevonden.</translation>
     </message>
     <message>
         <source>MLIT Cross-Section Data (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>MLIT-doorsnedegegevens (*.csv)</translation>
     </message>
     <message>
         <source>Japan MLIT Cross-Section Data (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>Japan MLIT-doorsnedegegevens (*.csv)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyMlitImporter_ProblemsDialog</name>
     <message>
         <source>Problems Found in Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Problemen gevonden in gegevens</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Naam</translation>
     </message>
     <message>
         <source>Related File</source>
-        <translation type="unfinished"></translation>
+        <translation>Verwant bestand</translation>
     </message>
     <message>
         <source>Problem</source>
-        <translation type="unfinished"></translation>
+        <translation>Probleem</translation>
     </message>
     <message>
         <source>The problems above is found. Do you want to continue importing?</source>
-        <translation type="unfinished"></translation>
+        <translation>Bovenstaande problemen zijn gevonden. Wilt u doorgaan met importeren?</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Weergave-instelling bewerken</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyVTKExporter</name>
     <message>
         <source>RiverSurvey data</source>
-        <translation type="unfinished"></translation>
+        <translation>RiverSurvey-gegevens</translation>
     </message>
     <message>
         <source>VTK File (*.vtk)</source>
-        <translation type="unfinished"></translation>
+        <translation>VTK-bestand (*.vtk)</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionRiverSurveyInterface</name>
     <message>
         <source>Move Control Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Controlepunten verplaatsen</translation>
     </message>
 </context>
 </TS>

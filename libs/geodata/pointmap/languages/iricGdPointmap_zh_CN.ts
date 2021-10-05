@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="zh_CN">
 <context>
     <name>GeoDataPointMapDelPtsLessThanDialog</name>
@@ -240,35 +238,35 @@
     </message>
     <message>
         <source>Merge...</source>
-        <translation type="unfinished"></translation>
+        <translation>合并...</translation>
     </message>
     <message>
-        <source>There is no other data to merge in &quot;%1&quot; group.</source>
-        <translation type="unfinished"></translation>
+        <source>There is no other data to merge in "%1" group.</source>
+        <translation>没有其他数据可以合并到“ %1 “ 团体。</translation>
     </message>
     <message>
         <source>%1 duplicate points were found in merge targets, and omitted.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 在合并目标中发现重复点，并省略。</translation>
     </message>
     <message>
         <source>You must select one known point, and define at least one location for added points. Do you want to retry, or cancel the operation?</source>
-        <translation type="unfinished"></translation>
+        <translation>您必须选择一个已知点，并为添加的点定义至少一个位置。您要重试还是取消操作？</translation>
     </message>
     <message>
         <source>Add Points</source>
-        <translation type="unfinished">添加点</translation>
+        <translation>加分</translation>
     </message>
     <message>
         <source>Values of new points</source>
-        <translation type="unfinished"></translation>
+        <translation>新积分的价值</translation>
     </message>
     <message>
         <source>To interpolate points, you must specify more than two points, and the last point should be existing point. Do you want to retry, or cancel the operation?</source>
-        <translation type="unfinished"></translation>
+        <translation>要插入点，您必须指定两个以上的点，最后一个点应该是现有点。您要重试还是取消操作？</translation>
     </message>
     <message>
         <source>P&amp;oint Cloud Data</source>
-        <translation type="unfinished"></translation>
+        <translation>点云数据 (&amp;O)</translation>
     </message>
 </context>
 <context>
@@ -364,26 +362,26 @@
     </message>
     <message>
         <source>Interpolation Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>插值设置</translation>
     </message>
     <message>
         <source>Interpolation Increment:</source>
-        <translation type="unfinished"></translation>
+        <translation>插值增量：</translation>
     </message>
     <message>
         <source>Line Length:</source>
-        <translation type="unfinished"></translation>
+        <translation>线长：</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapInterpolatePointsDialog</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">警告</translation>
+        <translation>警告</translation>
     </message>
     <message>
         <source>Interpolation increment must be greater 0 and less than interpolation line length</source>
-        <translation type="unfinished"></translation>
+        <translation>插值增量必须大于 0 且小于插值线长度</translation>
     </message>
 </context>
 <context>
@@ -428,19 +426,19 @@
     <name>GeoDataPointmapMergeSettingDialog</name>
     <message>
         <source>Select data to merge</source>
-        <translation type="unfinished"></translation>
+        <translation>选择要合并的数据</translation>
     </message>
     <message>
         <source>Please select data to merge this group.</source>
-        <translation type="unfinished"></translation>
+        <translation>请选择数据以合并此组。</translation>
     </message>
     <message>
         <source>&amp;Select all</source>
-        <translation type="unfinished"></translation>
+        <translation>全选 (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;Unselect all</source>
-        <translation type="unfinished"></translation>
+        <translation>全部取消选择 (&amp;U)</translation>
     </message>
 </context>
 <context>
@@ -455,11 +453,11 @@
     </message>
     <message>
         <source>Point Cloud Data</source>
-        <translation type="unfinished"></translation>
+        <translation>点云数据</translation>
     </message>
     <message>
         <source>Point Cloud Data%1</source>
-        <translation type="unfinished"></translation>
+        <translation>点云数据 %1</translation>
     </message>
 </context>
 <context>
@@ -482,7 +480,7 @@
     </message>
     <message>
         <source>Point Cloud Data (DEM etc.)</source>
-        <translation type="unfinished"></translation>
+        <translation>点云数据（DEM 等）</translation>
     </message>
 </context>
 <context>
@@ -497,11 +495,11 @@
     </message>
     <message>
         <source>DEM etc. (*.tpo)</source>
-        <translation type="unfinished"></translation>
+        <translation>DEM 等 (*.tpo)</translation>
     </message>
     <message>
         <source>Topography File (*.tpo)</source>
-        <translation type="unfinished"></translation>
+        <translation>地形文件 (*.tpo)</translation>
     </message>
 </context>
 <context>
@@ -523,194 +521,194 @@
     <name>GeoDataPointmapRealTextImporter</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished">错误</translation>
+        <translation>错误</translation>
     </message>
     <message>
         <source>File open error occured while opening %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>打开时出现文件打开错误 %1.</translation>
     </message>
     <message>
         <source>Not enough header lines found in the file.</source>
-        <translation type="unfinished"></translation>
+        <translation>在文件中找不到足够的标题行。</translation>
     </message>
     <message>
         <source>Line %1: %2</source>
-        <translation type="unfinished"></translation>
+        <translation>线 %1 ： %2</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">警告</translation>
+        <translation>警告</translation>
     </message>
     <message>
         <source>%1 duplicate points found. If points with same x and y values found, the first point is imported</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 发现重复点。如果找到具有相同 x 和 y 值的点，则导入第一个点</translation>
     </message>
     <message>
         <source>At column %1, %2 or %3 expected, but %4 specified.</source>
-        <translation type="unfinished"></translation>
+        <translation>在列 %1, %2 或者 %3 预期，但 %4 指定的。</translation>
     </message>
     <message>
         <source>At column %1, delimiter expected, but %2 specified.</source>
-        <translation type="unfinished"></translation>
+        <translation>在列 %1, 预期的分隔符，但是 %2 指定的。</translation>
     </message>
     <message>
         <source>x</source>
-        <translation type="unfinished"></translation>
+        <translation>X</translation>
     </message>
     <message>
         <source>y</source>
-        <translation type="unfinished"></translation>
+        <translation>是</translation>
     </message>
     <message>
         <source>value</source>
-        <translation type="unfinished"></translation>
+        <translation>价值</translation>
     </message>
     <message>
         <source>No delimiter specified</source>
-        <translation type="unfinished"></translation>
+        <translation>未指定分隔符</translation>
     </message>
     <message>
-        <source>Not enough values to read &quot;%1&quot;. &quot;%1&quot; column is %2 but %3 values input.</source>
-        <translation type="unfinished"></translation>
+        <source>Not enough values to read "%1". "%1" column is %2 but %3 values input.</source>
+        <translation>没有足够的值来读取“ %1 “。” %1 " 列是 %2 但 %3 值输入。</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;%1&quot; value. &quot;%1&quot; value should be real number, but &quot;%2&quot; specified.</source>
-        <translation type="unfinished"></translation>
+        <source>Error occured while reading "%1" value. "%1" value should be real number, but "%2" specified.</source>
+        <translation>读取时发生错误“ %1 “ 价值。 ” %1 " 值应该是实数，但是 " %2 “ 指定的。</translation>
     </message>
     <message>
         <source>Text files (CSV, TSV, etc.)</source>
-        <translation type="unfinished"></translation>
+        <translation>文本文件（CSV、TSV 等）</translation>
     </message>
     <message>
         <source>Text file (*.csv *.txt *.xyz)</source>
-        <translation type="unfinished"></translation>
+        <translation>文本文件 (*.csv *.txt *.xyz)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapRealTextImporter_SettingDialog</name>
     <message>
         <source>Import Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>导入设置</translation>
     </message>
     <message>
         <source>Encoding:</source>
-        <translation type="unfinished"></translation>
+        <translation>编码：</translation>
     </message>
     <message>
         <source>File Format</source>
-        <translation type="unfinished"></translation>
+        <translation>文件格式</translation>
     </message>
     <message>
         <source>CSV (Comma separated values)</source>
-        <translation type="unfinished"></translation>
+        <translation>CSV（逗号分隔值）</translation>
     </message>
     <message>
         <source>Delimiters</source>
-        <translation type="unfinished"></translation>
+        <translation>分隔符</translation>
     </message>
     <message>
         <source>Comma</source>
-        <translation type="unfinished"></translation>
+        <translation>逗号</translation>
     </message>
     <message>
         <source>Tab</source>
-        <translation type="unfinished"></translation>
+        <translation>标签</translation>
     </message>
     <message>
         <source>Space</source>
-        <translation type="unfinished"></translation>
+        <translation>空间</translation>
     </message>
     <message>
         <source>Colon</source>
-        <translation type="unfinished"></translation>
+        <translation>冒号</translation>
     </message>
     <message>
         <source>Semicolon</source>
-        <translation type="unfinished"></translation>
+        <translation>分号</translation>
     </message>
     <message>
         <source>Other</source>
-        <translation type="unfinished"></translation>
+        <translation>其他</translation>
     </message>
     <message>
         <source>Special characters</source>
-        <translation type="unfinished"></translation>
+        <translation>特殊的角色</translation>
     </message>
     <message>
         <source>Quote character:</source>
-        <translation type="unfinished"></translation>
+        <translation>引用字符：</translation>
     </message>
     <message>
-        <source>&quot;</source>
-        <translation type="unfinished"></translation>
+        <source>"</source>
+        <translation>”</translation>
     </message>
     <message>
         <source>When you want to specify multiple quote characters, please just input the characters only, no spaces or commas.</source>
-        <translation type="unfinished"></translation>
+        <translation>当您要指定多个引号字符时，请只输入字符，不要输入空格或逗号。</translation>
     </message>
     <message>
         <source>Escape character:</source>
-        <translation type="unfinished"></translation>
+        <translation>转义字符：</translation>
     </message>
     <message>
         <source>\</source>
-        <translation type="unfinished"></translation>
+        <translation>\</translation>
     </message>
     <message>
         <source>Record options</source>
-        <translation type="unfinished"></translation>
+        <translation>记录选项</translation>
     </message>
     <message>
         <source>Header lines to ignore</source>
-        <translation type="unfinished"></translation>
+        <translation>要忽略的标题行</translation>
     </message>
     <message>
         <source>First header line contains field names</source>
-        <translation type="unfinished"></translation>
+        <translation>第一个标题行包含字段名称</translation>
     </message>
     <message>
         <source>Select fields</source>
-        <translation type="unfinished"></translation>
+        <translation>选择字段</translation>
     </message>
     <message>
         <source>X:</source>
-        <translation type="unfinished"></translation>
+        <translation>X：</translation>
     </message>
     <message>
         <source>Y:</source>
-        <translation type="unfinished"></translation>
+        <translation>是：</translation>
     </message>
     <message>
         <source>Value:</source>
-        <translation type="unfinished"></translation>
+        <translation>价值：</translation>
     </message>
     <message>
         <source>Skip setting</source>
-        <translation type="unfinished"></translation>
+        <translation>跳过设置</translation>
     </message>
     <message>
         <source>Skip rate:</source>
-        <translation type="unfinished"></translation>
+        <translation>跳过率：</translation>
     </message>
     <message>
         <source>Preview</source>
-        <translation type="unfinished"></translation>
+        <translation>预览</translation>
     </message>
     <message>
         <source>Custom delimited text</source>
-        <translation type="unfinished"></translation>
+        <translation>自定义分隔文本</translation>
     </message>
     <message>
         <source>The character to escape quote characters in quoted text. You can specify only one character.</source>
-        <translation type="unfinished"></translation>
+        <translation>在引用文本中转义引号字符的字符。您只能指定一个字符。</translation>
     </message>
     <message>
         <source>When you want to skip lines in the file, please specify values larger than 1. For example, if you input 2, every other line is imported.</source>
-        <translation type="unfinished"></translation>
+        <translation>当您想跳过文件中的行时，请指定大于 1 的值。例如，如果您输入 2，则每隔一行导入一次。</translation>
     </message>
     <message>
         <source>File name:</source>
-        <translation type="unfinished"></translation>
+        <translation>文档名称：</translation>
     </message>
 </context>
 <context>
@@ -756,7 +754,7 @@
     </message>
     <message>
         <source>ASCII STL (*.stl)</source>
-        <translation type="unfinished"></translation>
+        <translation>ASCII STL (*.stl)</translation>
     </message>
 </context>
 <context>
@@ -786,11 +784,11 @@
     <name>GeoDataPointmapTINCreator</name>
     <message>
         <source>TIN</source>
-        <translation type="unfinished"></translation>
+        <translation>锡</translation>
     </message>
     <message>
         <source>Point Cloud Data%1</source>
-        <translation type="unfinished"></translation>
+        <translation>点云数据 %1</translation>
     </message>
 </context>
 <context>
@@ -801,7 +799,7 @@
     </message>
     <message>
         <source>VTK File (*.vtk)</source>
-        <translation type="unfinished"></translation>
+        <translation>VTK文件 (*.vtk)</translation>
     </message>
 </context>
 <context>
@@ -854,19 +852,19 @@
     <name>GeoDataPointmapWebImporterSettingManager</name>
     <message>
         <source>USGS elevation tiles (SRTM)</source>
-        <translation type="unfinished"></translation>
+        <translation>USGS 高程图块 (SRTM)</translation>
     </message>
     <message>
         <source>GSI elevation tiles (DEM5A)</source>
-        <translation type="unfinished"></translation>
+        <translation>GSI 高程图块 (DEM5A)</translation>
     </message>
     <message>
         <source>GSI elevation tiles (DEM5B)</source>
-        <translation type="unfinished"></translation>
+        <translation>GSI 高程图块 (DEM5B)</translation>
     </message>
     <message>
         <source>GSI elevation tiles (DEM10B)</source>
-        <translation type="unfinished"></translation>
+        <translation>GSI 高程图块 (DEM10B)</translation>
     </message>
 </context>
 <context>
@@ -889,7 +887,7 @@
     </message>
     <message>
         <source>xx m</source>
-        <translation type="unfinished"></translation>
+        <translation>xx米</translation>
     </message>
     <message>
         <source>Data size:</source>
@@ -897,7 +895,7 @@
     </message>
     <message>
         <source>XX kB (XXXX points)</source>
-        <translation type="unfinished"></translation>
+        <translation>XX kB（XXXX 点）</translation>
     </message>
     <message>
         <source>Source:</source>
@@ -905,15 +903,15 @@
     </message>
     <message>
         <source>%1 KB</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 知识库</translation>
     </message>
     <message>
         <source>%1 MB</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 MB</translation>
     </message>
     <message>
         <source> (%1 points)</source>
-        <translation type="unfinished"></translation>
+        <translation>( %1 点）</translation>
     </message>
 </context>
 <context>
@@ -927,7 +925,7 @@
         <translation>极限边长:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>头身跨度样式字体粗细：600； 注意跨度：单击“应用”按钮时，将被删除的三角形将被涂成深灰色</translation>
     </message>
 </context>

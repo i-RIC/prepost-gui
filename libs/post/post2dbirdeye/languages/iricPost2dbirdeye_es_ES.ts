@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="es_ES">
 <context>
     <name>Post2dBirdEyeObjectBrowser</name>
@@ -11,8 +9,8 @@
 <context>
     <name>Post2dBirdEyeWindow</name>
     <message>
-        <source>Bird&apos;s-Eye Post-processing (2D): %1</source>
-        <translation type="unfinished"></translation>
+        <source>Bird's-Eye Post-processing (2D): %1</source>
+        <translation>Postprocesamiento Bird's Eye (2D): %1</translation>
     </message>
     <message>
         <source>Background Color</source>
@@ -31,11 +29,11 @@
     </message>
     <message>
         <source>&amp;Contours (node)...</source>
-        <translation type="unfinished"></translation>
+        <translation>Contornos (nodo) (&amp;C)...</translation>
     </message>
     <message>
         <source>Contours (ce&amp;ll center)...</source>
-        <translation type="unfinished"></translation>
+        <translation>Contornos (centro de la celda) (&amp;L)...</translation>
     </message>
     <message>
         <source>&amp;Title...</source>
@@ -76,7 +74,7 @@
     <name>Post2dBirdEyeWindowCellScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (cell center)</source>
-        <translation type="unfinished"></translation>
+        <translation>Escalar (centro de la celda)</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -84,7 +82,7 @@
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation type="unfinished"></translation>
+        <translation>Se puede definir un máximo de cuatro contornos.</translation>
     </message>
 </context>
 <context>
@@ -99,7 +97,7 @@
     </message>
     <message>
         <source>Contour setting is not available, because this result does not contain cell scalar values.</source>
-        <translation type="unfinished"></translation>
+        <translation>La configuración de contorno no está disponible porque este resultado no contiene valores escalares de celda.</translation>
     </message>
     <message>
         <source>Z-direction Scale</source>
@@ -132,7 +130,7 @@
     <name>Post2dBirdEyeWindowNodeScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (node)</source>
-        <translation type="unfinished"></translation>
+        <translation>Escalar (nodo)</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -140,7 +138,7 @@
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation type="unfinished"></translation>
+        <translation>Se puede definir un máximo de cuatro contornos.</translation>
     </message>
 </context>
 <context>
@@ -155,7 +153,7 @@
     </message>
     <message>
         <source>Create Contour</source>
-        <translation type="unfinished"></translation>
+        <translation>Crear contorno</translation>
     </message>
 </context>
 </TS>

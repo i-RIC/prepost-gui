@@ -1,1330 +1,1328 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="uk_UA">
 <context>
     <name>GeoDataRiverCrosssectionAltitudeMoveDialog</name>
     <message>
         <source>Move Elevation Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Перемістити точку висоти</translation>
     </message>
     <message>
         <source>Horizontal variation (H): </source>
-        <translation type="unfinished"></translation>
+        <translation>Відхилення по горизонталі (H):</translation>
     </message>
     <message>
         <source>TextLabel</source>
-        <translation type="unfinished"></translation>
+        <translation>TextLabel</translation>
     </message>
     <message>
         <source>Vertical Variation:</source>
-        <translation type="unfinished"></translation>
+        <translation>Вертикальні варіації:</translation>
     </message>
     <message>
         <source>%1 &lt; </source>
-        <translation type="unfinished"></translation>
+        <translation>%1 &lt;</translation>
     </message>
     <message>
         <source>H</source>
-        <translation type="unfinished"></translation>
+        <translation>H</translation>
     </message>
     <message>
         <source> &lt; %1</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt; %1</translation>
     </message>
     <message>
         <source>Move Elevation Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Переміщення точок висот</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverPathPointExpandDialog</name>
     <message>
         <source>Extend Traversal Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Розширення лінії обходу</translation>
     </message>
     <message>
         <source>Set Distance between River Center and Left Bank</source>
-        <translation type="unfinished"></translation>
+        <translation>Встановіть відстань між річковим центром та лівим берегом</translation>
     </message>
     <message>
         <source>Increment</source>
-        <translation type="unfinished"></translation>
+        <translation>Інкремент</translation>
     </message>
     <message>
         <source>Extension Ratio</source>
-        <translation type="unfinished"></translation>
+        <translation>Коефіцієнт розширення</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverPathPointExtensionAddDialog</name>
     <message>
         <source>Add Extension Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Додати лінію розширення</translation>
     </message>
     <message>
         <source>End Point of Extension Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Кінцева точка розширення</translation>
     </message>
     <message>
         <source>Mouse Click</source>
-        <translation type="unfinished"></translation>
+        <translation>Клацання мишею</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished"></translation>
+        <translation>Позиція</translation>
     </message>
     <message>
         <source>,</source>
-        <translation type="unfinished"></translation>
+        <translation>,</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverPathPointInsertDialog</name>
     <message>
         <source>Insert Traversal Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Вставити лінію обходу</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ім'я:</translation>
     </message>
     <message>
         <source>River Center Point Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Координати точки річкового центру</translation>
     </message>
     <message>
         <source>Mouse Click</source>
-        <translation type="unfinished"></translation>
+        <translation>Клацання мишею</translation>
     </message>
     <message>
         <source>Coordinate Values</source>
-        <translation type="unfinished"></translation>
+        <translation>Координатні значення</translation>
     </message>
     <message>
         <source>, </source>
-        <translation type="unfinished"></translation>
+        <translation>,</translation>
     </message>
     <message>
         <source>Ratio between Back and Forth (0-1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Співвідношення між Назад і Наперед (0-1)</translation>
     </message>
     <message>
         <source>Cross Section Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Інформація про переріз</translation>
     </message>
     <message>
         <source>Inserts Three Point of Altitude 0</source>
-        <translation type="unfinished"></translation>
+        <translation>Вставляє три точки висоти 0</translation>
     </message>
     <message>
         <source>Copy Next River Cross Section</source>
-        <translation type="unfinished"></translation>
+        <translation>Скопіювати перетин наступної річки</translation>
     </message>
     <message>
         <source>Create Cross section of Back and Forth: Number of the Interpolation Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Створити поперечний переріз назад і вперед: номер даних інтерполяції</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverPathPointMoveDialog</name>
     <message>
         <source>Move Traversal Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Перемістити лінію обходу</translation>
     </message>
     <message>
         <source>,</source>
-        <translation type="unfinished"></translation>
+        <translation>,</translation>
     </message>
     <message>
         <source>Transfer Quantity</source>
-        <translation type="unfinished"></translation>
+        <translation>Кількість передачі</translation>
     </message>
     <message>
         <source>Center Point Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Координати центральної точки</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverPathPointRenameDialog</name>
     <message>
         <source>Rename Traversal Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Перейменуйте лінію обходу</translation>
     </message>
     <message>
         <source>New Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Нова назва:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverPathPointRotateDialog</name>
     <message>
         <source>Rotate Traversal Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Повернути лінію обходу</translation>
     </message>
     <message>
         <source>Relative Angle</source>
-        <translation type="unfinished"></translation>
+        <translation>Відносний кут</translation>
     </message>
     <message>
         <source>Increment Angle</source>
-        <translation type="unfinished"></translation>
+        <translation>Кут збільшення</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverPathPointShiftDialog</name>
     <message>
         <source>Shift River Center</source>
-        <translation type="unfinished"></translation>
+        <translation>Центр річки Шифт</translation>
     </message>
     <message>
         <source>Transfer Quantity</source>
-        <translation type="unfinished"></translation>
+        <translation>Кількість передачі</translation>
     </message>
     <message>
         <source>Transfer Quality s (%1 &lt; s &lt; %2)</source>
-        <translation type="unfinished"></translation>
+        <translation>Якість передачі s ( %1 &lt;s &lt; %2 ))</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurvey</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Увага</translation>
     </message>
     <message>
         <source>No points data to map is found. Please import points data.</source>
-        <translation type="unfinished"></translation>
+        <translation>Дані точок на карті не знайдені. Імпортуйте дані балів.</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Інформація</translation>
     </message>
     <message>
         <source>Center Line is not defined yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Центральна лінія ще не визначена.</translation>
     </message>
     <message>
         <source>Center line</source>
-        <translation type="unfinished"></translation>
+        <translation>Центральна лінія</translation>
     </message>
     <message>
         <source>Please define center line by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
-        <translation type="unfinished"></translation>
+        <translation>Будь ласка, визначте центральну лінію клацанням миші. Завершіть визначення, двічі клацнувши або натиснувши клавішу повернення.</translation>
     </message>
     <message>
         <source>Add Extension Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Додати лінію розширення</translation>
     </message>
     <message>
         <source>Selection Change</source>
-        <translation type="unfinished"></translation>
+        <translation>Зміна вибору</translation>
     </message>
     <message>
         <source>Delete Traversal Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Видалити лінії обходу</translation>
     </message>
     <message>
         <source>Expand Traversal Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Розгорніть лінії обходу</translation>
     </message>
     <message>
         <source>Build Left bank and Right bank lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Побудуйте лівобережну та правобережну лінії</translation>
     </message>
     <message>
         <source>&amp;Add Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Додайте вершину (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Видалити Vertex (&amp;R)</translation>
     </message>
     <message>
         <source>Import C&amp;enter Line...</source>
-        <translation type="unfinished"></translation>
+        <translation>Центральна лінія імпорту (&amp;E)...</translation>
     </message>
     <message>
         <source>Export Ce&amp;nter Line...</source>
-        <translation type="unfinished"></translation>
+        <translation>Експортна центральна лінія (&amp;N)...</translation>
     </message>
     <message>
         <source>Insert Upstream Side(&amp;B)...</source>
-        <translation type="unfinished"></translation>
+        <translation>Вставте верхній бік (B) (&amp;B)...</translation>
     </message>
     <message>
         <source>Insert Downstream Side(&amp;A)...</source>
-        <translation type="unfinished"></translation>
+        <translation>Вставити сторону вниз за течією (A) (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Move...</source>
-        <translation type="unfinished"></translation>
+        <translation>Рухатися (&amp;M)...</translation>
     </message>
     <message>
         <source>&amp;Rotate...</source>
-        <translation type="unfinished"></translation>
+        <translation>Обертати (&amp;R)...</translation>
     </message>
     <message>
         <source>S&amp;hift Center...</source>
-        <translation type="unfinished"></translation>
+        <translation>Центр зміни (&amp;H)...</translation>
     </message>
     <message>
         <source>E&amp;xtend Horizontally...</source>
-        <translation type="unfinished"></translation>
+        <translation>Витягніть горизонтально (&amp;X)...</translation>
     </message>
     <message>
         <source>Dele&amp;te Cross Section</source>
-        <translation type="unfinished"></translation>
+        <translation>Видалити перетин (&amp;T)</translation>
     </message>
     <message>
         <source>R&amp;ename Cross Section...</source>
-        <translation type="unfinished"></translation>
+        <translation>Перейменувати перетин (&amp;E)...</translation>
     </message>
     <message>
         <source>Add &amp;Left Bank Extension Line...</source>
-        <translation type="unfinished"></translation>
+        <translation>Додайте лінію розширення для Лівого берега (&amp;L)...</translation>
     </message>
     <message>
         <source>Add &amp;Right Bank Extension Line...</source>
-        <translation type="unfinished"></translation>
+        <translation>Додати лінію розширення правого берега (&amp;R)...</translation>
     </message>
     <message>
         <source>Remo&amp;ve Left Bank Extension Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Видаліть лінію розширення лівого берега (&amp;V)</translation>
     </message>
     <message>
         <source>Rem&amp;ove Right Bank Extension Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Видаліть лінію розширення правого берега (&amp;O)</translation>
     </message>
     <message>
         <source>Display &amp;Cross Section</source>
-        <translation type="unfinished"></translation>
+        <translation>Відображення поперечного перерізу (&amp;C)</translation>
     </message>
     <message>
         <source>Display &amp;Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Налаштування дисплея (&amp;S)</translation>
     </message>
     <message>
         <source>Spline</source>
-        <translation type="unfinished"></translation>
+        <translation>Сплайн</translation>
     </message>
     <message>
         <source>Linear Curve</source>
-        <translation type="unfinished"></translation>
+        <translation>Лінійна крива</translation>
     </message>
     <message>
         <source>Interpolation Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Режим інтерполяції</translation>
     </message>
     <message>
         <source>%1 is not defined yet</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 ще не визначено</translation>
     </message>
     <message>
         <source>Insert Traversal Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Вставити лінію обходу</translation>
     </message>
     <message>
         <source>Move Extension Line End</source>
-        <translation type="unfinished"></translation>
+        <translation>Перемістити кінець розширення</translation>
     </message>
     <message>
         <source>Rotate Traversal Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Повернути лінію обходу</translation>
     </message>
     <message>
         <source>Shift Center Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Зміщення центральної точки</translation>
     </message>
     <message>
         <source>Move Traversal Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Переміщення ліній обходу</translation>
     </message>
     <message>
         <source>Finish Defining Polyline</source>
-        <translation type="unfinished"></translation>
+        <translation>Завершити визначення полілінії</translation>
     </message>
     <message>
         <source>Remove Extension Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Видаліть лінію розширення</translation>
     </message>
     <message>
         <source>Rename Traversal Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Перейменуйте лінію обходу</translation>
     </message>
     <message>
         <source>Edit Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Змінити налаштування дисплея</translation>
     </message>
     <message>
         <source>Shift River Center Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Зміщення річкових центрів річки</translation>
     </message>
     <message>
         <source>Move Traversal Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Перемістити лінію обходу</translation>
     </message>
     <message>
         <source>%1 generated.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 генерується.</translation>
     </message>
     <message>
         <source>Cross-section data need at least 2 center points.</source>
-        <translation type="unfinished"></translation>
+        <translation>Для даних поперечного перерізу потрібні принаймні 2 центральні точки.</translation>
     </message>
     <message>
         <source>Generate Cross-Section Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Створення даних перерізу</translation>
     </message>
     <message>
         <source>No point cloud data to map is found. Please import point cloud data.</source>
-        <translation type="unfinished"></translation>
+        <translation>Немає даних хмари точок для відображення. Імпортуйте дані хмари точок.</translation>
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
-If you want to adjust cross section position and map point clouod data again, you can use &quot;Map point cloud data&quot;</source>
-        <translation type="unfinished"></translation>
+If you want to adjust cross section position and map point clouod data again, you can use "Map point cloud data"</source>
+        <translation>Дані поперечного перерізу генеруються за допомогою даних хмари точок. Якщо ви хочете знову налаштувати положення поперечного перерізу та дані хмарності точок карти, можна скористатися "Даними хмарних точок карти"</translation>
     </message>
     <message>
         <source>Map point cloud data</source>
-        <translation type="unfinished"></translation>
+        <translation>Дані хмарних точок карти</translation>
     </message>
     <message>
         <source>Generate point cloud data</source>
-        <translation type="unfinished"></translation>
+        <translation>Створення даних хмари точок</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurvey::Impl</name>
     <message>
         <source>  </source>
-        <translation type="unfinished"></translation>
+        <translation />
     </message>
     <message>
         <source>&amp;Cross-Section Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Поперечні дані (&amp;C)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyBuildBankLinesDialog</name>
     <message>
         <source>Build Bank Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Побудуйте банківські лінії</translation>
     </message>
     <message>
         <source>Input the distance from center line</source>
-        <translation type="unfinished"></translation>
+        <translation>Введіть відстань від центральної лінії</translation>
     </message>
     <message>
         <source>Left bank:</source>
-        <translation type="unfinished"></translation>
+        <translation>Лівий берег:</translation>
     </message>
     <message>
         <source>Right bank:</source>
-        <translation type="unfinished"></translation>
+        <translation>Правий берег:</translation>
     </message>
     <message>
         <source>Hint: Left bank and Right bank lines are created as line that consists of points that are away from center line to direction perpendicular to the center line.</source>
-        <translation type="unfinished"></translation>
+        <translation>Підказка: Лівобережна та Правобережна лінії створюються як лінія, що складається з точок, що знаходяться від центральної лінії до напрямку, перпендикулярного до центральної лінії.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyCreator</name>
     <message>
         <source>Cross-Section Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Поперечні дані</translation>
     </message>
     <message>
         <source>Cross-Section Data%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Поперечні дані %1</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyCrossSectionDisplaySettingDialog</name>
     <message>
         <source>Cross Section Window Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Налаштування відображення вікна поперечного перерізу</translation>
     </message>
     <message>
         <source>Background grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Фон сітки</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation type="unfinished"></translation>
+        <translation>Тип</translation>
     </message>
     <message>
         <source>Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Лінії</translation>
     </message>
     <message>
         <source>Dots</source>
-        <translation type="unfinished"></translation>
+        <translation>Крапки</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation type="unfinished"></translation>
+        <translation>Горизонтальні</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation>Авто</translation>
     </message>
     <message>
         <source>Scale</source>
-        <translation type="unfinished"></translation>
+        <translation>Масштаб</translation>
     </message>
     <message>
         <source>Sub scale</source>
-        <translation type="unfinished"></translation>
+        <translation>Підмасштаб</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation type="unfinished"></translation>
+        <translation>Вертикальні</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Колір:</translation>
     </message>
     <message>
         <source>Scales</source>
-        <translation type="unfinished"></translation>
+        <translation>Ваги</translation>
     </message>
     <message>
         <source>Font:</source>
-        <translation type="unfinished"></translation>
+        <translation>Шрифт:</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation type="unfinished"></translation>
+        <translation>Редагувати...</translation>
     </message>
     <message>
         <source>Left/right bank markers</source>
-        <translation type="unfinished"></translation>
+        <translation>Маркери лівого/правого берега</translation>
     </message>
     <message>
         <source>Aspect ratio</source>
-        <translation type="unfinished"></translation>
+        <translation>Співвідношення сторін</translation>
     </message>
     <message>
         <source>Left/right bank markers font</source>
-        <translation type="unfinished"></translation>
+        <translation>Шрифт лівого/правого берега</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyCrossSectionEditFromPointDialog</name>
     <message>
         <source>Edit Cross Section From Selected Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Редагувати переріз із вибраної точки</translation>
     </message>
     <message>
         <source>Direction to Edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Напрямок для редагування</translation>
     </message>
     <message>
         <source>Left bank side</source>
-        <translation type="unfinished"></translation>
+        <translation>Лівий берег</translation>
     </message>
     <message>
         <source>Right bank side</source>
-        <translation type="unfinished"></translation>
+        <translation>Правий берег</translation>
     </message>
     <message>
         <source>Distance to Edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Відстань до редагування</translation>
     </message>
     <message>
         <source>Specify horizontal distance</source>
-        <translation type="unfinished"></translation>
+        <translation>Вкажіть горизонтальну відстань</translation>
     </message>
     <message>
         <source>m</source>
-        <translation type="unfinished"></translation>
+        <translation>м</translation>
     </message>
     <message>
         <source>Specify vertical distance</source>
-        <translation type="unfinished"></translation>
+        <translation>Вкажіть відстань по вертикалі</translation>
     </message>
     <message>
         <source>Specify elevation of end point</source>
-        <translation type="unfinished"></translation>
+        <translation>Вкажіть висоту кінцевої точки</translation>
     </message>
     <message>
         <source>To the point where it crosses the cross section</source>
-        <translation type="unfinished"></translation>
+        <translation>До того місця, де вона перетинає поперечний переріз</translation>
     </message>
     <message>
         <source>Gradient</source>
-        <translation type="unfinished"></translation>
+        <translation>Градієнт</translation>
     </message>
     <message>
         <source>Specify slope</source>
-        <translation type="unfinished"></translation>
+        <translation>Вкажіть нахил</translation>
     </message>
     <message>
         <source>%</source>
-        <translation type="unfinished"></translation>
+        <translation>%</translation>
     </message>
     <message>
         <source>Specify fraction  1:</source>
-        <translation type="unfinished"></translation>
+        <translation>Вкажіть дріб 1:</translation>
     </message>
     <message>
         <source>Specify the fraction between vertical distance and horizontal distance. For example inputting 10 means 10% slope, and 20 means 5% slope.</source>
-        <translation type="unfinished"></translation>
+        <translation>Вкажіть частку між вертикальною та горизонтальною відстанями. Наприклад, введення 10 означає нахил 10%, а 20 означає нахил 5%.</translation>
     </message>
     <message>
         <source>Upward</source>
-        <translation type="unfinished"></translation>
+        <translation>Вгору</translation>
     </message>
     <message>
         <source>Downward</source>
-        <translation type="unfinished"></translation>
+        <translation>Вниз</translation>
     </message>
     <message>
         <source>Edit &amp;Next</source>
-        <translation type="unfinished"></translation>
+        <translation>Редагувати далі (&amp;N)</translation>
     </message>
     <message>
         <source>Edit Crosssection</source>
-        <translation type="unfinished"></translation>
+        <translation>Редагувати перетин</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Увага</translation>
     </message>
     <message>
         <source>There is no cross point. Please check the setting.</source>
-        <translation type="unfinished"></translation>
+        <translation>Точки перетину немає. Перевірте налаштування.</translation>
     </message>
     <message>
         <source>When you specify vertical distance, the slope should not be 0.</source>
-        <translation type="unfinished"></translation>
+        <translation>Коли ви вказуєте відстань по вертикалі, нахил не повинен бути 0.</translation>
     </message>
     <message>
         <source>The settings of elevation and gradient are invalid.</source>
-        <translation type="unfinished"></translation>
+        <translation>Налаштування висоти та нахилу недійсні.</translation>
     </message>
     <message>
-        <source>When you specify elevation of end point, it can not be same to the start point. If you want to draw horizontal line, please select &quot;Specify horizontal distance&quot;.</source>
-        <translation type="unfinished"></translation>
+        <source>When you specify elevation of end point, it can not be same to the start point. If you want to draw horizontal line, please select "Specify horizontal distance".</source>
+        <translation>Коли ви вказуєте висоту кінцевої точки, вона не може бути однаковою з початковою точкою. Якщо ви хочете провести горизонтальну лінію, будь ласка, виберіть "Вказати горизонтальну відстань".</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyCrosssectionWindow</name>
     <message>
         <source>MainWindow</source>
-        <translation type="unfinished"></translation>
+        <translation>Головне вікно</translation>
     </message>
     <message>
         <source>Cross Section ToolBar</source>
-        <translation type="unfinished"></translation>
+        <translation>Панель інструментів перетину</translation>
     </message>
     <message>
         <source>View Setting ToolBar</source>
-        <translation type="unfinished"></translation>
+        <translation>Переглянути панель налаштувань</translation>
     </message>
     <message>
         <source>Display Setting ToolBar</source>
-        <translation type="unfinished"></translation>
+        <translation>Панель інструментів налаштування дисплея</translation>
     </message>
     <message>
         <source>&amp;This cross-section only</source>
-        <translation type="unfinished"></translation>
+        <translation>Лише цей перетин (&amp;T)</translation>
     </message>
     <message>
         <source>All cross-sections</source>
-        <translation type="unfinished"></translation>
+        <translation>Всі перерізи</translation>
     </message>
     <message>
         <source>&amp;Edit cross section from the selected point</source>
-        <translation type="unfinished"></translation>
+        <translation>Редагувати переріз із вибраної точки (&amp;E)</translation>
     </message>
     <message>
         <source>&amp;Edit from Dialog...</source>
-        <translation type="unfinished"></translation>
+        <translation>Редагувати з діалогового вікна (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Видалити (&amp;D)</translation>
     </message>
     <message>
         <source>&amp;Elevation Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Точка піднесення (&amp;E)</translation>
     </message>
     <message>
         <source>Inactivate using &amp;water elevation</source>
-        <translation type="unfinished"></translation>
+        <translation>Відключити за допомогою підйому води (&amp;W)</translation>
     </message>
     <message>
         <source>Crosssection: </source>
-        <translation type="unfinished"></translation>
+        <translation>Перетин:</translation>
     </message>
     <message>
         <source>Reference</source>
-        <translation type="unfinished"></translation>
+        <translation>Довідка</translation>
     </message>
     <message>
         <source>Auto rescale</source>
-        <translation type="unfinished"></translation>
+        <translation>Автоматичне масштабування</translation>
     </message>
     <message>
         <source>Aspect ratio: 1 / </source>
-        <translation type="unfinished"></translation>
+        <translation>Співвідношення сторін: 1 /</translation>
     </message>
     <message>
         <source>Fix aspect ratio</source>
-        <translation type="unfinished"></translation>
+        <translation>Виправити співвідношення сторін</translation>
     </message>
     <message>
         <source>Fix region</source>
-        <translation type="unfinished"></translation>
+        <translation>Виправити регіон</translation>
     </message>
     <message>
         <source>Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Сітка</translation>
     </message>
     <message>
         <source>Scale</source>
-        <translation type="unfinished"></translation>
+        <translation>Масштаб</translation>
     </message>
     <message>
         <source>Left/right bank markers</source>
-        <translation type="unfinished"></translation>
+        <translation>Маркери лівого/правого берега</translation>
     </message>
     <message>
         <source>Aspect ratio</source>
-        <translation type="unfinished"></translation>
+        <translation>Співвідношення сторін</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Налаштування дисплея</translation>
     </message>
     <message>
         <source>Active</source>
-        <translation type="unfinished"></translation>
+        <translation>Активний</translation>
     </message>
     <message>
         <source>Distance from left bank</source>
-        <translation type="unfinished"></translation>
+        <translation>Відстань від лівого берега</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished"></translation>
+        <translation>Позиція</translation>
     </message>
     <message>
         <source>Elevation</source>
-        <translation type="unfinished"></translation>
+        <translation>Піднесення</translation>
     </message>
     <message>
         <source>Crosssection Window : %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Вікно перетину: %2</translation>
     </message>
     <message>
         <source>Edit Elevation Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Редагувати точку висоти</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Увага</translation>
     </message>
     <message>
         <source>At least, two points should be active.</source>
-        <translation type="unfinished"></translation>
+        <translation>Принаймні, дві точки повинні бути активними.</translation>
     </message>
     <message>
         <source>Fixed points and end points cannot be deleted.</source>
-        <translation type="unfinished"></translation>
+        <translation>Фіксовані та кінцеві точки видалити неможливо.</translation>
     </message>
     <message>
         <source>There should be more than one point in the right bank side and the left bank side.</source>
-        <translation type="unfinished"></translation>
+        <translation>На правій та лівій стороні берега має бути більше однієї точки.</translation>
     </message>
     <message>
         <source>Delete Elevation Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Видалити точки висоти</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Інформація</translation>
     </message>
     <message>
         <source>To use this function, please select only one point.</source>
-        <translation type="unfinished"></translation>
+        <translation>Щоб скористатися цією функцією, виберіть лише одну точку.</translation>
     </message>
     <message>
         <source>Inactivate Elevation Points using water elevation</source>
-        <translation type="unfinished"></translation>
+        <translation>Інактивуйте точки висот, використовуючи висоту води</translation>
     </message>
     <message>
         <source>Fixed points and end points cannot be inactivated.</source>
-        <translation type="unfinished"></translation>
+        <translation>Фіксовані та кінцеві точки неможливо деактивувати.</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Колір</translation>
     </message>
     <message>
         <source>Delete Water Surface Elevation</source>
-        <translation type="unfinished"></translation>
+        <translation>Видалити висоту поверхні води</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation type="unfinished"></translation>
+        <translation>Ви впевнені, що хочете видалити %1 ?</translation>
     </message>
     <message>
         <source>Water surface elevation data does not exist.</source>
-        <translation type="unfinished"></translation>
+        <translation>Даних про висоту поверхні води не існує.</translation>
     </message>
     <message>
         <source>Select Water Surface Elevation</source>
-        <translation type="unfinished"></translation>
+        <translation>Виберіть Висота поверхні води</translation>
     </message>
     <message>
         <source>Select Water Surface Elevation to use</source>
-        <translation type="unfinished"></translation>
+        <translation>Виберіть для використання висоту поверхні води</translation>
     </message>
     <message>
         <source>Cross-Section Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Поперечні дані</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyCrosssectionWindowGraphicsView</name>
     <message>
         <source>&amp;Activate</source>
-        <translation type="unfinished"></translation>
+        <translation>Активувати (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Inactivate</source>
-        <translation type="unfinished"></translation>
+        <translation>Інактивувати (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Move</source>
-        <translation type="unfinished"></translation>
+        <translation>Рухатися (&amp;M)</translation>
     </message>
     <message>
         <source>Inactivate using &amp;water elevation</source>
-        <translation type="unfinished"></translation>
+        <translation>Відключити за допомогою підйому води (&amp;W)</translation>
     </message>
     <message>
         <source>Left Bank Side</source>
-        <translation type="unfinished"></translation>
+        <translation>Лівий берег</translation>
     </message>
     <message>
         <source>Right Bank Side</source>
-        <translation type="unfinished"></translation>
+        <translation>Правий берег</translation>
     </message>
     <message>
         <source>Aspect ratio: 1 / %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Співвідношення сторін: 1 / %1</translation>
     </message>
     <message>
         <source>Inactivate Elevation Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Інактивуйте точки висот</translation>
     </message>
     <message>
         <source>Edit Cross Section</source>
-        <translation type="unfinished"></translation>
+        <translation>Редагувати перетин</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Інформація</translation>
     </message>
     <message>
         <source>Edit the cross section by mouse-clicking. Finish editing by double clicking, or pressing return key.
-You can precisely edit the cross section by inputting values from dialog. Please enter dialog edit mode from &quot;Edit from Dialog&quot; in the right-clicking menu.</source>
-        <translation type="unfinished"></translation>
+You can precisely edit the cross section by inputting values from dialog. Please enter dialog edit mode from "Edit from Dialog" in the right-clicking menu.</source>
+        <translation>Відредагуйте перетин натисканням миші. Завершіть редагування, двічі клацнувши або натиснувши клавішу повернення. Ви можете точно відредагувати перетин, ввівши значення з діалогового вікна. Будь ласка, увійдіть у режим редагування діалогового вікна з "Редагувати з діалогового вікна" у меню, що клацне правою кнопкою миші.</translation>
     </message>
     <message>
         <source>Altitude Points Move</source>
-        <translation type="unfinished"></translation>
+        <translation>Переміщення точок висот</translation>
     </message>
     <message>
         <source>Edit Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Змінити налаштування дисплея</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyCrosssectionWindowWseTableWidget</name>
     <message>
         <source>WSE Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Назва WSE</translation>
     </message>
     <message>
         <source>Elevation</source>
-        <translation type="unfinished"></translation>
+        <translation>Піднесення</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Колір</translation>
     </message>
     <message>
         <source>Move &amp;Up</source>
-        <translation type="unfinished"></translation>
+        <translation>Рухатися вгору (&amp;U)</translation>
     </message>
     <message>
         <source>Move &amp;Down</source>
-        <translation type="unfinished"></translation>
+        <translation>Рухатися вниз (&amp;D)</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Видалити</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyDisplaySettingDialog</name>
     <message>
         <source>Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Налаштування дисплея</translation>
     </message>
     <message>
         <source>Background Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Колір фону</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation type="unfinished"></translation>
+        <translation>Видно</translation>
     </message>
     <message>
         <source>Crosssection Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Лінії перетину</translation>
     </message>
     <message>
         <source>Z Scale: </source>
-        <translation type="unfinished"></translation>
+        <translation>Масштаб Z:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Колір:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyExporter</name>
     <message>
         <source>Cross-Section Data (*.riv)</source>
-        <translation type="unfinished"></translation>
+        <translation>Поперечні дані (*.riv)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyGenerateDialog</name>
     <message>
         <source>Generate River Survey Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Створення даних зйомок річок</translation>
     </message>
     <message>
         <source>Number of cross sections:</source>
-        <translation type="unfinished"></translation>
+        <translation>Кількість перетинів:</translation>
     </message>
     <message>
         <source>Distance between cross sections [m]:</source>
-        <translation type="unfinished"></translation>
+        <translation>Відстань між перетинами [м]:</translation>
     </message>
     <message>
         <source>Distance between elevation points[m]:</source>
-        <translation type="unfinished"></translation>
+        <translation>Відстань між точками висоти [м]:</translation>
     </message>
     <message>
         <source>Name of most upstream cross section</source>
-        <translation type="unfinished"></translation>
+        <translation>Назва найбільшого поперечного перерізу по течії</translation>
     </message>
     <message>
         <source>Points data to map:</source>
-        <translation type="unfinished"></translation>
+        <translation>Дані точок для відображення:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyHonryuExporter</name>
     <message>
         <source>RiverSurvey data HONRYU export</source>
-        <translation type="unfinished"></translation>
+        <translation>Дані річкового опитування HONRYU експорт</translation>
     </message>
     <message>
         <source>CSV File (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>CSV файл (*.csv)</translation>
     </message>
     <message>
         <source>Text File (*.txt)</source>
-        <translation type="unfinished"></translation>
+        <translation>Текстовий файл (*.txt)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyHonryuExporterSettingDialog</name>
     <message>
         <source>Export Format Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Налаштування формату експорту</translation>
     </message>
     <message>
         <source>Separator:</source>
-        <translation type="unfinished"></translation>
+        <translation>Розділювач:</translation>
     </message>
     <message>
         <source>Comma</source>
-        <translation type="unfinished"></translation>
+        <translation>Кома</translation>
     </message>
     <message>
         <source>Tab</source>
-        <translation type="unfinished"></translation>
+        <translation>Вкладка</translation>
     </message>
     <message>
         <source>Space</source>
-        <translation type="unfinished"></translation>
+        <translation>Космос</translation>
     </message>
     <message>
         <source>Header:</source>
-        <translation type="unfinished"></translation>
+        <translation>Заголовок:</translation>
     </message>
     <message>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Додати</translation>
     </message>
     <message>
         <source>Columns:</source>
-        <translation type="unfinished"></translation>
+        <translation>Стовпці:</translation>
     </message>
     <message>
         <source>Name, Longitudinal Distance, Cross Section Distance, Elevation</source>
-        <translation type="unfinished"></translation>
+        <translation>Назва, Поздовжня відстань, Відстань поперечного перерізу, Висота</translation>
     </message>
     <message>
         <source>Longitudinal Distance, Name, Cross Section Distance, Elevation</source>
-        <translation type="unfinished"></translation>
+        <translation>Поздовжня відстань, назва, відстань поперечного перерізу, висота</translation>
     </message>
     <message>
         <source>Cross Section Distance, Elevation, Name, Longitudinal Distance</source>
-        <translation type="unfinished"></translation>
+        <translation>Відстань поперечного перерізу, висота, назва, поздовжня відстань</translation>
     </message>
     <message>
         <source>Cross Section Distance, Elevation, Longitudinal Distance, Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Відстань поперечного перерізу, висота, поздовжня відстань, назва</translation>
     </message>
     <message>
         <source>Longitudinal Distance:</source>
-        <translation type="unfinished"></translation>
+        <translation>Поздовжня відстань:</translation>
     </message>
     <message>
         <source>Distance from previous Cross Section</source>
-        <translation type="unfinished"></translation>
+        <translation>Відстань від попереднього перерізу</translation>
     </message>
     <message>
         <source>Distance from first Cross Section</source>
-        <translation type="unfinished"></translation>
+        <translation>Відстань від першого перетину</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyImporter</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Помилка</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: LX value is invalid</source>
-        <translation type="unfinished"></translation>
+        <source>%1 line %2 "%3": LX value is invalid</source>
+        <translation>%1 лінія %2 "%3": Значення LX недійсне</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: LY value is invalid</source>
-        <translation type="unfinished"></translation>
+        <source>%1 line %2 "%3": LY value is invalid</source>
+        <translation>%1 лінія %2 "%3": Значення LY недійсне</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: RX value is invalid</source>
-        <translation type="unfinished"></translation>
+        <source>%1 line %2 "%3": RX value is invalid</source>
+        <translation>%1 лінія %2 "%3": Значення RX недійсне</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: RY value is invalid</source>
-        <translation type="unfinished"></translation>
+        <source>%1 line %2 "%3": RY value is invalid</source>
+        <translation>%1 лінія %2 "%3": Значення RY недійсне</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Point count is invalid</source>
-        <translation type="unfinished"></translation>
+        <source>%1 line %2 "%3": Point count is invalid</source>
+        <translation>%1 лінія %2 "%3": Підрахунок балів недійсний</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Invalid index value</source>
-        <translation type="unfinished"></translation>
+        <source>%1 line %2 "%3": Invalid index value</source>
+        <translation>%1 лінія %2 "%3": Недійсне значення індексу</translation>
     </message>
     <message>
         <source>%1 line %2: cross section data for %3 not enough</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 лінія %2 : дані перерізу для %3 недостатньо</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Distance value is invalid</source>
-        <translation type="unfinished"></translation>
+        <source>%1 line %2 "%3": Distance value is invalid</source>
+        <translation>%1 лінія %2 "%3": Недійсне значення відстані</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Elevation value is invalid</source>
-        <translation type="unfinished"></translation>
+        <source>%1 line %2 "%3": Elevation value is invalid</source>
+        <translation>%1 лінія %2 "%3": Значення висоти недійсне</translation>
     </message>
     <message>
         <source>#survey data is not found. Will be ignored.</source>
-        <translation type="unfinished"></translation>
+        <translation>#даних опитування не знайдено. Буде проігноровано.</translation>
     </message>
     <message>
         <source>#x-section data is not found. Will be ignored.</source>
-        <translation type="unfinished"></translation>
+        <translation>Дані #розділу x не знайдені. Буде проігноровано.</translation>
     </message>
     <message>
         <source>#x-section data is not correctly ordered. Will be sorted automatically.</source>
-        <translation type="unfinished"></translation>
+        <translation>Дані #розділу x неправильно впорядковані. Буде відсортовано автоматично.</translation>
     </message>
     <message>
         <source>#x-section data contained data with same distances. Data distance is shifted slightly so that you can import both points.</source>
-        <translation type="unfinished"></translation>
+        <translation>Дані #розділу x містять дані з однаковими відстанями. Відстань даних трохи зміщується, щоб ви могли імпортувати обидві точки.</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Увага</translation>
     </message>
     <message>
         <source>Cross Section data is not ordered correctly at %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Дані перетину неправильно впорядковані за адресою %1.</translation>
     </message>
     <message>
         <source>Crosssection data is not ordered correctly at %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Дані перетину неправильно впорядковані за адресою %1.</translation>
     </message>
     <message>
         <source>Error occured while opening %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Під час відкриття сталася помилка %1</translation>
     </message>
     <message>
         <source>%1 Line %2: Read error. Needs at least two values.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 Лінія %2 : Помилка читання. Потрібні принаймні два значення.</translation>
     </message>
     <message>
-        <source>%1 Line %2: Read error. Not real number value &quot;%3&quot;.</source>
-        <translation type="unfinished"></translation>
+        <source>%1 Line %2: Read error. Not real number value "%3".</source>
+        <translation>%1 Лінія %2 : Помилка читання. Не дійсне числове значення "%3".</translation>
     </message>
     <message>
         <source>Cross section %1 does not cross the center line. Center point is set to be the middle point of low water way.</source>
-        <translation type="unfinished"></translation>
+        <translation>Поперечний переріз %1 не перетинає центральну лінію. Центральна точка встановлена як середня точка маловодного шляху.</translation>
     </message>
     <message>
         <source>On cross section %1, the center line does not cross in the low water way. Center point is set to be the middle point of low water way.</source>
-        <translation type="unfinished"></translation>
+        <translation>На перерізі %1, центральна лінія не перетинається маловидною дорогою. Центральна точка встановлена як середня точка маловодного шляху.</translation>
     </message>
     <message>
         <source>Cross section %1 does not cross the center line. Center point is set to be the middle point of left bank and right bank.</source>
-        <translation type="unfinished"></translation>
+        <translation>Поперечний переріз %1 не перетинає центральну лінію. Центральною точкою є середня точка лівого та правого берега.</translation>
     </message>
     <message>
         <source>Cross-Section data (*.riv)</source>
-        <translation type="unfinished"></translation>
+        <translation>Дані поперечного перерізу (*.riv)</translation>
     </message>
     <message>
         <source>Cross-Section Data (*.riv)</source>
-        <translation type="unfinished"></translation>
+        <translation>Поперечні дані (*.riv)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyImporterSettingDialog</name>
     <message>
         <source>River Survey Data Import Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Налаштування імпорту даних річкових зйомок</translation>
     </message>
     <message>
         <source>Where to define River center point</source>
-        <translation type="unfinished"></translation>
+        <translation>Де визначити точку центру річки</translation>
     </message>
     <message>
         <source>Middle point of left bank and right bank</source>
-        <translation type="unfinished"></translation>
+        <translation>Середня точка лівого та правого берегів</translation>
     </message>
     <message>
         <source>Where the elevation is the smallest</source>
-        <translation type="unfinished"></translation>
+        <translation>Де висота найменша</translation>
     </message>
     <message>
         <source>Order of cross sections</source>
-        <translation type="unfinished"></translation>
+        <translation>Порядок перетинів</translation>
     </message>
     <message>
         <source>Upstream to downstream</source>
-        <translation type="unfinished"></translation>
+        <translation>Вгору по течії</translation>
     </message>
     <message>
         <source>Downstream to upstream</source>
-        <translation type="unfinished"></translation>
+        <translation>Нижче за течією до течії</translation>
     </message>
     <message>
         <source>Middle point of Low water way</source>
-        <translation type="unfinished"></translation>
+        <translation>Середня точка маловодного шляху</translation>
     </message>
     <message>
         <source>Where the elevation is the smallest in low water way</source>
-        <translation type="unfinished"></translation>
+        <translation>Де висота найменша у маловодних шляхах</translation>
     </message>
     <message>
         <source>Import center line from CSV file</source>
-        <translation type="unfinished"></translation>
+        <translation>Імпортувати центральну лінію з файлу CSV</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyImporter_ProblemsDialog</name>
     <message>
         <source>Problems Found in Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Проблеми, знайдені в даних</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Назва</translation>
     </message>
     <message>
         <source>Problem</source>
-        <translation type="unfinished"></translation>
+        <translation>Проблема</translation>
     </message>
     <message>
         <source>The problems above is found. Do you want to continue importing?</source>
-        <translation type="unfinished"></translation>
+        <translation>Вищевказані проблеми знайдені. Ви хочете продовжити імпорт?</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyLandXmlExporter</name>
     <message>
         <source>LandXml (*.xml)</source>
-        <translation type="unfinished"></translation>
+        <translation>LandXml (*.xml)</translation>
     </message>
     <message>
         <source>LandXml file(*.xml)</source>
-        <translation type="unfinished"></translation>
+        <translation>Файл LandXml (*.xml)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyMapPointsDialog</name>
     <message>
         <source>Map points data</source>
-        <translation type="unfinished"></translation>
+        <translation>Дані точок карти</translation>
     </message>
     <message>
         <source>Distance between elevation points[m]:</source>
-        <translation type="unfinished"></translation>
+        <translation>Відстань між точками висоти [м]:</translation>
     </message>
     <message>
         <source>Points data to map:</source>
-        <translation type="unfinished"></translation>
+        <translation>Дані точок для відображення:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyMlitImporter</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Помилка</translation>
     </message>
     <message>
         <source>Opening %1 failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Відкриття %1 не вдалося.</translation>
     </message>
     <message>
         <source>%1 Line %2: KP is not input</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 Лінія %2 : KP не вводиться</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: LX value is invalid</source>
-        <translation type="unfinished"></translation>
+        <source>%1 Line %2 "%3": LX value is invalid</source>
+        <translation>%1 Лінія %2 "%3": Значення LX недійсне</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: LY value is invalid</source>
-        <translation type="unfinished"></translation>
+        <source>%1 Line %2 "%3": LY value is invalid</source>
+        <translation>%1 Лінія %2 "%3": Значення LY недійсне</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: RX value is invalid</source>
-        <translation type="unfinished"></translation>
+        <source>%1 Line %2 "%3": RX value is invalid</source>
+        <translation>%1 Лінія %2 "%3": Значення RX недійсне</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: RY value is invalid</source>
-        <translation type="unfinished"></translation>
+        <source>%1 Line %2 "%3": RY value is invalid</source>
+        <translation>%1 Лінія %2 "%3": Значення RY недійсне</translation>
     </message>
     <message>
         <source>Distance marker data is not found. Will be ignored.</source>
-        <translation type="unfinished"></translation>
+        <translation>Дані маркера відстані не знайдені. Буде проігноровано.</translation>
     </message>
     <message>
-        <source>%1 line %2: &quot;%3&quot;: Flag data is invalid.</source>
-        <translation type="unfinished"></translation>
+        <source>%1 line %2: "%3": Flag data is invalid.</source>
+        <translation>%1 лінія %2 : "%3": Дані прапора недійсні.</translation>
     </message>
     <message>
-        <source>%1 line %2: &quot;%3&quot;: Distance data is invalid.</source>
-        <translation type="unfinished"></translation>
+        <source>%1 line %2: "%3": Distance data is invalid.</source>
+        <translation>%1 лінія %2 : "%3": Дані про відстань недійсні.</translation>
     </message>
     <message>
-        <source>%1 line %2: &quot;%3&quot;: Elevation data is invalid.</source>
-        <translation type="unfinished"></translation>
+        <source>%1 line %2: "%3": Elevation data is invalid.</source>
+        <translation>%1 лінія %2 : "%3": Дані про висоту недійсні.</translation>
     </message>
     <message>
         <source>Select folder where cross section data exists</source>
-        <translation type="unfinished"></translation>
+        <translation>Виберіть папку, де є дані перерізу</translation>
     </message>
     <message>
         <source>Cross Section data is not found. Will be ignored.</source>
-        <translation type="unfinished"></translation>
+        <translation>Дані поперечного перерізу не знайдені. Буде проігноровано.</translation>
     </message>
     <message>
         <source>Cross Section data contained data with same distances. Data with lowest elevation is used.: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Дані поперечного перерізу містять дані з однаковими відстанями. Використовуються дані з найменшою висотою: %1</translation>
     </message>
     <message>
         <source>Cross Section data is not correctly ordered. Will be sorted automatically.</source>
-        <translation type="unfinished"></translation>
+        <translation>Дані перерізу неправильно впорядковані. Буде відсортовано автоматично.</translation>
     </message>
     <message>
         <source>Cross Section data contained data with same distances. Data distance is shifted slightly so that you can import both points.</source>
-        <translation type="unfinished"></translation>
+        <translation>Дані поперечного перерізу містять дані з однаковими відстанями. Відстань даних трохи зміщується, щоб ви могли імпортувати обидві точки.</translation>
     </message>
     <message>
         <source>%1 Line %2: The number of values should be 5, but %3 values found.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 Лінія %2 : Кількість значень має бути 5, але %3 знайдені значення.</translation>
     </message>
     <message>
         <source>MLIT Cross-Section Data (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>Дані перерізу MLIT (*.csv)</translation>
     </message>
     <message>
         <source>Japan MLIT Cross-Section Data (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>Дані перетину Японії MLIT (*.csv)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyMlitImporter_ProblemsDialog</name>
     <message>
         <source>Problems Found in Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Проблеми, знайдені в даних</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Назва</translation>
     </message>
     <message>
         <source>Related File</source>
-        <translation type="unfinished"></translation>
+        <translation>Пов'язаний файл</translation>
     </message>
     <message>
         <source>Problem</source>
-        <translation type="unfinished"></translation>
+        <translation>Проблема</translation>
     </message>
     <message>
         <source>The problems above is found. Do you want to continue importing?</source>
-        <translation type="unfinished"></translation>
+        <translation>Вищевказані проблеми знайдені. Ви хочете продовжити імпорт?</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Змінити налаштування дисплея</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyVTKExporter</name>
     <message>
         <source>RiverSurvey data</source>
-        <translation type="unfinished"></translation>
+        <translation>Дані річкового опитування</translation>
     </message>
     <message>
         <source>VTK File (*.vtk)</source>
-        <translation type="unfinished"></translation>
+        <translation>Файл VTK (*.vtk)</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionRiverSurveyInterface</name>
     <message>
         <source>Move Control Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Переміщення контрольних точок</translation>
     </message>
 </context>
 </TS>

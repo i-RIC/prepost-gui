@@ -1,838 +1,836 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ky_KG">
 <context>
     <name>Graph2dHybridSettingDialog</name>
     <message>
         <source>Axis Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Axis Setting</translation>
     </message>
     <message>
         <source>X Axis</source>
-        <translation type="unfinished"></translation>
+        <translation>X Axis</translation>
     </message>
     <message>
         <source>Unit</source>
-        <translation type="unfinished"></translation>
+        <translation>Unit</translation>
     </message>
     <message>
         <source>Time</source>
-        <translation type="unfinished"></translation>
+        <translation>Убакыт</translation>
     </message>
     <message>
         <source>Count</source>
-        <translation type="unfinished"></translation>
+        <translation>Count</translation>
     </message>
     <message>
         <source>Distance</source>
-        <translation type="unfinished"></translation>
+        <translation>Аралык</translation>
     </message>
     <message>
         <source>Grid index</source>
-        <translation type="unfinished"></translation>
+        <translation>Тор индекси</translation>
     </message>
     <message>
         <source>Value Range</source>
-        <translation type="unfinished"></translation>
+        <translation>Баалар диапазону</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation>Авто</translation>
     </message>
     <message>
         <source>Max:</source>
-        <translation type="unfinished"></translation>
+        <translation>Максимум:</translation>
     </message>
     <message>
         <source>Min:</source>
-        <translation type="unfinished"></translation>
+        <translation>Мин:</translation>
     </message>
     <message>
         <source>Logarithmic axis</source>
-        <translation type="unfinished"></translation>
+        <translation>Логарифмдик огу</translation>
     </message>
     <message>
         <source>Label: </source>
-        <translation type="unfinished"></translation>
+        <translation>Этикетка:</translation>
     </message>
     <message>
         <source>Reverse Direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Тескери багыт</translation>
     </message>
     <message>
         <source>General</source>
-        <translation type="unfinished"></translation>
+        <translation>General</translation>
     </message>
     <message>
         <source>Title: </source>
-        <translation type="unfinished"></translation>
+        <translation>Аталышы:</translation>
     </message>
     <message>
         <source>Add Grid Indices etc. to Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Titleге Grid Index ж.б кошуу</translation>
     </message>
     <message>
         <source>Y Axis</source>
-        <translation type="unfinished"></translation>
+        <translation>Y Axis</translation>
     </message>
     <message>
         <source>Left</source>
-        <translation type="unfinished"></translation>
+        <translation>Солго</translation>
     </message>
     <message>
         <source>Right</source>
-        <translation type="unfinished"></translation>
+        <translation>Туура</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Эскертүү</translation>
     </message>
     <message>
         <source>X-axes range is invalid.</source>
-        <translation type="unfinished"></translation>
+        <translation>X огунун диапазону жараксыз.</translation>
     </message>
     <message>
         <source>Left Y-axes range is invalid.</source>
-        <translation type="unfinished"></translation>
+        <translation>Сол Y огунун диапазону жараксыз.</translation>
     </message>
     <message>
         <source>Right Y-axes range is invalid.</source>
-        <translation type="unfinished"></translation>
+        <translation>Оң Y огунун диапазону жараксыз.</translation>
     </message>
 </context>
 <context>
     <name>Graph2dHybridWindow</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Форма</translation>
     </message>
     <message>
         <source>I:</source>
-        <translation type="unfinished"></translation>
+        <translation>Мен:</translation>
     </message>
     <message>
         <source>J:</source>
-        <translation type="unfinished"></translation>
+        <translation>J:</translation>
     </message>
     <message>
         <source>K:</source>
-        <translation type="unfinished"></translation>
+        <translation>К:</translation>
     </message>
     <message>
         <source>Select &amp;Data Source</source>
-        <translation type="unfinished"></translation>
+        <translation>Маалымат булагын тандоо (&amp;D)</translation>
     </message>
     <message>
         <source>&amp;Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Жөндөө (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;Close</source>
-        <translation type="unfinished"></translation>
+        <translation>Жабуу (&amp;C)</translation>
     </message>
     <message>
         <source>Graph Window: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Граф терезеси: %1</translation>
     </message>
     <message>
         <source>Controller</source>
-        <translation type="unfinished"></translation>
+        <translation>Контроллер</translation>
     </message>
     <message>
         <source>Time</source>
-        <translation type="unfinished"></translation>
+        <translation>Убакыт</translation>
     </message>
     <message>
         <source>I</source>
-        <translation type="unfinished"></translation>
+        <translation>Мен</translation>
     </message>
     <message>
         <source>J</source>
-        <translation type="unfinished"></translation>
+        <translation>Ж</translation>
     </message>
     <message>
         <source>K</source>
-        <translation type="unfinished"></translation>
+        <translation>К.</translation>
     </message>
     <message>
         <source>Polyline</source>
-        <translation type="unfinished"></translation>
+        <translation>Polyline</translation>
     </message>
     <message>
         <source>Count</source>
-        <translation type="unfinished"></translation>
+        <translation>Count</translation>
     </message>
     <message>
         <source>Distance</source>
-        <translation type="unfinished"></translation>
+        <translation>Аралык</translation>
     </message>
     <message>
         <source>Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Саптар</translation>
     </message>
 </context>
 <context>
     <name>Graph2dHybridWindowActionManager</name>
     <message>
         <source>&amp;Draw</source>
-        <translation type="unfinished"></translation>
+        <translation>Draw (&amp;D)</translation>
     </message>
     <message>
         <source>&amp;Data Source Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Маалымат булактарын жөндөө (&amp;D)...</translation>
     </message>
     <message>
         <source>&amp;Axis Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Axis Setting (&amp;A)...</translation>
     </message>
     <message>
         <source>D&amp;raw Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Draw Setting (&amp;R)...</translation>
     </message>
     <message>
         <source>&amp;Marker Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Маркерди жөндөө (&amp;M)...</translation>
     </message>
     <message>
         <source>Add &amp;KP Markers</source>
-        <translation type="unfinished"></translation>
+        <translation>КП белгилерин кошуу (&amp;K)</translation>
     </message>
     <message>
         <source>&amp;Copy</source>
-        <translation type="unfinished"></translation>
+        <translation>Көчүрүү (&amp;C)</translation>
     </message>
     <message>
         <source>&amp;Legend</source>
-        <translation type="unfinished"></translation>
+        <translation>Легенда (&amp;L)</translation>
     </message>
 </context>
 <context>
     <name>Graph2dHybridWindowContinuousExportDialog</name>
     <message>
         <source>Snapshot Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Сүрөттү жөндөө</translation>
     </message>
     <message>
         <source>Folder &amp;&amp; Prefix</source>
-        <translation type="unfinished"></translation>
+        <translation>Папка &amp; Префикс (&amp; )</translation>
     </message>
     <message>
         <source>Folder:</source>
-        <translation type="unfinished"></translation>
+        <translation>Папка:</translation>
     </message>
     <message>
         <source>Prefix:</source>
-        <translation type="unfinished"></translation>
+        <translation>Префикс:</translation>
     </message>
     <message>
         <source>Region</source>
-        <translation type="unfinished"></translation>
+        <translation>Аймак</translation>
     </message>
     <message>
         <source>Current Only</source>
-        <translation type="unfinished"></translation>
+        <translation>Учур гана</translation>
     </message>
     <message>
         <source>Full Region</source>
-        <translation type="unfinished"></translation>
+        <translation>Толук регион</translation>
     </message>
     <message>
         <source>I Min:</source>
-        <translation type="unfinished"></translation>
+        <translation>Мен Мин:</translation>
     </message>
     <message>
         <source>I Max:</source>
-        <translation type="unfinished"></translation>
+        <translation>Мен Макс:</translation>
     </message>
     <message>
         <source>J Min:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ж Мин:</translation>
     </message>
     <message>
         <source>J Max:</source>
-        <translation type="unfinished"></translation>
+        <translation>J Макс:</translation>
     </message>
     <message>
         <source>K Min:</source>
-        <translation type="unfinished"></translation>
+        <translation>К Мин:</translation>
     </message>
     <message>
         <source>K Max:</source>
-        <translation type="unfinished"></translation>
+        <translation>К Макс:</translation>
     </message>
     <message>
         <source>Index Min:</source>
-        <translation type="unfinished"></translation>
+        <translation>Индекс Мин:</translation>
     </message>
     <message>
         <source>Index Max:</source>
-        <translation type="unfinished"></translation>
+        <translation>Индекс Макс:</translation>
     </message>
     <message>
         <source>Time</source>
-        <translation type="unfinished"></translation>
+        <translation>Убакыт</translation>
     </message>
     <message>
         <source>All Timesteps</source>
-        <translation type="unfinished"></translation>
+        <translation>Бардык убакыт кадамдары</translation>
     </message>
     <message>
         <source>Start:</source>
-        <translation type="unfinished"></translation>
+        <translation>Баштоо:</translation>
     </message>
     <message>
         <source>End:</source>
-        <translation type="unfinished"></translation>
+        <translation>Аяктоо:</translation>
     </message>
     <message>
         <source>Skip rate :</source>
-        <translation type="unfinished"></translation>
+        <translation>Өткөрүү ылдамдыгы:</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Эскертүү</translation>
     </message>
     <message>
         <source>Folder %1 does not exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>Папка %1 жок.</translation>
     </message>
     <message>
         <source>Please input prefix.</source>
-        <translation type="unfinished"></translation>
+        <translation>Префиксти киргизиңиз.</translation>
     </message>
 </context>
 <context>
     <name>Graph2dHybridWindowControlWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Форма</translation>
     </message>
     <message>
         <source>I:</source>
-        <translation type="unfinished"></translation>
+        <translation>Мен:</translation>
     </message>
     <message>
         <source>J:</source>
-        <translation type="unfinished"></translation>
+        <translation>J:</translation>
     </message>
     <message>
         <source>K:</source>
-        <translation type="unfinished"></translation>
+        <translation>К:</translation>
     </message>
     <message>
         <source>Index:</source>
-        <translation type="unfinished"></translation>
+        <translation>Индекс:</translation>
     </message>
     <message>
         <source>&amp;Data Source</source>
-        <translation type="unfinished"></translation>
+        <translation>Маалымат булагы (&amp;D)</translation>
     </message>
     <message>
         <source>Axis &amp;Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Axis Setting (&amp;S)</translation>
     </message>
     <message>
         <source>Draw &amp;Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Draw Setting (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;Marker Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Маркерди жөндөө (&amp;M)</translation>
     </message>
     <message>
         <source>&amp;Copy</source>
-        <translation type="unfinished"></translation>
+        <translation>Көчүрүү (&amp;C)</translation>
     </message>
     <message>
         <source>S&amp;napshot</source>
-        <translation type="unfinished"></translation>
+        <translation>Сүрөт (&amp;N)</translation>
     </message>
     <message>
         <source>CSV &amp;Export</source>
-        <translation type="unfinished"></translation>
+        <translation>CSV экспорту (&amp;E)</translation>
     </message>
 </context>
 <context>
     <name>Graph2dHybridWindowDataModel</name>
     <message>
         <source>Snapshot</source>
-        <translation type="unfinished"></translation>
+        <translation>Сүрөт</translation>
     </message>
     <message>
         <source>Saving snapshots...</source>
-        <translation type="unfinished"></translation>
+        <translation>Сүрөттөр сакталууда...</translation>
     </message>
     <message>
         <source>CSV Export Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>CSV экспорттоо жөндөөсү</translation>
     </message>
     <message>
         <source>CSV Export</source>
-        <translation type="unfinished"></translation>
+        <translation>CSV экспорту</translation>
     </message>
     <message>
         <source>Saving csv files...</source>
-        <translation type="unfinished"></translation>
+        <translation>Csv файлдары сакталууда...</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Ката</translation>
     </message>
     <message>
         <source>Saving snapshot image to %1 failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Сүрөттүн сүрөтү сакталууда %1 ишке ашкан жок</translation>
     </message>
     <message>
         <source>Export CSV file</source>
-        <translation type="unfinished"></translation>
+        <translation>CSV файлын экспорттоо</translation>
     </message>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>CSV файлы (*.csv)</translation>
     </message>
     <message>
         <source>Saving %1 failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Сакталууда %1 ишке ашкан жок</translation>
     </message>
     <message>
         <source>CSV file successfully exported.</source>
-        <translation type="unfinished"></translation>
+        <translation>CSV файлы ийгиликтүү экспорттолду.</translation>
     </message>
     <message>
         <source>I = %1</source>
-        <translation type="unfinished"></translation>
+        <translation>I = %1</translation>
     </message>
     <message>
         <source>I = %1, J = %2</source>
-        <translation type="unfinished"></translation>
+        <translation>I = %1, J = %2</translation>
     </message>
     <message>
         <source>I = %1, J = %2, K = %3</source>
-        <translation type="unfinished"></translation>
+        <translation>I = %1, J = %2, K = %3</translation>
     </message>
     <message>
         <source>Index = %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Индекс = %1</translation>
     </message>
     <message>
         <source>Time = %1 sec</source>
-        <translation type="unfinished"></translation>
+        <translation>Убакыт = %1 сек</translation>
     </message>
     <message>
         <source>Time = %1 sec, J = %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Убакыт = %1 сек, J = %2</translation>
     </message>
     <message>
         <source>Time = %1 sec, J = %2, K = %3</source>
-        <translation type="unfinished"></translation>
+        <translation>Убакыт = %1 сек, J = %2, K = %3</translation>
     </message>
     <message>
         <source>Time = %1 sec, I = %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Убакыт = %1 сек, мен = %2</translation>
     </message>
     <message>
         <source>Time = %1 sec, I = %2, K = %3</source>
-        <translation type="unfinished"></translation>
+        <translation>Убакыт = %1 сек, мен = %2, K = %3</translation>
     </message>
     <message>
         <source>Time = %1 sec, I = %2, J = %3</source>
-        <translation type="unfinished"></translation>
+        <translation>Убакыт = %1 сек, мен = %2, J = %3</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Эскертүү</translation>
     </message>
     <message>
         <source>No calculation result exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>Эч кандай эсептөө натыйжасы жок.</translation>
     </message>
     <message>
         <source>Graph window setup fail. Calculation result is not loaded properly.</source>
-        <translation type="unfinished"></translation>
+        <translation>Графикалык терезе орнотулбай калды. Эсептөө натыйжасы туура жүктөлгөн эмес.</translation>
     </message>
     <message>
-        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm &quot;Create grid from from cross-section data&quot;&lt;/li&gt;&lt;/ul&gt;</source>
-        <translation type="unfinished"></translation>
+        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm "Create grid from from cross-section data"&lt;/li&gt;&lt;/ul&gt;</source>
+        <translation>Бул функцияны төмөнкү шарттар аткарылганда колдонсо болот: &lt;ul&gt; &lt;li&gt; Эки өлчөмдүү структураланган сетка натыйжасы үчүн график чийилет. &lt;/li&gt; &lt;li&gt; X огу сеткадагы I-багыт. &lt;/Li &gt; &lt;li&gt; Тор "кесилиш маалыматынан тор түзүү" &lt;/li&gt; &lt;/ul&gt; алгоритмин колдонуу менен түзүлгөн</translation>
     </message>
 </context>
 <context>
     <name>Graph2dHybridWindowDataSourceDialog</name>
     <message>
         <source>Data Source Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Маалымат булактарын жөндөө</translation>
     </message>
     <message>
         <source>X Axis:</source>
-        <translation type="unfinished"></translation>
+        <translation>X огу:</translation>
     </message>
     <message>
         <source>Polyline:</source>
-        <translation type="unfinished"></translation>
+        <translation>Полинлин:</translation>
     </message>
     <message>
         <source>Calculation Result</source>
-        <translation type="unfinished"></translation>
+        <translation>Эсептөөнүн жыйынтыгы</translation>
     </message>
     <message>
         <source>Point Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Point Data</translation>
     </message>
     <message>
         <source>One dimensional Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Бир өлчөмдүү маалыматтар</translation>
     </message>
     <message>
         <source>Grid Location:</source>
-        <translation type="unfinished"></translation>
+        <translation>Тордун жайгашкан жери:</translation>
     </message>
     <message>
         <source>Two dimensional Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Эки өлчөмдүү маалыматтар</translation>
     </message>
     <message>
         <source>Three dimensional Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Үч өлчөмдүү маалыматтар</translation>
     </message>
     <message>
         <source>Add &gt;&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Кошуу &gt;&gt;</translation>
     </message>
     <message>
         <source>&lt;&lt; Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;&lt; Алып салуу</translation>
     </message>
     <message>
         <source>Selected Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Тандалган маалыматтар</translation>
     </message>
     <message>
         <source>&amp;Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Жөндөө (&amp;S)</translation>
     </message>
     <message>
         <source>External</source>
-        <translation type="unfinished"></translation>
+        <translation>Тышкы</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation type="unfinished"></translation>
+        <translation>Импорттоо (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Delete...</source>
-        <translation type="unfinished"></translation>
+        <translation>Жок кылуу (&amp;D)...</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Эскертүү</translation>
     </message>
     <message>
         <source>Current setting will be discarded, are you sure?</source>
-        <translation type="unfinished"></translation>
+        <translation>Учурдагы жөндөө жокко чыгарылат, чынбы?</translation>
     </message>
     <message>
         <source>No data is selected.</source>
-        <translation type="unfinished"></translation>
+        <translation>Дайындар тандалган жок.</translation>
     </message>
     <message>
         <source>Import CSV file</source>
-        <translation type="unfinished"></translation>
+        <translation>CSV файлын импорттоо</translation>
     </message>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>CSV файлы (*.csv)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Ката</translation>
     </message>
     <message>
-        <source>The title of the first column has to be &quot;X&quot;</source>
-        <translation type="unfinished"></translation>
+        <source>The title of the first column has to be "X"</source>
+        <translation>Биринчи тилкенин аталышы "X" болушу керек</translation>
     </message>
     <message>
         <source>The number of data of %1 and %2 mismatch. Data %1 is skipped.</source>
-        <translation type="unfinished"></translation>
+        <translation>Боюнча маалыматтардын саны %1 жана %2 дал келбөө. Дайындар %1 өткөрүп жиберилет.</translation>
     </message>
     <message>
         <source>Polyline Group:</source>
-        <translation type="unfinished"></translation>
+        <translation>Polyline тобу:</translation>
     </message>
 </context>
 <context>
     <name>Graph2dHybridWindowDrawSettingDialog</name>
     <message>
         <source>Draw Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Draw Setting</translation>
     </message>
     <message>
         <source>Calculation Result</source>
-        <translation type="unfinished"></translation>
+        <translation>Эсептөөнүн жыйынтыгы</translation>
     </message>
     <message>
         <source>Copy</source>
-        <translation type="unfinished"></translation>
+        <translation>Көчүрүү</translation>
     </message>
     <message>
         <source>External</source>
-        <translation type="unfinished"></translation>
+        <translation>Тышкы</translation>
     </message>
 </context>
 <context>
     <name>Graph2dHybridWindowImportDataDataItem</name>
     <message>
         <source>%1 - %2</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 - %2</translation>
     </message>
 </context>
 <context>
     <name>Graph2dHybridWindowImportDataGroupDataItem</name>
     <message>
         <source>External Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Тышкы маалыматтар</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Ката</translation>
     </message>
     <message>
-        <source>The title of the first column has to be &quot;X&quot;</source>
-        <translation type="unfinished"></translation>
+        <source>The title of the first column has to be "X"</source>
+        <translation>Биринчи тилкенин аталышы "X" болушу керек</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Эскертүү</translation>
     </message>
     <message>
         <source>The number of data of %1 and %2 mismatch. Data %1 is skipped.</source>
-        <translation type="unfinished"></translation>
+        <translation>Боюнча маалыматтардын саны %1 жана %2 дал келбөө. Дайындар %1 өткөрүп жиберилет.</translation>
     </message>
 </context>
 <context>
     <name>Graph2dHybridWindowLineSettingDialog</name>
     <message>
         <source>Data Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Маалыматтарды жөндөө</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Түс:</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Туурасы:</translation>
     </message>
     <message>
         <source>Y Axis</source>
-        <translation type="unfinished"></translation>
+        <translation>Y Axis</translation>
     </message>
     <message>
         <source>Left</source>
-        <translation type="unfinished"></translation>
+        <translation>Солго</translation>
     </message>
     <message>
         <source>Right</source>
-        <translation type="unfinished"></translation>
+        <translation>Туура</translation>
     </message>
 </context>
 <context>
     <name>Graph2dHybridWindowObjectBrowser</name>
     <message>
         <source>Object Browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Объект серепчиси</translation>
     </message>
 </context>
 <context>
     <name>Graph2dHybridWindowResultCopyDataItem</name>
     <message>
         <source>%1</source>
-        <translation type="unfinished"></translation>
+        <translation>%1</translation>
     </message>
     <message>
         <source>%1 (I = %2)</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 (I = %2 )</translation>
     </message>
     <message>
         <source>%1 (I = %2, J = %3)</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 (I = %2, J = %3 )</translation>
     </message>
     <message>
         <source>%1 (I = %2, J = %3, K = %4)</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 (I = %2, J = %3, K = %4 )</translation>
     </message>
     <message>
         <source>%1 (Index = %2)</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 (Индекс = %2 )</translation>
     </message>
     <message>
         <source>%1 (t = %2)</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 (t = %2 )</translation>
     </message>
     <message>
         <source>%1 (t = %2, J = %3)</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 (t = %2, J = %3 )</translation>
     </message>
     <message>
         <source>%1 (t = %2, J = %3, K = %4)</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 (t = %2, J = %3, K = %4 )</translation>
     </message>
     <message>
         <source>%1 (t = %2, I = %3)</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 (t = %2, I = %3 )</translation>
     </message>
     <message>
         <source>%1 (t = %2, I = %3, K = %4)</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 (t = %2, I = %3, K = %4 )</translation>
     </message>
     <message>
         <source>%1 (t = %2, I = %3, J = %4)</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 (t = %2, I = %3, J = %4 )</translation>
     </message>
 </context>
 <context>
     <name>Graph2dHybridWindowResultCopyGroupDataItem</name>
     <message>
         <source>Calcuation Results Copys</source>
-        <translation type="unfinished"></translation>
+        <translation>Эсептөө жыйынтыктары көчүрмөлөрү</translation>
     </message>
 </context>
 <context>
     <name>Graph2dHybridWindowResultGroupDataItem</name>
     <message>
         <source>Calcuation Results</source>
-        <translation type="unfinished"></translation>
+        <translation>Эсептөө жыйынтыктары</translation>
     </message>
 </context>
 <context>
     <name>Graph2dHybridWindowRootDataItem</name>
     <message>
         <source>x</source>
-        <translation type="unfinished"></translation>
+        <translation>x</translation>
     </message>
 </context>
 <context>
     <name>Graph2dHybridWindowSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Форма</translation>
     </message>
     <message>
         <source>Label:</source>
-        <translation type="unfinished"></translation>
+        <translation>Этикетка:</translation>
     </message>
     <message>
         <source>Y Axis</source>
-        <translation type="unfinished"></translation>
+        <translation>Y Axis</translation>
     </message>
     <message>
         <source>Left</source>
-        <translation type="unfinished"></translation>
+        <translation>Солго</translation>
     </message>
     <message>
         <source>Right</source>
-        <translation type="unfinished"></translation>
+        <translation>Туура</translation>
     </message>
     <message>
         <source>Display Style</source>
-        <translation type="unfinished"></translation>
+        <translation>Дисплей стили</translation>
     </message>
     <message>
         <source>Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Line</translation>
     </message>
     <message>
         <source>Symbol</source>
-        <translation type="unfinished"></translation>
+        <translation>Symbol</translation>
     </message>
     <message>
         <source>Line Style:</source>
-        <translation type="unfinished"></translation>
+        <translation>Line Style:</translation>
     </message>
     <message>
         <source>Solid Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Катуу линия</translation>
     </message>
     <message>
         <source>Dashed Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Үзүлгөн сызык</translation>
     </message>
     <message>
         <source>Dotted Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Пунктир сызыгы</translation>
     </message>
     <message>
         <source>Dots and Dashes</source>
-        <translation type="unfinished"></translation>
+        <translation>Чекиттер жана тире</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Сызык туурасы:</translation>
     </message>
     <message>
         <source>Bar Chart:</source>
-        <translation type="unfinished"></translation>
+        <translation>Бар диаграммасы:</translation>
     </message>
     <message>
         <source>Show as Bar Chart</source>
-        <translation type="unfinished"></translation>
+        <translation>Бар диаграммасы катары көрсөтүү</translation>
     </message>
     <message>
         <source>Symbol Style:</source>
-        <translation type="unfinished"></translation>
+        <translation>Символ стили:</translation>
     </message>
     <message>
         <source>Circle</source>
-        <translation type="unfinished"></translation>
+        <translation>Circle</translation>
     </message>
     <message>
         <source>Rectangle</source>
-        <translation type="unfinished"></translation>
+        <translation>Тик бурчтук</translation>
     </message>
     <message>
         <source>Diamond</source>
-        <translation type="unfinished"></translation>
+        <translation>Алмаз</translation>
     </message>
     <message>
         <source>Cross</source>
-        <translation type="unfinished"></translation>
+        <translation>Cross</translation>
     </message>
     <message>
         <source>XCross</source>
-        <translation type="unfinished"></translation>
+        <translation>XCross</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Түс:</translation>
     </message>
     <message>
         <source>ID:</source>
-        <translation type="unfinished"></translation>
+        <translation>ID:</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Жок кылуу (&amp;D)</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
         <source>GridLocationNull</source>
-        <translation type="unfinished"></translation>
+        <translation>GridLocationNull</translation>
     </message>
     <message>
         <source>Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Vertex</translation>
     </message>
     <message>
         <source>CellCenter</source>
-        <translation type="unfinished"></translation>
+        <translation>CellCenter</translation>
     </message>
     <message>
         <source>EdgeI</source>
-        <translation type="unfinished"></translation>
+        <translation>EdgeI</translation>
     </message>
     <message>
         <source>EdgeJ</source>
-        <translation type="unfinished"></translation>
+        <translation>EdgeJ</translation>
     </message>
 </context>
 </TS>

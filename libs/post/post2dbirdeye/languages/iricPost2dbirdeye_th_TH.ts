@@ -1,161 +1,159 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="th_TH">
 <context>
     <name>Post2dBirdEyeObjectBrowser</name>
     <message>
         <source>Object Browser</source>
-        <translation type="unfinished"></translation>
+        <translation>เบราว์เซอร์วัตถุ</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindow</name>
     <message>
-        <source>Bird&apos;s-Eye Post-processing (2D): %1</source>
-        <translation type="unfinished"></translation>
+        <source>Bird's-Eye Post-processing (2D): %1</source>
+        <translation>การประมวลผลหลังภาพเบิร์ดอาย (2D): %1</translation>
     </message>
     <message>
         <source>Background Color</source>
-        <translation type="unfinished"></translation>
+        <translation>สีพื้นหลัง</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowActionManager</name>
     <message>
         <source>&amp;Draw</source>
-        <translation type="unfinished"></translation>
+        <translation>วาด (&amp;D)</translation>
     </message>
     <message>
         <source>&amp;Grid Shape...</source>
-        <translation type="unfinished"></translation>
+        <translation>รูปร่างกริด (&amp;G)...</translation>
     </message>
     <message>
         <source>&amp;Contours (node)...</source>
-        <translation type="unfinished"></translation>
+        <translation>รูปร่าง (โหนด) (&amp;C)...</translation>
     </message>
     <message>
         <source>Contours (ce&amp;ll center)...</source>
-        <translation type="unfinished"></translation>
+        <translation>รูปร่าง (ศูนย์เซลล์) (&amp;L)...</translation>
     </message>
     <message>
         <source>&amp;Title...</source>
-        <translation type="unfinished"></translation>
+        <translation>ชื่อ (&amp;T)...</translation>
     </message>
     <message>
         <source>Ti&amp;me...</source>
-        <translation type="unfinished"></translation>
+        <translation>เวลา (&amp;M)...</translation>
     </message>
     <message>
         <source>&amp;Background Color...</source>
-        <translation type="unfinished"></translation>
+        <translation>สีพื้นหลัง (&amp;B)...</translation>
     </message>
     <message>
         <source>&amp;Z-direction Scale...</source>
-        <translation type="unfinished"></translation>
+        <translation>สเกลทิศทาง Z (&amp;Z)...</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowAxesDataItem</name>
     <message>
         <source>Axes</source>
-        <translation type="unfinished"></translation>
+        <translation>แกน</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
-        <translation type="unfinished"></translation>
+        <translation>สเกลาร์</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>อัปเดตการตั้งค่าคอนทัวร์</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowCellScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (cell center)</source>
-        <translation type="unfinished"></translation>
+        <translation>สเกลาร์ (ศูนย์เซลล์)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>คำเตือน</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation type="unfinished"></translation>
+        <translation>สามารถกำหนดรูปทรงได้สูงสุดสี่เส้น</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowDataModel</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>คำเตือน</translation>
     </message>
     <message>
         <source>Contour setting is not available, because this result does not contain scalar values.</source>
-        <translation type="unfinished"></translation>
+        <translation>ไม่มีการตั้งค่า Contour เนื่องจากผลลัพธ์นี้ไม่มีค่าสเกลาร์</translation>
     </message>
     <message>
         <source>Contour setting is not available, because this result does not contain cell scalar values.</source>
-        <translation type="unfinished"></translation>
+        <translation>ไม่มีการตั้งค่า Contour เนื่องจากผลลัพธ์นี้ไม่มีค่าสเกลาร์ของเซลล์</translation>
     </message>
     <message>
         <source>Z-direction Scale</source>
-        <translation type="unfinished"></translation>
+        <translation>สเกลทิศทาง Z</translation>
     </message>
     <message>
         <source>Input new Z-direction scale.</source>
-        <translation type="unfinished"></translation>
+        <translation>ป้อนมาตราส่วน Z-direct ใหม่</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowGridShapeDataItem</name>
     <message>
         <source>Grid shape</source>
-        <translation type="unfinished"></translation>
+        <translation>รูปร่างกริด</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowNodeScalarGroupDataItem</name>
     <message>
         <source>Update Contour Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>อัปเดตการตั้งค่าคอนทัวร์</translation>
     </message>
     <message>
         <source>Scalar</source>
-        <translation type="unfinished"></translation>
+        <translation>สเกลาร์</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowNodeScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (node)</source>
-        <translation type="unfinished"></translation>
+        <translation>สเกลาร์ (โหนด)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>คำเตือน</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation type="unfinished"></translation>
+        <translation>สามารถกำหนดรูปทรงได้สูงสุดสี่เส้น</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
         <source>Update Grid Shape Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>อัปเดตการตั้งค่ารูปร่างกริด</translation>
     </message>
     <message>
         <source>Edit Background Color</source>
-        <translation type="unfinished"></translation>
+        <translation>แก้ไขสีพื้นหลัง</translation>
     </message>
     <message>
         <source>Create Contour</source>
-        <translation type="unfinished"></translation>
+        <translation>สร้างคอนทัวร์</translation>
     </message>
 </context>
 </TS>

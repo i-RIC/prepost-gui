@@ -1,143 +1,141 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="cs_CZ">
 <context>
     <name>MeasuredDataFileDataItem</name>
     <message>
         <source>File</source>
-        <translation type="unfinished"></translation>
+        <translation>Soubor</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation type="unfinished"></translation>
+        <translation>Vývozní (&amp;E)...</translation>
     </message>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>Soubor CSV (*.csv)</translation>
     </message>
     <message>
         <source>Export Measured Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Export naměřených dat</translation>
     </message>
     <message>
         <source>Measured Data successfully exported to %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Naměřená data byla úspěšně exportována do %1.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Chyba</translation>
     </message>
 </context>
 <context>
     <name>MeasuredDataPointGroupDataItem</name>
     <message>
         <source>Scalar</source>
-        <translation type="unfinished"></translation>
+        <translation>Skalární</translation>
     </message>
     <message>
         <source>Contour Physical Value Change</source>
-        <translation type="unfinished"></translation>
+        <translation>Změna fyzické hodnoty obrysu</translation>
     </message>
 </context>
 <context>
     <name>MeasuredDataPointSettingDialog</name>
     <message>
         <source>Scalar Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Skalární nastavení</translation>
     </message>
     <message>
         <source>Measured Value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Naměřená hodnota:</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastavení zobrazení</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Velikost bodu:</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastavení barevného pruhu (&amp;C)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Chyba</translation>
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pro rozsah hodnot je maximální hodnota menší než minimální hodnota.</translation>
     </message>
 </context>
 <context>
     <name>MeasuredDataVectorGroupDataItem</name>
     <message>
         <source>Arrow</source>
-        <translation type="unfinished"></translation>
+        <translation>Šíp</translation>
     </message>
     <message>
         <source>Arrow Physical Value Change</source>
-        <translation type="unfinished"></translation>
+        <translation>Změna fyzické hodnoty šipky</translation>
     </message>
     <message>
         <source>Update Arrow Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktualizovat nastavení šipky</translation>
     </message>
 </context>
 <context>
     <name>MeasuredDataVectorSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastavení šipky</translation>
     </message>
     <message>
         <source>Physical value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Fyzická hodnota:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation type="unfinished"></translation>
+        <translation>Délka</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation>Auto</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Standardní hodnota:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation type="unfinished"></translation>
+        <translation>[slečna]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation type="unfinished"></translation>
+        <translation>Délka na obrazovce:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation type="unfinished"></translation>
+        <translation>[pixel]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation type="unfinished"></translation>
+        <translation>Minimální hodnota pro čerpání:</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Barva</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation type="unfinished"></translation>
+        <translation>Vlastní barva</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation type="unfinished"></translation>
+        <translation>Podle skalární hodnoty</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastavení barevného pruhu (&amp;C)</translation>
     </message>
 </context>
 </TS>

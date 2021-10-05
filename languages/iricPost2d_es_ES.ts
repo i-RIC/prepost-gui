@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="es_ES">
 <context>
     <name>Post2dGridRegionSelectDialog</name>
@@ -35,19 +33,19 @@
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>No contours have been defined</source>
-        <translation type="unfinished"></translation>
+        <translation>No se han definido contornos</translation>
     </message>
     <message>
         <source>Please select which scalar to export:</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccione qué escalar exportar:</translation>
     </message>
     <message>
         <source>No Contour Figure is drawn now.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ahora no se dibuja ninguna figura de contorno.</translation>
     </message>
 </context>
 <context>
@@ -62,7 +60,7 @@
     </message>
     <message>
         <source>&amp;Contours (node)...</source>
-        <translation type="unfinished"></translation>
+        <translation>Contornos (nodo) (&amp;C)...</translation>
     </message>
     <message>
         <source>&amp;Arrows...</source>
@@ -78,7 +76,7 @@
     </message>
     <message>
         <source>P&amp;olygons...</source>
-        <translation type="unfinished"></translation>
+        <translation>Polígonos (&amp;O)...</translation>
     </message>
     <message>
         <source>&amp;Cell Attributes...</source>
@@ -86,7 +84,7 @@
     </message>
     <message>
         <source>Contours (ce&amp;ll center)...</source>
-        <translation type="unfinished"></translation>
+        <translation>Contornos (centro de la celda) (&amp;L)...</translation>
     </message>
     <message>
         <source>&amp;Title...</source>
@@ -125,7 +123,7 @@
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation>Auto</translation>
     </message>
     <message>
         <source>Standard value:</source>
@@ -133,7 +131,7 @@
     </message>
     <message>
         <source>[m/s]</source>
-        <translation type="unfinished"></translation>
+        <translation>[Sra]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
@@ -141,7 +139,7 @@
     </message>
     <message>
         <source>[pixel]</source>
-        <translation type="unfinished"></translation>
+        <translation>[píxel]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
@@ -169,7 +167,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Color</translation>
     </message>
     <message>
         <source>Custom color</source>
@@ -181,15 +179,15 @@
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma de flecha</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tamaño de la flecha:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ancho de línea:</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
@@ -216,7 +214,7 @@
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation>Auto</translation>
     </message>
     <message>
         <source>Standard value:</source>
@@ -224,7 +222,7 @@
     </message>
     <message>
         <source>[m/s]</source>
-        <translation type="unfinished"></translation>
+        <translation>[Sra]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
@@ -232,7 +230,7 @@
     </message>
     <message>
         <source>[pixel]</source>
-        <translation type="unfinished"></translation>
+        <translation>[píxel]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
@@ -256,7 +254,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Color</translation>
     </message>
     <message>
         <source>Custom color</source>
@@ -268,15 +266,15 @@
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma de flecha</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tamaño de la flecha:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ancho de línea:</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
@@ -291,7 +289,7 @@
     <name>Post2dWindowBackgroundImageDataItem</name>
     <message>
         <source>&amp;Georeference...</source>
-        <translation type="unfinished"></translation>
+        <translation>Georeferencia (&amp;G)...</translation>
     </message>
 </context>
 <context>
@@ -306,7 +304,7 @@
     </message>
     <message>
         <source>Delete &amp;Selected...</source>
-        <translation type="unfinished"></translation>
+        <translation>Eliminar seleccionado (&amp;S)...</translation>
     </message>
     <message>
         <source>Delete &amp;All...</source>
@@ -318,11 +316,11 @@
     </message>
     <message>
         <source>There is no background image.</source>
-        <translation type="unfinished"></translation>
+        <translation>No hay imagen de fondo.</translation>
     </message>
     <message>
         <source>Delete selected background images</source>
-        <translation type="unfinished"></translation>
+        <translation>Eliminar imágenes de fondo seleccionadas</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -364,14 +362,14 @@
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Color</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar (cell center)</source>
-        <translation type="unfinished"></translation>
+        <translation>Escalar (centro de la celda)</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
@@ -383,22 +381,22 @@
     </message>
     <message>
         <source>To export KML for street view, display with Contour Figure.</source>
-        <translation type="unfinished"></translation>
+        <translation>Para exportar KML para Street View, muestre con Contour Figure.</translation>
     </message>
     <message>
         <source>To export KML for street view, value range should be set up manually.</source>
-        <translation type="unfinished"></translation>
+        <translation>Para exportar KML para Street View, el rango de valores debe configurarse manualmente.</translation>
     </message>
     <message>
         <source>To export KML for street view, coordinate system should be specified.</source>
-        <translation type="unfinished"></translation>
+        <translation>Para exportar KML para Street View, se debe especificar el sistema de coordenadas.</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowCellScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (cell center)</source>
-        <translation type="unfinished"></translation>
+        <translation>Escalar (centro de la celda)</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -406,15 +404,15 @@
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation type="unfinished"></translation>
+        <translation>Se puede definir un máximo de cuatro contornos.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
-        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
-        <translation type="unfinished"></translation>
+        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
+        <translation>Para exportar un archivo de forma, cambie "Configuración de pantalla" a "Figura de contorno", no "Franja de color" o "Isolíneas".</translation>
     </message>
 </context>
 <context>
@@ -441,7 +439,7 @@
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
@@ -480,21 +478,21 @@
     </message>
     <message>
         <source>Contour setting is not available, because this result does not contain cell scalar values.</source>
-        <translation type="unfinished"></translation>
+        <translation>La configuración de contorno no está disponible porque este resultado no contiene valores escalares de celda.</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowEdgeIScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (edgeI)</source>
-        <translation type="unfinished"></translation>
+        <translation>Escalar (edgeI)</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowEdgeJScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (edgeJ)</source>
-        <translation type="unfinished"></translation>
+        <translation>Escalar (edgeJ)</translation>
     </message>
 </context>
 <context>
@@ -508,37 +506,37 @@
     <name>Post2dWindowGraphGroupDataItem</name>
     <message>
         <source>Graph</source>
-        <translation type="unfinished"></translation>
+        <translation>Grafico</translation>
     </message>
     <message>
         <source>Graph Physical Value Change</source>
-        <translation type="unfinished"></translation>
+        <translation>Gráfico de cambio de valor físico</translation>
     </message>
     <message>
         <source>Update Graph Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Actualizar configuración de gráfico</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowGraphSettingCustomRegionDialog</name>
     <message>
         <source>Custom Region Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración de región personalizada</translation>
     </message>
     <message>
         <source>&amp;Select All</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccionar todo (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;Unselect All</source>
-        <translation type="unfinished"></translation>
+        <translation>Deselecciona todo (&amp;U)</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowGraphSettingDialog</name>
     <message>
         <source>Graph Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración de gráfico</translation>
     </message>
     <message>
         <source>Direction</source>
@@ -546,15 +544,15 @@
     </message>
     <message>
         <source>I direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Me dirijo</translation>
     </message>
     <message>
         <source>J direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Dirección J</translation>
     </message>
     <message>
         <source>Region</source>
-        <translation type="unfinished"></translation>
+        <translation>Región</translation>
     </message>
     <message>
         <source>All</source>
@@ -562,7 +560,7 @@
     </message>
     <message>
         <source>Partial region</source>
-        <translation type="unfinished"></translation>
+        <translation>Región parcial</translation>
     </message>
     <message>
         <source>Start:</source>
@@ -574,7 +572,7 @@
     </message>
     <message>
         <source>Skip:</source>
-        <translation type="unfinished"></translation>
+        <translation>Saltar:</translation>
     </message>
     <message>
         <source>Custom</source>
@@ -586,19 +584,19 @@
     </message>
     <message>
         <source>Draw Direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Dibujar dirección</translation>
     </message>
     <message>
         <source>Vertical to grid lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Vertical a las líneas de la cuadrícula</translation>
     </message>
     <message>
         <source>Parallel to grid lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Paralelo a las líneas de la cuadrícula</translation>
     </message>
     <message>
         <source>Grid Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Líneas de cuadrícula</translation>
     </message>
     <message>
         <source>Draw</source>
@@ -606,7 +604,7 @@
     </message>
     <message>
         <source>Graph Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Líneas gráficas</translation>
     </message>
     <message>
         <source>Physical Value:</source>
@@ -618,15 +616,15 @@
     </message>
     <message>
         <source>No modification</source>
-        <translation type="unfinished"></translation>
+        <translation>Sin modificación</translation>
     </message>
     <message>
         <source>Subtract maximum value in each line</source>
-        <translation type="unfinished"></translation>
+        <translation>Reste el valor máximo en cada línea</translation>
     </message>
     <message>
         <source>Subtract minimum value in each line</source>
-        <translation type="unfinished"></translation>
+        <translation>Reste el valor mínimo en cada línea</translation>
     </message>
 </context>
 <context>
@@ -648,7 +646,7 @@
     </message>
     <message>
         <source>Delete &amp;Selected...</source>
-        <translation type="unfinished"></translation>
+        <translation>Eliminar seleccionado (&amp;S)...</translation>
     </message>
     <message>
         <source>Delete &amp;All...</source>
@@ -660,11 +658,11 @@
     </message>
     <message>
         <source>There is no measured data.</source>
-        <translation type="unfinished"></translation>
+        <translation>No hay datos medidos.</translation>
     </message>
     <message>
         <source>Delete selected measured data</source>
-        <translation type="unfinished"></translation>
+        <translation>Eliminar los datos medidos seleccionados</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -672,7 +670,7 @@
     </message>
     <message>
         <source>Are you sure you want to delete all measured data?</source>
-        <translation type="unfinished"></translation>
+        <translation>¿Está seguro de que desea eliminar todos los datos medidos?</translation>
     </message>
 </context>
 <context>
@@ -683,7 +681,7 @@
     </message>
     <message>
         <source>To export KML for street view, display with Contour Figure.</source>
-        <translation type="unfinished"></translation>
+        <translation>Para exportar KML para Street View, muestre con Contour Figure.</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -691,26 +689,26 @@
     </message>
     <message>
         <source>To export KML for street view, value range should be set up manually.</source>
-        <translation type="unfinished"></translation>
+        <translation>Para exportar KML para Street View, el rango de valores debe configurarse manualmente.</translation>
     </message>
     <message>
         <source>To export KML for street view, coordinate system should be specified.</source>
-        <translation type="unfinished"></translation>
+        <translation>Para exportar KML para Street View, se debe especificar el sistema de coordenadas.</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (node)</source>
-        <translation type="unfinished"></translation>
+        <translation>Escalar (nodo)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
-        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
-        <translation type="unfinished"></translation>
+        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
+        <translation>Para exportar un archivo de forma, cambie "Configuración de pantalla" a "Figura de contorno", no "Franja de color" o "Isolíneas".</translation>
     </message>
 </context>
 <context>
@@ -742,7 +740,7 @@
     <name>Post2dWindowNodeVectorParticleGroupDataItem</name>
     <message>
         <source>Particles (auto)</source>
-        <translation type="unfinished"></translation>
+        <translation>Partículas (auto)</translation>
     </message>
     <message>
         <source>Particle Physical Value Change</source>
@@ -804,32 +802,32 @@
     </message>
     <message>
         <source>Generate periodically</source>
-        <translation type="unfinished"></translation>
+        <translation>Generar periódicamente</translation>
     </message>
     <message>
         <source>Generation time interval</source>
         <translation>Intervalo de Tiempo de Generacion</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap;}
 p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
 &lt;p&gt;If you specify 1, particles are generated for every time steps.&lt;/p&gt;
 &lt;p&gt;If you specify 2, particles are generated twice equally separated, for every time steps,&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other time steps.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
         <extracomment>If you specify 1, particles are generated for every time steps. If you specify 2, particles are generated twice equally separated, for every time steps, If you specify 1/2, particles are generated for every other time steps.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>-</source>
-        <translation type="unfinished"></translation>
+        <translation>-</translation>
     </message>
     <message>
         <source>+</source>
-        <translation type="unfinished"></translation>
+        <translation>+</translation>
     </message>
     <message>
         <source>min</source>
@@ -837,7 +835,7 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>1</source>
-        <translation type="unfinished"></translation>
+        <translation>1</translation>
     </message>
     <message>
         <source>max</source>
@@ -845,7 +843,7 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Generate at arbitrary time</source>
-        <translation type="unfinished"></translation>
+        <translation>Generar en un momento arbitrario</translation>
     </message>
     <message>
         <source>Edit...</source>
@@ -888,32 +886,32 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <translation>Intervalo de Espacio de Generacion</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
 p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
 &lt;p&gt;If you specify 1, particles are generated at grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 2, particles are generated at grid nodes, and middle points of grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other grid nodes.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // ES" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta nombre = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {espacio en blanco: pre-wrap; } p {margen superior: 3px; margin-bottom: 3px;} &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p&gt; Si especifica 1, las partículas se generan en los nodos de la cuadrícula. &lt;/p&gt; &lt;p&gt; Si especifica 2, las partículas se generan en los nodos de la cuadrícula y los puntos medios de los nodos de la cuadrícula. &lt;/p&gt; &lt;p&gt; Si usted especificar 1/2, las partículas se generan para todos los demás nodos de la cuadrícula. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Color:</translation>
     </message>
     <message>
         <source>Size:</source>
         <translation>Tamano:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // ES" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta nombre = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {espacio en blanco: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Especifique un número de píxeles en pantalla. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -944,32 +942,32 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Generate periodically</source>
-        <translation type="unfinished"></translation>
+        <translation>Generar periódicamente</translation>
     </message>
     <message>
         <source>Generation interval</source>
         <translation>Intervalo de Generacion</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap;}
 p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
 &lt;p&gt;If you specify 1, particles are generated for every time steps.&lt;/p&gt;
 &lt;p&gt;If you specify 2, particles are generated twice equally separated, for every time steps,&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other time steps.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
         <extracomment>If you specify 1, particles are generated for every time steps. If you specify 2, particles are generated twice equally separated, for every time steps, If you specify 1/2, particles are generated for every other time steps.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>-</source>
-        <translation type="unfinished"></translation>
+        <translation>-</translation>
     </message>
     <message>
         <source>+</source>
-        <translation type="unfinished"></translation>
+        <translation>+</translation>
     </message>
     <message>
         <source>min</source>
@@ -977,7 +975,7 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>1</source>
-        <translation type="unfinished"></translation>
+        <translation>1</translation>
     </message>
     <message>
         <source>max</source>
@@ -985,7 +983,7 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Generate at arbitrary time</source>
-        <translation type="unfinished"></translation>
+        <translation>Generar en un momento arbitrario</translation>
     </message>
     <message>
         <source>Edit...</source>
@@ -1013,7 +1011,7 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>,</source>
-        <translation type="unfinished"></translation>
+        <translation>,</translation>
     </message>
     <message>
         <source>Point 2:</source>
@@ -1025,19 +1023,19 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Color:</translation>
     </message>
     <message>
         <source>Size:</source>
         <translation>Tamano:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // ES" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta nombre = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {espacio en blanco: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Especifique un número de píxeles en pantalla. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -1060,29 +1058,29 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Particle Scalar value change</source>
-        <translation type="unfinished"></translation>
+        <translation>Cambio de valor escalar de partículas</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowParticlesBaseTopDataItem</name>
     <message>
         <source>Edit Particle Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar configuración de partículas</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowParticlesBaseVectorGroupDataItem</name>
     <message>
         <source>Vector</source>
-        <translation type="unfinished"></translation>
+        <translation>Vector</translation>
     </message>
     <message>
         <source>Vector Attribute Select Change</source>
-        <translation type="unfinished"></translation>
+        <translation>Cambio de selección de atributo vectorial</translation>
     </message>
     <message>
         <source>Update Vector Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Actualizar la configuración del vector</translation>
     </message>
 </context>
 <context>
@@ -1096,11 +1094,11 @@ p, li { white-space: pre-wrap; }
     <name>Post2dWindowPolyDataGroupDataItem</name>
     <message>
         <source>PolyData value change</source>
-        <translation type="unfinished"></translation>
+        <translation>Cambio de valor de PolyData</translation>
     </message>
     <message>
         <source>Edit Polygon Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar configuración de polígono</translation>
     </message>
 </context>
 <context>
@@ -1118,7 +1116,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation type="unfinished"></translation>
+        <translation>Se puede definir un máximo de cuatro contornos.</translation>
     </message>
 </context>
 <context>
@@ -1168,22 +1166,22 @@ p, li { white-space: pre-wrap; }
         <translation>Intervalo de Espacio de Generacion</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // ES" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta nombre = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {espacio en blanco: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Si especifica 1, las líneas de flujo comienzan en los nodos de la cuadrícula. &lt;/p&gt; &lt;p style = "margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px;" &gt; Si especifica 2, las líneas de flujo comienzan en los nodos de la cuadrícula y los puntos medios de los nodos de la cuadrícula. &lt;/p&gt; &lt;p style = "margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Si especifica 1/2, las líneas de flujo comienzan en todos los demás nodos de la cuadrícula. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>-</source>
-        <translation type="unfinished"></translation>
+        <translation>-</translation>
     </message>
     <message>
         <source>+</source>
-        <translation type="unfinished"></translation>
+        <translation>+</translation>
     </message>
     <message>
         <source>min</source>
@@ -1191,7 +1189,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>1</source>
-        <translation type="unfinished"></translation>
+        <translation>1</translation>
     </message>
     <message>
         <source>max</source>
@@ -1199,19 +1197,19 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Color:</translation>
     </message>
     <message>
         <source>Width:</source>
         <translation>Anchura:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // ES" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta nombre = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {espacio en blanco: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Especifique un número de píxeles en pantalla. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -1258,7 +1256,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>,</source>
-        <translation type="unfinished"></translation>
+        <translation>,</translation>
     </message>
     <message>
         <source>Point 2:</source>
@@ -1270,19 +1268,19 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Color:</translation>
     </message>
     <message>
         <source>Width:</source>
         <translation>Anchura:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // ES" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta nombre = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {espacio en blanco: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Especifique un número de píxeles en pantalla. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -1316,19 +1314,19 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Update Particles Scalar Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Actualizar configuración escalar de partículas</translation>
     </message>
     <message>
         <source>Create Contour</source>
-        <translation type="unfinished"></translation>
+        <translation>Crear contorno</translation>
     </message>
     <message>
         <source>Create Cell Contour</source>
-        <translation type="unfinished"></translation>
+        <translation>Crear contorno de celda</translation>
     </message>
     <message>
         <source>Update Polygon Scalar Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Actualizar configuración escalar de polígono</translation>
     </message>
 </context>
 </TS>

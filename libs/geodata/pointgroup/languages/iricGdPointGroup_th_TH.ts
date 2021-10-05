@@ -1,142 +1,140 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="th_TH">
 <context>
     <name>GeoDataPointGroup</name>
     <message>
         <source>Point%1</source>
-        <translation type="unfinished"></translation>
+        <translation>จุด %1</translation>
     </message>
     <message>
         <source>&amp;Sort</source>
-        <translation type="unfinished"></translation>
+        <translation>เรียงลำดับ (&amp;S)</translation>
     </message>
     <message>
         <source>P&amp;oint</source>
-        <translation type="unfinished"></translation>
+        <translation>จุด (&amp;O)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointGroupCreator</name>
     <message>
         <source>point</source>
-        <translation type="unfinished"></translation>
+        <translation>จุด</translation>
     </message>
     <message>
         <source>Point</source>
-        <translation type="unfinished"></translation>
+        <translation>จุด</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation type="unfinished"></translation>
+        <translation>คะแนน</translation>
     </message>
     <message>
         <source>Points%1</source>
-        <translation type="unfinished"></translation>
+        <translation>คะแนน %1</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointGroupCsvExporter</name>
     <message>
         <source>CSV file</source>
-        <translation type="unfinished"></translation>
+        <translation>ไฟล์ CSV</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>ข้อผิดพลาด</translation>
     </message>
     <message>
         <source>Error occured while exporting to %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>เกิดข้อผิดพลาดขณะส่งออกไปยัง %1.</translation>
     </message>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>ไฟล์ CSV (*.csv)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointGroupCsvImporter</name>
     <message>
         <source>CSV file (Points)</source>
-        <translation type="unfinished"></translation>
+        <translation>ไฟล์ CSV (คะแนน)</translation>
     </message>
     <message>
         <source>CSV file (Points) (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>ไฟล์ CSV (คะแนน) (*.csv)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>ข้อผิดพลาด</translation>
     </message>
     <message>
         <source>Error occured while opening %1</source>
-        <translation type="unfinished"></translation>
+        <translation>เกิดข้อผิดพลาดขณะเปิด %1</translation>
     </message>
     <message>
         <source>Error occured while reading header line. Make sure the file is saved in UTF-8 encoding.</source>
-        <translation type="unfinished"></translation>
+        <translation>เกิดข้อผิดพลาดขณะอ่านบรรทัดส่วนหัว ตรวจสอบให้แน่ใจว่าไฟล์ถูกบันทึกด้วยการเข้ารหัส UTF-8</translation>
     </message>
     <message>
         <source>Error occured while reading header line. Header should have 3 columns at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>เกิดข้อผิดพลาดขณะอ่านบรรทัดส่วนหัว ส่วนหัวควรมีอย่างน้อย 3 คอลัมน์</translation>
     </message>
     <message>
         <source>Error occured while reading header line. Header should have 4 columns at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>เกิดข้อผิดพลาดขณะอ่านบรรทัดส่วนหัว ส่วนหัวควรมีอย่างน้อย 4 คอลัมน์</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
-        <translation type="unfinished"></translation>
+        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
+        <translation>เกิดข้อผิดพลาดขณะอ่านบรรทัดส่วนหัว คอลัมน์ %1 ควรจะเป็น "%2", แต่ "%3" มอบให้</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Make sure the file is saved in UTF-8 encoding.</source>
-        <translation type="unfinished"></translation>
+        <translation>เกิดข้อผิดพลาดขณะอ่านบรรทัด %1. ตรวจสอบให้แน่ใจว่าไฟล์ถูกบันทึกด้วยการเข้ารหัส UTF-8</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Data should have 3 columns at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>เกิดข้อผิดพลาดขณะอ่านบรรทัด %1. ข้อมูลควรมีอย่างน้อย 3 คอลัมน์</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Data should have 4 columns at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>เกิดข้อผิดพลาดขณะอ่านบรรทัด %1. ข้อมูลควรมีอย่างน้อย 4 คอลัมน์</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation type="unfinished"></translation>
+        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
+        <translation>เกิดข้อผิดพลาดขณะอ่านค่า "x" ในบรรทัด %1. "x" ควรเป็นค่าจริง แต่ "%2" ถูกระบุ</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation type="unfinished"></translation>
+        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
+        <translation>เกิดข้อผิดพลาดขณะอ่านค่า "y" ในบรรทัด %1. "y" ควรเป็นค่าจริง แต่ "%2" ถูกระบุ</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation type="unfinished"></translation>
+        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
+        <translation>เกิดข้อผิดพลาดขณะอ่านค่า "ค่า" ในบรรทัด %1. "ค่า" ควรเป็นค่าจริง แต่ "%2" ถูกระบุ</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointGroupShpExporter</name>
     <message>
         <source>ESRI Shapefile</source>
-        <translation type="unfinished"></translation>
+        <translation>ESRI Shapefile</translation>
     </message>
     <message>
         <source>ESRI Shapefile (*.shp)</source>
-        <translation type="unfinished"></translation>
+        <translation>ESRI Shapefile (*.shp)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointGroupShpImporter</name>
     <message>
         <source>ESRI Shapefile (Points)</source>
-        <translation type="unfinished"></translation>
+        <translation>ESRI Shapefile (คะแนน)</translation>
     </message>
     <message>
         <source>ESRI Shapefile (Points) (*.shp)</source>
-        <translation type="unfinished"></translation>
+        <translation>ESRI Shapefile (คะแนน) (*.shp)</translation>
     </message>
     <message>
         <source>Point%1</source>
-        <translation type="unfinished"></translation>
+        <translation>จุด %1</translation>
     </message>
 </context>
 </TS>

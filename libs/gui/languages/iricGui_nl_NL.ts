@@ -1,2073 +1,2071 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="nl_NL">
 <context>
     <name>AnimationController</name>
     <message>
         <source>Animation ToolBar</source>
-        <translation type="unfinished"></translation>
+        <translation>Animatiewerkbalk</translation>
     </message>
     <message>
         <source>&amp;Animation</source>
-        <translation type="unfinished"></translation>
+        <translation>Animatie (&amp;A)</translation>
     </message>
     <message>
         <source>Step &amp;Backward</source>
-        <translation type="unfinished"></translation>
+        <translation>Stap terug (&amp;B)</translation>
     </message>
     <message>
         <source>Step &amp;Forward</source>
-        <translation type="unfinished"></translation>
+        <translation>Stap Vooruit (&amp;F)</translation>
     </message>
     <message>
         <source>&amp;Reset</source>
-        <translation type="unfinished"></translation>
+        <translation>Resetten (&amp;R)</translation>
     </message>
     <message>
         <source>Go to &amp;Last Step</source>
-        <translation type="unfinished"></translation>
+        <translation>Ga naar de laatste stap (&amp;L)</translation>
     </message>
     <message>
         <source>&amp;Start/Stop Animation</source>
-        <translation type="unfinished"></translation>
+        <translation>Animatie starten/stoppen (&amp;S)</translation>
     </message>
     <message>
         <source>S&amp;top Animation</source>
-        <translation type="unfinished"></translation>
+        <translation>Animatie stoppen (&amp;T)</translation>
     </message>
     <message>
         <source>Toggle &amp;following last step</source>
-        <translation type="unfinished"></translation>
+        <translation>Toggle volgende laatste stap (&amp;F)</translation>
     </message>
     <message>
         <source>&amp;Animation Speed Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Instelling animatiesnelheid (&amp;A)...</translation>
     </message>
     <message>
         <source>L&amp;oop Animation</source>
-        <translation type="unfinished"></translation>
+        <translation>Loop animatie (&amp;O)</translation>
     </message>
 </context>
 <context>
     <name>ConfirmPage</name>
     <message>
         <source>Confirm the result</source>
-        <translation type="unfinished"></translation>
+        <translation>Bevestig het resultaat</translation>
     </message>
     <message>
         <source>The files in the list below will be created or updated. Please open these files with Qt Linguist, and complete the translation dictionary.</source>
-        <translation type="unfinished"></translation>
+        <translation>De bestanden in de onderstaande lijst worden aangemaakt of bijgewerkt. Open deze bestanden met Qt Linguist en vul het vertaalwoordenboek in.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotConfirmPage</name>
     <message>
         <source>Confirm the result</source>
-        <translation type="unfinished"></translation>
+        <translation>Bevestig het resultaat</translation>
     </message>
     <message>
         <source>The files in the list below will be created or updated. </source>
-        <translation type="unfinished"></translation>
+        <translation>De bestanden in de onderstaande lijst worden aangemaakt of bijgewerkt.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotFilePropertyPage</name>
     <message>
         <source>WizardPage</source>
-        <translation type="unfinished"></translation>
+        <translation>WizardPagina</translation>
     </message>
     <message>
         <source>File Properties</source>
-        <translation type="unfinished"></translation>
+        <translation>Bestandseigenschappen</translation>
     </message>
     <message>
         <source>Please specify the properties of output files.</source>
-        <translation type="unfinished"></translation>
+        <translation>Geef de eigenschappen van uitvoerbestanden op.</translation>
     </message>
     <message>
         <source>Directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Directory</translation>
     </message>
     <message>
         <source>File name</source>
-        <translation type="unfinished"></translation>
+        <translation>Bestandsnaam</translation>
     </message>
     <message>
         <source>Prefix :</source>
-        <translation type="unfinished"></translation>
+        <translation>Voorvoegsel :</translation>
     </message>
     <message>
         <source>Suffix length :</source>
-        <translation type="unfinished"></translation>
+        <translation>Achtervoegsel lengte:</translation>
     </message>
     <message>
         <source>Format :</source>
-        <translation type="unfinished"></translation>
+        <translation>Formaat :</translation>
     </message>
     <message>
         <source>PNG (*.png)</source>
-        <translation type="unfinished"></translation>
+        <translation>PNG (*.png)</translation>
     </message>
     <message>
         <source>.png</source>
-        <translation type="unfinished"></translation>
+        <translation>.png</translation>
     </message>
     <message>
         <source>JPEG (*.jpg)</source>
-        <translation type="unfinished"></translation>
+        <translation>JPEG (*.jpg)</translation>
     </message>
     <message>
         <source>.jpg</source>
-        <translation type="unfinished"></translation>
+        <translation>.jpg</translation>
     </message>
     <message>
         <source>Windows Bitmap (*.bmp)</source>
-        <translation type="unfinished"></translation>
+        <translation>Windows-bitmap (*.bmp)</translation>
     </message>
     <message>
         <source>.bmp</source>
-        <translation type="unfinished"></translation>
+        <translation>.bmp</translation>
     </message>
     <message>
         <source>Portable Bitmap (*.ppm)</source>
-        <translation type="unfinished"></translation>
+        <translation>Draagbare bitmap (*.ppm)</translation>
     </message>
     <message>
         <source>.ppm</source>
-        <translation type="unfinished"></translation>
+        <translation>.ppm</translation>
     </message>
     <message>
         <source>X11 Bitmap (*.xbm)</source>
-        <translation type="unfinished"></translation>
+        <translation>X11 Bitmap (*.xbm)</translation>
     </message>
     <message>
         <source>.xbm</source>
-        <translation type="unfinished"></translation>
+        <translation>.xbm</translation>
     </message>
     <message>
         <source>Prefix</source>
-        <translation type="unfinished"></translation>
+        <translation>Voorvoegsel</translation>
     </message>
     <message>
         <source>Output file</source>
-        <translation type="unfinished"></translation>
+        <translation>Uitvoerbestand</translation>
     </message>
     <message>
         <source>img_</source>
-        <translation type="unfinished"></translation>
+        <translation>img_</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Waarschuwing</translation>
     </message>
     <message>
         <source>Folder %1 does not exists. Do you want to it now?</source>
-        <translation type="unfinished"></translation>
+        <translation>Map %1 bestaat niet. Wil je het nu?</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Fout</translation>
     </message>
     <message>
         <source>Creating folder %1 failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Map maken %1 mislukt.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotGoogleEarthSettingPage</name>
     <message>
         <source>WizardPage</source>
-        <translation type="unfinished"></translation>
+        <translation>WizardPagina</translation>
     </message>
     <message>
         <source>Output to the Google Earth</source>
-        <translation type="unfinished"></translation>
+        <translation>Uitvoer naar Google Earth</translation>
     </message>
     <message>
         <source>Please specify the properties of output files.</source>
-        <translation type="unfinished"></translation>
+        <translation>Geef de eigenschappen van uitvoerbestanden op.</translation>
     </message>
     <message>
         <source>Note: This feature is available only when a coordinate system has been specified.</source>
-        <translation type="unfinished"></translation>
+        <translation>Opmerking: deze functie is alleen beschikbaar als er een coördinatensysteem is opgegeven.</translation>
     </message>
     <message>
         <source>KML file name</source>
-        <translation type="unfinished"></translation>
+        <translation>KML-bestandsnaam</translation>
     </message>
     <message>
         <source>Name :</source>
-        <translation type="unfinished"></translation>
+        <translation>Naam :</translation>
     </message>
     <message>
         <source>output.kml</source>
-        <translation type="unfinished"></translation>
+        <translation>output.kml</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotIntroductionPage</name>
     <message>
         <source>Introduction</source>
-        <translation type="unfinished"></translation>
+        <translation>Invoering</translation>
     </message>
     <message>
         <source>Use this wizard to specify the requirements to generate continuous snapshot output.</source>
-        <translation type="unfinished"></translation>
+        <translation>Gebruik deze wizard om de vereisten op te geven voor het genereren van continue snapshot-uitvoer.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotMoviePropertyPage</name>
     <message>
         <source>WizardPage</source>
-        <translation type="unfinished"></translation>
+        <translation>WizardPagina</translation>
     </message>
     <message>
         <source>Movie Properties</source>
-        <translation type="unfinished"></translation>
+        <translation>Filmeigenschappen</translation>
     </message>
     <message>
         <source>Please specify the properties of output files.</source>
-        <translation type="unfinished"></translation>
+        <translation>Geef de eigenschappen van uitvoerbestanden op.</translation>
     </message>
     <message>
         <source>Output movie files</source>
-        <translation type="unfinished"></translation>
+        <translation>Filmbestanden uitvoeren</translation>
     </message>
     <message>
         <source>File name</source>
-        <translation type="unfinished"></translation>
+        <translation>Bestandsnaam</translation>
     </message>
     <message>
         <source>Play speed</source>
-        <translation type="unfinished"></translation>
+        <translation>Afspeelsnelheid</translation>
     </message>
     <message>
         <source>Specify movie length[sec]</source>
-        <translation type="unfinished"></translation>
+        <translation>Specificeer filmlengte [sec]</translation>
     </message>
     <message>
         <source>Specify frames per second</source>
-        <translation type="unfinished"></translation>
+        <translation>Specificeer frames per seconde</translation>
     </message>
     <message>
         <source>Profile:</source>
-        <translation type="unfinished"></translation>
+        <translation>Profiel:</translation>
     </message>
     <message>
         <source>Output file</source>
-        <translation type="unfinished"></translation>
+        <translation>Uitvoerbestand</translation>
     </message>
     <message>
         <source>Default</source>
-        <translation type="unfinished"></translation>
+        <translation>Standaard</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotTimestepSettingPage</name>
     <message>
         <source>WizardPage</source>
-        <translation type="unfinished"></translation>
+        <translation>WizardPagina</translation>
     </message>
     <message>
         <source>Timestep Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Tijdstapinstelling</translation>
     </message>
     <message>
         <source>Please specify the start time step, stop time step, and the skip rate.</source>
-        <translation type="unfinished"></translation>
+        <translation>Geef de starttijdstap, stoptijdstap en de overslagsnelheid op.</translation>
     </message>
     <message>
         <source>start :</source>
-        <translation type="unfinished"></translation>
+        <translation>begin :</translation>
     </message>
     <message>
         <source>stop :</source>
-        <translation type="unfinished"></translation>
+        <translation>stop :</translation>
     </message>
     <message>
         <source>Skip rate :</source>
-        <translation type="unfinished"></translation>
+        <translation>Overslaan tarief:</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWindowSelectionPage</name>
     <message>
         <source>WizardPage</source>
-        <translation type="unfinished"></translation>
+        <translation>WizardPagina</translation>
     </message>
     <message>
         <source>Window Selection</source>
-        <translation type="unfinished"></translation>
+        <translation>Vensterselectie</translation>
     </message>
     <message>
         <source>Please select target windows and specify how you want to output files.</source>
-        <translation type="unfinished"></translation>
+        <translation>Selecteer doelvensters en specificeer hoe u bestanden wilt uitvoeren.</translation>
     </message>
     <message>
         <source>Target windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Doelvensters</translation>
     </message>
     <message>
         <source>Output file</source>
-        <translation type="unfinished"></translation>
+        <translation>Uitvoerbestand</translation>
     </message>
     <message>
         <source>In one file</source>
-        <translation type="unfinished"></translation>
+        <translation>In één bestand</translation>
     </message>
     <message>
         <source>Respectively</source>
-        <translation type="unfinished"></translation>
+        <translation>Respectievelijk</translation>
     </message>
     <message>
         <source>Layout</source>
-        <translation type="unfinished"></translation>
+        <translation>Lay-out</translation>
     </message>
     <message>
         <source>As is</source>
-        <translation type="unfinished"></translation>
+        <translation>zoals het is</translation>
     </message>
     <message>
         <source>Horizontally</source>
-        <translation type="unfinished"></translation>
+        <translation>horizontaal</translation>
     </message>
     <message>
         <source>Vertically</source>
-        <translation type="unfinished"></translation>
+        <translation>Verticaal</translation>
     </message>
     <message>
         <source>Background</source>
-        <translation type="unfinished"></translation>
+        <translation>Achtergrond</translation>
     </message>
     <message>
         <source>white</source>
-        <translation type="unfinished"></translation>
+        <translation>wit</translation>
     </message>
     <message>
         <source>transparent</source>
-        <translation type="unfinished"></translation>
+        <translation>transparant</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Waarschuwing</translation>
     </message>
     <message>
         <source>More than one visualization window has transparent region. They can not saved into transparent background images. Please select white background, or cancel and disable transparency for contours etc.</source>
-        <translation type="unfinished"></translation>
+        <translation>Meer dan één visualisatievenster heeft een transparant gebied. Ze kunnen niet worden opgeslagen in transparante achtergrondafbeeldingen. Selecteer een witte achtergrond of annuleer en schakel transparantie voor contouren enz. uit.</translation>
     </message>
     <message>
         <source>No window is currently selected.</source>
-        <translation type="unfinished"></translation>
+        <translation>Er is momenteel geen venster geselecteerd.</translation>
     </message>
 </context>
 <context>
     <name>FlushRequester</name>
     <message>
         <source>Waiting for solver to copy CGNS file...</source>
-        <translation type="unfinished"></translation>
+        <translation>Wachten op oplosser om CGNS-bestand te kopiëren...</translation>
     </message>
 </context>
 <context>
     <name>GoogleMapImageImportSettingDialog</name>
     <message>
         <source>Google Map Image Import Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Instelling voor importeren van Google Map-afbeeldingen</translation>
     </message>
     <message>
         <source>Zoom:</source>
-        <translation type="unfinished"></translation>
+        <translation>Zoom:</translation>
     </message>
     <message>
         <source>Map Type:</source>
-        <translation type="unfinished"></translation>
+        <translation>Kaartsoort:</translation>
     </message>
     <message>
         <source>Satellite Photo</source>
-        <translation type="unfinished"></translation>
+        <translation>Satellietfoto</translation>
     </message>
     <message>
         <source>Roadmap</source>
-        <translation type="unfinished"></translation>
+        <translation>stappenplan</translation>
     </message>
     <message>
         <source>Terrain</source>
-        <translation type="unfinished"></translation>
+        <translation>Terrein</translation>
     </message>
     <message>
         <source>Hybrid</source>
-        <translation type="unfinished"></translation>
+        <translation>Hybride</translation>
     </message>
 </context>
 <context>
     <name>InstallerTool</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Waarschuwing</translation>
     </message>
     <message>
         <source>When you update iRIC, you need to close iRIC before launching iRIC Maintainance.
 When you have iRIC windows other than this, close them manually.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wanneer u iRIC bijwerkt, moet u iRIC sluiten voordat u iRIC-onderhoud start. Als u andere iRIC-vensters hebt, sluit u deze handmatig.</translation>
     </message>
     <message>
         <source>Close iRIC and launch iRIC Maintainance</source>
-        <translation type="unfinished"></translation>
+        <translation>Sluit iRIC en start iRIC Maintenance</translation>
     </message>
 </context>
 <context>
     <name>IntroductionPage</name>
     <message>
         <source>Introduction</source>
-        <translation type="unfinished"></translation>
+        <translation>Invoering</translation>
     </message>
     <message>
         <source>This function is intended to be used by solver developers or grid creating program developers, not users.
 This wizard will generate or update translation files for solver definition files and grid creating program definition files those are registered to iRIC system. You need to specify the solver (or grid creating program) name, and the list of languages for those you want to create or update translation files.</source>
-        <translation type="unfinished"></translation>
+        <translation>Deze functie is bedoeld om te worden gebruikt door ontwikkelaars van oplossers of ontwikkelaars van programma's voor het maken van rasters, niet door gebruikers. Deze wizard zal vertaalbestanden genereren of bijwerken voor oplosserdefinitiebestanden en programmadefinitiebestanden voor het maken van rasters die zijn geregistreerd in het iRIC-systeem. U moet de naam van de oplosser (of het programma voor het maken van rasters) opgeven en de lijst met talen voor degenen die u vertaalbestanden wilt maken of bijwerken.</translation>
     </message>
 </context>
 <context>
     <name>MouseHelpDialog</name>
     <message>
         <source>Mouse Hint</source>
-        <translation type="unfinished"></translation>
+        <translation>Muis hint</translation>
     </message>
 </context>
 <context>
     <name>NewProjectSolverSelectingDialog</name>
     <message>
         <source>Select Solver</source>
-        <translation type="unfinished"></translation>
+        <translation>Selecteer Oplosser</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
-        <translation type="unfinished"></translation>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
+        <translation>Wanneer u een nieuw project aanmaakt, moet u de oplosser selecteren die u voor de berekening wilt gebruiken. Selecteer een oplosser en druk op de knop "OK".</translation>
     </message>
 </context>
 <context>
     <name>PeriodicalUpdateChecker</name>
     <message>
         <source>Check for Update</source>
-        <translation type="unfinished"></translation>
+        <translation>Controleer op updates</translation>
     </message>
     <message>
         <source>%1 days have passed after launching iRIC Maintainance for the last time.
 Do you want to launch iRIC Maintainance?</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 dagen zijn verstreken na de lancering van iRIC Maintenance voor de laatste keer. Wilt u iRIC Maintenance starten?</translation>
     </message>
     <message>
         <source>Launch iRIC Maintainance</source>
-        <translation type="unfinished"></translation>
+        <translation>Start iRIC-onderhoud</translation>
     </message>
 </context>
 <context>
     <name>PreferenceDialog</name>
     <message>
         <source>Preferences</source>
-        <translation type="unfinished"></translation>
+        <translation>Voorkeuren</translation>
     </message>
     <message>
         <source>General</source>
-        <translation type="unfinished"></translation>
+        <translation>Algemeen</translation>
     </message>
     <message>
         <source>Graphics Default</source>
-        <translation type="unfinished"></translation>
+        <translation>Grafische standaard</translation>
     </message>
     <message>
         <source>Grid Checking</source>
-        <translation type="unfinished"></translation>
+        <translation>Rastercontrole</translation>
     </message>
     <message>
         <source>River Survey Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Rivieronderzoeksgegevens</translation>
     </message>
     <message>
         <source>Network Proxy</source>
-        <translation type="unfinished"></translation>
+        <translation>Netwerkproxy</translation>
     </message>
     <message>
         <source>Background Images (Internet)</source>
-        <translation type="unfinished"></translation>
+        <translation>Achtergrondafbeeldingen (internet)</translation>
     </message>
     <message>
         <source>Web Elevation Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Webhoogtegegevens</translation>
     </message>
     <message>
         <source>Background Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Achtergrondraster</translation>
     </message>
 </context>
 <context>
     <name>PreferencePageBackgroundGrid</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formulier</translation>
     </message>
     <message>
         <source>River Survey Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Rivieronderzoeksgegevens</translation>
     </message>
     <message>
         <source>Cross Section Direction:</source>
-        <translation type="unfinished"></translation>
+        <translation>Dwarsdoorsnederichting:</translation>
     </message>
     <message>
         <source>Between Cross Sections:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tussen dwarsdoorsneden:</translation>
     </message>
 </context>
 <context>
     <name>PreferencePageGeneral</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formulier</translation>
     </message>
     <message>
         <source>Language</source>
-        <translation type="unfinished"></translation>
+        <translation>Taal</translation>
     </message>
     <message>
         <source>Note: Language setting is applied when iRIC is launched next time.</source>
-        <translation type="unfinished"></translation>
+        <translation>Opmerking: de taalinstelling wordt toegepast wanneer iRIC de volgende keer wordt gestart.</translation>
     </message>
     <message>
         <source>Working Directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Werkmap</translation>
     </message>
     <message>
         <source>Note: Working Directory is used to store files used by iRIC.</source>
-        <translation type="unfinished"></translation>
+        <translation>Opmerking: Werkmap wordt gebruikt om bestanden op te slaan die door iRIC worden gebruikt.</translation>
     </message>
     <message>
         <source>Copy folder project to Working Directory when opened</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopieer mapproject naar werkmap wanneer geopend</translation>
     </message>
     <message>
         <source>Checking for Update</source>
-        <translation type="unfinished"></translation>
+        <translation>Controleren op updates</translation>
     </message>
     <message>
         <source>Check for update periodically</source>
-        <translation type="unfinished"></translation>
+        <translation>Controleer regelmatig op updates</translation>
     </message>
     <message>
         <source>Interval between checking (days):</source>
-        <translation type="unfinished"></translation>
+        <translation>Interval tussen controle (dagen):</translation>
     </message>
     <message>
         <source>Cell Culling on Drawing Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Cel ruimen op tekenraster</translation>
     </message>
     <message>
         <source>Enable</source>
-        <translation type="unfinished"></translation>
+        <translation>Inschakelen</translation>
     </message>
     <message>
         <source>Maximum numbers of cells drawn:</source>
-        <translation type="unfinished"></translation>
+        <translation>Maximaal aantal getrokken cellen:</translation>
     </message>
     <message>
         <source>Maximum numbers of indices drawn:</source>
-        <translation type="unfinished"></translation>
+        <translation>Maximaal aantal getrokken indices:</translation>
     </message>
     <message>
         <source>Warning: If you disable culling and create a very big grid, maybe iRIC GUI will crash because of lack of memory.</source>
-        <translation type="unfinished"></translation>
+        <translation>Waarschuwing: als u ruimen uitschakelt en een zeer groot raster maakt, kan de iRIC GUI crashen vanwege gebrek aan geheugen.</translation>
     </message>
     <message>
         <source>Undo</source>
-        <translation type="unfinished"></translation>
+        <translation>ongedaan maken</translation>
     </message>
     <message>
         <source>Undo Limit:</source>
-        <translation type="unfinished"></translation>
+        <translation>Limiet ongedaan maken:</translation>
     </message>
     <message>
         <source>Solver console</source>
-        <translation type="unfinished"></translation>
+        <translation>Oplosserconsole</translation>
     </message>
     <message>
         <source>Maximum lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Maximale lijnen</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Fout</translation>
     </message>
     <message>
         <source>Working directory contains non-ASCII characters.</source>
-        <translation type="unfinished"></translation>
+        <translation>Werkmap bevat niet-ASCII-tekens.</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Waarschuwing</translation>
     </message>
     <message>
         <source>Working directory is changed, but the new working directory is used AFTER exiting iRIC GUI!</source>
-        <translation type="unfinished"></translation>
+        <translation>De werkdirectory is gewijzigd, maar de nieuwe werkdirectory wordt gebruikt NADAT de iRIC GUI is afgesloten!</translation>
     </message>
     <message>
         <source>Python path</source>
-        <translation type="unfinished"></translation>
+        <translation>Python-pad</translation>
     </message>
     <message>
         <source>Note: Used to run solvers written in Python.</source>
-        <translation type="unfinished"></translation>
+        <translation>Opmerking: wordt gebruikt om oplossers uit te voeren die in Python zijn geschreven.</translation>
     </message>
 </context>
 <context>
     <name>PreferencePageGraphicsDefault</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formulier</translation>
     </message>
     <message>
         <source>Grid Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Rasterkleur</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Kleur:</translation>
     </message>
     <message>
         <source>Color Map</source>
-        <translation type="unfinished"></translation>
+        <translation>Kleurenkaart</translation>
     </message>
     <message>
         <source>Background Image</source>
-        <translation type="unfinished"></translation>
+        <translation>Achtergrond afbeelding</translation>
     </message>
     <message>
         <source>Max Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Maximale grootte:</translation>
     </message>
     <message>
         <source>Note: Loading an image whose width (or height) is larger than the maximum, will be automatically resized.</source>
-        <translation type="unfinished"></translation>
+        <translation>Opmerking: het laden van een afbeelding waarvan de breedte (of hoogte) groter is dan het maximum, wordt automatisch aangepast.</translation>
     </message>
     <message>
         <source>Vector</source>
-        <translation type="unfinished"></translation>
+        <translation>Vector</translation>
     </message>
     <message>
         <source>Factor:</source>
-        <translation type="unfinished"></translation>
+        <translation>Factor:</translation>
     </message>
     <message>
         <source>Arrow Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Pijl grootte:</translation>
     </message>
     <message>
         <source>Stream Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Stroomlijnen</translation>
     </message>
     <message>
         <source>Particles</source>
-        <translation type="unfinished"></translation>
+        <translation>deeltjes</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Maat:</translation>
     </message>
     <message>
         <source>pixels</source>
-        <translation type="unfinished"></translation>
+        <translation>pixels</translation>
     </message>
 </context>
 <context>
     <name>PreferencePageGridCheck</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formulier</translation>
     </message>
     <message>
         <source>Checking Timing</source>
-        <translation type="unfinished"></translation>
+        <translation>Timing controleren</translation>
     </message>
     <message>
         <source>Before Running Solver</source>
-        <translation type="unfinished"></translation>
+        <translation>Voordat u Oplosser uitvoert</translation>
     </message>
     <message>
         <source>Before Exporting Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Voordat u het raster exporteert</translation>
     </message>
     <message>
         <source>Attributes to Check</source>
-        <translation type="unfinished"></translation>
+        <translation>Attributen om te controleren</translation>
     </message>
     <message>
         <source>Whether cell edges intersect</source>
-        <translation type="unfinished"></translation>
+        <translation>Of celranden elkaar kruisen</translation>
     </message>
     <message>
         <source>Check aspect ratio of cell edges is less than</source>
-        <translation type="unfinished"></translation>
+        <translation>Controleer of de beeldverhouding van celranden kleiner is dan</translation>
     </message>
     <message>
         <source>Check variation of cell edge length is less than</source>
-        <translation type="unfinished"></translation>
+        <translation>Controleer of de variatie van de celrandlengte kleiner is dan</translation>
     </message>
     <message>
         <source>I-direction: </source>
-        <translation type="unfinished"></translation>
+        <translation>ik-richting:</translation>
     </message>
     <message>
         <source>J-direction: </source>
-        <translation type="unfinished"></translation>
+        <translation>J-richting:</translation>
     </message>
     <message>
         <source>Check angle of cell is more than</source>
-        <translation type="unfinished"></translation>
+        <translation>Controleer hoek van cel is meer dan</translation>
     </message>
     <message>
         <source>Note: Settings on this page are applied only to structured grids.</source>
-        <translation type="unfinished"></translation>
+        <translation>Opmerking: instellingen op deze pagina worden alleen toegepast op gestructureerde rasters.</translation>
     </message>
 </context>
 <context>
     <name>PreferencePageProxy</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formulier</translation>
     </message>
     <message>
         <source>Do not use proxy</source>
-        <translation type="unfinished"></translation>
+        <translation>Gebruik geen proxy</translation>
     </message>
     <message>
         <source>Use system proxy setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Gebruik systeemproxy-instelling</translation>
     </message>
     <message>
         <source>Use custom proxy setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Aangepaste proxy-instelling gebruiken</translation>
     </message>
     <message>
         <source>HTTP Proxy: </source>
-        <translation type="unfinished"></translation>
+        <translation>Http-proxy:</translation>
     </message>
     <message>
         <source>Port:</source>
-        <translation type="unfinished"></translation>
+        <translation>Haven:</translation>
     </message>
     <message>
         <source>Need authentication for HTTP proxy</source>
-        <translation type="unfinished"></translation>
+        <translation>Verificatie nodig voor HTTP-proxy</translation>
     </message>
     <message>
         <source>User name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Gebruikersnaam:</translation>
     </message>
     <message>
         <source>Password:</source>
-        <translation type="unfinished"></translation>
+        <translation>Wachtwoord:</translation>
     </message>
 </context>
 <context>
     <name>PreferencePageRiverSurvey</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formulier</translation>
     </message>
     <message>
         <source>List of fractions for cross section editing:</source>
-        <translation type="unfinished"></translation>
+        <translation>Lijst met breuken voor het bewerken van doorsneden:</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation type="unfinished"></translation>
+        <translation>Toevoegen (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Verwijderen (&amp;D)</translation>
     </message>
     <message>
         <source>&amp;Restore Default</source>
-        <translation type="unfinished"></translation>
+        <translation>Standaard herstellen (&amp;R)</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informatie</translation>
     </message>
     <message>
         <source>This value already exists in the list.</source>
-        <translation type="unfinished"></translation>
+        <translation>Deze waarde bestaat al in de lijst.</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Waarschuwing</translation>
     </message>
     <message>
         <source>Are you sure you want to delete the selected item?</source>
-        <translation type="unfinished"></translation>
+        <translation>Weet u zeker dat u het geselecteerde item wilt verwijderen?</translation>
     </message>
     <message>
         <source>Are you sure you want to restore default values?</source>
-        <translation type="unfinished"></translation>
+        <translation>Weet u zeker dat u de standaardwaarden wilt herstellen?</translation>
     </message>
 </context>
 <context>
     <name>PreferencePageRiverSurveyFractionAddDialog</name>
     <message>
         <source>Add fraction</source>
-        <translation type="unfinished"></translation>
+        <translation>breuk toevoegen</translation>
     </message>
     <message>
         <source>Specify the fraction to add:</source>
-        <translation type="unfinished"></translation>
+        <translation>Geef de breuk op die moet worden toegevoegd:</translation>
     </message>
     <message>
         <source>1:</source>
-        <translation type="unfinished"></translation>
+        <translation>1:</translation>
     </message>
 </context>
 <context>
     <name>PreferencePageTms</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formulier</translation>
     </message>
     <message>
         <source>&amp;Up</source>
-        <translation type="unfinished"></translation>
+        <translation>Omhoog (&amp;U)</translation>
     </message>
     <message>
         <source>&amp;Down</source>
-        <translation type="unfinished"></translation>
+        <translation>Omlaag (&amp;D)</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation type="unfinished"></translation>
+        <translation>Toevoegen (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation type="unfinished"></translation>
+        <translation>Bewerking (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Verwijderen (&amp;D)</translation>
     </message>
     <message>
         <source>&amp;Restore Default</source>
-        <translation type="unfinished"></translation>
+        <translation>Standaard herstellen (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Input Google Maps API key</source>
-        <translation type="unfinished"></translation>
+        <translation>Voer Google Maps API-sleutel in (&amp;I)</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Google Maps Platform now need API key to use Google Maps through iRIC. Please get your own Google Maps API key and input here, to use Google Maps images as background images on Pre-processor and on 2D Post-Processing Windows.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Google Maps Platform heeft nu een API-sleutel nodig om Google Maps te gebruiken via iRIC. Vraag uw eigen Google Maps API-sleutel aan en voer deze hier in om Google Maps-afbeeldingen te gebruiken als achtergrondafbeeldingen op Pre-processor en op 2D Post-Processing Windows.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Background Image (Internet) Edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Achtergrondafbeelding (internet) Bewerken</translation>
     </message>
     <message>
         <source>Input Google Maps API Key</source>
-        <translation type="unfinished"></translation>
+        <translation>Voer Google Maps API-sleutel in</translation>
     </message>
     <message>
         <source>API Key: </source>
-        <translation type="unfinished"></translation>
+        <translation>API sleutel:</translation>
     </message>
 </context>
 <context>
     <name>PreferencePageTmsAddDialog</name>
     <message>
         <source>Background Image (Internet) Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Achtergrondafbeelding (internet) Toevoegen</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Naam:</translation>
     </message>
     <message>
         <source>URL:</source>
-        <translation type="unfinished"></translation>
+        <translation>URL:</translation>
     </message>
     <message>
         <source>Example: http://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png</source>
-        <translation type="unfinished"></translation>
+        <translation>Voorbeeld: http://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png</translation>
     </message>
     <message>
         <source>Max Zoom Level:</source>
-        <translation type="unfinished"></translation>
+        <translation>Maximaal zoomniveau:</translation>
     </message>
 </context>
 <context>
     <name>PreferencePageWebCsvTile</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formulier</translation>
     </message>
     <message>
         <source>&amp;Up</source>
-        <translation type="unfinished"></translation>
+        <translation>Omhoog (&amp;U)</translation>
     </message>
     <message>
         <source>&amp;Down</source>
-        <translation type="unfinished"></translation>
+        <translation>Omlaag (&amp;D)</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation type="unfinished"></translation>
+        <translation>Toevoegen (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation type="unfinished"></translation>
+        <translation>Bewerking (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Verwijderen (&amp;D)</translation>
     </message>
     <message>
         <source>&amp;Restore Default</source>
-        <translation type="unfinished"></translation>
+        <translation>Standaard herstellen (&amp;R)</translation>
     </message>
     <message>
         <source>Edit Web Elevation Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Webhoogtegegevens bewerken</translation>
     </message>
 </context>
 <context>
     <name>PreferencePageWebCsvTileAddDialog</name>
     <message>
         <source>Add Web Elevation Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Web Elevation-gegevens toevoegen</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Naam:</translation>
     </message>
     <message>
         <source>Min zoom level:</source>
-        <translation type="unfinished"></translation>
+        <translation>Minimaal zoomniveau:</translation>
     </message>
     <message>
         <source>Max zoom level:</source>
-        <translation type="unfinished"></translation>
+        <translation>Maximaal zoomniveau:</translation>
     </message>
     <message>
         <source>URL:</source>
-        <translation type="unfinished"></translation>
+        <translation>URL:</translation>
     </message>
     <message>
         <source>Example: http://cyberjapandata.gsi.go.jp/xyz/dem/{z}/{x}/{y}.txt</source>
-        <translation type="unfinished"></translation>
+        <translation>Voorbeeld: http://cyberjapandata.gsi.go.jp/xyz/dem/{z}/{x}/{y}.txt</translation>
     </message>
 </context>
 <context>
     <name>ProjectPropertyBasicInfoWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formulier</translation>
     </message>
     <message>
         <source>Filename:</source>
-        <translation type="unfinished"></translation>
+        <translation>Bestandsnaam:</translation>
     </message>
     <message>
         <source>Last update time:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tijd laatste update:</translation>
     </message>
     <message>
         <source>Solver:</source>
-        <translation type="unfinished"></translation>
+        <translation>Oplosser:</translation>
     </message>
     <message>
         <source>Grid(s):</source>
-        <translation type="unfinished"></translation>
+        <translation>Rooster(s):</translation>
     </message>
     <message>
         <source>Calculation condition:</source>
-        <translation type="unfinished"></translation>
+        <translation>Rekenvoorwaarde:</translation>
     </message>
     <message>
         <source>Calculation result:</source>
-        <translation type="unfinished"></translation>
+        <translation>Berekeningsresultaat:</translation>
     </message>
     <message>
         <source>Coordinate System:</source>
-        <translation type="unfinished"></translation>
+        <translation>Coördinatie systeem:</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation type="unfinished"></translation>
+        <translation>Bewerking (&amp;E)...</translation>
     </message>
     <message>
         <source>Coordinate Offset:</source>
-        <translation type="unfinished"></translation>
+        <translation>Coördinaten offset:</translation>
     </message>
     <message>
         <source>Date for t = 0:</source>
-        <translation type="unfinished"></translation>
+        <translation>Datum voor t = 0:</translation>
     </message>
     <message>
         <source>(No data)</source>
-        <translation type="unfinished"></translation>
+        <translation>(Geen informatie)</translation>
     </message>
     <message>
         <source>(Not saved yet)</source>
-        <translation type="unfinished"></translation>
+        <translation>(Nog niet opgeslagen)</translation>
     </message>
     <message>
         <source>Setup finished</source>
-        <translation type="unfinished"></translation>
+        <translation>Installatie voltooid</translation>
     </message>
     <message>
         <source>Setup unfinished</source>
-        <translation type="unfinished"></translation>
+        <translation>Installatie onvoltooid</translation>
     </message>
     <message>
         <source>Setup partially unfinished</source>
-        <translation type="unfinished"></translation>
+        <translation>Setup gedeeltelijk onvoltooid</translation>
     </message>
     <message>
         <source>Already set</source>
-        <translation type="unfinished"></translation>
+        <translation>Al ingesteld</translation>
     </message>
     <message>
         <source>Not set yet</source>
-        <translation type="unfinished"></translation>
+        <translation>Nog niet ingesteld</translation>
     </message>
     <message>
         <source>Data exists</source>
-        <translation type="unfinished"></translation>
+        <translation>Gegevens bestaan</translation>
     </message>
     <message>
         <source>No data</source>
-        <translation type="unfinished"></translation>
+        <translation>Geen informatie</translation>
     </message>
     <message>
         <source>(Not specified)</source>
-        <translation type="unfinished"></translation>
+        <translation>(Niet gespecificeerd)</translation>
     </message>
 </context>
 <context>
     <name>ProjectPropertyDialog</name>
     <message>
         <source>Project Property</source>
-        <translation type="unfinished"></translation>
+        <translation>Projecteigendom</translation>
     </message>
     <message>
         <source>Basic Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Basis informatie</translation>
     </message>
 </context>
 <context>
     <name>ProjectTypeSelectDialog</name>
     <message>
         <source>Select How to Save Project</source>
-        <translation type="unfinished"></translation>
+        <translation>Selecteer Hoe project op te slaan</translation>
     </message>
     <message>
         <source>Please select how to save project from the followings:</source>
-        <translation type="unfinished"></translation>
+        <translation>Selecteer hoe u het project wilt opslaan uit de volgende opties:</translation>
     </message>
     <message>
         <source>Save as File (*.ipro)</source>
-        <translation type="unfinished"></translation>
+        <translation>Opslaan als bestand (*.ipro)</translation>
     </message>
     <message>
         <source>Save as Project</source>
-        <translation type="unfinished"></translation>
+        <translation>Opslaan als project</translation>
     </message>
 </context>
 <context>
     <name>SettingPage</name>
     <message>
         <source>Select Program and Languages</source>
-        <translation type="unfinished"></translation>
+        <translation>Selecteer Programma en Talen</translation>
     </message>
     <message>
         <source>Specify for which solver (or grid creating program) you want to create or update translation files.</source>
-        <translation type="unfinished"></translation>
+        <translation>Geef op voor welke solver (of programma voor het maken van rasters) u vertaalbestanden wilt maken of bijwerken.</translation>
     </message>
     <message>
         <source>Target Program</source>
-        <translation type="unfinished"></translation>
+        <translation>Doelprogramma</translation>
     </message>
     <message>
         <source>&amp;Solver</source>
-        <translation type="unfinished"></translation>
+        <translation>Oplosser (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;Grid Creating Program</source>
-        <translation type="unfinished"></translation>
+        <translation>Programma voor het maken van rasters (&amp;G)</translation>
     </message>
     <message>
         <source>Languages</source>
-        <translation type="unfinished"></translation>
+        <translation>Talen</translation>
     </message>
 </context>
 <context>
     <name>SolverDefinitionAbstractDialog</name>
     <message>
         <source>Solver Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Oplosserinformatie</translation>
     </message>
     <message>
         <source>Basic Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Basis informatie</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Naam</translation>
     </message>
     <message>
         <source>Version</source>
-        <translation type="unfinished"></translation>
+        <translation>Versie</translation>
     </message>
     <message>
         <source>Copyright</source>
-        <translation type="unfinished"></translation>
+        <translation>auteursrechten</translation>
     </message>
     <message>
         <source>Release</source>
-        <translation type="unfinished"></translation>
+        <translation>Uitgave</translation>
     </message>
     <message>
         <source>Homepage</source>
-        <translation type="unfinished"></translation>
+        <translation>Startpagina</translation>
     </message>
     <message>
         <source>Description</source>
-        <translation type="unfinished"></translation>
+        <translation>Beschrijving</translation>
     </message>
     <message>
         <source>License</source>
-        <translation type="unfinished"></translation>
+        <translation>Vergunning</translation>
     </message>
 </context>
 <context>
     <name>SolverDefinitionAbstractWidget</name>
     <message>
         <source>Solver Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Oplosserinformatie</translation>
     </message>
     <message>
         <source>Basic Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Basis informatie</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Naam</translation>
     </message>
     <message>
         <source>Version</source>
-        <translation type="unfinished"></translation>
+        <translation>Versie</translation>
     </message>
     <message>
         <source>Copyright</source>
-        <translation type="unfinished"></translation>
+        <translation>auteursrechten</translation>
     </message>
     <message>
         <source>Release</source>
-        <translation type="unfinished"></translation>
+        <translation>Uitgave</translation>
     </message>
     <message>
         <source>Homepage</source>
-        <translation type="unfinished"></translation>
+        <translation>Startpagina</translation>
     </message>
     <message>
         <source>Description</source>
-        <translation type="unfinished"></translation>
+        <translation>Beschrijving</translation>
     </message>
     <message>
         <source>License</source>
-        <translation type="unfinished"></translation>
+        <translation>Vergunning</translation>
     </message>
 </context>
 <context>
     <name>SolverDefinitionList</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Waarschuwing</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
+        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
 %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Er is een fout opgetreden bij het laden van het oplosserdefinitiebestand in de map "%1". Deze oplosser wordt genegeerd. %2</translation>
     </message>
 </context>
 <context>
     <name>SolverDefinitionListDialog</name>
     <message>
         <source>Solver List</source>
-        <translation type="unfinished"></translation>
+        <translation>Oplosserlijst</translation>
     </message>
     <message>
         <source>&amp;Show Detail...</source>
-        <translation type="unfinished"></translation>
+        <translation>Laat details zien (&amp;S)...</translation>
     </message>
     <message>
         <source>Select solver to open project</source>
-        <translation type="unfinished"></translation>
+        <translation>Selecteer oplosser om project te openen</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Naam</translation>
     </message>
     <message>
         <source>Version</source>
-        <translation type="unfinished"></translation>
+        <translation>Versie</translation>
     </message>
 </context>
 <context>
     <name>SolverDefinitionTranslationUpdateWizard</name>
     <message>
         <source>Definition File Translation Update Wizard</source>
-        <translation type="unfinished"></translation>
+        <translation>Wizard voor het bijwerken van de definitie van bestandsvertaling</translation>
     </message>
 </context>
 <context>
     <name>StartPageDialog</name>
     <message>
         <source>iRIC Start Page</source>
-        <translation type="unfinished"></translation>
+        <translation>iRIC-startpagina</translation>
     </message>
     <message>
         <source>iRIC </source>
-        <translation type="unfinished"></translation>
+        <translation>iRIC</translation>
     </message>
     <message>
         <source>Welcome to iRIC!
 iRIC can simulate rivers from Colorado River to the Nile.</source>
-        <translation type="unfinished"></translation>
+        <translation>Welkom bij iRIC! iRIC kan rivieren van de Colorado-rivier tot de Nijl simuleren.</translation>
     </message>
     <message>
         <source>Start Simulation Project</source>
-        <translation type="unfinished"></translation>
+        <translation>Simulatieproject starten</translation>
     </message>
     <message>
         <source>Support</source>
-        <translation type="unfinished"></translation>
+        <translation>Steun</translation>
     </message>
 </context>
 <context>
     <name>StartPageLaunchTabWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formulier</translation>
     </message>
     <message>
         <source>Create &amp;New Project...</source>
-        <translation type="unfinished"></translation>
+        <translation>Nieuw project maken (&amp;N)...</translation>
     </message>
     <message>
         <source>&amp;Open Project File...</source>
-        <translation type="unfinished"></translation>
+        <translation>Projectbestand openen (&amp;O)...</translation>
     </message>
     <message>
         <source>Recent Solvers:</source>
-        <translation type="unfinished"></translation>
+        <translation>Recente Oplossers:</translation>
     </message>
     <message>
         <source>Recent Projects:</source>
-        <translation type="unfinished"></translation>
+        <translation>Recente projecten:</translation>
     </message>
 </context>
 <context>
     <name>iRICMainWindow</name>
     <message>
         <source>Ready</source>
-        <translation type="unfinished"></translation>
+        <translation>Klaar</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Fout</translation>
     </message>
     <message>
         <source>Error occured while loading Solver definition file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Er is een fout opgetreden tijdens het laden van het Oplosser-definitiebestand.</translation>
     </message>
     <message>
         <source>Open iRIC project file</source>
-        <translation type="unfinished"></translation>
+        <translation>iRIC-projectbestand openen</translation>
     </message>
     <message>
         <source>iRIC project file (*.ipro project.xml)</source>
-        <translation type="unfinished"></translation>
+        <translation>iRIC-projectbestand (*.ipro project.xml)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Waarschuwing</translation>
     </message>
     <message>
         <source>Project file %1 does not exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>Projectbestand %1 bestaat niet.</translation>
     </message>
     <message>
         <source>Project folder path has to consist of only English characters. Please move or rename the project folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>Het pad van de projectmap mag alleen uit Engelse tekens bestaan. Verplaats of hernoem de projectmap.</translation>
     </message>
     <message>
         <source>This project seems to be opened by another iRIC GUI window. You can not open a project folder from multiple GUI windows.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dit project lijkt te worden geopend door een ander iRIC GUI-venster. U kunt een projectmap niet openen vanuit meerdere GUI-vensters.</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
-        <translation type="unfinished"></translation>
+        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <translation>Het geopende project wordt niet naar de werkmap gekopieerd en u zult de wijzigingen die u in dit project aanbrengt, moeten opslaan. Als u het huidige project wilt behouden, sla het dan eerst op in een ander project.</translation>
     </message>
     <message>
         <source>Open Calculation result</source>
-        <translation type="unfinished"></translation>
+        <translation>Berekeningsresultaat openen</translation>
     </message>
     <message>
         <source>CGNS file (*.cgn *.cgns)</source>
-        <translation type="unfinished"></translation>
+        <translation>CGNS-bestand (*.cgn *.cgns)</translation>
     </message>
     <message>
         <source>CGNS file %1 does not exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>CGNS-bestand %1 bestaat niet.</translation>
     </message>
     <message>
         <source>This Project is modified. Do you want to save?</source>
-        <translation type="unfinished"></translation>
+        <translation>Dit project is gewijzigd. Wil je bewaren?</translation>
     </message>
     <message>
         <source>Save iRIC project file</source>
-        <translation type="unfinished"></translation>
+        <translation>iRIC-projectbestand opslaan</translation>
     </message>
     <message>
         <source>iRIC project file (*.ipro)</source>
-        <translation type="unfinished"></translation>
+        <translation>iRIC-projectbestand (*.ipro)</translation>
     </message>
     <message>
         <source>Save iRIC project</source>
-        <translation type="unfinished"></translation>
+        <translation>iRIC-project opslaan</translation>
     </message>
     <message>
         <source>Project folder path has to consist of only English characters.</source>
-        <translation type="unfinished"></translation>
+        <translation>Het pad van de projectmap mag alleen uit Engelse tekens bestaan.</translation>
     </message>
     <message>
         <source>The project folder has to be empty.</source>
-        <translation type="unfinished"></translation>
+        <translation>De projectmap moet leeg zijn.</translation>
     </message>
     <message>
         <source>Saving project failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Het opslaan van het project is mislukt.</translation>
     </message>
     <message>
         <source>This project has HUGE calculation result, so it cannot be saved as a file (*.ipro). Please save as a project.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dit project heeft een ENORM berekeningsresultaat, dus het kan niet worden opgeslagen als een bestand (*.ipro). Gelieve op te slaan als een project.</translation>
     </message>
     <message>
         <source>This project has too many files, so it cannot be saved as a file (*.ipro). Please save as a project.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dit project heeft te veel bestanden, dus het kan niet als bestand worden opgeslagen (*.ipro). Gelieve op te slaan als een project.</translation>
     </message>
     <message>
         <source>Project successfully saved to %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Project succesvol opgeslagen in %1.</translation>
     </message>
     <message>
         <source>The solver is still running. Really quit?</source>
-        <translation type="unfinished"></translation>
+        <translation>De oplosser is nog steeds actief. Echt stoppen?</translation>
     </message>
     <message>
         <source>This windows does not support snapshot function.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dit venster ondersteunt geen snapshotfunctie.</translation>
     </message>
     <message>
         <source>Copied snapshot to clipboard.</source>
-        <translation type="unfinished"></translation>
+        <translation>Momentopname naar klembord gekopieerd.</translation>
     </message>
     <message>
         <source>This menu is not available while the solver is running.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dit menu is niet beschikbaar terwijl de oplosser actief is.</translation>
     </message>
     <message>
         <source>This windows does not support continuous snapshot function.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dit venster ondersteunt geen continue snapshot-functie.</translation>
     </message>
     <message>
         <source>Continuous Snapshot</source>
-        <translation type="unfinished"></translation>
+        <translation>Doorlopende momentopname</translation>
     </message>
     <message>
         <source>saving continuous snapshot...</source>
-        <translation type="unfinished"></translation>
+        <translation>continue momentopname opslaan...</translation>
     </message>
     <message>
         <source>%1 already exists, and failed to remove it. Movie file is not output.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 bestaat al en kan deze niet verwijderen. Filmbestand wordt niet uitgevoerd.</translation>
     </message>
     <message>
         <source>iRIC %1</source>
-        <translation type="unfinished"></translation>
+        <translation>iRIC %1</translation>
     </message>
     <message>
         <source>Untitled</source>
-        <translation type="unfinished"></translation>
+        <translation>Ongetiteld</translation>
     </message>
     <message>
         <source>%1 - iRIC %2 [%3]</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 - iRIC %2 [ %3 ]</translation>
     </message>
     <message>
         <source>The solver is running now. Please stop solver, to do this action.</source>
-        <translation type="unfinished"></translation>
+        <translation>De oplosser is nu actief. Stop de oplosser om deze actie uit te voeren.</translation>
     </message>
     <message>
         <source>&amp;%1 %2</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 %2 (&amp;%)</translation>
     </message>
     <message>
         <source>http://iric-gui-user-manual.readthedocs.io/en/latest/</source>
-        <translation type="unfinished"></translation>
+        <translation>http://iric-gui-user-manual.readthedocs.io/en/latest/</translation>
     </message>
     <message>
         <source>Unknown options specified. They are neglected. %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Onbekende opties opgegeven. Ze worden verwaarloosd. %1</translation>
     </message>
     <message>
         <source>More than two project files are passed as arguments. They are neglected. %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Meer dan twee projectbestanden worden als argument doorgegeven. Ze worden verwaarloosd. %1</translation>
     </message>
     <message>
         <source>Are you sure you want to delete the calculation result?</source>
-        <translation type="unfinished"></translation>
+        <translation>Weet u zeker dat u het rekenresultaat wilt verwijderen?</translation>
     </message>
     <message>
         <source>Calculation result cleared.</source>
-        <translation type="unfinished"></translation>
+        <translation>Berekeningsresultaat gewist.</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informatie</translation>
     </message>
     <message>
         <source>Calculation result does not exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>Rekenresultaat bestaat niet.</translation>
     </message>
     <message>
         <source>Please select this menu when Visualization Window is active.</source>
-        <translation type="unfinished"></translation>
+        <translation>Selecteer dit menu wanneer het visualisatievenster actief is.</translation>
     </message>
     <message>
         <source>No particle is drawn now.</source>
-        <translation type="unfinished"></translation>
+        <translation>Er wordt nu geen deeltje getekend.</translation>
     </message>
     <message>
         <source>Export Particles</source>
-        <translation type="unfinished"></translation>
+        <translation>Deeltjes exporteren</translation>
     </message>
     <message>
         <source>Saving particles as VTK files...</source>
-        <translation type="unfinished"></translation>
+        <translation>Deeltjes opslaan als VTK-bestanden...</translation>
     </message>
     <message>
         <source>Error occured while saving.</source>
-        <translation type="unfinished"></translation>
+        <translation>Er is een fout opgetreden tijdens het opslaan.</translation>
     </message>
     <message>
         <source>Currently active sub-window does not support exporting contour figure.</source>
-        <translation type="unfinished"></translation>
+        <translation>Het momenteel actieve subvenster ondersteunt het exporteren van contourfiguren niet.</translation>
     </message>
     <message>
-        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
-        <translation type="unfinished"></translation>
+        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
+        <translation>Om vormbestand te exporteren, schakelt u "Weergave-instelling" naar "Contourfiguur", niet "Kleurrand" of "Isolijnen".</translation>
     </message>
     <message>
         <source>Export contour figure to ESRI Shapefiles</source>
-        <translation type="unfinished"></translation>
+        <translation>Contourfiguur exporteren naar ESRI Shapefiles</translation>
     </message>
     <message>
         <source>Export contour figure</source>
-        <translation type="unfinished"></translation>
+        <translation>Contourfiguur exporteren</translation>
     </message>
     <message>
         <source>Saving contour figure as ESRI Shapefiles...</source>
-        <translation type="unfinished"></translation>
+        <translation>Contourfiguur opslaan als ESRI Shapefiles...</translation>
     </message>
     <message>
         <source>No Contour Figure is drawn now.</source>
-        <translation type="unfinished"></translation>
+        <translation>Er wordt nu geen contourfiguur getekend.</translation>
     </message>
     <message>
         <source>Please select which zone to use:</source>
-        <translation type="unfinished"></translation>
+        <translation>Selecteer welke zone u wilt gebruiken:</translation>
     </message>
     <message>
         <source>Export Google Earth KMZ for street view</source>
-        <translation type="unfinished"></translation>
+        <translation>Google Earth KMZ exporteren voor straatweergave</translation>
     </message>
     <message>
         <source>%1 can not be overwritten.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 kan niet worden overschreven.</translation>
     </message>
     <message>
         <source>Saving KMZ file...</source>
-        <translation type="unfinished"></translation>
+        <translation>KMZ-bestand opslaan...</translation>
     </message>
     <message>
         <source>Google Earth KMZ is exported to %1 successfully.</source>
-        <translation type="unfinished"></translation>
+        <translation>Google Earth KMZ wordt geëxporteerd naar: %1 met succes.</translation>
     </message>
     <message>
         <source>Import Visualization/Graph Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Visualisatie/Grafiekinstellingen importeren</translation>
     </message>
     <message>
         <source>Setting file (*.vgsetting)</source>
-        <translation type="unfinished"></translation>
+        <translation>Instellingsbestand (*.vgsetting)</translation>
     </message>
     <message>
         <source>File %1 does not exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bestand %1 bestaat niet.</translation>
     </message>
     <message>
         <source>Export Visualization/Graph Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Instellingen voor visualisatie/grafiek exporteren</translation>
     </message>
     <message>
         <source>The grids are edited or deleted. When you save, the calculation result is discarded.</source>
-        <translation type="unfinished"></translation>
+        <translation>De rasters worden bewerkt of verwijderd. Wanneer u opslaat, wordt het berekeningsresultaat weggegooid.</translation>
     </message>
     <message>
         <source>Current working directory (%1) contains non-ASCII characters. Before starting a new project, change working directory from the following menu: 
 Option -&gt; Preferences</source>
-        <translation type="unfinished"></translation>
+        <translation>Huidige werkmap (%1) bevat niet-ASCII-tekens. Voordat u een nieuw project start, wijzigt u de werkmap in het volgende menu: Optie -&gt; Voorkeuren</translation>
     </message>
     <message>
         <source>One dimension</source>
-        <translation type="unfinished"></translation>
+        <translation>Een dimensie</translation>
     </message>
     <message>
         <source>Two dimensions</source>
-        <translation type="unfinished"></translation>
+        <translation>Twee dimensies</translation>
     </message>
     <message>
         <source>Three dimensions</source>
-        <translation type="unfinished"></translation>
+        <translation>Drie dimensies</translation>
     </message>
     <message>
         <source>There is no calculation data, so you can not define simple operation results.</source>
-        <translation type="unfinished"></translation>
+        <translation>Er zijn geen berekeningsgegevens, dus u kunt geen eenvoudige bewerkingsresultaten definiëren.</translation>
     </message>
     <message>
         <source>Select dimension</source>
-        <translation type="unfinished"></translation>
+        <translation>Selecteer afmeting</translation>
     </message>
     <message>
         <source>Dimension</source>
-        <translation type="unfinished"></translation>
+        <translation>Dimensie</translation>
     </message>
     <message>
         <source>PNG files (*.png);;JPEG file (*.jpg);;Windows BMP file (*.bmp)</source>
-        <translation type="unfinished"></translation>
+        <translation>PNG-bestanden (*.png);;JPEG file (*.jpg);;Windows BMP file (*.bmp)</translation>
     </message>
     <message>
         <source>;;Encapsulated Post Script file (*.eps);;Portable Document Format file (*.pdf);;Scalable Vector Graphics file (*.svg)</source>
-        <translation type="unfinished"></translation>
+        <translation>;;Ingekapseld PostScript-bestand (*.eps);;Portable Document Format file (*.pdf);;Scalable Vector Graphics file (*.svg)</translation>
     </message>
     <message>
         <source>Save Snapshot</source>
-        <translation type="unfinished"></translation>
+        <translation>Momentopname opslaan</translation>
     </message>
     <message>
         <source>Transparency Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Transparantie-instelling</translation>
     </message>
     <message>
         <source>Do you want to make the background transparent?</source>
-        <translation type="unfinished"></translation>
+        <translation>Wil je de achtergrond transparant maken?</translation>
     </message>
     <message>
         <source>This window do not support snapshot with this file type.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dit venster ondersteunt geen snapshot met dit bestandstype.</translation>
     </message>
     <message>
         <source>Saving snapshot failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Opslaan van momentopname is mislukt.</translation>
     </message>
     <message>
         <source>Wrong file name specified.</source>
-        <translation type="unfinished"></translation>
+        <translation>Verkeerde bestandsnaam opgegeven.</translation>
     </message>
     <message>
         <source>Snapshot successfully saved to %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Momentopname succesvol opgeslagen in %1.</translation>
     </message>
 </context>
 <context>
     <name>iRICMainWindowAboutDialog</name>
     <message>
         <source>About iRIC</source>
-        <translation type="unfinished"></translation>
+        <translation>Over iRIC</translation>
     </message>
     <message>
         <source>imglabel</source>
-        <translation type="unfinished"></translation>
+        <translation>imglabel</translation>
     </message>
     <message>
         <source>title</source>
-        <translation type="unfinished"></translation>
+        <translation>titel</translation>
     </message>
     <message>
         <source>TextLabel</source>
-        <translation type="unfinished"></translation>
+        <translation>TekstLabel</translation>
     </message>
     <message>
         <source>copyright</source>
-        <translation type="unfinished"></translation>
+        <translation>auteursrechten</translation>
     </message>
     <message>
         <source>iRIC %1</source>
-        <translation type="unfinished"></translation>
+        <translation>iRIC %1</translation>
     </message>
     <message>
         <source>Released on %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Uitgebracht op %1</translation>
     </message>
     <message>
         <source>Copyright %1</source>
-        <translation type="unfinished"></translation>
+        <translation>auteursrechten %1</translation>
     </message>
     <message>
         <source>Terms of use: </source>
-        <translation type="unfinished"></translation>
+        <translation>Gebruiksvoorwaarden:</translation>
     </message>
     <message>
         <source> (Japanese)</source>
-        <translation type="unfinished"></translation>
+        <translation>(Japans)</translation>
     </message>
 </context>
 <context>
     <name>iRICMainWindowActionManager</name>
     <message>
         <source>&amp;File</source>
-        <translation type="unfinished"></translation>
+        <translation>Bestand (&amp;F)</translation>
     </message>
     <message>
         <source>&amp;New Project...</source>
-        <translation type="unfinished"></translation>
+        <translation>Nieuw project (&amp;N)...</translation>
     </message>
     <message>
         <source>Ctrl+N</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+N</translation>
     </message>
     <message>
         <source>&amp;Open...</source>
-        <translation type="unfinished"></translation>
+        <translation>Open (&amp;O)...</translation>
     </message>
     <message>
         <source>Ctrl+O</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+O</translation>
     </message>
     <message>
         <source>Open iRIC Project files</source>
-        <translation type="unfinished"></translation>
+        <translation>iRIC Project-bestanden openen</translation>
     </message>
     <message>
         <source>&amp;Save</source>
-        <translation type="unfinished"></translation>
+        <translation>Opslaan (&amp;S)</translation>
     </message>
     <message>
         <source>Ctrl+S</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+S</translation>
     </message>
     <message>
         <source>Save &amp;As File(*.ipro)...</source>
-        <translation type="unfinished"></translation>
+        <translation>Opslaan als bestand (*.ipro) (&amp;A)...</translation>
     </message>
     <message>
         <source>Save As &amp;Project...</source>
-        <translation type="unfinished"></translation>
+        <translation>Opslaan als project (&amp;P)...</translation>
     </message>
     <message>
         <source>&amp;Property...</source>
-        <translation type="unfinished"></translation>
+        <translation>Eigendom (&amp;P)...</translation>
     </message>
     <message>
         <source>Save S&amp;napshot...</source>
-        <translation type="unfinished"></translation>
+        <translation>Momentopname opslaan (&amp;N)...</translation>
     </message>
     <message>
         <source>Copy Snapshot to Clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Momentopname kopiëren naar klembord</translation>
     </message>
     <message>
         <source>Continuous Snapshot / Movie / Google Earth Export...</source>
-        <translation type="unfinished"></translation>
+        <translation>Continue snapshot / film / Google Earth-export...</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation type="unfinished"></translation>
+        <translation>Importeren (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Calculation Condition...</source>
-        <translation type="unfinished"></translation>
+        <translation>Berekeningsvoorwaarde: (&amp;C)...</translation>
     </message>
     <message>
         <source>Calculation &amp;Result...</source>
-        <translation type="unfinished"></translation>
+        <translation>Berekeningsresultaat (&amp;R)...</translation>
     </message>
     <message>
         <source>&amp;Measured Values...</source>
-        <translation type="unfinished"></translation>
+        <translation>Gemeten waarden (&amp;M)...</translation>
     </message>
     <message>
         <source>&amp;Background Image...</source>
-        <translation type="unfinished"></translation>
+        <translation>Achtergrond afbeelding (&amp;B)...</translation>
     </message>
     <message>
         <source>&amp;Visualization/Graph Settings...</source>
-        <translation type="unfinished"></translation>
+        <translation>Instellingen visualisatie/grafiek (&amp;V)...</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation type="unfinished"></translation>
+        <translation>Exporteren (&amp;E)</translation>
     </message>
     <message>
         <source>&amp;Particles...</source>
-        <translation type="unfinished"></translation>
+        <translation>deeltjes (&amp;P)...</translation>
     </message>
     <message>
         <source>&amp;Contour Figure as ESRI Shapefiles...</source>
-        <translation type="unfinished"></translation>
+        <translation>Contourfiguur als ESRI Shapefiles (&amp;C)...</translation>
     </message>
     <message>
         <source>&amp;Google Earth KMZ for street view</source>
-        <translation type="unfinished"></translation>
+        <translation>Google Earth KMZ voor straatweergave (&amp;G)</translation>
     </message>
     <message>
         <source>Open &amp;Work Directory...</source>
-        <translation type="unfinished"></translation>
+        <translation>Werkmap openen (&amp;W)...</translation>
     </message>
     <message>
         <source>&amp;Recent Projects</source>
-        <translation type="unfinished"></translation>
+        <translation>Recente projecten (&amp;R)</translation>
     </message>
     <message>
         <source>Show iRIC Start Page...</source>
-        <translation type="unfinished"></translation>
+        <translation>Toon iRIC-startpagina...</translation>
     </message>
     <message>
         <source>E&amp;xit</source>
-        <translation type="unfinished"></translation>
+        <translation>Uitgang (&amp;X)</translation>
     </message>
     <message>
         <source>G&amp;eographic Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Geografische gegevens (&amp;E)</translation>
     </message>
     <message>
         <source>Geographic Data (from web)</source>
-        <translation type="unfinished"></translation>
+        <translation>Geografische gegevens (van internet)</translation>
     </message>
     <message>
         <source>&amp;Hydraulic Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Hydraulische gegevens (&amp;H)</translation>
     </message>
     <message>
         <source>Solver Console &amp;Log...</source>
-        <translation type="unfinished"></translation>
+        <translation>Oplosser Console-logboek (&amp;L)...</translation>
     </message>
     <message>
         <source>&amp;Edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Bewerking (&amp;E)</translation>
     </message>
     <message>
         <source>Ctrl+Z</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Z</translation>
     </message>
     <message>
         <source>Ctrl+Y</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Y</translation>
     </message>
     <message>
         <source>Cu&amp;t</source>
-        <translation type="unfinished"></translation>
+        <translation>Snee (&amp;T)</translation>
     </message>
     <message>
         <source>&amp;Copy</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopiëren (&amp;C)</translation>
     </message>
     <message>
         <source>&amp;Paste</source>
-        <translation type="unfinished"></translation>
+        <translation>Plakken (&amp;P)</translation>
     </message>
     <message>
         <source>&amp;View</source>
-        <translation type="unfinished"></translation>
+        <translation>Weergave (&amp;V)</translation>
     </message>
     <message>
         <source>&amp;Toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Werkbalk (&amp;T)</translation>
     </message>
     <message>
         <source>&amp;Main Toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Hoofdwerkbalk (&amp;M)</translation>
     </message>
     <message>
         <source>&amp;Windows list Toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Windows lijst werkbalk (&amp;W)</translation>
     </message>
     <message>
         <source>&amp;Animation Toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Animatiewerkbalk (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Object Browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Objectbrowser (&amp;O)</translation>
     </message>
     <message>
         <source>&amp;Attribute Browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Kenmerkbrowser (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Status Bar</source>
-        <translation type="unfinished"></translation>
+        <translation>Statusbalk (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;Background Color...</source>
-        <translation type="unfinished"></translation>
+        <translation>Achtergrond kleur (&amp;B)...</translation>
     </message>
     <message>
         <source>&amp;Z-direction Scale...</source>
-        <translation type="unfinished"></translation>
+        <translation>Z-richting schaal (&amp;Z)...</translation>
     </message>
     <message>
         <source>Set &amp;Projection To</source>
-        <translation type="unfinished"></translation>
+        <translation>Projectie instellen op (&amp;P)</translation>
     </message>
     <message>
         <source>Para&amp;llel</source>
-        <translation type="unfinished"></translation>
+        <translation>Parallel (&amp;L)</translation>
     </message>
     <message>
         <source>Ctrl+L</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+L</translation>
     </message>
     <message>
         <source>&amp;Perspective</source>
-        <translation type="unfinished"></translation>
+        <translation>Perspectief (&amp;P)</translation>
     </message>
     <message>
         <source>Ctrl+Shift+L</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Shift+L</translation>
     </message>
     <message>
         <source>&amp;Tile Windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Tegelramen (&amp;T)</translation>
     </message>
     <message>
         <source>Ca&amp;mera Control</source>
-        <translation type="unfinished"></translation>
+        <translation>Camerabediening (&amp;M)</translation>
     </message>
     <message>
         <source>&amp;Fit</source>
-        <translation type="unfinished"></translation>
+        <translation>Fit (&amp;F)</translation>
     </message>
     <message>
         <source>&amp;Reset Rotation</source>
-        <translation type="unfinished"></translation>
+        <translation>Rotatie resetten (&amp;R)</translation>
     </message>
     <message>
         <source>R&amp;otate 90</source>
-        <translation type="unfinished"></translation>
+        <translation>90. draaien (&amp;O)</translation>
     </message>
     <message>
         <source>XY Plane</source>
-        <translation type="unfinished"></translation>
+        <translation>XY-vliegtuig</translation>
     </message>
     <message>
         <source>YZ Plane</source>
-        <translation type="unfinished"></translation>
+        <translation>YZ-vliegtuig</translation>
     </message>
     <message>
         <source>XZ Plane</source>
-        <translation type="unfinished"></translation>
+        <translation>XZ vliegtuig</translation>
     </message>
     <message>
         <source>Move &amp;Left</source>
-        <translation type="unfinished"></translation>
+        <translation>Ga naar links (&amp;L)</translation>
     </message>
     <message>
         <source>Move &amp;Right</source>
-        <translation type="unfinished"></translation>
+        <translation>Ga naar rechts (&amp;R)</translation>
     </message>
     <message>
         <source>Move &amp;Up</source>
-        <translation type="unfinished"></translation>
+        <translation>Omhoog gaan (&amp;U)</translation>
     </message>
     <message>
         <source>Move &amp;Down</source>
-        <translation type="unfinished"></translation>
+        <translation>Naar beneden verplaatsen (&amp;D)</translation>
     </message>
     <message>
         <source>Zoom &amp;In</source>
-        <translation type="unfinished"></translation>
+        <translation>In zoomen (&amp;I)</translation>
     </message>
     <message>
         <source>Zoom &amp;Out</source>
-        <translation type="unfinished"></translation>
+        <translation>Uitzoomen (&amp;O)</translation>
     </message>
     <message>
         <source>Zoom In in X Direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Inzoomen in X-richting</translation>
     </message>
     <message>
         <source>Zoom Out in X Direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Uitzoomen in X-richting</translation>
     </message>
     <message>
         <source>Zoom In in Y Direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Inzoomen in Y-richting</translation>
     </message>
     <message>
         <source>Zoom Out in Y Direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Uitzoomen in Y-richting</translation>
     </message>
     <message>
         <source>&amp;Simulation</source>
-        <translation type="unfinished"></translation>
+        <translation>Simulatie (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;Run</source>
-        <translation type="unfinished"></translation>
+        <translation>Loop (&amp;R)</translation>
     </message>
     <message>
         <source>Ctrl+R</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+R</translation>
     </message>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>&amp;Solver Information...</source>
-        <translation type="unfinished"></translation>
+        <translation>Oplosserinformatie (&amp;S)...</translation>
     </message>
     <message>
         <source>Focus &amp;PreProcessor Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Focus PreProcessor-venster (&amp;P)</translation>
     </message>
     <message>
         <source>Focus &amp;Solver Console Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Venster Focus Solver-console (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;Tool</source>
-        <translation type="unfinished"></translation>
+        <translation>Hulpmiddel (&amp;T)</translation>
     </message>
     <message>
         <source>Calculation &amp;Result</source>
-        <translation type="unfinished"></translation>
+        <translation>Berekeningsresultaat (&amp;R)</translation>
     </message>
     <message>
         <source>Open new 2D Post-Processing Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Nieuw venster voor 2D-nabewerking openen</translation>
     </message>
     <message>
-        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
-        <translation type="unfinished"></translation>
+        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
+        <translation>Nieuw 2D Bird's-Eye Post-Processing-venster openen</translation>
     </message>
     <message>
         <source>Open new 3D Post-Processing Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Nieuw venster voor 3D-nabewerking openen</translation>
     </message>
     <message>
         <source>Open new Graph Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Nieuw grafiekvenster openen</translation>
     </message>
     <message>
         <source>Open new Scattered Chart Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Nieuw spreidingsdiagramvenster openen</translation>
     </message>
     <message>
         <source>Open new Verification Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Nieuw verificatievenster openen</translation>
     </message>
     <message>
         <source>&amp;Reload</source>
-        <translation type="unfinished"></translation>
+        <translation>Herladen (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Reload Calculation Result</source>
-        <translation type="unfinished"></translation>
+        <translation>Berekeningsresultaat opnieuw laden (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Delete...</source>
-        <translation type="unfinished"></translation>
+        <translation>Verwijderen (&amp;D)...</translation>
     </message>
     <message>
         <source>&amp;Manage simple operation results</source>
-        <translation type="unfinished"></translation>
+        <translation>Eenvoudige bewerkingsresultaten beheren (&amp;M)</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation type="unfinished"></translation>
+        <translation>Importeren (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation type="unfinished"></translation>
+        <translation>Exporteren (&amp;E)...</translation>
     </message>
     <message>
         <source>Import Visualization/Graph Settings...</source>
-        <translation type="unfinished"></translation>
+        <translation>Visualisatie-/grafiekinstellingen importeren...</translation>
     </message>
     <message>
         <source>Export Visualization/Graph Settings...</source>
-        <translation type="unfinished"></translation>
+        <translation>Instellingen voor visualisatie/grafiek exporteren...</translation>
     </message>
     <message>
         <source>&amp;Option</source>
-        <translation type="unfinished"></translation>
+        <translation>Optie (&amp;O)</translation>
     </message>
     <message>
         <source>&amp;Preferences...</source>
-        <translation type="unfinished"></translation>
+        <translation>Voorkeuren (&amp;P)...</translation>
     </message>
     <message>
         <source>&amp;Tools</source>
-        <translation type="unfinished"></translation>
+        <translation>Gereedschap (&amp;T)</translation>
     </message>
     <message>
         <source>&amp;Maintainance</source>
-        <translation type="unfinished"></translation>
+        <translation>onderhoud (&amp;M)</translation>
     </message>
     <message>
         <source>&amp;Create/Update Translation Files...</source>
-        <translation type="unfinished"></translation>
+        <translation>Vertaalbestanden maken/bijwerken (&amp;C)...</translation>
     </message>
     <message>
         <source>&amp;Help</source>
-        <translation type="unfinished"></translation>
+        <translation>Helpen (&amp;H)</translation>
     </message>
     <message>
         <source>&amp;Help...</source>
-        <translation type="unfinished"></translation>
+        <translation>Helpen (&amp;H)...</translation>
     </message>
     <message>
         <source>&amp;Solver List...</source>
-        <translation type="unfinished"></translation>
+        <translation>Oplosserlijst (&amp;S)...</translation>
     </message>
     <message>
         <source>&amp;Mouse Hint...</source>
-        <translation type="unfinished"></translation>
+        <translation>Muis hint (&amp;M)...</translation>
     </message>
     <message>
         <source>&amp;About...</source>
-        <translation type="unfinished"></translation>
+        <translation>Wat betreft (&amp;A)...</translation>
     </message>
     <message>
         <source>Main ToolBar</source>
-        <translation type="unfinished"></translation>
+        <translation>Hoofdwerkbalk</translation>
     </message>
     <message>
         <source>Window list Toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Vensterlijst Werkbalk</translation>
     </message>
     <message>
         <source>Ctrl+C</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+C</translation>
     </message>
 </context>
 </TS>

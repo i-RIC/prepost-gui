@@ -1,2008 +1,2006 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="tr_TR">
 <context>
     <name>BoundaryConditionDialog</name>
     <message>
         <source>Boundary Condition</source>
-        <translation type="unfinished"></translation>
+        <translation>Sınır koşulu</translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tip:</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>İsim:</translation>
     </message>
     <message>
         <source>Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Ayar</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Renk:</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Puan Boyutu:</translation>
     </message>
     <message>
         <source>Show name</source>
-        <translation type="unfinished"></translation>
+        <translation>İsim göster</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Hat genişliği:</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Uyarı</translation>
     </message>
     <message>
         <source>Name has to consist of only English characters.</source>
-        <translation type="unfinished"></translation>
+        <translation>İsim sadece İngilizce karakterlerden oluşmalıdır.</translation>
     </message>
     <message>
         <source>Boundary Condition Property</source>
-        <translation type="unfinished"></translation>
+        <translation>Sınır Koşul Özellik</translation>
     </message>
 </context>
 <context>
     <name>CgnsGridExporter</name>
     <message>
         <source>CGNS file</source>
-        <translation type="unfinished"></translation>
+        <translation>CGNS dosyası</translation>
     </message>
 </context>
 <context>
     <name>CgnsGridImporter</name>
     <message>
         <source>CGNS files (*.cgn *.cgns)</source>
-        <translation type="unfinished"></translation>
+        <translation>CGNS dosyaları (*.cgn *.cgns)</translation>
     </message>
     <message>
         <source>CGNS file</source>
-        <translation type="unfinished"></translation>
+        <translation>CGNS dosyası</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Hata</translation>
     </message>
     <message>
         <source>Error occured while importing grid.</source>
-        <translation type="unfinished"></translation>
+        <translation>Izgara içe aktarılırken hata oluştu.</translation>
     </message>
     <message>
         <source>This CGNS file is created for %1 version %2. It is not compatible with the current solver. Maybe only some part of the grid will be imported.
 Do you really want to import grid from this file?</source>
-        <translation type="unfinished"></translation>
+        <translation>Bu CGNS dosyası, %1 versiyon %2. Mevcut çözücü ile uyumlu değil. Belki şebekenin sadece bir kısmı ithal edilecektir. Bu dosyadan ızgarayı gerçekten içe aktarmak istiyor musunuz?</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Uyarı</translation>
     </message>
     <message>
         <source>This CGNS file does not have solver information. We can not check whether this CGNS file is compatible with the solver. If it is not compatible, maybe only some part of the grid will be imported.
 Do you really want to import grid from this file?</source>
-        <translation type="unfinished"></translation>
+        <translation>Bu CGNS dosyası çözücü bilgisine sahip değildir. Bu CGNS dosyasının çözücü ile uyumlu olup olmadığını kontrol edemiyoruz. Uyumlu değilse, belki de şebekenin yalnızca bir kısmı içe aktarılacaktır. Bu dosyadan ızgarayı gerçekten içe aktarmak istiyor musunuz?</translation>
     </message>
 </context>
 <context>
     <name>GridAttributeGeneratorLauncher</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Hata</translation>
     </message>
     <message>
         <source>Attribute Generator %1 does not exist.</source>
-        <translation type="unfinished"></translation>
+        <translation>Öznitelik Oluşturucu %1 bulunmuyor.</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindow</name>
     <message>
-        <source>Grid Bird&apos;s-Eye View Window</source>
-        <translation type="unfinished"></translation>
+        <source>Grid Bird's-Eye View Window</source>
+        <translation>Izgara Kuş Bakışı Penceresi</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowActionManager</name>
     <message>
         <source>&amp;Draw</source>
-        <translation type="unfinished"></translation>
+        <translation>Çizmek (&amp;D)</translation>
     </message>
     <message>
         <source>&amp;Display Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Ekran ayarı (&amp;D)...</translation>
     </message>
     <message>
         <source>&amp;Background Color...</source>
-        <translation type="unfinished"></translation>
+        <translation>Arka plan rengi (&amp;B)...</translation>
     </message>
     <message>
         <source>&amp;Z-direction Scale...</source>
-        <translation type="unfinished"></translation>
+        <translation>Z-yönü Ölçeği (&amp;Z)...</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowAxesSettingDialog</name>
     <message>
         <source>Axes Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Eksen Ayarı</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation type="unfinished"></translation>
+        <translation>Gözle görülür</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Renk:</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowColorSettingDialog</name>
     <message>
         <source>Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Ekran ayarı</translation>
     </message>
     <message>
         <source>Grid Color</source>
-        <translation type="unfinished"></translation>
+        <translation>ızgara rengi</translation>
     </message>
     <message>
         <source>Node attribute</source>
-        <translation type="unfinished"></translation>
+        <translation>düğüm özelliği</translation>
     </message>
     <message>
         <source>Cell attribute</source>
-        <translation type="unfinished"></translation>
+        <translation>Hücre özelliği</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Özel renk</translation>
     </message>
     <message>
         <source>Axes</source>
-        <translation type="unfinished"></translation>
+        <translation>eksenler</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation type="unfinished"></translation>
+        <translation>Gözle görülür</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Renk:</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowDataModel</name>
     <message>
         <source>Edit Z-direction Scale</source>
-        <translation type="unfinished"></translation>
+        <translation>Z Yönü Ölçeğini Düzenle</translation>
     </message>
     <message>
         <source>Z-direction Scale</source>
-        <translation type="unfinished"></translation>
+        <translation>Z-yönü Ölçeği</translation>
     </message>
     <message>
         <source>Input new Z-direction scale.</source>
-        <translation type="unfinished"></translation>
+        <translation>Yeni Z-yönü ölçeğini girin.</translation>
     </message>
     <message>
         <source>Edit Color Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Renk Ayarını Düzenle</translation>
     </message>
 </context>
 <context>
     <name>PreObjectBrowser</name>
     <message>
         <source>Object Browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Nesne Tarayıcı</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorBCDataItem</name>
     <message>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation>Yeni öğe</translation>
     </message>
     <message>
         <source>&amp;Edit Condition...</source>
-        <translation type="unfinished"></translation>
+        <translation>Koşulu Düzenle (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Assign Condition</source>
-        <translation type="unfinished"></translation>
+        <translation>Koşul Ata (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Release Condition</source>
-        <translation type="unfinished"></translation>
+        <translation>Yayın Durumu (&amp;R)</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorBCGroupDataItem</name>
     <message>
         <source>Boundary Condition</source>
-        <translation type="unfinished"></translation>
+        <translation>Sınır koşulu</translation>
     </message>
     <message>
         <source>Add %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Ekle %1</translation>
     </message>
     <message>
         <source>&amp;Edit Condition...</source>
-        <translation type="unfinished"></translation>
+        <translation>Koşulu Düzenle (&amp;E)...</translation>
     </message>
     <message>
         <source>Delete &amp;Selected...</source>
-        <translation type="unfinished"></translation>
+        <translation>Silme seçildi (&amp;S)...</translation>
     </message>
     <message>
         <source>Delete &amp;All...</source>
-        <translation type="unfinished"></translation>
+        <translation>Hepsini sil (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Delete...</source>
-        <translation type="unfinished"></translation>
+        <translation>Silmek (&amp;D)...</translation>
     </message>
     <message>
         <source>&amp;Assign Condition</source>
-        <translation type="unfinished"></translation>
+        <translation>Koşul Ata (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Release Condition</source>
-        <translation type="unfinished"></translation>
+        <translation>Yayın Durumu (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Boundary Condition</source>
-        <translation type="unfinished"></translation>
+        <translation>Sınır koşulu (&amp;B)</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Bilgi</translation>
     </message>
     <message>
         <source>There is no boundary condition.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sınır şartı yoktur.</translation>
     </message>
     <message>
         <source>Delete selected boundary conditions</source>
-        <translation type="unfinished"></translation>
+        <translation>Seçili sınır koşullarını sil</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Uyarı</translation>
     </message>
     <message>
         <source>Are you sure you want to delete all boundary conditions?</source>
-        <translation type="unfinished"></translation>
+        <translation>Tüm sınır koşullarını silmek istediğinizden emin misiniz?</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorBCSettingDataItem</name>
     <message>
         <source>&amp;Edit Condition...</source>
-        <translation type="unfinished"></translation>
+        <translation>Koşulu Düzenle (&amp;E)...</translation>
     </message>
     <message>
         <source>Polygon</source>
-        <translation type="unfinished"></translation>
+        <translation>Çokgen</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Uyarı</translation>
     </message>
     <message>
         <source>Mapping can not be executed when there is no grid.</source>
-        <translation type="unfinished"></translation>
+        <translation>Izgara olmadığında haritalama yapılamaz.</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorBCSettingGroupDataItem</name>
     <message>
         <source>Boundary Condition Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Sınır Koşul Ayarı</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Bilgi</translation>
     </message>
     <message>
         <source>There is no boundary condition setting.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sınır koşulu ayarı yoktur.</translation>
     </message>
     <message>
         <source>Delete selected boundary condition settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Seçili sınır koşulu ayarlarını sil</translation>
     </message>
     <message>
         <source>Are you sure you want to delete all boundary condition settings?</source>
-        <translation type="unfinished"></translation>
+        <translation>Tüm sınır koşulu ayarlarını silmek istediğinizden emin misiniz?</translation>
     </message>
     <message>
         <source>Add %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Ekle %1</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Uyarı</translation>
     </message>
     <message>
         <source>Mapping can not be executed when there is no grid.</source>
-        <translation type="unfinished"></translation>
+        <translation>Izgara olmadığında haritalama yapılamaz.</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorBackgroundImageDataItem</name>
     <message>
         <source>&amp;Georeference...</source>
-        <translation type="unfinished"></translation>
+        <translation>coğrafi referans (&amp;G)...</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorBackgroundImagesDataItem</name>
     <message>
         <source>Background Images</source>
-        <translation type="unfinished"></translation>
+        <translation>Arka Plan Resimleri</translation>
     </message>
     <message>
         <source>&amp;Add Image...</source>
-        <translation type="unfinished"></translation>
+        <translation>Resim eklemek (&amp;A)...</translation>
     </message>
     <message>
         <source>Delete &amp;Selected...</source>
-        <translation type="unfinished"></translation>
+        <translation>Silme seçildi (&amp;S)...</translation>
     </message>
     <message>
         <source>Delete &amp;All...</source>
-        <translation type="unfinished"></translation>
+        <translation>Hepsini sil (&amp;A)...</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Bilgi</translation>
     </message>
     <message>
         <source>There is no background image.</source>
-        <translation type="unfinished"></translation>
+        <translation>Arka plan resmi yok.</translation>
     </message>
     <message>
         <source>Delete selected background images</source>
-        <translation type="unfinished"></translation>
+        <translation>Seçili arka plan resimlerini sil</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Uyarı</translation>
     </message>
     <message>
         <source>Are you sure you want to delete all background images?</source>
-        <translation type="unfinished"></translation>
+        <translation>Tüm arka plan resimlerini silmek istediğinizden emin misiniz?</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorDataModel</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Uyarı</translation>
     </message>
     <message>
         <source>The solver is running. You can see the calculation condition settings, but can not overwrite.</source>
-        <translation type="unfinished"></translation>
+        <translation>Çözücü çalışıyor. Hesaplama koşulu ayarlarını görebilir, ancak üzerine yazamazsınız.</translation>
     </message>
     <message>
         <source>Select file to import</source>
-        <translation type="unfinished"></translation>
+        <translation>İçe aktarılacak dosyayı seçin</translation>
     </message>
     <message>
         <source>All importable files(*.cgn *.cgns *.ipro *.yml);;iRIC project file (*.ipro);;CGNS file (*.cgn *.cgns);;YAML file (*.yml)</source>
-        <translation type="unfinished"></translation>
+        <translation>Tüm içe aktarılabilir dosyalar (*.cgn *.cgns *.ipro *.yml);;iRIC project file (*.ipro);;CGNS file (*.cgn *.cgns);;YAML file (*.yml)</translation>
     </message>
     <message>
         <source>iRIC project file (*.ipro)</source>
-        <translation type="unfinished"></translation>
+        <translation>iRIC proje dosyası (*.ipro)</translation>
     </message>
     <message>
         <source>CGNS file (*.cgn *.cgns)</source>
-        <translation type="unfinished"></translation>
+        <translation>CGNS dosyası (*.cgn *.cgns)</translation>
     </message>
     <message>
         <source>YAML file (*.yml)</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML dosyası (*.yml)</translation>
     </message>
     <message>
         <source>Select case</source>
-        <translation type="unfinished"></translation>
+        <translation>Büyük/küçük harf seç</translation>
     </message>
     <message>
         <source>Please select from which case in %1 to import calculation conditions.</source>
-        <translation type="unfinished"></translation>
+        <translation>Lütfen hangi durumda olduğunu seçin %1 hesaplama koşullarını içe aktarmak için.</translation>
     </message>
     <message>
         <source>Success</source>
-        <translation type="unfinished"></translation>
+        <translation>Başarı</translation>
     </message>
     <message>
         <source>Calculation Condition is successfully imported from the specified file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hesaplama Koşulu, belirtilen dosyadan başarıyla içe aktarıldı.</translation>
     </message>
     <message>
         <source>Calculation Condition is successfully imported from %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hesaplama Koşulu başarıyla şuradan içe aktarıldı: %1.</translation>
     </message>
     <message>
         <source>Fail</source>
-        <translation type="unfinished"></translation>
+        <translation>Hata</translation>
     </message>
     <message>
         <source>Importing calculation condition failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hesaplama koşulu içe aktarılamadı.</translation>
     </message>
     <message>
         <source>Select File to Export</source>
-        <translation type="unfinished"></translation>
+        <translation>Dışa Aktarılacak Dosyayı Seçin</translation>
     </message>
     <message>
         <source>CGNS file (*.cgns);;YAML file (*.yml)</source>
-        <translation type="unfinished"></translation>
+        <translation>CGNS dosyası (*.cgns);;YAML file (*.yml)</translation>
     </message>
     <message>
         <source>Exporting calculation condition...</source>
-        <translation type="unfinished"></translation>
+        <translation>Hesaplama koşulu dışa aktarılıyor...</translation>
     </message>
     <message>
         <source>Calculation Condition is successfully exported to %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hesaplama Koşulu başarıyla şuraya aktarıldı: %1.</translation>
     </message>
     <message>
         <source>Exporting calculation condition failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hesaplama koşulu dışa aktarılamadı.</translation>
     </message>
     <message>
         <source>G&amp;eographic Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Coğrafi Veriler (&amp;E)</translation>
     </message>
     <message>
         <source>Edit &amp;Groups...</source>
-        <translation type="unfinished"></translation>
+        <translation>Grupları Düzenle (&amp;G)...</translation>
     </message>
     <message>
         <source>Delete &amp;All...</source>
-        <translation type="unfinished"></translation>
+        <translation>Hepsini sil (&amp;A)...</translation>
     </message>
     <message>
         <source>Export All Polygons...</source>
-        <translation type="unfinished"></translation>
+        <translation>Tüm Çokgenleri Dışa Aktar...</translation>
     </message>
     <message>
         <source>P&amp;ointset Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Nokta Kümesi Verileri (&amp;O)</translation>
     </message>
     <message>
         <source>Poly&amp;line</source>
-        <translation type="unfinished"></translation>
+        <translation>çoklu çizgi (&amp;L)</translation>
     </message>
     <message>
         <source>&amp;Color Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Renk Ayarı (&amp;C)...</translation>
     </message>
     <message>
         <source>Set Up Scalarbar...</source>
-        <translation type="unfinished"></translation>
+        <translation>Skalarbar'ı Ayarla...</translation>
     </message>
     <message>
         <source>Import</source>
-        <translation type="unfinished"></translation>
+        <translation>İçe aktarmak</translation>
     </message>
     <message>
         <source>Export</source>
-        <translation type="unfinished"></translation>
+        <translation>İhracat</translation>
     </message>
     <message>
         <source>&amp;Grid Creating Condition</source>
-        <translation type="unfinished"></translation>
+        <translation>Izgara Oluşturma Koşulu (&amp;G)</translation>
     </message>
     <message>
         <source>B&amp;oundary Condition Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Sınır Koşul Ayarı (&amp;O)</translation>
     </message>
     <message>
         <source>&amp;Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Kafes (&amp;G)</translation>
     </message>
     <message>
         <source>&amp;Attributes Mapping</source>
-        <translation type="unfinished"></translation>
+        <translation>Nitelik Eşleme (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Measured Values</source>
-        <translation type="unfinished"></translation>
+        <translation>Ölçülmüş değerler (&amp;M)</translation>
     </message>
     <message>
         <source>&amp;Scalar...</source>
-        <translation type="unfinished"></translation>
+        <translation>skaler (&amp;S)...</translation>
     </message>
     <message>
         <source>&amp;Arrows...</source>
-        <translation type="unfinished"></translation>
+        <translation>Oklar (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation type="unfinished"></translation>
+        <translation>İçe aktarmak (&amp;I)...</translation>
     </message>
     <message>
         <source>Gr&amp;id Creating Condition...</source>
-        <translation type="unfinished"></translation>
+        <translation>Izgara Oluşturma Koşulu (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Grid...</source>
-        <translation type="unfinished"></translation>
+        <translation>Kafes (&amp;G)...</translation>
     </message>
     <message>
         <source>Gr&amp;id Creating Condition</source>
-        <translation type="unfinished"></translation>
+        <translation>Izgara Oluşturma Koşulu (&amp;I)</translation>
     </message>
     <message>
         <source>Grid Creating Condition</source>
-        <translation type="unfinished"></translation>
+        <translation>Izgara Oluşturma Koşulu</translation>
     </message>
     <message>
         <source>(No data to import)</source>
-        <translation type="unfinished"></translation>
+        <translation>(İçe aktarılacak veri yok)</translation>
     </message>
     <message>
         <source>(No data to export)</source>
-        <translation type="unfinished"></translation>
+        <translation>(Dışa aktarılacak veri yok)</translation>
     </message>
     <message>
         <source>(No algorithm is selected yet)</source>
-        <translation type="unfinished"></translation>
+        <translation>(Henüz bir algoritma seçilmedi)</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation type="unfinished"></translation>
+        <translation>İhracat (&amp;E)...</translation>
     </message>
     <message>
         <source>Add New %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Yeni ekle %1</translation>
     </message>
     <message>
         <source>%1 are not mapped after they are edited last time. Do you want to execute mapping now?</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 son kez düzenlendikten sonra eşlenmezler. Eşlemeyi şimdi yürütmek istiyor musunuz?</translation>
     </message>
     <message>
-        <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
-        <translation type="unfinished"></translation>
+        <source>Boundary Condition Setting "%1" is not mapped after it is edited last time. Do you want to execute mapping now?</source>
+        <translation>Sınır Koşul Ayarı "%1" son kez düzenlendikten sonra eşlenmiyor. Eşlemeyi şimdi yürütmek istiyor musunuz?</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Bilgi</translation>
     </message>
     <message>
         <source>Mapping geographic data, boundary condition finished successfully.</source>
-        <translation type="unfinished"></translation>
+        <translation>Coğrafi verilerin haritalanması, sınır koşulu başarıyla tamamlandı.</translation>
     </message>
     <message>
         <source>&amp;Cross-Section Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Kesit Verileri (&amp;C)</translation>
     </message>
     <message>
         <source>&amp;Polygons</source>
-        <translation type="unfinished"></translation>
+        <translation>çokgenler (&amp;P)</translation>
     </message>
     <message>
         <source>&amp;Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>çizgiler (&amp;L)</translation>
     </message>
     <message>
         <source>P&amp;oint Cloud Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Nokta Bulutu Verileri (&amp;O)</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGeoDataComplexGroupDataItem</name>
     <message>
         <source>%1 Group Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 Grup Ayarı</translation>
     </message>
     <message>
         <source>Edit &amp;Groups...</source>
-        <translation type="unfinished"></translation>
+        <translation>Grupları Düzenle (&amp;G)...</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Ekle (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation type="unfinished"></translation>
+        <translation>İçe aktarmak (&amp;I)</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGeoDataDataItem</name>
     <message>
         <source>&amp;Export...</source>
-        <translation type="unfinished"></translation>
+        <translation>İhracat (&amp;E)...</translation>
     </message>
     <message>
         <source>Failure</source>
-        <translation type="unfinished"></translation>
+        <translation>Arıza</translation>
     </message>
     <message>
         <source>You cannot use this name for this data. A geographic data with the same name already exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bu veri için bu adı kullanamazsınız. Aynı ada sahip bir coğrafi veri zaten var.</translation>
     </message>
     <message>
         <source>Select File to Export</source>
-        <translation type="unfinished"></translation>
+        <translation>Dışa Aktarılacak Dosyayı Seçin</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGeoDataGroupDataItem</name>
     <message>
         <source>&amp;Import from web...</source>
-        <translation type="unfinished"></translation>
+        <translation>Web'den içe aktar (&amp;I)...</translation>
     </message>
     <message>
         <source>Delete &amp;All...</source>
-        <translation type="unfinished"></translation>
+        <translation>Hepsini sil (&amp;A)...</translation>
     </message>
     <message>
         <source>Export All Polygons...</source>
-        <translation type="unfinished"></translation>
+        <translation>Tüm Çokgenleri Dışa Aktar...</translation>
     </message>
     <message>
         <source>&amp;Color Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Renk Ayarı (&amp;C)...</translation>
     </message>
     <message>
         <source>Set Up Scalarbar...</source>
-        <translation type="unfinished"></translation>
+        <translation>Skalarbar'ı Ayarla...</translation>
     </message>
     <message>
         <source>Delete &amp;Selected...</source>
-        <translation type="unfinished"></translation>
+        <translation>Silme seçildi (&amp;S)...</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Ekle (&amp;A)</translation>
     </message>
     <message>
         <source>All importable files (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Tüm içe aktarılabilir dosyalar (%1)</translation>
     </message>
     <message>
         <source>Select file to import</source>
-        <translation type="unfinished"></translation>
+        <translation>İçe aktarılacak dosyayı seçin</translation>
     </message>
     <message>
         <source>Select algorithm</source>
-        <translation type="unfinished"></translation>
+        <translation>Algoritma seçin</translation>
     </message>
     <message>
         <source>Please select algorithm to import data</source>
-        <translation type="unfinished"></translation>
+        <translation>Lütfen verileri içe aktarmak için algoritma seçin</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Uyarı</translation>
     </message>
     <message>
         <source>File type cannot be recognized from the file extension. : %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Dosya türü, dosya uzantısından tanınamıyor. : %1</translation>
     </message>
     <message>
         <source>Import failed</source>
-        <translation type="unfinished"></translation>
+        <translation>İçe aktarılamadı</translation>
     </message>
     <message>
         <source>Importing data from %1 failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Verileri içe aktarma %1 arızalı.</translation>
     </message>
     <message>
         <source>%1 contains no data to import.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 içe aktarılacak veri içermiyor.</translation>
     </message>
     <message>
         <source>Importing data...</source>
-        <translation type="unfinished"></translation>
+        <translation>Veriler içe aktarılıyor...</translation>
     </message>
     <message>
         <source>Canceled</source>
-        <translation type="unfinished"></translation>
+        <translation>İptal edildi</translation>
     </message>
     <message>
         <source>Importing canceled.</source>
-        <translation type="unfinished"></translation>
+        <translation>İthalat iptal edildi.</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Bilgi</translation>
     </message>
     <message>
         <source>To import the geographic data, specify coordinate system first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Coğrafi verileri içe aktarmak için önce koordinat sistemini belirtin.</translation>
     </message>
     <message>
         <source>Specified file has invalid data, and those were ignored. Ignored data is as follows:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Belirtilen dosyada geçersiz veriler var ve bunlar yoksayıldı. Yok sayılan veriler aşağıdaki gibidir: %1</translation>
     </message>
     <message>
         <source>Importing data failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Veriler içe aktarılamadı.</translation>
     </message>
     <message>
         <source>No data to import.</source>
-        <translation type="unfinished"></translation>
+        <translation>İçe aktarılacak veri yok.</translation>
     </message>
     <message>
         <source>Select data to export</source>
-        <translation type="unfinished"></translation>
+        <translation>Dışa aktarılacak verileri seçin</translation>
     </message>
     <message>
         <source>Please select which data to export.</source>
-        <translation type="unfinished"></translation>
+        <translation>Lütfen hangi verilerin dışa aktarılacağını seçin.</translation>
     </message>
     <message>
         <source>%1 Color Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 Renk Ayarı</translation>
     </message>
     <message>
         <source>Export Polygons</source>
-        <translation type="unfinished"></translation>
+        <translation>Çokgenleri Dışa Aktar</translation>
     </message>
     <message>
         <source>ESRI Shapefile (*.shp)</source>
-        <translation type="unfinished"></translation>
+        <translation>ESRI Şekil Dosyası (*.shp)</translation>
     </message>
     <message>
         <source>There is no geographic data.</source>
-        <translation type="unfinished"></translation>
+        <translation>Coğrafi veri yok.</translation>
     </message>
     <message>
         <source>Delete selected geograhic data</source>
-        <translation type="unfinished"></translation>
+        <translation>Seçili coğrafi verileri sil</translation>
     </message>
     <message>
         <source>Are you sure you want to delete all items in %1 group?</source>
-        <translation type="unfinished"></translation>
+        <translation>içindeki tüm öğeleri silmek istediğinizden emin misiniz? %1 grup?</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation type="unfinished"></translation>
+        <translation>İçe aktarmak (&amp;I)</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGeoDataTopDataItem</name>
     <message>
         <source>Geographic Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Coğrafi Veriler</translation>
     </message>
     <message>
         <source>Reference Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Referans bilgisi</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAndGridCreatingConditionDataItem</name>
     <message>
         <source>&amp;Delete Grid Creating Condition and Grid Shape...</source>
-        <translation type="unfinished"></translation>
+        <translation>Izgara Oluşturma Koşulunu ve Izgara Şeklini Sil (&amp;D)...</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Uyarı</translation>
     </message>
     <message>
         <source>Are you sure you want to discard grid creating condition and grid?</source>
-        <translation type="unfinished"></translation>
+        <translation>Izgara oluşturma koşulunu ve ızgarayı silmek istediğinizden emin misiniz?</translation>
     </message>
     <message>
         <source>All importable files (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Tüm içe aktarılabilir dosyalar (%1)</translation>
     </message>
     <message>
         <source>Select file to import</source>
-        <translation type="unfinished"></translation>
+        <translation>İçe aktarılacak dosyayı seçin</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Hata</translation>
     </message>
     <message>
         <source>Importing grid failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Izgara içe aktarılamadı.</translation>
     </message>
     <message>
         <source>Confirmation</source>
-        <translation type="unfinished"></translation>
+        <translation>Onayla</translation>
     </message>
     <message>
         <source>Do you want to map geographic data to grid attributes now?</source>
-        <translation type="unfinished"></translation>
+        <translation>Coğrafi verileri şimdi ızgara özelliklerine eşlemek istiyor musunuz?</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeCellDataItem</name>
     <message>
         <source>Edit value...</source>
-        <translation type="unfinished"></translation>
+        <translation>Değeri düzenle...</translation>
     </message>
     <message>
         <source>Grid Cell Attribute Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Izgara Hücresi Öznitelik Görüntüleme Ayarı</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Uyarı</translation>
     </message>
     <message>
         <source>Please select only one node.</source>
-        <translation type="unfinished"></translation>
+        <translation>Lütfen yalnızca bir düğüm seçin.</translation>
     </message>
     <message>
         <source>Edit %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Düzenlemek %1</translation>
     </message>
     <message>
         <source>Input the new value of %1 at the selected grid cells.</source>
-        <translation type="unfinished"></translation>
+        <translation>Yeni değerini girin %1 seçilen ızgara hücrelerinde.</translation>
     </message>
     <message>
         <source>Edit value by specifying difference...</source>
-        <translation type="unfinished"></translation>
+        <translation>Farkı belirterek değeri düzenleyin...</translation>
     </message>
     <message>
         <source>Edit value by specifying ratio...</source>
-        <translation type="unfinished"></translation>
+        <translation>Oranı belirterek değeri düzenleyin...</translation>
     </message>
     <message>
         <source>difference</source>
-        <translation type="unfinished"></translation>
+        <translation>fark</translation>
     </message>
     <message>
         <source>ratio</source>
-        <translation type="unfinished"></translation>
+        <translation>oran</translation>
     </message>
     <message>
         <source>Apply %1 to %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Uygulamak %1 ile %2</translation>
     </message>
     <message>
         <source>Input the %1 of %2 at the selected grid cells.</source>
-        <translation type="unfinished"></translation>
+        <translation>Girin %1 ile ilgili %2 seçilen ızgara hücrelerinde.</translation>
     </message>
     <message>
         <source>Export...</source>
-        <translation type="unfinished"></translation>
+        <translation>İhracat...</translation>
     </message>
     <message>
         <source>Topography File (*.tpo)</source>
-        <translation type="unfinished"></translation>
+        <translation>Topografya Dosyası (*.tpo)</translation>
     </message>
     <message>
         <source>Export as Topography Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Topografya Verisi Olarak Dışa Aktar</translation>
     </message>
     <message>
         <source>Error occured while opening the file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dosya açılırken hata oluştu.</translation>
     </message>
     <message>
         <source>Grid condition successfully exported to %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Izgara koşulu başarıyla dışa aktarıldı %1.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Hata</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Bilgi</translation>
     </message>
     <message>
         <source>%1 generated.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 oluşturuldu.</translation>
     </message>
     <message>
         <source>Generate point cloud data</source>
-        <translation type="unfinished"></translation>
+        <translation>Nokta bulutu verileri oluşturun</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeCellDisplaySettingDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>iletişim kutusu</translation>
     </message>
     <message>
         <source>Attribute</source>
-        <translation type="unfinished"></translation>
+        <translation>Bağlanmak</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Renk</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeCellGroupDataItem</name>
     <message>
         <source>Cell attributes</source>
-        <translation type="unfinished"></translation>
+        <translation>Hücre özellikleri</translation>
     </message>
     <message>
         <source>Show Attribute Browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Özellik Tarayıcısını Göster</translation>
     </message>
     <message>
         <source>Cell Attribute Change</source>
-        <translation type="unfinished"></translation>
+        <translation>Hücre Özelliği Değişikliği</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeCustomMappingDialog</name>
     <message>
         <source>Attribute Mapping</source>
-        <translation type="unfinished"></translation>
+        <translation>Özellik Eşleme</translation>
     </message>
     <message>
         <source>Check &amp;All</source>
-        <translation type="unfinished"></translation>
+        <translation>Tümünü Kontrol Et (&amp;A)</translation>
     </message>
     <message>
         <source>Geographic Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Coğrafi Veriler</translation>
     </message>
     <message>
         <source>Boundary Condition Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Sınır Koşul Ayarı</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeMappingSettingTopDataItem</name>
     <message>
         <source>Execute mapping</source>
-        <translation type="unfinished"></translation>
+        <translation>Eşlemeyi yürüt</translation>
     </message>
     <message>
         <source>&amp;Execute...</source>
-        <translation type="unfinished"></translation>
+        <translation>Uygulamak (&amp;E)...</translation>
     </message>
     <message>
-        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.
+        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Aşağıdaki öznitelikler eşlenmedi, çünkü bunlar için ızgara oluşturucu çıkış değerleri. Onlar için coğrafi verileri zorla haritalamak istiyorsanız, lütfen "Izgara" -&gt; "Attributes Mapping" -&gt; "Execute" menüsü ile manuel olarak haritalayın.</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Bilgi</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Uyarı</translation>
     </message>
     <message>
         <source>Mapping geographic data finished successfully.</source>
-        <translation type="unfinished"></translation>
+        <translation>Coğrafi verilerin eşlenmesi başarıyla tamamlandı.</translation>
     </message>
     <message>
         <source>Mapping geographic data finished</source>
-        <translation type="unfinished"></translation>
+        <translation>Coğrafi verilerin eşlenmesi tamamlandı</translation>
     </message>
     <message>
-        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation type="unfinished"></translation>
+        <source>The grid attribute "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>ızgara özelliği "%1" elle düzenlenir. Eşlemeyi yürüttüğünüzde, yaptığınız tüm değişiklikler atılır. Eşlemeyi gerçekten yürütmek istiyor musunuz?</translation>
     </message>
     <message>
-        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation type="unfinished"></translation>
+        <source>The boundary condition "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Sınır koşulu "%1" elle düzenlenir. Eşlemeyi yürüttüğünüzde, yaptığınız tüm değişiklikler atılır. Eşlemeyi gerçekten yürütmek istiyor musunuz?</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeMappingSettingTopEditDialog</name>
     <message>
         <source>Grid Attribute Mapping Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Izgara Öznitelik Eşleme Ayarı</translation>
     </message>
     <message>
         <source>Execute mapping</source>
-        <translation type="unfinished"></translation>
+        <translation>Eşlemeyi yürüt</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation>Oto</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;!DOCTYPE HTML KAMU "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;meta ad ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { boşluk: ön sarma; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p style=" kenar boşluğu -top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Kılavuz oluşturulduğunda size sorulur. Öznitelik Eşlemesini her zaman yürütmek için.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Manual</source>
-        <translation type="unfinished"></translation>
+        <translation>Manuel</translation>
     </message>
     <message>
-        <source>Attribute mapping is executed only when you manually select &quot;Execute&quot; menu.</source>
-        <translation type="unfinished"></translation>
+        <source>Attribute mapping is executed only when you manually select "Execute" menu.</source>
+        <translation>Nitelik eşleme, yalnızca "Yürüt" menüsünü manuel olarak seçtiğinizde yürütülür.</translation>
     </message>
     <message>
         <source>Geographic data mapping</source>
-        <translation type="unfinished"></translation>
+        <translation>Coğrafi veri eşleme</translation>
     </message>
     <message>
         <source>Mapping with TINs</source>
-        <translation type="unfinished"></translation>
+        <translation>TIN'lerle Eşleme</translation>
     </message>
     <message>
         <source>TINs created from geographic data are used for mapping. Grid nodes attribute values are calculated as weighted average of the values at the TIN nodes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Haritalama için coğrafi verilerden oluşturulan TIN'ler kullanılır. Izgara düğümleri öznitelik değerleri, TIN düğümlerindeki değerlerin ağırlıklı ortalaması olarak hesaplanır.</translation>
     </message>
     <message>
         <source>Template mapping</source>
-        <translation type="unfinished"></translation>
+        <translation>Şablon eşleme</translation>
     </message>
     <message>
         <source>Find geographic data points that are near to the grid nodes, regarding the grid cell shapes, and use the values at those points for interpolation.
 This algorithm can be used only for structured grids.</source>
-        <translation type="unfinished"></translation>
+        <translation>Izgara hücre şekilleri ile ilgili olarak ızgara düğümlerine yakın coğrafi veri noktalarını bulun ve enterpolasyon için bu noktalardaki değerleri kullanın. Bu algoritma sadece yapılandırılmış gridler için kullanılabilir.</translation>
     </message>
     <message>
         <source>&amp;Detail...</source>
-        <translation type="unfinished"></translation>
+        <translation>Detay (&amp;D)...</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeNodeDataItem</name>
     <message>
         <source>Edit value...</source>
-        <translation type="unfinished"></translation>
+        <translation>Değeri düzenle...</translation>
     </message>
     <message>
         <source>Export...</source>
-        <translation type="unfinished"></translation>
+        <translation>İhracat...</translation>
     </message>
     <message>
         <source>Open &amp;Cross Section Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Kesit Penceresini Aç (&amp;C)</translation>
     </message>
     <message>
         <source>Open &amp;Longitudinal Cross Section Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Boyuna Kesit Penceresini Aç (&amp;L)</translation>
     </message>
     <message>
         <source>Edit %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Düzenlemek %1</translation>
     </message>
     <message>
         <source>Grid Node Attribute Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Izgara Düğümü Öznitelik Görüntüleme Ayarı</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Uyarı</translation>
     </message>
     <message>
         <source>Please select only one node.</source>
-        <translation type="unfinished"></translation>
+        <translation>Lütfen yalnızca bir düğüm seçin.</translation>
     </message>
     <message>
         <source>Input the new value of %1 at the selected grid nodes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Yeni değerini girin %1 seçilen ızgara düğümlerinde.</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Bilgi</translation>
     </message>
     <message>
         <source>To open a Cross Section Window, Please select only one grid node.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bir Kesit Penceresi açmak için lütfen yalnızca bir ızgara düğümü seçin.</translation>
     </message>
     <message>
         <source>To open a Longitudinal Cross Section Window, Please select only one grid node.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bir Boyuna Kesit Penceresi açmak için, Lütfen yalnızca bir ızgara düğümü seçin.</translation>
     </message>
     <message>
         <source>Topography File (*.tpo)</source>
-        <translation type="unfinished"></translation>
+        <translation>Topografya Dosyası (*.tpo)</translation>
     </message>
     <message>
         <source>Export as Topography Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Topografya Verisi Olarak Dışa Aktar</translation>
     </message>
     <message>
         <source>Error occured while opening the file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dosya açılırken hata oluştu.</translation>
     </message>
     <message>
         <source>Grid condition successfully exported to %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Izgara koşulu başarıyla dışa aktarıldı %1.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Hata</translation>
     </message>
     <message>
         <source>Edit value by specifying difference...</source>
-        <translation type="unfinished"></translation>
+        <translation>Farkı belirterek değeri düzenleyin...</translation>
     </message>
     <message>
         <source>Edit value by specifying ratio...</source>
-        <translation type="unfinished"></translation>
+        <translation>Oranı belirterek değeri düzenleyin...</translation>
     </message>
     <message>
         <source>difference</source>
-        <translation type="unfinished"></translation>
+        <translation>fark</translation>
     </message>
     <message>
         <source>ratio</source>
-        <translation type="unfinished"></translation>
+        <translation>oran</translation>
     </message>
     <message>
         <source>Apply %1 to %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Uygulamak %1 ile %2</translation>
     </message>
     <message>
         <source>Input the %1 of %2 at the selected grid nodes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Girin %1 ile ilgili %2 seçilen ızgara düğümlerinde.</translation>
     </message>
     <message>
         <source>%1 generated.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 oluşturuldu.</translation>
     </message>
     <message>
         <source>Generate point cloud data</source>
-        <translation type="unfinished"></translation>
+        <translation>Nokta bulutu verileri oluşturun</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeNodeGroupDataItem</name>
     <message>
         <source>Node attributes</source>
-        <translation type="unfinished"></translation>
+        <translation>Düğüm özellikleri</translation>
     </message>
     <message>
         <source>Show Attribute Browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Özellik Tarayıcısını Göster</translation>
     </message>
     <message>
         <source>Node Attribute Change</source>
-        <translation type="unfinished"></translation>
+        <translation>Düğüm Öznitelik Değişikliği</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeTemplateMappingSettingDialog</name>
     <message>
         <source>Template Mapping Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Şablon Eşleme Ayarı</translation>
     </message>
     <message>
         <source>Search region</source>
-        <translation type="unfinished"></translation>
+        <translation>Arama bölgesi</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation>Oto</translation>
     </message>
     <message>
         <source>Manual</source>
-        <translation type="unfinished"></translation>
+        <translation>Manuel</translation>
     </message>
     <message>
         <source>Stream-wise length[m]:</source>
-        <translation type="unfinished"></translation>
+        <translation>Akış yönünde uzunluk[m]:</translation>
     </message>
     <message>
         <source>Cross-stream width[m]:</source>
-        <translation type="unfinished"></translation>
+        <translation>Çapraz akış genişliği[m]:</translation>
     </message>
     <message>
         <source>Number of Template Expansions:</source>
-        <translation type="unfinished"></translation>
+        <translation>Şablon Genişletme Sayısı:</translation>
     </message>
     <message>
         <source>Weighting Exponent:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ağırlık Üssü:</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCreatingConditionAlgorithmSelectDialog</name>
     <message>
         <source>Select Grid Creating Algorithm</source>
-        <translation type="unfinished"></translation>
+        <translation>Izgara Oluşturma Algoritmasını Seçin</translation>
     </message>
     <message>
         <source>Algorithm:</source>
-        <translation type="unfinished"></translation>
+        <translation>algoritma:</translation>
     </message>
     <message>
         <source>Description:</source>
-        <translation type="unfinished"></translation>
+        <translation>Açıklama:</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCreatingConditionDataItem</name>
     <message>
         <source>&amp;Create Grid...</source>
-        <translation type="unfinished"></translation>
+        <translation>Izgara Oluştur (&amp;C)...</translation>
     </message>
     <message>
         <source>&amp;Select Algorithm to Create Grid...</source>
-        <translation type="unfinished"></translation>
+        <translation>Izgara Oluşturmak için Algoritmayı Seçin (&amp;S)...</translation>
     </message>
     <message>
         <source>Reset to &amp;Default...</source>
-        <translation type="unfinished"></translation>
+        <translation>Varsayılana sıfırla (&amp;D)...</translation>
     </message>
     <message>
         <source>&amp;Delete Grid Creating Condition...</source>
-        <translation type="unfinished"></translation>
+        <translation>Izgara Oluşturma Koşulunu Sil (&amp;D)...</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation type="unfinished"></translation>
+        <translation>İçe aktarmak (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation type="unfinished"></translation>
+        <translation>İhracat (&amp;E)...</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Uyarı</translation>
     </message>
     <message>
         <source>This operation will discard the grid that already exists. Are you sure?</source>
-        <translation type="unfinished"></translation>
+        <translation>Bu işlem, zaten var olan ızgarayı atacaktır. Emin misin?</translation>
     </message>
     <message>
         <source>Are you sure you want to discard the grid creating condition?</source>
-        <translation type="unfinished"></translation>
+        <translation>Izgara oluşturma koşulunu iptal etmek istediğinizden emin misiniz?</translation>
     </message>
     <message>
         <source>Confirm</source>
-        <translation type="unfinished"></translation>
+        <translation>Onaylamak</translation>
     </message>
     <message>
         <source>Are you sure you want to reset the grid creating condition to the default status?</source>
-        <translation type="unfinished"></translation>
+        <translation>Izgara oluşturma koşulunu varsayılan duruma sıfırlamak istediğinizden emin misiniz?</translation>
     </message>
     <message>
         <source>When you switch algorithm to create grid, the grid and the grid creating condition you created will be discarded.</source>
-        <translation type="unfinished"></translation>
+        <translation>Algoritmayı ızgara oluşturmak için değiştirdiğinizde, ızgara ve oluşturduğunuz ızgara oluşturma koşulu atılır.</translation>
     </message>
     <message>
         <source>Select file to import</source>
-        <translation type="unfinished"></translation>
+        <translation>İçe aktarılacak dosyayı seçin</translation>
     </message>
     <message>
         <source>iRIC grid creating condition file(*.igcc)</source>
-        <translation type="unfinished"></translation>
+        <translation>iRIC ızgarası oluşturma koşulu dosyası (*.igcc)</translation>
     </message>
     <message>
         <source>The grid creating condition in this file is not compatible with the solver</source>
-        <translation type="unfinished"></translation>
+        <translation>Bu dosyadaki ızgara oluşturma koşulu, çözücü ile uyumlu değil</translation>
     </message>
     <message>
         <source>No data to export.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dışa aktarılacak veri yok.</translation>
     </message>
     <message>
         <source>Select file to export</source>
-        <translation type="unfinished"></translation>
+        <translation>Dışa aktarılacak dosyayı seçin</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow</name>
     <message>
         <source>MainWindow</source>
-        <translation type="unfinished"></translation>
+        <translation>Ana pencere</translation>
     </message>
     <message>
         <source>toolBar</source>
-        <translation type="unfinished"></translation>
+        <translation>araç çubuğu</translation>
     </message>
     <message>
         <source>Direction: </source>
-        <translation type="unfinished"></translation>
+        <translation>Yön:</translation>
     </message>
     <message>
         <source>Black line: </source>
-        <translation type="unfinished"></translation>
+        <translation>Siyah çizgi:</translation>
     </message>
     <message>
         <source>Red line: </source>
-        <translation type="unfinished"></translation>
+        <translation>Kırmızı cizgi:</translation>
     </message>
     <message>
         <source>Blue line: </source>
-        <translation type="unfinished"></translation>
+        <translation>Mavi çizgi:</translation>
     </message>
     <message>
         <source>(No data)</source>
-        <translation type="unfinished"></translation>
+        <translation>(Veri yok)</translation>
     </message>
     <message>
         <source>Grid Crosssection (%1): J = %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Izgara Kesiti (%1): J = %2</translation>
     </message>
     <message>
         <source>Grid Crosssection (%1): I = %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Izgara Kesiti (%1): ben = %2</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindowGraphicsView</name>
     <message>
         <source>&amp;Edit...</source>
-        <translation type="unfinished"></translation>
+        <translation>Düzenlemek (&amp;E)...</translation>
     </message>
     <message>
         <source>Left Bank Side</source>
-        <translation type="unfinished"></translation>
+        <translation>Sol Banka Tarafı</translation>
     </message>
     <message>
         <source>Right Bank Side</source>
-        <translation type="unfinished"></translation>
+        <translation>Sağ Banka Tarafı</translation>
     </message>
     <message>
         <source>Edit %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Düzenlemek %1</translation>
     </message>
     <message>
         <source>Input the new value of %1 at the selected grid nodes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Yeni değerini girin %1 seçilen ızgara düğümlerinde.</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridDataItem</name>
     <message>
         <source>The following problems found in this grid. Do you really want to export the grid?</source>
-        <translation type="unfinished"></translation>
+        <translation>Bu ızgarada aşağıdaki sorunlar bulundu. Izgarayı gerçekten dışa aktarmak istiyor musunuz?</translation>
     </message>
     <message>
         <source>Show Detail</source>
-        <translation type="unfinished"></translation>
+        <translation>Detayları göster</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Uyarı</translation>
     </message>
     <message>
         <source>Select File to Export</source>
-        <translation type="unfinished"></translation>
+        <translation>Dışa Aktarılacak Dosyayı Seçin</translation>
     </message>
     <message>
         <source>Exporting Grid...</source>
-        <translation type="unfinished"></translation>
+        <translation>Izgara Dışa Aktarılıyor...</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Hata</translation>
     </message>
     <message>
         <source>Grid successfully exported to %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Izgara başarıyla dışa aktarıldı %1.</translation>
     </message>
     <message>
         <source>Exporting grid to %1 failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Izgara dışa aktarılıyor %1 arızalı.</translation>
     </message>
     <message>
         <source>Are you sure you want to discard the grid?</source>
-        <translation type="unfinished"></translation>
+        <translation>Izgarayı atmak istediğinizden emin misiniz?</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation type="unfinished"></translation>
+        <translation>İçe aktarmak (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation type="unfinished"></translation>
+        <translation>İhracat (&amp;E)...</translation>
     </message>
     <message>
         <source>Grid &amp;Shape...</source>
-        <translation type="unfinished"></translation>
+        <translation>ızgara şekli (&amp;S)...</translation>
     </message>
     <message>
         <source>&amp;Select Polygon Region</source>
-        <translation type="unfinished"></translation>
+        <translation>Poligon Bölgesi Seçin (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;Delete...</source>
-        <translation type="unfinished"></translation>
+        <translation>Silmek (&amp;D)...</translation>
     </message>
     <message>
         <source>&amp;Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Kafes (&amp;G)</translation>
     </message>
     <message>
         <source>&amp;Node Attribute...</source>
-        <translation type="unfinished"></translation>
+        <translation>Düğüm Özelliği (&amp;N)...</translation>
     </message>
     <message>
         <source>&amp;Cell Attribute...</source>
-        <translation type="unfinished"></translation>
+        <translation>Hücre Özelliği (&amp;C)...</translation>
     </message>
     <message>
         <source>Set &amp;Up Scalarbar...</source>
-        <translation type="unfinished"></translation>
+        <translation>Skalar Çubuğu Ayarla (&amp;U)...</translation>
     </message>
     <message>
-        <source>Open &amp;Bird&apos;s-Eye View Window</source>
-        <translation type="unfinished"></translation>
+        <source>Open &amp;Bird's-Eye View Window</source>
+        <translation>Kuşbakışı Görünüm Penceresini Aç (&amp;B)</translation>
     </message>
     <message>
         <source>Attributes &amp;Generating</source>
-        <translation type="unfinished"></translation>
+        <translation>Nitelikler Oluşturma (&amp;G)</translation>
     </message>
     <message>
         <source>Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Kafes</translation>
     </message>
     <message>
         <source> [No Data]</source>
-        <translation type="unfinished"></translation>
+        <translation>[Veri yok]</translation>
     </message>
     <message>
         <source> (%1 x %2 = %3)</source>
-        <translation type="unfinished"></translation>
+        <translation>( %1 x %2 = %3 )</translation>
     </message>
     <message>
         <source> (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>(%1)</translation>
     </message>
     <message>
         <source>Generate %1</source>
-        <translation type="unfinished"></translation>
+        <translation>üret %1</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridShapeDataItem</name>
     <message>
         <source>Grid shape</source>
-        <translation type="unfinished"></translation>
+        <translation>ızgara şekli</translation>
     </message>
     <message>
         <source>&amp;Edit Coordinates...</source>
-        <translation type="unfinished"></translation>
+        <translation>Koordinatları Düzenle (&amp;E)...</translation>
     </message>
     <message>
         <source>Open &amp;Cross Section Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Kesit Penceresini Aç (&amp;C)</translation>
     </message>
     <message>
         <source>Open &amp;Longitudinal Cross Section Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Boyuna Kesit Penceresini Aç (&amp;L)</translation>
     </message>
     <message>
         <source>Move Grid Point(s)</source>
-        <translation type="unfinished"></translation>
+        <translation>Izgara Noktalarını Taşı</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridShapeDeltaDialog</name>
     <message>
         <source>Edit Grid Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Izgara Koordinatlarını Düzenle</translation>
     </message>
     <message>
         <source>Please input the delta coordinates of the selected grid nodes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Lütfen seçilen ızgara düğümlerinin delta koordinatlarını girin.</translation>
     </message>
     <message>
         <source>x:</source>
-        <translation type="unfinished"></translation>
+        <translation>x:</translation>
     </message>
     <message>
         <source>y:</source>
-        <translation type="unfinished"></translation>
+        <translation>y:</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridShapeNewPositionDialog</name>
     <message>
         <source>Edit Grid Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Izgara Koordinatlarını Düzenle</translation>
     </message>
     <message>
         <source>Please input the new coordinates of the selected grid node.</source>
-        <translation type="unfinished"></translation>
+        <translation>Lütfen seçilen ızgara düğümünün yeni koordinatlarını girin.</translation>
     </message>
     <message>
         <source>x: </source>
-        <translation type="unfinished"></translation>
+        <translation>x:</translation>
     </message>
     <message>
         <source>y:</source>
-        <translation type="unfinished"></translation>
+        <translation>y:</translation>
     </message>
     <message>
         <source>x(%1):</source>
-        <translation type="unfinished"></translation>
+        <translation>x(%1):</translation>
     </message>
     <message>
         <source>y(%1):</source>
-        <translation type="unfinished"></translation>
+        <translation>y(%1):</translation>
     </message>
     <message>
         <source>x(%1, %2):</source>
-        <translation type="unfinished"></translation>
+        <translation>x( %1, %2 ):</translation>
     </message>
     <message>
         <source>y(%1, %2):</source>
-        <translation type="unfinished"></translation>
+        <translation>y( %1, %2 ):</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridTypeDataItem</name>
     <message>
         <source>Add New Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Yeni Izgara Ekle</translation>
     </message>
     <message>
         <source>Region</source>
-        <translation type="unfinished"></translation>
+        <translation>Bölge</translation>
     </message>
     <message>
         <source>Region%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Bölge %1</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorHydraulicDataGroupDataItem</name>
     <message>
         <source>All importable files (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Tüm içe aktarılabilir dosyalar (%1)</translation>
     </message>
     <message>
         <source>Select file to import</source>
-        <translation type="unfinished"></translation>
+        <translation>İçe aktarılacak dosyayı seçin</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Uyarı</translation>
     </message>
     <message>
         <source>File type cannot be recognized from the file extension. : %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Dosya türü, dosya uzantısından tanınamıyor. : %1</translation>
     </message>
     <message>
         <source>Import failed</source>
-        <translation type="unfinished"></translation>
+        <translation>İçe aktarılamadı</translation>
     </message>
     <message>
         <source>Importing data from %1 failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Verileri içe aktarma %1 arızalı.</translation>
     </message>
     <message>
         <source>%1 contains no data to import.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 içe aktarılacak veri içermiyor.</translation>
     </message>
     <message>
         <source>Specified file has invalid data, and those were ignored. Ignored data is as follows:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Belirtilen dosyada geçersiz veriler var ve bunlar yoksayıldı. Yok sayılan veriler aşağıdaki gibidir: %1</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Bilgi</translation>
     </message>
     <message>
         <source>Data is successfully imported from %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Veriler başarıyla şuradan içe aktarıldı: %1.</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorLegendBoxEditDialog</name>
     <message>
         <source>Color Legend Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Renk Açıklama Ayarı</translation>
     </message>
     <message>
         <source>Legend box</source>
-        <translation type="unfinished"></translation>
+        <translation>efsane kutusu</translation>
     </message>
     <message>
         <source>Font Setting:</source>
-        <translation type="unfinished"></translation>
+        <translation>Yazı Tipi Ayarı:</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation type="unfinished"></translation>
+        <translation>Düzenlemek...</translation>
     </message>
     <message>
         <source>Size (rate)</source>
-        <translation type="unfinished"></translation>
+        <translation>Boyut (oran)</translation>
     </message>
     <message>
         <source>Width :</source>
-        <translation type="unfinished"></translation>
+        <translation>Genişlik :</translation>
     </message>
     <message>
         <source>Hight :</source>
-        <translation type="unfinished"></translation>
+        <translation>Yükseklik:</translation>
     </message>
     <message>
         <source>Position (rate)</source>
-        <translation type="unfinished"></translation>
+        <translation>Konum (oran)</translation>
     </message>
     <message>
         <source>X :</source>
-        <translation type="unfinished"></translation>
+        <translation>X :</translation>
     </message>
     <message>
         <source>Y :</source>
-        <translation type="unfinished"></translation>
+        <translation>Y:</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorMeasuredDataTopDataItem</name>
     <message>
         <source>Measured Values</source>
-        <translation type="unfinished"></translation>
+        <translation>Ölçülmüş değerler</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation type="unfinished"></translation>
+        <translation>İçe aktarmak (&amp;I)...</translation>
     </message>
     <message>
         <source>Delete &amp;Selected...</source>
-        <translation type="unfinished"></translation>
+        <translation>Silme seçildi (&amp;S)...</translation>
     </message>
     <message>
         <source>Delete &amp;All...</source>
-        <translation type="unfinished"></translation>
+        <translation>Hepsini sil (&amp;A)...</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Bilgi</translation>
     </message>
     <message>
         <source>There is no measured data.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ölçülen veri yok.</translation>
     </message>
     <message>
         <source>Delete selected measured data</source>
-        <translation type="unfinished"></translation>
+        <translation>Seçilen ölçüm verilerini sil</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Uyarı</translation>
     </message>
     <message>
         <source>Are you sure you want to delete all measured data?</source>
-        <translation type="unfinished"></translation>
+        <translation>Tüm ölçülen verileri silmek istediğinizden emin misiniz?</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorNormal15DGridWithCrossSectionDataItem</name>
     <message>
         <source>&amp;Edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Düzenlemek (&amp;E)</translation>
     </message>
     <message>
         <source>Dis&amp;play Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Ekran ayarı (&amp;P)...</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorNormal15DGridWithCrossSectionShapeDataItem</name>
     <message>
         <source>Display &amp;Cross Section</source>
-        <translation type="unfinished"></translation>
+        <translation>Kesit Görüntüle (&amp;C)</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorRootDataItem</name>
     <message>
         <source>&amp;Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Ayar (&amp;S)...</translation>
     </message>
     <message>
         <source>Change Attribute Mapping Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Nitelik Eşleme Ayarını Değiştir</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorScalarBarEditDialog</name>
     <message>
         <source>Color Legend Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Renk Açıklama Ayarı</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorScalarBarLegendBoxSettingDialog</name>
     <message>
         <source>Scalarbar Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Skaler Çubuğu Ayarı</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation type="unfinished"></translation>
+        <translation>Gözle görülür</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation type="unfinished"></translation>
+        <translation>Değer</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation type="unfinished"></translation>
+        <translation>Düzenlemek...</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorStructured2dGridDataItem</name>
     <message>
         <source>Select I-J &amp;Region...</source>
-        <translation type="unfinished"></translation>
+        <translation>IJ Bölgesini Seçin (&amp;R)...</translation>
     </message>
     <message>
         <source>&amp;Edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Düzenlemek (&amp;E)</translation>
     </message>
     <message>
         <source>Dis&amp;play Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Ekran ayarı (&amp;P)...</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorUnstructured2dGridDataItem</name>
     <message>
         <source>&amp;Select vertices</source>
-        <translation type="unfinished"></translation>
+        <translation>Köşeleri seçin (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;Edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Düzenlemek (&amp;E)</translation>
     </message>
     <message>
         <source>Dis&amp;play Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Ekran ayarı (&amp;P)...</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorWindow</name>
     <message>
         <source>Pre-processing Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Ön İşlem Penceresi</translation>
     </message>
     <message>
         <source>Grid is not created or imported yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Izgara henüz oluşturulmadı veya içe aktarılmadı.</translation>
     </message>
     <message>
         <source>Checking grid %1 ...</source>
-        <translation type="unfinished"></translation>
+        <translation>Kontrol ızgarası %1...</translation>
     </message>
     <message>
         <source>Gr&amp;id Creating Condition...</source>
-        <translation type="unfinished"></translation>
+        <translation>Izgara Oluşturma Koşulu (&amp;I)...</translation>
     </message>
     <message>
         <source>Grid...</source>
-        <translation type="unfinished"></translation>
+        <translation>Kafes...</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorWindowActionManager</name>
     <message>
         <source>&amp;Calculation Condition</source>
-        <translation type="unfinished"></translation>
+        <translation>Hesaplama Koşulu (&amp;C)</translation>
     </message>
     <message>
         <source>&amp;Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Ayar (&amp;S)...</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation type="unfinished"></translation>
+        <translation>İçe aktarmak (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation type="unfinished"></translation>
+        <translation>İhracat (&amp;E)...</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorWindowScalarBarSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Biçim</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation type="unfinished"></translation>
+        <translation>Gözle görülür</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Başlık</translation>
     </message>
     <message>
         <source>Title :</source>
-        <translation type="unfinished"></translation>
+        <translation>Başlık :</translation>
     </message>
     <message>
         <source>Font Setting:</source>
-        <translation type="unfinished"></translation>
+        <translation>Yazı Tipi Ayarı:</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation type="unfinished"></translation>
+        <translation>Düzenlemek...</translation>
     </message>
     <message>
         <source>Label Display</source>
-        <translation type="unfinished"></translation>
+        <translation>Etiket Ekranı</translation>
     </message>
     <message>
         <source>Number of labels :</source>
-        <translation type="unfinished"></translation>
+        <translation>Etiket sayısı :</translation>
     </message>
     <message>
         <source>Format:</source>
-        <translation type="unfinished"></translation>
+        <translation>Biçim:</translation>
     </message>
     <message>
         <source>Orientation :</source>
-        <translation type="unfinished"></translation>
+        <translation>Oryantasyon :</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation type="unfinished"></translation>
+        <translation>Dikey</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation type="unfinished"></translation>
+        <translation>Yatay</translation>
     </message>
     <message>
         <source>Size</source>
-        <translation type="unfinished"></translation>
+        <translation>Boy</translation>
     </message>
     <message>
         <source>Specify Color bar size as rate against window size.</source>
-        <translation type="unfinished"></translation>
+        <translation>Renk çubuğu boyutunu pencere boyutuna göre oran olarak belirtin.</translation>
     </message>
     <message>
         <source>Width :</source>
-        <translation type="unfinished"></translation>
+        <translation>Genişlik :</translation>
     </message>
     <message>
         <source>If you specify 1, Color bar width is the same to window width.</source>
-        <translation type="unfinished"></translation>
+        <translation>1 belirtirseniz, Renk çubuğu genişliği pencere genişliğiyle aynıdır.</translation>
     </message>
     <message>
         <source>Height :</source>
-        <translation type="unfinished"></translation>
+        <translation>Boy uzunluğu :</translation>
     </message>
     <message>
         <source>If you specify 1, Color bar height is the same to window height.</source>
-        <translation type="unfinished"></translation>
+        <translation>1 belirtirseniz, Renk çubuğu yüksekliği pencere yüksekliğiyle aynıdır.</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished"></translation>
+        <translation>Konum</translation>
     </message>
     <message>
         <source>Specify Color bar left bottom position as rate against window size.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pencere boyutuna göre oran olarak Renk çubuğunun sol alt konumunu belirtin.</translation>
     </message>
     <message>
         <source>X :</source>
-        <translation type="unfinished"></translation>
+        <translation>X :</translation>
     </message>
     <message>
         <source>If you specify 0, Color bar left edge is located at window left edge.</source>
-        <translation type="unfinished"></translation>
+        <translation>0 belirtirseniz, Renk çubuğunun sol kenarı pencerenin sol kenarında bulunur.</translation>
     </message>
     <message>
         <source>Y :</source>
-        <translation type="unfinished"></translation>
+        <translation>Y:</translation>
     </message>
     <message>
         <source>If you specify 0, Color bar bottom is located at window bottom.</source>
-        <translation type="unfinished"></translation>
+        <translation>0 belirtirseniz, Renk çubuğu alt kısmı pencerenin altında bulunur.</translation>
     </message>
 </context>
 <context>
     <name>ProjectGridImporter</name>
     <message>
         <source>Project file</source>
-        <translation type="unfinished"></translation>
+        <translation>proje dosyası</translation>
     </message>
     <message>
         <source>iRIC Project files (*.ipro)</source>
-        <translation type="unfinished"></translation>
+        <translation>iRIC Proje dosyaları (*.ipro)</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
         <source>Object Browser Item Change</source>
-        <translation type="unfinished"></translation>
+        <translation>Nesne Tarayıcı Öğe Değişikliği</translation>
     </message>
     <message>
         <source>CGNS files (*.cgns)</source>
-        <translation type="unfinished"></translation>
+        <translation>CGNS dosyaları (*.cgns)</translation>
     </message>
     <message>
         <source>Close PreProcessor Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Ön İşlemci Penceresini Kapat</translation>
     </message>
 </context>
 <context>
     <name>Structured15DGridWithCrossSectionCrossSectionAltitudeMoveDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>iletişim kutusu</translation>
     </message>
     <message>
         <source>Horizontal variation (H): </source>
-        <translation type="unfinished"></translation>
+        <translation>Yatay varyasyon (H):</translation>
     </message>
     <message>
         <source>TextLabel</source>
-        <translation type="unfinished"></translation>
+        <translation>Metin Etiketi</translation>
     </message>
     <message>
         <source>Vertical Variation:</source>
-        <translation type="unfinished"></translation>
+        <translation>Dikey Varyasyon:</translation>
     </message>
     <message>
         <source>%1 &lt; </source>
-        <translation type="unfinished"></translation>
+        <translation>%1 &lt;</translation>
     </message>
     <message>
         <source>H</source>
-        <translation type="unfinished"></translation>
+        <translation>H</translation>
     </message>
     <message>
         <source> &lt; %1</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt; %1</translation>
     </message>
     <message>
         <source>Move Elevation Points</source>
-        <translation type="unfinished"></translation>
+        <translation>İrtifa Noktalarını Taşı</translation>
     </message>
 </context>
 <context>
     <name>Structured15DGridWithCrossSectionCrossSectionWindow</name>
     <message>
         <source>MainWindow</source>
-        <translation type="unfinished"></translation>
+        <translation>Ana pencere</translation>
     </message>
     <message>
         <source>toolBar</source>
-        <translation type="unfinished"></translation>
+        <translation>araç çubuğu</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Silmek (&amp;D)</translation>
     </message>
     <message>
         <source>Black line: </source>
-        <translation type="unfinished"></translation>
+        <translation>Siyah çizgi:</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished"></translation>
+        <translation>Konum</translation>
     </message>
     <message>
         <source>Elevation</source>
-        <translation type="unfinished"></translation>
+        <translation>Yükseklik</translation>
     </message>
     <message>
         <source>%1 : CrossSection %2</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 : Enine kesit %2</translation>
     </message>
     <message>
         <source>Edit Elevation Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Yükseklik Noktasını Düzenle</translation>
     </message>
 </context>
 <context>
     <name>Structured15DGridWithCrossSectionCrossSectionWindowGraphicsView</name>
     <message>
         <source>&amp;Move</source>
-        <translation type="unfinished"></translation>
+        <translation>Hareket (&amp;M)</translation>
     </message>
 </context>
 </TS>

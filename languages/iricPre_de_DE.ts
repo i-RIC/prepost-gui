@@ -1,2008 +1,2006 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="de_DE">
 <context>
     <name>BoundaryConditionDialog</name>
     <message>
         <source>Boundary Condition</source>
-        <translation type="unfinished"></translation>
+        <translation>Randbedingung</translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation type="unfinished"></translation>
+        <translation>Typ:</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Name:</translation>
     </message>
     <message>
         <source>Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Einstellung</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Farbe:</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Punktgröße:</translation>
     </message>
     <message>
         <source>Show name</source>
-        <translation type="unfinished"></translation>
+        <translation>Name anzeigen</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Linienbreite:</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Warnung</translation>
     </message>
     <message>
         <source>Name has to consist of only English characters.</source>
-        <translation type="unfinished"></translation>
+        <translation>Der Name darf nur aus englischen Zeichen bestehen.</translation>
     </message>
     <message>
         <source>Boundary Condition Property</source>
-        <translation type="unfinished"></translation>
+        <translation>Randbedingungseigenschaft</translation>
     </message>
 </context>
 <context>
     <name>CgnsGridExporter</name>
     <message>
         <source>CGNS file</source>
-        <translation type="unfinished"></translation>
+        <translation>CGNS-Datei</translation>
     </message>
 </context>
 <context>
     <name>CgnsGridImporter</name>
     <message>
         <source>CGNS files (*.cgn *.cgns)</source>
-        <translation type="unfinished"></translation>
+        <translation>CGNS-Dateien (*.cgn *.cgns)</translation>
     </message>
     <message>
         <source>CGNS file</source>
-        <translation type="unfinished"></translation>
+        <translation>CGNS-Datei</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Fehler</translation>
     </message>
     <message>
         <source>Error occured while importing grid.</source>
-        <translation type="unfinished"></translation>
+        <translation>Beim Importieren des Rasters ist ein Fehler aufgetreten.</translation>
     </message>
     <message>
         <source>This CGNS file is created for %1 version %2. It is not compatible with the current solver. Maybe only some part of the grid will be imported.
 Do you really want to import grid from this file?</source>
-        <translation type="unfinished"></translation>
+        <translation>Diese CGNS-Datei wurde erstellt für %1 Ausführung %2. Es ist nicht mit dem aktuellen Solver kompatibel. Möglicherweise wird nur ein Teil des Rasters importiert. Möchten Sie das Raster wirklich aus dieser Datei importieren?</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Warnung</translation>
     </message>
     <message>
         <source>This CGNS file does not have solver information. We can not check whether this CGNS file is compatible with the solver. If it is not compatible, maybe only some part of the grid will be imported.
 Do you really want to import grid from this file?</source>
-        <translation type="unfinished"></translation>
+        <translation>Diese CGNS-Datei enthält keine Solver-Informationen. Wir können nicht überprüfen, ob diese CGNS-Datei mit dem Solver kompatibel ist. Wenn es nicht kompatibel ist, wird möglicherweise nur ein Teil des Rasters importiert. Möchten Sie das Raster wirklich aus dieser Datei importieren?</translation>
     </message>
 </context>
 <context>
     <name>GridAttributeGeneratorLauncher</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Fehler</translation>
     </message>
     <message>
         <source>Attribute Generator %1 does not exist.</source>
-        <translation type="unfinished"></translation>
+        <translation>Attributgenerator %1 ist nicht vorhanden.</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindow</name>
     <message>
-        <source>Grid Bird&apos;s-Eye View Window</source>
-        <translation type="unfinished"></translation>
+        <source>Grid Bird's-Eye View Window</source>
+        <translation>Gitter aus der Vogelperspektive</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowActionManager</name>
     <message>
         <source>&amp;Draw</source>
-        <translation type="unfinished"></translation>
+        <translation>Zeichnen (&amp;D)</translation>
     </message>
     <message>
         <source>&amp;Display Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Bildschirmeinstellung (&amp;D)...</translation>
     </message>
     <message>
         <source>&amp;Background Color...</source>
-        <translation type="unfinished"></translation>
+        <translation>Hintergrundfarbe (&amp;B)...</translation>
     </message>
     <message>
         <source>&amp;Z-direction Scale...</source>
-        <translation type="unfinished"></translation>
+        <translation>Z-Richtungsskala (&amp;Z)...</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowAxesSettingDialog</name>
     <message>
         <source>Axes Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Achseneinstellung</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation type="unfinished"></translation>
+        <translation>Sichtbar</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Farbe:</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowColorSettingDialog</name>
     <message>
         <source>Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Bildschirmeinstellung</translation>
     </message>
     <message>
         <source>Grid Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Gitterfarbe</translation>
     </message>
     <message>
         <source>Node attribute</source>
-        <translation type="unfinished"></translation>
+        <translation>Knotenattribut</translation>
     </message>
     <message>
         <source>Cell attribute</source>
-        <translation type="unfinished"></translation>
+        <translation>Zellenattribut</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Freiwählbare Farbe</translation>
     </message>
     <message>
         <source>Axes</source>
-        <translation type="unfinished"></translation>
+        <translation>Achsen</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation type="unfinished"></translation>
+        <translation>Sichtbar</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Farbe:</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowDataModel</name>
     <message>
         <source>Edit Z-direction Scale</source>
-        <translation type="unfinished"></translation>
+        <translation>Z-Richtungsskala bearbeiten</translation>
     </message>
     <message>
         <source>Z-direction Scale</source>
-        <translation type="unfinished"></translation>
+        <translation>Z-Richtungsskala</translation>
     </message>
     <message>
         <source>Input new Z-direction scale.</source>
-        <translation type="unfinished"></translation>
+        <translation>Geben Sie einen neuen Maßstab in Z-Richtung ein.</translation>
     </message>
     <message>
         <source>Edit Color Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Farbeinstellung bearbeiten</translation>
     </message>
 </context>
 <context>
     <name>PreObjectBrowser</name>
     <message>
         <source>Object Browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Objektbrowser</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorBCDataItem</name>
     <message>
         <source>New Item</source>
-        <translation type="unfinished"></translation>
+        <translation>Neuer Gegenstand</translation>
     </message>
     <message>
         <source>&amp;Edit Condition...</source>
-        <translation type="unfinished"></translation>
+        <translation>Bedingung bearbeiten (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Assign Condition</source>
-        <translation type="unfinished"></translation>
+        <translation>Bedingung zuweisen (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Release Condition</source>
-        <translation type="unfinished"></translation>
+        <translation>Freigabebedingung (&amp;R)</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorBCGroupDataItem</name>
     <message>
         <source>Boundary Condition</source>
-        <translation type="unfinished"></translation>
+        <translation>Randbedingung</translation>
     </message>
     <message>
         <source>Add %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen %1</translation>
     </message>
     <message>
         <source>&amp;Edit Condition...</source>
-        <translation type="unfinished"></translation>
+        <translation>Bedingung bearbeiten (&amp;E)...</translation>
     </message>
     <message>
         <source>Delete &amp;Selected...</source>
-        <translation type="unfinished"></translation>
+        <translation>Ausgewählte löschen (&amp;S)...</translation>
     </message>
     <message>
         <source>Delete &amp;All...</source>
-        <translation type="unfinished"></translation>
+        <translation>Alles löschen (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Delete...</source>
-        <translation type="unfinished"></translation>
+        <translation>Löschen (&amp;D)...</translation>
     </message>
     <message>
         <source>&amp;Assign Condition</source>
-        <translation type="unfinished"></translation>
+        <translation>Bedingung zuweisen (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Release Condition</source>
-        <translation type="unfinished"></translation>
+        <translation>Freigabebedingung (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Boundary Condition</source>
-        <translation type="unfinished"></translation>
+        <translation>Randbedingung (&amp;B)</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Information</translation>
     </message>
     <message>
         <source>There is no boundary condition.</source>
-        <translation type="unfinished"></translation>
+        <translation>Es gibt keine Randbedingung.</translation>
     </message>
     <message>
         <source>Delete selected boundary conditions</source>
-        <translation type="unfinished"></translation>
+        <translation>Ausgewählte Randbedingungen löschen</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Warnung</translation>
     </message>
     <message>
         <source>Are you sure you want to delete all boundary conditions?</source>
-        <translation type="unfinished"></translation>
+        <translation>Möchten Sie wirklich alle Randbedingungen löschen?</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorBCSettingDataItem</name>
     <message>
         <source>&amp;Edit Condition...</source>
-        <translation type="unfinished"></translation>
+        <translation>Bedingung bearbeiten (&amp;E)...</translation>
     </message>
     <message>
         <source>Polygon</source>
-        <translation type="unfinished"></translation>
+        <translation>Polygon</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Warnung</translation>
     </message>
     <message>
         <source>Mapping can not be executed when there is no grid.</source>
-        <translation type="unfinished"></translation>
+        <translation>Das Mapping kann nicht ausgeführt werden, wenn kein Raster vorhanden ist.</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorBCSettingGroupDataItem</name>
     <message>
         <source>Boundary Condition Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Einstellung der Randbedingung</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Information</translation>
     </message>
     <message>
         <source>There is no boundary condition setting.</source>
-        <translation type="unfinished"></translation>
+        <translation>Es gibt keine Randbedingungseinstellung.</translation>
     </message>
     <message>
         <source>Delete selected boundary condition settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Ausgewählte Randbedingungseinstellungen löschen</translation>
     </message>
     <message>
         <source>Are you sure you want to delete all boundary condition settings?</source>
-        <translation type="unfinished"></translation>
+        <translation>Möchten Sie wirklich alle Randbedingungseinstellungen löschen?</translation>
     </message>
     <message>
         <source>Add %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen %1</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Warnung</translation>
     </message>
     <message>
         <source>Mapping can not be executed when there is no grid.</source>
-        <translation type="unfinished"></translation>
+        <translation>Das Mapping kann nicht ausgeführt werden, wenn kein Raster vorhanden ist.</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorBackgroundImageDataItem</name>
     <message>
         <source>&amp;Georeference...</source>
-        <translation type="unfinished"></translation>
+        <translation>Georeferenz (&amp;G)...</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorBackgroundImagesDataItem</name>
     <message>
         <source>Background Images</source>
-        <translation type="unfinished"></translation>
+        <translation>Hintergrundbilder</translation>
     </message>
     <message>
         <source>&amp;Add Image...</source>
-        <translation type="unfinished"></translation>
+        <translation>Bild hinzufügen (&amp;A)...</translation>
     </message>
     <message>
         <source>Delete &amp;Selected...</source>
-        <translation type="unfinished"></translation>
+        <translation>Ausgewählte löschen (&amp;S)...</translation>
     </message>
     <message>
         <source>Delete &amp;All...</source>
-        <translation type="unfinished"></translation>
+        <translation>Alles löschen (&amp;A)...</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Information</translation>
     </message>
     <message>
         <source>There is no background image.</source>
-        <translation type="unfinished"></translation>
+        <translation>Es gibt kein Hintergrundbild.</translation>
     </message>
     <message>
         <source>Delete selected background images</source>
-        <translation type="unfinished"></translation>
+        <translation>Ausgewählte Hintergrundbilder löschen</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Warnung</translation>
     </message>
     <message>
         <source>Are you sure you want to delete all background images?</source>
-        <translation type="unfinished"></translation>
+        <translation>Möchten Sie wirklich alle Hintergrundbilder löschen?</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorDataModel</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Warnung</translation>
     </message>
     <message>
         <source>The solver is running. You can see the calculation condition settings, but can not overwrite.</source>
-        <translation type="unfinished"></translation>
+        <translation>Der Löser läuft. Sie können die Berechnungsbedingungseinstellungen sehen, aber nicht überschreiben.</translation>
     </message>
     <message>
         <source>Select file to import</source>
-        <translation type="unfinished"></translation>
+        <translation>Datei zum Importieren auswählen</translation>
     </message>
     <message>
         <source>All importable files(*.cgn *.cgns *.ipro *.yml);;iRIC project file (*.ipro);;CGNS file (*.cgn *.cgns);;YAML file (*.yml)</source>
-        <translation type="unfinished"></translation>
+        <translation>Alle importierbaren Dateien (*.cgn *.cgns *.ipro *.yml);;iRIC project file (*.ipro);;CGNS file (*.cgn *.cgns);;YAML file (*.yml)</translation>
     </message>
     <message>
         <source>iRIC project file (*.ipro)</source>
-        <translation type="unfinished"></translation>
+        <translation>iRIC-Projektdatei (*.ipro)</translation>
     </message>
     <message>
         <source>CGNS file (*.cgn *.cgns)</source>
-        <translation type="unfinished"></translation>
+        <translation>CGNS-Datei (*.cgn *.cgns)</translation>
     </message>
     <message>
         <source>YAML file (*.yml)</source>
-        <translation type="unfinished"></translation>
+        <translation>YAML-Datei (*.yml)</translation>
     </message>
     <message>
         <source>Select case</source>
-        <translation type="unfinished"></translation>
+        <translation>Fall auswählen</translation>
     </message>
     <message>
         <source>Please select from which case in %1 to import calculation conditions.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bitte wählen Sie aus welchem Fall in %1 Berechnungsbedingungen zu importieren.</translation>
     </message>
     <message>
         <source>Success</source>
-        <translation type="unfinished"></translation>
+        <translation>Erfolg</translation>
     </message>
     <message>
         <source>Calculation Condition is successfully imported from the specified file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Berechnungsbedingung wurde erfolgreich aus der angegebenen Datei importiert.</translation>
     </message>
     <message>
         <source>Calculation Condition is successfully imported from %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Berechnungsbedingung wurde erfolgreich importiert aus %1.</translation>
     </message>
     <message>
         <source>Fail</source>
-        <translation type="unfinished"></translation>
+        <translation>Scheitern</translation>
     </message>
     <message>
         <source>Importing calculation condition failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Das Importieren der Berechnungsbedingung ist fehlgeschlagen.</translation>
     </message>
     <message>
         <source>Select File to Export</source>
-        <translation type="unfinished"></translation>
+        <translation>Wählen Sie Datei zum Exportieren</translation>
     </message>
     <message>
         <source>CGNS file (*.cgns);;YAML file (*.yml)</source>
-        <translation type="unfinished"></translation>
+        <translation>CGNS-Datei (*.cgns);;YAML file (*.yml)</translation>
     </message>
     <message>
         <source>Exporting calculation condition...</source>
-        <translation type="unfinished"></translation>
+        <translation>Berechnungsbedingung wird exportiert...</translation>
     </message>
     <message>
         <source>Calculation Condition is successfully exported to %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Berechnungsbedingung wurde erfolgreich exportiert nach %1.</translation>
     </message>
     <message>
         <source>Exporting calculation condition failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Das Exportieren der Berechnungsbedingung ist fehlgeschlagen.</translation>
     </message>
     <message>
         <source>G&amp;eographic Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Geografische Daten (&amp;E)</translation>
     </message>
     <message>
         <source>Edit &amp;Groups...</source>
-        <translation type="unfinished"></translation>
+        <translation>Gruppen bearbeiten (&amp;G)...</translation>
     </message>
     <message>
         <source>Delete &amp;All...</source>
-        <translation type="unfinished"></translation>
+        <translation>Alles löschen (&amp;A)...</translation>
     </message>
     <message>
         <source>Export All Polygons...</source>
-        <translation type="unfinished"></translation>
+        <translation>Alle Polygone exportieren...</translation>
     </message>
     <message>
         <source>P&amp;ointset Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Punktsatzdaten (&amp;O)</translation>
     </message>
     <message>
         <source>Poly&amp;line</source>
-        <translation type="unfinished"></translation>
+        <translation>Polylinie (&amp;L)</translation>
     </message>
     <message>
         <source>&amp;Color Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Farbeinstellung (&amp;C)...</translation>
     </message>
     <message>
         <source>Set Up Scalarbar...</source>
-        <translation type="unfinished"></translation>
+        <translation>Skalarleiste einrichten...</translation>
     </message>
     <message>
         <source>Import</source>
-        <translation type="unfinished"></translation>
+        <translation>Importieren</translation>
     </message>
     <message>
         <source>Export</source>
-        <translation type="unfinished"></translation>
+        <translation>Export</translation>
     </message>
     <message>
         <source>&amp;Grid Creating Condition</source>
-        <translation type="unfinished"></translation>
+        <translation>Gittererstellungsbedingung (&amp;G)</translation>
     </message>
     <message>
         <source>B&amp;oundary Condition Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Einstellung der Randbedingung (&amp;O)</translation>
     </message>
     <message>
         <source>&amp;Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Netz (&amp;G)</translation>
     </message>
     <message>
         <source>&amp;Attributes Mapping</source>
-        <translation type="unfinished"></translation>
+        <translation>Attributzuordnung (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Measured Values</source>
-        <translation type="unfinished"></translation>
+        <translation>Messwerte (&amp;M)</translation>
     </message>
     <message>
         <source>&amp;Scalar...</source>
-        <translation type="unfinished"></translation>
+        <translation>Skalar (&amp;S)...</translation>
     </message>
     <message>
         <source>&amp;Arrows...</source>
-        <translation type="unfinished"></translation>
+        <translation>Pfeile (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation type="unfinished"></translation>
+        <translation>Importieren (&amp;I)...</translation>
     </message>
     <message>
         <source>Gr&amp;id Creating Condition...</source>
-        <translation type="unfinished"></translation>
+        <translation>Gittererstellungsbedingung (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Grid...</source>
-        <translation type="unfinished"></translation>
+        <translation>Netz (&amp;G)...</translation>
     </message>
     <message>
         <source>Gr&amp;id Creating Condition</source>
-        <translation type="unfinished"></translation>
+        <translation>Gittererstellungsbedingung (&amp;I)</translation>
     </message>
     <message>
         <source>Grid Creating Condition</source>
-        <translation type="unfinished"></translation>
+        <translation>Gittererstellungsbedingung</translation>
     </message>
     <message>
         <source>(No data to import)</source>
-        <translation type="unfinished"></translation>
+        <translation>(Keine Daten zum Importieren)</translation>
     </message>
     <message>
         <source>(No data to export)</source>
-        <translation type="unfinished"></translation>
+        <translation>(Keine Daten zum Exportieren)</translation>
     </message>
     <message>
         <source>(No algorithm is selected yet)</source>
-        <translation type="unfinished"></translation>
+        <translation>(Es ist noch kein Algorithmus ausgewählt)</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation type="unfinished"></translation>
+        <translation>Export (&amp;E)...</translation>
     </message>
     <message>
         <source>Add New %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Neue hinzufügen %1</translation>
     </message>
     <message>
         <source>%1 are not mapped after they are edited last time. Do you want to execute mapping now?</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 werden nach der letzten Bearbeitung nicht zugeordnet. Möchten Sie das Mapping jetzt ausführen?</translation>
     </message>
     <message>
-        <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
-        <translation type="unfinished"></translation>
+        <source>Boundary Condition Setting "%1" is not mapped after it is edited last time. Do you want to execute mapping now?</source>
+        <translation>Einstellung der Randbedingung "%1" wird nach der letzten Bearbeitung nicht zugeordnet. Möchten Sie die Zuordnung jetzt ausführen?</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Information</translation>
     </message>
     <message>
         <source>Mapping geographic data, boundary condition finished successfully.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kartierung von geografischen Daten, Randbedingung erfolgreich abgeschlossen.</translation>
     </message>
     <message>
         <source>&amp;Cross-Section Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Querschnittsdaten (&amp;C)</translation>
     </message>
     <message>
         <source>&amp;Polygons</source>
-        <translation type="unfinished"></translation>
+        <translation>Polygone (&amp;P)</translation>
     </message>
     <message>
         <source>&amp;Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Linien (&amp;L)</translation>
     </message>
     <message>
         <source>P&amp;oint Cloud Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Punktwolkendaten (&amp;O)</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGeoDataComplexGroupDataItem</name>
     <message>
         <source>%1 Group Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 Gruppeneinstellung</translation>
     </message>
     <message>
         <source>Edit &amp;Groups...</source>
-        <translation type="unfinished"></translation>
+        <translation>Gruppen bearbeiten (&amp;G)...</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation type="unfinished"></translation>
+        <translation>Importieren (&amp;I)</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGeoDataDataItem</name>
     <message>
         <source>&amp;Export...</source>
-        <translation type="unfinished"></translation>
+        <translation>Export (&amp;E)...</translation>
     </message>
     <message>
         <source>Failure</source>
-        <translation type="unfinished"></translation>
+        <translation>Versagen</translation>
     </message>
     <message>
         <source>You cannot use this name for this data. A geographic data with the same name already exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sie können diesen Namen nicht für diese Daten verwenden. Es sind bereits geografische Daten mit demselben Namen vorhanden.</translation>
     </message>
     <message>
         <source>Select File to Export</source>
-        <translation type="unfinished"></translation>
+        <translation>Wählen Sie Datei zum Exportieren</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGeoDataGroupDataItem</name>
     <message>
         <source>&amp;Import from web...</source>
-        <translation type="unfinished"></translation>
+        <translation>Aus dem Internet importieren (&amp;I)...</translation>
     </message>
     <message>
         <source>Delete &amp;All...</source>
-        <translation type="unfinished"></translation>
+        <translation>Alles löschen (&amp;A)...</translation>
     </message>
     <message>
         <source>Export All Polygons...</source>
-        <translation type="unfinished"></translation>
+        <translation>Alle Polygone exportieren...</translation>
     </message>
     <message>
         <source>&amp;Color Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Farbeinstellung (&amp;C)...</translation>
     </message>
     <message>
         <source>Set Up Scalarbar...</source>
-        <translation type="unfinished"></translation>
+        <translation>Skalarleiste einrichten...</translation>
     </message>
     <message>
         <source>Delete &amp;Selected...</source>
-        <translation type="unfinished"></translation>
+        <translation>Ausgewählte löschen (&amp;S)...</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen (&amp;A)</translation>
     </message>
     <message>
         <source>All importable files (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Alle importierbaren Dateien (%1)</translation>
     </message>
     <message>
         <source>Select file to import</source>
-        <translation type="unfinished"></translation>
+        <translation>Datei zum Importieren auswählen</translation>
     </message>
     <message>
         <source>Select algorithm</source>
-        <translation type="unfinished"></translation>
+        <translation>Algorithmus auswählen</translation>
     </message>
     <message>
         <source>Please select algorithm to import data</source>
-        <translation type="unfinished"></translation>
+        <translation>Bitte wählen Sie einen Algorithmus zum Importieren von Daten</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Warnung</translation>
     </message>
     <message>
         <source>File type cannot be recognized from the file extension. : %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Der Dateityp kann anhand der Dateierweiterung nicht erkannt werden. : %1</translation>
     </message>
     <message>
         <source>Import failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Importieren fehlgeschlagen</translation>
     </message>
     <message>
         <source>Importing data from %1 failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Importieren von Daten aus %1 gescheitert.</translation>
     </message>
     <message>
         <source>%1 contains no data to import.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 enthält keine zu importierenden Daten.</translation>
     </message>
     <message>
         <source>Importing data...</source>
-        <translation type="unfinished"></translation>
+        <translation>Daten importieren...</translation>
     </message>
     <message>
         <source>Canceled</source>
-        <translation type="unfinished"></translation>
+        <translation>Abgesagt</translation>
     </message>
     <message>
         <source>Importing canceled.</source>
-        <translation type="unfinished"></translation>
+        <translation>Importieren abgebrochen.</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Information</translation>
     </message>
     <message>
         <source>To import the geographic data, specify coordinate system first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Um die geografischen Daten zu importieren, geben Sie zuerst das Koordinatensystem an.</translation>
     </message>
     <message>
         <source>Specified file has invalid data, and those were ignored. Ignored data is as follows:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Die angegebene Datei enthält ungültige Daten, die ignoriert wurden. Ignorierte Daten sind wie folgt: %1</translation>
     </message>
     <message>
         <source>Importing data failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Das Importieren von Daten ist fehlgeschlagen.</translation>
     </message>
     <message>
         <source>No data to import.</source>
-        <translation type="unfinished"></translation>
+        <translation>Keine Daten zum Importieren.</translation>
     </message>
     <message>
         <source>Select data to export</source>
-        <translation type="unfinished"></translation>
+        <translation>Wählen Sie die zu exportierenden Daten aus</translation>
     </message>
     <message>
         <source>Please select which data to export.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bitte wählen Sie aus, welche Daten exportiert werden sollen.</translation>
     </message>
     <message>
         <source>%1 Color Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 Farbeinstellung</translation>
     </message>
     <message>
         <source>Export Polygons</source>
-        <translation type="unfinished"></translation>
+        <translation>Polygone exportieren</translation>
     </message>
     <message>
         <source>ESRI Shapefile (*.shp)</source>
-        <translation type="unfinished"></translation>
+        <translation>ESRI Shapefile (*.shp)</translation>
     </message>
     <message>
         <source>There is no geographic data.</source>
-        <translation type="unfinished"></translation>
+        <translation>Es gibt keine geografischen Daten.</translation>
     </message>
     <message>
         <source>Delete selected geograhic data</source>
-        <translation type="unfinished"></translation>
+        <translation>Ausgewählte geografische Daten löschen</translation>
     </message>
     <message>
         <source>Are you sure you want to delete all items in %1 group?</source>
-        <translation type="unfinished"></translation>
+        <translation>Möchten Sie wirklich alle Elemente in löschen? %1 Gruppe?</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation type="unfinished"></translation>
+        <translation>Importieren (&amp;I)</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGeoDataTopDataItem</name>
     <message>
         <source>Geographic Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Geografische Daten</translation>
     </message>
     <message>
         <source>Reference Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Referenzinformationen</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAndGridCreatingConditionDataItem</name>
     <message>
         <source>&amp;Delete Grid Creating Condition and Grid Shape...</source>
-        <translation type="unfinished"></translation>
+        <translation>Raster löschen Bedingung und Rasterform erstellen (&amp;D)...</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Warnung</translation>
     </message>
     <message>
         <source>Are you sure you want to discard grid creating condition and grid?</source>
-        <translation type="unfinished"></translation>
+        <translation>Möchten Sie die Rastererstellungsbedingung und das Raster wirklich verwerfen?</translation>
     </message>
     <message>
         <source>All importable files (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Alle importierbaren Dateien (%1)</translation>
     </message>
     <message>
         <source>Select file to import</source>
-        <translation type="unfinished"></translation>
+        <translation>Datei zum Importieren auswählen</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Fehler</translation>
     </message>
     <message>
         <source>Importing grid failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Das Importieren des Rasters ist fehlgeschlagen.</translation>
     </message>
     <message>
         <source>Confirmation</source>
-        <translation type="unfinished"></translation>
+        <translation>Bestätigung</translation>
     </message>
     <message>
         <source>Do you want to map geographic data to grid attributes now?</source>
-        <translation type="unfinished"></translation>
+        <translation>Möchten Sie jetzt geografische Daten Rasterattributen zuordnen?</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeCellDataItem</name>
     <message>
         <source>Edit value...</source>
-        <translation type="unfinished"></translation>
+        <translation>Wert bearbeiten...</translation>
     </message>
     <message>
         <source>Grid Cell Attribute Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Anzeigeeinstellung für Rasterzellenattribute</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Warnung</translation>
     </message>
     <message>
         <source>Please select only one node.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bitte wählen Sie nur einen Knoten aus.</translation>
     </message>
     <message>
         <source>Edit %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Bearbeiten %1</translation>
     </message>
     <message>
         <source>Input the new value of %1 at the selected grid cells.</source>
-        <translation type="unfinished"></translation>
+        <translation>Geben Sie den neuen Wert von ein %1 an den ausgewählten Gitterzellen.</translation>
     </message>
     <message>
         <source>Edit value by specifying difference...</source>
-        <translation type="unfinished"></translation>
+        <translation>Wert durch Angabe der Differenz bearbeiten...</translation>
     </message>
     <message>
         <source>Edit value by specifying ratio...</source>
-        <translation type="unfinished"></translation>
+        <translation>Wert bearbeiten durch Angabe des Verhältnisses...</translation>
     </message>
     <message>
         <source>difference</source>
-        <translation type="unfinished"></translation>
+        <translation>Unterschied</translation>
     </message>
     <message>
         <source>ratio</source>
-        <translation type="unfinished"></translation>
+        <translation>Verhältnis</translation>
     </message>
     <message>
         <source>Apply %1 to %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Anwenden %1 zu %2</translation>
     </message>
     <message>
         <source>Input the %1 of %2 at the selected grid cells.</source>
-        <translation type="unfinished"></translation>
+        <translation>Geben Sie die ein %1 von %2 an den ausgewählten Gitterzellen.</translation>
     </message>
     <message>
         <source>Export...</source>
-        <translation type="unfinished"></translation>
+        <translation>Export...</translation>
     </message>
     <message>
         <source>Topography File (*.tpo)</source>
-        <translation type="unfinished"></translation>
+        <translation>Topografiedatei (*.tpo)</translation>
     </message>
     <message>
         <source>Export as Topography Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Als Topografiedaten exportieren</translation>
     </message>
     <message>
         <source>Error occured while opening the file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Beim Öffnen der Datei ist ein Fehler aufgetreten.</translation>
     </message>
     <message>
         <source>Grid condition successfully exported to %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Netzzustand erfolgreich exportiert nach %1.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Fehler</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Information</translation>
     </message>
     <message>
         <source>%1 generated.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 erzeugt.</translation>
     </message>
     <message>
         <source>Generate point cloud data</source>
-        <translation type="unfinished"></translation>
+        <translation>Punktwolkendaten generieren</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeCellDisplaySettingDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Dialog</translation>
     </message>
     <message>
         <source>Attribute</source>
-        <translation type="unfinished"></translation>
+        <translation>Attribut</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Farbe</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeCellGroupDataItem</name>
     <message>
         <source>Cell attributes</source>
-        <translation type="unfinished"></translation>
+        <translation>Zellenattribute</translation>
     </message>
     <message>
         <source>Show Attribute Browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Attributbrowser anzeigen</translation>
     </message>
     <message>
         <source>Cell Attribute Change</source>
-        <translation type="unfinished"></translation>
+        <translation>Änderung der Zellenattribute</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeCustomMappingDialog</name>
     <message>
         <source>Attribute Mapping</source>
-        <translation type="unfinished"></translation>
+        <translation>Attributzuordnung</translation>
     </message>
     <message>
         <source>Check &amp;All</source>
-        <translation type="unfinished"></translation>
+        <translation>Alle überprüfen (&amp;A)</translation>
     </message>
     <message>
         <source>Geographic Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Geografische Daten</translation>
     </message>
     <message>
         <source>Boundary Condition Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Einstellung der Randbedingung</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeMappingSettingTopDataItem</name>
     <message>
         <source>Execute mapping</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapping ausführen</translation>
     </message>
     <message>
         <source>&amp;Execute...</source>
-        <translation type="unfinished"></translation>
+        <translation>Ausführen (&amp;E)...</translation>
     </message>
     <message>
-        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.
+        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Die folgenden Attribute wurden nicht zugeordnet, weil sie die Ausgabewerte des Gittergenerators haben. Wenn Sie für diese geografische Daten zwangsweise kartieren möchten, kartieren Sie bitte manuell mit dem Menü "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Information</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Warnung</translation>
     </message>
     <message>
         <source>Mapping geographic data finished successfully.</source>
-        <translation type="unfinished"></translation>
+        <translation>Das Mapping der geografischen Daten wurde erfolgreich abgeschlossen.</translation>
     </message>
     <message>
         <source>Mapping geographic data finished</source>
-        <translation type="unfinished"></translation>
+        <translation>Kartierung der geografischen Daten abgeschlossen</translation>
     </message>
     <message>
-        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation type="unfinished"></translation>
+        <source>The grid attribute "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Das Rasterattribut "%1" wird von Hand bearbeitet. Wenn Sie das Mapping ausführen, werden alle vorgenommenen Änderungen verworfen. Möchten Sie das Mapping wirklich ausführen?</translation>
     </message>
     <message>
-        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation type="unfinished"></translation>
+        <source>The boundary condition "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Die Randbedingung "%1" wird von Hand bearbeitet. Wenn Sie das Mapping ausführen, werden alle vorgenommenen Änderungen verworfen. Möchten Sie das Mapping wirklich ausführen?</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeMappingSettingTopEditDialog</name>
     <message>
         <source>Grid Attribute Mapping Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Einstellung der Rasterattributzuordnung</translation>
     </message>
     <message>
         <source>Execute mapping</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapping ausführen</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation>Auto</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;meta name ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p style=" margin -top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Beim Erstellen des Rasters werden Sie gefragt, ob um die Attributzuordnung jedes Mal auszuführen.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Manual</source>
-        <translation type="unfinished"></translation>
+        <translation>Handbuch</translation>
     </message>
     <message>
-        <source>Attribute mapping is executed only when you manually select &quot;Execute&quot; menu.</source>
-        <translation type="unfinished"></translation>
+        <source>Attribute mapping is executed only when you manually select "Execute" menu.</source>
+        <translation>Die Attributzuordnung wird nur ausgeführt, wenn Sie das Menü "Ausführen" manuell auswählen.</translation>
     </message>
     <message>
         <source>Geographic data mapping</source>
-        <translation type="unfinished"></translation>
+        <translation>Geografische Datenzuordnung</translation>
     </message>
     <message>
         <source>Mapping with TINs</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapping mit TINs</translation>
     </message>
     <message>
         <source>TINs created from geographic data are used for mapping. Grid nodes attribute values are calculated as weighted average of the values at the TIN nodes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Aus geografischen Daten erstellte TINs werden für die Kartierung verwendet. Die Attributwerte der Rasterknoten werden als gewichteter Durchschnitt der Werte an den TIN-Knoten berechnet.</translation>
     </message>
     <message>
         <source>Template mapping</source>
-        <translation type="unfinished"></translation>
+        <translation>Vorlagenzuordnung</translation>
     </message>
     <message>
         <source>Find geographic data points that are near to the grid nodes, regarding the grid cell shapes, and use the values at those points for interpolation.
 This algorithm can be used only for structured grids.</source>
-        <translation type="unfinished"></translation>
+        <translation>Finden Sie geografische Datenpunkte, die sich in der Nähe der Gitterknoten befinden, in Bezug auf die Gitterzellenformen, und verwenden Sie die Werte an diesen Punkten für die Interpolation. Dieser Algorithmus kann nur für strukturierte Gitter verwendet werden.</translation>
     </message>
     <message>
         <source>&amp;Detail...</source>
-        <translation type="unfinished"></translation>
+        <translation>Detail (&amp;D)...</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeNodeDataItem</name>
     <message>
         <source>Edit value...</source>
-        <translation type="unfinished"></translation>
+        <translation>Wert bearbeiten...</translation>
     </message>
     <message>
         <source>Export...</source>
-        <translation type="unfinished"></translation>
+        <translation>Export...</translation>
     </message>
     <message>
         <source>Open &amp;Cross Section Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Querschnittsfenster öffnen (&amp;C)</translation>
     </message>
     <message>
         <source>Open &amp;Longitudinal Cross Section Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Fenster Längsschnitt öffnen (&amp;L)</translation>
     </message>
     <message>
         <source>Edit %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Bearbeiten %1</translation>
     </message>
     <message>
         <source>Grid Node Attribute Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Anzeigeeinstellung für Gitterknotenattribute</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Warnung</translation>
     </message>
     <message>
         <source>Please select only one node.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bitte wählen Sie nur einen Knoten aus.</translation>
     </message>
     <message>
         <source>Input the new value of %1 at the selected grid nodes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Geben Sie den neuen Wert von ein %1 an den ausgewählten Gitterknoten.</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Information</translation>
     </message>
     <message>
         <source>To open a Cross Section Window, Please select only one grid node.</source>
-        <translation type="unfinished"></translation>
+        <translation>Um ein Querschnittsfenster zu öffnen, wählen Sie bitte nur einen Rasterknoten aus.</translation>
     </message>
     <message>
         <source>To open a Longitudinal Cross Section Window, Please select only one grid node.</source>
-        <translation type="unfinished"></translation>
+        <translation>Um ein Längsschnittfenster zu öffnen, wählen Sie bitte nur einen Rasterknoten aus.</translation>
     </message>
     <message>
         <source>Topography File (*.tpo)</source>
-        <translation type="unfinished"></translation>
+        <translation>Topografiedatei (*.tpo)</translation>
     </message>
     <message>
         <source>Export as Topography Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Als Topografiedaten exportieren</translation>
     </message>
     <message>
         <source>Error occured while opening the file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Beim Öffnen der Datei ist ein Fehler aufgetreten.</translation>
     </message>
     <message>
         <source>Grid condition successfully exported to %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Netzzustand erfolgreich exportiert nach %1.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Fehler</translation>
     </message>
     <message>
         <source>Edit value by specifying difference...</source>
-        <translation type="unfinished"></translation>
+        <translation>Wert durch Angabe der Differenz bearbeiten...</translation>
     </message>
     <message>
         <source>Edit value by specifying ratio...</source>
-        <translation type="unfinished"></translation>
+        <translation>Wert bearbeiten durch Angabe des Verhältnisses...</translation>
     </message>
     <message>
         <source>difference</source>
-        <translation type="unfinished"></translation>
+        <translation>Unterschied</translation>
     </message>
     <message>
         <source>ratio</source>
-        <translation type="unfinished"></translation>
+        <translation>Verhältnis</translation>
     </message>
     <message>
         <source>Apply %1 to %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Anwenden %1 zu %2</translation>
     </message>
     <message>
         <source>Input the %1 of %2 at the selected grid nodes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Geben Sie die ein %1 von %2 an den ausgewählten Gitterknoten.</translation>
     </message>
     <message>
         <source>%1 generated.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 erzeugt.</translation>
     </message>
     <message>
         <source>Generate point cloud data</source>
-        <translation type="unfinished"></translation>
+        <translation>Punktwolkendaten generieren</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeNodeGroupDataItem</name>
     <message>
         <source>Node attributes</source>
-        <translation type="unfinished"></translation>
+        <translation>Knotenattribute</translation>
     </message>
     <message>
         <source>Show Attribute Browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Attributbrowser anzeigen</translation>
     </message>
     <message>
         <source>Node Attribute Change</source>
-        <translation type="unfinished"></translation>
+        <translation>Änderung der Knotenattribute</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeTemplateMappingSettingDialog</name>
     <message>
         <source>Template Mapping Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Einstellung für die Vorlagenzuordnung</translation>
     </message>
     <message>
         <source>Search region</source>
-        <translation type="unfinished"></translation>
+        <translation>Region suchen</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation>Auto</translation>
     </message>
     <message>
         <source>Manual</source>
-        <translation type="unfinished"></translation>
+        <translation>Handbuch</translation>
     </message>
     <message>
         <source>Stream-wise length[m]:</source>
-        <translation type="unfinished"></translation>
+        <translation>Stromweise Länge[m]:</translation>
     </message>
     <message>
         <source>Cross-stream width[m]:</source>
-        <translation type="unfinished"></translation>
+        <translation>Querstrombreite[m]:</translation>
     </message>
     <message>
         <source>Number of Template Expansions:</source>
-        <translation type="unfinished"></translation>
+        <translation>Anzahl der Vorlagenerweiterungen:</translation>
     </message>
     <message>
         <source>Weighting Exponent:</source>
-        <translation type="unfinished"></translation>
+        <translation>Gewichtungsexponent:</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCreatingConditionAlgorithmSelectDialog</name>
     <message>
         <source>Select Grid Creating Algorithm</source>
-        <translation type="unfinished"></translation>
+        <translation>Wählen Sie den Algorithmus zur Rastererstellung</translation>
     </message>
     <message>
         <source>Algorithm:</source>
-        <translation type="unfinished"></translation>
+        <translation>Algorithmus:</translation>
     </message>
     <message>
         <source>Description:</source>
-        <translation type="unfinished"></translation>
+        <translation>Beschreibung:</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCreatingConditionDataItem</name>
     <message>
         <source>&amp;Create Grid...</source>
-        <translation type="unfinished"></translation>
+        <translation>Raster erstellen (&amp;C)...</translation>
     </message>
     <message>
         <source>&amp;Select Algorithm to Create Grid...</source>
-        <translation type="unfinished"></translation>
+        <translation>Wählen Sie den Algorithmus zum Erstellen des Rasters (&amp;S)...</translation>
     </message>
     <message>
         <source>Reset to &amp;Default...</source>
-        <translation type="unfinished"></translation>
+        <translation>Zurücksetzen (&amp;D)...</translation>
     </message>
     <message>
         <source>&amp;Delete Grid Creating Condition...</source>
-        <translation type="unfinished"></translation>
+        <translation>Raster erstellen Bedingung löschen (&amp;D)...</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation type="unfinished"></translation>
+        <translation>Importieren (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation type="unfinished"></translation>
+        <translation>Export (&amp;E)...</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Warnung</translation>
     </message>
     <message>
         <source>This operation will discard the grid that already exists. Are you sure?</source>
-        <translation type="unfinished"></translation>
+        <translation>Dieser Vorgang verwirft das bereits vorhandene Raster. Bist du sicher?</translation>
     </message>
     <message>
         <source>Are you sure you want to discard the grid creating condition?</source>
-        <translation type="unfinished"></translation>
+        <translation>Möchten Sie die Bedingung zum Erstellen des Rasters wirklich verwerfen?</translation>
     </message>
     <message>
         <source>Confirm</source>
-        <translation type="unfinished"></translation>
+        <translation>Bestätigen Sie</translation>
     </message>
     <message>
         <source>Are you sure you want to reset the grid creating condition to the default status?</source>
-        <translation type="unfinished"></translation>
+        <translation>Möchten Sie die Bedingung für die Rastererstellung wirklich auf den Standardstatus zurücksetzen?</translation>
     </message>
     <message>
         <source>When you switch algorithm to create grid, the grid and the grid creating condition you created will be discarded.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wenn Sie den Algorithmus zum Erstellen eines Rasters umschalten, werden das Raster und die von Ihnen erstellte Rastererstellungsbedingung verworfen.</translation>
     </message>
     <message>
         <source>Select file to import</source>
-        <translation type="unfinished"></translation>
+        <translation>Datei zum Importieren auswählen</translation>
     </message>
     <message>
         <source>iRIC grid creating condition file(*.igcc)</source>
-        <translation type="unfinished"></translation>
+        <translation>iRIC-Grid, das Bedingungsdatei erstellt (*.igcc)</translation>
     </message>
     <message>
         <source>The grid creating condition in this file is not compatible with the solver</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Bedingung für die Gittererstellung in dieser Datei ist nicht mit dem Solver kompatibel</translation>
     </message>
     <message>
         <source>No data to export.</source>
-        <translation type="unfinished"></translation>
+        <translation>Keine Daten zum Exportieren.</translation>
     </message>
     <message>
         <source>Select file to export</source>
-        <translation type="unfinished"></translation>
+        <translation>Datei zum Exportieren auswählen</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow</name>
     <message>
         <source>MainWindow</source>
-        <translation type="unfinished"></translation>
+        <translation>Hauptfenster</translation>
     </message>
     <message>
         <source>toolBar</source>
-        <translation type="unfinished"></translation>
+        <translation>Werkzeugleiste</translation>
     </message>
     <message>
         <source>Direction: </source>
-        <translation type="unfinished"></translation>
+        <translation>Richtung:</translation>
     </message>
     <message>
         <source>Black line: </source>
-        <translation type="unfinished"></translation>
+        <translation>Schwarze Linie:</translation>
     </message>
     <message>
         <source>Red line: </source>
-        <translation type="unfinished"></translation>
+        <translation>Rote Linie:</translation>
     </message>
     <message>
         <source>Blue line: </source>
-        <translation type="unfinished"></translation>
+        <translation>Blaue Linie:</translation>
     </message>
     <message>
         <source>(No data)</source>
-        <translation type="unfinished"></translation>
+        <translation>(Keine Daten)</translation>
     </message>
     <message>
         <source>Grid Crosssection (%1): J = %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Gitterquerschnitt (%1): J = %2</translation>
     </message>
     <message>
         <source>Grid Crosssection (%1): I = %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Gitterquerschnitt (%1): ich = %2</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindowGraphicsView</name>
     <message>
         <source>&amp;Edit...</source>
-        <translation type="unfinished"></translation>
+        <translation>Bearbeiten (&amp;E)...</translation>
     </message>
     <message>
         <source>Left Bank Side</source>
-        <translation type="unfinished"></translation>
+        <translation>Linke Uferseite</translation>
     </message>
     <message>
         <source>Right Bank Side</source>
-        <translation type="unfinished"></translation>
+        <translation>Rechte Uferseite</translation>
     </message>
     <message>
         <source>Edit %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Bearbeiten %1</translation>
     </message>
     <message>
         <source>Input the new value of %1 at the selected grid nodes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Geben Sie den neuen Wert von ein %1 an den ausgewählten Gitterknoten.</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridDataItem</name>
     <message>
         <source>The following problems found in this grid. Do you really want to export the grid?</source>
-        <translation type="unfinished"></translation>
+        <translation>Die folgenden Probleme wurden in diesem Raster gefunden. Möchten Sie das Raster wirklich exportieren?</translation>
     </message>
     <message>
         <source>Show Detail</source>
-        <translation type="unfinished"></translation>
+        <translation>Detail anzeigen</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Warnung</translation>
     </message>
     <message>
         <source>Select File to Export</source>
-        <translation type="unfinished"></translation>
+        <translation>Wählen Sie Datei zum Exportieren</translation>
     </message>
     <message>
         <source>Exporting Grid...</source>
-        <translation type="unfinished"></translation>
+        <translation>Raster exportieren...</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Fehler</translation>
     </message>
     <message>
         <source>Grid successfully exported to %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Raster erfolgreich exportiert nach %1.</translation>
     </message>
     <message>
         <source>Exporting grid to %1 failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Gitter exportieren nach %1 gescheitert.</translation>
     </message>
     <message>
         <source>Are you sure you want to discard the grid?</source>
-        <translation type="unfinished"></translation>
+        <translation>Möchten Sie das Raster wirklich verwerfen?</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation type="unfinished"></translation>
+        <translation>Importieren (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation type="unfinished"></translation>
+        <translation>Export (&amp;E)...</translation>
     </message>
     <message>
         <source>Grid &amp;Shape...</source>
-        <translation type="unfinished"></translation>
+        <translation>Gitterform (&amp;S)...</translation>
     </message>
     <message>
         <source>&amp;Select Polygon Region</source>
-        <translation type="unfinished"></translation>
+        <translation>Polygonbereich auswählen (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;Delete...</source>
-        <translation type="unfinished"></translation>
+        <translation>Löschen (&amp;D)...</translation>
     </message>
     <message>
         <source>&amp;Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Netz (&amp;G)</translation>
     </message>
     <message>
         <source>&amp;Node Attribute...</source>
-        <translation type="unfinished"></translation>
+        <translation>Knotenattribut (&amp;N)...</translation>
     </message>
     <message>
         <source>&amp;Cell Attribute...</source>
-        <translation type="unfinished"></translation>
+        <translation>Zellenattribut (&amp;C)...</translation>
     </message>
     <message>
         <source>Set &amp;Up Scalarbar...</source>
-        <translation type="unfinished"></translation>
+        <translation>Skalarleiste einrichten (&amp;U)...</translation>
     </message>
     <message>
-        <source>Open &amp;Bird&apos;s-Eye View Window</source>
-        <translation type="unfinished"></translation>
+        <source>Open &amp;Bird's-Eye View Window</source>
+        <translation>Vogelperspektive-Fenster öffnen (&amp;B)</translation>
     </message>
     <message>
         <source>Attributes &amp;Generating</source>
-        <translation type="unfinished"></translation>
+        <translation>Attribute generieren (&amp;G)</translation>
     </message>
     <message>
         <source>Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Netz</translation>
     </message>
     <message>
         <source> [No Data]</source>
-        <translation type="unfinished"></translation>
+        <translation>[Keine Daten]</translation>
     </message>
     <message>
         <source> (%1 x %2 = %3)</source>
-        <translation type="unfinished"></translation>
+        <translation>( %1 x %2 = %3 )</translation>
     </message>
     <message>
         <source> (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>(%1)</translation>
     </message>
     <message>
         <source>Generate %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Generieren %1</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridShapeDataItem</name>
     <message>
         <source>Grid shape</source>
-        <translation type="unfinished"></translation>
+        <translation>Gitterform</translation>
     </message>
     <message>
         <source>&amp;Edit Coordinates...</source>
-        <translation type="unfinished"></translation>
+        <translation>Koordinaten bearbeiten (&amp;E)...</translation>
     </message>
     <message>
         <source>Open &amp;Cross Section Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Querschnittsfenster öffnen (&amp;C)</translation>
     </message>
     <message>
         <source>Open &amp;Longitudinal Cross Section Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Fenster Längsschnitt öffnen (&amp;L)</translation>
     </message>
     <message>
         <source>Move Grid Point(s)</source>
-        <translation type="unfinished"></translation>
+        <translation>Gitterpunkt(e) verschieben</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridShapeDeltaDialog</name>
     <message>
         <source>Edit Grid Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Gitterkoordinaten bearbeiten</translation>
     </message>
     <message>
         <source>Please input the delta coordinates of the selected grid nodes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bitte geben Sie die Delta-Koordinaten der ausgewählten Gitterknoten ein.</translation>
     </message>
     <message>
         <source>x:</source>
-        <translation type="unfinished"></translation>
+        <translation>x:</translation>
     </message>
     <message>
         <source>y:</source>
-        <translation type="unfinished"></translation>
+        <translation>y:</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridShapeNewPositionDialog</name>
     <message>
         <source>Edit Grid Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Gitterkoordinaten bearbeiten</translation>
     </message>
     <message>
         <source>Please input the new coordinates of the selected grid node.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bitte geben Sie die neuen Koordinaten des ausgewählten Gitterknotens ein.</translation>
     </message>
     <message>
         <source>x: </source>
-        <translation type="unfinished"></translation>
+        <translation>x:</translation>
     </message>
     <message>
         <source>y:</source>
-        <translation type="unfinished"></translation>
+        <translation>y:</translation>
     </message>
     <message>
         <source>x(%1):</source>
-        <translation type="unfinished"></translation>
+        <translation>x(%1):</translation>
     </message>
     <message>
         <source>y(%1):</source>
-        <translation type="unfinished"></translation>
+        <translation>y(%1):</translation>
     </message>
     <message>
         <source>x(%1, %2):</source>
-        <translation type="unfinished"></translation>
+        <translation>x( %1, %2 ):</translation>
     </message>
     <message>
         <source>y(%1, %2):</source>
-        <translation type="unfinished"></translation>
+        <translation>y( %1, %2 ):</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridTypeDataItem</name>
     <message>
         <source>Add New Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Neues Raster hinzufügen</translation>
     </message>
     <message>
         <source>Region</source>
-        <translation type="unfinished"></translation>
+        <translation>Region</translation>
     </message>
     <message>
         <source>Region%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Region %1</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorHydraulicDataGroupDataItem</name>
     <message>
         <source>All importable files (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Alle importierbaren Dateien (%1)</translation>
     </message>
     <message>
         <source>Select file to import</source>
-        <translation type="unfinished"></translation>
+        <translation>Datei zum Importieren auswählen</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Warnung</translation>
     </message>
     <message>
         <source>File type cannot be recognized from the file extension. : %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Der Dateityp kann anhand der Dateierweiterung nicht erkannt werden. : %1</translation>
     </message>
     <message>
         <source>Import failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Importieren fehlgeschlagen</translation>
     </message>
     <message>
         <source>Importing data from %1 failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Importieren von Daten aus %1 gescheitert.</translation>
     </message>
     <message>
         <source>%1 contains no data to import.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 enthält keine zu importierenden Daten.</translation>
     </message>
     <message>
         <source>Specified file has invalid data, and those were ignored. Ignored data is as follows:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Die angegebene Datei enthält ungültige Daten, die ignoriert wurden. Ignorierte Daten sind wie folgt: %1</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Information</translation>
     </message>
     <message>
         <source>Data is successfully imported from %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Daten wurden erfolgreich importiert von %1.</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorLegendBoxEditDialog</name>
     <message>
         <source>Color Legend Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Einstellung der Farblegende</translation>
     </message>
     <message>
         <source>Legend box</source>
-        <translation type="unfinished"></translation>
+        <translation>Legendenbox</translation>
     </message>
     <message>
         <source>Font Setting:</source>
-        <translation type="unfinished"></translation>
+        <translation>Schrifteinstellung:</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation type="unfinished"></translation>
+        <translation>Bearbeiten...</translation>
     </message>
     <message>
         <source>Size (rate)</source>
-        <translation type="unfinished"></translation>
+        <translation>Größe (Preis)</translation>
     </message>
     <message>
         <source>Width :</source>
-        <translation type="unfinished"></translation>
+        <translation>Breite :</translation>
     </message>
     <message>
         <source>Hight :</source>
-        <translation type="unfinished"></translation>
+        <translation>Höhe :</translation>
     </message>
     <message>
         <source>Position (rate)</source>
-        <translation type="unfinished"></translation>
+        <translation>Position (Preis)</translation>
     </message>
     <message>
         <source>X :</source>
-        <translation type="unfinished"></translation>
+        <translation>X :</translation>
     </message>
     <message>
         <source>Y :</source>
-        <translation type="unfinished"></translation>
+        <translation>Y:</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorMeasuredDataTopDataItem</name>
     <message>
         <source>Measured Values</source>
-        <translation type="unfinished"></translation>
+        <translation>Messwerte</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation type="unfinished"></translation>
+        <translation>Importieren (&amp;I)...</translation>
     </message>
     <message>
         <source>Delete &amp;Selected...</source>
-        <translation type="unfinished"></translation>
+        <translation>Ausgewählte löschen (&amp;S)...</translation>
     </message>
     <message>
         <source>Delete &amp;All...</source>
-        <translation type="unfinished"></translation>
+        <translation>Alles löschen (&amp;A)...</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Information</translation>
     </message>
     <message>
         <source>There is no measured data.</source>
-        <translation type="unfinished"></translation>
+        <translation>Es liegen keine Messdaten vor.</translation>
     </message>
     <message>
         <source>Delete selected measured data</source>
-        <translation type="unfinished"></translation>
+        <translation>Ausgewählte Messdaten löschen</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Warnung</translation>
     </message>
     <message>
         <source>Are you sure you want to delete all measured data?</source>
-        <translation type="unfinished"></translation>
+        <translation>Möchten Sie wirklich alle Messdaten löschen?</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorNormal15DGridWithCrossSectionDataItem</name>
     <message>
         <source>&amp;Edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Bearbeiten (&amp;E)</translation>
     </message>
     <message>
         <source>Dis&amp;play Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Bildschirmeinstellung (&amp;P)...</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorNormal15DGridWithCrossSectionShapeDataItem</name>
     <message>
         <source>Display &amp;Cross Section</source>
-        <translation type="unfinished"></translation>
+        <translation>Querschnitt anzeigen (&amp;C)</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorRootDataItem</name>
     <message>
         <source>&amp;Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Einstellung (&amp;S)...</translation>
     </message>
     <message>
         <source>Change Attribute Mapping Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Einstellung der Attributzuordnung ändern</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorScalarBarEditDialog</name>
     <message>
         <source>Color Legend Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Einstellung der Farblegende</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorScalarBarLegendBoxSettingDialog</name>
     <message>
         <source>Scalarbar Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Skalarbalkeneinstellung</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation type="unfinished"></translation>
+        <translation>Sichtbar</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation type="unfinished"></translation>
+        <translation>Wert</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation type="unfinished"></translation>
+        <translation>Bearbeiten...</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorStructured2dGridDataItem</name>
     <message>
         <source>Select I-J &amp;Region...</source>
-        <translation type="unfinished"></translation>
+        <translation>IJ-Region auswählen (&amp;R)...</translation>
     </message>
     <message>
         <source>&amp;Edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Bearbeiten (&amp;E)</translation>
     </message>
     <message>
         <source>Dis&amp;play Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Bildschirmeinstellung (&amp;P)...</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorUnstructured2dGridDataItem</name>
     <message>
         <source>&amp;Select vertices</source>
-        <translation type="unfinished"></translation>
+        <translation>Scheitelpunkte auswählen (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;Edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Bearbeiten (&amp;E)</translation>
     </message>
     <message>
         <source>Dis&amp;play Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Bildschirmeinstellung (&amp;P)...</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorWindow</name>
     <message>
         <source>Pre-processing Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Vorverarbeitungsfenster</translation>
     </message>
     <message>
         <source>Grid is not created or imported yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Raster ist noch nicht erstellt oder importiert.</translation>
     </message>
     <message>
         <source>Checking grid %1 ...</source>
-        <translation type="unfinished"></translation>
+        <translation>Prüfgitter %1...</translation>
     </message>
     <message>
         <source>Gr&amp;id Creating Condition...</source>
-        <translation type="unfinished"></translation>
+        <translation>Gittererstellungsbedingung (&amp;I)...</translation>
     </message>
     <message>
         <source>Grid...</source>
-        <translation type="unfinished"></translation>
+        <translation>Netz...</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorWindowActionManager</name>
     <message>
         <source>&amp;Calculation Condition</source>
-        <translation type="unfinished"></translation>
+        <translation>Berechnungsbedingung (&amp;C)</translation>
     </message>
     <message>
         <source>&amp;Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Einstellung (&amp;S)...</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation type="unfinished"></translation>
+        <translation>Importieren (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation type="unfinished"></translation>
+        <translation>Export (&amp;E)...</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorWindowScalarBarSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Form</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation type="unfinished"></translation>
+        <translation>Sichtbar</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Titel</translation>
     </message>
     <message>
         <source>Title :</source>
-        <translation type="unfinished"></translation>
+        <translation>Titel :</translation>
     </message>
     <message>
         <source>Font Setting:</source>
-        <translation type="unfinished"></translation>
+        <translation>Schrifteinstellung:</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation type="unfinished"></translation>
+        <translation>Bearbeiten...</translation>
     </message>
     <message>
         <source>Label Display</source>
-        <translation type="unfinished"></translation>
+        <translation>Etikettenanzeige</translation>
     </message>
     <message>
         <source>Number of labels :</source>
-        <translation type="unfinished"></translation>
+        <translation>Anzahl Etiketten :</translation>
     </message>
     <message>
         <source>Format:</source>
-        <translation type="unfinished"></translation>
+        <translation>Format:</translation>
     </message>
     <message>
         <source>Orientation :</source>
-        <translation type="unfinished"></translation>
+        <translation>Orientierung :</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation type="unfinished"></translation>
+        <translation>Vertikal</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation type="unfinished"></translation>
+        <translation>Horizontal</translation>
     </message>
     <message>
         <source>Size</source>
-        <translation type="unfinished"></translation>
+        <translation>Größe</translation>
     </message>
     <message>
         <source>Specify Color bar size as rate against window size.</source>
-        <translation type="unfinished"></translation>
+        <translation>Geben Sie die Farbbalkengröße als Rate im Verhältnis zur Fenstergröße an.</translation>
     </message>
     <message>
         <source>Width :</source>
-        <translation type="unfinished"></translation>
+        <translation>Breite :</translation>
     </message>
     <message>
         <source>If you specify 1, Color bar width is the same to window width.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wenn Sie 1 angeben, entspricht die Breite der Farbleiste der Fensterbreite.</translation>
     </message>
     <message>
         <source>Height :</source>
-        <translation type="unfinished"></translation>
+        <translation>Höhe :</translation>
     </message>
     <message>
         <source>If you specify 1, Color bar height is the same to window height.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wenn Sie 1 angeben, entspricht die Höhe der Farbleiste der Fensterhöhe.</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished"></translation>
+        <translation>Position</translation>
     </message>
     <message>
         <source>Specify Color bar left bottom position as rate against window size.</source>
-        <translation type="unfinished"></translation>
+        <translation>Legen Sie die linke untere Position des Farbbalkens als Rate im Verhältnis zur Fenstergröße fest.</translation>
     </message>
     <message>
         <source>X :</source>
-        <translation type="unfinished"></translation>
+        <translation>X :</translation>
     </message>
     <message>
         <source>If you specify 0, Color bar left edge is located at window left edge.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wenn Sie 0 angeben, befindet sich der linke Rand der Farbleiste am linken Rand des Fensters.</translation>
     </message>
     <message>
         <source>Y :</source>
-        <translation type="unfinished"></translation>
+        <translation>Y:</translation>
     </message>
     <message>
         <source>If you specify 0, Color bar bottom is located at window bottom.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wenn Sie 0 angeben, befindet sich der untere Farbbalken am unteren Fensterrand.</translation>
     </message>
 </context>
 <context>
     <name>ProjectGridImporter</name>
     <message>
         <source>Project file</source>
-        <translation type="unfinished"></translation>
+        <translation>Projektdatei</translation>
     </message>
     <message>
         <source>iRIC Project files (*.ipro)</source>
-        <translation type="unfinished"></translation>
+        <translation>iRIC-Projektdateien (*.ipro)</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
         <source>Object Browser Item Change</source>
-        <translation type="unfinished"></translation>
+        <translation>Objektbrowser-Elementänderung</translation>
     </message>
     <message>
         <source>CGNS files (*.cgns)</source>
-        <translation type="unfinished"></translation>
+        <translation>CGNS-Dateien (*.cgns)</translation>
     </message>
     <message>
         <source>Close PreProcessor Window</source>
-        <translation type="unfinished"></translation>
+        <translation>PreProcessor-Fenster schließen</translation>
     </message>
 </context>
 <context>
     <name>Structured15DGridWithCrossSectionCrossSectionAltitudeMoveDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Dialog</translation>
     </message>
     <message>
         <source>Horizontal variation (H): </source>
-        <translation type="unfinished"></translation>
+        <translation>Horizontale Variation (H):</translation>
     </message>
     <message>
         <source>TextLabel</source>
-        <translation type="unfinished"></translation>
+        <translation>TextLabel</translation>
     </message>
     <message>
         <source>Vertical Variation:</source>
-        <translation type="unfinished"></translation>
+        <translation>Vertikale Variation:</translation>
     </message>
     <message>
         <source>%1 &lt; </source>
-        <translation type="unfinished"></translation>
+        <translation>%1 &lt;</translation>
     </message>
     <message>
         <source>H</source>
-        <translation type="unfinished"></translation>
+        <translation>h</translation>
     </message>
     <message>
         <source> &lt; %1</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt; %1</translation>
     </message>
     <message>
         <source>Move Elevation Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Höhenpunkte verschieben</translation>
     </message>
 </context>
 <context>
     <name>Structured15DGridWithCrossSectionCrossSectionWindow</name>
     <message>
         <source>MainWindow</source>
-        <translation type="unfinished"></translation>
+        <translation>Hauptfenster</translation>
     </message>
     <message>
         <source>toolBar</source>
-        <translation type="unfinished"></translation>
+        <translation>Werkzeugleiste</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Löschen (&amp;D)</translation>
     </message>
     <message>
         <source>Black line: </source>
-        <translation type="unfinished"></translation>
+        <translation>Schwarze Linie:</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished"></translation>
+        <translation>Position</translation>
     </message>
     <message>
         <source>Elevation</source>
-        <translation type="unfinished"></translation>
+        <translation>Elevation</translation>
     </message>
     <message>
         <source>%1 : CrossSection %2</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 : Kreuzung %2</translation>
     </message>
     <message>
         <source>Edit Elevation Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Höhenpunkt bearbeiten</translation>
     </message>
 </context>
 <context>
     <name>Structured15DGridWithCrossSectionCrossSectionWindowGraphicsView</name>
     <message>
         <source>&amp;Move</source>
-        <translation type="unfinished"></translation>
+        <translation>Bewegung (&amp;M)</translation>
     </message>
 </context>
 </TS>

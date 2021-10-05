@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="es_ES">
 <context>
     <name>GridCreatingConditionCreatorRiverSurvey15D</name>
@@ -17,17 +15,17 @@
     </message>
     <message>
         <source>Create 1.5D grid from cross-section data</source>
-        <translation type="unfinished"></translation>
+        <translation>Cree una cuadrícula 1.5D a partir de datos de sección transversal</translation>
     </message>
     <message>
         <source>The grid shape is automatically defined using cross-section data. You can specify the grid division number, by adding grid creation control points on river center.
 Note: This algorithm is available only when cross-section data is loaded!Please switch algorithm to this, after importing cross-section data.
 </source>
-        <translation type="unfinished"></translation>
+        <translation>La forma de la cuadrícula se define automáticamente utilizando datos de sección transversal. Puede especificar el número de división de la cuadrícula agregando puntos de control de creación de cuadrícula en el centro del río. Nota: ¡Este algoritmo solo está disponible cuando se cargan datos de sección transversal! Cambie el algoritmo a este, después de importar datos de sección transversal.</translation>
     </message>
     <message>
         <source>No cross-section data exists in geographic data now. This algorithm is not available.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ahora no existen datos de corte transversal en los datos geográficos. Este algoritmo no está disponible.</translation>
     </message>
 </context>
 <context>
@@ -38,7 +36,7 @@ Note: This algorithm is available only when cross-section data is loaded!Please 
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>There is no river survey data. This grid creating condition is not available.</source>
@@ -94,7 +92,7 @@ Note: This algorithm is available only when cross-section data is loaded!Please 
     </message>
     <message>
         <source>There is no cross-section data. This grid creating condition is not available.</source>
-        <translation type="unfinished"></translation>
+        <translation>No hay datos de corte transversal. Esta condición de creación de cuadrícula no está disponible.</translation>
     </message>
 </context>
 <context>
@@ -136,11 +134,11 @@ Note: This algorithm is available only when cross-section data is loaded!Please 
     </message>
     <message>
         <source>0.0</source>
-        <translation type="unfinished"></translation>
+        <translation>0.0</translation>
     </message>
     <message>
         <source>-1 &lt; s &lt; 1</source>
-        <translation type="unfinished"></translation>
+        <translation>-1 &lt;s &lt;1</translation>
     </message>
 </context>
 <context>
@@ -221,19 +219,19 @@ Note: This algorithm is available only when cross-section data is loaded!Please 
     </message>
     <message>
         <source>Position value of elevation points:</source>
-        <translation type="unfinished"></translation>
+        <translation>Valor de posición de los puntos de elevación:</translation>
     </message>
     <message>
         <source>Distance from left bank</source>
-        <translation type="unfinished"></translation>
+        <translation>Distancia desde la orilla izquierda</translation>
     </message>
     <message>
         <source>Distance from center point</source>
-        <translation type="unfinished"></translation>
+        <translation>Distancia desde el punto central</translation>
     </message>
     <message>
-        <source>&quot;Left bank&quot; is the bank you see on the left side, when you turn to downstream direction.</source>
-        <translation type="unfinished"></translation>
+        <source>"Left bank" is the bank you see on the left side, when you turn to downstream direction.</source>
+        <translation>La "orilla izquierda" es la orilla que ve en el lado izquierdo, cuando gira en dirección aguas abajo.</translation>
     </message>
 </context>
 </TS>

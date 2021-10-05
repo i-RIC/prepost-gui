@@ -1,171 +1,169 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="uk_UA">
 <context>
     <name>Graph2dWindowDataModel</name>
     <message>
         <source>Title Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Налаштування заголовка</translation>
     </message>
     <message>
         <source>Please input the title.</source>
-        <translation type="unfinished"></translation>
+        <translation>Будь ласка, введіть назву.</translation>
     </message>
 </context>
 <context>
     <name>Graph2dWindowMarkerGroupDataItem</name>
     <message>
         <source>Markers</source>
-        <translation type="unfinished"></translation>
+        <translation>Маркери</translation>
     </message>
 </context>
 <context>
     <name>Graph2dWindowMarkerSettingDialog</name>
     <message>
         <source>Marker Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Налаштування маркера</translation>
     </message>
     <message>
         <source>Orientation</source>
-        <translation type="unfinished"></translation>
+        <translation>Орієнтація</translation>
     </message>
     <message>
         <source>X-axis</source>
-        <translation type="unfinished"></translation>
+        <translation>Вісь X</translation>
     </message>
     <message>
         <source>Y-axis</source>
-        <translation type="unfinished"></translation>
+        <translation>Вісь Y</translation>
     </message>
     <message>
         <source>Axis</source>
-        <translation type="unfinished"></translation>
+        <translation>Вісь</translation>
     </message>
     <message>
         <source>Left</source>
-        <translation type="unfinished"></translation>
+        <translation>Вліво</translation>
     </message>
     <message>
         <source>Right</source>
-        <translation type="unfinished"></translation>
+        <translation>Правильно</translation>
     </message>
     <message>
         <source>Marker Value</source>
-        <translation type="unfinished"></translation>
+        <translation>Значення маркера</translation>
     </message>
     <message>
         <source>Value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Значення:</translation>
     </message>
     <message>
         <source>Label</source>
-        <translation type="unfinished"></translation>
+        <translation>Мітка</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation>Авто</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation type="unfinished"></translation>
+        <translation>На замовлення</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished"></translation>
+        <translation>Позиція</translation>
     </message>
     <message>
         <source>Center</source>
-        <translation type="unfinished"></translation>
+        <translation>Центр</translation>
     </message>
     <message>
         <source>Above Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Вище лінії</translation>
     </message>
     <message>
         <source>Style</source>
-        <translation type="unfinished"></translation>
+        <translation>Стиль</translation>
     </message>
     <message>
         <source>Color: </source>
-        <translation type="unfinished"></translation>
+        <translation>Колір:</translation>
     </message>
     <message>
         <source>Show line</source>
-        <translation type="unfinished"></translation>
+        <translation>Показати рядок</translation>
     </message>
     <message>
         <source>Solid Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Суцільна лінія</translation>
     </message>
     <message>
         <source>Dashed Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Пунктирна лінія</translation>
     </message>
     <message>
         <source>Dotted Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Пунктирна лінія</translation>
     </message>
     <message>
         <source>Dots and Dashes</source>
-        <translation type="unfinished"></translation>
+        <translation>Точки і тире</translation>
     </message>
     <message>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Додати</translation>
     </message>
     <message>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Видалити</translation>
     </message>
     <message>
         <source>y</source>
-        <translation type="unfinished"></translation>
+        <translation>y</translation>
     </message>
 </context>
 <context>
     <name>Graph2dWindowVerticalAxisSettingDialog</name>
     <message>
         <source>Vertical Axis Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Налаштування вертикальної осі</translation>
     </message>
     <message>
         <source>Value Range</source>
-        <translation type="unfinished"></translation>
+        <translation>Діапазон значень</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation>Авто</translation>
     </message>
     <message>
         <source>Max</source>
-        <translation type="unfinished"></translation>
+        <translation>Макс</translation>
     </message>
     <message>
         <source>Min</source>
-        <translation type="unfinished"></translation>
+        <translation>Хв</translation>
     </message>
     <message>
         <source>Label</source>
-        <translation type="unfinished"></translation>
+        <translation>Мітка</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation type="unfinished"></translation>
+        <translation>На замовлення</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
         <source>Move up item</source>
-        <translation type="unfinished"></translation>
+        <translation>Перемістити елемент вгору</translation>
     </message>
     <message>
         <source>Move down item</source>
-        <translation type="unfinished"></translation>
+        <translation>Перемістити елемент вниз</translation>
     </message>
     <message>
         <source>Object Browser Item Change</source>
-        <translation type="unfinished"></translation>
+        <translation>Зміна елемента браузера об’єктів</translation>
     </message>
 </context>
 </TS>

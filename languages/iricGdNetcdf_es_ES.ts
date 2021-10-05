@@ -1,30 +1,28 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="es_ES">
 <context>
     <name>GeoDataNetcdf</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>Error occured while opening %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ocurrió un error al abrir %1.</translation>
     </message>
     <message>
         <source>Color setting edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración de color editar</translation>
     </message>
 </context>
 <context>
     <name>GeoDataNetcdfColorSettingDialog</name>
     <message>
         <source>Raster Data Color Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración de color de datos ráster</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Color</translation>
     </message>
     <message>
         <source>Color by value</source>
@@ -39,84 +37,84 @@
     <name>GeoDataNetcdfCreator</name>
     <message>
         <source>Raster Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Datos ráster</translation>
     </message>
     <message>
         <source>Raster Data%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Datos ráster %1</translation>
     </message>
 </context>
 <context>
     <name>GeoDataNetcdfFileListDialog</name>
     <message>
         <source>Confirm File List</source>
-        <translation type="unfinished"></translation>
+        <translation>Confirmar lista de archivos</translation>
     </message>
     <message>
         <source>The following files will be imported. Is it OK?</source>
-        <translation type="unfinished"></translation>
+        <translation>Se importarán los siguientes archivos. ¿Está bien?</translation>
     </message>
 </context>
 <context>
     <name>GeoDataNetcdfFileNamePatternDialog</name>
     <message>
         <source>File name pattern setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración de patrón de nombre de archivo</translation>
     </message>
     <message>
         <source>Please specify the filename pattern to recognize date and time.</source>
-        <translation type="unfinished"></translation>
+        <translation>Especifique el patrón de nombre de archivo para reconocer la fecha y la hora.</translation>
     </message>
     <message>
         <source>File name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nombre del archivo:</translation>
     </message>
     <message>
         <source>Pattern:</source>
-        <translation type="unfinished"></translation>
+        <translation>Patrón:</translation>
     </message>
     <message>
         <source>YYYYMMDD_hhmmss</source>
-        <translation type="unfinished"></translation>
+        <translation>AAAAMMDD_hhmmss</translation>
     </message>
     <message>
         <source>Recognize result:</source>
-        <translation type="unfinished"></translation>
+        <translation>Reconocer resultado:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please use the following letters to define pattern:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Year: YYYY&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Month: MM&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Day: DD&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Hour: hh&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Minute: mm&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Second: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please use the following letters to define pattern:&lt;/p&gt;&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;"&gt;&lt;li style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Year: YYYY&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Month: MM&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Day: DD&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Hour: hh&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Minute: mm&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Second: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Utilice las siguientes letras para definir el patrón: &lt;/p&gt; &lt;ul style = "margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin -derecha: 0px; -qt-list-indent: 1; "&gt; &lt;li style =" margin-top: 12px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block- indent: 0; text-indent: 0px; "&gt; Año: AAAA &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt -block-indent: 0; text-indent: 0px; "&gt; Mes: MM &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px ; -qt-block-indent: 0; text-indent: 0px; "&gt; Día: DD &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin- right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Hora: hh &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px ; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Minuto: mm &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 12px; margin- left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Segundo: ss &lt;/li&gt; &lt;/ul&gt; &lt;/ body &gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>File name does not match the pattern</source>
-        <translation type="unfinished"></translation>
+        <translation>El nombre del archivo no coincide con el patrón</translation>
     </message>
 </context>
 <context>
     <name>GeoDataNetcdfGdalExporter</name>
     <message>
         <source>GDAL</source>
-        <translation type="unfinished"></translation>
+        <translation>GDAL</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>This data cannot be exported. It seems that it was not imported from *.tif or *.asc.</source>
-        <translation type="unfinished"></translation>
+        <translation>Estos datos no se pueden exportar. Parece que no se importó de *.tif o *.asc.</translation>
     </message>
     <message>
-        <source>This data cannot be exported. Data with &quot;Time&quot; dimension cannot be exported to *.tif or *.asc.</source>
-        <translation type="unfinished"></translation>
+        <source>This data cannot be exported. Data with "Time" dimension cannot be exported to *.tif or *.asc.</source>
+        <translation>Estos datos no se pueden exportar. Los datos con dimensión "Tiempo" no se pueden exportar a *.tif o *.asc.</translation>
     </message>
     <message>
         <source>ArcInfo ASCII files(*.asc)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivos ASCII de ArcInfo (*.asc)</translation>
     </message>
     <message>
         <source>GeoTiff files(*.tif)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivos GeoTiff (*.tif)</translation>
     </message>
 </context>
 <context>
@@ -127,15 +125,15 @@
     </message>
     <message>
         <source>GDAL</source>
-        <translation type="unfinished"></translation>
+        <translation>GDAL</translation>
     </message>
     <message>
         <source>GeoTiff files(*.tif)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivos GeoTiff (*.tif)</translation>
     </message>
     <message>
         <source>ArcInfo ASCII files(*.asc)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivos ASCII de ArcInfo (*.asc)</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -143,178 +141,178 @@
     </message>
     <message>
         <source>GDAL data files can be imported for grid conditions without dimensions, and Time dimension only.</source>
-        <translation type="unfinished"></translation>
+        <translation>Los archivos de datos GDAL se pueden importar para condiciones de cuadrícula sin dimensiones y solo dimensión de tiempo.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>Dimension values for time mismatch.</source>
-        <translation type="unfinished"></translation>
+        <translation>Valores de dimensión para discrepancias de tiempo.</translation>
     </message>
     <message>
         <source>Coordinate system is not specified for %1. Please select coordinate system manually.</source>
-        <translation type="unfinished"></translation>
+        <translation>El sistema de coordenadas no está especificado para %1. Seleccione el sistema de coordenadas manualmente.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataNetcdfGrayscalePngRealExporter</name>
     <message>
         <source>Grayscale 16bit PNG files(*.png)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivos PNG en escala de grises de 16 bits (*.png)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>This data cannot be exported. It seems that it was not imported from *.png.</source>
-        <translation type="unfinished"></translation>
+        <translation>Estos datos no se pueden exportar. Parece que no se importó de *.png.</translation>
     </message>
     <message>
-        <source>This data cannot be exported. Data with &quot;Time&quot; dimension cannot be exported to *.png</source>
-        <translation type="unfinished"></translation>
+        <source>This data cannot be exported. Data with "Time" dimension cannot be exported to *.png</source>
+        <translation>Estos datos no se pueden exportar. Los datos con la dimensión "Tiempo" no se pueden exportar a *.png</translation>
     </message>
     <message>
         <source>Error occured while opening %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Ocurrió un error al abrir %1</translation>
     </message>
     <message>
         <source>Error occured while initializing libpng.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ocurrió un error al inicializar libpng.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataNetcdfGrayscalePngRealImporter</name>
     <message>
         <source>Grayscale 16bit PNG (for Unreal Engine 4)</source>
-        <translation type="unfinished"></translation>
+        <translation>PNG en escala de grises de 16 bits (para Unreal Engine 4)</translation>
     </message>
     <message>
         <source>Grayscale 16bit PNG files(*.png)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivos PNG en escala de grises de 16 bits (*.png)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Aviso</translation>
+        <translation>Advertencia</translation>
     </message>
     <message>
         <source>Grayscale 16bit PNG files can be imported for grid conditions without dimensions.</source>
-        <translation type="unfinished"></translation>
+        <translation>Los archivos PNG de 16 bits en escala de grises se pueden importar para condiciones de cuadrícula sin dimensiones.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>Error occured while opening %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Ocurrió un error al abrir %1</translation>
     </message>
     <message>
         <source>Error occured while opening %1. It seems not to be a PNG file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ocurrió un error al abrir %1. Parece que no es un archivo PNG.</translation>
     </message>
     <message>
         <source>%1 is not a 16bit grayscale image.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 no es una imagen en escala de grises de 16 bits.</translation>
     </message>
     <message>
         <source>%1 does not exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 no existe.</translation>
     </message>
     <message>
         <source>Error occured while reading %1. It is not a valid world file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ocurrió un error al leer %1. No es un archivo mundial válido.</translation>
     </message>
     <message>
         <source>Error occured while parsing %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Se produjo un error al analizar %1.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataNetcdfImporter</name>
     <message>
         <source>NetCDF</source>
-        <translation type="unfinished"></translation>
+        <translation>NetCDF</translation>
     </message>
     <message>
         <source>NetCDF file (*.nc)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo NetCDF (*.nc)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>%1 does not have variable that can be imported.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 no tiene variable que se pueda importar.</translation>
     </message>
     <message>
         <source>Dimension values for %1 mismatch.</source>
-        <translation type="unfinished"></translation>
+        <translation>Valores de dimensión para %1 discordancia.</translation>
     </message>
     <message>
         <source>Error occured while parsing time definition: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Se produjo un error al analizar la definición de tiempo: %1</translation>
     </message>
     <message>
         <source>%1 does not have longitude, latitude nor x, y data.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 no tiene datos de longitud, latitud ni x, y.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataNetcdfImporterDateSelectDialog</name>
     <message>
         <source>Specify Original Date</source>
-        <translation type="unfinished"></translation>
+        <translation>Especificar fecha original</translation>
     </message>
     <message>
         <source>Automatic recognition of original time failed. Please specify the original date.</source>
-        <translation type="unfinished"></translation>
+        <translation>Falló el reconocimiento automático de la hora original. Especifique la fecha original.</translation>
     </message>
     <message>
         <source>Units:</source>
-        <translation type="unfinished"></translation>
+        <translation>Unidades:</translation>
     </message>
     <message>
         <source>days since 2014-01-01</source>
-        <translation type="unfinished"></translation>
+        <translation>días desde 2014-01-01</translation>
     </message>
     <message>
         <source>Unit:</source>
-        <translation type="unfinished"></translation>
+        <translation>Unidad:</translation>
     </message>
     <message>
         <source>years</source>
-        <translation type="unfinished"></translation>
+        <translation>años</translation>
     </message>
     <message>
         <source>days</source>
-        <translation type="unfinished"></translation>
+        <translation>dias</translation>
     </message>
     <message>
         <source>hours</source>
-        <translation type="unfinished"></translation>
+        <translation>horas</translation>
     </message>
     <message>
         <source>minutes</source>
-        <translation type="unfinished"></translation>
+        <translation>minutos</translation>
     </message>
     <message>
         <source>seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>segundos</translation>
     </message>
     <message>
         <source>Original time:</source>
-        <translation type="unfinished"></translation>
+        <translation>Hora original:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataNetcdfImporterSettingDialog</name>
     <message>
         <source>Dimension Mapping Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración de asignación de dimensiones</translation>
     </message>
     <message>
         <source>Value:</source>
@@ -322,44 +320,44 @@
     </message>
     <message>
         <source>Dimensions</source>
-        <translation type="unfinished"></translation>
+        <translation>Dimensiones</translation>
     </message>
 </context>
 <context>
     <name>GeoDataNetcdfNcExporter</name>
     <message>
         <source>NetCDF files (*.nc)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivos NetCDF (*.nc)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataNetcdfTimeSeriesCreator</name>
     <message>
         <source>Time Series Raster Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Datos ráster de serie temporal</translation>
     </message>
     <message>
         <source>Time Series Raster Data%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Datos ráster de serie temporal %1</translation>
     </message>
 </context>
 <context>
     <name>GeoDataNetcdfXbandImporter</name>
     <message>
         <source>XBand MP RADER data</source>
-        <translation type="unfinished"></translation>
+        <translation>Datos de XBand MP RADER</translation>
     </message>
     <message>
         <source>X band MP rader data (*.*)</source>
-        <translation type="unfinished"></translation>
+        <translation>Datos del rader MP de banda X (*.*)</translation>
     </message>
     <message>
         <source>Warning</source>
         <translation>Aviso</translation>
     </message>
     <message>
-        <source>X band MP rader data can be imported for grid conditions with dimension &quot;Time&quot;.</source>
-        <translation type="unfinished"></translation>
+        <source>X band MP rader data can be imported for grid conditions with dimension "Time".</source>
+        <translation>Los datos del rader MP de banda X se pueden importar para las condiciones de la red con la dimensión "Tiempo".</translation>
     </message>
     <message>
         <source>Information</source>
@@ -367,15 +365,15 @@
     </message>
     <message>
         <source>%1 files in the folder %2 are imported.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 archivos en la carpeta %2 son importados.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>Dimension values for time mismatch.</source>
-        <translation type="unfinished"></translation>
+        <translation>Valores de dimensión para discrepancias de tiempo.</translation>
     </message>
 </context>
 </TS>

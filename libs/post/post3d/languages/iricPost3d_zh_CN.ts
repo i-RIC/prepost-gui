@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="zh_CN">
 <context>
     <name>Post3dObjectBrowser</name>
@@ -156,99 +154,99 @@
     <name>Post3dWindowCellContourDataItem</name>
     <message>
         <source>Range</source>
-        <translation type="unfinished">区间</translation>
+        <translation>范围</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowCellContourGroupDataItem</name>
     <message>
         <source>Range%1</source>
-        <translation type="unfinished"></translation>
+        <translation>范围 %1</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowCellContourGroupSettingDialog</name>
     <message>
         <source>Contour Setting (cell center)</source>
-        <translation type="unfinished"></translation>
+        <translation>轮廓设置（单元格中心）</translation>
     </message>
     <message>
         <source>Value:</source>
-        <translation type="unfinished"></translation>
+        <translation>价值：</translation>
     </message>
     <message>
         <source>Regions</source>
-        <translation type="unfinished"></translation>
+        <translation>地区</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation type="unfinished">&amp;添加</translation>
+        <translation>添加 (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation type="unfinished">&amp;移除</translation>
+        <translation>消除 (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation type="unfinished">&amp;色彩条设置</translation>
+        <translation>彩条设置 (&amp;C)</translation>
     </message>
     <message>
         <source>Range%1</source>
-        <translation type="unfinished"></translation>
+        <translation>范围 %1</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowCellContourGroupTopDataItem</name>
     <message>
         <source>Contours (cell center)</source>
-        <translation type="unfinished"></translation>
+        <translation>轮廓（细胞中心）</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">警告</translation>
+        <translation>警告</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation type="unfinished">最多可定义四个轮廓</translation>
+        <translation>最多可以定义四个轮廓。</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowCellRangeSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">形式</translation>
+        <translation>形式</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation type="unfinished">区间</translation>
+        <translation>范围</translation>
     </message>
     <message>
         <source>I Min</source>
-        <translation type="unfinished">I最小</translation>
+        <translation>算我一个</translation>
     </message>
     <message>
         <source>I Max</source>
-        <translation type="unfinished">I最大</translation>
+        <translation>我最大</translation>
     </message>
     <message>
         <source>J Min</source>
-        <translation type="unfinished">J最小</translation>
+        <translation>贾敏</translation>
     </message>
     <message>
         <source>J Max</source>
-        <translation type="unfinished">J最大</translation>
+        <translation>J最大</translation>
     </message>
     <message>
         <source>K Min</source>
-        <translation type="unfinished">K最小</translation>
+        <translation>K敏</translation>
     </message>
     <message>
         <source>K Max</source>
-        <translation type="unfinished">K最大</translation>
+        <translation>K最大</translation>
     </message>
     <message>
         <source>Enabled</source>
-        <translation type="unfinished">启用</translation>
+        <translation>启用</translation>
     </message>
 </context>
 <context>
@@ -338,15 +336,15 @@
     </message>
     <message>
         <source>I</source>
-        <translation type="unfinished"></translation>
+        <translation>一世</translation>
     </message>
     <message>
         <source>J</source>
-        <translation type="unfinished"></translation>
+        <translation>J</translation>
     </message>
     <message>
         <source>K</source>
-        <translation type="unfinished"></translation>
+        <translation>钾</translation>
     </message>
     <message>
         <source>Range</source>
@@ -459,103 +457,103 @@
     <name>Post3dWindowNodeGroupArrowFaceSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">形式</translation>
+        <translation>形式</translation>
     </message>
     <message>
         <source>Direction</source>
-        <translation type="unfinished">方向</translation>
+        <translation>方向</translation>
     </message>
     <message>
         <source>I</source>
-        <translation type="unfinished"></translation>
+        <translation>一世</translation>
     </message>
     <message>
         <source>J</source>
-        <translation type="unfinished"></translation>
+        <translation>J</translation>
     </message>
     <message>
         <source>K</source>
-        <translation type="unfinished"></translation>
+        <translation>钾</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation type="unfinished">区间</translation>
+        <translation>范围</translation>
     </message>
     <message>
         <source>I Min</source>
-        <translation type="unfinished">I最小</translation>
+        <translation>算我一个</translation>
     </message>
     <message>
         <source>I Max</source>
-        <translation type="unfinished">I最大</translation>
+        <translation>我最大</translation>
     </message>
     <message>
         <source>J Min</source>
-        <translation type="unfinished">J最小</translation>
+        <translation>贾敏</translation>
     </message>
     <message>
         <source>J Max</source>
-        <translation type="unfinished">J最大</translation>
+        <translation>J最大</translation>
     </message>
     <message>
         <source>K Min</source>
-        <translation type="unfinished">K最小</translation>
+        <translation>K敏</translation>
     </message>
     <message>
         <source>K Max</source>
-        <translation type="unfinished">K最大</translation>
+        <translation>K最大</translation>
     </message>
     <message>
         <source>Enabled</source>
-        <translation type="unfinished">启用</translation>
+        <translation>启用</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation type="unfinished">采样</translation>
+        <translation>采样</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation type="unfinished">所有顶点</translation>
+        <translation>所有顶点</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation type="unfinished">采样率：</translation>
+        <translation>采样率：</translation>
     </message>
     <message>
         <source>I-direction</source>
-        <translation type="unfinished"></translation>
+        <translation>方向</translation>
     </message>
     <message>
         <source>J-direction</source>
-        <translation type="unfinished"></translation>
+        <translation>J方向</translation>
     </message>
     <message>
         <source>K-direction</source>
-        <translation type="unfinished"></translation>
+        <translation>K方向</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">颜色</translation>
+        <translation>颜色</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation type="unfinished">自定义颜色</translation>
+        <translation>自定义颜色</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation type="unfinished">根据标量值</translation>
+        <translation>按标量值</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation type="unfinished">箭头形状</translation>
+        <translation>箭头形状</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation type="unfinished">箭头大小</translation>
+        <translation>箭头大小：</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation type="unfinished">线宽：</translation>
+        <translation>行宽：</translation>
     </message>
 </context>
 <context>
@@ -570,7 +568,7 @@
     </message>
     <message>
         <source>Update Contour Setting</source>
-        <translation type="unfinished">更新轮廓设置</translation>
+        <translation>更新轮廓设置</translation>
     </message>
 </context>
 <context>
@@ -584,81 +582,81 @@
     <name>Post3dWindowNodeVectorArrowDataItem</name>
     <message>
         <source>Face</source>
-        <translation type="unfinished"></translation>
+        <translation>脸</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowNodeVectorArrowSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation type="unfinished">箭头设置</translation>
+        <translation>箭头设置</translation>
     </message>
     <message>
         <source>Common Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>通用设置</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation type="unfinished">物理值：</translation>
+        <translation>物理价值：</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation type="unfinished">长度</translation>
+        <translation>长度</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished">自动</translation>
+        <translation>汽车</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation type="unfinished">标准值：</translation>
+        <translation>标准值：</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation type="unfinished"></translation>
+        <translation>[多发性硬化症]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation type="unfinished">屏幕长度：</translation>
+        <translation>屏幕长度：</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation type="unfinished">[像素]</translation>
+        <translation>[像素]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation type="unfinished">绘制最小值</translation>
+        <translation>要绘制的最小值：</translation>
     </message>
     <message>
         <source>Faces</source>
-        <translation type="unfinished">面</translation>
+        <translation>面孔</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation type="unfinished">&amp;添加</translation>
+        <translation>添加 (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation type="unfinished">&amp;移除</translation>
+        <translation>消除 (&amp;R)</translation>
     </message>
     <message>
         <source>Face%1</source>
-        <translation type="unfinished">面%1</translation>
+        <translation>脸 %1</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowNodeVectorArrowTopDataItem</name>
     <message>
         <source>Arrows</source>
-        <translation type="unfinished"></translation>
+        <translation>箭头</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">警告</translation>
+        <translation>警告</translation>
     </message>
     <message>
         <source>A maximum of four arrows may be defined.</source>
-        <translation type="unfinished"></translation>
+        <translation>最多可以定义四个箭头。</translation>
     </message>
 </context>
 <context>
@@ -676,7 +674,7 @@
     <name>Post3dWindowNodeVectorParticleGroupStructuredDataItem</name>
     <message>
         <source>Update Particle Setting</source>
-        <translation type="unfinished">更新粒子设置</translation>
+        <translation>更新粒子设置</translation>
     </message>
 </context>
 <context>
@@ -694,7 +692,7 @@
     <name>Post3dWindowParticleGroupRootDataItem</name>
     <message>
         <source>Particles</source>
-        <translation type="unfinished">粒子</translation>
+        <translation>粒子</translation>
     </message>
 </context>
 <context>
@@ -713,28 +711,28 @@
     </message>
     <message>
         <source>Generate periodically</source>
-        <translation type="unfinished"></translation>
+        <translation>定期生成</translation>
     </message>
     <message>
         <source>Generation time interval</source>
         <translation>生成时间区间</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap;}
 p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
 &lt;p&gt;If you specify 1, particles are generated for every time steps.&lt;/p&gt;
 &lt;p&gt;If you specify 2, particles are generated twice equally separated, for every time steps,&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other time steps.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
         <extracomment>If you specify 1, particles are generated for every time steps. If you specify 2, particles are generated twice equally separated, for every time steps, If you specify 1/2, particles are generated for every other time steps.</extracomment>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <translation>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap;}
 p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
 &lt;p&gt;如果为1, 每个时间步都会生成粒子。&lt;/p&gt;
 &lt;p&gt;如果为2, 每半时间步都会生成1个粒子。&lt;/p&gt;
 &lt;p&gt;如果为1/2, 每2个时间步都会生成粒子。&lt;/p&gt;
@@ -742,11 +740,11 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>-</source>
-        <translation type="unfinished"></translation>
+        <translation>——</translation>
     </message>
     <message>
         <source>+</source>
-        <translation type="unfinished"></translation>
+        <translation>+</translation>
     </message>
     <message>
         <source>min</source>
@@ -754,7 +752,7 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>1</source>
-        <translation type="unfinished"></translation>
+        <translation>1</translation>
     </message>
     <message>
         <source>max</source>
@@ -762,11 +760,11 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Generate at arbitrary time</source>
-        <translation type="unfinished"></translation>
+        <translation>任意时间生成</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation type="unfinished"></translation>
+        <translation>编辑...</translation>
     </message>
     <message>
         <source>Start Position</source>
@@ -813,20 +811,20 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <translation>生成空间间隔</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
 p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
 &lt;p&gt;If you specify 1, particles are generated at grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 2, particles are generated at grid nodes, and middle points of grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other grid nodes.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <translation>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
 p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
 &lt;p&gt;如果为1, 粒子在网格节点处生成。&lt;/p&gt;
 &lt;p&gt;如果为2, 2个分别在粒子网格节点中间和末端生成。&lt;/p&gt;
 &lt;p&gt;如果为1/2, 粒子在每2个网格节点处生成。&lt;/p&gt;
@@ -841,16 +839,16 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <translation>大小：</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt; 指明显示像素&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt; 指明显示像素&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -902,7 +900,7 @@ p, li { white-space: pre-wrap; }
     <name>Post3dWindowParticlesTopDataItem</name>
     <message>
         <source>Particles</source>
-        <translation type="unfinished">粒子</translation>
+        <translation>粒子</translation>
     </message>
 </context>
 <context>
@@ -960,56 +958,56 @@ p, li { white-space: pre-wrap; }
         <translation>生成空间区间</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;meta name ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p style=" margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;如果指定 1，流线从网格节点开始.&lt;/p&gt; &lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;" &gt;如果指定 2，则流线从网格节点和网格节点的中点开始。&lt;/p&gt; &lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right: 0px; -qt-block-indent:0; text-indent:0px;"&gt;如果指定 1/2，则流线从每隔一个网格节点开始。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>-</source>
-        <translation type="unfinished"></translation>
+        <translation>——</translation>
     </message>
     <message>
         <source>+</source>
-        <translation type="unfinished"></translation>
+        <translation>+</translation>
     </message>
     <message>
         <source>min</source>
-        <translation type="unfinished">最小</translation>
+        <translation>分钟</translation>
     </message>
     <message>
         <source>1</source>
-        <translation type="unfinished"></translation>
+        <translation>1</translation>
     </message>
     <message>
         <source>max</source>
-        <translation type="unfinished">最大</translation>
+        <translation>最大限度</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished">颜色：</translation>
+        <translation>颜色：</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>宽度：</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;如果为1, 流线在网格节点开始.&lt;/p&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;如果为2, 流线在网格节点和中间开始&lt;/p&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;如果为1/2, 流线在每2个网格节点开始&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;如果为1, 流线在网格节点开始.&lt;/p&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;如果为2, 流线在网格节点和中间开始&lt;/p&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;如果为1/2, 流线在每2个网格节点开始&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>

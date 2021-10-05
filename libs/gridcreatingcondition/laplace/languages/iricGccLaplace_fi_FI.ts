@@ -1,307 +1,305 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="fi_FI">
 <context>
     <name>GridCreatingConditionCreatorLaplace</name>
     <message>
         <source>General purpose grid generation tool</source>
-        <translation type="unfinished"></translation>
+        <translation>Yleiskäyttöinen ruudukon luomistyökalu</translation>
     </message>
     <message>
         <source>You can create smooth grid shape solving laplace equation.</source>
-        <translation type="unfinished"></translation>
+        <translation>Voit luoda sileän ruudukon muodon ratkaisemisen laplace -yhtälön.</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionLaplace</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Varoitus</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Tiedot</translation>
     </message>
     <message>
         <source>To divide the region, click on the edge of the region first, then click on the opposite edge.</source>
-        <translation type="unfinished"></translation>
+        <translation>Jos haluat jakaa alueen, napsauta ensin alueen reunaa ja sitten vastakkaista reunaa.</translation>
     </message>
     <message>
         <source>Please select an edge line inside the region when you want to join regions.</source>
-        <translation type="unfinished"></translation>
+        <translation>Valitse alueen sisäreuna, kun haluat liittyä alueisiin.</translation>
     </message>
     <message>
         <source>Are you sure you want to join the regions divided by the selected edge?</source>
-        <translation type="unfinished"></translation>
+        <translation>Haluatko varmasti liittyä alueisiin, jotka on jaettu valitulla reunalla?</translation>
     </message>
     <message>
         <source>Are you sure you want to clear division setting?</source>
-        <translation type="unfinished"></translation>
+        <translation>Haluatko varmasti tyhjentää jakoasetukset?</translation>
     </message>
     <message>
         <source>Center Line Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Keskilinjan koordinaatit</translation>
     </message>
     <message>
         <source>Finish Defining Center Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Viimeistele keskilinjan määrittäminen</translation>
     </message>
     <message>
         <source>Start defining center line</source>
-        <translation type="unfinished"></translation>
+        <translation>Aloita keskilinjan määrittäminen</translation>
     </message>
     <message>
         <source>Move Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Siirrä piste</translation>
     </message>
     <message>
         <source>Edge Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Edge -koordinaatit</translation>
     </message>
     <message>
         <source>&amp;Build left bank and right bank lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Rakenna vasen ja oikea pankki (&amp;B)</translation>
     </message>
     <message>
         <source>&amp;Interpolation Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Interpolointitila (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Spline</source>
-        <translation type="unfinished"></translation>
+        <translation>Spline (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;Linear</source>
-        <translation type="unfinished"></translation>
+        <translation>Lineaarinen (&amp;L)</translation>
     </message>
     <message>
         <source>Add &amp;Division line</source>
-        <translation type="unfinished"></translation>
+        <translation>Lisää Division -rivi (&amp;D)</translation>
     </message>
     <message>
         <source>Remove D&amp;ivision Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Poista Division Line (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Add Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Lisää Vertex (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Poista Vertex (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Edit coordinates...</source>
-        <translation type="unfinished"></translation>
+        <translation>Muokkaa koordinaatteja (&amp;E)...</translation>
     </message>
     <message>
         <source>Division Setting for &amp;whole region...</source>
-        <translation type="unfinished"></translation>
+        <translation>Ryhmäasetus koko alueelle (&amp;W)...</translation>
     </message>
     <message>
         <source>&amp;Division Setting for selected line...</source>
-        <translation type="unfinished"></translation>
+        <translation>Division -asetus valitulle riville (&amp;D)...</translation>
     </message>
     <message>
         <source>&amp;Edge Points Deploying Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Edge Points -asetus (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Deploying Setting for selected area...</source>
-        <translation type="unfinished"></translation>
+        <translation>Asetuksen käyttöönotto valitulle alueelle (&amp;D)...</translation>
     </message>
     <message>
         <source>&amp;Clear Division Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Tyhjennä jakoasetus (&amp;C)...</translation>
     </message>
     <message>
         <source>Please build left bank and right bank lines before creating grid.</source>
-        <translation type="unfinished"></translation>
+        <translation>Rakenna vasen ja oikea pankkilinja ennen ruudukon luomista.</translation>
     </message>
     <message>
         <source>Start adding new edge</source>
-        <translation type="unfinished"></translation>
+        <translation>Aloita uuden reunan lisääminen</translation>
     </message>
     <message>
         <source>Insert Line Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Lisää viivan kärki</translation>
     </message>
     <message>
         <source>Add New Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Lisää uusi piste</translation>
     </message>
     <message>
         <source>Edit Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Muokkaa koordinaatteja</translation>
     </message>
     <message>
         <source>Move Line Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Siirrä viivan kärki</translation>
     </message>
     <message>
         <source>Remove Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Poista Vertex</translation>
     </message>
     <message>
         <source>Cross-section data not found. Please define Center Line by yourself.</source>
-        <translation type="unfinished"></translation>
+        <translation>Poikkileikkaustietoja ei löydy. Määrittele Center Line itse.</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionLaplace::Impl</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Varoitus</translation>
     </message>
     <message>
         <source>Center Line is not defined yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Keskilinjaa ei ole vielä määritelty.</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionLaplaceBuildBankLinesDialog</name>
     <message>
         <source>Build Bank Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Rakenna pankkilinjoja</translation>
     </message>
     <message>
         <source>Input the distance from center line</source>
-        <translation type="unfinished"></translation>
+        <translation>Syötä etäisyys keskilinjasta</translation>
     </message>
     <message>
         <source>Left bank:</source>
-        <translation type="unfinished"></translation>
+        <translation>Vasen pankki:</translation>
     </message>
     <message>
         <source>Right bank:</source>
-        <translation type="unfinished"></translation>
+        <translation>Oikea ranta:</translation>
     </message>
     <message>
         <source>Hint: Left bank and Right bank lines are created as line that consists of points that are away from center line to direction perpendicular to the center line.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vihje: Vasen ja oikea rivi muodostetaan viivaksi, joka koostuu pisteistä, jotka ovat kaukana keskiviivasta kohtisuorassa keskiviivaan nähden.</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionLaplaceCtrlPointsDialog</name>
     <message>
         <source>Specity the Number Of Control Cross Sections</source>
-        <translation type="unfinished"></translation>
+        <translation>Specity Control -poikkileikkausten määrä</translation>
     </message>
     <message>
         <source>Number of Control Cross Sections:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ohjauspoikkileikkausten määrä:</translation>
     </message>
     <message>
         <source>Hints: Control Cross Sections are the cross sections whose center points are used as the center line of the grid.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vihjeitä: Ohjauspoikkileikkaukset ovat poikkileikkauksia, joiden keskipisteitä käytetään ruudukon keskilinjana.</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionLaplaceDeploySettingDialog</name>
     <message>
         <source>Points Deploy Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Pisteiden käyttöönottoasetus</translation>
     </message>
     <message>
         <source>Deploy Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Ota käyttöön asetus</translation>
     </message>
     <message>
         <source>Equally divided</source>
-        <translation type="unfinished"></translation>
+        <translation>Tasaisesti jaettu</translation>
     </message>
     <message>
         <source>Geometric division</source>
-        <translation type="unfinished"></translation>
+        <translation>Geometrinen jako</translation>
     </message>
     <message>
         <source>Common ratio:</source>
-        <translation type="unfinished"></translation>
+        <translation>Yhteinen suhde:</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionLaplaceDivisionSettingDialog</name>
     <message>
         <source>Division Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Divisioonan asetus</translation>
     </message>
     <message>
         <source>Division Number:</source>
-        <translation type="unfinished"></translation>
+        <translation>Osaston numero:</translation>
     </message>
     <message>
         <source>Deploy Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Ota käyttöön asetus</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation>Auto</translation>
     </message>
     <message>
         <source>Equally divided</source>
-        <translation type="unfinished"></translation>
+        <translation>Tasaisesti jaettu</translation>
     </message>
     <message>
         <source>Geometric division</source>
-        <translation type="unfinished"></translation>
+        <translation>Geometrinen jako</translation>
     </message>
     <message>
         <source>Common ratio:</source>
-        <translation type="unfinished"></translation>
+        <translation>Yhteinen suhde:</translation>
     </message>
     <message>
         <source>Deploy Setting Target</source>
-        <translation type="unfinished"></translation>
+        <translation>Ota käyttöön asetuskohde</translation>
     </message>
     <message>
         <source>This line only</source>
-        <translation type="unfinished"></translation>
+        <translation>Vain tämä rivi</translation>
     </message>
     <message>
         <source>This line and lines in parallel positions</source>
-        <translation type="unfinished"></translation>
+        <translation>Tämä viiva ja viivat rinnakkain</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The deploy setting is applied to all lines in parallel positions.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Käyttöönottoasetusta sovelletaan kaikkiin riveihin rinnakkain. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionLaplaceSubRegionDeploySettingDialog</name>
     <message>
         <source>Inner Points Deploy Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Sisäisten pisteiden käyttöönottoasetus</translation>
     </message>
     <message>
         <source>Ratio</source>
-        <translation type="unfinished"></translation>
+        <translation>Suhde</translation>
     </message>
     <message>
         <source>Poisson</source>
-        <translation type="unfinished"></translation>
+        <translation>Poisson</translation>
     </message>
     <message>
         <source>Streamwise direction:</source>
-        <translation type="unfinished"></translation>
+        <translation>Virtaussuunta:</translation>
     </message>
     <message>
         <source>Cross section direction:</source>
-        <translation type="unfinished"></translation>
+        <translation>Poikkileikkauksen suunta:</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionLaplaceWholeRegionDivisionSettingDialog</name>
     <message>
         <source>Division Setting for Whole Region</source>
-        <translation type="unfinished"></translation>
+        <translation>Osastoasetus koko alueelle</translation>
     </message>
     <message>
         <source>m</source>
-        <translation type="unfinished"></translation>
+        <translation>m</translation>
     </message>
     <message>
         <source>Create &amp;Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Luo ruudukko (&amp;G)</translation>
     </message>
 </context>
 </TS>
