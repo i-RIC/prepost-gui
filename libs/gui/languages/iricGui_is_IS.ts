@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="is_IS">
 <context>
     <name>AnimationController</name>
@@ -286,6 +288,10 @@
         <source>Skip rate :</source>
         <translation>Sleppihlutfall:</translation>
     </message>
+    <message>
+        <source>--</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ContinuousSnapshotWindowSelectionPage</name>
@@ -356,6 +362,13 @@
     <message>
         <source>No window is currently selected.</source>
         <translation>Enginn gluggi er valinn eins og er.</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard</name>
+    <message>
+        <source>Continuous Snapshot / Movie / Google Earth Export Wizard</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -438,7 +451,7 @@ This wizard will generate or update translation files for solver definition file
         <translation>Veldu leysir</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
         <translation>Þegar þú býrð til nýtt verkefni þarftu að velja lausnina til að nota til útreikninga. Vinsamlegast veldu lausn og ýttu á „OK“ hnappinn.</translation>
     </message>
 </context>
@@ -1044,6 +1057,14 @@ Do you want to launch iRIC Maintainance?</source>
         <source>(Not specified)</source>
         <translation>(Ekki tilgreint)</translation>
     </message>
+    <message>
+        <source>Output Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Output calculation results in separate files</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ProjectPropertyDialog</name>
@@ -1187,9 +1208,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>Viðvörun</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
+        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
 %2</source>
-        <translation>Villa kom upp við að hlaða skilgreiningarskrár lausnar í möppu “ %1 ". Þessi lausnarmaður er hunsaður. %2</translation>
+        <translation>Villa kom upp við að hlaða skilgreiningarskrár lausnar í möppu “ %1 &quot;. Þessi lausnarmaður er hunsaður. %2</translation>
     </message>
 </context>
 <context>
@@ -1308,7 +1329,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Þetta verkefni virðist vera opnað með öðrum iRIC GUI glugga. Þú getur ekki opnað verkefnamöppu úr mörgum GUI gluggum.</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation>Opna verkefnið er ekki afritað í vinnuskrá og þú neyðist til að vista þær breytingar sem þú gerir á þessu verkefni. Ef þú vilt halda núverandi verkefni skaltu vista það í öðru verkefni fyrst.</translation>
     </message>
     <message>
@@ -1397,7 +1418,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>iRIC %1</source>
-        <translation>iRIC %1</translation>
+        <translation type="vanished">iRIC %1</translation>
     </message>
     <message>
         <source>Untitled</source>
@@ -1405,7 +1426,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>%1 - iRIC %2 [%3]</source>
-        <translation>%1 - iRIC %2 [ %3 ]</translation>
+        <translation type="vanished">%1 - iRIC %2 [ %3 ]</translation>
     </message>
     <message>
         <source>The solver is running now. Please stop solver, to do this action.</source>
@@ -1413,7 +1434,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>&amp;%1 %2</source>
-        <translation>%1 %2 (&amp;%)</translation>
+        <translation type="vanished">%1 %2 (&amp;%)</translation>
     </message>
     <message>
         <source>http://iric-gui-user-manual.readthedocs.io/en/latest/</source>
@@ -1468,7 +1489,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Núverandi virkur undirgluggi styður ekki útflutning útlínutölu.</translation>
     </message>
     <message>
-        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
+        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
         <translation>Til að flytja lögun úr skrá, skiptu „Skjástilling“ í „útlínuríki“, ekki „litabrún“ eða „einangrun“.</translation>
     </message>
     <message>
@@ -1591,6 +1612,18 @@ Option -&gt; Preferences</source>
     <message>
         <source>Snapshot successfully saved to %1.</source>
         <translation>Skyndimynd vistuð í %1.</translation>
+    </message>
+    <message>
+        <source>All files in %1 is deleted.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 - %2 %3 [%4]</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1937,7 +1970,7 @@ Option -&gt; Preferences</source>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&amp;Solver Information...</source>
@@ -1964,8 +1997,8 @@ Option -&gt; Preferences</source>
         <translation>Opnaðu nýjan 2D eftirvinnslu glugga</translation>
     </message>
     <message>
-        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
-        <translation>Opnaðu nýjan 2D Bird's-Eye eftirvinnslu glugga</translation>
+        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
+        <translation>Opnaðu nýjan 2D Bird&apos;s-Eye eftirvinnslu glugga</translation>
     </message>
     <message>
         <source>Open new 3D Post-Processing Window</source>
@@ -2066,6 +2099,14 @@ Option -&gt; Preferences</source>
     <message>
         <source>Ctrl+C</source>
         <translation>Ctrl+C</translation>
+    </message>
+    <message>
+        <source>Reload &amp;CGNS file...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reload CGNS file</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

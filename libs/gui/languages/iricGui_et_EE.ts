@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="et_EE">
 <context>
     <name>AnimationController</name>
@@ -286,6 +288,10 @@
         <source>Skip rate :</source>
         <translation>Vahelejätmise määr:</translation>
     </message>
+    <message>
+        <source>--</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ContinuousSnapshotWindowSelectionPage</name>
@@ -359,6 +365,13 @@
     </message>
 </context>
 <context>
+    <name>ContinuousSnapshotWizard</name>
+    <message>
+        <source>Continuous Snapshot / Movie / Google Earth Export Wizard</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>FlushRequester</name>
     <message>
         <source>Waiting for solver to copy CGNS file...</source>
@@ -369,7 +382,7 @@
     <name>GoogleMapImageImportSettingDialog</name>
     <message>
         <source>Google Map Image Import Setting</source>
-        <translation>Google'i kaardi pildi importimise seade</translation>
+        <translation>Google&apos;i kaardi pildi importimise seade</translation>
     </message>
     <message>
         <source>Zoom:</source>
@@ -438,8 +451,8 @@ This wizard will generate or update translation files for solver definition file
         <translation>Valige Lahendaja</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
-        <translation>Uue projekti loomisel peate valima arvutamiseks kasutatava lahendaja. Palun valige lahendaja ja vajutage nuppu "OK".</translation>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
+        <translation>Uue projekti loomisel peate valima arvutamiseks kasutatava lahendaja. Palun valige lahendaja ja vajutage nuppu &quot;OK&quot;.</translation>
     </message>
 </context>
 <context>
@@ -451,7 +464,7 @@ This wizard will generate or update translation files for solver definition file
     <message>
         <source>%1 days have passed after launching iRIC Maintainance for the last time.
 Do you want to launch iRIC Maintainance?</source>
-        <translation>%1 päevad on möödunud pärast iRIC Maintainance'i viimast käivitamist. Kas soovite käivitada iRIC Maintainance?</translation>
+        <translation>%1 päevad on möödunud pärast iRIC Maintainance&apos;i viimast käivitamist. Kas soovite käivitada iRIC Maintainance?</translation>
     </message>
     <message>
         <source>Launch iRIC Maintainance</source>
@@ -1044,6 +1057,14 @@ Do you want to launch iRIC Maintainance?</source>
         <source>(Not specified)</source>
         <translation>(Pole täpsustatud)</translation>
     </message>
+    <message>
+        <source>Output Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Output calculation results in separate files</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ProjectPropertyDialog</name>
@@ -1187,9 +1208,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>Hoiatus</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
+        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
 %2</source>
-        <translation>Lahendaja määratlusfaili kausta "laadimisel ilmnes viga"%1". Seda lahendajat eiratakse. %2</translation>
+        <translation>Lahendaja määratlusfaili kausta &quot;laadimisel ilmnes viga&quot;%1&quot;. Seda lahendajat eiratakse. %2</translation>
     </message>
 </context>
 <context>
@@ -1308,7 +1329,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Tundub, et selle projekti avab teine iRIC GUI aken. Projekti kausta ei saa avada mitmest GUI aknast.</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation>Avatud projekti ei kopeerita töökataloogi ja olete sunnitud sellesse projekti tehtud muudatused salvestama. Kui soovite praegust projekti säilitada, salvestage see kõigepealt teise projekti.</translation>
     </message>
     <message>
@@ -1397,7 +1418,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>iRIC %1</source>
-        <translation>iRIC %1</translation>
+        <translation type="vanished">iRIC %1</translation>
     </message>
     <message>
         <source>Untitled</source>
@@ -1405,7 +1426,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>%1 - iRIC %2 [%3]</source>
-        <translation>%1 - iRIC %2 [ %3 ]</translation>
+        <translation type="vanished">%1 - iRIC %2 [ %3 ]</translation>
     </message>
     <message>
         <source>The solver is running now. Please stop solver, to do this action.</source>
@@ -1413,7 +1434,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>&amp;%1 %2</source>
-        <translation>%1 %2 (&amp;%)</translation>
+        <translation type="vanished">%1 %2 (&amp;%)</translation>
     </message>
     <message>
         <source>http://iric-gui-user-manual.readthedocs.io/en/latest/</source>
@@ -1468,8 +1489,8 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Praegu aktiivne alamaken ei toeta kontuurikujundi eksportimist.</translation>
     </message>
     <message>
-        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation>Kujundifaili eksportimiseks lülitage "Ekraani säte" olekule "Kontuurjoonis", mitte "Värviline ääris" või "Isolines".</translation>
+        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
+        <translation>Kujundifaili eksportimiseks lülitage &quot;Ekraani säte&quot; olekule &quot;Kontuurjoonis&quot;, mitte &quot;Värviline ääris&quot; või &quot;Isolines&quot;.</translation>
     </message>
     <message>
         <source>Export contour figure to ESRI Shapefiles</source>
@@ -1591,6 +1612,18 @@ Option -&gt; Preferences</source>
     <message>
         <source>Snapshot successfully saved to %1.</source>
         <translation>Hetkepilt salvestati edukalt kausta %1.</translation>
+    </message>
+    <message>
+        <source>All files in %1 is deleted.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 - %2 %3 [%4]</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1937,7 +1970,7 @@ Option -&gt; Preferences</source>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&amp;Solver Information...</source>
@@ -1964,7 +1997,7 @@ Option -&gt; Preferences</source>
         <translation>Ava uus 2D järeltöötlusaken</translation>
     </message>
     <message>
-        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
+        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
         <translation>Avage uus 2D linnulennult järeltöötluse aken</translation>
     </message>
     <message>
@@ -2066,6 +2099,14 @@ Option -&gt; Preferences</source>
     <message>
         <source>Ctrl+C</source>
         <translation>Ctrl+C</translation>
+    </message>
+    <message>
+        <source>Reload &amp;CGNS file...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reload CGNS file</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

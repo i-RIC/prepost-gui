@@ -583,6 +583,17 @@ bool iRICMainWindow::cuiMode() const
 	return m_cuiMode;
 }
 
+void iRICMainWindow::reloadCgnsFile()
+{
+	if (isSolverRunning()) {
+		warnSolverRunning();
+		return;
+	}
+
+	m_projectData->mainfile()->closeCgnsFile();
+	m_projectData->mainfile()->loadFromCgnsFile();
+}
+
 bool iRICMainWindow::closeProject()
 {
 	if (m_projectData == nullptr) {return true;}
