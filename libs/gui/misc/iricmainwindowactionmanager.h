@@ -57,6 +57,8 @@ public:
 	QAction* newAction;
 	/// Action to open project data
 	QAction* openAction;
+	/// Action to reload CGNS file
+	QAction* reloadCgnsAction;
 	/// Action to save project data
 	QAction* saveAction;
 	/// Action to save project data with filename

@@ -629,6 +629,7 @@ void ProjectMainFile::closeCgnsFile()
 {
 	m_projectData->mainWindow()->closeCgnsFile();
 	impl->m_postSolutionInfo->closeCgnsFile();
+	impl->m_postSolutionInfo->close();
 }
 
 
