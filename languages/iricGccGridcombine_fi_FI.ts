@@ -1,125 +1,123 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="fi_FI">
 <context>
     <name>GridCreatingConditionCreatorGridCombine</name>
     <message>
         <source>Create grid by combining two grids</source>
-        <translation type="unfinished"></translation>
+        <translation>Luo ruudukko yhdistämällä kaksi ruudukkoa</translation>
     </message>
     <message>
         <source>Grid with shape of river meeting point can be created using this algorithm. Please create or import two grids first. Selecting the main channel grid and sub channel grid, and specifying some parameters, you can create a river meeting point grid.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tällä algoritmilla voidaan luoda ruudukko, jossa on joen kohtaamispisteen muoto. Luo tai tuo ensin kaksi ruudukkoa. Kun valitset pääkanavaruudukon ja alikanavaruudukon ja määrität joitain parametreja, voit luoda joen kohtaamispisteen ruudukon.</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionGridCombine</name>
     <message>
         <source>(No additional operation available)</source>
-        <translation type="unfinished"></translation>
+        <translation>(Lisätoimintoja ei ole saatavilla)</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionGridCombineSettingDialog</name>
     <message>
         <source>Grid Creation</source>
-        <translation type="unfinished"></translation>
+        <translation>Ruudukon luominen</translation>
     </message>
     <message>
         <source>Basis</source>
-        <translation type="unfinished"></translation>
+        <translation>Perusta</translation>
     </message>
     <message>
         <source>Confluence type</source>
-        <translation type="unfinished"></translation>
+        <translation>Konfluenssin tyyppi</translation>
     </message>
     <message>
         <source>Bind together (left : tributary, right : mainstream)</source>
-        <translation type="unfinished"></translation>
+        <translation>Sido yhteen (vasen: sivujoki, oikea: valtavirta)</translation>
     </message>
     <message>
         <source>Flow into the left bank (left : tributary, right : mainstream)</source>
-        <translation type="unfinished"></translation>
+        <translation>Virta vasemmalle rannalle (vasen: sivujoki, oikea: valtavirta)</translation>
     </message>
     <message>
         <source>Flow into the right bank (left : mainstream, right : tributary)</source>
-        <translation type="unfinished"></translation>
+        <translation>Virta oikealle rannalle (vasen: valtavirta, oikea: sivujoki)</translation>
     </message>
     <message>
         <source>Input grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Syöttöverkko</translation>
     </message>
     <message>
         <source>Mainstream :</source>
-        <translation type="unfinished"></translation>
+        <translation>Valtavirta:</translation>
     </message>
     <message>
         <source>Tributary :</source>
-        <translation type="unfinished"></translation>
+        <translation>Sivujoki:</translation>
     </message>
     <message>
         <source>Confluence information</source>
-        <translation type="unfinished"></translation>
+        <translation>Yhdistymistiedot</translation>
     </message>
     <message>
         <source>Mainstream crossing directional beginning index :</source>
-        <translation type="unfinished"></translation>
+        <translation>Valtavirran ylityksen suunta -alkuindeksi:</translation>
     </message>
     <message>
         <source>Mainstream crossing directional ending index :</source>
-        <translation type="unfinished"></translation>
+        <translation>Valtavirran ylityssuuntaindeksin indeksi:</translation>
     </message>
     <message>
         <source>Tributary crossing directional beginning index :</source>
-        <translation type="unfinished"></translation>
+        <translation>Suuntaa ylittävän suunnan alkuindeksi:</translation>
     </message>
     <message>
         <source>Tributary crossing directional ending index :</source>
-        <translation type="unfinished"></translation>
+        <translation>Suuntaa ylittävän suunnan päättymisindeksi:</translation>
     </message>
     <message>
         <source>Mainstream flow directional tributary beginning index :</source>
-        <translation type="unfinished"></translation>
+        <translation>Mainstream -virtaussuuntaisen sivujoen alkuindeksi:</translation>
     </message>
     <message>
         <source>Mainstream flow directional tributary ending index :</source>
-        <translation type="unfinished"></translation>
+        <translation>Mainstream -virtaussuuntaisen sivujoen pääteindeksi:</translation>
     </message>
     <message>
         <source>Obstacle information</source>
-        <translation type="unfinished"></translation>
+        <translation>Esteen tiedot</translation>
     </message>
     <message>
         <source>Obstacle coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Esteen koordinaatit</translation>
     </message>
     <message>
         <source>Upstream</source>
-        <translation type="unfinished"></translation>
+        <translation>Ylävirta</translation>
     </message>
     <message>
         <source>x :</source>
-        <translation type="unfinished"></translation>
+        <translation>x:</translation>
     </message>
     <message>
         <source>y :</source>
-        <translation type="unfinished"></translation>
+        <translation>y:</translation>
     </message>
     <message>
         <source>Downstream</source>
-        <translation type="unfinished"></translation>
+        <translation>Alavirtaan</translation>
     </message>
     <message>
         <source>Correction value for setting obstacle cells :</source>
-        <translation type="unfinished"></translation>
+        <translation>Korjausarvo estokennojen asettamiseen:</translation>
     </message>
     <message>
         <source>(smaller value for complex channel form)</source>
-        <translation type="unfinished"></translation>
+        <translation>(pienempi arvo monimutkaiselle kanavamuodolle)</translation>
     </message>
     <message>
         <source>Elevation of obstacle cells :</source>
-        <translation type="unfinished"></translation>
+        <translation>Estekennojen korkeus:</translation>
     </message>
 </context>
 </TS>

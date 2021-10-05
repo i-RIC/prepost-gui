@@ -1,838 +1,836 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="tr_TR">
 <context>
     <name>Graph2dHybridSettingDialog</name>
     <message>
         <source>Axis Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Eksen Ayarı</translation>
     </message>
     <message>
         <source>X Axis</source>
-        <translation type="unfinished"></translation>
+        <translation>X ekseni</translation>
     </message>
     <message>
         <source>Unit</source>
-        <translation type="unfinished"></translation>
+        <translation>Birim</translation>
     </message>
     <message>
         <source>Time</source>
-        <translation type="unfinished"></translation>
+        <translation>Zaman</translation>
     </message>
     <message>
         <source>Count</source>
-        <translation type="unfinished"></translation>
+        <translation>Saymak</translation>
     </message>
     <message>
         <source>Distance</source>
-        <translation type="unfinished"></translation>
+        <translation>Mesafe</translation>
     </message>
     <message>
         <source>Grid index</source>
-        <translation type="unfinished"></translation>
+        <translation>ızgara dizini</translation>
     </message>
     <message>
         <source>Value Range</source>
-        <translation type="unfinished"></translation>
+        <translation>Değer aralığı</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation>Oto</translation>
     </message>
     <message>
         <source>Max:</source>
-        <translation type="unfinished"></translation>
+        <translation>Maks:</translation>
     </message>
     <message>
         <source>Min:</source>
-        <translation type="unfinished"></translation>
+        <translation>Minimum:</translation>
     </message>
     <message>
         <source>Logarithmic axis</source>
-        <translation type="unfinished"></translation>
+        <translation>Logaritmik eksen</translation>
     </message>
     <message>
         <source>Label: </source>
-        <translation type="unfinished"></translation>
+        <translation>Etiket:</translation>
     </message>
     <message>
         <source>Reverse Direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Ters yön</translation>
     </message>
     <message>
         <source>General</source>
-        <translation type="unfinished"></translation>
+        <translation>Genel</translation>
     </message>
     <message>
         <source>Title: </source>
-        <translation type="unfinished"></translation>
+        <translation>Başlık:</translation>
     </message>
     <message>
         <source>Add Grid Indices etc. to Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Başlığa Izgara İndeksleri vb. Ekle</translation>
     </message>
     <message>
         <source>Y Axis</source>
-        <translation type="unfinished"></translation>
+        <translation>Y Ekseni</translation>
     </message>
     <message>
         <source>Left</source>
-        <translation type="unfinished"></translation>
+        <translation>Sol</translation>
     </message>
     <message>
         <source>Right</source>
-        <translation type="unfinished"></translation>
+        <translation>Doğru</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Uyarı</translation>
     </message>
     <message>
         <source>X-axes range is invalid.</source>
-        <translation type="unfinished"></translation>
+        <translation>X ekseni aralığı geçersiz.</translation>
     </message>
     <message>
         <source>Left Y-axes range is invalid.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sol Y ekseni aralığı geçersiz.</translation>
     </message>
     <message>
         <source>Right Y-axes range is invalid.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sağ Y ekseni aralığı geçersiz.</translation>
     </message>
 </context>
 <context>
     <name>Graph2dHybridWindow</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Biçim</translation>
     </message>
     <message>
         <source>I:</source>
-        <translation type="unfinished"></translation>
+        <translation>BEN:</translation>
     </message>
     <message>
         <source>J:</source>
-        <translation type="unfinished"></translation>
+        <translation>J:</translation>
     </message>
     <message>
         <source>K:</source>
-        <translation type="unfinished"></translation>
+        <translation>K:</translation>
     </message>
     <message>
         <source>Select &amp;Data Source</source>
-        <translation type="unfinished"></translation>
+        <translation>Veri Kaynağını Seçin (&amp;D)</translation>
     </message>
     <message>
         <source>&amp;Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Ayar (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;Close</source>
-        <translation type="unfinished"></translation>
+        <translation>Kapat (&amp;C)</translation>
     </message>
     <message>
         <source>Graph Window: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Grafik Penceresi: %1</translation>
     </message>
     <message>
         <source>Controller</source>
-        <translation type="unfinished"></translation>
+        <translation>Denetleyici</translation>
     </message>
     <message>
         <source>Time</source>
-        <translation type="unfinished"></translation>
+        <translation>Zaman</translation>
     </message>
     <message>
         <source>I</source>
-        <translation type="unfinished"></translation>
+        <translation>ben</translation>
     </message>
     <message>
         <source>J</source>
-        <translation type="unfinished"></translation>
+        <translation>J</translation>
     </message>
     <message>
         <source>K</source>
-        <translation type="unfinished"></translation>
+        <translation>K</translation>
     </message>
     <message>
         <source>Polyline</source>
-        <translation type="unfinished"></translation>
+        <translation>çoklu çizgi</translation>
     </message>
     <message>
         <source>Count</source>
-        <translation type="unfinished"></translation>
+        <translation>Saymak</translation>
     </message>
     <message>
         <source>Distance</source>
-        <translation type="unfinished"></translation>
+        <translation>Mesafe</translation>
     </message>
     <message>
         <source>Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>çizgiler</translation>
     </message>
 </context>
 <context>
     <name>Graph2dHybridWindowActionManager</name>
     <message>
         <source>&amp;Draw</source>
-        <translation type="unfinished"></translation>
+        <translation>Çizmek (&amp;D)</translation>
     </message>
     <message>
         <source>&amp;Data Source Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Veri Kaynağı Ayarı (&amp;D)...</translation>
     </message>
     <message>
         <source>&amp;Axis Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Eksen Ayarı (&amp;A)...</translation>
     </message>
     <message>
         <source>D&amp;raw Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Çizim Ayarı (&amp;R)...</translation>
     </message>
     <message>
         <source>&amp;Marker Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>İşaret Ayarı (&amp;M)...</translation>
     </message>
     <message>
         <source>Add &amp;KP Markers</source>
-        <translation type="unfinished"></translation>
+        <translation>KP İşaretçileri Ekle (&amp;K)</translation>
     </message>
     <message>
         <source>&amp;Copy</source>
-        <translation type="unfinished"></translation>
+        <translation>kopyala (&amp;C)</translation>
     </message>
     <message>
         <source>&amp;Legend</source>
-        <translation type="unfinished"></translation>
+        <translation>Efsane (&amp;L)</translation>
     </message>
 </context>
 <context>
     <name>Graph2dHybridWindowContinuousExportDialog</name>
     <message>
         <source>Snapshot Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Anlık Görüntü Ayarı</translation>
     </message>
     <message>
         <source>Folder &amp;&amp; Prefix</source>
-        <translation type="unfinished"></translation>
+        <translation>Klasör ve Önek (&amp; )</translation>
     </message>
     <message>
         <source>Folder:</source>
-        <translation type="unfinished"></translation>
+        <translation>Dosya:</translation>
     </message>
     <message>
         <source>Prefix:</source>
-        <translation type="unfinished"></translation>
+        <translation>Önek:</translation>
     </message>
     <message>
         <source>Region</source>
-        <translation type="unfinished"></translation>
+        <translation>Bölge</translation>
     </message>
     <message>
         <source>Current Only</source>
-        <translation type="unfinished"></translation>
+        <translation>Yalnızca Geçerli</translation>
     </message>
     <message>
         <source>Full Region</source>
-        <translation type="unfinished"></translation>
+        <translation>Tam Bölge</translation>
     </message>
     <message>
         <source>I Min:</source>
-        <translation type="unfinished"></translation>
+        <translation>Varım:</translation>
     </message>
     <message>
         <source>I Max:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ben Max:</translation>
     </message>
     <message>
         <source>J Min:</source>
-        <translation type="unfinished"></translation>
+        <translation>J Min:</translation>
     </message>
     <message>
         <source>J Max:</source>
-        <translation type="unfinished"></translation>
+        <translation>J Maks:</translation>
     </message>
     <message>
         <source>K Min:</source>
-        <translation type="unfinished"></translation>
+        <translation>K Min:</translation>
     </message>
     <message>
         <source>K Max:</source>
-        <translation type="unfinished"></translation>
+        <translation>K Maks:</translation>
     </message>
     <message>
         <source>Index Min:</source>
-        <translation type="unfinished"></translation>
+        <translation>Endeks Min:</translation>
     </message>
     <message>
         <source>Index Max:</source>
-        <translation type="unfinished"></translation>
+        <translation>Endeks Maks:</translation>
     </message>
     <message>
         <source>Time</source>
-        <translation type="unfinished"></translation>
+        <translation>Zaman</translation>
     </message>
     <message>
         <source>All Timesteps</source>
-        <translation type="unfinished"></translation>
+        <translation>Tüm Zaman Adımları</translation>
     </message>
     <message>
         <source>Start:</source>
-        <translation type="unfinished"></translation>
+        <translation>Başlangıç:</translation>
     </message>
     <message>
         <source>End:</source>
-        <translation type="unfinished"></translation>
+        <translation>Son:</translation>
     </message>
     <message>
         <source>Skip rate :</source>
-        <translation type="unfinished"></translation>
+        <translation>Atlama oranı :</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Uyarı</translation>
     </message>
     <message>
         <source>Folder %1 does not exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dosya %1 Yok.</translation>
     </message>
     <message>
         <source>Please input prefix.</source>
-        <translation type="unfinished"></translation>
+        <translation>Lütfen önek girin.</translation>
     </message>
 </context>
 <context>
     <name>Graph2dHybridWindowControlWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Biçim</translation>
     </message>
     <message>
         <source>I:</source>
-        <translation type="unfinished"></translation>
+        <translation>BEN:</translation>
     </message>
     <message>
         <source>J:</source>
-        <translation type="unfinished"></translation>
+        <translation>J:</translation>
     </message>
     <message>
         <source>K:</source>
-        <translation type="unfinished"></translation>
+        <translation>K:</translation>
     </message>
     <message>
         <source>Index:</source>
-        <translation type="unfinished"></translation>
+        <translation>dizin:</translation>
     </message>
     <message>
         <source>&amp;Data Source</source>
-        <translation type="unfinished"></translation>
+        <translation>Veri kaynağı (&amp;D)</translation>
     </message>
     <message>
         <source>Axis &amp;Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Eksen Ayarı (&amp;S)</translation>
     </message>
     <message>
         <source>Draw &amp;Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Çizim Ayarı (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;Marker Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>İşaret Ayarı (&amp;M)</translation>
     </message>
     <message>
         <source>&amp;Copy</source>
-        <translation type="unfinished"></translation>
+        <translation>kopyala (&amp;C)</translation>
     </message>
     <message>
         <source>S&amp;napshot</source>
-        <translation type="unfinished"></translation>
+        <translation>Enstantane fotoğraf (&amp;N)</translation>
     </message>
     <message>
         <source>CSV &amp;Export</source>
-        <translation type="unfinished"></translation>
+        <translation>CSV Dışa Aktarma (&amp;E)</translation>
     </message>
 </context>
 <context>
     <name>Graph2dHybridWindowDataModel</name>
     <message>
         <source>Snapshot</source>
-        <translation type="unfinished"></translation>
+        <translation>Enstantane fotoğraf</translation>
     </message>
     <message>
         <source>Saving snapshots...</source>
-        <translation type="unfinished"></translation>
+        <translation>Anlık görüntüler kaydediliyor...</translation>
     </message>
     <message>
         <source>CSV Export Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>CSV Dışa Aktarma Ayarı</translation>
     </message>
     <message>
         <source>CSV Export</source>
-        <translation type="unfinished"></translation>
+        <translation>CSV Dışa Aktarma</translation>
     </message>
     <message>
         <source>Saving csv files...</source>
-        <translation type="unfinished"></translation>
+        <translation>csv dosyaları kaydediliyor...</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Hata</translation>
     </message>
     <message>
         <source>Saving snapshot image to %1 failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Anlık görüntü şuraya kaydediliyor: %1 arızalı.</translation>
     </message>
     <message>
         <source>Export CSV file</source>
-        <translation type="unfinished"></translation>
+        <translation>CSV dosyasını dışa aktar</translation>
     </message>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>CSV dosyası (*.csv)</translation>
     </message>
     <message>
         <source>Saving %1 failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>kaydetme %1 arızalı.</translation>
     </message>
     <message>
         <source>CSV file successfully exported.</source>
-        <translation type="unfinished"></translation>
+        <translation>CSV dosyası başarıyla dışa aktarıldı.</translation>
     </message>
     <message>
         <source>I = %1</source>
-        <translation type="unfinished"></translation>
+        <translation>ben = %1</translation>
     </message>
     <message>
         <source>I = %1, J = %2</source>
-        <translation type="unfinished"></translation>
+        <translation>ben = %1, J = %2</translation>
     </message>
     <message>
         <source>I = %1, J = %2, K = %3</source>
-        <translation type="unfinished"></translation>
+        <translation>ben = %1, J = %2, K = %3</translation>
     </message>
     <message>
         <source>Index = %1</source>
-        <translation type="unfinished"></translation>
+        <translation>dizin = %1</translation>
     </message>
     <message>
         <source>Time = %1 sec</source>
-        <translation type="unfinished"></translation>
+        <translation>zaman = %1 saniye</translation>
     </message>
     <message>
         <source>Time = %1 sec, J = %2</source>
-        <translation type="unfinished"></translation>
+        <translation>zaman = %1 saniye, J = %2</translation>
     </message>
     <message>
         <source>Time = %1 sec, J = %2, K = %3</source>
-        <translation type="unfinished"></translation>
+        <translation>zaman = %1 saniye, J = %2, K = %3</translation>
     </message>
     <message>
         <source>Time = %1 sec, I = %2</source>
-        <translation type="unfinished"></translation>
+        <translation>zaman = %1 saniye, ben = %2</translation>
     </message>
     <message>
         <source>Time = %1 sec, I = %2, K = %3</source>
-        <translation type="unfinished"></translation>
+        <translation>zaman = %1 saniye, ben = %2, K = %3</translation>
     </message>
     <message>
         <source>Time = %1 sec, I = %2, J = %3</source>
-        <translation type="unfinished"></translation>
+        <translation>zaman = %1 saniye, ben = %2, J = %3</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Uyarı</translation>
     </message>
     <message>
         <source>No calculation result exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hesaplama sonucu yok.</translation>
     </message>
     <message>
         <source>Graph window setup fail. Calculation result is not loaded properly.</source>
-        <translation type="unfinished"></translation>
+        <translation>Grafik penceresi kurulumu başarısız. Hesaplama sonucu düzgün yüklenmemiş.</translation>
     </message>
     <message>
-        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm &quot;Create grid from from cross-section data&quot;&lt;/li&gt;&lt;/ul&gt;</source>
-        <translation type="unfinished"></translation>
+        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm "Create grid from from cross-section data"&lt;/li&gt;&lt;/ul&gt;</source>
+        <translation>Bu işlev, aşağıdaki koşullar sağlandığında kullanılabilir: &lt;ul&gt;&lt;li&gt;İki boyutlu yapılandırılmış ızgara sonucu için grafik çizilir.&lt;/li&gt;&lt;li&gt;X ekseni ızgarada I yönüdür.&lt;/li &gt;&lt;li&gt;Kılavuz, "Kesit verilerinden ızgara oluştur" algoritması kullanılarak oluşturulur&lt;/li&gt;&lt;/ul&gt;</translation>
     </message>
 </context>
 <context>
     <name>Graph2dHybridWindowDataSourceDialog</name>
     <message>
         <source>Data Source Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Veri Kaynağı Ayarı</translation>
     </message>
     <message>
         <source>X Axis:</source>
-        <translation type="unfinished"></translation>
+        <translation>X Ekseni:</translation>
     </message>
     <message>
         <source>Polyline:</source>
-        <translation type="unfinished"></translation>
+        <translation>Çoklu çizgi:</translation>
     </message>
     <message>
         <source>Calculation Result</source>
-        <translation type="unfinished"></translation>
+        <translation>Hesaplama Sonucu</translation>
     </message>
     <message>
         <source>Point Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Nokta Verileri</translation>
     </message>
     <message>
         <source>One dimensional Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Tek boyutlu Veri</translation>
     </message>
     <message>
         <source>Grid Location:</source>
-        <translation type="unfinished"></translation>
+        <translation>Izgara Konumu:</translation>
     </message>
     <message>
         <source>Two dimensional Data</source>
-        <translation type="unfinished"></translation>
+        <translation>İki boyutlu Veri</translation>
     </message>
     <message>
         <source>Three dimensional Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Üç boyutlu Veri</translation>
     </message>
     <message>
         <source>Add &gt;&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Ekle &gt;&gt;</translation>
     </message>
     <message>
         <source>&lt;&lt; Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;&lt; Kaldır</translation>
     </message>
     <message>
         <source>Selected Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Seçilen Veriler</translation>
     </message>
     <message>
         <source>&amp;Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Ayar (&amp;S)</translation>
     </message>
     <message>
         <source>External</source>
-        <translation type="unfinished"></translation>
+        <translation>Harici</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation type="unfinished"></translation>
+        <translation>İçe aktarmak (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Delete...</source>
-        <translation type="unfinished"></translation>
+        <translation>Silmek (&amp;D)...</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Uyarı</translation>
     </message>
     <message>
         <source>Current setting will be discarded, are you sure?</source>
-        <translation type="unfinished"></translation>
+        <translation>Mevcut ayar atılacak, emin misiniz?</translation>
     </message>
     <message>
         <source>No data is selected.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hiçbir veri seçilmedi.</translation>
     </message>
     <message>
         <source>Import CSV file</source>
-        <translation type="unfinished"></translation>
+        <translation>CSV dosyasını içe aktar</translation>
     </message>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>CSV dosyası (*.csv)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Hata</translation>
     </message>
     <message>
-        <source>The title of the first column has to be &quot;X&quot;</source>
-        <translation type="unfinished"></translation>
+        <source>The title of the first column has to be "X"</source>
+        <translation>İlk sütunun başlığı "X" olmalıdır</translation>
     </message>
     <message>
         <source>The number of data of %1 and %2 mismatch. Data %1 is skipped.</source>
-        <translation type="unfinished"></translation>
+        <translation>veri sayısı %1 ve %2 uyumsuzluk. Veri %1 atlanır.</translation>
     </message>
     <message>
         <source>Polyline Group:</source>
-        <translation type="unfinished"></translation>
+        <translation>Çoklu Çizgi Grubu:</translation>
     </message>
 </context>
 <context>
     <name>Graph2dHybridWindowDrawSettingDialog</name>
     <message>
         <source>Draw Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Çizim Ayarı</translation>
     </message>
     <message>
         <source>Calculation Result</source>
-        <translation type="unfinished"></translation>
+        <translation>Hesaplama Sonucu</translation>
     </message>
     <message>
         <source>Copy</source>
-        <translation type="unfinished"></translation>
+        <translation>kopyala</translation>
     </message>
     <message>
         <source>External</source>
-        <translation type="unfinished"></translation>
+        <translation>Harici</translation>
     </message>
 </context>
 <context>
     <name>Graph2dHybridWindowImportDataDataItem</name>
     <message>
         <source>%1 - %2</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 - %2</translation>
     </message>
 </context>
 <context>
     <name>Graph2dHybridWindowImportDataGroupDataItem</name>
     <message>
         <source>External Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Harici veri</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Hata</translation>
     </message>
     <message>
-        <source>The title of the first column has to be &quot;X&quot;</source>
-        <translation type="unfinished"></translation>
+        <source>The title of the first column has to be "X"</source>
+        <translation>İlk sütunun başlığı "X" olmalıdır</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Uyarı</translation>
     </message>
     <message>
         <source>The number of data of %1 and %2 mismatch. Data %1 is skipped.</source>
-        <translation type="unfinished"></translation>
+        <translation>veri sayısı %1 ve %2 uyumsuzluk. Veri %1 atlanır.</translation>
     </message>
 </context>
 <context>
     <name>Graph2dHybridWindowLineSettingDialog</name>
     <message>
         <source>Data Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Veri Ayarı</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Renk:</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Genişlik:</translation>
     </message>
     <message>
         <source>Y Axis</source>
-        <translation type="unfinished"></translation>
+        <translation>Y Ekseni</translation>
     </message>
     <message>
         <source>Left</source>
-        <translation type="unfinished"></translation>
+        <translation>Sol</translation>
     </message>
     <message>
         <source>Right</source>
-        <translation type="unfinished"></translation>
+        <translation>Doğru</translation>
     </message>
 </context>
 <context>
     <name>Graph2dHybridWindowObjectBrowser</name>
     <message>
         <source>Object Browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Nesne Tarayıcı</translation>
     </message>
 </context>
 <context>
     <name>Graph2dHybridWindowResultCopyDataItem</name>
     <message>
         <source>%1</source>
-        <translation type="unfinished"></translation>
+        <translation>%1</translation>
     </message>
     <message>
         <source>%1 (I = %2)</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 (ben = %2 )</translation>
     </message>
     <message>
         <source>%1 (I = %2, J = %3)</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 (ben = %2, J = %3 )</translation>
     </message>
     <message>
         <source>%1 (I = %2, J = %3, K = %4)</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 (ben = %2, J = %3, K = %4 )</translation>
     </message>
     <message>
         <source>%1 (Index = %2)</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 (İndeks = %2 )</translation>
     </message>
     <message>
         <source>%1 (t = %2)</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 (t = %2 )</translation>
     </message>
     <message>
         <source>%1 (t = %2, J = %3)</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 (t = %2, J = %3 )</translation>
     </message>
     <message>
         <source>%1 (t = %2, J = %3, K = %4)</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 (t = %2, J = %3, K = %4 )</translation>
     </message>
     <message>
         <source>%1 (t = %2, I = %3)</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 (t = %2, ben = %3 )</translation>
     </message>
     <message>
         <source>%1 (t = %2, I = %3, K = %4)</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 (t = %2, ben = %3, K = %4 )</translation>
     </message>
     <message>
         <source>%1 (t = %2, I = %3, J = %4)</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 (t = %2, ben = %3, J = %4 )</translation>
     </message>
 </context>
 <context>
     <name>Graph2dHybridWindowResultCopyGroupDataItem</name>
     <message>
         <source>Calcuation Results Copys</source>
-        <translation type="unfinished"></translation>
+        <translation>Hesaplama Sonuçları Kopyaları</translation>
     </message>
 </context>
 <context>
     <name>Graph2dHybridWindowResultGroupDataItem</name>
     <message>
         <source>Calcuation Results</source>
-        <translation type="unfinished"></translation>
+        <translation>Hesaplama Sonuçları</translation>
     </message>
 </context>
 <context>
     <name>Graph2dHybridWindowRootDataItem</name>
     <message>
         <source>x</source>
-        <translation type="unfinished"></translation>
+        <translation>x</translation>
     </message>
 </context>
 <context>
     <name>Graph2dHybridWindowSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Biçim</translation>
     </message>
     <message>
         <source>Label:</source>
-        <translation type="unfinished"></translation>
+        <translation>Etiket:</translation>
     </message>
     <message>
         <source>Y Axis</source>
-        <translation type="unfinished"></translation>
+        <translation>Y Ekseni</translation>
     </message>
     <message>
         <source>Left</source>
-        <translation type="unfinished"></translation>
+        <translation>Sol</translation>
     </message>
     <message>
         <source>Right</source>
-        <translation type="unfinished"></translation>
+        <translation>Doğru</translation>
     </message>
     <message>
         <source>Display Style</source>
-        <translation type="unfinished"></translation>
+        <translation>Ekran Stili</translation>
     </message>
     <message>
         <source>Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Hat</translation>
     </message>
     <message>
         <source>Symbol</source>
-        <translation type="unfinished"></translation>
+        <translation>Sembol</translation>
     </message>
     <message>
         <source>Line Style:</source>
-        <translation type="unfinished"></translation>
+        <translation>Çizgi Stili:</translation>
     </message>
     <message>
         <source>Solid Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Düz çizgi</translation>
     </message>
     <message>
         <source>Dashed Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Kesik çizgi</translation>
     </message>
     <message>
         <source>Dotted Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Noktalı çizgi</translation>
     </message>
     <message>
         <source>Dots and Dashes</source>
-        <translation type="unfinished"></translation>
+        <translation>Noktalar ve çizgiler</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Hat genişliği:</translation>
     </message>
     <message>
         <source>Bar Chart:</source>
-        <translation type="unfinished"></translation>
+        <translation>Grafik çubuğu:</translation>
     </message>
     <message>
         <source>Show as Bar Chart</source>
-        <translation type="unfinished"></translation>
+        <translation>Çubuk Grafik Olarak Göster</translation>
     </message>
     <message>
         <source>Symbol Style:</source>
-        <translation type="unfinished"></translation>
+        <translation>Sembol Stili:</translation>
     </message>
     <message>
         <source>Circle</source>
-        <translation type="unfinished"></translation>
+        <translation>Daire</translation>
     </message>
     <message>
         <source>Rectangle</source>
-        <translation type="unfinished"></translation>
+        <translation>Dikdörtgen</translation>
     </message>
     <message>
         <source>Diamond</source>
-        <translation type="unfinished"></translation>
+        <translation>Elmas</translation>
     </message>
     <message>
         <source>Cross</source>
-        <translation type="unfinished"></translation>
+        <translation>Geçmek</translation>
     </message>
     <message>
         <source>XCross</source>
-        <translation type="unfinished"></translation>
+        <translation>XCross</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Renk:</translation>
     </message>
     <message>
         <source>ID:</source>
-        <translation type="unfinished"></translation>
+        <translation>İD:</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Silmek (&amp;D)</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
         <source>GridLocationNull</source>
-        <translation type="unfinished"></translation>
+        <translation>GridLocationNull</translation>
     </message>
     <message>
         <source>Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>tepe noktası</translation>
     </message>
     <message>
         <source>CellCenter</source>
-        <translation type="unfinished"></translation>
+        <translation>Çağrı Merkezi</translation>
     </message>
     <message>
         <source>EdgeI</source>
-        <translation type="unfinished"></translation>
+        <translation>EdgeI</translation>
     </message>
     <message>
         <source>EdgeJ</source>
-        <translation type="unfinished"></translation>
+        <translation>KenarJ</translation>
     </message>
 </context>
 </TS>

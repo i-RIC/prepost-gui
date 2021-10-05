@@ -1,142 +1,140 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="hi_IN">
 <context>
     <name>GeoDataPointGroup</name>
     <message>
         <source>Point%1</source>
-        <translation type="unfinished"></translation>
+        <translation>बिंदु %1</translation>
     </message>
     <message>
         <source>&amp;Sort</source>
-        <translation type="unfinished"></translation>
+        <translation>तरह (&amp;S)</translation>
     </message>
     <message>
         <source>P&amp;oint</source>
-        <translation type="unfinished"></translation>
+        <translation>बिंदु (&amp;O)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointGroupCreator</name>
     <message>
         <source>point</source>
-        <translation type="unfinished"></translation>
+        <translation>बिंदु</translation>
     </message>
     <message>
         <source>Point</source>
-        <translation type="unfinished"></translation>
+        <translation>बिंदु</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation type="unfinished"></translation>
+        <translation>अंक</translation>
     </message>
     <message>
         <source>Points%1</source>
-        <translation type="unfinished"></translation>
+        <translation>अंक %1</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointGroupCsvExporter</name>
     <message>
         <source>CSV file</source>
-        <translation type="unfinished"></translation>
+        <translation>सीएसवी फ़ाइल</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>त्रुटि</translation>
     </message>
     <message>
         <source>Error occured while exporting to %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>को निर्यात करते समय त्रुटि हुई %1.</translation>
     </message>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>सीएसवी फ़ाइल (*.csv)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointGroupCsvImporter</name>
     <message>
         <source>CSV file (Points)</source>
-        <translation type="unfinished"></translation>
+        <translation>सीएसवी फ़ाइल (अंक)</translation>
     </message>
     <message>
         <source>CSV file (Points) (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>सीएसवी फ़ाइल (अंक) (*.csv)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>त्रुटि</translation>
     </message>
     <message>
         <source>Error occured while opening %1</source>
-        <translation type="unfinished"></translation>
+        <translation>खोलते समय त्रुटि हुई %1</translation>
     </message>
     <message>
         <source>Error occured while reading header line. Make sure the file is saved in UTF-8 encoding.</source>
-        <translation type="unfinished"></translation>
+        <translation>हेडर लाइन पढ़ते समय त्रुटि हुई। सुनिश्चित करें कि फ़ाइल UTF-8 एन्कोडिंग में सहेजी गई है।</translation>
     </message>
     <message>
         <source>Error occured while reading header line. Header should have 3 columns at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>हेडर लाइन पढ़ते समय त्रुटि हुई। हैडर में कम से कम 3 कॉलम होने चाहिए।</translation>
     </message>
     <message>
         <source>Error occured while reading header line. Header should have 4 columns at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>हेडर लाइन पढ़ते समय त्रुटि हुई। हैडर में कम से कम 4 कॉलम होने चाहिए।</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
-        <translation type="unfinished"></translation>
+        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
+        <translation>हेडर लाइन पढ़ते समय त्रुटि हुई। स्तंभ %1 होना चाहिए "%2", लेकिन "%3" दिया हुआ है।</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Make sure the file is saved in UTF-8 encoding.</source>
-        <translation type="unfinished"></translation>
+        <translation>लाइन पढ़ते समय त्रुटि हुई %1. सुनिश्चित करें कि फ़ाइल UTF-8 एन्कोडिंग में सहेजी गई है।</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Data should have 3 columns at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>लाइन पढ़ते समय त्रुटि हुई %1. डेटा में कम से कम 3 कॉलम होने चाहिए।</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Data should have 4 columns at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>लाइन पढ़ते समय त्रुटि हुई %1. डेटा में कम से कम 4 कॉलम होने चाहिए।</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation type="unfinished"></translation>
+        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
+        <translation>पंक्ति में "x" मान पढ़ते समय त्रुटि हुई %1. "x" वास्तविक मान होना चाहिए लेकिन "%2" निर्दिष्ट किया जाता है।</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation type="unfinished"></translation>
+        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
+        <translation>पंक्ति में "y" मान पढ़ते समय त्रुटि हुई %1. "y" वास्तविक मूल्य होना चाहिए लेकिन "%2" निर्दिष्ट किया जाता है।</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation type="unfinished"></translation>
+        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
+        <translation>पंक्ति में "मान" मान पढ़ते समय त्रुटि हुई %1. "मूल्य" वास्तविक मूल्य होना चाहिए लेकिन "%2" निर्दिष्ट किया जाता है।</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointGroupShpExporter</name>
     <message>
         <source>ESRI Shapefile</source>
-        <translation type="unfinished"></translation>
+        <translation>ईएसआरआई शेपफाइल</translation>
     </message>
     <message>
         <source>ESRI Shapefile (*.shp)</source>
-        <translation type="unfinished"></translation>
+        <translation>ईएसआरआई शेपफाइल (*.shp)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointGroupShpImporter</name>
     <message>
         <source>ESRI Shapefile (Points)</source>
-        <translation type="unfinished"></translation>
+        <translation>ESRI शेपफाइल (अंक)</translation>
     </message>
     <message>
         <source>ESRI Shapefile (Points) (*.shp)</source>
-        <translation type="unfinished"></translation>
+        <translation>ESRI शेपफाइल (अंक) (*.shp)</translation>
     </message>
     <message>
         <source>Point%1</source>
-        <translation type="unfinished"></translation>
+        <translation>बिंदु %1</translation>
     </message>
 </context>
 </TS>

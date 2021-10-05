@@ -1,1373 +1,1371 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="nl_NL">
 <context>
     <name>AboutDialog</name>
     <message>
         <source>About rivmaker</source>
-        <translation type="unfinished"></translation>
+        <translation>Over rivmaker</translation>
     </message>
     <message>
         <source>Copyright: USGS</source>
-        <translation type="unfinished"></translation>
+        <translation>Auteursrecht: USGS</translation>
     </message>
     <message>
-        <source>rivmaker 2.0</source>
-        <translation type="unfinished"></translation>
+        <source>rivmaker 2.0.2</source>
+        <translation>rivmaker 2.0.2</translation>
     </message>
     <message>
-        <source>Release Date: 2021/1/30</source>
-        <translation type="unfinished"></translation>
+        <source>Release Date: 2021/3/2</source>
+        <translation>Releasedatum: 2021/3/2</translation>
     </message>
 </context>
 <context>
     <name>ArbitraryHWM</name>
     <message>
         <source>Arbitrary HWM</source>
-        <translation type="unfinished"></translation>
+        <translation>Willekeurige HWM</translation>
     </message>
 </context>
 <context>
     <name>BaseLine</name>
     <message>
         <source>Base Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Basislijn</translation>
     </message>
 </context>
 <context>
     <name>BaseLinePreProcessorController</name>
     <message>
         <source>&amp;Import...</source>
-        <translation type="unfinished"></translation>
+        <translation>Importeren (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation type="unfinished"></translation>
+        <translation>Exporteren (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Add Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Vertex toevoegen (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Vertex verwijderen (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Edit Coordinates...</source>
-        <translation type="unfinished"></translation>
+        <translation>Coördinaten bewerken (&amp;E)...</translation>
     </message>
     <message>
         <source>Reverse &amp;Direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Tegengestelde richting (&amp;D)</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Verwijderen</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Waarschuwing</translation>
     </message>
     <message>
         <source>Base line is not defined yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Basislijn is nog niet gedefinieerd.</translation>
     </message>
     <message>
         <source>Point can not be deleted when there are only two points.</source>
-        <translation type="unfinished"></translation>
+        <translation>Punt kan niet worden verwijderd als er slechts twee punten zijn.</translation>
     </message>
 </context>
 <context>
     <name>BaseLinePreProcessorViewLabelHelper</name>
     <message>
         <source>Downstream</source>
-        <translation type="unfinished"></translation>
+        <translation>Stroomafwaarts</translation>
     </message>
     <message>
         <source>Upstream</source>
-        <translation type="unfinished"></translation>
+        <translation>Stroomopwaarts</translation>
     </message>
 </context>
 <context>
     <name>Benchmark</name>
     <message>
         <source>Benchmark</source>
-        <translation type="unfinished"></translation>
+        <translation>Benchmark</translation>
     </message>
 </context>
 <context>
     <name>ChartGraphicsView</name>
     <message>
-        <source>Aspect ratio: 1 / %1</source>
-        <translation type="unfinished"></translation>
+        <source>Aspect ratio (V/H): 1 / %1</source>
+        <translation>Beeldverhouding (V/H): 1 / %1</translation>
     </message>
 </context>
 <context>
     <name>ChartWindow</name>
     <message>
         <source>Display ToolBar</source>
-        <translation type="unfinished"></translation>
+        <translation>Werkbalk weergeven</translation>
     </message>
     <message>
         <source>Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Rooster</translation>
     </message>
     <message>
         <source>Scale</source>
-        <translation type="unfinished"></translation>
+        <translation>Schaal</translation>
     </message>
     <message>
         <source>Aspect ratio</source>
-        <translation type="unfinished"></translation>
+        <translation>Beeldverhouding</translation>
     </message>
     <message>
         <source>View ToolBar</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Aspect ratio: 1 / </source>
-        <translation type="unfinished"></translation>
+        <translation>Werkbalk bekijken</translation>
     </message>
     <message>
         <source>Fix aspect ratio</source>
-        <translation type="unfinished"></translation>
+        <translation>Beeldverhouding corrigeren</translation>
     </message>
     <message>
         <source>Fix region</source>
-        <translation type="unfinished"></translation>
+        <translation>Regio repareren</translation>
+    </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / </source>
+        <translation>Beeldverhouding (V/H): 1 /</translation>
     </message>
 </context>
 <context>
     <name>CoordinateEditWidget</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Fout</translation>
     </message>
     <message>
         <source>It is not a real value</source>
-        <translation type="unfinished"></translation>
+        <translation>Het is geen echte waarde</translation>
     </message>
 </context>
 <context>
     <name>CoordinatesEditDialog</name>
     <message>
         <source>Edit Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Coördinaten bewerken</translation>
     </message>
     <message>
         <source>X</source>
-        <translation type="unfinished"></translation>
+        <translation>x</translation>
     </message>
     <message>
         <source>Y</source>
-        <translation type="unfinished"></translation>
+        <translation>Y</translation>
     </message>
 </context>
 <context>
     <name>CrossSectionPreProcessorController</name>
     <message>
         <source>&amp;Edit Coordinates...</source>
-        <translation type="unfinished"></translation>
+        <translation>Coördinaten bewerken (&amp;E)...</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Waarschuwing</translation>
     </message>
     <message>
         <source>Cross Section is not defined yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dwarsdoorsnede is nog niet gedefinieerd.</translation>
     </message>
     <message>
-        <source>Invalid name for cross section. The name should be &quot;X1&quot;, &quot;X2&quot;, ...　or &quot;XS1&quot;, &quot;XS2&quot;, ...</source>
-        <translation type="unfinished"></translation>
+        <source>Invalid name for cross section. The name should be "X1", "X2", ...　or "XS1", "XS2", ...</source>
+        <translation>Ongeldige naam voor doorsnede. De naam moet "X1", "X2",... of "XS1", "XS2",... zijn.</translation>
     </message>
 </context>
 <context>
     <name>CrossSectionPreProcessorViewLabelHelper</name>
     <message>
         <source>%1 LB</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 POND</translation>
     </message>
     <message>
         <source>%1 RB</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 RB</translation>
     </message>
 </context>
 <context>
     <name>CrossSectionWindow</name>
     <message>
         <source>Cross Section Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Doorsnedevenster</translation>
     </message>
     <message>
         <source>Cross Section Window : %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Doorsnede venster: %1</translation>
     </message>
     <message>
         <source>Save SVG file</source>
-        <translation type="unfinished"></translation>
+        <translation>SVG-bestand opslaan</translation>
     </message>
     <message>
         <source>SVG files (*.svg)</source>
-        <translation type="unfinished"></translation>
+        <translation>SVG-bestanden (*.svg)</translation>
     </message>
     <message>
         <source>Save CSV file</source>
-        <translation type="unfinished"></translation>
+        <translation>CSV-bestand opslaan</translation>
     </message>
     <message>
         <source>CSV files (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>CSV-bestanden (*.csv)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Fout</translation>
     </message>
     <message>
         <source>%1 could note be opened.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 kon nota worden geopend.</translation>
     </message>
     <message>
         <source>Cross Section: </source>
-        <translation type="unfinished"></translation>
+        <translation>Dwarsdoorsnede:</translation>
     </message>
     <message>
         <source>Export &amp;SVG...</source>
-        <translation type="unfinished"></translation>
+        <translation>SVG exporteren (&amp;S)...</translation>
     </message>
     <message>
         <source>Export &amp;CSV...</source>
-        <translation type="unfinished"></translation>
+        <translation>CSV exporteren (&amp;C)...</translation>
     </message>
     <message>
         <source>WSE</source>
-        <translation type="unfinished"></translation>
+        <translation>WSE</translation>
     </message>
     <message>
         <source>Left Bank HWM</source>
-        <translation type="unfinished"></translation>
+        <translation>Linkeroever HWM</translation>
     </message>
     <message>
         <source>Right Bank HWM</source>
-        <translation type="unfinished"></translation>
+        <translation>Rechteroever HWM</translation>
     </message>
 </context>
 <context>
     <name>CrossSectionWindowDisplaySettingDialog</name>
     <message>
         <source>Cross Section Window Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Weergave-instelling dwarsdoorsnede venster</translation>
     </message>
     <message>
         <source>Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Rooster</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation type="unfinished"></translation>
+        <translation>Type</translation>
     </message>
     <message>
         <source>Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>lijnen</translation>
     </message>
     <message>
         <source>Dots</source>
-        <translation type="unfinished"></translation>
+        <translation>Stippen</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation type="unfinished"></translation>
+        <translation>Horizontaal</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation>Auto</translation>
     </message>
     <message>
         <source>Scale</source>
-        <translation type="unfinished"></translation>
+        <translation>Schaal</translation>
     </message>
     <message>
         <source>Sub scale</source>
-        <translation type="unfinished"></translation>
+        <translation>Subschaal</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation type="unfinished"></translation>
+        <translation>Verticaal</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Kleur:</translation>
     </message>
     <message>
         <source>Background</source>
-        <translation type="unfinished"></translation>
+        <translation>Achtergrond</translation>
     </message>
     <message>
         <source>Scales</source>
-        <translation type="unfinished"></translation>
+        <translation>Schubben</translation>
     </message>
     <message>
         <source>Font:</source>
-        <translation type="unfinished"></translation>
+        <translation>Lettertype:</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation type="unfinished"></translation>
+        <translation>Bewerking...</translation>
     </message>
     <message>
         <source>Aspect ratio</source>
-        <translation type="unfinished"></translation>
+        <translation>Beeldverhouding</translation>
     </message>
     <message>
         <source>Cross Section Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Dwarsdoorsnede punten</translation>
     </message>
     <message>
         <source>Scales font</source>
-        <translation type="unfinished"></translation>
+        <translation>Lettertype schalen</translation>
     </message>
 </context>
 <context>
     <name>CrossSectionWindowGraphicsView</name>
     <message>
         <source>Left bank HWM</source>
-        <translation type="unfinished"></translation>
+        <translation>Linkeroever HWM</translation>
     </message>
     <message>
         <source>Right bank HWM</source>
-        <translation type="unfinished"></translation>
+        <translation>Rechteroever HWM</translation>
     </message>
     <message>
         <source>WSE</source>
-        <translation type="unfinished"></translation>
+        <translation>WSE</translation>
     </message>
 </context>
 <context>
     <name>CrossSections</name>
     <message>
         <source>Cross Sections</source>
-        <translation type="unfinished"></translation>
+        <translation>Dwarsdoorsneden</translation>
     </message>
 </context>
 <context>
     <name>CrossSectionsCsvExporter</name>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>CSV-bestand (*.csv)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Fout</translation>
     </message>
     <message>
         <source>%1 could not be opened.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 kon niet worden geopend.</translation>
     </message>
 </context>
 <context>
     <name>CrossSectionsCsvImporter</name>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>CSV-bestand (*.csv)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Fout</translation>
     </message>
     <message>
         <source>%1 could not be opened.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 kon niet worden geopend.</translation>
     </message>
 </context>
 <context>
     <name>CrossSectionsExporter</name>
     <message>
         <source>Input file name to export</source>
-        <translation type="unfinished"></translation>
+        <translation>Voer bestandsnaam in om te exporteren</translation>
     </message>
 </context>
 <context>
     <name>CrossSectionsImporter</name>
     <message>
         <source>Select file to import</source>
-        <translation type="unfinished"></translation>
+        <translation>Selecteer bestand om te importeren</translation>
     </message>
 </context>
 <context>
     <name>CrossSectionsPreProcessorController</name>
     <message>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Toevoegen</translation>
     </message>
     <message>
         <source>&amp;Import..</source>
-        <translation type="unfinished"></translation>
+        <translation>Importeren.. (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Export..</source>
-        <translation type="unfinished"></translation>
+        <translation>Exporteren.. (&amp;E)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Waarschuwing</translation>
     </message>
     <message>
         <source>Cross Section lines not defined yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dwarsdoorsnedelijnen nog niet gedefinieerd.</translation>
     </message>
 </context>
 <context>
     <name>ElevationPoints</name>
     <message>
         <source>Elevation Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Hoogtepunten</translation>
     </message>
 </context>
 <context>
     <name>GraphicsSettingDialog</name>
     <message>
         <source>Graphics Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Grafische instelling</translation>
     </message>
     <message>
         <source>Elevation Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Hoogtepunten</translation>
     </message>
     <message>
         <source>Size</source>
-        <translation type="unfinished"></translation>
+        <translation>Maat</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation>Auto</translation>
     </message>
     <message>
         <source>Manual</source>
-        <translation type="unfinished"></translation>
+        <translation>Handmatig</translation>
     </message>
     <message>
         <source>Transparency:</source>
-        <translation type="unfinished"></translation>
+        <translation>Transparantie:</translation>
     </message>
     <message>
         <source>%</source>
-        <translation type="unfinished"></translation>
+        <translation>%</translation>
     </message>
     <message>
         <source>Water Elevation Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Waterhoogtepunten</translation>
     </message>
 </context>
 <context>
     <name>Hub</name>
     <message>
         <source>Surveying or turning point</source>
-        <translation type="unfinished"></translation>
+        <translation>Landmeten of keerpunt</translation>
     </message>
 </context>
 <context>
     <name>LeftBankHWM</name>
     <message>
         <source>Left Bank HWM</source>
-        <translation type="unfinished"></translation>
+        <translation>Linkeroever HWM</translation>
     </message>
 </context>
 <context>
     <name>MappingSettingDialog</name>
     <message>
         <source>Mapping Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Instelling voor toewijzing</translation>
     </message>
     <message>
         <source>All points are mapped to the nearest CrossSection</source>
-        <translation type="unfinished"></translation>
+        <translation>Alle punten worden toegewezen aan de dichtstbijzijnde CrossSection</translation>
     </message>
     <message>
         <source>Appropriate for data in which points are all near CrossSections</source>
-        <translation type="unfinished"></translation>
+        <translation>Geschikt voor gegevens waarin punten zich allemaal in de buurt van CrossSections bevinden</translation>
     </message>
     <message>
         <source>TIN is used for interpolation at CrossSections</source>
-        <translation type="unfinished"></translation>
+        <translation>TIN wordt gebruikt voor interpolatie bij CrossSections</translation>
     </message>
     <message>
         <source>Appropriate for data in which the density of points are almost the same in whole area</source>
-        <translation type="unfinished"></translation>
+        <translation>Geschikt voor gegevens waarin de dichtheid van punten bijna hetzelfde is in het hele gebied</translation>
     </message>
     <message>
         <source>Template mapping</source>
-        <translation type="unfinished"></translation>
+        <translation>Sjabloontoewijzing</translation>
     </message>
     <message>
         <source>Appropriate for data for which we can not generate good TIN</source>
-        <translation type="unfinished"></translation>
+        <translation>Geschikt voor data waarvoor we geen goede TIN kunnen genereren</translation>
     </message>
     <message>
         <source>Cross section resolution[m]</source>
-        <translation type="unfinished"></translation>
+        <translation>Doorsnede resolutie[m]</translation>
     </message>
     <message>
         <source>Stream-wise length[m]</source>
-        <translation type="unfinished"></translation>
+        <translation>Stroomgewijze lengte [m]</translation>
     </message>
     <message>
         <source>Cross-stream width[m]</source>
-        <translation type="unfinished"></translation>
+        <translation>Dwarsstroombreedte [m]</translation>
     </message>
     <message>
         <source>Number of Template Expansions:</source>
-        <translation type="unfinished"></translation>
+        <translation>Aantal sjabloonuitbreidingen:</translation>
     </message>
     <message>
         <source>Weighting Exponent:</source>
-        <translation type="unfinished"></translation>
+        <translation>Weging exponent:</translation>
     </message>
 </context>
 <context>
     <name>Model</name>
     <message>
         <source>Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Verwijderen</translation>
     </message>
 </context>
 <context>
     <name>MouseHelpDialog</name>
     <message>
         <source>Mouse Hint</source>
-        <translation type="unfinished"></translation>
+        <translation>Muis hint</translation>
     </message>
 </context>
 <context>
     <name>MousePositionWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formulier</translation>
     </message>
     <message>
         <source>X: </source>
-        <translation type="unfinished"></translation>
+        <translation>X:</translation>
     </message>
     <message>
         <source>Y: </source>
-        <translation type="unfinished"></translation>
+        <translation>J:</translation>
     </message>
     <message>
         <source>X: ------</source>
-        <translation type="unfinished"></translation>
+        <translation>X: ------</translation>
     </message>
     <message>
         <source>Y: ------</source>
-        <translation type="unfinished"></translation>
+        <translation>J: ------</translation>
     </message>
 </context>
 <context>
     <name>ObjectBrowser</name>
     <message>
         <source>Object Browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Objectbrowser</translation>
     </message>
 </context>
 <context>
     <name>PointsCsvImporter</name>
     <message>
         <source>Topography File (*.tpo)</source>
-        <translation type="unfinished"></translation>
+        <translation>Topografiebestand (*.tpo)</translation>
     </message>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>CSV-bestand (*.csv)</translation>
     </message>
     <message>
         <source>Filtering Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Filterinstelling</translation>
     </message>
     <message>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation>Filter</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Fout</translation>
     </message>
     <message>
         <source>%1 could not be opened.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 kon niet worden geopend.</translation>
     </message>
 </context>
 <context>
     <name>PointsImporter</name>
     <message>
         <source>All importable files (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Alle importeerbare bestanden (%1)</translation>
     </message>
     <message>
         <source>Select file to import</source>
-        <translation type="unfinished"></translation>
+        <translation>Selecteer bestand om te importeren</translation>
     </message>
 </context>
 <context>
     <name>PointsPreProcessorController</name>
     <message>
         <source>&amp;Import...</source>
-        <translation type="unfinished"></translation>
+        <translation>Importeren (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Verwijderen (&amp;D)</translation>
     </message>
 </context>
 <context>
     <name>PolyLineCsvExporter</name>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>CSV-bestand (*.csv)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Fout</translation>
     </message>
     <message>
         <source>%1 could not be opened.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 kon niet worden geopend.</translation>
     </message>
 </context>
 <context>
     <name>PolyLineCsvImporter</name>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>CSV-bestand (*.csv)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Fout</translation>
     </message>
     <message>
         <source>%1 could not be opened.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 kon niet worden geopend.</translation>
     </message>
 </context>
 <context>
     <name>PolyLineExporter</name>
     <message>
         <source>Input file name to export</source>
-        <translation type="unfinished"></translation>
+        <translation>Voer bestandsnaam in om te exporteren</translation>
     </message>
 </context>
 <context>
     <name>PolyLineImporter</name>
     <message>
         <source>Select file to import</source>
-        <translation type="unfinished"></translation>
+        <translation>Selecteer bestand om te importeren</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorModel</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Waarschuwing</translation>
     </message>
     <message>
         <source>To delete a Cross Section, select it at Object Browser.</source>
-        <translation type="unfinished"></translation>
+        <translation>Om een doorsnede te verwijderen, selecteert u deze in de Objectbrowser.</translation>
     </message>
     <message>
         <source>To edit Cross Section coordinates, select it at Object Browser.</source>
-        <translation type="unfinished"></translation>
+        <translation>Om Dwarsdoorsnede-coördinaten te bewerken, selecteert u deze in de Objectbrowser.</translation>
     </message>
     <message>
         <source>Base line should be long enough to cover extents of HWMs</source>
-        <translation type="unfinished"></translation>
+        <translation>De basislijn moet lang genoeg zijn om de omvang van HWM's te dekken</translation>
     </message>
     <message>
         <source>Not all Cross Sections cross Base line</source>
-        <translation type="unfinished"></translation>
+        <translation>Niet alle doorsneden kruisen de basislijn</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorWindow</name>
     <message>
         <source>Main Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Hoofd venster</translation>
     </message>
 </context>
 <context>
     <name>Project</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Waarschuwing</translation>
     </message>
     <message>
         <source>Calculating initial WSE for Cross-section %1 failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Initiële WSE voor doorsnede berekenen %1 gefaald</translation>
     </message>
 </context>
 <context>
     <name>ReferenceMark</name>
     <message>
         <source>Reference mark</source>
-        <translation type="unfinished"></translation>
+        <translation>Referentiemerk</translation>
     </message>
 </context>
 <context>
     <name>RightBankHWM</name>
     <message>
         <source>Right Bank HWM</source>
-        <translation type="unfinished"></translation>
+        <translation>Rechteroever HWM</translation>
     </message>
 </context>
 <context>
     <name>RivCsvExporter</name>
     <message>
         <source>Select directory to save CSV files</source>
-        <translation type="unfinished"></translation>
+        <translation>Selecteer map om CSV-bestanden op te slaan</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Fout</translation>
     </message>
     <message>
         <source>%1 could not be opened.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 kon niet worden geopend.</translation>
     </message>
 </context>
 <context>
     <name>RivExporter</name>
     <message>
         <source>Input File name to export</source>
-        <translation type="unfinished"></translation>
+        <translation>Invoer Bestandsnaam om te exporteren</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Fout</translation>
     </message>
     <message>
         <source>%1 could not be opened.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 kon niet worden geopend.</translation>
     </message>
     <message>
         <source>CSV File name to export</source>
-        <translation type="unfinished"></translation>
+        <translation>CSV-bestandsnaam om te exporteren</translation>
     </message>
     <message>
         <source>CSV file(*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>CSV-bestand (*.csv)</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informatie</translation>
     </message>
     <message>
         <source>%1 is updated.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 is geüpdatet.</translation>
     </message>
     <message>
         <source>Cross-Section Data (*.riv)</source>
-        <translation type="unfinished"></translation>
+        <translation>Dwarsdoorsnedegegevens (*.riv)</translation>
     </message>
 </context>
 <context>
     <name>RivmakerMainWindow</name>
     <message>
         <source>Rivmaker 1.0</source>
-        <translation type="unfinished"></translation>
+        <translation>Rivmaker 1.0</translation>
     </message>
     <message>
         <source>&amp;File</source>
-        <translation type="unfinished"></translation>
+        <translation>Bestand (&amp;F)</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation type="unfinished"></translation>
+        <translation>Importeren (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Geographic Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Geografische gegevens (&amp;G)</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation type="unfinished"></translation>
+        <translation>Exporteren (&amp;E)</translation>
     </message>
     <message>
         <source>&amp;Recent Projects</source>
-        <translation type="unfinished"></translation>
+        <translation>Recente projecten (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Base Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Basislijn (&amp;B)</translation>
     </message>
     <message>
         <source>&amp;Cross Section</source>
-        <translation type="unfinished"></translation>
+        <translation>Dwarsdoorsnede (&amp;C)</translation>
     </message>
     <message>
         <source>&amp;River Survey Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Rivieronderzoeksgegevens (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;View</source>
-        <translation type="unfinished"></translation>
+        <translation>Weergave (&amp;V)</translation>
     </message>
     <message>
         <source>&amp;Help</source>
-        <translation type="unfinished"></translation>
+        <translation>Helpen (&amp;H)</translation>
     </message>
     <message>
         <source>&amp;Option</source>
-        <translation type="unfinished"></translation>
+        <translation>Optie (&amp;O)</translation>
     </message>
     <message>
         <source>toolBar</source>
-        <translation type="unfinished"></translation>
+        <translation>werkbalk</translation>
     </message>
     <message>
         <source>&amp;New Project...</source>
-        <translation type="unfinished"></translation>
+        <translation>Nieuw project (&amp;N)...</translation>
     </message>
     <message>
         <source>Ctrl+N</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+N</translation>
     </message>
     <message>
         <source>Save &amp;As...</source>
-        <translation type="unfinished"></translation>
+        <translation>Opslaan als (&amp;A)...</translation>
     </message>
     <message>
         <source>Property...</source>
-        <translation type="unfinished"></translation>
+        <translation>Eigendom...</translation>
     </message>
     <message>
         <source>E&amp;xit</source>
-        <translation type="unfinished"></translation>
+        <translation>Uitgang (&amp;X)</translation>
     </message>
     <message>
         <source>Ctrl+Q</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Q</translation>
     </message>
     <message>
         <source>Dummy</source>
-        <translation type="unfinished"></translation>
+        <translation>Dummy</translation>
     </message>
     <message>
         <source>&amp;Elevation...</source>
-        <translation type="unfinished"></translation>
+        <translation>Verhoging (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Water Surface Elevation...</source>
-        <translation type="unfinished"></translation>
+        <translation>Hoogte wateroppervlak (&amp;W)...</translation>
     </message>
     <message>
         <source>&amp;Background Image...</source>
-        <translation type="unfinished"></translation>
+        <translation>Achtergrond afbeelding (&amp;B)...</translation>
     </message>
     <message>
         <source>&amp;SAC GUI Input File...</source>
-        <translation type="unfinished"></translation>
+        <translation>SAC GUI-invoerbestand (&amp;S)...</translation>
     </message>
     <message>
         <source>&amp;Elevation</source>
-        <translation type="unfinished"></translation>
+        <translation>Verhoging (&amp;E)</translation>
     </message>
     <message>
         <source>&amp;Water Surface Elevation</source>
-        <translation type="unfinished"></translation>
+        <translation>Hoogte wateroppervlak (&amp;W)</translation>
     </message>
     <message>
         <source>&amp;SAC GUI Input File</source>
-        <translation type="unfinished"></translation>
+        <translation>SAC GUI-invoerbestand (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;Create...</source>
-        <translation type="unfinished"></translation>
+        <translation>Creëren (&amp;C)...</translation>
     </message>
     <message>
         <source>&amp;Delete...</source>
-        <translation type="unfinished"></translation>
+        <translation>Verwijderen (&amp;D)...</translation>
     </message>
     <message>
         <source>&amp;Add Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Vertex toevoegen (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Vertex verwijderen (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Edit Coordinates...</source>
-        <translation type="unfinished"></translation>
+        <translation>Coördinaten bewerken (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation type="unfinished"></translation>
+        <translation>Importeren (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation type="unfinished"></translation>
+        <translation>Exporteren (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Toevoegen (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Verwijderen (&amp;D)</translation>
     </message>
     <message>
         <source>&amp;Mouse Hint...</source>
-        <translation type="unfinished"></translation>
+        <translation>Muis hint (&amp;M)...</translation>
     </message>
     <message>
         <source>&amp;About...</source>
-        <translation type="unfinished"></translation>
+        <translation>Wat betreft (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Base Line...</source>
-        <translation type="unfinished"></translation>
+        <translation>Basislijn (&amp;B)...</translation>
     </message>
     <message>
         <source>&amp;Cross Section...</source>
-        <translation type="unfinished"></translation>
+        <translation>Dwarsdoorsnede (&amp;C)...</translation>
     </message>
     <message>
         <source>&amp;River Survey Data...</source>
-        <translation type="unfinished"></translation>
+        <translation>Rivieronderzoeksgegevens (&amp;R)...</translation>
     </message>
     <message>
         <source>&amp;Main Toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Hoofdwerkbalk (&amp;M)</translation>
     </message>
     <message>
         <source>&amp;Status Bar</source>
-        <translation type="unfinished"></translation>
+        <translation>Statusbalk (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;Open &amp;New Crosssection Window</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Nieuw doorsnedevenster openen (&amp;N)</translation>
     </message>
     <message>
         <source>Fit</source>
-        <translation type="unfinished"></translation>
+        <translation>Fit</translation>
     </message>
     <message>
         <source>Reset Rotation</source>
-        <translation type="unfinished"></translation>
+        <translation>Rotatie resetten</translation>
     </message>
     <message>
         <source>Rotate 90 degrees</source>
-        <translation type="unfinished"></translation>
+        <translation>90 graden draaien</translation>
     </message>
     <message>
         <source>Zoom In</source>
-        <translation type="unfinished"></translation>
+        <translation>In zoomen</translation>
     </message>
     <message>
         <source>Zoom Out</source>
-        <translation type="unfinished"></translation>
+        <translation>Uitzoomen</translation>
     </message>
     <message>
         <source>Focus Main Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Hoofdvenster Focus</translation>
     </message>
     <message>
         <source>Focus Vertical Crosssection Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Focus verticale doorsnede venster</translation>
     </message>
     <message>
         <source>Open Crosssection Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Doorsnedevenster openen</translation>
     </message>
     <message>
         <source>Reverse &amp;Direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Tegengestelde richting (&amp;D)</translation>
     </message>
     <message>
         <source>&amp;Windows Toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Windows-werkbalk (&amp;W)</translation>
     </message>
     <message>
         <source>&amp;Mapping Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Instelling voor toewijzing (&amp;M)...</translation>
     </message>
     <message>
         <source>&amp;Graphics Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Grafische instelling (&amp;G)...</translation>
     </message>
     <message>
         <source>&amp;Open...</source>
-        <translation type="unfinished"></translation>
+        <translation>Open (&amp;O)...</translation>
     </message>
     <message>
         <source>Ctrl+O</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+O</translation>
     </message>
     <message>
         <source>Save</source>
-        <translation type="unfinished"></translation>
+        <translation>Opslaan</translation>
     </message>
     <message>
         <source>Ctrl+S</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+S</translation>
     </message>
     <message>
         <source>dummy</source>
-        <translation type="unfinished"></translation>
+        <translation>dummy</translation>
     </message>
     <message>
         <source>Window List Toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Werkbalk Vensterlijst</translation>
     </message>
     <message>
         <source>Open project file</source>
-        <translation type="unfinished"></translation>
+        <translation>Projectbestand openen</translation>
     </message>
     <message>
         <source>RivMaker project file (*.rpro)</source>
-        <translation type="unfinished"></translation>
+        <translation>RivMaker-projectbestand (*.rpro)</translation>
     </message>
     <message>
         <source>Project saved to %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Project opgeslagen in %1.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Fout</translation>
     </message>
     <message>
         <source>Saving project file to %1 failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Projectbestand opslaan naar %1 mislukt.</translation>
     </message>
     <message>
         <source>Save project file</source>
-        <translation type="unfinished"></translation>
+        <translation>Projectbestand opslaan</translation>
     </message>
     <message>
         <source>No data to export exists</source>
-        <translation type="unfinished"></translation>
+        <translation>Er zijn geen gegevens om te exporteren</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Waarschuwing</translation>
     </message>
     <message>
         <source>Cross Section Window can not be opened when no Cross Section is defined.</source>
-        <translation type="unfinished"></translation>
+        <translation>Het doorsnedevenster kan niet worden geopend als er geen doorsnede is gedefinieerd.</translation>
     </message>
     <message>
         <source>&amp;%1 %2</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 %2 (&amp;%)</translation>
     </message>
     <message>
         <source>Opening project file failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Het openen van het projectbestand is mislukt.</translation>
     </message>
     <message>
         <source>The project data is modified. Do you want to save?</source>
-        <translation type="unfinished"></translation>
+        <translation>De projectgegevens worden gewijzigd. Wil je bewaren?</translation>
     </message>
     <message>
         <source>River Survey Data as CSV files...</source>
-        <translation type="unfinished"></translation>
+        <translation>Rivieronderzoeksgegevens als CSV-bestanden...</translation>
     </message>
     <message>
         <source>Export as CSV files...</source>
-        <translation type="unfinished"></translation>
+        <translation>Exporteren als CSV-bestanden...</translation>
     </message>
     <message>
         <source>Zoom In in X Direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Inzoomen in X-richting</translation>
     </message>
     <message>
         <source>Zoom In in X direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Inzoomen in X-richting</translation>
     </message>
     <message>
         <source>Zoom In in Y Direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Inzoomen in Y-richting</translation>
     </message>
     <message>
         <source>Zoom Out in X Direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Uitzoomen in X-richting</translation>
     </message>
     <message>
         <source>Zoom Out in Y Direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Uitzoomen in Y-richting</translation>
     </message>
 </context>
 <context>
     <name>SACGUIImporter</name>
     <message>
         <source>Select SAC GUI input file</source>
-        <translation type="unfinished"></translation>
+        <translation>Selecteer SAC GUI-invoerbestand</translation>
     </message>
     <message>
         <source>SAC GUI input file (*.txt *.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>SAC GUI-invoerbestand (*.txt *.csv)</translation>
     </message>
 </context>
 <context>
     <name>StreamGage</name>
     <message>
         <source>Stream gage</source>
-        <translation type="unfinished"></translation>
+        <translation>Streammeter</translation>
     </message>
 </context>
 <context>
     <name>ValueWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formulier</translation>
     </message>
     <message>
         <source>Value: </source>
-        <translation type="unfinished"></translation>
+        <translation>Waarde:</translation>
     </message>
     <message>
         <source>Value: ------</source>
-        <translation type="unfinished"></translation>
+        <translation>Waarde: ------</translation>
     </message>
 </context>
 <context>
     <name>VerticalCrossSectionWindow</name>
     <message>
         <source>Elevation View Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Elevation View-venster</translation>
     </message>
     <message>
         <source>&amp;Reset zoom</source>
-        <translation type="unfinished"></translation>
+        <translation>Zoom resetten (&amp;R)</translation>
     </message>
     <message>
         <source>Arbitrary HWM</source>
-        <translation type="unfinished"></translation>
+        <translation>Willekeurige HWM</translation>
     </message>
     <message>
         <source>Benchmark</source>
-        <translation type="unfinished"></translation>
+        <translation>Benchmark</translation>
     </message>
     <message>
         <source>Reference mark</source>
-        <translation type="unfinished"></translation>
+        <translation>Referentiemerk</translation>
     </message>
     <message>
         <source>Surveying or turning point</source>
-        <translation type="unfinished"></translation>
+        <translation>Landmeten of keerpunt</translation>
     </message>
     <message>
         <source>Left Bank HWM</source>
-        <translation type="unfinished"></translation>
+        <translation>Linkeroever HWM</translation>
     </message>
     <message>
         <source>Right Bank HWM</source>
-        <translation type="unfinished"></translation>
+        <translation>Rechteroever HWM</translation>
     </message>
     <message>
         <source>Stream gage</source>
-        <translation type="unfinished"></translation>
+        <translation>Streammeter</translation>
     </message>
     <message>
         <source>&amp;Export to CSV</source>
-        <translation type="unfinished"></translation>
+        <translation>Exporteren naar CSV (&amp;E)</translation>
     </message>
     <message>
         <source>Save SVG file</source>
-        <translation type="unfinished"></translation>
+        <translation>SVG-bestand opslaan</translation>
     </message>
     <message>
         <source>SVG files (*.svg)</source>
-        <translation type="unfinished"></translation>
+        <translation>SVG-bestanden (*.svg)</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informatie</translation>
     </message>
     <message>
         <source>Data for checked Check Boxes are exported.</source>
-        <translation type="unfinished"></translation>
+        <translation>Gegevens voor aangevinkte selectievakjes worden geëxporteerd.</translation>
     </message>
     <message>
         <source>Save CSV file</source>
-        <translation type="unfinished"></translation>
+        <translation>CSV-bestand opslaan</translation>
     </message>
     <message>
         <source>CSV files (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>CSV-bestanden (*.csv)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Fout</translation>
     </message>
     <message>
         <source>%1 could note be opened.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 kon nota worden geopend.</translation>
     </message>
     <message>
         <source>Export &amp;SVG...</source>
-        <translation type="unfinished"></translation>
+        <translation>SVG exporteren (&amp;S)...</translation>
     </message>
     <message>
         <source>Export &amp;CSV...</source>
-        <translation type="unfinished"></translation>
+        <translation>CSV exporteren (&amp;C)...</translation>
     </message>
 </context>
 <context>
     <name>VerticalCrossSectionWindowDisplaySettingDialog</name>
     <message>
         <source>Elevation View Window Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Elevation View Window Display-instelling</translation>
     </message>
     <message>
         <source>Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Rooster</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation type="unfinished"></translation>
+        <translation>Type</translation>
     </message>
     <message>
         <source>Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>lijnen</translation>
     </message>
     <message>
         <source>Dots</source>
-        <translation type="unfinished"></translation>
+        <translation>Stippen</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation type="unfinished"></translation>
+        <translation>Horizontaal</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation>Auto</translation>
     </message>
     <message>
         <source>Scale</source>
-        <translation type="unfinished"></translation>
+        <translation>Schaal</translation>
     </message>
     <message>
         <source>Sub scale</source>
-        <translation type="unfinished"></translation>
+        <translation>Subschaal</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation type="unfinished"></translation>
+        <translation>Verticaal</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Kleur:</translation>
     </message>
     <message>
         <source>Background</source>
-        <translation type="unfinished"></translation>
+        <translation>Achtergrond</translation>
     </message>
     <message>
         <source>Scales</source>
-        <translation type="unfinished"></translation>
+        <translation>Schubben</translation>
     </message>
     <message>
         <source>Font:</source>
-        <translation type="unfinished"></translation>
+        <translation>Lettertype:</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation type="unfinished"></translation>
+        <translation>Bewerking...</translation>
     </message>
     <message>
         <source>Aspect ratio</source>
-        <translation type="unfinished"></translation>
+        <translation>Beeldverhouding</translation>
     </message>
     <message>
         <source>Scales font</source>
-        <translation type="unfinished"></translation>
+        <translation>Lettertype schalen</translation>
     </message>
 </context>
 <context>
     <name>VerticalCrossSectionWindowDisplaySettingDockWidget</name>
     <message>
         <source>Visibility Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Zichtbaarheidsinstelling</translation>
     </message>
 </context>
 <context>
     <name>VerticalCrossSectionWindowDisplaySettingDockWidgetView</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formulier</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Punten</translation>
     </message>
     <message>
         <source>Arbitrary HWM</source>
-        <translation type="unfinished"></translation>
+        <translation>Willekeurige HWM</translation>
     </message>
     <message>
         <source>Benchmark</source>
-        <translation type="unfinished"></translation>
+        <translation>Benchmark</translation>
     </message>
     <message>
         <source>Reference mark</source>
-        <translation type="unfinished"></translation>
+        <translation>Referentiemerk</translation>
     </message>
     <message>
         <source>Surveying or turning point</source>
-        <translation type="unfinished"></translation>
+        <translation>Landmeten of keerpunt</translation>
     </message>
     <message>
         <source>Left Bank HWM</source>
-        <translation type="unfinished"></translation>
+        <translation>Linkeroever HWM</translation>
     </message>
     <message>
         <source>Right Bank HWM</source>
-        <translation type="unfinished"></translation>
+        <translation>Rechteroever HWM</translation>
     </message>
     <message>
         <source>Stream gage</source>
-        <translation type="unfinished"></translation>
+        <translation>Streammeter</translation>
     </message>
     <message>
         <source>Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>lijnen</translation>
     </message>
     <message>
         <source>Cross Section</source>
-        <translation type="unfinished"></translation>
+        <translation>Dwarsdoorsnede</translation>
     </message>
     <message>
         <source>WSE</source>
-        <translation type="unfinished"></translation>
+        <translation>WSE</translation>
     </message>
 </context>
 <context>
     <name>VerticalCrossSectionWindowElevationsDockWidget</name>
     <message>
         <source>WSE Edit Tool</source>
-        <translation type="unfinished"></translation>
+        <translation>WSE-bewerkingstool</translation>
     </message>
 </context>
 <context>
     <name>VerticalCrossSectionWindowElevationsDockWidgetView</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formulier</translation>
     </message>
     <message>
         <source>&amp;Export to CSV</source>
-        <translation type="unfinished"></translation>
+        <translation>Exporteren naar CSV (&amp;E)</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Naam</translation>
     </message>
     <message>
         <source>Elevation</source>
-        <translation type="unfinished"></translation>
+        <translation>Verhoging</translation>
     </message>
 </context>
 <context>
     <name>WaterSurfaceElevationPoints</name>
     <message>
         <source>Water Elevation Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Waterhoogtepunten</translation>
     </message>
 </context>
 </TS>

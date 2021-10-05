@@ -1,225 +1,223 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ro_RO">
 <context>
     <name>GridCreatingConditionCreatorGridGenerator</name>
     <message>
         <source>Create geometric shape grids</source>
-        <translation type="unfinished"></translation>
+        <translation>Creați grile de formă geometrică</translation>
     </message>
     <message>
         <source>You can create straight grids or sine curve grids by specifying parameters.</source>
-        <translation type="unfinished"></translation>
+        <translation>Puteți crea grile drepte sau grile cu curbă sinusoidală prin specificarea parametrilor.</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionGridGenerator</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Avertizare</translation>
     </message>
     <message>
         <source>The maximum number of grid nodes is %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Numărul maxim de noduri de grilă este %1.</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionGridGeneratorSettingDialog</name>
     <message>
         <source>Grid Creation</source>
-        <translation type="unfinished"></translation>
+        <translation>Crearea rețelei</translation>
     </message>
     <message>
         <source>Channel and Bed shape</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma canalului și a patului</translation>
     </message>
     <message>
         <source>Channel Shape</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma canalului</translation>
     </message>
     <message>
         <source>Simple cross section</source>
-        <translation type="unfinished"></translation>
+        <translation>Secțiune transversală simplă</translation>
     </message>
     <message>
         <source>Simple compound channel</source>
-        <translation type="unfinished"></translation>
+        <translation>Canal compus simplu</translation>
     </message>
     <message>
         <source>Complex compound channel</source>
-        <translation type="unfinished"></translation>
+        <translation>Canal compus complex</translation>
     </message>
     <message>
         <source>Channel Property</source>
-        <translation type="unfinished"></translation>
+        <translation>Proprietatea canalului</translation>
     </message>
     <message>
         <source>Fixed bed (only flood channels)</source>
-        <translation type="unfinished"></translation>
+        <translation>Pat fix (numai canale de inundații)</translation>
     </message>
     <message>
         <source>Movable bed</source>
-        <translation type="unfinished"></translation>
+        <translation>Pat mobil</translation>
     </message>
     <message>
         <source>Bed Shape</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma patului</translation>
     </message>
     <message>
         <source>Flat</source>
-        <translation type="unfinished"></translation>
+        <translation>Apartament</translation>
     </message>
     <message>
         <source>Alternate bar shape in low water channel</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma alternativă a barei în canalul de apă scăzut</translation>
     </message>
     <message>
         <source>Parabolic shape cross section</source>
-        <translation type="unfinished"></translation>
+        <translation>Secțiune transversală de formă parabolică</translation>
     </message>
     <message>
         <source>Amplitude (Depth)</source>
-        <translation type="unfinished"></translation>
+        <translation>Amplitudine (adâncime)</translation>
     </message>
     <message>
         <source>Alternate bar : Amplitude of cross sectional bed shape [m]</source>
-        <translation type="unfinished"></translation>
+        <translation>Bara alternativă: Amplitudinea formei secțiunii transversale a patului [m]</translation>
     </message>
     <message>
         <source>Parabolic shape : Depth of center of cross section [m]</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma parabolică: Adâncimea centrului secțiunii transversale [m]</translation>
     </message>
     <message>
         <source>Lag</source>
-        <translation type="unfinished"></translation>
+        <translation>Lag</translation>
     </message>
     <message>
         <source>Lag between channel geometry and bar location [m]</source>
-        <translation type="unfinished"></translation>
+        <translation>Decalaj între geometria canalului și locația barei [m]</translation>
     </message>
     <message>
         <source>Common parameters</source>
-        <translation type="unfinished"></translation>
+        <translation>Parametri comuni</translation>
     </message>
     <message>
         <source>Meander wave length [m] :</source>
-        <translation type="unfinished"></translation>
+        <translation>Lungimea valului meandrului [m]:</translation>
     </message>
     <message>
         <source>Wave number :</source>
-        <translation type="unfinished"></translation>
+        <translation>Număr de val:</translation>
     </message>
     <message>
         <source>Meander angle (degree, zero for a straight channel) :</source>
-        <translation type="unfinished"></translation>
+        <translation>Unghiul meandrului (grad, zero pentru un canal drept):</translation>
     </message>
     <message>
         <source>Channel slope :</source>
-        <translation type="unfinished"></translation>
+        <translation>Panta canalului:</translation>
     </message>
     <message>
         <source>Number of grids for one wave length in the longitudinal direction :</source>
-        <translation type="unfinished"></translation>
+        <translation>Numărul de grile pentru o lungime de undă în direcția longitudinală:</translation>
     </message>
     <message>
         <source>Channel shape</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma canalului</translation>
     </message>
     <message>
         <source>Simple channel</source>
-        <translation type="unfinished"></translation>
+        <translation>Canal simplu</translation>
     </message>
     <message>
         <source>Channel width [m] :</source>
-        <translation type="unfinished"></translation>
+        <translation>Lățimea canalului [m]:</translation>
     </message>
     <message>
         <source>Number of grids in the cross sectional direction :</source>
-        <translation type="unfinished"></translation>
+        <translation>Numărul de grile în direcția secțiunii transversale:</translation>
     </message>
     <message>
         <source>Simple compound</source>
-        <translation type="unfinished"></translation>
+        <translation>Compus simplu</translation>
     </message>
     <message>
         <source>Width of the left flood channel [m] :</source>
-        <translation type="unfinished"></translation>
+        <translation>Lățimea canalului de inundație stâng [m]:</translation>
     </message>
     <message>
         <source>Width of the low water channel [m] :</source>
-        <translation type="unfinished"></translation>
+        <translation>Lățimea canalului de apă joasă [m]:</translation>
     </message>
     <message>
         <source>Width of the right flood channel [m] :</source>
-        <translation type="unfinished"></translation>
+        <translation>Lățimea canalului de inundație dreapta [m]:</translation>
     </message>
     <message>
         <source>Complex compound</source>
-        <translation type="unfinished"></translation>
+        <translation>Compus complex</translation>
     </message>
     <message>
         <source>Total width between banks [m] :</source>
-        <translation type="unfinished"></translation>
+        <translation>Lățimea totală între bănci [m]:</translation>
     </message>
     <message>
         <source>Compound channel</source>
-        <translation type="unfinished"></translation>
+        <translation>Canal compus</translation>
     </message>
     <message>
         <source>Number of grids for the left flood channel :</source>
-        <translation type="unfinished"></translation>
+        <translation>Numărul de rețele pentru canalul de inundație din stânga:</translation>
     </message>
     <message>
         <source>Number of grids for the low water channel :</source>
-        <translation type="unfinished"></translation>
+        <translation>Numărul de rețele pentru canalul de apă joasă:</translation>
     </message>
     <message>
         <source>Number of grids for the right flood channel :</source>
-        <translation type="unfinished"></translation>
+        <translation>Numărul de rețele pentru canalul de inundație potrivit:</translation>
     </message>
     <message>
         <source>Depth of the low water channel [m] :</source>
-        <translation type="unfinished"></translation>
+        <translation>Adâncimea canalului de apă joasă [m]:</translation>
     </message>
     <message>
         <source>Slope of the low water channel banks :</source>
-        <translation type="unfinished"></translation>
+        <translation>Panta malurilor canalului de apă joasă:</translation>
     </message>
     <message>
         <source>Number of grids for the low water channel banks :</source>
-        <translation type="unfinished"></translation>
+        <translation>Numărul de rețele pentru malurile canalului de apă joasă:</translation>
     </message>
     <message>
         <source>Width change</source>
-        <translation type="unfinished"></translation>
+        <translation>Schimbarea lățimii</translation>
     </message>
     <message>
         <source>Constant</source>
-        <translation type="unfinished"></translation>
+        <translation>Constant</translation>
     </message>
     <message>
         <source>Change in flow direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Schimbarea direcției de curgere</translation>
     </message>
     <message>
         <source>Width change type</source>
-        <translation type="unfinished"></translation>
+        <translation>Tipul de schimbare a lățimii</translation>
     </message>
     <message>
         <source>Left and right banks</source>
-        <translation type="unfinished"></translation>
+        <translation>Malurile stânga și dreapta</translation>
     </message>
     <message>
         <source>Left bank only</source>
-        <translation type="unfinished"></translation>
+        <translation>Numai pe malul stâng</translation>
     </message>
     <message>
         <source>Right bank only</source>
-        <translation type="unfinished"></translation>
+        <translation>Numai malul drept</translation>
     </message>
     <message>
         <source>Width variation [m] :</source>
-        <translation type="unfinished"></translation>
+        <translation>Variația lățimii [m]:</translation>
     </message>
 </context>
 </TS>

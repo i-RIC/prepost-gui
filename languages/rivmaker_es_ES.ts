@@ -1,37 +1,35 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="es_ES">
 <context>
     <name>AboutDialog</name>
     <message>
         <source>About rivmaker</source>
-        <translation type="unfinished"></translation>
+        <translation>Sobre rivmaker</translation>
     </message>
     <message>
         <source>Copyright: USGS</source>
-        <translation type="unfinished"></translation>
+        <translation>Copyright: USGS</translation>
     </message>
     <message>
-        <source>rivmaker 2.0</source>
-        <translation type="unfinished"></translation>
+        <source>rivmaker 2.0.2</source>
+        <translation>rivmaker 2.0.2</translation>
     </message>
     <message>
-        <source>Release Date: 2021/1/30</source>
-        <translation type="unfinished"></translation>
+        <source>Release Date: 2021/3/2</source>
+        <translation>Fecha de lanzamiento: 2021/3/2</translation>
     </message>
 </context>
 <context>
     <name>ArbitraryHWM</name>
     <message>
         <source>Arbitrary HWM</source>
-        <translation type="unfinished"></translation>
+        <translation>HWM arbitrario</translation>
     </message>
 </context>
 <context>
     <name>BaseLine</name>
     <message>
         <source>Base Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Línea base</translation>
     </message>
 </context>
 <context>
@@ -58,11 +56,11 @@
     </message>
     <message>
         <source>Reverse &amp;Direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Direccion contraria (&amp;D)</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Borrar</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -70,11 +68,11 @@
     </message>
     <message>
         <source>Base line is not defined yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>La línea base aún no está definida.</translation>
     </message>
     <message>
         <source>Point can not be deleted when there are only two points.</source>
-        <translation type="unfinished"></translation>
+        <translation>El punto no se puede eliminar cuando solo hay dos puntos.</translation>
     </message>
 </context>
 <context>
@@ -92,56 +90,56 @@
     <name>Benchmark</name>
     <message>
         <source>Benchmark</source>
-        <translation type="unfinished"></translation>
+        <translation>Punto de referencia</translation>
     </message>
 </context>
 <context>
     <name>ChartGraphicsView</name>
     <message>
-        <source>Aspect ratio: 1 / %1</source>
-        <translation type="unfinished"></translation>
+        <source>Aspect ratio (V/H): 1 / %1</source>
+        <translation>Relación de aspecto (V / H): 1 / %1</translation>
     </message>
 </context>
 <context>
     <name>ChartWindow</name>
     <message>
         <source>Display ToolBar</source>
-        <translation type="unfinished"></translation>
+        <translation>Barra de herramientas de visualización</translation>
     </message>
     <message>
         <source>Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Red</translation>
     </message>
     <message>
         <source>Scale</source>
-        <translation type="unfinished"></translation>
+        <translation>Escala</translation>
     </message>
     <message>
         <source>Aspect ratio</source>
-        <translation type="unfinished"></translation>
+        <translation>Relación de aspecto</translation>
     </message>
     <message>
         <source>View ToolBar</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Aspect ratio: 1 / </source>
-        <translation type="unfinished"></translation>
+        <translation>Ver barra de herramientas</translation>
     </message>
     <message>
         <source>Fix aspect ratio</source>
-        <translation type="unfinished"></translation>
+        <translation>Corregir la relación de aspecto</translation>
     </message>
     <message>
         <source>Fix region</source>
-        <translation type="unfinished"></translation>
+        <translation>Corregir región</translation>
+    </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / </source>
+        <translation>Relación de aspecto (V / H): 1 /</translation>
     </message>
 </context>
 <context>
     <name>CoordinateEditWidget</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>It is not a real value</source>
@@ -152,15 +150,15 @@
     <name>CoordinatesEditDialog</name>
     <message>
         <source>Edit Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar coordenadas</translation>
     </message>
     <message>
         <source>X</source>
-        <translation type="unfinished"></translation>
+        <translation>X</translation>
     </message>
     <message>
         <source>Y</source>
-        <translation type="unfinished"></translation>
+        <translation>Y</translation>
     </message>
 </context>
 <context>
@@ -175,29 +173,29 @@
     </message>
     <message>
         <source>Cross Section is not defined yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>La sección transversal aún no está definida.</translation>
     </message>
     <message>
-        <source>Invalid name for cross section. The name should be &quot;X1&quot;, &quot;X2&quot;, ...　or &quot;XS1&quot;, &quot;XS2&quot;, ...</source>
-        <translation type="unfinished"></translation>
+        <source>Invalid name for cross section. The name should be "X1", "X2", ...　or "XS1", "XS2", ...</source>
+        <translation>Nombre no válido para sección transversal. El nombre debe ser "X1", "X2",... o "XS1", "XS2",...</translation>
     </message>
 </context>
 <context>
     <name>CrossSectionPreProcessorViewLabelHelper</name>
     <message>
         <source>%1 LB</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 LB</translation>
     </message>
     <message>
         <source>%1 RB</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 RB</translation>
     </message>
 </context>
 <context>
     <name>CrossSectionWindow</name>
     <message>
         <source>Cross Section Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Ventana de sección transversal</translation>
     </message>
     <message>
         <source>Elevation</source>
@@ -205,152 +203,152 @@
     </message>
     <message>
         <source>Cross Section Window : %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Ventana de sección transversal: %1</translation>
     </message>
     <message>
         <source>Save SVG file</source>
-        <translation type="unfinished"></translation>
+        <translation>Guardar archivo SVG</translation>
     </message>
     <message>
         <source>SVG files (*.svg)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivos SVG (*.svg)</translation>
     </message>
     <message>
         <source>Save CSV file</source>
-        <translation type="unfinished"></translation>
+        <translation>Guardar archivo CSV</translation>
     </message>
     <message>
         <source>CSV files (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivos CSV (*.csv)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>%1 could note be opened.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 nota que se puede abrir.</translation>
     </message>
     <message>
         <source>Cross Section: </source>
-        <translation type="unfinished"></translation>
+        <translation>Sección transversal:</translation>
     </message>
     <message>
         <source>Export &amp;SVG...</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportar SVG (&amp;S)...</translation>
     </message>
     <message>
         <source>Export &amp;CSV...</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportar CSV (&amp;C)...</translation>
     </message>
     <message>
         <source>WSE</source>
-        <translation type="unfinished"></translation>
+        <translation>WSE</translation>
     </message>
     <message>
         <source>Left Bank HWM</source>
-        <translation type="unfinished"></translation>
+        <translation>Margen izquierda HWM</translation>
     </message>
     <message>
         <source>Right Bank HWM</source>
-        <translation type="unfinished"></translation>
+        <translation>HWM de margen derecha</translation>
     </message>
 </context>
 <context>
     <name>CrossSectionWindowDisplaySettingDialog</name>
     <message>
         <source>Cross Section Window Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración de visualización de ventana de sección transversal</translation>
     </message>
     <message>
         <source>Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Red</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation type="unfinished"></translation>
+        <translation>Escribe</translation>
     </message>
     <message>
         <source>Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Líneas</translation>
     </message>
     <message>
         <source>Dots</source>
-        <translation type="unfinished"></translation>
+        <translation>Puntos</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation type="unfinished"></translation>
+        <translation>Horizontal</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation>Auto</translation>
     </message>
     <message>
         <source>Scale</source>
-        <translation type="unfinished"></translation>
+        <translation>Escala</translation>
     </message>
     <message>
         <source>Sub scale</source>
-        <translation type="unfinished"></translation>
+        <translation>Escala secundaria</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation type="unfinished"></translation>
+        <translation>Vertical</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Color:</translation>
     </message>
     <message>
         <source>Background</source>
-        <translation type="unfinished"></translation>
+        <translation>Fondo</translation>
     </message>
     <message>
         <source>Scales</source>
-        <translation type="unfinished"></translation>
+        <translation>Escamas</translation>
     </message>
     <message>
         <source>Font:</source>
-        <translation type="unfinished"></translation>
+        <translation>Fuente:</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar...</translation>
     </message>
     <message>
         <source>Aspect ratio</source>
-        <translation type="unfinished"></translation>
+        <translation>Relación de aspecto</translation>
     </message>
     <message>
         <source>Cross Section Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Puntos de sección transversal</translation>
     </message>
     <message>
         <source>Scales font</source>
-        <translation type="unfinished"></translation>
+        <translation>Fuente Scales</translation>
     </message>
 </context>
 <context>
     <name>CrossSectionWindowGraphicsView</name>
     <message>
         <source>Left bank HWM</source>
-        <translation type="unfinished"></translation>
+        <translation>HWM de margen izquierda</translation>
     </message>
     <message>
         <source>Right bank HWM</source>
-        <translation type="unfinished"></translation>
+        <translation>HWM de margen derecha</translation>
     </message>
     <message>
         <source>WSE</source>
-        <translation type="unfinished"></translation>
+        <translation>WSE</translation>
     </message>
 </context>
 <context>
     <name>CrossSections</name>
     <message>
         <source>Cross Sections</source>
-        <translation type="unfinished"></translation>
+        <translation>Secciones cruzadas</translation>
     </message>
 </context>
 <context>
@@ -361,11 +359,11 @@
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>%1 could not be opened.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 no puede ser abierto.</translation>
     </message>
 </context>
 <context>
@@ -376,18 +374,18 @@
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>%1 could not be opened.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 no puede ser abierto.</translation>
     </message>
 </context>
 <context>
     <name>CrossSectionsExporter</name>
     <message>
         <source>Input file name to export</source>
-        <translation type="unfinished"></translation>
+        <translation>Ingrese el nombre del archivo para exportar</translation>
     </message>
 </context>
 <context>
@@ -405,11 +403,11 @@
     </message>
     <message>
         <source>&amp;Import..</source>
-        <translation type="unfinished"></translation>
+        <translation>Importar.. (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Export..</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportar.. (&amp;E)</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -417,25 +415,25 @@
     </message>
     <message>
         <source>Cross Section lines not defined yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Líneas de sección transversal aún no definidas.</translation>
     </message>
 </context>
 <context>
     <name>ElevationPoints</name>
     <message>
         <source>Elevation Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Puntos de elevación</translation>
     </message>
 </context>
 <context>
     <name>GraphicsSettingDialog</name>
     <message>
         <source>Graphics Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración de gráficos</translation>
     </message>
     <message>
         <source>Elevation Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Puntos de elevación</translation>
     </message>
     <message>
         <source>Size</source>
@@ -443,60 +441,60 @@
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation>Auto</translation>
     </message>
     <message>
         <source>Manual</source>
-        <translation type="unfinished"></translation>
+        <translation>Manual</translation>
     </message>
     <message>
         <source>Transparency:</source>
-        <translation type="unfinished"></translation>
+        <translation>Transparencia:</translation>
     </message>
     <message>
         <source>%</source>
-        <translation type="unfinished"></translation>
+        <translation>%</translation>
     </message>
     <message>
         <source>Water Elevation Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Puntos de elevación de agua</translation>
     </message>
 </context>
 <context>
     <name>Hub</name>
     <message>
         <source>Surveying or turning point</source>
-        <translation type="unfinished"></translation>
+        <translation>Topografía o punto de inflexión</translation>
     </message>
 </context>
 <context>
     <name>LeftBankHWM</name>
     <message>
         <source>Left Bank HWM</source>
-        <translation type="unfinished"></translation>
+        <translation>Margen izquierda HWM</translation>
     </message>
 </context>
 <context>
     <name>MappingSettingDialog</name>
     <message>
         <source>Mapping Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración de mapeo</translation>
     </message>
     <message>
         <source>All points are mapped to the nearest CrossSection</source>
-        <translation type="unfinished"></translation>
+        <translation>Todos los puntos se asignan a la sección transversal más cercana</translation>
     </message>
     <message>
         <source>Appropriate for data in which points are all near CrossSections</source>
-        <translation type="unfinished"></translation>
+        <translation>Apropiado para datos en los que los puntos están todos cerca de secciones transversales</translation>
     </message>
     <message>
         <source>TIN is used for interpolation at CrossSections</source>
-        <translation type="unfinished"></translation>
+        <translation>TIN se utiliza para la interpolación en las secciones transversales</translation>
     </message>
     <message>
         <source>Appropriate for data in which the density of points are almost the same in whole area</source>
-        <translation type="unfinished"></translation>
+        <translation>Apropiado para datos en los que la densidad de puntos es casi la misma en toda el área</translation>
     </message>
     <message>
         <source>Template mapping</source>
@@ -504,19 +502,19 @@
     </message>
     <message>
         <source>Appropriate for data for which we can not generate good TIN</source>
-        <translation type="unfinished"></translation>
+        <translation>Apropiado para datos para los que no podemos generar un buen TIN</translation>
     </message>
     <message>
         <source>Cross section resolution[m]</source>
-        <translation type="unfinished"></translation>
+        <translation>Resolución de sección transversal [m]</translation>
     </message>
     <message>
         <source>Stream-wise length[m]</source>
-        <translation type="unfinished"></translation>
+        <translation>Longitud de flujo [m]</translation>
     </message>
     <message>
         <source>Cross-stream width[m]</source>
-        <translation type="unfinished"></translation>
+        <translation>Anchura transversal [m]</translation>
     </message>
     <message>
         <source>Number of Template Expansions:</source>
@@ -531,7 +529,7 @@
     <name>Model</name>
     <message>
         <source>Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Borrar</translation>
     </message>
 </context>
 <context>
@@ -549,19 +547,19 @@
     </message>
     <message>
         <source>X: </source>
-        <translation type="unfinished"></translation>
+        <translation>X:</translation>
     </message>
     <message>
         <source>Y: </source>
-        <translation type="unfinished"></translation>
+        <translation>Y:</translation>
     </message>
     <message>
         <source>X: ------</source>
-        <translation type="unfinished"></translation>
+        <translation>X: ------</translation>
     </message>
     <message>
         <source>Y: ------</source>
-        <translation type="unfinished"></translation>
+        <translation>Y: ------</translation>
     </message>
 </context>
 <context>
@@ -587,15 +585,15 @@
     </message>
     <message>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation>Filtrar</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>%1 could not be opened.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 no puede ser abierto.</translation>
     </message>
 </context>
 <context>
@@ -628,11 +626,11 @@
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>%1 could not be opened.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 no puede ser abierto.</translation>
     </message>
 </context>
 <context>
@@ -643,18 +641,18 @@
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>%1 could not be opened.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 no puede ser abierto.</translation>
     </message>
 </context>
 <context>
     <name>PolyLineExporter</name>
     <message>
         <source>Input file name to export</source>
-        <translation type="unfinished"></translation>
+        <translation>Ingrese el nombre del archivo para exportar</translation>
     </message>
 </context>
 <context>
@@ -672,26 +670,26 @@
     </message>
     <message>
         <source>To delete a Cross Section, select it at Object Browser.</source>
-        <translation type="unfinished"></translation>
+        <translation>Para eliminar una sección transversal, selecciónela en el Explorador de objetos.</translation>
     </message>
     <message>
         <source>To edit Cross Section coordinates, select it at Object Browser.</source>
-        <translation type="unfinished"></translation>
+        <translation>Para editar las coordenadas de la sección transversal, selecciónela en el Explorador de objetos.</translation>
     </message>
     <message>
         <source>Base line should be long enough to cover extents of HWMs</source>
-        <translation type="unfinished"></translation>
+        <translation>La línea base debe ser lo suficientemente larga para cubrir extensiones de HWM</translation>
     </message>
     <message>
         <source>Not all Cross Sections cross Base line</source>
-        <translation type="unfinished"></translation>
+        <translation>No todas las secciones transversales cruzan la línea de base</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorWindow</name>
     <message>
         <source>Main Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Ventana principal</translation>
     </message>
 </context>
 <context>
@@ -702,59 +700,59 @@
     </message>
     <message>
         <source>Calculating initial WSE for Cross-section %1 failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Cálculo de WSE inicial para la sección transversal %1 fallido</translation>
     </message>
 </context>
 <context>
     <name>ReferenceMark</name>
     <message>
         <source>Reference mark</source>
-        <translation type="unfinished"></translation>
+        <translation>Marca de referencia</translation>
     </message>
 </context>
 <context>
     <name>RightBankHWM</name>
     <message>
         <source>Right Bank HWM</source>
-        <translation type="unfinished"></translation>
+        <translation>HWM de margen derecha</translation>
     </message>
 </context>
 <context>
     <name>RivCsvExporter</name>
     <message>
         <source>Select directory to save CSV files</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccionar directorio para guardar archivos CSV</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>%1 could not be opened.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 no puede ser abierto.</translation>
     </message>
 </context>
 <context>
     <name>RivExporter</name>
     <message>
         <source>Input File name to export</source>
-        <translation type="unfinished"></translation>
+        <translation>Ingrese el nombre del archivo para exportar</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>%1 could not be opened.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 no puede ser abierto.</translation>
     </message>
     <message>
         <source>CSV File name to export</source>
-        <translation type="unfinished"></translation>
+        <translation>Nombre de archivo CSV para exportar</translation>
     </message>
     <message>
         <source>CSV file(*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo CSV (*.csv)</translation>
     </message>
     <message>
         <source>Information</source>
@@ -762,18 +760,18 @@
     </message>
     <message>
         <source>%1 is updated.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 se actualiza.</translation>
     </message>
     <message>
         <source>Cross-Section Data (*.riv)</source>
-        <translation type="unfinished"></translation>
+        <translation>Datos de sección transversal (*.riv)</translation>
     </message>
 </context>
 <context>
     <name>RivmakerMainWindow</name>
     <message>
         <source>Rivmaker 1.0</source>
-        <translation type="unfinished"></translation>
+        <translation>Rivmaker 1.0</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -785,7 +783,7 @@
     </message>
     <message>
         <source>&amp;Geographic Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Datos geográficos (&amp;G)</translation>
     </message>
     <message>
         <source>&amp;Export</source>
@@ -797,15 +795,15 @@
     </message>
     <message>
         <source>&amp;Base Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Línea base (&amp;B)</translation>
     </message>
     <message>
         <source>&amp;Cross Section</source>
-        <translation type="unfinished"></translation>
+        <translation>Sección transversal (&amp;C)</translation>
     </message>
     <message>
         <source>&amp;River Survey Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Datos del levantamiento del río (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;View</source>
@@ -829,15 +827,15 @@
     </message>
     <message>
         <source>Ctrl+N</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl + N</translation>
     </message>
     <message>
         <source>Save &amp;As...</source>
-        <translation type="unfinished"></translation>
+        <translation>Guardar como (&amp;A)...</translation>
     </message>
     <message>
         <source>Property...</source>
-        <translation type="unfinished"></translation>
+        <translation>Propiedad...</translation>
     </message>
     <message>
         <source>E&amp;xit</source>
@@ -845,19 +843,19 @@
     </message>
     <message>
         <source>Ctrl+Q</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl + Q</translation>
     </message>
     <message>
         <source>Dummy</source>
-        <translation type="unfinished"></translation>
+        <translation>Ficticio</translation>
     </message>
     <message>
         <source>&amp;Elevation...</source>
-        <translation type="unfinished"></translation>
+        <translation>Elevación (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Water Surface Elevation...</source>
-        <translation type="unfinished"></translation>
+        <translation>Elevación de la superficie del agua (&amp;W)...</translation>
     </message>
     <message>
         <source>&amp;Background Image...</source>
@@ -865,23 +863,23 @@
     </message>
     <message>
         <source>&amp;SAC GUI Input File...</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo de entrada SAC GUI (&amp;S)...</translation>
     </message>
     <message>
         <source>&amp;Elevation</source>
-        <translation type="unfinished"></translation>
+        <translation>Elevación (&amp;E)</translation>
     </message>
     <message>
         <source>&amp;Water Surface Elevation</source>
-        <translation type="unfinished"></translation>
+        <translation>Elevación de la superficie del agua (&amp;W)</translation>
     </message>
     <message>
         <source>&amp;SAC GUI Input File</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo de entrada SAC GUI (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;Create...</source>
-        <translation type="unfinished"></translation>
+        <translation>Crear (&amp;C)...</translation>
     </message>
     <message>
         <source>&amp;Delete...</source>
@@ -925,15 +923,15 @@
     </message>
     <message>
         <source>&amp;Base Line...</source>
-        <translation type="unfinished"></translation>
+        <translation>Línea base (&amp;B)...</translation>
     </message>
     <message>
         <source>&amp;Cross Section...</source>
-        <translation type="unfinished"></translation>
+        <translation>Sección transversal (&amp;C)...</translation>
     </message>
     <message>
         <source>&amp;River Survey Data...</source>
-        <translation type="unfinished"></translation>
+        <translation>Datos del levantamiento del río (&amp;R)...</translation>
     </message>
     <message>
         <source>&amp;Main Toolbar</source>
@@ -941,15 +939,15 @@
     </message>
     <message>
         <source>&amp;Windows Toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Barra de herramientas de Windows (&amp;W)</translation>
     </message>
     <message>
         <source>&amp;Mapping Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración de mapeo (&amp;M)...</translation>
     </message>
     <message>
         <source>&amp;Graphics Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración de gráficos (&amp;G)...</translation>
     </message>
     <message>
         <source>&amp;Open...</source>
@@ -957,19 +955,19 @@
     </message>
     <message>
         <source>Ctrl+O</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl + O</translation>
     </message>
     <message>
         <source>Save</source>
-        <translation type="unfinished"></translation>
+        <translation>Ahorrar</translation>
     </message>
     <message>
         <source>Ctrl+S</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl + S</translation>
     </message>
     <message>
         <source>dummy</source>
-        <translation type="unfinished"></translation>
+        <translation>ficticio</translation>
     </message>
     <message>
         <source>&amp;Status Bar</source>
@@ -977,71 +975,71 @@
     </message>
     <message>
         <source>&amp;Open &amp;New Crosssection Window</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp; Abrir nueva ventana de sección transversal (&amp;N)</translation>
     </message>
     <message>
         <source>Fit</source>
-        <translation type="unfinished"></translation>
+        <translation>Encajar</translation>
     </message>
     <message>
         <source>Reset Rotation</source>
-        <translation type="unfinished"></translation>
+        <translation>Restablecer rotación</translation>
     </message>
     <message>
         <source>Rotate 90 degrees</source>
-        <translation type="unfinished"></translation>
+        <translation>Girar 90 grados</translation>
     </message>
     <message>
         <source>Zoom In</source>
-        <translation type="unfinished"></translation>
+        <translation>Acercarse</translation>
     </message>
     <message>
         <source>Zoom Out</source>
-        <translation type="unfinished"></translation>
+        <translation>Disminuir el zoom</translation>
     </message>
     <message>
         <source>Focus Main Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Enfoque de la ventana principal</translation>
     </message>
     <message>
         <source>Focus Vertical Crosssection Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Ventana de sección transversal vertical de enfoque</translation>
     </message>
     <message>
         <source>Open Crosssection Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Ventana de sección transversal abierta</translation>
     </message>
     <message>
         <source>Reverse &amp;Direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Direccion contraria (&amp;D)</translation>
     </message>
     <message>
         <source>Open project file</source>
-        <translation type="unfinished"></translation>
+        <translation>Abrir archivo de proyecto</translation>
     </message>
     <message>
         <source>RivMaker project file (*.rpro)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo de proyecto RivMaker (*.rpro)</translation>
     </message>
     <message>
         <source>Project saved to %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Proyecto guardado en %1.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>Saving project file to %1 failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Guardando el archivo del proyecto en %1 fallido.</translation>
     </message>
     <message>
         <source>Save project file</source>
-        <translation type="unfinished"></translation>
+        <translation>Guardar archivo de proyecto</translation>
     </message>
     <message>
         <source>No data to export exists</source>
-        <translation type="unfinished"></translation>
+        <translation>No existen datos para exportar</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -1049,69 +1047,69 @@
     </message>
     <message>
         <source>&amp;%1 %2</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 %2 (&amp;%)</translation>
     </message>
     <message>
         <source>Opening project file failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Error al abrir el archivo del proyecto.</translation>
     </message>
     <message>
         <source>The project data is modified. Do you want to save?</source>
-        <translation type="unfinished"></translation>
+        <translation>Se modifican los datos del proyecto. ¿Quieres guardar?</translation>
     </message>
     <message>
         <source>Window List Toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Barra de herramientas de lista de ventanas</translation>
     </message>
     <message>
         <source>Cross Section Window can not be opened when no Cross Section is defined.</source>
-        <translation type="unfinished"></translation>
+        <translation>La ventana de sección transversal no se puede abrir cuando no se define ninguna sección transversal.</translation>
     </message>
     <message>
         <source>River Survey Data as CSV files...</source>
-        <translation type="unfinished"></translation>
+        <translation>Datos del levantamiento del río como archivos CSV...</translation>
     </message>
     <message>
         <source>Export as CSV files...</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportar como archivos CSV...</translation>
     </message>
     <message>
         <source>Zoom In in X Direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Acercar en dirección X</translation>
     </message>
     <message>
         <source>Zoom In in X direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Acercar en dirección X</translation>
     </message>
     <message>
         <source>Zoom In in Y Direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Acercar en dirección Y</translation>
     </message>
     <message>
         <source>Zoom Out in X Direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Alejar en dirección X</translation>
     </message>
     <message>
         <source>Zoom Out in Y Direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Alejar en dirección Y</translation>
     </message>
 </context>
 <context>
     <name>SACGUIImporter</name>
     <message>
         <source>Select SAC GUI input file</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccione el archivo de entrada SAC GUI</translation>
     </message>
     <message>
         <source>SAC GUI input file (*.txt *.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo de entrada SAC GUI (*.txt *.csv)</translation>
     </message>
 </context>
 <context>
     <name>StreamGage</name>
     <message>
         <source>Stream gage</source>
-        <translation type="unfinished"></translation>
+        <translation>Medidor de corriente</translation>
     </message>
 </context>
 <context>
@@ -1122,54 +1120,54 @@
     </message>
     <message>
         <source>Value: </source>
-        <translation type="unfinished"></translation>
+        <translation>Valor:</translation>
     </message>
     <message>
         <source>Value: ------</source>
-        <translation type="unfinished"></translation>
+        <translation>Valor: ------</translation>
     </message>
 </context>
 <context>
     <name>VerticalCrossSectionWindow</name>
     <message>
         <source>Elevation View Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Ventana de vista de elevación</translation>
     </message>
     <message>
         <source>&amp;Reset zoom</source>
-        <translation type="unfinished"></translation>
+        <translation>Restablecer zoom (&amp;R)</translation>
     </message>
     <message>
         <source>Arbitrary HWM</source>
-        <translation type="unfinished"></translation>
+        <translation>HWM arbitrario</translation>
     </message>
     <message>
         <source>Benchmark</source>
-        <translation type="unfinished"></translation>
+        <translation>Punto de referencia</translation>
     </message>
     <message>
         <source>Reference mark</source>
-        <translation type="unfinished"></translation>
+        <translation>Marca de referencia</translation>
     </message>
     <message>
         <source>Surveying or turning point</source>
-        <translation type="unfinished"></translation>
+        <translation>Topografía o punto de inflexión</translation>
     </message>
     <message>
         <source>Left Bank HWM</source>
-        <translation type="unfinished"></translation>
+        <translation>Margen izquierda HWM</translation>
     </message>
     <message>
         <source>Right Bank HWM</source>
-        <translation type="unfinished"></translation>
+        <translation>HWM de margen derecha</translation>
     </message>
     <message>
         <source>Stream gage</source>
-        <translation type="unfinished"></translation>
+        <translation>Medidor de corriente</translation>
     </message>
     <message>
         <source>&amp;Export to CSV</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportar a CSV (&amp;E)</translation>
     </message>
     <message>
         <source>Elevation</source>
@@ -1181,205 +1179,205 @@
     </message>
     <message>
         <source>Save SVG file</source>
-        <translation type="unfinished"></translation>
+        <translation>Guardar archivo SVG</translation>
     </message>
     <message>
         <source>SVG files (*.svg)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivos SVG (*.svg)</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished">Informacion</translation>
+        <translation>Información</translation>
     </message>
     <message>
         <source>Data for checked Check Boxes are exported.</source>
-        <translation type="unfinished"></translation>
+        <translation>Se exportan los datos de las casillas de verificación marcadas.</translation>
     </message>
     <message>
         <source>Save CSV file</source>
-        <translation type="unfinished"></translation>
+        <translation>Guardar archivo CSV</translation>
     </message>
     <message>
         <source>CSV files (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivos CSV (*.csv)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>%1 could note be opened.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 nota que se puede abrir.</translation>
     </message>
     <message>
         <source>Export &amp;SVG...</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportar SVG (&amp;S)...</translation>
     </message>
     <message>
         <source>Export &amp;CSV...</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportar CSV (&amp;C)...</translation>
     </message>
 </context>
 <context>
     <name>VerticalCrossSectionWindowDisplaySettingDialog</name>
     <message>
         <source>Elevation View Window Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración de visualización de la ventana de vista de elevación</translation>
     </message>
     <message>
         <source>Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Red</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation type="unfinished"></translation>
+        <translation>Escribe</translation>
     </message>
     <message>
         <source>Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Líneas</translation>
     </message>
     <message>
         <source>Dots</source>
-        <translation type="unfinished"></translation>
+        <translation>Puntos</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation type="unfinished"></translation>
+        <translation>Horizontal</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation>Auto</translation>
     </message>
     <message>
         <source>Scale</source>
-        <translation type="unfinished"></translation>
+        <translation>Escala</translation>
     </message>
     <message>
         <source>Sub scale</source>
-        <translation type="unfinished"></translation>
+        <translation>Escala secundaria</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation type="unfinished"></translation>
+        <translation>Vertical</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Color:</translation>
     </message>
     <message>
         <source>Background</source>
-        <translation type="unfinished"></translation>
+        <translation>Fondo</translation>
     </message>
     <message>
         <source>Scales</source>
-        <translation type="unfinished"></translation>
+        <translation>Escamas</translation>
     </message>
     <message>
         <source>Font:</source>
-        <translation type="unfinished"></translation>
+        <translation>Fuente:</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar...</translation>
     </message>
     <message>
         <source>Aspect ratio</source>
-        <translation type="unfinished"></translation>
+        <translation>Relación de aspecto</translation>
     </message>
     <message>
         <source>Scales font</source>
-        <translation type="unfinished"></translation>
+        <translation>Fuente Scales</translation>
     </message>
 </context>
 <context>
     <name>VerticalCrossSectionWindowDisplaySettingDockWidget</name>
     <message>
         <source>Visibility Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración de visibilidad</translation>
     </message>
 </context>
 <context>
     <name>VerticalCrossSectionWindowDisplaySettingDockWidgetView</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Forma</translation>
+        <translation>Formulario</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Puntos</translation>
     </message>
     <message>
         <source>Arbitrary HWM</source>
-        <translation type="unfinished"></translation>
+        <translation>HWM arbitrario</translation>
     </message>
     <message>
         <source>Benchmark</source>
-        <translation type="unfinished"></translation>
+        <translation>Punto de referencia</translation>
     </message>
     <message>
         <source>Reference mark</source>
-        <translation type="unfinished"></translation>
+        <translation>Marca de referencia</translation>
     </message>
     <message>
         <source>Surveying or turning point</source>
-        <translation type="unfinished"></translation>
+        <translation>Topografía o punto de inflexión</translation>
     </message>
     <message>
         <source>Left Bank HWM</source>
-        <translation type="unfinished"></translation>
+        <translation>Margen izquierda HWM</translation>
     </message>
     <message>
         <source>Right Bank HWM</source>
-        <translation type="unfinished"></translation>
+        <translation>HWM de margen derecha</translation>
     </message>
     <message>
         <source>Stream gage</source>
-        <translation type="unfinished"></translation>
+        <translation>Medidor de corriente</translation>
     </message>
     <message>
         <source>Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Líneas</translation>
     </message>
     <message>
         <source>Cross Section</source>
-        <translation type="unfinished"></translation>
+        <translation>Sección transversal</translation>
     </message>
     <message>
         <source>WSE</source>
-        <translation type="unfinished"></translation>
+        <translation>WSE</translation>
     </message>
 </context>
 <context>
     <name>VerticalCrossSectionWindowElevationsDockWidget</name>
     <message>
         <source>WSE Edit Tool</source>
-        <translation type="unfinished"></translation>
+        <translation>Herramienta de edición WSE</translation>
     </message>
 </context>
 <context>
     <name>VerticalCrossSectionWindowElevationsDockWidgetView</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Forma</translation>
+        <translation>Formulario</translation>
     </message>
     <message>
         <source>&amp;Export to CSV</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportar a CSV (&amp;E)</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished">Nombre</translation>
+        <translation>Nombre</translation>
     </message>
     <message>
         <source>Elevation</source>
-        <translation type="unfinished">Elevacion</translation>
+        <translation>Elevación</translation>
     </message>
 </context>
 <context>
     <name>WaterSurfaceElevationPoints</name>
     <message>
         <source>Water Elevation Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Puntos de elevación de agua</translation>
     </message>
 </context>
 </TS>

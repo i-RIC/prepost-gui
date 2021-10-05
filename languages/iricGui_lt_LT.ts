@@ -1,2069 +1,2071 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="lt_LT">
 <context>
     <name>AnimationController</name>
     <message>
         <source>Animation ToolBar</source>
-        <translation type="unfinished"></translation>
+        <translation>Animacijos įrankių juosta</translation>
     </message>
     <message>
         <source>&amp;Animation</source>
-        <translation type="unfinished"></translation>
+        <translation>Animacija (&amp;A)</translation>
     </message>
     <message>
         <source>Step &amp;Backward</source>
-        <translation type="unfinished"></translation>
+        <translation>Žingsnis atgal (&amp;B)</translation>
     </message>
     <message>
         <source>Step &amp;Forward</source>
-        <translation type="unfinished"></translation>
+        <translation>Išeiti į priekį (&amp;F)</translation>
     </message>
     <message>
         <source>&amp;Reset</source>
-        <translation type="unfinished"></translation>
+        <translation>Iš naujo nustatyti (&amp;R)</translation>
     </message>
     <message>
         <source>Go to &amp;Last Step</source>
-        <translation type="unfinished"></translation>
+        <translation>Eikite į paskutinį veiksmą (&amp;L)</translation>
     </message>
     <message>
         <source>&amp;Start/Stop Animation</source>
-        <translation type="unfinished"></translation>
+        <translation>Pradėti/sustabdyti animaciją (&amp;S)</translation>
     </message>
     <message>
         <source>S&amp;top Animation</source>
-        <translation type="unfinished"></translation>
+        <translation>Sustabdyti animaciją (&amp;T)</translation>
     </message>
     <message>
         <source>Toggle &amp;following last step</source>
-        <translation type="unfinished"></translation>
+        <translation>Perjunkite paskutinį veiksmą (&amp;F)</translation>
     </message>
     <message>
         <source>&amp;Animation Speed Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Animacijos greičio nustatymas (&amp;A)...</translation>
+    </message>
+    <message>
+        <source>L&amp;oop Animation</source>
+        <translation>Ciklo animacija (&amp;O)</translation>
     </message>
 </context>
 <context>
     <name>ConfirmPage</name>
     <message>
         <source>Confirm the result</source>
-        <translation type="unfinished"></translation>
+        <translation>Patvirtinkite rezultatą</translation>
     </message>
     <message>
         <source>The files in the list below will be created or updated. Please open these files with Qt Linguist, and complete the translation dictionary.</source>
-        <translation type="unfinished"></translation>
+        <translation>Žemiau esančiame sąraše esantys failai bus sukurti arba atnaujinti. Atidarykite šiuos failus naudodami „Qt Linguist“ ir užpildykite vertimo žodyną.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotConfirmPage</name>
     <message>
         <source>Confirm the result</source>
-        <translation type="unfinished"></translation>
+        <translation>Patvirtinkite rezultatą</translation>
     </message>
     <message>
         <source>The files in the list below will be created or updated. </source>
-        <translation type="unfinished"></translation>
+        <translation>Žemiau esančiame sąraše esantys failai bus sukurti arba atnaujinti.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotFilePropertyPage</name>
     <message>
         <source>WizardPage</source>
-        <translation type="unfinished"></translation>
+        <translation>WizardPage</translation>
     </message>
     <message>
         <source>File Properties</source>
-        <translation type="unfinished"></translation>
+        <translation>Failo ypatybės</translation>
     </message>
     <message>
         <source>Please specify the properties of output files.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nurodykite išvesties failų ypatybes.</translation>
     </message>
     <message>
         <source>Directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Katalogas</translation>
     </message>
     <message>
         <source>File name</source>
-        <translation type="unfinished"></translation>
+        <translation>Failo pavadinimas</translation>
     </message>
     <message>
         <source>Prefix :</source>
-        <translation type="unfinished"></translation>
+        <translation>Priešdėlis:</translation>
     </message>
     <message>
         <source>Suffix length :</source>
-        <translation type="unfinished"></translation>
+        <translation>Priedo ilgis:</translation>
     </message>
     <message>
         <source>Format :</source>
-        <translation type="unfinished"></translation>
+        <translation>Formatas:</translation>
     </message>
     <message>
         <source>PNG (*.png)</source>
-        <translation type="unfinished"></translation>
+        <translation>PNG (*.png)</translation>
     </message>
     <message>
         <source>.png</source>
-        <translation type="unfinished"></translation>
+        <translation>.png</translation>
     </message>
     <message>
         <source>JPEG (*.jpg)</source>
-        <translation type="unfinished"></translation>
+        <translation>JPEG (*.jpg)</translation>
     </message>
     <message>
         <source>.jpg</source>
-        <translation type="unfinished"></translation>
+        <translation>.jpg</translation>
     </message>
     <message>
         <source>Windows Bitmap (*.bmp)</source>
-        <translation type="unfinished"></translation>
+        <translation>„Windows Bitmap“ (*.bmp)</translation>
     </message>
     <message>
         <source>.bmp</source>
-        <translation type="unfinished"></translation>
+        <translation>.bmp</translation>
     </message>
     <message>
         <source>Portable Bitmap (*.ppm)</source>
-        <translation type="unfinished"></translation>
+        <translation>Nešiojamas bitų žemėlapis (*.ppm)</translation>
     </message>
     <message>
         <source>.ppm</source>
-        <translation type="unfinished"></translation>
+        <translation>.ppm</translation>
     </message>
     <message>
         <source>X11 Bitmap (*.xbm)</source>
-        <translation type="unfinished"></translation>
+        <translation>X11 Bitmap (*.xbm)</translation>
     </message>
     <message>
         <source>.xbm</source>
-        <translation type="unfinished"></translation>
+        <translation>.xbm</translation>
     </message>
     <message>
         <source>Prefix</source>
-        <translation type="unfinished"></translation>
+        <translation>Priešdėlis</translation>
     </message>
     <message>
         <source>Output file</source>
-        <translation type="unfinished"></translation>
+        <translation>Išvesties failas</translation>
     </message>
     <message>
         <source>img_</source>
-        <translation type="unfinished"></translation>
+        <translation>img_</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Įspėjimas</translation>
     </message>
     <message>
         <source>Folder %1 does not exists. Do you want to it now?</source>
-        <translation type="unfinished"></translation>
+        <translation>Aplankas %1 neegzistuoja. Ar nori dabar?</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Klaida</translation>
     </message>
     <message>
         <source>Creating folder %1 failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kuriamas aplankas %1 nepavyko.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotGoogleEarthSettingPage</name>
     <message>
         <source>WizardPage</source>
-        <translation type="unfinished"></translation>
+        <translation>WizardPage</translation>
     </message>
     <message>
         <source>Output to the Google Earth</source>
-        <translation type="unfinished"></translation>
+        <translation>Išvestis į „Google“ žemę</translation>
     </message>
     <message>
         <source>Please specify the properties of output files.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nurodykite išvesties failų ypatybes.</translation>
     </message>
     <message>
         <source>Note: This feature is available only when a coordinate system has been specified.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pastaba: Ši funkcija galima tik tada, kai yra nurodyta koordinačių sistema.</translation>
     </message>
     <message>
         <source>KML file name</source>
-        <translation type="unfinished"></translation>
+        <translation>KML failo pavadinimas</translation>
     </message>
     <message>
         <source>Name :</source>
-        <translation type="unfinished"></translation>
+        <translation>Vardas :</translation>
     </message>
     <message>
         <source>output.kml</source>
-        <translation type="unfinished"></translation>
+        <translation>output.kml</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotIntroductionPage</name>
     <message>
         <source>Introduction</source>
-        <translation type="unfinished"></translation>
+        <translation>Įvadas</translation>
     </message>
     <message>
         <source>Use this wizard to specify the requirements to generate continuous snapshot output.</source>
-        <translation type="unfinished"></translation>
+        <translation>Naudokite šį vedlį norėdami nustatyti nuolatinės momentinės nuotraukos išvesties generavimo reikalavimus.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotMoviePropertyPage</name>
     <message>
         <source>WizardPage</source>
-        <translation type="unfinished"></translation>
+        <translation>WizardPage</translation>
     </message>
     <message>
         <source>Movie Properties</source>
-        <translation type="unfinished"></translation>
+        <translation>Filmo ypatybės</translation>
     </message>
     <message>
         <source>Please specify the properties of output files.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nurodykite išvesties failų ypatybes.</translation>
     </message>
     <message>
         <source>Output movie files</source>
-        <translation type="unfinished"></translation>
+        <translation>Išveskite filmų failus</translation>
     </message>
     <message>
         <source>File name</source>
-        <translation type="unfinished"></translation>
+        <translation>Failo pavadinimas</translation>
     </message>
     <message>
         <source>Play speed</source>
-        <translation type="unfinished"></translation>
+        <translation>Grojimo greitis</translation>
     </message>
     <message>
         <source>Specify movie length[sec]</source>
-        <translation type="unfinished"></translation>
+        <translation>Nurodykite filmo ilgį [sek.]</translation>
     </message>
     <message>
         <source>Specify frames per second</source>
-        <translation type="unfinished"></translation>
+        <translation>Nurodykite kadrus per sekundę</translation>
     </message>
     <message>
         <source>Profile:</source>
-        <translation type="unfinished"></translation>
+        <translation>Profilis:</translation>
     </message>
     <message>
         <source>Output file</source>
-        <translation type="unfinished"></translation>
+        <translation>Išvesties failas</translation>
     </message>
     <message>
         <source>Default</source>
-        <translation type="unfinished"></translation>
+        <translation>Numatytas</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotTimestepSettingPage</name>
     <message>
         <source>WizardPage</source>
-        <translation type="unfinished"></translation>
+        <translation>WizardPage</translation>
     </message>
     <message>
         <source>Timestep Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Laiko žingsnio nustatymas</translation>
     </message>
     <message>
         <source>Please specify the start time step, stop time step, and the skip rate.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nurodykite pradžios laiko žingsnį, sustabdymo laiko žingsnį ir praleidimo greitį.</translation>
     </message>
     <message>
         <source>start :</source>
-        <translation type="unfinished"></translation>
+        <translation>pradžia:</translation>
     </message>
     <message>
         <source>stop :</source>
-        <translation type="unfinished"></translation>
+        <translation>sustabdyti :</translation>
     </message>
     <message>
         <source>Skip rate :</source>
-        <translation type="unfinished"></translation>
+        <translation>Praleidimo norma:</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWindowSelectionPage</name>
     <message>
         <source>WizardPage</source>
-        <translation type="unfinished"></translation>
+        <translation>WizardPage</translation>
     </message>
     <message>
         <source>Window Selection</source>
-        <translation type="unfinished"></translation>
+        <translation>Langų pasirinkimas</translation>
     </message>
     <message>
         <source>Please select target windows and specify how you want to output files.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pasirinkite tikslinius langus ir nurodykite, kaip norite išvesti failus.</translation>
     </message>
     <message>
         <source>Target windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Tiksliniai langai</translation>
     </message>
     <message>
         <source>Output file</source>
-        <translation type="unfinished"></translation>
+        <translation>Išvesties failas</translation>
     </message>
     <message>
         <source>In one file</source>
-        <translation type="unfinished"></translation>
+        <translation>Viename faile</translation>
     </message>
     <message>
         <source>Respectively</source>
-        <translation type="unfinished"></translation>
+        <translation>Atitinkamai</translation>
     </message>
     <message>
         <source>Layout</source>
-        <translation type="unfinished"></translation>
+        <translation>Išdėstymas</translation>
     </message>
     <message>
         <source>As is</source>
-        <translation type="unfinished"></translation>
+        <translation>Kaip yra</translation>
     </message>
     <message>
         <source>Horizontally</source>
-        <translation type="unfinished"></translation>
+        <translation>Horizontaliai</translation>
     </message>
     <message>
         <source>Vertically</source>
-        <translation type="unfinished"></translation>
+        <translation>Vertikaliai</translation>
     </message>
     <message>
         <source>Background</source>
-        <translation type="unfinished"></translation>
+        <translation>Fonas</translation>
     </message>
     <message>
         <source>white</source>
-        <translation type="unfinished"></translation>
+        <translation>balta</translation>
     </message>
     <message>
         <source>transparent</source>
-        <translation type="unfinished"></translation>
+        <translation>skaidrus</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Įspėjimas</translation>
     </message>
     <message>
         <source>More than one visualization window has transparent region. They can not saved into transparent background images. Please select white background, or cancel and disable transparency for contours etc.</source>
-        <translation type="unfinished"></translation>
+        <translation>Daugiau nei vienas vizualizacijos langas turi skaidrų regioną. Jie negali būti įrašyti į skaidrius fono paveikslėlius. Pasirinkite baltą foną arba atšaukite ir išjunkite kontūrų skaidrumą ir pan.</translation>
     </message>
     <message>
         <source>No window is currently selected.</source>
-        <translation type="unfinished"></translation>
+        <translation>Šiuo metu nepasirinktas joks langas.</translation>
     </message>
 </context>
 <context>
     <name>FlushRequester</name>
     <message>
         <source>Waiting for solver to copy CGNS file...</source>
-        <translation type="unfinished"></translation>
+        <translation>Laukiama, kol sprendėjas nukopijuos CGNS failą...</translation>
     </message>
 </context>
 <context>
     <name>GoogleMapImageImportSettingDialog</name>
     <message>
         <source>Google Map Image Import Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>„Google“ žemėlapio vaizdo importavimo nustatymas</translation>
     </message>
     <message>
         <source>Zoom:</source>
-        <translation type="unfinished"></translation>
+        <translation>Mastelis:</translation>
     </message>
     <message>
         <source>Map Type:</source>
-        <translation type="unfinished"></translation>
+        <translation>Žemėlapio tipas:</translation>
     </message>
     <message>
         <source>Satellite Photo</source>
-        <translation type="unfinished"></translation>
+        <translation>Palydovinė nuotrauka</translation>
     </message>
     <message>
         <source>Roadmap</source>
-        <translation type="unfinished"></translation>
+        <translation>Kelio planas</translation>
     </message>
     <message>
         <source>Terrain</source>
-        <translation type="unfinished"></translation>
+        <translation>Reljefas</translation>
     </message>
     <message>
         <source>Hybrid</source>
-        <translation type="unfinished"></translation>
+        <translation>Hibridas</translation>
     </message>
 </context>
 <context>
     <name>InstallerTool</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Įspėjimas</translation>
     </message>
     <message>
         <source>When you update iRIC, you need to close iRIC before launching iRIC Maintainance.
 When you have iRIC windows other than this, close them manually.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kai atnaujinate „iRIC“, prieš paleisdami „iRIC Maintainance“ turite uždaryti „iRIC“. Jei turite kitų „iRIC“ langų, uždarykite juos rankiniu būdu.</translation>
     </message>
     <message>
         <source>Close iRIC and launch iRIC Maintainance</source>
-        <translation type="unfinished"></translation>
+        <translation>Uždarykite „iRIC“ ir paleiskite „iRIC Maintainance“</translation>
     </message>
 </context>
 <context>
     <name>IntroductionPage</name>
     <message>
         <source>Introduction</source>
-        <translation type="unfinished"></translation>
+        <translation>Įvadas</translation>
     </message>
     <message>
         <source>This function is intended to be used by solver developers or grid creating program developers, not users.
 This wizard will generate or update translation files for solver definition files and grid creating program definition files those are registered to iRIC system. You need to specify the solver (or grid creating program) name, and the list of languages for those you want to create or update translation files.</source>
-        <translation type="unfinished"></translation>
+        <translation>Šią funkciją turi naudoti sprendėjų kūrėjai arba tinklelį kuriantys programų kūrėjai, o ne vartotojai. Šis vedlys sukurs arba atnaujins sprendimų apibrėžimo failų vertimo failus ir tinklelio kūrimo programos apibrėžimo failus, kurie yra užregistruoti iRIC sistemoje. Turite nurodyti sprendėjo (arba tinklelio kūrimo programos) pavadinimą ir norimų kurti ar atnaujinti vertimo failų kalbų sąrašą.</translation>
     </message>
 </context>
 <context>
     <name>MouseHelpDialog</name>
     <message>
         <source>Mouse Hint</source>
-        <translation type="unfinished"></translation>
+        <translation>Pelės patarimas</translation>
     </message>
 </context>
 <context>
     <name>NewProjectSolverSelectingDialog</name>
     <message>
         <source>Select Solver</source>
-        <translation type="unfinished"></translation>
+        <translation>Pasirinkite Sprendėjas</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
-        <translation type="unfinished"></translation>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
+        <translation>Kai kuriate naują projektą, turite pasirinkti sprendinį, kurį naudosite skaičiavimams. Pasirinkite sprendimą ir paspauskite mygtuką „Gerai“.</translation>
     </message>
 </context>
 <context>
     <name>PeriodicalUpdateChecker</name>
     <message>
         <source>Check for Update</source>
-        <translation type="unfinished"></translation>
+        <translation>Patikrinkite, ar nėra atnaujinimo</translation>
     </message>
     <message>
         <source>%1 days have passed after launching iRIC Maintainance for the last time.
 Do you want to launch iRIC Maintainance?</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 praėjo dienos po paskutinio „iRIC Maintainance“ paleidimo. Ar norite paleisti „iRIC Maintainance“?</translation>
     </message>
     <message>
         <source>Launch iRIC Maintainance</source>
-        <translation type="unfinished"></translation>
+        <translation>Paleiskite „iRIC Maintainance“</translation>
     </message>
 </context>
 <context>
     <name>PreferenceDialog</name>
     <message>
         <source>Preferences</source>
-        <translation type="unfinished"></translation>
+        <translation>Nuostatos</translation>
     </message>
     <message>
         <source>General</source>
-        <translation type="unfinished"></translation>
+        <translation>Generolas</translation>
     </message>
     <message>
         <source>Graphics Default</source>
-        <translation type="unfinished"></translation>
+        <translation>Numatytoji grafika</translation>
     </message>
     <message>
         <source>Grid Checking</source>
-        <translation type="unfinished"></translation>
+        <translation>Tinklelio tikrinimas</translation>
     </message>
     <message>
         <source>River Survey Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Upių tyrimo duomenys</translation>
     </message>
     <message>
         <source>Network Proxy</source>
-        <translation type="unfinished"></translation>
+        <translation>Tinklo tarpinis serveris</translation>
     </message>
     <message>
         <source>Background Images (Internet)</source>
-        <translation type="unfinished"></translation>
+        <translation>Fono vaizdai (internetas)</translation>
     </message>
     <message>
         <source>Web Elevation Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Žiniatinklio aukščio duomenys</translation>
     </message>
     <message>
         <source>Background Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Fono tinklelis</translation>
     </message>
 </context>
 <context>
     <name>PreferencePageBackgroundGrid</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma</translation>
     </message>
     <message>
         <source>River Survey Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Upių tyrimo duomenys</translation>
     </message>
     <message>
         <source>Cross Section Direction:</source>
-        <translation type="unfinished"></translation>
+        <translation>Skerspjūvio kryptis:</translation>
     </message>
     <message>
         <source>Between Cross Sections:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tarp skerspjūvių:</translation>
     </message>
 </context>
 <context>
     <name>PreferencePageGeneral</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma</translation>
     </message>
     <message>
         <source>Language</source>
-        <translation type="unfinished"></translation>
+        <translation>Kalba</translation>
     </message>
     <message>
         <source>Note: Language setting is applied when iRIC is launched next time.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pastaba: kalbos nustatymas taikomas, kai kitą kartą paleidžiama „iRIC“.</translation>
     </message>
     <message>
         <source>Working Directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Darbo katalogas</translation>
     </message>
     <message>
         <source>Note: Working Directory is used to store files used by iRIC.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pastaba: „Working Directory“ naudojamas iRIC naudojamiems failams saugoti.</translation>
     </message>
     <message>
         <source>Copy folder project to Working Directory when opened</source>
-        <translation type="unfinished"></translation>
+        <translation>Atidarę nukopijuokite aplanko projektą į darbo katalogą</translation>
     </message>
     <message>
         <source>Checking for Update</source>
-        <translation type="unfinished"></translation>
+        <translation>Tikrinamas atnaujinimas</translation>
     </message>
     <message>
         <source>Check for update periodically</source>
-        <translation type="unfinished"></translation>
+        <translation>Periodiškai tikrinkite, ar nėra atnaujinimų</translation>
     </message>
     <message>
         <source>Interval between checking (days):</source>
-        <translation type="unfinished"></translation>
+        <translation>Tarpas tarp patikrinimų (dienos):</translation>
     </message>
     <message>
         <source>Cell Culling on Drawing Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Ląstelių pašalinimas piešimo tinklelyje</translation>
     </message>
     <message>
         <source>Enable</source>
-        <translation type="unfinished"></translation>
+        <translation>Įgalinti</translation>
     </message>
     <message>
         <source>Maximum numbers of cells drawn:</source>
-        <translation type="unfinished"></translation>
+        <translation>Maksimalus ištrauktų langelių skaičius:</translation>
     </message>
     <message>
         <source>Maximum numbers of indices drawn:</source>
-        <translation type="unfinished"></translation>
+        <translation>Maksimalus sudarytų indeksų skaičius:</translation>
     </message>
     <message>
         <source>Warning: If you disable culling and create a very big grid, maybe iRIC GUI will crash because of lack of memory.</source>
-        <translation type="unfinished"></translation>
+        <translation>Įspėjimas: jei išjungsite naikinimą ir sukursite labai didelį tinklelį, galbūt „iRIC GUI“ suges dėl atminties trūkumo.</translation>
     </message>
     <message>
         <source>Undo</source>
-        <translation type="unfinished"></translation>
+        <translation>Anuliuoti</translation>
     </message>
     <message>
         <source>Undo Limit:</source>
-        <translation type="unfinished"></translation>
+        <translation>Anuliuoti apribojimą:</translation>
     </message>
     <message>
         <source>Solver console</source>
-        <translation type="unfinished"></translation>
+        <translation>Sprendimo konsolė</translation>
     </message>
     <message>
         <source>Maximum lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Maksimalios eilutės</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Klaida</translation>
     </message>
     <message>
         <source>Working directory contains non-ASCII characters.</source>
-        <translation type="unfinished"></translation>
+        <translation>Darbo kataloge yra ne ASCII simbolių.</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Įspėjimas</translation>
     </message>
     <message>
         <source>Working directory is changed, but the new working directory is used AFTER exiting iRIC GUI!</source>
-        <translation type="unfinished"></translation>
+        <translation>Darbo katalogas pakeistas, tačiau naujas darbo katalogas naudojamas PO IŠEJANT „iRIC GUI“!</translation>
     </message>
     <message>
         <source>Python path</source>
-        <translation type="unfinished"></translation>
+        <translation>Python kelias</translation>
     </message>
     <message>
         <source>Note: Used to run solvers written in Python.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pastaba: naudojama sprendžiant Python.</translation>
     </message>
 </context>
 <context>
     <name>PreferencePageGraphicsDefault</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma</translation>
     </message>
     <message>
         <source>Grid Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Tinklelio spalva</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Spalva:</translation>
     </message>
     <message>
         <source>Color Map</source>
-        <translation type="unfinished"></translation>
+        <translation>Spalvų žemėlapis</translation>
     </message>
     <message>
         <source>Background Image</source>
-        <translation type="unfinished"></translation>
+        <translation>Fono vaizdas</translation>
     </message>
     <message>
         <source>Max Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Maksimalus dydis:</translation>
     </message>
     <message>
         <source>Note: Loading an image whose width (or height) is larger than the maximum, will be automatically resized.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pastaba: įkeliamas vaizdas, kurio plotis (arba aukštis) yra didesnis nei maksimalus, bus automatiškai pakeistas.</translation>
     </message>
     <message>
         <source>Vector</source>
-        <translation type="unfinished"></translation>
+        <translation>Vektorius</translation>
     </message>
     <message>
         <source>Factor:</source>
-        <translation type="unfinished"></translation>
+        <translation>Faktorius:</translation>
     </message>
     <message>
         <source>Arrow Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Rodyklės dydis:</translation>
     </message>
     <message>
         <source>Stream Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Srauto linijos</translation>
     </message>
     <message>
         <source>Particles</source>
-        <translation type="unfinished"></translation>
+        <translation>Dalelės</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Dydis:</translation>
     </message>
     <message>
         <source>pixels</source>
-        <translation type="unfinished"></translation>
+        <translation>pikselių</translation>
     </message>
 </context>
 <context>
     <name>PreferencePageGridCheck</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma</translation>
     </message>
     <message>
         <source>Checking Timing</source>
-        <translation type="unfinished"></translation>
+        <translation>Laiko tikrinimas</translation>
     </message>
     <message>
         <source>Before Running Solver</source>
-        <translation type="unfinished"></translation>
+        <translation>Prieš paleisdami sprendėją</translation>
     </message>
     <message>
         <source>Before Exporting Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Prieš eksportuojant tinklelį</translation>
     </message>
     <message>
         <source>Attributes to Check</source>
-        <translation type="unfinished"></translation>
+        <translation>Atributai, kuriuos reikia patikrinti</translation>
     </message>
     <message>
         <source>Whether cell edges intersect</source>
-        <translation type="unfinished"></translation>
+        <translation>Ar ląstelių kraštai susikerta</translation>
     </message>
     <message>
         <source>Check aspect ratio of cell edges is less than</source>
-        <translation type="unfinished"></translation>
+        <translation>Patikrinkite langelio kraštinių santykį, mažesnį nei</translation>
     </message>
     <message>
         <source>Check variation of cell edge length is less than</source>
-        <translation type="unfinished"></translation>
+        <translation>Patikrinkite langelio krašto ilgio kitimą, mažesnį nei</translation>
     </message>
     <message>
         <source>I-direction: </source>
-        <translation type="unfinished"></translation>
+        <translation>I kryptis:</translation>
     </message>
     <message>
         <source>J-direction: </source>
-        <translation type="unfinished"></translation>
+        <translation>J kryptis:</translation>
     </message>
     <message>
         <source>Check angle of cell is more than</source>
-        <translation type="unfinished"></translation>
+        <translation>Patikrinkite langelio kampą daugiau nei</translation>
     </message>
     <message>
         <source>Note: Settings on this page are applied only to structured grids.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pastaba: šio puslapio nustatymai taikomi tik struktūriniams tinklams.</translation>
     </message>
 </context>
 <context>
     <name>PreferencePageProxy</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma</translation>
     </message>
     <message>
         <source>Do not use proxy</source>
-        <translation type="unfinished"></translation>
+        <translation>Nenaudokite tarpinio serverio</translation>
     </message>
     <message>
         <source>Use system proxy setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Naudokite sistemos tarpinio serverio nustatymą</translation>
     </message>
     <message>
         <source>Use custom proxy setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Naudokite pasirinktinį tarpinio serverio nustatymą</translation>
     </message>
     <message>
         <source>HTTP Proxy: </source>
-        <translation type="unfinished"></translation>
+        <translation>HTTP tarpinis serveris:</translation>
     </message>
     <message>
         <source>Port:</source>
-        <translation type="unfinished"></translation>
+        <translation>Uostas:</translation>
     </message>
     <message>
         <source>Need authentication for HTTP proxy</source>
-        <translation type="unfinished"></translation>
+        <translation>Reikia HTTP tarpinio serverio autentifikavimo</translation>
     </message>
     <message>
         <source>User name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Vartotojo vardas:</translation>
     </message>
     <message>
         <source>Password:</source>
-        <translation type="unfinished"></translation>
+        <translation>Slaptažodis:</translation>
     </message>
 </context>
 <context>
     <name>PreferencePageRiverSurvey</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma</translation>
     </message>
     <message>
         <source>List of fractions for cross section editing:</source>
-        <translation type="unfinished"></translation>
+        <translation>Frakcijų, skirtų skerspjūviui redaguoti, sąrašas:</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation type="unfinished"></translation>
+        <translation>Papildyti (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Ištrinti (&amp;D)</translation>
     </message>
     <message>
         <source>&amp;Restore Default</source>
-        <translation type="unfinished"></translation>
+        <translation>Atkurti į pradinius nustatymus (&amp;R)</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informacija</translation>
     </message>
     <message>
         <source>This value already exists in the list.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ši vertė jau yra sąraše.</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Įspėjimas</translation>
     </message>
     <message>
         <source>Are you sure you want to delete the selected item?</source>
-        <translation type="unfinished"></translation>
+        <translation>Ar tikrai norite ištrinti pasirinktą elementą?</translation>
     </message>
     <message>
         <source>Are you sure you want to restore default values?</source>
-        <translation type="unfinished"></translation>
+        <translation>Ar tikrai norite atkurti numatytas vertes?</translation>
     </message>
 </context>
 <context>
     <name>PreferencePageRiverSurveyFractionAddDialog</name>
     <message>
         <source>Add fraction</source>
-        <translation type="unfinished"></translation>
+        <translation>Pridėti trupmeną</translation>
     </message>
     <message>
         <source>Specify the fraction to add:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nurodykite trupmeną, kurią norite pridėti:</translation>
     </message>
     <message>
         <source>1:</source>
-        <translation type="unfinished"></translation>
+        <translation>1:</translation>
     </message>
 </context>
 <context>
     <name>PreferencePageTms</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma</translation>
     </message>
     <message>
         <source>&amp;Up</source>
-        <translation type="unfinished"></translation>
+        <translation>Aukštyn (&amp;U)</translation>
     </message>
     <message>
         <source>&amp;Down</source>
-        <translation type="unfinished"></translation>
+        <translation>Žemyn (&amp;D)</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation type="unfinished"></translation>
+        <translation>Papildyti (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation type="unfinished"></translation>
+        <translation>Redaguoti (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Ištrinti (&amp;D)</translation>
     </message>
     <message>
         <source>&amp;Restore Default</source>
-        <translation type="unfinished"></translation>
+        <translation>Atkurti į pradinius nustatymus (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Input Google Maps API key</source>
-        <translation type="unfinished"></translation>
+        <translation>Įveskite „Google“ žemėlapių API raktą (&amp;I)</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Google Maps Platform now need API key to use Google Maps through iRIC. Please get your own Google Maps API key and input here, to use Google Maps images as background images on Pre-processor and on 2D Post-Processing Windows.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; „Google“ žemėlapių platformai dabar reikia API rakto, kad galėtų naudoti „Google“ žemėlapius per „iRIC“. Gaukite „Google“ žemėlapių API raktą ir įveskite čia, kad galėtumėte naudoti „Google“ žemėlapių vaizdus kaip foninius vaizdus išankstiniame procesoriuje ir 2D po apdorojimo sistemoje. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Background Image (Internet) Edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Fono paveikslėlis (internetas) Redaguoti</translation>
     </message>
     <message>
         <source>Input Google Maps API Key</source>
-        <translation type="unfinished"></translation>
+        <translation>Įveskite „Google“ žemėlapių API raktą</translation>
     </message>
     <message>
         <source>API Key: </source>
-        <translation type="unfinished"></translation>
+        <translation>API raktas:</translation>
     </message>
 </context>
 <context>
     <name>PreferencePageTmsAddDialog</name>
     <message>
         <source>Background Image (Internet) Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Fono vaizdas (internetas) Pridėti</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Vardas:</translation>
     </message>
     <message>
         <source>URL:</source>
-        <translation type="unfinished"></translation>
+        <translation>URL:</translation>
     </message>
     <message>
         <source>Example: http://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png</source>
-        <translation type="unfinished"></translation>
+        <translation>Pavyzdys: http://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png</translation>
     </message>
     <message>
         <source>Max Zoom Level:</source>
-        <translation type="unfinished"></translation>
+        <translation>Maksimalus mastelio keitimo lygis:</translation>
     </message>
 </context>
 <context>
     <name>PreferencePageWebCsvTile</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma</translation>
     </message>
     <message>
         <source>&amp;Up</source>
-        <translation type="unfinished"></translation>
+        <translation>Aukštyn (&amp;U)</translation>
     </message>
     <message>
         <source>&amp;Down</source>
-        <translation type="unfinished"></translation>
+        <translation>Žemyn (&amp;D)</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation type="unfinished"></translation>
+        <translation>Papildyti (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation type="unfinished"></translation>
+        <translation>Redaguoti (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Ištrinti (&amp;D)</translation>
     </message>
     <message>
         <source>&amp;Restore Default</source>
-        <translation type="unfinished"></translation>
+        <translation>Atkurti į pradinius nustatymus (&amp;R)</translation>
     </message>
     <message>
         <source>Edit Web Elevation Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Redaguoti žiniatinklio aukščio duomenis</translation>
     </message>
 </context>
 <context>
     <name>PreferencePageWebCsvTileAddDialog</name>
     <message>
         <source>Add Web Elevation Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Pridėti žiniatinklio aukščio duomenis</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Vardas:</translation>
     </message>
     <message>
         <source>Min zoom level:</source>
-        <translation type="unfinished"></translation>
+        <translation>Minimalus mastelio keitimo lygis:</translation>
     </message>
     <message>
         <source>Max zoom level:</source>
-        <translation type="unfinished"></translation>
+        <translation>Maksimalus mastelio keitimo lygis:</translation>
     </message>
     <message>
         <source>URL:</source>
-        <translation type="unfinished"></translation>
+        <translation>URL:</translation>
     </message>
     <message>
         <source>Example: http://cyberjapandata.gsi.go.jp/xyz/dem/{z}/{x}/{y}.txt</source>
-        <translation type="unfinished"></translation>
+        <translation>Pavyzdys: http://cyberjapandata.gsi.go.jp/xyz/dem/{z}/{x}/{y}.txt</translation>
     </message>
 </context>
 <context>
     <name>ProjectPropertyBasicInfoWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma</translation>
     </message>
     <message>
         <source>Filename:</source>
-        <translation type="unfinished"></translation>
+        <translation>Failo pavadinimas:</translation>
     </message>
     <message>
         <source>Last update time:</source>
-        <translation type="unfinished"></translation>
+        <translation>Paskutinio atnaujinimo laikas:</translation>
     </message>
     <message>
         <source>Solver:</source>
-        <translation type="unfinished"></translation>
+        <translation>Sprendėjas:</translation>
     </message>
     <message>
         <source>Grid(s):</source>
-        <translation type="unfinished"></translation>
+        <translation>Tinklelis (-ai):</translation>
     </message>
     <message>
         <source>Calculation condition:</source>
-        <translation type="unfinished"></translation>
+        <translation>Skaičiavimo sąlyga:</translation>
     </message>
     <message>
         <source>Calculation result:</source>
-        <translation type="unfinished"></translation>
+        <translation>Skaičiavimo rezultatas:</translation>
     </message>
     <message>
         <source>Coordinate System:</source>
-        <translation type="unfinished"></translation>
+        <translation>Koordinačių sistema:</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation type="unfinished"></translation>
+        <translation>Redaguoti (&amp;E)...</translation>
     </message>
     <message>
         <source>Coordinate Offset:</source>
-        <translation type="unfinished"></translation>
+        <translation>Koordinačių poslinkis:</translation>
     </message>
     <message>
         <source>Date for t = 0:</source>
-        <translation type="unfinished"></translation>
+        <translation>T = 0 data:</translation>
     </message>
     <message>
         <source>(No data)</source>
-        <translation type="unfinished"></translation>
+        <translation>(Nėra duomenų)</translation>
     </message>
     <message>
         <source>(Not saved yet)</source>
-        <translation type="unfinished"></translation>
+        <translation>(Dar neišsaugota)</translation>
     </message>
     <message>
         <source>Setup finished</source>
-        <translation type="unfinished"></translation>
+        <translation>Sąranka baigta</translation>
     </message>
     <message>
         <source>Setup unfinished</source>
-        <translation type="unfinished"></translation>
+        <translation>Sąranka nebaigta</translation>
     </message>
     <message>
         <source>Setup partially unfinished</source>
-        <translation type="unfinished"></translation>
+        <translation>Sąranka iš dalies nebaigta</translation>
     </message>
     <message>
         <source>Already set</source>
-        <translation type="unfinished"></translation>
+        <translation>Jau nustatytas</translation>
     </message>
     <message>
         <source>Not set yet</source>
-        <translation type="unfinished"></translation>
+        <translation>Dar nenustatyta</translation>
     </message>
     <message>
         <source>Data exists</source>
-        <translation type="unfinished"></translation>
+        <translation>Duomenys egzistuoja</translation>
     </message>
     <message>
         <source>No data</source>
-        <translation type="unfinished"></translation>
+        <translation>Nėra duomenų</translation>
     </message>
     <message>
         <source>(Not specified)</source>
-        <translation type="unfinished"></translation>
+        <translation>(Nenurodyta)</translation>
     </message>
 </context>
 <context>
     <name>ProjectPropertyDialog</name>
     <message>
         <source>Project Property</source>
-        <translation type="unfinished"></translation>
+        <translation>Projekto nuosavybė</translation>
     </message>
     <message>
         <source>Basic Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Pagrindinė informacija</translation>
     </message>
 </context>
 <context>
     <name>ProjectTypeSelectDialog</name>
     <message>
         <source>Select How to Save Project</source>
-        <translation type="unfinished"></translation>
+        <translation>Pasirinkite Kaip išsaugoti projektą</translation>
     </message>
     <message>
         <source>Please select how to save project from the followings:</source>
-        <translation type="unfinished"></translation>
+        <translation>Pasirinkite, kaip išsaugoti projektą, iš šių parinkčių:</translation>
     </message>
     <message>
         <source>Save as File (*.ipro)</source>
-        <translation type="unfinished"></translation>
+        <translation>Išsaugoti kaip failą (*.ipro)</translation>
     </message>
     <message>
         <source>Save as Project</source>
-        <translation type="unfinished"></translation>
+        <translation>Išsaugoti kaip projektą</translation>
     </message>
 </context>
 <context>
     <name>SettingPage</name>
     <message>
         <source>Select Program and Languages</source>
-        <translation type="unfinished"></translation>
+        <translation>Pasirinkite programą ir kalbas</translation>
     </message>
     <message>
         <source>Specify for which solver (or grid creating program) you want to create or update translation files.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nurodykite, kuriam sprendėjui (ar tinklelio kūrimo programai) norite sukurti arba atnaujinti vertimo failus.</translation>
     </message>
     <message>
         <source>Target Program</source>
-        <translation type="unfinished"></translation>
+        <translation>Tikslinė programa</translation>
     </message>
     <message>
         <source>&amp;Solver</source>
-        <translation type="unfinished"></translation>
+        <translation>Sprendėjas (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;Grid Creating Program</source>
-        <translation type="unfinished"></translation>
+        <translation>Tinklelio kūrimo programa (&amp;G)</translation>
     </message>
     <message>
         <source>Languages</source>
-        <translation type="unfinished"></translation>
+        <translation>Kalbos</translation>
     </message>
 </context>
 <context>
     <name>SolverDefinitionAbstractDialog</name>
     <message>
         <source>Solver Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informacija apie sprendimą</translation>
     </message>
     <message>
         <source>Basic Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Pagrindinė informacija</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>vardas</translation>
     </message>
     <message>
         <source>Version</source>
-        <translation type="unfinished"></translation>
+        <translation>Versija</translation>
     </message>
     <message>
         <source>Copyright</source>
-        <translation type="unfinished"></translation>
+        <translation>Autorių teisės</translation>
     </message>
     <message>
         <source>Release</source>
-        <translation type="unfinished"></translation>
+        <translation>Atleisti</translation>
     </message>
     <message>
         <source>Homepage</source>
-        <translation type="unfinished"></translation>
+        <translation>Pagrindinis puslapis</translation>
     </message>
     <message>
         <source>Description</source>
-        <translation type="unfinished"></translation>
+        <translation>apibūdinimas</translation>
     </message>
     <message>
         <source>License</source>
-        <translation type="unfinished"></translation>
+        <translation>Licencija</translation>
     </message>
 </context>
 <context>
     <name>SolverDefinitionAbstractWidget</name>
     <message>
         <source>Solver Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informacija apie sprendimą</translation>
     </message>
     <message>
         <source>Basic Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Pagrindinė informacija</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>vardas</translation>
     </message>
     <message>
         <source>Version</source>
-        <translation type="unfinished"></translation>
+        <translation>Versija</translation>
     </message>
     <message>
         <source>Copyright</source>
-        <translation type="unfinished"></translation>
+        <translation>Autorių teisės</translation>
     </message>
     <message>
         <source>Release</source>
-        <translation type="unfinished"></translation>
+        <translation>Atleisti</translation>
     </message>
     <message>
         <source>Homepage</source>
-        <translation type="unfinished"></translation>
+        <translation>Pagrindinis puslapis</translation>
     </message>
     <message>
         <source>Description</source>
-        <translation type="unfinished"></translation>
+        <translation>apibūdinimas</translation>
     </message>
     <message>
         <source>License</source>
-        <translation type="unfinished"></translation>
+        <translation>Licencija</translation>
     </message>
 </context>
 <context>
     <name>SolverDefinitionList</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Įspėjimas</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
+        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
 %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Įkeliant sprendėjo apibrėžimo failą į aplanką įvyko klaida "%1". Šis sprendėjas ignoruojamas. %2</translation>
     </message>
 </context>
 <context>
     <name>SolverDefinitionListDialog</name>
     <message>
         <source>Solver List</source>
-        <translation type="unfinished"></translation>
+        <translation>Sprendėjų sąrašas</translation>
     </message>
     <message>
         <source>&amp;Show Detail...</source>
-        <translation type="unfinished"></translation>
+        <translation>Rodyti išsamią informaciją (&amp;S)...</translation>
     </message>
     <message>
         <source>Select solver to open project</source>
-        <translation type="unfinished"></translation>
+        <translation>Norėdami atidaryti projektą, pasirinkite sprendėją</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>vardas</translation>
     </message>
     <message>
         <source>Version</source>
-        <translation type="unfinished"></translation>
+        <translation>Versija</translation>
     </message>
 </context>
 <context>
     <name>SolverDefinitionTranslationUpdateWizard</name>
     <message>
         <source>Definition File Translation Update Wizard</source>
-        <translation type="unfinished"></translation>
+        <translation>Apibrėžimas Failų vertimo atnaujinimo vedlys</translation>
     </message>
 </context>
 <context>
     <name>StartPageDialog</name>
     <message>
         <source>iRIC Start Page</source>
-        <translation type="unfinished"></translation>
+        <translation>„iRIC“ pradžios puslapis</translation>
     </message>
     <message>
         <source>iRIC </source>
-        <translation type="unfinished"></translation>
+        <translation>iRIC</translation>
     </message>
     <message>
         <source>Welcome to iRIC!
 iRIC can simulate rivers from Colorado River to the Nile.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sveiki atvykę į iRIC! „iRIC“ gali imituoti upes nuo Kolorado upės iki Nilo.</translation>
     </message>
     <message>
         <source>Start Simulation Project</source>
-        <translation type="unfinished"></translation>
+        <translation>Pradėkite modeliavimo projektą</translation>
     </message>
     <message>
         <source>Support</source>
-        <translation type="unfinished"></translation>
+        <translation>Palaikymas</translation>
     </message>
 </context>
 <context>
     <name>StartPageLaunchTabWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma</translation>
     </message>
     <message>
         <source>Create &amp;New Project...</source>
-        <translation type="unfinished"></translation>
+        <translation>Sukurti naują projektą (&amp;N)...</translation>
     </message>
     <message>
         <source>&amp;Open Project File...</source>
-        <translation type="unfinished"></translation>
+        <translation>Atidarykite projekto failą (&amp;O)...</translation>
     </message>
     <message>
         <source>Recent Solvers:</source>
-        <translation type="unfinished"></translation>
+        <translation>Naujausi sprendėjai:</translation>
     </message>
     <message>
         <source>Recent Projects:</source>
-        <translation type="unfinished"></translation>
+        <translation>Naujausi projektai:</translation>
     </message>
 </context>
 <context>
     <name>iRICMainWindow</name>
     <message>
         <source>Ready</source>
-        <translation type="unfinished"></translation>
+        <translation>Paruošta</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Klaida</translation>
     </message>
     <message>
         <source>Error occured while loading Solver definition file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Įkeliant „Solver“ apibrėžimo failą įvyko klaida.</translation>
     </message>
     <message>
         <source>Open iRIC project file</source>
-        <translation type="unfinished"></translation>
+        <translation>Atidarykite „iRIC“ projekto failą</translation>
     </message>
     <message>
         <source>iRIC project file (*.ipro project.xml)</source>
-        <translation type="unfinished"></translation>
+        <translation>iRIC projekto failas (*.ipro project.xml)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Įspėjimas</translation>
     </message>
     <message>
         <source>Project file %1 does not exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>Projekto failas %1 neegzistuoja.</translation>
     </message>
     <message>
         <source>Project folder path has to consist of only English characters. Please move or rename the project folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>Projekto aplanko kelią turi sudaryti tik angliški simboliai. Perkelkite arba pervardykite projekto aplanką.</translation>
     </message>
     <message>
         <source>This project seems to be opened by another iRIC GUI window. You can not open a project folder from multiple GUI windows.</source>
-        <translation type="unfinished"></translation>
+        <translation>Atrodo, kad šį projektą atidaro kitas „iRIC GUI“ langas. Negalite atidaryti projekto aplanko iš kelių GUI langų.</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
-        <translation type="unfinished"></translation>
+        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <translation>Atidarytas projektas nėra nukopijuotas į darbo katalogą ir būsite priversti išsaugoti šio projekto pakeitimus. Jei norite išlaikyti dabartinį projektą, pirmiausia išsaugokite jį kitame projekte.</translation>
     </message>
     <message>
         <source>Open Calculation result</source>
-        <translation type="unfinished"></translation>
+        <translation>Atidarykite skaičiavimo rezultatą</translation>
     </message>
     <message>
         <source>CGNS file (*.cgn *.cgns)</source>
-        <translation type="unfinished"></translation>
+        <translation>CGNS failas (*.cgn *.cgns)</translation>
     </message>
     <message>
         <source>CGNS file %1 does not exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>CGNS failas %1 neegzistuoja.</translation>
     </message>
     <message>
         <source>This Project is modified. Do you want to save?</source>
-        <translation type="unfinished"></translation>
+        <translation>Šis projektas pakeistas. Ar norite sutaupyti?</translation>
     </message>
     <message>
         <source>Save iRIC project file</source>
-        <translation type="unfinished"></translation>
+        <translation>Išsaugokite iRIC projekto failą</translation>
     </message>
     <message>
         <source>iRIC project file (*.ipro)</source>
-        <translation type="unfinished"></translation>
+        <translation>iRIC projekto failas (*.ipro)</translation>
     </message>
     <message>
         <source>Save iRIC project</source>
-        <translation type="unfinished"></translation>
+        <translation>Išsaugoti iRIC projektą</translation>
     </message>
     <message>
         <source>Project folder path has to consist of only English characters.</source>
-        <translation type="unfinished"></translation>
+        <translation>Projekto aplanko kelią turi sudaryti tik angliški simboliai.</translation>
     </message>
     <message>
         <source>The project folder has to be empty.</source>
-        <translation type="unfinished"></translation>
+        <translation>Projekto aplankas turi būti tuščias.</translation>
     </message>
     <message>
         <source>Saving project failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nepavyko išsaugoti projekto.</translation>
     </message>
     <message>
         <source>This project has HUGE calculation result, so it cannot be saved as a file (*.ipro). Please save as a project.</source>
-        <translation type="unfinished"></translation>
+        <translation>Šis projektas turi didžiulį skaičiavimo rezultatą, todėl jo negalima išsaugoti kaip failo (*.ipro). Prašome išsaugoti kaip projektą.</translation>
     </message>
     <message>
         <source>This project has too many files, so it cannot be saved as a file (*.ipro). Please save as a project.</source>
-        <translation type="unfinished"></translation>
+        <translation>Šiame projekte yra per daug failų, todėl jo negalima išsaugoti kaip failo (*.ipro). Prašome išsaugoti kaip projektą.</translation>
     </message>
     <message>
         <source>Project successfully saved to %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Projektas sėkmingai išsaugotas %1.</translation>
     </message>
     <message>
         <source>The solver is still running. Really quit?</source>
-        <translation type="unfinished"></translation>
+        <translation>Sprendėjas vis dar veikia. Tikrai mesti?</translation>
     </message>
     <message>
         <source>This windows does not support snapshot function.</source>
-        <translation type="unfinished"></translation>
+        <translation>Šis langas nepalaiko momentinės nuotraukos funkcijos.</translation>
     </message>
     <message>
         <source>Copied snapshot to clipboard.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nuotrauka nukopijuota į iškarpinę.</translation>
     </message>
     <message>
         <source>This menu is not available while the solver is running.</source>
-        <translation type="unfinished"></translation>
+        <translation>Šis meniu nepasiekiamas, kol veikia sprendimo priemonė.</translation>
     </message>
     <message>
         <source>This windows does not support continuous snapshot function.</source>
-        <translation type="unfinished"></translation>
+        <translation>Šis langas nepalaiko nuolatinės momentinės nuotraukos funkcijos.</translation>
     </message>
     <message>
         <source>Continuous Snapshot</source>
-        <translation type="unfinished"></translation>
+        <translation>Nuolatinis momentinis vaizdas</translation>
     </message>
     <message>
         <source>saving continuous snapshot...</source>
-        <translation type="unfinished"></translation>
+        <translation>išsaugoma nuolatinė momentinė nuotrauka...</translation>
     </message>
     <message>
         <source>%1 already exists, and failed to remove it. Movie file is not output.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 jau yra ir nepavyko jo pašalinti. Filmo failas neišvestas.</translation>
     </message>
     <message>
         <source>iRIC %1</source>
-        <translation type="unfinished"></translation>
+        <translation>iRIC %1</translation>
     </message>
     <message>
         <source>Untitled</source>
-        <translation type="unfinished"></translation>
+        <translation>Be pavadinimo</translation>
     </message>
     <message>
         <source>%1 - iRIC %2 [%3]</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 - „iRIC“ %2 [ %3 ]</translation>
     </message>
     <message>
         <source>The solver is running now. Please stop solver, to do this action.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sprendėjas dabar veikia. Nustokite spręsti, kad atliktumėte šį veiksmą.</translation>
     </message>
     <message>
         <source>&amp;%1 %2</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 %2 (&amp;%)</translation>
     </message>
     <message>
         <source>http://iric-gui-user-manual.readthedocs.io/en/latest/</source>
-        <translation type="unfinished"></translation>
+        <translation>http://iric-gui-user-manual.readthedocs.io/en/latest/</translation>
     </message>
     <message>
         <source>Unknown options specified. They are neglected. %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Nurodytos nežinomos parinktys. Jie yra apleisti. %1</translation>
     </message>
     <message>
         <source>More than two project files are passed as arguments. They are neglected. %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Daugiau nei du projekto failai perduodami kaip argumentai. Jie yra apleisti. %1</translation>
     </message>
     <message>
         <source>Are you sure you want to delete the calculation result?</source>
-        <translation type="unfinished"></translation>
+        <translation>Ar tikrai norite ištrinti skaičiavimo rezultatą?</translation>
     </message>
     <message>
         <source>Calculation result cleared.</source>
-        <translation type="unfinished"></translation>
+        <translation>Skaičiavimo rezultatas išvalytas.</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informacija</translation>
     </message>
     <message>
         <source>Calculation result does not exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>Skaičiavimo rezultatas neegzistuoja.</translation>
     </message>
     <message>
         <source>Please select this menu when Visualization Window is active.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pasirinkite šį meniu, kai vizualizacijos langas yra aktyvus.</translation>
     </message>
     <message>
         <source>No particle is drawn now.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dabar nėra nupiešta dalelė.</translation>
     </message>
     <message>
         <source>Export Particles</source>
-        <translation type="unfinished"></translation>
+        <translation>Eksportuoti daleles</translation>
     </message>
     <message>
         <source>Saving particles as VTK files...</source>
-        <translation type="unfinished"></translation>
+        <translation>Išsaugomos dalelės kaip VTK failai...</translation>
     </message>
     <message>
         <source>Error occured while saving.</source>
-        <translation type="unfinished"></translation>
+        <translation>Išsaugant įvyko klaida.</translation>
     </message>
     <message>
         <source>Currently active sub-window does not support exporting contour figure.</source>
-        <translation type="unfinished"></translation>
+        <translation>Šiuo metu aktyvus papildomas langas nepalaiko kontūro figūros eksportavimo.</translation>
     </message>
     <message>
-        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
-        <translation type="unfinished"></translation>
+        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
+        <translation>Norėdami eksportuoti figūros failą, perjunkite „Ekrano nustatymas“ į „Kontūro paveikslėlis“, o ne „Spalvotas brūkšnys“ arba „Isolines“.</translation>
     </message>
     <message>
         <source>Export contour figure to ESRI Shapefiles</source>
-        <translation type="unfinished"></translation>
+        <translation>Eksportuokite kontūro figūrą į ESRI formos failus</translation>
     </message>
     <message>
         <source>Export contour figure</source>
-        <translation type="unfinished"></translation>
+        <translation>Eksporto kontūro figūra</translation>
     </message>
     <message>
         <source>Saving contour figure as ESRI Shapefiles...</source>
-        <translation type="unfinished"></translation>
+        <translation>Išsaugomas kontūro paveikslėlis kaip ESRI formos failai...</translation>
     </message>
     <message>
         <source>No Contour Figure is drawn now.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dabar nėra nubrėžta kontūro figūra.</translation>
     </message>
     <message>
         <source>Please select which zone to use:</source>
-        <translation type="unfinished"></translation>
+        <translation>Pasirinkite, kurią zoną naudoti:</translation>
     </message>
     <message>
         <source>Export Google Earth KMZ for street view</source>
-        <translation type="unfinished"></translation>
+        <translation>Eksportuokite „Google“ žemės KMZ gatvės vaizdui</translation>
     </message>
     <message>
         <source>%1 can not be overwritten.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 negalima perrašyti.</translation>
     </message>
     <message>
         <source>Saving KMZ file...</source>
-        <translation type="unfinished"></translation>
+        <translation>Išsaugomas KMZ failas...</translation>
     </message>
     <message>
         <source>Google Earth KMZ is exported to %1 successfully.</source>
-        <translation type="unfinished"></translation>
+        <translation>„Google“ žemės KMZ eksportuojama į %1 sėkmingai.</translation>
     </message>
     <message>
         <source>Import Visualization/Graph Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Importuoti vizualizacijos/grafiko nustatymus</translation>
     </message>
     <message>
         <source>Setting file (*.vgsetting)</source>
-        <translation type="unfinished"></translation>
+        <translation>Nustatymo failas (*.vgsetting)</translation>
     </message>
     <message>
         <source>File %1 does not exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>Failas %1 neegzistuoja.</translation>
     </message>
     <message>
         <source>Export Visualization/Graph Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Eksportuoti vizualizacijos/grafiko nustatymus</translation>
     </message>
     <message>
         <source>The grids are edited or deleted. When you save, the calculation result is discarded.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tinkleliai redaguojami arba ištrinami. Išsaugojus, skaičiavimo rezultatas atmetamas.</translation>
     </message>
     <message>
         <source>Current working directory (%1) contains non-ASCII characters. Before starting a new project, change working directory from the following menu: 
 Option -&gt; Preferences</source>
-        <translation type="unfinished"></translation>
+        <translation>Dabartinis darbo katalogas (%1) yra ne ASCII simbolių. Prieš pradėdami naują projektą, pakeiskite darbo katalogą iš šio meniu: Parinktis -&gt; Nuostatos</translation>
     </message>
     <message>
         <source>One dimension</source>
-        <translation type="unfinished"></translation>
+        <translation>Vienas matmuo</translation>
     </message>
     <message>
         <source>Two dimensions</source>
-        <translation type="unfinished"></translation>
+        <translation>Du matmenys</translation>
     </message>
     <message>
         <source>Three dimensions</source>
-        <translation type="unfinished"></translation>
+        <translation>Trys matmenys</translation>
     </message>
     <message>
         <source>There is no calculation data, so you can not define simple operation results.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nėra skaičiavimo duomenų, todėl negalite apibrėžti paprastų operacijų rezultatų.</translation>
     </message>
     <message>
         <source>Select dimension</source>
-        <translation type="unfinished"></translation>
+        <translation>Pasirinkite matmenį</translation>
     </message>
     <message>
         <source>Dimension</source>
-        <translation type="unfinished"></translation>
+        <translation>Matmenys</translation>
     </message>
     <message>
         <source>PNG files (*.png);;JPEG file (*.jpg);;Windows BMP file (*.bmp)</source>
-        <translation type="unfinished"></translation>
+        <translation>PNG failai (*.png);;JPEG file (*.jpg);;Windows BMP file (*.bmp)</translation>
     </message>
     <message>
         <source>;;Encapsulated Post Script file (*.eps);;Portable Document Format file (*.pdf);;Scalable Vector Graphics file (*.svg)</source>
-        <translation type="unfinished"></translation>
+        <translation>;; Kapsulinis „Post Script“ failas (*.eps);;Portable Document Format file (*.pdf);;Scalable Vector Graphics file (*.svg)</translation>
     </message>
     <message>
         <source>Save Snapshot</source>
-        <translation type="unfinished"></translation>
+        <translation>Išsaugoti momentinį vaizdą</translation>
     </message>
     <message>
         <source>Transparency Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Skaidrumo nustatymas</translation>
     </message>
     <message>
         <source>Do you want to make the background transparent?</source>
-        <translation type="unfinished"></translation>
+        <translation>Ar norite, kad fonas būtų skaidrus?</translation>
     </message>
     <message>
         <source>This window do not support snapshot with this file type.</source>
-        <translation type="unfinished"></translation>
+        <translation>Šis langas nepalaiko šio tipo failų momentinių nuotraukų.</translation>
     </message>
     <message>
         <source>Saving snapshot failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nepavyko išsaugoti momentinės nuotraukos.</translation>
     </message>
     <message>
         <source>Wrong file name specified.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nurodytas neteisingas failo pavadinimas.</translation>
     </message>
     <message>
         <source>Snapshot successfully saved to %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Momentinė nuotrauka sėkmingai išsaugota %1.</translation>
     </message>
 </context>
 <context>
     <name>iRICMainWindowAboutDialog</name>
     <message>
         <source>About iRIC</source>
-        <translation type="unfinished"></translation>
+        <translation>Apie iRIC</translation>
     </message>
     <message>
         <source>imglabel</source>
-        <translation type="unfinished"></translation>
+        <translation>imglabel</translation>
     </message>
     <message>
         <source>title</source>
-        <translation type="unfinished"></translation>
+        <translation>titulas</translation>
     </message>
     <message>
         <source>TextLabel</source>
-        <translation type="unfinished"></translation>
+        <translation>„TextLabel“</translation>
     </message>
     <message>
         <source>copyright</source>
-        <translation type="unfinished"></translation>
+        <translation>autorių teisės</translation>
     </message>
     <message>
         <source>iRIC %1</source>
-        <translation type="unfinished"></translation>
+        <translation>iRIC %1</translation>
     </message>
     <message>
         <source>Released on %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Išleista %1</translation>
     </message>
     <message>
         <source>Copyright %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Autorių teisės %1</translation>
     </message>
     <message>
         <source>Terms of use: </source>
-        <translation type="unfinished"></translation>
+        <translation>Naudojimo sąlygos:</translation>
     </message>
     <message>
         <source> (Japanese)</source>
-        <translation type="unfinished"></translation>
+        <translation>(Japonų)</translation>
     </message>
 </context>
 <context>
     <name>iRICMainWindowActionManager</name>
     <message>
         <source>&amp;File</source>
-        <translation type="unfinished"></translation>
+        <translation>Failas (&amp;F)</translation>
     </message>
     <message>
         <source>&amp;New Project...</source>
-        <translation type="unfinished"></translation>
+        <translation>Naujas projektas (&amp;N)...</translation>
     </message>
     <message>
         <source>Ctrl+N</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+N</translation>
     </message>
     <message>
         <source>&amp;Open...</source>
-        <translation type="unfinished"></translation>
+        <translation>Atviras (&amp;O)...</translation>
     </message>
     <message>
         <source>Ctrl+O</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+O</translation>
     </message>
     <message>
         <source>Open iRIC Project files</source>
-        <translation type="unfinished"></translation>
+        <translation>Atidarykite „iRIC Project“ failus</translation>
     </message>
     <message>
         <source>&amp;Save</source>
-        <translation type="unfinished"></translation>
+        <translation>Sutaupyti (&amp;S)</translation>
     </message>
     <message>
         <source>Ctrl+S</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+S</translation>
     </message>
     <message>
         <source>Save &amp;As File(*.ipro)...</source>
-        <translation type="unfinished"></translation>
+        <translation>Išsaugoti kaip failą (*.ipro) (&amp;A)...</translation>
     </message>
     <message>
         <source>Save As &amp;Project...</source>
-        <translation type="unfinished"></translation>
+        <translation>Išsaugoti kaip projektą (&amp;P)...</translation>
     </message>
     <message>
         <source>&amp;Property...</source>
-        <translation type="unfinished"></translation>
+        <translation>Nuosavybė (&amp;P)...</translation>
     </message>
     <message>
         <source>Save S&amp;napshot...</source>
-        <translation type="unfinished"></translation>
+        <translation>Išsaugoti momentinį vaizdą (&amp;N)...</translation>
     </message>
     <message>
         <source>Copy Snapshot to Clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopijuoti momentinę nuotrauką į iškarpinę</translation>
     </message>
     <message>
         <source>Continuous Snapshot / Movie / Google Earth Export...</source>
-        <translation type="unfinished"></translation>
+        <translation>Nuolatinis momentinis vaizdas / filmas / „Google“ žemės eksportas...</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation type="unfinished"></translation>
+        <translation>Importuoti (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Calculation Condition...</source>
-        <translation type="unfinished"></translation>
+        <translation>Skaičiavimo sąlyga (&amp;C)...</translation>
     </message>
     <message>
         <source>Calculation &amp;Result...</source>
-        <translation type="unfinished"></translation>
+        <translation>Skaičiavimo rezultatas (&amp;R)...</translation>
     </message>
     <message>
         <source>&amp;Measured Values...</source>
-        <translation type="unfinished"></translation>
+        <translation>Išmatuotos vertės (&amp;M)...</translation>
     </message>
     <message>
         <source>&amp;Background Image...</source>
-        <translation type="unfinished"></translation>
+        <translation>Fono vaizdas (&amp;B)...</translation>
     </message>
     <message>
         <source>&amp;Visualization/Graph Settings...</source>
-        <translation type="unfinished"></translation>
+        <translation>Vizualizacijos/grafiko nustatymai (&amp;V)...</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation type="unfinished"></translation>
+        <translation>Eksportuoti (&amp;E)</translation>
     </message>
     <message>
         <source>&amp;Particles...</source>
-        <translation type="unfinished"></translation>
+        <translation>Dalelės (&amp;P)...</translation>
     </message>
     <message>
         <source>&amp;Contour Figure as ESRI Shapefiles...</source>
-        <translation type="unfinished"></translation>
+        <translation>Kontūro paveikslėlis kaip ESRI formos failai (&amp;C)...</translation>
     </message>
     <message>
         <source>&amp;Google Earth KMZ for street view</source>
-        <translation type="unfinished"></translation>
+        <translation>„Google“ žemės KMZ gatvės vaizdui (&amp;G)</translation>
     </message>
     <message>
         <source>Open &amp;Work Directory...</source>
-        <translation type="unfinished"></translation>
+        <translation>Atidarykite darbo katalogą (&amp;W)...</translation>
     </message>
     <message>
         <source>&amp;Recent Projects</source>
-        <translation type="unfinished"></translation>
+        <translation>Naujausi projektai (&amp;R)</translation>
     </message>
     <message>
         <source>Show iRIC Start Page...</source>
-        <translation type="unfinished"></translation>
+        <translation>Rodyti „iRIC“ pradžios puslapį...</translation>
     </message>
     <message>
         <source>E&amp;xit</source>
-        <translation type="unfinished"></translation>
+        <translation>Išeiti (&amp;X)</translation>
     </message>
     <message>
         <source>G&amp;eographic Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Geografiniai duomenys (&amp;E)</translation>
     </message>
     <message>
         <source>Geographic Data (from web)</source>
-        <translation type="unfinished"></translation>
+        <translation>Geografiniai duomenys (iš žiniatinklio)</translation>
     </message>
     <message>
         <source>&amp;Hydraulic Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Hidrauliniai duomenys (&amp;H)</translation>
     </message>
     <message>
         <source>Solver Console &amp;Log...</source>
-        <translation type="unfinished"></translation>
+        <translation>„Solver Console“ žurnalas (&amp;L)...</translation>
     </message>
     <message>
         <source>&amp;Edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Redaguoti (&amp;E)</translation>
     </message>
     <message>
         <source>Ctrl+Z</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Z</translation>
     </message>
     <message>
         <source>Ctrl+Y</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Y</translation>
     </message>
     <message>
         <source>Cu&amp;t</source>
-        <translation type="unfinished"></translation>
+        <translation>Iškirpti (&amp;T)</translation>
     </message>
     <message>
         <source>&amp;Copy</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopijuoti (&amp;C)</translation>
     </message>
     <message>
         <source>&amp;Paste</source>
-        <translation type="unfinished"></translation>
+        <translation>Įklijuoti (&amp;P)</translation>
     </message>
     <message>
         <source>&amp;View</source>
-        <translation type="unfinished"></translation>
+        <translation>Peržiūrėti (&amp;V)</translation>
     </message>
     <message>
         <source>&amp;Toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Įrankių juosta (&amp;T)</translation>
     </message>
     <message>
         <source>&amp;Main Toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Pagrindinė įrankių juosta (&amp;M)</translation>
     </message>
     <message>
         <source>&amp;Windows list Toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>„Windows“ sąrašo įrankių juosta (&amp;W)</translation>
     </message>
     <message>
         <source>&amp;Animation Toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Animacijos įrankių juosta (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Object Browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Objektų naršyklė (&amp;O)</translation>
     </message>
     <message>
         <source>&amp;Attribute Browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Atributų naršyklė (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Status Bar</source>
-        <translation type="unfinished"></translation>
+        <translation>Būsenos juosta (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;Background Color...</source>
-        <translation type="unfinished"></translation>
+        <translation>Fono spalva (&amp;B)...</translation>
     </message>
     <message>
         <source>&amp;Z-direction Scale...</source>
-        <translation type="unfinished"></translation>
+        <translation>Z krypties skalė (&amp;Z)...</translation>
     </message>
     <message>
         <source>Set &amp;Projection To</source>
-        <translation type="unfinished"></translation>
+        <translation>Nustatyti projekciją į (&amp;P)</translation>
     </message>
     <message>
         <source>Para&amp;llel</source>
-        <translation type="unfinished"></translation>
+        <translation>Lygiagretus (&amp;L)</translation>
     </message>
     <message>
         <source>Ctrl+L</source>
-        <translation type="unfinished"></translation>
+        <translation>„Ctrl“+L.</translation>
     </message>
     <message>
         <source>&amp;Perspective</source>
-        <translation type="unfinished"></translation>
+        <translation>Perspektyva (&amp;P)</translation>
     </message>
     <message>
         <source>Ctrl+Shift+L</source>
-        <translation type="unfinished"></translation>
+        <translation>„Ctrl“+„Shift“+L.</translation>
     </message>
     <message>
         <source>&amp;Tile Windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Plytelių langai (&amp;T)</translation>
     </message>
     <message>
         <source>Ca&amp;mera Control</source>
-        <translation type="unfinished"></translation>
+        <translation>Fotoaparato valdymas (&amp;M)</translation>
     </message>
     <message>
         <source>&amp;Fit</source>
-        <translation type="unfinished"></translation>
+        <translation>Tinka (&amp;F)</translation>
     </message>
     <message>
         <source>&amp;Reset Rotation</source>
-        <translation type="unfinished"></translation>
+        <translation>Iš naujo nustatyti sukimąsi (&amp;R)</translation>
     </message>
     <message>
         <source>R&amp;otate 90</source>
-        <translation type="unfinished"></translation>
+        <translation>Pasukti 90 (&amp;O)</translation>
     </message>
     <message>
         <source>XY Plane</source>
-        <translation type="unfinished"></translation>
+        <translation>XY lėktuvas</translation>
     </message>
     <message>
         <source>YZ Plane</source>
-        <translation type="unfinished"></translation>
+        <translation>YZ lėktuvas</translation>
     </message>
     <message>
         <source>XZ Plane</source>
-        <translation type="unfinished"></translation>
+        <translation>XZ lėktuvas</translation>
     </message>
     <message>
         <source>Move &amp;Left</source>
-        <translation type="unfinished"></translation>
+        <translation>Judėti į kairę (&amp;L)</translation>
     </message>
     <message>
         <source>Move &amp;Right</source>
-        <translation type="unfinished"></translation>
+        <translation>Perkelti į dešinę (&amp;R)</translation>
     </message>
     <message>
         <source>Move &amp;Up</source>
-        <translation type="unfinished"></translation>
+        <translation>Judėti aukštyn (&amp;U)</translation>
     </message>
     <message>
         <source>Move &amp;Down</source>
-        <translation type="unfinished"></translation>
+        <translation>Judėk žemyn (&amp;D)</translation>
     </message>
     <message>
         <source>Zoom &amp;In</source>
-        <translation type="unfinished"></translation>
+        <translation>Priartinti (&amp;I)</translation>
     </message>
     <message>
         <source>Zoom &amp;Out</source>
-        <translation type="unfinished"></translation>
+        <translation>Nutolinti (&amp;O)</translation>
     </message>
     <message>
         <source>Zoom In in X Direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Padidinti X kryptimi</translation>
     </message>
     <message>
         <source>Zoom Out in X Direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Tolinti X kryptimi</translation>
     </message>
     <message>
         <source>Zoom In in Y Direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Padidinti Y kryptimi</translation>
     </message>
     <message>
         <source>Zoom Out in Y Direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Tolinti Y kryptimi</translation>
     </message>
     <message>
         <source>&amp;Simulation</source>
-        <translation type="unfinished"></translation>
+        <translation>Modeliavimas (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;Run</source>
-        <translation type="unfinished"></translation>
+        <translation>Bėgti (&amp;R)</translation>
     </message>
     <message>
         <source>Ctrl+R</source>
-        <translation type="unfinished"></translation>
+        <translation>„Ctrl“+R.</translation>
     </message>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>&amp;Solver Information...</source>
-        <translation type="unfinished"></translation>
+        <translation>Informacija apie sprendimą (&amp;S)...</translation>
     </message>
     <message>
         <source>Focus &amp;PreProcessor Window</source>
-        <translation type="unfinished"></translation>
+        <translation>„Focus PreProcessor“ langas (&amp;P)</translation>
     </message>
     <message>
         <source>Focus &amp;Solver Console Window</source>
-        <translation type="unfinished"></translation>
+        <translation>„Focus Solver Console“ langas (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;Tool</source>
-        <translation type="unfinished"></translation>
+        <translation>Įrankis (&amp;T)</translation>
     </message>
     <message>
         <source>Calculation &amp;Result</source>
-        <translation type="unfinished"></translation>
+        <translation>Skaičiavimo rezultatas (&amp;R)</translation>
     </message>
     <message>
         <source>Open new 2D Post-Processing Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Atidarykite naują 2D papildomo apdorojimo langą</translation>
     </message>
     <message>
-        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
-        <translation type="unfinished"></translation>
+        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
+        <translation>Atidarykite naują 2D paukščio skrydžio papildomo apdorojimo langą</translation>
     </message>
     <message>
         <source>Open new 3D Post-Processing Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Atidarykite naują 3D papildomo apdorojimo langą</translation>
     </message>
     <message>
         <source>Open new Graph Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Atidarykite naują grafiko langą</translation>
     </message>
     <message>
         <source>Open new Scattered Chart Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Atidarykite naują išsklaidytos diagramos langą</translation>
     </message>
     <message>
         <source>Open new Verification Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Atidarykite naują patvirtinimo langą</translation>
     </message>
     <message>
         <source>&amp;Reload</source>
-        <translation type="unfinished"></translation>
+        <translation>Įkelti iš naujo (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Reload Calculation Result</source>
-        <translation type="unfinished"></translation>
+        <translation>Iš naujo įkelti skaičiavimo rezultatą (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Delete...</source>
-        <translation type="unfinished"></translation>
+        <translation>Ištrinti (&amp;D)...</translation>
     </message>
     <message>
         <source>&amp;Manage simple operation results</source>
-        <translation type="unfinished"></translation>
+        <translation>Tvarkykite paprastų operacijų rezultatus (&amp;M)</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation type="unfinished"></translation>
+        <translation>Importuoti (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation type="unfinished"></translation>
+        <translation>Eksportuoti (&amp;E)...</translation>
     </message>
     <message>
         <source>Import Visualization/Graph Settings...</source>
-        <translation type="unfinished"></translation>
+        <translation>Importuoti vizualizacijos/grafiko nustatymus...</translation>
     </message>
     <message>
         <source>Export Visualization/Graph Settings...</source>
-        <translation type="unfinished"></translation>
+        <translation>Eksportuoti vizualizacijos/grafiko nustatymus...</translation>
     </message>
     <message>
         <source>&amp;Option</source>
-        <translation type="unfinished"></translation>
+        <translation>Parinktis (&amp;O)</translation>
     </message>
     <message>
         <source>&amp;Preferences...</source>
-        <translation type="unfinished"></translation>
+        <translation>Nuostatos (&amp;P)...</translation>
     </message>
     <message>
         <source>&amp;Tools</source>
-        <translation type="unfinished"></translation>
+        <translation>Įrankiai (&amp;T)</translation>
     </message>
     <message>
         <source>&amp;Maintainance</source>
-        <translation type="unfinished"></translation>
+        <translation>Priežiūra (&amp;M)</translation>
     </message>
     <message>
         <source>&amp;Create/Update Translation Files...</source>
-        <translation type="unfinished"></translation>
+        <translation>Sukurkite/atnaujinkite vertimo failus (&amp;C)...</translation>
     </message>
     <message>
         <source>&amp;Help</source>
-        <translation type="unfinished"></translation>
+        <translation>Pagalba (&amp;H)</translation>
     </message>
     <message>
         <source>&amp;Help...</source>
-        <translation type="unfinished"></translation>
+        <translation>Pagalba (&amp;H)...</translation>
     </message>
     <message>
         <source>&amp;Solver List...</source>
-        <translation type="unfinished"></translation>
+        <translation>Sprendėjų sąrašas (&amp;S)...</translation>
     </message>
     <message>
         <source>&amp;Mouse Hint...</source>
-        <translation type="unfinished"></translation>
+        <translation>Pelės patarimas (&amp;M)...</translation>
     </message>
     <message>
         <source>&amp;About...</source>
-        <translation type="unfinished"></translation>
+        <translation>Apie (&amp;A)...</translation>
     </message>
     <message>
         <source>Main ToolBar</source>
-        <translation type="unfinished"></translation>
+        <translation>Pagrindinė įrankių juosta</translation>
     </message>
     <message>
         <source>Window list Toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Langų sąrašo įrankių juosta</translation>
     </message>
     <message>
         <source>Ctrl+C</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+C</translation>
     </message>
 </context>
 </TS>

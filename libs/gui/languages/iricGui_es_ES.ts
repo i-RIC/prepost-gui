@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="es_ES">
 <context>
     <name>AnimationController</name>
@@ -45,7 +43,7 @@
     </message>
     <message>
         <source>L&amp;oop Animation</source>
-        <translation type="unfinished"></translation>
+        <translation>Animación en bucle (&amp;O)</translation>
     </message>
 </context>
 <context>
@@ -106,43 +104,43 @@
     </message>
     <message>
         <source>PNG (*.png)</source>
-        <translation type="unfinished"></translation>
+        <translation>PNG (*.png)</translation>
     </message>
     <message>
         <source>.png</source>
-        <translation type="unfinished"></translation>
+        <translation>.png</translation>
     </message>
     <message>
         <source>JPEG (*.jpg)</source>
-        <translation type="unfinished"></translation>
+        <translation>JPEG (*.jpg)</translation>
     </message>
     <message>
         <source>.jpg</source>
-        <translation type="unfinished"></translation>
+        <translation>.jpg</translation>
     </message>
     <message>
         <source>Windows Bitmap (*.bmp)</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapa de bits de Windows (*.bmp)</translation>
     </message>
     <message>
         <source>.bmp</source>
-        <translation type="unfinished"></translation>
+        <translation>.bmp</translation>
     </message>
     <message>
         <source>Portable Bitmap (*.ppm)</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapa de bits portátil (*.ppm)</translation>
     </message>
     <message>
         <source>.ppm</source>
-        <translation type="unfinished"></translation>
+        <translation>.ppm</translation>
     </message>
     <message>
         <source>X11 Bitmap (*.xbm)</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapa de bits X11 (*.xbm)</translation>
     </message>
     <message>
         <source>.xbm</source>
-        <translation type="unfinished"></translation>
+        <translation>.xbm</translation>
     </message>
     <message>
         <source>Prefix</source>
@@ -154,7 +152,7 @@
     </message>
     <message>
         <source>img_</source>
-        <translation type="unfinished"></translation>
+        <translation>img_</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -166,7 +164,7 @@
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>Creating folder %1 failed.</source>
@@ -189,7 +187,7 @@
     </message>
     <message>
         <source>Note: This feature is available only when a coordinate system has been specified.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nota: esta función está disponible solo cuando se ha especificado un sistema de coordenadas.</translation>
     </message>
     <message>
         <source>KML file name</source>
@@ -201,7 +199,7 @@
     </message>
     <message>
         <source>output.kml</source>
-        <translation type="unfinished"></translation>
+        <translation>salida.kml</translation>
     </message>
 </context>
 <context>
@@ -212,7 +210,7 @@
     </message>
     <message>
         <source>Use this wizard to specify the requirements to generate continuous snapshot output.</source>
-        <translation type="unfinished"></translation>
+        <translation>Utilice este asistente para especificar los requisitos para generar una salida de instantáneas continua.</translation>
     </message>
 </context>
 <context>
@@ -364,7 +362,7 @@
     <name>FlushRequester</name>
     <message>
         <source>Waiting for solver to copy CGNS file...</source>
-        <translation type="unfinished"></translation>
+        <translation>Esperando que el solucionador copie el archivo CGNS...</translation>
     </message>
 </context>
 <context>
@@ -407,11 +405,11 @@
     <message>
         <source>When you update iRIC, you need to close iRIC before launching iRIC Maintainance.
 When you have iRIC windows other than this, close them manually.</source>
-        <translation type="unfinished"></translation>
+        <translation>Cuando actualiza iRIC, debe cerrar iRIC antes de iniciar iRIC Maintainance. Cuando tenga ventanas iRIC distintas a esta, ciérrelas manualmente.</translation>
     </message>
     <message>
         <source>Close iRIC and launch iRIC Maintainance</source>
-        <translation type="unfinished"></translation>
+        <translation>Cierre iRIC y lance iRIC Maintainance</translation>
     </message>
 </context>
 <context>
@@ -423,7 +421,7 @@ When you have iRIC windows other than this, close them manually.</source>
     <message>
         <source>This function is intended to be used by solver developers or grid creating program developers, not users.
 This wizard will generate or update translation files for solver definition files and grid creating program definition files those are registered to iRIC system. You need to specify the solver (or grid creating program) name, and the list of languages for those you want to create or update translation files.</source>
-        <translation type="unfinished"></translation>
+        <translation>Esta función está destinada a ser utilizada por desarrolladores de solucionadores o desarrolladores de programas de creación de cuadrículas, no por usuarios. Este asistente generará o actualizará archivos de traducción para archivos de definición de solucionador y archivos de definición de programa de creación de cuadrículas que estén registrados en el sistema iRIC. Debe especificar el nombre del solucionador (o programa de creación de cuadrículas) y la lista de idiomas para los que desea crear o actualizar archivos de traducción.</translation>
     </message>
 </context>
 <context>
@@ -440,24 +438,24 @@ This wizard will generate or update translation files for solver definition file
         <translation>Seleccionar Solucionador</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
-        <translation type="unfinished"></translation>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
+        <translation>Cuando crea un nuevo proyecto, debe seleccionar el solucionador que se utilizará para el cálculo. Seleccione un solucionador y presione el botón "Aceptar".</translation>
     </message>
 </context>
 <context>
     <name>PeriodicalUpdateChecker</name>
     <message>
         <source>Check for Update</source>
-        <translation type="unfinished"></translation>
+        <translation>Buscar actualizaciones</translation>
     </message>
     <message>
         <source>%1 days have passed after launching iRIC Maintainance for the last time.
 Do you want to launch iRIC Maintainance?</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 Han pasado días desde el lanzamiento de iRIC Maintainance por última vez. ¿Quieres lanzar iRIC Maintainance?</translation>
     </message>
     <message>
         <source>Launch iRIC Maintainance</source>
-        <translation type="unfinished"></translation>
+        <translation>Lanzar mantenimiento iRIC</translation>
     </message>
 </context>
 <context>
@@ -468,7 +466,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>General</source>
-        <translation type="unfinished"></translation>
+        <translation>General</translation>
     </message>
     <message>
         <source>Graphics Default</source>
@@ -484,19 +482,19 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Network Proxy</source>
-        <translation type="unfinished"></translation>
+        <translation>Proxy de red</translation>
     </message>
     <message>
         <source>Background Images (Internet)</source>
-        <translation type="unfinished"></translation>
+        <translation>Imágenes de fondo (Internet)</translation>
     </message>
     <message>
         <source>Web Elevation Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Datos de elevación web</translation>
     </message>
     <message>
         <source>Background Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Cuadrícula de fondo</translation>
     </message>
 </context>
 <context>
@@ -511,11 +509,11 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Cross Section Direction:</source>
-        <translation type="unfinished"></translation>
+        <translation>Dirección de la sección transversal:</translation>
     </message>
     <message>
         <source>Between Cross Sections:</source>
-        <translation type="unfinished"></translation>
+        <translation>Entre secciones transversales:</translation>
     </message>
 </context>
 <context>
@@ -542,63 +540,63 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Copy folder project to Working Directory when opened</source>
-        <translation type="unfinished"></translation>
+        <translation>Copie el proyecto de carpeta al directorio de trabajo cuando se abra</translation>
     </message>
     <message>
         <source>Checking for Update</source>
-        <translation type="unfinished"></translation>
+        <translation>Comprobación de actualización</translation>
     </message>
     <message>
         <source>Check for update periodically</source>
-        <translation type="unfinished"></translation>
+        <translation>Verifique la actualización periódicamente</translation>
     </message>
     <message>
         <source>Interval between checking (days):</source>
-        <translation type="unfinished"></translation>
+        <translation>Intervalo entre verificación (días):</translation>
     </message>
     <message>
         <source>Cell Culling on Drawing Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Eliminación de celdas en la cuadrícula de dibujo</translation>
     </message>
     <message>
         <source>Enable</source>
-        <translation type="unfinished"></translation>
+        <translation>Habilitar</translation>
     </message>
     <message>
         <source>Maximum numbers of cells drawn:</source>
-        <translation type="unfinished"></translation>
+        <translation>Número máximo de celdas extraídas:</translation>
     </message>
     <message>
         <source>Maximum numbers of indices drawn:</source>
-        <translation type="unfinished"></translation>
+        <translation>Número máximo de índices extraídos:</translation>
     </message>
     <message>
         <source>Warning: If you disable culling and create a very big grid, maybe iRIC GUI will crash because of lack of memory.</source>
-        <translation type="unfinished"></translation>
+        <translation>Advertencia: si deshabilita la selección y crea una cuadrícula muy grande, es posible que la GUI de iRIC se bloquee debido a la falta de memoria.</translation>
     </message>
     <message>
         <source>Undo</source>
-        <translation type="unfinished"></translation>
+        <translation>Deshacer</translation>
     </message>
     <message>
         <source>Undo Limit:</source>
-        <translation type="unfinished"></translation>
+        <translation>Límite de deshacer:</translation>
     </message>
     <message>
         <source>Solver console</source>
-        <translation type="unfinished"></translation>
+        <translation>Consola de solucionador</translation>
     </message>
     <message>
         <source>Maximum lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Líneas máximas</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>Working directory contains non-ASCII characters.</source>
-        <translation type="unfinished"></translation>
+        <translation>El directorio de trabajo contiene caracteres que no son ASCII.</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -606,15 +604,15 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Working directory is changed, but the new working directory is used AFTER exiting iRIC GUI!</source>
-        <translation type="unfinished"></translation>
+        <translation>El directorio de trabajo se cambia, pero el nuevo directorio de trabajo se usa DESPUÉS de salir de la GUI de iRIC.</translation>
     </message>
     <message>
         <source>Python path</source>
-        <translation type="unfinished"></translation>
+        <translation>Ruta de Python</translation>
     </message>
     <message>
         <source>Note: Used to run solvers written in Python.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nota: se utiliza para ejecutar solucionadores escritos en Python.</translation>
     </message>
 </context>
 <context>
@@ -629,7 +627,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Color:</translation>
     </message>
     <message>
         <source>Color Map</source>
@@ -645,15 +643,15 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Note: Loading an image whose width (or height) is larger than the maximum, will be automatically resized.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nota: La carga de una imagen cuyo ancho (o alto) es mayor que el máximo, se redimensionará automáticamente.</translation>
     </message>
     <message>
         <source>Vector</source>
-        <translation type="unfinished"></translation>
+        <translation>Vector</translation>
     </message>
     <message>
         <source>Factor:</source>
-        <translation type="unfinished"></translation>
+        <translation>Factor:</translation>
     </message>
     <message>
         <source>Arrow Size:</source>
@@ -673,7 +671,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>pixels</source>
-        <translation type="unfinished"></translation>
+        <translation>pixeles</translation>
     </message>
 </context>
 <context>
@@ -735,35 +733,35 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Do not use proxy</source>
-        <translation type="unfinished"></translation>
+        <translation>No use proxy</translation>
     </message>
     <message>
         <source>Use system proxy setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Usar la configuración de proxy del sistema</translation>
     </message>
     <message>
         <source>Use custom proxy setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Usar configuración de proxy personalizada</translation>
     </message>
     <message>
         <source>HTTP Proxy: </source>
-        <translation type="unfinished"></translation>
+        <translation>Proxy HTTP:</translation>
     </message>
     <message>
         <source>Port:</source>
-        <translation type="unfinished"></translation>
+        <translation>Puerto:</translation>
     </message>
     <message>
         <source>Need authentication for HTTP proxy</source>
-        <translation type="unfinished"></translation>
+        <translation>Necesita autenticación para el proxy HTTP</translation>
     </message>
     <message>
         <source>User name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nombre de usuario:</translation>
     </message>
     <message>
         <source>Password:</source>
-        <translation type="unfinished"></translation>
+        <translation>Contraseña:</translation>
     </message>
 </context>
 <context>
@@ -774,11 +772,11 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>List of fractions for cross section editing:</source>
-        <translation type="unfinished"></translation>
+        <translation>Lista de fracciones para edición de sección transversal:</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation type="unfinished"></translation>
+        <translation>Agregar (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
@@ -786,7 +784,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>&amp;Restore Default</source>
-        <translation type="unfinished"></translation>
+        <translation>Restaurar valores predeterminados (&amp;R)</translation>
     </message>
     <message>
         <source>Information</source>
@@ -794,7 +792,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>This value already exists in the list.</source>
-        <translation type="unfinished"></translation>
+        <translation>Este valor ya existe en la lista.</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -802,26 +800,26 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Are you sure you want to delete the selected item?</source>
-        <translation type="unfinished"></translation>
+        <translation>¿Está seguro de que desea eliminar el elemento seleccionado?</translation>
     </message>
     <message>
         <source>Are you sure you want to restore default values?</source>
-        <translation type="unfinished"></translation>
+        <translation>¿Está seguro de que desea restaurar los valores predeterminados?</translation>
     </message>
 </context>
 <context>
     <name>PreferencePageRiverSurveyFractionAddDialog</name>
     <message>
         <source>Add fraction</source>
-        <translation type="unfinished"></translation>
+        <translation>Agregar fracción</translation>
     </message>
     <message>
         <source>Specify the fraction to add:</source>
-        <translation type="unfinished"></translation>
+        <translation>Especifique la fracción a sumar:</translation>
     </message>
     <message>
         <source>1:</source>
-        <translation type="unfinished"></translation>
+        <translation>1:</translation>
     </message>
 </context>
 <context>
@@ -840,7 +838,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation type="unfinished"></translation>
+        <translation>Agregar (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
@@ -852,34 +850,34 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>&amp;Restore Default</source>
-        <translation type="unfinished"></translation>
+        <translation>Restaurar valores predeterminados (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Input Google Maps API key</source>
-        <translation type="unfinished"></translation>
+        <translation>Ingrese la clave API de Google Maps (&amp;I)</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Google Maps Platform now need API key to use Google Maps through iRIC. Please get your own Google Maps API key and input here, to use Google Maps images as background images on Pre-processor and on 2D Post-Processing Windows.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Google Maps Platform ahora necesita una clave API para usar Google Maps a través de iRIC. Obtenga su propia clave de API de Google Maps e ingrese aquí, para usar imágenes de Google Maps como imágenes de fondo en el preprocesador y en las ventanas de posprocesamiento 2D. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Background Image (Internet) Edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Imagen de fondo (Internet) Editar</translation>
     </message>
     <message>
         <source>Input Google Maps API Key</source>
-        <translation type="unfinished"></translation>
+        <translation>Introduzca la clave de API de Google Maps</translation>
     </message>
     <message>
         <source>API Key: </source>
-        <translation type="unfinished"></translation>
+        <translation>Clave API:</translation>
     </message>
 </context>
 <context>
     <name>PreferencePageTmsAddDialog</name>
     <message>
         <source>Background Image (Internet) Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Imagen de fondo (Internet) Agregar</translation>
     </message>
     <message>
         <source>Name:</source>
@@ -887,15 +885,15 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>URL:</source>
-        <translation type="unfinished"></translation>
+        <translation>URL:</translation>
     </message>
     <message>
         <source>Example: http://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png</source>
-        <translation type="unfinished"></translation>
+        <translation>Ejemplo: http://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png</translation>
     </message>
     <message>
         <source>Max Zoom Level:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nivel de zoom máximo:</translation>
     </message>
 </context>
 <context>
@@ -914,7 +912,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation type="unfinished"></translation>
+        <translation>Agregar (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
@@ -926,18 +924,18 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>&amp;Restore Default</source>
-        <translation type="unfinished"></translation>
+        <translation>Restaurar valores predeterminados (&amp;R)</translation>
     </message>
     <message>
         <source>Edit Web Elevation Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar datos de elevación web</translation>
     </message>
 </context>
 <context>
     <name>PreferencePageWebCsvTileAddDialog</name>
     <message>
         <source>Add Web Elevation Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Agregar datos de elevación web</translation>
     </message>
     <message>
         <source>Name:</source>
@@ -945,19 +943,19 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Min zoom level:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nivel de zoom mínimo:</translation>
     </message>
     <message>
         <source>Max zoom level:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nivel de zoom máximo:</translation>
     </message>
     <message>
         <source>URL:</source>
-        <translation type="unfinished"></translation>
+        <translation>URL:</translation>
     </message>
     <message>
         <source>Example: http://cyberjapandata.gsi.go.jp/xyz/dem/{z}/{x}/{y}.txt</source>
-        <translation type="unfinished"></translation>
+        <translation>Ejemplo: http://cyberjapandata.gsi.go.jp/xyz/dem/{z}/{x}/{y}.txt</translation>
     </message>
 </context>
 <context>
@@ -1000,11 +998,11 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Coordinate Offset:</source>
-        <translation type="unfinished"></translation>
+        <translation>Desplazamiento de coordenadas:</translation>
     </message>
     <message>
         <source>Date for t = 0:</source>
-        <translation type="unfinished"></translation>
+        <translation>Fecha para t = 0:</translation>
     </message>
     <message>
         <source>(No data)</source>
@@ -1189,9 +1187,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>Aviso</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
+        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
 %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Se produjo un error al cargar el archivo de definición del solucionador en la carpeta "%1". Este solucionador se ignora. %2</translation>
     </message>
 </context>
 <context>
@@ -1206,7 +1204,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Select solver to open project</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccione el solucionador para abrir el proyecto</translation>
     </message>
     <message>
         <source>Name</source>
@@ -1232,12 +1230,12 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>iRIC </source>
-        <translation type="unfinished"></translation>
+        <translation>iRIC</translation>
     </message>
     <message>
         <source>Welcome to iRIC!
 iRIC can simulate rivers from Colorado River to the Nile.</source>
-        <translation type="unfinished"></translation>
+        <translation>¡Bienvenido a iRIC! iRIC puede simular ríos desde el río Colorado hasta el Nilo.</translation>
     </message>
     <message>
         <source>Start Simulation Project</source>
@@ -1275,7 +1273,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     <name>iRICMainWindow</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>Error occured while loading Solver definition file.</source>
@@ -1303,11 +1301,11 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>This project seems to be opened by another iRIC GUI window. You can not open a project folder from multiple GUI windows.</source>
-        <translation type="unfinished"></translation>
+        <translation>Este proyecto parece estar abierto por otra ventana de la GUI de iRIC. No puede abrir una carpeta de proyecto desde varias ventanas GUI.</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
-        <translation type="unfinished"></translation>
+        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <translation>El proyecto abierto no se copia en el directorio de trabajo y se verá obligado a guardar las modificaciones que realice en este proyecto. Si desea conservar el proyecto actual, guárdelo primero en otro proyecto.</translation>
     </message>
     <message>
         <source>Open Calculation result</source>
@@ -1343,11 +1341,11 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>This project has HUGE calculation result, so it cannot be saved as a file (*.ipro). Please save as a project.</source>
-        <translation type="unfinished"></translation>
+        <translation>Este proyecto tiene un resultado de cálculo ENORME, por lo que no se puede guardar como un archivo (*.ipro). Guárdelo como proyecto.</translation>
     </message>
     <message>
         <source>This project has too many files, so it cannot be saved as a file (*.ipro). Please save as a project.</source>
-        <translation type="unfinished"></translation>
+        <translation>Este proyecto tiene demasiados archivos, por lo que no se puede guardar como un archivo. (*.ipro). Guárdelo como proyecto.</translation>
     </message>
     <message>
         <source>Project successfully saved to %1.</source>
@@ -1355,31 +1353,31 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>Export contour figure to ESRI Shapefiles</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportar figura de contorno a ESRI Shapefiles</translation>
     </message>
     <message>
         <source>Saving contour figure as ESRI Shapefiles...</source>
-        <translation type="unfinished"></translation>
+        <translation>Guardar la figura del contorno como archivos de forma ESRI...</translation>
     </message>
     <message>
         <source>No Contour Figure is drawn now.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ahora no se dibuja ninguna figura de contorno.</translation>
     </message>
     <message>
         <source>%1 can not be overwritten.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 no se puede sobrescribir.</translation>
     </message>
     <message>
         <source>Export Google Earth KMZ for street view</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportar Google Earth KMZ para Street View</translation>
     </message>
     <message>
         <source>Saving KMZ file...</source>
-        <translation type="unfinished"></translation>
+        <translation>Guardando archivo KMZ...</translation>
     </message>
     <message>
         <source>The grids are edited or deleted. When you save, the calculation result is discarded.</source>
-        <translation type="unfinished"></translation>
+        <translation>Las cuadrículas se editan o eliminan. Cuando guarda, el resultado del cálculo se descarta.</translation>
     </message>
     <message>
         <source>Ready</source>
@@ -1399,19 +1397,19 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>PNG files (*.png);;JPEG file (*.jpg);;Windows BMP file (*.bmp)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivos PNG (*.png);;JPEG file (*.jpg);;Windows BMP file (*.bmp)</translation>
     </message>
     <message>
         <source>;;Encapsulated Post Script file (*.eps);;Portable Document Format file (*.pdf);;Scalable Vector Graphics file (*.svg)</source>
-        <translation type="unfinished"></translation>
+        <translation>;; Archivo de post script encapsulado (*.eps);;Portable Document Format file (*.pdf);;Scalable Vector Graphics file (*.svg)</translation>
     </message>
     <message>
         <source>Transparency Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración de transparencia</translation>
     </message>
     <message>
         <source>Do you want to make the background transparent?</source>
-        <translation type="unfinished"></translation>
+        <translation>¿Quieres que el fondo sea transparente?</translation>
     </message>
     <message>
         <source>This window do not support snapshot with this file type.</source>
@@ -1435,7 +1433,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>Copied snapshot to clipboard.</source>
-        <translation type="unfinished"></translation>
+        <translation>Instantánea copiada al portapapeles.</translation>
     </message>
     <message>
         <source>This menu is not available while the solver is running.</source>
@@ -1459,36 +1457,36 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>iRIC %1</source>
-        <translation type="unfinished"></translation>
+        <translation>iRIC %1</translation>
     </message>
     <message>
         <source>%1 - iRIC %2 [%3]</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 - iRIC %2 [ %3 ]</translation>
     </message>
     <message>
         <source>http://iric-gui-user-manual.readthedocs.io/en/latest/</source>
-        <translation type="unfinished"></translation>
+        <translation>http://iric-gui-user-manual.readthedocs.io/en/latest/</translation>
     </message>
     <message>
         <source>Currently active sub-window does not support exporting contour figure.</source>
-        <translation type="unfinished"></translation>
+        <translation>La subventana actualmente activa no admite la exportación de figuras de contorno.</translation>
     </message>
     <message>
-        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
-        <translation type="unfinished"></translation>
+        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
+        <translation>Para exportar un archivo de forma, cambie "Configuración de pantalla" a "Figura de contorno", no "Franja de color" o "Isolíneas".</translation>
     </message>
     <message>
         <source>Export contour figure</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportar figura de contorno</translation>
     </message>
     <message>
         <source>Please select which zone to use:</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccione qué zona usar:</translation>
     </message>
     <message>
         <source>Current working directory (%1) contains non-ASCII characters. Before starting a new project, change working directory from the following menu: 
 Option -&gt; Preferences</source>
-        <translation type="unfinished"></translation>
+        <translation>Directorio de trabajo actual (%1) contiene caracteres que no son ASCII. Antes de comenzar un nuevo proyecto, cambie el directorio de trabajo desde el siguiente menú: Opción -&gt; Preferencias</translation>
     </message>
     <message>
         <source>Untitled</source>
@@ -1496,7 +1494,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>CGNS file (*.cgn *.cgns)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo CGNS (*.cgn *.cgns)</translation>
     </message>
     <message>
         <source>The solver is running now. Please stop solver, to do this action.</source>
@@ -1504,7 +1502,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>&amp;%1 %2</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 %2 (&amp;%)</translation>
     </message>
     <message>
         <source>Unknown options specified. They are neglected. %1</source>
@@ -1552,7 +1550,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Google Earth KMZ is exported to %1 successfully.</source>
-        <translation type="unfinished"></translation>
+        <translation>Google Earth KMZ se exporta a %1 exitosamente.</translation>
     </message>
     <message>
         <source>Import Visualization/Graph Settings</source>
@@ -1572,27 +1570,27 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>One dimension</source>
-        <translation type="unfinished"></translation>
+        <translation>Una dimensión</translation>
     </message>
     <message>
         <source>Two dimensions</source>
-        <translation type="unfinished"></translation>
+        <translation>Dos dimensiones</translation>
     </message>
     <message>
         <source>Three dimensions</source>
-        <translation type="unfinished"></translation>
+        <translation>Tres dimensiones</translation>
     </message>
     <message>
         <source>There is no calculation data, so you can not define simple operation results.</source>
-        <translation type="unfinished"></translation>
+        <translation>No hay datos de cálculo, por lo que no puede definir resultados de operaciones simples.</translation>
     </message>
     <message>
         <source>Select dimension</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccionar dimensión</translation>
     </message>
     <message>
         <source>Dimension</source>
-        <translation type="unfinished"></translation>
+        <translation>Dimensión</translation>
     </message>
 </context>
 <context>
@@ -1603,7 +1601,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>imglabel</source>
-        <translation type="unfinished"></translation>
+        <translation>imglabel</translation>
     </message>
     <message>
         <source>title</source>
@@ -1619,7 +1617,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>iRIC %1</source>
-        <translation type="unfinished"></translation>
+        <translation>iRIC %1</translation>
     </message>
     <message>
         <source>Released on %1</source>
@@ -1635,7 +1633,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source> (Japanese)</source>
-        <translation type="unfinished"></translation>
+        <translation>(Japonés)</translation>
     </message>
 </context>
 <context>
@@ -1650,7 +1648,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Ctrl+N</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl + N</translation>
     </message>
     <message>
         <source>&amp;Open...</source>
@@ -1658,7 +1656,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Ctrl+O</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl + O</translation>
     </message>
     <message>
         <source>Open iRIC Project files</source>
@@ -1670,7 +1668,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Ctrl+S</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl + S</translation>
     </message>
     <message>
         <source>Save &amp;As File(*.ipro)...</source>
@@ -1690,7 +1688,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Copy Snapshot to Clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Copiar instantánea al portapapeles</translation>
     </message>
     <message>
         <source>Continuous Snapshot / Movie / Google Earth Export...</source>
@@ -1730,11 +1728,11 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>&amp;Contour Figure as ESRI Shapefiles...</source>
-        <translation type="unfinished"></translation>
+        <translation>Figura de contorno como archivos de forma ESRI (&amp;C)...</translation>
     </message>
     <message>
         <source>&amp;Google Earth KMZ for street view</source>
-        <translation type="unfinished"></translation>
+        <translation>Google Earth KMZ para Street View (&amp;G)</translation>
     </message>
     <message>
         <source>Open &amp;Work Directory...</source>
@@ -1758,7 +1756,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Geographic Data (from web)</source>
-        <translation type="unfinished"></translation>
+        <translation>Datos geográficos (de la web)</translation>
     </message>
     <message>
         <source>&amp;Hydraulic Data</source>
@@ -1774,11 +1772,11 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Ctrl+Z</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl + Z</translation>
     </message>
     <message>
         <source>Ctrl+Y</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl + Y</translation>
     </message>
     <message>
         <source>Cu&amp;t</source>
@@ -1806,7 +1804,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>&amp;Windows list Toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Barra de herramientas de la lista de Windows (&amp;W)</translation>
     </message>
     <message>
         <source>&amp;Animation Toolbar</source>
@@ -1834,23 +1832,23 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Set &amp;Projection To</source>
-        <translation type="unfinished"></translation>
+        <translation>Establecer proyección en (&amp;P)</translation>
     </message>
     <message>
         <source>Para&amp;llel</source>
-        <translation type="unfinished"></translation>
+        <translation>Paralelo (&amp;L)</translation>
     </message>
     <message>
         <source>Ctrl+L</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl + L</translation>
     </message>
     <message>
         <source>&amp;Perspective</source>
-        <translation type="unfinished"></translation>
+        <translation>Perspectiva (&amp;P)</translation>
     </message>
     <message>
         <source>Ctrl+Shift+L</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl + Mayús + L</translation>
     </message>
     <message>
         <source>&amp;Tile Windows</source>
@@ -1934,7 +1932,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Ctrl+R</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl + R</translation>
     </message>
     <message>
         <source>&amp;Stop</source>
@@ -1966,8 +1964,8 @@ Option -&gt; Preferences</source>
         <translation>Abrir Ventana 2D Post-Procesamiento Nueva</translation>
     </message>
     <message>
-        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
-        <translation type="unfinished"></translation>
+        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
+        <translation>Abrir nueva ventana de posprocesamiento a vista de pájaro 2D</translation>
     </message>
     <message>
         <source>Open new 3D Post-Processing Window</source>
@@ -1979,11 +1977,11 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Open new Scattered Chart Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Abrir nueva ventana de gráfico disperso</translation>
     </message>
     <message>
         <source>Open new Verification Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Abrir nueva ventana de verificación</translation>
     </message>
     <message>
         <source>&amp;Reload</source>
@@ -1999,7 +1997,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>&amp;Manage simple operation results</source>
-        <translation type="unfinished"></translation>
+        <translation>Gestionar resultados de operaciones simples (&amp;M)</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
@@ -2027,11 +2025,11 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>&amp;Tools</source>
-        <translation type="unfinished"></translation>
+        <translation>Instrumentos (&amp;T)</translation>
     </message>
     <message>
         <source>&amp;Maintainance</source>
-        <translation type="unfinished"></translation>
+        <translation>Mantenimiento (&amp;M)</translation>
     </message>
     <message>
         <source>&amp;Create/Update Translation Files...</source>
@@ -2063,11 +2061,11 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Window list Toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Barra de herramientas de lista de ventanas</translation>
     </message>
     <message>
         <source>Ctrl+C</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl + C</translation>
     </message>
 </context>
 </TS>

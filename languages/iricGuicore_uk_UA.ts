@@ -1,1867 +1,1888 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="uk_UA">
 <context>
     <name>AttributeBrowserTargetDataItem</name>
     <message>
         <source>Please specify a closed polygon!</source>
-        <translation type="unfinished"></translation>
+        <translation>Будь ласка, вкажіть замкнутий багатокутник!</translation>
     </message>
 </context>
 <context>
     <name>BackgroundImageInfo</name>
     <message>
         <source>Unable to read image %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Неможливо прочитати зображення %1</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Увага</translation>
     </message>
     <message>
         <source>In file %1, x-coordinate increment per pixel and y-coordinate increment per pixel mismatches. It is acceptable, but it may be wrong.</source>
-        <translation type="unfinished"></translation>
+        <translation>У файлі %1, приріст координати x на піксель та приріст координати y на піксель не збігаються. Це прийнятно, але може бути і неправильно.</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Інформація</translation>
     </message>
     <message>
         <source>Select a corresponding point on Main Window.</source>
-        <translation type="unfinished"></translation>
+        <translation>Виберіть відповідну точку у головному вікні.</translation>
     </message>
 </context>
 <context>
     <name>BackgroundImageInfoDialog</name>
     <message>
         <source>Background Image Position</source>
-        <translation type="unfinished"></translation>
+        <translation>Положення фонового зображення</translation>
     </message>
     <message>
         <source>Method of designation</source>
-        <translation type="unfinished"></translation>
+        <translation>Спосіб позначення</translation>
     </message>
     <message>
         <source>Specify bottom-left vertex position, scale, and rotate angle</source>
-        <translation type="unfinished"></translation>
+        <translation>Вкажіть положення нижньої лівої вершини, масштаб і кут повороту</translation>
     </message>
     <message>
         <source>Specify bottom-left and bottom-right vertex positions</source>
-        <translation type="unfinished"></translation>
+        <translation>Вкажіть нижнє ліве та нижнє праворуч положення вершин</translation>
     </message>
     <message>
         <source>Bottom-left vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Ліва знизу вершина</translation>
     </message>
     <message>
         <source>X:</source>
-        <translation type="unfinished"></translation>
+        <translation>X:</translation>
     </message>
     <message>
         <source>Y:</source>
-        <translation type="unfinished"></translation>
+        <translation>Y:</translation>
     </message>
     <message>
         <source>Bottom-right vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Верхня справа внизу</translation>
     </message>
     <message>
         <source>Scale:</source>
-        <translation type="unfinished"></translation>
+        <translation>Масштаб:</translation>
     </message>
     <message>
         <source>Rotate Angle:</source>
-        <translation type="unfinished"></translation>
+        <translation>Кут повороту:</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Specify the distance in meters that corresponds to the width of one pixel of the image.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Вкажіть відстань у метрах, що відповідає ширині одного пікселя зображення. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Specify the angle of image bottom edge against X-axis.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Вкажіть кут нижнього краю зображення щодо осі X. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
 </context>
 <context>
     <name>BackgroundImageInfoGeoreferenceDialog</name>
     <message>
         <source>Georeference</source>
-        <translation type="unfinished"></translation>
+        <translation>Геопосилання</translation>
     </message>
     <message>
         <source>PushButton</source>
-        <translation type="unfinished"></translation>
+        <translation>Натиснути кнопку</translation>
     </message>
     <message>
         <source>Hide</source>
-        <translation type="unfinished"></translation>
+        <translation>Сховати</translation>
     </message>
     <message>
         <source>Show</source>
-        <translation type="unfinished"></translation>
+        <translation>Показати</translation>
     </message>
 </context>
 <context>
     <name>ColorTransferFunctionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Форма</translation>
     </message>
     <message>
         <source>Attribute</source>
-        <translation type="unfinished"></translation>
+        <translation>Атрибут</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Колір</translation>
     </message>
 </context>
 <context>
     <name>GcpTableModel</name>
     <message>
         <source>srcX</source>
-        <translation type="unfinished"></translation>
+        <translation>srcX</translation>
     </message>
     <message>
         <source>srcY</source>
-        <translation type="unfinished"></translation>
+        <translation>srcY</translation>
     </message>
     <message>
         <source>dstX</source>
-        <translation type="unfinished"></translation>
+        <translation>dstX</translation>
     </message>
     <message>
         <source>dstY</source>
-        <translation type="unfinished"></translation>
+        <translation>dstY</translation>
     </message>
 </context>
 <context>
     <name>GeoData</name>
     <message>
         <source>Edit &amp;Name...</source>
-        <translation type="unfinished"></translation>
+        <translation>Змінити ім'я (&amp;N)...</translation>
     </message>
 </context>
 <context>
     <name>GeoDataBackground</name>
     <message>
         <source>Default</source>
-        <translation type="unfinished"></translation>
+        <translation>За замовчуванням</translation>
     </message>
     <message>
         <source>Edit value...</source>
-        <translation type="unfinished"></translation>
+        <translation>Змінити значення...</translation>
     </message>
     <message>
         <source>Edit %1 default value</source>
-        <translation type="unfinished"></translation>
+        <translation>Редагувати %1 значення за замовчуванням</translation>
     </message>
     <message>
         <source>Please input new default value.</source>
-        <translation type="unfinished"></translation>
+        <translation>Будь ласка, введіть нове значення за замовчуванням.</translation>
     </message>
     <message>
         <source>Background edit value</source>
-        <translation type="unfinished"></translation>
+        <translation>Значення редагування фону</translation>
     </message>
 </context>
 <context>
     <name>GeoDataBackgroundComplexCreator</name>
     <message>
         <source>Background</source>
-        <translation type="unfinished"></translation>
+        <translation>Довідка</translation>
     </message>
 </context>
 <context>
     <name>GeoDataBackgroundEditDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Діалог</translation>
     </message>
     <message>
         <source>Minimum value of geographic data</source>
-        <translation type="unfinished"></translation>
+        <translation>Мінімальне значення географічних даних</translation>
     </message>
     <message>
         <source>Maximum value of geographic data</source>
-        <translation type="unfinished"></translation>
+        <translation>Максимальне значення географічних даних</translation>
     </message>
     <message>
         <source>Custom value</source>
-        <translation type="unfinished"></translation>
+        <translation>Спеціальне значення</translation>
     </message>
 </context>
 <context>
     <name>GeoreferenceView::ImageInfo</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Увага</translation>
     </message>
     <message>
         <source>No point is selected.</source>
-        <translation type="unfinished"></translation>
+        <translation>Точка не обрана.</translation>
     </message>
     <message>
         <source>No point can be further deleted.</source>
-        <translation type="unfinished"></translation>
+        <translation>Жодна точка не може бути видалена далі.</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Інформація</translation>
     </message>
     <message>
         <source>Select a point on Georeference dialog.</source>
-        <translation type="unfinished"></translation>
+        <translation>Виберіть точку в діалоговому вікні геореференції.</translation>
     </message>
 </context>
 <context>
     <name>GraphicsWindowDataItem</name>
     <message>
         <source>Object Browser Item Change</source>
-        <translation type="unfinished"></translation>
+        <translation>Зміна елемента браузера об’єктів</translation>
     </message>
 </context>
 <context>
     <name>GraphicsWindowDataModel</name>
     <message>
         <source>Operation ToolBar</source>
-        <translation type="unfinished"></translation>
+        <translation>Операційна панель інструментів</translation>
     </message>
 </context>
 <context>
     <name>GridAttributeDimensionComboboxSelectWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Форма</translation>
     </message>
     <message>
         <source>label:</source>
-        <translation type="unfinished"></translation>
+        <translation>мітка:</translation>
     </message>
 </context>
 <context>
     <name>GridAttributeDimensionTimeSliderSelectWidget</name>
     <message>
         <source>Step &amp;Backward</source>
-        <translation type="unfinished"></translation>
+        <translation>Крок назад (&amp;B)</translation>
     </message>
     <message>
         <source>Step &amp;Forward</source>
-        <translation type="unfinished"></translation>
+        <translation>Крок вперед (&amp;F)</translation>
     </message>
     <message>
         <source>&amp;Reset</source>
-        <translation type="unfinished"></translation>
+        <translation>Скинути (&amp;R)</translation>
     </message>
     <message>
         <source>Go to &amp;Last Step</source>
-        <translation type="unfinished"></translation>
+        <translation>Перейдіть до останнього кроку (&amp;L)</translation>
     </message>
     <message>
         <source>&amp;Start/Stop Animation</source>
-        <translation type="unfinished"></translation>
+        <translation>Почати/зупинити анімацію (&amp;S)</translation>
     </message>
     <message>
         <source>S&amp;top Animation</source>
-        <translation type="unfinished"></translation>
+        <translation>Зупинити анімацію (&amp;T)</translation>
     </message>
     <message>
         <source>&amp;Animation Speed Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Налаштування швидкості анімації (&amp;A)...</translation>
     </message>
 </context>
 <context>
     <name>GridAttributeEditDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Діалог</translation>
     </message>
     <message>
         <source>TextLabel</source>
-        <translation type="unfinished"></translation>
+        <translation>TextLabel</translation>
     </message>
 </context>
 <context>
     <name>GridAttributeEditNameAndValueDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Діалог</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ім'я:</translation>
     </message>
     <message>
         <source>TextLabel</source>
-        <translation type="unfinished"></translation>
+        <translation>TextLabel</translation>
     </message>
 </context>
 <context>
     <name>GridAttributeEditWidget</name>
     <message>
         <source>Edit grid attribute value(s)</source>
-        <translation type="unfinished"></translation>
+        <translation>Редагувати значення атрибутів сітки</translation>
     </message>
 </context>
 <context>
     <name>GridAttributeVariationEditDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Діалог</translation>
     </message>
     <message>
         <source>TextLabel</source>
-        <translation type="unfinished"></translation>
+        <translation>TextLabel</translation>
     </message>
 </context>
 <context>
     <name>GridAttributeVariationEditWidget</name>
     <message>
         <source>Edit grid attribute value(s)</source>
-        <translation type="unfinished"></translation>
+        <translation>Редагувати значення атрибутів сітки</translation>
     </message>
 </context>
 <context>
     <name>GridCellAttributePropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Діалог</translation>
     </message>
 </context>
 <context>
     <name>GridComplexConditionDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Діалог</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Додати (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Видалити (&amp;D)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Увага</translation>
     </message>
     <message>
         <source>Name has to consist of only English characters.</source>
-        <translation type="unfinished"></translation>
+        <translation>Назва має складатися тільки з англійських символів.</translation>
     </message>
     <message>
         <source>There must be one group at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>Має бути принаймні одна група.</translation>
     </message>
 </context>
 <context>
     <name>GridComplexConditionGroupEditDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Діалог</translation>
     </message>
     <message>
         <source>Target:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ціль:</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Увага</translation>
     </message>
     <message>
         <source>Modifications you made will be discarded.</source>
-        <translation type="unfinished"></translation>
+        <translation>Внесені вами зміни буде відкинуто.</translation>
     </message>
 </context>
 <context>
     <name>GridComplexConditionGroupRealEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Форма</translation>
     </message>
     <message>
         <source>Targets</source>
-        <translation type="unfinished"></translation>
+        <translation>Цілі</translation>
     </message>
 </context>
 <context>
     <name>GridComplexConditionWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Форма</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ім'я:</translation>
     </message>
     <message>
         <source>Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Налаштування</translation>
     </message>
     <message>
         <source>Use as Default Value</source>
-        <translation type="unfinished"></translation>
+        <translation>Використовувати як значення за замовчуванням</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Колір:</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingCondition</name>
     <message>
         <source>&amp;Grid Creating Condition</source>
-        <translation type="unfinished"></translation>
+        <translation>Умова створення сітки (&amp;G)</translation>
     </message>
 </context>
 <context>
     <name>GridNodeAttributePropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Діалог</translation>
     </message>
     <message>
         <source>Contour setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Налаштування контуру</translation>
+    </message>
+</context>
+<context>
+    <name>InputConditionCgnsFileSelectDialog</name>
+    <message>
+        <source>Select Input CGNS File</source>
+        <translation>Виберіть Вхідний файл CGNS</translation>
+    </message>
+    <message>
+        <source>Information</source>
+        <translation>Інформація</translation>
+    </message>
+    <message>
+        <source>Do you want to import grid from the CGNS file?</source>
+        <translation>Ви хочете імпортувати сітку з файлу CGNS?</translation>
+    </message>
+    <message>
+        <source>Select CGNS file</source>
+        <translation>Виберіть файл CGNS</translation>
+    </message>
+    <message>
+        <source>Please select from which CGNS file to read grid.</source>
+        <translation>Виберіть, з якого файлу CGNS читати сітку.</translation>
     </message>
 </context>
 <context>
     <name>InputConditionContainerSet</name>
     <message>
         <source>Definition node is not stored</source>
-        <translation type="unfinished"></translation>
+        <translation>Вузол визначення не зберігається</translation>
     </message>
     <message>
-        <source>Wrong valueType &quot;%1&quot; is set.</source>
-        <translation type="unfinished"></translation>
+        <source>Wrong valueType "%1" is set.</source>
+        <translation>Неправильний тип значення "%1"встановлено.</translation>
     </message>
     <message>
-        <source>Wrong conditionType &quot;%1&quot;is set.</source>
-        <translation type="unfinished"></translation>
+        <source>Wrong conditionType "%1"is set.</source>
+        <translation>Неправильний тип Тип "%1"встановлено.</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
 %1: %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Під час завантаження файлу визначення вирішувача сталася помилка. %1 : %2</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Помилка</translation>
     </message>
 </context>
 <context>
     <name>InputConditionDialog</name>
     <message>
         <source>Calculation Condition</source>
-        <translation type="unfinished"></translation>
+        <translation>Умова розрахунку</translation>
     </message>
     <message>
         <source>&amp;Save and Close</source>
-        <translation type="unfinished"></translation>
+        <translation>Зберегти та закрити (&amp;S)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Помилка</translation>
     </message>
     <message>
         <source>This CGNS file is created for %1 version %2. It is not compatible with the current solver.</source>
-        <translation type="unfinished"></translation>
+        <translation>Цей файл CGNS створено для %1 версії %2. Він не сумісний з поточним розв'язувачем.</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Увага</translation>
     </message>
     <message>
         <source>This CGNS file does not have solver information. We can not check whether this CGNS file is compatible with the solver. If it is not compatible, maybe only some part of the conditions will be imported.
 Do you really want to import this file?</source>
-        <translation type="unfinished"></translation>
+        <translation>Цей файл CGNS не містить інформації про розв’язувач. Ми не можемо перевірити, чи сумісний цей файл CGNS з розв’язувачем. Якщо він не сумісний, можливо, буде імпортовано лише деяку частину умов. Ви дійсно хочете імпортувати цей файл?</translation>
     </message>
     <message>
         <source>This CGNS file does not contain calculation condition data.</source>
-        <translation type="unfinished"></translation>
+        <translation>Цей файл CGNS не містить даних обчислювальних даних.</translation>
     </message>
     <message>
         <source>Are you sure you want to reset all calculation conditions to default values?</source>
-        <translation type="unfinished"></translation>
+        <translation>Ви впевнені, що хочете скинути всі умови розрахунку до значень за замовчуванням?</translation>
     </message>
     <message>
         <source>The solver is running currently, so you can not save calculation condition. Please press Cancel button.</source>
-        <translation type="unfinished"></translation>
+        <translation>Розв’язувач зараз працює, тому зберегти умову розрахунку не вдається. Будь ласка, натисніть кнопку Скасувати.</translation>
     </message>
     <message>
         <source>Modifications you made will be discarded.</source>
-        <translation type="unfinished"></translation>
+        <translation>Внесені вами зміни буде відкинуто.</translation>
     </message>
     <message>
         <source>Error occured while saving.</source>
-        <translation type="unfinished"></translation>
+        <translation>Під час збереження сталася помилка.</translation>
     </message>
 </context>
 <context>
     <name>InputConditionPageList</name>
     <message>
         <source>Groups</source>
-        <translation type="unfinished"></translation>
+        <translation>Групи</translation>
     </message>
 </context>
 <context>
     <name>InputConditionWidgetCgnsFile</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Форма</translation>
     </message>
     <message>
         <source>...</source>
-        <translation type="unfinished"></translation>
+        <translation>...</translation>
     </message>
     <message>
         <source>Solver Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Назва вирішувача:</translation>
     </message>
     <message>
         <source>---</source>
-        <translation type="unfinished"></translation>
+        <translation>---</translation>
     </message>
     <message>
         <source>Solver Version:</source>
-        <translation type="unfinished"></translation>
+        <translation>Версія вирішувача:</translation>
     </message>
     <message>
         <source>Grid Type:</source>
-        <translation type="unfinished"></translation>
+        <translation>Тип сітки:</translation>
     </message>
     <message>
         <source>Grid Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Розмір сітки:</translation>
     </message>
     <message>
         <source>Number of results:</source>
-        <translation type="unfinished"></translation>
+        <translation>Кількість результатів:</translation>
     </message>
     <message>
         <source>Structured</source>
-        <translation type="unfinished"></translation>
+        <translation>Структурований</translation>
     </message>
     <message>
         <source>Unstructured</source>
-        <translation type="unfinished"></translation>
+        <translation>Неструктурований</translation>
     </message>
     <message>
         <source>Select File</source>
-        <translation type="unfinished"></translation>
+        <translation>Виберіть Файл</translation>
     </message>
 </context>
 <context>
     <name>InputConditionWidgetCgnsResult</name>
     <message>
         <source>(CGNS file is not selected)</source>
-        <translation type="unfinished"></translation>
+        <translation>(Файл CGNS не вибрано)</translation>
     </message>
     <message>
         <source>(There is no result)</source>
-        <translation type="unfinished"></translation>
+        <translation>(Результату немає)</translation>
     </message>
 </context>
 <context>
     <name>InputConditionWidgetCheckbox</name>
     <message>
         <source>Enabled</source>
-        <translation type="unfinished"></translation>
+        <translation>Увімкнено</translation>
     </message>
 </context>
 <context>
     <name>InputConditionWidgetFilename</name>
     <message>
         <source>Select File</source>
-        <translation type="unfinished"></translation>
+        <translation>Виберіть Файл</translation>
     </message>
 </context>
 <context>
     <name>InputConditionWidgetFoldername</name>
     <message>
         <source>Select Directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Виберіть каталог</translation>
     </message>
 </context>
 <context>
     <name>InputConditionWidgetFunctionalDialog</name>
     <message>
         <source>Calculation Condition</source>
-        <translation type="unfinished"></translation>
+        <translation>Умова розрахунку</translation>
     </message>
     <message>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Додати</translation>
     </message>
     <message>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Видалити</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation type="unfinished"></translation>
+        <translation>Імпорт (&amp;I)</translation>
     </message>
     <message>
         <source>Import Web</source>
-        <translation type="unfinished"></translation>
+        <translation>Імпортувати Інтернет</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation type="unfinished"></translation>
+        <translation>Експорт (&amp;E)</translation>
     </message>
     <message>
         <source>Clear</source>
-        <translation type="unfinished"></translation>
+        <translation>Ясно</translation>
     </message>
     <message>
         <source>%1 at row %2: The value %3 is smaller than minimum value %4</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 при ряду %2 : Значення %3 менше мінімального значення %4</translation>
     </message>
     <message>
         <source>%1 at row %2: The value %3 is larger than maximum value %4</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 при ряду %2 : Значення %3 більше максимального значення %4</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Помилка</translation>
     </message>
     <message>
         <source>Error occured while opening the file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Під час відкриття файлу сталася помилка.</translation>
     </message>
     <message>
         <source>Ctrl+C</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+C</translation>
     </message>
     <message>
         <source>Ctrl+V</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+V</translation>
     </message>
     <message>
         <source>%1 are values for spans. For example value input at 2nd row is for span between 1st row and 2nd row.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 є значеннями для прольотів. Наприклад, введення значення у 2 -му рядку призначене для прольоту між 1 -м рядком та 2 -м рядком.</translation>
     </message>
     <message>
         <source>Choose a text file</source>
-        <translation type="unfinished"></translation>
+        <translation>Виберіть текстовий файл</translation>
     </message>
     <message>
         <source>Text files (*.csv *.txt);;All files (*.*)</source>
-        <translation type="unfinished"></translation>
+        <translation>Текстові файли (*.csv *.txt);;All files (*.*)</translation>
     </message>
     <message>
         <source>Specify file name to save</source>
-        <translation type="unfinished"></translation>
+        <translation>Вкажіть назву файлу для збереження</translation>
     </message>
     <message>
         <source>CSV files (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>Файли CSV (*.csv)</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Інформація</translation>
     </message>
     <message>
         <source>Values are copied to clipboard.</source>
-        <translation type="unfinished"></translation>
+        <translation>Значення копіюються в буфер обміну.</translation>
     </message>
     <message>
         <source>File %1 is updated after imported to calculation condition %2. Do you want to import the updated file?</source>
-        <translation type="unfinished"></translation>
+        <translation>Файл %1 оновлюється після імпорту до стану розрахунку %2. Ви хочете імпортувати оновлений файл?</translation>
     </message>
     <message>
-        <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
-        <translation type="unfinished"></translation>
+        <source>You can copy and paste the values, with shortcut "Ctrl + C" and "Ctrl + V"</source>
+        <translation>Ви можете скопіювати та вставити значення за допомогою ярликів "Ctrl + C" та "Ctrl + V"</translation>
     </message>
     <message>
         <source>The following problems found: 
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Виявлено такі проблеми:</translation>
     </message>
     <message>
         <source>
  ... and other %1 errors</source>
-        <translation type="unfinished"></translation>
+        <translation>... та інші %1 помилки</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Увага</translation>
     </message>
 </context>
 <context>
     <name>InputConditionWidgetFunctionalDownloadDialog</name>
     <message>
         <source>Download</source>
-        <translation type="unfinished"></translation>
+        <translation>Завантажити</translation>
     </message>
     <message>
         <source>Site Number:</source>
-        <translation type="unfinished"></translation>
+        <translation>Номер сайту:</translation>
     </message>
     <message>
         <source>Start Date:</source>
-        <translation type="unfinished"></translation>
+        <translation>Дата початку:</translation>
     </message>
     <message>
         <source>End Date:</source>
-        <translation type="unfinished"></translation>
+        <translation>Дата закінчення:</translation>
     </message>
     <message>
         <source>Test</source>
-        <translation type="unfinished"></translation>
+        <translation>Тестування</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Помилка</translation>
     </message>
     <message>
         <source>Please enter a site number.</source>
-        <translation type="unfinished"></translation>
+        <translation>Будь ласка, введіть номер сайту.</translation>
     </message>
     <message>
         <source>Invalid site number.</source>
-        <translation type="unfinished"></translation>
+        <translation>Недійсний номер сайту.</translation>
     </message>
     <message>
         <source>Start date not prior to end date.</source>
-        <translation type="unfinished"></translation>
+        <translation>Дата початку не раніше дати завершення.</translation>
     </message>
     <message>
         <source>Import failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Не вдалося імпортувати</translation>
     </message>
     <message>
         <source>No data to import.</source>
-        <translation type="unfinished"></translation>
+        <translation>Немає даних для імпорту.</translation>
     </message>
 </context>
 <context>
     <name>LookupTableEditWidget</name>
     <message>
         <source>Colormap Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Налаштування кольорової карти</translation>
     </message>
     <message>
         <source>Value range</source>
-        <translation type="unfinished"></translation>
+        <translation>Діапазон значень</translation>
     </message>
     <message>
         <source>Automatic</source>
-        <translation type="unfinished"></translation>
+        <translation>Автоматичний</translation>
     </message>
     <message>
         <source>Fill upper area</source>
-        <translation type="unfinished"></translation>
+        <translation>Заповніть верхню область</translation>
     </message>
     <message>
         <source>Min:</source>
-        <translation type="unfinished"></translation>
+        <translation>Хв:</translation>
     </message>
     <message>
         <source>Fill lower area</source>
-        <translation type="unfinished"></translation>
+        <translation>Заповніть нижню область</translation>
     </message>
     <message>
         <source>Division Number:</source>
-        <translation type="unfinished"></translation>
+        <translation>Номер підрозділу:</translation>
     </message>
     <message>
         <source>Max:</source>
-        <translation type="unfinished"></translation>
+        <translation>Макс.</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation type="unfinished"></translation>
+        <translation>Кольорова карта</translation>
     </message>
 </context>
 <context>
     <name>MeasuredData</name>
     <message>
         <source>Importing Measured Data...</source>
-        <translation type="unfinished"></translation>
+        <translation>Імпорт вимірюваних даних...</translation>
     </message>
     <message>
         <source>Error occured while opening the file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Під час відкриття файлу сталася помилка.</translation>
     </message>
     <message>
-        <source>The first two columns must be &quot;X&quot; and &quot;Y&quot;.</source>
-        <translation type="unfinished"></translation>
+        <source>The first two columns must be "X" and "Y".</source>
+        <translation>Перші два стовпці мають бути "X" та "Y".</translation>
     </message>
     <message>
         <source>The data file has to consist of only English characters.</source>
-        <translation type="unfinished"></translation>
+        <translation>Файл даних повинен складатися лише з англійських символів.</translation>
     </message>
     <message>
         <source>Wrong data found: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Знайдено неправильні дані: %1</translation>
     </message>
 </context>
 <context>
     <name>MousePositionWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Форма</translation>
     </message>
     <message>
         <source>X: </source>
-        <translation type="unfinished"></translation>
+        <translation>X:</translation>
     </message>
     <message>
         <source>Y: </source>
-        <translation type="unfinished"></translation>
+        <translation>Y:</translation>
     </message>
     <message>
         <source>X: ------</source>
-        <translation type="unfinished"></translation>
+        <translation>X: ------</translation>
     </message>
     <message>
         <source>Y: ------</source>
-        <translation type="unfinished"></translation>
+        <translation>Y: ------</translation>
     </message>
 </context>
 <context>
     <name>OffsetSettingDialog</name>
     <message>
         <source>Offset Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Налаштування зміщення</translation>
     </message>
     <message>
         <source>X:</source>
-        <translation type="unfinished"></translation>
+        <translation>X:</translation>
     </message>
     <message>
         <source>Y:</source>
-        <translation type="unfinished"></translation>
+        <translation>Y:</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Увага</translation>
     </message>
     <message>
         <source>X value is not appropriate. Please input more simple value.</source>
-        <translation type="unfinished"></translation>
+        <translation>Значення X не підходить. Будь ласка, введіть більш просте значення.</translation>
     </message>
     <message>
         <source>Y value is not appropriate. Please input more simple value.</source>
-        <translation type="unfinished"></translation>
+        <translation>Значення Y не підходить. Будь ласка, введіть більш просте значення.</translation>
     </message>
 </context>
 <context>
     <name>PostBaseSelectingDialog</name>
     <message>
         <source>Calculation Result Selection</source>
-        <translation type="unfinished"></translation>
+        <translation>Вибір результату розрахунку</translation>
     </message>
     <message>
         <source>Please select which calculation result to use.</source>
-        <translation type="unfinished"></translation>
+        <translation>Виберіть, який результат розрахунку використовувати.</translation>
     </message>
     <message>
         <source>One dimensional calculation</source>
-        <translation type="unfinished"></translation>
+        <translation>Одновимірний розрахунок</translation>
     </message>
     <message>
         <source>Two dimensional calculation</source>
-        <translation type="unfinished"></translation>
+        <translation>Двовимірний розрахунок</translation>
     </message>
     <message>
         <source>Three dimensional calculation</source>
-        <translation type="unfinished"></translation>
+        <translation>Тривимірний розрахунок</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResult</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Помилка</translation>
     </message>
     <message>
         <source>Error occured: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Сталася помилка: %1</translation>
     </message>
     <message>
         <source>Checking argument for %1 failed. Invalid arguments: %2.</source>
-        <translation type="unfinished"></translation>
+        <translation>Перевірка аргументу для %1 не вдалося. Недійсні аргументи: %2.</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultArgumentEditDialog</name>
     <message>
         <source>Edit Simple Operation Result Variable</source>
-        <translation type="unfinished"></translation>
+        <translation>Редагувати змінну результату простої операції</translation>
     </message>
     <message>
         <source>Calculation Result:</source>
-        <translation type="unfinished"></translation>
+        <translation>Результат розрахунку:</translation>
     </message>
     <message>
         <source>Variable name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Назва змінної:</translation>
     </message>
     <message>
         <source>Value for testing:</source>
-        <translation type="unfinished"></translation>
+        <translation>Значення для тестування:</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Увага</translation>
     </message>
     <message>
         <source>Variable name is not input.</source>
-        <translation type="unfinished"></translation>
+        <translation>Назва змінної не вводиться.</translation>
     </message>
     <message>
         <source>This variable name is already used</source>
-        <translation type="unfinished"></translation>
+        <translation>Ця назва змінної вже використовується</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultEditDialog</name>
     <message>
         <source>Edit Simple Operation Result</source>
-        <translation type="unfinished"></translation>
+        <translation>Редагувати простий результат операції</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ім'я:</translation>
     </message>
     <message>
         <source>Position:</source>
-        <translation type="unfinished"></translation>
+        <translation>Посада:</translation>
     </message>
     <message>
         <source>Calculation results for input</source>
-        <translation type="unfinished"></translation>
+        <translation>Результати розрахунків для введення</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation type="unfinished"></translation>
+        <translation>Додати (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Видалити (&amp;D)</translation>
     </message>
     <message>
         <source>Definition of variable</source>
-        <translation type="unfinished"></translation>
+        <translation>Визначення змінної</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Ви можете визначити змінну за допомогою мови JavaScript. Див. &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -decoration: underline; color:#0000ff; "&gt; тут &lt;/span&gt; &lt;/a&gt; для деталей. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
-        <translation type="unfinished"></translation>
+        <translation>Тестування</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can test the definition by clicking this. If error occurs while parsing the definition, the error message is shown. When the definition is parsed successfully, the value calculated using the &amp;quot;Value for testing&amp;quot; for each input is shown.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Ви можете перевірити визначення, натиснувши це. Якщо під час розбору визначення виникає помилка, відображається повідомлення про помилку. Коли визначення успішно розбирається, значення обчислюється за допомогою &amp; quot; Значення для тестуванняquot; для кожного входу показано. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>----</source>
-        <translation type="unfinished"></translation>
+        <translation>----</translation>
     </message>
     <message>
         <source>Result name</source>
-        <translation type="unfinished"></translation>
+        <translation>Назва результату</translation>
     </message>
     <message>
         <source>Variable name</source>
-        <translation type="unfinished"></translation>
+        <translation>Назва змінної</translation>
     </message>
     <message>
         <source>Value for testing</source>
-        <translation type="unfinished"></translation>
+        <translation>Значення для тестування</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation type="unfinished"></translation>
+        <translation>Вузол сітки</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation type="unfinished"></translation>
+        <translation>Ячейка сітки</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation type="unfinished"></translation>
+        <translation>Частинка</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Увага</translation>
     </message>
     <message>
         <source>Name is not input.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ім'я не вводиться.</translation>
     </message>
     <message>
         <source>This name is already used</source>
-        <translation type="unfinished"></translation>
+        <translation>Ця назва вже використовується</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation type="unfinished"></translation>
+        <translation>Ви впевнені, що хочете видалити %1 ?</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultListDialog</name>
     <message>
         <source>Simple Operation Result List</source>
-        <translation type="unfinished"></translation>
+        <translation>Список простих операцій</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Назва</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished"></translation>
+        <translation>Позиція</translation>
     </message>
     <message>
         <source>&amp;Up</source>
-        <translation type="unfinished"></translation>
+        <translation>Вгору (&amp;U)</translation>
     </message>
     <message>
         <source>&amp;Down</source>
-        <translation type="unfinished"></translation>
+        <translation>Вниз (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Примітка &lt;/span&gt;: Порядок у списку важливий. У визначенні ви можете використовувати значення обчислень простих операцій як змінну, яка з’являється раніше у списку. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation type="unfinished"></translation>
+        <translation>Додати (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation type="unfinished"></translation>
+        <translation>Редагувати (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Видалити (&amp;D)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Увага</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation type="unfinished"></translation>
+        <translation>Ви впевнені, що хочете видалити %1 ?</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation type="unfinished"></translation>
+        <translation>Вузол сітки</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation type="unfinished"></translation>
+        <translation>Ячейка сітки</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation type="unfinished"></translation>
+        <translation>Частинка</translation>
     </message>
 </context>
 <context>
     <name>PostDataExportDialog</name>
     <message>
         <source>Export Calculation Result</source>
-        <translation type="unfinished"></translation>
+        <translation>Результат розрахунку експорту</translation>
     </message>
     <message>
         <source>Format:</source>
-        <translation type="unfinished"></translation>
+        <translation>Формат:</translation>
     </message>
     <message>
         <source>VTK files (ASCII)</source>
-        <translation type="unfinished"></translation>
+        <translation>Файли VTK (ASCII)</translation>
     </message>
     <message>
         <source>VTK files (Binary)</source>
-        <translation type="unfinished"></translation>
+        <translation>Файли VTK (двійкові)</translation>
     </message>
     <message>
         <source>CSV files</source>
-        <translation type="unfinished"></translation>
+        <translation>Файли CSV</translation>
     </message>
     <message>
         <source>Topography Files (*.tpo)</source>
-        <translation type="unfinished"></translation>
+        <translation>Топографічні файли (*.tpo)</translation>
     </message>
     <message>
         <source>ESRI Shapefiles</source>
-        <translation type="unfinished"></translation>
+        <translation>Файли форм ESRI</translation>
     </message>
     <message>
         <source>Output folder:</source>
-        <translation type="unfinished"></translation>
+        <translation>Вихідна папка:</translation>
     </message>
     <message>
         <source>...</source>
-        <translation type="unfinished"></translation>
+        <translation>...</translation>
     </message>
     <message>
         <source>Prefix:</source>
-        <translation type="unfinished"></translation>
+        <translation>Префікс:</translation>
     </message>
     <message>
         <source>Output file:</source>
-        <translation type="unfinished"></translation>
+        <translation>Вихідний файл:</translation>
     </message>
     <message>
         <source>Time</source>
-        <translation type="unfinished"></translation>
+        <translation>Час</translation>
     </message>
     <message>
         <source>All timesteps</source>
-        <translation type="unfinished"></translation>
+        <translation>Усі кроки</translation>
     </message>
     <message>
         <source>Start:</source>
-        <translation type="unfinished"></translation>
+        <translation>Початок:</translation>
     </message>
     <message>
         <source>End:</source>
-        <translation type="unfinished"></translation>
+        <translation>Кінець:</translation>
     </message>
     <message>
         <source>Skip rate :</source>
-        <translation type="unfinished"></translation>
+        <translation>Швидкість пропуску:</translation>
     </message>
     <message>
         <source>Region</source>
-        <translation type="unfinished"></translation>
+        <translation>Регіон</translation>
     </message>
     <message>
         <source>Full region</source>
-        <translation type="unfinished"></translation>
+        <translation>Повний регіон</translation>
     </message>
     <message>
         <source>I Min</source>
-        <translation type="unfinished"></translation>
+        <translation>Я в</translation>
     </message>
     <message>
         <source>I Max</source>
-        <translation type="unfinished"></translation>
+        <translation>I Макс</translation>
     </message>
     <message>
         <source>J Min</source>
-        <translation type="unfinished"></translation>
+        <translation>J Мін</translation>
     </message>
     <message>
         <source>J Max</source>
-        <translation type="unfinished"></translation>
+        <translation>J Макс</translation>
     </message>
     <message>
         <source>K Min</source>
-        <translation type="unfinished"></translation>
+        <translation>K хв</translation>
     </message>
     <message>
         <source>K Max</source>
-        <translation type="unfinished"></translation>
+        <translation>K Макс</translation>
     </message>
     <message>
         <source>Show &amp;Detail</source>
-        <translation type="unfinished"></translation>
+        <translation>Показати подробиці (&amp;D)</translation>
     </message>
     <message>
         <source>Select Folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Виберіть папку</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Увага</translation>
     </message>
     <message>
         <source>Folder %1 does not exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>Папка %1 не існує.</translation>
     </message>
     <message>
         <source>&amp;Hide Detail</source>
-        <translation type="unfinished"></translation>
+        <translation>Приховати деталі (&amp;H)</translation>
     </message>
 </context>
 <context>
     <name>PostIterationSteps</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Помилка</translation>
     </message>
     <message>
         <source>Error occured while loading calculation result.</source>
-        <translation type="unfinished"></translation>
+        <translation>Під час завантаження результату розрахунку сталася помилка.</translation>
     </message>
 </context>
 <context>
     <name>PostSolutionInfo</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Помилка</translation>
     </message>
     <message>
         <source>Error occured while loading calculation result.</source>
-        <translation type="unfinished"></translation>
+        <translation>Під час завантаження результату розрахунку сталася помилка.</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Увага</translation>
     </message>
     <message>
         <source>Loading calculation result for visualization failed. Please try again later, or wait until end of calculation.</source>
-        <translation type="unfinished"></translation>
+        <translation>Не вдалося завантажити результат розрахунку для візуалізації. Повторіть спробу пізніше або зачекайте до завершення розрахунку.</translation>
     </message>
     <message>
         <source>No calculation result exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>Результатів розрахунків немає.</translation>
     </message>
     <message>
         <source>Calculation result does not contain grid data.</source>
-        <translation type="unfinished"></translation>
+        <translation>Результат розрахунку не містить даних сітки.</translation>
     </message>
     <message>
         <source>Export Calculation Result</source>
-        <translation type="unfinished"></translation>
+        <translation>Результат розрахунку експорту</translation>
     </message>
     <message>
         <source>Saving calculation result as VTK files...</source>
-        <translation type="unfinished"></translation>
+        <translation>Збереження результату розрахунку у вигляді файлів VTK...</translation>
     </message>
     <message>
         <source>Saving calculation result as CSV files...</source>
-        <translation type="unfinished"></translation>
+        <translation>Збереження результату розрахунку у вигляді файлів CSV...</translation>
     </message>
     <message>
         <source>Saving calculation result as ESRI Shapefiles...</source>
-        <translation type="unfinished"></translation>
+        <translation>Збереження результату розрахунку у вигляді файлів форми ESRI...</translation>
     </message>
     <message>
         <source>Error occured while saving %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Під час збереження сталася помилка %1</translation>
     </message>
 </context>
 <context>
     <name>PostStringResult</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Помилка</translation>
     </message>
     <message>
         <source>Error occured: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Сталася помилка: %1</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Увага</translation>
     </message>
     <message>
         <source>I, J, K, index for label is reset because the grid size is changed.</source>
-        <translation type="unfinished"></translation>
+        <translation>I, J, K, індекс для мітки скидається, оскільки розмір сітки змінено.</translation>
     </message>
 </context>
 <context>
     <name>PostStringResultArgumentEditDialog</name>
     <message>
         <source>Edit String Result Argument</source>
-        <translation type="unfinished"></translation>
+        <translation>Редагувати аргумент результату рядка</translation>
     </message>
     <message>
         <source>Position:</source>
-        <translation type="unfinished"></translation>
+        <translation>Посада:</translation>
     </message>
     <message>
         <source>Result Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Назва результату:</translation>
     </message>
     <message>
         <source>Variable Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Назва змінної:</translation>
     </message>
     <message>
         <source>I:</source>
-        <translation type="unfinished"></translation>
+        <translation>Я:</translation>
     </message>
     <message>
         <source>J:</source>
-        <translation type="unfinished"></translation>
+        <translation>J:</translation>
     </message>
     <message>
         <source>K:</source>
-        <translation type="unfinished"></translation>
+        <translation>K:</translation>
     </message>
     <message>
         <source>Index:</source>
-        <translation type="unfinished"></translation>
+        <translation>Індекс:</translation>
     </message>
     <message>
         <source>Value for testing</source>
-        <translation type="unfinished"></translation>
+        <translation>Значення для тестування</translation>
     </message>
     <message>
         <source>Global</source>
-        <translation type="unfinished"></translation>
+        <translation>Глобальний</translation>
     </message>
     <message>
         <source>Node</source>
-        <translation type="unfinished"></translation>
+        <translation>Вузол</translation>
     </message>
     <message>
         <source>Cell</source>
-        <translation type="unfinished"></translation>
+        <translation>Клітинка</translation>
     </message>
     <message>
         <source>EdgeI</source>
-        <translation type="unfinished"></translation>
+        <translation>EdgeI</translation>
     </message>
     <message>
         <source>EdgeJ</source>
-        <translation type="unfinished"></translation>
+        <translation>EdgeJ</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Увага</translation>
     </message>
     <message>
         <source>Variable name is empty.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ім'я змінної порожнє.</translation>
     </message>
 </context>
 <context>
     <name>PostStringResultEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Форма</translation>
     </message>
     <message>
         <source>Calculation results for input</source>
-        <translation type="unfinished"></translation>
+        <translation>Результати розрахунків для введення</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation type="unfinished"></translation>
+        <translation>Тип</translation>
     </message>
     <message>
         <source>Result name</source>
-        <translation type="unfinished"></translation>
+        <translation>Назва результату</translation>
     </message>
     <message>
         <source>Variable name</source>
-        <translation type="unfinished"></translation>
+        <translation>Назва змінної</translation>
     </message>
     <message>
         <source>Index</source>
-        <translation type="unfinished"></translation>
+        <translation>Покажчик</translation>
     </message>
     <message>
         <source>Value for Testing</source>
-        <translation type="unfinished"></translation>
+        <translation>Значення для тестування</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation type="unfinished"></translation>
+        <translation>Додати (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation type="unfinished"></translation>
+        <translation>Редагувати (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete...</source>
-        <translation type="unfinished"></translation>
+        <translation>Видалити (&amp;D)...</translation>
     </message>
     <message>
         <source>Definition of output</source>
-        <translation type="unfinished"></translation>
+        <translation>Визначення результату</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Ви можете визначити змінну за допомогою мови JavaScript. Див. &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -decoration: underline; color:#0000ff; "&gt; тут &lt;/span&gt; &lt;/a&gt; для деталей. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
-        <translation type="unfinished"></translation>
+        <translation>Тестування</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Увага</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation type="unfinished"></translation>
+        <translation>Ви впевнені, що хочете видалити %1 ?</translation>
     </message>
     <message>
         <source>Global</source>
-        <translation type="unfinished"></translation>
+        <translation>Глобальний</translation>
     </message>
     <message>
         <source>Node</source>
-        <translation type="unfinished"></translation>
+        <translation>Вузол</translation>
     </message>
     <message>
         <source>Cell</source>
-        <translation type="unfinished"></translation>
+        <translation>Клітинка</translation>
     </message>
     <message>
         <source>EdgeI</source>
-        <translation type="unfinished"></translation>
+        <translation>EdgeI</translation>
     </message>
     <message>
         <source>EdgeJ</source>
-        <translation type="unfinished"></translation>
+        <translation>EdgeJ</translation>
     </message>
     <message>
         <source>EdgeK</source>
-        <translation type="unfinished"></translation>
+        <translation>EdgeK</translation>
     </message>
 </context>
 <context>
     <name>PostTimeSteps</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Помилка</translation>
     </message>
     <message>
         <source>Error occured while loading calculation result.</source>
-        <translation type="unfinished"></translation>
+        <translation>Під час завантаження результату розрахунку сталася помилка.</translation>
     </message>
 </context>
 <context>
     <name>PostZoneSelectingDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Діалог</translation>
     </message>
     <message>
         <source>Grid Type:</source>
-        <translation type="unfinished"></translation>
+        <translation>Тип сітки:</translation>
     </message>
     <message>
         <source>&amp;Region:</source>
-        <translation type="unfinished"></translation>
+        <translation>Регіон: (&amp;R)</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorDataItem</name>
     <message>
         <source>Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Сітка</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCreatingConditionDataItemInterface</name>
     <message>
         <source>Grid Creating Condition</source>
-        <translation type="unfinished"></translation>
+        <translation>Умова створення сітки</translation>
     </message>
 </context>
 <context>
     <name>ProjectData</name>
     <message>
         <source>Loading project file...</source>
-        <translation type="unfinished"></translation>
+        <translation>Завантаження файлу проекту...</translation>
     </message>
     <message>
         <source>Saving project file...</source>
-        <translation type="unfinished"></translation>
+        <translation>Збереження файлу проекту...</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Помилка</translation>
     </message>
     <message>
         <source>Could not overwrite %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Не вдалося перезаписати %1.</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Увага</translation>
     </message>
     <message>
         <source>Saving project...</source>
-        <translation type="unfinished"></translation>
+        <translation>Збереження проекту...</translation>
     </message>
     <message>
         <source>Opening project...</source>
-        <translation type="unfinished"></translation>
+        <translation>Відкриття проекту...</translation>
     </message>
     <message>
         <source>Elevation grid attribute is not defined for grid type %1. Grid I/O functions, grid creating functions may not work correctly for these grid types.</source>
-        <translation type="unfinished"></translation>
+        <translation>Атрибут сітки висот не визначено для типу сітки %1. Функції введення -виведення сітки, функції створення сітки можуть працювати неправильно для цих типів сітки.</translation>
     </message>
 </context>
 <context>
     <name>ProjectMainFile</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Помилка</translation>
     </message>
     <message>
         <source>Solution %1 already exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>Рішення %1 вже існує.</translation>
     </message>
     <message>
         <source>CGNS file whose name contains characters other than alphabets and numbers can not be imported.</source>
-        <translation type="unfinished"></translation>
+        <translation>Файл CGNS, ім’я якого містить інші символи, окрім алфавітів та цифр, неможливо імпортувати.</translation>
     </message>
     <message>
         <source>Export CGNS file</source>
-        <translation type="unfinished"></translation>
+        <translation>Експортуйте файл CGNS</translation>
     </message>
     <message>
         <source>CGNS file (*.cgns)</source>
-        <translation type="unfinished"></translation>
+        <translation>Файл CGNS (*.cgns)</translation>
     </message>
     <message>
         <source>Exporting CGNS file failed. Specified file is locked by other process.</source>
-        <translation type="unfinished"></translation>
+        <translation>Не вдалося експортувати файл CGNS. Вказаний файл блокується іншим процесом.</translation>
     </message>
     <message>
         <source>Error occured while opening CGNS file in project file : %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Сталася помилка під час відкриття файлу CGNS у файлі проекту: %1</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Увага</translation>
     </message>
     <message>
         <source>%1 Saving project file failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 Не вдалося зберегти файл проекту.</translation>
     </message>
     <message>
         <source>All images(*.jpg *.jpeg *.png *.tif);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif)</source>
-        <translation type="unfinished"></translation>
+        <translation>Усі зображення (*.jpg *.jpeg *.png *.tif);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif)</translation>
     </message>
     <message>
         <source>Open Image file</source>
-        <translation type="unfinished"></translation>
+        <translation>Відкрийте файл зображення</translation>
     </message>
     <message>
         <source>A background image with the same name already exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>Фонове зображення з такою ж назвою вже існує.</translation>
     </message>
     <message>
         <source>The background image was not added. Please try again.</source>
-        <translation type="unfinished"></translation>
+        <translation>Фонове зображення не додано. Будь ласка спробуйте ще раз.</translation>
     </message>
     <message>
         <source>Invalid image file is specified.</source>
-        <translation type="unfinished"></translation>
+        <translation>Вказано недійсний файл зображення.</translation>
     </message>
     <message>
         <source>This project file cannot be read, because it was created by too old iRIC (version %1).</source>
-        <translation type="unfinished"></translation>
+        <translation>Цей файл проекту неможливо прочитати, оскільки він був створений занадто старим iRIC (версія %1 ).</translation>
     </message>
     <message>
         <source>This project file cannot be read, because it was created by newer iRIC (version %1).</source>
-        <translation type="unfinished"></translation>
+        <translation>Цей файл проекту неможливо прочитати, оскільки він був створений новішою версією iRIC (версія %1 ).</translation>
     </message>
     <message>
         <source>Text Files (*.csv *.txt);;All Files (*.*)</source>
-        <translation type="unfinished"></translation>
+        <translation>Текстові файли (*.csv *.txt);;All Files (*.*)</translation>
     </message>
     <message>
         <source>Open Measured Data File</source>
-        <translation type="unfinished"></translation>
+        <translation>Відкрийте файл даних вимірювань</translation>
     </message>
     <message>
         <source>Error occured while loading %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Під час завантаження сталася помилка %1.</translation>
     </message>
     <message>
         <source>This file is for solver %1 %2. It is not compatible with the solver you are using, so maybe importing this file will fail. Do you really want to import this file?</source>
-        <translation type="unfinished"></translation>
+        <translation>Цей файл призначений для вирішення %1 %2. Він не сумісний з вирішувачем, який ви використовуєте, тому, можливо, імпорт цього файлу не вдасться. Ви дійсно хочете імпортувати цей файл?</translation>
     </message>
     <message>
         <source>There is no visualization/graph windows.</source>
-        <translation type="unfinished"></translation>
+        <translation>Немає вікон візуалізації/графіка.</translation>
     </message>
     <message>
         <source>File %1 could not be opened.</source>
-        <translation type="unfinished"></translation>
+        <translation>Файл %1 не вдалося відкрити.</translation>
     </message>
     <message>
         <source>Coordinate system not selected.</source>
-        <translation type="unfinished"></translation>
+        <translation>Не вибрано систему координат.</translation>
     </message>
 </context>
 <context>
     <name>ProjectMainFile::Impl</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Увага</translation>
     </message>
     <message>
         <source> : no such file.</source>
-        <translation type="unfinished"></translation>
+        <translation>: немає такого файлу.</translation>
     </message>
 </context>
 <context>
     <name>ProjectTimeSettingDialog</name>
     <message>
         <source>Date for t = 0 setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Дата для налаштування t = 0</translation>
     </message>
     <message>
         <source>Time for t = 0:</source>
-        <translation type="unfinished"></translation>
+        <translation>Час для t = 0:</translation>
     </message>
     <message>
         <source>Not specified</source>
-        <translation type="unfinished"></translation>
+        <translation>Не вказано</translation>
     </message>
     <message>
         <source>Time display format</source>
-        <translation type="unfinished"></translation>
+        <translation>Формат відображення часу</translation>
     </message>
 </context>
 <context>
     <name>ProjectWorkspace</name>
     <message>
-        <source>Workspace &quot;%1&quot; has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
-        <translation type="unfinished"></translation>
+        <source>Workspace "%1" has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
+        <translation>Робоча область "%1"має %2 папки проекту, які, здається, більше не використовуються. Ви хочете їх видалити?</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Інформація</translation>
     </message>
 </context>
 <context>
     <name>PropertyBrowser</name>
     <message>
         <source>Attribute Browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Переглядач атрибутів</translation>
     </message>
 </context>
 <context>
     <name>PropertyBrowserView</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Форма</translation>
     </message>
     <message>
         <source>Indices</source>
-        <translation type="unfinished"></translation>
+        <translation>Індекси</translation>
     </message>
     <message>
         <source>1</source>
-        <translation type="unfinished"></translation>
+        <translation>1</translation>
     </message>
     <message>
         <source>J:</source>
-        <translation type="unfinished"></translation>
+        <translation>J:</translation>
     </message>
     <message>
         <source>I:</source>
-        <translation type="unfinished"></translation>
+        <translation>Я:</translation>
     </message>
     <message>
         <source>Index:</source>
-        <translation type="unfinished"></translation>
+        <translation>Індекс:</translation>
     </message>
     <message>
         <source>Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Координати</translation>
     </message>
     <message>
         <source>X:</source>
-        <translation type="unfinished"></translation>
+        <translation>X:</translation>
     </message>
     <message>
         <source>Y:</source>
-        <translation type="unfinished"></translation>
+        <translation>Y:</translation>
     </message>
     <message>
         <source>Attributes:</source>
-        <translation type="unfinished"></translation>
+        <translation>Атрибути:</translation>
     </message>
     <message>
         <source>Attribute Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Назва атрибута</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation type="unfinished"></translation>
+        <translation>Цінність</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
         <source>Background Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Колір фону</translation>
     </message>
     <message>
         <source>Draw</source>
-        <translation type="unfinished"></translation>
+        <translation>Нічия</translation>
     </message>
     <message>
         <source>Move down item</source>
-        <translation type="unfinished"></translation>
+        <translation>Перемістити елемент вниз</translation>
     </message>
     <message>
         <source>Move up item</source>
-        <translation type="unfinished"></translation>
+        <translation>Перемістити елемент вгору</translation>
     </message>
     <message>
         <source>Arbitrary Move</source>
-        <translation type="unfinished"></translation>
+        <translation>Довільний рух</translation>
     </message>
     <message>
         <source>Reallocate Background Image</source>
-        <translation type="unfinished"></translation>
+        <translation>Перерозподілити фонове зображення</translation>
     </message>
     <message>
         <source>Set offset</source>
-        <translation type="unfinished"></translation>
+        <translation>Встановити зміщення</translation>
     </message>
     <message>
         <source>Default</source>
-        <translation type="unfinished"></translation>
+        <translation>За замовчуванням</translation>
     </message>
     <message>
         <source>(Undefined)</source>
-        <translation type="unfinished"></translation>
+        <translation>(Не визначено)</translation>
     </message>
 </context>
 <context>
     <name>ScalarsToColorsEditDialog</name>
     <message>
         <source>Color Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Налаштування кольору</translation>
     </message>
 </context>
 <context>
     <name>SolverDefinition::Impl</name>
     <message>
         <source>%1 Grids</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 Сітки</translation>
     </message>
 </context>
 <context>
     <name>Structured2DGrid</name>
     <message>
         <source>An edge line intersects with that of another cell in this grid.</source>
-        <translation type="unfinished"></translation>
+        <translation>Крайова лінія перетинається з лінією іншої комірки в цій сітці.</translation>
     </message>
     <message>
         <source>Aspect ratio of grid cell exceed limit value %1 in more than one cell.</source>
-        <translation type="unfinished"></translation>
+        <translation>Співвідношення осередків сітки перевищує граничне значення %1 у більш ніж одній клітині.</translation>
     </message>
     <message>
         <source>Variation of grid cell edge lengths exceed limit values (I-direction: %1, J-direction: %2) in more than one cell.</source>
-        <translation type="unfinished"></translation>
+        <translation>Зміна довжини країв осередків сітки перевищує граничні значення (напрямок I: %1, Напрямок J: %2 ) у декількох клітинках.</translation>
     </message>
     <message>
         <source>Angle of grid cell edge fall below limit value %1 in more than one cell.</source>
-        <translation type="unfinished"></translation>
+        <translation>Кут краю осередку сітки опускається нижче граничного значення %1 у більш ніж одній клітині.</translation>
     </message>
     <message>
         <source>* Cells where edges intersect</source>
-        <translation type="unfinished"></translation>
+        <translation>* Клітинки, де краї перетинаються</translation>
     </message>
     <message>
         <source>Not exist</source>
-        <translation type="unfinished"></translation>
+        <translation>Не існує</translation>
     </message>
     <message>
         <source>* Cells where aspect ratio of cell edges exceed %1</source>
-        <translation type="unfinished"></translation>
+        <translation>* Клітинки, де співвідношення сторін країв комірки перевищує %1</translation>
     </message>
     <message>
         <source>I, J, Aspect ratio</source>
-        <translation type="unfinished"></translation>
+        <translation>I, J, Співвідношення сторін</translation>
     </message>
     <message>
         <source>Edge length too small</source>
-        <translation type="unfinished"></translation>
+        <translation>Занадто мала довжина краю</translation>
     </message>
     <message>
         <source>* Cells where angle of cell vertex is below %1</source>
-        <translation type="unfinished"></translation>
+        <translation>* Клітинки, де кут вершини комірки нижче %1</translation>
     </message>
     <message>
         <source>I, J, Angle</source>
-        <translation type="unfinished"></translation>
+        <translation>I, J, Кут</translation>
     </message>
     <message>
         <source>* Cells where variation of cell length along i-direction exceed %1</source>
-        <translation type="unfinished"></translation>
+        <translation>* Клітини, де зміна довжини комірки вздовж напрямку i перевищує %1</translation>
     </message>
     <message>
         <source>I, J, Variation</source>
-        <translation type="unfinished"></translation>
+        <translation>I, J, Варіація</translation>
     </message>
     <message>
         <source>* Cells where variation of cell length along j-direction exceed %1</source>
-        <translation type="unfinished"></translation>
+        <translation>* Клітинки, де зміна довжини комірки вздовж напрямку j перевищує %1</translation>
     </message>
 </context>
 <context>
     <name>TmsImageGroupDataItem</name>
     <message>
         <source>Background Images (Internet)</source>
-        <translation type="unfinished"></translation>
+        <translation>Фонові зображення (Інтернет)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Увага</translation>
     </message>
     <message>
         <source>To get background image from internet, please specify the coordiyate system of the project, from the following menu.
  File -&gt; Property</source>
-        <translation type="unfinished"></translation>
+        <translation>Щоб отримати фонове зображення з Інтернету, будь ласка, вкажіть систему координацій проекту з наступного меню. Файл -&gt; Властивість</translation>
     </message>
     <message>
         <source>Background Image change</source>
-        <translation type="unfinished"></translation>
+        <translation>Зміна фонового зображення</translation>
     </message>
 </context>
 <context>
     <name>TmsImageSettingManager</name>
     <message>
         <source>Google Map (Road)</source>
-        <translation type="unfinished"></translation>
+        <translation>Карта Google (дорога)</translation>
     </message>
     <message>
         <source>Google Map (Satellite)</source>
-        <translation type="unfinished"></translation>
+        <translation>Карта Google (супутник)</translation>
     </message>
     <message>
         <source>Google Map (Hybrid)</source>
-        <translation type="unfinished"></translation>
+        <translation>Карта Google (гібридна)</translation>
     </message>
     <message>
         <source>Google Map (Terrain)</source>
-        <translation type="unfinished"></translation>
+        <translation>Карта Google (ландшафт)</translation>
     </message>
     <message>
         <source>Open Street Map</source>
-        <translation type="unfinished"></translation>
+        <translation>Відкрийте карту вулиць</translation>
     </message>
     <message>
         <source>GSI (Standard) (Japan only)</source>
-        <translation type="unfinished"></translation>
+        <translation>GSI (стандарт) (лише Японія)</translation>
     </message>
     <message>
         <source>GSI (Pale) (Japan only)</source>
-        <translation type="unfinished"></translation>
+        <translation>GSI (блідий) (лише Японія)</translation>
     </message>
     <message>
         <source>GSI (English) (Japan only)</source>
-        <translation type="unfinished"></translation>
+        <translation>GSI (англійська) (лише Японія)</translation>
     </message>
     <message>
         <source>GSI (Relief) (Japan only)</source>
-        <translation type="unfinished"></translation>
+        <translation>GSI (полегшення) (лише Японія)</translation>
     </message>
     <message>
         <source>GSI (Ortho images) (Japan only)</source>
-        <translation type="unfinished"></translation>
+        <translation>GSI (зображення Ortho) (лише Японія)</translation>
     </message>
 </context>
 <context>
     <name>iRICMetaData</name>
     <message>
         <source>Build number of the version number is not specified.</source>
-        <translation type="unfinished"></translation>
+        <translation>Номер збірки номера версії не вказано.</translation>
     </message>
 </context>
 </TS>

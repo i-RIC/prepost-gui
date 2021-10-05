@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="es_ES">
 <context>
     <name>GridCreatingConditionCenterAndWidth</name>
@@ -21,11 +19,11 @@
     </message>
     <message>
         <source>&amp;Import Center Line...</source>
-        <translation type="unfinished"></translation>
+        <translation>Importar línea central (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export Center Line...</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportar línea central (&amp;E)...</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -45,7 +43,7 @@
     </message>
     <message>
         <source>Center line not defined yet</source>
-        <translation type="unfinished"></translation>
+        <translation>Línea central aún no definida</translation>
     </message>
     <message>
         <source>Add New Center Line Point</source>
@@ -77,7 +75,7 @@
     </message>
     <message>
         <source>Please define grid center line. Grid center line can be defined as polygonal line by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
-        <translation>Define linea del centro de cuadricula. Linea del centro de cuadricula puede ser definando como linea poligonal con mouse-clic. Termina definando con doble-clic, o presionando &quot;Enter&quot;.</translation>
+        <translation>Define linea del centro de cuadricula. Linea del centro de cuadricula puede ser definando como linea poligonal con mouse-clic. Termina definando con doble-clic, o presionando "Enter".</translation>
     </message>
     <message>
         <source>Edit Center Line Coordinates</source>
@@ -96,7 +94,7 @@
     </message>
     <message>
         <source>m</source>
-        <translation type="unfinished"></translation>
+        <translation>metro</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -104,7 +102,7 @@
     </message>
     <message>
         <source>nJ should be even. incrementing by one.</source>
-        <translation type="unfinished"></translation>
+        <translation>nJ debería ser parejo. incrementándose en uno.</translation>
     </message>
 </context>
 <context>

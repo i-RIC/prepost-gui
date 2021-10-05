@@ -1,170 +1,168 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="hi_IN">
 <context>
     <name>GeoDataPolyLineGroup</name>
     <message>
         <source>&amp;Sort</source>
-        <translation type="unfinished"></translation>
+        <translation>तरह (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>पंक्तियां (&amp;L)</translation>
     </message>
     <message>
         <source>Line%1</source>
-        <translation type="unfinished"></translation>
+        <translation>रेखा %1</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyLineGroupCreator</name>
     <message>
         <source>Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>पंक्तियां</translation>
     </message>
     <message>
         <source>Lines%1</source>
-        <translation type="unfinished"></translation>
+        <translation>पंक्तियां %1</translation>
     </message>
     <message>
         <source>Deleting this item will also remove any graph windows associated with this data.  Are you sure you want to delete this item?</source>
-        <translation type="unfinished"></translation>
+        <translation>इस आइटम को मिटाने से इस डेटा से जुड़ी सभी ग्राफ़ विंडो भी निकल जाएंगी. क्या आप सुनिश्चित रूप से इस आइटम को मिटाना चाहते हैं?</translation>
     </message>
     <message>
         <source>line</source>
-        <translation type="unfinished"></translation>
+        <translation>रेखा</translation>
     </message>
     <message>
         <source>Line</source>
-        <translation type="unfinished"></translation>
+        <translation>रेखा</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyLineGroupCsvExporter</name>
     <message>
         <source>CSV file</source>
-        <translation type="unfinished"></translation>
+        <translation>सीएसवी फ़ाइल</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>त्रुटि</translation>
     </message>
     <message>
         <source>Error occured while exporting to %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>को निर्यात करते समय त्रुटि हुई %1.</translation>
     </message>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>सीएसवी फ़ाइल (*.csv)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyLineGroupCsvImporter</name>
     <message>
         <source>CSV file (Polylines)</source>
-        <translation type="unfinished"></translation>
+        <translation>सीएसवी फ़ाइल (पॉलीलाइन)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>त्रुटि</translation>
     </message>
     <message>
         <source>Error occured while opening %1</source>
-        <translation type="unfinished"></translation>
+        <translation>खोलते समय त्रुटि हुई %1</translation>
     </message>
     <message>
         <source>Error occured while reading header line. Make sure the file is saved in UTF-8 encoding.</source>
-        <translation type="unfinished"></translation>
+        <translation>हेडर लाइन पढ़ते समय त्रुटि हुई। सुनिश्चित करें कि फ़ाइल UTF-8 एन्कोडिंग में सहेजी गई है।</translation>
     </message>
     <message>
         <source>Error occured while reading header line. Header should have 5 columns at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>हेडर लाइन पढ़ते समय त्रुटि हुई। हैडर में कम से कम 5 कॉलम होने चाहिए।</translation>
     </message>
     <message>
         <source>Error occured while reading header line. Header should have 6 columns at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>हेडर लाइन पढ़ते समय त्रुटि हुई। हैडर में कम से कम 6 कॉलम होने चाहिए।</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
-        <translation type="unfinished"></translation>
+        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
+        <translation>हेडर लाइन पढ़ते समय त्रुटि हुई। स्तंभ %1 होना चाहिए "%2", लेकिन "%3" दिया हुआ है।</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. There is no data.</source>
-        <translation type="unfinished"></translation>
+        <translation>लाइन पढ़ते समय त्रुटि हुई %1. कोई डेटा नहीं है।</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Line should have two points at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>लाइन पढ़ते समय त्रुटि हुई %1. रेखा में कम से कम दो बिंदु होने चाहिए।</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Make sure the file is saved in UTF-8 encoding.</source>
-        <translation type="unfinished"></translation>
+        <translation>लाइन पढ़ते समय त्रुटि हुई %1. सुनिश्चित करें कि फ़ाइल UTF-8 एन्कोडिंग में सहेजी गई है।</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Data should have 5 columns at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>लाइन पढ़ते समय त्रुटि हुई %1. डेटा में कम से कम 5 कॉलम होने चाहिए।</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Data should have 6 columns at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>लाइन पढ़ते समय त्रुटि हुई %1. डेटा में कम से कम 6 कॉलम होने चाहिए।</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;lid&quot; value in line %1. &quot;lid&quot; should be integer value but &quot;%2&quot; is specified.</source>
-        <translation type="unfinished"></translation>
+        <source>Error occured while reading "lid" value in line %1. "lid" should be integer value but "%2" is specified.</source>
+        <translation>पंक्ति में "ढक्कन" मान पढ़ते समय त्रुटि हुई %1. "ढक्कन" पूर्णांक मान होना चाहिए लेकिन "%2" निर्दिष्ट किया जाता है।</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;vid&quot; value in line %1. &quot;vid&quot; should be integer value but &quot;%2&quot; is specified.</source>
-        <translation type="unfinished"></translation>
+        <source>Error occured while reading "vid" value in line %1. "vid" should be integer value but "%2" is specified.</source>
+        <translation>पंक्ति में "vid" मान पढ़ते समय त्रुटि हुई %1. "vid" पूर्णांक मान होना चाहिए लेकिन "%2" निर्दिष्ट किया जाता है।</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation type="unfinished"></translation>
+        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
+        <translation>पंक्ति में "x" मान पढ़ते समय त्रुटि हुई %1. "x" वास्तविक मान होना चाहिए लेकिन "%2" निर्दिष्ट किया जाता है।</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation type="unfinished"></translation>
+        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
+        <translation>पंक्ति में "y" मान पढ़ते समय त्रुटि हुई %1. "y" वास्तविक मूल्य होना चाहिए लेकिन "%2" निर्दिष्ट किया जाता है।</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation type="unfinished"></translation>
+        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
+        <translation>पंक्ति में "मान" मान पढ़ते समय त्रुटि हुई %1. "मूल्य" वास्तविक मूल्य होना चाहिए लेकिन "%2" निर्दिष्ट किया जाता है।</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. &quot;name&quot; should be the same for lines where &quot;lid&quot; values are the same.</source>
-        <translation type="unfinished"></translation>
+        <source>Error occured while reading line %1. "name" should be the same for lines where "lid" values are the same.</source>
+        <translation>लाइन पढ़ते समय त्रुटि हुई %1. "नाम" उन पंक्तियों के लिए समान होना चाहिए जहां "ढक्कन" मान समान हों।</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. &quot;value&quot; should be the same for lines where &quot;lid&quot; values are the same.</source>
-        <translation type="unfinished"></translation>
+        <source>Error occured while reading line %1. "value" should be the same for lines where "lid" values are the same.</source>
+        <translation>लाइन पढ़ते समय त्रुटि हुई %1. "मान" उन पंक्तियों के लिए समान होना चाहिए जहाँ "ढक्कन" मान समान हों।</translation>
     </message>
     <message>
         <source>CSV file (Lines) (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>सीएसवी फ़ाइल (पंक्तियाँ) (*.csv)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyLineGroupShpExporter</name>
     <message>
         <source>ESRI Shapefile</source>
-        <translation type="unfinished"></translation>
+        <translation>ईएसआरआई शेपफाइल</translation>
     </message>
     <message>
         <source>ESRI Shapefile (*.shp)</source>
-        <translation type="unfinished"></translation>
+        <translation>ईएसआरआई शेपफाइल (*.shp)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyLineGroupShpImporter</name>
     <message>
         <source>ESRI Shapefile (Polylines)</source>
-        <translation type="unfinished"></translation>
+        <translation>ESRI शेपफाइल (पॉलीलाइन्स)</translation>
     </message>
     <message>
         <source>Polyline%1</source>
-        <translation type="unfinished"></translation>
+        <translation>पॉलीलाइन %1</translation>
     </message>
     <message>
         <source>ESRI Shapefile (Lines) (*.shp)</source>
-        <translation type="unfinished"></translation>
+        <translation>ESRI शेपफाइल (लाइनें) (*.shp)</translation>
     </message>
 </context>
 </TS>

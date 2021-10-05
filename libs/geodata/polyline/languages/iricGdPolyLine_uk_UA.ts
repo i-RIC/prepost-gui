@@ -1,171 +1,169 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="uk_UA">
 <context>
     <name>GeoDataPolyLine</name>
     <message>
         <source>&amp;Add Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Додайте вершину (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Видалити Vertex (&amp;R)</translation>
     </message>
     <message>
         <source>Edit &amp;Coordinates...</source>
-        <translation type="unfinished"></translation>
+        <translation>Редагувати координати (&amp;C)...</translation>
     </message>
     <message>
         <source>Poly&amp;line</source>
-        <translation type="unfinished"></translation>
+        <translation>Полілінія (&amp;L)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Увага</translation>
     </message>
     <message>
         <source>Polyline must have two vertices at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>Полілінія повинна мати принаймні дві вершини.</translation>
     </message>
     <message>
         <source>Finish Defining Polyline</source>
-        <translation type="unfinished"></translation>
+        <translation>Завершити визначення полілінії</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Інформація</translation>
     </message>
     <message>
         <source>Please define polyline by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
-        <translation type="unfinished"></translation>
+        <translation>Будь ласка, визначте полілінійку клацанням миші. Завершіть визначення, двічі клацнувши або натиснувши клавішу повернення.</translation>
     </message>
     <message>
         <source>polyline</source>
-        <translation type="unfinished"></translation>
+        <translation>полілінія</translation>
     </message>
     <message>
         <source>Polyline</source>
-        <translation type="unfinished"></translation>
+        <translation>Полілінія</translation>
     </message>
     <message>
         <source>Insert PolyLine Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Вставте вершину PolyLine</translation>
     </message>
     <message>
         <source>PolyLine Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Координати PolyLine</translation>
     </message>
     <message>
         <source>Edit PolyLine Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Редагування координат PolyLine</translation>
     </message>
     <message>
         <source>Finish Defining PolyLine</source>
-        <translation type="unfinished"></translation>
+        <translation>Завершіть визначення PolyLine</translation>
     </message>
     <message>
         <source>Move PolyLine</source>
-        <translation type="unfinished"></translation>
+        <translation>Перемістити PolyLine</translation>
     </message>
     <message>
         <source>Move PolyLine Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Перемістити вершину PolyLine</translation>
     </message>
     <message>
         <source>Add New PolyLine Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Додати нову точку PolyLine</translation>
     </message>
     <message>
         <source>Remove PolyLine Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Видаліть вершину PolyLine</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyLineCreator</name>
     <message>
         <source>Polyline</source>
-        <translation type="unfinished"></translation>
+        <translation>Полілінія</translation>
     </message>
     <message>
         <source>Polyline%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Полілінія %1</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyLineImporter</name>
     <message>
         <source>ESRI Shapefile (Polyline)</source>
-        <translation type="unfinished"></translation>
+        <translation>Файл формату ESRI (полілінія)</translation>
     </message>
     <message>
         <source>ESRI Shapefile (*.shp) (Polyline)</source>
-        <translation type="unfinished"></translation>
+        <translation>Файл формату ESRI (*.shp) (Polyline)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Помилка</translation>
     </message>
     <message>
         <source>The shape type contained in this shape file is not polyline.</source>
-        <translation type="unfinished"></translation>
+        <translation>Тип фігури, що міститься у цьому файлі фігур, не є полілінійним.</translation>
     </message>
     <message>
         <source>Opening %1 failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Відкриття %1 не вдалося.</translation>
     </message>
     <message>
         <source>The number of polylines mismatches between shp file and dbf file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Кількість невідповідностей поліліній між файлом shp та файлом dbf.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyLineImporterSettingDialog</name>
     <message>
         <source>PolyLine Import Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Налаштування імпорту PolyLine</translation>
     </message>
     <message>
         <source>Encoding:</source>
-        <translation type="unfinished"></translation>
+        <translation>Кодування:</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Назва</translation>
     </message>
     <message>
         <source>Load from Shape file attribute</source>
-        <translation type="unfinished"></translation>
+        <translation>Завантажити з атрибута файлу Shape</translation>
     </message>
     <message>
         <source>Name is set automatically (ex. Polyline1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ім'я встановлюється автоматично (наприклад, Polyline1)</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation type="unfinished"></translation>
+        <translation>Цінність</translation>
     </message>
     <message>
         <source>Specify value</source>
-        <translation type="unfinished"></translation>
+        <translation>Вкажіть значення</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Увага</translation>
     </message>
     <message>
         <source>You cannot specify the same column for both Name and Value.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ви не можете вказати один і той же стовпець як для Імені, так і для Значення.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyLineShapeExporter</name>
     <message>
         <source>ESRI Shapefile</source>
-        <translation type="unfinished"></translation>
+        <translation>Файл формату ESRI</translation>
     </message>
     <message>
         <source>ESRI Shape file (*.shp)</source>
-        <translation type="unfinished"></translation>
+        <translation>Файл форми ESRI (*.shp)</translation>
     </message>
 </context>
 </TS>

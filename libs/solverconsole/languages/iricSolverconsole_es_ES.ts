@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="es_ES">
 <context>
     <name>SolverConsoleWindow</name>
@@ -37,7 +35,7 @@
     </message>
     <message>
         <source>This project is opened in post only mode. You can not run the solver.</source>
-        <translation type="unfinished"></translation>
+        <translation>Este proyecto se abre en modo solo publicación. No puede ejecutar el solucionador.</translation>
     </message>
     <message>
         <source>We recommend that you save the project before starting the solver. Do you want to save?</source>
@@ -45,7 +43,7 @@
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>Solver executable file %1 does not exists.</source>
@@ -89,7 +87,7 @@
     </message>
     <message>
         <source>%1 seconds have passed, but the solver do not end. Do you want to kill the solver?</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 Han pasado los segundos, pero el solucionador no termina. ¿Quieres matar al solucionador?</translation>
     </message>
     <message>
         <source>Background Color</source>

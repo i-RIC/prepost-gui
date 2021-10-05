@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="zh_CN">
 <context>
     <name>GridCreatingConditionCreatorPoisson</name>
@@ -128,7 +126,7 @@
     </message>
     <message>
         <source>Cross-section data not found. Please define Center Line by yourself.</source>
-        <translation type="unfinished"></translation>
+        <translation>未找到横截面数据。请自行定义中心线。</translation>
     </message>
 </context>
 <context>
@@ -188,7 +186,7 @@
     </message>
     <message>
         <source>m</source>
-        <translation type="unfinished"></translation>
+        <translation>米</translation>
     </message>
     <message>
         <source>Max number of iteration:</source>

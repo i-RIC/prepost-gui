@@ -1,23 +1,21 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="it_IT">
 <context>
     <name>Structured2DGridNaysGridImporter</name>
     <message>
         <source>RIC-Nays Grid file</source>
-        <translation type="unfinished"></translation>
+        <translation>RIC-No, file griglia</translation>
     </message>
     <message>
         <source>RIC-Nays grid file (*.grid)</source>
-        <translation type="unfinished"></translation>
+        <translation>File griglia RIC-Noy (*.grid)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Avvertimento</translation>
     </message>
     <message>
         <source>Cell flag values will not be loaded.</source>
-        <translation type="unfinished"></translation>
+        <translation>I valori dei flag di cella non verranno caricati.</translation>
     </message>
 </context>
 </TS>

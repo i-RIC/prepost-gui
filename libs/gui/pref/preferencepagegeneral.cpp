@@ -102,13 +102,14 @@ void PreferencePageGeneral::setupLanguageComboBox()
 {
 	QComboBox* combo = ui->languageComboBox;
 
+	/*
 	m_locales.append(QLocale(QLocale::English));
 	m_locales.append(QLocale(QLocale::Japanese));
 	m_locales.append(QLocale(QLocale::Chinese));
 	m_locales.append(QLocale(QLocale::Spanish));
 	m_locales.append(QLocale(QLocale::Portuguese, QLocale::Brazil));
+	*/
 
-	/*
 	m_locales.append(QLocale(QLocale::Arabic));
 	m_locales.append(QLocale(QLocale::Basque));
 	m_locales.append(QLocale(QLocale::Bosnian));
@@ -146,7 +147,6 @@ void PreferencePageGeneral::setupLanguageComboBox()
 	m_locales.append(QLocale(QLocale::Thai));
 	m_locales.append(QLocale(QLocale::Turkish));
 	m_locales.append(QLocale(QLocale::Ukrainian));
-	*/
 
 	for (QLocale loc : m_locales) {
 		QString str;

@@ -1,177 +1,175 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="et_EE">
 <context>
     <name>GridCreatingConditionCompoundChannel</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Hoiatus</translation>
     </message>
     <message>
         <source>Polygon must have three vertices at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hulknurgal peab olema vähemalt kolm tippu.</translation>
     </message>
     <message>
         <source>Finish Defining Polygon</source>
-        <translation type="unfinished"></translation>
+        <translation>Lõpeta hulknurga määramine</translation>
     </message>
     <message>
         <source>Polygonal line must have two vertices at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hulknurgal peab olema vähemalt kaks tippu.</translation>
     </message>
     <message>
         <source>Finish Defining Polygonal line</source>
-        <translation type="unfinished"></translation>
+        <translation>Lõpeta hulknurga joone määratlemine</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Teave</translation>
     </message>
     <message>
         <source>Please define grid creating region. Grid creating region can be defined as polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
-        <translation type="unfinished"></translation>
+        <translation>Palun määrake võrgu loomise piirkond. Võrgu loomise piirkonda saab hiireklõpsuga määratleda kui hulknurka. Lõpeta määratlemine topeltklõpsuga või vajutades tagasiklahvi.</translation>
     </message>
     <message>
         <source>Generating grid...</source>
-        <translation type="unfinished"></translation>
+        <translation>Ruudustiku loomine...</translation>
     </message>
     <message>
         <source>Grid creating condition definition not finished yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Võrgu loomise tingimuste määratlus pole veel lõppenud.</translation>
     </message>
     <message>
         <source>Grid creating region polygon shape is invalid.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ruudustikku loova piirkonna hulknurga kuju on sobimatu.</translation>
     </message>
     <message>
         <source>Low water channel region polygon shape is invalid.</source>
-        <translation type="unfinished"></translation>
+        <translation>Madala veekanali piirkonna hulknurga kuju on sobimatu.</translation>
     </message>
     <message>
         <source>Low water channel region have to be inside grid region.</source>
-        <translation type="unfinished"></translation>
+        <translation>Madala veekanali piirkond peab olema võrgu piirkonnas.</translation>
     </message>
     <message>
         <source>Center line have to be inside low water channel region.</source>
-        <translation type="unfinished"></translation>
+        <translation>Keskjoon peab asuma madala veekanali piirkonnas.</translation>
     </message>
     <message>
         <source>Insert Polygon Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Sisestage hulknurga tipp</translation>
     </message>
     <message>
         <source>Insert Polygonal Line Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Sisestage hulknurkse joone tipp</translation>
     </message>
     <message>
         <source>Add New Polygon Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Lisa uus hulknurk</translation>
     </message>
     <message>
         <source>Add New Center Line Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Lisa uus keskjoone punkt</translation>
     </message>
     <message>
         <source>Edit Polygon Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Muuda hulknurga koordinaate</translation>
     </message>
     <message>
         <source>Edit Center Line Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Muuda keskjoone koordinaate</translation>
     </message>
     <message>
         <source>Move Polygon</source>
-        <translation type="unfinished"></translation>
+        <translation>Liiguta hulknurk</translation>
     </message>
     <message>
         <source>Move Polygon Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Liigutage hulknurga tipp</translation>
     </message>
     <message>
         <source>Move Polygonal Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Liigutage hulknurka</translation>
     </message>
     <message>
         <source>Move Polygonal Line Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Liigutage hulknurkse joone tippu</translation>
     </message>
     <message>
         <source>Polygon Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Hulknurga koordinaadid</translation>
     </message>
     <message>
         <source>Polyline Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Mitmejoonelised koordinaadid</translation>
     </message>
     <message>
         <source>Remove Polygon Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Eemaldage hulknurk Vertex</translation>
     </message>
     <message>
         <source>Remove Polygonal Line Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Eemaldage hulknurkse joone tipp</translation>
     </message>
     <message>
         <source>Finish Defining Polygon or Polygonal line</source>
-        <translation type="unfinished"></translation>
+        <translation>Lõpeta hulknurga või hulknurga määramine</translation>
     </message>
     <message>
         <source>Next, please define low water channel region. Water channel can be defined as polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
-        <translation type="unfinished"></translation>
+        <translation>Seejärel määratlege madala veekanali piirkond. Veekanalit saab hiireklõpsuga määratleda kui hulknurka. Lõpeta määratlemine topeltklõpsuga või vajutades tagasiklahvi.</translation>
     </message>
     <message>
         <source>Next, please define grid center line. Grid center line can be defined as polygonal line by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
-        <translation type="unfinished"></translation>
+        <translation>Seejärel määrake võrgu keskjoon. Võrgu keskjoont saab hiireklõpsuga määratleda kui hulknurkset joont. Lõpeta määratlemine topeltklõpsuga või vajutades tagasiklahvi.</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionCompoundChannelAbstractPolygon</name>
     <message>
         <source>Please specify a closed polygon!</source>
-        <translation type="unfinished"></translation>
+        <translation>Palun täpsustage suletud hulknurk!</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionCompoundChannelSettingDialog</name>
     <message>
         <source>Grid Creation</source>
-        <translation type="unfinished"></translation>
+        <translation>Võrgu loomine</translation>
     </message>
     <message>
         <source>Grid division setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Võrgu jaotuse seadistus</translation>
     </message>
     <message>
         <source>Optimization</source>
-        <translation type="unfinished"></translation>
+        <translation>Optimeerimine</translation>
     </message>
     <message>
         <source>&amp;Relaxation:</source>
-        <translation type="unfinished"></translation>
+        <translation>Lõõgastus: (&amp;R)</translation>
     </message>
     <message>
         <source>When grid shape looks divergent, please make this value smaller.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kui ruudustiku kuju tundub erinev, tehke see väärtus väiksemaks.</translation>
     </message>
     <message>
         <source>&amp;Number of Iterations:</source>
-        <translation type="unfinished"></translation>
+        <translation>Korduste arv: (&amp;N)</translation>
     </message>
     <message>
         <source>When you feel the grid is not optimized enough, please try increasing this value.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kui arvate, et võrk pole piisavalt optimeeritud, proovige seda väärtust suurendada.</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionCreatorCompoundChannel</name>
     <message>
         <source>Create compound channel grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Looge liitkanali ruudustik</translation>
     </message>
     <message>
         <source>Please define a polygon as the region to create grid, and another polygon as the low water channel region. Then, please add a polygonal line as river center.
 The low water channel region should be included in grid creation region, andRiver center line should be included in the low water channel region.</source>
-        <translation type="unfinished"></translation>
+        <translation>Palun määrake ruudustiku loomiseks piirkond hulknurgaks ja teise polügooni madala veekanali piirkonnaks. Seejärel lisage jõe keskpunktiks hulknurkne joon. Madala veekanali piirkond tuleks kaasata võrgu loomise piirkonda ja jõe keskjoon tuleks lisada madala veekanali piirkonda.</translation>
     </message>
 </context>
 </TS>

@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="es_ES">
 <context>
     <name>Structured2DGridNaysCSVImporter</name>
@@ -18,7 +16,7 @@
     <message>
         <source>The following columns were ignored.
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Se ignoraron las siguientes columnas. %1</translation>
     </message>
 </context>
 </TS>

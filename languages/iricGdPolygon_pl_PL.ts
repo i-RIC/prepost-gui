@@ -1,172 +1,170 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="pl_PL">
 <context>
     <name>GeoDataPolygon</name>
     <message>
         <source>Add &amp;Hole Region</source>
-        <translation type="unfinished"></translation>
+        <translation>Dodaj obszar otworu (&amp;H)</translation>
     </message>
     <message>
         <source>&amp;Delete Hole Region...</source>
-        <translation type="unfinished"></translation>
+        <translation>Usuń obszar otworu (&amp;D)...</translation>
     </message>
     <message>
         <source>&amp;Copy...</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopiuj (&amp;C)...</translation>
     </message>
     <message>
         <source>&amp;Add Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Dodaj wierzchołek (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Usuń wierzchołek (&amp;R)</translation>
     </message>
     <message>
         <source>Edit &amp;Coordinates...</source>
-        <translation type="unfinished"></translation>
+        <translation>Edytuj współrzędne (&amp;C)...</translation>
     </message>
     <message>
         <source>&amp;Polygon</source>
-        <translation type="unfinished"></translation>
+        <translation>Wielokąt (&amp;P)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Ostrzeżenie</translation>
     </message>
     <message>
         <source>Polygon must have three vertices at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wielokąt musi mieć co najmniej trzy wierzchołki.</translation>
     </message>
     <message>
         <source>Finish Defining Polygon</source>
-        <translation type="unfinished"></translation>
+        <translation>Zakończ definiowanie wieloboku</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informacja</translation>
     </message>
     <message>
         <source>Please define hole region. Hole region can be defined as polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
-        <translation type="unfinished"></translation>
+        <translation>Proszę określić region dziury. Obszar otworu można zdefiniować jako wielokąt, klikając myszką. Zakończ definiowanie przez dwukrotne kliknięcie lub naciśnięcie klawisza powrotu.</translation>
     </message>
     <message>
         <source>Are you sure you want to remove this polygon?</source>
-        <translation type="unfinished"></translation>
+        <translation>Czy na pewno chcesz usunąć ten wielokąt?</translation>
     </message>
     <message>
         <source>Please define polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
-        <translation type="unfinished"></translation>
+        <translation>Proszę zdefiniować wielokąt, klikając myszką. Zakończ definiowanie przez dwukrotne kliknięcie lub naciśnięcie klawisza powrotu.</translation>
     </message>
     <message>
         <source>polygon</source>
-        <translation type="unfinished"></translation>
+        <translation>wielokąt</translation>
     </message>
     <message>
         <source>Polygon</source>
-        <translation type="unfinished"></translation>
+        <translation>Wielokąt</translation>
     </message>
     <message>
         <source>Select Geographic Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Wybierz dane geograficzne</translation>
     </message>
     <message>
         <source>Please select which geographic data to copy this polygon.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wybierz dane geograficzne do skopiowania tego wielokąta.</translation>
     </message>
     <message>
         <source>Add New Hole Polygon</source>
-        <translation type="unfinished"></translation>
+        <translation>Dodaj nowy wielobok otworu</translation>
     </message>
     <message>
         <source>Insert Polygon Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Wstaw wierzchołek wieloboku</translation>
     </message>
     <message>
         <source>Polygon Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Współrzędne wieloboków</translation>
     </message>
     <message>
         <source>Edit Polygon Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Edytuj współrzędne wieloboków</translation>
     </message>
     <message>
         <source>Polygon value change</source>
-        <translation type="unfinished"></translation>
+        <translation>Zmiana wartości wielokąta</translation>
     </message>
     <message>
         <source>Move Polygon</source>
-        <translation type="unfinished"></translation>
+        <translation>Przenieś wielokąt</translation>
     </message>
     <message>
         <source>Move Polygon Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Przenieś wierzchołek wieloboku</translation>
     </message>
     <message>
         <source>Add New Polygon Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Dodaj nowy punkt wieloboku</translation>
     </message>
     <message>
         <source>Remove Polygon Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Usuń wierzchołek wieloboku</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolygonColorSettingDialog</name>
     <message>
         <source>Polygon Color Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Ustawienie koloru wielokąta</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Kolor</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished"></translation>
+        <translation>Koloruj według wartości</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Kolor niestandardowy</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolygonCreator</name>
     <message>
         <source>Polygon</source>
-        <translation type="unfinished"></translation>
+        <translation>Wielokąt</translation>
     </message>
     <message>
         <source>Polygon%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Wielokąt %1</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolygonImporter</name>
     <message>
         <source>ESRI Shapefile (Polygon)</source>
-        <translation type="unfinished"></translation>
+        <translation>Plik kształtu ESRI (wielokąt)</translation>
     </message>
     <message>
         <source>ESRI Shapefile (*.shp) (Polygon)</source>
-        <translation type="unfinished"></translation>
+        <translation>Plik kształtu ESRI (*.shp) (Polygon)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Błąd</translation>
     </message>
     <message>
         <source>The shape type contained in this shape file is not polygon.</source>
-        <translation type="unfinished"></translation>
+        <translation>Typ kształtu zawarty w tym pliku kształtu nie jest wielokątem.</translation>
     </message>
     <message>
         <source>Opening %1 failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Otwarcie %1 przegrany.</translation>
     </message>
     <message>
         <source>The number of polygons mismatches between shp file and dbf file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Liczba niezgodności wielokątów między plikiem shp a plikiem dbf.</translation>
     </message>
     <message>
         <source>%1 th polygon can not be imported. Polygon like below can not be imported:
@@ -175,61 +173,61 @@
 - Lines of polygon intersect each other
 - Hole polygon is outside of region polygon
 - Polygon passes the same point several times</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 Wielokąt nie może być importowany. Wielokąt taki jak poniżej nie może być importowany: - Ma mniej niż trzy punkty - Nie jest zamknięty - Linie wielokąta przecinają się - Wielokąt otworów znajduje się poza regionem wielokąta - Wielokąt przechodzi przez ten sam punkt kilka razy</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Ostrzeżenie</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolygonImporterSettingDialog</name>
     <message>
         <source>Polygon Import Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Ustawienia importu wielokątów</translation>
     </message>
     <message>
         <source>Encoding:</source>
-        <translation type="unfinished"></translation>
+        <translation>Kodowanie:</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nazwa</translation>
     </message>
     <message>
         <source>Load from Shape file attribute</source>
-        <translation type="unfinished"></translation>
+        <translation>Załaduj z atrybutu pliku kształtu</translation>
     </message>
     <message>
         <source>Name is set automatically (ex. Polygon1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Nazwa jest ustawiana automatycznie (np. Polygon1)</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation type="unfinished"></translation>
+        <translation>Wartość</translation>
     </message>
     <message>
         <source>Specify value</source>
-        <translation type="unfinished"></translation>
+        <translation>Określ wartość</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Ostrzeżenie</translation>
     </message>
     <message>
         <source>You cannot specify the same column for both Name and Value.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nie można określić tej samej kolumny zarówno dla nazwy, jak i wartości.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolygonShapeExporter</name>
     <message>
         <source>ESRI Shapefile</source>
-        <translation type="unfinished"></translation>
+        <translation>Plik kształtu ESRI</translation>
     </message>
     <message>
         <source>ESRI Shapefile (*.shp)</source>
-        <translation type="unfinished"></translation>
+        <translation>Plik kształtu ESRI (*.shp)</translation>
     </message>
 </context>
 </TS>

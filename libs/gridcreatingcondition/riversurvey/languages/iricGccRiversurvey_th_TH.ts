@@ -1,203 +1,201 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="th_TH">
 <context>
     <name>GridCreatingConditionCreatorRiverSurvey</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>คำเตือน</translation>
     </message>
     <message>
         <source>Create grid from cross-section data</source>
-        <translation type="unfinished"></translation>
+        <translation>สร้างกริดจากข้อมูลภาคตัดขวาง</translation>
     </message>
     <message>
         <source>The grid shape is automatically defined using cross-section data. You can specify the grid division number, by adding grid creation control points on river crosssections, river center, left bank, and right bank.
 Note: This algorithm is available only when cross-section data is loaded!Please switch algorithm to this, after importing cross-section data.
 </source>
-        <translation type="unfinished"></translation>
+        <translation>รูปร่างกริดถูกกำหนดโดยอัตโนมัติโดยใช้ข้อมูลตัดขวาง คุณสามารถระบุหมายเลขการแบ่งกริด โดยเพิ่มจุดควบคุมการสร้างกริดบนทางแยกของแม่น้ำ ศูนย์กลางแม่น้ำ ฝั่งซ้าย และฝั่งขวา หมายเหตุ: อัลกอริธึมนี้ใช้ได้เฉพาะเมื่อมีการโหลดข้อมูลภาคตัดขวาง! โปรดเปลี่ยนอัลกอริธึมนี้หลังจากนำเข้าข้อมูลตัดขวาง</translation>
     </message>
     <message>
         <source>No cross-section data exists in geographic data now. This algorithmn is not available.</source>
-        <translation type="unfinished"></translation>
+        <translation>ขณะนี้ไม่มีข้อมูลภาคตัดขวางในข้อมูลทางภูมิศาสตร์ อัลกอริทึมนี้ไม่พร้อมใช้งาน</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionRiverSurvey</name>
     <message>
         <source>Delete Selected Control Points</source>
-        <translation type="unfinished"></translation>
+        <translation>ลบจุดควบคุมที่เลือก</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>ข้อผิดพลาด</translation>
     </message>
     <message>
         <source>&amp;Add Division Points...</source>
-        <translation type="unfinished"></translation>
+        <translation>เพิ่มคะแนนดิวิชั่น (&amp;A)...</translation>
     </message>
     <message>
         <source>Add Division Points &amp;Regionally...</source>
-        <translation type="unfinished"></translation>
+        <translation>เพิ่มคะแนนดิวิชั่นในระดับภูมิภาค (&amp;R)...</translation>
     </message>
     <message>
         <source>&amp;Move Division Points...</source>
-        <translation type="unfinished"></translation>
+        <translation>ย้ายคะแนนกอง (&amp;M)...</translation>
     </message>
     <message>
         <source>Re&amp;position Division Points...</source>
-        <translation type="unfinished"></translation>
+        <translation>คะแนนการแบ่งตำแหน่ง (&amp;P)...</translation>
     </message>
     <message>
         <source>R&amp;emove Division Points...</source>
-        <translation type="unfinished"></translation>
+        <translation>ลบคะแนนดิวิชั่น (&amp;E)...</translation>
     </message>
     <message>
         <source>Confirmation</source>
-        <translation type="unfinished"></translation>
+        <translation>การยืนยัน</translation>
     </message>
     <message>
         <source>Are you sure you want to delete these control points?</source>
-        <translation type="unfinished"></translation>
+        <translation>คุณแน่ใจหรือไม่ว่าต้องการลบจุดควบคุมเหล่านี้</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>คำเตือน</translation>
     </message>
     <message>
         <source>The maximum number of grid nodes is %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>จำนวนโหนดกริดสูงสุดคือ %1.</translation>
     </message>
     <message>
         <source>Add Division Points</source>
-        <translation type="unfinished"></translation>
+        <translation>เพิ่มคะแนนดิวิชั่น</translation>
     </message>
     <message>
         <source>Add Control Points regionally</source>
-        <translation type="unfinished"></translation>
+        <translation>เพิ่มจุดควบคุมตามภูมิภาค</translation>
     </message>
     <message>
         <source>Reposition Control Points</source>
-        <translation type="unfinished"></translation>
+        <translation>จุดควบคุมการปรับตำแหน่ง</translation>
     </message>
     <message>
         <source>There is no cross-section data. This grid creating condition is not available.</source>
-        <translation type="unfinished"></translation>
+        <translation>ไม่มีข้อมูลภาคตัดขวาง เงื่อนไขการสร้างกริดนี้ไม่พร้อมใช้งาน</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionRiverSurveyPointAddDialog</name>
     <message>
         <source>Add Division Point</source>
-        <translation type="unfinished"></translation>
+        <translation>เพิ่มคะแนนดิวิชั่น</translation>
     </message>
     <message>
         <source>Division Number</source>
-        <translation type="unfinished"></translation>
+        <translation>หมายเลขกอง</translation>
     </message>
     <message>
         <source>Division Method</source>
-        <translation type="unfinished"></translation>
+        <translation>วิธีการหาร</translation>
     </message>
     <message>
         <source>Divide Equally</source>
-        <translation type="unfinished"></translation>
+        <translation>แบ่งเท่าๆกัน</translation>
     </message>
     <message>
         <source>Equal Ratio Division (Specify Common Ratio)</source>
-        <translation type="unfinished"></translation>
+        <translation>กองอัตราส่วนเท่าเทียม (ระบุอัตราส่วนร่วม)</translation>
     </message>
     <message>
         <source>When you want to add division points near river center or upper side, please specify value more than 1.</source>
-        <translation type="unfinished"></translation>
+        <translation>เมื่อต้องการเพิ่มจุดแบ่งบริเวณใจกลางแม่น้ำหรือด้านบน โปรดระบุค่ามากกว่า 1</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionRiverSurveyPointMoveDialog</name>
     <message>
         <source>Move Division Point</source>
-        <translation type="unfinished"></translation>
+        <translation>ย้ายจุดหาร</translation>
     </message>
     <message>
         <source>Transfer Quantity s</source>
-        <translation type="unfinished"></translation>
+        <translation>ปริมาณการโอน s</translation>
     </message>
     <message>
         <source>-1 &lt; s &lt; 1</source>
-        <translation type="unfinished"></translation>
+        <translation>-1 &lt; วิ &lt; 1</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionRiverSurveyPointRegionAddDialog</name>
     <message>
         <source>Add Division Points Regionally</source>
-        <translation type="unfinished"></translation>
+        <translation>เพิ่มคะแนนดิวิชั่นในระดับภูมิภาค</translation>
     </message>
     <message>
         <source>Start Traversal Line</source>
-        <translation type="unfinished"></translation>
+        <translation>เริ่มการข้ามเส้น</translation>
     </message>
     <message>
         <source>End Traversal Line</source>
-        <translation type="unfinished"></translation>
+        <translation>End Traversal Line</translation>
     </message>
     <message>
         <source>Specify division number for each sections</source>
-        <translation type="unfinished"></translation>
+        <translation>ระบุเลขหารแต่ละส่วน</translation>
     </message>
     <message>
         <source>Specify target distance division points</source>
-        <translation type="unfinished"></translation>
+        <translation>ระบุจุดแบ่งระยะทางเป้าหมาย</translation>
     </message>
     <message>
         <source>m</source>
-        <translation type="unfinished"></translation>
+        <translation>NS</translation>
     </message>
     <message>
         <source>Confirmation</source>
-        <translation type="unfinished"></translation>
+        <translation>การยืนยัน</translation>
     </message>
     <message>
         <source>The control points which already exist in this region are overwritten.</source>
-        <translation type="unfinished"></translation>
+        <translation>จุดควบคุมที่มีอยู่แล้วในภูมิภาคนี้จะถูกเขียนทับ</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionRiverSurveyPointRepositionDialog</name>
     <message>
         <source>Reposition Division Point</source>
-        <translation type="unfinished"></translation>
+        <translation>จุดแบ่งตำแหน่ง</translation>
     </message>
     <message>
         <source>Reposition Method</source>
-        <translation type="unfinished"></translation>
+        <translation>วิธีการเปลี่ยนตำแหน่ง</translation>
     </message>
     <message>
         <source>Equal Interval</source>
-        <translation type="unfinished"></translation>
+        <translation>ช่วงเวลาเท่ากัน</translation>
     </message>
     <message>
         <source>Equal Ratio Interval (Specify Common Ratio)</source>
-        <translation type="unfinished"></translation>
+        <translation>ช่วงอัตราส่วนที่เท่ากัน (ระบุอัตราส่วนร่วม)</translation>
     </message>
     <message>
         <source>When you want to assign more division points near river center or upper side, please specify value more than 1.</source>
-        <translation type="unfinished"></translation>
+        <translation>เมื่อต้องการกำหนดจุดแบ่งเพิ่มเติมบริเวณศูนย์กลางแม่น้ำหรือด้านบน โปรดระบุค่ามากกว่า 1</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionRiverSurveyRegionDialog</name>
     <message>
         <source>Grid Creation</source>
-        <translation type="unfinished"></translation>
+        <translation>การสร้างกริด</translation>
     </message>
     <message>
         <source>Start Traversal Line:</source>
-        <translation type="unfinished"></translation>
+        <translation>เริ่มการข้ามเส้น:</translation>
     </message>
     <message>
         <source>End Traversal Line:</source>
-        <translation type="unfinished"></translation>
+        <translation>สิ้นสุดการข้ามเส้น:</translation>
     </message>
 </context>
 </TS>

@@ -1,172 +1,170 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ru_RU">
 <context>
     <name>GeoDataPolygon</name>
     <message>
         <source>&amp;Copy...</source>
-        <translation type="unfinished"></translation>
+        <translation>Копировать (&amp;C)...</translation>
     </message>
     <message>
         <source>&amp;Add Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Добавить вершину (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Удалить вершину (&amp;R)</translation>
     </message>
     <message>
         <source>Edit &amp;Coordinates...</source>
-        <translation type="unfinished"></translation>
+        <translation>Изменить координаты (&amp;C)...</translation>
     </message>
     <message>
         <source>polygon</source>
-        <translation type="unfinished"></translation>
+        <translation>многоугольник</translation>
     </message>
     <message>
         <source>Polygon</source>
-        <translation type="unfinished"></translation>
+        <translation>Многоугольник</translation>
     </message>
     <message>
         <source>Add &amp;Hole Region</source>
-        <translation type="unfinished"></translation>
+        <translation>Добавить область отверстия (&amp;H)</translation>
     </message>
     <message>
         <source>&amp;Delete Hole Region...</source>
-        <translation type="unfinished"></translation>
+        <translation>Удалить область отверстия (&amp;D)...</translation>
     </message>
     <message>
         <source>&amp;Polygon</source>
-        <translation type="unfinished"></translation>
+        <translation>Многоугольник (&amp;P)</translation>
     </message>
     <message>
         <source>Finish Defining Polygon</source>
-        <translation type="unfinished"></translation>
+        <translation>Завершить определение многоугольника</translation>
     </message>
     <message>
         <source>Add New Polygon Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Добавить новую точку многоугольника</translation>
     </message>
     <message>
         <source>Move Polygon</source>
-        <translation type="unfinished"></translation>
+        <translation>Переместить многоугольник</translation>
     </message>
     <message>
         <source>Move Polygon Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Переместить вершину многоугольника</translation>
     </message>
     <message>
         <source>Insert Polygon Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Вставить вершину многоугольника</translation>
     </message>
     <message>
         <source>Remove Polygon Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Удалить вершину многоугольника</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Предупреждение</translation>
     </message>
     <message>
         <source>Polygon must have three vertices at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>У многоугольника должно быть не менее трех вершин.</translation>
     </message>
     <message>
         <source>Add New Hole Polygon</source>
-        <translation type="unfinished"></translation>
+        <translation>Добавить новый многоугольник отверстия</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Информация</translation>
     </message>
     <message>
         <source>Please define hole region. Hole region can be defined as polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
-        <translation type="unfinished"></translation>
+        <translation>Укажите область отверстия. Область отверстия можно определить как многоугольник, щелкнув мышью. Завершите определение двойным щелчком или нажатием клавиши возврата.</translation>
     </message>
     <message>
         <source>Are you sure you want to remove this polygon?</source>
-        <translation type="unfinished"></translation>
+        <translation>Вы уверены, что хотите удалить этот многоугольник?</translation>
     </message>
     <message>
         <source>Please define polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
-        <translation type="unfinished"></translation>
+        <translation>Определите многоугольник, щелкнув мышью. Завершите определение двойным щелчком или нажатием клавиши возврата.</translation>
     </message>
     <message>
         <source>Polygon value change</source>
-        <translation type="unfinished"></translation>
+        <translation>Изменение значения многоугольника</translation>
     </message>
     <message>
         <source>Select Geographic Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Выберите географические данные</translation>
     </message>
     <message>
         <source>Please select which geographic data to copy this polygon.</source>
-        <translation type="unfinished"></translation>
+        <translation>Выберите, какие географические данные копировать этот многоугольник.</translation>
     </message>
     <message>
         <source>Edit Polygon Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Изменить координаты многоугольника</translation>
     </message>
     <message>
         <source>Polygon Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Координаты многоугольника</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolygonColorSettingDialog</name>
     <message>
         <source>Polygon Color Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Настройка цвета многоугольника</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Цвет</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished"></translation>
+        <translation>Цвет по значению</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Пользовательский цвет</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolygonCreator</name>
     <message>
         <source>Polygon</source>
-        <translation type="unfinished"></translation>
+        <translation>Многоугольник</translation>
     </message>
     <message>
         <source>Polygon%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Многоугольник %1</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolygonImporter</name>
     <message>
         <source>ESRI Shapefile (Polygon)</source>
-        <translation type="unfinished"></translation>
+        <translation>Шейп-файл ESRI (многоугольник)</translation>
     </message>
     <message>
         <source>ESRI Shapefile (*.shp) (Polygon)</source>
-        <translation type="unfinished"></translation>
+        <translation>Шейп-файл ESRI (*.shp) (Polygon)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Ошибка</translation>
     </message>
     <message>
         <source>The shape type contained in this shape file is not polygon.</source>
-        <translation type="unfinished"></translation>
+        <translation>Тип формы, содержащийся в этом файле формы, не является многоугольником.</translation>
     </message>
     <message>
         <source>Opening %1 failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Открытие %1 не смогли.</translation>
     </message>
     <message>
         <source>The number of polygons mismatches between shp file and dbf file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Несовпадение количества полигонов между файлом shp и файлом dbf.</translation>
     </message>
     <message>
         <source>%1 th polygon can not be imported. Polygon like below can not be imported:
@@ -175,61 +173,61 @@
 - Lines of polygon intersect each other
 - Hole polygon is outside of region polygon
 - Polygon passes the same point several times</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 -й полигон не может быть импортирован. Полигон, подобный приведенному ниже, не может быть импортирован: - Он имеет менее трех точек - Он не замкнут - Линии многоугольника пересекают друг друга - Многоугольник отверстия находится за пределами многоугольника области - Многоугольник проходит одну и ту же точку несколько раз</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Предупреждение</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolygonImporterSettingDialog</name>
     <message>
         <source>Polygon Import Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Настройка импорта многоугольника</translation>
     </message>
     <message>
         <source>Encoding:</source>
-        <translation type="unfinished"></translation>
+        <translation>Кодировка:</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Имя</translation>
     </message>
     <message>
         <source>Load from Shape file attribute</source>
-        <translation type="unfinished"></translation>
+        <translation>Загрузить из атрибута файла формы</translation>
     </message>
     <message>
         <source>Name is set automatically (ex. Polygon1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Имя устанавливается автоматически (например, Polygon1)</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation type="unfinished"></translation>
+        <translation>Ценить</translation>
     </message>
     <message>
         <source>Specify value</source>
-        <translation type="unfinished"></translation>
+        <translation>Укажите значение</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Предупреждение</translation>
     </message>
     <message>
         <source>You cannot specify the same column for both Name and Value.</source>
-        <translation type="unfinished"></translation>
+        <translation>Вы не можете указать один и тот же столбец для имени и значения.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolygonShapeExporter</name>
     <message>
         <source>ESRI Shapefile</source>
-        <translation type="unfinished"></translation>
+        <translation>Шейп-файл ESRI</translation>
     </message>
     <message>
         <source>ESRI Shapefile (*.shp)</source>
-        <translation type="unfinished"></translation>
+        <translation>Шейп-файл ESRI (*.shp)</translation>
     </message>
 </context>
 </TS>

@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="es_ES">
 <context>
     <name>BoundaryConditionDialog</name>
@@ -21,7 +19,7 @@
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Color:</translation>
     </message>
     <message>
         <source>Point Size:</source>
@@ -59,7 +57,7 @@
     <name>CgnsGridImporter</name>
     <message>
         <source>CGNS files (*.cgn *.cgns)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivos CGNS (*.cgn *.cgns)</translation>
     </message>
     <message>
         <source>CGNS file</source>
@@ -67,7 +65,7 @@
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>Error occured while importing grid.</source>
@@ -76,7 +74,7 @@
     <message>
         <source>This CGNS file is created for %1 version %2. It is not compatible with the current solver. Maybe only some part of the grid will be imported.
 Do you really want to import grid from this file?</source>
-        <translation type="unfinished"></translation>
+        <translation>Este archivo CGNS se crea para %1 versión %2. No es compatible con el solucionador actual. Quizás solo se importe una parte de la cuadrícula. ¿Realmente desea importar la cuadrícula de este archivo?</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -85,25 +83,25 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>This CGNS file does not have solver information. We can not check whether this CGNS file is compatible with the solver. If it is not compatible, maybe only some part of the grid will be imported.
 Do you really want to import grid from this file?</source>
-        <translation type="unfinished"></translation>
+        <translation>Este archivo CGNS no tiene información de solucionador. No podemos verificar si este archivo CGNS es compatible con el solucionador. Si no es compatible, tal vez solo se importe una parte de la cuadrícula. ¿Realmente desea importar la cuadrícula de este archivo?</translation>
     </message>
 </context>
 <context>
     <name>GridAttributeGeneratorLauncher</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>Attribute Generator %1 does not exist.</source>
-        <translation type="unfinished"></translation>
+        <translation>Generador de atributos %1 no existe.</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindow</name>
     <message>
-        <source>Grid Bird&apos;s-Eye View Window</source>
-        <translation type="unfinished"></translation>
+        <source>Grid Bird's-Eye View Window</source>
+        <translation>Ventana de vista de pájaro de cuadrícula</translation>
     </message>
 </context>
 <context>
@@ -133,11 +131,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Visible</source>
-        <translation type="unfinished"></translation>
+        <translation>Visible</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Color:</translation>
     </message>
 </context>
 <context>
@@ -168,11 +166,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Visible</source>
-        <translation type="unfinished"></translation>
+        <translation>Visible</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Color:</translation>
     </message>
 </context>
 <context>
@@ -236,7 +234,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Delete &amp;Selected...</source>
-        <translation type="unfinished"></translation>
+        <translation>Eliminar seleccionado (&amp;S)...</translation>
     </message>
     <message>
         <source>Delete &amp;All...</source>
@@ -264,11 +262,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>There is no boundary condition.</source>
-        <translation type="unfinished"></translation>
+        <translation>No hay condición de límite.</translation>
     </message>
     <message>
         <source>Delete selected boundary conditions</source>
-        <translation type="unfinished"></translation>
+        <translation>Eliminar condiciones de contorno seleccionadas</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -276,7 +274,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Are you sure you want to delete all boundary conditions?</source>
-        <translation type="unfinished"></translation>
+        <translation>¿Está seguro de que desea eliminar todas las condiciones de contorno?</translation>
     </message>
 </context>
 <context>
@@ -310,15 +308,15 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>There is no boundary condition setting.</source>
-        <translation type="unfinished"></translation>
+        <translation>No hay configuración de condición de límite.</translation>
     </message>
     <message>
         <source>Delete selected boundary condition settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Eliminar la configuración de condición de contorno seleccionada</translation>
     </message>
     <message>
         <source>Are you sure you want to delete all boundary condition settings?</source>
-        <translation type="unfinished"></translation>
+        <translation>¿Está seguro de que desea eliminar todas las configuraciones de condiciones de contorno?</translation>
     </message>
     <message>
         <source>Add %1</source>
@@ -337,7 +335,7 @@ Do you really want to import grid from this file?</source>
     <name>PreProcessorBackgroundImageDataItem</name>
     <message>
         <source>&amp;Georeference...</source>
-        <translation type="unfinished"></translation>
+        <translation>Georeferencia (&amp;G)...</translation>
     </message>
 </context>
 <context>
@@ -352,7 +350,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Delete &amp;Selected...</source>
-        <translation type="unfinished"></translation>
+        <translation>Eliminar seleccionado (&amp;S)...</translation>
     </message>
     <message>
         <source>Delete &amp;All...</source>
@@ -364,11 +362,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>There is no background image.</source>
-        <translation type="unfinished"></translation>
+        <translation>No hay imagen de fondo.</translation>
     </message>
     <message>
         <source>Delete selected background images</source>
-        <translation type="unfinished"></translation>
+        <translation>Eliminar imágenes de fondo seleccionadas</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -391,7 +389,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>YAML file (*.yml)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo YAML (*.yml)</translation>
     </message>
     <message>
         <source>Select case</source>
@@ -411,7 +409,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Calculation Condition is successfully imported from %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>La condición de cálculo se ha importado correctamente de %1.</translation>
     </message>
     <message>
         <source>Fail</source>
@@ -427,15 +425,15 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>CGNS file (*.cgn *.cgns)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo CGNS (*.cgn *.cgns)</translation>
     </message>
     <message>
         <source>All importable files(*.cgn *.cgns *.ipro *.yml);;iRIC project file (*.ipro);;CGNS file (*.cgn *.cgns);;YAML file (*.yml)</source>
-        <translation type="unfinished"></translation>
+        <translation>Todos los archivos importables (*.cgn *.cgns *.ipro *.yml);;iRIC project file (*.ipro);;CGNS file (*.cgn *.cgns);;YAML file (*.yml)</translation>
     </message>
     <message>
         <source>CGNS file (*.cgns);;YAML file (*.yml)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo CGNS (*.cgns);;YAML file (*.yml)</translation>
     </message>
     <message>
         <source>Exporting calculation condition...</source>
@@ -523,7 +521,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Gr&amp;id Creating Condition...</source>
-        <translation type="unfinished"></translation>
+        <translation>Condición de creación de cuadrícula (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Grid...</source>
@@ -531,7 +529,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Gr&amp;id Creating Condition</source>
-        <translation type="unfinished"></translation>
+        <translation>Condición de creación de cuadrícula (&amp;I)</translation>
     </message>
     <message>
         <source>Grid Creating Condition</source>
@@ -563,19 +561,19 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>The solver is running. You can see the calculation condition settings, but can not overwrite.</source>
-        <translation type="unfinished"></translation>
+        <translation>El solucionador se está ejecutando. Puede ver la configuración de las condiciones de cálculo, pero no puede sobrescribir.</translation>
     </message>
     <message>
         <source>Poly&amp;line</source>
-        <translation type="unfinished"></translation>
+        <translation>Polilínea (&amp;L)</translation>
     </message>
     <message>
         <source>%1 are not mapped after they are edited last time. Do you want to execute mapping now?</source>
         <translation>%1 no estan asignado despues de edite la ultima ves. Quieres ejecutar mapeo ahora?</translation>
     </message>
     <message>
-        <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
-        <translation type="unfinished"></translation>
+        <source>Boundary Condition Setting "%1" is not mapped after it is edited last time. Do you want to execute mapping now?</source>
+        <translation>Configuración de la condición de límite "%1"no se asigna después de que se editó la última vez. ¿Desea ejecutar la asignación ahora?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -587,19 +585,19 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>&amp;Cross-Section Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Datos de sección transversal (&amp;C)</translation>
     </message>
     <message>
         <source>&amp;Polygons</source>
-        <translation type="unfinished"></translation>
+        <translation>Polígonos (&amp;P)</translation>
     </message>
     <message>
         <source>&amp;Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Líneas (&amp;L)</translation>
     </message>
     <message>
         <source>P&amp;oint Cloud Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Datos de nube de puntos (&amp;O)</translation>
     </message>
 </context>
 <context>
@@ -618,7 +616,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation type="unfinished"></translation>
+        <translation>Importar (&amp;I)</translation>
     </message>
 </context>
 <context>
@@ -648,7 +646,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>&amp;Import from web...</source>
-        <translation type="unfinished"></translation>
+        <translation>Importar desde web (&amp;I)...</translation>
     </message>
     <message>
         <source>Delete &amp;All...</source>
@@ -668,7 +666,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Delete &amp;Selected...</source>
-        <translation type="unfinished"></translation>
+        <translation>Eliminar seleccionado (&amp;S)...</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -684,11 +682,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Select algorithm</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccionar algoritmo</translation>
     </message>
     <message>
         <source>Please select algorithm to import data</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccione el algoritmo para importar datos</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -696,7 +694,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>File type cannot be recognized from the file extension. : %1</source>
-        <translation type="unfinished"></translation>
+        <translation>El tipo de archivo no se puede reconocer por la extensión del archivo. : %1</translation>
     </message>
     <message>
         <source>Import failed</source>
@@ -708,7 +706,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>%1 contains no data to import.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 no contiene datos para importar.</translation>
     </message>
     <message>
         <source>Importing data...</source>
@@ -716,11 +714,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Canceled</source>
-        <translation type="unfinished"></translation>
+        <translation>Cancelado</translation>
     </message>
     <message>
         <source>Importing canceled.</source>
-        <translation type="unfinished"></translation>
+        <translation>Importación cancelada.</translation>
     </message>
     <message>
         <source>Information</source>
@@ -728,20 +726,20 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>To import the geographic data, specify coordinate system first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Para importar los datos geográficos, primero especifique el sistema de coordenadas.</translation>
     </message>
     <message>
         <source>Specified file has invalid data, and those were ignored. Ignored data is as follows:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>El archivo especificado tiene datos no válidos y se ignoraron. Los datos ignorados son los siguientes: %1</translation>
     </message>
     <message>
         <source>Importing data failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Error al importar datos.</translation>
     </message>
     <message>
         <source>No data to import.</source>
-        <translation type="unfinished"></translation>
+        <translation>No hay datos para importar.</translation>
     </message>
     <message>
         <source>Select data to export</source>
@@ -761,15 +759,15 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>ESRI Shapefile (*.shp)</source>
-        <translation type="unfinished"></translation>
+        <translation>Shapefile ESRI (*.shp)</translation>
     </message>
     <message>
         <source>There is no geographic data.</source>
-        <translation type="unfinished"></translation>
+        <translation>No hay datos geográficos.</translation>
     </message>
     <message>
         <source>Delete selected geograhic data</source>
-        <translation type="unfinished"></translation>
+        <translation>Eliminar datos geográficos seleccionados</translation>
     </message>
     <message>
         <source>Are you sure you want to delete all items in %1 group?</source>
@@ -777,7 +775,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation type="unfinished"></translation>
+        <translation>Importar (&amp;I)</translation>
     </message>
 </context>
 <context>
@@ -788,7 +786,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Reference Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informacion de referencia</translation>
     </message>
 </context>
 <context>
@@ -815,7 +813,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>Importing grid failed.</source>
@@ -850,7 +848,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Please select only one node.</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccione solo un nodo.</translation>
     </message>
     <message>
         <source>Edit %1</source>
@@ -870,63 +868,63 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Edit value by specifying difference...</source>
-        <translation type="unfinished"></translation>
+        <translation>Edite el valor especificando la diferencia...</translation>
     </message>
     <message>
         <source>Edit value by specifying ratio...</source>
-        <translation type="unfinished"></translation>
+        <translation>Edite el valor especificando la proporción...</translation>
     </message>
     <message>
         <source>difference</source>
-        <translation type="unfinished"></translation>
+        <translation>diferencia</translation>
     </message>
     <message>
         <source>ratio</source>
-        <translation type="unfinished"></translation>
+        <translation>proporción</translation>
     </message>
     <message>
         <source>Apply %1 to %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Solicitar %1 para %2</translation>
     </message>
     <message>
         <source>Input the %1 of %2 at the selected grid cells.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ingrese el %1 de %2 en las celdas de la cuadrícula seleccionadas.</translation>
     </message>
     <message>
         <source>Export...</source>
-        <translation type="unfinished">Exportar...</translation>
+        <translation>Exportar...</translation>
     </message>
     <message>
         <source>Topography File (*.tpo)</source>
-        <translation type="unfinished">Archivo de Topografia (*.tpo)</translation>
+        <translation>Archivo de topografía (*.tpo)</translation>
     </message>
     <message>
         <source>Export as Topography Data</source>
-        <translation type="unfinished">Exportar como Datos de Topografia</translation>
+        <translation>Exportar como datos topográficos</translation>
     </message>
     <message>
         <source>Error occured while opening the file.</source>
-        <translation type="unfinished">Error ocurrio mientras abriendo el archivo.</translation>
+        <translation>Ocurrió un error al abrir el archivo.</translation>
     </message>
     <message>
         <source>Grid condition successfully exported to %1.</source>
-        <translation type="unfinished">Condicion de cuadricula se exporto con exito a %1.</translation>
+        <translation>Condición de cuadrícula exportada con éxito a %1.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished">Informacion</translation>
+        <translation>Información</translation>
     </message>
     <message>
         <source>%1 generated.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 generado.</translation>
     </message>
     <message>
         <source>Generate point cloud data</source>
-        <translation type="unfinished"></translation>
+        <translation>Generar datos de nube de puntos</translation>
     </message>
 </context>
 <context>
@@ -941,7 +939,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Color</translation>
     </message>
 </context>
 <context>
@@ -963,11 +961,11 @@ Do you really want to import grid from this file?</source>
     <name>PreProcessorGridAttributeCustomMappingDialog</name>
     <message>
         <source>Attribute Mapping</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapeo de atributos</translation>
     </message>
     <message>
         <source>Check &amp;All</source>
-        <translation type="unfinished"></translation>
+        <translation>Comprobar todo (&amp;A)</translation>
     </message>
     <message>
         <source>Geographic Data</source>
@@ -989,9 +987,9 @@ Do you really want to import grid from this file?</source>
         <translation>&amp;Ejecutar...</translation>
     </message>
     <message>
-        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.
+        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Los siguientes atributos no se asignaron, porque los valores de salida del generador de red para ellos. Si desea mapear datos geográficos para ellos a la fuerza, mapee manualmente con el menú "Cuadrícula" -&gt; "Asignación de atributos" -&gt; "Ejecutar".</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -1010,12 +1008,12 @@ Do you really want to import grid from this file?</source>
         <translation>Mapeo de datos geograficos se termino</translation>
     </message>
     <message>
-        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation type="unfinished"></translation>
+        <source>The grid attribute "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>El atributo de cuadrícula "%1"se edita a mano. Cuando ejecute el mapeo, se descartarán todas las modificaciones que haya realizado. ¿Realmente desea ejecutar el mapeo?</translation>
     </message>
     <message>
-        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation type="unfinished"></translation>
+        <source>The boundary condition "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>La condición de frontera "%1"se edita a mano. Cuando ejecute el mapeo, se descartarán todas las modificaciones que haya realizado. ¿Realmente desea ejecutar el mapeo?</translation>
     </message>
 </context>
 <context>
@@ -1030,23 +1028,23 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation>Auto</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // ES" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta nombre = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {espacio en blanco: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Cuando se crea la cuadrícula, se le pregunta si para ejecutar el mapeo de atributos cada vez. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Manual</source>
-        <translation type="unfinished"></translation>
+        <translation>Manual</translation>
     </message>
     <message>
-        <source>Attribute mapping is executed only when you manually select &quot;Execute&quot; menu.</source>
-        <translation type="unfinished"></translation>
+        <source>Attribute mapping is executed only when you manually select "Execute" menu.</source>
+        <translation>La asignación de atributos se ejecuta solo cuando selecciona manualmente el menú "Ejecutar".</translation>
     </message>
     <message>
         <source>Geographic data mapping</source>
@@ -1067,7 +1065,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Find geographic data points that are near to the grid nodes, regarding the grid cell shapes, and use the values at those points for interpolation.
 This algorithm can be used only for structured grids.</source>
-        <translation type="unfinished"></translation>
+        <translation>Encuentre puntos de datos geográficos que estén cerca de los nodos de la cuadrícula, con respecto a las formas de las celdas de la cuadrícula, y use los valores en esos puntos para la interpolación. Este algoritmo solo se puede utilizar para cuadrículas estructuradas.</translation>
     </message>
     <message>
         <source>&amp;Detail...</source>
@@ -1098,7 +1096,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Please select only one node.</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccione solo un nodo.</translation>
     </message>
     <message>
         <source>Edit %1</source>
@@ -1106,11 +1104,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Open &amp;Cross Section Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Ventana de sección transversal abierta (&amp;C)</translation>
     </message>
     <message>
         <source>Open &amp;Longitudinal Cross Section Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Ventana de sección transversal longitudinal abierta (&amp;L)</translation>
     </message>
     <message>
         <source>Input the new value of %1 at the selected grid nodes.</source>
@@ -1130,11 +1128,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>To open a Cross Section Window, Please select only one grid node.</source>
-        <translation type="unfinished"></translation>
+        <translation>Para abrir una ventana de sección transversal, seleccione solo un nodo de cuadrícula.</translation>
     </message>
     <message>
         <source>To open a Longitudinal Cross Section Window, Please select only one grid node.</source>
-        <translation type="unfinished"></translation>
+        <translation>Para abrir una ventana de sección transversal longitudinal, seleccione solo un nodo de cuadrícula.</translation>
     </message>
     <message>
         <source>Topography File (*.tpo)</source>
@@ -1154,39 +1152,39 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>Edit value by specifying difference...</source>
-        <translation type="unfinished"></translation>
+        <translation>Edite el valor especificando la diferencia...</translation>
     </message>
     <message>
         <source>Edit value by specifying ratio...</source>
-        <translation type="unfinished"></translation>
+        <translation>Edite el valor especificando la proporción...</translation>
     </message>
     <message>
         <source>difference</source>
-        <translation type="unfinished"></translation>
+        <translation>diferencia</translation>
     </message>
     <message>
         <source>ratio</source>
-        <translation type="unfinished"></translation>
+        <translation>proporción</translation>
     </message>
     <message>
         <source>Apply %1 to %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Solicitar %1 para %2</translation>
     </message>
     <message>
         <source>Input the %1 of %2 at the selected grid nodes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ingrese el %1 de %2 en los nodos de la cuadrícula seleccionados.</translation>
     </message>
     <message>
         <source>%1 generated.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 generado.</translation>
     </message>
     <message>
         <source>Generate point cloud data</source>
-        <translation type="unfinished"></translation>
+        <translation>Generar datos de nube de puntos</translation>
     </message>
 </context>
 <context>
@@ -1216,11 +1214,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation>Auto</translation>
     </message>
     <message>
         <source>Manual</source>
-        <translation type="unfinished"></translation>
+        <translation>Manual</translation>
     </message>
     <message>
         <source>Stream-wise length[m]:</source>
@@ -1310,19 +1308,19 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>iRIC grid creating condition file(*.igcc)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo de condición de creación de cuadrícula iRIC (*.igcc)</translation>
     </message>
     <message>
         <source>The grid creating condition in this file is not compatible with the solver</source>
-        <translation type="unfinished"></translation>
+        <translation>La condición de creación de la cuadrícula en este archivo no es compatible con el solucionador</translation>
     </message>
     <message>
         <source>No data to export.</source>
-        <translation type="unfinished"></translation>
+        <translation>No hay datos para exportar.</translation>
     </message>
     <message>
         <source>Select file to export</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccionar archivo para exportar</translation>
     </message>
 </context>
 <context>
@@ -1395,7 +1393,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>The following problems found in this grid. Do you really want to export the grid?</source>
@@ -1466,12 +1464,12 @@ This algorithm can be used only for structured grids.</source>
         <translation>Configurar &amp;Barra de Escalar...</translation>
     </message>
     <message>
-        <source>Open &amp;Bird&apos;s-Eye View Window</source>
-        <translation type="unfinished"></translation>
+        <source>Open &amp;Bird's-Eye View Window</source>
+        <translation>Abrir ventana de vista de pájaro (&amp;B)</translation>
     </message>
     <message>
         <source>Attributes &amp;Generating</source>
-        <translation type="unfinished"></translation>
+        <translation>Generación de atributos (&amp;G)</translation>
     </message>
     <message>
         <source> [No Data]</source>
@@ -1479,15 +1477,15 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source> (%1 x %2 = %3)</source>
-        <translation type="unfinished"></translation>
+        <translation>( %1 X %2 = %3 )</translation>
     </message>
     <message>
         <source> (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>(%1)</translation>
     </message>
     <message>
         <source>Generate %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Generar %1</translation>
     </message>
 </context>
 <context>
@@ -1502,11 +1500,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Open &amp;Cross Section Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Ventana de sección transversal abierta (&amp;C)</translation>
     </message>
     <message>
         <source>Open &amp;Longitudinal Cross Section Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Ventana de sección transversal longitudinal abierta (&amp;L)</translation>
     </message>
     <message>
         <source>Move Grid Point(s)</source>
@@ -1525,11 +1523,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>x:</source>
-        <translation type="unfinished"></translation>
+        <translation>X:</translation>
     </message>
     <message>
         <source>y:</source>
-        <translation type="unfinished"></translation>
+        <translation>y:</translation>
     </message>
 </context>
 <context>
@@ -1544,27 +1542,27 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>x: </source>
-        <translation type="unfinished"></translation>
+        <translation>X:</translation>
     </message>
     <message>
         <source>y:</source>
-        <translation type="unfinished"></translation>
+        <translation>y:</translation>
     </message>
     <message>
         <source>x(%1):</source>
-        <translation type="unfinished"></translation>
+        <translation>X(%1):</translation>
     </message>
     <message>
         <source>y(%1):</source>
-        <translation type="unfinished"></translation>
+        <translation>y (%1):</translation>
     </message>
     <message>
         <source>x(%1, %2):</source>
-        <translation type="unfinished"></translation>
+        <translation>X( %1, %2 ):</translation>
     </message>
     <message>
         <source>y(%1, %2):</source>
-        <translation type="unfinished"></translation>
+        <translation>y ( %1, %2 ):</translation>
     </message>
 </context>
 <context>
@@ -1575,11 +1573,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Region</source>
-        <translation type="unfinished"></translation>
+        <translation>Región</translation>
     </message>
     <message>
         <source>Region%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Región %1</translation>
     </message>
 </context>
 <context>
@@ -1598,7 +1596,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>File type cannot be recognized from the file extension. : %1</source>
-        <translation type="unfinished"></translation>
+        <translation>El tipo de archivo no se puede reconocer por la extensión del archivo. : %1</translation>
     </message>
     <message>
         <source>Import failed</source>
@@ -1610,12 +1608,12 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>%1 contains no data to import.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 no contiene datos para importar.</translation>
     </message>
     <message>
         <source>Specified file has invalid data, and those were ignored. Ignored data is as follows:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>El archivo especificado tiene datos no válidos y se ignoraron. Los datos ignorados son los siguientes: %1</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1623,7 +1621,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Data is successfully imported from %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Los datos se importaron correctamente desde %1.</translation>
     </message>
 </context>
 <context>
@@ -1638,7 +1636,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Font Setting:</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración de fuente:</translation>
     </message>
     <message>
         <source>Edit...</source>
@@ -1662,11 +1660,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>X :</source>
-        <translation type="unfinished"></translation>
+        <translation>X :</translation>
     </message>
     <message>
         <source>Y :</source>
-        <translation type="unfinished"></translation>
+        <translation>Y:</translation>
     </message>
 </context>
 <context>
@@ -1681,7 +1679,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Delete &amp;Selected...</source>
-        <translation type="unfinished"></translation>
+        <translation>Eliminar seleccionado (&amp;S)...</translation>
     </message>
     <message>
         <source>Delete &amp;All...</source>
@@ -1693,11 +1691,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>There is no measured data.</source>
-        <translation type="unfinished"></translation>
+        <translation>No hay datos medidos.</translation>
     </message>
     <message>
         <source>Delete selected measured data</source>
-        <translation type="unfinished"></translation>
+        <translation>Eliminar los datos medidos seleccionados</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -1705,7 +1703,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Are you sure you want to delete all measured data?</source>
-        <translation type="unfinished"></translation>
+        <translation>¿Está seguro de que desea eliminar todos los datos medidos?</translation>
     </message>
 </context>
 <context>
@@ -1752,7 +1750,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Visible</source>
-        <translation type="unfinished"></translation>
+        <translation>Visible</translation>
     </message>
     <message>
         <source>Value</source>
@@ -1809,11 +1807,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Gr&amp;id Creating Condition...</source>
-        <translation type="unfinished"></translation>
+        <translation>Condición de creación de cuadrícula (&amp;I)...</translation>
     </message>
     <message>
         <source>Grid...</source>
-        <translation type="unfinished"></translation>
+        <translation>Red...</translation>
     </message>
 </context>
 <context>
@@ -1843,7 +1841,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Visible</source>
-        <translation type="unfinished"></translation>
+        <translation>Visible</translation>
     </message>
     <message>
         <source>Title</source>
@@ -1855,7 +1853,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Font Setting:</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración de fuente:</translation>
     </message>
     <message>
         <source>Edit...</source>
@@ -1863,11 +1861,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Label Display</source>
-        <translation type="unfinished"></translation>
+        <translation>Visualización de etiquetas</translation>
     </message>
     <message>
         <source>Number of labels :</source>
-        <translation type="unfinished"></translation>
+        <translation>Numero de etiquetas:</translation>
     </message>
     <message>
         <source>Format:</source>
@@ -1879,11 +1877,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Vertical</source>
-        <translation type="unfinished"></translation>
+        <translation>Vertical</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation type="unfinished"></translation>
+        <translation>Horizontal</translation>
     </message>
     <message>
         <source>Size</source>
@@ -1919,7 +1917,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>X :</source>
-        <translation type="unfinished"></translation>
+        <translation>X :</translation>
     </message>
     <message>
         <source>If you specify 0, Color bar left edge is located at window left edge.</source>
@@ -1927,7 +1925,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Y :</source>
-        <translation type="unfinished"></translation>
+        <translation>Y:</translation>
     </message>
     <message>
         <source>If you specify 0, Color bar bottom is located at window bottom.</source>
@@ -1957,7 +1955,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>CGNS files (*.cgns)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivos CGNS (*.cgns)</translation>
     </message>
 </context>
 <context>
@@ -1980,15 +1978,15 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>%1 &lt; </source>
-        <translation type="unfinished"></translation>
+        <translation>%1 &lt;</translation>
     </message>
     <message>
         <source>H</source>
-        <translation type="unfinished"></translation>
+        <translation>H</translation>
     </message>
     <message>
         <source> &lt; %1</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt; %1</translation>
     </message>
     <message>
         <source>Move Elevation Points</source>

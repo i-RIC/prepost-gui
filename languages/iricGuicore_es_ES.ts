@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="es_ES">
 <context>
     <name>AttributeBrowserTargetDataItem</name>
@@ -28,7 +26,7 @@
     </message>
     <message>
         <source>Select a corresponding point on Main Window.</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccione un punto correspondiente en la ventana principal.</translation>
     </message>
 </context>
 <context>
@@ -55,11 +53,11 @@
     </message>
     <message>
         <source>X:</source>
-        <translation type="unfinished"></translation>
+        <translation>X:</translation>
     </message>
     <message>
         <source>Y:</source>
-        <translation type="unfinished"></translation>
+        <translation>Y:</translation>
     </message>
     <message>
         <source>Bottom-right vertex</source>
@@ -86,19 +84,19 @@
     <name>BackgroundImageInfoGeoreferenceDialog</name>
     <message>
         <source>Georeference</source>
-        <translation type="unfinished"></translation>
+        <translation>Georeferencia</translation>
     </message>
     <message>
         <source>PushButton</source>
-        <translation type="unfinished"></translation>
+        <translation>Presionar el botón</translation>
     </message>
     <message>
         <source>Hide</source>
-        <translation type="unfinished"></translation>
+        <translation>Esconder</translation>
     </message>
     <message>
         <source>Show</source>
-        <translation type="unfinished"></translation>
+        <translation>Show</translation>
     </message>
 </context>
 <context>
@@ -113,26 +111,26 @@
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Color</translation>
     </message>
 </context>
 <context>
     <name>GcpTableModel</name>
     <message>
         <source>srcX</source>
-        <translation type="unfinished"></translation>
+        <translation>srcX</translation>
     </message>
     <message>
         <source>srcY</source>
-        <translation type="unfinished"></translation>
+        <translation>srcY</translation>
     </message>
     <message>
         <source>dstX</source>
-        <translation type="unfinished"></translation>
+        <translation>dstX</translation>
     </message>
     <message>
         <source>dstY</source>
-        <translation type="unfinished"></translation>
+        <translation>dstY</translation>
     </message>
 </context>
 <context>
@@ -199,11 +197,11 @@
     </message>
     <message>
         <source>No point is selected.</source>
-        <translation type="unfinished"></translation>
+        <translation>No se selecciona ningún punto.</translation>
     </message>
     <message>
         <source>No point can be further deleted.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ningún punto puede eliminarse más.</translation>
     </message>
     <message>
         <source>Information</source>
@@ -211,7 +209,7 @@
     </message>
     <message>
         <source>Select a point on Georeference dialog.</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccione un punto en el cuadro de diálogo Georeferencia.</translation>
     </message>
 </context>
 <context>
@@ -236,7 +234,7 @@
     </message>
     <message>
         <source>label:</source>
-        <translation type="unfinished"></translation>
+        <translation>etiqueta:</translation>
     </message>
 </context>
 <context>
@@ -363,26 +361,26 @@
     </message>
     <message>
         <source>Target:</source>
-        <translation type="unfinished"></translation>
+        <translation>Objetivo:</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Aviso</translation>
+        <translation>Advertencia</translation>
     </message>
     <message>
         <source>Modifications you made will be discarded.</source>
-        <translation type="unfinished">Modificaciones que haces seran descartado.</translation>
+        <translation>Se descartarán las modificaciones que haya realizado.</translation>
     </message>
 </context>
 <context>
     <name>GridComplexConditionGroupRealEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Forma</translation>
+        <translation>Formulario</translation>
     </message>
     <message>
         <source>Targets</source>
-        <translation type="unfinished"></translation>
+        <translation>Objetivos</translation>
     </message>
 </context>
 <context>
@@ -405,7 +403,7 @@
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Color:</translation>
     </message>
 </context>
 <context>
@@ -427,27 +425,50 @@
     </message>
 </context>
 <context>
+    <name>InputConditionCgnsFileSelectDialog</name>
+    <message>
+        <source>Select Input CGNS File</source>
+        <translation>Seleccionar archivo CGNS de entrada</translation>
+    </message>
+    <message>
+        <source>Information</source>
+        <translation>Información</translation>
+    </message>
+    <message>
+        <source>Do you want to import grid from the CGNS file?</source>
+        <translation>¿Quiere importar la cuadrícula desde el archivo CGNS?</translation>
+    </message>
+    <message>
+        <source>Select CGNS file</source>
+        <translation>Seleccionar archivo CGNS</translation>
+    </message>
+    <message>
+        <source>Please select from which CGNS file to read grid.</source>
+        <translation>Seleccione de qué archivo CGNS leer la cuadrícula.</translation>
+    </message>
+</context>
+<context>
     <name>InputConditionContainerSet</name>
     <message>
         <source>Definition node is not stored</source>
         <translation>Nodo de definicion no esta archivado</translation>
     </message>
     <message>
-        <source>Wrong valueType &quot;%1&quot; is set.</source>
-        <translation type="unfinished"></translation>
+        <source>Wrong valueType "%1" is set.</source>
+        <translation>ValueType incorrecto "%1" Está establecido.</translation>
     </message>
     <message>
-        <source>Wrong conditionType &quot;%1&quot;is set.</source>
-        <translation type="unfinished"></translation>
+        <source>Wrong conditionType "%1"is set.</source>
+        <translation>ConditionType incorrecto "%1"Está establecido.</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
 %1: %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Ocurrió un error al cargar el archivo de definición del solucionador. %1 : %2</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
 </context>
 <context>
@@ -462,7 +483,7 @@
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>This CGNS file is created for %1 version %2. It is not compatible with the current solver.</source>
@@ -475,7 +496,7 @@
     <message>
         <source>This CGNS file does not have solver information. We can not check whether this CGNS file is compatible with the solver. If it is not compatible, maybe only some part of the conditions will be imported.
 Do you really want to import this file?</source>
-        <translation type="unfinished"></translation>
+        <translation>Este archivo CGNS no tiene información de solucionador. No podemos verificar si este archivo CGNS es compatible con el solucionador. Si no es compatible, tal vez solo se importe una parte de las condiciones. ¿Realmente desea importar este archivo?</translation>
     </message>
     <message>
         <source>This CGNS file does not contain calculation condition data.</source>
@@ -487,7 +508,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>The solver is running currently, so you can not save calculation condition. Please press Cancel button.</source>
-        <translation type="unfinished"></translation>
+        <translation>El solucionador se está ejecutando actualmente, por lo que no puede guardar la condición de cálculo. Presione el botón Cancelar.</translation>
     </message>
     <message>
         <source>Error occured while saving.</source>
@@ -509,65 +530,65 @@ Do you really want to import this file?</source>
     <name>InputConditionWidgetCgnsFile</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Forma</translation>
+        <translation>Formulario</translation>
     </message>
     <message>
         <source>...</source>
-        <translation type="unfinished"></translation>
+        <translation>...</translation>
     </message>
     <message>
         <source>Solver Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nombre del solucionador:</translation>
     </message>
     <message>
         <source>---</source>
-        <translation type="unfinished"></translation>
+        <translation>---</translation>
     </message>
     <message>
         <source>Solver Version:</source>
-        <translation type="unfinished"></translation>
+        <translation>Versión del solucionador:</translation>
     </message>
     <message>
         <source>Grid Type:</source>
-        <translation type="unfinished">Tipo de Cuadricula:</translation>
+        <translation>Tipo de cuadrícula:</translation>
     </message>
     <message>
         <source>Grid Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tamaño de la cuadrícula:</translation>
     </message>
     <message>
         <source>Number of results:</source>
-        <translation type="unfinished"></translation>
+        <translation>Numero de resultados:</translation>
     </message>
     <message>
         <source>Structured</source>
-        <translation type="unfinished"></translation>
+        <translation>Estructurado</translation>
     </message>
     <message>
         <source>Unstructured</source>
-        <translation type="unfinished"></translation>
+        <translation>No estructurado</translation>
     </message>
     <message>
         <source>Select File</source>
-        <translation type="unfinished">Seleccionar Archivo</translation>
+        <translation>Seleccione Archivo</translation>
     </message>
 </context>
 <context>
     <name>InputConditionWidgetCgnsResult</name>
     <message>
         <source>(CGNS file is not selected)</source>
-        <translation type="unfinished"></translation>
+        <translation>(El archivo CGNS no está seleccionado)</translation>
     </message>
     <message>
         <source>(There is no result)</source>
-        <translation type="unfinished"></translation>
+        <translation>(No hay resultado)</translation>
     </message>
 </context>
 <context>
     <name>InputConditionWidgetCheckbox</name>
     <message>
         <source>Enabled</source>
-        <translation type="unfinished"></translation>
+        <translation>Activado</translation>
     </message>
 </context>
 <context>
@@ -604,7 +625,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Import Web</source>
-        <translation type="unfinished"></translation>
+        <translation>Importar Web</translation>
     </message>
     <message>
         <source>&amp;Export</source>
@@ -616,11 +637,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>%1 at row %2: The value %3 is smaller than minimum value %4</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 en fila %2 : El valor %3 es menor que el valor mínimo %4</translation>
     </message>
     <message>
         <source>%1 at row %2: The value %3 is larger than maximum value %4</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 en fila %2 : El valor %3 es mayor que el valor máximo %4</translation>
     </message>
     <message>
         <source>Choose a text file</source>
@@ -632,7 +653,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>Error occured while opening the file.</source>
@@ -640,49 +661,49 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Ctrl+C</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl + C</translation>
     </message>
     <message>
         <source>Ctrl+V</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl + V</translation>
     </message>
     <message>
         <source>%1 are values for spans. For example value input at 2nd row is for span between 1st row and 2nd row.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 son valores para tramos. Por ejemplo, la entrada de valor en la 2ª fila es para el intervalo entre la 1ª y la 2ª fila.</translation>
     </message>
     <message>
         <source>Specify file name to save</source>
-        <translation type="unfinished"></translation>
+        <translation>Especifique el nombre del archivo para guardar</translation>
     </message>
     <message>
         <source>CSV files (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivos CSV (*.csv)</translation>
     </message>
     <message>
         <source>Values are copied to clipboard.</source>
-        <translation type="unfinished"></translation>
+        <translation>Los valores se copian al portapapeles.</translation>
     </message>
     <message>
         <source>File %1 is updated after imported to calculation condition %2. Do you want to import the updated file?</source>
-        <translation type="unfinished"></translation>
+        <translation>Expediente %1 se actualiza después de la importación a la condición de cálculo %2. ¿Quieres importar el archivo actualizado?</translation>
     </message>
     <message>
         <source>Information</source>
         <translation>Informacion</translation>
     </message>
     <message>
-        <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
-        <translation type="unfinished"></translation>
+        <source>You can copy and paste the values, with shortcut "Ctrl + C" and "Ctrl + V"</source>
+        <translation>Puede copiar y pegar los valores, con el acceso directo "Ctrl + C" y "Ctrl + V"</translation>
     </message>
     <message>
         <source>The following problems found: 
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Los siguientes problemas encontrados:</translation>
     </message>
     <message>
         <source>
  ... and other %1 errors</source>
-        <translation type="unfinished"></translation>
+        <translation>... y otra %1 errores</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -693,39 +714,39 @@ Do you really want to import this file?</source>
     <name>InputConditionWidgetFunctionalDownloadDialog</name>
     <message>
         <source>Download</source>
-        <translation type="unfinished"></translation>
+        <translation>Descargar</translation>
     </message>
     <message>
         <source>Site Number:</source>
-        <translation type="unfinished"></translation>
+        <translation>Número de sitio:</translation>
     </message>
     <message>
         <source>Start Date:</source>
-        <translation type="unfinished"></translation>
+        <translation>Fecha de inicio:</translation>
     </message>
     <message>
         <source>End Date:</source>
-        <translation type="unfinished"></translation>
+        <translation>Fecha final:</translation>
     </message>
     <message>
         <source>Test</source>
-        <translation type="unfinished"></translation>
+        <translation>Prueba</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>Please enter a site number.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ingrese un número de sitio.</translation>
     </message>
     <message>
         <source>Invalid site number.</source>
-        <translation type="unfinished"></translation>
+        <translation>Número de sitio no válido.</translation>
     </message>
     <message>
         <source>Start date not prior to end date.</source>
-        <translation type="unfinished"></translation>
+        <translation>La fecha de inicio no es anterior a la fecha de finalización.</translation>
     </message>
     <message>
         <source>Import failed</source>
@@ -733,7 +754,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>No data to import.</source>
-        <translation type="unfinished"></translation>
+        <translation>No hay datos para importar.</translation>
     </message>
 </context>
 <context>
@@ -782,8 +803,8 @@ Do you really want to import this file?</source>
         <translation>Error ocurrio mientras abriendo el archivo.</translation>
     </message>
     <message>
-        <source>The first two columns must be &quot;X&quot; and &quot;Y&quot;.</source>
-        <translation type="unfinished"></translation>
+        <source>The first two columns must be "X" and "Y".</source>
+        <translation>Las dos primeras columnas deben ser "X" e "Y".</translation>
     </message>
     <message>
         <source>The data file has to consist of only English characters.</source>
@@ -806,34 +827,34 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>X: </source>
-        <translation type="unfinished"></translation>
+        <translation>X:</translation>
     </message>
     <message>
         <source>Y: </source>
-        <translation type="unfinished"></translation>
+        <translation>Y:</translation>
     </message>
     <message>
         <source>X: ------</source>
-        <translation type="unfinished"></translation>
+        <translation>X: ------</translation>
     </message>
     <message>
         <source>Y: ------</source>
-        <translation type="unfinished"></translation>
+        <translation>Y: ------</translation>
     </message>
 </context>
 <context>
     <name>OffsetSettingDialog</name>
     <message>
         <source>Offset Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Ajuste de compensación</translation>
     </message>
     <message>
         <source>X:</source>
-        <translation type="unfinished"></translation>
+        <translation>X:</translation>
     </message>
     <message>
         <source>Y:</source>
-        <translation type="unfinished"></translation>
+        <translation>Y:</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -841,11 +862,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>X value is not appropriate. Please input more simple value.</source>
-        <translation type="unfinished"></translation>
+        <translation>El valor X no es apropiado. Ingrese un valor más simple.</translation>
     </message>
     <message>
         <source>Y value is not appropriate. Please input more simple value.</source>
-        <translation type="unfinished"></translation>
+        <translation>El valor de Y no es apropiado. Ingrese un valor más simple.</translation>
     </message>
 </context>
 <context>
@@ -875,34 +896,34 @@ Do you really want to import this file?</source>
     <name>PostCalculatedResult</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>Error occured: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Ocurrió un error: %1</translation>
     </message>
     <message>
         <source>Checking argument for %1 failed. Invalid arguments: %2.</source>
-        <translation type="unfinished"></translation>
+        <translation>Comprobando argumento para %1 fallido. Argumentos inválidos: %2.</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultArgumentEditDialog</name>
     <message>
         <source>Edit Simple Operation Result Variable</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar variable de resultado de operación simple</translation>
     </message>
     <message>
         <source>Calculation Result:</source>
-        <translation type="unfinished"></translation>
+        <translation>Resultado del cálculo:</translation>
     </message>
     <message>
         <source>Variable name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nombre de la variable:</translation>
     </message>
     <message>
         <source>Value for testing:</source>
-        <translation type="unfinished"></translation>
+        <translation>Valor de prueba:</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -910,18 +931,18 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Variable name is not input.</source>
-        <translation type="unfinished"></translation>
+        <translation>No se ingresa el nombre de la variable.</translation>
     </message>
     <message>
         <source>This variable name is already used</source>
-        <translation type="unfinished"></translation>
+        <translation>Este nombre de variable ya se usa</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultEditDialog</name>
     <message>
         <source>Edit Simple Operation Result</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar resultado de operación simple</translation>
     </message>
     <message>
         <source>Name:</source>
@@ -929,15 +950,15 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Position:</source>
-        <translation type="unfinished"></translation>
+        <translation>Posición:</translation>
     </message>
     <message>
         <source>Calculation results for input</source>
-        <translation type="unfinished"></translation>
+        <translation>Resultados del cálculo para la entrada</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation type="unfinished"></translation>
+        <translation>Agregar (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
@@ -945,47 +966,47 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Definition of variable</source>
-        <translation type="unfinished"></translation>
+        <translation>Definición de variable</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Puede definir la variable con lenguaje JavaScript. Consulte &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "texto -decoration: underline; color: # 0000ff; "&gt; aquí &lt;/span&gt; &lt;/a&gt; para más detalles. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
-        <translation type="unfinished"></translation>
+        <translation>Prueba</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can test the definition by clicking this. If error occurs while parsing the definition, the error message is shown. When the definition is parsed successfully, the value calculated using the &amp;quot;Value for testing&amp;quot; for each input is shown.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Puede probar la definición haciendo clic aquí. Si se produce un error al analizar la definición, se muestra el mensaje de error. Cuando la definición se analiza correctamente, el valor se calcula utilizando el &amp; quot; Valor de pruebaquot; para cada entrada se muestra. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>----</source>
-        <translation type="unfinished"></translation>
+        <translation>----</translation>
     </message>
     <message>
         <source>Result name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nombre del resultado</translation>
     </message>
     <message>
         <source>Variable name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nombre de la variable</translation>
     </message>
     <message>
         <source>Value for testing</source>
-        <translation type="unfinished"></translation>
+        <translation>Valor para probar</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation type="unfinished"></translation>
+        <translation>Nodo de cuadrícula</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation type="unfinished"></translation>
+        <translation>Cuadrícula de celdas</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation type="unfinished"></translation>
+        <translation>Partícula</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -993,11 +1014,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Name is not input.</source>
-        <translation type="unfinished"></translation>
+        <translation>El nombre no se ingresa.</translation>
     </message>
     <message>
         <source>This name is already used</source>
-        <translation type="unfinished"></translation>
+        <translation>Este nombre ya se usa</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
@@ -1008,7 +1029,7 @@ Do you really want to import this file?</source>
     <name>PostCalculatedResultListDialog</name>
     <message>
         <source>Simple Operation Result List</source>
-        <translation type="unfinished"></translation>
+        <translation>Lista de resultados de operación simple</translation>
     </message>
     <message>
         <source>Name</source>
@@ -1027,12 +1048,12 @@ Do you really want to import this file?</source>
         <translation>&amp;Abajo</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Nota &lt;/span&gt;: El orden en la lista es importante. En la definición, puede usar el valor de cálculos de operaciones simples como una variable, que aparece antes en la lista. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation type="unfinished"></translation>
+        <translation>Agregar (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
@@ -1052,15 +1073,15 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Grid node</source>
-        <translation type="unfinished"></translation>
+        <translation>Nodo de cuadrícula</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation type="unfinished"></translation>
+        <translation>Cuadrícula de celdas</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation type="unfinished"></translation>
+        <translation>Partícula</translation>
     </message>
 </context>
 <context>
@@ -1079,11 +1100,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Topography Files (*.tpo)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivos de topografía (*.tpo)</translation>
     </message>
     <message>
         <source>ESRI Shapefiles</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivos de forma ESRI</translation>
     </message>
     <message>
         <source>Output folder:</source>
@@ -1091,11 +1112,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>...</source>
-        <translation type="unfinished"></translation>
+        <translation>...</translation>
     </message>
     <message>
         <source>Output file:</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo de salida:</translation>
     </message>
     <message>
         <source>Time</source>
@@ -1123,15 +1144,15 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>VTK files (ASCII)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivos VTK (ASCII)</translation>
     </message>
     <message>
         <source>VTK files (Binary)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivos VTK (binarios)</translation>
     </message>
     <message>
         <source>Region</source>
-        <translation type="unfinished"></translation>
+        <translation>Región</translation>
     </message>
     <message>
         <source>Full region</source>
@@ -1186,7 +1207,7 @@ Do you really want to import this file?</source>
     <name>PostIterationSteps</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>Error occured while loading calculation result.</source>
@@ -1197,7 +1218,7 @@ Do you really want to import this file?</source>
     <name>PostSolutionInfo</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>Error occured while loading calculation result.</source>
@@ -1209,7 +1230,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Loading calculation result for visualization failed. Please try again later, or wait until end of calculation.</source>
-        <translation type="unfinished"></translation>
+        <translation>Error al cargar el resultado del cálculo para la visualización. Vuelva a intentarlo más tarde o espere hasta que finalice el cálculo.</translation>
     </message>
     <message>
         <source>No calculation result exists.</source>
@@ -1233,7 +1254,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Saving calculation result as ESRI Shapefiles...</source>
-        <translation type="unfinished"></translation>
+        <translation>Guardando el resultado del cálculo como archivos de forma ESRI...</translation>
     </message>
     <message>
         <source>Error occured while saving %1</source>
@@ -1244,11 +1265,11 @@ Do you really want to import this file?</source>
     <name>PostStringResult</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>Error occured: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Ocurrió un error: %1</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -1256,38 +1277,38 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>I, J, K, index for label is reset because the grid size is changed.</source>
-        <translation type="unfinished"></translation>
+        <translation>I, J, K, el índice de la etiqueta se restablece porque se cambia el tamaño de la cuadrícula.</translation>
     </message>
 </context>
 <context>
     <name>PostStringResultArgumentEditDialog</name>
     <message>
         <source>Edit String Result Argument</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar argumento de resultado de cadena</translation>
     </message>
     <message>
         <source>Position:</source>
-        <translation type="unfinished"></translation>
+        <translation>Posición:</translation>
     </message>
     <message>
         <source>Result Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nombre del resultado:</translation>
     </message>
     <message>
         <source>Variable Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nombre de la variable:</translation>
     </message>
     <message>
         <source>I:</source>
-        <translation type="unfinished"></translation>
+        <translation>I:</translation>
     </message>
     <message>
         <source>J:</source>
-        <translation type="unfinished"></translation>
+        <translation>J:</translation>
     </message>
     <message>
         <source>K:</source>
-        <translation type="unfinished"></translation>
+        <translation>K:</translation>
     </message>
     <message>
         <source>Index:</source>
@@ -1295,27 +1316,27 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Value for testing</source>
-        <translation type="unfinished"></translation>
+        <translation>Valor para probar</translation>
     </message>
     <message>
         <source>Global</source>
-        <translation type="unfinished"></translation>
+        <translation>Global</translation>
     </message>
     <message>
         <source>Node</source>
-        <translation type="unfinished"></translation>
+        <translation>Nodo</translation>
     </message>
     <message>
         <source>Cell</source>
-        <translation type="unfinished"></translation>
+        <translation>Celda</translation>
     </message>
     <message>
         <source>EdgeI</source>
-        <translation type="unfinished"></translation>
+        <translation>EdgeI</translation>
     </message>
     <message>
         <source>EdgeJ</source>
-        <translation type="unfinished"></translation>
+        <translation>EdgeJ</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -1323,7 +1344,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Variable name is empty.</source>
-        <translation type="unfinished"></translation>
+        <translation>El nombre de la variable está vacío.</translation>
     </message>
 </context>
 <context>
@@ -1334,31 +1355,31 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Calculation results for input</source>
-        <translation type="unfinished"></translation>
+        <translation>Resultados del cálculo para la entrada</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation type="unfinished"></translation>
+        <translation>Escribe</translation>
     </message>
     <message>
         <source>Result name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nombre del resultado</translation>
     </message>
     <message>
         <source>Variable name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nombre de la variable</translation>
     </message>
     <message>
         <source>Index</source>
-        <translation type="unfinished"></translation>
+        <translation>Índice</translation>
     </message>
     <message>
         <source>Value for Testing</source>
-        <translation type="unfinished"></translation>
+        <translation>Valor para las pruebas</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation type="unfinished"></translation>
+        <translation>Agregar (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
@@ -1370,15 +1391,15 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Definition of output</source>
-        <translation type="unfinished"></translation>
+        <translation>Definición de salida</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Puede definir la variable con lenguaje JavaScript. Consulte &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "texto -decoration: underline; color: # 0000ff; "&gt; aquí &lt;/span&gt; &lt;/a&gt; para más detalles. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
-        <translation type="unfinished"></translation>
+        <translation>Prueba</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -1390,34 +1411,34 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Global</source>
-        <translation type="unfinished"></translation>
+        <translation>Global</translation>
     </message>
     <message>
         <source>Node</source>
-        <translation type="unfinished"></translation>
+        <translation>Nodo</translation>
     </message>
     <message>
         <source>Cell</source>
-        <translation type="unfinished"></translation>
+        <translation>Celda</translation>
     </message>
     <message>
         <source>EdgeI</source>
-        <translation type="unfinished"></translation>
+        <translation>EdgeI</translation>
     </message>
     <message>
         <source>EdgeJ</source>
-        <translation type="unfinished"></translation>
+        <translation>EdgeJ</translation>
     </message>
     <message>
         <source>EdgeK</source>
-        <translation type="unfinished"></translation>
+        <translation>EdgeK</translation>
     </message>
 </context>
 <context>
     <name>PostTimeSteps</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>Error occured while loading calculation result.</source>
@@ -1465,7 +1486,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>Could not overwrite %1.</source>
@@ -1485,14 +1506,14 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Opening project...</source>
-        <translation type="unfinished"></translation>
+        <translation>Abriendo proyecto...</translation>
     </message>
 </context>
 <context>
     <name>ProjectMainFile</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>Solution %1 already exists.</source>
@@ -1512,7 +1533,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>CGNS file (*.cgns)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo CGNS (*.cgns)</translation>
     </message>
     <message>
         <source>Exporting CGNS file failed. Specified file is locked by other process.</source>
@@ -1580,7 +1601,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Coordinate system not selected.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sistema de coordenadas no seleccionado.</translation>
     </message>
 </context>
 <context>
@@ -1598,26 +1619,26 @@ Do you really want to import this file?</source>
     <name>ProjectTimeSettingDialog</name>
     <message>
         <source>Date for t = 0 setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Fecha para ajuste t = 0</translation>
     </message>
     <message>
         <source>Time for t = 0:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tiempo para t = 0:</translation>
     </message>
     <message>
         <source>Not specified</source>
-        <translation type="unfinished"></translation>
+        <translation>No especificado</translation>
     </message>
     <message>
         <source>Time display format</source>
-        <translation type="unfinished"></translation>
+        <translation>Formato de visualización de la hora</translation>
     </message>
 </context>
 <context>
     <name>ProjectWorkspace</name>
     <message>
-        <source>Workspace &quot;%1&quot; has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
-        <translation type="unfinished"></translation>
+        <source>Workspace "%1" has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
+        <translation>Espacio de trabajo "%1" tiene %2 carpetas de proyectos que parece que ya no se utilizan. ¿Quieres eliminarlos?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1639,19 +1660,19 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Indices</source>
-        <translation type="unfinished"></translation>
+        <translation>Índices</translation>
     </message>
     <message>
         <source>1</source>
-        <translation type="unfinished"></translation>
+        <translation>1</translation>
     </message>
     <message>
         <source>J:</source>
-        <translation type="unfinished"></translation>
+        <translation>J:</translation>
     </message>
     <message>
         <source>I:</source>
-        <translation type="unfinished"></translation>
+        <translation>I:</translation>
     </message>
     <message>
         <source>Index:</source>
@@ -1663,11 +1684,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>X:</source>
-        <translation type="unfinished"></translation>
+        <translation>X:</translation>
     </message>
     <message>
         <source>Y:</source>
-        <translation type="unfinished"></translation>
+        <translation>Y:</translation>
     </message>
     <message>
         <source>Attributes:</source>
@@ -1718,7 +1739,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Set offset</source>
-        <translation type="unfinished"></translation>
+        <translation>Establecer compensación</translation>
     </message>
 </context>
 <context>
@@ -1798,7 +1819,7 @@ Do you really want to import this file?</source>
     <name>TmsImageGroupDataItem</name>
     <message>
         <source>Background Images (Internet)</source>
-        <translation type="unfinished"></translation>
+        <translation>Imágenes de fondo (Internet)</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -1807,61 +1828,61 @@ Do you really want to import this file?</source>
     <message>
         <source>To get background image from internet, please specify the coordiyate system of the project, from the following menu.
  File -&gt; Property</source>
-        <translation type="unfinished"></translation>
+        <translation>Para obtener una imagen de fondo de Internet, especifique el sistema de coordinación del proyecto, en el siguiente menú. Archivo -&gt; Propiedad</translation>
     </message>
     <message>
         <source>Background Image change</source>
-        <translation type="unfinished"></translation>
+        <translation>Cambio de imagen de fondo</translation>
     </message>
 </context>
 <context>
     <name>TmsImageSettingManager</name>
     <message>
         <source>Google Map (Road)</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapa de Google (carretera)</translation>
     </message>
     <message>
         <source>Google Map (Satellite)</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapa de Google (satélite)</translation>
     </message>
     <message>
         <source>Google Map (Hybrid)</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapa de Google (híbrido)</translation>
     </message>
     <message>
         <source>Google Map (Terrain)</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapa de Google (terreno)</translation>
     </message>
     <message>
         <source>Open Street Map</source>
-        <translation type="unfinished"></translation>
+        <translation>Abrir mapa de calles</translation>
     </message>
     <message>
         <source>GSI (Standard) (Japan only)</source>
-        <translation type="unfinished"></translation>
+        <translation>GSI (estándar) (solo Japón)</translation>
     </message>
     <message>
         <source>GSI (Pale) (Japan only)</source>
-        <translation type="unfinished"></translation>
+        <translation>GSI (Pale) (solo Japón)</translation>
     </message>
     <message>
         <source>GSI (English) (Japan only)</source>
-        <translation type="unfinished"></translation>
+        <translation>GSI (inglés) (solo Japón)</translation>
     </message>
     <message>
         <source>GSI (Relief) (Japan only)</source>
-        <translation type="unfinished"></translation>
+        <translation>GSI (Relief) (solo Japón)</translation>
     </message>
     <message>
         <source>GSI (Ortho images) (Japan only)</source>
-        <translation type="unfinished"></translation>
+        <translation>GSI (imágenes Ortho) (solo Japón)</translation>
     </message>
 </context>
 <context>
     <name>iRICMetaData</name>
     <message>
         <source>Build number of the version number is not specified.</source>
-        <translation type="unfinished"></translation>
+        <translation>No se especifica el número de compilación del número de versión.</translation>
     </message>
 </context>
 </TS>

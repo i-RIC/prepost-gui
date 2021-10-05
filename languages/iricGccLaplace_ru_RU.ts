@@ -1,307 +1,305 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ru_RU">
 <context>
     <name>GridCreatingConditionCreatorLaplace</name>
     <message>
         <source>General purpose grid generation tool</source>
-        <translation type="unfinished"></translation>
+        <translation>Инструмент генерации сетки общего назначения</translation>
     </message>
     <message>
         <source>You can create smooth grid shape solving laplace equation.</source>
-        <translation type="unfinished"></translation>
+        <translation>Вы можете создать гладкую сетку, решая уравнение Лапласа.</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionLaplace</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Предупреждение</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Информация</translation>
     </message>
     <message>
         <source>To divide the region, click on the edge of the region first, then click on the opposite edge.</source>
-        <translation type="unfinished"></translation>
+        <translation>Чтобы разделить область, сначала щелкните край области, затем щелкните противоположный край.</translation>
     </message>
     <message>
         <source>Please select an edge line inside the region when you want to join regions.</source>
-        <translation type="unfinished"></translation>
+        <translation>Пожалуйста, выберите граничную линию внутри региона, если вы хотите соединить регионы.</translation>
     </message>
     <message>
         <source>Are you sure you want to join the regions divided by the selected edge?</source>
-        <translation type="unfinished"></translation>
+        <translation>Вы уверены, что хотите соединить области, разделенные выбранным ребром?</translation>
     </message>
     <message>
         <source>Are you sure you want to clear division setting?</source>
-        <translation type="unfinished"></translation>
+        <translation>Вы уверены, что хотите очистить настройку разделения?</translation>
     </message>
     <message>
         <source>Finish Defining Center Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Завершить определение центральной линии</translation>
     </message>
     <message>
         <source>Start defining center line</source>
-        <translation type="unfinished"></translation>
+        <translation>Начать определение центральной линии</translation>
     </message>
     <message>
         <source>Insert Line Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Вставить вершину линии</translation>
     </message>
     <message>
         <source>Add New Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Добавить новую точку</translation>
     </message>
     <message>
         <source>Edit Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Изменить координаты</translation>
     </message>
     <message>
         <source>Move Line Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Переместить вершину линии</translation>
     </message>
     <message>
         <source>Remove Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Удалить вершину</translation>
     </message>
     <message>
         <source>Center Line Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Координаты центральной линии</translation>
     </message>
     <message>
         <source>Move Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Переместить точку</translation>
     </message>
     <message>
         <source>&amp;Build left bank and right bank lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Постройте линии левого и правого берега (&amp;B)</translation>
     </message>
     <message>
         <source>&amp;Interpolation Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Режим интерполяции (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Spline</source>
-        <translation type="unfinished"></translation>
+        <translation>Сплайн (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;Linear</source>
-        <translation type="unfinished"></translation>
+        <translation>Линейный (&amp;L)</translation>
     </message>
     <message>
         <source>Add &amp;Division line</source>
-        <translation type="unfinished"></translation>
+        <translation>Добавить разделительную линию (&amp;D)</translation>
     </message>
     <message>
         <source>Remove D&amp;ivision Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Удалить разделительную линию (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Add Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Добавить вершину (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Удалить вершину (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Edit coordinates...</source>
-        <translation type="unfinished"></translation>
+        <translation>Изменить координаты (&amp;E)...</translation>
     </message>
     <message>
         <source>Division Setting for &amp;whole region...</source>
-        <translation type="unfinished"></translation>
+        <translation>Настройка дивизиона для всего региона (&amp;W)...</translation>
     </message>
     <message>
         <source>&amp;Division Setting for selected line...</source>
-        <translation type="unfinished"></translation>
+        <translation>Настройка деления для выбранной строки (&amp;D)...</translation>
     </message>
     <message>
         <source>&amp;Edge Points Deploying Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Настройка развертывания пограничных точек (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Deploying Setting for selected area...</source>
-        <translation type="unfinished"></translation>
+        <translation>Настройка развертывания для выбранной области (&amp;D)...</translation>
     </message>
     <message>
         <source>&amp;Clear Division Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Настройка четкого деления (&amp;C)...</translation>
     </message>
     <message>
         <source>Please build left bank and right bank lines before creating grid.</source>
-        <translation type="unfinished"></translation>
+        <translation>Перед созданием сетки постройте линии левого и правого берега.</translation>
     </message>
     <message>
         <source>Start adding new edge</source>
-        <translation type="unfinished"></translation>
+        <translation>Начните добавлять новый край</translation>
     </message>
     <message>
         <source>Edge Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Координаты края</translation>
     </message>
     <message>
         <source>Cross-section data not found. Please define Center Line by yourself.</source>
-        <translation type="unfinished"></translation>
+        <translation>Данные поперечного сечения не найдены. Определите центральную линию самостоятельно.</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionLaplace::Impl</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Предупреждение</translation>
     </message>
     <message>
         <source>Center Line is not defined yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Осевая линия еще не определена.</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionLaplaceBuildBankLinesDialog</name>
     <message>
         <source>Build Bank Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Строить банковские линии</translation>
     </message>
     <message>
         <source>Input the distance from center line</source>
-        <translation type="unfinished"></translation>
+        <translation>Введите расстояние от центральной линии</translation>
     </message>
     <message>
         <source>Left bank:</source>
-        <translation type="unfinished"></translation>
+        <translation>Левый берег:</translation>
     </message>
     <message>
         <source>Right bank:</source>
-        <translation type="unfinished"></translation>
+        <translation>Правый берег:</translation>
     </message>
     <message>
         <source>Hint: Left bank and Right bank lines are created as line that consists of points that are away from center line to direction perpendicular to the center line.</source>
-        <translation type="unfinished"></translation>
+        <translation>Подсказка: линии левого берега и правого берега создаются как линии, состоящие из точек, удаленных от центральной линии в направлении, перпендикулярном центральной линии.</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionLaplaceCtrlPointsDialog</name>
     <message>
         <source>Specity the Number Of Control Cross Sections</source>
-        <translation type="unfinished"></translation>
+        <translation>Определите количество контрольных сечений</translation>
     </message>
     <message>
         <source>Number of Control Cross Sections:</source>
-        <translation type="unfinished"></translation>
+        <translation>Количество контрольных сечений:</translation>
     </message>
     <message>
         <source>Hints: Control Cross Sections are the cross sections whose center points are used as the center line of the grid.</source>
-        <translation type="unfinished"></translation>
+        <translation>Подсказки: Контрольные сечения - это сечения, центральные точки которых используются в качестве центральной линии сетки.</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionLaplaceDeploySettingDialog</name>
     <message>
         <source>Points Deploy Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Настройка точек развертывания</translation>
     </message>
     <message>
         <source>Deploy Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Настройка развертывания</translation>
     </message>
     <message>
         <source>Equally divided</source>
-        <translation type="unfinished"></translation>
+        <translation>Поровну</translation>
     </message>
     <message>
         <source>Geometric division</source>
-        <translation type="unfinished"></translation>
+        <translation>Геометрическое деление</translation>
     </message>
     <message>
         <source>Common ratio:</source>
-        <translation type="unfinished"></translation>
+        <translation>Общее соотношение:</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionLaplaceDivisionSettingDialog</name>
     <message>
         <source>Division Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Настройка деления</translation>
     </message>
     <message>
         <source>Division Number:</source>
-        <translation type="unfinished"></translation>
+        <translation>Номер отдела:</translation>
     </message>
     <message>
         <source>Deploy Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Настройка развертывания</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation>Авто</translation>
     </message>
     <message>
         <source>Equally divided</source>
-        <translation type="unfinished"></translation>
+        <translation>Поровну</translation>
     </message>
     <message>
         <source>Geometric division</source>
-        <translation type="unfinished"></translation>
+        <translation>Геометрическое деление</translation>
     </message>
     <message>
         <source>Common ratio:</source>
-        <translation type="unfinished"></translation>
+        <translation>Общее соотношение:</translation>
     </message>
     <message>
         <source>Deploy Setting Target</source>
-        <translation type="unfinished"></translation>
+        <translation>Цель настройки развертывания</translation>
     </message>
     <message>
         <source>This line only</source>
-        <translation type="unfinished"></translation>
+        <translation>Только эта строка</translation>
     </message>
     <message>
         <source>This line and lines in parallel positions</source>
-        <translation type="unfinished"></translation>
+        <translation>Эта линия и линии в параллельных положениях</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The deploy setting is applied to all lines in parallel positions.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Параметр развертывания применяется ко всем линиям в параллельных позициях. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionLaplaceSubRegionDeploySettingDialog</name>
     <message>
         <source>Inner Points Deploy Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Настройка развертывания внутренних точек</translation>
     </message>
     <message>
         <source>Ratio</source>
-        <translation type="unfinished"></translation>
+        <translation>Соотношение</translation>
     </message>
     <message>
         <source>Poisson</source>
-        <translation type="unfinished"></translation>
+        <translation>Пуассон</translation>
     </message>
     <message>
         <source>Streamwise direction:</source>
-        <translation type="unfinished"></translation>
+        <translation>Продольное направление:</translation>
     </message>
     <message>
         <source>Cross section direction:</source>
-        <translation type="unfinished"></translation>
+        <translation>Направление поперечного сечения:</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionLaplaceWholeRegionDivisionSettingDialog</name>
     <message>
         <source>Division Setting for Whole Region</source>
-        <translation type="unfinished"></translation>
+        <translation>Настройка деления для всего региона</translation>
     </message>
     <message>
         <source>m</source>
-        <translation type="unfinished"></translation>
+        <translation>м</translation>
     </message>
     <message>
         <source>Create &amp;Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Создать сетку (&amp;G)</translation>
     </message>
 </context>
 </TS>

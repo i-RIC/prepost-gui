@@ -1,40 +1,38 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="hi_IN">
 <context>
     <name>InformationDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>संवाद</translation>
     </message>
     <message>
         <source>Do not show this message again.</source>
-        <translation type="unfinished"></translation>
+        <translation>इस संदेश को फिर ना दिखाना।</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
         <source> Revision %1</source>
-        <translation type="unfinished"></translation>
+        <translation>संशोधन %1</translation>
     </message>
 </context>
 <context>
     <name>SlowmotionSpeedEditDialog</name>
     <message>
         <source>Animation Speed Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>एनिमेशन स्पीड सेटिंग</translation>
     </message>
     <message>
         <source>Animation interval in seconds:</source>
-        <translation type="unfinished"></translation>
+        <translation>सेकंड में एनिमेशन अंतराल:</translation>
     </message>
 </context>
 <context>
     <name>StandardErrorMessages</name>
     <message>
         <source>Opening file %1 failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>फ़ाइल खोलना %1 अनुत्तीर्ण होना।</translation>
     </message>
 </context>
 </TS>

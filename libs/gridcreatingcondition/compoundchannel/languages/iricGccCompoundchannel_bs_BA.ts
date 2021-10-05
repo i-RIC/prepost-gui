@@ -1,177 +1,175 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="bs_BA">
 <context>
     <name>GridCreatingConditionCompoundChannel</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Upozorenje</translation>
     </message>
     <message>
         <source>Polygon must have three vertices at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>Poligon mora imati najmanje tri vrha.</translation>
     </message>
     <message>
         <source>Finish Defining Polygon</source>
-        <translation type="unfinished"></translation>
+        <translation>Završi definiranje poligona</translation>
     </message>
     <message>
         <source>Polygonal line must have two vertices at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>Poligonalna linija mora imati najmanje dva vrha.</translation>
     </message>
     <message>
         <source>Finish Defining Polygonal line</source>
-        <translation type="unfinished"></translation>
+        <translation>Završi Definiranje poligonalne linije</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informacije</translation>
     </message>
     <message>
         <source>Please define grid creating region. Grid creating region can be defined as polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
-        <translation type="unfinished"></translation>
+        <translation>Molimo definirajte region za stvaranje mreže. Regija za stvaranje mreže može se definirati kao poligon klikom miša. Definiranje definirajte dvostrukim klikom ili pritiskom na tipku za povratak.</translation>
     </message>
     <message>
         <source>Generating grid...</source>
-        <translation type="unfinished"></translation>
+        <translation>Generiranje mreže...</translation>
     </message>
     <message>
         <source>Grid creating condition definition not finished yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Definicija uvjeta za stvaranje mreže još nije dovršena.</translation>
     </message>
     <message>
         <source>Grid creating region polygon shape is invalid.</source>
-        <translation type="unfinished"></translation>
+        <translation>Oblik poligona za stvaranje regije koji stvara mrežu nije važeći.</translation>
     </message>
     <message>
         <source>Low water channel region polygon shape is invalid.</source>
-        <translation type="unfinished"></translation>
+        <translation>Oblik poligona u području kanala s malom vodom nije važeći.</translation>
     </message>
     <message>
         <source>Low water channel region have to be inside grid region.</source>
-        <translation type="unfinished"></translation>
+        <translation>Regija niskog vodostaja mora biti unutar područja mreže.</translation>
     </message>
     <message>
         <source>Center line have to be inside low water channel region.</source>
-        <translation type="unfinished"></translation>
+        <translation>Središnja linija mora biti unutar regije kanala s niskim vodostajem.</translation>
     </message>
     <message>
         <source>Insert Polygon Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Umetnite vrh poligona</translation>
     </message>
     <message>
         <source>Insert Polygonal Line Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Umetnite vrh poligonalne linije</translation>
     </message>
     <message>
         <source>Add New Polygon Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Dodaj novu tačku poligona</translation>
     </message>
     <message>
         <source>Add New Center Line Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Dodajte novu tačku središnje linije</translation>
     </message>
     <message>
         <source>Edit Polygon Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Uređivanje poligonskih koordinata</translation>
     </message>
     <message>
         <source>Edit Center Line Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Uređivanje koordinata središnje linije</translation>
     </message>
     <message>
         <source>Move Polygon</source>
-        <translation type="unfinished"></translation>
+        <translation>Premjesti poligon</translation>
     </message>
     <message>
         <source>Move Polygon Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Pomicanje vrha poligona</translation>
     </message>
     <message>
         <source>Move Polygonal Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Pomicanje poligonalne linije</translation>
     </message>
     <message>
         <source>Move Polygonal Line Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Pomicanje vrha poligonalne linije</translation>
     </message>
     <message>
         <source>Polygon Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Koordinate poligona</translation>
     </message>
     <message>
         <source>Polyline Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Koordinate polilinije</translation>
     </message>
     <message>
         <source>Remove Polygon Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Uklonite Polygon Vertex</translation>
     </message>
     <message>
         <source>Remove Polygonal Line Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Uklonite vrh poligonalne linije</translation>
     </message>
     <message>
         <source>Finish Defining Polygon or Polygonal line</source>
-        <translation type="unfinished"></translation>
+        <translation>Završi definiranje poligona ili poligonalne linije</translation>
     </message>
     <message>
         <source>Next, please define low water channel region. Water channel can be defined as polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
-        <translation type="unfinished"></translation>
+        <translation>Zatim definirajte regiju kanala s niskim vodostajem. Vodeni kanal može se definirati kao poligon klikom miša. Definiranje definirajte dvostrukim klikom ili pritiskom na tipku za povratak.</translation>
     </message>
     <message>
         <source>Next, please define grid center line. Grid center line can be defined as polygonal line by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
-        <translation type="unfinished"></translation>
+        <translation>Zatim definirajte središnju liniju mreže. Središnja linija mreže može se definirati kao poligonalna linija klikom miša. Definiranje definirajte dvostrukim klikom ili pritiskom na tipku za povratak.</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionCompoundChannelAbstractPolygon</name>
     <message>
         <source>Please specify a closed polygon!</source>
-        <translation type="unfinished"></translation>
+        <translation>Molimo navedite zatvoreni poligon!</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionCompoundChannelSettingDialog</name>
     <message>
         <source>Grid Creation</source>
-        <translation type="unfinished"></translation>
+        <translation>Grid Creation</translation>
     </message>
     <message>
         <source>Grid division setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Postavka podjele mreže</translation>
     </message>
     <message>
         <source>Optimization</source>
-        <translation type="unfinished"></translation>
+        <translation>Optimizacija</translation>
     </message>
     <message>
         <source>&amp;Relaxation:</source>
-        <translation type="unfinished"></translation>
+        <translation>Opuštanje: (&amp;R)</translation>
     </message>
     <message>
         <source>When grid shape looks divergent, please make this value smaller.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kada oblik rešetke izgleda divergentno, smanjite ovu vrijednost.</translation>
     </message>
     <message>
         <source>&amp;Number of Iterations:</source>
-        <translation type="unfinished"></translation>
+        <translation>Broj ponavljanja: (&amp;N)</translation>
     </message>
     <message>
         <source>When you feel the grid is not optimized enough, please try increasing this value.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kada osjetite da mreža nije dovoljno optimizirana, pokušajte povećati ovu vrijednost.</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionCreatorCompoundChannel</name>
     <message>
         <source>Create compound channel grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Kreirajte mrežu složenih kanala</translation>
     </message>
     <message>
         <source>Please define a polygon as the region to create grid, and another polygon as the low water channel region. Then, please add a polygonal line as river center.
 The low water channel region should be included in grid creation region, andRiver center line should be included in the low water channel region.</source>
-        <translation type="unfinished"></translation>
+        <translation>Molimo definirajte poligon kao područje za stvaranje mreže, a drugi poligon kao područje kanala s niskim vodostajem. Zatim, dodajte poligonalnu liniju kao središte rijeke. Regiju kanala s niskim vodostajem treba uključiti u područje stvaranja mreže, a središnju liniju rijeke treba uključiti u područje kanala s niskim vodostajem.</translation>
     </message>
 </context>
 </TS>

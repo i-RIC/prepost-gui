@@ -1,121 +1,119 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="fr_FR">
 <context>
     <name>GridCreatingConditionCenterAndWidth</name>
     <message>
         <source>&amp;Add Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Ajouter un sommet (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Supprimer le sommet (&amp;R)</translation>
     </message>
     <message>
         <source>Edit C&amp;oordinates...</source>
-        <translation type="unfinished"></translation>
+        <translation>Modifier les coordonnées (&amp;O)...</translation>
     </message>
     <message>
         <source>R&amp;everse Center Line Direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Inverser la direction de la ligne centrale (&amp;E)</translation>
     </message>
     <message>
         <source>&amp;Import Center Line...</source>
-        <translation type="unfinished"></translation>
+        <translation>Importer la ligne centrale (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export Center Line...</source>
-        <translation type="unfinished"></translation>
+        <translation>Exporter la ligne centrale (&amp;E)...</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Avertissement</translation>
     </message>
     <message>
         <source>Grid creating condition definition not finished yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>La définition des conditions de création de la grille n'est pas encore terminée.</translation>
     </message>
     <message>
         <source>Grid center line is not defined yet. Please click in the main region to define the grid center line.</source>
-        <translation type="unfinished"></translation>
+        <translation>La ligne centrale de la grille n'est pas encore définie. Veuillez cliquer dans la région principale pour définir la ligne centrale de la grille.</translation>
     </message>
     <message>
         <source>The maximum number of grid nodes is %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Le nombre maximum de nœuds de grille est %1.</translation>
     </message>
     <message>
         <source>Center line not defined yet</source>
-        <translation type="unfinished"></translation>
+        <translation>Ligne médiane pas encore définie</translation>
     </message>
     <message>
         <source>Add New Center Line Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Ajouter un nouveau point de ligne centrale</translation>
     </message>
     <message>
         <source>Move Center Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Déplacer la ligne centrale</translation>
     </message>
     <message>
         <source>Move Center Line Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Déplacer le sommet de la ligne centrale</translation>
     </message>
     <message>
         <source>Insert Center Line Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Insérer le sommet de la ligne centrale</translation>
     </message>
     <message>
         <source>Remove Center Line Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Supprimer le sommet de la ligne centrale</translation>
     </message>
     <message>
         <source>Finish Defining Polyline</source>
-        <translation type="unfinished"></translation>
+        <translation>Terminer la définition de la polyligne</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informations</translation>
     </message>
     <message>
         <source>Please define grid center line. Grid center line can be defined as polygonal line by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
-        <translation type="unfinished"></translation>
+        <translation>Veuillez définir la ligne centrale de la grille. La ligne centrale de la grille peut être définie comme une ligne polygonale en cliquant avec la souris. Terminez la définition en double-cliquant ou en appuyant sur la touche retour.</translation>
     </message>
     <message>
         <source>Edit Center Line Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Modifier les coordonnées de la ligne centrale</translation>
     </message>
     <message>
         <source>Polyline Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Coordonnées de la polyligne</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionCenterAndWidthDialog</name>
     <message>
         <source>Grid Creation</source>
-        <translation type="unfinished"></translation>
+        <translation>Création de grille</translation>
     </message>
     <message>
         <source>m</source>
-        <translation type="unfinished"></translation>
+        <translation>m</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Avertissement</translation>
     </message>
     <message>
         <source>nJ should be even. incrementing by one.</source>
-        <translation type="unfinished"></translation>
+        <translation>nJ doit être pair. incrémentation de un.</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionCreatorCenterAndWidth</name>
     <message>
         <source>Create grid from polygonal line and width</source>
-        <translation type="unfinished"></translation>
+        <translation>Créer une grille à partir d'une ligne et d'une largeur polygonales</translation>
     </message>
     <message>
         <source>First, please define polygonal line, by mouse-clicking. The polygonal line is used as the center line of the grid. Then, you define the width, division number of grid in I direction and J direction.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tout d'abord, veuillez définir une ligne polygonale en cliquant avec la souris. La ligne polygonale est utilisée comme ligne centrale de la grille. Ensuite, vous définissez la largeur, le numéro de division de la grille dans la direction I et la direction J.</translation>
     </message>
 </context>
 </TS>

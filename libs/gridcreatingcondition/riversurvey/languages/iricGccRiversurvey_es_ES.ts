@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="es_ES">
 <context>
     <name>GridCreatingConditionCreatorRiverSurvey</name>
@@ -13,17 +11,17 @@
     </message>
     <message>
         <source>Create grid from cross-section data</source>
-        <translation type="unfinished"></translation>
+        <translation>Crear cuadrícula a partir de datos de sección transversal</translation>
     </message>
     <message>
         <source>The grid shape is automatically defined using cross-section data. You can specify the grid division number, by adding grid creation control points on river crosssections, river center, left bank, and right bank.
 Note: This algorithm is available only when cross-section data is loaded!Please switch algorithm to this, after importing cross-section data.
 </source>
-        <translation type="unfinished"></translation>
+        <translation>La forma de la cuadrícula se define automáticamente utilizando datos de sección transversal. Puede especificar el número de división de la cuadrícula agregando puntos de control de creación de la cuadrícula en las secciones transversales del río, el centro del río, la orilla izquierda y la orilla derecha. Nota: ¡Este algoritmo solo está disponible cuando se cargan datos de sección transversal! Cambie el algoritmo a este, después de importar datos de sección transversal.</translation>
     </message>
     <message>
         <source>No cross-section data exists in geographic data now. This algorithmn is not available.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ahora no existen datos de corte transversal en los datos geográficos. Este algoritmo no está disponible.</translation>
     </message>
 </context>
 <context>
@@ -34,7 +32,7 @@ Note: This algorithm is available only when cross-section data is loaded!Please 
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>There is no river survey data. This grid creating condition is not available.</source>
@@ -90,7 +88,7 @@ Note: This algorithm is available only when cross-section data is loaded!Please 
     </message>
     <message>
         <source>There is no cross-section data. This grid creating condition is not available.</source>
-        <translation type="unfinished"></translation>
+        <translation>No hay datos de corte transversal. Esta condición de creación de cuadrícula no está disponible.</translation>
     </message>
 </context>
 <context>
@@ -132,7 +130,7 @@ Note: This algorithm is available only when cross-section data is loaded!Please 
     </message>
     <message>
         <source>-1 &lt; s &lt; 1</source>
-        <translation type="unfinished"></translation>
+        <translation>-1 &lt;s &lt;1</translation>
     </message>
 </context>
 <context>
@@ -159,7 +157,7 @@ Note: This algorithm is available only when cross-section data is loaded!Please 
     </message>
     <message>
         <source>m</source>
-        <translation type="unfinished"></translation>
+        <translation>metro</translation>
     </message>
     <message>
         <source>Confirmation</source>

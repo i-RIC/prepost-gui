@@ -1,171 +1,169 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="zh_TW">
 <context>
     <name>GeoDataPolyLine</name>
     <message>
         <source>&amp;Add Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>添加頂點 (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>刪除頂點 (&amp;R)</translation>
     </message>
     <message>
         <source>Edit &amp;Coordinates...</source>
-        <translation type="unfinished"></translation>
+        <translation>編輯坐標 (&amp;C)...</translation>
     </message>
     <message>
         <source>Poly&amp;line</source>
-        <translation type="unfinished"></translation>
+        <translation>折線 (&amp;L)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>警告</translation>
     </message>
     <message>
         <source>Polyline must have two vertices at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>折線必須至少有兩個頂點。</translation>
     </message>
     <message>
         <source>Finish Defining Polyline</source>
-        <translation type="unfinished"></translation>
+        <translation>完成定義折線</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>信息</translation>
     </message>
     <message>
         <source>Please define polyline by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
-        <translation type="unfinished"></translation>
+        <translation>請通過鼠標點擊定義折線。雙擊完成定義，或者按回車鍵。</translation>
     </message>
     <message>
         <source>polyline</source>
-        <translation type="unfinished"></translation>
+        <translation>折線</translation>
     </message>
     <message>
         <source>Polyline</source>
-        <translation type="unfinished"></translation>
+        <translation>折線</translation>
     </message>
     <message>
         <source>Insert PolyLine Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>插入折線頂點</translation>
     </message>
     <message>
         <source>PolyLine Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>折線坐標</translation>
     </message>
     <message>
         <source>Edit PolyLine Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>編輯折線坐標</translation>
     </message>
     <message>
         <source>Finish Defining PolyLine</source>
-        <translation type="unfinished"></translation>
+        <translation>完成定義折線</translation>
     </message>
     <message>
         <source>Move PolyLine</source>
-        <translation type="unfinished"></translation>
+        <translation>移動折線</translation>
     </message>
     <message>
         <source>Move PolyLine Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>移動折線頂點</translation>
     </message>
     <message>
         <source>Add New PolyLine Point</source>
-        <translation type="unfinished"></translation>
+        <translation>添加新折線點</translation>
     </message>
     <message>
         <source>Remove PolyLine Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>移除折線頂點</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyLineCreator</name>
     <message>
         <source>Polyline</source>
-        <translation type="unfinished"></translation>
+        <translation>折線</translation>
     </message>
     <message>
         <source>Polyline%1</source>
-        <translation type="unfinished"></translation>
+        <translation>折線 %1</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyLineImporter</name>
     <message>
         <source>ESRI Shapefile (Polyline)</source>
-        <translation type="unfinished"></translation>
+        <translation>ESRI 形狀文件（折線）</translation>
     </message>
     <message>
         <source>ESRI Shapefile (*.shp) (Polyline)</source>
-        <translation type="unfinished"></translation>
+        <translation>ESRI 形狀文件 (*.shp) (Polyline)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>錯誤</translation>
     </message>
     <message>
         <source>The shape type contained in this shape file is not polyline.</source>
-        <translation type="unfinished"></translation>
+        <translation>此形狀文件中包含的形狀類型不是折線。</translation>
     </message>
     <message>
         <source>Opening %1 failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>開幕 %1 失敗的。</translation>
     </message>
     <message>
         <source>The number of polylines mismatches between shp file and dbf file.</source>
-        <translation type="unfinished"></translation>
+        <translation>shp 文件和 dbf 文件之間不匹配的折線數。</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyLineImporterSettingDialog</name>
     <message>
         <source>PolyLine Import Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>折線導入設置</translation>
     </message>
     <message>
         <source>Encoding:</source>
-        <translation type="unfinished"></translation>
+        <translation>編碼：</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>姓名</translation>
     </message>
     <message>
         <source>Load from Shape file attribute</source>
-        <translation type="unfinished"></translation>
+        <translation>從形狀文件屬性加載</translation>
     </message>
     <message>
         <source>Name is set automatically (ex. Polyline1)</source>
-        <translation type="unfinished"></translation>
+        <translation>名稱是自動設置的（例如 Polyline1）</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation type="unfinished"></translation>
+        <translation>價值</translation>
     </message>
     <message>
         <source>Specify value</source>
-        <translation type="unfinished"></translation>
+        <translation>指定值</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>警告</translation>
     </message>
     <message>
         <source>You cannot specify the same column for both Name and Value.</source>
-        <translation type="unfinished"></translation>
+        <translation>您不能為 Name 和 Value 指定相同的列。</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyLineShapeExporter</name>
     <message>
         <source>ESRI Shapefile</source>
-        <translation type="unfinished"></translation>
+        <translation>ESRI 形狀文件</translation>
     </message>
     <message>
         <source>ESRI Shape file (*.shp)</source>
-        <translation type="unfinished"></translation>
+        <translation>ESRI 形狀文件 (*.shp)</translation>
     </message>
 </context>
 </TS>

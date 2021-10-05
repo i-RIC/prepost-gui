@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ja_JP">
 <context>
     <name>AboutDialog</name>
@@ -21,11 +19,19 @@
     </message>
     <message>
         <source>rivmaker 2.0</source>
-        <translation>rivmaker 2.0</translation>
+        <translation type="vanished">rivmaker 2.0</translation>
     </message>
     <message>
         <source>Release Date: 2021/1/30</source>
-        <translation>リリース日: 2021/1/30</translation>
+        <translation type="vanished">リリース日: 2021/1/30</translation>
+    </message>
+    <message>
+        <source>rivmaker 2.0.2</source>
+        <translation>rivmaker 2.0.2</translation>
+    </message>
+    <message>
+        <source>Release Date: 2021/3/2</source>
+        <translation>リリース日: 2021/3/2</translation>
     </message>
 </context>
 <context>
@@ -107,7 +113,11 @@
     <name>ChartGraphicsView</name>
     <message>
         <source>Aspect ratio: 1 / %1</source>
-        <translation>縦横比 1 / %1</translation>
+        <translation type="vanished">縦横比 1 / %1</translation>
+    </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / %1</source>
+        <translation>縦横比: 1 / %1</translation>
     </message>
 </context>
 <context>
@@ -134,7 +144,7 @@
     </message>
     <message>
         <source>Aspect ratio: 1 / </source>
-        <translation>縦横比: 1 / </translation>
+        <translation type="vanished">縦横比: 1 / </translation>
     </message>
     <message>
         <source>Fix aspect ratio</source>
@@ -143,6 +153,10 @@
     <message>
         <source>Fix region</source>
         <translation>領域を固定</translation>
+    </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / </source>
+        <translation>縦横比 1 / </translation>
     </message>
 </context>
 <context>
@@ -193,16 +207,16 @@
         <translation>警告</translation>
     </message>
     <message>
-        <source>Invalid name for cross section. The name should be &quot;X1&quot;, &quot;X2&quot;, ...</source>
-        <translation type="vanished">不正な名前です。名前は &quot;X1&quot;, &quot;X2&quot;,などとして下さい。</translation>
+        <source>Invalid name for cross section. The name should be "X1", "X2", ...</source>
+        <translation type="vanished">不正な名前です。名前は "X1", "X2",などとして下さい。</translation>
     </message>
     <message>
         <source>Cross Section is not defined yet.</source>
         <translation>断面がまだ定義されていません。</translation>
     </message>
     <message>
-        <source>Invalid name for cross section. The name should be &quot;X1&quot;, &quot;X2&quot;, ...　or &quot;XS1&quot;, &quot;XS2&quot;, ...</source>
-        <translation>不正な名前です。名前は &quot;X1&quot;, &quot;X2&quot;,もしくは &quot;XS1&quot;, &quot;XS2&quot; などとして下さい。</translation>
+        <source>Invalid name for cross section. The name should be "X1", "X2", ...　or "XS1", "XS2", ...</source>
+        <translation>不正な名前です。名前は "X1", "X2",もしくは "XS1", "XS2" などとして下さい。</translation>
     </message>
 </context>
 <context>

@@ -1,876 +1,885 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="gl_ES">
 <context>
     <name>GeoDataPointMapDelPtsLessThanDialog</name>
     <message>
         <source>Delete Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Eliminar puntos</translation>
     </message>
     <message>
         <source>Selected point properties</source>
-        <translation type="unfinished"></translation>
+        <translation>Propiedades do punto seleccionado</translation>
     </message>
     <message>
         <source>Number of Points:</source>
-        <translation type="unfinished"></translation>
+        <translation>Número de puntos:</translation>
     </message>
     <message>
         <source>Minimum:</source>
-        <translation type="unfinished"></translation>
+        <translation>Mínimo:</translation>
     </message>
     <message>
         <source>Maximum:</source>
-        <translation type="unfinished"></translation>
+        <translation>Máximo:</translation>
     </message>
     <message>
         <source>Delete less than value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Eliminar menos do valor:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmap</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Aviso</translation>
     </message>
     <message>
         <source>Break line have to have no intersection with other break lines.</source>
-        <translation type="unfinished"></translation>
+        <translation>A liña de rotura non debe ter intersección con outras liñas de rotura.</translation>
     </message>
     <message>
         <source>Remeshing TINs...</source>
-        <translation type="unfinished"></translation>
+        <translation>Remendando TIN...</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Información</translation>
     </message>
     <message>
         <source>When you switch to this mode, you have to remesh TINs. Do you want to remesh now?</source>
-        <translation type="unfinished"></translation>
+        <translation>Cando cambias a este modo, tes que volver modificar os TIN. ¿Queres volver a facer unha nova mesta agora?</translation>
     </message>
     <message>
         <source>&amp;Add New Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Engadir novo punto (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Interpolate Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Interpola Puntos (&amp;I)</translation>
     </message>
     <message>
         <source>Display &amp;Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración da pantalla (&amp;S)...</translation>
     </message>
     <message>
         <source>Select point</source>
-        <translation type="unfinished"></translation>
+        <translation>Selecciona un punto</translation>
     </message>
     <message>
         <source>Select Points With &amp;Polygon</source>
-        <translation type="unfinished"></translation>
+        <translation>Selecciona puntos con polígono (&amp;P)</translation>
     </message>
     <message>
         <source>&amp;Edit Selected Points...</source>
-        <translation type="unfinished"></translation>
+        <translation>Edita os puntos seleccionados (&amp;E)...</translation>
     </message>
     <message>
         <source>Delete Selected P&amp;oints</source>
-        <translation type="unfinished"></translation>
+        <translation>Elimina os puntos seleccionados (&amp;O)</translation>
     </message>
     <message>
         <source>E&amp;xport Selected Points...</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportar puntos seleccionados (&amp;X)...</translation>
     </message>
     <message>
         <source>Delete Selected Points &amp;Less Than Value...</source>
-        <translation type="unfinished"></translation>
+        <translation>Elimina os puntos seleccionados inferiores ao valor (&amp;L)...</translation>
     </message>
     <message>
         <source>Delete Selected Points &amp;Greater Than Value...</source>
-        <translation type="unfinished"></translation>
+        <translation>Elimina os puntos seleccionados superiores ao valor (&amp;G)...</translation>
     </message>
     <message>
         <source>Remesh &amp;TINs</source>
-        <translation type="unfinished"></translation>
+        <translation>Remesh TINs (&amp;T)</translation>
     </message>
     <message>
         <source>Add &amp;Break Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Engadir liña de interrupción (&amp;B)</translation>
     </message>
     <message>
         <source>&amp;Remove Break Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Elimina a liña de interrupción (&amp;R)</translation>
     </message>
     <message>
         <source>Re&amp;move All Break Lines...</source>
-        <translation type="unfinished"></translation>
+        <translation>Elimina todas as liñas de rotura (&amp;M)...</translation>
     </message>
     <message>
         <source>Remove Triangles &amp;with Long edge...</source>
-        <translation type="unfinished"></translation>
+        <translation>Elimina os triángulos con bordo longo (&amp;W)...</translation>
     </message>
     <message>
         <source>Are you sure you want to remove this break line?</source>
-        <translation type="unfinished"></translation>
+        <translation>Seguro que queres eliminar esta liña de interrupción?</translation>
     </message>
     <message>
         <source>Polygon must have three vertices at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>O polígono debe ter polo menos tres vértices.</translation>
     </message>
     <message>
         <source>Remeshing TINs finished.</source>
-        <translation type="unfinished"></translation>
+        <translation>Rematou os TINs.</translation>
     </message>
     <message>
         <source>When you add break line, you have to switch to show wireframes. Do you want to switch to show wireframes now?</source>
-        <translation type="unfinished"></translation>
+        <translation>Cando engades unha liña de interrupción, tes que cambiar para amosar wireframes. ¿Queres cambiar agora para amosar wireframes?</translation>
     </message>
     <message>
         <source>Break line can be defined by mouse-clicking on the points between which you want to add break line. Finish defining by double clicking, or pressing return key.</source>
-        <translation type="unfinished"></translation>
+        <translation>A liña de interrupción pódese definir facendo clic co rato nos puntos entre os que desexa engadir unha liña de interrupción. Remate de definir facendo dobre clic ou premendo a tecla de retorno.</translation>
     </message>
     <message>
         <source>When you remove break line, you have to switch to show wireframes. Do you want to switch to show wireframes now?</source>
-        <translation type="unfinished"></translation>
+        <translation>Cando elimines a liña de interrupción, tes que cambiar para amosar os arames. ¿Queres cambiar agora para amosar wireframes?</translation>
     </message>
     <message>
         <source>Click on the break line you want to remove.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fai clic na liña de quebra que queres eliminar.</translation>
     </message>
     <message>
         <source>Are you sure you want to remove ALL break lines?</source>
-        <translation type="unfinished"></translation>
+        <translation>Seguro que queres eliminar TODAS as liñas de interrupción?</translation>
     </message>
     <message>
         <source>When you want to remove triangles with long edges, you have to switch Display Method to Wireframe or Surface. If you press OK button, Display Method is switched to Wireframe</source>
-        <translation type="unfinished"></translation>
+        <translation>Cando queres eliminar triángulos con bordos longos, tes que cambiar o método de visualización a Wireframe ou Surface. Se preme o botón Aceptar, o método de visualización cambiarase a Wireframe</translation>
     </message>
     <message>
         <source>When you edit points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation type="unfinished"></translation>
+        <translation>Cando editas puntos, tes que cambiar a mostrar puntos. Queres cambiar agora para mostrar puntos?</translation>
     </message>
     <message>
         <source>When you delete points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation type="unfinished"></translation>
+        <translation>Cando borres puntos, tes que cambiar a amosar puntos. Queres cambiar agora para mostrar puntos?</translation>
     </message>
     <message>
         <source>You can not delete points used for break lines.</source>
-        <translation type="unfinished"></translation>
+        <translation>Non pode eliminar os puntos empregados para as liñas de salto.</translation>
     </message>
     <message>
         <source>Delete Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Eliminar puntos</translation>
     </message>
     <message>
         <source>Select File to Export</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccione Ficheiro para exportar</translation>
     </message>
     <message>
         <source>Topography File (*.tpo)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ficheiro de topografía (*.tpo)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Erro</translation>
     </message>
     <message>
         <source>Error occured while exporting to %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Produciuse un erro ao exportar a %1.</translation>
     </message>
     <message>
         <source>Delete points less than %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Eliminar puntos menos de %1</translation>
     </message>
     <message>
         <source>Delete points greater than %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Eliminar puntos maiores que %1</translation>
     </message>
     <message>
         <source>When you interpolate points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation type="unfinished"></translation>
+        <translation>Cando interpolas puntos, tes que cambiar a mostrar puntos. Queres cambiar agora para mostrar puntos?</translation>
     </message>
     <message>
         <source>To interpolate points, select existing points by mouse-clicking, use Alt to define path between known points, and finish by double-clicking or pressing return key.</source>
-        <translation type="unfinished"></translation>
+        <translation>Para interpolar puntos, selecciona os puntos existentes facendo clic co rato, usa Alt para definir o camiño entre os puntos coñecidos e termina facendo dobre clic ou premendo a tecla de retorno.</translation>
     </message>
     <message>
         <source>When you add points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation type="unfinished"></translation>
+        <translation>Cando engades puntos, tes que cambiar a mostrar puntos. Queres cambiar agora para mostrar puntos?</translation>
     </message>
     <message>
         <source>To add new points, select an existing point first. The value at that point will be used as the default value for new points. Then, click at any position you want to add points, and finish by double-clicking of pressing return key.</source>
-        <translation type="unfinished"></translation>
+        <translation>Para engadir puntos novos, seleccione primeiro un punto existente. O valor nese punto utilizarase como valor predeterminado para novos puntos. A continuación, fai clic en calquera posición que queiras engadir puntos e remata premendo dúas veces premendo a tecla de retorno.</translation>
     </message>
     <message>
         <source>Add Break Line Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Engadir punto de liña de interrupción</translation>
     </message>
     <message>
         <source>Cancel Defining Break Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Cancelar definindo a liña de interrupción</translation>
     </message>
     <message>
         <source>Finish Defining Break Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Finalizar definindo a liña de interrupción</translation>
     </message>
     <message>
         <source>Edit Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar puntos</translation>
     </message>
     <message>
         <source>Add New Interp Line Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Engadir un novo punto de liña Interp</translation>
     </message>
     <message>
         <source>Remove triangles with long edge</source>
-        <translation type="unfinished"></translation>
+        <translation>Elimina os triángulos con bordo longo</translation>
     </message>
     <message>
         <source>Merge...</source>
-        <translation type="unfinished"></translation>
+        <translation>Combinar...</translation>
     </message>
     <message>
-        <source>There is no other data to merge in &quot;%1&quot; group.</source>
-        <translation type="unfinished"></translation>
+        <source>There is no other data to merge in "%1" group.</source>
+        <translation>Non hai outros datos nos que combinar "%1"grupo.</translation>
     </message>
     <message>
         <source>%1 duplicate points were found in merge targets, and omitted.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 atopáronse puntos duplicados en obxectivos de combinación e omitíronse.</translation>
     </message>
     <message>
         <source>You must select one known point, and define at least one location for added points. Do you want to retry, or cancel the operation?</source>
-        <translation type="unfinished"></translation>
+        <translation>Debe seleccionar un punto coñecido e definir polo menos unha localización para os puntos engadidos. ¿Quere volver tentalo ou cancelar a operación?</translation>
     </message>
     <message>
         <source>Add Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Engade puntos</translation>
     </message>
     <message>
         <source>Values of new points</source>
-        <translation type="unfinished"></translation>
+        <translation>Valores de novos puntos</translation>
     </message>
     <message>
         <source>To interpolate points, you must specify more than two points, and the last point should be existing point. Do you want to retry, or cancel the operation?</source>
-        <translation type="unfinished"></translation>
+        <translation>Para interpolar puntos, debes especificar máis de dous puntos e o último punto debería ser o existente. ¿Quere volver tentalo ou cancelar a operación?</translation>
     </message>
     <message>
         <source>P&amp;oint Cloud Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Datos da nube de puntos (&amp;O)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapDelPtsGreaterThanDialog</name>
     <message>
         <source>Delete Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Eliminar puntos</translation>
     </message>
     <message>
         <source>Selected point properties</source>
-        <translation type="unfinished"></translation>
+        <translation>Propiedades do punto seleccionado</translation>
     </message>
     <message>
         <source>Number of Points:</source>
-        <translation type="unfinished"></translation>
+        <translation>Número de puntos:</translation>
     </message>
     <message>
         <source>Minimum:</source>
-        <translation type="unfinished"></translation>
+        <translation>Mínimo:</translation>
     </message>
     <message>
         <source>Maximum:</source>
-        <translation type="unfinished"></translation>
+        <translation>Máximo:</translation>
     </message>
     <message>
         <source>Delete greater than value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Eliminar maior que o valor:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapEditPtsDialog</name>
     <message>
         <source>Edit Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar puntos</translation>
     </message>
     <message>
         <source>Selected point properties</source>
-        <translation type="unfinished"></translation>
+        <translation>Propiedades do punto seleccionado</translation>
     </message>
     <message>
         <source>Number of Points:</source>
-        <translation type="unfinished"></translation>
+        <translation>Número de puntos:</translation>
     </message>
     <message>
         <source>Minimum:</source>
-        <translation type="unfinished"></translation>
+        <translation>Mínimo:</translation>
     </message>
     <message>
         <source>Maximum:</source>
-        <translation type="unfinished"></translation>
+        <translation>Máximo:</translation>
     </message>
     <message>
         <source>X-location</source>
-        <translation type="unfinished"></translation>
+        <translation>X-localización</translation>
     </message>
     <message>
         <source>Y-location</source>
-        <translation type="unfinished"></translation>
+        <translation>Localización en Y.</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation type="unfinished"></translation>
+        <translation>Valor</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapInterpolatePoints</name>
     <message>
         <source>Interpolate Increment</source>
-        <translation type="unfinished"></translation>
+        <translation>Interpola incremento</translation>
     </message>
     <message>
         <source>Interpolation Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración de interpolación</translation>
     </message>
     <message>
         <source>Interpolation Increment:</source>
-        <translation type="unfinished"></translation>
+        <translation>Incremento de interpolación:</translation>
     </message>
     <message>
         <source>Line Length:</source>
-        <translation type="unfinished"></translation>
+        <translation>Lonxitude da liña:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapInterpolatePointsDialog</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Aviso</translation>
     </message>
     <message>
         <source>Interpolation increment must be greater 0 and less than interpolation line length</source>
-        <translation type="unfinished"></translation>
+        <translation>O incremento de interpolación debe ser maior de 0 e inferior á lonxitude da liña de interpolación</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapLandXmlExporter</name>
     <message>
         <source>LandXML</source>
-        <translation type="unfinished"></translation>
+        <translation>LandXML</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Erro</translation>
     </message>
     <message>
         <source>Error occured while exporting to %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Produciuse un erro ao exportar a %1</translation>
     </message>
     <message>
         <source>LandXML file (*.xml)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ficheiro LandXML (*.xml)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapLandXmlImporter</name>
     <message>
         <source>LandXML (*.xml)</source>
-        <translation type="unfinished"></translation>
+        <translation>LandXML (*.xml)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Erro</translation>
     </message>
     <message>
         <source>Parse error %1 at line %2 column %3</source>
-        <translation type="unfinished"></translation>
+        <translation>Erro de análise %1 na liña %2 columna %3</translation>
     </message>
     <message>
         <source>LandXML File (*.xml)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ficheiro LandXML (*.xml)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapMergeSettingDialog</name>
     <message>
         <source>Select data to merge</source>
-        <translation type="unfinished"></translation>
+        <translation>Selecciona datos para combinar</translation>
     </message>
     <message>
         <source>Please select data to merge this group.</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccione datos para combinar este grupo.</translation>
     </message>
     <message>
         <source>&amp;Select all</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccionar todo (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;Unselect all</source>
-        <translation type="unfinished"></translation>
+        <translation>Deselecciona todos (&amp;U)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapRealCreator</name>
     <message>
         <source>Point Cloud Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Datos da nube de puntos</translation>
     </message>
     <message>
         <source>Point Cloud Data%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Datos da nube de puntos %1</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapRealExporter</name>
     <message>
         <source>Topography File (*.tpo)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ficheiro de topografía (*.tpo)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Erro</translation>
     </message>
     <message>
         <source>Error occured while exporting to %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Produciuse un erro ao exportar a %1.</translation>
     </message>
     <message>
         <source>Point Cloud Data (DEM etc.)</source>
-        <translation type="unfinished"></translation>
+        <translation>Datos de nube de puntos (DEM, etc.)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapRealImporter</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Erro</translation>
     </message>
     <message>
         <source>File open error occured while opening %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Produciuse un erro ao abrir o ficheiro ao abrir %1.</translation>
     </message>
     <message>
         <source>DEM etc. (*.tpo)</source>
-        <translation type="unfinished"></translation>
+        <translation>DEM etc. (*.tpo)</translation>
     </message>
     <message>
         <source>Topography File (*.tpo)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ficheiro de topografía (*.tpo)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapRealImporterFilterDialog</name>
     <message>
         <source>Filtering Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Axuste de filtrado</translation>
     </message>
     <message>
         <source>If you want to filter the dataset, specify value more than 1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Se desexa filtrar o conxunto de datos, especifique un valor superior a 1.</translation>
     </message>
     <message>
         <source>Filter:</source>
-        <translation type="unfinished"></translation>
+        <translation>Filtro:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapRealTextImporter</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Erro</translation>
     </message>
     <message>
         <source>File open error occured while opening %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Produciuse un erro ao abrir o ficheiro ao abrir %1.</translation>
     </message>
     <message>
         <source>Not enough header lines found in the file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Non se atoparon suficientes liñas de cabeceira no ficheiro.</translation>
     </message>
     <message>
         <source>Line %1: %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Liña %1 : %2</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Aviso</translation>
     </message>
     <message>
         <source>%1 duplicate points found. If points with same x and y values found, the first point is imported</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 atopáronse puntos duplicados. Se se atopan puntos cos mesmos valores xy, importarase o primeiro punto</translation>
     </message>
     <message>
         <source>At column %1, %2 or %3 expected, but %4 specified.</source>
-        <translation type="unfinished"></translation>
+        <translation>Na columna %1, %2 ou %3 esperábase, pero %4 especificado.</translation>
     </message>
     <message>
         <source>At column %1, delimiter expected, but %2 specified.</source>
-        <translation type="unfinished"></translation>
+        <translation>Na columna %1, delimitador esperado, pero %2 especificado.</translation>
     </message>
     <message>
         <source>x</source>
-        <translation type="unfinished"></translation>
+        <translation>x</translation>
     </message>
     <message>
         <source>y</source>
-        <translation type="unfinished"></translation>
+        <translation>y</translation>
     </message>
     <message>
         <source>value</source>
-        <translation type="unfinished"></translation>
+        <translation>valor</translation>
     </message>
     <message>
         <source>No delimiter specified</source>
-        <translation type="unfinished"></translation>
+        <translation>Non se especificou ningún delimitador</translation>
     </message>
     <message>
-        <source>Not enough values to read &quot;%1&quot;. &quot;%1&quot; column is %2 but %3 values input.</source>
-        <translation type="unfinished"></translation>
+        <source>Not enough values to read "%1". "%1" column is %2 but %3 values input.</source>
+        <translation>Non hai valores suficientes para ler "%1"."%1"a columna é %2 pero %3 valores de entrada.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;%1&quot; value. &quot;%1&quot; value should be real number, but &quot;%2&quot; specified.</source>
-        <translation type="unfinished"></translation>
+        <source>Error occured while reading "%1" value. "%1" value should be real number, but "%2" specified.</source>
+        <translation>Produciuse un erro ao ler "%1"valor". %1 "o valor debe ser un número real, pero"%2" especificado.</translation>
     </message>
     <message>
         <source>Text files (CSV, TSV, etc.)</source>
-        <translation type="unfinished"></translation>
+        <translation>Arquivos de texto (CSV, TSV, etc.)</translation>
     </message>
     <message>
         <source>Text file (*.csv *.txt *.xyz)</source>
-        <translation type="unfinished"></translation>
+        <translation>Arquivo de texto (*.csv *.txt *.xyz)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapRealTextImporter_SettingDialog</name>
     <message>
         <source>Import Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración de importación</translation>
     </message>
     <message>
         <source>Encoding:</source>
-        <translation type="unfinished"></translation>
+        <translation>Codificación:</translation>
     </message>
     <message>
         <source>File Format</source>
-        <translation type="unfinished"></translation>
+        <translation>Formato de ficheiro</translation>
     </message>
     <message>
         <source>CSV (Comma separated values)</source>
-        <translation type="unfinished"></translation>
+        <translation>CSV (valores separados por comas)</translation>
     </message>
     <message>
         <source>Delimiters</source>
-        <translation type="unfinished"></translation>
+        <translation>Delimitadores</translation>
     </message>
     <message>
         <source>Comma</source>
-        <translation type="unfinished"></translation>
+        <translation>Coma</translation>
     </message>
     <message>
         <source>Tab</source>
-        <translation type="unfinished"></translation>
+        <translation>Pestana</translation>
     </message>
     <message>
         <source>Space</source>
-        <translation type="unfinished"></translation>
+        <translation>Espazo</translation>
     </message>
     <message>
         <source>Colon</source>
-        <translation type="unfinished"></translation>
+        <translation>Colon</translation>
     </message>
     <message>
         <source>Semicolon</source>
-        <translation type="unfinished"></translation>
+        <translation>Punto e coma</translation>
     </message>
     <message>
         <source>Other</source>
-        <translation type="unfinished"></translation>
+        <translation>Outra</translation>
     </message>
     <message>
         <source>Special characters</source>
-        <translation type="unfinished"></translation>
+        <translation>Personaxes especiais</translation>
     </message>
     <message>
         <source>Quote character:</source>
-        <translation type="unfinished"></translation>
+        <translation>Personaxe da cita:</translation>
     </message>
     <message>
-        <source>&quot;</source>
-        <translation type="unfinished"></translation>
+        <source>"</source>
+        <translation>"</translation>
     </message>
     <message>
         <source>When you want to specify multiple quote characters, please just input the characters only, no spaces or commas.</source>
-        <translation type="unfinished"></translation>
+        <translation>Se desexa especificar varios caracteres de comiña, só introduza os caracteres, sen espazos nin comas.</translation>
     </message>
     <message>
         <source>Escape character:</source>
-        <translation type="unfinished"></translation>
+        <translation>Personaxe de escape:</translation>
     </message>
     <message>
         <source>\</source>
-        <translation type="unfinished"></translation>
+        <translation>\</translation>
     </message>
     <message>
         <source>Record options</source>
-        <translation type="unfinished"></translation>
+        <translation>Opcións de gravación</translation>
     </message>
     <message>
         <source>Header lines to ignore</source>
-        <translation type="unfinished"></translation>
+        <translation>Liñas de cabeceira para ignorar</translation>
     </message>
     <message>
         <source>First header line contains field names</source>
-        <translation type="unfinished"></translation>
+        <translation>A primeira liña de cabeceira contén nomes de campo</translation>
     </message>
     <message>
         <source>Select fields</source>
-        <translation type="unfinished"></translation>
+        <translation>Selecciona campos</translation>
     </message>
     <message>
         <source>X:</source>
-        <translation type="unfinished"></translation>
+        <translation>X:</translation>
     </message>
     <message>
         <source>Y:</source>
-        <translation type="unfinished"></translation>
+        <translation>Y:</translation>
     </message>
     <message>
         <source>Value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Valor:</translation>
     </message>
     <message>
         <source>Skip setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Saltar configuración</translation>
     </message>
     <message>
         <source>Skip rate:</source>
-        <translation type="unfinished"></translation>
+        <translation>Omitir taxa:</translation>
     </message>
     <message>
         <source>Preview</source>
-        <translation type="unfinished"></translation>
+        <translation>Vista previa</translation>
     </message>
     <message>
         <source>Custom delimited text</source>
-        <translation type="unfinished"></translation>
+        <translation>Texto delimitado personalizado</translation>
     </message>
     <message>
         <source>The character to escape quote characters in quoted text. You can specify only one character.</source>
-        <translation type="unfinished"></translation>
+        <translation>O personaxe para escapar dos caracteres das citas do texto citado. Só pode especificar un carácter.</translation>
     </message>
     <message>
         <source>When you want to skip lines in the file, please specify values larger than 1. For example, if you input 2, every other line is imported.</source>
-        <translation type="unfinished"></translation>
+        <translation>Cando desexe saltar liñas no ficheiro, especifique valores superiores a 1. Por exemplo, se introduce 2, todas as outras liñas importaranse.</translation>
     </message>
     <message>
         <source>File name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nome de arquivo:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapRepresentationDialog</name>
     <message>
         <source>Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración da pantalla</translation>
     </message>
     <message>
         <source>Display Method</source>
-        <translation type="unfinished"></translation>
+        <translation>Método de visualización</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Puntos</translation>
     </message>
     <message>
         <source>Wireframe</source>
-        <translation type="unfinished"></translation>
+        <translation>Wireframe</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation type="unfinished"></translation>
+        <translation>Superficie</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tamaño do punto:</translation>
     </message>
     <message>
         <source>Hide Break Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Ocultar liñas de descanso</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapSTLExporter</name>
     <message>
         <source>Stereolithography (STL)</source>
-        <translation type="unfinished"></translation>
+        <translation>Estereolitografía (STL)</translation>
     </message>
     <message>
         <source>Binary STL (*.stl)</source>
-        <translation type="unfinished"></translation>
+        <translation>STL binario (*.stl)</translation>
     </message>
     <message>
         <source>ASCII STL (*.stl)</source>
-        <translation type="unfinished"></translation>
+        <translation>ASCII STL (*.stl)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapSTLImporter</name>
     <message>
         <source>Stereolithography (STL)</source>
-        <translation type="unfinished"></translation>
+        <translation>Estereolitografía (STL)</translation>
     </message>
     <message>
         <source>Stereolithography file (*.stl)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ficheiro de estereolitografía (*.stl)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Erro</translation>
     </message>
     <message>
         <source>File open error occured while opening %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Produciuse un erro ao abrir o ficheiro ao abrir %1.</translation>
     </message>
     <message>
         <source>solid</source>
-        <translation type="unfinished"></translation>
+        <translation>sólido</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapTINCreator</name>
+    <message>
+        <source>TIN</source>
+        <translation>TIN</translation>
+    </message>
+    <message>
+        <source>Point Cloud Data%1</source>
+        <translation>Datos da nube de puntos %1</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapVTKExporter</name>
     <message>
         <source>Pointset (DEM etc.)</source>
-        <translation type="unfinished"></translation>
+        <translation>Conxunto de puntos (DEM etc.)</translation>
     </message>
     <message>
         <source>VTK File (*.vtk)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ficheiro VTK (*.vtk)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapWebImporter</name>
     <message>
         <source>Web CSV tile</source>
-        <translation type="unfinished"></translation>
+        <translation>Tella CSV web</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Erro</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapWebImporterRegionSelectDialog</name>
     <message>
         <source>Select Region</source>
-        <translation type="unfinished"></translation>
+        <translation>Selecciona rexión</translation>
     </message>
     <message>
         <source>Background Image:</source>
-        <translation type="unfinished"></translation>
+        <translation>Imaxe de fondo:</translation>
     </message>
     <message>
         <source>Zoom &amp;In</source>
-        <translation type="unfinished"></translation>
+        <translation>Facer zoom (&amp;I)</translation>
     </message>
     <message>
         <source>Zoom &amp;Out</source>
-        <translation type="unfinished"></translation>
+        <translation>Afastar (&amp;O)</translation>
     </message>
     <message>
         <source>&amp;Next</source>
-        <translation type="unfinished"></translation>
+        <translation>A continuación (&amp;N)</translation>
     </message>
     <message>
         <source>&amp;Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>Cancelar (&amp;C)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Aviso</translation>
     </message>
     <message>
         <source>Region to import data is not selected yet. Please left drag on the map to select area.</source>
-        <translation type="unfinished"></translation>
+        <translation>A rexión para importar datos aínda non está seleccionada. Arrastra á esquerda no mapa para seleccionar a área.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapWebImporterSettingManager</name>
     <message>
         <source>USGS elevation tiles (SRTM)</source>
-        <translation type="unfinished"></translation>
+        <translation>Baldosas de elevación USGS (SRTM)</translation>
     </message>
     <message>
         <source>GSI elevation tiles (DEM5A)</source>
-        <translation type="unfinished"></translation>
+        <translation>Baldosas de elevación GSI (DEM5A)</translation>
     </message>
     <message>
         <source>GSI elevation tiles (DEM5B)</source>
-        <translation type="unfinished"></translation>
+        <translation>Baldosas de elevación GSI (DEM5B)</translation>
     </message>
     <message>
         <source>GSI elevation tiles (DEM10B)</source>
-        <translation type="unfinished"></translation>
+        <translation>Baldosas de elevación GSI (DEM10B)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapWebImporterZoomLevelDialog</name>
     <message>
         <source>Zoom Level Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Axuste do nivel de zoom</translation>
     </message>
     <message>
         <source>Specify the zoom level of data you want to import.</source>
-        <translation type="unfinished"></translation>
+        <translation>Especifique o nivel de zoom dos datos que desexa importar.</translation>
     </message>
     <message>
         <source>Zoom level:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nivel de zoom:</translation>
     </message>
     <message>
         <source>Resolution:</source>
-        <translation type="unfinished"></translation>
+        <translation>Resolución:</translation>
     </message>
     <message>
         <source>xx m</source>
-        <translation type="unfinished"></translation>
+        <translation>xx m</translation>
     </message>
     <message>
         <source>Data size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tamaño dos datos:</translation>
     </message>
     <message>
         <source>XX kB (XXXX points)</source>
-        <translation type="unfinished"></translation>
+        <translation>XX kB (puntos XXXX)</translation>
     </message>
     <message>
         <source>Source:</source>
-        <translation type="unfinished"></translation>
+        <translation>Fonte:</translation>
     </message>
     <message>
         <source>%1 KB</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 KB</translation>
     </message>
     <message>
         <source>%1 MB</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 MB</translation>
     </message>
     <message>
         <source> (%1 points)</source>
-        <translation type="unfinished"></translation>
+        <translation>( %1 puntos)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmap_TrianglesWithLongEdgeRemover_Dialog</name>
     <message>
         <source>Remove Triangles with Long Edge</source>
-        <translation type="unfinished"></translation>
+        <translation>Elimina os triángulos con bordo longo</translation>
     </message>
     <message>
         <source>Limit edge length:</source>
-        <translation type="unfinished"></translation>
+        <translation>Lonxitude do bordo límite:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Nota &lt;/span&gt;: Ao facer clic no botón Aplicar, os triángulos que se eliminarán pintaranse con escuro gris. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
 </context>
 </TS>

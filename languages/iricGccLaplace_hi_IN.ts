@@ -1,307 +1,305 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="hi_IN">
 <context>
     <name>GridCreatingConditionCreatorLaplace</name>
     <message>
         <source>General purpose grid generation tool</source>
-        <translation type="unfinished"></translation>
+        <translation>सामान्य प्रयोजन ग्रिड पीढ़ी उपकरण</translation>
     </message>
     <message>
         <source>You can create smooth grid shape solving laplace equation.</source>
-        <translation type="unfinished"></translation>
+        <translation>आप लैपलेस समीकरण को हल करने वाली चिकनी ग्रिड आकृति बना सकते हैं।</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionLaplace</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>चेतावनी</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>जानकारी</translation>
     </message>
     <message>
         <source>To divide the region, click on the edge of the region first, then click on the opposite edge.</source>
-        <translation type="unfinished"></translation>
+        <translation>क्षेत्र को विभाजित करने के लिए, पहले क्षेत्र के किनारे पर क्लिक करें, फिर विपरीत किनारे पर क्लिक करें।</translation>
     </message>
     <message>
         <source>Please select an edge line inside the region when you want to join regions.</source>
-        <translation type="unfinished"></translation>
+        <translation>जब आप क्षेत्रों से जुड़ना चाहते हैं तो कृपया क्षेत्र के अंदर एक किनारे की रेखा चुनें।</translation>
     </message>
     <message>
         <source>Are you sure you want to join the regions divided by the selected edge?</source>
-        <translation type="unfinished"></translation>
+        <translation>क्या आप वाकई चयनित किनारे से विभाजित क्षेत्रों में शामिल होना चाहते हैं?</translation>
     </message>
     <message>
         <source>Are you sure you want to clear division setting?</source>
-        <translation type="unfinished"></translation>
+        <translation>क्या आप वाकई विभाजन सेटिंग को साफ़ करना चाहते हैं?</translation>
     </message>
     <message>
         <source>Center Line Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>केंद्र रेखा निर्देशांक</translation>
     </message>
     <message>
         <source>Finish Defining Center Line</source>
-        <translation type="unfinished"></translation>
+        <translation>केंद्र रेखा को परिभाषित करना समाप्त करें</translation>
     </message>
     <message>
         <source>Start defining center line</source>
-        <translation type="unfinished"></translation>
+        <translation>केंद्र रेखा को परिभाषित करना प्रारंभ करें</translation>
     </message>
     <message>
         <source>Move Point</source>
-        <translation type="unfinished"></translation>
+        <translation>मूव प्वाइंट</translation>
     </message>
     <message>
         <source>Edge Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>एज निर्देशांक</translation>
     </message>
     <message>
         <source>&amp;Build left bank and right bank lines</source>
-        <translation type="unfinished"></translation>
+        <translation>बाएँ किनारे और दाएँ किनारे की रेखाएँ बनाएँ (&amp;B)</translation>
     </message>
     <message>
         <source>&amp;Interpolation Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>इंटरपोलेशन मोड (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Spline</source>
-        <translation type="unfinished"></translation>
+        <translation>पट्टी (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;Linear</source>
-        <translation type="unfinished"></translation>
+        <translation>रैखिक (&amp;L)</translation>
     </message>
     <message>
         <source>Add &amp;Division line</source>
-        <translation type="unfinished"></translation>
+        <translation>डिवीजन लाइन जोड़ें (&amp;D)</translation>
     </message>
     <message>
         <source>Remove D&amp;ivision Line</source>
-        <translation type="unfinished"></translation>
+        <translation>डिवीजन लाइन हटाएं (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Add Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>वर्टेक्स जोड़ें (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>वर्टेक्स निकालें (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Edit coordinates...</source>
-        <translation type="unfinished"></translation>
+        <translation>निर्देशांक संपादित करें (&amp;E)...</translation>
     </message>
     <message>
         <source>Division Setting for &amp;whole region...</source>
-        <translation type="unfinished"></translation>
+        <translation>पूरे क्षेत्र के लिए डिवीजन सेटिंग (&amp;W)...</translation>
     </message>
     <message>
         <source>&amp;Division Setting for selected line...</source>
-        <translation type="unfinished"></translation>
+        <translation>चयनित लाइन के लिए डिवीजन सेटिंग (&amp;D)...</translation>
     </message>
     <message>
         <source>&amp;Edge Points Deploying Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>एज पॉइंट्स परिनियोजन सेटिंग (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Deploying Setting for selected area...</source>
-        <translation type="unfinished"></translation>
+        <translation>चयनित क्षेत्र के लिए परिनियोजन सेटिंग (&amp;D)...</translation>
     </message>
     <message>
         <source>&amp;Clear Division Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>स्पष्ट डिवीजन सेटिंग (&amp;C)...</translation>
     </message>
     <message>
         <source>Please build left bank and right bank lines before creating grid.</source>
-        <translation type="unfinished"></translation>
+        <translation>कृपया ग्रिड बनाने से पहले बाएँ किनारे और दाएँ किनारे की रेखाएँ बनाएँ।</translation>
     </message>
     <message>
         <source>Start adding new edge</source>
-        <translation type="unfinished"></translation>
+        <translation>नया किनारा जोड़ना शुरू करें</translation>
     </message>
     <message>
         <source>Insert Line Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>लाइन वर्टेक्स डालें</translation>
     </message>
     <message>
         <source>Add New Point</source>
-        <translation type="unfinished"></translation>
+        <translation>नया बिंदु जोड़ें</translation>
     </message>
     <message>
         <source>Edit Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>निर्देशांक संपादित करें</translation>
     </message>
     <message>
         <source>Move Line Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>मूव लाइन वर्टेक्स</translation>
     </message>
     <message>
         <source>Remove Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>वर्टेक्स निकालें</translation>
     </message>
     <message>
         <source>Cross-section data not found. Please define Center Line by yourself.</source>
-        <translation type="unfinished"></translation>
+        <translation>क्रॉस-सेक्शन डेटा नहीं मिला। कृपया केंद्र रेखा को स्वयं परिभाषित करें।</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionLaplace::Impl</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>चेतावनी</translation>
     </message>
     <message>
         <source>Center Line is not defined yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>केंद्र रेखा अभी तक परिभाषित नहीं है।</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionLaplaceBuildBankLinesDialog</name>
     <message>
         <source>Build Bank Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>बैंक लाइन बनाएं</translation>
     </message>
     <message>
         <source>Input the distance from center line</source>
-        <translation type="unfinished"></translation>
+        <translation>केंद्र रेखा से दूरी दर्ज करें</translation>
     </message>
     <message>
         <source>Left bank:</source>
-        <translation type="unfinished"></translation>
+        <translation>बायाँ किनारा:</translation>
     </message>
     <message>
         <source>Right bank:</source>
-        <translation type="unfinished"></translation>
+        <translation>दायां किनारा:</translation>
     </message>
     <message>
         <source>Hint: Left bank and Right bank lines are created as line that consists of points that are away from center line to direction perpendicular to the center line.</source>
-        <translation type="unfinished"></translation>
+        <translation>संकेत: बाएँ किनारे और दाएँ किनारे की रेखाएँ उस रेखा के रूप में बनाई जाती हैं जिसमें केंद्र रेखा से दूर केंद्र रेखा से लंबवत दिशा में बिंदु होते हैं।</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionLaplaceCtrlPointsDialog</name>
     <message>
         <source>Specity the Number Of Control Cross Sections</source>
-        <translation type="unfinished"></translation>
+        <translation>नियंत्रण क्रॉस सेक्शन की संख्या निर्दिष्ट करें</translation>
     </message>
     <message>
         <source>Number of Control Cross Sections:</source>
-        <translation type="unfinished"></translation>
+        <translation>नियंत्रण क्रॉस सेक्शन की संख्या:</translation>
     </message>
     <message>
         <source>Hints: Control Cross Sections are the cross sections whose center points are used as the center line of the grid.</source>
-        <translation type="unfinished"></translation>
+        <translation>संकेत: नियंत्रण क्रॉस सेक्शन क्रॉस सेक्शन होते हैं जिनके केंद्र बिंदु ग्रिड की केंद्र रेखा के रूप में उपयोग किए जाते हैं।</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionLaplaceDeploySettingDialog</name>
     <message>
         <source>Points Deploy Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>अंक तैनाती सेटिंग</translation>
     </message>
     <message>
         <source>Deploy Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>सेटिंग तैनात करें</translation>
     </message>
     <message>
         <source>Equally divided</source>
-        <translation type="unfinished"></translation>
+        <translation>समान रूप से विभाजित</translation>
     </message>
     <message>
         <source>Geometric division</source>
-        <translation type="unfinished"></translation>
+        <translation>ज्यामितीय विभाजन</translation>
     </message>
     <message>
         <source>Common ratio:</source>
-        <translation type="unfinished"></translation>
+        <translation>सामान्य अनुपात:</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionLaplaceDivisionSettingDialog</name>
     <message>
         <source>Division Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>डिवीजन सेटिंग</translation>
     </message>
     <message>
         <source>Division Number:</source>
-        <translation type="unfinished"></translation>
+        <translation>डिवीजन नंबर:</translation>
     </message>
     <message>
         <source>Deploy Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>सेटिंग तैनात करें</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation>ऑटो</translation>
     </message>
     <message>
         <source>Equally divided</source>
-        <translation type="unfinished"></translation>
+        <translation>समान रूप से विभाजित</translation>
     </message>
     <message>
         <source>Geometric division</source>
-        <translation type="unfinished"></translation>
+        <translation>ज्यामितीय विभाजन</translation>
     </message>
     <message>
         <source>Common ratio:</source>
-        <translation type="unfinished"></translation>
+        <translation>सामान्य अनुपात:</translation>
     </message>
     <message>
         <source>Deploy Setting Target</source>
-        <translation type="unfinished"></translation>
+        <translation>लक्ष्य निर्धारण तैनात करें</translation>
     </message>
     <message>
         <source>This line only</source>
-        <translation type="unfinished"></translation>
+        <translation>केवल यह पंक्ति</translation>
     </message>
     <message>
         <source>This line and lines in parallel positions</source>
-        <translation type="unfinished"></translation>
+        <translation>यह रेखा और रेखाएँ समानांतर स्थिति में</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The deploy setting is applied to all lines in parallel positions.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;डिप्लॉयमेंट सेटिंग समानांतर स्थितियों में सभी लाइनों पर लागू होती है।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionLaplaceSubRegionDeploySettingDialog</name>
     <message>
         <source>Inner Points Deploy Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>आंतरिक बिंदु तैनाती सेटिंग</translation>
     </message>
     <message>
         <source>Ratio</source>
-        <translation type="unfinished"></translation>
+        <translation>अनुपात</translation>
     </message>
     <message>
         <source>Poisson</source>
-        <translation type="unfinished"></translation>
+        <translation>प्वासों</translation>
     </message>
     <message>
         <source>Streamwise direction:</source>
-        <translation type="unfinished"></translation>
+        <translation>स्ट्रीमवाइज दिशा:</translation>
     </message>
     <message>
         <source>Cross section direction:</source>
-        <translation type="unfinished"></translation>
+        <translation>क्रॉस सेक्शन दिशा:</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionLaplaceWholeRegionDivisionSettingDialog</name>
     <message>
         <source>Division Setting for Whole Region</source>
-        <translation type="unfinished"></translation>
+        <translation>पूरे क्षेत्र के लिए डिवीजन सेटिंग</translation>
     </message>
     <message>
         <source>m</source>
-        <translation type="unfinished"></translation>
+        <translation>एम</translation>
     </message>
     <message>
         <source>Create &amp;Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>ग्रिड बनाएं (&amp;G)</translation>
     </message>
 </context>
 </TS>

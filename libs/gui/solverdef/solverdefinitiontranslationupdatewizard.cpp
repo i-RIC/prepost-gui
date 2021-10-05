@@ -140,14 +140,45 @@ QList<QLocale> SolverDefinitionTranslationUpdateWizard::supportedLanguages()
 	QList<QLocale> ret;
 	// The list of supported languages are shown here.
 	// Please insert all the languages that iRIC may support.
-	ret.append(QLocale::Japanese);
-	ret.append(QLocale::Korean);
-	ret.append(QLocale::Thai);
-	ret.append(QLocale::Indonesian);
-	ret.append(QLocale::Chinese);
-	ret.append(QLocale::French);
-	ret.append(QLocale::Spanish);
-	ret.append(QLocale::Russian);
+
+	ret.append(QLocale(QLocale::Arabic));
+	ret.append(QLocale(QLocale::Basque));
+	ret.append(QLocale(QLocale::Bosnian));
+	ret.append(QLocale(QLocale::Bulgarian));
+	ret.append(QLocale(QLocale::Catalan));
+	ret.append(QLocale(QLocale::Chinese, QLocale::China));
+	ret.append(QLocale(QLocale::Chinese, QLocale::Taiwan));
+	ret.append(QLocale(QLocale::Czech));
+	ret.append(QLocale(QLocale::Danish));
+	ret.append(QLocale(QLocale::Dutch));
+	ret.append(QLocale(QLocale::Estonian));
+	ret.append(QLocale(QLocale::Finnish));
+	ret.append(QLocale(QLocale::French));
+	ret.append(QLocale(QLocale::German));
+	ret.append(QLocale(QLocale::Galician));
+	ret.append(QLocale(QLocale::Greek));
+	ret.append(QLocale(QLocale::Hindi));
+	ret.append(QLocale(QLocale::Hungarian));
+	ret.append(QLocale(QLocale::Icelandic));
+	ret.append(QLocale(QLocale::Indonesian));
+	ret.append(QLocale(QLocale::Italian));
+	ret.append(QLocale(QLocale::Japanese));
+	ret.append(QLocale(QLocale::Korean));
+	ret.append(QLocale(QLocale::Latvian));
+	ret.append(QLocale(QLocale::Lithuanian));
+	ret.append(QLocale(QLocale::Norwegian));
+	ret.append(QLocale(QLocale::Polish));
+	ret.append(QLocale(QLocale::Portuguese, QLocale::Brazil));
+	ret.append(QLocale(QLocale::Portuguese, QLocale::Portugal));
+	ret.append(QLocale(QLocale::Romanian));
+	ret.append(QLocale(QLocale::Russian));
+	ret.append(QLocale(QLocale::Slovenian));
+	ret.append(QLocale(QLocale::Spanish));
+	ret.append(QLocale(QLocale::Swedish));
+	ret.append(QLocale(QLocale::Thai));
+	ret.append(QLocale(QLocale::Turkish));
+	ret.append(QLocale(QLocale::Ukrainian));
+
 	return ret;
 }
 

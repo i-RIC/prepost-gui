@@ -1,130 +1,128 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="eu_ES">
 <context>
     <name>SolverConsoleWindow</name>
     <message>
         <source>Background Color Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Atzeko planoaren kolorearen ezarpena</translation>
     </message>
     <message>
         <source>&amp;Export solver console log...</source>
-        <translation type="unfinished"></translation>
+        <translation>Esportatu konponbide-kontsolaren erregistroa (&amp;E)...</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informazioa</translation>
     </message>
     <message>
         <source>This project is opened in post only mode. You can not run the solver.</source>
-        <translation type="unfinished"></translation>
+        <translation>Proiektu hau mezu bakarra moduan irekitzen da. Ezin duzu konponbidea exekutatu.</translation>
     </message>
     <message>
         <source>Show Detail</source>
-        <translation type="unfinished"></translation>
+        <translation>Erakutsi xehetasuna</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Abisua</translation>
     </message>
     <message>
         <source>The following problems found in the grid(s). Do you really want to run the solver with this grid?</source>
-        <translation type="unfinished"></translation>
+        <translation>Sarean (k) aurkitutako arazo hauek. Benetan al duzu soluzioa sare honekin exekutatu nahi?</translation>
     </message>
     <message>
         <source>The simulation has result</source>
-        <translation type="unfinished"></translation>
+        <translation>Simulazioak emaitza du</translation>
     </message>
     <message>
         <source>Current simulation already has result data. When you run the solver, the current result data is discarded.</source>
-        <translation type="unfinished"></translation>
+        <translation>Uneko simulazioak dagoeneko emaitzen datuak ditu. Ebazten duzunean, uneko emaitzen datuak baztertu egiten dira.</translation>
     </message>
     <message>
         <source>Error occured. %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Errore bat gertatu da. %1</translation>
     </message>
     <message>
         <source>We recommend that you save the project before starting the solver. Do you want to save?</source>
-        <translation type="unfinished"></translation>
+        <translation>Ebazten hasi aurretik proiektua gordetzea gomendatzen dizugu. Aurreztu nahi duzu?</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Errorea</translation>
     </message>
     <message>
         <source>Solver executable file %1 does not exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>Solver fitxategi exekutagarria %1 ez da existitzen.</translation>
     </message>
     <message>
         <source>Confirm Solver Termination</source>
-        <translation type="unfinished"></translation>
+        <translation>Berretsi ebazten duen amaiera</translation>
     </message>
     <message>
         <source>Do you really want to kill the solver?</source>
-        <translation type="unfinished"></translation>
+        <translation>Benetan al duzu soluzioa hil nahi duzula?</translation>
     </message>
     <message>
         <source>Solver Finished</source>
-        <translation type="unfinished"></translation>
+        <translation>Ebazten duen konponbidea</translation>
     </message>
     <message>
         <source>The solver finished calculation.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ebazleak kalkulua amaitu du.</translation>
     </message>
     <message>
         <source>The solver finished abnormally.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ebazleak ez zuen ohiturarik amaitu.</translation>
     </message>
     <message>
         <source>Solver Console</source>
-        <translation type="unfinished"></translation>
+        <translation>Solver kontsola</translation>
     </message>
     <message>
         <source>running</source>
-        <translation type="unfinished"></translation>
+        <translation>korrika egiten</translation>
     </message>
     <message>
         <source>stopped</source>
-        <translation type="unfinished"></translation>
+        <translation>gelditu egin zen</translation>
     </message>
     <message>
         <source>Solver Console [%1] (%2)</source>
-        <translation type="unfinished"></translation>
+        <translation>Solver kontsola [ %1 ] (%2)</translation>
     </message>
     <message>
         <source>%1 seconds have passed, but the solver do not end. Do you want to kill the solver?</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 segundoak igaro dira, baina ebazlea ez da amaitzen. Nahi al duzu konponbidea hiltzea?</translation>
     </message>
     <message>
         <source>Background Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Atzeko planoaren kolorea</translation>
     </message>
 </context>
 <context>
     <name>SolverConsoleWindowProjectDataItem</name>
     <message>
         <source>Select File to Export</source>
-        <translation type="unfinished"></translation>
+        <translation>Aukeratu Esportatzeko fitxategia</translation>
     </message>
     <message>
         <source>Text file (*.txt)</source>
-        <translation type="unfinished"></translation>
+        <translation>Testu fitxategia (*.txt)</translation>
     </message>
     <message>
         <source>Exporting solver console log...</source>
-        <translation type="unfinished"></translation>
+        <translation>Ebazpen-kontsolaren erregistroa esportatzen...</translation>
     </message>
     <message>
         <source>Solver console log is successfully exported to %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Solver kontsolaren egunkaria behar bezala esportatzen da %1.</translation>
     </message>
     <message>
         <source>Fail</source>
-        <translation type="unfinished"></translation>
+        <translation>Porrota</translation>
     </message>
     <message>
         <source>Exporting solver console log failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Konpondu kontsolaren erregistroa esportatzeak huts egin du.</translation>
     </message>
 </context>
 </TS>

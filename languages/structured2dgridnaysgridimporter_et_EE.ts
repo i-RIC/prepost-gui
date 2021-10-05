@@ -1,23 +1,21 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="et_EE">
 <context>
     <name>Structured2DGridNaysGridImporter</name>
     <message>
         <source>RIC-Nays Grid file</source>
-        <translation type="unfinished"></translation>
+        <translation>RIC-Nays Grid fail</translation>
     </message>
     <message>
         <source>RIC-Nays grid file (*.grid)</source>
-        <translation type="unfinished"></translation>
+        <translation>RIC-Nays ruudustikfail (*.grid)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Hoiatus</translation>
     </message>
     <message>
         <source>Cell flag values will not be loaded.</source>
-        <translation type="unfinished"></translation>
+        <translation>Lahtri lipu väärtusi ei laadita.</translation>
     </message>
 </context>
 </TS>

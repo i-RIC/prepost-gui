@@ -1,1867 +1,1888 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="nb_NO">
 <context>
     <name>AttributeBrowserTargetDataItem</name>
     <message>
         <source>Please specify a closed polygon!</source>
-        <translation type="unfinished"></translation>
+        <translation>Oppgi en lukket polygon!</translation>
     </message>
 </context>
 <context>
     <name>BackgroundImageInfo</name>
     <message>
         <source>Unable to read image %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Kan ikke lese bildet %1</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Advarsel</translation>
     </message>
     <message>
         <source>In file %1, x-coordinate increment per pixel and y-coordinate increment per pixel mismatches. It is acceptable, but it may be wrong.</source>
-        <translation type="unfinished"></translation>
+        <translation>I filen %1, x-koordinat-økning per piksel og y-koordinat-inkrement per piksel-mismatch. Det er akseptabelt, men det kan være feil.</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informasjon</translation>
     </message>
     <message>
         <source>Select a corresponding point on Main Window.</source>
-        <translation type="unfinished"></translation>
+        <translation>Velg et tilsvarende punkt i hovedvinduet.</translation>
     </message>
 </context>
 <context>
     <name>BackgroundImageInfoDialog</name>
     <message>
         <source>Background Image Position</source>
-        <translation type="unfinished"></translation>
+        <translation>Bakgrunnsbildeposisjon</translation>
     </message>
     <message>
         <source>Method of designation</source>
-        <translation type="unfinished"></translation>
+        <translation>Metode for betegnelse</translation>
     </message>
     <message>
         <source>Specify bottom-left vertex position, scale, and rotate angle</source>
-        <translation type="unfinished"></translation>
+        <translation>Spesifiser toppunktet nederst til venstre, skala og roter vinkel</translation>
     </message>
     <message>
         <source>Specify bottom-left and bottom-right vertex positions</source>
-        <translation type="unfinished"></translation>
+        <translation>Angi toppunktene nederst til venstre og nederst til høyre</translation>
     </message>
     <message>
         <source>Bottom-left vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Nederst-venstre toppunkt</translation>
     </message>
     <message>
         <source>X:</source>
-        <translation type="unfinished"></translation>
+        <translation>X:</translation>
     </message>
     <message>
         <source>Y:</source>
-        <translation type="unfinished"></translation>
+        <translation>Y:</translation>
     </message>
     <message>
         <source>Bottom-right vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Nedre høyre hjørne</translation>
     </message>
     <message>
         <source>Scale:</source>
-        <translation type="unfinished"></translation>
+        <translation>Skala:</translation>
     </message>
     <message>
         <source>Rotate Angle:</source>
-        <translation type="unfinished"></translation>
+        <translation>Roter vinkel:</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Specify the distance in meters that corresponds to the width of one pixel of the image.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Angi avstanden i meter som tilsvarer bredden på en piksel av bildet. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Specify the angle of image bottom edge against X-axis.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Angi vinkelen på bildens nederste kant mot X-aksen. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
 </context>
 <context>
     <name>BackgroundImageInfoGeoreferenceDialog</name>
     <message>
         <source>Georeference</source>
-        <translation type="unfinished"></translation>
+        <translation>Georeferanse</translation>
     </message>
     <message>
         <source>PushButton</source>
-        <translation type="unfinished"></translation>
+        <translation>Trykknapp</translation>
     </message>
     <message>
         <source>Hide</source>
-        <translation type="unfinished"></translation>
+        <translation>Gjemme seg</translation>
     </message>
     <message>
         <source>Show</source>
-        <translation type="unfinished"></translation>
+        <translation>Forestilling</translation>
     </message>
 </context>
 <context>
     <name>ColorTransferFunctionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Skjema</translation>
     </message>
     <message>
         <source>Attribute</source>
-        <translation type="unfinished"></translation>
+        <translation>Egenskap</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Farge</translation>
     </message>
 </context>
 <context>
     <name>GcpTableModel</name>
     <message>
         <source>srcX</source>
-        <translation type="unfinished"></translation>
+        <translation>srcX</translation>
     </message>
     <message>
         <source>srcY</source>
-        <translation type="unfinished"></translation>
+        <translation>srcY</translation>
     </message>
     <message>
         <source>dstX</source>
-        <translation type="unfinished"></translation>
+        <translation>dstX</translation>
     </message>
     <message>
         <source>dstY</source>
-        <translation type="unfinished"></translation>
+        <translation>dstY</translation>
     </message>
 </context>
 <context>
     <name>GeoData</name>
     <message>
         <source>Edit &amp;Name...</source>
-        <translation type="unfinished"></translation>
+        <translation>Rediger navn (&amp;N)...</translation>
     </message>
 </context>
 <context>
     <name>GeoDataBackground</name>
     <message>
         <source>Default</source>
-        <translation type="unfinished"></translation>
+        <translation>Misligholde</translation>
     </message>
     <message>
         <source>Edit value...</source>
-        <translation type="unfinished"></translation>
+        <translation>Rediger verdi...</translation>
     </message>
     <message>
         <source>Edit %1 default value</source>
-        <translation type="unfinished"></translation>
+        <translation>Redigere %1 standardverdi</translation>
     </message>
     <message>
         <source>Please input new default value.</source>
-        <translation type="unfinished"></translation>
+        <translation>Angi ny standardverdi.</translation>
     </message>
     <message>
         <source>Background edit value</source>
-        <translation type="unfinished"></translation>
+        <translation>Rediger verdi i bakgrunnen</translation>
     </message>
 </context>
 <context>
     <name>GeoDataBackgroundComplexCreator</name>
     <message>
         <source>Background</source>
-        <translation type="unfinished"></translation>
+        <translation>Bakgrunn</translation>
     </message>
 </context>
 <context>
     <name>GeoDataBackgroundEditDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Dialog</translation>
     </message>
     <message>
         <source>Minimum value of geographic data</source>
-        <translation type="unfinished"></translation>
+        <translation>Minimumsverdi for geografiske data</translation>
     </message>
     <message>
         <source>Maximum value of geographic data</source>
-        <translation type="unfinished"></translation>
+        <translation>Maksimal verdi for geografiske data</translation>
     </message>
     <message>
         <source>Custom value</source>
-        <translation type="unfinished"></translation>
+        <translation>Egendefinert verdi</translation>
     </message>
 </context>
 <context>
     <name>GeoreferenceView::ImageInfo</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Advarsel</translation>
     </message>
     <message>
         <source>No point is selected.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ingen poeng er valgt.</translation>
     </message>
     <message>
         <source>No point can be further deleted.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ingen poeng kan slettes ytterligere.</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informasjon</translation>
     </message>
     <message>
         <source>Select a point on Georeference dialog.</source>
-        <translation type="unfinished"></translation>
+        <translation>Velg et punkt i dialogboksen Georeferanse.</translation>
     </message>
 </context>
 <context>
     <name>GraphicsWindowDataItem</name>
     <message>
         <source>Object Browser Item Change</source>
-        <translation type="unfinished"></translation>
+        <translation>Endring av objektleser</translation>
     </message>
 </context>
 <context>
     <name>GraphicsWindowDataModel</name>
     <message>
         <source>Operation ToolBar</source>
-        <translation type="unfinished"></translation>
+        <translation>Operasjonsverktøylinje</translation>
     </message>
 </context>
 <context>
     <name>GridAttributeDimensionComboboxSelectWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Skjema</translation>
     </message>
     <message>
         <source>label:</source>
-        <translation type="unfinished"></translation>
+        <translation>merkelapp:</translation>
     </message>
 </context>
 <context>
     <name>GridAttributeDimensionTimeSliderSelectWidget</name>
     <message>
         <source>Step &amp;Backward</source>
-        <translation type="unfinished"></translation>
+        <translation>Gå tilbake (&amp;B)</translation>
     </message>
     <message>
         <source>Step &amp;Forward</source>
-        <translation type="unfinished"></translation>
+        <translation>Skritt fremover (&amp;F)</translation>
     </message>
     <message>
         <source>&amp;Reset</source>
-        <translation type="unfinished"></translation>
+        <translation>Nullstille (&amp;R)</translation>
     </message>
     <message>
         <source>Go to &amp;Last Step</source>
-        <translation type="unfinished"></translation>
+        <translation>Gå til Siste trinn (&amp;L)</translation>
     </message>
     <message>
         <source>&amp;Start/Stop Animation</source>
-        <translation type="unfinished"></translation>
+        <translation>Start/stopp animasjon (&amp;S)</translation>
     </message>
     <message>
         <source>S&amp;top Animation</source>
-        <translation type="unfinished"></translation>
+        <translation>Stopp animasjonen (&amp;T)</translation>
     </message>
     <message>
         <source>&amp;Animation Speed Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Innstilling av animasjonshastighet (&amp;A)...</translation>
     </message>
 </context>
 <context>
     <name>GridAttributeEditDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Dialog</translation>
     </message>
     <message>
         <source>TextLabel</source>
-        <translation type="unfinished"></translation>
+        <translation>TextLabel</translation>
     </message>
 </context>
 <context>
     <name>GridAttributeEditNameAndValueDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Dialog</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Navn:</translation>
     </message>
     <message>
         <source>TextLabel</source>
-        <translation type="unfinished"></translation>
+        <translation>TextLabel</translation>
     </message>
 </context>
 <context>
     <name>GridAttributeEditWidget</name>
     <message>
         <source>Edit grid attribute value(s)</source>
-        <translation type="unfinished"></translation>
+        <translation>Rediger rutenettattributtverdier</translation>
     </message>
 </context>
 <context>
     <name>GridAttributeVariationEditDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Dialog</translation>
     </message>
     <message>
         <source>TextLabel</source>
-        <translation type="unfinished"></translation>
+        <translation>TextLabel</translation>
     </message>
 </context>
 <context>
     <name>GridAttributeVariationEditWidget</name>
     <message>
         <source>Edit grid attribute value(s)</source>
-        <translation type="unfinished"></translation>
+        <translation>Rediger rutenettattributtverdier</translation>
     </message>
 </context>
 <context>
     <name>GridCellAttributePropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Dialog</translation>
     </message>
 </context>
 <context>
     <name>GridComplexConditionDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Dialog</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Legge til (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Slett (&amp;D)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Advarsel</translation>
     </message>
     <message>
         <source>Name has to consist of only English characters.</source>
-        <translation type="unfinished"></translation>
+        <translation>Navnet må bare bestå av engelske tegn.</translation>
     </message>
     <message>
         <source>There must be one group at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>Det må være minst en gruppe.</translation>
     </message>
 </context>
 <context>
     <name>GridComplexConditionGroupEditDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Dialog</translation>
     </message>
     <message>
         <source>Target:</source>
-        <translation type="unfinished"></translation>
+        <translation>Mål:</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Advarsel</translation>
     </message>
     <message>
         <source>Modifications you made will be discarded.</source>
-        <translation type="unfinished"></translation>
+        <translation>Endringer du har gjort, blir kastet.</translation>
     </message>
 </context>
 <context>
     <name>GridComplexConditionGroupRealEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Skjema</translation>
     </message>
     <message>
         <source>Targets</source>
-        <translation type="unfinished"></translation>
+        <translation>Mål</translation>
     </message>
 </context>
 <context>
     <name>GridComplexConditionWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Skjema</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Navn:</translation>
     </message>
     <message>
         <source>Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Omgivelser</translation>
     </message>
     <message>
         <source>Use as Default Value</source>
-        <translation type="unfinished"></translation>
+        <translation>Bruk som standardverdi</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Farge:</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingCondition</name>
     <message>
         <source>&amp;Grid Creating Condition</source>
-        <translation type="unfinished"></translation>
+        <translation>Nettopprette betingelse (&amp;G)</translation>
     </message>
 </context>
 <context>
     <name>GridNodeAttributePropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Dialog</translation>
     </message>
     <message>
         <source>Contour setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Konturinnstilling</translation>
+    </message>
+</context>
+<context>
+    <name>InputConditionCgnsFileSelectDialog</name>
+    <message>
+        <source>Select Input CGNS File</source>
+        <translation>Velg Input CGNS File</translation>
+    </message>
+    <message>
+        <source>Information</source>
+        <translation>Informasjon</translation>
+    </message>
+    <message>
+        <source>Do you want to import grid from the CGNS file?</source>
+        <translation>Vil du importere rutenett fra CGNS -filen?</translation>
+    </message>
+    <message>
+        <source>Select CGNS file</source>
+        <translation>Velg CGNS -fil</translation>
+    </message>
+    <message>
+        <source>Please select from which CGNS file to read grid.</source>
+        <translation>Velg hvilken CGNS -fil du vil lese rutenettet.</translation>
     </message>
 </context>
 <context>
     <name>InputConditionContainerSet</name>
     <message>
         <source>Definition node is not stored</source>
-        <translation type="unfinished"></translation>
+        <translation>Definisjonsnoden lagres ikke</translation>
     </message>
     <message>
-        <source>Wrong valueType &quot;%1&quot; is set.</source>
-        <translation type="unfinished"></translation>
+        <source>Wrong valueType "%1" is set.</source>
+        <translation>Feil valueType "%1"er satt.</translation>
     </message>
     <message>
-        <source>Wrong conditionType &quot;%1&quot;is set.</source>
-        <translation type="unfinished"></translation>
+        <source>Wrong conditionType "%1"is set.</source>
+        <translation>Feil tilstandType "%1"er satt.</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
 %1: %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Det oppsto en feil under lasting av løsningsdefinisjonsfil. %1 : %2</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Feil</translation>
     </message>
 </context>
 <context>
     <name>InputConditionDialog</name>
     <message>
         <source>Calculation Condition</source>
-        <translation type="unfinished"></translation>
+        <translation>Beregningstilstand</translation>
     </message>
     <message>
         <source>&amp;Save and Close</source>
-        <translation type="unfinished"></translation>
+        <translation>Lagre og lukk (&amp;S)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Feil</translation>
     </message>
     <message>
         <source>This CGNS file is created for %1 version %2. It is not compatible with the current solver.</source>
-        <translation type="unfinished"></translation>
+        <translation>Denne CGNS -filen er opprettet for %1 versjon %2. Den er ikke kompatibel med den nåværende løseren.</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Advarsel</translation>
     </message>
     <message>
         <source>This CGNS file does not have solver information. We can not check whether this CGNS file is compatible with the solver. If it is not compatible, maybe only some part of the conditions will be imported.
 Do you really want to import this file?</source>
-        <translation type="unfinished"></translation>
+        <translation>Denne CGNS -filen har ikke informasjon om løsere. Vi kan ikke kontrollere om denne CGNS -filen er kompatibel med løseren. Hvis det ikke er kompatibelt, vil kanskje bare en del av betingelsene importeres. Vil du virkelig importere denne filen?</translation>
     </message>
     <message>
         <source>This CGNS file does not contain calculation condition data.</source>
-        <translation type="unfinished"></translation>
+        <translation>Denne CGNS -filen inneholder ikke beregningsbetingelsesdata.</translation>
     </message>
     <message>
         <source>Are you sure you want to reset all calculation conditions to default values?</source>
-        <translation type="unfinished"></translation>
+        <translation>Er du sikker på at du vil tilbakestille alle beregningsbetingelser til standardverdier?</translation>
     </message>
     <message>
         <source>The solver is running currently, so you can not save calculation condition. Please press Cancel button.</source>
-        <translation type="unfinished"></translation>
+        <translation>Løsningen kjører for øyeblikket, så du kan ikke lagre beregningstilstanden. Trykk på Avbryt -knappen.</translation>
     </message>
     <message>
         <source>Modifications you made will be discarded.</source>
-        <translation type="unfinished"></translation>
+        <translation>Endringer du har gjort, blir kastet.</translation>
     </message>
     <message>
         <source>Error occured while saving.</source>
-        <translation type="unfinished"></translation>
+        <translation>Det oppsto en feil under lagring.</translation>
     </message>
 </context>
 <context>
     <name>InputConditionPageList</name>
     <message>
         <source>Groups</source>
-        <translation type="unfinished"></translation>
+        <translation>Grupper</translation>
     </message>
 </context>
 <context>
     <name>InputConditionWidgetCgnsFile</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Skjema</translation>
     </message>
     <message>
         <source>...</source>
-        <translation type="unfinished"></translation>
+        <translation>...</translation>
     </message>
     <message>
         <source>Solver Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Løsernavn:</translation>
     </message>
     <message>
         <source>---</source>
-        <translation type="unfinished"></translation>
+        <translation>---</translation>
     </message>
     <message>
         <source>Solver Version:</source>
-        <translation type="unfinished"></translation>
+        <translation>Løsningsversjon:</translation>
     </message>
     <message>
         <source>Grid Type:</source>
-        <translation type="unfinished"></translation>
+        <translation>Rutenetttype:</translation>
     </message>
     <message>
         <source>Grid Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Rutenettstørrelse:</translation>
     </message>
     <message>
         <source>Number of results:</source>
-        <translation type="unfinished"></translation>
+        <translation>Antall resultater:</translation>
     </message>
     <message>
         <source>Structured</source>
-        <translation type="unfinished"></translation>
+        <translation>Strukturert</translation>
     </message>
     <message>
         <source>Unstructured</source>
-        <translation type="unfinished"></translation>
+        <translation>Ustrukturert</translation>
     </message>
     <message>
         <source>Select File</source>
-        <translation type="unfinished"></translation>
+        <translation>Velg Fil</translation>
     </message>
 </context>
 <context>
     <name>InputConditionWidgetCgnsResult</name>
     <message>
         <source>(CGNS file is not selected)</source>
-        <translation type="unfinished"></translation>
+        <translation>(CGNS -filen er ikke valgt)</translation>
     </message>
     <message>
         <source>(There is no result)</source>
-        <translation type="unfinished"></translation>
+        <translation>(Det er ikke noe resultat)</translation>
     </message>
 </context>
 <context>
     <name>InputConditionWidgetCheckbox</name>
     <message>
         <source>Enabled</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktivert</translation>
     </message>
 </context>
 <context>
     <name>InputConditionWidgetFilename</name>
     <message>
         <source>Select File</source>
-        <translation type="unfinished"></translation>
+        <translation>Velg Fil</translation>
     </message>
 </context>
 <context>
     <name>InputConditionWidgetFoldername</name>
     <message>
         <source>Select Directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Velg Katalog</translation>
     </message>
 </context>
 <context>
     <name>InputConditionWidgetFunctionalDialog</name>
     <message>
         <source>Calculation Condition</source>
-        <translation type="unfinished"></translation>
+        <translation>Beregningstilstand</translation>
     </message>
     <message>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Legge til</translation>
     </message>
     <message>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Ta bort</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation type="unfinished"></translation>
+        <translation>Import (&amp;I)</translation>
     </message>
     <message>
         <source>Import Web</source>
-        <translation type="unfinished"></translation>
+        <translation>Importer web</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation type="unfinished"></translation>
+        <translation>Eksport (&amp;E)</translation>
     </message>
     <message>
         <source>Clear</source>
-        <translation type="unfinished"></translation>
+        <translation>Klar</translation>
     </message>
     <message>
         <source>%1 at row %2: The value %3 is smaller than minimum value %4</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 på rad %2 : Verdien %3 er mindre enn minimumsverdien %4</translation>
     </message>
     <message>
         <source>%1 at row %2: The value %3 is larger than maximum value %4</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 på rad %2 : Verdien %3 er større enn maksimalverdi %4</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Feil</translation>
     </message>
     <message>
         <source>Error occured while opening the file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Det oppsto en feil under åpning av filen.</translation>
     </message>
     <message>
         <source>Ctrl+C</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+C</translation>
     </message>
     <message>
         <source>Ctrl+V</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+V</translation>
     </message>
     <message>
         <source>%1 are values for spans. For example value input at 2nd row is for span between 1st row and 2nd row.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 er verdier for spenn. For eksempel er verdiinngang på 2. rad for spenn mellom 1. rad og 2. rad.</translation>
     </message>
     <message>
         <source>Choose a text file</source>
-        <translation type="unfinished"></translation>
+        <translation>Velg en tekstfil</translation>
     </message>
     <message>
         <source>Text files (*.csv *.txt);;All files (*.*)</source>
-        <translation type="unfinished"></translation>
+        <translation>Tekstfiler (*.csv *.txt);;All files (*.*)</translation>
     </message>
     <message>
         <source>Specify file name to save</source>
-        <translation type="unfinished"></translation>
+        <translation>Angi filnavn som skal lagres</translation>
     </message>
     <message>
         <source>CSV files (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>CSV -filer (*.csv)</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informasjon</translation>
     </message>
     <message>
         <source>Values are copied to clipboard.</source>
-        <translation type="unfinished"></translation>
+        <translation>Verdier kopieres til utklippstavlen.</translation>
     </message>
     <message>
         <source>File %1 is updated after imported to calculation condition %2. Do you want to import the updated file?</source>
-        <translation type="unfinished"></translation>
+        <translation>Fil %1 oppdateres etter import til beregningstilstand %2. Vil du importere den oppdaterte filen?</translation>
     </message>
     <message>
-        <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
-        <translation type="unfinished"></translation>
+        <source>You can copy and paste the values, with shortcut "Ctrl + C" and "Ctrl + V"</source>
+        <translation>Du kan kopiere og lime inn verdiene med snarveien "Ctrl + C" og "Ctrl + V"</translation>
     </message>
     <message>
         <source>The following problems found: 
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Følgende problemer ble funnet:</translation>
     </message>
     <message>
         <source>
  ... and other %1 errors</source>
-        <translation type="unfinished"></translation>
+        <translation>... og annen %1 feil</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Advarsel</translation>
     </message>
 </context>
 <context>
     <name>InputConditionWidgetFunctionalDownloadDialog</name>
     <message>
         <source>Download</source>
-        <translation type="unfinished"></translation>
+        <translation>nedlasting</translation>
     </message>
     <message>
         <source>Site Number:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nettstedsnummer:</translation>
     </message>
     <message>
         <source>Start Date:</source>
-        <translation type="unfinished"></translation>
+        <translation>Startdato:</translation>
     </message>
     <message>
         <source>End Date:</source>
-        <translation type="unfinished"></translation>
+        <translation>Sluttdato:</translation>
     </message>
     <message>
         <source>Test</source>
-        <translation type="unfinished"></translation>
+        <translation>Test</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Feil</translation>
     </message>
     <message>
         <source>Please enter a site number.</source>
-        <translation type="unfinished"></translation>
+        <translation>Skriv inn et nettstednummer.</translation>
     </message>
     <message>
         <source>Invalid site number.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ugyldig nettstednummer.</translation>
     </message>
     <message>
         <source>Start date not prior to end date.</source>
-        <translation type="unfinished"></translation>
+        <translation>Startdato ikke før sluttdato.</translation>
     </message>
     <message>
         <source>Import failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Import mislyktes</translation>
     </message>
     <message>
         <source>No data to import.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ingen data å importere.</translation>
     </message>
 </context>
 <context>
     <name>LookupTableEditWidget</name>
     <message>
         <source>Colormap Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Innstilling for fargekart</translation>
     </message>
     <message>
         <source>Value range</source>
-        <translation type="unfinished"></translation>
+        <translation>Verdiområde</translation>
     </message>
     <message>
         <source>Automatic</source>
-        <translation type="unfinished"></translation>
+        <translation>Automatisk</translation>
     </message>
     <message>
         <source>Fill upper area</source>
-        <translation type="unfinished"></translation>
+        <translation>Fyll øvre område</translation>
     </message>
     <message>
         <source>Min:</source>
-        <translation type="unfinished"></translation>
+        <translation>Min:</translation>
     </message>
     <message>
         <source>Fill lower area</source>
-        <translation type="unfinished"></translation>
+        <translation>Fyll nedre område</translation>
     </message>
     <message>
         <source>Division Number:</source>
-        <translation type="unfinished"></translation>
+        <translation>Divisjonsnummer:</translation>
     </message>
     <message>
         <source>Max:</source>
-        <translation type="unfinished"></translation>
+        <translation>Maks:</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation type="unfinished"></translation>
+        <translation>Fargekart</translation>
     </message>
 </context>
 <context>
     <name>MeasuredData</name>
     <message>
         <source>Importing Measured Data...</source>
-        <translation type="unfinished"></translation>
+        <translation>Importere målte data...</translation>
     </message>
     <message>
         <source>Error occured while opening the file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Det oppsto en feil under åpning av filen.</translation>
     </message>
     <message>
-        <source>The first two columns must be &quot;X&quot; and &quot;Y&quot;.</source>
-        <translation type="unfinished"></translation>
+        <source>The first two columns must be "X" and "Y".</source>
+        <translation>De to første kolonnene må være "X" og "Y".</translation>
     </message>
     <message>
         <source>The data file has to consist of only English characters.</source>
-        <translation type="unfinished"></translation>
+        <translation>Datafilen må bare bestå av engelske tegn.</translation>
     </message>
     <message>
         <source>Wrong data found: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Feil data funnet: %1</translation>
     </message>
 </context>
 <context>
     <name>MousePositionWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Skjema</translation>
     </message>
     <message>
         <source>X: </source>
-        <translation type="unfinished"></translation>
+        <translation>X:</translation>
     </message>
     <message>
         <source>Y: </source>
-        <translation type="unfinished"></translation>
+        <translation>Y:</translation>
     </message>
     <message>
         <source>X: ------</source>
-        <translation type="unfinished"></translation>
+        <translation>X: ------</translation>
     </message>
     <message>
         <source>Y: ------</source>
-        <translation type="unfinished"></translation>
+        <translation>Y: ------</translation>
     </message>
 </context>
 <context>
     <name>OffsetSettingDialog</name>
     <message>
         <source>Offset Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Forskyvningsinnstilling</translation>
     </message>
     <message>
         <source>X:</source>
-        <translation type="unfinished"></translation>
+        <translation>X:</translation>
     </message>
     <message>
         <source>Y:</source>
-        <translation type="unfinished"></translation>
+        <translation>Y:</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Advarsel</translation>
     </message>
     <message>
         <source>X value is not appropriate. Please input more simple value.</source>
-        <translation type="unfinished"></translation>
+        <translation>X -verdien er ikke passende. Skriv inn en mer enkel verdi.</translation>
     </message>
     <message>
         <source>Y value is not appropriate. Please input more simple value.</source>
-        <translation type="unfinished"></translation>
+        <translation>Y -verdien er ikke passende. Skriv inn en mer enkel verdi.</translation>
     </message>
 </context>
 <context>
     <name>PostBaseSelectingDialog</name>
     <message>
         <source>Calculation Result Selection</source>
-        <translation type="unfinished"></translation>
+        <translation>Valg av beregningsresultat</translation>
     </message>
     <message>
         <source>Please select which calculation result to use.</source>
-        <translation type="unfinished"></translation>
+        <translation>Velg hvilket beregningsresultat du vil bruke.</translation>
     </message>
     <message>
         <source>One dimensional calculation</source>
-        <translation type="unfinished"></translation>
+        <translation>En dimensjonal beregning</translation>
     </message>
     <message>
         <source>Two dimensional calculation</source>
-        <translation type="unfinished"></translation>
+        <translation>To -dimensjonal beregning</translation>
     </message>
     <message>
         <source>Three dimensional calculation</source>
-        <translation type="unfinished"></translation>
+        <translation>Tredimensjonal beregning</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResult</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Feil</translation>
     </message>
     <message>
         <source>Error occured: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Feil oppstod: %1</translation>
     </message>
     <message>
         <source>Checking argument for %1 failed. Invalid arguments: %2.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sjekker argument for %1 mislyktes. Ugyldige argumenter: %2.</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultArgumentEditDialog</name>
     <message>
         <source>Edit Simple Operation Result Variable</source>
-        <translation type="unfinished"></translation>
+        <translation>Rediger Enkel operasjonsresultatvariabel</translation>
     </message>
     <message>
         <source>Calculation Result:</source>
-        <translation type="unfinished"></translation>
+        <translation>Beregningsresultat:</translation>
     </message>
     <message>
         <source>Variable name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Variabelnavn:</translation>
     </message>
     <message>
         <source>Value for testing:</source>
-        <translation type="unfinished"></translation>
+        <translation>Verdi for testing:</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Advarsel</translation>
     </message>
     <message>
         <source>Variable name is not input.</source>
-        <translation type="unfinished"></translation>
+        <translation>Variabelnavn er ikke angitt.</translation>
     </message>
     <message>
         <source>This variable name is already used</source>
-        <translation type="unfinished"></translation>
+        <translation>Dette variabelnavnet er allerede brukt</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultEditDialog</name>
     <message>
         <source>Edit Simple Operation Result</source>
-        <translation type="unfinished"></translation>
+        <translation>Rediger enkelt operasjonsresultat</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Navn:</translation>
     </message>
     <message>
         <source>Position:</source>
-        <translation type="unfinished"></translation>
+        <translation>Posisjon:</translation>
     </message>
     <message>
         <source>Calculation results for input</source>
-        <translation type="unfinished"></translation>
+        <translation>Beregningsresultater for input</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation type="unfinished"></translation>
+        <translation>Legge til (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Slett (&amp;D)</translation>
     </message>
     <message>
         <source>Definition of variable</source>
-        <translation type="unfinished"></translation>
+        <translation>Definisjon av variabel</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Du kan definere variabelen med JavaScript -språk. Se &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -dekorasjon: understreket; farge:#0000ff; "&gt; her &lt;/span&gt; &lt;/a&gt; for detaljer. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
-        <translation type="unfinished"></translation>
+        <translation>Test</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can test the definition by clicking this. If error occurs while parsing the definition, the error message is shown. When the definition is parsed successfully, the value calculated using the &amp;quot;Value for testing&amp;quot; for each input is shown.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Du kan teste definisjonen ved å klikke på denne. Hvis det oppstår feil under analyse av definisjonen, vises feilmeldingen. Når definisjonen er analysert vellykket, beregnes verdien ved hjelp av &amp; quot; Value for testingquot; for hver inngang vises. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>----</source>
-        <translation type="unfinished"></translation>
+        <translation>----</translation>
     </message>
     <message>
         <source>Result name</source>
-        <translation type="unfinished"></translation>
+        <translation>Resultatnavn</translation>
     </message>
     <message>
         <source>Variable name</source>
-        <translation type="unfinished"></translation>
+        <translation>Variabelnavn</translation>
     </message>
     <message>
         <source>Value for testing</source>
-        <translation type="unfinished"></translation>
+        <translation>Verdi for testing</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation type="unfinished"></translation>
+        <translation>Rutenettnode</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation type="unfinished"></translation>
+        <translation>Rutenettcelle</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation type="unfinished"></translation>
+        <translation>Partikkel</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Advarsel</translation>
     </message>
     <message>
         <source>Name is not input.</source>
-        <translation type="unfinished"></translation>
+        <translation>Navn er ikke angitt.</translation>
     </message>
     <message>
         <source>This name is already used</source>
-        <translation type="unfinished"></translation>
+        <translation>Dette navnet er allerede brukt</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation type="unfinished"></translation>
+        <translation>Er du sikker på at du vil slette %1 ?</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultListDialog</name>
     <message>
         <source>Simple Operation Result List</source>
-        <translation type="unfinished"></translation>
+        <translation>Enkel operasjonsresultatliste</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Navn</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished"></translation>
+        <translation>Posisjon</translation>
     </message>
     <message>
         <source>&amp;Up</source>
-        <translation type="unfinished"></translation>
+        <translation>Opp (&amp;U)</translation>
     </message>
     <message>
         <source>&amp;Down</source>
-        <translation type="unfinished"></translation>
+        <translation>Ned (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Merk &lt;/span&gt;: Rekkefølgen i listen er viktig. I definisjonen kan du bruke verdien av enkle operasjonsberegninger som en variabel, som vises tidligere i listen. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation type="unfinished"></translation>
+        <translation>Legge til (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation type="unfinished"></translation>
+        <translation>Redigere (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Slett (&amp;D)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Advarsel</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation type="unfinished"></translation>
+        <translation>Er du sikker på at du vil slette %1 ?</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation type="unfinished"></translation>
+        <translation>Rutenettnode</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation type="unfinished"></translation>
+        <translation>Rutenettcelle</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation type="unfinished"></translation>
+        <translation>Partikkel</translation>
     </message>
 </context>
 <context>
     <name>PostDataExportDialog</name>
     <message>
         <source>Export Calculation Result</source>
-        <translation type="unfinished"></translation>
+        <translation>Eksportberegningsresultat</translation>
     </message>
     <message>
         <source>Format:</source>
-        <translation type="unfinished"></translation>
+        <translation>Format:</translation>
     </message>
     <message>
         <source>VTK files (ASCII)</source>
-        <translation type="unfinished"></translation>
+        <translation>VTK -filer (ASCII)</translation>
     </message>
     <message>
         <source>VTK files (Binary)</source>
-        <translation type="unfinished"></translation>
+        <translation>VTK -filer (binær)</translation>
     </message>
     <message>
         <source>CSV files</source>
-        <translation type="unfinished"></translation>
+        <translation>CSV -filer</translation>
     </message>
     <message>
         <source>Topography Files (*.tpo)</source>
-        <translation type="unfinished"></translation>
+        <translation>Topografifiler (*.tpo)</translation>
     </message>
     <message>
         <source>ESRI Shapefiles</source>
-        <translation type="unfinished"></translation>
+        <translation>ESRI Shapefiles</translation>
     </message>
     <message>
         <source>Output folder:</source>
-        <translation type="unfinished"></translation>
+        <translation>Utdatamappe:</translation>
     </message>
     <message>
         <source>...</source>
-        <translation type="unfinished"></translation>
+        <translation>...</translation>
     </message>
     <message>
         <source>Prefix:</source>
-        <translation type="unfinished"></translation>
+        <translation>Prefiks:</translation>
     </message>
     <message>
         <source>Output file:</source>
-        <translation type="unfinished"></translation>
+        <translation>Output-fil:</translation>
     </message>
     <message>
         <source>Time</source>
-        <translation type="unfinished"></translation>
+        <translation>Tid</translation>
     </message>
     <message>
         <source>All timesteps</source>
-        <translation type="unfinished"></translation>
+        <translation>Alle skritt</translation>
     </message>
     <message>
         <source>Start:</source>
-        <translation type="unfinished"></translation>
+        <translation>Start:</translation>
     </message>
     <message>
         <source>End:</source>
-        <translation type="unfinished"></translation>
+        <translation>Slutt:</translation>
     </message>
     <message>
         <source>Skip rate :</source>
-        <translation type="unfinished"></translation>
+        <translation>Hopp over rate:</translation>
     </message>
     <message>
         <source>Region</source>
-        <translation type="unfinished"></translation>
+        <translation>Region</translation>
     </message>
     <message>
         <source>Full region</source>
-        <translation type="unfinished"></translation>
+        <translation>Full region</translation>
     </message>
     <message>
         <source>I Min</source>
-        <translation type="unfinished"></translation>
+        <translation>Jeg er med</translation>
     </message>
     <message>
         <source>I Max</source>
-        <translation type="unfinished"></translation>
+        <translation>I Maks</translation>
     </message>
     <message>
         <source>J Min</source>
-        <translation type="unfinished"></translation>
+        <translation>J Min</translation>
     </message>
     <message>
         <source>J Max</source>
-        <translation type="unfinished"></translation>
+        <translation>J Maks</translation>
     </message>
     <message>
         <source>K Min</source>
-        <translation type="unfinished"></translation>
+        <translation>K Min</translation>
     </message>
     <message>
         <source>K Max</source>
-        <translation type="unfinished"></translation>
+        <translation>K Maks</translation>
     </message>
     <message>
         <source>Show &amp;Detail</source>
-        <translation type="unfinished"></translation>
+        <translation>Vis detaljer (&amp;D)</translation>
     </message>
     <message>
         <source>Select Folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Velg mappe</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Advarsel</translation>
     </message>
     <message>
         <source>Folder %1 does not exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mappe %1 eksisterer ikke.</translation>
     </message>
     <message>
         <source>&amp;Hide Detail</source>
-        <translation type="unfinished"></translation>
+        <translation>Skjul detalj (&amp;H)</translation>
     </message>
 </context>
 <context>
     <name>PostIterationSteps</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Feil</translation>
     </message>
     <message>
         <source>Error occured while loading calculation result.</source>
-        <translation type="unfinished"></translation>
+        <translation>Det oppsto en feil under lasting av beregningsresultat.</translation>
     </message>
 </context>
 <context>
     <name>PostSolutionInfo</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Feil</translation>
     </message>
     <message>
         <source>Error occured while loading calculation result.</source>
-        <translation type="unfinished"></translation>
+        <translation>Det oppsto en feil under lasting av beregningsresultat.</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Advarsel</translation>
     </message>
     <message>
         <source>Loading calculation result for visualization failed. Please try again later, or wait until end of calculation.</source>
-        <translation type="unfinished"></translation>
+        <translation>Laster inn beregningsresultatet for visualisering mislyktes. Prøv igjen senere, eller vent til beregningen er ferdig.</translation>
     </message>
     <message>
         <source>No calculation result exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>Det finnes ikke noe beregningsresultat.</translation>
     </message>
     <message>
         <source>Calculation result does not contain grid data.</source>
-        <translation type="unfinished"></translation>
+        <translation>Beregningsresultatet inneholder ikke rutenettdata.</translation>
     </message>
     <message>
         <source>Export Calculation Result</source>
-        <translation type="unfinished"></translation>
+        <translation>Eksportberegningsresultat</translation>
     </message>
     <message>
         <source>Saving calculation result as VTK files...</source>
-        <translation type="unfinished"></translation>
+        <translation>Lagrer beregningsresultat som VTK -filer...</translation>
     </message>
     <message>
         <source>Saving calculation result as CSV files...</source>
-        <translation type="unfinished"></translation>
+        <translation>Lagrer beregningsresultatet som CSV -filer...</translation>
     </message>
     <message>
         <source>Saving calculation result as ESRI Shapefiles...</source>
-        <translation type="unfinished"></translation>
+        <translation>Lagrer beregningsresultat som ESRI Shapefiles...</translation>
     </message>
     <message>
         <source>Error occured while saving %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Det oppsto en feil under lagring %1</translation>
     </message>
 </context>
 <context>
     <name>PostStringResult</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Feil</translation>
     </message>
     <message>
         <source>Error occured: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Feil oppstod: %1</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Advarsel</translation>
     </message>
     <message>
         <source>I, J, K, index for label is reset because the grid size is changed.</source>
-        <translation type="unfinished"></translation>
+        <translation>I, J, K, indeks for etikett er tilbakestilt fordi rutenettstørrelsen er endret.</translation>
     </message>
 </context>
 <context>
     <name>PostStringResultArgumentEditDialog</name>
     <message>
         <source>Edit String Result Argument</source>
-        <translation type="unfinished"></translation>
+        <translation>Rediger strengresultatargument</translation>
     </message>
     <message>
         <source>Position:</source>
-        <translation type="unfinished"></translation>
+        <translation>Posisjon:</translation>
     </message>
     <message>
         <source>Result Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Resultatnavn:</translation>
     </message>
     <message>
         <source>Variable Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Variabelnavn:</translation>
     </message>
     <message>
         <source>I:</source>
-        <translation type="unfinished"></translation>
+        <translation>JEG:</translation>
     </message>
     <message>
         <source>J:</source>
-        <translation type="unfinished"></translation>
+        <translation>J:</translation>
     </message>
     <message>
         <source>K:</source>
-        <translation type="unfinished"></translation>
+        <translation>K:</translation>
     </message>
     <message>
         <source>Index:</source>
-        <translation type="unfinished"></translation>
+        <translation>Indeks:</translation>
     </message>
     <message>
         <source>Value for testing</source>
-        <translation type="unfinished"></translation>
+        <translation>Verdi for testing</translation>
     </message>
     <message>
         <source>Global</source>
-        <translation type="unfinished"></translation>
+        <translation>Global</translation>
     </message>
     <message>
         <source>Node</source>
-        <translation type="unfinished"></translation>
+        <translation>Node</translation>
     </message>
     <message>
         <source>Cell</source>
-        <translation type="unfinished"></translation>
+        <translation>Celle</translation>
     </message>
     <message>
         <source>EdgeI</source>
-        <translation type="unfinished"></translation>
+        <translation>EdgeI</translation>
     </message>
     <message>
         <source>EdgeJ</source>
-        <translation type="unfinished"></translation>
+        <translation>EdgeJ</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Advarsel</translation>
     </message>
     <message>
         <source>Variable name is empty.</source>
-        <translation type="unfinished"></translation>
+        <translation>Variabelnavnet er tomt.</translation>
     </message>
 </context>
 <context>
     <name>PostStringResultEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Skjema</translation>
     </message>
     <message>
         <source>Calculation results for input</source>
-        <translation type="unfinished"></translation>
+        <translation>Beregningsresultater for input</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation type="unfinished"></translation>
+        <translation>Type</translation>
     </message>
     <message>
         <source>Result name</source>
-        <translation type="unfinished"></translation>
+        <translation>Resultatnavn</translation>
     </message>
     <message>
         <source>Variable name</source>
-        <translation type="unfinished"></translation>
+        <translation>Variabelnavn</translation>
     </message>
     <message>
         <source>Index</source>
-        <translation type="unfinished"></translation>
+        <translation>Indeks</translation>
     </message>
     <message>
         <source>Value for Testing</source>
-        <translation type="unfinished"></translation>
+        <translation>Verdi for testing</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation type="unfinished"></translation>
+        <translation>Legge til (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation type="unfinished"></translation>
+        <translation>Redigere (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete...</source>
-        <translation type="unfinished"></translation>
+        <translation>Slett (&amp;D)...</translation>
     </message>
     <message>
         <source>Definition of output</source>
-        <translation type="unfinished"></translation>
+        <translation>Definisjon av output</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Du kan definere variabelen med JavaScript -språk. Se &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -dekorasjon: understreket; farge:#0000ff; "&gt; her &lt;/span&gt; &lt;/a&gt; for detaljer. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
-        <translation type="unfinished"></translation>
+        <translation>Test</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Advarsel</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation type="unfinished"></translation>
+        <translation>Er du sikker på at du vil slette %1 ?</translation>
     </message>
     <message>
         <source>Global</source>
-        <translation type="unfinished"></translation>
+        <translation>Global</translation>
     </message>
     <message>
         <source>Node</source>
-        <translation type="unfinished"></translation>
+        <translation>Node</translation>
     </message>
     <message>
         <source>Cell</source>
-        <translation type="unfinished"></translation>
+        <translation>Celle</translation>
     </message>
     <message>
         <source>EdgeI</source>
-        <translation type="unfinished"></translation>
+        <translation>EdgeI</translation>
     </message>
     <message>
         <source>EdgeJ</source>
-        <translation type="unfinished"></translation>
+        <translation>EdgeJ</translation>
     </message>
     <message>
         <source>EdgeK</source>
-        <translation type="unfinished"></translation>
+        <translation>EdgeK</translation>
     </message>
 </context>
 <context>
     <name>PostTimeSteps</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Feil</translation>
     </message>
     <message>
         <source>Error occured while loading calculation result.</source>
-        <translation type="unfinished"></translation>
+        <translation>Det oppsto en feil under lasting av beregningsresultat.</translation>
     </message>
 </context>
 <context>
     <name>PostZoneSelectingDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Dialog</translation>
     </message>
     <message>
         <source>Grid Type:</source>
-        <translation type="unfinished"></translation>
+        <translation>Rutenetttype:</translation>
     </message>
     <message>
         <source>&amp;Region:</source>
-        <translation type="unfinished"></translation>
+        <translation>Region: (&amp;R)</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorDataItem</name>
     <message>
         <source>Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Nett</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCreatingConditionDataItemInterface</name>
     <message>
         <source>Grid Creating Condition</source>
-        <translation type="unfinished"></translation>
+        <translation>Nettopprette betingelse</translation>
     </message>
 </context>
 <context>
     <name>ProjectData</name>
     <message>
         <source>Loading project file...</source>
-        <translation type="unfinished"></translation>
+        <translation>Laster inn prosjektfil...</translation>
     </message>
     <message>
         <source>Saving project file...</source>
-        <translation type="unfinished"></translation>
+        <translation>Lagrer prosjektfil...</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Feil</translation>
     </message>
     <message>
         <source>Could not overwrite %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kunne ikke overskrive %1.</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Advarsel</translation>
     </message>
     <message>
         <source>Saving project...</source>
-        <translation type="unfinished"></translation>
+        <translation>Lagrer prosjekt...</translation>
     </message>
     <message>
         <source>Opening project...</source>
-        <translation type="unfinished"></translation>
+        <translation>Åpner prosjekt...</translation>
     </message>
     <message>
         <source>Elevation grid attribute is not defined for grid type %1. Grid I/O functions, grid creating functions may not work correctly for these grid types.</source>
-        <translation type="unfinished"></translation>
+        <translation>Høydenettattributtet er ikke definert for rutenettet %1. I/O -funksjoner i rutenettet, det kan hende at funksjoner for nettopprettelse ikke fungerer som de skal for disse rutetypene.</translation>
     </message>
 </context>
 <context>
     <name>ProjectMainFile</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Feil</translation>
     </message>
     <message>
         <source>Solution %1 already exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>Løsning %1 eksisterer allerede.</translation>
     </message>
     <message>
         <source>CGNS file whose name contains characters other than alphabets and numbers can not be imported.</source>
-        <translation type="unfinished"></translation>
+        <translation>CGNS -fil hvis navn inneholder andre tegn enn alfabeter og tall, kan ikke importeres.</translation>
     </message>
     <message>
         <source>Export CGNS file</source>
-        <translation type="unfinished"></translation>
+        <translation>Eksporter CGNS -fil</translation>
     </message>
     <message>
         <source>CGNS file (*.cgns)</source>
-        <translation type="unfinished"></translation>
+        <translation>CGNS -fil (*.cgns)</translation>
     </message>
     <message>
         <source>Exporting CGNS file failed. Specified file is locked by other process.</source>
-        <translation type="unfinished"></translation>
+        <translation>Eksport av CGNS -fil mislyktes. Spesifisert fil er låst av en annen prosess.</translation>
     </message>
     <message>
         <source>Error occured while opening CGNS file in project file : %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Det oppsto en feil under åpning av CGNS -filen i prosjektfilen: %1</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Advarsel</translation>
     </message>
     <message>
         <source>%1 Saving project file failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 Lagring av prosjektfil mislyktes.</translation>
     </message>
     <message>
         <source>All images(*.jpg *.jpeg *.png *.tif);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif)</source>
-        <translation type="unfinished"></translation>
+        <translation>Alle bilder (*.jpg *.jpeg *.png *.tif);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif)</translation>
     </message>
     <message>
         <source>Open Image file</source>
-        <translation type="unfinished"></translation>
+        <translation>Åpne bildefil</translation>
     </message>
     <message>
         <source>A background image with the same name already exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>Et bakgrunnsbilde med samme navn eksisterer allerede.</translation>
     </message>
     <message>
         <source>The background image was not added. Please try again.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bakgrunnsbildet ble ikke lagt til. Vær så snill, prøv på nytt.</translation>
     </message>
     <message>
         <source>Invalid image file is specified.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ugyldig bildefil er angitt.</translation>
     </message>
     <message>
         <source>This project file cannot be read, because it was created by too old iRIC (version %1).</source>
-        <translation type="unfinished"></translation>
+        <translation>Denne prosjektfilen kan ikke leses, fordi den ble opprettet av for gammel iRIC (versjon %1 ).</translation>
     </message>
     <message>
         <source>This project file cannot be read, because it was created by newer iRIC (version %1).</source>
-        <translation type="unfinished"></translation>
+        <translation>Denne prosjektfilen kan ikke leses, fordi den ble opprettet av nyere iRIC (versjon %1 ).</translation>
     </message>
     <message>
         <source>Text Files (*.csv *.txt);;All Files (*.*)</source>
-        <translation type="unfinished"></translation>
+        <translation>Tekstfiler (*.csv *.txt);;All Files (*.*)</translation>
     </message>
     <message>
         <source>Open Measured Data File</source>
-        <translation type="unfinished"></translation>
+        <translation>Åpne Measured Data File</translation>
     </message>
     <message>
         <source>Error occured while loading %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Det oppsto en feil under lasting %1.</translation>
     </message>
     <message>
         <source>This file is for solver %1 %2. It is not compatible with the solver you are using, so maybe importing this file will fail. Do you really want to import this file?</source>
-        <translation type="unfinished"></translation>
+        <translation>Denne filen er for solver %1 %2. Det er ikke kompatibelt med løseren du bruker, så kanskje import av denne filen vil mislykkes. Vil du virkelig importere denne filen?</translation>
     </message>
     <message>
         <source>There is no visualization/graph windows.</source>
-        <translation type="unfinished"></translation>
+        <translation>Det er ingen visualiserings-/grafvinduer.</translation>
     </message>
     <message>
         <source>File %1 could not be opened.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fil %1 kunne ikke åpnes.</translation>
     </message>
     <message>
         <source>Coordinate system not selected.</source>
-        <translation type="unfinished"></translation>
+        <translation>Koordinatsystem ikke valgt.</translation>
     </message>
 </context>
 <context>
     <name>ProjectMainFile::Impl</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Advarsel</translation>
     </message>
     <message>
         <source> : no such file.</source>
-        <translation type="unfinished"></translation>
+        <translation>: ingen tilsvarende fil.</translation>
     </message>
 </context>
 <context>
     <name>ProjectTimeSettingDialog</name>
     <message>
         <source>Date for t = 0 setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Dato for t = 0 innstilling</translation>
     </message>
     <message>
         <source>Time for t = 0:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tid for t = 0:</translation>
     </message>
     <message>
         <source>Not specified</source>
-        <translation type="unfinished"></translation>
+        <translation>Ikke spesifisert</translation>
     </message>
     <message>
         <source>Time display format</source>
-        <translation type="unfinished"></translation>
+        <translation>Visningsformat for tid</translation>
     </message>
 </context>
 <context>
     <name>ProjectWorkspace</name>
     <message>
-        <source>Workspace &quot;%1&quot; has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
-        <translation type="unfinished"></translation>
+        <source>Workspace "%1" has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
+        <translation>Arbeidsområde "%1"har %2 prosjektmapper som ikke ser ut til å bli brukt lenger. Vil du fjerne dem?</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informasjon</translation>
     </message>
 </context>
 <context>
     <name>PropertyBrowser</name>
     <message>
         <source>Attribute Browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Attributtleser</translation>
     </message>
 </context>
 <context>
     <name>PropertyBrowserView</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Skjema</translation>
     </message>
     <message>
         <source>Indices</source>
-        <translation type="unfinished"></translation>
+        <translation>Indekser</translation>
     </message>
     <message>
         <source>1</source>
-        <translation type="unfinished"></translation>
+        <translation>1</translation>
     </message>
     <message>
         <source>J:</source>
-        <translation type="unfinished"></translation>
+        <translation>J:</translation>
     </message>
     <message>
         <source>I:</source>
-        <translation type="unfinished"></translation>
+        <translation>JEG:</translation>
     </message>
     <message>
         <source>Index:</source>
-        <translation type="unfinished"></translation>
+        <translation>Indeks:</translation>
     </message>
     <message>
         <source>Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Koordinater</translation>
     </message>
     <message>
         <source>X:</source>
-        <translation type="unfinished"></translation>
+        <translation>X:</translation>
     </message>
     <message>
         <source>Y:</source>
-        <translation type="unfinished"></translation>
+        <translation>Y:</translation>
     </message>
     <message>
         <source>Attributes:</source>
-        <translation type="unfinished"></translation>
+        <translation>Egenskaper:</translation>
     </message>
     <message>
         <source>Attribute Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Attributtnavn</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation type="unfinished"></translation>
+        <translation>Verdi</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
         <source>Background Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Bakgrunnsfarge</translation>
     </message>
     <message>
         <source>Draw</source>
-        <translation type="unfinished"></translation>
+        <translation>Tegne</translation>
     </message>
     <message>
         <source>Move down item</source>
-        <translation type="unfinished"></translation>
+        <translation>Flytt ned elementet</translation>
     </message>
     <message>
         <source>Move up item</source>
-        <translation type="unfinished"></translation>
+        <translation>Flytt elementet opp</translation>
     </message>
     <message>
         <source>Arbitrary Move</source>
-        <translation type="unfinished"></translation>
+        <translation>Vilkårlig trekk</translation>
     </message>
     <message>
         <source>Reallocate Background Image</source>
-        <translation type="unfinished"></translation>
+        <translation>Omfordel bakgrunnsbilde</translation>
     </message>
     <message>
         <source>Set offset</source>
-        <translation type="unfinished"></translation>
+        <translation>Sett forskyvning</translation>
     </message>
     <message>
         <source>Default</source>
-        <translation type="unfinished"></translation>
+        <translation>Misligholde</translation>
     </message>
     <message>
         <source>(Undefined)</source>
-        <translation type="unfinished"></translation>
+        <translation>(Udefinert)</translation>
     </message>
 </context>
 <context>
     <name>ScalarsToColorsEditDialog</name>
     <message>
         <source>Color Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Fargeinnstilling</translation>
     </message>
 </context>
 <context>
     <name>SolverDefinition::Impl</name>
     <message>
         <source>%1 Grids</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 Rutenett</translation>
     </message>
 </context>
 <context>
     <name>Structured2DGrid</name>
     <message>
         <source>An edge line intersects with that of another cell in this grid.</source>
-        <translation type="unfinished"></translation>
+        <translation>En kantlinje skjærer med en annen celle i dette rutenettet.</translation>
     </message>
     <message>
         <source>Aspect ratio of grid cell exceed limit value %1 in more than one cell.</source>
-        <translation type="unfinished"></translation>
+        <translation>Aspektforholdet til rutenettcellen overstiger grenseverdien %1 i mer enn én celle.</translation>
     </message>
     <message>
         <source>Variation of grid cell edge lengths exceed limit values (I-direction: %1, J-direction: %2) in more than one cell.</source>
-        <translation type="unfinished"></translation>
+        <translation>Variasjon av rutenettlengder på rutenettet overstiger grenseverdiene (I-retning: %1, J-retning: %2 ) i mer enn én celle.</translation>
     </message>
     <message>
         <source>Angle of grid cell edge fall below limit value %1 in more than one cell.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kantvinkelen til rutenettcellen faller under grenseverdien %1 i mer enn én celle.</translation>
     </message>
     <message>
         <source>* Cells where edges intersect</source>
-        <translation type="unfinished"></translation>
+        <translation>* Celler der kantene krysser hverandre</translation>
     </message>
     <message>
         <source>Not exist</source>
-        <translation type="unfinished"></translation>
+        <translation>Eksisterer ikke</translation>
     </message>
     <message>
         <source>* Cells where aspect ratio of cell edges exceed %1</source>
-        <translation type="unfinished"></translation>
+        <translation>* Celler der størrelsesforholdet mellom cellekanter overstiger %1</translation>
     </message>
     <message>
         <source>I, J, Aspect ratio</source>
-        <translation type="unfinished"></translation>
+        <translation>I, J, størrelsesforhold</translation>
     </message>
     <message>
         <source>Edge length too small</source>
-        <translation type="unfinished"></translation>
+        <translation>Kantlengden er for liten</translation>
     </message>
     <message>
         <source>* Cells where angle of cell vertex is below %1</source>
-        <translation type="unfinished"></translation>
+        <translation>* Celler der cellepunktets vinkel er under %1</translation>
     </message>
     <message>
         <source>I, J, Angle</source>
-        <translation type="unfinished"></translation>
+        <translation>Jeg, J, vinkel</translation>
     </message>
     <message>
         <source>* Cells where variation of cell length along i-direction exceed %1</source>
-        <translation type="unfinished"></translation>
+        <translation>* Celler hvor variasjon av cellelengde langs i-retning overstiger %1</translation>
     </message>
     <message>
         <source>I, J, Variation</source>
-        <translation type="unfinished"></translation>
+        <translation>I, J, Variasjon</translation>
     </message>
     <message>
         <source>* Cells where variation of cell length along j-direction exceed %1</source>
-        <translation type="unfinished"></translation>
+        <translation>* Celler hvor variasjon av cellelengde langs j-retning overstiger %1</translation>
     </message>
 </context>
 <context>
     <name>TmsImageGroupDataItem</name>
     <message>
         <source>Background Images (Internet)</source>
-        <translation type="unfinished"></translation>
+        <translation>Bakgrunnsbilder (Internett)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Advarsel</translation>
     </message>
     <message>
         <source>To get background image from internet, please specify the coordiyate system of the project, from the following menu.
  File -&gt; Property</source>
-        <translation type="unfinished"></translation>
+        <translation>For å få bakgrunnsbilde fra internett, vennligst spesifiser koordinasjonssystemet til prosjektet, fra følgende meny. Fil -&gt; Eiendom</translation>
     </message>
     <message>
         <source>Background Image change</source>
-        <translation type="unfinished"></translation>
+        <translation>Endring av bakgrunnsbilde</translation>
     </message>
 </context>
 <context>
     <name>TmsImageSettingManager</name>
     <message>
         <source>Google Map (Road)</source>
-        <translation type="unfinished"></translation>
+        <translation>Google Map (Road)</translation>
     </message>
     <message>
         <source>Google Map (Satellite)</source>
-        <translation type="unfinished"></translation>
+        <translation>Google Map (satellitt)</translation>
     </message>
     <message>
         <source>Google Map (Hybrid)</source>
-        <translation type="unfinished"></translation>
+        <translation>Google Map (hybrid)</translation>
     </message>
     <message>
         <source>Google Map (Terrain)</source>
-        <translation type="unfinished"></translation>
+        <translation>Google Map (terreng)</translation>
     </message>
     <message>
         <source>Open Street Map</source>
-        <translation type="unfinished"></translation>
+        <translation>Åpne gatekart</translation>
     </message>
     <message>
         <source>GSI (Standard) (Japan only)</source>
-        <translation type="unfinished"></translation>
+        <translation>GSI (Standard) (bare Japan)</translation>
     </message>
     <message>
         <source>GSI (Pale) (Japan only)</source>
-        <translation type="unfinished"></translation>
+        <translation>GSI (blek) (bare Japan)</translation>
     </message>
     <message>
         <source>GSI (English) (Japan only)</source>
-        <translation type="unfinished"></translation>
+        <translation>GSI (engelsk) (bare Japan)</translation>
     </message>
     <message>
         <source>GSI (Relief) (Japan only)</source>
-        <translation type="unfinished"></translation>
+        <translation>GSI (Relief) (bare Japan)</translation>
     </message>
     <message>
         <source>GSI (Ortho images) (Japan only)</source>
-        <translation type="unfinished"></translation>
+        <translation>GSI (Ortho -bilder) (bare Japan)</translation>
     </message>
 </context>
 <context>
     <name>iRICMetaData</name>
     <message>
         <source>Build number of the version number is not specified.</source>
-        <translation type="unfinished"></translation>
+        <translation>Byggnummeret til versjonsnummeret er ikke spesifisert.</translation>
     </message>
 </context>
 </TS>

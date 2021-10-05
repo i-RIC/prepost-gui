@@ -1,170 +1,168 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="hi_IN">
 <context>
     <name>GeoDataPolygonGroup</name>
     <message>
         <source>&amp;Sort</source>
-        <translation type="unfinished"></translation>
+        <translation>तरह (&amp;S)</translation>
     </message>
     <message>
         <source>Polygon%1</source>
-        <translation type="unfinished"></translation>
+        <translation>बहुभुज %1</translation>
     </message>
     <message>
         <source>P&amp;olygons</source>
-        <translation type="unfinished"></translation>
+        <translation>बहुभुज (&amp;O)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolygonGroupCreator</name>
     <message>
         <source>polygon</source>
-        <translation type="unfinished"></translation>
+        <translation>बहुभुज</translation>
     </message>
     <message>
         <source>Polygon</source>
-        <translation type="unfinished"></translation>
+        <translation>बहुभुज</translation>
     </message>
     <message>
         <source>Polygons</source>
-        <translation type="unfinished"></translation>
+        <translation>बहुभुज</translation>
     </message>
     <message>
         <source>Polygons%1</source>
-        <translation type="unfinished"></translation>
+        <translation>बहुभुज %1</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolygonGroupCsvExporter</name>
     <message>
         <source>CSV file</source>
-        <translation type="unfinished"></translation>
+        <translation>सीएसवी फ़ाइल</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>त्रुटि</translation>
     </message>
     <message>
         <source>Error occured while exporting to %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>को निर्यात करते समय त्रुटि हुई %1.</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>चेतावनी</translation>
     </message>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>सीएसवी फ़ाइल (*.csv)</translation>
     </message>
     <message>
         <source>Some polygon in this data has holes, but holes are not exported to CSV file. If you want to export holes, please export to ESRI Shapefile.</source>
-        <translation type="unfinished"></translation>
+        <translation>इस डेटा में कुछ बहुभुज में छेद हैं, लेकिन छेद CSV फ़ाइल में निर्यात नहीं किए जाते हैं। यदि आप छेद निर्यात करना चाहते हैं, तो कृपया ESRI शेपफाइल को निर्यात करें।</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolygonGroupCsvImporter</name>
     <message>
         <source>CSV file (Polygons)</source>
-        <translation type="unfinished"></translation>
+        <translation>सीएसवी फ़ाइल (बहुभुज)</translation>
     </message>
     <message>
         <source>CSV file (Polygons) (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>सीएसवी फ़ाइल (बहुभुज) (*.csv)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>त्रुटि</translation>
     </message>
     <message>
         <source>Error occured while opening %1</source>
-        <translation type="unfinished"></translation>
+        <translation>खोलते समय त्रुटि हुई %1</translation>
     </message>
     <message>
         <source>Error occured while reading header line. Make sure the file is saved in UTF-8 encoding.</source>
-        <translation type="unfinished"></translation>
+        <translation>हेडर लाइन पढ़ते समय त्रुटि हुई। सुनिश्चित करें कि फ़ाइल UTF-8 एन्कोडिंग में सहेजी गई है।</translation>
     </message>
     <message>
         <source>Error occured while reading header line. Header should have 5 columns at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>हेडर लाइन पढ़ते समय त्रुटि हुई। हैडर में कम से कम 5 कॉलम होने चाहिए।</translation>
     </message>
     <message>
         <source>Error occured while reading header line. Header should have 6 columns at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>हेडर लाइन पढ़ते समय त्रुटि हुई। हैडर में कम से कम 6 कॉलम होने चाहिए।</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
-        <translation type="unfinished"></translation>
+        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
+        <translation>हेडर लाइन पढ़ते समय त्रुटि हुई। स्तंभ %1 होना चाहिए "%2", लेकिन "%3" दिया हुआ है।</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. There is no data.</source>
-        <translation type="unfinished"></translation>
+        <translation>लाइन पढ़ते समय त्रुटि हुई %1. कोई डेटा नहीं है।</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Polygon should have three points at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>लाइन पढ़ते समय त्रुटि हुई %1. बहुभुज में कम से कम तीन बिंदु होने चाहिए।</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Make sure the file is saved in UTF-8 encoding.</source>
-        <translation type="unfinished"></translation>
+        <translation>लाइन पढ़ते समय त्रुटि हुई %1. सुनिश्चित करें कि फ़ाइल UTF-8 एन्कोडिंग में सहेजी गई है।</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Data should have 5 columns at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>लाइन पढ़ते समय त्रुटि हुई %1. डेटा में कम से कम 5 कॉलम होने चाहिए।</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Data should have 6 columns at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>लाइन पढ़ते समय त्रुटि हुई %1. डेटा में कम से कम 6 कॉलम होने चाहिए।</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;pid&quot; value in line %1. &quot;pid&quot; should be integer value but &quot;%2&quot; is specified.</source>
-        <translation type="unfinished"></translation>
+        <source>Error occured while reading "pid" value in line %1. "pid" should be integer value but "%2" is specified.</source>
+        <translation>लाइन में "पिड" मान पढ़ते समय त्रुटि हुई %1. "पिड" पूर्णांक मान होना चाहिए लेकिन "%2" निर्दिष्ट किया जाता है।</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;vid&quot; value in line %1. &quot;vid&quot; should be integer value but &quot;%2&quot; is specified.</source>
-        <translation type="unfinished"></translation>
+        <source>Error occured while reading "vid" value in line %1. "vid" should be integer value but "%2" is specified.</source>
+        <translation>पंक्ति में "vid" मान पढ़ते समय त्रुटि हुई %1. "vid" पूर्णांक मान होना चाहिए लेकिन "%2" निर्दिष्ट किया जाता है।</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation type="unfinished"></translation>
+        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
+        <translation>पंक्ति में "x" मान पढ़ते समय त्रुटि हुई %1. "x" वास्तविक मान होना चाहिए लेकिन "%2" निर्दिष्ट किया जाता है।</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation type="unfinished"></translation>
+        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
+        <translation>पंक्ति में "y" मान पढ़ते समय त्रुटि हुई %1. "y" वास्तविक मूल्य होना चाहिए लेकिन "%2" निर्दिष्ट किया जाता है।</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation type="unfinished"></translation>
+        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
+        <translation>पंक्ति में "मान" मान पढ़ते समय त्रुटि हुई %1. "मूल्य" वास्तविक मूल्य होना चाहिए लेकिन "%2" निर्दिष्ट किया जाता है।</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. &quot;name&quot; should be the same for lines where &quot;pid&quot; values are the same.</source>
-        <translation type="unfinished"></translation>
+        <source>Error occured while reading line %1. "name" should be the same for lines where "pid" values are the same.</source>
+        <translation>लाइन पढ़ते समय त्रुटि हुई %1. "नाम" उन पंक्तियों के लिए समान होना चाहिए जहां "पिड" मान समान हों।</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. &quot;value&quot; should be the same for lines where &quot;pid&quot; values are the same.</source>
-        <translation type="unfinished"></translation>
+        <source>Error occured while reading line %1. "value" should be the same for lines where "pid" values are the same.</source>
+        <translation>लाइन पढ़ते समय त्रुटि हुई %1. "मान" उन पंक्तियों के लिए समान होना चाहिए जहां "पिड" मान समान हों।</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolygonGroupShpExporter</name>
     <message>
         <source>ESRI Shapefile</source>
-        <translation type="unfinished"></translation>
+        <translation>ईएसआरआई शेपफाइल</translation>
     </message>
     <message>
         <source>ESRI Shapefile (*.shp)</source>
-        <translation type="unfinished"></translation>
+        <translation>ईएसआरआई शेपफाइल (*.shp)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolygonGroupShpImporter</name>
     <message>
         <source>ESRI Shapefile (Polygons)</source>
-        <translation type="unfinished"></translation>
+        <translation>ESRI शेपफाइल (बहुभुज)</translation>
     </message>
     <message>
         <source>ESRI Shapefile (Polygons) (*.shp)</source>
-        <translation type="unfinished"></translation>
+        <translation>ESRI शेपफाइल (बहुभुज) (*.shp)</translation>
     </message>
     <message>
         <source>%1 th polygon can not be imported. Polygon like below can not be imported:
@@ -173,15 +171,15 @@
 - Lines of polygon intersect each other
 - Hole polygon is outside of region polygon
 - Polygon passes the same point several times</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 वें बहुभुज आयात नहीं किया जा सकता है। नीचे की तरह बहुभुज आयात नहीं किया जा सकता है: - इसमें तीन से कम बिंदु हैं - यह बंद नहीं है - बहुभुज की रेखाएं एक दूसरे को काटती हैं - छेद बहुभुज क्षेत्र बहुभुज के बाहर है - बहुभुज एक ही बिंदु से कई बार गुजरता है</translation>
     </message>
     <message>
         <source>Polygon%1</source>
-        <translation type="unfinished"></translation>
+        <translation>बहुभुज %1</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>चेतावनी</translation>
     </message>
 </context>
 </TS>
