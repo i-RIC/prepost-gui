@@ -235,14 +235,15 @@ on_success:
         git config --global core.safecrlf false
         if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
 
-        git add -A *.7z *.sha1 *.xml *.dll *.exe *.qm
+        # git add -A *.7z *.sha1 *.xml *.dll *.exe *.qm
+        git add -A
         if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
 
         # Qt dictionaries are now included in gui.runtime package.
         git reset **/qt_*.qm
         if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
 
-        git commit -m "built by iric.appveyor"
+        git commit -m "built by iric.appveyor $env:APPVEYOR_BUILD_VERSION"
         if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
 
         if ($branch) {
