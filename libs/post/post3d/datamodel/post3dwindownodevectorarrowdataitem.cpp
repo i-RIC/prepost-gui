@@ -28,6 +28,9 @@ Post3dWindowNodeVectorArrowDataItem::Post3dWindowNodeVectorArrowDataItem(Post3dW
 {
 	setupStandardItem(Checked, NotReorderable, Deletable);
 
+	auto transform = vtkSmartPointer<vtkTransform>::New();
+	m_transformFilter->SetTransform(transform);
+
 	renderer()->AddActor(m_arrowsActor.actor());
 
 	updateActorSettings();
@@ -161,7 +164,8 @@ void Post3dWindowNodeVectorArrowDataItem::updatePolyData()
 	const auto& srSetting = m_samplingRateSetting;
 	m_extractGrid->SetSampleRate(srSetting.iSamplingRate, srSetting.jSamplingRate, srSetting.kSamplingRate);
 
-	m_extractGrid->SetInputData(ps);
+	m_transformFilter->SetInputData(ps);
+	m_extractGrid->SetInputConnection(m_transformFilter->GetOutputPort());
 	m_extractGrid->Update();
 
 	double height = dataModel()->graphicsView()->stdDistance(m_arrowSetting.arrowSize);
