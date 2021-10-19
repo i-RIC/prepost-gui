@@ -47,9 +47,7 @@ GeoDataPointmapWebImporter::~GeoDataPointmapWebImporter()
 
 bool GeoDataPointmapWebImporter::isCompatibleWith(SolverDefinitionGridAttribute* condition) const
 {
-	if (condition->name() == "Elevation") {return true;}
-
-	return false;
+	return true;
 }
 
 bool GeoDataPointmapWebImporter::importData(GeoData* data, int /*index*/, QWidget* w)

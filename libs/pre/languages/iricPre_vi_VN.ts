@@ -466,10 +466,6 @@ Do you really want to import grid from this file?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>P&amp;ointset Data</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>&amp;Color Setting...</source>
         <translation type="unfinished"></translation>
     </message>
@@ -639,10 +635,6 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>PreProcessorGeoDataGroupDataItem</name>
     <message>
-        <source>&amp;Import from web...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Delete &amp;All...</source>
         <translation type="unfinished"></translation>
     </message>
@@ -769,6 +761,10 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>&amp;Import</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Import Elevation from web...</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

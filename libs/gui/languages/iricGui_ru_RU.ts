@@ -288,6 +288,10 @@
         <source>Skip rate :</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>--</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ContinuousSnapshotWindowSelectionPage</name>
@@ -1354,14 +1358,6 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>iRIC %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>%1 - iRIC %2 [%3]</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Export contour figure to ESRI Shapefiles</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1483,10 +1479,6 @@ Option -&gt; Preferences</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&amp;%1 %2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>http://iric-gui-user-manual.readthedocs.io/en/latest/</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1592,6 +1584,18 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Dimension</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All files in %1 is deleted.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 - %2 %3 [%4]</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1754,10 +1758,6 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>G&amp;eographic Data</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Geographic Data (from web)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2067,6 +2067,10 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Ctrl+C</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Geographic Data (Elevation from web)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
