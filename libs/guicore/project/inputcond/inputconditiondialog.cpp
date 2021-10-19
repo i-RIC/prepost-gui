@@ -48,7 +48,6 @@ InputConditionDialog::InputConditionDialog(SolverDefinition* solverDef, const QL
 	setup(*solverDef, locale);
 
 	ui->splitter->setStretchFactor(0, 0.3);
-	ui->buttonBox->button(QDialogButtonBox::Save)->setText(InputConditionDialog::tr("&Save and Close"));
 }
 
 InputConditionDialog::~InputConditionDialog()
@@ -260,10 +259,10 @@ void InputConditionDialog::setReadOnly(bool readonly)
 	m_readonly = readonly;
 	m_widgetSet->toggleReadOnly(readonly);
 	if (readonly) {
-		ui->buttonBox->button(QDialogButtonBox::Save)->setDisabled(true);
+		ui->buttonBox->button(QDialogButtonBox::Ok)->setDisabled(true);
 		ui->buttonBox->button(QDialogButtonBox::Reset)->setDisabled(true);
 	} else {
-		ui->buttonBox->button(QDialogButtonBox::Save)->setEnabled(true);
+		ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(true);
 		ui->buttonBox->button(QDialogButtonBox::Reset)->setEnabled(true);
 	}
 }
