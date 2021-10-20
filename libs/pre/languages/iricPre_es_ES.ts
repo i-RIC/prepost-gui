@@ -471,7 +471,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>P&amp;ointset Data</source>
-        <translation>Datos de Conjunto de &amp;Puntos</translation>
+        <translation type="vanished">Datos de Conjunto de &amp;Puntos</translation>
     </message>
     <message>
         <source>&amp;Color Setting...</source>
@@ -647,10 +647,6 @@ Do you really want to import grid from this file?</source>
         <translation type="vanished">&amp;Importar...</translation>
     </message>
     <message>
-        <source>&amp;Import from web...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Delete &amp;All...</source>
         <translation>Borrar &amp;Todo...</translation>
     </message>
@@ -777,6 +773,10 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>&amp;Import</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Import Elevation from web...</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

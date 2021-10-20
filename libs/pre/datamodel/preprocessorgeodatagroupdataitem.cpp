@@ -63,7 +63,7 @@
 
 PreProcessorGeoDataGroupDataItem::PreProcessorGeoDataGroupDataItem(SolverDefinitionGridAttribute* cond, PreProcessorDataItem* parent) :
 	PreProcessorGeoDataGroupDataItemInterface {cond, parent},
-	m_webImportAction {new QAction(QIcon(":/libs/guibase/images/iconImport.png"), PreProcessorGeoDataGroupDataItem::tr("&Import from web..."), this)},
+	m_webImportAction {new QAction(QIcon(":/libs/guibase/images/iconImport.png"), PreProcessorGeoDataGroupDataItem::tr("&Import Elevation from web..."), this)},
 	m_editColorMapAction {new QAction(QIcon(":/libs/guibase/images/iconColor.png"), PreProcessorGeoDataGroupDataItem::tr("&Color Setting..."), this)},
 	m_setupScalarBarAction {new QAction(PreProcessorGeoDataGroupDataItem::tr("Set Up Scalarbar..."), this)},
 	m_exportAllPolygonsAction {new QAction(QIcon(":/libs/guibase/images/iconExport.png"), PreProcessorGeoDataGroupDataItem::tr("Export All Polygons..."), this)},

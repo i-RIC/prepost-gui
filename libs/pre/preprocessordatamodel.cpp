@@ -1150,7 +1150,7 @@ bool PreProcessorDataModel::setupGeoDataImportFromWebMenuForGridType(QMenu* menu
 		bool okExists = false;
 		for (int i = 0; i < groups.count(); ++i) {
 			PreProcessorGeoDataGroupDataItemInterface* gi = groups.at(i);
-			okExists = okExists || setupGeoDataImportFromWebMenuForGroup(menu, gi);
+			okExists = setupGeoDataImportFromWebMenuForGroup(menu, gi) || okExists;
 		}
 		return okExists;
 	}

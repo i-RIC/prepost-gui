@@ -477,7 +477,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>P&amp;ointset Data</source>
-        <translation>&amp;点集数据</translation>
+        <translation type="vanished">&amp;点集数据</translation>
     </message>
     <message>
         <source>&amp;Polygon</source>
@@ -662,7 +662,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>&amp;Import from web...</source>
-        <translation>&amp;从网络导入</translation>
+        <translation type="vanished">&amp;从网络导入</translation>
     </message>
     <message>
         <source>Delete &amp;All...</source>
@@ -792,6 +792,10 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>&amp;Import</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Import Elevation from web...</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
