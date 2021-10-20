@@ -1789,7 +1789,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Geographic Data (from web)</source>
-        <translation>Coğrafi Veriler (web&apos;den)</translation>
+        <translation type="vanished">Coğrafi Veriler (web&apos;den)</translation>
     </message>
     <message>
         <source>&amp;Hydraulic Data</source>
@@ -2106,6 +2106,10 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Reload CGNS file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Geographic Data (Elevation from web)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

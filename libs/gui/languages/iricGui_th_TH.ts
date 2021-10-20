@@ -1789,7 +1789,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Geographic Data (from web)</source>
-        <translation>ข้อมูลทางภูมิศาสตร์ (จากเว็บ)</translation>
+        <translation type="vanished">ข้อมูลทางภูมิศาสตร์ (จากเว็บ)</translation>
     </message>
     <message>
         <source>&amp;Hydraulic Data</source>
@@ -2106,6 +2106,10 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Reload CGNS file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Geographic Data (Elevation from web)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

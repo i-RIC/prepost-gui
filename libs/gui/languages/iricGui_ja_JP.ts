@@ -16237,7 +16237,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>All files in %1 is deleted.</source>
-        <translation>%1 にあったすべてのファイルを削除しました。</translation>
+        <translation>%1 にあるすべてのファイルが削除されます。</translation>
     </message>
     <message>
         <source>%1 %2</source>
@@ -16715,7 +16715,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Geographic Data (from web)</source>
-        <translation>地理情報 (Webから)</translation>
+        <translation type="vanished">地理情報 (Webから)</translation>
     </message>
     <message>
         <source>&amp;Windows list Toolbar</source>
@@ -17045,6 +17045,10 @@ Option -&gt; Preferences</source>
     <message>
         <source>Reload CGNS file</source>
         <translation>CGNSファイルを再読込する</translation>
+    </message>
+    <message>
+        <source>Geographic Data (Elevation from web)</source>
+        <translation>地理情報 (標高をWebから)</translation>
     </message>
 </context>
 </TS>

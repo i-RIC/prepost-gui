@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="zh_CN">
 <context>
     <name>BoundaryConditionDialog</name>
@@ -87,6 +89,18 @@ Do you really want to import grid from this file?</source>
         <translation>此CGNS文件没有求解器信息。 我们无法检查此CGNS文件是否与求解器兼容。 如果不兼容，则可能仅导入网格的一部分。
 您是否真的要从此文件导入网格？</translation>
     </message>
+    <message>
+        <source>This file does not contain grid that can be imported.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select grid</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select grid to import.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GridAttributeGeneratorLauncher</name>
@@ -102,7 +116,7 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>GridBirdEyeWindow</name>
     <message>
-        <source>Grid Bird's-Eye View Window</source>
+        <source>Grid Bird&apos;s-Eye View Window</source>
         <translation>网格鸟瞰窗口</translation>
     </message>
 </context>
@@ -399,11 +413,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Select case</source>
-        <translation>选择案例</translation>
+        <translation type="vanished">选择案例</translation>
     </message>
     <message>
         <source>Please select from which case in %1 to import calculation conditions.</source>
-        <translation>请从%1的哪种情况中选择导入计算条件。</translation>
+        <translation type="vanished">请从%1的哪种情况中选择导入计算条件。</translation>
     </message>
     <message>
         <source>Success</source>
@@ -475,7 +489,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>P&amp;ointset Data</source>
-        <translation>&amp;点集数据</translation>
+        <translation type="vanished">&amp;点集数据</translation>
     </message>
     <message>
         <source>&amp;Polygon</source>
@@ -586,8 +600,8 @@ Do you really want to import grid from this file?</source>
         <translation>%1上次编辑后未制图。 您是否要立即执行制图？</translation>
     </message>
     <message>
-        <source>Boundary Condition Setting "%1" is not mapped after it is edited last time. Do you want to execute mapping now?</source>
-        <translation>上次编辑边界条件设置"%1"后未制图。 您是否要立即执行制图？</translation>
+        <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
+        <translation>上次编辑边界条件设置&quot;%1&quot;后未制图。 您是否要立即执行制图？</translation>
     </message>
     <message>
         <source>Information</source>
@@ -660,7 +674,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>&amp;Import from web...</source>
-        <translation>&amp;从网络导入</translation>
+        <translation type="vanished">&amp;从网络导入</translation>
     </message>
     <message>
         <source>Delete &amp;All...</source>
@@ -791,6 +805,10 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>&amp;Import</source>
         <translation>进口 (&amp;I)</translation>
+    </message>
+    <message>
+        <source>&amp;Import Elevation from web...</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1002,7 +1020,7 @@ Do you really want to import grid from this file?</source>
         <translation>&amp;执行...</translation>
     </message>
     <message>
-        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".
+        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.
 </source>
         <translation>以下属性未映射，因为网格生成器为它们输出值。如果要强制为其映射地理数据，请通过菜单“网格”-&gt;“属性映射”-&gt;“执行”手动映射。</translation>
     </message>
@@ -1011,12 +1029,12 @@ Do you really want to import grid from this file?</source>
         <translation>警告</translation>
     </message>
     <message>
-        <source>The grid attribute "%1" is edited by hand. When you execute mapping, all modifications you made will be discarted. Do you really want to execute mapping?</source>
-        <translation type="vanished">手工编辑网格属性"%1"。 当您执行映射时，将撤消您所做的所有修改。 您真的要执行映射吗</translation>
+        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarted. Do you really want to execute mapping?</source>
+        <translation type="vanished">手工编辑网格属性&quot;%1&quot;。 当您执行映射时，将撤消您所做的所有修改。 您真的要执行映射吗</translation>
     </message>
     <message>
-        <source>The boundary condition "%1" is edited by hand. When you execute mapping, all modifications you made will be discarted. Do you really want to execute mapping?</source>
-        <translation type="vanished">边界条件"%1"是手工编辑的。 当您执行映射时，将撤消您所做的所有修改。 您真的要执行映射吗</translation>
+        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarted. Do you really want to execute mapping?</source>
+        <translation type="vanished">边界条件&quot;%1&quot;是手工编辑的。 当您执行映射时，将撤消您所做的所有修改。 您真的要执行映射吗</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1031,11 +1049,11 @@ Do you really want to import grid from this file?</source>
         <translation>地理数据映射完成。</translation>
     </message>
     <message>
-        <source>The grid attribute "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
         <translation>网格属性“ %1 ”是手工编辑的。执行映射时，所做的所有修改都将被丢弃。您真的要执行映射吗？</translation>
     </message>
     <message>
-        <source>The boundary condition "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
         <translation>边界条件“ %1 ”是手工编辑的。执行映射时，所做的所有修改都将被丢弃。您真的要执行映射吗？</translation>
     </message>
 </context>
@@ -1054,20 +1072,20 @@ Do you really want to import grid from this file?</source>
         <translation>自动</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;meta name ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p style=" margin -top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;创建网格时，询问是否每次都执行属性映射。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;创建网格时，询问是否每次都执行属性映射。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Manual</source>
         <translation>手动</translation>
     </message>
     <message>
-        <source>Attribute mapping is executed only when you manually select "Execute" menu.</source>
-        <translation>仅当您手动选择执行菜单时才执行属性"映射"</translation>
+        <source>Attribute mapping is executed only when you manually select &quot;Execute&quot; menu.</source>
+        <translation>仅当您手动选择执行菜单时才执行属性&quot;映射&quot;</translation>
     </message>
     <message>
         <source>Geographic data mapping</source>
@@ -1488,7 +1506,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>&amp;设置标量栏</translation>
     </message>
     <message>
-        <source>Open &amp;Bird's-Eye View Window</source>
+        <source>Open &amp;Bird&apos;s-Eye View Window</source>
         <translation>&amp;打开鸟瞰窗口</translation>
     </message>
     <message>

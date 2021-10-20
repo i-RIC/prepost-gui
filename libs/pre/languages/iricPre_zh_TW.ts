@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="zh_TW">
 <context>
     <name>BoundaryConditionDialog</name>
@@ -85,6 +87,18 @@ Do you really want to import grid from this file?</source>
 Do you really want to import grid from this file?</source>
         <translation>此 CGNS 文件沒有求解器信息。我們無法檢查此 CGNS 文件是否與求解器兼容。如果不兼容，可能只會導入網格的一部分。您真的要從此文件導入網格嗎？</translation>
     </message>
+    <message>
+        <source>This file does not contain grid that can be imported.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select grid</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select grid to import.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GridAttributeGeneratorLauncher</name>
@@ -100,7 +114,7 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>GridBirdEyeWindow</name>
     <message>
-        <source>Grid Bird's-Eye View Window</source>
+        <source>Grid Bird&apos;s-Eye View Window</source>
         <translation>網格鳥瞰窗口</translation>
     </message>
 </context>
@@ -409,11 +423,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Select case</source>
-        <translation>選擇案例</translation>
+        <translation type="vanished">選擇案例</translation>
     </message>
     <message>
         <source>Please select from which case in %1 to import calculation conditions.</source>
-        <translation>請從以下情況中選擇 %1 導入計算條件。</translation>
+        <translation type="vanished">請從以下情況中選擇 %1 導入計算條件。</translation>
     </message>
     <message>
         <source>Success</source>
@@ -473,7 +487,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>P&amp;ointset Data</source>
-        <translation>點集數據 (&amp;O)</translation>
+        <translation type="vanished">點集數據 (&amp;O)</translation>
     </message>
     <message>
         <source>Poly&amp;line</source>
@@ -568,8 +582,8 @@ Do you really want to import grid from this file?</source>
         <translation>%1 上次編輯後未映射。是否要立即執行映射？</translation>
     </message>
     <message>
-        <source>Boundary Condition Setting "%1" is not mapped after it is edited last time. Do you want to execute mapping now?</source>
-        <translation>邊界條件設置"%1" 上次編輯後沒有映射。現在要執行映射嗎？</translation>
+        <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
+        <translation>邊界條件設置&quot;%1&quot; 上次編輯後沒有映射。現在要執行映射嗎？</translation>
     </message>
     <message>
         <source>Information</source>
@@ -638,7 +652,7 @@ Do you really want to import grid from this file?</source>
     <name>PreProcessorGeoDataGroupDataItem</name>
     <message>
         <source>&amp;Import from web...</source>
-        <translation>從網絡導入 (&amp;I)...</translation>
+        <translation type="vanished">從網絡導入 (&amp;I)...</translation>
     </message>
     <message>
         <source>Delete &amp;All...</source>
@@ -768,6 +782,10 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>&amp;Import</source>
         <translation>進口 (&amp;I)</translation>
+    </message>
+    <message>
+        <source>&amp;Import Elevation from web...</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -967,7 +985,7 @@ Do you really want to import grid from this file?</source>
         <translation>執行 (&amp;E)...</translation>
     </message>
     <message>
-        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".
+        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.
 </source>
         <translation>以下屬性未映射，因為網格生成器為它們輸出值。如果要強制為其映射地理數據，請通過菜單“網格”-&gt;“屬性映射”-&gt;“執行”手動映射。</translation>
     </message>
@@ -988,11 +1006,11 @@ Do you really want to import grid from this file?</source>
         <translation>繪製地理數據完成</translation>
     </message>
     <message>
-        <source>The grid attribute "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
         <translation>網格屬性“ %1 ”是手工編輯的。執行映射時，所做的所有修改都將被丟棄。您真的要執行映射嗎？</translation>
     </message>
     <message>
-        <source>The boundary condition "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
         <translation>邊界條件“ %1 ”是手工編輯的。執行映射時，所做的所有修改都將被丟棄。您真的要執行映射嗎？</translation>
     </message>
 </context>
@@ -1011,19 +1029,19 @@ Do you really want to import grid from this file?</source>
         <translation>汽車</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;meta name ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p style=" margin -top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;創建網格時，詢問是否每次都執行屬性映射。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;創建網格時，詢問是否每次都執行屬性映射。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Manual</source>
         <translation>手動的</translation>
     </message>
     <message>
-        <source>Attribute mapping is executed only when you manually select "Execute" menu.</source>
+        <source>Attribute mapping is executed only when you manually select &quot;Execute&quot; menu.</source>
         <translation>只有當您手動選擇“執行”菜單時才會執行屬性映射。</translation>
     </message>
     <message>
@@ -1428,7 +1446,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>設置標量條 (&amp;U)...</translation>
     </message>
     <message>
-        <source>Open &amp;Bird's-Eye View Window</source>
+        <source>Open &amp;Bird&apos;s-Eye View Window</source>
         <translation>打開鳥瞰視窗 (&amp;B)</translation>
     </message>
     <message>

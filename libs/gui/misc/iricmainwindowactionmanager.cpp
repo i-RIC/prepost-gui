@@ -237,7 +237,7 @@ void iRICMainWindowActionManager::setupImportMenu()
 	m_geoDataImportMenu = importMenu->addMenu(tr("G&eographic Data"));
 	connect(m_geoDataImportMenu, SIGNAL(aboutToShow()), m_parent->preProcessorWindow(), SLOT(setupGeoDataImportMenu()));
 
-	m_geoDataImportFromWebMenu = importMenu->addMenu(tr("Geographic Data (from web)"));
+	m_geoDataImportFromWebMenu = importMenu->addMenu(tr("Geographic Data (Elevation from web)"));
 	connect(m_geoDataImportFromWebMenu, SIGNAL(aboutToShow()), m_parent->preProcessorWindow(), SLOT(setupGeoDataImportFromWebMenu()));
 
 	m_hydraulicDataImportMenu = importMenu->addMenu(tr("&Hydraulic Data"));

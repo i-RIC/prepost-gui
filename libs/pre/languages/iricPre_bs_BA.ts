@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="bs_BA">
 <context>
     <name>BoundaryConditionDialog</name>
@@ -85,6 +87,18 @@ Do you really want to import grid from this file?</source>
 Do you really want to import grid from this file?</source>
         <translation>Ova CGNS datoteka nema informacije o rješavanju. Ne možemo provjeriti je li ova CGNS datoteka kompatibilna sa rješavačem. Ako nije kompatibilan, možda će se uvesti samo neki dio mreže. Zaista želite uvesti mrežu iz ove datoteke?</translation>
     </message>
+    <message>
+        <source>This file does not contain grid that can be imported.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select grid</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select grid to import.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GridAttributeGeneratorLauncher</name>
@@ -100,7 +114,7 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>GridBirdEyeWindow</name>
     <message>
-        <source>Grid Bird's-Eye View Window</source>
+        <source>Grid Bird&apos;s-Eye View Window</source>
         <translation>Mreža Izgled iz ptičje perspektive</translation>
     </message>
 </context>
@@ -409,11 +423,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Select case</source>
-        <translation>Odaberite slučaj</translation>
+        <translation type="vanished">Odaberite slučaj</translation>
     </message>
     <message>
         <source>Please select from which case in %1 to import calculation conditions.</source>
-        <translation>Molimo odaberite u kom slučaju %1 da uveze uslove proračuna.</translation>
+        <translation type="vanished">Molimo odaberite u kom slučaju %1 da uveze uslove proračuna.</translation>
     </message>
     <message>
         <source>Success</source>
@@ -473,7 +487,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>P&amp;ointset Data</source>
-        <translation>Pointset Data (&amp;O)</translation>
+        <translation type="vanished">Pointset Data (&amp;O)</translation>
     </message>
     <message>
         <source>Poly&amp;line</source>
@@ -568,8 +582,8 @@ Do you really want to import grid from this file?</source>
         <translation>%1 se ne mapiraju nakon što su zadnji put uređivane. Želite li sada izvršiti mapiranje?</translation>
     </message>
     <message>
-        <source>Boundary Condition Setting "%1" is not mapped after it is edited last time. Do you want to execute mapping now?</source>
-        <translation>Postavljanje graničnog stanja "%1"nije mapiran nakon što je zadnji put uređen. Želite li sada izvršiti mapiranje?</translation>
+        <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
+        <translation>Postavljanje graničnog stanja &quot;%1&quot;nije mapiran nakon što je zadnji put uređen. Želite li sada izvršiti mapiranje?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -638,7 +652,7 @@ Do you really want to import grid from this file?</source>
     <name>PreProcessorGeoDataGroupDataItem</name>
     <message>
         <source>&amp;Import from web...</source>
-        <translation>Uvezi s weba (&amp;I)...</translation>
+        <translation type="vanished">Uvezi s weba (&amp;I)...</translation>
     </message>
     <message>
         <source>Delete &amp;All...</source>
@@ -768,6 +782,10 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>&amp;Import</source>
         <translation>Uvoz (&amp;I)</translation>
+    </message>
+    <message>
+        <source>&amp;Import Elevation from web...</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -967,9 +985,9 @@ Do you really want to import grid from this file?</source>
         <translation>Izvršiti (&amp;E)...</translation>
     </message>
     <message>
-        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".
+        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.
 </source>
-        <translation>Sljedeći atributi nisu mapirani jer za njih izlazne vrijednosti generatora mreže. Ako želite nasilno preslikati geografske podatke za njih, ručno ih mapirajte pomoću izbornika "Mreža" -&gt; "Mapiranje atributa" -&gt; "Izvrši".</translation>
+        <translation>Sljedeći atributi nisu mapirani jer za njih izlazne vrijednosti generatora mreže. Ako želite nasilno preslikati geografske podatke za njih, ručno ih mapirajte pomoću izbornika &quot;Mreža&quot; -&gt; &quot;Mapiranje atributa&quot; -&gt; &quot;Izvrši&quot;.</translation>
     </message>
     <message>
         <source>Information</source>
@@ -988,12 +1006,12 @@ Do you really want to import grid from this file?</source>
         <translation>Mapiranje geografskih podataka je završeno</translation>
     </message>
     <message>
-        <source>The grid attribute "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Atribut mreže "%1"se ručno uređuje. Kada izvršite mapiranje, sve izmjene koje ste unijeli bit će odbačene. Želite li zaista izvršiti mapiranje?</translation>
+        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Atribut mreže &quot;%1&quot;se ručno uređuje. Kada izvršite mapiranje, sve izmjene koje ste unijeli bit će odbačene. Želite li zaista izvršiti mapiranje?</translation>
     </message>
     <message>
-        <source>The boundary condition "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Granični uvjet "%1"se ručno uređuje. Kada izvršite mapiranje, sve izmjene koje ste unijeli bit će odbačene. Želite li zaista izvršiti mapiranje?</translation>
+        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Granični uvjet &quot;%1&quot;se ručno uređuje. Kada izvršite mapiranje, sve izmjene koje ste unijeli bit će odbačene. Želite li zaista izvršiti mapiranje?</translation>
     </message>
 </context>
 <context>
@@ -1011,20 +1029,20 @@ Do you really want to import grid from this file?</source>
         <translation>Automatski</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta naziv = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Kada je mreža kreirana, bićete upitani da li da biste svaki put izvršili mapiranje atributa. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta naziv = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Kada je mreža kreirana, bićete upitani da li da biste svaki put izvršili mapiranje atributa. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Manual</source>
         <translation>Priručnik</translation>
     </message>
     <message>
-        <source>Attribute mapping is executed only when you manually select "Execute" menu.</source>
-        <translation>Mapiranje atributa izvodi se samo ako ručno odaberete izbornik "Izvrši".</translation>
+        <source>Attribute mapping is executed only when you manually select &quot;Execute&quot; menu.</source>
+        <translation>Mapiranje atributa izvodi se samo ako ručno odaberete izbornik &quot;Izvrši&quot;.</translation>
     </message>
     <message>
         <source>Geographic data mapping</source>
@@ -1428,7 +1446,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>Postavite Scalarbar (&amp;U)...</translation>
     </message>
     <message>
-        <source>Open &amp;Bird's-Eye View Window</source>
+        <source>Open &amp;Bird&apos;s-Eye View Window</source>
         <translation>Otvorite prozor iz ptičje perspektive (&amp;B)</translation>
     </message>
     <message>
