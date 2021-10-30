@@ -803,7 +803,8 @@ bool iRICMainWindow::saveProject(const QString& filename, bool folder)
 			int ier = mainfile->updateCgnsFileOtherThanGrids();
 			ret = (ier == IRIC_NO_ERROR);
 		}
-		if (ret) {ret = m_projectData->mainfile()->saveExceptCGNS();}
+		if (ret) {ret = mainfile->saveExceptCGNS();}
+		if (ret) {mainfile->setModified(false);}
 	}
 
 	if (! ret) {
