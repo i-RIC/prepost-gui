@@ -32,10 +32,14 @@
 
 #include <vtkRenderer.h>
 
-PreProcessorWindow::PreProcessorWindow(QWidget* parent)
-	: PreProcessorWindowInterface(parent)
+PreProcessorWindow::PreProcessorWindow(QWidget* parent) :
+	PreProcessorWindowInterface(parent)
 {
 	init();
+}
+
+PreProcessorWindow::~PreProcessorWindow()
+{
 }
 
 void PreProcessorWindow::init()

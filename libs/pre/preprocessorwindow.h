@@ -48,10 +48,8 @@ public:
 		grPartiallyUnfinished,
 		grUnfinished
 	};
-	/// Constructor
 	PreProcessorWindow(QWidget* parent);
-	/// Destructor
-	virtual ~PreProcessorWindow() {}
+	~PreProcessorWindow();
 	/// Set newly created project data.
 	void setProjectData(ProjectData* d);
 	PreProcessorWindowProjectDataItem* projectDataItem();

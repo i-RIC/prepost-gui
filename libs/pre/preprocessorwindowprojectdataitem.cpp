@@ -83,6 +83,7 @@ PreProcessorWindowProjectDataItem::~PreProcessorWindowProjectDataItem()
 	}
 	parent->m_projectDataItem = nullptr;
 	parent->m_graphicsView->setActiveDataItem(nullptr);
+	parent->propertyBrowser()->view()->setTargetDataItem(nullptr);
 }
 
 
