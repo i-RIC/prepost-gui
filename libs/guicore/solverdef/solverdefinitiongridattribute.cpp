@@ -45,7 +45,7 @@ void SolverDefinitionGridAttribute::Impl::load(const QDomElement& elem, SolverDe
 		QDomElement e = defNode.toElement();
 		m_variantDefaultValue = e.attribute("default", "");
 		m_variantMaximumValue = e.attribute("max", "");
-		m_variantMaximumValue = e.attribute("min", "");
+		m_variantMinimumValue = e.attribute("min", "");
 		QDomNodeList children = e.childNodes();
 		for (int i = 0; i < children.count(); ++i) {
 			QDomNode childNode = children.at(i);
