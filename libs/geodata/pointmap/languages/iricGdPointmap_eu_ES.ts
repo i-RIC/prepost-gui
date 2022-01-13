@@ -1,887 +1,885 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="eu_ES">
 <context>
     <name>GeoDataPointMapDelPtsLessThanDialog</name>
     <message>
         <source>Delete Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Puntuak ezabatu</translation>
     </message>
     <message>
         <source>Selected point properties</source>
-        <translation type="unfinished"></translation>
+        <translation>Aukeratutako puntuen propietateak</translation>
     </message>
     <message>
         <source>Number of Points:</source>
-        <translation type="unfinished"></translation>
+        <translation>Puntu kopurua:</translation>
     </message>
     <message>
         <source>Minimum:</source>
-        <translation type="unfinished"></translation>
+        <translation>Gutxienekoa:</translation>
     </message>
     <message>
         <source>Maximum:</source>
-        <translation type="unfinished"></translation>
+        <translation>Gehienez:</translation>
     </message>
     <message>
         <source>Delete less than value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ezabatu balioa baino gutxiago:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmap</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Abisua</translation>
     </message>
     <message>
         <source>Break line have to have no intersection with other break lines.</source>
-        <translation type="unfinished"></translation>
+        <translation>Haustura-lerroak ez dute beste haustura-lerroekin elkargunerik izan behar.</translation>
     </message>
     <message>
         <source>Remeshing TINs...</source>
-        <translation type="unfinished"></translation>
+        <translation>TINak berriztatzen...</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informazioa</translation>
     </message>
     <message>
         <source>When you switch to this mode, you have to remesh TINs. Do you want to remesh now?</source>
-        <translation type="unfinished"></translation>
+        <translation>Modu honetara aldatzen zarenean, TINak berriro saldu behar dituzu. Berriro berriro nahi duzu?</translation>
     </message>
     <message>
         <source>&amp;Add New Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Gehitu puntu berria (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Interpolate Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Puntuak interpolatu (&amp;I)</translation>
     </message>
     <message>
         <source>Display &amp;Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Bistaratzeko ezarpena (&amp;S)...</translation>
     </message>
     <message>
         <source>Select point</source>
-        <translation type="unfinished"></translation>
+        <translation>Aukeratu puntua</translation>
     </message>
     <message>
         <source>Select Points With &amp;Polygon</source>
-        <translation type="unfinished"></translation>
+        <translation>Aukeratu puntuak poligonoarekin (&amp;P)</translation>
     </message>
     <message>
         <source>&amp;Edit Selected Points...</source>
-        <translation type="unfinished"></translation>
+        <translation>Editatu hautatutako puntuak (&amp;E)...</translation>
     </message>
     <message>
         <source>Delete Selected P&amp;oints</source>
-        <translation type="unfinished"></translation>
+        <translation>Ezabatu hautatutako puntuak (&amp;O)</translation>
     </message>
     <message>
         <source>E&amp;xport Selected Points...</source>
-        <translation type="unfinished"></translation>
+        <translation>Esportatu hautatutako puntuak (&amp;X)...</translation>
     </message>
     <message>
         <source>Delete Selected Points &amp;Less Than Value...</source>
-        <translation type="unfinished"></translation>
+        <translation>Ezabatu hautatutako puntuak balioa baino gutxiago (&amp;L)...</translation>
     </message>
     <message>
         <source>Delete Selected Points &amp;Greater Than Value...</source>
-        <translation type="unfinished"></translation>
+        <translation>Ezabatu hautatutako puntuak balioa baino handiagoa (&amp;G)...</translation>
     </message>
     <message>
         <source>Remesh &amp;TINs</source>
-        <translation type="unfinished"></translation>
+        <translation>Berridatzi TINak (&amp;T)</translation>
     </message>
     <message>
         <source>Add &amp;Break Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Gehitu Break Line (&amp;B)</translation>
     </message>
     <message>
         <source>&amp;Remove Break Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Kendu Break Line (&amp;R)</translation>
     </message>
     <message>
         <source>Re&amp;move All Break Lines...</source>
-        <translation type="unfinished"></translation>
+        <translation>Kendu Break Line guztiak (&amp;M)...</translation>
     </message>
     <message>
         <source>Remove Triangles &amp;with Long edge...</source>
-        <translation type="unfinished"></translation>
+        <translation>Kendu ertz luzea duten triangeluak (&amp;W)...</translation>
     </message>
     <message>
         <source>Are you sure you want to remove this break line?</source>
-        <translation type="unfinished"></translation>
+        <translation>Ziur zaude eten lerro hau kendu nahi duzula?</translation>
     </message>
     <message>
         <source>Polygon must have three vertices at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>Poligonoak hiru erpin izan behar ditu gutxienez.</translation>
     </message>
     <message>
         <source>Remeshing TINs finished.</source>
-        <translation type="unfinished"></translation>
+        <translation>TIN birsortzaileak amaitu dira.</translation>
     </message>
     <message>
         <source>When you add break line, you have to switch to show wireframes. Do you want to switch to show wireframes now?</source>
-        <translation type="unfinished"></translation>
+        <translation>Eten lerroa gehitzen duzunean, hari markoak erakusteko aldatu behar duzu. Haririk gabeko markoak erakusteko aldatu nahi duzu?</translation>
     </message>
     <message>
         <source>Break line can be defined by mouse-clicking on the points between which you want to add break line. Finish defining by double clicking, or pressing return key.</source>
-        <translation type="unfinished"></translation>
+        <translation>Jauzi lerroa eten lerroa gehitu nahi duzun puntuetan saguaren klik eginez defini daiteke. Amaitu definitzen klik bikoitza eginez edo itzultzeko tekla sakatuta.</translation>
     </message>
     <message>
         <source>When you remove break line, you have to switch to show wireframes. Do you want to switch to show wireframes now?</source>
-        <translation type="unfinished"></translation>
+        <translation>Haustura lerroa kentzean, alanbre markoak erakusteko aldatu behar duzu. Haririk gabeko markoak erakusteko aldatu nahi duzu?</translation>
     </message>
     <message>
         <source>Click on the break line you want to remove.</source>
-        <translation type="unfinished"></translation>
+        <translation>Egin klik kendu nahi duzun eten lerroan.</translation>
     </message>
     <message>
         <source>Are you sure you want to remove ALL break lines?</source>
-        <translation type="unfinished"></translation>
+        <translation>Ziur zaude eten lerro GUZTIAK kendu nahi dituzula?</translation>
     </message>
     <message>
         <source>When you want to remove triangles with long edges, you have to switch Display Method to Wireframe or Surface. If you press OK button, Display Method is switched to Wireframe</source>
-        <translation type="unfinished"></translation>
+        <translation>Ertz luzeak dituzten triangeluak kendu nahi dituzunean, Bistaratze metodoa Wireframe edo Azalera aldatu behar duzu. Ados botoia sakatzen baduzu, Bistaratzeko metodoa Wireframe-ra aldatuko da</translation>
     </message>
     <message>
         <source>When you edit points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation type="unfinished"></translation>
+        <translation>Puntuak editatzen dituzunean, puntuak erakustera aldatu behar duzu. Puntuak erakusteko aldatu nahi duzu orain?</translation>
     </message>
     <message>
         <source>When you delete points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation type="unfinished"></translation>
+        <translation>Puntuak ezabatzen dituzunean, puntuak erakustera aldatu behar duzu. Puntuak erakusteko aldatu nahi duzu orain?</translation>
     </message>
     <message>
         <source>You can not delete points used for break lines.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ezin dituzu eten lerroetan erabilitako puntuak ezabatu.</translation>
     </message>
     <message>
         <source>Delete Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Puntuak ezabatu</translation>
     </message>
     <message>
         <source>Select File to Export</source>
-        <translation type="unfinished"></translation>
+        <translation>Aukeratu Esportatzeko fitxategia</translation>
     </message>
     <message>
         <source>Topography File (*.tpo)</source>
-        <translation type="unfinished"></translation>
+        <translation>Topografia Fitxategia (*.tpo)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Errorea</translation>
     </message>
     <message>
         <source>Error occured while exporting to %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Errorea gertatu da esportatzera %1.</translation>
     </message>
     <message>
         <source>Delete points less than %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Ezabatu puntuak baino gutxiago %1</translation>
     </message>
     <message>
         <source>Delete points greater than %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Ezabatu puntu baino handiagoak %1</translation>
     </message>
     <message>
         <source>When you interpolate points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation type="unfinished"></translation>
+        <translation>Puntuak interpolatzen dituzunean, puntuak erakustera aldatu behar duzu. Puntuak erakusteko aldatu nahi duzu orain?</translation>
     </message>
     <message>
         <source>To interpolate points, select existing points by mouse-clicking, use Alt to define path between known points, and finish by double-clicking or pressing return key.</source>
-        <translation type="unfinished"></translation>
+        <translation>Puntuak interpolatzeko, hautatu lehendik dauden puntuak saguarekin klik eginez, erabili Alt puntu ezagunen arteko bidea definitzeko eta amaitzeko egin klik bikoitza edo itzuli tekla sakatuta.</translation>
     </message>
     <message>
         <source>When you add points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation type="unfinished"></translation>
+        <translation>Puntuak gehitzen dituzunean, puntuak erakustera aldatu behar duzu. Puntuak erakusteko aldatu nahi duzu orain?</translation>
     </message>
     <message>
         <source>To add new points, select an existing point first. The value at that point will be used as the default value for new points. Then, click at any position you want to add points, and finish by double-clicking of pressing return key.</source>
-        <translation type="unfinished"></translation>
+        <translation>Puntu berriak gehitzeko, lehendik dagoen puntu bat aukeratu. Puntu horretako balioa puntu berrietarako balio lehenetsi gisa erabiliko da. Ondoren, egin klik puntuak gehitu nahi dituzun edozein posiziotan eta amaitzeko itzuli tekla sakatuz egin klik bikoitza.</translation>
     </message>
     <message>
         <source>Add Break Line Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Gehitu Break Line Point</translation>
     </message>
     <message>
         <source>Cancel Defining Break Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Utzi Break Line definitzea</translation>
     </message>
     <message>
         <source>Finish Defining Break Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Amaitu Break Line definitzen</translation>
     </message>
     <message>
         <source>Edit Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Editatu puntuak</translation>
     </message>
     <message>
         <source>Add New Interp Line Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Gehitu Interp Line berria</translation>
     </message>
     <message>
         <source>Remove triangles with long edge</source>
-        <translation type="unfinished"></translation>
+        <translation>Kendu ertz luzea duten triangeluak</translation>
     </message>
     <message>
         <source>Merge...</source>
-        <translation type="unfinished"></translation>
+        <translation>Batu...</translation>
     </message>
     <message>
-        <source>There is no other data to merge in &quot;%1&quot; group.</source>
-        <translation type="unfinished"></translation>
+        <source>There is no other data to merge in "%1" group.</source>
+        <translation>Ez dago batzeko beste daturik "%1"taldea.</translation>
     </message>
     <message>
         <source>%1 duplicate points were found in merge targets, and omitted.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 puntu bikoiztuak bateratze-helburuetan aurkitu dira, eta kendu egin dira.</translation>
     </message>
     <message>
         <source>You must select one known point, and define at least one location for added points. Do you want to retry, or cancel the operation?</source>
-        <translation type="unfinished"></translation>
+        <translation>Puntu ezagun bat hautatu behar duzu, eta gutxienez kokapen bat definitu puntu gehigarrietarako. Berriro saiatu edo eragiketa bertan behera utzi nahi duzu?</translation>
     </message>
     <message>
         <source>Add Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Gehitu puntuak</translation>
     </message>
     <message>
         <source>Values of new points</source>
-        <translation type="unfinished"></translation>
+        <translation>Puntu berrien balioak</translation>
     </message>
     <message>
         <source>To interpolate points, you must specify more than two points, and the last point should be existing point. Do you want to retry, or cancel the operation?</source>
-        <translation type="unfinished"></translation>
+        <translation>Puntuak interpolatzeko, bi puntu baino gehiago zehaztu behar dituzu eta azken puntuak lehendik dagoen puntua izan beharko luke. Berriro saiatu edo eragiketa bertan behera utzi nahi duzu?</translation>
     </message>
     <message>
         <source>P&amp;oint Cloud Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Puntu hodeiko datuak (&amp;O)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapDelPtsGreaterThanDialog</name>
     <message>
         <source>Delete Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Puntuak ezabatu</translation>
     </message>
     <message>
         <source>Selected point properties</source>
-        <translation type="unfinished"></translation>
+        <translation>Aukeratutako puntuen propietateak</translation>
     </message>
     <message>
         <source>Number of Points:</source>
-        <translation type="unfinished"></translation>
+        <translation>Puntu kopurua:</translation>
     </message>
     <message>
         <source>Minimum:</source>
-        <translation type="unfinished"></translation>
+        <translation>Gutxienekoa:</translation>
     </message>
     <message>
         <source>Maximum:</source>
-        <translation type="unfinished"></translation>
+        <translation>Gehienez:</translation>
     </message>
     <message>
         <source>Delete greater than value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ezabatu balioa baino handiagoa:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapEditPtsDialog</name>
     <message>
         <source>Edit Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Editatu puntuak</translation>
     </message>
     <message>
         <source>Selected point properties</source>
-        <translation type="unfinished"></translation>
+        <translation>Aukeratutako puntuen propietateak</translation>
     </message>
     <message>
         <source>Number of Points:</source>
-        <translation type="unfinished"></translation>
+        <translation>Puntu kopurua:</translation>
     </message>
     <message>
         <source>Minimum:</source>
-        <translation type="unfinished"></translation>
+        <translation>Gutxienekoa:</translation>
     </message>
     <message>
         <source>Maximum:</source>
-        <translation type="unfinished"></translation>
+        <translation>Gehienez:</translation>
     </message>
     <message>
         <source>X-location</source>
-        <translation type="unfinished"></translation>
+        <translation>X-kokapena</translation>
     </message>
     <message>
         <source>Y-location</source>
-        <translation type="unfinished"></translation>
+        <translation>Y-kokapena</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation type="unfinished"></translation>
+        <translation>Balioa</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapInterpolatePoints</name>
     <message>
         <source>Interpolate Increment</source>
-        <translation type="unfinished"></translation>
+        <translation>Interpolatu gehikuntza</translation>
     </message>
     <message>
         <source>Interpolation Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Interpolazio ezarpena</translation>
     </message>
     <message>
         <source>Interpolation Increment:</source>
-        <translation type="unfinished"></translation>
+        <translation>Interpolazioaren gehikuntza:</translation>
     </message>
     <message>
         <source>Line Length:</source>
-        <translation type="unfinished"></translation>
+        <translation>Lerroaren luzera:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapInterpolatePointsDialog</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Abisua</translation>
     </message>
     <message>
         <source>Interpolation increment must be greater 0 and less than interpolation line length</source>
-        <translation type="unfinished"></translation>
+        <translation>Interpolazioaren gehikuntzak interpolazio lerroaren luzera baino 0 handiagoa eta txikiagoa izan behar du</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapLandXmlExporter</name>
     <message>
         <source>LandXML</source>
-        <translation type="unfinished"></translation>
+        <translation>LandXML</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Errorea</translation>
     </message>
     <message>
         <source>Error occured while exporting to %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Errorea gertatu da esportatzera %1</translation>
     </message>
     <message>
         <source>LandXML file (*.xml)</source>
-        <translation type="unfinished"></translation>
+        <translation>LandXML fitxategia (*.xml)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapLandXmlImporter</name>
     <message>
         <source>LandXML (*.xml)</source>
-        <translation type="unfinished"></translation>
+        <translation>LandXML (*.xml)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Errorea</translation>
     </message>
     <message>
         <source>Parse error %1 at line %2 column %3</source>
-        <translation type="unfinished"></translation>
+        <translation>Analisi errorea %1 lerroan %2 zutabea %3</translation>
     </message>
     <message>
         <source>LandXML File (*.xml)</source>
-        <translation type="unfinished"></translation>
+        <translation>LandXML fitxategia (*.xml)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapMergeSettingDialog</name>
     <message>
         <source>Select data to merge</source>
-        <translation type="unfinished"></translation>
+        <translation>Aukeratu bateratzeko datuak</translation>
     </message>
     <message>
         <source>Please select data to merge this group.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mesedez, hautatu talde hau bateratzeko datuak.</translation>
     </message>
     <message>
         <source>&amp;Select all</source>
-        <translation type="unfinished"></translation>
+        <translation>Hautatu guztiak (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;Unselect all</source>
-        <translation type="unfinished"></translation>
+        <translation>Desautatu guztiak (&amp;U)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapRealCreator</name>
     <message>
         <source>Point Cloud Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Puntu hodeiko datuak</translation>
     </message>
     <message>
         <source>Point Cloud Data%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Puntu hodeiko datuak %1</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapRealExporter</name>
     <message>
         <source>Topography File (*.tpo)</source>
-        <translation type="unfinished"></translation>
+        <translation>Topografia Fitxategia (*.tpo)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Errorea</translation>
     </message>
     <message>
         <source>Error occured while exporting to %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Errorea gertatu da esportatzera %1.</translation>
     </message>
     <message>
         <source>Point Cloud Data (DEM etc.)</source>
-        <translation type="unfinished"></translation>
+        <translation>Puntu hodeiko datuak (DEM, etab.)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapRealImporter</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Errorea</translation>
     </message>
     <message>
         <source>File open error occured while opening %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fitxategia irekitzean errorea gertatu da irekitzean %1.</translation>
     </message>
     <message>
         <source>DEM etc. (*.tpo)</source>
-        <translation type="unfinished"></translation>
+        <translation>DEM etab. (*.tpo)</translation>
     </message>
     <message>
         <source>Topography File (*.tpo)</source>
-        <translation type="unfinished"></translation>
+        <translation>Topografia Fitxategia (*.tpo)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapRealImporterFilterDialog</name>
     <message>
         <source>Filtering Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Iragazketa ezarpena</translation>
     </message>
     <message>
         <source>If you want to filter the dataset, specify value more than 1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Datu multzoa iragazi nahi baduzu, zehaztu 1 baino gehiago balioa.</translation>
     </message>
     <message>
         <source>Filter:</source>
-        <translation type="unfinished"></translation>
+        <translation>Iragazkia:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapRealTextImporter</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Errorea</translation>
     </message>
     <message>
         <source>File open error occured while opening %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fitxategia irekitzean errorea gertatu da irekitzean %1.</translation>
     </message>
     <message>
         <source>Not enough header lines found in the file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fitxategian ez da nahikoa goiburu lerro aurkitu.</translation>
     </message>
     <message>
         <source>Line %1: %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Lerroa %1 : %2</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Abisua</translation>
     </message>
     <message>
         <source>%1 duplicate points found. If points with same x and y values found, the first point is imported</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 aurkitutako puntu bikoiztuak. X eta y balio berdinak dituzten puntuak aurkitzen badira, lehenengo puntua inportatuko da</translation>
     </message>
     <message>
         <source>At column %1, %2 or %3 expected, but %4 specified.</source>
-        <translation type="unfinished"></translation>
+        <translation>Zutabean %1, %2 edo %3 espero zen, baina %4 zehaztuta.</translation>
     </message>
     <message>
         <source>At column %1, delimiter expected, but %2 specified.</source>
-        <translation type="unfinished"></translation>
+        <translation>Zutabean %1, mugatzailea espero zen, baina %2 zehaztuta.</translation>
     </message>
     <message>
         <source>x</source>
-        <translation type="unfinished"></translation>
+        <translation>x</translation>
     </message>
     <message>
         <source>y</source>
-        <translation type="unfinished"></translation>
+        <translation>y</translation>
     </message>
     <message>
         <source>value</source>
-        <translation type="unfinished"></translation>
+        <translation>balioa</translation>
     </message>
     <message>
         <source>No delimiter specified</source>
-        <translation type="unfinished"></translation>
+        <translation>Ez da zehaztu mugatzailerik</translation>
     </message>
     <message>
-        <source>Not enough values to read &quot;%1&quot;. &quot;%1&quot; column is %2 but %3 values input.</source>
-        <translation type="unfinished"></translation>
+        <source>Not enough values to read "%1". "%1" column is %2 but %3 values input.</source>
+        <translation>Ez dago irakurtzeko adina balio "%1"."%1"zutabea da %2 baina %3 balioen sarrera.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;%1&quot; value. &quot;%1&quot; value should be real number, but &quot;%2&quot; specified.</source>
-        <translation type="unfinished"></translation>
+        <source>Error occured while reading "%1" value. "%1" value should be real number, but "%2" specified.</source>
+        <translation>Errore bat gertatu da irakurtzean "%1"balioa". %1 "balioa benetako zenbakia izan behar da, baina"%2"zehaztu da.</translation>
     </message>
     <message>
         <source>Text files (CSV, TSV, etc.)</source>
-        <translation type="unfinished"></translation>
+        <translation>Testu fitxategiak (CSV, TSV, etab.)</translation>
     </message>
     <message>
         <source>Text file (*.csv *.txt *.xyz)</source>
-        <translation type="unfinished"></translation>
+        <translation>Testu fitxategia (*.csv *.txt *.xyz)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapRealTextImporter_SettingDialog</name>
     <message>
         <source>Import Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Inportatu ezarpena</translation>
     </message>
     <message>
         <source>Encoding:</source>
-        <translation type="unfinished"></translation>
+        <translation>Kodetzea:</translation>
     </message>
     <message>
         <source>File Format</source>
-        <translation type="unfinished"></translation>
+        <translation>Fitxategi formatua</translation>
     </message>
     <message>
         <source>CSV (Comma separated values)</source>
-        <translation type="unfinished"></translation>
+        <translation>CSV (komaz bereizitako balioak)</translation>
     </message>
     <message>
         <source>Delimiters</source>
-        <translation type="unfinished"></translation>
+        <translation>Mugatzaileak</translation>
     </message>
     <message>
         <source>Comma</source>
-        <translation type="unfinished"></translation>
+        <translation>Koma</translation>
     </message>
     <message>
         <source>Tab</source>
-        <translation type="unfinished"></translation>
+        <translation>Fitxa</translation>
     </message>
     <message>
         <source>Space</source>
-        <translation type="unfinished"></translation>
+        <translation>Espazioa</translation>
     </message>
     <message>
         <source>Colon</source>
-        <translation type="unfinished"></translation>
+        <translation>Colon</translation>
     </message>
     <message>
         <source>Semicolon</source>
-        <translation type="unfinished"></translation>
+        <translation>Puntu eta koma</translation>
     </message>
     <message>
         <source>Other</source>
-        <translation type="unfinished"></translation>
+        <translation>Beste batzuk</translation>
     </message>
     <message>
         <source>Special characters</source>
-        <translation type="unfinished"></translation>
+        <translation>Pertsonaia bereziak</translation>
     </message>
     <message>
         <source>Quote character:</source>
-        <translation type="unfinished"></translation>
+        <translation>Aipatu pertsonaia:</translation>
     </message>
     <message>
-        <source>&quot;</source>
-        <translation type="unfinished"></translation>
+        <source>"</source>
+        <translation>"</translation>
     </message>
     <message>
         <source>When you want to specify multiple quote characters, please just input the characters only, no spaces or commas.</source>
-        <translation type="unfinished"></translation>
+        <translation>Komatxo karaktere bat baino gehiago zehaztu nahi dituzunean, idatzi karaktere bakarrak, zuriunerik edo komarik gabe.</translation>
     </message>
     <message>
         <source>Escape character:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ihes pertsonaia:</translation>
     </message>
     <message>
         <source>\</source>
-        <translation type="unfinished"></translation>
+        <translation>\</translation>
     </message>
     <message>
         <source>Record options</source>
-        <translation type="unfinished"></translation>
+        <translation>Grabatzeko aukerak</translation>
     </message>
     <message>
         <source>Header lines to ignore</source>
-        <translation type="unfinished"></translation>
+        <translation>Ez ikusi beharreko goiburu lerroak</translation>
     </message>
     <message>
         <source>First header line contains field names</source>
-        <translation type="unfinished"></translation>
+        <translation>Lehen goiburuko lerroak eremuen izenak ditu</translation>
     </message>
     <message>
         <source>Select fields</source>
-        <translation type="unfinished"></translation>
+        <translation>Aukeratu eremuak</translation>
     </message>
     <message>
         <source>X:</source>
-        <translation type="unfinished"></translation>
+        <translation>X:</translation>
     </message>
     <message>
         <source>Y:</source>
-        <translation type="unfinished"></translation>
+        <translation>Y:</translation>
     </message>
     <message>
         <source>Value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Balioa:</translation>
     </message>
     <message>
         <source>Skip setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Saltatu ezarpena</translation>
     </message>
     <message>
         <source>Skip rate:</source>
-        <translation type="unfinished"></translation>
+        <translation>Saltatu tasa:</translation>
     </message>
     <message>
         <source>Preview</source>
-        <translation type="unfinished"></translation>
+        <translation>Aurrebista</translation>
     </message>
     <message>
         <source>Custom delimited text</source>
-        <translation type="unfinished"></translation>
+        <translation>Pertsonalizatutako testu mugatua</translation>
     </message>
     <message>
         <source>The character to escape quote characters in quoted text. You can specify only one character.</source>
-        <translation type="unfinished"></translation>
+        <translation>Aipatutako testuko karaktereetatik ihes egiteko pertsonaia. Karaktere bakarra zehaztu dezakezu.</translation>
     </message>
     <message>
         <source>When you want to skip lines in the file, please specify values larger than 1. For example, if you input 2, every other line is imported.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fitxategiko lerroak saltatu nahi dituzunean, zehaztu 1. baino handiagoak diren balioak. Adibidez, 2 idazten baduzu, beste lerro guztiak inportatuko dira.</translation>
     </message>
     <message>
         <source>File name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Fitxategi izena:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapRepresentationDialog</name>
     <message>
         <source>Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Bistaratzeko ezarpena</translation>
     </message>
     <message>
         <source>Display Method</source>
-        <translation type="unfinished"></translation>
+        <translation>Bistaratzeko metodoa</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Puntuak</translation>
     </message>
     <message>
         <source>Wireframe</source>
-        <translation type="unfinished"></translation>
+        <translation>Wireframe</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation type="unfinished"></translation>
+        <translation>Azalera</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Puntuaren tamaina:</translation>
     </message>
     <message>
         <source>Hide Break Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Ezkutatu Break Line</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapSTLExporter</name>
     <message>
         <source>Stereolithography (STL)</source>
-        <translation type="unfinished"></translation>
+        <translation>Estereolitografia (STL)</translation>
     </message>
     <message>
         <source>Binary STL (*.stl)</source>
-        <translation type="unfinished"></translation>
+        <translation>STL bitarra (*.stl)</translation>
     </message>
     <message>
         <source>ASCII STL (*.stl)</source>
-        <translation type="unfinished"></translation>
+        <translation>ASCII STL (*.stl)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapSTLImporter</name>
     <message>
         <source>Stereolithography (STL)</source>
-        <translation type="unfinished"></translation>
+        <translation>Estereolitografia (STL)</translation>
     </message>
     <message>
         <source>Stereolithography file (*.stl)</source>
-        <translation type="unfinished"></translation>
+        <translation>Estereolitografia fitxategia (*.stl)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Errorea</translation>
     </message>
     <message>
         <source>File open error occured while opening %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fitxategia irekitzean errorea gertatu da irekitzean %1.</translation>
     </message>
     <message>
         <source>solid</source>
-        <translation type="unfinished"></translation>
+        <translation>sendoa</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapTINCreator</name>
     <message>
         <source>TIN</source>
-        <translation type="unfinished"></translation>
+        <translation>TIN</translation>
     </message>
     <message>
         <source>Point Cloud Data%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Puntu hodeiko datuak %1</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapVTKExporter</name>
     <message>
         <source>Pointset (DEM etc.)</source>
-        <translation type="unfinished"></translation>
+        <translation>Puntu multzoa (DEM, etab.)</translation>
     </message>
     <message>
         <source>VTK File (*.vtk)</source>
-        <translation type="unfinished"></translation>
+        <translation>VTK fitxategia (*.vtk)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapWebImporter</name>
     <message>
         <source>Web CSV tile</source>
-        <translation type="unfinished"></translation>
+        <translation>Web CSV lauza</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Errorea</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapWebImporterRegionSelectDialog</name>
     <message>
         <source>Select Region</source>
-        <translation type="unfinished"></translation>
+        <translation>Aukeratu eskualdea</translation>
     </message>
     <message>
         <source>Background Image:</source>
-        <translation type="unfinished"></translation>
+        <translation>Atzeko planoaren irudia:</translation>
     </message>
     <message>
         <source>Zoom &amp;In</source>
-        <translation type="unfinished"></translation>
+        <translation>Handitu (&amp;I)</translation>
     </message>
     <message>
         <source>Zoom &amp;Out</source>
-        <translation type="unfinished"></translation>
+        <translation>Txikitu (&amp;O)</translation>
     </message>
     <message>
         <source>&amp;Next</source>
-        <translation type="unfinished"></translation>
+        <translation>Hurrengoa (&amp;N)</translation>
     </message>
     <message>
         <source>&amp;Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>Utzi (&amp;C)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Abisua</translation>
     </message>
     <message>
         <source>Region to import data is not selected yet. Please left drag on the map to select area.</source>
-        <translation type="unfinished"></translation>
+        <translation>Datuak inportatzeko eskualdea oraindik ez dago hautatuta. Mesedez, arrastatu ezkerrean mapan eremua hautatzeko.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapWebImporterSettingManager</name>
     <message>
         <source>USGS elevation tiles (SRTM)</source>
-        <translation type="unfinished"></translation>
+        <translation>USGS kota fitxak (SRTM)</translation>
     </message>
     <message>
         <source>GSI elevation tiles (DEM5A)</source>
-        <translation type="unfinished"></translation>
+        <translation>GSI kota fitxak (DEM5A)</translation>
     </message>
     <message>
         <source>GSI elevation tiles (DEM5B)</source>
-        <translation type="unfinished"></translation>
+        <translation>GSI kota fitxak (DEM5B)</translation>
     </message>
     <message>
         <source>GSI elevation tiles (DEM10B)</source>
-        <translation type="unfinished"></translation>
+        <translation>GSI kota fitxak (DEM10B)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapWebImporterZoomLevelDialog</name>
     <message>
         <source>Zoom Level Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Zoom maila ezartzea</translation>
     </message>
     <message>
         <source>Specify the zoom level of data you want to import.</source>
-        <translation type="unfinished"></translation>
+        <translation>Zehaztu inportatu nahi dituzun datuen zoom maila.</translation>
     </message>
     <message>
         <source>Zoom level:</source>
-        <translation type="unfinished"></translation>
+        <translation>Zoom maila:</translation>
     </message>
     <message>
         <source>Resolution:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ebazpena:</translation>
     </message>
     <message>
         <source>xx m</source>
-        <translation type="unfinished"></translation>
+        <translation>xx m</translation>
     </message>
     <message>
         <source>Data size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Datuen tamaina:</translation>
     </message>
     <message>
         <source>XX kB (XXXX points)</source>
-        <translation type="unfinished"></translation>
+        <translation>XX kB (XXXX puntu)</translation>
     </message>
     <message>
         <source>Source:</source>
-        <translation type="unfinished"></translation>
+        <translation>Iturria:</translation>
     </message>
     <message>
         <source>%1 KB</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 KB</translation>
     </message>
     <message>
         <source>%1 MB</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 MB</translation>
     </message>
     <message>
         <source> (%1 points)</source>
-        <translation type="unfinished"></translation>
+        <translation>( %1 puntuak)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmap_TrianglesWithLongEdgeRemover_Dialog</name>
     <message>
         <source>Remove Triangles with Long Edge</source>
-        <translation type="unfinished"></translation>
+        <translation>Kendu triangeluak ertz luzearekin</translation>
     </message>
     <message>
         <source>Limit edge length:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ertzaren luzera mugatu:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Oharra &lt;/span&gt;: Aplikatu botoian klik egiten duzunean, kenduko diren triangeluak ilunez margotuko dira grisa. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
 </context>
 </TS>

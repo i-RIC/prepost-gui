@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="zh_CN">
 <context>
     <name>GridCreatingConditionCreatorGridGenerator</name>
@@ -47,7 +45,7 @@
     </message>
     <message>
         <source>Complex compound channel</source>
-        <translation type="unfinished"></translation>
+        <translation>复杂复合通道</translation>
     </message>
     <message>
         <source>Channel Property</source>
@@ -95,7 +93,7 @@
     </message>
     <message>
         <source>Lag between channel geometry and bar location [m]</source>
-        <translation type="unfinished"></translation>
+        <translation>通道几何形状和钢筋位置之间的滞后 [m]</translation>
     </message>
     <message>
         <source>Common parameters</source>
@@ -139,7 +137,7 @@
     </message>
     <message>
         <source>Simple compound</source>
-        <translation type="unfinished"></translation>
+        <translation>简单的化合物</translation>
     </message>
     <message>
         <source>Width of the left flood channel [m] :</source>
@@ -155,7 +153,7 @@
     </message>
     <message>
         <source>Complex compound</source>
-        <translation type="unfinished"></translation>
+        <translation>复杂的化合物</translation>
     </message>
     <message>
         <source>Total width between banks [m] :</source>
@@ -163,7 +161,7 @@
     </message>
     <message>
         <source>Compound channel</source>
-        <translation type="unfinished"></translation>
+        <translation>复合渠道</translation>
     </message>
     <message>
         <source>Number of grids for the left flood channel :</source>

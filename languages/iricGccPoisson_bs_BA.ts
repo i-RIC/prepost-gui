@@ -1,194 +1,192 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="bs_BA">
 <context>
     <name>GridCreatingConditionCreatorPoisson</name>
     <message>
         <source>Create grid shape solving Poisson equation</source>
-        <translation type="unfinished"></translation>
+        <translation>Kreirajte oblik mreže rješavajući Poissonovu jednadžbu</translation>
     </message>
     <message>
         <source>You can create smooth grid shape solving poisson equation.</source>
-        <translation type="unfinished"></translation>
+        <translation>Možete stvoriti glatki oblik mreže rješavajući Poissonovu jednadžbu.</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionPoisson</name>
     <message>
         <source>Build Left bank and Right bank lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Izgradite lijevu i desnu obalu</translation>
     </message>
     <message>
         <source>&amp;Add Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Dodajte Vertex (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Uklonite Vertex (&amp;R)</translation>
     </message>
     <message>
         <source>Import C&amp;enter Line...</source>
-        <translation type="unfinished"></translation>
+        <translation>Uvezi središnju liniju (&amp;E)...</translation>
     </message>
     <message>
         <source>Export Ce&amp;nter Line...</source>
-        <translation type="unfinished"></translation>
+        <translation>Izvozi središnju liniju (&amp;N)...</translation>
     </message>
     <message>
         <source>Edit Cen&amp;ter Line Coordinates...</source>
-        <translation type="unfinished"></translation>
+        <translation>Uređivanje koordinata središnje linije (&amp;T)...</translation>
     </message>
     <message>
         <source>Import &amp;Left Bank Line...</source>
-        <translation type="unfinished"></translation>
+        <translation>Uvezi liniju lijeve obale (&amp;L)...</translation>
     </message>
     <message>
         <source>Export Le&amp;ft Bank Line...</source>
-        <translation type="unfinished"></translation>
+        <translation>Izvezi liniju lijeve obale (&amp;F)...</translation>
     </message>
     <message>
         <source>Edit Left Bank Line &amp;Coordinates...</source>
-        <translation type="unfinished"></translation>
+        <translation>Uredite koordinate lijeve obale (&amp;C)...</translation>
     </message>
     <message>
         <source>&amp;Import Right Bank Line...</source>
-        <translation type="unfinished"></translation>
+        <translation>Uvoz desne obale (&amp;I)...</translation>
     </message>
     <message>
         <source>Export Ri&amp;ght Bank Line...</source>
-        <translation type="unfinished"></translation>
+        <translation>Izvoz desne obale (&amp;G)...</translation>
     </message>
     <message>
         <source>Edit Rig&amp;ht Bank Line Coordinates...</source>
-        <translation type="unfinished"></translation>
+        <translation>Uredite koordinate desne obale (&amp;H)...</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Upozorenje</translation>
     </message>
     <message>
         <source>%1 not defined yet</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 još nije definisano</translation>
     </message>
     <message>
         <source>Grid region not defined yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mrežna regija još nije definirana.</translation>
     </message>
     <message>
         <source>Center Line is not defined yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Središnja linija još nije definirana.</translation>
     </message>
     <message>
         <source>Center line</source>
-        <translation type="unfinished"></translation>
+        <translation>Središnja linija</translation>
     </message>
     <message>
         <source>Left bank line</source>
-        <translation type="unfinished"></translation>
+        <translation>Lijeva linija obale</translation>
     </message>
     <message>
         <source>Right bank line</source>
-        <translation type="unfinished"></translation>
+        <translation>Desna obala</translation>
     </message>
     <message>
         <source>Insert Line Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Umetni linijski vrh</translation>
     </message>
     <message>
         <source>%1 Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 Koordinate</translation>
     </message>
     <message>
         <source>Add New Line Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Dodajte novu tačku linije</translation>
     </message>
     <message>
         <source>Edit %1 Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Uredi %1 Koordinate</translation>
     </message>
     <message>
         <source>Finish Defining Polyline</source>
-        <translation type="unfinished"></translation>
+        <translation>Završi definiranje polilinije</translation>
     </message>
     <message>
         <source>Move Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Premjesti liniju</translation>
     </message>
     <message>
         <source>Move Line Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Premještanje vrha linije</translation>
     </message>
     <message>
         <source>Remove Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Uklonite Vertex</translation>
     </message>
     <message>
         <source>Cross-section data not found. Please define Center Line by yourself.</source>
-        <translation type="unfinished"></translation>
+        <translation>Podaci o presjeku nisu pronađeni. Molimo vas da sami definirate središnju liniju.</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionPoisson::Impl</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Upozorenje</translation>
     </message>
     <message>
         <source>The maximum number of grid nodes is %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Maksimalan broj čvorova mreže je %1.</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionPoissonBuildBankLinesDialog</name>
     <message>
         <source>Build Bank Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Izgradite bankarske linije</translation>
     </message>
     <message>
         <source>Input the distance from center line</source>
-        <translation type="unfinished"></translation>
+        <translation>Unesite udaljenost od središnje linije</translation>
     </message>
     <message>
         <source>Left bank:</source>
-        <translation type="unfinished"></translation>
+        <translation>Lijeva obala:</translation>
     </message>
     <message>
         <source>Right bank:</source>
-        <translation type="unfinished"></translation>
+        <translation>Desna obala:</translation>
     </message>
     <message>
         <source>Hint: Left bank and Right bank lines are created as line that consists of points that are away from center line to direction perpendicular to the center line.</source>
-        <translation type="unfinished"></translation>
+        <translation>Savjet: Linija lijeve i desne obale stvorena je kao linija koja se sastoji od točaka koje su udaljene od središnje linije prema smjeru okomitom na središnju liniju.</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionPoissonCtrlPointsDialog</name>
     <message>
         <source>Specity the Number Of Control Cross Sections</source>
-        <translation type="unfinished"></translation>
+        <translation>Specity broj kontrolnih presjeka</translation>
     </message>
     <message>
         <source>Number of Control Cross Sections:</source>
-        <translation type="unfinished"></translation>
+        <translation>Broj kontrolnih presjeka:</translation>
     </message>
     <message>
         <source>Hints: Control Cross Sections are the cross sections whose center points are used as the center line of the grid.</source>
-        <translation type="unfinished"></translation>
+        <translation>Savjeti: Kontrolni presjeci su poprečni presjeci čije se središnje točke koriste kao središnja linija rešetke.</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionPoissonGridGenerateDialog</name>
     <message>
         <source>Grid Creation</source>
-        <translation type="unfinished"></translation>
+        <translation>Grid Creation</translation>
     </message>
     <message>
         <source>m</source>
-        <translation type="unfinished"></translation>
+        <translation>m</translation>
     </message>
     <message>
         <source>Max number of iteration:</source>
-        <translation type="unfinished"></translation>
+        <translation>Maksimalan broj ponavljanja:</translation>
     </message>
 </context>
 </TS>

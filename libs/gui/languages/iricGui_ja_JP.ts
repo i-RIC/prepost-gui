@@ -987,6 +987,10 @@ Do you really want to import grid from this file?</source>
         <source>Skip rate :</source>
         <translation>間引き: </translation>
     </message>
+    <message>
+        <source>--</source>
+        <translation>--</translation>
+    </message>
 </context>
 <context>
     <name>ContinuousSnapshotWindowSelectionPage</name>
@@ -1067,7 +1071,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Continuous Snapshot / Movie / Google Earth Export Wizard</source>
-        <translation type="vanished">連続スナップショット / 動画 / Google Earth 出力ウィザード</translation>
+        <translation>連続スナップショット / 動画 / Google Earth 出力ウィザード</translation>
     </message>
 </context>
 <context>
@@ -12716,6 +12720,14 @@ Do you really want to import this file?</source>
         <source>(Not specified)</source>
         <translation>(未設定)</translation>
     </message>
+    <message>
+        <source>Output Setting</source>
+        <translation>出力設定</translation>
+    </message>
+    <message>
+        <source>Output calculation results in separate files</source>
+        <translation>計算結果をタイムステップごとに別のファイルに出力する</translation>
+    </message>
 </context>
 <context>
     <name>ProjectPropertyDialog</name>
@@ -15907,11 +15919,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>iRIC %1</source>
-        <translation>iRIC %1</translation>
+        <translation type="vanished">iRIC %1</translation>
     </message>
     <message>
         <source>%1 - iRIC %2 [%3]</source>
-        <translation>%1 - iRIC %2 [%3]</translation>
+        <translation type="vanished">%1 - iRIC %2 [%3]</translation>
     </message>
     <message>
         <source>No particle is drawn now.</source>
@@ -15971,7 +15983,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>&amp;%1 %2</source>
-        <translation>&amp;%1 %2</translation>
+        <translation type="vanished">&amp;%1 %2</translation>
     </message>
     <message>
         <source>Input new simulation name</source>
@@ -16222,6 +16234,18 @@ Option -&gt; Preferences</source>
     <message>
         <source>Dimension</source>
         <translation>次元</translation>
+    </message>
+    <message>
+        <source>All files in %1 is deleted.</source>
+        <translation>%1 にあるすべてのファイルが削除されます。</translation>
+    </message>
+    <message>
+        <source>%1 %2</source>
+        <translation>%1 %2</translation>
+    </message>
+    <message>
+        <source>%1 - %2 %3 [%4]</source>
+        <translation>%1 - %2 %3 [%4]</translation>
     </message>
 </context>
 <context>
@@ -16691,7 +16715,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Geographic Data (from web)</source>
-        <translation>地理情報 (Webから)</translation>
+        <translation type="vanished">地理情報 (Webから)</translation>
     </message>
     <message>
         <source>&amp;Windows list Toolbar</source>
@@ -17013,6 +17037,18 @@ Option -&gt; Preferences</source>
     <message>
         <source>Main ToolBar</source>
         <translation>メインツールバー</translation>
+    </message>
+    <message>
+        <source>Reload &amp;CGNS file...</source>
+        <translation>CGNSファイルを再読込する (&amp;C)...</translation>
+    </message>
+    <message>
+        <source>Reload CGNS file</source>
+        <translation>CGNSファイルを再読込する</translation>
+    </message>
+    <message>
+        <source>Geographic Data (Elevation from web)</source>
+        <translation>地理情報 (標高をWebから)</translation>
     </message>
 </context>
 </TS>

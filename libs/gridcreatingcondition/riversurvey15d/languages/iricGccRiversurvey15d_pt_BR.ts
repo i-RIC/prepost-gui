@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="pt_BR">
 <context>
     <name>GridCreatingConditionCreatorRiverSurvey15D</name>
@@ -17,17 +15,17 @@
     </message>
     <message>
         <source>Create 1.5D grid from cross-section data</source>
-        <translation type="unfinished"></translation>
+        <translation>Criar grade 1.5D a partir de dados de seção transversal</translation>
     </message>
     <message>
         <source>The grid shape is automatically defined using cross-section data. You can specify the grid division number, by adding grid creation control points on river center.
 Note: This algorithm is available only when cross-section data is loaded!Please switch algorithm to this, after importing cross-section data.
 </source>
-        <translation type="unfinished"></translation>
+        <translation>A forma da grade é definida automaticamente usando dados de seção transversal. Você pode especificar o número da divisão da grade, adicionando pontos de controle de criação da grade no centro do rio. Nota: Este algoritmo está disponível apenas quando os dados da seção transversal são carregados! Mude o algoritmo para este, após importar os dados da seção transversal.</translation>
     </message>
     <message>
         <source>No cross-section data exists in geographic data now. This algorithm is not available.</source>
-        <translation type="unfinished"></translation>
+        <translation>Não existem dados de seção cruzada em dados geográficos agora. Este algoritmo não está disponível.</translation>
     </message>
 </context>
 <context>
@@ -94,7 +92,7 @@ Note: This algorithm is available only when cross-section data is loaded!Please 
     </message>
     <message>
         <source>There is no cross-section data. This grid creating condition is not available.</source>
-        <translation type="unfinished"></translation>
+        <translation>Não há dados de seção transversal. Esta condição de criação de grade não está disponível.</translation>
     </message>
 </context>
 <context>
@@ -221,19 +219,19 @@ Note: This algorithm is available only when cross-section data is loaded!Please 
     </message>
     <message>
         <source>Position value of elevation points:</source>
-        <translation type="unfinished"></translation>
+        <translation>Valor de posição dos pontos de elevação:</translation>
     </message>
     <message>
         <source>Distance from left bank</source>
-        <translation type="unfinished"></translation>
+        <translation>Distância da margem esquerda</translation>
     </message>
     <message>
         <source>Distance from center point</source>
-        <translation type="unfinished"></translation>
+        <translation>Distância do ponto central</translation>
     </message>
     <message>
-        <source>&quot;Left bank&quot; is the bank you see on the left side, when you turn to downstream direction.</source>
-        <translation type="unfinished"></translation>
+        <source>"Left bank" is the bank you see on the left side, when you turn to downstream direction.</source>
+        <translation>"Margem esquerda" é a margem que você vê no lado esquerdo, quando vira para a direção a jusante.</translation>
     </message>
 </context>
 </TS>

@@ -1,194 +1,192 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="eu_ES">
 <context>
     <name>GridCreatingConditionCreatorPoisson</name>
     <message>
         <source>Create grid shape solving Poisson equation</source>
-        <translation type="unfinished"></translation>
+        <translation>Sortu saretaren forma Poissonen ekuazioa ebazteko</translation>
     </message>
     <message>
         <source>You can create smooth grid shape solving poisson equation.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sareta forma leuna sor dezakezu poisson ekuazioa ebazteko.</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionPoisson</name>
     <message>
         <source>Build Left bank and Right bank lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Eraiki Ezkerraldea eta Eskuinaldea</translation>
     </message>
     <message>
         <source>&amp;Add Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Gehitu erpina (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Kendu Vertex (&amp;R)</translation>
     </message>
     <message>
         <source>Import C&amp;enter Line...</source>
-        <translation type="unfinished"></translation>
+        <translation>Inportatu zentro lerroa (&amp;E)...</translation>
     </message>
     <message>
         <source>Export Ce&amp;nter Line...</source>
-        <translation type="unfinished"></translation>
+        <translation>Esportatu zentroaren lerroa (&amp;N)...</translation>
     </message>
     <message>
         <source>Edit Cen&amp;ter Line Coordinates...</source>
-        <translation type="unfinished"></translation>
+        <translation>Editatu erdiko lerroaren koordenatuak (&amp;T)...</translation>
     </message>
     <message>
         <source>Import &amp;Left Bank Line...</source>
-        <translation type="unfinished"></translation>
+        <translation>Inportatu ezkerreko lerroa (&amp;L)...</translation>
     </message>
     <message>
         <source>Export Le&amp;ft Bank Line...</source>
-        <translation type="unfinished"></translation>
+        <translation>Esportatu Ezkerraldeko lerroa (&amp;F)...</translation>
     </message>
     <message>
         <source>Edit Left Bank Line &amp;Coordinates...</source>
-        <translation type="unfinished"></translation>
+        <translation>Editatu Ezkerraldeko lerroaren koordenatuak (&amp;C)...</translation>
     </message>
     <message>
         <source>&amp;Import Right Bank Line...</source>
-        <translation type="unfinished"></translation>
+        <translation>Inportatu eskuineko bankua (&amp;I)...</translation>
     </message>
     <message>
         <source>Export Ri&amp;ght Bank Line...</source>
-        <translation type="unfinished"></translation>
+        <translation>Esportatu eskuineko bankua (&amp;G)...</translation>
     </message>
     <message>
         <source>Edit Rig&amp;ht Bank Line Coordinates...</source>
-        <translation type="unfinished"></translation>
+        <translation>Editatu eskuineko bankuko lerroaren koordenatuak (&amp;H)...</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Abisua</translation>
     </message>
     <message>
         <source>%1 not defined yet</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 oraindik zehaztu gabe</translation>
     </message>
     <message>
         <source>Grid region not defined yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sarearen eskualdea oraindik ez dago zehaztuta.</translation>
     </message>
     <message>
         <source>Center Line is not defined yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Erdiko lerroa ez dago zehaztuta oraindik.</translation>
     </message>
     <message>
         <source>Center line</source>
-        <translation type="unfinished"></translation>
+        <translation>Erdiko lerroa</translation>
     </message>
     <message>
         <source>Left bank line</source>
-        <translation type="unfinished"></translation>
+        <translation>Ezkerraldeko lerroa</translation>
     </message>
     <message>
         <source>Right bank line</source>
-        <translation type="unfinished"></translation>
+        <translation>Eskuineko ertzeko linea</translation>
     </message>
     <message>
         <source>Insert Line Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Txertatu lerroaren erpina</translation>
     </message>
     <message>
         <source>%1 Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 Koordenatuak</translation>
     </message>
     <message>
         <source>Add New Line Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Gehitu lerro puntu berria</translation>
     </message>
     <message>
         <source>Edit %1 Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Editatu %1 Koordenatuak</translation>
     </message>
     <message>
         <source>Finish Defining Polyline</source>
-        <translation type="unfinished"></translation>
+        <translation>Amaitu polilinea definitzen</translation>
     </message>
     <message>
         <source>Move Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Mugitu lerroa</translation>
     </message>
     <message>
         <source>Move Line Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Mugitu lerroaren erpina</translation>
     </message>
     <message>
         <source>Remove Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Kendu Vertex</translation>
     </message>
     <message>
         <source>Cross-section data not found. Please define Center Line by yourself.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ez da zeharkako datuak aurkitu. Mesedez, definitu erdiko lerroa zuk bakarrik.</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionPoisson::Impl</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Abisua</translation>
     </message>
     <message>
         <source>The maximum number of grid nodes is %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sarearen nodoen gehieneko kopurua da %1.</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionPoissonBuildBankLinesDialog</name>
     <message>
         <source>Build Bank Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Eraiki Banku Lerroak</translation>
     </message>
     <message>
         <source>Input the distance from center line</source>
-        <translation type="unfinished"></translation>
+        <translation>Sartu erdiko marratik distantzia</translation>
     </message>
     <message>
         <source>Left bank:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ezkerraldea:</translation>
     </message>
     <message>
         <source>Right bank:</source>
-        <translation type="unfinished"></translation>
+        <translation>Eskuineko ertza:</translation>
     </message>
     <message>
         <source>Hint: Left bank and Right bank lines are created as line that consists of points that are away from center line to direction perpendicular to the center line.</source>
-        <translation type="unfinished"></translation>
+        <translation>Iradokizuna: Ezkerreko ertza eta Eskuineko ertzak lerro gisa sortzen dira, erdiko marratik erdiko marrarekiko perpendikularra den norabidera dauden puntuez osatutako lerro gisa.</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionPoissonCtrlPointsDialog</name>
     <message>
         <source>Specity the Number Of Control Cross Sections</source>
-        <translation type="unfinished"></translation>
+        <translation>Zehaztu Kontrol atalen kopurua</translation>
     </message>
     <message>
         <source>Number of Control Cross Sections:</source>
-        <translation type="unfinished"></translation>
+        <translation>Kontrol atalen kopurua:</translation>
     </message>
     <message>
         <source>Hints: Control Cross Sections are the cross sections whose center points are used as the center line of the grid.</source>
-        <translation type="unfinished"></translation>
+        <translation>Aholkuak: Kontroleko sekzio transversalak, erdiko puntuak sarearen erdiko lerro gisa erabiltzen diren zeharkako atalak dira.</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionPoissonGridGenerateDialog</name>
     <message>
         <source>Grid Creation</source>
-        <translation type="unfinished"></translation>
+        <translation>Sareta sortzea</translation>
     </message>
     <message>
         <source>m</source>
-        <translation type="unfinished"></translation>
+        <translation>m</translation>
     </message>
     <message>
         <source>Max number of iteration:</source>
-        <translation type="unfinished"></translation>
+        <translation>Gehienezko errepikapen kopurua:</translation>
     </message>
 </context>
 </TS>

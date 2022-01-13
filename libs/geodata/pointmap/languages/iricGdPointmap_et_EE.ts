@@ -1,887 +1,885 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="et_EE">
 <context>
     <name>GeoDataPointMapDelPtsLessThanDialog</name>
     <message>
         <source>Delete Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Kustuta punktid</translation>
     </message>
     <message>
         <source>Selected point properties</source>
-        <translation type="unfinished"></translation>
+        <translation>Valitud punkti omadused</translation>
     </message>
     <message>
         <source>Number of Points:</source>
-        <translation type="unfinished"></translation>
+        <translation>Punktide arv:</translation>
     </message>
     <message>
         <source>Minimum:</source>
-        <translation type="unfinished"></translation>
+        <translation>Miinimum:</translation>
     </message>
     <message>
         <source>Maximum:</source>
-        <translation type="unfinished"></translation>
+        <translation>Maksimaalne:</translation>
     </message>
     <message>
         <source>Delete less than value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Kustuta väärtusest vähem:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmap</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Hoiatus</translation>
     </message>
     <message>
         <source>Break line have to have no intersection with other break lines.</source>
-        <translation type="unfinished"></translation>
+        <translation>Murdejoonel ei tohi olla lõikepunkti teiste katkestusjoontega.</translation>
     </message>
     <message>
         <source>Remeshing TINs...</source>
-        <translation type="unfinished"></translation>
+        <translation>TIN -ide eemaldamine...</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Teave</translation>
     </message>
     <message>
         <source>When you switch to this mode, you have to remesh TINs. Do you want to remesh now?</source>
-        <translation type="unfinished"></translation>
+        <translation>Kui lülitate sellele režiimile, peate TIN -id uuesti muutma. Kas soovite nüüd uuendusi teha?</translation>
     </message>
     <message>
         <source>&amp;Add New Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Lisa uus punkt (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Interpolate Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Interpoleeri punkte (&amp;I)</translation>
     </message>
     <message>
         <source>Display &amp;Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Ekraani seadistus (&amp;S)...</translation>
     </message>
     <message>
         <source>Select point</source>
-        <translation type="unfinished"></translation>
+        <translation>Valige punkt</translation>
     </message>
     <message>
         <source>Select Points With &amp;Polygon</source>
-        <translation type="unfinished"></translation>
+        <translation>Valige punktid koos hulknurgaga (&amp;P)</translation>
     </message>
     <message>
         <source>&amp;Edit Selected Points...</source>
-        <translation type="unfinished"></translation>
+        <translation>Muutke valitud punkte (&amp;E)...</translation>
     </message>
     <message>
         <source>Delete Selected P&amp;oints</source>
-        <translation type="unfinished"></translation>
+        <translation>Kustuta valitud punktid (&amp;O)</translation>
     </message>
     <message>
         <source>E&amp;xport Selected Points...</source>
-        <translation type="unfinished"></translation>
+        <translation>Ekspordi valitud punktid (&amp;X)...</translation>
     </message>
     <message>
         <source>Delete Selected Points &amp;Less Than Value...</source>
-        <translation type="unfinished"></translation>
+        <translation>Kustuta valitud punktid alla väärtuse (&amp;L)...</translation>
     </message>
     <message>
         <source>Delete Selected Points &amp;Greater Than Value...</source>
-        <translation type="unfinished"></translation>
+        <translation>Kustuta valitud punktid, mis on väärtusest suuremad (&amp;G)...</translation>
     </message>
     <message>
         <source>Remesh &amp;TINs</source>
-        <translation type="unfinished"></translation>
+        <translation>Remeshi TIN -id (&amp;T)</translation>
     </message>
     <message>
         <source>Add &amp;Break Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Lisa murdejoon (&amp;B)</translation>
     </message>
     <message>
         <source>&amp;Remove Break Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Murdejoone eemaldamine (&amp;R)</translation>
     </message>
     <message>
         <source>Re&amp;move All Break Lines...</source>
-        <translation type="unfinished"></translation>
+        <translation>Eemalda kõik murdejooned (&amp;M)...</translation>
     </message>
     <message>
         <source>Remove Triangles &amp;with Long edge...</source>
-        <translation type="unfinished"></translation>
+        <translation>Eemaldage pika servaga kolmnurgad (&amp;W)...</translation>
     </message>
     <message>
         <source>Are you sure you want to remove this break line?</source>
-        <translation type="unfinished"></translation>
+        <translation>Kas olete kindel, et soovite selle murdejoone eemaldada?</translation>
     </message>
     <message>
         <source>Polygon must have three vertices at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hulknurgal peab olema vähemalt kolm tippu.</translation>
     </message>
     <message>
         <source>Remeshing TINs finished.</source>
-        <translation type="unfinished"></translation>
+        <translation>TIN -ide puhastamine on lõpetatud.</translation>
     </message>
     <message>
         <source>When you add break line, you have to switch to show wireframes. Do you want to switch to show wireframes now?</source>
-        <translation type="unfinished"></translation>
+        <translation>Katkendjoone lisamisel peate lülituma juhtmeraamide kuvamiseks. Kas soovite nüüd juhtmeraamide näitamisele üle minna?</translation>
     </message>
     <message>
         <source>Break line can be defined by mouse-clicking on the points between which you want to add break line. Finish defining by double clicking, or pressing return key.</source>
-        <translation type="unfinished"></translation>
+        <translation>Katkestusjoone saab määrata hiireklõpsuga punktidel, mille vahele soovite murdejoone lisada. Lõpeta määratlemine topeltklõpsuga või vajutades tagasiklahvi.</translation>
     </message>
     <message>
         <source>When you remove break line, you have to switch to show wireframes. Do you want to switch to show wireframes now?</source>
-        <translation type="unfinished"></translation>
+        <translation>Katkestusjoone eemaldamisel peate lülituma traatraamide kuvamiseks. Kas soovite nüüd juhtmeraamide näitamisele üle minna?</translation>
     </message>
     <message>
         <source>Click on the break line you want to remove.</source>
-        <translation type="unfinished"></translation>
+        <translation>Klõpsake murdejoonel, mille soovite eemaldada.</translation>
     </message>
     <message>
         <source>Are you sure you want to remove ALL break lines?</source>
-        <translation type="unfinished"></translation>
+        <translation>Kas olete kindel, et soovite KÕIK murdejooned eemaldada?</translation>
     </message>
     <message>
         <source>When you want to remove triangles with long edges, you have to switch Display Method to Wireframe or Surface. If you press OK button, Display Method is switched to Wireframe</source>
-        <translation type="unfinished"></translation>
+        <translation>Kui soovite eemaldada pikkade servadega kolmnurgad, peate kuvamismeetodi valima Wireframe või Surface. Kui vajutate nuppu OK, lülitatakse kuvamismeetod Wireframe'i</translation>
     </message>
     <message>
         <source>When you edit points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation type="unfinished"></translation>
+        <translation>Punktide redigeerimisel peate lülituma punktide näitamisele. Kas soovite nüüd näitamise punktidele üle minna?</translation>
     </message>
     <message>
         <source>When you delete points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation type="unfinished"></translation>
+        <translation>Punktide kustutamisel peate punktide kuvamiseks üle minema. Kas soovite nüüd näitamise punktidele üle minna?</translation>
     </message>
     <message>
         <source>You can not delete points used for break lines.</source>
-        <translation type="unfinished"></translation>
+        <translation>Murdejoonte jaoks kasutatud punkte ei saa kustutada.</translation>
     </message>
     <message>
         <source>Delete Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Kustuta punktid</translation>
     </message>
     <message>
         <source>Select File to Export</source>
-        <translation type="unfinished"></translation>
+        <translation>Valige Eksporditav fail</translation>
     </message>
     <message>
         <source>Topography File (*.tpo)</source>
-        <translation type="unfinished"></translation>
+        <translation>Topograafiafail (*.tpo)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Viga</translation>
     </message>
     <message>
         <source>Error occured while exporting to %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vea eksportimisel ilmnes viga %1.</translation>
     </message>
     <message>
         <source>Delete points less than %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Kustuta punkte vähem kui %1</translation>
     </message>
     <message>
         <source>Delete points greater than %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Kustutage punktist suuremad punktid %1</translation>
     </message>
     <message>
         <source>When you interpolate points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation type="unfinished"></translation>
+        <translation>Punktide interpoleerimisel peate lülituma punktide näitamisele. Kas soovite nüüd näitamise punktidele üle minna?</translation>
     </message>
     <message>
         <source>To interpolate points, select existing points by mouse-clicking, use Alt to define path between known points, and finish by double-clicking or pressing return key.</source>
-        <translation type="unfinished"></translation>
+        <translation>Punktide interpoleerimiseks valige olemasolevad punktid hiireklõpsuga, kasutage klahvi Alt, et määratleda teadaolevate punktide vaheline tee, ja lõpetage topeltklõpsuga või vajutades tagasiklahvi.</translation>
     </message>
     <message>
         <source>When you add points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation type="unfinished"></translation>
+        <translation>Punktide lisamisel peate lülituma punktide näitamisele. Kas soovite nüüd näitamise punktidele üle minna?</translation>
     </message>
     <message>
         <source>To add new points, select an existing point first. The value at that point will be used as the default value for new points. Then, click at any position you want to add points, and finish by double-clicking of pressing return key.</source>
-        <translation type="unfinished"></translation>
+        <translation>Uute punktide lisamiseks valige esmalt olemasolev punkt. Selle punkti väärtust kasutatakse uute punktide vaikeväärtusena. Seejärel klõpsake mis tahes positsioonil, kuhu soovite punkte lisada, ja lõpetage topeltklõps nupuga Return.</translation>
     </message>
     <message>
         <source>Add Break Line Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Lisa murdejoone punkt</translation>
     </message>
     <message>
         <source>Cancel Defining Break Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Katkesta murdejoone määratlemine</translation>
     </message>
     <message>
         <source>Finish Defining Break Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Lõpeta murdejoone määratlemine</translation>
     </message>
     <message>
         <source>Edit Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Redigeeri punkte</translation>
     </message>
     <message>
         <source>Add New Interp Line Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Lisa uus interp joonepunkt</translation>
     </message>
     <message>
         <source>Remove triangles with long edge</source>
-        <translation type="unfinished"></translation>
+        <translation>Eemaldage pika servaga kolmnurgad</translation>
     </message>
     <message>
         <source>Merge...</source>
-        <translation type="unfinished"></translation>
+        <translation>Ühenda...</translation>
     </message>
     <message>
-        <source>There is no other data to merge in &quot;%1&quot; group.</source>
-        <translation type="unfinished"></translation>
+        <source>There is no other data to merge in "%1" group.</source>
+        <translation>Teisi andmeid ei saa ühendada "%1" Grupp.</translation>
     </message>
     <message>
         <source>%1 duplicate points were found in merge targets, and omitted.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 ühendamise sihtmärkidest leiti topeltpunkte ja need jäeti välja.</translation>
     </message>
     <message>
         <source>You must select one known point, and define at least one location for added points. Do you want to retry, or cancel the operation?</source>
-        <translation type="unfinished"></translation>
+        <translation>Peate valima ühe teadaoleva punkti ja määrama lisatud punktide jaoks vähemalt ühe asukoha. Kas soovite uuesti proovida või tühistada toimingu?</translation>
     </message>
     <message>
         <source>Add Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Lisa punkte</translation>
     </message>
     <message>
         <source>Values of new points</source>
-        <translation type="unfinished"></translation>
+        <translation>Uute punktide väärtused</translation>
     </message>
     <message>
         <source>To interpolate points, you must specify more than two points, and the last point should be existing point. Do you want to retry, or cancel the operation?</source>
-        <translation type="unfinished"></translation>
+        <translation>Punktide interpoleerimiseks peate määrama rohkem kui kaks punkti ja viimane punkt peaks olema olemasolev. Kas soovite uuesti proovida või tühistada toimingu?</translation>
     </message>
     <message>
         <source>P&amp;oint Cloud Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Punktipilve andmed (&amp;O)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapDelPtsGreaterThanDialog</name>
     <message>
         <source>Delete Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Kustuta punktid</translation>
     </message>
     <message>
         <source>Selected point properties</source>
-        <translation type="unfinished"></translation>
+        <translation>Valitud punkti omadused</translation>
     </message>
     <message>
         <source>Number of Points:</source>
-        <translation type="unfinished"></translation>
+        <translation>Punktide arv:</translation>
     </message>
     <message>
         <source>Minimum:</source>
-        <translation type="unfinished"></translation>
+        <translation>Miinimum:</translation>
     </message>
     <message>
         <source>Maximum:</source>
-        <translation type="unfinished"></translation>
+        <translation>Maksimaalne:</translation>
     </message>
     <message>
         <source>Delete greater than value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Kustuta suurem kui väärtus:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapEditPtsDialog</name>
     <message>
         <source>Edit Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Redigeeri punkte</translation>
     </message>
     <message>
         <source>Selected point properties</source>
-        <translation type="unfinished"></translation>
+        <translation>Valitud punkti omadused</translation>
     </message>
     <message>
         <source>Number of Points:</source>
-        <translation type="unfinished"></translation>
+        <translation>Punktide arv:</translation>
     </message>
     <message>
         <source>Minimum:</source>
-        <translation type="unfinished"></translation>
+        <translation>Miinimum:</translation>
     </message>
     <message>
         <source>Maximum:</source>
-        <translation type="unfinished"></translation>
+        <translation>Maksimaalne:</translation>
     </message>
     <message>
         <source>X-location</source>
-        <translation type="unfinished"></translation>
+        <translation>X-asukoht</translation>
     </message>
     <message>
         <source>Y-location</source>
-        <translation type="unfinished"></translation>
+        <translation>Y-asukoht</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation type="unfinished"></translation>
+        <translation>Väärtus</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapInterpolatePoints</name>
     <message>
         <source>Interpolate Increment</source>
-        <translation type="unfinished"></translation>
+        <translation>Interpoleeri juurdekasv</translation>
     </message>
     <message>
         <source>Interpolation Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Interpolatsiooni seadistus</translation>
     </message>
     <message>
         <source>Interpolation Increment:</source>
-        <translation type="unfinished"></translation>
+        <translation>Interpolatsiooni kasv:</translation>
     </message>
     <message>
         <source>Line Length:</source>
-        <translation type="unfinished"></translation>
+        <translation>Liini pikkus:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapInterpolatePointsDialog</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Hoiatus</translation>
     </message>
     <message>
         <source>Interpolation increment must be greater 0 and less than interpolation line length</source>
-        <translation type="unfinished"></translation>
+        <translation>Interpolatsiooni juurdekasv peab olema suurem kui 0 ja väiksem kui interpoleerimisjoone pikkus</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapLandXmlExporter</name>
     <message>
         <source>LandXML</source>
-        <translation type="unfinished"></translation>
+        <translation>LandXML</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Viga</translation>
     </message>
     <message>
         <source>Error occured while exporting to %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Vea eksportimisel ilmnes viga %1</translation>
     </message>
     <message>
         <source>LandXML file (*.xml)</source>
-        <translation type="unfinished"></translation>
+        <translation>LandXML -fail (*.xml)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapLandXmlImporter</name>
     <message>
         <source>LandXML (*.xml)</source>
-        <translation type="unfinished"></translation>
+        <translation>LandXML (*.xml)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Viga</translation>
     </message>
     <message>
         <source>Parse error %1 at line %2 column %3</source>
-        <translation type="unfinished"></translation>
+        <translation>Sõelumisviga %1 joonel %2 veerg %3</translation>
     </message>
     <message>
         <source>LandXML File (*.xml)</source>
-        <translation type="unfinished"></translation>
+        <translation>LandXML -fail (*.xml)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapMergeSettingDialog</name>
     <message>
         <source>Select data to merge</source>
-        <translation type="unfinished"></translation>
+        <translation>Valige ühendatavad andmed</translation>
     </message>
     <message>
         <source>Please select data to merge this group.</source>
-        <translation type="unfinished"></translation>
+        <translation>Valige selle rühma ühendamiseks andmed.</translation>
     </message>
     <message>
         <source>&amp;Select all</source>
-        <translation type="unfinished"></translation>
+        <translation>Vali kõik (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;Unselect all</source>
-        <translation type="unfinished"></translation>
+        <translation>Tühista kõigi valik (&amp;U)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapRealCreator</name>
     <message>
         <source>Point Cloud Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Punktipilve andmed</translation>
     </message>
     <message>
         <source>Point Cloud Data%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Punktipilve andmed %1</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapRealExporter</name>
     <message>
         <source>Topography File (*.tpo)</source>
-        <translation type="unfinished"></translation>
+        <translation>Topograafiafail (*.tpo)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Viga</translation>
     </message>
     <message>
         <source>Error occured while exporting to %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vea eksportimisel ilmnes viga %1.</translation>
     </message>
     <message>
         <source>Point Cloud Data (DEM etc.)</source>
-        <translation type="unfinished"></translation>
+        <translation>Punktipilveandmed (DEM jne)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapRealImporter</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Viga</translation>
     </message>
     <message>
         <source>File open error occured while opening %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Faili avamisel ilmnes viga avamisel %1.</translation>
     </message>
     <message>
         <source>DEM etc. (*.tpo)</source>
-        <translation type="unfinished"></translation>
+        <translation>DEM jne. (*.tpo)</translation>
     </message>
     <message>
         <source>Topography File (*.tpo)</source>
-        <translation type="unfinished"></translation>
+        <translation>Topograafiafail (*.tpo)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapRealImporterFilterDialog</name>
     <message>
         <source>Filtering Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Filtreerimise seadistus</translation>
     </message>
     <message>
         <source>If you want to filter the dataset, specify value more than 1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kui soovite andmekogumit filtreerida, määrake väärtus üle 1.</translation>
     </message>
     <message>
         <source>Filter:</source>
-        <translation type="unfinished"></translation>
+        <translation>Filter:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapRealTextImporter</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Viga</translation>
     </message>
     <message>
         <source>File open error occured while opening %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Faili avamisel ilmnes viga avamisel %1.</translation>
     </message>
     <message>
         <source>Not enough header lines found in the file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Failist ei leitud piisavalt päise ridu.</translation>
     </message>
     <message>
         <source>Line %1: %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Rida %1 : %2</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Hoiatus</translation>
     </message>
     <message>
         <source>%1 duplicate points found. If points with same x and y values found, the first point is imported</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 leitud topeltpunkte. Kui leitakse samade x ja y väärtustega punkte, imporditakse esimene punkt</translation>
     </message>
     <message>
         <source>At column %1, %2 or %3 expected, but %4 specified.</source>
-        <translation type="unfinished"></translation>
+        <translation>Veeru juures %1, %2 või %3 oodatud, aga %4 täpsustatud.</translation>
     </message>
     <message>
         <source>At column %1, delimiter expected, but %2 specified.</source>
-        <translation type="unfinished"></translation>
+        <translation>Veeru juures %1, eraldaja oodatud, kuid %2 täpsustatud.</translation>
     </message>
     <message>
         <source>x</source>
-        <translation type="unfinished"></translation>
+        <translation>x</translation>
     </message>
     <message>
         <source>y</source>
-        <translation type="unfinished"></translation>
+        <translation>y</translation>
     </message>
     <message>
         <source>value</source>
-        <translation type="unfinished"></translation>
+        <translation>väärtus</translation>
     </message>
     <message>
         <source>No delimiter specified</source>
-        <translation type="unfinished"></translation>
+        <translation>Eraldajat pole täpsustatud</translation>
     </message>
     <message>
-        <source>Not enough values to read &quot;%1&quot;. &quot;%1&quot; column is %2 but %3 values input.</source>
-        <translation type="unfinished"></translation>
+        <source>Not enough values to read "%1". "%1" column is %2 but %3 values input.</source>
+        <translation>Lugemiseks pole piisavalt väärtusi "%1"". %1 "veerg on %2 aga %3 sisendväärtused.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;%1&quot; value. &quot;%1&quot; value should be real number, but &quot;%2&quot; specified.</source>
-        <translation type="unfinished"></translation>
+        <source>Error occured while reading "%1" value. "%1" value should be real number, but "%2" specified.</source>
+        <translation>Lugemisel ilmnes viga "%1"väärtus". %1 "väärtus peaks olema reaalarv, kuid"%2"täpsustatud.</translation>
     </message>
     <message>
         <source>Text files (CSV, TSV, etc.)</source>
-        <translation type="unfinished"></translation>
+        <translation>Tekstifailid (CSV, TSV jne)</translation>
     </message>
     <message>
         <source>Text file (*.csv *.txt *.xyz)</source>
-        <translation type="unfinished"></translation>
+        <translation>Tekstifail (*.csv *.txt *.xyz)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapRealTextImporter_SettingDialog</name>
     <message>
         <source>Import Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Impordi seade</translation>
     </message>
     <message>
         <source>Encoding:</source>
-        <translation type="unfinished"></translation>
+        <translation>Kodeerimine:</translation>
     </message>
     <message>
         <source>File Format</source>
-        <translation type="unfinished"></translation>
+        <translation>Failiformaat</translation>
     </message>
     <message>
         <source>CSV (Comma separated values)</source>
-        <translation type="unfinished"></translation>
+        <translation>CSV (komaga eraldatud väärtused)</translation>
     </message>
     <message>
         <source>Delimiters</source>
-        <translation type="unfinished"></translation>
+        <translation>Eraldajad</translation>
     </message>
     <message>
         <source>Comma</source>
-        <translation type="unfinished"></translation>
+        <translation>Koma</translation>
     </message>
     <message>
         <source>Tab</source>
-        <translation type="unfinished"></translation>
+        <translation>Tab</translation>
     </message>
     <message>
         <source>Space</source>
-        <translation type="unfinished"></translation>
+        <translation>Kosmos</translation>
     </message>
     <message>
         <source>Colon</source>
-        <translation type="unfinished"></translation>
+        <translation>Koolon</translation>
     </message>
     <message>
         <source>Semicolon</source>
-        <translation type="unfinished"></translation>
+        <translation>Semikoolon</translation>
     </message>
     <message>
         <source>Other</source>
-        <translation type="unfinished"></translation>
+        <translation>Muu</translation>
     </message>
     <message>
         <source>Special characters</source>
-        <translation type="unfinished"></translation>
+        <translation>Erilised tegelased</translation>
     </message>
     <message>
         <source>Quote character:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tsitaadi tegelane:</translation>
     </message>
     <message>
-        <source>&quot;</source>
-        <translation type="unfinished"></translation>
+        <source>"</source>
+        <translation>"</translation>
     </message>
     <message>
         <source>When you want to specify multiple quote characters, please just input the characters only, no spaces or commas.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kui soovite määrata mitu hinnapakkumise märki, sisestage ainult tähemärgid, tühikuid ja komasid ei tohi olla.</translation>
     </message>
     <message>
         <source>Escape character:</source>
-        <translation type="unfinished"></translation>
+        <translation>Põgenemise tegelane:</translation>
     </message>
     <message>
         <source>\</source>
-        <translation type="unfinished"></translation>
+        <translation>\</translation>
     </message>
     <message>
         <source>Record options</source>
-        <translation type="unfinished"></translation>
+        <translation>Salvestusvalikud</translation>
     </message>
     <message>
         <source>Header lines to ignore</source>
-        <translation type="unfinished"></translation>
+        <translation>Päiseread, mida eirata</translation>
     </message>
     <message>
         <source>First header line contains field names</source>
-        <translation type="unfinished"></translation>
+        <translation>Esimene päiserea sisaldab väljade nimesid</translation>
     </message>
     <message>
         <source>Select fields</source>
-        <translation type="unfinished"></translation>
+        <translation>Valige väljad</translation>
     </message>
     <message>
         <source>X:</source>
-        <translation type="unfinished"></translation>
+        <translation>X:</translation>
     </message>
     <message>
         <source>Y:</source>
-        <translation type="unfinished"></translation>
+        <translation>Y:</translation>
     </message>
     <message>
         <source>Value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Väärtus:</translation>
     </message>
     <message>
         <source>Skip setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Jäta seadistus vahele</translation>
     </message>
     <message>
         <source>Skip rate:</source>
-        <translation type="unfinished"></translation>
+        <translation>Vahelejätmise määr:</translation>
     </message>
     <message>
         <source>Preview</source>
-        <translation type="unfinished"></translation>
+        <translation>Eelvaade</translation>
     </message>
     <message>
         <source>Custom delimited text</source>
-        <translation type="unfinished"></translation>
+        <translation>Kohandatud eraldatud tekst</translation>
     </message>
     <message>
         <source>The character to escape quote characters in quoted text. You can specify only one character.</source>
-        <translation type="unfinished"></translation>
+        <translation>Märk, millest pääseda tsiteeritud tekstis tsiteerivate märkide eest. Saate määrata ainult ühe märgi.</translation>
     </message>
     <message>
         <source>When you want to skip lines in the file, please specify values larger than 1. For example, if you input 2, every other line is imported.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kui soovite failis ridu vahele jätta, määrake väärtused, mis on suuremad kui 1. Näiteks kui sisestate 2, imporditakse iga teine rida.</translation>
     </message>
     <message>
         <source>File name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Faili nimi:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapRepresentationDialog</name>
     <message>
         <source>Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Ekraani seadistus</translation>
     </message>
     <message>
         <source>Display Method</source>
-        <translation type="unfinished"></translation>
+        <translation>Kuvamismeetod</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Punktid</translation>
     </message>
     <message>
         <source>Wireframe</source>
-        <translation type="unfinished"></translation>
+        <translation>Traatraam</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation type="unfinished"></translation>
+        <translation>Pind</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Punkti suurus:</translation>
     </message>
     <message>
         <source>Hide Break Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Peida murdejooned</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapSTLExporter</name>
     <message>
         <source>Stereolithography (STL)</source>
-        <translation type="unfinished"></translation>
+        <translation>Stereolitograafia (STL)</translation>
     </message>
     <message>
         <source>Binary STL (*.stl)</source>
-        <translation type="unfinished"></translation>
+        <translation>Binaarne STL (*.stl)</translation>
     </message>
     <message>
         <source>ASCII STL (*.stl)</source>
-        <translation type="unfinished"></translation>
+        <translation>ASCII STL (*.stl)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapSTLImporter</name>
     <message>
         <source>Stereolithography (STL)</source>
-        <translation type="unfinished"></translation>
+        <translation>Stereolitograafia (STL)</translation>
     </message>
     <message>
         <source>Stereolithography file (*.stl)</source>
-        <translation type="unfinished"></translation>
+        <translation>Stereolitograafia fail (*.stl)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Viga</translation>
     </message>
     <message>
         <source>File open error occured while opening %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Faili avamisel ilmnes viga avamisel %1.</translation>
     </message>
     <message>
         <source>solid</source>
-        <translation type="unfinished"></translation>
+        <translation>tahke</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapTINCreator</name>
     <message>
         <source>TIN</source>
-        <translation type="unfinished"></translation>
+        <translation>TIN</translation>
     </message>
     <message>
         <source>Point Cloud Data%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Punktipilve andmed %1</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapVTKExporter</name>
     <message>
         <source>Pointset (DEM etc.)</source>
-        <translation type="unfinished"></translation>
+        <translation>Pointset (DEM jne)</translation>
     </message>
     <message>
         <source>VTK File (*.vtk)</source>
-        <translation type="unfinished"></translation>
+        <translation>VTK fail (*.vtk)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapWebImporter</name>
     <message>
         <source>Web CSV tile</source>
-        <translation type="unfinished"></translation>
+        <translation>Veebi CSV -paan</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Viga</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapWebImporterRegionSelectDialog</name>
     <message>
         <source>Select Region</source>
-        <translation type="unfinished"></translation>
+        <translation>Valige piirkond</translation>
     </message>
     <message>
         <source>Background Image:</source>
-        <translation type="unfinished"></translation>
+        <translation>Taustapilt:</translation>
     </message>
     <message>
         <source>Zoom &amp;In</source>
-        <translation type="unfinished"></translation>
+        <translation>Suurenda (&amp;I)</translation>
     </message>
     <message>
         <source>Zoom &amp;Out</source>
-        <translation type="unfinished"></translation>
+        <translation>Suumi välja (&amp;O)</translation>
     </message>
     <message>
         <source>&amp;Next</source>
-        <translation type="unfinished"></translation>
+        <translation>Edasi (&amp;N)</translation>
     </message>
     <message>
         <source>&amp;Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>Tühista (&amp;C)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Hoiatus</translation>
     </message>
     <message>
         <source>Region to import data is not selected yet. Please left drag on the map to select area.</source>
-        <translation type="unfinished"></translation>
+        <translation>Andmete importimise piirkond pole veel valitud. Piirkonna valimiseks lohistage kaardil vasakule.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapWebImporterSettingManager</name>
     <message>
         <source>USGS elevation tiles (SRTM)</source>
-        <translation type="unfinished"></translation>
+        <translation>USGS kõrgusplaadid (SRTM)</translation>
     </message>
     <message>
         <source>GSI elevation tiles (DEM5A)</source>
-        <translation type="unfinished"></translation>
+        <translation>GSI kõrgusplaadid (DEM5A)</translation>
     </message>
     <message>
         <source>GSI elevation tiles (DEM5B)</source>
-        <translation type="unfinished"></translation>
+        <translation>GSI kõrgusplaadid (DEM5B)</translation>
     </message>
     <message>
         <source>GSI elevation tiles (DEM10B)</source>
-        <translation type="unfinished"></translation>
+        <translation>GSI kõrgusplaadid (DEM10B)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapWebImporterZoomLevelDialog</name>
     <message>
         <source>Zoom Level Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Suumi taseme seadistamine</translation>
     </message>
     <message>
         <source>Specify the zoom level of data you want to import.</source>
-        <translation type="unfinished"></translation>
+        <translation>Määrake imporditavate andmete suumi tase.</translation>
     </message>
     <message>
         <source>Zoom level:</source>
-        <translation type="unfinished"></translation>
+        <translation>Suumi tase:</translation>
     </message>
     <message>
         <source>Resolution:</source>
-        <translation type="unfinished"></translation>
+        <translation>Resolutsioon:</translation>
     </message>
     <message>
         <source>xx m</source>
-        <translation type="unfinished"></translation>
+        <translation>xx m</translation>
     </message>
     <message>
         <source>Data size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Andmete suurus:</translation>
     </message>
     <message>
         <source>XX kB (XXXX points)</source>
-        <translation type="unfinished"></translation>
+        <translation>XX kB (XXXX punkti)</translation>
     </message>
     <message>
         <source>Source:</source>
-        <translation type="unfinished"></translation>
+        <translation>Allikas:</translation>
     </message>
     <message>
         <source>%1 KB</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 KB</translation>
     </message>
     <message>
         <source>%1 MB</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 MB</translation>
     </message>
     <message>
         <source> (%1 points)</source>
-        <translation type="unfinished"></translation>
+        <translation>( %1 punkti)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmap_TrianglesWithLongEdgeRemover_Dialog</name>
     <message>
         <source>Remove Triangles with Long Edge</source>
-        <translation type="unfinished"></translation>
+        <translation>Eemaldage pika servaga kolmnurgad</translation>
     </message>
     <message>
         <source>Limit edge length:</source>
-        <translation type="unfinished"></translation>
+        <translation>Piira serva pikkust:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Märkus &lt;/span&gt;: Kui klõpsate nupul Rakenda, värvitakse eemaldatavad kolmnurgad tumedaga hall. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
 </context>
 </TS>

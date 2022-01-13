@@ -76,12 +76,12 @@
     <message>
         <source>This CGNS file is created for %1 version %2. It is not compatible with the current solver. Maybe only some part of the grid will be imported.
 Do you really want to import grid from this file?</source>
-        <translation type="unfinished"></translation>
+        <translation>Este arquivo CGNS foi criado para %1 versão %2. Não é compatível com o solucionador atual. Talvez apenas uma parte da grade seja importada. Você realmente deseja importar a grade deste arquivo?</translation>
     </message>
     <message>
         <source>This CGNS file does not have solver information. We can not check whether this CGNS file is compatible with the solver. If it is not compatible, maybe only some part of the grid will be imported.
 Do you really want to import grid from this file?</source>
-        <translation type="unfinished"></translation>
+        <translation>Este arquivo CGNS não contém informações do solucionador. Não podemos verificar se este arquivo CGNS é compatível com o solver. Se não for compatível, talvez apenas alguma parte da grade seja importada. Você realmente deseja importar a grade deste arquivo?</translation>
     </message>
     <message>
         <source>This CGNS file is created for %1 version %2. It is not compatible with the current solver. Maybe only some part of the grid will be imported.</source>
@@ -94,6 +94,18 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>This CGNS file does not have solver information. We can not check whether this CGNS file is compatible with the solver. If it is not compatible, maybe only some part of the grid will be imported.</source>
         <translation type="vanished">Devido a que este arquivo CGNS nao contem as informacoes do solucionador, nao podemos confirmar se o mesmo sera compativel com o atual solucionador. Se voce importar a grade de um arquivo CGNS incompativel, somente uma parte dos atributos da grade podera ser importada.</translation>
+    </message>
+    <message>
+        <source>This file does not contain grid that can be imported.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select grid</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select grid to import.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -244,11 +256,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Delete &amp;Selected...</source>
-        <translation type="unfinished"></translation>
+        <translation>Apagar Selecionado (&amp;S)...</translation>
     </message>
     <message>
         <source>Delete &amp;All...</source>
-        <translation type="unfinished">Excluir todos (&amp;A)...</translation>
+        <translation>Apagar tudo (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Delete...</source>
@@ -268,23 +280,23 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished">Informacao</translation>
+        <translation>Em formação</translation>
     </message>
     <message>
         <source>There is no boundary condition.</source>
-        <translation type="unfinished"></translation>
+        <translation>Não há condição de limite.</translation>
     </message>
     <message>
         <source>Delete selected boundary conditions</source>
-        <translation type="unfinished"></translation>
+        <translation>Excluir condições de limite selecionadas</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Atencao</translation>
+        <translation>Aviso</translation>
     </message>
     <message>
         <source>Are you sure you want to delete all boundary conditions?</source>
-        <translation type="unfinished"></translation>
+        <translation>Tem certeza de que deseja excluir todas as condições de limite?</translation>
     </message>
 </context>
 <context>
@@ -314,19 +326,19 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished">Informacao</translation>
+        <translation>Em formação</translation>
     </message>
     <message>
         <source>There is no boundary condition setting.</source>
-        <translation type="unfinished"></translation>
+        <translation>Não há configuração de condição de limite.</translation>
     </message>
     <message>
         <source>Delete selected boundary condition settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Excluir configurações de condição de limite selecionadas</translation>
     </message>
     <message>
         <source>Are you sure you want to delete all boundary condition settings?</source>
-        <translation type="unfinished"></translation>
+        <translation>Tem certeza de que deseja excluir todas as configurações de condição de limite?</translation>
     </message>
     <message>
         <source>Add %1</source>
@@ -360,23 +372,23 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Delete &amp;Selected...</source>
-        <translation type="unfinished"></translation>
+        <translation>Apagar Selecionado (&amp;S)...</translation>
     </message>
     <message>
         <source>Delete &amp;All...</source>
-        <translation type="unfinished">Excluir todos (&amp;A)...</translation>
+        <translation>Apagar tudo (&amp;A)...</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished">Informacao</translation>
+        <translation>Em formação</translation>
     </message>
     <message>
         <source>There is no background image.</source>
-        <translation type="unfinished"></translation>
+        <translation>Não há imagem de fundo.</translation>
     </message>
     <message>
         <source>Delete selected background images</source>
-        <translation type="unfinished"></translation>
+        <translation>Excluir imagens de fundo selecionadas</translation>
     </message>
     <message>
         <source>&amp;Delete All</source>
@@ -411,11 +423,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Select case</source>
-        <translation>Selecionar o caso de calculo</translation>
+        <translation type="vanished">Selecionar o caso de calculo</translation>
     </message>
     <message>
         <source>Please select from which case in %1 to import calculation conditions.</source>
-        <translation>Para importar a condicao de calculo, selecione qual caso dos calculos  dentro de %1.</translation>
+        <translation type="vanished">Para importar a condicao de calculo, selecione qual caso dos calculos  dentro de %1.</translation>
     </message>
     <message>
         <source>Success</source>
@@ -447,7 +459,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>All importable files(*.cgn *.cgns *.ipro *.yml);;iRIC project file (*.ipro);;CGNS file (*.cgn *.cgns);;YAML file (*.yml)</source>
-        <translation type="unfinished"></translation>
+        <translation>Todos os arquivos importáveis (*.cgn *.cgns *.ipro *.yml);;iRIC project file (*.ipro);;CGNS file (*.cgn *.cgns);;YAML file (*.yml)</translation>
     </message>
     <message>
         <source>CGNS file (*.cgns);;YAML file (*.yml)</source>
@@ -487,7 +499,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>P&amp;ointset Data</source>
-        <translation>Dados DEM (&amp;O)</translation>
+        <translation type="vanished">Dados DEM (&amp;O)</translation>
     </message>
     <message>
         <source>&amp;Polygon</source>
@@ -611,19 +623,19 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>&amp;Cross-Section Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Dados de seção transversal (&amp;C)</translation>
     </message>
     <message>
         <source>&amp;Polygons</source>
-        <translation type="unfinished"></translation>
+        <translation>Polígonos (&amp;P)</translation>
     </message>
     <message>
         <source>&amp;Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Linhas (&amp;L)</translation>
     </message>
     <message>
         <source>P&amp;oint Cloud Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Point Cloud Data (&amp;O)</translation>
     </message>
 </context>
 <context>
@@ -642,7 +654,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation type="unfinished"></translation>
+        <translation>Importar (&amp;I)</translation>
     </message>
 </context>
 <context>
@@ -672,7 +684,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>&amp;Import from web...</source>
-        <translation>Importar (&amp; de Web)</translation>
+        <translation type="vanished">Importar (&amp; de Web)</translation>
     </message>
     <message>
         <source>Delete &amp;All...</source>
@@ -692,7 +704,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Delete &amp;Selected...</source>
-        <translation type="unfinished"></translation>
+        <translation>Apagar Selecionado (&amp;S)...</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -757,7 +769,7 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Specified file has invalid data, and those were ignored. Ignored data is as follows:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>O arquivo especificado contém dados inválidos e foram ignorados. Os dados ignorados são os seguintes: %1</translation>
     </message>
     <message>
         <source>Specified file has invalid data, and those were ignored. Ignored data is as follows:</source>
@@ -793,11 +805,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>There is no geographic data.</source>
-        <translation type="unfinished"></translation>
+        <translation>Não há dados geográficos.</translation>
     </message>
     <message>
         <source>Delete selected geograhic data</source>
-        <translation type="unfinished"></translation>
+        <translation>Excluir dados geográficos selecionados</translation>
     </message>
     <message>
         <source>Are you sure you want to delete all items in %1 group?</source>
@@ -805,6 +817,10 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>&amp;Import</source>
+        <translation>Importar (&amp;I)</translation>
+    </message>
+    <message>
+        <source>&amp;Import Elevation from web...</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -835,7 +851,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>All importable files (%1)</source>
-        <translation type="unfinished">Todos os arquivos importaveis (%1)</translation>
+        <translation>Todos os arquivos importáveis (%1)</translation>
     </message>
     <message>
         <source>Select file to import</source>
@@ -898,63 +914,63 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Edit value by specifying difference...</source>
-        <translation type="unfinished"></translation>
+        <translation>Edite o valor especificando a diferença...</translation>
     </message>
     <message>
         <source>Edit value by specifying ratio...</source>
-        <translation type="unfinished"></translation>
+        <translation>Edite o valor especificando a proporção...</translation>
     </message>
     <message>
         <source>difference</source>
-        <translation type="unfinished"></translation>
+        <translation>diferença</translation>
     </message>
     <message>
         <source>ratio</source>
-        <translation type="unfinished"></translation>
+        <translation>Razão</translation>
     </message>
     <message>
         <source>Apply %1 to %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Aplicar %1 para %2</translation>
     </message>
     <message>
         <source>Input the %1 of %2 at the selected grid cells.</source>
-        <translation type="unfinished"></translation>
+        <translation>Insira o %1 do %2 nas células da grade selecionadas.</translation>
     </message>
     <message>
         <source>Export...</source>
-        <translation type="unfinished">Exportar...</translation>
+        <translation>Exportar...</translation>
     </message>
     <message>
         <source>Topography File (*.tpo)</source>
-        <translation type="unfinished">Dados de terreno  (*.tpo)</translation>
+        <translation>Arquivo de Topografia (*.tpo)</translation>
     </message>
     <message>
         <source>Export as Topography Data</source>
-        <translation type="unfinished">Exportar como os dados topograficos</translation>
+        <translation>Exportar como dados de topografia</translation>
     </message>
     <message>
         <source>Error occured while opening the file.</source>
-        <translation type="unfinished">Ocorreu um erro ao abrir o arquivo. </translation>
+        <translation>Ocorreu um erro ao abrir o arquivo.</translation>
     </message>
     <message>
         <source>Grid condition successfully exported to %1.</source>
-        <translation type="unfinished">Atributo da grade foi exportado para %1 .</translation>
+        <translation>Condição de grade exportada com sucesso para %1.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Erro</translation>
+        <translation>Erro</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished">Informacao</translation>
+        <translation>Em formação</translation>
     </message>
     <message>
         <source>%1 generated.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 gerado.</translation>
     </message>
     <message>
         <source>Generate point cloud data</source>
-        <translation type="unfinished"></translation>
+        <translation>Gerar dados de nuvem de pontos</translation>
     </message>
 </context>
 <context>
@@ -1019,7 +1035,7 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Os seguintes atributos não foram mapeados, pois os valores de saída do gerador de grade para eles. Se você deseja mapear dados geográficos para eles à força, mapeie manualmente com o menu &quot;Grade&quot; -&gt; &quot;Mapeamento de atributos&quot; -&gt; &quot;Executar&quot;.</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -1047,11 +1063,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation type="unfinished"></translation>
+        <translation>O atributo de grade &quot;%1&quot;é editado manualmente. Ao executar o mapeamento, todas as modificações feitas serão descartadas. Deseja realmente executar o mapeamento?</translation>
     </message>
     <message>
         <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation type="unfinished"></translation>
+        <translation>A condição de limite &quot;%1&quot;é editado manualmente. Ao executar o mapeamento, todas as modificações feitas serão descartadas. Deseja realmente executar o mapeamento?</translation>
     </message>
 </context>
 <context>
@@ -1074,7 +1090,7 @@ Do you really want to import grid from this file?</source>
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p, li {espaço em branco: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margem -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Quando a grade é criada, é perguntado se para executar o Mapeamento de Atributos todas as vezes. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Manual</source>
@@ -1103,7 +1119,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Find geographic data points that are near to the grid nodes, regarding the grid cell shapes, and use the values at those points for interpolation.
 This algorithm can be used only for structured grids.</source>
-        <translation type="unfinished"></translation>
+        <translation>Encontre pontos de dados geográficos próximos aos nós da grade, em relação às formas das células da grade, e use os valores nesses pontos para interpolação. Este algoritmo pode ser usado apenas para grades estruturadas.</translation>
     </message>
     <message>
         <source>Find geographic data points that are near to the grid nodes, regarding the grid cell shapes, and use the values at those points for interpolation.</source>
@@ -1198,35 +1214,35 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Edit value by specifying difference...</source>
-        <translation type="unfinished"></translation>
+        <translation>Edite o valor especificando a diferença...</translation>
     </message>
     <message>
         <source>Edit value by specifying ratio...</source>
-        <translation type="unfinished"></translation>
+        <translation>Edite o valor especificando a proporção...</translation>
     </message>
     <message>
         <source>difference</source>
-        <translation type="unfinished"></translation>
+        <translation>diferença</translation>
     </message>
     <message>
         <source>ratio</source>
-        <translation type="unfinished"></translation>
+        <translation>Razão</translation>
     </message>
     <message>
         <source>Apply %1 to %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Aplicar %1 para %2</translation>
     </message>
     <message>
         <source>Input the %1 of %2 at the selected grid nodes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Insira o %1 do %2 nos nós da grade selecionados.</translation>
     </message>
     <message>
         <source>%1 generated.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 gerado.</translation>
     </message>
     <message>
         <source>Generate point cloud data</source>
-        <translation type="unfinished"></translation>
+        <translation>Gerar dados de nuvem de pontos</translation>
     </message>
 </context>
 <context>
@@ -1655,7 +1671,7 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Specified file has invalid data, and those were ignored. Ignored data is as follows:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>O arquivo especificado contém dados inválidos e foram ignorados. Os dados ignorados são os seguintes: %1</translation>
     </message>
     <message>
         <source>Specified file has invalid data, and those were ignored. Ignored data is as follows:</source>
@@ -1725,31 +1741,31 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Delete &amp;Selected...</source>
-        <translation type="unfinished"></translation>
+        <translation>Apagar Selecionado (&amp;S)...</translation>
     </message>
     <message>
         <source>Delete &amp;All...</source>
-        <translation type="unfinished">Excluir todos (&amp;A)...</translation>
+        <translation>Apagar tudo (&amp;A)...</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished">Informacao</translation>
+        <translation>Em formação</translation>
     </message>
     <message>
         <source>There is no measured data.</source>
-        <translation type="unfinished"></translation>
+        <translation>Não há dados medidos.</translation>
     </message>
     <message>
         <source>Delete selected measured data</source>
-        <translation type="unfinished"></translation>
+        <translation>Excluir dados medidos selecionados</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Atencao</translation>
+        <translation>Aviso</translation>
     </message>
     <message>
         <source>Are you sure you want to delete all measured data?</source>
-        <translation type="unfinished"></translation>
+        <translation>Tem certeza de que deseja excluir todos os dados medidos?</translation>
     </message>
 </context>
 <context>

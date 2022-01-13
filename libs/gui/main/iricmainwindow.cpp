@@ -583,6 +583,17 @@ bool iRICMainWindow::cuiMode() const
 	return m_cuiMode;
 }
 
+void iRICMainWindow::reloadCgnsFile()
+{
+	if (isSolverRunning()) {
+		warnSolverRunning();
+		return;
+	}
+
+	m_projectData->mainfile()->closeCgnsFile();
+	m_projectData->mainfile()->loadFromCgnsFile();
+}
+
 bool iRICMainWindow::closeProject()
 {
 	if (m_projectData == nullptr) {return true;}
@@ -792,7 +803,8 @@ bool iRICMainWindow::saveProject(const QString& filename, bool folder)
 			int ier = mainfile->updateCgnsFileOtherThanGrids();
 			ret = (ier == IRIC_NO_ERROR);
 		}
-		if (ret) {ret = m_projectData->mainfile()->saveExceptCGNS();}
+		if (ret) {ret = mainfile->saveExceptCGNS();}
+		if (ret) {mainfile->setModified(false);}
 	}
 
 	if (! ret) {
@@ -1741,7 +1753,7 @@ void iRICMainWindow::restoreWindowState()
 	unsigned int state = settings.value("general/windowstate", Qt::WindowNoState).value<unsigned int>();
 	setWindowState(static_cast<Qt::WindowStates>(state));
 	QByteArray state2 = settings.value("general/windowstate2").value<QByteArray>();
-	restoreState(state2);
+	// restoreState(state2);
 	if (! isMaximized()) {
 		QSize size = settings.value("general/windowsize", QSize(640, 480)).value<QSize>();
 		resize(size);

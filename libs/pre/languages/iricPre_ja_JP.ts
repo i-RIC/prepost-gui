@@ -97,6 +97,18 @@ Do you really want to import grid from this file?</source>
         <translation>この CGNS ファイルはソルバー情報を持っていないため、現在使用しているソルバーと互換性があるか確認できません。互換性のない CGNS ファイルから格子を読み込んだ場合、格子の属性の一部のみがインポートされることがあります。
 この CGNS ファイルから格子をインポートしますか?</translation>
     </message>
+    <message>
+        <source>This file does not contain grid that can be imported.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select grid</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select grid to import.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GridAttributeGeneratorLauncher</name>
@@ -421,11 +433,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Select case</source>
-        <translation>計算ケースの選択</translation>
+        <translation type="vanished">計算ケースの選択</translation>
     </message>
     <message>
         <source>Please select from which case in %1 to import calculation conditions.</source>
-        <translation>%1 内のどの計算ケースから計算条件をインポートするか選択してください。</translation>
+        <translation type="vanished">%1 内のどの計算ケースから計算条件をインポートするか選択してください。</translation>
     </message>
     <message>
         <source>Success</source>
@@ -505,7 +517,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>P&amp;ointset Data</source>
-        <translation>DEMデータ(&amp;O)</translation>
+        <translation type="vanished">DEMデータ(&amp;O)</translation>
     </message>
     <message>
         <source>&amp;Polygon Group</source>
@@ -730,7 +742,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>&amp;Import from web...</source>
-        <translation>インポート (&amp;Webから)</translation>
+        <translation type="vanished">インポート (&amp;Webから)</translation>
     </message>
     <message>
         <source>Delete &amp;All...</source>
@@ -873,6 +885,10 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>&amp;Import</source>
         <translation>インポート (&amp;I)</translation>
+    </message>
+    <message>
+        <source>&amp;Import Elevation from web...</source>
+        <translation>Webから標高をインポート...</translation>
     </message>
 </context>
 <context>

@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="es_ES">
 <context>
     <name>GeoDataPolygon</name>
@@ -21,7 +19,7 @@
     </message>
     <message>
         <source>polygon</source>
-        <translation type="unfinished"></translation>
+        <translation>polígono</translation>
     </message>
     <message>
         <source>Polygon</source>
@@ -81,7 +79,7 @@
     </message>
     <message>
         <source>Please define hole region. Hole region can be defined as polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
-        <translation>Define region del agujero. Region del agujero puede ser definido como poligono con mouse-clic. Termina definando con doble clicking, o presionando &quot;Enter&quot;.</translation>
+        <translation>Define region del agujero. Region del agujero puede ser definido como poligono con mouse-clic. Termina definando con doble clicking, o presionando "Enter".</translation>
     </message>
     <message>
         <source>Are you sure you want to remove this polygon?</source>
@@ -89,7 +87,7 @@
     </message>
     <message>
         <source>Please define polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
-        <translation>Define poligono con mouse-clic. Termina definando con doble clic, o presionando &quot;Enter&quot;.</translation>
+        <translation>Define poligono con mouse-clic. Termina definando con doble clic, o presionando "Enter".</translation>
     </message>
     <message>
         <source>Polygon value change</source>
@@ -120,7 +118,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Color</translation>
     </message>
     <message>
         <source>Color by value</source>
@@ -146,15 +144,15 @@
     <name>GeoDataPolygonImporter</name>
     <message>
         <source>ESRI Shapefile (Polygon)</source>
-        <translation type="unfinished"></translation>
+        <translation>Shapefile ESRI (polígono)</translation>
     </message>
     <message>
         <source>ESRI Shapefile (*.shp) (Polygon)</source>
-        <translation type="unfinished"></translation>
+        <translation>Shapefile ESRI (*.shp) (Polygon)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>The shape type contained in this shape file is not polygon.</source>
@@ -162,7 +160,7 @@
     </message>
     <message>
         <source>Opening %1 failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Apertura %1 fallido.</translation>
     </message>
     <message>
         <source>The number of polygons mismatches between shp file and dbf file.</source>
@@ -175,7 +173,7 @@
 - Lines of polygon intersect each other
 - Hole polygon is outside of region polygon
 - Polygon passes the same point several times</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 El polígono no se puede importar. El polígono como el siguiente no se puede importar: - Tiene menos de tres puntos - No está cerrado - Las líneas del polígono se cruzan entre sí - El polígono del agujero está fuera del polígono de la región - El polígono pasa por el mismo punto varias veces</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -225,11 +223,11 @@
     <name>GeoDataPolygonShapeExporter</name>
     <message>
         <source>ESRI Shapefile</source>
-        <translation type="unfinished"></translation>
+        <translation>Shapefile ESRI</translation>
     </message>
     <message>
         <source>ESRI Shapefile (*.shp)</source>
-        <translation type="unfinished"></translation>
+        <translation>Shapefile ESRI (*.shp)</translation>
     </message>
 </context>
 </TS>

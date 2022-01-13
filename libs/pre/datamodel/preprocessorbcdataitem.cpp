@@ -558,6 +558,8 @@ int PreProcessorBCDataItem::saveToCgnsFile(iRICLib::H5CgnsZone* zone)
 	auto bc = zone->zoneBc()->bc(impl->m_condition->name(), impl->m_cgnsNumber);
 	bc->writeIndices(indices);
 	impl->m_dialog->save(bc);
+
+	return IRIC_NO_ERROR;
 }
 
 void PreProcessorBCDataItem::handleStandardItemDoubleClicked()

@@ -1,227 +1,225 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="bs_BA">
 <context>
     <name>GridCreatingConditionCreatorRiverSurvey15D</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Upozorenje</translation>
     </message>
     <message>
         <source>Create 1.5D grid from cross-section data</source>
-        <translation type="unfinished"></translation>
+        <translation>Napravite 1.5D mrežu od podataka o presjeku</translation>
     </message>
     <message>
         <source>The grid shape is automatically defined using cross-section data. You can specify the grid division number, by adding grid creation control points on river center.
 Note: This algorithm is available only when cross-section data is loaded!Please switch algorithm to this, after importing cross-section data.
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Oblik mreže automatski se definira pomoću podataka o presjeku. Možete odrediti broj podjele mreže dodavanjem kontrolnih tačaka za kreiranje mreže u centru rijeke. Napomena: Ovaj algoritam je dostupan samo kada se učitaju podaci o presjeku! Prebacite algoritam na ovo, nakon uvoza podataka o presjeku.</translation>
     </message>
     <message>
         <source>No cross-section data exists in geographic data now. This algorithm is not available.</source>
-        <translation type="unfinished"></translation>
+        <translation>U geografskim podacima sada ne postoje podaci o presjeku. Ovaj algoritam nije dostupan.</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionRiverSurvey15D</name>
     <message>
         <source>Delete Selected Control Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Izbrišite odabrane kontrolne tačke</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Greška</translation>
     </message>
     <message>
         <source>&amp;Add Division Points...</source>
-        <translation type="unfinished"></translation>
+        <translation>Dodavanje bodova podjele (&amp;A)...</translation>
     </message>
     <message>
         <source>Add Division Points &amp;Regionally...</source>
-        <translation type="unfinished"></translation>
+        <translation>Regionalno dodavanje bodova podjele (&amp;R)...</translation>
     </message>
     <message>
         <source>&amp;Move Division Points...</source>
-        <translation type="unfinished"></translation>
+        <translation>Premještanje bodova podjele (&amp;M)...</translation>
     </message>
     <message>
         <source>Re&amp;position Division Points...</source>
-        <translation type="unfinished"></translation>
+        <translation>Bodovi podjele premještanja (&amp;P)...</translation>
     </message>
     <message>
         <source>&amp;Delete Division Points...</source>
-        <translation type="unfinished"></translation>
+        <translation>Brisanje bodova podjele (&amp;D)...</translation>
     </message>
     <message>
         <source>Confirmation</source>
-        <translation type="unfinished"></translation>
+        <translation>Potvrda</translation>
     </message>
     <message>
         <source>Are you sure you want to delete these control points?</source>
-        <translation type="unfinished"></translation>
+        <translation>Jeste li sigurni da želite izbrisati ove kontrolne točke?</translation>
     </message>
     <message>
         <source>point%1</source>
-        <translation type="unfinished"></translation>
+        <translation>tačka %1</translation>
     </message>
     <message>
         <source>Add Division Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Dodavanje bodova podjele</translation>
     </message>
     <message>
         <source>Move Control Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Pomerite kontrolne tačke</translation>
     </message>
     <message>
         <source>Add Control Points regionally</source>
-        <translation type="unfinished"></translation>
+        <translation>Dodajte kontrolne tačke regionalno</translation>
     </message>
     <message>
         <source>Reposition Control Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Kontrolne tačke premještanja</translation>
     </message>
     <message>
         <source>There is no cross-section data. This grid creating condition is not available.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nema podataka o presjeku. Ovo stanje stvaranja mreže nije dostupno.</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionRiverSurvey15DPointAddDialog</name>
     <message>
         <source>Add Division Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Dodajte tačku podele</translation>
     </message>
     <message>
         <source>Division Number</source>
-        <translation type="unfinished"></translation>
+        <translation>Broj divizije</translation>
     </message>
     <message>
         <source>Division Method</source>
-        <translation type="unfinished"></translation>
+        <translation>Metoda podjele</translation>
     </message>
     <message>
         <source>Divide Equally</source>
-        <translation type="unfinished"></translation>
+        <translation>Podijelite jednako</translation>
     </message>
     <message>
         <source>Equal Ratio Division (Specify Common Ratio)</source>
-        <translation type="unfinished"></translation>
+        <translation>Podjela jednakog omjera (navedite zajednički omjer)</translation>
     </message>
     <message>
         <source>When you want to add division points near river center or upper side, please specify value more than 1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ako želite dodati tačke podjele blizu centra rijeke ili gornje strane, navedite vrijednost veću od 1.</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionRiverSurvey15DPointMoveDialog</name>
     <message>
         <source>Move Division Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Premjesti tačku podjele</translation>
     </message>
     <message>
         <source>Transfer Quantity s</source>
-        <translation type="unfinished"></translation>
+        <translation>Količina transfera s</translation>
     </message>
     <message>
         <source>0.0</source>
-        <translation type="unfinished"></translation>
+        <translation>0,0</translation>
     </message>
     <message>
         <source>-1 &lt; s &lt; 1</source>
-        <translation type="unfinished"></translation>
+        <translation>-1 &lt;s &lt;1</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionRiverSurvey15DPointRegionAddDialog</name>
     <message>
         <source>Add Division Points Regionally</source>
-        <translation type="unfinished"></translation>
+        <translation>Regionalno dodavanje bodova podjele</translation>
     </message>
     <message>
         <source>Start Traversal Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Pokrenite liniju prelaska</translation>
     </message>
     <message>
         <source>End Traversal Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Kraj traverzalne linije</translation>
     </message>
     <message>
         <source>Division Number</source>
-        <translation type="unfinished"></translation>
+        <translation>Broj divizije</translation>
     </message>
     <message>
         <source>Confirmation</source>
-        <translation type="unfinished"></translation>
+        <translation>Potvrda</translation>
     </message>
     <message>
         <source>The control points which already exist in this region are overwritten.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kontrolne tačke koje već postoje u ovoj regiji su prebrisane.</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionRiverSurvey15DPointRepositionDialog</name>
     <message>
         <source>Reposition Division Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Tačka podjele repozicije</translation>
     </message>
     <message>
         <source>Reposition Method</source>
-        <translation type="unfinished"></translation>
+        <translation>Metoda repozicioniranja</translation>
     </message>
     <message>
         <source>Equal Interval</source>
-        <translation type="unfinished"></translation>
+        <translation>Jednaki interval</translation>
     </message>
     <message>
         <source>Equal Ratio Interval (Specify Common Ratio)</source>
-        <translation type="unfinished"></translation>
+        <translation>Interval jednakog omjera (navedite zajednički omjer)</translation>
     </message>
     <message>
         <source>When you want to assign more division points near river center or upper side, please specify value more than 1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ako želite dodijeliti više tačaka podjele blizu centra rijeke ili gornje strane, navedite vrijednost veću od 1.</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionRiverSurvey15DRegionDialog</name>
     <message>
         <source>Grid Creation</source>
-        <translation type="unfinished"></translation>
+        <translation>Grid Creation</translation>
     </message>
     <message>
         <source>Start Traversal Line:</source>
-        <translation type="unfinished"></translation>
+        <translation>Započni prelaznu liniju:</translation>
     </message>
     <message>
         <source>End Traversal Line:</source>
-        <translation type="unfinished"></translation>
+        <translation>Završna linija prelaska:</translation>
     </message>
     <message>
         <source>Number of points in interpolated cross sections:</source>
-        <translation type="unfinished"></translation>
+        <translation>Broj točaka u interpoliranim presjecima:</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Upozorenje</translation>
     </message>
     <message>
         <source>Number of points in interpolated cross sections should be odd. incrementing by one.</source>
-        <translation type="unfinished"></translation>
+        <translation>Broj točaka u interpoliranim presjecima trebao bi biti neparan. povećanje za jedan.</translation>
     </message>
     <message>
         <source>Position value of elevation points:</source>
-        <translation type="unfinished"></translation>
+        <translation>Vrijednost položaja visinskih tačaka:</translation>
     </message>
     <message>
         <source>Distance from left bank</source>
-        <translation type="unfinished"></translation>
+        <translation>Udaljenost od lijeve obale</translation>
     </message>
     <message>
         <source>Distance from center point</source>
-        <translation type="unfinished"></translation>
+        <translation>Udaljenost od središta</translation>
     </message>
     <message>
-        <source>&quot;Left bank&quot; is the bank you see on the left side, when you turn to downstream direction.</source>
-        <translation type="unfinished"></translation>
+        <source>"Left bank" is the bank you see on the left side, when you turn to downstream direction.</source>
+        <translation>"Lijeva obala" je obala koju vidite s lijeve strane, kada skrenete u smjeru nizvodno.</translation>
     </message>
 </context>
 </TS>

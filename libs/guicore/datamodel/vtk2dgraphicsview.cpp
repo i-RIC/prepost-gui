@@ -33,6 +33,8 @@ VTK2DGraphicsView::VTK2DGraphicsView(QWidget* parent)
 void VTK2DGraphicsView::resetCamera()
 {
 	vtkSmartPointer<vtkCamera> camera = vtkSmartPointer<vtkCamera>::New();
+	camera->ParallelProjectionOn();
+
 	mainRenderer()->SetActiveCamera(camera);
 }
 

@@ -1,66 +1,64 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ru_RU">
 <context>
     <name>GridCreatingConditionCreatorExternalProgram</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Предупреждение</translation>
     </message>
     <message>
-        <source>Error occured while loading grid creator definition file in folder &quot;%1&quot;. This grid creator is ignored.
+        <source>Error occured while loading grid creator definition file in folder "%1". This grid creator is ignored.
 %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Ошибка при загрузке файла определения создателя сетки в папку "%1". Этот создатель сетки игнорируется. %2</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionExternalProgram</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Ошибка</translation>
     </message>
     <message>
         <source>Grid generation program %1 does not exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>Программа генерации сетки %1 не существует.</translation>
     </message>
     <message>
         <source>Generating grid...</source>
-        <translation type="unfinished"></translation>
+        <translation>Генерация сетки...</translation>
     </message>
     <message>
         <source>Grid Creation failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ошибка создания сетки.</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionExternalProgramSettingDialog</name>
     <message>
         <source>Grid Creation</source>
-        <translation type="unfinished"></translation>
+        <translation>Создание сетки</translation>
     </message>
     <message>
         <source>&amp;Create Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Создать сетку (&amp;C)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Предупреждение</translation>
     </message>
     <message>
         <source>Are you sure you want to reset all grid creating conditions to default values?</source>
-        <translation type="unfinished"></translation>
+        <translation>Вы действительно хотите сбросить все условия создания сетки на значения по умолчанию?</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Ошибка</translation>
     </message>
     <message>
         <source>Error occured while saving.</source>
-        <translation type="unfinished"></translation>
+        <translation>Произошла ошибка при сохранении.</translation>
     </message>
     <message>
         <source>Unknown error (Error code: %1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Неизвестная ошибка (код ошибки: %1 )</translation>
     </message>
 </context>
 </TS>

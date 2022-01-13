@@ -1,130 +1,128 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="bg_BG">
 <context>
     <name>SolverConsoleWindow</name>
     <message>
         <source>Background Color Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Настройка на цвета на фона</translation>
     </message>
     <message>
         <source>&amp;Export solver console log...</source>
-        <translation type="unfinished"></translation>
+        <translation>Експорт на дневник на конзолата за решаване (&amp;E)...</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Информация</translation>
     </message>
     <message>
         <source>This project is opened in post only mode. You can not run the solver.</source>
-        <translation type="unfinished"></translation>
+        <translation>Този проект се отваря в режим само за публикация. Не можете да стартирате решаването.</translation>
     </message>
     <message>
         <source>Show Detail</source>
-        <translation type="unfinished"></translation>
+        <translation>Покажи подробности</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Внимание</translation>
     </message>
     <message>
         <source>The following problems found in the grid(s). Do you really want to run the solver with this grid?</source>
-        <translation type="unfinished"></translation>
+        <translation>Следните проблеми, открити в мрежата (ите). Наистина ли искате да стартирате решавача с тази мрежа?</translation>
     </message>
     <message>
         <source>The simulation has result</source>
-        <translation type="unfinished"></translation>
+        <translation>Симулацията има резултат</translation>
     </message>
     <message>
         <source>Current simulation already has result data. When you run the solver, the current result data is discarded.</source>
-        <translation type="unfinished"></translation>
+        <translation>Текущата симулация вече има данни за резултатите. Когато стартирате решаването, текущите резултати от резултата се изхвърлят.</translation>
     </message>
     <message>
         <source>Error occured. %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Възникна грешка. %1</translation>
     </message>
     <message>
         <source>We recommend that you save the project before starting the solver. Do you want to save?</source>
-        <translation type="unfinished"></translation>
+        <translation>Препоръчваме ви да запазите проекта, преди да започнете решаването. Искате ли да запишете?</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Грешка</translation>
     </message>
     <message>
         <source>Solver executable file %1 does not exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>Solver изпълним файл %1 не съществува.</translation>
     </message>
     <message>
         <source>Confirm Solver Termination</source>
-        <translation type="unfinished"></translation>
+        <translation>Потвърдете прекратяването на Solver</translation>
     </message>
     <message>
         <source>Do you really want to kill the solver?</source>
-        <translation type="unfinished"></translation>
+        <translation>Наистина ли искате да убиете решавача?</translation>
     </message>
     <message>
         <source>Solver Finished</source>
-        <translation type="unfinished"></translation>
+        <translation>Решителят е завършен</translation>
     </message>
     <message>
         <source>The solver finished calculation.</source>
-        <translation type="unfinished"></translation>
+        <translation>Решителят завърши изчислението.</translation>
     </message>
     <message>
         <source>The solver finished abnormally.</source>
-        <translation type="unfinished"></translation>
+        <translation>Решителят завърши ненормално.</translation>
     </message>
     <message>
         <source>Solver Console</source>
-        <translation type="unfinished"></translation>
+        <translation>Solver Console</translation>
     </message>
     <message>
         <source>running</source>
-        <translation type="unfinished"></translation>
+        <translation>бягане</translation>
     </message>
     <message>
         <source>stopped</source>
-        <translation type="unfinished"></translation>
+        <translation>спряна</translation>
     </message>
     <message>
         <source>Solver Console [%1] (%2)</source>
-        <translation type="unfinished"></translation>
+        <translation>Solver Console [ %1 ] (%2)</translation>
     </message>
     <message>
         <source>%1 seconds have passed, but the solver do not end. Do you want to kill the solver?</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 секунди са изтекли, но решаването не свършва. Искате ли да убиете решавача?</translation>
     </message>
     <message>
         <source>Background Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Цвят на фона</translation>
     </message>
 </context>
 <context>
     <name>SolverConsoleWindowProjectDataItem</name>
     <message>
         <source>Select File to Export</source>
-        <translation type="unfinished"></translation>
+        <translation>Изберете Файл за експортиране</translation>
     </message>
     <message>
         <source>Text file (*.txt)</source>
-        <translation type="unfinished"></translation>
+        <translation>Текстов файл (*.txt)</translation>
     </message>
     <message>
         <source>Exporting solver console log...</source>
-        <translation type="unfinished"></translation>
+        <translation>Експортиране на дневник на конзолата за решаване...</translation>
     </message>
     <message>
         <source>Solver console log is successfully exported to %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Регистърът на конзолата за решаване е успешно експортиран в %1.</translation>
     </message>
     <message>
         <source>Fail</source>
-        <translation type="unfinished"></translation>
+        <translation>Неуспех</translation>
     </message>
     <message>
         <source>Exporting solver console log failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Експортирането на дневника на конзолата за решаване е неуспешно.</translation>
     </message>
 </context>
 </TS>

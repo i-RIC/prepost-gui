@@ -1,40 +1,38 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ar_EG">
 <context>
     <name>InformationDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>حوار</translation>
     </message>
     <message>
         <source>Do not show this message again.</source>
-        <translation type="unfinished"></translation>
+        <translation>لا تظهر هذه الرسالة مرة آخرى.</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
         <source> Revision %1</source>
-        <translation type="unfinished"></translation>
+        <translation>مراجعة %1</translation>
     </message>
 </context>
 <context>
     <name>SlowmotionSpeedEditDialog</name>
     <message>
         <source>Animation Speed Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>إعداد سرعة الرسوم المتحركة</translation>
     </message>
     <message>
         <source>Animation interval in seconds:</source>
-        <translation type="unfinished"></translation>
+        <translation>الفاصل الزمني للرسوم المتحركة بالثواني:</translation>
     </message>
 </context>
 <context>
     <name>StandardErrorMessages</name>
     <message>
         <source>Opening file %1 failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>فتح ملف %1 باءت بالفشل.</translation>
     </message>
 </context>
 </TS>

@@ -1,130 +1,128 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="pt_PT">
 <context>
     <name>SolverConsoleWindow</name>
     <message>
         <source>Background Color Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuração de cor de fundo</translation>
     </message>
     <message>
         <source>&amp;Export solver console log...</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportar registro do console do solver (&amp;E)...</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Em formação</translation>
     </message>
     <message>
         <source>This project is opened in post only mode. You can not run the solver.</source>
-        <translation type="unfinished"></translation>
+        <translation>Este projeto é aberto apenas no modo de postagem. Você não pode executar o solucionador.</translation>
     </message>
     <message>
         <source>Show Detail</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostrar Detalhe</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Aviso</translation>
     </message>
     <message>
         <source>The following problems found in the grid(s). Do you really want to run the solver with this grid?</source>
-        <translation type="unfinished"></translation>
+        <translation>Os seguintes problemas encontrados na (s) grade (s). Você realmente deseja executar o solucionador com esta grade?</translation>
     </message>
     <message>
         <source>The simulation has result</source>
-        <translation type="unfinished"></translation>
+        <translation>A simulação tem resultado</translation>
     </message>
     <message>
         <source>Current simulation already has result data. When you run the solver, the current result data is discarded.</source>
-        <translation type="unfinished"></translation>
+        <translation>A simulação atual já possui dados de resultado. Quando você executa o solucionador, os dados do resultado atual são descartados.</translation>
     </message>
     <message>
         <source>Error occured. %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Ocorreu um erro. %1</translation>
     </message>
     <message>
         <source>We recommend that you save the project before starting the solver. Do you want to save?</source>
-        <translation type="unfinished"></translation>
+        <translation>Recomendamos que você salve o projeto antes de iniciar o solucionador. Você quer salvar?</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Erro</translation>
     </message>
     <message>
         <source>Solver executable file %1 does not exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>Arquivo executável do Solver %1 não existe.</translation>
     </message>
     <message>
         <source>Confirm Solver Termination</source>
-        <translation type="unfinished"></translation>
+        <translation>Confirme a rescisão do Solver</translation>
     </message>
     <message>
         <source>Do you really want to kill the solver?</source>
-        <translation type="unfinished"></translation>
+        <translation>Você realmente quer matar o solucionador?</translation>
     </message>
     <message>
         <source>Solver Finished</source>
-        <translation type="unfinished"></translation>
+        <translation>Solver concluído</translation>
     </message>
     <message>
         <source>The solver finished calculation.</source>
-        <translation type="unfinished"></translation>
+        <translation>O solucionador concluiu o cálculo.</translation>
     </message>
     <message>
         <source>The solver finished abnormally.</source>
-        <translation type="unfinished"></translation>
+        <translation>O solucionador terminou de forma anormal.</translation>
     </message>
     <message>
         <source>Solver Console</source>
-        <translation type="unfinished"></translation>
+        <translation>Console Solver</translation>
     </message>
     <message>
         <source>running</source>
-        <translation type="unfinished"></translation>
+        <translation>correndo</translation>
     </message>
     <message>
         <source>stopped</source>
-        <translation type="unfinished"></translation>
+        <translation>parado</translation>
     </message>
     <message>
         <source>Solver Console [%1] (%2)</source>
-        <translation type="unfinished"></translation>
+        <translation>Solver Console [ %1 ] (%2)</translation>
     </message>
     <message>
         <source>%1 seconds have passed, but the solver do not end. Do you want to kill the solver?</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 segundos se passaram, mas o solucionador não termina. Você quer matar o solucionador?</translation>
     </message>
     <message>
         <source>Background Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Cor de fundo</translation>
     </message>
 </context>
 <context>
     <name>SolverConsoleWindowProjectDataItem</name>
     <message>
         <source>Select File to Export</source>
-        <translation type="unfinished"></translation>
+        <translation>Selecione o arquivo para exportar</translation>
     </message>
     <message>
         <source>Text file (*.txt)</source>
-        <translation type="unfinished"></translation>
+        <translation>Arquivo de texto (*.txt)</translation>
     </message>
     <message>
         <source>Exporting solver console log...</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportando log do console do solver...</translation>
     </message>
     <message>
         <source>Solver console log is successfully exported to %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>O registro do console do Solver foi exportado com sucesso para %1.</translation>
     </message>
     <message>
         <source>Fail</source>
-        <translation type="unfinished"></translation>
+        <translation>Falhou</translation>
     </message>
     <message>
         <source>Exporting solver console log failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>A exportação do log do console do solver falhou.</translation>
     </message>
 </context>
 </TS>

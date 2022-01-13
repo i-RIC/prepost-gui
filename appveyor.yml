@@ -96,8 +96,6 @@ before_build:
   - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2019" ( copy /y \iricdev-2019-2019\dirExt.prop .\tools\data\. )
   - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2013" ( copy /y \iricdev-master\paths.pri . )
   - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2013" ( copy /y \iricdev-master\dirExt.prop .\tools\data\. )
-  # - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2019" ( dir /s \iricdev-2019-2019 )
-  # - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2013" ( dir /s \iricdev-master )
   - ps: 'Get-Command qmake'
   - qmake -recursive -tp vc
 
@@ -122,7 +120,12 @@ after_build:
         if ($env:APPVEYOR_REPO_BRANCH -eq "master") {
           cmake -DPREPOST_GUI:PATH=$env:APPVEYOR_BUILD_FOLDER -DSRC_FOLDER:STRING=prod_src -G $env:psgenerator ..
         } else {
-          cmake -DPREPOST_GUI:PATH=$env:APPVEYOR_BUILD_FOLDER -DSRC_FOLDER:STRING=yasu_src -G $env:psgenerator ..
+          Get-Content C:\iricdev-2019-2019\versions.cmd | ForEach-Object {
+            if ($_ -match '^set IRICLIB_VER=(.*)$') {
+              $env:iriclib_DIR="c:/iricdev-2019-2019/lib/install/iriclib-" + $matches[1] + "/lib/cmake/iriclib"
+            }
+          }
+          cmake -DPREPOST_GUI:PATH=$env:APPVEYOR_BUILD_FOLDER -DSRC_FOLDER:STRING=yasu_src -Diriclib_DIR:PATH=$env:iriclib_DIR -G $env:psgenerator ..
         }
         if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
       }
@@ -193,14 +196,13 @@ on_success:
                -replace "`" version=`"([^`"]*)`"",                    "`" version=`"$env:VERSION`"" `
                -replace "(?<=<ReleaseDate>)(.*)(?=</ReleaseDate>)",   "$env:RELEASE_DATE" `
                -replace "release=`"([^`"]*)`"",                       "release=`"$env:RELEASE`"" `
-               -replace "caption=`"([^`"]*)`"",                       "caption=`"$env:CAPTION`"" `
                -replace "github-sha1=`"([^`"]*)`"",                   "github-sha1=`"$env:APPVEYOR_REPO_COMMIT`""
           } | Set-Content $file
         }
 
         # distribute files built by prepost-gui
         Set-Location $env:APPVEYOR_BUILD_FOLDER\dist\_build -ErrorAction Stop
-        msbuild /nologo /verbosity:minimal /p:Configuration=Release INSTALL.vcxproj
+        cmake --build . --config release --target install
         if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
 
         if ($env:APPVEYOR_REPO_BRANCH -eq "master") {
@@ -213,8 +215,7 @@ on_success:
           # run repogen to build packages and Updates.xml
           Set-Location \online_update\yasu_src -ErrorAction Stop
           # run repogen
-          ##C:\Qt\Tools\QtInstallerFramework\2.0\bin\repogen.exe -p packages --update --include gui.prepost ..\yasu
-          C:\Qt\Tools\QtInstallerFramework\4.1\bin\repogen.exe -p packages --update --include gui.prepost ..\yasu
+          C:\Qt\Tools\QtInstallerFramework\4.1\bin\repogen.exe -p packages --update --include gui.prepost,miniconda,sdk ..\yasu
           if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
         }
 
@@ -234,14 +235,15 @@ on_success:
         git config --global core.safecrlf false
         if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
 
-        git add -A *.7z *.sha1 *.xml *.dll *.exe *.qm
+        # git add -A *.7z *.sha1 *.xml *.dll *.exe *.qm
+        git add -A
         if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
 
         # Qt dictionaries are now included in gui.runtime package.
         git reset **/qt_*.qm
         if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
 
-        git commit -m "built by iric.appveyor"
+        git commit -m "built by iric.appveyor $env:APPVEYOR_BUILD_VERSION"
         if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
 
         if ($branch) {

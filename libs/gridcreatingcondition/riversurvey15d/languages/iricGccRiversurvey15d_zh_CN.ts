@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="zh_CN">
 <context>
     <name>GridCreatingConditionCreatorRiverSurvey15D</name>
@@ -24,17 +22,17 @@ Note: This algorithm is available only when river survey data is loaded!Please s
     </message>
     <message>
         <source>Create 1.5D grid from cross-section data</source>
-        <translation type="unfinished"></translation>
+        <translation>从横截面数据创建 1.5D 网格</translation>
     </message>
     <message>
         <source>The grid shape is automatically defined using cross-section data. You can specify the grid division number, by adding grid creation control points on river center.
 Note: This algorithm is available only when cross-section data is loaded!Please switch algorithm to this, after importing cross-section data.
 </source>
-        <translation type="unfinished"></translation>
+        <translation>网格形状是使用横截面数据自动定义的。您可以通过在河流中心添加网格创建控制点来指定网格划分数量。注意：此算法仅在加载横截面数据时可用！请在导入横截面数据后切换到此算法。</translation>
     </message>
     <message>
         <source>No cross-section data exists in geographic data now. This algorithm is not available.</source>
-        <translation type="unfinished"></translation>
+        <translation>现在地理数据中不存在横截面数据。该算法不可用。</translation>
     </message>
 </context>
 <context>
@@ -101,7 +99,7 @@ Note: This algorithm is available only when cross-section data is loaded!Please 
     </message>
     <message>
         <source>There is no cross-section data. This grid creating condition is not available.</source>
-        <translation type="unfinished"></translation>
+        <translation>没有横截面数据。此网格创建条件不可用。</translation>
     </message>
 </context>
 <context>
@@ -143,11 +141,11 @@ Note: This algorithm is available only when cross-section data is loaded!Please 
     </message>
     <message>
         <source>0.0</source>
-        <translation type="unfinished"></translation>
+        <translation>0.0</translation>
     </message>
     <message>
         <source>-1 &lt; s &lt; 1</source>
-        <translation type="unfinished"></translation>
+        <translation>-1 &lt; 秒 &lt; 1</translation>
     </message>
 </context>
 <context>
@@ -228,19 +226,19 @@ Note: This algorithm is available only when cross-section data is loaded!Please 
     </message>
     <message>
         <source>Position value of elevation points:</source>
-        <translation type="unfinished"></translation>
+        <translation>高程点位置值：</translation>
     </message>
     <message>
         <source>Distance from left bank</source>
-        <translation type="unfinished"></translation>
+        <translation>与左岸的距离</translation>
     </message>
     <message>
         <source>Distance from center point</source>
-        <translation type="unfinished"></translation>
+        <translation>距中心点的距离</translation>
     </message>
     <message>
-        <source>&quot;Left bank&quot; is the bank you see on the left side, when you turn to downstream direction.</source>
-        <translation type="unfinished"></translation>
+        <source>"Left bank" is the bank you see on the left side, when you turn to downstream direction.</source>
+        <translation>“左岸”是当您转向下游方向时，您在左侧看到的岸。</translation>
     </message>
 </context>
 </TS>

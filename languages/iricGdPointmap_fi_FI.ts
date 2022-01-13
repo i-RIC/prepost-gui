@@ -1,876 +1,885 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="fi_FI">
 <context>
     <name>GeoDataPointMapDelPtsLessThanDialog</name>
     <message>
         <source>Delete Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Poista pisteet</translation>
     </message>
     <message>
         <source>Selected point properties</source>
-        <translation type="unfinished"></translation>
+        <translation>Valitut pisteen ominaisuudet</translation>
     </message>
     <message>
         <source>Number of Points:</source>
-        <translation type="unfinished"></translation>
+        <translation>Pisteiden määrä:</translation>
     </message>
     <message>
         <source>Minimum:</source>
-        <translation type="unfinished"></translation>
+        <translation>Vähintään:</translation>
     </message>
     <message>
         <source>Maximum:</source>
-        <translation type="unfinished"></translation>
+        <translation>Enimmäismäärä:</translation>
     </message>
     <message>
         <source>Delete less than value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Poista alle arvon:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmap</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Varoitus</translation>
     </message>
     <message>
         <source>Break line have to have no intersection with other break lines.</source>
-        <translation type="unfinished"></translation>
+        <translation>Katkaisulinjalla ei saa olla risteystä muiden katkoviivojen kanssa.</translation>
     </message>
     <message>
         <source>Remeshing TINs...</source>
-        <translation type="unfinished"></translation>
+        <translation>TIN -numeroiden poistaminen...</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Tiedot</translation>
     </message>
     <message>
         <source>When you switch to this mode, you have to remesh TINs. Do you want to remesh now?</source>
-        <translation type="unfinished"></translation>
+        <translation>Kun vaihdat tähän tilaan, sinun on päivitettävä TIN -numerot uudelleen. Haluatko uudistaa nyt?</translation>
     </message>
     <message>
         <source>&amp;Add New Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Lisää uusi piste (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Interpolate Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Interpoloi pisteet (&amp;I)</translation>
     </message>
     <message>
         <source>Display &amp;Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Näyttöasetus (&amp;S)...</translation>
     </message>
     <message>
         <source>Select point</source>
-        <translation type="unfinished"></translation>
+        <translation>Valitse piste</translation>
     </message>
     <message>
         <source>Select Points With &amp;Polygon</source>
-        <translation type="unfinished"></translation>
+        <translation>Valitse Pisteet, joissa on monikulmio (&amp;P)</translation>
     </message>
     <message>
         <source>&amp;Edit Selected Points...</source>
-        <translation type="unfinished"></translation>
+        <translation>Muokkaa valittuja pisteitä (&amp;E)...</translation>
     </message>
     <message>
         <source>Delete Selected P&amp;oints</source>
-        <translation type="unfinished"></translation>
+        <translation>Poista valitut pisteet (&amp;O)</translation>
     </message>
     <message>
         <source>E&amp;xport Selected Points...</source>
-        <translation type="unfinished"></translation>
+        <translation>Vie valitut pisteet (&amp;X)...</translation>
     </message>
     <message>
         <source>Delete Selected Points &amp;Less Than Value...</source>
-        <translation type="unfinished"></translation>
+        <translation>Poista valitut pisteet alle arvon (&amp;L)...</translation>
     </message>
     <message>
         <source>Delete Selected Points &amp;Greater Than Value...</source>
-        <translation type="unfinished"></translation>
+        <translation>Poista valitut pisteet, jotka ovat suurempia kuin arvo (&amp;G)...</translation>
     </message>
     <message>
         <source>Remesh &amp;TINs</source>
-        <translation type="unfinished"></translation>
+        <translation>Remesh TIN -numerot (&amp;T)</translation>
     </message>
     <message>
         <source>Add &amp;Break Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Lisää katkoviiva (&amp;B)</translation>
     </message>
     <message>
         <source>&amp;Remove Break Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Poista katkoviiva (&amp;R)</translation>
     </message>
     <message>
         <source>Re&amp;move All Break Lines...</source>
-        <translation type="unfinished"></translation>
+        <translation>Poista kaikki katkoviivat (&amp;M)...</translation>
     </message>
     <message>
         <source>Remove Triangles &amp;with Long edge...</source>
-        <translation type="unfinished"></translation>
+        <translation>Poista kolmio, jossa on pitkä reuna (&amp;W)...</translation>
     </message>
     <message>
         <source>Are you sure you want to remove this break line?</source>
-        <translation type="unfinished"></translation>
+        <translation>Haluatko varmasti poistaa tämän katkoviivan?</translation>
     </message>
     <message>
         <source>Polygon must have three vertices at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>Monikulmiossa on oltava vähintään kolme kärkeä.</translation>
     </message>
     <message>
         <source>Remeshing TINs finished.</source>
-        <translation type="unfinished"></translation>
+        <translation>TIN -numeroiden poistaminen valmis.</translation>
     </message>
     <message>
         <source>When you add break line, you have to switch to show wireframes. Do you want to switch to show wireframes now?</source>
-        <translation type="unfinished"></translation>
+        <translation>Kun lisäät katkoviivan, sinun on vaihdettava lankakehykset. Haluatko vaihtaa lankakehykset näytettäväksi nyt?</translation>
     </message>
     <message>
         <source>Break line can be defined by mouse-clicking on the points between which you want to add break line. Finish defining by double clicking, or pressing return key.</source>
-        <translation type="unfinished"></translation>
+        <translation>Murtoviiva voidaan määrittää napsauttamalla hiirellä niitä pisteitä, joiden väliin haluat lisätä katkoviivan. Lopeta määrittäminen kaksoisnapsauttamalla tai painamalla Return -näppäintä.</translation>
     </message>
     <message>
         <source>When you remove break line, you have to switch to show wireframes. Do you want to switch to show wireframes now?</source>
-        <translation type="unfinished"></translation>
+        <translation>Kun poistat katkoviivan, sinun on vaihdettava lankakehykset. Haluatko vaihtaa lankakehykset näytettäväksi nyt?</translation>
     </message>
     <message>
         <source>Click on the break line you want to remove.</source>
-        <translation type="unfinished"></translation>
+        <translation>Napsauta katkoviivaa, jonka haluat poistaa.</translation>
     </message>
     <message>
         <source>Are you sure you want to remove ALL break lines?</source>
-        <translation type="unfinished"></translation>
+        <translation>Haluatko varmasti poistaa KAIKKI katkoviivat?</translation>
     </message>
     <message>
         <source>When you want to remove triangles with long edges, you have to switch Display Method to Wireframe or Surface. If you press OK button, Display Method is switched to Wireframe</source>
-        <translation type="unfinished"></translation>
+        <translation>Jos haluat poistaa kolmioita, joissa on pitkät reunat, sinun on vaihdettava näyttötapa Wireframe- tai Surface -muotoon. Jos painat OK -painiketta, näyttötapa vaihtuu lankakehykseksi</translation>
     </message>
     <message>
         <source>When you edit points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation type="unfinished"></translation>
+        <translation>Kun muokkaat pisteitä, sinun on siirryttävä näyttämään pisteitä. Haluatko siirtyä näyttämispisteisiin nyt?</translation>
     </message>
     <message>
         <source>When you delete points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation type="unfinished"></translation>
+        <translation>Kun poistat pisteitä, sinun on siirryttävä näyttämään pisteitä. Haluatko siirtyä näyttämispisteisiin nyt?</translation>
     </message>
     <message>
         <source>You can not delete points used for break lines.</source>
-        <translation type="unfinished"></translation>
+        <translation>Et voi poistaa katkoviivoille käytettyjä pisteitä.</translation>
     </message>
     <message>
         <source>Delete Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Poista pisteet</translation>
     </message>
     <message>
         <source>Select File to Export</source>
-        <translation type="unfinished"></translation>
+        <translation>Valitse vietävä tiedosto</translation>
     </message>
     <message>
         <source>Topography File (*.tpo)</source>
-        <translation type="unfinished"></translation>
+        <translation>Topografiatiedosto (*.tpo)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Virhe</translation>
     </message>
     <message>
         <source>Error occured while exporting to %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Virhe siirrettäessä kohteeseen %1.</translation>
     </message>
     <message>
         <source>Delete points less than %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Poista pisteitä alle %1</translation>
     </message>
     <message>
         <source>Delete points greater than %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Poista pisteitä, jotka ovat suurempia kuin %1</translation>
     </message>
     <message>
         <source>When you interpolate points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation type="unfinished"></translation>
+        <translation>Kun interpoloit pisteitä, sinun on siirryttävä näyttämään pisteitä. Haluatko siirtyä näyttämispisteisiin nyt?</translation>
     </message>
     <message>
         <source>To interpolate points, select existing points by mouse-clicking, use Alt to define path between known points, and finish by double-clicking or pressing return key.</source>
-        <translation type="unfinished"></translation>
+        <translation>Jos haluat interpoloida pisteitä, valitse olemassa olevat pisteet hiiren napsautuksella, määritä tunnettujen pisteiden välinen polku Alt-näppäimellä ja lopeta kaksoisnapsauttamalla tai painamalla Return-näppäintä.</translation>
     </message>
     <message>
         <source>When you add points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation type="unfinished"></translation>
+        <translation>Kun lisäät pisteitä, sinun on siirryttävä näyttämään pisteitä. Haluatko siirtyä näyttämispisteisiin nyt?</translation>
     </message>
     <message>
         <source>To add new points, select an existing point first. The value at that point will be used as the default value for new points. Then, click at any position you want to add points, and finish by double-clicking of pressing return key.</source>
-        <translation type="unfinished"></translation>
+        <translation>Jos haluat lisätä uusia pisteitä, valitse ensin olemassa oleva piste. Tämän kohdan arvoa käytetään uusien pisteiden oletusarvona. Napsauta sitten mitä tahansa kohtaa, johon haluat lisätä pisteitä, ja lopeta kaksoisnapsauttamalla paluunäppäintä.</translation>
     </message>
     <message>
         <source>Add Break Line Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Lisää katkoviivan piste</translation>
     </message>
     <message>
         <source>Cancel Defining Break Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Peruuta katkoviivan määrittäminen</translation>
     </message>
     <message>
         <source>Finish Defining Break Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Lopeta katkoviivan määrittäminen</translation>
     </message>
     <message>
         <source>Edit Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Muokkaa pisteitä</translation>
     </message>
     <message>
         <source>Add New Interp Line Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Lisää uusi Interp Line Line Point</translation>
     </message>
     <message>
         <source>Remove triangles with long edge</source>
-        <translation type="unfinished"></translation>
+        <translation>Poista pitkät reunat</translation>
     </message>
     <message>
         <source>Merge...</source>
-        <translation type="unfinished"></translation>
+        <translation>Yhdistää...</translation>
     </message>
     <message>
-        <source>There is no other data to merge in &quot;%1&quot; group.</source>
-        <translation type="unfinished"></translation>
+        <source>There is no other data to merge in "%1" group.</source>
+        <translation>Muita tietoja ei voi yhdistää "%1" ryhmä.</translation>
     </message>
     <message>
         <source>%1 duplicate points were found in merge targets, and omitted.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 päällekkäisiä pisteitä löydettiin yhdistämistavoitteista ja ne jätettiin pois.</translation>
     </message>
     <message>
         <source>You must select one known point, and define at least one location for added points. Do you want to retry, or cancel the operation?</source>
-        <translation type="unfinished"></translation>
+        <translation>Sinun on valittava yksi tunnettu piste ja määritettävä vähintään yksi sijainti lisäpisteille. Haluatko yrittää uudelleen vai peruuttaa toiminnon?</translation>
     </message>
     <message>
         <source>Add Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Lisää pisteitä</translation>
     </message>
     <message>
         <source>Values of new points</source>
-        <translation type="unfinished"></translation>
+        <translation>Uusien pisteiden arvot</translation>
     </message>
     <message>
         <source>To interpolate points, you must specify more than two points, and the last point should be existing point. Do you want to retry, or cancel the operation?</source>
-        <translation type="unfinished"></translation>
+        <translation>Pisteiden interpoloimiseksi sinun on määritettävä enemmän kuin kaksi pistettä, ja viimeisen pisteen on oltava olemassa oleva piste. Haluatko yrittää uudelleen vai peruuttaa toiminnon?</translation>
     </message>
     <message>
         <source>P&amp;oint Cloud Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Point Cloud Data (&amp;O)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapDelPtsGreaterThanDialog</name>
     <message>
         <source>Delete Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Poista pisteet</translation>
     </message>
     <message>
         <source>Selected point properties</source>
-        <translation type="unfinished"></translation>
+        <translation>Valitut pisteen ominaisuudet</translation>
     </message>
     <message>
         <source>Number of Points:</source>
-        <translation type="unfinished"></translation>
+        <translation>Pisteiden määrä:</translation>
     </message>
     <message>
         <source>Minimum:</source>
-        <translation type="unfinished"></translation>
+        <translation>Vähintään:</translation>
     </message>
     <message>
         <source>Maximum:</source>
-        <translation type="unfinished"></translation>
+        <translation>Enimmäismäärä:</translation>
     </message>
     <message>
         <source>Delete greater than value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Poista arvoa suurempi:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapEditPtsDialog</name>
     <message>
         <source>Edit Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Muokkaa pisteitä</translation>
     </message>
     <message>
         <source>Selected point properties</source>
-        <translation type="unfinished"></translation>
+        <translation>Valitut pisteen ominaisuudet</translation>
     </message>
     <message>
         <source>Number of Points:</source>
-        <translation type="unfinished"></translation>
+        <translation>Pisteiden määrä:</translation>
     </message>
     <message>
         <source>Minimum:</source>
-        <translation type="unfinished"></translation>
+        <translation>Vähintään:</translation>
     </message>
     <message>
         <source>Maximum:</source>
-        <translation type="unfinished"></translation>
+        <translation>Enimmäismäärä:</translation>
     </message>
     <message>
         <source>X-location</source>
-        <translation type="unfinished"></translation>
+        <translation>X-sijainti</translation>
     </message>
     <message>
         <source>Y-location</source>
-        <translation type="unfinished"></translation>
+        <translation>Y-sijainti</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation type="unfinished"></translation>
+        <translation>Arvo</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapInterpolatePoints</name>
     <message>
         <source>Interpolate Increment</source>
-        <translation type="unfinished"></translation>
+        <translation>Interpoloi lisäys</translation>
     </message>
     <message>
         <source>Interpolation Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Interpoloinnin asetus</translation>
     </message>
     <message>
         <source>Interpolation Increment:</source>
-        <translation type="unfinished"></translation>
+        <translation>Interpoloinnin lisäys:</translation>
     </message>
     <message>
         <source>Line Length:</source>
-        <translation type="unfinished"></translation>
+        <translation>Rivin pituus:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapInterpolatePointsDialog</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Varoitus</translation>
     </message>
     <message>
         <source>Interpolation increment must be greater 0 and less than interpolation line length</source>
-        <translation type="unfinished"></translation>
+        <translation>Interpoloinnin lisäyksen on oltava suurempi 0 ja pienempi kuin interpolointiviivan pituus</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapLandXmlExporter</name>
     <message>
         <source>LandXML</source>
-        <translation type="unfinished"></translation>
+        <translation>LandXML</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Virhe</translation>
     </message>
     <message>
         <source>Error occured while exporting to %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Virhe siirrettäessä kohteeseen %1</translation>
     </message>
     <message>
         <source>LandXML file (*.xml)</source>
-        <translation type="unfinished"></translation>
+        <translation>LandXML -tiedosto (*.xml)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapLandXmlImporter</name>
     <message>
         <source>LandXML (*.xml)</source>
-        <translation type="unfinished"></translation>
+        <translation>LandXML (*.xml)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Virhe</translation>
     </message>
     <message>
         <source>Parse error %1 at line %2 column %3</source>
-        <translation type="unfinished"></translation>
+        <translation>Jäsennysvirhe %1 rivillä %2 sarake %3</translation>
     </message>
     <message>
         <source>LandXML File (*.xml)</source>
-        <translation type="unfinished"></translation>
+        <translation>LandXML -tiedosto (*.xml)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapMergeSettingDialog</name>
     <message>
         <source>Select data to merge</source>
-        <translation type="unfinished"></translation>
+        <translation>Valitse yhdistettävät tiedot</translation>
     </message>
     <message>
         <source>Please select data to merge this group.</source>
-        <translation type="unfinished"></translation>
+        <translation>Valitse tiedot yhdistääksesi tämän ryhmän.</translation>
     </message>
     <message>
         <source>&amp;Select all</source>
-        <translation type="unfinished"></translation>
+        <translation>Valitse kaikki (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;Unselect all</source>
-        <translation type="unfinished"></translation>
+        <translation>Poista kaikkien valinnat (&amp;U)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapRealCreator</name>
     <message>
         <source>Point Cloud Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Point Cloud Data</translation>
     </message>
     <message>
         <source>Point Cloud Data%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Point Cloud Data %1</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapRealExporter</name>
     <message>
         <source>Topography File (*.tpo)</source>
-        <translation type="unfinished"></translation>
+        <translation>Topografiatiedosto (*.tpo)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Virhe</translation>
     </message>
     <message>
         <source>Error occured while exporting to %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Virhe siirrettäessä kohteeseen %1.</translation>
     </message>
     <message>
         <source>Point Cloud Data (DEM etc.)</source>
-        <translation type="unfinished"></translation>
+        <translation>Point Cloud Data (DEM jne.)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapRealImporter</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Virhe</translation>
     </message>
     <message>
         <source>File open error occured while opening %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tiedoston avausvirhe tapahtui avattaessa %1.</translation>
     </message>
     <message>
         <source>DEM etc. (*.tpo)</source>
-        <translation type="unfinished"></translation>
+        <translation>DEM jne. (*.tpo)</translation>
     </message>
     <message>
         <source>Topography File (*.tpo)</source>
-        <translation type="unfinished"></translation>
+        <translation>Topografiatiedosto (*.tpo)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapRealImporterFilterDialog</name>
     <message>
         <source>Filtering Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Suodatusasetus</translation>
     </message>
     <message>
         <source>If you want to filter the dataset, specify value more than 1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Jos haluat suodattaa tietojoukon, määritä arvoksi enemmän kuin 1.</translation>
     </message>
     <message>
         <source>Filter:</source>
-        <translation type="unfinished"></translation>
+        <translation>Suodattaa:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapRealTextImporter</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Virhe</translation>
     </message>
     <message>
         <source>File open error occured while opening %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tiedoston avausvirhe tapahtui avattaessa %1.</translation>
     </message>
     <message>
         <source>Not enough header lines found in the file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tiedostosta ei löydy tarpeeksi otsikkorivejä.</translation>
     </message>
     <message>
         <source>Line %1: %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Linja %1 : %2</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Varoitus</translation>
     </message>
     <message>
         <source>%1 duplicate points found. If points with same x and y values found, the first point is imported</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 päällekkäisiä pisteitä löytyi. Jos pisteitä, joilla on samat x- ja y -arvot, ensimmäinen piste tuodaan</translation>
     </message>
     <message>
         <source>At column %1, %2 or %3 expected, but %4 specified.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sarakkeessa %1, %2 tai %3 odotettu, mutta %4 määritetty.</translation>
     </message>
     <message>
         <source>At column %1, delimiter expected, but %2 specified.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sarakkeessa %1, erotin odotettu, mutta %2 määritetty.</translation>
     </message>
     <message>
         <source>x</source>
-        <translation type="unfinished"></translation>
+        <translation>x</translation>
     </message>
     <message>
         <source>y</source>
-        <translation type="unfinished"></translation>
+        <translation>y</translation>
     </message>
     <message>
         <source>value</source>
-        <translation type="unfinished"></translation>
+        <translation>arvo</translation>
     </message>
     <message>
         <source>No delimiter specified</source>
-        <translation type="unfinished"></translation>
+        <translation>Erotinta ei ole määritetty</translation>
     </message>
     <message>
-        <source>Not enough values to read &quot;%1&quot;. &quot;%1&quot; column is %2 but %3 values input.</source>
-        <translation type="unfinished"></translation>
+        <source>Not enough values to read "%1". "%1" column is %2 but %3 values input.</source>
+        <translation>Arvot eivät riitä lukemiseen "%1"". %1 "sarake on %2 mutta %3 syötetyt arvot.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;%1&quot; value. &quot;%1&quot; value should be real number, but &quot;%2&quot; specified.</source>
-        <translation type="unfinished"></translation>
+        <source>Error occured while reading "%1" value. "%1" value should be real number, but "%2" specified.</source>
+        <translation>Virhe luettaessa "%1"arvo". %1 "arvon pitäisi olla reaaliluku, mutta"%2"määritelty.</translation>
     </message>
     <message>
         <source>Text files (CSV, TSV, etc.)</source>
-        <translation type="unfinished"></translation>
+        <translation>Tekstitiedostot (CSV, TSV jne.)</translation>
     </message>
     <message>
         <source>Text file (*.csv *.txt *.xyz)</source>
-        <translation type="unfinished"></translation>
+        <translation>Tekstitiedosto (*.csv *.txt *.xyz)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapRealTextImporter_SettingDialog</name>
     <message>
         <source>Import Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Tuo asetus</translation>
     </message>
     <message>
         <source>Encoding:</source>
-        <translation type="unfinished"></translation>
+        <translation>Koodaus:</translation>
     </message>
     <message>
         <source>File Format</source>
-        <translation type="unfinished"></translation>
+        <translation>Tiedosto muoto</translation>
     </message>
     <message>
         <source>CSV (Comma separated values)</source>
-        <translation type="unfinished"></translation>
+        <translation>CSV (pilkuilla erotetut arvot)</translation>
     </message>
     <message>
         <source>Delimiters</source>
-        <translation type="unfinished"></translation>
+        <translation>Erottimet</translation>
     </message>
     <message>
         <source>Comma</source>
-        <translation type="unfinished"></translation>
+        <translation>Pilkku</translation>
     </message>
     <message>
         <source>Tab</source>
-        <translation type="unfinished"></translation>
+        <translation>Välilehti</translation>
     </message>
     <message>
         <source>Space</source>
-        <translation type="unfinished"></translation>
+        <translation>Avaruus</translation>
     </message>
     <message>
         <source>Colon</source>
-        <translation type="unfinished"></translation>
+        <translation>Kaksoispiste</translation>
     </message>
     <message>
         <source>Semicolon</source>
-        <translation type="unfinished"></translation>
+        <translation>Puolipiste</translation>
     </message>
     <message>
         <source>Other</source>
-        <translation type="unfinished"></translation>
+        <translation>Muut</translation>
     </message>
     <message>
         <source>Special characters</source>
-        <translation type="unfinished"></translation>
+        <translation>Erikoismerkit</translation>
     </message>
     <message>
         <source>Quote character:</source>
-        <translation type="unfinished"></translation>
+        <translation>Lainaushahmo:</translation>
     </message>
     <message>
-        <source>&quot;</source>
-        <translation type="unfinished"></translation>
+        <source>"</source>
+        <translation>"</translation>
     </message>
     <message>
         <source>When you want to specify multiple quote characters, please just input the characters only, no spaces or commas.</source>
-        <translation type="unfinished"></translation>
+        <translation>Jos haluat määrittää useita lainausmerkkejä, syötä vain merkit, ei välilyöntejä tai pilkkuja.</translation>
     </message>
     <message>
         <source>Escape character:</source>
-        <translation type="unfinished"></translation>
+        <translation>Escape -hahmo:</translation>
     </message>
     <message>
         <source>\</source>
-        <translation type="unfinished"></translation>
+        <translation>\</translation>
     </message>
     <message>
         <source>Record options</source>
-        <translation type="unfinished"></translation>
+        <translation>Tallennusvaihtoehdot</translation>
     </message>
     <message>
         <source>Header lines to ignore</source>
-        <translation type="unfinished"></translation>
+        <translation>Ohitettavat otsikkorivit</translation>
     </message>
     <message>
         <source>First header line contains field names</source>
-        <translation type="unfinished"></translation>
+        <translation>Ensimmäinen otsikkorivi sisältää kenttien nimet</translation>
     </message>
     <message>
         <source>Select fields</source>
-        <translation type="unfinished"></translation>
+        <translation>Valitse kentät</translation>
     </message>
     <message>
         <source>X:</source>
-        <translation type="unfinished"></translation>
+        <translation>X:</translation>
     </message>
     <message>
         <source>Y:</source>
-        <translation type="unfinished"></translation>
+        <translation>Y:</translation>
     </message>
     <message>
         <source>Value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Arvo:</translation>
     </message>
     <message>
         <source>Skip setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Ohita asetus</translation>
     </message>
     <message>
         <source>Skip rate:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ohitusaste:</translation>
     </message>
     <message>
         <source>Preview</source>
-        <translation type="unfinished"></translation>
+        <translation>Esikatselu</translation>
     </message>
     <message>
         <source>Custom delimited text</source>
-        <translation type="unfinished"></translation>
+        <translation>Muokattu rajattu teksti</translation>
     </message>
     <message>
         <source>The character to escape quote characters in quoted text. You can specify only one character.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hahmo, joka paeta lainausmerkkejä lainatussa tekstissä. Voit määrittää vain yhden merkin.</translation>
     </message>
     <message>
         <source>When you want to skip lines in the file, please specify values larger than 1. For example, if you input 2, every other line is imported.</source>
-        <translation type="unfinished"></translation>
+        <translation>Jos haluat ohittaa tiedoston rivit, määritä suurempia arvoja kuin 1. Esimerkiksi jos syötät 2, kaikki muut rivit tuodaan.</translation>
     </message>
     <message>
         <source>File name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tiedoston nimi:</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapRepresentationDialog</name>
     <message>
         <source>Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Näyttöasetus</translation>
     </message>
     <message>
         <source>Display Method</source>
-        <translation type="unfinished"></translation>
+        <translation>Näyttömenetelmä</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Pisteet</translation>
     </message>
     <message>
         <source>Wireframe</source>
-        <translation type="unfinished"></translation>
+        <translation>Runkokehys</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation type="unfinished"></translation>
+        <translation>Pinta</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Pisteen koko:</translation>
     </message>
     <message>
         <source>Hide Break Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Piilota katkoviivat</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapSTLExporter</name>
     <message>
         <source>Stereolithography (STL)</source>
-        <translation type="unfinished"></translation>
+        <translation>Stereolitografia (STL)</translation>
     </message>
     <message>
         <source>Binary STL (*.stl)</source>
-        <translation type="unfinished"></translation>
+        <translation>Binaarinen STL (*.stl)</translation>
     </message>
     <message>
         <source>ASCII STL (*.stl)</source>
-        <translation type="unfinished"></translation>
+        <translation>ASCII STL (*.stl)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapSTLImporter</name>
     <message>
         <source>Stereolithography (STL)</source>
-        <translation type="unfinished"></translation>
+        <translation>Stereolitografia (STL)</translation>
     </message>
     <message>
         <source>Stereolithography file (*.stl)</source>
-        <translation type="unfinished"></translation>
+        <translation>Stereolitografiatiedosto (*.stl)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Virhe</translation>
     </message>
     <message>
         <source>File open error occured while opening %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tiedoston avausvirhe tapahtui avattaessa %1.</translation>
     </message>
     <message>
         <source>solid</source>
-        <translation type="unfinished"></translation>
+        <translation>kiinteä</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapTINCreator</name>
+    <message>
+        <source>TIN</source>
+        <translation>TINA</translation>
+    </message>
+    <message>
+        <source>Point Cloud Data%1</source>
+        <translation>Point Cloud Data %1</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapVTKExporter</name>
     <message>
         <source>Pointset (DEM etc.)</source>
-        <translation type="unfinished"></translation>
+        <translation>Pistejoukko (DEM jne.)</translation>
     </message>
     <message>
         <source>VTK File (*.vtk)</source>
-        <translation type="unfinished"></translation>
+        <translation>VTK -tiedosto (*.vtk)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapWebImporter</name>
     <message>
         <source>Web CSV tile</source>
-        <translation type="unfinished"></translation>
+        <translation>Web CSV -ruutu</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Virhe</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapWebImporterRegionSelectDialog</name>
     <message>
         <source>Select Region</source>
-        <translation type="unfinished"></translation>
+        <translation>Valitse alue</translation>
     </message>
     <message>
         <source>Background Image:</source>
-        <translation type="unfinished"></translation>
+        <translation>Taustakuva:</translation>
     </message>
     <message>
         <source>Zoom &amp;In</source>
-        <translation type="unfinished"></translation>
+        <translation>Lähennä (&amp;I)</translation>
     </message>
     <message>
         <source>Zoom &amp;Out</source>
-        <translation type="unfinished"></translation>
+        <translation>Loitontaa (&amp;O)</translation>
     </message>
     <message>
         <source>&amp;Next</source>
-        <translation type="unfinished"></translation>
+        <translation>Seuraava (&amp;N)</translation>
     </message>
     <message>
         <source>&amp;Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>Peruuttaa (&amp;C)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Varoitus</translation>
     </message>
     <message>
         <source>Region to import data is not selected yet. Please left drag on the map to select area.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tietojen tuontialuetta ei ole vielä valittu. Valitse alue vetämällä vasemmalle kartalla.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapWebImporterSettingManager</name>
     <message>
         <source>USGS elevation tiles (SRTM)</source>
-        <translation type="unfinished"></translation>
+        <translation>USGS -korkeuslaatat (SRTM)</translation>
     </message>
     <message>
         <source>GSI elevation tiles (DEM5A)</source>
-        <translation type="unfinished"></translation>
+        <translation>GSI -korkeuslaatat (DEM5A)</translation>
     </message>
     <message>
         <source>GSI elevation tiles (DEM5B)</source>
-        <translation type="unfinished"></translation>
+        <translation>GSI -korkeuslaatat (DEM5B)</translation>
     </message>
     <message>
         <source>GSI elevation tiles (DEM10B)</source>
-        <translation type="unfinished"></translation>
+        <translation>GSI -korkeuslaatat (DEM10B)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapWebImporterZoomLevelDialog</name>
     <message>
         <source>Zoom Level Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Zoom -tason asetus</translation>
     </message>
     <message>
         <source>Specify the zoom level of data you want to import.</source>
-        <translation type="unfinished"></translation>
+        <translation>Määritä tuotavien tietojen zoomaustaso.</translation>
     </message>
     <message>
         <source>Zoom level:</source>
-        <translation type="unfinished"></translation>
+        <translation>Zoomaustaso:</translation>
     </message>
     <message>
         <source>Resolution:</source>
-        <translation type="unfinished"></translation>
+        <translation>Resoluutio:</translation>
     </message>
     <message>
         <source>xx m</source>
-        <translation type="unfinished"></translation>
+        <translation>xx m</translation>
     </message>
     <message>
         <source>Data size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tiedon koko:</translation>
     </message>
     <message>
         <source>XX kB (XXXX points)</source>
-        <translation type="unfinished"></translation>
+        <translation>XX kB (XXXX pistettä)</translation>
     </message>
     <message>
         <source>Source:</source>
-        <translation type="unfinished"></translation>
+        <translation>Lähde:</translation>
     </message>
     <message>
         <source>%1 KB</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 KB</translation>
     </message>
     <message>
         <source>%1 MB</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 MB</translation>
     </message>
     <message>
         <source> (%1 points)</source>
-        <translation type="unfinished"></translation>
+        <translation>( %1 pistettä)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmap_TrianglesWithLongEdgeRemover_Dialog</name>
     <message>
         <source>Remove Triangles with Long Edge</source>
-        <translation type="unfinished"></translation>
+        <translation>Poista kolmio pitkillä reunoilla</translation>
     </message>
     <message>
         <source>Limit edge length:</source>
-        <translation type="unfinished"></translation>
+        <translation>Rajan reunan pituus:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Huomaa &lt;/span&gt;: Kun napsautat Käytä-painiketta, poistettavat kolmiot maalataan tummalla harmaa. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
 </context>
 </TS>

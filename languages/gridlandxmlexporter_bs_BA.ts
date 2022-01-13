@@ -1,26 +1,24 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="bs_BA">
 <context>
     <name>GridLandXmlExporter</name>
     <message>
         <source>LandXml file</source>
-        <translation type="unfinished"></translation>
+        <translation>LandXml datoteka</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Greška</translation>
     </message>
     <message>
         <source>Error occured while exporting to %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Došlo je do greške pri izvozu u %1</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
         <source>LandXml files (*.xml)</source>
-        <translation type="unfinished"></translation>
+        <translation>LandXml datoteke (*.xml)</translation>
     </message>
 </context>
 </TS>

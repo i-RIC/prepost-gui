@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="es_ES">
 <context>
     <name>GridCreatingConditionCreatorExternalProgram</name>
@@ -8,16 +6,16 @@
         <translation>Aviso</translation>
     </message>
     <message>
-        <source>Error occured while loading grid creator definition file in folder &quot;%1&quot;. This grid creator is ignored.
+        <source>Error occured while loading grid creator definition file in folder "%1". This grid creator is ignored.
 %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Se produjo un error al cargar el archivo de definición del creador de la cuadrícula en la carpeta "%1". Este creador de cuadrícula se ignora. %2</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionExternalProgram</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>Grid generation program %1 does not exists.</source>
@@ -52,7 +50,7 @@
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>Error occured while saving.</source>

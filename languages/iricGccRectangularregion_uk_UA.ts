@@ -1,53 +1,51 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="uk_UA">
 <context>
     <name>GridCreatingConditionCreatorRectangularRegion</name>
     <message>
         <source>Create grid by dividing rectangular region</source>
-        <translation type="unfinished"></translation>
+        <translation>Створіть сітку, розділивши прямокутну область</translation>
     </message>
     <message>
         <source>Specify a rectangular region where to create a grid, and the cell width. The cell width is used for both X-direction and Y-direction.</source>
-        <translation type="unfinished"></translation>
+        <translation>Вкажіть прямокутну область для створення сітки та ширину комірки. Ширина комірки використовується як для напрямку X, так і для напрямку Y.</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionRectangularRegion</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Увага</translation>
     </message>
     <message>
         <source>The maximum number of grid nodes is %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Максимальна кількість вузлів сітки %1.</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Інформація</translation>
     </message>
     <message>
         <source>Please define grid region by mouse-dragging.</source>
-        <translation type="unfinished"></translation>
+        <translation>Будь ласка, визначте область сітки перетягуванням миші.</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionRectangularRegionSettingDialog</name>
     <message>
         <source>Grid Creation</source>
-        <translation type="unfinished"></translation>
+        <translation>Створення сітки</translation>
     </message>
     <message>
         <source>Input</source>
-        <translation type="unfinished"></translation>
+        <translation>Вхідні дані</translation>
     </message>
     <message>
         <source>Resulting grid</source>
-        <translation type="unfinished"></translation>
+        <translation>В результаті сітка</translation>
     </message>
     <message>
         <source>--</source>
-        <translation type="unfinished"></translation>
+        <translation>-</translation>
     </message>
 </context>
 </TS>

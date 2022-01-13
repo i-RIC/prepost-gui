@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="pt_BR">
 <context>
     <name>GridCreatingConditionCompoundChannel</name>
@@ -175,7 +173,7 @@
     <message>
         <source>Please define a polygon as the region to create grid, and another polygon as the low water channel region. Then, please add a polygonal line as river center.
 The low water channel region should be included in grid creation region, andRiver center line should be included in the low water channel region.</source>
-        <translation type="unfinished"></translation>
+        <translation>Defina um polígono como a região para criar a grade e outro polígono como a região do canal de águas baixas. Em seguida, adicione uma linha poligonal como centro do rio. A região do canal de água baixa deve ser incluída na região de criação da rede, e a linha central do rio deve ser incluída na região do canal de água baixa.</translation>
     </message>
 </context>
 </TS>

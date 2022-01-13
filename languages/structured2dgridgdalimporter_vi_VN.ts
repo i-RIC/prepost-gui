@@ -1,19 +1,17 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="vi_VN">
 <context>
     <name>Structured2DGridGdalImporter</name>
     <message>
         <source>GDAL supported files</source>
-        <translation type="unfinished"></translation>
+        <translation>Tệp được hỗ trợ GDAL</translation>
     </message>
     <message>
         <source>GeoTiff files(*.tif)</source>
-        <translation type="unfinished"></translation>
+        <translation>Tệp GeoTiff (*.tif)</translation>
     </message>
     <message>
         <source>ArcInfo ASCII files(*.asc)</source>
-        <translation type="unfinished"></translation>
+        <translation>Tệp ArcInfo ASCII (*.asc)</translation>
     </message>
 </context>
 </TS>

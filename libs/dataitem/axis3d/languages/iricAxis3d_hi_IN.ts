@@ -1,11 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="hi_IN">
 <context>
     <name>Axis3dDataItem</name>
     <message>
         <source>Axes</source>
-        <translation type="unfinished"></translation>
+        <translation>कुल्हाड़ियों</translation>
     </message>
 </context>
 </TS>

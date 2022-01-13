@@ -1,307 +1,305 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="eu_ES">
 <context>
     <name>GridCreatingConditionCreatorLaplace</name>
     <message>
         <source>General purpose grid generation tool</source>
-        <translation type="unfinished"></translation>
+        <translation>Helburu orokorreko sareak sortzeko tresna</translation>
     </message>
     <message>
         <source>You can create smooth grid shape solving laplace equation.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sarearen forma leuna sor dezakezu laplace ekuazioa konpontzeko.</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionLaplace</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Abisua</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informazioa</translation>
     </message>
     <message>
         <source>To divide the region, click on the edge of the region first, then click on the opposite edge.</source>
-        <translation type="unfinished"></translation>
+        <translation>Eskualdea banatzeko, egin klik eskualdearen ertzean lehenik, eta egin klik kontrako ertzean.</translation>
     </message>
     <message>
         <source>Please select an edge line inside the region when you want to join regions.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mesedez, hautatu eskualde barruko ertz bat eskualdeekin bat egin nahi duzunean.</translation>
     </message>
     <message>
         <source>Are you sure you want to join the regions divided by the selected edge?</source>
-        <translation type="unfinished"></translation>
+        <translation>Ziur zaude hautatutako ertzarekin zatitutako eskualdeekin bat egin nahi duzula?</translation>
     </message>
     <message>
         <source>Are you sure you want to clear division setting?</source>
-        <translation type="unfinished"></translation>
+        <translation>Ziur banaketa ezarpena garbitu nahi duzula?</translation>
     </message>
     <message>
         <source>Center Line Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Erdiko lerroaren koordenatuak</translation>
     </message>
     <message>
         <source>Finish Defining Center Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Amaitu erdiko lerroa definitzen</translation>
     </message>
     <message>
         <source>Start defining center line</source>
-        <translation type="unfinished"></translation>
+        <translation>Hasi erdiko lerroa definitzen</translation>
     </message>
     <message>
         <source>Move Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Mugitu puntua</translation>
     </message>
     <message>
         <source>Edge Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Ertz koordenatuak</translation>
     </message>
     <message>
         <source>&amp;Build left bank and right bank lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Eraiki ezkerreko eta eskuineko ertzak (&amp;B)</translation>
     </message>
     <message>
         <source>&amp;Interpolation Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Interpolazio modua (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Spline</source>
-        <translation type="unfinished"></translation>
+        <translation>Spline (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;Linear</source>
-        <translation type="unfinished"></translation>
+        <translation>Lineala (&amp;L)</translation>
     </message>
     <message>
         <source>Add &amp;Division line</source>
-        <translation type="unfinished"></translation>
+        <translation>Gehitu Division lerroa (&amp;D)</translation>
     </message>
     <message>
         <source>Remove D&amp;ivision Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Kendu Division Line (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Add Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Gehitu erpina (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Kendu Vertex (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Edit coordinates...</source>
-        <translation type="unfinished"></translation>
+        <translation>Editatu koordenatuak (&amp;E)...</translation>
     </message>
     <message>
         <source>Division Setting for &amp;whole region...</source>
-        <translation type="unfinished"></translation>
+        <translation>Eskualde osorako zatiketa (&amp;W)...</translation>
     </message>
     <message>
         <source>&amp;Division Setting for selected line...</source>
-        <translation type="unfinished"></translation>
+        <translation>Aukeratutako lerroaren zatiketa ezarpena (&amp;D)...</translation>
     </message>
     <message>
         <source>&amp;Edge Points Deploying Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Edge Points Inplementazio Ezarpena (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Deploying Setting for selected area...</source>
-        <translation type="unfinished"></translation>
+        <translation>Ezarpena hautatutako eremurako inplementazioa (&amp;D)...</translation>
     </message>
     <message>
         <source>&amp;Clear Division Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Garbitu Zatiketa Ezarpena (&amp;C)...</translation>
     </message>
     <message>
         <source>Please build left bank and right bank lines before creating grid.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mesedez, sortu ezkerreko eta eskuineko ertzak lerroak sortu aurretik.</translation>
     </message>
     <message>
         <source>Start adding new edge</source>
-        <translation type="unfinished"></translation>
+        <translation>Hasi ertz berria gehitzen</translation>
     </message>
     <message>
         <source>Insert Line Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Txertatu lerroaren erpina</translation>
     </message>
     <message>
         <source>Add New Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Gehitu puntu berria</translation>
     </message>
     <message>
         <source>Edit Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Editatu koordenatuak</translation>
     </message>
     <message>
         <source>Move Line Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Mugitu lerroaren erpina</translation>
     </message>
     <message>
         <source>Remove Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Kendu Vertex</translation>
     </message>
     <message>
         <source>Cross-section data not found. Please define Center Line by yourself.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ez da zeharkako datuak aurkitu. Mesedez, definitu erdiko lerroa zuk bakarrik.</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionLaplace::Impl</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Abisua</translation>
     </message>
     <message>
         <source>Center Line is not defined yet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Erdiko lerroa ez dago zehaztuta oraindik.</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionLaplaceBuildBankLinesDialog</name>
     <message>
         <source>Build Bank Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Eraiki Banku Lerroak</translation>
     </message>
     <message>
         <source>Input the distance from center line</source>
-        <translation type="unfinished"></translation>
+        <translation>Sartu erdiko marratik distantzia</translation>
     </message>
     <message>
         <source>Left bank:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ezkerraldea:</translation>
     </message>
     <message>
         <source>Right bank:</source>
-        <translation type="unfinished"></translation>
+        <translation>Eskuineko ertza:</translation>
     </message>
     <message>
         <source>Hint: Left bank and Right bank lines are created as line that consists of points that are away from center line to direction perpendicular to the center line.</source>
-        <translation type="unfinished"></translation>
+        <translation>Iradokizuna: Ezkerreko ertza eta Eskuineko ertzak lerro gisa sortzen dira, erdiko marratik erdiko marrarekiko perpendikularra den norabidera dauden puntuez osatutako lerro gisa.</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionLaplaceCtrlPointsDialog</name>
     <message>
         <source>Specity the Number Of Control Cross Sections</source>
-        <translation type="unfinished"></translation>
+        <translation>Zehaztu Kontrol atalen kopurua</translation>
     </message>
     <message>
         <source>Number of Control Cross Sections:</source>
-        <translation type="unfinished"></translation>
+        <translation>Kontrol atalen kopurua:</translation>
     </message>
     <message>
         <source>Hints: Control Cross Sections are the cross sections whose center points are used as the center line of the grid.</source>
-        <translation type="unfinished"></translation>
+        <translation>Aholkuak: Kontroleko sekzio transversalak, erdiko puntuak sarearen erdiko lerro gisa erabiltzen diren zeharkako atalak dira.</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionLaplaceDeploySettingDialog</name>
     <message>
         <source>Points Deploy Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Puntuak ezartzeko ezarpena</translation>
     </message>
     <message>
         <source>Deploy Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Ezarri ezarpena</translation>
     </message>
     <message>
         <source>Equally divided</source>
-        <translation type="unfinished"></translation>
+        <translation>Berdin zatituta</translation>
     </message>
     <message>
         <source>Geometric division</source>
-        <translation type="unfinished"></translation>
+        <translation>Zatiketa geometrikoa</translation>
     </message>
     <message>
         <source>Common ratio:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ratio arrunta:</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionLaplaceDivisionSettingDialog</name>
     <message>
         <source>Division Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Zatiketa Ezarpena</translation>
     </message>
     <message>
         <source>Division Number:</source>
-        <translation type="unfinished"></translation>
+        <translation>Zatiketa zenbakia:</translation>
     </message>
     <message>
         <source>Deploy Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Ezarri ezarpena</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished"></translation>
+        <translation>Automatikoa</translation>
     </message>
     <message>
         <source>Equally divided</source>
-        <translation type="unfinished"></translation>
+        <translation>Berdin zatituta</translation>
     </message>
     <message>
         <source>Geometric division</source>
-        <translation type="unfinished"></translation>
+        <translation>Zatiketa geometrikoa</translation>
     </message>
     <message>
         <source>Common ratio:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ratio arrunta:</translation>
     </message>
     <message>
         <source>Deploy Setting Target</source>
-        <translation type="unfinished"></translation>
+        <translation>Ezarri Xede Ezarpena</translation>
     </message>
     <message>
         <source>This line only</source>
-        <translation type="unfinished"></translation>
+        <translation>Lerro hau soilik</translation>
     </message>
     <message>
         <source>This line and lines in parallel positions</source>
-        <translation type="unfinished"></translation>
+        <translation>Lerro hau eta lerroak posizio paraleloetan daude</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The deploy setting is applied to all lines in parallel positions.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Inplementazio ezarpena posizio paraleloetan dauden lerro guztiei aplikatzen zaie. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionLaplaceSubRegionDeploySettingDialog</name>
     <message>
         <source>Inner Points Deploy Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Barneko puntuak ezartzeko ezarpena</translation>
     </message>
     <message>
         <source>Ratio</source>
-        <translation type="unfinished"></translation>
+        <translation>Ratioa</translation>
     </message>
     <message>
         <source>Poisson</source>
-        <translation type="unfinished"></translation>
+        <translation>Poisson</translation>
     </message>
     <message>
         <source>Streamwise direction:</source>
-        <translation type="unfinished"></translation>
+        <translation>Streamwise norabidea:</translation>
     </message>
     <message>
         <source>Cross section direction:</source>
-        <translation type="unfinished"></translation>
+        <translation>Zeharkako norabidea:</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionLaplaceWholeRegionDivisionSettingDialog</name>
     <message>
         <source>Division Setting for Whole Region</source>
-        <translation type="unfinished"></translation>
+        <translation>Eskualde osorako zatiketa</translation>
     </message>
     <message>
         <source>m</source>
-        <translation type="unfinished"></translation>
+        <translation>m</translation>
     </message>
     <message>
         <source>Create &amp;Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Sortu sareta (&amp;G)</translation>
     </message>
 </context>
 </TS>

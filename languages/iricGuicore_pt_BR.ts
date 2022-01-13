@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="pt_BR">
 <context>
     <name>AttributeBrowserTargetDataItem</name>
@@ -285,15 +283,15 @@
     <name>GridAttributeEditNameAndValueDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished">Dialogo</translation>
+        <translation>Diálogo</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished">Nome :</translation>
+        <translation>Nome:</translation>
     </message>
     <message>
         <source>TextLabel</source>
-        <translation type="unfinished">Rotulo do texto</translation>
+        <translation>TextLabel</translation>
     </message>
 </context>
 <context>
@@ -363,26 +361,26 @@
     </message>
     <message>
         <source>Target:</source>
-        <translation type="unfinished"></translation>
+        <translation>Alvo:</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Atencao</translation>
+        <translation>Aviso</translation>
     </message>
     <message>
         <source>Modifications you made will be discarded.</source>
-        <translation type="unfinished">As modificacoes feitas serao descartadas.</translation>
+        <translation>As modificações que você fez serão descartadas.</translation>
     </message>
 </context>
 <context>
     <name>GridComplexConditionGroupRealEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Forma</translation>
+        <translation>Forma</translation>
     </message>
     <message>
         <source>Targets</source>
-        <translation type="unfinished"></translation>
+        <translation>Alvos</translation>
     </message>
 </context>
 <context>
@@ -427,18 +425,41 @@
     </message>
 </context>
 <context>
+    <name>InputConditionCgnsFileSelectDialog</name>
+    <message>
+        <source>Select Input CGNS File</source>
+        <translation>Selecione o arquivo CGNS de entrada</translation>
+    </message>
+    <message>
+        <source>Information</source>
+        <translation>Em formação</translation>
+    </message>
+    <message>
+        <source>Do you want to import grid from the CGNS file?</source>
+        <translation>Você deseja importar a grade do arquivo CGNS?</translation>
+    </message>
+    <message>
+        <source>Select CGNS file</source>
+        <translation>Selecione o arquivo CGNS</translation>
+    </message>
+    <message>
+        <source>Please select from which CGNS file to read grid.</source>
+        <translation>Selecione de qual arquivo CGNS ler a grade.</translation>
+    </message>
+</context>
+<context>
     <name>InputConditionContainerSet</name>
     <message>
         <source>Definition node is not stored</source>
         <translation>Elemento de definicao nao foi encontrado</translation>
     </message>
     <message>
-        <source>Wrong valueType &quot;%1&quot; is set.</source>
-        <translation>Foi especificado o invalido valueType &quot;%1&quot;.</translation>
+        <source>Wrong valueType "%1" is set.</source>
+        <translation>Foi especificado o invalido valueType "%1".</translation>
     </message>
     <message>
-        <source>Wrong conditionType &quot;%1&quot;is set.</source>
-        <translation>Foi especificada a invalida conditionType &quot;%1&quot;.</translation>
+        <source>Wrong conditionType "%1"is set.</source>
+        <translation>Foi especificada a invalida conditionType "%1".</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.</source>
@@ -451,7 +472,7 @@
     <message>
         <source>Error occured while loading solver definition file.
 %1: %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Ocorreu um erro ao carregar o arquivo de definição do solver. %1 : %2</translation>
     </message>
 </context>
 <context>
@@ -503,7 +524,7 @@
     <message>
         <source>This CGNS file does not have solver information. We can not check whether this CGNS file is compatible with the solver. If it is not compatible, maybe only some part of the conditions will be imported.
 Do you really want to import this file?</source>
-        <translation type="unfinished"></translation>
+        <translation>Este arquivo CGNS não contém informações do solucionador. Não podemos verificar se este arquivo CGNS é compatível com o solver. Se não for compatível, talvez apenas parte das condições seja importada. Tem certeza de que deseja importar este arquivo?</translation>
     </message>
 </context>
 <context>
@@ -517,65 +538,65 @@ Do you really want to import this file?</source>
     <name>InputConditionWidgetCgnsFile</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Forma</translation>
+        <translation>Forma</translation>
     </message>
     <message>
         <source>...</source>
-        <translation type="unfinished">...</translation>
+        <translation>...</translation>
     </message>
     <message>
         <source>Solver Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nome do Solver:</translation>
     </message>
     <message>
         <source>---</source>
-        <translation type="unfinished"></translation>
+        <translation>---</translation>
     </message>
     <message>
         <source>Solver Version:</source>
-        <translation type="unfinished"></translation>
+        <translation>Versão do Solver:</translation>
     </message>
     <message>
         <source>Grid Type:</source>
-        <translation type="unfinished">Tipo de grade</translation>
+        <translation>Tipo de grade:</translation>
     </message>
     <message>
         <source>Grid Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tamanho da grade:</translation>
     </message>
     <message>
         <source>Number of results:</source>
-        <translation type="unfinished"></translation>
+        <translation>Número de resultados:</translation>
     </message>
     <message>
         <source>Structured</source>
-        <translation type="unfinished"></translation>
+        <translation>Estruturada</translation>
     </message>
     <message>
         <source>Unstructured</source>
-        <translation type="unfinished"></translation>
+        <translation>Não estruturado</translation>
     </message>
     <message>
         <source>Select File</source>
-        <translation type="unfinished">Selecionar o arquivo</translation>
+        <translation>Selecione o arquivo</translation>
     </message>
 </context>
 <context>
     <name>InputConditionWidgetCgnsResult</name>
     <message>
         <source>(CGNS file is not selected)</source>
-        <translation type="unfinished"></translation>
+        <translation>(O arquivo CGNS não está selecionado)</translation>
     </message>
     <message>
         <source>(There is no result)</source>
-        <translation type="unfinished"></translation>
+        <translation>(Não há resultado)</translation>
     </message>
 </context>
 <context>
     <name>InputConditionWidgetCheckbox</name>
     <message>
         <source>Enabled</source>
-        <translation type="unfinished"></translation>
+        <translation>Habilitado</translation>
     </message>
 </context>
 <context>
@@ -681,24 +702,24 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Ctrl+C</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl + C</translation>
     </message>
     <message>
         <source>Ctrl+V</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl + V</translation>
     </message>
     <message>
         <source>Values are copied to clipboard.</source>
-        <translation type="unfinished"></translation>
+        <translation>Os valores são copiados para a área de transferência.</translation>
     </message>
     <message>
-        <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
-        <translation type="unfinished"></translation>
+        <source>You can copy and paste the values, with shortcut "Ctrl + C" and "Ctrl + V"</source>
+        <translation>Você pode copiar e colar os valores, com o atalho "Ctrl + C" e "Ctrl + V"</translation>
     </message>
     <message>
         <source>The following problems found: 
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Os seguintes problemas encontrados:</translation>
     </message>
 </context>
 <context>
@@ -794,8 +815,8 @@ Do you really want to import this file?</source>
         <translation>Ocorreu um erro ao abrir o arquivo. </translation>
     </message>
     <message>
-        <source>The first two columns must be &quot;X&quot; and &quot;Y&quot;.</source>
-        <translation>As primeiras duas colunas deverao ser &quot;X&quot;, e  &quot;Y&quot; </translation>
+        <source>The first two columns must be "X" and "Y".</source>
+        <translation>As primeiras duas colunas deverao ser "X", e  "Y" </translation>
     </message>
     <message>
         <source>The data file has to consist of only English characters.</source>
@@ -960,8 +981,8 @@ Do you really want to import this file?</source>
         <translation>Definicao de numero variavel</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Voce podera definir o numero variavel com linguagem JavaScript. Por favor, veja &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;  &lt;/span&gt;&lt;/a&gt; para detalhes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Voce podera definir o numero variavel com linguagem JavaScript. Por favor, veja &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;  &lt;/span&gt;&lt;/a&gt; para detalhes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -969,7 +990,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can test the definition by clicking this. If error occurs while parsing the definition, the error message is shown. When the definition is parsed successfully, the value calculated using the &amp;quot;Value for testing&amp;quot; for each input is shown.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt; Clicando neste botao, voce podera verificar se a definicao e correta . Se ocorrer um erro ao analisar a definicao, a mensagem de erro sera exibida. Quando a definicao for analisada com exito, o valor sera calculado sendo utilizado o &quot;valor de teste&quot; e o mesmo sera exibida. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt; Clicando neste botao, voce podera verificar se a definicao e correta . Se ocorrer um erro ao analisar a definicao, a mensagem de erro sera exibida. Quando a definicao for analisada com exito, o valor sera calculado sendo utilizado o "valor de teste" e o mesmo sera exibida. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>----</source>
@@ -1039,8 +1060,8 @@ Do you really want to import this file?</source>
         <translation>Abaixo (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt; Atencao &lt;/span&gt;: A ordem na lista e importante. Na definicao do numero variavel, voce podera usar os itens que se encontram na parte superior da lista, assim como o numero variavel apresentado pelo solucionador. .&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt; Atencao &lt;/span&gt;: A ordem na lista e importante. Na definicao do numero variavel, voce podera usar os itens que se encontram na parte superior da lista, assim como o numero variavel apresentado pelo solucionador. .&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
@@ -1264,11 +1285,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Atencao</translation>
+        <translation>Aviso</translation>
     </message>
     <message>
         <source>I, J, K, index for label is reset because the grid size is changed.</source>
-        <translation type="unfinished"></translation>
+        <translation>I, J, K, índice para etiqueta é redefinido porque o tamanho da grade foi alterado.</translation>
     </message>
 </context>
 <context>
@@ -1385,8 +1406,8 @@ Do you really want to import this file?</source>
         <translation>Definicao de Saida</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Voce podera definir o numero variavel com linguagem JavaScript. Por favor, veja &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt; &lt;/span&gt;&lt;/a&gt;  para detalhes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Voce podera definir o numero variavel com linguagem JavaScript. Por favor, veja &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt; &lt;/span&gt;&lt;/a&gt;  para detalhes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -1628,8 +1649,8 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectWorkspace</name>
     <message>
-        <source>Workspace &quot;%1&quot; has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
-        <translation>O espaco de trabalho %1 &quot; contem %2 pastas de projeto que parecem nao ser mais usadas. Deseja remove-las ?</translation>
+        <source>Workspace "%1" has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
+        <translation>O espaco de trabalho %1 " contem %2 pastas de projeto que parecem nao ser mais usadas. Deseja remove-las ?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1827,7 +1848,7 @@ Do you really want to import this file?</source>
     <message>
         <source>To get background image from internet, please specify the coordiyate system of the project, from the following menu.
  File -&gt; Property</source>
-        <translation type="unfinished"></translation>
+        <translation>Para obter a imagem de fundo da Internet, especifique o sistema de coordenadas do projeto, no menu a seguir. Arquivo -&gt; Propriedade</translation>
     </message>
 </context>
 <context>

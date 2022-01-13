@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="zh_CN">
 <context>
     <name>GeoDataPolyLine</name>
@@ -77,11 +75,11 @@
     </message>
     <message>
         <source>polyline</source>
-        <translation type="unfinished"></translation>
+        <translation>折线</translation>
     </message>
     <message>
         <source>Polyline</source>
-        <translation type="unfinished">折线</translation>
+        <translation>折线</translation>
     </message>
     <message>
         <source>PolyLine value change</source>
@@ -161,11 +159,11 @@
     </message>
     <message>
         <source>ESRI Shapefile (Polyline)</source>
-        <translation type="unfinished"></translation>
+        <translation>ESRI 形状文件（折线）</translation>
     </message>
     <message>
         <source>ESRI Shapefile (*.shp) (Polyline)</source>
-        <translation type="unfinished"></translation>
+        <translation>ESRI 形状文件 (*.shp) (Polyline)</translation>
     </message>
     <message>
         <source>Error</source>
@@ -231,7 +229,7 @@
     </message>
     <message>
         <source>ESRI Shapefile</source>
-        <translation type="unfinished"></translation>
+        <translation>ESRI 形状文件</translation>
     </message>
     <message>
         <source>ESRI Shape file (*.shp)</source>

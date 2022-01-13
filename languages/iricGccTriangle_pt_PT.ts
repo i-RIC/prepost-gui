@@ -1,314 +1,312 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="pt_PT">
 <context>
     <name>GridCreatingConditionCreatorTriangle</name>
     <message>
         <source>Create grid from polygon shape</source>
-        <translation type="unfinished"></translation>
+        <translation>Criar grade de forma poligonal</translation>
     </message>
     <message>
         <source>Please define a polygon as the region to create grid.You can additionally define holes and refinement areas as restrictions.</source>
-        <translation type="unfinished"></translation>
+        <translation>Defina um polígono como a região para criar a grade. Você também pode definir furos e áreas de refinamento como restrições.</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionTriangle</name>
     <message>
         <source>Define Grid Region</source>
-        <translation type="unfinished"></translation>
+        <translation>Definir região da rede</translation>
     </message>
     <message>
         <source>Add &amp;Refinement Region</source>
-        <translation type="unfinished"></translation>
+        <translation>Adicionar Região de Refinamento (&amp;R)</translation>
     </message>
     <message>
         <source>Add &amp;Hole Region</source>
-        <translation type="unfinished"></translation>
+        <translation>Adicionar região de furo (&amp;H)</translation>
     </message>
     <message>
         <source>Add &amp;Break Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Adicionar linha de quebra (&amp;B)</translation>
     </message>
     <message>
         <source>&amp;Add Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Adicionar vértice (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Remover vértice (&amp;R)</translation>
     </message>
     <message>
         <source>Edit &amp;Coordinates...</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar Coordenadas (&amp;C)...</translation>
     </message>
     <message>
         <source>&amp;Delete Region or Break Line...</source>
-        <translation type="unfinished"></translation>
+        <translation>Excluir região ou quebra de linha (&amp;D)...</translation>
     </message>
     <message>
         <source>Edit &amp;Maximum Area for Cells...</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar área máxima para células (&amp;M)...</translation>
     </message>
     <message>
         <source>&amp;Redivide Break Line...</source>
-        <translation type="unfinished"></translation>
+        <translation>Redivide Break Line (&amp;R)...</translation>
     </message>
     <message>
         <source>&amp;Polygon</source>
-        <translation type="unfinished"></translation>
+        <translation>Polígono (&amp;P)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Aviso</translation>
     </message>
     <message>
         <source>Polygon must have three vertices at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>O polígono deve ter pelo menos três vértices.</translation>
     </message>
     <message>
         <source>Finish Defining Polygon</source>
-        <translation type="unfinished"></translation>
+        <translation>Concluir definindo polígono</translation>
     </message>
     <message>
         <source>Break line must have two vertices at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>A linha de quebra deve ter pelo menos dois vértices.</translation>
     </message>
     <message>
         <source>Finish Defining Break Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Terminar Definindo Linha de Quebra</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Em formação</translation>
     </message>
     <message>
         <source>Please define refinement region. Refinement region can be defined as polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
-        <translation type="unfinished"></translation>
+        <translation>Defina a região de refinamento. A região de refinamento pode ser definida como polígono clicando com o mouse. Conclua a definição clicando duas vezes ou pressionando a tecla Enter.</translation>
     </message>
     <message>
         <source>Please define hole region. Hole region can be defined as polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
-        <translation type="unfinished"></translation>
+        <translation>Defina a região do furo. A região do furo pode ser definida como polígono clicando com o mouse. Conclua a definição clicando duas vezes ou pressionando a tecla Enter.</translation>
     </message>
     <message>
         <source>Input divide number</source>
-        <translation type="unfinished"></translation>
+        <translation>Número de divisão de entrada</translation>
     </message>
     <message>
         <source>Divide number</source>
-        <translation type="unfinished"></translation>
+        <translation>Divida o número</translation>
     </message>
     <message>
         <source>Please define break line. Break line can be defined as polygonal line by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
-        <translation type="unfinished"></translation>
+        <translation>Por favor, defina a linha de quebra. A linha de quebra pode ser definida como uma linha poligonal clicando com o mouse. Conclua a definição clicando duas vezes ou pressionando a tecla Enter.</translation>
     </message>
     <message>
         <source>Are you sure you want to remove this polygon?</source>
-        <translation type="unfinished"></translation>
+        <translation>Tem certeza de que deseja remover este polígono?</translation>
     </message>
     <message>
         <source>Are you sure you want to remove this line?</source>
-        <translation type="unfinished"></translation>
+        <translation>Tem certeza que deseja remover esta linha?</translation>
     </message>
     <message>
         <source>Grid region polygon have to consists of more than three vertices.</source>
-        <translation type="unfinished"></translation>
+        <translation>O polígono da região da grade deve consistir em mais de três vértices.</translation>
     </message>
     <message>
         <source>Grid region polygon shape is invalid.</source>
-        <translation type="unfinished"></translation>
+        <translation>A forma do polígono da região da grade é inválida.</translation>
     </message>
     <message>
         <source>Remesh polygon have to consists of more than three vertices</source>
-        <translation type="unfinished"></translation>
+        <translation>O polígono de remodelagem deve consistir em mais de três vértices</translation>
     </message>
     <message>
         <source>Remesh polygon shape is invalid.</source>
-        <translation type="unfinished"></translation>
+        <translation>A forma do polígono remodelada é inválida.</translation>
     </message>
     <message>
         <source>Remesh polygon have to be inside grid region.</source>
-        <translation type="unfinished"></translation>
+        <translation>O polígono remodelado deve estar dentro da região da grade.</translation>
     </message>
     <message>
         <source>Hole polygon have to consists of more than three vertices</source>
-        <translation type="unfinished"></translation>
+        <translation>O polígono de furo deve consistir em mais de três vértices</translation>
     </message>
     <message>
         <source>Hole polygon shape is invalid.</source>
-        <translation type="unfinished"></translation>
+        <translation>A forma do polígono do furo é inválida.</translation>
     </message>
     <message>
         <source>Hole polygon have to be inside grid region.</source>
-        <translation type="unfinished"></translation>
+        <translation>O polígono do furo deve estar dentro da região da grade.</translation>
     </message>
     <message>
         <source>Remesh polygons and hole polygons can not have intersections.</source>
-        <translation type="unfinished"></translation>
+        <translation>Polígonos de remodelagem e polígonos de furo não podem ter interseções.</translation>
     </message>
     <message>
         <source>Break line have to consists of more more than two vertices</source>
-        <translation type="unfinished"></translation>
+        <translation>A linha de quebra deve consistir em mais de dois vértices</translation>
     </message>
     <message>
         <source>Break line can have intersections with polygons, but break lines should not divide polygons into multiple areas. If break lines are setup that way, the result is ambiguous.</source>
-        <translation type="unfinished"></translation>
+        <translation>A linha de quebra pode ter interseções com polígonos, mas as linhas de quebra não devem dividir os polígonos em várias áreas. Se as linhas de quebra forem configuradas dessa forma, o resultado será ambíguo.</translation>
     </message>
     <message>
         <source>Please define grid creating region. Grid creating region can be defined as polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
-        <translation type="unfinished"></translation>
+        <translation>Defina a região de criação da grade. A região de criação de grade pode ser definida como polígono clicando com o mouse. Conclua a definição clicando duas vezes ou pressionando a tecla Enter.</translation>
     </message>
     <message>
         <source>Generating grid...</source>
-        <translation type="unfinished"></translation>
+        <translation>Gerando grade...</translation>
     </message>
     <message>
         <source>Add New Break Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Adicionar nova linha de quebra</translation>
     </message>
     <message>
         <source>Add New Hole Polygon</source>
-        <translation type="unfinished"></translation>
+        <translation>Adicionar Novo Polígono de Furo</translation>
     </message>
     <message>
         <source>Insert Polygon Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Inserir vértice do polígono</translation>
     </message>
     <message>
         <source>Insert Break Line Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Inserir Vértice de Linha de Quebra</translation>
     </message>
     <message>
         <source>Add New Remesh Polygon</source>
-        <translation type="unfinished"></translation>
+        <translation>Adicionar Novo Polígono Remesh</translation>
     </message>
     <message>
         <source>Add New Polygon Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Adicionar Novo Ponto Poligonal</translation>
     </message>
     <message>
         <source>Add New Break Line Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Adicionar Novo Ponto de Quebra de Linha</translation>
     </message>
     <message>
         <source>Edit Polygon Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar coordenadas poligonais</translation>
     </message>
     <message>
         <source>Edit Break Line Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar Coordenadas de Linha de Quebra</translation>
     </message>
     <message>
         <source>Move Polygon</source>
-        <translation type="unfinished"></translation>
+        <translation>Mover polígono</translation>
     </message>
     <message>
         <source>Move Polygon Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Mover vértice do polígono</translation>
     </message>
     <message>
         <source>Move Break Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Mover linha de quebra</translation>
     </message>
     <message>
         <source>Move Break Line Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Mover o vértice da linha de quebra</translation>
     </message>
     <message>
         <source>Polygon Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Coordenadas Poligonais</translation>
     </message>
     <message>
         <source>Break Line Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Quebrar Coordenadas de Linha</translation>
     </message>
     <message>
         <source>Remove Polygon Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Remover vértice do polígono</translation>
     </message>
     <message>
         <source>Remove Break Line Vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Remover o vértice da linha de quebra</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionTriangleAbstractPolygon</name>
     <message>
         <source>Please specify a closed polygon!</source>
-        <translation type="unfinished"></translation>
+        <translation>Especifique um polígono fechado!</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionTriangleRemeshDialog</name>
     <message>
         <source>Refinement maximum area</source>
-        <translation type="unfinished"></translation>
+        <translation>Área máxima de refinamento</translation>
     </message>
     <message>
         <source>Enter maximum area for cells inside refinement polygon.</source>
-        <translation type="unfinished"></translation>
+        <translation>Insira a área máxima para células dentro do polígono de refinamento.</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;m&lt;span style=&quot; vertical-align:super;&quot;&gt;2&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;m&lt;span style=" vertical-align:super;"&gt;2&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {espaço em branco: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margem -top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; m &lt;span style =" vertical-align: super; "&gt; 2 &lt;/span&gt; &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Aviso</translation>
     </message>
     <message>
         <source>Please specify positive value.</source>
-        <translation type="unfinished"></translation>
+        <translation>Especifique um valor positivo.</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionTriangleRemeshPolygon</name>
     <message>
         <source>Edit refinement maximum area</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar área máxima de refinamento</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionTriangleSettingDialog</name>
     <message>
         <source>Grid Creation</source>
-        <translation type="unfinished"></translation>
+        <translation>Criação de grade</translation>
     </message>
     <message>
         <source>Specify minimum angle for cell vertices</source>
-        <translation type="unfinished"></translation>
+        <translation>Especifique o ângulo mínimo para os vértices da célula</translation>
     </message>
     <message>
         <source>By specifying minimum angle, you can avoid generating thin and long triangle cells.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ao especificar o ângulo mínimo, você pode evitar a geração de células triangulares finas e longas.</translation>
     </message>
     <message>
         <source>degrees</source>
-        <translation type="unfinished"></translation>
+        <translation>graus</translation>
     </message>
     <message>
         <source>When polygon has vertices that has smaller angle than the value above, the condition is not applyed to the cells that include those vertices.</source>
-        <translation type="unfinished"></translation>
+        <translation>Quando o polígono tem vértices com ângulo menor que o valor acima, a condição não se aplica às células que incluem esses vértices.</translation>
     </message>
     <message>
         <source>Specify maximum area for cells</source>
-        <translation type="unfinished"></translation>
+        <translation>Especifique a área máxima para as células</translation>
     </message>
     <message>
         <source>By specifying small values, you can generate fine grids.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ao especificar valores pequenos, você pode gerar grades finas.</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;m&lt;span style=&quot; vertical-align:super;&quot;&gt;2&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;m&lt;span style=" vertical-align:super;"&gt;2&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {espaço em branco: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margem -top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; m &lt;span style =" vertical-align: super; "&gt; 2 &lt;/span&gt; &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
 </context>
 </TS>

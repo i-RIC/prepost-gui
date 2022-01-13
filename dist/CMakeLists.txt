@@ -11,10 +11,12 @@
 #   cmake --build . --config release --target install
 #
 
-
-cmake_minimum_required(VERSION 3.1)
+cmake_minimum_required(VERSION 3.15)  # list(POP_BACK)
 
 project(dist)
+
+# set CMAKE_PREFIX_PATH or iriclib_DIR to location of iriclibConfig.cmake
+find_package(iriclib 4 REQUIRED)
 
 if(CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
   set(CMAKE_INSTALL_PREFIX c:/online_update CACHE PATH "Top level directory of online_update workspace" FORCE)
@@ -2214,3 +2216,83 @@ install(FILES ${IRIC_PY}
   DESTINATION ${CMAKE_INSTALL_PREFIX}/${SRC_FOLDER}/packages/gui.runtime/data/pythonmodule
 )
 
+# iriclib properties
+get_target_property(IRICLIB_INCLUDE_DIRS iriclib::iriclib INTERFACE_INCLUDE_DIRECTORIES)
+list(POP_BACK IRICLIB_INCLUDE_DIRS IRICLIB_INCLUDE_DIR)
+
+# c iriclib SDK bin
+install(
+  DIRECTORY
+    ${iriclib_DIR}/../../../bin
+  DESTINATION
+    ${CMAKE_INSTALL_PREFIX}/${SRC_FOLDER}/packages/sdk/data/c
+)
+
+# c iriclib SDK include
+install(
+  DIRECTORY
+  ${iriclib_DIR}/../../../include
+  DESTINATION
+    ${CMAKE_INSTALL_PREFIX}/${SRC_FOLDER}/packages/sdk/data/c
+)
+
+# c iriclib SDK lib
+install(
+  DIRECTORY
+    ${iriclib_DIR}/../../../lib
+  DESTINATION
+    ${CMAKE_INSTALL_PREFIX}/${SRC_FOLDER}/packages/sdk/data/c
+)
+
+# c iriclib SDK src
+install(
+  DIRECTORY
+    ${iriclib_DIR}/../../../src
+  DESTINATION
+    ${CMAKE_INSTALL_PREFIX}/${SRC_FOLDER}/packages/sdk/data/c
+)
+
+
+# fortran iriclib SDK lib
+install(
+  FILES
+    ${iriclib_DIR}/../../../lib/iriclib.lib
+    ${iriclib_DIR}/../../../lib/iriclibd.lib
+    ${iriclib_DIR}/../../../lib/iriclibd.pdb
+  DESTINATION
+    ${CMAKE_INSTALL_PREFIX}/${SRC_FOLDER}/packages/sdk/data/fortran/lib
+)
+
+# fortran iriclib SDK src
+install(
+  FILES
+    ${iriclib_DIR}/../../../src/iric.f90
+  DESTINATION
+    ${CMAKE_INSTALL_PREFIX}/${SRC_FOLDER}/packages/sdk/data/fortran/src
+)
+
+# python iriclib SDK src
+install(
+  FILES
+    ${iriclib_DIR}/../../../src/iric.f90
+  DESTINATION
+    ${CMAKE_INSTALL_PREFIX}/${SRC_FOLDER}/packages/sdk/data/fortran/src
+)
+
+# python iriclib SDK src
+install(
+  FILES
+    ${iriclib_DIR}/../../../bin/Lib/site-packages/iric.py
+  DESTINATION
+    ${CMAKE_INSTALL_PREFIX}/${SRC_FOLDER}/packages/sdk/data/python
+)
+
+# miniconda
+install(
+  FILES
+    ${iriclib_DIR}/../../../bin/Lib/site-packages/iric.py
+    ${iriclib_DIR}/../../../bin/Lib/site-packages/_iric.pyd
+    ${iriclib_DIR}/../../../bin/Lib/site-packages/_iricd.pyd
+  DESTINATION
+    ${CMAKE_INSTALL_PREFIX}/${SRC_FOLDER}/packages/miniconda/data
+)

@@ -45,7 +45,7 @@
     </message>
     <message>
         <source>L&amp;oop Animation</source>
-        <translation type="unfinished"></translation>
+        <translation>Loop Animation (&amp;O)</translation>
     </message>
 </context>
 <context>
@@ -288,6 +288,10 @@
         <source>Skip rate :</source>
         <translation>Filtracao :</translation>
     </message>
+    <message>
+        <source>--</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ContinuousSnapshotWindowSelectionPage</name>
@@ -361,6 +365,13 @@
     </message>
 </context>
 <context>
+    <name>ContinuousSnapshotWizard</name>
+    <message>
+        <source>Continuous Snapshot / Movie / Google Earth Export Wizard</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>FlushRequester</name>
     <message>
         <source>Waiting for solver to copy CGNS file...</source>
@@ -407,7 +418,7 @@
     <message>
         <source>When you update iRIC, you need to close iRIC before launching iRIC Maintainance.
 When you have iRIC windows other than this, close them manually.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ao atualizar o iRIC, é necessário fechar o iRIC antes de iniciar a manutenção do iRIC. Quando você tiver outras janelas iRIC além desta, feche-as manualmente.</translation>
     </message>
     <message>
         <source>When you update iRIC, you need to close iRIC before launching iRIC Maintainance.</source>
@@ -427,7 +438,7 @@ When you have iRIC windows other than this, close them manually.</source>
     <message>
         <source>This function is intended to be used by solver developers or grid creating program developers, not users.
 This wizard will generate or update translation files for solver definition files and grid creating program definition files those are registered to iRIC system. You need to specify the solver (or grid creating program) name, and the list of languages for those you want to create or update translation files.</source>
-        <translation type="unfinished"></translation>
+        <translation>Esta função deve ser usada por desenvolvedores de solucionadores ou desenvolvedores de programas de criação de grades, não por usuários. Este assistente irá gerar ou atualizar arquivos de tradução para arquivos de definição de solucionador e arquivos de definição de programa de criação de grade que estão registrados no sistema iRIC. Você precisa especificar o nome do solucionador (ou programa de criação de grade) e a lista de idiomas para aqueles que deseja criar ou atualizar os arquivos de tradução.</translation>
     </message>
     <message>
         <source>This function is intended to be used by solver developers or grid creating program developers, not users.</source>
@@ -461,7 +472,7 @@ This wizard will generate or update translation files for solver definition file
     <message>
         <source>%1 days have passed after launching iRIC Maintainance for the last time.
 Do you want to launch iRIC Maintainance?</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 dias se passaram após o lançamento do iRIC Maintainance pela última vez. Quer lançar o iRIC Maintainance?</translation>
     </message>
     <message>
         <source>%1 days have passed after launching iRIC Maintainance for the last time.</source>
@@ -598,11 +609,11 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Solver console</source>
-        <translation type="unfinished"></translation>
+        <translation>Console Solver</translation>
     </message>
     <message>
         <source>Maximum lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Máximo de linhas</translation>
     </message>
     <message>
         <source>Error</source>
@@ -622,11 +633,11 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Python path</source>
-        <translation type="unfinished"></translation>
+        <translation>Caminho Python</translation>
     </message>
     <message>
         <source>Note: Used to run solvers written in Python.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nota: Usado para executar solucionadores escritos em Python.</translation>
     </message>
 </context>
 <context>
@@ -685,7 +696,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>pixels</source>
-        <translation type="unfinished"></translation>
+        <translation>píxeis</translation>
     </message>
 </context>
 <context>
@@ -1058,6 +1069,14 @@ Do you want to launch iRIC Maintainance?</source>
         <source>(Not specified)</source>
         <translation>(Nao foi especificado)</translation>
     </message>
+    <message>
+        <source>Output Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Output calculation results in separate files</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ProjectPropertyDialog</name>
@@ -1203,7 +1222,7 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
 %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Ocorreu um erro ao carregar o arquivo de definição do solver na pasta &quot;%1&quot;. Este solucionador é ignorado. %2</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.</source>
@@ -1253,7 +1272,7 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <source>Welcome to iRIC!
 iRIC can simulate rivers from Colorado River to the Nile.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bem-vindo ao iRIC! O iRIC pode simular rios do Rio Colorado ao Nilo.</translation>
     </message>
     <message>
         <source>Welcome to iRIC!</source>
@@ -1546,7 +1565,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     <message>
         <source>Current working directory (%1) contains non-ASCII characters. Before starting a new project, change working directory from the following menu: 
 Option -&gt; Preferences</source>
-        <translation type="unfinished"></translation>
+        <translation>Diretório de trabalho atual (%1) contém caracteres não ASCII. Antes de iniciar um novo projeto, altere o diretório de trabalho no seguinte menu: Opção -&gt; Preferências</translation>
     </message>
     <message>
         <source>Export Google Earth KMZ for street view</source>
@@ -1586,11 +1605,11 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Transparency Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Definição de Transparência</translation>
     </message>
     <message>
         <source>Do you want to make the background transparent?</source>
-        <translation type="unfinished"></translation>
+        <translation>Quer tornar o fundo transparente?</translation>
     </message>
     <message>
         <source>This window do not support snapshot with this file type.</source>
@@ -1638,11 +1657,11 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>iRIC %1</source>
-        <translation>iRIC %1</translation>
+        <translation type="vanished">iRIC %1</translation>
     </message>
     <message>
         <source>%1 - iRIC %2 [%3]</source>
-        <translation>%1 - iRIC %2 [%3]</translation>
+        <translation type="vanished">%1 - iRIC %2 [%3]</translation>
     </message>
     <message>
         <source>http://iric-gui-user-manual.readthedocs.io/en/latest/</source>
@@ -1682,7 +1701,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>&amp;%1 %2</source>
-        <translation>&amp;%1 %2</translation>
+        <translation type="vanished">&amp;%1 %2</translation>
     </message>
     <message>
         <source>Unknown options specified. They are neglected. %1</source>
@@ -1771,6 +1790,18 @@ Option -&gt; Preferences</source>
     <message>
         <source>Dimension</source>
         <translation>Dimensao</translation>
+    </message>
+    <message>
+        <source>All files in %1 is deleted.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 - %2 %3 [%4]</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1936,7 +1967,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Geographic Data (from web)</source>
-        <translation>Informacoes geograficas ( por web)</translation>
+        <translation type="vanished">Informacoes geograficas ( por web)</translation>
     </message>
     <message>
         <source>&amp;Hydraulic Data</source>
@@ -2121,7 +2152,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Open new Verification Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Abra uma nova janela de verificação</translation>
     </message>
     <message>
         <source>&amp;Solver Information...</source>
@@ -2250,6 +2281,18 @@ Option -&gt; Preferences</source>
     <message>
         <source>Ctrl+C</source>
         <translation>Ctrl+C</translation>
+    </message>
+    <message>
+        <source>Reload &amp;CGNS file...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reload CGNS file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Geographic Data (Elevation from web)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

@@ -99,9 +99,16 @@ void iRICMainWindowActionManager::setupFileMenu()
 	openAction->setIcon(QIcon(QString(":/images/iconOpen.png")));
 	openAction->setShortcut(QKeySequence(tr("Ctrl+O")));
 	openAction->setStatusTip(tr("Open iRIC Project files"));
-	m_fileMenu->addAction(openAction);
 
+	m_fileMenu->addAction(openAction);
 	connect(openAction, SIGNAL(triggered()), m_parent, SLOT(openProject()));
+
+	reloadCgnsAction = new QAction(tr("Reload &CGNS file..."), m_fileMenu);
+	reloadCgnsAction->setIcon(QIcon(":/images/iconAnimationFollowLastStep.png"));
+	reloadCgnsAction->setStatusTip(tr("Reload CGNS file"));
+
+	m_fileMenu->addAction(reloadCgnsAction);
+	connect(reloadCgnsAction, SIGNAL(triggered()), m_parent, SLOT(reloadCgnsFile()));
 
 	saveAction = new QAction(tr("&Save"), m_fileMenu);
 	saveAction->setIcon(QIcon(":/images/iconSave.png"));
@@ -230,7 +237,7 @@ void iRICMainWindowActionManager::setupImportMenu()
 	m_geoDataImportMenu = importMenu->addMenu(tr("G&eographic Data"));
 	connect(m_geoDataImportMenu, SIGNAL(aboutToShow()), m_parent->preProcessorWindow(), SLOT(setupGeoDataImportMenu()));
 
-	m_geoDataImportFromWebMenu = importMenu->addMenu(tr("Geographic Data (from web)"));
+	m_geoDataImportFromWebMenu = importMenu->addMenu(tr("Geographic Data (Elevation from web)"));
 	connect(m_geoDataImportFromWebMenu, SIGNAL(aboutToShow()), m_parent->preProcessorWindow(), SLOT(setupGeoDataImportFromWebMenu()));
 
 	m_hydraulicDataImportMenu = importMenu->addMenu(tr("&Hydraulic Data"));
@@ -666,6 +673,7 @@ void iRICMainWindowActionManager::projectFileOpen()
 {
 	m_isProjectFileOpen = true;
 	// enable menus available only when project file is open.
+	reloadCgnsAction->setEnabled(true);
 	saveAction->setEnabled(true);
 	saveAsFileAction->setEnabled(true);
 	saveAsProjectAction->setEnabled(true);
@@ -714,6 +722,7 @@ void iRICMainWindowActionManager::projectFileClose()
 {
 	m_isProjectFileOpen = false;
 	// enable menus available only when project file is open.
+	reloadCgnsAction->setEnabled(false);
 	saveAction->setEnabled(false);
 	saveAsFileAction->setEnabled(false);
 	saveAsProjectAction->setEnabled(false);
@@ -767,6 +776,7 @@ void iRICMainWindowActionManager::setupMainToolBar()
 	m_mainToolBar->setFloatable(false);
 
 	m_mainToolBar->addAction(openAction);
+	m_mainToolBar->addAction(reloadCgnsAction);
 	m_mainToolBar->addAction(saveAction);
 	m_mainToolBar->addAction(saveSnapshotAction);
 	m_mainToolBar->addAction(copySnapshotAction);

@@ -1,142 +1,140 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ky_KG">
 <context>
     <name>DBFItemSelectDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Dialog</translation>
     </message>
     <message>
         <source>Please select item to import.</source>
-        <translation type="unfinished"></translation>
+        <translation>Импорттоо үчүн нерсени тандаңыз.</translation>
     </message>
     <message>
         <source>Encoding:</source>
-        <translation type="unfinished"></translation>
+        <translation>Коддоо:</translation>
     </message>
 </context>
 <context>
     <name>PolygonCsvExporter</name>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>CSV файлы (*.csv)</translation>
     </message>
 </context>
 <context>
     <name>PolygonCsvImporter</name>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>CSV файлы (*.csv)</translation>
     </message>
 </context>
 <context>
     <name>PolygonShapeExporter</name>
     <message>
         <source>Shape file (*.shp)</source>
-        <translation type="unfinished"></translation>
+        <translation>Форма файлы (*.shp)</translation>
     </message>
 </context>
 <context>
     <name>PolygonShapeImporter</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Ката</translation>
     </message>
     <message>
         <source>This polygon contains holes. This polygon can not be imported.</source>
-        <translation type="unfinished"></translation>
+        <translation>Бул полигондо тешиктер бар. Бул полигонду импорттоого болбойт.</translation>
     </message>
     <message>
         <source>The shape type contained in this file is not polygon.</source>
-        <translation type="unfinished"></translation>
+        <translation>Бул файлдагы форма түрү көп бурчтуу эмес.</translation>
     </message>
     <message>
         <source>Shape file (*.shp)</source>
-        <translation type="unfinished"></translation>
+        <translation>Форма файлы (*.shp)</translation>
     </message>
 </context>
 <context>
     <name>PolylineCsvExporter</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Ката</translation>
     </message>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>CSV файлы (*.csv)</translation>
     </message>
 </context>
 <context>
     <name>PolylineCsvImporter</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Эскертүү</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Ката</translation>
     </message>
     <message>
         <source>Data need two columns.</source>
-        <translation type="unfinished"></translation>
+        <translation>Маалыматтарга эки мамыча керек.</translation>
     </message>
     <message>
         <source>Data must be real numbers.</source>
-        <translation type="unfinished"></translation>
+        <translation>Маалыматтар чыныгы сандар болушу керек.</translation>
     </message>
     <message>
         <source>CSV file (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>CSV файлы (*.csv)</translation>
     </message>
 </context>
 <context>
     <name>PolylineShapeExporter</name>
     <message>
         <source>Shape file (*.shp)</source>
-        <translation type="unfinished"></translation>
+        <translation>Форма файлы (*.shp)</translation>
     </message>
 </context>
 <context>
     <name>PolylineShapeImporter</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Ката</translation>
     </message>
     <message>
         <source>This polyline is composed of multiple line strings. This polyline can not be imported.</source>
-        <translation type="unfinished"></translation>
+        <translation>Бул polyline бир нече сап саптарынан турат. Бул полилинди импорттоого болбойт.</translation>
     </message>
     <message>
         <source>The shape type contained in this file is not polyline.</source>
-        <translation type="unfinished"></translation>
+        <translation>Бул файлда камтылган форма түрү полилин эмес.</translation>
     </message>
     <message>
         <source>Shape file (*.shp)</source>
-        <translation type="unfinished"></translation>
+        <translation>Форма файлы (*.shp)</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
         <source>All importable files (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Бардык импорттолуучу файлдар (%1)</translation>
     </message>
     <message>
         <source>Select file to import</source>
-        <translation type="unfinished"></translation>
+        <translation>Импорттоо үчүн файлды тандаңыз</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Эскертүү</translation>
     </message>
     <message>
         <source>File type can not be recongnized from the file extension. : %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Файлдын түрүн файл кеңейтүүсүнөн кайра калыбына келтирүү мүмкүн эмес. : %1</translation>
     </message>
     <message>
         <source>Select file to export</source>
-        <translation type="unfinished"></translation>
+        <translation>Экспорттоо үчүн файлды тандаңыз</translation>
     </message>
 </context>
 </TS>

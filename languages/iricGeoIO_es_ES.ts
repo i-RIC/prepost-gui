@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="es_ES">
 <context>
     <name>DBFItemSelectDialog</name>
@@ -9,7 +7,7 @@
     </message>
     <message>
         <source>Please select item to import.</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccione el elemento para importar.</translation>
     </message>
     <message>
         <source>Encoding:</source>
@@ -34,33 +32,33 @@
     <name>PolygonShapeExporter</name>
     <message>
         <source>Shape file (*.shp)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo de forma (*.shp)</translation>
     </message>
 </context>
 <context>
     <name>PolygonShapeImporter</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>This polygon contains holes. This polygon can not be imported.</source>
-        <translation type="unfinished"></translation>
+        <translation>Este polígono contiene huecos. Este polígono no se puede importar.</translation>
     </message>
     <message>
         <source>The shape type contained in this file is not polygon.</source>
-        <translation type="unfinished"></translation>
+        <translation>El tipo de forma contenido en este archivo no es polígono.</translation>
     </message>
     <message>
         <source>Shape file (*.shp)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo de forma (*.shp)</translation>
     </message>
 </context>
 <context>
     <name>PolylineCsvExporter</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>CSV file (*.csv)</source>
@@ -75,15 +73,15 @@
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>Data need two columns.</source>
-        <translation type="unfinished"></translation>
+        <translation>Los datos necesitan dos columnas.</translation>
     </message>
     <message>
         <source>Data must be real numbers.</source>
-        <translation type="unfinished"></translation>
+        <translation>Los datos deben ser números reales.</translation>
     </message>
     <message>
         <source>CSV file (*.csv)</source>
@@ -94,26 +92,26 @@
     <name>PolylineShapeExporter</name>
     <message>
         <source>Shape file (*.shp)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo de forma (*.shp)</translation>
     </message>
 </context>
 <context>
     <name>PolylineShapeImporter</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>This polyline is composed of multiple line strings. This polyline can not be imported.</source>
-        <translation type="unfinished"></translation>
+        <translation>Esta polilínea se compone de varias cadenas de líneas. Esta polilínea no se puede importar.</translation>
     </message>
     <message>
         <source>The shape type contained in this file is not polyline.</source>
-        <translation type="unfinished"></translation>
+        <translation>El tipo de forma contenido en este archivo no es polilínea.</translation>
     </message>
     <message>
         <source>Shape file (*.shp)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo de forma (*.shp)</translation>
     </message>
 </context>
 <context>
@@ -132,11 +130,11 @@
     </message>
     <message>
         <source>File type can not be recongnized from the file extension. : %1</source>
-        <translation type="unfinished"></translation>
+        <translation>El tipo de archivo no se puede reconocer a partir de la extensión del archivo. : %1</translation>
     </message>
     <message>
         <source>Select file to export</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccionar archivo para exportar</translation>
     </message>
 </context>
 </TS>

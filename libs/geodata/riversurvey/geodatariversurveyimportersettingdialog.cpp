@@ -26,7 +26,7 @@ void GeoDataRiverSurveyImporterSettingDialog::setAllNamesAreNumber(bool allNumbe
 {
 	if (allNumber) {
 		ui->upToDownRadioButton->setChecked(false);
-		ui->downToUpRadioButton->setChecked(false);
+		ui->downToUpRadioButton->setChecked(true);
 		ui->upToDownRadioButton->setEnabled(false);
 		ui->downToUpRadioButton->setEnabled(false);
 	} else {

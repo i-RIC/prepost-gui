@@ -1,1867 +1,1888 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="el_GR">
 <context>
     <name>AttributeBrowserTargetDataItem</name>
     <message>
         <source>Please specify a closed polygon!</source>
-        <translation type="unfinished"></translation>
+        <translation>Παρακαλώ καθορίστε ένα κλειστό πολύγωνο!</translation>
     </message>
 </context>
 <context>
     <name>BackgroundImageInfo</name>
     <message>
         <source>Unable to read image %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Δεν είναι δυνατή η ανάγνωση της εικόνας %1</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Προειδοποίηση</translation>
     </message>
     <message>
         <source>In file %1, x-coordinate increment per pixel and y-coordinate increment per pixel mismatches. It is acceptable, but it may be wrong.</source>
-        <translation type="unfinished"></translation>
+        <translation>Στο αρχείο %1, αύξηση των συντεταγμένων x ανά pixel και αύξηση συντεταγμένων y ανά pixel. Είναι αποδεκτό, αλλά μπορεί να είναι λάθος.</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Πληροφορίες</translation>
     </message>
     <message>
         <source>Select a corresponding point on Main Window.</source>
-        <translation type="unfinished"></translation>
+        <translation>Επιλέξτε ένα αντίστοιχο σημείο στο Κύριο παράθυρο.</translation>
     </message>
 </context>
 <context>
     <name>BackgroundImageInfoDialog</name>
     <message>
         <source>Background Image Position</source>
-        <translation type="unfinished"></translation>
+        <translation>Θέση εικόνας φόντου</translation>
     </message>
     <message>
         <source>Method of designation</source>
-        <translation type="unfinished"></translation>
+        <translation>Μέθοδος χαρακτηρισμού</translation>
     </message>
     <message>
         <source>Specify bottom-left vertex position, scale, and rotate angle</source>
-        <translation type="unfinished"></translation>
+        <translation>Καθορίστε τη θέση, κλίμακα και γωνία περιστροφής κάτω αριστερά</translation>
     </message>
     <message>
         <source>Specify bottom-left and bottom-right vertex positions</source>
-        <translation type="unfinished"></translation>
+        <translation>Καθορίστε τις θέσεις κορυφής κάτω αριστερά και κάτω δεξιά</translation>
     </message>
     <message>
         <source>Bottom-left vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Κάτω-αριστερή κορυφή</translation>
     </message>
     <message>
         <source>X:</source>
-        <translation type="unfinished"></translation>
+        <translation>Χ:</translation>
     </message>
     <message>
         <source>Y:</source>
-        <translation type="unfinished"></translation>
+        <translation>Υ:</translation>
     </message>
     <message>
         <source>Bottom-right vertex</source>
-        <translation type="unfinished"></translation>
+        <translation>Κάτω-δεξιά κορυφή</translation>
     </message>
     <message>
         <source>Scale:</source>
-        <translation type="unfinished"></translation>
+        <translation>Κλίμακα:</translation>
     </message>
     <message>
         <source>Rotate Angle:</source>
-        <translation type="unfinished"></translation>
+        <translation>Γωνία περιστροφής:</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Specify the distance in meters that corresponds to the width of one pixel of the image.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Καθορίστε την απόσταση σε μέτρα που αντιστοιχεί στο πλάτος ενός εικονοστοιχείου της εικόνας. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Specify the angle of image bottom edge against X-axis.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Καθορίστε τη γωνία του κάτω άκρου της εικόνας έναντι του άξονα Χ. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
 </context>
 <context>
     <name>BackgroundImageInfoGeoreferenceDialog</name>
     <message>
         <source>Georeference</source>
-        <translation type="unfinished"></translation>
+        <translation>Γεωαναφορά</translation>
     </message>
     <message>
         <source>PushButton</source>
-        <translation type="unfinished"></translation>
+        <translation>PushButton</translation>
     </message>
     <message>
         <source>Hide</source>
-        <translation type="unfinished"></translation>
+        <translation>Κρύβω</translation>
     </message>
     <message>
         <source>Show</source>
-        <translation type="unfinished"></translation>
+        <translation>προβολή</translation>
     </message>
 </context>
 <context>
     <name>ColorTransferFunctionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Μορφή</translation>
     </message>
     <message>
         <source>Attribute</source>
-        <translation type="unfinished"></translation>
+        <translation>Χαρακτηριστικό</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Χρώμα</translation>
     </message>
 </context>
 <context>
     <name>GcpTableModel</name>
     <message>
         <source>srcX</source>
-        <translation type="unfinished"></translation>
+        <translation>srcX</translation>
     </message>
     <message>
         <source>srcY</source>
-        <translation type="unfinished"></translation>
+        <translation>srcY</translation>
     </message>
     <message>
         <source>dstX</source>
-        <translation type="unfinished"></translation>
+        <translation>dstX</translation>
     </message>
     <message>
         <source>dstY</source>
-        <translation type="unfinished"></translation>
+        <translation>dstY</translation>
     </message>
 </context>
 <context>
     <name>GeoData</name>
     <message>
         <source>Edit &amp;Name...</source>
-        <translation type="unfinished"></translation>
+        <translation>Επεξεργασία ονόματος (&amp;N)...</translation>
     </message>
 </context>
 <context>
     <name>GeoDataBackground</name>
     <message>
         <source>Default</source>
-        <translation type="unfinished"></translation>
+        <translation>Προκαθορισμένο</translation>
     </message>
     <message>
         <source>Edit value...</source>
-        <translation type="unfinished"></translation>
+        <translation>Επεξεργασία τιμής...</translation>
     </message>
     <message>
         <source>Edit %1 default value</source>
-        <translation type="unfinished"></translation>
+        <translation>Επεξεργασία %1 Προεπιλεγμένη τιμή</translation>
     </message>
     <message>
         <source>Please input new default value.</source>
-        <translation type="unfinished"></translation>
+        <translation>Εισαγάγετε νέα προεπιλεγμένη τιμή.</translation>
     </message>
     <message>
         <source>Background edit value</source>
-        <translation type="unfinished"></translation>
+        <translation>Τιμή επεξεργασίας φόντου</translation>
     </message>
 </context>
 <context>
     <name>GeoDataBackgroundComplexCreator</name>
     <message>
         <source>Background</source>
-        <translation type="unfinished"></translation>
+        <translation>Ιστορικό</translation>
     </message>
 </context>
 <context>
     <name>GeoDataBackgroundEditDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Διάλογος</translation>
     </message>
     <message>
         <source>Minimum value of geographic data</source>
-        <translation type="unfinished"></translation>
+        <translation>Ελάχιστη αξία γεωγραφικών δεδομένων</translation>
     </message>
     <message>
         <source>Maximum value of geographic data</source>
-        <translation type="unfinished"></translation>
+        <translation>Μέγιστη αξία γεωγραφικών δεδομένων</translation>
     </message>
     <message>
         <source>Custom value</source>
-        <translation type="unfinished"></translation>
+        <translation>Προσαρμοσμένη τιμή</translation>
     </message>
 </context>
 <context>
     <name>GeoreferenceView::ImageInfo</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Προειδοποίηση</translation>
     </message>
     <message>
         <source>No point is selected.</source>
-        <translation type="unfinished"></translation>
+        <translation>Δεν έχει επιλεγεί κανένα σημείο.</translation>
     </message>
     <message>
         <source>No point can be further deleted.</source>
-        <translation type="unfinished"></translation>
+        <translation>Κανένα σημείο δεν μπορεί να διαγραφεί περαιτέρω.</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Πληροφορίες</translation>
     </message>
     <message>
         <source>Select a point on Georeference dialog.</source>
-        <translation type="unfinished"></translation>
+        <translation>Επιλέξτε ένα σημείο στο παράθυρο διαλόγου Γεωαναφορά.</translation>
     </message>
 </context>
 <context>
     <name>GraphicsWindowDataItem</name>
     <message>
         <source>Object Browser Item Change</source>
-        <translation type="unfinished"></translation>
+        <translation>Αλλαγή αντικειμένου προγράμματος περιήγησης αντικειμένου</translation>
     </message>
 </context>
 <context>
     <name>GraphicsWindowDataModel</name>
     <message>
         <source>Operation ToolBar</source>
-        <translation type="unfinished"></translation>
+        <translation>Γραμμή εργαλείων λειτουργίας</translation>
     </message>
 </context>
 <context>
     <name>GridAttributeDimensionComboboxSelectWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Μορφή</translation>
     </message>
     <message>
         <source>label:</source>
-        <translation type="unfinished"></translation>
+        <translation>επιγραφή:</translation>
     </message>
 </context>
 <context>
     <name>GridAttributeDimensionTimeSliderSelectWidget</name>
     <message>
         <source>Step &amp;Backward</source>
-        <translation type="unfinished"></translation>
+        <translation>Βήμα προς τα πίσω (&amp;B)</translation>
     </message>
     <message>
         <source>Step &amp;Forward</source>
-        <translation type="unfinished"></translation>
+        <translation>Βήμα προς τα εμπρός (&amp;F)</translation>
     </message>
     <message>
         <source>&amp;Reset</source>
-        <translation type="unfinished"></translation>
+        <translation>Επαναφορά (&amp;R)</translation>
     </message>
     <message>
         <source>Go to &amp;Last Step</source>
-        <translation type="unfinished"></translation>
+        <translation>Μεταβείτε στο Τελευταίο Βήμα (&amp;L)</translation>
     </message>
     <message>
         <source>&amp;Start/Stop Animation</source>
-        <translation type="unfinished"></translation>
+        <translation>Έναρξη/Διακοπή κινούμενης εικόνας (&amp;S)</translation>
     </message>
     <message>
         <source>S&amp;top Animation</source>
-        <translation type="unfinished"></translation>
+        <translation>Σταματήστε την κινούμενη εικόνα (&amp;T)</translation>
     </message>
     <message>
         <source>&amp;Animation Speed Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Ρύθμιση ταχύτητας κινούμενων σχεδίων (&amp;A)...</translation>
     </message>
 </context>
 <context>
     <name>GridAttributeEditDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Διάλογος</translation>
     </message>
     <message>
         <source>TextLabel</source>
-        <translation type="unfinished"></translation>
+        <translation>TextLabel</translation>
     </message>
 </context>
 <context>
     <name>GridAttributeEditNameAndValueDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Διάλογος</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ονομα:</translation>
     </message>
     <message>
         <source>TextLabel</source>
-        <translation type="unfinished"></translation>
+        <translation>TextLabel</translation>
     </message>
 </context>
 <context>
     <name>GridAttributeEditWidget</name>
     <message>
         <source>Edit grid attribute value(s)</source>
-        <translation type="unfinished"></translation>
+        <translation>Επεξεργασία τιμής (-ών) χαρακτηριστικού πλέγματος</translation>
     </message>
 </context>
 <context>
     <name>GridAttributeVariationEditDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Διάλογος</translation>
     </message>
     <message>
         <source>TextLabel</source>
-        <translation type="unfinished"></translation>
+        <translation>TextLabel</translation>
     </message>
 </context>
 <context>
     <name>GridAttributeVariationEditWidget</name>
     <message>
         <source>Edit grid attribute value(s)</source>
-        <translation type="unfinished"></translation>
+        <translation>Επεξεργασία τιμής (-ών) χαρακτηριστικού πλέγματος</translation>
     </message>
 </context>
 <context>
     <name>GridCellAttributePropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Διάλογος</translation>
     </message>
 </context>
 <context>
     <name>GridComplexConditionDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Διάλογος</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Προσθήκη (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Διαγράφω (&amp;D)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Προειδοποίηση</translation>
     </message>
     <message>
         <source>Name has to consist of only English characters.</source>
-        <translation type="unfinished"></translation>
+        <translation>Το όνομα πρέπει να περιλαμβάνει μόνο αγγλικούς χαρακτήρες.</translation>
     </message>
     <message>
         <source>There must be one group at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>Πρέπει να υπάρχει τουλάχιστον μία ομάδα.</translation>
     </message>
 </context>
 <context>
     <name>GridComplexConditionGroupEditDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Διάλογος</translation>
     </message>
     <message>
         <source>Target:</source>
-        <translation type="unfinished"></translation>
+        <translation>Στόχος:</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Προειδοποίηση</translation>
     </message>
     <message>
         <source>Modifications you made will be discarded.</source>
-        <translation type="unfinished"></translation>
+        <translation>Οι τροποποιήσεις που κάνατε θα απορριφθούν.</translation>
     </message>
 </context>
 <context>
     <name>GridComplexConditionGroupRealEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Μορφή</translation>
     </message>
     <message>
         <source>Targets</source>
-        <translation type="unfinished"></translation>
+        <translation>Στόχοι</translation>
     </message>
 </context>
 <context>
     <name>GridComplexConditionWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Μορφή</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ονομα:</translation>
     </message>
     <message>
         <source>Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Σύνθεση</translation>
     </message>
     <message>
         <source>Use as Default Value</source>
-        <translation type="unfinished"></translation>
+        <translation>Χρήση ως προεπιλεγμένη τιμή</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Χρώμα:</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingCondition</name>
     <message>
         <source>&amp;Grid Creating Condition</source>
-        <translation type="unfinished"></translation>
+        <translation>Συνθήκη δημιουργίας πλέγματος (&amp;G)</translation>
     </message>
 </context>
 <context>
     <name>GridNodeAttributePropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Διάλογος</translation>
     </message>
     <message>
         <source>Contour setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Ρύθμιση περιγράμματος</translation>
+    </message>
+</context>
+<context>
+    <name>InputConditionCgnsFileSelectDialog</name>
+    <message>
+        <source>Select Input CGNS File</source>
+        <translation>Επιλέξτε Εισαγωγή αρχείου CGNS</translation>
+    </message>
+    <message>
+        <source>Information</source>
+        <translation>Πληροφορίες</translation>
+    </message>
+    <message>
+        <source>Do you want to import grid from the CGNS file?</source>
+        <translation>Θέλετε να εισαγάγετε πλέγμα από το αρχείο CGNS;</translation>
+    </message>
+    <message>
+        <source>Select CGNS file</source>
+        <translation>Επιλέξτε αρχείο CGNS</translation>
+    </message>
+    <message>
+        <source>Please select from which CGNS file to read grid.</source>
+        <translation>Επιλέξτε από ποιο αρχείο CGNS θα διαβάσετε το πλέγμα.</translation>
     </message>
 </context>
 <context>
     <name>InputConditionContainerSet</name>
     <message>
         <source>Definition node is not stored</source>
-        <translation type="unfinished"></translation>
+        <translation>Ο κόμβος ορισμού δεν αποθηκεύεται</translation>
     </message>
     <message>
-        <source>Wrong valueType &quot;%1&quot; is set.</source>
-        <translation type="unfinished"></translation>
+        <source>Wrong valueType "%1" is set.</source>
+        <translation>Λάθος τιμήType "%1"έχει οριστεί.</translation>
     </message>
     <message>
-        <source>Wrong conditionType &quot;%1&quot;is set.</source>
-        <translation type="unfinished"></translation>
+        <source>Wrong conditionType "%1"is set.</source>
+        <translation>Λάθος κατάσταση Τύπος "%1"έχει οριστεί.</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
 %1: %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Παρουσιάστηκε σφάλμα κατά τη φόρτωση του αρχείου ορισμού επίλυσης. %1 : %2</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Λάθος</translation>
     </message>
 </context>
 <context>
     <name>InputConditionDialog</name>
     <message>
         <source>Calculation Condition</source>
-        <translation type="unfinished"></translation>
+        <translation>Συνθήκη υπολογισμού</translation>
     </message>
     <message>
         <source>&amp;Save and Close</source>
-        <translation type="unfinished"></translation>
+        <translation>Αποθήκευσε και κλείσε (&amp;S)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Λάθος</translation>
     </message>
     <message>
         <source>This CGNS file is created for %1 version %2. It is not compatible with the current solver.</source>
-        <translation type="unfinished"></translation>
+        <translation>Αυτό το αρχείο CGNS έχει δημιουργηθεί για %1 εκδοχή %2 Το Δεν είναι συμβατό με τον τρέχοντα επιλυτή.</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Προειδοποίηση</translation>
     </message>
     <message>
         <source>This CGNS file does not have solver information. We can not check whether this CGNS file is compatible with the solver. If it is not compatible, maybe only some part of the conditions will be imported.
 Do you really want to import this file?</source>
-        <translation type="unfinished"></translation>
+        <translation>Αυτό το αρχείο CGNS δεν διαθέτει πληροφορίες επίλυσης. Δεν μπορούμε να ελέγξουμε αν αυτό το αρχείο CGNS είναι συμβατό με τον επιλυτή. Εάν δεν είναι συμβατό, ίσως εισαχθεί μόνο μέρος των συνθηκών. Θέλετε πραγματικά να εισαγάγετε αυτό το αρχείο;</translation>
     </message>
     <message>
         <source>This CGNS file does not contain calculation condition data.</source>
-        <translation type="unfinished"></translation>
+        <translation>Αυτό το αρχείο CGNS δεν περιέχει δεδομένα συνθηκών υπολογισμού.</translation>
     </message>
     <message>
         <source>Are you sure you want to reset all calculation conditions to default values?</source>
-        <translation type="unfinished"></translation>
+        <translation>Είστε βέβαιοι ότι θέλετε να επαναφέρετε όλες τις συνθήκες υπολογισμού στις προεπιλεγμένες τιμές;</translation>
     </message>
     <message>
         <source>The solver is running currently, so you can not save calculation condition. Please press Cancel button.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ο επιλυτής λειτουργεί αυτήν τη στιγμή, επομένως δεν μπορείτε να αποθηκεύσετε την κατάσταση υπολογισμού. Πατήστε το κουμπί Ακύρωση.</translation>
     </message>
     <message>
         <source>Modifications you made will be discarded.</source>
-        <translation type="unfinished"></translation>
+        <translation>Οι τροποποιήσεις που κάνατε θα απορριφθούν.</translation>
     </message>
     <message>
         <source>Error occured while saving.</source>
-        <translation type="unfinished"></translation>
+        <translation>Παρουσιάστηκε σφάλμα κατά την αποθήκευση.</translation>
     </message>
 </context>
 <context>
     <name>InputConditionPageList</name>
     <message>
         <source>Groups</source>
-        <translation type="unfinished"></translation>
+        <translation>Ομάδες</translation>
     </message>
 </context>
 <context>
     <name>InputConditionWidgetCgnsFile</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Μορφή</translation>
     </message>
     <message>
         <source>...</source>
-        <translation type="unfinished"></translation>
+        <translation>...</translation>
     </message>
     <message>
         <source>Solver Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Όνομα Λύσης:</translation>
     </message>
     <message>
         <source>---</source>
-        <translation type="unfinished"></translation>
+        <translation>---</translation>
     </message>
     <message>
         <source>Solver Version:</source>
-        <translation type="unfinished"></translation>
+        <translation>Επίλυση έκδοσης:</translation>
     </message>
     <message>
         <source>Grid Type:</source>
-        <translation type="unfinished"></translation>
+        <translation>Τύπος πλέγματος:</translation>
     </message>
     <message>
         <source>Grid Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Μέγεθος πλέγματος:</translation>
     </message>
     <message>
         <source>Number of results:</source>
-        <translation type="unfinished"></translation>
+        <translation>Αριθμός αποτελεσμάτων:</translation>
     </message>
     <message>
         <source>Structured</source>
-        <translation type="unfinished"></translation>
+        <translation>Δομημένος</translation>
     </message>
     <message>
         <source>Unstructured</source>
-        <translation type="unfinished"></translation>
+        <translation>Αδόμητη</translation>
     </message>
     <message>
         <source>Select File</source>
-        <translation type="unfinished"></translation>
+        <translation>Επιλέξτε Αρχείο</translation>
     </message>
 </context>
 <context>
     <name>InputConditionWidgetCgnsResult</name>
     <message>
         <source>(CGNS file is not selected)</source>
-        <translation type="unfinished"></translation>
+        <translation>(Το αρχείο CGNS δεν είναι επιλεγμένο)</translation>
     </message>
     <message>
         <source>(There is no result)</source>
-        <translation type="unfinished"></translation>
+        <translation>(Δεν υπάρχει αποτέλεσμα)</translation>
     </message>
 </context>
 <context>
     <name>InputConditionWidgetCheckbox</name>
     <message>
         <source>Enabled</source>
-        <translation type="unfinished"></translation>
+        <translation>Ενεργοποιημένο</translation>
     </message>
 </context>
 <context>
     <name>InputConditionWidgetFilename</name>
     <message>
         <source>Select File</source>
-        <translation type="unfinished"></translation>
+        <translation>Επιλέξτε Αρχείο</translation>
     </message>
 </context>
 <context>
     <name>InputConditionWidgetFoldername</name>
     <message>
         <source>Select Directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Επιλέξτε Κατάλογος</translation>
     </message>
 </context>
 <context>
     <name>InputConditionWidgetFunctionalDialog</name>
     <message>
         <source>Calculation Condition</source>
-        <translation type="unfinished"></translation>
+        <translation>Συνθήκη υπολογισμού</translation>
     </message>
     <message>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Προσθήκη</translation>
     </message>
     <message>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Αφαιρώ</translation>
     </message>
     <message>
         <source>&amp;Import</source>
-        <translation type="unfinished"></translation>
+        <translation>Εισαγωγή (&amp;I)</translation>
     </message>
     <message>
         <source>Import Web</source>
-        <translation type="unfinished"></translation>
+        <translation>Εισαγωγή Ιστού</translation>
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation type="unfinished"></translation>
+        <translation>Εξαγωγή (&amp;E)</translation>
     </message>
     <message>
         <source>Clear</source>
-        <translation type="unfinished"></translation>
+        <translation>Σαφή</translation>
     </message>
     <message>
         <source>%1 at row %2: The value %3 is smaller than minimum value %4</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 στη σειρά %2 : Η αξία %3 είναι μικρότερη από την ελάχιστη τιμή %4</translation>
     </message>
     <message>
         <source>%1 at row %2: The value %3 is larger than maximum value %4</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 στη σειρά %2 : Η αξία %3 είναι μεγαλύτερη από τη μέγιστη τιμή %4</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Λάθος</translation>
     </message>
     <message>
         <source>Error occured while opening the file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Παρουσιάστηκε σφάλμα κατά το άνοιγμα του αρχείου.</translation>
     </message>
     <message>
         <source>Ctrl+C</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+C</translation>
     </message>
     <message>
         <source>Ctrl+V</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+V</translation>
     </message>
     <message>
         <source>%1 are values for spans. For example value input at 2nd row is for span between 1st row and 2nd row.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 είναι τιμές για περιθώρια. Για παράδειγμα, η τιμή εισαγωγής στη 2η σειρά είναι για εύρος μεταξύ 1ης και 2ης σειράς.</translation>
     </message>
     <message>
         <source>Choose a text file</source>
-        <translation type="unfinished"></translation>
+        <translation>Επιλέξτε ένα αρχείο κειμένου</translation>
     </message>
     <message>
         <source>Text files (*.csv *.txt);;All files (*.*)</source>
-        <translation type="unfinished"></translation>
+        <translation>Αρχεία κειμένου (*.csv *.txt);;All files (*.*)</translation>
     </message>
     <message>
         <source>Specify file name to save</source>
-        <translation type="unfinished"></translation>
+        <translation>Καθορίστε το όνομα αρχείου για αποθήκευση</translation>
     </message>
     <message>
         <source>CSV files (*.csv)</source>
-        <translation type="unfinished"></translation>
+        <translation>Αρχεία CSV (*.csv)</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Πληροφορίες</translation>
     </message>
     <message>
         <source>Values are copied to clipboard.</source>
-        <translation type="unfinished"></translation>
+        <translation>Οι τιμές αντιγράφονται στο πρόχειρο.</translation>
     </message>
     <message>
         <source>File %1 is updated after imported to calculation condition %2. Do you want to import the updated file?</source>
-        <translation type="unfinished"></translation>
+        <translation>Αρχείο %1 ενημερώνεται μετά την εισαγωγή στην κατάσταση υπολογισμού %2 Το Θέλετε να εισαγάγετε το ενημερωμένο αρχείο;</translation>
     </message>
     <message>
-        <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
-        <translation type="unfinished"></translation>
+        <source>You can copy and paste the values, with shortcut "Ctrl + C" and "Ctrl + V"</source>
+        <translation>Μπορείτε να αντιγράψετε και να επικολλήσετε τις τιμές, με συντόμευση "Ctrl + C" και "Ctrl + V"</translation>
     </message>
     <message>
         <source>The following problems found: 
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Βρέθηκαν τα ακόλουθα προβλήματα:</translation>
     </message>
     <message>
         <source>
  ... and other %1 errors</source>
-        <translation type="unfinished"></translation>
+        <translation>... και άλλες %1 Σφάλματα</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Προειδοποίηση</translation>
     </message>
 </context>
 <context>
     <name>InputConditionWidgetFunctionalDownloadDialog</name>
     <message>
         <source>Download</source>
-        <translation type="unfinished"></translation>
+        <translation>Κατεβάστε</translation>
     </message>
     <message>
         <source>Site Number:</source>
-        <translation type="unfinished"></translation>
+        <translation>Αριθμός ιστότοπου:</translation>
     </message>
     <message>
         <source>Start Date:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ημερομηνία έναρξης:</translation>
     </message>
     <message>
         <source>End Date:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ημερομηνία λήξης:</translation>
     </message>
     <message>
         <source>Test</source>
-        <translation type="unfinished"></translation>
+        <translation>Δοκιμή</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Λάθος</translation>
     </message>
     <message>
         <source>Please enter a site number.</source>
-        <translation type="unfinished"></translation>
+        <translation>Εισαγάγετε έναν αριθμό ιστότοπου.</translation>
     </message>
     <message>
         <source>Invalid site number.</source>
-        <translation type="unfinished"></translation>
+        <translation>Μη έγκυρος αριθμός ιστότοπου.</translation>
     </message>
     <message>
         <source>Start date not prior to end date.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ημερομηνία έναρξης όχι πριν από την ημερομηνία λήξης.</translation>
     </message>
     <message>
         <source>Import failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Η εισαγωγή απέτυχε</translation>
     </message>
     <message>
         <source>No data to import.</source>
-        <translation type="unfinished"></translation>
+        <translation>Δεν υπάρχουν δεδομένα για εισαγωγή.</translation>
     </message>
 </context>
 <context>
     <name>LookupTableEditWidget</name>
     <message>
         <source>Colormap Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Ρύθμιση χάρτη χρωμάτων</translation>
     </message>
     <message>
         <source>Value range</source>
-        <translation type="unfinished"></translation>
+        <translation>Εύρος τιμών</translation>
     </message>
     <message>
         <source>Automatic</source>
-        <translation type="unfinished"></translation>
+        <translation>Αυτόματο</translation>
     </message>
     <message>
         <source>Fill upper area</source>
-        <translation type="unfinished"></translation>
+        <translation>Συμπληρώστε την άνω περιοχή</translation>
     </message>
     <message>
         <source>Min:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ελάχιστο:</translation>
     </message>
     <message>
         <source>Fill lower area</source>
-        <translation type="unfinished"></translation>
+        <translation>Συμπληρώστε την κάτω περιοχή</translation>
     </message>
     <message>
         <source>Division Number:</source>
-        <translation type="unfinished"></translation>
+        <translation>Αριθμός διαίρεσης:</translation>
     </message>
     <message>
         <source>Max:</source>
-        <translation type="unfinished"></translation>
+        <translation>Μέγιστη:</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation type="unfinished"></translation>
+        <translation>Colormap</translation>
     </message>
 </context>
 <context>
     <name>MeasuredData</name>
     <message>
         <source>Importing Measured Data...</source>
-        <translation type="unfinished"></translation>
+        <translation>Εισαγωγή μετρημένων δεδομένων...</translation>
     </message>
     <message>
         <source>Error occured while opening the file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Παρουσιάστηκε σφάλμα κατά το άνοιγμα του αρχείου.</translation>
     </message>
     <message>
-        <source>The first two columns must be &quot;X&quot; and &quot;Y&quot;.</source>
-        <translation type="unfinished"></translation>
+        <source>The first two columns must be "X" and "Y".</source>
+        <translation>Οι δύο πρώτες στήλες πρέπει να είναι "X" και "Y".</translation>
     </message>
     <message>
         <source>The data file has to consist of only English characters.</source>
-        <translation type="unfinished"></translation>
+        <translation>Το αρχείο δεδομένων πρέπει να αποτελείται μόνο από αγγλικούς χαρακτήρες.</translation>
     </message>
     <message>
         <source>Wrong data found: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Βρέθηκαν λάθος δεδομένα: %1</translation>
     </message>
 </context>
 <context>
     <name>MousePositionWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Μορφή</translation>
     </message>
     <message>
         <source>X: </source>
-        <translation type="unfinished"></translation>
+        <translation>Χ:</translation>
     </message>
     <message>
         <source>Y: </source>
-        <translation type="unfinished"></translation>
+        <translation>Υ:</translation>
     </message>
     <message>
         <source>X: ------</source>
-        <translation type="unfinished"></translation>
+        <translation>Χ: ------</translation>
     </message>
     <message>
         <source>Y: ------</source>
-        <translation type="unfinished"></translation>
+        <translation>Υ: ------</translation>
     </message>
 </context>
 <context>
     <name>OffsetSettingDialog</name>
     <message>
         <source>Offset Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Offset Setting</translation>
     </message>
     <message>
         <source>X:</source>
-        <translation type="unfinished"></translation>
+        <translation>Χ:</translation>
     </message>
     <message>
         <source>Y:</source>
-        <translation type="unfinished"></translation>
+        <translation>Υ:</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Προειδοποίηση</translation>
     </message>
     <message>
         <source>X value is not appropriate. Please input more simple value.</source>
-        <translation type="unfinished"></translation>
+        <translation>Η τιμή Χ δεν είναι κατάλληλη. Εισαγάγετε πιο απλή τιμή.</translation>
     </message>
     <message>
         <source>Y value is not appropriate. Please input more simple value.</source>
-        <translation type="unfinished"></translation>
+        <translation>Η τιμή Y δεν είναι κατάλληλη. Εισαγάγετε πιο απλή τιμή.</translation>
     </message>
 </context>
 <context>
     <name>PostBaseSelectingDialog</name>
     <message>
         <source>Calculation Result Selection</source>
-        <translation type="unfinished"></translation>
+        <translation>Επιλογή Αποτέλεσμα Υπολογισμού</translation>
     </message>
     <message>
         <source>Please select which calculation result to use.</source>
-        <translation type="unfinished"></translation>
+        <translation>Επιλέξτε ποιο αποτέλεσμα υπολογισμού θα χρησιμοποιήσετε.</translation>
     </message>
     <message>
         <source>One dimensional calculation</source>
-        <translation type="unfinished"></translation>
+        <translation>Μονοδιάστατος υπολογισμός</translation>
     </message>
     <message>
         <source>Two dimensional calculation</source>
-        <translation type="unfinished"></translation>
+        <translation>Δυδιάστατος υπολογισμός</translation>
     </message>
     <message>
         <source>Three dimensional calculation</source>
-        <translation type="unfinished"></translation>
+        <translation>Τρισδιάστατος υπολογισμός</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResult</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Λάθος</translation>
     </message>
     <message>
         <source>Error occured: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Παρουσιάστηκε σφάλμα: %1</translation>
     </message>
     <message>
         <source>Checking argument for %1 failed. Invalid arguments: %2.</source>
-        <translation type="unfinished"></translation>
+        <translation>Έλεγχος επιχειρημάτων για %1 απέτυχε. Μη έγκυρα ορίσματα: %2 Το</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultArgumentEditDialog</name>
     <message>
         <source>Edit Simple Operation Result Variable</source>
-        <translation type="unfinished"></translation>
+        <translation>Επεξεργασία μεταβλητής αποτελεσμάτων απλής λειτουργίας</translation>
     </message>
     <message>
         <source>Calculation Result:</source>
-        <translation type="unfinished"></translation>
+        <translation>Αποτέλεσμα υπολογισμού:</translation>
     </message>
     <message>
         <source>Variable name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Όνομα μεταβλητής:</translation>
     </message>
     <message>
         <source>Value for testing:</source>
-        <translation type="unfinished"></translation>
+        <translation>Τιμή για δοκιμή:</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Προειδοποίηση</translation>
     </message>
     <message>
         <source>Variable name is not input.</source>
-        <translation type="unfinished"></translation>
+        <translation>Το όνομα της μεταβλητής δεν εισάγεται.</translation>
     </message>
     <message>
         <source>This variable name is already used</source>
-        <translation type="unfinished"></translation>
+        <translation>Αυτό το όνομα μεταβλητής χρησιμοποιείται ήδη</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultEditDialog</name>
     <message>
         <source>Edit Simple Operation Result</source>
-        <translation type="unfinished"></translation>
+        <translation>Επεξεργασία απλού αποτελέσματος λειτουργίας</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ονομα:</translation>
     </message>
     <message>
         <source>Position:</source>
-        <translation type="unfinished"></translation>
+        <translation>Θέση:</translation>
     </message>
     <message>
         <source>Calculation results for input</source>
-        <translation type="unfinished"></translation>
+        <translation>Αποτελέσματα υπολογισμού για την είσοδο</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation type="unfinished"></translation>
+        <translation>Προσθήκη (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Διαγράφω (&amp;D)</translation>
     </message>
     <message>
         <source>Definition of variable</source>
-        <translation type="unfinished"></translation>
+        <translation>Ορισμός μεταβλητής</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Μπορείτε να ορίσετε τη μεταβλητή με γλώσσα JavaScript. Ανατρέξτε στο &lt;a href="http://iric-gui-user-manual.readthedocs.io/el/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -διακόσμηση: υπογράμμιση; χρώμα:#0000ff; "&gt; εδώ &lt;/span&gt; &lt;/a&gt; για λεπτομέρειες. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
-        <translation type="unfinished"></translation>
+        <translation>Δοκιμή</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can test the definition by clicking this. If error occurs while parsing the definition, the error message is shown. When the definition is parsed successfully, the value calculated using the &amp;quot;Value for testing&amp;quot; for each input is shown.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Μπορείτε να δοκιμάσετε τον ορισμό κάνοντας κλικ σε αυτό. Εάν παρουσιαστεί σφάλμα κατά την ανάλυση του ορισμού, εμφανίζεται το μήνυμα σφάλματος. Όταν ο ορισμός αναλυθεί με επιτυχία, η τιμή υπολογίζεται χρησιμοποιώντας το &amp; quot; Τιμή για έλεγχοquot; για κάθε είσοδο εμφανίζεται. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>----</source>
-        <translation type="unfinished"></translation>
+        <translation>----</translation>
     </message>
     <message>
         <source>Result name</source>
-        <translation type="unfinished"></translation>
+        <translation>Όνομα αποτελέσματος</translation>
     </message>
     <message>
         <source>Variable name</source>
-        <translation type="unfinished"></translation>
+        <translation>Όνομα μεταβλητής</translation>
     </message>
     <message>
         <source>Value for testing</source>
-        <translation type="unfinished"></translation>
+        <translation>Τιμή για δοκιμή</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation type="unfinished"></translation>
+        <translation>Κόμβος πλέγματος</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation type="unfinished"></translation>
+        <translation>Κύτταρο πλέγματος</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation type="unfinished"></translation>
+        <translation>Σωματίδιο</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Προειδοποίηση</translation>
     </message>
     <message>
         <source>Name is not input.</source>
-        <translation type="unfinished"></translation>
+        <translation>Το όνομα δεν εισάγεται.</translation>
     </message>
     <message>
         <source>This name is already used</source>
-        <translation type="unfinished"></translation>
+        <translation>Αυτό το όνομα χρησιμοποιείται ήδη</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation type="unfinished"></translation>
+        <translation>Είστε σίγουροι ότι θέλετε να διαγράψετε %1 ;</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultListDialog</name>
     <message>
         <source>Simple Operation Result List</source>
-        <translation type="unfinished"></translation>
+        <translation>Λίστα αποτελεσμάτων απλής λειτουργίας</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Ονομα</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished"></translation>
+        <translation>Θέση</translation>
     </message>
     <message>
         <source>&amp;Up</source>
-        <translation type="unfinished"></translation>
+        <translation>Πάνω (&amp;U)</translation>
     </message>
     <message>
         <source>&amp;Down</source>
-        <translation type="unfinished"></translation>
+        <translation>Κάτω (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Σημείωση &lt;/span&gt;: Η σειρά στη λίστα είναι σημαντική. Στον ορισμό, μπορείτε να χρησιμοποιήσετε την τιμή των απλών υπολογισμών λειτουργίας ως μεταβλητή, που εμφανίζεται νωρίτερα στη λίστα. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation type="unfinished"></translation>
+        <translation>Προσθήκη (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation type="unfinished"></translation>
+        <translation>Επεξεργασία (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Διαγράφω (&amp;D)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Προειδοποίηση</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation type="unfinished"></translation>
+        <translation>Είστε σίγουροι ότι θέλετε να διαγράψετε %1 ;</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation type="unfinished"></translation>
+        <translation>Κόμβος πλέγματος</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation type="unfinished"></translation>
+        <translation>Κύτταρο πλέγματος</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation type="unfinished"></translation>
+        <translation>Σωματίδιο</translation>
     </message>
 </context>
 <context>
     <name>PostDataExportDialog</name>
     <message>
         <source>Export Calculation Result</source>
-        <translation type="unfinished"></translation>
+        <translation>Αποτέλεσμα υπολογισμού εξαγωγής</translation>
     </message>
     <message>
         <source>Format:</source>
-        <translation type="unfinished"></translation>
+        <translation>Μορφή:</translation>
     </message>
     <message>
         <source>VTK files (ASCII)</source>
-        <translation type="unfinished"></translation>
+        <translation>Αρχεία VTK (ASCII)</translation>
     </message>
     <message>
         <source>VTK files (Binary)</source>
-        <translation type="unfinished"></translation>
+        <translation>Αρχεία VTK (δυαδικά)</translation>
     </message>
     <message>
         <source>CSV files</source>
-        <translation type="unfinished"></translation>
+        <translation>Αρχεία CSV</translation>
     </message>
     <message>
         <source>Topography Files (*.tpo)</source>
-        <translation type="unfinished"></translation>
+        <translation>Αρχεία τοπογραφίας (*.tpo)</translation>
     </message>
     <message>
         <source>ESRI Shapefiles</source>
-        <translation type="unfinished"></translation>
+        <translation>Σχήματα ESRI</translation>
     </message>
     <message>
         <source>Output folder:</source>
-        <translation type="unfinished"></translation>
+        <translation>Φάκελος εξόδου:</translation>
     </message>
     <message>
         <source>...</source>
-        <translation type="unfinished"></translation>
+        <translation>...</translation>
     </message>
     <message>
         <source>Prefix:</source>
-        <translation type="unfinished"></translation>
+        <translation>Πρόθεμα:</translation>
     </message>
     <message>
         <source>Output file:</source>
-        <translation type="unfinished"></translation>
+        <translation>Αρχείο εξόδου:</translation>
     </message>
     <message>
         <source>Time</source>
-        <translation type="unfinished"></translation>
+        <translation>χρόνος</translation>
     </message>
     <message>
         <source>All timesteps</source>
-        <translation type="unfinished"></translation>
+        <translation>Όλα τα χρονικά βήματα</translation>
     </message>
     <message>
         <source>Start:</source>
-        <translation type="unfinished"></translation>
+        <translation>Αρχή:</translation>
     </message>
     <message>
         <source>End:</source>
-        <translation type="unfinished"></translation>
+        <translation>Τέλος:</translation>
     </message>
     <message>
         <source>Skip rate :</source>
-        <translation type="unfinished"></translation>
+        <translation>Ποσοστό παράλειψης:</translation>
     </message>
     <message>
         <source>Region</source>
-        <translation type="unfinished"></translation>
+        <translation>Περιοχή</translation>
     </message>
     <message>
         <source>Full region</source>
-        <translation type="unfinished"></translation>
+        <translation>Πλήρης περιοχή</translation>
     </message>
     <message>
         <source>I Min</source>
-        <translation type="unfinished"></translation>
+        <translation>Είμαι μέσα</translation>
     </message>
     <message>
         <source>I Max</source>
-        <translation type="unfinished"></translation>
+        <translation>I Max</translation>
     </message>
     <message>
         <source>J Min</source>
-        <translation type="unfinished"></translation>
+        <translation>J Min</translation>
     </message>
     <message>
         <source>J Max</source>
-        <translation type="unfinished"></translation>
+        <translation>J Max</translation>
     </message>
     <message>
         <source>K Min</source>
-        <translation type="unfinished"></translation>
+        <translation>K Min</translation>
     </message>
     <message>
         <source>K Max</source>
-        <translation type="unfinished"></translation>
+        <translation>Κ Μέγ</translation>
     </message>
     <message>
         <source>Show &amp;Detail</source>
-        <translation type="unfinished"></translation>
+        <translation>Δείξε λεπτομέρεια (&amp;D)</translation>
     </message>
     <message>
         <source>Select Folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Επιλέξτε φάκελο</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Προειδοποίηση</translation>
     </message>
     <message>
         <source>Folder %1 does not exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ντοσιέ %1 δεν υπάρχει</translation>
     </message>
     <message>
         <source>&amp;Hide Detail</source>
-        <translation type="unfinished"></translation>
+        <translation>Απόκρυψη λεπτομερειών (&amp;H)</translation>
     </message>
 </context>
 <context>
     <name>PostIterationSteps</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Λάθος</translation>
     </message>
     <message>
         <source>Error occured while loading calculation result.</source>
-        <translation type="unfinished"></translation>
+        <translation>Παρουσιάστηκε σφάλμα κατά τη φόρτωση του αποτελέσματος υπολογισμού.</translation>
     </message>
 </context>
 <context>
     <name>PostSolutionInfo</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Λάθος</translation>
     </message>
     <message>
         <source>Error occured while loading calculation result.</source>
-        <translation type="unfinished"></translation>
+        <translation>Παρουσιάστηκε σφάλμα κατά τη φόρτωση του αποτελέσματος υπολογισμού.</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Προειδοποίηση</translation>
     </message>
     <message>
         <source>Loading calculation result for visualization failed. Please try again later, or wait until end of calculation.</source>
-        <translation type="unfinished"></translation>
+        <translation>Η φόρτωση του αποτελέσματος υπολογισμού για την οπτικοποίηση απέτυχε. Δοκιμάστε ξανά αργότερα ή περιμένετε μέχρι το τέλος του υπολογισμού.</translation>
     </message>
     <message>
         <source>No calculation result exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>Δεν υπάρχει αποτέλεσμα υπολογισμού.</translation>
     </message>
     <message>
         <source>Calculation result does not contain grid data.</source>
-        <translation type="unfinished"></translation>
+        <translation>Το αποτέλεσμα υπολογισμού δεν περιέχει δεδομένα πλέγματος.</translation>
     </message>
     <message>
         <source>Export Calculation Result</source>
-        <translation type="unfinished"></translation>
+        <translation>Αποτέλεσμα υπολογισμού εξαγωγής</translation>
     </message>
     <message>
         <source>Saving calculation result as VTK files...</source>
-        <translation type="unfinished"></translation>
+        <translation>Αποθήκευση αποτελέσματος υπολογισμού ως αρχείων VTK...</translation>
     </message>
     <message>
         <source>Saving calculation result as CSV files...</source>
-        <translation type="unfinished"></translation>
+        <translation>Αποθήκευση αποτελέσματος υπολογισμού ως αρχείων CSV...</translation>
     </message>
     <message>
         <source>Saving calculation result as ESRI Shapefiles...</source>
-        <translation type="unfinished"></translation>
+        <translation>Αποθήκευση αποτελέσματος υπολογισμού ως αρχείων ESRI...</translation>
     </message>
     <message>
         <source>Error occured while saving %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Παρουσιάστηκε σφάλμα κατά την αποθήκευση %1</translation>
     </message>
 </context>
 <context>
     <name>PostStringResult</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Λάθος</translation>
     </message>
     <message>
         <source>Error occured: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Παρουσιάστηκε σφάλμα: %1</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Προειδοποίηση</translation>
     </message>
     <message>
         <source>I, J, K, index for label is reset because the grid size is changed.</source>
-        <translation type="unfinished"></translation>
+        <translation>I, J, K, index για την ετικέτα επαναφέρεται επειδή το μέγεθος του πλέγματος αλλάζει.</translation>
     </message>
 </context>
 <context>
     <name>PostStringResultArgumentEditDialog</name>
     <message>
         <source>Edit String Result Argument</source>
-        <translation type="unfinished"></translation>
+        <translation>Επεξεργασία ορίσματος αποτελεσμάτων συμβολοσειράς</translation>
     </message>
     <message>
         <source>Position:</source>
-        <translation type="unfinished"></translation>
+        <translation>Θέση:</translation>
     </message>
     <message>
         <source>Result Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Όνομα αποτελέσματος:</translation>
     </message>
     <message>
         <source>Variable Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Όνομα μεταβλητής:</translation>
     </message>
     <message>
         <source>I:</source>
-        <translation type="unfinished"></translation>
+        <translation>ΕΓΩ:</translation>
     </message>
     <message>
         <source>J:</source>
-        <translation type="unfinished"></translation>
+        <translation>J:</translation>
     </message>
     <message>
         <source>K:</source>
-        <translation type="unfinished"></translation>
+        <translation>Κ:</translation>
     </message>
     <message>
         <source>Index:</source>
-        <translation type="unfinished"></translation>
+        <translation>Δείκτης:</translation>
     </message>
     <message>
         <source>Value for testing</source>
-        <translation type="unfinished"></translation>
+        <translation>Τιμή για δοκιμή</translation>
     </message>
     <message>
         <source>Global</source>
-        <translation type="unfinished"></translation>
+        <translation>Παγκόσμια</translation>
     </message>
     <message>
         <source>Node</source>
-        <translation type="unfinished"></translation>
+        <translation>Κόμβος</translation>
     </message>
     <message>
         <source>Cell</source>
-        <translation type="unfinished"></translation>
+        <translation>Κύτταρο</translation>
     </message>
     <message>
         <source>EdgeI</source>
-        <translation type="unfinished"></translation>
+        <translation>EdgeI</translation>
     </message>
     <message>
         <source>EdgeJ</source>
-        <translation type="unfinished"></translation>
+        <translation>EdgeJ</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Προειδοποίηση</translation>
     </message>
     <message>
         <source>Variable name is empty.</source>
-        <translation type="unfinished"></translation>
+        <translation>Το όνομα της μεταβλητής είναι κενό.</translation>
     </message>
 </context>
 <context>
     <name>PostStringResultEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Μορφή</translation>
     </message>
     <message>
         <source>Calculation results for input</source>
-        <translation type="unfinished"></translation>
+        <translation>Αποτελέσματα υπολογισμού για την είσοδο</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation type="unfinished"></translation>
+        <translation>Τύπος</translation>
     </message>
     <message>
         <source>Result name</source>
-        <translation type="unfinished"></translation>
+        <translation>Όνομα αποτελέσματος</translation>
     </message>
     <message>
         <source>Variable name</source>
-        <translation type="unfinished"></translation>
+        <translation>Όνομα μεταβλητής</translation>
     </message>
     <message>
         <source>Index</source>
-        <translation type="unfinished"></translation>
+        <translation>Δείκτης</translation>
     </message>
     <message>
         <source>Value for Testing</source>
-        <translation type="unfinished"></translation>
+        <translation>Τιμή για δοκιμή</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation type="unfinished"></translation>
+        <translation>Προσθήκη (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation type="unfinished"></translation>
+        <translation>Επεξεργασία (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete...</source>
-        <translation type="unfinished"></translation>
+        <translation>Διαγράφω (&amp;D)...</translation>
     </message>
     <message>
         <source>Definition of output</source>
-        <translation type="unfinished"></translation>
+        <translation>Ορισμός εξόδου</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Μπορείτε να ορίσετε τη μεταβλητή με γλώσσα JavaScript. Ανατρέξτε στο &lt;a href="http://iric-gui-user-manual.readthedocs.io/el/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -διακόσμηση: υπογράμμιση; χρώμα:#0000ff; "&gt; εδώ &lt;/span&gt; &lt;/a&gt; για λεπτομέρειες. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
-        <translation type="unfinished"></translation>
+        <translation>Δοκιμή</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Προειδοποίηση</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation type="unfinished"></translation>
+        <translation>Είστε σίγουροι ότι θέλετε να διαγράψετε %1 ;</translation>
     </message>
     <message>
         <source>Global</source>
-        <translation type="unfinished"></translation>
+        <translation>Παγκόσμια</translation>
     </message>
     <message>
         <source>Node</source>
-        <translation type="unfinished"></translation>
+        <translation>Κόμβος</translation>
     </message>
     <message>
         <source>Cell</source>
-        <translation type="unfinished"></translation>
+        <translation>Κύτταρο</translation>
     </message>
     <message>
         <source>EdgeI</source>
-        <translation type="unfinished"></translation>
+        <translation>EdgeI</translation>
     </message>
     <message>
         <source>EdgeJ</source>
-        <translation type="unfinished"></translation>
+        <translation>EdgeJ</translation>
     </message>
     <message>
         <source>EdgeK</source>
-        <translation type="unfinished"></translation>
+        <translation>EdgeK</translation>
     </message>
 </context>
 <context>
     <name>PostTimeSteps</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Λάθος</translation>
     </message>
     <message>
         <source>Error occured while loading calculation result.</source>
-        <translation type="unfinished"></translation>
+        <translation>Παρουσιάστηκε σφάλμα κατά τη φόρτωση του αποτελέσματος υπολογισμού.</translation>
     </message>
 </context>
 <context>
     <name>PostZoneSelectingDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Διάλογος</translation>
     </message>
     <message>
         <source>Grid Type:</source>
-        <translation type="unfinished"></translation>
+        <translation>Τύπος πλέγματος:</translation>
     </message>
     <message>
         <source>&amp;Region:</source>
-        <translation type="unfinished"></translation>
+        <translation>Περιοχή: (&amp;R)</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorDataItem</name>
     <message>
         <source>Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Πλέγμα</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCreatingConditionDataItemInterface</name>
     <message>
         <source>Grid Creating Condition</source>
-        <translation type="unfinished"></translation>
+        <translation>Συνθήκη δημιουργίας πλέγματος</translation>
     </message>
 </context>
 <context>
     <name>ProjectData</name>
     <message>
         <source>Loading project file...</source>
-        <translation type="unfinished"></translation>
+        <translation>Φόρτωση αρχείου έργου...</translation>
     </message>
     <message>
         <source>Saving project file...</source>
-        <translation type="unfinished"></translation>
+        <translation>Αποθήκευση αρχείου έργου...</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Λάθος</translation>
     </message>
     <message>
         <source>Could not overwrite %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Δεν ήταν δυνατή η αντικατάσταση %1 Το</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Προειδοποίηση</translation>
     </message>
     <message>
         <source>Saving project...</source>
-        <translation type="unfinished"></translation>
+        <translation>Αποθήκευση έργου...</translation>
     </message>
     <message>
         <source>Opening project...</source>
-        <translation type="unfinished"></translation>
+        <translation>Έναρξη έργου...</translation>
     </message>
     <message>
         <source>Elevation grid attribute is not defined for grid type %1. Grid I/O functions, grid creating functions may not work correctly for these grid types.</source>
-        <translation type="unfinished"></translation>
+        <translation>Το χαρακτηριστικό πλέγματος ανύψωσης δεν ορίζεται για τον τύπο πλέγματος %1 Το Λειτουργίες εισόδου/εξόδου πλέγματος, οι λειτουργίες δημιουργίας πλέγματος ενδέχεται να μην λειτουργούν σωστά για αυτούς τους τύπους πλέγματος.</translation>
     </message>
 </context>
 <context>
     <name>ProjectMainFile</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Λάθος</translation>
     </message>
     <message>
         <source>Solution %1 already exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>Λύση %1 υπάρχει ήδη.</translation>
     </message>
     <message>
         <source>CGNS file whose name contains characters other than alphabets and numbers can not be imported.</source>
-        <translation type="unfinished"></translation>
+        <translation>Δεν είναι δυνατή η εισαγωγή αρχείου CGNS του οποίου το όνομα περιέχει χαρακτήρες διαφορετικούς από αλφάβητα και αριθμούς.</translation>
     </message>
     <message>
         <source>Export CGNS file</source>
-        <translation type="unfinished"></translation>
+        <translation>Εξαγωγή αρχείου CGNS</translation>
     </message>
     <message>
         <source>CGNS file (*.cgns)</source>
-        <translation type="unfinished"></translation>
+        <translation>Αρχείο CGNS (*.cgns)</translation>
     </message>
     <message>
         <source>Exporting CGNS file failed. Specified file is locked by other process.</source>
-        <translation type="unfinished"></translation>
+        <translation>Η εξαγωγή αρχείου CGNS απέτυχε. Το καθορισμένο αρχείο είναι κλειδωμένο με άλλη διαδικασία.</translation>
     </message>
     <message>
         <source>Error occured while opening CGNS file in project file : %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Παρουσιάστηκε σφάλμα κατά το άνοιγμα του αρχείου CGNS στο αρχείο έργου: %1</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Προειδοποίηση</translation>
     </message>
     <message>
         <source>%1 Saving project file failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 Η αποθήκευση του αρχείου έργου απέτυχε.</translation>
     </message>
     <message>
         <source>All images(*.jpg *.jpeg *.png *.tif);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif)</source>
-        <translation type="unfinished"></translation>
+        <translation>Όλες οι εικόνες (*.jpg *.jpeg *.png *.tif);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif)</translation>
     </message>
     <message>
         <source>Open Image file</source>
-        <translation type="unfinished"></translation>
+        <translation>Άνοιγμα αρχείου εικόνας</translation>
     </message>
     <message>
         <source>A background image with the same name already exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>Υπάρχει ήδη εικόνα φόντου με το ίδιο όνομα.</translation>
     </message>
     <message>
         <source>The background image was not added. Please try again.</source>
-        <translation type="unfinished"></translation>
+        <translation>Η εικόνα φόντου δεν προστέθηκε. ΠΑΡΑΚΑΛΩ προσπαθησε ξανα.</translation>
     </message>
     <message>
         <source>Invalid image file is specified.</source>
-        <translation type="unfinished"></translation>
+        <translation>Έχει οριστεί μη έγκυρο αρχείο εικόνας.</translation>
     </message>
     <message>
         <source>This project file cannot be read, because it was created by too old iRIC (version %1).</source>
-        <translation type="unfinished"></translation>
+        <translation>Αυτό το αρχείο έργου δεν μπορεί να διαβαστεί, επειδή δημιουργήθηκε από πολύ παλιό iRIC (έκδοση %1 ).</translation>
     </message>
     <message>
         <source>This project file cannot be read, because it was created by newer iRIC (version %1).</source>
-        <translation type="unfinished"></translation>
+        <translation>Αυτό το αρχείο έργου δεν μπορεί να διαβαστεί, επειδή δημιουργήθηκε από νεότερη έκδοση iRIC (έκδοση %1 ).</translation>
     </message>
     <message>
         <source>Text Files (*.csv *.txt);;All Files (*.*)</source>
-        <translation type="unfinished"></translation>
+        <translation>Αρχεία κειμένου (*.csv *.txt);;All Files (*.*)</translation>
     </message>
     <message>
         <source>Open Measured Data File</source>
-        <translation type="unfinished"></translation>
+        <translation>Άνοιγμα αρχείου μετρημένων δεδομένων</translation>
     </message>
     <message>
         <source>Error occured while loading %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Παρουσιάστηκε σφάλμα κατά τη φόρτωση %1 Το</translation>
     </message>
     <message>
         <source>This file is for solver %1 %2. It is not compatible with the solver you are using, so maybe importing this file will fail. Do you really want to import this file?</source>
-        <translation type="unfinished"></translation>
+        <translation>Αυτό το αρχείο προορίζεται για επίλυση %1 %2 Το Δεν είναι συμβατό με τον επιλυτή που χρησιμοποιείτε, οπότε ίσως η εισαγωγή αυτού του αρχείου να αποτύχει. Θέλετε πραγματικά να εισαγάγετε αυτό το αρχείο;</translation>
     </message>
     <message>
         <source>There is no visualization/graph windows.</source>
-        <translation type="unfinished"></translation>
+        <translation>Δεν υπάρχει παράθυρα απεικόνισης/γραφικών παραστάσεων.</translation>
     </message>
     <message>
         <source>File %1 could not be opened.</source>
-        <translation type="unfinished"></translation>
+        <translation>Αρχείο %1 δεν μπορεί να ανοίξει.</translation>
     </message>
     <message>
         <source>Coordinate system not selected.</source>
-        <translation type="unfinished"></translation>
+        <translation>Το σύστημα συντεταγμένων δεν έχει επιλεγεί.</translation>
     </message>
 </context>
 <context>
     <name>ProjectMainFile::Impl</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Προειδοποίηση</translation>
     </message>
     <message>
         <source> : no such file.</source>
-        <translation type="unfinished"></translation>
+        <translation>: κανένα τέτοιο αρχείο.</translation>
     </message>
 </context>
 <context>
     <name>ProjectTimeSettingDialog</name>
     <message>
         <source>Date for t = 0 setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Ημερομηνία για ρύθμιση t = 0</translation>
     </message>
     <message>
         <source>Time for t = 0:</source>
-        <translation type="unfinished"></translation>
+        <translation>Timeρα για t = 0:</translation>
     </message>
     <message>
         <source>Not specified</source>
-        <translation type="unfinished"></translation>
+        <translation>Δεν διευκρινίζεται</translation>
     </message>
     <message>
         <source>Time display format</source>
-        <translation type="unfinished"></translation>
+        <translation>Μορφή προβολής ώρας</translation>
     </message>
 </context>
 <context>
     <name>ProjectWorkspace</name>
     <message>
-        <source>Workspace &quot;%1&quot; has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
-        <translation type="unfinished"></translation>
+        <source>Workspace "%1" has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
+        <translation>Χώρος εργασίας "%1"έχει %2 φακέλους έργου που φαίνεται να μην χρησιμοποιούνται πλέον. Θέλετε να τα αφαιρέσετε;</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Πληροφορίες</translation>
     </message>
 </context>
 <context>
     <name>PropertyBrowser</name>
     <message>
         <source>Attribute Browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Χαρακτηριστικό προγράμματος περιήγησης</translation>
     </message>
 </context>
 <context>
     <name>PropertyBrowserView</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Μορφή</translation>
     </message>
     <message>
         <source>Indices</source>
-        <translation type="unfinished"></translation>
+        <translation>Δείκτες</translation>
     </message>
     <message>
         <source>1</source>
-        <translation type="unfinished"></translation>
+        <translation>1</translation>
     </message>
     <message>
         <source>J:</source>
-        <translation type="unfinished"></translation>
+        <translation>J:</translation>
     </message>
     <message>
         <source>I:</source>
-        <translation type="unfinished"></translation>
+        <translation>ΕΓΩ:</translation>
     </message>
     <message>
         <source>Index:</source>
-        <translation type="unfinished"></translation>
+        <translation>Δείκτης:</translation>
     </message>
     <message>
         <source>Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Συντεταγμένες</translation>
     </message>
     <message>
         <source>X:</source>
-        <translation type="unfinished"></translation>
+        <translation>Χ:</translation>
     </message>
     <message>
         <source>Y:</source>
-        <translation type="unfinished"></translation>
+        <translation>Υ:</translation>
     </message>
     <message>
         <source>Attributes:</source>
-        <translation type="unfinished"></translation>
+        <translation>Γνωρίσματα:</translation>
     </message>
     <message>
         <source>Attribute Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Όνομα χαρακτηριστικού</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation type="unfinished"></translation>
+        <translation>αξία</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
         <source>Background Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Χρώμα του φόντου</translation>
     </message>
     <message>
         <source>Draw</source>
-        <translation type="unfinished"></translation>
+        <translation>Σχεδιάζω</translation>
     </message>
     <message>
         <source>Move down item</source>
-        <translation type="unfinished"></translation>
+        <translation>Μετακίνηση του στοιχείου προς τα κάτω</translation>
     </message>
     <message>
         <source>Move up item</source>
-        <translation type="unfinished"></translation>
+        <translation>Μετακίνηση του στοιχείου επάνω</translation>
     </message>
     <message>
         <source>Arbitrary Move</source>
-        <translation type="unfinished"></translation>
+        <translation>Αυθαίρετη κίνηση</translation>
     </message>
     <message>
         <source>Reallocate Background Image</source>
-        <translation type="unfinished"></translation>
+        <translation>Ανακατανομή εικόνας φόντου</translation>
     </message>
     <message>
         <source>Set offset</source>
-        <translation type="unfinished"></translation>
+        <translation>Ορισμός μετατόπισης</translation>
     </message>
     <message>
         <source>Default</source>
-        <translation type="unfinished"></translation>
+        <translation>Προκαθορισμένο</translation>
     </message>
     <message>
         <source>(Undefined)</source>
-        <translation type="unfinished"></translation>
+        <translation>(Απροσδιόριστος)</translation>
     </message>
 </context>
 <context>
     <name>ScalarsToColorsEditDialog</name>
     <message>
         <source>Color Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Ρύθμιση χρώματος</translation>
     </message>
 </context>
 <context>
     <name>SolverDefinition::Impl</name>
     <message>
         <source>%1 Grids</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 Πλέγματα</translation>
     </message>
 </context>
 <context>
     <name>Structured2DGrid</name>
     <message>
         <source>An edge line intersects with that of another cell in this grid.</source>
-        <translation type="unfinished"></translation>
+        <translation>Μια ακμή διασταυρώνεται με εκείνη ενός άλλου κελιού σε αυτό το πλέγμα.</translation>
     </message>
     <message>
         <source>Aspect ratio of grid cell exceed limit value %1 in more than one cell.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ο λόγος διαστάσεων της κυψέλης πλέγματος υπερβαίνει την οριακή τιμή %1 σε περισσότερα από ένα κελιά.</translation>
     </message>
     <message>
         <source>Variation of grid cell edge lengths exceed limit values (I-direction: %1, J-direction: %2) in more than one cell.</source>
-        <translation type="unfinished"></translation>
+        <translation>Η παραλλαγή των μηκών των άκρων της κυψέλης πλέγματος υπερβαίνει τις οριακές τιμές (κατεύθυνση Ι: %1, Κατεύθυνση J: %2 ) σε περισσότερα από ένα κελιά.</translation>
     </message>
     <message>
         <source>Angle of grid cell edge fall below limit value %1 in more than one cell.</source>
-        <translation type="unfinished"></translation>
+        <translation>Η γωνία της άκρης της κυψέλης πλέγματος πέφτει κάτω από την οριακή τιμή %1 σε περισσότερα από ένα κελιά.</translation>
     </message>
     <message>
         <source>* Cells where edges intersect</source>
-        <translation type="unfinished"></translation>
+        <translation>* Κελιά όπου τέμνονται οι άκρες</translation>
     </message>
     <message>
         <source>Not exist</source>
-        <translation type="unfinished"></translation>
+        <translation>Δεν υπάρχει</translation>
     </message>
     <message>
         <source>* Cells where aspect ratio of cell edges exceed %1</source>
-        <translation type="unfinished"></translation>
+        <translation>* Κελιά όπου ο λόγος διαστάσεων των άκρων κελιών υπερβαίνει %1</translation>
     </message>
     <message>
         <source>I, J, Aspect ratio</source>
-        <translation type="unfinished"></translation>
+        <translation>I, J, Αναλογία διαστάσεων</translation>
     </message>
     <message>
         <source>Edge length too small</source>
-        <translation type="unfinished"></translation>
+        <translation>Το μήκος της άκρης είναι πολύ μικρό</translation>
     </message>
     <message>
         <source>* Cells where angle of cell vertex is below %1</source>
-        <translation type="unfinished"></translation>
+        <translation>* Κελιά όπου η γωνία της κορυφής του κελιού είναι κάτω %1</translation>
     </message>
     <message>
         <source>I, J, Angle</source>
-        <translation type="unfinished"></translation>
+        <translation>I, J, Angle</translation>
     </message>
     <message>
         <source>* Cells where variation of cell length along i-direction exceed %1</source>
-        <translation type="unfinished"></translation>
+        <translation>* Κελιά όπου η διακύμανση του μήκους των κυττάρων κατά μήκος της κατεύθυνσης i υπερβαίνει %1</translation>
     </message>
     <message>
         <source>I, J, Variation</source>
-        <translation type="unfinished"></translation>
+        <translation>I, J, Παραλλαγή</translation>
     </message>
     <message>
         <source>* Cells where variation of cell length along j-direction exceed %1</source>
-        <translation type="unfinished"></translation>
+        <translation>* Κελιά όπου η διακύμανση του μήκους των κυττάρων κατά μήκος της κατεύθυνσης j υπερβαίνει %1</translation>
     </message>
 </context>
 <context>
     <name>TmsImageGroupDataItem</name>
     <message>
         <source>Background Images (Internet)</source>
-        <translation type="unfinished"></translation>
+        <translation>Εικόνες φόντου (Διαδίκτυο)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Προειδοποίηση</translation>
     </message>
     <message>
         <source>To get background image from internet, please specify the coordiyate system of the project, from the following menu.
  File -&gt; Property</source>
-        <translation type="unfinished"></translation>
+        <translation>Για να λάβετε εικόνα φόντου από το διαδίκτυο, καθορίστε το σύστημα συντονισμού του έργου, από το ακόλουθο μενού. Αρχείο -&gt; Ιδιοκτησία</translation>
     </message>
     <message>
         <source>Background Image change</source>
-        <translation type="unfinished"></translation>
+        <translation>Αλλαγή εικόνας φόντου</translation>
     </message>
 </context>
 <context>
     <name>TmsImageSettingManager</name>
     <message>
         <source>Google Map (Road)</source>
-        <translation type="unfinished"></translation>
+        <translation>Χάρτης Google (Δρόμος)</translation>
     </message>
     <message>
         <source>Google Map (Satellite)</source>
-        <translation type="unfinished"></translation>
+        <translation>Χάρτης Google (Δορυφόρος)</translation>
     </message>
     <message>
         <source>Google Map (Hybrid)</source>
-        <translation type="unfinished"></translation>
+        <translation>Χάρτης Google (υβριδικός)</translation>
     </message>
     <message>
         <source>Google Map (Terrain)</source>
-        <translation type="unfinished"></translation>
+        <translation>Χάρτης Google (έδαφος)</translation>
     </message>
     <message>
         <source>Open Street Map</source>
-        <translation type="unfinished"></translation>
+        <translation>Open Street Map</translation>
     </message>
     <message>
         <source>GSI (Standard) (Japan only)</source>
-        <translation type="unfinished"></translation>
+        <translation>GSI (Standard) (μόνο Ιαπωνία)</translation>
     </message>
     <message>
         <source>GSI (Pale) (Japan only)</source>
-        <translation type="unfinished"></translation>
+        <translation>GSI (Pale) (μόνο Ιαπωνία)</translation>
     </message>
     <message>
         <source>GSI (English) (Japan only)</source>
-        <translation type="unfinished"></translation>
+        <translation>GSI (Αγγλικά) (μόνο Ιαπωνία)</translation>
     </message>
     <message>
         <source>GSI (Relief) (Japan only)</source>
-        <translation type="unfinished"></translation>
+        <translation>GSI (Relief) (μόνο στην Ιαπωνία)</translation>
     </message>
     <message>
         <source>GSI (Ortho images) (Japan only)</source>
-        <translation type="unfinished"></translation>
+        <translation>GSI (εικόνες Ortho) (μόνο Ιαπωνία)</translation>
     </message>
 </context>
 <context>
     <name>iRICMetaData</name>
     <message>
         <source>Build number of the version number is not specified.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ο αριθμός έκδοσης του αριθμού έκδοσης δεν καθορίζεται.</translation>
     </message>
 </context>
 </TS>

@@ -1,18 +1,16 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="bg_BG">
 <context>
     <name>QObject</name>
     <message>
         <source>VTK files (*.vtk)</source>
-        <translation type="unfinished"></translation>
+        <translation>VTK файлове (*.vtk)</translation>
     </message>
 </context>
 <context>
     <name>Unstructured2DGridVTKExporter</name>
     <message>
         <source>VTK file</source>
-        <translation type="unfinished"></translation>
+        <translation>VTK файл</translation>
     </message>
 </context>
 </TS>

@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="pt_BR">
 <context>
     <name>AnimationController</name>
@@ -42,6 +40,10 @@
     <message>
         <source>&amp;Animation Speed Setting...</source>
         <translation>Configuracao de velocidade para reproducao (&amp;A)...</translation>
+    </message>
+    <message>
+        <source>L&amp;oop Animation</source>
+        <translation>Loop Animation (&amp;O)</translation>
     </message>
 </context>
 <context>
@@ -403,7 +405,7 @@
     <message>
         <source>When you update iRIC, you need to close iRIC before launching iRIC Maintainance.
 When you have iRIC windows other than this, close them manually.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ao atualizar o iRIC, é necessário fechar o iRIC antes de iniciar a manutenção do iRIC. Quando você tiver outras janelas iRIC além desta, feche-as manualmente.</translation>
     </message>
     <message>
         <source>When you update iRIC, you need to close iRIC before launching iRIC Maintainance.</source>
@@ -423,7 +425,7 @@ When you have iRIC windows other than this, close them manually.</source>
     <message>
         <source>This function is intended to be used by solver developers or grid creating program developers, not users.
 This wizard will generate or update translation files for solver definition files and grid creating program definition files those are registered to iRIC system. You need to specify the solver (or grid creating program) name, and the list of languages for those you want to create or update translation files.</source>
-        <translation type="unfinished"></translation>
+        <translation>Esta função deve ser usada por desenvolvedores de solucionadores ou desenvolvedores de programas de criação de grades, não por usuários. Este assistente irá gerar ou atualizar arquivos de tradução para arquivos de definição de solucionador e arquivos de definição de programa de criação de grade que estão registrados no sistema iRIC. Você precisa especificar o nome do solucionador (ou programa de criação de grade) e a lista de idiomas para aqueles que deseja criar ou atualizar os arquivos de tradução.</translation>
     </message>
     <message>
         <source>This function is intended to be used by solver developers or grid creating program developers, not users.</source>
@@ -444,8 +446,8 @@ This wizard will generate or update translation files for solver definition file
         <translation>Selecionar o solucionador</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
-        <translation>Ao iniciar um novo projeto, voce devera escolher o solucionador a ser utilizado na analise. Escolha um solucionador dentro da lista abaixo e pressione o botao &quot;OK&quot;.</translation>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
+        <translation>Ao iniciar um novo projeto, voce devera escolher o solucionador a ser utilizado na analise. Escolha um solucionador dentro da lista abaixo e pressione o botao "OK".</translation>
     </message>
 </context>
 <context>
@@ -457,7 +459,7 @@ This wizard will generate or update translation files for solver definition file
     <message>
         <source>%1 days have passed after launching iRIC Maintainance for the last time.
 Do you want to launch iRIC Maintainance?</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 dias se passaram após o lançamento do iRIC Maintainance pela última vez. Quer lançar o iRIC Maintainance?</translation>
     </message>
     <message>
         <source>%1 days have passed after launching iRIC Maintainance for the last time.</source>
@@ -594,11 +596,11 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Solver console</source>
-        <translation type="unfinished"></translation>
+        <translation>Console Solver</translation>
     </message>
     <message>
         <source>Maximum lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Máximo de linhas</translation>
     </message>
     <message>
         <source>Error</source>
@@ -618,11 +620,11 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Python path</source>
-        <translation type="unfinished"></translation>
+        <translation>Caminho Python</translation>
     </message>
     <message>
         <source>Note: Used to run solvers written in Python.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nota: Usado para executar solucionadores escritos em Python.</translation>
     </message>
 </context>
 <context>
@@ -681,7 +683,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>pixels</source>
-        <translation type="unfinished"></translation>
+        <translation>píxeis</translation>
     </message>
 </context>
 <context>
@@ -1197,13 +1199,13 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>Atencao</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
+        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
 %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Ocorreu um erro ao carregar o arquivo de definição do solver na pasta "%1". Este solucionador é ignorado. %2</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.</source>
-        <translation type="vanished">Ocorreu um erro ao baixar o arquivo de definicao sobre o solucionador, o que se encontra na pasta &quot;%1&quot; . Este solucionador sera ignorado.</translation>
+        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.</source>
+        <translation type="vanished">Ocorreu um erro ao baixar o arquivo de definicao sobre o solucionador, o que se encontra na pasta "%1" . Este solucionador sera ignorado.</translation>
     </message>
 </context>
 <context>
@@ -1249,7 +1251,7 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <source>Welcome to iRIC!
 iRIC can simulate rivers from Colorado River to the Nile.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bem-vindo ao iRIC! O iRIC pode simular rios do Rio Colorado ao Nilo.</translation>
     </message>
     <message>
         <source>Welcome to iRIC!</source>
@@ -1476,7 +1478,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Este projeto parece estar aberto atraves de outra iRIC GUI. Voce nao podera abrir mesma pasta do projeto atraves de varias GUIs.</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation>O projeto nao sera copiado no diretorio de trabalho e suas alteracoes serao sempre salvas. Se voce deseja conservar o projeto atual, comece a trabalhar depois de salva-lo com um outro nome.</translation>
     </message>
     <message>
@@ -1542,7 +1544,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     <message>
         <source>Current working directory (%1) contains non-ASCII characters. Before starting a new project, change working directory from the following menu: 
 Option -&gt; Preferences</source>
-        <translation type="unfinished"></translation>
+        <translation>Diretório de trabalho atual (%1) contém caracteres não ASCII. Antes de iniciar um novo projeto, altere o diretório de trabalho no seguinte menu: Opção -&gt; Preferências</translation>
     </message>
     <message>
         <source>Export Google Earth KMZ for street view</source>
@@ -1582,11 +1584,11 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Transparency Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Definição de Transparência</translation>
     </message>
     <message>
         <source>Do you want to make the background transparent?</source>
-        <translation type="unfinished"></translation>
+        <translation>Quer tornar o fundo transparente?</translation>
     </message>
     <message>
         <source>This window do not support snapshot with this file type.</source>
@@ -1649,8 +1651,8 @@ Option -&gt; Preferences</source>
         <translation>A sub-janela ativa neste momento nao suporta a exportacao de figura de contornos.</translation>
     </message>
     <message>
-        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
-        <translation>Para exportar o arquivo de shapefile, altere &quot;Configuracoes de exibicao&quot; para &quot;Figura de Contorno&quot;, nao para &quot;Franja Colorida&quot; ou &quot;Contorno&quot;.</translation>
+        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
+        <translation>Para exportar o arquivo de shapefile, altere "Configuracoes de exibicao" para "Figura de Contorno", nao para "Franja Colorida" ou "Contorno".</translation>
     </message>
     <message>
         <source>Export contour figure</source>
@@ -2113,11 +2115,11 @@ Option -&gt; Preferences</source>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Open new Verification Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Abra uma nova janela de verificação</translation>
     </message>
     <message>
         <source>&amp;Solver Information...</source>
@@ -2144,7 +2146,7 @@ Option -&gt; Preferences</source>
         <translation>Abrir nova janela (2D) de visualizacao </translation>
     </message>
     <message>
-        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
+        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
         <translation>Abrir nova janela (2D) de visualizacao do mapa panoramico pela vista de passaro </translation>
     </message>
     <message>

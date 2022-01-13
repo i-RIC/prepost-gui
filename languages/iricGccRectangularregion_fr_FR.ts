@@ -1,53 +1,51 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="fr_FR">
 <context>
     <name>GridCreatingConditionCreatorRectangularRegion</name>
     <message>
         <source>Create grid by dividing rectangular region</source>
-        <translation type="unfinished"></translation>
+        <translation>Créer une grille en divisant une région rectangulaire</translation>
     </message>
     <message>
         <source>Specify a rectangular region where to create a grid, and the cell width. The cell width is used for both X-direction and Y-direction.</source>
-        <translation type="unfinished"></translation>
+        <translation>Spécifiez une région rectangulaire où créer une grille et la largeur de la cellule. La largeur de cellule est utilisée à la fois pour la direction X et la direction Y.</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionRectangularRegion</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Avertissement</translation>
     </message>
     <message>
         <source>The maximum number of grid nodes is %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Le nombre maximum de nœuds de grille est %1.</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informations</translation>
     </message>
     <message>
         <source>Please define grid region by mouse-dragging.</source>
-        <translation type="unfinished"></translation>
+        <translation>Veuillez définir la région de la grille en faisant glisser la souris.</translation>
     </message>
 </context>
 <context>
     <name>GridCreatingConditionRectangularRegionSettingDialog</name>
     <message>
         <source>Grid Creation</source>
-        <translation type="unfinished"></translation>
+        <translation>Création de grille</translation>
     </message>
     <message>
         <source>Input</source>
-        <translation type="unfinished"></translation>
+        <translation>Saisir</translation>
     </message>
     <message>
         <source>Resulting grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Grille résultante</translation>
     </message>
     <message>
         <source>--</source>
-        <translation type="unfinished"></translation>
+        <translation>--</translation>
     </message>
 </context>
 </TS>

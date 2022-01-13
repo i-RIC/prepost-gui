@@ -138,6 +138,8 @@ public slots:
 	void openProject(const QString& filename);
 	/// Open a recently opened (or saved) project.
 	void openRecentProject();
+	/// Reload cgns file
+	void reloadCgnsFile();
 	/// Close the current project.
 	bool closeProject();
 	/// Save current project

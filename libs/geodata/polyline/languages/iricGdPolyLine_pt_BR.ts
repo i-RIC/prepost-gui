@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="pt_BR">
 <context>
     <name>GeoDataPolyLine</name>
@@ -73,11 +71,11 @@
     </message>
     <message>
         <source>polyline</source>
-        <translation type="unfinished"></translation>
+        <translation>polilinha</translation>
     </message>
     <message>
         <source>Polyline</source>
-        <translation type="unfinished">Polilinha  </translation>
+        <translation>Polilinha</translation>
     </message>
     <message>
         <source>PolyLine value change</source>
