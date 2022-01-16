@@ -13,6 +13,7 @@ class GRAPH2DSCATTERED_EXPORT Graph2dScatteredWindowProjectDataItem : public Pos
 public:
 	Graph2dScatteredWindowProjectDataItem(ProjectDataItem* parent, int index, QWidget* parentWindow);
 	bool setupInitialSetting();
+	QString windowId() const override;
 
 private:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;

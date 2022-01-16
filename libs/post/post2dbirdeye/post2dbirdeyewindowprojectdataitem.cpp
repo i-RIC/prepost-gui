@@ -41,6 +41,11 @@ Post2dBirdEyeWindowProjectDataItem::Post2dBirdEyeWindowProjectDataItem(ProjectDa
 	delete oldCenter;
 }
 
+QString Post2dBirdEyeWindowProjectDataItem::windowId() const
+{
+	return QString("post2dbirdeyewindow%1").arg(m_window->index());
+}
+
 void Post2dBirdEyeWindowProjectDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	Post2dBirdEyeWindow* w = dynamic_cast<Post2dBirdEyeWindow*>(m_window);

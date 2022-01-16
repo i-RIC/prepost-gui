@@ -51,6 +51,11 @@ Post2dWindowProjectDataItem::Post2dWindowProjectDataItem(ProjectDataItem* parent
 	delete oldCenter;
 }
 
+QString Post2dWindowProjectDataItem::windowId() const
+{
+	return QString("post2dwindow%1").arg(m_window->index());
+}
+
 void Post2dWindowProjectDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	Post2dWindow* w = dynamic_cast<Post2dWindow*>(m_window);

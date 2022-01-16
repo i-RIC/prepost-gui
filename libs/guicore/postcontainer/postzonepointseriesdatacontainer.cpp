@@ -129,8 +129,8 @@ int PostZonePointSeriesDataContainer::loadData()
 		auto zone = reader->targetFile()->base(PostSolutionInfo::toIntDimension(m_dimension))->zone(m_zoneName);
 
 		double val;
-		bool ok = loadData(m_valueName, zone, &val);
-		if (! ok) {return false;}
+		int ret = loadData(m_valueName, zone, &val);
+		if (ret != 0) {return false;}
 		m_data.push_back(val);
 	}
 	return IRIC_NO_ERROR;

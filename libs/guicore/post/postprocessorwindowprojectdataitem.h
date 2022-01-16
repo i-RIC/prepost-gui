@@ -16,6 +16,8 @@ public:
 	void informWindowClose();
 	PostProcessorWindow* window() const;
 
+	virtual QString windowId() const = 0;
+
 protected:
 	PostProcessorWindow* m_window;
 

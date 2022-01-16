@@ -12,6 +12,7 @@ class POST3D_EXPORT Post3dWindowProjectDataItem : public PostProcessorWindowProj
 
 public:
 	Post3dWindowProjectDataItem(ProjectDataItem* parent, int index, QWidget* parentWindow);
+	QString windowId() const override;
 
 private:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;

@@ -37,6 +37,11 @@ Post3dWindowProjectDataItem::Post3dWindowProjectDataItem(ProjectDataItem* parent
 	delete oldCenter;
 }
 
+QString Post3dWindowProjectDataItem::windowId() const
+{
+	return QString("post3dwindow%1").arg(m_window->index());
+}
+
 void Post3dWindowProjectDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	Post3dWindow* w = dynamic_cast<Post3dWindow*>(m_window);
