@@ -16,7 +16,7 @@ void PreProcessorHydraulicDataDataItem::setHydraulicData(HydraulicData* data)
 	m_hydraulicData = data;
 }
 
-QStringList PreProcessorHydraulicDataDataItem::containedFiles()
+QStringList PreProcessorHydraulicDataDataItem::containedFiles() const
 {
 	return m_hydraulicData->containedFiles();
 }

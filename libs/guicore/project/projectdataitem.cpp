@@ -105,7 +105,7 @@ void ProjectDataItem::setFilename(const QString& fname)
 	impl->m_filename = fname;
 }
 
-QStringList ProjectDataItem::containedFiles()
+QStringList ProjectDataItem::containedFiles() const
 {
 	QStringList ret;
 	if (impl->m_filename != "") {

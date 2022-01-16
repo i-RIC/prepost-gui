@@ -35,7 +35,7 @@ public:
 	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
-	virtual QStringList containedFiles() override;
+	QStringList containedFiles() const override;
 	void updateZDepthRangeItemCount() override;
 	void informValueRangeChange() override;
 	void informDataChange() override;

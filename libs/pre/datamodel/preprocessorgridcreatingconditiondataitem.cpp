@@ -358,7 +358,7 @@ void PreProcessorGridCreatingConditionDataItem::mouseReleaseEvent(QMouseEvent* e
 	impl->m_condition->mouseReleaseEvent(event, dynamic_cast<PreProcessorGraphicsViewInterface*>(v));
 }
 
-QStringList PreProcessorGridCreatingConditionDataItem::containedFiles()
+QStringList PreProcessorGridCreatingConditionDataItem::containedFiles() const
 {
 	if (impl->m_condition == nullptr) {return QStringList();}
 	return impl->m_condition->containedFiles();

@@ -151,7 +151,7 @@ void PreProcessorWindowProjectDataItem::closeCgnsFile()
 	m_preProcessorWindow->m_dataModel->closeCgnsFile();
 }
 
-QStringList PreProcessorWindowProjectDataItem::containedFiles()
+QStringList PreProcessorWindowProjectDataItem::containedFiles() const
 {
 	PreProcessorDataModel* model = dynamic_cast<PreProcessorDataModel*>(m_preProcessorWindow->m_dataModel);
 	return model->m_rootDataItem->containedFiles();

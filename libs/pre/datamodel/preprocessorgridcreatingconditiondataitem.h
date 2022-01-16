@@ -33,7 +33,7 @@ public:
 	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
-	QStringList containedFiles() override;
+	QStringList containedFiles() const override;
 	void moveGrid();
 	QAction* createAction() const override;
 	QAction* switchAction() const override;

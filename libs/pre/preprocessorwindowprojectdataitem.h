@@ -23,7 +23,7 @@ public:
 	int saveToCgnsFile() override;
 	int updateCgnsFileOtherThanGrids() override;
 	void closeCgnsFile() override;
-	QStringList containedFiles() override;
+	QStringList containedFiles() const override;
 	bool isGridEdited() const;
 	void setGridEdited();
 

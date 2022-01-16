@@ -84,7 +84,7 @@ public:
 	void setZDepthRange(const ZDepthRange& newrange);
 	void updateZDepthRange();
 	void startClosingProject();
-	virtual QStringList containedFiles() override;
+	QStringList containedFiles() const override;
 	/// Update the status (enabled or disabled) of move-up, and move-down actions.
 	virtual void updateMoveUpDownActions(ObjectBrowserView* /*view*/) {}
 	void setIsCommandExecuting(bool exec) {m_isCommandExecuting = exec;}

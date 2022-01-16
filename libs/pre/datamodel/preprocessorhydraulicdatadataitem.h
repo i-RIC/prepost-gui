@@ -10,7 +10,7 @@ public:
 
 	HydraulicData* hydraulicData() const override;
 	void setHydraulicData(HydraulicData* data) override;
-	QStringList containedFiles() override;
+	QStringList containedFiles() const override;
 
 private:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;

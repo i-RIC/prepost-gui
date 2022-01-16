@@ -80,7 +80,7 @@ public:
 	void informCtrlPointUpdateToCrosssectionWindows() override;
 	void requestCrosssectionWindowDelete(GeoDataRiverSurveyCrosssectionWindowProjectDataItem* item) override;
 	bool addToolBarButtons(QToolBar* parent) override;
-	QStringList containedFiles() override;
+	QStringList containedFiles() const override;
 	void setDimensionsToFirst();
 
 	std::vector<GeoDataImporter*> importers() const;

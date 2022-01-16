@@ -483,7 +483,7 @@ QString ProjectMainFile::relativeSubPath() const
 	return "";
 }
 
-QStringList ProjectMainFile::containedFiles()
+QStringList ProjectMainFile::containedFiles() const
 {
 	QStringList ret;
 	// Add files those exists in the work folder.
