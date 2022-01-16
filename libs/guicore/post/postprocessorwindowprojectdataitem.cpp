@@ -12,7 +12,7 @@ PostProcessorWindowProjectDataItem::~PostProcessorWindowProjectDataItem()
 	if (m_window != nullptr) {
 		PostProcessorWindow* w = m_window;
 		m_window = nullptr;
-		delete w;
+		delete w->parentWidget();
 	}
 }
 
