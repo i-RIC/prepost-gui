@@ -9,17 +9,12 @@ class QWidget;
 
 class GUICOREDLL_EXPORT PostProcessorWindowProjectDataItem : public ProjectDataItem
 {
-
 public:
-	PostProcessorWindowProjectDataItem(ProjectDataItem* parent, QWidget* /*parentWindow*/)
-		: ProjectDataItem(parent) {
-		m_window = nullptr;
-	}
+	PostProcessorWindowProjectDataItem(ProjectDataItem* parent, QWidget* parentWindow);
 	~PostProcessorWindowProjectDataItem();
+
 	void informWindowClose();
-	PostProcessorWindow* window() const {
-		return m_window;
-	}
+	PostProcessorWindow* window() const;
 
 protected:
 	PostProcessorWindow* m_window;
