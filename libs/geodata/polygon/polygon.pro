@@ -69,7 +69,17 @@ LIBS += \
 
 # iriclib
 
-LIBS += -liriclib
+win32 {
+    CONFIG(debug, debug|release) {
+        LIBS += -liriclibd
+    } else {
+        LIBS += -liriclib
+    }
+}
+
+unix {
+    LIBS += -liriclib
+}
 
 # shapelib
 
