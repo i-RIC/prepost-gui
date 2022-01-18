@@ -46,7 +46,7 @@ init:
   - ps: Write-Output $CommitAndPush
 
 configuration:
-##  - Debug
+  - Debug
   - Release
 
 matrix:
