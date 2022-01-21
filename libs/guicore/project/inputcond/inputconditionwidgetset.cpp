@@ -320,9 +320,11 @@ void InputConditionWidgetSet::buildDepsItem(const QDomNode& itemNode, InputCondi
 	// Search for "Dependency" node.
 	auto depNode = iRIC::getChildNode(defNode, "Dependency");
 	if (! depNode.isNull()) {
-		auto condNode = iRIC::getChildNode(depNode, "Condition");
-		if (condNode.isNull()) {return;}
-		buildDep(condNode, cset, w);
+		for (; ! depNode.isNull(); depNode = depNode.nextSiblingElement("Dependency")) {
+			auto condNode = iRIC::getChildNode(depNode, "Condition");
+			if (condNode.isNull()) {continue;}
+			buildDep(condNode, cset, w);
+		}
 	} else {
 		// support "Condition" node just under definition node.
 		auto condNode = iRIC::getChildNode(defNode, "Condition");
@@ -384,8 +386,10 @@ void InputConditionWidgetSet::buildDep(const QDomNode& condNode, InputConditionC
 	auto cond = InputConditionDependency::buildCondition(condNode, &cset, dep);
 	dep->setCondition(cond);
 	// Action corresponding to Condition is now enabling only.
-	auto a = new InputConditionDependency::ActionEnable(w);
-	dep->addAction(a);
+	auto actions = InputConditionDependency::buildActions(condNode, &cset, this, w);
+	for (auto a : actions) {
+		dep->addAction(a);
+	}
 	w->addDependency(dep);
 	// Initial Check
 	dep->check();

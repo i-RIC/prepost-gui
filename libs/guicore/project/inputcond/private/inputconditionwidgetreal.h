@@ -14,6 +14,9 @@ class RealNumberEditWidget;
 class SolverDefinitionTranslator;
 class InputConditionContainerReal;
 
+#include "../inputconditiondependency.h"  // can't forward declare nested classes (InputConditionDependency::ActionSetValue)
+
+
 class InputConditionWidgetReal : public InputConditionWidget
 {
 	Q_OBJECT
@@ -32,6 +35,9 @@ public slots:
 private:
 	InputConditionContainerReal* m_container;
 	RealNumberEditWidget* m_lineEdit;
+
+public:
+	friend class InputConditionDependency::ActionSetValue;
 };
 
 #endif // INPUTCONDITIONWIDGETREAL_H

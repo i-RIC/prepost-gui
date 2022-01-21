@@ -5,6 +5,7 @@
 #include "inputconditionwidget.h"
 #include <QList>
 #include <QObject>
+#include <QVariant>
 
 class QDomNode;
 class InputConditionWidgetSet;
@@ -56,12 +57,31 @@ public:
 		void negativeAction() override;
 	};
 
+	class ActionSetValue : public Action
+	{
+	public:
+		ActionSetValue(InputConditionWidget* w, QString value);
+		~ActionSetValue();
+
+		void positiveAction() override;
+		void negativeAction() override;
+
+	private:
+		QVariant m_value;
+	};
+
 public:
 	InputConditionDependency(QObject* parent = 0);
 	void setCondition(Condition* c);
 	void addAction(Action* a);
 
 	/// Build Action object and return the pointer to it.
+	static QList<Action*> buildActions(
+		const QDomNode& condNode,
+		InputConditionContainerSet* cs,
+		InputConditionWidgetSet* ws,
+		InputConditionWidget* w
+	);
 	static Action* buildAction(
 		const QDomNode& node,
 		InputConditionContainerSet* cs,
