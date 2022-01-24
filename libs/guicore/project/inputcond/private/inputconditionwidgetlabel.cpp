@@ -37,6 +37,7 @@ InputConditionWidgetLabel::InputConditionWidgetLabel(QDomNode defNode, const Sol
 
 void InputConditionWidgetLabel::addTooltip(const QString& tooltip)
 {
+	Q_UNUSED(tooltip);
 	// do nothing
 }
 

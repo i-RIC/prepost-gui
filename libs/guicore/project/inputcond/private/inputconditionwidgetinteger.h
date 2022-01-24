@@ -10,6 +10,8 @@ class SolverDefinitionTranslator;
 class QSpinBox;
 class QVariant;
 
+#include "../inputconditiondependency.h"  // can't forward declare nested classes (InputConditionDependency::ActionSetValue)
+
 class InputConditionWidgetInteger : public InputConditionWidget
 {
 	Q_OBJECT
@@ -26,6 +28,8 @@ private:
 	InputConditionContainerInteger* m_container;
 	QSpinBox* m_spinBox;
 
+public:
+	friend class InputConditionDependency::ActionSetValue;
 };
 
 #endif // INPUTCONDITIONWIDGETINTEGER_H

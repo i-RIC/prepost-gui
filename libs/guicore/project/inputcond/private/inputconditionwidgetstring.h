@@ -7,6 +7,8 @@ class TextEditI;
 class InputConditionContainerString;
 class SolverDefinitionTranslator;
 
+#include "../inputconditiondependency.h"  // can't forward declare nested classes (InputConditionDependency::ActionSetValue)
+
 class InputConditionWidgetString : public InputConditionWidget
 {
 	Q_OBJECT
@@ -25,5 +27,8 @@ private slots:
 private:
 	InputConditionContainerString* m_container;
 	TextEditI* m_textEdit;
+
+public:
+	friend class InputConditionDependency::ActionSetValue;
 };
 #endif // INPUTCONDITIONWIDGETSTRING_H
