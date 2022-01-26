@@ -1444,7 +1444,7 @@ void PreProcessorGeoDataGroupDataItem::saveExternalData(const QString& /*filenam
 	}
 }
 
-QStringList PreProcessorGeoDataGroupDataItem::containedFiles()
+QStringList PreProcessorGeoDataGroupDataItem::containedFiles() const
 {
 	QStringList ret = PreProcessorDataItem::containedFiles();
 	const auto& conts = m_dimensions->containers();

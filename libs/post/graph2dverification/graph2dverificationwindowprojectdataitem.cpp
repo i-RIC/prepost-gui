@@ -45,6 +45,11 @@ Graph2dVerificationWindowProjectDataItem::Graph2dVerificationWindowProjectDataIt
 	delete oldCenter;
 }
 
+QString Graph2dVerificationWindowProjectDataItem::windowId() const
+{
+	return QString("graph2dverificationwindow%1").arg(m_window->index());
+}
+
 void Graph2dVerificationWindowProjectDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	Graph2dVerificationWindow* w = dynamic_cast<Graph2dVerificationWindow*>(m_window);

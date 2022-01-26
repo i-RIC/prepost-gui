@@ -382,7 +382,7 @@ void Graph2dWindowDataItem::assignActorZValues(const ZDepthRange& range)
 	}
 }
 
-QStringList Graph2dWindowDataItem::containedFiles()
+QStringList Graph2dWindowDataItem::containedFiles() const
 {
 	QStringList ret;
 	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {

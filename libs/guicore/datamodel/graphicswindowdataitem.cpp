@@ -466,7 +466,7 @@ GraphicsWindowDataModel* GraphicsWindowDataItem::dataModel() const
 	return dynamic_cast<GraphicsWindowDataItem*>(parent())->dataModel();
 }
 
-QStringList GraphicsWindowDataItem::containedFiles()
+QStringList GraphicsWindowDataItem::containedFiles() const
 {
 	QStringList ret;
 	ret << ProjectDataItem::containedFiles();

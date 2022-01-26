@@ -483,7 +483,7 @@ QString ProjectMainFile::relativeSubPath() const
 	return "";
 }
 
-QStringList ProjectMainFile::containedFiles()
+QStringList ProjectMainFile::containedFiles() const
 {
 	QStringList ret;
 	// Add files those exists in the work folder.
@@ -977,6 +977,9 @@ bool ProjectMainFile::importVisGraphSetting(const QString filename)
 {
 	QFile f(filename);
 
+	QFileInfo fInfo(filename);
+	QDir workDir = fInfo.dir();
+
 	QDomDocument doc;
 	QString errorStr;
 	int errorLine;
@@ -996,7 +999,7 @@ bool ProjectMainFile::importVisGraphSetting(const QString filename)
 		int ret = QMessageBox::warning(iricMainWindow(), tr("Warning"), tr("This file is for solver %1 %2. It is not compatible with the solver you are using, so maybe importing this file will fail. Do you really want to import this file?").arg(solvername.c_str()).arg(solverVersion), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
 		if (ret == QMessageBox::No) {return false;}
 	}
-	impl->m_postProcessors->loadFromProjectMainFile(doc.documentElement(), true);
+	impl->m_postProcessors->loadFromXmlFile(doc.documentElement(), workDir);
 
 	return true;
 }
@@ -1008,19 +1011,24 @@ bool ProjectMainFile::exportVisGraphSetting(const QString filename)
 		return false;
 	}
 	QFile f(filename);
+
+	QFileInfo fInfo(filename);
+	QDir workDir = fInfo.dir();
+
 	bool ok = f.open(QFile::WriteOnly);
 	if (! ok) {
 		// Failed opening the file.
 		QMessageBox::critical(iricMainWindow(), tr("Error"), tr("File %1 could not be opened.").arg(filename));
 		return false;
 	}
+
 	QXmlStreamWriter w(&f);
 	w.setAutoFormatting(true);
 	w.writeStartDocument("1.0");
 	w.writeStartElement("iRICPostProcessingSettings");
 	w.writeAttribute("solverName", impl->m_solverName.c_str());
 	w.writeAttribute("solverVersion", impl->m_solverVersion.toString());
-	impl->m_postProcessors->saveToProjectMainFile(w);
+	impl->m_postProcessors->saveToXmlFile(w, workDir);
 	w.writeEndElement();
 	w.writeEndDocument();
 	f.close();

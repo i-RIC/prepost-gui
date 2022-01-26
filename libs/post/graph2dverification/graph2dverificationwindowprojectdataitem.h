@@ -13,6 +13,7 @@ class GRAPH2DVERIFICATION_EXPORT Graph2dVerificationWindowProjectDataItem : publ
 public:
 	Graph2dVerificationWindowProjectDataItem(ProjectDataItem* parent, int index, QWidget* parentWindow);
 	bool setupInitialSetting();
+	QString windowId() const override;
 
 private:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;

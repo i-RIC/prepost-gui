@@ -10,6 +10,7 @@
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <guicore/misc/targeted/targeteditemsettargetcommandtool.h>
+#include <misc/errormessage.h>
 #include <misc/mathsupport.h>
 #include <misc/stringtool.h>
 
@@ -243,6 +244,7 @@ void Post2dWindowGraphGroupDataItem::update()
 	std::vector<std::vector<QPointF> > lines;
 
 	vtkDataArray *da = cont->data()->GetPointData()->GetArray(iRIC::toStr(impl->m_setting.graphTarget).c_str());
+	if (da == nullptr) {throw ErrorMessage("data not found");}
 
 	vtkSmartPointer<vtkCellArray> cellsBase = vtkSmartPointer<vtkCellArray>::New();
 	vtkSmartPointer<vtkCellArray> cellsGraph = vtkSmartPointer<vtkCellArray>::New();

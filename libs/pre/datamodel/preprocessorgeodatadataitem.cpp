@@ -215,7 +215,7 @@ void PreProcessorGeoDataDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraph
 	m_geoData->mouseReleaseEvent(event, dynamic_cast<PreProcessorGraphicsViewInterface*>(v));
 }
 
-QStringList PreProcessorGeoDataDataItem::containedFiles()
+QStringList PreProcessorGeoDataDataItem::containedFiles() const
 {
 	return m_geoData->containedFiles();
 }

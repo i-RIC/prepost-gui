@@ -53,6 +53,11 @@ Graph2dHybridWindowProjectDataItem::Graph2dHybridWindowProjectDataItem(ProjectDa
 	delete oldCenter;
 }
 
+QString Graph2dHybridWindowProjectDataItem::windowId() const
+{
+	return QString("graph2dhybridwindow%1").arg(m_window->index());
+}
+
 void Graph2dHybridWindowProjectDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	Graph2dHybridWindow* w = dynamic_cast<Graph2dHybridWindow*>(m_window);

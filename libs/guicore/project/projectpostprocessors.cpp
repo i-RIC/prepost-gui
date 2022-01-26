@@ -13,16 +13,25 @@
 
 #include <misc/errormessage.h>
 
+#include <QDir>
 #include <QDomNode>
 #include <QMdiArea>
 #include <QMdiSubWindow>
+#include <QString>
 #include <QXmlStreamWriter>
 
-ProjectPostProcessors::ProjectPostProcessors(ProjectDataItem* parent)
-	: ProjectDataItem(parent)
-{
-
+namespace {
+	static QString SUBWINDOWS = "subwindows";
 }
+
+const QString ProjectPostProcessors::subwindowsFolder()
+{
+	return SUBWINDOWS;
+}
+
+ProjectPostProcessors::ProjectPostProcessors(ProjectDataItem* parent) :
+	ProjectDataItem(parent)
+{}
 
 ProjectPostProcessors::~ProjectPostProcessors()
 {
@@ -35,22 +44,37 @@ ProjectPostProcessors::~ProjectPostProcessors()
 	}
 }
 
-void ProjectPostProcessors::doLoadFromProjectMainFile(const QDomNode& node, bool import)
+void ProjectPostProcessors::loadFromXmlFile(const QDomNode& node, const QDir workDir)
 {
 	QDomNode child = node.firstChild();
 	QWidget* parentWindow = projectData()->mainWindow();
 	while (! child.isNull()) {
 		PostProcessorWindowProjectDataItem* di = nullptr;
-		if (import) {
-			QDomElement elem = child.toElement();
-			di = m_factory->factory(elem.attribute("type"), this, parentWindow);
+		QDomNode windowNode;
+		QDomElement childElem = child.toElement();
+
+		auto ref = childElem.attribute("ref");
+		if (ref != "") {
+			// file is saved in separate XML file
+			QString fname = workDir.filePath(ref);
+			if (QFile::exists(fname)) {
+				QFile f(fname);
+				QDomDocument doc;
+				bool ok = doc.setContent(&f);
+				if (ok) {
+					di = m_factory->restore(doc.documentElement(), this, parentWindow);
+					windowNode = doc.documentElement();
+				}
+			}
 		} else {
 			di = m_factory->restore(child, this, parentWindow);
+			windowNode = child;
 		}
+
 		if (di != nullptr) {
 			add(di);
 			try {
-				di->loadFromProjectMainFile(child);
+				di->loadFromProjectMainFile(windowNode);
 			} catch (ErrorMessage m) {
 				m_postProcessorWindows.removeOne(di);
 				delete di;
@@ -60,13 +84,47 @@ void ProjectPostProcessors::doLoadFromProjectMainFile(const QDomNode& node, bool
 	}
 }
 
+void ProjectPostProcessors::saveToXmlFile(QXmlStreamWriter& writer, const QDir workDir)
+{
+	// Create subwindows folder
+	if (! workDir.exists(SUBWINDOWS)) {
+		workDir.mkdir(SUBWINDOWS);
+	}
+	QDir subWindowsDir(workDir.filePath(SUBWINDOWS));
+
+	for (auto w : m_postProcessorWindows) {
+		auto fileName = subWindowsDir.filePath(QString("%1.xml").arg(w->windowId()));
+
+		// Write reference
+		writer.writeStartElement("PostProcessor");
+		writer.writeAttribute("ref", QString("%1/%2.xml").arg(SUBWINDOWS).arg(w->windowId()));
+		writer.writeEndElement();
+
+		QFile f(fileName);
+		f.open(QFile::WriteOnly);
+		QXmlStreamWriter writer2(&f);
+		writer2.setAutoFormatting(true);
+		writer2.writeStartDocument("1.0");
+		writer2.writeStartElement("PostProcessor");
+		w->saveToProjectMainFile(writer2);
+		writer2.writeEndElement();
+		writer2.writeEndDocument();
+		f.close();
+	}
+}
+
+void ProjectPostProcessors::doLoadFromProjectMainFile(const QDomNode& node)
+{
+	QDir workDir(projectData()->workDirectory());
+
+	loadFromXmlFile(node, workDir);
+}
+
 void ProjectPostProcessors::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	for (auto it = m_postProcessorWindows.begin(); it != m_postProcessorWindows.end(); ++it) {
-		writer.writeStartElement("PostProcessor");
-		(*it)->saveToProjectMainFile(writer);
-		writer.writeEndElement();
-	}
+	QDir workDir(projectData()->workDirectory());
+
+	saveToXmlFile(writer, workDir);
 }
 
 QMdiSubWindow* ProjectPostProcessors::add(PostProcessorWindowProjectDataItem* newitem)
@@ -92,11 +150,6 @@ void ProjectPostProcessors::requestDelete(PostProcessorWindowProjectDataItem* it
 	}
 }
 
-void ProjectPostProcessors::loadFromProjectMainFile(const QDomNode& node, bool import)
-{
-	doLoadFromProjectMainFile(node, import);
-}
-
 int ProjectPostProcessors::windowCount() const
 {
 	return m_postProcessorWindows.count();
@@ -113,3 +166,15 @@ void ProjectPostProcessors::applyOffset(double x_diff, double y_diff)
 		w->window()->applyOffset(x_diff, y_diff);
 	}
 }
+
+QStringList ProjectPostProcessors::containedFiles() const
+{
+	QStringList ret;
+
+	for (auto w : m_postProcessorWindows) {
+		ret.append(QString("%1/%2.xml").arg(SUBWINDOWS).arg(w->windowId()));
+	}
+
+	return ret;
+}
+

@@ -128,7 +128,7 @@ public:
 	void startClosingProject();
 	vtkActorCollection* actorCollection() const {return m_actorCollection;}
 	vtkActor2DCollection* actor2DCollection() const {return m_actor2DCollection;}
-	virtual QStringList containedFiles() override;
+	QStringList containedFiles() const override;
 	/// Update the status (enabled or disabled) of move-up, and move-down actions.
 	virtual void updateMoveUpDownActions(ObjectBrowserView* /*view*/) {}
 	void setIsCommandExecuting(bool exec);

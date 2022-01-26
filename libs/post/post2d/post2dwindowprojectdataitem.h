@@ -12,6 +12,7 @@ class POST2D_EXPORT Post2dWindowProjectDataItem : public PostProcessorWindowProj
 
 public:
 	Post2dWindowProjectDataItem(ProjectDataItem* parent, int index, QWidget* parentWindow);
+	QString windowId() const override;
 
 private:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;

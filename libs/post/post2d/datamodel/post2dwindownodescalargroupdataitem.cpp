@@ -23,6 +23,7 @@
 #include <guicore/solverdef/solverdefinition.h>
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
+#include <misc/errormessage.h>
 #include <misc/stringtool.h>
 #include <misc/xmlsupport.h>
 
@@ -126,7 +127,9 @@ void Post2dWindowNodeScalarGroupDataItem::updateActorSettings()
 	if (pd->GetNumberOfArrays() == 0) {return;}
 
 	std::string targetStr = iRIC::toStr(m_setting.target);
-	ScalarsToColorsContainerUtil::setValueRange(&m_lookupTableContainer, pd->GetArray(targetStr.c_str()));
+	auto dataArray = pd->GetArray(targetStr.c_str());
+	if (dataArray == nullptr) {throw ErrorMessage("data not found");}
+	ScalarsToColorsContainerUtil::setValueRange(&m_lookupTableContainer, dataArray);
 
 	Post2dWindowScalarGroupTopDataItem* topitem = dynamic_cast<Post2dWindowScalarGroupTopDataItem*>(parent());
 	m_standardItem->setText(topitem->colorbarTitleMap().value(targetStr));

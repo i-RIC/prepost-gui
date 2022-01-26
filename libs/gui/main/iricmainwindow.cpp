@@ -2251,7 +2251,24 @@ void iRICMainWindow::loadSubWindowsFromProjectMainFile(const QDomNode& node)
 	QDomNode tmpNode = iRIC::getChildNode(node, "PreProcessorWindow");
 	if (! tmpNode.isNull()) {
 		PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*>(m_preProcessorWindow);
-		pre->projectDataItem()->loadFromProjectMainFile(tmpNode);
+
+		auto tmpElem = tmpNode.toElement();
+		auto ref = tmpElem.attribute("ref");
+		if (ref != "") {
+			// file is saved in separate xml file
+			QDir workDir(projectData()->workDirectory());
+			QString fname = workDir.filePath(ref);
+			if (QFile::exists(fname)) {
+				QFile f(fname);
+				QDomDocument doc;
+				bool ok = doc.setContent(&f);
+				if (ok) {
+					pre->projectDataItem()->loadFromProjectMainFile(doc.documentElement());
+				}
+			}
+		} else {
+			pre->projectDataItem()->loadFromProjectMainFile(tmpNode);
+		}
 	}
 	// read setting about Console Window
 	tmpNode = iRIC::getChildNode(node, "SolverConsoleWindow");
@@ -2268,12 +2285,26 @@ void iRICMainWindow::loadSubWindowsFromProjectMainFile(const QDomNode& node)
 
 void iRICMainWindow::saveSubWindowsToProjectMainFile(QXmlStreamWriter& writer)
 {
+	auto xmlPath = QString("%1/preprocessor.xml").arg(ProjectPostProcessors::subwindowsFolder());
 	// write setting about PreProcessor
 	writer.writeStartElement("PreProcessorWindow");
-	// delegate to PreProcessorWindowProjectDataItem
-	PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*>(m_preProcessorWindow);
-	pre->projectDataItem()->saveToProjectMainFile(writer);
+	writer.writeAttribute("ref", xmlPath);
 	writer.writeEndElement();
+
+	QDir workDir(m_projectData->workDirectory());
+	QFile f(workDir.filePath(xmlPath));
+	f.open(QFile::WriteOnly);
+	QXmlStreamWriter writer2(&f);
+	writer2.setAutoFormatting(true);
+	writer2.writeStartDocument("1.0");
+	writer2.writeStartElement("PreProcessorWindow");
+
+	auto pre = dynamic_cast<PreProcessorWindow*>(m_preProcessorWindow);
+	pre->projectDataItem()->saveToProjectMainFile(writer2);
+
+	writer2.writeEndElement();
+	writer2.writeEndDocument();
+	f.close();
 
 	// write setting about SolverConsoleWindow
 	writer.writeStartElement("SolverConsoleWindow");
@@ -2289,7 +2320,12 @@ void iRICMainWindow::saveSubWindowsToProjectMainFile(QXmlStreamWriter& writer)
 QStringList iRICMainWindow::containedFiles() const
 {
 	PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*>(m_preProcessorWindow);
-	return pre->projectDataItem()->containedFiles();
+	auto files = pre->projectDataItem()->containedFiles();
+
+	auto xmlPath = QString("%1/preprocessor.xml").arg(ProjectPostProcessors::subwindowsFolder());
+	files.append(xmlPath);
+
+	return files;
 }
 
 int iRICMainWindow::loadFromCgnsFile()

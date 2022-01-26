@@ -13,6 +13,7 @@ class GRAPH2DHYBRID_EXPORT Graph2dHybridWindowProjectDataItem : public PostProce
 public:
 	Graph2dHybridWindowProjectDataItem(ProjectDataItem* parent, int index, QWidget* parentWindow);
 	bool setupInitialSetting();
+	QString windowId() const override;
 
 private:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;

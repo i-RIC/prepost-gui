@@ -55,6 +55,11 @@ Graph2dScatteredWindowProjectDataItem::Graph2dScatteredWindowProjectDataItem(Pro
 	delete oldCenter;
 }
 
+QString Graph2dScatteredWindowProjectDataItem::windowId() const
+{
+	return QString("graph2dscatteredwindow%1").arg(m_window->index());
+}
+
 void Graph2dScatteredWindowProjectDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	Graph2dScatteredWindow* w = dynamic_cast<Graph2dScatteredWindow*>(m_window);
