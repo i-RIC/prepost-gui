@@ -171,6 +171,17 @@ on_success:
           } | Set-Content $file
         }
 
+        # read iriclib version from $in and write it to $out
+        $in = 'yasu_src\packages\sdk\data\c\lib\cmake\iriclib\iriclibConfigVersion.cmake'
+        $out = 'yasu_src\packages\sdk\meta\package.xml'
+        (Get-Content $in) | ForEach-Object {
+          if ($_ -match '^set\(PACKAGE_VERSION "(?<iricver>.*)"\)$') {
+            (Get-Content $out) | Foreach-Object {
+              $_ -replace "(?<=<Version>)(.*)(?=</Version>)", $matches['iricver']
+            } | Set-Content $out
+          }
+        }
+
         # distribute files built by prepost-gui
         Set-Location $env:APPVEYOR_BUILD_FOLDER\dist\_build -ErrorAction Stop
         cmake --build . --config release --target install
