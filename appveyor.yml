@@ -35,7 +35,7 @@ init:
   - ps: Write-Output $CommitAndPush
 
 configuration:
-#  - Debug
+  - Debug
   - Release
 
 matrix:
@@ -190,6 +190,10 @@ on_success:
         $latest_json = Invoke-WebRequest -Uri $releases_url/latest -Method GET
         $latest = $latest_json.Content | ConvertFrom-Json
         $iriclib_rel = ($latest.created_at).ToString("yyyy-MM-dd")
+        # verify versions agree
+        if ($latest.tag_name -ne "v$iriclib_ver") {
+          throw "iriclib version/release mismatch " + $latest.tag_name  + " -ne " + "v$iriclib_ver"
+        }
         (Get-Content $out) | Foreach-Object {
           $_ -replace "(?<=<Version>)(.*)(?=</Version>)",           $iriclib_ver `
              -replace "(?<=<ReleaseDate>)(.*)(?=</ReleaseDate>)",   $iriclib_rel
