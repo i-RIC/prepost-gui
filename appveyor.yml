@@ -159,6 +159,9 @@ on_success:
         $env:RELEASE = $env:RELEASE_DATE -replace '-', '.'
         $env:CAPTION = "iRIC GUI " + $v[0] + "." + $v[1] + "." + $v[2]
 
+        # The parentheses around the Get-Content commands below are required
+        # to avoid file access errors
+
         $files=@('yasu_src\packages\gui.prepost\data\definition.xml', `
                 'yasu_src\packages\gui.prepost\meta\package.xml')
         foreach ($file in $files) {
@@ -171,21 +174,26 @@ on_success:
           } | Set-Content $file
         }
 
-        # read iriclib version from $in and write it to $out
-        $in = 'yasu_src\packages\sdk\data\c\lib\cmake\iriclib\iriclibConfigVersion.cmake'
-        $out = 'yasu_src\packages\sdk\meta\package.xml'
-        (Get-Content $in) | ForEach-Object {
-          if ($_ -match '^set\(PACKAGE_VERSION "(?<iricver>.*)"\)$') {
-            (Get-Content $out) | Foreach-Object {
-              $_ -replace "(?<=<Version>)(.*)(?=</Version>)", $matches['iricver']
-            } | Set-Content $out
-          }
-        }
-
         # distribute files built by prepost-gui
         Set-Location $env:APPVEYOR_BUILD_FOLDER\dist\_build -ErrorAction Stop
         cmake --build . --config release --target install
         if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
+
+        # read iriclib Version from $in
+        # get iriclib ReleaseDate from github releases
+        #   see https://docs.github.com/en/rest/reference/releases#get-the-latest-release
+        # and write them both to $out
+        $in = 'yasu_src\packages\sdk\data\c\lib\cmake\iriclib\iriclibConfigVersion.cmake'
+        $out = 'yasu_src\packages\sdk\meta\package.xml'
+        $iriclib_ver = (Select-String -Path $in -Pattern '^set\(PACKAGE_VERSION "(?<ver>.*)"\)$').Matches[0].Groups['ver'].Value
+        $releases_url="https://api.github.com/repos/i-RIC/iriclib_v4/releases"
+        $latest_json = Invoke-WebRequest -Uri $releases_url/latest -Method GET
+        $latest = $latest_json.Content | ConvertFrom-Json
+        $iriclib_rel = ($latest.created_at).ToString("yyyy-MM-dd")
+        (Get-Content $out) | Foreach-Object {
+          $_ -replace "(?<=<Version>)(.*)(?=</Version>)",           $iriclib_ver `
+             -replace "(?<=<ReleaseDate>)(.*)(?=</ReleaseDate>)",   $iriclib_rel
+        } | Set-Content $out
 
         # run repogen to build packages and Updates.xml
         Set-Location \online_update\yasu_src -ErrorAction Stop
