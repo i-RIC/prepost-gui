@@ -1,15 +1,15 @@
 version: '{branch}-{build}'
 
 environment:
-  generator: Visual Studio 16 2019
-  ifw_location: C:\Qt\Tools\QtInstallerFramework\4.1
   CL: /MP
-  scharlton2_access_token:
-    secure: CS9f7K3/ePypXUjKJ5S5iX2WFLNpC0IH4LEC9jYXdvcNbaM7CFl0fU5Ws/qUDgvo
+  generator: Visual Studio 16 2019
+  ifw_location: C:\Qt\Tools\QtInstallerFramework\4.2
   iric_access_token:
     secure: WDcJrM7sx9jagk006F3OtXqomb90MlJcRIs8LoAyvT0wVzvG+UxeaW+oG9GWb1t8
   kskinoue0612_access_token:
     secure: GzdhhFKWjeLDM22U4ZcrMkAGEEnZLMVbfBR9W8uRQ/LqOtvX2qjPXvC3nvxxWeUc
+  scharlton2_access_token:
+    secure: CS9f7K3/ePypXUjKJ5S5iX2WFLNpC0IH4LEC9jYXdvcNbaM7CFl0fU5Ws/qUDgvo
 
 # Skipping commits affecting specific files (GitHub only).
 # also can use [skip appveyor] in message to skip building
@@ -93,19 +93,15 @@ after_build:
   - cd %APPVEYOR_BUILD_FOLDER%
   - ps: |
       if ($CommitAndPush) {
-        md $env:APPVEYOR_BUILD_FOLDER\dist\_build
+        mkdir $env:APPVEYOR_BUILD_FOLDER\dist\_build
         Set-Location $env:APPVEYOR_BUILD_FOLDER\dist\_build -ErrorAction Stop
         cmake --version
-        if ($env:APPVEYOR_REPO_BRANCH -eq "master") {
-          cmake -DPREPOST_GUI:PATH=$env:APPVEYOR_BUILD_FOLDER -DSRC_FOLDER:STRING=prod_src -G $env:psgenerator ..
-        } else {
-          Get-Content C:\iricdev-2019\versions.cmd | ForEach-Object {
-            if ($_ -match '^set IRICLIB_VER=(.*)$') {
-              $env:iriclib_DIR="c:/iricdev-2019/lib/install/iriclib-" + $matches[1] + "/lib/cmake/iriclib"
-            }
+        Get-Content C:\iricdev-2019\versions.cmd | ForEach-Object {
+          if ($_ -match '^set IRICLIB_VER=(.*)$') {
+            $env:iriclib_DIR="c:/iricdev-2019/lib/install/iriclib-" + $matches[1] + "/lib/cmake/iriclib"
           }
-          cmake -DPREPOST_GUI:PATH=$env:APPVEYOR_BUILD_FOLDER -DSRC_FOLDER:STRING=yasu_src -Diriclib_DIR:PATH=$env:iriclib_DIR -G $env:psgenerator ..
         }
+        cmake -DPREPOST_GUI:PATH=$env:APPVEYOR_BUILD_FOLDER -DSRC_FOLDER:STRING=yasu_src -Diriclib_DIR:PATH=$env:iriclib_DIR -G $env:generator ..
         if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
       }
 
