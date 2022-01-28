@@ -35,7 +35,7 @@ init:
   - ps: Write-Output $CommitAndPush
 
 configuration:
-  - Debug
+#  - Debug
   - Release
 
 matrix:
@@ -52,7 +52,7 @@ before_build:
   - cd \
   - 7z x %APPVEYOR_BUILD_FOLDER%\2019.zip
   - del %APPVEYOR_BUILD_FOLDER%\2019.zip
-  - ren \iricdev-2019-2019 \iricdev-2019
+  - ren c:\iricdev-2019-2019 iricdev-2019
   - cd \iricdev-2019
   - md lib
   - cd lib
@@ -221,4 +221,7 @@ on_success:
       }
 
 on_failure:
-  - dir C:\Qt\Tools\QtInstallerFramework\
+  - ps: |
+      Get-ChildItem C:\Qt\Tools\QtInstallerFramework\
+      Get-ChildItem -Recurse c:\ | 7z a -si dir_c.7z
+      Push-AppveyorArtifact dir_c.7z
