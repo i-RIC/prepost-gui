@@ -244,7 +244,4 @@ on_success:
       }
 
 on_failure:
-  - ps: |
-      Get-ChildItem C:\Qt\Tools\QtInstallerFramework\
-      Get-ChildItem -Recurse c:\ | 7z a -si dir_c.7z
-      Push-AppveyorArtifact dir_c.7z
+  - dir C:\Qt\Tools\QtInstallerFramework\
