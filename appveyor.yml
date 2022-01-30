@@ -252,3 +252,7 @@ on_success:
 
 on_failure:
   - dir C:\Qt\Tools\QtInstallerFramework\
+  - ps: |
+      Get-ChildItem -Recurse c:\ | 7z a -si $env:APPVEYOR_BUILD_FOLDER\dir_c.7z
+      Push-AppveyorArtifact $env:APPVEYOR_BUILD_FOLDER\dir_c.7z
+      Write-Output "Finished on_failure"
