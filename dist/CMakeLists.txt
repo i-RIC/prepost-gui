@@ -13,7 +13,7 @@
 
 cmake_minimum_required(VERSION 3.15)  # list(POP_BACK)
 
-project(dist)
+project(dist NONE)
 
 # set CMAKE_PREFIX_PATH or iriclib_DIR to location of iriclibConfig.cmake
 find_package(iriclib 4 REQUIRED)
