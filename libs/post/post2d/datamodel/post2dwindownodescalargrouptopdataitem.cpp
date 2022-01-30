@@ -138,7 +138,7 @@ void Post2dWindowNodeScalarGroupTopDataItem::updateZDepthRangeItemCount()
 
 void Post2dWindowNodeScalarGroupTopDataItem::assignActorZValues(const ZDepthRange& range)
 {
-	for (auto item : m_childItems) {
+	for (const auto& item : m_childItems) {
 		Post2dWindowNodeScalarGroupDataItem* typedi = dynamic_cast<Post2dWindowNodeScalarGroupDataItem*>(item);
 		typedi->assignActorZValues(range);
 	}
@@ -147,7 +147,7 @@ void Post2dWindowNodeScalarGroupTopDataItem::assignActorZValues(const ZDepthRang
 void Post2dWindowNodeScalarGroupTopDataItem::update()
 {
 	// forward to children
-	for (auto item : m_childItems) {
+	for (const auto& item : m_childItems) {
 		Post2dWindowNodeScalarGroupDataItem* typedi = dynamic_cast<Post2dWindowNodeScalarGroupDataItem*>(item);
 		typedi->update();
 	}
@@ -284,7 +284,7 @@ void Post2dWindowNodeScalarGroupTopDataItem::handleAddDialogAccepted(QDialog* pr
 QList<QString> Post2dWindowNodeScalarGroupTopDataItem::selectedScalars()
 {
 	QList<QString> ret;
-	for (auto item : m_childItems) {
+	for (const auto& item : m_childItems) {
 		Post2dWindowNodeScalarGroupDataItem* typedi = dynamic_cast<Post2dWindowNodeScalarGroupDataItem*>(item);
 		if (typedi->standardItem()->checkState() == Qt::Checked) {
 			ret.append(typedi->target().c_str());
@@ -305,7 +305,7 @@ QList<QString> Post2dWindowNodeScalarGroupTopDataItem::availableScalars()
 
 bool Post2dWindowNodeScalarGroupTopDataItem::checkKmlExportCondition(const QString& target)
 {
-	for (auto item : m_childItems) {
+	for (const auto& item : m_childItems) {
 		Post2dWindowNodeScalarGroupDataItem* typedi = dynamic_cast<Post2dWindowNodeScalarGroupDataItem*>(item);
 		if (target == QString(typedi->target().c_str())) {
 			return typedi->checkKmlExportCondition();
@@ -316,7 +316,7 @@ bool Post2dWindowNodeScalarGroupTopDataItem::checkKmlExportCondition(const QStri
 
 bool Post2dWindowNodeScalarGroupTopDataItem::exportKMLHeader(QXmlStreamWriter& writer, const QString& target)
 {
-	for (auto item : m_childItems) {
+	for (const auto& item : m_childItems) {
 		Post2dWindowNodeScalarGroupDataItem* typedi = dynamic_cast<Post2dWindowNodeScalarGroupDataItem*>(item);
 		if (target == QString(typedi->target().c_str())) {
 			return typedi->exportKMLHeader(writer);
@@ -327,7 +327,7 @@ bool Post2dWindowNodeScalarGroupTopDataItem::exportKMLHeader(QXmlStreamWriter& w
 
 bool Post2dWindowNodeScalarGroupTopDataItem::exportKMLFooter(QXmlStreamWriter& writer, const QString& target)
 {
-	for (auto item : m_childItems) {
+	for (const auto& item : m_childItems) {
 		Post2dWindowNodeScalarGroupDataItem* typedi = dynamic_cast<Post2dWindowNodeScalarGroupDataItem*>(item);
 		if (target == QString(typedi->target().c_str())) {
 			return typedi->exportKMLFooter(writer);
@@ -338,7 +338,7 @@ bool Post2dWindowNodeScalarGroupTopDataItem::exportKMLFooter(QXmlStreamWriter& w
 
 bool Post2dWindowNodeScalarGroupTopDataItem::exportKMLForTimestep(QXmlStreamWriter& writer, const QString& target, int index, double time, bool oneShot)
 {
-	for (auto item : m_childItems) {
+	for (const auto& item : m_childItems) {
 		Post2dWindowNodeScalarGroupDataItem* typedi = dynamic_cast<Post2dWindowNodeScalarGroupDataItem*>(item);
 		if (target == QString(typedi->target().c_str())) {
 			return typedi->exportKMLForTimestep(writer, index, time, oneShot);
@@ -349,7 +349,7 @@ bool Post2dWindowNodeScalarGroupTopDataItem::exportKMLForTimestep(QXmlStreamWrit
 
 bool Post2dWindowNodeScalarGroupTopDataItem::exportContourFigureToShape(const QString& target, const QString& filename, double time)
 {
-	for (auto item : m_childItems) {
+	for (const auto& item : m_childItems) {
 		Post2dWindowNodeScalarGroupDataItem* typedi = dynamic_cast<Post2dWindowNodeScalarGroupDataItem*>(item);
 		if (target == QString(typedi->target().c_str())) {
 			return typedi->exportContourFigureToShape(filename, time);
@@ -360,7 +360,7 @@ bool Post2dWindowNodeScalarGroupTopDataItem::exportContourFigureToShape(const QS
 
 bool Post2dWindowNodeScalarGroupTopDataItem::checkShapeExportCondition(const QString& target)
 {
-	for (auto item : m_childItems) {
+	for (const auto& item : m_childItems) {
 		Post2dWindowNodeScalarGroupDataItem* typedi = dynamic_cast<Post2dWindowNodeScalarGroupDataItem*>(item);
 		if (target == QString(typedi->target().c_str())) {
 			if (typedi->contour() == ContourSettingWidget::ContourFigure) {
