@@ -33,6 +33,14 @@ init:
   # Only commit and push to master branch or debug-appveyor branch (for testing)
   - ps: $CommitAndPush = (($env:Configuration -eq "Release") -AND (($env:APPVEYOR_REPO_BRANCH -eq "master") -OR ($env:APPVEYOR_REPO_BRANCH -eq "develop_v4")) -AND (!$env:APPVEYOR_PULL_REQUEST_NUMBER))
   - ps: Write-Output $CommitAndPush
+  - ps: |
+      $releases_url="https://api.github.com/repos/i-RIC/iriclib_v4/releases"
+      $latest_json = Invoke-WebRequest -Uri $releases_url/latest -Method GET -UseBasicParsing
+      $latest = $latest_json.Content | ConvertFrom-Json
+      $iriclib_rel = Get-Date $latest.created_at -Format "yyyy-MM-dd"
+      Write-Output $iriclib_rel
+      Write-Error "testing"
+      throw "throw error"
 
 configuration:
   - Debug
