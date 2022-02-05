@@ -13,7 +13,7 @@ class Post2dBirdEyeWindowNodeScalarGroupTopDataItem;
 class Post2dBirdEyeWindowNodeScalarGroupDataItem::SetSettingCommand : public QUndoCommand
 {
 public:
-	SetSettingCommand(const Post2dWindowContourSetting& s, const LookupTableContainer& ltc, const QString& colorbarTitle, Post2dBirdEyeWindowNodeScalarGroupDataItem* item, QUndoCommand* parent = nullptr);
+	SetSettingCommand(const Post2dBirdEyeWindowContourSetting& s, const LookupTableContainer& ltc, const QString& colorbarTitle, Post2dBirdEyeWindowNodeScalarGroupDataItem* item, QUndoCommand* parent = nullptr);
 
 	void redo() override;
 	void undo() override;
@@ -21,11 +21,11 @@ public:
 private:
 	void applySettings(const QString& target, const LookupTableContainer& c, const QString& title);
 
-	Post2dWindowContourSetting m_newSetting;
+	Post2dBirdEyeWindowContourSetting m_newSetting;
 	LookupTableContainer m_newLookupTable;
 	QString m_newScalarBarTitle;
 
-	Post2dWindowContourSetting m_oldSetting;
+	Post2dBirdEyeWindowContourSetting m_oldSetting;
 	LookupTableContainer m_oldLookupTable;
 	QString m_oldScalarBarTitle;
 

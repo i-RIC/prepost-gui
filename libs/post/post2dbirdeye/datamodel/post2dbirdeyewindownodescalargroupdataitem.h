@@ -2,11 +2,12 @@
 #define POST2DBIRDEYEWINDOWNODESCALARGROUPDATAITEM_H
 
 #include "../post2dbirdeyewindowdataitem.h"
+#include "post2dbirdeyewindowcontoursetting.h"
+
 #include <guibase/widget/contoursettingwidget.h>
 #include <guibase/scalarbarsetting.h>
 #include <guibase/vtktextpropertysettingcontainer.h>
 #include <guibase/structuredgridregion.h>
-#include <postbase/post2dwindowcontoursetting.h>
 
 #include <QMap>
 
@@ -34,6 +35,9 @@ public:
 	Post2dBirdEyeWindowNodeScalarGroupDataItem(Post2dBirdEyeWindowDataItem* parent, CheckFlag cflag, ReorderFlag rflag, DeleteFlag dflag);
 	~Post2dBirdEyeWindowNodeScalarGroupDataItem();
 
+	std::string elevationTarget() const;
+	void setElevationTarget(const std::string& target);
+
 	std::string target() const;
 	void setTarget(const std::string& target);
 
@@ -57,6 +61,7 @@ private:
 	void updateActorSettings();
 	void createRangeClippedPolyData();
 	void createValueClippedPolyData();
+	void setupCustomColorSetting();
 	void setupIsolineSetting();
 	void setupColorContourSetting();
 	void setupColorFringeSetting();
@@ -65,7 +70,7 @@ private:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
-	Post2dWindowContourSetting m_setting;
+	Post2dBirdEyeWindowContourSetting m_setting;
 
 	vtkSmartPointer<vtkWarpScalar> m_warp;
 	vtkLODActor* m_contourActor;
