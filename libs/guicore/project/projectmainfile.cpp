@@ -527,6 +527,8 @@ bool ProjectMainFile::importCgnsFile(const QString& fname, const QString& newnam
 	QFileInfo finfo(fname);
 	LastIODirectory::set(finfo.absolutePath());
 
+	loadFromCgnsFile();
+
 	// CGNS file import is not undo-able.
 	iRICUndoStack::instance().clear();
 	return true;
@@ -568,11 +570,11 @@ int ProjectMainFile::loadFromCgnsFile()
 		if (ier != IRIC_NO_ERROR) {return ier;}
 	} catch (...) {
 		QMessageBox::critical(m_projectData->mainWindow(), tr("Error"), tr("Error occured while opening CGNS file in project file : %1").arg("Case1.cgn"));
-		return false;
+		return IRIC_H5_CALL_ERROR;
 	}
 
 	postSolutionInfo()->loadFromCgnsFile();
-	return true;
+	return IRIC_NO_ERROR;
 }
 
 int ProjectMainFile::saveToCgnsFile()

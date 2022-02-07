@@ -630,7 +630,7 @@ void PostZoneDataContainer::loadFromCgnsFile(iRICLib::H5CgnsZone* zone, bool dis
 
 	// edgeJ scalar data
 	if (zone->jFaceSolutionExists()) {
-		ier = CgnsUtil::loadEdgeJScalarData(zone->jFaceSolution(), m_edgeidata->GetPointData(), iRIC::toStr(IBC)); // for post2d
+		ier = CgnsUtil::loadEdgeJScalarData(zone->jFaceSolution(), m_edgejdata->GetPointData(), iRIC::toStr(IBC)); // for post2d
 		if (ier != 0) {goto ERROR;}
 		ier = CgnsUtil::loadScalarData(zone->jFaceSolution(), m_jfacedata->GetPointData(), iRIC::toStr(IBC)); // for charts
 		if (ier != 0) {goto ERROR;}
