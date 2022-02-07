@@ -54,20 +54,14 @@ before_build:
   - del %APPVEYOR_BUILD_FOLDER%\2019.zip
   - ren c:\iricdev-2019-2019 iricdev-2019
   - cd \iricdev-2019
-  - md lib
-  - cd lib
   - ps: |
-      (New-Object Net.WebClient).DownloadFile( `
-        "https://ci.appveyor.com/api/projects/i-RIC/iricdev-2019/artifacts/lib/install.zip?branch=2019&job=Configuration:+Debug", `
-        "\iricdev-2019\lib\install-Debug.zip")
-      (New-Object Net.WebClient).DownloadFile( `
-        "https://ci.appveyor.com/api/projects/i-RIC/iricdev-2019/artifacts/lib/install.zip?branch=2019&job=Configuration:+Release", `
-        "\iricdev-2019\lib\install-Release.zip")
-  - md install
-  - cd install
-  - 7z x -aoa ..\install-Debug.zip
-  - 7z x -aoa ..\install-Release.zip
-  - cd \iricdev-2019
+      $releases_url = "https://api.github.com/repos/i-RIC/iricdev-2019/releases"
+      $latest_response = Invoke-WebRequest -Uri $releases_url/latest -Method GET -UseBasicParsing
+      $latest = $latest_response.Content | ConvertFrom-Json
+      $url = $latest.assets.browser_download_url
+      (New-Object Net.WebClient).DownloadFile($url, "\iricdev-2019\install.7z")
+      7z x install.7z
+      rm install.7z
   - call create-files.cmd
   - cd %APPVEYOR_BUILD_FOLDER%
   - if not exist libdlls (md libdlls)
