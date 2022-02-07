@@ -1,6 +1,8 @@
 #ifndef CONTINUOUSSNAPSHOTMOVIEPROPERTYPAGE_H
 #define CONTINUOUSSNAPSHOTMOVIEPROPERTYPAGE_H
 
+#include "continuoussnapshotsetting.h"
+
 #include <QWizardPage>
 
 class ContinuousSnapshotWizard;
@@ -17,9 +19,10 @@ class ContinuousSnapshotMoviePropertyPage : public QWizardPage
 public:
 	ContinuousSnapshotMoviePropertyPage(QWidget* parent = nullptr);
 	~ContinuousSnapshotMoviePropertyPage();
+
 	void initializePage() override;
 	bool validatePage() override;
-	static QStringList getProfile(int profileid);
+	static QStringList getProfile(ContinuousSnapshotSetting::MovieProfile profile);
 
 private:
 	ContinuousSnapshotWizard* m_wizard;

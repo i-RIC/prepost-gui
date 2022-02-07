@@ -11,15 +11,21 @@ namespace Ui
 	class PostDataExportDialog;
 }
 
+class ProjectMainFile;
+
+class QLabel;
+
 class GUICOREDLL_EXPORT PostDataExportDialog : public QDialog
 {
 	Q_OBJECT
 
 public:
 	enum class Format {VTKASCII, VTKBinary, CSV, TPO, ESRIShape};
+
 	explicit PostDataExportDialog(QWidget* parent = nullptr);
 	~PostDataExportDialog();
-	void setTimeValues(QList<double> timevalues);
+
+	void setProjectMainFile(ProjectMainFile* mainFile);
 	void setIJKRange(int inum, int jnum, int knum);
 
 	void hideFormat();
@@ -35,7 +41,6 @@ public:
 	QString prefix() const;
 
 	void accept() override;
-	void updateSkipRateMaximum();
 
 private slots:
 	void allCheckChange(bool checked);
@@ -52,8 +57,14 @@ private slots:
 	void toggleRangeGroupBox();
 
 private:
+	void updateStartTimeLabel();
+	void updateEndTimeLabel();
+	void updateTimeLabel(double timeValue, QLabel* label);
+	void updateSkipRateMaximum();
+
 	Ui::PostDataExportDialog* ui;
 	PostExportSetting m_setting;
+	ProjectMainFile* m_projectMainFile;
 };
 
 #endif // POSTDATAEXPORTDIALOG_H

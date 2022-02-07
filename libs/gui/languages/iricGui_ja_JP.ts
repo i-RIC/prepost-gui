@@ -79,6 +79,10 @@
         <source>Please input the interval of slow animation steps in seconds.</source>
         <translation type="obsolete">スロー再生時のステップ間隔を、秒で指定して下さい。</translation>
     </message>
+    <message>
+        <source>L&amp;oop Animation</source>
+        <translation>ループ再生 (&amp;L)</translation>
+    </message>
 </context>
 <context>
     <name>ArrowEditDialog</name>
@@ -982,6 +986,10 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Skip rate :</source>
         <translation>間引き: </translation>
+    </message>
+    <message>
+        <source>--</source>
+        <translation>--</translation>
     </message>
 </context>
 <context>
@@ -15903,11 +15911,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>iRIC %1</source>
-        <translation>iRIC %1</translation>
+        <translation type="vanished">iRIC %1</translation>
     </message>
     <message>
         <source>%1 - iRIC %2 [%3]</source>
-        <translation>%1 - iRIC %2 [%3]</translation>
+        <translation type="vanished">%1 - iRIC %2 [%3]</translation>
     </message>
     <message>
         <source>No particle is drawn now.</source>
@@ -15967,7 +15975,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>&amp;%1 %2</source>
-        <translation>&amp;%1 %2</translation>
+        <translation type="vanished">&amp;%1 %2</translation>
     </message>
     <message>
         <source>Input new simulation name</source>
@@ -16218,6 +16226,18 @@ Option -&gt; Preferences</source>
     <message>
         <source>Dimension</source>
         <translation>次元</translation>
+    </message>
+    <message>
+        <source>All files in %1 is deleted.</source>
+        <translation>%1 にあるすべてのファイルが削除されます。</translation>
+    </message>
+    <message>
+        <source>%1 %2</source>
+        <translation>%1 %2</translation>
+    </message>
+    <message>
+        <source>%1 - %2 %3 [%4]</source>
+        <translation>%1 - %2 %3 [%4]</translation>
     </message>
 </context>
 <context>
@@ -16687,7 +16707,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Geographic Data (from web)</source>
-        <translation>地理情報 (Webから)</translation>
+        <translation type="vanished">地理情報 (Webから)</translation>
     </message>
     <message>
         <source>&amp;Windows list Toolbar</source>
@@ -17009,6 +17029,10 @@ Option -&gt; Preferences</source>
     <message>
         <source>Main ToolBar</source>
         <translation>メインツールバー</translation>
+    </message>
+    <message>
+        <source>Geographic Data (Elevation from web)</source>
+        <translation>地理情報 (標高をWebから)</translation>
     </message>
 </context>
 </TS>

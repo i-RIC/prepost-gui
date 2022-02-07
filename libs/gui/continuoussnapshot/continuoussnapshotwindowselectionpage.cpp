@@ -41,28 +41,29 @@ for (QMdiSubWindow* sub : center->subWindowList(QMdiArea::ActivationHistoryOrder
 
 void ContinuousSnapshotWindowSelectionPage::initializePage()
 {
-	switch (m_wizard->output()) {
-	case ContinuousSnapshotWizard::Onefile:
+	const auto s = m_wizard->setting();
+	switch (s.fileOutputSetting) {
+	case ContinuousSnapshotSetting::FileOutputSetting::Onefile:
 		ui->onefileRadioButton->setChecked(true);
 		break;
-	case ContinuousSnapshotWizard::Respectively:
+	case ContinuousSnapshotSetting::FileOutputSetting::Respectively:
 		ui->respectivelyRadioButton->setChecked(true);
 		break;
 	}
 
-	switch (m_wizard->layout()) {
-	case ContinuousSnapshotWizard::Asis:
+	switch (s.outputLayout) {
+	case ContinuousSnapshotSetting::OutputLayout::AsIs:
 		ui->asisRadioButton->setChecked(true);
 		break;
-	case ContinuousSnapshotWizard::Horizontally:
+	case ContinuousSnapshotSetting::OutputLayout::Horizontally:
 		ui->horizontallyRadioButton->setChecked(true);
 		break;
-	case ContinuousSnapshotWizard::Vertically:
+	case ContinuousSnapshotSetting::OutputLayout::Vertically:
 		ui->verticallyRadioButton->setChecked(true);
 		break;
 	}
 
-	if (m_wizard->transparent()) {
+	if (s.imageIsTransparent) {
 		ui->transparentRadioButton->setChecked(true);
 	} else {
 		ui->whiteRadioButton->setChecked(true);
@@ -71,11 +72,13 @@ void ContinuousSnapshotWindowSelectionPage::initializePage()
 
 bool ContinuousSnapshotWindowSelectionPage::validatePage()
 {
+	auto s = m_wizard->setting();
+
 	QMdiArea* center = dynamic_cast<QMdiArea*>(m_mainWindow->centralWidget());
 	// Windows
 	m_wizard->clearWindowList();
 	bool hasTransparent = false;
-for (QMdiSubWindow* sub : center->subWindowList(QMdiArea::ActivationHistoryOrder)) {
+	for (QMdiSubWindow* sub : center->subWindowList(QMdiArea::ActivationHistoryOrder)) {
 		PostProcessorWindow* post = dynamic_cast<PostProcessorWindow*>(sub->widget());
 		if (post == nullptr) { continue; }
 		QListWidgetItem* item = ui->targetListWidget->findItems(sub->windowTitle(), Qt::MatchExactly).at(0);
@@ -86,17 +89,17 @@ for (QMdiSubWindow* sub : center->subWindowList(QMdiArea::ActivationHistoryOrder
 	}
 	// Layout
 	if (ui->horizontallyRadioButton->isChecked()) {
-		m_wizard->setLayout(ContinuousSnapshotWizard::Horizontally);
+		s.outputLayout = ContinuousSnapshotSetting::OutputLayout::Horizontally;
 	} else if (ui->verticallyRadioButton->isChecked()) {
-		m_wizard->setLayout(ContinuousSnapshotWizard::Vertically);
+		s.outputLayout = ContinuousSnapshotSetting::OutputLayout::Vertically;
 	} else {
-		m_wizard->setLayout(ContinuousSnapshotWizard::Asis);
+		s.outputLayout = ContinuousSnapshotSetting::OutputLayout::AsIs;
 	}
 	// How to output
 	if (ui->respectivelyRadioButton->isChecked()) {
-		m_wizard->setOutput(ContinuousSnapshotWizard::Respectively);
+		s.fileOutputSetting = ContinuousSnapshotSetting::FileOutputSetting::Respectively;
 	} else {
-		m_wizard->setOutput(ContinuousSnapshotWizard::Onefile);
+		s.fileOutputSetting = ContinuousSnapshotSetting::FileOutputSetting::Onefile;
 		QPoint position;
 		QSize size;
 		measurePixmapSize(position, size);
@@ -105,9 +108,9 @@ for (QMdiSubWindow* sub : center->subWindowList(QMdiArea::ActivationHistoryOrder
 	}
 	// White or transparent
 	if (ui->transparentRadioButton->isChecked()) {
-		m_wizard->setTransparent(true);
+		s.imageIsTransparent = true;
 	} else {
-		m_wizard->setTransparent(false);
+		s.imageIsTransparent = false;
 	}
 	if (ui->transparentRadioButton->isChecked() && hasTransparent) {
 		QMessageBox::warning(this, tr("Warning"), tr("More than one visualization window has transparent region. They can not saved into transparent background images. Please select white background, or cancel and disable transparency for contours etc."));
@@ -118,11 +121,15 @@ for (QMdiSubWindow* sub : center->subWindowList(QMdiArea::ActivationHistoryOrder
 		QMessageBox::warning(this, tr("Warning"), tr("No window is currently selected."));
 		return false;
 	}
+	m_wizard->setSetting(s);
+
 	return true;
 }
 
 void ContinuousSnapshotWindowSelectionPage::measurePixmapSize(QPoint& p, QSize& s)
 {
+	auto setting = m_wizard->setting();
+
 	// coordinates in the MdiArea of the main window
 	QPoint min;
 	QPoint max;
@@ -135,8 +142,8 @@ void ContinuousSnapshotWindowSelectionPage::measurePixmapSize(QPoint& p, QSize& 
 		QPoint endPos = beginPos + QPoint(post->width(), post->height());
 
 		int tmpX, tmpY;
-		switch (m_wizard->layout()) {
-		case ContinuousSnapshotWizard::Asis:
+		switch (setting.outputLayout) {
+		case ContinuousSnapshotSetting::OutputLayout::AsIs:
 			if (beginPos.x() < min.x() || first) {
 				min.setX(beginPos.x());
 			}
@@ -150,7 +157,8 @@ void ContinuousSnapshotWindowSelectionPage::measurePixmapSize(QPoint& p, QSize& 
 				max.setY(endPos.y());
 			}
 			break;
-		case ContinuousSnapshotWizard::Horizontally:
+
+		case ContinuousSnapshotSetting::OutputLayout::Horizontally:
 			if (first) {
 				min = beginPos;
 				max = endPos;
@@ -161,7 +169,8 @@ void ContinuousSnapshotWindowSelectionPage::measurePixmapSize(QPoint& p, QSize& 
 			max.setX(tmpX);
 			if (tmpY > max.y()) { max.setY(tmpY); }
 			break;
-		case ContinuousSnapshotWizard::Vertically:
+
+		case ContinuousSnapshotSetting::OutputLayout::Vertically:
 			if (first) {
 				min = beginPos;
 				max = endPos;

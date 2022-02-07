@@ -182,6 +182,7 @@ HEADERS += gui_api.h \
            continuoussnapshot/continuoussnapshotgoogleearthsettingpage.h \
            continuoussnapshot/continuoussnapshotintroductionpage.h \
            continuoussnapshot/continuoussnapshotmoviepropertypage.h \
+           continuoussnapshot/continuoussnapshotsetting.h \
            continuoussnapshot/continuoussnapshottimestepsettingpage.h \
            continuoussnapshot/continuoussnapshotwindowselectionpage.h \
            continuoussnapshot/continuoussnapshotwizard.h \
@@ -198,6 +199,8 @@ HEADERS += gui_api.h \
            misc/newprojectsolverselectingdialog.h \
            misc/periodicalupdatechecker.h \
            misc/projecttypeselectdialog.h \
+           misc/recentprojectsmanager.h \
+           misc/recentsolversmanager.h \
            misc/wrongsettingexception.h \
            pref/preferencedialog.h \
            pref/preferencepage.h \
@@ -269,6 +272,7 @@ SOURCES += continuoussnapshot/continuoussnapshotconfirmpage.cpp \
            continuoussnapshot/continuoussnapshotgoogleearthsettingpage.cpp \
            continuoussnapshot/continuoussnapshotintroductionpage.cpp \
            continuoussnapshot/continuoussnapshotmoviepropertypage.cpp \
+           continuoussnapshot/continuoussnapshotsetting.cpp \
            continuoussnapshot/continuoussnapshottimestepsettingpage.cpp \
            continuoussnapshot/continuoussnapshotwindowselectionpage.cpp \
            continuoussnapshot/continuoussnapshotwizard.cpp \
@@ -284,6 +288,8 @@ SOURCES += continuoussnapshot/continuoussnapshotconfirmpage.cpp \
            misc/newprojectsolverselectingdialog.cpp \
            misc/periodicalupdatechecker.cpp \
            misc/projecttypeselectdialog.cpp \
+           misc/recentprojectsmanager.cpp \
+           misc/recentsolversmanager.cpp \
            pref/preferencedialog.cpp \
            pref/preferencepage.cpp \
            pref/preferencepagebackgroundgrid.cpp \

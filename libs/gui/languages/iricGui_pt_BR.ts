@@ -43,6 +43,10 @@
         <source>&amp;Animation Speed Setting...</source>
         <translation>Configuracao de velocidade para reproducao (&amp;A)...</translation>
     </message>
+    <message>
+        <source>L&amp;oop Animation</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ConfirmPage</name>
@@ -283,6 +287,10 @@
     <message>
         <source>Skip rate :</source>
         <translation>Filtracao :</translation>
+    </message>
+    <message>
+        <source>--</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1634,11 +1642,11 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>iRIC %1</source>
-        <translation>iRIC %1</translation>
+        <translation type="vanished">iRIC %1</translation>
     </message>
     <message>
         <source>%1 - iRIC %2 [%3]</source>
-        <translation>%1 - iRIC %2 [%3]</translation>
+        <translation type="vanished">%1 - iRIC %2 [%3]</translation>
     </message>
     <message>
         <source>http://iric-gui-user-manual.readthedocs.io/en/latest/</source>
@@ -1678,7 +1686,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>&amp;%1 %2</source>
-        <translation>&amp;%1 %2</translation>
+        <translation type="vanished">&amp;%1 %2</translation>
     </message>
     <message>
         <source>Unknown options specified. They are neglected. %1</source>
@@ -1767,6 +1775,18 @@ Option -&gt; Preferences</source>
     <message>
         <source>Dimension</source>
         <translation>Dimensao</translation>
+    </message>
+    <message>
+        <source>All files in %1 is deleted.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 - %2 %3 [%4]</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1932,7 +1952,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Geographic Data (from web)</source>
-        <translation>Informacoes geograficas ( por web)</translation>
+        <translation type="vanished">Informacoes geograficas ( por web)</translation>
     </message>
     <message>
         <source>&amp;Hydraulic Data</source>
@@ -2246,6 +2266,10 @@ Option -&gt; Preferences</source>
     <message>
         <source>Ctrl+C</source>
         <translation>Ctrl+C</translation>
+    </message>
+    <message>
+        <source>Geographic Data (Elevation from web)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

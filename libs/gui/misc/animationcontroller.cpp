@@ -47,6 +47,11 @@ unsigned int AnimationController::currentStepIndex() const
 	return m_currentStepIndex;
 }
 
+bool AnimationController::loop() const
+{
+	return m_animationActions->actionLoop->isChecked();
+}
+
 QMenu* AnimationController::animationMenu() const
 {
 	return m_animationMenu;
@@ -122,6 +127,7 @@ void AnimationController::setupToolBar()
 	m_animationToolBar->addAction(m_animationActions->actionStepForward);
 	m_animationToolBar->addAction(m_animationActions->actionStepLast);
 	m_animationToolBar->addSeparator();
+	m_animationToolBar->addAction(m_animationActions->actionLoop);
 	m_animationToolBar->addAction(m_animationActions->actionToggleFollowLastStep);
 	m_animationToolBar->addAction(m_animationActions->actionEditSpeed);
 	m_animationToolBar->addSeparator();
@@ -143,8 +149,13 @@ void AnimationController::setupToolBar()
 
 void AnimationController::stepForward()
 {
-	if (m_currentStepIndex == stepCount() - 1) {return;}
-	setCurrentStepIndex(m_currentStepIndex + 1);
+	if (m_currentStepIndex == stepCount() - 1) {
+		if (loop()) {
+			setCurrentStepIndex(0);
+		}
+	} else {
+		setCurrentStepIndex(m_currentStepIndex + 1);
+	}
 }
 
 void AnimationController::stepBackward()
@@ -234,6 +245,7 @@ void AnimationController::setupMenu()
 {
 	m_animationMenu = new QMenu(tr("&Animation"), m_parent);
 	m_animationMenu->addAction(m_animationActions->actionStartAnimation);
+	m_animationMenu->addAction(m_animationActions->actionLoop);
 	m_animationMenu->addAction(m_animationActions->actionToggleFollowLastStep);
 	m_animationMenu->addSeparator();
 	m_animationMenu->addAction(m_animationActions->actionStepFirst);
@@ -264,6 +276,10 @@ AnimationController::AnimationActions::AnimationActions(QObject* /* parent*/)
 
 	actionStopAnimation = new QAction(AnimationController::tr("S&top Animation"), this);
 	actionStopAnimation->setIcon(QIcon(":/images/iconAnimationStop.png"));
+
+	actionLoop = new QAction(AnimationController::tr("L&oop Animation"), this);
+	actionLoop->setIcon(QIcon(":/images/iconAnimationLoop.png"));
+	actionLoop->setCheckable(true);
 
 	actionToggleFollowLastStep = new QAction(AnimationController::tr("Toggle &following last step"), this);
 	actionToggleFollowLastStep->setIcon(QIcon(":/images/iconAnimationFollowLastStep.png"));
@@ -381,7 +397,7 @@ void AnimationController::animationStep()
 	// if the user stopped running, finish.
 	if (m_runMode == NotRunning) {return;}
 	// if it reached the last step, stop running.
-	if (m_currentStepIndex == stepCount() - 1) {
+	if (m_currentStepIndex == stepCount() - 1 && ! loop()) {
 		stopAnimation();
 		return;
 	}

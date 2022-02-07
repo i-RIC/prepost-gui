@@ -505,7 +505,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>P&amp;ointset Data</source>
-        <translation>DEMデータ(&amp;O)</translation>
+        <translation type="vanished">DEMデータ(&amp;O)</translation>
     </message>
     <message>
         <source>&amp;Polygon Group</source>
@@ -730,7 +730,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>&amp;Import from web...</source>
-        <translation>インポート (&amp;Webから)</translation>
+        <translation type="vanished">インポート (&amp;Webから)</translation>
     </message>
     <message>
         <source>Delete &amp;All...</source>
@@ -873,6 +873,10 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>&amp;Import</source>
         <translation>インポート (&amp;I)</translation>
+    </message>
+    <message>
+        <source>&amp;Import Elevation from web...</source>
+        <translation>Webから標高をインポート...</translation>
     </message>
 </context>
 <context>

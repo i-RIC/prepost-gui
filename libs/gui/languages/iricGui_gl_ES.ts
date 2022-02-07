@@ -43,6 +43,10 @@
         <source>&amp;Animation Speed Setting...</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>L&amp;oop Animation</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ConfirmPage</name>
@@ -282,6 +286,10 @@
     </message>
     <message>
         <source>Skip rate :</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>--</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1394,23 +1402,11 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>iRIC %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Untitled</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>%1 - iRIC %2 [%3]</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>The solver is running now. Please stop solver, to do this action.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&amp;%1 %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1590,6 +1586,18 @@ Option -&gt; Preferences</source>
         <source>Snapshot successfully saved to %1.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>All files in %1 is deleted.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 - %2 %3 [%4]</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>iRICMainWindowAboutDialog</name>
@@ -1750,10 +1758,6 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>G&amp;eographic Data</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Geographic Data (from web)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2063,6 +2067,10 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Ctrl+C</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Geographic Data (Elevation from web)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -487,7 +487,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>P&amp;ointset Data</source>
-        <translation>Dados DEM (&amp;O)</translation>
+        <translation type="vanished">Dados DEM (&amp;O)</translation>
     </message>
     <message>
         <source>&amp;Polygon</source>
@@ -672,7 +672,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>&amp;Import from web...</source>
-        <translation>Importar (&amp; de Web)</translation>
+        <translation type="vanished">Importar (&amp; de Web)</translation>
     </message>
     <message>
         <source>Delete &amp;All...</source>
@@ -805,6 +805,10 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>&amp;Import</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Import Elevation from web...</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
