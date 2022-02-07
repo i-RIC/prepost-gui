@@ -51,29 +51,24 @@ void Post2dWindowNodeScalarGroupTopDataItem::doLoadFromProjectMainFile(const QDo
 {
 	if (node.toElement().nodeName() == "Contours") {
 		// multi-contours
+		auto items = m_childItems;
+		for (const auto& item : items) {
+			delete item;
+		}
+		m_scalarmap.clear();
 
 		// load contours from main file
 		QDomNodeList children = node.childNodes();
-		std::set<Post2dWindowNodeScalarGroupDataItem*> missing_quadrant;
 		for (int i = 0; i < children.count(); ++i) {
 			QDomElement childElem = children.at(i).toElement();
 			if (childElem.nodeName() == "ScalarGroup") {
-				std::string solution = iRIC::toStr(children.at(i).toElement().attribute("solution", ""));
-				if (solution.size()) {
-					auto it = m_scalarmap.find(solution);
-					if (it != m_scalarmap.end()) {
-						(*it).second->loadFromProjectMainFile(children.at(i));
-						// store checked items that have no quadrant set
-						if ((*it).second->m_standardItem->checkState() != Qt::Unchecked) {
-							if ((*it).second->m_setting.scalarBarSetting.quadrant == ScalarBarSetting::Quadrant::None) {
-								missing_quadrant.insert((*it).second);
-							}
-						}
-					}
-				}
+				auto item = new Post2dWindowNodeScalarGroupDataItem(this, NotChecked, NotReorderable, NotDeletable, Vertex);
+				item->loadFromProjectMainFile(childElem);
+				m_childItems.push_back(item);
+				m_scalarmap[item->target()] = item;
 			}
 		}
-
+/*
 		Q_ASSERT(missing_quadrant.size() <= 4);
 		std::set<ScalarBarSetting::Quadrant> quads = ScalarBarSetting::getQuadrantSet();
 		while (missing_quadrant.size() && quads.size()) {
@@ -87,6 +82,7 @@ void Post2dWindowNodeScalarGroupTopDataItem::doLoadFromProjectMainFile(const QDo
 			missing_quadrant.erase(closest.begin()->second);
 			quads.erase(quad);
 		}
+*/
 	}
 	else {
 		// single-contour (old)
@@ -138,7 +134,7 @@ void Post2dWindowNodeScalarGroupTopDataItem::updateZDepthRangeItemCount()
 
 void Post2dWindowNodeScalarGroupTopDataItem::assignActorZValues(const ZDepthRange& range)
 {
-	for (auto item : m_childItems) {
+	for (const auto& item : m_childItems) {
 		Post2dWindowNodeScalarGroupDataItem* typedi = dynamic_cast<Post2dWindowNodeScalarGroupDataItem*>(item);
 		typedi->assignActorZValues(range);
 	}
@@ -147,7 +143,7 @@ void Post2dWindowNodeScalarGroupTopDataItem::assignActorZValues(const ZDepthRang
 void Post2dWindowNodeScalarGroupTopDataItem::update()
 {
 	// forward to children
-	for (auto item : m_childItems) {
+	for (const auto& item : m_childItems) {
 		Post2dWindowNodeScalarGroupDataItem* typedi = dynamic_cast<Post2dWindowNodeScalarGroupDataItem*>(item);
 		typedi->update();
 	}
@@ -284,7 +280,7 @@ void Post2dWindowNodeScalarGroupTopDataItem::handleAddDialogAccepted(QDialog* pr
 QList<QString> Post2dWindowNodeScalarGroupTopDataItem::selectedScalars()
 {
 	QList<QString> ret;
-	for (auto item : m_childItems) {
+	for (const auto& item : m_childItems) {
 		Post2dWindowNodeScalarGroupDataItem* typedi = dynamic_cast<Post2dWindowNodeScalarGroupDataItem*>(item);
 		if (typedi->standardItem()->checkState() == Qt::Checked) {
 			ret.append(typedi->target().c_str());
@@ -305,7 +301,7 @@ QList<QString> Post2dWindowNodeScalarGroupTopDataItem::availableScalars()
 
 bool Post2dWindowNodeScalarGroupTopDataItem::checkKmlExportCondition(const QString& target)
 {
-	for (auto item : m_childItems) {
+	for (const auto& item : m_childItems) {
 		Post2dWindowNodeScalarGroupDataItem* typedi = dynamic_cast<Post2dWindowNodeScalarGroupDataItem*>(item);
 		if (target == QString(typedi->target().c_str())) {
 			return typedi->checkKmlExportCondition();
@@ -316,7 +312,7 @@ bool Post2dWindowNodeScalarGroupTopDataItem::checkKmlExportCondition(const QStri
 
 bool Post2dWindowNodeScalarGroupTopDataItem::exportKMLHeader(QXmlStreamWriter& writer, const QString& target)
 {
-	for (auto item : m_childItems) {
+	for (const auto& item : m_childItems) {
 		Post2dWindowNodeScalarGroupDataItem* typedi = dynamic_cast<Post2dWindowNodeScalarGroupDataItem*>(item);
 		if (target == QString(typedi->target().c_str())) {
 			return typedi->exportKMLHeader(writer);
@@ -327,7 +323,7 @@ bool Post2dWindowNodeScalarGroupTopDataItem::exportKMLHeader(QXmlStreamWriter& w
 
 bool Post2dWindowNodeScalarGroupTopDataItem::exportKMLFooter(QXmlStreamWriter& writer, const QString& target)
 {
-	for (auto item : m_childItems) {
+	for (const auto& item : m_childItems) {
 		Post2dWindowNodeScalarGroupDataItem* typedi = dynamic_cast<Post2dWindowNodeScalarGroupDataItem*>(item);
 		if (target == QString(typedi->target().c_str())) {
 			return typedi->exportKMLFooter(writer);
@@ -338,7 +334,7 @@ bool Post2dWindowNodeScalarGroupTopDataItem::exportKMLFooter(QXmlStreamWriter& w
 
 bool Post2dWindowNodeScalarGroupTopDataItem::exportKMLForTimestep(QXmlStreamWriter& writer, const QString& target, int index, double time, bool oneShot)
 {
-	for (auto item : m_childItems) {
+	for (const auto& item : m_childItems) {
 		Post2dWindowNodeScalarGroupDataItem* typedi = dynamic_cast<Post2dWindowNodeScalarGroupDataItem*>(item);
 		if (target == QString(typedi->target().c_str())) {
 			return typedi->exportKMLForTimestep(writer, index, time, oneShot);
@@ -349,7 +345,7 @@ bool Post2dWindowNodeScalarGroupTopDataItem::exportKMLForTimestep(QXmlStreamWrit
 
 bool Post2dWindowNodeScalarGroupTopDataItem::exportContourFigureToShape(const QString& target, const QString& filename, double time)
 {
-	for (auto item : m_childItems) {
+	for (const auto& item : m_childItems) {
 		Post2dWindowNodeScalarGroupDataItem* typedi = dynamic_cast<Post2dWindowNodeScalarGroupDataItem*>(item);
 		if (target == QString(typedi->target().c_str())) {
 			return typedi->exportContourFigureToShape(filename, time);
@@ -360,7 +356,7 @@ bool Post2dWindowNodeScalarGroupTopDataItem::exportContourFigureToShape(const QS
 
 bool Post2dWindowNodeScalarGroupTopDataItem::checkShapeExportCondition(const QString& target)
 {
-	for (auto item : m_childItems) {
+	for (const auto& item : m_childItems) {
 		Post2dWindowNodeScalarGroupDataItem* typedi = dynamic_cast<Post2dWindowNodeScalarGroupDataItem*>(item);
 		if (target == QString(typedi->target().c_str())) {
 			if (typedi->contour() == ContourSettingWidget::ContourFigure) {
