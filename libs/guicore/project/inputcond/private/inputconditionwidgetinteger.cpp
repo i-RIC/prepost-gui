@@ -3,14 +3,15 @@
 #include "inputconditionwidgetinteger.h"
 #include "inputconditionwidgettooltip.h"
 
+#include <guibase/widget/integernumbereditwidget.h>
+
 #include <QDomElement>
 #include <QHBoxLayout>
-#include <QSpinBox>
 
 InputConditionWidgetInteger::InputConditionWidgetInteger(QDomNode defnode, const SolverDefinitionTranslator& /*t*/, InputConditionContainerInteger* cont, const InputConditionContainerSet& /*cs*/) :
 	InputConditionWidget(defnode)
 {
-	m_spinBox = new QSpinBox(this);
+	m_spinBox = new IntegerNumberEditWidget(this);
 	m_spinBox->setMinimumWidth(100);
 	m_spinBox->setAlignment(Qt::AlignRight);
 

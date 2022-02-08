@@ -25,7 +25,6 @@ private slots:
 private:
 	InputConditionContainerInteger* m_container;
 	QSpinBox* m_spinBox;
-
 };
 
 #endif // INPUTCONDITIONWIDGETINTEGER_H
