@@ -6,7 +6,7 @@
 
 #include <vtkScalarBarActor.h>
 
-Post2dBirdEyeWindowNodeScalarGroupDataItem::SetSettingCommand::SetSettingCommand(const Post2dWindowContourSetting& s, const LookupTableContainer& ltc, const QString& colorbarTitle, Post2dBirdEyeWindowNodeScalarGroupDataItem* item, QUndoCommand* parent) :
+Post2dBirdEyeWindowNodeScalarGroupDataItem::SetSettingCommand::SetSettingCommand(const Post2dBirdEyeWindowContourSetting& s, const LookupTableContainer& ltc, const QString& colorbarTitle, Post2dBirdEyeWindowNodeScalarGroupDataItem* item, QUndoCommand* parent) :
 	QUndoCommand {Post2dBirdEyeWindowNodeScalarGroupDataItem::tr("Update Contour Setting"), parent},
 	m_newSetting {s},
 	m_newLookupTable {ltc},

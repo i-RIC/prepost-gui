@@ -1,4 +1,5 @@
 #include "../post2dbirdeyewindowdatamodel.h"
+#include "post2dbirdeyewindowcontoursettingdialog.h"
 #include "post2dbirdeyewindowgridtypedataitem.h"
 #include "post2dbirdeyewindownodescalargroupdataitem.h"
 #include "post2dbirdeyewindownodescalargrouptopdataitem.h"
@@ -22,7 +23,6 @@
 #include <misc/iricundostack.h>
 #include <misc/stringtool.h>
 #include <misc/xmlsupport.h>
-#include <post/post2d/datamodel/post2dwindowcontoursettingdialog.h>
 
 #include <QDomNode>
 #include <QList>
@@ -55,7 +55,7 @@ Post2dBirdEyeWindowNodeScalarGroupDataItem::Post2dBirdEyeWindowNodeScalarGroupDa
 	setupStandardItem(cflag, rflag, dflag);
 
 	setupActors();
-	m_setting.opacity = 0;
+	m_setting.opacity = 100;
 }
 
 Post2dBirdEyeWindowNodeScalarGroupDataItem::~Post2dBirdEyeWindowNodeScalarGroupDataItem()
@@ -65,6 +65,17 @@ Post2dBirdEyeWindowNodeScalarGroupDataItem::~Post2dBirdEyeWindowNodeScalarGroupD
 	r->RemoveActor(m_contourActor);
 	r->RemoveActor(m_fringeActor);
 	m_scalarBarWidget->SetInteractor(nullptr);
+}
+
+std::string Post2dBirdEyeWindowNodeScalarGroupDataItem::elevationTarget() const
+{
+	return m_setting.elevationTarget;
+}
+
+void Post2dBirdEyeWindowNodeScalarGroupDataItem::setElevationTarget(const std::string& target)
+{
+	m_setting.elevationTarget = target.c_str();
+	updateActorSettings();
 }
 
 std::string Post2dBirdEyeWindowNodeScalarGroupDataItem::target() const
@@ -84,44 +95,50 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::updateActorSettings()
 	m_isolineActor->VisibilityOff();
 	m_contourActor->VisibilityOff();
 	m_fringeActor->VisibilityOff();
-	m_scalarBarWidget->SetEnabled(0);
+	m_scalarBarWidget->EnabledOff();
 	m_actorCollection->RemoveAllItems();
 	m_actor2DCollection->RemoveAllItems();
-	PostZoneDataContainer* cont = dynamic_cast<Post2dBirdEyeWindowZoneDataItem*>(parent()->parent())->dataContainer();
-	if (cont == nullptr || cont->data() == nullptr) {return;}
-	vtkPointSet* ps = cont->data();
-	if (m_setting.target == "") {return;}
 
-	// update current active scalar
-	vtkPointData* pd = ps->GetPointData();
-	if (pd->GetNumberOfArrays() == 0) {return;}
+	m_standardItem->setText(m_setting.elevationTarget);
+	m_standardItemCopy->setText(m_setting.elevationTarget);
 
-	std::string targetStr = iRIC::toStr(m_setting.target);
-	Post2dBirdEyeWindowNodeScalarGroupTopDataItem* topitem = dynamic_cast<Post2dBirdEyeWindowNodeScalarGroupTopDataItem*>(parent());
-	m_standardItem->setText(topitem->m_colorbarTitleMap.value(targetStr));
-	m_standardItemCopy->setText(topitem->m_colorbarTitleMap.value(targetStr));
-
-	m_warp->SetInputArrayToProcess(0, 0, 0, vtkDataObject::FIELD_ASSOCIATION_POINTS, iRIC::toStr(cont->elevationName()).c_str());
+	m_warp->SetInputArrayToProcess(0, 0, 0, vtkDataObject::FIELD_ASSOCIATION_POINTS, iRIC::toStr(m_setting.elevationTarget.value()).c_str());
 
 	createRangeClippedPolyData();
 	createValueClippedPolyData();
-	switch (ContourSettingWidget::Contour(m_setting.contour)) {
-	case ContourSettingWidget::Points:
-		// do nothing.
-		break;
-	case ContourSettingWidget::Isolines:
-		setupIsolineSetting();
-		break;
-	case ContourSettingWidget::ContourFigure:
-		setupColorContourSetting();
-		break;
-	case ContourSettingWidget::ColorFringe:
-		setupColorFringeSetting();
-		break;
-	}
-	if (m_setting.scalarBarSetting.visible) {
-		m_scalarBarWidget->SetEnabled(1);
-		setupScalarBarSetting();
+
+	if (m_setting.colorMode == Post2dBirdEyeWindowContourSetting::ColorMode::Custom) {
+		setupCustomColorSetting();
+		m_scalarBarWidget->EnabledOff();
+	} else {
+		PostZoneDataContainer* cont = dynamic_cast<Post2dBirdEyeWindowZoneDataItem*>(parent()->parent())->dataContainer();
+		if (cont == nullptr || cont->data() == nullptr) { return; }
+		vtkPointSet* ps = cont->data();
+		if (m_setting.target == "") { return; }
+
+		// update current active scalar
+		vtkPointData* pd = ps->GetPointData();
+		if (pd->GetNumberOfArrays() == 0) { return; }
+
+		switch (ContourSettingWidget::Contour(m_setting.contour)) {
+		case ContourSettingWidget::Points:
+			// do nothing.
+			break;
+		case ContourSettingWidget::Isolines:
+			setupIsolineSetting();
+			break;
+		case ContourSettingWidget::ContourFigure:
+			setupColorContourSetting();
+			break;
+		case ContourSettingWidget::ColorFringe:
+			setupColorFringeSetting();
+			break;
+		}
+
+		if (m_setting.scalarBarSetting.visible) {
+			m_scalarBarWidget->EnabledOn();
+			setupScalarBarSetting();
+		}
 	}
 	updateVisibilityWithoutRendering();
 }
@@ -198,6 +215,18 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::update()
 	updateActorSettings();
 }
 
+void Post2dBirdEyeWindowNodeScalarGroupDataItem::setupCustomColorSetting()
+{
+	m_warp->SetInputData(m_valueClippedPolyData);
+	m_warp->Update();
+	m_fringeMapper->SetScalarVisibility(false);
+	m_fringeMapper->SetInputData(m_warp->GetOutput());
+	m_fringeActor->GetProperty()->SetLighting(true);
+	m_fringeActor->GetProperty()->SetColor(m_setting.customColor);
+	m_fringeActor->GetProperty()->SetOpacity(m_setting.opacity);
+	m_actorCollection->AddItem(m_fringeActor);
+}
+
 void Post2dBirdEyeWindowNodeScalarGroupDataItem::setupIsolineSetting()
 {
 	Post2dBirdEyeWindowGridTypeDataItem* typedi = dynamic_cast<Post2dBirdEyeWindowGridTypeDataItem*>(parent()->parent()->parent());
@@ -213,6 +242,7 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::setupIsolineSetting()
 	m_isolineFilter->GenerateValues(m_setting.numberOfDivisions + 1, range);
 	m_isolineMapper->SetLookupTable(stc->vtkObj());
 	m_isolineMapper->SelectColorArray(iRIC::toStr(m_setting.target).c_str());
+	m_isolineActor->GetProperty()->SetOpacity(m_setting.opacity);
 	m_actorCollection->AddItem(m_isolineActor);
 }
 
@@ -281,6 +311,7 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::setupColorContourSetting()
 	m_contourActor->GetProperty()->SetInterpolationToFlat();
 	m_contourMapper->SetLookupTable(stc->vtkObj());
 	m_contourMapper->UseLookupTableScalarRangeOn();
+	m_contourActor->GetProperty()->SetOpacity(m_setting.opacity);
 	m_actorCollection->AddItem(m_contourActor);
 }
 
@@ -291,12 +322,15 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::setupColorFringeSetting()
 	if (stc == nullptr) {return;}
 	m_warp->SetInputData(m_valueClippedPolyData);
 	m_warp->Update();
+	m_fringeMapper->SetScalarVisibility(true);
 	m_fringeMapper->SetInputData(m_warp->GetOutput());
 	m_fringeMapper->SetScalarModeToUsePointFieldData();
 	m_fringeMapper->SelectColorArray(target().c_str());
 	m_fringeMapper->SetLookupTable(stc->vtkObj());
 	m_fringeMapper->UseLookupTableScalarRangeOn();
-//_	m_fringeActor->GetProperty()->SetOpacity(m_opacityPercent / 100.);
+
+	m_fringeActor->GetProperty()->SetLighting(false);
+	m_fringeActor->GetProperty()->SetOpacity(m_setting.opacity);
 	m_actorCollection->AddItem(m_fringeActor);
 }
 
@@ -331,7 +365,7 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::setupScalarBarSetting()
 
 QDialog* Post2dBirdEyeWindowNodeScalarGroupDataItem::propertyDialog(QWidget* p)
 {
-	Post2dWindowContourSettingDialog* dialog = new Post2dWindowContourSettingDialog(p);
+	auto dialog = new Post2dBirdEyeWindowContourSettingDialog(p);
 	Post2dBirdEyeWindowGridTypeDataItem* gtItem = dynamic_cast<Post2dBirdEyeWindowGridTypeDataItem*>(parent()->parent()->parent());
 	dialog->setGridTypeDataItem(gtItem);
 	Post2dBirdEyeWindowZoneDataItem* zItem = dynamic_cast<Post2dBirdEyeWindowZoneDataItem*>(parent()->parent());
@@ -340,8 +374,6 @@ QDialog* Post2dBirdEyeWindowNodeScalarGroupDataItem::propertyDialog(QWidget* p)
 		return nullptr;
 	}
 	dialog->setZoneData(zItem->dataContainer(), iRICLib::H5CgnsZone::SolutionPosition::Node);
-	dialog->disablePhysicalValueComboBox();
-	dialog->hideOpacity();
 	// region setting
 	if (! zItem->dataContainer()->IBCExists()) {
 		dialog->disableActive();
@@ -356,7 +388,7 @@ QDialog* Post2dBirdEyeWindowNodeScalarGroupDataItem::propertyDialog(QWidget* p)
 
 void Post2dBirdEyeWindowNodeScalarGroupDataItem::handlePropertyDialogAccepted(QDialog* propDialog)
 {
-	Post2dWindowContourSettingDialog* dialog = dynamic_cast<Post2dWindowContourSettingDialog*>(propDialog);
+	auto dialog = dynamic_cast<Post2dBirdEyeWindowContourSettingDialog*>(propDialog);
 	pushRenderCommand(new SetSettingCommand(dialog->setting(), dialog->lookupTable(), dialog->scalarBarTitle(), this), this, true);
 }
 
@@ -453,7 +485,11 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::innerUpdateZScale(double scale)
 void Post2dBirdEyeWindowNodeScalarGroupDataItem::updateVisibility(bool visible)
 {
 	bool v = (m_standardItem->checkState() == Qt::Checked) && visible;
-	m_scalarBarWidget->SetEnabled(m_setting.scalarBarSetting.visible.value() && v);
+
+	m_scalarBarWidget->SetEnabled(
+				(m_setting.colorMode == Post2dBirdEyeWindowContourSetting::ColorMode::ByScalar) &&
+				m_setting.scalarBarSetting.visible.value() && v);
+
 	Post2dBirdEyeWindowDataItem::updateVisibility(visible);
 }
 
@@ -499,7 +535,7 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::doSaveToProjectMainFile(QXmlStr
 
 void Post2dBirdEyeWindowNodeScalarGroupDataItem::undoCommands(QDialog* propDialog, QUndoCommand* parent)
 {
-	Post2dWindowContourSettingDialog* dialog = dynamic_cast<Post2dWindowContourSettingDialog*>(propDialog);
+	auto dialog = dynamic_cast<Post2dBirdEyeWindowContourSettingDialog*>(propDialog);
 
 	Q_ASSERT(parent != nullptr); // the following won't get deleted if parent is null
 

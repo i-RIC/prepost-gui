@@ -1,5 +1,6 @@
 #include "../../../guibase/objectbrowserview.h"
 #include "post2dbirdeyewindow.h"
+#include "post2dbirdeyewindowcontoursettingdialog.h"
 #include "post2dbirdeyewindowgridtypedataitem.h"
 #include "post2dbirdeyewindownodescalargroupdataitem.h"
 #include "post2dbirdeyewindownodescalargrouptopdataitem.h"
@@ -10,12 +11,11 @@
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <misc/iricundostack.h>
 #include <misc/stringtool.h>
-#include <post/post2d/datamodel/post2dwindowcontoursettingdialog.h>
 
 #include <QAction>
 #include <QDomNode>
 #include <QList>
-#include <QMenu.h>
+#include <QMenu>
 #include <QMessageBox>
 #include <QStandardItem>
 #include <QXmlStreamWriter>
@@ -32,10 +32,14 @@ Post2dBirdEyeWindowNodeScalarGroupTopDataItem::Post2dBirdEyeWindowNodeScalarGrou
 	vtkPointData* pd = cont->data()->GetPointData();
 	for (std::string val : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(pd)) {
 		m_colorbarTitleMap.insert(val, val.c_str());
-		auto item = new Post2dBirdEyeWindowNodeScalarGroupDataItem(this, NotChecked, NotReorderable, NotDeletable);
-		m_scalarmap[val] = item;
+	}
+	auto elevName = iRIC::toStr(cont->elevationName());
+	if (elevName.length() != 0) {
+		auto item = new Post2dBirdEyeWindowNodeScalarGroupDataItem(this, NotChecked, NotReorderable, Deletable);
+		m_scalarmap[elevName] = item;
 		m_childItems.push_back(item);
-		item->setTarget(val);
+		item->setElevationTarget(elevName);
+		item->setTarget(elevName);
 	}
 }
 
@@ -54,7 +58,7 @@ void Post2dBirdEyeWindowNodeScalarGroupTopDataItem::update()
 
 QDialog* Post2dBirdEyeWindowNodeScalarGroupTopDataItem::addDialog(QWidget* p)
 {
-	auto dialog = new Post2dWindowContourSettingDialog(p);
+	auto dialog = new Post2dBirdEyeWindowContourSettingDialog(p);
 	auto gtItem = dynamic_cast<Post2dBirdEyeWindowGridTypeDataItem*>(parent()->parent());
 	dialog->setGridTypeDataItem(gtItem);
 	auto zItem = dynamic_cast<Post2dBirdEyeWindowZoneDataItem*>(parent());
@@ -63,13 +67,12 @@ QDialog* Post2dBirdEyeWindowNodeScalarGroupTopDataItem::addDialog(QWidget* p)
 		return nullptr;
 	}
 	dialog->setZoneData(zItem->dataContainer(), iRICLib::H5CgnsZone::SolutionPosition::Node);
-	dialog->hideOpacity();
 	// region setting
 	if (! zItem->dataContainer()->IBCExists()) {
 		dialog->disableActive();
 	}
 
-	Post2dWindowContourSetting setting;
+	Post2dBirdEyeWindowContourSetting setting;
 	setting.target = zItem->dataContainer()->data()->GetPointData()->GetArrayName(0);
 
 	if (!nextScalarBarSetting(setting.scalarBarSetting)) {

@@ -99,16 +99,19 @@ HEADERS += post2dbirdeye_global.h \
            post2dbirdeyewindowgraphicsview.h \
            post2dbirdeyewindowprojectdataitem.h \
            datamodel/post2dbirdeyewindowaxesdataitem.h \
-           datamodel/post2dbirdeyewindowgridshapedataitem.h \
-           datamodel/post2dbirdeyewindowgridtypedataitem.h \
            datamodel/post2dbirdeyewindowcellscalargroupdataitem.h \
            datamodel/post2dbirdeyewindowcellscalargrouptopdataitem.h \
+           datamodel/post2dbirdeyewindowcontoursetting.h \
+           datamodel/post2dbirdeyewindowcontoursettingdialog.h \
+           datamodel/post2dbirdeyewindowgridshapedataitem.h \
+           datamodel/post2dbirdeyewindowgridtypedataitem.h \
            datamodel/post2dbirdeyewindownodescalargroupdataitem.h \
            datamodel/post2dbirdeyewindownodescalargrouptopdataitem.h \
            datamodel/post2dbirdeyewindowrootdataitem.h \
            datamodel/post2dbirdeyewindowzonedataitem.h \
            datamodel/private/post2dbirdeyewindowcellscalargroupdataitem_setsettingcommand.h \
            datamodel/private/post2dbirdeyewindownodescalargroupdataitem_setsettingcommand.h
+FORMS += datamodel/post2dbirdeyewindowcontoursettingdialog.ui
 SOURCES += post2dbirdeyeobjectbrowser.cpp \
            post2dbirdeyeobjectbrowserview.cpp \
            post2dbirdeyewindow.cpp \
@@ -118,10 +121,12 @@ SOURCES += post2dbirdeyeobjectbrowser.cpp \
            post2dbirdeyewindowgraphicsview.cpp \
            post2dbirdeyewindowprojectdataitem.cpp \
            datamodel/post2dbirdeyewindowaxesdataitem.cpp \
-           datamodel/post2dbirdeyewindowgridshapedataitem.cpp \
-           datamodel/post2dbirdeyewindowgridtypedataitem.cpp \
            datamodel/post2dbirdeyewindowcellscalargroupdataitem.cpp \
            datamodel/post2dbirdeyewindowcellscalargrouptopdataitem.cpp \
+           datamodel/post2dbirdeyewindowcontoursetting.cpp \
+           datamodel/post2dbirdeyewindowcontoursettingdialog.cpp \
+           datamodel/post2dbirdeyewindowgridshapedataitem.cpp \
+           datamodel/post2dbirdeyewindowgridtypedataitem.cpp \
            datamodel/post2dbirdeyewindownodescalargroupdataitem.cpp \
            datamodel/post2dbirdeyewindownodescalargrouptopdataitem.cpp \
            datamodel/post2dbirdeyewindowrootdataitem.cpp \
