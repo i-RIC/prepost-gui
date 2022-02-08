@@ -90,6 +90,7 @@ void PreProcessorGeoDataDataItem::handleStandardItemChange()
 void PreProcessorGeoDataDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	m_geoData->loadFromProjectMainFile(node);
+	updateVisibilityWithoutRendering();
 }
 
 void PreProcessorGeoDataDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
