@@ -177,7 +177,8 @@ on_success:
         #   see https://docs.github.com/en/rest/reference/releases#get-the-latest-release
         # and write them both to $out
         $in = 'yasu_src\packages\sdk\data\c\lib\cmake\iriclib\iriclibConfigVersion.cmake'
-        $out = 'yasu_src\packages\sdk\meta\package.xml'
+        $outs=@('yasu_src\packages\sdk\meta\package.xml', `
+                'yasu_src\packages\miniconda\meta\package.xml')
         $iriclib_ver = (Select-String -Path $in -Pattern '^set\(PACKAGE_VERSION "(?<ver>.*)"\)$').Matches[0].Groups['ver'].Value
         $releases_url="https://api.github.com/repos/i-RIC/iriclib_v4/releases"
         $latest_json = Invoke-WebRequest -Uri $releases_url/latest -Method GET -UseBasicParsing
@@ -187,10 +188,12 @@ on_success:
         if ($latest.tag_name -ne "v$iriclib_ver") {
           throw "iriclib version/release mismatch " + $latest.tag_name  + " -ne " + "v$iriclib_ver"
         }
-        (Get-Content $out) | Foreach-Object {
-          $_ -replace "(?<=<Version>)(.*)(?=</Version>)",           $iriclib_ver `
-             -replace "(?<=<ReleaseDate>)(.*)(?=</ReleaseDate>)",   $iriclib_rel
-        } | Set-Content $out
+        foreach ($out in $outs) {
+          (Get-Content $out) | Foreach-Object {
+            $_ -replace "(?<=<Version>)(.*)(?=</Version>)",           $iriclib_ver `
+               -replace "(?<=<ReleaseDate>)(.*)(?=</ReleaseDate>)",   $iriclib_rel
+          } | Set-Content $out
+        }
 
         # run repogen to build packages and Updates.xml
         Set-Location \online_update\yasu_src -ErrorAction Stop
