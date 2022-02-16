@@ -6,10 +6,12 @@
 #include "inputconditionwidgetset.h"
 
 #include "private/inputconditioncgnsfile.h"
-#include "private/inputconditiondependencysetsubcaptionaction.h"
-#include "private/inputconditiondependencysetsubimageaction.h"
 #include "private/inputconditiondependencychecksubcaptions.h"
+#include "private/inputconditiondependencychecksubenumerations.h"
 #include "private/inputconditiondependencychecksubimages.h"
+#include "private/inputconditiondependencysetsubcaptionaction.h"
+#include "private/inputconditiondependencysetsubenumerationsaction.h"
+#include "private/inputconditiondependencysetsubimageaction.h"
 #include "private/inputconditionwidgetcgnsbaseiterativeintegerresult.h"
 #include "private/inputconditionwidgetcgnsbaseiterativerealresult.h"
 #include "private/inputconditionwidgetcgnsfile.h"
@@ -294,6 +296,10 @@ void InputConditionWidgetSet::buildDepsCustomRec(const QDomNode& node, InputCond
 				if (c.toElement().attributes().contains("caption")) {
 					buildDepsLabel(c, cset);
 				}
+				QDomNode defNode = iRIC::getChildNode(c, "Definition");
+				if (InputConditionWidget::hasEnums(defNode)) {
+					buildDepsOption(c, cset);
+				}
 			} else if (c.nodeName() == "Image") {
 				// build dependency for image (subimages)
 				buildDepsImage(c, cset);
@@ -331,6 +337,35 @@ void InputConditionWidgetSet::buildDepsItem(const QDomNode& itemNode, InputCondi
 		if (condNode.isNull()) {return;}
 		buildDep(condNode, cset, w);
 	}
+}
+
+void InputConditionWidgetSet::buildDepsOption(const QDomNode& itemNode, InputConditionContainerSet& cset)
+{
+	QDomElement itemElem = itemNode.toElement();
+	std::string parameterName = iRIC::toStr(itemElem.attribute("name"));
+	auto combo = dynamic_cast<InputConditionWidgetIntegerOption*> (this->widget(parameterName));
+
+	// get the definition node;
+	QDomNode defNode = iRIC::getChildNode(itemNode, "Definition");
+	if (defNode.isNull()) return;
+
+	// get the enumerations node
+	QDomNode enumsNode = iRIC::getChildNode(defNode, "Enumerations");
+	if (enumsNode.isNull()) return;
+
+	size_t index;
+	QDomElement subEnumsElem = enumsNode.firstChildElement("SubEnumerations");
+	for (index = 0; ! subEnumsElem.isNull(); subEnumsElem = subEnumsElem.nextSiblingElement("SubEnumerations"), ++index) {
+		auto condNode = iRIC::getChildNode(subEnumsElem, "Condition");
+		auto name = InputConditionWidgetIntegerOption::subEnumerationsName(subEnumsElem, index);
+		auto dep = new InputConditionDependency();
+		auto cond = InputConditionDependency::buildCondition(condNode, &cset, combo->checkSubEnumerations());
+		dep->setCondition(cond);
+		auto a = new InputConditionDependencySetSubEnumerationsAction(combo, name);
+		dep->addAction(a);
+		combo->addDependency(dep);
+	}
+	combo->checkSubEnumerations()->check();
 }
 
 void InputConditionWidgetSet::buildDepsLabel(const QDomNode& labelNode, InputConditionContainerSet& cset)

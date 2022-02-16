@@ -4,6 +4,7 @@
 #include "../inputconditionwidget.h"
 
 class InputConditionContainerInteger;
+class InputConditionDependencyCheckSubEnumerations;
 class SolverDefinitionTranslator;
 
 class QComboBox;
@@ -19,6 +20,13 @@ public:
 
 	void setDisabled(bool disable);
 
+	static QString subEnumerationsName(const QDomNode& subEnumerationsNode, size_t index);
+
+	void activateSubEnumerations(const QString& name);
+	void inactivateSubEnumerations();
+
+	InputConditionDependencyCheckSubEnumerations* checkSubEnumerations() const;
+
 public slots:
 	void setValue(int);
 
@@ -28,6 +36,9 @@ private slots:
 private:
 	InputConditionContainerInteger* m_container;
 	QComboBox* m_comboBox;
+	std::list< std::pair<QString, QVariant> > m_enumerations;
+	std::map< QString, std::list< std::pair<QString, QVariant> > > m_subEnumerations;
+	InputConditionDependencyCheckSubEnumerations* m_checkSubEnumerations;
 };
 
 #endif // INPUTCONDITIONWIDGETINTEGEROPTION_H

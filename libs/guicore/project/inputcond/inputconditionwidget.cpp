@@ -44,7 +44,10 @@ QList<QDomNode> InputConditionWidget::getEnums(QDomNode defNode)
 		QDomNodeList noms = enumsNode.childNodes();
 		QList<QDomNode> list;
 		for (int i = 0; i < noms.count(); ++i) {
-			list.append(noms.item(i));
+			QDomNode node = noms.item(i);
+			if (node.nodeName() == "Enumeration") {
+				list.append(node);
+			}
 		}
 		return list;
 	}
@@ -68,4 +71,35 @@ bool InputConditionWidget::hasEnums(QDomNode defNode)
 	QDomNode enumNode = iRIC::getChildNode(defNode, "Enumeration");
 	if (! enumNode.isNull()) {return true;}
 	return false;
+}
+
+// given Definition element check for SubEnumerations
+//
+// SubEnumerations are only valid as children of Enumerations
+// Definition can have only one Enumerations child
+// Enumerations can have zero or more SubEnumerations
+//
+// <Item name="name">
+//   <Definition valueType="type">
+//     <Enumerations>
+//       <Enumeration value="1" caption="Caption 1"/>
+//       <Enumeration value="2" caption="Caption 2"/>
+//       <Enumeration value="3" caption="Caption 3"/>
+//       <SubEnumerations>
+//         <Enumeration value="1" caption="Caption 1"/>
+//         <Enumeration value="2" caption="Caption 2"/>
+//         <Condition/>      <!-- Condition to use SubEnumeration list -->
+//       </SubEnumerations>
+//     </Enumerations>
+//     <Condition/>          <!-- Condition to enable/setvalue of list -->
+//   </Definition>
+// </Item>
+//
+bool InputConditionWidget::hasSubEnums(QDomNode defNode)
+{
+	QDomNode enumsNode = iRIC::getChildNode(defNode, "Enumerations");
+	if (enumsNode.isNull()) { return false; }
+	QDomNode subEnumsNode = iRIC::getChildNode(enumsNode, "SubEnumerations");
+	if (subEnumsNode.isNull()) { return false; }
+	return true;
 }
