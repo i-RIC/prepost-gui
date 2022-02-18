@@ -38,15 +38,6 @@ init:
   # Only commit and push to master branch or debug-appveyor branch (for testing)
   - ps: $CommitAndPush = (($env:Configuration -eq "Release") -AND (($env:APPVEYOR_REPO_BRANCH -eq "master") -OR ($env:APPVEYOR_REPO_BRANCH -eq "develop_v4")) -AND (!$env:APPVEYOR_PULL_REQUEST_NUMBER))
   - ps: Write-Output $CommitAndPush
-  - ps: |
-      mkdir input
-      cp .\languages\iricPost2d_it_IT.ts .\input\.
-      mkdir output
-      Write-Output ($env:scharlton2_json).Replace(";", "`r`n") > .\iric-ts-translation-4761fe6f85d6.json
-      pip install google-cloud-translate
-      python tools\translate_ts.py
-      cat output\iricPost2d_it_IT.ts
-  - ps: throw "finished"
 
 configuration:
   - Debug
@@ -58,6 +49,16 @@ matrix:
 # Note mkdir is from Git (C:\Program Files\Git\usr\bin\mkdir.exe)
 # It might give unexpected results (use md instead)
 before_build:
+  - ps: |
+      mkdir input
+      cp .\languages\iricPost2d_it_IT.ts .\input\.
+      mkdir output
+      Write-Output ($env:scharlton2_json).Replace(";", "`r`n") > .\iric-ts-translation-4761fe6f85d6.json
+      pip install google-cloud-translate
+      python tools\translate_ts.py
+      cat output\iricPost2d_it_IT.ts
+      rm .\iric-ts-translation-4761fe6f85d6.json
+  - ps: throw "finished"
   - ps: if (! (Test-Path ${env:ifw_location}\bin\repogen.exe)) { throw "repogen.exe not found" }
   - call C:\Qt\5.14.2\msvc2017_64\bin\qtenv2.bat
   - call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvars64.bat"
