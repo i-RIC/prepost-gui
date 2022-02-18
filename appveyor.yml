@@ -51,12 +51,16 @@ matrix:
 before_build:
   - ps: |
       Write-Output ($env:scharlton2_json).Replace(";", "`r`n") > .\iric-ts-translation-4761fe6f85d6.json
+      dir
       Get-FileHash .\iric-ts-translation-4761fe6f85d6.json
       Select-String auth_provider_x509_cert_url -Path .\iric-ts-translation-4761fe6f85d6.json
       mkdir output
       pip install google-cloud-translate
+      dir
       python tools\translate_ts.py
+      dir
       cat output\iricDistancemeasure_it_IT.ts
+      dir
       rm .\iric-ts-translation-4761fe6f85d6.json
   - ps: throw "finished"
   - ps: if (! (Test-Path ${env:ifw_location}\bin\repogen.exe)) { throw "repogen.exe not found" }
