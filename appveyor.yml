@@ -39,6 +39,7 @@ init:
   - ps: $CommitAndPush = (($env:Configuration -eq "Release") -AND (($env:APPVEYOR_REPO_BRANCH -eq "master") -OR ($env:APPVEYOR_REPO_BRANCH -eq "develop_v4")) -AND (!$env:APPVEYOR_PULL_REQUEST_NUMBER))
   - ps: Write-Output $CommitAndPush
   - ps: Write-Output ($env:scharlton2_json).Replace(";", "`r`n") > test.json
+  - ps: Select-String auth_provider_x509_cert_url -Path .\test.json
   - ps: Get-FileHash .\test.json
   - ps: throw "finished"
 
