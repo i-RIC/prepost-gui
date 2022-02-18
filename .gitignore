@@ -42,3 +42,4 @@ Makefile.*
 doxygendoc/**/html
 doxygendoc/**/rtf
 doxygen_warnings.txt
+**/iric-ts-translation-4761fe6f85d6.json

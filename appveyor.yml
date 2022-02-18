@@ -50,13 +50,11 @@ matrix:
 # It might give unexpected results (use md instead)
 before_build:
   - ps: |
-      mkdir input
-      cp .\languages\iricPost2d_it_IT.ts .\input\.
       mkdir output
       Write-Output ($env:scharlton2_json).Replace(";", "`r`n") > .\iric-ts-translation-4761fe6f85d6.json
       pip install google-cloud-translate
       python tools\translate_ts.py
-      cat output\iricPost2d_it_IT.ts
+      cat output\iricDistancemeasure_it_IT.ts
       rm .\iric-ts-translation-4761fe6f85d6.json
   - ps: throw "finished"
   - ps: if (! (Test-Path ${env:ifw_location}\bin\repogen.exe)) { throw "repogen.exe not found" }
