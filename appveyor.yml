@@ -52,6 +52,7 @@ before_build:
   - ps: |
       mkdir output
       Write-Output ($env:scharlton2_json).Replace(";", "`r`n") > .\iric-ts-translation-4761fe6f85d6.json
+      Select-String auth_provider_x509_cert_url -Path .\iric-ts-translation-4761fe6f85d6.json
       pip install google-cloud-translate
       python tools\translate_ts.py
       cat output\iricDistancemeasure_it_IT.ts
