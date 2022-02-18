@@ -50,7 +50,7 @@ matrix:
 # It might give unexpected results (use md instead)
 before_build:
   - ps: |
-      Write-Output ($env:scharlton2_json).Replace(";", "`r`n") > .\iric-ts-translation-4761fe6f85d6.json
+      Write-Output ($env:scharlton2_json).Replace(";", "`r`n") | Out-File -FilePath .\iric-ts-translation-4761fe6f85d6.json -Encoding utf8
       dir
       Get-FileHash .\iric-ts-translation-4761fe6f85d6.json
       Select-String auth_provider_x509_cert_url -Path .\iric-ts-translation-4761fe6f85d6.json
