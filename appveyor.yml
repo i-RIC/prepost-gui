@@ -59,9 +59,11 @@ matrix:
 # Neither env nor powershell variables are passed when using pwsh shell
 before_build:
   - pwsh: |
+      ####################################################################################
       # It's easier to create the json file in pswh.
       # json env vars contain encrypted contents of iric-ts-translation-4761fe6f85d6.json
       # with newlines replaced by semicolons(;)
+      ####################################################################################
       $topdir = Get-Location
       $creds = $env:iric_json
       if ($env:APPVEYOR_REPO_NAME -eq "scharlton2/prepost-gui") {
@@ -72,15 +74,19 @@ before_build:
       }
       Write-Output $creds.Replace(";", "`r`n") > .\iric-ts-translation-4761fe6f85d6.json
       Write-Output "Should be EE6EA1115B3C696A88BA2F1E89BD6F88C8E50DE2E7D25B21488F5B4BAFCCD205"
-      Get-FileHash .\iric-ts-translation-4761fe6f85d6.json
-
-  - ps: |
+      Get-FileHash "$topdir\iric-ts-translation-4761fe6f85d6.json"
+  - pwsh: |
       ####################################################################################
       # Run tools\translate_ts.py on all but the top languages directories
       ####################################################################################
       $topdir = Get-Location
-      pip install google-cloud-translate
       $env:GOOGLE_APPLICATION_CREDENTIALS = "$topdir\iric-ts-translation-4761fe6f85d6.json"
+      Write-Output "Should be EE6EA1115B3C696A88BA2F1E89BD6F88C8E50DE2E7D25B21488F5B4BAFCCD205"
+      Get-FileHash $env:GOOGLE_APPLICATION_CREDENTIALS
+
+      python -m pip install --upgrade pip
+      pip install google-cloud-translate
+
       $dirs = Get-ChildItem -Attributes Directory | Where-Object { $_.Name -notmatch 'languages' }
       foreach ($dir in $dirs) {
         $langs = Get-ChildItem -Recurse -Attributes Directory $dir | Where-Object { $_.Name -like 'languages' }
@@ -96,6 +102,7 @@ before_build:
       Set-Location $topdir
       rm .\iric-ts-translation-4761fe6f85d6.json
       git status
+  - ps: |
       ####################################################################################
       # Commit the languages changes
       # from https://www.appveyor.com/docs/how-to/git-push/
