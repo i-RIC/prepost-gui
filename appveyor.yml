@@ -40,7 +40,9 @@ init:
       Get-ChildItem env: | Where-Object { $_.Name -NotMatch "access_token" -and $_.Name -notmatch 'json'}
       # Only commit and push to master branch or debug-appveyor branch (for testing)
       $CommitAndPush = (($env:Configuration -eq "Release") -AND (($env:APPVEYOR_REPO_BRANCH -eq "master") -OR ($env:APPVEYOR_REPO_BRANCH -eq "develop_v4")) -AND (!$env:APPVEYOR_PULL_REQUEST_NUMBER))
+      $env:CommitAndPush = $CommitAndPush
       Write-Output $CommitAndPush
+      Write-Output $env:CommitAndPush
 
 configuration:
 #  - Debug
@@ -51,10 +53,19 @@ matrix:
 
 # Note mkdir is from Git (C:\Program Files\Git\usr\bin\mkdir.exe)
 # It might give unexpected results (use md instead)
+#
+# variables aren't passed when using pwsh shell
 before_build:
   - pwsh: |
       Write-Output "CommitAndPush=$CommitAndPush"
       Write-Output $CommitAndPush
+      Write-Output $env:CommitAndPush
+      if ($env:CommitAndPush) {
+        Write-Output "push-it"
+      }
+      else {
+        Write-Output "no push"
+      }
       throw "done testing"
       ####################################################################################
       # Run tools\translate_ts.py on all but the top languages directories
