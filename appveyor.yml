@@ -134,7 +134,8 @@ before_build:
 
         # Adding access token to credential store
         echo "*** before Add-Content ***"
-        Add-Content "$HOME\.git-credentials" "https://$($access_token):x-oauth-basic@github.com`n" -NoNewline -ErrorAction Stop
+        ###Add-Content "$HOME\.git-credentials" "https://$($access_token):x-oauth-basic@github.com`n" -NoNewline -ErrorAction Stop
+        Add-Content "$HOME\.git-credentials" "https://TESTING:x-oauth-basic@github.com`n" -NoNewline -ErrorAction Stop
 
         # Indicate git user name and mail
         echo "*** before config ***"
