@@ -43,7 +43,7 @@ init:
       Write-Output $CommitAndPush
 
 configuration:
-  - Debug
+#  - Debug
   - Release
 
 matrix:
@@ -84,6 +84,55 @@ before_build:
       Set-Location $topdir
       rm .\iric-ts-translation-4761fe6f85d6.json
       git status
+      ####################################################################################
+      # Commit the languages changes
+      # from https://www.appveyor.com/docs/how-to/git-push/
+      ####################################################################################
+      if ($CommitAndPush) {
+        # determine whether to push to current or new branch and which
+        # access_token to use (the branch is for testing)
+        $branch = $True
+        if ($env:APPVEYOR_REPO_NAME -eq "i-RIC/prepost-gui") {
+          $access_token = $env:iric_access_token
+          $branch = $False
+        }
+        if ($env:APPVEYOR_REPO_NAME -eq "scharlton2/prepost-gui") {
+          # online_update_2020_05_17 expires after a year if not used
+          $access_token = $env:scharlton2_access_token
+        }
+        if ($env:APPVEYOR_REPO_NAME -eq "kskinoue0612/prepost-gui") {
+          $access_token = $env:kskinoue0612_access_token
+        }
+
+        # Enabling Git credential store
+        git config --global credential.helper store
+        if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
+
+        # Adding access token to credential store
+        Add-Content "$HOME\.git-credentials" "https://$($access_token):x-oauth-basic@github.com`n" -NoNewline -ErrorAction Stop
+
+        # Indicate git user name and mail
+        git config --global user.email "iric.appveyor@gmail.com"
+        git config --global user.name "iric.appveyor"
+        git config --global core.safecrlf false
+        if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
+
+        # add updated language files
+        git add -a
+        if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
+
+        # commit
+        git commit -m "translate_ts.py by iric.appveyor $env:APPVEYOR_BUILD_VERSION"
+        if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
+
+        # push
+        if ($branch) {
+          git push --set-upstream origin $env:APPVEYOR_JOB_ID 2>&1 | Out-Null
+        } else {
+          git push --set-upstream origin $env:APPVEYOR_REPO_BRANCH 2>&1 | Out-Null
+        }
+        if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
+      }
   - ps: if (! (Test-Path ${env:ifw_location}\bin\repogen.exe)) { throw "repogen.exe not found" }
   - call C:\Qt\5.14.2\msvc2017_64\bin\qtenv2.bat
   - call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvars64.bat"
