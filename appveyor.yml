@@ -65,7 +65,7 @@ before_build:
       }
       pip install google-cloud-translate
       Write-Output $creds.Replace(";", "`r`n") > .\iric-ts-translation-4761fe6f85d6.json
-      $env:GOOGLE_APPLICATION_CREDENTIALS = "$topdir\iric-ts-translation-4761fe6f85d6.json'
+      $env:GOOGLE_APPLICATION_CREDENTIALS = "$topdir\iric-ts-translation-4761fe6f85d6.json"
       $dirs = Get-ChildItem -Attributes Directory | Where-Object { $_.Name -notmatch 'languages' }
       foreach ($dir in $dirs) {
         $langs = Get-ChildItem -Recurse -Attributes Directory $dir | Where-Object { $_.Name -like 'languages' }
