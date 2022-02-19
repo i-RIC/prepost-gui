@@ -11,6 +11,7 @@
 #include <QDomNode>
 #include <QDomNodeList>
 #include <QHBoxLayout>
+#include <QSignalBlocker>
 #include <QVariant>
 
 InputConditionWidgetIntegerOption::InputConditionWidgetIntegerOption(QDomNode defnode, const SolverDefinitionTranslator& t, InputConditionContainerInteger* cont) : InputConditionWidget(defnode)
@@ -101,18 +102,30 @@ void InputConditionWidgetIntegerOption::activateSubEnumerations(const QString& n
 	std::map< QString, std::list< std::pair<QString, QVariant> > >::iterator it = m_subEnumerations.find(name);
 	if (it == m_subEnumerations.end()) { return; }
 
+	const QSignalBlocker blocker(m_comboBox);
 	m_comboBox->clear();
 	for (auto& p : it->second) {
 		m_comboBox->addItem(p.first, p.second);
 	}
+	if (m_comboBox->findData(m_container->value()) == -1) {
+		m_container->setValue(m_container->defaultValue());
+	}
+	Q_ASSERT(m_comboBox->findData(m_container->value()) != -1);
+	setValue(m_container->value());
 }
 
 void InputConditionWidgetIntegerOption::inactivateSubEnumerations()
 {
+	const QSignalBlocker blocker(m_comboBox);
 	m_comboBox->clear();
 	for (auto& p : m_enumerations) {
 		m_comboBox->addItem(p.first, p.second);
 	}
+	if (m_comboBox->findData(m_container->value()) == -1) {
+		m_container->setValue(m_container->defaultValue());
+	}
+	Q_ASSERT(m_comboBox->findData(m_container->value()) != -1);
+	setValue(m_container->value());
 }
 
 InputConditionDependencyCheckSubEnumerations* InputConditionWidgetIntegerOption::checkSubEnumerations() const
