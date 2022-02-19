@@ -53,6 +53,9 @@ matrix:
 # It might give unexpected results (use md instead)
 before_build:
   - pwsh: |
+      ####################################################################################
+      # Run tools\translate_ts.py on all but the top languages directories
+      ####################################################################################
       $topdir = Get-Location
       # json env vars contain encrypted contents of iric-ts-translation-4761fe6f85d6.json
       # with newlines replaced by semicolons(;)
@@ -81,7 +84,6 @@ before_build:
       Set-Location $topdir
       rm .\iric-ts-translation-4761fe6f85d6.json
       git status
-  - ps: throw "finished"
   - ps: if (! (Test-Path ${env:ifw_location}\bin\repogen.exe)) { throw "repogen.exe not found" }
   - call C:\Qt\5.14.2\msvc2017_64\bin\qtenv2.bat
   - call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvars64.bat"
