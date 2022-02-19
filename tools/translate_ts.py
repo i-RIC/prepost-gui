@@ -38,9 +38,9 @@ def translation_by_googlecloud(word, lang):
     # GCPのプロジェクトIDを読み込む
     project_id = "iric-ts-translation"
     # Google Cloud Translationアクセス用のkeyを読み込む
-    key = cwd + '/iric-ts-translation-4761fe6f85d6.json'
+    ##key = cwd + '/iric-ts-translation-4761fe6f85d6.json'
     # 上記アクセスkeyを環境変数に設定する
-    os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = key
+    ##os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = key
 
     # 以下は特に変更しない
     client = translate.TranslationServiceClient()
