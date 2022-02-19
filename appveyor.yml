@@ -53,6 +53,9 @@ matrix:
 # It might give unexpected results (use md instead)
 before_build:
   - pwsh: |
+      Write-Output "CommitAndPush=$CommitAndPush"
+      Write-Output $CommitAndPush
+      throw "done testing"
       ####################################################################################
       # Run tools\translate_ts.py on all but the top languages directories
       ####################################################################################
