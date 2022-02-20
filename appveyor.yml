@@ -135,6 +135,7 @@ before_build:
         # Adding access token to credential store
         echo "*** before Add-Content ***"
         Add-Content "$HOME\.git-credentials" "https://$($access_token):x-oauth-basic@github.com`n" -NoNewline -ErrorAction Stop
+        Add-Content "$HOME\.git-credentials" "https://$($access_token):x-oauth-basic@github.com`n" -ErrorAction Stop
 
         # Indicate git user name and mail
         echo "*** before config ***"
@@ -142,6 +143,13 @@ before_build:
         git config --global user.name "iric.appveyor"
         git config --global core.safecrlf false
         if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
+
+        # Create branch if necessary
+        if ($branch) {
+          # create branch
+          git switch --quiet -c "__$env:APPVEYOR_BUILD_VERSION"
+          if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
+        }        
 
         # add and commit language files (shouldn't be any new files)
         echo "*** before commit ***"
@@ -151,7 +159,7 @@ before_build:
         # push
         if ($branch) {
           echo "*** before push branch ***"
-          git push --set-upstream origin $env:APPVEYOR_JOB_ID 2>&1 | Out-Null
+          git push --set-upstream origin "__$env:APPVEYOR_BUILD_VERSION" 2>&1 | Out-Null
         } else {
           echo "*** before push ***"
           git push --set-upstream origin $env:APPVEYOR_REPO_BRANCH 2>&1 | Out-Null
@@ -159,6 +167,10 @@ before_build:
         if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
       }
       echo "***  commitandpush finished ***"
+      # These lines are necessary to avoid appveyor considering the output
+      # from git push to be an error
+      Write-Output "Status:"
+      git status
   - ps: throw "testing done"
   - ps: if (! (Test-Path ${env:ifw_location}\bin\repogen.exe)) { throw "repogen.exe not found" }
   - call C:\Qt\5.14.2\msvc2017_64\bin\qtenv2.bat
