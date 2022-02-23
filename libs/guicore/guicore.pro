@@ -226,6 +226,7 @@ HEADERS += guicore_global.h \
            project/gcptablemodel.h \
            project/gcptablerow.h \
            project/georeferenceview.h \
+           project/inputcond/private/inputconditiondependencysetsubenumerationsaction.h \
            project/offsetsettingdialog.h \
            project/projectcgnsfile.h \
            project/projectdata.h \
@@ -497,6 +498,7 @@ HEADERS += guicore_global.h \
            project/inputcond/private/inputconditioncontainerreal_impl.h \
            project/inputcond/private/inputconditioncontainerstring_impl.h \
            project/inputcond/private/inputconditiondependencychecksubcaptions.h \
+           project/inputcond/private/inputconditiondependencychecksubenumerations.h \
            project/inputcond/private/inputconditiondependencychecksubimages.h \
            project/inputcond/private/inputconditiondependencyconditionalways.h \
            project/inputcond/private/inputconditiondependencyconditionand.h \
@@ -644,6 +646,7 @@ SOURCES += base/iricmainwindowinterface.cpp \
            project/colorsource.cpp \
            project/gcptablemodel.cpp \
            project/georeferenceview.cpp \
+           project/inputcond/private/inputconditiondependencysetsubenumerationsaction.cpp \
            project/offsetsettingdialog.cpp \
            project/projectcgnsfile.cpp \
            project/projectdata.cpp \
@@ -828,6 +831,7 @@ SOURCES += base/iricmainwindowinterface.cpp \
            project/inputcond/private/inputconditioncgnsfile.cpp \
            project/inputcond/private/inputconditioncgnsfileselectdialog.cpp \
            project/inputcond/private/inputconditiondependencychecksubcaptions.cpp \
+           project/inputcond/private/inputconditiondependencychecksubenumerations.cpp \
            project/inputcond/private/inputconditiondependencychecksubimages.cpp \
            project/inputcond/private/inputconditiondependencyconditionalways.cpp \
            project/inputcond/private/inputconditiondependencyconditionand.cpp \

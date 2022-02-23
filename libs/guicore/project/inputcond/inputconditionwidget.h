@@ -31,6 +31,7 @@ public:
 	static const int margin = 0;
 	static QList<QDomNode> getEnums(QDomNode defNode);
 	static bool hasEnums(QDomNode defNode);
+	static bool hasSubEnums(QDomNode defNode);
 
 private:
 	std::vector<InputConditionDependency*> m_dependencies;
