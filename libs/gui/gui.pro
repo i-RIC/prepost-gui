@@ -12,6 +12,9 @@ QT += xml \
 
 UI_DIR = ./ui
 
+# Use Precompiled headers (PCH)
+PRECOMPILED_HEADER = gui_pch.h
+
 ######################
 # Internal libraries #
 ######################

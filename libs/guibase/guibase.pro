@@ -8,6 +8,9 @@ QT += widgets xml
 
 include( ../../paths.pri )
 
+# Use Precompiled headers (PCH)
+PRECOMPILED_HEADER = guibase_pch.h
+
 ######################
 # Internal libraries #
 ######################

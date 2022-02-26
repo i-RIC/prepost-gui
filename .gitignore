@@ -42,3 +42,8 @@ Makefile.*
 doxygendoc/**/html
 doxygendoc/**/rtf
 doxygen_warnings.txt
+
+# precompiled headers
+libs/gui/gui_pch.h.cpp
+libs/guibase/guibase_pch.h.cpp
+libs/guicore/guicore_pch.h.cpp

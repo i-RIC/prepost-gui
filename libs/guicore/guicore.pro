@@ -12,6 +12,9 @@ include( ../../paths.pri )
 
 QT += network qml widgets xml
 
+# Use Precompiled headers (PCH)
+PRECOMPILED_HEADER = guicore_pch.h
+
 ######################
 # Internal libraries #
 ######################
