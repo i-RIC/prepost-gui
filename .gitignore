@@ -44,6 +44,10 @@ doxygendoc/**/rtf
 doxygen_warnings.txt
 
 # precompiled headers
+libs/geodata/netcdf/netcdf_pch.h.cpp
+libs/geodata/pointmap/pointmap_pch.h.cpp
 libs/gui/gui_pch.h.cpp
 libs/guibase/guibase_pch.h.cpp
 libs/guicore/guicore_pch.h.cpp
+libs/post/post2d/post2d_pch.h.cpp
+libs/post/post3d/post3d_pch.h.cpp

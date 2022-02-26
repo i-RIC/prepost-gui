@@ -10,6 +10,9 @@ include( ../../../paths.pri )
 
 QT += network widgets xml
 
+# Use Precompiled headers (PCH)
+PRECOMPILED_HEADER = pointmap_pch.h
+
 ######################
 # Internal libraries #
 ######################
