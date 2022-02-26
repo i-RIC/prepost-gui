@@ -11,6 +11,9 @@ CONFIG += plugin
 
 include( ../../../paths.pri )
 
+# Use Precompiled headers (PCH)
+PRECOMPILED_HEADER = structured2dgridnaysgridexporter_pch.h
+
 # iricGuicore library
 
 unix {
