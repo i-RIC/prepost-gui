@@ -1,0 +1,33 @@
+#error "The header file 'geodatapolydata.h' doesn't include <QObject>."
+#error "The header file 'geodatapolydatacolorsettingdialog.h' doesn't include <QObject>."
+#include <guicore/pre/base/preprocessorgeodatadataiteminterface.h>
+#include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
+#include <guicore/pre/base/preprocessorwindowinterface.h>
+#include <guicore/pre/geodata/geodata.h>
+#include <guicore/pre/gridcond/base/gridattributedimensionscontainer.h>
+#include <guicore/pre/gridcond/base/gridattributeeditdialog.h>
+#include <guicore/pre/gridcond/base/gridattributeeditnameandvaluedialog.h>
+#include <memory>
+#include <misc/colorcontainer.h>
+#include <misc/compositecontainer.h>
+#include <misc/enumcontainert.h>
+#include <misc/opacitycontainer.h>
+#include <QAction>
+#include <QDialog>
+#include <QInputDialog>
+#include <QtCore/qbytearray.h>
+#include <QtCore/qglobal.h>
+#include <QtCore/QLocale>
+#include <QtCore/qmetatype.h>
+#include <QtCore/QVariant>
+#include <QtWidgets/QApplication>
+#include <QtWidgets/QDialog>
+#include <QtWidgets/QDialogButtonBox>
+#include <QtWidgets/QGroupBox>
+#include <QtWidgets/QHBoxLayout>
+#include <QtWidgets/QRadioButton>
+#include <QtWidgets/QSpacerItem>
+#include <QtWidgets/QVBoxLayout>
+#include <QUndoCommand>
+#include <QVariant>
+#include <vector>
