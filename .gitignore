@@ -44,7 +44,9 @@ doxygendoc/**/rtf
 doxygen_warnings.txt
 
 # precompiled headers
+apps/iricgui/iricgui_pch.h.cpp
 apps/rivmaker/rivmaker_pch.h.cpp
+libs/cs/cs_pch.h.cpp
 libs/dataitem/axis2d/axis2d_pch.h.cpp
 libs/dataitem/axis3d/axis3d_pch.h.cpp
 libs/dataitem/distancemeasure/distancemeasure_pch.h.cpp
@@ -76,6 +78,7 @@ libs/gui/gui_pch.h.cpp
 libs/guibase/guibase_pch.h.cpp
 libs/guicore/guicore_pch.h.cpp
 libs/hydraulicdata/riversurveywaterelevation/riversurveywaterelevation_pch.h.cpp
+libs/iricpython/iricpython_pch.h.cpp
 libs/misc/misc_pch.h.cpp
 libs/post/graph2d/graph2d_pch.h.cpp
 libs/post/graph2dhybrid/graph2dhybrid_pch.h.cpp
@@ -86,7 +89,9 @@ libs/post/post2dbirdeye/post2dbirdeye_pch.h.cpp
 libs/post/post3d/post3d_pch.h.cpp
 libs/postbase/postbase_pch.h.cpp
 libs/pre/pre_pch.h.cpp
+libs/solverconsole/solverconsole_pch.h.cpp
 libs/tmsloader/tmsloader_pch.h.cpp
+libs/triangle/triangle_pch.h.cpp
 plugins/gridexporter/gridlandxmlexporter/gridlandxmlexporter_pch.h.cpp
 plugins/gridexporter/structured15dgridwithcrosssectionhecrasexporter/structured15dgridwithcrosssectionhecrasexporter_pch.h.cpp
 plugins/gridexporter/structured2dgridnaysgridexporter/structured2dgridnaysgridexporter_pch.h.cpp
@@ -96,3 +101,5 @@ plugins/gridimporter/structured2dgridgdalimporter/structured2dgridgdalimporter_p
 plugins/gridimporter/structured2dgridnayscsvimporter/structured2dgridnayscsvimporter_pch.h.cpp
 plugins/gridimporter/structured2dgridnaysgridimporter/structured2dgridnaysgridimporter_pch.h.cpp
 plugins/gridimporter/unstructured2dgridtriangleimporter/unstructured2dgridtriangleimporter_pch.h.cpp
+tests/geometry/geometry_pch.h.cpp
+tests/iricpython/iricpython_pch.h.cpp

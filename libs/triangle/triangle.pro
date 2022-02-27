@@ -16,6 +16,9 @@ win32 {
 
 include( ../../paths.pri )
 
+# Use Precompiled headers (PCH)
+PRECOMPILED_HEADER = triangle_pch.h
+
 ######################
 # Internal libraries #
 ######################
