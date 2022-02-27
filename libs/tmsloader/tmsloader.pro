@@ -12,6 +12,9 @@ DEFINES += TMSLOADER_LIBRARY
 
 include( ../../paths.pri )
 
+# Use Precompiled headers (PCH)
+PRECOMPILED_HEADER = tmsloader_pch.h
+
 win32 {
 	DESTDIR = $(SolutionDir)/libdlls/$(Configuration)
 	LIBS += -L$(SolutionDir)/libdlls/$(Configuration)

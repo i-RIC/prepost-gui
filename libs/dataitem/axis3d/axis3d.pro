@@ -8,6 +8,9 @@ include( ../../../paths.pri )
 
 QT += widgets
 
+# Use Precompiled headers (PCH)
+PRECOMPILED_HEADER = axis3d_pch.h
+
 ######################
 # Internal libraries #
 ######################
