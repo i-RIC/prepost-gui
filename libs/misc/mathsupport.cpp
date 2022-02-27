@@ -1,5 +1,7 @@
 #define _USE_MATH_DEFINES
+#include <math.h>
 #include <cmath>
+
 #include "mathsupport.h"
 #include <QPolygonF>
 #include <QLineF>
