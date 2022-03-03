@@ -8,6 +8,9 @@ include( ../../paths.pri )
 
 QT += qml widgets xml
 
+# Use Precompiled headers (PCH)
+PRECOMPILED_HEADER = postbase_pch.h
+
 ######################
 # Internal libraries #
 ######################

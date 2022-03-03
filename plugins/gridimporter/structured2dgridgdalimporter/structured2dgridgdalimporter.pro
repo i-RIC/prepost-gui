@@ -5,6 +5,9 @@ QT       += widgets xml
 
 include( ../../../paths.pri )
 
+# Use Precompiled headers (PCH)
+PRECOMPILED_HEADER = structured2dgridgdalimporter_pch.h
+
 # iricGuicore library
 
 LIBS += -liricGuicore

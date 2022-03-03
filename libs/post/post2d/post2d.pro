@@ -12,6 +12,9 @@ include( ../../../paths.pri )
 
 QT += widgets xml
 
+# Use Precompiled headers (PCH)
+PRECOMPILED_HEADER = post2d_pch.h
+
 ######################
 # Internal libraries #
 ######################

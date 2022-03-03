@@ -14,6 +14,9 @@ CONFIG(debug, debug|release) {
 
 include( ../../paths.pri )
 
+# Use Precompiled headers (PCH)
+PRECOMPILED_HEADER = iricpython_pch.h
+
 ######################
 # Internal libraries #
 ######################

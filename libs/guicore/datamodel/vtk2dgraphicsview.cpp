@@ -1,5 +1,5 @@
 #define _USE_MATH_DEFINES
-#include <cmath>
+#include <math.h>
 
 #include "vtk2dgraphicsview.h"
 #include <guibase/vtk2dinteractorstyle.h>
