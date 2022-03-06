@@ -25,6 +25,7 @@ public:
 	QStringList containedFiles() const override;
 
 	void loadFromXmlFile(const QDomNode& node, const QDir workDir);
+	void loadSingleWindowFromXmlFile(const QDomNode& node, const QDir workDir);
 	void saveToXmlFile(QXmlStreamWriter& writer, const QDir workDir);
 
 private:

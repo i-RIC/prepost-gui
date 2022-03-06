@@ -46,41 +46,51 @@ ProjectPostProcessors::~ProjectPostProcessors()
 
 void ProjectPostProcessors::loadFromXmlFile(const QDomNode& node, const QDir workDir)
 {
-	QDomNode child = node.firstChild();
+	if (node.nodeName() == "iRICPostProcessingSettings") {
+		QDomNode child = node.firstChild();
+		while (! child.isNull()) {
+			loadSingleWindowFromXmlFile(child, workDir);
+			child = child.nextSibling();
+		}
+	} else if (node.nodeName() == "PostProcessor") {
+		loadSingleWindowFromXmlFile(node, workDir);
+	}
+}
+
+void ProjectPostProcessors::loadSingleWindowFromXmlFile(const QDomNode& node, const QDir workDir)
+{
 	QWidget* parentWindow = projectData()->mainWindow();
-	while (! child.isNull()) {
-		PostProcessorWindowProjectDataItem* di = nullptr;
-		QDomNode windowNode;
-		QDomElement childElem = child.toElement();
 
-		auto ref = childElem.attribute("ref");
-		if (ref != "") {
-			// file is saved in separate XML file
-			QString fname = workDir.filePath(ref);
-			if (QFile::exists(fname)) {
-				QFile f(fname);
-				QDomDocument doc;
-				bool ok = doc.setContent(&f);
-				if (ok) {
-					di = m_factory->restore(doc.documentElement(), this, parentWindow);
-					windowNode = doc.documentElement();
-				}
-			}
-		} else {
-			di = m_factory->restore(child, this, parentWindow);
-			windowNode = child;
-		}
+	PostProcessorWindowProjectDataItem* di = nullptr;
+	QDomNode windowNode;
+	QDomElement childElem = node.toElement();
 
-		if (di != nullptr) {
-			add(di);
-			try {
-				di->loadFromProjectMainFile(windowNode);
-			} catch (ErrorMessage m) {
-				m_postProcessorWindows.removeOne(di);
-				delete di;
+	auto ref = childElem.attribute("ref");
+	if (ref != "") {
+		// file is saved in separate XML file
+		QString fname = workDir.filePath(ref);
+		if (QFile::exists(fname)) {
+			QFile f(fname);
+			QDomDocument doc;
+			bool ok = doc.setContent(&f);
+			if (ok) {
+				di = m_factory->restore(doc.documentElement(), this, parentWindow);
+				windowNode = doc.documentElement();
 			}
 		}
-		child = child.nextSibling();
+	} else {
+		di = m_factory->restore(node, this, parentWindow);
+		windowNode = node;
+	}
+
+	if (di != nullptr) {
+		add(di);
+		try {
+			di->loadFromProjectMainFile(windowNode);
+		} catch (ErrorMessage m) {
+			m_postProcessorWindows.removeOne(di);
+			delete di;
+		}
 	}
 }
 

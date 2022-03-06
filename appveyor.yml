@@ -3,7 +3,7 @@ version: '{branch}-{build}'
 environment:
   CL: /MP
   generator: Visual Studio 16 2019
-  ifw_location: C:\Qt\Tools\QtInstallerFramework\4.2
+  ifw_location: C:\Qt\Tools\QtInstallerFramework\4.3
   iric_access_token:
     secure: WDcJrM7sx9jagk006F3OtXqomb90MlJcRIs8LoAyvT0wVzvG+UxeaW+oG9GWb1t8
   kskinoue0612_access_token:
