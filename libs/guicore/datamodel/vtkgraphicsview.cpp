@@ -361,7 +361,10 @@ vtkCamera* VTKGraphicsView::camera() const
 
 void VTKGraphicsView::render()
 {
-	impl->m_mainRenderer->GetRenderWindow()->Render();
+	auto renderWindow = impl->m_mainRenderer->GetRenderWindow();
+	if (renderWindow != 0) {
+		renderWindow->Render();
+	}
 }
 
 void VTKGraphicsView::restoreUpdateRate()
