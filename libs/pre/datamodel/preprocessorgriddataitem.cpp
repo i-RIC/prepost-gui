@@ -218,6 +218,7 @@ int PreProcessorGridDataItem::saveToCgnsFile(iRICLib::H5CgnsBase* base, const st
 {
 	if (impl->m_grid != nullptr) {
 		impl->m_grid->saveToCgnsFile(base, zoneName);
+		impl->m_grid->setModified(false);
 		if (m_bcGroupDataItem != nullptr) {
 			try {
 				auto zone = base->zone(zoneName);
