@@ -997,10 +997,6 @@ bool ProjectMainFile::importVisGraphSetting(const QString filename)
 	QString solverVersion = elem.attribute("solverVersion");
 	VersionNumber vn(solverVersion);
 
-	if (solvername != impl->m_solverName || ! impl->m_solverVersion.compatibleWith(vn)) {
-		int ret = QMessageBox::warning(iricMainWindow(), tr("Warning"), tr("This file is for solver %1 %2. It is not compatible with the solver you are using, so maybe importing this file will fail. Do you really want to import this file?").arg(solvername.c_str()).arg(solverVersion), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
-		if (ret == QMessageBox::No) {return false;}
-	}
 	impl->m_postProcessors->loadFromXmlFile(doc.documentElement(), workDir);
 
 	return true;
