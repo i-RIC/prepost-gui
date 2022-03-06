@@ -2195,7 +2195,7 @@ void iRICMainWindow::launchExternalTool()
 void iRICMainWindow::importVisGraphSetting()
 {
 	QString fname = QFileDialog::getOpenFileName(
-		this, tr("Import Visualization/Graph Settings"), LastIODirectory::get(), tr("Setting file (*.vgsetting)")
+		this, tr("Import Visualization/Graph Settings"), LastIODirectory::get(), tr("Setting file (*.vgsetting *.xml)")
 		);
 	if (fname == "") {return;}
 
