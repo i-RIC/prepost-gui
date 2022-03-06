@@ -328,7 +328,7 @@ void iRICMainWindow::openProject(const QString& filename)
 	if (fileinfo.isDir()) {
 		// Project directory is opened.
 		QSettings settings;
-		bool copyFolderProject = settings.value("general/copyfolderproject", true).toBool();
+		bool copyFolderProject = false; // this option is disabled now
 		if (copyFolderProject) {
 			// project folder is copyed to new work folder
 			QString wFolder = ProjectData::newWorkfolderName(m_workspace->workspace());
@@ -778,7 +778,7 @@ bool iRICMainWindow::saveProject(const QString& filename, bool folder)
 	}
 
 	QSettings settings;
-	bool copyFolderProject = settings.value("general/copyfolderproject", true).toBool();
+	bool copyFolderProject = false; // this option is disabled now
 
 	if (folder) {
 		if (! m_projectData->isInWorkspace()) {
