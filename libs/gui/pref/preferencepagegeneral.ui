@@ -78,13 +78,6 @@
         </property>
        </widget>
       </item>
-      <item>
-       <widget class="QCheckBox" name="folderCopyCheckBox">
-        <property name="text">
-         <string>Copy folder project to Working Directory when opened</string>
-        </property>
-       </widget>
-      </item>
      </layout>
     </widget>
    </item>
