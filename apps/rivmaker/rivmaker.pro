@@ -11,6 +11,9 @@ include( ../../paths.pri )
 QT += widgets network svg xml
 RC_FILE = rivmaker.rc
 
+# Use Precompiled headers (PCH)
+PRECOMPILED_HEADER = rivmaker_pch.h
+
 # iricGuiBase
 
 unix {

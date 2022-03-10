@@ -5,6 +5,9 @@ CONFIG += plugin
 
 include( ../../../paths.pri )
 
+# Use Precompiled headers (PCH)
+PRECOMPILED_HEADER = gridlandxmlexporter_pch.h
+
 # iricGuibase library
 
 unix {

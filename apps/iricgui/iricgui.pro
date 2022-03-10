@@ -12,6 +12,9 @@ include( ../../paths.pri )
 QT += network widgets xml
 RC_FILE = iricgui.rc
 
+# Use Precompiled headers (PCH)
+PRECOMPILED_HEADER = iricgui_pch.h
+
 ######################
 # Internal libraries #
 ######################

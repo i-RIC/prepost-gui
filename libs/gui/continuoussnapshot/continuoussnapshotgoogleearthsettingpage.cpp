@@ -5,7 +5,7 @@
 #include "continuoussnapshotwizard.h"
 
 #define _USE_MATH_DEFINES
-#include <cmath>
+#include <math.h>
 
 #include <cs/coordinatesystem.h>
 #include <guicore/post/postprocessorwindow.h>

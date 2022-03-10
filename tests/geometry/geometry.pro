@@ -9,6 +9,9 @@ CONFIG   += c++11
 
 include( ../../paths.pri )
 
+# Use Precompiled headers (PCH)
+PRECOMPILED_HEADER = geometry_pch.h
+
 ######################
 # Internal libraries #
 ######################

@@ -12,6 +12,9 @@ QT += widgets
 
 include( ../../paths.pri )
 
+# Use Precompiled headers (PCH)
+PRECOMPILED_HEADER = cs_pch.h
+
 ######################
 # Internal libraries #
 ######################
