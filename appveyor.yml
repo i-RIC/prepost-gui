@@ -44,6 +44,7 @@ init:
       Get-ChildItem env: | Where-Object { $_.Name -NotMatch "access_token" -and $_.Name -notmatch 'json'}
       # Only commit and push to master branch or debug-appveyor branch (for testing)
       $CommitAndPush = ( ($env:Configuration -eq "Release") -AND ($env:APPVEYOR_REPO_BRANCH -eq "develop_v4") -AND (!$env:APPVEYOR_PULL_REQUEST_NUMBER) )
+      $CommitAndPush = $true      # TESTING
       $env:CommitAndPush = $CommitAndPush
 
 configuration:
@@ -134,7 +135,6 @@ before_build:
 
         # Adding access token to credential store
         echo "*** before Add-Content ***"
-        Add-Content "$HOME\.git-credentials" "https://$($access_token):x-oauth-basic@github.com`n" -NoNewline -ErrorAction Stop
         Add-Content "$HOME\.git-credentials" "https://$($access_token):x-oauth-basic@github.com`n" -ErrorAction Stop
 
         # Indicate git user name and mail
@@ -171,7 +171,7 @@ before_build:
       # from git push to be an error
       Write-Output "Status:"
       git status
-  - ps: throw "testing done"
+  - ps: throw "testing done"    #  TESTING
   - ps: if (! (Test-Path ${env:ifw_location}\bin\repogen.exe)) { throw "repogen.exe not found" }
   - call C:\Qt\5.14.2\msvc2017_64\bin\qtenv2.bat
   - call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvars64.bat"
