@@ -233,7 +233,6 @@ def main(src_folder, tgt_folder, select_API):
         # 翻訳したい言語を取得
         # Get the language you want to translate
         lang = root.attrib['language']
-        print(f"lang = {lang}")
 
         # contextタグのリストを取得
         # Get a list of context tags

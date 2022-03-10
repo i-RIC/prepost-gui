@@ -44,11 +44,10 @@ init:
       Get-ChildItem env: | Where-Object { $_.Name -NotMatch "access_token" -and $_.Name -notmatch 'json'}
       # Only commit and push to master branch or debug-appveyor branch (for testing)
       $CommitAndPush = ( ($env:Configuration -eq "Release") -AND ($env:APPVEYOR_REPO_BRANCH -eq "develop_v4") -AND (!$env:APPVEYOR_PULL_REQUEST_NUMBER) )
-      $CommitAndPush = $true      # TESTING
       $env:CommitAndPush = $CommitAndPush
 
 configuration:
-#  - Debug
+  - Debug
   - Release
 
 matrix:
@@ -108,37 +107,30 @@ before_build:
       # Commit the languages changes
       # from https://www.appveyor.com/docs/how-to/git-push/
       ####################################################################################
-      echo "*** before commitandpush check ***"
       if ($CommitAndPush) {
         # determine whether to push to current or new branch and which
         # access_token to use (the branch is for testing)
         $branch = $True
         if ($env:APPVEYOR_REPO_NAME -eq "i-RIC/prepost-gui") {
-          echo "*** using iric_access_token ***"
           $access_token = $env:iric_access_token
           $branch = $False
         }
         if ($env:APPVEYOR_REPO_NAME -eq "scharlton2/prepost-gui") {
-          echo "*** using scharlton2_access_token ***"
           # online_update_2020_05_17 expires after a year if not used
           $access_token = $env:scharlton2_access_token
         }
         if ($env:APPVEYOR_REPO_NAME -eq "kskinoue0612/prepost-gui") {
-          echo "*** using kskinoue0612_access_token ***"
           $access_token = $env:kskinoue0612_access_token
         }
 
         # Enabling Git credential store
-        echo "*** before credential.helper ***"
         git config --global credential.helper store
         if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
 
         # Adding access token to credential store
-        echo "*** before Add-Content ***"
         Add-Content "$HOME\.git-credentials" "https://$($access_token):x-oauth-basic@github.com`n" -ErrorAction Stop
 
         # Indicate git user name and mail
-        echo "*** before config ***"
         git config --global user.email "iric.appveyor@gmail.com"
         git config --global user.name "iric.appveyor"
         git config --global core.safecrlf false
@@ -152,26 +144,21 @@ before_build:
         }        
 
         # add and commit language files (shouldn't be any new files)
-        echo "*** before commit ***"
         git commit -am "[skip ci] translate_ts.py by iric.appveyor $env:APPVEYOR_BUILD_VERSION"
         if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
 
         # push
         if ($branch) {
-          echo "*** before push branch ***"
           git push --set-upstream origin "__$env:APPVEYOR_BUILD_VERSION" 2>&1 | Out-Null
         } else {
-          echo "*** before push ***"
           git push --set-upstream origin $env:APPVEYOR_REPO_BRANCH 2>&1 | Out-Null
         }
         if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
       }
-      echo "***  commitandpush finished ***"
       # These lines are necessary to avoid appveyor considering the output
       # from git push to be an error
       Write-Output "Status:"
       git status
-  - ps: throw "testing done"    #  TESTING
   - ps: if (! (Test-Path ${env:ifw_location}\bin\repogen.exe)) { throw "repogen.exe not found" }
   - call C:\Qt\5.14.2\msvc2017_64\bin\qtenv2.bat
   - call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvars64.bat"
