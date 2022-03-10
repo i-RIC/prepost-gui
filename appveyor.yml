@@ -79,41 +79,45 @@ before_build:
       ####################################################################################
       # Run tools\translate_ts.py on all but the top languages directories
       ####################################################################################
-      $topdir = Get-Location
-      $env:GOOGLE_APPLICATION_CREDENTIALS = "$topdir\iric-ts-translation-4761fe6f85d6.json"
-      Write-Output "Should be EE6EA1115B3C696A88BA2F1E89BD6F88C8E50DE2E7D25B21488F5B4BAFCCD205"
-      Get-FileHash $env:GOOGLE_APPLICATION_CREDENTIALS
+      if ($env:Configuration -eq "Release") {
+        $topdir = Get-Location
+        $env:GOOGLE_APPLICATION_CREDENTIALS = "$topdir\iric-ts-translation-4761fe6f85d6.json"
+        Write-Output "Should be EE6EA1115B3C696A88BA2F1E89BD6F88C8E50DE2E7D25B21488F5B4BAFCCD205"
+        Get-FileHash $env:GOOGLE_APPLICATION_CREDENTIALS
 
-      python -m pip install --upgrade pip
-      pip install google-cloud-translate
+        python -m pip install --upgrade pip
+        pip install google-cloud-translate
 
-      $dirs = Get-ChildItem -Attributes Directory | Where-Object { $_.Name -notmatch 'languages' }
-      foreach ($dir in $dirs) {
-        $langs = Get-ChildItem -Recurse -Attributes Directory $dir | Where-Object { $_.Name -like 'languages' }
-        foreach ($lang in $langs) {
-            Set-Location $lang.Parent
-            mkdir output
-            Rename-Item .\languages .\input
-            python "$topdir\tools\translate_ts.py"
-            Rename-Item .\output .\languages
-            Remove-Item -Recurse -Force .\input
+        $dirs = Get-ChildItem -Attributes Directory | Where-Object { $_.Name -notmatch 'languages' }
+        foreach ($dir in $dirs) {
+          $langs = Get-ChildItem -Recurse -Attributes Directory $dir | Where-Object { $_.Name -like 'languages' }
+          foreach ($lang in $langs) {
+              Set-Location $lang.Parent
+              mkdir output
+              Rename-Item .\languages .\input
+              python "$topdir\tools\translate_ts.py"
+              Rename-Item .\output .\languages
+              Remove-Item -Recurse -Force .\input
+          }
         }
+        Set-Location $topdir
+        rm .\iric-ts-translation-4761fe6f85d6.json
+        git status
       }
-      Set-Location $topdir
-      rm .\iric-ts-translation-4761fe6f85d6.json
-      git status
   - ps: |
       ####################################################################################
       # Commit the languages changes
       # from https://www.appveyor.com/docs/how-to/git-push/
       ####################################################################################
-      if ($CommitAndPush) {
+      if ($env:Configuration -eq "Release") {
         # determine whether to push to current or new branch and which
         # access_token to use (the branch is for testing)
         $branch = $True
         if ($env:APPVEYOR_REPO_NAME -eq "i-RIC/prepost-gui") {
           $access_token = $env:iric_access_token
-          $branch = $False
+          if ( ($env:APPVEYOR_REPO_BRANCH -eq "develop_v4") -AND (!$env:APPVEYOR_PULL_REQUEST_NUMBER) ) {
+            $branch = $False
+          }
         }
         if ($env:APPVEYOR_REPO_NAME -eq "scharlton2/prepost-gui") {
           # online_update_2020_05_17 expires after a year if not used
