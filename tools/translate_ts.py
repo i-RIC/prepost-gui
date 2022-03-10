@@ -6,6 +6,12 @@
 # 
 # Input data -> 〇〇.ts（プログラムではフォルダを指定している）
 # Output data -> 〇〇.ts（上書き保存される）
+#
+# Processing performed by this program
+# Translate untranslated text in ts file (xml format)
+#
+# Input data -> 〇〇.ts（The program specifies a folder）
+# Output data -> 〇〇.ts（Overwritten and saved）
 # ------------------------------------------------------------
 
 import html
@@ -33,21 +39,27 @@ def translation_by_deepl(word, lang):
 def translation_by_googlecloud(word, lang):
 
     # 作業フォルダの取得
+    # Get working folder
     cwd = os.getcwd()
 
     # GCPのプロジェクトIDを読み込む
+    # Read the GCP project ID
     project_id = "iric-ts-translation"
     # Google Cloud Translationアクセス用のkeyを読み込む
+    # Load the key for Google Cloud Translation access
     ##key = cwd + '/iric-ts-translation-4761fe6f85d6.json'
     # 上記アクセスkeyを環境変数に設定する
+    # Set the above access key to an environment variable
     ##os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = key
 
     # 以下は特に変更しない
+    # The following is not changed
     client = translate.TranslationServiceClient()
     location = "global"
     parent = f"projects/{project_id}/locations/{location}"
 
     # 以下の情報をGoogle Cloud Translationに投げる
+    # Send the following information to Google Cloud Translation
     # print(word)
     word, placeholders = make_placeholders(word)
 
@@ -76,6 +88,7 @@ def make_placeholders(word):
     placeholders = dict()
 
     # メニュー対応
+    # Menu support
 
     m = re.search(r'^(.*)(&amp;(.))(.*?)(\.\.\.|)$', word)
     if not m is None:
@@ -119,6 +132,7 @@ def _cleanup_trans(trans):
     trans = trans.replace(' ,', ',')
 
     # (%1), "%1" に対応
+    # Corresponds to (%1), "%1"
     
     m = re.search(r'^(.*)\( (%[0-9]) \)(.*)$', trans)
     if not m is None:
@@ -160,6 +174,7 @@ def translation(word, lang, select_API):
                    'vi_VN':'vi', 'zh_CN':'zh-cn', 'zh_TW':'zh-tw'}
 
     # 翻訳できない言語の場合、Errorと表記させる
+    # If the language cannot be translated, write it as Error.
     if lang in google_dict == False:
         print(lang + "には翻訳できません")
         trans = 'Error'
@@ -167,24 +182,31 @@ def translation(word, lang, select_API):
 
     if select_API == 1:
         # 翻訳したい言語にDeepLが対応しているかチェック
+        # Check if DeepL supports the language you want to translate
         judge = lang in DeepL_dict
 
         if judge == True:
             # deepl辞書からlangを取得する
+            # Get lang from deepl dictionary
             lang = DeepL_dict[lang]
             # DeepLにwordとlangを投げる
+            # Send word and lang to DeepL
             trans = translation_by_deepl(word, lang)
         
         else:
             # google辞書からlangを取得する
+            # Get lang from google dictionary
             lang = google_dict[lang]
             # google翻訳にwordとlangを投げる
+            # Send word and lang to google translate
             trans = translation_by_googlecloud(word, lang)
     
     else:
         # google辞書からlangを取得する
+        # Get lang from google dictionary
         lang = google_dict[lang]
         # ここでgoogle翻訳にwordとlangを投げる
+        # Send word and lang to google translate here
         trans = translation_by_googlecloud(word, lang)
 
     return trans
@@ -192,6 +214,7 @@ def translation(word, lang, select_API):
 def main(src_folder, tgt_folder, select_API):
 
     # tsファイルリストの取得
+    # Get ts file list
     file_list = glob.glob(src_folder + '/*.ts')
 
     for fl in file_list:
@@ -203,54 +226,67 @@ def main(src_folder, tgt_folder, select_API):
         print(fl)
 
         # tsファイルをparseする
+        # parse ts file
         tree = ET.parse(fl)
         root = tree.getroot()
 
         # 翻訳したい言語を取得
+        # Get the language you want to translate
         lang = root.attrib['language']
+        print(f"lang = {lang}")
 
         # contextタグのリストを取得
+        # Get a list of context tags
         con_list = root.findall('context')
 
         # context内に含まれるmessageタグのリストを取得
+        # Get a list of message tags contained in context
         for cl in con_list:
             mes_list = cl.findall('message')
 
             for ml in mes_list:
 
                 # translationタグに属性がない場合、何もしない
+                # If the #translation tag has no attributes, do nothing
                 if ml[1].attrib == {}:
                     # print('OK')
                     pass
 
                 # message内のtranslationのtypeが'unfinished'かどうか判断
+                # Determine if the translation type in the message is'unfinished'
                 elif ml[1].attrib['type'] == 'unfinished':
 
                     # 翻訳したいテキストを取得
+                    # Get the text you want to translate
                     before_text = ml[0].text
 
                     # 翻訳処理
+                    # Translation process
                     trans_text = translation(before_text, lang, select_API)
                     # print(trans_text)
 
                     # ml[1]のunfinished属性を消す
+                    # Remove the unfinished attribute of ml [1]
                     ml[1].attrib.pop('type', None)
 
                     # ml[1]のテキストにtrans_textを代入する
+                    # Substitute trans_text for the text of ml [1]
                     ml[1].text = trans_text
                 
                 # vanished
                 elif ml[1].attrib['type'] == 'vanished':
                     # 何もしない
+                    # do nothing
                     pass
 
                 # obsolete
                 elif ml[1].attrib['type'] == 'obsolete':
                     # 何もしない
+                    # do nothing
                     pass
                 else:
-                    print('属性情報が不正です: {0}'.format(ml[1].attrib['type']))
-                    print('ファイル => ' + fl)
+                    print('属性情報が不正です: {0}'.format(ml[1].attrib['type']))    # The attribute information is invalid
+                    print('ファイル => ' + fl)                                      # File
 
         tree.write(tgt_name, encoding='UTF-8')
 
@@ -259,11 +295,15 @@ def main(src_folder, tgt_folder, select_API):
 if __name__ == '__main__':
 
     # 翻訳したいtsファイルを格納するフォルダ
+    # Folder to store the ts file you want to translate
     folder = './languages'
 
     # 翻訳APIの選択
     # DeepLで翻訳できる言語はDeepLを使う => 1
     # 全ての言語でgoogle Cloud Translationを使う => 2
+    # Translation API selection
+    # Use DeepL for languages ​​that can be translated with DeepL => 1
+    # Use google Cloud Translation in all languages ​​=> 2
     select_API = 2
 
     main('input', 'output', select_API)
