@@ -40,11 +40,16 @@ image:
 # other way around (see develop_v4-363)
 init:
   - ps: |
+      if ($env:iric_json) { echo ($env:iric_json).Length }
+      ($env:iric_json).Split(";")[0..1]
       # Sometimes the plaintext of secure variables is displayed so filter out secure vars
       Get-ChildItem env: | Where-Object { $_.Name -NotMatch "access_token" -and $_.Name -notmatch 'json'}
       # Only commit and push to master branch or debug-appveyor branch (for testing)
       $CommitAndPush = ( ($env:Configuration -eq "Release") -AND ($env:APPVEYOR_REPO_BRANCH -eq "develop_v4") -AND (!$env:APPVEYOR_PULL_REQUEST_NUMBER) )
       $env:CommitAndPush = $CommitAndPush
+  - pwsh: |
+      if ($env:iric_json) { echo ($env:iric_json).Length }
+      ($env:iric_json).Split(";")[0..1]
 
 configuration:
   - Debug
