@@ -43,6 +43,9 @@ doxygendoc/**/html
 doxygendoc/**/rtf
 doxygen_warnings.txt
 
+# translate_ts.py google translate key
+**/iric-ts-translation-4761fe6f85d6.json
+
 # precompiled headers
 apps/iricgui/iricgui_pch.h.cpp
 apps/rivmaker/rivmaker_pch.h.cpp

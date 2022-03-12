@@ -1,5 +1,6 @@
 version: '{branch}-{build}'
 
+# Secure variables are not available during PRs
 environment:
   CL: /MP
   generator: Visual Studio 16 2019
@@ -9,7 +10,14 @@ environment:
   kskinoue0612_access_token:
     secure: GzdhhFKWjeLDM22U4ZcrMkAGEEnZLMVbfBR9W8uRQ/LqOtvX2qjPXvC3nvxxWeUc
   scharlton2_access_token:
-    secure: CS9f7K3/ePypXUjKJ5S5iX2WFLNpC0IH4LEC9jYXdvcNbaM7CFl0fU5Ws/qUDgvo
+    secure: 3mXPZnI89IUSgBnFS4uVNiz69PVY7KG4jw+wPTj0ubg9iAjjw9oKacWVZvoxulyy
+  iric_json_pw:
+    secure: CVCXzASqkq3przUfkNlvcw==
+  kskinoue0612_json_pw:
+    secure: todo
+  scharlton2_json_pw:
+    secure: AOPP/aIpAdcXyiczRqovDQ==
+
 
 # Skipping commits affecting specific files (GitHub only).
 # also can use [skip appveyor] in message to skip building
@@ -27,12 +35,18 @@ image:
 # called before clone
 # Note that environment variables don't seem to transfer correctly from cmd to ps when
 # they contain spaces
+#
+# Neither env nor powershell variables are passed when using pwsh. Now $CommitAndPush
+# must be re-evaluated everytime.  env vars CAN be passed from ps: to pwsh: but not the
+# other way around (see develop_v4-363)
 init:
-  ## Sometimes the plaintext of secure variables is displayed so filter out access_tokens
-  - ps: 'Get-ChildItem env: | Where-Object { $_.Name -NotMatch "access_token" }'
-  # Only commit and push to master branch or debug-appveyor branch (for testing)
-  - ps: $CommitAndPush = (($env:Configuration -eq "Release") -AND (($env:APPVEYOR_REPO_BRANCH -eq "master") -OR ($env:APPVEYOR_REPO_BRANCH -eq "develop_v4")) -AND (!$env:APPVEYOR_PULL_REQUEST_NUMBER))
-  - ps: Write-Output $CommitAndPush
+  - ps: |
+      if (! (Test-Path ${env:ifw_location}\bin\repogen.exe)) { throw 'repogen.exe not found (check $env:ifw_location' }
+      # Sometimes the plaintext of secure variables is displayed so filter out secure vars
+      Get-ChildItem env: | Where-Object { $_.Name -NotMatch "access_token" -and $_.Name -notmatch 'json_pw'}
+      # Only commit and push to master branch or debug-appveyor branch (for testing)
+      $CommitAndPush = ( ($env:Configuration -eq "Release") -AND ($env:APPVEYOR_REPO_BRANCH -eq "develop_v4") -AND (!$env:APPVEYOR_PULL_REQUEST_NUMBER) )
+      $env:CommitAndPush = $CommitAndPush
 
 configuration:
   - Debug
@@ -43,8 +57,120 @@ matrix:
 
 # Note mkdir is from Git (C:\Program Files\Git\usr\bin\mkdir.exe)
 # It might give unexpected results (use md instead)
+#
+# Neither env nor powershell variables are passed when using pwsh shell
 before_build:
-  - ps: if (! (Test-Path ${env:ifw_location}\bin\repogen.exe)) { throw "repogen.exe not found" }
+  - pwsh: |
+      ####################################################################################
+      # *_json_pw env vars contain encrypted password
+      ####################################################################################
+      if ($env:Configuration -eq "Release" -AND (!$env:APPVEYOR_PULL_REQUEST_NUMBER)) {
+        if ($env:APPVEYOR_REPO_NAME -eq "i-RIC/prepost-gui") {
+          $pw = $env:iric_json_pw
+        }
+        if ($env:APPVEYOR_REPO_NAME -eq "scharlton2/prepost-gui") {
+          $pw = $env:scharlton2_json_pw
+        }
+        if ($env:APPVEYOR_REPO_NAME -eq "kskinoue0612/prepost-gui") {
+          $pw = $env:kskinoue0612_json_pw
+        }
+        if ($pw -eq $null) {
+          throw "Password not set"
+        }
+        7z x -p"$($pw*10)" iric-ts-translation-4761fe6f85d6.json.7z
+        Write-Output "Should be EE6EA1115B3C696A88BA2F1E89BD6F88C8E50DE2E7D25B21488F5B4BAFCCD205"
+        Get-FileHash "iric-ts-translation-4761fe6f85d6.json"
+      }
+  - pwsh: |
+      ####################################################################################
+      # Run tools\translate_ts.py on all but the top languages directories
+      ####################################################################################
+      if ($env:Configuration -eq "Release" -AND (!$env:APPVEYOR_PULL_REQUEST_NUMBER)) {
+        $topdir = Get-Location
+        $env:GOOGLE_APPLICATION_CREDENTIALS = "$topdir\iric-ts-translation-4761fe6f85d6.json"
+        Write-Output "Should be EE6EA1115B3C696A88BA2F1E89BD6F88C8E50DE2E7D25B21488F5B4BAFCCD205"
+        Get-FileHash $env:GOOGLE_APPLICATION_CREDENTIALS
+
+        python -m pip install --upgrade pip
+        pip install google-cloud-translate
+
+        $dirs = Get-ChildItem -Attributes Directory | Where-Object { $_.Name -notmatch 'languages' }
+        foreach ($dir in $dirs) {
+          $langs = Get-ChildItem -Recurse -Attributes Directory $dir | Where-Object { $_.Name -like 'languages' }
+          foreach ($lang in $langs) {
+              Set-Location $lang.Parent
+              mkdir output
+              Rename-Item .\languages .\input
+              python "$topdir\tools\translate_ts.py"
+              Rename-Item .\output .\languages
+              Remove-Item -Recurse -Force .\input
+          }
+        }
+        Set-Location $topdir
+        rm .\iric-ts-translation-4761fe6f85d6.json
+        git status
+      }
+  - ps: |
+      ####################################################################################
+      # Commit the languages changes
+      # from https://www.appveyor.com/docs/how-to/git-push/
+      ####################################################################################
+      if ($env:Configuration -eq "Release" -AND (!$env:APPVEYOR_PULL_REQUEST_NUMBER)) {
+        # determine whether to push to current or new branch and which
+        # access_token to use (the branch is for testing)
+        $branch = $True
+        if ($env:APPVEYOR_REPO_NAME -eq "i-RIC/prepost-gui") {
+          $access_token = $env:iric_access_token
+          if ($env:APPVEYOR_REPO_BRANCH -eq "develop_v4") {
+            $branch = $False
+          }
+        }
+        if ($env:APPVEYOR_REPO_NAME -eq "scharlton2/prepost-gui") {
+          $access_token = $env:scharlton2_access_token
+        }
+        if ($env:APPVEYOR_REPO_NAME -eq "kskinoue0612/prepost-gui") {
+          $access_token = $env:kskinoue0612_access_token
+        }
+        if ($access_token -eq $null) {
+          throw "Access token not set"
+        }
+
+        # Enabling Git credential store
+        git config --global credential.helper store
+        if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
+
+        # Adding access token to credential store
+        Add-Content "$HOME\.git-credentials" "https://$($access_token):x-oauth-basic@github.com`n" -ErrorAction Stop
+
+        # Indicate git user name and mail
+        git config --global user.email "iric.appveyor@gmail.com"
+        git config --global user.name "iric.appveyor"
+        git config --global core.safecrlf false
+        if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
+
+        # Create branch if necessary
+        if ($branch) {
+          # create branch
+          git switch --quiet -c "__$env:APPVEYOR_BUILD_VERSION"
+          if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
+        }        
+
+        # add and commit language files (shouldn't be any new files)
+        git commit -am "[skip ci] translate_ts.py by iric.appveyor $env:APPVEYOR_BUILD_VERSION"
+        if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
+
+        # push
+        if ($branch) {
+          git push --set-upstream origin "__$env:APPVEYOR_BUILD_VERSION" 2>&1 | Out-Null
+        } else {
+          git push --set-upstream origin $env:APPVEYOR_REPO_BRANCH 2>&1 | Out-Null
+        }
+        if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
+      }
+      # These lines are necessary to avoid appveyor considering the output
+      # from git push to be an error
+      Write-Output "Status:"
+      git status
   - call C:\Qt\5.14.2\msvc2017_64\bin\qtenv2.bat
   - call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvars64.bat"
   - cd %APPVEYOR_BUILD_FOLDER%
@@ -80,8 +206,7 @@ after_build:
   - cd %APPVEYOR_BUILD_FOLDER%\tools
   - set SAVE_PATH=%PATH%
   - set PATH=C:\Python37-x64;%PATH%
-  - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2019" ( python copydllsExt-2019.py )
-  - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2013" ( python copydllsExt.py )
+  - python copydllsExt-2019.py
   - python lrelease.py
   - set PATH=%SAVE_PATH%
   - cd %APPVEYOR_BUILD_FOLDER%
