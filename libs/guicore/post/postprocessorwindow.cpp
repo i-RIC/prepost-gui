@@ -14,11 +14,11 @@
 const int PostProcessorWindow::MINWIDTH = 120;
 const int PostProcessorWindow::MINHEIGHT = 100;
 
-PostProcessorWindow::PostProcessorWindow(QWidget* parent, int index, PostProcessorWindowProjectDataItem* pdi)
-	: QMainWindow(parent)
+PostProcessorWindow::PostProcessorWindow(QWidget* parent, int index, PostProcessorWindowProjectDataItem* pdi) :
+	QMainWindow(parent),
+	m_projectDataItem {pdi},
+	m_index {index}
 {
-	m_projectDataItem = pdi;
-	m_index = index;
 	setMinimumSize(MINWIDTH, MINHEIGHT);
 }
 

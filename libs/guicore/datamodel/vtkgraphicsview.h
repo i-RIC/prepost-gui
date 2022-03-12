@@ -3,7 +3,7 @@
 
 #include "../guicore_global.h"
 
-#include <QVTKWidget.h>
+#include <QVTKOpenGLNativeWidget.h>
 #include <QUndoCommand>
 
 #include <vtkSmartPointer.h>
@@ -14,7 +14,7 @@ class vtkCamera;
 class vtkRenderer;
 class vtkInteractorObserver;
 
-class GUICOREDLL_EXPORT VTKGraphicsView : public QVTKWidget
+class GUICOREDLL_EXPORT VTKGraphicsView : public QVTKOpenGLNativeWidget
 {
 	Q_OBJECT
 

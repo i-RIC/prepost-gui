@@ -1,6 +1,3 @@
-#define REAL double
-#define VOID void
-
 #include "geodatapointmap.h"
 #include "geodatapointmapbreakline.h"
 #include "geodatapointmapdelptsgreaterthandialog.h"

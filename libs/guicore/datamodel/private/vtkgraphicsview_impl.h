@@ -5,6 +5,7 @@
 
 class vtkActor2D;
 class vtkCamera;
+class vtkGenericOpenGLRenderWindow;
 
 class VTKGraphicsView::Impl
 {
@@ -12,6 +13,7 @@ public:
 	Impl();
 	~Impl();
 
+	vtkGenericOpenGLRenderWindow* m_renderWindow;
 	GraphicsWindowDataItem* m_activeDataItem;
 	GraphicsWindowSimpleDataModel* m_model;
 

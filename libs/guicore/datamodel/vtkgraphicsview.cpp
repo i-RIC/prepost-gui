@@ -13,6 +13,7 @@
 #include <vtkActor.h>
 #include <vtkRenderWindow.h>
 #include <vtkCamera.h>
+#include <vtkGenericOpenGLRenderWindow.h>
 #include <vtkInteractorStyleRubberBandZoom.h>
 #include <vtkMath.h>
 #include <vtkRenderer.h>
@@ -31,26 +32,27 @@
 #include <vtkQImageToImageSource.h>
 
 VTKGraphicsView::Impl::Impl() :
+	m_renderWindow {vtkGenericOpenGLRenderWindow::New()},
 	m_activeDataItem {nullptr},
 	m_model {nullptr},
 
-	m_rubberBarStyle(vtkInteractorStyleRubberBandZoom::New()),
-	m_styleBackUp(),
-	m_camera(vtkCamera::New()),
-	m_mainRenderer(vtkRenderer::New()),
-	m_logoActor(vtkActor2D::New()),
+	m_rubberBarStyle{vtkInteractorStyleRubberBandZoom::New()},
+	m_styleBackUp {},
+	m_mainRenderer {vtkRenderer::New()},
+	m_logoActor {vtkActor2D::New()},
+	m_camera {vtkCamera::New()},
 
-	m_logoImage(":/libs/guicore/images/logo.png"),
+	m_logoImage {":/libs/guicore/images/logo.png"},
 
-	m_zoomPixmap(":/libs/guibase/images/cursorZoom.png"),
-	m_rotatePixmap(":/libs/guibase/images/cursorRotate.png"),
-	m_movePixmap(":/libs/guibase/images/cursorMove.png"),
-	m_rubberBandPixmap(":/libs/guicore/images/cursorImageZoom.png"),
+	m_zoomPixmap {":/libs/guibase/images/cursorZoom.png"},
+	m_rotatePixmap {":/libs/guibase/images/cursorRotate.png"},
+	m_movePixmap {":/libs/guibase/images/cursorMove.png"},
+	m_rubberBandPixmap {":/libs/guicore/images/cursorImageZoom.png"},
 
-	m_zoomCursor(m_zoomPixmap),
-	m_rotateCursor(m_rotatePixmap),
-	m_moveCursor(m_movePixmap),
-	m_rubberBandCursor(m_rubberBandPixmap),
+	m_zoomCursor {m_zoomPixmap},
+	m_rotateCursor {m_rotatePixmap},
+	m_moveCursor {m_movePixmap},
+	m_rubberBandCursor {m_rubberBandPixmap},
 
 	m_interactive {false},
 	m_isViewChanging {false},
@@ -62,14 +64,17 @@ VTKGraphicsView::Impl::~Impl()
 	m_rubberBarStyle->Delete();
 	m_mainRenderer->Delete();
 	m_logoActor->Delete();
+	m_renderWindow->Delete();
 }
 
 VTKGraphicsView::VTKGraphicsView(QWidget* parent) :
-	QVTKWidget(parent),
+	QVTKOpenGLNativeWidget {parent},
 	impl {new Impl()}
 {
+	auto rw = impl->m_renderWindow;
+	SetRenderWindow(rw);
+	rw->AddRenderer(impl->m_mainRenderer);
 	impl->m_mainRenderer->SetBackground(1.0, 1.0, 1.0);
-
 	vtkSmartPointer<vtkQImageToImageSource> imgToImg = vtkSmartPointer<vtkQImageToImageSource>::New();
 	imgToImg->SetQImage(&(impl->m_logoImage));
 	vtkSmartPointer<vtkImageMapper> imgMapper = vtkSmartPointer<vtkImageMapper>::New();
@@ -81,10 +86,8 @@ VTKGraphicsView::VTKGraphicsView(QWidget* parent) :
 	impl->m_logoActor->SetMapper(imgMapper);
 	impl->m_mainRenderer->AddActor2D(impl->m_logoActor);
 
-	vtkRenderWindow* renderWindow = GetRenderWindow();
-	renderWindow->SetMultiSamples(0);
-	renderWindow->AddRenderer(impl->m_mainRenderer);
-	renderWindow->SetStereoTypeToDresden();
+	rw->SetMultiSamples(0);
+	rw->SetStereoTypeToDresden();
 
 	// Set the camera to be paralell projection, because it suits
 	// for 2D graphics.
@@ -124,7 +127,7 @@ void VTKGraphicsView::keyPressEvent(QKeyEvent* event)
 	if (impl->m_activeDataItem != nullptr) {
 		impl->m_activeDataItem->keyPressEvent(event, this);
 	} else if (impl->m_interactive) {
-		QVTKWidget::keyPressEvent(event);
+		QVTKOpenGLNativeWidget::keyPressEvent(event);
 	}
 }
 
@@ -133,7 +136,7 @@ void VTKGraphicsView::keyReleaseEvent(QKeyEvent* event)
 	if (impl->m_activeDataItem != nullptr) {
 		impl->m_activeDataItem->keyReleaseEvent(event, this);
 	} else if (impl->m_interactive) {
-		QVTKWidget::keyReleaseEvent(event);
+		QVTKOpenGLNativeWidget::keyReleaseEvent(event);
 	}
 }
 
@@ -142,7 +145,7 @@ void VTKGraphicsView::mouseDoubleClickEvent(QMouseEvent* event)
 	if (impl->m_activeDataItem != nullptr) {
 		impl->m_activeDataItem->mouseDoubleClickEvent(event, this);
 	} else if (impl->m_interactive) {
-		QVTKWidget::mouseDoubleClickEvent(event);
+		QVTKOpenGLNativeWidget::mouseDoubleClickEvent(event);
 	}
 }
 
@@ -151,10 +154,7 @@ void VTKGraphicsView::mousePressEvent(QMouseEvent* event)
 	// Emit a mouse press event for anyone who might be interested
 	emit mouseEvent(event);
 
-	vtkRenderWindowInteractor* iren = NULL;
-	if (this->mRenWin) {
-		iren = this->mRenWin->GetInteractor();
-	}
+	vtkRenderWindowInteractor* iren = impl->m_renderWindow->GetInteractor();
 	if (!iren || !iren->GetEnabled()) {
 		return;
 	}
@@ -199,7 +199,7 @@ void VTKGraphicsView::mousePressEvent(QMouseEvent* event)
 			vtkRenderWindowInteractor* i = GetRenderWindow()->GetInteractor();
 			vtkSmartPointer<vtkInteractorObserver> style = i->GetInteractorStyle();
 			i->SetInteractorStyle(nullptr);
-			QVTKWidget::mousePressEvent(event);
+			QVTKOpenGLNativeWidget::mousePressEvent(event);
 			i->SetInteractorStyle(style);
 		}
 	}
@@ -207,10 +207,7 @@ void VTKGraphicsView::mousePressEvent(QMouseEvent* event)
 
 void VTKGraphicsView::mouseReleaseEvent(QMouseEvent* event)
 {
-	vtkRenderWindowInteractor* iren = NULL;
-	if (this->mRenWin) {
-		iren = this->mRenWin->GetInteractor();
-	}
+	vtkRenderWindowInteractor* iren = impl->m_renderWindow->GetInteractor();
 	if (!iren || !iren->GetEnabled()) {
 		return;
 	}
@@ -225,7 +222,7 @@ void VTKGraphicsView::mouseReleaseEvent(QMouseEvent* event)
 			if (impl->m_isRubberBandZooming) {
 				iren->InvokeEvent(vtkCommand::LeftButtonReleaseEvent, event);
 				impl->m_isRubberBandZooming = false;
-				this->mRenWin->GetInteractor()->SetInteractorStyle(impl->m_styleBackUp);
+				iren->SetInteractorStyle(impl->m_styleBackUp);
 			}
 			impl->m_activeDataItem->viewOperationEnded(this);
 			GraphicsWindowDataModel* m = dynamic_cast<GraphicsWindowDataModel*>(impl->m_model);
@@ -237,7 +234,7 @@ void VTKGraphicsView::mouseReleaseEvent(QMouseEvent* event)
 		vtkRenderWindowInteractor* i = GetRenderWindow()->GetInteractor();
 		vtkSmartPointer<vtkInteractorObserver> style = i->GetInteractorStyle();
 		i->SetInteractorStyle(nullptr);
-		QVTKWidget::mouseReleaseEvent(event);
+		QVTKOpenGLNativeWidget::mouseReleaseEvent(event);
 		i->SetInteractorStyle(style);
 	}
 	impl->m_isViewChanging = false;
@@ -262,21 +259,21 @@ void VTKGraphicsView::mouseMoveEvent(QMouseEvent* event)
 {
 	if (impl->m_isViewChanging) {
 		// do the QVTKWidget implementation.
-		QVTKWidget::mouseMoveEvent(event);
+		QVTKOpenGLNativeWidget::mouseMoveEvent(event);
 	} else if (impl->m_activeDataItem != nullptr) {
 		impl->m_activeDataItem->mouseMoveEvent(event, this);
 	} else if (impl->m_interactive) {
 		vtkRenderWindowInteractor* i = GetRenderWindow()->GetInteractor();
 		vtkSmartPointer<vtkInteractorObserver> style = i->GetInteractorStyle();
 		i->SetInteractorStyle(nullptr);
-		QVTKWidget::mouseMoveEvent(event);
+		QVTKOpenGLNativeWidget::mouseMoveEvent(event);
 		i->SetInteractorStyle(style);
 	}
 }
 
 void VTKGraphicsView::wheelEvent(QWheelEvent* event)
 {
-	QVTKWidget::wheelEvent(event);
+	QVTKOpenGLNativeWidget::wheelEvent(event);
 	if (impl->m_activeDataItem != nullptr) {
 		impl->m_activeDataItem->wheelEvent(event, this);
 	}
@@ -291,7 +288,7 @@ void VTKGraphicsView::standardKeyPressEvent(QKeyEvent* event)
 	vtkRenderWindowInteractor* i = GetRenderWindow()->GetInteractor();
 	vtkSmartPointer<vtkInteractorObserver> style = i->GetInteractorStyle();
 	i->SetInteractorStyle(nullptr);
-	QVTKWidget::keyPressEvent(event);
+	QVTKOpenGLNativeWidget::keyPressEvent(event);
 	i->SetInteractorStyle(style);
 }
 
@@ -300,7 +297,7 @@ void VTKGraphicsView::standardKeyReleaseEvent(QKeyEvent* event)
 	vtkRenderWindowInteractor* i = GetRenderWindow()->GetInteractor();
 	vtkSmartPointer<vtkInteractorObserver> style = i->GetInteractorStyle();
 	i->SetInteractorStyle(nullptr);
-	QVTKWidget::keyReleaseEvent(event);
+	QVTKOpenGLNativeWidget::keyReleaseEvent(event);
 	i->SetInteractorStyle(style);
 }
 
@@ -309,7 +306,7 @@ void VTKGraphicsView::standardMouseDoubleClickEvent(QMouseEvent* event)
 	vtkRenderWindowInteractor* i = GetRenderWindow()->GetInteractor();
 	vtkSmartPointer<vtkInteractorObserver> style = i->GetInteractorStyle();
 	i->SetInteractorStyle(nullptr);
-	QVTKWidget::mouseDoubleClickEvent(event);
+	QVTKOpenGLNativeWidget::mouseDoubleClickEvent(event);
 	i->SetInteractorStyle(style);
 }
 
@@ -318,7 +315,7 @@ void VTKGraphicsView::standardMousePressEvent(QMouseEvent* event)
 	vtkRenderWindowInteractor* i = GetRenderWindow()->GetInteractor();
 	vtkSmartPointer<vtkInteractorObserver> style = i->GetInteractorStyle();
 	i->SetInteractorStyle(nullptr);
-	QVTKWidget::mousePressEvent(event);
+	QVTKOpenGLNativeWidget::mousePressEvent(event);
 	i->SetInteractorStyle(style);
 }
 
@@ -327,7 +324,7 @@ void VTKGraphicsView::standardMouseReleaseEvent(QMouseEvent* event)
 	vtkRenderWindowInteractor* i = GetRenderWindow()->GetInteractor();
 	vtkSmartPointer<vtkInteractorObserver> style = i->GetInteractorStyle();
 	i->SetInteractorStyle(nullptr);
-	QVTKWidget::mouseReleaseEvent(event);
+	QVTKOpenGLNativeWidget::mouseReleaseEvent(event);
 	i->SetInteractorStyle(style);
 }
 
@@ -336,7 +333,7 @@ void VTKGraphicsView::standardMouseMoveEvent(QMouseEvent* event)
 	vtkRenderWindowInteractor* i = GetRenderWindow()->GetInteractor();
 	vtkSmartPointer<vtkInteractorObserver> style = i->GetInteractorStyle();
 	i->SetInteractorStyle(nullptr);
-	QVTKWidget::mouseMoveEvent(event);
+	QVTKOpenGLNativeWidget::mouseMoveEvent(event);
 	i->SetInteractorStyle(style);
 }
 
@@ -345,7 +342,7 @@ void VTKGraphicsView::standardWheelEvent(QWheelEvent* event)
 	vtkRenderWindowInteractor* i = GetRenderWindow()->GetInteractor();
 	vtkSmartPointer<vtkInteractorObserver> style = i->GetInteractorStyle();
 	i->SetInteractorStyle(nullptr);
-	QVTKWidget::wheelEvent(event);
+	QVTKOpenGLNativeWidget::wheelEvent(event);
 	i->SetInteractorStyle(style);
 }
 
@@ -490,7 +487,7 @@ void VTKGraphicsView::resizeEvent(QResizeEvent* event)
 	impl->m_logoActor->SetPosition(size.width() - impl->m_logoImage.width() - 10, 5);
 	impl->m_logoActor->Modified();
 	impl->m_model->handleResize();
-	QVTKWidget::resizeEvent(event);
+	QVTKOpenGLNativeWidget::resizeEvent(event);
 }
 
 void VTKGraphicsView::cameraFit()

@@ -1,6 +1,3 @@
-#define REAL double
-#define VOID void
-
 #include "geodatapolygon.h"
 #include "geodatapolygonholepolygon.h"
 #include "geodatapolygonproxy.h"

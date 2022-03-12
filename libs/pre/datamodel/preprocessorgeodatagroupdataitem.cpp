@@ -289,7 +289,7 @@ void PreProcessorGeoDataGroupDataItem::importFromWeb()
 	for (int i = 0; i < dataCount; ++i) {
 		if (m_cancelImport) {
 			QMessageBox::warning(preProcessorWindow(), tr("Canceled"), tr("Importing canceled."));
-			goto ERROR;
+			goto ERROR_CLEARING;
 		}
 		item = buildGeoDataDataItem();
 		// first, create an empty geodata.
@@ -354,7 +354,7 @@ void PreProcessorGeoDataGroupDataItem::importFromWeb()
 	iRICUndoStack::instance().clear();
 	return;
 
-ERROR:
+ERROR_CLEARING:
 	if (wDialog != nullptr) {
 		wDialog->hide();
 		delete wDialog;
@@ -610,7 +610,7 @@ void PreProcessorGeoDataGroupDataItem::importGeoData(GeoDataImporter* importer, 
 	for (int i = 0; i < dataCount; ++i) {
 		if (m_cancelImport) {
 			QMessageBox::warning(preProcessorWindow(), tr("Canceled"), tr("Importing canceled."));
-			goto ERROR;
+			goto ERROR_CLEANING;
 		}
 		item = buildGeoDataDataItem();
 		// first, create an empty geodata.
@@ -626,7 +626,7 @@ void PreProcessorGeoDataGroupDataItem::importGeoData(GeoDataImporter* importer, 
 				if (dialogRet == QDialog::Rejected) {
 					delete item;
 					item = nullptr;
-					goto ERROR;
+					goto ERROR_CLEANING;
 				}
 			}
 		}
@@ -689,7 +689,7 @@ void PreProcessorGeoDataGroupDataItem::importGeoData(GeoDataImporter* importer, 
 	iRICUndoStack::instance().clear();
 	return;
 
-ERROR:
+ERROR_CLEANING:
 	if (wDialog != nullptr) {
 		wDialog->hide();
 		delete wDialog;
@@ -1230,7 +1230,7 @@ void PreProcessorGeoDataGroupDataItem::exportAllPolygons()
 		exporter = dynamic_cast<GeoDataPolygonShapeExporter*>(c->exporters().at(i));
 		if (exporter != nullptr) {break;}
 	}
-	if (exporter == nullptr) {goto ERROR;}
+	if (exporter == nullptr) {goto ERROR_CLEANING;}
 
 	dbfFilename = filename;
 	dbfFilename.replace(QRegExp(".shp$"), ".dbf");
@@ -1263,7 +1263,7 @@ void PreProcessorGeoDataGroupDataItem::exportAllPolygons()
 	DBFClose(dbfHandle);
 	return;
 
-ERROR:
+ERROR_CLEANING:
 	delete c;
 }
 

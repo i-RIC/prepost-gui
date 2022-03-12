@@ -212,7 +212,7 @@ void PreProcessorDataModel::importCalcConditionFromOtherProject(const QString& f
 	bool ret = pre->importInputCondition(fullname);
 	if (! ret) {
 		// not imported.
-		goto ERROR;
+		goto ERROR_CLEANING;
 	}
 	iRIC::rmdirRecursively(tmpWorkfolder);
 	QMessageBox::information(projectData()->mainWindow(), tr("Success"), tr("Calculation Condition is successfully imported from the specified file."));
@@ -220,7 +220,7 @@ void PreProcessorDataModel::importCalcConditionFromOtherProject(const QString& f
 	setModified();
 	return;
 
-ERROR:
+ERROR_CLEANING:
 	iRIC::rmdirRecursively(tmpWorkfolder);
 }
 

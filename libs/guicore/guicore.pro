@@ -123,6 +123,7 @@ LIBS += \
 	-lvtkRenderingFreeType-$${VTK_MAJ_MIN} \
 	-lvtkRenderingLabel-$${VTK_MAJ_MIN} \
 	-lvtkRenderingLOD-$${VTK_MAJ_MIN} \
+	-lvtkRenderingOpenGL2-$${VTK_MAJ_MIN} \
 	-lvtkRenderingQt-$${VTK_MAJ_MIN}
 
 
