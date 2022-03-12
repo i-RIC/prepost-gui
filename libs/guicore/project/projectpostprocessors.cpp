@@ -46,13 +46,14 @@ ProjectPostProcessors::~ProjectPostProcessors()
 
 void ProjectPostProcessors::loadFromXmlFile(const QDomNode& node, const QDir workDir)
 {
-	if (node.nodeName() == "iRICPostProcessingSettings") {
+	auto nodeName = node.nodeName();
+	if (nodeName == "iRICPostProcessingSettings" || nodeName == "PostProcessors") {
 		QDomNode child = node.firstChild();
 		while (! child.isNull()) {
 			loadSingleWindowFromXmlFile(child, workDir);
 			child = child.nextSibling();
 		}
-	} else if (node.nodeName() == "PostProcessor") {
+	} else if (nodeName == "PostProcessor") {
 		loadSingleWindowFromXmlFile(node, workDir);
 	}
 }
