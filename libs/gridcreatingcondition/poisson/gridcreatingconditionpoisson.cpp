@@ -894,20 +894,20 @@ void GridCreatingConditionPoisson::buildBankLines()
 			QPointF p1 = centerLine.at(0);
 			QPointF p2 = centerLine.at(1);
 			v = iRIC::normalize(p2 - p1);
-			iRIC::rotateVector270(v);
+			v = iRIC::rotateVector270(v);
 		} else if (i == centerLine.size() - 1) {
 			QPointF p1 = centerLine.at(centerLine.size() - 2);
 			QPointF p2 = centerLine.at(centerLine.size() - 1);
 			v = iRIC::normalize(p2 - p1);
-			iRIC::rotateVector270(v);
+			v = iRIC::rotateVector270(v);
 		} else {
 			QPointF p1 = centerLine.at(i - 1);
 			QPointF p2 = centerLine.at(i);
 			QPointF p3 = centerLine.at(i + 1);
 			QPointF v1 = iRIC::normalize(p2 - p1);
-			iRIC::rotateVector270(v1);
+			v1 = iRIC::rotateVector270(v1);
 			QPointF v2 = iRIC::normalize(p3 - p2);
-			iRIC::rotateVector270(v2);
+			v2 = iRIC::rotateVector270(v2);
 			v = iRIC::normalize(v1 + v2);
 		}
 
