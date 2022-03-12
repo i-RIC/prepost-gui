@@ -1,5 +1,6 @@
 version: '{branch}-{build}'
 
+# Secure variables are not available during PRs
 environment:
   CL: /MP
   generator: Visual Studio 16 2019
@@ -40,14 +41,7 @@ image:
 # other way around (see develop_v4-363)
 init:
   - ps: |
-      if ($env:iric_json_pw) { echo "iric_json_pw = $($env:iric_json_pw.Length)" }
-      if ($env:scharlton2_json_pw) { echo "scharlton2_json_pw = $($env:scharlton2_json_pw.Length)" }
-  - pwsh: |
-      if ($env:iric_json_pw) { echo "iric_json_pw = $($env:iric_json_pw.Length)" }
-      if ($env:scharlton2_json_pw) { echo "scharlton2_json_pw = $($env:scharlton2_json_pw.Length)" }
-  - pwsh: |
-      throw "TESTING"
-  - ps: |
+      if (! (Test-Path ${env:ifw_location}\bin\repogen.exe)) { throw 'repogen.exe not found (check $env:ifw_location' }
       # Sometimes the plaintext of secure variables is displayed so filter out secure vars
       Get-ChildItem env: | Where-Object { $_.Name -NotMatch "access_token" -and $_.Name -notmatch 'json_pw'}
       # Only commit and push to master branch or debug-appveyor branch (for testing)
@@ -70,21 +64,28 @@ before_build:
       ####################################################################################
       # *_json_pw env vars contain encrypted password
       ####################################################################################
-      $pw = $env:iric_json_pw
-      if ($env:APPVEYOR_REPO_NAME -eq "scharlton2/prepost-gui") {
-        $pw = $env:scharlton2_json_pw
+      if ($env:Configuration -eq "Release" -AND (!$env:APPVEYOR_PULL_REQUEST_NUMBER)) {
+        if ($env:APPVEYOR_REPO_NAME -eq "i-RIC/prepost-gui") {
+          $pw = $env:iric_json_pw
+        }
+        if ($env:APPVEYOR_REPO_NAME -eq "scharlton2/prepost-gui") {
+          $pw = $env:scharlton2_json_pw
+        }
+        if ($env:APPVEYOR_REPO_NAME -eq "kskinoue0612/prepost-gui") {
+          $pw = $env:kskinoue0612_json_pw
+        }
+        if ($pw -eq $null) {
+          throw "Password not set"
+        }
+        7z x -p"$($pw*10)" iric-ts-translation-4761fe6f85d6.json.7z
+        Write-Output "Should be EE6EA1115B3C696A88BA2F1E89BD6F88C8E50DE2E7D25B21488F5B4BAFCCD205"
+        Get-FileHash "iric-ts-translation-4761fe6f85d6.json"
       }
-      if ($env:APPVEYOR_REPO_NAME -eq "kskinoue0612/prepost-gui") {
-        $pw = $env:kskinoue0612_json_pw
-      }
-      7z x -p"$($pw*10)" iric-ts-translation-4761fe6f85d6.json.7z
-      Write-Output "Should be EE6EA1115B3C696A88BA2F1E89BD6F88C8E50DE2E7D25B21488F5B4BAFCCD205"
-      Get-FileHash "iric-ts-translation-4761fe6f85d6.json"
   - pwsh: |
       ####################################################################################
       # Run tools\translate_ts.py on all but the top languages directories
       ####################################################################################
-      if ($env:Configuration -eq "Release") {
+      if ($env:Configuration -eq "Release" -AND (!$env:APPVEYOR_PULL_REQUEST_NUMBER)) {
         $topdir = Get-Location
         $env:GOOGLE_APPLICATION_CREDENTIALS = "$topdir\iric-ts-translation-4761fe6f85d6.json"
         Write-Output "Should be EE6EA1115B3C696A88BA2F1E89BD6F88C8E50DE2E7D25B21488F5B4BAFCCD205"
@@ -114,22 +115,24 @@ before_build:
       # Commit the languages changes
       # from https://www.appveyor.com/docs/how-to/git-push/
       ####################################################################################
-      if ($env:Configuration -eq "Release") {
+      if ($env:Configuration -eq "Release" -AND (!$env:APPVEYOR_PULL_REQUEST_NUMBER)) {
         # determine whether to push to current or new branch and which
         # access_token to use (the branch is for testing)
         $branch = $True
         if ($env:APPVEYOR_REPO_NAME -eq "i-RIC/prepost-gui") {
           $access_token = $env:iric_access_token
-          if ( ($env:APPVEYOR_REPO_BRANCH -eq "develop_v4") -AND (!$env:APPVEYOR_PULL_REQUEST_NUMBER) ) {
+          if ($env:APPVEYOR_REPO_BRANCH -eq "develop_v4") {
             $branch = $False
           }
         }
         if ($env:APPVEYOR_REPO_NAME -eq "scharlton2/prepost-gui") {
-          # online_update_2020_05_17 expires after a year if not used
           $access_token = $env:scharlton2_access_token
         }
         if ($env:APPVEYOR_REPO_NAME -eq "kskinoue0612/prepost-gui") {
           $access_token = $env:kskinoue0612_access_token
+        }
+        if ($access_token -eq $null) {
+          throw "Access token not set"
         }
 
         # Enabling Git credential store
@@ -168,7 +171,6 @@ before_build:
       # from git push to be an error
       Write-Output "Status:"
       git status
-  - ps: if (! (Test-Path ${env:ifw_location}\bin\repogen.exe)) { throw "repogen.exe not found" }
   - call C:\Qt\5.14.2\msvc2017_64\bin\qtenv2.bat
   - call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvars64.bat"
   - cd %APPVEYOR_BUILD_FOLDER%
@@ -204,8 +206,7 @@ after_build:
   - cd %APPVEYOR_BUILD_FOLDER%\tools
   - set SAVE_PATH=%PATH%
   - set PATH=C:\Python37-x64;%PATH%
-  - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2019" ( python copydllsExt-2019.py )
-  - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2013" ( python copydllsExt.py )
+  - python copydllsExt-2019.py
   - python lrelease.py
   - set PATH=%SAVE_PATH%
   - cd %APPVEYOR_BUILD_FOLDER%
