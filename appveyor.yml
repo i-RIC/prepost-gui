@@ -6,7 +6,7 @@ environment:
   generator: Visual Studio 16 2019
   ifw_location: C:\Qt\Tools\QtInstallerFramework\4.3
   iric_access_token:
-    secure: WDcJrM7sx9jagk006F3OtXqomb90MlJcRIs8LoAyvT0wVzvG+UxeaW+oG9GWb1t8
+    secure: TtnZWgikg+nDp24nYOfER/4OD1+HfXGWze/RvBpYVYsY996oWo9F3/jtX1TGuGri
   kskinoue0612_access_token:
     secure: GzdhhFKWjeLDM22U4ZcrMkAGEEnZLMVbfBR9W8uRQ/LqOtvX2qjPXvC3nvxxWeUc
   scharlton2_access_token:
