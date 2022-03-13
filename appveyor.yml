@@ -62,6 +62,70 @@ matrix:
 before_build:
   - pwsh: |
       ####################################################################################
+      # TESTING
+      ####################################################################################
+      if ($env:Configuration -eq "Release" -AND (!$env:APPVEYOR_PULL_REQUEST_NUMBER)) {
+        # determine whether to push to current or new branch and which
+        # access_token to use (the branch is for testing)
+        $branch = $True
+        if ($env:APPVEYOR_REPO_NAME -eq "i-RIC/prepost-gui") {
+          $access_token = $env:iric_access_token
+        }
+        if ($env:APPVEYOR_REPO_NAME -eq "scharlton2/prepost-gui") {
+          $access_token = $env:scharlton2_access_token
+        }
+        if ($env:APPVEYOR_REPO_NAME -eq "kskinoue0612/prepost-gui") {
+          $access_token = $env:kskinoue0612_access_token
+        }
+        if ($access_token -eq $null) {
+          throw "Access token not set"
+        }
+
+        # Enabling Git credential store
+        git config --global credential.helper store
+        if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
+
+        # Adding access token to credential store
+        Add-Content "$HOME\.git-credentials" "https://$($access_token):x-oauth-basic@github.com`n" -ErrorAction Stop
+
+        # Indicate git user name and mail
+        git config --global user.email "iric.appveyor@gmail.com"
+        git config --global user.name "iric.appveyor"
+        git config --global core.safecrlf false
+        if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
+
+        # Create branch if necessary
+        if ($branch) {
+          # create branch
+          git switch --quiet -c "__$env:APPVEYOR_BUILD_VERSION"
+          if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
+        }
+
+        # simulate change
+        date >> .\README.md
+
+        echo "about to commit"
+        # add and commit language files (shouldn't be any new files)
+        git commit -am "[skip ci] TESTING iric.appveyor $env:APPVEYOR_BUILD_VERSION"
+        if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
+
+        # push
+        echo "about to push"
+        if ($branch) {
+          git push --set-upstream origin "__$env:APPVEYOR_BUILD_VERSION" 2>&1 | Out-Null
+        } else {
+          git push --set-upstream origin $env:APPVEYOR_REPO_BRANCH 2>&1 | Out-Null
+        }
+        if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
+      }
+      # These lines are necessary to avoid appveyor considering the output
+      # from git push to be an error
+      Write-Output "Status:"
+      git status
+  - pwsh: |
+      throw "End of TESTING"
+  - pwsh: |
+      ####################################################################################
       # *_json_pw env vars contain encrypted password
       ####################################################################################
       if ($env:Configuration -eq "Release" -AND (!$env:APPVEYOR_PULL_REQUEST_NUMBER)) {
