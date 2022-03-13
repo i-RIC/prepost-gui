@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="sl_SI">
 <context>
     <name>AnimationController</name>
@@ -290,7 +288,7 @@
     </message>
     <message>
         <source>--</source>
-        <translation type="unfinished"></translation>
+        <translation>--</translation>
     </message>
 </context>
 <context>
@@ -368,7 +366,7 @@
     <name>ContinuousSnapshotWizard</name>
     <message>
         <source>Continuous Snapshot / Movie / Google Earth Export Wizard</source>
-        <translation type="unfinished"></translation>
+        <translation>Neprekinjen posnetek/Film/Čarovnik za izvoz Google Zemlje</translation>
     </message>
 </context>
 <context>
@@ -451,8 +449,8 @@ This wizard will generate or update translation files for solver definition file
         <translation>Izberite Solver</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
-        <translation>Ko ustvarite nov projekt, morate izbrati orodje za reševanje, ki ga boste uporabili za izračun. Izberite reševalno napravo in pritisnite gumb &quot;V redu&quot;.</translation>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
+        <translation>Ko ustvarite nov projekt, morate izbrati orodje za reševanje, ki ga boste uporabili za izračun. Izberite reševalno napravo in pritisnite gumb "V redu".</translation>
     </message>
 </context>
 <context>
@@ -1059,11 +1057,11 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Output Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastavitev izhoda</translation>
     </message>
     <message>
         <source>Output calculation results in separate files</source>
-        <translation type="unfinished"></translation>
+        <translation>Rezultate izračuna v ločenih datotekah</translation>
     </message>
 </context>
 <context>
@@ -1208,9 +1206,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>Opozorilo</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
+        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
 %2</source>
-        <translation>Pri nalaganju definicijske datoteke reševalca v mapo je prišlo do napake &quot;%1&quot;. To reševalno sredstvo se ne upošteva. %2</translation>
+        <translation>Pri nalaganju definicijske datoteke reševalca v mapo je prišlo do napake "%1". To reševalno sredstvo se ne upošteva. %2</translation>
     </message>
 </context>
 <context>
@@ -1329,7 +1327,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Zdi se, da ta projekt odpira drugo okno grafičnega vmesnika iRIC. Mape projekta ne morete odpreti iz več oken z grafičnim vmesnikom.</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation>Odprti projekt se ne kopira v delovni imenik, zato boste morali shraniti spremembe, ki jih naredite v tem projektu. Če želite obdržati trenutni projekt, ga najprej shranite v drug projekt.</translation>
     </message>
     <message>
@@ -1489,7 +1487,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Trenutno aktivno podokno ne podpira izvoza konturne figure.</translation>
     </message>
     <message>
-        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
+        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
         <translation>Če želite izvoziti obliko oblike, preklopite »Nastavitev zaslona« na »Slika konture«, ne pa »Barvne obrobe« ali »Izoline«.</translation>
     </message>
     <message>
@@ -1615,15 +1613,15 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>All files in %1 is deleted.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vse datoteke v %1 je izbrisan.</translation>
     </message>
     <message>
         <source>%1 %2</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 %2</translation>
     </message>
     <message>
         <source>%1 - %2 %3 [%4]</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 - %2 %3 [ %4 ]</translation>
     </message>
 </context>
 <context>
@@ -1970,7 +1968,7 @@ Option -&gt; Preferences</source>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>&amp;Solver Information...</source>
@@ -1997,7 +1995,7 @@ Option -&gt; Preferences</source>
         <translation>Odprite novo 2D okno za naknadno obdelavo</translation>
     </message>
     <message>
-        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
+        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
         <translation>Odprite novo 2D okno za naknadno obdelavo ptičje oko</translation>
     </message>
     <message>
@@ -2102,15 +2100,15 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Reload &amp;CGNS file...</source>
-        <translation type="unfinished"></translation>
+        <translation>Ponovno naložite datoteko CGNS (&amp;C)...</translation>
     </message>
     <message>
         <source>Reload CGNS file</source>
-        <translation type="unfinished"></translation>
+        <translation>Ponovno naložite datoteko CGNS</translation>
     </message>
     <message>
         <source>Geographic Data (Elevation from web)</source>
-        <translation type="unfinished"></translation>
+        <translation>Geografski podatki (Višina s spleta)</translation>
     </message>
 </context>
 </TS>

@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="vi_VN">
 <context>
     <name>BoundaryConditionDialog</name>
@@ -89,15 +87,15 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>This file does not contain grid that can be imported.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tệp này không chứa lưới có thể được nhập.</translation>
     </message>
     <message>
         <source>Select grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Chọn lưới</translation>
     </message>
     <message>
         <source>Select grid to import.</source>
-        <translation type="unfinished"></translation>
+        <translation>Chọn lưới để nhập.</translation>
     </message>
 </context>
 <context>
@@ -114,8 +112,8 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>GridBirdEyeWindow</name>
     <message>
-        <source>Grid Bird&apos;s-Eye View Window</source>
-        <translation>Cửa sổ Grid Bird&apos;s-Eye View</translation>
+        <source>Grid Bird's-Eye View Window</source>
+        <translation>Cửa sổ Grid Bird's-Eye View</translation>
     </message>
 </context>
 <context>
@@ -582,8 +580,8 @@ Do you really want to import grid from this file?</source>
         <translation>%1 không được ánh xạ sau khi chúng được chỉnh sửa lần cuối. Bạn có muốn thực hiện ánh xạ ngay bây giờ không?</translation>
     </message>
     <message>
-        <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
-        <translation>Cài đặt điều kiện ranh giới &quot;%1&quot;không được ánh xạ sau khi nó được chỉnh sửa lần trước. Bạn có muốn thực hiện ánh xạ ngay bây giờ không?</translation>
+        <source>Boundary Condition Setting "%1" is not mapped after it is edited last time. Do you want to execute mapping now?</source>
+        <translation>Cài đặt điều kiện ranh giới "%1"không được ánh xạ sau khi nó được chỉnh sửa lần trước. Bạn có muốn thực hiện ánh xạ ngay bây giờ không?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -785,7 +783,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>&amp;Import Elevation from web...</source>
-        <translation type="unfinished"></translation>
+        <translation>Nhập độ cao từ web (&amp;I)...</translation>
     </message>
 </context>
 <context>
@@ -985,9 +983,9 @@ Do you really want to import grid from this file?</source>
         <translation>Hành hình (&amp;E)...</translation>
     </message>
     <message>
-        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.
+        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".
 </source>
-        <translation>Các thuộc tính sau không được ánh xạ vì giá trị đầu ra của máy phát điện lưới cho chúng. Nếu bạn muốn lập bản đồ dữ liệu địa lý cho chúng một cách cưỡng bức, vui lòng lập bản đồ thủ công với menu &quot;Lưới&quot; -&gt; &quot;Ánh xạ thuộc tính&quot; -&gt; &quot;Thực thi&quot;.</translation>
+        <translation>Các thuộc tính sau không được ánh xạ vì giá trị đầu ra của máy phát điện lưới cho chúng. Nếu bạn muốn lập bản đồ dữ liệu địa lý cho chúng một cách cưỡng bức, vui lòng lập bản đồ thủ công với menu "Lưới" -&gt; "Ánh xạ thuộc tính" -&gt; "Thực thi".</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -1006,12 +1004,12 @@ Do you really want to import grid from this file?</source>
         <translation>Lập bản đồ dữ liệu địa lý đã hoàn thành</translation>
     </message>
     <message>
-        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Thuộc tính lưới &quot;%1&quot;được chỉnh sửa bằng tay. Khi bạn thực hiện ánh xạ, tất cả các sửa đổi bạn đã thực hiện sẽ bị hủy. Bạn có thực sự muốn thực hiện ánh xạ không?</translation>
+        <source>The grid attribute "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Thuộc tính lưới "%1"được chỉnh sửa bằng tay. Khi bạn thực hiện ánh xạ, tất cả các sửa đổi bạn đã thực hiện sẽ bị hủy. Bạn có thực sự muốn thực hiện ánh xạ không?</translation>
     </message>
     <message>
-        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Điều kiện biên &quot;%1&quot;được chỉnh sửa bằng tay. Khi bạn thực hiện ánh xạ, tất cả các sửa đổi bạn đã thực hiện sẽ bị hủy. Bạn có thực sự muốn thực hiện ánh xạ không?</translation>
+        <source>The boundary condition "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Điều kiện biên "%1"được chỉnh sửa bằng tay. Khi bạn thực hiện ánh xạ, tất cả các sửa đổi bạn đã thực hiện sẽ bị hủy. Bạn có thực sự muốn thực hiện ánh xạ không?</translation>
     </message>
 </context>
 <context>
@@ -1029,20 +1027,20 @@ Do you really want to import grid from this file?</source>
         <translation>Tự động</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Khi lưới được tạo, bạn được hỏi liệu để thực hiện Ánh xạ thuộc tính mọi lúc. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Khi lưới được tạo, bạn được hỏi liệu để thực hiện Ánh xạ thuộc tính mọi lúc. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Manual</source>
         <translation>Thủ công</translation>
     </message>
     <message>
-        <source>Attribute mapping is executed only when you manually select &quot;Execute&quot; menu.</source>
-        <translation>Ánh xạ thuộc tính chỉ được thực thi khi bạn chọn menu &quot;Thực thi&quot; theo cách thủ công.</translation>
+        <source>Attribute mapping is executed only when you manually select "Execute" menu.</source>
+        <translation>Ánh xạ thuộc tính chỉ được thực thi khi bạn chọn menu "Thực thi" theo cách thủ công.</translation>
     </message>
     <message>
         <source>Geographic data mapping</source>
@@ -1450,8 +1448,8 @@ This algorithm can be used only for structured grids.</source>
         <translation>Thiết lập thanh vô hướng (&amp;U)...</translation>
     </message>
     <message>
-        <source>Open &amp;Bird&apos;s-Eye View Window</source>
-        <translation>Mở cửa sổ Bird&apos;s-Eye View (&amp;B)</translation>
+        <source>Open &amp;Bird's-Eye View Window</source>
+        <translation>Mở cửa sổ Bird's-Eye View (&amp;B)</translation>
     </message>
     <message>
         <source>Attributes &amp;Generating</source>

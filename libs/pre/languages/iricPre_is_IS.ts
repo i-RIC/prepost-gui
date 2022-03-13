@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="is_IS">
 <context>
     <name>BoundaryConditionDialog</name>
@@ -89,15 +87,15 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>This file does not contain grid that can be imported.</source>
-        <translation type="unfinished"></translation>
+        <translation>Þessi skrá inniheldur ekki rist sem hægt er að flytja inn.</translation>
     </message>
     <message>
         <source>Select grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Veldu rist</translation>
     </message>
     <message>
         <source>Select grid to import.</source>
-        <translation type="unfinished"></translation>
+        <translation>Veldu rist til að flytja inn.</translation>
     </message>
 </context>
 <context>
@@ -114,7 +112,7 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>GridBirdEyeWindow</name>
     <message>
-        <source>Grid Bird&apos;s-Eye View Window</source>
+        <source>Grid Bird's-Eye View Window</source>
         <translation>Gluggi fyrir fugl og augu frá rist</translation>
     </message>
 </context>
@@ -582,8 +580,8 @@ Do you really want to import grid from this file?</source>
         <translation>%1 eru ekki kortlagðar eftir að þeim var breytt síðast. Viltu framkvæma kortlagningu núna?</translation>
     </message>
     <message>
-        <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
-        <translation>Stilling marka &quot;%1&quot;er ekki kortlagt eftir að því var breytt síðast. Viltu framkvæma kortlagningu núna?</translation>
+        <source>Boundary Condition Setting "%1" is not mapped after it is edited last time. Do you want to execute mapping now?</source>
+        <translation>Stilling marka "%1"er ekki kortlagt eftir að því var breytt síðast. Viltu framkvæma kortlagningu núna?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -785,7 +783,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>&amp;Import Elevation from web...</source>
-        <translation type="unfinished"></translation>
+        <translation>Flytja inn hæð af vef (&amp;I)...</translation>
     </message>
 </context>
 <context>
@@ -985,9 +983,9 @@ Do you really want to import grid from this file?</source>
         <translation>Framkvæma (&amp;E)...</translation>
     </message>
     <message>
-        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.
+        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".
 </source>
-        <translation>Eftirfarandi eiginleikar voru ekki kortlagðir vegna þess að útgangsgildi ristafls fyrir þá. Ef þú vilt kortleggja landfræðileg gögn fyrir þau með valdi, vinsamlegast kortleggðu handvirkt með valmyndinni &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.</translation>
+        <translation>Eftirfarandi eiginleikar voru ekki kortlagðir vegna þess að útgangsgildi ristafls fyrir þá. Ef þú vilt kortleggja landfræðileg gögn fyrir þau með valdi, vinsamlegast kortleggðu handvirkt með valmyndinni "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1006,12 +1004,12 @@ Do you really want to import grid from this file?</source>
         <translation>Kortlagningu landfræðilegra gagna lokið</translation>
     </message>
     <message>
-        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Eiginleiki ristarinnar &quot;%1&quot;er breytt með höndunum. Þegar þú framkvæmir kortlagningu verður öllum breytingum sem þú gerðir fargað. Viltu virkilega framkvæma kortlagningu?</translation>
+        <source>The grid attribute "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Eiginleiki ristarinnar "%1"er breytt með höndunum. Þegar þú framkvæmir kortlagningu verður öllum breytingum sem þú gerðir fargað. Viltu virkilega framkvæma kortlagningu?</translation>
     </message>
     <message>
-        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Skilyrðin &quot;%1&quot;er breytt með höndunum. Þegar þú framkvæmir kortlagningu verður öllum breytingum sem þú gerðir fargað. Viltu virkilega framkvæma kortlagningu?</translation>
+        <source>The boundary condition "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Skilyrðin "%1"er breytt með höndunum. Þegar þú framkvæmir kortlagningu verður öllum breytingum sem þú gerðir fargað. Viltu virkilega framkvæma kortlagningu?</translation>
     </message>
 </context>
 <context>
@@ -1029,19 +1027,19 @@ Do you really want to import grid from this file?</source>
         <translation>Sjálfvirk</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Þegar ristið er búið til er spurt hvort til að framkvæma eiginleika kortlagningu hverju sinni. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Þegar ristið er búið til er spurt hvort til að framkvæma eiginleika kortlagningu hverju sinni. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Manual</source>
         <translation>Handbók</translation>
     </message>
     <message>
-        <source>Attribute mapping is executed only when you manually select &quot;Execute&quot; menu.</source>
+        <source>Attribute mapping is executed only when you manually select "Execute" menu.</source>
         <translation>Eignakortlagning er aðeins framkvæmd þegar þú velur valmyndina „Framkvæma“ handvirkt.</translation>
     </message>
     <message>
@@ -1446,7 +1444,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>Setja upp skalastiku (&amp;U)...</translation>
     </message>
     <message>
-        <source>Open &amp;Bird&apos;s-Eye View Window</source>
+        <source>Open &amp;Bird's-Eye View Window</source>
         <translation>Opnaðu fuglaskoðunargluggann (&amp;B)</translation>
     </message>
     <message>

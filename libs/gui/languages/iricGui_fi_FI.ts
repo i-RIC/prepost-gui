@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="fi_FI">
 <context>
     <name>AnimationController</name>
@@ -290,7 +288,7 @@
     </message>
     <message>
         <source>--</source>
-        <translation type="unfinished"></translation>
+        <translation>--</translation>
     </message>
 </context>
 <context>
@@ -368,7 +366,7 @@
     <name>ContinuousSnapshotWizard</name>
     <message>
         <source>Continuous Snapshot / Movie / Google Earth Export Wizard</source>
-        <translation type="unfinished"></translation>
+        <translation>Jatkuva tilannekuva / elokuva / ohjattu Google Earth -vientitoiminto</translation>
     </message>
 </context>
 <context>
@@ -451,8 +449,8 @@ This wizard will generate or update translation files for solver definition file
         <translation>Valitse Ratkaisija</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
-        <translation>Kun luot uuden projektin, sinun on valittava laskemiseen käytettävä ratkaisija. Valitse ratkaisija ja paina &quot;OK&quot; -painiketta.</translation>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
+        <translation>Kun luot uuden projektin, sinun on valittava laskemiseen käytettävä ratkaisija. Valitse ratkaisija ja paina "OK" -painiketta.</translation>
     </message>
 </context>
 <context>
@@ -1059,11 +1057,11 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Output Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Lähtöasetus</translation>
     </message>
     <message>
         <source>Output calculation results in separate files</source>
-        <translation type="unfinished"></translation>
+        <translation>Tulosta laskennan tulokset erillisiin tiedostoihin</translation>
     </message>
 </context>
 <context>
@@ -1208,9 +1206,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>Varoitus</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
+        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
 %2</source>
-        <translation>Virhe ladattaessa ratkaisijamääritystiedostoa kansioon &quot;%1&quot;. Tämä ratkaisija jätetään huomiotta. %2</translation>
+        <translation>Virhe ladattaessa ratkaisijamääritystiedostoa kansioon "%1". Tämä ratkaisija jätetään huomiotta. %2</translation>
     </message>
 </context>
 <context>
@@ -1329,7 +1327,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Tämä projekti näyttää avautuvan toisella iRIC GUI -ikkunalla. Et voi avata projektikansiota useista graafisista käyttöliittymistä.</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation>Avattua projektia ei kopioida työhakemistoon, ja sinun on tallennettava tähän projektiin tekemäsi muutokset. Jos haluat säilyttää nykyisen projektin, tallenna se ensin toiseen projektiin.</translation>
     </message>
     <message>
@@ -1489,8 +1487,8 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Tällä hetkellä aktiivinen alaikkuna ei tue ääriviivan vientiä.</translation>
     </message>
     <message>
-        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
-        <translation>Jos haluat viedä muototiedoston, vaihda &quot;Näyttöasetukseksi&quot; &quot;Muotokuvio&quot;, ei &quot;Värin reunus&quot; tai &quot;Isolines&quot;.</translation>
+        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
+        <translation>Jos haluat viedä muototiedoston, vaihda "Näyttöasetukseksi" "Muotokuvio", ei "Värin reunus" tai "Isolines".</translation>
     </message>
     <message>
         <source>Export contour figure to ESRI Shapefiles</source>
@@ -1615,15 +1613,15 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>All files in %1 is deleted.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kaikki tiedostot sisään %1 on poistettu.</translation>
     </message>
     <message>
         <source>%1 %2</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 %2</translation>
     </message>
     <message>
         <source>%1 - %2 %3 [%4]</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 - %2 %3 [ %4 ]</translation>
     </message>
 </context>
 <context>
@@ -1970,7 +1968,7 @@ Option -&gt; Preferences</source>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>&amp;Solver Information...</source>
@@ -1997,7 +1995,7 @@ Option -&gt; Preferences</source>
         <translation>Avaa uusi 2D-jälkikäsittelyikkuna</translation>
     </message>
     <message>
-        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
+        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
         <translation>Avaa uusi 2D-lintuperspektiivin jälkikäsittelyikkuna</translation>
     </message>
     <message>
@@ -2102,15 +2100,15 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Reload &amp;CGNS file...</source>
-        <translation type="unfinished"></translation>
+        <translation>Lataa CGNS-tiedosto uudelleen (&amp;C)...</translation>
     </message>
     <message>
         <source>Reload CGNS file</source>
-        <translation type="unfinished"></translation>
+        <translation>Lataa CGNS-tiedosto uudelleen</translation>
     </message>
     <message>
         <source>Geographic Data (Elevation from web)</source>
-        <translation type="unfinished"></translation>
+        <translation>Maantieteelliset tiedot (korkeus verkosta)</translation>
     </message>
 </context>
 </TS>
