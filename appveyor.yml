@@ -65,6 +65,7 @@ before_build:
       # TESTING
       ####################################################################################
       git checkout $env:APPVEYOR_REPO_BRANCH
+      git remote -v
       if ($env:Configuration -eq "Release" -AND (!$env:APPVEYOR_PULL_REQUEST_NUMBER)) {
         # determine whether to push to current or new branch and which
         # access_token to use (the branch is for testing)
