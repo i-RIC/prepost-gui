@@ -43,12 +43,9 @@ doxygendoc/**/html
 doxygendoc/**/rtf
 doxygen_warnings.txt
 
-<<<<<<< Updated upstream
-=======
 # dist build
 dist/_*
 
->>>>>>> Stashed changes
 # translate_ts.py google translate key
 **/iric-ts-translation-4761fe6f85d6.json
 

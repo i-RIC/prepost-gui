@@ -65,6 +65,7 @@ before_build:
       # *_json_pw env vars contain encrypted password
       ####################################################################################
       if ($env:Configuration -eq "Release" -AND (!$env:APPVEYOR_PULL_REQUEST_NUMBER)) {
+        git checkout $env:APPVEYOR_REPO_BRANCH
         if ($env:APPVEYOR_REPO_NAME -eq "i-RIC/prepost-gui") {
           $pw = $env:iric_json_pw
         }
@@ -161,9 +162,9 @@ before_build:
 
         # push
         if ($branch) {
-          git push --set-upstream origin "__$env:APPVEYOR_BUILD_VERSION" 2>&1 | Out-Null
+          git push --set-upstream origin "__$env:APPVEYOR_BUILD_VERSION"
         } else {
-          git push --set-upstream origin $env:APPVEYOR_REPO_BRANCH 2>&1 | Out-Null
+          git push origin $env:APPVEYOR_REPO_BRANCH
         }
         if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
       }
