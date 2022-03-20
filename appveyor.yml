@@ -60,7 +60,7 @@ matrix:
 #
 # Neither env nor powershell variables are passed when using pwsh shell
 before_build:
-  - ps: |
+  - pwsh: |
       ####################################################################################
       # *_json_pw env vars contain encrypted password
       ####################################################################################
@@ -82,7 +82,7 @@ before_build:
         Write-Output "Should be EE6EA1115B3C696A88BA2F1E89BD6F88C8E50DE2E7D25B21488F5B4BAFCCD205"
         Get-FileHash "iric-ts-translation-4761fe6f85d6.json"
       }
-  - ps: |
+  - pwsh: |
       ####################################################################################
       # Run tools\translate_ts.py on all but the top languages directories
       ####################################################################################
@@ -111,7 +111,7 @@ before_build:
         rm .\iric-ts-translation-4761fe6f85d6.json
         git status
       }
-  - ps: |
+  - pwsh: |
       ####################################################################################
       # Commit the languages changes
       # from https://www.appveyor.com/docs/how-to/git-push/
