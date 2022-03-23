@@ -46,7 +46,7 @@ p, li { white-space: pre-wrap; }
            </widget>
           </item>
           <item row="0" column="1">
-           <widget class="QDoubleSpinBox" name="xMinSpinBox">
+           <widget class="QDoubleSpinBoxWithFocusOut" name="xMinSpinBox">
             <property name="minimumSize">
              <size>
               <width>100</width>
@@ -79,7 +79,7 @@ p, li { white-space: pre-wrap; }
            </widget>
           </item>
           <item row="0" column="3">
-           <widget class="QDoubleSpinBox" name="xMaxSpinBox">
+           <widget class="QDoubleSpinBoxWithFocusOut" name="xMaxSpinBox">
             <property name="minimumSize">
              <size>
               <width>100</width>
@@ -112,7 +112,7 @@ p, li { white-space: pre-wrap; }
            </widget>
           </item>
           <item row="1" column="1">
-           <widget class="QDoubleSpinBox" name="yMinSpinBox">
+           <widget class="QDoubleSpinBoxWithFocusOut" name="yMinSpinBox">
             <property name="minimumSize">
              <size>
               <width>100</width>
@@ -145,7 +145,7 @@ p, li { white-space: pre-wrap; }
            </widget>
           </item>
           <item row="1" column="3">
-           <widget class="QDoubleSpinBox" name="yMaxSpinBox">
+           <widget class="QDoubleSpinBoxWithFocusOut" name="yMaxSpinBox">
             <property name="minimumSize">
              <size>
               <width>100</width>
@@ -449,6 +449,11 @@ p, li { white-space: pre-wrap; }
    <class>IntegerNumberDisplayLabel</class>
    <extends>QLabel</extends>
    <header>guibase/widget/integernumberdisplaylabel.h</header>
+  </customwidget>
+  <customwidget>
+   <class>QDoubleSpinBoxWithFocusOut</class>
+   <extends>QDoubleSpinBox</extends>
+   <header>guibase/widget/qdoublespinboxwithfocusout.h</header>
   </customwidget>
  </customwidgets>
  <resources>

@@ -16,10 +16,10 @@ GridCreatingConditionRectangularRegionSettingDialog::GridCreatingConditionRectan
 	m_condition = cond;
 	connect(ui->buttonBox, SIGNAL(clicked(QAbstractButton*)), this, SLOT(handleButtonClick(QAbstractButton*)));
 
-	connect(ui->xMinSpinBox, SIGNAL(valueChanged(double)), this, SLOT(checkXMax()));
-	connect(ui->xMaxSpinBox, SIGNAL(valueChanged(double)), this, SLOT(checkXMin()));
-	connect(ui->yMinSpinBox, SIGNAL(valueChanged(double)), this, SLOT(checkYMax()));
-	connect(ui->yMaxSpinBox, SIGNAL(valueChanged(double)), this, SLOT(checkYMin()));
+	connect(ui->xMinSpinBox, SIGNAL(focusOut()), this, SLOT(checkXMax()));
+	connect(ui->xMaxSpinBox, SIGNAL(focusOut()), this, SLOT(checkXMin()));
+	connect(ui->yMinSpinBox, SIGNAL(focusOut()), this, SLOT(checkYMax()));
+	connect(ui->yMaxSpinBox, SIGNAL(focusOut()), this, SLOT(checkYMin()));
 
 	connect(ui->xMinSpinBox, SIGNAL(valueChanged(double)), this, SLOT(updateResultDisplays()));
 	connect(ui->yMinSpinBox, SIGNAL(valueChanged(double)), this, SLOT(updateResultDisplays()));
