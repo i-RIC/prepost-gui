@@ -11,8 +11,8 @@
 #include <vtkScalarBarActor.h>
 #include <vtkScalarBarRepresentation.h>
 
-const int ScalarBarSetting::DEFAULT_NUMOFLABELS = 8;
-const QString ScalarBarSetting::DEFAULT_LABELFORMAT = "%-#6.3g";
+const int ScalarBarSetting::DEFAULT_NUMOFLABELS = 6;
+const QString ScalarBarSetting::DEFAULT_LABELFORMAT = "%5.2f";
 
 ScalarBarSetting::ScalarBarSetting() :
 	CompositeContainer({&visible, &orientation, &quadrant, &numberOfLabels, &width, &height, &positionX, &positionY, &labelFormat, &titleTextSetting, &labelTextSetting}),
