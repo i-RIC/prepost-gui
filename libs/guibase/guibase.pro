@@ -110,6 +110,7 @@ HEADERS += arrowsettingcontainer.h \
            vtktextpropertysettingcontainer.h \
            vtktextpropertysettingdialog.h \
            vtktextpropertysettingwidget.h \
+           widget/qdoublespinboxwithfocusout.h \
            xyaxisdisplaysettingdialog.h \
            colormap/colormapcustomsetting.h \
            colormap/colormapcustomsettingcolor.h \
@@ -257,6 +258,7 @@ SOURCES += arrowsettingcontainer.cpp \
            vtktextpropertysettingcontainer.cpp \
            vtktextpropertysettingdialog.cpp \
            vtktextpropertysettingwidget.cpp \
+           widget/qdoublespinboxwithfocusout.cpp \
            xyaxisdisplaysettingdialog.cpp \
            colormap/colormapcustomsetting.cpp \
            colormap/colormapcustomsettingcolor.cpp \
