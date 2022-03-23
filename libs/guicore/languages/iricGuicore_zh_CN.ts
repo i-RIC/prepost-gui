@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="zh_CN">
 <context>
     <name>AttributeBrowserTargetDataItem</name>
@@ -27,6 +29,10 @@
     <message>
         <source>Select a corresponding point on Main Window.</source>
         <translation>在主页面中选择相应的点</translation>
+    </message>
+    <message>
+        <source>Fix Image position</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -210,6 +216,10 @@
     <message>
         <source>Select a point on Georeference dialog.</source>
         <translation>在地理参考对话框中选择一个点</translation>
+    </message>
+    <message>
+        <source>Delete Points</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -446,6 +456,10 @@
         <source>Please select from which CGNS file to read grid.</source>
         <translation>请选择从哪个 CGNS 文件中读取网格。</translation>
     </message>
+    <message>
+        <source>CGNS File</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>InputConditionContainerSet</name>
@@ -454,12 +468,12 @@
         <translation>定义节点未被储存</translation>
     </message>
     <message>
-        <source>Wrong valueType "%1" is set.</source>
-        <translation>设置了错误数值种类"%1" </translation>
+        <source>Wrong valueType &quot;%1&quot; is set.</source>
+        <translation>设置了错误数值种类&quot;%1&quot; </translation>
     </message>
     <message>
-        <source>Wrong conditionType "%1"is set.</source>
-        <translation>设置了错误条件种类"%1" </translation>
+        <source>Wrong conditionType &quot;%1&quot;is set.</source>
+        <translation>设置了错误条件种类&quot;%1&quot; </translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
@@ -473,6 +487,13 @@
     </message>
 </context>
 <context>
+    <name>InputConditionDependency</name>
+    <message>
+        <source>Unhandled widget in ActionSetValue</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>InputConditionDialog</name>
     <message>
         <source>Calculation Condition</source>
@@ -480,7 +501,7 @@
     </message>
     <message>
         <source>&amp;Save and Close</source>
-        <translation>&amp;保存并关闭</translation>
+        <translation type="vanished">&amp;保存并关闭</translation>
     </message>
     <message>
         <source>Error</source>
@@ -519,6 +540,10 @@ Do you really want to import this file?</source>
     <message>
         <source>Modifications you made will be discarded.</source>
         <translation>您所做的修改将被丢弃。</translation>
+    </message>
+    <message>
+        <source>Opening the CGNS file failed.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -574,6 +599,10 @@ Do you really want to import this file?</source>
         <source>Select File</source>
         <translation>选择文件</translation>
     </message>
+    <message>
+        <source>File name has to consist of only English characters.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>InputConditionWidgetCgnsResult</name>
@@ -599,12 +628,35 @@ Do you really want to import this file?</source>
         <source>Select File</source>
         <translation>选择文件</translation>
     </message>
+    <message>
+        <source>File name has to consist of only English characters.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>...</source>
+        <translation type="unfinished">...</translation>
+    </message>
 </context>
 <context>
     <name>InputConditionWidgetFoldername</name>
     <message>
         <source>Select Directory</source>
         <translation>选择词典</translation>
+    </message>
+    <message>
+        <source>Folder name has to consist of only English characters.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>...</source>
+        <translation type="unfinished">...</translation>
+    </message>
+</context>
+<context>
+    <name>InputConditionWidgetFunctional</name>
+    <message>
+        <source>Edit</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -694,7 +746,7 @@ Do you really want to import this file?</source>
         <translation>信息</translation>
     </message>
     <message>
-        <source>You can copy and paste the values, with shortcut "Ctrl + C" and "Ctrl + V"</source>
+        <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
         <translation>您可以使用快捷键“Ctrl + C”和“Ctrl + V”复制和粘贴值</translation>
     </message>
     <message>
@@ -807,8 +859,8 @@ Do you really want to import this file?</source>
         <translation>打开文件时出现错误</translation>
     </message>
     <message>
-        <source>The first two columns must be "X" and "Y".</source>
-        <translation>前两列必须为"X" and "Y".</translation>
+        <source>The first two columns must be &quot;X&quot; and &quot;Y&quot;.</source>
+        <translation>前两列必须为&quot;X&quot; and &quot;Y&quot;.</translation>
     </message>
     <message>
         <source>The data file has to consist of only English characters.</source>
@@ -973,8 +1025,8 @@ Do you really want to import this file?</source>
         <translation>变量定义</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;您可以使用JavaScript语言定义. 请参考 &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;您可以使用JavaScript语言定义. 请参考 &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -1052,8 +1104,8 @@ Do you really want to import this file?</source>
         <translation>&amp;下移</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: 列表中的顺序很重要。 在定义中，可以将简单运算计算的值用作变量，该变量出现在列表的前面。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: 列表中的顺序很重要。 在定义中，可以将简单运算计算的值用作变量，该变量出现在列表的前面。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
@@ -1206,16 +1258,20 @@ Do you really want to import this file?</source>
         <source>&amp;Hide Detail</source>
         <translation>&amp;隐藏细节</translation>
     </message>
+    <message>
+        <source>--</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PostIterationSteps</name>
     <message>
         <source>Error</source>
-        <translation>错误</translation>
+        <translation type="vanished">错误</translation>
     </message>
     <message>
         <source>Error occured while loading calculation result.</source>
-        <translation>加载计算结果是错误</translation>
+        <translation type="vanished">加载计算结果是错误</translation>
     </message>
 </context>
 <context>
@@ -1267,6 +1323,10 @@ Do you really want to import this file?</source>
     <message>
         <source>Error occured while saving %1</source>
         <translation>保存%1时发生错误</translation>
+    </message>
+    <message>
+        <source>Saving calculation result as TPO files...</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1374,8 +1434,8 @@ Do you really want to import this file?</source>
         <translation type="obsolete">&amp;编辑...</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="obsolete">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;您可以使用JavaScript语言定义. 请参考 &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="obsolete">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;您可以使用JavaScript语言定义. 请参考 &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -1437,8 +1497,8 @@ Do you really want to import this file?</source>
         <translation>输出定义</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;您可以使用 JavaScript 语言定义变量。请参阅 &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text - 装饰：下划线；颜色：#0000ff;"&gt;此处&lt;/span&gt;&lt;/a&gt; 详情。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;您可以使用 JavaScript 语言定义变量。请参阅 &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text - 装饰：下划线；颜色：#0000ff;&quot;&gt;此处&lt;/span&gt;&lt;/a&gt; 详情。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -1481,11 +1541,11 @@ Do you really want to import this file?</source>
     <name>PostTimeSteps</name>
     <message>
         <source>Error</source>
-        <translation>错误</translation>
+        <translation type="vanished">错误</translation>
     </message>
     <message>
         <source>Error occured while loading calculation result.</source>
-        <translation>加载计算结果时发生错误</translation>
+        <translation type="vanished">加载计算结果时发生错误</translation>
     </message>
 </context>
 <context>
@@ -1537,11 +1597,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Warning</source>
-        <translation>警告</translation>
+        <translation type="vanished">警告</translation>
     </message>
     <message>
         <source>Elevation grid attribute is not defined for grid type %1. Grid I/O functions, grid creating functions may not work correctly for these grid types.</source>
-        <translation>未为网格类型%1定义高程网格属性。 对于这些网格类型，网格I / O功能，网格创建功能可能无法正确工作</translation>
+        <translation type="vanished">未为网格类型%1定义高程网格属性。 对于这些网格类型，网格I / O功能，网格创建功能可能无法正确工作</translation>
     </message>
     <message>
         <source>Saving project...</source>
@@ -1560,11 +1620,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Solution %1 already exists.</source>
-        <translation>解法%1已存在</translation>
+        <translation type="vanished">解法%1已存在</translation>
     </message>
     <message>
         <source>CGNS file whose name contains characters other than alphabets and numbers can not be imported.</source>
-        <translation>其名称中包含字母和数字以外的字符的CGNS文件无法导入。</translation>
+        <translation type="vanished">其名称中包含字母和数字以外的字符的CGNS文件无法导入。</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -1588,7 +1648,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>%1 Saving project file failed.</source>
-        <translation>保存项目文件%1失败</translation>
+        <translation type="vanished">保存项目文件%1失败</translation>
     </message>
     <message>
         <source>All images(*.jpg *.jpeg *.png *.tif);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif)</source>
@@ -1632,7 +1692,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>This file is for solver %1 %2. It is not compatible with the solver you are using, so maybe importing this file will fail. Do you really want to import this file?</source>
-        <translation>该文件用于求解器%1%2。 它与您使用的求解器不兼容，因此导入此文件可能会失败。 您真的要导入该文件吗？</translation>
+        <translation type="vanished">该文件用于求解器%1%2。 它与您使用的求解器不兼容，因此导入此文件可能会失败。 您真的要导入该文件吗？</translation>
     </message>
     <message>
         <source>There is no visualization/graph windows.</source>
@@ -1645,6 +1705,10 @@ Do you really want to import this file?</source>
     <message>
         <source>Coordinate system not selected.</source>
         <translation>未选择坐标系</translation>
+    </message>
+    <message>
+        <source>Error occured while opening CGNS file in project file : Case1.cgn</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1680,8 +1744,8 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectWorkspace</name>
     <message>
-        <source>Workspace "%1" has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
-        <translation>Workspace "%1"具有%2项目文件夹，似乎不再使用了。 您要删除它们吗？</translation>
+        <source>Workspace &quot;%1&quot; has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
+        <translation>Workspace &quot;%1&quot;具有%2项目文件夹，似乎不再使用了。 您要删除它们吗？</translation>
     </message>
     <message>
         <source>Information</source>

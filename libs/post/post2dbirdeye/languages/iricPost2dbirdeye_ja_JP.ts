@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ja_JP">
 <context>
     <name>Post2dBirdEyeObjectBrowser</name>
@@ -9,7 +11,7 @@
 <context>
     <name>Post2dBirdEyeWindow</name>
     <message>
-        <source>Bird's-Eye Post-processing (2D): %1</source>
+        <source>Bird&apos;s-Eye Post-processing (2D): %1</source>
         <translation>鳥瞰図可視化ウィンドウ (2D): %1</translation>
     </message>
     <message>
@@ -87,6 +89,53 @@
     <message>
         <source>A maximum of four contours may be defined.</source>
         <translation>コンターは最大で4つまでしか描画できません。</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowContourSettingDialog</name>
+    <message>
+        <source>Scalar Setting</source>
+        <translation>スカラー設定</translation>
+    </message>
+    <message>
+        <source>Scalar value for elevation</source>
+        <translation>標高に使用するスカラー値</translation>
+    </message>
+    <message>
+        <source>Color Setting</source>
+        <translation>表示色設定</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>色を指定</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation>スカラー値により設定</translation>
+    </message>
+    <message>
+        <source>Scalar Value:</source>
+        <translation>スカラー値:</translation>
+    </message>
+    <message>
+        <source>Display Setting</source>
+        <translation>表示設定</translation>
+    </message>
+    <message>
+        <source>&amp;Region Setting</source>
+        <translation>領域設定(&amp;R)</translation>
+    </message>
+    <message>
+        <source>&amp;Color Bar Setting</source>
+        <translation>カラーバー設定(&amp;C)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>エラー</translation>
+    </message>
+    <message>
+        <source>For value range, max value is smaller than min value.</source>
+        <translation>値の範囲で、最大値が最小値より小さくなっています。</translation>
     </message>
 </context>
 <context>

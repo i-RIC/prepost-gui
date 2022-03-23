@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="fi_FI">
 <context>
     <name>AttributeBrowserTargetDataItem</name>
@@ -27,6 +29,10 @@
     <message>
         <source>Select a corresponding point on Main Window.</source>
         <translation>Valitse vastaava piste pääikkunasta.</translation>
+    </message>
+    <message>
+        <source>Fix Image position</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -210,6 +216,10 @@
     <message>
         <source>Select a point on Georeference dialog.</source>
         <translation>Valitse piste Georeference -valintaikkunasta.</translation>
+    </message>
+    <message>
+        <source>Delete Points</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -446,6 +456,10 @@
         <source>Please select from which CGNS file to read grid.</source>
         <translation>Valitse, mistä CGNS -tiedostosta ruudukko luetaan.</translation>
     </message>
+    <message>
+        <source>CGNS File</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>InputConditionContainerSet</name>
@@ -454,12 +468,12 @@
         <translation>Määrityssolmu ei ole tallennettu</translation>
     </message>
     <message>
-        <source>Wrong valueType "%1" is set.</source>
-        <translation>Väärä valueType "%1"on asetettu.</translation>
+        <source>Wrong valueType &quot;%1&quot; is set.</source>
+        <translation>Väärä valueType &quot;%1&quot;on asetettu.</translation>
     </message>
     <message>
-        <source>Wrong conditionType "%1"is set.</source>
-        <translation>Väärä kuntoTyyppi "%1"on asetettu.</translation>
+        <source>Wrong conditionType &quot;%1&quot;is set.</source>
+        <translation>Väärä kuntoTyyppi &quot;%1&quot;on asetettu.</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
@@ -472,6 +486,13 @@
     </message>
 </context>
 <context>
+    <name>InputConditionDependency</name>
+    <message>
+        <source>Unhandled widget in ActionSetValue</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>InputConditionDialog</name>
     <message>
         <source>Calculation Condition</source>
@@ -479,7 +500,7 @@
     </message>
     <message>
         <source>&amp;Save and Close</source>
-        <translation>Tallenna ja sulje (&amp;S)</translation>
+        <translation type="vanished">Tallenna ja sulje (&amp;S)</translation>
     </message>
     <message>
         <source>Error</source>
@@ -517,6 +538,10 @@ Do you really want to import this file?</source>
     <message>
         <source>Error occured while saving.</source>
         <translation>Virhe tallennettaessa.</translation>
+    </message>
+    <message>
+        <source>Opening the CGNS file failed.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -572,6 +597,10 @@ Do you really want to import this file?</source>
         <source>Select File</source>
         <translation>Valitse tiedosto</translation>
     </message>
+    <message>
+        <source>File name has to consist of only English characters.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>InputConditionWidgetCgnsResult</name>
@@ -597,12 +626,35 @@ Do you really want to import this file?</source>
         <source>Select File</source>
         <translation>Valitse tiedosto</translation>
     </message>
+    <message>
+        <source>File name has to consist of only English characters.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>...</source>
+        <translation type="unfinished">...</translation>
+    </message>
 </context>
 <context>
     <name>InputConditionWidgetFoldername</name>
     <message>
         <source>Select Directory</source>
         <translation>Valitse Hakemisto</translation>
+    </message>
+    <message>
+        <source>Folder name has to consist of only English characters.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>...</source>
+        <translation type="unfinished">...</translation>
+    </message>
+</context>
+<context>
+    <name>InputConditionWidgetFunctional</name>
+    <message>
+        <source>Edit</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -692,8 +744,8 @@ Do you really want to import this file?</source>
         <translation>Tiedosto %1 päivitetään laskutoimintoon tuonnin jälkeen %2. Haluatko tuoda päivitetyn tiedoston?</translation>
     </message>
     <message>
-        <source>You can copy and paste the values, with shortcut "Ctrl + C" and "Ctrl + V"</source>
-        <translation>Voit kopioida ja liittää arvot pikanäppäimillä "Ctrl + C" ja "Ctrl + V"</translation>
+        <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
+        <translation>Voit kopioida ja liittää arvot pikanäppäimillä &quot;Ctrl + C&quot; ja &quot;Ctrl + V&quot;</translation>
     </message>
     <message>
         <source>The following problems found: 
@@ -807,8 +859,8 @@ Do you really want to import this file?</source>
         <translation>Virhe avattaessa tiedostoa.</translation>
     </message>
     <message>
-        <source>The first two columns must be "X" and "Y".</source>
-        <translation>Kahden ensimmäisen sarakkeen on oltava "X" ja "Y".</translation>
+        <source>The first two columns must be &quot;X&quot; and &quot;Y&quot;.</source>
+        <translation>Kahden ensimmäisen sarakkeen on oltava &quot;X&quot; ja &quot;Y&quot;.</translation>
     </message>
     <message>
         <source>The data file has to consist of only English characters.</source>
@@ -969,8 +1021,8 @@ Do you really want to import this file?</source>
         <translation>Määritelmä muuttuja</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Voit määrittää muuttujan JavaScript -kielellä. Katso &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -koristelu: alleviivattu; väri:#0000ff; "&gt; täällä &lt;/span&gt; &lt;/a&gt;, jos haluat lisätietoja. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Voit määrittää muuttujan JavaScript -kielellä. Katso &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -koristelu: alleviivattu; väri:#0000ff; &quot;&gt; täällä &lt;/span&gt; &lt;/a&gt;, jos haluat lisätietoja. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -1048,8 +1100,8 @@ Do you really want to import this file?</source>
         <translation>Alas (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Huomautus &lt;/span&gt;: Luettelon järjestys on tärkeä. Määritelmässä voit käyttää muuttujana yksinkertaisten operaatiolaskelmien arvoa, joka näkyy aiemmin luettelossa. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = &quot;font-weight: 600;&quot;&gt; Huomautus &lt;/span&gt;: Luettelon järjestys on tärkeä. Määritelmässä voit käyttää muuttujana yksinkertaisten operaatiolaskelmien arvoa, joka näkyy aiemmin luettelossa. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
@@ -1202,16 +1254,20 @@ Do you really want to import this file?</source>
         <source>&amp;Hide Detail</source>
         <translation>Piilota tiedot (&amp;H)</translation>
     </message>
+    <message>
+        <source>--</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PostIterationSteps</name>
     <message>
         <source>Error</source>
-        <translation>Virhe</translation>
+        <translation type="vanished">Virhe</translation>
     </message>
     <message>
         <source>Error occured while loading calculation result.</source>
-        <translation>Virhe ladattaessa laskentatulosta.</translation>
+        <translation type="vanished">Virhe ladattaessa laskentatulosta.</translation>
     </message>
 </context>
 <context>
@@ -1259,6 +1315,10 @@ Do you really want to import this file?</source>
     <message>
         <source>Error occured while saving %1</source>
         <translation>Virhe tallennettaessa %1</translation>
+    </message>
+    <message>
+        <source>Saving calculation result as TPO files...</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1394,8 +1454,8 @@ Do you really want to import this file?</source>
         <translation>Tuloksen määritelmä</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Voit määrittää muuttujan JavaScript -kielellä. Katso &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -koristelu: alleviivattu; väri:#0000ff; "&gt; täällä &lt;/span&gt; &lt;/a&gt;, jos haluat lisätietoja. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Voit määrittää muuttujan JavaScript -kielellä. Katso &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -koristelu: alleviivattu; väri:#0000ff; &quot;&gt; täällä &lt;/span&gt; &lt;/a&gt;, jos haluat lisätietoja. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -1438,11 +1498,11 @@ Do you really want to import this file?</source>
     <name>PostTimeSteps</name>
     <message>
         <source>Error</source>
-        <translation>Virhe</translation>
+        <translation type="vanished">Virhe</translation>
     </message>
     <message>
         <source>Error occured while loading calculation result.</source>
-        <translation>Virhe ladattaessa laskentatulosta.</translation>
+        <translation type="vanished">Virhe ladattaessa laskentatulosta.</translation>
     </message>
 </context>
 <context>
@@ -1494,7 +1554,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Varoitus</translation>
+        <translation type="vanished">Varoitus</translation>
     </message>
     <message>
         <source>Saving project...</source>
@@ -1506,7 +1566,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Elevation grid attribute is not defined for grid type %1. Grid I/O functions, grid creating functions may not work correctly for these grid types.</source>
-        <translation>Korkeusruudukon määritettä ei ole määritetty ruudukkotyypille %1. Ruudukon I/O -toiminnot, ruudukon luontitoiminnot eivät ehkä toimi oikein näillä ruudukkotyypeillä.</translation>
+        <translation type="vanished">Korkeusruudukon määritettä ei ole määritetty ruudukkotyypille %1. Ruudukon I/O -toiminnot, ruudukon luontitoiminnot eivät ehkä toimi oikein näillä ruudukkotyypeillä.</translation>
     </message>
 </context>
 <context>
@@ -1517,11 +1577,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Solution %1 already exists.</source>
-        <translation>Ratkaisu %1 on jo olemassa.</translation>
+        <translation type="vanished">Ratkaisu %1 on jo olemassa.</translation>
     </message>
     <message>
         <source>CGNS file whose name contains characters other than alphabets and numbers can not be imported.</source>
-        <translation>CGNS -tiedostoa, jonka nimi sisältää muita merkkejä kuin aakkosia ja numeroita, ei voida tuoda.</translation>
+        <translation type="vanished">CGNS -tiedostoa, jonka nimi sisältää muita merkkejä kuin aakkosia ja numeroita, ei voida tuoda.</translation>
     </message>
     <message>
         <source>Export CGNS file</source>
@@ -1545,7 +1605,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>%1 Saving project file failed.</source>
-        <translation>%1 Projektitiedoston tallennus epäonnistui.</translation>
+        <translation type="vanished">%1 Projektitiedoston tallennus epäonnistui.</translation>
     </message>
     <message>
         <source>All images(*.jpg *.jpeg *.png *.tif);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif)</source>
@@ -1589,7 +1649,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>This file is for solver %1 %2. It is not compatible with the solver you are using, so maybe importing this file will fail. Do you really want to import this file?</source>
-        <translation>Tämä tiedosto on ratkaisijalle %1 %2. Se ei ole yhteensopiva käyttämäsi ratkaisijan kanssa, joten ehkä tämän tiedoston tuonti epäonnistuu. Haluatko todella tuoda tämän tiedoston?</translation>
+        <translation type="vanished">Tämä tiedosto on ratkaisijalle %1 %2. Se ei ole yhteensopiva käyttämäsi ratkaisijan kanssa, joten ehkä tämän tiedoston tuonti epäonnistuu. Haluatko todella tuoda tämän tiedoston?</translation>
     </message>
     <message>
         <source>There is no visualization/graph windows.</source>
@@ -1602,6 +1662,10 @@ Do you really want to import this file?</source>
     <message>
         <source>Coordinate system not selected.</source>
         <translation>Koordinaattijärjestelmää ei ole valittu.</translation>
+    </message>
+    <message>
+        <source>Error occured while opening CGNS file in project file : Case1.cgn</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1637,8 +1701,8 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectWorkspace</name>
     <message>
-        <source>Workspace "%1" has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
-        <translation>Työtila "%1"on %2 projektikansiot, joita ei näytä enää käytettävän. Haluatko poistaa ne?</translation>
+        <source>Workspace &quot;%1&quot; has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
+        <translation>Työtila &quot;%1&quot;on %2 projektikansiot, joita ei näytä enää käytettävän. Haluatko poistaa ne?</translation>
     </message>
     <message>
         <source>Information</source>

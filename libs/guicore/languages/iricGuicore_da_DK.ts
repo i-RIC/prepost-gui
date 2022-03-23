@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="da_DK">
 <context>
     <name>AttributeBrowserTargetDataItem</name>
@@ -27,6 +29,10 @@
     <message>
         <source>Select a corresponding point on Main Window.</source>
         <translation>Vælg et tilsvarende punkt i hovedvinduet.</translation>
+    </message>
+    <message>
+        <source>Fix Image position</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -210,6 +216,10 @@
     <message>
         <source>Select a point on Georeference dialog.</source>
         <translation>Vælg et punkt i dialogboksen Georeference.</translation>
+    </message>
+    <message>
+        <source>Delete Points</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -446,6 +456,10 @@
         <source>Please select from which CGNS file to read grid.</source>
         <translation>Vælg venligst hvilken CGNS -fil, der skal læses gitter.</translation>
     </message>
+    <message>
+        <source>CGNS File</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>InputConditionContainerSet</name>
@@ -454,12 +468,12 @@
         <translation>Definitionsnode gemmes ikke</translation>
     </message>
     <message>
-        <source>Wrong valueType "%1" is set.</source>
-        <translation>Forkert valueType "%1"er indstillet.</translation>
+        <source>Wrong valueType &quot;%1&quot; is set.</source>
+        <translation>Forkert valueType &quot;%1&quot;er indstillet.</translation>
     </message>
     <message>
-        <source>Wrong conditionType "%1"is set.</source>
-        <translation>Forkert tilstandType "%1"er indstillet.</translation>
+        <source>Wrong conditionType &quot;%1&quot;is set.</source>
+        <translation>Forkert tilstandType &quot;%1&quot;er indstillet.</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
@@ -472,6 +486,13 @@
     </message>
 </context>
 <context>
+    <name>InputConditionDependency</name>
+    <message>
+        <source>Unhandled widget in ActionSetValue</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>InputConditionDialog</name>
     <message>
         <source>Calculation Condition</source>
@@ -479,7 +500,7 @@
     </message>
     <message>
         <source>&amp;Save and Close</source>
-        <translation>Gem og luk (&amp;S)</translation>
+        <translation type="vanished">Gem og luk (&amp;S)</translation>
     </message>
     <message>
         <source>Error</source>
@@ -517,6 +538,10 @@ Do you really want to import this file?</source>
     <message>
         <source>Error occured while saving.</source>
         <translation>Der opstod en fejl under lagringen.</translation>
+    </message>
+    <message>
+        <source>Opening the CGNS file failed.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -572,6 +597,10 @@ Do you really want to import this file?</source>
         <source>Select File</source>
         <translation>Vælg Fil</translation>
     </message>
+    <message>
+        <source>File name has to consist of only English characters.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>InputConditionWidgetCgnsResult</name>
@@ -597,12 +626,35 @@ Do you really want to import this file?</source>
         <source>Select File</source>
         <translation>Vælg Fil</translation>
     </message>
+    <message>
+        <source>File name has to consist of only English characters.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>...</source>
+        <translation type="unfinished">...</translation>
+    </message>
 </context>
 <context>
     <name>InputConditionWidgetFoldername</name>
     <message>
         <source>Select Directory</source>
         <translation>Vælg Telefonbog</translation>
+    </message>
+    <message>
+        <source>Folder name has to consist of only English characters.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>...</source>
+        <translation type="unfinished">...</translation>
+    </message>
+</context>
+<context>
+    <name>InputConditionWidgetFunctional</name>
+    <message>
+        <source>Edit</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -692,8 +744,8 @@ Do you really want to import this file?</source>
         <translation>Fil %1 opdateres efter import til beregningstilstand %2. Vil du importere den opdaterede fil?</translation>
     </message>
     <message>
-        <source>You can copy and paste the values, with shortcut "Ctrl + C" and "Ctrl + V"</source>
-        <translation>Du kan kopiere og indsætte værdierne med genvejen "Ctrl + C" og "Ctrl + V"</translation>
+        <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
+        <translation>Du kan kopiere og indsætte værdierne med genvejen &quot;Ctrl + C&quot; og &quot;Ctrl + V&quot;</translation>
     </message>
     <message>
         <source>The following problems found: 
@@ -807,8 +859,8 @@ Do you really want to import this file?</source>
         <translation>Der opstod en fejl under åbning af filen.</translation>
     </message>
     <message>
-        <source>The first two columns must be "X" and "Y".</source>
-        <translation>De to første kolonner skal være "X" og "Y".</translation>
+        <source>The first two columns must be &quot;X&quot; and &quot;Y&quot;.</source>
+        <translation>De to første kolonner skal være &quot;X&quot; og &quot;Y&quot;.</translation>
     </message>
     <message>
         <source>The data file has to consist of only English characters.</source>
@@ -969,8 +1021,8 @@ Do you really want to import this file?</source>
         <translation>Definition af variabel</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Du kan definere variablen med JavaScript -sprog. Se &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -dekoration: understreget; farve:#0000ff; "&gt; her &lt;/span&gt; &lt;/a&gt; for detaljer. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Du kan definere variablen med JavaScript -sprog. Se &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -dekoration: understreget; farve:#0000ff; &quot;&gt; her &lt;/span&gt; &lt;/a&gt; for detaljer. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -1048,8 +1100,8 @@ Do you really want to import this file?</source>
         <translation>ned (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Bemærk &lt;/span&gt;: Rækkefølgen på listen er vigtig. I definitionen kan du bruge værdien af simple driftsberegninger som en variabel, der vises tidligere på listen. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = &quot;font-weight: 600;&quot;&gt; Bemærk &lt;/span&gt;: Rækkefølgen på listen er vigtig. I definitionen kan du bruge værdien af simple driftsberegninger som en variabel, der vises tidligere på listen. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
@@ -1202,16 +1254,20 @@ Do you really want to import this file?</source>
         <source>&amp;Hide Detail</source>
         <translation>Skjul detaljer (&amp;H)</translation>
     </message>
+    <message>
+        <source>--</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PostIterationSteps</name>
     <message>
         <source>Error</source>
-        <translation>Fejl</translation>
+        <translation type="vanished">Fejl</translation>
     </message>
     <message>
         <source>Error occured while loading calculation result.</source>
-        <translation>Der opstod en fejl under indlæsning af beregningsresultatet.</translation>
+        <translation type="vanished">Der opstod en fejl under indlæsning af beregningsresultatet.</translation>
     </message>
 </context>
 <context>
@@ -1259,6 +1315,10 @@ Do you really want to import this file?</source>
     <message>
         <source>Error occured while saving %1</source>
         <translation>Der opstod en fejl under lagringen %1</translation>
+    </message>
+    <message>
+        <source>Saving calculation result as TPO files...</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1394,8 +1454,8 @@ Do you really want to import this file?</source>
         <translation>Definition af output</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Du kan definere variablen med JavaScript -sprog. Se &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -dekoration: understreget; farve:#0000ff; "&gt; her &lt;/span&gt; &lt;/a&gt; for detaljer. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Du kan definere variablen med JavaScript -sprog. Se &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -dekoration: understreget; farve:#0000ff; &quot;&gt; her &lt;/span&gt; &lt;/a&gt; for detaljer. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -1438,11 +1498,11 @@ Do you really want to import this file?</source>
     <name>PostTimeSteps</name>
     <message>
         <source>Error</source>
-        <translation>Fejl</translation>
+        <translation type="vanished">Fejl</translation>
     </message>
     <message>
         <source>Error occured while loading calculation result.</source>
-        <translation>Der opstod en fejl under indlæsning af beregningsresultatet.</translation>
+        <translation type="vanished">Der opstod en fejl under indlæsning af beregningsresultatet.</translation>
     </message>
 </context>
 <context>
@@ -1494,7 +1554,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Advarsel</translation>
+        <translation type="vanished">Advarsel</translation>
     </message>
     <message>
         <source>Saving project...</source>
@@ -1506,7 +1566,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Elevation grid attribute is not defined for grid type %1. Grid I/O functions, grid creating functions may not work correctly for these grid types.</source>
-        <translation>Elevation grid attribut er ikke defineret for grid type %1. Grid I/O -funktioner, netværksoprettende funktioner fungerer muligvis ikke korrekt for disse gittertyper.</translation>
+        <translation type="vanished">Elevation grid attribut er ikke defineret for grid type %1. Grid I/O -funktioner, netværksoprettende funktioner fungerer muligvis ikke korrekt for disse gittertyper.</translation>
     </message>
 </context>
 <context>
@@ -1517,11 +1577,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Solution %1 already exists.</source>
-        <translation>Løsning %1 eksisterer allerede.</translation>
+        <translation type="vanished">Løsning %1 eksisterer allerede.</translation>
     </message>
     <message>
         <source>CGNS file whose name contains characters other than alphabets and numbers can not be imported.</source>
-        <translation>CGNS -fil, hvis navn indeholder andre tegn end alfabeter og tal, kan ikke importeres.</translation>
+        <translation type="vanished">CGNS -fil, hvis navn indeholder andre tegn end alfabeter og tal, kan ikke importeres.</translation>
     </message>
     <message>
         <source>Export CGNS file</source>
@@ -1545,7 +1605,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>%1 Saving project file failed.</source>
-        <translation>%1 Gemning af projektfil mislykkedes.</translation>
+        <translation type="vanished">%1 Gemning af projektfil mislykkedes.</translation>
     </message>
     <message>
         <source>All images(*.jpg *.jpeg *.png *.tif);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif)</source>
@@ -1589,7 +1649,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>This file is for solver %1 %2. It is not compatible with the solver you are using, so maybe importing this file will fail. Do you really want to import this file?</source>
-        <translation>Denne fil er til solver %1 %2. Det er ikke kompatibelt med den solver, du bruger, så måske mislykkes import af denne fil. Vil du virkelig importere denne fil?</translation>
+        <translation type="vanished">Denne fil er til solver %1 %2. Det er ikke kompatibelt med den solver, du bruger, så måske mislykkes import af denne fil. Vil du virkelig importere denne fil?</translation>
     </message>
     <message>
         <source>There is no visualization/graph windows.</source>
@@ -1602,6 +1662,10 @@ Do you really want to import this file?</source>
     <message>
         <source>Coordinate system not selected.</source>
         <translation>Koordinatsystem ikke valgt.</translation>
+    </message>
+    <message>
+        <source>Error occured while opening CGNS file in project file : Case1.cgn</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1637,8 +1701,8 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectWorkspace</name>
     <message>
-        <source>Workspace "%1" has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
-        <translation>Arbejdsområde "%1"har %2 projektmapper, der ser ud til ikke at blive brugt mere. Vil du fjerne dem?</translation>
+        <source>Workspace &quot;%1&quot; has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
+        <translation>Arbejdsområde &quot;%1&quot;har %2 projektmapper, der ser ud til ikke at blive brugt mere. Vil du fjerne dem?</translation>
     </message>
     <message>
         <source>Information</source>

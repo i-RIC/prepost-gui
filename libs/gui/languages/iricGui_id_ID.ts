@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="id_ID">
 <context>
     <name>AnimationController</name>
@@ -449,8 +451,8 @@ This wizard will generate or update translation files for solver definition file
         <translation>Pilih Pemecah</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
-        <translation>Saat Anda membuat proyek baru, Anda harus memilih pemecah yang akan digunakan untuk perhitungan. Silakan pilih pemecah, dan tekan tombol "OK".</translation>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
+        <translation>Saat Anda membuat proyek baru, Anda harus memilih pemecah yang akan digunakan untuk perhitungan. Silakan pilih pemecah, dan tekan tombol &quot;OK&quot;.</translation>
     </message>
 </context>
 <context>
@@ -551,7 +553,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Copy folder project to Working Directory when opened</source>
-        <translation>Salin proyek folder ke Direktori Kerja saat dibuka</translation>
+        <translation type="vanished">Salin proyek folder ke Direktori Kerja saat dibuka</translation>
     </message>
     <message>
         <source>Checking for Update</source>
@@ -1206,9 +1208,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>Peringatan</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
+        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
 %2</source>
-        <translation>Terjadi kesalahan saat memuat file definisi pemecah di folder "%1". Pemecah ini diabaikan. %2</translation>
+        <translation>Terjadi kesalahan saat memuat file definisi pemecah di folder &quot;%1&quot;. Pemecah ini diabaikan. %2</translation>
     </message>
 </context>
 <context>
@@ -1323,7 +1325,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Proyek ini tampaknya dibuka oleh jendela GUI iRIC lainnya. Anda tidak dapat membuka folder proyek dari beberapa jendela GUI.</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation>Proyek yang dibuka tidak disalin ke direktori kerja, dan Anda akan dipaksa untuk menyimpan modifikasi yang Anda buat pada proyek ini. Jika Anda ingin menyimpan proyek saat ini, harap simpan ke proyek lain terlebih dahulu.</translation>
     </message>
     <message>
@@ -1491,8 +1493,8 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Sub-jendela aktif saat ini tidak mendukung pengeksporan gambar kontur.</translation>
     </message>
     <message>
-        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation>Untuk mengekspor file bentuk, alihkan "Pengaturan tampilan" ke "Gambar Kontur", bukan "Pinggiran Warna" atau "Isolin".</translation>
+        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
+        <translation>Untuk mengekspor file bentuk, alihkan &quot;Pengaturan tampilan&quot; ke &quot;Gambar Kontur&quot;, bukan &quot;Pinggiran Warna&quot; atau &quot;Isolin&quot;.</translation>
     </message>
     <message>
         <source>Export contour figure</source>
@@ -1622,6 +1624,10 @@ Option -&gt; Preferences</source>
     <message>
         <source>%1 - %2 %3 [%4]</source>
         <translation>%1 - %2 %3 [ %4 ]</translation>
+    </message>
+    <message>
+        <source>Setting file (*.vgsetting *.xml)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1968,7 +1974,7 @@ Option -&gt; Preferences</source>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&amp;Solver Information...</source>
@@ -1995,8 +2001,8 @@ Option -&gt; Preferences</source>
         <translation>Buka Jendela Pasca Pemrosesan 2D baru</translation>
     </message>
     <message>
-        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
-        <translation>Buka Jendela Pasca Pemrosesan 2D Bird's-Eye baru</translation>
+        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
+        <translation>Buka Jendela Pasca Pemrosesan 2D Bird&apos;s-Eye baru</translation>
     </message>
     <message>
         <source>Open new 3D Post-Processing Window</source>

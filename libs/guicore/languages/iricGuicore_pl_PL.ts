@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="pl_PL">
 <context>
     <name>AttributeBrowserTargetDataItem</name>
@@ -27,6 +29,10 @@
     <message>
         <source>Select a corresponding point on Main Window.</source>
         <translation>Wybierz odpowiedni punkt w oknie głównym.</translation>
+    </message>
+    <message>
+        <source>Fix Image position</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -210,6 +216,10 @@
     <message>
         <source>Select a point on Georeference dialog.</source>
         <translation>Wybierz punkt w oknie dialogowym Georeferencja.</translation>
+    </message>
+    <message>
+        <source>Delete Points</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -446,6 +456,10 @@
         <source>Please select from which CGNS file to read grid.</source>
         <translation>Proszę wybrać, z którego pliku CGNS odczytać siatkę.</translation>
     </message>
+    <message>
+        <source>CGNS File</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>InputConditionContainerSet</name>
@@ -454,12 +468,12 @@
         <translation>Węzeł definicji nie jest przechowywany</translation>
     </message>
     <message>
-        <source>Wrong valueType "%1" is set.</source>
-        <translation>Nieprawidłowa wartośćType " %1 jest ustawiony.</translation>
+        <source>Wrong valueType &quot;%1&quot; is set.</source>
+        <translation>Nieprawidłowa wartośćType &quot; %1 jest ustawiony.</translation>
     </message>
     <message>
-        <source>Wrong conditionType "%1"is set.</source>
-        <translation>Zły warunekTyp "%1"jest ustawiony.</translation>
+        <source>Wrong conditionType &quot;%1&quot;is set.</source>
+        <translation>Zły warunekTyp &quot;%1&quot;jest ustawiony.</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
@@ -472,6 +486,13 @@
     </message>
 </context>
 <context>
+    <name>InputConditionDependency</name>
+    <message>
+        <source>Unhandled widget in ActionSetValue</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>InputConditionDialog</name>
     <message>
         <source>Calculation Condition</source>
@@ -479,7 +500,7 @@
     </message>
     <message>
         <source>&amp;Save and Close</source>
-        <translation>Zapisz i zamknij (&amp;S)</translation>
+        <translation type="vanished">Zapisz i zamknij (&amp;S)</translation>
     </message>
     <message>
         <source>Error</source>
@@ -517,6 +538,10 @@ Do you really want to import this file?</source>
     <message>
         <source>Error occured while saving.</source>
         <translation>Wystąpił błąd podczas zapisywania.</translation>
+    </message>
+    <message>
+        <source>Opening the CGNS file failed.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -572,6 +597,10 @@ Do you really want to import this file?</source>
         <source>Select File</source>
         <translation>Wybierz plik</translation>
     </message>
+    <message>
+        <source>File name has to consist of only English characters.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>InputConditionWidgetCgnsResult</name>
@@ -597,12 +626,35 @@ Do you really want to import this file?</source>
         <source>Select File</source>
         <translation>Wybierz plik</translation>
     </message>
+    <message>
+        <source>File name has to consist of only English characters.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>...</source>
+        <translation type="unfinished">...</translation>
+    </message>
 </context>
 <context>
     <name>InputConditionWidgetFoldername</name>
     <message>
         <source>Select Directory</source>
         <translation>Wybierz katalog</translation>
+    </message>
+    <message>
+        <source>Folder name has to consist of only English characters.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>...</source>
+        <translation type="unfinished">...</translation>
+    </message>
+</context>
+<context>
+    <name>InputConditionWidgetFunctional</name>
+    <message>
+        <source>Edit</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -692,7 +744,7 @@ Do you really want to import this file?</source>
         <translation>Plik %1 jest aktualizowany po zaimportowaniu do warunku obliczeniowego %2. Czy chcesz zaimportować zaktualizowany plik?</translation>
     </message>
     <message>
-        <source>You can copy and paste the values, with shortcut "Ctrl + C" and "Ctrl + V"</source>
+        <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
         <translation>Możesz kopiować i wklejać wartości za pomocą skrótu „Ctrl + C” i „Ctrl + V”</translation>
     </message>
     <message>
@@ -807,7 +859,7 @@ Do you really want to import this file?</source>
         <translation>Wystąpił błąd podczas otwierania pliku.</translation>
     </message>
     <message>
-        <source>The first two columns must be "X" and "Y".</source>
+        <source>The first two columns must be &quot;X&quot; and &quot;Y&quot;.</source>
         <translation>Pierwsze dwie kolumny muszą zawierać „X” i „Y”.</translation>
     </message>
     <message>
@@ -969,8 +1021,8 @@ Do you really want to import this file?</source>
         <translation>Definicja zmiennej</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Możesz zdefiniować zmienną za pomocą języka JavaScript. Zobacz &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" tekst -dekoracja: podkreślenie; kolor:#0000ff;"&gt;tutaj&lt;/span&gt;&lt;/a&gt; szczegóły.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Możesz zdefiniować zmienną za pomocą języka JavaScript. Zobacz &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; tekst -dekoracja: podkreślenie; kolor:#0000ff;&quot;&gt;tutaj&lt;/span&gt;&lt;/a&gt; szczegóły.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -1048,8 +1100,8 @@ Do you really want to import this file?</source>
         <translation>W dół (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Uwaga&lt;/span&gt;: kolejność na liście jest ważna. W definicji można użyć wartości obliczeń prostych operacji jako zmiennej, która pojawia się wcześniej na liście.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Uwaga&lt;/span&gt;: kolejność na liście jest ważna. W definicji można użyć wartości obliczeń prostych operacji jako zmiennej, która pojawia się wcześniej na liście.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
@@ -1202,16 +1254,20 @@ Do you really want to import this file?</source>
         <source>&amp;Hide Detail</source>
         <translation>Ukryj szczegóły (&amp;H)</translation>
     </message>
+    <message>
+        <source>--</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PostIterationSteps</name>
     <message>
         <source>Error</source>
-        <translation>Błąd</translation>
+        <translation type="vanished">Błąd</translation>
     </message>
     <message>
         <source>Error occured while loading calculation result.</source>
-        <translation>Wystąpił błąd podczas wczytywania wyniku obliczeń.</translation>
+        <translation type="vanished">Wystąpił błąd podczas wczytywania wyniku obliczeń.</translation>
     </message>
 </context>
 <context>
@@ -1259,6 +1315,10 @@ Do you really want to import this file?</source>
     <message>
         <source>Error occured while saving %1</source>
         <translation>Wystąpił błąd podczas zapisywania %1</translation>
+    </message>
+    <message>
+        <source>Saving calculation result as TPO files...</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1394,8 +1454,8 @@ Do you really want to import this file?</source>
         <translation>Definicja wyjścia</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Możesz zdefiniować zmienną za pomocą języka JavaScript. Zobacz &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" tekst -dekoracja: podkreślenie; kolor:#0000ff;"&gt;tutaj&lt;/span&gt;&lt;/a&gt; szczegóły.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Możesz zdefiniować zmienną za pomocą języka JavaScript. Zobacz &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; tekst -dekoracja: podkreślenie; kolor:#0000ff;&quot;&gt;tutaj&lt;/span&gt;&lt;/a&gt; szczegóły.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -1438,11 +1498,11 @@ Do you really want to import this file?</source>
     <name>PostTimeSteps</name>
     <message>
         <source>Error</source>
-        <translation>Błąd</translation>
+        <translation type="vanished">Błąd</translation>
     </message>
     <message>
         <source>Error occured while loading calculation result.</source>
-        <translation>Wystąpił błąd podczas wczytywania wyniku obliczeń.</translation>
+        <translation type="vanished">Wystąpił błąd podczas wczytywania wyniku obliczeń.</translation>
     </message>
 </context>
 <context>
@@ -1494,7 +1554,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Ostrzeżenie</translation>
+        <translation type="vanished">Ostrzeżenie</translation>
     </message>
     <message>
         <source>Saving project...</source>
@@ -1506,7 +1566,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Elevation grid attribute is not defined for grid type %1. Grid I/O functions, grid creating functions may not work correctly for these grid types.</source>
-        <translation>Atrybut siatki rzędnej nie jest zdefiniowany dla typu siatki %1. Funkcje we/wy sieci, funkcje tworzenia sieci mogą nie działać poprawnie dla tych typów sieci.</translation>
+        <translation type="vanished">Atrybut siatki rzędnej nie jest zdefiniowany dla typu siatki %1. Funkcje we/wy sieci, funkcje tworzenia sieci mogą nie działać poprawnie dla tych typów sieci.</translation>
     </message>
 </context>
 <context>
@@ -1517,11 +1577,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Solution %1 already exists.</source>
-        <translation>Rozwiązanie %1 już istnieje.</translation>
+        <translation type="vanished">Rozwiązanie %1 już istnieje.</translation>
     </message>
     <message>
         <source>CGNS file whose name contains characters other than alphabets and numbers can not be imported.</source>
-        <translation>Nie można zaimportować pliku CGNS, którego nazwa zawiera znaki inne niż litery i cyfry.</translation>
+        <translation type="vanished">Nie można zaimportować pliku CGNS, którego nazwa zawiera znaki inne niż litery i cyfry.</translation>
     </message>
     <message>
         <source>Export CGNS file</source>
@@ -1545,7 +1605,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>%1 Saving project file failed.</source>
-        <translation>%1 Nie udało się zapisać pliku projektu.</translation>
+        <translation type="vanished">%1 Nie udało się zapisać pliku projektu.</translation>
     </message>
     <message>
         <source>All images(*.jpg *.jpeg *.png *.tif);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif)</source>
@@ -1589,7 +1649,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>This file is for solver %1 %2. It is not compatible with the solver you are using, so maybe importing this file will fail. Do you really want to import this file?</source>
-        <translation>Ten plik jest przeznaczony do rozwiązywania problemów %1 %2. Nie jest kompatybilny z używanym solverem, więc być może importowanie tego pliku się nie powiedzie. Czy na pewno chcesz zaimportować ten plik?</translation>
+        <translation type="vanished">Ten plik jest przeznaczony do rozwiązywania problemów %1 %2. Nie jest kompatybilny z używanym solverem, więc być może importowanie tego pliku się nie powiedzie. Czy na pewno chcesz zaimportować ten plik?</translation>
     </message>
     <message>
         <source>There is no visualization/graph windows.</source>
@@ -1602,6 +1662,10 @@ Do you really want to import this file?</source>
     <message>
         <source>Coordinate system not selected.</source>
         <translation>Nie wybrano układu współrzędnych.</translation>
+    </message>
+    <message>
+        <source>Error occured while opening CGNS file in project file : Case1.cgn</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1637,8 +1701,8 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectWorkspace</name>
     <message>
-        <source>Workspace "%1" has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
-        <translation>Obszar roboczy "%1" ma %2 foldery projektów, które wydają się nie być już używane. Czy chcesz je usunąć?</translation>
+        <source>Workspace &quot;%1&quot; has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
+        <translation>Obszar roboczy &quot;%1&quot; ma %2 foldery projektów, które wydają się nie być już używane. Czy chcesz je usunąć?</translation>
     </message>
     <message>
         <source>Information</source>

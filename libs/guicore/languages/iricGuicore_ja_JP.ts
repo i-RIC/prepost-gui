@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ja_JP">
 <context>
     <name>AttributeBrowserTargetDataItem</name>
@@ -24,7 +26,7 @@
     <name>BackgroundImageInfo</name>
     <message>
         <source>Fix Image position</source>
-        <translation type="vanished">位置の固定</translation>
+        <translation>位置の固定</translation>
     </message>
     <message>
         <source>Unable to read image %1</source>
@@ -124,12 +126,12 @@
         <translation type="vanished">Definition 要素が見つかりません</translation>
     </message>
     <message>
-        <source>Wrong valueType "%1" is set.</source>
-        <translation type="vanished">不正な valueType "%1" が指定されました。</translation>
+        <source>Wrong valueType &quot;%1&quot; is set.</source>
+        <translation type="vanished">不正な valueType &quot;%1&quot; が指定されました。</translation>
     </message>
     <message>
-        <source>Wrong conditionType "%1"is set.</source>
-        <translation type="vanished">不正な conditionType "%1" が指定されました。</translation>
+        <source>Wrong conditionType &quot;%1&quot;is set.</source>
+        <translation type="vanished">不正な conditionType &quot;%1&quot; が指定されました。</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
@@ -516,6 +518,10 @@ Do you really want to import this file?</source>
         <source>Select a point on Georeference dialog.</source>
         <translation>ジオレファレンスダイアログで、点を選択してください。</translation>
     </message>
+    <message>
+        <source>Delete Points</source>
+        <translation>点の削除</translation>
+    </message>
 </context>
 <context>
     <name>GraphicsWindowDataItem</name>
@@ -861,6 +867,10 @@ Do you really want to import this file?</source>
         <source>Please select from which CGNS file to read grid.</source>
         <translation>どのCGNSファイルから格子をインポートするか選択してください。</translation>
     </message>
+    <message>
+        <source>CGNS File</source>
+        <translation>CGNSファイル</translation>
+    </message>
 </context>
 <context>
     <name>InputConditionContainerSet</name>
@@ -869,12 +879,12 @@ Do you really want to import this file?</source>
         <translation>Definition 要素が見つかりません</translation>
     </message>
     <message>
-        <source>Wrong valueType "%1" is set.</source>
-        <translation>不正な valueType "%1" が指定されました。</translation>
+        <source>Wrong valueType &quot;%1&quot; is set.</source>
+        <translation>不正な valueType &quot;%1&quot; が指定されました。</translation>
     </message>
     <message>
-        <source>Wrong conditionType "%1"is set.</source>
-        <translation>不正な conditionType "%1" が指定されました。</translation>
+        <source>Wrong conditionType &quot;%1&quot;is set.</source>
+        <translation>不正な conditionType &quot;%1&quot; が指定されました。</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
@@ -888,6 +898,13 @@ Do you really want to import this file?</source>
     </message>
 </context>
 <context>
+    <name>InputConditionDependency</name>
+    <message>
+        <source>Unhandled widget in ActionSetValue</source>
+        <translation>Unhandled widget in ActionSetValue</translation>
+    </message>
+</context>
+<context>
     <name>InputConditionDialog</name>
     <message>
         <source>Calculation Condition</source>
@@ -895,7 +912,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>&amp;Save and Close</source>
-        <translation>保存して閉じる(&amp;S)</translation>
+        <translation type="vanished">保存して閉じる(&amp;S)</translation>
     </message>
     <message>
         <source>Error</source>
@@ -934,6 +951,10 @@ Do you really want to import this file?</source>
     <message>
         <source>Modifications you made will be discarded.</source>
         <translation>行った変更は破棄されます。</translation>
+    </message>
+    <message>
+        <source>Opening the CGNS file failed.</source>
+        <translation>CGNSファイルを開けませんでした。</translation>
     </message>
 </context>
 <context>
@@ -989,6 +1010,10 @@ Do you really want to import this file?</source>
         <source>Select File</source>
         <translation>ファイルを選択してください</translation>
     </message>
+    <message>
+        <source>File name has to consist of only English characters.</source>
+        <translation>ファイル名には、 英数字と記号しか使用できません。</translation>
+    </message>
 </context>
 <context>
     <name>InputConditionWidgetCgnsResult</name>
@@ -1012,11 +1037,11 @@ Do you really want to import this file?</source>
     <name>InputConditionWidgetFilename</name>
     <message>
         <source>File name has to consist of only English characters.</source>
-        <translation type="vanished">ファイル名には、 英数字と記号しか使用できません。</translation>
+        <translation>ファイル名には、 英数字と記号しか使用できません。</translation>
     </message>
     <message>
         <source>...</source>
-        <translation type="vanished">...</translation>
+        <translation>...</translation>
     </message>
     <message>
         <source>Select File</source>
@@ -1038,11 +1063,11 @@ Do you really want to import this file?</source>
     <name>InputConditionWidgetFoldername</name>
     <message>
         <source>Folder name has to consist of only English characters.</source>
-        <translation type="vanished">フォルダ名には、 英数字と記号しか使用できません。</translation>
+        <translation>フォルダ名には、 英数字と記号しか使用できません。</translation>
     </message>
     <message>
         <source>...</source>
-        <translation type="vanished">...</translation>
+        <translation>...</translation>
     </message>
     <message>
         <source>Select Directory</source>
@@ -1064,7 +1089,7 @@ Do you really want to import this file?</source>
     <name>InputConditionWidgetFunctional</name>
     <message>
         <source>Edit</source>
-        <translation type="vanished">編集</translation>
+        <translation>編集</translation>
     </message>
 </context>
 <context>
@@ -1162,8 +1187,8 @@ Do you really want to import this file?</source>
         <translation>情報</translation>
     </message>
     <message>
-        <source>You can copy and paste the values, with shortcut "Ctrl + C" and "Ctrl + V"</source>
-        <translation>ショートカットキー "Ctrl + C", "Ctrl + V" によって、値をコピー＆ペーストできます。</translation>
+        <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
+        <translation>ショートカットキー &quot;Ctrl + C&quot;, &quot;Ctrl + V&quot; によって、値をコピー＆ペーストできます。</translation>
     </message>
     <message>
         <source>The following problems found: 
@@ -1286,8 +1311,8 @@ Do you really want to import this file?</source>
         <translation>ファイルを開く時にエラーが発生しました。</translation>
     </message>
     <message>
-        <source>The first two columns must be "X" and "Y".</source>
-        <translation>最初の2つの列は "X",  "Y" でなくてはいけません。</translation>
+        <source>The first two columns must be &quot;X&quot; and &quot;Y&quot;.</source>
+        <translation>最初の2つの列は &quot;X&quot;,  &quot;Y&quot; でなくてはいけません。</translation>
     </message>
     <message>
         <source>The data file has to consist of only English characters.</source>
@@ -1545,7 +1570,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Variable name:</source>
-        <translation />
+        <translation></translation>
     </message>
     <message>
         <source>Value for testing:</source>
@@ -1595,12 +1620,12 @@ Do you really want to import this file?</source>
         <translation>変数の定義</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;変数を、 JavaScript 言語で定義できます。詳しくは、&lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;こちら&lt;/span&gt;&lt;/a&gt;を参照してください。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;変数を、 JavaScript 言語で定義できます。詳しくは、&lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;こちら&lt;/span&gt;&lt;/a&gt;を参照してください。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://readthedocs.org/"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;変数を、 JavaScript 言語で定義できます。詳しくは、&lt;a href="http://readthedocs.org/"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;こちら&lt;/span&gt;&lt;/a&gt;を参照してください。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://readthedocs.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;変数を、 JavaScript 言語で定義できます。詳しくは、&lt;a href=&quot;http://readthedocs.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;こちら&lt;/span&gt;&lt;/a&gt;を参照してください。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -1611,7 +1636,7 @@ Do you really want to import this file?</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;このボタンを押すと、定義が正しいかテストできます。もし定義の読み込みでエラーが発生すると、エラーメッセージが表示されます。定義の読み込みが成功すると、「テスト用の値」を用いて値が計算され、表示されます。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>You can test the definition by clicking this. If error occurs while parsing the definition, the error message is shown. When the definition is parsed successfully, the vallue calculated using the "Value for testing" for each input is shown.</source>
+        <source>You can test the definition by clicking this. If error occurs while parsing the definition, the error message is shown. When the definition is parsed successfully, the vallue calculated using the &quot;Value for testing&quot; for each input is shown.</source>
         <translation type="vanished">このボタンを押すと、定義が正しいかテストできます。もし定義の読み込みでエラーが発生すると、エラーメッセージが表示されます。定義の読み込みが成功すると、「テスト用の値」を用いて値が計算され、表示されます。</translation>
     </message>
     <message>
@@ -1682,8 +1707,8 @@ Do you really want to import this file?</source>
         <translation>下へ (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;注釈&lt;/span&gt;: リスト上の順番は重要です。変数の定義に置いて、リストで上にある項目は、ソルバが出力する変数と同じように使用できます。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;注釈&lt;/span&gt;: リスト上の順番は重要です。変数の定義に置いて、リストで上にある項目は、ソルバが出力する変数と同じように使用できます。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
@@ -1852,16 +1877,20 @@ Do you really want to import this file?</source>
         <source>&amp;Hide Detail</source>
         <translation>詳細を隠す(&amp;H)</translation>
     </message>
+    <message>
+        <source>--</source>
+        <translation>--</translation>
+    </message>
 </context>
 <context>
     <name>PostIterationSteps</name>
     <message>
         <source>Error</source>
-        <translation>エラー</translation>
+        <translation type="vanished">エラー</translation>
     </message>
     <message>
         <source>Error occured while loading calculation result.</source>
-        <translation>計算結果の読み込み中にエラーが発生しました。</translation>
+        <translation type="vanished">計算結果の読み込み中にエラーが発生しました。</translation>
     </message>
 </context>
 <context>
@@ -1917,6 +1946,10 @@ Do you really want to import this file?</source>
     <message>
         <source>Error occured while saving %1</source>
         <translation>%1 の保存中にエラーが発生しました。</translation>
+    </message>
+    <message>
+        <source>Saving calculation result as TPO files...</source>
+        <translation>計算結果をTPO 形式で保存...</translation>
     </message>
 </context>
 <context>
@@ -2052,8 +2085,8 @@ Do you really want to import this file?</source>
         <translation type="vanished">出力の定義</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;変数を、 JavaScript 言語で定義できます。詳しくは、&lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;こちら&lt;/span&gt;&lt;/a&gt;を参照してください。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;変数を、 JavaScript 言語で定義できます。詳しくは、&lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;こちら&lt;/span&gt;&lt;/a&gt;を参照してください。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2139,8 +2172,8 @@ Do you really want to import this file?</source>
         <translation>出力の定義</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;変数を、 JavaScript 言語で定義できます。詳しくは、&lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;こちら&lt;/span&gt;&lt;/a&gt;を参照してください。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;変数を、 JavaScript 言語で定義できます。詳しくは、&lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;こちら&lt;/span&gt;&lt;/a&gt;を参照してください。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2183,11 +2216,11 @@ Do you really want to import this file?</source>
     <name>PostTimeSteps</name>
     <message>
         <source>Error</source>
-        <translation>エラー</translation>
+        <translation type="vanished">エラー</translation>
     </message>
     <message>
         <source>Error occured while loading calculation result.</source>
-        <translation>計算結果の読み込み中にエラーが発生しました。</translation>
+        <translation type="vanished">計算結果の読み込み中にエラーが発生しました。</translation>
     </message>
 </context>
 <context>
@@ -2246,11 +2279,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Warning</source>
-        <translation>警告</translation>
+        <translation type="vanished">警告</translation>
     </message>
     <message>
         <source>Elevation grid attribute is not defined for grid type %1. Grid I/O functions, grid creating functions may not work correctly for these grid types.</source>
-        <translation>格子属性 Elevation が、格子種類 %1 で定義されていません。格子の入出力機能、格子生成機能の一部は、これらの格子種類については正しく動作しません。</translation>
+        <translation type="vanished">格子属性 Elevation が、格子種類 %1 で定義されていません。格子の入出力機能、格子生成機能の一部は、これらの格子種類については正しく動作しません。</translation>
     </message>
     <message>
         <source>Saving project...</source>
@@ -2277,11 +2310,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Solution %1 already exists.</source>
-        <translation>ソリューション %1 は既に存在します。</translation>
+        <translation type="vanished">ソリューション %1 は既に存在します。</translation>
     </message>
     <message>
         <source>CGNS file whose name contains characters other than alphabets and numbers can not be imported.</source>
-        <translation>英数字以外の文字を名前に含む CGNS ファイルは、インポートできません。</translation>
+        <translation type="vanished">英数字以外の文字を名前に含む CGNS ファイルは、インポートできません。</translation>
     </message>
     <message>
         <source>This CGNS file is created for %1 version %2. It is not compatible with the current solver.</source>
@@ -2323,7 +2356,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>%1 Saving project file failed.</source>
-        <translation>%1 プロジェクトファイルの保存が失敗しました。</translation>
+        <translation type="vanished">%1 プロジェクトファイルの保存が失敗しました。</translation>
     </message>
     <message>
         <source>All images(*.jpg *.jpeg *.png *.tif);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif)</source>
@@ -2375,7 +2408,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>This file is for solver %1 %2. It is not compatible with the solver you are using, so maybe importing this file will fail. Do you really want to import this file?</source>
-        <translation>このファイルは、ソルバ %1 %2 用のものです。現在お使いのソルバと互換性がないため、インポートは失敗する可能性があります。本当にこのファイルをインポートしますか?</translation>
+        <translation type="vanished">このファイルは、ソルバ %1 %2 用のものです。現在お使いのソルバと互換性がないため、インポートは失敗する可能性があります。本当にこのファイルをインポートしますか?</translation>
     </message>
     <message>
         <source>There is no visualization/graph windows.</source>
@@ -2384,6 +2417,10 @@ Do you really want to import this file?</source>
     <message>
         <source>File %1 could not be opened.</source>
         <translation>%1 を開けませんでした。</translation>
+    </message>
+    <message>
+        <source>Error occured while opening CGNS file in project file : Case1.cgn</source>
+        <translation>プロジェクトファイル内のCGNSファイルを開けませんでした: Case1.cgn</translation>
     </message>
 </context>
 <context>
@@ -2419,8 +2456,8 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectWorkspace</name>
     <message>
-        <source>Workspace "%1" has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
-        <translation>ワークスペース %1" には、もう使われていないと思われるプロジェクトフォルダが %2 あります。削除しますか?</translation>
+        <source>Workspace &quot;%1&quot; has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
+        <translation>ワークスペース %1&quot; には、もう使われていないと思われるプロジェクトフォルダが %2 あります。削除しますか?</translation>
     </message>
     <message>
         <source>Information</source>

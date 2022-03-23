@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="nl_NL">
 <context>
     <name>AnimationController</name>
@@ -432,7 +434,7 @@ When you have iRIC windows other than this, close them manually.</source>
     <message>
         <source>This function is intended to be used by solver developers or grid creating program developers, not users.
 This wizard will generate or update translation files for solver definition files and grid creating program definition files those are registered to iRIC system. You need to specify the solver (or grid creating program) name, and the list of languages for those you want to create or update translation files.</source>
-        <translation>Deze functie is bedoeld om te worden gebruikt door ontwikkelaars van oplossers of ontwikkelaars van programma's voor het maken van rasters, niet door gebruikers. Deze wizard zal vertaalbestanden genereren of bijwerken voor oplosserdefinitiebestanden en programmadefinitiebestanden voor het maken van rasters die zijn geregistreerd in het iRIC-systeem. U moet de naam van de oplosser (of het programma voor het maken van rasters) opgeven en de lijst met talen voor degenen die u vertaalbestanden wilt maken of bijwerken.</translation>
+        <translation>Deze functie is bedoeld om te worden gebruikt door ontwikkelaars van oplossers of ontwikkelaars van programma&apos;s voor het maken van rasters, niet door gebruikers. Deze wizard zal vertaalbestanden genereren of bijwerken voor oplosserdefinitiebestanden en programmadefinitiebestanden voor het maken van rasters die zijn geregistreerd in het iRIC-systeem. U moet de naam van de oplosser (of het programma voor het maken van rasters) opgeven en de lijst met talen voor degenen die u vertaalbestanden wilt maken of bijwerken.</translation>
     </message>
 </context>
 <context>
@@ -449,8 +451,8 @@ This wizard will generate or update translation files for solver definition file
         <translation>Selecteer Oplosser</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
-        <translation>Wanneer u een nieuw project aanmaakt, moet u de oplosser selecteren die u voor de berekening wilt gebruiken. Selecteer een oplosser en druk op de knop "OK".</translation>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
+        <translation>Wanneer u een nieuw project aanmaakt, moet u de oplosser selecteren die u voor de berekening wilt gebruiken. Selecteer een oplosser en druk op de knop &quot;OK&quot;.</translation>
     </message>
 </context>
 <context>
@@ -551,7 +553,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Copy folder project to Working Directory when opened</source>
-        <translation>Kopieer mapproject naar werkmap wanneer geopend</translation>
+        <translation type="vanished">Kopieer mapproject naar werkmap wanneer geopend</translation>
     </message>
     <message>
         <source>Checking for Update</source>
@@ -1206,9 +1208,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>Waarschuwing</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
+        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
 %2</source>
-        <translation>Er is een fout opgetreden bij het laden van het oplosserdefinitiebestand in de map "%1". Deze oplosser wordt genegeerd. %2</translation>
+        <translation>Er is een fout opgetreden bij het laden van het oplosserdefinitiebestand in de map &quot;%1&quot;. Deze oplosser wordt genegeerd. %2</translation>
     </message>
 </context>
 <context>
@@ -1327,7 +1329,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Dit project lijkt te worden geopend door een ander iRIC GUI-venster. U kunt een projectmap niet openen vanuit meerdere GUI-vensters.</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation>Het geopende project wordt niet naar de werkmap gekopieerd en u zult de wijzigingen die u in dit project aanbrengt, moeten opslaan. Als u het huidige project wilt behouden, sla het dan eerst op in een ander project.</translation>
     </message>
     <message>
@@ -1487,8 +1489,8 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Het momenteel actieve subvenster ondersteunt het exporteren van contourfiguren niet.</translation>
     </message>
     <message>
-        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation>Om vormbestand te exporteren, schakelt u "Weergave-instelling" naar "Contourfiguur", niet "Kleurrand" of "Isolijnen".</translation>
+        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
+        <translation>Om vormbestand te exporteren, schakelt u &quot;Weergave-instelling&quot; naar &quot;Contourfiguur&quot;, niet &quot;Kleurrand&quot; of &quot;Isolijnen&quot;.</translation>
     </message>
     <message>
         <source>Export contour figure to ESRI Shapefiles</source>
@@ -1622,6 +1624,10 @@ Option -&gt; Preferences</source>
     <message>
         <source>%1 - %2 %3 [%4]</source>
         <translation>%1 - %2 %3 [ %4 ]</translation>
+    </message>
+    <message>
+        <source>Setting file (*.vgsetting *.xml)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1968,7 +1974,7 @@ Option -&gt; Preferences</source>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&amp;Solver Information...</source>
@@ -1995,8 +2001,8 @@ Option -&gt; Preferences</source>
         <translation>Nieuw venster voor 2D-nabewerking openen</translation>
     </message>
     <message>
-        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
-        <translation>Nieuw 2D Bird's-Eye Post-Processing-venster openen</translation>
+        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
+        <translation>Nieuw 2D Bird&apos;s-Eye Post-Processing-venster openen</translation>
     </message>
     <message>
         <source>Open new 3D Post-Processing Window</source>

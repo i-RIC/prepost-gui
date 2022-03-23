@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="lv_LV">
 <context>
     <name>BoundaryConditionDialog</name>
@@ -112,7 +114,7 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>GridBirdEyeWindow</name>
     <message>
-        <source>Grid Bird's-Eye View Window</source>
+        <source>Grid Bird&apos;s-Eye View Window</source>
         <translation>Režģis-putna lidojuma logs</translation>
     </message>
 </context>
@@ -580,8 +582,8 @@ Do you really want to import grid from this file?</source>
         <translation>%1 netiek kartēti pēc pēdējās rediģēšanas reizes. Vai vēlaties veikt kartēšanu tagad?</translation>
     </message>
     <message>
-        <source>Boundary Condition Setting "%1" is not mapped after it is edited last time. Do you want to execute mapping now?</source>
-        <translation>Robežnosacījumu iestatīšana "%1"nav kartēts pēc iepriekšējās rediģēšanas. Vai vēlaties veikt kartēšanu tūlīt?</translation>
+        <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
+        <translation>Robežnosacījumu iestatīšana &quot;%1&quot;nav kartēts pēc iepriekšējās rediģēšanas. Vai vēlaties veikt kartēšanu tūlīt?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -983,9 +985,9 @@ Do you really want to import grid from this file?</source>
         <translation>Izpildīt (&amp;E)...</translation>
     </message>
     <message>
-        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".
+        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.
 </source>
-        <translation>Tālāk norādītie atribūti netika kartēti, jo tīkla ģeneratora izejas vērtības tiem. Ja vēlaties piespiedu kārtā kartēt to ģeogrāfiskos datus, lūdzu, kartējiet manuāli, izmantojot izvēlni "Režģis" -&gt; "Atribūtu kartēšana" -&gt; "Izpildīt".</translation>
+        <translation>Tālāk norādītie atribūti netika kartēti, jo tīkla ģeneratora izejas vērtības tiem. Ja vēlaties piespiedu kārtā kartēt to ģeogrāfiskos datus, lūdzu, kartējiet manuāli, izmantojot izvēlni &quot;Režģis&quot; -&gt; &quot;Atribūtu kartēšana&quot; -&gt; &quot;Izpildīt&quot;.</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1004,12 +1006,12 @@ Do you really want to import grid from this file?</source>
         <translation>Ģeogrāfisko datu kartēšana ir pabeigta</translation>
     </message>
     <message>
-        <source>The grid attribute "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Režģa atribūts "%1"tiek rediģēts ar rokām. Veicot kartēšanu, visas jūsu veiktās izmaiņas tiks atmestas. Vai tiešām vēlaties izpildīt kartēšanu?</translation>
+        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Režģa atribūts &quot;%1&quot;tiek rediģēts ar rokām. Veicot kartēšanu, visas jūsu veiktās izmaiņas tiks atmestas. Vai tiešām vēlaties izpildīt kartēšanu?</translation>
     </message>
     <message>
-        <source>The boundary condition "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Robežas nosacījums "%1"tiek rediģēts ar rokām. Veicot kartēšanu, visas jūsu veiktās izmaiņas tiks atmestas. Vai tiešām vēlaties izpildīt kartēšanu?</translation>
+        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Robežas nosacījums &quot;%1&quot;tiek rediģēts ar rokām. Veicot kartēšanu, visas jūsu veiktās izmaiņas tiks atmestas. Vai tiešām vēlaties izpildīt kartēšanu?</translation>
     </message>
 </context>
 <context>
@@ -1027,20 +1029,20 @@ Do you really want to import grid from this file?</source>
         <translation>Automātiski</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // LV" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta nosaukums = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Kad režģis ir izveidots, jums tiek jautāts, vai lai katru reizi izpildītu atribūtu kartēšanu. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // LV&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta nosaukums = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Kad režģis ir izveidots, jums tiek jautāts, vai lai katru reizi izpildītu atribūtu kartēšanu. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Manual</source>
         <translation>Rokasgrāmata</translation>
     </message>
     <message>
-        <source>Attribute mapping is executed only when you manually select "Execute" menu.</source>
-        <translation>Atribūtu kartēšana tiek veikta tikai tad, ja manuāli izvēlaties izvēlni "Izpildīt".</translation>
+        <source>Attribute mapping is executed only when you manually select &quot;Execute&quot; menu.</source>
+        <translation>Atribūtu kartēšana tiek veikta tikai tad, ja manuāli izvēlaties izvēlni &quot;Izpildīt&quot;.</translation>
     </message>
     <message>
         <source>Geographic data mapping</source>
@@ -1444,7 +1446,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>Iestatiet Scalarbar (&amp;U)...</translation>
     </message>
     <message>
-        <source>Open &amp;Bird's-Eye View Window</source>
+        <source>Open &amp;Bird&apos;s-Eye View Window</source>
         <translation>Atveriet putna lidojuma logu (&amp;B)</translation>
     </message>
     <message>

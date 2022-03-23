@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="sl_SI">
 <context>
     <name>AttributeBrowserTargetDataItem</name>
@@ -27,6 +29,10 @@
     <message>
         <source>Select a corresponding point on Main Window.</source>
         <translation>Izberite ustrezno točko v glavnem oknu.</translation>
+    </message>
+    <message>
+        <source>Fix Image position</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -210,6 +216,10 @@
     <message>
         <source>Select a point on Georeference dialog.</source>
         <translation>V pogovornem oknu Georeference izberite točko.</translation>
+    </message>
+    <message>
+        <source>Delete Points</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -446,6 +456,10 @@
         <source>Please select from which CGNS file to read grid.</source>
         <translation>Prosimo, izberite datoteko CGNS za branje mreže.</translation>
     </message>
+    <message>
+        <source>CGNS File</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>InputConditionContainerSet</name>
@@ -454,12 +468,12 @@
         <translation>Vozlišče definicije ni shranjeno</translation>
     </message>
     <message>
-        <source>Wrong valueType "%1" is set.</source>
-        <translation>Napačna vrednostType "%1"je nastavljeno.</translation>
+        <source>Wrong valueType &quot;%1&quot; is set.</source>
+        <translation>Napačna vrednostType &quot;%1&quot;je nastavljeno.</translation>
     </message>
     <message>
-        <source>Wrong conditionType "%1"is set.</source>
-        <translation>Napačno stanje Vrsta "%1"je nastavljeno.</translation>
+        <source>Wrong conditionType &quot;%1&quot;is set.</source>
+        <translation>Napačno stanje Vrsta &quot;%1&quot;je nastavljeno.</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
@@ -472,6 +486,13 @@
     </message>
 </context>
 <context>
+    <name>InputConditionDependency</name>
+    <message>
+        <source>Unhandled widget in ActionSetValue</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>InputConditionDialog</name>
     <message>
         <source>Calculation Condition</source>
@@ -479,7 +500,7 @@
     </message>
     <message>
         <source>&amp;Save and Close</source>
-        <translation>Shrani in zapri (&amp;S)</translation>
+        <translation type="vanished">Shrani in zapri (&amp;S)</translation>
     </message>
     <message>
         <source>Error</source>
@@ -517,6 +538,10 @@ Do you really want to import this file?</source>
     <message>
         <source>Error occured while saving.</source>
         <translation>Pri shranjevanju je prišlo do napake.</translation>
+    </message>
+    <message>
+        <source>Opening the CGNS file failed.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -572,6 +597,10 @@ Do you really want to import this file?</source>
         <source>Select File</source>
         <translation>Izberite Datoteka</translation>
     </message>
+    <message>
+        <source>File name has to consist of only English characters.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>InputConditionWidgetCgnsResult</name>
@@ -597,12 +626,35 @@ Do you really want to import this file?</source>
         <source>Select File</source>
         <translation>Izberite Datoteka</translation>
     </message>
+    <message>
+        <source>File name has to consist of only English characters.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>...</source>
+        <translation type="unfinished">...</translation>
+    </message>
 </context>
 <context>
     <name>InputConditionWidgetFoldername</name>
     <message>
         <source>Select Directory</source>
         <translation>Izberite Imenik</translation>
+    </message>
+    <message>
+        <source>Folder name has to consist of only English characters.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>...</source>
+        <translation type="unfinished">...</translation>
+    </message>
+</context>
+<context>
+    <name>InputConditionWidgetFunctional</name>
+    <message>
+        <source>Edit</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -692,8 +744,8 @@ Do you really want to import this file?</source>
         <translation>mapa %1 se po uvozu v stanje izračuna izračuna po posodobitvi %2. Ali želite uvoziti posodobljeno datoteko?</translation>
     </message>
     <message>
-        <source>You can copy and paste the values, with shortcut "Ctrl + C" and "Ctrl + V"</source>
-        <translation>Vrednosti lahko kopirate in prilepite s bližnjico "Ctrl + C" in "Ctrl + V"</translation>
+        <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
+        <translation>Vrednosti lahko kopirate in prilepite s bližnjico &quot;Ctrl + C&quot; in &quot;Ctrl + V&quot;</translation>
     </message>
     <message>
         <source>The following problems found: 
@@ -807,8 +859,8 @@ Do you really want to import this file?</source>
         <translation>Pri odpiranju datoteke je prišlo do napake.</translation>
     </message>
     <message>
-        <source>The first two columns must be "X" and "Y".</source>
-        <translation>Prva dva stolpca morata biti "X" in "Y".</translation>
+        <source>The first two columns must be &quot;X&quot; and &quot;Y&quot;.</source>
+        <translation>Prva dva stolpca morata biti &quot;X&quot; in &quot;Y&quot;.</translation>
     </message>
     <message>
         <source>The data file has to consist of only English characters.</source>
@@ -969,8 +1021,8 @@ Do you really want to import this file?</source>
         <translation>Opredelitev spremenljivke</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Spremenljivko lahko definirate z jezikom JavaScript. Glejte &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -decoration: underline; color:#0000ff; "&gt; tukaj &lt;/span&gt; &lt;/a&gt; za podrobnosti. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Spremenljivko lahko definirate z jezikom JavaScript. Glejte &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -decoration: underline; color:#0000ff; &quot;&gt; tukaj &lt;/span&gt; &lt;/a&gt; za podrobnosti. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -1048,8 +1100,8 @@ Do you really want to import this file?</source>
         <translation>Dol (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Opomba &lt;/span&gt;: Vrstni red na seznamu je pomemben. V definiciji lahko uporabite vrednost izračunov enostavnih operacij kot spremenljivko, ki je prikazana prej na seznamu. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = &quot;font-weight: 600;&quot;&gt; Opomba &lt;/span&gt;: Vrstni red na seznamu je pomemben. V definiciji lahko uporabite vrednost izračunov enostavnih operacij kot spremenljivko, ki je prikazana prej na seznamu. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
@@ -1202,16 +1254,20 @@ Do you really want to import this file?</source>
         <source>&amp;Hide Detail</source>
         <translation>Skrij podrobnosti (&amp;H)</translation>
     </message>
+    <message>
+        <source>--</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PostIterationSteps</name>
     <message>
         <source>Error</source>
-        <translation>Napaka</translation>
+        <translation type="vanished">Napaka</translation>
     </message>
     <message>
         <source>Error occured while loading calculation result.</source>
-        <translation>Pri nalaganju rezultata izračuna je prišlo do napake.</translation>
+        <translation type="vanished">Pri nalaganju rezultata izračuna je prišlo do napake.</translation>
     </message>
 </context>
 <context>
@@ -1259,6 +1315,10 @@ Do you really want to import this file?</source>
     <message>
         <source>Error occured while saving %1</source>
         <translation>Pri shranjevanju je prišlo do napake %1</translation>
+    </message>
+    <message>
+        <source>Saving calculation result as TPO files...</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1394,8 +1454,8 @@ Do you really want to import this file?</source>
         <translation>Opredelitev izhoda</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Spremenljivko lahko definirate z jezikom JavaScript. Glejte &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -decoration: underline; color:#0000ff; "&gt; tukaj &lt;/span&gt; &lt;/a&gt; za podrobnosti. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Spremenljivko lahko definirate z jezikom JavaScript. Glejte &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -decoration: underline; color:#0000ff; &quot;&gt; tukaj &lt;/span&gt; &lt;/a&gt; za podrobnosti. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -1438,11 +1498,11 @@ Do you really want to import this file?</source>
     <name>PostTimeSteps</name>
     <message>
         <source>Error</source>
-        <translation>Napaka</translation>
+        <translation type="vanished">Napaka</translation>
     </message>
     <message>
         <source>Error occured while loading calculation result.</source>
-        <translation>Pri nalaganju rezultata izračuna je prišlo do napake.</translation>
+        <translation type="vanished">Pri nalaganju rezultata izračuna je prišlo do napake.</translation>
     </message>
 </context>
 <context>
@@ -1494,7 +1554,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Opozorilo</translation>
+        <translation type="vanished">Opozorilo</translation>
     </message>
     <message>
         <source>Saving project...</source>
@@ -1506,7 +1566,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Elevation grid attribute is not defined for grid type %1. Grid I/O functions, grid creating functions may not work correctly for these grid types.</source>
-        <translation>Atribut mreže višine ni določen za vrsto mreže %1. Vhodno/izhodne funkcije mreže, funkcije ustvarjanja mreže morda ne bodo delovale pravilno za te vrste omrežij.</translation>
+        <translation type="vanished">Atribut mreže višine ni določen za vrsto mreže %1. Vhodno/izhodne funkcije mreže, funkcije ustvarjanja mreže morda ne bodo delovale pravilno za te vrste omrežij.</translation>
     </message>
 </context>
 <context>
@@ -1517,11 +1577,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Solution %1 already exists.</source>
-        <translation>Rešitev %1 že obstaja.</translation>
+        <translation type="vanished">Rešitev %1 že obstaja.</translation>
     </message>
     <message>
         <source>CGNS file whose name contains characters other than alphabets and numbers can not be imported.</source>
-        <translation>Datoteke CGNS, katere ime vsebuje druge znake, razen abeced in številk, ni mogoče uvoziti.</translation>
+        <translation type="vanished">Datoteke CGNS, katere ime vsebuje druge znake, razen abeced in številk, ni mogoče uvoziti.</translation>
     </message>
     <message>
         <source>Export CGNS file</source>
@@ -1545,7 +1605,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>%1 Saving project file failed.</source>
-        <translation>%1 Shranjevanje projektne datoteke ni uspelo.</translation>
+        <translation type="vanished">%1 Shranjevanje projektne datoteke ni uspelo.</translation>
     </message>
     <message>
         <source>All images(*.jpg *.jpeg *.png *.tif);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif)</source>
@@ -1589,7 +1649,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>This file is for solver %1 %2. It is not compatible with the solver you are using, so maybe importing this file will fail. Do you really want to import this file?</source>
-        <translation>Ta datoteka je za reševanje %1 %2. Ni združljiv z reševalcem, ki ga uporabljate, zato uvoz te datoteke morda ne bo uspel. Ali res želite uvoziti to datoteko?</translation>
+        <translation type="vanished">Ta datoteka je za reševanje %1 %2. Ni združljiv z reševalcem, ki ga uporabljate, zato uvoz te datoteke morda ne bo uspel. Ali res želite uvoziti to datoteko?</translation>
     </message>
     <message>
         <source>There is no visualization/graph windows.</source>
@@ -1602,6 +1662,10 @@ Do you really want to import this file?</source>
     <message>
         <source>Coordinate system not selected.</source>
         <translation>Koordinatni sistem ni izbran.</translation>
+    </message>
+    <message>
+        <source>Error occured while opening CGNS file in project file : Case1.cgn</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1637,8 +1701,8 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectWorkspace</name>
     <message>
-        <source>Workspace "%1" has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
-        <translation>Delovni prostor "%1"ima %2 projektne mape, za katere se zdi, da se ne uporabljajo več. Ali jih želite odstraniti?</translation>
+        <source>Workspace &quot;%1&quot; has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
+        <translation>Delovni prostor &quot;%1&quot;ima %2 projektne mape, za katere se zdi, da se ne uporabljajo več. Ali jih želite odstraniti?</translation>
     </message>
     <message>
         <source>Information</source>

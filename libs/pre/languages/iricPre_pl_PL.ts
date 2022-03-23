@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="pl_PL">
 <context>
     <name>BoundaryConditionDialog</name>
@@ -112,7 +114,7 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>GridBirdEyeWindow</name>
     <message>
-        <source>Grid Bird's-Eye View Window</source>
+        <source>Grid Bird&apos;s-Eye View Window</source>
         <translation>Okno widoku siatki z lotu ptaka</translation>
     </message>
 </context>
@@ -580,8 +582,8 @@ Do you really want to import grid from this file?</source>
         <translation>%1 nie są mapowane po ostatniej edycji. Czy chcesz teraz wykonać mapowanie?</translation>
     </message>
     <message>
-        <source>Boundary Condition Setting "%1" is not mapped after it is edited last time. Do you want to execute mapping now?</source>
-        <translation>Ustawienie warunków brzegowych " %1 „ nie jest mapowany po ostatniej edycji. Czy chcesz teraz wykonać mapowanie?</translation>
+        <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
+        <translation>Ustawienie warunków brzegowych &quot; %1 „ nie jest mapowany po ostatniej edycji. Czy chcesz teraz wykonać mapowanie?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -983,7 +985,7 @@ Do you really want to import grid from this file?</source>
         <translation>Wykonać (&amp;E)...</translation>
     </message>
     <message>
-        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".
+        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.
 </source>
         <translation>Następujące atrybuty nie zostały zmapowane, ponieważ dla nich wartości wyjściowe generatora siatki. Jeśli chcesz zmapować dla nich dane geograficzne, zmapuj je ręcznie za pomocą menu „Siatka” -&gt; „Mapowanie atrybutów” -&gt; „Wykonaj”.</translation>
     </message>
@@ -1004,12 +1006,12 @@ Do you really want to import grid from this file?</source>
         <translation>Zakończono mapowanie danych geograficznych</translation>
     </message>
     <message>
-        <source>The grid attribute "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Atrybut siatki „ %1 " jest edytowany ręcznie. Podczas wykonywania mapowania wszystkie wprowadzone modyfikacje zostaną odrzucone. Czy na pewno chcesz wykonać mapowanie?</translation>
+        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Atrybut siatki „ %1 &quot; jest edytowany ręcznie. Podczas wykonywania mapowania wszystkie wprowadzone modyfikacje zostaną odrzucone. Czy na pewno chcesz wykonać mapowanie?</translation>
     </message>
     <message>
-        <source>The boundary condition "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Warunek brzegowy "%1" jest edytowany ręcznie. Podczas wykonywania mapowania wszystkie wprowadzone modyfikacje zostaną odrzucone. Czy na pewno chcesz wykonać mapowanie?</translation>
+        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Warunek brzegowy &quot;%1&quot; jest edytowany ręcznie. Podczas wykonywania mapowania wszystkie wprowadzone modyfikacje zostaną odrzucone. Czy na pewno chcesz wykonać mapowanie?</translation>
     </message>
 </context>
 <context>
@@ -1027,19 +1029,19 @@ Do you really want to import grid from this file?</source>
         <translation>Automatyczny</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;meta nazwa ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { spacja: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p style="margin -top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Po utworzeniu siatki pojawi się pytanie, czy do wykonywania mapowania atrybutów za każdym razem.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta nazwa =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { spacja: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot;margin -top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Po utworzeniu siatki pojawi się pytanie, czy do wykonywania mapowania atrybutów za każdym razem.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Manual</source>
         <translation>podręcznik</translation>
     </message>
     <message>
-        <source>Attribute mapping is executed only when you manually select "Execute" menu.</source>
+        <source>Attribute mapping is executed only when you manually select &quot;Execute&quot; menu.</source>
         <translation>Mapowanie atrybutów jest wykonywane tylko po ręcznym wybraniu menu „Wykonaj”.</translation>
     </message>
     <message>
@@ -1444,7 +1446,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>Skonfiguruj pasek skalarny (&amp;U)...</translation>
     </message>
     <message>
-        <source>Open &amp;Bird's-Eye View Window</source>
+        <source>Open &amp;Bird&apos;s-Eye View Window</source>
         <translation>Otwórz okno widoku z lotu ptaka (&amp;B)</translation>
     </message>
     <message>

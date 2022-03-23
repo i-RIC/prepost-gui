@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="tr_TR">
 <context>
     <name>BoundaryConditionDialog</name>
@@ -112,7 +114,7 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>GridBirdEyeWindow</name>
     <message>
-        <source>Grid Bird's-Eye View Window</source>
+        <source>Grid Bird&apos;s-Eye View Window</source>
         <translation>Izgara Kuş Bakışı Penceresi</translation>
     </message>
 </context>
@@ -497,7 +499,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Set Up Scalarbar...</source>
-        <translation>Skalarbar'ı Ayarla...</translation>
+        <translation>Skalarbar&apos;ı Ayarla...</translation>
     </message>
     <message>
         <source>Import</source>
@@ -580,8 +582,8 @@ Do you really want to import grid from this file?</source>
         <translation>%1 son kez düzenlendikten sonra eşlenmezler. Eşlemeyi şimdi yürütmek istiyor musunuz?</translation>
     </message>
     <message>
-        <source>Boundary Condition Setting "%1" is not mapped after it is edited last time. Do you want to execute mapping now?</source>
-        <translation>Sınır Koşul Ayarı "%1" son kez düzenlendikten sonra eşlenmiyor. Eşlemeyi şimdi yürütmek istiyor musunuz?</translation>
+        <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
+        <translation>Sınır Koşul Ayarı &quot;%1&quot; son kez düzenlendikten sonra eşlenmiyor. Eşlemeyi şimdi yürütmek istiyor musunuz?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -650,7 +652,7 @@ Do you really want to import grid from this file?</source>
     <name>PreProcessorGeoDataGroupDataItem</name>
     <message>
         <source>&amp;Import from web...</source>
-        <translation type="vanished">Web'den içe aktar (&amp;I)...</translation>
+        <translation type="vanished">Web&apos;den içe aktar (&amp;I)...</translation>
     </message>
     <message>
         <source>Delete &amp;All...</source>
@@ -666,7 +668,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Set Up Scalarbar...</source>
-        <translation>Skalarbar'ı Ayarla...</translation>
+        <translation>Skalarbar&apos;ı Ayarla...</translation>
     </message>
     <message>
         <source>Delete &amp;Selected...</source>
@@ -783,7 +785,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>&amp;Import Elevation from web...</source>
-        <translation>Web'den Yüksekliği İçe Aktar (&amp;I)...</translation>
+        <translation>Web&apos;den Yüksekliği İçe Aktar (&amp;I)...</translation>
     </message>
 </context>
 <context>
@@ -983,9 +985,9 @@ Do you really want to import grid from this file?</source>
         <translation>Uygulamak (&amp;E)...</translation>
     </message>
     <message>
-        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".
+        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.
 </source>
-        <translation>Aşağıdaki öznitelikler eşlenmedi, çünkü bunlar için ızgara oluşturucu çıkış değerleri. Onlar için coğrafi verileri zorla haritalamak istiyorsanız, lütfen "Izgara" -&gt; "Attributes Mapping" -&gt; "Execute" menüsü ile manuel olarak haritalayın.</translation>
+        <translation>Aşağıdaki öznitelikler eşlenmedi, çünkü bunlar için ızgara oluşturucu çıkış değerleri. Onlar için coğrafi verileri zorla haritalamak istiyorsanız, lütfen &quot;Izgara&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot; menüsü ile manuel olarak haritalayın.</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1004,12 +1006,12 @@ Do you really want to import grid from this file?</source>
         <translation>Coğrafi verilerin eşlenmesi tamamlandı</translation>
     </message>
     <message>
-        <source>The grid attribute "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>ızgara özelliği "%1" elle düzenlenir. Eşlemeyi yürüttüğünüzde, yaptığınız tüm değişiklikler atılır. Eşlemeyi gerçekten yürütmek istiyor musunuz?</translation>
+        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>ızgara özelliği &quot;%1&quot; elle düzenlenir. Eşlemeyi yürüttüğünüzde, yaptığınız tüm değişiklikler atılır. Eşlemeyi gerçekten yürütmek istiyor musunuz?</translation>
     </message>
     <message>
-        <source>The boundary condition "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Sınır koşulu "%1" elle düzenlenir. Eşlemeyi yürüttüğünüzde, yaptığınız tüm değişiklikler atılır. Eşlemeyi gerçekten yürütmek istiyor musunuz?</translation>
+        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Sınır koşulu &quot;%1&quot; elle düzenlenir. Eşlemeyi yürüttüğünüzde, yaptığınız tüm değişiklikler atılır. Eşlemeyi gerçekten yürütmek istiyor musunuz?</translation>
     </message>
 </context>
 <context>
@@ -1027,20 +1029,20 @@ Do you really want to import grid from this file?</source>
         <translation>Oto</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML KAMU "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;meta ad ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { boşluk: ön sarma; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p style=" kenar boşluğu -top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Kılavuz oluşturulduğunda size sorulur. Öznitelik Eşlemesini her zaman yürütmek için.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;!DOCTYPE HTML KAMU &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta ad =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { boşluk: ön sarma; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; kenar boşluğu -top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Kılavuz oluşturulduğunda size sorulur. Öznitelik Eşlemesini her zaman yürütmek için.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Manual</source>
         <translation>Manuel</translation>
     </message>
     <message>
-        <source>Attribute mapping is executed only when you manually select "Execute" menu.</source>
-        <translation>Nitelik eşleme, yalnızca "Yürüt" menüsünü manuel olarak seçtiğinizde yürütülür.</translation>
+        <source>Attribute mapping is executed only when you manually select &quot;Execute&quot; menu.</source>
+        <translation>Nitelik eşleme, yalnızca &quot;Yürüt&quot; menüsünü manuel olarak seçtiğinizde yürütülür.</translation>
     </message>
     <message>
         <source>Geographic data mapping</source>
@@ -1048,11 +1050,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Mapping with TINs</source>
-        <translation>TIN'lerle Eşleme</translation>
+        <translation>TIN&apos;lerle Eşleme</translation>
     </message>
     <message>
         <source>TINs created from geographic data are used for mapping. Grid nodes attribute values are calculated as weighted average of the values at the TIN nodes.</source>
-        <translation>Haritalama için coğrafi verilerden oluşturulan TIN'ler kullanılır. Izgara düğümleri öznitelik değerleri, TIN düğümlerindeki değerlerin ağırlıklı ortalaması olarak hesaplanır.</translation>
+        <translation>Haritalama için coğrafi verilerden oluşturulan TIN&apos;ler kullanılır. Izgara düğümleri öznitelik değerleri, TIN düğümlerindeki değerlerin ağırlıklı ortalaması olarak hesaplanır.</translation>
     </message>
     <message>
         <source>Template mapping</source>
@@ -1444,7 +1446,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>Skalar Çubuğu Ayarla (&amp;U)...</translation>
     </message>
     <message>
-        <source>Open &amp;Bird's-Eye View Window</source>
+        <source>Open &amp;Bird&apos;s-Eye View Window</source>
         <translation>Kuşbakışı Görünüm Penceresini Aç (&amp;B)</translation>
     </message>
     <message>

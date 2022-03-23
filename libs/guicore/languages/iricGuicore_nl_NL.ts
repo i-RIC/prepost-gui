@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="nl_NL">
 <context>
     <name>AttributeBrowserTargetDataItem</name>
@@ -27,6 +29,10 @@
     <message>
         <source>Select a corresponding point on Main Window.</source>
         <translation>Selecteer een corresponderend punt in het hoofdvenster.</translation>
+    </message>
+    <message>
+        <source>Fix Image position</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -210,6 +216,10 @@
     <message>
         <source>Select a point on Georeference dialog.</source>
         <translation>Selecteer een punt in het dialoogvenster Georeferentie.</translation>
+    </message>
+    <message>
+        <source>Delete Points</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -446,6 +456,10 @@
         <source>Please select from which CGNS file to read grid.</source>
         <translation>Selecteer uit welk CGNS-bestand u het raster wilt lezen.</translation>
     </message>
+    <message>
+        <source>CGNS File</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>InputConditionContainerSet</name>
@@ -454,12 +468,12 @@
         <translation>Definitieknooppunt wordt niet opgeslagen</translation>
     </message>
     <message>
-        <source>Wrong valueType "%1" is set.</source>
-        <translation>Verkeerde waardeType "%1" is ingesteld.</translation>
+        <source>Wrong valueType &quot;%1&quot; is set.</source>
+        <translation>Verkeerde waardeType &quot;%1&quot; is ingesteld.</translation>
     </message>
     <message>
-        <source>Wrong conditionType "%1"is set.</source>
-        <translation>Verkeerde voorwaardeType "%1"staat.</translation>
+        <source>Wrong conditionType &quot;%1&quot;is set.</source>
+        <translation>Verkeerde voorwaardeType &quot;%1&quot;staat.</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
@@ -472,6 +486,13 @@
     </message>
 </context>
 <context>
+    <name>InputConditionDependency</name>
+    <message>
+        <source>Unhandled widget in ActionSetValue</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>InputConditionDialog</name>
     <message>
         <source>Calculation Condition</source>
@@ -479,7 +500,7 @@
     </message>
     <message>
         <source>&amp;Save and Close</source>
-        <translation>Opslaan en afsluiten (&amp;S)</translation>
+        <translation type="vanished">Opslaan en afsluiten (&amp;S)</translation>
     </message>
     <message>
         <source>Error</source>
@@ -517,6 +538,10 @@ Do you really want to import this file?</source>
     <message>
         <source>Error occured while saving.</source>
         <translation>Er is een fout opgetreden tijdens het opslaan.</translation>
+    </message>
+    <message>
+        <source>Opening the CGNS file failed.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -572,6 +597,10 @@ Do you really want to import this file?</source>
         <source>Select File</source>
         <translation>Selecteer bestand</translation>
     </message>
+    <message>
+        <source>File name has to consist of only English characters.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>InputConditionWidgetCgnsResult</name>
@@ -597,12 +626,35 @@ Do you really want to import this file?</source>
         <source>Select File</source>
         <translation>Selecteer bestand</translation>
     </message>
+    <message>
+        <source>File name has to consist of only English characters.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>...</source>
+        <translation type="unfinished">...</translation>
+    </message>
 </context>
 <context>
     <name>InputConditionWidgetFoldername</name>
     <message>
         <source>Select Directory</source>
         <translation>Selecteer map</translation>
+    </message>
+    <message>
+        <source>Folder name has to consist of only English characters.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>...</source>
+        <translation type="unfinished">...</translation>
+    </message>
+</context>
+<context>
+    <name>InputConditionWidgetFunctional</name>
+    <message>
+        <source>Edit</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -692,8 +744,8 @@ Do you really want to import this file?</source>
         <translation>Bestand %1 wordt bijgewerkt nadat het is geïmporteerd naar de berekeningsconditie %2. Wilt u het bijgewerkte bestand importeren?</translation>
     </message>
     <message>
-        <source>You can copy and paste the values, with shortcut "Ctrl + C" and "Ctrl + V"</source>
-        <translation>U kunt de waarden kopiëren en plakken, met de sneltoetsen "Ctrl + C" en "Ctrl + V"</translation>
+        <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
+        <translation>U kunt de waarden kopiëren en plakken, met de sneltoetsen &quot;Ctrl + C&quot; en &quot;Ctrl + V&quot;</translation>
     </message>
     <message>
         <source>The following problems found: 
@@ -807,8 +859,8 @@ Do you really want to import this file?</source>
         <translation>Er is een fout opgetreden bij het openen van het bestand.</translation>
     </message>
     <message>
-        <source>The first two columns must be "X" and "Y".</source>
-        <translation>De eerste twee kolommen moeten "X" en "Y" zijn.</translation>
+        <source>The first two columns must be &quot;X&quot; and &quot;Y&quot;.</source>
+        <translation>De eerste twee kolommen moeten &quot;X&quot; en &quot;Y&quot; zijn.</translation>
     </message>
     <message>
         <source>The data file has to consist of only English characters.</source>
@@ -969,8 +1021,8 @@ Do you really want to import this file?</source>
         <translation>Definitie van variabele</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;U kunt de variabele definiëren met JavaScript-taal. Zie &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" tekst -decoratie: onderstrepen; kleur:#0000ff;"&gt;hier&lt;/span&gt;&lt;/a&gt; voor details.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;U kunt de variabele definiëren met JavaScript-taal. Zie &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; tekst -decoratie: onderstrepen; kleur:#0000ff;&quot;&gt;hier&lt;/span&gt;&lt;/a&gt; voor details.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -1048,8 +1100,8 @@ Do you really want to import this file?</source>
         <translation>Omlaag (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Opmerking&lt;/span&gt;: De volgorde in de lijst is belangrijk. In de definitie kunt u de waarde van eenvoudige bewerkingsberekeningen gebruiken als een variabele, die eerder in de lijst verschijnt.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Opmerking&lt;/span&gt;: De volgorde in de lijst is belangrijk. In de definitie kunt u de waarde van eenvoudige bewerkingsberekeningen gebruiken als een variabele, die eerder in de lijst verschijnt.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
@@ -1202,16 +1254,20 @@ Do you really want to import this file?</source>
         <source>&amp;Hide Detail</source>
         <translation>Details verbergen (&amp;H)</translation>
     </message>
+    <message>
+        <source>--</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PostIterationSteps</name>
     <message>
         <source>Error</source>
-        <translation>Fout</translation>
+        <translation type="vanished">Fout</translation>
     </message>
     <message>
         <source>Error occured while loading calculation result.</source>
-        <translation>Er is een fout opgetreden tijdens het laden van het berekeningsresultaat.</translation>
+        <translation type="vanished">Er is een fout opgetreden tijdens het laden van het berekeningsresultaat.</translation>
     </message>
 </context>
 <context>
@@ -1259,6 +1315,10 @@ Do you really want to import this file?</source>
     <message>
         <source>Error occured while saving %1</source>
         <translation>Er is een fout opgetreden tijdens het opslaan %1</translation>
+    </message>
+    <message>
+        <source>Saving calculation result as TPO files...</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1394,8 +1454,8 @@ Do you really want to import this file?</source>
         <translation>Definitie van output</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;U kunt de variabele definiëren met JavaScript-taal. Zie &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" tekst -decoratie: onderstrepen; kleur:#0000ff;"&gt;hier&lt;/span&gt;&lt;/a&gt; voor details.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;U kunt de variabele definiëren met JavaScript-taal. Zie &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; tekst -decoratie: onderstrepen; kleur:#0000ff;&quot;&gt;hier&lt;/span&gt;&lt;/a&gt; voor details.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -1438,11 +1498,11 @@ Do you really want to import this file?</source>
     <name>PostTimeSteps</name>
     <message>
         <source>Error</source>
-        <translation>Fout</translation>
+        <translation type="vanished">Fout</translation>
     </message>
     <message>
         <source>Error occured while loading calculation result.</source>
-        <translation>Er is een fout opgetreden tijdens het laden van het berekeningsresultaat.</translation>
+        <translation type="vanished">Er is een fout opgetreden tijdens het laden van het berekeningsresultaat.</translation>
     </message>
 </context>
 <context>
@@ -1494,7 +1554,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Waarschuwing</translation>
+        <translation type="vanished">Waarschuwing</translation>
     </message>
     <message>
         <source>Saving project...</source>
@@ -1506,7 +1566,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Elevation grid attribute is not defined for grid type %1. Grid I/O functions, grid creating functions may not work correctly for these grid types.</source>
-        <translation>Hoogterasterkenmerk is niet gedefinieerd voor rastertype %1. Grid-I/O-functies, gridcreërende functies werken mogelijk niet correct voor deze gridtypes.</translation>
+        <translation type="vanished">Hoogterasterkenmerk is niet gedefinieerd voor rastertype %1. Grid-I/O-functies, gridcreërende functies werken mogelijk niet correct voor deze gridtypes.</translation>
     </message>
 </context>
 <context>
@@ -1517,11 +1577,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Solution %1 already exists.</source>
-        <translation>Oplossing %1 bestaat al.</translation>
+        <translation type="vanished">Oplossing %1 bestaat al.</translation>
     </message>
     <message>
         <source>CGNS file whose name contains characters other than alphabets and numbers can not be imported.</source>
-        <translation>CGNS-bestand waarvan de naam andere tekens dan alfabetten en cijfers bevat, kan niet worden geïmporteerd.</translation>
+        <translation type="vanished">CGNS-bestand waarvan de naam andere tekens dan alfabetten en cijfers bevat, kan niet worden geïmporteerd.</translation>
     </message>
     <message>
         <source>Export CGNS file</source>
@@ -1545,7 +1605,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>%1 Saving project file failed.</source>
-        <translation>%1 Het opslaan van het projectbestand is mislukt.</translation>
+        <translation type="vanished">%1 Het opslaan van het projectbestand is mislukt.</translation>
     </message>
     <message>
         <source>All images(*.jpg *.jpeg *.png *.tif);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif)</source>
@@ -1589,7 +1649,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>This file is for solver %1 %2. It is not compatible with the solver you are using, so maybe importing this file will fail. Do you really want to import this file?</source>
-        <translation>Dit bestand is voor oplosser %1 %2. Het is niet compatibel met de oplosser die u gebruikt, dus misschien mislukt het importeren van dit bestand. Wil je dit bestand echt importeren?</translation>
+        <translation type="vanished">Dit bestand is voor oplosser %1 %2. Het is niet compatibel met de oplosser die u gebruikt, dus misschien mislukt het importeren van dit bestand. Wil je dit bestand echt importeren?</translation>
     </message>
     <message>
         <source>There is no visualization/graph windows.</source>
@@ -1602,6 +1662,10 @@ Do you really want to import this file?</source>
     <message>
         <source>Coordinate system not selected.</source>
         <translation>Coördinatensysteem niet geselecteerd.</translation>
+    </message>
+    <message>
+        <source>Error occured while opening CGNS file in project file : Case1.cgn</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1637,8 +1701,8 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectWorkspace</name>
     <message>
-        <source>Workspace "%1" has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
-        <translation>Werkruimte "%1" heeft %2 projectmappen die niet meer lijken te worden gebruikt. Wil je ze verwijderen?</translation>
+        <source>Workspace &quot;%1&quot; has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
+        <translation>Werkruimte &quot;%1&quot; heeft %2 projectmappen die niet meer lijken te worden gebruikt. Wil je ze verwijderen?</translation>
     </message>
     <message>
         <source>Information</source>

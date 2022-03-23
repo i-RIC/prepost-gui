@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="bg_BG">
 <context>
     <name>AttributeBrowserTargetDataItem</name>
@@ -27,6 +29,10 @@
     <message>
         <source>Select a corresponding point on Main Window.</source>
         <translation>Изберете съответната точка в главния прозорец.</translation>
+    </message>
+    <message>
+        <source>Fix Image position</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -210,6 +216,10 @@
     <message>
         <source>Select a point on Georeference dialog.</source>
         <translation>Изберете точка в диалоговия прозорец Georeference.</translation>
+    </message>
+    <message>
+        <source>Delete Points</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -446,6 +456,10 @@
         <source>Please select from which CGNS file to read grid.</source>
         <translation>Моля, изберете от кой CGNS файл да се чете мрежата.</translation>
     </message>
+    <message>
+        <source>CGNS File</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>InputConditionContainerSet</name>
@@ -454,12 +468,12 @@
         <translation>Дефиниционният възел не се съхранява</translation>
     </message>
     <message>
-        <source>Wrong valueType "%1" is set.</source>
-        <translation>Грешен valueType "%1"е зададен.</translation>
+        <source>Wrong valueType &quot;%1&quot; is set.</source>
+        <translation>Грешен valueType &quot;%1&quot;е зададен.</translation>
     </message>
     <message>
-        <source>Wrong conditionType "%1"is set.</source>
-        <translation>Грешно състояние Тип "%1"е зададен.</translation>
+        <source>Wrong conditionType &quot;%1&quot;is set.</source>
+        <translation>Грешно състояние Тип &quot;%1&quot;е зададен.</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
@@ -472,6 +486,13 @@
     </message>
 </context>
 <context>
+    <name>InputConditionDependency</name>
+    <message>
+        <source>Unhandled widget in ActionSetValue</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>InputConditionDialog</name>
     <message>
         <source>Calculation Condition</source>
@@ -479,7 +500,7 @@
     </message>
     <message>
         <source>&amp;Save and Close</source>
-        <translation>Запази и затвори (&amp;S)</translation>
+        <translation type="vanished">Запази и затвори (&amp;S)</translation>
     </message>
     <message>
         <source>Error</source>
@@ -517,6 +538,10 @@ Do you really want to import this file?</source>
     <message>
         <source>Error occured while saving.</source>
         <translation>При запазването възникна грешка.</translation>
+    </message>
+    <message>
+        <source>Opening the CGNS file failed.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -572,6 +597,10 @@ Do you really want to import this file?</source>
         <source>Select File</source>
         <translation>Избери файл</translation>
     </message>
+    <message>
+        <source>File name has to consist of only English characters.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>InputConditionWidgetCgnsResult</name>
@@ -597,12 +626,35 @@ Do you really want to import this file?</source>
         <source>Select File</source>
         <translation>Избери файл</translation>
     </message>
+    <message>
+        <source>File name has to consist of only English characters.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>...</source>
+        <translation type="unfinished">...</translation>
+    </message>
 </context>
 <context>
     <name>InputConditionWidgetFoldername</name>
     <message>
         <source>Select Directory</source>
         <translation>Изберете Директория</translation>
+    </message>
+    <message>
+        <source>Folder name has to consist of only English characters.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>...</source>
+        <translation type="unfinished">...</translation>
+    </message>
+</context>
+<context>
+    <name>InputConditionWidgetFunctional</name>
+    <message>
+        <source>Edit</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -692,7 +744,7 @@ Do you really want to import this file?</source>
         <translation>Файл %1 се актуализира след импортиране в състояние на изчисление %2. Искате ли да импортирате актуализирания файл?</translation>
     </message>
     <message>
-        <source>You can copy and paste the values, with shortcut "Ctrl + C" and "Ctrl + V"</source>
+        <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
         <translation>Можете да копирате и поставите стойностите с пряк път „Ctrl + C“ и „Ctrl + V“</translation>
     </message>
     <message>
@@ -807,8 +859,8 @@ Do you really want to import this file?</source>
         <translation>Възникна грешка при отваряне на файла.</translation>
     </message>
     <message>
-        <source>The first two columns must be "X" and "Y".</source>
-        <translation>Първите две колони трябва да са "X" и "Y".</translation>
+        <source>The first two columns must be &quot;X&quot; and &quot;Y&quot;.</source>
+        <translation>Първите две колони трябва да са &quot;X&quot; и &quot;Y&quot;.</translation>
     </message>
     <message>
         <source>The data file has to consist of only English characters.</source>
@@ -969,8 +1021,8 @@ Do you really want to import this file?</source>
         <translation>Определение на променлива</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Можете да дефинирате променливата с език на JavaScript. Моля, вижте &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -декорация: подчертано; цвят:#0000ff; "&gt; тук &lt;/span&gt; &lt;/a&gt; за подробности. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Можете да дефинирате променливата с език на JavaScript. Моля, вижте &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -декорация: подчертано; цвят:#0000ff; &quot;&gt; тук &lt;/span&gt; &lt;/a&gt; за подробности. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -978,7 +1030,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can test the definition by clicking this. If error occurs while parsing the definition, the error message is shown. When the definition is parsed successfully, the value calculated using the &amp;quot;Value for testing&amp;quot; for each input is shown.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Можете да тествате определението, като щракнете върху това. Ако възникне грешка при синтактичния анализ на дефиницията, се показва съобщението за грешка. Когато дефиницията се анализира успешно, стойността се изчислява с помощта на "Стойност за тестванеquot; за всеки вход се показва. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; (&amp;Q)</translation>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Можете да тествате определението, като щракнете върху това. Ако възникне грешка при синтактичния анализ на дефиницията, се показва съобщението за грешка. Когато дефиницията се анализира успешно, стойността се изчислява с помощта на &quot;Стойност за тестванеquot; за всеки вход се показва. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>----</source>
@@ -1048,8 +1100,8 @@ Do you really want to import this file?</source>
         <translation>Надолу (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Забележка &lt;/span&gt;: Редът в списъка е важен. В дефиницията можете да използвате стойността на изчисленията на прости операции като променлива, която се появява по -рано в списъка. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = &quot;font-weight: 600;&quot;&gt; Забележка &lt;/span&gt;: Редът в списъка е важен. В дефиницията можете да използвате стойността на изчисленията на прости операции като променлива, която се появява по -рано в списъка. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
@@ -1202,16 +1254,20 @@ Do you really want to import this file?</source>
         <source>&amp;Hide Detail</source>
         <translation>Скриване на подробности (&amp;H)</translation>
     </message>
+    <message>
+        <source>--</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PostIterationSteps</name>
     <message>
         <source>Error</source>
-        <translation>Грешка</translation>
+        <translation type="vanished">Грешка</translation>
     </message>
     <message>
         <source>Error occured while loading calculation result.</source>
-        <translation>Възникна грешка при зареждането на резултата от изчислението.</translation>
+        <translation type="vanished">Възникна грешка при зареждането на резултата от изчислението.</translation>
     </message>
 </context>
 <context>
@@ -1259,6 +1315,10 @@ Do you really want to import this file?</source>
     <message>
         <source>Error occured while saving %1</source>
         <translation>При запазването възникна грешка %1</translation>
+    </message>
+    <message>
+        <source>Saving calculation result as TPO files...</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1394,8 +1454,8 @@ Do you really want to import this file?</source>
         <translation>Определение на продукцията</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Можете да дефинирате променливата с език на JavaScript. Моля, вижте &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -декорация: подчертано; цвят:#0000ff; "&gt; тук &lt;/span&gt; &lt;/a&gt; за подробности. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Можете да дефинирате променливата с език на JavaScript. Моля, вижте &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -декорация: подчертано; цвят:#0000ff; &quot;&gt; тук &lt;/span&gt; &lt;/a&gt; за подробности. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -1438,11 +1498,11 @@ Do you really want to import this file?</source>
     <name>PostTimeSteps</name>
     <message>
         <source>Error</source>
-        <translation>Грешка</translation>
+        <translation type="vanished">Грешка</translation>
     </message>
     <message>
         <source>Error occured while loading calculation result.</source>
-        <translation>Възникна грешка при зареждането на резултата от изчислението.</translation>
+        <translation type="vanished">Възникна грешка при зареждането на резултата от изчислението.</translation>
     </message>
 </context>
 <context>
@@ -1494,7 +1554,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Внимание</translation>
+        <translation type="vanished">Внимание</translation>
     </message>
     <message>
         <source>Saving project...</source>
@@ -1506,7 +1566,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Elevation grid attribute is not defined for grid type %1. Grid I/O functions, grid creating functions may not work correctly for these grid types.</source>
-        <translation>Атрибутът на решетъчната мрежа не е дефиниран за типа мрежа %1. Функции за входно -изходни мрежи, функциите за създаване на мрежа може да не работят правилно за тези типове мрежа.</translation>
+        <translation type="vanished">Атрибутът на решетъчната мрежа не е дефиниран за типа мрежа %1. Функции за входно -изходни мрежи, функциите за създаване на мрежа може да не работят правилно за тези типове мрежа.</translation>
     </message>
 </context>
 <context>
@@ -1517,11 +1577,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Solution %1 already exists.</source>
-        <translation>Решение %1 вече съществува.</translation>
+        <translation type="vanished">Решение %1 вече съществува.</translation>
     </message>
     <message>
         <source>CGNS file whose name contains characters other than alphabets and numbers can not be imported.</source>
-        <translation>CGNS файл, чието име съдържа знаци, различни от азбуки и цифри, не може да бъде импортиран.</translation>
+        <translation type="vanished">CGNS файл, чието име съдържа знаци, различни от азбуки и цифри, не може да бъде импортиран.</translation>
     </message>
     <message>
         <source>Export CGNS file</source>
@@ -1545,7 +1605,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>%1 Saving project file failed.</source>
-        <translation>%1 Запазването на проектния файл не бе успешно.</translation>
+        <translation type="vanished">%1 Запазването на проектния файл не бе успешно.</translation>
     </message>
     <message>
         <source>All images(*.jpg *.jpeg *.png *.tif);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif)</source>
@@ -1589,7 +1649,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>This file is for solver %1 %2. It is not compatible with the solver you are using, so maybe importing this file will fail. Do you really want to import this file?</source>
-        <translation>Този файл е за решаване %1 %2. Той не е съвместим с решавача, който използвате, така че може би импортирането на този файл ще се провали. Наистина ли искате да импортирате този файл?</translation>
+        <translation type="vanished">Този файл е за решаване %1 %2. Той не е съвместим с решавача, който използвате, така че може би импортирането на този файл ще се провали. Наистина ли искате да импортирате този файл?</translation>
     </message>
     <message>
         <source>There is no visualization/graph windows.</source>
@@ -1602,6 +1662,10 @@ Do you really want to import this file?</source>
     <message>
         <source>Coordinate system not selected.</source>
         <translation>Координатната система не е избрана.</translation>
+    </message>
+    <message>
+        <source>Error occured while opening CGNS file in project file : Case1.cgn</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1637,8 +1701,8 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectWorkspace</name>
     <message>
-        <source>Workspace "%1" has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
-        <translation>Работно пространство "%1" има %2 проектни папки, които изглежда вече не се използват. Искате ли да ги премахнете?</translation>
+        <source>Workspace &quot;%1&quot; has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
+        <translation>Работно пространство &quot;%1&quot; има %2 проектни папки, които изглежда вече не се използват. Искате ли да ги премахнете?</translation>
     </message>
     <message>
         <source>Information</source>

@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="it_IT">
 <context>
     <name>Post2dBirdEyeObjectBrowser</name>
@@ -9,8 +11,8 @@
 <context>
     <name>Post2dBirdEyeWindow</name>
     <message>
-        <source>Bird's-Eye Post-processing (2D): %1</source>
-        <translation>Post-elaborazione a volo d'uccello (2D): %1</translation>
+        <source>Bird&apos;s-Eye Post-processing (2D): %1</source>
+        <translation>Post-elaborazione a volo d&apos;uccello (2D): %1</translation>
     </message>
     <message>
         <source>Background Color</source>
@@ -86,6 +88,53 @@
     </message>
 </context>
 <context>
+    <name>Post2dBirdEyeWindowContourSettingDialog</name>
+    <message>
+        <source>Scalar Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scalar value for elevation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scalar Value:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Region Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Color Bar Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>For value range, max value is smaller than min value.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>Post2dBirdEyeWindowDataModel</name>
     <message>
         <source>Warning</source>
@@ -93,11 +142,11 @@
     </message>
     <message>
         <source>Contour setting is not available, because this result does not contain scalar values.</source>
-        <translation>L'impostazione del contorno non è disponibile perché questo risultato non contiene valori scalari.</translation>
+        <translation>L&apos;impostazione del contorno non è disponibile perché questo risultato non contiene valori scalari.</translation>
     </message>
     <message>
         <source>Contour setting is not available, because this result does not contain cell scalar values.</source>
-        <translation>L'impostazione del contorno non è disponibile perché questo risultato non contiene valori scalari di cella.</translation>
+        <translation>L&apos;impostazione del contorno non è disponibile perché questo risultato non contiene valori scalari di cella.</translation>
     </message>
     <message>
         <source>Z-direction Scale</source>
@@ -149,7 +198,7 @@
     </message>
     <message>
         <source>Update Grid Shape Setting</source>
-        <translation>Aggiorna l'impostazione della forma della griglia</translation>
+        <translation>Aggiorna l&apos;impostazione della forma della griglia</translation>
     </message>
     <message>
         <source>Edit Background Color</source>

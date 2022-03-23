@@ -1,15 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ca_ES">
 <context>
     <name>Post2dBirdEyeObjectBrowser</name>
     <message>
         <source>Object Browser</source>
-        <translation>Navegador d'objectes</translation>
+        <translation>Navegador d&apos;objectes</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindow</name>
     <message>
-        <source>Bird's-Eye Post-processing (2D): %1</source>
+        <source>Bird&apos;s-Eye Post-processing (2D): %1</source>
         <translation>Postprocessament ocular (2D): %1</translation>
     </message>
     <message>
@@ -83,6 +85,53 @@
     <message>
         <source>A maximum of four contours may be defined.</source>
         <translation>Es poden definir un màxim de quatre contorns.</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowContourSettingDialog</name>
+    <message>
+        <source>Scalar Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scalar value for elevation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scalar Value:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Region Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Color Bar Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>For value range, max value is smaller than min value.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
