@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="lt_LT">
 <context>
     <name>Post2dBirdEyeObjectBrowser</name>
@@ -11,7 +9,7 @@
 <context>
     <name>Post2dBirdEyeWindow</name>
     <message>
-        <source>Bird&apos;s-Eye Post-processing (2D): %1</source>
+        <source>Bird's-Eye Post-processing (2D): %1</source>
         <translation>Paukščių skrydžio papildomas apdorojimas (2D): %1</translation>
     </message>
     <message>
@@ -91,47 +89,47 @@
     <name>Post2dBirdEyeWindowContourSettingDialog</name>
     <message>
         <source>Scalar Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Skaliarinis nustatymas</translation>
     </message>
     <message>
         <source>Scalar value for elevation</source>
-        <translation type="unfinished"></translation>
+        <translation>Skaliarinė aukščio vertė</translation>
     </message>
     <message>
         <source>Color Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Spalvų nustatymas</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation type="unfinished"></translation>
+        <translation>Individualizuota spalva</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation type="unfinished"></translation>
+        <translation>Pagal skaliarinę vertę</translation>
     </message>
     <message>
         <source>Scalar Value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Skaliarinė reikšmė:</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Ekrano nustatymas</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Regiono nustatymas (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Spalvų juostos nustatymas (&amp;C)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Klaida</translation>
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vertės diapazone maksimali vertė yra mažesnė nei min.</translation>
     </message>
 </context>
 <context>

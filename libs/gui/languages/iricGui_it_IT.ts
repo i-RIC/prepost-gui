@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="it_IT">
 <context>
     <name>AnimationController</name>
@@ -25,7 +23,7 @@
     </message>
     <message>
         <source>Go to &amp;Last Step</source>
-        <translation>Vai all&apos;ultimo passaggio (&amp;L)</translation>
+        <translation>Vai all'ultimo passaggio (&amp;L)</translation>
     </message>
     <message>
         <source>&amp;Start/Stop Animation</source>
@@ -37,7 +35,7 @@
     </message>
     <message>
         <source>Toggle &amp;following last step</source>
-        <translation>Attiva/disattiva l&apos;ultimo passaggio successivo (&amp;F)</translation>
+        <translation>Attiva/disattiva l'ultimo passaggio successivo (&amp;F)</translation>
     </message>
     <message>
         <source>&amp;Animation Speed Setting...</source>
@@ -56,7 +54,7 @@
     </message>
     <message>
         <source>The files in the list below will be created or updated. Please open these files with Qt Linguist, and complete the translation dictionary.</source>
-        <translation>I file nell&apos;elenco sottostante verranno creati o aggiornati. Apri questi file con Qt Linguist e completa il dizionario di traduzione.</translation>
+        <translation>I file nell'elenco sottostante verranno creati o aggiornati. Apri questi file con Qt Linguist e completa il dizionario di traduzione.</translation>
     </message>
 </context>
 <context>
@@ -67,7 +65,7 @@
     </message>
     <message>
         <source>The files in the list below will be created or updated. </source>
-        <translation>I file nell&apos;elenco sottostante verranno creati o aggiornati.</translation>
+        <translation>I file nell'elenco sottostante verranno creati o aggiornati.</translation>
     </message>
 </context>
 <context>
@@ -270,11 +268,11 @@
     </message>
     <message>
         <source>Timestep Setting</source>
-        <translation>Impostazione dell&apos;intervallo di tempo</translation>
+        <translation>Impostazione dell'intervallo di tempo</translation>
     </message>
     <message>
         <source>Please specify the start time step, stop time step, and the skip rate.</source>
-        <translation>Specificare l&apos;intervallo di tempo di inizio, il passaggio di tempo di fine e la frequenza di salto.</translation>
+        <translation>Specificare l'intervallo di tempo di inizio, il passaggio di tempo di fine e la frequenza di salto.</translation>
     </message>
     <message>
         <source>start :</source>
@@ -357,7 +355,7 @@
     </message>
     <message>
         <source>More than one visualization window has transparent region. They can not saved into transparent background images. Please select white background, or cancel and disable transparency for contours etc.</source>
-        <translation>Più di una finestra di visualizzazione ha un&apos;area trasparente. Non possono essere salvati in immagini di sfondo trasparenti. Seleziona lo sfondo bianco o annulla e disattiva la trasparenza per i contorni, ecc.</translation>
+        <translation>Più di una finestra di visualizzazione ha un'area trasparente. Non possono essere salvati in immagini di sfondo trasparenti. Seleziona lo sfondo bianco o annulla e disattiva la trasparenza per i contorni, ecc.</translation>
     </message>
     <message>
         <source>No window is currently selected.</source>
@@ -434,7 +432,7 @@ When you have iRIC windows other than this, close them manually.</source>
     <message>
         <source>This function is intended to be used by solver developers or grid creating program developers, not users.
 This wizard will generate or update translation files for solver definition files and grid creating program definition files those are registered to iRIC system. You need to specify the solver (or grid creating program) name, and the list of languages for those you want to create or update translation files.</source>
-        <translation>Questa funzione è destinata agli sviluppatori di risolutori o agli sviluppatori di programmi che creano griglia, non agli utenti. Questa procedura guidata genererà o aggiornerà i file di traduzione per i file di definizione del risolutore e i file di definizione del programma di creazione della griglia registrati nel sistema iRIC. È necessario specificare il nome del risolutore (o del programma di creazione della griglia) e l&apos;elenco delle lingue per le quali si desidera creare o aggiornare i file di traduzione.</translation>
+        <translation>Questa funzione è destinata agli sviluppatori di risolutori o agli sviluppatori di programmi che creano griglia, non agli utenti. Questa procedura guidata genererà o aggiornerà i file di traduzione per i file di definizione del risolutore e i file di definizione del programma di creazione della griglia registrati nel sistema iRIC. È necessario specificare il nome del risolutore (o del programma di creazione della griglia) e l'elenco delle lingue per le quali si desidera creare o aggiornare i file di traduzione.</translation>
     </message>
 </context>
 <context>
@@ -451,8 +449,8 @@ This wizard will generate or update translation files for solver definition file
         <translation>Seleziona Risolutore</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
-        <translation>Quando crei un nuovo progetto, devi selezionare il risolutore da utilizzare per il calcolo. Selezionare un risolutore e premere il pulsante &quot;OK&quot;.</translation>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
+        <translation>Quando crei un nuovo progetto, devi selezionare il risolutore da utilizzare per il calcolo. Selezionare un risolutore e premere il pulsante "OK".</translation>
     </message>
 </context>
 <context>
@@ -464,7 +462,7 @@ This wizard will generate or update translation files for solver definition file
     <message>
         <source>%1 days have passed after launching iRIC Maintainance for the last time.
 Do you want to launch iRIC Maintainance?</source>
-        <translation>%1 sono trascorsi giorni dall&apos;ultimo lancio di iRIC Maintainance. Vuoi lanciare iRIC Maintenance?</translation>
+        <translation>%1 sono trascorsi giorni dall'ultimo lancio di iRIC Maintainance. Vuoi lanciare iRIC Maintenance?</translation>
     </message>
     <message>
         <source>Launch iRIC Maintainance</source>
@@ -541,7 +539,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Note: Language setting is applied when iRIC is launched next time.</source>
-        <translation>Nota: l&apos;impostazione della lingua viene applicata al successivo avvio di iRIC.</translation>
+        <translation>Nota: l'impostazione della lingua viene applicata al successivo avvio di iRIC.</translation>
     </message>
     <message>
         <source>Working Directory</source>
@@ -557,7 +555,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Checking for Update</source>
-        <translation>Verifica dell&apos;aggiornamento</translation>
+        <translation>Verifica dell'aggiornamento</translation>
     </message>
     <message>
         <source>Check for update periodically</source>
@@ -585,7 +583,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Warning: If you disable culling and create a very big grid, maybe iRIC GUI will crash because of lack of memory.</source>
-        <translation>Avvertimento: se disabiliti l&apos;eliminazione e crei una griglia molto grande, forse la GUI di iRIC si bloccherà a causa della mancanza di memoria.</translation>
+        <translation>Avvertimento: se disabiliti l'eliminazione e crei una griglia molto grande, forse la GUI di iRIC si bloccherà a causa della mancanza di memoria.</translation>
     </message>
     <message>
         <source>Undo</source>
@@ -617,7 +615,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Working directory is changed, but the new working directory is used AFTER exiting iRIC GUI!</source>
-        <translation>La directory di lavoro viene modificata, ma la nuova directory di lavoro viene utilizzata DOPO l&apos;uscita dalla GUI di iRIC!</translation>
+        <translation>La directory di lavoro viene modificata, ma la nuova directory di lavoro viene utilizzata DOPO l'uscita dalla GUI di iRIC!</translation>
     </message>
     <message>
         <source>Python path</source>
@@ -656,7 +654,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Note: Loading an image whose width (or height) is larger than the maximum, will be automatically resized.</source>
-        <translation>Nota: il caricamento di un&apos;immagine la cui larghezza (o altezza) è maggiore del massimo, verrà automaticamente ridimensionata.</translation>
+        <translation>Nota: il caricamento di un'immagine la cui larghezza (o altezza) è maggiore del massimo, verrà automaticamente ridimensionata.</translation>
     </message>
     <message>
         <source>Vector</source>
@@ -731,7 +729,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Check angle of cell is more than</source>
-        <translation>Controllare che l&apos;angolo della cella sia maggiore di</translation>
+        <translation>Controllare che l'angolo della cella sia maggiore di</translation>
     </message>
     <message>
         <source>Note: Settings on this page are applied only to structured grids.</source>
@@ -750,7 +748,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Use system proxy setting</source>
-        <translation>Usa l&apos;impostazione del proxy di sistema</translation>
+        <translation>Usa l'impostazione del proxy di sistema</translation>
     </message>
     <message>
         <source>Use custom proxy setting</source>
@@ -766,7 +764,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Need authentication for HTTP proxy</source>
-        <translation>È necessaria l&apos;autenticazione per il proxy HTTP</translation>
+        <translation>È necessaria l'autenticazione per il proxy HTTP</translation>
     </message>
     <message>
         <source>User name:</source>
@@ -774,7 +772,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Password:</source>
-        <translation>Parola d&apos;ordine:</translation>
+        <translation>Parola d'ordine:</translation>
     </message>
 </context>
 <context>
@@ -805,7 +803,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>This value already exists in the list.</source>
-        <translation>Questo valore esiste già nell&apos;elenco.</translation>
+        <translation>Questo valore esiste già nell'elenco.</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -813,7 +811,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Are you sure you want to delete the selected item?</source>
-        <translation>Sei sicuro di voler eliminare l&apos;elemento selezionato?</translation>
+        <translation>Sei sicuro di voler eliminare l'elemento selezionato?</translation>
     </message>
     <message>
         <source>Are you sure you want to restore default values?</source>
@@ -983,7 +981,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Last update time:</source>
-        <translation>Ora dell&apos;ultimo aggiornamento:</translation>
+        <translation>Ora dell'ultimo aggiornamento:</translation>
     </message>
     <message>
         <source>Solver:</source>
@@ -1059,11 +1057,11 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Output Setting</source>
-        <translation>Impostazione dell&apos;uscita</translation>
+        <translation>Impostazione dell'uscita</translation>
     </message>
     <message>
         <source>Output calculation results in separate files</source>
-        <translation>Il calcolo dell&apos;output risulta in file separati</translation>
+        <translation>Il calcolo dell'output risulta in file separati</translation>
     </message>
 </context>
 <context>
@@ -1143,7 +1141,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Copyright</source>
-        <translation>Diritto d&apos;autore</translation>
+        <translation>Diritto d'autore</translation>
     </message>
     <message>
         <source>Release</source>
@@ -1182,7 +1180,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Copyright</source>
-        <translation>Diritto d&apos;autore</translation>
+        <translation>Diritto d'autore</translation>
     </message>
     <message>
         <source>Release</source>
@@ -1208,9 +1206,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>Avvertimento</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
+        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
 %2</source>
-        <translation>Si è verificato un errore durante il caricamento del file di definizione del risolutore nella cartella &quot;%1&quot;. Questo risolutore viene ignorato. %2</translation>
+        <translation>Si è verificato un errore durante il caricamento del file di definizione del risolutore nella cartella "%1". Questo risolutore viene ignorato. %2</translation>
     </message>
 </context>
 <context>
@@ -1326,10 +1324,10 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>This project seems to be opened by another iRIC GUI window. You can not open a project folder from multiple GUI windows.</source>
-        <translation>Questo progetto sembra essere aperto da un&apos;altra finestra della GUI di iRIC. Non è possibile aprire una cartella di progetto da più finestre della GUI.</translation>
+        <translation>Questo progetto sembra essere aperto da un'altra finestra della GUI di iRIC. Non è possibile aprire una cartella di progetto da più finestre della GUI.</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation>Il progetto aperto non viene copiato nella directory di lavoro e sarai costretto a salvare le modifiche apportate a questo progetto. Se vuoi mantenere il progetto corrente, salvalo prima in un altro progetto.</translation>
     </message>
     <message>
@@ -1486,11 +1484,11 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>Currently active sub-window does not support exporting contour figure.</source>
-        <translation>La sottofinestra attualmente attiva non supporta l&apos;esportazione della figura del contorno.</translation>
+        <translation>La sottofinestra attualmente attiva non supporta l'esportazione della figura del contorno.</translation>
     </message>
     <message>
-        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
-        <translation>Per esportare il file di forma, cambia &quot;Impostazioni di visualizzazione&quot; su &quot;Contour Figure&quot;, non &quot;Color Fringe&quot; o &quot;Isolines&quot;.</translation>
+        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
+        <translation>Per esportare il file di forma, cambia "Impostazioni di visualizzazione" su "Contour Figure", non "Color Fringe" o "Isolines".</translation>
     </message>
     <message>
         <source>Export contour figure to ESRI Shapefiles</source>
@@ -1603,7 +1601,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Saving snapshot failed.</source>
-        <translation>Salvataggio dell&apos;istantanea non riuscito.</translation>
+        <translation>Salvataggio dell'istantanea non riuscito.</translation>
     </message>
     <message>
         <source>Wrong file name specified.</source>
@@ -1627,7 +1625,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Setting file (*.vgsetting *.xml)</source>
-        <translation type="unfinished"></translation>
+        <translation>File di impostazione (*.vgsetting *.xml)</translation>
     </message>
 </context>
 <context>
@@ -1650,7 +1648,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>copyright</source>
-        <translation>diritto d&apos;autore</translation>
+        <translation>diritto d'autore</translation>
     </message>
     <message>
         <source>iRIC %1</source>
@@ -1662,7 +1660,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Copyright %1</source>
-        <translation>Diritto d&apos;autore %1</translation>
+        <translation>Diritto d'autore %1</translation>
     </message>
     <message>
         <source>Terms of use: </source>
@@ -1841,7 +1839,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>&amp;Windows list Toolbar</source>
-        <translation>Barra degli strumenti dell&apos;elenco di Windows (&amp;W)</translation>
+        <translation>Barra degli strumenti dell'elenco di Windows (&amp;W)</translation>
     </message>
     <message>
         <source>&amp;Animation Toolbar</source>
@@ -1974,7 +1972,7 @@ Option -&gt; Preferences</source>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>&amp;Solver Information...</source>
@@ -2001,8 +1999,8 @@ Option -&gt; Preferences</source>
         <translation>Apri una nuova finestra di post-elaborazione 2D</translation>
     </message>
     <message>
-        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
-        <translation>Apri una nuova finestra di post-elaborazione 2D a volo d&apos;uccello</translation>
+        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
+        <translation>Apri una nuova finestra di post-elaborazione 2D a volo d'uccello</translation>
     </message>
     <message>
         <source>Open new 3D Post-Processing Window</source>

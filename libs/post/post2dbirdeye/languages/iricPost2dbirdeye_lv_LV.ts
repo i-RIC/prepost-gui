@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="lv_LV">
 <context>
     <name>Post2dBirdEyeObjectBrowser</name>
@@ -11,7 +9,7 @@
 <context>
     <name>Post2dBirdEyeWindow</name>
     <message>
-        <source>Bird&apos;s-Eye Post-processing (2D): %1</source>
+        <source>Bird's-Eye Post-processing (2D): %1</source>
         <translation>Putnu lidojuma pēcapstrāde (2D): %1</translation>
     </message>
     <message>
@@ -91,47 +89,47 @@
     <name>Post2dBirdEyeWindowContourSettingDialog</name>
     <message>
         <source>Scalar Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Skalāra iestatījums</translation>
     </message>
     <message>
         <source>Scalar value for elevation</source>
-        <translation type="unfinished"></translation>
+        <translation>Paaugstinājuma skalārā vērtība</translation>
     </message>
     <message>
         <source>Color Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Krāsu iestatīšana</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation type="unfinished"></translation>
+        <translation>Pielāgota krāsa</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation type="unfinished"></translation>
+        <translation>Pēc skalārās vērtības</translation>
     </message>
     <message>
         <source>Scalar Value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Skalārā vērtība:</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Displeja iestatījums</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Reģiona iestatījums (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Krāsu joslas iestatījums (&amp;C)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Kļūda</translation>
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vērtību diapazonam maksimālā vērtība ir mazāka par minimālo vērtību.</translation>
     </message>
 </context>
 <context>

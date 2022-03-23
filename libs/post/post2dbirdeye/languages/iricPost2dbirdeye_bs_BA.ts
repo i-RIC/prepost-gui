@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="bs_BA">
 <context>
     <name>Post2dBirdEyeObjectBrowser</name>
@@ -11,7 +9,7 @@
 <context>
     <name>Post2dBirdEyeWindow</name>
     <message>
-        <source>Bird&apos;s-Eye Post-processing (2D): %1</source>
+        <source>Bird's-Eye Post-processing (2D): %1</source>
         <translation>Post-obrada iz ptičijeg oka (2D): %1</translation>
     </message>
     <message>
@@ -91,47 +89,47 @@
     <name>Post2dBirdEyeWindowContourSettingDialog</name>
     <message>
         <source>Scalar Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Postavka skalara</translation>
     </message>
     <message>
         <source>Scalar value for elevation</source>
-        <translation type="unfinished"></translation>
+        <translation>Skalarna vrijednost za elevaciju</translation>
     </message>
     <message>
         <source>Color Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Podešavanje boje</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation type="unfinished"></translation>
+        <translation>Prilagođena boja</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation type="unfinished"></translation>
+        <translation>Po skalarnoj vrijednosti</translation>
     </message>
     <message>
         <source>Scalar Value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Skalarna vrijednost:</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Display Setting</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Region Setting (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Podešavanje trake boje (&amp;C)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Greška</translation>
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
-        <translation type="unfinished"></translation>
+        <translation>Za raspon vrijednosti, maksimalna vrijednost je manja od minimalne vrijednosti.</translation>
     </message>
 </context>
 <context>

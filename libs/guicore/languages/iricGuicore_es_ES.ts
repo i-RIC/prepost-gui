@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="es_ES">
 <context>
     <name>AttributeBrowserTargetDataItem</name>
@@ -32,7 +30,7 @@
     </message>
     <message>
         <source>Fix Image position</source>
-        <translation type="unfinished"></translation>
+        <translation>Fijar la posición de la imagen</translation>
     </message>
 </context>
 <context>
@@ -219,7 +217,7 @@
     </message>
     <message>
         <source>Delete Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Eliminar puntos</translation>
     </message>
 </context>
 <context>
@@ -458,7 +456,7 @@
     </message>
     <message>
         <source>CGNS File</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo CGNS</translation>
     </message>
 </context>
 <context>
@@ -468,12 +466,12 @@
         <translation>Nodo de definicion no esta archivado</translation>
     </message>
     <message>
-        <source>Wrong valueType &quot;%1&quot; is set.</source>
-        <translation>ValueType incorrecto &quot;%1&quot; Está establecido.</translation>
+        <source>Wrong valueType "%1" is set.</source>
+        <translation>ValueType incorrecto "%1" Está establecido.</translation>
     </message>
     <message>
-        <source>Wrong conditionType &quot;%1&quot;is set.</source>
-        <translation>ConditionType incorrecto &quot;%1&quot;Está establecido.</translation>
+        <source>Wrong conditionType "%1"is set.</source>
+        <translation>ConditionType incorrecto "%1"Está establecido.</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
@@ -489,7 +487,7 @@
     <name>InputConditionDependency</name>
     <message>
         <source>Unhandled widget in ActionSetValue</source>
-        <translation type="unfinished"></translation>
+        <translation>Widget no controlado en ActionSetValue</translation>
     </message>
 </context>
 <context>
@@ -541,7 +539,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Opening the CGNS file failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Error al abrir el archivo CGNS.</translation>
     </message>
 </context>
 <context>
@@ -599,7 +597,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>File name has to consist of only English characters.</source>
-        <translation type="unfinished"></translation>
+        <translation>El nombre del archivo debe constar únicamente de caracteres ingleses.</translation>
     </message>
 </context>
 <context>
@@ -628,11 +626,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>File name has to consist of only English characters.</source>
-        <translation type="unfinished"></translation>
+        <translation>El nombre del archivo debe constar únicamente de caracteres ingleses.</translation>
     </message>
     <message>
         <source>...</source>
-        <translation type="unfinished">...</translation>
+        <translation>...</translation>
     </message>
 </context>
 <context>
@@ -643,18 +641,18 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Folder name has to consist of only English characters.</source>
-        <translation type="unfinished"></translation>
+        <translation>El nombre de la carpeta debe constar únicamente de caracteres ingleses.</translation>
     </message>
     <message>
         <source>...</source>
-        <translation type="unfinished">...</translation>
+        <translation>...</translation>
     </message>
 </context>
 <context>
     <name>InputConditionWidgetFunctional</name>
     <message>
         <source>Edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar</translation>
     </message>
 </context>
 <context>
@@ -744,8 +742,8 @@ Do you really want to import this file?</source>
         <translation>Informacion</translation>
     </message>
     <message>
-        <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
-        <translation>Puede copiar y pegar los valores, con el acceso directo &quot;Ctrl + C&quot; y &quot;Ctrl + V&quot;</translation>
+        <source>You can copy and paste the values, with shortcut "Ctrl + C" and "Ctrl + V"</source>
+        <translation>Puede copiar y pegar los valores, con el acceso directo "Ctrl + C" y "Ctrl + V"</translation>
     </message>
     <message>
         <source>The following problems found: 
@@ -855,8 +853,8 @@ Do you really want to import this file?</source>
         <translation>Error ocurrio mientras abriendo el archivo.</translation>
     </message>
     <message>
-        <source>The first two columns must be &quot;X&quot; and &quot;Y&quot;.</source>
-        <translation>Las dos primeras columnas deben ser &quot;X&quot; e &quot;Y&quot;.</translation>
+        <source>The first two columns must be "X" and "Y".</source>
+        <translation>Las dos primeras columnas deben ser "X" e "Y".</translation>
     </message>
     <message>
         <source>The data file has to consist of only English characters.</source>
@@ -1021,8 +1019,8 @@ Do you really want to import this file?</source>
         <translation>Definición de variable</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Puede definir la variable con lenguaje JavaScript. Consulte &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;texto -decoration: underline; color: # 0000ff; &quot;&gt; aquí &lt;/span&gt; &lt;/a&gt; para más detalles. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Puede definir la variable con lenguaje JavaScript. Consulte &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "texto -decoration: underline; color: # 0000ff; "&gt; aquí &lt;/span&gt; &lt;/a&gt; para más detalles. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -1100,8 +1098,8 @@ Do you really want to import this file?</source>
         <translation>&amp;Abajo</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;span style = &quot;font-weight: 600;&quot;&gt; Nota &lt;/span&gt;: El orden en la lista es importante. En la definición, puede usar el valor de cálculos de operaciones simples como una variable, que aparece antes en la lista. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Nota &lt;/span&gt;: El orden en la lista es importante. En la definición, puede usar el valor de cálculos de operaciones simples como una variable, que aparece antes en la lista. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
@@ -1256,7 +1254,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>--</source>
-        <translation type="unfinished"></translation>
+        <translation>--</translation>
     </message>
 </context>
 <context>
@@ -1318,7 +1316,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Saving calculation result as TPO files...</source>
-        <translation type="unfinished"></translation>
+        <translation>Guardando el resultado del cálculo como archivos TPO...</translation>
     </message>
 </context>
 <context>
@@ -1454,8 +1452,8 @@ Do you really want to import this file?</source>
         <translation>Definición de salida</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Puede definir la variable con lenguaje JavaScript. Consulte &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;texto -decoration: underline; color: # 0000ff; &quot;&gt; aquí &lt;/span&gt; &lt;/a&gt; para más detalles. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Puede definir la variable con lenguaje JavaScript. Consulte &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "texto -decoration: underline; color: # 0000ff; "&gt; aquí &lt;/span&gt; &lt;/a&gt; para más detalles. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -1665,7 +1663,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Error occured while opening CGNS file in project file : Case1.cgn</source>
-        <translation type="unfinished"></translation>
+        <translation>Ocurrió un error al abrir el archivo CGNS en el archivo del proyecto: Case1.cgn</translation>
     </message>
 </context>
 <context>
@@ -1701,8 +1699,8 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectWorkspace</name>
     <message>
-        <source>Workspace &quot;%1&quot; has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
-        <translation>Espacio de trabajo &quot;%1&quot; tiene %2 carpetas de proyectos que parece que ya no se utilizan. ¿Quieres eliminarlos?</translation>
+        <source>Workspace "%1" has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
+        <translation>Espacio de trabajo "%1" tiene %2 carpetas de proyectos que parece que ya no se utilizan. ¿Quieres eliminarlos?</translation>
     </message>
     <message>
         <source>Information</source>

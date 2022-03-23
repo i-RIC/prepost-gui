@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="id_ID">
 <context>
     <name>Post2dBirdEyeObjectBrowser</name>
@@ -11,7 +9,7 @@
 <context>
     <name>Post2dBirdEyeWindow</name>
     <message>
-        <source>Bird&apos;s-Eye Post-processing (2D): %1</source>
+        <source>Bird's-Eye Post-processing (2D): %1</source>
         <translation>Pasca Pemrosesan Mata Burung (2D): %1</translation>
     </message>
     <message>
@@ -91,47 +89,47 @@
     <name>Post2dBirdEyeWindowContourSettingDialog</name>
     <message>
         <source>Scalar Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Pengaturan Skalar</translation>
     </message>
     <message>
         <source>Scalar value for elevation</source>
-        <translation type="unfinished"></translation>
+        <translation>Nilai skalar untuk ketinggian</translation>
     </message>
     <message>
         <source>Color Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Pengaturan Warna</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation type="unfinished"></translation>
+        <translation>Warna kustom</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation type="unfinished"></translation>
+        <translation>Dengan nilai skalar</translation>
     </message>
     <message>
         <source>Scalar Value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nilai Skalar:</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Pengaturan tampilan</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Pengaturan Wilayah (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Pengaturan Bilah Warna (&amp;C)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Kesalahan</translation>
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
-        <translation type="unfinished"></translation>
+        <translation>Untuk rentang nilai, nilai maks lebih kecil dari nilai min.</translation>
     </message>
 </context>
 <context>

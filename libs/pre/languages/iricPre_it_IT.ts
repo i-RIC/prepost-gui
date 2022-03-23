@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="it_IT">
 <context>
     <name>BoundaryConditionDialog</name>
@@ -71,7 +69,7 @@
     </message>
     <message>
         <source>Error occured while importing grid.</source>
-        <translation>Si è verificato un errore durante l&apos;importazione della griglia.</translation>
+        <translation>Si è verificato un errore durante l'importazione della griglia.</translation>
     </message>
     <message>
         <source>This CGNS file is created for %1 version %2. It is not compatible with the current solver. Maybe only some part of the grid will be imported.
@@ -114,8 +112,8 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>GridBirdEyeWindow</name>
     <message>
-        <source>Grid Bird&apos;s-Eye View Window</source>
-        <translation>Finestra di visualizzazione a volo d&apos;uccello della griglia</translation>
+        <source>Grid Bird's-Eye View Window</source>
+        <translation>Finestra di visualizzazione a volo d'uccello della griglia</translation>
     </message>
 </context>
 <context>
@@ -376,7 +374,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>There is no background image.</source>
-        <translation>Non c&apos;è nessuna immagine di sfondo.</translation>
+        <translation>Non c'è nessuna immagine di sfondo.</translation>
     </message>
     <message>
         <source>Delete selected background images</source>
@@ -579,11 +577,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>%1 are not mapped after they are edited last time. Do you want to execute mapping now?</source>
-        <translation>%1 non vengono mappati dopo che sono stati modificati l&apos;ultima volta. Vuoi eseguire la mappatura ora?</translation>
+        <translation>%1 non vengono mappati dopo che sono stati modificati l'ultima volta. Vuoi eseguire la mappatura ora?</translation>
     </message>
     <message>
-        <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
-        <translation>Impostazione delle condizioni al contorno &quot;%1&quot; non è mappato dopo che è stato modificato l&apos;ultima volta. Vuoi eseguire la mappatura ora?</translation>
+        <source>Boundary Condition Setting "%1" is not mapped after it is edited last time. Do you want to execute mapping now?</source>
+        <translation>Impostazione delle condizioni al contorno "%1" non è mappato dopo che è stato modificato l'ultima volta. Vuoi eseguire la mappatura ora?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -692,7 +690,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Please select algorithm to import data</source>
-        <translation>Seleziona l&apos;algoritmo per importare i dati</translation>
+        <translation>Seleziona l'algoritmo per importare i dati</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -700,7 +698,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>File type cannot be recognized from the file extension. : %1</source>
-        <translation>Il tipo di file non può essere riconosciuto dall&apos;estensione del file. : %1</translation>
+        <translation>Il tipo di file non può essere riconosciuto dall'estensione del file. : %1</translation>
     </message>
     <message>
         <source>Import failed</source>
@@ -902,7 +900,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Error occured while opening the file.</source>
-        <translation>Si è verificato un errore durante l&apos;apertura del file.</translation>
+        <translation>Si è verificato un errore durante l'apertura del file.</translation>
     </message>
     <message>
         <source>Grid condition successfully exported to %1.</source>
@@ -985,9 +983,9 @@ Do you really want to import grid from this file?</source>
         <translation>Eseguire (&amp;E)...</translation>
     </message>
     <message>
-        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.
+        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".
 </source>
-        <translation>I seguenti attributi non sono stati mappati, perché il generatore di griglia emette valori per loro. Se vuoi mappare forzatamente i dati geografici per loro, mappa manualmente con il menu &quot;Griglia&quot; -&gt; &quot;Mappatura attributi&quot; -&gt; &quot;Esegui&quot;.</translation>
+        <translation>I seguenti attributi non sono stati mappati, perché il generatore di griglia emette valori per loro. Se vuoi mappare forzatamente i dati geografici per loro, mappa manualmente con il menu "Griglia" -&gt; "Mappatura attributi" -&gt; "Esegui".</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1006,12 +1004,12 @@ Do you really want to import grid from this file?</source>
         <translation>Mappatura dei dati geografici terminata</translation>
     </message>
     <message>
-        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>L&apos;attributo della griglia &quot;%1&quot; viene modificato manualmente. Quando esegui la mappatura, tutte le modifiche apportate verranno eliminate. Vuoi davvero eseguire la mappatura?</translation>
+        <source>The grid attribute "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>L'attributo della griglia "%1" viene modificato manualmente. Quando esegui la mappatura, tutte le modifiche apportate verranno eliminate. Vuoi davvero eseguire la mappatura?</translation>
     </message>
     <message>
-        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>La condizione al contorno&quot;%1&quot; viene modificato manualmente. Quando esegui la mappatura, tutte le modifiche apportate verranno eliminate. Vuoi davvero eseguire la mappatura?</translation>
+        <source>The boundary condition "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>La condizione al contorno"%1" viene modificato manualmente. Quando esegui la mappatura, tutte le modifiche apportate verranno eliminate. Vuoi davvero eseguire la mappatura?</translation>
     </message>
 </context>
 <context>
@@ -1029,20 +1027,20 @@ Do you really want to import grid from this file?</source>
         <translation>Auto</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Quando viene creata la griglia, ti viene chiesto se per eseguire la mappatura degli attributi ogni volta.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;meta name ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p style=" margin -top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Quando viene creata la griglia, ti viene chiesto se per eseguire la mappatura degli attributi ogni volta.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Manual</source>
         <translation>Manuale</translation>
     </message>
     <message>
-        <source>Attribute mapping is executed only when you manually select &quot;Execute&quot; menu.</source>
-        <translation>La mappatura degli attributi viene eseguita solo quando si seleziona manualmente il menu &quot;Esegui&quot;.</translation>
+        <source>Attribute mapping is executed only when you manually select "Execute" menu.</source>
+        <translation>La mappatura degli attributi viene eseguita solo quando si seleziona manualmente il menu "Esegui".</translation>
     </message>
     <message>
         <source>Geographic data mapping</source>
@@ -1063,7 +1061,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Find geographic data points that are near to the grid nodes, regarding the grid cell shapes, and use the values at those points for interpolation.
 This algorithm can be used only for structured grids.</source>
-        <translation>Trova i punti dati geografici vicini ai nodi della griglia, per quanto riguarda le forme delle celle della griglia, e usa i valori in quei punti per l&apos;interpolazione. Questo algoritmo può essere utilizzato solo per griglie strutturate.</translation>
+        <translation>Trova i punti dati geografici vicini ai nodi della griglia, per quanto riguarda le forme delle celle della griglia, e usa i valori in quei punti per l'interpolazione. Questo algoritmo può essere utilizzato solo per griglie strutturate.</translation>
     </message>
     <message>
         <source>&amp;Detail...</source>
@@ -1130,7 +1128,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Error occured while opening the file.</source>
-        <translation>Si è verificato un errore durante l&apos;apertura del file.</translation>
+        <translation>Si è verificato un errore durante l'apertura del file.</translation>
     </message>
     <message>
         <source>Grid condition successfully exported to %1.</source>
@@ -1246,7 +1244,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>&amp;Select Algorithm to Create Grid...</source>
-        <translation>Seleziona l&apos;algoritmo per creare la griglia (&amp;S)...</translation>
+        <translation>Seleziona l'algoritmo per creare la griglia (&amp;S)...</translation>
     </message>
     <message>
         <source>Reset to &amp;Default...</source>
@@ -1446,8 +1444,8 @@ This algorithm can be used only for structured grids.</source>
         <translation>Imposta barra scalare (&amp;U)...</translation>
     </message>
     <message>
-        <source>Open &amp;Bird&apos;s-Eye View Window</source>
-        <translation>Apri la finestra di visualizzazione a volo d&apos;uccello (&amp;B)</translation>
+        <source>Open &amp;Bird's-Eye View Window</source>
+        <translation>Apri la finestra di visualizzazione a volo d'uccello (&amp;B)</translation>
     </message>
     <message>
         <source>Attributes &amp;Generating</source>
@@ -1582,7 +1580,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>File type cannot be recognized from the file extension. : %1</source>
-        <translation>Il tipo di file non può essere riconosciuto dall&apos;estensione del file. : %1</translation>
+        <translation>Il tipo di file non può essere riconosciuto dall'estensione del file. : %1</translation>
     </message>
     <message>
         <source>Import failed</source>
@@ -1847,7 +1845,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Label Display</source>
-        <translation>Visualizzazione dell&apos;etichetta</translation>
+        <translation>Visualizzazione dell'etichetta</translation>
     </message>
     <message>
         <source>Number of labels :</source>
@@ -1891,7 +1889,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>If you specify 1, Color bar height is the same to window height.</source>
-        <translation>Se specifichi 1, l&apos;altezza della barra dei colori è uguale all&apos;altezza della finestra.</translation>
+        <translation>Se specifichi 1, l'altezza della barra dei colori è uguale all'altezza della finestra.</translation>
     </message>
     <message>
         <source>Position</source>

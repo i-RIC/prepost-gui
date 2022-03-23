@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ko_KR">
 <context>
     <name>BoundaryConditionDialog</name>
@@ -114,7 +112,7 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>GridBirdEyeWindow</name>
     <message>
-        <source>Grid Bird&apos;s-Eye View Window</source>
+        <source>Grid Bird's-Eye View Window</source>
         <translation>그리드 조감도 창</translation>
     </message>
 </context>
@@ -582,8 +580,8 @@ Do you really want to import grid from this file?</source>
         <translation>%1 마지막으로 편집한 후 매핑되지 않습니다. 지금 매핑을 실행하시겠습니까?</translation>
     </message>
     <message>
-        <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
-        <translation>경계 조건 설정 &quot;%1&quot;는 저번에 수정한 후 매핑되지 않습니다. 지금 매핑을 실행하시겠습니까?</translation>
+        <source>Boundary Condition Setting "%1" is not mapped after it is edited last time. Do you want to execute mapping now?</source>
+        <translation>경계 조건 설정 "%1"는 저번에 수정한 후 매핑되지 않습니다. 지금 매핑을 실행하시겠습니까?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -985,9 +983,9 @@ Do you really want to import grid from this file?</source>
         <translation>실행하다 (&amp;E)...</translation>
     </message>
     <message>
-        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.
+        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".
 </source>
-        <translation>그리드 생성기가 해당 속성에 대한 값을 출력하므로 다음 속성이 매핑되지 않았습니다. 강제로 지리 데이터를 매핑하려면 &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot; 메뉴를 사용하여 수동으로 매핑하십시오.</translation>
+        <translation>그리드 생성기가 해당 속성에 대한 값을 출력하므로 다음 속성이 매핑되지 않았습니다. 강제로 지리 데이터를 매핑하려면 "Grid" -&gt; "Attributes Mapping" -&gt; "Execute" 메뉴를 사용하여 수동으로 매핑하십시오.</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -1006,12 +1004,12 @@ Do you really want to import grid from this file?</source>
         <translation>지리 데이터 매핑 완료</translation>
     </message>
     <message>
-        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>그리드 속성 &quot;%1&quot;는 손으로 수정했습니다. 매핑을 실행하면 수정한 내용이 모두 삭제됩니다. 매핑을 실행하시겠습니까?</translation>
+        <source>The grid attribute "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>그리드 속성 "%1"는 손으로 수정했습니다. 매핑을 실행하면 수정한 내용이 모두 삭제됩니다. 매핑을 실행하시겠습니까?</translation>
     </message>
     <message>
-        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>경계 조건 &quot;%1&quot;는 손으로 수정했습니다. 매핑을 실행하면 수정한 내용이 모두 삭제됩니다. 매핑을 실행하시겠습니까?</translation>
+        <source>The boundary condition "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>경계 조건 "%1"는 손으로 수정했습니다. 매핑을 실행하면 수정한 내용이 모두 삭제됩니다. 매핑을 실행하시겠습니까?</translation>
     </message>
 </context>
 <context>
@@ -1029,20 +1027,20 @@ Do you really want to import grid from this file?</source>
         <translation>자동</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;메타 이름 =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { 공백: 미리 포장; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI 고딕&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;격자가 생성되면 속성 매핑을 매번 실행합니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;메타 이름 ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { 공백: 미리 포장; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI 고딕'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p style=" margin -top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;격자가 생성되면 속성 매핑을 매번 실행합니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Manual</source>
         <translation>설명서</translation>
     </message>
     <message>
-        <source>Attribute mapping is executed only when you manually select &quot;Execute&quot; menu.</source>
-        <translation>속성 매핑은 &quot;실행&quot; 메뉴를 수동으로 선택한 경우에만 실행됩니다.</translation>
+        <source>Attribute mapping is executed only when you manually select "Execute" menu.</source>
+        <translation>속성 매핑은 "실행" 메뉴를 수동으로 선택한 경우에만 실행됩니다.</translation>
     </message>
     <message>
         <source>Geographic data mapping</source>
@@ -1450,7 +1448,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>스칼라바 설정 (&amp;U)...</translation>
     </message>
     <message>
-        <source>Open &amp;Bird&apos;s-Eye View Window</source>
+        <source>Open &amp;Bird's-Eye View Window</source>
         <translation>조감도 창 열기 (&amp;B)</translation>
     </message>
     <message>

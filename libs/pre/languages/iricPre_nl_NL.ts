@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="nl_NL">
 <context>
     <name>BoundaryConditionDialog</name>
@@ -114,7 +112,7 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>GridBirdEyeWindow</name>
     <message>
-        <source>Grid Bird&apos;s-Eye View Window</source>
+        <source>Grid Bird's-Eye View Window</source>
         <translation>Raster Vogelvluchtvenster</translation>
     </message>
 </context>
@@ -582,8 +580,8 @@ Do you really want to import grid from this file?</source>
         <translation>%1 worden niet toegewezen nadat ze de laatste keer zijn bewerkt. Wilt u de mapping nu uitvoeren?</translation>
     </message>
     <message>
-        <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
-        <translation>Grensvoorwaarde instellen &quot;%1&quot; wordt niet toegewezen nadat het de laatste keer is bewerkt. Wilt u de toewijzing nu uitvoeren?</translation>
+        <source>Boundary Condition Setting "%1" is not mapped after it is edited last time. Do you want to execute mapping now?</source>
+        <translation>Grensvoorwaarde instellen "%1" wordt niet toegewezen nadat het de laatste keer is bewerkt. Wilt u de toewijzing nu uitvoeren?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -985,9 +983,9 @@ Do you really want to import grid from this file?</source>
         <translation>uitvoeren (&amp;E)...</translation>
     </message>
     <message>
-        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.
+        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".
 </source>
-        <translation>De volgende attributen zijn niet toegewezen, omdat de uitgangswaarden van de netgenerator ervoor zijn. Als u geografische gegevens voor hen geforceerd in kaart wilt brengen, moet u dit handmatig toewijzen met het menu &quot;Raster&quot; -&gt; &quot;Attributentoewijzing&quot; -&gt; &quot;Uitvoeren&quot;.</translation>
+        <translation>De volgende attributen zijn niet toegewezen, omdat de uitgangswaarden van de netgenerator ervoor zijn. Als u geografische gegevens voor hen geforceerd in kaart wilt brengen, moet u dit handmatig toewijzen met het menu "Raster" -&gt; "Attributentoewijzing" -&gt; "Uitvoeren".</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1006,12 +1004,12 @@ Do you really want to import grid from this file?</source>
         <translation>Geografische gegevens in kaart brengen voltooid</translation>
     </message>
     <message>
-        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Het rasterkenmerk &quot;%1&quot; wordt met de hand bewerkt. Wanneer u mapping uitvoert, worden alle wijzigingen die u heeft aangebracht verwijderd. Wilt u de mapping echt uitvoeren?</translation>
+        <source>The grid attribute "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Het rasterkenmerk "%1" wordt met de hand bewerkt. Wanneer u mapping uitvoert, worden alle wijzigingen die u heeft aangebracht verwijderd. Wilt u de mapping echt uitvoeren?</translation>
     </message>
     <message>
-        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>De randvoorwaarde&quot;%1&quot; wordt met de hand bewerkt. Wanneer u mapping uitvoert, worden alle wijzigingen die u heeft aangebracht verwijderd. Wilt u de mapping echt uitvoeren?</translation>
+        <source>The boundary condition "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>De randvoorwaarde"%1" wordt met de hand bewerkt. Wanneer u mapping uitvoert, worden alle wijzigingen die u heeft aangebracht verwijderd. Wilt u de mapping echt uitvoeren?</translation>
     </message>
 </context>
 <context>
@@ -1029,20 +1027,20 @@ Do you really want to import grid from this file?</source>
         <translation>Auto</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;metanaam =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { witruimte: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Wanneer het raster is gemaakt, wordt u gevraagd of om Attribuut Mapping elke keer uit te voeren.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;metanaam ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { witruimte: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p style=" margin -top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Wanneer het raster is gemaakt, wordt u gevraagd of om Attribuut Mapping elke keer uit te voeren.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Manual</source>
         <translation>Handmatig</translation>
     </message>
     <message>
-        <source>Attribute mapping is executed only when you manually select &quot;Execute&quot; menu.</source>
-        <translation>Attribuuttoewijzing wordt alleen uitgevoerd wanneer u het menu &quot;Uitvoeren&quot; handmatig selecteert.</translation>
+        <source>Attribute mapping is executed only when you manually select "Execute" menu.</source>
+        <translation>Attribuuttoewijzing wordt alleen uitgevoerd wanneer u het menu "Uitvoeren" handmatig selecteert.</translation>
     </message>
     <message>
         <source>Geographic data mapping</source>
@@ -1050,11 +1048,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Mapping with TINs</source>
-        <translation>In kaart brengen met FIN&apos;s</translation>
+        <translation>In kaart brengen met FIN's</translation>
     </message>
     <message>
         <source>TINs created from geographic data are used for mapping. Grid nodes attribute values are calculated as weighted average of the values at the TIN nodes.</source>
-        <translation>TIN&apos;s die zijn gemaakt op basis van geografische gegevens, worden gebruikt voor het in kaart brengen. Attribuutwaarden van rasterknooppunten worden berekend als gewogen gemiddelde van de waarden op de TIN-knooppunten.</translation>
+        <translation>TIN's die zijn gemaakt op basis van geografische gegevens, worden gebruikt voor het in kaart brengen. Attribuutwaarden van rasterknooppunten worden berekend als gewogen gemiddelde van de waarden op de TIN-knooppunten.</translation>
     </message>
     <message>
         <source>Template mapping</source>
@@ -1446,7 +1444,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>Scalarbar instellen (&amp;U)...</translation>
     </message>
     <message>
-        <source>Open &amp;Bird&apos;s-Eye View Window</source>
+        <source>Open &amp;Bird's-Eye View Window</source>
         <translation>Vogelvluchtvenster openen (&amp;B)</translation>
     </message>
     <message>
