@@ -151,6 +151,7 @@ void GridCreatingConditionLaplace::showInitialDialog()
 	impl->m_centerLineOnlyMouseEventMode = Impl::CenterLineOnlyMouseEventMode::Normal;
 	impl->updateMouseCursor(graphicsView());
 	impl->updateActionStatus();
+	renderGraphicsView();
 }
 
 bool GridCreatingConditionLaplace::create(QWidget* parent)
