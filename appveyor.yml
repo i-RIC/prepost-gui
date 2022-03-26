@@ -162,6 +162,11 @@ before_build:
         }
         
         # check for diffs?
+        echo "test using git format-patch HEAD^"
+        git format-patch HEAD^
+        ls *.patch
+
+        echo "test using git diff"
         git diff
 
         # add and commit language files (shouldn't be any new files)
