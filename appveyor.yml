@@ -111,7 +111,7 @@ before_build:
         }
         Set-Location $topdir
         rm .\iric-ts-translation-4761fe6f85d6.json
-        git status
+        git diff
       }
   - pwsh: |
       ####################################################################################
@@ -162,36 +162,30 @@ before_build:
           git switch --quiet -c "__$env:APPVEYOR_BUILD_VERSION"
           if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
         }
-        
-        # check for diffs?
-        echo "test using git format-patch"
-        git format-patch
-        ls *.patch
-        echo '-----------------------------------------------------------------'
-        cat *.patch
-        echo '-----------------------------------------------------------------'
 
-        echo "test using git diff"
-        git diff
+        # Check if anything has changed
+        echo "git diff-files"
+        git diff-files --quiet --ignore-submodules --
+        if ($LastExitCode -ne 0) {
+          # add and commit language files (shouldn't be any new files)
+          echo "committing translate_ts.py update"
+          git commit -am "[skip ci] translate_ts.py by iric.appveyor $env:APPVEYOR_BUILD_VERSION"
+          if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
 
-        # add and commit language files (shouldn't be any new files)
-        echo "committing translate_ts.py update"
-        git commit -am "[skip ci] translate_ts.py by iric.appveyor $env:APPVEYOR_BUILD_VERSION"
-        if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
-
-        # push
-        echo "pushing commits"
-        if ($branch) {
-          git push --set-upstream origin "__$env:APPVEYOR_BUILD_VERSION"
-        } else {
-          git push origin $env:APPVEYOR_REPO_BRANCH
+          # push
+          echo "pushing commits"
+          if ($branch) {
+            git push --set-upstream origin "__$env:APPVEYOR_BUILD_VERSION"
+          } else {
+            git push origin $env:APPVEYOR_REPO_BRANCH
+          }
+          if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
         }
-        if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
       }
       # These lines are necessary to avoid appveyor considering the output
       # from git push to be an error
-      Write-Output "Status:"
-      git status
+      Write-Output "Diffs:"
+      git diff
   - call C:\Qt\5.14.2\msvc2017_64\bin\qtenv2.bat
   - call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvars64.bat"
   - cd %APPVEYOR_BUILD_FOLDER%
@@ -387,15 +381,9 @@ on_success:
 
 on_failure:
   - dir C:\Qt\Tools\QtInstallerFramework
-  - echo "test using git format-patch"
-  - git format-patch
-  - ls *.patch
-  - cat *.patch
-  - echo "test using git diff"
   - echo '-----------------------------------'
   - git diff
   - echo '-----------------------------------'
-
   # the following doesn't work (never finishes):
   # - ps: |
   #     Get-ChildItem -Recurse c:\ | 7z a -si $env:APPVEYOR_BUILD_FOLDER\dir_c.7z
