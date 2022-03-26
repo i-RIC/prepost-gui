@@ -40,6 +40,8 @@ image:
 # must be re-evaluated everytime.  env vars CAN be passed from ps: to pwsh: but not the
 # other way around (see develop_v4-363)
 init:
+  - git --version
+  - git config --list
   - ps: |
       if (! (Test-Path ${env:ifw_location}\bin\repogen.exe)) { throw 'repogen.exe not found (check $env:ifw_location' }
       # Sometimes the plaintext of secure variables is displayed so filter out secure vars
