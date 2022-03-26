@@ -144,6 +144,10 @@ Post2dBirdEyeWindowGridTypeDataItem* Post2dBirdEyeWindowRootDataItem::gridTypeDa
 
 void Post2dBirdEyeWindowRootDataItem::updateZoneList()
 {
+	// When zone list is updated, post2d bird's-eye window used to update tree structure.
+	// But, because of this, post2d window settings are all discarded every time
+	// when user starts solver execution. so, it is removed now.
+	/*
 	dataModel()->itemModel()->blockSignals(true);
 	for (Post2dBirdEyeWindowGridTypeDataItem* item : m_gridTypeDataItems) {
 		item->setupZoneDataItems();
@@ -153,6 +157,7 @@ void Post2dBirdEyeWindowRootDataItem::updateZoneList()
 	updateItemMap();
 	dataModel()->objectBrowserView()->expandAll();
 	dataModel()->graphicsView()->cameraFit();
+	*/
 }
 
 void Post2dBirdEyeWindowRootDataItem::update()
