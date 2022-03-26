@@ -4,6 +4,7 @@
 #include "private/geodatariversurvey_impl.h"
 #include "private/geodatariversurveyproxy_setsettingcommand.h"
 
+#include <guicore/scalarstocolors/scalarstocolorscontainer.h>
 #include <misc/mathsupport.h>
 #include <misc/zdepthrange.h>
 
@@ -43,35 +44,50 @@ void GeoDataRiverSurveyProxy::setupActors()
 	vtkActorCollection* col = actorCollection();
 
 	m_centerAndBankLinesActor = vtkSmartPointer<vtkActor>::New();
-	m_centerAndBankLinesActor->SetMapper(rs->impl->m_centerAndBankLinesActor->GetMapper());
+	auto mapper = vtkSmartPointer<vtkPolyDataMapper>::New();
+	mapper->SetInputData(rs->centerAndBankLines());
+	m_centerAndBankLinesActor->SetMapper(mapper);
 	m_centerAndBankLinesActor->SetProperty(rs->impl->m_centerAndBankLinesActor->GetProperty());
 	r->AddActor(m_centerAndBankLinesActor);
 	col->AddItem(m_centerAndBankLinesActor);
 
 	m_crossectionsActor = vtkSmartPointer<vtkActor>::New();
-	m_crossectionsActor->SetMapper(rs->impl->m_crossSectionLinesActor->GetMapper());
+	mapper = vtkSmartPointer<vtkPolyDataMapper>::New();
+	mapper->SetInputData(rs->crossSectionLines());
+	m_crossectionsActor->SetMapper(mapper);
 	m_crossectionsActor->SetProperty(rs->impl->m_crossSectionLinesActor->GetProperty());
 	r->AddActor(m_crossectionsActor);
 	col->AddItem(m_crossectionsActor);
 
 	m_backgroundActor = vtkSmartPointer<vtkActor>::New();
-	m_backgroundActor->SetMapper(rs->impl->m_backgroundActor->GetMapper());
+	auto dsmapper = vtkSmartPointer<vtkDataSetMapper>::New();
+	dsmapper->SetInputData(rs->backgroundGrid());
+	dsmapper->SetScalarModeToUsePointData();
+	dsmapper->SetLookupTable(rs->scalarsToColorsContainer()->vtkObj());
+	dsmapper->UseLookupTableScalarRangeOn();
+	dsmapper->SetScalarVisibility(true);
+
+	m_backgroundActor->SetMapper(dsmapper);
 	r->AddActor(m_backgroundActor);
 	col->AddItem(m_backgroundActor);
 
 	m_crosssectionLinesActor = vtkSmartPointer<vtkActor>::New();
 
-	vtkSmartPointer<vtkDataSetMapper> mapper = vtkSmartPointer<vtkDataSetMapper>::New();
+	dsmapper = vtkSmartPointer<vtkDataSetMapper>::New();
 	m_crosssectionLines = vtkSmartPointer<vtkUnstructuredGrid>::New();
-	mapper->SetInputData(m_crosssectionLines);
-	m_crosssectionLinesActor->SetMapper(mapper);
+	dsmapper->SetInputData(m_crosssectionLines);
+	m_crosssectionLinesActor->SetMapper(dsmapper);
 	m_crosssectionLinesActor->GetProperty()->SetLineWidth(1);
 
 	r->AddActor(m_crosssectionLinesActor);
 	col->AddItem(m_crosssectionLinesActor);
 
 	m_labelActor = vtkSmartPointer<vtkActor2D>::New();
-	m_labelActor->SetMapper(rs->impl->m_labelMapper);
+	auto labelMapper = vtkSmartPointer<vtkLabeledDataMapper>::New();
+	labelMapper->SetInputData(rs->rightBankPointSet());
+	labelMapper->SetFieldDataName(rs->labelArray()->GetName());
+	GeoDataRiverSurvey::setupLabelMapper(labelMapper);
+	m_labelActor->SetMapper(labelMapper);
 	r->AddActor2D(m_labelActor);
 	actor2DCollection()->AddItem(m_labelActor);
 

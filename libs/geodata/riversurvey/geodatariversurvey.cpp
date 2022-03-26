@@ -1644,3 +1644,35 @@ void GeoDataRiverSurvey::doApplyOffset(double x, double y)
 	headPoint()->updateRiverShapeInterpolators();
 	updateShapeData();
 }
+
+vtkPolyData* GeoDataRiverSurvey::centerAndBankLines() const
+{
+	return impl->m_centerAndBankLines;
+}
+
+vtkPolyData* GeoDataRiverSurvey::crossSectionLines() const
+{
+	return impl->m_crossSectionLines;
+}
+
+vtkUnstructuredGrid* GeoDataRiverSurvey::rightBankPointSet() const
+{
+	return impl->m_rightBankPointSet;
+}
+
+vtkStringArray* GeoDataRiverSurvey::labelArray() const
+{
+	return impl->m_labelArray;
+}
+
+void GeoDataRiverSurvey::setupLabelMapper(vtkLabeledDataMapper* mapper)
+{
+	mapper->SetLabelModeToLabelFieldData();
+	mapper->GetLabelTextProperty()->SetColor(0, 0, 0);
+	mapper->GetLabelTextProperty()->SetFontSize(15);
+	mapper->GetLabelTextProperty()->BoldOff();
+	mapper->GetLabelTextProperty()->ItalicOff();
+	mapper->GetLabelTextProperty()->ShadowOff();
+	mapper->GetLabelTextProperty()->SetJustificationToLeft();
+	mapper->GetLabelTextProperty()->SetVerticalJustificationToCentered();
+}

@@ -78,7 +78,6 @@ GeoDataRiverSurvey::Impl::Impl(GeoDataRiverSurvey* rs) :
 	m_rightBankPoints {vtkPoints::New()},
 	m_rightBankPointSet {vtkUnstructuredGrid::New()},
 	m_labelArray {vtkStringArray::New()},
-	m_labelMapper {vtkLabeledDataMapper::New()},
 	m_labelActor {vtkActor2D::New()},
 	m_backgroundGrid {vtkSmartPointer<vtkStructuredGrid>::New()},
 	m_backgroundActor {vtkActor::New()},
@@ -187,7 +186,6 @@ GeoDataRiverSurvey::Impl::~Impl()
 	m_rightBankPoints->Delete();
 	m_rightBankPointSet->Delete();
 	m_labelArray->Delete();
-	m_labelMapper->Delete();
 	m_labelActor->Delete();
 	m_backgroundActor->Delete();
 
@@ -355,18 +353,12 @@ void GeoDataRiverSurvey::Impl::setupVtkObjects()
 
 	// name label
 	m_rightBankPointSet->GetPointData()->AddArray(m_labelArray);
-	m_labelMapper->SetInputData(m_rightBankPointSet);
-	m_labelMapper->SetLabelModeToLabelFieldData();
-	m_labelMapper->SetFieldDataName(m_labelArray->GetName());
-	m_labelMapper->GetLabelTextProperty()->SetColor(0, 0, 0);
-	m_labelMapper->GetLabelTextProperty()->SetFontSize(15);
-	m_labelMapper->GetLabelTextProperty()->BoldOff();
-	m_labelMapper->GetLabelTextProperty()->ItalicOff();
-	m_labelMapper->GetLabelTextProperty()->ShadowOff();
-	m_labelMapper->GetLabelTextProperty()->SetJustificationToLeft();
-	m_labelMapper->GetLabelTextProperty()->SetVerticalJustificationToCentered();
+	auto labelMapper = vtkSmartPointer<vtkLabeledDataMapper>::New();
+	labelMapper->SetInputData(m_rightBankPointSet);
+	labelMapper->SetFieldDataName(m_labelArray->GetName());
+	setupLabelMapper(labelMapper);
 
-	m_labelActor->SetMapper(m_labelMapper);
+	m_labelActor->SetMapper(labelMapper);
 	r->AddActor(m_labelActor);
 
 	// background color

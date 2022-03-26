@@ -15,7 +15,9 @@
 
 #include <QPoint>
 
+class vtkLabeledDataMapper;
 class vtkPolyData;
+class vtkStringArray;
 
 class GridCreatingConditionRiverSurveyInterface;
 
@@ -111,7 +113,7 @@ private slots:
 signals:
 	void dataUpdated();
 
-protected:
+private:
 	const static int LINEDIVS = 36;
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
@@ -122,7 +124,6 @@ protected:
 	iRICLib::H5CgnsGeographicDataGroup::Type iRICLibType() const override;
 	void doApplyOffset(double x, double y) override;
 
-private:
 	void createModeKeyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* v);
 	void createModeKeyReleaseEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* v);
 	void createModeMouseDoubleClickEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v);
@@ -146,6 +147,13 @@ private:
 	void allActorsOff();
 	void updateSplineSolvers();
 
+	vtkPolyData* centerAndBankLines() const;
+	vtkPolyData* crossSectionLines() const;
+	vtkUnstructuredGrid* rightBankPointSet() const;
+	vtkStringArray* labelArray() const;
+
+	static void setupLabelMapper(vtkLabeledDataMapper* mapper);
+
 	GeoDataRiverPathPoint* m_headPoint;
 
 	RiverCenterLineSolver m_CenterLineSolver;
@@ -154,7 +162,6 @@ private:
 
 	GeoDataRiverSurveyDisplaySetting m_setting;
 
-private:
 	class PolyLineFinishDefiningCommand;
 	class PolyLineUpdateLabelsCommand;
 	class PolyLineCoordinatesEditor;
