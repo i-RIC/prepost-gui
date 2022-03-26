@@ -165,6 +165,7 @@ before_build:
         echo "test using git format-patch HEAD^"
         git format-patch HEAD^
         ls *.patch
+        cat *.patch
 
         echo "test using git diff"
         git diff
