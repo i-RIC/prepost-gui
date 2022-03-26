@@ -162,10 +162,12 @@ before_build:
         }
         
         # check for diffs?
-        echo "test using git format-patch HEAD^"
-        git format-patch HEAD^
+        echo "test using git format-patch"
+        git format-patch
         ls *.patch
+        echo '-----------------------------------------------------------------'
         cat *.patch
+        echo '-----------------------------------------------------------------'
 
         echo "test using git diff"
         git diff
@@ -383,7 +385,14 @@ on_success:
 
 on_failure:
   - dir C:\Qt\Tools\QtInstallerFramework
+  - echo "test using git format-patch"
+  - git format-patch
+  - ls *.patch
+  - cat *.patch
+  - echo "test using git diff"
+  - echo '-----------------------------------'
   - git diff
+  - echo '-----------------------------------'
 
   # the following doesn't work (never finishes):
   # - ps: |
