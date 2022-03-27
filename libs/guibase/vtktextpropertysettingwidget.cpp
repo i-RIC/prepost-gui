@@ -17,20 +17,20 @@ vtkTextPropertySettingWidget::~vtkTextPropertySettingWidget()
 
 vtkTextPropertySettingContainer vtkTextPropertySettingWidget::setting() const
 {
-	vtkTextPropertySettingContainer c;
-	c.addPrefix(m_prefix);
-	c.fontFamily = static_cast<vtkTextPropertySettingContainer::FontFamily>(ui->fontComboBox->currentIndex());
-	c.fontSize = ui->sizeSpinBox->value();
-	c.fontColor = ui->colorWidget->color();
-	c.isBold = ui->boldButton->isChecked();
-	c.isItalic = ui->italicButton->isChecked();
-	c.isShadow = ui->shadowButton->isChecked();
-	return c;
+	auto s = m_setting;
+	s.fontFamily = static_cast<vtkTextPropertySettingContainer::FontFamily>(ui->fontComboBox->currentIndex());
+	s.fontSize = ui->sizeSpinBox->value();
+	s.fontColor = ui->colorWidget->color();
+	s.isBold = ui->boldButton->isChecked();
+	s.isItalic = ui->italicButton->isChecked();
+	s.isShadow = ui->shadowButton->isChecked();
+	return s;
 }
 
 void vtkTextPropertySettingWidget::setSetting(const vtkTextPropertySettingContainer& setting)
 {
-	m_prefix = setting.prefix();
+	m_setting = setting;
+
 	ui->fontComboBox->setCurrentIndex(static_cast<int>(setting.fontFamily));
 	ui->sizeSpinBox->setValue(setting.fontSize);
 	ui->colorWidget->setColor(setting.fontColor);

@@ -3,10 +3,10 @@
 
 #include "guibase_global.h"
 
+#include <guibase/vtktextpropertysettingcontainer.h>
+
 #include <QString>
 #include <QWidget>
-
-class vtkTextPropertySettingContainer;
 
 namespace Ui {
 class vtkTextPropertySettingWidget;
@@ -34,7 +34,7 @@ public:
 	void hideColor();
 
 private:
-	QString m_prefix;
+	vtkTextPropertySettingContainer m_setting;
 	Ui::vtkTextPropertySettingWidget *ui;
 };
 
