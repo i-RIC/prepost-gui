@@ -8,8 +8,7 @@ CompositeContainer::~CompositeContainer()
 
 XmlAttributeContainer& CompositeContainer::operator=(const XmlAttributeContainer& c)
 {
-	copyValue(dynamic_cast<const CompositeContainer&> (c));
-	return *this;
+	return XmlAttributeContainer::operator=(c);
 }
 
 void CompositeContainer::load(const QDomNode& node)
@@ -45,7 +44,7 @@ CompositeContainer::CompositeContainer(std::initializer_list<XmlAttributeContain
 
 void CompositeContainer::copyValue(const XmlAttributeContainer& c)
 {
-	const CompositeContainer& c2 = dynamic_cast<const CompositeContainer&> (c);
+	const auto& c2 = dynamic_cast<const CompositeContainer&> (c);
 	for (size_t i = 0; i < impl->m_containers.size(); ++i){
 		XmlAttributeContainer* v1 = impl->m_containers.at(i);
 		XmlAttributeContainer* v2 = c2.impl->m_containers.at(i);
