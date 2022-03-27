@@ -21,7 +21,7 @@ vtkTextPropertySettingContainer::vtkTextPropertySettingContainer() :
 vtkTextPropertySettingContainer::vtkTextPropertySettingContainer(const vtkTextPropertySettingContainer& c) :
 	vtkTextPropertySettingContainer {}
 {
-	CompositeContainer::copyValue(c);
+	operator=(c);
 }
 
 vtkTextPropertySettingContainer::~vtkTextPropertySettingContainer()
@@ -29,8 +29,7 @@ vtkTextPropertySettingContainer::~vtkTextPropertySettingContainer()
 
 vtkTextPropertySettingContainer& vtkTextPropertySettingContainer::operator=(const vtkTextPropertySettingContainer& c)
 {
-	CompositeContainer::copyValue(c);
-	return *this;
+	return dynamic_cast<vtkTextPropertySettingContainer&>(CompositeContainer::operator=(dynamic_cast<const XmlAttributeContainer&>(c)));
 }
 
 XmlAttributeContainer& vtkTextPropertySettingContainer::operator=(const XmlAttributeContainer& c)
