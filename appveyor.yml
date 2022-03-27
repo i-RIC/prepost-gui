@@ -49,7 +49,7 @@ init:
       $env:CommitAndPush = $CommitAndPush
 
 configuration:
-#  - Debug
+  - Debug
   - Release
 
 matrix:
