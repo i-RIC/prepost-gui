@@ -102,6 +102,9 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::updateActorSettings()
 	m_standardItem->setText(m_setting.elevationTarget);
 	m_standardItemCopy->setText(m_setting.elevationTarget);
 
+	auto cont = dynamic_cast<Post2dBirdEyeWindowZoneDataItem*>(parent()->parent())->dataContainer();
+	if (cont == nullptr || cont->data() == nullptr) {return;}
+
 	m_warp->SetInputArrayToProcess(0, 0, 0, vtkDataObject::FIELD_ASSOCIATION_POINTS, iRIC::toStr(m_setting.elevationTarget.value()).c_str());
 
 	createRangeClippedPolyData();
