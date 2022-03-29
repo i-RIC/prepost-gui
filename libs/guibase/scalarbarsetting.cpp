@@ -33,7 +33,7 @@ ScalarBarSetting::ScalarBarSetting() :
 ScalarBarSetting::ScalarBarSetting(const ScalarBarSetting& setting) :
 	ScalarBarSetting {}
 {
-	CompositeContainer::copyValue(setting);
+	operator=(setting);
 }
 
 ScalarBarSetting::~ScalarBarSetting()
@@ -41,13 +41,7 @@ ScalarBarSetting::~ScalarBarSetting()
 
 ScalarBarSetting& ScalarBarSetting::operator=(const ScalarBarSetting& setting)
 {
-	CompositeContainer::copyValue(dynamic_cast<const ScalarBarSetting&> (setting));
-	return *this;
-}
-
-XmlAttributeContainer& ScalarBarSetting::operator=(const XmlAttributeContainer& c)
-{
-	return operator=(dynamic_cast<const ScalarBarSetting&>(c));
+	return dynamic_cast<ScalarBarSetting&>(CompositeContainer::operator=(dynamic_cast<const XmlAttributeContainer&>(setting)));
 }
 
 void ScalarBarSetting::initForLegendBox()

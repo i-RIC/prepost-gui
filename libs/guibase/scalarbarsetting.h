@@ -35,8 +35,6 @@ public:
 	~ScalarBarSetting();
 
 	ScalarBarSetting& operator=(const ScalarBarSetting& setting);
-	XmlAttributeContainer& operator=(const XmlAttributeContainer& setting) override;
-
 	void initForLegendBox();
 
 	void setDefaultPosition(Quadrant quadrant);
