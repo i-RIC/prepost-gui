@@ -503,6 +503,9 @@ QStringList ProjectMainFile::containedFiles() const
 	// Add Background image files
 	ret << impl->backgroundImageFiles();
 
+	// Post processor file
+	ret << impl->m_postProcessors->containedFiles();
+
 	return ret;
 }
 
