@@ -129,21 +129,22 @@ void Post2dBirdEyeWindowNodeScalarGroupTopDataItem::doLoadFromProjectMainFile(co
 					m_colorbarTitleMap[val] = title;
 				}
 			} else if (childElem.nodeName() == "ScalarGroup") {
-				std::string solution = iRIC::toStr(children.at(i).toElement().attribute("solution", ""));
-				if (solution.size()) {
-					auto it = m_scalarmap.find(solution);
-					Q_ASSERT(it != m_scalarmap.end());
-					if (it != m_scalarmap.end()) {
-						(*it).second->updateZScale(m_zScale);
-						(*it).second->loadFromProjectMainFile(children.at(i));
-						// store checked items that have no quadrant set
-						if ((*it).second->m_standardItem->checkState() != Qt::Unchecked) {
-							if ((*it).second->m_setting.scalarBarSetting.quadrant == ScalarBarSetting::Quadrant::None) {
-								missing_quadrant.insert((*it).second);
-							}
-						}
+				for (const auto& pair: m_scalarmap) {
+					delete pair.second;
+				}
+				m_scalarmap.clear();
+				auto item = new Post2dBirdEyeWindowNodeScalarGroupDataItem(this, NotChecked, NotReorderable, Deletable);
+				item->updateZScale(m_zScale);
+				item->loadFromProjectMainFile(childElem);
+
+				if ((item->m_standardItem->checkState() != Qt::Unchecked)) {
+					if (item->m_setting.scalarBarSetting.quadrant == ScalarBarSetting::Quadrant::None) {
+						missing_quadrant.insert(item);
 					}
 				}
+
+				m_scalarmap[item->elevationTarget()] = item;
+				m_childItems.push_back(item);
 
 				Q_ASSERT(missing_quadrant.size() <= 4);
 				std::set<ScalarBarSetting::Quadrant> quads = ScalarBarSetting::getQuadrantSet();
