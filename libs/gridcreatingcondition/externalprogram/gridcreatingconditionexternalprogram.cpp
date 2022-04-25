@@ -14,6 +14,7 @@
 #include <guicore/pre/base/preprocessorwindowinterface.h>
 #include <misc/filesystemfunction.h>
 #include <misc/mathsupport.h>
+#include <misc/pythonutil.h>
 #include <misc/stringtool.h>
 
 #include <QCoreApplication>
@@ -23,6 +24,7 @@
 #include <QMessageBox>
 #include <QMouseEvent>
 #include <QProcess>
+#include <QSettings>
 
 #include <vtkCollectionIterator.h>
 #include <vtkProperty.h>
@@ -79,12 +81,44 @@ bool GridCreatingConditionExternalProgram::create(QWidget* /*parent*/)
 		QMessageBox::critical(m_conditionDataItem->preProcessorWindow(), tr("Error"), tr("Grid generation program %1 does not exists.").arg(externalProgram));
 		return false;
 	}
+
 	QProcess process(this);
 	QString wd = projectData()->workDirectory();
 	process.setWorkingDirectory(wd);
-	process.setProcessEnvironment(projectData()->mainWindow()->processEnvironment());
+	auto env = projectData()->mainWindow()->processEnvironment();
 	QStringList args;
-	args << fname;
+
+	QFileInfo programInfo(externalProgram);
+	if (programInfo.suffix() == "py" || programInfo.suffix() == "pyc") {
+		QSettings settings;
+
+		// run python solver
+		QString pythonPath = settings.value("general/pythonpath", PythonUtil::defaultPath()).value<QString>();
+		auto pythonPathStr = iRIC::toStr(pythonPath);
+
+		QStringList args;
+		args << "-u" << externalProgram << fname;
+
+		// add path for python libraries
+		QFileInfo finfo(pythonPath);
+		auto pythonDir = finfo.dir();
+		QStringList paths;
+		paths.append(QDir::toNativeSeparators(pythonDir.absolutePath()));
+		paths.append(QDir::toNativeSeparators(pythonDir.absoluteFilePath("Library\\mingw-w64\\bin")));
+		paths.append(QDir::toNativeSeparators(pythonDir.absoluteFilePath("Library\\usr\\bin")));
+		paths.append(QDir::toNativeSeparators(pythonDir.absoluteFilePath("Library\\bin")));
+		paths.append(QDir::toNativeSeparators(pythonDir.absoluteFilePath("Scripts")));
+		paths.append(QDir::toNativeSeparators(pythonDir.absoluteFilePath("bin")));
+		QString path = env.value("PATH");
+		path = paths.join(";") + ";" + path;
+		env.insert("PATH", path);
+		process.setProcessEnvironment(env);
+		process.start(pythonPath, args);
+	} else {
+		process.setProcessEnvironment(env);
+		args << fname;
+		process.start(externalProgram, args);
+	}
 
 	WaitDialog waitDialog(preProcessorWindow());
 	waitDialog.showProgressBar();
@@ -93,7 +127,6 @@ bool GridCreatingConditionExternalProgram::create(QWidget* /*parent*/)
 	m_canceled = false;
 
 	connect(&waitDialog, SIGNAL(canceled()), this, SLOT(cancel()));
-	process.start(externalProgram, args);
 	int progress = 3;
 	// run for three seconds first.
 	bool finished = process.waitForFinished(3000);
