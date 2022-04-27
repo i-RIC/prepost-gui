@@ -1396,6 +1396,14 @@ bool PreProcessorDataModel::checkMappingStatus()
 	PreProcessorRootDataItem* r = dynamic_cast<PreProcessorRootDataItem*>(m_rootDataItem);
 	bool mapExexuted = false;
 	for (auto gtItem : r->gridTypeDataItems()) {
+		bool gridsExists = false;
+		for (auto cond : gtItem->conditions()) {
+			if (cond->gridDataItem()->grid() != nullptr) {
+				gridsExists = true;
+			}
+		}
+		if (!gridsExists) {continue;}
+
 		QStringList notMapped;
 		QList<PreProcessorGeoDataGroupDataItemInterface*> groupsToMap;
 		for (auto gItem : gtItem->geoDataTop()->groupDataItems()) {
