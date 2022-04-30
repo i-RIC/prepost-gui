@@ -59,6 +59,14 @@ bool GeoDataNetcdfXbandImporter::doInit(const QString& filename, const QString& 
 		return false;
 	}
 
+	GridAttributeDimensionsContainer* dimVals = m_groupDataItem->dimensions();
+	GridAttributeDimensionContainer* c = dimVals->containers().at(0);
+
+	if (c->variantValues().size() != 0) {
+		QMessageBox::critical(w, tr("Error"), tr("Time series raster data is already imported. If you want to import other data, please delete the data already imported first."));
+		return false;
+	}
+
 	QFileInfo finfo(filename);
 	QDir dir = finfo.absoluteDir();
 	QDir workDir = dir;
@@ -180,14 +188,7 @@ bool GeoDataNetcdfXbandImporter::importData(GeoData* data, int /*index*/, QWidge
 		timeVals.push_back(times[i]);
 	}
 
-	if (c->variantValues().size() == 0) {
-		c->setVariantValues(timeVals);
-	} else {
-		if (c->variantValues() != timeVals) {
-			QMessageBox::critical(w, tr("Error"), tr("Dimension values for time mismatch.").arg(c->definition()->caption()));
-			return false;
-		}
-	}
+	c->setVariantValues(timeVals);
 
 	// save coordinates and dimensions to the netcdf file.
 	int out_xDimId, out_yDimId, out_lonDimId, out_latDimId;
