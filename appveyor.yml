@@ -55,6 +55,14 @@ configuration:
 matrix:
   fast_finish: true
 
+# too big to cache (just install everytime)
+# cache:
+#   - C:\Qt\5.14.2 -> tools\install_qt_fast_windows.ps1, tools\install_qt_module.ps1
+
+install:
+  - ps: .\tools\install_qt_fast_windows.ps1
+  - ps: Get-ChildItem C:\Qt\5.14.2
+
 # Note mkdir is from Git (C:\Program Files\Git\usr\bin\mkdir.exe)
 # It might give unexpected results (use md instead)
 #
