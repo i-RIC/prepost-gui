@@ -55,8 +55,9 @@ configuration:
 matrix:
   fast_finish: true
 
-cache:
-  - C:\Qt\5.14.2 -> tools\install_qt_fast_windows.ps1, tools\install_qt_module.ps1
+# too big to cache (just install everytime)
+# cache:
+#   - C:\Qt\5.14.2 -> tools\install_qt_fast_windows.ps1, tools\install_qt_module.ps1
 
 install:
   - ps: .\tools\install_qt_fast_windows.ps1
