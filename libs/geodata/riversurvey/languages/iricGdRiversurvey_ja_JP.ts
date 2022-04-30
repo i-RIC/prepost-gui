@@ -430,7 +430,7 @@ If you want to adjust cross section position and map Points data again, you can 
     <message>
         <source>Cross-section data is generated using point cloud data.
 If you want to adjust cross section position and map point clouod data again, you can use &quot;Map point cloud data&quot;</source>
-        <translation>点群データから、横断測量データが生成されました。
+        <translation type="vanished">点群データから、横断測量データが生成されました。
 横断線の位置や向きを調整して再度マッピングを行いたい場合、「点群データのマッピング」メニューを使用してください。</translation>
     </message>
     <message>
@@ -440,6 +440,20 @@ If you want to adjust cross section position and map point clouod data again, yo
     <message>
         <source>Generate point cloud data</source>
         <translation>このデータから点群データを生成</translation>
+    </message>
+    <message>
+        <source>Cross-section data is generated using point cloud data.
+If you want to adjust cross section position and map point cloud data again, you can use &quot;Map point cloud data&quot;</source>
+        <translation>地勢データから、横断測量データが生成されました。
+横断線の位置や向きを調整して再度マッピングを行いたい場合、「地勢データのマッピング」メニューを使用してください。</translation>
+    </message>
+    <message>
+        <source>Cross-section data is generated using point cloud data.
+In some region, data did not exists in point cloud data, and value 0 was mapped for those points.
+If you want to adjust cross section position and map point cloud data again, you can use &quot;Map point cloud data&quot;</source>
+        <translation>地勢データから、横断測量データが生成されました。
+一部の領域では、点群データが存在しなかったため、値 0 をマッピングしました。
+横断線の位置や向きを調整して再度マッピングを行いたい場合、「地勢データのマッピング」メニューを使用してください。</translation>
     </message>
 </context>
 <context>
@@ -769,7 +783,7 @@ If you want to adjust cross section position and map point clouod data again, yo
     </message>
     <message>
         <source>Aspect ratio: 1 / </source>
-        <translation>縦横比: 1 / </translation>
+        <translation type="vanished">縦横比: 1 / </translation>
     </message>
     <message>
         <source>Fix aspect ratio</source>
@@ -895,6 +909,10 @@ If you want to adjust cross section position and map point clouod data again, yo
         <source>Cross-Section Data</source>
         <translation>横断測量データ</translation>
     </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / </source>
+        <translation>縦横比: (V/H) 1 / </translation>
+    </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyCrosssectionWindowGraphicsView</name>
@@ -924,7 +942,7 @@ If you want to adjust cross section position and map point clouod data again, yo
     </message>
     <message>
         <source>Aspect ratio: 1 / %1</source>
-        <translation>縦横比: 1 / %1</translation>
+        <translation type="vanished">縦横比: 1 / %1</translation>
     </message>
     <message>
         <source>Edit Cross Section</source>
@@ -955,6 +973,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>Edit Display Setting</source>
         <translation>表示設定の編集</translation>
+    </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / %1</source>
+        <translation>縦横比: (V/H) 1 / %1</translation>
     </message>
 </context>
 <context>
