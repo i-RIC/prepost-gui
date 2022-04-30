@@ -422,6 +422,32 @@ $component_groups += @(
     }
 )
 
+# {{ START MODIFICATION
+# Only install version 5.14.2 and win64_msvc2017_64 components
+
+# filter groups
+$component_groups = ($component_groups | Where-Object { $_.version -eq "5.14.2" })
+
+# filter components
+$component_groups.components = ($component_groups.components | Where-Object { (-not ($_ -match "_mingw")) -and (-not ($_ -match "win32_")) })
+
+foreach($componentGroup in $component_groups) {
+    if ($componentGroup.version) {
+        foreach($component in $componentGroup.components) {
+            Install-QtComponent -Version $componentGroup.version -Name $component -Path $installDir
+        }
+        ConfigureQtVersion $installDir $componentGroup.version
+    } else {
+        foreach($component in $componentGroup.components) {
+            Install-QtComponent -Id $component -Path $installDir
+        }
+    }
+}
+
+# finished
+return
+# }} END MODIFICATION
+
 # install components
 foreach($componentGroup in $component_groups) {
     if ($componentGroup.version) {
