@@ -78,8 +78,9 @@ before_build:
         $access_token = $env:kskinoue0612_access_token
       }
       # $releases_url = "https://api.github.com/repos/i-RIC/iricdev/releases"
-      $releases_url = "https://$($access_token):x-oauth-basic@api.github.com/repos/i-RIC/iricdev/releases"
-      $latest_response = Invoke-WebRequest -Uri $releases_url/latest -Method GET -UseBasicParsing
+      $h = @{"Authorization" = "token ${access_token}"}
+      $releases_url = "https://api.github.com/repos/i-RIC/iricdev/releases"
+      $latest_response = Invoke-WebRequest -Uri $releases_url/latest -Method GET -Headers $h -UseBasicParsing
       Write-Output "X-RateLimit-Remaining=$($latest_response.Headers['X-RateLimit-Remaining'])"
       $latest = $latest_response.Content | ConvertFrom-Json
       $name=$latest.assets[0].name
