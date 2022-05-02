@@ -159,11 +159,15 @@
     </message>
     <message>
         <source>Dimension values for time mismatch.</source>
-        <translation type="unfinished">Valores de dimensao para &quot; tempo&quot; sao incompativeis.</translation>
+        <translation type="obsolete">Valores de dimensao para &quot; tempo&quot; sao incompativeis.</translation>
     </message>
     <message>
         <source>Coordinate system is not specified for %1. Please select coordinate system manually.</source>
         <translation>O sistema de coordenadas nao esta especificado para % 1. Selecione manualmente o sistema de coordenadas.</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -264,7 +268,7 @@
     </message>
     <message>
         <source>Dimension values for %1 mismatch.</source>
-        <translation>Valores de dimensao para % 1 sao incompativeis.</translation>
+        <translation type="vanished">Valores de dimensao para % 1 sao incompativeis.</translation>
     </message>
     <message>
         <source>Error occured while parsing time definition: %1</source>
@@ -272,6 +276,10 @@
     </message>
     <message>
         <source>%1 does not have longitude, latitude nor x, y data.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -387,7 +395,11 @@
     </message>
     <message>
         <source>Dimension values for time mismatch.</source>
-        <translation>Valores de dimensao para &quot; tempo&quot; sao incompativeis.</translation>
+        <translation type="vanished">Valores de dimensao para &quot; tempo&quot; sao incompativeis.</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>
