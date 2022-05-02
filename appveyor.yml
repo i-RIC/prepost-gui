@@ -68,8 +68,20 @@ before_build:
       # see:
       # https://docs.github.com/en/rest/reference/releases#get-the-latest-release
       # https://docs.github.com/ja/rest/reference/releases#get-the-latest-release
+      if ($env:APPVEYOR_REPO_NAME -eq "i-RIC/prepost-gui") {
+        $access_token = $env:iric_access_token
+      }
+      if ($env:APPVEYOR_REPO_NAME -eq "scharlton2/prepost-gui") {
+        $access_token = $env:scharlton2_access_token
+      }
+      if ($env:APPVEYOR_REPO_NAME -eq "kskinoue0612/prepost-gui") {
+        $access_token = $env:kskinoue0612_access_token
+      }
+      # $releases_url = "https://api.github.com/repos/i-RIC/iricdev/releases"
+      $h = @{"Authorization" = "token ${access_token}"}
       $releases_url = "https://api.github.com/repos/i-RIC/iricdev/releases"
-      $latest_response = Invoke-WebRequest -Uri $releases_url/latest -Method GET -UseBasicParsing
+      $latest_response = Invoke-WebRequest -Uri $releases_url/latest -Method GET -Headers $h -UseBasicParsing
+      Write-Output "X-RateLimit-Remaining=$($latest_response.Headers['X-RateLimit-Remaining'])"
       $latest = $latest_response.Content | ConvertFrom-Json
       $name=$latest.assets[0].name
       $url = $latest.assets[0].browser_download_url
