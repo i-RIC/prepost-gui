@@ -26,10 +26,10 @@ public:
 	QSize targetSnapshotSize();
 
 private:
-	void snapshotToWorld(QPointF& p);
-	void worldToLatLong(QPointF& p);
+	QPointF snapshotToWorld(const QPointF& p);
+	QPointF worldToLatLong(const QPointF& p);
 
-	void snapshotToLatLong(QPointF& p);
+	QPointF snapshotToLatLong(const QPointF& p);
 
 	iRICMainWindow* m_mainWindow;
 	ContinuousSnapshotWizard* m_wizard;
