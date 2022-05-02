@@ -12,6 +12,20 @@
 
 namespace {
 
+void outputHeaders(const QString& name, int comps, int *dim, QTextStream& stream)
+{
+	if (comps == 1){
+		stream << "," << name;
+	} else if (comps == 2){
+		stream << "," << name << "X," << name << "Y";
+	} else if (comps == 3){
+		stream << "," << name << "X," << name << "Y";
+		if (*(dim + 2) != 1){
+			stream << "," << name << "Z";
+		}
+	}
+}
+
 void exportStructuredGrid(PostZoneDataContainer* c, QTextStream& stream, vtkStructuredGrid* sgrid, int imin, int imax, int jmin, int jmax, int kmin, int kmax)
 {
 	int dim[3];
@@ -33,39 +47,38 @@ void exportStructuredGrid(PostZoneDataContainer* c, QTextStream& stream, vtkStru
 		vtkDataArray* array = pData->GetArray(i);
 		int comps = array->GetNumberOfComponents();
 		QString name = pData->GetArrayName(i);
-		if (comps == 1){
-			stream << "," << name;
-		} else if (comps == 2){
-			stream << "," << name << "X," << name << "Y";
-		} else if (comps == 3){
-			stream << "," << name << "X," << name << "Y";
-			if (dim[2] != 1){
-				stream << "," << name << "Z";
-			}
-		}
+		outputHeaders(name, comps, &(dim[0]), stream);
 	}
 	vtkCellData* cData = sgrid->GetCellData();
 	for (int i = 0; i < cData->GetNumberOfArrays(); ++i){
 		vtkDataArray* array = cData->GetArray(i);
 		int comps = array->GetNumberOfComponents();
 		QString name = cData->GetArrayName(i);
-		if (comps == 1){
-			stream << "," << name;
-		} else if (comps == 2){
-			stream << "," << name << "X," << name << "Y";
-		} else if (comps == 3){
-			stream << "," << name << "X," << name << "Y";
-			if (dim[2] != 1){
-				stream << "," << name << "Z";
-			}
-		}
+		outputHeaders(name, comps, &(dim[0]), stream);
 	}
+	vtkPointData* ifData = c->ifacedata()->GetPointData();
+	for (int i = 0; i < ifData->GetNumberOfArrays(); ++i){
+		vtkDataArray* array = ifData->GetArray(i);
+		int comps = array->GetNumberOfComponents();
+		QString name = ifData->GetArrayName(i);
+		outputHeaders(name, comps, &(dim[0]), stream);
+	}
+	vtkPointData* jfData = c->jfacedata()->GetPointData();
+	for (int i = 0; i < jfData->GetNumberOfArrays(); ++i){
+		vtkDataArray* array = jfData->GetArray(i);
+		int comps = array->GetNumberOfComponents();
+		QString name = jfData->GetArrayName(i);
+		outputHeaders(name, comps, &(dim[0]), stream);
+	}
+
 	stream << "\r\n";
 
 	// data
 	for (int k = kmin; k <= kmax; ++k){
 		for (int j = jmin; j <= jmax; ++j){
 			for (int i = imin; i <= imax; ++i){
+
+				// grid shape
 				stream << (i + 1);
 				if (dim[1] != 1){stream << "," << (j + 1);}
 				if (dim[2] != 1){stream << "," << (k + 1);}
@@ -73,6 +86,8 @@ void exportStructuredGrid(PostZoneDataContainer* c, QTextStream& stream, vtkStru
 				sgrid->GetPoint(c->nodeIndex(i, j, k), pos);
 				stream << "," << pos[0] << "," << pos[1];
 				if (dim[2] != 1){stream << "," << pos[2];}
+
+				// grid node values
 				for (int l = 0; l < pData->GetNumberOfArrays(); ++l){
 					vtkDataArray* array = pData->GetArray(l);
 					int comps = array->GetNumberOfComponents();
@@ -89,27 +104,112 @@ void exportStructuredGrid(PostZoneDataContainer* c, QTextStream& stream, vtkStru
 						}
 					}
 				}
-				if (i == imax || j == jmax || (dim[2] != 1 && k == kmax)) {
-					stream << "\r\n";
-					continue;
-				}
 
-				for (int l = 0; l < cData->GetNumberOfArrays(); ++l) {
-					vtkDataArray* array = cData->GetArray(l);
-					int comps = array->GetNumberOfComponents();
-					if (comps == 1){
-						stream << "," << array->GetTuple1(c->cellIndex(i, j, k));
-					} else if (comps == 2){
-						double* tuples = array->GetTuple2(c->cellIndex(i, j, k));
-						stream << "," << *tuples << "," << *(tuples + 1);
-					} else if (comps == 3){
-						double* tuples = array->GetTuple3(c->cellIndex(i, j, k));
-						stream << "," << *tuples << "," << *(tuples + 1);
-						if (dim[2] != 1){
-							stream << "," << *(tuples + 2);
+				// grid cell values
+				if (i == imax || j == jmax || (dim[2] != 1 && k == kmax)) {
+					for (int l = 0; l < cData->GetNumberOfArrays(); ++l) {
+						vtkDataArray* array = cData->GetArray(l);
+						int comps = array->GetNumberOfComponents();
+						if (comps == 1){
+							stream << ",";
+						} else if (comps == 2){
+							stream << ",,";
+						} else if (comps == 3){
+							stream << ",,";
+							if (dim[2] != 1){
+								stream << ",";
+							}
+						}
+					}
+				} else {
+					for (int l = 0; l < cData->GetNumberOfArrays(); ++l) {
+						vtkDataArray* array = cData->GetArray(l);
+						int comps = array->GetNumberOfComponents();
+						if (comps == 1){
+							stream << "," << array->GetTuple1(c->cellIndex(i, j, k));
+						} else if (comps == 2){
+							double* tuples = array->GetTuple2(c->cellIndex(i, j, k));
+							stream << "," << *tuples << "," << *(tuples + 1);
+						} else if (comps == 3){
+							double* tuples = array->GetTuple3(c->cellIndex(i, j, k));
+							stream << "," << *tuples << "," << *(tuples + 1);
+							if (dim[2] != 1){
+								stream << "," << *(tuples + 2);
+							}
 						}
 					}
 				}
+
+				// grid iedge values
+				if (j == jmax) {
+					for (int l = 0; l < ifData->GetNumberOfArrays(); ++l) {
+						vtkDataArray* array = ifData->GetArray(l);
+						int comps = array->GetNumberOfComponents();
+						if (comps == 1){
+							stream << ",";
+						} else if (comps == 2){
+							stream << ",,";
+						} else if (comps == 3){
+							stream << ",,";
+							if (dim[2] != 1){
+								stream << ",";
+							}
+						}
+					}
+				} else {
+					for (int l = 0; l < ifData->GetNumberOfArrays(); ++l) {
+						vtkDataArray* array = ifData->GetArray(l);
+						int comps = array->GetNumberOfComponents();
+						if (comps == 1){
+							stream << "," << array->GetTuple1(c->ifaceIndex(i, j, k));
+						} else if (comps == 2){
+							double* tuples = array->GetTuple2(c->ifaceIndex(i, j, k));
+							stream << "," << *tuples << "," << *(tuples + 1);
+						} else if (comps == 3){
+							double* tuples = array->GetTuple3(c->ifaceIndex(i, j, k));
+							stream << "," << *tuples << "," << *(tuples + 1);
+							if (dim[2] != 1){
+								stream << "," << *(tuples + 2);
+							}
+						}
+					}
+				}
+
+				// grid jedge values
+				if (i == imax) {
+					for (int l = 0; l < jfData->GetNumberOfArrays(); ++l) {
+						vtkDataArray* array = jfData->GetArray(l);
+						int comps = array->GetNumberOfComponents();
+						if (comps == 1){
+							stream << ",";
+						} else if (comps == 2){
+							stream << ",,";
+						} else if (comps == 3){
+							stream << ",,";
+							if (dim[2] != 1){
+								stream << ",";
+							}
+						}
+					}
+				} else {
+					for (int l = 0; l < jfData->GetNumberOfArrays(); ++l) {
+						vtkDataArray* array = jfData->GetArray(l);
+						int comps = array->GetNumberOfComponents();
+						if (comps == 1){
+							stream << "," << array->GetTuple1(c->jfaceIndex(i, j, k));
+						} else if (comps == 2){
+							double* tuples = array->GetTuple2(c->jfaceIndex(i, j, k));
+							stream << "," << *tuples << "," << *(tuples + 1);
+						} else if (comps == 3){
+							double* tuples = array->GetTuple3(c->jfaceIndex(i, j, k));
+							stream << "," << *tuples << "," << *(tuples + 1);
+							if (dim[2] != 1){
+								stream << "," << *(tuples + 2);
+							}
+						}
+					}
+				}
+
 				stream << "\r\n";
 			}
 		}
