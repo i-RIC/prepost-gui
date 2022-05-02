@@ -72,7 +72,7 @@ std::vector<QPointF> PolyLineUtil::buildSplinePoints(vtkPoints* points, int divN
 	return ret;
 }
 
-double PolyLineUtil::length(std::vector<QPointF>& polyLine)
+double PolyLineUtil::length(const std::vector<QPointF>& polyLine)
 {
 	double len = 0;
 
@@ -87,7 +87,7 @@ double PolyLineUtil::length(std::vector<QPointF>& polyLine)
 	return len;
 }
 
-QRectF PolyLineUtil::boundingRect(std::vector<QPointF>& polyLine)
+QRectF PolyLineUtil::boundingRect(const std::vector<QPointF>& polyLine)
 {
 	double xmin, xmax, ymin, ymax;
 	for (int i = 0; i < polyLine.size(); ++i) {
