@@ -163,7 +163,7 @@
     </message>
     <message>
         <source>Dimension values for time mismatch.</source>
-        <translation>「時間」次元の値が一致しません。</translation>
+        <translation type="vanished">「時間」次元の値が一致しません。</translation>
     </message>
     <message>
         <source>Coordinate system is not specified for %1. Please select coordinate system manually.</source>
@@ -172,6 +172,10 @@
     <message>
         <source>GDAL data files can be imported for grid conditions without dimensions.</source>
         <translation type="vanished">GDALデータは、次元が定義されていない格子属性にだけインポートできます。</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation>時系列ラスターデータが既にインポートされています。別のデータをインポートしたい場合は、先に既にインポートされているデータを削除してください。</translation>
     </message>
 </context>
 <context>
@@ -272,7 +276,7 @@
     </message>
     <message>
         <source>Dimension values for %1 mismatch.</source>
-        <translation>次元 %1 の値が一致しません。</translation>
+        <translation type="vanished">次元 %1 の値が一致しません。</translation>
     </message>
     <message>
         <source>Error occured while parsing time definition: %1</source>
@@ -281,6 +285,10 @@
     <message>
         <source>%1 does not have longitude, latitude nor x, y data.</source>
         <translation>%1 には、緯度・経度, X・Yデータがありません。</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation>時系列ラスターデータが既にインポートされています。別のデータをインポートしたい場合は、先に既にインポートされているデータを削除してください。</translation>
     </message>
 </context>
 <context>
@@ -395,7 +403,11 @@
     </message>
     <message>
         <source>Dimension values for time mismatch.</source>
-        <translation>「時間」次元の値が一致しません。</translation>
+        <translation type="vanished">「時間」次元の値が一致しません。</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation>時系列ラスターデータが既にインポートされています。別のデータをインポートしたい場合は、先に既にインポートされているデータを削除してください。</translation>
     </message>
 </context>
 <context>

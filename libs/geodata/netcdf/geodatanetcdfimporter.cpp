@@ -344,10 +344,8 @@ bool GeoDataNetcdfImporter::importData(GeoData* data, int /*index*/, QWidget* w)
 		if (c->variantValues().size() == 0) {
 			c->setVariantValues(convertedVals);
 		} else {
-			if (c->variantValues() != convertedVals) {
-				QMessageBox::critical(w, tr("Error"), tr("Dimension values for %1 mismatch.").arg(c->definition()->caption()));
-				return false;
-			}
+			QMessageBox::critical(w, tr("Error"), tr("Time series raster data is already imported. If you want to import other data, please delete the data already imported first."));
+			return false;
 		}
 	}
 	// save coordinates and dimensions to the netcdf file.
