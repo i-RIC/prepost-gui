@@ -175,14 +175,12 @@ on_success:
         $tokyo_date = [System.TimeZoneInfo]::ConvertTimeFromUtc((Get-Date).ToUniversalTime(), $tokyo_tz)
         $env:RELEASE_DATE = $(Get-Date $tokyo_date -Format s).Substring(0,10)
         $env:RELEASE = $env:RELEASE_DATE -replace '-', '.'
-        $env:CAPTION = "iRIC GUI " + $v[0] + "." + $v[1] + "." + $v[2]
         foreach ($file in $files) {
           (Get-Content $file) | Foreach-Object {
             $_ -replace "(?<=<Version>)(.*)(?=</Version>)",           "$env:VERSION" `
                -replace "`" version=`"([^`"]*)`"",                    "`" version=`"$env:VERSION`"" `
                -replace "(?<=<ReleaseDate>)(.*)(?=</ReleaseDate>)",   "$env:RELEASE_DATE" `
                -replace "release=`"([^`"]*)`"",                       "release=`"$env:RELEASE`"" `
-               -replace "caption=`"([^`"]*)`"",                       "caption=`"$env:CAPTION`"" `
                -replace "github-sha1=`"([^`"]*)`"",                   "github-sha1=`"$env:APPVEYOR_REPO_COMMIT`""
           } | Set-Content $file
         }
