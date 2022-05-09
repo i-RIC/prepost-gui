@@ -391,11 +391,11 @@
     </message>
     <message>
         <source>Information</source>
-        <translation>情報</translation>
+        <translation type="vanished">情報</translation>
     </message>
     <message>
         <source>%1 files in the folder %2 are imported.</source>
-        <translation>フォルダ %2 内にある %1 個のファイルをインポートします。</translation>
+        <translation type="vanished">フォルダ %2 内にある %1 個のファイルをインポートします。</translation>
     </message>
     <message>
         <source>Error</source>
@@ -408,6 +408,14 @@
     <message>
         <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
         <translation>時系列ラスターデータが既にインポートされています。別のデータをインポートしたい場合は、先に既にインポートされているデータを削除してください。</translation>
+    </message>
+    <message>
+        <source>Error occured when importing data converted from %1.</source>
+        <translation>%1 を変換したデータのインポートでエラーが発生しました。</translation>
+    </message>
+    <message>
+        <source>Error occured when opening %1.</source>
+        <translation>%1 を開く処理でエラーが発生しました。</translation>
     </message>
 </context>
 <context>
