@@ -61,56 +61,10 @@ bool GeoDataNetcdfXbandImporter::doInit(const QString& filename, const QString& 
 
 	QFileInfo finfo(filename);
 	QDir dir = finfo.absoluteDir();
-	QDir workDir = dir;
+
+	m_dirName = dir.path();
 	QStringList filter;
-	QStringList filenames = dir.entryList(filter, QDir::Files, QDir::Name);
-	m_tmpFileName = dir.absoluteFilePath(TMP_NC);
-
-	QString workTmpFileName = m_tmpFileName;
-	QTemporaryDir* tempDir = nullptr;
-
-	QTextCodec* latin1 = QTextCodec::codecForName("latin1");
-	if (! latin1->canEncode(dir.absolutePath()) || dir.absolutePath().length() > 90) {
-		// the name contains non-ASCII characters.
-		// we should copy to temporary directory.
-		QDir wsDir(item->projectData()->workDirectory());
-		tempDir = new QTemporaryDir(wsDir.absoluteFilePath("xband"));
-		workDir = QDir(tempDir->path());
-		for (QString fname : filenames) {
-			QFile::copy(dir.absoluteFilePath(fname), workDir.absoluteFilePath(fname));
-		}
-		workTmpFileName = workDir.absoluteFilePath(TMP_NC);
-	}
-
-	if (! item->iricMainWindow()->cuiMode()) {
-		int ret = QMessageBox::information(w, tr("Information"), tr("%1 files in the folder %2 are imported.").arg(filenames.size()).arg(QDir::toNativeSeparators(dir.absolutePath())), QMessageBox::Ok | QMessageBox::Cancel, QMessageBox::Cancel);
-		if (ret == QMessageBox::Cancel) {return false;}
-	}
-
-	// use mlitx2nc to convert files into NetCDF file.
-	QString exepath = iRICRootPath::get();
-	QString exeName = QDir(exepath).absoluteFilePath("mlitx2nc.exe");
-	QProcess* mlitx2ncProcess = new QProcess();
-	QStringList args;
-	args << workTmpFileName << QString::number(filenames.size());
-
-	mlitx2ncProcess->start(exeName, args);
-	for (QString fname : filenames) {
-		QString fullName = QDir::toNativeSeparators(workDir.absoluteFilePath(fname));
-		fullName.append("\r\n");
-		mlitx2ncProcess->write(iRIC::toStr(fullName).c_str());
-	}
-	mlitx2ncProcess->waitForFinished(-1);
-
-	// mlitx2nc process finished.
-
-	if (tempDir != nullptr) {
-
-		std::string workTmpFileNameStr = iRIC::toStr(workTmpFileName);
-
-		QFile::copy(workTmpFileName, m_tmpFileName);
-		delete tempDir;
-	}
+	m_fileNames = dir.entryList(filter, QDir::Files, QDir::Name);
 
 	return true;
 }
@@ -122,122 +76,149 @@ bool GeoDataNetcdfXbandImporter::importData(GeoData* data, int /*index*/, QWidge
 	int ncid_in, ncid_out;
 	int ret;
 
-	ret = nc_open(iRIC::toStr(m_tmpFileName).c_str(), NC_NOWRITE, &ncid_in);
-	if (ret != NC_NOERR) {return false;}
-	QFileInfo finfo(netcdf->filename());
-	iRIC::mkdirRecursively(finfo.absolutePath());
+	QString exepath = iRICRootPath::get();
+	QString exeName = QDir(exepath).absoluteFilePath("mlitx2nc.exe");
 
-	// delete the file if it already exists.
-	QFile f(netcdf->filename());
-	f.remove();
+	QDir workDir = netcdf->projectData()->workDirectory();
+	QString tmpFileName = workDir.absoluteFilePath(TMP_NC);
 
-	ret = nc_create(iRIC::toStr(netcdf->filename()).c_str(), NC_NETCDF4, &ncid_out);
-	if (ret != NC_NOERR) {return false;}
+	QDir dir(m_dirName);
 
-	netcdf->m_coordinateSystemType = GeoDataNetcdf::LonLat;
+	int varOutId;
+	std::vector<int> varIds;
+	std::vector<QVariant> timeValues;
 
-	// load Lon, Lat, and Time
-	int lonDimId, latDimId, timeDimId;
-	int lonVarId, latVarId, timeVarId;
-	int rrVarId;
+	timeValues.assign(m_fileNames.size(), 0);
 
-	nc_inq_dimid(ncid_in, "LON", &lonDimId);
-	nc_inq_dimid(ncid_in, "LAT", &latDimId);
-	nc_inq_dimid(ncid_in, "TIME", &timeDimId);
-	nc_inq_varid(ncid_in, "LON", &lonVarId);
-	nc_inq_varid(ncid_in, "LAT", &latVarId);
-	nc_inq_varid(ncid_in, "TIME", &timeVarId);
-	nc_inq_varid(ncid_in, "RR", &rrVarId);
+	for (int i = 0; i < m_fileNames.size(); ++i) {
+		auto inputFile = dir.absoluteFilePath(m_fileNames.at(i));
+		QStringList args;
+		args << tmpFileName << "1";
 
-	size_t lonLen, latLen, timeLen;
+		QProcess mlitx2ncProcess;
+		mlitx2ncProcess.start(exeName, args);
 
-	ret = nc_inq_dimlen(ncid_in, lonDimId, &lonLen);
-	ret = nc_inq_dimlen(ncid_in, latDimId, &latLen);
-	ret = nc_inq_dimlen(ncid_in, timeDimId, &timeLen);
+		QString argFileName = QDir::toNativeSeparators(inputFile);
+		argFileName.append("\r\n");
+		mlitx2ncProcess.write(iRIC::toStr(argFileName).c_str());
+		auto argFileNameStr = iRIC::toStr(argFileName);
+		mlitx2ncProcess.waitForFinished(-1);
 
-	std::vector<double> lons(lonLen);
-	std::vector<double> lats(latLen);
-	std::vector<double> times(timeLen);
-
-	nc_get_var_double(ncid_in, lonVarId, lons.data());
-	nc_get_var_double(ncid_in, latVarId, lats.data());
-	nc_get_var_double(ncid_in,timeVarId, times.data());
-
-	netcdf->m_lonValues.clear();
-	for (size_t i = 0; i < lonLen; ++i) {
-		netcdf->m_lonValues.push_back(lons[i]);
-	}
-	netcdf->m_latValues.clear();
-	for (size_t i = 0; i < latLen; ++i) {
-		netcdf->m_latValues.push_back(lats[i]);
-	}
-
-	// Xband x rader time valuesa are already unix time stamp. No conversion.
-	GridAttributeDimensionsContainer* dims = m_groupDataItem->dimensions();
-	GridAttributeDimensionContainer* c = dims->containers().at(0);
-	std::vector<QVariant> timeVals;
-	for (size_t i = 0; i < timeLen; ++i) {
-		timeVals.push_back(times[i]);
-	}
-
-	if (c->variantValues().size() == 0) {
-		c->setVariantValues(timeVals);
-	} else {
-		if (c->variantValues() != timeVals) {
-			QMessageBox::critical(w, tr("Error"), tr("Dimension values for time mismatch.").arg(c->definition()->caption()));
+		ret = nc_open(iRIC::toStr(tmpFileName).c_str(), NC_NOWRITE, &ncid_in);
+		if (ret != NC_NOERR) {
+			QMessageBox::critical(w, tr("Error"), tr("Error occured when importing data converted from %1.").arg(m_fileNames.at(i)));
 			return false;
 		}
-	}
 
-	// save coordinates and dimensions to the netcdf file.
-	int out_xDimId, out_yDimId, out_lonDimId, out_latDimId;
-	int out_xVarId, out_yVarId, out_lonVarId, out_latVarId;
-	std::vector<int> dimIds;
-	std::vector<int> varIds;
-	int varOutId;
+		// load Lon, Lat, and Time
+		int lonDimId, latDimId, timeDimId;
+		int lonVarId, latVarId, timeVarId;
+		int rrVarId;
 
-	ret = nc_redef(ncid_out);
-	netcdf->defineCoords(ncid_out, &out_xDimId, &out_yDimId, &out_lonDimId, &out_latDimId, &out_xVarId, &out_yVarId, &out_lonVarId, &out_latVarId);
-	netcdf->defineDimensions(ncid_out, &dimIds, &varIds);
-	ret = netcdf->defineValue(ncid_out, out_lonDimId, out_latDimId, dimIds, &varOutId);
+		nc_inq_dimid(ncid_in, "LON", &lonDimId);
+		nc_inq_dimid(ncid_in, "LAT", &latDimId);
+		nc_inq_dimid(ncid_in, "TIME", &timeDimId);
+		nc_inq_varid(ncid_in, "LON", &lonVarId);
+		nc_inq_varid(ncid_in, "LAT", &latVarId);
+		nc_inq_varid(ncid_in, "TIME", &timeVarId);
+		nc_inq_varid(ncid_in, "RR", &rrVarId);
 
-	ret = nc_enddef(ncid_out);
-	netcdf->outputCoords(ncid_out, out_xVarId, out_yVarId, out_lonVarId, out_latVarId);
-	netcdf->outputDimensions(ncid_out, varIds);
+		size_t lonLen, latLen, timeLen;
+		ret = nc_inq_dimlen(ncid_in, lonDimId, &lonLen);
+		ret = nc_inq_dimlen(ncid_in, latDimId, &latLen);
+		ret = nc_inq_dimlen(ncid_in, timeDimId, &timeLen);
 
-	size_t start_in[3];
-	size_t start_out[3];
-	size_t len_in[3];
-	size_t len_out[3];
-	size_t bufferSize = 0;
+		if (i == 0) {
+			QFileInfo finfo(netcdf->filename());
+			iRIC::mkdirRecursively(finfo.absolutePath());
 
-	// setup len_in, len_out
-	len_in[0] = 1;
-	len_in[1] = netcdf->latValues().size();
-	len_in[2] = netcdf->lonValues().size();
-	len_out[0] = 1;
-	len_out[1] = netcdf->latValues().size();
-	len_out[2] = netcdf->lonValues().size();
-	bufferSize = netcdf->lonValues().size() * netcdf->latValues().size();
+			// delete the file if it already exists.
+			QFile f(netcdf->filename());
+			f.remove();
 
-	// setup start_in, start_out partially
-	start_in[1] = 0;
-	start_in[2] = 0;
-	start_out[1] = 0;
-	start_out[2] = 0;
+			ret = nc_create(iRIC::toStr(netcdf->filename()).c_str(), NC_NETCDF4, &ncid_out);
+			if (ret != NC_NOERR) {
+				QMessageBox::critical(w, tr("Error"), tr("Error occured when opening %1.").arg(QDir::toNativeSeparators(netcdf->filename())));
+				return false;
+			}
 
-	std::vector<float> floatBuffer(bufferSize);
-	std::vector<double> doubleBuffer(bufferSize);
-	float missingValue;
-	float scaleFactor = 1;
-	float addOffset = 0;
+			netcdf->m_coordinateSystemType = GeoDataNetcdf::LonLat;
 
-	ret = nc_get_att_float(ncid_in, rrVarId, "missing_value", &missingValue);
-	ret = nc_get_att_float(ncid_in, rrVarId, "scale_factor", &scaleFactor);
-	ret = nc_get_att_float(ncid_in, rrVarId, "add_offset", &addOffset);
+			std::vector<double> lons(lonLen);
+			std::vector<double> lats(latLen);
 
-	for (size_t i = 0; i < timeLen; ++i) {
-		start_in[0] = i;
+			nc_get_var_double(ncid_in, lonVarId, lons.data());
+			nc_get_var_double(ncid_in, latVarId, lats.data());
+
+			// set lon and lat data
+			netcdf->m_lonValues.clear();
+			for (size_t i = 0; i < lonLen; ++i) {
+				netcdf->m_lonValues.push_back(lons[i]);
+			}
+			netcdf->m_latValues.clear();
+			for (size_t i = 0; i < latLen; ++i) {
+				netcdf->m_latValues.push_back(lats[i]);
+			}
+			// set time dummy data
+			GridAttributeDimensionsContainer* dims = m_groupDataItem->dimensions();
+			GridAttributeDimensionContainer* c = dims->containers().at(0);
+			std::vector<QVariant> timeVals;
+			for (size_t i = 0; i < m_fileNames.size(); ++i) {
+				timeVals.push_back(0);
+			}
+			c->setVariantValues(timeVals);
+
+			// save coordinates and dimensions to the netcdf file.
+			int out_xDimId, out_yDimId, out_lonDimId, out_latDimId;
+			int out_xVarId, out_yVarId, out_lonVarId, out_latVarId;
+			std::vector<int> dimIds;
+
+			ret = nc_redef(ncid_out);
+			netcdf->defineCoords(ncid_out, &out_xDimId, &out_yDimId, &out_lonDimId, &out_latDimId, &out_xVarId, &out_yVarId, &out_lonVarId, &out_latVarId);
+			netcdf->defineDimensions(ncid_out, &dimIds, &varIds);
+			ret = netcdf->defineValue(ncid_out, out_lonDimId, out_latDimId, dimIds, &varOutId);
+
+			ret = nc_enddef(ncid_out);
+			netcdf->outputCoords(ncid_out, out_xVarId, out_yVarId, out_lonVarId, out_latVarId);
+		}
+
+		// read time value
+		double timeVal;
+		nc_get_var_double(ncid_in, timeVarId, &timeVal);
+		timeValues[i] = timeVal;
+
+		size_t start_in[3];
+		size_t start_out[3];
+		size_t len_in[3];
+		size_t len_out[3];
+		size_t bufferSize = 0;
+
+		// setup len_in, len_out
+		len_in[0] = 1;
+		len_in[1] = latLen;
+		len_in[2] = lonLen;
+		len_out[0] = 1;
+		len_out[1] = latLen;
+		len_out[2] = lonLen;
+		bufferSize = lonLen * latLen;
+
+		// setup start_in, start_out partially
+		start_in[1] = 0;
+		start_in[2] = 0;
+		start_out[1] = 0;
+		start_out[2] = 0;
+
+		std::vector<float> floatBuffer(bufferSize);
+		std::vector<double> doubleBuffer(bufferSize);
+		float missingValue;
+		float scaleFactor = 1;
+		float addOffset = 0;
+
+		ret = nc_get_att_float(ncid_in, rrVarId, "missing_value", &missingValue);
+		ret = nc_get_att_float(ncid_in, rrVarId, "scale_factor", &scaleFactor);
+		ret = nc_get_att_float(ncid_in, rrVarId, "add_offset", &addOffset);
+
+		start_in[0] = 0;
 		start_out[0] = i;
 		nc_get_vara_float(ncid_in, rrVarId, start_in, len_in, floatBuffer.data());
 		for (size_t j = 0; j < bufferSize; ++j) {
@@ -248,16 +229,21 @@ bool GeoDataNetcdfXbandImporter::importData(GeoData* data, int /*index*/, QWidge
 			}
 		}
 		nc_put_vara_double(ncid_out, varOutId, start_out, len_out, doubleBuffer.data());
+
+		nc_close(ncid_in);
+
+		QFile f(tmpFileName);
+		f.remove();
 	}
 
-	nc_close(ncid_in);
+	auto timeContainer = m_groupDataItem->dimensions()->containers().at(0);
+	timeContainer->setVariantValues(timeValues);
+	netcdf->outputDimensions(ncid_out, varIds);
+
 	nc_close(ncid_out);
 
 	netcdf->updateShapeData();
-	netcdf->handleDimensionCurrentIndexChange(0, dims->currentIndex());
-
-	QFile f2(m_tmpFileName);
-	f2.remove();
+	netcdf->handleDimensionCurrentIndexChange(0, netcdf->dimensions()->currentIndex());
 
 	return true;
 }
