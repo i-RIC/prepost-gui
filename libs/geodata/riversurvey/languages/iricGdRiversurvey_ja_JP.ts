@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ja_JP">
 <context>
     <name>GeoDataRiverCrosssectionAltitudeMoveDialog</name>
@@ -361,7 +359,7 @@
     </message>
     <message>
         <source>River survey data is generated using Points data.
-If you want to adjust cross section position and map Points data again, you can use &quot;Map points data&quot;</source>
+If you want to adjust cross section position and map Points data again, you can use "Map points data"</source>
         <translation type="vanished">地勢データから、河川測量データが生成されました。
 横断線の位置や向きを調整して再度マッピングを行いたい場合、「地勢データのマッピング」メニューを使用してください。</translation>
     </message>
@@ -386,8 +384,8 @@ If you want to adjust cross section position and map Points data again, you can 
         <translation>延長線の削除</translation>
     </message>
     <message>
-        <source>Insert Target Point name is &quot;0&quot;. You have to change the name if you want to add a new point.</source>
-        <translation type="vanished">追加対象の名前が &quot;0&quot; です。ここに点を追加するには、まず追加対象の点の名前を変える必要があります。</translation>
+        <source>Insert Target Point name is "0". You have to change the name if you want to add a new point.</source>
+        <translation type="vanished">追加対象の名前が "0" です。ここに点を追加するには、まず追加対象の点の名前を変える必要があります。</translation>
     </message>
     <message>
         <source>Edit Display Setting</source>
@@ -411,7 +409,7 @@ If you want to adjust cross section position and map Points data again, you can 
     </message>
     <message>
         <source>Cross-section data is generated using Points data.
-If you want to adjust cross section position and map Points data again, you can use &quot;Map points data&quot;</source>
+If you want to adjust cross section position and map Points data again, you can use "Map points data"</source>
         <translation type="vanished">地勢データから、横断測量データが生成されました。
 横断線の位置や向きを調整して再度マッピングを行いたい場合、「地勢データのマッピング」メニューを使用してください。</translation>
     </message>
@@ -429,7 +427,7 @@ If you want to adjust cross section position and map Points data again, you can 
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
-If you want to adjust cross section position and map point clouod data again, you can use &quot;Map point cloud data&quot;</source>
+If you want to adjust cross section position and map point clouod data again, you can use "Map point cloud data"</source>
         <translation type="vanished">点群データから、横断測量データが生成されました。
 横断線の位置や向きを調整して再度マッピングを行いたい場合、「点群データのマッピング」メニューを使用してください。</translation>
     </message>
@@ -443,14 +441,14 @@ If you want to adjust cross section position and map point clouod data again, yo
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
-If you want to adjust cross section position and map point cloud data again, you can use &quot;Map point cloud data&quot;</source>
+If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
         <translation>地勢データから、横断測量データが生成されました。
 横断線の位置や向きを調整して再度マッピングを行いたい場合、「地勢データのマッピング」メニューを使用してください。</translation>
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
 In some region, data did not exists in point cloud data, and value 0 was mapped for those points.
-If you want to adjust cross section position and map point cloud data again, you can use &quot;Map point cloud data&quot;</source>
+If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
         <translation>地勢データから、横断測量データが生成されました。
 一部の領域では、点群データが存在しなかったため、値 0 をマッピングしました。
 横断線の位置や向きを調整して再度マッピングを行いたい場合、「地勢データのマッピング」メニューを使用してください。</translation>
@@ -699,8 +697,8 @@ If you want to adjust cross section position and map point cloud data again, you
         <translation>標高と勾配の設定が不正です。</translation>
     </message>
     <message>
-        <source>When you specify elevation of end point, it can not be same to the start point. If you want to draw horizontal line, please select &quot;Specify horizontal distance&quot;.</source>
-        <translation>終点の標高を指定する場合は、始点の標高と同じ値を指定することはできません。水平な線を引きたい場合は、&quot;水平方向の距離を指定&quot;を選択して下さい。</translation>
+        <source>When you specify elevation of end point, it can not be same to the start point. If you want to draw horizontal line, please select "Specify horizontal distance".</source>
+        <translation>終点の標高を指定する場合は、始点の標高と同じ値を指定することはできません。水平な線を引きたい場合は、"水平方向の距離を指定"を選択して下さい。</translation>
     </message>
 </context>
 <context>
@@ -954,9 +952,9 @@ If you want to adjust cross section position and map point cloud data again, you
     </message>
     <message>
         <source>Edit the cross section by mouse-clicking. Finish editing by double clicking, or pressing return key.
-You can precisely edit the cross section by inputting values from dialog. Please enter dialog edit mode from &quot;Edit from Dialog&quot; in the right-clicking menu.</source>
+You can precisely edit the cross section by inputting values from dialog. Please enter dialog edit mode from "Edit from Dialog" in the right-clicking menu.</source>
         <translation>マウス操作により、断面を編集してください。ダブルクリックするか、改行キーを押して完了します。
-ダイアログから、数値を入力して精密な編集を行うこともできます。ダイアログから編集するには、右クリックメニューから&quot;ダイアログから編集&quot;を選択してください。</translation>
+ダイアログから、数値を入力して精密な編集を行うこともできます。ダイアログから編集するには、右クリックメニューから"ダイアログから編集"を選択してください。</translation>
     </message>
     <message>
         <source>Edit the cross section by mouse-clicking. Finish editing by double clicking, or pressing return key.</source>
@@ -1172,40 +1170,40 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>エラー</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Invalid LX</source>
-        <translation type="vanished">%1 %2行目 &quot;%3&quot;: 左岸X が不正です</translation>
+        <source>%1 line %2 "%3": Invalid LX</source>
+        <translation type="vanished">%1 %2行目 "%3": 左岸X が不正です</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Invalid LY</source>
-        <translation type="vanished">%1 %2行目 &quot;%3&quot;: 左岸Y が不正です</translation>
+        <source>%1 line %2 "%3": Invalid LY</source>
+        <translation type="vanished">%1 %2行目 "%3": 左岸Y が不正です</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Invalid RX</source>
-        <translation type="vanished">%1 %2行目 &quot;%3&quot;: 右岸X が不正です</translation>
+        <source>%1 line %2 "%3": Invalid RX</source>
+        <translation type="vanished">%1 %2行目 "%3": 右岸X が不正です</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Invalid RY</source>
-        <translation type="vanished">%1 %2行目 &quot;%3&quot;: 右岸Y が不正です</translation>
+        <source>%1 line %2 "%3": Invalid RY</source>
+        <translation type="vanished">%1 %2行目 "%3": 右岸Y が不正です</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Invalid point count</source>
-        <translation type="vanished">%1 %2行目 &quot;%3&quot;: 横断線点数が不正です</translation>
+        <source>%1 line %2 "%3": Invalid point count</source>
+        <translation type="vanished">%1 %2行目 "%3": 横断線点数が不正です</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Invalid index value</source>
-        <translation>%1 %2行目 &quot;%3&quot;: インデックスの値が不正です</translation>
+        <source>%1 line %2 "%3": Invalid index value</source>
+        <translation>%1 %2行目 "%3": インデックスの値が不正です</translation>
     </message>
     <message>
         <source>%1 line %2: cross section data for %3 not enough</source>
         <translation>%1 %2行目 %3 の横断データの数が不足しています</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Invalid distance value</source>
-        <translation type="vanished">%1 %2行目 &quot;%3&quot;: 距離の値が不正です</translation>
+        <source>%1 line %2 "%3": Invalid distance value</source>
+        <translation type="vanished">%1 %2行目 "%3": 距離の値が不正です</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Invalid elevation value</source>
-        <translation type="vanished">%1 %2行目 &quot;%3&quot;: 標高の値が不正です</translation>
+        <source>%1 line %2 "%3": Invalid elevation value</source>
+        <translation type="vanished">%1 %2行目 "%3": 標高の値が不正です</translation>
     </message>
     <message>
         <source>#survey data is not found</source>
@@ -1216,32 +1214,32 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation type="vanished">#x-section データがありません</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: LX value is invalid</source>
-        <translation>%1 %2行目 &quot;%3&quot; LX の値が不正です</translation>
+        <source>%1 line %2 "%3": LX value is invalid</source>
+        <translation>%1 %2行目 "%3" LX の値が不正です</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: LY value is invalid</source>
-        <translation>%1 %2行目 &quot;%3&quot; LY の値が不正です</translation>
+        <source>%1 line %2 "%3": LY value is invalid</source>
+        <translation>%1 %2行目 "%3" LY の値が不正です</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: RX value is invalid</source>
-        <translation>%1 %2行目 &quot;%3&quot; RX の値が不正です</translation>
+        <source>%1 line %2 "%3": RX value is invalid</source>
+        <translation>%1 %2行目 "%3" RX の値が不正です</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: RY value is invalid</source>
-        <translation>%1 %2行目 &quot;%3&quot; RY の値が不正です</translation>
+        <source>%1 line %2 "%3": RY value is invalid</source>
+        <translation>%1 %2行目 "%3" RY の値が不正です</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Point count is invalid</source>
-        <translation>%1 %2行目 &quot;%3&quot; 点の数が不正です</translation>
+        <source>%1 line %2 "%3": Point count is invalid</source>
+        <translation>%1 %2行目 "%3" 点の数が不正です</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Distance value is invalid</source>
-        <translation>%1 %2行目 &quot;%3&quot; 距離の値が不正です</translation>
+        <source>%1 line %2 "%3": Distance value is invalid</source>
+        <translation>%1 %2行目 "%3" 距離の値が不正です</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Elevation value is invalid</source>
-        <translation>%1 %2行目 &quot;%3&quot; 標高の値が不正です</translation>
+        <source>%1 line %2 "%3": Elevation value is invalid</source>
+        <translation>%1 %2行目 "%3" 標高の値が不正です</translation>
     </message>
     <message>
         <source>#survey data is not found. Will be ignored.</source>
@@ -1292,8 +1290,8 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>%1 %2行目: 読み込みエラー。2つの値が必要です。</translation>
     </message>
     <message>
-        <source>%1 Line %2: Read error. Not real number value &quot;%3&quot;.</source>
-        <translation>%1 %2行目: 読み込みエラー。&quot;%3&quot; は実数として読み込めませんでした。</translation>
+        <source>%1 Line %2: Read error. Not real number value "%3".</source>
+        <translation>%1 %2行目: 読み込みエラー。"%3" は実数として読み込めませんでした。</translation>
     </message>
     <message>
         <source>Cross section %1 does not cross the centerline. Center point is set to be the middle point of left bank and right bank.</source>
@@ -1463,20 +1461,20 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation type="vanished">%1 %2行目: RY の値が不正です。</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: LX value is invalid</source>
-        <translation>%1 %2行目 &quot;%3&quot;: LX の値が不正です</translation>
+        <source>%1 Line %2 "%3": LX value is invalid</source>
+        <translation>%1 %2行目 "%3": LX の値が不正です</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: LY value is invalid</source>
-        <translation>%1 %2行目 &quot;%3&quot;: LY の値が不正です</translation>
+        <source>%1 Line %2 "%3": LY value is invalid</source>
+        <translation>%1 %2行目 "%3": LY の値が不正です</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: RX value is invalid</source>
-        <translation>%1 %2行目 &quot;%3&quot;: RX の値が不正です</translation>
+        <source>%1 Line %2 "%3": RX value is invalid</source>
+        <translation>%1 %2行目 "%3": RX の値が不正です</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: RY value is invalid</source>
-        <translation>%1 %2行目 &quot;%3&quot;: RY の値が不正です</translation>
+        <source>%1 Line %2 "%3": RY value is invalid</source>
+        <translation>%1 %2行目 "%3": RY の値が不正です</translation>
     </message>
     <message>
         <source>Distance marker data is not found. Will be ignored.</source>
@@ -1495,16 +1493,16 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation type="vanished">%1 にありません</translation>
     </message>
     <message>
-        <source>%1 line %2: &quot;%3&quot;: Flag data is invalid.</source>
-        <translation>%1 %2行目 &quot;%3&quot;: フラグの値が不正です。</translation>
+        <source>%1 line %2: "%3": Flag data is invalid.</source>
+        <translation>%1 %2行目 "%3": フラグの値が不正です。</translation>
     </message>
     <message>
-        <source>%1 line %2: &quot;%3&quot;: Distance data is invalid.</source>
-        <translation>%1 %2行目 &quot;%3&quot;: 距離の値が不正です。</translation>
+        <source>%1 line %2: "%3": Distance data is invalid.</source>
+        <translation>%1 %2行目 "%3": 距離の値が不正です。</translation>
     </message>
     <message>
-        <source>%1 line %2: &quot;%3&quot;: Elevation data is invalid.</source>
-        <translation>%1 %2行目 &quot;%3&quot;: 標高の値が不正です。</translation>
+        <source>%1 line %2: "%3": Elevation data is invalid.</source>
+        <translation>%1 %2行目 "%3": 標高の値が不正です。</translation>
     </message>
     <message>
         <source>Select folder where cross section data exists</source>
@@ -1918,8 +1916,8 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation type="vanished">延長線の削除</translation>
     </message>
     <message>
-        <source>Insert Target Point name is &quot;0&quot;. You have to change the name if you want to add a new point.</source>
-        <translation type="vanished">追加対象の名前が &quot;0&quot; です。ここに点を追加するには、まず追加対象の点の名前を変える必要があります。</translation>
+        <source>Insert Target Point name is "0". You have to change the name if you want to add a new point.</source>
+        <translation type="vanished">追加対象の名前が "0" です。ここに点を追加するには、まず追加対象の点の名前を変える必要があります。</translation>
     </message>
 </context>
 <context>

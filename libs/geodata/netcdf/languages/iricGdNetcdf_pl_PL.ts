@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="pl_PL">
 <context>
     <name>GeoDataNetcdf</name>
@@ -84,8 +82,8 @@
         <translation>Rozpoznaj wynik:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please use the following letters to define pattern:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Year: YYYY&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Month: MM&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Day: DD&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Hour: hh&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Minute: mm&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Second: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Do zdefiniowania wzorca użyj następujących liter:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin -right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot;margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block- wcięcie: 0; text-indent: 0px; &quot;&gt;Rok: YYYY&lt;/ li&gt;&lt;li style = &quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt -block-indent: 0; text-indent: 0px; &quot;&gt;Miesiąc: MM &lt;/ li&gt;&lt;li style = &quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px ; -qt-block-indent:0; text-indent:0px;&quot;&gt;Dzień: DD&lt;/li&gt;&lt;li style=&quot;margin-top:0px; margin-bottom:0px; margin-left:0px;margin- prawo: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt;Godzina: hh &lt;/ li&gt;&lt;li style = &quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px ; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Minuta:mm&lt;/li&gt;&lt;li style=&quot;margin-top:0px; margin-bottom:12px; margin- left: 0px; margin-right: 0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Drugi: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body &gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please use the following letters to define pattern:&lt;/p&gt;&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;"&gt;&lt;li style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Year: YYYY&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Month: MM&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Day: DD&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Hour: hh&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Minute: mm&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Second: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Do zdefiniowania wzorca użyj następujących liter:&lt;/p&gt;&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin -right: 0px; -qt-list-indent: 1;"&gt;&lt;li style="margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block- wcięcie: 0; text-indent: 0px; "&gt;Rok: YYYY&lt;/ li&gt;&lt;li style = "margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt -block-indent: 0; text-indent: 0px; "&gt;Miesiąc: MM &lt;/ li&gt;&lt;li style = "margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px ; -qt-block-indent:0; text-indent:0px;"&gt;Dzień: DD&lt;/li&gt;&lt;li style="margin-top:0px; margin-bottom:0px; margin-left:0px;margin- prawo: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt;Godzina: hh &lt;/ li&gt;&lt;li style = "margin-top: 0px; margin-bottom: 0px; margin-left: 0px ; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Minuta:mm&lt;/li&gt;&lt;li style="margin-top:0px; margin-bottom:12px; margin- left: 0px; margin-right: 0px; -qt-block-indent:0; text-indent:0px;"&gt;Drugi: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body &gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>File name does not match the pattern</source>
@@ -107,7 +105,7 @@
         <translation>Tych danych nie można wyeksportować. Wygląda na to, że nie został zaimportowany z *.tif lub *.asc.</translation>
     </message>
     <message>
-        <source>This data cannot be exported. Data with &quot;Time&quot; dimension cannot be exported to *.tif or *.asc.</source>
+        <source>This data cannot be exported. Data with "Time" dimension cannot be exported to *.tif or *.asc.</source>
         <translation>Tych danych nie można wyeksportować. Danych z wymiarem „Czas” nie można wyeksportować do *.tif ani *.asc.</translation>
     </message>
     <message>
@@ -159,7 +157,7 @@
     </message>
     <message>
         <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dane rastrowe szeregów czasowych zostały już zaimportowane. Jeśli chcesz zaimportować inne dane, najpierw usuń dane już zaimportowane.</translation>
     </message>
 </context>
 <context>
@@ -177,7 +175,7 @@
         <translation>Tych danych nie można wyeksportować. Wygląda na to, że nie został zaimportowany z *.png.</translation>
     </message>
     <message>
-        <source>This data cannot be exported. Data with &quot;Time&quot; dimension cannot be exported to *.png</source>
+        <source>This data cannot be exported. Data with "Time" dimension cannot be exported to *.png</source>
         <translation>Tych danych nie można wyeksportować. Danych z wymiarem „Czas” nie można wyeksportować do *.png</translation>
     </message>
     <message>
@@ -268,7 +266,7 @@
     </message>
     <message>
         <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dane rastrowe szeregów czasowych zostały już zaimportowane. Jeśli chcesz zaimportować inne dane, najpierw usuń dane już zaimportowane.</translation>
     </message>
 </context>
 <context>
@@ -366,7 +364,7 @@
         <translation>Ostrzeżenie</translation>
     </message>
     <message>
-        <source>X band MP rader data can be imported for grid conditions with dimension &quot;Time&quot;.</source>
+        <source>X band MP rader data can be imported for grid conditions with dimension "Time".</source>
         <translation>Dane radera MP w paśmie X mogą być importowane dla warunków siatki z wymiarem „Czas”.</translation>
     </message>
     <message>
@@ -387,15 +385,15 @@
     </message>
     <message>
         <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dane rastrowe szeregów czasowych zostały już zaimportowane. Jeśli chcesz zaimportować inne dane, najpierw usuń dane już zaimportowane.</translation>
     </message>
     <message>
         <source>Error occured when importing data converted from %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wystąpił błąd podczas importowania danych przekonwertowanych z %1.</translation>
     </message>
     <message>
         <source>Error occured when opening %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wystąpił błąd podczas otwierania %1.</translation>
     </message>
 </context>
 </TS>

@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="pt_PT">
 <context>
     <name>GeoDataRiverCrosssectionAltitudeMoveDialog</name>
@@ -381,8 +379,8 @@
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
-If you want to adjust cross section position and map point clouod data again, you can use &quot;Map point cloud data&quot;</source>
-        <translation type="vanished">Os dados de seção transversal são gerados usando dados de nuvem de pontos. Se você quiser ajustar a posição da seção cruzada e os dados de nuvem de pontos do mapa novamente, você pode usar &quot;Mapear dados de nuvem de pontos&quot;</translation>
+If you want to adjust cross section position and map point clouod data again, you can use "Map point cloud data"</source>
+        <translation type="vanished">Os dados de seção transversal são gerados usando dados de nuvem de pontos. Se você quiser ajustar a posição da seção cruzada e os dados de nuvem de pontos do mapa novamente, você pode usar "Mapear dados de nuvem de pontos"</translation>
     </message>
     <message>
         <source>Map point cloud data</source>
@@ -394,21 +392,21 @@ If you want to adjust cross section position and map point clouod data again, yo
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
-If you want to adjust cross section position and map point cloud data again, you can use &quot;Map point cloud data&quot;</source>
-        <translation type="unfinished"></translation>
+If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
+        <translation>Os dados de seção transversal são gerados usando dados de nuvem de pontos. Se você quiser ajustar a posição da seção transversal e mapear os dados da nuvem de pontos novamente, você pode usar "Mapear dados da nuvem de pontos"</translation>
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
 In some region, data did not exists in point cloud data, and value 0 was mapped for those points.
-If you want to adjust cross section position and map point cloud data again, you can use &quot;Map point cloud data&quot;</source>
-        <translation type="unfinished"></translation>
+If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
+        <translation>Os dados de seção transversal são gerados usando dados de nuvem de pontos. Em algumas regiões, os dados não existiam nos dados da nuvem de pontos e o valor 0 foi mapeado para esses pontos. Se você quiser ajustar a posição da seção transversal e mapear os dados da nuvem de pontos novamente, você pode usar "Mapear dados da nuvem de pontos"</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurvey::Impl</name>
     <message>
         <source>  </source>
-        <translation></translation>
+        <translation />
     </message>
     <message>
         <source>&amp;Cross-Section Data</source>
@@ -615,8 +613,8 @@ If you want to adjust cross section position and map point cloud data again, you
         <translation>As configurações de elevação e gradiente são inválidas.</translation>
     </message>
     <message>
-        <source>When you specify elevation of end point, it can not be same to the start point. If you want to draw horizontal line, please select &quot;Specify horizontal distance&quot;.</source>
-        <translation>Quando você especifica a elevação do ponto final, não pode ser igual ao ponto inicial. Se você deseja desenhar uma linha horizontal, selecione &quot;Especificar distância horizontal&quot;.</translation>
+        <source>When you specify elevation of end point, it can not be same to the start point. If you want to draw horizontal line, please select "Specify horizontal distance".</source>
+        <translation>Quando você especifica a elevação do ponto final, não pode ser igual ao ponto inicial. Se você deseja desenhar uma linha horizontal, selecione "Especificar distância horizontal".</translation>
     </message>
 </context>
 <context>
@@ -799,7 +797,7 @@ If you want to adjust cross section position and map point cloud data again, you
     </message>
     <message>
         <source>Aspect ratio (V/H): 1 / </source>
-        <translation type="unfinished"></translation>
+        <translation>Proporção de aspecto (V/H): 1 /</translation>
     </message>
 </context>
 <context>
@@ -846,8 +844,8 @@ If you want to adjust cross section position and map point cloud data again, you
     </message>
     <message>
         <source>Edit the cross section by mouse-clicking. Finish editing by double clicking, or pressing return key.
-You can precisely edit the cross section by inputting values from dialog. Please enter dialog edit mode from &quot;Edit from Dialog&quot; in the right-clicking menu.</source>
-        <translation>Edite a seção transversal clicando com o mouse. Conclua a edição clicando duas vezes ou pressionando a tecla Enter. Você pode editar com precisão a seção transversal inserindo valores da caixa de diálogo. Entre no modo de edição da caixa de diálogo em &quot;Editar da caixa de diálogo&quot; no menu do botão direito.</translation>
+You can precisely edit the cross section by inputting values from dialog. Please enter dialog edit mode from "Edit from Dialog" in the right-clicking menu.</source>
+        <translation>Edite a seção transversal clicando com o mouse. Conclua a edição clicando duas vezes ou pressionando a tecla Enter. Você pode editar com precisão a seção transversal inserindo valores da caixa de diálogo. Entre no modo de edição da caixa de diálogo em "Editar da caixa de diálogo" no menu do botão direito.</translation>
     </message>
     <message>
         <source>Altitude Points Move</source>
@@ -859,7 +857,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Aspect ratio (V/H): 1 / %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Proporção de aspecto (V/H): 1 / %1</translation>
     </message>
 </context>
 <context>
@@ -1035,40 +1033,40 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>Erro</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: LX value is invalid</source>
-        <translation>%1 linha %2 &quot;%3&quot;: O valor LX é inválido</translation>
+        <source>%1 line %2 "%3": LX value is invalid</source>
+        <translation>%1 linha %2 "%3": O valor LX é inválido</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: LY value is invalid</source>
-        <translation>%1 linha %2 &quot;%3&quot;: O valor LY é inválido</translation>
+        <source>%1 line %2 "%3": LY value is invalid</source>
+        <translation>%1 linha %2 "%3": O valor LY é inválido</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: RX value is invalid</source>
-        <translation>%1 linha %2 &quot;%3&quot;: O valor RX é inválido</translation>
+        <source>%1 line %2 "%3": RX value is invalid</source>
+        <translation>%1 linha %2 "%3": O valor RX é inválido</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: RY value is invalid</source>
-        <translation>%1 linha %2 &quot;%3&quot;: O valor RY é inválido</translation>
+        <source>%1 line %2 "%3": RY value is invalid</source>
+        <translation>%1 linha %2 "%3": O valor RY é inválido</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Point count is invalid</source>
-        <translation>%1 linha %2 &quot;%3&quot;: A contagem de pontos é inválida</translation>
+        <source>%1 line %2 "%3": Point count is invalid</source>
+        <translation>%1 linha %2 "%3": A contagem de pontos é inválida</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Invalid index value</source>
-        <translation>%1 linha %2 &quot;%3&quot;: Valor de índice inválido</translation>
+        <source>%1 line %2 "%3": Invalid index value</source>
+        <translation>%1 linha %2 "%3": Valor de índice inválido</translation>
     </message>
     <message>
         <source>%1 line %2: cross section data for %3 not enough</source>
         <translation>%1 linha %2 : dados de seção transversal para %3 insuficiente</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Distance value is invalid</source>
-        <translation>%1 linha %2 &quot;%3&quot;: O valor da distância é inválido</translation>
+        <source>%1 line %2 "%3": Distance value is invalid</source>
+        <translation>%1 linha %2 "%3": O valor da distância é inválido</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Elevation value is invalid</source>
-        <translation>%1 linha %2 &quot;%3&quot;: O valor de elevação é inválido</translation>
+        <source>%1 line %2 "%3": Elevation value is invalid</source>
+        <translation>%1 linha %2 "%3": O valor de elevação é inválido</translation>
     </message>
     <message>
         <source>#survey data is not found. Will be ignored.</source>
@@ -1107,8 +1105,8 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>%1 Linha %2 : Erro de leitura. Precisa de pelo menos dois valores.</translation>
     </message>
     <message>
-        <source>%1 Line %2: Read error. Not real number value &quot;%3&quot;.</source>
-        <translation>%1 Linha %2 : Erro de leitura. Valor de número não real &quot;%3&quot;</translation>
+        <source>%1 Line %2: Read error. Not real number value "%3".</source>
+        <translation>%1 Linha %2 : Erro de leitura. Valor de número não real "%3"</translation>
     </message>
     <message>
         <source>Cross section %1 does not cross the center line. Center point is set to be the middle point of low water way.</source>
@@ -1234,36 +1232,36 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>%1 Linha %2 : KP não é entrada</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: LX value is invalid</source>
-        <translation>%1 Linha %2 &quot;%3&quot;: O valor LX é inválido</translation>
+        <source>%1 Line %2 "%3": LX value is invalid</source>
+        <translation>%1 Linha %2 "%3": O valor LX é inválido</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: LY value is invalid</source>
-        <translation>%1 Linha %2 &quot;%3&quot;: O valor LY é inválido</translation>
+        <source>%1 Line %2 "%3": LY value is invalid</source>
+        <translation>%1 Linha %2 "%3": O valor LY é inválido</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: RX value is invalid</source>
-        <translation>%1 Linha %2 &quot;%3&quot;: O valor RX é inválido</translation>
+        <source>%1 Line %2 "%3": RX value is invalid</source>
+        <translation>%1 Linha %2 "%3": O valor RX é inválido</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: RY value is invalid</source>
-        <translation>%1 Linha %2 &quot;%3&quot;: O valor RY é inválido</translation>
+        <source>%1 Line %2 "%3": RY value is invalid</source>
+        <translation>%1 Linha %2 "%3": O valor RY é inválido</translation>
     </message>
     <message>
         <source>Distance marker data is not found. Will be ignored.</source>
         <translation>Os dados do marcador de distância não foram encontrados. Será ignorado.</translation>
     </message>
     <message>
-        <source>%1 line %2: &quot;%3&quot;: Flag data is invalid.</source>
-        <translation>%1 linha %2 : &quot;%3&quot;: Os dados da bandeira são inválidos.</translation>
+        <source>%1 line %2: "%3": Flag data is invalid.</source>
+        <translation>%1 linha %2 : "%3": Os dados da bandeira são inválidos.</translation>
     </message>
     <message>
-        <source>%1 line %2: &quot;%3&quot;: Distance data is invalid.</source>
-        <translation>%1 linha %2 : &quot;%3&quot;: Os dados de distância são inválidos.</translation>
+        <source>%1 line %2: "%3": Distance data is invalid.</source>
+        <translation>%1 linha %2 : "%3": Os dados de distância são inválidos.</translation>
     </message>
     <message>
-        <source>%1 line %2: &quot;%3&quot;: Elevation data is invalid.</source>
-        <translation>%1 linha %2 : &quot;%3&quot;: Os dados de elevação são inválidos.</translation>
+        <source>%1 line %2: "%3": Elevation data is invalid.</source>
+        <translation>%1 linha %2 : "%3": Os dados de elevação são inválidos.</translation>
     </message>
     <message>
         <source>Select folder where cross section data exists</source>
