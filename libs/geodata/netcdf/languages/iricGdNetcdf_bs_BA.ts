@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="bs_BA">
 <context>
     <name>GeoDataNetcdf</name>
@@ -82,8 +84,8 @@
         <translation>Prepoznajte rezultat:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please use the following letters to define pattern:&lt;/p&gt;&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;"&gt;&lt;li style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Year: YYYY&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Month: MM&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Day: DD&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Hour: hh&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Minute: mm&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Second: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Molimo vas da koristite sljedeća slova za definiranje uzorka: &lt;/p&gt; &lt;ul style = "margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin -desno: 0px; -qt-list-indent: 1; "&gt; &lt;li style =" margin-top: 12px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block- indent: 0; text-indent: 0px; "&gt; Godina: YYYY &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt -block-indent: 0; text-indent: 0px; "&gt; Mjesec: MM &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px ; -qt-block-indent: 0; text-indent: 0px; "&gt; Dan: DD &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin- desno: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Sat: hh &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px ; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Minuta: mm &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 12px; margin- lijevo: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Drugo: ss &lt;/li&gt; &lt;/ul&gt; &lt;/body &gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please use the following letters to define pattern:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Year: YYYY&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Month: MM&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Day: DD&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Hour: hh&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Minute: mm&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Second: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Molimo vas da koristite sljedeća slova za definiranje uzorka: &lt;/p&gt; &lt;ul style = &quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin -desno: 0px; -qt-list-indent: 1; &quot;&gt; &lt;li style =&quot; margin-top: 12px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block- indent: 0; text-indent: 0px; &quot;&gt; Godina: YYYY &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt -block-indent: 0; text-indent: 0px; &quot;&gt; Mjesec: MM &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px ; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Dan: DD &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin- desno: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Sat: hh &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px ; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Minuta: mm &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 12px; margin- lijevo: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Drugo: ss &lt;/li&gt; &lt;/ul&gt; &lt;/body &gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>File name does not match the pattern</source>
@@ -105,8 +107,8 @@
         <translation>Ovi se podaci ne mogu izvesti. Čini se da nije uvezen iz *.tif ili *.asc.</translation>
     </message>
     <message>
-        <source>This data cannot be exported. Data with "Time" dimension cannot be exported to *.tif or *.asc.</source>
-        <translation>Ovi se podaci ne mogu izvesti. Podaci s dimenzijom "Vrijeme" ne mogu se izvesti u *.tif ili *.asc.</translation>
+        <source>This data cannot be exported. Data with &quot;Time&quot; dimension cannot be exported to *.tif or *.asc.</source>
+        <translation>Ovi se podaci ne mogu izvesti. Podaci s dimenzijom &quot;Vrijeme&quot; ne mogu se izvesti u *.tif ili *.asc.</translation>
     </message>
     <message>
         <source>ArcInfo ASCII files(*.asc)</source>
@@ -149,11 +151,15 @@
     </message>
     <message>
         <source>Dimension values for time mismatch.</source>
-        <translation>Vrijednosti dimenzija za neslaganje vremena.</translation>
+        <translation type="vanished">Vrijednosti dimenzija za neslaganje vremena.</translation>
     </message>
     <message>
         <source>Coordinate system is not specified for %1. Please select coordinate system manually.</source>
         <translation>Koordinatni sistem nije naveden za %1. Molimo vas da ručno odaberete koordinatni sistem.</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -171,8 +177,8 @@
         <translation>Ovi se podaci ne mogu izvesti. Izgleda da nije uvezen iz *.png.</translation>
     </message>
     <message>
-        <source>This data cannot be exported. Data with "Time" dimension cannot be exported to *.png</source>
-        <translation>Ovi se podaci ne mogu izvesti. Podaci s dimenzijom "Vrijeme" ne mogu se izvesti u *.png</translation>
+        <source>This data cannot be exported. Data with &quot;Time&quot; dimension cannot be exported to *.png</source>
+        <translation>Ovi se podaci ne mogu izvesti. Podaci s dimenzijom &quot;Vrijeme&quot; ne mogu se izvesti u *.png</translation>
     </message>
     <message>
         <source>Error occured while opening %1</source>
@@ -250,7 +256,7 @@
     </message>
     <message>
         <source>Dimension values for %1 mismatch.</source>
-        <translation>Vrijednosti dimenzija za %1 neusklađenost.</translation>
+        <translation type="vanished">Vrijednosti dimenzija za %1 neusklađenost.</translation>
     </message>
     <message>
         <source>Error occured while parsing time definition: %1</source>
@@ -259,6 +265,10 @@
     <message>
         <source>%1 does not have longitude, latitude nor x, y data.</source>
         <translation>%1 nema podatke o zemljopisnoj dužini, širini niti x, y.</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -356,8 +366,8 @@
         <translation>Upozorenje</translation>
     </message>
     <message>
-        <source>X band MP rader data can be imported for grid conditions with dimension "Time".</source>
-        <translation>Podaci o raderu X opsega MP mogu se uvesti za mrežne uvjete s dimenzijom "Vrijeme".</translation>
+        <source>X band MP rader data can be imported for grid conditions with dimension &quot;Time&quot;.</source>
+        <translation>Podaci o raderu X opsega MP mogu se uvesti za mrežne uvjete s dimenzijom &quot;Vrijeme&quot;.</translation>
     </message>
     <message>
         <source>Information</source>
@@ -373,7 +383,11 @@
     </message>
     <message>
         <source>Dimension values for time mismatch.</source>
-        <translation>Vrijednosti dimenzija za neslaganje vremena.</translation>
+        <translation type="vanished">Vrijednosti dimenzija za neslaganje vremena.</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

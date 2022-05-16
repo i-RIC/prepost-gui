@@ -154,6 +154,13 @@ bool GeoDataNetcdfGdalImporter::doInitForSingleMode(const QString& filename, con
 
 bool GeoDataNetcdfGdalImporter::doInitForTimeMode(const QString& filename, const QString& /*selectedFilter*/, int* count, SolverDefinitionGridAttribute* /*condition*/, PreProcessorGeoDataGroupDataItemInterface* item, QWidget* w)
 {
+
+	auto timeContainer = dynamic_cast<GridAttributeDimensionRealContainer*> (item->dimensions()->containers().at(0));
+	if (timeContainer->values().size() != 0) {
+		QMessageBox::critical(w, tr("Error"), tr("Time series raster data is already imported. If you want to import other data, please delete the data already imported first."));
+		return false;
+	}
+
 	auto dataset = (GDALDataset*)(GDALOpen(iRIC::toStr(filename).c_str(), GA_ReadOnly));
 	if (dataset == NULL) {
 		// failed opening.
@@ -185,16 +192,8 @@ bool GeoDataNetcdfGdalImporter::doInitForTimeMode(const QString& filename, const
 		QDateTime dt = m_matcher->getDateTime(finfo.fileName(), &ok);
 		timeVals.push_back(dt.toMSecsSinceEpoch() / 1000.0);
 	}
-	auto timeContainer = dynamic_cast<GridAttributeDimensionRealContainer*> (item->dimensions()->containers().at(0));
-	if (timeContainer->values().size() != 0) {
-		// the time values should coincide
-		if (timeContainer->values() != timeVals) {
-			QMessageBox::critical(w, tr("Error"), tr("Dimension values for time mismatch."));
-			return false;
-		}
-	} else {
-		timeContainer->setValues(timeVals);
-	}
+
+	timeContainer->setValues(timeVals);
 
 	return true;
 }

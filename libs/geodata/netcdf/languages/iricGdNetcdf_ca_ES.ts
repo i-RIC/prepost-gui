@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ca_ES">
 <context>
     <name>GeoDataNetcdf</name>
@@ -7,7 +9,7 @@
     </message>
     <message>
         <source>Error occured while opening %1.</source>
-        <translation>S'ha produït un error en obrir-se %1.</translation>
+        <translation>S&apos;ha produït un error en obrir-se %1.</translation>
     </message>
     <message>
         <source>Color setting edit</source>
@@ -63,11 +65,11 @@
     </message>
     <message>
         <source>Please specify the filename pattern to recognize date and time.</source>
-        <translation>Especifiqueu el patró del nom del fitxer per reconèixer la data i l'hora.</translation>
+        <translation>Especifiqueu el patró del nom del fitxer per reconèixer la data i l&apos;hora.</translation>
     </message>
     <message>
         <source>File name:</source>
-        <translation>Nom de l'arxiu:</translation>
+        <translation>Nom de l&apos;arxiu:</translation>
     </message>
     <message>
         <source>Pattern:</source>
@@ -82,8 +84,8 @@
         <translation>Reconeix el resultat:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please use the following letters to define pattern:&lt;/p&gt;&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;"&gt;&lt;li style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Year: YYYY&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Month: MM&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Day: DD&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Hour: hh&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Minute: mm&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Second: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Utilitzeu les lletres següents per definir el patró: &lt;/p&gt; &lt;ul style = "margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin -right: 0px; -qt-list-indent: 1; "&gt; &lt;li style =" margin-top: 12px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block- sagnat: 0; text-sagnat: 0px; "&gt; Any: AAAA &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt -block-indent: 0; text-indent: 0px; "&gt; Mes: MM &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px ; -qt-block-indent: 0; text-indent: 0px; "&gt; Dia: DD &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin- dreta: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Hora: hh &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px ; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Minut: mm &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 12px; margin- left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Segon: ss &lt;/li&gt; &lt;/ul&gt; &lt;/ body &gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please use the following letters to define pattern:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Year: YYYY&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Month: MM&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Day: DD&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Hour: hh&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Minute: mm&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Second: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Utilitzeu les lletres següents per definir el patró: &lt;/p&gt; &lt;ul style = &quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin -right: 0px; -qt-list-indent: 1; &quot;&gt; &lt;li style =&quot; margin-top: 12px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block- sagnat: 0; text-sagnat: 0px; &quot;&gt; Any: AAAA &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt -block-indent: 0; text-indent: 0px; &quot;&gt; Mes: MM &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px ; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Dia: DD &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin- dreta: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Hora: hh &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px ; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Minut: mm &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 12px; margin- left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Segon: ss &lt;/li&gt; &lt;/ul&gt; &lt;/ body &gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>File name does not match the pattern</source>
@@ -105,8 +107,8 @@
         <translation>Aquestes dades no es poden exportar. Sembla que no es va importar de *.tif o *.asc.</translation>
     </message>
     <message>
-        <source>This data cannot be exported. Data with "Time" dimension cannot be exported to *.tif or *.asc.</source>
-        <translation>Aquestes dades no es poden exportar. Les dades amb la dimensió "Temps" no es poden exportar a *.tif o *.asc.</translation>
+        <source>This data cannot be exported. Data with &quot;Time&quot; dimension cannot be exported to *.tif or *.asc.</source>
+        <translation>Aquestes dades no es poden exportar. Les dades amb la dimensió &quot;Temps&quot; no es poden exportar a *.tif o *.asc.</translation>
     </message>
     <message>
         <source>ArcInfo ASCII files(*.asc)</source>
@@ -121,7 +123,7 @@
     <name>GeoDataNetcdfGdalImporter</name>
     <message>
         <source>Importing data...</source>
-        <translation>S'estan important dades...</translation>
+        <translation>S&apos;estan important dades...</translation>
     </message>
     <message>
         <source>GDAL</source>
@@ -149,11 +151,15 @@
     </message>
     <message>
         <source>Dimension values for time mismatch.</source>
-        <translation>Valors de dimensió per desajustament de temps.</translation>
+        <translation type="vanished">Valors de dimensió per desajustament de temps.</translation>
     </message>
     <message>
         <source>Coordinate system is not specified for %1. Please select coordinate system manually.</source>
         <translation>El sistema de coordenades no està especificat per a %1. Seleccioneu el sistema de coordenades manualment.</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -171,16 +177,16 @@
         <translation>Aquestes dades no es poden exportar. Sembla que no es va importar de *.png.</translation>
     </message>
     <message>
-        <source>This data cannot be exported. Data with "Time" dimension cannot be exported to *.png</source>
-        <translation>Aquestes dades no es poden exportar. Les dades amb la dimensió "Temps" no es poden exportar a *.png</translation>
+        <source>This data cannot be exported. Data with &quot;Time&quot; dimension cannot be exported to *.png</source>
+        <translation>Aquestes dades no es poden exportar. Les dades amb la dimensió &quot;Temps&quot; no es poden exportar a *.png</translation>
     </message>
     <message>
         <source>Error occured while opening %1</source>
-        <translation>S'ha produït un error en obrir-se %1</translation>
+        <translation>S&apos;ha produït un error en obrir-se %1</translation>
     </message>
     <message>
         <source>Error occured while initializing libpng.</source>
-        <translation>S'ha produït un error en inicialitzar libpng.</translation>
+        <translation>S&apos;ha produït un error en inicialitzar libpng.</translation>
     </message>
 </context>
 <context>
@@ -207,11 +213,11 @@
     </message>
     <message>
         <source>Error occured while opening %1</source>
-        <translation>S'ha produït un error en obrir-se %1</translation>
+        <translation>S&apos;ha produït un error en obrir-se %1</translation>
     </message>
     <message>
         <source>Error occured while opening %1. It seems not to be a PNG file.</source>
-        <translation>S'ha produït un error en obrir-se %1. Sembla que no és un fitxer PNG.</translation>
+        <translation>S&apos;ha produït un error en obrir-se %1. Sembla que no és un fitxer PNG.</translation>
     </message>
     <message>
         <source>%1 is not a 16bit grayscale image.</source>
@@ -223,11 +229,11 @@
     </message>
     <message>
         <source>Error occured while reading %1. It is not a valid world file.</source>
-        <translation>S'ha produït un error en llegir %1. No és un fitxer mundial vàlid.</translation>
+        <translation>S&apos;ha produït un error en llegir %1. No és un fitxer mundial vàlid.</translation>
     </message>
     <message>
         <source>Error occured while parsing %1.</source>
-        <translation>S'ha produït un error en analitzar %1.</translation>
+        <translation>S&apos;ha produït un error en analitzar %1.</translation>
     </message>
 </context>
 <context>
@@ -250,15 +256,19 @@
     </message>
     <message>
         <source>Dimension values for %1 mismatch.</source>
-        <translation>Valors de dimensió per a %1 desajustament.</translation>
+        <translation type="vanished">Valors de dimensió per a %1 desajustament.</translation>
     </message>
     <message>
         <source>Error occured while parsing time definition: %1</source>
-        <translation>S'ha produït un error en analitzar la definició del temps: %1</translation>
+        <translation>S&apos;ha produït un error en analitzar la definició del temps: %1</translation>
     </message>
     <message>
         <source>%1 does not have longitude, latitude nor x, y data.</source>
         <translation>%1 no té dades de longitud, latitud ni x, y.</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -269,7 +279,7 @@
     </message>
     <message>
         <source>Automatic recognition of original time failed. Please specify the original date.</source>
-        <translation>Ha fallat el reconeixement automàtic de l'hora original. Especifiqueu la data original.</translation>
+        <translation>Ha fallat el reconeixement automàtic de l&apos;hora original. Especifiqueu la data original.</translation>
     </message>
     <message>
         <source>Units:</source>
@@ -356,8 +366,8 @@
         <translation>Advertiment</translation>
     </message>
     <message>
-        <source>X band MP rader data can be imported for grid conditions with dimension "Time".</source>
-        <translation>Les dades del rader MP de banda X es poden importar per a condicions de quadrícula amb la dimensió "Temps".</translation>
+        <source>X band MP rader data can be imported for grid conditions with dimension &quot;Time&quot;.</source>
+        <translation>Les dades del rader MP de banda X es poden importar per a condicions de quadrícula amb la dimensió &quot;Temps&quot;.</translation>
     </message>
     <message>
         <source>Information</source>
@@ -373,7 +383,11 @@
     </message>
     <message>
         <source>Dimension values for time mismatch.</source>
-        <translation>Valors de dimensió per desajustament de temps.</translation>
+        <translation type="vanished">Valors de dimensió per desajustament de temps.</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>
