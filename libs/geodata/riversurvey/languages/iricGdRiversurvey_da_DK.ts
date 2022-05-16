@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="da_DK">
 <context>
     <name>GeoDataRiverCrosssectionAltitudeMoveDialog</name>
@@ -379,8 +381,8 @@
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
-If you want to adjust cross section position and map point clouod data again, you can use "Map point cloud data"</source>
-        <translation>Tværsnitsdata genereres ved hjælp af punktsky-data. Hvis du vil justere tværsnitsposition og kortpunktsdata igen, kan du bruge "Map point cloud data"</translation>
+If you want to adjust cross section position and map point clouod data again, you can use &quot;Map point cloud data&quot;</source>
+        <translation type="vanished">Tværsnitsdata genereres ved hjælp af punktsky-data. Hvis du vil justere tværsnitsposition og kortpunktsdata igen, kan du bruge &quot;Map point cloud data&quot;</translation>
     </message>
     <message>
         <source>Map point cloud data</source>
@@ -390,12 +392,23 @@ If you want to adjust cross section position and map point clouod data again, yo
         <source>Generate point cloud data</source>
         <translation>Generer point cloud -data</translation>
     </message>
+    <message>
+        <source>Cross-section data is generated using point cloud data.
+If you want to adjust cross section position and map point cloud data again, you can use &quot;Map point cloud data&quot;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cross-section data is generated using point cloud data.
+In some region, data did not exists in point cloud data, and value 0 was mapped for those points.
+If you want to adjust cross section position and map point cloud data again, you can use &quot;Map point cloud data&quot;</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeoDataRiverSurvey::Impl</name>
     <message>
         <source>  </source>
-        <translation />
+        <translation></translation>
     </message>
     <message>
         <source>&amp;Cross-Section Data</source>
@@ -602,8 +615,8 @@ If you want to adjust cross section position and map point clouod data again, yo
         <translation>Indstillingerne for højde og gradient er ugyldige.</translation>
     </message>
     <message>
-        <source>When you specify elevation of end point, it can not be same to the start point. If you want to draw horizontal line, please select "Specify horizontal distance".</source>
-        <translation>Når du angiver højde for slutpunkt, kan det ikke være det samme som startpunktet. Hvis du vil tegne vandret linje, skal du vælge "Angiv vandret afstand".</translation>
+        <source>When you specify elevation of end point, it can not be same to the start point. If you want to draw horizontal line, please select &quot;Specify horizontal distance&quot;.</source>
+        <translation>Når du angiver højde for slutpunkt, kan det ikke være det samme som startpunktet. Hvis du vil tegne vandret linje, skal du vælge &quot;Angiv vandret afstand&quot;.</translation>
     </message>
 </context>
 <context>
@@ -666,7 +679,7 @@ If you want to adjust cross section position and map point clouod data again, yo
     </message>
     <message>
         <source>Aspect ratio: 1 / </source>
-        <translation>Billedformat: 1 /</translation>
+        <translation type="vanished">Billedformat: 1 /</translation>
     </message>
     <message>
         <source>Fix aspect ratio</source>
@@ -784,6 +797,10 @@ If you want to adjust cross section position and map point clouod data again, yo
         <source>Cross-Section Data</source>
         <translation>Tværsnitsdata</translation>
     </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / </source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyCrosssectionWindowGraphicsView</name>
@@ -813,7 +830,7 @@ If you want to adjust cross section position and map point clouod data again, yo
     </message>
     <message>
         <source>Aspect ratio: 1 / %1</source>
-        <translation>Billedformat: 1 / %1</translation>
+        <translation type="vanished">Billedformat: 1 / %1</translation>
     </message>
     <message>
         <source>Inactivate Elevation Points</source>
@@ -829,8 +846,8 @@ If you want to adjust cross section position and map point clouod data again, yo
     </message>
     <message>
         <source>Edit the cross section by mouse-clicking. Finish editing by double clicking, or pressing return key.
-You can precisely edit the cross section by inputting values from dialog. Please enter dialog edit mode from "Edit from Dialog" in the right-clicking menu.</source>
-        <translation>Rediger tværsnittet ved at klikke med musen. Afslut redigeringen ved at dobbeltklikke eller trykke på retur -tasten. Du kan præcist redigere tværsnittet ved at indtaste værdier fra dialogboksen. Indtast venligst dialogboksen til redigering fra "Rediger fra dialog" i højreklikmenuen.</translation>
+You can precisely edit the cross section by inputting values from dialog. Please enter dialog edit mode from &quot;Edit from Dialog&quot; in the right-clicking menu.</source>
+        <translation>Rediger tværsnittet ved at klikke med musen. Afslut redigeringen ved at dobbeltklikke eller trykke på retur -tasten. Du kan præcist redigere tværsnittet ved at indtaste værdier fra dialogboksen. Indtast venligst dialogboksen til redigering fra &quot;Rediger fra dialog&quot; i højreklikmenuen.</translation>
     </message>
     <message>
         <source>Altitude Points Move</source>
@@ -839,6 +856,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>Edit Display Setting</source>
         <translation>Rediger skærmindstilling</translation>
+    </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / %1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1014,40 +1035,40 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>Fejl</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": LX value is invalid</source>
-        <translation>%1 linje %2 "%3": LX -værdien er ugyldig</translation>
+        <source>%1 line %2 &quot;%3&quot;: LX value is invalid</source>
+        <translation>%1 linje %2 &quot;%3&quot;: LX -værdien er ugyldig</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": LY value is invalid</source>
-        <translation>%1 linje %2 "%3": LY -værdien er ugyldig</translation>
+        <source>%1 line %2 &quot;%3&quot;: LY value is invalid</source>
+        <translation>%1 linje %2 &quot;%3&quot;: LY -værdien er ugyldig</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": RX value is invalid</source>
-        <translation>%1 linje %2 "%3": RX -værdien er ugyldig</translation>
+        <source>%1 line %2 &quot;%3&quot;: RX value is invalid</source>
+        <translation>%1 linje %2 &quot;%3&quot;: RX -værdien er ugyldig</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": RY value is invalid</source>
-        <translation>%1 linje %2 "%3": RY -værdien er ugyldig</translation>
+        <source>%1 line %2 &quot;%3&quot;: RY value is invalid</source>
+        <translation>%1 linje %2 &quot;%3&quot;: RY -værdien er ugyldig</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": Point count is invalid</source>
-        <translation>%1 linje %2 "%3": Punkterne er ugyldige</translation>
+        <source>%1 line %2 &quot;%3&quot;: Point count is invalid</source>
+        <translation>%1 linje %2 &quot;%3&quot;: Punkterne er ugyldige</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": Invalid index value</source>
-        <translation>%1 linje %2 "%3": Ugyldig indeksværdi</translation>
+        <source>%1 line %2 &quot;%3&quot;: Invalid index value</source>
+        <translation>%1 linje %2 &quot;%3&quot;: Ugyldig indeksværdi</translation>
     </message>
     <message>
         <source>%1 line %2: cross section data for %3 not enough</source>
         <translation>%1 linje %2 : tværsnitsdata for %3 ikke nok</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": Distance value is invalid</source>
-        <translation>%1 linje %2 "%3": Afstandsværdien er ugyldig</translation>
+        <source>%1 line %2 &quot;%3&quot;: Distance value is invalid</source>
+        <translation>%1 linje %2 &quot;%3&quot;: Afstandsværdien er ugyldig</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": Elevation value is invalid</source>
-        <translation>%1 linje %2 "%3": Højdeværdien er ugyldig</translation>
+        <source>%1 line %2 &quot;%3&quot;: Elevation value is invalid</source>
+        <translation>%1 linje %2 &quot;%3&quot;: Højdeværdien er ugyldig</translation>
     </message>
     <message>
         <source>#survey data is not found. Will be ignored.</source>
@@ -1086,8 +1107,8 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>%1 Line %2 : Læsefejl. Kræver mindst to værdier.</translation>
     </message>
     <message>
-        <source>%1 Line %2: Read error. Not real number value "%3".</source>
-        <translation>%1 Line %2 : Læsefejl. Ikke reel talværdi "%3".</translation>
+        <source>%1 Line %2: Read error. Not real number value &quot;%3&quot;.</source>
+        <translation>%1 Line %2 : Læsefejl. Ikke reel talværdi &quot;%3&quot;.</translation>
     </message>
     <message>
         <source>Cross section %1 does not cross the center line. Center point is set to be the middle point of low water way.</source>
@@ -1213,36 +1234,36 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>%1 Line %2 : KP er ikke input</translation>
     </message>
     <message>
-        <source>%1 Line %2 "%3": LX value is invalid</source>
-        <translation>%1 Line %2 "%3": LX -værdien er ugyldig</translation>
+        <source>%1 Line %2 &quot;%3&quot;: LX value is invalid</source>
+        <translation>%1 Line %2 &quot;%3&quot;: LX -værdien er ugyldig</translation>
     </message>
     <message>
-        <source>%1 Line %2 "%3": LY value is invalid</source>
-        <translation>%1 Line %2 "%3": LY -værdien er ugyldig</translation>
+        <source>%1 Line %2 &quot;%3&quot;: LY value is invalid</source>
+        <translation>%1 Line %2 &quot;%3&quot;: LY -værdien er ugyldig</translation>
     </message>
     <message>
-        <source>%1 Line %2 "%3": RX value is invalid</source>
-        <translation>%1 Line %2 "%3": RX -værdien er ugyldig</translation>
+        <source>%1 Line %2 &quot;%3&quot;: RX value is invalid</source>
+        <translation>%1 Line %2 &quot;%3&quot;: RX -værdien er ugyldig</translation>
     </message>
     <message>
-        <source>%1 Line %2 "%3": RY value is invalid</source>
-        <translation>%1 Line %2 "%3": RY -værdien er ugyldig</translation>
+        <source>%1 Line %2 &quot;%3&quot;: RY value is invalid</source>
+        <translation>%1 Line %2 &quot;%3&quot;: RY -værdien er ugyldig</translation>
     </message>
     <message>
         <source>Distance marker data is not found. Will be ignored.</source>
         <translation>Afstandsmarkørdata blev ikke fundet. Bliver ignoreret.</translation>
     </message>
     <message>
-        <source>%1 line %2: "%3": Flag data is invalid.</source>
-        <translation>%1 linje %2 : "%3": Flagdata er ugyldige.</translation>
+        <source>%1 line %2: &quot;%3&quot;: Flag data is invalid.</source>
+        <translation>%1 linje %2 : &quot;%3&quot;: Flagdata er ugyldige.</translation>
     </message>
     <message>
-        <source>%1 line %2: "%3": Distance data is invalid.</source>
-        <translation>%1 linje %2 : "%3": Afstandsdata er ugyldige.</translation>
+        <source>%1 line %2: &quot;%3&quot;: Distance data is invalid.</source>
+        <translation>%1 linje %2 : &quot;%3&quot;: Afstandsdata er ugyldige.</translation>
     </message>
     <message>
-        <source>%1 line %2: "%3": Elevation data is invalid.</source>
-        <translation>%1 linje %2 : "%3": Højde data er ugyldige.</translation>
+        <source>%1 line %2: &quot;%3&quot;: Elevation data is invalid.</source>
+        <translation>%1 linje %2 : &quot;%3&quot;: Højde data er ugyldige.</translation>
     </message>
     <message>
         <source>Select folder where cross section data exists</source>

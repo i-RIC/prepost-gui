@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="uk_UA">
 <context>
     <name>GeoDataRiverCrosssectionAltitudeMoveDialog</name>
@@ -84,7 +86,7 @@
     </message>
     <message>
         <source>Name:</source>
-        <translation>Ім'я:</translation>
+        <translation>Ім&apos;я:</translation>
     </message>
     <message>
         <source>River Center Point Coordinates</source>
@@ -379,8 +381,8 @@
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
-If you want to adjust cross section position and map point clouod data again, you can use "Map point cloud data"</source>
-        <translation>Дані поперечного перерізу генеруються за допомогою даних хмари точок. Якщо ви хочете знову налаштувати положення поперечного перерізу та дані хмарності точок карти, можна скористатися "Даними хмарних точок карти"</translation>
+If you want to adjust cross section position and map point clouod data again, you can use &quot;Map point cloud data&quot;</source>
+        <translation type="vanished">Дані поперечного перерізу генеруються за допомогою даних хмари точок. Якщо ви хочете знову налаштувати положення поперечного перерізу та дані хмарності точок карти, можна скористатися &quot;Даними хмарних точок карти&quot;</translation>
     </message>
     <message>
         <source>Map point cloud data</source>
@@ -390,12 +392,23 @@ If you want to adjust cross section position and map point clouod data again, yo
         <source>Generate point cloud data</source>
         <translation>Створення даних хмари точок</translation>
     </message>
+    <message>
+        <source>Cross-section data is generated using point cloud data.
+If you want to adjust cross section position and map point cloud data again, you can use &quot;Map point cloud data&quot;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cross-section data is generated using point cloud data.
+In some region, data did not exists in point cloud data, and value 0 was mapped for those points.
+If you want to adjust cross section position and map point cloud data again, you can use &quot;Map point cloud data&quot;</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeoDataRiverSurvey::Impl</name>
     <message>
         <source>  </source>
-        <translation />
+        <translation></translation>
     </message>
     <message>
         <source>&amp;Cross-Section Data</source>
@@ -602,8 +615,8 @@ If you want to adjust cross section position and map point clouod data again, yo
         <translation>Налаштування висоти та нахилу недійсні.</translation>
     </message>
     <message>
-        <source>When you specify elevation of end point, it can not be same to the start point. If you want to draw horizontal line, please select "Specify horizontal distance".</source>
-        <translation>Коли ви вказуєте висоту кінцевої точки, вона не може бути однаковою з початковою точкою. Якщо ви хочете провести горизонтальну лінію, будь ласка, виберіть "Вказати горизонтальну відстань".</translation>
+        <source>When you specify elevation of end point, it can not be same to the start point. If you want to draw horizontal line, please select &quot;Specify horizontal distance&quot;.</source>
+        <translation>Коли ви вказуєте висоту кінцевої точки, вона не може бути однаковою з початковою точкою. Якщо ви хочете провести горизонтальну лінію, будь ласка, виберіть &quot;Вказати горизонтальну відстань&quot;.</translation>
     </message>
 </context>
 <context>
@@ -666,7 +679,7 @@ If you want to adjust cross section position and map point clouod data again, yo
     </message>
     <message>
         <source>Aspect ratio: 1 / </source>
-        <translation>Співвідношення сторін: 1 /</translation>
+        <translation type="vanished">Співвідношення сторін: 1 /</translation>
     </message>
     <message>
         <source>Fix aspect ratio</source>
@@ -784,6 +797,10 @@ If you want to adjust cross section position and map point clouod data again, yo
         <source>Cross-Section Data</source>
         <translation>Поперечні дані</translation>
     </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / </source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyCrosssectionWindowGraphicsView</name>
@@ -813,7 +830,7 @@ If you want to adjust cross section position and map point clouod data again, yo
     </message>
     <message>
         <source>Aspect ratio: 1 / %1</source>
-        <translation>Співвідношення сторін: 1 / %1</translation>
+        <translation type="vanished">Співвідношення сторін: 1 / %1</translation>
     </message>
     <message>
         <source>Inactivate Elevation Points</source>
@@ -829,8 +846,8 @@ If you want to adjust cross section position and map point clouod data again, yo
     </message>
     <message>
         <source>Edit the cross section by mouse-clicking. Finish editing by double clicking, or pressing return key.
-You can precisely edit the cross section by inputting values from dialog. Please enter dialog edit mode from "Edit from Dialog" in the right-clicking menu.</source>
-        <translation>Відредагуйте перетин натисканням миші. Завершіть редагування, двічі клацнувши або натиснувши клавішу повернення. Ви можете точно відредагувати перетин, ввівши значення з діалогового вікна. Будь ласка, увійдіть у режим редагування діалогового вікна з "Редагувати з діалогового вікна" у меню, що клацне правою кнопкою миші.</translation>
+You can precisely edit the cross section by inputting values from dialog. Please enter dialog edit mode from &quot;Edit from Dialog&quot; in the right-clicking menu.</source>
+        <translation>Відредагуйте перетин натисканням миші. Завершіть редагування, двічі клацнувши або натиснувши клавішу повернення. Ви можете точно відредагувати перетин, ввівши значення з діалогового вікна. Будь ласка, увійдіть у режим редагування діалогового вікна з &quot;Редагувати з діалогового вікна&quot; у меню, що клацне правою кнопкою миші.</translation>
     </message>
     <message>
         <source>Altitude Points Move</source>
@@ -839,6 +856,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>Edit Display Setting</source>
         <translation>Змінити налаштування дисплея</translation>
+    </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / %1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1014,40 +1035,40 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>Помилка</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": LX value is invalid</source>
-        <translation>%1 лінія %2 "%3": Значення LX недійсне</translation>
+        <source>%1 line %2 &quot;%3&quot;: LX value is invalid</source>
+        <translation>%1 лінія %2 &quot;%3&quot;: Значення LX недійсне</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": LY value is invalid</source>
-        <translation>%1 лінія %2 "%3": Значення LY недійсне</translation>
+        <source>%1 line %2 &quot;%3&quot;: LY value is invalid</source>
+        <translation>%1 лінія %2 &quot;%3&quot;: Значення LY недійсне</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": RX value is invalid</source>
-        <translation>%1 лінія %2 "%3": Значення RX недійсне</translation>
+        <source>%1 line %2 &quot;%3&quot;: RX value is invalid</source>
+        <translation>%1 лінія %2 &quot;%3&quot;: Значення RX недійсне</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": RY value is invalid</source>
-        <translation>%1 лінія %2 "%3": Значення RY недійсне</translation>
+        <source>%1 line %2 &quot;%3&quot;: RY value is invalid</source>
+        <translation>%1 лінія %2 &quot;%3&quot;: Значення RY недійсне</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": Point count is invalid</source>
-        <translation>%1 лінія %2 "%3": Підрахунок балів недійсний</translation>
+        <source>%1 line %2 &quot;%3&quot;: Point count is invalid</source>
+        <translation>%1 лінія %2 &quot;%3&quot;: Підрахунок балів недійсний</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": Invalid index value</source>
-        <translation>%1 лінія %2 "%3": Недійсне значення індексу</translation>
+        <source>%1 line %2 &quot;%3&quot;: Invalid index value</source>
+        <translation>%1 лінія %2 &quot;%3&quot;: Недійсне значення індексу</translation>
     </message>
     <message>
         <source>%1 line %2: cross section data for %3 not enough</source>
         <translation>%1 лінія %2 : дані перерізу для %3 недостатньо</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": Distance value is invalid</source>
-        <translation>%1 лінія %2 "%3": Недійсне значення відстані</translation>
+        <source>%1 line %2 &quot;%3&quot;: Distance value is invalid</source>
+        <translation>%1 лінія %2 &quot;%3&quot;: Недійсне значення відстані</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": Elevation value is invalid</source>
-        <translation>%1 лінія %2 "%3": Значення висоти недійсне</translation>
+        <source>%1 line %2 &quot;%3&quot;: Elevation value is invalid</source>
+        <translation>%1 лінія %2 &quot;%3&quot;: Значення висоти недійсне</translation>
     </message>
     <message>
         <source>#survey data is not found. Will be ignored.</source>
@@ -1086,8 +1107,8 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>%1 Лінія %2 : Помилка читання. Потрібні принаймні два значення.</translation>
     </message>
     <message>
-        <source>%1 Line %2: Read error. Not real number value "%3".</source>
-        <translation>%1 Лінія %2 : Помилка читання. Не дійсне числове значення "%3".</translation>
+        <source>%1 Line %2: Read error. Not real number value &quot;%3&quot;.</source>
+        <translation>%1 Лінія %2 : Помилка читання. Не дійсне числове значення &quot;%3&quot;.</translation>
     </message>
     <message>
         <source>Cross section %1 does not cross the center line. Center point is set to be the middle point of low water way.</source>
@@ -1213,36 +1234,36 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>%1 Лінія %2 : KP не вводиться</translation>
     </message>
     <message>
-        <source>%1 Line %2 "%3": LX value is invalid</source>
-        <translation>%1 Лінія %2 "%3": Значення LX недійсне</translation>
+        <source>%1 Line %2 &quot;%3&quot;: LX value is invalid</source>
+        <translation>%1 Лінія %2 &quot;%3&quot;: Значення LX недійсне</translation>
     </message>
     <message>
-        <source>%1 Line %2 "%3": LY value is invalid</source>
-        <translation>%1 Лінія %2 "%3": Значення LY недійсне</translation>
+        <source>%1 Line %2 &quot;%3&quot;: LY value is invalid</source>
+        <translation>%1 Лінія %2 &quot;%3&quot;: Значення LY недійсне</translation>
     </message>
     <message>
-        <source>%1 Line %2 "%3": RX value is invalid</source>
-        <translation>%1 Лінія %2 "%3": Значення RX недійсне</translation>
+        <source>%1 Line %2 &quot;%3&quot;: RX value is invalid</source>
+        <translation>%1 Лінія %2 &quot;%3&quot;: Значення RX недійсне</translation>
     </message>
     <message>
-        <source>%1 Line %2 "%3": RY value is invalid</source>
-        <translation>%1 Лінія %2 "%3": Значення RY недійсне</translation>
+        <source>%1 Line %2 &quot;%3&quot;: RY value is invalid</source>
+        <translation>%1 Лінія %2 &quot;%3&quot;: Значення RY недійсне</translation>
     </message>
     <message>
         <source>Distance marker data is not found. Will be ignored.</source>
         <translation>Дані маркера відстані не знайдені. Буде проігноровано.</translation>
     </message>
     <message>
-        <source>%1 line %2: "%3": Flag data is invalid.</source>
-        <translation>%1 лінія %2 : "%3": Дані прапора недійсні.</translation>
+        <source>%1 line %2: &quot;%3&quot;: Flag data is invalid.</source>
+        <translation>%1 лінія %2 : &quot;%3&quot;: Дані прапора недійсні.</translation>
     </message>
     <message>
-        <source>%1 line %2: "%3": Distance data is invalid.</source>
-        <translation>%1 лінія %2 : "%3": Дані про відстань недійсні.</translation>
+        <source>%1 line %2: &quot;%3&quot;: Distance data is invalid.</source>
+        <translation>%1 лінія %2 : &quot;%3&quot;: Дані про відстань недійсні.</translation>
     </message>
     <message>
-        <source>%1 line %2: "%3": Elevation data is invalid.</source>
-        <translation>%1 лінія %2 : "%3": Дані про висоту недійсні.</translation>
+        <source>%1 line %2: &quot;%3&quot;: Elevation data is invalid.</source>
+        <translation>%1 лінія %2 : &quot;%3&quot;: Дані про висоту недійсні.</translation>
     </message>
     <message>
         <source>Select folder where cross section data exists</source>
@@ -1289,7 +1310,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Related File</source>
-        <translation>Пов'язаний файл</translation>
+        <translation>Пов&apos;язаний файл</translation>
     </message>
     <message>
         <source>Problem</source>

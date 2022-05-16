@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="zh_TW">
 <context>
     <name>GeoDataRiverCrosssectionAltitudeMoveDialog</name>
@@ -379,8 +381,8 @@
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
-If you want to adjust cross section position and map point clouod data again, you can use "Map point cloud data"</source>
-        <translation>橫截面數據是使用點雲數據生成的。如果要再次調整橫截面位置和地圖點雲數據，可以使用“地圖點雲數據”</translation>
+If you want to adjust cross section position and map point clouod data again, you can use &quot;Map point cloud data&quot;</source>
+        <translation type="vanished">橫截面數據是使用點雲數據生成的。如果要再次調整橫截面位置和地圖點雲數據，可以使用“地圖點雲數據”</translation>
     </message>
     <message>
         <source>Map point cloud data</source>
@@ -390,12 +392,23 @@ If you want to adjust cross section position and map point clouod data again, yo
         <source>Generate point cloud data</source>
         <translation>生成點雲數據</translation>
     </message>
+    <message>
+        <source>Cross-section data is generated using point cloud data.
+If you want to adjust cross section position and map point cloud data again, you can use &quot;Map point cloud data&quot;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cross-section data is generated using point cloud data.
+In some region, data did not exists in point cloud data, and value 0 was mapped for those points.
+If you want to adjust cross section position and map point cloud data again, you can use &quot;Map point cloud data&quot;</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeoDataRiverSurvey::Impl</name>
     <message>
         <source>  </source>
-        <translation />
+        <translation></translation>
     </message>
     <message>
         <source>&amp;Cross-Section Data</source>
@@ -602,7 +615,7 @@ If you want to adjust cross section position and map point clouod data again, yo
         <translation>高程和坡度設置無效。</translation>
     </message>
     <message>
-        <source>When you specify elevation of end point, it can not be same to the start point. If you want to draw horizontal line, please select "Specify horizontal distance".</source>
+        <source>When you specify elevation of end point, it can not be same to the start point. If you want to draw horizontal line, please select &quot;Specify horizontal distance&quot;.</source>
         <translation>指定終點高程時，不能與起點相同。如果要繪製水平線，請選擇“指定水平距離”。</translation>
     </message>
 </context>
@@ -666,7 +679,7 @@ If you want to adjust cross section position and map point clouod data again, yo
     </message>
     <message>
         <source>Aspect ratio: 1 / </source>
-        <translation>縱橫比：1 /</translation>
+        <translation type="vanished">縱橫比：1 /</translation>
     </message>
     <message>
         <source>Fix aspect ratio</source>
@@ -784,6 +797,10 @@ If you want to adjust cross section position and map point clouod data again, yo
         <source>Cross-Section Data</source>
         <translation>橫截面數據</translation>
     </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / </source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyCrosssectionWindowGraphicsView</name>
@@ -813,7 +830,7 @@ If you want to adjust cross section position and map point clouod data again, yo
     </message>
     <message>
         <source>Aspect ratio: 1 / %1</source>
-        <translation>縱橫比：1 / %1</translation>
+        <translation type="vanished">縱橫比：1 / %1</translation>
     </message>
     <message>
         <source>Inactivate Elevation Points</source>
@@ -829,7 +846,7 @@ If you want to adjust cross section position and map point clouod data again, yo
     </message>
     <message>
         <source>Edit the cross section by mouse-clicking. Finish editing by double clicking, or pressing return key.
-You can precisely edit the cross section by inputting values from dialog. Please enter dialog edit mode from "Edit from Dialog" in the right-clicking menu.</source>
+You can precisely edit the cross section by inputting values from dialog. Please enter dialog edit mode from &quot;Edit from Dialog&quot; in the right-clicking menu.</source>
         <translation>通過單擊鼠標編輯橫截面。通過雙擊或按回車鍵完成編輯。您可以通過從對話框中輸入值來精確編輯橫截面。請從右鍵菜單中的“從對話框編輯”進入對話框編輯模式。</translation>
     </message>
     <message>
@@ -839,6 +856,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>Edit Display Setting</source>
         <translation>編輯顯示設置</translation>
+    </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / %1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1014,40 +1035,40 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>錯誤</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": LX value is invalid</source>
-        <translation>%1 線 %2 ” %3 ": LX 值無效</translation>
+        <source>%1 line %2 &quot;%3&quot;: LX value is invalid</source>
+        <translation>%1 線 %2 ” %3 &quot;: LX 值無效</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": LY value is invalid</source>
-        <translation>%1 線 %2 ” %3 ": LY 值無效</translation>
+        <source>%1 line %2 &quot;%3&quot;: LY value is invalid</source>
+        <translation>%1 線 %2 ” %3 &quot;: LY 值無效</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": RX value is invalid</source>
-        <translation>%1 線 %2 ” %3 ": RX 值無效</translation>
+        <source>%1 line %2 &quot;%3&quot;: RX value is invalid</source>
+        <translation>%1 線 %2 ” %3 &quot;: RX 值無效</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": RY value is invalid</source>
-        <translation>%1 線 %2 ” %3 ": RY 值無效</translation>
+        <source>%1 line %2 &quot;%3&quot;: RY value is invalid</source>
+        <translation>%1 線 %2 ” %3 &quot;: RY 值無效</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": Point count is invalid</source>
-        <translation>%1 線 %2 ” %3 ": 點數無效</translation>
+        <source>%1 line %2 &quot;%3&quot;: Point count is invalid</source>
+        <translation>%1 線 %2 ” %3 &quot;: 點數無效</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": Invalid index value</source>
-        <translation>%1 線 %2 ” %3 ": 無效的索引值</translation>
+        <source>%1 line %2 &quot;%3&quot;: Invalid index value</source>
+        <translation>%1 線 %2 ” %3 &quot;: 無效的索引值</translation>
     </message>
     <message>
         <source>%1 line %2: cross section data for %3 not enough</source>
         <translation>%1 線 %2 : 橫截面數據 %3 不夠</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": Distance value is invalid</source>
-        <translation>%1 線 %2 ” %3 ": 距離值無效</translation>
+        <source>%1 line %2 &quot;%3&quot;: Distance value is invalid</source>
+        <translation>%1 線 %2 ” %3 &quot;: 距離值無效</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": Elevation value is invalid</source>
-        <translation>%1 線 %2 ” %3 ": 高程值無效</translation>
+        <source>%1 line %2 &quot;%3&quot;: Elevation value is invalid</source>
+        <translation>%1 線 %2 ” %3 &quot;: 高程值無效</translation>
     </message>
     <message>
         <source>#survey data is not found. Will be ignored.</source>
@@ -1086,8 +1107,8 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>%1 線 %2 : 讀取錯誤。至少需要兩個值。</translation>
     </message>
     <message>
-        <source>%1 Line %2: Read error. Not real number value "%3".</source>
-        <translation>%1 線 %2 : 讀取錯誤。非實數值" %3 ”。</translation>
+        <source>%1 Line %2: Read error. Not real number value &quot;%3&quot;.</source>
+        <translation>%1 線 %2 : 讀取錯誤。非實數值&quot; %3 ”。</translation>
     </message>
     <message>
         <source>Cross section %1 does not cross the center line. Center point is set to be the middle point of low water way.</source>
@@ -1213,36 +1234,36 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>%1 線 %2 : KP 未輸入</translation>
     </message>
     <message>
-        <source>%1 Line %2 "%3": LX value is invalid</source>
-        <translation>%1 線 %2 ” %3 ": LX 值無效</translation>
+        <source>%1 Line %2 &quot;%3&quot;: LX value is invalid</source>
+        <translation>%1 線 %2 ” %3 &quot;: LX 值無效</translation>
     </message>
     <message>
-        <source>%1 Line %2 "%3": LY value is invalid</source>
-        <translation>%1 線 %2 ” %3 ": LY 值無效</translation>
+        <source>%1 Line %2 &quot;%3&quot;: LY value is invalid</source>
+        <translation>%1 線 %2 ” %3 &quot;: LY 值無效</translation>
     </message>
     <message>
-        <source>%1 Line %2 "%3": RX value is invalid</source>
-        <translation>%1 線 %2 ” %3 ": RX 值無效</translation>
+        <source>%1 Line %2 &quot;%3&quot;: RX value is invalid</source>
+        <translation>%1 線 %2 ” %3 &quot;: RX 值無效</translation>
     </message>
     <message>
-        <source>%1 Line %2 "%3": RY value is invalid</source>
-        <translation>%1 線 %2 ” %3 ": RY 值無效</translation>
+        <source>%1 Line %2 &quot;%3&quot;: RY value is invalid</source>
+        <translation>%1 線 %2 ” %3 &quot;: RY 值無效</translation>
     </message>
     <message>
         <source>Distance marker data is not found. Will be ignored.</source>
         <translation>未找到距離標記數據。會被忽略。</translation>
     </message>
     <message>
-        <source>%1 line %2: "%3": Flag data is invalid.</source>
-        <translation>%1 線 %2 ：“ %3 ": 標誌數據無效。</translation>
+        <source>%1 line %2: &quot;%3&quot;: Flag data is invalid.</source>
+        <translation>%1 線 %2 ：“ %3 &quot;: 標誌數據無效。</translation>
     </message>
     <message>
-        <source>%1 line %2: "%3": Distance data is invalid.</source>
-        <translation>%1 線 %2 ：“ %3 "：距離數據無效。</translation>
+        <source>%1 line %2: &quot;%3&quot;: Distance data is invalid.</source>
+        <translation>%1 線 %2 ：“ %3 &quot;：距離數據無效。</translation>
     </message>
     <message>
-        <source>%1 line %2: "%3": Elevation data is invalid.</source>
-        <translation>%1 線 %2 ：“ %3 "：高程數據無效。</translation>
+        <source>%1 line %2: &quot;%3&quot;: Elevation data is invalid.</source>
+        <translation>%1 線 %2 ：“ %3 &quot;：高程數據無效。</translation>
     </message>
     <message>
         <source>Select folder where cross section data exists</source>

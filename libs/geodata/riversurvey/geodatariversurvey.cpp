@@ -104,15 +104,15 @@ QPointF nearestInterSection(const QPointF& p1, const QPointF& p2, std::vector<QP
 	return ret;
 }
 
-void addPointAt(const QPointF& pos, const QPointF& dir, double dist, std::map<double, GeoDataRiverCrosssection::Altitude>* alts, GeoDataPointmap* pointMap)
+bool addPointAt(const QPointF& pos, const QPointF& dir, double dist, std::map<double, GeoDataRiverCrosssection::Altitude>* alts, GeoDataPointmap* pointMap)
 {
 	QPointF p = pos + dir * dist;
-	double val;
+	double val = 0;
 
 	bool ok = pointMap->getValueAt(p, &val);
-	if (! ok) {return;}
 
 	alts->insert({dist, GeoDataRiverCrosssection::Altitude(dist, val)});
+	return ok;
 }
 
 } // namespace
@@ -625,6 +625,9 @@ void GeoDataRiverSurvey::generateData()
 	GeoDataRiverPathPoint* prev = m_headPoint;
 
 	double nextName = upstreamName;
+
+	bool allOk = true;
+
 	for (int i = 0; i < centerLine.size(); ++i) {
 		auto newPoint = new GeoDataRiverPathPoint(this);
 		newPoint->InhibitInterpolatorUpdate = true;
@@ -666,24 +669,23 @@ void GeoDataRiverSurvey::generateData()
 		newPoint->setCrosssectionDirection(dir);
 		std::map<double, GeoDataRiverCrosssection::Altitude> alts;
 
-		const QPointF p;
 		double pos;
 		// center
-		addPointAt(newPoint->position(), dir, 0, &alts, mapData);
+		allOk = addPointAt(newPoint->position(), dir, 0, &alts, mapData) && allOk;
 		// left
 		pos = - divDist;
 		while (pos > - distL) {
-			addPointAt(newPoint->position(), dir, pos, &alts, mapData);
+			allOk = addPointAt(newPoint->position(), dir, pos, &alts, mapData) && allOk;
 			pos -= divDist;
 		}
-		addPointAt(newPoint->position(), dir, - distL, &alts, mapData);
+		allOk = addPointAt(newPoint->position(), dir, -distL, &alts, mapData) && allOk;
 		// right
 		pos = divDist;
 		while (pos < distR) {
-			addPointAt(newPoint->position(), dir, pos, &alts, mapData);
+			allOk = addPointAt(newPoint->position(), dir, pos, &alts, mapData) && allOk;
 			pos += divDist;
 		}
-		addPointAt(newPoint->position(), dir, distR, &alts, mapData);
+		allOk = addPointAt(newPoint->position(), dir, distR, &alts, mapData) && allOk;
 
 		auto& altList = newPoint->crosssection().AltitudeInfo();
 		for (const auto& pair : alts) {
@@ -704,8 +706,14 @@ void GeoDataRiverSurvey::generateData()
 	informSelection(graphicsView());
 	renderGraphicsView();
 
-	InformationDialog::information(preProcessorWindow(), tr("Information"), tr("Cross-section data is generated using point cloud data.\n"
-																																						 "If you want to adjust cross section position and map point clouod data again, you can use \"Map point cloud data\""), "riversurvey_mapping_dem");
+	if (allOk) {
+		InformationDialog::information(preProcessorWindow(), tr("Information"), tr("Cross-section data is generated using point cloud data.\n"
+																																							 "If you want to adjust cross section position and map point cloud data again, you can use \"Map point cloud data\""), "riversurvey_mapping_dem");
+	} else {
+		InformationDialog::warning(preProcessorWindow(), tr("Information"), tr("Cross-section data is generated using point cloud data.\n"
+																																							 "In some region, data did not exists in point cloud data, and value 0 was mapped for those points.\n"
+																																							 "If you want to adjust cross section position and map point cloud data again, you can use \"Map point cloud data\""), "riversurvey_mapping_dem_warning");
+	}
 }
 
 void GeoDataRiverSurvey::buildBankLines()
