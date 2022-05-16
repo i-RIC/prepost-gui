@@ -583,7 +583,6 @@ void PreProcessorGeoDataGroupDataItem::importGeoData(GeoDataImporter* importer, 
 	QWidget* w = preProcessorWindow();
 	bool ret = importer->importInit(filename, selectedFilter, &dataCount, m_condition, this, w);
 	if (! ret) {
-		QMessageBox::warning(preProcessorWindow(), tr("Import failed"), tr("Importing data from %1 failed.").arg(QDir::toNativeSeparators(filename)));
 		return;
 	}
 	if (dataCount == 0){
