@@ -307,6 +307,7 @@ bool Graph2dHybridWindowResultSetting::init(PostSolutionInfo* sol, const QString
 				ti.dataNamesMap[Vertex].append(name.c_str());
 			}
 			for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(cont->data()->GetCellData())) {
+				if (PostZoneDataContainer::hasInputDataPrefix(name)) {continue;}
 				ti.dataNamesMap[CellCenter].append(name.c_str());
 			}
 			auto edgeIData = cont->edgeidata();

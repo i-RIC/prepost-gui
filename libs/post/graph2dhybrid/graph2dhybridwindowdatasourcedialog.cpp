@@ -600,13 +600,6 @@ void Graph2dHybridWindowDataSourceDialog::setupWidgetForDim(QLabel* dataLabel, Q
 		for (auto key : info->dataNamesMap.keys()) {
 			locationComboBox->addItem(Graph2dHybridWindowResultSetting::getGridLocationStringTranslated(key));
 		}
-		if (locationComboBox->count() == 1) {
-			locationLabel->hide();
-			locationComboBox->hide();
-		} else {
-			locationLabel->show();
-			locationComboBox->show();
-		}
 		int index = info->dataNamesMap.keys().indexOf(info->gridLocation);
 		locationComboBox->setCurrentIndex(index);
 		setupListWidget(dataListWidget, info->dataNamesMap[info->gridLocation]);
