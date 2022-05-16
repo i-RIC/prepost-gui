@@ -276,6 +276,7 @@ bool Graph2dHybridWindowResultSetting::init(PostSolutionInfo* sol)
 				ti.dataNamesMap[iRICLib::H5CgnsZone::SolutionPosition::Node].append(name.c_str());
 			}
 			for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(cont->data()->GetCellData())) {
+				if (PostZoneDataContainer::hasInputDataPrefix(name)) {continue;}
 				ti.dataNamesMap[iRICLib::H5CgnsZone::SolutionPosition::Cell].append(name.c_str());
 			}
 			auto edgeIData = cont->edgeidata();
