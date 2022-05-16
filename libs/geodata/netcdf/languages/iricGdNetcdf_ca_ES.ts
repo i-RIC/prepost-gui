@@ -371,11 +371,11 @@
     </message>
     <message>
         <source>Information</source>
-        <translation>Informació</translation>
+        <translation type="vanished">Informació</translation>
     </message>
     <message>
         <source>%1 files in the folder %2 are imported.</source>
-        <translation>%1 fitxers de la carpeta %2 s’importen.</translation>
+        <translation type="vanished">%1 fitxers de la carpeta %2 s’importen.</translation>
     </message>
     <message>
         <source>Error</source>
@@ -387,6 +387,14 @@
     </message>
     <message>
         <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error occured when importing data converted from %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error occured when opening %1.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

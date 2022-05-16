@@ -371,11 +371,11 @@
     </message>
     <message>
         <source>Information</source>
-        <translation>Információ</translation>
+        <translation type="vanished">Információ</translation>
     </message>
     <message>
         <source>%1 files in the folder %2 are imported.</source>
-        <translation>%1 fájlokat a mappában %2 importálnak.</translation>
+        <translation type="vanished">%1 fájlokat a mappában %2 importálnak.</translation>
     </message>
     <message>
         <source>Error</source>
@@ -387,6 +387,14 @@
     </message>
     <message>
         <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error occured when importing data converted from %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error occured when opening %1.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

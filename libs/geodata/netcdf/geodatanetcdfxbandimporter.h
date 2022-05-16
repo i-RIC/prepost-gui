@@ -18,8 +18,9 @@ public:
 
 private:
 	bool doInit(const QString& filename, const QString& /*selectedFilter*/, int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemInterface* item, QWidget* w) override;
-	QString m_tmpFileName;
 
+	QString m_dirName;
+	QStringList m_fileNames;
 	PreProcessorGeoDataGroupDataItemInterface* m_groupDataItem;
 };
 
