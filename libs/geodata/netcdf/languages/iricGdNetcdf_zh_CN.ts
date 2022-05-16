@@ -159,7 +159,7 @@
     </message>
     <message>
         <source>Dimension values for time mismatch.</source>
-        <translation type="unfinished">时间的维度值不匹配</translation>
+        <translation type="obsolete">时间的维度值不匹配</translation>
     </message>
     <message>
         <source>Coordinate system is not specified for %1. Please select coordinate system manually.</source>
@@ -168,6 +168,10 @@
     <message>
         <source>GDAL data files can be imported for grid conditions without dimensions.</source>
         <translation type="vanished">可以导入GDAL数据文件以用于没有尺寸的网格条件。</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -268,7 +272,7 @@
     </message>
     <message>
         <source>Dimension values for %1 mismatch.</source>
-        <translation>%1 的维度值不匹配</translation>
+        <translation type="vanished">%1 的维度值不匹配</translation>
     </message>
     <message>
         <source>Error occured while parsing time definition: %1</source>
@@ -276,6 +280,10 @@
     </message>
     <message>
         <source>%1 does not have longitude, latitude nor x, y data.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -391,7 +399,11 @@
     </message>
     <message>
         <source>Dimension values for time mismatch.</source>
-        <translation>时间的维度值不匹配</translation>
+        <translation type="vanished">时间的维度值不匹配</translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

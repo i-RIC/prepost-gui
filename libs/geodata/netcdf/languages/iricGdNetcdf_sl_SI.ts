@@ -150,11 +150,11 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Dimension values for time mismatch.</source>
+        <source>Coordinate system is not specified for %1. Please select coordinate system manually.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Coordinate system is not specified for %1. Please select coordinate system manually.</source>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -251,15 +251,15 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Dimension values for %1 mismatch.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Error occured while parsing time definition: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>%1 does not have longitude, latitude nor x, y data.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -374,7 +374,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Dimension values for time mismatch.</source>
+        <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
