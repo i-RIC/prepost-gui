@@ -61,7 +61,7 @@ bool ContinuousSnapshotGoogleEarthSettingPage::validatePage()
 	return true;
 }
 
-void ContinuousSnapshotGoogleEarthSettingPage::snapshotToWorld(QPointF& p)
+QPointF ContinuousSnapshotGoogleEarthSettingPage::snapshotToWorld(const QPointF& p)
 {
 	QList<QMdiSubWindow*>::const_iterator it;
 	QWidget* center;
@@ -115,11 +115,11 @@ void ContinuousSnapshotGoogleEarthSettingPage::snapshotToWorld(QPointF& p)
 	double worldY = p.y() - offset.y();
 
 	view->viewportToWorld(worldX, worldY);
-	p.setX(worldX);
-	p.setY(worldY);
+
+	return QPointF(worldX, worldY);
 }
 
-void ContinuousSnapshotGoogleEarthSettingPage::worldToLatLong(QPointF& p)
+QPointF ContinuousSnapshotGoogleEarthSettingPage::worldToLatLong(const QPointF& p)
 {
 	auto cs = m_wizard->projectMainFile()->coordinateSystem();
 	double x, y, lon, lat;
@@ -127,14 +127,12 @@ void ContinuousSnapshotGoogleEarthSettingPage::worldToLatLong(QPointF& p)
 	y = p.y();
 
 	cs->mapGridToGeo(x, y, &lon, &lat);
-	p.setX(lon);
-	p.setY(lat);
+	return QPointF(lon, lat);
 }
 
-void ContinuousSnapshotGoogleEarthSettingPage::snapshotToLatLong(QPointF& p)
+QPointF ContinuousSnapshotGoogleEarthSettingPage::snapshotToLatLong(const QPointF& p)
 {
-	snapshotToWorld(p);
-	worldToLatLong(p);
+	return worldToLatLong(snapshotToWorld(p));
 }
 
 void ContinuousSnapshotGoogleEarthSettingPage::calculateKMLInformation()
@@ -146,46 +144,28 @@ void ContinuousSnapshotGoogleEarthSettingPage::calculateKMLInformation()
 
 	center = QPointF(snapshotSize.width() / 2., snapshotSize.height() / 2.);
 	centerRight = QPointF(snapshotSize.width(), snapshotSize.height() / 2.);
-	snapshotToLatLong(center);
-	snapshotToLatLong(centerRight);
 
-	// calculate angle (radian)
-	QPointF dv = centerRight - center;
+	auto centerXY = snapshotToWorld(center);
+	auto centerRightXY = snapshotToWorld(centerRight);
+
+	// calculate angle
+	QPointF dv = centerRightXY - centerXY;
 	double angle = std::atan(dv.y() / dv.x());
 	setting.angle = (angle * 180 / M_PI);
 
-	// calculate north/south/east/west
-	QPointF centerV(snapshotSize.width() / 2., snapshotSize.height() / 2.);
-	QPointF centerRightV(snapshotSize.width(), snapshotSize.height() / 2.);
-	QPointF centerTopV(snapshotSize.width() / 2., 0);
+	double halfWidth = iRIC::length(snapshotToWorld(QPointF(snapshotSize.width(), snapshotSize.height() / 2.)) - centerXY);
+	double halfHeight = iRIC::length(snapshotToWorld(QPointF(snapshotSize.width() / 2., snapshotSize.height())) - centerXY);
 
-	QPointF dx = centerRightV - centerV;
-	QPointF dy = centerTopV - centerV;
-	// reflection
-	dx.setY(- dx.y());
-	dy.setY(- dy.y());
+	auto leftBottomXY = centerXY - QPointF(halfWidth, halfHeight);
+	auto rightTopXY = centerXY + QPointF(halfWidth, halfHeight);
 
-	// rotation
-	iRIC::rotateVector(dx, - setting.angle);
-	iRIC::rotateVector(dy, - setting.angle);
+	auto leftBottomLatLon = worldToLatLong(leftBottomXY);
+	auto rightTopLatLon = worldToLatLong(rightTopXY);
 
-	// reflection
-	dx.setY(- dx.y());
-	dy.setY(- dy.y());
-
-	QPointF rightTopV = centerV + dx + dy;
-	QPointF leftBottomV = centerV - dx - dy;
-
-	QPointF rightTop(rightTopV.x(), rightTopV.y());
-	QPointF leftBottom(leftBottomV.x(), leftBottomV.y());
-
-	snapshotToLatLong(rightTop);
-	snapshotToLatLong(leftBottom);
-
-	setting.north = rightTop.y();
-	setting.south = leftBottom.y();
-	setting.east = rightTop.x();
-	setting.west = leftBottom.x();
+	setting.north = rightTopLatLon.y();
+	setting.south = leftBottomLatLon.y();
+	setting.east = rightTopLatLon.x();
+	setting.west = leftBottomLatLon.x();
 
 	m_wizard->setSetting(setting);
 }
