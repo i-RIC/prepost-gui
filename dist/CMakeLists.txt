@@ -510,6 +510,11 @@ set(IRIC_DLLS
   ${PREPOST_GUI}/libdlls/Release/iricTriangle.dll
 )
 
+# IRICLIB_DLLS
+set(IRICLIB_DLLS
+  ${PREPOST_GUI}/libdlls/Release/iriclib.dll
+)
+
 # IRIC_DICS
 set(IRIC_DICS
   ${PREPOST_GUI}/libs/cs/languages/iricCs_ar_EG.qm
@@ -2206,7 +2211,7 @@ set(IRIC_PY
 )
 
 # Install IRIC
-install(FILES ${IRIC_ICO} ${IRIC_EXE} ${IRIC_DLLS}
+install(FILES ${IRIC_ICO} ${IRIC_EXE} ${IRIC_DLLS} ${IRICLIB_DLLS}
   DESTINATION ${CMAKE_INSTALL_PREFIX}/${SRC_FOLDER}/packages/gui.prepost/data
 )
 install(FILES ${IRIC_DICS}
