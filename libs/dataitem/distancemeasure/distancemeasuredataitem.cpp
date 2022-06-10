@@ -430,7 +430,7 @@ void DistanceMeasureDataItem::updateMouseEventMode(const QPointF& v, VTKGraphics
 		} else {
 			QPointF horizontal = impl->m_setting.point2 - impl->m_setting.point1;
 			QPointF vertical = iRIC::normalize(horizontal);
-			iRIC::rotateVector90(vertical);
+			vertical = iRIC::rotateVector90(vertical);
 			double width = view2->stdRadius(iRIC::nearRadius());
 			vertical *= width;
 			QPointF posv = impl->m_setting.point1 - vertical * 0.5;

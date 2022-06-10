@@ -1702,7 +1702,7 @@ bool GridCreatingConditionRiverSurvey::selectCtrlZone(GeoDataRiverPathPoint* p, 
 			v1 = *it++;
 			QPointF horizontal = v1 - v0;
 			QPointF vertical = iRIC::normalize(v1 - v0);
-			iRIC::rotateVector90(vertical);
+			vertical = iRIC::rotateVector90(vertical);
 			vertical *= width;
 			QPointF posv = v0 - vertical * 0.5;
 			if (iRIC::isInsideParallelogram(point, posv, horizontal, vertical)) {

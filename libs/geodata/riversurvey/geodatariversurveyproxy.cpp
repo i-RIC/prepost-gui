@@ -126,7 +126,7 @@ void GeoDataRiverSurveyProxy::updateGraphics()
 		}
 		// now draw lines.
 		QPointF offsetDir = p->crosssectionDirection();
-		iRIC::rotateVector270(offsetDir);
+		offsetDir = iRIC::rotateVector270(offsetDir);
 
 		double offset;
 		GeoDataRiverCrosssection::Altitude alt = alist[0];

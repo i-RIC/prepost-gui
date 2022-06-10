@@ -82,23 +82,23 @@ void getDirectionVertical(Post2dWindowGraphSetting::Direction dir, int i, int j,
 			grid->GetPoint(i, j + 1, 0, v1);
 
 			v = iRIC::normalize(QPointF(v1[0] - v0[0], v1[1] - v0[1]));
-			iRIC::rotateVector270(v);
+			v = iRIC::rotateVector270(v);
 		} else if (j == dims[1] - 1) {
 			grid->GetPoint(i, j - 1, 0, v0);
 			grid->GetPoint(i, j, 0, v1);
 
 			v = iRIC::normalize(QPointF(v1[0] - v0[0], v1[1] - v0[1]));
-			iRIC::rotateVector270(v);
+			v = iRIC::rotateVector270(v);
 		} else {
 			grid->GetPoint(i, j - 1, 0, v0);
 			grid->GetPoint(i, j, 0, v1);
 			grid->GetPoint(i, j + 1, 0, v2);
 
 			QPointF tmpV1 = iRIC::normalize(QPointF(v1[0] - v0[0], v1[1] - v0[1]));
-			iRIC::rotateVector270(tmpV1);
+			tmpV1 = iRIC::rotateVector270(tmpV1);
 
 			QPointF tmpV2 = iRIC::normalize(QPointF(v2[0] - v1[0], v2[1] - v1[1]));
-			iRIC::rotateVector270(tmpV2);
+			tmpV2 = iRIC::rotateVector270(tmpV2);
 
 			v = iRIC::normalize(tmpV1 + tmpV2);
 		}
@@ -108,23 +108,23 @@ void getDirectionVertical(Post2dWindowGraphSetting::Direction dir, int i, int j,
 			grid->GetPoint(i + 1, j, 0, v1);
 
 			v = iRIC::normalize(QPointF(v1[0] - v0[0], v1[1] - v0[1]));
-			iRIC::rotateVector90(v);
+			v = iRIC::rotateVector90(v);
 		} else if (i == dims[0] - 1) {
 			grid->GetPoint(i - 1, j, 0, v0);
 			grid->GetPoint(i, j, 0, v1);
 
 			v = iRIC::normalize(QPointF(v1[0] - v0[0], v1[1] - v0[1]));
-			iRIC::rotateVector90(v);
+			v = iRIC::rotateVector90(v);
 		} else {
 			grid->GetPoint(i - 1, j, 0, v0);
 			grid->GetPoint(i, j, 0, v1);
 			grid->GetPoint(i + 1, j, 0, v2);
 
 			QPointF tmpV1 = iRIC::normalize(QPointF(v1[0] - v0[0], v1[1] - v0[1]));
-			iRIC::rotateVector90(tmpV1);
+			tmpV1 = iRIC::rotateVector90(tmpV1);
 
 			QPointF tmpV2 = iRIC::normalize(QPointF(v2[0] - v1[0], v2[1] - v1[1]));
-			iRIC::rotateVector90(tmpV2);
+			tmpV2 = iRIC::rotateVector90(tmpV2);
 
 			v = iRIC::normalize(tmpV1 + tmpV2);
 		}

@@ -695,7 +695,7 @@ void PreProcessorGridDataItem::updateSelectedEdges(MouseBoundingBox* box, bool x
 
 			QPointF horizontal = v1 - v0;
 			QPointF vertical = iRIC::normalize(v1 - v0) * stdDist;
-			iRIC::rotateVector90(vertical);
+			vertical = iRIC::rotateVector90(vertical);
 			QPointF posv = v0 - vertical * 0.5;
 			QPointF point(p[0], p[1]);
 			if (iRIC::isInsideParallelogram(point, posv, horizontal, vertical)) {

@@ -1407,13 +1407,13 @@ GridCreatingConditionCompoundChannelSpline GridCreatingConditionCompoundChannel:
 
 	// centerToLeft vector at head
 	QPointF headCenterToLeft = centerLine[1] - centerLine[0];
-	iRIC::rotateVector(headCenterToLeft, 100);
+	headCenterToLeft = iRIC::rotateVector(headCenterToLeft, 100);
 
 	int headEdge   = m_lowWaterChannelPolygon->getEdgeThatIntersect(QLineF(centerLine[0], centerLine[0] + QPointF(headCenterToLeft.x(), headCenterToLeft.y())));
 	bool discardHead = false;
 	vtkCell* cell = m_lowWaterChannelPolygon->getVtkPolygon()->GetEdge(headEdge);
 	headCenterToLeft = centerLine[1] - centerLine[0];
-	iRIC::rotateVector90(headCenterToLeft);
+	headCenterToLeft = iRIC::rotateVector90(headCenterToLeft);
 	for (vtkIdType vId = 0; vId < cell->GetNumberOfPoints(); ++vId) {
 		double x[3];
 		cell->GetPoints()->GetPoint(vId, x);
@@ -1427,20 +1427,20 @@ GridCreatingConditionCompoundChannelSpline GridCreatingConditionCompoundChannel:
 	int count = centerLine.count();
 	int middleCount = (count - 1) / 2;
 	QPointF middleCenterToLeft = centerLine[middleCount + 1] - centerLine[middleCount];
-	iRIC::rotateVector90(middleCenterToLeft);
+	middleCenterToLeft = iRIC::rotateVector90(middleCenterToLeft);
 
 	int middleEdge = m_lowWaterChannelPolygon->getEdgeThatIntersect(QLineF(centerLine[middleCount], centerLine[middleCount] + QPointF(middleCenterToLeft.x(), middleCenterToLeft.y())));
 
 	// centerToLeft vector at tail
 	QPointF tailCenterToLeft = centerLine[count - 1] - centerLine[count - 2];
-	iRIC::rotateVector(tailCenterToLeft, 80);
+	tailCenterToLeft = iRIC::rotateVector(tailCenterToLeft, 80);
 
 	int tailEdge   = m_lowWaterChannelPolygon->getEdgeThatIntersect(QLineF(centerLine[count - 1], centerLine[count - 1] + QPointF(tailCenterToLeft.x(), tailCenterToLeft.y())));
 
 	bool discardTail = false;
 	cell = m_lowWaterChannelPolygon->getVtkPolygon()->GetEdge(tailEdge);
 	tailCenterToLeft = centerLine[count - 1] - centerLine[count - 2];
-	iRIC::rotateVector90(tailCenterToLeft);
+	tailCenterToLeft = iRIC::rotateVector90(tailCenterToLeft);
 	for (vtkIdType vId = 0; vId < cell->GetNumberOfPoints(); ++vId) {
 		double x[3];
 		cell->GetPoints()->GetPoint(vId, x);
@@ -1458,13 +1458,13 @@ GridCreatingConditionCompoundChannelSpline GridCreatingConditionCompoundChannel:
 {
 	// centerToRight vector at head
 	QPointF headCenterToRight = centerLine[1] - centerLine[0];
-	iRIC::rotateVector(headCenterToRight, 260);
+	headCenterToRight = iRIC::rotateVector(headCenterToRight, 260);
 
 	int headEdge   = m_lowWaterChannelPolygon->getEdgeThatIntersect(QLineF(centerLine[0], centerLine[0] + QPointF(headCenterToRight.x(), headCenterToRight.y())));
 	bool discardHead = false;
 	vtkCell* cell = m_lowWaterChannelPolygon->getVtkPolygon()->GetEdge(headEdge);
 	headCenterToRight = centerLine[1] - centerLine[0];
-	iRIC::rotateVector270(headCenterToRight);
+	headCenterToRight = iRIC::rotateVector270(headCenterToRight);
 	for (vtkIdType vId = 0; vId < cell->GetNumberOfPoints(); ++vId) {
 		double x[3];
 		cell->GetPoints()->GetPoint(vId, x);
@@ -1478,20 +1478,20 @@ GridCreatingConditionCompoundChannelSpline GridCreatingConditionCompoundChannel:
 	int count = centerLine.count();
 	int middleCount = (count - 1) / 2;
 	QPointF middleCenterToRight = centerLine[middleCount + 1] - centerLine[middleCount];
-	iRIC::rotateVector270(middleCenterToRight);
+	middleCenterToRight = iRIC::rotateVector270(middleCenterToRight);
 
 	int middleEdge = m_lowWaterChannelPolygon->getEdgeThatIntersect(QLineF(centerLine[middleCount], centerLine[middleCount] + QPointF(middleCenterToRight.x(), middleCenterToRight.y())));
 
 	// centerToRight vector at tail
 	QPointF tailCenterToRight = centerLine[count - 1] - centerLine[count - 2];
-	iRIC::rotateVector(tailCenterToRight, 280);
+	tailCenterToRight = iRIC::rotateVector(tailCenterToRight, 280);
 
 	int tailEdge   = m_lowWaterChannelPolygon->getEdgeThatIntersect(QLineF(centerLine[count - 1], centerLine[count - 1] + QPointF(tailCenterToRight.x(), tailCenterToRight.y())));
 
 	bool discardTail = false;
 	cell = m_lowWaterChannelPolygon->getVtkPolygon()->GetEdge(tailEdge);
 	tailCenterToRight = centerLine[count - 1] - centerLine[count - 2];
-	iRIC::rotateVector270(tailCenterToRight);
+	tailCenterToRight = iRIC::rotateVector270(tailCenterToRight);
 	for (vtkIdType vId = 0; vId < cell->GetNumberOfPoints(); ++vId) {
 		double x[3];
 		cell->GetPoints()->GetPoint(vId, x);
@@ -1582,13 +1582,13 @@ GridCreatingConditionCompoundChannelSpline GridCreatingConditionCompoundChannel:
 {
 	// centerToLeft vector at head
 	QPointF headCenterToLeft = leftBank[1] - leftBank[0];
-	iRIC::rotateVector(headCenterToLeft, 110);
+	headCenterToLeft = iRIC::rotateVector(headCenterToLeft, 110);
 
 	int headEdge   = m_gridRegionPolygon->getEdgeThatIntersect(QLineF(leftBank[0], leftBank[0] + QPointF(headCenterToLeft.x(), headCenterToLeft.y())));
 	bool discardHead = false;
 	vtkCell* cell = m_gridRegionPolygon->getVtkPolygon()->GetEdge(headEdge);
 	headCenterToLeft = leftBank[1] - leftBank[0];
-	iRIC::rotateVector90(headCenterToLeft);
+	headCenterToLeft = iRIC::rotateVector90(headCenterToLeft);
 	for (vtkIdType vId = 0; vId < cell->GetNumberOfPoints(); ++vId) {
 		double x[3];
 		cell->GetPoints()->GetPoint(vId, x);
@@ -1602,19 +1602,19 @@ GridCreatingConditionCompoundChannelSpline GridCreatingConditionCompoundChannel:
 	int count = leftBank.count();
 	int middleCount = (count - 1) / 2;
 	QPointF middleCenterToLeft = leftBank[middleCount + 1] - leftBank[middleCount];
-	iRIC::rotateVector90(middleCenterToLeft);
+	middleCenterToLeft = iRIC::rotateVector90(middleCenterToLeft);
 
 	int middleEdge = m_gridRegionPolygon->getEdgeThatIntersect(QLineF(leftBank[middleCount], leftBank[middleCount] + QPointF(middleCenterToLeft.x(), middleCenterToLeft.y())));
 
 	// centerToLeft vector at tail
 	QPointF tailCenterToLeft = leftBank[count - 1] - leftBank[count - 2];
-	iRIC::rotateVector(tailCenterToLeft, 70);
+	tailCenterToLeft = iRIC::rotateVector(tailCenterToLeft, 70);
 
 	int tailEdge   = m_gridRegionPolygon->getEdgeThatIntersect(QLineF(leftBank[count - 1], leftBank[count - 1] + QPointF(tailCenterToLeft.x(), tailCenterToLeft.y())));
 	bool discardTail = false;
 	cell = m_gridRegionPolygon->getVtkPolygon()->GetEdge(tailEdge);
 	tailCenterToLeft = leftBank[count - 1] - leftBank[count - 2];
-	iRIC::rotateVector90(tailCenterToLeft);
+	tailCenterToLeft = iRIC::rotateVector90(tailCenterToLeft);
 	for (vtkIdType vId = 0; vId < cell->GetNumberOfPoints(); ++vId) {
 		double x[3];
 		cell->GetPoints()->GetPoint(vId, x);
@@ -1630,13 +1630,13 @@ GridCreatingConditionCompoundChannelSpline GridCreatingConditionCompoundChannel:
 GridCreatingConditionCompoundChannelSpline GridCreatingConditionCompoundChannel::getRightEdge(const QVector<QPointF>& rightBank)
 {
 	QPointF headCenterToRight = rightBank[1] - rightBank[0];
-	iRIC::rotateVector(headCenterToRight, 250);
+	headCenterToRight = iRIC::rotateVector(headCenterToRight, 250);
 
 	int headEdge   = m_gridRegionPolygon->getEdgeThatIntersect(QLineF(rightBank[0], rightBank[0] + QPointF(headCenterToRight.x(), headCenterToRight.y())));
 	bool discardHead = false;
 	vtkCell* cell = m_gridRegionPolygon->getVtkPolygon()->GetEdge(headEdge);
 	headCenterToRight = rightBank[1] - rightBank[0];
-	iRIC::rotateVector270(headCenterToRight);
+	headCenterToRight = iRIC::rotateVector270(headCenterToRight);
 	for (vtkIdType vId = 0; vId < cell->GetNumberOfPoints(); ++vId) {
 		double x[3];
 		cell->GetPoints()->GetPoint(vId, x);
@@ -1650,19 +1650,19 @@ GridCreatingConditionCompoundChannelSpline GridCreatingConditionCompoundChannel:
 	int count = rightBank.count();
 	int middleCount = (count - 1) / 2;
 	QPointF middleCenterToRight = rightBank[middleCount + 1] - rightBank[middleCount];
-	iRIC::rotateVector270(middleCenterToRight);
+	middleCenterToRight = iRIC::rotateVector270(middleCenterToRight);
 
 	int middleEdge = m_gridRegionPolygon->getEdgeThatIntersect(QLineF(rightBank[middleCount], rightBank[middleCount] + QPointF(middleCenterToRight.x(), middleCenterToRight.y())));
 
 	// centerToRight vector at tail
 	QPointF tailCenterToRight = rightBank[count - 1] - rightBank[count - 2];
-	iRIC::rotateVector(tailCenterToRight, 290);
+	tailCenterToRight = iRIC::rotateVector(tailCenterToRight, 290);
 
 	int tailEdge   = m_gridRegionPolygon->getEdgeThatIntersect(QLineF(rightBank[count - 1], rightBank[count - 1] + QPointF(tailCenterToRight.x(), tailCenterToRight.y())));
 	bool discardTail = false;
 	cell = m_gridRegionPolygon->getVtkPolygon()->GetEdge(tailEdge);
 	tailCenterToRight = rightBank[count - 1] - rightBank[count - 2];
-	iRIC::rotateVector270(tailCenterToRight);
+	tailCenterToRight = iRIC::rotateVector270(tailCenterToRight);
 	for (vtkIdType vId = 0; vId < cell->GetNumberOfPoints(); ++vId) {
 		double x[3];
 		cell->GetPoints()->GetPoint(vId, x);

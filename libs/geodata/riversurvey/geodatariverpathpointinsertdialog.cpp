@@ -164,7 +164,7 @@ void GeoDataRiverPathPointInsertDialog::updatePoint()
 		ui->coordXEdit->setValue(pos.x());
 		ui->coordYEdit->setValue(pos.y());
 
-		iRIC::rotateVector270(dir);
+		dir = iRIC::rotateVector270(dir);
 		m_newPoint->setCrosssectionDirection(dir);
 	}
 	// crosssection.
