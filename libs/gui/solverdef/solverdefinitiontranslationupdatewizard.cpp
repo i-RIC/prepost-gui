@@ -25,6 +25,7 @@ SolverDefinitionTranslationUpdateWizard::SolverDefinitionTranslationUpdateWizard
 	m_settingPageId = addPage(new SettingPage(this));
 	addPage(new ConfirmPage(this));
 	setWindowTitle(tr("Definition File Translation Update Wizard"));
+	resize(560, 500);
 }
 
 void SolverDefinitionTranslationUpdateWizard::init(SolverDefinitionList* list, const QList<GridCreatingConditionCreator*>& gclist)
@@ -112,25 +113,28 @@ SettingPage::SettingPage(QWidget* parent)
 	QList<QLocale> langs = SolverDefinitionTranslationUpdateWizard::supportedLanguages();
 	QGroupBox* langGroupBox = new QGroupBox(tr("Languages"), this);
 
-	QScrollArea* langsArea = new QScrollArea();
-	langsArea->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
-	QVBoxLayout* llayout = new QVBoxLayout();
-	llayout->setSizeConstraint(QLayout::SetMinimumSize);
+	QScrollArea* langsArea = new QScrollArea(langGroupBox);
+	QWidget* langsWidget = new QWidget(langsArea);
+	//langsArea->setWidget(langsWidget);
+	QVBoxLayout* llayout = new QVBoxLayout(langsWidget);
+	// llayout->setSizeConstraint(QLayout::SetMinimumSize);
 	for (const QLocale& locale : langs) {
-		QCheckBox* check = new QCheckBox(this);
+		QCheckBox* check = new QCheckBox(langsWidget);
 		check->setText(QLocale::languageToString(locale.language()));
 		registerField(QString("lang%1").arg(locale.name()), check);
 		llayout->addWidget(check);
 	}
 	llayout->addStretch(1);
-	langsArea->setLayout(llayout);
+	langsWidget->setLayout(llayout);
+
 	QVBoxLayout* langLayout = new QVBoxLayout(langGroupBox);
+	langsArea->setWidget(langsWidget);
+
 	langLayout->addWidget(langsArea);
 	langGroupBox->setLayout(langLayout);
 
 	layout->addWidget(targetGroupBox);
-	layout->addWidget(langGroupBox);
-	layout->addStretch(1);
+	layout->addWidget(langGroupBox, 1);
 
 	setLayout(layout);
 }
