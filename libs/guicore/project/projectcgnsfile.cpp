@@ -26,13 +26,13 @@ int ProjectCgnsFile::writeSolverInfo(iRICLib::H5CgnsFile* file, const SolverDefi
 	return IRIC_NO_ERROR;
 }
 
-bool ProjectCgnsFile::readSolverInfo(const QString& filename, std::string* solverName, VersionNumber* version)
+int ProjectCgnsFile::readSolverInfo(const QString& filename, std::string* solverName, VersionNumber* version)
 {
 	try {
 		iRICLib::H5CgnsFile file(iRIC::toStr(filename), iRICLib::H5CgnsFile::Mode::OpenReadOnly);
 		return readSolverInfo(file, solverName, version);
 	} catch (...) {
-		return false;
+		return IRIC_H5_OPEN_FAIL;
 	}
 }
 
