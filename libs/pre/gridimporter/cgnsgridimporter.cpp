@@ -20,6 +20,7 @@
 
 #include <h5cgnsbase.h>
 #include <h5cgnsfile.h>
+#include <iriclib_errorcodes.h>
 
 #include <sstream>
 
@@ -56,7 +57,7 @@ bool CgnsGridImporter::import(Grid* grid, const QString& filename, const QString
 		// Check the compatibility.
 		std::string solverName;
 		VersionNumber versionNumber;
-		ok = ProjectCgnsFile::readSolverInfo(file, &solverName, &versionNumber);
+		ok = (ProjectCgnsFile::readSolverInfo(file, &solverName, &versionNumber) == IRIC_NO_ERROR);
 		if (ok == true) {
 			SolverDefinition* solverDef = projectData->solverDefinition();
 			if (solverDef->name() != solverName || (! solverDef->version().compatibleWith(versionNumber))) {
@@ -75,7 +76,7 @@ bool CgnsGridImporter::import(Grid* grid, const QString& filename, const QString
 			if (ret == QMessageBox::No) {return false;}
 		}
 
-		ok = grid->loadFromCgnsFile(*zone);
+		ok = (grid->loadFromCgnsFile(*zone) == IRIC_NO_ERROR);
 		if (ok) {
 			m_gridDataItem->setGrid(grid);
 			// if boundary condition exists, import it.
