@@ -15,18 +15,18 @@
 
 namespace {
 
-bool loadSolutionData(iRICLib::H5CgnsFlowSolution* solution, QStringList* realResults, QStringList* integerResults)
+int loadSolutionData(iRICLib::H5CgnsFlowSolution* solution, QStringList* realResults, QStringList* integerResults)
 {
-	if (solution == nullptr) {return true;}
+	if (solution == nullptr) {return IRIC_NO_ERROR;}
 
 	std::vector<std::string> names;
 	int ier = solution->readValueNames(&names);
-	if (ier != IRIC_NO_ERROR) {return false;}
+	if (ier != IRIC_NO_ERROR) {return ier;}
 
 	for (const auto& name : names) {
 		iRICLib::H5Util::DataArrayValueType type;
 		ier = solution->readValueType(name, &type);
-		if (ier != IRIC_NO_ERROR) {return false;}
+		if (ier != IRIC_NO_ERROR) {return ier;}
 
 		if (type == iRICLib::H5Util::DataArrayValueType::RealDouble) {
 			realResults->push_back(name.c_str());
@@ -34,7 +34,7 @@ bool loadSolutionData(iRICLib::H5CgnsFlowSolution* solution, QStringList* realRe
 			integerResults->push_back(name.c_str());
 		}
 	}
-	return true;
+	return IRIC_NO_ERROR;
 }
 
 } // namespace
