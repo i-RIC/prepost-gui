@@ -498,10 +498,10 @@ void iRICMainWindow::importCalculationResult(const QString& fname)
 	// load solver information from CGNS file.
 	std::string solverName;
 	VersionNumber versionNumber;
-	bool bret = ProjectCgnsFile::readSolverInfo(fname, &solverName, &versionNumber);
+	int ret = ProjectCgnsFile::readSolverInfo(fname, &solverName, &versionNumber);
 
 	QString solFolder;
-	if (bret == false) {
+	if (ret != IRIC_NO_ERROR) {
 		m_projectData->setPostOnlyMode();
 		solFolder = ":/data/unknownsolver";
 	} else {
@@ -525,7 +525,7 @@ void iRICMainWindow::importCalculationResult(const QString& fname)
 
 	setupForNewProjectData();
 
-	bret = m_projectData->mainfile()->importCgnsFile(fname, "Case1");
+	bool bret = m_projectData->mainfile()->importCgnsFile(fname, "Case1");
 	if (! bret) {return;}
 
 	handleCgnsSwitch();
