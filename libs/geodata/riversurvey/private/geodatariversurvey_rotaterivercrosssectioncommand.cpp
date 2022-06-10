@@ -20,7 +20,7 @@ GeoDataRiverSurvey::RotateRiverCrosssectionCommand::RotateRiverCrosssectionComma
 	}
 	m_oldDirection = m_point->crosssectionDirection();
 	m_newDirection = m_oldDirection;
-	iRIC::rotateVector(m_newDirection, angle);
+	m_newDirection = iRIC::rotateVector(m_newDirection, angle);
 }
 
 void GeoDataRiverSurvey::RotateRiverCrosssectionCommand::redo()

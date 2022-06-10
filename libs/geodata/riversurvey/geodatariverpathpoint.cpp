@@ -716,7 +716,7 @@ void GeoDataRiverPathPoint::setCrosssectionAngle(double angle) /* throw (ErrorCo
 	}
 	QPointF dv = iRIC::normalize(m_previousPoint->position() - m_position);
 
-	iRIC::rotateVector(dv, angle);
+	dv = iRIC::rotateVector(dv, angle);
 	setCrosssectionDirection(dv);
 }
 
@@ -724,8 +724,8 @@ void GeoDataRiverPathPoint::setCrosssectionDirection(const QPointF& v)
 {
 	double rotAngle = iRIC::angleRadian(m_crosssectionDirection, v);
 	m_crosssectionDirection = v;
-	iRIC::rotateVectorRadian(m_crosssectionDirectionL, rotAngle);
-	iRIC::rotateVectorRadian(m_crosssectionDirectionR, rotAngle);
+	m_crosssectionDirectionL = iRIC::rotateVectorRadian(m_crosssectionDirectionL, rotAngle);
+	m_crosssectionDirectionR = iRIC::rotateVectorRadian(m_crosssectionDirectionR, rotAngle);
 	updateRiverShapeInterpolators();
 }
 

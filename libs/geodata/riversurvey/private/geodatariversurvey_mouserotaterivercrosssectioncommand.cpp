@@ -32,7 +32,7 @@ GeoDataRiverSurvey::MouseRotateRiverCrosssectionCommand::MouseRotateRiverCrossse
 	double angle = iRIC::angleRadian(vec1, vec2);
 
 	m_newDirection = m_oldDirection;
-	iRIC::rotateVectorRadian(m_newDirection, angle);
+	m_newDirection = iRIC::rotateVectorRadian(m_newDirection, angle);
 }
 
 void GeoDataRiverSurvey::MouseRotateRiverCrosssectionCommand::redo()

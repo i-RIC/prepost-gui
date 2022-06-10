@@ -730,7 +730,7 @@ void GeoDataRiverSurvey::Impl::updateVtkVerticalCenterLinesObjects()
 			if (i == 0 || maxHeight < alt.height()) {maxHeight = alt.height();}
 		}
 		QPointF offsetDir = p->crosssectionDirection();
-		iRIC::rotateVector270(offsetDir);
+		offsetDir = iRIC::rotateVector270(offsetDir);
 
 		vtkIdType firstId = points->GetNumberOfPoints();
 		std::vector<vtkIdType> ids;
