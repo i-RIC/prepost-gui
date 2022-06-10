@@ -1411,6 +1411,7 @@ void iRICMainWindow::createGraph2dHybridWindow()
 	Graph2dHybridWindowProjectDataItem* item2 = dynamic_cast<Graph2dHybridWindowProjectDataItem*>(item);
 	bool ok = item2->setupInitialSetting();
 	if (! ok) {
+		item->window()->setParent(nullptr);
 		delete item;
 		return;
 	}
@@ -1435,6 +1436,7 @@ void iRICMainWindow::createGraph2dScatteredWindow()
 	Graph2dScatteredWindowProjectDataItem* item2 = dynamic_cast<Graph2dScatteredWindowProjectDataItem*>(item);
 	bool ok = item2->setupInitialSetting();
 	if (! ok) {
+		item->window()->setParent(nullptr);
 		delete item;
 		return;
 	}
