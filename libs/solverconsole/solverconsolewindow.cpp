@@ -381,39 +381,33 @@ void SolverConsoleWindow::terminateSolverSilently()
 	if (impl->m_process == nullptr) {return;}
 
 	impl->m_solverKilled = true;
-	QString wd = impl->m_projectData->workDirectory();
-	QFile cancelOkFile(QDir(wd).absoluteFilePath(".cancel_ok"));
-	if (cancelOkFile.exists()) {
-		impl->m_iricMainWindow->enterModelessDialogMode();
-		// this solver supports canceling through ".cancel". Create ".cancel".
-		impl->createCancelFile();
-		// wait for SOLVER_CANCEL_WAITTIME secs.
-		int waited = 0;
-		while (true) {
-			bool ok = impl->m_process->waitForFinished(1000);
-			qApp->processEvents();
-			if (ok) {break;}
-			++ waited;
 
-			if (waited == SOLVER_CANCEL_WAITTIME) {
-				QMessageBox::StandardButton button = QMessageBox::question(
-					this, tr("Confirm Solver Termination"),
-					tr("%1 seconds have passed, but the solver do not end. Do you want to kill the solver?").arg(SOLVER_CANCEL_WAITTIME),
-					QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
-				if (QMessageBox::Yes == button) {
-					if (impl->m_process != nullptr) {
-						impl->m_process->kill();
-					}
-					break;
+	impl->m_iricMainWindow->enterModelessDialogMode();
+	// this solver supports canceling through ".cancel". Create ".cancel".
+	impl->createCancelFile();
+	// wait for SOLVER_CANCEL_WAITTIME secs.
+	int waited = 0;
+	while (true) {
+		bool ok = impl->m_process->waitForFinished(1000);
+		qApp->processEvents();
+		if (ok) {break;}
+		++ waited;
+
+		if (waited == SOLVER_CANCEL_WAITTIME) {
+			QMessageBox::StandardButton button = QMessageBox::question(
+				this, tr("Confirm Solver Termination"),
+				tr("%1 seconds have passed, but the solver do not end. Do you want to kill the solver?").arg(SOLVER_CANCEL_WAITTIME),
+				QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
+			if (QMessageBox::Yes == button) {
+				if (impl->m_process != nullptr) {
+					impl->m_process->kill();
 				}
-				waited = 0;
+				break;
 			}
+			waited = 0;
 		}
-		impl->m_iricMainWindow->exitModelessDialogMode();
-	} else {
-		// this solver does not supports canceling through ".cancel". Kill the solver.
-		impl->m_process->kill();
 	}
+	impl->m_iricMainWindow->exitModelessDialogMode();
 }
 
 void SolverConsoleWindow::waitForSolverFinish()
