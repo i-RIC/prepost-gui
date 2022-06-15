@@ -19,7 +19,7 @@ project(dist NONE)
 find_package(iriclib 4 REQUIRED)
 
 if(CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
-  set(CMAKE_INSTALL_PREFIX c:/online_update CACHE PATH "Top level directory of online_update workspace" FORCE)
+  set(CMAKE_INSTALL_PREFIX c:/online_update_v4 CACHE PATH "Top level directory of online_update workspace" FORCE)
 endif()
 
 if(NOT PREPOST_GUI)

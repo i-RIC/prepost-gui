@@ -238,7 +238,7 @@ after_build:
             $env:iriclib_DIR="c:/iricdev-2019/lib/install/iriclib-" + $matches[1] + "/lib/cmake/iriclib"
           }
         }
-        cmake -DPREPOST_GUI:PATH=$env:APPVEYOR_BUILD_FOLDER -DSRC_FOLDER:STRING=yasu_src -Diriclib_DIR:PATH=$env:iriclib_DIR -G $env:generator ..
+        cmake -DPREPOST_GUI:PATH=$env:APPVEYOR_BUILD_FOLDER -DSRC_FOLDER:STRING=dev_v4_src -Diriclib_DIR:PATH=$env:iriclib_DIR -G $env:generator ..
         if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
       }
 
@@ -251,10 +251,10 @@ artifacts:
 on_success:
   - ps: |
       if ($CommitAndPush) {
-        # online_update urls
-        $remote_url_iric = "https://github.com/i-RIC/online_update.git"
-        $remote_url_scharlton2 = "https://github.com/scharlton2/online_update.git"
-        $remote_url_kskinoue0612 = "https://github.com/kskinoue0612/online_update.git"
+        # online_update_v4 urls
+        $remote_url_iric = "https://github.com/i-RIC/online_update_v4.git"
+        $remote_url_scharlton2 = "https://github.com/scharlton2/online_update_v4.git"
+        $remote_url_kskinoue0612 = "https://github.com/kskinoue0612/online_update_v4.git"
 
         $branch = $True
         if ($env:APPVEYOR_REPO_NAME -eq "i-RIC/prepost-gui") {
@@ -273,10 +273,10 @@ on_success:
         }
 
         Set-Location \ -ErrorAction Stop
-        git clone -q --branch=master --depth 1 $remote_url online_update 2>&1 | Out-Null
+        git clone -q --branch=master --depth 1 $remote_url online_update_v4 2>&1 | Out-Null
         if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
 
-        Set-Location .\online_update -ErrorAction Stop
+        Set-Location .\online_update_v4 -ErrorAction Stop
 
         if ($branch) {
           # create branch when remote is not "i-RIC/prepost-gui"
@@ -284,10 +284,10 @@ on_success:
           if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
         }
 
-        # update data\definition.xml and meta\package.xml from yasu_src\packages\gui.prepost
+        # update data\definition.xml and meta\package.xml from dev_v4_src\packages\gui.prepost
 
         # set properties
-        $v=(Select-String -Path yasu_src\packages\gui.prepost\meta\package.xml -Pattern "(?<=<Version>)(.*)(?=</Version>)").Matches.Value -split "\."
+        $v=(Select-String -Path dev_v4_src\packages\gui.prepost\meta\package.xml -Pattern "(?<=<Version>)(.*)(?=</Version>)").Matches.Value -split "\."
         $v[3] = 1 + $v[3]
         $env:VERSION = $v -join "."
         $tokyo_tz = [System.TimeZoneInfo]::FindSystemTimeZoneById("Tokyo Standard Time")
@@ -299,8 +299,8 @@ on_success:
         # The parentheses around the Get-Content commands below are required
         # to avoid file access errors
 
-        $files=@('yasu_src\packages\gui.prepost\data\definition.xml', `
-                'yasu_src\packages\gui.prepost\meta\package.xml')
+        $files=@('dev_v4_src\packages\gui.prepost\data\definition.xml', `
+                'dev_v4_src\packages\gui.prepost\meta\package.xml')
         foreach ($file in $files) {
           (Get-Content $file) | Foreach-Object {
             $_ -replace "(?<=<Version>)(.*)(?=</Version>)",           "$env:VERSION" `
@@ -319,9 +319,9 @@ on_success:
         # get iriclib ReleaseDate from github releases
         #   see https://docs.github.com/en/rest/reference/releases#get-the-latest-release
         # and write them both to $out
-        $in = 'yasu_src\packages\sdk\data\c\lib\cmake\iriclib\iriclibConfigVersion.cmake'
-        $outs=@('yasu_src\packages\sdk\meta\package.xml', `
-                'yasu_src\packages\miniconda\meta\package.xml')
+        $in = 'dev_v4_src\packages\sdk\data\c\lib\cmake\iriclib\iriclibConfigVersion.cmake'
+        $outs=@('dev_v4_src\packages\sdk\meta\package.xml', `
+                'dev_v4_src\packages\miniconda\meta\package.xml')
         $iriclib_ver = (Select-String -Path $in -Pattern '^set\(PACKAGE_VERSION "(?<ver>.*)"\)$').Matches[0].Groups['ver'].Value
         $releases_url="https://api.github.com/repos/i-RIC/iriclib_v4/releases"
         $latest_json = Invoke-WebRequest -Uri $releases_url/latest -Method GET -UseBasicParsing
@@ -339,17 +339,17 @@ on_success:
         }
 
         # run repogen to build packages and Updates.xml
-        Set-Location \online_update\yasu_src -ErrorAction Stop
+        Set-Location \online_update_v4\dev_v4_src -ErrorAction Stop
         # run repogen
-        & ${env:ifw_location}\bin\repogen.exe -p packages --update --include gui.prepost,miniconda,sdk ..\yasu
+        & ${env:ifw_location}\bin\repogen.exe -p packages --update --include gui.prepost,miniconda,sdk ..\dev_v4
         if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
 
         # run normalize_updatexml.py to normalize Updates.xml.
-        Set-Location \online_update -ErrorAction Stop
+        Set-Location \online_update_v4 -ErrorAction Stop
         py normalize_updatexml.py
         if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
 
-        # commit and push to https://github.com/i-RIC/online_update.git
+        # commit and push to https://github.com/i-RIC/online_update_v4.git
         git config --global credential.helper store
         if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
 
