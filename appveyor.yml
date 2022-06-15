@@ -49,7 +49,7 @@ init:
       $env:CommitAndPush = $CommitAndPush
 
 configuration:
-  - Debug
+##  - Debug
   - Release
 
 matrix:
@@ -273,7 +273,7 @@ on_success:
         }
 
         Set-Location \ -ErrorAction Stop
-        git clone -q --branch=master --depth 1 $remote_url online_update_v4 2>&1 | Out-Null
+        git clone -q --branch=main --depth 1 $remote_url online_update_v4 2>&1 | Out-Null
         if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
 
         Set-Location .\online_update_v4 -ErrorAction Stop
