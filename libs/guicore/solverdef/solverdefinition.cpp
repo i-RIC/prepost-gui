@@ -60,10 +60,9 @@ void SolverDefinition::Impl::load()
 	// setup gridtypes
 	QDomNode gdsNode = iRIC::getChildNode(sdElem, "GridTypes");
 	if (gdsNode.isNull()) {
-		// Try to find "GridRelatedCondition" node just under SolverDefinition node.
-		// if found, it means that this solver supports only one grid, with one gridtype.
-		QDomNode gdCondNode = iRIC::getChildNode(sdElem, "GridRelatedCondition");
-		if (gdCondNode.isNull()) {
+		// check gridtype attribute
+		auto gt = sdElem.attribute("gridtype");
+		if (gt == "" || gt == "nogrid") {
 			// No grid related condition node found.
 		} else {
 			// found. build one gridtype, using SolverDefinition node.
