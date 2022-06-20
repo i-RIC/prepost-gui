@@ -671,9 +671,10 @@ void iRICMainWindow::setupForNewProjectData()
 	auto ac = m_animationController;
 	ac->setup(m_projectData->solverDefinition()->iterationType());
 	QToolBar* at = ac->animationToolBar();
-	if (at != nullptr) {addToolBar(at);}
-
-	m_actionManager->setAnimationWidgets(ac->animationMenu(), at);
+	if (at != nullptr) {
+		m_actionManager->setAnimationWidgets(ac->animationMenu(), at);
+		addToolBar(at);
+	}
 	m_actionManager->updateMenuBar();
 
 	// update window title.
