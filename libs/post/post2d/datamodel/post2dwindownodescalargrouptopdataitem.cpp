@@ -51,29 +51,24 @@ void Post2dWindowNodeScalarGroupTopDataItem::doLoadFromProjectMainFile(const QDo
 {
 	if (node.toElement().nodeName() == "Contours") {
 		// multi-contours
+		auto items = m_childItems;
+		for (const auto& item : items) {
+			delete item;
+		}
+		m_scalarmap.clear();
 
 		// load contours from main file
 		QDomNodeList children = node.childNodes();
-		std::set<Post2dWindowNodeScalarGroupDataItem*> missing_quadrant;
 		for (int i = 0; i < children.count(); ++i) {
 			QDomElement childElem = children.at(i).toElement();
 			if (childElem.nodeName() == "ScalarGroup") {
-				std::string solution = iRIC::toStr(children.at(i).toElement().attribute("solution", ""));
-				if (solution.size()) {
-					auto it = m_scalarmap.find(solution);
-					if (it != m_scalarmap.end()) {
-						(*it).second->loadFromProjectMainFile(children.at(i));
-						// store checked items that have no quadrant set
-						if ((*it).second->m_standardItem->checkState() != Qt::Unchecked) {
-							if ((*it).second->m_setting.scalarBarSetting.quadrant == ScalarBarSetting::Quadrant::None) {
-								missing_quadrant.insert((*it).second);
-							}
-						}
-					}
-				}
+				auto item = new Post2dWindowNodeScalarGroupDataItem(this, NotChecked, NotReorderable, NotDeletable, Vertex);
+				item->loadFromProjectMainFile(childElem);
+				m_childItems.push_back(item);
+				m_scalarmap[item->target()] = item;
 			}
 		}
-
+/*
 		Q_ASSERT(missing_quadrant.size() <= 4);
 		std::set<ScalarBarSetting::Quadrant> quads = ScalarBarSetting::getQuadrantSet();
 		while (missing_quadrant.size() && quads.size()) {
@@ -87,6 +82,7 @@ void Post2dWindowNodeScalarGroupTopDataItem::doLoadFromProjectMainFile(const QDo
 			missing_quadrant.erase(closest.begin()->second);
 			quads.erase(quad);
 		}
+*/
 	}
 	else {
 		// single-contour (old)

@@ -290,7 +290,10 @@ bool Post2dWindow::isAutoParticleOutput() const
 	auto rItem = dynamic_cast<Post2dWindowRootDataItem*>(m_dataModel->m_rootDataItem);
 	for (auto tItem : rItem->gridTypeDataItems()) {
 		for (auto zItem : tItem->zoneDatas()) {
-			output = output || zItem->particleDataItem()->isOutput();
+			auto pItem = zItem->particleDataItem();
+			if (pItem == nullptr) {continue;}
+
+			output = output || pItem->isOutput();
 		}
 	}
 	return output;
