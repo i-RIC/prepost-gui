@@ -76,7 +76,14 @@ void InputConditionDialog::setup(const SolverDefinition& def, const QLocale& loc
 {
 	// open solve definition file
 	SolverDefinitionTranslator t(def.folder().absolutePath(), locale);
-	QDomNode condNode = iRIC::getChildNode(def.document().documentElement(), "CalculationCondition");
+	auto docElement = def.document().documentElement();
+	QDomNode condNode = iRIC::getChildNode(docElement, "CalculationCondition");
+
+	if (condNode.isNull()) {
+		// For grid generators
+		condNode = iRIC::getChildNode(docElement, "GridGeneratingCondition");
+	}
+
 	// setup ContainerSet first.
 	m_containerSet->setup(condNode, def, t);
 	m_containerSetBackup = m_containerSet->clone();
