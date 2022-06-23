@@ -62,7 +62,7 @@ void Post2dWindowNodeScalarGroupTopDataItem::doLoadFromProjectMainFile(const QDo
 		for (int i = 0; i < children.count(); ++i) {
 			QDomElement childElem = children.at(i).toElement();
 			if (childElem.nodeName() == "ScalarGroup") {
-				auto item = new Post2dWindowNodeScalarGroupDataItem(this, NotChecked, NotReorderable, NotDeletable, Vertex);
+				auto item = new Post2dWindowNodeScalarGroupDataItem(this, NotChecked, NotReorderable, NotDeletable, iRICLib::H5CgnsZone::SolutionPosition::Node);
 				item->loadFromProjectMainFile(childElem);
 				m_childItems.push_back(item);
 				m_scalarmap[item->target()] = item;
