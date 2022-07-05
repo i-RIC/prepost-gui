@@ -942,6 +942,7 @@ void GeoDataPointmap::setSTLData(vtkPolyData* data, vtkDataArray* values)
 	m_vtkDelaunayedPolyData->BuildCells();
 
 	buildGridFromPolydata();
+	rebuildQTree();
 }
 
 void GeoDataPointmap::updateZDepthRangeItemCount(ZDepthRange& range)
