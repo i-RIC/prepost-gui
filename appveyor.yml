@@ -4,7 +4,7 @@ version: '{branch}-{build}'
 environment:
   CL: /MP
   generator: Visual Studio 16 2019
-  ifw_location: C:\Qt\Tools\QtInstallerFramework\4.3
+  ifw_location: C:\Qt\Tools\QtInstallerFramework\2.0
   iric_access_token:
     secure: TtnZWgikg+nDp24nYOfER/4OD1+HfXGWze/RvBpYVYsY996oWo9F3/jtX1TGuGri
   kskinoue0612_access_token:
@@ -41,7 +41,6 @@ image:
 # other way around (see develop_v4-363)
 init:
   - ps: |
-      if (! (Test-Path ${env:ifw_location}\bin\repogen.exe)) { throw 'repogen.exe not found (check $env:ifw_location' }
       # Sometimes the plaintext of secure variables is displayed so filter out secure vars
       Get-ChildItem env: | Where-Object { $_.Name -NotMatch "access_token" -and $_.Name -notmatch 'json_pw'}
       # Only commit and push to master branch or debug-appveyor branch (for testing)
@@ -206,6 +205,14 @@ before_build:
       (New-Object Net.WebClient).DownloadFile($url, "\iricdev-2019\install.7z")
       7z x install.7z
       rm install.7z
+  - ps: |
+      # download and install ifw 2.0
+      $url = "https://github.com/scharlton2/ifw/releases/download/v1/ifw-2.0.7z"
+      $7zfile = "c:\iricdev-2019\ifw.7z"
+      (New-Object Net.WebClient).DownloadFile($url, $7zfile)
+      7z x -oc:\Qt\Tools\QtInstallerFramework $7zfile
+      rm $7zfile
+      if (! (Test-Path ${env:ifw_location}\bin\repogen.exe)) { throw 'repogen.exe not found (check $env:ifw_location' }
   - call create-files.cmd
   - cd %APPVEYOR_BUILD_FOLDER%
   - if not exist libdlls (md libdlls)
