@@ -154,7 +154,7 @@ QString VersionNumber::toAboutString() const
 
 bool VersionNumber::compatibleWith(const VersionNumber& v)const
 {
-	if (major() != v.major()) {return false;}
+	if (major() < v.major()) {return false;}
 	if (minor() < v.minor()) {return false;}
 	return true;
 }
