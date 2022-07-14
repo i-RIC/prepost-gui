@@ -60,6 +60,7 @@ const int WSE_WIDTH = 120;
 const int ASPECT_RATIO_RIGHT_MARGIN = 10;
 const int ASPECT_RATIO_BOTTOM_MARGIN = 10;
 const int MIN_SCALE_COUNT = 3;
+const double DELTA = 1.0E-6;
 
 int findRowToDraw(int rowToTry, const QRectF& rect, std::vector<std::vector<QRectF> >* drawnRects)
 {
@@ -964,12 +965,12 @@ QRectF GeoDataRiverSurveyCrosssectionWindowGraphicsView::getRegion()
 		}
 	}
 
-	if (ret.left() == ret.right()) {
+	if (std::abs(ret.left() - ret.right()) < DELTA) {
 		double center = ret.left();
 		ret.setLeft(center - 0.5);
 		ret.setRight(center + 0.5);
 	}
-	if (ret.top() == ret.bottom()) {
+	if (std::abs(ret.top() - ret.bottom()) < DELTA) {
 		double center = ret.top();
 		ret.setTop(center - 0.5);
 		ret.setBottom(center + 0.5);
