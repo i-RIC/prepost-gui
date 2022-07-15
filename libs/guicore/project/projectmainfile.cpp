@@ -903,15 +903,9 @@ void ProjectMainFile::checkVersionCompatibility()
 	if (iRICVer.major() == 2 && iRICVer.minor() == 0 && projVer.major() == 1 && projVer.minor() == 9) {
 		return;
 	}
-	// if iRIC ver. is 3.0 and project ver. is 2.x, it is accepted.
-	if (iRICVer.major() == 3 && projVer.major() == 2) {
-		return;
-	}
 
 	// error.
-	if (iRICVer.major() > projVer.major()) {
-		throw ErrorMessage(tr("This project file cannot be read, because it was created by too old iRIC (version %1).").arg(projVer.toString()));
-	} else {
+	if (iRICVer.major() < projVer.major()) {
 		throw ErrorMessage(tr("This project file cannot be read, because it was created by newer iRIC (version %1).").arg(projVer.toString()));
 	}
 }
