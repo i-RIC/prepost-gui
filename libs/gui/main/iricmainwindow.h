@@ -185,6 +185,8 @@ public slots:
 	void enterModelessDialogMode() override;
 	/// Exit modeless dialog mode. Menus, toolbars becomes usable.
 	void exitModelessDialogMode() override;
+	void updateWindowList() override;
+
 	void setupRecentProjectsMenu();
 	/// Clear calculation result in the current CGNS file.
 	void clearCalculationResult();

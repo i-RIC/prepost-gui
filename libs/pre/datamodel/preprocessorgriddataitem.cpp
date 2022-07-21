@@ -1233,6 +1233,7 @@ void PreProcessorGridDataItem::silentDeleteGrid()
 	closeBirdEyeWindow();
 	auto gtItem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent());
 	gtItem->geoDataTop()->clearDimensionsIfNoDataExists();
+	iricMainWindow()->updateWindowList();
 
 	iRICUndoStack::instance().clear();
 }
@@ -1307,6 +1308,8 @@ void PreProcessorGridDataItem::closeBirdEyeWindow()
 {
 	if (impl->m_birdEyeWindow == nullptr) {return;}
 	delete impl->m_birdEyeWindow->parent();
+	
+	iricMainWindow()->updateWindowList();
 }
 
 void PreProcessorGridDataItem::informGridChange()
