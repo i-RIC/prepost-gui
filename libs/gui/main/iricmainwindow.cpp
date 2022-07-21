@@ -1494,6 +1494,11 @@ void iRICMainWindow::exitModelessDialogMode()
 	if (t != nullptr) {t->setDisabled(false);}
 }
 
+void iRICMainWindow::updateWindowList()
+{
+	m_actionManager->updateWindowList();
+}
+
 void iRICMainWindow::showPreferenceDialog()
 {
 	PreferenceDialog dialog;
