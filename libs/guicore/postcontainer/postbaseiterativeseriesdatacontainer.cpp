@@ -21,6 +21,7 @@ int PostBaseIterativeSeriesDataContainer::loadData()
 	auto solInfo = solutionInfo();
 
 	auto biter = solInfo->cgnsFile()->ccBase()->biterData();
+	if (biter == nullptr) {return IRIC_DATA_NOT_FOUND;}
 	std::set<std::string> resultNames;
 	int ier = biter->getResultNames(&resultNames);
 	if (ier != 0) {return ier;}
