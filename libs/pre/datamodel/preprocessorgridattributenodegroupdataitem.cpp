@@ -523,6 +523,10 @@ vtkIdType PreProcessorGridAttributeNodeGroupDataItem::findVertex(const QPoint& p
 
 	PreProcessorGridDataItem* gitem = dynamic_cast<PreProcessorGridDataItem*>(parent());
 	Grid* grid = gitem->grid();
+	if (grid == nullptr) {
+		// no grid
+		return -1;
+	}
 	vtkIdType vid = grid->vtkGrid()->FindPoint(x, y, 0);
 	if (vid < 0) {
 		// no point is near.
