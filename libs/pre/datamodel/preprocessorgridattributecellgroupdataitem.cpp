@@ -379,6 +379,9 @@ vtkIdType PreProcessorGridAttributeCellGroupDataItem::findCell(const QPoint& p, 
 
 	PreProcessorGridDataItem* gitem = dynamic_cast<PreProcessorGridDataItem*>(parent());
 	Grid* grid = gitem->grid();
+	if (grid == nullptr) {
+		return -1;
+	}
 
 	double point[3];
 	point[0] = x; point[1] = y; point[2] = 0;

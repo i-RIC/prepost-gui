@@ -20,6 +20,8 @@
 #include "private/preprocessorgriddataitem_impl.h"
 
 #include <guicore/base/iricmainwindowinterface.h>
+#include <guicore/base/propertybrowser.h>
+#include <guicore/datamodel/propertybrowserview.h>
 #include <guicore/misc/mouseboundingbox.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
 #include <guicore/pre/grid/grid2d.h>
@@ -1233,6 +1235,10 @@ void PreProcessorGridDataItem::silentDeleteGrid()
 	closeBirdEyeWindow();
 	auto gtItem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent());
 	gtItem->geoDataTop()->clearDimensionsIfNoDataExists();
+
+	auto pre = dynamic_cast<PreProcessorWindow*>(preProcessorWindow());
+	pre->propertyBrowser()->view()->resetAttributes();
+
 	iricMainWindow()->updateWindowList();
 
 	iRICUndoStack::instance().clear();
