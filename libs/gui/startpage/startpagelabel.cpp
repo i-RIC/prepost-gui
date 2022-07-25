@@ -37,12 +37,15 @@ void StartPageLabel::paintEvent(QPaintEvent*)
 	painter.drawImage(2, 2, img);
 	QFont font("Helvetica", 11, QFont::Bold);
 	painter.setFont(font);
-	QRect titleRect(r.left() + IMAGEMARGIN, r.top(), r.width() - IMAGEMARGIN, 20);
+	int titleHeight = painter.fontMetrics().height();
+
+	QRect titleRect(r.left() + IMAGEMARGIN, r.top(), r.width() - IMAGEMARGIN, titleHeight);
 	painter.drawText(titleRect, Qt::AlignLeft | Qt::AlignVCenter, impl->m_title);
 	font = QFont("Helvetica", 9, QFont::Normal);
 	painter.setFont(font);
 	painter.setPen(QPen(Qt::darkGray));
-	QRect subtitleRect(r.left() + IMAGEMARGIN, r.top() + 20, r.width() - IMAGEMARGIN, 20);
+	int subTitleHeight = painter.fontMetrics().height();
+	QRect subtitleRect(r.left() + IMAGEMARGIN, r.top() + titleHeight + 2, r.width() - IMAGEMARGIN, subTitleHeight);
 	painter.drawText(subtitleRect, Qt::AlignLeft | Qt::AlignVCenter, impl->m_subtitle);
 }
 
@@ -53,5 +56,19 @@ void StartPageLabel::mousePressEvent(QMouseEvent*)
 
 QSize StartPageLabel::sizeHint() const
 {
-	return QSize(300, 40);
+	int h = 6;
+
+	QPainter painter;
+
+	QFont font("Helvetica", 11, QFont::Bold);
+	painter.setFont(font);
+	int titleHeight = static_cast<int> (painter.fontMetrics().height() * 1.2);
+	h += titleHeight;
+
+	font = QFont("Helvetica", 9, QFont::Normal);
+	painter.setFont(font);
+	int subTitleHeight = painter.fontMetrics().height();
+	h += subTitleHeight;
+
+	return QSize(300, h);
 }
