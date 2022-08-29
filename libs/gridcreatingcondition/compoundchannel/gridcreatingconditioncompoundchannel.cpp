@@ -79,42 +79,37 @@
 
 GridCreatingConditionCompoundChannel::GridCreatingConditionCompoundChannel(ProjectDataItem* parent, GridCreatingConditionCreator* creator) :
 	GridCreatingCondition(parent, creator),
-	m_rightClickingMenu {nullptr}
+	m_status {stDefiningRegion},
+	m_mouseEventMode {meBeforeDefining},
+	m_gridRegionPolygon {new GridCreatingConditionCompoundChannelGridRegionPolygon(this)},
+	m_lowWaterChannelPolygon {new GridCreatingConditionCompoundChannelLowWaterChannelPolygon(this)},
+	m_centerLine {new GridCreatingConditionCompoundChannelCenterLine(this)},
+	m_selectedPolygon {m_gridRegionPolygon},
+	m_selectedLine {nullptr},
+	m_addVertexAction {new QAction(QIcon(":/libs/guibase/images/iconAddPolygonVertex.png"), tr("&Add Vertex"), this)},
+	m_removeVertexAction {new QAction(QIcon(":/libs/guibase/images/iconRemovePolygonVertex.png"), tr("&Remove Vertex"), this)},
+	m_coordEditAction {new QAction(tr("Edit C&oordinates..."), this)},
+	m_reverseCenterLineAction {new QAction(tr("R&everse Center Line Direction"), this)},
+	m_rightClickingMenu {nullptr},
+	m_inhibitSelect {false},
+	m_addPixmap {":/libs/guibase/images/cursorAdd.png"},
+	m_removePixmap {":/libs/guibase/images/cursorRemove.png"},
+	m_addCursor {m_addPixmap, 0, 0},
+	m_removeCursor {m_removePixmap, 0, 0}
 {
 	initParams();
 
-	m_gridRegionPolygon = new GridCreatingConditionCompoundChannelGridRegionPolygon(this);
 	m_gridRegionPolygon->setActive(true);
-	m_selectedPolygon = m_gridRegionPolygon;
-
-	m_lowWaterChannelPolygon = new GridCreatingConditionCompoundChannelLowWaterChannelPolygon(this);
 	m_lowWaterChannelPolygon->setActive(false);
-
-	m_centerLine = new GridCreatingConditionCompoundChannelCenterLine(this);
 	m_centerLine->setActive(false);
-	m_selectedLine = nullptr;
 
-	m_addVertexAction = new QAction(QIcon(":/libs/guibase/images/iconAddPolygonVertex.png"), tr("&Add Vertex"), this);
 	m_addVertexAction->setCheckable(true);
 	connect(m_addVertexAction, SIGNAL(triggered(bool)), this, SLOT(addVertexMode(bool)));
-	m_removeVertexAction = new QAction(QIcon(":/libs/guibase/images/iconRemovePolygonVertex.png"), tr("&Remove Vertex"), this);
 	m_removeVertexAction->setCheckable(true);
 	connect(m_removeVertexAction, SIGNAL(triggered(bool)), this, SLOT(removeVertexMode(bool)));
-	m_coordEditAction = new QAction(tr("Edit C&oordinates..."), this);
 	connect(m_coordEditAction, SIGNAL(triggered()), this, SLOT(editCoordinates()));
-	m_reverseCenterLineAction = new QAction(tr("R&everse Center Line Direction"), this);
 	connect(m_reverseCenterLineAction, SIGNAL(triggered()), this, SLOT(reverseCenterLine()));
 
-	// Set cursors for mouse view change events.
-	m_addPixmap = QPixmap(":/libs/guibase/images/cursorAdd.png");
-	m_removePixmap = QPixmap(":/libs/guibase/images/cursorRemove.png");
-	m_addCursor = QCursor(m_addPixmap, 0, 0);
-	m_removeCursor = QCursor(m_removePixmap, 0, 0);
-
-	m_status = stDefiningRegion;
-	m_mouseEventMode = meBeforeDefining;
-
-	m_inhibitSelect = false;
 	updateActionStatus();
 }
 
@@ -1009,7 +1004,6 @@ void GridCreatingConditionCompoundChannel::initParams()
 
 	m_relaxation = 0.15;
 	m_iterations = 30;
-
 }
 
 Grid* GridCreatingConditionCompoundChannel::createGrid()

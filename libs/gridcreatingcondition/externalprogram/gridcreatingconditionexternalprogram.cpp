@@ -43,7 +43,7 @@ GridCreatingConditionExternalProgram::GridCreatingConditionExternalProgram(const
 {
 	setFilename("gridcreate.cgn");
 
-	PreProcessorGridCreatingConditionDataItemInterface* p = dynamic_cast<PreProcessorGridCreatingConditionDataItemInterface*>(parent);
+	auto p = dynamic_cast<PreProcessorGridCreatingConditionDataItemInterface*>(parent);
 	m_rightClickingMenu->addAction(p->createAction());
 	m_rightClickingMenu->addSeparator();
 	m_rightClickingMenu->addAction(p->clearAction());

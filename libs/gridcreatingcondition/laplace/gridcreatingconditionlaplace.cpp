@@ -114,9 +114,7 @@ const double GridCreatingConditionLaplace::POISSONPARAM_FACTOR = 0.03;
 GridCreatingConditionLaplace::GridCreatingConditionLaplace(ProjectDataItem* parent, GridCreatingConditionCreator* creator) :
 	GridCreatingCondition(parent, creator),
 	impl {new Impl {this}}
-{
-
-}
+{}
 
 GridCreatingConditionLaplace::~GridCreatingConditionLaplace()
 {

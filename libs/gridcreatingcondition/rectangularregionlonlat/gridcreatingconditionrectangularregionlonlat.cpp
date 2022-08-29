@@ -27,12 +27,11 @@
 
 GridCreatingConditionRectangularRegionLonLat::GridCreatingConditionRectangularRegionLonLat(ProjectDataItem* parent, GridCreatingConditionCreator* creator) :
 	GridCreatingCondition(parent, creator),
-	m_previewGrid {nullptr}
+	m_previewGrid {nullptr},
+	m_mouseEventMode {meNormal},
+	m_rightClickingMenu {nullptr}
 {
-	m_mouseEventMode = meNormal;
-	m_rightClickingMenu = nullptr;
 	clear();
-	graphicsView()->ResetCameraClippingRange();
 }
 
 GridCreatingConditionRectangularRegionLonLat::~GridCreatingConditionRectangularRegionLonLat()

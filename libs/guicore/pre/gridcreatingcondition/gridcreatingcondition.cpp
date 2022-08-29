@@ -20,11 +20,12 @@ QString BINARY_FILENAME = "condition.dat";
 const QString GridCreatingCondition::XML_FILENAME = "condition.xml";
 
 GridCreatingCondition::GridCreatingCondition(ProjectDataItem* parent, GridCreatingConditionCreator* creator) :
-	ProjectDataItem("gridcreatingcondition.dat", parent)
+	ProjectDataItem("gridcreatingcondition.dat", parent),
+	m_conditionDataItem {dynamic_cast<PreProcessorGridCreatingConditionDataItemInterface*>(parent)},
+	m_creator {creator},
+	m_menu {new QMenu(tr("&Grid Creating Condition"), 0)}
 {
-	m_creator = creator;
-	m_conditionDataItem = dynamic_cast<PreProcessorGridCreatingConditionDataItemInterface*>(parent);
-	m_menu = new QMenu(tr("&Grid Creating Condition"), 0);
+	graphicsView()->ResetCameraClippingRange();
 }
 
 GridCreatingCondition::~GridCreatingCondition()
