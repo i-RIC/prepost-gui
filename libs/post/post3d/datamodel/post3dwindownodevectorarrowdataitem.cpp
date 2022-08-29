@@ -32,8 +32,6 @@ Post3dWindowNodeVectorArrowDataItem::Post3dWindowNodeVectorArrowDataItem(Post3dW
 	m_transformFilter->SetTransform(transform);
 
 	renderer()->AddActor(m_arrowsActor.actor());
-
-	updateActorSettings();
 }
 
 Post3dWindowNodeVectorArrowDataItem::~Post3dWindowNodeVectorArrowDataItem()
@@ -164,14 +162,14 @@ void Post3dWindowNodeVectorArrowDataItem::updatePolyData()
 	const auto& srSetting = m_samplingRateSetting;
 	m_extractGrid->SetSampleRate(srSetting.iSamplingRate, srSetting.jSamplingRate, srSetting.kSamplingRate);
 
-	m_transformFilter->SetInputData(ps);
-	m_extractGrid->SetInputConnection(m_transformFilter->GetOutputPort());
-	m_extractGrid->Update();
+	m_extractGrid->SetInputData(ps);
+	m_transformFilter->SetInputConnection(m_extractGrid->GetOutputPort());
+	m_transformFilter->Update();
 
 	double height = dataModel()->graphicsView()->stdDistance(m_arrowSetting.arrowSize);
 	m_arrowsActor.setConeHeight(height);
 
-	vtkPolyData* filteredData = setting.buildFilteredData(m_extractGrid->GetOutput());
+	vtkPolyData* filteredData = setting.buildFilteredData(m_transformFilter->GetOutput());
 	m_arrowsActor.setPolyData(filteredData);
 	filteredData->Delete();
 
