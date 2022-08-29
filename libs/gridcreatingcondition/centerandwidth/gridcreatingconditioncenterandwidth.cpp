@@ -70,7 +70,20 @@ void setupLabelActor(vtkLabel2DActor* actor)
 GridCreatingConditionCenterAndWidth::GridCreatingConditionCenterAndWidth(ProjectDataItem* parent, GridCreatingConditionCreator* creator) :
 	GridCreatingCondition(parent, creator),
 	m_previewGrid {nullptr},
-	m_rightClickingMenu {nullptr}
+	m_splinePoints {vtkPoints::New()},
+	m_rightClickingMenu {nullptr},
+	m_iMax {11},
+	m_jMax {11},
+	m_width {10.0},
+	m_mouseEventMode {meBeforeDefining},
+	m_addPixmap {":/libs/guibase/images/cursorAdd.png"},
+	m_removePixmap {":/libs/guibase/images/cursorRemove.png"},
+	m_addCursor {m_addPixmap, 0, 0},
+	m_removeCursor {m_removePixmap, 0, 0},
+	m_selectedVertexId {0},
+	m_selectedEdgeId {0},
+	m_isAccepted {false},
+	m_isGridCreated {false}
 {
 	m_upstreamActor.setLabel("Upstream");
 	setupLabelActor(&m_upstreamActor);
@@ -104,26 +117,7 @@ GridCreatingConditionCenterAndWidth::GridCreatingConditionCenterAndWidth(Project
 	m_spline->SetXSpline(m_xSpline);
 	m_spline->SetYSpline(m_ySpline);
 	m_spline->SetZSpline(m_zSpline);
-	m_splinePoints = vtkPoints::New();
 	m_splinePoints->SetDataTypeToDouble();
-
-	// Set cursors for mouse view change events.
-	m_addPixmap = QPixmap(":/libs/guibase/images/cursorAdd.png");
-	m_removePixmap = QPixmap(":/libs/guibase/images/cursorRemove.png");
-	m_addCursor = QCursor(m_addPixmap, 0, 0);
-	m_removeCursor = QCursor(m_removePixmap, 0, 0);
-
-	m_mouseEventMode = meBeforeDefining;
-
-	m_selectedVertexId = 0;
-	m_selectedEdgeId = 0;
-
-	m_iMax = 11;
-	m_jMax = 11;
-	m_width = 10.0;
-
-	m_isAccepted = false;
-	m_isGridCreated = false;
 
 	updateActionStatus();
 }

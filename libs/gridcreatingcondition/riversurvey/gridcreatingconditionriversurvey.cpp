@@ -182,21 +182,18 @@ private:
 };
 
 
-// constructor
-GridCreatingConditionRiverSurvey::GridCreatingConditionRiverSurvey(ProjectDataItem* parent, GridCreatingConditionCreator* creator)
-	: GridCreatingConditionRiverSurveyInterface(parent, creator)
+GridCreatingConditionRiverSurvey::GridCreatingConditionRiverSurvey(ProjectDataItem* parent, GridCreatingConditionCreator* creator) :
+	GridCreatingConditionRiverSurveyInterface(parent, creator),
+	m_riverSurvey {nullptr},
+	m_lastStartPoint {nullptr},
+	m_lastEndPoint {nullptr},
+	m_lastRegionAddStartPoint {nullptr},
+	m_lastRegionAddEndPoint {nullptr},
+	m_rightClickingMenu {nullptr},
+	m_mouseEventMode {meNormal}
 {
-	m_riverSurvey = nullptr;
-	m_lastStartPoint = nullptr;
-	m_lastEndPoint = nullptr;
-
-	m_lastRegionAddStartPoint = nullptr;
-	m_lastRegionAddEndPoint = nullptr;
-
 	m_selectedZone.point = nullptr;
 
-	m_mouseEventMode = meNormal;
-	m_rightClickingMenu = nullptr;
 	setupVtkContainers();
 	setupActions();
 	setActionStatus();

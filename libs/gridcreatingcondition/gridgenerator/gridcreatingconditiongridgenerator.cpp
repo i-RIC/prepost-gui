@@ -23,9 +23,9 @@
 #include <QMainWindow>
 
 GridCreatingConditionGridGenerator::GridCreatingConditionGridGenerator(ProjectDataItem* parent, GridCreatingConditionCreator* creator) :
-	GridCreatingCondition(parent, creator)
+	GridCreatingCondition(parent, creator),
+	m_rightClickingMenu {nullptr}
 {
-	m_rightClickingMenu = 0;
 	clear();
 }
 
