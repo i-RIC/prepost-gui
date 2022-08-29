@@ -126,7 +126,6 @@ GridCreatingConditionCenterAndWidth::GridCreatingConditionCenterAndWidth(Project
 	m_isGridCreated = false;
 
 	updateActionStatus();
-	graphicsView()->ResetCameraClippingRange();
 }
 
 GridCreatingConditionCenterAndWidth::~GridCreatingConditionCenterAndWidth()

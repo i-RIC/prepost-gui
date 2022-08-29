@@ -22,12 +22,11 @@
 #include <vtkFloatArray.h>
 #include <vtkIntArray.h>
 
-GridCreatingConditionGridCombine::GridCreatingConditionGridCombine(ProjectDataItem* parent, GridCreatingConditionCreator* creator)
-	: GridCreatingCondition(parent, creator)
+GridCreatingConditionGridCombine::GridCreatingConditionGridCombine(ProjectDataItem* parent, GridCreatingConditionCreator* creator) :
+	GridCreatingCondition(parent, creator),
+	m_rightClickingMenu {nullptr}
 {
-	m_rightClickingMenu = nullptr;
 	clear();
-	graphicsView()->ResetCameraClippingRange();
 }
 
 GridCreatingConditionGridCombine::~GridCreatingConditionGridCombine()
