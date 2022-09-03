@@ -44,7 +44,7 @@ init:
       # Sometimes the plaintext of secure variables is displayed so filter out secure vars
       Get-ChildItem env: | Where-Object { $_.Name -NotMatch "access_token" -and $_.Name -notmatch 'json_pw'}
       # Only commit and push to master branch or debug-appveyor branch (for testing)
-      $CommitAndPush = ( ($env:Configuration -eq "Release") -AND ($env:APPVEYOR_REPO_BRANCH -eq "develop_v4") -AND (!$env:APPVEYOR_PULL_REQUEST_NUMBER) )
+      $CommitAndPush = (($env:Configuration -eq "Release") -AND (($env:APPVEYOR_REPO_BRANCH -eq "master_v4") -OR ($env:APPVEYOR_REPO_BRANCH -eq "develop_v4")) -AND (!$env:APPVEYOR_PULL_REQUEST_NUMBER))
       $env:CommitAndPush = $CommitAndPush
 
 configuration:
@@ -345,11 +345,20 @@ on_success:
           } | Set-Content $out
         }
 
-        # run repogen to build packages and Updates.xml
-        Set-Location \online_update_v4\dev_v4_src -ErrorAction Stop
-        # run repogen
-        & ${env:ifw_location}\bin\repogen.exe -p packages --update --include gui.prepost,miniconda,sdk ..\dev_v4
-        if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
+
+        if ($env:APPVEYOR_REPO_BRANCH -eq "master") {
+          # run repogen to build packages and Updates.xml
+          Set-Location \online_update_v4\prod_v4_src -ErrorAction Stop
+          # run repogen
+          & ${env:ifw_location}\bin\repogen.exe -p packages --update --include gui.prepost,miniconda,sdk ..\prod_v4
+          if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
+        } else {
+          # run repogen to build packages and Updates.xml
+          Set-Location \online_update_v4\dev_v4_src -ErrorAction Stop
+          # run repogen
+          & ${env:ifw_location}\bin\repogen.exe -p packages --update --include gui.prepost,miniconda,sdk ..\dev_v4
+          if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
+        }
 
         # run normalize_updatexml.py to normalize Updates.xml.
         Set-Location \online_update_v4 -ErrorAction Stop
