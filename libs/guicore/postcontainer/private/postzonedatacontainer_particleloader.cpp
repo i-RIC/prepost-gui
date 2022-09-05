@@ -18,6 +18,7 @@ bool PostZoneDataContainer::ParticleLoader::load(vtkSmartPointer<vtkPolyData>* d
 	} else {
 		(*data)->Initialize();
 	}
+	if (sol == nullptr) {return false;}
 
 	int numParticles;
 	int ier = sol->count(&numParticles);
