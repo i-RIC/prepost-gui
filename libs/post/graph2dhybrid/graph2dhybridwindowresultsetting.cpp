@@ -215,6 +215,7 @@ bool Graph2dHybridWindowResultSetting::init(PostSolutionInfo* sol)
 
 	std::vector<std::string> valueNames;
 	auto biter = file->ccBase()->biterData();
+	if (biter == nullptr) {return false;}
 	int ier = biter->getResultNames(&valueNames);
 	if (ier != 0) {return false;}
 
