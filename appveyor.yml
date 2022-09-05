@@ -306,8 +306,13 @@ on_success:
         # The parentheses around the Get-Content commands below are required
         # to avoid file access errors
 
-        $files=@('dev_v4_src\packages\gui.prepost\data\definition.xml', `
-                'dev_v4_src\packages\gui.prepost\meta\package.xml')
+        if ($env:APPVEYOR_REPO_BRANCH -eq "master_v4") {
+          $files=@('prod_v4_src\packages\gui.prepost\data\definition.xml', `
+                  'prod_v4_src\packages\gui.prepost\meta\package.xml')
+        } else {
+          $files=@('dev_v4_src\packages\gui.prepost\data\definition.xml', `
+                  'dev_v4_src\packages\gui.prepost\meta\package.xml')
+        }
         foreach ($file in $files) {
           (Get-Content $file) | Foreach-Object {
             $_ -replace "(?<=<Version>)(.*)(?=</Version>)",           "$env:VERSION" `
@@ -326,9 +331,16 @@ on_success:
         # get iriclib ReleaseDate from github releases
         #   see https://docs.github.com/en/rest/reference/releases#get-the-latest-release
         # and write them both to $out
-        $in = 'dev_v4_src\packages\sdk\data\c\lib\cmake\iriclib\iriclibConfigVersion.cmake'
-        $outs=@('dev_v4_src\packages\sdk\meta\package.xml', `
-                'dev_v4_src\packages\miniconda\meta\package.xml')
+
+        if ($env:APPVEYOR_REPO_BRANCH -eq "master_v4") {
+          $in = 'prod_v4_src\packages\sdk\data\c\lib\cmake\iriclib\iriclibConfigVersion.cmake'
+          $outs=@('prod_v4_src\packages\sdk\meta\package.xml', `
+                  'prod_v4_src\packages\miniconda.iriclib\meta\package.xml')
+        } else {
+          $in = 'dev_v4_src\packages\sdk\data\c\lib\cmake\iriclib\iriclibConfigVersion.cmake'
+          $outs=@('dev_v4_src\packages\sdk\meta\package.xml', `
+                  'dev_v4_src\packages\miniconda.iriclib\meta\package.xml')
+        }
         $iriclib_ver = (Select-String -Path $in -Pattern '^set\(PACKAGE_VERSION "(?<ver>.*)"\)$').Matches[0].Groups['ver'].Value
         $releases_url="https://api.github.com/repos/i-RIC/iriclib_v4/releases"
         $latest_json = Invoke-WebRequest -Uri $releases_url/latest -Method GET -UseBasicParsing
@@ -346,7 +358,7 @@ on_success:
         }
 
 
-        if ($env:APPVEYOR_REPO_BRANCH -eq "master") {
+        if ($env:APPVEYOR_REPO_BRANCH -eq "master_v4") {
           # run repogen to build packages and Updates.xml
           Set-Location \online_update_v4\prod_v4_src -ErrorAction Stop
           # run repogen
