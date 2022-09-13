@@ -464,6 +464,7 @@ void PreProcessorGridCreatingConditionDataItem::importData()
 	iRICUndoStack::instance().clear();
 
 	dataModel()->objectBrowserView()->select(m_standardItem->index());
+	dataModel()->graphicsView()->cameraFit();
 }
 
 void PreProcessorGridCreatingConditionDataItem::exportData()

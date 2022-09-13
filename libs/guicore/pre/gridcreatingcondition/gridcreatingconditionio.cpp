@@ -1,4 +1,5 @@
 #include "gridcreatingcondition.h"
+#include "gridcreatingconditioncreator.h"
 #include "gridcreatingconditionfactoryi.h"
 #include "gridcreatingconditionio.h"
 
@@ -26,8 +27,8 @@ GridCreatingCondition* GridCreatingConditionIO::importData(GridCreatingCondition
 	QDomDocument doc;
 	doc.setContent(&f);
 
-	GridCreatingCondition* cond = factory->restore(doc.documentElement(), parent);
-
+	auto name = doc.documentElement().attribute("name");
+	auto cond = factory->getCreator(name)->create(parent);
 	cond->loadFromExportData(exportDir.absolutePath());
 
 	iRIC::rmdirRecursively(exportDir.absolutePath());
