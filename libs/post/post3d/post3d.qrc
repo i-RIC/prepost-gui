@@ -1,5 +1,5 @@
 <RCC>
     <qresource prefix="/libs/post/post3d">
-        <file>images/iconVis3D.png</file>
+        <file>images/iconVis3D.svg</file>
     </qresource>
 </RCC>

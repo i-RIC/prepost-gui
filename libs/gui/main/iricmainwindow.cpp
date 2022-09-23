@@ -193,12 +193,12 @@ void iRICMainWindow::setupBasicSubWindows()
 	QMdiSubWindow* w = nullptr;
 	m_preProcessorWindow = new PreProcessorWindow(this);
 	w = m_centralWidget->addSubWindow(m_preProcessorWindow);
-	w->setWindowIcon(QIcon(":/images/iconPreprocessing.png"));
+	w->setWindowIcon(QIcon(":/images/iconPreprocessing.svg"));
 	w->hide();
 
 	m_solverConsoleWindow = new SolverConsoleWindow(this);
 	w = m_centralWidget->addSubWindow(m_solverConsoleWindow);
-	w->setWindowIcon(QIcon(":/libs/solverconsole/images/iconSolver.png"));
+	w->setWindowIcon(QIcon(":/libs/solverconsole/images/iconSolver.svg"));
 	w->hide();
 }
 

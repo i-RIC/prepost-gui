@@ -15,7 +15,7 @@
 #include <vtkRenderer.h>
 
 Post2dWindowBackgroundImageDataItem::Post2dWindowBackgroundImageDataItem(BackgroundImageInfo* image, Post2dWindowDataItem* parent) :
-	Post2dWindowDataItem {"", QIcon(":/libs/guibase/images/iconPaper.png"), parent},
+	Post2dWindowDataItem {"", QIcon(":/libs/guibase/images/iconPaper.svg"), parent},
 	m_imageInfo {image}
 {
 	setupStandardItem(NotChecked, Reorderable, NotDeletable, image->caption());

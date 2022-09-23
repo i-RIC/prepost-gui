@@ -15,7 +15,7 @@
 #include <QXmlStreamWriter>
 
 Post3dWindowNodeVectorArrowTopDataItem::Post3dWindowNodeVectorArrowTopDataItem(Post3dWindowDataItem* p) :
-	Post3dWindowDataItem {tr("Arrows"), QIcon(":/libs/guibase/images/iconFolder.png"), p},
+	Post3dWindowDataItem {tr("Arrows"), QIcon(":/libs/guibase/images/iconFolder.svg"), p},
 	m_zScale {1.0}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);

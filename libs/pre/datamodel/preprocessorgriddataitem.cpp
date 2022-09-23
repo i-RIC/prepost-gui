@@ -760,7 +760,6 @@ void PreProcessorGridDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsVie
 void PreProcessorGridDataItem::mousePressEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
 	m_shapeDataItem->mousePressEvent(event, v);
-
 }
 
 void PreProcessorGridDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
@@ -1017,11 +1016,11 @@ void PreProcessorGridDataItem::setupActions()
 	PreProcessorGridAndGridCreatingConditionDataItem* gagcItem =
 			dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItem*> (parent());
 	impl->m_importAction = new QAction(tr("&Import..."), this);
-	impl->m_importAction->setIcon(QIcon(":/libs/guibase/images/iconImport.png"));
+	impl->m_importAction->setIcon(QIcon(":/libs/guibase/images/iconImport.svg"));
 	connect(impl->m_importAction, SIGNAL(triggered()), gagcItem, SLOT(importGrid()));
 
 	impl->m_exportAction = new QAction(tr("&Export..."), this);
-	impl->m_exportAction->setIcon(QIcon(":/libs/guibase/images/iconExport.png"));
+	impl->m_exportAction->setIcon(QIcon(":/libs/guibase/images/iconExport.svg"));
 	connect(impl->m_exportAction, SIGNAL(triggered()), this, SLOT(exportGrid()));
 
 	impl->m_displaySettingAction = new QAction(tr("Grid &Shape..."), this);
@@ -1030,7 +1029,7 @@ void PreProcessorGridDataItem::setupActions()
 	impl->m_polygonSelectAction = new QAction(tr("&Select Polygon Region"), this);
 
 	impl->m_deleteAction = new QAction(tr("&Delete..."), this);
-	impl->m_deleteAction->setIcon(QIcon(":/libs/guibase/images/iconDeleteItem.png"));
+	impl->m_deleteAction->setIcon(QIcon(":/libs/guibase/images/iconDeleteItem.svg"));
 	connect(impl->m_deleteAction, SIGNAL(triggered()), this, SLOT(deleteGrid()));
 
 	impl->m_menu = new QMenu(tr("&Grid"));
@@ -1045,7 +1044,7 @@ void PreProcessorGridDataItem::setupActions()
 	connect(impl->m_setupScalarBarAction, SIGNAL(triggered()), gtItem->geoDataTop(), SLOT(setupScalarBar()));
 
 	impl->m_birdEyeWindowAction = new QAction(tr("Open &Bird's-Eye View Window"), this);
-	impl->m_birdEyeWindowAction->setIcon(QIcon(":/libs/pre/images/iconBirdEyeWindow.png"));
+	impl->m_birdEyeWindowAction->setIcon(QIcon(":/libs/pre/images/iconBirdEyeWindow.svg"));
 	connect(impl->m_birdEyeWindowAction, SIGNAL(triggered()), this, SLOT(openBirdEyeWindow()));
 
 	impl->m_generateAttMenu = new QMenu(tr("Attributes &Generating"), mainWindow());

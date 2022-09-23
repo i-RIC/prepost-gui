@@ -71,7 +71,7 @@ void Post2dWindowActionManager::setupMeasuredDataMenu()
 
 	m_measuredDataMenu->addSeparator();
 
-	measuredDataImportAction = new QAction(QIcon(":/libs/guibase/images/iconImport.png"),tr("&Import..."), this);
+	measuredDataImportAction = new QAction(QIcon(":/libs/guibase/images/iconImport.svg"),tr("&Import..."), this);
 	m_measuredDataMenu->addAction(measuredDataImportAction);
 }
 

@@ -67,7 +67,7 @@
 #include <h5cgnszone.h>
 
 Post2dWindowCellScalarGroupDataItem::Post2dWindowCellScalarGroupDataItem(Post2dWindowDataItem* p, CheckFlag cflag, ReorderFlag rflag, DeleteFlag dflag) :
-	Post2dWindowDataItem {tr("Scalar (cell center)"), QIcon(":/libs/guibase/images/iconPaper.png"), p}
+	Post2dWindowDataItem {tr("Scalar (cell center)"), QIcon(":/libs/guibase/images/iconPaper.svg"), p}
 {
 	setupStandardItem(cflag, rflag, dflag);
 

@@ -65,7 +65,7 @@
 #include <vtkPolyDataWriter.h>
 
 Post2dWindowNodeScalarGroupDataItem::Post2dWindowNodeScalarGroupDataItem(Post2dWindowDataItem* p, CheckFlag cflag, ReorderFlag rflag, DeleteFlag dflag, iRICLib::H5CgnsZone::SolutionPosition position) :
-	Post2dWindowDataItem {tr(""), QIcon(":/libs/guibase/images/iconPaper.png"), p},
+	Post2dWindowDataItem {tr(""), QIcon(":/libs/guibase/images/iconPaper.svg"), p},
 	m_solutionPosition {position}
 {
 	setupStandardItem(cflag, rflag, dflag);

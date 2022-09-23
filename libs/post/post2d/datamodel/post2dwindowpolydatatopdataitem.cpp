@@ -9,7 +9,7 @@
 #include <QXmlStreamWriter>
 
 Post2dWindowPolyDataTopDataItem::Post2dWindowPolyDataTopDataItem(Post2dWindowDataItem* p) :
-	Post2dWindowDataItem {tr("Polygon"), QIcon(":/libs/guibase/images/iconFolder.png"), p}
+	Post2dWindowDataItem {tr("Polygon"), QIcon(":/libs/guibase/images/iconFolder.svg"), p}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 

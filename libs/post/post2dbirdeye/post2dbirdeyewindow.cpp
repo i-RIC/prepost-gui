@@ -37,7 +37,7 @@ void Post2dBirdEyeWindow::init()
 {
 	setWindowTitle(tr("Bird's-Eye Post-processing (2D): %1").arg(m_index));
 
-	m_icon = QIcon(":/libs/post/post2dbirdeye/images/iconVis2DBirdEye.png");
+	m_icon = QIcon(":/libs/post/post2dbirdeye/images/iconVis2DBirdEye.svg");
 	// set default central widget.
 	QLabel* label = new QLabel(this);
 	setCentralWidget(label);

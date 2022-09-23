@@ -37,7 +37,7 @@ PreProcessorGridCrosssectionWindow::PreProcessorGridCrosssectionWindow(Structure
 
 	ui->setupUi(this);
 
-	m_icon = QIcon(":/libs/geodata/riversurvey/images/iconRiverCrosssection.png");
+	m_icon = QIcon(":/libs/geodata/riversurvey/images/iconRiverCrosssection.svg");
 
 	QList<int> sizes;
 	int width = size().width();

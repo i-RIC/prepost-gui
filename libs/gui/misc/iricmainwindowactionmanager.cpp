@@ -89,14 +89,14 @@ void iRICMainWindowActionManager::setupFileMenu()
 	m_fileMenu = new QMenu(tr("&File"), m_menuBar);
 
 	newAction = new QAction(tr("&New Project..."), m_fileMenu);
-	newAction->setIcon(QIcon(":/images/iconNew.png"));
+	newAction->setIcon(QIcon(":/images/iconNew.svg"));
 	newAction->setShortcut(QKeySequence(tr("Ctrl+N")));
 
 	m_fileMenu->addAction(newAction);
 	connect(newAction, SIGNAL(triggered()), m_parent, SLOT(newProject()));
 
 	openAction = new QAction(tr("&Open..."), m_fileMenu);
-	openAction->setIcon(QIcon(QString(":/images/iconOpen.png")));
+	openAction->setIcon(QIcon(QString(":/images/iconOpen.svg")));
 	openAction->setShortcut(QKeySequence(tr("Ctrl+O")));
 	openAction->setStatusTip(tr("Open iRIC Project files"));
 
@@ -104,14 +104,14 @@ void iRICMainWindowActionManager::setupFileMenu()
 	connect(openAction, SIGNAL(triggered()), m_parent, SLOT(openProject()));
 
 	reloadCgnsAction = new QAction(tr("Reload &CGNS file..."), m_fileMenu);
-	reloadCgnsAction->setIcon(QIcon(":/images/iconAnimationFollowLastStep.png"));
+	reloadCgnsAction->setIcon(QIcon(":/images/iconReload.svg"));
 	reloadCgnsAction->setStatusTip(tr("Reload CGNS file"));
 
 	m_fileMenu->addAction(reloadCgnsAction);
 	connect(reloadCgnsAction, SIGNAL(triggered()), m_parent, SLOT(reloadCgnsFile()));
 
 	saveAction = new QAction(tr("&Save"), m_fileMenu);
-	saveAction->setIcon(QIcon(":/images/iconSave.png"));
+	saveAction->setIcon(QIcon(":/images/iconSave.svg"));
 	saveAction->setShortcut(QKeySequence(tr("Ctrl+S")));
 	saveAction->setDisabled(true);
 	m_fileMenu->addAction(saveAction);
@@ -130,7 +130,7 @@ void iRICMainWindowActionManager::setupFileMenu()
 	m_fileMenu->addSeparator();
 
 	propertyAction = new QAction(tr("&Property..."), m_fileMenu);
-	propertyAction->setIcon(QIcon(":/libs/guibase/images/iconProperty.png"));
+	propertyAction->setIcon(QIcon(":/libs/guibase/images/iconProperty.svg"));
 	propertyAction->setDisabled(true);
 	m_fileMenu->addAction(propertyAction);
 	connect(propertyAction, SIGNAL(triggered()), m_parent, SLOT(showProjectPropertyDialog()));
@@ -138,19 +138,19 @@ void iRICMainWindowActionManager::setupFileMenu()
 	m_fileMenu->addSeparator();
 
 	saveSnapshotAction = new QAction(tr("Save S&napshot..."), m_fileMenu);
-	saveSnapshotAction->setIcon(QIcon(":/images/iconSnapshot.png"));
+	saveSnapshotAction->setIcon(QIcon(":/images/iconSnapshot.svg"));
 	saveSnapshotAction->setDisabled(true);
 	m_fileMenu->addAction(saveSnapshotAction);
 	connect(saveSnapshotAction, SIGNAL(triggered()), m_parent, SLOT(snapshot()));
 
 	copySnapshotAction = new QAction(tr("Copy Snapshot to Clipboard"), m_fileMenu);
-	copySnapshotAction->setIcon(QIcon(":/images/iconCopySnapshot.png"));
+	copySnapshotAction->setIcon(QIcon(":/images/iconCopySnapshot.svg"));
 	copySnapshotAction->setDisabled(true);
 	m_fileMenu->addAction(copySnapshotAction);
 	connect(copySnapshotAction, SIGNAL(triggered()), m_parent, SLOT(copySnapshot()));
 
 	saveContinuousSnapShotAction = new QAction(tr("Continuous Snapshot / Movie / Google Earth Export..."), m_fileMenu);
-	saveContinuousSnapShotAction->setIcon(QIcon(":/images/iconGoogleEarth.png"));
+	saveContinuousSnapShotAction->setIcon(QIcon(":/images/iconGoogleEarth.svg"));
 	saveContinuousSnapShotAction->setDisabled(true);
 	m_fileMenu->addAction(saveContinuousSnapShotAction);
 	connect(saveContinuousSnapShotAction, SIGNAL(triggered()), m_parent, SLOT(continuousSnapshot()));
@@ -158,7 +158,7 @@ void iRICMainWindowActionManager::setupFileMenu()
 	m_fileMenu->addSeparator();
 
 	m_importMenuInFileMenu = new QMenu(tr("&Import"), m_fileMenu);
-	m_importMenuInFileMenu->setIcon(QIcon(":/libs/guibase/images/iconImport.png"));
+	m_importMenuInFileMenu->setIcon(QIcon(":/libs/guibase/images/iconImport.svg"));
 	m_importMenuInFileMenu->setDisabled(true);
 	connect(m_importMenuInFileMenu, SIGNAL(aboutToShow()), this, SLOT(setupImportMenu()));
 	m_fileMenu->addMenu(m_importMenuInFileMenu);
@@ -187,7 +187,7 @@ void iRICMainWindowActionManager::setupFileMenu()
 	connect(exportVisGraphAction, SIGNAL(triggered()), m_parent, SLOT(exportVisGraphSetting()));
 
 	m_exportMenu = new QMenu(tr("&Export"), m_fileMenu);
-	m_exportMenu->setIcon(QIcon(":/libs/guibase/images/iconExport.png"));
+	m_exportMenu->setIcon(QIcon(":/libs/guibase/images/iconExport.svg"));
 	m_fileMenu->addMenu(m_exportMenu);
 	m_exportMenu->setDisabled(true);
 	connect(m_exportMenu, SIGNAL(aboutToShow()), this, SLOT(setupExportMenu()));
@@ -279,13 +279,13 @@ void iRICMainWindowActionManager::setupEditMenu()
 	m_editMenu = new QMenu(tr("&Edit"), m_menuBar);
 
 	undoAction = iRICUndoStack::instance().createUndoAction(m_editMenu);
-	undoAction->setIcon(QIcon(":/images/iconUndo.png"));
+	undoAction->setIcon(QIcon(":/images/iconUndo.svg"));
 	undoAction->setShortcut(QKeySequence(tr("Ctrl+Z")));
 	undoAction->setShortcutContext(Qt::ApplicationShortcut);
 	m_editMenu->addAction(undoAction);
 
 	redoAction = iRICUndoStack::instance().createRedoAction(m_editMenu);
-	redoAction->setIcon(QIcon(":/images/iconRedo.png"));
+	redoAction->setIcon(QIcon(":/images/iconRedo.svg"));
 	redoAction->setShortcut(QKeySequence(tr("Ctrl+Y")));
 	redoAction->setShortcutContext(Qt::ApplicationShortcut);
 	m_editMenu->addAction(redoAction);
@@ -349,7 +349,7 @@ void iRICMainWindowActionManager::setupViewMenu()
 	m_viewMenu->addSeparator();
 
 	viewBackgroundColorAction = new QAction(tr("&Background Color..."), m_viewMenu);
-	viewBackgroundColorAction->setIcon(QIcon(":/libs/guibase/images/iconColor.png"));
+	viewBackgroundColorAction->setIcon(QIcon(":/libs/guibase/images/iconColor.svg"));
 	m_viewMenu->addAction(viewBackgroundColorAction);
 	viewBackgroundColorAction->setDisabled(true);
 
@@ -393,52 +393,52 @@ void iRICMainWindowActionManager::setupCameraControlMenu()
 	m_cameraControlMenu = new QMenu(tr("Ca&mera Control"), m_menuBar);
 
 	cameraFitAction = new QAction(tr("&Fit"), m_cameraControlMenu);
-	cameraFitAction->setIcon(QIcon(":/images/iconViewFit.png"));
+	cameraFitAction->setIcon(QIcon(":/images/iconViewFit.svg"));
 
 	cameraResetRotationAction = new QAction(tr("&Reset Rotation"), m_cameraControlMenu);
-	cameraResetRotationAction->setIcon(QIcon(":/images/iconViewRotateReset.png"));
+	cameraResetRotationAction->setIcon(QIcon(":/images/iconViewRotateReset.svg"));
 
 	cameraRotate90Action = new QAction(tr("R&otate 90"), m_cameraControlMenu);
-	cameraRotate90Action->setIcon(QIcon(":/images/iconViewRotate90.png"));
+	cameraRotate90Action->setIcon(QIcon(":/images/iconViewRotate90.svg"));
 
 	cameraXYPlaneAction = new QAction(tr("XY Plane"), m_cameraControlMenu);
-	cameraXYPlaneAction->setIcon(QIcon(":/images/iconViewXY.png"));
+	cameraXYPlaneAction->setIcon(QIcon(":/images/iconViewXY.svg"));
 
 	cameraYZPlaneAction = new QAction(tr("YZ Plane"), m_cameraControlMenu);
-	cameraYZPlaneAction->setIcon(QIcon(":/images/iconViewYZ.png"));
+	cameraYZPlaneAction->setIcon(QIcon(":/images/iconViewYZ.svg"));
 
 	cameraZXPlaneAction = new QAction(tr("XZ Plane"), m_cameraControlMenu);
-	cameraZXPlaneAction->setIcon(QIcon(":/images/iconViewXZ.png"));
+	cameraZXPlaneAction->setIcon(QIcon(":/images/iconViewXZ.svg"));
 
 	cameraMoveLeftAction = new QAction(tr("Move &Left"), m_cameraControlMenu);
-	cameraMoveLeftAction->setIcon(QIcon(":/images/iconViewMoveLeft.png"));
+	cameraMoveLeftAction->setIcon(QIcon(":/images/iconViewMoveLeft.svg"));
 
 	cameraMoveRightAction = new QAction(tr("Move &Right"), m_cameraControlMenu);
-	cameraMoveRightAction->setIcon(QIcon(":/images/iconViewMoveRight.png"));
+	cameraMoveRightAction->setIcon(QIcon(":/images/iconViewMoveRight.svg"));
 
 	cameraMoveUpAction = new QAction(tr("Move &Up"), m_cameraControlMenu);
-	cameraMoveUpAction->setIcon(QIcon(":/images/iconViewMoveUp.png"));
+	cameraMoveUpAction->setIcon(QIcon(":/images/iconViewMoveUp.svg"));
 
 	cameraMoveDownAction = new QAction(tr("Move &Down"), m_cameraControlMenu);
-	cameraMoveDownAction->setIcon(QIcon(":/images/iconViewMoveDown.png"));
+	cameraMoveDownAction->setIcon(QIcon(":/images/iconViewMoveDown.svg"));
 
 	cameraZoomInAction = new QAction(tr("Zoom &In"), m_cameraControlMenu);
-	cameraZoomInAction->setIcon(QIcon(":/images/iconViewZoomIn.png"));
+	cameraZoomInAction->setIcon(QIcon(":/images/iconViewZoomIn.svg"));
 
 	cameraZoomOutAction = new QAction(tr("Zoom &Out"), m_cameraControlMenu);
-	cameraZoomOutAction->setIcon(QIcon(":/images/iconViewZoomOut.png"));
+	cameraZoomOutAction->setIcon(QIcon(":/images/iconViewZoomOut.svg"));
 
 	cameraZoomInXAction = new QAction(tr("Zoom In in X Direction"), m_cameraControlMenu);
-	cameraZoomInXAction->setIcon(QIcon(":/images/iconViewZoomInX.png"));
+	cameraZoomInXAction->setIcon(QIcon(":/images/iconViewZoomInX.svg"));
 
 	cameraZoomOutXAction = new QAction(tr("Zoom Out in X Direction"), m_cameraControlMenu);
-	cameraZoomOutXAction->setIcon(QIcon(":/images/iconViewZoomOutX.png"));
+	cameraZoomOutXAction->setIcon(QIcon(":/images/iconViewZoomOutX.svg"));
 
 	cameraZoomInYAction = new QAction(tr("Zoom In in Y Direction"), m_cameraControlMenu);
-	cameraZoomInYAction->setIcon(QIcon(":/images/iconViewZoomInY.png"));
+	cameraZoomInYAction->setIcon(QIcon(":/images/iconViewZoomInY.svg"));
 
 	cameraZoomOutYAction = new QAction(tr("Zoom Out in Y Direction"), m_cameraControlMenu);
-	cameraZoomOutYAction->setIcon(QIcon(":/images/iconViewZoomOutY.png"));
+	cameraZoomOutYAction->setIcon(QIcon(":/images/iconViewZoomOutY.svg"));
 }
 
 void iRICMainWindowActionManager::setupSimulationMenu()
@@ -446,20 +446,20 @@ void iRICMainWindowActionManager::setupSimulationMenu()
 	m_simulationMenu = new QMenu(tr("&Simulation"), m_menuBar);
 
 	solverRunAction = new QAction(tr("&Run"), m_simulationMenu);
-	solverRunAction->setIcon(QIcon(":/images/iconSolverRun.png"));
+	solverRunAction->setIcon(QIcon(":/images/iconSolverRun.svg"));
 	solverRunAction->setShortcut(QKeySequence(tr("Ctrl+R")));
 	m_simulationMenu->addAction(solverRunAction);
 	connect(solverRunAction, SIGNAL(triggered()), m_parent->solverConsoleWindow(), SLOT(startSolver()));
 
 	solverStopAction = new QAction(tr("&Stop", "stop solver"), m_simulationMenu);
-	solverStopAction->setIcon(QIcon(":/images/iconSolverStop.png"));
+	solverStopAction->setIcon(QIcon(":/images/iconSolverStop.svg"));
 	m_simulationMenu->addAction(solverStopAction);
 	connect(solverStopAction, SIGNAL(triggered()), m_parent->solverConsoleWindow(), SLOT(terminateSolver()));
 
 	m_simulationMenu->addSeparator();
 
 	solverAboutAction = new QAction(tr("&Solver Information..."), m_simulationMenu);
-	solverAboutAction->setIcon(QIcon(":/libs/solverconsole/images/iconSolver.png"));
+	solverAboutAction->setIcon(QIcon(":/libs/solverconsole/images/iconSolver.svg"));
 	m_simulationMenu->addAction(solverAboutAction);
 	connect(solverAboutAction, SIGNAL(triggered()), m_parent->m_miscDialogManager, SLOT(aboutCurrentSolver()));
 
@@ -477,12 +477,12 @@ void iRICMainWindowActionManager::setupSimulationMenu()
 void iRICMainWindowActionManager::setupWindowMenu()
 {
 	windowFocusPreProcessorAction = new QAction(tr("Focus &PreProcessor Window"), this);
-	windowFocusPreProcessorAction->setIcon(QIcon(":/images/iconPreprocessing.png"));
+	windowFocusPreProcessorAction->setIcon(QIcon(":/images/iconPreprocessing.svg"));
 	connect(windowFocusPreProcessorAction, SIGNAL(triggered()), m_parent, SLOT(focusPreProcessorWindow()));
 	windowFocusPreProcessorAction->setDisabled(true);
 
 	windowFocusSolverConsoleAction = new QAction(tr("Focus &Solver Console Window"), this);
-	windowFocusSolverConsoleAction->setIcon(QIcon(":/libs/solverconsole/images/iconSolver.png"));
+	windowFocusSolverConsoleAction->setIcon(QIcon(":/libs/solverconsole/images/iconSolver.svg"));
 	connect(windowFocusSolverConsoleAction, SIGNAL(triggered()), m_parent, SLOT(focusSolverConsoleWindow()));
 	windowFocusSolverConsoleAction->setDisabled(true);
 
@@ -497,7 +497,7 @@ void iRICMainWindowActionManager::setupToolMenu()
 	// this menu is not enabled yet.
 
 	//translationUpdateAction = new QAction(tr("&Create/update translation files..."), m_toolMenu);
-	//translationUpdateAction->setIcon(QIcon(":/images/iconDictionary.png"));
+	//translationUpdateAction->setIcon(QIcon(":/images/iconDictionary.svg"));
 
 	//m_toolMenu->addAction(translationUpdateAction);
 	//connect(translationUpdateAction, SIGNAL(triggered()), m_parent->m_miscDialogManager, SLOT(solverDefinitionTranslationWizard()));
@@ -508,49 +508,49 @@ void iRICMainWindowActionManager::setupCalculationResultMenu()
 	m_resultMenu = new QMenu(tr("Calculation &Result"), m_menuBar);
 
 	windowCreateNew2dPostProcessorAction = new QAction(tr("Open new 2D Post-Processing Window"), m_resultMenu);
-	windowCreateNew2dPostProcessorAction->setIcon(QIcon(":/libs/post/post2d/images/iconVis2D.png"));
+	windowCreateNew2dPostProcessorAction->setIcon(QIcon(":/libs/post/post2d/images/iconVis2D.svg"));
 	m_resultMenu->addAction(windowCreateNew2dPostProcessorAction);
 	connect(windowCreateNew2dPostProcessorAction, SIGNAL(triggered()), m_parent, SLOT(create2dPostWindow()));
 
 	windowCreateNew2dBirdEyePostProcessorAction = new QAction(tr("Open new 2D Bird's-Eye Post-Processing Window"), m_resultMenu);
-	windowCreateNew2dBirdEyePostProcessorAction->setIcon(QIcon(":/libs/post/post2dbirdeye/images/iconVis2DBirdEye.png"));
+	windowCreateNew2dBirdEyePostProcessorAction->setIcon(QIcon(":/libs/post/post2dbirdeye/images/iconVis2DBirdEye.svg"));
 	m_resultMenu->addAction(windowCreateNew2dBirdEyePostProcessorAction);
 	connect(windowCreateNew2dBirdEyePostProcessorAction, SIGNAL(triggered()), m_parent, SLOT(create2dBirdEyePostWindow()));
 
 	windowCreateNew3dPostProcessorAction = new QAction(tr("Open new 3D Post-Processing Window"), m_resultMenu);
-	windowCreateNew3dPostProcessorAction->setIcon(QIcon(":/libs/post/post3d/images/iconVis3D.png"));
+	windowCreateNew3dPostProcessorAction->setIcon(QIcon(":/libs/post/post3d/images/iconVis3D.svg"));
 	m_resultMenu->addAction(windowCreateNew3dPostProcessorAction);
 	connect(windowCreateNew3dPostProcessorAction, SIGNAL(triggered()), m_parent, SLOT(create3dPostWindow()));
 
 	m_resultMenu->addSeparator();
 
 	windowCreateNewGraph2dHybridWindowAction = new QAction(tr("Open new Graph Window"), m_resultMenu);
-	windowCreateNewGraph2dHybridWindowAction->setIcon(QIcon(":/images/iconVisGraphHybrid.png"));
+	windowCreateNewGraph2dHybridWindowAction->setIcon(QIcon(":/images/iconVisGraphHybrid.svg"));
 	m_resultMenu->addAction(windowCreateNewGraph2dHybridWindowAction);
 	connect(windowCreateNewGraph2dHybridWindowAction, SIGNAL(triggered()), m_parent, SLOT(createGraph2dHybridWindow()));
 
 	windowCreateNewGraph2dScatteredWindowAction = new QAction(tr("Open new Scattered Chart Window"), m_resultMenu);
-	windowCreateNewGraph2dScatteredWindowAction->setIcon(QIcon(":/images/iconVisGraphScattered.png"));
+	windowCreateNewGraph2dScatteredWindowAction->setIcon(QIcon(":/images/iconVisGraphScattered.svg"));
 	m_resultMenu->addAction(windowCreateNewGraph2dScatteredWindowAction);
 	connect(windowCreateNewGraph2dScatteredWindowAction, SIGNAL(triggered()), m_parent, SLOT(createGraph2dScatteredWindow()));
 
 	windowCreateVerificationDialogAction = new QAction(tr("Open new Verification Window"), m_resultMenu);
-	windowCreateVerificationDialogAction->setIcon(QIcon(":/images/iconGraphVerification.png"));
+	windowCreateVerificationDialogAction->setIcon(QIcon(":/images/iconGraphVerification.svg"));
 	m_resultMenu->addAction(windowCreateVerificationDialogAction);
 	connect(windowCreateVerificationDialogAction, SIGNAL(triggered()), m_parent, SLOT(openVerificationDialog()));
 
 	m_resultMenu->addSeparator();
 
 	calcResultReloadAction = new QAction(tr("&Reload"), m_resultMenu);
-	calcResultReloadAction->setIcon(QIcon(":/images/iconReload.png"));
+	calcResultReloadAction->setIcon(QIcon(":/images/iconReload.svg"));
 	calcResultReloadToolBarAction = new QAction(tr("&Reload Calculation Result"), m_resultMenu);
-	calcResultReloadToolBarAction->setIcon(QIcon(":/images/iconReload.png"));
+	calcResultReloadToolBarAction->setIcon(QIcon(":/images/iconReload.svg"));
 	m_resultMenu->addAction(calcResultReloadAction);
 	connect(calcResultReloadAction, SIGNAL(triggered()), m_parent, SLOT(checkCgnsStepsUpdate()));
 	connect(calcResultReloadToolBarAction, SIGNAL(triggered()), m_parent, SLOT(checkCgnsStepsUpdate()));
 
 	solverClearResultAction = new QAction(tr("&Delete..."), m_resultMenu);
-	solverClearResultAction->setIcon(QIcon(":/libs/guibase/images/iconDeleteItem.png"));
+	solverClearResultAction->setIcon(QIcon(":/libs/guibase/images/iconDeleteItem.svg"));
 	m_resultMenu->addAction(solverClearResultAction);
 	connect(solverClearResultAction, SIGNAL(triggered()), m_parent, SLOT(clearCalculationResult()));
 
@@ -563,12 +563,12 @@ void iRICMainWindowActionManager::setupCalculationResultMenu()
 	m_resultMenu->addSeparator();
 
 	importCgnsActionInCalcMenu = new QAction(tr("&Import..."), m_resultMenu);
-	importCgnsActionInCalcMenu->setIcon(QIcon(":/libs/guibase/images/iconImport.png"));
+	importCgnsActionInCalcMenu->setIcon(QIcon(":/libs/guibase/images/iconImport.svg"));
 	connect(importCgnsActionInCalcMenu, SIGNAL(triggered()), m_parent, SLOT(importCalculationResult()));
 	m_resultMenu->addAction(importCgnsActionInCalcMenu);
 
 	calcResultExportActionInCalcMenu = new QAction(tr("&Export..."), m_resultMenu);
-	calcResultExportActionInCalcMenu->setIcon(QIcon(":/libs/guibase/images/iconExport.png"));
+	calcResultExportActionInCalcMenu->setIcon(QIcon(":/libs/guibase/images/iconExport.svg"));
 	connect(calcResultExportActionInCalcMenu, SIGNAL(triggered()), m_parent, SLOT(exportCalculationResult()));
 	m_resultMenu->addAction(calcResultExportActionInCalcMenu);
 
@@ -577,12 +577,12 @@ void iRICMainWindowActionManager::setupCalculationResultMenu()
 	m_resultMenu->addSeparator();
 
 	importVisGraphActionInCalcMenu = new QAction(tr("Import Visualization/Graph Settings..."), m_resultMenu);
-	importVisGraphActionInCalcMenu->setIcon(QIcon(":/libs/guibase/images/iconImport.png"));
+	importVisGraphActionInCalcMenu->setIcon(QIcon(":/libs/guibase/images/iconImport.svg"));
 	connect(importVisGraphActionInCalcMenu, SIGNAL(triggered()), m_parent, SLOT(importVisGraphSetting()));
 	m_resultMenu->addAction(importVisGraphActionInCalcMenu);
 
 	exportVisGraphActionInCalcMenu = new QAction(tr("Export Visualization/Graph Settings..."), m_resultMenu);
-	exportVisGraphActionInCalcMenu->setIcon(QIcon(":/libs/guibase/images/iconExport.png"));
+	exportVisGraphActionInCalcMenu->setIcon(QIcon(":/libs/guibase/images/iconExport.svg"));
 	connect(exportVisGraphActionInCalcMenu, SIGNAL(triggered()), m_parent, SLOT(exportVisGraphSetting()));
 	m_resultMenu->addAction(exportVisGraphActionInCalcMenu);
 
@@ -620,7 +620,7 @@ void iRICMainWindowActionManager::setupOptionMenu()
 	m_optionMenu->addSeparator();
 
 	translationUpdateAction = new QAction(tr("&Create/Update Translation Files..."), m_optionMenu);
-	translationUpdateAction->setIcon(QIcon(":/images/iconDictionary.png"));
+	translationUpdateAction->setIcon(QIcon(":/images/iconDictionary.svg"));
 	m_optionMenu->addAction(translationUpdateAction);
 	connect(translationUpdateAction, SIGNAL(triggered()), m_parent->m_miscDialogManager, SLOT(solverDefinitionTranslationWizard()));
 }
@@ -634,12 +634,12 @@ void iRICMainWindowActionManager::setupHelpMenu()
 	connect(helpAction, SIGNAL(triggered()), m_parent, SLOT(openHelp()));
 
 	solverDefinitionListDialogAction = new QAction(tr("&Solver List..."), m_helpMenu);
-	solverDefinitionListDialogAction->setIcon(QIcon(":/libs/solverconsole/images/iconSolver.png"));
+	solverDefinitionListDialogAction->setIcon(QIcon(":/libs/solverconsole/images/iconSolver.svg"));
 	m_helpMenu->addAction(solverDefinitionListDialogAction);
 	connect(solverDefinitionListDialogAction, SIGNAL(triggered()), m_parent->m_miscDialogManager, SLOT(solverListDialog()));
 
 	aboutMouseAction = new QAction(tr("&Mouse Hint..."), m_helpMenu);
-	aboutMouseAction->setIcon(QIcon(":/images/iconMouseHelp.png"));
+	aboutMouseAction->setIcon(QIcon(":/images/iconMouseHelp.svg"));
 	m_helpMenu->addAction(aboutMouseAction);
 	connect(aboutMouseAction, SIGNAL(triggered()), m_parent->m_miscDialogManager, SLOT(mouseHelp()));
 
@@ -809,11 +809,13 @@ void iRICMainWindowActionManager::setupMainToolBar()
 	m_mainToolBar->addAction(cameraZoomInAction);
 	m_mainToolBar->addAction(cameraZoomOutAction);
 
+	/*
 	m_mainToolBar->addSeparator();
 	m_mainToolBar->addAction(cameraZoomInXAction);
 	m_mainToolBar->addAction(cameraZoomOutXAction);
 	m_mainToolBar->addAction(cameraZoomInYAction);
 	m_mainToolBar->addAction(cameraZoomOutYAction);
+	*/
 
 	m_mainToolBar->addSeparator();
 	m_mainToolBar->addAction(solverRunAction);
@@ -1094,7 +1096,7 @@ void iRICMainWindowActionManager::updateProjectionMenu(QWidget* w)
 
 void iRICMainWindowActionManager::updateWindowList()
 {
-	QPixmap shortcutPixmap(":/images/iconShortcut.png");
+	QPixmap shortcutPixmap(":/images/iconShortcut.svg");
 	QSize iconSize = m_mainToolBar->iconSize();
 
 	QList<QAction*> actions = m_viewMenu->actions();

@@ -27,7 +27,7 @@
 
 
 Post2dWindowNodeScalarGroupTopDataItem::Post2dWindowNodeScalarGroupTopDataItem(Post2dWindowDataItem* p) :
-	Post2dWindowScalarGroupTopDataItem {tr("Scalar (node)"), QIcon(":/libs/guibase/images/iconFolder.png"), p}
+	Post2dWindowScalarGroupTopDataItem {tr("Scalar (node)"), QIcon(":/libs/guibase/images/iconFolder.svg"), p}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 

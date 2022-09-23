@@ -1,10 +1,10 @@
 <RCC>
     <qresource prefix="/libs/geodata/pointmap">
-        <file>images/iconAddPoint.png</file>
-        <file>images/iconBreakLineAdd.png</file>
-        <file>images/iconBreakLineDelete.png</file>
-        <file>images/iconInterpolatePoint.png</file>
-        <file>images/iconPointSelection.png</file>
-        <file>images/iconPolygonSelection.png</file>
+        <file>images/iconAddPoint.svg</file>
+        <file>images/iconBreakLineAdd.svg</file>
+        <file>images/iconBreakLineDelete.svg</file>
+        <file>images/iconInterpolatePoint.svg</file>
+        <file>images/iconPointSelection.svg</file>
+        <file>images/iconPolygonSelection.svg</file>
     </qresource>
 </RCC>

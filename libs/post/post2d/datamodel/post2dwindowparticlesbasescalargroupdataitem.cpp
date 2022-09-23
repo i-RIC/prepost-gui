@@ -29,7 +29,7 @@
 #include <vtkRenderWindow.h>
 
 Post2dWindowParticlesBaseScalarGroupDataItem::Post2dWindowParticlesBaseScalarGroupDataItem(Post2dWindowDataItem* p) :
-	Post2dWindowDataItem(tr("Scalar"), QIcon(":/libs/guibase/images/iconFolder.png"), p)
+	Post2dWindowDataItem(tr("Scalar"), QIcon(":/libs/guibase/images/iconFolder.svg"), p)
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 

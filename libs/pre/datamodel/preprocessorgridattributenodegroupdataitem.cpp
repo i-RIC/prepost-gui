@@ -60,7 +60,7 @@
 #include <vtkStructuredGridGeometryFilter.h>
 
 PreProcessorGridAttributeNodeGroupDataItem::PreProcessorGridAttributeNodeGroupDataItem(PreProcessorDataItem* p) :
-	PreProcessorDataItem {tr("Node attributes"), QIcon(":/libs/guibase/images/iconFolder.png"), p}
+	PreProcessorDataItem {tr("Node attributes"), QIcon(":/libs/guibase/images/iconFolder.svg"), p}
 {
 	setupStandardItem(NotChecked, NotReorderable, NotDeletable);
 

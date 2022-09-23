@@ -22,7 +22,7 @@
 #include <vtkTransformFilter.h>
 
 Post3dWindowNodeVectorArrowDataItem::Post3dWindowNodeVectorArrowDataItem(Post3dWindowDataItem* p) :
-	Post3dWindowDataItem {"", QIcon(":/libs/guibase/images/iconPaper.png"), p},
+	Post3dWindowDataItem {"", QIcon(":/libs/guibase/images/iconPaper.svg"), p},
 	m_extractGrid {vtkExtractGrid::New()},
 	m_transformFilter {vtkTransformFilter::New()}
 {

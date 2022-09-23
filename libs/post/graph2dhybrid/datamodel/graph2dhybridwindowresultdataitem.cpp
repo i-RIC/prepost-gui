@@ -19,7 +19,7 @@
 #include <cmath>
 
 Graph2dHybridWindowResultDataItem::Graph2dHybridWindowResultDataItem(const QString& title, int index, const Graph2dHybridWindowResultSetting::Setting& setting, Graph2dWindowDataItem* parent) :
-	Graph2dHybridWindowDataItem(title, QIcon(":/libs/guibase/images/iconPaper.png"), parent)
+	Graph2dHybridWindowDataItem(title, QIcon(":/libs/guibase/images/iconPaper.svg"), parent)
 {
 	Q_UNUSED(index)
 

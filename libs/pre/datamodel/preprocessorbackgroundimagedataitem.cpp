@@ -14,7 +14,7 @@
 #include <vtkRenderer.h>
 
 PreProcessorBackgroundImageDataItem::PreProcessorBackgroundImageDataItem(BackgroundImageInfo* image, PreProcessorDataItem* parent) :
-	PreProcessorDataItem {image->caption(), QIcon(":/libs/guibase/images/iconPaper.png"), parent},
+	PreProcessorDataItem {image->caption(), QIcon(":/libs/guibase/images/iconPaper.svg"), parent},
 	m_imageInfo {image}
 {
 	setupStandardItem(Checked, Reorderable, Deletable);

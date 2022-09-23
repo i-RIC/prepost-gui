@@ -20,7 +20,7 @@
 #include <QXmlStreamWriter>
 
 Post3dWindowNodeVectorArrowGroupDataItem::Post3dWindowNodeVectorArrowGroupDataItem(Post3dWindowDataItem* p) :
-	Post3dWindowDataItem {"test", QIcon(":/libs/guibase/images/iconFolder.png"), p}
+	Post3dWindowDataItem {"test", QIcon(":/libs/guibase/images/iconFolder.svg"), p}
 {
 	setupStandardItem(Checked, NotReorderable, Deletable);
 

@@ -15,8 +15,8 @@
 #include <vtkRenderer.h>
 #include <vtkRenderWindowInteractor.h>
 
-VTK2DGraphicsView::VTK2DGraphicsView(QWidget* parent)
-	: VTKGraphicsView(parent)
+VTK2DGraphicsView::VTK2DGraphicsView(QWidget* parent) :
+	VTKGraphicsView(parent)
 {
 	vtkRenderWindow* renderWindow = GetRenderWindow();
 
@@ -77,6 +77,10 @@ void VTK2DGraphicsView::getDataRegion(double* xmin, double* xmax, double* ymin, 
 
 void VTK2DGraphicsView::getDrawnRegion(double* xmin, double* xmax, double* ymin, double* ymax)
 {
+	int* vtk_size = GetRenderWindow()->GetSize();
+	int sizeX = *vtk_size;
+	int sizeY = *(vtk_size + 1);
+
 	QSize windowsize = size();
 	// lowerleft
 	double x = 0;
@@ -88,7 +92,7 @@ void VTK2DGraphicsView::getDrawnRegion(double* xmin, double* xmax, double* ymin,
 	*ymax = y;
 
 	// lowerright
-	x = windowsize.width();
+	x = sizeX;
 	y = 0;
 	viewportToWorld(x, y);
 	*xmin = qMin(*xmin, x);
@@ -98,7 +102,7 @@ void VTK2DGraphicsView::getDrawnRegion(double* xmin, double* xmax, double* ymin,
 
 	// topleft
 	x = 0;
-	y = windowsize.height();
+	y = sizeY;
 	viewportToWorld(x, y);
 	*xmin = qMin(*xmin, x);
 	*xmax = qMax(*xmax, x);
@@ -106,8 +110,8 @@ void VTK2DGraphicsView::getDrawnRegion(double* xmin, double* xmax, double* ymin,
 	*ymax = qMax(*ymax, y);
 
 	// topright
-	x = windowsize.width();
-	y = windowsize.height();
+	x = sizeX;
+	y = sizeY;
 	viewportToWorld(x, y);
 	*xmin = qMin(*xmin, x);
 	*xmax = qMax(*xmax, x);

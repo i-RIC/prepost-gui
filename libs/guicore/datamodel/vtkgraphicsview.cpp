@@ -71,6 +71,8 @@ VTKGraphicsView::VTKGraphicsView(QWidget* parent) :
 	QVTKOpenGLNativeWidget {parent},
 	impl {new Impl()}
 {
+	setEnableHiDPI(true);
+
 	auto rw = impl->m_renderWindow;
 	SetRenderWindow(rw);
 	rw->AddRenderer(impl->m_mainRenderer);
@@ -143,7 +145,8 @@ void VTKGraphicsView::keyReleaseEvent(QKeyEvent* event)
 void VTKGraphicsView::mouseDoubleClickEvent(QMouseEvent* event)
 {
 	if (impl->m_activeDataItem != nullptr) {
-		impl->m_activeDataItem->mouseDoubleClickEvent(event, this);
+		auto scaledEvent = createScaledEvant(*event);
+		impl->m_activeDataItem->mouseDoubleClickEvent(&scaledEvent, this);
 	} else if (impl->m_interactive) {
 		QVTKOpenGLNativeWidget::mouseDoubleClickEvent(event);
 	}
@@ -165,27 +168,28 @@ void VTKGraphicsView::mousePressEvent(QMouseEvent* event)
 		impl->m_isViewChanging = true;
 
 		// give interactor the event information
-		iren->SetEventInformationFlipY(event->x(), event->y(), 0, 0, 0, event->type() == QEvent::MouseButtonDblClick ? 1 : 0);
+		auto scaledEvent = createScaledEvant(*event);
+		iren->SetEventInformationFlipY(scaledEvent.x(), scaledEvent.y(), 0, 0, 0, event->type() == QEvent::MouseButtonDblClick ? 1 : 0);
 		switch (event->button()) {
 		case Qt::LeftButton:
 			if ((event->modifiers() & Qt::ShiftModifier) != 0) {
 				setCursor(impl->m_rubberBandCursor);
 				impl->m_styleBackUp = iren->GetInteractorStyle();
 				iren->SetInteractorStyle(impl->m_rubberBarStyle);
-				iren->InvokeEvent(vtkCommand::LeftButtonPressEvent, event);
+				iren->InvokeEvent(vtkCommand::LeftButtonPressEvent, &scaledEvent);
 				impl->m_isRubberBandZooming = true;
 			} else {
 				setCursor(impl->m_moveCursor);
-				iren->InvokeEvent(vtkCommand::MiddleButtonPressEvent, event);
+				iren->InvokeEvent(vtkCommand::MiddleButtonPressEvent, &scaledEvent);
 			}
 			break;
 		case Qt::MidButton:
 			setCursor(impl->m_zoomCursor);
-			iren->InvokeEvent(vtkCommand::RightButtonPressEvent, event);
+			iren->InvokeEvent(vtkCommand::RightButtonPressEvent, &scaledEvent);
 			break;
 		case Qt::RightButton:
 			setCursor(impl->m_rotateCursor);
-			iren->InvokeEvent(vtkCommand::LeftButtonPressEvent, event);
+			iren->InvokeEvent(vtkCommand::LeftButtonPressEvent, &scaledEvent);
 			break;
 		default:
 			// do nothing
@@ -194,7 +198,8 @@ void VTKGraphicsView::mousePressEvent(QMouseEvent* event)
 	} else {
 		// the mouse press event is informed to the active data item.
 		if (impl->m_activeDataItem != nullptr) {
-			impl->m_activeDataItem->mousePressEvent(event, this);
+			auto scaledEvent = createScaledEvant(*event);
+			impl->m_activeDataItem->mousePressEvent(&scaledEvent, this);
 		} else if (impl->m_interactive) {
 			vtkRenderWindowInteractor* i = GetRenderWindow()->GetInteractor();
 			vtkSmartPointer<vtkInteractorObserver> style = i->GetInteractorStyle();
@@ -228,7 +233,8 @@ void VTKGraphicsView::mouseReleaseEvent(QMouseEvent* event)
 			GraphicsWindowDataModel* m = dynamic_cast<GraphicsWindowDataModel*>(impl->m_model);
 			m->viewOperationEndedGlobal();
 		} else {
-			impl->m_activeDataItem->mouseReleaseEvent(event, this);
+			auto scaledEvent = createScaledEvant(*event);
+			impl->m_activeDataItem->mouseReleaseEvent(&scaledEvent, this);
 		}
 	} else if (impl->m_interactive) {
 		vtkRenderWindowInteractor* i = GetRenderWindow()->GetInteractor();
@@ -261,7 +267,8 @@ void VTKGraphicsView::mouseMoveEvent(QMouseEvent* event)
 		// do the QVTKWidget implementation.
 		QVTKOpenGLNativeWidget::mouseMoveEvent(event);
 	} else if (impl->m_activeDataItem != nullptr) {
-		impl->m_activeDataItem->mouseMoveEvent(event, this);
+		auto scaledEvent = createScaledEvant(*event);
+		impl->m_activeDataItem->mouseMoveEvent(&scaledEvent, this);
 	} else if (impl->m_interactive) {
 		vtkRenderWindowInteractor* i = GetRenderWindow()->GetInteractor();
 		vtkSmartPointer<vtkInteractorObserver> style = i->GetInteractorStyle();
@@ -483,11 +490,13 @@ void VTKGraphicsView::update2Ds()
 
 void VTKGraphicsView::resizeEvent(QResizeEvent* event)
 {
-	QSize size = event->size();
-	impl->m_logoActor->SetPosition(size.width() - impl->m_logoImage.width() - 10, 5);
+	QVTKOpenGLNativeWidget::resizeEvent(event);
+	int* vtk_size = GetRenderWindow()->GetSize();
+	impl->m_logoActor->SetPosition(*(vtk_size) - impl->m_logoImage.width() - 10, 5);
 	impl->m_logoActor->Modified();
 	impl->m_model->handleResize();
-	QVTKOpenGLNativeWidget::resizeEvent(event);
+
+	render();
 }
 
 void VTKGraphicsView::cameraFit()
@@ -546,4 +555,13 @@ void VTKGraphicsView::moveCenter(int x, int y)
 int VTKGraphicsView::moveWidth()
 {
 	return 1;
+}
+
+QMouseEvent VTKGraphicsView::createScaledEvant(const QMouseEvent& event)
+{
+	QSize qtSize = size();
+	int* vtk_size = GetRenderWindow()->GetSize();
+	double scale = *vtk_size / static_cast<double>(qtSize.width());
+
+	return QMouseEvent(event.type(), event.localPos() * scale, event.button(), event.buttons(), event.modifiers());
 }

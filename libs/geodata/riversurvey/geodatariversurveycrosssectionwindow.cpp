@@ -78,7 +78,7 @@ GeoDataRiverSurveyCrosssectionWindow::Impl::Impl(GeoDataRiverSurveyCrosssectionW
 	m_gridCreatingConditionRiverSurvey {nullptr},
 	m_gridCreatingConditionPoint {nullptr},
 	m_projectDataItem {pdi},
-	m_icon {":/libs/geodata/riversurvey/images/iconRiverCrosssection.png"},
+	m_icon {":/libs/geodata/riversurvey/images/iconRiverCrosssection.svg"},
 	m_colorSource {new ColorSource {nullptr}},
 	m_settingUp {false}
 {

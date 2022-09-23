@@ -21,7 +21,7 @@
 #include <vtkCellData.h>
 
 Post3dWindowCellContourGroupTopDataItem::Post3dWindowCellContourGroupTopDataItem(Post3dWindowDataItem* p) :
-	Post3dWindowDataItem {tr("Contours (cell center)"), QIcon(":/libs/guibase/images/iconFolder.png"), p},
+	Post3dWindowDataItem {tr("Contours (cell center)"), QIcon(":/libs/guibase/images/iconFolder.svg"), p},
 	m_zScale {1}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);

@@ -1,59 +1,8 @@
 <RCC>
     <qresource prefix="/">
-        <file>images/iconiRIC.png</file>
-        <file>images/iconNew.png</file>
-        <file>images/iconOpen.png</file>
-        <file>images/iconSave.png</file>
-        <file>images/iconSnapshot.png</file>
-        <file>images/iconUndo.png</file>
-        <file>images/iconRedo.png</file>
-        <file>images/iconHelp.png</file>
-        <file>images/iconViewFit.png</file>
-        <file>images/iconViewRotateReset.png</file>
-        <file>images/iconViewRotate90.png</file>
-        <file>images/iconViewMoveLeft.png</file>
-        <file>images/iconViewMoveRight.png</file>
-        <file>images/iconViewMoveUp.png</file>
-        <file>images/iconViewMoveDown.png</file>
-        <file>images/iconViewZoomIn.png</file>
-        <file>images/iconViewZoomOut.png</file>
-        <file>images/iconPreprocessing.png</file>
-        <file>images/iconSolverRun.png</file>
-        <file>images/iconSolverStop.png</file>
-        <file>images/iconAnimationReset.png</file>
-        <file>images/iconAnimationRun.png</file>
-        <file>images/iconAnimationStop.png</file>
-        <file>images/iconAnimationSlow.png</file>
-        <file>images/iconAnimationStepForward.png</file>
-        <file>images/iconAnimationStepBack.png</file>
-        <file>images/iconAnimationFollowLastStep.png</file>
-        <file>images/iconAnimationSpeedEdit.png</file>
-        <file>images/iconDictionary.png</file>
-        <file>images/iconViewXY.png</file>
-        <file>images/iconViewYZ.png</file>
-        <file>images/iconViewZoomInY.png</file>
-        <file>images/iconViewZoomOutX.png</file>
-        <file>images/iconViewZoomOutY.png</file>
-        <file>images/iconViewZoomInX.png</file>
-        <file>images/splashscreen.gif</file>
-        <file>images/ja_JP/imgMouseHelp.png</file>
-        <file>images/imgMouseHelp.png</file>
-        <file>images/iconGoogleEarth.png</file>
-        <file>images/imgiRICLogo.png</file>
-        <file>data/iricinfo.xml</file>
-        <file>images/iconMouseHelp.png</file>
-        <file>images/headMark.png</file>
         <file>data/startpagelinks.xml</file>
         <file>data/startpagelinks_ja_JP.xml</file>
-        <file>images/iconViewXZ.png</file>
-        <file>images/iconReload.png</file>
-        <file>images/iconVisGraphHybrid.png</file>
-        <file>images/iconImage.png</file>
         <file>data/translation_comments/ja_JP.txt</file>
-        <file>images/iconAnimationLast.png</file>
-        <file>images/iconGraphVerification.png</file>
-        <file>images/iconVisGraphScattered.png</file>
         <file>data/unknownsolver/definition.xml</file>
-        <file>images/iconShortcut.png</file>
     </qresource>
 </RCC>

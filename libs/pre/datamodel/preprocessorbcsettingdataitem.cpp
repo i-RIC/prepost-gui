@@ -27,7 +27,7 @@
 #include <QStandardItem>
 
 PreProcessorBCSettingDataItem::PreProcessorBCSettingDataItem(PreProcessorBCDataItem* item, GraphicsWindowDataItem* parent) :
-	PreProcessorGeoDataDataItemInterface {item->standardItem()->text(), QIcon(":/libs/guibase/images/iconPaper.png"), parent},
+	PreProcessorGeoDataDataItemInterface {item->standardItem()->text(), QIcon(":/libs/guibase/images/iconPaper.svg"), parent},
 	m_bcDataItem {item}
 {
 	if (item->hideSetting()) {

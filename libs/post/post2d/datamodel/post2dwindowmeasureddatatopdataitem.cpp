@@ -28,10 +28,10 @@
 #include <vtkTextProperty.h>
 
 Post2dWindowMeasuredDataTopDataItem::Post2dWindowMeasuredDataTopDataItem(GraphicsWindowDataItem* parent) :
-	Post2dWindowDataItem {tr("Measured Values"), QIcon(":/libs/guibase/images/iconFolder.png"), parent},
-	m_importAction {new QAction(QIcon(":/libs/guibase/images/iconImport.png"), Post2dWindowMeasuredDataTopDataItem::tr("&Import..."), this)},
-	m_deleteSelectedAction {new QAction(QIcon(":/libs/guibase/images/iconDeleteItem.png"), Post2dWindowMeasuredDataTopDataItem::tr("Delete &Selected..."), this)},
-	m_deleteAllAction {new QAction(QIcon(":/libs/guibase/images/iconDeleteItem.png"), Post2dWindowMeasuredDataTopDataItem::tr("Delete &All..."), this)}
+	Post2dWindowDataItem {tr("Measured Values"), QIcon(":/libs/guibase/images/iconFolder.svg"), parent},
+	m_importAction {new QAction(QIcon(":/libs/guibase/images/iconImport.svg"), Post2dWindowMeasuredDataTopDataItem::tr("&Import..."), this)},
+	m_deleteSelectedAction {new QAction(QIcon(":/libs/guibase/images/iconDeleteItem.svg"), Post2dWindowMeasuredDataTopDataItem::tr("Delete &Selected..."), this)},
+	m_deleteAllAction {new QAction(QIcon(":/libs/guibase/images/iconDeleteItem.svg"), Post2dWindowMeasuredDataTopDataItem::tr("Delete &All..."), this)}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 	m_standardItem->setData(QVariant("MEASUREDDATAS"), Qt::UserRole + 10);

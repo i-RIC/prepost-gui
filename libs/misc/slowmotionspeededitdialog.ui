@@ -15,7 +15,7 @@
   </property>
   <property name="windowIcon">
    <iconset resource="../iRIC.qrc">
-    <normaloff>:/images/iconAnimationSpeedEdit.png</normaloff>:/images/iconAnimationSpeedEdit.png</iconset>
+    <normaloff>:/images/iconAnimationSpeedEdit.svg</normaloff>:/images/iconAnimationSpeedEdit.svg</iconset>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>

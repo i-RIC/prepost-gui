@@ -31,11 +31,11 @@ void PreProcessorWindowActionManager::setupCalcCondMenu()
 	m_calcCondMenu->addSeparator();
 
 	calcCondImportAction = new QAction(tr("&Import..."), m_calcCondMenu);
-	calcCondImportAction->setIcon(QIcon(":/libs/guibase/images/iconImport.png"));
+	calcCondImportAction->setIcon(QIcon(":/libs/guibase/images/iconImport.svg"));
 	m_calcCondMenu->addAction(calcCondImportAction);
 
 	calcCondExportAction = new QAction(tr("&Export..."), m_calcCondMenu);
-	calcCondExportAction->setIcon(QIcon(":/libs/guibase/images/iconExport.png"));
+	calcCondExportAction->setIcon(QIcon(":/libs/guibase/images/iconExport.svg"));
 	m_calcCondMenu->addAction(calcCondExportAction);
 }
 

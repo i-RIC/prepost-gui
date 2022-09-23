@@ -49,7 +49,7 @@ private:
 };
 
 Post3dWindowFaceDataItem::Post3dWindowFaceDataItem(const QString& label, GraphicsWindowDataItem* p) :
-	Post3dWindowDataItem {label, QIcon(":/libs/guibase/images/iconPaper.png"), p},
+	Post3dWindowDataItem {label, QIcon(":/libs/guibase/images/iconPaper.svg"), p},
 	m_actor {nullptr},
 	m_dataOK {false}
 {

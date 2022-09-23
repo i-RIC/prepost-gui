@@ -274,7 +274,7 @@ p, li { white-space: pre-wrap; }
                    <string/>
                   </property>
                   <property name="pixmap">
-                   <pixmap resource="../../../guibase/guibase.qrc">:/libs/guibase/images/iconQuestion.png</pixmap>
+                   <pixmap resource="../../../guibase/guibase.qrc">:/libs/guibase/images/iconQuestion.svg</pixmap>
                   </property>
                  </widget>
                 </item>

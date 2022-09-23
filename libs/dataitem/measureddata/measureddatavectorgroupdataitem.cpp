@@ -328,7 +328,7 @@ vtkPointSet* MeasuredDataVectorGroupDataItem::Impl::getPointSet()
 // public interfaces
 
 MeasuredDataVectorGroupDataItem::MeasuredDataVectorGroupDataItem(GraphicsWindowDataItem* p) :
-	GraphicsWindowDataItem {tr("Arrow"), QIcon(":/libs/guibase/images/iconFolder.png"), p},
+	GraphicsWindowDataItem {tr("Arrow"), QIcon(":/libs/guibase/images/iconFolder.svg"), p},
 	impl {new Impl(this)}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);

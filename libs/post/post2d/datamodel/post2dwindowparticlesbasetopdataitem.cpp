@@ -21,7 +21,7 @@
 #include <vtkRenderer.h>
 
 Post2dWindowParticlesBaseTopDataItem::Post2dWindowParticlesBaseTopDataItem(const QString& caption, Post2dWindowDataItem* p) :
-	Post2dWindowDataItem {caption, QIcon(":/libs/guibase/images/iconFolder.png"), p},
+	Post2dWindowDataItem {caption, QIcon(":/libs/guibase/images/iconFolder.svg"), p},
 	m_scalarGroupDataItem {nullptr},
 	m_vectorGroupDataItem {nullptr}
 {

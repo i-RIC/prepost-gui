@@ -59,7 +59,7 @@
 #include <vtkStructuredGridGeometryFilter.h>
 
 PreProcessorGridAttributeCellGroupDataItem::PreProcessorGridAttributeCellGroupDataItem(PreProcessorDataItem* p) :
-	PreProcessorDataItem {tr("Cell attributes"), QIcon(":/libs/guibase/images/iconFolder.png"), p}
+	PreProcessorDataItem {tr("Cell attributes"), QIcon(":/libs/guibase/images/iconFolder.svg"), p}
 {
 	setupStandardItem(NotChecked, NotReorderable, NotDeletable);
 

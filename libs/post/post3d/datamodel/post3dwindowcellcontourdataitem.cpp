@@ -22,7 +22,7 @@
 #include <vtkSmartPointer.h>
 
 Post3dWindowCellContourDataItem::Post3dWindowCellContourDataItem(const QString& label, Post3dWindowDataItem* p) :
-	Post3dWindowDataItem(label, QIcon(":/libs/guibase/images/iconPaper.png"), p),
+	Post3dWindowDataItem(label, QIcon(":/libs/guibase/images/iconPaper.svg"), p),
 	m_actor {vtkActor::New()},
 	m_mapper {vtkPolyDataMapper::New()},
 	m_polyData {vtkPolyData::New()}

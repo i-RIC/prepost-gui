@@ -19,7 +19,7 @@
 #include <QXmlStreamWriter>
 
 Post2dWindowCellFlagGroupDataItem::Post2dWindowCellFlagGroupDataItem(Post2dWindowDataItem* p) :
-	Post2dWindowDataItem {tr("Cell attributes"), QIcon(":/libs/guibase/images/iconFolder.png"), p}
+	Post2dWindowDataItem {tr("Cell attributes"), QIcon(":/libs/guibase/images/iconFolder.svg"), p}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 

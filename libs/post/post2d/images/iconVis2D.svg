@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+<svg
+   version="1.1"
+   id="Layer_1"
+   x="0px"
+   y="0px"
+   viewBox="0 0 279.965 279.965"
+   style="enable-background:new 0 0 279.965 279.965;"
+   xml:space="preserve"
+   sodipodi:docname="vis2d.svg"
+   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><defs
+   id="defs24312"><linearGradient
+     inkscape:collect="always"
+     id="linearGradient7465"><stop
+       style="stop-color:#0000ff;stop-opacity:1;"
+       offset="0"
+       id="stop7461" /><stop
+       style="stop-color:#0000c8;stop-opacity:0.74901962;"
+       offset="0.13166669"
+       id="stop10393" /><stop
+       style="stop-color:#00ff00;stop-opacity:0.49803922;"
+       offset="0.3271015"
+       id="stop7469" /><stop
+       style="stop-color:#ffff00;stop-opacity:0.74901962;"
+       offset="0.66014493"
+       id="stop8201" /><stop
+       style="stop-color:#ff201d;stop-opacity:0.87450981;"
+       offset="0.90833336"
+       id="stop10395" /><stop
+       style="stop-color:#ff0000;stop-opacity:1;"
+       offset="1"
+       id="stop7463" /></linearGradient><linearGradient
+     id="linearGradient7434"
+     inkscape:swatch="solid"><stop
+       style="stop-color:#505050;stop-opacity:1;"
+       offset="0"
+       id="stop7432" /></linearGradient><linearGradient
+     inkscape:collect="always"
+     xlink:href="#linearGradient7465"
+     id="linearGradient7467"
+     x1="-2.1213202"
+     y1="138.59293"
+     x2="279.30718"
+     y2="138.59293"
+     gradientUnits="userSpaceOnUse"
+     gradientTransform="matrix(1.3665892,-1.5457333e-8,-3.6105844e-8,1.3487602,-1.967935,-111.33739)" /></defs><sodipodi:namedview
+   id="namedview24310"
+   pagecolor="#ffffff"
+   bordercolor="#000000"
+   borderopacity="0.25"
+   inkscape:showpageshadow="2"
+   inkscape:pageopacity="0.0"
+   inkscape:pagecheckerboard="0"
+   inkscape:deskcolor="#d1d1d1"
+   showgrid="false"
+   inkscape:zoom="0.7071068"
+   inkscape:cx="249.60869"
+   inkscape:cy="109.60155"
+   inkscape:window-width="1412"
+   inkscape:window-height="760"
+   inkscape:window-x="50"
+   inkscape:window-y="1195"
+   inkscape:window-maximized="0"
+   inkscape:current-layer="Layer_1" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<rect
+   style="mix-blend-mode:normal;fill:url(#linearGradient7467);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:20.3647;stroke-linecap:round;stroke-linejoin:round"
+   id="rect7378"
+   width="384.59714"
+   height="381.48703"
+   x="-4.8669124"
+   y="-115.15226"
+   transform="matrix(0.91314397,0.4076372,-0.4213723,0.90688775,0,0)" /><g
+   aria-label="2D"
+   id="text10451"
+   style="font-weight:bold;font-size:133.333px;-inkscape-font-specification:'sans-serif, Bold';stroke-width:15;stroke-linecap:round;stroke-linejoin:round"><path
+     d="M 158.8615,268.70059 H 82.754926 v -16.01558 q 8.723936,-6.31509 17.447874,-13.41143 8.78904,-7.09633 14.06246,-12.23955 7.87759,-7.61717 11.19789,-13.28121 3.3203,-5.66405 3.3203,-11.19789 0,-6.64061 -4.29686,-10.22133 -4.23176,-3.64582 -12.23955,-3.64582 -5.98957,0 -12.630178,2.47395 -6.575504,2.47395 -12.239552,6.31509 h -2.083328 v -21.54943 q 4.622384,-2.01822 13.606736,-4.03645 9.049452,-2.01822 18.098912,-2.01822 18.22912,0 27.79941,7.68227 9.57029,7.61717 9.57029,21.61453 0,9.17966 -4.62239,17.44787 -4.55728,8.26821 -13.99736,17.05725 -5.92446,5.46874 -11.91403,10.09112 -5.98957,4.55728 -8.52862,6.38019 h 43.55457 z"
+     id="path11743" /><path
+     d="m 269.4732,220.32832 q 0,13.54163 -6.18488,24.28379 -6.18488,10.67706 -15.62496,16.40621 -7.09633,4.29686 -15.55985,5.98957 -8.46352,1.6927 -20.05204,1.6927 h -34.1796 v -96.93985 h 35.15616 q 11.84893,0 20.44266,2.01822 8.59373,1.95312 14.45309,5.59894 10.02601,6.11978 15.75517,16.53642 5.79425,10.35154 5.79425,24.414 z m -25.84629,-0.19531 q 0,-9.57029 -3.51561,-16.34111 -3.45051,-6.83592 -11.00258,-10.67705 -3.84113,-1.88802 -7.87758,-2.53906 -3.97135,-0.71614 -12.04424,-0.71614 h -6.31509 v 60.67693 h 6.31509 q 8.91925,0 13.0859,-0.78125 4.16666,-0.84635 8.138,-2.99479 6.83592,-3.90624 10.02602,-10.41664 3.19009,-6.5755 3.19009,-16.21089 z"
+     id="path11745" /></g></svg>

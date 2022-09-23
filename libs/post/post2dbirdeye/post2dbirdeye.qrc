@@ -1,5 +1,5 @@
 <RCC>
     <qresource prefix="/libs/post/post2dbirdeye">
-        <file>images/iconVis2DBirdEye.png</file>
+        <file>images/iconVis2DBirdEye.svg</file>
     </qresource>
 </RCC>

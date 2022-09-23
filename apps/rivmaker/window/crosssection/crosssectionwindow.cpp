@@ -27,7 +27,7 @@ CrossSectionWindow::CrossSectionWindow(QWidget *parent) :
 	ChartWindow(parent),
 	m_currentCrossSection {nullptr}
 {
-	setWindowIcon(QIcon(":/images/iconRiverCrosssection.png"));
+	setWindowIcon(QIcon(":/images/iconRiverCrosssection.svg"));
 
 	auto graphicsView = new CrossSectionWindowGraphicsView(this);
 	setCentralWidget(graphicsView);

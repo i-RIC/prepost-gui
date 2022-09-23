@@ -41,7 +41,7 @@
 #include <cmath>
 
 Post2dWindowParticlesBaseVectorGroupDataItem::Post2dWindowParticlesBaseVectorGroupDataItem(Post2dWindowDataItem* p) :
-	Post2dWindowDataItem(tr("Vector"), QIcon(":/libs/guibase/images/iconFolder.png"), p)
+	Post2dWindowDataItem(tr("Vector"), QIcon(":/libs/guibase/images/iconFolder.svg"), p)
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 

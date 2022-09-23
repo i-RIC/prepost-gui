@@ -44,7 +44,7 @@ void SolverConsoleWindow::Impl::init()
 	m_destructing = false;
 
 	m_window->exportLogAction = new QAction(SolverConsoleWindow::tr("&Export solver console log..."), m_window);
-	m_window->exportLogAction->setIcon(QIcon(":/libs/guibase/images/iconExport.png"));
+	m_window->exportLogAction->setIcon(QIcon(":/libs/guibase/images/iconExport.svg"));
 	m_window->exportLogAction->setDisabled(true);
 
 	m_console = new QPlainTextEdit(m_window);

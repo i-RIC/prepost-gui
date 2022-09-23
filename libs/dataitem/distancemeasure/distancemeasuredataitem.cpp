@@ -49,7 +49,7 @@ DistanceMeasureDataItem::Impl::Impl(DistanceMeasureDataItem* parent) :
 
 	m_rightClickingMenu = new QMenu(parent->mainWindow());
 	m_propertyAction = new QAction(DistanceMeasureDataItem::tr("Property"), m_rightClickingMenu);
-	m_propertyAction->setIcon(QIcon(":/libs/guibase/images/iconProperty.png"));
+	m_propertyAction->setIcon(QIcon(":/libs/guibase/images/iconProperty.svg"));
 	m_redefineAction = new QAction(DistanceMeasureDataItem::tr("Redefine"), m_rightClickingMenu);
 
 	m_rightClickingMenu->addAction(m_redefineAction);
@@ -65,7 +65,7 @@ DistanceMeasureDataItem::Impl::~Impl()
 // public interfaces
 
 DistanceMeasureDataItem::DistanceMeasureDataItem(const QString& name, GraphicsWindowDataItem* parent) :
-	GraphicsWindowDataItem {name, QIcon(":/libs/guibase/images/iconPaper.png"), parent},
+	GraphicsWindowDataItem {name, QIcon(":/libs/guibase/images/iconPaper.svg"), parent},
 	impl {new Impl(this)}
 {
 	setupStandardItem(Checked, NotReorderable, Deletable);

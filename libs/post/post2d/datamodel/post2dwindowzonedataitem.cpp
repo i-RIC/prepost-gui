@@ -59,7 +59,7 @@
 #include <vtkVertex.h>
 
 Post2dWindowZoneDataItem::Post2dWindowZoneDataItem(const std::string& zoneName, int zoneNumber, Post2dWindowDataItem* parent) :
-	Post2dWindowDataItem {zoneName.c_str(), QIcon(":/libs/guibase/images/iconFolder.png"), parent},
+	Post2dWindowDataItem {zoneName.c_str(), QIcon(":/libs/guibase/images/iconFolder.svg"), parent},
 	m_shapeDataItem {nullptr},
 	m_scalarGroupTopDataItem {nullptr},
 	m_cellScalarGroupTopDataItem {nullptr},

@@ -20,7 +20,7 @@
 #include <qwt_plot.h>
 
 Graph2dWindowMarkerDataItem::Graph2dWindowMarkerDataItem(const Graph2dWindowMarkerSetting::Graph2dWindowMarkerSettingItem& item, Graph2dWindowDataItem* parent)
-	: Graph2dWindowDataItem(item.label(), QIcon(":/libs/guibase/images/iconPaper.png"), parent)
+	: Graph2dWindowDataItem(item.label(), QIcon(":/libs/guibase/images/iconPaper.svg"), parent)
 {
 	m_standardItem->setCheckable(true);
 	m_standardItem->setCheckState(Qt::Checked);

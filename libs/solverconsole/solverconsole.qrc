@@ -1,5 +1,5 @@
 <RCC>
     <qresource prefix="/libs/solverconsole">
-        <file>images/iconSolver.png</file>
+        <file>images/iconSolver.svg</file>
     </qresource>
 </RCC>

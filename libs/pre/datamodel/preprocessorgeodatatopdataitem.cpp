@@ -151,7 +151,7 @@ void removeNonGroupedComplexAttributes(PreProcessorGeoDataTopDataItem* item)
 } // namespace
 
 PreProcessorGeoDataTopDataItem::PreProcessorGeoDataTopDataItem(PreProcessorDataItem* parent) :
-	PreProcessorGeoDataTopDataItemInterface {tr("Geographic Data"), QIcon(":/libs/guibase/images/iconFolder.png"), parent},
+	PreProcessorGeoDataTopDataItemInterface {tr("Geographic Data"), QIcon(":/libs/guibase/images/iconFolder.svg"), parent},
 	m_condition {nullptr},
 	m_visible {"visible", true},
 	m_referenceInformationAttribute {nullptr}

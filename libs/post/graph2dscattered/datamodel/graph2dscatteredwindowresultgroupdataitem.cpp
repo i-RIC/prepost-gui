@@ -8,7 +8,7 @@
 #include <qwt_scale_div.h>
 
 Graph2dScatteredWindowResultGroupDataItem::Graph2dScatteredWindowResultGroupDataItem(Graph2dWindowDataItem* parent)
-	: Graph2dScatteredWindowDataItem(tr("Calcuation Results"), QIcon(":/images/iconFolder.png"), parent)
+	: Graph2dScatteredWindowDataItem(tr("Calcuation Results"), QIcon(":/images/iconFolder.svg"), parent)
 {
 	m_standardItem->setCheckable(true);
 	m_standardItem->setCheckState(Qt::Checked);

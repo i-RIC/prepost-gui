@@ -1,0 +1,10 @@
+<?xml version="1.0" ?><svg width="60px" height="60px" viewBox="0 -2 60 60" id="wallet" xmlns="http://www.w3.org/2000/svg"><defs><style>
+      .cls-1 {
+        fill: #8b695c;
+        fill-rule: evenodd;
+      }
+
+      .cls-2 {
+        fill: #699f4c;
+      }
+    </style></defs><path class="cls-1" d="M74,582h0.006a2,2,0,0,0,2.008,2H128v12H116.108A4.089,4.089,0,0,0,112,600v8a3.994,3.994,0,0,0,4,4h12v12a3.814,3.814,0,0,1-1.027,2.824A4.317,4.317,0,0,1,124,628H74.006a4.009,4.009,0,0,1-4.016-4V580A4.009,4.009,0,0,1,74,576v6Zm44,26a2.627,2.627,0,0,1-2-2v-4a2.627,2.627,0,0,1,2-2h10a2.627,2.627,0,0,1,2,2v4a2.627,2.627,0,0,1-2,2H118Z" data-name="wallet" id="wallet-2" transform="translate(-70 -572)"/><rect class="cls-2" height="8" width="46" x="8"/></svg>

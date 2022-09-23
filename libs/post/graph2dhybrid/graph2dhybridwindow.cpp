@@ -26,7 +26,7 @@ void Graph2dHybridWindow::init()
 {
 	setWindowTitle(tr("Graph Window: %1").arg(m_index));
 
-	m_icon = QIcon(":/images/iconVisGraphHybrid.png");
+	m_icon = QIcon(":/images/iconVisGraphHybrid.svg");
 	setWindowIcon(m_icon);
 
 	m_actionManager = new Graph2dHybridWindowActionManager(this);

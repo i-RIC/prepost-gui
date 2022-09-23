@@ -24,7 +24,7 @@
 #include <QXmlStreamWriter>
 
 PreProcessorGridTypeDataItem::PreProcessorGridTypeDataItem(SolverDefinitionGridType* type, GraphicsWindowDataItem* parent) :
-	PreProcessorGridTypeDataItemInterface {type->caption(), QIcon(":/libs/guibase/images/iconFolder.png"), parent},
+	PreProcessorGridTypeDataItemInterface {type->caption(), QIcon(":/libs/guibase/images/iconFolder.svg"), parent},
 	m_gridType {type}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);

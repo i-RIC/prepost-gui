@@ -1058,24 +1058,24 @@ void GeoDataPointmap::showDisplaySetting()
 void GeoDataPointmap::setupActions()
 {
 	m_addPointAction = new QAction(tr("&Add New Point"), this);
-	m_addPointAction->setIcon(QIcon(":/libs/geodata/pointmap/images/iconAddPoint.png"));
+	m_addPointAction->setIcon(QIcon(":/libs/geodata/pointmap/images/iconAddPoint.svg"));
 	m_addPointAction->setCheckable(true);
 	connect(m_addPointAction, SIGNAL(triggered(bool)), this, SLOT(addPoints(bool)));
 
 	m_interpolatePointAction = new QAction(tr("&Interpolate Points"), this);
-	m_interpolatePointAction->setIcon(QIcon(":/libs/geodata/pointmap/images/iconInterpolatePoint.png"));
+	m_interpolatePointAction->setIcon(QIcon(":/libs/geodata/pointmap/images/iconInterpolatePoint.svg"));
 	m_interpolatePointAction->setCheckable(true);
 	connect(m_interpolatePointAction, SIGNAL(triggered(bool)), this, SLOT(interpolatePoints(bool)));
 
 	m_displaySettingAction = new QAction(tr("Display &Setting..."), this);
 	connect(m_displaySettingAction, SIGNAL(triggered()), this, SLOT(showDisplaySetting()));
 
-	m_selectionModePoint = new QAction(QIcon(":/libs/geodata/pointmap/images/iconPointSelection.png"), tr("Select point"), this);
+	m_selectionModePoint = new QAction(QIcon(":/libs/geodata/pointmap/images/iconPointSelection.svg"), tr("Select point"), this);
 	connect(m_selectionModePoint, SIGNAL(triggered(bool)), this, SLOT(selectionModePoint(bool)));
 	m_selectionModePoint->setCheckable(true);
 
 	m_selectionModePolygon = new QAction(tr("Select Points With &Polygon"), this);
-	m_selectionModePolygon->setIcon(QIcon(":/libs/geodata/pointmap/images/iconPolygonSelection.png"));
+	m_selectionModePolygon->setIcon(QIcon(":/libs/geodata/pointmap/images/iconPolygonSelection.svg"));
 	m_selectionModePolygon->setCheckable(true);
 	connect(m_selectionModePolygon, SIGNAL(triggered(bool)), this, SLOT(selectionModePolygon(bool)));
 
@@ -1084,18 +1084,22 @@ void GeoDataPointmap::setupActions()
 	connect(m_editPointsAction, SIGNAL(triggered(bool)), this, SLOT(editPoints()));
 
 	m_editPointsDeleteAction = new QAction(tr("Delete Selected P&oints"), this);
+	m_editPointsDeleteAction->setIcon(QIcon(":/libs/guibase/images/iconDeleteItem.svg"));
 	m_editPointsDeleteAction->setCheckable(false);
 	connect(m_editPointsDeleteAction, SIGNAL(triggered(bool)), this, SLOT(editPointsDelete()));
 
 	m_editPointsExportAction = new QAction(tr("E&xport Selected Points..."), this);
+	m_editPointsExportAction->setIcon(QIcon(":/libs/guibase/images/iconExport.svg"));
 	m_editPointsExportAction->setCheckable(false);
 	connect(m_editPointsExportAction, SIGNAL(triggered(bool)), this, SLOT(editPointsExport()));
 
 	m_editPointsLessThanAction = new QAction(tr("Delete Selected Points &Less Than Value..."), this);
+	m_editPointsLessThanAction->setIcon(QIcon(":/libs/guibase/images/iconDeleteItem.svg"));
 	m_editPointsLessThanAction->setCheckable(false);
 	connect(m_editPointsLessThanAction, SIGNAL(triggered(bool)), this, SLOT(editPointsLessThan()));
 
-	m_editPointsGreaterThanAction = new QAction(tr("Delete Selected Points &Greater Than Value..."), this);
+	m_editPointsGreaterThanAction = new QAction(QIcon(""), tr("Delete Selected Points &Greater Than Value..."), this);
+	m_editPointsGreaterThanAction->setIcon(QIcon(":/libs/guibase/images/iconDeleteItem.svg"));
 	m_editPointsGreaterThanAction->setCheckable(false);
 	connect(m_editPointsGreaterThanAction, SIGNAL(triggered(bool)), this, SLOT(editPointsGreaterThan()));
 
@@ -1105,16 +1109,16 @@ void GeoDataPointmap::setupActions()
 	connect(m_remeshAction, SIGNAL(triggered()), this, SLOT(remeshTINS()));
 
 	m_addBreakLineAction = new QAction(tr("Add &Break Line"), this);
-	m_addBreakLineAction->setIcon(QIcon(":/libs/geodata/pointmap/images/iconBreakLineAdd.png"));
+	m_addBreakLineAction->setIcon(QIcon(":/libs/geodata/pointmap/images/iconBreakLineAdd.svg"));
 	m_addBreakLineAction->setCheckable(true);
 	connect(m_addBreakLineAction, SIGNAL(triggered()), this, SLOT(addBreakLine()));
 
 	m_removeBreakLineAction = new QAction(tr("&Remove Break Line"), this);
-	m_removeBreakLineAction->setIcon(QIcon(":/libs/geodata/pointmap/images/iconBreakLineDelete.png"));
+	m_removeBreakLineAction->setIcon(QIcon(":/libs/geodata/pointmap/images/iconBreakLineDelete.svg"));
 	m_removeBreakLineAction->setCheckable(true);
 	connect(m_removeBreakLineAction, SIGNAL(triggered()), this, SLOT(removeBreakLine()));
 
-	m_removeAllBreakLinesAction = new QAction(tr("Re&move All Break Lines..."), this);
+	m_removeAllBreakLinesAction = new QAction(QIcon(":/libs/guibase/images/iconDeleteItem.svg"), tr("Re&move All Break Lines..."), this);
 	connect(m_removeAllBreakLinesAction, SIGNAL(triggered()), this, SLOT(removeAllBreakLines()));
 
 	m_removeTrianglesWithLongEdgeAction = new QAction(tr("Remove Triangles &with Long edge..."), this);

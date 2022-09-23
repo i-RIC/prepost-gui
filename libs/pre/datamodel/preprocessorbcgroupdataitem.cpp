@@ -25,9 +25,9 @@
 #include <iriclib_errorcodes.h>
 
 PreProcessorBCGroupDataItem::PreProcessorBCGroupDataItem(PreProcessorDataItem* parent) :
-	PreProcessorDataItem {tr("Boundary Condition"), QIcon(":/libs/guibase/images/iconFolder.png"), parent},
-	m_deleteSelectedAction {new QAction(QIcon(":/libs/guibase/images/iconDeleteItem.png"), PreProcessorBCGroupDataItem::tr("Delete &Selected..."), this)},
-	m_deleteAllAction {new QAction(QIcon(":/libs/guibase/images/iconDeleteItem.png"), PreProcessorBCGroupDataItem::tr("Delete &All..."), this)},
+	PreProcessorDataItem {tr("Boundary Condition"), QIcon(":/libs/guibase/images/iconFolder.svg"), parent},
+	m_deleteSelectedAction {new QAction(QIcon(":/libs/guibase/images/iconDeleteItem.svg"), PreProcessorBCGroupDataItem::tr("Delete &Selected..."), this)},
+	m_deleteAllAction {new QAction(QIcon(":/libs/guibase/images/iconDeleteItem.svg"), PreProcessorBCGroupDataItem::tr("Delete &All..."), this)},
 	m_dummyEditAction {new QAction(PreProcessorBCGroupDataItem::tr("&Edit Condition..."), this)},
 	m_dummyDeleteAction {new QAction(PreProcessorBCGroupDataItem::tr("&Delete..."), this)},
 	m_dummyAssignAction {new QAction(PreProcessorBCGroupDataItem::tr("&Assign Condition"), this)},

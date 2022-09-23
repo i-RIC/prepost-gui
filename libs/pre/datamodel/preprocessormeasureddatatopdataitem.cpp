@@ -31,10 +31,10 @@
 #include <vtkTextProperty.h>
 
 PreProcessorMeasuredDataTopDataItem::PreProcessorMeasuredDataTopDataItem(GraphicsWindowDataItem* parent) :
-	PreProcessorDataItem {tr("Measured Values"), QIcon(":/libs/guibase/images/iconFolder.png"), parent},
-	m_importAction {new QAction(QIcon(":/libs/guibase/images/iconImport.png"), PreProcessorMeasuredDataTopDataItem::tr("&Import..."), this)},
-	m_deleteSelectedAction {new QAction(QIcon(":/libs/guibase/images/iconDeleteItem.png"), PreProcessorMeasuredDataTopDataItem::tr("Delete &Selected..."), this)},
-	m_deleteAllAction {new QAction(QIcon(":/libs/guibase/images/iconDeleteItem.png"), PreProcessorMeasuredDataTopDataItem::tr("Delete &All..."), this)}
+	PreProcessorDataItem {tr("Measured Values"), QIcon(":/libs/guibase/images/iconFolder.svg"), parent},
+	m_importAction {new QAction(QIcon(":/libs/guibase/images/iconImport.svg"), PreProcessorMeasuredDataTopDataItem::tr("&Import..."), this)},
+	m_deleteSelectedAction {new QAction(QIcon(":/libs/guibase/images/iconDeleteItem.svg"), PreProcessorMeasuredDataTopDataItem::tr("Delete &Selected..."), this)},
+	m_deleteAllAction {new QAction(QIcon(":/libs/guibase/images/iconDeleteItem.svg"), PreProcessorMeasuredDataTopDataItem::tr("Delete &All..."), this)}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 	setSubPath("measureddata");

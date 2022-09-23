@@ -46,7 +46,7 @@
 #include <cmath>
 
 Post2dWindowNodeVectorArrowGroupDataItem::Post2dWindowNodeVectorArrowGroupDataItem(Post2dWindowDataItem* p) :
-	Post2dWindowDataItem {tr("Arrow"), QIcon(":/libs/guibase/images/iconFolder.png"), p}
+	Post2dWindowDataItem {tr("Arrow"), QIcon(":/libs/guibase/images/iconFolder.svg"), p}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 

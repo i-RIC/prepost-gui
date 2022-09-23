@@ -1,11 +1,12 @@
 <RCC>
     <qresource prefix="/libs/guibase">
-        <file>images/iconProperty.png</file>
-        <file>images/iconDeleteItem.png</file>
-        <file>images/iconItemMoveBottom.png</file>
-        <file>images/iconItemMoveDown.png</file>
-        <file>images/iconItemMoveTop.png</file>
-        <file>images/iconItemMoveUp.png</file>
+        <file>images/iconColor.svg</file>
+        <file>images/iconProperty.svg</file>
+        <file>images/iconDeleteItem.svg</file>
+        <file>images/iconItemMoveBottom.svg</file>
+        <file>images/iconItemMoveDown.svg</file>
+        <file>images/iconItemMoveTop.svg</file>
+        <file>images/iconItemMoveUp.svg</file>
         <file>images/cursorMove.png</file>
         <file>images/cursorRotate.png</file>
         <file>images/cursorZoom.png</file>
@@ -13,16 +14,16 @@
         <file>images/cursorItemMove.png</file>
         <file>images/cursorOpenHandPoint.png</file>
         <file>images/cursorRemove.png</file>
-        <file>images/iconExport.png</file>
-        <file>images/iconImport.png</file>
-        <file>images/iconQuestion.png</file>
-        <file>images/iconFolder.png</file>
-        <file>images/iconPaper.png</file>
-        <file>images/iconAddDivLine.png</file>
-        <file>images/iconAddPolygonVertex.png</file>
-        <file>images/iconRemovePolygonVertex.png</file>
-        <file>images/iconPolygonHole.png</file>
-        <file>images/iconPolygonRefine.png</file>
-        <file>images/iconPolygonRegion.png</file>
+        <file>images/iconExport.svg</file>
+        <file>images/iconImport.svg</file>
+        <file>images/iconQuestion.svg</file>
+        <file>images/iconFolder.svg</file>
+        <file>images/iconPaper.svg</file>
+        <file>images/iconAddDivLine.svg</file>
+        <file>images/iconAddPolygonVertex.svg</file>
+        <file>images/iconRemovePolygonVertex.svg</file>
+        <file>images/iconPolygonHole.svg</file>
+        <file>images/iconPolygonRefine.svg</file>
+        <file>images/iconPolygonRegion.svg</file>
     </qresource>
 </RCC>

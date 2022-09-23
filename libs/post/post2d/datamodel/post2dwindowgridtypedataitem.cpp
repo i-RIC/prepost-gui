@@ -52,7 +52,7 @@ void insertLookupTableContainer(const std::string& name, QMap<std::string, Looku
 } // namespace
 
 Post2dWindowGridTypeDataItem::Post2dWindowGridTypeDataItem(SolverDefinitionGridType* type, GraphicsWindowDataItem* parent) :
-	Post2dWindowDataItem {type->caption(), QIcon(":/libs/guibase/images/iconFolder.png"), parent},
+	Post2dWindowDataItem {type->caption(), QIcon(":/libs/guibase/images/iconFolder.svg"), parent},
 	m_gridType {type},
 	m_geoDataItem {nullptr},
 	m_isZoneDataItemsSetup {false}

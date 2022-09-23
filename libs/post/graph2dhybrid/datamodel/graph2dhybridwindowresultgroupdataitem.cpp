@@ -38,7 +38,7 @@
 #include <qwt_scale_engine.h>
 
 Graph2dHybridWindowResultGroupDataItem::Graph2dHybridWindowResultGroupDataItem(Graph2dWindowDataItem* parent)
-	: Graph2dHybridWindowDataItem(tr("Calcuation Results"), QIcon(":/libs/guibase/images/iconFolder.png"), parent)
+	: Graph2dHybridWindowDataItem(tr("Calcuation Results"), QIcon(":/libs/guibase/images/iconFolder.svg"), parent)
 {
 	m_standardItem->setCheckable(true);
 	m_standardItem->setCheckState(Qt::Checked);

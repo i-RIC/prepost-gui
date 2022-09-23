@@ -376,7 +376,7 @@ void MeasuredDataPointGroupDataItem::Impl::createValueClippedPolyData()
 // public interfaces
 
 MeasuredDataPointGroupDataItem::MeasuredDataPointGroupDataItem(GraphicsWindowDataItem* p) :
-	GraphicsWindowDataItem {tr("Scalar"), QIcon(":/libs/guibase/images/iconFolder.png"), p},
+	GraphicsWindowDataItem {tr("Scalar"), QIcon(":/libs/guibase/images/iconFolder.svg"), p},
 	impl {new Impl(this)}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);

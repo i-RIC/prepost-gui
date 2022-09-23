@@ -26,7 +26,7 @@
 #include <map>
 
 Post2dWindowCellScalarGroupTopDataItem::Post2dWindowCellScalarGroupTopDataItem(Post2dWindowDataItem* p) :
-	Post2dWindowDataItem {tr("Scalar (cell center)"), QIcon(":/libs/guibase/images/iconFolder.png"), p}
+	Post2dWindowDataItem {tr("Scalar (cell center)"), QIcon(":/libs/guibase/images/iconFolder.svg"), p}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 

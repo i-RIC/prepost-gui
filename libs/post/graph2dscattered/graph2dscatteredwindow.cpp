@@ -26,7 +26,7 @@ void Graph2dScatteredWindow::init()
 {
 	setWindowTitle(tr("Scattered Chart Window: %1").arg(m_index));
 
-	m_icon = QIcon(":/images/iconVisGraphScattered.png");
+	m_icon = QIcon(":/images/iconVisGraphScattered.svg");
 	setWindowIcon(m_icon);
 
 	m_actionManager = new Graph2dScatteredWindowActionManager(this);

@@ -9,7 +9,7 @@
 #include <QXmlStreamWriter>
 
 Post3dWindowParticleGroupRootDataItem::Post3dWindowParticleGroupRootDataItem(Post3dWindowDataItem* p) :
-	Post3dWindowDataItem {tr("Particles"), QIcon(":/libs/guibase/images/iconFolder.png"), p}
+	Post3dWindowDataItem {tr("Particles"), QIcon(":/libs/guibase/images/iconFolder.svg"), p}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 

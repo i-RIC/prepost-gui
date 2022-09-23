@@ -50,7 +50,7 @@
 #include <vtkTextProperty.h>
 
 Post2dBirdEyeWindowNodeScalarGroupDataItem::Post2dBirdEyeWindowNodeScalarGroupDataItem(Post2dBirdEyeWindowDataItem* p, CheckFlag cflag, ReorderFlag rflag, DeleteFlag dflag) :
-	Post2dBirdEyeWindowDataItem {tr("Scalar"), QIcon(":/libs/guibase/images/iconPaper.png"), p}
+	Post2dBirdEyeWindowDataItem {tr("Scalar"), QIcon(":/libs/guibase/images/iconPaper.svg"), p}
 {
 	setupStandardItem(cflag, rflag, dflag);
 
