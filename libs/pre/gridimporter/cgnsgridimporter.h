@@ -25,12 +25,14 @@ public:
 
 	bool selectZoneForImporting(const iRICLib::H5CgnsFile& file, iRICLib::H5CgnsZone** selectedZone, QWidget* parent);
 	void setGridDataItem(PreProcessorGridDataItem* gridDataItem);
+	void setDisableWarning(bool disable);
 
 protected:
 	virtual bool isZoneCompatible(const iRICLib::H5CgnsZone& zone) = 0;
 
 private:
 	PreProcessorGridDataItem* m_gridDataItem;
+	bool m_disableWarning;
 };
 
 #endif // CGNSGRIDIMPORTER_H

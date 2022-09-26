@@ -26,7 +26,8 @@
 
 CgnsGridImporter::CgnsGridImporter() :
 	GridInternalImporter {},
-	m_gridDataItem {nullptr}
+	m_gridDataItem {nullptr},
+	m_disableWarning {false}
 {}
 
 QStringList CgnsGridImporter::fileDialogFilters() const
@@ -110,7 +111,9 @@ bool CgnsGridImporter::selectZoneForImporting(const iRICLib::H5CgnsFile& file, i
 		}
 	}
 	if (compatibleZoneNames.size() == 0) {
-		QMessageBox::warning(parent, tr("Warning"), tr("This file does not contain grid that can be imported."));
+		if (! m_disableWarning) {
+			QMessageBox::warning(parent, tr("Warning"), tr("This file does not contain grid that can be imported."));
+		}
 		return false;
 	} else if (compatibleZoneNames.size() == 1) {
 		auto name = iRIC::toStr(compatibleZoneNames[0]);
@@ -128,4 +131,9 @@ bool CgnsGridImporter::selectZoneForImporting(const iRICLib::H5CgnsFile& file, i
 void CgnsGridImporter::setGridDataItem(PreProcessorGridDataItem* gridDataItem)
 {
 	m_gridDataItem = gridDataItem;
+}
+
+void CgnsGridImporter::setDisableWarning(bool disable)
+{
+	m_disableWarning = disable;
 }

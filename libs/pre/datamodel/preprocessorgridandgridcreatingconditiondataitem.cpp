@@ -424,16 +424,18 @@ bool PreProcessorGridAndGridCreatingConditionDataItem::importGridFromCgnsFile(co
 {
 	PreProcessorGridTypeDataItem* gTypeItem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent());
 	auto importerList = GridImporterFactory::instance().list(*(gTypeItem->gridType()));
+
 	for (auto importer : importerList) {
 		auto cgnsImporter = dynamic_cast<CgnsGridImporter*> (importer);
 		if (cgnsImporter == nullptr) {continue;}
 
 		auto filters = cgnsImporter->fileDialogFilters();
+		cgnsImporter->setDisableWarning(true);
 		bool ok = importFromImporter(importer, filename, filters.first());
 		if (ok) {
 			dataModel()->graphicsView()->cameraFit();
+			return true;
 		}
-		return ok;
 	}
 	return false;
 }
