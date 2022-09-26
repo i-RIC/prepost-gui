@@ -290,6 +290,8 @@ void iRICMainWindow::newProject(SolverDefinitionAbstract* solver)
 	m_actionManager->informSubWindowChange(pre);
 	m_solverConsoleWindow->setupDefaultGeometry();
 	m_solverConsoleWindow->parentWidget()->hide();
+
+	pre->cameraFit();
 }
 
 void iRICMainWindow::openProject()
