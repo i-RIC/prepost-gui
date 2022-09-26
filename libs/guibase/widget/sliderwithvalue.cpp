@@ -22,6 +22,7 @@ SliderWithValue::SliderWithValue(QWidget* parent) :
 	connect(m_slider, SIGNAL(valueChanged(int)), this, SLOT(handleValueChange(int)));
 
 	connect(m_spinBox, SIGNAL(focusOutOccured()), this, SLOT(applySpinBoxValue()));
+	connect(m_spinBox, SIGNAL(stepChanged(int)), this, SLOT(applySpinBoxValue()));
 
 	QHBoxLayout* l = new QHBoxLayout(this);
 	l->setMargin(0);
