@@ -23,7 +23,7 @@
 #include <vtkPointData.h>
 
 Post2dBirdEyeWindowNodeScalarGroupTopDataItem::Post2dBirdEyeWindowNodeScalarGroupTopDataItem(Post2dBirdEyeWindowDataItem* p) :
-	Post2dBirdEyeWindowDataItem {tr("Scalar (node)"), QIcon(":/libs/guibase/images/iconFolder.png"), p},
+	Post2dBirdEyeWindowDataItem {tr("Scalar (node)"), QIcon(":/libs/guibase/images/iconFolder.svg"), p},
 	m_zScale {1}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);

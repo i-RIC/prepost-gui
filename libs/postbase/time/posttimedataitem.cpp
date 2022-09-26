@@ -67,7 +67,7 @@ void PostTimeDataItem::Setting::save(QXmlStreamWriter& writer) const
 }
 
 PostTimeDataItem::PostTimeDataItem(GraphicsWindowDataItem* parent) :
-	GraphicsWindowDataItem {tr("Time"), QIcon(":/libs/guibase/images/iconPaper.png"), parent}
+	GraphicsWindowDataItem {tr("Time"), QIcon(":/libs/guibase/images/iconPaper.svg"), parent}
 {
 	m_standardItem->setCheckable(true);
 	m_standardItem->setCheckState(Qt::Checked);

@@ -45,7 +45,7 @@ void Post2dWindow::init()
 {
 	setWindowTitle(tr("Post-processing (2D): %1").arg(m_index));
 
-	m_icon = QIcon(":/libs/post/post2d/images/iconVis2D.png");
+	m_icon = QIcon(":/libs/post/post2d/images/iconVis2D.svg");
 	// set default central widget.
 	QLabel* label = new QLabel(this);
 	setCentralWidget(label);

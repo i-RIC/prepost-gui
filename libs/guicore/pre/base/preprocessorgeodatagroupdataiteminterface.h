@@ -22,7 +22,7 @@ class GUICOREDLL_EXPORT PreProcessorGeoDataGroupDataItemInterface : public PrePr
 
 public:
 	PreProcessorGeoDataGroupDataItemInterface(SolverDefinitionGridAttribute* cond, PreProcessorDataItem* parent) :
-		PreProcessorDataItem(cond->caption(), QIcon(":/libs/guibase/images/iconFolder.png"), parent)
+		PreProcessorDataItem(cond->caption(), QIcon(":/libs/guibase/images/iconFolder.svg"), parent)
 	{}
 	virtual SolverDefinitionGridAttribute* condition() = 0;
 	ProjectData* projectData() const {return ProjectDataItem::projectData();}

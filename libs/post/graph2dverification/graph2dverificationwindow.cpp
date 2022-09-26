@@ -24,7 +24,7 @@ void Graph2dVerificationWindow::init()
 {
 	setWindowTitle(tr("Verification Window: %1").arg(m_index));
 
-	m_icon = QIcon(":/images/iconGraphVerification.png");
+	m_icon = QIcon(":/images/iconGraphVerification.svg");
 	setWindowIcon(m_icon);
 
 	m_actionManager = new Graph2dVerificationWindowActionManager(this);

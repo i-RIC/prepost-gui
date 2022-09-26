@@ -27,7 +27,7 @@
 #include <vtkStructuredGridGeometryFilter.h>
 
 Post3dWindowNodeVectorStreamlineGroupDataItem::Post3dWindowNodeVectorStreamlineGroupDataItem(Post3dWindowDataItem* p) :
-	Post3dWindowDataItem {tr("Streamlines"), QIcon(":/libs/guibase/images/iconFolder.png"), p},
+	Post3dWindowDataItem {tr("Streamlines"), QIcon(":/libs/guibase/images/iconFolder.svg"), p},
 	m_target {},
 	m_regionMode {StructuredGridRegion::rmFull},
 	m_zScale {1}

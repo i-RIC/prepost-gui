@@ -34,6 +34,7 @@ VTK_MODULE_INIT(vtkRenderingFreeTypeOpenGL);
 int main(int argc, char* argv[])
 {
 	QtTool::initNetworkAccessManager();
+	QApplication::setAttribute(Qt::AA_UseHighDpiPixmaps);
 
 	QApplication a(argc, argv);
 	// show splash screen.

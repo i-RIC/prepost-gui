@@ -15,7 +15,7 @@
   </property>
   <property name="windowIcon">
    <iconset resource="../../../libs/guibase/guibase.qrc">
-    <normaloff>:/libs/guibase/images/iconProperty.png</normaloff>:/libs/guibase/images/iconProperty.png</iconset>
+    <normaloff>:/libs/guibase/images/iconProperty.svg</normaloff>:/libs/guibase/images/iconProperty.svg</iconset>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>

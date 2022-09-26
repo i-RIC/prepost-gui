@@ -39,7 +39,7 @@ PostZoneDataContainer* getContainerWithZoneType(const QList<PostZoneDataContaine
 } // namespace
 
 Post2dBirdEyeWindowGridTypeDataItem::Post2dBirdEyeWindowGridTypeDataItem(SolverDefinitionGridType* type, GraphicsWindowDataItem* parent) :
-	Post2dBirdEyeWindowDataItem {type->caption(), QIcon(":/libs/guibase/images/iconFolder.png"), parent},
+	Post2dBirdEyeWindowDataItem {type->caption(), QIcon(":/libs/guibase/images/iconFolder.svg"), parent},
 	m_gridType {type},
 	m_isZoneDataItemsSetup {false}
 {

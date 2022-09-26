@@ -27,7 +27,7 @@
 #include <map>
 
 Post2dWindowEdgeJScalarGroupTopDataItem::Post2dWindowEdgeJScalarGroupTopDataItem(Post2dWindowDataItem* p) :
-	Post2dWindowScalarGroupTopDataItem{ tr("Scalar (edgeJ)"), QIcon(":/libs/guibase/images/iconFolder.png"), p }
+	Post2dWindowScalarGroupTopDataItem{ tr("Scalar (edgeJ)"), QIcon(":/libs/guibase/images/iconFolder.svg"), p }
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 

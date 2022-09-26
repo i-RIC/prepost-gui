@@ -47,7 +47,7 @@ Post2dWindowNodeVectorStreamlineGroupDataItem::Setting& Post2dWindowNodeVectorSt
 }
 
 Post2dWindowNodeVectorStreamlineGroupDataItem::Post2dWindowNodeVectorStreamlineGroupDataItem(Post2dWindowDataItem* p) :
-	Post2dWindowDataItem {tr("Streamlines"), QIcon(":/libs/guibase/images/iconFolder.png"), p},
+	Post2dWindowDataItem {tr("Streamlines"), QIcon(":/libs/guibase/images/iconFolder.svg"), p},
 	m_zScale {1}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);

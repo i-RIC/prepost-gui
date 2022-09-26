@@ -13,7 +13,7 @@
 #include <algorithm>
 
 Post2dWindowGeoDataTopDataItem::Post2dWindowGeoDataTopDataItem(PreProcessorGeoDataTopDataItemInterface* ditem, Post2dWindowDataItem* parent) :
-	Post2dWindowDataItem {tr("Geographic Data"), QIcon(":/libs/guibase/images/iconFolder.png"), parent},
+	Post2dWindowDataItem {tr("Geographic Data"), QIcon(":/libs/guibase/images/iconFolder.svg"), parent},
 	m_preGeoDataTopDataItem {ditem}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);

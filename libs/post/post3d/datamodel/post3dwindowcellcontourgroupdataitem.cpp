@@ -22,7 +22,7 @@
 #include <vtkRenderWindow.h>
 
 Post3dWindowCellContourGroupDataItem::Post3dWindowCellContourGroupDataItem(Post3dWindowDataItem* p) :
-	Post3dWindowDataItem {"", QIcon(":/libs/guibase/images/iconFolder.png"), p}
+	Post3dWindowDataItem {"", QIcon(":/libs/guibase/images/iconFolder.svg"), p}
 {
 	setupStandardItem(Checked, NotReorderable, Deletable);
 

@@ -16,7 +16,7 @@
 #include <vtkRenderer.h>
 
 Post2dWindowCellFlagDataItem::Post2dWindowCellFlagDataItem(const std::string& attname, int val, const QColor& col, const QString& caption, Post2dWindowDataItem* parent) :
-	Post2dWindowDataItem {caption, QIcon(":/libs/guibase/images/iconPaper.png"), parent},
+	Post2dWindowDataItem {caption, QIcon(":/libs/guibase/images/iconPaper.svg"), parent},
 	m_attributeName (attname),
 	m_value {val},
 	m_color {col}

@@ -75,7 +75,7 @@ PreProcessorGridAttributeNodeDataItem::PreProcessorGridAttributeNodeDataItem(Sol
 	m_editValueAction->setDisabled(true);
 	connect(m_editValueAction, SIGNAL(triggered()), this, SLOT(editValue()));
 
-	m_exportAction = new QAction(QIcon(":/libs/guibase/images/iconExport.png"),PreProcessorGridAttributeNodeDataItem::tr("Export..."), this);
+	m_exportAction = new QAction(QIcon(":/libs/guibase/images/iconExport.svg"),PreProcessorGridAttributeNodeDataItem::tr("Export..."), this);
 	connect(m_exportAction, SIGNAL(triggered()), this, SLOT(exportToFile()));
 
 	m_generatePointMapAction = new QAction(PreProcessorGridAttributeNodeDataItem::tr("Generate point cloud data"), this);

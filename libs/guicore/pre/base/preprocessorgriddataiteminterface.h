@@ -15,7 +15,7 @@ class GUICOREDLL_EXPORT PreProcessorGridDataItemInterface : public PreProcessorD
 
 public:
 	PreProcessorGridDataItemInterface(PreProcessorDataItem* parent) :
-		PreProcessorDataItem(PreProcessorDataItem::tr("Grid"), QIcon(":/libs/guibase/images/iconFolder.png"), parent)
+		PreProcessorDataItem(PreProcessorDataItem::tr("Grid"), QIcon(":/libs/guibase/images/iconFolder.svg"), parent)
 	{}
 	virtual void updateSimplifiedGrid(VTKGraphicsView* v = nullptr) = 0;
 	virtual void informGridAttributeChange(const std::string& name) = 0;

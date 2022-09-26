@@ -6,7 +6,7 @@
 #include <QStandardItem>
 
 Graph2dHybridWindowResultCopyGroupDataItem::Graph2dHybridWindowResultCopyGroupDataItem(Graph2dWindowDataItem* parent)
-	: Graph2dHybridWindowDataItem(tr("Calcuation Results Copys"), QIcon(":/libs/guibase/images/iconFolder.png"), parent)
+	: Graph2dHybridWindowDataItem(tr("Calcuation Results Copys"), QIcon(":/libs/guibase/images/iconFolder.svg"), parent)
 {
 	m_standardItem->setCheckable(true);
 	m_standardItem->setCheckState(Qt::Checked);

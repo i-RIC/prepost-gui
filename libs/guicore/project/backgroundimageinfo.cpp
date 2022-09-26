@@ -419,9 +419,9 @@ void BackgroundImageInfo::updateFixActionIcon()
 {
 	QIcon icon;
 	if (m_fixed) {
-		icon = QIcon(":/libs/guicore/images/iconPinFixed.png");
+		icon = QIcon(":/libs/guicore/images/iconPinFixed.svg");
 	} else {
-		icon = QIcon(":/libs/guicore/images/iconPinFree.png");
+		icon = QIcon(":/libs/guicore/images/iconPinFree.svg");
 	}
 	m_fixActionWithIcon->setIcon(icon);
 }

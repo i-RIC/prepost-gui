@@ -21,10 +21,10 @@
 #include <algorithm>
 
 PreProcessorBackgroundImagesDataItem::PreProcessorBackgroundImagesDataItem(GraphicsWindowDataItem* parent) :
-	PreProcessorDataItem {tr("Background Images"), QIcon(":/libs/guibase/images/iconFolder.png"), parent},
+	PreProcessorDataItem {tr("Background Images"), QIcon(":/libs/guibase/images/iconFolder.svg"), parent},
 	m_addAction {new QAction(PreProcessorBackgroundImagesDataItem::tr("&Add Image..."), this)},
-	m_deleteSelectedAction {new QAction(QIcon(":/libs/guibase/images/iconDeleteItem.png"), PreProcessorBackgroundImagesDataItem::tr("Delete &Selected..."), this)},
-	m_deleteAllAction {new QAction(QIcon(":/libs/guibase/images/iconDeleteItem.png"), PreProcessorBackgroundImagesDataItem::tr("Delete &All..."), this)}
+	m_deleteSelectedAction {new QAction(QIcon(":/libs/guibase/images/iconDeleteItem.svg"), PreProcessorBackgroundImagesDataItem::tr("Delete &Selected..."), this)},
+	m_deleteAllAction {new QAction(QIcon(":/libs/guibase/images/iconDeleteItem.svg"), PreProcessorBackgroundImagesDataItem::tr("Delete &All..."), this)}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 	m_standardItem->setData(QVariant("BACKGROUNDIMAGES"), Qt::UserRole + 10);

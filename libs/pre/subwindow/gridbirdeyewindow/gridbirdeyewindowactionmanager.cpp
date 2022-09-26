@@ -33,7 +33,7 @@ void GridBirdEyeWindowActionManager::setupDrawMenu()
 	m_drawMenu->addSeparator();
 
 	backgroundColorAction = new QAction(tr("&Background Color..."), m_drawMenu);
-	backgroundColorAction->setIcon(QIcon(":/libs/guibase/images/iconColor.png"));
+	backgroundColorAction->setIcon(QIcon(":/libs/guibase/images/iconColor.svg"));
 	connect(backgroundColorAction, SIGNAL(triggered()), m_gridBirdEyeWindow, SLOT(editBackgroundColor()));
 	m_drawMenu->addAction(backgroundColorAction);
 

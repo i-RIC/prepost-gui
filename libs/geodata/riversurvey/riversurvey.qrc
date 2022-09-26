@@ -4,6 +4,6 @@
         <file>images/cursorCrosssectionRotate.png</file>
         <file>images/cursorExpand.png</file>
         <file>images/cursorShiftCenter.png</file>
-        <file>images/iconRiverCrosssection.png</file>
+        <file>images/iconRiverCrosssection.svg</file>
     </qresource>
 </RCC>

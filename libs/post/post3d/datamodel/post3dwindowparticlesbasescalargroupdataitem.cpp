@@ -27,7 +27,7 @@
 #include <vtkRenderWindow.h>
 
 Post3dWindowParticlesBaseScalarGroupDataItem::Post3dWindowParticlesBaseScalarGroupDataItem(Post3dWindowDataItem* p) :
-	Post3dWindowDataItem(tr("Scalar"), QIcon(":/libs/guibase/images/iconFolder.png"), p)
+	Post3dWindowDataItem(tr("Scalar"), QIcon(":/libs/guibase/images/iconFolder.svg"), p)
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 

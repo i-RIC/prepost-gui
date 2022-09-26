@@ -69,7 +69,7 @@ PostStringResultDataItem::Setting& PostStringResultDataItem::Setting::operator=(
 }
 
 PostStringResultDataItem::PostStringResultDataItem(GraphicsWindowDataItem* parent) :
-	GraphicsWindowDataItem(tr("Label"), QIcon(":/libs/guibase/images/iconPaper.png"), parent)
+	GraphicsWindowDataItem(tr("Label"), QIcon(":/libs/guibase/images/iconPaper.svg"), parent)
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 	setupActors();

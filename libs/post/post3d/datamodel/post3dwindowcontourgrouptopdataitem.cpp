@@ -22,7 +22,7 @@
 #include <vtkPointData.h>
 
 Post3dWindowContourGroupTopDataItem::Post3dWindowContourGroupTopDataItem(Post3dWindowDataItem* p) :
-	Post3dWindowDataItem {tr("Contours"), QIcon(":/libs/guibase/images/iconFolder.png"), p},
+	Post3dWindowDataItem {tr("Contours"), QIcon(":/libs/guibase/images/iconFolder.svg"), p},
 	m_zScale {1}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);

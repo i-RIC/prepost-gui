@@ -19,7 +19,7 @@
 #include <qwt_scale_div.h>
 
 Graph2dWindowMarkerGroupDataItem::Graph2dWindowMarkerGroupDataItem(Graph2dWindowDataItem* parent)
-	: Graph2dWindowDataItem(tr("Markers"), QIcon(":/libs/guibase/images/iconFolder.png"), parent)
+	: Graph2dWindowDataItem(tr("Markers"), QIcon(":/libs/guibase/images/iconFolder.svg"), parent)
 {
 	m_standardItem->setCheckable(true);
 	m_standardItem->setCheckState(Qt::Checked);

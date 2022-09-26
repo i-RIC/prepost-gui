@@ -66,12 +66,12 @@
 
 PreProcessorGeoDataGroupDataItem::PreProcessorGeoDataGroupDataItem(SolverDefinitionGridAttribute* cond, PreProcessorDataItem* parent) :
 	PreProcessorGeoDataGroupDataItemInterface {cond, parent},
-	m_webImportAction {new QAction(QIcon(":/libs/guibase/images/iconImport.png"), PreProcessorGeoDataGroupDataItem::tr("&Import Elevation from web..."), this)},
-	m_editColorMapAction {new QAction(QIcon(":/libs/guibase/images/iconColor.png"), PreProcessorGeoDataGroupDataItem::tr("&Color Setting..."), this)},
+	m_webImportAction {new QAction(QIcon(":/libs/guibase/images/iconImport.svg"), PreProcessorGeoDataGroupDataItem::tr("&Import Elevation from web..."), this)},
+	m_editColorMapAction {new QAction(QIcon(":/libs/guibase/images/iconColor.svg"), PreProcessorGeoDataGroupDataItem::tr("&Color Setting..."), this)},
 	m_setupScalarBarAction {new QAction(PreProcessorGeoDataGroupDataItem::tr("Set Up Scalarbar..."), this)},
-	m_exportAllPolygonsAction {new QAction(QIcon(":/libs/guibase/images/iconExport.png"), PreProcessorGeoDataGroupDataItem::tr("Export All Polygons..."), this)},
-	m_deleteSelectedAction {new QAction(QIcon(":/libs/guibase/images/iconDeleteItem.png"), PreProcessorGeoDataGroupDataItem::tr("Delete &Selected..."), this)},
-	m_deleteAllAction {new QAction(QIcon(":/libs/guibase/images/iconDeleteItem.png"), PreProcessorGeoDataGroupDataItem::tr("Delete &All..."), this)},
+	m_exportAllPolygonsAction {new QAction(QIcon(":/libs/guibase/images/iconExport.svg"), PreProcessorGeoDataGroupDataItem::tr("Export All Polygons..."), this)},
+	m_deleteSelectedAction {new QAction(QIcon(":/libs/guibase/images/iconDeleteItem.svg"), PreProcessorGeoDataGroupDataItem::tr("Delete &Selected..."), this)},
+	m_deleteAllAction {new QAction(QIcon(":/libs/guibase/images/iconDeleteItem.svg"), PreProcessorGeoDataGroupDataItem::tr("Delete &All..."), this)},
 	m_importSignalMapper {nullptr},
 	m_addSignalMapper {nullptr},
 	m_condition {cond}
@@ -115,7 +115,7 @@ void PreProcessorGeoDataGroupDataItem::addCustomMenuItems(QMenu* menu)
 	GeoDataFactory& factory = GeoDataFactory::instance();
 	// create import menu and add menu.
 	m_importMenu = new QMenu(tr("&Import"), menu);
-	m_importMenu->setIcon(QIcon(":/libs/guibase/images/iconImport.png"));
+	m_importMenu->setIcon(QIcon(":/libs/guibase/images/iconImport.svg"));
 	m_addMenu = new QMenu(tr("&Add"), menu);
 
 	if (m_importSignalMapper) {delete m_importSignalMapper;}

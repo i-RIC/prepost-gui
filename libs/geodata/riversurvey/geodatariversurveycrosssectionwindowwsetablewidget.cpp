@@ -84,11 +84,11 @@ void GeoDataRiverSurveyCrosssectionWindowWseTableWidget::deleteSelected()
 
 void GeoDataRiverSurveyCrosssectionWindowWseTableWidget::setupMenu()
 {
-	m_moveUpAction = new QAction(QIcon(":/libs/guibase/images/iconItemMoveUp.png"), tr("Move &Up"), this);
+	m_moveUpAction = new QAction(QIcon(":/libs/guibase/images/iconItemMoveUp.svg"), tr("Move &Up"), this);
 	connect(m_moveUpAction, SIGNAL(triggered()), this, SLOT(moveUpSelected()));
-	m_moveDownAction = new QAction(QIcon(":/libs/guibase/images/iconItemMoveDown.png"), tr("Move &Down"), this);
+	m_moveDownAction = new QAction(QIcon(":/libs/guibase/images/iconItemMoveDown.svg"), tr("Move &Down"), this);
 	connect(m_moveDownAction, SIGNAL(triggered()), this, SLOT(moveDownSelected()));
-	m_deleteAction = new QAction(QIcon(":/libs/guibase/images/iconDeleteItem.png"), tr("Delete"), this);
+	m_deleteAction = new QAction(QIcon(":/libs/guibase/images/iconDeleteItem.svg"), tr("Delete"), this);
 	connect(m_deleteAction, SIGNAL(triggered()), this, SLOT(deleteSelected()));
 
 	m_menu = new QMenu(this);

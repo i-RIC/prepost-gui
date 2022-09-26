@@ -69,7 +69,7 @@
        </property>
        <property name="icon">
         <iconset resource="../iricgui.qrc">
-         <normaloff>:/images/iconOpen.png</normaloff>:/images/iconOpen.png</iconset>
+         <normaloff>:/images/iconOpen.svg</normaloff>:/images/iconOpen.svg</iconset>
        </property>
        <property name="flat">
         <bool>false</bool>

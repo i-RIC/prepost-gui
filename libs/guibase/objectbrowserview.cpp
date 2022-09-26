@@ -17,23 +17,23 @@ ObjectBrowserView::ObjectBrowserView(QWidget* parent) :
 	m_isPushing = false;
 	m_commandExecution = false;
 
-	m_addAction = new QAction(QIcon(":/libs/guibase/images/iconProperty.png"),tr("&Add..."), this);
+	m_addAction = new QAction(QIcon(":/libs/guibase/images/iconProperty.svg"),tr("&Add..."), this);
 	connect(m_addAction, SIGNAL(triggered()), this, SLOT(showAddForCurrentItem()));
 
-	m_deleteAction = new QAction(QIcon(":/libs/guibase/images/iconDeleteItem.png"),tr("&Delete..."), this);
+	m_deleteAction = new QAction(QIcon(":/libs/guibase/images/iconDeleteItem.svg"),tr("&Delete..."), this);
 	connect(m_deleteAction, SIGNAL(triggered()), this, SLOT(deleteCurrentItem()));
 
-	m_undoableDeleteAction = new QAction(QIcon(":/libs/guibase/images/iconDeleteItem.png"),tr("&Delete..."), this);
+	m_undoableDeleteAction = new QAction(QIcon(":/libs/guibase/images/iconDeleteItem.svg"),tr("&Delete..."), this);
 	connect(m_undoableDeleteAction, SIGNAL(triggered()), this, SLOT(undoableDeleteCurrentItem()));
 
-	m_moveUpAction = new QAction(QIcon(":/libs/guibase/images/iconItemMoveUp.png"), tr("Move up"), this);
+	m_moveUpAction = new QAction(QIcon(":/libs/guibase/images/iconItemMoveUp.svg"), tr("Move up"), this);
 	connect(m_moveUpAction, SIGNAL(triggered()), this, SLOT(moveUpCurrentItem()));
 
-	m_moveDownAction = new QAction(QIcon(":/libs/guibase/images/iconItemMoveDown.png"), tr("Move down"), this);
+	m_moveDownAction = new QAction(QIcon(":/libs/guibase/images/iconItemMoveDown.svg"), tr("Move down"), this);
 	connect(m_moveDownAction, SIGNAL(triggered()), this, SLOT(moveDownCurrentItem()));
 
 	m_propertyAction = new QAction(tr("&Property..."), this);
-	m_propertyAction->setIcon(QIcon(":/libs/guibase/images/iconProperty.png"));
+	m_propertyAction->setIcon(QIcon(":/libs/guibase/images/iconProperty.svg"));
 	connect(m_propertyAction, SIGNAL(triggered()), this, SLOT(showPropertyForCurrentItem()));
 
 	connect(this, SIGNAL(pressed(QModelIndex)), this, SLOT(handlePress(QModelIndex)));

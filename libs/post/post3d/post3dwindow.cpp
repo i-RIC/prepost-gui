@@ -40,7 +40,7 @@ void Post3dWindow::init()
 {
 	setWindowTitle(tr("Post-processing (3D): %1").arg(m_index));
 
-	m_icon = QIcon(":/libs/post/post3d/images/iconVis3D.png");
+	m_icon = QIcon(":/libs/post/post3d/images/iconVis3D.svg");
 	// set default central widget.
 	QLabel* label = new QLabel(this);
 	setCentralWidget(label);

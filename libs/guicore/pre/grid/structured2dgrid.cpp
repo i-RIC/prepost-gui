@@ -455,6 +455,11 @@ void Structured2DGrid::updateSimplifiedGrid(double xmin, double xmax, double ymi
 		setFilteredShapeAlgorithm(emptyAlgo);
 		setFilteredPointsAlgorithm(emptyAlgo);
 		setFilteredCellsAlgorithm(emptyAlgo);
+
+		m_drawnIMin = -1;
+		m_drawnIMax = -2;
+		m_drawnJMin = -1;
+		m_drawnJMax = -2;
 		return;
 	}
 

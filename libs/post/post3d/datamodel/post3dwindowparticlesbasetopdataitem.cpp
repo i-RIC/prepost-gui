@@ -19,7 +19,7 @@
 #include <vtkRenderer.h>
 
 Post3dWindowParticlesBaseTopDataItem::Post3dWindowParticlesBaseTopDataItem(const QString& caption, Post3dWindowDataItem* p) :
-	Post3dWindowDataItem {caption, QIcon(":/libs/guibase/images/iconPaper.png"), p},
+	Post3dWindowDataItem {caption, QIcon(":/libs/guibase/images/iconPaper.svg"), p},
 	m_scalarGroupDataItem {nullptr},
 	m_vectorGroupDataItem {nullptr}
 {

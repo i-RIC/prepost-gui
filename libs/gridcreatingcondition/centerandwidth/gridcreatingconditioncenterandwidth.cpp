@@ -91,10 +91,10 @@ GridCreatingConditionCenterAndWidth::GridCreatingConditionCenterAndWidth(Project
 	m_downstreamActor.setLabel("Downstream");
 	setupLabelActor(&m_downstreamActor);
 
-	m_addVertexAction = new QAction(QIcon(":/libs/guibase/images/iconAddPolygonVertex.png"), GridCreatingConditionCenterAndWidth::tr("&Add Vertex"), this);
+	m_addVertexAction = new QAction(QIcon(":/libs/guibase/images/iconAddPolygonVertex.svg"), GridCreatingConditionCenterAndWidth::tr("&Add Vertex"), this);
 	m_addVertexAction->setCheckable(true);
 	connect(m_addVertexAction, SIGNAL(triggered(bool)), this, SLOT(addVertexMode(bool)));
-	m_removeVertexAction = new QAction(QIcon(":/libs/guibase/images/iconRemovePolygonVertex.png"), GridCreatingConditionCenterAndWidth::tr("&Remove Vertex"), this);
+	m_removeVertexAction = new QAction(QIcon(":/libs/guibase/images/iconRemovePolygonVertex.svg"), GridCreatingConditionCenterAndWidth::tr("&Remove Vertex"), this);
 	m_removeVertexAction->setCheckable(true);
 	connect(m_removeVertexAction, SIGNAL(triggered(bool)), this, SLOT(removeVertexMode(bool)));
 
@@ -104,10 +104,10 @@ GridCreatingConditionCenterAndWidth::GridCreatingConditionCenterAndWidth(Project
 	m_reverseCenterLineAction = new QAction(GridCreatingConditionCenterAndWidth::tr("R&everse Center Line Direction"), this);
 	connect(m_reverseCenterLineAction, SIGNAL(triggered()), this, SLOT(reverseCenterLineDirection()));
 
-	m_importCenterLineAction = new QAction(QIcon(":/libs/guibase/images/iconImport.png"), GridCreatingConditionCenterAndWidth::tr("&Import Center Line..."), this);
+	m_importCenterLineAction = new QAction(QIcon(":/libs/guibase/images/iconImport.svg"), GridCreatingConditionCenterAndWidth::tr("&Import Center Line..."), this);
 	connect(m_importCenterLineAction, SIGNAL(triggered()), this, SLOT(importCenterLine()));
 
-	m_exportCenterLineAction = new QAction(QIcon(":/libs/guibase/images/iconExport.png"), GridCreatingConditionCenterAndWidth::tr("&Export Center Line..."), this);
+	m_exportCenterLineAction = new QAction(QIcon(":/libs/guibase/images/iconExport.svg"), GridCreatingConditionCenterAndWidth::tr("&Export Center Line..."), this);
 	connect(m_exportCenterLineAction, SIGNAL(triggered()), this, SLOT(exportCenterLine()));
 
 	m_xSpline = vtkSmartPointer<vtkCardinalSpline>::New();

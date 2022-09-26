@@ -16,12 +16,12 @@
 
 DistanceMeasureGroupDataItem::Impl::Impl(DistanceMeasureGroupDataItem *parent) :
 	m_addAction {new QAction {DistanceMeasureGroupDataItem::tr("&Add Measure..."), parent}},
-	m_deleteSelectedAction {new QAction(QIcon(":/libs/guibase/images/iconDeleteItem.png"), DistanceMeasureGroupDataItem::tr("Delete &Selected..."), parent)},
-	m_deleteAllAction {new QAction(QIcon(":/libs/guibase/images/iconDeleteItem.png"), DistanceMeasureGroupDataItem::tr("Delete &All..."), parent)}
+	m_deleteSelectedAction {new QAction(QIcon(":/libs/guibase/images/iconDeleteItem.svg"), DistanceMeasureGroupDataItem::tr("Delete &Selected..."), parent)},
+	m_deleteAllAction {new QAction(QIcon(":/libs/guibase/images/iconDeleteItem.svg"), DistanceMeasureGroupDataItem::tr("Delete &All..."), parent)}
 {}
 
 DistanceMeasureGroupDataItem::DistanceMeasureGroupDataItem(GraphicsWindowDataItem* parent) :
-	GraphicsWindowDataItem {tr("Distance Measures"), QIcon(":/libs/guibase/images/iconFolder.png"), parent},
+	GraphicsWindowDataItem {tr("Distance Measures"), QIcon(":/libs/guibase/images/iconFolder.svg"), parent},
 	impl {new Impl {this}}
 {
 	m_standardItem->setCheckable(true);

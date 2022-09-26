@@ -31,7 +31,7 @@
 #include <vtkVertex.h>
 
 Post2dBirdEyeWindowZoneDataItem::Post2dBirdEyeWindowZoneDataItem(const std::string& zoneName, int zoneNumber, GraphicsWindowDataItem* parent) :
-	Post2dBirdEyeWindowDataItem {zoneName.c_str(), QIcon(":/libs/guibase/images/iconFolder.png"), parent},
+	Post2dBirdEyeWindowDataItem {zoneName.c_str(), QIcon(":/libs/guibase/images/iconFolder.svg"), parent},
 	m_zoneName (zoneName),
 	m_zoneNumber {zoneNumber},
 	m_cellScalarGroupTopDataItem {nullptr},

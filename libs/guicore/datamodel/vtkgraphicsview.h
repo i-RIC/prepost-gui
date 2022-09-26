@@ -78,6 +78,7 @@ private:
 	void moveCenter(int x, int y);
 	int moveWidth();
 	//@}
+	QMouseEvent createScaledEvant(const QMouseEvent& event);
 
 protected:
 	virtual void resizeEvent(QResizeEvent* event) override;

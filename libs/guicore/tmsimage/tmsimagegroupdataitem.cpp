@@ -171,7 +171,7 @@ TmsImageGroupDataItem::Impl::Impl(TmsImageGroupDataItem *parent) :
 }
 
 TmsImageGroupDataItem::TmsImageGroupDataItem(GraphicsWindowDataItem* parent) :
-	GraphicsWindowDataItem(tr("Background Images (Internet)"), QIcon(":/libs/guibase/images/iconFolder.png"), parent),
+	GraphicsWindowDataItem(tr("Background Images (Internet)"), QIcon(":/libs/guibase/images/iconFolder.svg"), parent),
 	impl {new Impl(this)}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);

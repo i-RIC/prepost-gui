@@ -25,7 +25,7 @@
 #include <vtkTransformFilter.h>
 
 Post3dWindowGridShapeDataItem::Post3dWindowGridShapeDataItem(Post3dWindowDataItem* parent) :
-	Post3dWindowDataItem {tr("Grid shape"), QIcon(":/libs/guibase/images/iconPaper.png"), parent}
+	Post3dWindowDataItem {tr("Grid shape"), QIcon(":/libs/guibase/images/iconPaper.svg"), parent}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 

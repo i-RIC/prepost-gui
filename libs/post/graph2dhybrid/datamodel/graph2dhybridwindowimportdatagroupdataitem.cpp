@@ -12,7 +12,7 @@
 #include <QTextStream>
 
 Graph2dHybridWindowImportDataGroupDataItem::Graph2dHybridWindowImportDataGroupDataItem(Graph2dWindowDataItem* parent) :
-	Graph2dHybridWindowDataItem(tr("External Data"), QIcon(":/libs/guibase/images/iconFolder.png"), parent)
+	Graph2dHybridWindowDataItem(tr("External Data"), QIcon(":/libs/guibase/images/iconFolder.svg"), parent)
 {
 	m_standardItem->setCheckable(true);
 	m_standardItem->setCheckState(Qt::Checked);

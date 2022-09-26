@@ -1,5 +1,5 @@
 <RCC>
     <qresource prefix="/libs/pre">
-        <file>images/iconBirdEyeWindow.png</file>
+        <file>images/iconBirdEyeWindow.svg</file>
     </qresource>
 </RCC>

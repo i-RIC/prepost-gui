@@ -19,7 +19,7 @@
 #include <cmath>
 
 Graph2dScatteredWindowResultDataItem::Graph2dScatteredWindowResultDataItem(const QString& title, int index, const Graph2dScatteredWindowResultSetting::Setting& setting, Graph2dWindowDataItem* parent) :
-	Graph2dScatteredWindowDataItem(title, QIcon(":/images/iconPaper.png"), parent)
+	Graph2dScatteredWindowDataItem(title, QIcon(":/images/iconPaper.svg"), parent)
 {
 	Q_UNUSED(index)
 

@@ -24,7 +24,7 @@
 #include <vtkPointData.h>
 
 Post2dBirdEyeWindowCellScalarGroupTopDataItem::Post2dBirdEyeWindowCellScalarGroupTopDataItem(Post2dBirdEyeWindowDataItem* p) :
-	Post2dBirdEyeWindowDataItem {tr("Scalar (cell center)"), QIcon(":/libs/guibase/images/iconFolder.png"), p},
+	Post2dBirdEyeWindowDataItem {tr("Scalar (cell center)"), QIcon(":/libs/guibase/images/iconFolder.svg"), p},
 	m_zScale {1}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);

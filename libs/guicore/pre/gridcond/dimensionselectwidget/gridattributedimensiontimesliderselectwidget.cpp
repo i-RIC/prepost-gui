@@ -242,9 +242,9 @@ void GridAttributeDimensionTimeSliderSelectWidget::updateStartButtonIcon()
 {
 	QIcon icon;
 	if (m_runMode == NotRunning) {
-		icon = QIcon(":/images/iconAnimationRun.png");
+		icon = QIcon(":/images/iconAnimationRun.svg");
 	} else if (m_runMode == Running) {
-		icon = QIcon(":/images/iconAnimationStop.png");
+		icon = QIcon(":/images/iconAnimationStop.svg");
 	}
 	m_animationActions->actionStartAnimation->setIcon(icon);
 }
@@ -288,23 +288,23 @@ GridAttributeDimensionTimeSliderSelectWidget::AnimationActions::AnimationActions
 {
 	// setup actions
 	actionStepBackward = new QAction(GridAttributeDimensionTimeSliderSelectWidget::tr("Step &Backward"), this);
-	actionStepBackward->setIcon(QIcon(":/images/iconAnimationStepBack.png"));
+	actionStepBackward->setIcon(QIcon(":/images/iconAnimationStepBack.svg"));
 
 	actionStepForward = new QAction(GridAttributeDimensionTimeSliderSelectWidget::tr("Step &Forward"), this);
-	actionStepForward->setIcon(QIcon(":/images/iconAnimationStepForward.png"));
+	actionStepForward->setIcon(QIcon(":/images/iconAnimationStepForward.svg"));
 
 	actionStepFirst = new QAction(GridAttributeDimensionTimeSliderSelectWidget::tr("&Reset"), this);
-	actionStepFirst->setIcon(QIcon(":/images/iconAnimationReset.png"));
+	actionStepFirst->setIcon(QIcon(":/images/iconAnimationReset.svg"));
 
 	actionStepLast = new QAction(GridAttributeDimensionTimeSliderSelectWidget::tr("Go to &Last Step"), this);
-	actionStepLast->setIcon(QIcon(":/images/iconAnimationLast.png"));
+	actionStepLast->setIcon(QIcon(":/images/iconAnimationLast.svg"));
 
 	actionStartAnimation = new QAction(GridAttributeDimensionTimeSliderSelectWidget::tr("&Start/Stop Animation"), this);
-	actionStartAnimation->setIcon(QIcon(":/images/iconAnimationRun.png"));
+	actionStartAnimation->setIcon(QIcon(":/images/iconAnimationRun.svg"));
 
 	actionStopAnimation = new QAction(GridAttributeDimensionTimeSliderSelectWidget::tr("S&top Animation"), this);
-	actionStopAnimation->setIcon(QIcon(":/images/iconAnimationStop.png"));
+	actionStopAnimation->setIcon(QIcon(":/images/iconAnimationStop.svg"));
 
 	actionEditSpeed = new QAction(GridAttributeDimensionTimeSliderSelectWidget::tr("&Animation Speed Setting..."), this);
-	actionEditSpeed->setIcon(QIcon(":/images/iconAnimationSpeedEdit.png"));
+	actionEditSpeed->setIcon(QIcon(":/images/iconAnimationSpeedEdit.svg"));
 }

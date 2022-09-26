@@ -17,7 +17,7 @@
 #include <vtkTextProperty.h>
 
 PostTitleDataItem::PostTitleDataItem(GraphicsWindowDataItem* parent) :
-	GraphicsWindowDataItem(tr("Title"), QIcon(":/libs/guibase/images/iconPaper.png"), parent)
+	GraphicsWindowDataItem(tr("Title"), QIcon(":/libs/guibase/images/iconPaper.svg"), parent)
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 	setupActors();

@@ -31,7 +31,7 @@ void GridBirdEyeWindow::init(PreProcessorGridDataItem* item)
 {
 	setWindowTitle(tr("Grid Bird's-Eye View Window"));
 
-	m_icon = QIcon(":/libs/pre/images/iconBirdEyeWindow.png");
+	m_icon = QIcon(":/libs/pre/images/iconBirdEyeWindow.svg");
 	// set default central widget.
 	m_graphicsView = new GridBirdEyeWindowGraphicsView(this);
 

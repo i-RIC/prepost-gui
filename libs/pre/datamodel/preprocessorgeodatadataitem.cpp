@@ -30,14 +30,14 @@
 #include <QXmlStreamWriter>
 
 PreProcessorGeoDataDataItem::PreProcessorGeoDataDataItem(PreProcessorDataItem* parent) :
-	PreProcessorGeoDataDataItemInterface {"", QIcon(":/libs/guibase/images/iconPaper.png"), parent},
+	PreProcessorGeoDataDataItemInterface {"", QIcon(":/libs/guibase/images/iconPaper.svg"), parent},
 	m_geoData {nullptr},
 	m_deleteSilently {false}
 {
 	setupStandardItem(Checked, Reorderable, Deletable);
 
 	m_exportAction = new QAction(PreProcessorGeoDataDataItem::tr("&Export..."), this);
-	m_exportAction->setIcon(QIcon(":/libs/guibase/images/iconExport.png"));
+	m_exportAction->setIcon(QIcon(":/libs/guibase/images/iconExport.svg"));
 	connect(m_exportAction, SIGNAL(triggered()), this, SLOT(exportGeoData()));
 }
 

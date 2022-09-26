@@ -53,7 +53,7 @@
 #include <vtkVertex.h>
 
 PreProcessorGridShapeDataItem::PreProcessorGridShapeDataItem(PreProcessorDataItem* parent) :
-	PreProcessorDataItem {tr("Grid shape"), QIcon(":/libs/guibase/images/iconPaper.png"), parent},
+	PreProcessorDataItem {tr("Grid shape"), QIcon(":/libs/guibase/images/iconPaper.svg"), parent},
 	m_definingBoundingBox {false},
 	m_draggingSelectedPoints {false},
 	m_nearSelectedPoint {false}

@@ -33,7 +33,7 @@ MeasuredDataFileDataItem::Impl::Impl(MeasuredData* md) :
 // public interfaces
 
 MeasuredDataFileDataItem::MeasuredDataFileDataItem(MeasuredData* md, GraphicsWindowDataItem* parent) :
-	GraphicsWindowDataItem {tr("File"), QIcon(":/libs/guibase/images/iconFolder.png"), parent},
+	GraphicsWindowDataItem {tr("File"), QIcon(":/libs/guibase/images/iconFolder.svg"), parent},
 	impl {new Impl{md}}
 {
 	setSubPath("file");
@@ -45,7 +45,7 @@ MeasuredDataFileDataItem::MeasuredDataFileDataItem(MeasuredData* md, GraphicsWin
 	m_childItems.push_back(impl->m_pointGroupDataItem);
 	m_childItems.push_back(impl->m_vectorGroupDataItem);
 
-	impl->m_exportAction = new QAction(QIcon(":/libs/guibase/images/iconExport.png"), MeasuredDataFileDataItem::tr("&Export..."), this);
+	impl->m_exportAction = new QAction(QIcon(":/libs/guibase/images/iconExport.svg"), MeasuredDataFileDataItem::tr("&Export..."), this);
 	connect(impl->m_exportAction, SIGNAL(triggered()), this, SLOT(exportToFile()));
 }
 

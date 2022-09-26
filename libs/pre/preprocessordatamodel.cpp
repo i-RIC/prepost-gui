@@ -305,8 +305,8 @@ void PreProcessorDataModel::setupGeoDataMenus()
 
 	QAction* editGroupAction = new QAction(tr("Edit &Groups..."), m_geographicDataMenu);
 	editGroupAction->setDisabled(true);
-	QAction* deleteAllAction = new QAction(QIcon(":/libs/guibase/images/iconDeleteItem.png"), tr("Delete &All..."), m_geographicDataMenu);
-	QAction* exportAllPolygonsAction = new QAction(QIcon(":/libs/guibase/images/iconExport.png"), tr("Export All Polygons..."), m_geographicDataMenu);
+	QAction* deleteAllAction = new QAction(QIcon(":/libs/guibase/images/iconDeleteItem.svg"), tr("Delete &All..."), m_geographicDataMenu);
+	QAction* exportAllPolygonsAction = new QAction(QIcon(":/libs/guibase/images/iconExport.svg"), tr("Export All Polygons..."), m_geographicDataMenu);
 
 	m_geographicDataMenu->addAction(editGroupAction);
 	m_geographicDataMenu->addSeparator();
@@ -428,7 +428,7 @@ void PreProcessorDataModel::setupGeoDataMenus()
 	m_geographicDataMenu->addSeparator();
 
 	QMenu* colorMapMenu = new QMenu(tr("&Color Setting..."), m_geographicDataMenu);
-	colorMapMenu->setIcon(QIcon(":/libs/guibase/images/iconColor.png"));
+	colorMapMenu->setIcon(QIcon(":/libs/guibase/images/iconColor.svg"));
 	m_geographicDataMenu->addMenu(colorMapMenu);
 	QAction* setupScalarBarAction = new QAction(tr("Set Up Scalarbar..."), m_geographicDataMenu);
 	m_geographicDataMenu->addAction(setupScalarBarAction);
@@ -454,11 +454,11 @@ void PreProcessorDataModel::setupGeoDataMenus()
 
 	PreProcessorWindow* preWindow = dynamic_cast<PreProcessorWindow*>(mainWindow());
 	QMenu* importMenu = new QMenu(tr("Import"), m_geographicDataMenu);
-	importMenu->setIcon(QIcon(":/libs/guibase/images/iconImport.png"));
+	importMenu->setIcon(QIcon(":/libs/guibase/images/iconImport.svg"));
 	m_geographicDataMenu->addMenu(importMenu);
 	connect(importMenu, SIGNAL(aboutToShow()), preWindow, SLOT(setupGeoDataImportMenu()));
 	QMenu* exportMenu = new QMenu(tr("Export"), m_geographicDataMenu);
-	exportMenu->setIcon(QIcon(":/libs/guibase/images/iconExport.png"));
+	exportMenu->setIcon(QIcon(":/libs/guibase/images/iconExport.svg"));
 	m_geographicDataMenu->addMenu(exportMenu);
 	connect(exportMenu, SIGNAL(aboutToShow()), preWindow, SLOT(setupGeoDataExportMenu()));
 
@@ -592,7 +592,7 @@ void PreProcessorDataModel::setupMeasuredValuesMenu()
 	QAction* pointAction = m_measuredValuesMenu->addAction(tr("&Scalar..."));
 	QAction* vectorAction = m_measuredValuesMenu->addAction(tr("&Arrows..."));
 	m_measuredValuesMenu->addSeparator();
-	QAction* importAction = m_measuredValuesMenu->addAction(QIcon(":/libs/guibase/images/iconImport.png"), tr("&Import..."));
+	QAction* importAction = m_measuredValuesMenu->addAction(QIcon(":/libs/guibase/images/iconImport.svg"), tr("&Import..."));
 	connect(importAction, SIGNAL(triggered()), iricMainWindow(), SLOT(importMeasuredData()));
 
 	if (fitem == nullptr) {
@@ -1246,7 +1246,7 @@ void PreProcessorDataModel::setupGridCreationMenuContent()
 		dummyAction->setDisabled(true);
 		gridCreationMenu->addSeparator();
 		gridCreationMenu->addAction(gcItem->importAction());
-		QAction* dummyExportMenu = gridCreationMenu->addAction(QIcon(":/libs/guibase/images/iconExport.png"), tr("&Export..."));
+		QAction* dummyExportMenu = gridCreationMenu->addAction(QIcon(":/libs/guibase/images/iconExport.svg"), tr("&Export..."));
 		dummyExportMenu->setDisabled(true);
 	} else {
 		gridCreationMenu->addActions(dummy->actions());

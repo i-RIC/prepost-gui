@@ -190,7 +190,7 @@ Post2dWindowGraphGroupDataItem::Impl::Impl() :
 }
 
 Post2dWindowGraphGroupDataItem::Post2dWindowGraphGroupDataItem(Post2dWindowDataItem* p) :
-	Post2dWindowDataItem(tr("Graph"), QIcon(":/libs/guibase/images/iconFolder.png"), p),
+	Post2dWindowDataItem(tr("Graph"), QIcon(":/libs/guibase/images/iconFolder.svg"), p),
 	impl {new Impl()}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);

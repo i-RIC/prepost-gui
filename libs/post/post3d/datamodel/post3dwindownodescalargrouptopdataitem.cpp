@@ -21,7 +21,7 @@
 #include <vtkRenderer.h>
 
 Post3dWindowNodeScalarGroupTopDataItem::Post3dWindowNodeScalarGroupTopDataItem(Post3dWindowDataItem* p) :
-	Post3dWindowDataItem {tr("Isosurfaces"), QIcon(":/libs/guibase/images/iconFolder.png"), p},
+	Post3dWindowDataItem {tr("Isosurfaces"), QIcon(":/libs/guibase/images/iconFolder.svg"), p},
 	m_zScale {1}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);

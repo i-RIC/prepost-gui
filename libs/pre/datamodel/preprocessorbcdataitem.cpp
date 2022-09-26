@@ -82,7 +82,7 @@ PreProcessorBCDataItem::Impl::~Impl()
 }
 
 PreProcessorBCDataItem::PreProcessorBCDataItem(SolverDefinition* def, SolverDefinitionBoundaryCondition* cond, GraphicsWindowDataItem* parent, bool hideSetting) :
-	PreProcessorDataItem {tr("New Item"), QIcon(":/libs/guibase/images/iconPaper.png"), parent},
+	PreProcessorDataItem {tr("New Item"), QIcon(":/libs/guibase/images/iconPaper.svg"), parent},
 	impl {new Impl(this)}
 {
 	setupStandardItem(Checked, NotReorderable, Deletable);

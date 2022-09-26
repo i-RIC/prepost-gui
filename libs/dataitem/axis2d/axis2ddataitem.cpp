@@ -45,7 +45,7 @@ void Axis2dDataItem::Impl::setupActors()
 // public interfaces
 
 Axis2dDataItem::Axis2dDataItem(GraphicsWindowDataItem* parent) :
-	GraphicsWindowDataItem {tr("Axes"), QIcon(":/libs/guibase/images/iconPaper.png"), parent},
+	GraphicsWindowDataItem {tr("Axes"), QIcon(":/libs/guibase/images/iconPaper.svg"), parent},
 	impl {new Impl(this)}
 {
 	setupStandardItem(Checked, NotReorderable, Deletable);

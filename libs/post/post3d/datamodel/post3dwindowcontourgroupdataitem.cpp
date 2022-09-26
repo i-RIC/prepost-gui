@@ -72,7 +72,7 @@ private:
 };
 
 Post3dWindowContourGroupDataItem::Post3dWindowContourGroupDataItem(Post3dWindowDataItem* p) :
-	Post3dWindowDataItem {tr("Contour"), QIcon(":/libs/guibase/images/iconFolder.png"), p},
+	Post3dWindowDataItem {tr("Contour"), QIcon(":/libs/guibase/images/iconFolder.svg"), p},
 	m_zScale {1}
 {
 	setupStandardItem(Checked, NotReorderable, Deletable);

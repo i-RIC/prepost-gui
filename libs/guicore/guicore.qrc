@@ -1,7 +1,7 @@
 <RCC>
     <qresource prefix="/libs/guicore">
-        <file>images/iconPinFixed.png</file>
-        <file>images/iconPinFree.png</file>
+        <file>images/iconPinFixed.svg</file>
+        <file>images/iconPinFree.svg</file>
         <file>data/colorsource.xml</file>
         <file>data/colorsource_cell.xml</file>
         <file>images/cursorImageMove.png</file>

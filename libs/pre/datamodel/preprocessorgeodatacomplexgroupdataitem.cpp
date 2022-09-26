@@ -135,7 +135,7 @@ void PreProcessorGeoDataComplexGroupDataItem::addCustomMenuItems(QMenu* menu)
 	GeoDataFactory& factory = GeoDataFactory::instance();
 	// create import menu and add menu.
 	m_importMenu = new QMenu(tr("&Import"), menu);
-	m_importMenu->setIcon(QIcon(":/libs/guibase/images/iconImport.png"));
+	m_importMenu->setIcon(QIcon(":/libs/guibase/images/iconImport.svg"));
 	m_addMenu = new QMenu(tr("&Add"), menu);
 
 	if (m_importSignalMapper) {delete m_importSignalMapper;}

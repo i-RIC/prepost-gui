@@ -31,7 +31,7 @@
          </property>
          <property name="icon">
           <iconset resource="../../../guibase/guibase.qrc">
-           <normaloff>:/libs/guibase/images/iconItemMoveUp.png</normaloff>:/libs/guibase/images/iconItemMoveUp.png</iconset>
+           <normaloff>:/libs/guibase/images/iconItemMoveUp.svg</normaloff>:/libs/guibase/images/iconItemMoveUp.svg</iconset>
          </property>
         </widget>
        </item>
@@ -45,7 +45,7 @@
          </property>
          <property name="icon">
           <iconset resource="../../../guibase/guibase.qrc">
-           <normaloff>:/libs/guibase/images/iconItemMoveDown.png</normaloff>:/libs/guibase/images/iconItemMoveDown.png</iconset>
+           <normaloff>:/libs/guibase/images/iconItemMoveDown.svg</normaloff>:/libs/guibase/images/iconItemMoveDown.svg</iconset>
          </property>
         </widget>
        </item>

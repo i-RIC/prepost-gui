@@ -15,7 +15,7 @@
   </property>
   <property name="windowIcon">
    <iconset resource="../iRIC.qrc">
-    <normaloff>:/images/iconMouseHelp.png</normaloff>:/images/iconMouseHelp.png</iconset>
+    <normaloff>:/images/iconMouseHelp.svg</normaloff>:/images/iconMouseHelp.svg</iconset>
   </property>
   <property name="sizeGripEnabled">
    <bool>false</bool>

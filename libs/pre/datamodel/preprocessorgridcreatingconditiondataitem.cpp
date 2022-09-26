@@ -52,13 +52,13 @@ PreProcessorGridCreatingConditionDataItem::PreProcessorGridCreatingConditionData
 	impl->m_clearAction = new QAction(PreProcessorGridCreatingConditionDataItem::tr("Reset to &Default..."), this);
 	connect(impl->m_clearAction, SIGNAL(triggered()), this, SLOT(resetCondition()));
 	impl->m_deleteAction = new QAction(PreProcessorGridCreatingConditionDataItem::tr("&Delete Grid Creating Condition..."), this);
-	impl->m_deleteAction->setIcon(QIcon(":/libs/guibase/images/iconDeleteItem.png"));
+	impl->m_deleteAction->setIcon(QIcon(":/libs/guibase/images/iconDeleteItem.svg"));
 	connect(impl->m_deleteAction, SIGNAL(triggered()), this, SLOT(deleteCondition()));
 
-	impl->m_importAction = new QAction(QIcon(":/libs/guibase/images/iconImport.png"), PreProcessorGridCreatingConditionDataItem::tr("&Import..."), this);
+	impl->m_importAction = new QAction(QIcon(":/libs/guibase/images/iconImport.svg"), PreProcessorGridCreatingConditionDataItem::tr("&Import..."), this);
 	connect(impl->m_importAction, SIGNAL(triggered()), this, SLOT(importData()));
 
-	impl->m_exportAction = new QAction(QIcon(":/libs/guibase/images/iconExport.png"), PreProcessorGridCreatingConditionDataItem::tr("&Export..."), this);
+	impl->m_exportAction = new QAction(QIcon(":/libs/guibase/images/iconExport.svg"), PreProcessorGridCreatingConditionDataItem::tr("&Export..."), this);
 	connect(impl->m_exportAction, SIGNAL(triggered()), this, SLOT(exportData()));
 
 	GridCreatingConditionFactory& factory = GridCreatingConditionFactory::instance(iricMainWindow());

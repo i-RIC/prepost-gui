@@ -29,7 +29,7 @@
 #include <vtkScalarBarWidget.h>
 
 Post2dWindowPolyDataGroupDataItem::Post2dWindowPolyDataGroupDataItem(const std::string& name, Post2dWindowDataItem* p) :
-	Post2dWindowDataItem {name.c_str(), QIcon(":/libs/guibase/images/iconFolder.png"), p},
+	Post2dWindowDataItem {name.c_str(), QIcon(":/libs/guibase/images/iconFolder.svg"), p},
 	m_scalarBarWidget {vtkScalarBarWidget::New()}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);

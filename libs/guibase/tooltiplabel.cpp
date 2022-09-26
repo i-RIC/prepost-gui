@@ -5,7 +5,7 @@
 TooltipLabel::TooltipLabel(QWidget* parent) :
 	QLabel(parent)
 {
-	setPixmap(QPixmap(":/libs/guibase/images/iconQuestion.png"));
+	setPixmap(QPixmap(":/libs/guibase/images/iconQuestion.svg"));
 }
 
 void TooltipLabel::mousePressEvent(QMouseEvent* /*event*/)

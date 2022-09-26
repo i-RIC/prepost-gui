@@ -21,11 +21,11 @@
 #include <QXmlStreamWriter>
 
 PreProcessorBCSettingGroupDataItem::PreProcessorBCSettingGroupDataItem(PreProcessorDataItem* parent) :
-	PreProcessorDataItem {tr("Boundary Condition Setting"), QIcon(":/libs/guibase/images/iconFolder.png"), parent},
-	m_deleteSelectedAction {new QAction(QIcon(":/libs/guibase/images/iconDeleteItem.png"), PreProcessorBCGroupDataItem::tr("Delete &Selected..."), this)},
-	m_deleteAllAction {new QAction(QIcon(":/libs/guibase/images/iconDeleteItem.png"), PreProcessorBCGroupDataItem::tr("Delete &All..."), this)},
+	PreProcessorDataItem {tr("Boundary Condition Setting"), QIcon(":/libs/guibase/images/iconFolder.svg"), parent},
+	m_deleteSelectedAction {new QAction(QIcon(":/libs/guibase/images/iconDeleteItem.svg"), PreProcessorBCGroupDataItem::tr("Delete &Selected..."), this)},
+	m_deleteAllAction {new QAction(QIcon(":/libs/guibase/images/iconDeleteItem.svg"), PreProcessorBCGroupDataItem::tr("Delete &All..."), this)},
 	m_dummyEditAction {new QAction("&Edit Condition...", this)},
-	m_dummyDeleteAction {new QAction(QIcon(":/libs/guibase/images/iconDeleteItem.png"), "&Delete...", this)}
+	m_dummyDeleteAction {new QAction(QIcon(":/libs/guibase/images/iconDeleteItem.svg"), "&Delete...", this)}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 

@@ -37,7 +37,7 @@
 #define LABEL "label2d"
 
 Post2dWindowGridShapeDataItem::Post2dWindowGridShapeDataItem(Post2dWindowDataItem* parent) :
-	Post2dWindowDataItem {tr("Grid shape"), QIcon(":/libs/guibase/images/iconPaper.png"), parent}
+	Post2dWindowDataItem {tr("Grid shape"), QIcon(":/libs/guibase/images/iconPaper.svg"), parent}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 

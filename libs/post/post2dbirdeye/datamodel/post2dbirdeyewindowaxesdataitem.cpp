@@ -14,7 +14,7 @@
 #include <vtkTextProperty.h>
 
 Post2dBirdEyeWindowAxesDataItem::Post2dBirdEyeWindowAxesDataItem(GraphicsWindowDataItem* parent) :
-	Post2dBirdEyeWindowDataItem {tr("Axes"), QIcon(":/libs/guibase/images/iconPaper.png"), parent}
+	Post2dBirdEyeWindowDataItem {tr("Axes"), QIcon(":/libs/guibase/images/iconPaper.svg"), parent}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 

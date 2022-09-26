@@ -50,7 +50,7 @@
 #include <vtkTextProperty.h>
 
 Post3dWindowNodeScalarGroupDataItem::Post3dWindowNodeScalarGroupDataItem(Post3dWindowDataItem* p) :
-	Post3dWindowDataItem {tr("Isosurface"), QIcon(":/libs/guibase/images/iconPaper.png"), p},
+	Post3dWindowDataItem {tr("Isosurface"), QIcon(":/libs/guibase/images/iconPaper.svg"), p},
 	m_fullRange {true},
 	m_isoValue {0.0},
 	m_color {Qt::white},

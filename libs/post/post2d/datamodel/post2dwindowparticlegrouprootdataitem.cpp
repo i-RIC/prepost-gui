@@ -9,7 +9,7 @@
 #include <QXmlStreamWriter>
 
 Post2dWindowParticleGroupRootDataItem::Post2dWindowParticleGroupRootDataItem(Post2dWindowDataItem* p) :
-	Post2dWindowDataItem {tr("Particles"), QIcon(":/libs/guibase/images/iconFolder.png"), p}
+	Post2dWindowDataItem {tr("Particles"), QIcon(":/libs/guibase/images/iconFolder.svg"), p}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 

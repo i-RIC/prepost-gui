@@ -19,10 +19,10 @@
 #include <vtkRenderer.h>
 
 Post2dWindowBackgroundImagesDataItem::Post2dWindowBackgroundImagesDataItem(GraphicsWindowDataItem* parent) :
-	Post2dWindowDataItem {tr("Background Images"), QIcon(":/libs/guibase/images/iconFolder.png"), parent},
+	Post2dWindowDataItem {tr("Background Images"), QIcon(":/libs/guibase/images/iconFolder.svg"), parent},
 	m_addAction {new QAction(Post2dWindowBackgroundImagesDataItem::tr("&Add Image"), this)},
-	m_deleteSelectedAction {new QAction(QIcon(":/libs/guibase/images/iconDeleteItem.png"), Post2dWindowBackgroundImagesDataItem::tr("Delete &Selected..."), this)},
-	m_deleteAllAction {new QAction(QIcon(":/libs/guibase/images/iconDeleteItem.png"), Post2dWindowBackgroundImagesDataItem::tr("Delete &All..."), this)}
+	m_deleteSelectedAction {new QAction(QIcon(":/libs/guibase/images/iconDeleteItem.svg"), Post2dWindowBackgroundImagesDataItem::tr("Delete &Selected..."), this)},
+	m_deleteAllAction {new QAction(QIcon(":/libs/guibase/images/iconDeleteItem.svg"), Post2dWindowBackgroundImagesDataItem::tr("Delete &All..."), this)}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 	m_standardItem->setData(QVariant("BACKGROUNDIMAGES"), Qt::UserRole + 10);

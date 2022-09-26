@@ -63,7 +63,7 @@ Post3dWindowNodeVectorParticleGroupDataItem::Setting& Post3dWindowNodeVectorPart
 }
 
 Post3dWindowNodeVectorParticleGroupDataItem::Post3dWindowNodeVectorParticleGroupDataItem(Post3dWindowDataItem* p) :
-	Post3dWindowDataItem {tr("Particles (auto)"), QIcon(":/libs/guibase/images/iconFolder.png"), p},
+	Post3dWindowDataItem {tr("Particles (auto)"), QIcon(":/libs/guibase/images/iconFolder.svg"), p},
 	m_previousStep {-2},
 	m_previousTime {0},
 	m_nextStepToAddParticles {0},
