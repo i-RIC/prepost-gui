@@ -11,10 +11,12 @@ class MISCDLL_EXPORT QSpinBoxWithFocusSignals : public QSpinBox
 
 public:
 	QSpinBoxWithFocusSignals(QWidget* parent = nullptr);
+	void stepBy(int steps) override;
 
 signals:
 	void focusInOccured();
 	void focusOutOccured();
+	void stepChanged(int steps);
 
 protected:
 	void focusInEvent(QFocusEvent* event) override;
