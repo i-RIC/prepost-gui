@@ -256,7 +256,11 @@ after_build:
             $env:iriclib_DIR="c:/iricdev-2019/lib/install/iriclib-" + $matches[1] + "/lib/cmake/iriclib"
           }
         }
-        cmake -DPREPOST_GUI:PATH=$env:APPVEYOR_BUILD_FOLDER -DSRC_FOLDER:STRING=dev_v4_src -Diriclib_DIR:PATH=$env:iriclib_DIR -G $env:generator ..
+        if ($env:APPVEYOR_REPO_BRANCH -eq "master_v4") {
+          cmake -DPREPOST_GUI:PATH=$env:APPVEYOR_BUILD_FOLDER -DSRC_FOLDER:STRING=prod_v4_src -Diriclib_DIR:PATH=$env:iriclib_DIR -G $env:generator ..
+        } else {
+          cmake -DPREPOST_GUI:PATH=$env:APPVEYOR_BUILD_FOLDER -DSRC_FOLDER:STRING=dev_v4_src -Diriclib_DIR:PATH=$env:iriclib_DIR -G $env:generator ..
+        }
         if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
       }
 
@@ -305,7 +309,11 @@ on_success:
         # update data\definition.xml and meta\package.xml from dev_v4_src\packages\gui.prepost
 
         # set properties
-        $v=(Select-String -Path dev_v4_src\packages\gui.prepost\meta\package.xml -Pattern "(?<=<Version>)(.*)(?=</Version>)").Matches.Value -split "\."
+        if ($env:APPVEYOR_REPO_BRANCH -eq "master_v4") {
+          $v=(Select-String -Path prod_v4_src\packages\gui.prepost\meta\package.xml -Pattern "(?<=<Version>)(.*)(?=</Version>)").Matches.Value -split "\."
+        } else {
+          $v=(Select-String -Path dev_v4_src\packages\gui.prepost\meta\package.xml -Pattern "(?<=<Version>)(.*)(?=</Version>)").Matches.Value -split "\."
+        }
         $v[3] = 1 + $v[3]
         $env:VERSION = $v -join "."
         $tokyo_tz = [System.TimeZoneInfo]::FindSystemTimeZoneById("Tokyo Standard Time")
