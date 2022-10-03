@@ -104,7 +104,7 @@ void iRICMainWindowActionManager::setupFileMenu()
 	connect(openAction, SIGNAL(triggered()), m_parent, SLOT(openProject()));
 
 	reloadCgnsAction = new QAction(tr("Reload &CGNS file..."), m_fileMenu);
-	reloadCgnsAction->setIcon(QIcon(":/images/iconReload.svg"));
+	reloadCgnsAction->setIcon(QIcon(":/images/iconReloadPre.svg"));
 	reloadCgnsAction->setStatusTip(tr("Reload CGNS file"));
 
 	m_fileMenu->addAction(reloadCgnsAction);
