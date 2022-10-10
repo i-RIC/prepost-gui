@@ -2,9 +2,11 @@
 #include "../../project/projectcgnsfile.h"
 #include "postzonedatacontainer_polydataloader.h"
 
+#include <geoio/polygonutil.h>
 #include <misc/stringtool.h>
 
 #include <QPointF>
+#include <QPolygonF>
 #include <QRegExp>
 
 #include <vtkCellArray.h>
@@ -48,28 +50,37 @@ int loadPolyData(const std::string& name, vtkPolyData* polyData, std::vector<int
 		int s = sizeVec.at(i);
 
 		if (t == IRIC_POLYDATA_POLYGON) {
+			QPolygonF pol;
 			auto vtkPol = vtkSmartPointer<vtkPolygon>::New();
 			auto polygonPoints = vtkPol->GetPoints();
 			auto polygonIds = vtkPol->GetPointIds();
-			for (int j = 0; j < s; ++j) {
-				points->InsertNextPoint(coordXVec.at(startIdx + j) - offset.x(), coordYVec.at(startIdx + j) - offset.y(), 0);
 
-				polygonPoints->InsertNextPoint(coordXVec.at(startIdx + j) - offset.x(), coordYVec.at(startIdx + j) - offset.y(), 0);
-				polygonIds->InsertNextId(j);
+			for (int j = 0; j < s; ++j) {
+				QPointF point(coordXVec.at(startIdx + j) - offset.x(), coordYVec.at(startIdx + j) - offset.y());
+				pol.push_back(point);
+				points->InsertNextPoint(point.x(), point.y(), 0);
 			}
-			vtkSmartPointer<vtkIdList> triIds = vtkSmartPointer<vtkIdList>::New();
-			vtkPol->Triangulate(triIds);
-			vtkIdType tri_ids[3];
-			vtkIdType triFirst = 0;
+
+			auto firstPoint = pol.first();
+			auto lastPoint = pol.last();
+			if (firstPoint != lastPoint) {
+				pol.push_back(firstPoint);
+			}
+
+			std::vector<unsigned int> indices;
+			PolygonUtil::triangulate(pol, &indices);
+
+			vtkIdType triIds[3];
+			unsigned int pos = 0;
 			int cellCount = 0;
-			while (triFirst < triIds->GetNumberOfIds()) {
+			while (pos < indices.size()) {
 				for (int j = 0; j < 3; ++j) {
-					tri_ids[j] = triIds->GetId(triFirst + j) + startIdx;
+					triIds[j] = indices.at(pos + j) + startIdx;
 				}
-				polys->InsertNextCell(3, tri_ids);
+				polys->InsertNextCell(3, triIds);
 				ids->push_back(i);
-				triFirst += 3;
 				++ cellCount;
+				pos += 3;
 			}
 			cellCounts.push_back(cellCount);
 		} else {
