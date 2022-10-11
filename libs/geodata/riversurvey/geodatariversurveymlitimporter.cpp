@@ -116,9 +116,10 @@ bool loadCrossSectionData(const QString& filename, std::vector<GeoDataRiverSurve
 	}
 	point->crossSectionFileName = fName;
 	int linenum = 2;
+	int pointCount = tokens.at(6).toInt();
 
 	std::vector<int> indices;
-	while (! f.atEnd()) {
+	for (int i = 0; i < pointCount; ++i) {
 		QString line = f.readLine();
 
 		auto tokens = line.split(",", QString::KeepEmptyParts);
