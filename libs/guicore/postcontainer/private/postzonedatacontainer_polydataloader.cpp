@@ -102,6 +102,8 @@ int loadPolyData(const std::string& name, vtkPolyData* polyData, std::vector<int
 
 bool PostZoneDataContainer::PolyDataLoader::load(std::map<std::string, vtkSmartPointer<vtkPolyData> >* polyDataMap, std::map<std::string, std::vector<int> >* polyDataCellIdsMap, iRICLib::H5CgnsPolyDataSolution* sol, const QPointF& offset)
 {
+	if (sol == nullptr) { return true; }
+
 	polyDataMap->clear();
 
 	std::vector<std::string> groupNames;

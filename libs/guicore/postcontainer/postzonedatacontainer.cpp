@@ -675,7 +675,6 @@ void PostZoneDataContainer::loadFromCgnsFile(iRICLib::H5CgnsZone* zone, bool dis
 
 ERROR:
 	m_loadOK = false;
-	m_data = nullptr;
 }
 
 void PostZoneDataContainer::loadIfEmpty(iRICLib::H5CgnsZone* zone)
