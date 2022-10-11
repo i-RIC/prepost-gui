@@ -18,6 +18,11 @@ ProjectGridImporter::ProjectGridImporter() :
 ProjectGridImporter::~ProjectGridImporter()
 {}
 
+void ProjectGridImporter::setGridDataItem(PreProcessorGridDataItem* gridDataItem)
+{
+	m_gridDataItem = gridDataItem;
+}
+
 QString ProjectGridImporter::caption() const
 {
 	return tr("Project file");
@@ -44,6 +49,7 @@ bool ProjectGridImporter::import(Grid* grid, const QString& filename, const QStr
 	QString cgnsFile = tmpProj.masterCgnsFileName();
 
 	CgnsGridImporter* importer = getCgnsImporter();
+	importer->setGridDataItem(m_gridDataItem);
 	// load grid from CGNS file.
 	bool ret = importer->import(grid, cgnsFile, "", parent);
 	delete importer;

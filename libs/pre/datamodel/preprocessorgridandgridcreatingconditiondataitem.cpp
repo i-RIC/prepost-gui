@@ -1,4 +1,5 @@
 #include "../gridimporter/cgnsgridimporter.h"
+#include "../gridimporter/projectgridimporter.h"
 #include "../factory/gridimporterfactory.h"
 #include "../factory/preprocessorgriddataitemfactory.h"
 #include "../misc/preprocessorgridattributemappingmode.h"
@@ -320,19 +321,27 @@ bool PreProcessorGridAndGridCreatingConditionDataItem::importFromImporter(GridIm
 
 	// now, import grid data.
 	bool ret = true;
-	CgnsGridImporter* cgnsImporter = dynamic_cast<CgnsGridImporter*> (importer);
 
 	auto gridItem = dynamic_cast<PreProcessorGridDataItem*> (m_gridDataItem);
 	importedGrid->setParent(gridItem);
-	if (cgnsImporter != nullptr){
+
+	auto projImporter = dynamic_cast<ProjectGridImporter*> (importer);
+	if (projImporter != nullptr) {
+		// In case of Project file, import both grid and boundary condition.
+		projImporter->setGridDataItem(gridItem);
+		return projImporter->import(importedGrid, filename, selectedFilter, projectData()->mainWindow());
+	}
+
+	auto cgnsImporter = dynamic_cast<CgnsGridImporter*> (importer);
+	if (cgnsImporter != nullptr) {
 		// In case of CGNS file, import both grid and boundary condition.
 		cgnsImporter->setGridDataItem(gridItem);
-		ret = cgnsImporter->import(importedGrid, filename, selectedFilter, projectData()->mainWindow());
-	} else {
-		ret = importer->import(importedGrid, filename, selectedFilter, projectData()->mainWindow());
-		if (ret) {
-			gridItem->setGrid(importedGrid);
-		}
+		return cgnsImporter->import(importedGrid, filename, selectedFilter, projectData()->mainWindow());
+	}
+
+	ret = importer->import(importedGrid, filename, selectedFilter, projectData()->mainWindow());
+	if (ret) {
+		gridItem->setGrid(importedGrid);
 	}
 	return ret;
 }
