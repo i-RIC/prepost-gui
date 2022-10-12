@@ -22,6 +22,7 @@ public:
 	static QPolygonF fromStdVector(const std::vector<QPointF>& points);
 
 	static geos::geom::Polygon* getGeosPolygon(const QPolygonF& polygon);
+	static void triangulate(const QPolygonF& polygon, std::vector<unsigned int>* indices);
 
 private:
 	PolygonUtil();

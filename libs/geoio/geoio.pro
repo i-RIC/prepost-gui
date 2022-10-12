@@ -3,6 +3,7 @@ TEMPLATE = lib
 INCLUDEPATH += ..
 
 DEFINES += GEOIO_LIBRARY
+DEFINES += ANSI_DECLARATORS
 
 QT += widgets
 
@@ -28,6 +29,13 @@ unix {
         LIBS += -L"../misc"
 }
 LIBS += -liricMisc
+
+# iricTriangle
+
+unix {
+        LIBS += -L"../../triangle"
+}
+LIBS += -liricTriangle
 
 ######################
 # External libraries #

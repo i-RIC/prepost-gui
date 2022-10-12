@@ -26,6 +26,22 @@ unix {
 }
 LIBS += -liricCs
 
+# iricGuibase
+
+unix{
+LIBS += -L"../guibase"
+}
+
+LIBS += -liricGuibase
+
+# iricGeoIo
+
+unix{
+LIBS += -L"../geoio"
+}
+
+LIBS += -liricGeoio
+
 # iricTmsLoader
 
 unix {
@@ -46,14 +62,6 @@ unix {
 	LIBS += -L"../triangle"
 }
 LIBS += -liricTriangle
-
-# iricGuibase
-
-unix{
-LIBS += -L"../guibase"
-}
-
-LIBS += -liricGuibase
 
 ######################
 # External libraries #
