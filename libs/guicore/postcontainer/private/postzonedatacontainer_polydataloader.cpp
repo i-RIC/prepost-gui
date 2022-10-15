@@ -67,8 +67,16 @@ int loadPolyData(const std::string& name, vtkPolyData* polyData, std::vector<int
 				pol.push_back(firstPoint);
 			}
 
+			bool allSame = true;
+			for (int i = 1; i < pol.size(); ++i) {
+				allSame = allSame && (pol.at(0) == pol.at(i));
+			}
+
 			std::vector<unsigned int> indices;
-			PolygonUtil::triangulate(pol, &indices);
+
+			if (! allSame) {
+				PolygonUtil::triangulate(pol, &indices);
+			}
 
 			vtkIdType triIds[3];
 			unsigned int pos = 0;
