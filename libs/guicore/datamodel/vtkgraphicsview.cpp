@@ -310,37 +310,41 @@ void VTKGraphicsView::standardKeyReleaseEvent(QKeyEvent* event)
 
 void VTKGraphicsView::standardMouseDoubleClickEvent(QMouseEvent* event)
 {
+	auto scaledEvent = createReverseScaledEvant(*event);
 	vtkRenderWindowInteractor* i = GetRenderWindow()->GetInteractor();
 	vtkSmartPointer<vtkInteractorObserver> style = i->GetInteractorStyle();
 	i->SetInteractorStyle(nullptr);
-	QVTKOpenGLNativeWidget::mouseDoubleClickEvent(event);
+	QVTKOpenGLNativeWidget::mouseDoubleClickEvent(&scaledEvent);
 	i->SetInteractorStyle(style);
 }
 
 void VTKGraphicsView::standardMousePressEvent(QMouseEvent* event)
 {
+	auto scaledEvent = createReverseScaledEvant(*event);
 	vtkRenderWindowInteractor* i = GetRenderWindow()->GetInteractor();
 	vtkSmartPointer<vtkInteractorObserver> style = i->GetInteractorStyle();
 	i->SetInteractorStyle(nullptr);
-	QVTKOpenGLNativeWidget::mousePressEvent(event);
+	QVTKOpenGLNativeWidget::mousePressEvent(&scaledEvent);
 	i->SetInteractorStyle(style);
 }
 
 void VTKGraphicsView::standardMouseReleaseEvent(QMouseEvent* event)
 {
+	auto scaledEvent = createReverseScaledEvant(*event);
 	vtkRenderWindowInteractor* i = GetRenderWindow()->GetInteractor();
 	vtkSmartPointer<vtkInteractorObserver> style = i->GetInteractorStyle();
 	i->SetInteractorStyle(nullptr);
-	QVTKOpenGLNativeWidget::mouseReleaseEvent(event);
+	QVTKOpenGLNativeWidget::mouseReleaseEvent(&scaledEvent);
 	i->SetInteractorStyle(style);
 }
 
 void VTKGraphicsView::standardMouseMoveEvent(QMouseEvent* event)
 {
+	auto scaledEvent = createReverseScaledEvant(*event);
 	vtkRenderWindowInteractor* i = GetRenderWindow()->GetInteractor();
 	vtkSmartPointer<vtkInteractorObserver> style = i->GetInteractorStyle();
 	i->SetInteractorStyle(nullptr);
-	QVTKOpenGLNativeWidget::mouseMoveEvent(event);
+	QVTKOpenGLNativeWidget::mouseMoveEvent(&scaledEvent);
 	i->SetInteractorStyle(style);
 }
 
@@ -564,4 +568,13 @@ QMouseEvent VTKGraphicsView::createScaledEvant(const QMouseEvent& event)
 	double scale = *vtk_size / static_cast<double>(qtSize.width());
 
 	return QMouseEvent(event.type(), event.localPos() * scale, event.button(), event.buttons(), event.modifiers());
+}
+
+QMouseEvent VTKGraphicsView::createReverseScaledEvant(const QMouseEvent& event)
+{
+	QSize qtSize = size();
+	int* vtk_size = GetRenderWindow()->GetSize();
+	double scale = *vtk_size / static_cast<double>(qtSize.width());
+
+	return QMouseEvent(event.type(), event.localPos() / scale, event.button(), event.buttons(), event.modifiers());
 }

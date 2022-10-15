@@ -79,6 +79,7 @@ private:
 	int moveWidth();
 	//@}
 	QMouseEvent createScaledEvant(const QMouseEvent& event);
+	QMouseEvent createReverseScaledEvant(const QMouseEvent& event);
 
 protected:
 	virtual void resizeEvent(QResizeEvent* event) override;
