@@ -32,17 +32,15 @@ GeoDataPointGroup::Impl::Impl(GeoDataPointGroup* group) :
 {
 	m_vtkPoints->SetDataTypeToDouble();
 
-	auto mapper = vtkPolyDataMapper::New();
+	auto mapper = vtkSmartPointer<vtkPolyDataMapper>::New();
 	m_pointsActor->SetMapper(mapper);
 	mapper->SetInputData(m_pointsPolyData);
-	mapper->Delete();
 
 	m_pointsActor->GetProperty()->SetPointSize(3);
 
-	mapper = vtkPolyDataMapper::New();
+	mapper = vtkSmartPointer<vtkPolyDataMapper>::New();
 	m_selectedPointsPointsActor->SetMapper(mapper);
 	mapper->SetInputData(m_selectedPointsPointsPolyData);
-	mapper->Delete();
 
 	m_selectedPointsPointsActor->GetProperty()->SetPointSize(5);
 

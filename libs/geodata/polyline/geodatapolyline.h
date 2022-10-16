@@ -57,6 +57,8 @@ public:
 	GeoDataPolyLine(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGridAttribute* condition);
 	~GeoDataPolyLine() override;
 
+	void setLineWidth(int lineWidth);
+
 	void setupMenu() override;
 	bool addToolBarButtons(QToolBar* parent) override;
 	void informSelection(PreProcessorGraphicsViewInterface* v) override;

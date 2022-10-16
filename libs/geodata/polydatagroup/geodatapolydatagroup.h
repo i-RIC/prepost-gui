@@ -3,8 +3,6 @@
 
 #include "gd_polydatagroup_global.h"
 
-#include "geodatapolydatagroupcolorsettingdialog.h"
-
 #include <guicore/pre/geodata/geodata.h>
 
 #include <unordered_set>
@@ -43,7 +41,6 @@ public:
 	bool isSelected(GeoDataPolyDataGroupPolyData* data);
 	std::vector<GeoDataPolyDataGroupPolyData*> allData() const;
 	void panTo(int row);
-	QColor color() const;
 
 	void updateIndex();
 	void updateOrder();
@@ -55,9 +52,6 @@ public:
 	void addCustomMenuItems(QMenu* menu) override;
 	bool addToolBarButtons(QToolBar *parent) override;
 	void showInitialDialog() override;
-
-	QDialog* propertyDialog(QWidget* parent) override;
-	void handlePropertyDialogAccepted(QDialog* d) override;
 
 	void viewOperationEnded(PreProcessorGraphicsViewInterface* v) override;
 	void keyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* v) override;
@@ -105,8 +99,7 @@ protected:
 
 	geos::index::quadtree::Quadtree* qTree() const;
 	const ZDepthRange& depthRange() const;
-	GeoDataPolyDataGroupColorSettingDialog::Setting colorSetting() const;
-	void updateActorSettingForEditTargetPolyData();
+	virtual void updateActorSettingForEditTargetPolyData() = 0;
 
 	void assignActorZValues(const ZDepthRange& range) override;
 
@@ -115,7 +108,7 @@ protected:
 	QAction* editNameAndValueAction() const;
 	QAction* deleteAction() const;
 	QAction* mergeAction() const;
-	QAction* editColorSettingAction() const;
+	QAction* editDisplaySettingAction() const;
 	QAction* attributeBrowserAction() const;
 	QAction* moveToTopAction() const;
 	QAction* moveToBottomAction() const;
@@ -124,15 +117,12 @@ protected:
 	QAction* copyAction() const;
 
 private:
-	void setColorSetting(const GeoDataPolyDataGroupColorSettingDialog::Setting& setting);
 	void makeConnections();
 	void setupNewEditTargetData();
 	void setupEditTargetDataFromSelectedData();
 	void mergePolyData(GeoDataPolyData* data, int position = -1);
 	void mergePolyDataGroup(GeoDataPolyDataGroup* group, int position = -1);
 
-	void doLoadFromProjectMainFile(const QDomNode& node) override;
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	void loadExternalData(const QString& filename) override;
 	void saveExternalData(const QString& filename) override;
 	void doApplyOffset(double x, double y) override;
@@ -154,7 +144,6 @@ private:
 	virtual GeoDataPolyDataGroup* createInstanceForCopy(PreProcessorGeoDataDataItemInterface* d) = 0;
 
 	class EditNameAndValueCommand;
-	class SetColorSettingCommand;
 	class SortCommand;
 	class SortEditTargetDataCommand;
 

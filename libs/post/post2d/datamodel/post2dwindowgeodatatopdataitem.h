@@ -4,12 +4,13 @@
 #include "../post2dwindowdataitem.h"
 
 #include <QString>
-#include <QMap>
 
+#include <map>
 #include <string>
 
 class PreProcessorGeoDataTopDataItemInterface;
 class Post2dWindowGeoDataGroupDataItem;
+class SolverDefinitionGridAttribute;
 
 class Post2dWindowGeoDataTopDataItem : public Post2dWindowDataItem
 {
@@ -17,7 +18,9 @@ class Post2dWindowGeoDataTopDataItem : public Post2dWindowDataItem
 
 public:
 	Post2dWindowGeoDataTopDataItem(PreProcessorGeoDataTopDataItemInterface* ditem, Post2dWindowDataItem* parent);
-	PreProcessorGeoDataTopDataItemInterface* preGeoDataTopDataItem() const {return m_preGeoDataTopDataItem;}
+	PreProcessorGeoDataTopDataItemInterface* preGeoDataTopDataItem() const;
+
+	Post2dWindowGeoDataGroupDataItem* groupDataItem(const std::string& name) const;
 
 private slots:
 	void updateChildren();
@@ -27,8 +30,12 @@ protected:
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
 private:
-	QMap<std::string, Post2dWindowGeoDataGroupDataItem*> m_itemNameMap;
+	void buildReferenceInformationAttribute();
+
+	std::map<std::string, Post2dWindowGeoDataGroupDataItem*> m_itemNameMap;
 	PreProcessorGeoDataTopDataItemInterface* m_preGeoDataTopDataItem;
+
+	SolverDefinitionGridAttribute* m_referenceInformationAttribute;
 };
 
 #endif // POST2DWINDOWGEODATATOPDATAITEM_H

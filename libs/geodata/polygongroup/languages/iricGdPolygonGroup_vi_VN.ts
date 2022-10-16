@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="vi_VN">
 <context>
     <name>GeoDataPolygonGroup</name>
@@ -12,6 +14,37 @@
     <message>
         <source>P&amp;olygons</source>
         <translation>Đa giác (&amp;O)</translation>
+    </message>
+    <message>
+        <source>Color Setting Edit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Add New Polygon...</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroupColorSettingDialog</name>
+    <message>
+        <source>Polygon Group Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -91,8 +124,8 @@
         <translation>Đã xảy ra lỗi khi đọc dòng tiêu đề. Tiêu đề phải có ít nhất 6 cột.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
-        <translation>Đã xảy ra lỗi khi đọc dòng tiêu đề. Cột %1 nên là "%2", nhưng "%3" được đưa ra.</translation>
+        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
+        <translation>Đã xảy ra lỗi khi đọc dòng tiêu đề. Cột %1 nên là &quot;%2&quot;, nhưng &quot;%3&quot; được đưa ra.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. There is no data.</source>
@@ -115,32 +148,39 @@
         <translation>Đã xảy ra lỗi khi đọc dòng %1. Dữ liệu phải có ít nhất 6 cột.</translation>
     </message>
     <message>
-        <source>Error occured while reading "pid" value in line %1. "pid" should be integer value but "%2" is specified.</source>
-        <translation>Đã xảy ra lỗi khi đọc giá trị "pid" trong dòng %1. "pid" phải là giá trị số nguyên nhưng "%2" được quy định.</translation>
+        <source>Error occured while reading &quot;pid&quot; value in line %1. &quot;pid&quot; should be integer value but &quot;%2&quot; is specified.</source>
+        <translation>Đã xảy ra lỗi khi đọc giá trị &quot;pid&quot; trong dòng %1. &quot;pid&quot; phải là giá trị số nguyên nhưng &quot;%2&quot; được quy định.</translation>
     </message>
     <message>
-        <source>Error occured while reading "vid" value in line %1. "vid" should be integer value but "%2" is specified.</source>
-        <translation>Đã xảy ra lỗi khi đọc giá trị "vid" trong dòng %1. "vid" phải là giá trị số nguyên nhưng "%2" được quy định.</translation>
+        <source>Error occured while reading &quot;vid&quot; value in line %1. &quot;vid&quot; should be integer value but &quot;%2&quot; is specified.</source>
+        <translation>Đã xảy ra lỗi khi đọc giá trị &quot;vid&quot; trong dòng %1. &quot;vid&quot; phải là giá trị số nguyên nhưng &quot;%2&quot; được quy định.</translation>
     </message>
     <message>
-        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
-        <translation>Đã xảy ra lỗi khi đọc giá trị "x" trong dòng %1. "x" phải là giá trị thực nhưng "%2" được quy định.</translation>
+        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Đã xảy ra lỗi khi đọc giá trị &quot;x&quot; trong dòng %1. &quot;x&quot; phải là giá trị thực nhưng &quot;%2&quot; được quy định.</translation>
     </message>
     <message>
-        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
-        <translation>Đã xảy ra lỗi khi đọc giá trị "y" trong dòng %1. "y" phải là giá trị thực nhưng "%2" được quy định.</translation>
+        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Đã xảy ra lỗi khi đọc giá trị &quot;y&quot; trong dòng %1. &quot;y&quot; phải là giá trị thực nhưng &quot;%2&quot; được quy định.</translation>
     </message>
     <message>
-        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
-        <translation>Đã xảy ra lỗi khi đọc giá trị "value" trong dòng %1. "giá trị" phải là giá trị thực nhưng "%2" được quy định.</translation>
+        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Đã xảy ra lỗi khi đọc giá trị &quot;value&quot; trong dòng %1. &quot;giá trị&quot; phải là giá trị thực nhưng &quot;%2&quot; được quy định.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. "name" should be the same for lines where "pid" values are the same.</source>
-        <translation>Đã xảy ra lỗi khi đọc dòng %1. "name" phải giống nhau đối với các dòng có giá trị "pid" giống nhau.</translation>
+        <source>Error occured while reading line %1. &quot;name&quot; should be the same for lines where &quot;pid&quot; values are the same.</source>
+        <translation>Đã xảy ra lỗi khi đọc dòng %1. &quot;name&quot; phải giống nhau đối với các dòng có giá trị &quot;pid&quot; giống nhau.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. "value" should be the same for lines where "pid" values are the same.</source>
-        <translation>Đã xảy ra lỗi khi đọc dòng %1. "value" phải giống nhau đối với các dòng có giá trị "pid" giống nhau.</translation>
+        <source>Error occured while reading line %1. &quot;value&quot; should be the same for lines where &quot;pid&quot; values are the same.</source>
+        <translation>Đã xảy ra lỗi khi đọc dòng %1. &quot;value&quot; phải giống nhau đối với các dòng có giá trị &quot;pid&quot; giống nhau.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroupProxy</name>
+    <message>
+        <source>Edit display setting</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

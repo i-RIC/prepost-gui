@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ko_KR">
 <context>
     <name>GeoDataPolygonGroup</name>
@@ -12,6 +14,37 @@
     <message>
         <source>P&amp;olygons</source>
         <translation>다각형 (&amp;O)</translation>
+    </message>
+    <message>
+        <source>Color Setting Edit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Add New Polygon...</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroupColorSettingDialog</name>
+    <message>
+        <source>Polygon Group Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -91,8 +124,8 @@
         <translation>헤더 행을 읽는 동안 오류가 발생했습니다. 헤더에는 최소한 6개의 열이 있어야 합니다.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
-        <translation>헤더 행을 읽는 동안 오류가 발생했습니다. 열 %1 해야한다 "%2", 하지만 "%3"가 주어진다.</translation>
+        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
+        <translation>헤더 행을 읽는 동안 오류가 발생했습니다. 열 %1 해야한다 &quot;%2&quot;, 하지만 &quot;%3&quot;가 주어진다.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. There is no data.</source>
@@ -115,32 +148,39 @@
         <translation>줄을 읽는 동안 오류가 발생했습니다. %1. 데이터에는 최소한 6개의 열이 있어야 합니다.</translation>
     </message>
     <message>
-        <source>Error occured while reading "pid" value in line %1. "pid" should be integer value but "%2" is specified.</source>
-        <translation>줄에서 "pid" 값을 읽는 동안 오류가 발생했습니다. %1. "pid"는 정수 값이어야 하지만 "%2"가 지정되어 있습니다.</translation>
+        <source>Error occured while reading &quot;pid&quot; value in line %1. &quot;pid&quot; should be integer value but &quot;%2&quot; is specified.</source>
+        <translation>줄에서 &quot;pid&quot; 값을 읽는 동안 오류가 발생했습니다. %1. &quot;pid&quot;는 정수 값이어야 하지만 &quot;%2&quot;가 지정되어 있습니다.</translation>
     </message>
     <message>
-        <source>Error occured while reading "vid" value in line %1. "vid" should be integer value but "%2" is specified.</source>
-        <translation>줄에서 "vid" 값을 읽는 동안 오류가 발생했습니다. %1. "vid"는 정수 값이어야 하지만 "%2"가 지정되어 있습니다.</translation>
+        <source>Error occured while reading &quot;vid&quot; value in line %1. &quot;vid&quot; should be integer value but &quot;%2&quot; is specified.</source>
+        <translation>줄에서 &quot;vid&quot; 값을 읽는 동안 오류가 발생했습니다. %1. &quot;vid&quot;는 정수 값이어야 하지만 &quot;%2&quot;가 지정되어 있습니다.</translation>
     </message>
     <message>
-        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
-        <translation>줄에서 "x" 값을 읽는 동안 오류가 발생했습니다. %1. "x"는 실제 값이어야 하지만 "%2"가 지정되어 있습니다.</translation>
+        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>줄에서 &quot;x&quot; 값을 읽는 동안 오류가 발생했습니다. %1. &quot;x&quot;는 실제 값이어야 하지만 &quot;%2&quot;가 지정되어 있습니다.</translation>
     </message>
     <message>
-        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
-        <translation>줄에서 "y" 값을 읽는 동안 오류가 발생했습니다. %1. "y"는 실제 값이어야 하지만 "%2"가 지정되어 있습니다.</translation>
+        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>줄에서 &quot;y&quot; 값을 읽는 동안 오류가 발생했습니다. %1. &quot;y&quot;는 실제 값이어야 하지만 &quot;%2&quot;가 지정되어 있습니다.</translation>
     </message>
     <message>
-        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
-        <translation>줄에서 "값" 값을 읽는 동안 오류가 발생했습니다. %1. "값"은 실제 값이어야 하지만 "%2"가 지정되어 있습니다.</translation>
+        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>줄에서 &quot;값&quot; 값을 읽는 동안 오류가 발생했습니다. %1. &quot;값&quot;은 실제 값이어야 하지만 &quot;%2&quot;가 지정되어 있습니다.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. "name" should be the same for lines where "pid" values are the same.</source>
-        <translation>줄을 읽는 동안 오류가 발생했습니다. %1. "이름"은 "pid" 값이 동일한 행에 대해 동일해야 합니다.</translation>
+        <source>Error occured while reading line %1. &quot;name&quot; should be the same for lines where &quot;pid&quot; values are the same.</source>
+        <translation>줄을 읽는 동안 오류가 발생했습니다. %1. &quot;이름&quot;은 &quot;pid&quot; 값이 동일한 행에 대해 동일해야 합니다.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. "value" should be the same for lines where "pid" values are the same.</source>
-        <translation>줄을 읽는 동안 오류가 발생했습니다. %1. "값"은 "pid" 값이 동일한 행에 대해 동일해야 합니다.</translation>
+        <source>Error occured while reading line %1. &quot;value&quot; should be the same for lines where &quot;pid&quot; values are the same.</source>
+        <translation>줄을 읽는 동안 오류가 발생했습니다. %1. &quot;값&quot;은 &quot;pid&quot; 값이 동일한 행에 대해 동일해야 합니다.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroupProxy</name>
+    <message>
+        <source>Edit display setting</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

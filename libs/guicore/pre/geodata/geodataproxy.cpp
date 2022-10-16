@@ -20,31 +20,31 @@ void GeoDataProxy::setupMenu()
 
 QMainWindow* GeoDataProxy::mainWindow() const
 {
-	GeoDataProxyDataItem* item = dynamic_cast<GeoDataProxyDataItem*>(parent());
+	auto item = dynamic_cast<GeoDataProxyDataItem*>(parent());
 	return item->mainWindow();
 }
 
 void GeoDataProxy::renderGraphicsView()
 {
-	GeoDataProxyDataItem* item = dynamic_cast<GeoDataProxyDataItem*>(parent());
+	auto item = dynamic_cast<GeoDataProxyDataItem*>(parent());
 	item->renderGraphicsView();
 }
 
 vtkActorCollection* GeoDataProxy::actorCollection() const
 {
-	GeoDataProxyDataItem* item = dynamic_cast<GeoDataProxyDataItem*>(parent());
+	auto item = dynamic_cast<GeoDataProxyDataItem*>(parent());
 	return item->m_actorCollection;
 }
 
 vtkActor2DCollection* GeoDataProxy::actor2DCollection() const
 {
-	GeoDataProxyDataItem* item = dynamic_cast<GeoDataProxyDataItem*>(parent());
+	auto item = dynamic_cast<GeoDataProxyDataItem*>(parent());
 	return item->m_actor2DCollection;
 }
 
 void GeoDataProxy::setupDataItem()
 {
-	GeoDataProxyDataItem* item = dynamic_cast<GeoDataProxyDataItem*>(parent());
+	auto item = dynamic_cast<GeoDataProxyDataItem*>(parent());
 	QString fname = m_geoData->name();
 	fname.append(".dat");
 	item->setFilename(fname);
@@ -58,30 +58,32 @@ void GeoDataProxy::setupDataItem()
 
 void GeoDataProxy::updateVisibility()
 {
-	GeoDataProxyDataItem* item = dynamic_cast<GeoDataProxyDataItem*>(parent());
+	auto item = dynamic_cast<GeoDataProxyDataItem*>(parent());
 	item->updateVisibility();
 }
 
 void GeoDataProxy::updateVisibilityWithoutRendering()
 {
-	GeoDataProxyDataItem* item = dynamic_cast<GeoDataProxyDataItem*>(parent());
+	auto item = dynamic_cast<GeoDataProxyDataItem*>(parent());
 	item->updateVisibilityWithoutRendering();
 }
 
 bool GeoDataProxy::isVisible()
 {
-	GeoDataProxyDataItem* item = dynamic_cast<GeoDataProxyDataItem*>(parent());
+	auto item = dynamic_cast<GeoDataProxyDataItem*>(parent());
 	return item->isAncientChecked() && item->standardItem()->checkState() == Qt::Checked;
 }
 
 void GeoDataProxy::pushCommand(QUndoCommand* com)
 {
-	m_geoData->pushCommand(com);
+	auto item = dynamic_cast<GeoDataProxyDataItem*>(parent());
+	item->pushCommand(com);
 }
 
 void GeoDataProxy::pushRenderCommand(QUndoCommand* com)
 {
-	m_geoData->pushRenderCommand(com);
+	auto item = dynamic_cast<GeoDataProxyDataItem*>(parent());
+	item->pushRenderCommand(com, item);
 }
 
 vtkRenderer* GeoDataProxy::renderer()

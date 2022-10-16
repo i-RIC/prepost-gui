@@ -14,6 +14,8 @@ class Post2dWindowGeoDataGroupDataItem : public Post2dWindowDataItem
 
 public:
 	Post2dWindowGeoDataGroupDataItem(SolverDefinitionGridAttribute* cond, Post2dWindowDataItem* parent);
+	SolverDefinitionGridAttribute* condition() const;
+
 	void updateChildren();
 
 protected:

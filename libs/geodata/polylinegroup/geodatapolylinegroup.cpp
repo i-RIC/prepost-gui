@@ -1,7 +1,10 @@
 #include "geodatapolylinegroup.h"
+#include "geodatapolylinegroupcolorsettingdialog.h"
 #include "geodatapolylinegroupcreator.h"
 #include "geodatapolylinegrouppolyline.h"
+#include "geodatapolylinegroupproxy.h"
 #include "private/geodatapolylinegroup_impl.h"
+#include "private/geodatapolylinegroup_setcolorsettingcommand.h"
 
 #include <geodata/polydatagroup/geodatapolydatagroupcreator.h>
 #include <geodata/polyline/geodatapolyline.h>
@@ -58,7 +61,7 @@ GeoDataPolyLineGroup::GeoDataPolyLineGroup(ProjectDataItem* d, GeoDataCreator* g
 GeoDataPolyDataGroup(d, gdcreater, condition),
 	impl {new Impl {this}}
 {
-	addAction()->setText(tr("&Add New %1...").arg(creator()->shapeNameCamelCase()));
+	addAction()->setText(tr("&Add New Line..."));
 
 	ScalarsToColorsContainer* stcc = scalarsToColorsContainer();
 	if (stcc != nullptr) {
@@ -81,6 +84,11 @@ GeoDataPolyDataGroup(d, gdcreater, condition),
 	renderer()->AddActor(impl->m_selectedPolyLinesEdgesActor);
 	renderer()->AddActor(impl->m_selectedPolyLinesPointsActor);
 
+	auto att = gridAttribute();
+	if (att && att->isReferenceInformation()) {
+		impl->m_colorSetting.mapping = GeoDataPolyLineGroupColorSettingDialog::Arbitrary;
+	}
+
 	updateActorSetting();
 }
 
@@ -92,6 +100,11 @@ GeoDataPolyLineGroup::~GeoDataPolyLineGroup()
 	renderer()->RemoveActor(impl->m_selectedPolyLinesPointsActor);
 
 	delete impl;
+}
+
+QColor GeoDataPolyLineGroup::color() const
+{
+	return impl->m_colorSetting.color.value();
 }
 
 std::vector<GeoDataPolyLineGroupPolyLine*> GeoDataPolyLineGroup::polyLinesInBoundingBox(double xmin, double xmax, double ymin, double ymax) const
@@ -308,6 +321,40 @@ void GeoDataPolyLineGroup::assignActorZValues(const ZDepthRange& range)
 	impl->m_selectedPolyLinesPointsActor->SetPosition(0, 0, range.max());
 }
 
+QDialog* GeoDataPolyLineGroup::propertyDialog(QWidget* parent)
+{
+	auto dialog = new GeoDataPolyLineGroupColorSettingDialog(parent);
+	dialog->setSetting(impl->m_colorSetting);
+	auto gridAtt = gridAttribute();
+	if (gridAtt != nullptr) {
+		dialog->setIsReferenceInformation(gridAtt->isReferenceInformation());
+	}
+	return dialog;
+}
+
+void GeoDataPolyLineGroup::handlePropertyDialogAccepted(QDialog* d)
+{
+	auto dialog = dynamic_cast<GeoDataPolyLineGroupColorSettingDialog*> (d);
+	pushRenderCommand(new SetColorSettingCommand(dialog->setting(), this));
+}
+
+GeoDataProxy* GeoDataPolyLineGroup::getProxy()
+{
+	return new GeoDataPolyLineGroupProxy(this);
+}
+
+void GeoDataPolyLineGroup::doLoadFromProjectMainFile(const QDomNode& node)
+{
+	GeoData::doLoadFromProjectMainFile(node);
+	impl->m_colorSetting.load(node);
+}
+
+void GeoDataPolyLineGroup::doSaveToProjectMainFile(QXmlStreamWriter& writer)
+{
+	GeoData::doSaveToProjectMainFile(writer);
+	impl->m_colorSetting.save(writer);
+}
+
 GeoDataPolyDataGroupPolyData* GeoDataPolyLineGroup::createNewData()
 {
 	return new GeoDataPolyLineGroupPolyLine(this);
@@ -325,7 +372,7 @@ GeoDataPolyData* GeoDataPolyLineGroup::createEditTargetData()
 
 void GeoDataPolyLineGroup::updateActorSetting()
 {
-	auto cs = colorSetting();
+	auto cs = impl->m_colorSetting;
 
 	// color
 	QColor c = cs.color;
@@ -333,15 +380,21 @@ void GeoDataPolyLineGroup::updateActorSetting()
 	impl->m_edgesActor->GetProperty()->SetColor(c.redF(), c.greenF(), c.blueF());
 	impl->m_selectedPolyLinesEdgesActor->GetProperty()->SetColor(c.redF(), c.greenF(), c.blueF());
 	impl->m_selectedPolyLinesPointsActor->GetProperty()->SetColor(c.redF(), c.greenF(), c.blueF());
+	impl->m_edgesActor->GetProperty()->SetOpacity(cs.opacity);
 
 	// mapping
 	bool scalarVisibility = true;
-	if (cs.mapping == GeoDataPolyDataGroupColorSettingDialog::Arbitrary) {
+	if (cs.mapping == GeoDataPolyLineGroupColorSettingDialog::Arbitrary) {
 		scalarVisibility = false;
 	}
 	impl->m_edgesActor->GetMapper()->SetScalarVisibility(scalarVisibility);
 	impl->m_selectedPolyLinesEdgesActor->GetMapper()->SetScalarVisibility(scalarVisibility);
 	impl->m_selectedPolyLinesPointsActor->GetMapper()->SetScalarVisibility(scalarVisibility);
+	impl->m_selectedPolyLinesEdgesActor->GetProperty()->SetOpacity(cs.opacity);
+
+	// line width and point sizes
+	impl->m_edgesActor->GetProperty()->SetLineWidth(cs.lineWidth);
+	impl->m_selectedPolyLinesPointsActor->GetProperty()->SetPointSize(cs.lineWidth * 5);
 
 	updateActorSettingForEditTargetPolyData();
 }
@@ -394,7 +447,7 @@ void GeoDataPolyLineGroup::updateMenu()
 	m->addSeparator();
 	m->addAction(mergeAction());
 	m->addAction(copyAction());
-	m->addAction(editColorSettingAction());
+	m->addAction(editDisplaySettingAction());
 	m->addAction(attributeBrowserAction());
 
 	m->addSeparator();
@@ -437,9 +490,27 @@ void GeoDataPolyLineGroup::updateMenu()
 	m->addSeparator();
 	m->addAction(mergeAction());
 	m->addAction(copyAction());
-	m->addAction(editColorSettingAction());
+	m->addAction(editDisplaySettingAction());
 	m->addAction(attributeBrowserAction());
 
 	m->addSeparator();
 	m->addAction(deleteAction());
+}
+
+void GeoDataPolyLineGroup::updateActorSettingForEditTargetPolyData()
+{
+	auto t = editTargetData();
+	if (t == nullptr) {return;}
+
+	auto targetData = dynamic_cast<GeoDataPolyLine*> (t);
+
+	const auto& cs = impl->m_colorSetting;
+	targetData->setColor(cs.color);
+	targetData->setOpacity(cs.opacity);
+	if (cs.mapping == GeoDataPolyLineGroupColorSettingDialog::Arbitrary) {
+		targetData->setMapping(GeoDataPolyDataColorSettingDialog::Arbitrary);
+	} else {
+		targetData->setMapping(GeoDataPolyDataColorSettingDialog::Value);
+	}
+	targetData->setLineWidth(cs.lineWidth);
 }

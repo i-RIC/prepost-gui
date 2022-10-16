@@ -107,6 +107,11 @@ GeoDataPolyLine::~GeoDataPolyLine()
 	delete impl;
 }
 
+void GeoDataPolyLine::setLineWidth(int lineWidth)
+{
+	impl->m_polyLine->setLineWidth(lineWidth);
+}
+
 void GeoDataPolyLine::setupMenu()
 {
 	m_menu->setTitle(tr("Poly&line"));

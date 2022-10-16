@@ -97,6 +97,7 @@ win32 {
 HEADERS += gd_polylinegroup_global.h \
            geodatapolylinegroup.h \
            geodatapolylinegroupcellmappert.h \
+           geodatapolylinegroupcolorsettingdialog.h \
            geodatapolylinegroupcreator.h \
            geodatapolylinegroupcreatort.h \
            geodatapolylinegroupcsvexporter.h \
@@ -104,25 +105,34 @@ HEADERS += gd_polylinegroup_global.h \
            geodatapolylinegroupintegercreator.h \
            geodatapolylinegroupnodemappert.h \
            geodatapolylinegrouppolyline.h \
+           geodatapolylinegroupproxy.h \
            geodatapolylinegrouprealcreator.h \
            geodatapolylinegroupshpexporter.h \
            geodatapolylinegroupshpimporter.h \
            private/geodatapolylinegroup_impl.h \
+           private/geodatapolylinegroup_setcolorsettingcommand.h \
            private/geodatapolylinegroupcellmappert_detail.h \
            private/geodatapolylinegroupcreatort_detail.h \
            private/geodatapolylinegroupnodemappert_detail.h \
-           private/geodatapolylinegrouppolyline_impl.h
-FORMS +=
+           private/geodatapolylinegrouppolyline_impl.h \
+           private/geodatapolylinegroupproxy_impl.h \
+           private/geodatapolylinegroupproxy_setsettingcommand.h
+FORMS += geodatapolylinegroupcolorsettingdialog.ui
 SOURCES += geodatapolylinegroup.cpp \
+           geodatapolylinegroupcolorsettingdialog.cpp \
            geodatapolylinegroupcreator.cpp \
            geodatapolylinegroupcsvexporter.cpp \
            geodatapolylinegroupcsvimporter.cpp \
            geodatapolylinegroupintegercreator.cpp \
            geodatapolylinegrouppolyline.cpp \
+           geodatapolylinegroupproxy.cpp \
            geodatapolylinegrouprealcreator.cpp \
            geodatapolylinegroupshpexporter.cpp \
            geodatapolylinegroupshpimporter.cpp \
-           private/geodatapolylinegroup_impl.cpp
+           private/geodatapolylinegroup_impl.cpp \
+           private/geodatapolylinegroup_setcolorsettingcommand.cpp \
+           private/geodatapolylinegroupproxy_impl.cpp \
+           private/geodatapolylinegroupproxy_setsettingcommand.cpp
 TRANSLATIONS += languages/iricGdPolyLineGroup_ar_EG.ts \
                 languages/iricGdPolyLineGroup_bg_BG.ts \
                 languages/iricGdPolyLineGroup_bs_BA.ts \

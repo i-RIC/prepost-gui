@@ -28,15 +28,13 @@ public:
 	GeoDataPolyDataGroupPolyData* m_editTargetDataBackup;
 	int m_editTargetDataIndex;
 
-	GeoDataPolyDataGroupColorSettingDialog::Setting m_colorSetting;
-
 	QAction* m_addAction;
 	QAction* m_editNameAction;
 	QAction* m_editNameAndValueAction;
 	QAction* m_deleteAction;
 	QAction* m_mergeAction;
 
-	QAction* m_editColorSettingAction;
+	QAction* m_editDisplaySettingAction;
 	QAction* m_attributeBrowserAction;
 
 	QAction* m_moveToTopAction;

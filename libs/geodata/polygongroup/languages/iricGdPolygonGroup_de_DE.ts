@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="de_DE">
 <context>
     <name>GeoDataPolygonGroup</name>
@@ -12,6 +14,37 @@
     <message>
         <source>P&amp;olygons</source>
         <translation>Polygone (&amp;O)</translation>
+    </message>
+    <message>
+        <source>Color Setting Edit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Add New Polygon...</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroupColorSettingDialog</name>
+    <message>
+        <source>Polygon Group Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -91,8 +124,8 @@
         <translation>Beim Lesen der Kopfzeile ist ein Fehler aufgetreten. Die Kopfzeile sollte mindestens 6 Spalten haben.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
-        <translation>Beim Lesen der Kopfzeile ist ein Fehler aufgetreten. Spalte %1 sollte sein "%2", aber " %3 “ ist gegeben.</translation>
+        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
+        <translation>Beim Lesen der Kopfzeile ist ein Fehler aufgetreten. Spalte %1 sollte sein &quot;%2&quot;, aber &quot; %3 “ ist gegeben.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. There is no data.</source>
@@ -115,32 +148,39 @@
         <translation>Beim Lesen der Zeile ist ein Fehler aufgetreten %1. Die Daten sollten mindestens 6 Spalten haben.</translation>
     </message>
     <message>
-        <source>Error occured while reading "pid" value in line %1. "pid" should be integer value but "%2" is specified.</source>
-        <translation>Beim Lesen des "pid"-Wertes in der Zeile ist ein Fehler aufgetreten %1. "pid" sollte ein ganzzahliger Wert sein, aber "%2" angegeben.</translation>
+        <source>Error occured while reading &quot;pid&quot; value in line %1. &quot;pid&quot; should be integer value but &quot;%2&quot; is specified.</source>
+        <translation>Beim Lesen des &quot;pid&quot;-Wertes in der Zeile ist ein Fehler aufgetreten %1. &quot;pid&quot; sollte ein ganzzahliger Wert sein, aber &quot;%2&quot; angegeben.</translation>
     </message>
     <message>
-        <source>Error occured while reading "vid" value in line %1. "vid" should be integer value but "%2" is specified.</source>
-        <translation>Beim Lesen des "vid" -Werts in der Zeile ist ein Fehler aufgetreten %1. "vid" sollte ein ganzzahliger Wert sein, aber "%2" angegeben.</translation>
+        <source>Error occured while reading &quot;vid&quot; value in line %1. &quot;vid&quot; should be integer value but &quot;%2&quot; is specified.</source>
+        <translation>Beim Lesen des &quot;vid&quot; -Werts in der Zeile ist ein Fehler aufgetreten %1. &quot;vid&quot; sollte ein ganzzahliger Wert sein, aber &quot;%2&quot; angegeben.</translation>
     </message>
     <message>
-        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
-        <translation>Beim Lesen des "x"-Wertes in der Zeile ist ein Fehler aufgetreten %1. "x" sollte ein echter Wert sein, aber "%2" angegeben.</translation>
+        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Beim Lesen des &quot;x&quot;-Wertes in der Zeile ist ein Fehler aufgetreten %1. &quot;x&quot; sollte ein echter Wert sein, aber &quot;%2&quot; angegeben.</translation>
     </message>
     <message>
-        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
-        <translation>Beim Lesen des "y"-Wertes in Zeile ist ein Fehler aufgetreten %1. "y" sollte ein echter Wert sein, aber "%2" angegeben.</translation>
+        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Beim Lesen des &quot;y&quot;-Wertes in Zeile ist ein Fehler aufgetreten %1. &quot;y&quot; sollte ein echter Wert sein, aber &quot;%2&quot; angegeben.</translation>
     </message>
     <message>
-        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
-        <translation>Beim Lesen des Werts "Wert" in der Zeile ist ein Fehler aufgetreten %1. "Wert" sollte ein echter Wert sein, aber "%2" angegeben.</translation>
+        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Beim Lesen des Werts &quot;Wert&quot; in der Zeile ist ein Fehler aufgetreten %1. &quot;Wert&quot; sollte ein echter Wert sein, aber &quot;%2&quot; angegeben.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. "name" should be the same for lines where "pid" values are the same.</source>
-        <translation>Beim Lesen der Zeile ist ein Fehler aufgetreten %1. "name" sollte für Zeilen mit gleichen "pid"-Werten gleich sein.</translation>
+        <source>Error occured while reading line %1. &quot;name&quot; should be the same for lines where &quot;pid&quot; values are the same.</source>
+        <translation>Beim Lesen der Zeile ist ein Fehler aufgetreten %1. &quot;name&quot; sollte für Zeilen mit gleichen &quot;pid&quot;-Werten gleich sein.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. "value" should be the same for lines where "pid" values are the same.</source>
-        <translation>Beim Lesen der Zeile ist ein Fehler aufgetreten %1. "value" sollte für Zeilen gleich sein, in denen "pid"-Werte gleich sind.</translation>
+        <source>Error occured while reading line %1. &quot;value&quot; should be the same for lines where &quot;pid&quot; values are the same.</source>
+        <translation>Beim Lesen der Zeile ist ein Fehler aufgetreten %1. &quot;value&quot; sollte für Zeilen gleich sein, in denen &quot;pid&quot;-Werte gleich sind.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroupProxy</name>
+    <message>
+        <source>Edit display setting</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

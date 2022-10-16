@@ -193,6 +193,12 @@ void GeoDataPolyLineAbstractPolyLine::setMapping(GeoDataPolyDataColorSettingDial
 	}
 }
 
+void GeoDataPolyLineAbstractPolyLine::setLineWidth(int lineWidth)
+{
+	impl->m_polylineController.linesActor()->GetProperty()->SetLineWidth(lineWidth);
+	impl->m_polylineController.pointsActor()->GetProperty()->SetPointSize(lineWidth * 5);
+}
+
 const PolyLineController& GeoDataPolyLineAbstractPolyLine::polylineController() const
 {
 	return impl->m_polylineController;

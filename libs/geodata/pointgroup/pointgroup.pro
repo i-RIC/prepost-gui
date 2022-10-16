@@ -96,6 +96,7 @@ win32 {
 HEADERS += gd_pointgroup_global.h \
            geodatapointgroup.h \
            geodatapointgroupcellmappert.h \
+           geodatapointgroupcolorsettingdialog.h \
            geodatapointgroupcreator.h \
            geodatapointgroupcreatort.h \
            geodatapointgroupcsvexporter.h \
@@ -103,25 +104,34 @@ HEADERS += gd_pointgroup_global.h \
            geodatapointgroupintegercreator.h \
            geodatapointgroupnodemappert.h \
            geodatapointgrouppoint.h \
+           geodatapointgroupproxy.h \
            geodatapointgrouprealcreator.h \
            geodatapointgroupshpexporter.h \
            geodatapointgroupshpimporter.h \
            private/geodatapointgroup_impl.h \
+           private/geodatapointgroup_setcolorsettingcommand.h \
            private/geodatapointgroupcellmappert_detail.h \
            private/geodatapointgroupcreatort_detail.h \
            private/geodatapointgroupnodemappert_detail.h \
-           private/geodatapointgrouppoint_impl.h
-FORMS +=
+           private/geodatapointgrouppoint_impl.h \
+           private/geodatapointgroupproxy_impl.h \
+           private/geodatapointgroupproxy_setsettingcommand.h
+FORMS += geodatapointgroupcolorsettingdialog.ui
 SOURCES += geodatapointgroup.cpp \
+           geodatapointgroupcolorsettingdialog.cpp \
            geodatapointgroupcreator.cpp \
            geodatapointgroupcsvexporter.cpp \
            geodatapointgroupcsvimporter.cpp \
            geodatapointgroupintegercreator.cpp \
            geodatapointgrouppoint.cpp \
+           geodatapointgroupproxy.cpp \
            geodatapointgrouprealcreator.cpp \
            geodatapointgroupshpexporter.cpp \
            geodatapointgroupshpimporter.cpp \
-           private/geodatapointgroup_impl.cpp
+           private/geodatapointgroup_impl.cpp \
+           private/geodatapointgroup_setcolorsettingcommand.cpp \
+           private/geodatapointgroupproxy_impl.cpp \
+           private/geodatapointgroupproxy_setsettingcommand.cpp
 TRANSLATIONS += languages/iricGdPointGroup_ar_EG.ts \
                 languages/iricGdPointGroup_bg_BG.ts \
                 languages/iricGdPointGroup_bs_BA.ts \
