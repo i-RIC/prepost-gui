@@ -237,7 +237,7 @@ int PreProcessorGridAndGridCreatingConditionDataItem::loadFromCgnsFile()
 {
 	auto mainFile = dataModel()->iricMainWindow()->projectData()->mainfile();
 	auto zone = mainFile->cgnsFile()->ccBase()->zone(m_zoneName);
-	if (zone == nullptr) {return IRIC_NO_DATA;}
+	if (zone == nullptr) {return IRIC_NO_ERROR;}
 
 	Grid* grid = GridCgnsEstimater::buildGrid(*zone, nullptr);
 	if (grid == nullptr) {return IRIC_INVALID_GRIDTYPE;}
