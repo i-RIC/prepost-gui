@@ -390,6 +390,7 @@ void PreProcessorGeoDataTopDataItem::updateActorSettings()
 			m_scalarBarWidget->SetEnabled(1);
 		}
 	}
+	updateVisibility();
 }
 
 void PreProcessorGeoDataTopDataItem::updateLegendBoxItems()
