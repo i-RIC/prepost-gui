@@ -403,6 +403,7 @@ bool GeoDataNetcdfGdalImporter::setupFileNamePattern(const QString& filename, QW
 	delete m_matcher;
 	m_matcher = nullptr;
 
+	/*
 	std::vector<QString> patterns;
 
 	patterns.push_back("YYYY-MM-DD_hh:mm:ss");
@@ -420,6 +421,8 @@ bool GeoDataNetcdfGdalImporter::setupFileNamePattern(const QString& filename, QW
 		m_matcher = matcher;
 		break;
 	}
+	*/
+
 	if (m_matcher == nullptr) {
 		GeoDataNetcdfFileNamePatternDialog dialog(w);
 		dialog.setFilename(filename);
@@ -438,7 +441,8 @@ bool GeoDataNetcdfGdalImporter::setupFilenames(const QString& filename, QWidget 
 	QDir dir = finfo.absoluteDir();
 	auto list = dir.entryList(QDir::Files, QDir::Name);
 
-	m_filenames.clear();
+	std::vector<QString> fnames;
+
 	for (const QString& fname : list) {
 		bool ok;
 		auto dt = m_matcher->getDateTime(fname, &ok);
@@ -447,12 +451,16 @@ bool GeoDataNetcdfGdalImporter::setupFilenames(const QString& filename, QWidget 
 		QFileInfo finfo2(fname);
 		if (finfo.suffix() != finfo2.suffix()) {continue;}
 
-		m_filenames.push_back(dir.absoluteFilePath(fname));
+		fnames.push_back(dir.absoluteFilePath(fname));
 	}
 	GeoDataNetcdfFileListDialog dialog(w);
-	dialog.setFilenames(m_filenames);
+	dialog.setFileNameMatcher(m_matcher);
+	dialog.setFileNames(fnames);
+
 	int ret = dialog.exec();
 	if (ret == QDialog::Rejected) {return false;}
+
+	m_filenames = dialog.selectedFilenames();
 
 	return true;
 }
