@@ -3,7 +3,27 @@
 #include "attributebrowsertargetdataitem.h"
 #include "propertybrowserview.h"
 
+#include <QSettings>
 #include <QVector2D>
+
+namespace {
+
+QString valueString(const QVariant& value, int decimals)
+{
+	bool ok;
+	double v = value.toDouble(&ok);
+	if (ok) {
+		if (std::fabs(v) < 1.0E-6) {
+			return QString("%1").arg(v, 0, 'g', 10);
+		} else {
+			return QString("%1").arg(v, 0, 'f', decimals);
+		}
+	} else {
+		return value.toString();
+	}
+}
+
+} // namespace
 
 PropertyBrowserView::PropertyBrowserView(QWidget* parent) :
 	QWidget(parent),
@@ -194,8 +214,11 @@ void PropertyBrowserView::updateIJ(unsigned int i, unsigned int j)
 
 void PropertyBrowserView::updateCoords(double x, double y)
 {
-	ui->xValueLabel->setText(QString("%1").arg(x));
-	ui->yValueLabel->setText(QString("%1").arg(y));
+	QSettings settings;
+	auto decimals = settings.value("textformat/attbrowsercoordsdecimal", 6).toInt();
+
+	ui->xValueLabel->setText(QString("%1").arg(x, 0, 'f', decimals));
+	ui->yValueLabel->setText(QString("%1").arg(y, 0, 'f', decimals));
 }
 
 void PropertyBrowserView::updateAttributes(const QList<PropertyBrowserAttribute>& attr)
@@ -205,13 +228,17 @@ void PropertyBrowserView::updateAttributes(const QList<PropertyBrowserAttribute>
 	for (int i = rows - 1; i >= 0; --i) {
 		table->removeRow(i);
 	}
+
+	QSettings settings;
+	auto decimals = settings.value("textformat/attbrowservaluedecimal", 6).toInt();
+
 	int index = 0;
 	for (auto it = attr.begin(); it != attr.end(); ++it) {
 		PropertyBrowserAttribute a = *it;
 		table->insertRow(index);
 		QTableWidgetItem* labelItem = new QTableWidgetItem(a.name);
 		table->setItem(index, 0, labelItem);
-		QTableWidgetItem* valueItem = new QTableWidgetItem(a.value.toString());
+		QTableWidgetItem* valueItem = new QTableWidgetItem(valueString(a.value, decimals));
 		table->setItem(index, 1, valueItem);
 		table->setRowHeight(index, ROWHEIGHT);
 		++ index;
