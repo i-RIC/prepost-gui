@@ -57,6 +57,12 @@ public:
 		xaPolyLine,
 		xaPolyLineGroup
 	};
+	enum XAxisTimeUnit {
+		tuSecond,
+		tuMinutes,
+		tuHours,
+		tuDays,
+	};
 
 	enum DimType {
 		dimBase,
@@ -178,7 +184,7 @@ public:
 	static QString autoXAxisLabel(Graph2dHybridWindowResultSetting::XAxisMode xm);
 	void setAutoXAxisLabel();
 	void setXAxisLabel(const QString& l);
-	static QString autoXAxisTimeLabel(Graph2dHybridWindowResultSetting::XAxisMode mode, Graph2dHybridWindowResultSetting::TimeValueType t);
+	static QString autoXAxisTimeLabel(Graph2dHybridWindowResultSetting::XAxisMode mode, Graph2dHybridWindowResultSetting::TimeValueType t, XAxisTimeUnit tu);
 	static QString autoXAxisPositionLabel(Graph2dHybridWindowResultSetting::XAxisMode mode, Graph2dHybridWindowResultSetting::PositionValueType t);
 
 	bool yAxisLeftAutoRange() const;
@@ -224,6 +230,8 @@ public:
 	bool dataAvailable();
 	void setXAxisMode(XAxisMode m);
 	XAxisMode xAxisMode() const;
+	void setXAxisTimeUnit(XAxisTimeUnit tu);
+	XAxisTimeUnit xAxisTimeUnit() const;
 	const QMap<XAxisMode, QMap<DimType, QList<DataTypeInfo*> > >& dataTypeInfoMap();
 	DataTypeInfo* targetDataTypeInfo() const;
 	void setTargetDataTypeInfo(DataTypeInfo* type);
@@ -265,6 +273,7 @@ private:
 	QList<DataTypeInfo> m_dataTypeInfos;
 
 	XAxisMode m_xAxisMode;
+	XAxisTimeUnit m_xAxisTimeUnit;
 	DataTypeInfo* m_targetDataTypeInfo;
 	QList<Setting> m_targetDatas;
 	QList<GeoDataPolyLine*> m_polyLines;

@@ -160,41 +160,37 @@ bool Graph2dHybridWindowResultSetting::DataTypeInfo::operator==(const DataTypeIn
 	return true;
 }
 
-Graph2dHybridWindowResultSetting::Graph2dHybridWindowResultSetting()
-{
-	m_xAxisMode = xaTime;
-	m_timeValueType = tvtTime;
-	m_positionValueType = pvtDistance;
-	m_xAxisReverse = false;
-	m_xAxisLog = false;
+Graph2dHybridWindowResultSetting::Graph2dHybridWindowResultSetting() :
+	m_xAxisMode {xaTime},
+	m_xAxisTimeUnit {tuSecond},
+	m_targetDataTypeInfo {nullptr},
+	m_targetPolyLine {nullptr},
+	m_targetPolyLineGroupPolyLine {nullptr},
+	m_postSolutionInfo {nullptr},
+	m_addIndicesToTitle {false},
+	m_colorSource {new ColorSource(nullptr)},
+	m_timeValueType {tvtTime},
+	m_positionValueType {pvtDistance},
+	m_xAxisReverse {false},
+	m_xAxisLog {false},
 
-	m_targetDataTypeInfo = nullptr;
-	m_targetPolyLine = nullptr;
-	m_targetPolyLineGroupPolyLine = nullptr;
-	m_postSolutionInfo = nullptr;
+	m_yAxisLeftAutoRange {true},
+	m_yAxisLeftTitle {""},
+	m_yAxisLeftReverse {false},
+	m_yAxisLeftLog {false},
+	m_yAxisRightAutoRange {true},
+	m_yAxisRightTitle {""},
+	m_yAxisRightReverse {false},
+	m_yAxisRightLog {false},
 
-	m_colorSource = new ColorSource(nullptr);
-
-	m_addIndicesToTitle = false;
-
-	m_yAxisLeftAutoRange = true;
-	m_yAxisLeftTitle = "";
-	m_yAxisLeftReverse = false;
-	m_yAxisLeftLog = false;
-	m_yAxisRightAutoRange = true;
-	m_yAxisRightTitle = "";
-	m_yAxisRightReverse = false;
-	m_yAxisRightLog = false;
-
-	m_xAxisAutoRange = true;
-	m_xAxisValueMin = 0;
-	m_xAxisValueMax = 0;
-
-	m_I = 0;
-	m_J = 0;
-	m_K = 0;
-	m_index = 0;
-}
+	m_xAxisAutoRange {true},
+	m_xAxisValueMin {0},
+	m_xAxisValueMax {0},
+	m_I {0},
+	m_J {0},
+	m_K {0},
+	m_index {0}
+{}
 
 Graph2dHybridWindowResultSetting::~Graph2dHybridWindowResultSetting()
 {
@@ -612,6 +608,7 @@ const QString& Graph2dHybridWindowResultSetting::xAxisLabel() const{
 Graph2dHybridWindowResultSetting& Graph2dHybridWindowResultSetting::operator=(const Graph2dHybridWindowResultSetting& s)
 {
 	m_xAxisMode = s.m_xAxisMode;
+	m_xAxisTimeUnit = s.m_xAxisTimeUnit;
 	m_timeValueType = s.m_timeValueType;
 	m_positionValueType = s.m_positionValueType;
 	m_xAxisLabel = s.m_xAxisLabel;
@@ -682,6 +679,15 @@ void Graph2dHybridWindowResultSetting::setXAxisMode(XAxisMode m)
 Graph2dHybridWindowResultSetting::XAxisMode Graph2dHybridWindowResultSetting::xAxisMode() const
 {
 	return m_xAxisMode;
+}
+
+void Graph2dHybridWindowResultSetting::setXAxisTimeUnit(XAxisTimeUnit tu) {
+	m_xAxisTimeUnit = tu;
+}
+
+Graph2dHybridWindowResultSetting::XAxisTimeUnit Graph2dHybridWindowResultSetting::xAxisTimeUnit() const
+{
+	return m_xAxisTimeUnit;
 }
 
 const QMap<Graph2dHybridWindowResultSetting::XAxisMode, QMap<Graph2dHybridWindowResultSetting::DimType, QList<Graph2dHybridWindowResultSetting::DataTypeInfo*> > >& Graph2dHybridWindowResultSetting::dataTypeInfoMap()
@@ -813,7 +819,7 @@ void Graph2dHybridWindowResultSetting::setAutoXAxisLabel()
 {
 	QString xAxisLabel;
 	if (m_xAxisMode == Graph2dHybridWindowResultSetting::xaTime) {
-		xAxisLabel = autoXAxisTimeLabel(m_xAxisMode, m_timeValueType);
+		xAxisLabel = autoXAxisTimeLabel(m_xAxisMode, m_timeValueType, m_xAxisTimeUnit);
 	} else {
 		xAxisLabel = autoXAxisPositionLabel(m_xAxisMode, m_positionValueType);
 	}
@@ -825,10 +831,20 @@ void Graph2dHybridWindowResultSetting::setXAxisLabel(const QString& l)
 	m_xAxisLabel = l;
 }
 
-QString Graph2dHybridWindowResultSetting::autoXAxisTimeLabel(Graph2dHybridWindowResultSetting::XAxisMode /*mode*/, Graph2dHybridWindowResultSetting::TimeValueType t)
+QString Graph2dHybridWindowResultSetting::autoXAxisTimeLabel(Graph2dHybridWindowResultSetting::XAxisMode, Graph2dHybridWindowResultSetting::TimeValueType t, XAxisTimeUnit tu)
 {
 	if (t == Graph2dHybridWindowResultSetting::tvtTime) {
-		return Graph2dHybridWindow::tr("Time");
+		QString unitStr = "";
+		if (tu == XAxisTimeUnit::tuSecond) {
+			unitStr = Graph2dHybridWindow::tr("seconds");
+		} else if (tu == XAxisTimeUnit::tuMinutes) {
+			unitStr = Graph2dHybridWindow::tr("minutes");
+		} else if (tu == XAxisTimeUnit::tuHours) {
+			unitStr = Graph2dHybridWindow::tr("hours");
+		} else if (tu == XAxisTimeUnit::tuDays) {
+			unitStr = Graph2dHybridWindow::tr("days");
+		}
+		return QString("%1 (%2)").arg(Graph2dHybridWindow::tr("Time")).arg(unitStr);
 	} else {
 		return Graph2dHybridWindow::tr("Count");
 	}

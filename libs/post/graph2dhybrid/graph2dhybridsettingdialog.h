@@ -16,11 +16,12 @@ class Graph2dHybridSettingDialog : public QDialog
 public:
 	explicit Graph2dHybridSettingDialog(QWidget* parent = nullptr);
 	~Graph2dHybridSettingDialog();
+
+	const Graph2dHybridWindowResultSetting& setting() const;
 	void setSetting(const Graph2dHybridWindowResultSetting& setting);
-	const Graph2dHybridWindowResultSetting& setting() {return m_setting;}
 
 public slots:
-	void xAxisRadioButtonToggled();
+	void xAxisSettingUpdated();
 	void yAxisComboBoxChange(int index);
 	void accept() override;
 

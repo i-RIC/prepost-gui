@@ -11,10 +11,11 @@ Graph2dHybridSettingDialog::Graph2dHybridSettingDialog(QWidget* parent) :
 	ui(new Ui::Graph2dHybridSettingDialog)
 {
 	ui->setupUi(this);
-	connect(ui->xAxisTimeRadioButton, SIGNAL(toggled(bool)), this, SLOT(xAxisRadioButtonToggled()));
-	connect(ui->xAxisTimestepRadioButton, SIGNAL(toggled(bool)), this, SLOT(xAxisRadioButtonToggled()));
-	connect(ui->xAxisDistanceRadioButton, SIGNAL(toggled(bool)), this, SLOT(xAxisRadioButtonToggled()));
-	connect(ui->xAxisGridindexRadioButton, SIGNAL(toggled(bool)), this, SLOT(xAxisRadioButtonToggled()));
+	connect(ui->xAxisTimeRadioButton, SIGNAL(toggled(bool)), this, SLOT(xAxisSettingUpdated()));
+	connect(ui->timeUnitComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(xAxisSettingUpdated()));
+	connect(ui->xAxisTimestepRadioButton, SIGNAL(toggled(bool)), this, SLOT(xAxisSettingUpdated()));
+	connect(ui->xAxisDistanceRadioButton, SIGNAL(toggled(bool)), this, SLOT(xAxisSettingUpdated()));
+	connect(ui->xAxisGridindexRadioButton, SIGNAL(toggled(bool)), this, SLOT(xAxisSettingUpdated()));
 
 	connect(ui->yAxisSideComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(yAxisComboBoxChange(int)));
 }
@@ -22,6 +23,11 @@ Graph2dHybridSettingDialog::Graph2dHybridSettingDialog(QWidget* parent) :
 Graph2dHybridSettingDialog::~Graph2dHybridSettingDialog()
 {
 	delete ui;
+}
+
+const Graph2dHybridWindowResultSetting& Graph2dHybridSettingDialog::setting() const
+{
+	return m_setting;
 }
 
 void Graph2dHybridSettingDialog::setSetting(const Graph2dHybridWindowResultSetting& setting)
@@ -33,6 +39,16 @@ void Graph2dHybridSettingDialog::setSetting(const Graph2dHybridWindowResultSetti
 		ui->xAxisReverseCheckBox->hide();
 		if (m_setting.timeValueType() == Graph2dHybridWindowResultSetting::tvtTime) {
 			ui->xAxisTimeRadioButton->setChecked(true);
+			auto tu = m_setting.xAxisTimeUnit();
+			if (tu == Graph2dHybridWindowResultSetting::tuSecond) {
+				ui->timeUnitComboBox->setCurrentIndex(0);
+			} else if (tu == Graph2dHybridWindowResultSetting::tuMinutes) {
+				ui->timeUnitComboBox->setCurrentIndex(1);
+			} else if (tu == Graph2dHybridWindowResultSetting::tuHours) {
+				ui->timeUnitComboBox->setCurrentIndex(2);
+			} else if (tu == Graph2dHybridWindowResultSetting::tuDays) {
+				ui->timeUnitComboBox->setCurrentIndex(3);
+			}
 		} else {
 			ui->xAxisTimestepRadioButton->setChecked(true);
 		}
@@ -73,7 +89,7 @@ void Graph2dHybridSettingDialog::accept()
 	QDialog::accept();
 }
 
-void Graph2dHybridSettingDialog::xAxisRadioButtonToggled()
+void Graph2dHybridSettingDialog::xAxisSettingUpdated()
 {
 	applyXAxisSetting();
 	m_setting.setAutoXAxisLabel();
@@ -139,6 +155,16 @@ void Graph2dHybridSettingDialog::applyXAxisSetting()
 {
 	if (ui->xAxisTimeRadioButton->isChecked()) {
 		m_setting.setTimeValueType(Graph2dHybridWindowResultSetting::tvtTime);
+		auto idx = ui->timeUnitComboBox->currentIndex();
+		if (idx == 0) {
+			m_setting.setXAxisTimeUnit(Graph2dHybridWindowResultSetting::tuSecond);
+		} else if (idx == 1) {
+			m_setting.setXAxisTimeUnit(Graph2dHybridWindowResultSetting::tuMinutes);
+		} else if (idx == 2) {
+			m_setting.setXAxisTimeUnit(Graph2dHybridWindowResultSetting::tuHours);
+		} else {
+			m_setting.setXAxisTimeUnit(Graph2dHybridWindowResultSetting::tuDays);
+		}
 	} else {
 		m_setting.setTimeValueType(Graph2dHybridWindowResultSetting::tvtTimeStep);
 	}
