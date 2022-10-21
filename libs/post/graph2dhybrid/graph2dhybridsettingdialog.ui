@@ -31,11 +31,55 @@
             </property>
             <layout class="QVBoxLayout" name="verticalLayout">
              <item>
-              <widget class="QRadioButton" name="xAxisTimeRadioButton">
-               <property name="text">
-                <string>Time</string>
-               </property>
-              </widget>
+              <layout class="QHBoxLayout" name="horizontalLayout_6">
+               <item>
+                <widget class="QRadioButton" name="xAxisTimeRadioButton">
+                 <property name="text">
+                  <string>Time</string>
+                 </property>
+                 <property name="checked">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QComboBox" name="timeUnitComboBox">
+                 <item>
+                  <property name="text">
+                   <string>Seconds</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Minutes</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Hours</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Days</string>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+               <item>
+                <spacer name="horizontalSpacer_2">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+              </layout>
              </item>
              <item>
               <widget class="QRadioButton" name="xAxisTimestepRadioButton">
@@ -453,8 +497,8 @@
      <y>219</y>
     </hint>
     <hint type="destinationlabel">
-     <x>65</x>
-     <y>260</y>
+     <x>126</x>
+     <y>281</y>
     </hint>
    </hints>
   </connection>
@@ -487,6 +531,22 @@
     <hint type="destinationlabel">
      <x>297</x>
      <y>179</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>xAxisTimeRadioButton</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>timeUnitComboBox</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>70</x>
+     <y>66</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>100</x>
+     <y>63</y>
     </hint>
    </hints>
   </connection>
