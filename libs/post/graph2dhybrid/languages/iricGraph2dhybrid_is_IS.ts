@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="is_IS">
 <context>
     <name>Graph2dHybridSettingDialog</name>
@@ -101,19 +99,19 @@
     </message>
     <message>
         <source>Seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>Sekúndur</translation>
     </message>
     <message>
         <source>Minutes</source>
-        <translation type="unfinished"></translation>
+        <translation>Fundargerðir</translation>
     </message>
     <message>
         <source>Hours</source>
-        <translation type="unfinished"></translation>
+        <translation>Klukkutímar</translation>
     </message>
     <message>
         <source>Days</source>
-        <translation type="unfinished"></translation>
+        <translation>Dagar</translation>
     </message>
 </context>
 <context>
@@ -188,19 +186,19 @@
     </message>
     <message>
         <source>seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>sekúndur</translation>
     </message>
     <message>
         <source>minutes</source>
-        <translation type="unfinished"></translation>
+        <translation>mínútur</translation>
     </message>
     <message>
         <source>hours</source>
-        <translation type="unfinished"></translation>
+        <translation>klukkustundir</translation>
     </message>
     <message>
         <source>days</source>
-        <translation type="unfinished"></translation>
+        <translation>daga</translation>
     </message>
 </context>
 <context>
@@ -483,7 +481,7 @@
         <translation>Uppsetning grafglugga mistekst. Niðurstaða útreikninga er ekki hlaðinn rétt.</translation>
     </message>
     <message>
-        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm &quot;Create grid from from cross-section data&quot;&lt;/li&gt;&lt;/ul&gt;</source>
+        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm "Create grid from from cross-section data"&lt;/li&gt;&lt;/ul&gt;</source>
         <translation>Hægt er að nota þessa aðgerð þegar eftirfarandi skilyrðum er fullnægt: &lt;ul&gt; &lt;li&gt; Línurit fyrir tvívíða uppbyggða ristaniðurstöðu er teiknuð. &lt;/li&gt; &lt;li&gt; X-ás er I-átt í ristinni. &lt;/Li &gt; &lt;li&gt; Ristið er búið til með reikniritinu „Búið til rist úr þversniðsgögnum“ &lt;/li&gt; &lt;/ul&gt;</translation>
     </message>
 </context>
@@ -578,7 +576,7 @@
         <translation>Villa</translation>
     </message>
     <message>
-        <source>The title of the first column has to be &quot;X&quot;</source>
+        <source>The title of the first column has to be "X"</source>
         <translation>Titill fyrsta dálksins verður að vera „X“</translation>
     </message>
     <message>
@@ -627,7 +625,7 @@
         <translation>Villa</translation>
     </message>
     <message>
-        <source>The title of the first column has to be &quot;X&quot;</source>
+        <source>The title of the first column has to be "X"</source>
         <translation>Titill fyrsta dálksins verður að vera „X“</translation>
     </message>
     <message>

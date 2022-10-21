@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="hi_IN">
 <context>
     <name>Graph2dHybridSettingDialog</name>
@@ -101,19 +99,19 @@
     </message>
     <message>
         <source>Seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>सेकंड</translation>
     </message>
     <message>
         <source>Minutes</source>
-        <translation type="unfinished"></translation>
+        <translation>मिनट</translation>
     </message>
     <message>
         <source>Hours</source>
-        <translation type="unfinished"></translation>
+        <translation>घंटे</translation>
     </message>
     <message>
         <source>Days</source>
-        <translation type="unfinished"></translation>
+        <translation>दिन</translation>
     </message>
 </context>
 <context>
@@ -188,19 +186,19 @@
     </message>
     <message>
         <source>seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>सेकंड</translation>
     </message>
     <message>
         <source>minutes</source>
-        <translation type="unfinished"></translation>
+        <translation>मिनट</translation>
     </message>
     <message>
         <source>hours</source>
-        <translation type="unfinished"></translation>
+        <translation>घंटे</translation>
     </message>
     <message>
         <source>days</source>
-        <translation type="unfinished"></translation>
+        <translation>दिन</translation>
     </message>
 </context>
 <context>
@@ -483,8 +481,8 @@
         <translation>ग्राफ़ विंडो सेटअप विफल। गणना परिणाम ठीक से लोड नहीं होता है।</translation>
     </message>
     <message>
-        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm &quot;Create grid from from cross-section data&quot;&lt;/li&gt;&lt;/ul&gt;</source>
-        <translation>निम्न स्थितियों के संतुष्ट होने पर इस फ़ंक्शन का उपयोग किया जा सकता है: &lt;ul&gt;&lt;li&gt;द्वि-आयामी संरचित ग्रिड परिणाम के लिए ग्राफ़ तैयार किया गया है।&lt;/li&gt;&lt;li&gt;X-अक्ष ग्रिड में I-दिशा है।&lt;/li &gt;&lt;li&gt;ग्रिड को &quot;क्रॉस-सेक्शन डेटा से ग्रिड बनाएं&quot; एल्गोरिथम का उपयोग करके बनाया गया है&lt;/li&gt;&lt;/ul&gt;</translation>
+        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm "Create grid from from cross-section data"&lt;/li&gt;&lt;/ul&gt;</source>
+        <translation>निम्न स्थितियों के संतुष्ट होने पर इस फ़ंक्शन का उपयोग किया जा सकता है: &lt;ul&gt;&lt;li&gt;द्वि-आयामी संरचित ग्रिड परिणाम के लिए ग्राफ़ तैयार किया गया है।&lt;/li&gt;&lt;li&gt;X-अक्ष ग्रिड में I-दिशा है।&lt;/li &gt;&lt;li&gt;ग्रिड को "क्रॉस-सेक्शन डेटा से ग्रिड बनाएं" एल्गोरिथम का उपयोग करके बनाया गया है&lt;/li&gt;&lt;/ul&gt;</translation>
     </message>
 </context>
 <context>
@@ -578,8 +576,8 @@
         <translation>त्रुटि</translation>
     </message>
     <message>
-        <source>The title of the first column has to be &quot;X&quot;</source>
-        <translation>पहले कॉलम का शीर्षक &quot;X&quot; होना चाहिए</translation>
+        <source>The title of the first column has to be "X"</source>
+        <translation>पहले कॉलम का शीर्षक "X" होना चाहिए</translation>
     </message>
     <message>
         <source>The number of data of %1 and %2 mismatch. Data %1 is skipped.</source>
@@ -627,8 +625,8 @@
         <translation>त्रुटि</translation>
     </message>
     <message>
-        <source>The title of the first column has to be &quot;X&quot;</source>
-        <translation>पहले कॉलम का शीर्षक &quot;X&quot; होना चाहिए</translation>
+        <source>The title of the first column has to be "X"</source>
+        <translation>पहले कॉलम का शीर्षक "X" होना चाहिए</translation>
     </message>
     <message>
         <source>Warning</source>

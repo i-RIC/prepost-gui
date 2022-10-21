@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="cs_CZ">
 <context>
     <name>Graph2dHybridSettingDialog</name>
@@ -101,19 +99,19 @@
     </message>
     <message>
         <source>Seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>Sekundy</translation>
     </message>
     <message>
         <source>Minutes</source>
-        <translation type="unfinished"></translation>
+        <translation>Minut</translation>
     </message>
     <message>
         <source>Hours</source>
-        <translation type="unfinished"></translation>
+        <translation>hodiny</translation>
     </message>
     <message>
         <source>Days</source>
-        <translation type="unfinished"></translation>
+        <translation>Dny</translation>
     </message>
 </context>
 <context>
@@ -188,19 +186,19 @@
     </message>
     <message>
         <source>seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>sekundy</translation>
     </message>
     <message>
         <source>minutes</source>
-        <translation type="unfinished"></translation>
+        <translation>minut</translation>
     </message>
     <message>
         <source>hours</source>
-        <translation type="unfinished"></translation>
+        <translation>hodin</translation>
     </message>
     <message>
         <source>days</source>
-        <translation type="unfinished"></translation>
+        <translation>dní</translation>
     </message>
 </context>
 <context>
@@ -483,7 +481,7 @@
         <translation>Nastavení okna grafu se nezdařilo. Výsledek výpočtu není správně načten.</translation>
     </message>
     <message>
-        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm &quot;Create grid from from cross-section data&quot;&lt;/li&gt;&lt;/ul&gt;</source>
+        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm "Create grid from from cross-section data"&lt;/li&gt;&lt;/ul&gt;</source>
         <translation>Tuto funkci lze použít, pokud jsou splněny následující podmínky: &lt;ul&gt; &lt;li&gt; Výsledek je vykreslen pro výsledek dvourozměrné strukturované mřížky. &lt;/li&gt; &lt;li&gt; Osa X je v mřížce směr I. &lt;/Li &gt; &lt;li&gt; Mřížka je vytvořena pomocí algoritmu „Vytvořit mřížku z dat průřezu“ &lt;/li&gt; &lt;/ul&gt;</translation>
     </message>
 </context>
@@ -578,7 +576,7 @@
         <translation>Chyba</translation>
     </message>
     <message>
-        <source>The title of the first column has to be &quot;X&quot;</source>
+        <source>The title of the first column has to be "X"</source>
         <translation>Název prvního sloupce musí být „X“</translation>
     </message>
     <message>
@@ -627,7 +625,7 @@
         <translation>Chyba</translation>
     </message>
     <message>
-        <source>The title of the first column has to be &quot;X&quot;</source>
+        <source>The title of the first column has to be "X"</source>
         <translation>Název prvního sloupce musí být „X“</translation>
     </message>
     <message>
