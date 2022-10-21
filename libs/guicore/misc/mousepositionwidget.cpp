@@ -24,6 +24,9 @@ void MousePositionWidget::setProjectData(ProjectData* data)
 
 void MousePositionWidget::updatePosition(const QPointF& position)
 {
+	QSettings settings;
+	auto decimals = settings.value("textformat/statusbarcoordsdecimal", 6).toInt();
+
 	double x = position.x();
 	double y = position.y();
 	if (m_projectData != nullptr) {
@@ -32,8 +35,8 @@ void MousePositionWidget::updatePosition(const QPointF& position)
 		y += offset.y();
 	}
 
-	ui->labelX->setText(QString("X: %1").arg(x, 0, 'g', 20));
-	ui->labelY->setText(QString("Y: %1").arg(y, 0, 'g', 20));
+	ui->labelX->setText(QString("X: %1").arg(x, 0, 'f', decimals));
+	ui->labelY->setText(QString("Y: %1").arg(y, 0, 'f', decimals));
 }
 
 void MousePositionWidget::clear()
