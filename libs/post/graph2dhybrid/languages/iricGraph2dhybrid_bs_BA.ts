@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="bs_BA">
 <context>
     <name>Graph2dHybridSettingDialog</name>
@@ -97,6 +99,22 @@
         <source>Right Y-axes range is invalid.</source>
         <translation>Raspon desnih osi Y je nevažeći.</translation>
     </message>
+    <message>
+        <source>Seconds</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Minutes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hours</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Days</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Graph2dHybridWindow</name>
@@ -167,6 +185,22 @@
     <message>
         <source>Lines</source>
         <translation>Linije</translation>
+    </message>
+    <message>
+        <source>seconds</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>minutes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>hours</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>days</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -449,8 +483,8 @@
         <translation>Postavljanje grafičkog prozora nije uspjelo. Rezultat proračuna nije pravilno učitan.</translation>
     </message>
     <message>
-        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm "Create grid from from cross-section data"&lt;/li&gt;&lt;/ul&gt;</source>
-        <translation>Ova funkcija se može koristiti ako su ispunjeni sljedeći uvjeti: &lt;ul&gt; &lt;li&gt; Crta se grafikon za rezultat dvodimenzionalne strukturirane mreže. &lt;/li&gt; &lt;li&gt; Os X je I-smjer u mreži. &lt;/Li &gt; &lt;li&gt; Mreža je stvorena pomoću algoritma "Kreiraj mrežu iz podataka presjeka" &lt;/li&gt; &lt;/ul&gt;</translation>
+        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm &quot;Create grid from from cross-section data&quot;&lt;/li&gt;&lt;/ul&gt;</source>
+        <translation>Ova funkcija se može koristiti ako su ispunjeni sljedeći uvjeti: &lt;ul&gt; &lt;li&gt; Crta se grafikon za rezultat dvodimenzionalne strukturirane mreže. &lt;/li&gt; &lt;li&gt; Os X je I-smjer u mreži. &lt;/Li &gt; &lt;li&gt; Mreža je stvorena pomoću algoritma &quot;Kreiraj mrežu iz podataka presjeka&quot; &lt;/li&gt; &lt;/ul&gt;</translation>
     </message>
 </context>
 <context>
@@ -544,8 +578,8 @@
         <translation>Greška</translation>
     </message>
     <message>
-        <source>The title of the first column has to be "X"</source>
-        <translation>Naslov prve kolone mora biti "X"</translation>
+        <source>The title of the first column has to be &quot;X&quot;</source>
+        <translation>Naslov prve kolone mora biti &quot;X&quot;</translation>
     </message>
     <message>
         <source>The number of data of %1 and %2 mismatch. Data %1 is skipped.</source>
@@ -593,8 +627,8 @@
         <translation>Greška</translation>
     </message>
     <message>
-        <source>The title of the first column has to be "X"</source>
-        <translation>Naslov prve kolone mora biti "X"</translation>
+        <source>The title of the first column has to be &quot;X&quot;</source>
+        <translation>Naslov prve kolone mora biti &quot;X&quot;</translation>
     </message>
     <message>
         <source>Warning</source>

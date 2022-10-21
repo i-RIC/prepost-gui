@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="fi_FI">
 <context>
     <name>Graph2dHybridSettingDialog</name>
@@ -97,6 +99,22 @@
         <source>Right Y-axes range is invalid.</source>
         <translation>Oikean Y-akselin alue on virheellinen.</translation>
     </message>
+    <message>
+        <source>Seconds</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Minutes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hours</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Days</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Graph2dHybridWindow</name>
@@ -167,6 +185,22 @@
     <message>
         <source>Lines</source>
         <translation>Rivit</translation>
+    </message>
+    <message>
+        <source>seconds</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>minutes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>hours</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>days</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -449,8 +483,8 @@
         <translation>Kuvaajaikkunan asennus epäonnistui. Laskutulosta ei ole ladattu oikein.</translation>
     </message>
     <message>
-        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm "Create grid from from cross-section data"&lt;/li&gt;&lt;/ul&gt;</source>
-        <translation>Tätä toimintoa voidaan käyttää, kun seuraavat ehdot täyttyvät: &lt;ul&gt; &lt;li&gt; Kaavio kaksiulotteisesta strukturoidusta ruudukon tuloksesta piirretään. &lt;/li&gt; &lt;li&gt; X-akseli on ruudukon I-suunta. &lt;/Li &gt; &lt;li&gt; Ruudukko luodaan algoritmilla "Luo ruudukko poikkileikkaustiedoista" &lt;/li&gt; &lt;/ul&gt;</translation>
+        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm &quot;Create grid from from cross-section data&quot;&lt;/li&gt;&lt;/ul&gt;</source>
+        <translation>Tätä toimintoa voidaan käyttää, kun seuraavat ehdot täyttyvät: &lt;ul&gt; &lt;li&gt; Kaavio kaksiulotteisesta strukturoidusta ruudukon tuloksesta piirretään. &lt;/li&gt; &lt;li&gt; X-akseli on ruudukon I-suunta. &lt;/Li &gt; &lt;li&gt; Ruudukko luodaan algoritmilla &quot;Luo ruudukko poikkileikkaustiedoista&quot; &lt;/li&gt; &lt;/ul&gt;</translation>
     </message>
 </context>
 <context>
@@ -544,8 +578,8 @@
         <translation>Virhe</translation>
     </message>
     <message>
-        <source>The title of the first column has to be "X"</source>
-        <translation>Ensimmäisen sarakkeen otsikon on oltava "X"</translation>
+        <source>The title of the first column has to be &quot;X&quot;</source>
+        <translation>Ensimmäisen sarakkeen otsikon on oltava &quot;X&quot;</translation>
     </message>
     <message>
         <source>The number of data of %1 and %2 mismatch. Data %1 is skipped.</source>
@@ -593,8 +627,8 @@
         <translation>Virhe</translation>
     </message>
     <message>
-        <source>The title of the first column has to be "X"</source>
-        <translation>Ensimmäisen sarakkeen otsikon on oltava "X"</translation>
+        <source>The title of the first column has to be &quot;X&quot;</source>
+        <translation>Ensimmäisen sarakkeen otsikon on oltava &quot;X&quot;</translation>
     </message>
     <message>
         <source>Warning</source>
