@@ -22,12 +22,20 @@
      <property name="elideMode">
       <enum>Qt::ElideNone</enum>
      </property>
+     <property name="documentMode">
+      <bool>false</bool>
+     </property>
      <widget class="PreferencePageGeneral" name="generalTab">
       <property name="accessibleName">
        <string/>
       </property>
       <attribute name="title">
        <string>General</string>
+      </attribute>
+     </widget>
+     <widget class="PreferencePageTextFormat" name="textFormatTab">
+      <attribute name="title">
+       <string>Text Format</string>
       </attribute>
      </widget>
      <widget class="PreferencePageGraphicsDefault" name="graphicsTab">
@@ -84,6 +92,12 @@
    <class>PreferencePageGeneral</class>
    <extends>QWidget</extends>
    <header>pref/preferencepagegeneral.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>PreferencePageTextFormat</class>
+   <extends>QWidget</extends>
+   <header>pref/preferencepagetextformat.h</header>
    <container>1</container>
   </customwidget>
   <customwidget>
