@@ -17,7 +17,7 @@ ObjectBrowserView::ObjectBrowserView(QWidget* parent) :
 	m_isPushing = false;
 	m_commandExecution = false;
 
-	m_addAction = new QAction(QIcon(":/libs/guibase/images/iconProperty.svg"),tr("&Add..."), this);
+	m_addAction = new QAction(QIcon(":/libs/guibase/images/iconNew.svg"),tr("&Add..."), this);
 	connect(m_addAction, SIGNAL(triggered()), this, SLOT(showAddForCurrentItem()));
 
 	m_deleteAction = new QAction(QIcon(":/libs/guibase/images/iconDeleteItem.svg"),tr("&Delete..."), this);

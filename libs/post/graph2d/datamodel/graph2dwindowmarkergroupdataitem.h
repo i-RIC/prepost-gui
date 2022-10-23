@@ -5,13 +5,13 @@
 #include "../graph2dwindowdataitem.h"
 #include "../graph2dwindowmarkersetting.h"
 #include "../graph2dwindowdatamodel.h"
+
 #include <QList>
 #include <QMap>
 
 class QAction;
 class SolverDefinitionGridType;
 class Post2dWindowZoneDataItem;
-class LookupTableContainer;
 class Graph2dPositionWindowHorizontalAxisSetting;
 class ColorSource;
 

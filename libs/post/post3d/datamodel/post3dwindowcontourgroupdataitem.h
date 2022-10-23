@@ -1,80 +1,63 @@
 #ifndef POST3DWINDOWCONTOURGROUPDATAITEM_H
 #define POST3DWINDOWCONTOURGROUPDATAITEM_H
 
+#include "../post3dwindowfacesettingcontainer.h"
 #include "../post3dwindowdataitem.h"
-#include <guibase/scalarbarsetting.h>
-#include <guibase/vtktextpropertysettingcontainer.h>
 
-#include <guibase/scalarsettingcontainer.h>
-#include <guibase/widget/contoursettingwidget.h>
-#include <guicore/scalarstocolors/lookuptablecontainer.h>
-#include "post3dwindowfacedataitem.h"
+#include <guicore/scalarstocolors/colormapsettingcontainer.h>
 
-#include <vtkScalarBarWidget.h>
+#include <string>
 
-#include <QMap>
-#include <QString>
-
-class vtkActor;
-class vtkAlgorithmOutput;
-class LookupTableContainer;
-
+class Post3dWindowZoneDataItem;
+class PostZoneDataContainer;
+class ValueRangeContainer;
 
 class Post3dWindowContourGroupDataItem : public Post3dWindowDataItem
 {
-	Q_OBJECT
-
-private:
-	static const int DEFAULT_NUMOFDIV = 15;
-
 public:
-	Post3dWindowContourGroupDataItem(Post3dWindowDataItem* parent);
+	Post3dWindowContourGroupDataItem(const std::string& target, Post3dWindowDataItem* p);
 	~Post3dWindowContourGroupDataItem();
 
-	const ScalarSettingContainer& scalarSetting() const;
-	LookupTableContainer* lookupTable();
-
-	QMap<QString, Post3dWindowFaceDataItem::Setting> faceMap() const;
-	void setFaceMap(const QMap<QString, Post3dWindowFaceDataItem::Setting>& map, QString target);
-
-	void updateChildActors();
-	vtkActor* setupActorAndMapper(vtkPolyData* data);
-
-	void setupScalarBarActor();
-	void updateScalarBarActorSetting();
 	void update();
+
+	const std::string& target() const;
+
+public slots:
+	void showPropertyDialog() override;
+
+private:
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+
+	QDialog* propertyDialog(QWidget* p) override;
+
+	void updateActorSettings();
+
+	const ValueRangeContainer& valueRange() const;
+	Post3dWindowZoneDataItem* zoneDataItem() const;
+	PostZoneDataContainer* data() const;
+
+	std::vector<Post3dWindowFaceSettingContainer> faces() const;
+	void setFaces(const std::vector<Post3dWindowFaceSettingContainer>& ranges);
+
 	void informSelection(VTKGraphicsView* v) override;
 	void informDeselection(VTKGraphicsView* v) override;
 	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
+	void doHandleResize(VTKGraphicsView* v) override;
 
-protected:
-	void doLoadFromProjectMainFile(const QDomNode&) override;
-	void doSaveToProjectMainFile(QXmlStreamWriter&) override;
-	QDialog* propertyDialog(QWidget* p) override;
-	void handlePropertyDialogAccepted(QDialog* propDialog) override;
-	void updateVisibility(bool visible) override;
-	void innerUpdateZScale(double scale) override;
-	void undoCommands(QDialog* propDialog, QUndoCommand* parent);
+	std::string m_target;
 
-private:
-	ScalarSettingContainer m_scalarSetting;
+	ColorMapSettingContainer m_colorMapSetting;
+	vtkActor2D* m_legendActor;
 
-	void saveContourToProjectMainFile(QXmlStreamWriter& writer);
-	void loadContourFromProjectMainFile(const QDomNode& node);
-	vtkActor* setupIsolinesActorAndMapper(vtkPolyData* data);
-	vtkActor* setupContourFigureActorAndMapper(vtkPolyData* data);
-	vtkActor* setupColorFringeActorAndMapper(vtkPolyData* data);
-
-	vtkSmartPointer<vtkScalarBarWidget> m_scalarBarWidget;
-	double m_zScale;
-
-	class SetSettingCommand;
+	class PropertyDialog;
+	class SetFacesCommand;
+	class UpdateActorSettingsCommand;
 
 public:
-	friend class Post3dWindowContourGroupSetFaceMap;
-	friend class Post3dWindowContourGroupTopDataItem;
+	friend class Post3dWindowContourDataItem;
 };
 
 #endif // POST3DWINDOWCONTOURGROUPDATAITEM_H

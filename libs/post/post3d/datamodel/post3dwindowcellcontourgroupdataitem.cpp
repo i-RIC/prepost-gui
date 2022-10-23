@@ -1,88 +1,65 @@
+#include "../post3dwindowgraphicsview.h"
 #include "post3dwindowcellcontourdataitem.h"
-#include "post3dwindowcellcontourgroupsettingdialog.h"
-#include "post3dwindowcellcontourgrouptopdataitem.h"
 #include "post3dwindowcellcontourgroupdataitem.h"
+#include "post3dwindowcellcontourgrouptopdataitem.h"
 #include "post3dwindowgridtypedataitem.h"
 #include "post3dwindowzonedataitem.h"
-#include "private/post3dwindowcellcontourgroupdataitem_setsettingcommand.h"
+#include "private/post3dwindowcellcontourgroupdataitem_propertydialog.h"
 
-#include <guibase/graphicsmisc.h>
 #include <guibase/objectbrowserview.h>
-#include <guibase/vtkCustomScalarBarActor.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
-#include <guicore/scalarstocolors/lookuptablecontainer.h>
-#include <misc/stringtool.h>
+#include <guicore/scalarstocolors/colormapsettingcontainer.h>
+#include <guicore/solverdef/solverdefinitiongridtype.h>
+#include <guicore/solverdef/solverdefinitionoutput.h>
 
-#include <QDomNodeList>
-#include <QStandardItem>
-#include <QXmlStreamWriter>
+#include <vtkActor2D.h>
 
-#include <vtkScalarBarWidget.h>
-#include <vtkRenderer.h>
-#include <vtkRenderWindow.h>
-
-Post3dWindowCellContourGroupDataItem::Post3dWindowCellContourGroupDataItem(Post3dWindowDataItem* p) :
-	Post3dWindowDataItem {"", QIcon(":/libs/guibase/images/iconFolder.svg"), p}
+Post3dWindowCellContourGroupDataItem::Post3dWindowCellContourGroupDataItem(const std::string& target, Post3dWindowDataItem* p) :
+	Post3dWindowDataItem {"", QIcon(":/libs/guibase/images/iconFolder.svg"), p},
+	m_target {target},
+	m_colorMapSetting {},
+	m_legendActor {vtkActor2D::New()}
 {
 	setupStandardItem(Checked, NotReorderable, Deletable);
 
-	setupScalarBarActor();
+	renderer()->AddActor2D(m_legendActor);
+
+	m_colorMapSetting.legend.imageSetting.setActor(m_legendActor);
+	m_colorMapSetting.legend.imageSetting.controller()->setItem(this);
+	m_colorMapSetting.legend.title = data()->gridType()->output(target)->caption();
+	m_colorMapSetting.legend.visibilityMode = ColorMapLegendSettingContainer::VisibilityMode::Always;
+	m_colorMapSetting.setAutoValueRange(valueRange());
+
+	auto gType = zoneDataItem()->gridTypeDataItem()->gridType();
+	m_standardItem->setText(gType->solutionCaption(m_target));
+
+	informSelection(dataModel()->graphicsView());
 }
 
 Post3dWindowCellContourGroupDataItem::~Post3dWindowCellContourGroupDataItem()
 {
-	m_scalarBarWidget->SetInteractor(nullptr);
-	m_scalarBarWidget->Delete();
-}
-
-void Post3dWindowCellContourGroupDataItem::setSetting(const ScalarSettingContainer& scalarSetting, const std::vector<Post3dCellRangeSettingContainer>& rangeSettings)
-{
-	clearChildItems();
-
-	auto tItem = dynamic_cast<Post3dWindowCellContourGroupTopDataItem*> (parent());
-	m_setting = scalarSetting;
-
-	int idx = 1;
-	for (auto rs : rangeSettings) {
-		auto label = tr("Range%1").arg(idx);
-		auto item = new Post3dWindowCellContourDataItem(label, this);
-		item->setSetting(rs);
-		item->updateZScale(tItem->zScale());
-
-		m_childItems.push_back(item);
-		++ idx;
-	}
-
-	updateItemMap();
-	updateActorSettings();
-
-	ObjectBrowserView* oview = dataModel()->objectBrowserView();
-	oview->expand(standardItem()->index());
-}
-
-const ScalarSettingContainer& Post3dWindowCellContourGroupDataItem::setting() const
-{
-	return m_setting;
+	renderer()->RemoveActor2D(m_legendActor);
+	m_legendActor->Delete();
 }
 
 void Post3dWindowCellContourGroupDataItem::update()
 {
-	for (auto c : m_childItems) {
-		auto item = dynamic_cast<Post3dWindowCellContourDataItem*> (c);
-		item->update();
-	}
+	updateActorSettings();
 }
 
-LookupTableContainer* Post3dWindowCellContourGroupDataItem::lookupTable() const
+const std::string& Post3dWindowCellContourGroupDataItem::target() const
 {
-	auto gtItem = dynamic_cast<Post3dWindowGridTypeDataItem*>(parent()->parent()->parent());
-	return gtItem->cellLookupTable(iRIC::toStr(m_setting.target));
+	return m_target;
+}
+
+void Post3dWindowCellContourGroupDataItem::showPropertyDialog()
+{
+	showPropertyDialogModeless();
 }
 
 void Post3dWindowCellContourGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
-	m_setting.load(node);
-	m_setting.scalarBarSetting.saveToRepresentation(m_scalarBarWidget->GetScalarBarRepresentation());
+	m_colorMapSetting.load(node);
 
 	QDomNodeList children = node.childNodes();
 	for (int i = 0; i < children.count(); ++i) {
@@ -95,15 +72,12 @@ void Post3dWindowCellContourGroupDataItem::doLoadFromProjectMainFile(const QDomN
 		}
 	}
 
-	update();
-	updateScalarBarActorSetting();
+	updateActorSettings();
 }
 
 void Post3dWindowCellContourGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	m_setting.scalarBarSetting.loadFromRepresentation(m_scalarBarWidget->GetScalarBarRepresentation());
-
-	m_setting.save(writer);
+	m_colorMapSetting.save(writer);
 
 	for (int i = 0; i < m_childItems.size(); ++i) {
 		auto fitem = dynamic_cast<Post3dWindowCellContourDataItem*>(m_childItems.at(i));
@@ -115,78 +89,98 @@ void Post3dWindowCellContourGroupDataItem::doSaveToProjectMainFile(QXmlStreamWri
 
 QDialog* Post3dWindowCellContourGroupDataItem::propertyDialog(QWidget* p)
 {
-	auto gtItem = dynamic_cast<Post3dWindowGridTypeDataItem*>(parent()->parent()->parent());
-	auto tItem = dynamic_cast<Post3dWindowCellContourGroupTopDataItem*> (parent());
-	auto zoneData = dynamic_cast<Post3dWindowZoneDataItem*>(parent()->parent())->dataContainer();
-	if (zoneData == nullptr) {return nullptr;}
-	if (zoneData->data() == nullptr) {return nullptr;}
-
-	std::vector<Post3dCellRangeSettingContainer> rangeSettings;
-	for (auto c : m_childItems) {
-		auto c2 = dynamic_cast<Post3dWindowCellContourDataItem*> (c);
-		rangeSettings.push_back(c2->setting());
-	}
-
-	auto dialog = new Post3dWindowCellContourGroupSettingDialog(p);
-	dialog->setGridTypeDataItem(gtItem);
-	dialog->setZoneData(zoneData);
-	auto *lookupTable = gtItem->cellLookupTable(iRIC::toStr(m_setting.target));
-	dialog->setLookupTable(*lookupTable);
-	dialog->setScalarSetting(m_setting);
-	dialog->setRangeSettings(rangeSettings);
-	dialog->setColorBarTitleMap(tItem->m_colorBarTitleMap);
-
-	return dialog;
-}
-
-void Post3dWindowCellContourGroupDataItem::handlePropertyDialogAccepted(QDialog* propDialog)
-{
-	auto dialog = dynamic_cast<Post3dWindowCellContourGroupSettingDialog*> (propDialog);
-	auto scalarSetting = dialog->scalarSetting();
-	auto rangeSettings = dialog->rangeSettings();
-	auto lookupTable = dialog->lookupTable();
-	auto scalarBarTitle = dialog->scalarBarTitle();
-
-	pushRenderCommand(new SetSettingCommand(scalarSetting, rangeSettings, lookupTable, scalarBarTitle, this), this);
+	return new PropertyDialog(this, p);
 }
 
 void Post3dWindowCellContourGroupDataItem::updateActorSettings()
 {
-	updateScalarBarActorSetting();
+	m_colorMapSetting.setAutoValueRange(valueRange());
+	m_colorMapSetting.legend.imageSetting.apply(dataModel()->graphicsView());
+
+	for (auto child : m_childItems) {
+		auto item = dynamic_cast<Post3dWindowCellContourDataItem*> (child);
+		item->update();
+	}
+	updateVisibilityWithoutRendering();
 }
 
-void Post3dWindowCellContourGroupDataItem::setupScalarBarActor()
+const ValueRangeContainer& Post3dWindowCellContourGroupDataItem::valueRange() const
 {
-	vtkRenderWindowInteractor* iren = renderer()->GetRenderWindow()->GetInteractor();
-
-	m_scalarBarWidget = vtkScalarBarWidget::New();
-	m_scalarBarWidget->SetScalarBarActor(vtkCustomScalarBarActor::New());
-	iRIC::setupScalarBarProperty(m_scalarBarWidget->GetScalarBarActor());
-	m_scalarBarWidget->SetEnabled(0);
-	m_scalarBarWidget->SetInteractor(iren);
-
-	m_setting.scalarBarSetting.saveToRepresentation(m_scalarBarWidget->GetScalarBarRepresentation());
-	updateScalarBarActorSetting();
+	auto gtItem = dynamic_cast<Post3dWindowGridTypeDataItem*>(parent()->parent()->parent());
+	return gtItem->cellValueRange(m_target);
 }
 
-void Post3dWindowCellContourGroupDataItem::updateScalarBarActorSetting()
+Post3dWindowZoneDataItem* Post3dWindowCellContourGroupDataItem::zoneDataItem() const
 {
-	auto lookup = lookupTable();
-	if (lookup == nullptr) {return;}
+	return dynamic_cast<Post3dWindowZoneDataItem*>(parent()->parent());
+}
 
-	auto a = m_scalarBarWidget->GetScalarBarActor();
-	std::string targetStr = iRIC::toStr(m_setting.target);
+PostZoneDataContainer* Post3dWindowCellContourGroupDataItem::data() const
+{
+	return zoneDataItem()->dataContainer();
+}
 
-	auto topitem = dynamic_cast<Post3dWindowCellContourGroupTopDataItem*>(parent());
-	a->SetTitle(iRIC::toStr(topitem->m_colorBarTitleMap.value(targetStr)).c_str());
-	a->SetLookupTable(lookup->vtkObj());
+std::vector<Post3dWindowCellRangeSettingContainer> Post3dWindowCellContourGroupDataItem::ranges() const
+{
+	std::vector<Post3dWindowCellRangeSettingContainer> ret;
 
-	m_standardItem->setText(topitem->m_colorBarTitleMap.value(targetStr));
+	for (auto item : m_childItems) {
+		auto rangeItem = dynamic_cast<Post3dWindowCellContourDataItem*> (item);
+		ret.push_back(rangeItem->setting());
+	}
 
-	auto& s = m_setting.scalarBarSetting;
+	return ret;
+}
 
-	a->SetNumberOfLabels(s.numberOfLabels);
-	s.titleTextSetting.applySetting(a->GetTitleTextProperty());
-	s.labelTextSetting.applySetting(a->GetLabelTextProperty());
-	a->SetMaximumNumberOfColors(256);
+void Post3dWindowCellContourGroupDataItem::setRanges(const std::vector<Post3dWindowCellRangeSettingContainer>& ranges)
+{
+	clearChildItems();
+	updateItemMap();
+
+	auto tItem = dynamic_cast<Post3dWindowCellContourGroupTopDataItem*> (parent());
+	int idx = 1;
+	for (const auto& range : ranges) {
+		auto label = tr("Range%1").arg(idx);
+		auto item = new Post3dWindowCellContourDataItem(label, this);
+		item->setSetting(range);
+		item->updateZScale(tItem->zScale());
+
+		m_childItems.push_back(item);
+		++ idx;
+	}
+
+	updateItemMap();
+
+	auto oview = dataModel()->objectBrowserView();
+	oview->expand(standardItem()->index());
+}
+
+void Post3dWindowCellContourGroupDataItem::informSelection(VTKGraphicsView* v)
+{
+	m_colorMapSetting.legend.imageSetting.controller()->handleSelection(v);
+}
+
+void Post3dWindowCellContourGroupDataItem::informDeselection(VTKGraphicsView* v)
+{
+	m_colorMapSetting.legend.imageSetting.controller()->handleDeselection(v);
+}
+
+void Post3dWindowCellContourGroupDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
+{
+	m_colorMapSetting.legend.imageSetting.controller()->handleMouseMoveEvent(event, v);
+}
+
+void Post3dWindowCellContourGroupDataItem::mousePressEvent(QMouseEvent* event, VTKGraphicsView* v)
+{
+	m_colorMapSetting.legend.imageSetting.controller()->handleMousePressEvent(event, v);
+}
+
+void Post3dWindowCellContourGroupDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
+{
+	m_colorMapSetting.legend.imageSetting.controller()->handleMouseReleaseEvent(event, v);
+}
+
+void Post3dWindowCellContourGroupDataItem::doHandleResize(VTKGraphicsView* v)
+{
+	m_colorMapSetting.legend.imageSetting.controller()->handleResize(v);
 }

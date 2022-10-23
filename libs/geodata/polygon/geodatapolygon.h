@@ -160,7 +160,6 @@ private:
 	QList<GeoDataPolygonHolePolygon*>& holePolygons();
 
 	vtkActor* paintActor() const;
-	vtkMapper* paintMapper() const;
 
 	QAction* addVertexAction() const;
 	QAction* removeVertexAction() const;

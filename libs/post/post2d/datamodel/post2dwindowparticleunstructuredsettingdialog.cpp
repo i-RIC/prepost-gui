@@ -308,7 +308,7 @@ void Post2dWindowParticleUnstructuredSettingDialog::setupNominations()
 
 void Post2dWindowParticleUnstructuredSettingDialog::setupSolutionComboBox(PostZoneDataContainer* zoneData)
 {
-	vtkPointData* pd = zoneData->data()->GetPointData();
+	vtkPointData* pd = zoneData->data()->data()->GetPointData();
 
 	m_solutions = vtkDataSetAttributesTool::getArrayNamesWithMultipleComponents(pd);
 	ComboBoxTool::setupItems(m_solutions, ui->solutionComboBox);

@@ -2,93 +2,87 @@
 #define POST2DBIRDEYEWINDOWNODESCALARGROUPDATAITEM_H
 
 #include "../post2dbirdeyewindowdataitem.h"
-#include "post2dbirdeyewindowcontoursetting.h"
 
-#include <guibase/widget/contoursettingwidget.h>
-#include <guibase/scalarbarsetting.h>
-#include <guibase/vtktextpropertysettingcontainer.h>
-#include <guibase/structuredgridregion.h>
+#include <guicore/scalarstocolors/colormapsettingcontainer.h>
+#include <guicore/region/region2dsettingcontainer.h>
+#include <misc/compositecontainer.h>
+#include <misc/opacitycontainer.h>
 
-#include <QMap>
+#include <unordered_map>
 
-#include <vtkPolyData.h>
-#include <vtkSmartPointer.h>
-#include <vtkWarpScalar.h>
-#include <vtkLODActor.h>
-#include <vtkScalarBarWidget.h>
-
-class NamedGraphicWindowDataItem;
 class Post2dBirdEyeWindowNodeScalarDataItem;
+class Post2dBirdEyeWindowNodeScalarGroupTopDataItem;
+
 class vtkActor;
-class vtkDataSetMapper;
-class vtkPolyDataMapper;
-class vtkContourFilter;
+class vtkActor2D;
 
 class Post2dBirdEyeWindowNodeScalarGroupDataItem : public Post2dBirdEyeWindowDataItem
 {
 	Q_OBJECT
 
-private:
-	static const int DEFAULT_NUMOFDIV = 15;
-
 public:
-	Post2dBirdEyeWindowNodeScalarGroupDataItem(Post2dBirdEyeWindowDataItem* parent, CheckFlag cflag, ReorderFlag rflag, DeleteFlag dflag);
+	class Setting : public CompositeContainer {
+	public:
+		enum class ColorMode {
+			Custom,
+			ByScalar
+		};
+
+		Setting();
+		Setting(const Setting& setting);
+
+		Setting& operator=(const Setting& setting);
+		XmlAttributeContainer& operator=(const XmlAttributeContainer& c) override;
+
+		Region2dSettingContainer regionSetting;
+
+		EnumContainerT<ColorMode> colorMode;
+		ColorContainer customColor;
+		StringContainer colorTarget;
+
+		OpacityContainer opacity;
+	};
+
+	Post2dBirdEyeWindowNodeScalarGroupDataItem(const std::string& elevationTarget, Post2dBirdEyeWindowDataItem* parent);
 	~Post2dBirdEyeWindowNodeScalarGroupDataItem();
 
-	std::string elevationTarget() const;
-	void setElevationTarget(const std::string& target);
-
-	std::string target() const;
-	void setTarget(const std::string& target);
+	const std::string& elevationTarget() const;
 
 	void update();
+
+	void showPropertyDialog() override;
 	QDialog* propertyDialog(QWidget* parent) override;
-	void handlePropertyDialogAccepted(QDialog* propDialog) override;
-	void handleStandardItemChange() override;
+
 	void informSelection(VTKGraphicsView* v) override;
 	void informDeselection(VTKGraphicsView* v) override;
 	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
+	void doHandleResize(VTKGraphicsView* v) override;
 
-protected:
-	void updateVisibility(bool visible) override;
+private:
 	void innerUpdateZScale(double scale) override;
-	void undoCommands(QDialog* propDialog, QUndoCommand* parent);
 
 private:
 	void setupActors();
 	void updateActorSettings();
-	void createRangeClippedPolyData();
-	void createValueClippedPolyData();
-	void setupCustomColorSetting();
-	void setupIsolineSetting();
-	void setupColorContourSetting();
-	void setupColorFringeSetting();
-	void setupScalarBarSetting();
 
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
-	Post2dBirdEyeWindowContourSetting m_setting;
+	Post2dBirdEyeWindowNodeScalarGroupTopDataItem* topDataItem() const;
+	ColorMapSettingContainer* colorMapSetting(const std::string& name) const;
+	ColorMapSettingContainer* activeColorMapSetting() const;
 
-	vtkSmartPointer<vtkWarpScalar> m_warp;
-	vtkLODActor* m_contourActor;
-	vtkDataSetMapper* m_contourMapper;
-	vtkActor* m_isolineActor;
-	vtkPolyDataMapper* m_isolineMapper;
-	vtkContourFilter* m_isolineFilter;
-	vtkLODActor* m_fringeActor;
-	vtkDataSetMapper* m_fringeMapper;
-	vtkSmartPointer<vtkScalarBarWidget> m_scalarBarWidget;
-	vtkSmartPointer<vtkPolyData> m_regionClippedPolyData;
-	vtkSmartPointer<vtkPolyData> m_valueClippedPolyData;
-	vtkSmartPointer<vtkPolyData> m_colorContourPolyData;
+	std::string m_elevationTarget;
+	Setting m_setting;
 
-	class SetSettingCommand;
+	vtkActor* m_actor;
+	vtkActor2D* m_legendActor;
+	std::unordered_map<std::string, ColorMapSettingContainer*> m_colorMapSettings;
 
-public:
-	friend class Post2dBirdEyeWindowNodeScalarGroupTopDataItem;
+	class PropertyDialog;
+	class UpdateActorSettingsCommand;
 };
 
 #endif // POST2DBIRDEYEWINDOWNODESCALARGROUPDATAITEM_H

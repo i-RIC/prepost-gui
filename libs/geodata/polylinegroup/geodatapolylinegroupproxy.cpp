@@ -6,7 +6,6 @@
 #include "private/geodatapolylinegroupproxy_impl.h"
 #include "private/geodatapolylinegroupproxy_setsettingcommand.h"
 
-#include <guicore/scalarstocolors/scalarstocolorscontainer.h>
 #include <misc/zdepthrange.h>
 
 GeoDataPolyLineGroupProxy::GeoDataPolyLineGroupProxy(GeoDataPolyLineGroup* geodata) :
@@ -28,7 +27,7 @@ void GeoDataPolyLineGroupProxy::setupActors()
 
 	auto r = renderer();
 	auto col = actorCollection();
-
+	/*
 	auto stcc = lines->scalarsToColorsContainer();
 
 	auto mapper = dynamic_cast<vtkPolyDataMapper*> (impl->m_edgesActor->GetMapper());
@@ -37,6 +36,7 @@ void GeoDataPolyLineGroupProxy::setupActors()
 		mapper->SetLookupTable(stcc->vtkObj());
 		mapper->SetUseLookupTableScalarRange(true);
 	}
+	*/
 
 	r->AddActor(impl->m_edgesActor);
 	col->AddItem(impl->m_edgesActor);

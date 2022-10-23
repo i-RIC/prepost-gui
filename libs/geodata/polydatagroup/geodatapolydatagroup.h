@@ -48,6 +48,7 @@ public:
 	GeoDataPolyDataGroupCreator* creator() const;
 
 	bool getValueRange(double* min, double* max) override;
+	void applyColorMapSetting() override;
 	void updateFilename() override;
 	void addCustomMenuItems(QMenu* menu) override;
 	bool addToolBarButtons(QToolBar *parent) override;

@@ -23,6 +23,7 @@ class Post2dWindowEdgeIScalarGroupTopDataItem;
 class Post2dWindowEdgeJScalarGroupTopDataItem;
 class Post2dWindowGraphGroupDataItem;
 class Post2dWindowGridShapeDataItem;
+class Post2dWindowGridTypeDataItem;
 class Post2dWindowNodeScalarGroupTopDataItem;
 class Post2dWindowNodeVectorArrowGroupDataItem;
 class Post2dWindowNodeVectorStreamlineGroupDataItem;
@@ -56,6 +57,8 @@ public:
 	int zoneNumber() const;
 	std::string zoneName() const;
 	void update(bool noparticle = false);
+
+	Post2dWindowGridTypeDataItem* gridTypeDataItem() const;
 	Post2dWindowGridShapeDataItem* gridShapeDataItem() const;
 	Post2dWindowNodeScalarGroupTopDataItem* scalarGroupTopDataItem() const;
 	Post2dWindowNodeVectorArrowGroupDataItem* arrowGroupDataItem() const;

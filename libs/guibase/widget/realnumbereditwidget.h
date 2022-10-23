@@ -35,6 +35,8 @@ public:
 	void setMaximum(double max);
 	void clearMaximum();
 
+	void setAcceptEvents(bool accept);
+
 signals:
 	void valueChanged(double value);
 

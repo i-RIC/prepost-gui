@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ja_JP">
 <context>
     <name>Post2dBirdEyeObjectBrowser</name>
@@ -9,7 +11,7 @@
 <context>
     <name>Post2dBirdEyeWindow</name>
     <message>
-        <source>Bird's-Eye Post-processing (2D): %1</source>
+        <source>Bird&apos;s-Eye Post-processing (2D): %1</source>
         <translation>鳥瞰図可視化ウィンドウ (2D): %1</translation>
     </message>
     <message>
@@ -60,80 +62,80 @@
     <name>Post2dBirdEyeWindowAxesDataItem</name>
     <message>
         <source>Axes</source>
-        <translation>座標軸</translation>
+        <translation type="vanished">座標軸</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
-        <translation>スカラー</translation>
+        <translation type="vanished">スカラー</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
-        <translation>コンターの設定変更</translation>
+        <translation type="vanished">コンターの設定変更</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowCellScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (cell center)</source>
-        <translation>スカラー (セル中心)</translation>
+        <translation type="vanished">スカラー (セル中心)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>警告</translation>
+        <translation type="vanished">警告</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>コンターは最大で4つまでしか描画できません。</translation>
+        <translation type="vanished">コンターは最大で4つまでしか描画できません。</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowContourSettingDialog</name>
     <message>
         <source>Scalar Setting</source>
-        <translation>スカラー設定</translation>
+        <translation type="vanished">スカラー設定</translation>
     </message>
     <message>
         <source>Scalar value for elevation</source>
-        <translation>標高に使用するスカラー値</translation>
+        <translation type="vanished">標高に使用するスカラー値</translation>
     </message>
     <message>
         <source>Color Setting</source>
-        <translation>表示色設定</translation>
+        <translation type="vanished">表示色設定</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>色を指定</translation>
+        <translation type="vanished">色を指定</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>スカラー値により設定</translation>
+        <translation type="vanished">スカラー値により設定</translation>
     </message>
     <message>
         <source>Scalar Value:</source>
-        <translation>スカラー値:</translation>
+        <translation type="vanished">スカラー値:</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>表示設定</translation>
+        <translation type="vanished">表示設定</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>領域設定(&amp;R)</translation>
+        <translation type="vanished">領域設定(&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>カラーバー設定(&amp;C)</translation>
+        <translation type="vanished">カラーバー設定(&amp;C)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>エラー</translation>
+        <translation type="vanished">エラー</translation>
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
-        <translation>値の範囲で、最大値が最小値より小さくなっています。</translation>
+        <translation type="vanished">値の範囲で、最大値が最小値より小さくなっています。</translation>
     </message>
 </context>
 <context>
@@ -148,7 +150,7 @@
     </message>
     <message>
         <source>Contour setting is not available, because this result does not contain cell scalar values.</source>
-        <translation>セル中心のスカラー量の計算結果がないため、コンター設定を行えません。</translation>
+        <translation type="vanished">セル中心のスカラー量の計算結果がないため、コンター設定を行えません。</translation>
     </message>
     <message>
         <source>Z-direction Scale</source>
@@ -167,6 +169,17 @@
     </message>
 </context>
 <context>
+    <name>Post2dBirdEyeWindowGridShapeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Shape Display Setting</source>
+        <translation>格子形状表示設定</translation>
+    </message>
+    <message>
+        <source>Scalar value for Elevation</source>
+        <translation>標高に使用するスカラー値</translation>
+    </message>
+</context>
+<context>
     <name>Post2dBirdEyeWindowNodeScalarGroupDataItem</name>
     <message>
         <source>Contour</source>
@@ -178,11 +191,46 @@
     </message>
     <message>
         <source>Update Contour Setting</source>
-        <translation>コンターの設定変更</translation>
+        <translation type="vanished">コンターの設定変更</translation>
     </message>
     <message>
         <source>Scalar</source>
         <translation>スカラー</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>スカラー設定 (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>ダイアログ</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>色</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>色を指定</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation>スカラー値により設定</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>インポート(&amp;)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>エクスポート(E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>範囲</translation>
     </message>
 </context>
 <context>
@@ -201,18 +249,18 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>警告</translation>
+        <translation type="vanished">警告</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>コンターは最大で4つまでしか描画できません。</translation>
+        <translation type="vanished">コンターは最大で4つまでしか描画できません。</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
         <source>Update Grid Shape Setting</source>
-        <translation>格子形状の設定変更</translation>
+        <translation type="vanished">格子形状の設定変更</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
@@ -228,7 +276,7 @@
     </message>
     <message>
         <source>Create Contour</source>
-        <translation>コンターの作成</translation>
+        <translation type="vanished">コンターの作成</translation>
     </message>
 </context>
 </TS>

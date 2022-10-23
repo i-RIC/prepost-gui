@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="el_GR">
 <context>
     <name>MeasuredDataFileDataItem</name>
@@ -38,34 +40,81 @@
     </message>
 </context>
 <context>
-    <name>MeasuredDataPointSettingDialog</name>
+    <name>MeasuredDataPointGroupDataItem_PropertyDialog</name>
     <message>
-        <source>Scalar Setting</source>
-        <translation>Scalar Setting</translation>
-    </message>
-    <message>
-        <source>Measured Value:</source>
-        <translation>Μετρημένη αξία:</translation>
+        <source>Points Display Setting Dialog</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>Ρύθμιση οθόνης</translation>
+        <translation type="unfinished">Ρύθμιση οθόνης</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Χρώμα</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="unfinished">Εξαγωγή (&amp;E)...</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation>Μέγεθος σημείου:</translation>
+        <translation type="unfinished">Μέγεθος σημείου:</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataPointSettingDialog</name>
+    <message>
+        <source>Scalar Setting</source>
+        <translation type="vanished">Scalar Setting</translation>
+    </message>
+    <message>
+        <source>Measured Value:</source>
+        <translation type="vanished">Μετρημένη αξία:</translation>
+    </message>
+    <message>
+        <source>Display Setting</source>
+        <translation type="vanished">Ρύθμιση οθόνης</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="vanished">Μέγεθος σημείου:</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Ρύθμιση γραμμής χρώματος (&amp;C)</translation>
+        <translation type="vanished">Ρύθμιση γραμμής χρώματος (&amp;C)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Λάθος</translation>
+        <translation type="vanished">Λάθος</translation>
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
-        <translation>Για το εύρος τιμών, η μέγιστη τιμή είναι μικρότερη από την ελάχιστη τιμή.</translation>
+        <translation type="vanished">Για το εύρος τιμών, η μέγιστη τιμή είναι μικρότερη από την ελάχιστη τιμή.</translation>
     </message>
 </context>
 <context>
@@ -80,62 +129,69 @@
     </message>
     <message>
         <source>Update Arrow Setting</source>
-        <translation>Ενημέρωση ρύθμισης βέλους</translation>
+        <translation type="vanished">Ενημέρωση ρύθμισης βέλους</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataVectorGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Measured Data Arrow Setting</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>MeasuredDataVectorSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Ρύθμιση βέλους</translation>
+        <translation type="vanished">Ρύθμιση βέλους</translation>
     </message>
     <message>
         <source>Physical value:</source>
-        <translation>Φυσική αξία:</translation>
+        <translation type="vanished">Φυσική αξία:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Μήκος</translation>
+        <translation type="vanished">Μήκος</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Αυτο</translation>
+        <translation type="vanished">Αυτο</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Τυπική τιμή:</translation>
+        <translation type="vanished">Τυπική τιμή:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[Κυρία]</translation>
+        <translation type="vanished">[Κυρία]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Μήκος στην οθόνη:</translation>
+        <translation type="vanished">Μήκος στην οθόνη:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[εικονοκύτταρο]</translation>
+        <translation type="vanished">[εικονοκύτταρο]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Ελάχιστη τιμή για κλήρωση:</translation>
+        <translation type="vanished">Ελάχιστη τιμή για κλήρωση:</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Χρώμα</translation>
+        <translation type="vanished">Χρώμα</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Προσαρμοσμένο χρώμα</translation>
+        <translation type="vanished">Προσαρμοσμένο χρώμα</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Με κλιμακωτή αξία</translation>
+        <translation type="vanished">Με κλιμακωτή αξία</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Ρύθμιση γραμμής χρώματος (&amp;C)</translation>
+        <translation type="vanished">Ρύθμιση γραμμής χρώματος (&amp;C)</translation>
     </message>
 </context>
 </TS>

@@ -11,7 +11,7 @@ void GeoDataPolygonProxy::setupActors()
 
 	m_paintActor = vtkSmartPointer<vtkActor>::New();
 	m_paintActor->SetProperty(pol->paintActor()->GetProperty());
-	m_paintActor->SetMapper(pol->paintMapper());
+	// m_paintActor->SetMapper(pol->paintMapper()); // TODO FIX THIS!
 
 	renderer()->AddActor(m_paintActor);
 	actorCollection()->AddItem(m_paintActor);

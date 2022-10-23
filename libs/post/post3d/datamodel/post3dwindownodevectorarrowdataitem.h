@@ -2,15 +2,16 @@
 #define POST3DWINDOWNODEVECTORARROWDATAITEM_H
 
 #include "post3dwindowfacedataitem.h"
-#include "post3dwindownodevectorarrowsettingdialog.h"
 #include "../post3dwindowdataitem.h"
-#include "../post3dfacesettingcontainer.h"
+#include "../post3dwindowfacesettingcontainer.h"
 #include "../post3dsamplingratesettingcontainer.h"
 
-#include <guibase/arrowsettingcontainer.h>
-#include <guibase/vtktool/vtkarrowsactor.h>
+#include <guicore/arrows/arrowssettingcontainer.h>
+#include <guicore/filter/structured3dfilteringsettingcontainer.h>
+#include <misc/compositecontainer.h>
 
-class vtkExtractGrid;
+class Post3dWindowNodeVectorArrowGroupDataItem;
+
 class vtkTransformFilter;
 
 class Post3dWindowNodeVectorArrowDataItem : public Post3dWindowDataItem
@@ -18,11 +19,26 @@ class Post3dWindowNodeVectorArrowDataItem : public Post3dWindowDataItem
 	Q_OBJECT
 
 public:
-	Post3dWindowNodeVectorArrowDataItem(Post3dWindowDataItem* parent);
+	class Setting : public CompositeContainer {
+	public:
+		Setting();
+		Setting(const Setting& setting);
+
+		Setting& operator=(const Setting& c);
+		XmlAttributeContainer& operator=(const XmlAttributeContainer& c) override;
+
+		Post3dWindowFaceSettingContainer face;
+		Structured3dFilteringSettingContainer filtering;
+		ArrowsSettingContainer arrow;
+	};
+
+	Post3dWindowNodeVectorArrowDataItem(const QString& label, Post3dWindowDataItem* parent);
 	~Post3dWindowNodeVectorArrowDataItem();
 
-	Post3dWindowNodeVectorArrowSettingDialog::FaceSetting setting() const;
-	void setSetting(const Post3dWindowNodeVectorArrowSettingDialog::FaceSetting& faceSetting);
+	vtkStructuredGrid* faceGrid() const;
+
+	const Setting& setting() const;
+	void setSetting(const Setting& setting);
 
 	void update();
 
@@ -33,17 +49,15 @@ private:
 	void innerUpdateZScale(double scale) override;
 	void innerUpdate2Ds() override;
 
+	void setupActors();
 	void updateActorSettings();
-	void updatePolyData();
-	void updateColorSetting();
+	Post3dWindowNodeVectorArrowGroupDataItem* groupDataItem() const;
 
-	vtkArrowsActor m_arrowsActor;
-	vtkExtractGrid* m_extractGrid;
+	vtkActor* m_actor;
 	vtkTransformFilter* m_transformFilter;
 
-	ArrowSettingContainer m_arrowSetting;
-	Post3dFaceSettingContainer m_faceSetting;
-	Post3dSamplingRateSettingContainer m_samplingRateSetting;
+	Setting m_setting;
+	double m_zScale;
 };
 
 #endif // POST3DWINDOWNODEVECTORARROWDATAITEM_H

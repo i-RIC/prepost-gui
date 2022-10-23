@@ -104,6 +104,8 @@ HEADERS += gd_point_global.h \
            private/geodatapoint_editcoordinatescommand.h \
            private/geodatapoint_finishpointdefinitioncommand.h \
            private/geodatapoint_impl.h \
+           private/geodatapoint_movevertexcommand.h \
+           private/geodatapoint_setvertexcommand.h \
            private/geodatapointcellmappert_detail.h \
            private/geodatapointcreatort_detail.h \
            private/geodatapointnodemappert_detail.h
@@ -113,7 +115,9 @@ SOURCES += geodatapoint.cpp \
            geodatapointrealcreator.cpp \
            private/geodatapoint_coordinateseditor.cpp \
            private/geodatapoint_editcoordinatescommand.cpp \
-           private/geodatapoint_finishpointdefinitioncommand.cpp
+           private/geodatapoint_finishpointdefinitioncommand.cpp \
+           private/geodatapoint_movevertexcommand.cpp \
+           private/geodatapoint_setvertexcommand.cpp
 TRANSLATIONS += languages/iricGdPoint_ar_EG.ts \
                 languages/iricGdPoint_bg_BG.ts \
                 languages/iricGdPoint_bs_BA.ts \

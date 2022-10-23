@@ -1,124 +1,152 @@
+#include "../post3dwindowgraphicsview.h"
 #include "post3dwindowgridtypedataitem.h"
-#include "post3dwindowparticlesbasescalargroupdataitem.h"
 #include "post3dwindowparticlesbasescalardataitem.h"
+#include "post3dwindowparticlesbasescalargroupdataitem.h"
 #include "post3dwindowparticlesbasetopdataitem.h"
 #include "post3dwindowzonedataitem.h"
-#include "private/post3dwindowparticlesbasescalargroupdataitem_setsettingcommand.h"
+#include "private/post3dwindowparticlesbasescalargroupdataitem_propertydialog.h"
 
-#include <guibase/vtkCustomScalarBarActor.h>
 #include <guibase/vtkdatasetattributestool.h>
-#include <guicore/named/namedgraphicswindowdataitemtool.h>
+#include <guibase/vtktool/vtkpolydatamapperutil.h>
 #include <guicore/misc/targeted/targeteditemsettargetcommandtool.h>
+#include <guicore/named/namedgraphicswindowdataitemtool.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
-#include <guicore/scalarstocolors/scalarstocolorscontainerutil.h>
+#include <guicore/scalarstocolors/colormapsettingcontainer.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
-#include <misc/iricundostack.h>
 #include <misc/stringtool.h>
-#include <guicore/datamodel/vtkgraphicsview.h>
-#include <guibase/graphicsmisc.h>
-#include <postbase/particle/postparticlescalarpropertydialog.h>
-
-#include <QDomElement>
-#include <QStandardItem>
-#include <QUndoCommand>
-#include <QXmlStreamWriter>
-
-#include <vtkPointData.h>
-#include <vtkRenderer.h>
-#include <vtkRenderWindow.h>
 
 Post3dWindowParticlesBaseScalarGroupDataItem::Post3dWindowParticlesBaseScalarGroupDataItem(Post3dWindowDataItem* p) :
-	Post3dWindowDataItem(tr("Scalar"), QIcon(":/libs/guibase/images/iconFolder.svg"), p)
+	Post3dWindowDataItem(tr("Scalar"), QIcon(":/libs/guibase/images/iconFolder.svg"), p),
+	m_actor {vtkActor::New()},
+	m_setting {}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 
-	setupActors();
-	auto topItem = dynamic_cast<Post3dWindowParticlesBaseTopDataItem*> (parent());
+	auto topItem = topDataItem();
+	auto cont = topItem->zoneDataItem()->dataContainer();
+	auto gt = cont->gridType();
 
-	PostZoneDataContainer* cont = topItem->zoneDataItem()->dataContainer();
-	SolverDefinitionGridType* gt = cont->gridType();
 	for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(topItem->particleData()->GetPointData())){
 		auto item = new Post3dWindowParticlesBaseScalarDataItem(name, gt->solutionCaption(name), this);
 		m_childItems.push_back(item);
-		m_scalarbarTitleMap.insert(name, name.c_str());
 	}
+
+	setupActors();
+	updateCheckState();
 }
 
 Post3dWindowParticlesBaseScalarGroupDataItem::~Post3dWindowParticlesBaseScalarGroupDataItem()
 {
-	vtkRenderer* r = renderer();
+	auto r = renderer();
 	r->RemoveActor(m_actor);
-	m_scalarBarWidget->SetInteractor(0);
+
+	m_actor->Delete();
 }
 
 void Post3dWindowParticlesBaseScalarGroupDataItem::update()
 {
+	for (auto child : m_childItems) {
+		auto item = dynamic_cast<Post3dWindowParticlesBaseScalarDataItem*> (child);
+		item->update();
+	}
+
 	updateActorSettings();
+}
+
+void Post3dWindowParticlesBaseScalarGroupDataItem::showPropertyDialog()
+{
+	showPropertyDialogModeless();
 }
 
 QDialog* Post3dWindowParticlesBaseScalarGroupDataItem::propertyDialog(QWidget* p)
 {
-	m_setting.scalarBarSetting.loadFromRepresentation(m_scalarBarWidget->GetScalarBarRepresentation());
-	m_setting.scalarBarSetting.titleTextSetting.getSetting(m_scalarBarWidget->GetScalarBarActor()->GetTitleTextProperty());
-	m_setting.scalarBarSetting.labelTextSetting.getSetting(m_scalarBarWidget->GetScalarBarActor()->GetLabelTextProperty());
-
-	auto tItem = dynamic_cast<Post3dWindowParticlesBaseTopDataItem*> (parent());
-	auto gtItem = dynamic_cast<Post3dWindowGridTypeDataItem*> (tItem->zoneDataItem()->parent());
-
-	auto dialog = new PostParticleScalarPropertyDialog(p);
-	dialog->setGridTypeDataItem(gtItem);
-	dialog->setData(tItem->particleData());
-	dialog->setScalarBarTitleMap(m_scalarbarTitleMap);
-
-	dialog->setSetting(m_setting);
-	dialog->setParticleSize(tItem->size());
-	dialog->setCustomColor(tItem->color());
-
-	return dialog;
-}
-
-void Post3dWindowParticlesBaseScalarGroupDataItem::handlePropertyDialogAccepted(QDialog* propDialog)
-{
-	auto d = dynamic_cast<PostParticleScalarPropertyDialog*> (propDialog);
-	auto cmd = new SetSettingCommand(d->setting(), d->lookupTable(), d->particleSize(), d->customColor(), d->scalarBarTitle(), this);
-	pushRenderCommand(cmd, this, true);
+	return new PropertyDialog(this, p);
 }
 
 std::string Post3dWindowParticlesBaseScalarGroupDataItem::target() const
 {
-	return iRIC::toStr(m_setting.target);
+	return iRIC::toStr(m_setting.value);
 }
 
 void Post3dWindowParticlesBaseScalarGroupDataItem::setTarget(const std::string& target)
 {
 	NamedGraphicsWindowDataItemTool::checkItemWithName(target, m_childItems);
-	m_setting.target = target.c_str();
+	m_setting.value = target.c_str();
+	if (m_setting.value == "") {
+		m_setting.mapping = ParticleDataSetting::Mapping::Arbitrary;
+	} else {
+		m_setting.mapping = ParticleDataSetting::Mapping::Value;
+	}
 	updateActorSettings();
 }
 
-void Post3dWindowParticlesBaseScalarGroupDataItem::informSelection(VTKGraphicsView*)
+ColorMapSettingContainer* Post3dWindowParticlesBaseScalarGroupDataItem::colorMapSetting(const std::string& name) const
 {
-	m_scalarBarWidget->SetRepositionable(1);
+	auto child = childDataItem(name);
+	if (child == nullptr) {return nullptr;}
+
+	return &child->colorMapSetting();
 }
 
-void Post3dWindowParticlesBaseScalarGroupDataItem::informDeselection(VTKGraphicsView*)
+std::unordered_map<std::string, ColorMapSettingContainer*> Post3dWindowParticlesBaseScalarGroupDataItem::colorMapSettings() const
 {
-	m_scalarBarWidget->SetRepositionable(0);
+	std::unordered_map<std::string, ColorMapSettingContainer*> ret;
+	for (auto child : m_childItems) {
+		auto item = dynamic_cast<Post3dWindowParticlesBaseScalarDataItem*> (child);
+		auto& cm = item->colorMapSetting();
+		ret.insert({item->name(), &cm});
+	}
+
+	return ret;
 }
+
+void Post3dWindowParticlesBaseScalarGroupDataItem::informSelection(VTKGraphicsView* v)
+{
+	auto s = activeSetting();
+	if (s != nullptr) {
+		s->legend.imageSetting.controller()->handleSelection(v);
+	}
+}
+
+void Post3dWindowParticlesBaseScalarGroupDataItem::informDeselection(VTKGraphicsView* v)
+{
+	auto s = activeSetting();
+	if (s != nullptr) {
+		s->legend.imageSetting.controller()->handleDeselection(v);
+	}
+}
+
+void Post3dWindowParticlesBaseScalarGroupDataItem::handleResize(VTKGraphicsView* v)
+{
+	auto s = activeSetting();
+	if (s != nullptr) {
+		s->legend.imageSetting.controller()->handleResize(v);
+	}
+}
+
 
 void Post3dWindowParticlesBaseScalarGroupDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	v->standardMouseMoveEvent(event);
+	auto s = activeSetting();
+	if (s != nullptr) {
+		s->legend.imageSetting.controller()->handleMouseMoveEvent(event, v);
+	}
 }
 
 void Post3dWindowParticlesBaseScalarGroupDataItem::mousePressEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	v->standardMousePressEvent(event);
+	auto s = activeSetting();
+	if (s != nullptr) {
+		s->legend.imageSetting.controller()->handleMousePressEvent(event, v);
+	}
 }
 
 void Post3dWindowParticlesBaseScalarGroupDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	v->standardMouseReleaseEvent(event);
+	auto s = activeSetting();
+	if (s != nullptr) {
+		s->legend.imageSetting.controller()->handleMouseReleaseEvent(event, v);
+	}
 }
 
 void Post3dWindowParticlesBaseScalarGroupDataItem::handleNamedItemChange(NamedGraphicWindowDataItem* item)
@@ -129,122 +157,142 @@ void Post3dWindowParticlesBaseScalarGroupDataItem::handleNamedItemChange(NamedGr
 	pushRenderCommand(cmd, this, true);
 }
 
-void Post3dWindowParticlesBaseScalarGroupDataItem::updateVisibility(bool visible)
+void Post3dWindowParticlesBaseScalarGroupDataItem::setupActors()
 {
-	bool v = (m_standardItem->checkState() == Qt::Checked) && visible;
-	m_scalarBarWidget->SetEnabled(m_setting.scalarBarSetting.visible && v && target() != "");
-	Post3dWindowDataItem::updateVisibility(visible);
+	auto r = renderer();
+	r->AddActor(m_actor);
+
+	update();
+}
+
+void Post3dWindowParticlesBaseScalarGroupDataItem::updateActorSettings()
+{
+	m_actor->VisibilityOff();
+
+	m_actorCollection->RemoveAllItems();
+
+	auto data = particleData();
+	if (data == nullptr) {return;}
+
+	auto v = dataModel()->graphicsView();
+	if (m_setting.mapping == ParticleDataSetting::Mapping::Arbitrary) {
+		auto mapper = vtkPolyDataMapperUtil::createWithScalarVisibilityOff();
+		mapper->SetInputData(data);
+		m_actor->SetMapper(mapper);
+		mapper->Delete();
+
+		m_actor->GetProperty()->SetColor(m_setting.color);
+	} else {
+		auto value = iRIC::toStr(m_setting.value);
+		if (value != "") {
+			data->GetPointData()->SetActiveScalars(value.c_str());
+			auto cs = activeSetting();
+			auto mapper = cs->buildPointDataMapper(data);
+			m_actor->SetMapper(mapper);
+			mapper->Delete();
+
+			cs->legend.imageSetting.apply(v);
+		}
+	}
+	m_actor->GetProperty()->SetPointSize(m_setting.particleSize * v->devicePixelRatioF());
+	m_actor->GetProperty()->SetOpacity(m_setting.opacity);
+	m_actorCollection->AddItem(m_actor);
+
+	updateVisibilityWithoutRendering();
+}
+
+void Post3dWindowParticlesBaseScalarGroupDataItem::innerUpdateZScale(double zscale)
+{
+	m_actor->SetScale(1, 1, zscale);
 }
 
 void Post3dWindowParticlesBaseScalarGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	m_setting.load(node);
 
-	m_setting.scalarBarSetting.saveToRepresentation(m_scalarBarWidget->GetScalarBarRepresentation());
-
-	QDomNodeList titles = node.childNodes();
-	for (int i = 0; i < titles.count(); ++i) {
-		QDomElement titleElem = titles.at(i).toElement();
-		std::string val = iRIC::toStr(titleElem.attribute("value"));
-		QString title = titleElem.attribute("title");
-		m_scalarbarTitleMap[val] = title;
+	std::unordered_map<std::string, Post3dWindowParticlesBaseScalarDataItem*> itemMap;
+	for (auto item : m_childItems) {
+		auto item2 = dynamic_cast<Post3dWindowParticlesBaseScalarDataItem*> (item);
+		itemMap.insert({item2->name(), item2});
 	}
-	updateActorSettings();
 
-	setTarget(iRIC::toStr(m_setting.target));
+	QDomNodeList children = node.childNodes();
+	for (int i = 0; i < children.count(); ++i) {
+		QDomElement childElem = children.at(i).toElement();
+		if (childElem.nodeName() == "Scalar") {
+			auto name = iRIC::toStr(childElem.attribute("name"));
+			auto it = itemMap.find(name);
+			if (it == itemMap.end()) {continue;}
+
+			it->second->loadFromProjectMainFile(childElem);
+		}
+	}
+
+	updateCheckState();
+	updateActorSettings();
 }
 
 void Post3dWindowParticlesBaseScalarGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	m_setting.scalarBarSetting.loadFromRepresentation(m_scalarBarWidget->GetScalarBarRepresentation());
 	m_setting.save(writer);
 
-	// scalar bar titles
-	QMapIterator<std::string, QString> i(m_scalarbarTitleMap);
-	while (i.hasNext()) {
-		i.next();
-		if (i.key().size() > 0) {
-			writer.writeStartElement("ScalarBarTitle");
-			writer.writeAttribute("value", i.key().c_str());
-			writer.writeAttribute("title", i.value());
-			writer.writeEndElement();
+	for (auto item : m_childItems) {
+		auto item2 = dynamic_cast<Post3dWindowParticlesBaseScalarDataItem*> (item);
+		writer.writeStartElement("Scalar");
+		writer.writeAttribute("name", item2->name().c_str());
+		item2->saveToProjectMainFile(writer);
+		writer.writeEndElement();
+	}
+}
+
+ColorMapSettingContainer* Post3dWindowParticlesBaseScalarGroupDataItem::activeSetting() const
+{
+	if (m_setting.mapping ==  ParticleDataSetting::Mapping::Arbitrary) {return nullptr;}
+	if (m_setting.value == "") {return nullptr;}
+
+	return &activeChildDataItem()->colorMapSetting();
+}
+
+Post3dWindowGridTypeDataItem* Post3dWindowParticlesBaseScalarGroupDataItem::gridTypeDataItem() const
+{
+	return zoneDataItem()->gridTypeDataItem();
+}
+
+Post3dWindowParticlesBaseTopDataItem* Post3dWindowParticlesBaseScalarGroupDataItem::topDataItem() const
+{
+	return dynamic_cast<Post3dWindowParticlesBaseTopDataItem*> (parent());
+}
+
+Post3dWindowZoneDataItem* Post3dWindowParticlesBaseScalarGroupDataItem::zoneDataItem() const
+{
+	return topDataItem()->zoneDataItem();
+}
+
+Post3dWindowParticlesBaseScalarDataItem* Post3dWindowParticlesBaseScalarGroupDataItem::activeChildDataItem() const
+{
+	if (m_setting.value == "") {return nullptr;}
+
+	return childDataItem(iRIC::toStr(m_setting.value));
+}
+
+Post3dWindowParticlesBaseScalarDataItem* Post3dWindowParticlesBaseScalarGroupDataItem::childDataItem(const std::string& name) const
+{
+	for (auto child : m_childItems) {
+		auto item = dynamic_cast<Post3dWindowParticlesBaseScalarDataItem*> (child);
+		if (name == item->name()) {
+			return item;
 		}
 	}
+
+	return nullptr;
 }
 
-void Post3dWindowParticlesBaseScalarGroupDataItem::setupActors()
+vtkPolyData* Post3dWindowParticlesBaseScalarGroupDataItem::particleData() const
 {
-	m_actor = vtkSmartPointer<vtkActor>::New();
-	renderer()->AddActor(m_actor);
-	m_actor->GetProperty()->LightingOff();
-
-	m_mapper = vtkSmartPointer<vtkPolyDataMapper>::New();
-	m_actor->SetMapper(m_mapper);
-
-	vtkRenderWindowInteractor* iren = renderer()->GetRenderWindow()->GetInteractor();
-
-	m_scalarBarWidget = vtkSmartPointer<vtkScalarBarWidget>::New();
-	m_scalarBarWidget->SetScalarBarActor(vtkCustomScalarBarActor::New());
-	iRIC::setupScalarBarProperty(m_scalarBarWidget->GetScalarBarActor());
-	m_scalarBarWidget->SetInteractor(iren);
-	m_scalarBarWidget->SetEnabled(0);
-
-	m_setting.scalarBarSetting.saveToRepresentation(m_scalarBarWidget->GetScalarBarRepresentation());
-	updateActorSettings();
+	return topDataItem()->particleData();
 }
 
-void Post3dWindowParticlesBaseScalarGroupDataItem::updateActorSettings()
+void Post3dWindowParticlesBaseScalarGroupDataItem::updateCheckState()
 {
-	m_actor->VisibilityOff();
-	m_actorCollection->RemoveAllItems();
-
-	auto topItem = dynamic_cast<Post3dWindowParticlesBaseTopDataItem*> (parent());
-	auto data = topItem->particleData();
-	if (data == nullptr) {return;}
-
-	auto tItem = dynamic_cast<Post3dWindowParticlesBaseTopDataItem*>(parent());
-
-	m_actor->GetProperty()->SetPointSize(tItem->size());
-	if (target() == "") {
-		QColor c = tItem->color();
-		m_actor->GetProperty()->SetColor(c.redF(), c.greenF(), c.blueF());
-		m_mapper->SetScalarModeToDefault();
-	}	else {
-		auto gtItem = dynamic_cast<Post3dWindowGridTypeDataItem*> (topItem->zoneDataItem()->parent());
-		auto ltc = gtItem->particleLookupTable(target());
-		auto dataArray = data->GetPointData()->GetArray(target().c_str());
-		ScalarsToColorsContainerUtil::setValueRange(ltc, dataArray);
-		m_mapper->SetScalarModeToUsePointFieldData();
-		m_mapper->SelectColorArray(iRIC::toStr(m_setting.target).c_str());
-		m_mapper->UseLookupTableScalarRangeOn();
-		m_mapper->SetLookupTable(ltc->vtkObj());
-
-		m_scalarBarWidget->GetScalarBarActor()->SetLookupTable(ltc->vtkObj());
-		m_scalarBarWidget->GetScalarBarActor()->SetTitle(iRIC::toStr(m_scalarbarTitleMap[target()]).c_str());
-	}
-	m_mapper->SetInputData(topItem->particleData());
-
-	m_actorCollection->AddItem(m_actor);
-	updateVisibilityWithoutRendering();
-}
-
-void Post3dWindowParticlesBaseScalarGroupDataItem::setupScalarBarSetting()
-{
-	auto topItem = dynamic_cast<Post3dWindowParticlesBaseTopDataItem*> (parent());
-	auto typedi = dynamic_cast<Post3dWindowGridTypeDataItem*>(topItem->zoneDataItem()->parent());
-	auto stc = typedi->particleLookupTable(target());
-	if (stc == nullptr) {return;}
-
-	vtkScalarBarActor* a = m_scalarBarWidget->GetScalarBarActor();
-	a->SetTitle(iRIC::toStr(m_scalarbarTitleMap.value(target())).c_str());
-	a->SetLookupTable(stc->vtkObj());
-	a->SetNumberOfLabels(m_setting.scalarBarSetting.numberOfLabels);
-	a->SetMaximumNumberOfColors(256);
-	m_setting.scalarBarSetting.titleTextSetting.applySetting(a->GetTitleTextProperty());
-	m_setting.scalarBarSetting.labelTextSetting.applySetting(a->GetLabelTextProperty());
-}
-
-void Post3dWindowParticlesBaseScalarGroupDataItem::innerUpdateZScale(double zscale)
-{
-	m_actor->SetScale(1, 1, zscale);
+	NamedGraphicsWindowDataItemTool::checkItemWithName(m_setting.value, m_childItems, true);
 }

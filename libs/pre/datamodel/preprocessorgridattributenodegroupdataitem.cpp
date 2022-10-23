@@ -9,6 +9,7 @@
 #include "preprocessorgridattributenodegroupdataitem.h"
 #include "preprocessorgriddataitem.h"
 #include "preprocessorgridtypedataitem.h"
+#include "private/preprocessorgridattributenodegroupdataitem_modifyopacityandupdateactorsettingscommand.h"
 
 #include <guicore/base/propertybrowser.h>
 #include <guicore/datamodel/propertybrowserattribute.h>
@@ -23,7 +24,8 @@
 #include <guicore/pre/gridcond/container/gridattributeintegernodecontainer.h>
 #include <guicore/pre/gridcond/container/gridattributerealnodecontainer.h>
 #include <guicore/project/projectdata.h>
-#include <guicore/scalarstocolors/scalarstocolorscontainer.h>
+#include <guicore/scalarstocolors/colormaplegendsettingcontaineri.h>
+#include <guicore/scalarstocolors/colormapsettingcontaineri.h>
 #include <guicore/solverdef/solverdefinition.h>
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
 #include <guicore/solverdef/solverdefinitiongridattributeintegeroptionnode.h>
@@ -44,6 +46,7 @@
 #include <QUndoCommand>
 #include <QXmlStreamWriter>
 
+#include <vtkActor.h>
 #include <vtkActorCollection.h>
 #include <vtkAppendPolyData.h>
 #include <vtkCellData.h>
@@ -60,11 +63,11 @@
 #include <vtkStructuredGridGeometryFilter.h>
 
 PreProcessorGridAttributeNodeGroupDataItem::PreProcessorGridAttributeNodeGroupDataItem(PreProcessorDataItem* p) :
-	PreProcessorDataItem {tr("Node attributes"), QIcon(":/libs/guibase/images/iconFolder.svg"), p}
+	PreProcessorDataItem {tr("Node attributes"), QIcon(":/libs/guibase/images/iconFolder.svg"), p},
+	m_actor {vtkActor::New()}
 {
 	setupStandardItem(NotChecked, NotReorderable, NotDeletable);
 
-	setupActors();
 	p->standardItem()->takeRow(m_standardItem->row());
 	PreProcessorGridTypeDataItem* typeItem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent()->parent());
 	const QList<SolverDefinitionGridAttribute*>& conds = typeItem->gridType()->gridAttributes();
@@ -94,12 +97,16 @@ PreProcessorGridAttributeNodeGroupDataItem::PreProcessorGridAttributeNodeGroupDa
 
 	m_showAttributeBrowserAction = new QAction(PreProcessorGridAttributeNodeGroupDataItem::tr("Show Attribute Browser"), this);
 	connect(m_showAttributeBrowserAction, SIGNAL(triggered()), this, SLOT(showAttributeBrowser()));
+
+	m_actor->GetProperty()->SetLighting(false);
+	renderer()->AddActor(m_actor);
 }
+
 PreProcessorGridAttributeNodeGroupDataItem::~PreProcessorGridAttributeNodeGroupDataItem()
 {
-	renderer()->RemoveActor(m_isolineActor);
-	renderer()->RemoveActor(m_contourActor);
-	renderer()->RemoveActor(m_fringeActor);
+	renderer()->RemoveActor(m_actor);
+
+	m_actor->Delete();
 }
 
 void PreProcessorGridAttributeNodeGroupDataItem::handleNamedItemChange(NamedGraphicWindowDataItem* item)
@@ -124,10 +131,9 @@ void PreProcessorGridAttributeNodeGroupDataItem::setTarget(const std::string& ta
 
 void PreProcessorGridAttributeNodeGroupDataItem::updateActorSettings()
 {
+	m_actor->VisibilityOff();
+
 	// make all the items invisible
-	m_isolineActor->VisibilityOff();
-	m_contourActor->VisibilityOff();
-	m_fringeActor->VisibilityOff();
 	m_actorCollection->RemoveAllItems();
 	Grid* g = dynamic_cast<PreProcessorGridDataItem*>(parent())->grid();
 	if (g == 0) {
@@ -135,96 +141,25 @@ void PreProcessorGridAttributeNodeGroupDataItem::updateActorSettings()
 		return;
 	}
 	if (m_target == "") {
-		updateVisibilityWithoutRendering();
 		return;
 	}
 	// update current active scalar
 	vtkPointData* data = g->vtkGrid()->GetPointData();
 	data->SetActiveScalars(m_target.c_str());
-	PreProcessorGridAttributeNodeDataItem* activeItem = activeChildItem();
-	PreProcessorGridTypeDataItem* typedi = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent()->parent());
-	ScalarsToColorsContainer* stc = typedi->scalarsToColors(m_target.c_str());
+	auto typedi = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent()->parent());
+	auto cs = typedi->colorMapSetting(m_target);
 
-	double range[2];
-	stc->getValueRange(&range[0], &range[1]);
+	auto algo = g->vtkFilteredCellsAlgorithm();
+	algo->Update();
+	auto mapper = cs->buildPointDataMapper(algo->GetOutput());
+	m_actor->SetMapper(mapper);
+	mapper->Delete();
 
-	switch (activeItem->contour()) {
-	case ContourSettingWidget::Isolines:
-		m_isolineFilter->GenerateValues(activeItem->numberOfDivision() + 1, range);
-		m_isolineMapper->SetLookupTable(stc->vtkObj());
-		m_isolineMapper->UseLookupTableScalarRangeOn();
-		m_actorCollection->AddItem(m_isolineActor);
-		break;
-	case ContourSettingWidget::ContourFigure: {
-			vtkSmartPointer<vtkAppendPolyData> appendFilledContours = vtkSmartPointer<vtkAppendPolyData>::New();
-			double delta = (range[1] - range[0]) / static_cast<double>(activeItem->numberOfDivision());
-			std::vector< vtkSmartPointer<vtkClipPolyData> > clippersLo;
-			std::vector< vtkSmartPointer<vtkClipPolyData> > clippersHi;
+	cs->legendSetting()->imgSetting()->apply(dataModel()->graphicsView());
 
-			for (int i = 0; i < activeItem->numberOfDivision(); i++) {
-				double valueLo = range[0] + static_cast<double>(i) * delta;
-				double valueHi = range[0] + static_cast<double>(i + 1) * delta;
-				clippersLo.push_back(vtkSmartPointer<vtkClipPolyData>::New());
-				if (i == 0) {
-					clippersLo[i]->SetValue(- HUGE_VAL);
-					// make PolyData from PointSet
-					vtkSmartPointer<vtkStructuredGridGeometryFilter> filter = vtkSmartPointer<vtkStructuredGridGeometryFilter>::New();
-					filter->SetInputData(g->vtkGrid());
-					filter->Update();
-					clippersLo[i]->SetInputConnection(filter->GetOutputPort());
-				} else {
-					clippersLo[i]->SetValue(valueLo);
-					clippersLo[i]->SetInputConnection(clippersLo[i - 1]->GetOutputPort());
-				}
-				clippersLo[i]->InsideOutOff();
-				clippersLo[i]->Update();
+	m_actor->GetProperty()->SetOpacity(m_opacity);
 
-				clippersHi.push_back(vtkSmartPointer<vtkClipPolyData>::New());
-				clippersHi[i]->SetValue(valueHi);
-				clippersHi[i]->SetInputConnection(clippersLo[i]->GetOutputPort());
-				clippersHi[i]->GenerateClippedOutputOn();
-				clippersHi[i]->InsideOutOn();
-				clippersHi[i]->Update();
-				if (clippersHi[i]->GetOutput()->GetNumberOfCells() == 0) {
-					continue;
-				}
-
-				vtkSmartPointer<vtkDoubleArray> cd = vtkSmartPointer<vtkDoubleArray>::New();
-				cd->SetNumberOfComponents(1);
-				cd->SetNumberOfTuples(clippersHi[i]->GetOutput()->GetNumberOfCells());
-				cd->FillComponent(0, range[0] + (range[1] - range[0]) * (i / (activeItem->numberOfDivision() - 1.0)));
-
-				clippersHi[i]->GetOutput()->GetCellData()->SetScalars(cd);
-				appendFilledContours->AddInputConnection(clippersHi[i]->GetOutputPort());
-			}
-
-			vtkSmartPointer<vtkCleanPolyData> filledContours = vtkSmartPointer<vtkCleanPolyData>::New();
-			filledContours->SetInputConnection(appendFilledContours->GetOutputPort());
-			filledContours->Update();
-			m_contourPolyData->DeepCopy(filledContours->GetOutput());
-			m_contourMapper->SetInputData(m_contourPolyData);
-			m_contourMapper->SetScalarRange(range[0], range[1]);
-			m_contourMapper->SetScalarModeToUseCellData();
-			m_contourActor->GetProperty()->SetInterpolationToFlat();
-			m_contourActor->GetProperty()->SetOpacity(m_opacity);
-			m_contourMapper->SetLookupTable(stc->vtkObj());
-			m_contourMapper->UseLookupTableScalarRangeOn();
-			if (m_nameMap.value(m_target)->condition()->isOption()) {} else {
-				m_contourMapper->SetLookupTable(stc->vtkObj());
-			}
-			m_actorCollection->AddItem(m_contourActor);
-		}
-		break;
-	case ContourSettingWidget::ColorFringe:
-		m_fringeMapper->SetScalarModeToUsePointData();
-		m_fringeMapper->SetLookupTable(stc->vtkObj());
-		m_fringeMapper->UseLookupTableScalarRangeOn();
-		m_fringeActor->GetProperty()->SetOpacity(m_opacity);
-		m_actorCollection->AddItem(m_fringeActor);
-		break;
-	default:
-		break;
-	}
+	m_actorCollection->AddItem(m_actor);
 	updateVisibilityWithoutRendering();
 }
 
@@ -261,45 +196,6 @@ void PreProcessorGridAttributeNodeGroupDataItem::informDataChange(const std::str
 	dynamic_cast<PreProcessorGridDataItem*>(parent())->informGridAttributeChange(name);
 }
 
-
-void PreProcessorGridAttributeNodeGroupDataItem::setupActors()
-{
-	m_contourActor = vtkSmartPointer<vtkActor>::New();
-	// Make the point size a little big.
-	m_contourActor->GetProperty()->SetPointSize(2);
-	m_contourActor->GetProperty()->SetLighting(false);
-	renderer()->AddActor(m_contourActor);
-
-	m_fringeActor = vtkSmartPointer<vtkActor>::New();
-	m_fringeActor->GetProperty()->SetPointSize(2);
-	m_fringeActor->GetProperty()->SetLighting(false);
-	renderer()->AddActor(m_fringeActor);
-
-	m_contourPolyData = vtkSmartPointer<vtkPolyData>::New();
-
-	m_contourMapper = vtkSmartPointer<vtkDataSetMapper>::New();
-	m_contourMapper->SetScalarVisibility(true);
-	m_contourActor->SetMapper(m_contourMapper);
-
-	m_fringeMapper = vtkSmartPointer<vtkDataSetMapper>::New();
-	m_fringeMapper->SetScalarVisibility(true);
-	m_fringeActor->SetMapper(m_fringeMapper);
-
-	m_isolineActor = vtkSmartPointer<vtkActor>::New();
-	m_isolineActor->GetProperty()->SetLighting(false);
-	m_isolineActor->GetProperty()->SetLineWidth(1);
-	renderer()->AddActor(m_isolineActor);
-
-	m_isolineMapper = vtkSmartPointer<vtkPolyDataMapper>::New();
-	m_isolineActor->SetMapper(m_isolineMapper);
-	m_isolineFilter = vtkSmartPointer<vtkContourFilter>::New();
-	m_isolineMapper->SetInputConnection(m_isolineFilter->GetOutputPort());
-
-	m_contourActor->VisibilityOff();
-	m_isolineActor->VisibilityOff();
-	m_fringeActor->VisibilityOff();
-}
-
 void PreProcessorGridAttributeNodeGroupDataItem::updateZDepthRangeItemCount()
 {
 	m_zDepthRange.setItemCount(2);
@@ -327,21 +223,11 @@ void PreProcessorGridAttributeNodeGroupDataItem::mouseReleaseEvent(QMouseEvent* 
 
 void PreProcessorGridAttributeNodeGroupDataItem::assignActorZValues(const ZDepthRange& range)
 {
-	m_contourActor->SetPosition(0, 0, range.min());
-	m_isolineActor->SetPosition(0, 0, range.max());
-	m_fringeActor->SetPosition(0, 0, range.min());
+	m_actor->SetPosition(0, 0, range.max());
 }
 
 void PreProcessorGridAttributeNodeGroupDataItem::informGridUpdate()
 {
-	Grid* g = dynamic_cast<PreProcessorGridDataItem*>(parent())->grid();
-	if (g != 0) {
-		vtkAlgorithm* cellsAlgo = g->vtkFilteredCellsAlgorithm();
-		if (cellsAlgo != nullptr) {
-			m_isolineFilter->SetInputConnection(cellsAlgo->GetOutputPort());
-			m_fringeMapper->SetInputConnection(cellsAlgo->GetOutputPort());
-		}
-	}
 	updateActorSettings();
 }
 
@@ -359,6 +245,11 @@ const QList<PreProcessorGridAttributeNodeDataItem*> PreProcessorGridAttributeNod
 	return ret;
 }
 
+PreProcessorGridAttributeNodeDataItem* PreProcessorGridAttributeNodeGroupDataItem::nodeDataItem(const std::string& name) const
+{
+	return m_nameMap.value(name, nullptr);
+}
+
 void PreProcessorGridAttributeNodeGroupDataItem::handleStandardItemChange()
 {
 	if (m_isCommandExecuting) {return;}
@@ -372,6 +263,21 @@ void PreProcessorGridAttributeNodeGroupDataItem::handleStandardItemChange()
 	iRICUndoStack::instance().endMacro();
 }
 
+void PreProcessorGridAttributeNodeGroupDataItem::setOpacityPercentAndUpdateActorSettings(int o, QUndoCommand* subcommand, bool renderOnRedoOnly)
+{
+	auto command = new ModifyOpacityAndUpdateActorSettingsCommand(o, subcommand, this);
+	if (renderOnRedoOnly) {
+		pushRenderRedoOnlyCommand(command, this);
+	} else {
+		pushRenderCommand(command, this);
+	}
+}
+
+int PreProcessorGridAttributeNodeGroupDataItem::opacityPercent() const
+{
+	return m_opacity;
+}
+
 void PreProcessorGridAttributeNodeGroupDataItem::informSelectedVerticesChanged(const QVector<vtkIdType>& vertices)
 {
 	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
@@ -379,6 +285,11 @@ void PreProcessorGridAttributeNodeGroupDataItem::informSelectedVerticesChanged(c
 			dynamic_cast<PreProcessorGridAttributeNodeDataItem*>(*it);
 		item->informSelectedVerticesChanged(vertices);
 	}
+}
+
+QAction* PreProcessorGridAttributeNodeGroupDataItem::showAttributeBrowserAction() const
+{
+	return m_showAttributeBrowserAction;
 }
 
 void PreProcessorGridAttributeNodeGroupDataItem::showAttributeBrowser()
@@ -563,4 +474,11 @@ bool PreProcessorGridAttributeNodeGroupDataItem::addToolBarButtons(QToolBar* too
 		action->setVisible(true);
 	}
 	return true;
+}
+
+void PreProcessorGridAttributeNodeGroupDataItem::applyColorMapSetting(const std::string& name)
+{
+	if (m_target != name) {return;}
+
+	updateActorSettings();
 }

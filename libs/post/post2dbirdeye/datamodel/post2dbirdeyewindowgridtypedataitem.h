@@ -2,49 +2,55 @@
 #define POST2DBIRDEYEWINDOWGRIDTYPEDATAITEM_H
 
 #include "../post2dbirdeyewindowdataitem.h"
-#include <postbase/postwindowgridtypedataiteminterface.h>
-#include <QList>
-#include <QMap>
 
-class QAction;
+#include <guicore/misc/valuerangecontainer.h>
+
+#include <map>
+#include <unordered_map>
+#include <vector>
+
 class SolverDefinitionGridType;
 class Post2dBirdEyeWindowZoneDataItem;
-class LookupTableContainer;
 
-class Post2dBirdEyeWindowGridTypeDataItem : public Post2dBirdEyeWindowDataItem, public PostWindowGridTypeDataItemInterface
+class QAction;
+
+class Post2dBirdEyeWindowGridTypeDataItem : public Post2dBirdEyeWindowDataItem
 {
 	Q_OBJECT
 
 public:
 	Post2dBirdEyeWindowGridTypeDataItem(SolverDefinitionGridType* type, GraphicsWindowDataItem* parent);
-	virtual ~Post2dBirdEyeWindowGridTypeDataItem();
-	const QList<Post2dBirdEyeWindowZoneDataItem*>& zoneDatas() const;
+	~Post2dBirdEyeWindowGridTypeDataItem();
 
 	const std::string& name() const;
+	const std::vector<Post2dBirdEyeWindowZoneDataItem*>& zoneDatas() const;
 	Post2dBirdEyeWindowZoneDataItem* zoneData(const std::string& name) const;
-	SolverDefinitionGridType* gridType() const override;
-	LookupTableContainer* nodeLookupTable(const std::string& attName) override;
-	LookupTableContainer* cellLookupTable(const std::string& attName) override;
-	LookupTableContainer* particleLookupTable(const std::string&) override;
-	LookupTableContainer* polyDataLookupTable(const std::string&) override {return nullptr;}
+
+	SolverDefinitionGridType* gridType() const;
+
+	const ValueRangeContainer& nodeValueRange(const std::string& name) const;
+	const std::unordered_map<std::string, ValueRangeContainer>& nodeValueRanges() const;
+	const ValueRangeContainer& cellValueRange(const std::string& name) const;
+	const std::unordered_map<std::string, ValueRangeContainer>& cellValueRanges() const;
 
 	void setupZoneDataItems();
 	void update();
 
-protected:
+private:
+	void updateNodeValueRanges();
+	void updateCellValueRanges();
+
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
-private:
-	void updateLookupTableRanges();
-	void setupNodeScalarsToColors(const std::string& name);
-	void setupCellScalarsToColors(const std::string& name);
-
 	SolverDefinitionGridType* m_gridType;
-	QMap<std::string, LookupTableContainer*> m_cellLookupTables;
-	QMap<std::string, LookupTableContainer*> m_nodeLookupTables;
-	QMap<std::string, Post2dBirdEyeWindowZoneDataItem*> m_zoneDataNameMap;
-	QList<Post2dBirdEyeWindowZoneDataItem*> m_zoneDatas;
+	std::unordered_map<std::string, ValueRangeContainer> m_nodeValueRanges;
+	std::unordered_map<std::string, ValueRangeContainer> m_cellValueRanges;
+	ValueRangeContainer m_dummyRange;
+
+	std::vector<Post2dBirdEyeWindowZoneDataItem*> m_zoneDatas;
+	std::map<std::string, Post2dBirdEyeWindowZoneDataItem*> m_zoneDataNameMap;
+
 	bool m_isZoneDataItemsSetup;
 };
 

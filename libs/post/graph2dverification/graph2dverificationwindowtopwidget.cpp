@@ -24,7 +24,7 @@ void Graph2dVerificationWindowTopWidget::setSetting(const Graph2dVerificationWin
 {
 	if (setting.activePostData() == nullptr) return;
 
-	vtkPointSet* ps = setting.activePostData()->data();
+	vtkPointSet* ps = setting.activePostData()->data()->data();
 	vtkStructuredGrid* sgrid = vtkStructuredGrid::SafeDownCast(ps);
 
 	ui->typeComboBox->blockSignals(true);

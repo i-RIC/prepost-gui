@@ -2,7 +2,6 @@
 #define POST3DWINDOWISOSURFACESETTINGDIALOG_H
 
 #include <guibase/widget/contoursettingwidget.h>
-#include <guicore/scalarstocolors/lookuptablecontainer.h>
 #include "post3dwindownodescalargroupdataitem.h"
 
 #include <QDialog>
@@ -16,7 +15,6 @@ namespace Ui
 }
 
 class PostZoneDataContainer;
-class LookupTableContainer;
 class Post3dWindowGridTypeDataItem;
 
 class Post3dWindowIsosurfaceSettingDialog : public QDialog

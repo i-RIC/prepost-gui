@@ -1,3 +1,4 @@
+#include "../post2dwindowgraphicsview.h"
 #include "post2dwindownodevectorstreamlinegroupstructureddataitem.h"
 #include "post2dwindowstreamlinestructuredsettingdialog.h"
 #include "post2dwindowzonedataitem.h"
@@ -56,8 +57,8 @@ void Post2dWindowNodeVectorStreamlineGroupStructuredDataItem::setupDefaultValues
 {
 	m_stSettings.clear();
 
-	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
-	vtkStructuredGrid* grid = dynamic_cast<vtkStructuredGrid*>(cont->data());
+	auto cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
+	auto grid = vtkStructuredGrid::SafeDownCast(cont->data()->data());
 	int dim[3];
 	grid->GetDimensions(dim);
 
@@ -72,7 +73,7 @@ void Post2dWindowNodeVectorStreamlineGroupStructuredDataItem::setupDefaultValues
 
 void Post2dWindowNodeVectorStreamlineGroupStructuredDataItem::setupActors()
 {
-	PostZoneDataContainer* zoneContainer = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
+	auto zoneContainer = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
 	for (int i = 0; i < m_extractGrids.count(); ++i) {
 		m_extractGrids[i]->Delete();
 	}
@@ -86,9 +87,9 @@ void Post2dWindowNodeVectorStreamlineGroupStructuredDataItem::setupActors()
 		Setting& s = m_stSettings[i];
 
 		vtkExtractGrid* ext = vtkExtractGrid::New();
-		ext->SetInputData(zoneContainer->data());
+		ext->SetInputData(zoneContainer->data()->data());
 		vtkSubdivideGrid* div = vtkSubdivideGrid::New();
-		div->SetInputData(zoneContainer->data());
+		div->SetInputData(zoneContainer->data()->data());
 
 		auto& r = s.range;
 		ext->SetVOI(r.iMin, r.iMax, r.jMin, r.jMax, 0, 0);
@@ -104,11 +105,12 @@ void Post2dWindowNodeVectorStreamlineGroupStructuredDataItem::setupActors()
 		m_extractGrids.append(ext);
 		m_subdivideGrids.append(div);
 
-		vtkSmartPointer<vtkActor> actor = vtkSmartPointer<vtkActor>::New();
+		auto view = dataModel()->graphicsView();
+		auto actor = vtkSmartPointer<vtkActor>::New();
 		vtkProperty* prop = actor->GetProperty();
 		prop->SetLighting(false);
 		prop->SetColor(s.color);
-		prop->SetLineWidth(s.width);
+		prop->SetLineWidth(s.width * view->devicePixelRatioF());
 		actor->SetScale(1, m_zScale, 1);
 
 		renderer()->AddActor(actor);

@@ -65,7 +65,7 @@ void Post3dWindowFaceDataItem::update()
 	Post3dWindowZoneDataItem* zdi = getZoneDataItem();
 	PostZoneDataContainer* cont = zdi->dataContainer();
 	if (cont == nullptr) {return;}
-	vtkPointSet* pd = cont->data();
+	vtkPointSet* pd = cont->data()->data();
 	if (pd == nullptr) {return;}
 	m_dataOK = true;
 

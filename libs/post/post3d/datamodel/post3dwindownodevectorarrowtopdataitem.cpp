@@ -1,18 +1,15 @@
 #include "post3dwindownodevectorarrowgroupdataitem.h"
 #include "post3dwindownodevectorarrowtopdataitem.h"
 #include "post3dwindowzonedataitem.h"
-#include "post3dwindownodevectorarrowsettingdialog.h"
-#include "private/post3dwindownodevectorarrowtopdataitem_createcommand.h"
 
 #include <guibase/objectbrowserview.h>
+#include <guibase/vtkdatasetattributestool.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
+#include <guicore/solverdef/solverdefinitiongridtype.h>
+#include <guicore/solverdef/solverdefinitionoutput.h>
+#include <misc/iricundostack.h>
 #include <misc/stringtool.h>
-
-#include <QDomElement>
-#include <QDomNodeList>
-#include <QMessageBox>
-#include <QMenu>
-#include <QXmlStreamWriter>
+#include <postbase/postsolutionselectdialog.h>
 
 Post3dWindowNodeVectorArrowTopDataItem::Post3dWindowNodeVectorArrowTopDataItem(Post3dWindowDataItem* p) :
 	Post3dWindowDataItem {tr("Arrows"), QIcon(":/libs/guibase/images/iconFolder.svg"), p},
@@ -44,15 +41,9 @@ void Post3dWindowNodeVectorArrowTopDataItem::doLoadFromProjectMainFile(const QDo
 	QDomNodeList children = node.childNodes();
 	for (int i = 0; i < children.count(); ++i) {
 		QDomElement childElem = children.at(i).toElement();
-		if (childElem.nodeName() == "ScalarBarTitles") {
-			QDomNodeList titles = children.at(i).childNodes();
-			for (int i = 0; i < titles.count(); ++i) {
-				std::string val = iRIC::toStr(titles.at(i).toElement().attribute("value"));
-				QString title = titles.at(i).toElement().attribute("title");
-				m_colorBarTitleMap[val] = title;
-			}
-		} else if (childElem.nodeName() == "ArrowGroup") {
-			auto item = new Post3dWindowNodeVectorArrowGroupDataItem(this);
+		if (childElem.nodeName() == "ArrowGroup") {
+			auto target = iRIC::toStr(childElem.attribute("target"));
+			auto item = new Post3dWindowNodeVectorArrowGroupDataItem(target, this);
 			item->updateZScale(m_zScale);
 			item->loadFromProjectMainFile(children.at(i));
 			m_childItems.push_back(item);
@@ -61,23 +52,11 @@ void Post3dWindowNodeVectorArrowTopDataItem::doLoadFromProjectMainFile(const QDo
 }
 void Post3dWindowNodeVectorArrowTopDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	// scalar bar titles
-	writer.writeStartElement("ScalarBarTitles");
-	QMapIterator<std::string, QString> i(m_colorBarTitleMap);
-	while (i.hasNext()) {
-		i.next();
-		if (i.key().size() > 0) {
-			writer.writeStartElement("ScalarBarTitle");
-			writer.writeAttribute("value", i.key().c_str());
-			writer.writeAttribute("title", i.value());
-			writer.writeEndElement();
-		}
-	}
-	writer.writeEndElement();
-
 	// arrows
 	for (auto item : m_childItems) {
+		auto item2 = dynamic_cast<Post3dWindowNodeVectorArrowGroupDataItem*> (item);
 		writer.writeStartElement("ArrowGroup");
+		writer.writeAttribute("target", item2->target().c_str());
 		item->saveToProjectMainFile(writer);
 		writer.writeEndElement();
 	}
@@ -90,33 +69,43 @@ void Post3dWindowNodeVectorArrowTopDataItem::addCustomMenuItems(QMenu* menu)
 
 QDialog* Post3dWindowNodeVectorArrowTopDataItem::addDialog(QWidget* p)
 {
-	PostZoneDataContainer* zoneData = dynamic_cast<Post3dWindowZoneDataItem*>(parent())->dataContainer();
+	auto zoneData = dynamic_cast<Post3dWindowZoneDataItem*>(parent())->dataContainer();
 	if (zoneData == nullptr || zoneData->data() == nullptr) {
 		return nullptr;
 	}
 
-	if (childItems().size() >= 4) {
-		QMessageBox::warning(postProcessorWindow(), tr("Warning"), tr("A maximum of four arrows may be defined."));
-		return nullptr;
+	auto gType = zoneData->gridType();
+
+	auto dialog = new PostSolutionSelectDialog(p);
+	std::unordered_map<std::string, QString> solutions;
+
+	for (const auto& sol : vtkDataSetAttributesTool::getArrayNamesWithMultipleComponents(zoneData->data()->data()->GetPointData())) {
+		solutions.insert({sol, gType->output(sol)->caption()});
 	}
-
-	auto dialog = new Post3dWindowNodeVectorArrowSettingDialog(p);
-	dialog->setZoneData(zoneData);
-
-	ArrowSettingContainer arrowSetting;
-	dialog->setArrowSetting(arrowSetting);
-
-	std::vector<Post3dWindowNodeVectorArrowSettingDialog::FaceSetting> faceSettings;
-	dialog->setFaceSettings(faceSettings);
+	dialog->setSolutions(solutions);
 
 	return dialog;
 }
 
 void Post3dWindowNodeVectorArrowTopDataItem::handleAddDialogAccepted(QDialog* propDialog)
 {
-	auto dialog = dynamic_cast<Post3dWindowNodeVectorArrowSettingDialog*> (propDialog);
-	auto arrowSetting = dialog->arrowSetting();
-	auto faceSettings = dialog->faceSettings();
+	auto zoneData = dynamic_cast<Post3dWindowZoneDataItem*>(parent())->dataContainer();
+	if (zoneData == nullptr || zoneData->data() == nullptr) {
+		return;
+	}
 
-	pushRenderCommand(new CreateCommand(arrowSetting, faceSettings, this), this);
+	auto gType = zoneData->gridType();
+
+	auto dialog = dynamic_cast<PostSolutionSelectDialog*> (propDialog);
+	auto sol = dialog->selectedSolution();
+
+	auto newItem = new Post3dWindowNodeVectorArrowGroupDataItem(sol, this);
+	newItem->standardItem()->setText(gType->output(sol)->caption());
+	newItem->updateZScale(m_zScale);
+
+	m_childItems.push_back(newItem);
+	updateItemMap();
+	iRICUndoStack::instance().clear();
+
+	newItem->showPropertyDialog();
 }

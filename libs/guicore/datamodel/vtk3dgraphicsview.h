@@ -14,8 +14,7 @@ class GUICOREDLL_EXPORT VTK3DGraphicsView : public VTKGraphicsView
 public:
 	VTK3DGraphicsView(QWidget* parent);
 	~VTK3DGraphicsView() override;
-	/// Get distance in world corrdinate
-	double stdDistance(int pixels);
+
 	/// Translate the camera
 	void translate(int x, int y) override;
 

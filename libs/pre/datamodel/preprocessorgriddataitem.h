@@ -104,11 +104,12 @@ public:
 	QVector<Edge> getEdgesFromVertices(const QSet<vtkIdType>& vertices) const;
 	void setBCGroupDataItem(PreProcessorBCGroupDataItem* item) override;
 	void unsetBCGroupDataItem() override;
+	void applyColorMapSetting(const std::string& name) override;
 
 	bool isImportAvailable();
 	bool isExportAvailable();
 
-	bool gridIsDeleted() const;
+	bool gridIsDeleted() const override;
 
 	QAction* importAction() const;
 	QAction* exportAction() const;

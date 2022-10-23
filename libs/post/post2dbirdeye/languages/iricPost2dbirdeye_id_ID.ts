@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="id_ID">
 <context>
     <name>Post2dBirdEyeObjectBrowser</name>
@@ -9,7 +11,7 @@
 <context>
     <name>Post2dBirdEyeWindow</name>
     <message>
-        <source>Bird's-Eye Post-processing (2D): %1</source>
+        <source>Bird&apos;s-Eye Post-processing (2D): %1</source>
         <translation>Pasca Pemrosesan Mata Burung (2D): %1</translation>
     </message>
     <message>
@@ -56,80 +58,80 @@
     <name>Post2dBirdEyeWindowAxesDataItem</name>
     <message>
         <source>Axes</source>
-        <translation>Sumbu</translation>
+        <translation type="vanished">Sumbu</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
-        <translation>skalar</translation>
+        <translation type="vanished">skalar</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
-        <translation>Perbarui Pengaturan Kontur</translation>
+        <translation type="vanished">Perbarui Pengaturan Kontur</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowCellScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (cell center)</source>
-        <translation>Skalar (pusat sel)</translation>
+        <translation type="vanished">Skalar (pusat sel)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Peringatan</translation>
+        <translation type="vanished">Peringatan</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>Maksimal empat kontur dapat ditentukan.</translation>
+        <translation type="vanished">Maksimal empat kontur dapat ditentukan.</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowContourSettingDialog</name>
     <message>
         <source>Scalar Setting</source>
-        <translation>Pengaturan Skalar</translation>
+        <translation type="vanished">Pengaturan Skalar</translation>
     </message>
     <message>
         <source>Scalar value for elevation</source>
-        <translation>Nilai skalar untuk ketinggian</translation>
+        <translation type="vanished">Nilai skalar untuk ketinggian</translation>
     </message>
     <message>
         <source>Color Setting</source>
-        <translation>Pengaturan Warna</translation>
+        <translation type="vanished">Pengaturan Warna</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Warna kustom</translation>
+        <translation type="vanished">Warna kustom</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Dengan nilai skalar</translation>
+        <translation type="vanished">Dengan nilai skalar</translation>
     </message>
     <message>
         <source>Scalar Value:</source>
-        <translation>Nilai Skalar:</translation>
+        <translation type="vanished">Nilai Skalar:</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>Pengaturan tampilan</translation>
+        <translation type="vanished">Pengaturan tampilan</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>Pengaturan Wilayah (&amp;R)</translation>
+        <translation type="vanished">Pengaturan Wilayah (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Pengaturan Bilah Warna (&amp;C)</translation>
+        <translation type="vanished">Pengaturan Bilah Warna (&amp;C)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Kesalahan</translation>
+        <translation type="vanished">Kesalahan</translation>
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
-        <translation>Untuk rentang nilai, nilai maks lebih kecil dari nilai min.</translation>
+        <translation type="vanished">Untuk rentang nilai, nilai maks lebih kecil dari nilai min.</translation>
     </message>
 </context>
 <context>
@@ -144,7 +146,7 @@
     </message>
     <message>
         <source>Contour setting is not available, because this result does not contain cell scalar values.</source>
-        <translation>Pengaturan kontur tidak tersedia, karena hasil ini tidak berisi nilai skalar sel.</translation>
+        <translation type="vanished">Pengaturan kontur tidak tersedia, karena hasil ini tidak berisi nilai skalar sel.</translation>
     </message>
     <message>
         <source>Z-direction Scale</source>
@@ -163,14 +165,60 @@
     </message>
 </context>
 <context>
+    <name>Post2dBirdEyeWindowGridShapeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Shape Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scalar value for Elevation</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>Post2dBirdEyeWindowNodeScalarGroupDataItem</name>
     <message>
         <source>Update Contour Setting</source>
-        <translation>Perbarui Pengaturan Kontur</translation>
+        <translation type="vanished">Perbarui Pengaturan Kontur</translation>
     </message>
     <message>
         <source>Scalar</source>
         <translation>skalar</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation type="unfinished">Warna kustom</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation type="unfinished">Dengan nilai skalar</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -181,18 +229,18 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Peringatan</translation>
+        <translation type="vanished">Peringatan</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>Maksimal empat kontur dapat ditentukan.</translation>
+        <translation type="vanished">Maksimal empat kontur dapat ditentukan.</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
         <source>Update Grid Shape Setting</source>
-        <translation>Perbarui Pengaturan Bentuk Kotak</translation>
+        <translation type="vanished">Perbarui Pengaturan Bentuk Kotak</translation>
     </message>
     <message>
         <source>Edit Background Color</source>
@@ -200,7 +248,7 @@
     </message>
     <message>
         <source>Create Contour</source>
-        <translation>Buat Kontur</translation>
+        <translation type="vanished">Buat Kontur</translation>
     </message>
 </context>
 </TS>

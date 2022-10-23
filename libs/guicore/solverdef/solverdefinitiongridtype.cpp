@@ -16,6 +16,7 @@
 #include "solverdefinitiongridattributerealoptionnode.h"
 #include "solverdefinitiongridcomplexattribute.h"
 #include "solverdefinitiongridtype.h"
+#include "solverdefinitionoutput.h"
 #include "private/solverdefinitiongridtype_impl.h"
 
 #include <QStringList>
@@ -62,6 +63,9 @@ SolverDefinitionGridType::Impl::~Impl()
 {
 	for (auto c : m_gridAttributes) {
 		delete c;
+	}
+	for (const auto& pair : m_outputs) {
+		delete pair.second;
 	}
 	delete m_emptyGrid;
 }
@@ -380,4 +384,17 @@ QStringList SolverDefinitionGridType::solutionCaptions(const std::vector<std::st
 		ret.push_back(solutionCaption(name));
 	}
 	return ret;
+}
+
+SolverDefinitionOutput* SolverDefinitionGridType::output(const std::string& name)
+{
+	auto it = impl->m_outputs.find(name);
+	if (it != impl->m_outputs.end()) {
+		return it->second;
+	}
+
+	// @todo it should be read when initializing in the future
+	auto output = new SolverDefinitionOutput(name);
+	impl->m_outputs.insert({name, output});
+	return output;
 }

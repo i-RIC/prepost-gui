@@ -77,6 +77,7 @@ void Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::setDefaultValues()
 
 void Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::setupTmpSource()
 {
+	auto v = dataModel()->graphicsView();
 	m_previewPoints = vtkSmartPointer<vtkUnstructuredGrid>::New();
 	m_previewMapper = vtkSmartPointer<vtkDataSetMapper>::New();
 	m_previewMapper ->SetInputData(m_previewPoints);
@@ -84,7 +85,7 @@ void Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::setupTmpSource()
 	m_previewActor->SetMapper(m_previewMapper);
 	vtkProperty* prop = m_previewActor->GetProperty();
 	prop->SetRepresentationToPoints();
-	prop->SetPointSize(3);
+	prop->SetPointSize(3 * v->devicePixelRatioF());
 	prop->SetLighting(false);
 	prop->SetColor(0, 0, 0);
 	m_previewActor->SetScale(1, m_zScale, 1);
@@ -95,19 +96,20 @@ void Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::setupTmpSource()
 
 void Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::setupActors()
 {
+	auto v = dataModel()->graphicsView();
 	for (int i = 0; i < m_unstSettings.count(); ++i) {
 		const Setting& s = m_unstSettings[i];
-		vtkSmartPointer<vtkActor> actor = vtkSmartPointer<vtkActor>::New();
-		vtkProperty* prop = actor->GetProperty();
+		auto actor = vtkSmartPointer<vtkActor>::New();
+		auto prop = actor->GetProperty();
 		prop->SetLighting(false);
 		prop->SetColor(s.color);
-		prop->SetPointSize(s.size);
+		prop->SetPointSize(s.size * v->devicePixelRatioF());
 		actor->SetScale(1, m_zScale, 1);
 
 		renderer()->AddActor(actor);
 		actorCollection()->AddItem(actor);
 
-		vtkSmartPointer<vtkDataSetMapper> mapper = vtkSmartPointer<vtkDataSetMapper>::New();
+		auto mapper = vtkSmartPointer<vtkDataSetMapper>::New();
 		actor->SetMapper(mapper);
 
 		m_particleActors.push_back(actor);

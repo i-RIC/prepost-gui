@@ -77,7 +77,7 @@ std::string CoordinateSystem::planeWkt() const
 {
 	QRegExp re("EPSG:(\\d+)");
 	int pos = 0;
-	pos == re.indexIn(name(), pos);
+	pos = re.indexIn(name(), pos);
 	if (pos == -1) {return "";}
 
 	int epsgCode = re.cap(1).toInt();

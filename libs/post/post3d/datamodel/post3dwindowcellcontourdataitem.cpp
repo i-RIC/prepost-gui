@@ -1,11 +1,8 @@
 #include "post3dwindowcellcontourdataitem.h"
 #include "post3dwindowcellcontourgroupdataitem.h"
-#include "post3dwindowgridtypedataitem.h"
-#include "post3dwindowzonedataitem.h"
 
 #include <guicore/postcontainer/postzonedatacontainer.h>
-#include <guicore/scalarstocolors/lookuptablecontainer.h>
-#include <misc/stringtool.h>
+#include <guicore/scalarstocolors/colormapsettingcontainer.h>
 
 #include <QDomElement>
 #include <QDomNode>
@@ -13,24 +10,13 @@
 #include <QXmlStreamWriter>
 
 #include <vtkActor.h>
-#include <vtkExtractCells.h>
-#include <vtkExtractGrid.h>
-#include <vtkGeometryFilter.h>
-#include <vtkPolyData.h>
-#include <vtkPolyDataMapper.h>
 #include <vtkRenderer.h>
-#include <vtkSmartPointer.h>
 
 Post3dWindowCellContourDataItem::Post3dWindowCellContourDataItem(const QString& label, Post3dWindowDataItem* p) :
 	Post3dWindowDataItem(label, QIcon(":/libs/guibase/images/iconPaper.svg"), p),
-	m_actor {vtkActor::New()},
-	m_mapper {vtkPolyDataMapper::New()},
-	m_polyData {vtkPolyData::New()}
+	m_actor {vtkActor::New()}
 {
 	setupStandardItem(Checked, NotReorderable, Deletable);
-
-	m_actor->SetMapper(m_mapper);
-	m_mapper->SetInputData(m_polyData);
 
 	renderer()->AddActor(m_actor);
 	actorCollection()->AddItem(m_actor);
@@ -41,24 +27,33 @@ Post3dWindowCellContourDataItem::~Post3dWindowCellContourDataItem()
 	renderer()->RemoveActor(m_actor);
 
 	m_actor->Delete();
-	m_mapper->Delete();
-	m_polyData->Delete();
 }
 
-const Post3dCellRangeSettingContainer& Post3dWindowCellContourDataItem::setting() const
+Post3dWindowCellRangeSettingContainer Post3dWindowCellContourDataItem::setting() const
 {
-	return m_setting;
+	auto s = m_setting;
+	s.enabled.setValue(standardItem()->checkState() == Qt::Checked);
+
+	return s;
 }
 
-void Post3dWindowCellContourDataItem::setSetting(const Post3dCellRangeSettingContainer& setting)
+void Post3dWindowCellContourDataItem::setSetting(const Post3dWindowCellRangeSettingContainer& setting)
 {
 	m_setting = setting;
+	m_isCommandExecuting = true;
+	standardItem()->setCheckState(Qt::Checked);
+	m_isCommandExecuting = false;
 	updateActorSettings();
 }
 
 void Post3dWindowCellContourDataItem::update()
 {
 	updateActorSettings();
+}
+
+Post3dWindowCellContourGroupDataItem* Post3dWindowCellContourDataItem::groupDataItem() const
+{
+	return dynamic_cast<Post3dWindowCellContourGroupDataItem*> (parent());
 }
 
 void Post3dWindowCellContourDataItem::doLoadFromProjectMainFile(const QDomNode& node)
@@ -84,44 +79,40 @@ void Post3dWindowCellContourDataItem::innerUpdateZScale(double scale)
 
 void Post3dWindowCellContourDataItem::updateActorSettings()
 {
-	updatePolyData();
-	updateColorSetting();
-}
-
-void Post3dWindowCellContourDataItem::updatePolyData()
-{
-	m_polyData->Initialize();
-	auto zItem = dynamic_cast<Post3dWindowZoneDataItem*> (parent()->parent()->parent());
-	if (zItem == nullptr) {return;}
-
-	auto data = zItem->dataContainer()->data();
+	auto data = groupDataItem()->data();
 	if (data == nullptr) {return;}
-
-	auto gItem = dynamic_cast<Post3dWindowCellContourGroupDataItem*> (parent());
-	auto lut = gItem->lookupTable();
-
-	auto grid = dynamic_cast<vtkStructuredGrid*> (data);
+	auto grid = vtkStructuredGrid::SafeDownCast(data->data()->data());
 	auto extracted = m_setting.extractRegion(grid);
-	auto extracted2 = gItem->setting().filterCellsWithUpperLower(extracted, *lut);
-	auto gFilter = vtkSmartPointer<vtkGeometryFilter>::New();
-	gFilter->SetInputData(extracted2);
-	gFilter->Update();
 
-	m_polyData->DeepCopy(gFilter->GetOutput());
-	extracted->Delete();
-	extracted2->Delete();
+	extracted->GetCellData()->SetActiveScalars(groupDataItem()->target().c_str());
+	auto mapper = groupDataItem()->m_colorMapSetting.buildCellDataMapper(extracted, false);
+	m_actor->SetMapper(mapper);
+	mapper->Delete();
+
+	updateVisibilityWithoutRendering();
 }
 
-void Post3dWindowCellContourDataItem::updateColorSetting()
+void Post3dWindowCellContourDataItem::informSelection(VTKGraphicsView* v)
 {
-	auto typedi = dynamic_cast<Post3dWindowGridTypeDataItem*>(parent()->parent()->parent()->parent());
-	auto gi = dynamic_cast<Post3dWindowCellContourGroupDataItem*> (parent());
+	groupDataItem()->informSelection(v);
+}
 
-	auto target = iRIC::toStr(gi->setting().target);
-	auto lookupTable = typedi->cellLookupTable(target);
+void Post3dWindowCellContourDataItem::informDeselection(VTKGraphicsView* v)
+{
+	groupDataItem()->informDeselection(v);
+}
 
-	m_mapper->SetLookupTable(lookupTable->vtkObj());
-	m_mapper->UseLookupTableScalarRangeOn();
-	m_mapper->SetScalarModeToUseCellFieldData();
-	m_mapper->SelectColorArray(target.c_str());
+void Post3dWindowCellContourDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
+{
+	groupDataItem()->mouseMoveEvent(event, v);
+}
+
+void Post3dWindowCellContourDataItem::mousePressEvent(QMouseEvent* event, VTKGraphicsView* v)
+{
+	groupDataItem()->mousePressEvent(event, v);
+}
+
+void Post3dWindowCellContourDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
+{
+	groupDataItem()->mouseReleaseEvent(event, v);
 }

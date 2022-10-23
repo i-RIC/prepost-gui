@@ -68,6 +68,7 @@ void Post2dBirdEyeWindowProjectDataItem::doLoadFromProjectMainFile(const QDomNod
 		w->m_dataModel->loadFromProjectMainFile(modelNode);
 		w->m_dataModel->reflectExpandState(w->m_objectBrowser->view());
 	}
+	w->m_dataModel->graphicsView()->render();
 }
 
 void Post2dBirdEyeWindowProjectDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)

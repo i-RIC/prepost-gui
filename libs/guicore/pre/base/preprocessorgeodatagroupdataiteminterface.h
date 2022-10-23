@@ -28,6 +28,7 @@ public:
 	ProjectData* projectData() const {return ProjectDataItem::projectData();}
 
 	virtual bool getValueRange(double* min, double* max) = 0;
+	virtual void applyColorMapSetting() = 0;
 	virtual void setupStringConverter(GridAttributeStringConverter* converter) = 0;
 	virtual void setupEditWidget(GridAttributeEditWidget* widget) = 0;
 	virtual void addCopyPolygon(GeoDataPolygon* polygon) = 0;

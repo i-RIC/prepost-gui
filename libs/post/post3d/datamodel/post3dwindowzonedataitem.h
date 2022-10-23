@@ -16,6 +16,7 @@
 class QSignalMapper;
 
 class Post3dWindowGridShapeDataItem;
+class Post3dWindowGridTypeDataItem;
 class Post3dWindowCellContourGroupTopDataItem;
 class Post3dWindowContourGroupTopDataItem;
 class Post3dWindowNodeScalarGroupDataItem;
@@ -45,6 +46,7 @@ public:
 	const std::string& zoneName() const;
 	void update();
 
+	Post3dWindowGridTypeDataItem* gridTypeDataItem() const;
 	Post3dWindowGridShapeDataItem* gridShapeDataItem() const;
 	Post3dWindowContourGroupTopDataItem* contourGroupTopItem() const;
 	Post3dWindowCellContourGroupTopDataItem* cellContourGroupTopItem() const;

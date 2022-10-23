@@ -9,6 +9,7 @@ class MISCDLL_EXPORT OpacityContainer : public IntContainer
 public:
 	OpacityContainer();
 	OpacityContainer(const QString& name);
+	OpacityContainer(const QString& name, int defaultVal);
 	~OpacityContainer();
 
 	OpacityContainer& operator=(const OpacityContainer& c);

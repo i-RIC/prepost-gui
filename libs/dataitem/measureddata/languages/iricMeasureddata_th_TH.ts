@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="th_TH">
 <context>
     <name>MeasuredDataFileDataItem</name>
@@ -38,34 +40,81 @@
     </message>
 </context>
 <context>
-    <name>MeasuredDataPointSettingDialog</name>
+    <name>MeasuredDataPointGroupDataItem_PropertyDialog</name>
     <message>
-        <source>Scalar Setting</source>
-        <translation>การตั้งค่าสเกลาร์</translation>
-    </message>
-    <message>
-        <source>Measured Value:</source>
-        <translation>ค่าที่วัดได้:</translation>
+        <source>Points Display Setting Dialog</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>การตั้งค่าการแสดงผล</translation>
+        <translation type="unfinished">การตั้งค่าการแสดงผล</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">สี</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="unfinished">ส่งออก (&amp;E)...</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation>ขนาดจุด:</translation>
+        <translation type="unfinished">ขนาดจุด:</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataPointSettingDialog</name>
+    <message>
+        <source>Scalar Setting</source>
+        <translation type="vanished">การตั้งค่าสเกลาร์</translation>
+    </message>
+    <message>
+        <source>Measured Value:</source>
+        <translation type="vanished">ค่าที่วัดได้:</translation>
+    </message>
+    <message>
+        <source>Display Setting</source>
+        <translation type="vanished">การตั้งค่าการแสดงผล</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="vanished">ขนาดจุด:</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>การตั้งค่าแถบสี (&amp;C)</translation>
+        <translation type="vanished">การตั้งค่าแถบสี (&amp;C)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>ข้อผิดพลาด</translation>
+        <translation type="vanished">ข้อผิดพลาด</translation>
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
-        <translation>สำหรับช่วงค่า ค่าสูงสุดจะน้อยกว่าค่าต่ำสุด</translation>
+        <translation type="vanished">สำหรับช่วงค่า ค่าสูงสุดจะน้อยกว่าค่าต่ำสุด</translation>
     </message>
 </context>
 <context>
@@ -80,62 +129,69 @@
     </message>
     <message>
         <source>Update Arrow Setting</source>
-        <translation>อัปเดตการตั้งค่าลูกศร</translation>
+        <translation type="vanished">อัปเดตการตั้งค่าลูกศร</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataVectorGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Measured Data Arrow Setting</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>MeasuredDataVectorSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>ตั้งค่าลูกศร</translation>
+        <translation type="vanished">ตั้งค่าลูกศร</translation>
     </message>
     <message>
         <source>Physical value:</source>
-        <translation>มูลค่าทางกายภาพ:</translation>
+        <translation type="vanished">มูลค่าทางกายภาพ:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>ความยาว</translation>
+        <translation type="vanished">ความยาว</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>รถยนต์</translation>
+        <translation type="vanished">รถยนต์</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>ค่ามาตรฐาน:</translation>
+        <translation type="vanished">ค่ามาตรฐาน:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[นางสาว]</translation>
+        <translation type="vanished">[นางสาว]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>ความยาวบนหน้าจอ:</translation>
+        <translation type="vanished">ความยาวบนหน้าจอ:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[พิกเซล]</translation>
+        <translation type="vanished">[พิกเซล]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>มูลค่าขั้นต่ำในการวาด:</translation>
+        <translation type="vanished">มูลค่าขั้นต่ำในการวาด:</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>สี</translation>
+        <translation type="vanished">สี</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>สีที่กำหนดเอง</translation>
+        <translation type="vanished">สีที่กำหนดเอง</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>ตามค่าสเกลาร์</translation>
+        <translation type="vanished">ตามค่าสเกลาร์</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>การตั้งค่าแถบสี (&amp;C)</translation>
+        <translation type="vanished">การตั้งค่าแถบสี (&amp;C)</translation>
     </message>
 </context>
 </TS>

@@ -1,7 +1,5 @@
 #include "../factory/geodatafactory.h"
 #include "../misc/preprocessorlegendboxeditdialog.h"
-#include "../misc/preprocessorscalarbareditdialog.h"
-#include "../misc/preprocessorscalarbarlegendboxsettingdialog.h"
 #include "../preobjectbrowserview.h"
 #include "../preprocessordatamodel.h"
 #include "../preprocessorgraphicsview.h"
@@ -11,10 +9,13 @@
 #include "preprocessorgeodatadataitem.h"
 #include "preprocessorgeodatagroupdataitem.h"
 #include "preprocessorgeodatatopdataitem.h"
+#include "private/preprocessorgeodatagroupdataitem_colormapsettingeditdialog.h"
+#include "private/preprocessorgeodatagroupdataitem_variationsettingdialog.h"
 
 #include <guibase/widget/itemmultiselectingdialog.h>
 #include <guibase/widget/waitdialog.h>
 #include <guicore/base/iricmainwindowinterface.h>
+#include <guicore/image/imagesettingcontainer.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
 #include <guicore/pre/grid/grid.h>
 #include <guicore/pre/gridcond/base/gridattributecontainer.h>
@@ -29,8 +30,9 @@
 #include <guicore/pre/geodatabackground/geodatabackground.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
-#include <guicore/scalarstocolors/scalarstocolorscontainer.h>
-#include <guicore/scalarstocolors/scalarstocolorseditdialog.h>
+#include <guicore/scalarstocolors/colormapsettingcontaineri.h>
+#include <guicore/scalarstocolors/colormaplegendsettingcontaineri.h>
+#include <guicore/scalarstocolors/colormapsettingeditwidgeti.h>
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
 #include <guicore/solverdef/solverdefinitiongridattributedimension.h>
 #include <misc/iricundostack.h>
@@ -64,36 +66,54 @@
 #include <h5cgnsgeographicdatagroup.h>
 #include <h5cgnsgeographicdatatop.h>
 
+PreProcessorGeoDataGroupDataItem::VariationSetting::VariationSetting() :
+	CompositeContainer({&enabled, &activeVariation}),
+	enabled {"enabled", false},
+	activeVariation {"activeVariation"}
+{}
+
+PreProcessorGeoDataGroupDataItem::VariationSetting::VariationSetting(const VariationSetting& s) :
+	VariationSetting {}
+{
+	copyValue(s);
+}
+
+PreProcessorGeoDataGroupDataItem::VariationSetting& PreProcessorGeoDataGroupDataItem::VariationSetting::operator=(const VariationSetting& s)
+{
+	copyValue(s);
+	return *this;
+}
+
+XmlAttributeContainer& PreProcessorGeoDataGroupDataItem::VariationSetting::operator=(const XmlAttributeContainer& c)
+{
+	return operator=(dynamic_cast<const VariationSetting&> (c));
+}
+
 PreProcessorGeoDataGroupDataItem::PreProcessorGeoDataGroupDataItem(SolverDefinitionGridAttribute* cond, PreProcessorDataItem* parent) :
 	PreProcessorGeoDataGroupDataItemInterface {cond, parent},
 	m_webImportAction {new QAction(QIcon(":/libs/guibase/images/iconImport.svg"), PreProcessorGeoDataGroupDataItem::tr("&Import Elevation from web..."), this)},
 	m_editColorMapAction {new QAction(QIcon(":/libs/guibase/images/iconColor.svg"), PreProcessorGeoDataGroupDataItem::tr("&Color Setting..."), this)},
-	m_setupScalarBarAction {new QAction(PreProcessorGeoDataGroupDataItem::tr("Set Up Scalarbar..."), this)},
+	m_editVariationSettingAction {new QAction(PreProcessorGeoDataGroupDataItem::tr("Edit &Variation Setting..."), this)},
 	m_exportAllPolygonsAction {new QAction(QIcon(":/libs/guibase/images/iconExport.svg"), PreProcessorGeoDataGroupDataItem::tr("Export All Polygons..."), this)},
 	m_deleteSelectedAction {new QAction(QIcon(":/libs/guibase/images/iconDeleteItem.svg"), PreProcessorGeoDataGroupDataItem::tr("Delete &Selected..."), this)},
 	m_deleteAllAction {new QAction(QIcon(":/libs/guibase/images/iconDeleteItem.svg"), PreProcessorGeoDataGroupDataItem::tr("Delete &All..."), this)},
 	m_importSignalMapper {nullptr},
 	m_addSignalMapper {nullptr},
-	m_condition {cond}
+	m_condition {cond},
+	m_variationSetting {}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 	setSubPath(cond->name().c_str());
 
 	m_webImportAction->setEnabled(webImportAvailable());
 
-	connect(m_webImportAction, SIGNAL(triggered()), this, SLOT(importFromWeb()));
-	connect(m_deleteSelectedAction, SIGNAL(triggered()), this, SLOT(deleteSelected()));
-	connect(m_deleteAllAction, SIGNAL(triggered()), this, SLOT(deleteAll()));
-	connect(m_exportAllPolygonsAction, SIGNAL(triggered()), this, SLOT(exportAllPolygons()));
-	connect(this, SIGNAL(selectGeoData(QModelIndex)), dataModel(), SLOT(handleObjectBrowserSelection(QModelIndex)));
-	connect(m_editColorMapAction, SIGNAL(triggered()), this, SLOT(editScalarsToColors()));
-	connect(m_setupScalarBarAction, SIGNAL(triggered()), dynamic_cast<PreProcessorGeoDataTopDataItem*>(this->parent()), SLOT(setupScalarBar()));
-
-	if (m_condition->isOption()) {
-		m_scalarBarSetting.initForLegendBox();
-	}
-	// for scalar bar / legend box
-	m_scalarBarTitle = m_condition->englishCaption().c_str();
+	connect(m_webImportAction, &QAction::triggered, [=](bool){importFromWeb();});
+	connect(m_deleteSelectedAction, &QAction::triggered, [=](bool) {deleteSelected();});
+	connect(m_deleteAllAction, &QAction::triggered, this, [=](bool) {deleteAll();});
+	connect(m_exportAllPolygonsAction, &QAction::triggered, [=](bool) {exportAllPolygons();});
+	connect(this, &PreProcessorGeoDataGroupDataItem::selectGeoData, dataModel(), &PreProcessorDataModelInterface::handleObjectBrowserSelection);
+	connect(m_editColorMapAction, &QAction::triggered, [=](bool) {editScalarsToColors();});
+	connect(m_editVariationSettingAction, &QAction::triggered, [=](bool){editVariationSetting();});
 
 	// add dimensions container
 	m_dimensions = new GridAttributeDimensionsContainer(cond, this);
@@ -153,8 +173,8 @@ void PreProcessorGeoDataGroupDataItem::addCustomMenuItems(QMenu* menu)
 
 	if (! m_condition->isReferenceInformation()) {
 		menu->addSeparator();
+		// menu->addAction(m_editVariationSettingAction);
 		menu->addAction(m_editColorMapAction);
-		menu->addAction(m_setupScalarBarAction);
 	}
 	menu->addSeparator();
 	menu->addAction(m_deleteSelectedAction);
@@ -424,6 +444,7 @@ void PreProcessorGeoDataGroupDataItem::addGeoData(PreProcessorGeoDataDataItemInt
 	// update ZDepthRange
 	updateZDepthRange();
 	informDataChange();
+	informValueRangeChange();
 
 	dataModel()->objectBrowserView()->select(geoData->standardItem()->index());
 	dataModel()->graphicsView()->ResetCameraClippingRange();
@@ -576,6 +597,25 @@ void PreProcessorGeoDataGroupDataItem::cancelImport()
 	m_cancelImport = true;
 }
 
+void PreProcessorGeoDataGroupDataItem::editVariationSetting()
+{
+	VariationSettingDialog dialog(mainWindow());
+
+	std::map<std::string, QString> variations;
+	if (! m_variationSetting.enabled) {
+		variations.insert({"default", tr("Default")});
+	} else {
+		// TODO setup variations here
+	}
+	dialog.setVariations(variations);
+	dialog.setSetting(m_variationSetting);
+
+	int ret = dialog.exec();
+	if (ret == QDialog::Rejected) {return;}
+
+	auto newSetting = dialog.setting();
+}
+
 void PreProcessorGeoDataGroupDataItem::importGeoData(GeoDataImporter* importer, const QString& filename, const QString& selectedFilter)
 {
 	if (importer->creator()->requestCoordinateSystem()) {
@@ -707,7 +747,7 @@ ERROR_CLEANING:
 
 void PreProcessorGeoDataGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
-	m_scalarBarSetting.load(node);
+	m_variationSetting.load(node);
 
 	GeoDataFactory& factory = GeoDataFactory::instance();
 	QDomNodeList children = node.childNodes();
@@ -733,13 +773,15 @@ void PreProcessorGeoDataGroupDataItem::doLoadFromProjectMainFile(const QDomNode&
 	// The last node must be the background item.
 	QDomNode child = children.at(children.count() - 1);
 	m_backgroundItem->loadFromProjectMainFile(child);
+
+	informValueRangeChange();
 }
 
 void PreProcessorGeoDataGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	m_scalarBarSetting.save(writer);
-
 	writer.writeAttribute("name", m_condition->name().c_str());
+	m_variationSetting.save(writer);
+
 	for (auto child : m_childItems) {
 		writer.writeStartElement("GeoData");
 		child->saveToProjectMainFile(writer);
@@ -769,13 +811,6 @@ int PreProcessorGeoDataGroupDataItem::mappingCount() const
 
 void PreProcessorGeoDataGroupDataItem::executeMapping(Grid* grid, WaitDialog* dialog)
 {
-	/*
-	if (m_childItems.count() == 1){
-		// There is only background raw data.
-		// No need to execute mapping.
-		return;
-	}
-	*/
 	GridAttributeContainer* container = grid->gridAttribute(m_condition->name());
 	bool* boolMap;
 	int dataCount = container->dataCount();
@@ -872,6 +907,8 @@ void PreProcessorGeoDataGroupDataItem::executeMapping(Grid* grid, WaitDialog* di
 	}
 	container->setMapped(true);
 	delete boolMap;
+
+	informValueRangeChange();
 }
 
 void PreProcessorGeoDataGroupDataItem::setDefaultValue(Grid* grid)
@@ -898,7 +935,7 @@ void PreProcessorGeoDataGroupDataItem::setDefaultValue(Grid* grid)
 
 void PreProcessorGeoDataGroupDataItem::informValueRangeChange()
 {
-	PreProcessorGeoDataTopDataItem* topItem = dynamic_cast<PreProcessorGeoDataTopDataItem*>(parent());
+	auto topItem = dynamic_cast<PreProcessorGeoDataTopDataItem*>(parent());
 	if (topItem != nullptr) {
 		topItem->informValueRangeChange(m_condition->name());
 	}
@@ -934,6 +971,17 @@ bool PreProcessorGeoDataGroupDataItem::getValueRange(double* min, double* max)
 	return result;
 }
 
+void PreProcessorGeoDataGroupDataItem::applyColorMapSetting()
+{
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
+		auto item = dynamic_cast<PreProcessorGeoDataDataItem*>(*it);
+		item->applyColorMapSetting();
+	}
+	auto typedi = dynamic_cast<PreProcessorGridTypeDataItem*> (parent()->parent());
+	auto setting = typedi->colorMapSetting(condition()->name());
+	setting->legendSetting()->imgSetting()->apply(dataModel()->graphicsView());
+}
+
 void PreProcessorGeoDataGroupDataItem::updateZDepthRangeItemCount()
 {
 	m_zDepthRange.setItemCount(10);
@@ -951,78 +999,20 @@ const QList<PreProcessorGeoDataDataItemInterface*> PreProcessorGeoDataGroupDataI
 
 void PreProcessorGeoDataGroupDataItem::editScalarsToColors()
 {
-	PreProcessorGridTypeDataItem* typedi = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent());
-	ScalarsToColorsContainer* stc = typedi->scalarsToColors(condition()->name());
-	if (stc == nullptr) {return;}
+	auto typedi = dynamic_cast<PreProcessorGridTypeDataItem*> (parent()->parent());
+	auto setting = typedi->colorMapSetting(condition()->name());
+	if (setting == nullptr) {return;}
 
-	ScalarsToColorsEditDialog* dialog = condition()->createScalarsToColorsEditDialog(preProcessorWindow());
+	auto dialog = new ColorMapSettingEditDialog(this, preProcessorWindow());
+	auto widget = condition()->createColorMapSettingEditWidget(dialog);
 	dialog->setWindowTitle(tr("%1 Color Setting").arg(m_condition->caption()));
-	dialog->setContainer(stc);
+	widget->setSetting(setting);
+	dialog->setWidget(widget);
 
-	// @todo this operation is not made undo-able yet.
-	int ret = dialog->exec();
-	if (ret != QDialog::Accepted) {return;}
-	renderGraphicsView();
-}
+	dialog->show();
 
-void PreProcessorGeoDataGroupDataItem::editScalarBarLegendBox(PreProcessorScalarBarLegendBoxSettingDialog* dialog)
-{
-	if (m_condition->isOption()) {
-		// discrete
-		PreProcessorLegendBoxEditDialog legendboxDialog(dialog);
-		legendboxDialog.setWidth(m_scalarBarSetting.width);
-		legendboxDialog.setHeight(m_scalarBarSetting.height);
-		legendboxDialog.setPositionX(m_scalarBarSetting.positionX);
-		legendboxDialog.setPositionY(m_scalarBarSetting.positionY);
-		legendboxDialog.setEntryTextSetting(m_scalarBarSetting.labelTextSetting);
-
-		if (legendboxDialog.exec() == QDialog::Rejected) {return;}
-
-		m_scalarBarSetting.width = legendboxDialog.width();
-		m_scalarBarSetting.height = legendboxDialog.height();
-		m_scalarBarSetting.positionX = legendboxDialog.positionX();
-		m_scalarBarSetting.positionY = legendboxDialog.positionY();
-		m_scalarBarSetting.labelTextSetting = legendboxDialog.entryTextSetting();
-	} else {
-		// continuous
-		PreProcessorScalarBarEditDialog scalarbarDialog(dialog);
-		scalarbarDialog.hideDisplayCheckBox();
-		scalarbarDialog.setOrientation(m_scalarBarSetting.orientation);
-		scalarbarDialog.setScalarBarTitle(m_scalarBarTitle);
-		scalarbarDialog.setNumberOfLabels(m_scalarBarSetting.numberOfLabels);
-		scalarbarDialog.setWidth(m_scalarBarSetting.width);
-		scalarbarDialog.setHeight(m_scalarBarSetting.height);
-		scalarbarDialog.setPositionX(m_scalarBarSetting.positionX);
-		scalarbarDialog.setPositionY(m_scalarBarSetting.positionY);
-		scalarbarDialog.setTitleTextSetting(m_scalarBarSetting.titleTextSetting);
-		scalarbarDialog.setLabelTextSetting(m_scalarBarSetting.labelTextSetting);
-		scalarbarDialog.setLabelFormat(m_scalarBarSetting.labelFormat);
-
-		if (scalarbarDialog.exec() == QDialog::Rejected) {return;}
-
-		m_scalarBarSetting.orientation = scalarbarDialog.orientation();
-		m_scalarBarTitle = scalarbarDialog.scalarBarTitle();
-		m_scalarBarSetting.numberOfLabels = scalarbarDialog.numberOfLabels();
-		m_scalarBarSetting.width = scalarbarDialog.width();
-		m_scalarBarSetting.height = scalarbarDialog.height();
-		m_scalarBarSetting.positionX = scalarbarDialog.positionX();
-		m_scalarBarSetting.positionY = scalarbarDialog.positionY();
-		m_scalarBarSetting.titleTextSetting = scalarbarDialog.titleTextSetting();
-		m_scalarBarSetting.labelTextSetting = scalarbarDialog.labelTextSetting();
-		m_scalarBarSetting.labelFormat = scalarbarDialog.labelFormat();
-	}
-
-	renderGraphicsView();
-}
-
-ScalarBarSetting& PreProcessorGeoDataGroupDataItem::scalarBarSetting()
-{
-	return m_scalarBarSetting;
-}
-
-const QString& PreProcessorGeoDataGroupDataItem::scalarBarTitle() const
-{
-	return m_scalarBarTitle;
+	iricMainWindow()->enterModelessDialogMode();
+	connect(dialog, &QDialog::destroyed, [=](QObject*){iricMainWindow()->exitModelessDialogMode();});
 }
 
 bool PreProcessorGeoDataGroupDataItem::addImportAction(QMenu* menu)
@@ -1170,14 +1160,28 @@ GeoDataCreator* PreProcessorGeoDataGroupDataItem::getPointMapCreator()
 
 void PreProcessorGeoDataGroupDataItem::informSelection(VTKGraphicsView* v)
 {
+	/*
 	PreProcessorGeoDataTopDataItem* tItem = dynamic_cast<PreProcessorGeoDataTopDataItem*>(parent());
 	tItem->informSelection(v);
+	*/
+	auto typedi = dynamic_cast<PreProcessorGridTypeDataItem*> (parent()->parent());
+	auto setting = typedi->colorMapSetting(condition()->name());
+	if (setting == nullptr) {return;}
+
+	setting->legendSetting()->imgSetting()->controller()->handleSelection(v);
 }
 
 void PreProcessorGeoDataGroupDataItem::informDeselection(VTKGraphicsView* v)
 {
+	/*
 	PreProcessorGeoDataTopDataItem* tItem = dynamic_cast<PreProcessorGeoDataTopDataItem*>(parent());
 	tItem->informDeselection(v);
+	*/
+	auto typedi = dynamic_cast<PreProcessorGridTypeDataItem*> (parent()->parent());
+	auto setting = typedi->colorMapSetting(condition()->name());
+	if (setting == nullptr) {return;}
+
+	setting->legendSetting()->imgSetting()->controller()->handleDeselection(v);
 }
 
 void PreProcessorGeoDataGroupDataItem::keyPressEvent(QKeyEvent* event, VTKGraphicsView* v)
@@ -1197,16 +1201,34 @@ void PreProcessorGeoDataGroupDataItem::mouseDoubleClickEvent(QMouseEvent* event,
 
 void PreProcessorGeoDataGroupDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
+	auto typedi = dynamic_cast<PreProcessorGridTypeDataItem*> (parent()->parent());
+	auto setting = typedi->colorMapSetting(condition()->name());
+	if (setting == nullptr) {return;}
+
+	setting->legendSetting()->imgSetting()->controller()->handleMouseMoveEvent(event, v);
+
 	v->standardMouseMoveEvent(event);
 }
 
 void PreProcessorGeoDataGroupDataItem::mousePressEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
+	auto typedi = dynamic_cast<PreProcessorGridTypeDataItem*> (parent()->parent());
+	auto setting = typedi->colorMapSetting(condition()->name());
+	if (setting == nullptr) {return;}
+
+	setting->legendSetting()->imgSetting()->controller()->handleMousePressEvent(event, v);
+
 	v->standardMousePressEvent(event);
 }
 
 void PreProcessorGeoDataGroupDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
+	auto typedi = dynamic_cast<PreProcessorGridTypeDataItem*> (parent()->parent());
+	auto setting = typedi->colorMapSetting(condition()->name());
+	if (setting == nullptr) {return;}
+
+	setting->legendSetting()->imgSetting()->controller()->handleMouseReleaseEvent(event, v);
+
 	v->standardMouseReleaseEvent(event);
 }
 

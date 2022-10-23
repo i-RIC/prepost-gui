@@ -181,11 +181,11 @@ vtkDataSetAttributes* PostCalculatedResult::dataSetAttributes() const
 
 	switch (dt) {
 	case GridNode:
-		return zdc->data()->GetPointData();
+		return zdc->data()->data()->GetPointData();
 	case GridCell:
-		return zdc->data()->GetCellData();
+		return zdc->data()->data()->GetCellData();
 	case Particle:
-		return zdc->data()->GetPointData();
+		return zdc->data()->data()->GetPointData();
 	case PolyData:
 		// @todo implement this after mergeing polydata add branch
 		return nullptr;

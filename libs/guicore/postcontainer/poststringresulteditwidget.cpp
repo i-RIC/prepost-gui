@@ -176,9 +176,9 @@ QString PostStringResultEditWidget::setupIndex(int row)
 	const auto& args = m_stringResult->arguments();
 	PostStringResultArgument* a = args.at(row);
 
-	auto data = m_zoneDataContainer->data();
+	auto data = m_zoneDataContainer->data()->data();
 	auto st = vtkStructuredGrid::SafeDownCast(data);
-	auto ust = vtkStructuredGrid::SafeDownCast(data);
+	auto ust = vtkUnstructuredGrid::SafeDownCast(data);
 	int dim[3];
 	if (st != nullptr) {
 		st->GetDimensions(dim);
@@ -212,7 +212,7 @@ QString PostStringResultEditWidget::setupIndex(int row)
 			vals.push_back(QString::number(a->index() + 1));
 		}
 	} else if (a->type() == PostStringResultArgument::Type::GridEdgeI) {
-		auto st = vtkStructuredGrid::SafeDownCast(m_zoneDataContainer->ifacedata());
+		auto st = m_zoneDataContainer->iFaceData()->concreteData();
 		if (st != nullptr) {
 			st->GetDimensions(dim);
 			vals.push_back(QString::number(a->i() + 1));
@@ -226,7 +226,7 @@ QString PostStringResultEditWidget::setupIndex(int row)
 			Q_ASSERT_X(false, "PostStringResultEditWidget::setupIndex", "Invalid type for unstructured grid");
 		}
 	} else if (a->type() == PostStringResultArgument::Type::GridEdgeJ) {
-		auto st = vtkStructuredGrid::SafeDownCast(m_zoneDataContainer->jfacedata());
+		auto st = m_zoneDataContainer->jFaceData()->concreteData();
 		if (st != nullptr) {
 			st->GetDimensions(dim);
 			vals.push_back(QString::number(a->i() + 1));

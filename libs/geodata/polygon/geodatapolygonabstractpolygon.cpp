@@ -2,10 +2,15 @@
 #include "geodatapolygonabstractpolygon.h"
 #include "private/geodatapolygonabstractpolygon_impl.h"
 
+#include <guibase/vtktool/vtkpolydatamapperutil.h>
+#include <guicore/scalarstocolors/colormapsettingcontaineri.h>
+#include <guicore/pre/base/preprocessordatamodelinterface.h>
+#include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
+
 #include <vtkActor.h>
+#include <vtkCellData.h>
 #include <vtkDoubleArray.h>
 #include <vtkMapper.h>
-#include <vtkPointData.h>
 #include <vtkPolyData.h>
 #include <vtkPolygon.h>
 #include <vtkProperty.h>
@@ -25,26 +30,39 @@ GeoDataPolygonAbstractPolygon::Impl::Impl(GeoDataPolygon* parent) :
 	m_selectedVertexId {0},
 	m_selectedEdgeId {0},
 	m_parent {parent},
+	m_linesActor {vtkActor::New()},
+	m_pointsActor {vtkActor::New()},
+	m_colorMapSettingContiner {nullptr},
 	m_polygonController {},
-	m_scalarValues {vtkDoubleArray::New()}
+	m_linesScalarValues {vtkDoubleArray::New()},
+	m_pointsScalarValues {vtkDoubleArray::New()}
 {
 	setupScalarValues();
 
-	m_polygonController.linesActor()->GetProperty()->SetLineWidth(2);
-	m_polygonController.pointsActor()->GetProperty()->SetPointSize(5);
+	auto v = parent->dataModel()->graphicsView();
+	m_polygonController.linesActor()->GetProperty()->SetLineWidth(2 * v->devicePixelRatioF());
+	m_pointsActor->GetProperty()->SetPointSize(5 * v->devicePixelRatioF());
+}
+
+GeoDataPolygonAbstractPolygon::Impl::~Impl()
+{
+	m_linesActor->Delete();
+	m_pointsActor->Delete();
+	m_linesScalarValues->Delete();
+	m_pointsScalarValues->Delete();
 }
 
 void GeoDataPolygonAbstractPolygon::Impl::setupScalarValues()
 {
-	m_scalarValues->SetName(SCALARNAME.c_str());
+	m_linesScalarValues->SetName(SCALARNAME.c_str());
+	auto linesCD = m_polygonController.linesPolyData()->GetCellData();
+	linesCD->AddArray(m_linesScalarValues);
+	linesCD->SetActiveScalars(SCALARNAME.c_str());
 
-	auto linesPD = m_polygonController.linesPolyData()->GetPointData();
-	linesPD->AddArray(m_scalarValues);
-	linesPD->SetActiveScalars(SCALARNAME.c_str());
-
-	auto pointsPD = m_polygonController.pointsPolyData()->GetPointData();
-	pointsPD->AddArray(m_scalarValues);
-	pointsPD->SetActiveScalars(SCALARNAME.c_str());
+	m_pointsScalarValues->SetName(SCALARNAME.c_str());
+	auto pointsCD = m_polygonController.pointsPolyData()->GetCellData();
+	pointsCD->AddArray(m_pointsScalarValues);
+	pointsCD->SetActiveScalars(SCALARNAME.c_str());
 }
 
 GeoDataPolygonAbstractPolygon::GeoDataPolygonAbstractPolygon(GeoDataPolygon* parent) :
@@ -53,12 +71,12 @@ GeoDataPolygonAbstractPolygon::GeoDataPolygonAbstractPolygon(GeoDataPolygon* par
 	impl->m_polygonController.pointsActor()->VisibilityOff();
 	auto r = parent->renderer();
 	r->AddActor(impl->m_polygonController.paintActor());
-	r->AddActor(impl->m_polygonController.linesActor());
-	r->AddActor(impl->m_polygonController.pointsActor());
+	r->AddActor(impl->m_linesActor);
+	r->AddActor(impl->m_pointsActor);
 
 	auto col = parent->actorCollection();
 	col->AddItem(impl->m_polygonController.paintActor());
-	col->AddItem(impl->m_polygonController.linesActor());
+	col->AddItem(impl->m_linesActor);
 
 	parent->updateVisibilityWithoutRendering();
 }
@@ -67,15 +85,14 @@ GeoDataPolygonAbstractPolygon::~GeoDataPolygonAbstractPolygon()
 {
 	auto r = impl->m_parent->renderer();
 	r->RemoveActor(impl->m_polygonController.paintActor());
-	r->RemoveActor(impl->m_polygonController.linesActor());
-	r->RemoveActor(impl->m_polygonController.pointsActor());
+	r->RemoveActor(impl->m_linesActor);
+	r->RemoveActor(impl->m_pointsActor);
 
 	auto col = impl->m_parent->actorCollection();
 	col->RemoveItem(impl->m_polygonController.paintActor());
-	col->RemoveItem(impl->m_polygonController.linesActor());
-	col->RemoveItem(impl->m_polygonController.pointsActor());
+	col->RemoveItem(impl->m_linesActor);
+	col->RemoveItem(impl->m_pointsActor);
 
-	impl->m_scalarValues->Delete();
 	delete impl;
 }
 
@@ -93,6 +110,7 @@ void GeoDataPolygonAbstractPolygon::setPolygon(const QPolygonF& p)
 {
 	impl->m_polygonController.setPolygon(p);
 	updateScalarValues();
+	updateActorSetting();
 }
 
 QPolygonF GeoDataPolygonAbstractPolygon::cleanedPolygon(const QPointF& offset) const
@@ -136,18 +154,24 @@ void GeoDataPolygonAbstractPolygon::applyVtkPolygonShape()
 
 void GeoDataPolygonAbstractPolygon::setZDepthRange(double /*min*/, double max)
 {
-	impl->m_polygonController.pointsActor()->SetPosition(0, 0, max);
-	impl->m_polygonController.linesActor()->SetPosition(0, 0, max);
+	impl->m_pointsActor->SetPosition(0, 0, max);
+	impl->m_linesActor->SetPosition(0, 0, max);
 }
 
 void GeoDataPolygonAbstractPolygon::updateScalarValues()
 {
 	double val = impl->m_parent->variantValue().toDouble();
-	impl->m_scalarValues->Reset();
-	for (int i = 0; i < impl->m_polygonController.getVtkPolygon()->GetNumberOfPoints(); ++i) {
-		impl->m_scalarValues->InsertNextValue(val);
+	impl->m_linesScalarValues->Reset();
+	for (int i = 0; i < impl->m_polygonController.linesPolyData()->GetNumberOfLines(); ++i) {
+		impl->m_linesScalarValues->InsertNextValue(val);
 	}
-	impl->m_scalarValues->Modified();
+	impl->m_linesScalarValues->Modified();
+
+	impl->m_pointsScalarValues->Reset();
+	for (int i = 0; i < impl->m_polygonController.pointsPolyData()->GetNumberOfVerts(); ++i) {
+		impl->m_pointsScalarValues->InsertNextValue(val);
+	}
+	impl->m_pointsScalarValues->Modified();
 }
 
 int GeoDataPolygonAbstractPolygon::selectedVertexId() const
@@ -163,15 +187,14 @@ int GeoDataPolygonAbstractPolygon::selectedEdgeId() const
 void GeoDataPolygonAbstractPolygon::setActive(bool active)
 {
 	auto col = impl->m_parent->actorCollection();
-	auto pointsActor = impl->m_polygonController.pointsActor();
-	auto linesActor = impl->m_polygonController.linesActor();
-	col->RemoveItem(pointsActor);
+	col->RemoveItem(impl->m_pointsActor);
+
 	if (active) {
-		col->AddItem(pointsActor);
-		linesActor->GetProperty()->SetLineWidth(GeoDataPolygon::selectedEdgeWidth);
+		col->AddItem(impl->m_pointsActor);
+		impl->m_linesActor->GetProperty()->SetLineWidth(GeoDataPolygon::selectedEdgeWidth);
 	} else {
-		pointsActor->VisibilityOff();
-		linesActor->GetProperty()->SetLineWidth(GeoDataPolygon::normalEdgeWidth);
+		impl->m_pointsActor->VisibilityOff();
+		impl->m_linesActor->GetProperty()->SetLineWidth(GeoDataPolygon::normalEdgeWidth);
 	}
 	impl->m_parent->updateVisibilityWithoutRendering();
 }
@@ -192,34 +215,47 @@ void GeoDataPolygonAbstractPolygon::setSelected(bool selected)
 void GeoDataPolygonAbstractPolygon::finishDefinition()
 {}
 
-void GeoDataPolygonAbstractPolygon::setLookupTable(vtkScalarsToColors* t)
+void GeoDataPolygonAbstractPolygon::setColorMapSettingContainer(ColorMapSettingContainerI* c)
 {
-	impl->m_polygonController.pointsActor()->GetMapper()->SetLookupTable(t);
-	impl->m_polygonController.linesActor()->GetMapper()->SetLookupTable(t);
+	impl->m_colorMapSettingContiner = c;
 }
 
 void GeoDataPolygonAbstractPolygon::setColor(const QColor& color)
 {
-	double rate = 0.8;
-	double dr = color.redF() * rate;
-	double dg = color.greenF() * rate;
-	double db = color.blueF() * rate;
-
-	impl->m_polygonController.pointsActor()->GetProperty()->SetColor(dr, dg, db);
-	impl->m_polygonController.linesActor()->GetProperty()->SetColor(dr, dg, db);
+	impl->m_linesActor->GetProperty()->SetColor(color.redF(), color.greenF(), color.blueF());
+	impl->m_pointsActor->GetProperty()->SetColor(color.redF(), color.greenF(), color.blueF());
 }
 
-void GeoDataPolygonAbstractPolygon::setMapping(GeoDataPolyDataColorSettingDialog::Mapping m)
+void GeoDataPolygonAbstractPolygon::setMapping(GeoDataPolyDataColorSettingDialog::Mapping mapping)
 {
-	auto pointsMapper = impl->m_polygonController.pointsActor()->GetMapper();
-	auto linesMapper = impl->m_polygonController.linesActor()->GetMapper();
+	impl->m_mapping = mapping;
+	updateActorSetting();
+}
 
-	if (m == GeoDataPolyDataColorSettingDialog::Arbitrary) {
-		pointsMapper->SetScalarVisibility(0);
-		linesMapper->SetScalarVisibility(0);
+void GeoDataPolygonAbstractPolygon::updateActorSetting()
+{
+	if (impl->m_mapping == GeoDataPolyDataColorSettingDialog::Arbitrary) {
+		vtkPolyDataMapper* mapper = nullptr;
+
+		mapper = vtkPolyDataMapperUtil::createWithScalarVisibilityOff();
+		mapper->SetInputData(impl->m_polygonController.linesPolyData());
+		impl->m_linesActor->SetMapper(mapper);
+		mapper->Delete();
+
+		mapper = vtkPolyDataMapperUtil::createWithScalarVisibilityOff();
+		mapper->SetInputData(impl->m_polygonController.pointsPolyData());
+		impl->m_pointsActor->SetMapper(mapper);
+		mapper->Delete();
 	} else {
-		pointsMapper->SetScalarVisibility(1);
-		linesMapper->SetScalarVisibility(1);
+		vtkMapper* mapper = nullptr;
+
+		mapper = impl->m_colorMapSettingContiner->buildCellDataMapper(impl->m_polygonController.linesPolyData(), true);
+		impl->m_linesActor->SetMapper(mapper);
+		mapper->Delete();
+
+		mapper = impl->m_colorMapSettingContiner->buildCellDataMapper(impl->m_polygonController.pointsPolyData(), true);
+		impl->m_pointsActor->SetMapper(mapper);
+		mapper->Delete();
 	}
 }
 
@@ -230,8 +266,8 @@ int GeoDataPolygonAbstractPolygon::lineWidth() const
 
 void GeoDataPolygonAbstractPolygon::setLineWidth(int lineWidth)
 {
-	impl->m_polygonController.linesActor()->GetProperty()->SetLineWidth(lineWidth);
-	impl->m_polygonController.pointsActor()->GetProperty()->SetPointSize(lineWidth * 5);
+	impl->m_linesActor->GetProperty()->SetLineWidth(lineWidth * 2);
+	impl->m_pointsActor->GetProperty()->SetPointSize(lineWidth * 5);
 }
 
 const PolygonController& GeoDataPolygonAbstractPolygon::polygonController() const

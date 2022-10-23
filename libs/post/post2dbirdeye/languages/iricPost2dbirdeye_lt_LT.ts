@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="lt_LT">
 <context>
     <name>Post2dBirdEyeObjectBrowser</name>
@@ -9,7 +11,7 @@
 <context>
     <name>Post2dBirdEyeWindow</name>
     <message>
-        <source>Bird's-Eye Post-processing (2D): %1</source>
+        <source>Bird&apos;s-Eye Post-processing (2D): %1</source>
         <translation>Paukščių skrydžio papildomas apdorojimas (2D): %1</translation>
     </message>
     <message>
@@ -56,80 +58,80 @@
     <name>Post2dBirdEyeWindowAxesDataItem</name>
     <message>
         <source>Axes</source>
-        <translation>Kirviai</translation>
+        <translation type="vanished">Kirviai</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
-        <translation>Skalaras</translation>
+        <translation type="vanished">Skalaras</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
-        <translation>Atnaujinkite kontūro nustatymą</translation>
+        <translation type="vanished">Atnaujinkite kontūro nustatymą</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowCellScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (cell center)</source>
-        <translation>Skalaras (ląstelių centras)</translation>
+        <translation type="vanished">Skalaras (ląstelių centras)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Įspėjimas</translation>
+        <translation type="vanished">Įspėjimas</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>Galima apibrėžti ne daugiau kaip keturis kontūrus.</translation>
+        <translation type="vanished">Galima apibrėžti ne daugiau kaip keturis kontūrus.</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowContourSettingDialog</name>
     <message>
         <source>Scalar Setting</source>
-        <translation>Skaliarinis nustatymas</translation>
+        <translation type="vanished">Skaliarinis nustatymas</translation>
     </message>
     <message>
         <source>Scalar value for elevation</source>
-        <translation>Skaliarinė aukščio vertė</translation>
+        <translation type="vanished">Skaliarinė aukščio vertė</translation>
     </message>
     <message>
         <source>Color Setting</source>
-        <translation>Spalvų nustatymas</translation>
+        <translation type="vanished">Spalvų nustatymas</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Individualizuota spalva</translation>
+        <translation type="vanished">Individualizuota spalva</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Pagal skaliarinę vertę</translation>
+        <translation type="vanished">Pagal skaliarinę vertę</translation>
     </message>
     <message>
         <source>Scalar Value:</source>
-        <translation>Skaliarinė reikšmė:</translation>
+        <translation type="vanished">Skaliarinė reikšmė:</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>Ekrano nustatymas</translation>
+        <translation type="vanished">Ekrano nustatymas</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>Regiono nustatymas (&amp;R)</translation>
+        <translation type="vanished">Regiono nustatymas (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Spalvų juostos nustatymas (&amp;C)</translation>
+        <translation type="vanished">Spalvų juostos nustatymas (&amp;C)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Klaida</translation>
+        <translation type="vanished">Klaida</translation>
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
-        <translation>Vertės diapazone maksimali vertė yra mažesnė nei min.</translation>
+        <translation type="vanished">Vertės diapazone maksimali vertė yra mažesnė nei min.</translation>
     </message>
 </context>
 <context>
@@ -144,7 +146,7 @@
     </message>
     <message>
         <source>Contour setting is not available, because this result does not contain cell scalar values.</source>
-        <translation>Kontūro nustatymas negalimas, nes šiame rezultate nėra ląstelių skaliarinių verčių.</translation>
+        <translation type="vanished">Kontūro nustatymas negalimas, nes šiame rezultate nėra ląstelių skaliarinių verčių.</translation>
     </message>
     <message>
         <source>Z-direction Scale</source>
@@ -163,6 +165,17 @@
     </message>
 </context>
 <context>
+    <name>Post2dBirdEyeWindowGridShapeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Shape Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scalar value for Elevation</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>Post2dBirdEyeWindowNodeScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
@@ -170,7 +183,42 @@
     </message>
     <message>
         <source>Update Contour Setting</source>
-        <translation>Atnaujinkite kontūro nustatymą</translation>
+        <translation type="vanished">Atnaujinkite kontūro nustatymą</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation type="unfinished">Individualizuota spalva</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation type="unfinished">Pagal skaliarinę vertę</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -181,22 +229,22 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Įspėjimas</translation>
+        <translation type="vanished">Įspėjimas</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>Galima apibrėžti ne daugiau kaip keturis kontūrus.</translation>
+        <translation type="vanished">Galima apibrėžti ne daugiau kaip keturis kontūrus.</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
         <source>Create Contour</source>
-        <translation>Sukurkite kontūrą</translation>
+        <translation type="vanished">Sukurkite kontūrą</translation>
     </message>
     <message>
         <source>Update Grid Shape Setting</source>
-        <translation>Atnaujinkite tinklelio formos nustatymą</translation>
+        <translation type="vanished">Atnaujinkite tinklelio formos nustatymą</translation>
     </message>
     <message>
         <source>Edit Background Color</source>

@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="zh_CN">
 <context>
     <name>MeasuredDataFileDataItem</name>
@@ -38,34 +40,81 @@
     </message>
 </context>
 <context>
-    <name>MeasuredDataPointSettingDialog</name>
+    <name>MeasuredDataPointGroupDataItem_PropertyDialog</name>
     <message>
-        <source>Scalar Setting</source>
-        <translation>标量设置</translation>
-    </message>
-    <message>
-        <source>Measured Value:</source>
-        <translation>测量数值：</translation>
+        <source>Points Display Setting Dialog</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>显示设置</translation>
+        <translation type="unfinished">显示设置</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">颜色</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="unfinished">&amp;导出</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation>点大小：</translation>
+        <translation type="unfinished">点大小：</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataPointSettingDialog</name>
+    <message>
+        <source>Scalar Setting</source>
+        <translation type="vanished">标量设置</translation>
+    </message>
+    <message>
+        <source>Measured Value:</source>
+        <translation type="vanished">测量数值：</translation>
+    </message>
+    <message>
+        <source>Display Setting</source>
+        <translation type="vanished">显示设置</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="vanished">点大小：</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>&amp;颜色条设置</translation>
+        <translation type="vanished">&amp;颜色条设置</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>错误</translation>
+        <translation type="vanished">错误</translation>
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
-        <translation>对于值范围，最大值小于最小值。</translation>
+        <translation type="vanished">对于值范围，最大值小于最小值。</translation>
     </message>
 </context>
 <context>
@@ -80,62 +129,69 @@
     </message>
     <message>
         <source>Update Arrow Setting</source>
-        <translation>更新箭头设置</translation>
+        <translation type="vanished">更新箭头设置</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataVectorGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Measured Data Arrow Setting</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>MeasuredDataVectorSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>箭头设置</translation>
+        <translation type="vanished">箭头设置</translation>
     </message>
     <message>
         <source>Physical value:</source>
-        <translation>物理值：</translation>
+        <translation type="vanished">物理值：</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>长度</translation>
+        <translation type="vanished">长度</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>自动</translation>
+        <translation type="vanished">自动</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>标准值：</translation>
+        <translation type="vanished">标准值：</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[多发性硬化症]</translation>
+        <translation type="vanished">[多发性硬化症]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>屏幕上长度：</translation>
+        <translation type="vanished">屏幕上长度：</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[像素]</translation>
+        <translation type="vanished">[像素]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>绘制最小值：</translation>
+        <translation type="vanished">绘制最小值：</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>颜色</translation>
+        <translation type="vanished">颜色</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>自定义颜色</translation>
+        <translation type="vanished">自定义颜色</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>根据标量值</translation>
+        <translation type="vanished">根据标量值</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>&amp;颜色条设置</translation>
+        <translation type="vanished">&amp;颜色条设置</translation>
     </message>
 </context>
 </TS>

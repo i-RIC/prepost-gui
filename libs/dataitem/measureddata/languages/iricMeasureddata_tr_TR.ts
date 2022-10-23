@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="tr_TR">
 <context>
     <name>MeasuredDataFileDataItem</name>
@@ -38,34 +40,81 @@
     </message>
 </context>
 <context>
-    <name>MeasuredDataPointSettingDialog</name>
+    <name>MeasuredDataPointGroupDataItem_PropertyDialog</name>
     <message>
-        <source>Scalar Setting</source>
-        <translation>Skaler Ayar</translation>
-    </message>
-    <message>
-        <source>Measured Value:</source>
-        <translation>Ölçülmüş değer:</translation>
+        <source>Points Display Setting Dialog</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>Ekran ayarı</translation>
+        <translation type="unfinished">Ekran ayarı</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Renk</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="unfinished">İhracat (&amp;E)...</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation>Puan Boyutu:</translation>
+        <translation type="unfinished">Puan Boyutu:</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataPointSettingDialog</name>
+    <message>
+        <source>Scalar Setting</source>
+        <translation type="vanished">Skaler Ayar</translation>
+    </message>
+    <message>
+        <source>Measured Value:</source>
+        <translation type="vanished">Ölçülmüş değer:</translation>
+    </message>
+    <message>
+        <source>Display Setting</source>
+        <translation type="vanished">Ekran ayarı</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="vanished">Puan Boyutu:</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Renk Çubuğu Ayarı (&amp;C)</translation>
+        <translation type="vanished">Renk Çubuğu Ayarı (&amp;C)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Hata</translation>
+        <translation type="vanished">Hata</translation>
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
-        <translation>Değer aralığı için maksimum değer, minimum değerden küçüktür.</translation>
+        <translation type="vanished">Değer aralığı için maksimum değer, minimum değerden küçüktür.</translation>
     </message>
 </context>
 <context>
@@ -80,62 +129,69 @@
     </message>
     <message>
         <source>Update Arrow Setting</source>
-        <translation>Ok Ayarını Güncelle</translation>
+        <translation type="vanished">Ok Ayarını Güncelle</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataVectorGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Measured Data Arrow Setting</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>MeasuredDataVectorSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Ok Ayarı</translation>
+        <translation type="vanished">Ok Ayarı</translation>
     </message>
     <message>
         <source>Physical value:</source>
-        <translation>Fiziksel değer:</translation>
+        <translation type="vanished">Fiziksel değer:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Uzunluk</translation>
+        <translation type="vanished">Uzunluk</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Oto</translation>
+        <translation type="vanished">Oto</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Standart değer:</translation>
+        <translation type="vanished">Standart değer:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[Hanım]</translation>
+        <translation type="vanished">[Hanım]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Ekrandaki uzunluk:</translation>
+        <translation type="vanished">Ekrandaki uzunluk:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[piksel]</translation>
+        <translation type="vanished">[piksel]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Çekilecek minimum değer:</translation>
+        <translation type="vanished">Çekilecek minimum değer:</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Renk</translation>
+        <translation type="vanished">Renk</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Özel renk</translation>
+        <translation type="vanished">Özel renk</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>skaler değere göre</translation>
+        <translation type="vanished">skaler değere göre</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Renk Çubuğu Ayarı (&amp;C)</translation>
+        <translation type="vanished">Renk Çubuğu Ayarı (&amp;C)</translation>
     </message>
 </context>
 </TS>

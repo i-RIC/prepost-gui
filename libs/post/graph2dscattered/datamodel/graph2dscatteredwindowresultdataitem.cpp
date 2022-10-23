@@ -14,7 +14,6 @@
 #include <vtkExtractGrid.h>
 #include <vtkPointData.h>
 #include <vtkSmartPointer.h>
-#include <vtkStructuredGrid.h>
 
 #include <cmath>
 

@@ -147,7 +147,7 @@ void GraphicsWindowDataModel::handleObjectBrowserPress(const QModelIndex& index,
 	}
 
 	// add property action if needed
-	QDialog* propDialog = dataItem->propertyDialog(nullptr);
+	QDialog* propDialog = dataItem->propertyDialog(mainWindow());
 	if (propDialog != nullptr) {
 		m_rightClickMenu->addSeparator();
 		m_rightClickMenu->addAction(m_objectBrowserView->propertyAction());

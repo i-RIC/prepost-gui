@@ -1,4 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ja_JP">
+<context>
+    <name>ArrowsColorSettingEditSmallWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>フォーム</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>表示色</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>色を指定</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation>スカラー値により設定</translation>
+    </message>
+    <message>
+        <source>&amp;Edit</source>
+        <translation>編集 (&amp;E)</translation>
+    </message>
+    <message>
+        <source>Colormap Setting (%1)</source>
+        <translation>カラーマップ設定 (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsColorSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>フォーム</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>色を指定</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation>スカラー値により設定</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>インポート(&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>エクスポート(&amp;E)...</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsGeneralFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="vanished">フォーム</translation>
+    </message>
+    <message>
+        <source>Sampling</source>
+        <translation type="vanished">サンプリング</translation>
+    </message>
+    <message>
+        <source>All vertices</source>
+        <translation type="vanished">全格子点</translation>
+    </message>
+    <message>
+        <source>Sampling rate:</source>
+        <translation type="vanished">間引き率:</translation>
+    </message>
+    <message>
+        <source>Specify number of vertices</source>
+        <translation type="vanished">表示する点の数を指定</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsLegendSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>フォーム</translation>
+    </message>
+    <message>
+        <source>Visibility</source>
+        <translation>表示</translation>
+    </message>
+    <message>
+        <source>When selected</source>
+        <translation>選択されている時のみ</translation>
+    </message>
+    <message>
+        <source>Always</source>
+        <translation>常に</translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation>表示しない</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>タイトル</translation>
+    </message>
+    <message>
+        <source>Title :</source>
+        <translation>タイトル:</translation>
+    </message>
+    <message>
+        <source>Font Setting:</source>
+        <translation>フォント設定:</translation>
+    </message>
+    <message>
+        <source>Length</source>
+        <translation>長さ</translation>
+    </message>
+    <message>
+        <source>Format:</source>
+        <translation>形式:</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>表示色</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>タイトル:</translation>
+    </message>
+    <message>
+        <source>Length:</source>
+        <translation>長さ:</translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation>背景色:</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>サイズと位置</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsLengthSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>フォーム</translation>
+    </message>
+    <message>
+        <source>Length</source>
+        <translation>長さ</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>自動</translation>
+    </message>
+    <message>
+        <source>Standard value:</source>
+        <translation>基準値:</translation>
+    </message>
+    <message>
+        <source>[m/s]</source>
+        <translation>[m/s]</translation>
+    </message>
+    <message>
+        <source>Length on screen:</source>
+        <translation>画面上での長さ:</translation>
+    </message>
+    <message>
+        <source>[pixel]</source>
+        <translation>[ピクセル]</translation>
+    </message>
+    <message>
+        <source>Minimum value to draw:</source>
+        <translation>表示する最小値:</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>フォーム</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation>値:</translation>
+    </message>
+    <message>
+        <source>Length</source>
+        <translation type="vanished">長さ</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation type="vanished">自動</translation>
+    </message>
+    <message>
+        <source>Standard value:</source>
+        <translation type="vanished">基準値:</translation>
+    </message>
+    <message>
+        <source>[m/s]</source>
+        <translation type="vanished">[m/s]</translation>
+    </message>
+    <message>
+        <source>Length on screen:</source>
+        <translation type="vanished">画面上での長さ:</translation>
+    </message>
+    <message>
+        <source>[pixel]</source>
+        <translation type="vanished">[ピクセル]</translation>
+    </message>
+    <message>
+        <source>Minimum value to draw:</source>
+        <translation type="vanished">表示する最小値:</translation>
+    </message>
+    <message>
+        <source>Arrow Shape</source>
+        <translation type="vanished">矢印の形状</translation>
+    </message>
+    <message>
+        <source>Arrow size:</source>
+        <translation type="vanished">矢印のサイズ:</translation>
+    </message>
+    <message>
+        <source>Line width:</source>
+        <translation type="vanished">線の幅:</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>表示色</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation type="vanished">色を指定</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation type="vanished">スカラー値により設定</translation>
+    </message>
+    <message>
+        <source>Setting...</source>
+        <translation type="vanished">設定...</translation>
+    </message>
+    <message>
+        <source>Length Legend</source>
+        <translation>長さの凡例</translation>
+    </message>
+    <message>
+        <source>%1 Color Setting</source>
+        <translation type="vanished">%1 表示色設定</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation>基本</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsShapeSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>フォーム</translation>
+    </message>
+    <message>
+        <source>Arrow Shape</source>
+        <translation>矢印の形状</translation>
+    </message>
+    <message>
+        <source>Arrow size:</source>
+        <translation>矢印のサイズ:</translation>
+    </message>
+    <message>
+        <source>Line width:</source>
+        <translation>線の幅:</translation>
+    </message>
+</context>
 <context>
     <name>AttributeBrowserTargetDataItem</name>
     <message>
@@ -124,12 +395,12 @@
         <translation type="vanished">Definition 要素が見つかりません</translation>
     </message>
     <message>
-        <source>Wrong valueType "%1" is set.</source>
-        <translation type="vanished">不正な valueType "%1" が指定されました。</translation>
+        <source>Wrong valueType &quot;%1&quot; is set.</source>
+        <translation type="vanished">不正な valueType &quot;%1&quot; が指定されました。</translation>
     </message>
     <message>
-        <source>Wrong conditionType "%1"is set.</source>
-        <translation type="vanished">不正な conditionType "%1" が指定されました。</translation>
+        <source>Wrong conditionType &quot;%1&quot;is set.</source>
+        <translation type="vanished">不正な conditionType &quot;%1&quot; が指定されました。</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
@@ -300,6 +571,364 @@ Do you really want to import this file?</source>
     </message>
 </context>
 <context>
+    <name>ColorMapEnumerateLegendSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>フォーム</translation>
+    </message>
+    <message>
+        <source>Visibility</source>
+        <translation>表示</translation>
+    </message>
+    <message>
+        <source>When selected</source>
+        <translation>選択されている時のみ</translation>
+    </message>
+    <message>
+        <source>Always</source>
+        <translation>常に</translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation>表示しない</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>タイトル</translation>
+    </message>
+    <message>
+        <source>Title :</source>
+        <translation>タイトル:</translation>
+    </message>
+    <message>
+        <source>Font Setting:</source>
+        <translation>フォント設定:</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>ラベル表示</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>表示色</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>タイトル:</translation>
+    </message>
+    <message>
+        <source>Label:</source>
+        <translation>ラベル:</translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation>背景色:</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>サイズと位置</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>フォーム</translation>
+    </message>
+    <message>
+        <source>Ignore Color bar setting when importing</source>
+        <translation>インポート時に凡例の設定を反映しない</translation>
+    </message>
+    <message>
+        <source>Colors</source>
+        <translation>表示色</translation>
+    </message>
+    <message>
+        <source>Color Bar Setting</source>
+        <translation>凡例設定</translation>
+    </message>
+    <message>
+        <source>Select file to import</source>
+        <translation>インポートするファイルの選択</translation>
+    </message>
+    <message>
+        <source>Colormap setting (*.cmsetting)</source>
+        <translation>カラーマップ設定 (*.cmsetting)</translation>
+    </message>
+    <message>
+        <source>Error occured while loading %1
+Parse error %2 at %3, column %4</source>
+        <translation>%1 の読み込み中にエラーが発生しました。
+パースエラー %2: at %3, column %4</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>エラー</translation>
+    </message>
+    <message>
+        <source>Input file name to export</source>
+        <translation>エクスポートするファイル名の入力</translation>
+    </message>
+    <message>
+        <source>Error occured while opening %1</source>
+        <translation>%1 を開く時にエラーが発生しました</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>値</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>色</translation>
+    </message>
+    <message>
+        <source>Transparent</source>
+        <translation>透明</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapLegendSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>フォーム</translation>
+    </message>
+    <message>
+        <source>Visibility</source>
+        <translation>表示</translation>
+    </message>
+    <message>
+        <source>When selected</source>
+        <translation>選択されている時のみ</translation>
+    </message>
+    <message>
+        <source>Always</source>
+        <translation>常に</translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation>表示しない</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>タイトル</translation>
+    </message>
+    <message>
+        <source>Title :</source>
+        <translation>タイトル:</translation>
+    </message>
+    <message>
+        <source>Font Setting:</source>
+        <translation>フォント設定:</translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation>ラベル表示</translation>
+    </message>
+    <message>
+        <source>Format:</source>
+        <translation>形式:</translation>
+    </message>
+    <message>
+        <source>Number of labels :</source>
+        <translation type="vanished">ラベルの数:</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>表示色</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>タイトル:</translation>
+    </message>
+    <message>
+        <source>Label:</source>
+        <translation>ラベル:</translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation>背景色:</translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation>サイズと位置</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation type="vanished">ダイアログ</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>インポート(&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>エクスポート(&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation>カラーマップ設定</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>フォーム</translation>
+    </message>
+    <message>
+        <source>Presets:</source>
+        <translation>プリセット:</translation>
+    </message>
+    <message>
+        <source>Ignore Color bar setting when importing</source>
+        <translation>インポート時に凡例の設定を反映しない</translation>
+    </message>
+    <message>
+        <source>Relationship between values and colors</source>
+        <translation>値と色の関係</translation>
+    </message>
+    <message>
+        <source>Automatically adjust based on value range</source>
+        <translation>値の範囲に合わせて自動調整</translation>
+    </message>
+    <message>
+        <source>Setup Manually</source>
+        <translation>手動で設定</translation>
+    </message>
+    <message>
+        <source>Value Range</source>
+        <translation>値の範囲</translation>
+    </message>
+    <message>
+        <source>Automatic</source>
+        <translation>自動</translation>
+    </message>
+    <message>
+        <source>Max:</source>
+        <translation>最大値:</translation>
+    </message>
+    <message>
+        <source>Min:</source>
+        <translation>最小値:</translation>
+    </message>
+    <message>
+        <source>Colors</source>
+        <translation>表示色</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>追加(&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>削除(&amp;R)</translation>
+    </message>
+    <message>
+        <source>Fill lower area</source>
+        <translation>最小値以下を描画</translation>
+    </message>
+    <message>
+        <source>Fill upper area</source>
+        <translation>最大値以上を描画</translation>
+    </message>
+    <message>
+        <source>Switch</source>
+        <translation>切り替え</translation>
+    </message>
+    <message>
+        <source>Color Bar Setting</source>
+        <translation>凡例設定</translation>
+    </message>
+    <message>
+        <source>Select file to import</source>
+        <translation>インポートするファイルの選択</translation>
+    </message>
+    <message>
+        <source>Colormap setting (*.cmsetting)</source>
+        <translation>カラーマップ設定 (*.cmsetting)</translation>
+    </message>
+    <message>
+        <source>Input file name to export</source>
+        <translation>エクスポートするファイル名の入力</translation>
+    </message>
+    <message>
+        <source>Error occured while opening %1</source>
+        <translation>%1 を開く時にエラーが発生しました</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>エラー</translation>
+    </message>
+    <message>
+        <source>Error occured while loading %1
+Parse error %2 at %3, column %4</source>
+        <translation>%1 の読み込み中にエラーが発生しました。
+パースエラー %2: at %3, column %4</translation>
+    </message>
+    <message>
+        <source>(Please select item to apply)</source>
+        <translation>(読み込む項目を選択してください)</translation>
+    </message>
+    <message>
+        <source>Switch to Discrete Mode</source>
+        <translation>区間別モードに切り替え</translation>
+    </message>
+    <message>
+        <source>Switch to Gradation Mode</source>
+        <translation>グラデーションモードに切り替え</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>警告</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>値</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>色</translation>
+    </message>
+    <message>
+        <source>Min value</source>
+        <translation>最小値</translation>
+    </message>
+    <message>
+        <source>Max value</source>
+        <translation>最大値</translation>
+    </message>
+    <message>
+        <source>Transparent</source>
+        <translation>透明</translation>
+    </message>
+    <message>
+        <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
+        <translation>グラデーションモードに移行すると、値は各区間の中央値に設定され直されます。</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget_SwitchToDiscreteDialog</name>
+    <message>
+        <source>Switch to Discrete Mode Dialog</source>
+        <translation>区間別モードへの切り替え</translation>
+    </message>
+    <message>
+        <source>Max:</source>
+        <translation>最大値:</translation>
+    </message>
+    <message>
+        <source>Min:</source>
+        <translation>最小値:</translation>
+    </message>
+    <message>
+        <source>Number of colors to insert at each section</source>
+        <translation>各区間に内挿する色の数</translation>
+    </message>
+</context>
+<context>
     <name>ColorTransferFunctionEditWidget</name>
     <message>
         <source>Form</source>
@@ -436,6 +1065,29 @@ Do you really want to import this file?</source>
     <message>
         <source>dstY</source>
         <translation>dstY</translation>
+    </message>
+</context>
+<context>
+    <name>GeneralFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>フォーム</translation>
+    </message>
+    <message>
+        <source>Sampling</source>
+        <translation>サンプリング</translation>
+    </message>
+    <message>
+        <source>All vertices</source>
+        <translation>全格子点</translation>
+    </message>
+    <message>
+        <source>Sampling rate:</source>
+        <translation>間引き率:</translation>
+    </message>
+    <message>
+        <source>Specify number of vertices</source>
+        <translation>表示する点の数を指定</translation>
     </message>
 </context>
 <context>
@@ -646,7 +1298,7 @@ Do you really want to import this file?</source>
     <name>GridCellAttributePropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>ダイアログ</translation>
+        <translation type="vanished">ダイアログ</translation>
     </message>
 </context>
 <context>
@@ -740,11 +1392,11 @@ Do you really want to import this file?</source>
     <name>GridNodeAttributePropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>ダイアログ</translation>
+        <translation type="vanished">ダイアログ</translation>
     </message>
     <message>
         <source>Contour setting</source>
-        <translation>コンター設定</translation>
+        <translation type="vanished">コンター設定</translation>
     </message>
 </context>
 <context>
@@ -844,6 +1496,49 @@ Do you really want to import this file?</source>
     </message>
 </context>
 <context>
+    <name>ImageSettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>フォーム</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>位置</translation>
+    </message>
+    <message>
+        <source>Horizontal Margin:</source>
+        <translation>水平方向のマージン:</translation>
+    </message>
+    <message>
+        <source>Vertical Margin:</source>
+        <translation>垂直方向のマージン:</translation>
+    </message>
+    <message>
+        <source>Width:</source>
+        <translation>幅:</translation>
+    </message>
+    <message>
+        <source>Height:</source>
+        <translation>高さ:</translation>
+    </message>
+    <message>
+        <source>Distance from left</source>
+        <translation>左端からの距離</translation>
+    </message>
+    <message>
+        <source>Distance from right</source>
+        <translation>右端からの距離</translation>
+    </message>
+    <message>
+        <source>Distance from top</source>
+        <translation>上端からの距離</translation>
+    </message>
+    <message>
+        <source>Distance from bottom</source>
+        <translation>下端からの距離</translation>
+    </message>
+</context>
+<context>
     <name>InputConditionCgnsFileSelectDialog</name>
     <message>
         <source>Select Input CGNS File</source>
@@ -877,12 +1572,12 @@ Do you really want to import this file?</source>
         <translation>Definition 要素が見つかりません</translation>
     </message>
     <message>
-        <source>Wrong valueType "%1" is set.</source>
-        <translation>不正な valueType "%1" が指定されました。</translation>
+        <source>Wrong valueType &quot;%1&quot; is set.</source>
+        <translation>不正な valueType &quot;%1&quot; が指定されました。</translation>
     </message>
     <message>
-        <source>Wrong conditionType "%1"is set.</source>
-        <translation>不正な conditionType "%1" が指定されました。</translation>
+        <source>Wrong conditionType &quot;%1&quot;is set.</source>
+        <translation>不正な conditionType &quot;%1&quot; が指定されました。</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
@@ -1185,8 +1880,8 @@ Do you really want to import this file?</source>
         <translation>情報</translation>
     </message>
     <message>
-        <source>You can copy and paste the values, with shortcut "Ctrl + C" and "Ctrl + V"</source>
-        <translation>ショートカットキー "Ctrl + C", "Ctrl + V" によって、値をコピー＆ペーストできます。</translation>
+        <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
+        <translation>ショートカットキー &quot;Ctrl + C&quot;, &quot;Ctrl + V&quot; によって、値をコピー＆ペーストできます。</translation>
     </message>
     <message>
         <source>The following problems found: 
@@ -1256,11 +1951,19 @@ Do you really want to import this file?</source>
     <name>InputConditionWidgetString</name>
     <message>
         <source>Warning</source>
-        <translation type="vanished">警告</translation>
+        <translation>警告</translation>
     </message>
     <message>
         <source>String has to consist of only English characters.</source>
         <translation type="vanished">文字列には、英数字と記号しか使用できません。</translation>
+    </message>
+    <message>
+        <source>(Select template to import)</source>
+        <translation>(インポートするテンプレートを選択)</translation>
+    </message>
+    <message>
+        <source>The content in the text area is overwritten with the template</source>
+        <translation>テキストの内容をテンプレートで上書きします。</translation>
     </message>
 </context>
 <context>
@@ -1309,8 +2012,8 @@ Do you really want to import this file?</source>
         <translation>ファイルを開く時にエラーが発生しました。</translation>
     </message>
     <message>
-        <source>The first two columns must be "X" and "Y".</source>
-        <translation>最初の2つの列は "X",  "Y" でなくてはいけません。</translation>
+        <source>The first two columns must be &quot;X&quot; and &quot;Y&quot;.</source>
+        <translation>最初の2つの列は &quot;X&quot;,  &quot;Y&quot; でなくてはいけません。</translation>
     </message>
     <message>
         <source>The data file has to consist of only English characters.</source>
@@ -1568,7 +2271,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Variable name:</source>
-        <translation />
+        <translation></translation>
     </message>
     <message>
         <source>Value for testing:</source>
@@ -1618,12 +2321,12 @@ Do you really want to import this file?</source>
         <translation>変数の定義</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;変数を、 JavaScript 言語で定義できます。詳しくは、&lt;a href="https://iric-gui-user-manual.readthedocs.io/ja/latest/03/07_calc_result.html#m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;こちら&lt;/span&gt;&lt;/a&gt;を参照してください。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;変数を、 JavaScript 言語で定義できます。詳しくは、&lt;a href=&quot;https://iric-gui-user-manual.readthedocs.io/ja/latest/03/07_calc_result.html#m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;こちら&lt;/span&gt;&lt;/a&gt;を参照してください。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://readthedocs.org/"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;変数を、 JavaScript 言語で定義できます。詳しくは、&lt;a href="http://readthedocs.org/"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;こちら&lt;/span&gt;&lt;/a&gt;を参照してください。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://readthedocs.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;変数を、 JavaScript 言語で定義できます。詳しくは、&lt;a href=&quot;http://readthedocs.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;こちら&lt;/span&gt;&lt;/a&gt;を参照してください。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -1634,7 +2337,7 @@ Do you really want to import this file?</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;このボタンを押すと、定義が正しいかテストできます。もし定義の読み込みでエラーが発生すると、エラーメッセージが表示されます。定義の読み込みが成功すると、「テスト用の値」を用いて値が計算され、表示されます。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>You can test the definition by clicking this. If error occurs while parsing the definition, the error message is shown. When the definition is parsed successfully, the vallue calculated using the "Value for testing" for each input is shown.</source>
+        <source>You can test the definition by clicking this. If error occurs while parsing the definition, the error message is shown. When the definition is parsed successfully, the vallue calculated using the &quot;Value for testing&quot; for each input is shown.</source>
         <translation type="vanished">このボタンを押すと、定義が正しいかテストできます。もし定義の読み込みでエラーが発生すると、エラーメッセージが表示されます。定義の読み込みが成功すると、「テスト用の値」を用いて値が計算され、表示されます。</translation>
     </message>
     <message>
@@ -1705,8 +2408,8 @@ Do you really want to import this file?</source>
         <translation>下へ (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;注釈&lt;/span&gt;: リスト上の順番は重要です。変数の定義に置いて、リストで上にある項目は、ソルバが出力する変数と同じように使用できます。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;注釈&lt;/span&gt;: リスト上の順番は重要です。変数の定義に置いて、リストで上にある項目は、ソルバが出力する変数と同じように使用できます。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
@@ -2083,8 +2786,8 @@ Do you really want to import this file?</source>
         <translation type="vanished">出力の定義</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;変数を、 JavaScript 言語で定義できます。詳しくは、&lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;こちら&lt;/span&gt;&lt;/a&gt;を参照してください。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;変数を、 JavaScript 言語で定義できます。詳しくは、&lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;こちら&lt;/span&gt;&lt;/a&gt;を参照してください。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2170,8 +2873,8 @@ Do you really want to import this file?</source>
         <translation>出力の定義</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;JavaScript言語で変数を定義できます。 &lt;a href="https://iric-gui-user-manual.readthedocs.io/ja/latest/03/07_calc_result.html#m"&gt;&lt;span style=" text -decoration: underline; color:#0000ff;"&gt;詳細はこちら&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;JavaScript言語で変数を定義できます。 &lt;a href=&quot;https://iric-gui-user-manual.readthedocs.io/ja/latest/03/07_calc_result.html#m&quot;&gt;&lt;span style=&quot; text -decoration: underline; color:#0000ff;&quot;&gt;詳細はこちら&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2466,8 +3169,8 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectWorkspace</name>
     <message>
-        <source>Workspace "%1" has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
-        <translation>ワークスペース %1" には、もう使われていないと思われるプロジェクトフォルダが %2 あります。削除しますか?</translation>
+        <source>Workspace &quot;%1&quot; has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
+        <translation>ワークスペース %1&quot; には、もう使われていないと思われるプロジェクトフォルダが %2 あります。削除しますか?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -2661,6 +3364,41 @@ Do you really want to import this file?</source>
     </message>
 </context>
 <context>
+    <name>Region2dSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>フォーム</translation>
+    </message>
+    <message>
+        <source>Full Region</source>
+        <translation>全領域</translation>
+    </message>
+    <message>
+        <source>Active Region</source>
+        <translation>有効な領域</translation>
+    </message>
+    <message>
+        <source>Custom Region</source>
+        <translation>指定した領域</translation>
+    </message>
+    <message>
+        <source>I Min:</source>
+        <translation>I 最小:</translation>
+    </message>
+    <message>
+        <source>I Max:</source>
+        <translation>I 最大:</translation>
+    </message>
+    <message>
+        <source>J Min:</source>
+        <translation>J 最小:</translation>
+    </message>
+    <message>
+        <source>J Max:</source>
+        <translation>J 最大:</translation>
+    </message>
+</context>
+<context>
     <name>ScalarsToColorsEditDialog</name>
     <message>
         <source>Color Setting</source>
@@ -2738,6 +3476,64 @@ Do you really want to import this file?</source>
     <message>
         <source>* Cells where variation of cell length along j-direction exceed %1</source>
         <translation>セルの辺のJ方向の長さの変化率が、しきい値 %1 を超えているセル</translation>
+    </message>
+</context>
+<context>
+    <name>Structured2dFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>フォーム</translation>
+    </message>
+    <message>
+        <source>Sampling</source>
+        <translation>サンプリング</translation>
+    </message>
+    <message>
+        <source>All vertices</source>
+        <translation>全格子点</translation>
+    </message>
+    <message>
+        <source>Sampling rate:</source>
+        <translation>間引き率:</translation>
+    </message>
+    <message>
+        <source>I-direction</source>
+        <translation>I 方向</translation>
+    </message>
+    <message>
+        <source>J-direction</source>
+        <translation>J 方向</translation>
+    </message>
+</context>
+<context>
+    <name>Structured3dFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>フォーム</translation>
+    </message>
+    <message>
+        <source>Sampling</source>
+        <translation>サンプリング</translation>
+    </message>
+    <message>
+        <source>All vertices</source>
+        <translation>全格子点</translation>
+    </message>
+    <message>
+        <source>Sampling rate:</source>
+        <translation>間引き率:</translation>
+    </message>
+    <message>
+        <source>I-direction</source>
+        <translation>I 方向</translation>
+    </message>
+    <message>
+        <source>J-direction</source>
+        <translation>J 方向</translation>
+    </message>
+    <message>
+        <source>K-direction</source>
+        <translation>K 方向</translation>
     </message>
 </context>
 <context>

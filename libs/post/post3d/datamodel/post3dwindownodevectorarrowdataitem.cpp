@@ -1,73 +1,76 @@
+#include "../post3dwindowgraphicsview.h"
 #include "post3dwindowgridtypedataitem.h"
 #include "post3dwindownodevectorarrowdataitem.h"
 #include "post3dwindownodevectorarrowgroupdataitem.h"
 #include "post3dwindowzonedataitem.h"
-#include "../post3dwindowgraphicsview.h"
 
 #include <guicore/postcontainer/postzonedatacontainer.h>
-#include <guicore/scalarstocolors/lookuptablecontainer.h>
+#include <guicore/scalarstocolors/colormapsettingcontainer.h>
+#include <guibase/vtktool/vtkpolydatamapperutil.h>
 #include <misc/stringtool.h>
 
-#include <QDomNode>
-#include <QDomElement>
-#include <QStandardItem>
-#include <QXmlStreamWriter>
-
-#include <vtkCamera.h>
-#include <vtkExtractGrid.h>
-#include <vtkPointData.h>
-#include <vtkRenderer.h>
-#include <vtkSmartPointer.h>
-#include <vtkTransform.h>
+#include <vtkActor.h>
 #include <vtkTransformFilter.h>
 
-Post3dWindowNodeVectorArrowDataItem::Post3dWindowNodeVectorArrowDataItem(Post3dWindowDataItem* p) :
+Post3dWindowNodeVectorArrowDataItem::Setting::Setting() :
+	CompositeContainer({&face, &filtering, &arrow})
+{}
+
+Post3dWindowNodeVectorArrowDataItem::Setting::Setting(const Setting& setting) :
+	Setting {}
+{
+	copyValue(setting);
+}
+
+Post3dWindowNodeVectorArrowDataItem::Setting& Post3dWindowNodeVectorArrowDataItem::Setting::operator=(const Setting& c)
+{
+	copyValue(c);
+	return *this;
+}
+
+XmlAttributeContainer& Post3dWindowNodeVectorArrowDataItem::Setting::operator=(const XmlAttributeContainer& c)
+{
+	return operator=(dynamic_cast<const Setting&> (c));
+}
+
+Post3dWindowNodeVectorArrowDataItem::Post3dWindowNodeVectorArrowDataItem(const QString& label, Post3dWindowDataItem* p) :
 	Post3dWindowDataItem {"", QIcon(":/libs/guibase/images/iconPaper.svg"), p},
-	m_extractGrid {vtkExtractGrid::New()},
-	m_transformFilter {vtkTransformFilter::New()}
+	m_actor {vtkActor::New()},
+	m_transformFilter {vtkTransformFilter::New()},
+	m_setting {},
+	m_zScale {1}
 {
 	setupStandardItem(Checked, NotReorderable, Deletable);
+	m_standardItem->setText(label);
 
-	auto transform = vtkSmartPointer<vtkTransform>::New();
-	m_transformFilter->SetTransform(transform);
-
-	renderer()->AddActor(m_arrowsActor.actor());
+	setupActors();
 }
 
 Post3dWindowNodeVectorArrowDataItem::~Post3dWindowNodeVectorArrowDataItem()
 {
-	renderer()->RemoveActor(m_arrowsActor.actor());
-	m_extractGrid->Delete();
+	auto r = renderer();
+	r->RemoveActor(m_actor);
+
+	m_actor->Delete();
 	m_transformFilter->Delete();
 }
 
-Post3dWindowNodeVectorArrowSettingDialog::FaceSetting Post3dWindowNodeVectorArrowDataItem::setting() const
+vtkStructuredGrid* Post3dWindowNodeVectorArrowDataItem::faceGrid() const
 {
-	Post3dWindowNodeVectorArrowSettingDialog::FaceSetting ret;
+	auto data = groupDataItem()->data()->data();
+	if (data == nullptr) {return nullptr;}
 
-	ret.enabled = (standardItem()->checkState() == Qt::Checked);
-	ret.caption = standardItem()->text();
-	ret.arrowSetting = m_arrowSetting;
-	ret.faceSetting = m_faceSetting;
-	ret.samplingRateSetting = m_samplingRateSetting;
-
-	return ret;
+	return m_setting.face.extractFace(vtkStructuredGrid::SafeDownCast(data->data()));
 }
 
-void Post3dWindowNodeVectorArrowDataItem::setSetting(const Post3dWindowNodeVectorArrowSettingDialog::FaceSetting& faceSetting)
+const Post3dWindowNodeVectorArrowDataItem::Setting& Post3dWindowNodeVectorArrowDataItem::setting() const
 {
-	m_isCommandExecuting = true;
+	return m_setting;
+}
 
-	standardItem()->setText(faceSetting.caption);
-	standardItem()->setCheckState(faceSetting.enabled ? Qt::Checked : Qt::Unchecked);
-
-	m_arrowSetting = faceSetting.arrowSetting;
-	m_faceSetting = faceSetting.faceSetting;
-	m_samplingRateSetting = faceSetting.samplingRateSetting;
-
-	updateActorSettings();
-
-	m_isCommandExecuting = false;
+void Post3dWindowNodeVectorArrowDataItem::setSetting(const Setting& setting)
+{
+	m_setting = setting;
 }
 
 void Post3dWindowNodeVectorArrowDataItem::update()
@@ -77,116 +80,97 @@ void Post3dWindowNodeVectorArrowDataItem::update()
 
 void Post3dWindowNodeVectorArrowDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
-	QDomElement elem = node.toElement();
-	m_standardItem->setText(elem.attribute("caption", tr("Face")));
-
-	m_arrowSetting.load(node);
-	m_faceSetting.load(node);
-	m_samplingRateSetting.load(node);
+	m_setting.load(node);
 
 	updateActorSettings();
 }
 
 void Post3dWindowNodeVectorArrowDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	writer.writeAttribute("caption", m_standardItem->text());
+	m_setting.save(writer);
+}
 
-	m_arrowSetting.save(writer);
-	m_faceSetting.save(writer);
-	m_samplingRateSetting.save(writer);
+void Post3dWindowNodeVectorArrowDataItem::innerUpdateZScale(double zscale)
+{
+	m_zScale = zscale;
+
+	auto t = vtkSmartPointer<vtkTransform>::New();
+	t->Scale(1, 1, zscale);
+	m_transformFilter->SetTransform(t);
 
 	updateActorSettings();
 }
 
-void Post3dWindowNodeVectorArrowDataItem::innerUpdateZScale(double scale)
-{
-	auto transform = vtkSmartPointer<vtkTransform>::New();
-	transform->Scale(1, 1, scale);
-	m_transformFilter->SetTransform(transform);
-	updatePolyData();
-}
-
 void Post3dWindowNodeVectorArrowDataItem::innerUpdate2Ds()
 {
-	vtkCamera* cam = renderer()->GetActiveCamera();
-	double scale = cam->GetParallelScale();
-	if (scale != m_arrowSetting.oldCameraScale) {
-		updatePolyData();
-	}
-	m_arrowSetting.oldCameraScale = scale;
+	updateActorSettings();
 }
 
+void Post3dWindowNodeVectorArrowDataItem::setupActors()
+{
+	auto r = renderer();
+	r->AddActor(m_actor);
+
+	auto t = vtkSmartPointer<vtkTransform>::New();
+	m_transformFilter->SetTransform(t);
+}
 
 void Post3dWindowNodeVectorArrowDataItem::updateActorSettings()
 {
-	m_arrowsActor.actor()->VisibilityOff();
+	m_actor->VisibilityOff();
 	m_actorCollection->RemoveAllItems();
 
-	const auto& setting = dynamic_cast<Post3dWindowNodeVectorArrowGroupDataItem*> (parent())->setting();
+	auto data = groupDataItem()->data()->data();
+	if (data == nullptr) {return;}
 
-	PostZoneDataContainer* cont = dynamic_cast<Post3dWindowZoneDataItem*>(parent()->parent()->parent())->dataContainer();
-	if (cont == nullptr) {return;}
+	auto grid = vtkStructuredGrid::SafeDownCast(data->data());
 
-	vtkPointSet* ps = cont->data();
-	if (ps == nullptr) {return;}
+	auto grid2 = m_setting.face.extractFace(grid);
 
-	if (setting.target == "") {return;}
+	auto sampledData = m_setting.filtering.buildSampledData(grid2);
+	grid2->Delete();
 
-	updatePolyData();
-	updateColorSetting();
+	auto filteredData = groupDataItem()->m_setting.buildFilteredData(sampledData);
+	sampledData->Delete();
 
-	m_actorCollection->AddItem(m_arrowsActor.actor());
+	m_transformFilter->SetInputData(filteredData);
+	m_transformFilter->Update();
+	filteredData->Delete();
 
+	const auto& groupSetting = groupDataItem()->m_setting;
+	m_setting.arrow.target = groupSetting.target;
+	m_setting.arrow.standardValue = groupSetting.standardValue;
+	m_setting.arrow.legendLength = groupSetting.legendLength;
+	m_setting.arrow.minimumValue = groupSetting.minimumValue;
+
+	auto v = dataModel()->graphicsView();
+	auto arrowsData = m_setting.arrow.buildArrowsPolygonData(m_transformFilter->GetOutput(), v, m_zScale);
+
+	if (m_setting.arrow.colorMode == ArrowsSettingContainer::ColorMode::Custom) {
+		auto mapper = vtkPolyDataMapperUtil::createWithScalarVisibilityOff();
+		auto gfilter = vtkSmartPointer<vtkGeometryFilter>::New();
+		gfilter->SetInputData(arrowsData);
+		mapper->SetInputConnection(gfilter->GetOutputPort());
+		m_actor->SetMapper(mapper);
+		mapper->Delete();
+		m_actor->GetProperty()->SetColor(m_setting.arrow.customColor);
+	} else if (m_setting.arrow.colorMode == ArrowsSettingContainer::ColorMode::ByScalar) {
+		auto colorTarget = iRIC::toStr(m_setting.arrow.colorTarget);
+		arrowsData->GetPointData()->SetActiveScalars(colorTarget.c_str());
+		auto cs = groupDataItem()->colorMapSetting(colorTarget);
+		if (cs == nullptr) {return;}
+		auto mapper = cs->buildPointDataMapper(arrowsData);
+		m_actor->SetMapper(mapper);
+		mapper->Delete();
+	}
+	arrowsData->Delete();
+	m_actor->GetProperty()->SetLineWidth(m_setting.arrow.lineWidth * v->devicePixelRatioF());
+
+	actorCollection()->AddItem(m_actor);
 	updateVisibilityWithoutRendering();
 }
 
-void Post3dWindowNodeVectorArrowDataItem::updatePolyData()
+Post3dWindowNodeVectorArrowGroupDataItem* Post3dWindowNodeVectorArrowDataItem::groupDataItem() const
 {
-	const auto& setting = dynamic_cast<Post3dWindowNodeVectorArrowGroupDataItem*> (parent())->setting();
-
-	PostZoneDataContainer* cont = dynamic_cast<Post3dWindowZoneDataItem*>(parent()->parent()->parent())->dataContainer();
-	if (cont == nullptr) {return;}
-
-	vtkPointSet* ps = cont->data();
-	if (ps == nullptr) {return;}
-
-	if (setting.target == "") {return;}
-
-	vtkPointData* pd = ps->GetPointData();
-	pd->SetActiveVectors(iRIC::toStr(setting.target).c_str());
-	m_arrowsActor.setScaleFactor(setting.scaleFactor(dataModel()->graphicsView()->stdDistance(1)));
-
-	const auto& fS = m_faceSetting;
-	m_extractGrid->SetVOI(fS.iMin, fS.iMax, fS.jMin, fS.jMax, fS.kMin, fS.kMax);
-
-	const auto& srSetting = m_samplingRateSetting;
-	m_extractGrid->SetSampleRate(srSetting.iSamplingRate, srSetting.jSamplingRate, srSetting.kSamplingRate);
-
-	m_extractGrid->SetInputData(ps);
-	m_transformFilter->SetInputConnection(m_extractGrid->GetOutputPort());
-	m_transformFilter->Update();
-
-	double height = dataModel()->graphicsView()->stdDistance(m_arrowSetting.arrowSize);
-	m_arrowsActor.setConeHeight(height);
-
-	vtkPolyData* filteredData = setting.buildFilteredData(m_transformFilter->GetOutput());
-	m_arrowsActor.setPolyData(filteredData);
-	filteredData->Delete();
-
-	m_arrowsActor.setLineWidth(m_arrowSetting.lineWidth);
-}
-
-void Post3dWindowNodeVectorArrowDataItem::updateColorSetting()
-{
-	Post3dWindowGridTypeDataItem* typedi = dynamic_cast<Post3dWindowGridTypeDataItem*>(parent()->parent()->parent()->parent());
-	const auto& s = m_arrowSetting;
-	switch (s.colorMode.value()) {
-	case ArrowSettingContainer::ColorMode::Custom:
-		m_arrowsActor.setColorModeToCustom(s.customColor);
-		break;
-	case ArrowSettingContainer::ColorMode::ByScalar:
-		LookupTableContainer* stc = typedi->nodeLookupTable(s.colorTarget);
-		m_arrowsActor.setColorModeToValue(iRIC::toStr(s.colorTarget), stc->vtkObj());
-		break;
-	}
+	return dynamic_cast<Post3dWindowNodeVectorArrowGroupDataItem*> (parent());
 }

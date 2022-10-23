@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="hi_IN">
 <context>
     <name>ParticleArbitraryTimeEditDialog</name>
@@ -57,163 +59,170 @@
     <name>PostParticleBasicSettingDialog</name>
     <message>
         <source>Particles Setting</source>
-        <translation>कण सेटिंग</translation>
+        <translation type="vanished">कण सेटिंग</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>रंग:</translation>
+        <translation type="vanished">रंग:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>आकार:</translation>
+        <translation type="vanished">आकार:</translation>
     </message>
 </context>
 <context>
     <name>PostParticleScalarPropertyDialog</name>
     <message>
         <source>Particle Scalar Setting</source>
-        <translation>कण अदिश सेटिंग</translation>
+        <translation type="vanished">कण अदिश सेटिंग</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>कस्टम रंग</translation>
+        <translation type="vanished">कस्टम रंग</translation>
     </message>
     <message>
         <source>Color by attribute value</source>
-        <translation>विशेषता मान द्वारा रंग</translation>
+        <translation type="vanished">विशेषता मान द्वारा रंग</translation>
     </message>
     <message>
         <source>Attribute:</source>
-        <translation>गुण:</translation>
+        <translation type="vanished">गुण:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>आकार:</translation>
+        <translation type="vanished">आकार:</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>कलर बार सेटिंग (&amp;C)</translation>
+        <translation type="vanished">कलर बार सेटिंग (&amp;C)</translation>
     </message>
 </context>
 <context>
     <name>PostParticleVectorPropertyDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>तीर सेटिंग</translation>
+        <translation type="vanished">तीर सेटिंग</translation>
     </message>
     <message>
         <source>Attribute value:</source>
-        <translation>मान बताइए:</translation>
+        <translation type="vanished">मान बताइए:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>लंबाई</translation>
+        <translation type="vanished">लंबाई</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>ऑटो</translation>
+        <translation type="vanished">ऑटो</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>मानक मूल्य:</translation>
+        <translation type="vanished">मानक मूल्य:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[एमएस]</translation>
+        <translation type="vanished">[एमएस]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>स्क्रीन पर लंबाई:</translation>
+        <translation type="vanished">स्क्रीन पर लंबाई:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[पिक्सेल]</translation>
+        <translation type="vanished">[पिक्सेल]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>आकर्षित करने के लिए न्यूनतम मूल्य:</translation>
+        <translation type="vanished">आकर्षित करने के लिए न्यूनतम मूल्य:</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>सैम्पलिंग</translation>
+        <translation type="vanished">सैम्पलिंग</translation>
     </message>
     <message>
         <source>All particles</source>
-        <translation>सभी कण</translation>
+        <translation type="vanished">सभी कण</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>नमूनाकरण दर:</translation>
+        <translation type="vanished">नमूनाकरण दर:</translation>
     </message>
     <message>
         <source>Specify number of particles</source>
-        <translation>कणों की संख्या निर्दिष्ट करें</translation>
+        <translation type="vanished">कणों की संख्या निर्दिष्ट करें</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>रंग</translation>
+        <translation type="vanished">रंग</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>कस्टम रंग</translation>
+        <translation type="vanished">कस्टम रंग</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>अदिश मान द्वारा</translation>
+        <translation type="vanished">अदिश मान द्वारा</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>तीर आकार</translation>
+        <translation type="vanished">तीर आकार</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>तीर आकार:</translation>
+        <translation type="vanished">तीर आकार:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>रेखा की चौडाई:</translation>
+        <translation type="vanished">रेखा की चौडाई:</translation>
     </message>
 </context>
 <context>
     <name>PostPolyDataBasicSettingDialog</name>
     <message>
         <source>Polygon Setting</source>
-        <translation>बहुभुज सेटिंग</translation>
+        <translation type="vanished">बहुभुज सेटिंग</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>रंग:</translation>
+        <translation type="vanished">रंग:</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>रेखा की चौडाई:</translation>
+        <translation type="vanished">रेखा की चौडाई:</translation>
     </message>
 </context>
 <context>
     <name>PostPolyDataScalarPropertyDialog</name>
     <message>
         <source>Polygon Setting</source>
-        <translation>बहुभुज सेटिंग</translation>
+        <translation type="vanished">बहुभुज सेटिंग</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>कस्टम रंग</translation>
+        <translation type="vanished">कस्टम रंग</translation>
     </message>
     <message>
         <source>Color by attribute value</source>
-        <translation>विशेषता मान द्वारा रंग</translation>
+        <translation type="vanished">विशेषता मान द्वारा रंग</translation>
     </message>
     <message>
         <source>Attribute:</source>
-        <translation>गुण:</translation>
+        <translation type="vanished">गुण:</translation>
     </message>
     <message>
         <source>Line Width</source>
-        <translation>रेखा की चौडाई</translation>
+        <translation type="vanished">रेखा की चौडाई</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>कलर बार सेटिंग (&amp;C)</translation>
+        <translation type="vanished">कलर बार सेटिंग (&amp;C)</translation>
+    </message>
+</context>
+<context>
+    <name>PostSolutionSelectDialog</name>
+    <message>
+        <source>Select Target Result</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

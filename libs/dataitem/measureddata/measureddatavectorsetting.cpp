@@ -1,7 +1,9 @@
 #include "measureddatavectorsetting.h"
 
 MeasuredDataVectorSetting::MeasuredDataVectorSetting() :
-	ArrowSettingContainer {}
+	CompositeContainer({&filteringSetting, &arrowsSetting}),
+	filteringSetting {},
+	arrowsSetting {}
 {}
 
 MeasuredDataVectorSetting::MeasuredDataVectorSetting(const MeasuredDataVectorSetting& setting) :
@@ -10,8 +12,16 @@ MeasuredDataVectorSetting::MeasuredDataVectorSetting(const MeasuredDataVectorSet
 	copyValue(setting);
 }
 
+MeasuredDataVectorSetting::~MeasuredDataVectorSetting()
+{}
+
 MeasuredDataVectorSetting& MeasuredDataVectorSetting::operator=(const MeasuredDataVectorSetting& setting)
 {
 	copyValue(setting);
 	return *this;
+}
+
+XmlAttributeContainer& MeasuredDataVectorSetting::operator=(const XmlAttributeContainer& c)
+{
+	return operator=(dynamic_cast<const MeasuredDataVectorSetting&> (c));
 }

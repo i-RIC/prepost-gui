@@ -59,19 +59,14 @@ win32 {
 HEADERS += autoparticlewindowi.h \
            cfshapeexportwindowi.h \
            particleexportwindowi.h \
-           post2dwindowcontoursetting.h \
            postallzoneselectingdialog.h \
            postbase_global.h \
-           postwindowgridtypedataiteminterface.h \
+           postsolutionselectdialog.h \
            svkmlexportwindowi.h \
            particle/particlearbitrarytimeeditdialog.h \
-           particle/postparticlebasicsetting.h \
-           particle/postparticlebasicsettingdialog.h \
-           particle/postparticlescalarpropertydialog.h \
-           particle/postparticlevectorpropertydialog.h \
-           polydata/postpolydatabasicsetting.h \
-           polydata/postpolydatabasicsettingdialog.h \
-           polydata/postpolydatascalarpropertydialog.h \
+           particle/particledatasetting.h \
+           particle/particledatavectorsetting.h \
+           polydata/polydatasetting.h \
            string/poststringresultdataitem.h \
            string/poststringresultsettingdialog.h \
            time/posttimedataitem.h \
@@ -86,24 +81,16 @@ HEADERS += autoparticlewindowi.h \
            title/private/posttitledataitem_setsettingcommand.h
 FORMS += postallzoneselectingdialog.ui \
          particle/particlearbitrarytimeeditdialog.ui \
-         particle/postparticlebasicsettingdialog.ui \
-         particle/postparticlescalarpropertydialog.ui \
-         particle/postparticlevectorpropertydialog.ui \
-         polydata/postpolydatabasicsettingdialog.ui \
-         polydata/postpolydatascalarpropertydialog.ui \
+         postsolutionselectdialog.ui \
          string/poststringresultsettingdialog.ui \
          time/posttimeeditdialog.ui \
          title/posttitleeditdialog.ui
-SOURCES += post2dwindowcontoursetting.cpp \
-           postallzoneselectingdialog.cpp \
+SOURCES += postallzoneselectingdialog.cpp \
            particle/particlearbitrarytimeeditdialog.cpp \
-           particle/postparticlebasicsetting.cpp \
-           particle/postparticlebasicsettingdialog.cpp \
-           particle/postparticlescalarpropertydialog.cpp \
-           particle/postparticlevectorpropertydialog.cpp \
-           polydata/postpolydatabasicsetting.cpp \
-           polydata/postpolydatabasicsettingdialog.cpp \
-           polydata/postpolydatascalarpropertydialog.cpp \
+           particle/particledatasetting.cpp \
+           particle/particledatavectorsetting.cpp \
+           polydata/polydatasetting.cpp \
+           postsolutionselectdialog.cpp \
            string/poststringresultdataitem.cpp \
            string/poststringresultsettingdialog.cpp \
            time/posttimedataitem.cpp \

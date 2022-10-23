@@ -17,7 +17,7 @@
 #include <vtkSmartPointer.h>
 #include <vtkStringArray.h>
 #include <vtkPointData.h>
-#include <vtkTrivialProducer.h>
+#include <vtkPointSource.h>
 #include <QGraphicsItemGroup>
 #include <QGraphicsLineItem>
 #include <QGraphicsTextItem>
@@ -456,10 +456,8 @@ void Structured2DGrid::updateSimplifiedGrid(double xmin, double xmax, double ymi
 	}
 	if (outOfRegion) {
 		// 2. If the point is out of the region, the whole grid is out of the region.
-		vtkSmartPointer<vtkTrivialProducer> emptyAlgo = vtkSmartPointer<vtkTrivialProducer>::New();
-		vtkSmartPointer<vtkPolyData> emptyPoly = vtkSmartPointer<vtkPolyData>::New();
-		emptyPoly->SetPoints(vtkGrid()->GetPoints());
-		emptyAlgo->SetOutput(emptyPoly);
+		auto emptyAlgo = vtkSmartPointer<vtkPointSource>::New();
+		emptyAlgo->SetNumberOfPoints(0);
 
 		setFilteredShapeAlgorithm(emptyAlgo);
 		setFilteredPointsAlgorithm(emptyAlgo);

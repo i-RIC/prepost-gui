@@ -15,6 +15,8 @@
 #include <postbase/particleexportwindowi.h>
 #include <postbase/svkmlexportwindowi.h>
 
+#include <string>
+
 class QAction;
 class QToolBar;
 class Post2dObjectBrowser;
@@ -54,19 +56,18 @@ public:
 	int index() const {return m_index;}
 
 	QList<QString> particleDrawingZones() override;
-	QList<QString> contourFigureDrawingZones() override;
-	QList<QString> contourDrawingZones() override;
+	std::vector<std::string> discreteColorDrawingZones() override;
 	bool hasTransparentPart();
 
-	bool exportContourFigureToShape(const QString& filePrefix, int index, double time, const QString& zonename) override;
+	bool exportContourFigureToShape(const QString& filePrefix, int index, double time, const std::string& zonename) override;
 	bool exportParticles(const QString& filePrefix, int fileIndex, double time, const QString& zonename) override;
 
-	virtual bool checkShapeExportCondition(const QString &zonename) const;
+	bool checkShapeExportCondition(const std::string& zoneName) const override;
 
-	bool checkKmlExportCondition(const QString &zonename) const override;
-	bool exportKMLHeader(QXmlStreamWriter& writer, const QString& zonename) override;
-	bool exportKMLFooter(QXmlStreamWriter& writer, const QString& zonename) override;
-	bool exportKMLForTimestep(QXmlStreamWriter& writer, int index, double time, const QString& zonename, bool oneShot) override;
+	bool checkKmlExportCondition(const std::string &zonename) const override;
+	bool exportKMLHeader(QXmlStreamWriter& writer, const std::string& zonename) override;
+	bool exportKMLFooter(QXmlStreamWriter& writer, const std::string& zonename) override;
+	bool exportKMLForTimestep(QXmlStreamWriter& writer, int index, double time, const std::string& zonename, bool oneShot) override;
 	bool isAutoParticleOutput() const override;
 
 	void applyOffset(double x_diff, double y_diff) override;
@@ -99,7 +100,7 @@ private:
 	Post2dWindowDataModel* m_dataModel;
 	Post2dWindowActionManager* m_actionManager;
 	QByteArray m_initialState;
-	mutable QString m_exportScalarName;
+	mutable std::string m_exportScalarName;
 
 public:
 	friend class Post2dWindowProjectDataItem;

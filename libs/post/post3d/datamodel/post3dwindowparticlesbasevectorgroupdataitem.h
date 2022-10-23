@@ -3,86 +3,67 @@
 
 #include "../post3dwindowdataitem.h"
 
-#include <guibase/arrowsettingcontainer.h>
 #include <guibase/vtktool/vtkarrowlegendactors.h>
 #include <guicore/misc/targeted/targeteditemi.h>
+#include <postbase/particle/particledatavectorsetting.h>
 
+class ColorMapSettingContainer;
 class NamedGraphicWindowDataItem;
+class Post3dWindowGridTypeDataItem;
+class Post3dWindowParticlesBaseTopDataItem;
 
-class vtkActor;
-class vtkActor2D;
-class vtkAppendPolyData;
-class vtkGlyph3D;
-class vtkHedgeHog;
-class vtkMaskPoints;
 class vtkPolyData;
-class vtkPolyDataMapper;
-class vtkTextActor;
 class vtkTransformFilter;
-class vtkUnstructuredGrid;
-class vtkWarpVector;
 
 class Post3dWindowParticlesBaseVectorGroupDataItem : public Post3dWindowDataItem, public TargetedItemI
 {
 	Q_OBJECT
 
 public:
-	const static int AUTO_AVERAGECOUNT = 20;
-
 	Post3dWindowParticlesBaseVectorGroupDataItem(Post3dWindowDataItem* p);
 	~Post3dWindowParticlesBaseVectorGroupDataItem();
 
-	void updateActorSettings();
+	std::string target() const override;
+	void setTarget(const std::string& target) override;
+
+	void update();
+	void informSelection(VTKGraphicsView* v) override;
+	void informDeselection(VTKGraphicsView* v) override;
+	void handleResize(VTKGraphicsView* v) override;
 	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
-	void update();
-	QDialog* propertyDialog(QWidget* parent);
-	void handlePropertyDialogAccepted(QDialog* propDialog);
 
 public slots:
 	void handleNamedItemChange(NamedGraphicWindowDataItem* item);
 
-protected:
-	void innerUpdateZScale(double zscale) override;
-	void innerUpdate2Ds() override;
-	void updateColorSetting();
-	void updateMaskSetting();
-	void updatePolyData();
-	void updateLegendData();
-	void informGridUpdate();
-
 private:
-	std::string target() const override;
-	void setTarget(const std::string& target);
-
-	void setupActors();
-	void calculateStandardValue();
-	void updateScaleFactor();
-
+	void showPropertyDialog() override;
+	QDialog* propertyDialog(QWidget* p) override;
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+	void innerUpdate2Ds() override;
+	void innerUpdateZScale(double zscale) override;
 
-protected:
-	vtkActor* m_arrowActor;
-	vtkPolyDataMapper* m_arrowMapper;
-	vtkAppendPolyData* m_appendPolyData;
-	vtkPolyData* m_polyData;
+	void setupActors();
+	void updateCheckState();
+	void updateActorSettings();
 
-	vtkMaskPoints* m_arrowMask;
-	vtkHedgeHog* m_hedgeHog;
-	vtkGlyph3D* m_arrowGlyph;
-	vtkWarpVector* m_warpVector;
-	vtkConeSource* m_arrowSource;
+	ColorMapSettingContainer* activeSetting() const;
+	Post3dWindowGridTypeDataItem* gridTypeDataItem() const;
+	Post3dWindowParticlesBaseTopDataItem* topDataItem() const;
+	Post3dWindowZoneDataItem* zoneDataItem() const;
+	vtkPolyData* particleData() const;
+
+	vtkActor* m_actor;
+	vtkActor2D* m_legendActor;
 	vtkTransformFilter* m_transformFilter;
 
-	vtkArrowLegendActors m_legendActors;
+	ParticleDataVectorSetting m_setting;
+	double m_zScale;
 
-	ArrowSettingContainer m_setting;
-
-	double m_scaleFactor;
-
-	class SetSettingCommand;
+	class PropertyDialog;
+	class UpdateSettingCommand;
 };
 
 #endif // POST3DWINDOWPARTICLESBASEVECTORGROUPDATAITEM_H

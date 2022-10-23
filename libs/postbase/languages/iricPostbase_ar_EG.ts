@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ar_EG">
 <context>
     <name>ParticleArbitraryTimeEditDialog</name>
@@ -57,163 +59,170 @@
     <name>PostParticleBasicSettingDialog</name>
     <message>
         <source>Particles Setting</source>
-        <translation>إعداد الجسيمات</translation>
+        <translation type="vanished">إعداد الجسيمات</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>اللون:</translation>
+        <translation type="vanished">اللون:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>مقاس:</translation>
+        <translation type="vanished">مقاس:</translation>
     </message>
 </context>
 <context>
     <name>PostParticleScalarPropertyDialog</name>
     <message>
         <source>Particle Scalar Setting</source>
-        <translation>إعداد عددي الجسيمات</translation>
+        <translation type="vanished">إعداد عددي الجسيمات</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>لون مخصص</translation>
+        <translation type="vanished">لون مخصص</translation>
     </message>
     <message>
         <source>Color by attribute value</source>
-        <translation>اللون حسب قيمة السمة</translation>
+        <translation type="vanished">اللون حسب قيمة السمة</translation>
     </message>
     <message>
         <source>Attribute:</source>
-        <translation>يصف:</translation>
+        <translation type="vanished">يصف:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>مقاس:</translation>
+        <translation type="vanished">مقاس:</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>إعداد شريط الألوان (&amp;C)</translation>
+        <translation type="vanished">إعداد شريط الألوان (&amp;C)</translation>
     </message>
 </context>
 <context>
     <name>PostParticleVectorPropertyDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>إعداد السهم</translation>
+        <translation type="vanished">إعداد السهم</translation>
     </message>
     <message>
         <source>Attribute value:</source>
-        <translation>قيمة السمة:</translation>
+        <translation type="vanished">قيمة السمة:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>طول</translation>
+        <translation type="vanished">طول</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>آلي</translation>
+        <translation type="vanished">آلي</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>قيمة قياسية:</translation>
+        <translation type="vanished">قيمة قياسية:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[تصلب متعدد]</translation>
+        <translation type="vanished">[تصلب متعدد]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>الطول على الشاشة:</translation>
+        <translation type="vanished">الطول على الشاشة:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[بكسل]</translation>
+        <translation type="vanished">[بكسل]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>الحد الأدنى للرسم:</translation>
+        <translation type="vanished">الحد الأدنى للرسم:</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>أخذ العينات</translation>
+        <translation type="vanished">أخذ العينات</translation>
     </message>
     <message>
         <source>All particles</source>
-        <translation>كل الجسيمات</translation>
+        <translation type="vanished">كل الجسيمات</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>معدل أخذ العينات:</translation>
+        <translation type="vanished">معدل أخذ العينات:</translation>
     </message>
     <message>
         <source>Specify number of particles</source>
-        <translation>حدد عدد الجسيمات</translation>
+        <translation type="vanished">حدد عدد الجسيمات</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>اللون</translation>
+        <translation type="vanished">اللون</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>لون مخصص</translation>
+        <translation type="vanished">لون مخصص</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>حسب القيمة العددية</translation>
+        <translation type="vanished">حسب القيمة العددية</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>شكل السهم</translation>
+        <translation type="vanished">شكل السهم</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>حجم السهم:</translation>
+        <translation type="vanished">حجم السهم:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>عرض الخط:</translation>
+        <translation type="vanished">عرض الخط:</translation>
     </message>
 </context>
 <context>
     <name>PostPolyDataBasicSettingDialog</name>
     <message>
         <source>Polygon Setting</source>
-        <translation>إعداد المضلع</translation>
+        <translation type="vanished">إعداد المضلع</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>اللون:</translation>
+        <translation type="vanished">اللون:</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>عرض الخط:</translation>
+        <translation type="vanished">عرض الخط:</translation>
     </message>
 </context>
 <context>
     <name>PostPolyDataScalarPropertyDialog</name>
     <message>
         <source>Polygon Setting</source>
-        <translation>إعداد المضلع</translation>
+        <translation type="vanished">إعداد المضلع</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>لون مخصص</translation>
+        <translation type="vanished">لون مخصص</translation>
     </message>
     <message>
         <source>Color by attribute value</source>
-        <translation>اللون حسب قيمة السمة</translation>
+        <translation type="vanished">اللون حسب قيمة السمة</translation>
     </message>
     <message>
         <source>Attribute:</source>
-        <translation>يصف:</translation>
+        <translation type="vanished">يصف:</translation>
     </message>
     <message>
         <source>Line Width</source>
-        <translation>عرض الخط</translation>
+        <translation type="vanished">عرض الخط</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>إعداد شريط الألوان (&amp;C)</translation>
+        <translation type="vanished">إعداد شريط الألوان (&amp;C)</translation>
+    </message>
+</context>
+<context>
+    <name>PostSolutionSelectDialog</name>
+    <message>
+        <source>Select Target Result</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

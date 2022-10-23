@@ -56,6 +56,7 @@ LIBS += \
 	-lvtkCommonDataModel-$${VTK_MAJ_MIN} \
 	-lvtkCommonExecutionModel-$${VTK_MAJ_MIN} \
 	-lvtkCommonMath-$${VTK_MAJ_MIN} \
+	-lvtkCommonTransforms-$${VTK_MAJ_MIN} \
 	-lvtkFiltersCore-$${VTK_MAJ_MIN} \
 	-lvtkFiltersExtraction-$${VTK_MAJ_MIN} \
 	-lvtkFiltersFlowPaths-$${VTK_MAJ_MIN} \
@@ -74,8 +75,7 @@ win32 {
 }
 
 # Input
-HEADERS += arrowsettingcontainer.h \
-           colortool.h \
+HEADERS += colortool.h \
            comboboxtool.h \
            cursorchanger.h \
            graphicsmisc.h \
@@ -83,11 +83,9 @@ HEADERS += arrowsettingcontainer.h \
            iricactivecellfilter.h \
            irictoolbar.h \
            landxmlutil.h \
-           linestyleinformation.h \
            objectbrowser.h \
            objectbrowserview.h \
            overridecursorchanger.h \
-           pointstyleinformation.h \
            qpainterpenbrushchanger.h \
            qpainterpenbrushrestorer.h \
            qwtplotcustomcurve.h \
@@ -95,7 +93,6 @@ HEADERS += arrowsettingcontainer.h \
            scalarbardialog.h \
            scalarbarsetting.h \
            scalarbarwidget.h \
-           scalarsettingcontainer.h \
            structuredgridregion.h \
            structuredgridregionselectwidget.h \
            tooltiplabel.h \
@@ -111,7 +108,6 @@ HEADERS += arrowsettingcontainer.h \
            vtktextpropertysettingcontainer.h \
            vtktextpropertysettingdialog.h \
            vtktextpropertysettingwidget.h \
-           widget/qdoublespinboxwithfocusout.h \
            xyaxisdisplaysettingdialog.h \
            colormap/colormapcustomsetting.h \
            colormap/colormapcustomsettingcolor.h \
@@ -130,6 +126,8 @@ HEADERS += arrowsettingcontainer.h \
            geometry/pointring.h \
            geometry/polygonregion.h \
            geometry/rect.h \
+           gridshape/gridshapesettingcontainer.h \
+           gridshape/gridshapesettingeditwidget.h \
            point/pointclearcommand.h \
            point/pointcontroller.h \
            point/pointmovecommand.h \
@@ -153,13 +151,13 @@ HEADERS += arrowsettingcontainer.h \
            timeformat/timeformatutil.h \
            vtktool/vtkactorpolydatamapperpair.h \
            vtktool/vtkarrowlegendactors.h \
-           vtktool/vtkarrowsactor.h \
            vtktool/vtklabel2dactor.h \
            vtktool/vtklineactor.h \
            vtktool/vtklinesactor.h \
            vtktool/vtkparametricsplineutil.h \
            vtktool/vtkpointsutil.h \
            vtktool/vtkpolydatalinesactor.h \
+           vtktool/vtkpolydatamapperutil.h \
            vtktool/vtkpolydatapaintactor.h \
            vtktool/vtkpolydatapointsactor.h \
            vtktool/vtkpolygonactor.h \
@@ -181,6 +179,7 @@ HEADERS += arrowsettingcontainer.h \
            widget/itemmultiselectingdialog.h \
            widget/itemselectingdialog.h \
            widget/marginwidget.h \
+           widget/qdoublespinboxwithfocusout.h \
            widget/realnumberdisplaylabel.h \
            widget/realnumbereditwidget.h \
            widget/sliderwithvalue.h \
@@ -193,7 +192,6 @@ HEADERS += arrowsettingcontainer.h \
            polyline/private/polylinecontroller_impl.h \
            vtktool/private/vtkactorpolydatamapperpair_impl.h \
            vtktool/private/vtkarrowlegendactors_impl.h \
-           vtktool/private/vtkarrowsactor_impl.h \
            vtktool/private/vtklabel2dactor_impl.h \
            vtktool/private/vtklineactor_impl.h \
            vtktool/private/vtklinesactor_impl.h \
@@ -219,6 +217,7 @@ FORMS += scalarbardialog.ui \
          colormap/colormapcustomsettingdialog.ui \
          colormap/colormapsettingwidget.ui \
          coordinates/coordinateseditdialog.ui \
+         gridshape/gridshapesettingeditwidget.ui \
          timeformat/timeformateditwidget.ui \
          widget/cgnszoneselectdialog.ui \
          widget/contoursettingwidget.ui \
@@ -230,19 +229,16 @@ FORMS += scalarbardialog.ui \
          widget/itemselectingdialog.ui \
          widget/transparencywidget.ui \
          widget/waitdialog.ui
-SOURCES += arrowsettingcontainer.cpp \
-           colortool.cpp \
+SOURCES += colortool.cpp \
            comboboxtool.cpp \
            cursorchanger.cpp \
            graphicsmisc.cpp \
            iricactivecellfilter.cpp \
            irictoolbar.cpp \
            landxmlutil.cpp \
-           linestyleinformation.cpp \
            objectbrowser.cpp \
            objectbrowserview.cpp \
            overridecursorchanger.cpp \
-           pointstyleinformation.cpp \
            qpainterpenbrushchanger.cpp \
            qpainterpenbrushrestorer.cpp \
            qwtplotcustomcurve.cpp \
@@ -250,7 +246,6 @@ SOURCES += arrowsettingcontainer.cpp \
            scalarbardialog.cpp \
            scalarbarsetting.cpp \
            scalarbarwidget.cpp \
-           scalarsettingcontainer.cpp \
            structuredgridregion.cpp \
            structuredgridregionselectwidget.cpp \
            tooltiplabel.cpp \
@@ -266,7 +261,6 @@ SOURCES += arrowsettingcontainer.cpp \
            vtktextpropertysettingcontainer.cpp \
            vtktextpropertysettingdialog.cpp \
            vtktextpropertysettingwidget.cpp \
-           widget/qdoublespinboxwithfocusout.cpp \
            xyaxisdisplaysettingdialog.cpp \
            colormap/colormapcustomsetting.cpp \
            colormap/colormapcustomsettingcolor.cpp \
@@ -284,6 +278,8 @@ SOURCES += arrowsettingcontainer.cpp \
            geometry/pointring.cpp \
            geometry/polygonregion.cpp \
            geometry/rect.cpp \
+           gridshape/gridshapesettingcontainer.cpp \
+           gridshape/gridshapesettingeditwidget.cpp \
            point/pointclearcommand.cpp \
            point/pointcontroller.cpp \
            point/pointmovecommand.cpp \
@@ -306,13 +302,13 @@ SOURCES += arrowsettingcontainer.cpp \
            timeformat/timeformatutil.cpp \
            vtktool/vtkactorpolydatamapperpair.cpp \
            vtktool/vtkarrowlegendactors.cpp \
-           vtktool/vtkarrowsactor.cpp \
            vtktool/vtklabel2dactor.cpp \
            vtktool/vtklineactor.cpp \
            vtktool/vtklinesactor.cpp \
            vtktool/vtkparametricsplineutil.cpp \
            vtktool/vtkpointsutil.cpp \
            vtktool/vtkpolydatalinesactor.cpp \
+           vtktool/vtkpolydatamapperutil.cpp \
            vtktool/vtkpolydatapaintactor.cpp \
            vtktool/vtkpolydatapointsactor.cpp \
            vtktool/vtkpolygonactor.cpp \
@@ -334,6 +330,7 @@ SOURCES += arrowsettingcontainer.cpp \
            widget/itemmultiselectingdialog.cpp \
            widget/itemselectingdialog.cpp \
            widget/marginwidget.cpp \
+           widget/qdoublespinboxwithfocusout.cpp \
            widget/realnumberdisplaylabel.cpp \
            widget/realnumbereditwidget.cpp \
            widget/sliderwithvalue.cpp \

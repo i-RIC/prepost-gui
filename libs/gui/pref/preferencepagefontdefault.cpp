@@ -19,8 +19,8 @@ PreferencePageFontDefault::PreferencePageFontDefault(QWidget* parent) :
 	QSettings settings;
 
 	vtkTextPropertySettingContainer s_gridIndices;
-	s_gridIndices.loadSetting(settings, "fontsetting/gridindices");
 	s_gridIndices.fontSize = 15;
+	s_gridIndices.loadSetting(settings, "fontsetting/gridindices");
 	ui->gridShapeWidget->setSetting(s_gridIndices);
 
 	vtkTextPropertySettingContainer s_colorBarTitle;

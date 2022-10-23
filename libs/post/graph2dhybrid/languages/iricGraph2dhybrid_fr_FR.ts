@@ -1,9 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="fr_FR">
 <context>
     <name>Graph2dHybridSettingDialog</name>
     <message>
         <source>Axis Setting</source>
-        <translation>Réglage de l'axe</translation>
+        <translation>Réglage de l&apos;axe</translation>
     </message>
     <message>
         <source>X Axis</source>
@@ -39,11 +41,11 @@
     </message>
     <message>
         <source>Min:</source>
-        <translation>Min :</translation>
+        <translation>Min&#xa0;:</translation>
     </message>
     <message>
         <source>Max:</source>
-        <translation>Maximum :</translation>
+        <translation>Maximum&#xa0;:</translation>
     </message>
     <message>
         <source>Logarithmic axis</source>
@@ -87,15 +89,15 @@
     </message>
     <message>
         <source>X-axes range is invalid.</source>
-        <translation>La plage des axes X n'est pas valide.</translation>
+        <translation>La plage des axes X n&apos;est pas valide.</translation>
     </message>
     <message>
         <source>Left Y-axes range is invalid.</source>
-        <translation>La plage des axes Y de gauche n'est pas valide.</translation>
+        <translation>La plage des axes Y de gauche n&apos;est pas valide.</translation>
     </message>
     <message>
         <source>Right Y-axes range is invalid.</source>
-        <translation>La plage des axes Y de droite n'est pas valide.</translation>
+        <translation>La plage des axes Y de droite n&apos;est pas valide.</translation>
     </message>
     <message>
         <source>Seconds</source>
@@ -126,11 +128,11 @@
     </message>
     <message>
         <source>J:</source>
-        <translation>J :</translation>
+        <translation>J&#xa0;:</translation>
     </message>
     <message>
         <source>K:</source>
-        <translation>K :</translation>
+        <translation>K&#xa0;:</translation>
     </message>
     <message>
         <source>Select &amp;Data Source</source>
@@ -146,7 +148,7 @@
     </message>
     <message>
         <source>Graph Window: %1</source>
-        <translation>Fenêtre graphique : %1</translation>
+        <translation>Fenêtre graphique&#xa0;: %1</translation>
     </message>
     <message>
         <source>Controller</source>
@@ -213,7 +215,7 @@
     </message>
     <message>
         <source>&amp;Axis Setting...</source>
-        <translation>Réglage de l'axe (&amp;A)...</translation>
+        <translation>Réglage de l&apos;axe (&amp;A)...</translation>
     </message>
     <message>
         <source>D&amp;raw Setting...</source>
@@ -240,7 +242,7 @@
     <name>Graph2dHybridWindowContinuousExportDialog</name>
     <message>
         <source>Snapshot Setting</source>
-        <translation>Paramètre d'instantané</translation>
+        <translation>Paramètre d&apos;instantané</translation>
     </message>
     <message>
         <source>Folder &amp;&amp; Prefix</source>
@@ -268,35 +270,35 @@
     </message>
     <message>
         <source>I Min:</source>
-        <translation>J'en suis:</translation>
+        <translation>J&apos;en suis:</translation>
     </message>
     <message>
         <source>I Max:</source>
-        <translation>Je max :</translation>
+        <translation>Je max&#xa0;:</translation>
     </message>
     <message>
         <source>J Min:</source>
-        <translation>J Min :</translation>
+        <translation>J Min&#xa0;:</translation>
     </message>
     <message>
         <source>J Max:</source>
-        <translation>J Max :</translation>
+        <translation>J Max&#xa0;:</translation>
     </message>
     <message>
         <source>K Min:</source>
-        <translation>K min :</translation>
+        <translation>K min&#xa0;:</translation>
     </message>
     <message>
         <source>K Max:</source>
-        <translation>K Max :</translation>
+        <translation>K Max&#xa0;:</translation>
     </message>
     <message>
         <source>Index Min:</source>
-        <translation>Indice Min :</translation>
+        <translation>Indice Min&#xa0;:</translation>
     </message>
     <message>
         <source>Index Max:</source>
-        <translation>Indice maximum :</translation>
+        <translation>Indice maximum&#xa0;:</translation>
     </message>
     <message>
         <source>Time</source>
@@ -324,7 +326,7 @@
     </message>
     <message>
         <source>Folder %1 does not exists.</source>
-        <translation>Dossier %1 N'existe pas.</translation>
+        <translation>Dossier %1 N&apos;existe pas.</translation>
     </message>
     <message>
         <source>Please input prefix.</source>
@@ -343,11 +345,11 @@
     </message>
     <message>
         <source>J:</source>
-        <translation>J :</translation>
+        <translation>J&#xa0;:</translation>
     </message>
     <message>
         <source>K:</source>
-        <translation>K :</translation>
+        <translation>K&#xa0;:</translation>
     </message>
     <message>
         <source>Index:</source>
@@ -359,7 +361,7 @@
     </message>
     <message>
         <source>Axis &amp;Setting</source>
-        <translation>Réglage de l'axe (&amp;S)</translation>
+        <translation>Réglage de l&apos;axe (&amp;S)</translation>
     </message>
     <message>
         <source>Draw &amp;Setting</source>
@@ -398,7 +400,7 @@
     </message>
     <message>
         <source>CSV Export Setting</source>
-        <translation>Paramètre d'exportation CSV</translation>
+        <translation>Paramètre d&apos;exportation CSV</translation>
     </message>
     <message>
         <source>CSV Export</source>
@@ -414,7 +416,7 @@
     </message>
     <message>
         <source>Saving snapshot image to %1 failed.</source>
-        <translation>Enregistrement de l'image instantanée dans %1 échoué.</translation>
+        <translation>Enregistrement de l&apos;image instantanée dans %1 échoué.</translation>
     </message>
     <message>
         <source>Export CSV file</source>
@@ -478,15 +480,15 @@
     </message>
     <message>
         <source>No calculation result exists.</source>
-        <translation>Aucun résultat de calcul n'existe.</translation>
+        <translation>Aucun résultat de calcul n&apos;existe.</translation>
     </message>
     <message>
         <source>Graph window setup fail. Calculation result is not loaded properly.</source>
-        <translation>Échec de la configuration de la fenêtre graphique. Le résultat du calcul n'est pas chargé correctement.</translation>
+        <translation>Échec de la configuration de la fenêtre graphique. Le résultat du calcul n&apos;est pas chargé correctement.</translation>
     </message>
     <message>
-        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm "Create grid from from cross-section data"&lt;/li&gt;&lt;/ul&gt;</source>
-        <translation>Cette fonction peut être utilisée lorsque les conditions suivantes sont remplies : &lt;ul&gt;&lt;li&gt;Le graphique pour le résultat de la grille structurée en deux dimensions est dessiné.&lt;/li&gt;&lt;li&gt;L'axe X est la direction I dans la grille.&lt;/li &gt;&lt;li&gt;La grille est créée à l'aide de l'algorithme "Créer une grille à partir de données de section"&lt;/li&gt;&lt;/ul&gt;</translation>
+        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm &quot;Create grid from from cross-section data&quot;&lt;/li&gt;&lt;/ul&gt;</source>
+        <translation>Cette fonction peut être utilisée lorsque les conditions suivantes sont remplies&#xa0;: &lt;ul&gt;&lt;li&gt;Le graphique pour le résultat de la grille structurée en deux dimensions est dessiné.&lt;/li&gt;&lt;li&gt;L&apos;axe X est la direction I dans la grille.&lt;/li &gt;&lt;li&gt;La grille est créée à l&apos;aide de l&apos;algorithme &quot;Créer une grille à partir de données de section&quot;&lt;/li&gt;&lt;/ul&gt;</translation>
     </message>
 </context>
 <context>
@@ -497,11 +499,11 @@
     </message>
     <message>
         <source>X Axis:</source>
-        <translation>Axe X :</translation>
+        <translation>Axe X&#xa0;:</translation>
     </message>
     <message>
         <source>Polyline:</source>
-        <translation>Polyligne :</translation>
+        <translation>Polyligne&#xa0;:</translation>
     </message>
     <message>
         <source>Calculation Result</source>
@@ -517,7 +519,7 @@
     </message>
     <message>
         <source>Grid Location:</source>
-        <translation>Emplacement de la grille :</translation>
+        <translation>Emplacement de la grille&#xa0;:</translation>
     </message>
     <message>
         <source>Two dimensional Data</source>
@@ -561,11 +563,11 @@
     </message>
     <message>
         <source>Current setting will be discarded, are you sure?</source>
-        <translation>Le paramètre actuel sera supprimé, êtes-vous sûr ?</translation>
+        <translation>Le paramètre actuel sera supprimé, êtes-vous sûr&#xa0;?</translation>
     </message>
     <message>
         <source>No data is selected.</source>
-        <translation>Aucune donnée n'est sélectionnée.</translation>
+        <translation>Aucune donnée n&apos;est sélectionnée.</translation>
     </message>
     <message>
         <source>Import CSV file</source>
@@ -580,8 +582,8 @@
         <translation>Erreur</translation>
     </message>
     <message>
-        <source>The title of the first column has to be "X"</source>
-        <translation>Le titre de la première colonne doit être "X"</translation>
+        <source>The title of the first column has to be &quot;X&quot;</source>
+        <translation>Le titre de la première colonne doit être &quot;X&quot;</translation>
     </message>
     <message>
         <source>The number of data of %1 and %2 mismatch. Data %1 is skipped.</source>
@@ -589,7 +591,7 @@
     </message>
     <message>
         <source>Polyline Group:</source>
-        <translation>Groupe de polylignes :</translation>
+        <translation>Groupe de polylignes&#xa0;:</translation>
     </message>
 </context>
 <context>
@@ -619,7 +621,7 @@
     </message>
     <message>
         <source>Chart Title:</source>
-        <translation>Titre du graphique :</translation>
+        <translation>Titre du graphique&#xa0;:</translation>
     </message>
     <message>
         <source>Legends:</source>
@@ -627,7 +629,7 @@
     </message>
     <message>
         <source>X axis:</source>
-        <translation>Axe X :</translation>
+        <translation>Axe X&#xa0;:</translation>
     </message>
     <message>
         <source>Title:</source>
@@ -635,11 +637,11 @@
     </message>
     <message>
         <source>Ticks:</source>
-        <translation>Tiques :</translation>
+        <translation>Tiques&#xa0;:</translation>
     </message>
     <message>
         <source>Y axis:</source>
-        <translation>Axe Y :</translation>
+        <translation>Axe Y&#xa0;:</translation>
     </message>
 </context>
 <context>
@@ -660,8 +662,8 @@
         <translation>Erreur</translation>
     </message>
     <message>
-        <source>The title of the first column has to be "X"</source>
-        <translation>Le titre de la première colonne doit être "X"</translation>
+        <source>The title of the first column has to be &quot;X&quot;</source>
+        <translation>Le titre de la première colonne doit être &quot;X&quot;</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -703,7 +705,7 @@
     <name>Graph2dHybridWindowObjectBrowser</name>
     <message>
         <source>Object Browser</source>
-        <translation>Navigateur d'objets</translation>
+        <translation>Navigateur d&apos;objets</translation>
     </message>
 </context>
 <context>
@@ -798,7 +800,7 @@
     </message>
     <message>
         <source>Display Style</source>
-        <translation>Style d'affichage</translation>
+        <translation>Style d&apos;affichage</translation>
     </message>
     <message>
         <source>Line</source>
@@ -810,7 +812,7 @@
     </message>
     <message>
         <source>Line Style:</source>
-        <translation>Style de ligne :</translation>
+        <translation>Style de ligne&#xa0;:</translation>
     </message>
     <message>
         <source>Solid Line</source>
@@ -842,7 +844,7 @@
     </message>
     <message>
         <source>Symbol Style:</source>
-        <translation>Style de symbole :</translation>
+        <translation>Style de symbole&#xa0;:</translation>
     </message>
     <message>
         <source>Circle</source>

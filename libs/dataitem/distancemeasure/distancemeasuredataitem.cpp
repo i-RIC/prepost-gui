@@ -88,16 +88,18 @@ DistanceMeasureDataItem::~DistanceMeasureDataItem()
 
 void DistanceMeasureDataItem::setupActors()
 {
-	vtkProperty* pointsProp = impl->m_lineActor.pointsActor()->GetProperty();
+	auto v = dataModel()->graphicsView();
+
+	auto pointsProp = impl->m_lineActor.pointsActor()->GetProperty();
 	pointsProp->SetLighting(false);
-	pointsProp->SetPointSize(7);
+	pointsProp->SetPointSize(7 * v->devicePixelRatioF());
 	pointsProp->SetColor(0, 0, 0);
 	impl->m_lineActor.pointsActor()->SetVisibility(0);
 	renderer()->AddActor(impl->m_lineActor.pointsActor());
 
-	vtkProperty* lineProp = impl->m_lineActor.lineActor()->GetProperty();
+	auto lineProp = impl->m_lineActor.lineActor()->GetProperty();
 	lineProp->SetLighting(false);
-	lineProp->SetLineWidth(1);
+	lineProp->SetLineWidth(1 * v->devicePixelRatioF());
 	lineProp->SetColor(0, 0, 0);
 	impl->m_lineActor.lineActor()->SetVisibility(0);
 	renderer()->AddActor(impl->m_lineActor.lineActor());

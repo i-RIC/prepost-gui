@@ -7,6 +7,7 @@
 #include <QList>
 #include <QMap>
 
+#include <map>
 #include <string>
 
 class SolverDefinitionGridType::Impl
@@ -40,7 +41,8 @@ public:
 	QMap<std::string, SolverDefinitionGridComplexAttribute*> m_gridComplexAttributeNameMap;
 	QList<SolverDefinitionBoundaryCondition*> m_boundaryConditions;
 	QMap<std::string, SolverDefinitionBoundaryCondition*> m_boundaryConditionNameMap;
-	QMap<std::string, QString> m_solutionCaptions;
+
+	std::map<std::string, SolverDefinitionOutput*> m_outputs;
 
 	Grid* m_emptyGrid {nullptr};
 	SolverDefinitionGridType* m_parent;

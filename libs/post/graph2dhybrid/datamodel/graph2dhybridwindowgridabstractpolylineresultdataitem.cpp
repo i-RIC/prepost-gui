@@ -114,7 +114,7 @@ void Graph2dHybridWindowGridAbstractPolylineResultDataItem::updateValues()
 	PostZoneDataContainer* cont = postInfo->zoneContainer(info->dimension, info->zoneName);
 	if (cont == 0) {return;}
 
-	vtkPointSet* grid = vtkPointSet::SafeDownCast(cont->data());
+	auto grid = cont->data()->data();
 
 	if (info->gridLocation == iRICLib::H5CgnsZone::SolutionPosition::Node) {
 		updateValuesVertex(grid);

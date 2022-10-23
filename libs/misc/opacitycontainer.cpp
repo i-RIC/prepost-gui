@@ -8,6 +8,10 @@ OpacityContainer::OpacityContainer(const QString& name) :
 	IntContainer {name, 100}
 {}
 
+OpacityContainer::OpacityContainer(const QString& name, int defaultVal) :
+	IntContainer {name, defaultVal}
+{}
+
 OpacityContainer::~OpacityContainer()
 {}
 

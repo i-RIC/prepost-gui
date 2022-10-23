@@ -1,11 +1,9 @@
 #include "../pre/gridcond/base/gridattributeeditdialog.h"
 #include "../pre/gridcond/base/gridattributeeditnameandvaluedialog.h"
 #include "../pre/gridcond/base/gridattributevariationeditdialog.h"
-#include "../scalarstocolors/colortransferfunctioncontainer.h"
-#include "../scalarstocolors/colortransferfunctioneditwidget.h"
-#include "../scalarstocolors/lookuptablecontainer.h"
-#include "../scalarstocolors/lookuptableeditwidget.h"
-#include "../scalarstocolors/scalarstocolorseditdialog.h"
+#include "../scalarstocolors/colormapfactoryi.h"
+#include "../scalarstocolors/colormapsettingcontaineri.h"
+#include "../scalarstocolors/colormapsettingeditdialog.h"
 #include "solverdefinition.h"
 #include "solverdefinitiongridattribute.h"
 #include "solverdefinitiongridattributedimension.h"
@@ -21,6 +19,7 @@
 
 SolverDefinitionGridAttribute::Impl::Impl(const QDomElement& elem, SolverDefinition *solverDef, SolverDefinitionGridAttribute *parent) :
 	m_isReferenceInformation {false},
+	m_colorMapFactory {nullptr},
 	m_parent {parent}
 {
 	load(elem, solverDef);
@@ -31,6 +30,8 @@ SolverDefinitionGridAttribute::Impl::~Impl()
 	for (SolverDefinitionGridAttributeDimension* dim : m_dimensions) {
 		delete dim;
 	}
+
+	delete m_colorMapFactory;
 }
 
 void SolverDefinitionGridAttribute::Impl::load(const QDomElement& elem, SolverDefinition* solverDef)
@@ -180,26 +181,24 @@ GridAttributeVariationEditDialog* SolverDefinitionGridAttribute::variationEditDi
 	return dialog;
 }
 
-ScalarsToColorsContainer* SolverDefinitionGridAttribute::createScalarsToColorsContainer(ProjectDataItem* d)
+ColorMapSettingContainerI* SolverDefinitionGridAttribute::createColorMapSettingContainer() const
 {
-	auto container = new LookupTableContainer(d);
-	QSettings setting;
-	int cm = setting.value("graphics/colormap", static_cast<int>(ColorMapSettingWidget::Rainbow)).value<int>();
-	ColorMapSettingWidget::ColorMap cmVal = static_cast<ColorMapSettingWidget::ColorMap>(cm);
-	container->setColorMap(cmVal);
-	return container;
+	auto cont = impl->m_colorMapFactory->createSettingContainer();
+	cont->valueCaption = impl->m_caption;
+	setupColorMapSettingContainer(cont);
+	return cont;
 }
 
-ScalarsToColorsEditWidget* SolverDefinitionGridAttribute::createScalarsToColorsEditWidget(QWidget* parent) const
+ColorMapSettingEditWidgetI* SolverDefinitionGridAttribute::createColorMapSettingEditWidget(QWidget* parent) const
 {
-	return createLookupTableEditWidget(parent);
+	return impl->m_colorMapFactory->createSettingEditWidget(parent);
 }
 
-ScalarsToColorsEditDialog* SolverDefinitionGridAttribute::createScalarsToColorsEditDialog(QWidget* parent) const
+ColorMapSettingEditDialog* SolverDefinitionGridAttribute::createColorMapSettingEditDialog(QWidget* parent) const
 {
-	auto dialog = new ScalarsToColorsEditDialog(parent);
-	auto widget = createScalarsToColorsEditWidget(dialog);
-	dialog->setWidget(widget);
+	auto dialog = new ColorMapSettingEditDialog(parent);
+	dialog->setWidget(createColorMapSettingEditWidget(dialog));
+
 	return dialog;
 }
 
@@ -208,30 +207,15 @@ void SolverDefinitionGridAttribute::setPosition(Position pos)
 	impl->m_position = pos;
 }
 
-ColorTransferFunctionContainer* SolverDefinitionGridAttribute::createColorTransferFunctionContainer(ProjectDataItem* d)
+void SolverDefinitionGridAttribute::setColorMapFactory(ColorMapFactoryI* factory)
 {
-	return new ColorTransferFunctionContainer(d);
+	impl->m_colorMapFactory = factory;
 }
 
-LookupTableContainer* SolverDefinitionGridAttribute::createLookupTableContainer(ProjectDataItem* d) const
+void SolverDefinitionGridAttribute::setVariantDefaultValue(const QVariant& v)
 {
-	LookupTableContainer* container = new LookupTableContainer(d);
-	QSettings setting;
-	int cm = setting.value("graphics/colormap", static_cast<int>(ColorMapSettingWidget::Rainbow)).value<int>();
-	ColorMapSettingWidget::ColorMap cmVal = static_cast<ColorMapSettingWidget::ColorMap>(cm);
-	container->setColorMap(cmVal);
-	return container;
+	impl->m_variantDefaultValue = v;
 }
 
-ScalarsToColorsEditWidget* SolverDefinitionGridAttribute::createColorTransferFunctionEditWidget(QWidget* parent) const
-{
-	return new ColorTransferFunctionEditWidget(parent);
-}
-
-ScalarsToColorsEditWidget* SolverDefinitionGridAttribute::createLookupTableEditWidget(QWidget* parent) const
-{
-	LookupTableEditWidget* widget = new LookupTableEditWidget(parent);
-	widget->hideFillSettings();
-	widget->hideDivisionNumber();
-	return widget;
-}
+void SolverDefinitionGridAttribute::setupColorMapSettingContainer(ColorMapSettingContainerI*) const
+{}

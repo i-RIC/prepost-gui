@@ -1444,7 +1444,7 @@ void Graph2dHybridWindowDataModel::getDims(int dims[4])
 	Graph2dHybridWindowResultSetting::DataTypeInfo* tinfo = m_setting.targetDataTypeInfo();
 	PostZoneDataContainer* cont = sol->zoneContainer(tinfo->dimension, tinfo->zoneName);
 	if (cont != nullptr) {
-		vtkStructuredGrid* sGrid = dynamic_cast<vtkStructuredGrid*>(cont->data());
+		auto sGrid = vtkStructuredGrid::SafeDownCast(cont->data()->data());
 		if (sGrid != nullptr) {
 			// structured
 			sGrid->GetDimensions(dims);
@@ -1452,12 +1452,10 @@ void Graph2dHybridWindowDataModel::getDims(int dims[4])
 				sGrid->GetCellDims(dims);
 			}
 			else if (tinfo->gridLocation == iRICLib::H5CgnsZone::SolutionPosition::IFace) {
-				auto ifacegrid = dynamic_cast<vtkStructuredGrid*>(cont->ifacedata());
-				ifacegrid->GetDimensions(dims);
+				cont->iFaceData()->concreteData()->GetDimensions(dims);
 			}
 			else if (tinfo->gridLocation == iRICLib::H5CgnsZone::SolutionPosition::JFace) {
-				auto jfacegrid = dynamic_cast<vtkStructuredGrid*>(cont->jfacedata());
-				jfacegrid->GetDimensions(dims);
+				cont->jFaceData()->concreteData()->GetDimensions(dims);
 			}
 			dims[3] = 1;
 		} else {
@@ -1465,9 +1463,9 @@ void Graph2dHybridWindowDataModel::getDims(int dims[4])
 			dims[0] = 1;
 			dims[1] = 1;
 			dims[2] = 1;
-			dims[3] = cont->data()->GetNumberOfPoints();
+			dims[3] = cont->data()->data()->GetNumberOfPoints();
 			if (tinfo->gridLocation == iRICLib::H5CgnsZone::SolutionPosition::Cell) {
-				dims[3] = cont->data()->GetNumberOfCells();
+				dims[3] = cont->data()->data()->GetNumberOfCells();
 			}
 		}
 	} else {

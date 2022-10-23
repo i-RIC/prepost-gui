@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ro_RO">
 <context>
     <name>BoundaryConditionDialog</name>
@@ -112,7 +114,7 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>GridBirdEyeWindow</name>
     <message>
-        <source>Grid Bird's-Eye View Window</source>
+        <source>Grid Bird&apos;s-Eye View Window</source>
         <translation>Fereastră cu vedere la ochi a grilei</translation>
     </message>
 </context>
@@ -139,69 +141,135 @@ Do you really want to import grid from this file?</source>
     <name>GridBirdEyeWindowAxesSettingDialog</name>
     <message>
         <source>Axes Setting</source>
-        <translation>Setarea axelor</translation>
+        <translation type="vanished">Setarea axelor</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>Vizibil</translation>
+        <translation type="vanished">Vizibil</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Culoare:</translation>
+        <translation type="vanished">Culoare:</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowColorSettingDialog</name>
     <message>
         <source>Display Setting</source>
-        <translation>Arata setarile</translation>
+        <translation type="vanished">Arata setarile</translation>
     </message>
     <message>
         <source>Grid Color</source>
-        <translation>Culoare grilă</translation>
+        <translation type="vanished">Culoare grilă</translation>
     </message>
     <message>
         <source>Node attribute</source>
-        <translation>Atribut nod</translation>
+        <translation type="vanished">Atribut nod</translation>
     </message>
     <message>
         <source>Cell attribute</source>
-        <translation>Atributul celulei</translation>
+        <translation type="vanished">Atributul celulei</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Culoare personalizată</translation>
+        <translation type="vanished">Culoare personalizată</translation>
     </message>
     <message>
         <source>Axes</source>
-        <translation>Axe</translation>
+        <translation type="vanished">Axe</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>Vizibil</translation>
+        <translation type="vanished">Vizibil</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Culoare:</translation>
+        <translation type="vanished">Culoare:</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowDataModel</name>
     <message>
         <source>Edit Z-direction Scale</source>
-        <translation>Editați scala în direcția Z</translation>
+        <translation type="vanished">Editați scala în direcția Z</translation>
     </message>
     <message>
         <source>Z-direction Scale</source>
-        <translation>Scala direcției Z</translation>
+        <translation type="vanished">Scala direcției Z</translation>
     </message>
     <message>
         <source>Input new Z-direction scale.</source>
-        <translation>Introduceți o nouă scală în direcția Z.</translation>
+        <translation type="vanished">Introduceți o nouă scală în direcția Z.</translation>
     </message>
     <message>
         <source>Edit Color Setting</source>
-        <translation>Editați setarea culorii</translation>
+        <translation type="vanished">Editați setarea culorii</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowGridDataItem</name>
+    <message>
+        <source>Edit Z-direction Scale</source>
+        <translation type="unfinished">Editați scala în direcția Z</translation>
+    </message>
+    <message>
+        <source>Input new Z-direction scale.</source>
+        <translation type="unfinished">Introduceți o nouă scală în direcția Z.</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowGridDataItem_EditDisplaySettingDialog</name>
+    <message>
+        <source>Edit Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Elevation:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Grid Color</source>
+        <translation type="unfinished">Culoare grilă</translation>
+    </message>
+    <message>
+        <source>Cusom Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="unfinished">Import (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="unfinished">Export (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Axes</source>
+        <translation type="unfinished">Axe</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation type="unfinished">Vizibil</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished">Culoare:</translation>
+    </message>
+    <message>
+        <source>Background Color:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Z-direction scale:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -287,6 +355,10 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Are you sure you want to delete all boundary conditions?</source>
         <translation>Sigur doriți să ștergeți toate condițiile la graniță?</translation>
+    </message>
+    <message>
+        <source>Edit Display Setting</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -387,6 +459,17 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Are you sure you want to delete all background images?</source>
         <translation>Sigur doriți să ștergeți toate imaginile de fundal?</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorBcGroupSettingDialog</name>
+    <message>
+        <source>Boundary Condition Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Font setting for names</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -580,8 +663,8 @@ Do you really want to import grid from this file?</source>
         <translation>%1 nu sunt mapate după ce au fost editate ultima dată. Doriți să executați maparea acum?</translation>
     </message>
     <message>
-        <source>Boundary Condition Setting "%1" is not mapped after it is edited last time. Do you want to execute mapping now?</source>
-        <translation>Setarea stării limită "%1"nu este mapat după ce a fost editat ultima dată. Doriți să executați maparea acum?</translation>
+        <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
+        <translation>Setarea stării limită &quot;%1&quot;nu este mapat după ce a fost editat ultima dată. Doriți să executați maparea acum?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -666,7 +749,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Set Up Scalarbar...</source>
-        <translation>Configurați Scalarbar...</translation>
+        <translation type="vanished">Configurați Scalarbar...</translation>
     </message>
     <message>
         <source>Delete &amp;Selected...</source>
@@ -789,6 +872,56 @@ Do you really want to import grid from this file?</source>
         <source>To import the geographic data, specify coordinate system for the project first.</source>
         <translation>Pentru a importa datele geografice, specificați mai întâi sistemul de coordonate pentru proiect.</translation>
     </message>
+    <message>
+        <source>Edit &amp;Variation Setting...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGeoDataGroupDataItem_ColorMapSettingEditDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation type="unfinished">Dialog</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="unfinished">Import (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="unfinished">Export (&amp;E)...</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGeoDataGroupDataItem_VariationSettingDialog</name>
+    <message>
+        <source>Variation Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enable variation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Variation to pass to solver:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Note:
+
+When variation is enabled, variation named &quot;Default&quot; is created, and all geographic data is moved to that.
+
+You can add, rename, remove variations from &quot;Object Browser&quot;.
+
+You can move, copy geographic data between variations.
+
+The grid attribute data created from the variation that you select with &quot;Variation to pass to solver&quot; is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGeoDataTopDataItem</name>
@@ -848,7 +981,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Grid Cell Attribute Display Setting</source>
-        <translation>Setarea afișării atributului celulei de rețea</translation>
+        <translation type="vanished">Setarea afișării atributului celulei de rețea</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -928,6 +1061,21 @@ Do you really want to import grid from this file?</source>
     </message>
 </context>
 <context>
+    <name>PreProcessorGridAttributeCellDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Cell Attribute Display Setting</source>
+        <translation type="unfinished">Setarea afișării atributului celulei de rețea</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="unfinished">Import (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="unfinished">Export (&amp;E)...</translation>
+    </message>
+</context>
+<context>
     <name>PreProcessorGridAttributeCellDisplaySettingDialog</name>
     <message>
         <source>Dialog</source>
@@ -987,7 +1135,7 @@ Do you really want to import grid from this file?</source>
         <translation>A executa (&amp;E)...</translation>
     </message>
     <message>
-        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".
+        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.
 </source>
         <translation>Următoarele atribute nu au fost mapate, deoarece valorile de ieșire ale generatorului de rețea pentru acestea. Dacă doriți să mapați datele geografice pentru ele forțat, vă rugăm să cartografiați manual cu meniul „Grilă” -&gt; „Atributele mapare” -&gt; „Executare”.</translation>
     </message>
@@ -1008,12 +1156,12 @@ Do you really want to import grid from this file?</source>
         <translation>Cartarea datelor geografice s-a încheiat</translation>
     </message>
     <message>
-        <source>The grid attribute "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Atributul grilă "%1"este editat manual. Când executați maparea, toate modificările pe care le-ați făcut vor fi eliminate. Sigur doriți să executați maparea?</translation>
+        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Atributul grilă &quot;%1&quot;este editat manual. Când executați maparea, toate modificările pe care le-ați făcut vor fi eliminate. Sigur doriți să executați maparea?</translation>
     </message>
     <message>
-        <source>The boundary condition "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Condiția la limită "%1"este editat manual. Când executați maparea, toate modificările pe care le-ați făcut vor fi eliminate. Sigur doriți să executați maparea?</translation>
+        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Condiția la limită &quot;%1&quot;este editat manual. Când executați maparea, toate modificările pe care le-ați făcut vor fi eliminate. Sigur doriți să executați maparea?</translation>
     </message>
 </context>
 <context>
@@ -1031,19 +1179,19 @@ Do you really want to import grid from this file?</source>
         <translation>Auto</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Când grila este creată, sunteți întrebat dacă pentru a executa maparea atributelor de fiecare dată. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Când grila este creată, sunteți întrebat dacă pentru a executa maparea atributelor de fiecare dată. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Manual</source>
         <translation>Manual</translation>
     </message>
     <message>
-        <source>Attribute mapping is executed only when you manually select "Execute" menu.</source>
+        <source>Attribute mapping is executed only when you manually select &quot;Execute&quot; menu.</source>
         <translation>Maparea atributelor se execută numai atunci când selectați manual meniul „Executare”.</translation>
     </message>
     <message>
@@ -1096,7 +1244,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Grid Node Attribute Display Setting</source>
-        <translation>Setarea afișării atributului nodului de rețea</translation>
+        <translation type="vanished">Setarea afișării atributului nodului de rețea</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -1173,6 +1321,21 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Generate point cloud data</source>
         <translation>Generați date cloud de puncte</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeNodeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Node Attribute Display Setting</source>
+        <translation type="unfinished">Setarea afișării atributului nodului de rețea</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="unfinished">Import (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="unfinished">Export (&amp;E)...</translation>
     </message>
 </context>
 <context>
@@ -1448,7 +1611,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>Configurați Scalarbar (&amp;U)...</translation>
     </message>
     <message>
-        <source>Open &amp;Bird's-Eye View Window</source>
+        <source>Open &amp;Bird&apos;s-Eye View Window</source>
         <translation>Deschideți fereastra cu vedere panoramică (&amp;B)</translation>
     </message>
     <message>
@@ -1727,26 +1890,26 @@ This algorithm can be used only for structured grids.</source>
     <name>PreProcessorScalarBarEditDialog</name>
     <message>
         <source>Color Legend Setting</source>
-        <translation>Setarea legendei culorii</translation>
+        <translation type="vanished">Setarea legendei culorii</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorScalarBarLegendBoxSettingDialog</name>
     <message>
         <source>Scalarbar Setting</source>
-        <translation>Setarea Scalarbar</translation>
+        <translation type="vanished">Setarea Scalarbar</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>Vizibil</translation>
+        <translation type="vanished">Vizibil</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>Valoare</translation>
+        <translation type="vanished">Valoare</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation>Editați | ×...</translation>
+        <translation type="vanished">Editați | ×...</translation>
     </message>
 </context>
 <context>
@@ -1825,99 +1988,99 @@ This algorithm can be used only for structured grids.</source>
     <name>PreProcessorWindowScalarBarSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation>Formă</translation>
+        <translation type="vanished">Formă</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>Vizibil</translation>
+        <translation type="vanished">Vizibil</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation>Titlu</translation>
+        <translation type="vanished">Titlu</translation>
     </message>
     <message>
         <source>Title :</source>
-        <translation>Titlu :</translation>
+        <translation type="vanished">Titlu :</translation>
     </message>
     <message>
         <source>Font Setting:</source>
-        <translation>Setarea fontului:</translation>
+        <translation type="vanished">Setarea fontului:</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation>Editați | ×...</translation>
+        <translation type="vanished">Editați | ×...</translation>
     </message>
     <message>
         <source>Label Display</source>
-        <translation>Afișare etichetă</translation>
+        <translation type="vanished">Afișare etichetă</translation>
     </message>
     <message>
         <source>Number of labels :</source>
-        <translation>Număr de etichete:</translation>
+        <translation type="vanished">Număr de etichete:</translation>
     </message>
     <message>
         <source>Format:</source>
-        <translation>Format:</translation>
+        <translation type="vanished">Format:</translation>
     </message>
     <message>
         <source>Orientation :</source>
-        <translation>Orientare:</translation>
+        <translation type="vanished">Orientare:</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation>Vertical</translation>
+        <translation type="vanished">Vertical</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation>Orizontală</translation>
+        <translation type="vanished">Orizontală</translation>
     </message>
     <message>
         <source>Size</source>
-        <translation>mărimea</translation>
+        <translation type="vanished">mărimea</translation>
     </message>
     <message>
         <source>Specify Color bar size as rate against window size.</source>
-        <translation>Specificați dimensiunea barei de culoare ca rată față de dimensiunea ferestrei.</translation>
+        <translation type="vanished">Specificați dimensiunea barei de culoare ca rată față de dimensiunea ferestrei.</translation>
     </message>
     <message>
         <source>Width :</source>
-        <translation>Latime:</translation>
+        <translation type="vanished">Latime:</translation>
     </message>
     <message>
         <source>If you specify 1, Color bar width is the same to window width.</source>
-        <translation>Dacă specificați 1, lățimea barei de culoare este aceeași cu lățimea ferestrei.</translation>
+        <translation type="vanished">Dacă specificați 1, lățimea barei de culoare este aceeași cu lățimea ferestrei.</translation>
     </message>
     <message>
         <source>Height :</source>
-        <translation>Înălțime:</translation>
+        <translation type="vanished">Înălțime:</translation>
     </message>
     <message>
         <source>If you specify 1, Color bar height is the same to window height.</source>
-        <translation>Dacă specificați 1, înălțimea barei de culoare este aceeași cu înălțimea ferestrei.</translation>
+        <translation type="vanished">Dacă specificați 1, înălțimea barei de culoare este aceeași cu înălțimea ferestrei.</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>Poziţie</translation>
+        <translation type="vanished">Poziţie</translation>
     </message>
     <message>
         <source>Specify Color bar left bottom position as rate against window size.</source>
-        <translation>Specificați poziția din partea stângă a barei de culoare ca rată față de dimensiunea ferestrei.</translation>
+        <translation type="vanished">Specificați poziția din partea stângă a barei de culoare ca rată față de dimensiunea ferestrei.</translation>
     </message>
     <message>
         <source>X :</source>
-        <translation>X :</translation>
+        <translation type="vanished">X :</translation>
     </message>
     <message>
         <source>If you specify 0, Color bar left edge is located at window left edge.</source>
-        <translation>Dacă specificați 0, marginea stângă a barei de culoare se află la marginea stângă a ferestrei.</translation>
+        <translation type="vanished">Dacă specificați 0, marginea stângă a barei de culoare se află la marginea stângă a ferestrei.</translation>
     </message>
     <message>
         <source>Y :</source>
-        <translation>Y:</translation>
+        <translation type="vanished">Y:</translation>
     </message>
     <message>
         <source>If you specify 0, Color bar bottom is located at window bottom.</source>
-        <translation>Dacă specificați 0, partea de jos a barei de culoare se află în partea de jos a ferestrei.</translation>
+        <translation type="vanished">Dacă specificați 0, partea de jos a barei de culoare se află în partea de jos a ferestrei.</translation>
     </message>
 </context>
 <context>

@@ -40,14 +40,14 @@ Post3dWindowIsosurfaceSettingDialog::~Post3dWindowIsosurfaceSettingDialog()
 
 void Post3dWindowIsosurfaceSettingDialog::setZoneData(PostZoneDataContainer* zoneData)
 {
-	vtkPointData* pd = zoneData->data()->GetPointData();
+	vtkPointData* pd = zoneData->data()->data()->GetPointData();
 
 	m_targets = vtkDataSetAttributesTool::getArrayNamesWithOneComponent(pd);
 	ComboBoxTool::setupItems(m_gridTypeDataItem->gridType()->solutionCaptions(m_targets), ui->physicalValueComboBox);
 
-	vtkStructuredGrid* g = dynamic_cast<vtkStructuredGrid*>(zoneData->data());
+	auto grid = vtkStructuredGrid::SafeDownCast(zoneData->data()->data());
 	int dims[3];
-	g->GetDimensions(dims);
+	grid->GetDimensions(dims);
 	ui->iminSlider->setRange(1, dims[0]);
 	ui->imaxSlider->setRange(1, dims[0]);
 	ui->jminSlider->setRange(1, dims[1]);
@@ -93,10 +93,10 @@ void Post3dWindowIsosurfaceSettingDialog::setEnableCheckBox(bool enable)
 void Post3dWindowIsosurfaceSettingDialog::targetChanged(int index)
 {
 	std::string target = m_targets.at(index);
-	LookupTableContainer* c = m_gridTypeDataItem->nodeLookupTable(target);
+	auto range = m_gridTypeDataItem->nodeValueRange(target);
 
-	ui->minValueEdit->setValue(c->autoMin());
-	ui->maxValueEdit->setValue(c->autoMax());
+	ui->minValueEdit->setValue(range.minValue);
+	ui->maxValueEdit->setValue(range.maxValue);
 }
 
 void Post3dWindowIsosurfaceSettingDialog::accept()

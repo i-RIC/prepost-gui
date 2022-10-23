@@ -55,15 +55,15 @@ void PostCalculatedResultEditDialog::setZoneDataContainer(PostZoneDataContainer*
 	ui->positionComboBox->clear();
 	m_dataTypes.clear();
 
-	if (container->data()->GetPointData()->GetNumberOfArrays() > 0) {
+	if (container->data()->data()->GetPointData()->GetNumberOfArrays() > 0) {
 		ui->positionComboBox->addItem(tr("Grid node"));
 		m_dataTypes.push_back(PostCalculatedResult::GridNode);
 	}
-	if (container->data()->GetCellData()->GetNumberOfArrays() > 0) {
+	if (container->data()->data()->GetCellData()->GetNumberOfArrays() > 0) {
 		ui->positionComboBox->addItem(tr("Grid cell"));
 		m_dataTypes.push_back(PostCalculatedResult::GridCell);
 	}
-	if (container->particleData() && container->particleData()->GetPointData()->GetNumberOfArrays() > 0) {
+	if (container->particleData() && container->particleData()->data()->GetPointData()->GetNumberOfArrays() > 0) {
 		ui->positionComboBox->addItem(tr("Particle"));
 		m_dataTypes.push_back(PostCalculatedResult::Particle);
 	}

@@ -88,36 +88,36 @@ win32 {
 
 # Input
 HEADERS += post3d_global.h \
-           post3dcellrangesettingcontainer.h \
-           post3dfacesettingcontainer.h \
            post3dobjectbrowser.h \
            post3dobjectbrowserview.h \
            post3dsamplingratesettingcontainer.h \
            post3dwindow.h \
            post3dwindowactionmanager.h \
+           post3dwindowcellrangelistsettingeditwidget.h \
+           post3dwindowcellrangesettingcontainer.h \
+           post3dwindowcellrangesettingeditwidget.h \
            post3dwindowdataitem.h \
            post3dwindowdatamodel.h \
+           post3dwindowfacelistsettingeditwidget.h \
+           post3dwindowfacesettingcontainer.h \
+           post3dwindowfacesettingeditwidget.h \
            post3dwindowgraphicsview.h \
            post3dwindowprojectdataitem.h \
            datamodel/post3dwindowcellcontourdataitem.h \
            datamodel/post3dwindowcellcontourgroupdataitem.h \
-           datamodel/post3dwindowcellcontourgroupsettingdialog.h \
            datamodel/post3dwindowcellcontourgrouptopdataitem.h \
-           datamodel/post3dwindowcellrangesettingwidget.h \
+           datamodel/post3dwindowcontourdataitem.h \
            datamodel/post3dwindowcontourgroupdataitem.h \
-           datamodel/post3dwindowcontourgroupsettingdialog.h \
            datamodel/post3dwindowcontourgrouptopdataitem.h \
            datamodel/post3dwindowfacedataitem.h \
            datamodel/post3dwindowfacesettingwidget.h \
            datamodel/post3dwindowgridshapedataitem.h \
            datamodel/post3dwindowgridtypedataitem.h \
            datamodel/post3dwindowisosurfacesettingdialog.h \
-           datamodel/post3dwindownodegrouparrowfacesettingwidget.h \
            datamodel/post3dwindownodescalargroupdataitem.h \
            datamodel/post3dwindownodescalargrouptopdataitem.h \
            datamodel/post3dwindownodevectorarrowdataitem.h \
            datamodel/post3dwindownodevectorarrowgroupdataitem.h \
-           datamodel/post3dwindownodevectorarrowsettingdialog.h \
            datamodel/post3dwindownodevectorarrowtopdataitem.h \
            datamodel/post3dwindownodevectorparticledataitem.h \
            datamodel/post3dwindownodevectorparticlegroupdataitem.h \
@@ -139,56 +139,67 @@ HEADERS += post3d_global.h \
            datamodel/post3dwindowsurfacedataitem.h \
            datamodel/post3dwindowsurfacegroupdataitem.h \
            datamodel/post3dwindowzonedataitem.h \
-           datamodel/private/post3dwindowcellcontourgroupdataitem_setsettingcommand.h \
-           datamodel/private/post3dwindowcellcontourgrouptopdataitem_createcommand.h \
-           datamodel/private/post3dwindowcontourgroupdataitem_setsettingcommand.h \
-           datamodel/private/post3dwindowgridshapedataitem_setsettingcommand.h \
+           datamodel/private/post3dwindowcellcontourgroupdataitem_propertydialog.h \
+           datamodel/private/post3dwindowcellcontourgroupdataitem_setrangescommand.h \
+           datamodel/private/post3dwindowcellcontourgroupdataitem_updateactorsettingscommand.h \
+           datamodel/private/post3dwindowcontourgroupdataitem_propertydialog.h \
+           datamodel/private/post3dwindowcontourgroupdataitem_setfacescommand.h \
+           datamodel/private/post3dwindowcontourgroupdataitem_updateactorsettingscommand.h \
+           datamodel/private/post3dwindowgridshapedataitem_propertydialog.h \
+           datamodel/private/post3dwindowgridshapedataitem_updateactorsettingscommand.h \
            datamodel/private/post3dwindownodescalargroupdataitem_setsettingcommand.h \
-           datamodel/private/post3dwindownodevectorarrowgroupdataitem_setsettingcommand.h \
-           datamodel/private/post3dwindownodevectorarrowtopdataitem_createcommand.h \
+           datamodel/private/post3dwindownodevectorarrowgroupdataitem_propertydialog.h \
+           datamodel/private/post3dwindownodevectorarrowgroupdataitem_setfacesettingscommand.h \
+           datamodel/private/post3dwindownodevectorarrowgroupdataitem_updateactorsettingscommand.h \
            datamodel/private/post3dwindownodevectorparticlegroupstructureddataitem_setsettingcommand.h \
-           datamodel/private/post3dwindowparticlesbasescalargroupdataitem_setsettingcommand.h \
-           datamodel/private/post3dwindowparticlesbasetopdataitem_setsettingcommand.h \
-           datamodel/private/post3dwindowparticlesbasevectorgroupdataitem_setsettingcommand.h
-FORMS += datamodel/post3dwindowcellcontourgroupsettingdialog.ui \
-         datamodel/post3dwindowcellrangesettingwidget.ui \
-         datamodel/post3dwindowcontourgroupsettingdialog.ui \
+           datamodel/private/post3dwindowparticlesbasescalargroupdataitem_propertydialog.h \
+           datamodel/private/post3dwindowparticlesbasescalargroupdataitem_updateactorsettingscommand.h \
+           datamodel/private/post3dwindowparticlesbasevectorgroupdataitem_propertydialog.h \
+           datamodel/private/post3dwindowparticlesbasevectorgroupdataitem_updatesettingcommand.h
+FORMS += post3dwindowcellrangelistsettingeditwidget.ui \
+         post3dwindowcellrangesettingeditwidget.ui \
+         post3dwindowfacelistsettingeditwidget.ui \
+         post3dwindowfacesettingeditwidget.ui \
          datamodel/post3dwindowfacesettingwidget.ui \
          datamodel/post3dwindowisosurfacesettingdialog.ui \
-         datamodel/post3dwindownodegrouparrowfacesettingwidget.ui \
-         datamodel/post3dwindownodevectorarrowsettingdialog.ui \
          datamodel/post3dwindowparticlestructuredsettingdialog.ui \
-         datamodel/post3dwindowstreamlinestructuredsettingdialog.ui
-SOURCES += post3dcellrangesettingcontainer.cpp \
-           post3dfacesettingcontainer.cpp \
-           post3dobjectbrowser.cpp \
+         datamodel/post3dwindowstreamlinestructuredsettingdialog.ui \
+         datamodel/private/post3dwindowcellcontourgroupdataitem_propertydialog.ui \
+         datamodel/private/post3dwindowcontourgroupdataitem_propertydialog.ui \
+         datamodel/private/post3dwindowgridshapedataitem_propertydialog.ui \
+         datamodel/private/post3dwindownodevectorarrowgroupdataitem_propertydialog.ui \
+         datamodel/private/post3dwindowparticlesbasescalargroupdataitem_propertydialog.ui \
+         datamodel/private/post3dwindowparticlesbasevectorgroupdataitem_propertydialog.ui
+SOURCES += post3dobjectbrowser.cpp \
            post3dobjectbrowserview.cpp \
            post3dsamplingratesettingcontainer.cpp \
            post3dwindow.cpp \
            post3dwindowactionmanager.cpp \
+           post3dwindowcellrangelistsettingeditwidget.cpp \
+           post3dwindowcellrangesettingcontainer.cpp \
+           post3dwindowcellrangesettingeditwidget.cpp \
            post3dwindowdataitem.cpp \
            post3dwindowdatamodel.cpp \
+           post3dwindowfacelistsettingeditwidget.cpp \
+           post3dwindowfacesettingcontainer.cpp \
+           post3dwindowfacesettingeditwidget.cpp \
            post3dwindowgraphicsview.cpp \
            post3dwindowprojectdataitem.cpp \
            datamodel/post3dwindowcellcontourdataitem.cpp \
            datamodel/post3dwindowcellcontourgroupdataitem.cpp \
-           datamodel/post3dwindowcellcontourgroupsettingdialog.cpp \
            datamodel/post3dwindowcellcontourgrouptopdataitem.cpp \
-           datamodel/post3dwindowcellrangesettingwidget.cpp \
+           datamodel/post3dwindowcontourdataitem.cpp \
            datamodel/post3dwindowcontourgroupdataitem.cpp \
-           datamodel/post3dwindowcontourgroupsettingdialog.cpp \
            datamodel/post3dwindowcontourgrouptopdataitem.cpp \
            datamodel/post3dwindowfacedataitem.cpp \
            datamodel/post3dwindowfacesettingwidget.cpp \
            datamodel/post3dwindowgridshapedataitem.cpp \
            datamodel/post3dwindowgridtypedataitem.cpp \
            datamodel/post3dwindowisosurfacesettingdialog.cpp \
-           datamodel/post3dwindownodegrouparrowfacesettingwidget.cpp \
            datamodel/post3dwindownodescalargroupdataitem.cpp \
            datamodel/post3dwindownodescalargrouptopdataitem.cpp \
            datamodel/post3dwindownodevectorarrowdataitem.cpp \
            datamodel/post3dwindownodevectorarrowgroupdataitem.cpp \
-           datamodel/post3dwindownodevectorarrowsettingdialog.cpp \
            datamodel/post3dwindownodevectorarrowtopdataitem.cpp \
            datamodel/post3dwindownodevectorparticledataitem.cpp \
            datamodel/post3dwindownodevectorparticlegroupdataitem.cpp \
@@ -210,17 +221,23 @@ SOURCES += post3dcellrangesettingcontainer.cpp \
            datamodel/post3dwindowsurfacedataitem.cpp \
            datamodel/post3dwindowsurfacegroupdataitem.cpp \
            datamodel/post3dwindowzonedataitem.cpp \
-           datamodel/private/post3dwindowcellcontourgroupdataitem_setsettingcommand.cpp \
-           datamodel/private/post3dwindowcellcontourgrouptopdataitem_createcommand.cpp \
-           datamodel/private/post3dwindowcontourgroupdataitem_setsettingcommand.cpp \
-           datamodel/private/post3dwindowgridshapedataitem_setsettingcommand.cpp \
+           datamodel/private/post3dwindowcellcontourgroupdataitem_propertydialog.cpp \
+           datamodel/private/post3dwindowcellcontourgroupdataitem_setrangescommand.cpp \
+           datamodel/private/post3dwindowcellcontourgroupdataitem_updateactorsettingscommand.cpp \
+           datamodel/private/post3dwindowcontourgroupdataitem_propertydialog.cpp \
+           datamodel/private/post3dwindowcontourgroupdataitem_setfacescommand.cpp \
+           datamodel/private/post3dwindowcontourgroupdataitem_updateactorsettingscommand.cpp \
+           datamodel/private/post3dwindowgridshapedataitem_propertydialog.cpp \
+           datamodel/private/post3dwindowgridshapedataitem_updateactorsettingscommand.cpp \
            datamodel/private/post3dwindownodescalargroupdataitem_setsettingcommand.cpp \
-           datamodel/private/post3dwindownodevectorarrowgroupdataitem_setsettingcommand.cpp \
-           datamodel/private/post3dwindownodevectorarrowtopdataitem_createcommand.cpp \
+           datamodel/private/post3dwindownodevectorarrowgroupdataitem_propertydialog.cpp \
+           datamodel/private/post3dwindownodevectorarrowgroupdataitem_setfacesettingscommand.cpp \
+           datamodel/private/post3dwindownodevectorarrowgroupdataitem_updateactorsettingscommand.cpp \
            datamodel/private/post3dwindownodevectorparticlegroupstructureddataitem_setsettingcommand.cpp \
-           datamodel/private/post3dwindowparticlesbasescalargroupdataitem_setsettingcommand.cpp \
-           datamodel/private/post3dwindowparticlesbasetopdataitem_setsettingcommand.cpp \
-           datamodel/private/post3dwindowparticlesbasevectorgroupdataitem_setsettingcommand.cpp
+           datamodel/private/post3dwindowparticlesbasescalargroupdataitem_propertydialog.cpp \
+           datamodel/private/post3dwindowparticlesbasescalargroupdataitem_updateactorsettingscommand.cpp \
+           datamodel/private/post3dwindowparticlesbasevectorgroupdataitem_propertydialog.cpp \
+           datamodel/private/post3dwindowparticlesbasevectorgroupdataitem_updatesettingcommand.cpp
 RESOURCES += post3d.qrc
 TRANSLATIONS += languages/iricPost3d_ar_EG.ts \
                 languages/iricPost3d_bg_BG.ts \

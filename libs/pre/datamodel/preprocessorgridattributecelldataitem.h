@@ -5,6 +5,7 @@
 #include <misc/boolcontainer.h>
 #include <guicore/pre/gridcond/base/gridattributevariationeditwidget.h>
 
+class ColorMapSettingContainerI;
 class PreProcessorGeoDataGroupDataItemInterface;
 class SolverDefinitionGridAttribute;
 
@@ -34,6 +35,7 @@ public:
 	SolverDefinitionGridAttribute* condition() {return m_condition;}
 	void informDataChange();
 	bool addToolBarButtons(QToolBar* toolbar) override;
+	ColorMapSettingContainerI* colorMapSettingContainer() const;
 
 private slots:
 	void editValue();
@@ -61,6 +63,8 @@ private:
 	QAction* m_generatePointMapAction;
 	QAction* m_editDifferenceAction;
 	QAction* m_editRatioAction;
+
+	class PropertyDialog;
 };
 
 #endif // PREPROCESSORGRIDATTRIBUTECELLDATAITEM_H

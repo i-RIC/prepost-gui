@@ -79,6 +79,7 @@ void Post2dWindowProjectDataItem::doLoadFromProjectMainFile(const QDomNode& node
 		ProjectDataItem::loadCamera(camera, cameraNode);
 	}
 	w->m_dataModel->graphicsView()->ResetCameraClippingRange();
+	w->m_dataModel->graphicsView()->render();
 }
 
 void Post2dWindowProjectDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)

@@ -2,16 +2,9 @@
 #define POST2DWINDOWNODEVECTORARROWGROUPSTRUCTUREDDATAITEM_H
 
 #include "post2dwindownodevectorarrowgroupdataitem.h"
-#include "post2dwindownodevectorarrowstructuredsetting.h"
 
-#include <guibase/structuredgridregion.h>
-#include <misc/compositecontainer.h>
-#include <misc/intcontainer.h>
-
-#include <vtkSmartPointer.h>
-#include <vtkExtractGrid.h>
-#include <vtkMaskPoints.h>
-#include <vtkUnstructuredGrid.h>
+#include <guicore/filter/structured2dfilteringsettingcontainer.h>
+#include <guicore/region/region2dsettingcontainer.h>
 
 class Post2dWindowNodeVectorArrowGroupStructuredDataItem : public Post2dWindowNodeVectorArrowGroupDataItem
 {
@@ -19,24 +12,20 @@ class Post2dWindowNodeVectorArrowGroupStructuredDataItem : public Post2dWindowNo
 
 public:
 	Post2dWindowNodeVectorArrowGroupStructuredDataItem(Post2dWindowDataItem* parent);
-	virtual ~Post2dWindowNodeVectorArrowGroupStructuredDataItem();
 
 private:
+	void showPropertyDialog();
 	QDialog* propertyDialog(QWidget* p) override;
-	void handlePropertyDialogAccepted(QDialog* propDialog) override;
 
-	virtual void updateActivePoints() override;
-	Post2dWindowNodeVectorArrowSetting& setting() override;
+	vtkPointSet* buildFilteredData() override;
 
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
-	vtkSmartPointer<vtkMaskPoints> m_arrowMask;
-	vtkSmartPointer<vtkExtractGrid> m_arrowExtract;
+	Region2dSettingContainer m_regionSetting;
+	Structured2dFilteringSettingContainer m_filteringSetting;
 
-	Post2dWindowNodeVectorArrowStructuredSetting m_setting;
-
-	class SetSettingCommand;
+	class PropertyDialog;
 };
 
 #endif // POST2DWINDOWNODEVECTORARROWGROUPSTRUCTUREDDATAITEM_H

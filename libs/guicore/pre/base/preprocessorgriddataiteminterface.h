@@ -27,6 +27,7 @@ public:
 	virtual void unsetBCGroupDataItem() = 0;
 	virtual bool gridIsDeleted() const = 0;
 	virtual void updateActionStatus() = 0;
+	virtual void applyColorMapSetting(const std::string& name) = 0;
 
 	friend class Grid;
 	friend class GridAttributeContainer;

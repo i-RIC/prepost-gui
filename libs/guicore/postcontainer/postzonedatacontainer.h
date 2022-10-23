@@ -3,8 +3,10 @@
 
 #include "../guicore_global.h"
 #include "postdatacontainer.h"
+#include "../misc/vtkpointsetandvaluerangesett.h"
 
 #include <QString>
+
 #include <vtkPointSet.h>
 #include <vtkPolyData.h>
 #include <vtkSmartPointer.h>
@@ -18,6 +20,8 @@ class RectRegion;
 class SolverDefinitionGridType;
 class PostCalculatedResult;
 class PostExportSetting;
+
+class vtkStructuredGrid;
 
 namespace iRICLib {
 	class H5CgnsFlowSolution;
@@ -36,18 +40,18 @@ public:
 
 	const std::string& zoneName() const;
 	SolverDefinitionGridType* gridType() const;
-	vtkPointSet* data() const;
-	vtkPointSet* edgeidata() const;
-	vtkPointSet* edgejdata() const;
-	vtkPointSet* data(iRICLib::H5CgnsZone::SolutionPosition position) const;
-	vtkPointSet* ifacedata() const;
-	vtkPointSet* jfacedata() const;
+	vtkPointSetAndValueRangeSet* data() const;
+	vtkPointSetAndValueRangeSet* data(iRICLib::H5CgnsZone::SolutionPosition position) const;
+	vtkPointSetAndValueRangeSetT<vtkStructuredGrid>* edgeIData() const;
+	vtkPointSetAndValueRangeSetT<vtkStructuredGrid>* edgeJData() const;
+	vtkPointSetAndValueRangeSetT<vtkStructuredGrid>* iFaceData() const;
+	vtkPointSetAndValueRangeSetT<vtkStructuredGrid>* jFaceData() const;
 	vtkPointSet* labelData() const;
-	vtkPolyData* particleData() const;
-	const std::map<std::string, vtkSmartPointer<vtkPolyData> >& particleGroupMap() const;
-	const std::map<std::string, vtkSmartPointer<vtkPolyData> >& polyDataMap() const;
-	vtkPolyData* particleGroup(const std::string& name) const;
-	vtkPolyData* polyData(const std::string& name) const;
+	vtkPointSetAndValueRangeSetT<vtkPolyData>* particleData() const;
+	const std::map<std::string, vtkPointSetAndValueRangeSetT<vtkPolyData>*>& particleGroupMap() const;
+	const std::map<std::string, vtkPointSetAndValueRangeSetT<vtkPolyData>*>& polyDataMap() const;
+	vtkPointSetAndValueRangeSetT<vtkPolyData>* particleGroup(const std::string& name) const;
+	vtkPointSetAndValueRangeSetT<vtkPolyData>* polyData(const std::string& name) const;
 	const std::vector<int>& polyDataCellIds(const std::string& name) const;
 
 	vtkPolyData* filteredData(double xmin, double xmax, double ymin, double ymax, bool& masked) const;
@@ -118,7 +122,7 @@ private:
 	void doApplyOffset(double x_diff, double y_diff) override;
 	void doApplyOffset(vtkPointSet* ps, double x_diff, double y_diff);
 
-	vtkPolyData* filteredDataStructured(vtkSmartPointer<vtkPointSet> data, double xmin, double xmax, double ymin, double ymax, bool& masked) const;
+	vtkPolyData* filteredDataStructured(vtkStructuredGrid* data, double xmin, double xmax, double ymin, double ymax, bool& masked) const;
 	vtkPolyData* filteredDataUnstructured(double xmin, double xmax, double ymin, double ymax, bool& masked) const;
 	int lineLimitI(int j, int iIn, int iOut, const RectRegion& region) const;
 	int lineLimitJ(int i, int jIn, int jOut, const RectRegion& region) const;
@@ -129,17 +133,18 @@ private:
 
 private:
 	SolverDefinitionGridType* m_gridType;
-	vtkSmartPointer<vtkPointSet> m_data;
-	vtkSmartPointer<vtkPointSet> m_edgeidata;		// IFaceCenter grid [Ni,Nj-1] interpolated to Vertex grid [Ni,Nj] valid for structured grids with CellDim >= 2
-	vtkSmartPointer<vtkPointSet> m_edgejdata;		// IFaceCenter grid [Ni,Nj-1] interpolated to Vertex grid [Ni,Nj] valid for structured grids with CellDim >= 2
-	vtkSmartPointer<vtkPointSet> m_ifacedata;		// IFaceCenter grid [Ni,Nj-1] valid for structured grids with CellDim >= 2
-	vtkSmartPointer<vtkPointSet> m_jfacedata;		// JFaceCenter grid [Ni-1,Nj] valid for structured grids with CellDim >= 2
+	vtkPointSetAndValueRangeSet* m_data;
+	vtkSmartPointer<vtkPointSet> m_origData;
+	vtkPointSetAndValueRangeSetT<vtkStructuredGrid>* m_edgeIData;		// IFaceCenter grid [Ni,Nj-1] interpolated to Vertex grid [Ni,Nj] valid for structured grids with CellDim >= 2
+	vtkPointSetAndValueRangeSetT<vtkStructuredGrid>* m_edgeJData;		// IFaceCenter grid [Ni,Nj-1] interpolated to Vertex grid [Ni,Nj] valid for structured grids with CellDim >= 2
+	vtkPointSetAndValueRangeSetT<vtkStructuredGrid>* m_iFaceData;		// IFaceCenter grid [Ni,Nj-1] valid for structured grids with CellDim >= 2
+	vtkPointSetAndValueRangeSetT<vtkStructuredGrid>* m_jFaceData;		// JFaceCenter grid [Ni-1,Nj] valid for structured grids with CellDim >= 2
 	vtkSmartPointer<vtkPointSet> m_labelData;
-	vtkSmartPointer<vtkPolyData> m_particleData;
-	std::vector<PostCalculatedResult*> m_calculatedResults;
-	std::map<std::string, vtkSmartPointer<vtkPolyData> > m_particleGroupMap;
-	std::map<std::string, vtkSmartPointer<vtkPolyData> > m_polyDataMap;
+	vtkPointSetAndValueRangeSetT<vtkPolyData>* m_particleData;
+	std::map<std::string, vtkPointSetAndValueRangeSetT<vtkPolyData>*> m_particleGroupMap;
+	std::map<std::string, vtkPointSetAndValueRangeSetT<vtkPolyData>*> m_polyDataMap;
 	std::map<std::string, std::vector<int> > m_polyDataCellIdsMap;
+	std::vector<PostCalculatedResult*> m_calculatedResults;
 
 	std::string m_zoneName;
 	std::vector<int> m_size;

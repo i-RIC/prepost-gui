@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="et_EE">
 <context>
     <name>MeasuredDataFileDataItem</name>
@@ -38,34 +40,81 @@
     </message>
 </context>
 <context>
-    <name>MeasuredDataPointSettingDialog</name>
+    <name>MeasuredDataPointGroupDataItem_PropertyDialog</name>
     <message>
-        <source>Scalar Setting</source>
-        <translation>Skalaari seadistus</translation>
-    </message>
-    <message>
-        <source>Measured Value:</source>
-        <translation>Mõõdetud väärtus:</translation>
+        <source>Points Display Setting Dialog</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>Ekraani seadistus</translation>
+        <translation type="unfinished">Ekraani seadistus</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Värv</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="unfinished">Eksport (&amp;E)...</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation>Punkti suurus:</translation>
+        <translation type="unfinished">Punkti suurus:</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataPointSettingDialog</name>
+    <message>
+        <source>Scalar Setting</source>
+        <translation type="vanished">Skalaari seadistus</translation>
+    </message>
+    <message>
+        <source>Measured Value:</source>
+        <translation type="vanished">Mõõdetud väärtus:</translation>
+    </message>
+    <message>
+        <source>Display Setting</source>
+        <translation type="vanished">Ekraani seadistus</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="vanished">Punkti suurus:</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Värviriba seadistus (&amp;C)</translation>
+        <translation type="vanished">Värviriba seadistus (&amp;C)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Viga</translation>
+        <translation type="vanished">Viga</translation>
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
-        <translation>Väärtusvahemiku puhul on maksimumväärtus väiksem kui minimaalne väärtus.</translation>
+        <translation type="vanished">Väärtusvahemiku puhul on maksimumväärtus väiksem kui minimaalne väärtus.</translation>
     </message>
 </context>
 <context>
@@ -80,62 +129,69 @@
     </message>
     <message>
         <source>Update Arrow Setting</source>
-        <translation>Värskenda noole seadistust</translation>
+        <translation type="vanished">Värskenda noole seadistust</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataVectorGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Measured Data Arrow Setting</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>MeasuredDataVectorSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Noole seadistus</translation>
+        <translation type="vanished">Noole seadistus</translation>
     </message>
     <message>
         <source>Physical value:</source>
-        <translation>Füüsiline väärtus:</translation>
+        <translation type="vanished">Füüsiline väärtus:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Pikkus</translation>
+        <translation type="vanished">Pikkus</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Automaatne</translation>
+        <translation type="vanished">Automaatne</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Standardväärtus:</translation>
+        <translation type="vanished">Standardväärtus:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[Prl]</translation>
+        <translation type="vanished">[Prl]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Pikkus ekraanil:</translation>
+        <translation type="vanished">Pikkus ekraanil:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[piksel]</translation>
+        <translation type="vanished">[piksel]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Minimaalne joonistatav väärtus:</translation>
+        <translation type="vanished">Minimaalne joonistatav väärtus:</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Värv</translation>
+        <translation type="vanished">Värv</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Kohandatud värv</translation>
+        <translation type="vanished">Kohandatud värv</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Skalaarse väärtuse järgi</translation>
+        <translation type="vanished">Skalaarse väärtuse järgi</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Värviriba seadistus (&amp;C)</translation>
+        <translation type="vanished">Värviriba seadistus (&amp;C)</translation>
     </message>
 </context>
 </TS>

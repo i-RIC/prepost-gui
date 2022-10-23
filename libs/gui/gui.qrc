@@ -1,7 +1,6 @@
 <RCC>
     <qresource prefix="/">
         <file>images/iconiRIC.png</file>
-        <file>images/iconNew.svg</file>
         <file>images/iconOpen.svg</file>
         <file>images/iconSave.svg</file>
         <file>images/iconCopySnapshot.svg</file>

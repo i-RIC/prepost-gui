@@ -64,6 +64,7 @@ void Post3dWindowProjectDataItem::doLoadFromProjectMainFile(const QDomNode& node
 		w->m_dataModel->loadFromProjectMainFile(modelNode);
 		w->m_dataModel->reflectExpandState(w->m_objectBrowser->view());
 	}
+	w->m_dataModel->graphicsView()->render();
 }
 
 void Post3dWindowProjectDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)

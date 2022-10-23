@@ -9,7 +9,6 @@
 #include <guicore/named/namedgraphicswindowdataitemtool.h>
 #include <guicore/postcontainer/postsolutioninfo.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
-#include <guicore/scalarstocolors/scalarstocolorscontainer.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/iricundostack.h>
 #include <misc/stringtool.h>
@@ -38,7 +37,7 @@ Post3dWindowNodeVectorStreamlineGroupDataItem::Post3dWindowNodeVectorStreamlineG
 
 	PostZoneDataContainer* cont = dynamic_cast<Post3dWindowZoneDataItem*>(parent())->dataContainer();
 	SolverDefinitionGridType* gt = cont->gridType();
-	for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithMultipleComponents(cont->data()->GetPointData())) {
+	for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithMultipleComponents(cont->data()->data()->GetPointData())) {
 		auto item = new Post3dWindowNodeVectorStreamlineDataItem(name, gt->solutionCaption(name), this);
 		m_childItems.push_back(item);
 	}
@@ -86,7 +85,7 @@ void Post3dWindowNodeVectorStreamlineGroupDataItem::updateActorSettings()
 
 	PostZoneDataContainer* cont = dynamic_cast<Post3dWindowZoneDataItem*>(parent())->dataContainer();
 	if (cont == nullptr) {return;}
-	vtkPointSet* ps = cont->data();
+	vtkPointSet* ps = cont->data()->data();
 	if (ps == nullptr) {return;}
 	if (m_target == "") {return;}
 	vtkPointData* pd = ps->GetPointData();
@@ -154,7 +153,7 @@ void Post3dWindowNodeVectorStreamlineGroupDataItem::applyZScale()
 
 vtkPointSet* Post3dWindowNodeVectorStreamlineGroupDataItem::getRegion()
 {
-	vtkPointSet* ps = dynamic_cast<Post3dWindowZoneDataItem*>(parent())->dataContainer()->data();
+	vtkPointSet* ps = dynamic_cast<Post3dWindowZoneDataItem*>(parent())->dataContainer()->data()->data();
 	if (m_regionMode == StructuredGridRegion::rmFull) {
 		return ps;
 	} else if (m_regionMode == StructuredGridRegion::rmActive) {

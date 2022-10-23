@@ -4,6 +4,8 @@
 #include <guicore/pre/base/preprocessorgeodatadataiteminterface.h>
 #include <QSignalMapper>
 
+class ColorMapSettingContainerI;
+
 class QMenu;
 class GeoData;
 class QSignalMapper;
@@ -40,6 +42,7 @@ public:
 	void informValueRangeChange() override;
 	void informDataChange() override;
 	bool getValueRange(double* min, double* max);
+	void applyColorMapSetting();
 	QDialog* propertyDialog(QWidget* parent) override;
 	void handlePropertyDialogAccepted(QDialog* propDialog) override;
 	void moveUp() override;
@@ -48,6 +51,8 @@ public:
 	bool isExportAvailable();
 	void setDeleteSilently(bool silent) override;
 	void removeFile();
+
+	ColorMapSettingContainerI* colorMapSettingContainer() const override;
 
 signals:
 	void captionChanged(const QString& newcaption);

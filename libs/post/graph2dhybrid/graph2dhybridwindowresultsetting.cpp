@@ -294,22 +294,22 @@ bool Graph2dHybridWindowResultSetting::init(PostSolutionInfo* sol)
 			ti.zoneName = cont->zoneName();
 			if (cont->data() == nullptr) {return false;}
 
-			for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(cont->data()->GetPointData())) {
+			for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(cont->data()->data()->GetPointData())) {
 				ti.dataNamesMap[iRICLib::H5CgnsZone::SolutionPosition::Node].append(name.c_str());
 			}
-			for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(cont->data()->GetCellData())) {
+			for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(cont->data()->data()->GetCellData())) {
 				if (PostZoneDataContainer::hasInputDataPrefix(name)) {continue;}
 				ti.dataNamesMap[iRICLib::H5CgnsZone::SolutionPosition::Cell].append(name.c_str());
 			}
-			auto edgeIData = cont->edgeidata();
+			auto edgeIData = cont->edgeIData();
 			if (edgeIData != nullptr) {
-				for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(edgeIData->GetPointData())) {
+				for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(edgeIData->data()->GetPointData())) {
 					ti.dataNamesMap[iRICLib::H5CgnsZone::SolutionPosition::IFace].append(name.c_str());
 				}
 			}
-			auto edgeJData = cont->edgejdata();
+			auto edgeJData = cont->edgeJData();
 			if (edgeJData != nullptr) {
-				for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(cont->edgejdata()->GetPointData())) {
+				for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(edgeJData->data()->GetPointData())) {
 					ti.dataNamesMap[iRICLib::H5CgnsZone::SolutionPosition::JFace].append(name.c_str());
 				}
 			}

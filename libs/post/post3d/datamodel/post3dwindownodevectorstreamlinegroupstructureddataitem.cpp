@@ -1,3 +1,4 @@
+#include "../post3dwindowgraphicsview.h"
 #include "post3dwindownodevectorstreamlinegroupstructureddataitem.h"
 #include "post3dwindowstreamlinestructuredsettingdialog.h"
 #include "post3dwindowzonedataitem.h"
@@ -32,7 +33,7 @@ void Post3dWindowNodeVectorStreamlineGroupStructuredDataItem::setupDefaultValues
 	m_settings.clear();
 
 	PostZoneDataContainer* cont = dynamic_cast<Post3dWindowZoneDataItem*>(parent())->dataContainer();
-	vtkStructuredGrid* grid = dynamic_cast<vtkStructuredGrid*>(cont->data());
+	auto grid = vtkStructuredGrid::SafeDownCast(cont->data()->data());
 	int dim[3];
 	grid->GetDimensions(dim);
 
@@ -70,9 +71,9 @@ void Post3dWindowNodeVectorStreamlineGroupStructuredDataItem::setupActors()
 		Post3dWindowStructuredStreamlineSetSetting& setting = m_settings[i];
 
 		vtkExtractGrid* ext = vtkExtractGrid::New();
-		ext->SetInputData(zoneContainer->data());
+		ext->SetInputData(zoneContainer->data()->data());
 		vtkSubdivideGrid* div = vtkSubdivideGrid::New();
-		div->SetInputData(zoneContainer->data());
+		div->SetInputData(zoneContainer->data()->data());
 
 		ext->SetVOI(setting.range.iMin, setting.range.iMax, setting.range.jMin, setting.range.jMax, setting.range.kMin, setting.range.kMax);
 		div->SetVOI(setting.range.iMin, setting.range.iMax, setting.range.jMin, setting.range.jMax, setting.range.kMin, setting.range.kMax);
@@ -91,7 +92,8 @@ void Post3dWindowNodeVectorStreamlineGroupStructuredDataItem::setupActors()
 		vtkProperty* prop = actor->GetProperty();
 		prop->SetLighting(false);
 		prop->SetColor(setting.color.redF(), setting.color.greenF(), setting.color.blueF());
-		prop->SetLineWidth(setting.width);
+		auto v = dataModel()->graphicsView();
+		prop->SetLineWidth(setting.width * v->devicePixelRatioF());
 
 		renderer()->AddActor(actor);
 		actorCollection()->AddItem(actor);

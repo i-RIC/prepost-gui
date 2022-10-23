@@ -96,8 +96,8 @@ bool PostZoneDataTpoExporter::exportToFile(PostZoneDataContainer* c, const QStri
 	vtkSmartPointer<vtkUnstructuredGrid> target_ugrid;
 	vtkPointSet* ps = nullptr;
 
-	vtkStructuredGrid* source_sgrid = vtkStructuredGrid::SafeDownCast(c->data());
-	vtkUnstructuredGrid* source_ugrid = vtkUnstructuredGrid::SafeDownCast(c->data());
+	auto source_sgrid = vtkStructuredGrid::SafeDownCast(c->data()->data());
+	auto source_ugrid = vtkUnstructuredGrid::SafeDownCast(c->data()->data());
 
 	if (source_sgrid != nullptr) {
 		ps = applyOffset<vtkStructuredGrid>(source_sgrid, target_sgrid, offset);

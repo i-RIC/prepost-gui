@@ -1,3 +1,4 @@
+#include "../post3dwindowgraphicsview.h"
 #include "post3dwindownodevectorparticlegroupstructureddataitem.h"
 #include "post3dwindowparticlestructuredsettingdialog.h"
 #include "post3dwindowzonedataitem.h"
@@ -50,8 +51,8 @@ void Post3dWindowNodeVectorParticleGroupStructuredDataItem::setDefaultValues()
 {
 	m_settings.clear();
 
-	PostZoneDataContainer* cont = dynamic_cast<Post3dWindowZoneDataItem*>(parent())->dataContainer();
-	vtkStructuredGrid* grid = dynamic_cast<vtkStructuredGrid*>(cont->data());
+	auto cont = dynamic_cast<Post3dWindowZoneDataItem*>(parent())->dataContainer();
+	auto grid = vtkStructuredGrid::SafeDownCast(cont->data()->data());
 	int dim[3];
 	grid->GetDimensions(dim);
 
@@ -75,7 +76,7 @@ void Post3dWindowNodeVectorParticleGroupStructuredDataItem::setDefaultValues()
 
 void Post3dWindowNodeVectorParticleGroupStructuredDataItem::setupParticleSources()
 {
-	PostZoneDataContainer* zoneContainer = dynamic_cast<Post3dWindowZoneDataItem*>(parent())->dataContainer();
+	auto zoneContainer = dynamic_cast<Post3dWindowZoneDataItem*>(parent())->dataContainer();
 	for (int i = 0; i < m_extractGrids.count(); ++i) {
 		m_extractGrids[i]->Delete();
 	}
@@ -86,10 +87,10 @@ void Post3dWindowNodeVectorParticleGroupStructuredDataItem::setupParticleSources
 	m_subdivideGrids.clear();
 	for (int i = 0; i < m_settings.count(); ++i) {
 		Post3dWindowStructuredParticleSetSetting& setting = m_settings[i];
-		vtkExtractGrid* ext = vtkExtractGrid::New();
-		ext->SetInputData(zoneContainer->data());
-		vtkSubdivideGrid* div = vtkSubdivideGrid::New();
-		div->SetInputData(zoneContainer->data());
+		auto ext = vtkExtractGrid::New();
+		ext->SetInputData(zoneContainer->data()->data());
+		auto div = vtkSubdivideGrid::New();
+		div->SetInputData(zoneContainer->data()->data());
 
 		ext->SetVOI(setting.range.iMin, setting.range.iMax, setting.range.jMin, setting.range.jMax, setting.range.kMin, setting.range.kMax);
 		div->SetVOI(setting.range.iMin, setting.range.iMax, setting.range.jMin, setting.range.jMax, setting.range.kMin, setting.range.kMax);
@@ -108,18 +109,19 @@ void Post3dWindowNodeVectorParticleGroupStructuredDataItem::setupParticleSources
 
 void Post3dWindowNodeVectorParticleGroupStructuredDataItem::setupActors()
 {
+	auto v = dataModel()->graphicsView();
 	for (int i = 0; i < m_settings.count(); ++i) {
 		Post3dWindowStructuredParticleSetSetting& setting = m_settings[i];
 		vtkActor* actor = vtkActor::New();
 		vtkProperty* prop = actor->GetProperty();
 		prop->SetLighting(false);
 		prop->SetColor(setting.color.redF(), setting.color.greenF(), setting.color.blueF());
-		prop->SetPointSize(setting.size);
+		prop->SetPointSize(setting.size * v->devicePixelRatioF());
 
 		renderer()->AddActor(actor);
 		actorCollection()->AddItem(actor);
 
-		vtkSmartPointer<vtkDataSetMapper> mapper = vtkSmartPointer<vtkDataSetMapper>::New();
+		auto mapper = vtkSmartPointer<vtkDataSetMapper>::New();
 		actor->SetMapper(mapper);
 
 		m_particleActors.push_back(actor);

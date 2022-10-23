@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="it_IT">
 <context>
     <name>Post2dBirdEyeObjectBrowser</name>
@@ -9,8 +11,8 @@
 <context>
     <name>Post2dBirdEyeWindow</name>
     <message>
-        <source>Bird's-Eye Post-processing (2D): %1</source>
-        <translation>Post-elaborazione a volo d'uccello (2D): %1</translation>
+        <source>Bird&apos;s-Eye Post-processing (2D): %1</source>
+        <translation>Post-elaborazione a volo d&apos;uccello (2D): %1</translation>
     </message>
     <message>
         <source>Background Color</source>
@@ -56,80 +58,80 @@
     <name>Post2dBirdEyeWindowAxesDataItem</name>
     <message>
         <source>Axes</source>
-        <translation>Assi</translation>
+        <translation type="vanished">Assi</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
-        <translation>Scalare</translation>
+        <translation type="vanished">Scalare</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
-        <translation>Aggiorna impostazione contorno</translation>
+        <translation type="vanished">Aggiorna impostazione contorno</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowCellScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (cell center)</source>
-        <translation>Scalare (centro della cella)</translation>
+        <translation type="vanished">Scalare (centro della cella)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Avvertimento</translation>
+        <translation type="vanished">Avvertimento</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>È possibile definire un massimo di quattro contorni.</translation>
+        <translation type="vanished">È possibile definire un massimo di quattro contorni.</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowContourSettingDialog</name>
     <message>
         <source>Scalar Setting</source>
-        <translation>Impostazione scalare</translation>
+        <translation type="vanished">Impostazione scalare</translation>
     </message>
     <message>
         <source>Scalar value for elevation</source>
-        <translation>Valore scalare per l'elevazione</translation>
+        <translation type="vanished">Valore scalare per l&apos;elevazione</translation>
     </message>
     <message>
         <source>Color Setting</source>
-        <translation>Impostazione colore</translation>
+        <translation type="vanished">Impostazione colore</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Colore personalizzato</translation>
+        <translation type="vanished">Colore personalizzato</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Per valore scalare</translation>
+        <translation type="vanished">Per valore scalare</translation>
     </message>
     <message>
         <source>Scalar Value:</source>
-        <translation>Valore scalare:</translation>
+        <translation type="vanished">Valore scalare:</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>Impostazione del display</translation>
+        <translation type="vanished">Impostazione del display</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>Impostazione della regione (&amp;R)</translation>
+        <translation type="vanished">Impostazione della regione (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Impostazione della barra dei colori (&amp;C)</translation>
+        <translation type="vanished">Impostazione della barra dei colori (&amp;C)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Errore</translation>
+        <translation type="vanished">Errore</translation>
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
-        <translation>Per l'intervallo di valori, il valore massimo è inferiore al valore minimo.</translation>
+        <translation type="vanished">Per l&apos;intervallo di valori, il valore massimo è inferiore al valore minimo.</translation>
     </message>
 </context>
 <context>
@@ -140,11 +142,11 @@
     </message>
     <message>
         <source>Contour setting is not available, because this result does not contain scalar values.</source>
-        <translation>L'impostazione del contorno non è disponibile perché questo risultato non contiene valori scalari.</translation>
+        <translation>L&apos;impostazione del contorno non è disponibile perché questo risultato non contiene valori scalari.</translation>
     </message>
     <message>
         <source>Contour setting is not available, because this result does not contain cell scalar values.</source>
-        <translation>L'impostazione del contorno non è disponibile perché questo risultato non contiene valori scalari di cella.</translation>
+        <translation type="vanished">L&apos;impostazione del contorno non è disponibile perché questo risultato non contiene valori scalari di cella.</translation>
     </message>
     <message>
         <source>Z-direction Scale</source>
@@ -163,6 +165,17 @@
     </message>
 </context>
 <context>
+    <name>Post2dBirdEyeWindowGridShapeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Shape Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scalar value for Elevation</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>Post2dBirdEyeWindowNodeScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
@@ -170,7 +183,42 @@
     </message>
     <message>
         <source>Update Contour Setting</source>
-        <translation>Aggiorna impostazione contorno</translation>
+        <translation type="vanished">Aggiorna impostazione contorno</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation type="unfinished">Colore personalizzato</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation type="unfinished">Per valore scalare</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -181,22 +229,22 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Avvertimento</translation>
+        <translation type="vanished">Avvertimento</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>È possibile definire un massimo di quattro contorni.</translation>
+        <translation type="vanished">È possibile definire un massimo di quattro contorni.</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
         <source>Create Contour</source>
-        <translation>Crea contorno</translation>
+        <translation type="vanished">Crea contorno</translation>
     </message>
     <message>
         <source>Update Grid Shape Setting</source>
-        <translation>Aggiorna l'impostazione della forma della griglia</translation>
+        <translation type="vanished">Aggiorna l&apos;impostazione della forma della griglia</translation>
     </message>
     <message>
         <source>Edit Background Color</source>

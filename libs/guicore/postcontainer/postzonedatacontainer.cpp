@@ -19,10 +19,8 @@
 #include <misc/stringtool.h>
 
 #include <QDomNode>
-#include <QFile>
 #include <QLineF>
 #include <QPointF>
-#include <QRegExp>
 #include <QTextStream>
 #include <QXmlStreamWriter>
 
@@ -79,12 +77,38 @@ const double PostZoneDataContainer::IBCLimit {0.99};
 PostZoneDataContainer::PostZoneDataContainer(const std::string& zoneName, SolverDefinitionGridType* gridtype, PostSolutionInfo* parent) :
 	PostDataContainer {parent},
 	m_gridType {gridtype},
+	m_data {nullptr},
+	m_edgeIData {nullptr},
+	m_edgeJData {nullptr},
+	m_iFaceData {nullptr},
+	m_jFaceData {nullptr},
 	m_particleData {nullptr},
+	m_particleGroupMap {},
+	m_polyDataMap {},
+	m_polyDataCellIdsMap {},
+	m_calculatedResults {},
 	m_zoneName (zoneName),
+	m_size {},
+	m_loadOK {false},
 	m_loadedOnce {false}
 {}
+
 PostZoneDataContainer::~PostZoneDataContainer()
 {
+	delete m_data;
+	delete m_edgeIData;
+	delete m_edgeJData;
+	delete m_iFaceData;
+	delete m_jFaceData;
+	delete m_particleData;
+
+	for (const auto& pair : m_particleGroupMap) {
+		delete pair.second;
+	}
+	for (const auto& pair : m_polyDataMap) {
+		delete pair.second;
+	}
+
 	for (auto r : m_calculatedResults) {
 		delete r;
 	}
@@ -100,41 +124,41 @@ SolverDefinitionGridType* PostZoneDataContainer::gridType() const
 	return m_gridType;
 }
 
-vtkPointSet* PostZoneDataContainer::data() const
+vtkPointSetAndValueRangeSet* PostZoneDataContainer::data() const
 {
 	return m_data;
 }
 
-vtkPointSet* PostZoneDataContainer::edgeidata() const
+vtkPointSetAndValueRangeSetT<vtkStructuredGrid>* PostZoneDataContainer::edgeIData() const
 {
-	return m_edgeidata;
+	return m_edgeIData;
 }
 
-vtkPointSet* PostZoneDataContainer::edgejdata() const
+vtkPointSetAndValueRangeSetT<vtkStructuredGrid>* PostZoneDataContainer::edgeJData() const
 {
-	return m_edgejdata;
+	return m_edgeJData;
 }
 
-vtkPointSet* PostZoneDataContainer::ifacedata() const
+vtkPointSetAndValueRangeSetT<vtkStructuredGrid>* PostZoneDataContainer::iFaceData() const
 {
-	return m_ifacedata;
+	return m_iFaceData;
 }
 
-vtkPointSet* PostZoneDataContainer::jfacedata() const
+vtkPointSetAndValueRangeSetT<vtkStructuredGrid>* PostZoneDataContainer::jFaceData() const
 {
-	return m_jfacedata;
+	return m_jFaceData;
 }
 
-vtkPointSet* PostZoneDataContainer::data(iRICLib::H5CgnsZone::SolutionPosition position) const
+vtkPointSetAndValueRangeSet* PostZoneDataContainer::data(iRICLib::H5CgnsZone::SolutionPosition position) const
 {
 	if (position == iRICLib::H5CgnsZone::SolutionPosition::Node || position == iRICLib::H5CgnsZone::SolutionPosition::Cell) {
 		return m_data;
 	}
 	if (position == iRICLib::H5CgnsZone::SolutionPosition::IFace) {
-		return m_edgeidata;
+		return m_edgeIData;
 	}
 	if (position == iRICLib::H5CgnsZone::SolutionPosition::JFace) {
-		return m_edgejdata;
+		return m_edgeJData;
 	}
 	return nullptr;
 }
@@ -144,35 +168,35 @@ vtkPointSet* PostZoneDataContainer::labelData() const
 	return m_labelData;
 }
 
-vtkPolyData* PostZoneDataContainer::particleData() const
+vtkPointSetAndValueRangeSetT<vtkPolyData>* PostZoneDataContainer::particleData() const
 {
 	return m_particleData;
 }
 
-const std::map<std::string, vtkSmartPointer<vtkPolyData> >& PostZoneDataContainer::particleGroupMap() const
+const std::map<std::string, vtkPointSetAndValueRangeSetT<vtkPolyData>*>& PostZoneDataContainer::particleGroupMap() const
 {
 	return m_particleGroupMap;
 }
 
-const std::map<std::string, vtkSmartPointer<vtkPolyData> >& PostZoneDataContainer::polyDataMap() const
+const std::map<std::string, vtkPointSetAndValueRangeSetT<vtkPolyData>*>& PostZoneDataContainer::polyDataMap() const
 {
 	return m_polyDataMap;
 }
 
-vtkPolyData* PostZoneDataContainer::particleGroup(const std::string& name) const
+vtkPointSetAndValueRangeSetT<vtkPolyData>* PostZoneDataContainer::particleGroup(const std::string& name) const
 {
 	auto it = m_particleGroupMap.find(name);
 	if (it == m_particleGroupMap.end()) {return nullptr;}
 
-	return it->second.Get();
+	return it->second;
 }
 
-vtkPolyData* PostZoneDataContainer::polyData(const std::string& name) const
+vtkPointSetAndValueRangeSetT<vtkPolyData>* PostZoneDataContainer::polyData(const std::string& name) const
 {
 	auto it = m_polyDataMap.find(name);
 	if (it == m_polyDataMap.end()) {return nullptr;}
 
-	return it->second.Get();
+	return it->second;
 }
 
 const std::vector<int>& PostZoneDataContainer::polyDataCellIds(const std::string& name) const
@@ -198,23 +222,26 @@ bool PostZoneDataContainer::handleCurrentStepUpdate(iRICLib::H5CgnsZone* zone, b
 
 bool PostZoneDataContainer::loadStructuredGrid(iRICLib::H5CgnsZone* zone)
 {
-	if (m_data != nullptr) {
-		m_data->Initialize();
-		m_edgeidata->Initialize();
-		m_edgejdata->Initialize();
-		m_ifacedata->Initialize();
-		m_jfacedata->Initialize();
+	if (m_origData != nullptr) {
+		m_origData->Initialize();
+		m_edgeIData->data()->Initialize();
+		m_edgeJData->data()->Initialize();
+		m_iFaceData->data()->Initialize();
+		m_jFaceData->data()->Initialize();
 		m_labelData->Initialize();
 	} else {
-		m_data = vtkSmartPointer<vtkStructuredGrid>::New();
-		m_edgeidata = vtkSmartPointer<vtkStructuredGrid>::New();
-		m_edgejdata = vtkSmartPointer<vtkStructuredGrid>::New();
-		m_ifacedata = vtkSmartPointer<vtkStructuredGrid>::New();
-		m_jfacedata = vtkSmartPointer<vtkStructuredGrid>::New();
+		m_origData = vtkSmartPointer<vtkStructuredGrid>::New();
+		m_data = new vtkPointSetAndValueRangeSet(m_origData);
+		m_origData->Register(nullptr);
+
+		m_edgeIData = new vtkPointSetAndValueRangeSetT<vtkStructuredGrid>();
+		m_edgeJData = new vtkPointSetAndValueRangeSetT<vtkStructuredGrid>();
+		m_iFaceData = new vtkPointSetAndValueRangeSetT<vtkStructuredGrid>();
+		m_jFaceData = new vtkPointSetAndValueRangeSetT<vtkStructuredGrid>();
 		m_labelData = vtkSmartPointer<vtkUnstructuredGrid>::New();
 	}
-	vtkPointSet* p1 = m_data;
-	vtkStructuredGrid* grid = dynamic_cast<vtkStructuredGrid*>(p1);
+
+	vtkStructuredGrid* grid = vtkStructuredGrid::SafeDownCast(m_origData);
 	int NVertexI = 0, NVertexJ = 0, NVertexK = 0;
 
 	int dim = zone->base()->dimension();
@@ -236,17 +263,11 @@ bool PostZoneDataContainer::loadStructuredGrid(iRICLib::H5CgnsZone* zone)
 
 	grid->SetDimensions(NVertexI, NVertexJ, NVertexK);
 
-	vtkStructuredGrid* igrid = dynamic_cast<vtkStructuredGrid*>(m_edgeidata.Get());
-	igrid->SetDimensions(NVertexI, NVertexJ, NVertexK);
+	m_edgeIData->concreteData()->SetDimensions(NVertexI, NVertexJ, NVertexK);
+	m_edgeJData->concreteData()->SetDimensions(NVertexI, NVertexJ, NVertexK);
 
-	vtkStructuredGrid* jgrid = dynamic_cast<vtkStructuredGrid*>(m_edgejdata.Get());
-	jgrid->SetDimensions(NVertexI, NVertexJ, NVertexK);
-
-	vtkStructuredGrid* ifacegrid = dynamic_cast<vtkStructuredGrid*>(m_ifacedata.Get());
-	ifacegrid->SetDimensions(NVertexI, NVertexJ-1, NVertexK);
-
-	vtkStructuredGrid* jfacegrid = dynamic_cast<vtkStructuredGrid*>(m_jfacedata.Get());
-	jfacegrid->SetDimensions(NVertexI-1, NVertexJ, NVertexK);
+	m_iFaceData->concreteData()->SetDimensions(NVertexI, NVertexJ-1, NVertexK);
+	m_jFaceData->concreteData()->SetDimensions(NVertexI-1, NVertexJ, NVertexK);
 
 	int numPoints = NVertexI * NVertexJ * NVertexK;
 	std::vector<double> dataX(numPoints, 0), dataY(numPoints, 0), dataZ(numPoints, 0);
@@ -350,10 +371,10 @@ bool PostZoneDataContainer::loadStructuredGrid(iRICLib::H5CgnsZone* zone)
 
 	if (dim >= 2) {
 
-		m_edgeidata->SetPoints(points);
-		m_edgeidata->Modified();
-		m_edgejdata->SetPoints(points);
-		m_edgejdata->Modified();
+		m_edgeIData->data()->SetPoints(points);
+		m_edgeIData->data()->Modified();
+		m_edgeJData->data()->SetPoints(points);
+		m_edgeJData->data()->Modified();
 
 		auto iface_points = vtkSmartPointer<vtkPoints>::New();
 		iface_points->SetDataTypeToDouble();
@@ -389,10 +410,10 @@ bool PostZoneDataContainer::loadStructuredGrid(iRICLib::H5CgnsZone* zone)
 				}
 			}
 		}
-		m_ifacedata->SetPoints(iface_points);
-		m_ifacedata->Modified();
-		m_jfacedata->SetPoints(jface_points);
-		m_jfacedata->Modified();
+		m_iFaceData->data()->SetPoints(iface_points);
+		m_iFaceData->data()->Modified();
+		m_jFaceData->data()->SetPoints(jface_points);
+		m_jFaceData->data()->Modified();
 	}
 
 	return true;
@@ -400,14 +421,15 @@ bool PostZoneDataContainer::loadStructuredGrid(iRICLib::H5CgnsZone* zone)
 
 bool PostZoneDataContainer::loadUnstructuredGrid(iRICLib::H5CgnsZone* zone)
 {
-	if (m_data != 0) {
-		vtkUnstructuredGrid::SafeDownCast(m_data)->Reset();
+	if (m_origData != nullptr) {
+		vtkUnstructuredGrid::SafeDownCast(m_origData)->Reset();
 	} else {
-		m_data = vtkSmartPointer<vtkUnstructuredGrid>::New();
-		m_labelData = m_data;
+		m_origData = vtkSmartPointer<vtkUnstructuredGrid>::New();
+		m_data = new vtkPointSetAndValueRangeSet(m_origData);
+		m_origData->Register(nullptr);
+		m_labelData = m_origData;
 	}
-	vtkPointSet* p1 = m_data;
-	auto grid = dynamic_cast<vtkUnstructuredGrid*>(p1);
+	auto grid = vtkUnstructuredGrid::SafeDownCast(m_origData);
 
 	int dim = zone->base()->dimension();
 	m_size = zone->size();
@@ -498,12 +520,12 @@ bool PostZoneDataContainer::loadCellFlagData(iRICLib::H5CgnsZone *zone)
 
 			vtkSmartPointer<vtkIntArray> iarray = vtkSmartPointer<vtkIntArray>::New();
 			int defaultVal = icond->defaultValue();
-			for (vtkIdType i = 0; i < m_data->GetNumberOfCells(); ++i) {
+			for (vtkIdType i = 0; i < m_origData->GetNumberOfCells(); ++i) {
 				iarray->InsertNextValue(defaultVal);
 			}
 			iarray->SetName(addInputDataPrefix(cond->name()).c_str());
 
-			m_data->GetCellData()->AddArray(iarray);
+			m_origData->GetCellData()->AddArray(iarray);
 			continue;
 		}
 
@@ -516,25 +538,20 @@ bool PostZoneDataContainer::loadCellFlagData(iRICLib::H5CgnsZone *zone)
 		}
 		iarray->SetName(addInputDataPrefix(cond->name()).c_str());
 
-		m_data->GetCellData()->AddArray(iarray);
+		m_origData->GetCellData()->AddArray(iarray);
 	}
 	return true;
 }
 
 bool PostZoneDataContainer::setupIndexData()
 {
-	vtkStructuredGrid* sGrid = vtkStructuredGrid::SafeDownCast(m_data);
-	vtkSmartPointer<vtkStringArray> indexArray = vtkSmartPointer<vtkStringArray>::New();
+	auto sGrid = vtkStructuredGrid::SafeDownCast(m_origData);
+	auto indexArray = vtkSmartPointer<vtkStringArray>::New();
 	indexArray->SetName(iRIC::toStr(labelName).c_str());
-	vtkSmartPointer<vtkDoubleArray> newElevArray;
-	vtkSmartPointer<vtkDoubleArray> origElevArray;
-	if (elevationName() != "") {
-		origElevArray = vtkDoubleArray::SafeDownCast(m_data->GetPointData()->GetArray(iRIC::toStr(elevationName()).c_str()));
-		newElevArray = vtkSmartPointer<vtkDoubleArray>::New();
-		newElevArray->SetName(origElevArray->GetName());
-	}
 
 	if (sGrid != nullptr) {
+		std::vector<int> indices;
+
 		// structured grid.
 		int dims[3];
 		sGrid->GetDimensions(dims);
@@ -546,42 +563,60 @@ bool PostZoneDataContainer::setupIndexData()
 		}
 		vtkSmartPointer<vtkPoints> points = vtkSmartPointer<vtkPoints>::New();
 		points->SetDataTypeToDouble();
+
+		double p[3];
+		int index;
 		for (int i = 0; i < dims[0]; ++i) {
-			double p[3];
-			sGrid->GetPoint(nodeIndex(i, 0, 0), p);
+			index = nodeIndex(i, 0, 0);
+			sGrid->GetPoint(index, p);
 			points->InsertNextPoint(p);
 			indexArray->InsertNextValue(iRIC::toStr(label.arg(i + 1).arg(1).arg(1)).c_str());
-			if (newElevArray != nullptr) {
-				newElevArray->InsertNextValue(origElevArray->GetValue(nodeIndex(i, 0, 0)));
-			}
+			indices.push_back(index);
 		}
 		for (int j = 1; j < dims[1]; ++j) {
-			double p[3];
-			sGrid->GetPoint(nodeIndex(0, j, 0), p);
+			index = nodeIndex(0, j, 0);
+			sGrid->GetPoint(index, p);
 			points->InsertNextPoint(p);
 			indexArray->InsertNextValue(iRIC::toStr(label.arg(1).arg(j + 1).arg(1)).c_str());
-			if (newElevArray != nullptr) {
-				newElevArray->InsertNextValue(origElevArray->GetValue(nodeIndex(0, j, 0)));
-			}
+			indices.push_back(index);
 		}
 		for (int k = 1; k < dims[2]; ++k) {
-			double p[3];
-			sGrid->GetPoint(nodeIndex(0, 0, k), p);
+			index = nodeIndex(0, 0, k);
+			sGrid->GetPoint(index, p);
 			points->InsertNextPoint(p);
 			indexArray->InsertNextValue(iRIC::toStr(label.arg(1).arg(1).arg(k + 1)).c_str());
-			if (newElevArray != nullptr) {
-				newElevArray->InsertNextValue(origElevArray->GetValue(nodeIndex(0, 0, k)));
-			}
+			indices.push_back(index);
 		}
 		m_labelData->SetPoints(points);
 		m_labelData->GetPointData()->AddArray(indexArray);
-		if (newElevArray != nullptr) {
-			m_labelData->GetPointData()->AddArray(newElevArray);
+
+		auto origPData = m_origData->GetPointData();
+		auto labelPData = m_labelData->GetPointData();
+		for (const auto& name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(origPData)) {
+			auto d1 = origPData->GetArray(name.c_str());
+			auto da = vtkDoubleArray::SafeDownCast(d1);
+			auto ia = vtkIntArray::SafeDownCast(d1);
+
+			if (da != nullptr) {
+				auto d2 = vtkDoubleArray::New();
+				d2->SetName(name.c_str());
+				for (const auto& index : indices) {
+					d2->InsertNextValue(da->GetValue(index));
+				}
+				labelPData->AddArray(d2);
+			} else if (ia != nullptr) {
+				auto d2 = vtkIntArray::New();
+				d2->SetName(name.c_str());
+				for (const auto& index : indices) {
+					d2->InsertNextValue(ia->GetValue(index));
+				}
+				labelPData->AddArray(d2);
+			}
 		}
 	} else {
 		// unstructured grid.
 		QString label("(%1)");
-		for (int i = 0; i < m_data->GetNumberOfPoints(); ++i) {
+		for (int i = 0; i < m_origData->GetNumberOfPoints(); ++i) {
 			indexArray->InsertNextValue(iRIC::toStr(label.arg(i + 1)).c_str());
 		}
 		m_labelData->GetPointData()->AddArray(indexArray);
@@ -610,35 +645,39 @@ void PostZoneDataContainer::loadFromCgnsFile(iRICLib::H5CgnsZone* zone, bool dis
 	int ier;
 	// node scalar data
 	if (zone->nodeSolutionExists()) {
-		ier = CgnsUtil::loadScalarData(zone->nodeSolution(), m_data->GetPointData(), iRIC::toStr(IBC));
+		ier = CgnsUtil::loadScalarData(zone->nodeSolution(), m_origData->GetPointData(), iRIC::toStr(IBC));
 		if (ier != 0) {goto ERROR;}
 	}
 
 	// cell scalar data
 	if (zone->cellSolutionExists()) {
-		ier = CgnsUtil::loadScalarData(zone->cellSolution(), m_data->GetCellData(), iRIC::toStr(IBC));
+		ier = CgnsUtil::loadScalarData(zone->cellSolution(), m_origData->GetCellData(), iRIC::toStr(IBC));
 		if (ier != 0) {goto ERROR;}
 	}
 
 	// edgeI scalar data
 	if (zone->iFaceSolutionExists()) {
-		ier = CgnsUtil::loadEdgeIScalarData(zone->iFaceSolution(), m_edgeidata->GetPointData(), iRIC::toStr(IBC)); // post2d
+		ier = CgnsUtil::loadEdgeIScalarData(zone->iFaceSolution(), m_edgeIData->data()->GetPointData(), iRIC::toStr(IBC)); // post2d
 		if (ier != 0) {goto ERROR;}
-		ier = CgnsUtil::loadScalarData(zone->iFaceSolution(), m_ifacedata->GetPointData(), iRIC::toStr(IBC)); // for charts
+		m_edgeIData->updateValueRangeSet();
+		ier = CgnsUtil::loadScalarData(zone->iFaceSolution(), m_iFaceData->data()->GetPointData(), iRIC::toStr(IBC)); // for charts
 		if (ier != 0) {goto ERROR;}
+		m_iFaceData->updateValueRangeSet();
 	}
 
 	// edgeJ scalar data
 	if (zone->jFaceSolutionExists()) {
-		ier = CgnsUtil::loadEdgeJScalarData(zone->jFaceSolution(), m_edgejdata->GetPointData(), iRIC::toStr(IBC)); // for post2d
+		ier = CgnsUtil::loadEdgeJScalarData(zone->jFaceSolution(), m_edgeJData->data()->GetPointData(), iRIC::toStr(IBC)); // for post2d
 		if (ier != 0) {goto ERROR;}
-		ier = CgnsUtil::loadScalarData(zone->jFaceSolution(), m_jfacedata->GetPointData(), iRIC::toStr(IBC)); // for charts
+		m_edgeJData->updateValueRangeSet();
+		ier = CgnsUtil::loadScalarData(zone->jFaceSolution(), m_jFaceData->data()->GetPointData(), iRIC::toStr(IBC)); // for charts
 		if (ier != 0) {goto ERROR;}
+		m_jFaceData->updateValueRangeSet();
 	}
 
 	// node vector data
 	if (zone->nodeSolutionExists()) {
-		ier = CgnsUtil::loadVectorData(zone->nodeSolution(), m_data->GetPointData());
+		ier = CgnsUtil::loadVectorData(zone->nodeSolution(), m_origData->GetPointData());
 		if (ier != 0) {goto ERROR;}
 	}
 
@@ -667,7 +706,8 @@ void PostZoneDataContainer::loadFromCgnsFile(iRICLib::H5CgnsZone* zone, bool dis
 		addCalculatedResultArrays();
 	}
 
-	m_data->Modified();
+	m_origData->Modified();
+	m_data->updateValueRangeSet();
 
 	m_loadedOnce = true;
 	emit dataUpdated();
@@ -679,7 +719,7 @@ ERROR:
 
 void PostZoneDataContainer::loadIfEmpty(iRICLib::H5CgnsZone* zone)
 {
-	if (m_data != nullptr) {return;}
+	if (m_origData != nullptr) {return;}
 	loadFromCgnsFile(zone);
 }
 
@@ -702,7 +742,7 @@ void PostZoneDataContainer::getIJKIndex(int dim[3], int idx, int* i, int* j, int
 int PostZoneDataContainer::nodeIndex(int i, int j, int k) const
 {
 	int dim[3];
-	vtkStructuredGrid* grid = vtkStructuredGrid::SafeDownCast(m_data);
+	vtkStructuredGrid* grid = vtkStructuredGrid::SafeDownCast(m_origData);
 	grid->GetDimensions(dim);
 	return index(dim, i, j, k);
 }
@@ -710,7 +750,7 @@ int PostZoneDataContainer::nodeIndex(int i, int j, int k) const
 void PostZoneDataContainer::getNodeIJKIndex(int index, int* i, int* j, int* k) const
 {
 	int dim[3];
-	vtkStructuredGrid* grid = vtkStructuredGrid::SafeDownCast(m_data);
+	vtkStructuredGrid* grid = vtkStructuredGrid::SafeDownCast(m_origData);
 	grid->GetDimensions(dim);
 	getIJKIndex(dim, index, i, j, k);
 }
@@ -718,7 +758,7 @@ void PostZoneDataContainer::getNodeIJKIndex(int index, int* i, int* j, int* k) c
 int PostZoneDataContainer::cellIndex(int i, int j, int k) const
 {
 	int dim[3];
-	vtkStructuredGrid* grid = vtkStructuredGrid::SafeDownCast(m_data);
+	vtkStructuredGrid* grid = vtkStructuredGrid::SafeDownCast(m_origData);
 	grid->GetCellDims(dim);
 	return index(dim, i, j, k);
 }
@@ -726,7 +766,7 @@ int PostZoneDataContainer::cellIndex(int i, int j, int k) const
 void PostZoneDataContainer::getCellIJKIndex(int index, int* i, int* j, int* k) const
 {
 	int dim[3];
-	vtkStructuredGrid* grid = vtkStructuredGrid::SafeDownCast(m_data);
+	vtkStructuredGrid* grid = vtkStructuredGrid::SafeDownCast(m_origData);
 	grid->GetCellDims(dim);
 	getIJKIndex(dim, index, i, j, k);
 }
@@ -734,38 +774,34 @@ void PostZoneDataContainer::getCellIJKIndex(int index, int* i, int* j, int* k) c
 int PostZoneDataContainer::ifaceIndex(int i, int j, int k) const
 {
 	int dim[3];
-	vtkStructuredGrid* grid = vtkStructuredGrid::SafeDownCast(m_ifacedata);
-	grid->GetDimensions(dim);
+	m_iFaceData->concreteData()->GetDimensions(dim);
 	return index(dim, i, j, k);
 }
 
 void PostZoneDataContainer::getifaceIJKIndex(int index, int* i, int* j, int* k) const
 {
 	int dim[3];
-	vtkStructuredGrid* grid = vtkStructuredGrid::SafeDownCast(m_ifacedata);
-	grid->GetDimensions(dim);
+	m_iFaceData->concreteData()->GetDimensions(dim);
 	getIJKIndex(dim, index, i, j, k);
 }
 
 int PostZoneDataContainer::jfaceIndex(int i, int j, int k) const
 {
 	int dim[3];
-	vtkStructuredGrid* grid = vtkStructuredGrid::SafeDownCast(m_jfacedata);
-	grid->GetDimensions(dim);
+	m_jFaceData->concreteData()->GetDimensions(dim);
 	return index(dim, i, j, k);
 }
 
 void PostZoneDataContainer::getjfaceIJKIndex(int index, int* i, int* j, int* k) const
 {
 	int dim[3];
-	vtkStructuredGrid* grid = vtkStructuredGrid::SafeDownCast(m_jfacedata);
-	grid->GetDimensions(dim);
+	m_jFaceData->concreteData()->GetDimensions(dim);
 	getIJKIndex(dim, index, i, j, k);
 }
 
 bool PostZoneDataContainer::scalarValueExists() const
 {
-	auto names = vtkDataSetAttributesTool::getArrayNamesWithOneComponent(m_data->GetPointData());
+	auto names = vtkDataSetAttributesTool::getArrayNamesWithOneComponent(m_origData->GetPointData());
 	for (const auto& name : names) {
 		if (hasInputDataPrefix(name)) {continue;}
 		return true;
@@ -775,7 +811,7 @@ bool PostZoneDataContainer::scalarValueExists() const
 
 bool PostZoneDataContainer::cellScalarValueExists() const
 {
-	auto names = vtkDataSetAttributesTool::getArrayNamesWithOneComponent(m_data->GetCellData());
+	auto names = vtkDataSetAttributesTool::getArrayNamesWithOneComponent(m_origData->GetCellData());
 	for (const auto& name : names) {
 		if (hasInputDataPrefix(name)) {continue;}
 		return true;
@@ -785,29 +821,21 @@ bool PostZoneDataContainer::cellScalarValueExists() const
 
 bool PostZoneDataContainer::edgeIScalarValueExists() const
 {
-	if (m_edgeidata == nullptr) { return false; }
-	auto names = vtkDataSetAttributesTool::getArrayNamesWithOneComponent(m_edgeidata->GetPointData());
-	for (const auto& name : names) {
-		if (hasInputDataPrefix(name)) { continue; }
-		return true;
-	}
-	return false;
+	if (m_edgeIData == nullptr) {return false;}
+	auto names = vtkDataSetAttributesTool::getArrayNamesWithOneComponent(m_edgeIData->data()->GetPointData());
+	return names.size() > 0;
 }
 
 bool PostZoneDataContainer::edgeJScalarValueExists() const
 {
-	if (m_edgejdata == nullptr) { return false; }
-	auto names = vtkDataSetAttributesTool::getArrayNamesWithOneComponent(m_edgejdata->GetPointData());
-	for (const auto& name : names) {
-		if (hasInputDataPrefix(name)) { continue; }
-		return true;
-	}
-	return false;
+	if (m_edgeJData == nullptr) {return false;}
+	auto names = vtkDataSetAttributesTool::getArrayNamesWithOneComponent(m_edgeJData->data()->GetPointData());
+	return names.size() > 0;
 }
 
 bool PostZoneDataContainer::vectorValueExists() const
 {
-	return vtkDataSetAttributesTool::getArrayNamesWithMultipleComponents(m_data->GetPointData()).size() > 0;
+	return vtkDataSetAttributesTool::getArrayNamesWithMultipleComponents(m_origData->GetPointData()).size() > 0;
 }
 
 std::vector<PostCalculatedResult*>& PostZoneDataContainer::calculatedResults()
@@ -826,7 +854,7 @@ bool PostZoneDataContainer::IBCExists(iRICLib::H5CgnsZone::SolutionPosition posi
 	if (position == iRICLib::H5CgnsZone::SolutionPosition::Cell) {
 		return IBCCellExists();
 	} else {
-		for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(data(position)->GetPointData())) {
+		for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(data(position)->data()->GetPointData())) {
 			if (IBC == name.c_str()) { return true; }
 		}
 	}
@@ -835,7 +863,7 @@ bool PostZoneDataContainer::IBCExists(iRICLib::H5CgnsZone::SolutionPosition posi
 
 bool PostZoneDataContainer::IBCExists() const
 {
-	for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(m_data->GetPointData())) {
+	for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(m_origData->GetPointData())) {
 		if (IBC == name.c_str()) {return true;}
 	}
 
@@ -844,7 +872,7 @@ bool PostZoneDataContainer::IBCExists() const
 
 bool PostZoneDataContainer::IBCCellExists() const
 {
-	for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(m_data->GetCellData())) {
+	for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(m_origData->GetCellData())) {
 		if (IBC == name.c_str()) { return true; }
 	}
 
@@ -853,7 +881,7 @@ bool PostZoneDataContainer::IBCCellExists() const
 
 bool PostZoneDataContainer::IBCEdgeIExists() const
 {
-	for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(m_edgeidata->GetPointData())) {
+	for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(m_edgeIData->data()->GetPointData())) {
 		if (IBC == name.c_str()) { return true; }
 	}
 
@@ -862,17 +890,16 @@ bool PostZoneDataContainer::IBCEdgeIExists() const
 
 bool PostZoneDataContainer::IBCEdgeJExists() const
 {
-	for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(m_edgejdata->GetPointData())) {
+	for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(m_edgeJData->data()->GetPointData())) {
 		if (IBC == name.c_str()) { return true; }
 	}
 
 	return false;
 }
 
-
 QString PostZoneDataContainer::elevationName() const
 {
-	for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(m_data->GetPointData())) {
+	for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(m_origData->GetPointData())) {
 		QString tmpName = name.c_str();
 		if (tmpName.toLower().left(9) == "elevation") {
 			return tmpName;
@@ -883,9 +910,10 @@ QString PostZoneDataContainer::elevationName() const
 
 vtkPolyData* PostZoneDataContainer::filteredData(double xmin, double xmax, double ymin, double ymax, bool& masked) const
 {
-	if (vtkStructuredGrid::SafeDownCast(m_data) != nullptr) {
+	auto structured = vtkStructuredGrid::SafeDownCast(m_origData);
+	if (structured != nullptr) {
 		// Structured Data
-		return filteredDataStructured(m_data, xmin, xmax, ymin, ymax, masked);
+		return filteredDataStructured(structured, xmin, xmax, ymin, ymax, masked);
 	} else {
 		// Unstructured Data
 		return filteredDataUnstructured(xmin, xmax, ymin, ymax, masked);
@@ -894,23 +922,19 @@ vtkPolyData* PostZoneDataContainer::filteredData(double xmin, double xmax, doubl
 
 vtkPolyData* PostZoneDataContainer::filteredEdgeIData(double xmin, double xmax, double ymin, double ymax, bool& masked) const
 {
-	if (vtkStructuredGrid::SafeDownCast(m_edgeidata) != nullptr) {
-		// Structured Data
-		return filteredDataStructured(m_edgeidata, xmin, xmax, ymin, ymax, masked);
-	}
-	return nullptr;
+	if (m_edgeIData == nullptr) {return nullptr;}
+
+	return filteredDataStructured(m_edgeIData->concreteData(), xmin, xmax, ymin, ymax, masked);
 }
 
 vtkPolyData* PostZoneDataContainer::filteredEdgeJData(double xmin, double xmax, double ymin, double ymax, bool& masked) const
 {
-	if (vtkStructuredGrid::SafeDownCast(m_edgejdata) != nullptr) {
-		// Structured Data
-		return filteredDataStructured(m_edgejdata, xmin, xmax, ymin, ymax, masked);
-	}
-	return nullptr;
+	if (m_edgeJData == nullptr) {return nullptr;}
+
+	return filteredDataStructured(m_edgeJData->concreteData(), xmin, xmax, ymin, ymax, masked);
 }
 
-vtkPolyData* PostZoneDataContainer::filteredDataStructured(vtkSmartPointer<vtkPointSet> data, double xmin, double xmax, double ymin, double ymax, bool& masked) const
+vtkPolyData* PostZoneDataContainer::filteredDataStructured(vtkStructuredGrid* data, double xmin, double xmax, double ymin, double ymax, bool& masked) const
 {
 	masked = false;
 
@@ -1017,11 +1041,12 @@ vtkPolyData* PostZoneDataContainer::filteredDataStructured(vtkSmartPointer<vtkPo
 		}
 	}
 
-	vtkSmartPointer<vtkExtractGrid> exGrid = vtkSmartPointer<vtkExtractGrid>::New();
+	auto exGrid = vtkSmartPointer<vtkExtractGrid>::New();
 	exGrid->SetVOI(lineLimitIMin2, lineLimitIMax2, lineLimitJMin2, lineLimitJMax2, 0, 0);
-	exGrid->SetInputData(vtkStructuredGrid::SafeDownCast(data));
+	exGrid->SetInputData(data);
 	exGrid->Update();
-	vtkSmartPointer<vtkStructuredGrid> extractedGrid = exGrid->GetOutput();
+
+	auto extractedGrid = exGrid->GetOutput();
 	int exRate = 1;
 	bool cullEnable;
 	int cullCellLimit, cullIndexLimit;
@@ -1052,7 +1077,7 @@ vtkPolyData* PostZoneDataContainer::filteredDataUnstructured(double xmin, double
 	vtkSmartPointer<vtkGeometryFilter> gfilter = vtkSmartPointer<vtkGeometryFilter>::New();
 	gfilter->SetExtent(xmin - xwidth * 0.2, xmax + xwidth * 0.2, ymin - ywidth * 0.2, ymax + ywidth * 0.2, -1, 1);
 	gfilter->ExtentClippingOn();
-	gfilter->SetInputData(m_data);
+	gfilter->SetInputData(m_origData);
 	gfilter->Update();
 	vtkPolyData* data = gfilter->GetOutput();
 	data->Register(0);
@@ -1066,7 +1091,7 @@ int PostZoneDataContainer::lineLimitI(int j, int iIn, int iOut, const RectRegion
 	}
 	int i = (iIn + iOut) / 2;
 	double tmpv[3];
-	m_data->GetPoint(nodeIndex(i, j, 0), tmpv);
+	m_origData->GetPoint(nodeIndex(i, j, 0), tmpv);
 	if (region.pointIsInside(tmpv[0], tmpv[1])) {
 		return lineLimitI(j, i, iOut, region);
 	} else {
@@ -1081,7 +1106,7 @@ int PostZoneDataContainer::lineLimitJ(int i, int jIn, int jOut, const RectRegion
 	}
 	int j = (jIn + jOut) / 2;
 	double tmpv[3];
-	m_data->GetPoint(nodeIndex(i, j, 0), tmpv);
+	m_origData->GetPoint(nodeIndex(i, j, 0), tmpv);
 	if (region.pointIsInside(tmpv[0], tmpv[1])) {
 		return lineLimitJ(i, j, jOut, region);
 	} else {
@@ -1119,10 +1144,10 @@ bool PostZoneDataContainer::lineAtIIntersect(int i, const RectRegion& region) co
 {
 	QPointF p1, p2;
 	double tmpv[3];
-	m_data->GetPoint(nodeIndex(i, 0, 0), tmpv);
+	m_origData->GetPoint(nodeIndex(i, 0, 0), tmpv);
 	p1 = QPointF(tmpv[0], tmpv[1]);
 	for (int j = 1; j < m_size[1]; ++j) {
-		m_data->GetPoint(nodeIndex(i, j, 0), tmpv);
+		m_origData->GetPoint(nodeIndex(i, j, 0), tmpv);
 		p2 = QPointF(tmpv[0], tmpv[1]);
 		QLineF line(p1, p2);
 		if (region.intersect(line)) {return true;}
@@ -1134,10 +1159,10 @@ bool PostZoneDataContainer::lineAtJIntersect(int j, const RectRegion& region) co
 {
 	QPointF p1, p2;
 	double tmpv[3];
-	m_data->GetPoint(nodeIndex(0, j, 0), tmpv);
+	m_origData->GetPoint(nodeIndex(0, j, 0), tmpv);
 	p1 = QPointF(tmpv[0], tmpv[1]);
 	for (int i = 1; i < m_size[0]; ++i) {
-		m_data->GetPoint(nodeIndex(i, j, 0), tmpv);
+		m_origData->GetPoint(nodeIndex(i, j, 0), tmpv);
 		p2 = QPointF(tmpv[0], tmpv[1]);
 		QLineF line(p1, p2);
 		if (region.intersect(line)) {return true;}
@@ -1152,10 +1177,10 @@ void PostZoneDataContainer::applyOffset(double x_diff, double y_diff)
 
 void PostZoneDataContainer::doApplyOffset(double x_diff, double y_diff)
 {
-	doApplyOffset(m_data, x_diff, y_diff);
-	doApplyOffset(m_particleData, x_diff, y_diff);
+	doApplyOffset(m_origData, x_diff, y_diff);
+	doApplyOffset(m_particleData->data(), x_diff, y_diff);
 	for (auto pair : m_polyDataMap) {
-		doApplyOffset(pair.second, x_diff, y_diff);
+		doApplyOffset(pair.second->data(), x_diff, y_diff);
 	}
 }
 
@@ -1178,16 +1203,16 @@ void PostZoneDataContainer::addCalculatedResultArrays()
 {
 	for (auto result : m_calculatedResults) {
 		if (result->dataType() == PostCalculatedResult::GridNode) {
-			auto vals = buildDoubleArray(result->name(), m_data->GetNumberOfPoints());
-			m_data->GetPointData()->AddArray(vals);
+			auto vals = buildDoubleArray(result->name(), m_origData->GetNumberOfPoints());
+			m_origData->GetPointData()->AddArray(vals);
 			vals->Delete();
 		} else if (result->dataType() == PostCalculatedResult::GridCell) {
-			auto vals = buildDoubleArray(result->name(), m_data->GetNumberOfCells());
-			m_data->GetCellData()->AddArray(vals);
+			auto vals = buildDoubleArray(result->name(), m_origData->GetNumberOfCells());
+			m_origData->GetCellData()->AddArray(vals);
 			vals->Delete();
 		} else if (result->dataType() == PostCalculatedResult::Particle) {
-			auto vals = buildDoubleArray(result->name(), m_data->GetNumberOfPoints());
-			m_data->GetPointData()->AddArray(vals);
+			auto vals = buildDoubleArray(result->name(), m_origData->GetNumberOfPoints());
+			m_origData->GetPointData()->AddArray(vals);
 			vals->Delete();
 		} else if (result->dataType() == PostCalculatedResult::PolyData) {
 			// @todo implement this.

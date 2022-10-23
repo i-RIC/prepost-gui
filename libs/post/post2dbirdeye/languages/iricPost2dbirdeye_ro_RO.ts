@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ro_RO">
 <context>
     <name>Post2dBirdEyeObjectBrowser</name>
@@ -9,8 +11,8 @@
 <context>
     <name>Post2dBirdEyeWindow</name>
     <message>
-        <source>Bird's-Eye Post-processing (2D): %1</source>
-        <translation>Post-procesare Bird's-Eye (2D): %1</translation>
+        <source>Bird&apos;s-Eye Post-processing (2D): %1</source>
+        <translation>Post-procesare Bird&apos;s-Eye (2D): %1</translation>
     </message>
     <message>
         <source>Background Color</source>
@@ -56,80 +58,80 @@
     <name>Post2dBirdEyeWindowAxesDataItem</name>
     <message>
         <source>Axes</source>
-        <translation>Axe</translation>
+        <translation type="vanished">Axe</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
-        <translation>Scalar</translation>
+        <translation type="vanished">Scalar</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
-        <translation>Actualizați setarea conturului</translation>
+        <translation type="vanished">Actualizați setarea conturului</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowCellScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (cell center)</source>
-        <translation>Scalar (centrul celulei)</translation>
+        <translation type="vanished">Scalar (centrul celulei)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Avertizare</translation>
+        <translation type="vanished">Avertizare</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>Se pot defini maximum patru contururi.</translation>
+        <translation type="vanished">Se pot defini maximum patru contururi.</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowContourSettingDialog</name>
     <message>
         <source>Scalar Setting</source>
-        <translation>Setare scalară</translation>
+        <translation type="vanished">Setare scalară</translation>
     </message>
     <message>
         <source>Scalar value for elevation</source>
-        <translation>Valoarea scalară a cotei</translation>
+        <translation type="vanished">Valoarea scalară a cotei</translation>
     </message>
     <message>
         <source>Color Setting</source>
-        <translation>Setarea culorii</translation>
+        <translation type="vanished">Setarea culorii</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Culoare personalizată</translation>
+        <translation type="vanished">Culoare personalizată</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>După valoarea scalară</translation>
+        <translation type="vanished">După valoarea scalară</translation>
     </message>
     <message>
         <source>Scalar Value:</source>
-        <translation>Valoare scalară:</translation>
+        <translation type="vanished">Valoare scalară:</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>Arata setarile</translation>
+        <translation type="vanished">Arata setarile</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>Setarea regiunii (&amp;R)</translation>
+        <translation type="vanished">Setarea regiunii (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Setarea barei de culori (&amp;C)</translation>
+        <translation type="vanished">Setarea barei de culori (&amp;C)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Eroare</translation>
+        <translation type="vanished">Eroare</translation>
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
-        <translation>Pentru intervalul de valori, valoarea maximă este mai mică decât valoarea minimă.</translation>
+        <translation type="vanished">Pentru intervalul de valori, valoarea maximă este mai mică decât valoarea minimă.</translation>
     </message>
 </context>
 <context>
@@ -144,7 +146,7 @@
     </message>
     <message>
         <source>Contour setting is not available, because this result does not contain cell scalar values.</source>
-        <translation>Setarea conturului nu este disponibilă, deoarece acest rezultat nu conține valori scalare ale celulei.</translation>
+        <translation type="vanished">Setarea conturului nu este disponibilă, deoarece acest rezultat nu conține valori scalare ale celulei.</translation>
     </message>
     <message>
         <source>Z-direction Scale</source>
@@ -163,6 +165,17 @@
     </message>
 </context>
 <context>
+    <name>Post2dBirdEyeWindowGridShapeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Shape Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scalar value for Elevation</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>Post2dBirdEyeWindowNodeScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
@@ -170,7 +183,42 @@
     </message>
     <message>
         <source>Update Contour Setting</source>
-        <translation>Actualizați setarea conturului</translation>
+        <translation type="vanished">Actualizați setarea conturului</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation type="unfinished">Culoare personalizată</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation type="unfinished">După valoarea scalară</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -181,22 +229,22 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Avertizare</translation>
+        <translation type="vanished">Avertizare</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>Se pot defini maximum patru contururi.</translation>
+        <translation type="vanished">Se pot defini maximum patru contururi.</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
         <source>Create Contour</source>
-        <translation>Creați contur</translation>
+        <translation type="vanished">Creați contur</translation>
     </message>
     <message>
         <source>Update Grid Shape Setting</source>
-        <translation>Actualizați setarea formei grilei</translation>
+        <translation type="vanished">Actualizați setarea formei grilei</translation>
     </message>
     <message>
         <source>Edit Background Color</source>

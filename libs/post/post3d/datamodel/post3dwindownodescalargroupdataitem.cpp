@@ -38,7 +38,6 @@
 #include <vtkDelaunay2D.h>
 #include <vtkDoubleArray.h>
 #include <vtkExtractGrid.h>
-#include <vtkLODActor.h>
 #include <vtkPointData.h>
 #include <vtkPolyDataMapper.h>
 #include <vtkProperty.h>
@@ -60,9 +59,6 @@ Post3dWindowNodeScalarGroupDataItem::Post3dWindowNodeScalarGroupDataItem(Post3dW
 
 	setDefaultValues();
 	setupActors();
-
-	PostZoneDataContainer* cont = dynamic_cast<Post3dWindowZoneDataItem*>(parent()->parent())->dataContainer();
-	SolverDefinitionGridType* gt = cont->gridType();
 }
 
 Post3dWindowNodeScalarGroupDataItem::~Post3dWindowNodeScalarGroupDataItem()
@@ -83,7 +79,7 @@ void Post3dWindowNodeScalarGroupDataItem::updateActorSettings()
 
 	PostZoneDataContainer* cont = dynamic_cast<Post3dWindowZoneDataItem*>(parent()->parent())->dataContainer();
 	if (cont == nullptr) {return;}
-	vtkPointSet* ps = cont->data();
+	vtkPointSet* ps = cont->data()->data();
 	if (ps == nullptr) {return;}
 	if (m_target == "") {return;}
 
@@ -168,7 +164,7 @@ void Post3dWindowNodeScalarGroupDataItem::setupIsosurfaceSetting()
 {
 	// input data
 	PostZoneDataContainer* cont = dynamic_cast<Post3dWindowZoneDataItem*>(parent()->parent())->dataContainer();
-	vtkPointSet* ps = cont->data();
+	vtkPointSet* ps = cont->data()->data();
 
 	// extract interest volume
 	vtkSmartPointer<vtkExtractGrid> voi = vtkSmartPointer<vtkExtractGrid>::New();
@@ -276,15 +272,14 @@ void Post3dWindowNodeScalarGroupDataItem::validateRange()
 	if (zItem->dataContainer() == nullptr || zItem->dataContainer()->data() == nullptr)	{
 		return;
 	}
-	vtkStructuredGrid* g = dynamic_cast<vtkStructuredGrid*>(zItem->dataContainer()->data());
+	auto g = vtkStructuredGrid::SafeDownCast(zItem->dataContainer()->data()->data());
 	int dims[3];
 	g->GetDimensions(dims);
 	if (m_fullRange) {
 		m_range.iMin = 0;  m_range.iMax = dims[0] - 1;
 		m_range.jMin = 0;  m_range.jMax = dims[1] - 1;
 		m_range.kMin = 0;  m_range.kMax = dims[2] - 1;
-	}
-	else {
+	} else {
 		if (m_range.iMin < 0) m_range.iMin = 0;
 		if (m_range.jMin < 0) m_range.jMin = 0;
 		if (m_range.kMin < 0) m_range.kMin = 0;

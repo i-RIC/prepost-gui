@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="nl_NL">
 <context>
     <name>MeasuredDataFileDataItem</name>
@@ -38,34 +40,81 @@
     </message>
 </context>
 <context>
-    <name>MeasuredDataPointSettingDialog</name>
+    <name>MeasuredDataPointGroupDataItem_PropertyDialog</name>
     <message>
-        <source>Scalar Setting</source>
-        <translation>Scalaire instelling</translation>
-    </message>
-    <message>
-        <source>Measured Value:</source>
-        <translation>Gemeten waarde:</translation>
+        <source>Points Display Setting Dialog</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>Beeldscherm instelling</translation>
+        <translation type="unfinished">Beeldscherm instelling</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Kleur</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="unfinished">Exporteren (&amp;E)...</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation>Puntgrootte:</translation>
+        <translation type="unfinished">Puntgrootte:</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataPointSettingDialog</name>
+    <message>
+        <source>Scalar Setting</source>
+        <translation type="vanished">Scalaire instelling</translation>
+    </message>
+    <message>
+        <source>Measured Value:</source>
+        <translation type="vanished">Gemeten waarde:</translation>
+    </message>
+    <message>
+        <source>Display Setting</source>
+        <translation type="vanished">Beeldscherm instelling</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="vanished">Puntgrootte:</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Instelling kleurenbalk (&amp;C)</translation>
+        <translation type="vanished">Instelling kleurenbalk (&amp;C)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Fout</translation>
+        <translation type="vanished">Fout</translation>
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
-        <translation>Voor waardebereik is de maximale waarde kleiner dan de minimale waarde.</translation>
+        <translation type="vanished">Voor waardebereik is de maximale waarde kleiner dan de minimale waarde.</translation>
     </message>
 </context>
 <context>
@@ -80,62 +129,69 @@
     </message>
     <message>
         <source>Update Arrow Setting</source>
-        <translation>Pijlinstelling bijwerken</translation>
+        <translation type="vanished">Pijlinstelling bijwerken</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataVectorGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Measured Data Arrow Setting</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>MeasuredDataVectorSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Pijlinstelling</translation>
+        <translation type="vanished">Pijlinstelling</translation>
     </message>
     <message>
         <source>Physical value:</source>
-        <translation>Fysieke waarde:</translation>
+        <translation type="vanished">Fysieke waarde:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Lengte</translation>
+        <translation type="vanished">Lengte</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Auto</translation>
+        <translation type="vanished">Auto</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Standaard waarde:</translation>
+        <translation type="vanished">Standaard waarde:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[Mevrouw]</translation>
+        <translation type="vanished">[Mevrouw]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Lengte op scherm:</translation>
+        <translation type="vanished">Lengte op scherm:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[pixel]</translation>
+        <translation type="vanished">[pixel]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Minimale waarde om te tekenen:</translation>
+        <translation type="vanished">Minimale waarde om te tekenen:</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Kleur</translation>
+        <translation type="vanished">Kleur</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Aangepaste kleur</translation>
+        <translation type="vanished">Aangepaste kleur</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Op scalaire waarde</translation>
+        <translation type="vanished">Op scalaire waarde</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Instelling kleurenbalk (&amp;C)</translation>
+        <translation type="vanished">Instelling kleurenbalk (&amp;C)</translation>
     </message>
 </context>
 </TS>

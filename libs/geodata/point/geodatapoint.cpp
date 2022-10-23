@@ -2,17 +2,18 @@
 
 #include "private/geodatapoint_coordinateseditor.h"
 #include "private/geodatapoint_finishpointdefinitioncommand.h"
+#include "private/geodatapoint_movevertexcommand.h"
+#include "private/geodatapoint_setvertexcommand.h"
 #include "private/geodatapoint_impl.h"
 
-#include <guibase/point/pointmovecommand.h>
-#include <guibase/point/pointsetcommand.h>
+#include <guibase/vtktool/vtkpolydatamapperutil.h>
 #include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
 #include <guicore/pre/base/preprocessorgeodatatopdataiteminterface.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
 #include <guicore/pre/base/preprocessorwindowinterface.h>
 #include <guicore/pre/gridcond/base/gridattributedimensionscontainer.h>
 #include <guicore/project/projectdata.h>
-#include <guicore/scalarstocolors/scalarstocolorscontainer.h>
+#include <guicore/scalarstocolors/colormapsettingcontaineri.h>
 #include <misc/informationdialog.h>
 #include <misc/mathsupport.h>
 #include <misc/stringtool.h>
@@ -26,14 +27,26 @@
 #include <QToolBar>
 
 #include <vtkActor.h>
+#include <vtkCellData.h>
+#include <vtkDoubleArray.h>
 #include <vtkMapper.h>
+#include <vtkPolyData.h>
+#include <vtkPolyDataMapper.h>
 #include <vtkProperty.h>
 #include <vtkRenderer.h>
 
 #include <vector>
 
+namespace {
+
+const std::string SCALARNAME = "pointvalue";
+
+}
+
 GeoDataPoint::Impl::Impl(GeoDataPoint* parent) :
 	m_parent {parent},
+	m_actor {vtkActor::New()},
+	m_scalarValues {vtkDoubleArray::New()},
 	m_pointController {},
 	m_mouseEventMode {meBeforeDefining},
 	m_dragStartPoint {},
@@ -42,11 +55,24 @@ GeoDataPoint::Impl::Impl(GeoDataPoint* parent) :
 	m_coordEditAction {new QAction(GeoDataPoint::tr("Edit &Coordinates..."), m_parent)}
 {
 	connect(m_coordEditAction, SIGNAL(triggered()), m_parent, SLOT(editCoordinates()));
+
+	setupScalarValues();
+
 }
 
 GeoDataPoint::Impl::~Impl()
 {
+	m_actor->Delete();
+	m_scalarValues->Delete();
 	delete m_rightClickingMenu;
+}
+
+void GeoDataPoint::Impl::setupScalarValues()
+{
+	m_scalarValues->SetName(SCALARNAME.c_str());
+	auto cd = m_pointController.polyData()->GetCellData();
+	cd->AddArray(m_scalarValues);
+	cd->SetActiveScalars(SCALARNAME.c_str());
 }
 
 GeoDataPoint::GeoDataPoint(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGridAttribute* condition) :
@@ -57,13 +83,8 @@ GeoDataPoint::GeoDataPoint(ProjectDataItem* d, GeoDataCreator* creator, SolverDe
 	setColor(Qt::black);
 	setOpacity(100);
 
-	impl->m_pointController.actor()->GetProperty()->SetPointSize(5);
-	auto stcc = scalarsToColorsContainer();
-	if (stcc != nullptr) {
-		impl->m_pointController.actor()->GetMapper()->SetLookupTable(stcc->vtkObj());
-	}
-	renderer()->AddActor(impl->m_pointController.actor());
-	actorCollection()->AddItem(impl->m_pointController.actor());
+	renderer()->AddActor(impl->m_actor);
+	actorCollection()->AddItem(impl->m_actor);
 
 	updateActorSettings();
 	updateVisibilityWithoutRendering();
@@ -71,15 +92,15 @@ GeoDataPoint::GeoDataPoint(ProjectDataItem* d, GeoDataCreator* creator, SolverDe
 
 GeoDataPoint::~GeoDataPoint()
 {
-	renderer()->RemoveActor(impl->m_pointController.actor());
-	actorCollection()->RemoveItem(impl->m_pointController.actor());
+	renderer()->RemoveActor(impl->m_actor);
+	actorCollection()->RemoveItem(impl->m_actor);
 
 	delete impl;
 }
 
 void GeoDataPoint::setPointSize(int pointSize)
 {
-	impl->m_pointController.actor()->GetProperty()->SetPointSize(pointSize);
+	impl->m_actor->GetProperty()->SetPointSize(pointSize);
 }
 
 void GeoDataPoint::setupMenu()
@@ -132,10 +153,10 @@ void GeoDataPoint::mouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsViewIn
 		// do nothing.
 		break;
 	case meDefining:
-		pushRenderCommand(new PointSetCommand(false, v->viewportToWorld(event->pos()), &(impl->m_pointController)));
+		pushRenderCommand(new SetVertexCommand(true, v->viewportToWorld(event->pos()), this));
 		break;
 	case meMoveVertex:
-		pushRenderCommand(new PointMoveCommand(false, v->viewportToWorld(event->pos()), &(impl->m_pointController)));
+		pushRenderCommand(new MoveVertexCommand(true, v->viewportToWorld(event->pos()), this));
 		impl->m_currentPoint = event->pos();
 		break;
 	default:
@@ -148,12 +169,12 @@ void GeoDataPoint::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewI
 	if (event->button() == Qt::LeftButton) {
 		switch (impl->m_mouseEventMode) {
 		case meBeforeDefining:
-			pushRenderCommand(new PointSetCommand(true, v->viewportToWorld(event->pos()), &(impl->m_pointController)));
+			pushRenderCommand(new SetVertexCommand(true, v->viewportToWorld(event->pos()), this));
 			impl->m_mouseEventMode = meDefining;
 			break;
 		case meMoveVertexPrepare:
 			impl->m_currentPoint = event->pos();
-			pushRenderCommand(new PointMoveCommand(true, v->viewportToWorld(event->pos()), &(impl->m_pointController)));
+			pushRenderCommand(new MoveVertexCommand(true, v->viewportToWorld(event->pos()), this));
 			impl->m_mouseEventMode = meMoveVertex;
 			updateMouseCursor(v);
 			break;
@@ -200,7 +221,7 @@ void GeoDataPoint::updateZDepthRangeItemCount(ZDepthRange& range)
 
 void GeoDataPoint::assignActorZValues(const ZDepthRange& range)
 {
-	impl->m_pointController.actor()->SetPosition(0, 0, range.min());
+	impl->m_actor->SetPosition(0, 0, range.min());
 }
 
 void GeoDataPoint::getBoundingRect(double* xmin, double* xmax, double* ymin, double* ymax)
@@ -284,9 +305,36 @@ void GeoDataPoint::updateMouseCursor(PreProcessorGraphicsViewInterface* v)
 	}
 }
 
+void GeoDataPoint::updateScalarValues()
+{
+	impl->m_scalarValues->Reset();
+	double doubleval = variantValue().toDouble();
+	impl->m_scalarValues->InsertNextValue(doubleval);
+	impl->m_scalarValues->Modified();
+}
+
 void GeoDataPoint::updateActorSettings()
 {
 	auto cs = colorSetting();
+	// color
+	impl->m_actor->GetProperty()->SetColor(cs.color);
+
+	// opacity
+	impl->m_actor->GetProperty()->SetOpacity(cs.opacity);
+
+	// mapping
+	if (cs.mapping == GeoDataPolyDataColorSettingDialog::Arbitrary) {
+		auto mapper = vtkPolyDataMapperUtil::createWithScalarVisibilityOff();
+		mapper->SetInputData(impl->m_pointController.polyData());
+		impl->m_actor->SetMapper(mapper);
+		mapper->Delete();
+	} else {
+		auto cs = colorMapSettingContainer();
+		auto mapper = cs->buildCellDataMapper(impl->m_pointController.polyData(), true);
+		impl->m_actor->SetMapper(mapper);
+		mapper->Delete();
+	}
+
 	impl->m_pointController.actor()->GetProperty()->SetColor(cs.color);
 	impl->m_pointController.actor()->GetProperty()->SetOpacity(cs.opacity);
 }

@@ -1,4 +1,5 @@
 #include "attributebrowsertargetdataitem.h"
+#include "graphicswindowdatamodel.h"
 #include "vtkgraphicsview.h"
 
 #include <guibase/graphicsmisc.h>
@@ -31,22 +32,23 @@ AttributeBrowserTargetDataItem::~AttributeBrowserTargetDataItem()
 
 void AttributeBrowserTargetDataItem::setupActors()
 {
+	auto v = dataModel()->graphicsView();
 	auto r = renderer();
 	m_polygonsActor.paintActor()->GetProperty()->SetColor(0.5, 0.5, 0.5);
 	m_polygonsActor.paintActor()->GetProperty()->SetOpacity(0.6);
 	r->AddActor(m_polygonsActor.paintActor());
 
-	m_polygonsActor.linesActor()->GetProperty()->SetLineWidth(2);
+	m_polygonsActor.linesActor()->GetProperty()->SetLineWidth(2 * v->devicePixelRatioF());
 	m_polygonsActor.linesActor()->GetProperty()->SetColor(0.5, 0.5, 0.5);
 	m_polygonsActor.linesActor()->GetProperty()->SetOpacity(0.6);
 	r->AddActor(m_polygonsActor.linesActor());
 
-	m_lineActor.pointsActor()->GetProperty()->SetPointSize(7);
+	m_lineActor.pointsActor()->GetProperty()->SetPointSize(7 * v->devicePixelRatioF());
 	m_lineActor.pointsActor()->GetProperty()->SetColor(0.5, 0.5, 0.5);
 	m_lineActor.pointsActor()->GetProperty()->SetOpacity(0.6);
 	r->AddActor(m_lineActor.pointsActor());
 
-	m_lineActor.lineActor()->GetProperty()->SetLineWidth(5);
+	m_lineActor.lineActor()->GetProperty()->SetLineWidth(5 * v->devicePixelRatioF());
 	m_lineActor.lineActor()->GetProperty()->SetColor(0.5, 0.5, 0.5);
 	m_lineActor.lineActor()->GetProperty()->SetOpacity(0.6);
 	r->AddActor(m_lineActor.lineActor());

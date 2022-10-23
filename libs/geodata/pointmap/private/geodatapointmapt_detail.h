@@ -5,6 +5,7 @@
 #include "../geodatapointmapmappingmode.h"
 #include "../geodatapointmaptemplatemappingsetting.h"
 #include "../geodatapointmaptemplatenodemappert.h"
+#include "geodatapointmap_impl.h"
 
 #include <guicore/pre/base/preprocessorgridtypedataiteminterface.h>
 
@@ -14,7 +15,7 @@ GeoDataPointMapT<V, DA>::GeoDataPointMapT(ProjectDataItem* d, GeoDataCreator* cr
 {
 	vtkSmartPointer<DA> values = vtkSmartPointer<DA>::New();
 	values->SetName("values");
-	m_vtkGrid->GetPointData()->AddArray(values);
+	impl->m_pointsManager.points()->GetPointData()->AddArray(values);
 
 	m_templateMapper = new GeoDataPointmapTemplateNodeMapperT<V, DA>(creator);
 }
@@ -22,7 +23,7 @@ GeoDataPointMapT<V, DA>::GeoDataPointMapT(ProjectDataItem* d, GeoDataCreator* cr
 template <class V, class DA>
 DA* GeoDataPointMapT<V, DA>::vtkValues() const
 {
-	return DA::SafeDownCast(m_vtkGrid->GetPointData()->GetArray("values"));
+	return DA::SafeDownCast(impl->m_pointsManager.points()->GetPointData()->GetArray("values"));
 }
 
 template <class V, class DA>

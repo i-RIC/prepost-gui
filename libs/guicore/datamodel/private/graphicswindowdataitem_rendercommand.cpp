@@ -6,9 +6,6 @@ GraphicsWindowDataItem::RenderCommand::RenderCommand(QUndoCommand *child, Graphi
 	m_item {item}
 {}
 
-GraphicsWindowDataItem::RenderCommand::~RenderCommand()
-{}
-
 void GraphicsWindowDataItem::RenderCommand::redo()
 {
 	m_command.get()->redo();

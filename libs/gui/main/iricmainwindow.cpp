@@ -1939,15 +1939,15 @@ void iRICMainWindow::exportCfShape()
 		return;
 	}
 
-	QList<QString> zones = ew->contourFigureDrawingZones();
-	QString zoneName;
-	if (zones.count() == 0) {
+	auto zones = ew->discreteColorDrawingZones();
+	std::string zoneName;
+	if (zones.size() == 0) {
 		// No valid grid.
-		QMessageBox::warning(this, tr("Error"), tr("To export shape file, switch \"Display setting\" to \"Contour Figure\", not \"Color Fringe\" or \"Isolines\"."));
+		QMessageBox::warning(this, tr("Error"), tr("To export shape file, switch Color mode to \"Discrete Mode\"."));
 		return;
-	} else if (zones.count() == 1) {
+	} else if (zones.size() == 1) {
 		zoneName = zones.at(0);
-	} if (zones.count() > 1) {
+	} if (zones.size() > 1) {
 		ItemSelectingDialog dialog;
 		dialog.setItems(zones);
 		int ret = dialog.exec();
@@ -2026,7 +2026,7 @@ void iRICMainWindow::exportStKMZ()
 		warnSolverRunning();
 		return;
 	}
-	SVKmlExportWindowI* ew = dynamic_cast<SVKmlExportWindowI*>(m_centralWidget->activeSubWindow()->widget());
+	auto ew = dynamic_cast<SVKmlExportWindowI*>(m_centralWidget->activeSubWindow()->widget());
 	if (ew == nullptr) {
 		QMessageBox::information(this, tr("Information"), tr("Please select this menu when Visualization Window is active."));
 		return;
@@ -2038,15 +2038,15 @@ void iRICMainWindow::exportStKMZ()
 		return;
 	}
 
-	QList<QString> zones = ew->contourDrawingZones();
-	QString zoneName;
-	if (zones.count() == 0) {
+	auto zones = ew->discreteColorDrawingZones();
+	std::string zoneName;
+	if (zones.size() == 0) {
 		// No valid grid.
 		QMessageBox::warning(this, tr("Error"), tr("No Contour Figure is drawn now."));
 		return;
-	} else if (zones.count() == 1) {
+	} else if (zones.size() == 1) {
 		zoneName = zones.at(0);
-	} if (zones.count() > 1) {
+	} if (zones.size() > 1) {
 		ItemSelectingDialog dialog;
 		dialog.setMessage(tr("Please select which zone to use:"));
 		dialog.setItems(zones);

@@ -64,30 +64,30 @@ HEADERS += measureddata_api.h \
            measureddatapointdataitem.h \
            measureddatapointgroupdataitem.h \
            measureddatapointsetting.h \
-           measureddatapointsettingdialog.h \
            measureddatavectordataitem.h \
            measureddatavectorgroupdataitem.h \
            measureddatavectorsetting.h \
-           measureddatavectorsettingdialog.h \
            private/measureddatafiledataitem_impl.h \
            private/measureddatapointgroupdataitem_impl.h \
-           private/measureddatapointgroupdataitem_setsettingcommand.h \
-           private/measureddatapointsettingdialog_impl.h \
+           private/measureddatapointgroupdataitem_propertydialog.h \
+           private/measureddatapointgroupdataitem_updatesettingcommand.h \
            private/measureddatavectorgroupdataitem_impl.h \
-           private/measureddatavectorgroupdataitem_setsettingcommand.h \
-           private/measureddatavectorsettingdialog_impl.h
-FORMS += measureddatapointsettingdialog.ui measureddatavectorsettingdialog.ui
+           private/measureddatavectorgroupdataitem_propertydialog.h \
+           private/measureddatavectorgroupdataitem_updatesettingcommand.h
+FORMS += \
+         private/measureddatapointgroupdataitem_propertydialog.ui \
+         private/measureddatavectorgroupdataitem_propertydialog.ui
 SOURCES += measureddatafiledataitem.cpp \
            measureddatapointdataitem.cpp \
            measureddatapointgroupdataitem.cpp \
            measureddatapointsetting.cpp \
-           measureddatapointsettingdialog.cpp \
            measureddatavectordataitem.cpp \
            measureddatavectorgroupdataitem.cpp \
            measureddatavectorsetting.cpp \
-           measureddatavectorsettingdialog.cpp \
-           private/measureddatapointgroupdataitem_setsettingcommand.cpp \
-           private/measureddatavectorgroupdataitem_setsettingcommand.cpp
+           private/measureddatapointgroupdataitem_propertydialog.cpp \
+           private/measureddatapointgroupdataitem_updatesettingcommand.cpp \
+           private/measureddatavectorgroupdataitem_propertydialog.cpp \
+           private/measureddatavectorgroupdataitem_updatesettingcommand.cpp
 TRANSLATIONS += languages/iricMeasureddata_ar_EG.ts \
                 languages/iricMeasureddata_bg_BG.ts \
                 languages/iricMeasureddata_bs_BA.ts \

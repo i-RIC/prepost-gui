@@ -2,7 +2,6 @@
 #include "datamodel/post2dbirdeyewindowgridtypedataitem.h"
 #include "datamodel/post2dbirdeyewindownodescalargroupdataitem.h"
 #include "datamodel/post2dbirdeyewindownodescalargrouptopdataitem.h"
-#include "datamodel/post2dbirdeyewindowcellscalargrouptopdataitem.h"
 #include "datamodel/post2dbirdeyewindowrootdataitem.h"
 #include "datamodel/post2dbirdeyewindowzonedataitem.h"
 #include "post2dbirdeyewindow.h"
@@ -105,6 +104,8 @@ void Post2dBirdEyeWindowDataModel::contourSetting()
 
 void Post2dBirdEyeWindowDataModel::addCellScalar()
 {
+	// todo fix this
+	/*
 	Post2dBirdEyeWindowZoneDataItem* zItem = getZoneDataItem();
 	if (zItem == nullptr) { return; }
 	Post2dBirdEyeWindowCellScalarGroupTopDataItem* item = zItem->cellScalarGroupTopDataItem();
@@ -113,6 +114,7 @@ void Post2dBirdEyeWindowDataModel::addCellScalar()
 		return;
 	}
 	item->showAddDialog();
+	*/
 }
 
 void Post2dBirdEyeWindowDataModel::cellScalarSetting()
@@ -151,15 +153,12 @@ Post2dBirdEyeWindowZoneDataItem* Post2dBirdEyeWindowDataModel::getZoneDataItem()
 		std::string zone = dialog.zoneName();
 		Post2dBirdEyeWindowRootDataItem* root = dynamic_cast<Post2dBirdEyeWindowRootDataItem*>(m_rootDataItem);
 		Post2dBirdEyeWindowGridTypeDataItem* gt = root->gridTypeDataItem(gridType);
-		zitem = gt->zoneData(zone);
-		return zitem;
+		return gt->zoneData(zone);
 	} else {
 		Post2dBirdEyeWindowRootDataItem* root = dynamic_cast<Post2dBirdEyeWindowRootDataItem*>(m_rootDataItem);
 		QList<Post2dBirdEyeWindowGridTypeDataItem*> list = root->gridTypeDataItems();
 		Post2dBirdEyeWindowGridTypeDataItem* gt = list.at(0);
-		QList<Post2dBirdEyeWindowZoneDataItem*> zonelist = gt->zoneDatas();
-		zitem = zonelist.at(0);
-		return zitem;
+		return gt->zoneDatas().at(0);
 	}
 }
 

@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="bg_BG">
 <context>
     <name>Post2dBirdEyeObjectBrowser</name>
@@ -9,7 +11,7 @@
 <context>
     <name>Post2dBirdEyeWindow</name>
     <message>
-        <source>Bird's-Eye Post-processing (2D): %1</source>
+        <source>Bird&apos;s-Eye Post-processing (2D): %1</source>
         <translation>Постобработка на птичи очи (2D): %1</translation>
     </message>
     <message>
@@ -56,80 +58,80 @@
     <name>Post2dBirdEyeWindowAxesDataItem</name>
     <message>
         <source>Axes</source>
-        <translation>Брадви</translation>
+        <translation type="vanished">Брадви</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
-        <translation>Скаларен</translation>
+        <translation type="vanished">Скаларен</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
-        <translation>Актуализиране на настройката на контура</translation>
+        <translation type="vanished">Актуализиране на настройката на контура</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowCellScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (cell center)</source>
-        <translation>Скаларен (клетъчен център)</translation>
+        <translation type="vanished">Скаларен (клетъчен център)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Внимание</translation>
+        <translation type="vanished">Внимание</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>Могат да се определят максимум четири контура.</translation>
+        <translation type="vanished">Могат да се определят максимум четири контура.</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowContourSettingDialog</name>
     <message>
         <source>Scalar Setting</source>
-        <translation>Скаларна настройка</translation>
+        <translation type="vanished">Скаларна настройка</translation>
     </message>
     <message>
         <source>Scalar value for elevation</source>
-        <translation>Скаларна стойност за надморска височина</translation>
+        <translation type="vanished">Скаларна стойност за надморска височина</translation>
     </message>
     <message>
         <source>Color Setting</source>
-        <translation>Настройка на цвета</translation>
+        <translation type="vanished">Настройка на цвета</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Персонализиран цвят</translation>
+        <translation type="vanished">Персонализиран цвят</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>По скаларна стойност</translation>
+        <translation type="vanished">По скаларна стойност</translation>
     </message>
     <message>
         <source>Scalar Value:</source>
-        <translation>Скаларна стойност:</translation>
+        <translation type="vanished">Скаларна стойност:</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>Настройка на дисплея</translation>
+        <translation type="vanished">Настройка на дисплея</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>Регионална настройка (&amp;R)</translation>
+        <translation type="vanished">Регионална настройка (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Настройка на цветната лента (&amp;C)</translation>
+        <translation type="vanished">Настройка на цветната лента (&amp;C)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Грешка</translation>
+        <translation type="vanished">Грешка</translation>
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
-        <translation>За диапазон от стойности максималната стойност е по-малка от минималната стойност.</translation>
+        <translation type="vanished">За диапазон от стойности максималната стойност е по-малка от минималната стойност.</translation>
     </message>
 </context>
 <context>
@@ -144,7 +146,7 @@
     </message>
     <message>
         <source>Contour setting is not available, because this result does not contain cell scalar values.</source>
-        <translation>Настройката за контур не е налична, тъй като този резултат не съдържа скаларни стойности на клетката.</translation>
+        <translation type="vanished">Настройката за контур не е налична, тъй като този резултат не съдържа скаларни стойности на клетката.</translation>
     </message>
     <message>
         <source>Z-direction Scale</source>
@@ -163,6 +165,17 @@
     </message>
 </context>
 <context>
+    <name>Post2dBirdEyeWindowGridShapeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Shape Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scalar value for Elevation</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>Post2dBirdEyeWindowNodeScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
@@ -170,7 +183,42 @@
     </message>
     <message>
         <source>Update Contour Setting</source>
-        <translation>Актуализиране на настройката на контура</translation>
+        <translation type="vanished">Актуализиране на настройката на контура</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation type="unfinished">Персонализиран цвят</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation type="unfinished">По скаларна стойност</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -181,22 +229,22 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Внимание</translation>
+        <translation type="vanished">Внимание</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>Могат да се определят максимум четири контура.</translation>
+        <translation type="vanished">Могат да се определят максимум четири контура.</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
         <source>Create Contour</source>
-        <translation>Създайте контур</translation>
+        <translation type="vanished">Създайте контур</translation>
     </message>
     <message>
         <source>Update Grid Shape Setting</source>
-        <translation>Актуализирайте настройката на формата на мрежата</translation>
+        <translation type="vanished">Актуализирайте настройката на формата на мрежата</translation>
     </message>
     <message>
         <source>Edit Background Color</source>

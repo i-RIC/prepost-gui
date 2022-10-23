@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="pl_PL">
 <context>
     <name>AnimationController</name>
@@ -449,7 +451,7 @@ This wizard will generate or update translation files for solver definition file
         <translation>Wybierz Solver</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
         <translation>Kiedy tworzysz nowy projekt, musisz wybrać solver, który będzie używany do obliczeń. Wybierz solver i naciśnij przycisk „OK”.</translation>
     </message>
 </context>
@@ -510,6 +512,10 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <source>Font Default</source>
         <translation>Czcionka domyślna</translation>
+    </message>
+    <message>
+        <source>Text Format</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -913,6 +919,37 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
 </context>
 <context>
+    <name>PreferencePageTextFormat</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Formularz</translation>
+    </message>
+    <message>
+        <source>Coordinates in Status Bar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Decimal places:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Attribute Browser</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Decimal places</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Coordinates:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>PreferencePageTms</name>
     <message>
         <source>Form</source>
@@ -1285,9 +1322,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>Ostrzeżenie</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
+        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
 %2</source>
-        <translation>Wystąpił błąd podczas ładowania pliku definicji solvera w folderze „ %1 ". Ten solver jest ignorowany. %2</translation>
+        <translation>Wystąpił błąd podczas ładowania pliku definicji solvera w folderze „ %1 &quot;. Ten solver jest ignorowany. %2</translation>
     </message>
 </context>
 <context>
@@ -1406,7 +1443,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Wydaje się, że ten projekt jest otwierany przez inne okno interfejsu iRIC GUI. Nie można otworzyć folderu projektu z wielu okien GUI.</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation>Otwarty projekt nie jest kopiowany do katalogu roboczego i będziesz zmuszony do zapisania zmian dokonanych w tym projekcie. Jeśli chcesz zachować aktualny projekt, najpierw zapisz go w innym projekcie.</translation>
     </message>
     <message>
@@ -1566,8 +1603,8 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Obecnie aktywne okno podrzędne nie obsługuje eksportowania konturu.</translation>
     </message>
     <message>
-        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation>Aby wyeksportować plik kształtu, przełącz opcję „Ustawienia wyświetlania” na „Figurę konturu”, a nie na „Obramowanie kolorów” lub „Izolinie”.</translation>
+        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
+        <translation type="vanished">Aby wyeksportować plik kształtu, przełącz opcję „Ustawienia wyświetlania” na „Figurę konturu”, a nie na „Obramowanie kolorów” lub „Izolinie”.</translation>
     </message>
     <message>
         <source>Export contour figure to ESRI Shapefiles</source>
@@ -1705,6 +1742,10 @@ Option -&gt; Preferences</source>
     <message>
         <source>Setting file (*.vgsetting *.xml)</source>
         <translation>Plik ustawień (*.vgsetting *.xml)</translation>
+    </message>
+    <message>
+        <source>To export shape file, switch Color mode to &quot;Discrete Mode&quot;.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2051,7 +2092,7 @@ Option -&gt; Preferences</source>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&amp;Solver Information...</source>
@@ -2078,7 +2119,7 @@ Option -&gt; Preferences</source>
         <translation>Otwórz nowe okno przetwarzania końcowego 2D</translation>
     </message>
     <message>
-        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
+        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
         <translation>Otwórz nowe okno przetwarzania końcowego z lotu ptaka 2D</translation>
     </message>
     <message>

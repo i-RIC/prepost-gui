@@ -11,7 +11,6 @@ class QwtPlotMarker;
 class QAction;
 class SolverDefinitionGridType;
 class Post2dWindowZoneDataItem;
-class LookupTableContainer;
 class Graph2dHybridWindowHorizontalAxisSetting;
 class Graph2dHybridWindowResultCopyGroupDataItem;
 

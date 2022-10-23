@@ -17,9 +17,6 @@ public:
 	GridAttributeVariationEditWidget* variationEditWidget(QWidget* parent) override;
 	GeoData* buildBackgroundGeoData(ProjectDataItem* parent) override;
 
-	ScalarsToColorsContainer* createScalarsToColorsContainer(ProjectDataItem* d) override;
-	ScalarsToColorsEditWidget* createScalarsToColorsEditWidget(QWidget* parent) const override;
-
 	QString undefinedString() const;
 	QString undefinedEnglishString() const;
 

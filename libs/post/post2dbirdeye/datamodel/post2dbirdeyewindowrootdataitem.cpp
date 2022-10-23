@@ -1,12 +1,11 @@
 #include "../post2dbirdeyeobjectbrowser.h"
 #include "../post2dbirdeyewindow.h"
 #include "../post2dbirdeyewindowdatamodel.h"
-#include "../post2dbirdeyewindowdatamodel.h"
 #include "../post2dbirdeyewindowgraphicsview.h"
-#include "post2dbirdeyewindowaxesdataitem.h"
 #include "post2dbirdeyewindowgridtypedataitem.h"
 #include "post2dbirdeyewindowrootdataitem.h"
 
+#include <dataitem/axis3d/axis3ddataitem.h>
 #include <guibase/objectbrowserview.h>
 #include <guicore/postcontainer/postsolutioninfo.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
@@ -18,7 +17,6 @@
 #include <postbase/title/posttitledataitem.h>
 
 #include <QDomNode>
-#include <QStandardItemModel>
 #include <QTime>
 #include <QXmlStreamWriter>
 
@@ -54,7 +52,7 @@ Post2dBirdEyeWindowRootDataItem::Post2dBirdEyeWindowRootDataItem(Post2dBirdEyeWi
 	m_timeDataItem = new PostTimeDataItem(this);
 	m_childItems.push_back(m_timeDataItem);
 
-	m_axesDataItem = new Post2dBirdEyeWindowAxesDataItem(this);
+	m_axesDataItem = new Axis3dDataItem(this);
 	m_childItems.push_back(m_axesDataItem);
 
 	updateZDepthRangeItemCount();
@@ -134,6 +132,11 @@ void Post2dBirdEyeWindowRootDataItem::doSaveToProjectMainFile(QXmlStreamWriter& 
 	writer.writeEndElement();
 }
 
+const QList<Post2dBirdEyeWindowGridTypeDataItem*>& Post2dBirdEyeWindowRootDataItem::gridTypeDataItems() const
+{
+	return m_gridTypeDataItems;
+}
+
 Post2dBirdEyeWindowGridTypeDataItem* Post2dBirdEyeWindowRootDataItem::gridTypeDataItem(const std::string& name) const
 {
 	for (auto item : m_gridTypeDataItems) {
@@ -164,7 +167,7 @@ void Post2dBirdEyeWindowRootDataItem::update()
 {
 	QTime time;
 	time.start();
-	for (Post2dBirdEyeWindowGridTypeDataItem* item : m_gridTypeDataItems) {
+	for (auto item : m_gridTypeDataItems) {
 		item->update();
 	}
 	qDebug("Whole update elapsed time:%d", time.elapsed());
@@ -183,4 +186,14 @@ Post2dBirdEyeWindowZoneDataItem* Post2dBirdEyeWindowRootDataItem::zoneDataItem(c
 		if (i != 0) {return i;}
 	}
 	return nullptr;
+}
+
+PostTitleDataItem* Post2dBirdEyeWindowRootDataItem::titleDataItem() const
+{
+	return m_titleDataItem;
+}
+
+PostTimeDataItem* Post2dBirdEyeWindowRootDataItem::timeDataItem() const
+{
+	return m_timeDataItem;
 }

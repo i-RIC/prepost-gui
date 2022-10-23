@@ -3,8 +3,7 @@
 
 #include <guicore/named/namedgraphicwindowdataitem.h>
 
-class SolverDefinitionGridAttribute;
-class QAction;
+class Post2dWindowNodeVectorArrowGroupDataItem;
 
 class Post2dWindowNodeVectorArrowDataItem : public NamedGraphicWindowDataItem
 {
@@ -20,6 +19,9 @@ public:
 	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void addCustomMenuItems(QMenu* menu) override;
+
+private:
+	Post2dWindowNodeVectorArrowGroupDataItem* groupDataItem() const;
 };
 
 #endif // POST2DWINDOWNODEVECTORARROWDATAITEM_H

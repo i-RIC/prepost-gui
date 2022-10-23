@@ -93,23 +93,24 @@ public:
 	vtkPolyData* vtkGrid() const;
 	vtkPolyData* delaunayedPolyData() const;
 
+	void setPoints(vtkPoints* points, vtkDataArray* values);
+	void setSTLData(vtkPolyData* data, vtkDataArray* values);
+
 	bool getValueAt(double x, double y, double* value);
 	bool getValueAt(const QPointF& pos, double* value);
 
 	/// Execute the delaunay division.
 	bool doDelaunay(bool allowCancel = false);
 	void setupActors() override;
-	void setupActions();
 	void setupMenu() override;
 	bool addToolBarButtons(QToolBar* parent) override;
-	void setPoints(vtkPoints* points, vtkDataArray* values);
-	void setSTLData(vtkPolyData* data, vtkDataArray* values);
+	void applyColorMapSetting() override;
 	void updateZDepthRangeItemCount(ZDepthRange& range) override;
 	void assignActorZValues(const ZDepthRange& range) override;
+
 	QDialog* propertyDialog(QWidget* parent) override;
 	void handlePropertyDialogAccepted(QDialog* propDialog) override;
-	void updateRepresentation();
-	void updateActorSettings();
+
 	void addCustomMenuItems(QMenu* menu) override;
 	void keyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* v) override;
 	void keyReleaseEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* v) override;
@@ -128,7 +129,6 @@ public:
 	void selectPointsInsideBox(MouseBoundingBox* box, bool xOr);
 	void selectPointsNearPoint(const QVector2D& pos, bool xOr);
 	void clearPointsSelection();
-	void enablePointSelectedActions(bool val);
 	void finishAddPoint();
 	void finishInterpPoint();
 	bool needRemeshing() {return m_needRemeshing;}
@@ -138,6 +138,9 @@ public slots:
 	void remeshTINS(bool nodialog = false);
 
 private:
+	void updateActorSettings();
+	void updateRepresentation();
+
 	bool checkBreakLines();
 	void updateBreakLinesOnDelete(QVector<vtkIdType>& deletedPoints);
 	void updateBreakLinesOnInsert(QVector<vtkIdType>& deletedPoints);
@@ -195,7 +198,6 @@ protected:
 
 	void rebuildQTree();
 
-	vtkSmartPointer<vtkPolyData> m_vtkGrid;
 	vtkSmartPointer<vtkPolyData> m_vtkDelaunayedPolyData;
 	geos::index::quadtree::Quadtree* m_qTree;
 
@@ -210,18 +212,6 @@ protected:
 	int m_pointSize;
 	GeoDataPointmapRepresentationDialog::Representation m_representation;
 
-	vtkSmartPointer<vtkMaskPoints> m_maskPoints10k;
-	vtkSmartPointer<vtkMaskPoints> m_maskPoints40k;
-
-	vtkSmartPointer<vtkPolyDataMapper> m_maskPoints10kMapper;
-	vtkSmartPointer<vtkPolyDataMapper> m_maskPoints40kMapper;
-
-	vtkSmartPointer<vtkPolyDataMapper> m_vtkMapper;
-	vtkSmartPointer<vtkLODActor> m_actor;
-
-	vtkSmartPointer<vtkPolyDataMapper> m_pointsMapper;
-	vtkSmartPointer<vtkLODActor> m_pointsActor;
-
 	vtkSmartPointer<vtkPolyData> m_selectedVerticesGrid;
 	vtkSmartPointer<vtkPolyDataMapper> m_selectedMapper;
 	vtkSmartPointer<vtkActor> m_selectedActor;
@@ -232,36 +222,6 @@ protected:
 	std::vector<bool> m_interpolateNewFlags;
 
 	PolygonController m_selectionPolygonController;
-
-	QPixmap m_addPixmap;
-	QCursor m_addCursor;
-	QPixmap m_removePixmap;
-	QCursor m_removeCursor;
-	QPixmap m_interpPointAddPixmap;
-	QCursor m_interpPointAddCursor;
-	QPixmap m_interpPointCtrlAddPixmap;
-	QCursor m_interpPointCtrlAddCursor;
-
-	QAction* m_selectionModePoint;
-	QAction* m_selectionModePolygon;
-	QAction* m_addPointAction;
-	QAction* m_interpolatePointAction;
-	QAction* m_removeTrianglesWithLongEdgeAction;
-	QAction* m_displaySettingAction;
-
-	QAction* m_editPointsAction;
-	QAction* m_editPointsDeleteAction;
-	QAction* m_editPointsExportAction;
-	QAction* m_editPointsLessThanAction;
-	QAction* m_editPointsGreaterThanAction;
-
-	QAction* m_remeshAction;
-	QAction* m_addBreakLineAction;
-	QAction* m_removeBreakLineAction;
-	QAction* m_removeAllBreakLinesAction;
-	QAction* m_mergeAction;
-
-	QMenu*   m_rightClickingMenu;
 
 	bool lastInterpPointKnown;
 	bool doubleclick;
@@ -283,8 +243,13 @@ private:
 	class RemoveTrianglesCommand;
 
 	class TrianglesWithLongEdgeRemover;
-
 	TrianglesWithLongEdgeRemover* m_longEdgeRemover;
+
+	class PointsManager;
+
+protected:
+	class Impl;
+	Impl* impl;
 
 public:
 	friend class GeoDataPointmapBreakLine;

@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="pl_PL">
 <context>
     <name>ParticleArbitraryTimeEditDialog</name>
@@ -57,163 +59,170 @@
     <name>PostParticleBasicSettingDialog</name>
     <message>
         <source>Particles Setting</source>
-        <translation>Ustawienie cząstek</translation>
+        <translation type="vanished">Ustawienie cząstek</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Kolor:</translation>
+        <translation type="vanished">Kolor:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>Rozmiar:</translation>
+        <translation type="vanished">Rozmiar:</translation>
     </message>
 </context>
 <context>
     <name>PostParticleScalarPropertyDialog</name>
     <message>
         <source>Particle Scalar Setting</source>
-        <translation>Ustawienie skalarne cząstek</translation>
+        <translation type="vanished">Ustawienie skalarne cząstek</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Kolor niestandardowy</translation>
+        <translation type="vanished">Kolor niestandardowy</translation>
     </message>
     <message>
         <source>Color by attribute value</source>
-        <translation>Koloruj według wartości atrybutu</translation>
+        <translation type="vanished">Koloruj według wartości atrybutu</translation>
     </message>
     <message>
         <source>Attribute:</source>
-        <translation>Atrybut:</translation>
+        <translation type="vanished">Atrybut:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>Rozmiar:</translation>
+        <translation type="vanished">Rozmiar:</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Ustawienie paska kolorów (&amp;C)</translation>
+        <translation type="vanished">Ustawienie paska kolorów (&amp;C)</translation>
     </message>
 </context>
 <context>
     <name>PostParticleVectorPropertyDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Ustawienie strzałki</translation>
+        <translation type="vanished">Ustawienie strzałki</translation>
     </message>
     <message>
         <source>Attribute value:</source>
-        <translation>Wartość atrybutu:</translation>
+        <translation type="vanished">Wartość atrybutu:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Długość</translation>
+        <translation type="vanished">Długość</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Automatyczny</translation>
+        <translation type="vanished">Automatyczny</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Wartość standardowa:</translation>
+        <translation type="vanished">Wartość standardowa:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[SM]</translation>
+        <translation type="vanished">[SM]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Długość na ekranie:</translation>
+        <translation type="vanished">Długość na ekranie:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[piksel]</translation>
+        <translation type="vanished">[piksel]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Minimalna wartość do narysowania:</translation>
+        <translation type="vanished">Minimalna wartość do narysowania:</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>Próbowanie</translation>
+        <translation type="vanished">Próbowanie</translation>
     </message>
     <message>
         <source>All particles</source>
-        <translation>Wszystkie cząstki</translation>
+        <translation type="vanished">Wszystkie cząstki</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>Częstotliwość próbkowania:</translation>
+        <translation type="vanished">Częstotliwość próbkowania:</translation>
     </message>
     <message>
         <source>Specify number of particles</source>
-        <translation>Określ liczbę cząstek</translation>
+        <translation type="vanished">Określ liczbę cząstek</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Kolor</translation>
+        <translation type="vanished">Kolor</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Niestandardowy kolor</translation>
+        <translation type="vanished">Niestandardowy kolor</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Według wartości skalarnej</translation>
+        <translation type="vanished">Według wartości skalarnej</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>Kształt strzałki</translation>
+        <translation type="vanished">Kształt strzałki</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>Wielkość strzały:</translation>
+        <translation type="vanished">Wielkość strzały:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>Szerokość linii:</translation>
+        <translation type="vanished">Szerokość linii:</translation>
     </message>
 </context>
 <context>
     <name>PostPolyDataBasicSettingDialog</name>
     <message>
         <source>Polygon Setting</source>
-        <translation>Ustawienie wielokąta</translation>
+        <translation type="vanished">Ustawienie wielokąta</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Kolor:</translation>
+        <translation type="vanished">Kolor:</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Szerokość linii:</translation>
+        <translation type="vanished">Szerokość linii:</translation>
     </message>
 </context>
 <context>
     <name>PostPolyDataScalarPropertyDialog</name>
     <message>
         <source>Polygon Setting</source>
-        <translation>Ustawienie wielokąta</translation>
+        <translation type="vanished">Ustawienie wielokąta</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Kolor niestandardowy</translation>
+        <translation type="vanished">Kolor niestandardowy</translation>
     </message>
     <message>
         <source>Color by attribute value</source>
-        <translation>Koloruj według wartości atrybutu</translation>
+        <translation type="vanished">Koloruj według wartości atrybutu</translation>
     </message>
     <message>
         <source>Attribute:</source>
-        <translation>Atrybut:</translation>
+        <translation type="vanished">Atrybut:</translation>
     </message>
     <message>
         <source>Line Width</source>
-        <translation>Szerokość linii</translation>
+        <translation type="vanished">Szerokość linii</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Ustawienie paska kolorów (&amp;C)</translation>
+        <translation type="vanished">Ustawienie paska kolorów (&amp;C)</translation>
+    </message>
+</context>
+<context>
+    <name>PostSolutionSelectDialog</name>
+    <message>
+        <source>Select Target Result</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

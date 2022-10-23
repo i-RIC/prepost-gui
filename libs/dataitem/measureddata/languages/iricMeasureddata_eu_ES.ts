@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="eu_ES">
 <context>
     <name>MeasuredDataFileDataItem</name>
@@ -38,34 +40,81 @@
     </message>
 </context>
 <context>
-    <name>MeasuredDataPointSettingDialog</name>
+    <name>MeasuredDataPointGroupDataItem_PropertyDialog</name>
     <message>
-        <source>Scalar Setting</source>
-        <translation>Ezarpen eskalarra</translation>
-    </message>
-    <message>
-        <source>Measured Value:</source>
-        <translation>Neurtutako balioa:</translation>
+        <source>Points Display Setting Dialog</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>Bistaratzeko ezarpena</translation>
+        <translation type="unfinished">Bistaratzeko ezarpena</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Kolore</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="unfinished">Esportatu (&amp;E)...</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation>Puntuaren tamaina:</translation>
+        <translation type="unfinished">Puntuaren tamaina:</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataPointSettingDialog</name>
+    <message>
+        <source>Scalar Setting</source>
+        <translation type="vanished">Ezarpen eskalarra</translation>
+    </message>
+    <message>
+        <source>Measured Value:</source>
+        <translation type="vanished">Neurtutako balioa:</translation>
+    </message>
+    <message>
+        <source>Display Setting</source>
+        <translation type="vanished">Bistaratzeko ezarpena</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="vanished">Puntuaren tamaina:</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Kolore barra ezarpena (&amp;C)</translation>
+        <translation type="vanished">Kolore barra ezarpena (&amp;C)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Errorea</translation>
+        <translation type="vanished">Errorea</translation>
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
-        <translation>Balio barrutian, gehieneko balioa min balioa baino txikiagoa da.</translation>
+        <translation type="vanished">Balio barrutian, gehieneko balioa min balioa baino txikiagoa da.</translation>
     </message>
 </context>
 <context>
@@ -80,62 +129,69 @@
     </message>
     <message>
         <source>Update Arrow Setting</source>
-        <translation>Eguneratu geziaren ezarpena</translation>
+        <translation type="vanished">Eguneratu geziaren ezarpena</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataVectorGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Measured Data Arrow Setting</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>MeasuredDataVectorSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Geziaren ezarpena</translation>
+        <translation type="vanished">Geziaren ezarpena</translation>
     </message>
     <message>
         <source>Physical value:</source>
-        <translation>Balio fisikoa:</translation>
+        <translation type="vanished">Balio fisikoa:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Luzera</translation>
+        <translation type="vanished">Luzera</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Automatikoa</translation>
+        <translation type="vanished">Automatikoa</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Balio estandarra:</translation>
+        <translation type="vanished">Balio estandarra:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[anderea]</translation>
+        <translation type="vanished">[anderea]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Pantailan luzera:</translation>
+        <translation type="vanished">Pantailan luzera:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[pixel]</translation>
+        <translation type="vanished">[pixel]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Marrazteko gutxieneko balioa:</translation>
+        <translation type="vanished">Marrazteko gutxieneko balioa:</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Kolore</translation>
+        <translation type="vanished">Kolore</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Kolore pertsonalizatua</translation>
+        <translation type="vanished">Kolore pertsonalizatua</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Balio eskalarraren arabera</translation>
+        <translation type="vanished">Balio eskalarraren arabera</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Kolore barra ezarpena (&amp;C)</translation>
+        <translation type="vanished">Kolore barra ezarpena (&amp;C)</translation>
     </message>
 </context>
 </TS>

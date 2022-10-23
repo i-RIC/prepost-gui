@@ -89,7 +89,7 @@ void iRICMainWindowActionManager::setupFileMenu()
 	m_fileMenu = new QMenu(tr("&File"), m_menuBar);
 
 	newAction = new QAction(tr("&New Project..."), m_fileMenu);
-	newAction->setIcon(QIcon(":/images/iconNew.svg"));
+	newAction->setIcon(QIcon(":/libs/guibase/images/iconNew.svg"));
 	newAction->setShortcut(QKeySequence(tr("Ctrl+N")));
 
 	m_fileMenu->addAction(newAction);

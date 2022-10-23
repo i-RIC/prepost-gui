@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="tr_TR">
 <context>
     <name>ParticleArbitraryTimeEditDialog</name>
@@ -57,163 +59,170 @@
     <name>PostParticleBasicSettingDialog</name>
     <message>
         <source>Particles Setting</source>
-        <translation>Parçacık Ayarı</translation>
+        <translation type="vanished">Parçacık Ayarı</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Renk:</translation>
+        <translation type="vanished">Renk:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>Boy:</translation>
+        <translation type="vanished">Boy:</translation>
     </message>
 </context>
 <context>
     <name>PostParticleScalarPropertyDialog</name>
     <message>
         <source>Particle Scalar Setting</source>
-        <translation>Parçacık Skaler Ayarı</translation>
+        <translation type="vanished">Parçacık Skaler Ayarı</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Özel renk</translation>
+        <translation type="vanished">Özel renk</translation>
     </message>
     <message>
         <source>Color by attribute value</source>
-        <translation>Özellik değerine göre renk</translation>
+        <translation type="vanished">Özellik değerine göre renk</translation>
     </message>
     <message>
         <source>Attribute:</source>
-        <translation>Bağlanmak:</translation>
+        <translation type="vanished">Bağlanmak:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>Boy:</translation>
+        <translation type="vanished">Boy:</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Renk Çubuğu Ayarı (&amp;C)</translation>
+        <translation type="vanished">Renk Çubuğu Ayarı (&amp;C)</translation>
     </message>
 </context>
 <context>
     <name>PostParticleVectorPropertyDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Ok Ayarı</translation>
+        <translation type="vanished">Ok Ayarı</translation>
     </message>
     <message>
         <source>Attribute value:</source>
-        <translation>Özellik değeri:</translation>
+        <translation type="vanished">Özellik değeri:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Uzunluk</translation>
+        <translation type="vanished">Uzunluk</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Oto</translation>
+        <translation type="vanished">Oto</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Standart değer:</translation>
+        <translation type="vanished">Standart değer:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[Hanım]</translation>
+        <translation type="vanished">[Hanım]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Ekrandaki uzunluk:</translation>
+        <translation type="vanished">Ekrandaki uzunluk:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[piksel]</translation>
+        <translation type="vanished">[piksel]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Çekilecek minimum değer:</translation>
+        <translation type="vanished">Çekilecek minimum değer:</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>Örnekleme</translation>
+        <translation type="vanished">Örnekleme</translation>
     </message>
     <message>
         <source>All particles</source>
-        <translation>Tüm parçacıklar</translation>
+        <translation type="vanished">Tüm parçacıklar</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>Örnekleme oranı:</translation>
+        <translation type="vanished">Örnekleme oranı:</translation>
     </message>
     <message>
         <source>Specify number of particles</source>
-        <translation>Parçacık sayısını belirtin</translation>
+        <translation type="vanished">Parçacık sayısını belirtin</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Renk</translation>
+        <translation type="vanished">Renk</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Özel renk</translation>
+        <translation type="vanished">Özel renk</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>skaler değere göre</translation>
+        <translation type="vanished">skaler değere göre</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>ok şekli</translation>
+        <translation type="vanished">ok şekli</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>Ok boyutu:</translation>
+        <translation type="vanished">Ok boyutu:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>Hat genişliği:</translation>
+        <translation type="vanished">Hat genişliği:</translation>
     </message>
 </context>
 <context>
     <name>PostPolyDataBasicSettingDialog</name>
     <message>
         <source>Polygon Setting</source>
-        <translation>Çokgen Ayarı</translation>
+        <translation type="vanished">Çokgen Ayarı</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Renk:</translation>
+        <translation type="vanished">Renk:</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Hat genişliği:</translation>
+        <translation type="vanished">Hat genişliği:</translation>
     </message>
 </context>
 <context>
     <name>PostPolyDataScalarPropertyDialog</name>
     <message>
         <source>Polygon Setting</source>
-        <translation>Çokgen Ayarı</translation>
+        <translation type="vanished">Çokgen Ayarı</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Özel renk</translation>
+        <translation type="vanished">Özel renk</translation>
     </message>
     <message>
         <source>Color by attribute value</source>
-        <translation>Özellik değerine göre renk</translation>
+        <translation type="vanished">Özellik değerine göre renk</translation>
     </message>
     <message>
         <source>Attribute:</source>
-        <translation>Bağlanmak:</translation>
+        <translation type="vanished">Bağlanmak:</translation>
     </message>
     <message>
         <source>Line Width</source>
-        <translation>Hat genişliği</translation>
+        <translation type="vanished">Hat genişliği</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Renk Çubuğu Ayarı (&amp;C)</translation>
+        <translation type="vanished">Renk Çubuğu Ayarı (&amp;C)</translation>
+    </message>
+</context>
+<context>
+    <name>PostSolutionSelectDialog</name>
+    <message>
+        <source>Select Target Result</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

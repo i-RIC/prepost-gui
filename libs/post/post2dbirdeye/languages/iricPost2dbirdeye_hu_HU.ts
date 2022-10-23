@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="hu_HU">
 <context>
     <name>Post2dBirdEyeObjectBrowser</name>
@@ -9,7 +11,7 @@
 <context>
     <name>Post2dBirdEyeWindow</name>
     <message>
-        <source>Bird's-Eye Post-processing (2D): %1</source>
+        <source>Bird&apos;s-Eye Post-processing (2D): %1</source>
         <translation>Madártávlati utófeldolgozás (2D): %1</translation>
     </message>
     <message>
@@ -56,80 +58,80 @@
     <name>Post2dBirdEyeWindowAxesDataItem</name>
     <message>
         <source>Axes</source>
-        <translation>Balták</translation>
+        <translation type="vanished">Balták</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
-        <translation>Scalar</translation>
+        <translation type="vanished">Scalar</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
-        <translation>Frissítse a kontúr beállítást</translation>
+        <translation type="vanished">Frissítse a kontúr beállítást</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowCellScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (cell center)</source>
-        <translation>Skaláris (sejtközpont)</translation>
+        <translation type="vanished">Skaláris (sejtközpont)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Figyelem</translation>
+        <translation type="vanished">Figyelem</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>Legfeljebb négy kontúr definiálható.</translation>
+        <translation type="vanished">Legfeljebb négy kontúr definiálható.</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowContourSettingDialog</name>
     <message>
         <source>Scalar Setting</source>
-        <translation>Skaláris beállítás</translation>
+        <translation type="vanished">Skaláris beállítás</translation>
     </message>
     <message>
         <source>Scalar value for elevation</source>
-        <translation>A magasság skaláris értéke</translation>
+        <translation type="vanished">A magasság skaláris értéke</translation>
     </message>
     <message>
         <source>Color Setting</source>
-        <translation>Színbeállítás</translation>
+        <translation type="vanished">Színbeállítás</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Egyedi szín</translation>
+        <translation type="vanished">Egyedi szín</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Skaláris érték szerint</translation>
+        <translation type="vanished">Skaláris érték szerint</translation>
     </message>
     <message>
         <source>Scalar Value:</source>
-        <translation>Skaláris érték:</translation>
+        <translation type="vanished">Skaláris érték:</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>Kijelző beállítás</translation>
+        <translation type="vanished">Kijelző beállítás</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>Régió beállítása (&amp;R)</translation>
+        <translation type="vanished">Régió beállítása (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Színsáv beállítása (&amp;C)</translation>
+        <translation type="vanished">Színsáv beállítása (&amp;C)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Hiba</translation>
+        <translation type="vanished">Hiba</translation>
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
-        <translation>Az értéktartományban a maximális érték kisebb, mint a minimális érték.</translation>
+        <translation type="vanished">Az értéktartományban a maximális érték kisebb, mint a minimális érték.</translation>
     </message>
 </context>
 <context>
@@ -144,7 +146,7 @@
     </message>
     <message>
         <source>Contour setting is not available, because this result does not contain cell scalar values.</source>
-        <translation>A kontúr beállítás nem érhető el, mivel ez az eredmény nem tartalmaz cella skaláris értékeket.</translation>
+        <translation type="vanished">A kontúr beállítás nem érhető el, mivel ez az eredmény nem tartalmaz cella skaláris értékeket.</translation>
     </message>
     <message>
         <source>Z-direction Scale</source>
@@ -163,6 +165,17 @@
     </message>
 </context>
 <context>
+    <name>Post2dBirdEyeWindowGridShapeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Shape Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scalar value for Elevation</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>Post2dBirdEyeWindowNodeScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
@@ -170,7 +183,42 @@
     </message>
     <message>
         <source>Update Contour Setting</source>
-        <translation>Frissítse a kontúr beállítást</translation>
+        <translation type="vanished">Frissítse a kontúr beállítást</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation type="unfinished">Egyedi szín</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation type="unfinished">Skaláris érték szerint</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -181,22 +229,22 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Figyelem</translation>
+        <translation type="vanished">Figyelem</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>Legfeljebb négy kontúr definiálható.</translation>
+        <translation type="vanished">Legfeljebb négy kontúr definiálható.</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
         <source>Create Contour</source>
-        <translation>Kontúr létrehozása</translation>
+        <translation type="vanished">Kontúr létrehozása</translation>
     </message>
     <message>
         <source>Update Grid Shape Setting</source>
-        <translation>Frissítse a rács alakzat beállítását</translation>
+        <translation type="vanished">Frissítse a rács alakzat beállítását</translation>
     </message>
     <message>
         <source>Edit Background Color</source>

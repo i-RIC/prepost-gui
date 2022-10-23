@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="zh_CN">
 <context>
     <name>ParticleArbitraryTimeEditDialog</name>
@@ -57,163 +59,170 @@
     <name>PostParticleBasicSettingDialog</name>
     <message>
         <source>Particles Setting</source>
-        <translation>颗粒设置</translation>
+        <translation type="vanished">颗粒设置</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>颜色：</translation>
+        <translation type="vanished">颜色：</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>大小：</translation>
+        <translation type="vanished">大小：</translation>
     </message>
 </context>
 <context>
     <name>PostParticleScalarPropertyDialog</name>
     <message>
         <source>Particle Scalar Setting</source>
-        <translation>粒子标量设置</translation>
+        <translation type="vanished">粒子标量设置</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>自定义颜色</translation>
+        <translation type="vanished">自定义颜色</translation>
     </message>
     <message>
         <source>Color by attribute value</source>
-        <translation>根据属性值上色</translation>
+        <translation type="vanished">根据属性值上色</translation>
     </message>
     <message>
         <source>Attribute:</source>
-        <translation>属性：</translation>
+        <translation type="vanished">属性：</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>大小：</translation>
+        <translation type="vanished">大小：</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>&amp;颜色条设置</translation>
+        <translation type="vanished">&amp;颜色条设置</translation>
     </message>
 </context>
 <context>
     <name>PostParticleVectorPropertyDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>箭头设置</translation>
+        <translation type="vanished">箭头设置</translation>
     </message>
     <message>
         <source>Attribute value:</source>
-        <translation>属性值：</translation>
+        <translation type="vanished">属性值：</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>长度</translation>
+        <translation type="vanished">长度</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>自动</translation>
+        <translation type="vanished">自动</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>标准值：</translation>
+        <translation type="vanished">标准值：</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[多发性硬化症]</translation>
+        <translation type="vanished">[多发性硬化症]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>屏幕长度：</translation>
+        <translation type="vanished">屏幕长度：</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[像素]</translation>
+        <translation type="vanished">[像素]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>绘制最小值：</translation>
+        <translation type="vanished">绘制最小值：</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>取样</translation>
+        <translation type="vanished">取样</translation>
     </message>
     <message>
         <source>All particles</source>
-        <translation>所有粒子</translation>
+        <translation type="vanished">所有粒子</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>样本率</translation>
+        <translation type="vanished">样本率</translation>
     </message>
     <message>
         <source>Specify number of particles</source>
-        <translation>指明粒子数量</translation>
+        <translation type="vanished">指明粒子数量</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>颜色</translation>
+        <translation type="vanished">颜色</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>自定义颜色</translation>
+        <translation type="vanished">自定义颜色</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>根据标量值</translation>
+        <translation type="vanished">根据标量值</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>箭头形状</translation>
+        <translation type="vanished">箭头形状</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>箭头大小：</translation>
+        <translation type="vanished">箭头大小：</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>行宽：</translation>
+        <translation type="vanished">行宽：</translation>
     </message>
 </context>
 <context>
     <name>PostPolyDataBasicSettingDialog</name>
     <message>
         <source>Polygon Setting</source>
-        <translation>多边形设置</translation>
+        <translation type="vanished">多边形设置</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>颜色：</translation>
+        <translation type="vanished">颜色：</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>行宽：</translation>
+        <translation type="vanished">行宽：</translation>
     </message>
 </context>
 <context>
     <name>PostPolyDataScalarPropertyDialog</name>
     <message>
         <source>Polygon Setting</source>
-        <translation>多边形设置</translation>
+        <translation type="vanished">多边形设置</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>自定义颜色</translation>
+        <translation type="vanished">自定义颜色</translation>
     </message>
     <message>
         <source>Color by attribute value</source>
-        <translation>按属性值颜色</translation>
+        <translation type="vanished">按属性值颜色</translation>
     </message>
     <message>
         <source>Attribute:</source>
-        <translation>属性：</translation>
+        <translation type="vanished">属性：</translation>
     </message>
     <message>
         <source>Line Width</source>
-        <translation>行宽</translation>
+        <translation type="vanished">行宽</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>&amp;颜色条设置</translation>
+        <translation type="vanished">&amp;颜色条设置</translation>
+    </message>
+</context>
+<context>
+    <name>PostSolutionSelectDialog</name>
+    <message>
+        <source>Select Target Result</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

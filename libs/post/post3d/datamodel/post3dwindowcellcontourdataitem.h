@@ -1,12 +1,12 @@
 #ifndef POST3DWINDOWCELLCONTOURDATAITEM_H
 #define POST3DWINDOWCELLCONTOURDATAITEM_H
 
-#include "../post3dcellrangesettingcontainer.h"
+#include "../post3dwindowcellrangesettingcontainer.h"
 #include "../post3dwindowdataitem.h"
 
+class Post3dWindowCellContourGroupDataItem;
+
 class vtkActor;
-class vtkPolyDataMapper;
-class vtkPolyData;
 
 class Post3dWindowCellContourDataItem : public Post3dWindowDataItem
 {
@@ -16,26 +16,29 @@ public:
 	Post3dWindowCellContourDataItem(const QString& label, Post3dWindowDataItem* p);
 	~Post3dWindowCellContourDataItem();
 
-	const Post3dCellRangeSettingContainer& setting() const;
-	void setSetting(const Post3dCellRangeSettingContainer& setting);
+	Post3dWindowCellRangeSettingContainer setting() const;
+	void setSetting(const Post3dWindowCellRangeSettingContainer& setting);
 
 	void update();
 
 private:
+	Post3dWindowCellContourGroupDataItem* groupDataItem() const;
+	void updateActorSettings();
+
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
 	void innerUpdateZScale(double scale) override;
 
-	void updateActorSettings();
-	void updatePolyData();
-	void updateColorSetting();
+	void informSelection(VTKGraphicsView* v) override;
+	void informDeselection(VTKGraphicsView* v) override;
+	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;
+	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v) override;
+	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 
 	vtkActor* m_actor;
-	vtkPolyDataMapper* m_mapper;
-	vtkPolyData* m_polyData;
 
-	Post3dCellRangeSettingContainer m_setting;
+	Post3dWindowCellRangeSettingContainer m_setting;
 };
 
 #endif // POST3DWINDOWCELLCONTOURDATAITEM_H

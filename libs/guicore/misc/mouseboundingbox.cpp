@@ -46,7 +46,7 @@ MouseBoundingBox::MouseBoundingBox(VTK2DGraphicsView* view, QObject* parent) :
 
 	m_lineActor = vtkSmartPointer<vtkActor>::New();
 	m_lineActor->GetProperty()->SetColor(.2, .2, .2);
-	m_lineActor->GetProperty()->SetLineWidth(2);
+	m_lineActor->GetProperty()->SetLineWidth(2 * view->devicePixelRatioF());
 	m_lineActor->GetProperty()->SetLighting(false);
 	m_lineMapper = vtkSmartPointer<vtkDataSetMapper>::New();
 

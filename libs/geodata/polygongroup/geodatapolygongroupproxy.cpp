@@ -6,7 +6,6 @@
 #include "private/geodatapolygongroupproxy_impl.h"
 #include "private/geodatapolygongroupproxy_setsettingcommand.h"
 
-#include <guicore/scalarstocolors/scalarstocolorscontainer.h>
 #include <misc/zdepthrange.h>
 
 GeoDataPolygonGroupProxy::GeoDataPolygonGroupProxy(GeoDataPolygonGroup* geodata) :
@@ -30,6 +29,7 @@ void GeoDataPolygonGroupProxy::setupActors()
 	auto r = renderer();
 	auto col = actorCollection();
 
+	/*
 	auto stcc = polygons->scalarsToColorsContainer();
 
 	auto mapper = dynamic_cast<vtkPolyDataMapper*> (impl->m_paintActor->GetMapper());
@@ -38,9 +38,12 @@ void GeoDataPolygonGroupProxy::setupActors()
 		mapper->SetLookupTable(stcc->vtkObj());
 		mapper->SetUseLookupTableScalarRange(true);
 	}
+	*/
 
 	r->AddActor(impl->m_paintActor);
 	col->AddItem(impl->m_paintActor);
+
+	/*
 
 	mapper = dynamic_cast<vtkPolyDataMapper*> (impl->m_edgesActor->GetMapper());
 	mapper->SetInputData(polygons->impl->m_edgesPolyData);
@@ -48,6 +51,7 @@ void GeoDataPolygonGroupProxy::setupActors()
 		mapper->SetLookupTable(stcc->vtkObj());
 		mapper->SetUseLookupTableScalarRange(true);
 	}
+	*/
 
 	r->AddActor(impl->m_edgesActor);
 	col->AddItem(impl->m_edgesActor);

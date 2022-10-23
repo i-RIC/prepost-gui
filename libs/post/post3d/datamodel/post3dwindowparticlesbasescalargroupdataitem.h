@@ -3,20 +3,24 @@
 
 #include "../post3dwindowdataitem.h"
 
-#include <guibase/scalarsettingcontainer.h>
 #include <guicore/misc/targeted/targeteditemi.h>
-#include <guicore/scalarstocolors/lookuptablecontainer.h>
+#include <postbase/particle/particledatasetting.h>
 
-#include <QMenu>
-#include <QMouseEvent>
+#include <unordered_map>
 
-#include <vtkActor.h>
-#include <vtkPolyDataMapper.h>
-#include <vtkProperty.h>
-#include <vtkSmartPointer.h>
-#include <vtkScalarBarWidget.h>
-
+class ColorMapSettingContainer;
 class NamedGraphicWindowDataItem;
+class Post3dWindowGridTypeDataItem;
+class Post3dWindowParticlesBaseScalarDataItem;
+class Post3dWindowParticlesBaseTopDataItem;
+class Post3dWindowZoneDataItem;
+
+class QMenu;
+class QMenuEvent;
+
+class vtkActor;
+class vtkActor2D;
+class vtkPolyData;
 
 class Post3dWindowParticlesBaseScalarGroupDataItem : public Post3dWindowDataItem, public TargetedItemI
 {
@@ -29,37 +33,50 @@ public:
 	std::string target() const override;
 	void setTarget(const std::string& target) override;
 
+	ColorMapSettingContainer* colorMapSetting(const std::string& name) const;
+	std::unordered_map<std::string, ColorMapSettingContainer*> colorMapSettings() const;
+
 	void update();
-	QDialog* propertyDialog(QWidget* parent);
-	void handlePropertyDialogAccepted(QDialog* propDialog);
-	void informSelection(VTKGraphicsView* v);
-	void informDeselection(VTKGraphicsView* v);
-	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v);
-	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v);
-	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v);
+	void showPropertyDialog() override;
+	QDialog* propertyDialog(QWidget* parent) override;
+
+	void informSelection(VTKGraphicsView* v) override;
+	void informDeselection(VTKGraphicsView* v) override;
+	void handleResize(VTKGraphicsView* v) override;
+	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;
+	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v) override;
+	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 
 public slots:
 	void handleNamedItemChange(NamedGraphicWindowDataItem* item);
 
 private:
+	void setupActors();
+	void updateActorSettings();
+
 	void innerUpdateZScale(double zscale) override;
-	void updateVisibility(bool visible) override;
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
-	void setupActors();
-	void updateActorSettings();
-	void setupScalarBarSetting();
+	ColorMapSettingContainer* activeSetting() const;
+	Post3dWindowGridTypeDataItem* gridTypeDataItem() const;
+	Post3dWindowParticlesBaseTopDataItem* topDataItem() const;
+	Post3dWindowZoneDataItem* zoneDataItem() const;
+	Post3dWindowParticlesBaseScalarDataItem* activeChildDataItem() const;
+	Post3dWindowParticlesBaseScalarDataItem* childDataItem(const std::string& name) const;
 
-	ScalarSettingContainer m_setting;
-	QMap<std::string, QString> m_scalarbarTitleMap;
+	vtkPolyData* particleData() const;
+	void updateCheckState();
 
-	vtkSmartPointer<vtkActor> m_actor;
-	vtkSmartPointer<vtkPolyDataMapper> m_mapper;
+	vtkActor* m_actor;
 
-	vtkSmartPointer<vtkScalarBarWidget> m_scalarBarWidget;
+	ParticleDataSetting m_setting;
 
-	class SetSettingCommand;
+	class UpdateActorSettingsCommand;
+	class PropertyDialog;
+
+public:
+	friend class Post3dWindowParticlesBaseScalarDataItem;
 };
 
 #endif // POST3DWINDOWPARTICLESBASESCALARGROUPDATAITEM_H

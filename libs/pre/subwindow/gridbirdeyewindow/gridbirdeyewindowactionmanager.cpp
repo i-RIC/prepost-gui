@@ -27,17 +27,17 @@ void GridBirdEyeWindowActionManager::setupDrawMenu()
 	m_drawMenu = new QMenu(tr("&Draw"), m_gridBirdEyeWindow);
 
 	drawDisplaySettingAction = new QAction(tr("&Display Setting..."), m_drawMenu);
-	connect(drawDisplaySettingAction, SIGNAL(triggered()), m_gridBirdEyeWindow, SLOT(displaySetting()));
+	connect(drawDisplaySettingAction, &QAction::triggered, m_gridBirdEyeWindow, &GridBirdEyeWindow::editDisplaySetting);
 	m_drawMenu->addAction(drawDisplaySettingAction);
 
 	m_drawMenu->addSeparator();
 
 	backgroundColorAction = new QAction(tr("&Background Color..."), m_drawMenu);
 	backgroundColorAction->setIcon(QIcon(":/libs/guibase/images/iconColor.svg"));
-	connect(backgroundColorAction, SIGNAL(triggered()), m_gridBirdEyeWindow, SLOT(editBackgroundColor()));
+	connect(backgroundColorAction, &QAction::triggered, m_gridBirdEyeWindow, &GridBirdEyeWindow::editBackgroundColor);
 	m_drawMenu->addAction(backgroundColorAction);
 
 	editZScaleAction = new QAction(tr("&Z-direction Scale..."), m_drawMenu);
-	connect(editZScaleAction, SIGNAL(triggered()), m_gridBirdEyeWindow, SLOT(editZScale()));
+	connect(editZScaleAction, &QAction::triggered, m_gridBirdEyeWindow, &GridBirdEyeWindow::editZScale);
 	m_drawMenu->addAction(editZScaleAction);
 }

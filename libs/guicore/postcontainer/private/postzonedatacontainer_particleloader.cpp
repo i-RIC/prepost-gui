@@ -11,12 +11,12 @@
 #include <h5cgnsparticlesolution.h>
 #include <h5cgnszone.h>
 
-bool PostZoneDataContainer::ParticleLoader::load(vtkSmartPointer<vtkPolyData>* data, iRICLib::H5CgnsParticleSolution* sol, const QPointF& offset)
+bool PostZoneDataContainer::ParticleLoader::load(vtkPointSetAndValueRangeSetT<vtkPolyData>** data, iRICLib::H5CgnsParticleSolution* sol, const QPointF& offset)
 {
-	if (data->Get() == nullptr) {
-		(*data) = vtkSmartPointer<vtkPolyData>::New();
+	if (*data == nullptr) {
+		*data = new vtkPointSetAndValueRangeSetT<vtkPolyData>();
 	} else {
-		(*data)->Initialize();
+		(*data)->concreteData()->Initialize();
 	}
 	if (sol == nullptr) {return false;}
 
@@ -46,15 +46,16 @@ bool PostZoneDataContainer::ParticleLoader::load(vtkSmartPointer<vtkPolyData>* d
 		vtkIdType pId = i;
 		verts->InsertNextCell(1, &pId);
 	}
-	(*data)->SetPoints(points);
-	(*data)->SetVerts(verts);
+	(*data)->concreteData()->SetPoints(points);
+	(*data)->concreteData()->SetVerts(verts);
 
-	vtkPointData* pd = (*data)->GetPointData();
+	vtkPointData* pd = (*data)->concreteData()->GetPointData();
 
 	CgnsUtil::loadScalarData(sol, pd);
 	CgnsUtil::loadVectorData(sol, pd);
 
-	(*data)->Modified();
+	(*data)->concreteData()->Modified();
+	(*data)->updateValueRangeSet();
 
 	return true;
 }

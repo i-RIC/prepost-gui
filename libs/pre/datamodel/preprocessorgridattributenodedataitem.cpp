@@ -9,6 +9,7 @@
 #include "preprocessorgridtypedataitem.h"
 #include "preprocessorgeodatagroupdataitem.h"
 #include "preprocessorgeodatatopdataitem.h"
+#include "private/preprocessorgridattributenodedataitem_propertydialog.h"
 
 #include <geodata/pointmap/geodatapointmaprealbuilder.h>
 #include <guibase/widget/contoursettingwidget.h>
@@ -24,11 +25,10 @@
 #include <guicore/pre/gridcond/base/gridattributecontainer.h>
 #include <guicore/pre/gridcond/base/gridattributeeditdialog.h>
 #include <guicore/pre/gridcond/base/gridattributevariationeditdialog.h>
-#include <guicore/pre/gridcond/gridnodeattributepropertydialog.h>
 #include <guicore/project/projectdata.h>
-#include <guicore/scalarstocolors/lookuptablecontainer.h>
-#include <guicore/scalarstocolors/lookuptableeditwidget.h>
-#include <guicore/scalarstocolors/scalarstocolorseditwidget.h>
+#include <guicore/scalarstocolors/colormaplegendsettingcontaineri.h>
+#include <guicore/scalarstocolors/colormapsettingcontaineri.h>
+#include <guicore/scalarstocolors/colormapsettingeditwidgeti.h>
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
 #include <guicore/solverdef/solverdefinitiongridcomplexattribute.h>
 #include <misc/errormessage.h>
@@ -68,8 +68,6 @@ PreProcessorGridAttributeNodeDataItem::PreProcessorGridAttributeNodeDataItem(Sol
 {
 	m_definingBoundingBox = false;
 	m_condition = cond;
-	m_contour = ContourSettingWidget::ColorFringe;
-	m_numberOfDivision = 10;
 
 	m_editValueAction = new QAction(PreProcessorGridAttributeNodeDataItem::tr("Edit value..."), this);
 	m_editValueAction->setDisabled(true);
@@ -119,33 +117,27 @@ QDialog* PreProcessorGridAttributeNodeDataItem::propertyDialog(QWidget* p)
 		return nullptr;
 	}
 
-	PreProcessorGridAttributeNodeGroupDataItem* gitem = dynamic_cast<PreProcessorGridAttributeNodeGroupDataItem*>(parent());
-	ScalarsToColorsEditWidget* stcWidget = m_condition->createScalarsToColorsEditWidget(0);
-	PreProcessorGridTypeDataItem* typedi = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent()->parent()->parent());
-	ScalarsToColorsContainer* stc = typedi->scalarsToColors(m_condition->name().c_str());
-	LookupTableEditWidget* ltWidget = dynamic_cast<LookupTableEditWidget*>(stcWidget);
-	if (ltWidget != nullptr) {
-		ltWidget->showDivisionNumber();
-	}
-	stcWidget->setContainer(stc);
-	GridNodeAttributePropertyDialog* dialog = new GridNodeAttributePropertyDialog(p);
-	dialog->setScalarsToColorsEditWidget(stcWidget);
-	dialog->setContour(contour());
-	dialog->setNumberOfDivision(m_numberOfDivision);
-	dialog->setOpacityPercent(gitem->opacity());
-	dialog->setWindowTitle(tr("Grid Node Attribute Display Setting"));
+	auto setting = colorMapSettingContainer();
+	if (setting == nullptr) {return nullptr;}
+
+	auto gitem = dynamic_cast<PreProcessorGridAttributeNodeGroupDataItem*>(parent());
+	auto dialog = new PropertyDialog(gitem, p);
+	auto widget = m_condition->createColorMapSettingEditWidget(dialog);
+	widget->setSetting(setting);
+	dialog->setWidget(widget);
+
+	dialog->setOpacityPercent(gitem->opacityPercent());
+
 	return dialog;
 }
 
 void PreProcessorGridAttributeNodeDataItem::handlePropertyDialogAccepted(QDialog* propDialog)
 {
-	GridNodeAttributePropertyDialog* dialog = dynamic_cast<GridNodeAttributePropertyDialog*>(propDialog);
+	auto dialog = dynamic_cast<PropertyDialog*>(propDialog);
+	auto widget = dialog->widget();
 
-	m_contour = dialog->contour();
-	m_numberOfDivision = dialog->numberOfDivision();
-	PreProcessorGridAttributeNodeGroupDataItem* gitem = dynamic_cast<PreProcessorGridAttributeNodeGroupDataItem*>(parent());
-	gitem->setOpacity(dialog->opacityPercent());
-	gitem->updateActorSettings();
+	auto gitem = dynamic_cast<PreProcessorGridAttributeNodeGroupDataItem*>(parent());
+	gitem->setOpacityPercentAndUpdateActorSettings(dialog->opacityPercent(), widget->createModifyCommand());
 }
 
 void PreProcessorGridAttributeNodeDataItem::doLoadFromProjectMainFile(const QDomNode& node)
@@ -185,39 +177,42 @@ int PreProcessorGridAttributeNodeDataItem::loadFromCgnsFile()
 	return IRIC_NO_ERROR;
 }
 
-void PreProcessorGridAttributeNodeDataItem::loadContourFromProjectMainFile(const QDomNode& node)
-{
-	m_contour = (ContourSettingWidget::Contour) node.toElement().attribute("ContourType", "0").toInt();
-	m_numberOfDivision = node.toElement().attribute("NumberOfDivision", "10").toInt();
-}
+void PreProcessorGridAttributeNodeDataItem::loadContourFromProjectMainFile(const QDomNode& /*node*/)
+{}
 
-void PreProcessorGridAttributeNodeDataItem::saveContourToProjectMainFile(QXmlStreamWriter& writer)
-{
-	QString qstr;
-	writer.writeAttribute("ContourType", qstr.setNum((int) m_contour));
-	writer.writeAttribute("NumberOfDivision", qstr.setNum(m_numberOfDivision));
-}
+void PreProcessorGridAttributeNodeDataItem::saveContourToProjectMainFile(QXmlStreamWriter& /*writer*/)
+{}
 
 void PreProcessorGridAttributeNodeDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
+	auto setting = colorMapSettingContainer();
+	if (setting != nullptr) {
+		auto imgCtrl = setting->legendSetting()->imgSetting()->controller();
+		imgCtrl->handleMouseMoveEvent(event, v);
+		if (imgCtrl->mouseEventMode() != ImageSettingContainer::Controller::MouseEventMode::Normal) {
+			return;
+		}
+	}
+
 	if (m_definingBoundingBox) {
 		// drawing bounding box using mouse dragging.
 		dynamic_cast<PreProcessorGridDataItem*>(parent()->parent())->nodeSelectingMouseMoveEvent(event, v);
 	} else {
 		dynamic_cast<PreProcessorGridAttributeNodeGroupDataItem*>(parent())->updateAttributeBrowser(QPoint(event->x(), event->y()), v);
 	}
-	/*
-		PreProcessorGridDataItem* tmpparent = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
-		if (tmpparent->grid()->isMasked()){
-			v->setCursor(Qt::ForbiddenCursor);
-		} else {
-			v->setCursor(Qt::ArrowCursor);
-		}
-	*/
 }
 
 void PreProcessorGridAttributeNodeDataItem::mousePressEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
+	auto setting = colorMapSettingContainer();
+	if (setting != nullptr) {
+		auto imgCtrl = setting->legendSetting()->imgSetting()->controller();
+		imgCtrl->handleMousePressEvent(event, v);
+		if (imgCtrl->mouseEventMode() != ImageSettingContainer::Controller::MouseEventMode::Normal) {
+			return;
+		}
+	}
+
 	if (event->button() == Qt::LeftButton) {
 		// start drawing the mouse bounding box.
 		m_definingBoundingBox = true;
@@ -227,6 +222,15 @@ void PreProcessorGridAttributeNodeDataItem::mousePressEvent(QMouseEvent* event, 
 
 void PreProcessorGridAttributeNodeDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
+	auto setting = colorMapSettingContainer();
+	if (setting != nullptr) {
+		auto imgCtrl = setting->legendSetting()->imgSetting()->controller();
+		imgCtrl->handleMouseReleaseEvent(event, v);
+		if (imgCtrl->mouseEventMode() != ImageSettingContainer::Controller::MouseEventMode::Normal) {
+			return;
+		}
+	}
+
 	static QMenu* menu = nullptr;
 	PreProcessorGridDataItem* tmpparent = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
 	if (event->button() == Qt::LeftButton) {
@@ -345,17 +349,28 @@ void PreProcessorGridAttributeNodeDataItem::editRatio()
 	editVariation(GridAttributeVariationEditWidget::Ratio, tr("ratio"));
 }
 
-void PreProcessorGridAttributeNodeDataItem::informSelection(VTKGraphicsView* /*v*/)
+void PreProcessorGridAttributeNodeDataItem::informSelection(VTKGraphicsView* v)
 {
 	dynamic_cast<PreProcessorGridDataItem*>(parent()->parent())->setSelectedPointsVisibility(true);
 	dynamic_cast<PreProcessorGridAttributeNodeGroupDataItem*>(parent())->initAttributeBrowser();
+
 	updateVisibility();
+
+	auto typedi = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent()->parent()->parent());
+	auto setting = typedi->colorMapSetting(m_condition->name());
+	if (setting == nullptr) {return;}
+	setting->legendSetting()->imgSetting()->controller()->handleSelection(v);
 }
 
-void PreProcessorGridAttributeNodeDataItem::informDeselection(VTKGraphicsView* /*v*/)
+void PreProcessorGridAttributeNodeDataItem::informDeselection(VTKGraphicsView* v)
 {
 	dynamic_cast<PreProcessorGridDataItem*>(parent()->parent())->setSelectedPointsVisibility(false);
 	dynamic_cast<PreProcessorGridAttributeNodeGroupDataItem*>(parent())->clearAttributeBrowser();
+
+	auto typedi = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent()->parent()->parent());
+	auto setting = typedi->colorMapSetting(m_condition->name());
+	if (setting == nullptr) {return;}
+	setting->legendSetting()->imgSetting()->controller()->handleDeselection(v);
 }
 
 SolverDefinitionGridAttribute* PreProcessorGridAttributeNodeDataItem::condition() const
@@ -368,9 +383,10 @@ void PreProcessorGridAttributeNodeDataItem::informDataChange()
 	dynamic_cast<PreProcessorGridAttributeNodeGroupDataItem*>(parent())->informDataChange(m_condition->name());
 }
 
-int PreProcessorGridAttributeNodeDataItem::numberOfDivision() const
+ColorMapSettingContainerI* PreProcessorGridAttributeNodeDataItem::colorMapSettingContainer() const
 {
-	return m_numberOfDivision;
+	auto typedi = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent()->parent()->parent());
+	return typedi->colorMapSetting(m_condition->name());
 }
 
 void PreProcessorGridAttributeNodeDataItem::openCrossSectionWindow()

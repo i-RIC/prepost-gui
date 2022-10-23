@@ -14,10 +14,11 @@ class GUICOREDLL_EXPORT GraphicsWindowSimpleDataModel : public ProjectDataItem
 
 public:
 	GraphicsWindowSimpleDataModel(QMainWindow* w, ProjectDataItem* parent);
-	virtual ~GraphicsWindowSimpleDataModel();
+	~GraphicsWindowSimpleDataModel() override;
 
 	VTKGraphicsView* graphicsView() const;
 	QMainWindow* mainWindow() const;
+
 	virtual void viewOperationEndedGlobal();
 	virtual void handleResize();
 

@@ -9,6 +9,7 @@
 #include "preprocessorgridattributenodegroupdataitem.h"
 #include "preprocessorgriddataitem.h"
 #include "preprocessorgridtypedataitem.h"
+#include "private/preprocessorgridattributecellgroupdataitem_modifyopacityandupdateactorsettingscommand.h"
 
 #include <guicore/base/propertybrowser.h>
 #include <guicore/datamodel/propertybrowserattribute.h>
@@ -23,7 +24,8 @@
 #include <guicore/pre/gridcond/container/gridattributeintegercellcontainer.h>
 #include <guicore/pre/gridcond/container/gridattributerealcellcontainer.h>
 #include <guicore/project/projectdata.h>
-#include <guicore/scalarstocolors/scalarstocolorscontainer.h>
+#include <guicore/scalarstocolors/colormaplegendsettingcontaineri.h>
+#include <guicore/scalarstocolors/colormapsettingcontaineri.h>
 #include <guicore/solverdef/solverdefinition.h>
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
 #include <guicore/solverdef/solverdefinitiongridattributeintegeroptioncell.h>
@@ -44,26 +46,16 @@
 #include <QXmlStreamWriter>
 
 #include <vtkActorCollection.h>
-#include <vtkAppendPolyData.h>
-#include <vtkCell.h>
 #include <vtkCellData.h>
-#include <vtkCellData.h>
-#include <vtkCleanPolyData.h>
-#include <vtkClipPolyData.h>
-#include <vtkContourFilter.h>
-#include <vtkDelaunay2D.h>
-#include <vtkDoubleArray.h>
-#include <vtkPolyDataMapper.h>
 #include <vtkProperty.h>
 #include <vtkRenderer.h>
-#include <vtkStructuredGridGeometryFilter.h>
 
 PreProcessorGridAttributeCellGroupDataItem::PreProcessorGridAttributeCellGroupDataItem(PreProcessorDataItem* p) :
-	PreProcessorDataItem {tr("Cell attributes"), QIcon(":/libs/guibase/images/iconFolder.svg"), p}
+	PreProcessorDataItem {tr("Cell attributes"), QIcon(":/libs/guibase/images/iconFolder.svg"), p},
+	m_actor {vtkActor::New()}
 {
 	setupStandardItem(NotChecked, NotReorderable, NotDeletable);
 
-	setupActors();
 	p->standardItem()->takeRow(m_standardItem->row());
 	PreProcessorGridTypeDataItem* typeItem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent()->parent());
 	const QList<SolverDefinitionGridAttribute*>& conds = typeItem->gridType()->gridAttributes();
@@ -91,10 +83,15 @@ PreProcessorGridAttributeCellGroupDataItem::PreProcessorGridAttributeCellGroupDa
 
 	m_showAttributeBrowserAction = new QAction(PreProcessorGridAttributeCellGroupDataItem::tr("Show Attribute Browser"), this);
 	connect(m_showAttributeBrowserAction, SIGNAL(triggered()), this, SLOT(showAttributeBrowser()));
+
+	m_actor->GetProperty()->SetLighting(false);
+	renderer()->AddActor(m_actor);
 }
 PreProcessorGridAttributeCellGroupDataItem::~PreProcessorGridAttributeCellGroupDataItem()
 {
 	renderer()->RemoveActor(m_actor);
+
+	m_actor->Delete();
 }
 
 std::string PreProcessorGridAttributeCellGroupDataItem::target() const
@@ -127,44 +124,31 @@ void PreProcessorGridAttributeCellGroupDataItem::updateActorSettings()
 		return;
 	}
 	if (m_target == "") {
-		updateVisibilityWithoutRendering();
 		return;
 	}
-	m_actor->GetProperty()->SetOpacity(m_opacity);
 	// update current active scalar
-
 	vtkCellData* data = g->vtkGrid()->GetCellData();
 	data->SetActiveScalars(m_target.c_str());
-	PreProcessorGridTypeDataItem* typedi = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent()->parent());
-	ScalarsToColorsContainer* stc = typedi->scalarsToColors(m_target.c_str());
-	double range[2];
-	stc->getValueRange(&range[0], &range[1]);
+	auto typedi = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent()->parent());
+	auto cs = typedi->colorMapSetting(m_target);
 
-	m_mapper->SetScalarModeToUseCellData();
-	m_mapper->SetLookupTable(stc->vtkObj());
-	m_mapper->UseLookupTableScalarRangeOn();
+	auto algo = g->vtkFilteredCellsAlgorithm();
+	algo->Update();
+	auto mapper = cs->buildCellDataMapper(algo->GetOutput(), false);
+	m_actor->SetMapper(mapper);
+	mapper->Delete();
+
+	cs->legendSetting()->imgSetting()->apply(dataModel()->graphicsView());
+
+	m_actor->GetProperty()->SetOpacity(m_opacity);
+
 	m_actorCollection->AddItem(m_actor);
-
 	updateVisibilityWithoutRendering();
 }
 
 void PreProcessorGridAttributeCellGroupDataItem::informDataChange(const std::string& name)
 {
 	dynamic_cast<PreProcessorGridDataItem*>(parent())->informGridAttributeChange(name);
-}
-
-
-void PreProcessorGridAttributeCellGroupDataItem::setupActors()
-{
-	m_actor = vtkSmartPointer<vtkActor>::New();
-	m_actor->GetProperty()->SetLighting(false);
-	renderer()->AddActor(m_actor);
-
-	m_mapper = vtkSmartPointer<vtkPolyDataMapper>::New();
-	m_mapper->SetScalarVisibility(true);
-	m_actor->SetMapper(m_mapper);
-
-	m_actor->VisibilityOff();
 }
 
 void PreProcessorGridAttributeCellGroupDataItem::updateZDepthRangeItemCount()
@@ -199,11 +183,6 @@ void PreProcessorGridAttributeCellGroupDataItem::assignActorZValues(const ZDepth
 
 void PreProcessorGridAttributeCellGroupDataItem::informGridUpdate()
 {
-	Grid* g = dynamic_cast<PreProcessorGridDataItem*>(parent())->grid();
-	if (g != nullptr) {
-		vtkAlgorithm* cellsAlgo = g->vtkFilteredCellsAlgorithm();
-		if (cellsAlgo != nullptr) {m_mapper->SetInputConnection(cellsAlgo->GetOutputPort());}
-	}
 	updateActorSettings();
 }
 
@@ -221,6 +200,11 @@ const QList<PreProcessorGridAttributeCellDataItem*> PreProcessorGridAttributeCel
 	return ret;
 }
 
+PreProcessorGridAttributeCellDataItem* PreProcessorGridAttributeCellGroupDataItem::cellDataItem(const std::string& name) const
+{
+	return m_nameMap.value(name, nullptr);
+}
+
 void PreProcessorGridAttributeCellGroupDataItem::handleStandardItemChange()
 {
 	if (m_isCommandExecuting) {return;}
@@ -232,6 +216,26 @@ void PreProcessorGridAttributeCellGroupDataItem::handleStandardItemChange()
 		nitem->standardItem()->setCheckState(Qt::Unchecked);
 	}
 	iRICUndoStack::instance().endMacro();
+}
+
+void PreProcessorGridAttributeCellGroupDataItem::setOpacityPercentAndUpdateActorSettings(int o, QUndoCommand* subcommand, bool renderOnRedoOnly)
+{
+	auto command = new ModifyOpacityAndUpdateActorSettingsCommand(o, subcommand, this);
+	if (renderOnRedoOnly) {
+			pushRenderRedoOnlyCommand(command, this);
+	} else {
+			pushRenderCommand(command, this);
+	}
+}
+
+int PreProcessorGridAttributeCellGroupDataItem::opacityPercent() const
+{
+	return m_opacity;
+}
+
+QAction* PreProcessorGridAttributeCellGroupDataItem::showAttributeBrowserAction() const
+{
+	return m_showAttributeBrowserAction;
 }
 
 void PreProcessorGridAttributeCellGroupDataItem::showAttributeBrowser()
@@ -408,6 +412,13 @@ bool PreProcessorGridAttributeCellGroupDataItem::addToolBarButtons(QToolBar* too
 		action->setVisible(true);
 	}
 	return true;
+}
+
+void PreProcessorGridAttributeCellGroupDataItem::applyColorMapSetting(const std::string& name)
+{
+	if (m_target != name) {return;}
+
+	updateActorSettings();
 }
 
 void PreProcessorGridAttributeCellGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)

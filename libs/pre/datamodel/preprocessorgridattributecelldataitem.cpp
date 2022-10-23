@@ -7,6 +7,7 @@
 #include "preprocessorgridtypedataitem.h"
 #include "preprocessorgeodatagroupdataitem.h"
 #include "preprocessorgeodatatopdataitem.h"
+#include "private/preprocessorgridattributecelldataitem_propertydialog.h"
 
 #include <geodata/pointmap/geodatapointmaprealbuilder.h>
 #include <guibase/widget/contoursettingwidget.h>
@@ -21,9 +22,10 @@
 #include <guicore/pre/gridcond/base/gridattributecontainer.h>
 #include <guicore/pre/gridcond/base/gridattributeeditdialog.h>
 #include <guicore/pre/gridcond/base/gridattributevariationeditdialog.h>
-#include <guicore/pre/gridcond/gridcellattributepropertydialog.h>
 #include <guicore/project/projectdata.h>
-#include <guicore/scalarstocolors/scalarstocolorseditwidget.h>
+#include <guicore/scalarstocolors/colormaplegendsettingcontaineri.h>
+#include <guicore/scalarstocolors/colormapsettingcontaineri.h>
+#include <guicore/scalarstocolors/colormapsettingeditwidgeti.h>
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
 #include <guicore/solverdef/solverdefinitiongridcomplexattribute.h>
 #include <misc/errormessage.h>
@@ -55,9 +57,9 @@
 
 PreProcessorGridAttributeCellDataItem::PreProcessorGridAttributeCellDataItem(SolverDefinitionGridAttribute* cond, GraphicsWindowDataItem* parent) :
 	NamedGraphicWindowDataItem(cond->name(), cond->caption(), parent),
+	m_condition {cond},
 	m_isCustomModified {"isCustomModified", false},
-	m_definingBoundingBox {false},
-	m_condition {cond}
+	m_definingBoundingBox {false}
 {
 	m_editValueAction = new QAction(PreProcessorGridAttributeCellDataItem::tr("Edit value..."), this);
 	m_editValueAction->setDisabled(true);
@@ -94,25 +96,27 @@ QDialog* PreProcessorGridAttributeCellDataItem::propertyDialog(QWidget* p)
 		return nullptr;
 	}
 
-	PreProcessorGridAttributeCellGroupDataItem* gitem = dynamic_cast<PreProcessorGridAttributeCellGroupDataItem*>(parent());
-	ScalarsToColorsEditWidget* stcWidget = m_condition->createScalarsToColorsEditWidget(0);
-	PreProcessorGridTypeDataItem* typedi = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent()->parent()->parent());
-	ScalarsToColorsContainer* stc = typedi->scalarsToColors(m_condition->name());
-	stcWidget->setContainer(stc);
-	GridCellAttributePropertyDialog* dialog = new GridCellAttributePropertyDialog(p);
+	auto setting = colorMapSettingContainer();
+	if (setting == nullptr) {return nullptr;}
+
+	auto gitem = dynamic_cast<PreProcessorGridAttributeCellGroupDataItem*>(parent());
+	auto dialog = new PropertyDialog(gitem, p);
+	auto widget = m_condition->createColorMapSettingEditWidget(dialog);
+	widget->setSetting(setting);
+	dialog->setWidget(widget);
+
 	dialog->setOpacityPercent(gitem->opacityPercent());
-	dialog->setScalarsToColorsEditWidget(stcWidget);
-	dialog->setWindowTitle(tr("Grid Cell Attribute Display Setting"));
+
 	return dialog;
 }
 
 void PreProcessorGridAttributeCellDataItem::handlePropertyDialogAccepted(QDialog* propDialog)
 {
-	GridCellAttributePropertyDialog* dialog = dynamic_cast<GridCellAttributePropertyDialog*>(propDialog);
+	auto dialog = dynamic_cast<PropertyDialog*>(propDialog);
+	auto widget = dialog->widget();
 
-	PreProcessorGridAttributeCellGroupDataItem* gitem = dynamic_cast<PreProcessorGridAttributeCellGroupDataItem*>(parent());
-	gitem->setOpacityPercent(dialog->opacityPercent());
-	gitem->updateActorSettings();
+	auto gitem = dynamic_cast<PreProcessorGridAttributeCellGroupDataItem*>(parent());
+	gitem->setOpacityPercentAndUpdateActorSettings(dialog->opacityPercent(), widget->createModifyCommand());
 }
 
 void PreProcessorGridAttributeCellDataItem::doLoadFromProjectMainFile(const QDomNode& node)
@@ -145,6 +149,15 @@ int PreProcessorGridAttributeCellDataItem::loadFromCgnsFile()
 
 void PreProcessorGridAttributeCellDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
+	auto setting = colorMapSettingContainer();
+	if (setting != nullptr) {
+		auto imgCtrl = setting->legendSetting()->imgSetting()->controller();
+		imgCtrl->handleMouseMoveEvent(event, v);
+		if (imgCtrl->mouseEventMode() != ImageSettingContainer::Controller::MouseEventMode::Normal) {
+			return;
+		}
+	}
+
 	if (m_definingBoundingBox) {
 		// drawing bounding box using mouse dragging.
 		dynamic_cast<PreProcessorGridDataItem*>(parent()->parent())->cellSelectingMouseMoveEvent(event, v);
@@ -155,6 +168,15 @@ void PreProcessorGridAttributeCellDataItem::mouseMoveEvent(QMouseEvent* event, V
 
 void PreProcessorGridAttributeCellDataItem::mousePressEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
+	auto setting = colorMapSettingContainer();
+	if (setting != nullptr) {
+		auto imgCtrl = setting->legendSetting()->imgSetting()->controller();
+		imgCtrl->handleMousePressEvent(event, v);
+		if (imgCtrl->mouseEventMode() != ImageSettingContainer::Controller::MouseEventMode::Normal) {
+			return;
+		}
+	}
+
 	if (event->button() == Qt::LeftButton) {
 		// start drawing the mouse bounding box.
 		m_definingBoundingBox = true;
@@ -164,6 +186,15 @@ void PreProcessorGridAttributeCellDataItem::mousePressEvent(QMouseEvent* event, 
 
 void PreProcessorGridAttributeCellDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
+	auto setting = colorMapSettingContainer();
+	if (setting != nullptr) {
+		auto imgCtrl = setting->legendSetting()->imgSetting()->controller();
+		imgCtrl->handleMouseReleaseEvent(event, v);
+		if (imgCtrl->mouseEventMode() != ImageSettingContainer::Controller::MouseEventMode::Normal) {
+			return;
+		}
+	}
+
 	static QMenu* menu = nullptr;
 	PreProcessorGridDataItem* tmpparent = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
 	if (event->button() == Qt::LeftButton) {
@@ -375,17 +406,27 @@ void PreProcessorGridAttributeCellDataItem::generatePointMap()
 	QMessageBox::information(mainWindow(), tr("Information"), tr("%1 generated.").arg(data->caption()));
 }
 
-void PreProcessorGridAttributeCellDataItem::informSelection(VTKGraphicsView* /*v*/)
+void PreProcessorGridAttributeCellDataItem::informSelection(VTKGraphicsView* v)
 {
 	dynamic_cast<PreProcessorGridDataItem*>(parent()->parent())->setSelectedCellsVisibility(true);
 	dynamic_cast<PreProcessorGridAttributeCellGroupDataItem*>(parent())->initAttributeBrowser();
 	updateVisibility();
+
+	auto typedi = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent()->parent()->parent());
+	auto setting = typedi->colorMapSetting(m_condition->name());
+	if (setting == nullptr) {return;}
+	setting->legendSetting()->imgSetting()->controller()->handleSelection(v);
 }
 
-void PreProcessorGridAttributeCellDataItem::informDeselection(VTKGraphicsView* /*v*/)
+void PreProcessorGridAttributeCellDataItem::informDeselection(VTKGraphicsView* v)
 {
 	dynamic_cast<PreProcessorGridDataItem*>(parent()->parent())->setSelectedCellsVisibility(false);
 	dynamic_cast<PreProcessorGridAttributeCellGroupDataItem*>(parent())->clearAttributeBrowser();
+
+	auto typedi = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent()->parent()->parent());
+	auto setting = typedi->colorMapSetting(m_condition->name());
+	if (setting == nullptr) {return;}
+	setting->legendSetting()->imgSetting()->controller()->handleDeselection(v);
 }
 
 void PreProcessorGridAttributeCellDataItem::informDataChange()
@@ -435,4 +476,10 @@ bool PreProcessorGridAttributeCellDataItem::addToolBarButtons(QToolBar* toolbar)
 	PreProcessorDataItem* item =
 		dynamic_cast<PreProcessorDataItem*>(parent());
 	return item->addToolBarButtons(toolbar);
+}
+
+ColorMapSettingContainerI* PreProcessorGridAttributeCellDataItem::colorMapSettingContainer() const
+{
+	auto typedi = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent()->parent()->parent());
+	return typedi->colorMapSetting(m_condition->name());
 }

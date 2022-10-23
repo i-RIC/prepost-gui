@@ -44,7 +44,6 @@ protected:
 
 private:
 	void updateColorMap();
-	void applySettingsToScalarBar();
 	void createDefaultGroup();
 	void clearGroups();
 
