@@ -14,22 +14,19 @@
 #include <vtkRenderer.h>
 
 PreProcessorBackgroundImageDataItem::PreProcessorBackgroundImageDataItem(BackgroundImageInfo* image, PreProcessorDataItem* parent) :
-	PreProcessorDataItem {image->caption(), QIcon(":/libs/guibase/images/iconPaper.svg"), parent},
+	PreProcessorDataItem {image->fileName(), QIcon(":/libs/guibase/images/iconPaper.svg"), parent},
+	m_actor {},
 	m_imageInfo {image}
 {
 	setupStandardItem(Checked, Reorderable, Deletable);
 
-	m_actor = vtkSmartPointer<vtkActor>::New();
-	image->setupActor(m_actor);
-	image->setPreProcessorActor(m_actor);
-	renderer()->AddActor(m_actor);
-	m_actorCollection->AddItem(m_actor);
+	image->setupActor(m_actor.actor());
+	image->setupMapper(m_actor.mapper());
+	image->setPreProcessorActor(m_actor.actor());
 
-	if (! image->visible()) {
-		setIsCommandExecuting(true);
-		m_standardItem->setCheckState(Qt::Unchecked);
-		setIsCommandExecuting(false);
-	}
+	renderer()->AddActor(m_actor.actor());
+	m_actorCollection->AddItem(m_actor.actor());
+
 	updateVisibilityWithoutRendering();
 
 	m_georeferenceAction = new QAction(PreProcessorBackgroundImageDataItem::tr("&Georeference..."), this);
@@ -40,7 +37,7 @@ PreProcessorBackgroundImageDataItem::PreProcessorBackgroundImageDataItem(Backgro
 
 PreProcessorBackgroundImageDataItem::~PreProcessorBackgroundImageDataItem()
 {
-	renderer()->RemoveActor(m_actor);
+	renderer()->RemoveActor(m_actor.actor());
 }
 
 void PreProcessorBackgroundImageDataItem::addCustomMenuItems(QMenu* menu)
@@ -50,17 +47,17 @@ void PreProcessorBackgroundImageDataItem::addCustomMenuItems(QMenu* menu)
 
 void PreProcessorBackgroundImageDataItem::mousePressEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	m_imageInfo->mousePressEvent(m_actor, event, v);
+	m_imageInfo->mousePressEvent(m_actor.actor(), event, v);
 }
 
 void PreProcessorBackgroundImageDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	m_imageInfo->mouseMoveEvent(m_actor, event, v);
+	m_imageInfo->mouseMoveEvent(m_actor.actor(), event, v);
 }
 
 void PreProcessorBackgroundImageDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	m_imageInfo->mouseReleaseEvent(m_actor, event, v);
+	m_imageInfo->mouseReleaseEvent(m_actor.actor(), event, v);
 }
 
 void PreProcessorBackgroundImageDataItem::updateMoveUpDownActions(ObjectBrowserView* view)
@@ -72,11 +69,27 @@ void PreProcessorBackgroundImageDataItem::updateMoveUpDownActions(ObjectBrowserV
 	view->moveDownAction()->setDisabled(isLast);
 }
 
+void PreProcessorBackgroundImageDataItem::updateZDepthRangeItemCount()
+{
+	m_zDepthRange.setItemCount(2);
+}
+
+void PreProcessorBackgroundImageDataItem::doLoadFromProjectMainFile(const QDomNode&)
+{}
+
+void PreProcessorBackgroundImageDataItem::doSaveToProjectMainFile(QXmlStreamWriter&)
+{}
+
 void PreProcessorBackgroundImageDataItem::assignActorZValues(const ZDepthRange& range)
 {
 	double position[3];
-	m_actor->GetPosition(position);
-	m_actor->SetPosition(position[0], position[1], range.min());
+	m_actor.actor()->GetPosition(position);
+	m_actor.actor()->SetPosition(position[0], position[1], range.min());
+}
+
+BackgroundImageInfo* PreProcessorBackgroundImageDataItem::imageInfo() const
+{
+	return m_imageInfo;
 }
 
 QAction* PreProcessorBackgroundImageDataItem::fixAction()
@@ -93,30 +106,28 @@ bool PreProcessorBackgroundImageDataItem::addToolBarButtons(QToolBar* toolbar)
 void PreProcessorBackgroundImageDataItem::handleStandardItemChange()
 {
 	GraphicsWindowDataItem::handleStandardItemChange();
-	m_imageInfo->setVisible(m_standardItem->checkState() == Qt::Checked);
 }
 
 void PreProcessorBackgroundImageDataItem::applyImageChange()
 {
-	m_imageInfo->applySettingToActor(m_actor);
+	m_imageInfo->applySettingToActor(m_actor.actor());
 	updateVisibility();
 }
 
 QDialog* PreProcessorBackgroundImageDataItem::propertyDialog(QWidget* /*parent*/)
 {
-	QDialog* dialog = m_imageInfo->propertyDialog();
-	return dialog;
+	return m_imageInfo->propertyDialog();
 }
 
 void PreProcessorBackgroundImageDataItem::handlePropertyDialogAccepted(QDialog* dialog)
 {
-	BackgroundImageInfoDialog* infoDialog = dynamic_cast<BackgroundImageInfoDialog*>(dialog);
+	auto infoDialog = dynamic_cast<BackgroundImageInfoDialog*>(dialog);
 	m_imageInfo->handlePropertyDialogAccepted(infoDialog);
 }
 
 void PreProcessorBackgroundImageDataItem::showGeoreferenceDialog()
 {
-	m_imageInfo->showGeoreferenceDialog(m_actor, dataModel()->graphicsView(), m_zDepthRange.min(), m_zDepthRange.max(), preProcessorWindow());
+	m_imageInfo->showGeoreferenceDialog(m_actor.actor(), dataModel()->graphicsView(), m_zDepthRange.min(), m_zDepthRange.max(), preProcessorWindow());
 
 	connect(m_imageInfo, SIGNAL(isGeoreferenceDialogClosed()), this, SLOT(enableObjectBrowserView()));
 	setEnableObjectBrowserView(false);
@@ -140,6 +151,5 @@ void PreProcessorBackgroundImageDataItem::setEnableObjectBrowserView(bool enable
 
 void PreProcessorBackgroundImageDataItem::doApplyOffset(double x, double y)
 {
-	m_imageInfo->applyOffset(x, y);
-	m_imageInfo->applySettingToActor(m_actor);
+	m_imageInfo->applySettingToActor(m_actor.actor());
 }

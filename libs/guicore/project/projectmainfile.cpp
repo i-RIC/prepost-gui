@@ -177,7 +177,7 @@ void ProjectMainFile::Impl::loadBackgrounds(const QDomNode& node)
 		QFileInfo finfo(absolutePath);
 		if (finfo.exists()) {
 			try {
-				BackgroundImageInfo* image = new BackgroundImageInfo(absolutePath, absolutePath, m_parent);
+				BackgroundImageInfo* image = new BackgroundImageInfo(absolutePath, m_parent);
 				m_backgroundImages.insert(m_backgroundImages.begin(), image);
 				image->loadFromProjectMainFile(child);
 				emit m_parent->backgroundImageAdded();
@@ -690,16 +690,15 @@ void ProjectMainFile::addBackgroundImage()
 {
 	QString dir = LastIODirectory::get();
 	QString filter(tr("All images(*.jpg *.jpeg *.png *.tif);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif)"));
-	QMdiArea* mdiArea = dynamic_cast<QMdiArea*>(iricMainWindow()->centralWidget());
+	auto mdiArea = dynamic_cast<QMdiArea*>(iricMainWindow()->centralWidget());
 	QString fname = QFileDialog::getOpenFileName(mdiArea->currentSubWindow(), tr("Open Image file"), dir, filter);
-	if (fname == "") { return; }
+	if (fname == "") {return;}
 
 	QFileInfo finfo(fname);
 	// check whether a image file with the same filename exists.
 	QString filename = finfo.fileName();
-	for (int i = 0; i < impl->m_backgroundImages.size(); ++i) {
-		BackgroundImageInfo* imgInfo = impl->m_backgroundImages.at(i);
-		if (imgInfo->fileName().toLower() == filename.toLower()) {
+	for (auto image : impl->m_backgroundImages) {
+		if (image->fileName().toLower() == filename.toLower()) {
 			// file with the same name already exists.
 			QMessageBox::warning(iricMainWindow(), tr("Warning"), tr("A background image with the same name already exists."));
 			return;
@@ -718,7 +717,10 @@ void ProjectMainFile::addBackgroundImage()
 	QString to = bgDir.absoluteFilePath(QFileInfo(fname).fileName());
 	if (!bgDir.exists(QFileInfo(fname).fileName())){
 		if (! QFile::copy(fname, to)) {
-			QMessageBox::warning(iricMainWindow(), tr("Warning"), tr("The background image was not added. Please try again."));
+			QMessageBox::critical(iricMainWindow(), tr("Warning"),
+														tr("Copying image %1 to %2 failed.")
+														.arg(QDir::toNativeSeparators(fname))
+														.arg(QDir::toNativeSeparators(to)));
 			return;
 		}
 	}
@@ -726,7 +728,8 @@ void ProjectMainFile::addBackgroundImage()
 	QString ext = finfo.suffix().toLower();
 	if (ext == "jpg" || ext == "jpeg" || ext == "png" || ext == "tif") {
 		try {
-			BackgroundImageInfo* image = new BackgroundImageInfo(to, fname, this);
+			BackgroundImageInfo* image = new BackgroundImageInfo(to, this);
+			image->initializePosition(fname);
 			addBackgroundImage(image);
 		} catch (ErrorMessage m) {
 			QMessageBox::warning(iricMainWindow(), tr("Warning"), m);
@@ -763,24 +766,10 @@ void ProjectMainFile::deleteImage(const QModelIndex& index)
 {
 	auto it = impl->m_backgroundImages.begin();
 	BackgroundImageInfo* image = *(it + index.row());
-	QString fname = image->caption();
 	impl->m_backgroundImages.erase(it + index.row());
+	image->deleteImageFile();
 	delete image;
 	emit backgroundImageDeleted(index.row());
-
-	// remove background image file from project file.
-	bool del = true;
-	for (it = impl->m_backgroundImages.begin(); it != impl->m_backgroundImages.end(); ++it) {
-		BackgroundImageInfo* info = *it;
-		if (fname != info->caption()) { continue; }
-		del = false;
-		break;
-	}
-	if (del) {
-		QDir wkDir = QDir(projectData()->workDirectory());
-		wkDir.cd(BGDIR);
-		wkDir.remove(fname);
-	}
 
 	// removing image is not undo-able.
 	iRICUndoStack::instance().clear();
@@ -908,16 +897,6 @@ void ProjectMainFile::checkVersionCompatibility()
 	if (iRICVer.major() < projVer.major()) {
 		throw ErrorMessage(tr("This project file cannot be read, because it was created by newer iRIC (version %1).").arg(projVer.toString()));
 	}
-}
-
-void ProjectMainFile::updateActorVisibility(int idx, bool vis)
-{
-	if (idx < 0) {} else {
-		auto it = impl->m_backgroundImages.begin();
-		BackgroundImageInfo* bg = *(it + idx);
-		bg->setVisible(vis);
-	}
-	emit backgroundActorVisibilityChanged(idx, vis);
 }
 
 void ProjectMainFile::addMeasuredData()
@@ -1084,11 +1063,13 @@ void ProjectMainFile::setOffset(double x, double y)
 {
 	double x_diff = x - impl->m_offset.x();
 	double y_diff = y - impl->m_offset.y();
+
+	impl->m_offset.setX(x);
+	impl->m_offset.setY(y);
+
 	projectData()->mainWindow()->preProcessorWindow()->dataModel()->applyOffset(x_diff, y_diff);
 	projectData()->mainfile()->postSolutionInfo()->applyOffset(x_diff, y_diff);
 	impl->m_postProcessors->applyOffset(x_diff, y_diff);
-	impl->m_offset.setX(x);
-	impl->m_offset.setY(y);
 }
 
 iRICLib::H5CgnsFile* ProjectMainFile::cgnsFile() const

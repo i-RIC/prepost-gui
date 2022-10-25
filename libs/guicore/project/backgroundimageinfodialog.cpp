@@ -2,16 +2,19 @@
 
 #include "backgroundimageinfo.h"
 #include "backgroundimageinfodialog.h"
+#include "private/backgroundimageinfo_impl.h"
 
 #include <cmath>
 #define _USE_MATH_DEFINES
 #include <math.h>
 
-BackgroundImageInfoDialog::BackgroundImageInfoDialog(QWidget* parent) :
-	QDialog(parent),
-	ui(new Ui::BackgroundImageInfoDialog)
+BackgroundImageInfoDialog::BackgroundImageInfoDialog(BackgroundImageInfo* info) :
+	QDialog(nullptr),
+	ui(new Ui::BackgroundImageInfoDialog),
+	m_info {info}
 {
 	ui->setupUi(this);
+
 	connect(ui->blxSpinBox, SIGNAL(valueChanged(double)), this, SLOT(update()));
 	connect(ui->blySpinBox, SIGNAL(valueChanged(double)), this, SLOT(update()));
 	connect(ui->brxSpinBox, SIGNAL(valueChanged(double)), this, SLOT(update()));
@@ -26,23 +29,27 @@ BackgroundImageInfoDialog::~BackgroundImageInfoDialog()
 	delete ui;
 }
 
-void BackgroundImageInfoDialog::setProperties(double lbX, double lbY, double scale, double angle)
+void BackgroundImageInfoDialog::setImageWidth(int width)
 {
-	m_leftbottomX = lbX;
-	m_leftbottomY = lbY;
-	m_scale = scale;
-	m_angle = angle;
+	m_imageWidth = width;
+}
 
-	m_origLeftbottomX = lbX;
-	m_origLeftbottomY = lbY;
-	m_origScale = scale;
-	m_origAngle = angle;
+BackgroundImageInfo::Setting BackgroundImageInfoDialog::BackgroundImageInfoDialog::setting() const
+{
+	BackgroundImageInfo::Setting s = m_originalSetting;
 
-	ui->blxSpinBox->setValue(lbX);
-	ui->blySpinBox->setValue(lbY);
-	ui->scaleSpinBox->setValue(m_scale);
-	ui->angleSpinBox->setValue(m_angle);
-	updateRightBottom();
+	s.positionX = ui->blxSpinBox->value();
+	s.positionY = ui->blySpinBox->value();
+	s.scale = ui->scaleSpinBox->value();
+	s.angle = ui->angleSpinBox->value();
+
+	return s;
+}
+
+void BackgroundImageInfoDialog::setSetting(const BackgroundImageInfo::Setting& setting)
+{
+	m_originalSetting = setting;
+	applySettingToWidgets(setting);
 }
 
 void BackgroundImageInfoDialog::update()
@@ -52,6 +59,16 @@ void BackgroundImageInfoDialog::update()
 	} else {
 		updateRightBottom();
 	}
+}
+
+void BackgroundImageInfoDialog::applySettingToWidgets(const BackgroundImageInfo::Setting& setting)
+{
+	ui->blxSpinBox->setValue(setting.positionX);
+	ui->blySpinBox->setValue(setting.positionY);
+	ui->scaleSpinBox->setValue(setting.scale);
+	ui->angleSpinBox->setValue(setting.angle);
+
+	updateRightBottom();
 }
 
 void BackgroundImageInfoDialog::updateScaleAndAngle()
@@ -92,18 +109,10 @@ void BackgroundImageInfoDialog::updateRightBottom()
 	ui->brySpinBox->setValue(rby);
 }
 
-void BackgroundImageInfoDialog::accept()
-{
-	m_leftbottomX = ui->blxSpinBox->value();
-	m_leftbottomY = ui->blySpinBox->value();
-	m_scale = ui->scaleSpinBox->value();
-	m_angle = ui->angleSpinBox->value();
-	QDialog::accept();
-}
-
 void BackgroundImageInfoDialog::reset()
 {
 	m_info->fitImageToData();
+
 	ui->blxSpinBox->blockSignals(true);
 	ui->blySpinBox->blockSignals(true);
 	ui->brxSpinBox->blockSignals(true);
@@ -111,10 +120,7 @@ void BackgroundImageInfoDialog::reset()
 	ui->scaleSpinBox->blockSignals(true);
 	ui->angleSpinBox->blockSignals(true);
 
-	ui->blxSpinBox->setValue(m_info->translateX());
-	ui->blySpinBox->setValue(m_info->translateY());
-	ui->scaleSpinBox->setValue(m_info->scale());
-	ui->angleSpinBox->setValue(m_info->angle());
+	applySettingToWidgets(m_info->impl->m_setting);
 	updateRightBottom();
 
 	ui->blxSpinBox->blockSignals(false);
@@ -129,19 +135,13 @@ void BackgroundImageInfoDialog::reset()
 
 void BackgroundImageInfoDialog::apply()
 {
-	m_info->m_translateX = ui->blxSpinBox->value();
-	m_info->m_translateY = ui->blySpinBox->value();
-	m_info->m_scale = ui->scaleSpinBox->value();
-	m_info->m_angle = ui->angleSpinBox->value();
+	m_info->impl->m_setting = setting();
 	m_info->informChange();
 }
 
 void BackgroundImageInfoDialog::reject()
 {
-	m_info->m_translateX = m_origLeftbottomX;
-	m_info->m_translateY = m_origLeftbottomY;
-	m_info->m_scale = m_origScale;
-	m_info->m_angle = m_origAngle;
+	m_info->impl->m_setting = m_originalSetting;
 	m_info->informChange();
 	QDialog::reject();
 }

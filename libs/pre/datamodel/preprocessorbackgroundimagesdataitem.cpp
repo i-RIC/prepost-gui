@@ -37,7 +37,6 @@ PreProcessorBackgroundImagesDataItem::PreProcessorBackgroundImagesDataItem(Graph
 	connect(projectData()->mainfile(), SIGNAL(backgroundImageDeleted(int)), this, SLOT(deleteChildItem(int)));
 	connect(projectData()->mainfile(), SIGNAL(backgroundImageMovedUp(int)), this, SLOT(moveUpChildItem(int)));
 	connect(projectData()->mainfile(), SIGNAL(backgroundImageMovedDown(int)), this, SLOT(moveDownChildItem(int)));
-	connect(projectData()->mainfile(), SIGNAL(backgroundActorVisibilityChanged(int, bool)), this, SLOT(updateChildCheckState(int, bool)));
 
 	projectData()->mainfile()->addRenderer(renderer());
 }
@@ -126,26 +125,6 @@ void PreProcessorBackgroundImagesDataItem::addCustomMenuItems(QMenu* menu)
 	menu->addAction(m_deleteAllAction);
 }
 
-void PreProcessorBackgroundImagesDataItem::updateChildCheckState(int idx, bool vis)
-{
-	dataModel()->itemModel()->blockSignals(true);
-	if (idx < 0) {
-		QtTool::checkItem(m_standardItem, vis);
-	} else {
-		auto it = m_childItems.begin() + idx;
-		PreProcessorBackgroundImageDataItem* item = dynamic_cast<PreProcessorBackgroundImageDataItem*>(*it);
-		QtTool::checkItem(item->standardItem(), vis);
-	}
-	dataModel()->itemModel()->blockSignals(false);
-	updateVisibility();
-}
-
-void PreProcessorBackgroundImagesDataItem::handleStandardItemChange()
-{
-	GraphicsWindowDataItem::handleStandardItemChange();
-	projectData()->mainfile()->updateActorVisibility(- 1, m_standardItem->checkState() == Qt::Checked);
-}
-
 void PreProcessorBackgroundImagesDataItem::deleteSelected()
 {
 	if (m_childItems.size() == 0) {
@@ -186,3 +165,9 @@ void PreProcessorBackgroundImagesDataItem::deleteAll()
 		projectData()->mainfile()->deleteImage(item->standardItem()->index());
 	}
 }
+
+void PreProcessorBackgroundImagesDataItem::doLoadFromProjectMainFile(const QDomNode& /*node*/)
+{}
+
+void PreProcessorBackgroundImagesDataItem::doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/)
+{}

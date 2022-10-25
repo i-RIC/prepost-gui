@@ -1161,6 +1161,7 @@ void PostZoneDataContainer::doApplyOffset(double x_diff, double y_diff)
 
 void PostZoneDataContainer::doApplyOffset(vtkPointSet* ps, double x_diff, double y_diff)
 {
+	if (ps == nullptr) {return;}
 	vtkPoints* points = ps->GetPoints();
 	vtkIdType numPoints = points->GetNumberOfPoints();
 	double v[3];

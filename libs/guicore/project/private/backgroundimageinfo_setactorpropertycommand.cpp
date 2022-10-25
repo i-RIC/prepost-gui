@@ -1,34 +1,25 @@
+#include "backgroundimageinfo_impl.h"
 #include "backgroundimageinfo_setactorpropertycommand.h"
 
-BackgroundImageInfo::SetActorPropertyCommand::SetActorPropertyCommand(double posx, double posy, double scale, double theta, BackgroundImageInfo* info) :
+BackgroundImageInfo::SetActorPropertyCommand::SetActorPropertyCommand(const BackgroundImageInfo::Setting& newSetting, const BackgroundImageInfo::Setting& oldSetting, BackgroundImageInfo* info) :
 	QUndoCommand(QObject::tr("Reallocate Background Image")),
-	m_newTranslateX {posx},
-	m_newTranslateY {posy},
-	m_newScale {scale},
-	m_newTheta {theta},
-	m_oldTranslateX {info->m_oldTranslateX},
-	m_oldTranslateY {info->m_oldTranslateY},
-	m_oldScale {info->m_oldScale},
-	m_oldTheta {info->m_oldTheta},
+	m_newSetting {newSetting},
+	m_oldSetting {oldSetting},
 	m_info {info}
 {}
 
 void BackgroundImageInfo::SetActorPropertyCommand::redo()
 {
-	applySetting(m_newTranslateX, m_newTranslateY, m_newScale, m_newTheta);
+	applySetting(m_newSetting);
 }
 
 void BackgroundImageInfo::SetActorPropertyCommand::undo()
 {
-	applySetting(m_oldTranslateX, m_oldTranslateY, m_oldScale, m_oldTheta);
+	applySetting(m_oldSetting);
 }
 
-void BackgroundImageInfo::SetActorPropertyCommand::applySetting(double posx, double posy, double scale, double theta)
+void BackgroundImageInfo::SetActorPropertyCommand::applySetting(const BackgroundImageInfo::Setting& setting)
 {
-	m_info->m_translateX = posx;
-	m_info->m_translateY = posy;
-	m_info->m_scale = scale;
-	m_info->m_angle = theta;
-
+	m_info->impl->m_setting = setting;
 	m_info->informChange();
 }

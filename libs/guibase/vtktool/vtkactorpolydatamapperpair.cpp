@@ -13,7 +13,6 @@ vtkActorPolyDataMapperPair::Impl::Impl() :
 
 	auto p = m_actor->GetProperty();
 	p->SetLighting(false);
-	p->SetColor(0, 0, 0);
 
 	m_mapper->SetScalarVisibility(0);
 }

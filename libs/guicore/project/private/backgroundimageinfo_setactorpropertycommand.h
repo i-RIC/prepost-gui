@@ -2,29 +2,23 @@
 #define BACKGROUNDIMAGEINFO_SETACTORPROPERTYCOMMAND_H
 
 #include "../backgroundimageinfo.h"
+#include "backgroundimageinfo_setting.h"
 
 #include <QUndoCommand>
 
 class BackgroundImageInfo::SetActorPropertyCommand : public QUndoCommand
 {
 public:
-	SetActorPropertyCommand(double posx, double posy, double scale, double theta, BackgroundImageInfo* info);
+	SetActorPropertyCommand(const BackgroundImageInfo::Setting& newSetting, const BackgroundImageInfo::Setting& oldSetting, BackgroundImageInfo* info);
 
 	void redo() override;
 	void undo() override;
 
 private:
-	void applySetting(double posx, double posy, double scale, double theta);
+	void applySetting(const BackgroundImageInfo::Setting& setting);
 
-	double m_newTranslateX;
-	double m_newTranslateY;
-	double m_newScale;
-	double m_newTheta;
-
-	double m_oldTranslateX;
-	double m_oldTranslateY;
-	double m_oldScale;
-	double m_oldTheta;
+	BackgroundImageInfo::Setting m_newSetting;
+	BackgroundImageInfo::Setting m_oldSetting;
 
 	BackgroundImageInfo* m_info;
 };

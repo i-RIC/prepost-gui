@@ -240,6 +240,8 @@ HEADERS += guicore_global.h \
            project/georeferenceview.h \
            project/inputcond/private/inputconditiondependencysetsubenumerationsaction.h \
            project/offsetsettingdialog.h \
+           project/private/backgroundimageinfo_impl.h \
+           project/private/backgroundimageinfo_setting.h \
            project/projectcgnsfile.h \
            project/projectdata.h \
            project/projectdataitem.h \
@@ -660,6 +662,8 @@ SOURCES += base/iricmainwindowinterface.cpp \
            project/georeferenceview.cpp \
            project/inputcond/private/inputconditiondependencysetsubenumerationsaction.cpp \
            project/offsetsettingdialog.cpp \
+           project/private/backgroundimageinfo_impl.cpp \
+           project/private/backgroundimageinfo_setting.cpp \
            project/projectcgnsfile.cpp \
            project/projectdata.cpp \
            project/projectdataitem.cpp \

@@ -4,6 +4,8 @@
 #include "gcptablemodel.h"
 #include "gcptablerow.h"
 #include "ui_backgroundimageinfogeoreferencedialog.h"
+
+#include "private/backgroundimageinfo_impl.h"
 #include "private/backgroundimageinfogeoreferencedialog_styleditemdelegate.h"
 
 #include <QPushButton>
@@ -17,15 +19,9 @@
 
 BackgroundImageInfoGeoreferenceDialog::BackgroundImageInfoGeoreferenceDialog(BackgroundImageInfo* info, QWidget* parent) :
 	QDialog {parent, Qt::WindowTitleHint | Qt::WindowCloseButtonHint},
+	m_setting {info->impl->m_setting},
+	m_originalSetting {info->impl->m_setting},
 	m_info {info},
-	m_leftbottomX {info->translateX()},
-	m_leftbottomY {info->translateY()},
-	m_scale {info->scale()},
-	m_angle {info->angle()},
-	m_origLeftbottomX {info->translateX()},
-	m_origLeftbottomY {info->translateY()},
-	m_origScale {info->scale()},
-	m_origAngle {info->angle()},
 	m_gcpTableModel {new AddibleGcpTableModel()},
 	ui (new Ui::BackgroundImageInfoGeoreferenceDialog)
 {
@@ -85,50 +81,9 @@ AddibleGcpTableModel* BackgroundImageInfoGeoreferenceDialog::gcpTableModel()
 	return m_gcpTableModel.get();
 }
 
-double BackgroundImageInfoGeoreferenceDialog::leftBottomX() const
-{
-	return m_leftbottomX;
-}
-
-double BackgroundImageInfoGeoreferenceDialog::leftBottomY() const
-{
-	return m_leftbottomY;
-}
-
-double BackgroundImageInfoGeoreferenceDialog::scale() const
-{
-	return m_scale;
-}
-
-double BackgroundImageInfoGeoreferenceDialog::angle() const
-{
-	return m_angle;
-}
-
-double BackgroundImageInfoGeoreferenceDialog::origLeftBottomX() const
-{
-	return m_origLeftbottomX;
-}
-
-double BackgroundImageInfoGeoreferenceDialog::origLeftBottomY() const
-{
-	return m_origLeftbottomY;
-}
-
-double BackgroundImageInfoGeoreferenceDialog::origScale() const
-{
-	return m_origScale;
-}
-
-double BackgroundImageInfoGeoreferenceDialog::origAngle() const
-{
-	return m_origAngle;
-}
-
 void BackgroundImageInfoGeoreferenceDialog::calculate()
 {
 	auto table = ui->imageWidget->gcpTable();
-	auto resizeScale = m_info->resizeScale();
 
 	// Helmert transformation.
 	auto n = table->size();
@@ -152,8 +107,8 @@ void BackgroundImageInfoGeoreferenceDialog::calculate()
 	YAve /= n;
 
 	for (const auto& row : *table) {
-		auto row_sourceX = row.sourceX * resizeScale;
-		auto row_sourceY = row.sourceY * resizeScale;
+		auto row_sourceX = row.sourceX;
+		auto row_sourceY = row.sourceY;
 		x += row_sourceX;
 		y += row_sourceY;
 		X += (row.destX - XAve);
@@ -182,23 +137,26 @@ void BackgroundImageInfoGeoreferenceDialog::calculate()
 		k = M_PI * (b > 0 ? 0.5 : -0.5);
 	}
 
-	m_angle = k * 180 / M_PI;
+	m_setting.angle = k * 180 / M_PI;
 
-	QPixmap pixmap {m_info->name()};
-	m_leftbottomX = c + s * pixmap.height() * resizeScale * std::sin(k); // (c, d) is the top-left coordinate.
-	m_leftbottomY = d - s * pixmap.height() * resizeScale * std::cos(k); //
-	m_scale = s;
+	QPixmap pixmap {m_info->fullFileName()};
+
+	m_setting.positionX = c + s * pixmap.height() * std::sin(k); // (c, d) is the top-left coordinate.
+	m_setting.positionY = d - s * pixmap.height() * std::cos(k); //
+	m_setting.scale = s;
 }
 
 void BackgroundImageInfoGeoreferenceDialog::reject()
 {
-	m_info->m_translateX = m_origLeftbottomX;
-	m_info->m_translateY = m_origLeftbottomY;
-	m_info->m_scale = m_origScale;
-	m_info->m_angle = m_origAngle;
+	m_info->impl->m_setting = m_originalSetting;
 	m_info->informChange();
 
 	QDialog::reject();
+}
+
+BackgroundImageInfo::Setting BackgroundImageInfoGeoreferenceDialog::setting() const
+{
+	return m_setting;
 }
 
 void BackgroundImageInfoGeoreferenceDialog::accept()
@@ -212,10 +170,7 @@ void BackgroundImageInfoGeoreferenceDialog::apply()
 {
 	calculate();
 
-	m_info->m_translateX = m_leftbottomX;
-	m_info->m_translateY = m_leftbottomY;
-	m_info->m_scale = m_scale;
-	m_info->m_angle = m_angle;
+	m_info->impl->m_setting = m_setting;
 	m_info->informChange();
 }
 
