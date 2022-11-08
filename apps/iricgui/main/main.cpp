@@ -35,7 +35,7 @@ VTK_MODULE_INIT(vtkRenderingFreeTypeOpenGL);
 
 int main(int argc, char* argv[])
 {
-	_putenv("QT_ENABLE_HIGHDPI_SCALING=1");
+	// _putenv("QT_ENABLE_HIGHDPI_SCALING=1");
 
 	QtTool::initNetworkAccessManager();
 	QApplication::setAttribute(Qt::AA_UseHighDpiPixmaps);
