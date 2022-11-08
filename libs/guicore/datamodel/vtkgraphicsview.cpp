@@ -469,8 +469,11 @@ QImage VTKGraphicsView::getImage()
 //	rw->OffScreenRenderingOn();
 	rw->Render();
 
-	int w = this->width();
-	int h = this->height();
+	int* vtk_size = GetRenderWindow()->GetSize();
+
+	int w = *(vtk_size);
+	int h = *(vtk_size + 1);
+
 	QImage img(w, h, QImage::Format_RGB32);
 	vtkUnsignedCharArray* pixels = vtkUnsignedCharArray::New();
 	pixels->SetArray(img.bits(), w*h*4, 1);
