@@ -70,6 +70,7 @@ QPixmap Post3dWindow::snapshot()
 	QImage img = view->getImage();
 	QPixmap pixmap = QPixmap::fromImage(img);
 	if (m_isTransparent) { makeBackgroundTransparent(view, pixmap); }
+	pixmap.setDevicePixelRatio(devicePixelRatioF());
 
 	return pixmap;
 }

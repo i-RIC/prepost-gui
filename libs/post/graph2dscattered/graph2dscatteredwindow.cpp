@@ -59,13 +59,17 @@ void Graph2dScatteredWindow::setupDefaultGeometry(int index)
 QPixmap Graph2dScatteredWindow::snapshot()
 {
 	QWidget* w = centralWidget();
-	QPixmap pixmap(w->size());
+
+	QPixmap pixmap(w->size() * devicePixelRatioF());
+	pixmap.setDevicePixelRatio(devicePixelRatioF());
+
 	QBrush brush = QBrush(Qt::white);
 	QPainter painter;
 	painter.begin(&pixmap);
 	QRect rect = pixmap.rect();
 	painter.fillRect(rect, brush);
-	w->render(&painter, QPoint(), QRegion(), QWidget::DrawChildren);
+	QRegion region(0, 0, pixmap.width(), pixmap.height());
+	w->render(&painter, QPoint(), region, QWidget::DrawChildren);
 	painter.end();
 	return pixmap;
 }

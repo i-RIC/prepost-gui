@@ -1051,6 +1051,7 @@ void iRICMainWindow::saveContinuousSnapshot(ContinuousSnapshotWizard* wizard, QX
 	QList<QSize> sizes;
 	bool first = true;
 	int imgCount = 0;
+	qreal scaleFactor = devicePixelRatioF();
 	m_animationController->setCurrentStepIndex(step);
 	while (step <= setting.stopTimeStep) {
 		dialog.setValue(step - setting.startTimeStep);
@@ -1071,17 +1072,19 @@ void iRICMainWindow::saveContinuousSnapshot(ContinuousSnapshotWizard* wizard, QX
 		switch (setting.fileOutputSetting) {
 		case ContinuousSnapshotSetting::FileOutputSetting::Onefile: {
 				if (first) {sizes.append(size);}
-				QImage image = QImage(size, QImage::Format_ARGB32);
+				QImage image = QImage(size * scaleFactor, QImage::Format_ARGB32);
 				QPixmap pixmap;
 				QPainter painter;
 				if (setting.imageIsTransparent) {
 					image.fill(qRgba(0, 0, 0, 0));
 					pixmap = QPixmap::fromImage(image);
+					pixmap.setDevicePixelRatio(scaleFactor);
 					painter.begin(&pixmap);
 					painter.setBackgroundMode(Qt::TransparentMode);
 				} else {
 					image.fill(qRgba(255, 255, 255, 255));
 					pixmap = QPixmap::fromImage(image);
+					pixmap.setDevicePixelRatio(scaleFactor);
 					painter.begin(&pixmap);
 					painter.setBackgroundMode(Qt::OpaqueMode);
 				}
