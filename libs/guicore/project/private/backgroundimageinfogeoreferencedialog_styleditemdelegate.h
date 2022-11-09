@@ -7,8 +7,9 @@
 class BackgroundImageInfoGeoreferenceDialog::StyledItemDelegate : public QStyledItemDelegate
 {
 	Q_OBJECT
+
 public:
-	explicit StyledItemDelegate(QObject* parent = 0);
+	explicit StyledItemDelegate(QObject* parent = nullptr);
 	QString displayText(const QVariant& value, const QLocale& locale) const override;
 
 	void setEditorData(QWidget *editor, const QModelIndex& index) const override;

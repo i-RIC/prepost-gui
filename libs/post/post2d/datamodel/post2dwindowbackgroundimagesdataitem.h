@@ -15,7 +15,6 @@ public:
 	void updateZDepthRangeItemCount() override {m_zDepthRange.setItemCount(10);}
 	void addCustomMenuItems(QMenu* menu) override;
 	void visiblePropBounds(double bounds[6]);
-	void handleStandardItemChange() override;
 
 public slots:
 	void addChildItem();
@@ -23,7 +22,6 @@ public slots:
 	void moveUpChildItem(int i);
 	void moveDownChildItem(int i);
 	void setupChildItem();
-	void updateChildCheckState(int idx, bool vis);
 
 private slots:
 	void deleteSelected();
@@ -33,9 +31,9 @@ signals:
 	void selectBackgroundImage(const QModelIndex& current);
 	void requestRemoveRenderer(vtkRenderer* ren);
 
-protected:
-	void doLoadFromProjectMainFile(const QDomNode& /*node*/) override {}
-	void doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/) override {}
+private:
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
 	QAction* m_addAction;
 	QAction* m_deleteSelectedAction;

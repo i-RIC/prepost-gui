@@ -21,9 +21,9 @@ public:
 
 	/// @name XML I/O functions
 	//@{
-	void load(const QDomNode&);
+	void load(const QDomNode&) override;
 	/// Save data into XML node as attributes
-	void save(QXmlStreamWriter&) const;
+	void save(QXmlStreamWriter&) const override;
 	//@}
 
 	/// @name Operators

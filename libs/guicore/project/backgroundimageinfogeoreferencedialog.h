@@ -1,11 +1,12 @@
 #ifndef BACKGROUNDIMAGEINFOGEOREFERENCEDIALOG_H
 #define BACKGROUNDIMAGEINFOGEOREFERENCEDIALOG_H
 
+#include "private/backgroundimageinfo_setting.h"
+
 #include <QDialog>
 
 #include <memory>
 #include <unordered_set>
-
 
 class QItemSelection;
 class QCloseEvent;
@@ -23,7 +24,7 @@ class BackgroundImageInfoGeoreferenceDialog : public QDialog
 	Q_OBJECT
 
 public:
-	explicit BackgroundImageInfoGeoreferenceDialog(BackgroundImageInfo* info, QWidget* parent = 0);
+	BackgroundImageInfoGeoreferenceDialog(BackgroundImageInfo* info, QWidget* parent = 0);
 	~BackgroundImageInfoGeoreferenceDialog();
 
 	void clearSelection();
@@ -32,15 +33,7 @@ public:
 	std::vector<GcpTableRow>* gcpTable();
 	AddibleGcpTableModel* gcpTableModel();
 
-	double leftBottomX() const;
-	double leftBottomY() const;
-	double scale() const;
-	double angle() const;
-
-	double origLeftBottomX() const;
-	double origLeftBottomY() const;
-	double origScale() const;
-	double origAngle() const;
+	BackgroundImageInfo::Setting setting() const;
 
 public slots:
 	void accept() override;
@@ -58,17 +51,10 @@ private slots:
 private:
 	void calculate();
 
+	BackgroundImageInfo::Setting m_setting;
+	BackgroundImageInfo::Setting m_originalSetting;
+
 	BackgroundImageInfo* m_info;
-
-	double m_leftbottomX;
-	double m_leftbottomY;
-	double m_scale;
-	double m_angle;
-
-	double m_origLeftbottomX;
-	double m_origLeftbottomY;
-	double m_origScale;
-	double m_origAngle;
 
 	std::unique_ptr<AddibleGcpTableModel> m_gcpTableModel;
 	Ui::BackgroundImageInfoGeoreferenceDialog *ui;

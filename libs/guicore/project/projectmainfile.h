@@ -100,7 +100,6 @@ public:
 	/// Renderers for background images
 	const std::vector<vtkRenderer*>& renderers() const;
 
-	void updateActorVisibility(int idx, bool vis);
 	bool importCgnsFile(const QString& filename, const QString& newname);
 	/// Import Measured data from CSV files.
 	void addMeasuredData();
@@ -153,12 +152,11 @@ signals:
 	void backgroundImageDeleted(int i);
 	void backgroundImageMovedUp(int i);
 	void backgroundImageMovedDown(int i);
+
 	void measuredDataAdded();
 	void measuredDataDeleted(int i);
 	void measuredDataMovedUp(int i);
 	void measuredDataMovedDown(int i);
-
-	void backgroundActorVisibilityChanged(int idx, bool vis);
 
 private:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;

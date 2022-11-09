@@ -19,6 +19,8 @@ public:
 	//@{
 	NumericValueContainerT<V>& operator+=(const V& v);
 	NumericValueContainerT<V>& operator-=(const V& v);
+	NumericValueContainerT<V>& operator*=(const V& v);
+	NumericValueContainerT<V>& operator/=(const V& v);
 	//@}
 };
 

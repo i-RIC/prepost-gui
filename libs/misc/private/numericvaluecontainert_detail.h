@@ -36,4 +36,18 @@ NumericValueContainerT<V>& NumericValueContainerT<V>::operator-=(const V& v)
 	return *this;
 }
 
+template <typename V>
+NumericValueContainerT<V>& NumericValueContainerT<V>::operator*=(const V& v)
+{
+	this->m_value *= v;
+	return *this;
+}
+
+template <typename V>
+NumericValueContainerT<V>& NumericValueContainerT<V>::operator/=(const V& v)
+{
+	this->m_value /= v;
+	return *this;
+}
+
 #endif // NUMERICVALUECONTAINERT_DETAIL_H

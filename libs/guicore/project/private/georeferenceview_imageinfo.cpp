@@ -186,7 +186,7 @@ std::vector<GeoreferenceViewHelper*>& GeoreferenceView::ImageInfo::viewHelpers()
 
 void GeoreferenceView::ImageInfo::doPaintView(QPainter* painter, const QTransform&, const QRectF&) const
 {
-	QImage img {m_backgroundImageInfo->name()};
+	QImage img {m_backgroundImageInfo->fullFileName()};
 
 	painter->save();
 

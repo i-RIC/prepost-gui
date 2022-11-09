@@ -37,7 +37,6 @@ Post2dWindowBackgroundImagesDataItem::Post2dWindowBackgroundImagesDataItem(Graph
 	connect(projectData()->mainfile(), SIGNAL(backgroundImageMovedDown(int)), this, SLOT(moveDownChildItem(int)));
 	connect(dynamic_cast<Post2dWindowRootDataItem*>(this->parent()), SIGNAL(standardModelSetuped()), this, SLOT(setupChildItem()));
 	connect(this, SIGNAL(requestRemoveRenderer(vtkRenderer*)), projectData()->mainfile(), SLOT(removeRenderer(vtkRenderer*)));
-	connect(projectData()->mainfile(), SIGNAL(backgroundActorVisibilityChanged(int,bool)), this, SLOT(updateChildCheckState(int,bool)));
 
 	projectData()->mainfile()->addRenderer(renderer());
 }
@@ -149,35 +148,6 @@ void Post2dWindowBackgroundImagesDataItem::addCustomMenuItems(QMenu* menu)
 	menu->addAction(m_deleteAllAction);
 }
 
-void Post2dWindowBackgroundImagesDataItem::updateChildCheckState(int idx, bool vis)
-{
-	dataModel()->itemModel()->blockSignals(true);
-	if (idx < 0) {
-		if (vis) {
-			m_standardItem->setCheckState(Qt::Checked);
-		} else {
-			m_standardItem->setCheckState(Qt::Unchecked);
-		}
-	} else {
-		auto it = m_childItems.begin() + idx;
-		Post2dWindowBackgroundImageDataItem* item = dynamic_cast<Post2dWindowBackgroundImageDataItem*>(*it);
-		if (vis) {
-			item->standardItem()->setCheckState(Qt::Checked);
-		} else {
-			item->standardItem()->setCheckState(Qt::Unchecked);
-		}
-	}
-	dataModel()->itemModel()->blockSignals(false);
-	updateVisibility();
-	renderGraphicsView();
-}
-
-void Post2dWindowBackgroundImagesDataItem::handleStandardItemChange()
-{
-	GraphicsWindowDataItem::handleStandardItemChange();
-	projectData()->mainfile()->updateActorVisibility(-1, m_standardItem->checkState() == Qt::Checked);
-}
-
 void Post2dWindowBackgroundImagesDataItem::deleteSelected()
 {
 	if (m_childItems.size() == 0) {
@@ -218,3 +188,9 @@ void Post2dWindowBackgroundImagesDataItem::deleteAll()
 		projectData()->mainfile()->deleteImage(item->standardItem()->index());
 	}
 }
+
+void Post2dWindowBackgroundImagesDataItem::doLoadFromProjectMainFile(const QDomNode& /*node*/)
+{}
+
+void Post2dWindowBackgroundImagesDataItem::doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/)
+{}

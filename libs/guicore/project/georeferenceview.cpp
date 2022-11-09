@@ -10,6 +10,7 @@
 namespace {
 // Borrowed from apps/rivmaker/data/base/view.cpp
 const static int CLICK_LIMIT = 3;
+
 bool isClick(const QPoint& pressP, const QPoint& releaseP)
 {
 	if (qAbs(pressP.x() - releaseP.x()) > CLICK_LIMIT) {return false;}
@@ -17,7 +18,8 @@ bool isClick(const QPoint& pressP, const QPoint& releaseP)
 
 	return true;
 }
-}
+
+} // namespace
 
 GeoreferenceView::GeoreferenceView(QWidget *parent) :
 	PrimitiveView {parent},
@@ -104,7 +106,7 @@ std::vector<GcpTableRow>* GeoreferenceView::gcpTable()
 
 void GeoreferenceView::setupTransform()
 {
-	QImage img {m_info->backgroundImageInfo()->name()};
+	QImage img {m_info->backgroundImageInfo()->fullFileName()};
 	auto bbox = img.rect();
 
 	auto center = bbox.center();
