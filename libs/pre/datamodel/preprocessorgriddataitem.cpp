@@ -569,17 +569,6 @@ void PreProcessorGridDataItem::updateSelectedCells(MouseBoundingBox* box, bool x
 		// grid is not setup yet.
 		return;
 	}
-//	if (impl->m_grid->isMasked()){return;}
-
-	bool click = false;
-	if (iRIC::isNear(box->startPoint(), box->endPoint())) {
-		int r = iRIC::nearRadius();
-		QPoint newStart = box->endPoint() - QPoint(r, r);
-		QPoint newEnd = box->endPoint() + QPoint(r, r);
-		box->setStartPoint(newStart.x(), newStart.y());
-		box->setEndPoint(newEnd.x(), newEnd.y());
-		click = true;
-	}
 
 	QSet<vtkIdType> selectedCellsSet;
 	if (xOr) {
@@ -591,9 +580,15 @@ void PreProcessorGridDataItem::updateSelectedCells(MouseBoundingBox* box, bool x
 
 	QVector<vtkIdType> selectedCellsVector;
 
-	if (click) {
+	if (iRIC::isNear(box->startPoint(), box->endPoint())) {
+		// Select the clicked cell
+		QPoint end = box->endPoint();
+		box->setStartPoint(end.x(), end.y());
+		box->setEndPoint(end.x(), end.y());
+
 		double point[3];
 		box->vtkGrid()->GetPoint(0, point);
+
 		// find the cell that contains point.
 		vtkCell* hintCell = nullptr;
 		double pcoords[4];
