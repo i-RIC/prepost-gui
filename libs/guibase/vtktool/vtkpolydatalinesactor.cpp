@@ -8,6 +8,7 @@ vtkPolyDataLinesActor::vtkPolyDataLinesActor() :
 	vtkActorPolyDataMapperPair {}
 {
 	actor()->GetProperty()->SetRepresentationToWireframe();
+	actor()->GetProperty()->SetColor(0, 0, 0);
 }
 
 void vtkPolyDataLinesActor::setPolyData(vtkPolyData* polyData)

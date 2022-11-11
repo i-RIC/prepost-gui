@@ -8,6 +8,7 @@ vtkPolyDataPaintActor::vtkPolyDataPaintActor() :
 	vtkActorPolyDataMapperPair {}
 {
 	actor()->GetProperty()->SetRepresentationToSurface();
+	actor()->GetProperty()->SetColor(0, 0, 0);
 }
 
 void vtkPolyDataPaintActor::setPolyData(vtkPolyData* polyData)
