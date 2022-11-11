@@ -8,6 +8,7 @@ vtkPolyDataPointsActor::vtkPolyDataPointsActor() :
 	vtkActorPolyDataMapperPair {}
 {
 	actor()->GetProperty()->SetRepresentationToPoints();
+	actor()->GetProperty()->SetColor(0, 0, 0);
 }
 
 void vtkPolyDataPointsActor::setPolyData(vtkPolyData* polyData)
