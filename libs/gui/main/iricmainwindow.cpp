@@ -1195,7 +1195,9 @@ void iRICMainWindow::saveContinuousSnapshot(ContinuousSnapshotWizard* wizard, QX
 			args << "-i" << inFile;
 			args << profileString;
 			QSize size = sizes.at(i);
-			args << "-vf" << QString("scale=%1:%2").arg((size.width() / 2) * 2).arg((size.height() / 2) * 2);
+			args << "-vf" << QString("scale=%1:%2")
+							.arg((int(size.width() * devicePixelRatioF()) / 2) * 2)
+							.arg((int(size.height() * devicePixelRatioF()) / 2) * 2);
 			args << outFile;
 			ffprocess->start(ffmpegexe, args);
 			ffprocess->waitForFinished(-1);
