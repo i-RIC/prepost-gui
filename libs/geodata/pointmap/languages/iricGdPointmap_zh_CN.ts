@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="zh_CN">
 <context>
     <name>GeoDataPointMapDelPtsLessThanDialog</name>
@@ -241,7 +243,7 @@
         <translation>合并...</translation>
     </message>
     <message>
-        <source>There is no other data to merge in "%1" group.</source>
+        <source>There is no other data to merge in &quot;%1&quot; group.</source>
         <translation>没有其他数据可以合并到“ %1 “ 团体。</translation>
     </message>
     <message>
@@ -568,12 +570,12 @@
         <translation>未指定分隔符</translation>
     </message>
     <message>
-        <source>Not enough values to read "%1". "%1" column is %2 but %3 values input.</source>
-        <translation>没有足够的值来读取“ %1 “。” %1 " 列是 %2 但 %3 值输入。</translation>
+        <source>Not enough values to read &quot;%1&quot;. &quot;%1&quot; column is %2 but %3 values input.</source>
+        <translation>没有足够的值来读取“ %1 “。” %1 &quot; 列是 %2 但 %3 值输入。</translation>
     </message>
     <message>
-        <source>Error occured while reading "%1" value. "%1" value should be real number, but "%2" specified.</source>
-        <translation>读取时发生错误“ %1 “ 价值。 ” %1 " 值应该是实数，但是 " %2 “ 指定的。</translation>
+        <source>Error occured while reading &quot;%1&quot; value. &quot;%1&quot; value should be real number, but &quot;%2&quot; specified.</source>
+        <translation>读取时发生错误“ %1 “ 价值。 ” %1 &quot; 值应该是实数，但是 &quot; %2 “ 指定的。</translation>
     </message>
     <message>
         <source>Text files (CSV, TSV, etc.)</source>
@@ -581,7 +583,11 @@
     </message>
     <message>
         <source>Text file (*.csv *.txt *.xyz)</source>
-        <translation>文本文件 (*.csv *.txt *.xyz)</translation>
+        <translation type="vanished">文本文件 (*.csv *.txt *.xyz)</translation>
+    </message>
+    <message>
+        <source>Text file (*.tpo *.csv *.txt *.xyz)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -639,7 +645,7 @@
         <translation>引用字符：</translation>
     </message>
     <message>
-        <source>"</source>
+        <source>&quot;</source>
         <translation>”</translation>
     </message>
     <message>
@@ -925,7 +931,7 @@
         <translation>极限边长:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>头身跨度样式字体粗细：600； 注意跨度：单击“应用”按钮时，将被删除的三角形将被涂成深灰色</translation>
     </message>
 </context>
