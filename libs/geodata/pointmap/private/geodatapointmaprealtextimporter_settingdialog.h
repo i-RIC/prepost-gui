@@ -34,6 +34,7 @@ private slots:
 	void updatePreview();
 
 private:
+	void autoDetectHeaderLines();
 	void autoDetectDelimiters();
 	void autoDetectColumns();
 	QStringList getFields(LineParser* parser) const;

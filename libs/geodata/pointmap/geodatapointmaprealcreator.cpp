@@ -17,7 +17,7 @@
 GeoDataPointmapRealCreator::GeoDataPointmapRealCreator() :
 	GeoDataCreator {"realPointmap", tr("Point Cloud Data")}
 {
-	importers().push_back(new GeoDataPointmapRealImporter(this));
+	// importers().push_back(new GeoDataPointmapRealImporter(this));
 	importers().push_back(new GeoDataPointmapRealTextImporter(this));
 
 	webImporters().push_back(new GeoDataPointmapWebImporter(this));
