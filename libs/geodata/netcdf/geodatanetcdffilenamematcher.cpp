@@ -30,7 +30,8 @@ int setupCapId(int idx, const std::vector<int>& indices)
 
 } // namespace
 
-GeoDataNetcdfFileNameMatcher::GeoDataNetcdfFileNameMatcher(const QString& pattern)
+GeoDataNetcdfFileNameMatcher::GeoDataNetcdfFileNameMatcher(const QString& pattern) :
+	m_pattern {pattern}
 {
 	int YYYY_idx = pattern.indexOf(YYYY);
 	int MM_idx = pattern.indexOf(MM);
@@ -75,13 +76,15 @@ bool GeoDataNetcdfFileNameMatcher::setup(const QString& filename)
 	QString prefix = filename.left(pos);
 	QString suffix = filename.right(filename.length() - pos - m_patternRe.cap().length());
 
-	QString fnamePattern = (prefix + ".{%1}" + suffix).arg(m_patternRe.cap().length());
-	m_filenameRe = QRegExp(fnamePattern);
-
 	return true;
 }
 
-QDateTime GeoDataNetcdfFileNameMatcher::getDateTime(const QString& filename, bool* ok)
+QString GeoDataNetcdfFileNameMatcher::pattern() const
+{
+	return m_pattern;
+}
+
+QDateTime GeoDataNetcdfFileNameMatcher::getDateTime(const QString& filename, bool* ok) const
 {
 	auto current = QDate::currentDate();
 	int year = current.year();
@@ -91,13 +94,7 @@ QDateTime GeoDataNetcdfFileNameMatcher::getDateTime(const QString& filename, boo
 	int minute = 0;
 	int second = 0;
 
-	int pos = m_filenameRe.indexIn(filename);
-	if (pos == -1) {
-		*ok = false;
-		return QDateTime::currentDateTime();
-	}
-
-	pos = m_patternRe.indexIn(filename);
+	auto pos = m_patternRe.indexIn(filename);
 	if (pos == -1) {
 		*ok = false;
 		return QDateTime::currentDateTime();

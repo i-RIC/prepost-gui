@@ -126,7 +126,6 @@ public:
 	virtual GeoDataProxy* getProxy();
 
 	void applyOffset(double x, double y);
-	virtual bool requestCoordinateSystem() const;
 	virtual iRICLib::H5CgnsGeographicDataGroup::Type iRICLibType() const;
 
 signals:

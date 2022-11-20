@@ -28,6 +28,13 @@ void GeoDataNetcdfFileNamePatternDialog::setFilename(const QString& filename)
 	updateMatcher();
 }
 
+void GeoDataNetcdfFileNamePatternDialog::setPattern(const QString& pattern)
+{
+	ui->patternLineEdit->setText(pattern);
+
+	updateMatcher();
+}
+
 GeoDataNetcdfFileNameMatcher* GeoDataNetcdfFileNamePatternDialog::matcher()
 {
 	auto m = m_matcher;

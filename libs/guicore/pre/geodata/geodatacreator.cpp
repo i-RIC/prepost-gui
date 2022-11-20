@@ -72,6 +72,11 @@ void GeoDataCreator::setNameAndDefaultCaption(const std::vector<GraphicsWindowDa
 	}
 }
 
+bool GeoDataCreator::requestCoordinateSystem() const
+{
+	return false;
+}
+
 const std::vector<GeoDataMapper*>& GeoDataCreator::nodeMappers() const
 {
 	return impl->m_nodeMappers;

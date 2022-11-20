@@ -187,11 +187,6 @@ double GeoDataNetcdf::resolution() const
 }
 
 
-bool GeoDataNetcdf::requestCoordinateSystem() const
-{
-	return true;
-}
-
 vtkStructuredGrid* GeoDataNetcdf::grid() const
 {
 	return m_grid;

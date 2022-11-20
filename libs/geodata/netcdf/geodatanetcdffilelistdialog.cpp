@@ -29,7 +29,7 @@ void GeoDataNetcdfFileListDialog::setFileNames(const std::vector<QString>& fileN
 	m_fileNames = fileNames;
 
 	for (const QString& fname : fileNames) {
-		ui->listWidget->addItem(QFileInfo(fname).baseName());
+		ui->listWidget->addItem(QFileInfo(fname).fileName());
 	}
 	ui->listWidget->selectAll();
 }
@@ -47,7 +47,6 @@ std::vector<QString> GeoDataNetcdfFileListDialog::selectedFilenames() const
 
 	return ret;
 }
-
 
 void GeoDataNetcdfFileListDialog::accept()
 {

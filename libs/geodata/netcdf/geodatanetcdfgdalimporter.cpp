@@ -163,7 +163,7 @@ bool GeoDataNetcdfGdalImporter::doInitForTimeMode(const QString& filename, const
 
 	auto dataset = (GDALDataset*)(GDALOpen(iRIC::toStr(filename).c_str(), GA_ReadOnly));
 	if (dataset == NULL) {
-		// failed opening.
+		QMessageBox::critical(w, tr("Error"), tr("Opening %1 failed.").arg(QDir::toNativeSeparators(filename)));
 		return false;
 	}
 
@@ -403,7 +403,6 @@ bool GeoDataNetcdfGdalImporter::setupFileNamePattern(const QString& filename, QW
 	delete m_matcher;
 	m_matcher = nullptr;
 
-	/*
 	std::vector<QString> patterns;
 
 	patterns.push_back("YYYY-MM-DD_hh:mm:ss");
@@ -421,17 +420,18 @@ bool GeoDataNetcdfGdalImporter::setupFileNamePattern(const QString& filename, QW
 		m_matcher = matcher;
 		break;
 	}
-	*/
 
-	if (m_matcher == nullptr) {
-		GeoDataNetcdfFileNamePatternDialog dialog(w);
-		dialog.setFilename(filename);
-
-		int ret = dialog.exec();
-		if (ret == QDialog::Rejected) {return false;}
-
-		m_matcher = dialog.matcher();
+	GeoDataNetcdfFileNamePatternDialog dialog(w);
+	dialog.setFilename(filename);
+	if (m_matcher != nullptr) {
+		dialog.setPattern(m_matcher->pattern());
 	}
+
+	int ret = dialog.exec();
+	if (ret == QDialog::Rejected) {return false;}
+
+	m_matcher = dialog.matcher();
+
 	return (m_matcher != nullptr);
 }
 

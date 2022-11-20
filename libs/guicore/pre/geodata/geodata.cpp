@@ -283,11 +283,6 @@ void GeoData::applyOffset(double x, double y)
 	doApplyOffset(x, y);
 }
 
-bool GeoData::requestCoordinateSystem() const
-{
-	return false;
-}
-
 void GeoData::handleDimensionCurrentIndexChange(int, int)
 {}
 

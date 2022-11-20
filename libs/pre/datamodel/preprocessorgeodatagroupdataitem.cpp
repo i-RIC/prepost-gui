@@ -578,6 +578,16 @@ void PreProcessorGeoDataGroupDataItem::cancelImport()
 
 void PreProcessorGeoDataGroupDataItem::importGeoData(GeoDataImporter* importer, const QString& filename, const QString& selectedFilter)
 {
+	if (importer->creator()->requestCoordinateSystem()) {
+		if (projectData()->mainfile()->coordinateSystem() == nullptr) {
+			QMessageBox::information(preProcessorWindow(), tr("Information"), tr("To import the geographic data, specify coordinate system for the project first."), QMessageBox::Ok);
+			int dialogRet = projectData()->mainfile()->showCoordinateSystemDialog(true);
+			if (dialogRet == QDialog::Rejected) {
+				return;
+			}
+		}
+	}
+
 	// execute import.
 	int dataCount;
 	QWidget* w = preProcessorWindow();
@@ -618,17 +628,6 @@ void PreProcessorGeoDataGroupDataItem::importGeoData(GeoDataImporter* importer, 
 		// set name and caption
 		importer->creator()->setNameAndDefaultCaption(this->childItems(), geodata);
 		geodata->setupDataItem();
-		if (geodata->requestCoordinateSystem()) {
-			if (projectData()->mainfile()->coordinateSystem() == nullptr) {
-				QMessageBox::information(preProcessorWindow(), tr("Information"), tr("To import the geographic data, specify coordinate system first."), QMessageBox::Ok);
-				int dialogRet = projectData()->mainfile()->showCoordinateSystemDialog(true);
-				if (dialogRet == QDialog::Rejected) {
-					delete item;
-					item = nullptr;
-					goto ERROR_CLEANING;
-				}
-			}
-		}
 		// import data from the specified file
 		QWidget *w = wDialog;
 		if (w == nullptr) w = mainWindow();
