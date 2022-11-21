@@ -40,7 +40,6 @@ public:
 	BoolContainer fillUpper;
 	BoolContainer fillLower;
 	OpacityContainer opacity;
-    vtkTextPropertySettingContainer scalarTextSetting;
 
 	ScalarBarSetting scalarBarSetting;
 };

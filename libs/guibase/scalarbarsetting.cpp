@@ -6,6 +6,7 @@
 
 #include <QDomElement>
 #include <QDomNode>
+#include <QSettings>
 #include <QXmlStreamWriter>
 
 #include <vtkScalarBarActor.h>
@@ -28,6 +29,10 @@ ScalarBarSetting::ScalarBarSetting() :
 {
 	titleTextSetting.addPrefix("titleText");
 	labelTextSetting.addPrefix("labelText");
+
+	QSettings settings;
+	titleTextSetting.loadSetting(settings, "fontsetting/colorbar_title");
+	labelTextSetting.loadSetting(settings, "fontsetting/colorbar_label");
 }
 
 ScalarBarSetting::ScalarBarSetting(const ScalarBarSetting& setting) :
