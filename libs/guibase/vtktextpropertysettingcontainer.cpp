@@ -58,7 +58,7 @@ void vtkTextPropertySettingContainer::getSetting(vtkTextProperty* prop)
 	isShadow = (prop->GetShadow() == 1);
 }
 
-void vtkTextPropertySettingContainer::applySetting(vtkTextProperty* prop)
+void vtkTextPropertySettingContainer::applySetting(vtkTextProperty* prop) const
 {
 	if (fontFamily == ffArial) {
 		prop->SetFontFamilyToArial();
@@ -76,8 +76,14 @@ void vtkTextPropertySettingContainer::applySetting(vtkTextProperty* prop)
 
 void vtkTextPropertySettingContainer::loadSetting(const QSettings& setting, const QString& name)
 {
-    fontFamily = static_cast<FontFamily> (setting.value(name + "_fontfamily").toInt());
-    fontColor = setting.value(name + "_fontcolor").value<QColor>();
+	auto ff = setting.value(name + "_fontfamily");
+	if (! ff.isValid()) {
+		// no data is stored in registry
+		return;
+	}
+
+	fontFamily = static_cast<FontFamily> (setting.value(name + "_fontfamily").toInt());
+	fontColor = setting.value(name + "_fontcolor").value<QColor>();
 	fontSize = setting.value(name + "_fontsize").toInt();
 	isBold = setting.value(name + "_fontisbold").toBool();
 	isItalic = setting.value(name + "_fontisitalic").toBool();
@@ -85,11 +91,11 @@ void vtkTextPropertySettingContainer::loadSetting(const QSettings& setting, cons
 }
 
 void vtkTextPropertySettingContainer::saveSetting(QSettings* setting, const QString& name)
-{	
-    setting->setValue(name + "_fontfamily", static_cast<int>(fontFamily.value()));
-    setting->setValue(name + "_fontcolor", fontColor.value());
-    setting->setValue(name + "_fontsize", fontSize.value());
-    setting->setValue(name + "_fontisbold", isBold.value());
-    setting->setValue(name + "_fontisitalic", isItalic.value());
-    setting->setValue(name + "_fontisshadow", isShadow.value());
+{
+	setting->setValue(name + "_fontfamily", static_cast<int>(fontFamily.value()));
+	setting->setValue(name + "_fontcolor", fontColor.value());
+	setting->setValue(name + "_fontsize", fontSize.value());
+	setting->setValue(name + "_fontisbold", isBold.value());
+	setting->setValue(name + "_fontisitalic", isItalic.value());
+	setting->setValue(name + "_fontisshadow", isShadow.value());
 }

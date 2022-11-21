@@ -1,6 +1,7 @@
 #ifndef PREPROCESSORBCGROUPDATAITEM_H
 #define PREPROCESSORBCGROUPDATAITEM_H
 
+#include <guibase/vtktextpropertysettingcontainer.h>
 #include <guicore/pre/base/preprocessordataitem.h>
 
 class PreProcessorBCDataItem;
@@ -19,6 +20,8 @@ public:
 	PreProcessorBCGroupDataItem(PreProcessorDataItem* parent);
 	~PreProcessorBCGroupDataItem();
 
+	const vtkTextPropertySettingContainer& nameSetting() const;
+
 	int loadFromCgnsFile(const iRICLib::H5CgnsZone& zone);
 	int saveToCgnsFile(iRICLib::H5CgnsZone* zone);
 	void informGridUpdate();
@@ -33,6 +36,9 @@ public:
 	void renumberItemsForProject();
 	const QList<QAction*> addActions() const;
 
+	QDialog* propertyDialog(QWidget* parent) override;
+	void handlePropertyDialogAccepted(QDialog* propDialog) override;
+
 public slots:
 	void addCondition();
 
@@ -44,12 +50,12 @@ signals:
 	void itemsUpdated();
 	void itemsLoaded();
 
-protected:
-	void doLoadFromProjectMainFile(const QDomNode& node) override;
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
-
 private:
 	void renumberItemsForCgns();
+	void updateNameActorSettingsOfChildren();
+
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
 	QList<QAction*> m_addActions;
 	QAction* m_deleteSelectedAction;
@@ -63,7 +69,10 @@ private:
 	QAction* m_dummyReleaseAction;
 	QMenu* m_bcMenu;
 
+	vtkTextPropertySettingContainer m_nameSetting;
 	ColorSource* m_colorSource;
+
+	class SetSettingCommand;
 
 public:
 	friend class PreProcessorBCDataItem;
