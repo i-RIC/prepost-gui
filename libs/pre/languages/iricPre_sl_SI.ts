@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="sl_SI">
 <context>
     <name>BoundaryConditionDialog</name>
@@ -114,7 +112,7 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>GridBirdEyeWindow</name>
     <message>
-        <source>Grid Bird&apos;s-Eye View Window</source>
+        <source>Grid Bird's-Eye View Window</source>
         <translation>Mreža s pogledom na ptičje oko</translation>
     </message>
 </context>
@@ -582,8 +580,8 @@ Do you really want to import grid from this file?</source>
         <translation>%1 po zadnjem urejanju niso preslikani. Ali želite zdaj izvesti preslikavo?</translation>
     </message>
     <message>
-        <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
-        <translation>Nastavitev mejnega stanja &quot;%1&quot;ni preslikano, potem ko je bilo nazadnje urejeno. Ali želite preslikavo izvesti zdaj?</translation>
+        <source>Boundary Condition Setting "%1" is not mapped after it is edited last time. Do you want to execute mapping now?</source>
+        <translation>Nastavitev mejnega stanja "%1"ni preslikano, potem ko je bilo nazadnje urejeno. Ali želite preslikavo izvesti zdaj?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -789,7 +787,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>To import the geographic data, specify coordinate system for the project first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Za uvoz geografskih podatkov najprej določite koordinatni sistem za projekt.</translation>
     </message>
 </context>
 <context>
@@ -989,7 +987,7 @@ Do you really want to import grid from this file?</source>
         <translation>Izvedite (&amp;E)...</translation>
     </message>
     <message>
-        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.
+        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".
 </source>
         <translation>Naslednji atributi niso bili preslikani, ker so zanje izhodne vrednosti generatorja omrežja. Če želite za njih prisilno preslikati geografske podatke, ročno preslikajte z menijem »Mreža« -&gt; »Preslikava atributov« -&gt; »Izvedi«.</translation>
     </message>
@@ -1010,12 +1008,12 @@ Do you really want to import grid from this file?</source>
         <translation>Kartiranje geografskih podatkov je končano</translation>
     </message>
     <message>
-        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Atribut mreže &quot;%1&quot;je ročno urejeno. Ko izvedete preslikavo, bodo vse vaše spremembe zavržene. Ali res želite preslikavo izvesti?</translation>
+        <source>The grid attribute "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Atribut mreže "%1"je ročno urejeno. Ko izvedete preslikavo, bodo vse vaše spremembe zavržene. Ali res želite preslikavo izvesti?</translation>
     </message>
     <message>
-        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Mejni pogoj &quot;%1&quot;je ročno urejeno. Ko izvedete preslikavo, bodo vse vaše spremembe zavržene. Ali res želite preslikavo izvesti?</translation>
+        <source>The boundary condition "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Mejni pogoj "%1"je ročno urejeno. Ko izvedete preslikavo, bodo vse vaše spremembe zavržene. Ali res želite preslikavo izvesti?</translation>
     </message>
 </context>
 <context>
@@ -1033,19 +1031,19 @@ Do you really want to import grid from this file?</source>
         <translation>Samodejno</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta ime = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Ko je mreža ustvarjena, vas vprašamo, ali da vsakič izvedete preslikavo atributov. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta ime = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Ko je mreža ustvarjena, vas vprašamo, ali da vsakič izvedete preslikavo atributov. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Manual</source>
         <translation>Priročnik</translation>
     </message>
     <message>
-        <source>Attribute mapping is executed only when you manually select &quot;Execute&quot; menu.</source>
+        <source>Attribute mapping is executed only when you manually select "Execute" menu.</source>
         <translation>Preslikava atributov se izvede le, če ročno izberete meni »Izvedi«.</translation>
     </message>
     <message>
@@ -1450,7 +1448,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>Nastavite Scalarbar (&amp;U)...</translation>
     </message>
     <message>
-        <source>Open &amp;Bird&apos;s-Eye View Window</source>
+        <source>Open &amp;Bird's-Eye View Window</source>
         <translation>Odprite okno s pogledom na ptice (&amp;B)</translation>
     </message>
     <message>
