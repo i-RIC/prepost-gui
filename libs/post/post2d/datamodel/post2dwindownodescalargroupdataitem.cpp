@@ -76,7 +76,7 @@ Post2dWindowNodeScalarGroupDataItem::Post2dWindowNodeScalarGroupDataItem(Post2dW
 	m_shapeExporter = new ShapeExporter(this);
 
 	QSettings settings;
-    m_setting.scalarTextSetting.loadSetting(settings, "scalarnode");
+	m_setting.scalarTextSetting.loadSetting(settings, "scalarnode");
 }
 
 Post2dWindowNodeScalarGroupDataItem::~Post2dWindowNodeScalarGroupDataItem()

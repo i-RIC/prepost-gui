@@ -55,21 +55,16 @@ void PreferencePageFontDefault::update()
 {
 	QSettings settings;
 
-	bool useGlobalSetting = ui->globalSettingCheckBox->isChecked();
+	// bool useGlobalSetting = ui->globalSettingCheckBox->isChecked();
 
 	vtkTextPropertySettingContainer s;
 
-	if (useGlobalSetting) {
-		s = ui->globalSettingWidget->setting();
+	s = ui->gridShapeWidget->setting();
+	s.saveSetting(&settings, "fontsetting/gridindices");
 
-	} else {
-		s = ui->gridShapeWidget->setting();
-		s.saveSetting(&settings, "fontsetting/gridindices");
+	s = ui->bcNamesWidget->setting();
+	s.saveSetting(&settings, "fontsetting/bc");
 
-		s = ui->bcNamesWidget->setting();
-		s.saveSetting(&settings, "fontsetting/bc");
-
-		s = ui->arrowWidget->setting();
-		s.saveSetting(&settings, "fontsetting/arrow");
-	}
+	s = ui->arrowWidget->setting();
+	s.saveSetting(&settings, "fontsetting/arrow");
 }
