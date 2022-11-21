@@ -5,15 +5,20 @@
 #include <QSettings>
 
 GridShapeEditDialog::Setting::Setting() :
-	CompositeContainer ({&color, &shape, &indexVisible, &indexColor}),
+    CompositeContainer ({&color, &shape, &indexVisible, &indexTextSetting}),
 	color {"color"},
 	shape {"shape", GridShapeEditDialog::Outline},
 	indexVisible {"indexVisible", false},
-	indexColor {"indexColor"}
+    indexTextSetting {}
 {
 	QSettings setting;
 	color = setting.value("graphics/gridcolor", QColor(Qt::black)).value<QColor>();
-	indexColor = setting.value("graphics/gridindexcolor", QColor(Qt::black)).value<QColor>();
+
+    indexTextSetting.addPrefix("indexTextSetting");
+	indexTextSetting.fontSize.setDefaultValue(15);
+	indexTextSetting.fontSize = 15;
+	// indexColor = setting.value("graphics/gridindexcolor", QColor(Qt::black)).value<QColor>();
+    // TODO: フォントの設定をPreference の設定から読み込む
 }
 
 GridShapeEditDialog::Setting::Setting(const Setting& s) :
@@ -63,7 +68,7 @@ void GridShapeEditDialog::setSetting(const Setting& s)
 {
 	ui->gridColorEditWidget->setColor(s.color);
 	ui->indexVisibleCheckBox->setChecked(s.indexVisible);
-	ui->indexColorEditWidget->setColor(s.indexColor);
+    ui->indexTextSettingWidget->setSetting(s.indexTextSetting);
 	if (s.shape == Outline) {
 		ui->outlineRadioButton->setChecked(true);
 	} else {
@@ -77,7 +82,7 @@ GridShapeEditDialog::Setting GridShapeEditDialog::setting() const
 
 	ret.color = ui->gridColorEditWidget->color();
 	ret.indexVisible = ui->indexVisibleCheckBox->isChecked();
-	ret.indexColor = ui->indexColorEditWidget->color();
+    ret.indexTextSetting = ui->indexTextSettingWidget->setting();
 	if (ui->outlineRadioButton->isChecked()) {
 		ret.shape = Outline;
 	} else {

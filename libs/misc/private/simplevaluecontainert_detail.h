@@ -78,4 +78,17 @@ void SimpleValueContainerT<V>::setValue(const V& val)
 	m_value = val;
 }
 
+template <typename V>
+const V& SimpleValueContainerT<V>::defaultValue() const
+{
+    return m_defaultValue;
+}
+
+template <typename V>
+void SimpleValueContainerT<V>::setDefaultValue(const V& val)
+{
+    m_defaultValue = val;
+}
+
+
 #endif // SIMPLEVALUECONTAINERT_DETAIL_H
