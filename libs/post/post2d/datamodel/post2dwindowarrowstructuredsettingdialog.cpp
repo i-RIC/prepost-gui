@@ -9,6 +9,7 @@
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 
+#include <QSettings>
 #include <QtGlobal>
 
 #include <vtkPointData.h>
@@ -23,6 +24,9 @@ Post2dWindowArrowStructuredSettingDialog::Post2dWindowArrowStructuredSettingDial
 	connect(ui->regionSettingButton, SIGNAL(clicked()), this, SLOT(showRegionDialog()));
 	connect(ui->colorbarSettingButton, SIGNAL(clicked()), this, SLOT(showScalarBarDialog()));
 	m_activeDisabled = false;
+
+	QSettings settings;
+    m_setting.legendTextSetting.loadSetting(settings, "arrow");
 }
 
 Post2dWindowArrowStructuredSettingDialog::~Post2dWindowArrowStructuredSettingDialog()

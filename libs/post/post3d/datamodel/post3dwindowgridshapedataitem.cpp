@@ -84,6 +84,9 @@ void Post3dWindowGridShapeDataItem::setupActors()
     iRIC::setupGridIndexTextProperty(textProp);
     m_setting.indexTextSetting.applySetting(textProp);
 
+	QSettings settings;
+    m_setting.indexTextSetting.loadSetting(settings, "gridshape");
+
 	m_indexActor->SetMapper(m_indexMapper);
 
 	m_outlineActor->VisibilityOff();

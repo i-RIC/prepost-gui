@@ -8,6 +8,7 @@
 #include <misc/stringtool.h>
 
 #include <QIcon>
+#include <QSettings>
 #include <QUndoCommand>
 
 #include <vtkActor2DCollection.h>
@@ -99,6 +100,9 @@ void Post2dBirdEyeWindowGridShapeDataItem::setupActors()
     vtkTextProperty* textProp = m_indexMapper->GetLabelTextProperty();
     iRIC::setupGridIndexTextProperty(textProp);
     m_setting.indexTextSetting.applySetting(textProp);
+
+	QSettings settings;
+    m_setting.indexTextSetting.loadSetting(settings, "gridshape");
 
 	m_indexActor->SetMapper(m_indexMapper);
 	m_outlineActor->VisibilityOff();

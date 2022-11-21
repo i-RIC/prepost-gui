@@ -15,6 +15,7 @@
 #include <misc/xmlsupport.h>
 
 #include <QDomNode>
+#include <QSettings>
 #include <QXmlStreamWriter>
 
 #include <vtkActor.h>
@@ -94,6 +95,9 @@ void Post2dWindowGridShapeDataItem::setupActors()
     vtkTextProperty* textProp = m_indexMapper->GetLabelTextProperty();
     iRIC::setupGridIndexTextProperty(textProp);
     m_setting.indexTextSetting.applySetting(textProp);
+
+	QSettings settings;
+    m_setting.indexTextSetting.loadSetting(settings, "gridshape");
 
 	m_indexActor->SetMapper(m_indexMapper);
 

@@ -26,6 +26,7 @@
 
 #include <QDomNode>
 #include <QList>
+#include <QSettings>
 #include <QStandardItem>
 #include <QXmlStreamWriter>
 
@@ -56,6 +57,9 @@ Post2dBirdEyeWindowNodeScalarGroupDataItem::Post2dBirdEyeWindowNodeScalarGroupDa
 
 	setupActors();
 	m_setting.opacity = 100;
+
+	QSettings settings;
+    m_setting.scalarTextSetting.loadSetting(settings, "scalarnode");
 }
 
 Post2dBirdEyeWindowNodeScalarGroupDataItem::~Post2dBirdEyeWindowNodeScalarGroupDataItem()

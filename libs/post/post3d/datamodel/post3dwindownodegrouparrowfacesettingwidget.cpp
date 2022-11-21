@@ -95,7 +95,7 @@ void Post3dWindowNodeGroupArrowFaceSettingWidget::setSettings(bool enabled, cons
 	ui->jSamplingRateSpinBox->setValue(samplingRateSetting.jSamplingRate);
 	ui->kSamplingRateSpinBox->setValue(samplingRateSetting.kSamplingRate);
 
-	ui->legendTextWidget->setSetting(s.legendTextSetting);
+	ui->legendTextWidget->setSetting(arrowSetting.legendTextSetting);
 }
 
 bool Post3dWindowNodeGroupArrowFaceSettingWidget::enabled() const

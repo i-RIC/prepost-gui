@@ -9,6 +9,7 @@
 #include <misc/compositecontainer.h>
 
 class QColor;
+class QSettings;
 class vtkTextProperty;
 
 /// Container class for vtkTextProperty setting
@@ -29,6 +30,8 @@ public:
 
 	void getSetting(vtkTextProperty* prop);
 	void applySetting(vtkTextProperty* prop);
+    void loadSetting(const QSettings& setting, const QString& name);
+    void saveSetting(QSettings* setting, const QString& name);
 
 public:
 	EnumContainerT<FontFamily> fontFamily;

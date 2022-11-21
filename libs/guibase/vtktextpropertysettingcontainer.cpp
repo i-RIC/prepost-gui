@@ -74,3 +74,22 @@ void vtkTextPropertySettingContainer::applySetting(vtkTextProperty* prop)
 	prop->SetShadow(isShadow);
 }
 
+void vtkTextPropertySettingContainer::loadSetting(const QSettings& setting, const QString& name)
+{
+    fontFamily = static_cast<FontFamily> (setting.value(name + "_fontfamily").toInt());
+    fontColor = setting.value(name + "_fontcolor").value<QColor>();
+	fontSize = setting.value(name + "_fontsize").toInt();
+	isBold = setting.value(name + "_fontisbold").toBool();
+	isItalic = setting.value(name + "_fontisitalic").toBool();
+	isShadow = setting.value(name + "_fontisshadow").toBool();
+}
+
+void vtkTextPropertySettingContainer::saveSetting(QSettings* setting, const QString& name)
+{	
+    setting->setValue(name + "_fontfamily", static_cast<int>(fontFamily.value()));
+    setting->setValue(name + "_fontcolor", fontColor.value());
+    setting->setValue(name + "_fontsize", fontSize.value());
+    setting->setValue(name + "_fontisbold", isBold.value());
+    setting->setValue(name + "_fontisitalic", isItalic.value());
+    setting->setValue(name + "_fontisshadow", isShadow.value());
+}

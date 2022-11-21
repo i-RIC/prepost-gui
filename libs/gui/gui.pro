@@ -204,7 +204,6 @@ HEADERS += gui_api.h \
            factory/postprocessorwindowfactory.h \
            main/iricmainwindow.h \
            main/iricmergablecommands.h \
-           main/private/iricmainwindow_modelessdialogmodechanger.h \
            misc/animationcontroller.h \
            misc/flushrequester.h \
            misc/installertool.h \
@@ -221,6 +220,7 @@ HEADERS += gui_api.h \
            pref/preferencedialog.h \
            pref/preferencepage.h \
            pref/preferencepagebackgroundgrid.h \
+           pref/preferencepagefontdefault.h \
            pref/preferencepagegeneral.h \
            pref/preferencepagegraphicsdefault.h \
            pref/preferencepagegridcheck.h \
@@ -247,6 +247,7 @@ HEADERS += gui_api.h \
            startpage/startpagerecentsolver.h \
            startpage/startpagerecentsolverlist.h \
            main/private/iricmainwindow_calculatedresultmanager.h \
+           main/private/iricmainwindow_modelessdialogmodechanger.h \
            main/private/iricmainwindow_snapshotsaver.h \
            misc/private/cancelhandler.h \
            pref/private/preferencepageriversurveyfractionadddialog.h \
@@ -266,6 +267,7 @@ FORMS += continuoussnapshot/continuoussnapshotfilepropertypage.ui \
          misc/projecttypeselectdialog.ui \
          pref/preferencedialog.ui \
          pref/preferencepagebackgroundgrid.ui \
+         pref/preferencepagefontdefault.ui \
          pref/preferencepagegeneral.ui \
          pref/preferencepagegraphicsdefault.ui \
          pref/preferencepagegridcheck.ui \
@@ -294,7 +296,6 @@ SOURCES += continuoussnapshot/continuoussnapshotconfirmpage.cpp \
            continuoussnapshot/continuoussnapshotwizard.cpp \
            factory/postprocessorwindowfactory.cpp \
            main/iricmainwindow.cpp \
-           main/private/iricmainwindow_modelessdialogmodechanger.cpp \
            misc/animationcontroller.cpp \
            misc/flushrequester.cpp \
            misc/installertool.cpp \
@@ -310,6 +311,7 @@ SOURCES += continuoussnapshot/continuoussnapshotconfirmpage.cpp \
            pref/preferencedialog.cpp \
            pref/preferencepage.cpp \
            pref/preferencepagebackgroundgrid.cpp \
+           pref/preferencepagefontdefault.cpp \
            pref/preferencepagegeneral.cpp \
            pref/preferencepagegraphicsdefault.cpp \
            pref/preferencepagegridcheck.cpp \
@@ -336,6 +338,7 @@ SOURCES += continuoussnapshot/continuoussnapshotconfirmpage.cpp \
            startpage/startpagerecentsolver.cpp \
            startpage/startpagerecentsolverlist.cpp \
            main/private/iricmainwindow_calculatedresultmanager.cpp \
+           main/private/iricmainwindow_modelessdialogmodechanger.cpp \
            main/private/iricmainwindow_snapshotsaver.cpp \
            misc/private/cancelhandler.cpp \
            pref/private/preferencepageriversurveyfractionadddialog.cpp \
