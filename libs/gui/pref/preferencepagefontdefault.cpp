@@ -15,13 +15,12 @@ PreferencePageFontDefault::PreferencePageFontDefault(QWidget* parent) :
 
 	QSettings settings;
 
+	/*
+	// not tested yet
 	vtkTextPropertySettingContainer s_global;
 	s_global.loadSetting(m_settings, "global");
 	ui->globalSettingWidget->setSetting(s_global);
 
-	vtkTextPropertySettingContainer s_gridshape;
-	s_gridshape.loadSetting(m_settings, "gridshape");
-	ui->gridShapeWidget->setSetting(s_gridshape);
 
 	vtkTextPropertySettingContainer s_scalarnode;
 	s_scalarnode.loadSetting(m_settings, "scalarnode");
@@ -30,11 +29,18 @@ PreferencePageFontDefault::PreferencePageFontDefault(QWidget* parent) :
 	vtkTextPropertySettingContainer s_arrow;
 	s_arrow.loadSetting(m_settings, "arrow");
 	ui->arrowWidget->setSetting(s_arrow);
+	*/
+
+	// tested
+	vtkTextPropertySettingContainer s_gridIndices;
+	s_gridIndices.loadSetting(m_settings, "fontsetting/gridindices");
+	s_gridIndices.fontSize = 15;
+	ui->gridShapeWidget->setSetting(s_gridIndices);
 
 	vtkTextPropertySettingContainer s_bcNames;
 	s_bcNames.fontFamily = vtkTextPropertySettingContainer::ffArial;
 	s_bcNames.fontSize = 14;
-	s_bcNames.loadSetting(settings, "fontsetting_bc");
+	s_bcNames.loadSetting(settings, "fontsetting/bc");
 	ui->bcNamesWidget->setSetting(s_bcNames);
 }
 
@@ -56,8 +62,9 @@ void PreferencePageFontDefault::update()
 
 	} else {
 		s = ui->gridShapeWidget->setting();
+		s.saveSetting(&settings, "fontsetting/gridindices");
 
 		s = ui->bcNamesWidget->setting();
-		s.saveSetting(&settings, "fontsetting_bc");
+		s.saveSetting(&settings, "fontsetting/bc");
 	}
 }

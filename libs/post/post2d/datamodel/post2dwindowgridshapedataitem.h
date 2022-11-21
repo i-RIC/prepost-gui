@@ -34,8 +34,6 @@ private:
 	static const int selectedOutlineWidth = 2;
 
 public:
-
-	/// Constructor
 	Post2dWindowGridShapeDataItem(Post2dWindowDataItem* parent);
 	~Post2dWindowGridShapeDataItem();
 	/// Inform that the grid is updated.

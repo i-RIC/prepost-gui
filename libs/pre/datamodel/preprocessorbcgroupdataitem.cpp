@@ -46,7 +46,7 @@ PreProcessorBCGroupDataItem::PreProcessorBCGroupDataItem(PreProcessorDataItem* p
 	m_nameSetting.fontSize = 14;
 
 	QSettings s;
-	m_nameSetting.loadSetting(s, "fontsetting_bc");
+	m_nameSetting.loadSetting(s, "fontsetting/bc");
 
 	m_colorSource = new ColorSource(this);
 

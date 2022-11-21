@@ -92,12 +92,9 @@ void Post2dWindowGridShapeDataItem::setupActors()
 	m_indexMapper->SetInputConnection(m_indexTransformFilter->GetOutputPort());
 	m_indexMapper->SetLabelModeToLabelFieldData();
 	m_indexMapper->SetFieldDataName(iRIC::toStr(PostZoneDataContainer::labelName).c_str());
-    vtkTextProperty* textProp = m_indexMapper->GetLabelTextProperty();
-    iRIC::setupGridIndexTextProperty(textProp);
-    m_setting.indexTextSetting.applySetting(textProp);
 
-	QSettings settings;
-    m_setting.indexTextSetting.loadSetting(settings, "gridshape");
+	vtkTextProperty* textProp = m_indexMapper->GetLabelTextProperty();
+	iRIC::setupGridIndexTextProperty(textProp);
 
 	m_indexActor->SetMapper(m_indexMapper);
 
@@ -153,7 +150,7 @@ void Post2dWindowGridShapeDataItem::updateActorSettings()
 	if (m_setting.indexVisible) {
 		vtkPointSet* labeldata = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer()->labelData();
 		m_indexTransformFilter->SetInputData(labeldata);
-        m_setting.indexTextSetting.applySetting(m_indexMapper->GetLabelTextProperty());
+		m_setting.indexTextSetting.applySetting(m_indexMapper->GetLabelTextProperty());
 		m_actor2DCollection->AddItem(m_indexActor);
 	}
 	updateVisibilityWithoutRendering();

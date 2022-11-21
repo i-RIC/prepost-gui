@@ -40,7 +40,7 @@ public:
 		ColorContainer color;
 		EnumContainerT<GridShapeEditDialog::Shape> shape;
 		BoolContainer indexVisible;
-        vtkTextPropertySettingContainer indexTextSetting;
+		vtkTextPropertySettingContainer indexTextSetting;
 	};
 
 	GridShapeEditDialog(QWidget* parent = nullptr);
