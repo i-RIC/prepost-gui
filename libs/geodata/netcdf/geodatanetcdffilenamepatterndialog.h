@@ -18,6 +18,7 @@ public:
 	~GeoDataNetcdfFileNamePatternDialog();
 
 	void setFilename(const QString& filename);
+	void setPattern(const QString& pattern);
 
 	GeoDataNetcdfFileNameMatcher* matcher();
 

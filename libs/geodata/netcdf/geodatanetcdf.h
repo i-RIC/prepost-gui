@@ -88,7 +88,6 @@ public:
 	int defineValue(int ncid, int xId, int yId, const std::vector<int>& dimIds, int* varId);
 	int outputCoords(int ncid, int xId, int yId, int lonId, int latId);
 	int outputDimensions(int ncid, const std::vector<int>& varIds);
-	bool requestCoordinateSystem() const override;
 	vtkStructuredGrid* grid() const;
 	void updateActorSetting();
 	void viewOperationEndedGlobal(PreProcessorGraphicsViewInterface* v) override;

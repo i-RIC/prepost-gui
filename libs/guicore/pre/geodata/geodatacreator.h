@@ -32,6 +32,7 @@ public:
 	const QString& caption() const;
 
 	void setNameAndDefaultCaption(const std::vector<GraphicsWindowDataItem*>& list, GeoData* data);
+	virtual bool requestCoordinateSystem() const;
 
 	/// Return true if the corresponding geo data can be used　for this grid related condition.
 	virtual bool isCompatibleWith(SolverDefinitionGridAttribute* condition) const = 0;

@@ -14,3 +14,8 @@ QString GeoDataNetcdfTimeSeriesCreator::defaultCaption(unsigned int index) const
 {
     return QString(tr("Time Series Raster Data%1")).arg(index);
 }
+
+bool GeoDataNetcdfTimeSeriesCreator::requestCoordinateSystem() const
+{
+    return true;
+}

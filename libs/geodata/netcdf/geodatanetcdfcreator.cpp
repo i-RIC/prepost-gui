@@ -22,3 +22,8 @@ QString GeoDataNetcdfCreator::defaultCaption(unsigned int index) const
 {
 	return QString(tr("Raster Data%1")).arg(index);
 }
+
+bool GeoDataNetcdfCreator::requestCoordinateSystem() const
+{
+	return true;
+}

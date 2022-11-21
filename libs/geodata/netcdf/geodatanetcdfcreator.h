@@ -13,6 +13,8 @@ public:
 
 	QString name(unsigned int index) const override;
 	QString defaultCaption(unsigned int index) const override;
+
+	bool requestCoordinateSystem() const override;
 };
 
 #endif // GEODATANETCDFCREATOR_H

@@ -12,7 +12,8 @@ public:
 	GeoDataNetcdfFileNameMatcher(const QString& pattern);
 	bool setup(const QString& filename);
 
-	QDateTime getDateTime(const QString& filename, bool *ok);
+	QString pattern() const;
+	QDateTime getDateTime(const QString& filename, bool *ok) const;
 
 private:
 	QString m_pattern;
@@ -24,8 +25,6 @@ private:
 	int m_hhCapId;
 	int m_mmCapId;
 	int m_ssCapId;
-
-	QRegExp m_filenameRe;
 };
 
 #endif // GEODATANETCDFFILENAMEMATCHER_H
