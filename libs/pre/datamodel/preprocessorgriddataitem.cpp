@@ -328,7 +328,9 @@ void PreProcessorGridDataItem::exportGrid()
 			auto file = new iRICLib::H5CgnsFile(iRIC::toStr(tmpname), iRICLib::H5CgnsFile::Mode::Create);
 			impl->m_grid->saveToCgnsFile(file->ccBase(), "iRICZone");
 			auto zone = file->ccBase()->zone("IRICZone");
-			m_bcGroupDataItem->saveToCgnsFile(zone);
+			if (m_bcGroupDataItem != nullptr) {
+				m_bcGroupDataItem->saveToCgnsFile(zone);
+			}
 			delete file;
 
 			// if it already exists, remove it first.
