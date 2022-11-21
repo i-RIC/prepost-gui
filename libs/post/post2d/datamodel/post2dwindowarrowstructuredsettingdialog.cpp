@@ -78,6 +78,8 @@ Post2dWindowNodeVectorArrowStructuredSetting Post2dWindowArrowStructuredSettingD
 	ret.iSampleRate = ui->iSamplingRateSpinBox->value();
 	ret.jSampleRate = ui->jSamplingRateSpinBox->value();
 
+	ret.legendTextSetting = ui->legendTextWidget->setting();
+
 	return ret;
 }
 
@@ -127,6 +129,8 @@ void Post2dWindowArrowStructuredSettingDialog::setSetting(const Post2dWindowNode
 	}
 	ui->iSamplingRateSpinBox->setValue(s.iSampleRate);
 	ui->jSamplingRateSpinBox->setValue(s.jSampleRate);
+
+	ui->legendTextWidget->setSetting(s.legendTextSetting);
 }
 
 void Post2dWindowArrowStructuredSettingDialog::setColorBarTitleMap(const QMap<std::string, QString>& titlemap)

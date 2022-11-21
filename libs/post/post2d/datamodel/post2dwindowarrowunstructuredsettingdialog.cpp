@@ -80,6 +80,8 @@ Post2dWindowNodeVectorArrowUnstructuredSetting Post2dWindowArrowUnstructuredSett
 	ret.arrowSize = ui->arrowSizeSpinBox->value();
 	ret.lineWidth = ui->lineWidthSpinBox->value();
 
+	ret.legendTextSetting = ui->legendTextWidget->setting();
+
 	return ret;
 }
 
@@ -133,6 +135,8 @@ void Post2dWindowArrowUnstructuredSettingDialog::setSetting(const Post2dWindowNo
 
 	ui->arrowSizeSpinBox->setValue(setting.arrowSize);
 	ui->lineWidthSpinBox->setValue(setting.lineWidth);
+
+	ui->legendTextWidget->setSetting(s.legendTextSetting);
 }
 
 void Post2dWindowArrowUnstructuredSettingDialog::setColorBarTitleMap(const QMap<std::string, QString>& titlemap)

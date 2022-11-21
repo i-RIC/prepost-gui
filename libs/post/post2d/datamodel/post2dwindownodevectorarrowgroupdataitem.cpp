@@ -417,6 +417,7 @@ void Post2dWindowNodeVectorArrowGroupDataItem::updateLegendData()
 		// always black.
 		m_baseArrowActor->GetProperty()->SetColor(0, 0, 0);
 	}
+	s.legendTextSetting.applySetting(m_legendTextActor->GetTextProperty());
 }
 
 void Post2dWindowNodeVectorArrowGroupDataItem::informSelection(VTKGraphicsView* /*v*/)

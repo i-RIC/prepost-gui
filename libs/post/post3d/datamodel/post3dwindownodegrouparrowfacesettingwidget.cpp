@@ -94,6 +94,8 @@ void Post3dWindowNodeGroupArrowFaceSettingWidget::setSettings(bool enabled, cons
 	ui->iSamplingRateSpinBox->setValue(samplingRateSetting.iSamplingRate);
 	ui->jSamplingRateSpinBox->setValue(samplingRateSetting.jSamplingRate);
 	ui->kSamplingRateSpinBox->setValue(samplingRateSetting.kSamplingRate);
+
+	ui->legendTextWidget->setSetting(s.legendTextSetting);
 }
 
 bool Post3dWindowNodeGroupArrowFaceSettingWidget::enabled() const
@@ -120,6 +122,8 @@ ArrowSettingContainer Post3dWindowNodeGroupArrowFaceSettingWidget::arrowSetting(
 	}
 	ret.arrowSize = ui->arrowSizeSpinBox->value();
 	ret.lineWidth = ui->lineWidthSpinBox->value();
+
+	ret.legendTextSetting = ui->legendTextWidget->setting();
 
 	return ret;
 }

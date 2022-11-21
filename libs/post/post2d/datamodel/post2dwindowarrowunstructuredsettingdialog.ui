@@ -6,18 +6,18 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>444</width>
-    <height>489</height>
+    <width>454</width>
+    <height>597</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Arrow Setting</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout_4">
+  <layout class="QVBoxLayout" name="verticalLayout_5">
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout_3">
      <item>
-      <layout class="QVBoxLayout" name="verticalLayout_2">
+      <layout class="QVBoxLayout" name="verticalLayout_4">
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout">
          <item>
@@ -377,6 +377,18 @@
         </widget>
        </item>
        <item>
+        <widget class="QGroupBox" name="legendTextGroupBox">
+         <property name="title">
+          <string>Legend Text</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <item>
+           <widget class="vtkTextPropertySettingWidget" name="legendTextWidget" native="true"/>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
         <spacer name="verticalSpacer">
          <property name="orientation">
           <enum>Qt::Vertical</enum>
@@ -454,6 +466,12 @@
    <class>ColorEditWidget</class>
    <extends>QLabel</extends>
    <header>guibase/widget/coloreditwidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>vtkTextPropertySettingWidget</class>
+   <extends>QWidget</extends>
+   <header>guibase/vtktextpropertysettingwidget.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
