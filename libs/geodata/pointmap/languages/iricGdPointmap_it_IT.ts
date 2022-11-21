@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="it_IT">
 <context>
     <name>GeoDataPointMapDelPtsLessThanDialog</name>
@@ -174,7 +176,7 @@
     </message>
     <message>
         <source>Error occured while exporting to %1.</source>
-        <translation>Si è verificato un errore durante l'esportazione in %1.</translation>
+        <translation>Si è verificato un errore durante l&apos;esportazione in %1.</translation>
     </message>
     <message>
         <source>Delete points less than %1</source>
@@ -229,8 +231,8 @@
         <translation>Unisci...</translation>
     </message>
     <message>
-        <source>There is no other data to merge in "%1" group.</source>
-        <translation>Non ci sono altri dati da unire "%1"gruppo.</translation>
+        <source>There is no other data to merge in &quot;%1&quot; group.</source>
+        <translation>Non ci sono altri dati da unire &quot;%1&quot;gruppo.</translation>
     </message>
     <message>
         <source>%1 duplicate points were found in merge targets, and omitted.</source>
@@ -238,7 +240,7 @@
     </message>
     <message>
         <source>You must select one known point, and define at least one location for added points. Do you want to retry, or cancel the operation?</source>
-        <translation>È necessario selezionare un punto noto e definire almeno una posizione per i punti aggiunti. Vuoi riprovare o annullare l'operazione?</translation>
+        <translation>È necessario selezionare un punto noto e definire almeno una posizione per i punti aggiunti. Vuoi riprovare o annullare l&apos;operazione?</translation>
     </message>
     <message>
         <source>Add Points</source>
@@ -250,7 +252,7 @@
     </message>
     <message>
         <source>To interpolate points, you must specify more than two points, and the last point should be existing point. Do you want to retry, or cancel the operation?</source>
-        <translation>Per interpolare i punti, è necessario specificare più di due punti e l'ultimo punto dovrebbe essere un punto esistente. Vuoi riprovare o annullare l'operazione?</translation>
+        <translation>Per interpolare i punti, è necessario specificare più di due punti e l&apos;ultimo punto dovrebbe essere un punto esistente. Vuoi riprovare o annullare l&apos;operazione?</translation>
     </message>
     <message>
         <source>P&amp;oint Cloud Data</source>
@@ -327,7 +329,7 @@
     </message>
     <message>
         <source>Interpolation Setting</source>
-        <translation>Impostazione dell'interpolazione</translation>
+        <translation>Impostazione dell&apos;interpolazione</translation>
     </message>
     <message>
         <source>Interpolation Increment:</source>
@@ -346,7 +348,7 @@
     </message>
     <message>
         <source>Interpolation increment must be greater 0 and less than interpolation line length</source>
-        <translation>L'incremento di interpolazione deve essere maggiore di 0 e minore della lunghezza della linea di interpolazione</translation>
+        <translation>L&apos;incremento di interpolazione deve essere maggiore di 0 e minore della lunghezza della linea di interpolazione</translation>
     </message>
 </context>
 <context>
@@ -361,7 +363,7 @@
     </message>
     <message>
         <source>Error occured while exporting to %1</source>
-        <translation>Si è verificato un errore durante l'esportazione in %1</translation>
+        <translation>Si è verificato un errore durante l&apos;esportazione in %1</translation>
     </message>
     <message>
         <source>LandXML file (*.xml)</source>
@@ -429,7 +431,7 @@
     </message>
     <message>
         <source>Error occured while exporting to %1.</source>
-        <translation>Si è verificato un errore durante l'esportazione in %1.</translation>
+        <translation>Si è verificato un errore durante l&apos;esportazione in %1.</translation>
     </message>
     <message>
         <source>Point Cloud Data (DEM etc.)</source>
@@ -444,7 +446,7 @@
     </message>
     <message>
         <source>File open error occured while opening %1.</source>
-        <translation>Si è verificato un errore di apertura del file durante l'apertura %1.</translation>
+        <translation>Si è verificato un errore di apertura del file durante l&apos;apertura %1.</translation>
     </message>
     <message>
         <source>DEM etc. (*.tpo)</source>
@@ -478,7 +480,7 @@
     </message>
     <message>
         <source>File open error occured while opening %1.</source>
-        <translation>Si è verificato un errore di apertura del file durante l'apertura %1.</translation>
+        <translation>Si è verificato un errore di apertura del file durante l&apos;apertura %1.</translation>
     </message>
     <message>
         <source>Not enough header lines found in the file.</source>
@@ -521,12 +523,12 @@
         <translation>Nessun delimitatore specificato</translation>
     </message>
     <message>
-        <source>Not enough values to read "%1". "%1" column is %2 but %3 values input.</source>
-        <translation>Valori insufficienti per leggere "%1"."%1" colonna è %2 ma %3 valori inseriti.</translation>
+        <source>Not enough values to read &quot;%1&quot;. &quot;%1&quot; column is %2 but %3 values input.</source>
+        <translation>Valori insufficienti per leggere &quot;%1&quot;.&quot;%1&quot; colonna è %2 ma %3 valori inseriti.</translation>
     </message>
     <message>
-        <source>Error occured while reading "%1" value. "%1" value should be real number, but "%2" specified.</source>
-        <translation>Si è verificato un errore durante la lettura "%1" valore. "%1" il valore dovrebbe essere un numero reale, ma "%2" specificato.</translation>
+        <source>Error occured while reading &quot;%1&quot; value. &quot;%1&quot; value should be real number, but &quot;%2&quot; specified.</source>
+        <translation>Si è verificato un errore durante la lettura &quot;%1&quot; valore. &quot;%1&quot; il valore dovrebbe essere un numero reale, ma &quot;%2&quot; specificato.</translation>
     </message>
     <message>
         <source>Text files (CSV, TSV, etc.)</source>
@@ -534,7 +536,11 @@
     </message>
     <message>
         <source>Text file (*.csv *.txt *.xyz)</source>
-        <translation>File di testo (*.csv *.txt *.xyz)</translation>
+        <translation type="vanished">File di testo (*.csv *.txt *.xyz)</translation>
+    </message>
+    <message>
+        <source>Text file (*.tpo *.csv *.txt *.xyz)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -592,8 +598,8 @@
         <translation>Citazione personaggio:</translation>
     </message>
     <message>
-        <source>"</source>
-        <translation>"</translation>
+        <source>&quot;</source>
+        <translation>&quot;</translation>
     </message>
     <message>
         <source>When you want to specify multiple quote characters, please just input the characters only, no spaces or commas.</source>
@@ -726,7 +732,7 @@
     </message>
     <message>
         <source>File open error occured while opening %1.</source>
-        <translation>Si è verificato un errore di apertura del file durante l'apertura %1.</translation>
+        <translation>Si è verificato un errore di apertura del file durante l&apos;apertura %1.</translation>
     </message>
     <message>
         <source>solid</source>
@@ -798,7 +804,7 @@
     </message>
     <message>
         <source>Region to import data is not selected yet. Please left drag on the map to select area.</source>
-        <translation>La regione per l'importazione dei dati non è ancora selezionata. Si prega di trascinare a sinistra sulla mappa per selezionare l'area.</translation>
+        <translation>La regione per l&apos;importazione dei dati non è ancora selezionata. Si prega di trascinare a sinistra sulla mappa per selezionare l&apos;area.</translation>
     </message>
 </context>
 <context>
@@ -878,8 +884,8 @@
         <translation>Limite lunghezza bordo:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Nota&lt;/span&gt;: quando fai clic sul pulsante Applica, i triangoli che verranno rimossi verranno colorati di scuro grigio.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Nota&lt;/span&gt;: quando fai clic sul pulsante Applica, i triangoli che verranno rimossi verranno colorati di scuro grigio.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 </TS>

@@ -121,13 +121,13 @@ bool GeoDataPointmapRealTextImporter::importData(GeoData *data, int /*index*/, Q
 const QStringList GeoDataPointmapRealTextImporter::fileDialogFilters()
 {
 	QStringList	ret;
-	ret << tr("Text file (*.csv *.txt *.xyz)");
+	ret << tr("Text file (*.tpo *.csv *.txt *.xyz)");
 	return ret;
 }
 
 const QStringList GeoDataPointmapRealTextImporter::acceptableExtensions()
 {
 	QStringList ret;
-	ret << "csv" << "txt" << "xyz";
+	ret << "tpo" << "csv" << "txt" << "xyz";
 	return ret;
 }

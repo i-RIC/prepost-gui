@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="hi_IN">
 <context>
     <name>GeoDataPointMapDelPtsLessThanDialog</name>
@@ -229,8 +231,8 @@
         <translation>मर्ज करें...</translation>
     </message>
     <message>
-        <source>There is no other data to merge in "%1" group.</source>
-        <translation>मर्ज करने के लिए कोई अन्य डेटा नहीं है"%1" समूह।</translation>
+        <source>There is no other data to merge in &quot;%1&quot; group.</source>
+        <translation>मर्ज करने के लिए कोई अन्य डेटा नहीं है&quot;%1&quot; समूह।</translation>
     </message>
     <message>
         <source>%1 duplicate points were found in merge targets, and omitted.</source>
@@ -521,12 +523,12 @@
         <translation>कोई सीमांकक निर्दिष्ट नहीं</translation>
     </message>
     <message>
-        <source>Not enough values to read "%1". "%1" column is %2 but %3 values input.</source>
-        <translation>पढ़ने के लिए काफ़ी मान नहीं हैं"%1"।"%1"स्तंभ है %2 लेकिन %3 मान इनपुट।</translation>
+        <source>Not enough values to read &quot;%1&quot;. &quot;%1&quot; column is %2 but %3 values input.</source>
+        <translation>पढ़ने के लिए काफ़ी मान नहीं हैं&quot;%1&quot;।&quot;%1&quot;स्तंभ है %2 लेकिन %3 मान इनपुट।</translation>
     </message>
     <message>
-        <source>Error occured while reading "%1" value. "%1" value should be real number, but "%2" specified.</source>
-        <translation>पढ़ते समय त्रुटि हुई "%1" मूल्य। "%1"मान वास्तविक संख्या होना चाहिए, लेकिन"%2"निर्दिष्ट।</translation>
+        <source>Error occured while reading &quot;%1&quot; value. &quot;%1&quot; value should be real number, but &quot;%2&quot; specified.</source>
+        <translation>पढ़ते समय त्रुटि हुई &quot;%1&quot; मूल्य। &quot;%1&quot;मान वास्तविक संख्या होना चाहिए, लेकिन&quot;%2&quot;निर्दिष्ट।</translation>
     </message>
     <message>
         <source>Text files (CSV, TSV, etc.)</source>
@@ -534,7 +536,11 @@
     </message>
     <message>
         <source>Text file (*.csv *.txt *.xyz)</source>
-        <translation>पाठ फ़ाइल (*.csv *.txt *.xyz)</translation>
+        <translation type="vanished">पाठ फ़ाइल (*.csv *.txt *.xyz)</translation>
+    </message>
+    <message>
+        <source>Text file (*.tpo *.csv *.txt *.xyz)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -592,8 +598,8 @@
         <translation>उद्धरण चरित्र:</translation>
     </message>
     <message>
-        <source>"</source>
-        <translation>"</translation>
+        <source>&quot;</source>
+        <translation>&quot;</translation>
     </message>
     <message>
         <source>When you want to specify multiple quote characters, please just input the characters only, no spaces or commas.</source>
@@ -878,7 +884,7 @@
         <translation>सीमा किनारे की लंबाई:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt; &lt;head/&gt;&lt;body&gt;&lt;p&gt; ग्रे.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>

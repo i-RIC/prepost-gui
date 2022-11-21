@@ -64,7 +64,9 @@ void GeoDataPointmapRealTextImporter::SettingDialog::setIsCsv(bool isCsv)
 void GeoDataPointmapRealTextImporter::SettingDialog::setPreviewData(const std::vector<QByteArray>& data)
 {
 	m_previewData = data;
+
 	autoDetectDelimiters();
+	autoDetectHeaderLines();
 
 	updatePreview();
 }
@@ -252,6 +254,35 @@ void GeoDataPointmapRealTextImporter::SettingDialog::updatePreview()
 
 	ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(true);
 	ui->errorsLabel->setText("");
+}
+
+
+void GeoDataPointmapRealTextImporter::SettingDialog::autoDetectHeaderLines()
+{
+	if (m_previewData.size() == 0) {return;}
+
+	std::vector<int> numColumns;
+
+	bool ok;
+	QString	error;
+	auto parser = buildParser(&ok, &error);
+	if (! ok) {return;}
+
+	for (int i = 0; i < m_previewData.size(); ++i) {
+		auto line = QString(m_previewData.at(i));
+		auto strs = parser.parseToStrs(line, &ok, &error);
+		if (! ok) {
+			numColumns.push_back(0);
+		} else {
+			numColumns.push_back(strs.length());
+		}
+	}
+	int lastNumColumns = numColumns.at(numColumns.size() - 1);
+	for (int l = m_previewData.size() - 2; l >= 0; --l) {
+		if (numColumns.at(l) != lastNumColumns) {
+			ui->headerLinesSpinBox->setValue(l + 1);
+		}
+	}
 }
 
 void GeoDataPointmapRealTextImporter::SettingDialog::autoDetectDelimiters()
