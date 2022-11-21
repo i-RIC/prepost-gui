@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="bs_BA">
 <context>
     <name>GeoDataPointMapDelPtsLessThanDialog</name>
@@ -231,8 +229,8 @@
         <translation>Spoji...</translation>
     </message>
     <message>
-        <source>There is no other data to merge in &quot;%1&quot; group.</source>
-        <translation>Nema drugih podataka za spajanje &quot;%1&quot; grupa.</translation>
+        <source>There is no other data to merge in "%1" group.</source>
+        <translation>Nema drugih podataka za spajanje "%1" grupa.</translation>
     </message>
     <message>
         <source>%1 duplicate points were found in merge targets, and omitted.</source>
@@ -523,12 +521,12 @@
         <translation>Nije naveden razdjelnik</translation>
     </message>
     <message>
-        <source>Not enough values to read &quot;%1&quot;. &quot;%1&quot; column is %2 but %3 values input.</source>
-        <translation>Nema dovoljno vrijednosti za čitanje &quot;%1&quot;.&quot;%1&quot;kolona je %2 ali %3 ulazne vrijednosti.</translation>
+        <source>Not enough values to read "%1". "%1" column is %2 but %3 values input.</source>
+        <translation>Nema dovoljno vrijednosti za čitanje "%1"."%1"kolona je %2 ali %3 ulazne vrijednosti.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;%1&quot; value. &quot;%1&quot; value should be real number, but &quot;%2&quot; specified.</source>
-        <translation>Došlo je do greške pri čitanju &quot;%1&quot;vrijednost.&quot;%1&quot;vrijednost bi trebala biti stvarni broj, ali&quot;%2&quot;navedeno.</translation>
+        <source>Error occured while reading "%1" value. "%1" value should be real number, but "%2" specified.</source>
+        <translation>Došlo je do greške pri čitanju "%1"vrijednost."%1"vrijednost bi trebala biti stvarni broj, ali"%2"navedeno.</translation>
     </message>
     <message>
         <source>Text files (CSV, TSV, etc.)</source>
@@ -540,7 +538,7 @@
     </message>
     <message>
         <source>Text file (*.tpo *.csv *.txt *.xyz)</source>
-        <translation type="unfinished"></translation>
+        <translation>Tekstualni fajl (*.tpo *.csv *.txt *.xyz)</translation>
     </message>
 </context>
 <context>
@@ -598,8 +596,8 @@
         <translation>Navodni znak:</translation>
     </message>
     <message>
-        <source>&quot;</source>
-        <translation>&quot;</translation>
+        <source>"</source>
+        <translation>"</translation>
     </message>
     <message>
         <source>When you want to specify multiple quote characters, please just input the characters only, no spaces or commas.</source>
@@ -884,8 +882,8 @@
         <translation>Granična dužina ruba:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = &quot;font-weight: 600;&quot;&gt; Napomena &lt;/span&gt;: Kada kliknete na gumb za primjenu, trokutići koji će biti uklonjeni bit će obojeni tamnom bojom siva. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Napomena &lt;/span&gt;: Kada kliknete na gumb za primjenu, trokutići koji će biti uklonjeni bit će obojeni tamnom bojom siva. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
 </context>
 </TS>

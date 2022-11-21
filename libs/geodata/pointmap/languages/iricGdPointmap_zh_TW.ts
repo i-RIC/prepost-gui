@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="zh_TW">
 <context>
     <name>GeoDataPointMapDelPtsLessThanDialog</name>
@@ -231,7 +229,7 @@
         <translation>合併...</translation>
     </message>
     <message>
-        <source>There is no other data to merge in &quot;%1&quot; group.</source>
+        <source>There is no other data to merge in "%1" group.</source>
         <translation>沒有其他數據可以合併到“ %1 “ 團體。</translation>
     </message>
     <message>
@@ -523,12 +521,12 @@
         <translation>未指定分隔符</translation>
     </message>
     <message>
-        <source>Not enough values to read &quot;%1&quot;. &quot;%1&quot; column is %2 but %3 values input.</source>
-        <translation>沒有足夠的值來讀取“ %1 “。” %1 &quot; 列是 %2 但 %3 值輸入。</translation>
+        <source>Not enough values to read "%1". "%1" column is %2 but %3 values input.</source>
+        <translation>沒有足夠的值來讀取“ %1 “。” %1 " 列是 %2 但 %3 值輸入。</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;%1&quot; value. &quot;%1&quot; value should be real number, but &quot;%2&quot; specified.</source>
-        <translation>讀取時發生錯誤“ %1 “ 價值。 ” %1 &quot; 值應該是實數，但是 &quot; %2 “ 指定的。</translation>
+        <source>Error occured while reading "%1" value. "%1" value should be real number, but "%2" specified.</source>
+        <translation>讀取時發生錯誤“ %1 “ 價值。 ” %1 " 值應該是實數，但是 " %2 “ 指定的。</translation>
     </message>
     <message>
         <source>Text files (CSV, TSV, etc.)</source>
@@ -540,7 +538,7 @@
     </message>
     <message>
         <source>Text file (*.tpo *.csv *.txt *.xyz)</source>
-        <translation type="unfinished"></translation>
+        <translation>文本文件 (*.tpo *.csv *.txt *.xyz)</translation>
     </message>
 </context>
 <context>
@@ -598,7 +596,7 @@
         <translation>引用字符：</translation>
     </message>
     <message>
-        <source>&quot;</source>
+        <source>"</source>
         <translation>”</translation>
     </message>
     <message>
@@ -884,8 +882,8 @@
         <translation>限制邊長：</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;注意&lt;/span&gt;：當你點擊應用按鈕時，將被移除的三角形會被塗成黑色灰色。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;注意&lt;/span&gt;：當你點擊應用按鈕時，將被移除的三角形會被塗成黑色灰色。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 </TS>

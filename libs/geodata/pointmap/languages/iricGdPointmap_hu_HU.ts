@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="hu_HU">
 <context>
     <name>GeoDataPointMapDelPtsLessThanDialog</name>
@@ -231,8 +229,8 @@
         <translation>Összeolvad...</translation>
     </message>
     <message>
-        <source>There is no other data to merge in &quot;%1&quot; group.</source>
-        <translation>Nincs más egyesítendő adat &quot;%1&quot;csoport.</translation>
+        <source>There is no other data to merge in "%1" group.</source>
+        <translation>Nincs más egyesítendő adat "%1"csoport.</translation>
     </message>
     <message>
         <source>%1 duplicate points were found in merge targets, and omitted.</source>
@@ -523,12 +521,12 @@
         <translation>Nincs megadva elválasztó</translation>
     </message>
     <message>
-        <source>Not enough values to read &quot;%1&quot;. &quot;%1&quot; column is %2 but %3 values input.</source>
-        <translation>Nincs elég érték az olvasáshoz &quot;%1&quot;&quot;. %1 &quot;oszlop az %2 de %3 bemeneti értékek.</translation>
+        <source>Not enough values to read "%1". "%1" column is %2 but %3 values input.</source>
+        <translation>Nincs elég érték az olvasáshoz "%1"". %1 "oszlop az %2 de %3 bemeneti értékek.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;%1&quot; value. &quot;%1&quot; value should be real number, but &quot;%2&quot; specified.</source>
-        <translation>Hiba történt olvasás közben &quot;%1&quot;érték&quot;. %1 &quot;az értéknek valós számnak kell lennie, de&quot;%2&quot;meghatározott.</translation>
+        <source>Error occured while reading "%1" value. "%1" value should be real number, but "%2" specified.</source>
+        <translation>Hiba történt olvasás közben "%1"érték". %1 "az értéknek valós számnak kell lennie, de"%2"meghatározott.</translation>
     </message>
     <message>
         <source>Text files (CSV, TSV, etc.)</source>
@@ -540,7 +538,7 @@
     </message>
     <message>
         <source>Text file (*.tpo *.csv *.txt *.xyz)</source>
-        <translation type="unfinished"></translation>
+        <translation>Szöveges fájl (*.tpo *.csv *.txt *.xyz)</translation>
     </message>
 </context>
 <context>
@@ -598,8 +596,8 @@
         <translation>Idézet karakter:</translation>
     </message>
     <message>
-        <source>&quot;</source>
-        <translation>&quot;</translation>
+        <source>"</source>
+        <translation>"</translation>
     </message>
     <message>
         <source>When you want to specify multiple quote characters, please just input the characters only, no spaces or commas.</source>
@@ -884,8 +882,8 @@
         <translation>Az élhossz korlátozása:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = &quot;font-weight: 600;&quot;&gt; Megjegyzés &lt;/span&gt;: Ha rákattint az Alkalmaz gombra, az eltávolítandó háromszögek sötéttel lesznek festve szürke. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Megjegyzés &lt;/span&gt;: Ha rákattint az Alkalmaz gombra, az eltávolítandó háromszögek sötéttel lesznek festve szürke. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
 </context>
 </TS>

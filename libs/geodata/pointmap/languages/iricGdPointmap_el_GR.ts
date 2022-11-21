@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="el_GR">
 <context>
     <name>GeoDataPointMapDelPtsLessThanDialog</name>
@@ -231,8 +229,8 @@
         <translation>Συγχώνευση...</translation>
     </message>
     <message>
-        <source>There is no other data to merge in &quot;%1&quot; group.</source>
-        <translation>Δεν υπάρχουν άλλα δεδομένα για συγχώνευση &quot;%1&quot;ομάδα.</translation>
+        <source>There is no other data to merge in "%1" group.</source>
+        <translation>Δεν υπάρχουν άλλα δεδομένα για συγχώνευση "%1"ομάδα.</translation>
     </message>
     <message>
         <source>%1 duplicate points were found in merge targets, and omitted.</source>
@@ -523,12 +521,12 @@
         <translation>Δεν καθορίστηκε οριοθέτης</translation>
     </message>
     <message>
-        <source>Not enough values to read &quot;%1&quot;. &quot;%1&quot; column is %2 but %3 values input.</source>
-        <translation>Δεν υπάρχουν αρκετές τιμές για ανάγνωση &quot;%1&quot;.&quot;%1&quot;στήλη είναι %2 αλλά %3 τιμές εισαγωγής.</translation>
+        <source>Not enough values to read "%1". "%1" column is %2 but %3 values input.</source>
+        <translation>Δεν υπάρχουν αρκετές τιμές για ανάγνωση "%1"."%1"στήλη είναι %2 αλλά %3 τιμές εισαγωγής.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;%1&quot; value. &quot;%1&quot; value should be real number, but &quot;%2&quot; specified.</source>
-        <translation>Παρουσιάστηκε σφάλμα κατά την ανάγνωση &quot;%1&quot; αξία. &quot;%1&quot;η τιμή πρέπει να είναι πραγματικός αριθμός, αλλά&quot;%2&quot;καθορίζεται.</translation>
+        <source>Error occured while reading "%1" value. "%1" value should be real number, but "%2" specified.</source>
+        <translation>Παρουσιάστηκε σφάλμα κατά την ανάγνωση "%1" αξία. "%1"η τιμή πρέπει να είναι πραγματικός αριθμός, αλλά"%2"καθορίζεται.</translation>
     </message>
     <message>
         <source>Text files (CSV, TSV, etc.)</source>
@@ -540,7 +538,7 @@
     </message>
     <message>
         <source>Text file (*.tpo *.csv *.txt *.xyz)</source>
-        <translation type="unfinished"></translation>
+        <translation>Αρχείο κειμένου (*.tpo *.csv *.txt *.xyz)</translation>
     </message>
 </context>
 <context>
@@ -598,8 +596,8 @@
         <translation>Παράθεση χαρακτήρα:</translation>
     </message>
     <message>
-        <source>&quot;</source>
-        <translation>&quot;</translation>
+        <source>"</source>
+        <translation>"</translation>
     </message>
     <message>
         <source>When you want to specify multiple quote characters, please just input the characters only, no spaces or commas.</source>
@@ -884,8 +882,8 @@
         <translation>Περιορισμός μήκους ακμής:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = &quot;font-weight: 600;&quot;&gt; Σημείωση &lt;/span&gt;: Όταν κάνετε κλικ στο κουμπί εφαρμογής, τα τρίγωνα που θα αφαιρεθούν θα βαφτούν με σκούρο χρώμα γκρι. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Σημείωση &lt;/span&gt;: Όταν κάνετε κλικ στο κουμπί εφαρμογής, τα τρίγωνα που θα αφαιρεθούν θα βαφτούν με σκούρο χρώμα γκρι. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
 </context>
 </TS>
