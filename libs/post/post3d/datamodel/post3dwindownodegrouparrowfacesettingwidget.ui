@@ -412,7 +412,15 @@
          <string>By scalar value</string>
         </property>
        </widget>
-       <widget class="QWidget" name="">
+       <widget class="QWidget" name="layoutWidget">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>54</width>
+          <height>18</height>
+         </rect>
+        </property>
         <layout class="QHBoxLayout" name="horizontalLayout_3">
          <item>
           <widget class="ColorEditWidget" name="colorEditWidget"/>
@@ -500,23 +508,6 @@
       </widget>
      </item>
      <item>
-      <widget class="QGroupBox" name="legendTextGroupBox">
-       <property name="title">
-        <string>Legend Text</string>
-       </property>
-       <widget class="vtkTextPropertySettingWidget" name="legendTextWidget" native="true">
-        <property name="geometry">
-         <rect>
-          <x>0</x>
-          <y>0</y>
-          <width>271</width>
-          <height>41</height>
-         </rect>
-        </property>
-       </widget>
-      </widget>
-     </item>
-     <item>
       <spacer name="verticalSpacer_2">
        <property name="orientation">
         <enum>Qt::Vertical</enum>
@@ -538,12 +529,6 @@
    <class>ColorEditWidget</class>
    <extends>QLabel</extends>
    <header>guibase/widget/coloreditwidget.h</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
-   <class>vtkTextPropertySettingWidget</class>
-   <extends>QWidget</extends>
-   <header>guibase/vtktextpropertysettingwidget.h</header>
    <container>1</container>
   </customwidget>
   <customwidget>

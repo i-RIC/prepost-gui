@@ -30,7 +30,7 @@ ArrowSettingContainer::ArrowSettingContainer() :
 	CompositeContainer({&target, &samplingMode, &samplingRate, &samplingNumber,
 			&colorMode, &customColor, &colorTarget,
 			&lengthMode, &standardValue, &legendLength, &minimumValue,
-            &arrowSize, &lineWidth, &scalarBarSetting, &legendTextSetting}),
+			&arrowSize, &lineWidth, &scalarBarSetting, &legendTextSetting}),
 	target {"attribute"},
 	samplingMode {"samplingMode", SamplingMode::All},
 	samplingRate {"samplingRate", DEFAULT_SAMPLING_RATE},
@@ -44,15 +44,15 @@ ArrowSettingContainer::ArrowSettingContainer() :
 	minimumValue {"minimumValue", DEFAULT_LEGEND_MINIMUM},
 	arrowSize {"arrowSize", DEFAULT_ARROWSIZE},
 	lineWidth {"arrowLineWidth", DEFAULT_LINEWIDTH},
-    legendTextSetting {},
+	legendTextSetting {},
 	oldCameraScale {"oldCameraScale", 1}
 {
 	QSettings setting;
 	customColor = setting.value("graphics/vectorcolor", QColor(Qt::black)).value<QColor>();
 
-    legendTextSetting.addPrefix("legendText");
-    legendTextSetting.fontSize.setDefaultValue(10);
-    legendTextSetting.fontSize.setValue(10);
+	legendTextSetting.addPrefix("legendText");
+	legendTextSetting.fontSize.setValue(10);
+	legendTextSetting.loadSetting(setting, "fontsetting/arrow");
 }
 
 ArrowSettingContainer::ArrowSettingContainer(const ArrowSettingContainer& c) :

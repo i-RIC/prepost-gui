@@ -65,8 +65,12 @@ Post2dWindowNodeVectorArrowGroupDataItem::Post2dWindowNodeVectorArrowGroupDataIt
 
 Post2dWindowNodeVectorArrowGroupDataItem::~Post2dWindowNodeVectorArrowGroupDataItem()
 {
-	renderer()->RemoveActor(m_arrowActor);
-	renderer()->RemoveActor(m_baseArrowActor);
+	auto r = renderer();
+	r->RemoveActor(m_arrowActor);
+	r->RemoveActor2D(m_legendActors.arrowActor());
+	r->RemoveActor2D(m_legendActors.nameTextActor());
+	r->RemoveActor2D(m_legendActors.valueTextActor());
+
 	m_scalarBarWidget->SetInteractor(nullptr);
 }
 
@@ -110,33 +114,13 @@ void Post2dWindowNodeVectorArrowGroupDataItem::setupActors()
 
 	m_arrowActor->VisibilityOff();
 
-	m_legendTextActor = vtkSmartPointer<vtkTextActor>::New();
-	m_legendTextActor->SetTextScaleModeToNone();
-	m_legendTextActor->GetPositionCoordinate()->SetCoordinateSystemToNormalizedViewport();
-	m_legendTextActor->SetPosition(0.75, 0.02);
-	vtkTextProperty* prop = m_legendTextActor->GetTextProperty();
-	prop->SetColor(0, 0, 0);
-	prop->SetFontFamilyToArial();
-	prop->SetJustificationToCentered();
-	prop->SetVerticalJustificationToBottom();
+	m_legendActors.setPosition(0.75, 0.06);
 
-	m_legendTextActor->VisibilityOff();
-	renderer()->AddActor2D(m_legendTextActor);
+	m_legendActors.nameTextActor()->VisibilityOff();
+	renderer()->AddActor2D(m_legendActors.nameTextActor());
 
-	m_baseArrowPolyData = vtkSmartPointer<vtkUnstructuredGrid>::New();
-
-	vtkSmartPointer<vtkPolyDataMapper2D> mapper = vtkSmartPointer<vtkPolyDataMapper2D>::New();
-	vtkSmartPointer<vtkGeometryFilter> f = vtkSmartPointer<vtkGeometryFilter>::New();
-	f->SetInputData(m_baseArrowPolyData);
-	mapper->SetInputConnection(f->GetOutputPort());
-
-	m_baseArrowActor = vtkSmartPointer<vtkActor2D>::New();
-	m_baseArrowActor->SetMapper(mapper);
-
-	m_baseArrowActor->GetPositionCoordinate()->SetCoordinateSystemToNormalizedViewport();
-	m_baseArrowActor->GetPositionCoordinate()->SetValue(.75, .02);
-	m_baseArrowActor->GetProperty()->SetColor(0, 0, 0);
-	m_baseArrowActor->VisibilityOff();
+	m_legendActors.valueTextActor()->VisibilityOff();
+	renderer()->AddActor2D(m_legendActors.valueTextActor());
 
 	m_activePoints = vtkSmartPointer<vtkPolyData>::New();
 
@@ -148,7 +132,7 @@ void Post2dWindowNodeVectorArrowGroupDataItem::setupActors()
 	m_hedgeHog->SetInputConnection(m_transformedActivePoints->GetOutputPort());
 	m_warpVector->SetInputConnection(m_transformedActivePoints->GetOutputPort());
 
-	renderer()->AddActor2D(m_baseArrowActor);
+	renderer()->AddActor2D(m_legendActors.arrowActor());
 
 	vtkRenderWindowInteractor* iren = renderer()->GetRenderWindow()->GetInteractor();
 	Q_ASSERT(iren != nullptr);
@@ -242,8 +226,9 @@ void Post2dWindowNodeVectorArrowGroupDataItem::informGridUpdate()
 void Post2dWindowNodeVectorArrowGroupDataItem::updateActorSettings()
 {
 	m_arrowActor->VisibilityOff();
-	m_legendTextActor->VisibilityOff();
-	m_baseArrowActor->VisibilityOff();
+	m_legendActors.nameTextActor()->VisibilityOff();
+	m_legendActors.valueTextActor()->VisibilityOff();
+	m_legendActors.arrowActor()->VisibilityOff();
 	m_scalarBarWidget->GetScalarBarActor()->VisibilityOff();
 	m_scalarBarWidget->SetEnabled(0);
 
@@ -269,8 +254,9 @@ void Post2dWindowNodeVectorArrowGroupDataItem::updateActorSettings()
 	updateLegendData();
 
 	m_actorCollection->AddItem(m_arrowActor);
-	m_actor2DCollection->AddItem(m_legendTextActor);
-	m_actor2DCollection->AddItem(m_baseArrowActor);
+	m_actor2DCollection->AddItem(m_legendActors.nameTextActor());
+	m_actor2DCollection->AddItem(m_legendActors.valueTextActor());
+	m_actor2DCollection->AddItem(m_legendActors.arrowActor());
 	updateVisibilityWithoutRendering();
 }
 
@@ -368,7 +354,7 @@ void Post2dWindowNodeVectorArrowGroupDataItem::updatePolyData()
 	m_appendPolyData->Update();
 	m_polyData->DeepCopy(m_appendPolyData->GetOutput());
 	m_arrowActor->GetProperty()->SetLineWidth(s.lineWidth);
-	m_baseArrowActor->GetProperty()->SetLineWidth(s.lineWidth);
+	m_legendActors.arrowActor()->GetProperty()->SetLineWidth(s.lineWidth);
 }
 
 void Post2dWindowNodeVectorArrowGroupDataItem::updateScaleFactor()
@@ -382,42 +368,18 @@ void Post2dWindowNodeVectorArrowGroupDataItem::updateLegendData()
 {
 	auto& s = setting();
 
-	double vectorOffset = 18;
 	double arrowLen = s.legendLength;
-	m_baseArrowPolyData->Initialize();
-	m_baseArrowPolyData->Allocate(3);
-
-	vtkSmartPointer<vtkPoints> points = vtkSmartPointer<vtkPoints>::New();
-	points->SetDataTypeToDouble();
-	m_baseArrowPolyData->SetPoints(points);
-	// add line
-	points->InsertNextPoint(- arrowLen * .5, vectorOffset, 0);
-	points->InsertNextPoint(arrowLen * .5, vectorOffset, 0);
-	vtkSmartPointer<vtkLine> line = vtkSmartPointer<vtkLine>::New();
-	line->GetPointIds()->SetId(0, 0);
-	line->GetPointIds()->SetId(1, 1);
-	m_baseArrowPolyData->InsertNextCell(line->GetCellType(), line->GetPointIds());
-
-	// add triangle
-	points->InsertNextPoint(arrowLen * .5 - 8, vectorOffset + 3, 0);
-	points->InsertNextPoint(arrowLen * .5 - 8, vectorOffset - 3, 0);
-	vtkSmartPointer<vtkTriangle> tri = vtkSmartPointer<vtkTriangle>::New();
-	tri->GetPointIds()->SetId(0, 1);
-	tri->GetPointIds()->SetId(1, 2);
-	tri->GetPointIds()->SetId(2, 3);
-	m_baseArrowPolyData->InsertNextCell(tri->GetCellType(), tri->GetPointIds());
-
-	QString lenStr = QString("%1\n\n%2").arg(s.target).arg(s.standardValue);
-	m_legendTextActor->SetInput(iRIC::toStr(lenStr).c_str());
+	m_legendActors.update(iRIC::toStr(s.target), s.legendLength, s.standardValue, s.arrowSize, 25.0);
 
 	if (s.colorMode == ArrowSettingContainer::ColorMode::Custom) {
 		// specified color.
-		m_baseArrowActor->GetProperty()->SetColor(s.customColor);
+		m_legendActors.arrowActor()->GetProperty()->SetColor(s.customColor);
 	} else if (s.colorMode == ArrowSettingContainer::ColorMode::ByScalar) {
 		// always black.
-		m_baseArrowActor->GetProperty()->SetColor(0, 0, 0);
+		m_legendActors.arrowActor()->GetProperty()->SetColor(0, 0, 0);
 	}
-	s.legendTextSetting.applySetting(m_legendTextActor->GetTextProperty());
+	s.legendTextSetting.applySetting(m_legendActors.nameTextActor()->GetTextProperty());
+	s.legendTextSetting.applySetting(m_legendActors.valueTextActor()->GetTextProperty());
 }
 
 void Post2dWindowNodeVectorArrowGroupDataItem::informSelection(VTKGraphicsView* /*v*/)

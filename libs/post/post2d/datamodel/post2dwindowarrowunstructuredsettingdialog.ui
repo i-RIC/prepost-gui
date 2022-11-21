@@ -379,7 +379,7 @@
        <item>
         <widget class="QGroupBox" name="legendTextGroupBox">
          <property name="title">
-          <string>Legend Text</string>
+          <string>Length Legend</string>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_2">
           <item>

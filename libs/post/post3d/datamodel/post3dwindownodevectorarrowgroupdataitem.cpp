@@ -24,17 +24,21 @@ Post3dWindowNodeVectorArrowGroupDataItem::Post3dWindowNodeVectorArrowGroupDataIt
 {
 	setupStandardItem(Checked, NotReorderable, Deletable);
 
-	renderer()->AddActor2D(m_legendActors.arrowActor());
-	renderer()->AddActor2D(m_legendActors.textActor());
+	auto r = renderer();
+	r->AddActor2D(m_legendActors.arrowActor());
+	r->AddActor2D(m_legendActors.nameTextActor());
+	r->AddActor2D(m_legendActors.valueTextActor());
 
-	m_legendActors.setPosition(0.75, 0.02);
+	m_legendActors.setPosition(0.75, 0.06);
 	m_legendActors.setColor(0, 0, 0);
 }
 
 Post3dWindowNodeVectorArrowGroupDataItem::~Post3dWindowNodeVectorArrowGroupDataItem()
 {
-	renderer()->RemoveActor2D(m_legendActors.arrowActor());
-	renderer()->RemoveActor2D(m_legendActors.textActor());
+	auto r = renderer();
+	r->RemoveActor2D(m_legendActors.arrowActor());
+	r->RemoveActor2D(m_legendActors.nameTextActor());
+	r->RemoveActor2D(m_legendActors.valueTextActor());
 }
 
 void Post3dWindowNodeVectorArrowGroupDataItem::setSetting(const ArrowSettingContainer& arrowSetting, const std::vector<Post3dWindowNodeVectorArrowSettingDialog::FaceSetting>& faceSettings)
@@ -136,8 +140,10 @@ void Post3dWindowNodeVectorArrowGroupDataItem::updateActorSettings()
 {
 	const auto& s = m_setting;
 
-	m_legendActors.update(iRIC::toStr(s.target), s.legendLength, s.standardValue, s.arrowSize, 15.0);
+	m_legendActors.update(iRIC::toStr(s.target), s.legendLength, s.standardValue, s.arrowSize, 25.0);
 	m_legendActors.setLineWidth(s.lineWidth);
+	s.legendTextSetting.applySetting(m_legendActors.nameTextActor()->GetTextProperty());
+	s.legendTextSetting.applySetting(m_legendActors.valueTextActor()->GetTextProperty());
 
 	m_standardItem->setText(s.target);
 	m_standardItemCopy->setText(s.target);

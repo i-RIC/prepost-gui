@@ -4,6 +4,7 @@
 #include "../post2dwindowdataitem.h"
 #include "post2dwindownodevectorarrowsetting.h"
 
+#include <guibase/vtktool/vtkarrowlegendactors.h>
 #include <guicore/misc/targeted/targeteditemi.h>
 
 #include <vtkSmartPointer.h>
@@ -20,7 +21,6 @@
 #include <vtkExtractGrid.h>
 #include <vtkAppendPolyData.h>
 #include <vtkActor2D.h>
-#include <vtkTextActor.h>
 #include <vtkClipPolyData.h>
 #include <vtkScalarBarWidget.h>
 
@@ -90,10 +90,8 @@ protected:
 	vtkSmartPointer<vtkConeSource> m_arrowSource;
 	vtkSmartPointer<vtkScalarBarWidget> m_scalarBarWidget;
 
-	vtkSmartPointer<vtkTextActor> m_legendTextActor;
+	vtkArrowLegendActors m_legendActors;
 
-	vtkSmartPointer<vtkUnstructuredGrid> m_baseArrowPolyData;
-	vtkSmartPointer<vtkActor2D> m_baseArrowActor;
 	vtkSmartPointer<vtkPolyData> m_activePoints;
 	vtkSmartPointer<vtkTransformFilter> m_transformedActivePoints;
 

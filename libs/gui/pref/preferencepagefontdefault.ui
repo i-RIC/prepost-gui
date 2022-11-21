@@ -36,7 +36,7 @@
    <item>
     <widget class="QGroupBox" name="gridShapeGroupBox">
      <property name="title">
-      <string>Grid Shape</string>
+      <string>Grid Shape / Grid Indices</string>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout">
       <item>
@@ -60,7 +60,7 @@
    <item>
     <widget class="QGroupBox" name="arrowGroupBox">
      <property name="title">
-      <string>Arrow</string>
+      <string>Arrow Length Legend</string>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_4">
       <item>

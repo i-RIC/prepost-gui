@@ -12,6 +12,7 @@ PreferencePageFontDefault::PreferencePageFontDefault(QWidget* parent) :
 {
 	ui->setupUi(this);
 	ui->bcNamesWidget->hideColor();
+	ui->arrowWidget->hideColor();
 
 	QSettings settings;
 
@@ -25,10 +26,6 @@ PreferencePageFontDefault::PreferencePageFontDefault(QWidget* parent) :
 	vtkTextPropertySettingContainer s_scalarnode;
 	s_scalarnode.loadSetting(m_settings, "scalarnode");
 	ui->scalarNodeWidget->setSetting(s_scalarnode);
-
-	vtkTextPropertySettingContainer s_arrow;
-	s_arrow.loadSetting(m_settings, "arrow");
-	ui->arrowWidget->setSetting(s_arrow);
 	*/
 
 	// tested
@@ -42,6 +39,11 @@ PreferencePageFontDefault::PreferencePageFontDefault(QWidget* parent) :
 	s_bcNames.fontSize = 14;
 	s_bcNames.loadSetting(settings, "fontsetting/bc");
 	ui->bcNamesWidget->setSetting(s_bcNames);
+
+	vtkTextPropertySettingContainer s_arrows;
+	s_arrows.fontSize = 10;
+	s_arrows.loadSetting(m_settings, "fontsetting/arrow");
+	ui->arrowWidget->setSetting(s_arrows);
 }
 
 PreferencePageFontDefault::~PreferencePageFontDefault()
@@ -66,5 +68,8 @@ void PreferencePageFontDefault::update()
 
 		s = ui->bcNamesWidget->setting();
 		s.saveSetting(&settings, "fontsetting/bc");
+
+		s = ui->arrowWidget->setting();
+		s.saveSetting(&settings, "fontsetting/arrow");
 	}
 }
