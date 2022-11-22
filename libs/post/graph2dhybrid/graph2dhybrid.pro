@@ -151,6 +151,7 @@ HEADERS += graph2dhybrid_global.h \
            graph2dhybridwindowview.h \
            datamodel/graph2dhybridwindowbaseiterativeresultdataitem.h \
            datamodel/graph2dhybridwindowdrawsettingdialog.h \
+           datamodel/graph2dhybridwindowfontsettingdialog.h \
            datamodel/graph2dhybridwindowgridabstractpolylineresultdataitem.h \
            datamodel/graph2dhybridwindowgridijkresultdataitem.h \
            datamodel/graph2dhybridwindowgridpointresultdataitem.h \
@@ -171,6 +172,7 @@ FORMS += graph2dhybridsettingdialog.ui \
          graph2dhybridwindowdatasourcedialog.ui \
          graph2dhybridwindowlinesettingdialog.ui \
          datamodel/graph2dhybridwindowdrawsettingdialog.ui \
+         datamodel/graph2dhybridwindowfontsettingdialog.ui \
          datamodel/graph2dhybridwindowsettingwidget.ui
 SOURCES += graph2dhybridsettingdialog.cpp \
            graph2dhybridwindow.cpp \
@@ -188,6 +190,7 @@ SOURCES += graph2dhybridsettingdialog.cpp \
            graph2dhybridwindowview.cpp \
            datamodel/graph2dhybridwindowbaseiterativeresultdataitem.cpp \
            datamodel/graph2dhybridwindowdrawsettingdialog.cpp \
+           datamodel/graph2dhybridwindowfontsettingdialog.cpp \
            datamodel/graph2dhybridwindowgridabstractpolylineresultdataitem.cpp \
            datamodel/graph2dhybridwindowgridijkresultdataitem.cpp \
            datamodel/graph2dhybridwindowgridpointresultdataitem.cpp \

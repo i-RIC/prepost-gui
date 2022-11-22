@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>473</width>
-    <height>196</height>
+    <width>618</width>
+    <height>208</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -138,20 +138,27 @@
         </widget>
        </item>
        <item row="0" column="4">
+        <widget class="QPushButton" name="fontButton">
+         <property name="text">
+          <string>&amp;Font Setting</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="5">
         <widget class="QPushButton" name="copyButton">
          <property name="text">
           <string>&amp;Copy</string>
          </property>
         </widget>
        </item>
-       <item row="1" column="3">
+       <item row="1" column="4">
         <widget class="QPushButton" name="snapshotButton">
          <property name="text">
           <string>S&amp;napshot</string>
          </property>
         </widget>
        </item>
-       <item row="1" column="4">
+       <item row="1" column="5">
         <widget class="QPushButton" name="csvExportButton">
          <property name="text">
           <string>CSV &amp;Export</string>

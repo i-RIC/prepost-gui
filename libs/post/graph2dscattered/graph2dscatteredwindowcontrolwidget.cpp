@@ -16,6 +16,7 @@ Graph2dScatteredWindowControlWidget::Graph2dScatteredWindowControlWidget(QWidget
 	connect(ui->dataSourceButton, SIGNAL(clicked()), this, SIGNAL(dataSourceButtonClicked()));
 	connect(ui->axisButton, SIGNAL(clicked()), this, SIGNAL(axisButtonClicked()));
 	connect(ui->drawButton, SIGNAL(clicked()), this, SIGNAL(drawButtonClicked()));
+	connect(ui->fontButton, SIGNAL(clicked()), this, SIGNAL(fontButtonClicked()));
 }
 
 Graph2dScatteredWindowControlWidget::~Graph2dScatteredWindowControlWidget()

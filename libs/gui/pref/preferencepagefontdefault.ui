@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>685</width>
-    <height>447</height>
+    <width>570</width>
+    <height>512</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -24,199 +24,221 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>648</width>
-        <height>494</height>
+        <width>550</width>
+        <height>492</height>
        </rect>
       </property>
-      <layout class="QVBoxLayout" name="verticalLayout_17">
+      <layout class="QHBoxLayout" name="horizontalLayout">
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout">
+        <layout class="QVBoxLayout" name="verticalLayout_13">
          <item>
-          <layout class="QVBoxLayout" name="verticalLayout_13">
-           <item>
-            <widget class="QGroupBox" name="commonGroupBox">
-             <property name="title">
-              <string>Common</string>
-             </property>
-             <layout class="QVBoxLayout" name="verticalLayout_11">
-              <item>
-               <widget class="QGroupBox" name="gridShapeGroupBox">
-                <property name="title">
-                 <string>Grid Shape / Grid Indices</string>
-                </property>
-                <layout class="QVBoxLayout" name="verticalLayout">
-                 <item>
-                  <widget class="vtkTextPropertySettingWidget" name="gridShapeWidget" native="true"/>
-                 </item>
-                </layout>
-               </widget>
-              </item>
-              <item>
-               <widget class="QGroupBox" name="colorBarGroupBox">
-                <property name="title">
-                 <string>Color Bar</string>
-                </property>
-                <layout class="QVBoxLayout" name="verticalLayout_7">
-                 <item>
-                  <widget class="QGroupBox" name="colorBarTitleGroupBox">
-                   <property name="title">
-                    <string>Title</string>
-                   </property>
-                   <layout class="QVBoxLayout" name="verticalLayout_3">
-                    <item>
-                     <widget class="vtkTextPropertySettingWidget" name="colorBarTitleWidget" native="true"/>
-                    </item>
-                   </layout>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QGroupBox" name="colorBarLabelGroupBox">
-                   <property name="title">
-                    <string>Labels</string>
-                   </property>
-                   <layout class="QVBoxLayout" name="verticalLayout_6">
-                    <item>
-                     <widget class="vtkTextPropertySettingWidget" name="colorBarLabelWidget" native="true"/>
-                    </item>
-                   </layout>
-                  </widget>
-                 </item>
-                </layout>
-               </widget>
-              </item>
-              <item>
-               <widget class="QGroupBox" name="arrowGroupBox">
-                <property name="title">
-                 <string>Arrow Length Legend</string>
-                </property>
-                <layout class="QVBoxLayout" name="verticalLayout_4">
-                 <item>
-                  <widget class="vtkTextPropertySettingWidget" name="arrowWidget" native="true"/>
-                 </item>
-                </layout>
-               </widget>
-              </item>
-             </layout>
-            </widget>
-           </item>
-           <item>
-            <widget class="QGroupBox" name="preGroupBox">
-             <property name="title">
-              <string>Pre-processing Window</string>
-             </property>
-             <layout class="QVBoxLayout" name="verticalLayout_10">
-              <item>
-               <widget class="QGroupBox" name="gridCreatingConditionGroupBox">
-                <property name="title">
-                 <string>Grid Creating Condition</string>
-                </property>
-                <layout class="QVBoxLayout" name="verticalLayout_8">
-                 <item>
-                  <widget class="vtkTextPropertySettingWidget" name="gridCreatingConditionWidget" native="true"/>
-                 </item>
-                </layout>
-               </widget>
-              </item>
-              <item>
-               <widget class="QGroupBox" name="riverSurveyDataGroupBox">
-                <property name="title">
-                 <string>River Survey Data Cross-section Names</string>
-                </property>
-                <layout class="QVBoxLayout" name="verticalLayout_9">
-                 <item>
-                  <widget class="vtkTextPropertySettingWidget" name="riverSurveyDataWidget" native="true"/>
-                 </item>
-                </layout>
-               </widget>
-              </item>
-              <item>
-               <widget class="QGroupBox" name="bcNamesGroupBox">
-                <property name="title">
-                 <string>Boundary Condition Names</string>
-                </property>
-                <layout class="QVBoxLayout" name="verticalLayout_5">
-                 <item>
-                  <widget class="vtkTextPropertySettingWidget" name="bcNamesWidget" native="true"/>
-                 </item>
-                </layout>
-               </widget>
-              </item>
-              <item>
-               <spacer name="verticalSpacer_3">
-                <property name="orientation">
-                 <enum>Qt::Vertical</enum>
-                </property>
-                <property name="sizeHint" stdset="0">
-                 <size>
-                  <width>20</width>
-                  <height>40</height>
-                 </size>
-                </property>
-               </spacer>
-              </item>
-             </layout>
-            </widget>
-           </item>
-          </layout>
+          <widget class="QGroupBox" name="commonGroupBox">
+           <property name="title">
+            <string>Common</string>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_11">
+            <item>
+             <widget class="QGroupBox" name="gridShapeGroupBox">
+              <property name="title">
+               <string>Grid Shape / Grid Indices</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayout">
+               <item>
+                <widget class="vtkTextPropertySettingWidget" name="gridShapeWidget" native="true"/>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <widget class="QGroupBox" name="colorBarGroupBox">
+              <property name="title">
+               <string>Color Bar</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_7">
+               <item>
+                <widget class="QGroupBox" name="colorBarTitleGroupBox">
+                 <property name="title">
+                  <string>Title</string>
+                 </property>
+                 <layout class="QVBoxLayout" name="verticalLayout_3">
+                  <item>
+                   <widget class="vtkTextPropertySettingWidget" name="colorBarTitleWidget" native="true"/>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item>
+                <widget class="QGroupBox" name="colorBarLabelGroupBox">
+                 <property name="title">
+                  <string>Labels</string>
+                 </property>
+                 <layout class="QVBoxLayout" name="verticalLayout_6">
+                  <item>
+                   <widget class="vtkTextPropertySettingWidget" name="colorBarLabelWidget" native="true"/>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <widget class="QGroupBox" name="arrowGroupBox">
+              <property name="title">
+               <string>Arrow Length Legend</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_4">
+               <item>
+                <widget class="vtkTextPropertySettingWidget" name="arrowWidget" native="true"/>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
+          </widget>
          </item>
          <item>
-          <layout class="QVBoxLayout" name="verticalLayout_16" stretch="0,0,1">
-           <item>
-            <widget class="QGroupBox" name="visGroupBox">
-             <property name="title">
-              <string>Visualization Windows</string>
-             </property>
-             <layout class="QVBoxLayout" name="verticalLayout_2">
-              <item>
-               <widget class="QGroupBox" name="labelGroupBox">
-                <property name="title">
-                 <string>Labels</string>
-                </property>
-                <layout class="QVBoxLayout" name="verticalLayout_12">
-                 <item>
-                  <widget class="vtkTextPropertySettingWidget" name="labelWidget" native="true"/>
-                 </item>
-                </layout>
-               </widget>
-              </item>
-             </layout>
-            </widget>
-           </item>
-           <item>
-            <widget class="QGroupBox" name="chartGroupBox">
-             <property name="title">
-              <string>Chart Windows</string>
-             </property>
-             <layout class="QVBoxLayout" name="verticalLayout_14">
-              <item>
-               <widget class="QGroupBox" name="labelGroupBox_2">
-                <property name="title">
-                 <string>Labels</string>
-                </property>
-                <layout class="QVBoxLayout" name="verticalLayout_15">
-                 <item>
-                  <widget class="vtkTextPropertySettingWidget" name="labelWidget_2" native="true"/>
-                 </item>
-                </layout>
-               </widget>
-              </item>
-             </layout>
-            </widget>
-           </item>
-           <item>
-            <spacer name="verticalSpacer_2">
-             <property name="orientation">
-              <enum>Qt::Vertical</enum>
-             </property>
-             <property name="sizeHint" stdset="0">
-              <size>
-               <width>20</width>
-               <height>40</height>
-              </size>
-             </property>
-            </spacer>
-           </item>
-          </layout>
+          <widget class="QGroupBox" name="preGroupBox">
+           <property name="title">
+            <string>Pre-processing Window</string>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_10">
+            <item>
+             <widget class="QGroupBox" name="gridCreatingConditionGroupBox">
+              <property name="title">
+               <string>Grid Creating Condition</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_8">
+               <item>
+                <widget class="vtkTextPropertySettingWidget" name="gridCreatingConditionWidget" native="true"/>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <widget class="QGroupBox" name="riverSurveyDataGroupBox">
+              <property name="title">
+               <string>River Survey Data Cross-section Names</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_9">
+               <item>
+                <widget class="vtkTextPropertySettingWidget" name="riverSurveyDataWidget" native="true"/>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <widget class="QGroupBox" name="bcNamesGroupBox">
+              <property name="title">
+               <string>Boundary Condition Names</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_5">
+               <item>
+                <widget class="vtkTextPropertySettingWidget" name="bcNamesWidget" native="true"/>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <spacer name="verticalSpacer_3">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <item>
+          <widget class="QGroupBox" name="visGroupBox">
+           <property name="title">
+            <string>Visualization Windows</string>
+           </property>
+           <layout class="QGridLayout" name="gridLayout" columnstretch="0,1">
+            <item row="0" column="0">
+             <widget class="QLabel" name="visLabelsLabel">
+              <property name="text">
+               <string>Labels:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QFontEditWidget" name="visLabelsWidget" native="true"/>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QGroupBox" name="chartGroupBox">
+           <property name="title">
+            <string>Chart Windows</string>
+           </property>
+           <layout class="QGridLayout" name="gridLayout_2">
+            <item row="0" column="0">
+             <widget class="QLabel" name="chartTitleLabel">
+              <property name="text">
+               <string>Chart Title:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QFontEditWidget" name="chartTitleWidget" native="true"/>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="chartLegendLabel">
+              <property name="text">
+               <string>Legends:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QFontEditWidget" name="chartLegendWidget" native="true"/>
+            </item>
+            <item row="2" column="0">
+             <widget class="QLabel" name="chartAxisTitleLabel">
+              <property name="text">
+               <string>Axis Title:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="1">
+             <widget class="QFontEditWidget" name="chartAxisTitleWidget" native="true"/>
+            </item>
+            <item row="3" column="0">
+             <widget class="QLabel" name="chartAxisTickLabel">
+              <property name="text">
+               <string>Axis Ticks:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="1">
+             <widget class="QFontEditWidget" name="chartAxisTickWidget" native="true"/>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <spacer name="verticalSpacer_2">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
          </item>
         </layout>
        </item>
@@ -231,6 +253,12 @@
    <class>vtkTextPropertySettingWidget</class>
    <extends>QWidget</extends>
    <header>guibase/vtktextpropertysettingwidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>QFontEditWidget</class>
+   <extends>QWidget</extends>
+   <header>misc/qfonteditwidget.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

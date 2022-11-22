@@ -41,6 +41,7 @@ public slots:
 	void dataSourceSetting();
 	void axisSetting();
 	void drawSetting();
+	void fontSetting();
 
 private slots:
 	void updateTime();

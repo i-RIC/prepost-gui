@@ -18,20 +18,6 @@ PreferencePageFontDefault::PreferencePageFontDefault(QWidget* parent) :
 
 	QSettings settings;
 
-	/*
-	// not tested yet
-	vtkTextPropertySettingContainer s_global;
-	s_global.loadSetting(m_settings, "global");
-	ui->globalSettingWidget->setSetting(s_global);
-
-
-	vtkTextPropertySettingContainer s_scalarnode;
-	s_scalarnode.loadSetting(m_settings, "scalarnode");
-	ui->scalarNodeWidget->setSetting(s_scalarnode);
-	*/
-
-	// tested
-
 	vtkTextPropertySettingContainer s_gridIndices;
 	s_gridIndices.loadSetting(settings, "fontsetting/gridindices");
 	s_gridIndices.fontSize = 15;
@@ -66,6 +52,23 @@ PreferencePageFontDefault::PreferencePageFontDefault(QWidget* parent) :
 	s_bcNames.fontSize = 14;
 	s_bcNames.loadSetting(settings, "fontsetting/bc");
 	ui->bcNamesWidget->setSetting(s_bcNames);
+
+	QFont font;
+
+	font.fromString(settings.value("fontsetting/vis_stringresult", QString("MS UI Gothic,9,-1,5,50,0,0,0,0,0")).toString());
+	ui->visLabelsWidget->setFont(font);
+
+	font.fromString(settings.value("fontsetting/chart_title", QString("MS UI Gothic,12,-1,5,75,0,0,0,0,0")).toString());
+	ui->chartTitleWidget->setFont(font);
+
+	font.fromString(settings.value("fontsetting/chart_legend", QString("MS UI Gothic,9,-1,5,50,0,0,0,0,0")).toString());
+	ui->chartLegendWidget->setFont(font);
+
+	font.fromString(settings.value("fontsetting/chart_axistitle", QString("MS UI Gothic,12,-1,5,75,0,0,0,0,0")).toString());
+	ui->chartAxisTitleWidget->setFont(font);
+
+	font.fromString(settings.value("fontsetting/chart_axistick", QString("MS UI Gothic,10,-1,5,50,0,0,0,0,0")).toString());
+	ui->chartAxisTickWidget->setFont(font);
 }
 
 PreferencePageFontDefault::~PreferencePageFontDefault()
@@ -101,4 +104,10 @@ void PreferencePageFontDefault::update()
 
 	s = ui->bcNamesWidget->setting();
 	s.saveSetting(&settings, "fontsetting/bc");
+
+	settings.setValue("fontsetting/vis_stringresult", ui->visLabelsWidget->font().toString());
+	settings.setValue("fontsetting/chart_title", ui->chartTitleWidget->font().toString());
+	settings.setValue("fontsetting/chart_legend", ui->chartLegendWidget->font().toString());
+	settings.setValue("fontsetting/chart_axistitle", ui->chartAxisTitleWidget->font().toString());
+	settings.setValue("fontsetting/chart_axistick", ui->chartAxisTickWidget->font().toString());
 }

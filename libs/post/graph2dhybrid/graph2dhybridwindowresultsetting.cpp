@@ -40,6 +40,8 @@
 
 #include <QDomNode>
 #include <QList>
+#include <QSettings>
+#include <QString>
 
 #include <vtkCellData.h>
 #include <vtkPointData.h>
@@ -160,40 +162,56 @@ bool Graph2dHybridWindowResultSetting::DataTypeInfo::operator==(const DataTypeIn
 	return true;
 }
 
-Graph2dHybridWindowResultSetting::Graph2dHybridWindowResultSetting()
+Graph2dHybridWindowResultSetting::Graph2dHybridWindowResultSetting() :
+	m_xAxisMode {xaTime},
+	m_targetDataTypeInfo {nullptr},
+	m_targetPolyLine {nullptr},
+	m_targetPolyLineGroupPolyLine {nullptr},
+	m_postSolutionInfo {nullptr},
+	m_addIndicesToTitle {false},
+	m_colorSource {new ColorSource(nullptr)},
+	m_timeValueType {tvtTime},
+	m_positionValueType {pvtDistance},
+	m_xAxisReverse {false},
+	m_xAxisLog {false},
+	m_yAxisLeftAutoRange {true},
+	m_yAxisLeftTitle {""},
+	m_yAxisLeftReverse {false},
+	m_yAxisLeftLog {false},
+	m_yAxisRightAutoRange {true},
+	m_yAxisRightTitle {""},
+	m_yAxisRightReverse {false},
+	m_yAxisRightLog {false},
+	m_xAxisAutoRange {true},
+	m_xAxisValueMin {0},
+	m_xAxisValueMax {0},
+	m_I {0},
+	m_J {0},
+	m_K {0},
+	m_index {0},
+	m_chartTitleFont {"chartTitle"},
+	m_legendFont {"legend"},
+	m_xAxisTitleFont {"xAxisTitle"},
+	m_xAxisTickFont {"xAxisTick"},
+	m_yAxisTitleFont {"yAxisTitle"},
+	m_yAxisTickFont {"yAxisTick"}
 {
-	m_xAxisMode = xaTime;
-	m_timeValueType = tvtTime;
-	m_positionValueType = pvtDistance;
-	m_xAxisReverse = false;
-	m_xAxisLog = false;
+	QSettings settings;
+	QFont font;
 
-	m_targetDataTypeInfo = nullptr;
-	m_targetPolyLine = nullptr;
-	m_targetPolyLineGroupPolyLine = nullptr;
-	m_postSolutionInfo = nullptr;
+	font.fromString(settings.value("fontsetting/chart_title", QString("MS UI Gothic,12,-1,5,75,0,0,0,0,0")).toString());
+	m_chartTitleFont = font;
 
-	m_colorSource = new ColorSource(nullptr);
+	font.fromString(settings.value("fontsetting/chart_legend", QString("MS UI Gothic,9,-1,5,50,0,0,0,0,0")).toString());
+	m_legendFont = font;
 
-	m_addIndicesToTitle = false;
+	font.fromString(settings.value("fontsetting/chart_axistitle", QString("MS UI Gothic,12,-1,5,75,0,0,0,0,0")).toString());
+	m_xAxisTitleFont = font;
+	m_yAxisTitleFont = font;
 
-	m_yAxisLeftAutoRange = true;
-	m_yAxisLeftTitle = "";
-	m_yAxisLeftReverse = false;
-	m_yAxisLeftLog = false;
-	m_yAxisRightAutoRange = true;
-	m_yAxisRightTitle = "";
-	m_yAxisRightReverse = false;
-	m_yAxisRightLog = false;
-
-	m_xAxisAutoRange = true;
-	m_xAxisValueMin = 0;
-	m_xAxisValueMax = 0;
-
-	m_I = 0;
-	m_J = 0;
-	m_K = 0;
-	m_index = 0;
+	font.fromString(settings.value("fontsetting/chart_axistick", QString("MS UI Gothic,10,-1,5,50,0,0,0,0,0")).toString());
+	m_xAxisTickFont = font;
+	m_yAxisTickFont = font;
 }
 
 Graph2dHybridWindowResultSetting::~Graph2dHybridWindowResultSetting()
@@ -784,6 +802,66 @@ void Graph2dHybridWindowResultSetting::setGridIndex(int i)
 	m_index = i;
 }
 
+QFont Graph2dHybridWindowResultSetting::chartTitleFont() const
+{
+	return m_chartTitleFont;
+}
+
+void Graph2dHybridWindowResultSetting::setChartTitleFont(const QFont& font)
+{
+	m_chartTitleFont = font;
+}
+
+QFont Graph2dHybridWindowResultSetting::legendFont() const
+{
+	return m_legendFont;
+}
+
+void Graph2dHybridWindowResultSetting::setLegendFont(const QFont& font)
+{
+	m_legendFont = font;
+}
+
+QFont Graph2dHybridWindowResultSetting::xAxisTitleFont() const
+{
+	return m_xAxisTitleFont;
+}
+
+void Graph2dHybridWindowResultSetting::setXAxisTitleFont(const QFont& font)
+{
+	m_xAxisTitleFont = font;
+}
+
+QFont Graph2dHybridWindowResultSetting::xAxisTickFont() const
+{
+	return m_xAxisTickFont;
+}
+
+void Graph2dHybridWindowResultSetting::setXAxisTickFont(const QFont& font)
+{
+	m_xAxisTickFont = font;
+}
+
+QFont Graph2dHybridWindowResultSetting::yAxisTitleFont() const
+{
+	return m_yAxisTitleFont;
+}
+
+void Graph2dHybridWindowResultSetting::setYAxisTitleFont(const QFont& font)
+{
+	m_yAxisTitleFont = font;
+}
+
+QFont Graph2dHybridWindowResultSetting::yAxisTickFont() const
+{
+	return m_yAxisTickFont;
+}
+
+void Graph2dHybridWindowResultSetting::setYAxisTickFont(const QFont& font)
+{
+	m_yAxisTickFont = font;
+}
+
 QString Graph2dHybridWindowResultSetting::autoXAxisLabel(Graph2dHybridWindowResultSetting::XAxisMode xm)
 {
 	switch (xm) {
@@ -1201,6 +1279,13 @@ void Graph2dHybridWindowResultSetting::loadFromProjectMainFile(const QDomNode& n
 	m_K = iRIC::getIntAttribute(node, "k");
 	m_index = iRIC::getIntAttribute(node, "index");
 
+	m_chartTitleFont.load(node);
+	m_legendFont.load(node);
+	m_xAxisTitleFont.load(node);
+	m_xAxisTickFont.load(node);
+	m_yAxisTitleFont.load(node);
+	m_yAxisTickFont.load(node);
+
 	QDomNode typeNode = iRIC::getChildNode(node, "targetDataType");
 	if (! typeNode.isNull()) {
 		DataTypeInfo info;
@@ -1293,6 +1378,13 @@ void Graph2dHybridWindowResultSetting::saveToProjectMainFile(QXmlStreamWriter& w
 	iRIC::setIntAttribute(writer, "j", m_J);
 	iRIC::setIntAttribute(writer, "k", m_K);
 	iRIC::setIntAttribute(writer, "index", m_index);
+
+	m_chartTitleFont.save(writer);
+	m_legendFont.save(writer);
+	m_xAxisTitleFont.save(writer);
+	m_xAxisTickFont.save(writer);
+	m_yAxisTitleFont.save(writer);
+	m_yAxisTickFont.save(writer);
 
 	writer.writeStartElement("targetDataType");
 	m_targetDataTypeInfo->saveToProjectMainFile(writer);
