@@ -23,6 +23,7 @@
 #include <QMouseEvent>
 #include <QIcon>
 #include <QPainter>
+#include <QSettings>
 #include <QString>
 #include <QXmlStreamWriter>
 
@@ -47,6 +48,8 @@ PostStringResultDataItem::Setting::Setting() :
 	font {"font"},
 	backgroundColor {"backgroundColor"}
 {
+	QSettings settings;
+
 	left = 10;
 	top = 10;
 	hMargin = 6;
@@ -54,6 +57,10 @@ PostStringResultDataItem::Setting::Setting() :
 	autoSize = true;
 	fontColor = Qt::black;
 	backgroundColor = Qt::lightGray;
+
+	QFont f;
+	f.fromString(settings.value("fontsetting/vis_stringresult", QString("MS UI Gothic,9,-1,5,50,0,0,0,0,0")).toString());
+	font = f;
 }
 
 PostStringResultDataItem::Setting::Setting(const Setting& s) :
