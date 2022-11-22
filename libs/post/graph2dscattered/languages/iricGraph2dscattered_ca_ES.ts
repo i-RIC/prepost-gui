@@ -1,9 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ca_ES">
 <context>
     <name>Graph2dScatteredAxisSettingDialog</name>
     <message>
         <source>Axis Setting</source>
-        <translation>Configuració de l'eix</translation>
+        <translation>Configuració de l&apos;eix</translation>
     </message>
     <message>
         <source>X Axis</source>
@@ -67,15 +69,15 @@
     </message>
     <message>
         <source>X-axes range is invalid.</source>
-        <translation>L'interval dels eixos X no és vàlid.</translation>
+        <translation>L&apos;interval dels eixos X no és vàlid.</translation>
     </message>
     <message>
         <source>Left Y-axes range is invalid.</source>
-        <translation>L'interval dels eixos Y esquerra no és vàlid.</translation>
+        <translation>L&apos;interval dels eixos Y esquerra no és vàlid.</translation>
     </message>
     <message>
         <source>Right Y-axes range is invalid.</source>
-        <translation>L'interval dels eixos Y dret no és vàlid.</translation>
+        <translation>L&apos;interval dels eixos Y dret no és vàlid.</translation>
     </message>
 </context>
 <context>
@@ -129,7 +131,7 @@
     </message>
     <message>
         <source>&amp;Axis Setting...</source>
-        <translation>Configuració de l'eix (&amp;A)...</translation>
+        <translation>Configuració de l&apos;eix (&amp;A)...</translation>
     </message>
     <message>
         <source>D&amp;raw Setting...</source>
@@ -152,11 +154,15 @@
     </message>
     <message>
         <source>Axis &amp;Setting</source>
-        <translation>Configuració de l'eix (&amp;S)</translation>
+        <translation>Configuració de l&apos;eix (&amp;S)</translation>
     </message>
     <message>
         <source>Draw &amp;Setting</source>
         <translation>Configuració del dibuix (&amp;S)</translation>
+    </message>
+    <message>
+        <source>&amp;Font Setting</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -167,7 +173,7 @@
     </message>
     <message>
         <source>Saving snapshot image to %1 failed.</source>
-        <translation>S'està desant la imatge instantània a %1 fracassat.</translation>
+        <translation>S&apos;està desant la imatge instantània a %1 fracassat.</translation>
     </message>
     <message>
         <source>Time = %1 sec</source>
@@ -221,10 +227,41 @@
     </message>
 </context>
 <context>
+    <name>Graph2dScatteredWindowFontSettingDialog</name>
+    <message>
+        <source>Font Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>X axis:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ticks:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Y axis:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>Graph2dScatteredWindowObjectBrowser</name>
     <message>
         <source>Object Browser</source>
-        <translation>Navegador d'objectes</translation>
+        <translation>Navegador d&apos;objectes</translation>
     </message>
 </context>
 <context>

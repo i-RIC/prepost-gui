@@ -104,13 +104,13 @@
            </property>
            <layout class="QVBoxLayout" name="verticalLayout_10">
             <item>
-             <widget class="QGroupBox" name="gridCreatingConditionGroupBox">
+             <widget class="QGroupBox" name="upstreamGroupBox">
               <property name="title">
-               <string>Grid Creating Condition</string>
+               <string>Upstream / Downstream</string>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_8">
                <item>
-                <widget class="vtkTextPropertySettingWidget" name="gridCreatingConditionWidget" native="true"/>
+                <widget class="vtkTextPropertySettingWidget" name="upstreamWidget" native="true"/>
                </item>
               </layout>
              </widget>

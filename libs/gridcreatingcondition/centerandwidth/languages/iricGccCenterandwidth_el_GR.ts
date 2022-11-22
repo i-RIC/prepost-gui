@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="el_GR">
 <context>
     <name>GridCreatingConditionCenterAndWidth</name>
@@ -85,6 +87,10 @@
         <source>Remove Center Line Vertex</source>
         <translation>Κατάργηση κεντρικής γραμμής Vertex</translation>
     </message>
+    <message>
+        <source>Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GridCreatingConditionCenterAndWidthDialog</name>
@@ -113,7 +119,7 @@
     </message>
     <message>
         <source>First, please define polygonal line, by mouse-clicking. The polygonal line is used as the center line of the grid. Then, you define the width, division number of grid in I direction and J direction.</source>
-        <translation>Κατ 'αρχάς, καθορίστε την πολυγωνική γραμμή, κάνοντας κλικ στο ποντίκι. Η πολυγωνική γραμμή χρησιμοποιείται ως κεντρική γραμμή του πλέγματος. Στη συνέχεια, ορίζετε το πλάτος, τον αριθμό διαίρεσης του πλέγματος στην κατεύθυνση Ι και την κατεύθυνση J.</translation>
+        <translation>Κατ &apos;αρχάς, καθορίστε την πολυγωνική γραμμή, κάνοντας κλικ στο ποντίκι. Η πολυγωνική γραμμή χρησιμοποιείται ως κεντρική γραμμή του πλέγματος. Στη συνέχεια, ορίζετε το πλάτος, τον αριθμό διαίρεσης του πλέγματος στην κατεύθυνση Ι και την κατεύθυνση J.</translation>
     </message>
 </context>
 </TS>

@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ro_RO">
 <context>
     <name>GeoDataRiverCrosssectionAltitudeMoveDialog</name>
@@ -379,7 +381,7 @@
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
-If you want to adjust cross section position and map point clouod data again, you can use "Map point cloud data"</source>
+If you want to adjust cross section position and map point clouod data again, you can use &quot;Map point cloud data&quot;</source>
         <translation type="vanished">Datele secțiunii transversale sunt generate utilizând date din cloud puncte. Dacă doriți să reglați din nou poziția secțiunii transversale și datele clouod ale punctelor de hartă, puteți utiliza „Date de cloud punct de hartă”</translation>
     </message>
     <message>
@@ -392,13 +394,13 @@ If you want to adjust cross section position and map point clouod data again, yo
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
-If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
+If you want to adjust cross section position and map point cloud data again, you can use &quot;Map point cloud data&quot;</source>
         <translation>Datele secțiunilor transversale sunt generate folosind datele din norul de puncte. Dacă doriți să ajustați din nou poziția secțiunii transversale și datele din norul de puncte ale hărții, puteți utiliza „Date din norul de puncte ale hărții”</translation>
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
 In some region, data did not exists in point cloud data, and value 0 was mapped for those points.
-If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
+If you want to adjust cross section position and map point cloud data again, you can use &quot;Map point cloud data&quot;</source>
         <translation>Datele secțiunilor transversale sunt generate folosind datele din norul de puncte. În unele regiuni, datele nu existau în datele din norul de puncte, iar valoarea 0 a fost mapată pentru acele puncte. Dacă doriți să ajustați din nou poziția secțiunii transversale și datele din norul de puncte ale hărții, puteți utiliza „Date din norul de puncte ale hărții”</translation>
     </message>
 </context>
@@ -406,7 +408,7 @@ If you want to adjust cross section position and map point cloud data again, you
     <name>GeoDataRiverSurvey::Impl</name>
     <message>
         <source>  </source>
-        <translation />
+        <translation></translation>
     </message>
     <message>
         <source>&amp;Cross-Section Data</source>
@@ -613,7 +615,7 @@ If you want to adjust cross section position and map point cloud data again, you
         <translation>Setările pentru elevație și gradient sunt nevalide.</translation>
     </message>
     <message>
-        <source>When you specify elevation of end point, it can not be same to the start point. If you want to draw horizontal line, please select "Specify horizontal distance".</source>
+        <source>When you specify elevation of end point, it can not be same to the start point. If you want to draw horizontal line, please select &quot;Specify horizontal distance&quot;.</source>
         <translation>Când specificați altitudinea punctului final, acesta nu poate fi același cu punctul de pornire. Dacă doriți să trasați linia orizontală, selectați „Specificați distanța orizontală”.</translation>
     </message>
 </context>
@@ -844,7 +846,7 @@ If you want to adjust cross section position and map point cloud data again, you
     </message>
     <message>
         <source>Edit the cross section by mouse-clicking. Finish editing by double clicking, or pressing return key.
-You can precisely edit the cross section by inputting values from dialog. Please enter dialog edit mode from "Edit from Dialog" in the right-clicking menu.</source>
+You can precisely edit the cross section by inputting values from dialog. Please enter dialog edit mode from &quot;Edit from Dialog&quot; in the right-clicking menu.</source>
         <translation>Editați secțiunea transversală făcând clic pe mouse. Finalizați editarea făcând dublu clic sau apăsând tasta Return. Puteți edita cu precizie secțiunea transversală introducând valori din dialog. Vă rugăm să accesați modul de editare a dialogului din „Editare din dialog” din meniul cu clic dreapta.</translation>
     </message>
     <message>
@@ -912,6 +914,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>Color:</source>
         <translation>Culoare:</translation>
+    </message>
+    <message>
+        <source>Crosssection Names</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1033,40 +1039,40 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>Eroare</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": LX value is invalid</source>
-        <translation>%1 linia %2 "%3": Valoarea LX este nevalidă</translation>
+        <source>%1 line %2 &quot;%3&quot;: LX value is invalid</source>
+        <translation>%1 linia %2 &quot;%3&quot;: Valoarea LX este nevalidă</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": LY value is invalid</source>
-        <translation>%1 linia %2 "%3": Valoarea LY este nevalidă</translation>
+        <source>%1 line %2 &quot;%3&quot;: LY value is invalid</source>
+        <translation>%1 linia %2 &quot;%3&quot;: Valoarea LY este nevalidă</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": RX value is invalid</source>
-        <translation>%1 linia %2 "%3": Valoarea RX este nevalidă</translation>
+        <source>%1 line %2 &quot;%3&quot;: RX value is invalid</source>
+        <translation>%1 linia %2 &quot;%3&quot;: Valoarea RX este nevalidă</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": RY value is invalid</source>
-        <translation>%1 linia %2 "%3": Valoarea RY este nevalidă</translation>
+        <source>%1 line %2 &quot;%3&quot;: RY value is invalid</source>
+        <translation>%1 linia %2 &quot;%3&quot;: Valoarea RY este nevalidă</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": Point count is invalid</source>
-        <translation>%1 linia %2 "%3": Numărul de puncte este nevalid</translation>
+        <source>%1 line %2 &quot;%3&quot;: Point count is invalid</source>
+        <translation>%1 linia %2 &quot;%3&quot;: Numărul de puncte este nevalid</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": Invalid index value</source>
-        <translation>%1 linia %2 "%3": Valoare index nevalidă</translation>
+        <source>%1 line %2 &quot;%3&quot;: Invalid index value</source>
+        <translation>%1 linia %2 &quot;%3&quot;: Valoare index nevalidă</translation>
     </message>
     <message>
         <source>%1 line %2: cross section data for %3 not enough</source>
         <translation>%1 linia %2 : datele secțiunii transversale pentru %3 insuficient</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": Distance value is invalid</source>
-        <translation>%1 linia %2 "%3": Valoarea distanței este nevalidă</translation>
+        <source>%1 line %2 &quot;%3&quot;: Distance value is invalid</source>
+        <translation>%1 linia %2 &quot;%3&quot;: Valoarea distanței este nevalidă</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": Elevation value is invalid</source>
-        <translation>%1 linia %2 "%3": Valoarea cotei este nevalidă</translation>
+        <source>%1 line %2 &quot;%3&quot;: Elevation value is invalid</source>
+        <translation>%1 linia %2 &quot;%3&quot;: Valoarea cotei este nevalidă</translation>
     </message>
     <message>
         <source>#survey data is not found. Will be ignored.</source>
@@ -1105,8 +1111,8 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>%1 Linia %2 : Eroare de citire. Are nevoie de cel puțin două valori.</translation>
     </message>
     <message>
-        <source>%1 Line %2: Read error. Not real number value "%3".</source>
-        <translation>%1 Linia %2 : Eroare de citire. Nu este valoarea numărului real "%3".</translation>
+        <source>%1 Line %2: Read error. Not real number value &quot;%3&quot;.</source>
+        <translation>%1 Linia %2 : Eroare de citire. Nu este valoarea numărului real &quot;%3&quot;.</translation>
     </message>
     <message>
         <source>Cross section %1 does not cross the center line. Center point is set to be the middle point of low water way.</source>
@@ -1232,36 +1238,36 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>%1 Linia %2 : KP nu este introdus</translation>
     </message>
     <message>
-        <source>%1 Line %2 "%3": LX value is invalid</source>
-        <translation>%1 Linia %2 "%3": Valoarea LX este nevalidă</translation>
+        <source>%1 Line %2 &quot;%3&quot;: LX value is invalid</source>
+        <translation>%1 Linia %2 &quot;%3&quot;: Valoarea LX este nevalidă</translation>
     </message>
     <message>
-        <source>%1 Line %2 "%3": LY value is invalid</source>
-        <translation>%1 Linia %2 "%3": Valoarea LY este nevalidă</translation>
+        <source>%1 Line %2 &quot;%3&quot;: LY value is invalid</source>
+        <translation>%1 Linia %2 &quot;%3&quot;: Valoarea LY este nevalidă</translation>
     </message>
     <message>
-        <source>%1 Line %2 "%3": RX value is invalid</source>
-        <translation>%1 Linia %2 "%3": Valoarea RX este nevalidă</translation>
+        <source>%1 Line %2 &quot;%3&quot;: RX value is invalid</source>
+        <translation>%1 Linia %2 &quot;%3&quot;: Valoarea RX este nevalidă</translation>
     </message>
     <message>
-        <source>%1 Line %2 "%3": RY value is invalid</source>
-        <translation>%1 Linia %2 "%3": Valoarea RY este nevalidă</translation>
+        <source>%1 Line %2 &quot;%3&quot;: RY value is invalid</source>
+        <translation>%1 Linia %2 &quot;%3&quot;: Valoarea RY este nevalidă</translation>
     </message>
     <message>
         <source>Distance marker data is not found. Will be ignored.</source>
         <translation>Datele marcatorului de distanță nu au fost găsite. Va fi ignorat.</translation>
     </message>
     <message>
-        <source>%1 line %2: "%3": Flag data is invalid.</source>
-        <translation>%1 linia %2 : "%3": Datele de semnalizare sunt nevalide.</translation>
+        <source>%1 line %2: &quot;%3&quot;: Flag data is invalid.</source>
+        <translation>%1 linia %2 : &quot;%3&quot;: Datele de semnalizare sunt nevalide.</translation>
     </message>
     <message>
-        <source>%1 line %2: "%3": Distance data is invalid.</source>
-        <translation>%1 linia %2 : "%3": Datele despre distanță sunt nevalide.</translation>
+        <source>%1 line %2: &quot;%3&quot;: Distance data is invalid.</source>
+        <translation>%1 linia %2 : &quot;%3&quot;: Datele despre distanță sunt nevalide.</translation>
     </message>
     <message>
-        <source>%1 line %2: "%3": Elevation data is invalid.</source>
-        <translation>%1 linia %2 : "%3": Datele privind cota sunt nevalide.</translation>
+        <source>%1 line %2: &quot;%3&quot;: Elevation data is invalid.</source>
+        <translation>%1 linia %2 : &quot;%3&quot;: Datele privind cota sunt nevalide.</translation>
     </message>
     <message>
         <source>Select folder where cross section data exists</source>

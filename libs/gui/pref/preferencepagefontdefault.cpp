@@ -36,11 +36,11 @@ PreferencePageFontDefault::PreferencePageFontDefault(QWidget* parent) :
 	s_arrows.loadSetting(settings, "fontsetting/arrow");
 	ui->arrowWidget->setSetting(s_arrows);
 
-	vtkTextPropertySettingContainer s_gridCreatingCondition;
-	s_gridCreatingCondition.fontSize = 17;
-	s_gridCreatingCondition.isBold = true;
-	s_gridCreatingCondition.loadSetting(settings, "fontsetting/gridcreatingcondition");
-	ui->gridCreatingConditionWidget->setSetting(s_gridCreatingCondition);
+	vtkTextPropertySettingContainer s_upstream;
+	s_upstream.fontSize = 17;
+	s_upstream.isBold = true;
+	s_upstream.loadSetting(settings, "fontsetting/upstream");
+	ui->upstreamWidget->setSetting(s_upstream);
 
 	vtkTextPropertySettingContainer s_riverSurveyNames;
 	s_riverSurveyNames.fontSize = 15;
@@ -69,6 +69,9 @@ PreferencePageFontDefault::PreferencePageFontDefault(QWidget* parent) :
 
 	font.fromString(settings.value("fontsetting/chart_axistick", QString("MS UI Gothic,10,-1,5,50,0,0,0,0,0")).toString());
 	ui->chartAxisTickWidget->setFont(font);
+
+	// temporarily hidden
+	ui->upstreamGroupBox->hide();
 }
 
 PreferencePageFontDefault::~PreferencePageFontDefault()
@@ -96,8 +99,8 @@ void PreferencePageFontDefault::update()
 	s = ui->arrowWidget->setting();
 	s.saveSetting(&settings, "fontsetting/arrow");
 
-	s = ui->gridCreatingConditionWidget->setting();
-	s.saveSetting(&settings, "fontsetting/gridcreatingcondition");
+	s = ui->upstreamWidget->setting();
+	s.saveSetting(&settings, "fontsetting/upstream");
 
 	s = ui->riverSurveyDataWidget->setting();
 	s.saveSetting(&settings, "fontsetting/riversurvey_names");

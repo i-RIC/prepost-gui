@@ -1,9 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ca_ES">
 <context>
     <name>Graph2dHybridSettingDialog</name>
     <message>
         <source>Axis Setting</source>
-        <translation>Configuració de l'eix</translation>
+        <translation>Configuració de l&apos;eix</translation>
     </message>
     <message>
         <source>X Axis</source>
@@ -87,15 +89,15 @@
     </message>
     <message>
         <source>X-axes range is invalid.</source>
-        <translation>L'interval dels eixos X no és vàlid.</translation>
+        <translation>L&apos;interval dels eixos X no és vàlid.</translation>
     </message>
     <message>
         <source>Left Y-axes range is invalid.</source>
-        <translation>L'interval dels eixos Y esquerra no és vàlid.</translation>
+        <translation>L&apos;interval dels eixos Y esquerra no és vàlid.</translation>
     </message>
     <message>
         <source>Right Y-axes range is invalid.</source>
-        <translation>L'interval dels eixos Y dret no és vàlid.</translation>
+        <translation>L&apos;interval dels eixos Y dret no és vàlid.</translation>
     </message>
 </context>
 <context>
@@ -181,7 +183,7 @@
     </message>
     <message>
         <source>&amp;Axis Setting...</source>
-        <translation>Configuració de l'eix (&amp;A)...</translation>
+        <translation>Configuració de l&apos;eix (&amp;A)...</translation>
     </message>
     <message>
         <source>D&amp;raw Setting...</source>
@@ -236,7 +238,7 @@
     </message>
     <message>
         <source>I Min:</source>
-        <translation>M'hi apunto:</translation>
+        <translation>M&apos;hi apunto:</translation>
     </message>
     <message>
         <source>I Max:</source>
@@ -327,7 +329,7 @@
     </message>
     <message>
         <source>Axis &amp;Setting</source>
-        <translation>Configuració de l'eix (&amp;S)</translation>
+        <translation>Configuració de l&apos;eix (&amp;S)</translation>
     </message>
     <message>
         <source>Draw &amp;Setting</source>
@@ -349,6 +351,10 @@
         <source>CSV &amp;Export</source>
         <translation>Exportació CSV (&amp;E)</translation>
     </message>
+    <message>
+        <source>&amp;Font Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Graph2dHybridWindowDataModel</name>
@@ -358,11 +364,11 @@
     </message>
     <message>
         <source>Saving snapshots...</source>
-        <translation>S'estan desant les instantànies...</translation>
+        <translation>S&apos;estan desant les instantànies...</translation>
     </message>
     <message>
         <source>CSV Export Setting</source>
-        <translation>Configuració d'exportació CSV</translation>
+        <translation>Configuració d&apos;exportació CSV</translation>
     </message>
     <message>
         <source>CSV Export</source>
@@ -370,7 +376,7 @@
     </message>
     <message>
         <source>Saving csv files...</source>
-        <translation>S'estan desant els fitxers CSV...</translation>
+        <translation>S&apos;estan desant els fitxers CSV...</translation>
     </message>
     <message>
         <source>Error</source>
@@ -378,7 +384,7 @@
     </message>
     <message>
         <source>Saving snapshot image to %1 failed.</source>
-        <translation>S'està desant la imatge instantània a %1 fracassat.</translation>
+        <translation>S&apos;està desant la imatge instantània a %1 fracassat.</translation>
     </message>
     <message>
         <source>Export CSV file</source>
@@ -394,7 +400,7 @@
     </message>
     <message>
         <source>CSV file successfully exported.</source>
-        <translation>S'ha exportat correctament el fitxer CSV.</translation>
+        <translation>S&apos;ha exportat correctament el fitxer CSV.</translation>
     </message>
     <message>
         <source>I = %1</source>
@@ -449,8 +455,8 @@
         <translation>La configuració de la finestra del gràfic ha fallat. El resultat del càlcul no es carrega correctament.</translation>
     </message>
     <message>
-        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm "Create grid from from cross-section data"&lt;/li&gt;&lt;/ul&gt;</source>
-        <translation>Aquesta funció es pot utilitzar quan es compleixen les condicions següents: &lt;ul&gt; &lt;li&gt; Es dibuixa el gràfic del resultat de la quadrícula estructurada bidimensional. &lt;/li&gt; &lt;li&gt; L'eix X és la direcció I a la quadrícula. &lt;/ Li &gt; &lt;li&gt; La quadrícula es crea mitjançant l'algorisme "Crea una graella a partir de dades de secció transversal" &lt;/li&gt; &lt;/ul&gt;</translation>
+        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm &quot;Create grid from from cross-section data&quot;&lt;/li&gt;&lt;/ul&gt;</source>
+        <translation>Aquesta funció es pot utilitzar quan es compleixen les condicions següents: &lt;ul&gt; &lt;li&gt; Es dibuixa el gràfic del resultat de la quadrícula estructurada bidimensional. &lt;/li&gt; &lt;li&gt; L&apos;eix X és la direcció I a la quadrícula. &lt;/ Li &gt; &lt;li&gt; La quadrícula es crea mitjançant l&apos;algorisme &quot;Crea una graella a partir de dades de secció transversal&quot; &lt;/li&gt; &lt;/ul&gt;</translation>
     </message>
 </context>
 <context>
@@ -544,8 +550,8 @@
         <translation>Error</translation>
     </message>
     <message>
-        <source>The title of the first column has to be "X"</source>
-        <translation>El títol de la primera columna ha de ser "X"</translation>
+        <source>The title of the first column has to be &quot;X&quot;</source>
+        <translation>El títol de la primera columna ha de ser &quot;X&quot;</translation>
     </message>
     <message>
         <source>The number of data of %1 and %2 mismatch. Data %1 is skipped.</source>
@@ -576,6 +582,37 @@
     </message>
 </context>
 <context>
+    <name>Graph2dHybridWindowFontSettingDialog</name>
+    <message>
+        <source>Chart Font Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>X axis:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ticks:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Y axis:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>Graph2dHybridWindowImportDataDataItem</name>
     <message>
         <source>%1 - %2</source>
@@ -593,8 +630,8 @@
         <translation>Error</translation>
     </message>
     <message>
-        <source>The title of the first column has to be "X"</source>
-        <translation>El títol de la primera columna ha de ser "X"</translation>
+        <source>The title of the first column has to be &quot;X&quot;</source>
+        <translation>El títol de la primera columna ha de ser &quot;X&quot;</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -636,7 +673,7 @@
     <name>Graph2dHybridWindowObjectBrowser</name>
     <message>
         <source>Object Browser</source>
-        <translation>Navegador d'objectes</translation>
+        <translation>Navegador d&apos;objectes</translation>
     </message>
 </context>
 <context>

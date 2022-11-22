@@ -1,9 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="fr_FR">
 <context>
     <name>Graph2dScatteredAxisSettingDialog</name>
     <message>
         <source>Axis Setting</source>
-        <translation>Réglage de l'axe</translation>
+        <translation>Réglage de l&apos;axe</translation>
     </message>
     <message>
         <source>X Axis</source>
@@ -19,11 +21,11 @@
     </message>
     <message>
         <source>Min:</source>
-        <translation>Min :</translation>
+        <translation>Min&#xa0;:</translation>
     </message>
     <message>
         <source>Max:</source>
-        <translation>Maximum :</translation>
+        <translation>Maximum&#xa0;:</translation>
     </message>
     <message>
         <source>Logarithmic axis</source>
@@ -67,15 +69,15 @@
     </message>
     <message>
         <source>X-axes range is invalid.</source>
-        <translation>La plage des axes X n'est pas valide.</translation>
+        <translation>La plage des axes X n&apos;est pas valide.</translation>
     </message>
     <message>
         <source>Left Y-axes range is invalid.</source>
-        <translation>La plage des axes Y de gauche n'est pas valide.</translation>
+        <translation>La plage des axes Y de gauche n&apos;est pas valide.</translation>
     </message>
     <message>
         <source>Right Y-axes range is invalid.</source>
-        <translation>La plage des axes Y de droite n'est pas valide.</translation>
+        <translation>La plage des axes Y de droite n&apos;est pas valide.</translation>
     </message>
 </context>
 <context>
@@ -90,11 +92,11 @@
     </message>
     <message>
         <source>J:</source>
-        <translation>J :</translation>
+        <translation>J&#xa0;:</translation>
     </message>
     <message>
         <source>K:</source>
-        <translation>K :</translation>
+        <translation>K&#xa0;:</translation>
     </message>
     <message>
         <source>Select &amp;Data Source</source>
@@ -110,7 +112,7 @@
     </message>
     <message>
         <source>Scattered Chart Window: %1</source>
-        <translation>Fenêtre de graphique en nuages de points : %1</translation>
+        <translation>Fenêtre de graphique en nuages de points&#xa0;: %1</translation>
     </message>
     <message>
         <source>Controller</source>
@@ -129,7 +131,7 @@
     </message>
     <message>
         <source>&amp;Axis Setting...</source>
-        <translation>Réglage de l'axe (&amp;A)...</translation>
+        <translation>Réglage de l&apos;axe (&amp;A)...</translation>
     </message>
     <message>
         <source>D&amp;raw Setting...</source>
@@ -152,11 +154,15 @@
     </message>
     <message>
         <source>Axis &amp;Setting</source>
-        <translation>Réglage de l'axe (&amp;S)</translation>
+        <translation>Réglage de l&apos;axe (&amp;S)</translation>
     </message>
     <message>
         <source>Draw &amp;Setting</source>
         <translation>Paramètre de dessin (&amp;S)</translation>
+    </message>
+    <message>
+        <source>&amp;Font Setting</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -167,7 +173,7 @@
     </message>
     <message>
         <source>Saving snapshot image to %1 failed.</source>
-        <translation>Enregistrement de l'image instantanée dans %1 échoué.</translation>
+        <translation>Enregistrement de l&apos;image instantanée dans %1 échoué.</translation>
     </message>
     <message>
         <source>Time = %1 sec</source>
@@ -179,11 +185,11 @@
     </message>
     <message>
         <source>No calculation result exists.</source>
-        <translation>Aucun résultat de calcul n'existe.</translation>
+        <translation>Aucun résultat de calcul n&apos;existe.</translation>
     </message>
     <message>
         <source>Graph window setup fail. Calculation result is not loaded properly.</source>
-        <translation>Échec de la configuration de la fenêtre graphique. Le résultat du calcul n'est pas chargé correctement.</translation>
+        <translation>Échec de la configuration de la fenêtre graphique. Le résultat du calcul n&apos;est pas chargé correctement.</translation>
     </message>
 </context>
 <context>
@@ -194,11 +200,11 @@
     </message>
     <message>
         <source>X Axis:</source>
-        <translation>Axe X :</translation>
+        <translation>Axe X&#xa0;:</translation>
     </message>
     <message>
         <source>Y Axis:</source>
-        <translation>Axe Y :</translation>
+        <translation>Axe Y&#xa0;:</translation>
     </message>
     <message>
         <source>Position X</source>
@@ -221,10 +227,41 @@
     </message>
 </context>
 <context>
+    <name>Graph2dScatteredWindowFontSettingDialog</name>
+    <message>
+        <source>Font Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>X axis:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ticks:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Y axis:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>Graph2dScatteredWindowObjectBrowser</name>
     <message>
         <source>Object Browser</source>
-        <translation>Navigateur d'objets</translation>
+        <translation>Navigateur d&apos;objets</translation>
     </message>
 </context>
 <context>
@@ -265,7 +302,7 @@
     </message>
     <message>
         <source>Y Axis:</source>
-        <translation>Axe Y :</translation>
+        <translation>Axe Y&#xa0;:</translation>
     </message>
     <message>
         <source>Left</source>
@@ -277,7 +314,7 @@
     </message>
     <message>
         <source>Symbol Style:</source>
-        <translation>Style de symbole :</translation>
+        <translation>Style de symbole&#xa0;:</translation>
     </message>
     <message>
         <source>Circle</source>
@@ -305,7 +342,7 @@
     </message>
     <message>
         <source>Symbol Size:</source>
-        <translation>Taille du symbole :</translation>
+        <translation>Taille du symbole&#xa0;:</translation>
     </message>
     <message>
         <source>Color:</source>

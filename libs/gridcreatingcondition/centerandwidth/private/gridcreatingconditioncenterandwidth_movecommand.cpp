@@ -1,3 +1,4 @@
+#include "gridcreatingconditioncenterandwidth_impl.h"
 #include "gridcreatingconditioncenterandwidth_movecommand.h"
 
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
@@ -10,14 +11,9 @@ GridCreatingConditionCenterAndWidth::MoveCommand::MoveCommand(bool keyDown, cons
 	m_keyDown {keyDown},
 	m_condition {cond}
 {
-	double dx = from.x();
-	double dy = from.y();
-	cond->graphicsView()->viewportToWorld(dx, dy);
-	QPointF fromVec(dx, dy);
-	dx = to.x();
-	dy = to.y();
-	cond->graphicsView()->viewportToWorld(dx, dy);
-	QPointF toVec(dx, dy);
+	auto v = cond->graphicsView();
+	auto fromVec = v->viewportToWorld(from);
+	auto toVec = v->viewportToWorld(to);
 	m_offset = toVec - fromVec;
 }
 
@@ -28,8 +24,8 @@ void GridCreatingConditionCenterAndWidth::MoveCommand::redo()
 		p += m_offset;
 	}
 	m_condition->setPolyLine(line);
-	if (m_condition->m_isGridCreated) {
-		m_condition->createSpline(m_condition->m_polyLineController.polyData()->GetPoints(), m_condition->m_iMax - 1);
+	if (m_condition->impl->m_isGridCreated) {
+		m_condition->createSpline(m_condition->impl->m_polyLineController.polyData()->GetPoints(), m_condition->impl->m_setting.iMax - 1);
 		emit m_condition->tmpGridCreated(m_condition->createGrid());
 	}
 }
@@ -41,8 +37,8 @@ void GridCreatingConditionCenterAndWidth::MoveCommand::undo()
 		p -= m_offset;
 	}
 	m_condition->setPolyLine(line);
-	if (m_condition->m_isGridCreated) {
-		m_condition->createSpline(m_condition->m_polyLineController.polyData()->GetPoints(), m_condition->m_iMax - 1);
+	if (m_condition->impl->m_isGridCreated) {
+		m_condition->createSpline(m_condition->impl->m_polyLineController.polyData()->GetPoints(), m_condition->impl->m_setting.iMax - 1);
 		emit m_condition->tmpGridCreated(m_condition->createGrid());
 	}
 }

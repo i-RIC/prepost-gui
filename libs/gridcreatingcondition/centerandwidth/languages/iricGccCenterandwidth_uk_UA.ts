@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="uk_UA">
 <context>
     <name>GridCreatingConditionCenterAndWidth</name>
@@ -84,6 +86,10 @@
     <message>
         <source>Remove Center Line Vertex</source>
         <translation>Видалити вершину центральної лінії</translation>
+    </message>
+    <message>
+        <source>Display Setting</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

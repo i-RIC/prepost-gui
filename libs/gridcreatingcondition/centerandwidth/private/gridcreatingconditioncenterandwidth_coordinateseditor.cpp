@@ -1,5 +1,6 @@
 #include "gridcreatingconditioncenterandwidth_coordinateseditor.h"
 #include "gridcreatingconditioncenterandwidth_editcoordinatescommand.h"
+#include "gridcreatingconditioncenterandwidth_impl.h"
 #include "../gridcreatingconditioncenterandwidth.h"
 
 #include <guibase/coordinates/coordinatesedit.h>
@@ -12,7 +13,7 @@ bool GridCreatingConditionCenterAndWidth::CoordinatesEditor::applied = false;
 
 void GridCreatingConditionCenterAndWidth::CoordinatesEditor::edit(GridCreatingConditionCenterAndWidth* cond)
 {
-	cond->m_mouseEventMode = meEditVerticesDialog;
+	cond->impl->m_mouseEventMode = Impl::MouseEventMode::EditVerticesDialog;
 	cond->iricMainWindow()->enterModelessDialogMode();
 
 	targetCond = cond;

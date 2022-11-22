@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ja_JP">
 <context>
     <name>GridCreatingConditionCenterAndWidth</name>
@@ -84,6 +86,10 @@
     <message>
         <source>Polyline Coordinates</source>
         <translation>頂点座標</translation>
+    </message>
+    <message>
+        <source>Display Setting</source>
+        <translation>表示設定</translation>
     </message>
 </context>
 <context>

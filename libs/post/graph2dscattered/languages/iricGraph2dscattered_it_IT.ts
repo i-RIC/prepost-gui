@@ -1,9 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="it_IT">
 <context>
     <name>Graph2dScatteredAxisSettingDialog</name>
     <message>
         <source>Axis Setting</source>
-        <translation>Impostazione dell'asse</translation>
+        <translation>Impostazione dell&apos;asse</translation>
     </message>
     <message>
         <source>X Axis</source>
@@ -67,15 +69,15 @@
     </message>
     <message>
         <source>X-axes range is invalid.</source>
-        <translation>L'intervallo degli assi X non è valido.</translation>
+        <translation>L&apos;intervallo degli assi X non è valido.</translation>
     </message>
     <message>
         <source>Left Y-axes range is invalid.</source>
-        <translation>L'intervallo dell'asse Y sinistro non è valido.</translation>
+        <translation>L&apos;intervallo dell&apos;asse Y sinistro non è valido.</translation>
     </message>
     <message>
         <source>Right Y-axes range is invalid.</source>
-        <translation>L'intervallo dell'asse Y destro non è valido.</translation>
+        <translation>L&apos;intervallo dell&apos;asse Y destro non è valido.</translation>
     </message>
 </context>
 <context>
@@ -129,7 +131,7 @@
     </message>
     <message>
         <source>&amp;Axis Setting...</source>
-        <translation>Impostazione dell'asse (&amp;A)...</translation>
+        <translation>Impostazione dell&apos;asse (&amp;A)...</translation>
     </message>
     <message>
         <source>D&amp;raw Setting...</source>
@@ -152,11 +154,15 @@
     </message>
     <message>
         <source>Axis &amp;Setting</source>
-        <translation>Impostazione dell'asse (&amp;S)</translation>
+        <translation>Impostazione dell&apos;asse (&amp;S)</translation>
     </message>
     <message>
         <source>Draw &amp;Setting</source>
         <translation>Disegna impostazione (&amp;S)</translation>
+    </message>
+    <message>
+        <source>&amp;Font Setting</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -167,7 +173,7 @@
     </message>
     <message>
         <source>Saving snapshot image to %1 failed.</source>
-        <translation>Salvataggio dell'immagine istantanea in %1 fallito.</translation>
+        <translation>Salvataggio dell&apos;immagine istantanea in %1 fallito.</translation>
     </message>
     <message>
         <source>Time = %1 sec</source>
@@ -183,7 +189,7 @@
     </message>
     <message>
         <source>Graph window setup fail. Calculation result is not loaded properly.</source>
-        <translation>L'impostazione della finestra del grafico non è riuscita. Il risultato del calcolo non è caricato correttamente.</translation>
+        <translation>L&apos;impostazione della finestra del grafico non è riuscita. Il risultato del calcolo non è caricato correttamente.</translation>
     </message>
 </context>
 <context>
@@ -218,6 +224,37 @@
     <message>
         <source>Draw Setting</source>
         <translation>Disegna impostazione</translation>
+    </message>
+</context>
+<context>
+    <name>Graph2dScatteredWindowFontSettingDialog</name>
+    <message>
+        <source>Font Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>X axis:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ticks:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Y axis:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

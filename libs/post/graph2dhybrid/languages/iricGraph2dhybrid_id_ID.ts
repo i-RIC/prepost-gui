@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="id_ID">
 <context>
     <name>Graph2dHybridSettingDialog</name>
@@ -349,6 +351,10 @@
         <source>CSV &amp;Export</source>
         <translation>Ekspor CSV (&amp;E)</translation>
     </message>
+    <message>
+        <source>&amp;Font Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Graph2dHybridWindowDataModel</name>
@@ -449,8 +455,8 @@
         <translation>Pengaturan jendela grafik gagal. Hasil perhitungan tidak dimuat dengan benar.</translation>
     </message>
     <message>
-        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm "Create grid from from cross-section data"&lt;/li&gt;&lt;/ul&gt;</source>
-        <translation>Fungsi ini dapat digunakan jika kondisi berikut terpenuhi: &lt;ul&gt;&lt;li&gt;Grafik untuk hasil kisi terstruktur dua dimensi digambar.&lt;/li&gt;&lt;li&gt;Sumbu X adalah arah-I dalam kisi.&lt;/li &gt;&lt;li&gt;Kisi dibuat menggunakan algoritme "Buat kisi dari data penampang"&lt;/li&gt;&lt;/ul&gt;</translation>
+        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm &quot;Create grid from from cross-section data&quot;&lt;/li&gt;&lt;/ul&gt;</source>
+        <translation>Fungsi ini dapat digunakan jika kondisi berikut terpenuhi: &lt;ul&gt;&lt;li&gt;Grafik untuk hasil kisi terstruktur dua dimensi digambar.&lt;/li&gt;&lt;li&gt;Sumbu X adalah arah-I dalam kisi.&lt;/li &gt;&lt;li&gt;Kisi dibuat menggunakan algoritme &quot;Buat kisi dari data penampang&quot;&lt;/li&gt;&lt;/ul&gt;</translation>
     </message>
 </context>
 <context>
@@ -544,8 +550,8 @@
         <translation>Kesalahan</translation>
     </message>
     <message>
-        <source>The title of the first column has to be "X"</source>
-        <translation>Judul kolom pertama harus "X"</translation>
+        <source>The title of the first column has to be &quot;X&quot;</source>
+        <translation>Judul kolom pertama harus &quot;X&quot;</translation>
     </message>
     <message>
         <source>The number of data of %1 and %2 mismatch. Data %1 is skipped.</source>
@@ -576,6 +582,37 @@
     </message>
 </context>
 <context>
+    <name>Graph2dHybridWindowFontSettingDialog</name>
+    <message>
+        <source>Chart Font Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>X axis:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ticks:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Y axis:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>Graph2dHybridWindowImportDataDataItem</name>
     <message>
         <source>%1 - %2</source>
@@ -593,8 +630,8 @@
         <translation>Kesalahan</translation>
     </message>
     <message>
-        <source>The title of the first column has to be "X"</source>
-        <translation>Judul kolom pertama harus "X"</translation>
+        <source>The title of the first column has to be &quot;X&quot;</source>
+        <translation>Judul kolom pertama harus &quot;X&quot;</translation>
     </message>
     <message>
         <source>Warning</source>

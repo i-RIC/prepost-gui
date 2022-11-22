@@ -1,29 +1,12 @@
 #ifndef GRIDCREATINGCONDITIONCENTERANDWIDTH_H
 #define GRIDCREATINGCONDITIONCENTERANDWIDTH_H
 
-#include <guibase/polyline/polylinecontroller.h>
-#include <guibase/vtktool/vtklabel2dactor.h>
 #include <guicore/pre/gridcreatingcondition/gridcreatingcondition.h>
-#include <guicore/pre/grid/structured2dgrid.h>
-#include <vtkSmartPointer.h>
-#include <vtkPolyLine.h>
-#include <vtkUnstructuredGrid.h>
-#include <vtkActor.h>
-#include <vtkActor2D.h>
-#include <vtkStringArray.h>
-#include <vtkDataSetMapper.h>
-#include <vtkParametricSpline.h>
-#include <vtkCardinalSpline.h>
-#include <vtkLabeledDataMapper.h>
-#include <QVector>
-#include <QPointF>
-#include <QPixmap>
-#include <QCursor>
 
 #include <vector>
 
 class QMenu;
-class QAction;
+class QPointF;
 class QToolBar;
 
 class GridCreatingConditionCenterAndWidth : public GridCreatingCondition
@@ -36,42 +19,27 @@ private:
 	const static int initialDivision = 100;
 
 public:
-	enum MouseEventMode {
-		meNormal,
-		meBeforeDefining,
-		meDefining,
-		meTranslate,
-		meTranslatePrepare,
-		meMoveVertex,
-		meMoveVertexPrepare,
-		meAddVertex,
-		meAddVertexPrepare,
-		meAddVertexNotPossible,
-		meRemoveVertexPrepare,
-		meRemoveVertexNotPossible,
-
-		meEditVerticesDialog
-	};
 	GridCreatingConditionCenterAndWidth(ProjectDataItem* parent, GridCreatingConditionCreator* creator);
-	virtual ~GridCreatingConditionCenterAndWidth();
+	~GridCreatingConditionCenterAndWidth();
+
 	bool create(QWidget* parent) override;
-
 	bool ready() const override;
-
 	void setupActors() override;
 	void setupMenu() override;
 	void informSelection(PreProcessorGraphicsViewInterface* v) override;
 	void informDeselection(PreProcessorGraphicsViewInterface* v) override;
 	void viewOperationEnded(PreProcessorGraphicsViewInterface* v) override;
-	void keyPressEvent(QKeyEvent* /*event*/, PreProcessorGraphicsViewInterface* v) override;
-	void keyReleaseEvent(QKeyEvent* /*event*/, PreProcessorGraphicsViewInterface* v) override;
-	void mouseDoubleClickEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* v) override;
-	void mouseMoveEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* v) override;
-	void mousePressEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* v) override;
-	void mouseReleaseEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* v) override;
-	void updateMouseCursor(PreProcessorGraphicsViewInterface* v);
+	void keyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* v) override;
+	void keyReleaseEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* v) override;
+	void mouseDoubleClickEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v) override;
+	void mouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v) override;
+	void mousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v) override;
+	void mouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v) override;
 	void updateZDepthRangeItemCount(ZDepthRange& range) override;
-	void assignActorZValues(const ZDepthRange& /*range*/) override;
+	void assignActorZValues(const ZDepthRange& range) override;
+	QDialog* propertyDialog(QWidget* parent) override;
+	void handlePropertyDialogAccepted(QDialog* propDialog) override;
+
 	std::vector<QPointF> polyLine();
 	void setPolyLine(const std::vector<QPointF>& polyline);
 
@@ -84,57 +52,19 @@ public:
 	void setIMax(int i);
 	void setJMax(int j);
 	void setWidth(double w);
-	int iMax() const {return m_iMax;}
-	int jMax() const {return m_jMax;}
-	double width() const {return m_width;}
-	double length() const {return m_length;}
-	bool addToolBarButtons(QToolBar* /*tb*/) override;
+
+	int iMax() const;
+	int jMax() const;
+	double width() const;
+	double length() const;
+
+	bool addToolBarButtons(QToolBar* tb) override;
 	void clear() override;
 	void showInitialDialog() override;
 
 protected:
-	// @todo not implemented yet.
-	void doLoadFromProjectMainFile(const QDomNode& /*node*/) override;
-	// @todo not implemented yet.
-	void doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/) override;
-	void loadCenterAndWidthFromProjectMainFile(const QDomNode& /*node*/);
-	void saveCenterAndWidthToProjectMainFile(QXmlStreamWriter& /*writer*/);
-	void loadExternalData(const QString& /*filename*/) override;
-	void saveExternalData(const QString& /*filename*/) override;
-	void doApplyOffset(double x, double y) override;
-
-	PolyLineController m_polyLineController;
-	vtkLabel2DActor m_upstreamActor;
-	vtkLabel2DActor m_downstreamActor;
-
-	vtkSmartPointer<vtkActor> m_previewActor;
-	vtkSmartPointer<vtkDataSetMapper> m_previewMapper;
-	Grid* m_previewGrid;
-
-	vtkSmartPointer<vtkParametricSpline> m_spline;
-	vtkSmartPointer<vtkCardinalSpline> m_xSpline;
-	vtkSmartPointer<vtkCardinalSpline> m_ySpline;
-	vtkSmartPointer<vtkCardinalSpline> m_zSpline;
-
-	vtkPoints* m_splinePoints;
-
-	QAction* m_addVertexAction;
-	QAction* m_removeVertexAction;
-	QAction* m_coordEditAction;
-	QAction* m_reverseCenterLineAction;
-	QAction* m_importCenterLineAction;
-	QAction* m_exportCenterLineAction;
-
-	QMenu* m_rightClickingMenu;
-
-	int m_iMax;
-	int m_jMax;
-	double m_width;
-	double m_length;
-
-	int m_oldIMax;
-	int m_oldJMax;
-	double m_oldWidth;
+	void loadCenterAndWidthFromProjectMainFile(const QDomNode& node);
+	void saveCenterAndWidthToProjectMainFile(QXmlStreamWriter& writer);
 
 private slots:
 	void restoreMouseEventMode();
@@ -150,28 +80,15 @@ private slots:
 
 private:
 	void updateShapeData();
-	void updateMouseEventMode();
-	void updateActionStatus();
 
 	void pushUpdateShapeCommand(QUndoCommand* com, bool renderRedoOnly = false);
 
-	QPoint m_dragStartPoint;
-	QPoint m_currentPoint;
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+	void loadExternalData(const QString& filename) override;
+	void saveExternalData(const QString& filename) override;
+	void doApplyOffset(double x, double y) override;
 
-	MouseEventMode m_mouseEventMode;
-
-	QPixmap m_addPixmap;
-	QPixmap m_removePixmap;
-	QCursor m_addCursor;
-	QCursor m_removeCursor;
-	double m_distance;
-	int m_selectedVertexId;
-	int m_selectedEdgeId;
-
-	bool m_isAccepted;
-	bool m_isGridCreated;
-
-private:
 	class UpdateShapeCommand;
 	class AddVertexCommand;
 	class EditCoordinatesCommand;
@@ -182,6 +99,10 @@ private:
 	class RemoveVertexCommand;
 
 	class CoordinatesEditor;
+	class Setting;
+
+	class Impl;
+	Impl* impl;
 
 public:
 	friend class GridCreatingConditionCreatorCenterAndWidth;

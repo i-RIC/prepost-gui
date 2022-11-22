@@ -67,6 +67,8 @@ public:
 	virtual void updateZDepthRangeItemCount(ZDepthRange& range);
 	virtual void assignActorZValues(const ZDepthRange& /*range*/) {}
 	virtual bool addToolBarButtons(QToolBar* /*tb*/) {return false;}
+	virtual QDialog* propertyDialog(QWidget* /*parent*/) {return nullptr;}
+	virtual void handlePropertyDialogAccepted(QDialog* /*propDialog*/) {}
 	virtual void update2Ds() {}
 	/// Clear the condition, to make it the default status.
 	virtual void clear() = 0;

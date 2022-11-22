@@ -4,12 +4,14 @@
 #include "private/gridcreatingconditioncenterandwidth_coordinateseditor.h"
 #include "private/gridcreatingconditioncenterandwidth_pushvertexcommand.h"
 #include "private/gridcreatingconditioncenterandwidth_finishdefiningcommand.h"
+#include "private/gridcreatingconditioncenterandwidth_impl.h"
 #include "private/gridcreatingconditioncenterandwidth_movecommand.h"
 #include "private/gridcreatingconditioncenterandwidth_movevertexcommand.h"
 #include "private/gridcreatingconditioncenterandwidth_removevertexcommand.h"
 #include "private/gridcreatingconditioncenterandwidth_updateshapecommand.h"
 
 #include <geoio/polylineio.h>
+#include <guibase/vtktextpropertysettingdialog.h>
 #include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
 #include <guicore/pre/base/preprocessorgridcreatingconditiondataiteminterface.h>
@@ -55,117 +57,75 @@
 
 namespace {
 
-const int FONTSIZE = 17;
-
 void setupLabelActor(vtkLabel2DActor* actor)
 {
 	actor->setLabelPosition(vtkLabel2DActor::lpMiddleRight);
-	auto prop = actor->labelTextProperty();
-	prop->SetFontSize(FONTSIZE);
-	prop->BoldOn();
 }
 
 } // namespace
 
 GridCreatingConditionCenterAndWidth::GridCreatingConditionCenterAndWidth(ProjectDataItem* parent, GridCreatingConditionCreator* creator) :
 	GridCreatingCondition(parent, creator),
-	m_previewGrid {nullptr},
-	m_splinePoints {vtkPoints::New()},
-	m_rightClickingMenu {nullptr},
-	m_iMax {11},
-	m_jMax {11},
-	m_width {10.0},
-	m_mouseEventMode {meBeforeDefining},
-	m_addPixmap {":/libs/guibase/images/cursorAdd.png"},
-	m_removePixmap {":/libs/guibase/images/cursorRemove.png"},
-	m_addCursor {m_addPixmap, 0, 0},
-	m_removeCursor {m_removePixmap, 0, 0},
-	m_selectedVertexId {0},
-	m_selectedEdgeId {0},
-	m_isAccepted {false},
-	m_isGridCreated {false}
+	impl {new Impl {this}}
 {
-	m_upstreamActor.setLabel("Upstream");
-	setupLabelActor(&m_upstreamActor);
+	impl->m_upstreamActor.setLabel("Upstream");
+	setupLabelActor(&impl->m_upstreamActor);
 
-	m_downstreamActor.setLabel("Downstream");
-	setupLabelActor(&m_downstreamActor);
+	impl->m_downstreamActor.setLabel("Downstream");
+	setupLabelActor(&impl->m_downstreamActor);
 
-	m_addVertexAction = new QAction(QIcon(":/libs/guibase/images/iconAddPolygonVertex.svg"), GridCreatingConditionCenterAndWidth::tr("&Add Vertex"), this);
-	m_addVertexAction->setCheckable(true);
-	connect(m_addVertexAction, SIGNAL(triggered(bool)), this, SLOT(addVertexMode(bool)));
-	m_removeVertexAction = new QAction(QIcon(":/libs/guibase/images/iconRemovePolygonVertex.svg"), GridCreatingConditionCenterAndWidth::tr("&Remove Vertex"), this);
-	m_removeVertexAction->setCheckable(true);
-	connect(m_removeVertexAction, SIGNAL(triggered(bool)), this, SLOT(removeVertexMode(bool)));
-
-	m_coordEditAction = new QAction(GridCreatingConditionCenterAndWidth::tr("Edit C&oordinates..."), this);
-	connect(m_coordEditAction, SIGNAL(triggered()), this, SLOT(editCoordinates()));
-
-	m_reverseCenterLineAction = new QAction(GridCreatingConditionCenterAndWidth::tr("R&everse Center Line Direction"), this);
-	connect(m_reverseCenterLineAction, SIGNAL(triggered()), this, SLOT(reverseCenterLineDirection()));
-
-	m_importCenterLineAction = new QAction(QIcon(":/libs/guibase/images/iconImport.svg"), GridCreatingConditionCenterAndWidth::tr("&Import Center Line..."), this);
-	connect(m_importCenterLineAction, SIGNAL(triggered()), this, SLOT(importCenterLine()));
-
-	m_exportCenterLineAction = new QAction(QIcon(":/libs/guibase/images/iconExport.svg"), GridCreatingConditionCenterAndWidth::tr("&Export Center Line..."), this);
-	connect(m_exportCenterLineAction, SIGNAL(triggered()), this, SLOT(exportCenterLine()));
-
-	m_xSpline = vtkSmartPointer<vtkCardinalSpline>::New();
-	m_ySpline = vtkSmartPointer<vtkCardinalSpline>::New();
-	m_zSpline = vtkSmartPointer<vtkCardinalSpline>::New();
-	m_spline = vtkSmartPointer<vtkParametricSpline>::New();
-	m_spline->SetXSpline(m_xSpline);
-	m_spline->SetYSpline(m_ySpline);
-	m_spline->SetZSpline(m_zSpline);
-	m_splinePoints->SetDataTypeToDouble();
-
-	updateActionStatus();
+	impl->updateActionStatus();
 }
 
 GridCreatingConditionCenterAndWidth::~GridCreatingConditionCenterAndWidth()
 {
-	renderer()->RemoveActor(m_previewActor);
-	renderer()->RemoveActor(m_polyLineController.pointsActor());
-	renderer()->RemoveActor(m_polyLineController.linesActor());
-	renderer()->RemoveActor2D(m_upstreamActor.actor());
-	renderer()->RemoveActor2D(m_downstreamActor.actor());
+	auto r = renderer();
+	r->RemoveActor(impl->m_previewActor);
+	r->RemoveActor(impl->m_polyLineController.pointsActor());
+	r->RemoveActor(impl->m_polyLineController.linesActor());
+	r->RemoveActor2D(impl->m_upstreamActor.actor());
+	r->RemoveActor2D(impl->m_downstreamActor.actor());
 
-	delete m_rightClickingMenu;
+	delete impl->m_rightClickingMenu;
+	delete impl;
 }
 
 std::vector<QPointF> GridCreatingConditionCenterAndWidth::polyLine()
 {
-	return m_polyLineController.polyLine();
+	return impl->m_polyLineController.polyLine();
 }
 
 void GridCreatingConditionCenterAndWidth::setPolyLine(const std::vector<QPointF>& polyline)
 {
-	m_polyLineController.setPolyLine(polyline);
+	impl->m_polyLineController.setPolyLine(polyline);
 }
 
 void GridCreatingConditionCenterAndWidth::updateShapeData()
 {
 	auto col = actor2DCollection();
 
-	m_upstreamActor.actor()->VisibilityOff();
-	m_downstreamActor.actor()->VisibilityOff();
-	col->RemoveItem(m_upstreamActor.actor());
-	col->RemoveItem(m_downstreamActor.actor());
+	impl->m_upstreamActor.actor()->VisibilityOff();
+	impl->m_downstreamActor.actor()->VisibilityOff();
+	col->RemoveItem(impl->m_upstreamActor.actor());
+	col->RemoveItem(impl->m_downstreamActor.actor());
 
-	auto polyLine = m_polyLineController.polyLine();
+	auto polyLine = impl->m_polyLineController.polyLine();
 	if (polyLine.size() < 2) {return;}
 
-	m_upstreamActor.setPosition(polyLine.at(0));
-	m_downstreamActor.setPosition(polyLine.at(polyLine.size() - 1));
-	col->AddItem(m_upstreamActor.actor());
-	col->AddItem(m_downstreamActor.actor());
+	impl->m_upstreamActor.setPosition(polyLine.at(0));
+	impl->m_downstreamActor.setPosition(polyLine.at(polyLine.size() - 1));
+	impl->m_setting.upDownText.applySetting(impl->m_upstreamActor.labelTextProperty());
+	impl->m_setting.upDownText.applySetting(impl->m_downstreamActor.labelTextProperty());
+
+	col->AddItem(impl->m_upstreamActor.actor());
+	col->AddItem(impl->m_downstreamActor.actor());
 
 	updateVisibilityWithoutRendering();
 }
 
 bool GridCreatingConditionCenterAndWidth::create(QWidget* parent)
 {
-	if (m_mouseEventMode == meBeforeDefining || m_mouseEventMode == meDefining) {
+	if (impl->m_mouseEventMode == Impl::MouseEventMode::BeforeDefining || impl->m_mouseEventMode == Impl::MouseEventMode::Defining) {
 		QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("Grid creating condition definition not finished yet."));
 		return false;
 	}
@@ -174,13 +134,13 @@ bool GridCreatingConditionCenterAndWidth::create(QWidget* parent)
 		return false;
 	}
 
-	createSpline(m_polyLineController.polyData()->GetPoints(), m_iMax);
+	createSpline(impl->m_polyLineController.polyData()->GetPoints(), impl->m_setting.iMax);
 	showDialog(parent);
-	if (! m_isAccepted) {return false;}
+	if (! impl->m_isAccepted) {return false;}
 
 	Grid* grid = createGrid();
 	if (grid == 0) {return false;}
-	m_isGridCreated = true;
+	impl->m_isGridCreated = true;
 
 	emit gridCreated(grid);
 	return true;
@@ -188,47 +148,47 @@ bool GridCreatingConditionCenterAndWidth::create(QWidget* parent)
 
 Grid* GridCreatingConditionCenterAndWidth::createGrid()
 {
-	if (m_iMax * m_jMax > MAXGRIDSIZE) {
+	if (impl->m_setting.iMax * impl->m_setting.jMax > MAXGRIDSIZE) {
 		QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("The maximum number of grid nodes is %1.").arg(MAXGRIDSIZE));
 		return nullptr;
 	}
-	createSpline(m_polyLineController.polyData()->GetPoints(), m_iMax - 1);
+	createSpline(impl->m_polyLineController.polyData()->GetPoints(), impl->m_setting.iMax - 1);
 
 	Structured2DGrid* grid = new Structured2DGrid(0);
 	PreProcessorGridTypeDataItemInterface* gt = dynamic_cast<PreProcessorGridTypeDataItemInterface*>(m_conditionDataItem->parent()->parent());
 	gt->gridType()->buildGridAttributes(grid);
 
-	grid->setDimensions(m_iMax, m_jMax);
+	grid->setDimensions(impl->m_setting.iMax, impl->m_setting.jMax);
 	vtkPoints* points = vtkPoints::New();
 	points->SetDataTypeToDouble();
-	points->Allocate(m_iMax * m_jMax);
+	points->Allocate(impl->m_setting.iMax * impl->m_setting.jMax);
 
-	for (int j = 0; j < m_jMax; j++) {
-		for (int i = 0; i < m_iMax; i++) {
+	for (int j = 0; j < impl->m_setting.jMax; j++) {
+		for (int i = 0; i < impl->m_setting.iMax; i++) {
 			double p1[3], p2[3];
 			if (i == 0) {
-				m_splinePoints->GetPoint(i, p1);
-				m_splinePoints->GetPoint(i + 1, p2);
-			} else if (i == m_iMax - 1) {
-				m_splinePoints->GetPoint(i, p1);
-				m_splinePoints->GetPoint(i - 1, p2);
+				impl->m_splinePoints->GetPoint(i, p1);
+				impl->m_splinePoints->GetPoint(i + 1, p2);
+			} else if (i == impl->m_setting.iMax - 1) {
+				impl->m_splinePoints->GetPoint(i, p1);
+				impl->m_splinePoints->GetPoint(i - 1, p2);
 			} else {
-				m_splinePoints->GetPoint(i - 1, p1);
-				m_splinePoints->GetPoint(i + 1, p2);
+				impl->m_splinePoints->GetPoint(i - 1, p1);
+				impl->m_splinePoints->GetPoint(i + 1, p2);
 			}
 			double dx = p2[0] - p1[0];
 			double dy = p2[1] - p1[1];
 			double s = sqrt(dx * dx + dy * dy);
-			dx = (m_width / (m_jMax - 1)) * dx / s;
-			dy = (m_width / (m_jMax - 1)) * dy / s;
-			int center = (m_jMax - 1) / 2;
+			dx = (impl->m_setting.width / (impl->m_setting.jMax - 1)) * dx / s;
+			dy = (impl->m_setting.width / (impl->m_setting.jMax - 1)) * dy / s;
+			int center = (impl->m_setting.jMax - 1) / 2;
 			if (i == 0) {
-				points->InsertPoint(m_iMax * j + i, p1[0] + ((- 1) * center + j) * (- dy), p1[1] + ((- 1) * center + j) * dx, 0.0);
-			} else if (i == m_iMax - 1) {
-				points->InsertPoint(m_iMax * j + i, p1[0] + (center - j) * (- dy), p1[1] + (center - j) * dx, 0.0);
+				points->InsertPoint(impl->m_setting.iMax * j + i, p1[0] + ((- 1) * center + j) * (- dy), p1[1] + ((- 1) * center + j) * dx, 0.0);
+			} else if (i == impl->m_setting.iMax - 1) {
+				points->InsertPoint(impl->m_setting.iMax * j + i, p1[0] + (center - j) * (- dy), p1[1] + (center - j) * dx, 0.0);
 			} else {
-				m_splinePoints->GetPoint(i, p1);
-				points->InsertPoint(m_iMax * j + i, p1[0] + ((- 1) * center + j) * (- dy), p1[1] + ((- 1) * center + j) * dx, 0.0);
+				impl->m_splinePoints->GetPoint(i, p1);
+				points->InsertPoint(impl->m_setting.iMax * j + i, p1[0] + ((- 1) * center + j) * (- dy), p1[1] + ((- 1) * center + j) * dx, 0.0);
 			}
 		}
 	}
@@ -247,21 +207,21 @@ void GridCreatingConditionCenterAndWidth::showDialog(QWidget* parent)
 {
 	GridCreatingConditionCenterAndWidthDialog* dialog = new GridCreatingConditionCenterAndWidthDialog(parent);
 	connect(dialog, SIGNAL(applied(QDialog*)), this, SLOT(handleDialogApplied(QDialog*)));
-	dialog->setLength(m_length);
-	dialog->setWidth(m_width);
-	dialog->setIMax(m_iMax);
-	dialog->setJMax(m_jMax);
-	m_oldIMax = m_iMax;
-	m_oldJMax = m_jMax;
-	m_oldWidth = m_width;
+	dialog->setLength(impl->m_setting.length);
+	dialog->setWidth(impl->m_setting.width);
+	dialog->setIMax(impl->m_setting.iMax);
+	dialog->setJMax(impl->m_setting.jMax);
+	impl->m_oldIMax = impl->m_setting.iMax;
+	impl->m_oldJMax = impl->m_setting.jMax;
+	impl->m_oldWidth = impl->m_setting.width;
 
 	int result = dialog->exec();
 	if (result == QDialog::Accepted) {
 		handleDialogAccepted(dialog);
-		m_isAccepted = true;
+		impl->m_isAccepted = true;
 	} else {
 		handleDialogRejected(dialog);
-		m_isAccepted = false;
+		impl->m_isAccepted = false;
 	}
 	delete dialog;
 }
@@ -273,15 +233,15 @@ void GridCreatingConditionCenterAndWidth::handleDialogApplied(QDialog* d)
 	setJMax(dialog->jMax());
 	setWidth(dialog->width());
 
-	createSpline(m_polyLineController.polyData()->GetPoints(), m_iMax - 1);
+	createSpline(impl->m_polyLineController.polyData()->GetPoints(), impl->m_setting.iMax - 1);
 
 	Grid* g = createGrid();
 	if (g == 0) {return;}
-	if (m_previewGrid != nullptr) {delete m_previewGrid;}
-	m_previewGrid = g;
+	if (impl->m_previewGrid != nullptr) {delete impl->m_previewGrid;}
+	impl->m_previewGrid = g;
 
-	m_previewMapper->SetInputData(m_previewGrid->vtkGrid());
-	m_previewActor->VisibilityOn();
+	impl->m_previewMapper->SetInputData(impl->m_previewGrid->vtkGrid());
+	impl->m_previewActor->VisibilityOn();
 	renderGraphicsView();
 }
 
@@ -291,27 +251,27 @@ void GridCreatingConditionCenterAndWidth::handleDialogAccepted(QDialog* d)
 	setIMax(dialog->iMax());
 	setJMax(dialog->jMax());
 	setWidth(dialog->width());
-	createSpline(m_polyLineController.polyData()->GetPoints(), m_iMax - 1);
+	createSpline(impl->m_polyLineController.polyData()->GetPoints(), impl->m_setting.iMax - 1);
 
-	if (m_previewGrid != nullptr) {
-		delete m_previewGrid;
-		m_previewGrid = nullptr;
+	if (impl->m_previewGrid != nullptr) {
+		delete impl->m_previewGrid;
+		impl->m_previewGrid = nullptr;
 	}
-	m_previewActor->VisibilityOff();
+	impl->m_previewActor->VisibilityOff();
 }
 
 void GridCreatingConditionCenterAndWidth::handleDialogRejected(QDialog* /*d*/)
 {
-	setIMax(m_oldIMax);
-	setJMax(m_oldJMax);
-	setWidth(m_oldWidth);
-	m_splinePoints->Initialize();
+	setIMax(impl->m_oldIMax);
+	setJMax(impl->m_oldJMax);
+	setWidth(impl->m_oldWidth);
+	impl->m_splinePoints->Initialize();
 
-	if (m_previewGrid != nullptr) {
-		delete m_previewGrid;
-		m_previewGrid = nullptr;
+	if (impl->m_previewGrid != nullptr) {
+		delete impl->m_previewGrid;
+		impl->m_previewGrid = nullptr;
 	}
-	m_previewActor->VisibilityOff();
+	impl->m_previewActor->VisibilityOff();
 
 	renderGraphicsView();
 }
@@ -323,93 +283,71 @@ bool GridCreatingConditionCenterAndWidth::ready() const
 
 void GridCreatingConditionCenterAndWidth::setupActors()
 {
-	m_polyLineController.linesActor()->GetProperty()->SetLineWidth(2);
+	impl->m_polyLineController.linesActor()->GetProperty()->SetLineWidth(2);
 
-	renderer()->AddActor(m_polyLineController.linesActor());
-	renderer()->AddActor(m_polyLineController.pointsActor());
-	renderer()->AddActor2D(m_upstreamActor.actor());
-	renderer()->AddActor2D(m_downstreamActor.actor());
+	auto r = renderer();
+	r->AddActor(impl->m_polyLineController.linesActor());
+	r->AddActor(impl->m_polyLineController.pointsActor());
+	r->AddActor(impl->m_previewActor);
+	r->AddActor2D(impl->m_upstreamActor.actor());
+	r->AddActor2D(impl->m_downstreamActor.actor());
 
-	m_previewActor = vtkSmartPointer<vtkActor>::New();
-	m_previewActor->GetProperty()->SetLighting(false);
-	m_previewActor->GetProperty()->SetColor(0, 0, 0);
-	m_previewActor->GetProperty()->SetRepresentationToWireframe();
+	impl->m_previewActor->VisibilityOff();
 
-	m_previewMapper = vtkSmartPointer<vtkDataSetMapper>::New();
-	m_previewActor->SetMapper(m_previewMapper);
-	renderer()->AddActor(m_previewActor);
-	m_previewActor->VisibilityOff();
-
-//	m_labelMapper = vtkSmartPointer<vtkLabeledDataMapper>::New();
-//	m_labelMapper->SetLabelModeToLabelFieldData();
-//	m_labelMapper->SetFieldDataName(LABEL);
-//	vtkTextProperty* prop = m_labelMapper->GetLabelTextProperty();
-//	prop->SetColor(0, 0, 0);
-//	prop->SetFontSize(FONTSIZE);
-//	prop->SetFontFamilyToArial();
-//	prop->BoldOn();
-//	prop->ItalicOff();
-//	prop->ShadowOff();
-//	prop->SetJustificationToLeft();
-//	prop->SetVerticalJustificationToCentered();
-//	m_labelActor->SetMapper(m_labelMapper);
-//	m_labelMapper->SetInputData(m_vertexGrid);
-
-	actorCollection()->AddItem(m_polyLineController.linesActor());
-	actorCollection()->AddItem(m_polyLineController.pointsActor());
-	actor2DCollection()->AddItem(m_upstreamActor.actor());
-	actor2DCollection()->AddItem(m_downstreamActor.actor());
+	actorCollection()->AddItem(impl->m_polyLineController.linesActor());
+	actorCollection()->AddItem(impl->m_polyLineController.pointsActor());
+	actor2DCollection()->AddItem(impl->m_upstreamActor.actor());
+	actor2DCollection()->AddItem(impl->m_downstreamActor.actor());
 
 	updateShapeData();
 }
 
 void GridCreatingConditionCenterAndWidth::setupMenu()
 {
-	m_menu->addAction(m_addVertexAction);
-	m_menu->addAction(m_removeVertexAction);
-	m_menu->addAction(m_coordEditAction);
-	m_menu->addAction(m_reverseCenterLineAction);
+	m_menu->addAction(impl->m_addVertexAction);
+	m_menu->addAction(impl->m_removeVertexAction);
+	m_menu->addAction(impl->m_coordEditAction);
+	m_menu->addAction(impl->m_reverseCenterLineAction);
 	m_menu->addSeparator();
-	m_menu->addAction(m_importCenterLineAction);
-	m_menu->addAction(m_exportCenterLineAction);
+	m_menu->addAction(impl->m_importCenterLineAction);
+	m_menu->addAction(impl->m_exportCenterLineAction);
 
-	m_rightClickingMenu = new QMenu();
-	m_rightClickingMenu->addAction(m_conditionDataItem->createAction());
-	m_rightClickingMenu->addSeparator();
-	m_rightClickingMenu->addAction(m_addVertexAction);
-	m_rightClickingMenu->addAction(m_removeVertexAction);
-	m_rightClickingMenu->addAction(m_coordEditAction);
-	m_rightClickingMenu->addAction(m_reverseCenterLineAction);
-	m_rightClickingMenu->addSeparator();
-	m_rightClickingMenu->addAction(m_conditionDataItem->clearAction());
-	m_rightClickingMenu->addSeparator();
-	m_rightClickingMenu->addAction(m_importCenterLineAction);
-	m_rightClickingMenu->addAction(m_exportCenterLineAction);
+	impl->m_rightClickingMenu->addAction(m_conditionDataItem->createAction());
+	impl->m_rightClickingMenu->addSeparator();
+	impl->m_rightClickingMenu->addAction(impl->m_addVertexAction);
+	impl->m_rightClickingMenu->addAction(impl->m_removeVertexAction);
+	impl->m_rightClickingMenu->addAction(impl->m_coordEditAction);
+	impl->m_rightClickingMenu->addAction(impl->m_reverseCenterLineAction);
+	impl->m_rightClickingMenu->addSeparator();
+	impl->m_rightClickingMenu->addAction(m_conditionDataItem->clearAction());
+	impl->m_rightClickingMenu->addSeparator();
+	impl->m_rightClickingMenu->addAction(impl->m_importCenterLineAction);
+	impl->m_rightClickingMenu->addAction(impl->m_exportCenterLineAction);
 }
 
 void GridCreatingConditionCenterAndWidth::informSelection(PreProcessorGraphicsViewInterface* v)
 {
-	m_polyLineController.linesActor()->GetProperty()->SetLineWidth(selectedEdgeWidth);
-	m_polyLineController.pointsActor()->GetProperty()->SetPointSize(5.0);
-	updateMouseCursor(v);
+	impl->m_polyLineController.linesActor()->GetProperty()->SetLineWidth(selectedEdgeWidth);
+	impl->m_polyLineController.pointsActor()->GetProperty()->SetPointSize(5.0);
+	impl->updateMouseCursor(v);
 }
 
 void GridCreatingConditionCenterAndWidth::informDeselection(PreProcessorGraphicsViewInterface* v)
 {
-	m_polyLineController.linesActor()->GetProperty()->SetLineWidth(normalEdgeWidth);
-	m_polyLineController.pointsActor()->GetProperty()->SetPointSize(1.0);
+	impl->m_polyLineController.linesActor()->GetProperty()->SetLineWidth(normalEdgeWidth);
+	impl->m_polyLineController.pointsActor()->GetProperty()->SetPointSize(1.0);
 	v->unsetCursor();
 }
 
 void GridCreatingConditionCenterAndWidth::viewOperationEnded(PreProcessorGraphicsViewInterface* v)
 {
-	updateMouseCursor(v);
+	impl->updateMouseCursor(v);
 }
 
 void GridCreatingConditionCenterAndWidth::keyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* /*v*/)
 {
 	if (! iRIC::isEnterKey(event->key())) {return;}
-	if (m_mouseEventMode != meDefining) {return;}
+	if (impl->m_mouseEventMode != Impl::MouseEventMode::Defining) {return;}
 
 	definePolyLine();
 }
@@ -419,19 +357,19 @@ void GridCreatingConditionCenterAndWidth::keyReleaseEvent(QKeyEvent* /*event*/, 
 
 void GridCreatingConditionCenterAndWidth::mouseDoubleClickEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/)
 {
-	if (m_mouseEventMode != meDefining) {return;}
+	if (impl->m_mouseEventMode != Impl::MouseEventMode::Defining) {return;}
 
 	definePolyLine();
 }
 
 void GridCreatingConditionCenterAndWidth::createSpline(vtkPoints* points, int division)
 {
-	if (m_mouseEventMode == meBeforeDefining || m_mouseEventMode == meDefining) {return;}
+	if (impl->m_mouseEventMode == Impl::MouseEventMode::BeforeDefining || impl->m_mouseEventMode == Impl::MouseEventMode::Defining) {return;}
 	if (! points->GetNumberOfPoints()) {return;}
 
-	m_spline->SetPoints(points);
-	m_spline->Modified();
-	m_splinePoints->Initialize();
+	impl->m_spline->SetPoints(points);
+	impl->m_spline->Modified();
+	impl->m_splinePoints->Initialize();
 
 	//calculate the length of this spline
 	int d = division * 5;
@@ -442,78 +380,77 @@ void GridCreatingConditionCenterAndWidth::createSpline(vtkPoints* points, int di
 
 	double u[3], Pt[3], Du[9];
 	u[0] = 0.0;
-	m_spline->Evaluate(u, Pt, Du);
-	m_splinePoints->InsertPoint(0, Pt);
+	impl->m_spline->Evaluate(u, Pt, Du);
+	impl->m_splinePoints->InsertPoint(0, Pt);
 	for (int i = 1; i <= d; i++) {
 		u[0] = i * (1.0 / d);
-		m_spline->Evaluate(u, Pt, Du);
-		m_splinePoints->InsertPoint(i, Pt);
+		impl->m_spline->Evaluate(u, Pt, Du);
+		impl->m_splinePoints->InsertPoint(i, Pt);
 
-		m_splinePoints->GetPoint(i - 1, pre);
+		impl->m_splinePoints->GetPoint(i - 1, pre);
 		dx = Pt[0] - pre[0];
 		dy = Pt[1] - pre[1];
 		length[i] = length[i - 1] + sqrt(dx * dx + dy * dy);
 	}
-	m_length = length[d];
+	impl->m_setting.length = length[d];
 
 	// diviede the spline at equal intervals
-	m_splinePoints->Initialize();
+	impl->m_splinePoints->Initialize();
 	u[0] = 0.0;
-	m_spline->Evaluate(u, Pt, Du);
-	m_splinePoints->InsertPoint(0, Pt);
+	impl->m_spline->Evaluate(u, Pt, Du);
+	impl->m_splinePoints->InsertPoint(0, Pt);
 	vtkIdType c = 1;
-	double cumulativeLength = m_length / division;
+	double cumulativeLength = impl->m_setting.length / division;
 	for (int i = 0; i < d; i++) {
 		if (length[i] > cumulativeLength) {
 			u[0] = (i - 1) * (1.0 / d) + (1.0 / d) * ((cumulativeLength - length[i - 1]) / (length[i] - length[i - 1]));
-			m_spline->Evaluate(u, Pt, Du);
-			m_splinePoints->InsertPoint(c, Pt);
+			impl->m_spline->Evaluate(u, Pt, Du);
+			impl->m_splinePoints->InsertPoint(c, Pt);
 			c++;
 			if (c == division) {
 				u[0] = 1.0;
-				m_spline->Evaluate(u, Pt, Du);
-				m_splinePoints->InsertPoint(c, Pt);
+				impl->m_spline->Evaluate(u, Pt, Du);
+				impl->m_splinePoints->InsertPoint(c, Pt);
 				break;
 			}
-			cumulativeLength = c * m_length / division;
+			cumulativeLength = c * impl->m_setting.length / division;
 		}
 	}
 }
 
 void GridCreatingConditionCenterAndWidth::mouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
 {
-	switch (m_mouseEventMode) {
-	case meNormal:
-	case meTranslatePrepare:
-	case meMoveVertexPrepare:
-	case meAddVertexPrepare:
-	case meAddVertexNotPossible:
-	case meRemoveVertexPrepare:
-	case meRemoveVertexNotPossible:
-		m_currentPoint = QPoint(event->x(), event->y());
-		updateMouseEventMode();
-		updateMouseCursor(v);
+	switch (impl->m_mouseEventMode) {
+	case Impl::MouseEventMode::Normal:
+	case Impl::MouseEventMode::TranslatePrepare:
+	case Impl::MouseEventMode::MoveVertexPrepare:
+	case Impl::MouseEventMode::AddVertexPrepare:
+	case Impl::MouseEventMode::AddVertexNotPossible:
+	case Impl::MouseEventMode::RemoveVertexPrepare:
+	case Impl::MouseEventMode::RemoveVertexNotPossible:
+		impl->updateMouseEventMode(event->pos(), v);
+		impl->updateMouseCursor(v);
 		break;
-	case meBeforeDefining:
+	case Impl::MouseEventMode::BeforeDefining:
 		// do nothing.
 		break;
-	case meDefining:
+	case Impl::MouseEventMode::Defining:
 		// update the position of the last point.
 		pushUpdateShapeCommand(new PushVertexCommand(false, event->pos(), this));
 		break;
-	case meTranslate:
+	case Impl::MouseEventMode::Translate:
 		// execute translation.
-		pushUpdateShapeCommand(new MoveCommand(false, m_currentPoint, event->pos(), this));
-		m_currentPoint = QPoint(event->x(), event->y());
+		pushUpdateShapeCommand(new MoveCommand(false, impl->m_previousPoint, event->pos(), this));
+		impl->m_previousPoint = QPoint(event->x(), event->y());
 		break;
-	case meMoveVertex:
-		pushUpdateShapeCommand(new MoveVertexCommand(false, m_currentPoint, event->pos(), m_selectedVertexId, this));
-		m_currentPoint = QPoint(event->x(), event->y());
+	case Impl::MouseEventMode::MoveVertex:
+		pushUpdateShapeCommand(new MoveVertexCommand(false, impl->m_previousPoint, event->pos(), impl->m_selectedVertexId, this));
+		impl->m_previousPoint = QPoint(event->x(), event->y());
 		break;
-	case meAddVertex:
-		 pushUpdateShapeCommand(new AddVertexCommand(false, m_selectedEdgeId, event->pos(), this));
+	case Impl::MouseEventMode::AddVertex:
+		 pushUpdateShapeCommand(new AddVertexCommand(false, impl->m_selectedEdgeId, event->pos(), this));
 		break;
-	case meEditVerticesDialog:
+	case Impl::MouseEventMode::EditVerticesDialog:
 		break;
 	}
 }
@@ -521,93 +458,92 @@ void GridCreatingConditionCenterAndWidth::mouseMoveEvent(QMouseEvent* event, Pre
 void GridCreatingConditionCenterAndWidth::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
 {
 	if (event->button() == Qt::LeftButton) {
-		switch (m_mouseEventMode) {
-		case meNormal:
+		switch (impl->m_mouseEventMode) {
+		case Impl::MouseEventMode::Normal:
 			// do nothing.
 			break;
-		case meBeforeDefining:
+		case Impl::MouseEventMode::BeforeDefining:
 			// enter defining mode.
-			m_mouseEventMode = meDefining;
+			impl->m_mouseEventMode = Impl::MouseEventMode::Defining;
 			pushUpdateShapeCommand(new PushVertexCommand(true, event->pos(), this));
 			break;
-		case meDefining:
+		case Impl::MouseEventMode::Defining:
 			pushUpdateShapeCommand(new PushVertexCommand(true, event->pos(), this));
 			break;
-		case meTranslatePrepare:
-			m_mouseEventMode = meTranslate;
-			m_currentPoint = event->pos();
+		case Impl::MouseEventMode::TranslatePrepare:
+			impl->m_mouseEventMode = Impl::MouseEventMode::Translate;
+			impl->m_previousPoint = event->pos();
 			// push the first translation command.
 			pushUpdateShapeCommand(new MoveCommand(true, event->pos(), event->pos(), this));
 			break;
-		case meMoveVertexPrepare:
-			m_mouseEventMode = meMoveVertex;
-			m_currentPoint = event->pos();
+		case Impl::MouseEventMode::MoveVertexPrepare:
+			impl->m_mouseEventMode = Impl::MouseEventMode::MoveVertex;
+			impl->m_previousPoint = event->pos();
 			// push the first move command.
-			pushUpdateShapeCommand(new MoveVertexCommand(true, event->pos(), event->pos(), m_selectedVertexId, this));
+			pushUpdateShapeCommand(new MoveVertexCommand(true, event->pos(), event->pos(), impl->m_selectedVertexId, this));
 			break;
-		case meAddVertexPrepare:
-			m_mouseEventMode = meAddVertex;
-			pushUpdateShapeCommand(new AddVertexCommand(true, m_selectedEdgeId, event->pos(), this));
+		case Impl::MouseEventMode::AddVertexPrepare:
+			impl->m_mouseEventMode = Impl::MouseEventMode::AddVertex;
+			pushUpdateShapeCommand(new AddVertexCommand(true, impl->m_selectedEdgeId, event->pos(), this));
 			break;
-		case meAddVertexNotPossible:
+		case Impl::MouseEventMode::AddVertexNotPossible:
 			// do nothing.
 			break;
-		case meRemoveVertexPrepare:
-			pushUpdateShapeCommand(new RemoveVertexCommand(m_selectedVertexId, this));
+		case Impl::MouseEventMode::RemoveVertexPrepare:
+			pushUpdateShapeCommand(new RemoveVertexCommand(impl->m_selectedVertexId, this));
 			break;
-		case meRemoveVertexNotPossible:
+		case Impl::MouseEventMode::RemoveVertexNotPossible:
 			// do nothing.
 			break;
-		case meTranslate:
+		case Impl::MouseEventMode::Translate:
 			// this should not happen.
 			break;
-		case meMoveVertex:
+		case Impl::MouseEventMode::MoveVertex:
 			// this should not happen.
 			break;
-		case meAddVertex:
+		case Impl::MouseEventMode::AddVertex:
 			// this should not happen.
 			break;
-		case meEditVerticesDialog:
+		case Impl::MouseEventMode::EditVerticesDialog:
 			break;
 		}
-		updateMouseCursor(v);
-		updateActionStatus();
+		impl->updateMouseCursor(v);
+		impl->updateActionStatus();
 	} else if (event->button() == Qt::RightButton) {
 		// right click
-		m_dragStartPoint = event->pos();
+		impl->m_dragStartPoint = event->pos();
 	}
 }
 
 void GridCreatingConditionCenterAndWidth::mouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
 {
 	if (event->button() == Qt::LeftButton) {
-		switch (m_mouseEventMode) {
-		case meTranslate:
-		case meMoveVertex:
-		case meAddVertex:
-			if (m_isGridCreated) { emit gridCreated(createGrid()); }
-		case meNormal:
-		case meTranslatePrepare:
-		case meMoveVertexPrepare:
-		case meAddVertexPrepare:
-		case meAddVertexNotPossible:
-		case meRemoveVertexPrepare:
-		case meRemoveVertexNotPossible:
-			m_currentPoint = event->pos();
-			updateMouseEventMode();
-			updateMouseCursor(v);
-			updateActionStatus();
+		switch (impl->m_mouseEventMode) {
+		case Impl::MouseEventMode::Translate:
+		case Impl::MouseEventMode::MoveVertex:
+		case Impl::MouseEventMode::AddVertex:
+			if (impl->m_isGridCreated) { emit gridCreated(createGrid()); }
+		case Impl::MouseEventMode::Normal:
+		case Impl::MouseEventMode::TranslatePrepare:
+		case Impl::MouseEventMode::MoveVertexPrepare:
+		case Impl::MouseEventMode::AddVertexPrepare:
+		case Impl::MouseEventMode::AddVertexNotPossible:
+		case Impl::MouseEventMode::RemoveVertexPrepare:
+		case Impl::MouseEventMode::RemoveVertexNotPossible:
+			impl->updateMouseEventMode(event->pos(), v);
+			impl->updateMouseCursor(v);
+			impl->updateActionStatus();
 			break;
 		default:
 			break;
 		}
-		updateMouseCursor(v);
+		impl->updateMouseCursor(v);
 	} else if (event->button() == Qt::RightButton) {
-		if (m_mouseEventMode == meEditVerticesDialog) {return;}
-		if (iRIC::isNear(m_dragStartPoint, event->pos())) {
+		if (impl->m_mouseEventMode == Impl::MouseEventMode::EditVerticesDialog) {return;}
+		if (iRIC::isNear(impl->m_dragStartPoint, event->pos())) {
 			// show right-clicking menu.
-			m_rightClickingMenu->move(event->globalPos());
-			m_rightClickingMenu->show();
+			impl->m_rightClickingMenu->move(event->globalPos());
+			impl->m_rightClickingMenu->show();
 		}
 	}
 }
@@ -615,17 +551,17 @@ void GridCreatingConditionCenterAndWidth::mouseReleaseEvent(QMouseEvent* event, 
 void GridCreatingConditionCenterAndWidth::deletePolyLine()
 {
 	std::vector<QPointF> emptyVec;
-	m_polyLineController.setPolyLine(emptyVec);
+	impl->m_polyLineController.setPolyLine(emptyVec);
 	ZDepthRange range = dynamic_cast<PreProcessorGridCreatingConditionDataItemInterface*>(parent())->zDepthRange();
 	assignActorZValues(range);
 
-	m_mouseEventMode = meBeforeDefining;
-	updateMouseCursor(graphicsView());
+	impl->m_mouseEventMode = Impl::MouseEventMode::BeforeDefining;
+	impl->updateMouseCursor(graphicsView());
 
-	m_iMax = 11;
-	m_jMax = 11;
-	m_width = 10;
-	m_length = 0;
+	impl->m_setting.iMax = 11;
+	impl->m_setting.jMax = 11;
+	impl->m_setting.width = 10;
+	impl->m_setting.length = 0;
 	updateShapeData();
 	// this operation is not undo-able.
 	iRICUndoStack::instance().clear();
@@ -635,44 +571,13 @@ void GridCreatingConditionCenterAndWidth::deletePolyLine()
 
 void GridCreatingConditionCenterAndWidth::definePolyLine()
 {
-	if (m_polyLineController.polyLine().size() < 2) {
+	if (impl->m_polyLineController.polyLine().size() < 2) {
 		// not enough points defined!
 		return;
 	}
 	iRICUndoStack::instance().undo();
 	// finish defining the Polyline.
 	pushCommand(new FinishDefiningCommand(this));
-}
-
-void GridCreatingConditionCenterAndWidth::updateMouseCursor(PreProcessorGraphicsViewInterface* v)
-{
-	switch (m_mouseEventMode) {
-	case meNormal:
-	case meAddVertexNotPossible:
-	case meRemoveVertexNotPossible:
-	case meEditVerticesDialog:
-		v->setCursor(Qt::ArrowCursor);
-		break;
-	case meBeforeDefining:
-	case meDefining:
-		v->setCursor(Qt::CrossCursor);
-		break;
-	case meTranslatePrepare:
-	case meMoveVertexPrepare:
-		v->setCursor(Qt::OpenHandCursor);
-		break;
-	case meAddVertexPrepare:
-		v->setCursor(m_addCursor);
-		break;
-	case meRemoveVertexPrepare:
-		v->setCursor(m_removeCursor);
-		break;
-	case meTranslate:
-	case meMoveVertex:
-	case meAddVertex:
-		v->setCursor(Qt::ClosedHandCursor);
-		break;
-	}
 }
 
 void GridCreatingConditionCenterAndWidth::doLoadFromProjectMainFile(const QDomNode& node)
@@ -692,19 +597,12 @@ void GridCreatingConditionCenterAndWidth::doSaveToProjectMainFile(QXmlStreamWrit
 
 void GridCreatingConditionCenterAndWidth::loadCenterAndWidthFromProjectMainFile(const QDomNode& node)
 {
-	m_iMax = node.toElement().attribute("imax", "11").toInt();
-	m_jMax = node.toElement().attribute("jmax", "11").toInt();
-	m_width = node.toElement().attribute("width", "10.0").toDouble();
-	m_length = node.toElement().attribute("length", "0").toDouble();
+	impl->m_setting.load(node);
 }
 
 void GridCreatingConditionCenterAndWidth::saveCenterAndWidthToProjectMainFile(QXmlStreamWriter& writer)
 {
-	QString qstr;
-	writer.writeAttribute("imax", qstr.setNum(m_iMax));
-	writer.writeAttribute("jmax", qstr.setNum(m_jMax));
-	writer.writeAttribute("width", qstr.setNum(m_width));
-	writer.writeAttribute("length", qstr.setNum(m_length));
+	impl->m_setting.save(writer);
 }
 
 void GridCreatingConditionCenterAndWidth::loadExternalData(const QString& filename)
@@ -722,12 +620,12 @@ void GridCreatingConditionCenterAndWidth::loadExternalData(const QString& filena
 	f.close();
 	setPolyLine(v);
 	if (polyLine().size() > 0) {
-		m_mouseEventMode = meNormal;
-		m_isGridCreated = true;
+		impl->m_mouseEventMode = Impl::MouseEventMode::Normal;
+		impl->m_isGridCreated = true;
 	} else {
-		m_mouseEventMode = meBeforeDefining;
+		impl->m_mouseEventMode = Impl::MouseEventMode::BeforeDefining;
 	}
-	updateActionStatus();
+	impl->updateActionStatus();
 }
 
 void GridCreatingConditionCenterAndWidth::saveExternalData(const QString& filename)
@@ -752,133 +650,77 @@ void GridCreatingConditionCenterAndWidth::updateZDepthRangeItemCount(ZDepthRange
 
 void GridCreatingConditionCenterAndWidth::assignActorZValues(const ZDepthRange& range)
 {
-	m_polyLineController.pointsActor()->SetPosition(0, 0, range.max());
-	m_polyLineController.linesActor()->SetPosition(0, 0, range.max());
-	m_previewActor->SetPosition(0, 0, range.max());
+	impl->m_polyLineController.pointsActor()->SetPosition(0, 0, range.max());
+	impl->m_polyLineController.linesActor()->SetPosition(0, 0, range.max());
+	impl->m_previewActor->SetPosition(0, 0, range.max());
+}
+
+QDialog* GridCreatingConditionCenterAndWidth::propertyDialog(QWidget* parent)
+{
+	return nullptr;
+	// temporarily hidden
+	auto dialog = new vtkTextPropertySettingDialog(parent);
+	dialog->setWindowTitle(tr("Display Setting"));
+	dialog->setSetting(impl->m_setting.upDownText);
+
+	return dialog;
+}
+
+void GridCreatingConditionCenterAndWidth::handlePropertyDialogAccepted(QDialog* propDialog)
+{
+	auto dialog = dynamic_cast<vtkTextPropertySettingDialog*> (propDialog);
+	impl->m_setting.upDownText = dialog->setting();
+
+	updateShapeData();
+	renderGraphicsView();
 }
 
 void GridCreatingConditionCenterAndWidth::setIMax(int i)
 {
-	m_iMax = i;
+	impl->m_setting.iMax = i;
 }
 
 void GridCreatingConditionCenterAndWidth::setJMax(int j)
 {
-	m_jMax = j;
+	impl->m_setting.jMax = j;
 }
 
 void GridCreatingConditionCenterAndWidth::setWidth(double w)
 {
-	m_width = w;
+	impl->m_setting.width = w;
+}
+
+int GridCreatingConditionCenterAndWidth::iMax() const
+{
+	return impl->m_setting.iMax;
+}
+
+int GridCreatingConditionCenterAndWidth::jMax() const
+{
+	return impl->m_setting.jMax;
+}
+
+double GridCreatingConditionCenterAndWidth::width() const
+{
+	return impl->m_setting.width;
+}
+
+double GridCreatingConditionCenterAndWidth::length() const
+{
+	return impl->m_setting.length;
 }
 
 bool GridCreatingConditionCenterAndWidth::addToolBarButtons(QToolBar* tb)
 {
-	tb->addAction(m_addVertexAction);
-	tb->addAction(m_removeVertexAction);
+	tb->addAction(impl->m_addVertexAction);
+	tb->addAction(impl->m_removeVertexAction);
 
 	return true;
 }
 
 void GridCreatingConditionCenterAndWidth::restoreMouseEventMode()
 {
-	m_mouseEventMode = meNormal;
-}
-
-void GridCreatingConditionCenterAndWidth::updateMouseEventMode()
-{
-	double dx, dy;
-	dx = m_currentPoint.x();
-	dy = m_currentPoint.y();
-
-	auto v = graphicsView();
-	v->viewportToWorld(dx, dy);
-	QPointF worldPos(dx, dy);
-
-	double radius = v->stdRadius(iRIC::nearRadius());
-
-	switch (m_mouseEventMode) {
-	case meAddVertexNotPossible:
-	case meAddVertexPrepare:
-		if (m_polyLineController.isEdgeSelectable(worldPos, radius, &m_selectedEdgeId)) {
-			m_mouseEventMode = meAddVertexPrepare;
-		} else {
-			m_mouseEventMode = meAddVertexNotPossible;
-		}
-		break;
-	case meRemoveVertexNotPossible:
-	case meRemoveVertexPrepare:
-		if (m_polyLineController.isVertexSelectable(worldPos, radius, &m_selectedVertexId)) {
-			m_mouseEventMode = meRemoveVertexPrepare;
-		} else {
-			m_mouseEventMode = meRemoveVertexNotPossible;
-		}
-		break;
-	case meNormal:
-	case meTranslatePrepare:
-	case meMoveVertexPrepare:
-	case meTranslate:
-	case meMoveVertex:
-	case meAddVertex:
-		if (m_polyLineController.isVertexSelectable(worldPos, radius, &m_selectedVertexId)) {
-			m_mouseEventMode = meMoveVertexPrepare;
-		} else if (m_polyLineController.isEdgeSelectable(worldPos, radius, &m_selectedEdgeId)) {
-			m_mouseEventMode = meTranslatePrepare;
-		} else {
-			m_mouseEventMode = meNormal;
-		}
-		break;
-	case meBeforeDefining:
-	case meDefining:
-		// do nothing
-		break;
-	case meEditVerticesDialog:
-		break;
-	}
-}
-
-void GridCreatingConditionCenterAndWidth::updateActionStatus()
-{
-	switch (m_mouseEventMode) {
-	case meBeforeDefining:
-	case meDefining:
-	case meTranslate:
-	case meMoveVertex:
-		m_addVertexAction->setDisabled(true);
-		m_addVertexAction->setChecked(false);
-		m_removeVertexAction->setDisabled(true);
-		m_removeVertexAction->setChecked(false);
-		m_coordEditAction->setEnabled(false);
-		break;
-	case meNormal:
-	case meTranslatePrepare:
-	case meMoveVertexPrepare:
-		m_addVertexAction->setEnabled(true);
-		m_addVertexAction->setChecked(false);
-		m_removeVertexAction->setEnabled(m_polyLineController.polyData()->GetPoints()->GetNumberOfPoints() > 2);
-		m_removeVertexAction->setChecked(false);
-		m_coordEditAction->setEnabled(true);
-		break;
-	case meAddVertexPrepare:
-	case meAddVertexNotPossible:
-	case meAddVertex:
-		m_addVertexAction->setEnabled(true);
-		m_addVertexAction->setChecked(true);
-		m_removeVertexAction->setDisabled(true);
-		m_removeVertexAction->setChecked(false);
-		m_coordEditAction->setEnabled(false);
-		break;
-	case meRemoveVertexPrepare:
-	case meRemoveVertexNotPossible:
-		m_addVertexAction->setDisabled(true);
-		m_addVertexAction->setChecked(false);
-		m_removeVertexAction->setEnabled(true);
-		m_removeVertexAction->setChecked(true);
-		m_coordEditAction->setEnabled(false);
-		break;
-	case meEditVerticesDialog:
-		break;
-	}
+	impl->m_mouseEventMode = Impl::MouseEventMode::Normal;
 }
 
 void GridCreatingConditionCenterAndWidth::pushUpdateShapeCommand(QUndoCommand* com, bool renderRedoOnly)
@@ -893,21 +735,21 @@ void GridCreatingConditionCenterAndWidth::pushUpdateShapeCommand(QUndoCommand* c
 void GridCreatingConditionCenterAndWidth::addVertexMode(bool on)
 {
 	if (on) {
-		m_mouseEventMode = meAddVertexNotPossible;
+		impl->m_mouseEventMode = Impl::MouseEventMode::AddVertexNotPossible;
 	} else {
-		m_mouseEventMode = meNormal;
+		impl->m_mouseEventMode = Impl::MouseEventMode::Normal;
 	}
-	updateActionStatus();
+	impl->updateActionStatus();
 }
 
 void GridCreatingConditionCenterAndWidth::removeVertexMode(bool on)
 {
 	if (on) {
-		m_mouseEventMode = meRemoveVertexNotPossible;
+		impl->m_mouseEventMode = Impl::MouseEventMode::RemoveVertexNotPossible;
 	} else {
-		m_mouseEventMode = meNormal;
+		impl->m_mouseEventMode = Impl::MouseEventMode::Normal;
 	}
-	updateActionStatus();
+	impl->updateActionStatus();
 }
 
 void GridCreatingConditionCenterAndWidth::editCoordinates()
@@ -949,7 +791,7 @@ void GridCreatingConditionCenterAndWidth::importCenterLine()
 	}
 
 	setPolyLine(polyLine);
-	m_mouseEventMode = meNormal;
+	impl->m_mouseEventMode = Impl::MouseEventMode::Normal;
 
 	renderGraphicsView();
 }
