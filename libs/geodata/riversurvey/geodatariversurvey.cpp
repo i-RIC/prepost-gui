@@ -525,6 +525,8 @@ void GeoDataRiverSurvey::updateShapeData()
 	impl->updateVtkNameLabelObjects();
 	impl->updateVtkBackgroundObjects();
 
+	updateVisibilityWithoutRendering();
+
 	emit dataUpdated();
 	impl->m_gridThread->update();
 }
@@ -1676,11 +1678,6 @@ vtkStringArray* GeoDataRiverSurvey::labelArray() const
 void GeoDataRiverSurvey::setupLabelMapper(vtkLabeledDataMapper* mapper)
 {
 	mapper->SetLabelModeToLabelFieldData();
-	mapper->GetLabelTextProperty()->SetColor(0, 0, 0);
-	mapper->GetLabelTextProperty()->SetFontSize(15);
-	mapper->GetLabelTextProperty()->BoldOff();
-	mapper->GetLabelTextProperty()->ItalicOff();
-	mapper->GetLabelTextProperty()->ShadowOff();
 	mapper->GetLabelTextProperty()->SetJustificationToLeft();
 	mapper->GetLabelTextProperty()->SetVerticalJustificationToCentered();
 }

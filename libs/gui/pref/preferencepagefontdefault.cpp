@@ -43,7 +43,7 @@ PreferencePageFontDefault::PreferencePageFontDefault(QWidget* parent) :
 	ui->gridCreatingConditionWidget->setSetting(s_gridCreatingCondition);
 
 	vtkTextPropertySettingContainer s_riverSurveyNames;
-	s_riverSurveyNames.fontSize = 17;
+	s_riverSurveyNames.fontSize = 15;
 	s_riverSurveyNames.loadSetting(settings, "fontsetting/riversurvey_names");
 	ui->riverSurveyDataWidget->setSetting(s_riverSurveyNames);
 
