@@ -191,7 +191,7 @@ Graph2dHybridWindowResultSetting::Graph2dHybridWindowResultSetting() :
 	m_I {0},
 	m_J {0},
 	m_K {0},
-	m_index {0}
+	m_index {0},
 	m_chartTitleFont {"chartTitle"},
 	m_legendFont {"legend"},
 	m_xAxisTitleFont {"xAxisTitle"},
