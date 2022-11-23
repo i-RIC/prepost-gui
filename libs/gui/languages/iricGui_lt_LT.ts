@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="lt_LT">
 <context>
     <name>AnimationController</name>
@@ -449,7 +451,7 @@ This wizard will generate or update translation files for solver definition file
         <translation>Pasirinkite Sprendėjas</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
         <translation>Kai kuriate naują projektą, turite pasirinkti sprendinį, kurį naudosite skaičiavimams. Pasirinkite sprendimą ir paspauskite mygtuką „Gerai“.</translation>
     </message>
 </context>
@@ -507,6 +509,10 @@ Do you want to launch iRIC Maintainance?</source>
         <source>Background Grid</source>
         <translation>Fono tinklelis</translation>
     </message>
+    <message>
+        <source>Font Default</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PreferencePageBackgroundGrid</name>
@@ -525,6 +531,81 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <source>Between Cross Sections:</source>
         <translation>Tarp skerspjūvių:</translation>
+    </message>
+</context>
+<context>
+    <name>PreferencePageFontDefault</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Forma</translation>
+    </message>
+    <message>
+        <source>Common</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Grid Shape / Grid Indices</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Labels</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Arrow Length Legend</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pre-processing Window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Upstream / Downstream</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>River Survey Data Cross-section Names</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Boundary Condition Names</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Visualization Windows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Labels:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Chart Windows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Axis Title:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Axis Ticks:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1206,9 +1287,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>Įspėjimas</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
+        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
 %2</source>
-        <translation>Įkeliant sprendėjo apibrėžimo failą į aplanką įvyko klaida "%1". Šis sprendėjas ignoruojamas. %2</translation>
+        <translation>Įkeliant sprendėjo apibrėžimo failą į aplanką įvyko klaida &quot;%1&quot;. Šis sprendėjas ignoruojamas. %2</translation>
     </message>
 </context>
 <context>
@@ -1327,7 +1408,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Atrodo, kad šį projektą atidaro kitas „iRIC GUI“ langas. Negalite atidaryti projekto aplanko iš kelių GUI langų.</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation>Atidarytas projektas nėra nukopijuotas į darbo katalogą ir būsite priversti išsaugoti šio projekto pakeitimus. Jei norite išlaikyti dabartinį projektą, pirmiausia išsaugokite jį kitame projekte.</translation>
     </message>
     <message>
@@ -1487,7 +1568,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Šiuo metu aktyvus papildomas langas nepalaiko kontūro figūros eksportavimo.</translation>
     </message>
     <message>
-        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
+        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
         <translation>Norėdami eksportuoti figūros failą, perjunkite „Ekrano nustatymas“ į „Kontūro paveikslėlis“, o ne „Spalvotas brūkšnys“ arba „Isolines“.</translation>
     </message>
     <message>
@@ -1972,7 +2053,7 @@ Option -&gt; Preferences</source>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&amp;Solver Information...</source>
@@ -1999,7 +2080,7 @@ Option -&gt; Preferences</source>
         <translation>Atidarykite naują 2D papildomo apdorojimo langą</translation>
     </message>
     <message>
-        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
+        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
         <translation>Atidarykite naują 2D paukščio skrydžio papildomo apdorojimo langą</translation>
     </message>
     <message>
