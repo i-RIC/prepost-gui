@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ro_RO">
 <context>
     <name>AnimationController</name>
@@ -449,7 +451,7 @@ This wizard will generate or update translation files for solver definition file
         <translation>Selectați Solver</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
         <translation>Când creați un proiect nou, trebuie să selectați soluția de rezolvat pe care să o utilizați pentru calcul. Selectați un rezolvator și apăsați butonul „OK”.</translation>
     </message>
 </context>
@@ -507,6 +509,10 @@ Do you want to launch iRIC Maintainance?</source>
         <source>Background Grid</source>
         <translation>Grila de fundal</translation>
     </message>
+    <message>
+        <source>Font Default</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PreferencePageBackgroundGrid</name>
@@ -525,6 +531,81 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <source>Between Cross Sections:</source>
         <translation>Între secțiuni transversale:</translation>
+    </message>
+</context>
+<context>
+    <name>PreferencePageFontDefault</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Formă</translation>
+    </message>
+    <message>
+        <source>Common</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Grid Shape / Grid Indices</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Labels</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Arrow Length Legend</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pre-processing Window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Upstream / Downstream</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>River Survey Data Cross-section Names</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Boundary Condition Names</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Visualization Windows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Labels:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Chart Windows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Axis Title:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Axis Ticks:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1206,9 +1287,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>Avertizare</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
+        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
 %2</source>
-        <translation>A apărut o eroare la încărcarea fișierului de definiție a solverului în dosar " %1 Acest rezolvator este ignorat. %2</translation>
+        <translation>A apărut o eroare la încărcarea fișierului de definiție a solverului în dosar &quot; %1 Acest rezolvator este ignorat. %2</translation>
     </message>
 </context>
 <context>
@@ -1327,7 +1408,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Acest proiect pare a fi deschis de o altă fereastră GUI iRIC. Nu puteți deschide un folder de proiect din mai multe ferestre GUI.</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation>Proiectul deschis nu este copiat în directorul de lucru și veți fi obligat să salvați modificările aduse acestui proiect. Dacă doriți să păstrați proiectul curent, vă rugăm să îl salvați mai întâi într-un alt proiect.</translation>
     </message>
     <message>
@@ -1487,7 +1568,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Sub-fereastra activă în prezent nu acceptă exportarea conturului.</translation>
     </message>
     <message>
-        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
+        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
         <translation>Pentru a exporta fișierul de formă, comutați „Setare afișaj” la „Figura contur”, nu „Franjuri de culoare” sau „Izolate”.</translation>
     </message>
     <message>
@@ -1972,7 +2053,7 @@ Option -&gt; Preferences</source>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&amp;Solver Information...</source>
@@ -1999,8 +2080,8 @@ Option -&gt; Preferences</source>
         <translation>Deschideți o nouă fereastră de post-procesare 2D</translation>
     </message>
     <message>
-        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
-        <translation>Deschideți o nouă fereastră de post-procesare 2D Bird's-Eye</translation>
+        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
+        <translation>Deschideți o nouă fereastră de post-procesare 2D Bird&apos;s-Eye</translation>
     </message>
     <message>
         <source>Open new 3D Post-Processing Window</source>

@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="pt_PT">
 <context>
     <name>AnimationController</name>
@@ -449,8 +451,8 @@ This wizard will generate or update translation files for solver definition file
         <translation>Selecione o Solver</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
-        <translation>Ao criar um novo projeto, você deve selecionar o solucionador a ser usado para o cálculo. Selecione um solucionador e pressione o botão "OK".</translation>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
+        <translation>Ao criar um novo projeto, você deve selecionar o solucionador a ser usado para o cálculo. Selecione um solucionador e pressione o botão &quot;OK&quot;.</translation>
     </message>
 </context>
 <context>
@@ -507,6 +509,10 @@ Do you want to launch iRIC Maintainance?</source>
         <source>Background Grid</source>
         <translation>Grade de fundo</translation>
     </message>
+    <message>
+        <source>Font Default</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PreferencePageBackgroundGrid</name>
@@ -525,6 +531,81 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <source>Between Cross Sections:</source>
         <translation>Entre Seções Transversais:</translation>
+    </message>
+</context>
+<context>
+    <name>PreferencePageFontDefault</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Forma</translation>
+    </message>
+    <message>
+        <source>Common</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Grid Shape / Grid Indices</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Labels</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Arrow Length Legend</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pre-processing Window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Upstream / Downstream</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>River Survey Data Cross-section Names</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Boundary Condition Names</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Visualization Windows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Labels:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Chart Windows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Axis Title:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Axis Ticks:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1206,9 +1287,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>Aviso</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
+        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
 %2</source>
-        <translation>Ocorreu um erro ao carregar o arquivo de definição do solver na pasta "%1". Este solucionador é ignorado. %2</translation>
+        <translation>Ocorreu um erro ao carregar o arquivo de definição do solver na pasta &quot;%1&quot;. Este solucionador é ignorado. %2</translation>
     </message>
 </context>
 <context>
@@ -1327,7 +1408,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Este projeto parece ser aberto por outra janela iRIC GUI. Você não pode abrir uma pasta de projeto a partir de várias janelas da GUI.</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation>O projeto aberto não é copiado para o diretório de trabalho e você será forçado a salvar as modificações feitas neste projeto. Se você deseja manter o projeto atual, salve-o primeiro em outro projeto.</translation>
     </message>
     <message>
@@ -1487,8 +1568,8 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>A subjanela ativa atualmente não suporta a exportação de contorno.</translation>
     </message>
     <message>
-        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation>Para exportar o arquivo de forma, mude "Configuração de exibição" para "Figura de contorno", não "Franja colorida" ou "Isolinhas".</translation>
+        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
+        <translation>Para exportar o arquivo de forma, mude &quot;Configuração de exibição&quot; para &quot;Figura de contorno&quot;, não &quot;Franja colorida&quot; ou &quot;Isolinhas&quot;.</translation>
     </message>
     <message>
         <source>Export contour figure to ESRI Shapefiles</source>
@@ -1972,7 +2053,7 @@ Option -&gt; Preferences</source>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&amp;Solver Information...</source>
@@ -1999,8 +2080,8 @@ Option -&gt; Preferences</source>
         <translation>Abra uma nova janela de pós-processamento 2D</translation>
     </message>
     <message>
-        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
-        <translation>Abra a nova janela 2D Bird's-Eye Post-Processing</translation>
+        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
+        <translation>Abra a nova janela 2D Bird&apos;s-Eye Post-Processing</translation>
     </message>
     <message>
         <source>Open new 3D Post-Processing Window</source>

@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="et_EE">
 <context>
     <name>AnimationController</name>
@@ -380,7 +382,7 @@
     <name>GoogleMapImageImportSettingDialog</name>
     <message>
         <source>Google Map Image Import Setting</source>
-        <translation>Google'i kaardi pildi importimise seade</translation>
+        <translation>Google&apos;i kaardi pildi importimise seade</translation>
     </message>
     <message>
         <source>Zoom:</source>
@@ -449,8 +451,8 @@ This wizard will generate or update translation files for solver definition file
         <translation>Valige Lahendaja</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
-        <translation>Uue projekti loomisel peate valima arvutamiseks kasutatava lahendaja. Palun valige lahendaja ja vajutage nuppu "OK".</translation>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
+        <translation>Uue projekti loomisel peate valima arvutamiseks kasutatava lahendaja. Palun valige lahendaja ja vajutage nuppu &quot;OK&quot;.</translation>
     </message>
 </context>
 <context>
@@ -462,7 +464,7 @@ This wizard will generate or update translation files for solver definition file
     <message>
         <source>%1 days have passed after launching iRIC Maintainance for the last time.
 Do you want to launch iRIC Maintainance?</source>
-        <translation>%1 päevad on möödunud pärast iRIC Maintainance'i viimast käivitamist. Kas soovite käivitada iRIC Maintainance?</translation>
+        <translation>%1 päevad on möödunud pärast iRIC Maintainance&apos;i viimast käivitamist. Kas soovite käivitada iRIC Maintainance?</translation>
     </message>
     <message>
         <source>Launch iRIC Maintainance</source>
@@ -507,6 +509,10 @@ Do you want to launch iRIC Maintainance?</source>
         <source>Background Grid</source>
         <translation>Taustavõrk</translation>
     </message>
+    <message>
+        <source>Font Default</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PreferencePageBackgroundGrid</name>
@@ -525,6 +531,81 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <source>Between Cross Sections:</source>
         <translation>Ristlõigete vahel:</translation>
+    </message>
+</context>
+<context>
+    <name>PreferencePageFontDefault</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Vorm</translation>
+    </message>
+    <message>
+        <source>Common</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Grid Shape / Grid Indices</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Labels</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Arrow Length Legend</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pre-processing Window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Upstream / Downstream</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>River Survey Data Cross-section Names</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Boundary Condition Names</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Visualization Windows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Labels:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Chart Windows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Axis Title:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Axis Ticks:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1206,9 +1287,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>Hoiatus</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
+        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
 %2</source>
-        <translation>Lahendaja määratlusfaili kausta "laadimisel ilmnes viga"%1". Seda lahendajat eiratakse. %2</translation>
+        <translation>Lahendaja määratlusfaili kausta &quot;laadimisel ilmnes viga&quot;%1&quot;. Seda lahendajat eiratakse. %2</translation>
     </message>
 </context>
 <context>
@@ -1327,7 +1408,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Tundub, et selle projekti avab teine iRIC GUI aken. Projekti kausta ei saa avada mitmest GUI aknast.</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation>Avatud projekti ei kopeerita töökataloogi ja olete sunnitud sellesse projekti tehtud muudatused salvestama. Kui soovite praegust projekti säilitada, salvestage see kõigepealt teise projekti.</translation>
     </message>
     <message>
@@ -1487,8 +1568,8 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Praegu aktiivne alamaken ei toeta kontuurikujundi eksportimist.</translation>
     </message>
     <message>
-        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation>Kujundifaili eksportimiseks lülitage "Ekraani säte" olekule "Kontuurjoonis", mitte "Värviline ääris" või "Isolines".</translation>
+        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
+        <translation>Kujundifaili eksportimiseks lülitage &quot;Ekraani säte&quot; olekule &quot;Kontuurjoonis&quot;, mitte &quot;Värviline ääris&quot; või &quot;Isolines&quot;.</translation>
     </message>
     <message>
         <source>Export contour figure to ESRI Shapefiles</source>
@@ -1972,7 +2053,7 @@ Option -&gt; Preferences</source>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&amp;Solver Information...</source>
@@ -1999,7 +2080,7 @@ Option -&gt; Preferences</source>
         <translation>Ava uus 2D järeltöötlusaken</translation>
     </message>
     <message>
-        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
+        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
         <translation>Avage uus 2D linnulennult järeltöötluse aken</translation>
     </message>
     <message>
