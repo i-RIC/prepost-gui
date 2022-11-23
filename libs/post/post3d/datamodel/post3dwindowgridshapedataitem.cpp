@@ -1,5 +1,6 @@
 #include "post3dwindowgridshapedataitem.h"
 #include "post3dwindowzonedataitem.h"
+#include "private/post3dwindowgridshapedataitem_setsettingcommand.h"
 
 #include <guibase/graphicsmisc.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
@@ -80,7 +81,9 @@ void Post3dWindowGridShapeDataItem::setupActors()
 	m_indexMapper->SetInputConnection(m_indexTransformFilter->GetOutputPort());
 	m_indexMapper->SetLabelModeToLabelFieldData();
 	m_indexMapper->SetFieldDataName(iRIC::toStr(PostZoneDataContainer::labelName).c_str());
-	iRIC::setupGridIndexTextProperty(m_indexMapper->GetLabelTextProperty());
+	vtkTextProperty* textProp = m_indexMapper->GetLabelTextProperty();
+	iRIC::setupGridIndexTextProperty(textProp);
+	m_setting.indexTextSetting.applySetting(textProp);
 
 	m_indexActor->SetMapper(m_indexMapper);
 
@@ -142,7 +145,7 @@ void Post3dWindowGridShapeDataItem::updateActorSettings()
 	}
 	if (m_setting.indexVisible) {
 		m_indexTransformFilter->SetInputData(labeldata);
-		m_indexMapper->GetLabelTextProperty()->SetColor(m_setting.indexColor);
+		m_setting.indexTextSetting.applySetting(m_indexMapper->GetLabelTextProperty());
 		m_actor2DCollection->AddItem(m_indexActor);
 	}
 	updateVisibilityWithoutRendering();
@@ -189,46 +192,10 @@ QDialog* Post3dWindowGridShapeDataItem::propertyDialog(QWidget* parent)
 	return dialog;
 }
 
-class Post3dWindowGridShapeDataSetSetting : public QUndoCommand
-{
-public:
-	Post3dWindowGridShapeDataSetSetting(const GridShapeEditDialog::Setting& setting, Post3dWindowGridShapeDataItem* item) :
-		QUndoCommand {QObject::tr("Update Grid Shape Setting")},
-		m_newSetting {setting},
-		m_oldSetting {item->m_setting},
-		m_oldEnabled {item->isEnabled()},
-		m_item {item}
-	{}
-	void redo() {
-		m_item->setIsCommandExecuting(true);
-		m_item->m_setting = m_newSetting;
-		m_item->setEnabled(true);
-
-		m_item->updateActorSettings();
-		m_item->renderGraphicsView();
-		m_item->setIsCommandExecuting(false);
-	}
-	void undo() {
-		m_item->setIsCommandExecuting(true);
-		m_item->m_setting = m_oldSetting;
-		m_item->setEnabled(m_oldEnabled);
-
-		m_item->updateActorSettings();
-		m_item->renderGraphicsView();
-		m_item->setIsCommandExecuting(false);
-	}
-private:
-	GridShapeEditDialog::Setting m_newSetting;
-	GridShapeEditDialog::Setting m_oldSetting;
-	bool m_oldEnabled;
-
-	Post3dWindowGridShapeDataItem* m_item;
-};
-
 void Post3dWindowGridShapeDataItem::handlePropertyDialogAccepted(QDialog* propDialog)
 {
-	GridShapeEditDialog* dialog = dynamic_cast<GridShapeEditDialog*>(propDialog);
-	iRICUndoStack::instance().push(new Post3dWindowGridShapeDataSetSetting(dialog->setting(), this));
+	auto dialog = dynamic_cast<GridShapeEditDialog*>(propDialog);
+	pushRenderCommand(new SetSettingCommand(dialog->setting(), this), this);
 }
 
 void Post3dWindowGridShapeDataItem::informSelection(VTKGraphicsView* /*v*/)

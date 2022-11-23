@@ -6,14 +6,14 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>915</width>
-    <height>363</height>
+    <width>713</width>
+    <height>383</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Arrow Setting</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout_4">
+  <layout class="QVBoxLayout" name="verticalLayout_5">
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout_5" stretch="0,1">
      <item>
@@ -189,6 +189,18 @@
          </widget>
         </item>
         <item>
+         <widget class="QGroupBox" name="legendTextGroupBox">
+          <property name="title">
+           <string>Length Legend</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_4">
+           <item>
+            <widget class="vtkTextPropertySettingWidget" name="legendTextWidget" native="true"/>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
          <spacer name="verticalSpacer">
           <property name="orientation">
            <enum>Qt::Vertical</enum>
@@ -196,7 +208,7 @@
           <property name="sizeHint" stdset="0">
            <size>
             <width>20</width>
-            <height>111</height>
+            <height>62</height>
            </size>
           </property>
          </spacer>
@@ -288,6 +300,12 @@
   </layout>
  </widget>
  <customwidgets>
+  <customwidget>
+   <class>vtkTextPropertySettingWidget</class>
+   <extends>QWidget</extends>
+   <header>guibase/vtktextpropertysettingwidget.h</header>
+   <container>1</container>
+  </customwidget>
   <customwidget>
    <class>Post3dWindowNodeGroupArrowFaceSettingWidget</class>
    <extends>QWidget</extends>

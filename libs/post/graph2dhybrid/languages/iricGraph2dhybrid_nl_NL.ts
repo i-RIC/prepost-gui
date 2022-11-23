@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="nl_NL">
 <context>
     <name>Graph2dHybridSettingDialog</name>
@@ -381,6 +383,10 @@
         <source>CSV &amp;Export</source>
         <translation>CSV-export (&amp;E)</translation>
     </message>
+    <message>
+        <source>&amp;Font Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Graph2dHybridWindowDataModel</name>
@@ -481,8 +487,8 @@
         <translation>Het instellen van het grafiekvenster mislukt. Het resultaat van de berekening is niet correct geladen.</translation>
     </message>
     <message>
-        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm "Create grid from from cross-section data"&lt;/li&gt;&lt;/ul&gt;</source>
-        <translation>Deze functie kan worden gebruikt als aan de volgende voorwaarden is voldaan: &lt;ul&gt;&lt;li&gt;Grafiek voor tweedimensionaal gestructureerd rasterresultaat wordt getekend.&lt;/li&gt;&lt;li&gt;X-as is I-richting in het raster.&lt;/li &gt;&lt;li&gt;Het raster wordt gemaakt met behulp van het algoritme "Maak raster van uit doorsnedegegevens"&lt;/li&gt;&lt;/ul&gt;</translation>
+        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm &quot;Create grid from from cross-section data&quot;&lt;/li&gt;&lt;/ul&gt;</source>
+        <translation>Deze functie kan worden gebruikt als aan de volgende voorwaarden is voldaan: &lt;ul&gt;&lt;li&gt;Grafiek voor tweedimensionaal gestructureerd rasterresultaat wordt getekend.&lt;/li&gt;&lt;li&gt;X-as is I-richting in het raster.&lt;/li &gt;&lt;li&gt;Het raster wordt gemaakt met behulp van het algoritme &quot;Maak raster van uit doorsnedegegevens&quot;&lt;/li&gt;&lt;/ul&gt;</translation>
     </message>
 </context>
 <context>
@@ -576,8 +582,8 @@
         <translation>Fout</translation>
     </message>
     <message>
-        <source>The title of the first column has to be "X"</source>
-        <translation>De titel van de eerste kolom moet "X" zijn</translation>
+        <source>The title of the first column has to be &quot;X&quot;</source>
+        <translation>De titel van de eerste kolom moet &quot;X&quot; zijn</translation>
     </message>
     <message>
         <source>The number of data of %1 and %2 mismatch. Data %1 is skipped.</source>
@@ -608,6 +614,37 @@
     </message>
 </context>
 <context>
+    <name>Graph2dHybridWindowFontSettingDialog</name>
+    <message>
+        <source>Chart Font Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>X axis:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ticks:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Y axis:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>Graph2dHybridWindowImportDataDataItem</name>
     <message>
         <source>%1 - %2</source>
@@ -625,8 +662,8 @@
         <translation>Fout</translation>
     </message>
     <message>
-        <source>The title of the first column has to be "X"</source>
-        <translation>De titel van de eerste kolom moet "X" zijn</translation>
+        <source>The title of the first column has to be &quot;X&quot;</source>
+        <translation>De titel van de eerste kolom moet &quot;X&quot; zijn</translation>
     </message>
     <message>
         <source>Warning</source>

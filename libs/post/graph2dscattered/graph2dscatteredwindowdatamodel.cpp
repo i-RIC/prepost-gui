@@ -9,6 +9,7 @@
 #include "graph2dscatteredwindowdatamodel.h"
 #include "graph2dscatteredwindowdatasourcedialog.h"
 #include "graph2dscatteredwindowdrawsettingdialog.h"
+#include "graph2dscatteredwindowfontsettingdialog.h"
 #include "graph2dscatteredwindowview.h"
 
 #include <guicore/base/iricmainwindowinterface.h>
@@ -22,10 +23,12 @@
 
 #include <QDomNode>
 #include <QFile>
+#include <QFont>
 #include <QStandardItemModel>
 #include <QMessageBox>
 #include <QTextStream>
 
+#include <qwt_abstract_legend.h>
 #include <qwt_plot_marker.h>
 #include <qwt_scale_engine.h>
 
@@ -161,6 +164,30 @@ void Graph2dScatteredWindowDataModel::drawSetting()
 	root->renderView();
 }
 
+void Graph2dScatteredWindowDataModel::fontSetting()
+{
+	Graph2dScatteredWindowFontSettingDialog dialog(mainWindow());
+
+	dialog.setChartTitleFont(m_setting.chartTitleFont());
+	dialog.setLegendsFont(m_setting.legendFont());
+	dialog.setXAxisTitleFont(m_setting.xAxisTitleFont());
+	dialog.setXAxisTickFont(m_setting.xAxisTickFont());
+	dialog.setYAxisTitleFont(m_setting.yAxisTitleFont());
+	dialog.setYAxisTickFont(m_setting.yAxisTickFont());
+
+	int ret = dialog.exec();
+	if (ret == QDialog::Rejected) {return;}
+
+	m_setting.setChartTitleFont(dialog.chartTitleFont());
+	m_setting.setLegendFont(dialog.legendsFont());
+	m_setting.setXAxisTitleFont(dialog.xAxisTitleFont());
+	m_setting.setXAxisTickFont(dialog.xAxisTickFont());
+	m_setting.setYAxisTitleFont(dialog.yAxisTitleFont());
+	m_setting.setYAxisTickFont(dialog.yAxisTickFont());
+
+	applySettings();
+}
+
 void Graph2dScatteredWindowDataModel::updateTitle()
 {
 	QString title = m_setting.title().trimmed();
@@ -180,7 +207,13 @@ void Graph2dScatteredWindowDataModel::updateTitle()
 		QString suffix = tr("Time = %1 sec").arg(time);
 		title.append(" : ").append(suffix);
 	}
-	view()->setTitle(title);
+
+	QwtText titleText(title);
+	titleText.setFont(m_setting.chartTitleFont());
+
+	view()->setTitle(titleText);
+
+	view()->legend()->setFont(m_setting.legendFont());
 }
 
 bool Graph2dScatteredWindowDataModel::setupInitialSetting()
@@ -240,12 +273,18 @@ void Graph2dScatteredWindowDataModel::applyAxisSetting()
 			v->setAxisScale(QwtPlot::xBottom, m_setting.xAxisValueMin(), m_setting.xAxisValueMax());
 		}
 	}
-	v->setAxisTitle(QwtPlot::xBottom, m_setting.xAxisLabel());
+	QwtText xAxisTitle(m_setting.xAxisLabel());
+	xAxisTitle.setFont(m_setting.xAxisTitleFont());
+
+	v->setAxisTitle(QwtPlot::xBottom, xAxisTitle);
 
 	Graph2dScatteredWindowRootDataItem* root = dynamic_cast<Graph2dScatteredWindowRootDataItem*>(m_rootDataItem);
 	if (root->axisNeeded(Graph2dScatteredWindowResultSetting::asLeft)) {
 		v->enableAxis(QwtPlot::yLeft);
-		v->setAxisTitle(QwtPlot::yLeft, m_setting.yAxisLeftTitle());
+		v->setAxisFont(QwtPlot::yLeft, m_setting.yAxisTickFont());
+		QwtText yAxisLeftLabelText(m_setting.yAxisLeftTitle());
+		yAxisLeftLabelText.setFont(m_setting.yAxisTitleFont());
+		v->setAxisTitle(QwtPlot::yLeft, yAxisLeftLabelText);
 		if (m_setting.yAxisLeftLog()) {
 			v->setAxisScaleEngine(QwtPlot::yLeft, new QwtLogScaleEngine());
 		} else {
@@ -267,7 +306,11 @@ void Graph2dScatteredWindowDataModel::applyAxisSetting()
 	}
 	if (root->axisNeeded(Graph2dScatteredWindowResultSetting::asRight)) {
 		v->enableAxis(QwtPlot::yRight);
-		v->setAxisTitle(QwtPlot::yRight, m_setting.yAxisRightTitle());
+		v->setAxisFont(QwtPlot::yRight, m_setting.yAxisTickFont());
+		QwtText yAxisRightLabelText(m_setting.yAxisRightTitle());
+		yAxisRightLabelText.setFont(m_setting.yAxisTitleFont());
+		v->setAxisTitle(QwtPlot::yRight, yAxisRightLabelText);
+
 		if (m_setting.yAxisRightLog()) {
 			v->setAxisScaleEngine(QwtPlot::yRight, new QwtLogScaleEngine());
 		} else {

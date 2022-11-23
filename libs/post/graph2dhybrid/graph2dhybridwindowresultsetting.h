@@ -2,6 +2,7 @@
 #define GRAPH2DHYBRIDWINDOWRESULTSETTING_H
 
 #include <guicore/postcontainer/postsolutioninfo.h>
+#include <misc/qfontcontainer.h>
 
 #include <qwt_symbol.h>
 
@@ -257,6 +258,19 @@ public:
 	int gridIndex() const;
 	void setGridIndex(int i);
 
+	QFont chartTitleFont() const;
+	void setChartTitleFont(const QFont& font);
+	QFont legendFont() const;
+	void setLegendFont(const QFont& font);
+	QFont xAxisTitleFont() const;
+	void setXAxisTitleFont(const QFont& font);
+	QFont xAxisTickFont() const;
+	void setXAxisTickFont(const QFont& font);
+	QFont yAxisTitleFont() const;
+	void setYAxisTitleFont(const QFont& font);
+	QFont yAxisTickFont() const;
+	void setYAxisTickFont(const QFont& font);
+
 	void loadFromProjectMainFile(const QDomNode& node);
 	void saveToProjectMainFile(QXmlStreamWriter& writer);
 
@@ -315,6 +329,13 @@ private:
 	int m_J;
 	int m_K;
 	int m_index;
+
+	QFontContainer m_chartTitleFont;
+	QFontContainer m_legendFont;
+	QFontContainer m_xAxisTitleFont;
+	QFontContainer m_xAxisTickFont;
+	QFontContainer m_yAxisTitleFont;
+	QFontContainer m_yAxisTickFont;
 };
 
 #endif // GRAPH2DHYBRIDWINDOWRESULTSETTING_H

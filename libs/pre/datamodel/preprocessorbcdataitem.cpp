@@ -207,10 +207,10 @@ void PreProcessorBCDataItem::setupActors()
 
 	// name related settings
 	vtkTextProperty* tprop = impl->m_nameMapper->GetTextProperty();
-	tprop->SetFontFamilyToArial();
-	tprop->SetFontSize(14);
+
 	tprop->SetJustificationToCentered();
 	tprop->SetVerticalJustificationToCentered();
+
 	impl->m_nameActor->GetPositionCoordinate()->SetCoordinateSystemToWorld();
 	impl->m_nameActor->SetMapper(impl->m_nameMapper);
 
@@ -332,7 +332,11 @@ void PreProcessorBCDataItem::updateNameActorSettings()
 	vtkCoordinate* coord = impl->m_nameActor->GetPositionCoordinate();
 	coord->SetValue(centerv[0], centerv[1], centerv[2]);
 	impl->m_nameMapper->SetInput(iRIC::toStr(impl->m_dialog->caption()).c_str());
+
 	auto tprop = impl->m_nameMapper->GetTextProperty();
+	const auto& nameSetting = dynamic_cast<PreProcessorBCGroupDataItem*> (parent())->nameSetting();
+	nameSetting.applySetting(tprop);
+
 	QColor color = impl->m_dialog->color();
 	tprop->SetColor(color.redF(), color.greenF(), color.blueF());
 	impl->m_nameMapper->Modified();

@@ -78,6 +78,7 @@ GeoDataRiverSurvey::Impl::Impl(GeoDataRiverSurvey* rs) :
 	m_rightBankPoints {vtkPoints::New()},
 	m_rightBankPointSet {vtkUnstructuredGrid::New()},
 	m_labelArray {vtkStringArray::New()},
+	m_labelMapper {vtkLabeledDataMapper::New()},
 	m_labelActor {vtkActor2D::New()},
 	m_backgroundGrid {vtkSmartPointer<vtkStructuredGrid>::New()},
 	m_backgroundActor {vtkActor::New()},
@@ -186,6 +187,7 @@ GeoDataRiverSurvey::Impl::~Impl()
 	m_rightBankPoints->Delete();
 	m_rightBankPointSet->Delete();
 	m_labelArray->Delete();
+	m_labelMapper->Delete();
 	m_labelActor->Delete();
 	m_backgroundActor->Delete();
 
@@ -353,12 +355,11 @@ void GeoDataRiverSurvey::Impl::setupVtkObjects()
 
 	// name label
 	m_rightBankPointSet->GetPointData()->AddArray(m_labelArray);
-	auto labelMapper = vtkSmartPointer<vtkLabeledDataMapper>::New();
-	labelMapper->SetInputData(m_rightBankPointSet);
-	labelMapper->SetFieldDataName(m_labelArray->GetName());
-	setupLabelMapper(labelMapper);
+	m_labelMapper->SetInputData(m_rightBankPointSet);
+	m_labelMapper->SetFieldDataName(m_labelArray->GetName());
+	setupLabelMapper(m_labelMapper);
 
-	m_labelActor->SetMapper(labelMapper);
+	m_labelActor->SetMapper(m_labelMapper);
 	r->AddActor(m_labelActor);
 
 	// background color
@@ -715,6 +716,14 @@ void GeoDataRiverSurvey::Impl::updateVtkSelectedObjects()
 
 void GeoDataRiverSurvey::Impl::updateVtkVerticalCenterLinesObjects()
 {
+	auto col = m_rs->actorCollection();
+
+	m_verticalCrossSectionLinesActor->VisibilityOff();
+	col->RemoveItem(m_verticalCrossSectionLinesActor);
+
+	if (! m_rs->m_setting.showLines) {return;}
+	col->AddItem(m_verticalCrossSectionLinesActor);
+
 	auto points = vtkSmartPointer<vtkPoints>::New();
 	points->SetDataTypeToDouble();
 	auto verticalLines = vtkSmartPointer<vtkCellArray>::New();
@@ -749,16 +758,19 @@ void GeoDataRiverSurvey::Impl::updateVtkVerticalCenterLinesObjects()
 	m_verticalCrossSectionLines->SetPoints(points);
 	m_verticalCrossSectionLines->SetLines(verticalLines);
 
-	if (m_rs->m_setting.showLines) {
-		m_verticalCrossSectionLinesActor->VisibilityOn();
-		m_verticalCrossSectionLinesActor->GetProperty()->SetColor(m_rs->m_setting.crosssectionLinesColor);
-	}	else {
-		m_verticalCrossSectionLinesActor->VisibilityOff();
-	}
+	m_verticalCrossSectionLinesActor->GetProperty()->SetColor(m_rs->m_setting.crosssectionLinesColor);
 }
 
 void GeoDataRiverSurvey::Impl::updateVtkNameLabelObjects()
 {
+	auto col = m_rs->actor2DCollection();
+	col->RemoveItem(m_labelActor);
+	m_labelActor->VisibilityOff();
+
+	if (! m_rs->m_setting.showNames) {return;}
+
+	col->AddItem(m_labelActor);
+
 	auto p = m_rs->m_headPoint->nextPoint();
 
 	m_rightBankPoints->Reset();
@@ -784,6 +796,8 @@ void GeoDataRiverSurvey::Impl::updateVtkNameLabelObjects()
 		p = p->nextPoint();
 	}
 	m_rightBankPointSet->Modified();
+
+	m_rs->m_setting.namesTextSetting.applySetting(m_labelMapper->GetLabelTextProperty());
 }
 
 void GeoDataRiverSurvey::Impl::updateVtkBackgroundObjects()
@@ -792,11 +806,10 @@ void GeoDataRiverSurvey::Impl::updateVtkBackgroundObjects()
 	auto col = m_rs->actorCollection();
 	col->RemoveItem(m_backgroundActor);
 
-	if (m_rs->m_setting.showBackground) {
-		col->AddItem(m_backgroundActor);
-		m_backgroundActor->GetProperty()->SetOpacity(m_rs->m_setting.opacity);
-		m_rs->updateVisibilityWithoutRendering();
-	}
+	if (! m_rs->m_setting.showBackground) {return;}
+
+	col->AddItem(m_backgroundActor);
+	m_backgroundActor->GetProperty()->SetOpacity(m_rs->m_setting.opacity);
 }
 
 void GeoDataRiverSurvey::Impl::importLine(PolyLineController* line)

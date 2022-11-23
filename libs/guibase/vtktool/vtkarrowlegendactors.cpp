@@ -27,27 +27,34 @@ vtkArrowLegendActors::~vtkArrowLegendActors()
 }
 
 vtkArrowLegendActors::Impl::Impl() :
-	m_textActor {vtkTextActor::New()},
+	m_nameTextActor {vtkTextActor::New()},
+	m_valueTextActor {vtkTextActor::New()},
 	m_arrowActor {vtkActor2D::New()},
 	m_mapper {vtkPolyDataMapper2D::New()}
 {
-	m_textActor->SetTextScaleModeToNone();
-	m_textActor->GetPositionCoordinate()->SetCoordinateSystemToNormalizedViewport();
+	m_nameTextActor->SetTextScaleModeToNone();
+	m_nameTextActor->GetPositionCoordinate()->SetCoordinateSystemToNormalizedViewport();
+
+	m_valueTextActor->SetTextScaleModeToNone();
+	m_valueTextActor->GetPositionCoordinate()->SetCoordinateSystemToNormalizedViewport();
 
 	m_arrowActor->GetPositionCoordinate()->SetCoordinateSystemToNormalizedViewport();
 
-	auto prop = m_textActor->GetTextProperty();
-	prop->SetColor(0, 0, 0);
-	prop->SetFontFamilyToArial();
+	auto prop = m_nameTextActor->GetTextProperty();
 	prop->SetJustificationToCentered();
 	prop->SetVerticalJustificationToBottom();
+
+	prop = m_valueTextActor->GetTextProperty();
+	prop->SetJustificationToCentered();
+	prop->SetVerticalJustificationToTop();
 
 	m_arrowActor->SetMapper(m_mapper);
 }
 
 vtkArrowLegendActors::Impl::~Impl()
 {
-	m_textActor->Delete();
+	m_nameTextActor->Delete();
+	m_valueTextActor->Delete();
 	m_arrowActor->Delete();
 	m_mapper->Delete();
 }
@@ -61,20 +68,18 @@ void vtkArrowLegendActors::update(const std::string& name, double pixels, double
 	auto lines = vtkSmartPointer<vtkCellArray>::New();
 	auto polys = vtkSmartPointer<vtkCellArray>::New();
 
-	double vOffset = 18;
-
 	// add line
 	vtkIdType ids[3];
-	points->InsertNextPoint(-pixels * 0.5, vOffset, 0);
-	points->InsertNextPoint( pixels * 0.5, vOffset, 0);
+	points->InsertNextPoint(-pixels * 0.5, 0, 0);
+	points->InsertNextPoint( pixels * 0.5, 0, 0);
 
 	ids[0] = 0; ids[1] = 1;
 	lines->InsertNextCell(2, ids);
 
 	// add triangle
 	double yoffset = headLen * std::sin(angle / 180. * 3.141592);
-	points->InsertNextPoint(pixels * .5 - headLen, vOffset + yoffset, 0);
-	points->InsertNextPoint(pixels * .5 - headLen, vOffset - yoffset, 0);
+	points->InsertNextPoint(pixels * .5 - headLen, yoffset, 0);
+	points->InsertNextPoint(pixels * .5 - headLen, - yoffset, 0);
 	ids[0] = 1;
 	ids[1] = 2;
 	ids[2] = 3;
@@ -86,14 +91,15 @@ void vtkArrowLegendActors::update(const std::string& name, double pixels, double
 
 	impl->m_mapper->SetInputData(polyData);
 
-	auto legendStr = QString("%1\n\n%2").arg(name.c_str()).arg(length);
-	impl->m_textActor->SetInput(iRIC::toStr(legendStr).c_str());
+	impl->m_nameTextActor->SetInput(name.c_str());
+	impl->m_valueTextActor->SetInput(iRIC::toStr(QString("%1").arg(length)).c_str());
 }
 
 void vtkArrowLegendActors::setPosition(double xpos, double ypos)
 {
 	impl->m_arrowActor->GetPositionCoordinate()->SetValue(xpos, ypos);
-	impl->m_textActor->SetPosition(xpos, ypos);
+	impl->m_nameTextActor->SetPosition(xpos, ypos + 0.01);
+	impl->m_valueTextActor->SetPosition(xpos, ypos - 0.01);
 }
 
 void vtkArrowLegendActors::setColor(double r, double g, double b)
@@ -111,9 +117,14 @@ void vtkArrowLegendActors::setLineWidth(double lineWidth)
 	impl->m_arrowActor->GetProperty()->SetLineWidth(lineWidth);
 }
 
-vtkTextActor* vtkArrowLegendActors::textActor() const
+vtkTextActor* vtkArrowLegendActors::nameTextActor() const
 {
-	return impl->m_textActor;
+	return impl->m_nameTextActor;
+}
+
+vtkTextActor* vtkArrowLegendActors::valueTextActor() const
+{
+	return impl->m_valueTextActor;
 }
 
 vtkActor2D* vtkArrowLegendActors::arrowActor() const

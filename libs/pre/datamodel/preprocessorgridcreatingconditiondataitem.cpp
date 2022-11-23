@@ -358,6 +358,18 @@ void PreProcessorGridCreatingConditionDataItem::mouseReleaseEvent(QMouseEvent* e
 	impl->m_condition->mouseReleaseEvent(event, dynamic_cast<PreProcessorGraphicsViewInterface*>(v));
 }
 
+QDialog* PreProcessorGridCreatingConditionDataItem::propertyDialog(QWidget* parent)
+{
+	if (impl->m_condition == nullptr) {return nullptr;}
+	return impl->m_condition->propertyDialog(parent);
+}
+
+void PreProcessorGridCreatingConditionDataItem::handlePropertyDialogAccepted(QDialog* propDialog)
+{
+	if (impl->m_condition == nullptr) {return;}
+	impl->m_condition->handlePropertyDialogAccepted(propDialog);
+}
+
 QStringList PreProcessorGridCreatingConditionDataItem::containedFiles() const
 {
 	if (impl->m_condition == nullptr) {return QStringList();}

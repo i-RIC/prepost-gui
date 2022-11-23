@@ -1,4 +1,5 @@
 #include "datamodel/graph2dhybridwindowdrawsettingdialog.h"
+#include "datamodel/graph2dhybridwindowfontsettingdialog.h"
 #include "datamodel/graph2dhybridwindowimportdatadataitem.h"
 #include "datamodel/graph2dhybridwindowimportdatagroupdataitem.h"
 #include "datamodel/graph2dhybridwindowresultcopydataitem.h"
@@ -18,6 +19,7 @@
 #define _USE_MATH_DEFINES
 #include <cmath>
 
+#include <qwt_abstract_legend.h>
 #include <qwt_plot_marker.h>
 #include <qwt_scale_engine.h>
 
@@ -48,6 +50,7 @@
 #include <QApplication>
 #include <QDomNode>
 #include <QFileDialog>
+#include <QFont>
 #include <QMessageBox>
 #include <QProgressDialog>
 #include <QStandardItem>
@@ -873,6 +876,30 @@ void Graph2dHybridWindowDataModel::drawSetting()
 	root->renderView();
 }
 
+void Graph2dHybridWindowDataModel::fontSetting()
+{
+	Graph2dHybridWindowFontSettingDialog dialog(mainWindow());
+
+	dialog.setChartTitleFont(m_setting.chartTitleFont());
+	dialog.setLegendsFont(m_setting.legendFont());
+	dialog.setXAxisTitleFont(m_setting.xAxisTitleFont());
+	dialog.setXAxisTickFont(m_setting.xAxisTickFont());
+	dialog.setYAxisTitleFont(m_setting.yAxisTitleFont());
+	dialog.setYAxisTickFont(m_setting.yAxisTickFont());
+
+	int ret = dialog.exec();
+	if (ret == QDialog::Rejected) {return;}
+
+	m_setting.setChartTitleFont(dialog.chartTitleFont());
+	m_setting.setLegendFont(dialog.legendsFont());
+	m_setting.setXAxisTitleFont(dialog.xAxisTitleFont());
+	m_setting.setXAxisTickFont(dialog.xAxisTickFont());
+	m_setting.setYAxisTitleFont(dialog.yAxisTitleFont());
+	m_setting.setYAxisTickFont(dialog.yAxisTickFont());
+
+	applySettings();
+}
+
 void Graph2dHybridWindowDataModel::markerSettiing()
 {
 	Graph2dHybridWindowRootDataItem* root = dynamic_cast<Graph2dHybridWindowRootDataItem*>(m_rootDataItem);
@@ -1099,7 +1126,12 @@ void Graph2dHybridWindowDataModel::updateTitle()
 		}
 		title.append(" : ").append(suffix);
 	}
-	view()->setTitle(title);
+
+	QwtText titleText(title);
+	titleText.setFont(m_setting.chartTitleFont());
+	view()->setTitle(titleText);
+
+	view()->legend()->setFont(m_setting.legendFont());
 }
 
 bool Graph2dHybridWindowDataModel::setupInitialSetting()
@@ -1165,12 +1197,18 @@ void Graph2dHybridWindowDataModel::applyAxisSetting()
 			v->setAxisScale(QwtPlot::xBottom, m_setting.xAxisValueMin(), m_setting.xAxisValueMax());
 		}
 	}
-	v->setAxisTitle(QwtPlot::xBottom, m_setting.xAxisLabel());
+	QwtText xAxisLabelText(m_setting.xAxisLabel());
+	xAxisLabelText.setFont(m_setting.xAxisTitleFont());
+
+	v->setAxisTitle(QwtPlot::xBottom, xAxisLabelText);
 
 	Graph2dHybridWindowRootDataItem* root = dynamic_cast<Graph2dHybridWindowRootDataItem*>(m_rootDataItem);
 	if (root->axisNeeded(Graph2dHybridWindowResultSetting::asLeft)) {
 		v->enableAxis(QwtPlot::yLeft);
-		v->setAxisTitle(QwtPlot::yLeft, m_setting.yAxisLeftTitle());
+		v->setAxisFont(QwtPlot::yLeft, m_setting.yAxisTickFont());
+		QwtText yAxisLeftLabelText(m_setting.yAxisLeftTitle());
+		yAxisLeftLabelText.setFont(m_setting.yAxisTitleFont());
+		v->setAxisTitle(QwtPlot::yLeft, yAxisLeftLabelText);
 		if (m_setting.yAxisLeftLog()) {
 			v->setAxisScaleEngine(QwtPlot::yLeft, new QwtLogScaleEngine());
 		} else {
@@ -1192,7 +1230,11 @@ void Graph2dHybridWindowDataModel::applyAxisSetting()
 	}
 	if (root->axisNeeded(Graph2dHybridWindowResultSetting::asRight)) {
 		v->enableAxis(QwtPlot::yRight);
-		v->setAxisTitle(QwtPlot::yRight, m_setting.yAxisRightTitle());
+		v->setAxisFont(QwtPlot::yRight, m_setting.yAxisTickFont());
+		QwtText yAxisRightLabelText(m_setting.yAxisRightTitle());
+		yAxisRightLabelText.setFont(m_setting.yAxisTitleFont());
+		v->setAxisTitle(QwtPlot::yRight, yAxisRightLabelText);
+
 		if (m_setting.yAxisRightLog()) {
 			v->setAxisScaleEngine(QwtPlot::yRight, new QwtLogScaleEngine());
 		} else {

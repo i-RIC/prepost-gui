@@ -6,14 +6,14 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>249</width>
-    <height>239</height>
+    <width>331</width>
+    <height>309</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Display Setting</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout_2">
+  <layout class="QVBoxLayout" name="verticalLayout_3">
    <item>
     <widget class="QGroupBox" name="bgGroupBox">
      <property name="title">
@@ -152,6 +152,29 @@
     </widget>
    </item>
    <item>
+    <widget class="QGroupBox" name="groupBox">
+     <property name="title">
+      <string>Crosssection Names</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <widget class="QCheckBox" name="nameVisibleCheckBox">
+        <property name="text">
+         <string>Visible</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="vtkTextPropertySettingWidget" name="nameFontWidget" native="true">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
     <spacer name="verticalSpacer">
      <property name="orientation">
       <enum>Qt::Vertical</enum>
@@ -178,15 +201,21 @@
  </widget>
  <customwidgets>
   <customwidget>
+   <class>ColorEditWidget</class>
+   <extends>QLabel</extends>
+   <header>guibase/widget/coloreditwidget.h</header>
+  </customwidget>
+  <customwidget>
+   <class>vtkTextPropertySettingWidget</class>
+   <extends>QWidget</extends>
+   <header>guibase/vtktextpropertysettingwidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
    <class>TransparencyWidget</class>
    <extends>QWidget</extends>
    <header>guibase/widget/transparencywidget.h</header>
    <container>1</container>
-  </customwidget>
-  <customwidget>
-   <class>ColorEditWidget</class>
-   <extends>QLabel</extends>
-   <header>guibase/widget/coloreditwidget.h</header>
   </customwidget>
  </customwidgets>
  <resources/>
@@ -198,8 +227,8 @@
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>236</x>
-     <y>202</y>
+     <x>164</x>
+     <y>436</y>
     </hint>
     <hint type="destinationlabel">
      <x>157</x>
@@ -214,8 +243,8 @@
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>255</x>
-     <y>202</y>
+     <x>164</x>
+     <y>436</y>
     </hint>
     <hint type="destinationlabel">
      <x>255</x>
@@ -252,6 +281,22 @@
     <hint type="destinationlabel">
      <x>89</x>
      <y>147</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>nameVisibleCheckBox</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>nameFontWidget</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>56</x>
+     <y>245</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>56</x>
+     <y>275</y>
     </hint>
    </hints>
   </connection>

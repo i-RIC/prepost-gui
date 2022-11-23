@@ -23,6 +23,7 @@ Graph2dHybridWindowControlWidget::Graph2dHybridWindowControlWidget(QWidget* pare
 	connect(ui->axisButton, SIGNAL(clicked()), this, SIGNAL(axisButtonClicked()));
 	connect(ui->drawButton, SIGNAL(clicked()), this, SIGNAL(drawButtonClicked()));
 	connect(ui->markerButton, SIGNAL(clicked()), this, SIGNAL(markerButtonClicked()));
+	connect(ui->fontButton, SIGNAL(clicked()), this, SIGNAL(fontButtonClicked()));
 	connect(ui->copyButton, SIGNAL(clicked()), this, SIGNAL(copyButtonClicked()));
 	connect(ui->snapshotButton, SIGNAL(clicked()), this, SIGNAL(snapshotButtonClicked()));
 	connect(ui->csvExportButton, SIGNAL(clicked()), this, SIGNAL(csvExportButtonClicked()));

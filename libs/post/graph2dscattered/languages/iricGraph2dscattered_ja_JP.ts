@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ja_JP">
 <context>
     <name>Graph2dScatteredAxisSettingDialog</name>
@@ -174,6 +176,10 @@
         <source>Draw &amp;Setting</source>
         <translation>描画設定(&amp;S)</translation>
     </message>
+    <message>
+        <source>&amp;Font Setting</source>
+        <translation>フォント設定 (&amp;F)</translation>
+    </message>
 </context>
 <context>
     <name>Graph2dScatteredWindowDataModel</name>
@@ -238,6 +244,37 @@
     <message>
         <source>Draw Setting</source>
         <translation>描画設定</translation>
+    </message>
+</context>
+<context>
+    <name>Graph2dScatteredWindowFontSettingDialog</name>
+    <message>
+        <source>Font Setting</source>
+        <translation>フォント設定</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>グラフタイトル:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>凡例:</translation>
+    </message>
+    <message>
+        <source>X axis:</source>
+        <translation>X軸:</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>タイトル:</translation>
+    </message>
+    <message>
+        <source>Ticks:</source>
+        <translation>目盛り:</translation>
+    </message>
+    <message>
+        <source>Y axis:</source>
+        <translation>Y軸:</translation>
     </message>
 </context>
 <context>

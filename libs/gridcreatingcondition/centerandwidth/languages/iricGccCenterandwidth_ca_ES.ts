@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ca_ES">
 <context>
     <name>GridCreatingConditionCenterAndWidth</name>
@@ -31,7 +33,7 @@
     </message>
     <message>
         <source>Grid creating condition definition not finished yet.</source>
-        <translation>La definició de condició de creació de quadrícula encara no s'ha acabat.</translation>
+        <translation>La definició de condició de creació de quadrícula encara no s&apos;ha acabat.</translation>
     </message>
     <message>
         <source>Grid center line is not defined yet. Please click in the main region to define the grid center line.</source>
@@ -85,6 +87,10 @@
         <source>Remove Center Line Vertex</source>
         <translation>Traieu el vèrtex de la línia central</translation>
     </message>
+    <message>
+        <source>Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GridCreatingConditionCenterAndWidthDialog</name>
@@ -109,11 +115,11 @@
     <name>GridCreatingConditionCreatorCenterAndWidth</name>
     <message>
         <source>Create grid from polygonal line and width</source>
-        <translation>Creeu quadrícula a partir de la línia i l'amplada poligonal</translation>
+        <translation>Creeu quadrícula a partir de la línia i l&apos;amplada poligonal</translation>
     </message>
     <message>
         <source>First, please define polygonal line, by mouse-clicking. The polygonal line is used as the center line of the grid. Then, you define the width, division number of grid in I direction and J direction.</source>
-        <translation>En primer lloc, definiu la línia poligonal fent clic amb el ratolí. La línia poligonal s’utilitza com a línia central de la quadrícula. A continuació, definiu l'amplada, el nombre de divisió de la quadrícula en direcció I i direcció J.</translation>
+        <translation>En primer lloc, definiu la línia poligonal fent clic amb el ratolí. La línia poligonal s’utilitza com a línia central de la quadrícula. A continuació, definiu l&apos;amplada, el nombre de divisió de la quadrícula en direcció I i direcció J.</translation>
     </message>
 </context>
 </TS>

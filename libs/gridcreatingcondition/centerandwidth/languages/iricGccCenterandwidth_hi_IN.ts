@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="hi_IN">
 <context>
     <name>GridCreatingConditionCenterAndWidth</name>
@@ -84,6 +86,10 @@
     <message>
         <source>Remove Center Line Vertex</source>
         <translation>सेंटर लाइन वर्टेक्स निकालें</translation>
+    </message>
+    <message>
+        <source>Display Setting</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

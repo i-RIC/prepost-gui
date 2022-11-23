@@ -25,27 +25,26 @@ private:
 	static const int selectedOutlineWidth = 2;
 
 public:
-	/// Constructor
 	Post3dWindowGridShapeDataItem(Post3dWindowDataItem* parent);
 	~Post3dWindowGridShapeDataItem();
+
 	void handleStandardItemDoubleClicked() override;
-//	GridShapeEditDialog::Shape shape() const {return m_shape;}
 	void informSelection(VTKGraphicsView* v) override;
 	void informDeselection(VTKGraphicsView* v) override;
 	void update();
-
-protected:
-	void doLoadFromProjectMainFile(const QDomNode& node) override;
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
-	QDialog* propertyDialog(QWidget* parent) override;
-	void handlePropertyDialogAccepted(QDialog* propDialog) override;
-	void innerUpdateZScale(double scale) override;
 
 private:
 	void setupActors();
 	void updateActorSettings();
 	void loadShapeFromProjectMainFile(const QDomNode& shapeNode);
 	void saveShapeToProjectMainFile(QXmlStreamWriter& writer);
+
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+	QDialog* propertyDialog(QWidget* parent) override;
+	void handlePropertyDialogAccepted(QDialog* propDialog) override;
+	void innerUpdateZScale(double scale) override;
+
 	vtkSmartPointer<vtkActor> m_outlineActor;
 	vtkSmartPointer<vtkLODActor> m_wireframeActor;
 	vtkSmartPointer<vtkMapper> m_outlineMapper;
@@ -59,9 +58,7 @@ private:
 
 	GridShapeEditDialog::Setting m_setting;
 
-	bool m_definingBoundingBox;
-	bool m_draggingSelectedPoints;
-	bool m_nearSelectedPoint;
+	class SetSettingCommand;
 
 public:
 	friend class Post3dWindowGridShapeDataSetSetting;

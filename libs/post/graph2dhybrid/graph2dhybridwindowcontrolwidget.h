@@ -37,6 +37,7 @@ signals:
 	void axisButtonClicked();
 	void drawButtonClicked();
 	void markerButtonClicked();
+	void fontButtonClicked();
 	void copyButtonClicked();
 	void snapshotButtonClicked();
 	void csvExportButtonClicked();

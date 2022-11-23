@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="es_ES">
 <context>
     <name>Graph2dHybridSettingDialog</name>
@@ -381,6 +383,10 @@
         <source>CSV &amp;Export</source>
         <translation>&amp;Exportar CSV</translation>
     </message>
+    <message>
+        <source>&amp;Font Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Graph2dHybridWindowDataModel</name>
@@ -481,8 +487,8 @@
         <translation>Configuracion de ventana de grafico fallo. Resultado de calculo no esta cargado correctamente.</translation>
     </message>
     <message>
-        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm "Create grid from from cross-section data"&lt;/li&gt;&lt;/ul&gt;</source>
-        <translation>Esta función se puede usar cuando se cumplen las siguientes condiciones: &lt;ul&gt; &lt;li&gt; Se dibuja el gráfico para el resultado de la cuadrícula estructurada bidimensional. &lt;/li&gt; &lt;li&gt; El eje X es la dirección I en la cuadrícula. &lt;/ Li &gt; &lt;li&gt; La cuadrícula se crea utilizando el algoritmo "Crear cuadrícula a partir de datos de sección transversal" &lt;/li&gt; &lt;/ul&gt;</translation>
+        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm &quot;Create grid from from cross-section data&quot;&lt;/li&gt;&lt;/ul&gt;</source>
+        <translation>Esta función se puede usar cuando se cumplen las siguientes condiciones: &lt;ul&gt; &lt;li&gt; Se dibuja el gráfico para el resultado de la cuadrícula estructurada bidimensional. &lt;/li&gt; &lt;li&gt; El eje X es la dirección I en la cuadrícula. &lt;/ Li &gt; &lt;li&gt; La cuadrícula se crea utilizando el algoritmo &quot;Crear cuadrícula a partir de datos de sección transversal&quot; &lt;/li&gt; &lt;/ul&gt;</translation>
     </message>
 </context>
 <context>
@@ -576,8 +582,8 @@
         <translation>Error</translation>
     </message>
     <message>
-        <source>The title of the first column has to be "X"</source>
-        <translation>El título de la primera columna debe ser "X".</translation>
+        <source>The title of the first column has to be &quot;X&quot;</source>
+        <translation>El título de la primera columna debe ser &quot;X&quot;.</translation>
     </message>
     <message>
         <source>The number of data of %1 and %2 mismatch. Data %1 is skipped.</source>
@@ -608,6 +614,37 @@
     </message>
 </context>
 <context>
+    <name>Graph2dHybridWindowFontSettingDialog</name>
+    <message>
+        <source>Chart Font Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>X axis:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ticks:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Y axis:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>Graph2dHybridWindowImportDataDataItem</name>
     <message>
         <source>%1 - %2</source>
@@ -625,8 +662,8 @@
         <translation>Error</translation>
     </message>
     <message>
-        <source>The title of the first column has to be "X"</source>
-        <translation>El título de la primera columna debe ser "X".</translation>
+        <source>The title of the first column has to be &quot;X&quot;</source>
+        <translation>El título de la primera columna debe ser &quot;X&quot;.</translation>
     </message>
     <message>
         <source>Warning</source>

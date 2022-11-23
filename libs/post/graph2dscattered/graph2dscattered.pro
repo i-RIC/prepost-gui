@@ -95,6 +95,7 @@ HEADERS += graph2dscattered_global.h \
            graph2dscatteredwindowdatamodel.h \
            graph2dscatteredwindowdatasourcedialog.h \
            graph2dscatteredwindowdrawsettingdialog.h \
+           graph2dscatteredwindowfontsettingdialog.h \
            graph2dscatteredwindowobjectbrowser.h \
            graph2dscatteredwindowobjectbrowserview.h \
            graph2dscatteredwindowprojectdataitem.h \
@@ -110,6 +111,7 @@ FORMS += graph2dscatteredaxissettingdialog.ui \
          graph2dscatteredwindowcontrolwidget.ui \
          graph2dscatteredwindowdatasourcedialog.ui \
          graph2dscatteredwindowdrawsettingdialog.ui \
+         graph2dscatteredwindowfontsettingdialog.ui \
          graph2dscatteredwindowsettingwidget.ui
 SOURCES += graph2dscatteredaxissettingdialog.cpp \
            graph2dscatteredwindow.cpp \
@@ -119,6 +121,7 @@ SOURCES += graph2dscatteredaxissettingdialog.cpp \
            graph2dscatteredwindowdatamodel.cpp \
            graph2dscatteredwindowdatasourcedialog.cpp \
            graph2dscatteredwindowdrawsettingdialog.cpp \
+           graph2dscatteredwindowfontsettingdialog.cpp \
            graph2dscatteredwindowobjectbrowser.cpp \
            graph2dscatteredwindowobjectbrowserview.cpp \
            graph2dscatteredwindowprojectdataitem.cpp \

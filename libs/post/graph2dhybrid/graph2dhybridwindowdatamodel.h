@@ -43,6 +43,7 @@ public slots:
 	void dataSourceSetting();
 	void axisSetting();
 	void drawSetting();
+	void fontSetting();
 	void markerSettiing();
 	void addKPMarkers();
 	void specialSnapshot();

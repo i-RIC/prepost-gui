@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="zh_CN">
 <context>
     <name>Graph2dHybridSettingDialog</name>
@@ -381,6 +383,10 @@
         <source>CSV &amp;Export</source>
         <translation>CSV 导出</translation>
     </message>
+    <message>
+        <source>&amp;Font Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Graph2dHybridWindowDataModel</name>
@@ -481,11 +487,11 @@
         <translation>图形窗口设置失败。 计算结果未正确加载。</translation>
     </message>
     <message>
-        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm "Create grid from from river survey data"&lt;/li&gt;&lt;/ul&gt;</source>
+        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm &quot;Create grid from from river survey data&quot;&lt;/li&gt;&lt;/ul&gt;</source>
         <translation type="vanished">满足以下条件时可以使用此功能:绘制二维结构化网格结果的图形； X轴为网格中的I方向。使用根据河流测量数据创建网格的算法创建网格</translation>
     </message>
     <message>
-        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm "Create grid from from cross-section data"&lt;/li&gt;&lt;/ul&gt;</source>
+        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm &quot;Create grid from from cross-section data&quot;&lt;/li&gt;&lt;/ul&gt;</source>
         <translation>当满足以下条件时可以使用该函数：&lt;ul&gt;&lt;li&gt;绘制二维结构化网格结果图。&lt;/li&gt;&lt;li&gt;X轴为网格中的I方向。&lt;/li &gt;&lt;li&gt;使用“从横截面数据创建网格”算法创建网格&lt;/li&gt;&lt;/ul&gt;</translation>
     </message>
 </context>
@@ -580,7 +586,7 @@
         <translation>错误</translation>
     </message>
     <message>
-        <source>The title of the first column has to be "X"</source>
+        <source>The title of the first column has to be &quot;X&quot;</source>
         <translation>第一列的标题必须为“X”</translation>
     </message>
     <message>
@@ -612,6 +618,37 @@
     </message>
 </context>
 <context>
+    <name>Graph2dHybridWindowFontSettingDialog</name>
+    <message>
+        <source>Chart Font Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>X axis:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ticks:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Y axis:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>Graph2dHybridWindowImportDataDataItem</name>
     <message>
         <source>%1 - %2</source>
@@ -629,7 +666,7 @@
         <translation>错误</translation>
     </message>
     <message>
-        <source>The title of the first column has to be "X"</source>
+        <source>The title of the first column has to be &quot;X&quot;</source>
         <translation>第一列的标题必须为“X”</translation>
     </message>
     <message>

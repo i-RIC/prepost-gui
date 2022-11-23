@@ -43,6 +43,7 @@ Graph2dScatteredWindowProjectDataItem::Graph2dScatteredWindowProjectDataItem(Pro
 	connect(w->m_controlWidget, SIGNAL(axisButtonClicked()), w->m_dataModel, SLOT(axisSetting()));
 	connect(w->m_controlWidget, SIGNAL(drawButtonClicked()), w->m_dataModel, SLOT(drawSetting()));
 	connect(w->m_controlWidget, SIGNAL(markerButtonClicked()), w->m_dataModel, SLOT(markerSettiing()));
+	connect(w->m_controlWidget, SIGNAL(fontButtonClicked()), w->m_dataModel, SLOT(fontSetting()));
 	connect(w->m_controlWidget, SIGNAL(snapshotButtonClicked()), w->m_dataModel, SLOT(specialSnapshot()));
 	connect(w->m_controlWidget, SIGNAL(copyButtonClicked()), w->m_dataModel, SLOT(copyCalculationResult()));
 //	connect(w->m_controlWidget, SIGNAL(csvExportButtonClicked()), w->m_dataModel, SLOT(exportCsv()));

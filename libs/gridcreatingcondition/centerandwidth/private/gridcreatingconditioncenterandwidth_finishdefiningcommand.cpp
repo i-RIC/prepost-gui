@@ -1,4 +1,5 @@
 #include "gridcreatingconditioncenterandwidth_finishdefiningcommand.h"
+#include "gridcreatingconditioncenterandwidth_impl.h"
 
 #include <guicore/pre/base/preprocessorwindowinterface.h>
 
@@ -9,15 +10,15 @@ GridCreatingConditionCenterAndWidth::FinishDefiningCommand::FinishDefiningComman
 
 void GridCreatingConditionCenterAndWidth::FinishDefiningCommand::redo()
 {
-	m_condition->m_mouseEventMode = GridCreatingConditionCenterAndWidth::meNormal;
-	m_condition->updateMouseCursor(m_condition->graphicsView());
-	m_condition->updateActionStatus();
+	m_condition->impl->m_mouseEventMode = Impl::MouseEventMode::Normal;
+	m_condition->impl->updateMouseCursor(m_condition->graphicsView());
+	m_condition->impl->updateActionStatus();
 	m_condition->create(m_condition->preProcessorWindow());
 }
 
 void GridCreatingConditionCenterAndWidth::FinishDefiningCommand::undo()
 {
-	m_condition->m_mouseEventMode = GridCreatingConditionCenterAndWidth::meDefining;
-	m_condition->updateMouseCursor(m_condition->graphicsView());
-	m_condition->updateActionStatus();
+	m_condition->impl->m_mouseEventMode = Impl::MouseEventMode::Defining;
+	m_condition->impl->updateMouseCursor(m_condition->graphicsView());
+	m_condition->impl->updateActionStatus();
 }

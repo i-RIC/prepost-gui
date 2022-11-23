@@ -35,6 +35,7 @@
 #include <QMenu>
 #include <QMessageBox>
 #include <QMouseEvent>
+#include <QSettings>
 #include <QStandardItem>
 #include <QTextStream>
 #include <QUndoCommand>

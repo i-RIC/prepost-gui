@@ -37,7 +37,6 @@ public:
 	QAction* openXsectionWindowAction() {return m_openXsectionWindowAction;}
 	QAction* openVXsectionWindowAction() {return m_openVXsectionWindowAction;}
 	virtual void updateActionStatus();
-//	void updateAxesRegion() override;
 
 private slots:
 	void editShape();

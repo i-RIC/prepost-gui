@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="pt_BR">
 <context>
     <name>Graph2dHybridSettingDialog</name>
@@ -381,6 +383,10 @@
         <source>CSV &amp;Export</source>
         <translation>Exportar CSV (&amp;E)</translation>
     </message>
+    <message>
+        <source>&amp;Font Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Graph2dHybridWindowDataModel</name>
@@ -481,12 +487,12 @@
         <translation>Falhou ao efetuar inicializacao da janela do grafico. O resultado de calculo nao foi baixado corretamente.</translation>
     </message>
     <message>
-        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm "Create grid from from river survey data"&lt;/li&gt;&lt;/ul&gt;</source>
-        <translation type="vanished">Esta funcao podera ser usada somente quando as seguintes condicoes forem atendidas: &lt;ul&gt;&lt;li&gt;  Delineado o grafico sobre o resultado de calculo da grade estruturada com a dimensao 2. &lt;/li&gt;&lt;li&gt; O eixo X configurado para a direcao I na grade. &lt;/li&gt;&lt;li&gt;  A grade procriada com o algoritmo "Criacao da grade atraves de dados do levantamento do rio"  "&lt;/li&gt;&lt;/ul&gt;</translation>
+        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm &quot;Create grid from from river survey data&quot;&lt;/li&gt;&lt;/ul&gt;</source>
+        <translation type="vanished">Esta funcao podera ser usada somente quando as seguintes condicoes forem atendidas: &lt;ul&gt;&lt;li&gt;  Delineado o grafico sobre o resultado de calculo da grade estruturada com a dimensao 2. &lt;/li&gt;&lt;li&gt; O eixo X configurado para a direcao I na grade. &lt;/li&gt;&lt;li&gt;  A grade procriada com o algoritmo &quot;Criacao da grade atraves de dados do levantamento do rio&quot;  &quot;&lt;/li&gt;&lt;/ul&gt;</translation>
     </message>
     <message>
-        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm "Create grid from from cross-section data"&lt;/li&gt;&lt;/ul&gt;</source>
-        <translation>Esta função pode ser usada quando as seguintes condições são satisfeitas: &lt;ul&gt; &lt;li&gt; O gráfico para o resultado da grade estruturada bidimensional é desenhado. &lt;/li&gt; &lt;li&gt; O eixo X é a direção I na grade. &lt;/ Li &gt; &lt;li&gt; A grade é criada usando o algoritmo "Criar grade a partir de dados de seção cruzada" &lt;/li&gt; &lt;/ul&gt;</translation>
+        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm &quot;Create grid from from cross-section data&quot;&lt;/li&gt;&lt;/ul&gt;</source>
+        <translation>Esta função pode ser usada quando as seguintes condições são satisfeitas: &lt;ul&gt; &lt;li&gt; O gráfico para o resultado da grade estruturada bidimensional é desenhado. &lt;/li&gt; &lt;li&gt; O eixo X é a direção I na grade. &lt;/ Li &gt; &lt;li&gt; A grade é criada usando o algoritmo &quot;Criar grade a partir de dados de seção cruzada&quot; &lt;/li&gt; &lt;/ul&gt;</translation>
     </message>
 </context>
 <context>
@@ -580,8 +586,8 @@
         <translation>Erro</translation>
     </message>
     <message>
-        <source>The title of the first column has to be "X"</source>
-        <translation>O titulo da primeira coluna devera ser "X".</translation>
+        <source>The title of the first column has to be &quot;X&quot;</source>
+        <translation>O titulo da primeira coluna devera ser &quot;X&quot;.</translation>
     </message>
     <message>
         <source>The number of data of %1 and %2 mismatch. Data %1 is skipped.</source>
@@ -612,6 +618,37 @@
     </message>
 </context>
 <context>
+    <name>Graph2dHybridWindowFontSettingDialog</name>
+    <message>
+        <source>Chart Font Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>X axis:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ticks:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Y axis:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>Graph2dHybridWindowImportDataDataItem</name>
     <message>
         <source>%1 - %2</source>
@@ -629,8 +666,8 @@
         <translation>Erro</translation>
     </message>
     <message>
-        <source>The title of the first column has to be "X"</source>
-        <translation>O titulo da primeira coluna devera ser "X".</translation>
+        <source>The title of the first column has to be &quot;X&quot;</source>
+        <translation>O titulo da primeira coluna devera ser &quot;X&quot;.</translation>
     </message>
     <message>
         <source>Warning</source>

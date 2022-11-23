@@ -10,6 +10,7 @@
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/stringtool.h>
 
+#include <QSettings>
 #include <QtGlobal>
 
 #include <vtkPointData.h>
@@ -25,6 +26,9 @@ Post2dWindowArrowUnstructuredSettingDialog::Post2dWindowArrowUnstructuredSetting
 	connect(ui->scalarRadioButton, SIGNAL(toggled(bool)), ui->scalarComboBox, SLOT(setEnabled(bool)));
 	connect(ui->regionSettingButton, SIGNAL(clicked()), this, SLOT(showRegionDialog()));
 	connect(ui->colorbarSettingButton, SIGNAL(clicked()), this, SLOT(showScalarBarDialog()));
+
+	QSettings settings;
+    m_setting.legendTextSetting.loadSetting(settings, "arrow");
 }
 
 Post2dWindowArrowUnstructuredSettingDialog::~Post2dWindowArrowUnstructuredSettingDialog()
@@ -80,6 +84,8 @@ Post2dWindowNodeVectorArrowUnstructuredSetting Post2dWindowArrowUnstructuredSett
 	ret.arrowSize = ui->arrowSizeSpinBox->value();
 	ret.lineWidth = ui->lineWidthSpinBox->value();
 
+	ret.legendTextSetting = ui->legendTextWidget->setting();
+
 	return ret;
 }
 
@@ -133,6 +139,8 @@ void Post2dWindowArrowUnstructuredSettingDialog::setSetting(const Post2dWindowNo
 
 	ui->arrowSizeSpinBox->setValue(setting.arrowSize);
 	ui->lineWidthSpinBox->setValue(setting.lineWidth);
+
+	ui->legendTextWidget->setSetting(setting.legendTextSetting);
 }
 
 void Post2dWindowArrowUnstructuredSettingDialog::setColorBarTitleMap(const QMap<std::string, QString>& titlemap)

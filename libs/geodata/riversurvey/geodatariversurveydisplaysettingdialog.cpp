@@ -23,6 +23,8 @@ GeoDataRiverSurveyDisplaySetting GeoDataRiverSurveyDisplaySettingDialog::setting
 	ret.opacity = ui->transparencyWidget->opacityPercent();
 	ret.crosssectionLinesScale = ui->zScaleSpinBox->value();
 	ret.crosssectionLinesColor = ui->colorWidget->color();
+	ret.showNames = ui->nameVisibleCheckBox->isChecked();
+	ret.namesTextSetting = ui->nameFontWidget->setting();
 
 	return ret;
 }
@@ -34,4 +36,6 @@ void GeoDataRiverSurveyDisplaySettingDialog::setSetting(const GeoDataRiverSurvey
 	ui->transparencyWidget->setOpacityPercent(setting.opacity);
 	ui->zScaleSpinBox->setValue(setting.crosssectionLinesScale);
 	ui->colorWidget->setColor(setting.crosssectionLinesColor);
+	ui->nameVisibleCheckBox->setChecked(setting.showNames);
+	ui->nameFontWidget->setSetting(setting.namesTextSetting);
 }

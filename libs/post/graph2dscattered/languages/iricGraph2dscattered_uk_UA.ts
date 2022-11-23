@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="uk_UA">
 <context>
     <name>Graph2dScatteredAxisSettingDialog</name>
@@ -158,6 +160,10 @@
         <source>Draw &amp;Setting</source>
         <translation>Налаштування малювання (&amp;S)</translation>
     </message>
+    <message>
+        <source>&amp;Font Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Graph2dScatteredWindowDataModel</name>
@@ -218,6 +224,37 @@
     <message>
         <source>Draw Setting</source>
         <translation>Налаштування малювання</translation>
+    </message>
+</context>
+<context>
+    <name>Graph2dScatteredWindowFontSettingDialog</name>
+    <message>
+        <source>Font Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>X axis:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ticks:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Y axis:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
