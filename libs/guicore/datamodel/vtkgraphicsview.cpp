@@ -566,18 +566,14 @@ int VTKGraphicsView::moveWidth()
 
 QMouseEvent VTKGraphicsView::createScaledEvant(const QMouseEvent& event)
 {
-	QSize qtSize = size();
-	int* vtk_size = GetRenderWindow()->GetSize();
-	double scale = *vtk_size / static_cast<double>(qtSize.width());
+	double scale = devicePixelRatioF();
 
 	return QMouseEvent(event.type(), event.localPos() * scale, event.button(), event.buttons(), event.modifiers());
 }
 
 QMouseEvent VTKGraphicsView::createReverseScaledEvant(const QMouseEvent& event)
 {
-	QSize qtSize = size();
-	int* vtk_size = GetRenderWindow()->GetSize();
-	double scale = *vtk_size / static_cast<double>(qtSize.width());
+	double scale = devicePixelRatioF();
 
 	return QMouseEvent(event.type(), event.localPos() / scale, event.button(), event.buttons(), event.modifiers());
 }
