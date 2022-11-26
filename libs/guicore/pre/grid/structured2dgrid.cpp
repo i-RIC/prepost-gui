@@ -209,6 +209,15 @@ void Structured2DGrid::setDimensions(unsigned int i, unsigned int j)
 	grid->SetDimensions(m_dimensionI, m_dimensionJ, 1);
 }
 
+void Structured2DGrid::setDimensionsFromVtkGrid()
+{
+	auto grid = dynamic_cast<vtkStructuredGrid*>(vtkGrid());
+	int dims[3];
+	grid->GetDimensions(dims);
+	m_dimensionI = dims[0];
+	m_dimensionJ = dims[1];
+}
+
 const QStringList Structured2DGrid::checkShape(QTextStream& stream)
 {
 	QStringList messages;
