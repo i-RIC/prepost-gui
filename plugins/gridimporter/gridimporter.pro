@@ -10,4 +10,6 @@ SUBDIRS = \
 	structured2dgridgdalimporter \
 	structured2dgridnayscsvimporter \
 	structured2dgridnaysgridimporter \
-	unstructured2dgridtriangleimporter
+	structured2dgridvtkimporter \
+	unstructured2dgridtriangleimporter \
+	unstructured2dgridvtkimporter
