@@ -14,7 +14,12 @@ public:
 	const QStringList fileDialogFilters() override;
 	const QStringList acceptableExtensions() override;
 
+private slots:
+	void cancel();
+
 private:
+	bool m_canceled;
+
 	class Values;
 	class LineParser;
 	class SettingDialog;
