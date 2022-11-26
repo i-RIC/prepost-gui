@@ -4,6 +4,9 @@
 #include "private/geodatapointmaprealtextimporter_settingdialog.h"
 #include "private/geodatapointmaprealtextimporter_values.h"
 
+#include <guibase/widget/waitdialog.h>
+
+#include <QApplication>
 #include <QDir>
 #include <QFile>
 #include <QMessageBox>
@@ -20,6 +23,22 @@
 namespace {
 
 int PREVIEW_LINES = 100;
+
+bool countLines(const QString& fileName, int* lines)
+{
+	QFile f(fileName);
+	bool ok = f.open(QIODevice::ReadOnly | QIODevice::Text);
+	if (! ok) {return false;}
+
+	int l = 0;
+	while (! f.atEnd()) {
+		f.readLine();
+		++ l;
+	}
+	*lines = l;
+
+	return true;
+}
 
 } // namespace
 
@@ -60,6 +79,10 @@ bool GeoDataPointmapRealTextImporter::importData(GeoData *data, int /*index*/, Q
 
 	bool ok;
 	QString error;
+	int lineCount;
+
+	ok = countLines(filename(), &lineCount);
+
 	LineParser parser = dialog.buildParser(&ok, &error);
 
 	QFile file(filename());
@@ -86,6 +109,16 @@ bool GeoDataPointmapRealTextImporter::importData(GeoData *data, int /*index*/, Q
 	std::set<QPointF> pointSet;
 	int duplicatePoints = 0;
 	int dataId = 0;
+
+	WaitDialog wDialog(w);
+	wDialog.showProgressBar();
+	wDialog.setRange(0, lineCount);
+	wDialog.show();
+	connect(&wDialog, &WaitDialog::canceled, this, &GeoDataPointmapRealTextImporter::cancel);
+	m_canceled = false;
+
+	qApp->processEvents();
+
 	do {
 		auto line = stream.readLine();
 		if (dataId % parser.skipRate() == 0) {
@@ -106,6 +139,14 @@ bool GeoDataPointmapRealTextImporter::importData(GeoData *data, int /*index*/, Q
 		}
 		++ dataId;
 		++ lineNo;
+
+		if (lineNo % 1000 == 0) {
+			wDialog.setProgress(lineNo);
+			qApp->processEvents();
+		}
+		if (m_canceled) {
+			return false;
+		}
 	} while (! stream.atEnd());
 
 	if (duplicatePoints != 0) {
@@ -131,3 +172,9 @@ const QStringList GeoDataPointmapRealTextImporter::acceptableExtensions()
 	ret << "tpo" << "csv" << "txt" << "xyz";
 	return ret;
 }
+
+void GeoDataPointmapRealTextImporter::cancel()
+{
+	m_canceled = true;
+}
+
