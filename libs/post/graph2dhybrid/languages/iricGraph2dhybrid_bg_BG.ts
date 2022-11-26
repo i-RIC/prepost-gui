@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="bg_BG">
 <context>
     <name>Graph2dHybridSettingDialog</name>
@@ -385,7 +383,7 @@
     </message>
     <message>
         <source>&amp;Font Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Настройка на шрифта (&amp;F)</translation>
     </message>
 </context>
 <context>
@@ -487,7 +485,7 @@
         <translation>Неуспешна настройка на прозореца на графиката. Резултатът от изчислението не се зарежда правилно.</translation>
     </message>
     <message>
-        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm &quot;Create grid from from cross-section data&quot;&lt;/li&gt;&lt;/ul&gt;</source>
+        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm "Create grid from from cross-section data"&lt;/li&gt;&lt;/ul&gt;</source>
         <translation>Тази функция може да се използва, когато са изпълнени следните условия: &lt;ul&gt; &lt;li&gt; Изчертава се графика за двуизмерен резултат от структурирана мрежа. &lt;/li&gt; &lt;li&gt; Оста X е I-посока в решетката. &lt;/Li &gt; &lt;li&gt; Решетката е създадена с помощта на алгоритъма „Създаване на мрежа от данни от напречното сечение“ &lt;/li&gt; &lt;/ul&gt;</translation>
     </message>
 </context>
@@ -582,8 +580,8 @@
         <translation>Грешка</translation>
     </message>
     <message>
-        <source>The title of the first column has to be &quot;X&quot;</source>
-        <translation>Заглавието на първата колона трябва да бъде &quot;X&quot;</translation>
+        <source>The title of the first column has to be "X"</source>
+        <translation>Заглавието на първата колона трябва да бъде "X"</translation>
     </message>
     <message>
         <source>The number of data of %1 and %2 mismatch. Data %1 is skipped.</source>
@@ -617,31 +615,31 @@
     <name>Graph2dHybridWindowFontSettingDialog</name>
     <message>
         <source>Chart Font Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Настройка на шрифта на диаграмата</translation>
     </message>
     <message>
         <source>Chart Title:</source>
-        <translation type="unfinished"></translation>
+        <translation>Заглавие на диаграмата:</translation>
     </message>
     <message>
         <source>Legends:</source>
-        <translation type="unfinished"></translation>
+        <translation>Легенди:</translation>
     </message>
     <message>
         <source>X axis:</source>
-        <translation type="unfinished"></translation>
+        <translation>X ос:</translation>
     </message>
     <message>
         <source>Title:</source>
-        <translation type="unfinished"></translation>
+        <translation>Заглавие:</translation>
     </message>
     <message>
         <source>Ticks:</source>
-        <translation type="unfinished"></translation>
+        <translation>Отметки:</translation>
     </message>
     <message>
         <source>Y axis:</source>
-        <translation type="unfinished"></translation>
+        <translation>Y ос:</translation>
     </message>
 </context>
 <context>
@@ -662,8 +660,8 @@
         <translation>Грешка</translation>
     </message>
     <message>
-        <source>The title of the first column has to be &quot;X&quot;</source>
-        <translation>Заглавието на първата колона трябва да бъде &quot;X&quot;</translation>
+        <source>The title of the first column has to be "X"</source>
+        <translation>Заглавието на първата колона трябва да бъде "X"</translation>
     </message>
     <message>
         <source>Warning</source>

@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="gl_ES">
 <context>
     <name>Graph2dScatteredAxisSettingDialog</name>
@@ -162,7 +160,7 @@
     </message>
     <message>
         <source>&amp;Font Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración da fonte (&amp;F)</translation>
     </message>
 </context>
 <context>
@@ -230,31 +228,31 @@
     <name>Graph2dScatteredWindowFontSettingDialog</name>
     <message>
         <source>Font Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración da fonte</translation>
     </message>
     <message>
         <source>Chart Title:</source>
-        <translation type="unfinished"></translation>
+        <translation>Título do gráfico:</translation>
     </message>
     <message>
         <source>Legends:</source>
-        <translation type="unfinished"></translation>
+        <translation>Lendas:</translation>
     </message>
     <message>
         <source>X axis:</source>
-        <translation type="unfinished"></translation>
+        <translation>Eixo X:</translation>
     </message>
     <message>
         <source>Title:</source>
-        <translation type="unfinished"></translation>
+        <translation>Título:</translation>
     </message>
     <message>
         <source>Ticks:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ticks:</translation>
     </message>
     <message>
         <source>Y axis:</source>
-        <translation type="unfinished"></translation>
+        <translation>Eixo Y:</translation>
     </message>
 </context>
 <context>

@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="hi_IN">
 <context>
     <name>Graph2dScatteredAxisSettingDialog</name>
@@ -162,7 +160,7 @@
     </message>
     <message>
         <source>&amp;Font Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>फ़ॉन्ट सेटिंग (&amp;F)</translation>
     </message>
 </context>
 <context>
@@ -230,31 +228,31 @@
     <name>Graph2dScatteredWindowFontSettingDialog</name>
     <message>
         <source>Font Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>फ़ॉन्ट सेटिंग</translation>
     </message>
     <message>
         <source>Chart Title:</source>
-        <translation type="unfinished"></translation>
+        <translation>चार्ट शीर्षक:</translation>
     </message>
     <message>
         <source>Legends:</source>
-        <translation type="unfinished"></translation>
+        <translation>दंतकथाएं:</translation>
     </message>
     <message>
         <source>X axis:</source>
-        <translation type="unfinished"></translation>
+        <translation>एक्स अक्ष:</translation>
     </message>
     <message>
         <source>Title:</source>
-        <translation type="unfinished"></translation>
+        <translation>शीर्षक:</translation>
     </message>
     <message>
         <source>Ticks:</source>
-        <translation type="unfinished"></translation>
+        <translation>टिक्स:</translation>
     </message>
     <message>
         <source>Y axis:</source>
-        <translation type="unfinished"></translation>
+        <translation>वाई अक्ष:</translation>
     </message>
 </context>
 <context>

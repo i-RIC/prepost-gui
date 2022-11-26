@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="lv_LV">
 <context>
     <name>Graph2dScatteredAxisSettingDialog</name>
@@ -162,7 +160,7 @@
     </message>
     <message>
         <source>&amp;Font Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Fonta iestatījums (&amp;F)</translation>
     </message>
 </context>
 <context>
@@ -230,31 +228,31 @@
     <name>Graph2dScatteredWindowFontSettingDialog</name>
     <message>
         <source>Font Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Fonta iestatījums</translation>
     </message>
     <message>
         <source>Chart Title:</source>
-        <translation type="unfinished"></translation>
+        <translation>Diagrammas nosaukums:</translation>
     </message>
     <message>
         <source>Legends:</source>
-        <translation type="unfinished"></translation>
+        <translation>Leģendas:</translation>
     </message>
     <message>
         <source>X axis:</source>
-        <translation type="unfinished"></translation>
+        <translation>X ass:</translation>
     </message>
     <message>
         <source>Title:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nosaukums:</translation>
     </message>
     <message>
         <source>Ticks:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ērces:</translation>
     </message>
     <message>
         <source>Y axis:</source>
-        <translation type="unfinished"></translation>
+        <translation>Y ass:</translation>
     </message>
 </context>
 <context>

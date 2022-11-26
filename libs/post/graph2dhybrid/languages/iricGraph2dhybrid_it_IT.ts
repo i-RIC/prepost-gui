@@ -1,11 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="it_IT">
 <context>
     <name>Graph2dHybridSettingDialog</name>
     <message>
         <source>Axis Setting</source>
-        <translation>Impostazione dell&apos;asse</translation>
+        <translation>Impostazione dell'asse</translation>
     </message>
     <message>
         <source>X Axis</source>
@@ -89,15 +87,15 @@
     </message>
     <message>
         <source>X-axes range is invalid.</source>
-        <translation>L&apos;intervallo degli assi X non è valido.</translation>
+        <translation>L'intervallo degli assi X non è valido.</translation>
     </message>
     <message>
         <source>Left Y-axes range is invalid.</source>
-        <translation>L&apos;intervallo dell&apos;asse Y sinistro non è valido.</translation>
+        <translation>L'intervallo dell'asse Y sinistro non è valido.</translation>
     </message>
     <message>
         <source>Right Y-axes range is invalid.</source>
-        <translation>L&apos;intervallo dell&apos;asse Y destro non è valido.</translation>
+        <translation>L'intervallo dell'asse Y destro non è valido.</translation>
     </message>
     <message>
         <source>Seconds</source>
@@ -215,7 +213,7 @@
     </message>
     <message>
         <source>&amp;Axis Setting...</source>
-        <translation>Impostazione dell&apos;asse (&amp;A)...</translation>
+        <translation>Impostazione dell'asse (&amp;A)...</translation>
     </message>
     <message>
         <source>D&amp;raw Setting...</source>
@@ -361,7 +359,7 @@
     </message>
     <message>
         <source>Axis &amp;Setting</source>
-        <translation>Impostazione dell&apos;asse (&amp;S)</translation>
+        <translation>Impostazione dell'asse (&amp;S)</translation>
     </message>
     <message>
         <source>Draw &amp;Setting</source>
@@ -385,7 +383,7 @@
     </message>
     <message>
         <source>&amp;Font Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Impostazione carattere (&amp;F)</translation>
     </message>
 </context>
 <context>
@@ -416,7 +414,7 @@
     </message>
     <message>
         <source>Saving snapshot image to %1 failed.</source>
-        <translation>Salvataggio dell&apos;immagine istantanea in %1 fallito.</translation>
+        <translation>Salvataggio dell'immagine istantanea in %1 fallito.</translation>
     </message>
     <message>
         <source>Export CSV file</source>
@@ -484,11 +482,11 @@
     </message>
     <message>
         <source>Graph window setup fail. Calculation result is not loaded properly.</source>
-        <translation>L&apos;impostazione della finestra del grafico non è riuscita. Il risultato del calcolo non è caricato correttamente.</translation>
+        <translation>L'impostazione della finestra del grafico non è riuscita. Il risultato del calcolo non è caricato correttamente.</translation>
     </message>
     <message>
-        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm &quot;Create grid from from cross-section data&quot;&lt;/li&gt;&lt;/ul&gt;</source>
-        <translation>Questa funzione può essere utilizzata quando sono soddisfatte le seguenti condizioni: &lt;ul&gt;&lt;li&gt;Viene disegnato il grafico per il risultato della griglia strutturata bidimensionale.&lt;/li&gt;&lt;li&gt;L&apos;asse X è la direzione I nella griglia.&lt;/li &gt;&lt;li&gt;La griglia viene creata utilizzando l&apos;algoritmo &quot;Crea griglia da dati di sezioni trasversali&quot;&lt;/li&gt;&lt;/ul&gt;</translation>
+        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm "Create grid from from cross-section data"&lt;/li&gt;&lt;/ul&gt;</source>
+        <translation>Questa funzione può essere utilizzata quando sono soddisfatte le seguenti condizioni: &lt;ul&gt;&lt;li&gt;Viene disegnato il grafico per il risultato della griglia strutturata bidimensionale.&lt;/li&gt;&lt;li&gt;L'asse X è la direzione I nella griglia.&lt;/li &gt;&lt;li&gt;La griglia viene creata utilizzando l'algoritmo "Crea griglia da dati di sezioni trasversali"&lt;/li&gt;&lt;/ul&gt;</translation>
     </message>
 </context>
 <context>
@@ -563,7 +561,7 @@
     </message>
     <message>
         <source>Current setting will be discarded, are you sure?</source>
-        <translation>L&apos;impostazione attuale verrà eliminata, sei sicuro?</translation>
+        <translation>L'impostazione attuale verrà eliminata, sei sicuro?</translation>
     </message>
     <message>
         <source>No data is selected.</source>
@@ -582,8 +580,8 @@
         <translation>Errore</translation>
     </message>
     <message>
-        <source>The title of the first column has to be &quot;X&quot;</source>
-        <translation>Il titolo della prima colonna deve essere &quot;X&quot;</translation>
+        <source>The title of the first column has to be "X"</source>
+        <translation>Il titolo della prima colonna deve essere "X"</translation>
     </message>
     <message>
         <source>The number of data of %1 and %2 mismatch. Data %1 is skipped.</source>
@@ -617,31 +615,31 @@
     <name>Graph2dHybridWindowFontSettingDialog</name>
     <message>
         <source>Chart Font Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Impostazione carattere grafico</translation>
     </message>
     <message>
         <source>Chart Title:</source>
-        <translation type="unfinished"></translation>
+        <translation>Titolo grafico:</translation>
     </message>
     <message>
         <source>Legends:</source>
-        <translation type="unfinished"></translation>
+        <translation>Leggende:</translation>
     </message>
     <message>
         <source>X axis:</source>
-        <translation type="unfinished"></translation>
+        <translation>Asse X:</translation>
     </message>
     <message>
         <source>Title:</source>
-        <translation type="unfinished"></translation>
+        <translation>Titolo:</translation>
     </message>
     <message>
         <source>Ticks:</source>
-        <translation type="unfinished"></translation>
+        <translation>Zecche:</translation>
     </message>
     <message>
         <source>Y axis:</source>
-        <translation type="unfinished"></translation>
+        <translation>Asse Y:</translation>
     </message>
 </context>
 <context>
@@ -662,8 +660,8 @@
         <translation>Errore</translation>
     </message>
     <message>
-        <source>The title of the first column has to be &quot;X&quot;</source>
-        <translation>Il titolo della prima colonna deve essere &quot;X&quot;</translation>
+        <source>The title of the first column has to be "X"</source>
+        <translation>Il titolo della prima colonna deve essere "X"</translation>
     </message>
     <message>
         <source>Warning</source>

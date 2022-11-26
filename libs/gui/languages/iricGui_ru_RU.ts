@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ru_RU">
 <context>
     <name>AnimationController</name>
@@ -451,7 +449,7 @@ This wizard will generate or update translation files for solver definition file
         <translation>Выберите решатель</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
         <translation>Когда вы создаете новый проект, вы должны выбрать решатель, который будет использоваться для расчета. Пожалуйста, выберите решатель и нажмите кнопку «ОК».</translation>
     </message>
 </context>
@@ -511,7 +509,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Font Default</source>
-        <translation type="unfinished"></translation>
+        <translation>Шрифт по умолчанию</translation>
     </message>
 </context>
 <context>
@@ -537,75 +535,75 @@ Do you want to launch iRIC Maintainance?</source>
     <name>PreferencePageFontDefault</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Форма</translation>
+        <translation>Форма</translation>
     </message>
     <message>
         <source>Common</source>
-        <translation type="unfinished"></translation>
+        <translation>Общий</translation>
     </message>
     <message>
         <source>Grid Shape / Grid Indices</source>
-        <translation type="unfinished"></translation>
+        <translation>Форма сетки / индексы сетки</translation>
     </message>
     <message>
         <source>Color Bar</source>
-        <translation type="unfinished"></translation>
+        <translation>Цветная полоса</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Заголовок</translation>
     </message>
     <message>
         <source>Labels</source>
-        <translation type="unfinished"></translation>
+        <translation>Этикетки</translation>
     </message>
     <message>
         <source>Arrow Length Legend</source>
-        <translation type="unfinished"></translation>
+        <translation>Легенда длины стрелы</translation>
     </message>
     <message>
         <source>Pre-processing Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Окно предварительной обработки</translation>
     </message>
     <message>
         <source>Upstream / Downstream</source>
-        <translation type="unfinished"></translation>
+        <translation>Вверх-вниз</translation>
     </message>
     <message>
         <source>River Survey Data Cross-section Names</source>
-        <translation type="unfinished"></translation>
+        <translation>Названия разрезов данных речных съемок</translation>
     </message>
     <message>
         <source>Boundary Condition Names</source>
-        <translation type="unfinished"></translation>
+        <translation>Имена граничных условий</translation>
     </message>
     <message>
         <source>Visualization Windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Окна визуализации</translation>
     </message>
     <message>
         <source>Labels:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ярлыки:</translation>
     </message>
     <message>
         <source>Chart Windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Окна диаграммы</translation>
     </message>
     <message>
         <source>Chart Title:</source>
-        <translation type="unfinished"></translation>
+        <translation>Название диаграммы:</translation>
     </message>
     <message>
         <source>Legends:</source>
-        <translation type="unfinished"></translation>
+        <translation>Легенды:</translation>
     </message>
     <message>
         <source>Axis Title:</source>
-        <translation type="unfinished"></translation>
+        <translation>Название оси:</translation>
     </message>
     <message>
         <source>Axis Ticks:</source>
-        <translation type="unfinished"></translation>
+        <translation>Тики оси:</translation>
     </message>
 </context>
 <context>
@@ -1287,9 +1285,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>Предупреждение</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
+        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
 %2</source>
-        <translation>Ошибка при загрузке файла определения решателя в папку &quot;%1&quot;. Этот решатель игнорируется. %2</translation>
+        <translation>Ошибка при загрузке файла определения решателя в папку "%1". Этот решатель игнорируется. %2</translation>
     </message>
 </context>
 <context>
@@ -1404,7 +1402,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Кажется, этот проект открывается другим окном iRIC GUI. Вы не можете открыть папку проекта из нескольких окон графического интерфейса.</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation>Открытый проект не копируется в рабочий каталог, и вы будете вынуждены сохранить изменения, внесенные в этот проект. Если вы хотите сохранить текущий проект, сначала сохраните его в другом проекте.</translation>
     </message>
     <message>
@@ -1637,7 +1635,7 @@ Option -&gt; Preferences</source>
         <translation>В настоящее время активное подокно не поддерживает экспорт фигур контура.</translation>
     </message>
     <message>
-        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
+        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
         <translation>Чтобы экспортировать файл формы, переключите «Настройка отображения» на «Контурная фигура», а не «Цвет бахромы» или «Изолинии».</translation>
     </message>
     <message>
@@ -2053,7 +2051,7 @@ Option -&gt; Preferences</source>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>&amp;Solver Information...</source>
@@ -2080,7 +2078,7 @@ Option -&gt; Preferences</source>
         <translation>Открыть новое окно постобработки 2D</translation>
     </message>
     <message>
-        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
+        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
         <translation>Откройте новое окно постобработки 2D с высоты птичьего полета</translation>
     </message>
     <message>

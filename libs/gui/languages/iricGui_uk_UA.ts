@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="uk_UA">
 <context>
     <name>AnimationController</name>
@@ -197,7 +195,7 @@
     </message>
     <message>
         <source>Name :</source>
-        <translation>Ім&apos;я:</translation>
+        <translation>Ім'я:</translation>
     </message>
     <message>
         <source>output.kml</source>
@@ -451,8 +449,8 @@ This wizard will generate or update translation files for solver definition file
         <translation>Виберіть Solver</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
-        <translation>Коли ви створюєте новий проект, вам потрібно вибрати вирішувач для використання для розрахунку. Виберіть вирішувач і натисніть кнопку &quot;OK&quot;.</translation>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
+        <translation>Коли ви створюєте новий проект, вам потрібно вибрати вирішувач для використання для розрахунку. Виберіть вирішувач і натисніть кнопку "OK".</translation>
     </message>
 </context>
 <context>
@@ -511,7 +509,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Font Default</source>
-        <translation type="unfinished"></translation>
+        <translation>Шрифт за замовчуванням</translation>
     </message>
 </context>
 <context>
@@ -537,75 +535,75 @@ Do you want to launch iRIC Maintainance?</source>
     <name>PreferencePageFontDefault</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Форма</translation>
+        <translation>Форма</translation>
     </message>
     <message>
         <source>Common</source>
-        <translation type="unfinished"></translation>
+        <translation>Поширений</translation>
     </message>
     <message>
         <source>Grid Shape / Grid Indices</source>
-        <translation type="unfinished"></translation>
+        <translation>Форма сітки / Індекси сітки</translation>
     </message>
     <message>
         <source>Color Bar</source>
-        <translation type="unfinished"></translation>
+        <translation>Кольорова панель</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Назва</translation>
     </message>
     <message>
         <source>Labels</source>
-        <translation type="unfinished"></translation>
+        <translation>етикетки</translation>
     </message>
     <message>
         <source>Arrow Length Legend</source>
-        <translation type="unfinished"></translation>
+        <translation>Легенда довжини стрілки</translation>
     </message>
     <message>
         <source>Pre-processing Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Вікно попередньої обробки</translation>
     </message>
     <message>
         <source>Upstream / Downstream</source>
-        <translation type="unfinished"></translation>
+        <translation>Вгору / вниз за течією</translation>
     </message>
     <message>
         <source>River Survey Data Cross-section Names</source>
-        <translation type="unfinished"></translation>
+        <translation>Назви перетинів річкових даних</translation>
     </message>
     <message>
         <source>Boundary Condition Names</source>
-        <translation type="unfinished"></translation>
+        <translation>Назви граничних умов</translation>
     </message>
     <message>
         <source>Visualization Windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Windows візуалізації</translation>
     </message>
     <message>
         <source>Labels:</source>
-        <translation type="unfinished"></translation>
+        <translation>Мітки:</translation>
     </message>
     <message>
         <source>Chart Windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Вікна діаграм</translation>
     </message>
     <message>
         <source>Chart Title:</source>
-        <translation type="unfinished"></translation>
+        <translation>Назва діаграми:</translation>
     </message>
     <message>
         <source>Legends:</source>
-        <translation type="unfinished"></translation>
+        <translation>Легенди:</translation>
     </message>
     <message>
         <source>Axis Title:</source>
-        <translation type="unfinished"></translation>
+        <translation>Назва осі:</translation>
     </message>
     <message>
         <source>Axis Ticks:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ціки осі:</translation>
     </message>
 </context>
 <context>
@@ -849,7 +847,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>User name:</source>
-        <translation>Ім&apos;я користувача:</translation>
+        <translation>Ім'я користувача:</translation>
     </message>
     <message>
         <source>Password:</source>
@@ -973,7 +971,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Ім&apos;я:</translation>
+        <translation>Ім'я:</translation>
     </message>
     <message>
         <source>URL:</source>
@@ -1031,7 +1029,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Ім&apos;я:</translation>
+        <translation>Ім'я:</translation>
     </message>
     <message>
         <source>Min zoom level:</source>
@@ -1058,7 +1056,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Filename:</source>
-        <translation>Ім&apos;я файлу:</translation>
+        <translation>Ім'я файлу:</translation>
     </message>
     <message>
         <source>Last update time:</source>
@@ -1287,9 +1285,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>Увага</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
+        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
 %2</source>
-        <translation>Сталася помилка під час завантаження файлу визначення вирішувача у папку &quot; %1 Цей вирішувач ігнорується. %2</translation>
+        <translation>Сталася помилка під час завантаження файлу визначення вирішувача у папку " %1 Цей вирішувач ігнорується. %2</translation>
     </message>
 </context>
 <context>
@@ -1408,7 +1406,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Схоже, цей проект відкривається ще одним вікном графічного інтерфейсу iRIC. Ви не можете відкрити папку проекту з кількох вікон графічного інтерфейсу.</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation>Відкритий проект не копіюється в робочий каталог, і ви будете змушені зберегти внесені вами зміни до цього проекту. Якщо ви хочете зберегти поточний проект, спочатку збережіть його в іншому проекті.</translation>
     </message>
     <message>
@@ -1568,8 +1566,8 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Наразі активне під вікно не підтримує експорт фігури контуру.</translation>
     </message>
     <message>
-        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
-        <translation>Щоб експортувати файл фігури, переведіть &quot;Параметри дисплея&quot; на &quot;Контурний малюнок&quot;, а не на &quot;Колір бахроми&quot; або &quot;Ізолінії&quot;.</translation>
+        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
+        <translation>Щоб експортувати файл фігури, переведіть "Параметри дисплея" на "Контурний малюнок", а не на "Колір бахроми" або "Ізолінії".</translation>
     </message>
     <message>
         <source>Export contour figure to ESRI Shapefiles</source>
@@ -2053,7 +2051,7 @@ Option -&gt; Preferences</source>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>&amp;Solver Information...</source>
@@ -2080,7 +2078,7 @@ Option -&gt; Preferences</source>
         <translation>Відкрийте нове вікно 2D пост-обробки</translation>
     </message>
     <message>
-        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
+        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
         <translation>Відкрийте нове 2D вікно пост-обробки пташиного ока</translation>
     </message>
     <message>

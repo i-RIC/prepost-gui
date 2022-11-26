@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="zh_TW">
 <context>
     <name>AnimationController</name>
@@ -451,7 +449,7 @@ This wizard will generate or update translation files for solver definition file
         <translation>選擇求解器</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
         <translation>創建新項目時，必須選擇用於計算的求解器。請選擇一個求解器，然後按“確定”按鈕。</translation>
     </message>
 </context>
@@ -511,7 +509,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Font Default</source>
-        <translation type="unfinished"></translation>
+        <translation>字體默認</translation>
     </message>
 </context>
 <context>
@@ -537,75 +535,75 @@ Do you want to launch iRIC Maintainance?</source>
     <name>PreferencePageFontDefault</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">形式</translation>
+        <translation>形式</translation>
     </message>
     <message>
         <source>Common</source>
-        <translation type="unfinished"></translation>
+        <translation>常見的</translation>
     </message>
     <message>
         <source>Grid Shape / Grid Indices</source>
-        <translation type="unfinished"></translation>
+        <translation>網格形狀/網格索引</translation>
     </message>
     <message>
         <source>Color Bar</source>
-        <translation type="unfinished"></translation>
+        <translation>彩條</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation type="unfinished"></translation>
+        <translation>標題</translation>
     </message>
     <message>
         <source>Labels</source>
-        <translation type="unfinished"></translation>
+        <translation>標籤</translation>
     </message>
     <message>
         <source>Arrow Length Legend</source>
-        <translation type="unfinished"></translation>
+        <translation>箭頭長度圖例</translation>
     </message>
     <message>
         <source>Pre-processing Window</source>
-        <translation type="unfinished"></translation>
+        <translation>預處理窗口</translation>
     </message>
     <message>
         <source>Upstream / Downstream</source>
-        <translation type="unfinished"></translation>
+        <translation>上游/下游</translation>
     </message>
     <message>
         <source>River Survey Data Cross-section Names</source>
-        <translation type="unfinished"></translation>
+        <translation>河流調查數據斷面名稱</translation>
     </message>
     <message>
         <source>Boundary Condition Names</source>
-        <translation type="unfinished"></translation>
+        <translation>邊界條件名稱</translation>
     </message>
     <message>
         <source>Visualization Windows</source>
-        <translation type="unfinished"></translation>
+        <translation>可視化窗口</translation>
     </message>
     <message>
         <source>Labels:</source>
-        <translation type="unfinished"></translation>
+        <translation>標籤：</translation>
     </message>
     <message>
         <source>Chart Windows</source>
-        <translation type="unfinished"></translation>
+        <translation>圖表窗口</translation>
     </message>
     <message>
         <source>Chart Title:</source>
-        <translation type="unfinished"></translation>
+        <translation>圖表標題：</translation>
     </message>
     <message>
         <source>Legends:</source>
-        <translation type="unfinished"></translation>
+        <translation>傳說：</translation>
     </message>
     <message>
         <source>Axis Title:</source>
-        <translation type="unfinished"></translation>
+        <translation>軸標題：</translation>
     </message>
     <message>
         <source>Axis Ticks:</source>
-        <translation type="unfinished"></translation>
+        <translation>軸刻度：</translation>
     </message>
 </context>
 <context>
@@ -1287,9 +1285,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>警告</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
+        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
 %2</source>
-        <translation>在文件夾“中加載求解器定義文件時發生錯誤” %1 &quot;。這個求解器被忽略了。 %2</translation>
+        <translation>在文件夾“中加載求解器定義文件時發生錯誤” %1 "。這個求解器被忽略了。 %2</translation>
     </message>
 </context>
 <context>
@@ -1408,7 +1406,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>這個項目似乎是由另一個 iRIC GUI 窗口打開的。不能從多個 GUI 窗口打開項目文件夾。</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation>打開的項目不會復製到工作目錄，您將被迫保存對此項目所做的修改。如果要保留當前項目，請先將其保存到另一個項目中。</translation>
     </message>
     <message>
@@ -1568,7 +1566,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>當前活動子窗口不支持導出輪廓圖。</translation>
     </message>
     <message>
-        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
+        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
         <translation>要導出形狀文件，請將“顯示設置”切換到“輪廓圖”，而不是“彩色邊緣”或“等值線”。</translation>
     </message>
     <message>
@@ -2053,7 +2051,7 @@ Option -&gt; Preferences</source>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>&amp;Solver Information...</source>
@@ -2080,8 +2078,8 @@ Option -&gt; Preferences</source>
         <translation>打開新的 2D 後處理窗口</translation>
     </message>
     <message>
-        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
-        <translation>打開新的 2D Bird&apos;s-Eye Post-Processing 窗口</translation>
+        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
+        <translation>打開新的 2D Bird's-Eye Post-Processing 窗口</translation>
     </message>
     <message>
         <source>Open new 3D Post-Processing Window</source>

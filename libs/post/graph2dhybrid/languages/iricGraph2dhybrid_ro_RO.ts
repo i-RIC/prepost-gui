@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ro_RO">
 <context>
     <name>Graph2dHybridSettingDialog</name>
@@ -385,7 +383,7 @@
     </message>
     <message>
         <source>&amp;Font Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Setarea fontului (&amp;F)</translation>
     </message>
 </context>
 <context>
@@ -487,7 +485,7 @@
         <translation>Configurarea ferestrei grafice eșuează. Rezultatul calculului nu este încărcat corect.</translation>
     </message>
     <message>
-        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm &quot;Create grid from from cross-section data&quot;&lt;/li&gt;&lt;/ul&gt;</source>
+        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm "Create grid from from cross-section data"&lt;/li&gt;&lt;/ul&gt;</source>
         <translation>Această funcție poate fi utilizată atunci când sunt îndeplinite următoarele condiții: &lt;ul&gt; &lt;li&gt; Este desenat graficul pentru rezultatul structurii bidimensionale. &lt;/li&gt; &lt;li&gt; Axa X este direcția I în grilă. &lt;/ Li &gt; &lt;li&gt; Grila este creată utilizând algoritmul „Creați grila din datele secțiunii transversale” &lt;/li&gt; &lt;/ul&gt;</translation>
     </message>
 </context>
@@ -582,7 +580,7 @@
         <translation>Eroare</translation>
     </message>
     <message>
-        <source>The title of the first column has to be &quot;X&quot;</source>
+        <source>The title of the first column has to be "X"</source>
         <translation>Titlul primei coloane trebuie să fie „X”</translation>
     </message>
     <message>
@@ -617,31 +615,31 @@
     <name>Graph2dHybridWindowFontSettingDialog</name>
     <message>
         <source>Chart Font Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Setarea fontului diagramei</translation>
     </message>
     <message>
         <source>Chart Title:</source>
-        <translation type="unfinished"></translation>
+        <translation>Titlul diagramei:</translation>
     </message>
     <message>
         <source>Legends:</source>
-        <translation type="unfinished"></translation>
+        <translation>Legende:</translation>
     </message>
     <message>
         <source>X axis:</source>
-        <translation type="unfinished"></translation>
+        <translation>Axa X:</translation>
     </message>
     <message>
         <source>Title:</source>
-        <translation type="unfinished"></translation>
+        <translation>Titlu:</translation>
     </message>
     <message>
         <source>Ticks:</source>
-        <translation type="unfinished"></translation>
+        <translation>Căpușe:</translation>
     </message>
     <message>
         <source>Y axis:</source>
-        <translation type="unfinished"></translation>
+        <translation>Axa Y:</translation>
     </message>
 </context>
 <context>
@@ -662,7 +660,7 @@
         <translation>Eroare</translation>
     </message>
     <message>
-        <source>The title of the first column has to be &quot;X&quot;</source>
+        <source>The title of the first column has to be "X"</source>
         <translation>Titlul primei coloane trebuie să fie „X”</translation>
     </message>
     <message>

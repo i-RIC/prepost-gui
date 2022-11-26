@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="vi_VN">
 <context>
     <name>Graph2dHybridSettingDialog</name>
@@ -385,7 +383,7 @@
     </message>
     <message>
         <source>&amp;Font Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Cài đặt phông chữ (&amp;F)</translation>
     </message>
 </context>
 <context>
@@ -487,8 +485,8 @@
         <translation>Thiết lập cửa sổ đồ thị không thành công. Kết quả tính toán không được tải đúng cách.</translation>
     </message>
     <message>
-        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm &quot;Create grid from from cross-section data&quot;&lt;/li&gt;&lt;/ul&gt;</source>
-        <translation>Hàm này có thể được sử dụng khi thỏa mãn các điều kiện sau: &lt;ul&gt; &lt;li&gt; Biểu đồ cho kết quả lưới có cấu trúc hai chiều được vẽ. &lt;/li&gt; &lt;li&gt; Trục X là hướng I trong lưới. &lt;/ Li &gt; &lt;li&gt; Lưới được tạo bằng thuật toán &quot;Tạo lưới từ dữ liệu mặt cắt ngang&quot; &lt;/li&gt; &lt;/ul&gt;</translation>
+        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm "Create grid from from cross-section data"&lt;/li&gt;&lt;/ul&gt;</source>
+        <translation>Hàm này có thể được sử dụng khi thỏa mãn các điều kiện sau: &lt;ul&gt; &lt;li&gt; Biểu đồ cho kết quả lưới có cấu trúc hai chiều được vẽ. &lt;/li&gt; &lt;li&gt; Trục X là hướng I trong lưới. &lt;/ Li &gt; &lt;li&gt; Lưới được tạo bằng thuật toán "Tạo lưới từ dữ liệu mặt cắt ngang" &lt;/li&gt; &lt;/ul&gt;</translation>
     </message>
 </context>
 <context>
@@ -582,8 +580,8 @@
         <translation>Lỗi</translation>
     </message>
     <message>
-        <source>The title of the first column has to be &quot;X&quot;</source>
-        <translation>Tiêu đề của cột đầu tiên phải là &quot;X&quot;</translation>
+        <source>The title of the first column has to be "X"</source>
+        <translation>Tiêu đề của cột đầu tiên phải là "X"</translation>
     </message>
     <message>
         <source>The number of data of %1 and %2 mismatch. Data %1 is skipped.</source>
@@ -617,31 +615,31 @@
     <name>Graph2dHybridWindowFontSettingDialog</name>
     <message>
         <source>Chart Font Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Cài đặt phông chữ biểu đồ</translation>
     </message>
     <message>
         <source>Chart Title:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tiêu đề biểu đồ:</translation>
     </message>
     <message>
         <source>Legends:</source>
-        <translation type="unfinished"></translation>
+        <translation>Truyền thuyết:</translation>
     </message>
     <message>
         <source>X axis:</source>
-        <translation type="unfinished"></translation>
+        <translation>trục X:</translation>
     </message>
     <message>
         <source>Title:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tiêu đề:</translation>
     </message>
     <message>
         <source>Ticks:</source>
-        <translation type="unfinished"></translation>
+        <translation>Bọ ve:</translation>
     </message>
     <message>
         <source>Y axis:</source>
-        <translation type="unfinished"></translation>
+        <translation>trục Y:</translation>
     </message>
 </context>
 <context>
@@ -662,8 +660,8 @@
         <translation>Lỗi</translation>
     </message>
     <message>
-        <source>The title of the first column has to be &quot;X&quot;</source>
-        <translation>Tiêu đề của cột đầu tiên phải là &quot;X&quot;</translation>
+        <source>The title of the first column has to be "X"</source>
+        <translation>Tiêu đề của cột đầu tiên phải là "X"</translation>
     </message>
     <message>
         <source>Warning</source>

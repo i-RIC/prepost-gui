@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ca_ES">
 <context>
     <name>AnimationController</name>
@@ -90,7 +88,7 @@
     </message>
     <message>
         <source>File name</source>
-        <translation>Nom de l&apos;arxiu</translation>
+        <translation>Nom de l'arxiu</translation>
     </message>
     <message>
         <source>Prefix :</source>
@@ -170,7 +168,7 @@
     </message>
     <message>
         <source>Creating folder %1 failed.</source>
-        <translation>S&apos;està creant la carpeta %1 fracassat.</translation>
+        <translation>S'està creant la carpeta %1 fracassat.</translation>
     </message>
 </context>
 <context>
@@ -189,7 +187,7 @@
     </message>
     <message>
         <source>Note: This feature is available only when a coordinate system has been specified.</source>
-        <translation>Nota: Aquesta característica només està disponible quan s&apos;ha especificat un sistema de coordenades.</translation>
+        <translation>Nota: Aquesta característica només està disponible quan s'ha especificat un sistema de coordenades.</translation>
     </message>
     <message>
         <source>KML file name</source>
@@ -235,7 +233,7 @@
     </message>
     <message>
         <source>File name</source>
-        <translation>Nom de l&apos;arxiu</translation>
+        <translation>Nom de l'arxiu</translation>
     </message>
     <message>
         <source>Play speed</source>
@@ -357,7 +355,7 @@
     </message>
     <message>
         <source>More than one visualization window has transparent region. They can not saved into transparent background images. Please select white background, or cancel and disable transparency for contours etc.</source>
-        <translation>Més d&apos;una finestra de visualització té una regió transparent. No es poden desar en imatges de fons transparents. Seleccioneu el fons blanc o cancel·leu i inhabiliteu la transparència per a contorns, etc.</translation>
+        <translation>Més d'una finestra de visualització té una regió transparent. No es poden desar en imatges de fons transparents. Seleccioneu el fons blanc o cancel·leu i inhabiliteu la transparència per a contorns, etc.</translation>
     </message>
     <message>
         <source>No window is currently selected.</source>
@@ -368,21 +366,21 @@
     <name>ContinuousSnapshotWizard</name>
     <message>
         <source>Continuous Snapshot / Movie / Google Earth Export Wizard</source>
-        <translation>Instantània contínua / Pel·lícula / Assistent d&apos;exportació de Google Earth</translation>
+        <translation>Instantània contínua / Pel·lícula / Assistent d'exportació de Google Earth</translation>
     </message>
 </context>
 <context>
     <name>FlushRequester</name>
     <message>
         <source>Waiting for solver to copy CGNS file...</source>
-        <translation>S&apos;està esperant que el solucionador copiï el fitxer CGNS...</translation>
+        <translation>S'està esperant que el solucionador copiï el fitxer CGNS...</translation>
     </message>
 </context>
 <context>
     <name>GoogleMapImageImportSettingDialog</name>
     <message>
         <source>Google Map Image Import Setting</source>
-        <translation>Configuració d&apos;importació d&apos;imatges de Google Map</translation>
+        <translation>Configuració d'importació d'imatges de Google Map</translation>
     </message>
     <message>
         <source>Zoom:</source>
@@ -418,7 +416,7 @@
     <message>
         <source>When you update iRIC, you need to close iRIC before launching iRIC Maintainance.
 When you have iRIC windows other than this, close them manually.</source>
-        <translation>Quan actualitzeu iRIC, heu de tancar iRIC abans de llançar iRIC Maintainance. Quan tingueu finestres iRIC diferents d&apos;aquest, tanqueu-les manualment.</translation>
+        <translation>Quan actualitzeu iRIC, heu de tancar iRIC abans de llançar iRIC Maintainance. Quan tingueu finestres iRIC diferents d'aquest, tanqueu-les manualment.</translation>
     </message>
     <message>
         <source>Close iRIC and launch iRIC Maintainance</source>
@@ -434,7 +432,7 @@ When you have iRIC windows other than this, close them manually.</source>
     <message>
         <source>This function is intended to be used by solver developers or grid creating program developers, not users.
 This wizard will generate or update translation files for solver definition files and grid creating program definition files those are registered to iRIC system. You need to specify the solver (or grid creating program) name, and the list of languages for those you want to create or update translation files.</source>
-        <translation>Aquesta funció està pensada per ser utilitzada per desenvolupadors de solucionadors o desenvolupadors de programes de creació de quadrícules, no per usuaris. Aquest assistent generarà o actualitzarà fitxers de traducció per a fitxers de definició de solucionadors i fitxers de definició de programes de creació de quadrícules que es registren al sistema iRIC. Heu d&apos;especificar el nom del solucionador (o programa de creació de quadrícules) i la llista d&apos;idiomes per als que vulgueu crear o actualitzar fitxers de traducció.</translation>
+        <translation>Aquesta funció està pensada per ser utilitzada per desenvolupadors de solucionadors o desenvolupadors de programes de creació de quadrícules, no per usuaris. Aquest assistent generarà o actualitzarà fitxers de traducció per a fitxers de definició de solucionadors i fitxers de definició de programes de creació de quadrícules que es registren al sistema iRIC. Heu d'especificar el nom del solucionador (o programa de creació de quadrícules) i la llista d'idiomes per als que vulgueu crear o actualitzar fitxers de traducció.</translation>
     </message>
 </context>
 <context>
@@ -451,8 +449,8 @@ This wizard will generate or update translation files for solver definition file
         <translation>Seleccioneu Solucionador</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
-        <translation>Quan creeu un projecte nou, heu de seleccionar el solucionador que cal utilitzar per al càlcul. Seleccioneu un solucionador i premeu el botó &quot;D&apos;acord&quot;.</translation>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
+        <translation>Quan creeu un projecte nou, heu de seleccionar el solucionador que cal utilitzar per al càlcul. Seleccioneu un solucionador i premeu el botó "D'acord".</translation>
     </message>
 </context>
 <context>
@@ -511,7 +509,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Font Default</source>
-        <translation type="unfinished"></translation>
+        <translation>Font per defecte</translation>
     </message>
 </context>
 <context>
@@ -537,75 +535,75 @@ Do you want to launch iRIC Maintainance?</source>
     <name>PreferencePageFontDefault</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Formulari</translation>
+        <translation>Formulari</translation>
     </message>
     <message>
         <source>Common</source>
-        <translation type="unfinished"></translation>
+        <translation>Comú</translation>
     </message>
     <message>
         <source>Grid Shape / Grid Indices</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma de quadrícula / Índexs de quadrícula</translation>
     </message>
     <message>
         <source>Color Bar</source>
-        <translation type="unfinished"></translation>
+        <translation>Barra de colors</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Títol</translation>
     </message>
     <message>
         <source>Labels</source>
-        <translation type="unfinished"></translation>
+        <translation>Etiquetes</translation>
     </message>
     <message>
         <source>Arrow Length Legend</source>
-        <translation type="unfinished"></translation>
+        <translation>Llegenda de longitud de fletxa</translation>
     </message>
     <message>
         <source>Pre-processing Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Finestra de preprocessament</translation>
     </message>
     <message>
         <source>Upstream / Downstream</source>
-        <translation type="unfinished"></translation>
+        <translation>Amunt / Avall</translation>
     </message>
     <message>
         <source>River Survey Data Cross-section Names</source>
-        <translation type="unfinished"></translation>
+        <translation>Noms de les seccions transversals de dades de l'enquesta fluvial</translation>
     </message>
     <message>
         <source>Boundary Condition Names</source>
-        <translation type="unfinished"></translation>
+        <translation>Noms de condicions de límit</translation>
     </message>
     <message>
         <source>Visualization Windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Windows de visualització</translation>
     </message>
     <message>
         <source>Labels:</source>
-        <translation type="unfinished"></translation>
+        <translation>Etiquetes:</translation>
     </message>
     <message>
         <source>Chart Windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Windows de gràfics</translation>
     </message>
     <message>
         <source>Chart Title:</source>
-        <translation type="unfinished"></translation>
+        <translation>Títol del gràfic:</translation>
     </message>
     <message>
         <source>Legends:</source>
-        <translation type="unfinished"></translation>
+        <translation>Llegendes:</translation>
     </message>
     <message>
         <source>Axis Title:</source>
-        <translation type="unfinished"></translation>
+        <translation>Títol de l'eix:</translation>
     </message>
     <message>
         <source>Axis Ticks:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ticks de l'eix:</translation>
     </message>
 </context>
 <context>
@@ -620,7 +618,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Note: Language setting is applied when iRIC is launched next time.</source>
-        <translation>Nota: La configuració d&apos;idioma s&apos;aplica quan es llança iRIC la propera vegada.</translation>
+        <translation>Nota: La configuració d'idioma s'aplica quan es llança iRIC la propera vegada.</translation>
     </message>
     <message>
         <source>Working Directory</source>
@@ -628,15 +626,15 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Note: Working Directory is used to store files used by iRIC.</source>
-        <translation>Nota: Working Directory s&apos;utilitza per emmagatzemar fitxers que utilitza iRIC.</translation>
+        <translation>Nota: Working Directory s'utilitza per emmagatzemar fitxers que utilitza iRIC.</translation>
     </message>
     <message>
         <source>Copy folder project to Working Directory when opened</source>
-        <translation type="vanished">Copieu el projecte de carpeta al directori de treball quan s&apos;obre</translation>
+        <translation type="vanished">Copieu el projecte de carpeta al directori de treball quan s'obre</translation>
     </message>
     <message>
         <source>Checking for Update</source>
-        <translation>S&apos;està comprovant si hi ha actualitzacions</translation>
+        <translation>S'està comprovant si hi ha actualitzacions</translation>
     </message>
     <message>
         <source>Check for update periodically</source>
@@ -660,7 +658,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Maximum numbers of indices drawn:</source>
-        <translation>Nombre màxim d&apos;índexs dibuixats:</translation>
+        <translation>Nombre màxim d'índexs dibuixats:</translation>
     </message>
     <message>
         <source>Warning: If you disable culling and create a very big grid, maybe iRIC GUI will crash because of lack of memory.</source>
@@ -696,7 +694,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Working directory is changed, but the new working directory is used AFTER exiting iRIC GUI!</source>
-        <translation>El directori de treball s&apos;ha canviat, però el nou directori de treball s&apos;utilitza DESPRÉS de sortir de la GUI iRIC.</translation>
+        <translation>El directori de treball s'ha canviat, però el nou directori de treball s'utilitza DESPRÉS de sortir de la GUI iRIC.</translation>
     </message>
     <message>
         <source>Python path</source>
@@ -704,7 +702,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Note: Used to run solvers written in Python.</source>
-        <translation>Nota: s&apos;utilitza per executar solucions escrites en Python.</translation>
+        <translation>Nota: s'utilitza per executar solucions escrites en Python.</translation>
     </message>
 </context>
 <context>
@@ -735,7 +733,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Note: Loading an image whose width (or height) is larger than the maximum, will be automatically resized.</source>
-        <translation>Nota: es canviarà automàticament la mida de la càrrega d&apos;una imatge l&apos;amplada (o alçada) superior al màxim.</translation>
+        <translation>Nota: es canviarà automàticament la mida de la càrrega d'una imatge l'amplada (o alçada) superior al màxim.</translation>
     </message>
     <message>
         <source>Vector</source>
@@ -794,7 +792,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Check aspect ratio of cell edges is less than</source>
-        <translation>Comproveu que la relació d&apos;aspecte de les vores de la cel·la sigui inferior a</translation>
+        <translation>Comproveu que la relació d'aspecte de les vores de la cel·la sigui inferior a</translation>
     </message>
     <message>
         <source>Check variation of cell edge length is less than</source>
@@ -810,11 +808,11 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Check angle of cell is more than</source>
-        <translation>L&apos;angle de comprovació de la cel·la és superior a</translation>
+        <translation>L'angle de comprovació de la cel·la és superior a</translation>
     </message>
     <message>
         <source>Note: Settings on this page are applied only to structured grids.</source>
-        <translation>Nota: la configuració d&apos;aquesta pàgina només s&apos;aplica a les quadrícules estructurades.</translation>
+        <translation>Nota: la configuració d'aquesta pàgina només s'aplica a les quadrícules estructurades.</translation>
     </message>
 </context>
 <context>
@@ -849,7 +847,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>User name:</source>
-        <translation>Nom d&apos;usuari:</translation>
+        <translation>Nom d'usuari:</translation>
     </message>
     <message>
         <source>Password:</source>
@@ -864,7 +862,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>List of fractions for cross section editing:</source>
-        <translation>Llista de fraccions per a l&apos;edició de seccions:</translation>
+        <translation>Llista de fraccions per a l'edició de seccions:</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
@@ -892,7 +890,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Are you sure you want to delete the selected item?</source>
-        <translation>Esteu segur que voleu suprimir l&apos;element seleccionat?</translation>
+        <translation>Esteu segur que voleu suprimir l'element seleccionat?</translation>
     </message>
     <message>
         <source>Are you sure you want to restore default values?</source>
@@ -946,11 +944,11 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>&amp;Input Google Maps API key</source>
-        <translation>Introduïu la clau de l&apos;API de Google Maps (&amp;I)</translation>
+        <translation>Introduïu la clau de l'API de Google Maps (&amp;I)</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Google Maps Platform now need API key to use Google Maps through iRIC. Please get your own Google Maps API key and input here, to use Google Maps images as background images on Pre-processor and on 2D Post-Processing Windows.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Google Maps Platform ara necessita una clau API per utilitzar Google Maps mitjançant iRIC. Obteniu la vostra pròpia clau de l&apos;API de Google Maps i introduïu-la aquí per utilitzar les imatges de Google Maps com a imatges de fons en el processador previ i en el Windows de processament 2D. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Google Maps Platform ara necessita una clau API per utilitzar Google Maps mitjançant iRIC. Obteniu la vostra pròpia clau de l'API de Google Maps i introduïu-la aquí per utilitzar les imatges de Google Maps com a imatges de fons en el processador previ i en el Windows de processament 2D. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Background Image (Internet) Edit</source>
@@ -958,7 +956,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Input Google Maps API Key</source>
-        <translation>Introduïu la clau de l&apos;API de Google Maps</translation>
+        <translation>Introduïu la clau de l'API de Google Maps</translation>
     </message>
     <message>
         <source>API Key: </source>
@@ -1020,7 +1018,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Edit Web Elevation Data</source>
-        <translation>Editeu dades d&apos;elevació web</translation>
+        <translation>Editeu dades d'elevació web</translation>
     </message>
 </context>
 <context>
@@ -1058,11 +1056,11 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Filename:</source>
-        <translation>Nom de l&apos;arxiu:</translation>
+        <translation>Nom de l'arxiu:</translation>
     </message>
     <message>
         <source>Last update time:</source>
-        <translation>Hora de l&apos;última actualització:</translation>
+        <translation>Hora de l'última actualització:</translation>
     </message>
     <message>
         <source>Solver:</source>
@@ -1102,11 +1100,11 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>(Not saved yet)</source>
-        <translation>(Encara no s&apos;ha desat)</translation>
+        <translation>(Encara no s'ha desat)</translation>
     </message>
     <message>
         <source>Setup finished</source>
-        <translation>S&apos;ha acabat la configuració</translation>
+        <translation>S'ha acabat la configuració</translation>
     </message>
     <message>
         <source>Setup unfinished</source>
@@ -1287,9 +1285,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>Advertiment</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
+        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
 %2</source>
-        <translation>S&apos;ha produït un error en carregar el fitxer de definició del solucionador a la carpeta &quot;%1&quot;. Aquest solucionador s&apos;ignora. %2</translation>
+        <translation>S'ha produït un error en carregar el fitxer de definició del solucionador a la carpeta "%1". Aquest solucionador s'ignora. %2</translation>
     </message>
 </context>
 <context>
@@ -1319,14 +1317,14 @@ Do you want to launch iRIC Maintainance?</source>
     <name>SolverDefinitionTranslationUpdateWizard</name>
     <message>
         <source>Definition File Translation Update Wizard</source>
-        <translation>Assistent d&apos;actualització de la traducció de fitxers de definició</translation>
+        <translation>Assistent d'actualització de la traducció de fitxers de definició</translation>
     </message>
 </context>
 <context>
     <name>StartPageDialog</name>
     <message>
         <source>iRIC Start Page</source>
-        <translation>Pàgina d&apos;inici de l&apos;ICRIC</translation>
+        <translation>Pàgina d'inici de l'ICRIC</translation>
     </message>
     <message>
         <source>iRIC </source>
@@ -1381,7 +1379,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>Error occured while loading Solver definition file.</source>
-        <translation>S&apos;ha produït un error en carregar el fitxer de definició de Solver.</translation>
+        <translation>S'ha produït un error en carregar el fitxer de definició de Solver.</translation>
     </message>
     <message>
         <source>Open iRIC project file</source>
@@ -1408,7 +1406,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Sembla que aquest projecte l’obre una altra finestra GUI iRIC. No podeu obrir una carpeta de projecte des de diverses finestres de la GUI.</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation>El projecte obert no es copia al directori de treball i se us obligarà a desar les modificacions que feu a aquest projecte. Si voleu conservar el projecte actual, deseu-lo primer en un altre projecte.</translation>
     </message>
     <message>
@@ -1425,7 +1423,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>This Project is modified. Do you want to save?</source>
-        <translation>Aquest projecte s&apos;ha modificat. Voleu estalviar?</translation>
+        <translation>Aquest projecte s'ha modificat. Voleu estalviar?</translation>
     </message>
     <message>
         <source>Save iRIC project file</source>
@@ -1445,11 +1443,11 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>The project folder has to be empty.</source>
-        <translation>La carpeta del projecte ha d&apos;estar buida.</translation>
+        <translation>La carpeta del projecte ha d'estar buida.</translation>
     </message>
     <message>
         <source>Saving project failed.</source>
-        <translation>No s&apos;ha pogut desar el projecte.</translation>
+        <translation>No s'ha pogut desar el projecte.</translation>
     </message>
     <message>
         <source>This project has HUGE calculation result, so it cannot be saved as a file (*.ipro). Please save as a project.</source>
@@ -1461,7 +1459,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>Project successfully saved to %1.</source>
-        <translation>El projecte s&apos;ha desat correctament a %1.</translation>
+        <translation>El projecte s'ha desat correctament a %1.</translation>
     </message>
     <message>
         <source>The solver is still running. Really quit?</source>
@@ -1473,7 +1471,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>Copied snapshot to clipboard.</source>
-        <translation>S&apos;ha copiat la instantània al porta-retalls.</translation>
+        <translation>S'ha copiat la instantània al porta-retalls.</translation>
     </message>
     <message>
         <source>This menu is not available while the solver is running.</source>
@@ -1493,7 +1491,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>%1 already exists, and failed to remove it. Movie file is not output.</source>
-        <translation>%1 ja existeix i no s&apos;ha pogut eliminar. El fitxer de pel·lícula no es publica.</translation>
+        <translation>%1 ja existeix i no s'ha pogut eliminar. El fitxer de pel·lícula no es publica.</translation>
     </message>
     <message>
         <source>iRIC %1</source>
@@ -1521,7 +1519,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>Unknown options specified. They are neglected. %1</source>
-        <translation>S&apos;han especificat opcions desconegudes. Es descuiden. %1</translation>
+        <translation>S'han especificat opcions desconegudes. Es descuiden. %1</translation>
     </message>
     <message>
         <source>More than two project files are passed as arguments. They are neglected. %1</source>
@@ -1533,7 +1531,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>Calculation result cleared.</source>
-        <translation>S&apos;ha esborrat el resultat del càlcul.</translation>
+        <translation>S'ha esborrat el resultat del càlcul.</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1557,19 +1555,19 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>Saving particles as VTK files...</source>
-        <translation>S&apos;estan desant partícules com a fitxers VTK...</translation>
+        <translation>S'estan desant partícules com a fitxers VTK...</translation>
     </message>
     <message>
         <source>Error occured while saving.</source>
-        <translation>S&apos;ha produït un error en desar.</translation>
+        <translation>S'ha produït un error en desar.</translation>
     </message>
     <message>
         <source>Currently active sub-window does not support exporting contour figure.</source>
-        <translation>La subfinestra activa actualment no admet l&apos;exportació de la figura del contorn.</translation>
+        <translation>La subfinestra activa actualment no admet l'exportació de la figura del contorn.</translation>
     </message>
     <message>
-        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
-        <translation>Per exportar el fitxer de forma, canvieu &quot;Configuració de pantalla&quot; a &quot;Figura de contorn&quot;, no a &quot;Fringe de color&quot; o &quot;Isolines&quot;.</translation>
+        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
+        <translation>Per exportar el fitxer de forma, canvieu "Configuració de pantalla" a "Figura de contorn", no a "Fringe de color" o "Isolines".</translation>
     </message>
     <message>
         <source>Export contour figure to ESRI Shapefiles</source>
@@ -1581,7 +1579,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>Saving contour figure as ESRI Shapefiles...</source>
-        <translation>S&apos;està desant la figura del contorn com a fitxers de format ESRI...</translation>
+        <translation>S'està desant la figura del contorn com a fitxers de format ESRI...</translation>
     </message>
     <message>
         <source>No Contour Figure is drawn now.</source>
@@ -1601,11 +1599,11 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>Saving KMZ file...</source>
-        <translation>S&apos;està desant el fitxer KMZ...</translation>
+        <translation>S'està desant el fitxer KMZ...</translation>
     </message>
     <message>
         <source>Google Earth KMZ is exported to %1 successfully.</source>
-        <translation>Google Earth KMZ s&apos;exporta a %1 amb èxit.</translation>
+        <translation>Google Earth KMZ s'exporta a %1 amb èxit.</translation>
     </message>
     <message>
         <source>Import Visualization/Graph Settings</source>
@@ -1682,19 +1680,19 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Saving snapshot failed.</source>
-        <translation>No s&apos;ha pogut desar la instantània.</translation>
+        <translation>No s'ha pogut desar la instantània.</translation>
     </message>
     <message>
         <source>Wrong file name specified.</source>
-        <translation>S&apos;ha especificat un nom de fitxer incorrecte.</translation>
+        <translation>S'ha especificat un nom de fitxer incorrecte.</translation>
     </message>
     <message>
         <source>Snapshot successfully saved to %1.</source>
-        <translation>La instantània s&apos;ha desat correctament a %1.</translation>
+        <translation>La instantània s'ha desat correctament a %1.</translation>
     </message>
     <message>
         <source>All files in %1 is deleted.</source>
-        <translation>Tots els fitxers a %1 s&apos;elimina.</translation>
+        <translation>Tots els fitxers a %1 s'elimina.</translation>
     </message>
     <message>
         <source>%1 %2</source>
@@ -1729,7 +1727,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>copyright</source>
-        <translation>drets d&apos;autor</translation>
+        <translation>drets d'autor</translation>
     </message>
     <message>
         <source>iRIC %1</source>
@@ -1745,7 +1743,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Terms of use: </source>
-        <translation>Condicions d&apos;ús:</translation>
+        <translation>Condicions d'ús:</translation>
     </message>
     <message>
         <source> (Japanese)</source>
@@ -1860,7 +1858,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Show iRIC Start Page...</source>
-        <translation>Mostra la pàgina d&apos;inici de l&apos;ICRIC...</translation>
+        <translation>Mostra la pàgina d'inici de l'ICRIC...</translation>
     </message>
     <message>
         <source>E&amp;xit</source>
@@ -1912,15 +1910,15 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>&amp;Toolbar</source>
-        <translation>Barra d&apos;eines (&amp;T)</translation>
+        <translation>Barra d'eines (&amp;T)</translation>
     </message>
     <message>
         <source>&amp;Main Toolbar</source>
-        <translation>Barra d&apos;eines principal (&amp;M)</translation>
+        <translation>Barra d'eines principal (&amp;M)</translation>
     </message>
     <message>
         <source>&amp;Windows list Toolbar</source>
-        <translation>Barra d&apos;eines de la llista de Windows (&amp;W)</translation>
+        <translation>Barra d'eines de la llista de Windows (&amp;W)</translation>
     </message>
     <message>
         <source>&amp;Animation Toolbar</source>
@@ -1928,7 +1926,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>&amp;Object Browser</source>
-        <translation>Navegador d&apos;objectes (&amp;O)</translation>
+        <translation>Navegador d'objectes (&amp;O)</translation>
     </message>
     <message>
         <source>&amp;Attribute Browser</source>
@@ -1936,7 +1934,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>&amp;Status Bar</source>
-        <translation>Barra d&apos;estat (&amp;S)</translation>
+        <translation>Barra d'estat (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;Background Color...</source>
@@ -2000,7 +1998,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Move &amp;Left</source>
-        <translation>Mou-te a l&apos;esquerra (&amp;L)</translation>
+        <translation>Mou-te a l'esquerra (&amp;L)</translation>
     </message>
     <message>
         <source>Move &amp;Right</source>
@@ -2053,7 +2051,7 @@ Option -&gt; Preferences</source>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>&amp;Solver Information...</source>
@@ -2061,7 +2059,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Focus &amp;PreProcessor Window</source>
-        <translation>Finestra PreProcessador d&apos;enfocament (&amp;P)</translation>
+        <translation>Finestra PreProcessador d'enfocament (&amp;P)</translation>
     </message>
     <message>
         <source>Focus &amp;Solver Console Window</source>
@@ -2080,8 +2078,8 @@ Option -&gt; Preferences</source>
         <translation>Obre una nova finestra de post-processament 2D</translation>
     </message>
     <message>
-        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
-        <translation>Obriu una nova finestra de postprocessament 2D Bird&apos;s Eye</translation>
+        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
+        <translation>Obriu una nova finestra de postprocessament 2D Bird's Eye</translation>
     </message>
     <message>
         <source>Open new 3D Post-Processing Window</source>
@@ -2173,11 +2171,11 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Main ToolBar</source>
-        <translation>Barra d&apos;eines principal</translation>
+        <translation>Barra d'eines principal</translation>
     </message>
     <message>
         <source>Window list Toolbar</source>
-        <translation>Barra d&apos;eines llista de finestres</translation>
+        <translation>Barra d'eines llista de finestres</translation>
     </message>
     <message>
         <source>Ctrl+C</source>

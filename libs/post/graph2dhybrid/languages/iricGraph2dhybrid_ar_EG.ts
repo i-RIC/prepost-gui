@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ar_EG">
 <context>
     <name>Graph2dHybridSettingDialog</name>
@@ -385,7 +383,7 @@
     </message>
     <message>
         <source>&amp;Font Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>إعداد الخط (&amp;F)</translation>
     </message>
 </context>
 <context>
@@ -487,8 +485,8 @@
         <translation>فشل إعداد نافذة الرسم البياني. لم يتم تحميل نتيجة الحساب بشكل صحيح.</translation>
     </message>
     <message>
-        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm &quot;Create grid from from cross-section data&quot;&lt;/li&gt;&lt;/ul&gt;</source>
-        <translation>يمكن استخدام هذه الوظيفة عند استيفاء الشروط التالية: &lt;ul&gt; &lt;li&gt; رسم بياني لنتيجة شبكة منظمة ثنائية الأبعاد. &lt;/ li&gt; &lt;li&gt; المحور السيني هو اتجاه I في الشبكة. &lt;/ li &gt; &lt;li&gt; يتم إنشاء الشبكة باستخدام الخوارزمية &quot;إنشاء شبكة من بيانات المقطع العرضي&quot; &lt;/ li&gt; &lt;/ul&gt;</translation>
+        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm "Create grid from from cross-section data"&lt;/li&gt;&lt;/ul&gt;</source>
+        <translation>يمكن استخدام هذه الوظيفة عند استيفاء الشروط التالية: &lt;ul&gt; &lt;li&gt; رسم بياني لنتيجة شبكة منظمة ثنائية الأبعاد. &lt;/ li&gt; &lt;li&gt; المحور السيني هو اتجاه I في الشبكة. &lt;/ li &gt; &lt;li&gt; يتم إنشاء الشبكة باستخدام الخوارزمية "إنشاء شبكة من بيانات المقطع العرضي" &lt;/ li&gt; &lt;/ul&gt;</translation>
     </message>
 </context>
 <context>
@@ -582,8 +580,8 @@
         <translation>خطأ</translation>
     </message>
     <message>
-        <source>The title of the first column has to be &quot;X&quot;</source>
-        <translation>يجب أن يكون عنوان العمود الأول &quot;X&quot;</translation>
+        <source>The title of the first column has to be "X"</source>
+        <translation>يجب أن يكون عنوان العمود الأول "X"</translation>
     </message>
     <message>
         <source>The number of data of %1 and %2 mismatch. Data %1 is skipped.</source>
@@ -617,31 +615,31 @@
     <name>Graph2dHybridWindowFontSettingDialog</name>
     <message>
         <source>Chart Font Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>إعداد خط الرسم البياني</translation>
     </message>
     <message>
         <source>Chart Title:</source>
-        <translation type="unfinished"></translation>
+        <translation>عنوان التخطيط:</translation>
     </message>
     <message>
         <source>Legends:</source>
-        <translation type="unfinished"></translation>
+        <translation>أساطير:</translation>
     </message>
     <message>
         <source>X axis:</source>
-        <translation type="unfinished"></translation>
+        <translation>المحور س:</translation>
     </message>
     <message>
         <source>Title:</source>
-        <translation type="unfinished"></translation>
+        <translation>عنوان:</translation>
     </message>
     <message>
         <source>Ticks:</source>
-        <translation type="unfinished"></translation>
+        <translation>القراد:</translation>
     </message>
     <message>
         <source>Y axis:</source>
-        <translation type="unfinished"></translation>
+        <translation>المحور ص:</translation>
     </message>
 </context>
 <context>
@@ -662,8 +660,8 @@
         <translation>خطأ</translation>
     </message>
     <message>
-        <source>The title of the first column has to be &quot;X&quot;</source>
-        <translation>يجب أن يكون عنوان العمود الأول &quot;X&quot;</translation>
+        <source>The title of the first column has to be "X"</source>
+        <translation>يجب أن يكون عنوان العمود الأول "X"</translation>
     </message>
     <message>
         <source>Warning</source>

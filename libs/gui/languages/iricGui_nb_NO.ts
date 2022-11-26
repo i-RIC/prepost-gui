@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="nb_NO">
 <context>
     <name>AnimationController</name>
@@ -451,8 +449,8 @@ This wizard will generate or update translation files for solver definition file
         <translation>Velg Solver</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
-        <translation>Når du oppretter et nytt prosjekt, må du velge løsningen som skal brukes til beregning. Velg en løsning, og trykk &quot;OK&quot; -knappen.</translation>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
+        <translation>Når du oppretter et nytt prosjekt, må du velge løsningen som skal brukes til beregning. Velg en løsning, og trykk "OK" -knappen.</translation>
     </message>
 </context>
 <context>
@@ -511,7 +509,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Font Default</source>
-        <translation type="unfinished"></translation>
+        <translation>Font Standard</translation>
     </message>
 </context>
 <context>
@@ -537,75 +535,75 @@ Do you want to launch iRIC Maintainance?</source>
     <name>PreferencePageFontDefault</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Skjema</translation>
+        <translation>Skjema</translation>
     </message>
     <message>
         <source>Common</source>
-        <translation type="unfinished"></translation>
+        <translation>Vanlig</translation>
     </message>
     <message>
         <source>Grid Shape / Grid Indices</source>
-        <translation type="unfinished"></translation>
+        <translation>Rutenettform / Rutenettindekser</translation>
     </message>
     <message>
         <source>Color Bar</source>
-        <translation type="unfinished"></translation>
+        <translation>Fargelinje</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Tittel</translation>
     </message>
     <message>
         <source>Labels</source>
-        <translation type="unfinished"></translation>
+        <translation>Etiketter</translation>
     </message>
     <message>
         <source>Arrow Length Legend</source>
-        <translation type="unfinished"></translation>
+        <translation>Pillengdeforklaring</translation>
     </message>
     <message>
         <source>Pre-processing Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Forbehandlingsvindu</translation>
     </message>
     <message>
         <source>Upstream / Downstream</source>
-        <translation type="unfinished"></translation>
+        <translation>Oppstrøms nedstrøms</translation>
     </message>
     <message>
         <source>River Survey Data Cross-section Names</source>
-        <translation type="unfinished"></translation>
+        <translation>Navn på tverrsnitt av elveundersøkelsesdata</translation>
     </message>
     <message>
         <source>Boundary Condition Names</source>
-        <translation type="unfinished"></translation>
+        <translation>Navn på grensevilkår</translation>
     </message>
     <message>
         <source>Visualization Windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Visualisering Windows</translation>
     </message>
     <message>
         <source>Labels:</source>
-        <translation type="unfinished"></translation>
+        <translation>Etiketter:</translation>
     </message>
     <message>
         <source>Chart Windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Kartvinduer</translation>
     </message>
     <message>
         <source>Chart Title:</source>
-        <translation type="unfinished"></translation>
+        <translation>Diagramtittel:</translation>
     </message>
     <message>
         <source>Legends:</source>
-        <translation type="unfinished"></translation>
+        <translation>Legender:</translation>
     </message>
     <message>
         <source>Axis Title:</source>
-        <translation type="unfinished"></translation>
+        <translation>Aksetittel:</translation>
     </message>
     <message>
         <source>Axis Ticks:</source>
-        <translation type="unfinished"></translation>
+        <translation>Aksemerker:</translation>
     </message>
 </context>
 <context>
@@ -1287,9 +1285,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>Advarsel</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
+        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
 %2</source>
-        <translation>Det oppsto en feil under lasting av løsningsdefinisjonsfil i mappen &quot;%1&quot;. Denne løsningen blir ignorert. %2</translation>
+        <translation>Det oppsto en feil under lasting av løsningsdefinisjonsfil i mappen "%1". Denne løsningen blir ignorert. %2</translation>
     </message>
 </context>
 <context>
@@ -1408,7 +1406,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Dette prosjektet ser ut til å bli åpnet av et annet iRIC GUI -vindu. Du kan ikke åpne en prosjektmappe fra flere GUI -vinduer.</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation>Det åpnede prosjektet blir ikke kopiert til arbeidskatalogen, og du blir tvunget til å lagre endringene du gjør i dette prosjektet. Hvis du vil beholde det nåværende prosjektet, må du først lagre det i et annet prosjekt.</translation>
     </message>
     <message>
@@ -1568,8 +1566,8 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Aktivt undervindu støtter ikke eksport av konturfigur.</translation>
     </message>
     <message>
-        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
-        <translation>For å eksportere formfil, bytt &quot;Displayinnstilling&quot; til &quot;Konturfigur&quot;, ikke &quot;Color Fringe&quot; eller &quot;Isolines&quot;.</translation>
+        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
+        <translation>For å eksportere formfil, bytt "Displayinnstilling" til "Konturfigur", ikke "Color Fringe" eller "Isolines".</translation>
     </message>
     <message>
         <source>Export contour figure to ESRI Shapefiles</source>
@@ -2053,7 +2051,7 @@ Option -&gt; Preferences</source>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>&amp;Solver Information...</source>
@@ -2080,8 +2078,8 @@ Option -&gt; Preferences</source>
         <translation>Åpne nytt 2D-vindu for etterbehandling</translation>
     </message>
     <message>
-        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
-        <translation>Åpne nytt 2D Bird&apos;s-Eye Post-Processing Window</translation>
+        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
+        <translation>Åpne nytt 2D Bird's-Eye Post-Processing Window</translation>
     </message>
     <message>
         <source>Open new 3D Post-Processing Window</source>

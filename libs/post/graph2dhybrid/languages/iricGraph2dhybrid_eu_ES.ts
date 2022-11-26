@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="eu_ES">
 <context>
     <name>Graph2dHybridSettingDialog</name>
@@ -385,7 +383,7 @@
     </message>
     <message>
         <source>&amp;Font Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Letra-tipoaren ezarpena (&amp;F)</translation>
     </message>
 </context>
 <context>
@@ -487,8 +485,8 @@
         <translation>Grafikoaren leihoaren konfigurazioak huts egin du. Kalkuluaren emaitza ez da behar bezala kargatu.</translation>
     </message>
     <message>
-        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm &quot;Create grid from from cross-section data&quot;&lt;/li&gt;&lt;/ul&gt;</source>
-        <translation>Funtzio hau baldintza hauek betetzen direnean erabil daiteke: &lt;ul&gt; &lt;li&gt; Bi dimentsiotako sareta egituratuaren emaitza grafikoa marrazten da. &lt;/li&gt; &lt;li&gt; X ardatza saretaren I norabidea da. &lt;/ Li &gt; &lt;li&gt; Sareta &quot;Sortu sareta zeharkako datuetatik abiatuta&quot; algoritmoa erabiliz sortzen da &lt;/li&gt; &lt;/ul&gt;</translation>
+        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm "Create grid from from cross-section data"&lt;/li&gt;&lt;/ul&gt;</source>
+        <translation>Funtzio hau baldintza hauek betetzen direnean erabil daiteke: &lt;ul&gt; &lt;li&gt; Bi dimentsiotako sareta egituratuaren emaitza grafikoa marrazten da. &lt;/li&gt; &lt;li&gt; X ardatza saretaren I norabidea da. &lt;/ Li &gt; &lt;li&gt; Sareta "Sortu sareta zeharkako datuetatik abiatuta" algoritmoa erabiliz sortzen da &lt;/li&gt; &lt;/ul&gt;</translation>
     </message>
 </context>
 <context>
@@ -582,8 +580,8 @@
         <translation>Errorea</translation>
     </message>
     <message>
-        <source>The title of the first column has to be &quot;X&quot;</source>
-        <translation>Lehen zutabearen izenburuak &quot;X&quot; izan behar du</translation>
+        <source>The title of the first column has to be "X"</source>
+        <translation>Lehen zutabearen izenburuak "X" izan behar du</translation>
     </message>
     <message>
         <source>The number of data of %1 and %2 mismatch. Data %1 is skipped.</source>
@@ -617,31 +615,31 @@
     <name>Graph2dHybridWindowFontSettingDialog</name>
     <message>
         <source>Chart Font Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Diagramako letra-tipoaren ezarpena</translation>
     </message>
     <message>
         <source>Chart Title:</source>
-        <translation type="unfinished"></translation>
+        <translation>Diagramaren izenburua:</translation>
     </message>
     <message>
         <source>Legends:</source>
-        <translation type="unfinished"></translation>
+        <translation>Kondairak:</translation>
     </message>
     <message>
         <source>X axis:</source>
-        <translation type="unfinished"></translation>
+        <translation>X ardatza:</translation>
     </message>
     <message>
         <source>Title:</source>
-        <translation type="unfinished"></translation>
+        <translation>Izenburua:</translation>
     </message>
     <message>
         <source>Ticks:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tikak:</translation>
     </message>
     <message>
         <source>Y axis:</source>
-        <translation type="unfinished"></translation>
+        <translation>Y ardatza:</translation>
     </message>
 </context>
 <context>
@@ -662,8 +660,8 @@
         <translation>Errorea</translation>
     </message>
     <message>
-        <source>The title of the first column has to be &quot;X&quot;</source>
-        <translation>Lehen zutabearen izenburuak &quot;X&quot; izan behar du</translation>
+        <source>The title of the first column has to be "X"</source>
+        <translation>Lehen zutabearen izenburuak "X" izan behar du</translation>
     </message>
     <message>
         <source>Warning</source>

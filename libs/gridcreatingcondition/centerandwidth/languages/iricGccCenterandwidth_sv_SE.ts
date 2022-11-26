@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="sv_SE">
 <context>
     <name>GridCreatingConditionCenterAndWidth</name>
@@ -89,7 +87,7 @@
     </message>
     <message>
         <source>Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Skärminställning</translation>
     </message>
 </context>
 <context>

@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="nb_NO">
 <context>
     <name>Graph2dHybridSettingDialog</name>
@@ -385,7 +383,7 @@
     </message>
     <message>
         <source>&amp;Font Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Skriftinnstilling (&amp;F)</translation>
     </message>
 </context>
 <context>
@@ -487,8 +485,8 @@
         <translation>Oppsett av grafvindu mislykkes. Beregningsresultatet er ikke lastet inn riktig.</translation>
     </message>
     <message>
-        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm &quot;Create grid from from cross-section data&quot;&lt;/li&gt;&lt;/ul&gt;</source>
-        <translation>Denne funksjonen kan brukes når følgende betingelser er oppfylt: &lt;ul&gt; &lt;li&gt; Graf for todimensjonalt strukturert rutenettresultat tegnes. &lt;/li&gt; &lt;li&gt; X-aksen er I-retning i rutenettet. &lt;/Li &gt; &lt;li&gt; Rutenettet er opprettet ved hjelp av algoritmen &quot;Lag rutenett fra tverrsnittsdata&quot; &lt;/li&gt; &lt;/ul&gt;</translation>
+        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm "Create grid from from cross-section data"&lt;/li&gt;&lt;/ul&gt;</source>
+        <translation>Denne funksjonen kan brukes når følgende betingelser er oppfylt: &lt;ul&gt; &lt;li&gt; Graf for todimensjonalt strukturert rutenettresultat tegnes. &lt;/li&gt; &lt;li&gt; X-aksen er I-retning i rutenettet. &lt;/Li &gt; &lt;li&gt; Rutenettet er opprettet ved hjelp av algoritmen "Lag rutenett fra tverrsnittsdata" &lt;/li&gt; &lt;/ul&gt;</translation>
     </message>
 </context>
 <context>
@@ -582,8 +580,8 @@
         <translation>Feil</translation>
     </message>
     <message>
-        <source>The title of the first column has to be &quot;X&quot;</source>
-        <translation>Tittelen på den første kolonnen må være &quot;X&quot;</translation>
+        <source>The title of the first column has to be "X"</source>
+        <translation>Tittelen på den første kolonnen må være "X"</translation>
     </message>
     <message>
         <source>The number of data of %1 and %2 mismatch. Data %1 is skipped.</source>
@@ -617,31 +615,31 @@
     <name>Graph2dHybridWindowFontSettingDialog</name>
     <message>
         <source>Chart Font Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Kartskriftinnstilling</translation>
     </message>
     <message>
         <source>Chart Title:</source>
-        <translation type="unfinished"></translation>
+        <translation>Diagramtittel:</translation>
     </message>
     <message>
         <source>Legends:</source>
-        <translation type="unfinished"></translation>
+        <translation>Legender:</translation>
     </message>
     <message>
         <source>X axis:</source>
-        <translation type="unfinished"></translation>
+        <translation>X-akse:</translation>
     </message>
     <message>
         <source>Title:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tittel:</translation>
     </message>
     <message>
         <source>Ticks:</source>
-        <translation type="unfinished"></translation>
+        <translation>Flått:</translation>
     </message>
     <message>
         <source>Y axis:</source>
-        <translation type="unfinished"></translation>
+        <translation>Y-akse:</translation>
     </message>
 </context>
 <context>
@@ -662,8 +660,8 @@
         <translation>Feil</translation>
     </message>
     <message>
-        <source>The title of the first column has to be &quot;X&quot;</source>
-        <translation>Tittelen på den første kolonnen må være &quot;X&quot;</translation>
+        <source>The title of the first column has to be "X"</source>
+        <translation>Tittelen på den første kolonnen må være "X"</translation>
     </message>
     <message>
         <source>Warning</source>

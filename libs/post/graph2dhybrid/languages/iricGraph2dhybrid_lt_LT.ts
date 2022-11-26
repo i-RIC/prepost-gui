@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="lt_LT">
 <context>
     <name>Graph2dHybridSettingDialog</name>
@@ -385,7 +383,7 @@
     </message>
     <message>
         <source>&amp;Font Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Šrifto nustatymas (&amp;F)</translation>
     </message>
 </context>
 <context>
@@ -487,8 +485,8 @@
         <translation>Nepavyko nustatyti grafiko lango. Skaičiavimo rezultatas netinkamai įkeliamas.</translation>
     </message>
     <message>
-        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm &quot;Create grid from from cross-section data&quot;&lt;/li&gt;&lt;/ul&gt;</source>
-        <translation>Šią funkciją galima naudoti, kai įvykdomos šios sąlygos: &lt;ul&gt; &lt;li&gt; nubrėžta dviejų matmenų struktūrinio tinklelio rezultato diagrama. &lt;/li&gt; &lt;li&gt; X ašis yra I kryptis tinklelyje. &lt;/Li &gt; &lt;li&gt; Tinklelis kuriamas naudojant algoritmą &quot;Sukurti tinklelį iš skerspjūvio duomenų&quot; &lt;/li&gt; &lt;/ul&gt;</translation>
+        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm "Create grid from from cross-section data"&lt;/li&gt;&lt;/ul&gt;</source>
+        <translation>Šią funkciją galima naudoti, kai įvykdomos šios sąlygos: &lt;ul&gt; &lt;li&gt; nubrėžta dviejų matmenų struktūrinio tinklelio rezultato diagrama. &lt;/li&gt; &lt;li&gt; X ašis yra I kryptis tinklelyje. &lt;/Li &gt; &lt;li&gt; Tinklelis kuriamas naudojant algoritmą "Sukurti tinklelį iš skerspjūvio duomenų" &lt;/li&gt; &lt;/ul&gt;</translation>
     </message>
 </context>
 <context>
@@ -582,7 +580,7 @@
         <translation>Klaida</translation>
     </message>
     <message>
-        <source>The title of the first column has to be &quot;X&quot;</source>
+        <source>The title of the first column has to be "X"</source>
         <translation>Pirmojo stulpelio pavadinimas turi būti „X“</translation>
     </message>
     <message>
@@ -617,31 +615,31 @@
     <name>Graph2dHybridWindowFontSettingDialog</name>
     <message>
         <source>Chart Font Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Diagramos šrifto nustatymas</translation>
     </message>
     <message>
         <source>Chart Title:</source>
-        <translation type="unfinished"></translation>
+        <translation>Diagramos pavadinimas:</translation>
     </message>
     <message>
         <source>Legends:</source>
-        <translation type="unfinished"></translation>
+        <translation>Legendos:</translation>
     </message>
     <message>
         <source>X axis:</source>
-        <translation type="unfinished"></translation>
+        <translation>X ašis:</translation>
     </message>
     <message>
         <source>Title:</source>
-        <translation type="unfinished"></translation>
+        <translation>Pavadinimas:</translation>
     </message>
     <message>
         <source>Ticks:</source>
-        <translation type="unfinished"></translation>
+        <translation>Varnelės:</translation>
     </message>
     <message>
         <source>Y axis:</source>
-        <translation type="unfinished"></translation>
+        <translation>Y ašis:</translation>
     </message>
 </context>
 <context>
@@ -662,7 +660,7 @@
         <translation>Klaida</translation>
     </message>
     <message>
-        <source>The title of the first column has to be &quot;X&quot;</source>
+        <source>The title of the first column has to be "X"</source>
         <translation>Pirmojo stulpelio pavadinimas turi būti „X“</translation>
     </message>
     <message>

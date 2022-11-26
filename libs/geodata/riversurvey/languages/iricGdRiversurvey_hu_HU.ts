@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="hu_HU">
 <context>
     <name>GeoDataRiverCrosssectionAltitudeMoveDialog</name>
@@ -381,8 +379,8 @@
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
-If you want to adjust cross section position and map point clouod data again, you can use &quot;Map point cloud data&quot;</source>
-        <translation type="vanished">A keresztmetszeti adatokat pontfelhő-adatok felhasználásával állítják elő. Ha újra szeretné módosítani a keresztmetszeti pozíciót és a térképi pontok leképezésének adatait, használhatja a &quot;Térképes felhőadatok&quot; lehetőséget</translation>
+If you want to adjust cross section position and map point clouod data again, you can use "Map point cloud data"</source>
+        <translation type="vanished">A keresztmetszeti adatokat pontfelhő-adatok felhasználásával állítják elő. Ha újra szeretné módosítani a keresztmetszeti pozíciót és a térképi pontok leképezésének adatait, használhatja a "Térképes felhőadatok" lehetőséget</translation>
     </message>
     <message>
         <source>Map point cloud data</source>
@@ -394,13 +392,13 @@ If you want to adjust cross section position and map point clouod data again, yo
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
-If you want to adjust cross section position and map point cloud data again, you can use &quot;Map point cloud data&quot;</source>
+If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
         <translation>A keresztmetszeti adatok pontfelhő adatok felhasználásával jönnek létre. Ha ismét módosítani szeretné a keresztmetszet helyzetét és a térképpontfelhő adatait, használhatja a „Térképpontfelhőadatok” lehetőséget.</translation>
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
 In some region, data did not exists in point cloud data, and value 0 was mapped for those points.
-If you want to adjust cross section position and map point cloud data again, you can use &quot;Map point cloud data&quot;</source>
+If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
         <translation>A keresztmetszeti adatok pontfelhő adatok felhasználásával jönnek létre. Egyes régiókban az adatok nem léteznek a pontfelhő-adatokban, és ezekhez a pontokhoz 0 érték került hozzárendelésre. Ha ismét módosítani szeretné a keresztmetszet helyzetét és a térképpontfelhő adatait, használhatja a „Térképpontfelhőadatok” lehetőséget.</translation>
     </message>
 </context>
@@ -408,7 +406,7 @@ If you want to adjust cross section position and map point cloud data again, you
     <name>GeoDataRiverSurvey::Impl</name>
     <message>
         <source>  </source>
-        <translation></translation>
+        <translation />
     </message>
     <message>
         <source>&amp;Cross-Section Data</source>
@@ -615,8 +613,8 @@ If you want to adjust cross section position and map point cloud data again, you
         <translation>A magasság és a színátmenet beállításai érvénytelenek.</translation>
     </message>
     <message>
-        <source>When you specify elevation of end point, it can not be same to the start point. If you want to draw horizontal line, please select &quot;Specify horizontal distance&quot;.</source>
-        <translation>Amikor megadja a végpont magasságát, az nem lehet azonos a kezdőponttal. Ha vízszintes vonalat szeretne rajzolni, válassza a &quot;Vízszintes távolság megadása&quot; lehetőséget.</translation>
+        <source>When you specify elevation of end point, it can not be same to the start point. If you want to draw horizontal line, please select "Specify horizontal distance".</source>
+        <translation>Amikor megadja a végpont magasságát, az nem lehet azonos a kezdőponttal. Ha vízszintes vonalat szeretne rajzolni, válassza a "Vízszintes távolság megadása" lehetőséget.</translation>
     </message>
 </context>
 <context>
@@ -846,8 +844,8 @@ If you want to adjust cross section position and map point cloud data again, you
     </message>
     <message>
         <source>Edit the cross section by mouse-clicking. Finish editing by double clicking, or pressing return key.
-You can precisely edit the cross section by inputting values from dialog. Please enter dialog edit mode from &quot;Edit from Dialog&quot; in the right-clicking menu.</source>
-        <translation>Szerkessze a keresztmetszetet egérgombbal. Fejezze be a szerkesztést dupla kattintással vagy a Return billentyű megnyomásával. Pontosan szerkesztheti a keresztmetszetet, ha értékeket ír be a párbeszédablakból. Kérjük, lépjen be a párbeszédpanel szerkesztési módjába a &quot;Szerkesztés a párbeszédablakból&quot; menüben a jobb egérgombbal megjelenő menüben.</translation>
+You can precisely edit the cross section by inputting values from dialog. Please enter dialog edit mode from "Edit from Dialog" in the right-clicking menu.</source>
+        <translation>Szerkessze a keresztmetszetet egérgombbal. Fejezze be a szerkesztést dupla kattintással vagy a Return billentyű megnyomásával. Pontosan szerkesztheti a keresztmetszetet, ha értékeket ír be a párbeszédablakból. Kérjük, lépjen be a párbeszédpanel szerkesztési módjába a "Szerkesztés a párbeszédablakból" menüben a jobb egérgombbal megjelenő menüben.</translation>
     </message>
     <message>
         <source>Altitude Points Move</source>
@@ -917,7 +915,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Crosssection Names</source>
-        <translation type="unfinished"></translation>
+        <translation>Keresztmetszetek nevei</translation>
     </message>
 </context>
 <context>
@@ -1039,40 +1037,40 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>Hiba</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: LX value is invalid</source>
-        <translation>%1 vonal %2 &quot;%3&quot;: Az LX érték érvénytelen</translation>
+        <source>%1 line %2 "%3": LX value is invalid</source>
+        <translation>%1 vonal %2 "%3": Az LX érték érvénytelen</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: LY value is invalid</source>
-        <translation>%1 vonal %2 &quot;%3&quot;: A LY érték érvénytelen</translation>
+        <source>%1 line %2 "%3": LY value is invalid</source>
+        <translation>%1 vonal %2 "%3": A LY érték érvénytelen</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: RX value is invalid</source>
-        <translation>%1 vonal %2 &quot;%3&quot;: Az RX érték érvénytelen</translation>
+        <source>%1 line %2 "%3": RX value is invalid</source>
+        <translation>%1 vonal %2 "%3": Az RX érték érvénytelen</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: RY value is invalid</source>
-        <translation>%1 vonal %2 &quot;%3&quot;: Az RY érték érvénytelen</translation>
+        <source>%1 line %2 "%3": RY value is invalid</source>
+        <translation>%1 vonal %2 "%3": Az RY érték érvénytelen</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Point count is invalid</source>
-        <translation>%1 vonal %2 &quot;%3&quot;: A pontszám érvénytelen</translation>
+        <source>%1 line %2 "%3": Point count is invalid</source>
+        <translation>%1 vonal %2 "%3": A pontszám érvénytelen</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Invalid index value</source>
-        <translation>%1 vonal %2 &quot;%3&quot;: Érvénytelen indexérték</translation>
+        <source>%1 line %2 "%3": Invalid index value</source>
+        <translation>%1 vonal %2 "%3": Érvénytelen indexérték</translation>
     </message>
     <message>
         <source>%1 line %2: cross section data for %3 not enough</source>
         <translation>%1 vonal %2 : keresztmetszeti adatok %3 nem elég</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Distance value is invalid</source>
-        <translation>%1 vonal %2 &quot;%3&quot;: A távolság értéke érvénytelen</translation>
+        <source>%1 line %2 "%3": Distance value is invalid</source>
+        <translation>%1 vonal %2 "%3": A távolság értéke érvénytelen</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Elevation value is invalid</source>
-        <translation>%1 vonal %2 &quot;%3&quot;: A magasság értéke érvénytelen</translation>
+        <source>%1 line %2 "%3": Elevation value is invalid</source>
+        <translation>%1 vonal %2 "%3": A magasság értéke érvénytelen</translation>
     </message>
     <message>
         <source>#survey data is not found. Will be ignored.</source>
@@ -1111,8 +1109,8 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>%1 Vonal %2 : Olvasási hiba. Legalább két érték szükséges.</translation>
     </message>
     <message>
-        <source>%1 Line %2: Read error. Not real number value &quot;%3&quot;.</source>
-        <translation>%1 Vonal %2 : Olvasási hiba. Nem valós számérték &quot;%3&quot;.</translation>
+        <source>%1 Line %2: Read error. Not real number value "%3".</source>
+        <translation>%1 Vonal %2 : Olvasási hiba. Nem valós számérték "%3".</translation>
     </message>
     <message>
         <source>Cross section %1 does not cross the center line. Center point is set to be the middle point of low water way.</source>
@@ -1238,36 +1236,36 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>%1 Vonal %2 : A KP nem kerül bemenetre</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: LX value is invalid</source>
-        <translation>%1 Vonal %2 &quot;%3&quot;: Az LX érték érvénytelen</translation>
+        <source>%1 Line %2 "%3": LX value is invalid</source>
+        <translation>%1 Vonal %2 "%3": Az LX érték érvénytelen</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: LY value is invalid</source>
-        <translation>%1 Vonal %2 &quot;%3&quot;: A LY érték érvénytelen</translation>
+        <source>%1 Line %2 "%3": LY value is invalid</source>
+        <translation>%1 Vonal %2 "%3": A LY érték érvénytelen</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: RX value is invalid</source>
-        <translation>%1 Vonal %2 &quot;%3&quot;: Az RX érték érvénytelen</translation>
+        <source>%1 Line %2 "%3": RX value is invalid</source>
+        <translation>%1 Vonal %2 "%3": Az RX érték érvénytelen</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: RY value is invalid</source>
-        <translation>%1 Vonal %2 &quot;%3&quot;: Az RY érték érvénytelen</translation>
+        <source>%1 Line %2 "%3": RY value is invalid</source>
+        <translation>%1 Vonal %2 "%3": Az RY érték érvénytelen</translation>
     </message>
     <message>
         <source>Distance marker data is not found. Will be ignored.</source>
         <translation>A távolságjelző adatok nem találhatók. Figyelmen kívül hagyják.</translation>
     </message>
     <message>
-        <source>%1 line %2: &quot;%3&quot;: Flag data is invalid.</source>
-        <translation>%1 vonal %2 : &quot;%3&quot;: A zászló adatai érvénytelenek.</translation>
+        <source>%1 line %2: "%3": Flag data is invalid.</source>
+        <translation>%1 vonal %2 : "%3": A zászló adatai érvénytelenek.</translation>
     </message>
     <message>
-        <source>%1 line %2: &quot;%3&quot;: Distance data is invalid.</source>
-        <translation>%1 vonal %2 : &quot;%3&quot;: A távolság adatai érvénytelenek.</translation>
+        <source>%1 line %2: "%3": Distance data is invalid.</source>
+        <translation>%1 vonal %2 : "%3": A távolság adatai érvénytelenek.</translation>
     </message>
     <message>
-        <source>%1 line %2: &quot;%3&quot;: Elevation data is invalid.</source>
-        <translation>%1 vonal %2 : &quot;%3&quot;: A magassági adatok érvénytelenek.</translation>
+        <source>%1 line %2: "%3": Elevation data is invalid.</source>
+        <translation>%1 vonal %2 : "%3": A magassági adatok érvénytelenek.</translation>
     </message>
     <message>
         <source>Select folder where cross section data exists</source>

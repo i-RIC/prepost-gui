@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="tr_TR">
 <context>
     <name>GridCreatingConditionCenterAndWidth</name>
@@ -9,7 +7,7 @@
     </message>
     <message>
         <source>&amp;Remove Vertex</source>
-        <translation>Vertex&apos;i Kaldır (&amp;R)</translation>
+        <translation>Vertex'i Kaldır (&amp;R)</translation>
     </message>
     <message>
         <source>Edit C&amp;oordinates...</source>
@@ -89,7 +87,7 @@
     </message>
     <message>
         <source>Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Ekran ayarı</translation>
     </message>
 </context>
 <context>
