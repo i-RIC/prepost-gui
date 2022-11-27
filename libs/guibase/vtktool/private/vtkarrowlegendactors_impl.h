@@ -12,7 +12,8 @@ public:
 	Impl();
 	~Impl();
 
-	vtkTextActor* m_textActor;
+	vtkTextActor* m_nameTextActor;
+	vtkTextActor* m_valueTextActor;
 	vtkActor2D* m_arrowActor;
 
 	vtkPolyDataMapper2D* m_mapper;

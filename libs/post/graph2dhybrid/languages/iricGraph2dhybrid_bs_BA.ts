@@ -381,6 +381,10 @@
         <source>CSV &amp;Export</source>
         <translation>CSV izvoz (&amp;E)</translation>
     </message>
+    <message>
+        <source>&amp;Font Setting</source>
+        <translation>Font Setting (&amp;F)</translation>
+    </message>
 </context>
 <context>
     <name>Graph2dHybridWindowDataModel</name>
@@ -605,6 +609,37 @@
     <message>
         <source>External</source>
         <translation>Vanjski</translation>
+    </message>
+</context>
+<context>
+    <name>Graph2dHybridWindowFontSettingDialog</name>
+    <message>
+        <source>Chart Font Setting</source>
+        <translation>Podešavanje fonta grafikona</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>Naziv grafikona:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>Legende:</translation>
+    </message>
+    <message>
+        <source>X axis:</source>
+        <translation>X os:</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Naslov:</translation>
+    </message>
+    <message>
+        <source>Ticks:</source>
+        <translation>krpelji:</translation>
+    </message>
+    <message>
+        <source>Y axis:</source>
+        <translation>Y os:</translation>
     </message>
 </context>
 <context>

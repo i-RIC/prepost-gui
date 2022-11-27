@@ -158,6 +158,10 @@
         <source>Draw &amp;Setting</source>
         <translation>Paramètre de dessin (&amp;S)</translation>
     </message>
+    <message>
+        <source>&amp;Font Setting</source>
+        <translation>Paramètre de police (&amp;F)</translation>
+    </message>
 </context>
 <context>
     <name>Graph2dScatteredWindowDataModel</name>
@@ -218,6 +222,37 @@
     <message>
         <source>Draw Setting</source>
         <translation>Paramètre de dessin</translation>
+    </message>
+</context>
+<context>
+    <name>Graph2dScatteredWindowFontSettingDialog</name>
+    <message>
+        <source>Font Setting</source>
+        <translation>Paramètre de police</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>Titre du graphique :</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>Légendes:</translation>
+    </message>
+    <message>
+        <source>X axis:</source>
+        <translation>Axe X :</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Titre:</translation>
+    </message>
+    <message>
+        <source>Ticks:</source>
+        <translation>Tiques :</translation>
+    </message>
+    <message>
+        <source>Y axis:</source>
+        <translation>Axe Y :</translation>
     </message>
 </context>
 <context>

@@ -381,6 +381,10 @@
         <source>CSV &amp;Export</source>
         <translation>CSV 내보내기 (&amp;E)</translation>
     </message>
+    <message>
+        <source>&amp;Font Setting</source>
+        <translation>글꼴 설정 (&amp;F)</translation>
+    </message>
 </context>
 <context>
     <name>Graph2dHybridWindowDataModel</name>
@@ -605,6 +609,37 @@
     <message>
         <source>External</source>
         <translation>외부의</translation>
+    </message>
+</context>
+<context>
+    <name>Graph2dHybridWindowFontSettingDialog</name>
+    <message>
+        <source>Chart Font Setting</source>
+        <translation>차트 글꼴 설정</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>차트 제목:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>전설:</translation>
+    </message>
+    <message>
+        <source>X axis:</source>
+        <translation>X축:</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>제목:</translation>
+    </message>
+    <message>
+        <source>Ticks:</source>
+        <translation>진드기:</translation>
+    </message>
+    <message>
+        <source>Y axis:</source>
+        <translation>Y축:</translation>
     </message>
 </context>
 <context>

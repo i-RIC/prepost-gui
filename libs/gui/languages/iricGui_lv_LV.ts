@@ -507,6 +507,10 @@ Do you want to launch iRIC Maintainance?</source>
         <source>Background Grid</source>
         <translation>Fona režģis</translation>
     </message>
+    <message>
+        <source>Font Default</source>
+        <translation>Fonts pēc noklusējuma</translation>
+    </message>
 </context>
 <context>
     <name>PreferencePageBackgroundGrid</name>
@@ -525,6 +529,81 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <source>Between Cross Sections:</source>
         <translation>Starp šķērsgriezumiem:</translation>
+    </message>
+</context>
+<context>
+    <name>PreferencePageFontDefault</name>
+    <message>
+        <source>Form</source>
+        <translation>Veidlapa</translation>
+    </message>
+    <message>
+        <source>Common</source>
+        <translation>Bieži</translation>
+    </message>
+    <message>
+        <source>Grid Shape / Grid Indices</source>
+        <translation>Režģa forma/režģa indeksi</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>Krāsu josla</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Nosaukums</translation>
+    </message>
+    <message>
+        <source>Labels</source>
+        <translation>Etiķetes</translation>
+    </message>
+    <message>
+        <source>Arrow Length Legend</source>
+        <translation>Bultas garuma leģenda</translation>
+    </message>
+    <message>
+        <source>Pre-processing Window</source>
+        <translation>Priekšapstrādes logs</translation>
+    </message>
+    <message>
+        <source>Upstream / Downstream</source>
+        <translation>Augšup straumi / Lejup straumi</translation>
+    </message>
+    <message>
+        <source>River Survey Data Cross-section Names</source>
+        <translation>Upju apsekojuma datu Šķērsgriezumu nosaukumi</translation>
+    </message>
+    <message>
+        <source>Boundary Condition Names</source>
+        <translation>Robežnosacījumu nosaukumi</translation>
+    </message>
+    <message>
+        <source>Visualization Windows</source>
+        <translation>Vizualizācijas logi</translation>
+    </message>
+    <message>
+        <source>Labels:</source>
+        <translation>Etiķetes:</translation>
+    </message>
+    <message>
+        <source>Chart Windows</source>
+        <translation>Diagramma Windows</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>Diagrammas nosaukums:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>Leģendas:</translation>
+    </message>
+    <message>
+        <source>Axis Title:</source>
+        <translation>Ass nosaukums:</translation>
+    </message>
+    <message>
+        <source>Axis Ticks:</source>
+        <translation>Ass atzīmes:</translation>
     </message>
 </context>
 <context>

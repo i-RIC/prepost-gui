@@ -25,6 +25,7 @@ signals:
 	void dataSourceButtonClicked();
 	void axisButtonClicked();
 	void drawButtonClicked();
+	void fontButtonClicked();
 
 private:
 	Ui::Graph2dScatteredWindowControlWidget* ui;

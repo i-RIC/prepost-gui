@@ -507,6 +507,10 @@ Do you want to launch iRIC Maintainance?</source>
         <source>Background Grid</source>
         <translation>Bakgrunnsnet</translation>
     </message>
+    <message>
+        <source>Font Default</source>
+        <translation>Sjálfgefið leturgerð</translation>
+    </message>
 </context>
 <context>
     <name>PreferencePageBackgroundGrid</name>
@@ -525,6 +529,81 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <source>Between Cross Sections:</source>
         <translation>Milli þverskurða:</translation>
+    </message>
+</context>
+<context>
+    <name>PreferencePageFontDefault</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
+    </message>
+    <message>
+        <source>Common</source>
+        <translation>Sameiginlegt</translation>
+    </message>
+    <message>
+        <source>Grid Shape / Grid Indices</source>
+        <translation>Grid Shape / Grid vísitölur</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>Litaslá</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Titill</translation>
+    </message>
+    <message>
+        <source>Labels</source>
+        <translation>Merki</translation>
+    </message>
+    <message>
+        <source>Arrow Length Legend</source>
+        <translation>Arrow Length Legend</translation>
+    </message>
+    <message>
+        <source>Pre-processing Window</source>
+        <translation>Forvinnslugluggi</translation>
+    </message>
+    <message>
+        <source>Upstream / Downstream</source>
+        <translation>Upstream / Downstream</translation>
+    </message>
+    <message>
+        <source>River Survey Data Cross-section Names</source>
+        <translation>River Survey Gögn Þversniðsnöfn</translation>
+    </message>
+    <message>
+        <source>Boundary Condition Names</source>
+        <translation>Nöfn mörkaskilyrða</translation>
+    </message>
+    <message>
+        <source>Visualization Windows</source>
+        <translation>Visualization Windows</translation>
+    </message>
+    <message>
+        <source>Labels:</source>
+        <translation>Merki:</translation>
+    </message>
+    <message>
+        <source>Chart Windows</source>
+        <translation>Myndatöflu Windows</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>Titill myndrits:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>Þjóðsögur:</translation>
+    </message>
+    <message>
+        <source>Axis Title:</source>
+        <translation>Titill ás:</translation>
+    </message>
+    <message>
+        <source>Axis Ticks:</source>
+        <translation>Axis ticks:</translation>
     </message>
 </context>
 <context>

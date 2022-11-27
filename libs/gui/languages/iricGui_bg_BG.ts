@@ -507,6 +507,10 @@ Do you want to launch iRIC Maintainance?</source>
         <source>Background Grid</source>
         <translation>Фонова решетка</translation>
     </message>
+    <message>
+        <source>Font Default</source>
+        <translation>Шрифт по подразбиране</translation>
+    </message>
 </context>
 <context>
     <name>PreferencePageBackgroundGrid</name>
@@ -525,6 +529,81 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <source>Between Cross Sections:</source>
         <translation>Между напречните сечения:</translation>
+    </message>
+</context>
+<context>
+    <name>PreferencePageFontDefault</name>
+    <message>
+        <source>Form</source>
+        <translation>форма</translation>
+    </message>
+    <message>
+        <source>Common</source>
+        <translation>често срещани</translation>
+    </message>
+    <message>
+        <source>Grid Shape / Grid Indices</source>
+        <translation>Форма на мрежата / Индекси на мрежата</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>Цветна лента</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Заглавие</translation>
+    </message>
+    <message>
+        <source>Labels</source>
+        <translation>Етикети</translation>
+    </message>
+    <message>
+        <source>Arrow Length Legend</source>
+        <translation>Легенда за дължината на стрелката</translation>
+    </message>
+    <message>
+        <source>Pre-processing Window</source>
+        <translation>Прозорец за предварителна обработка</translation>
+    </message>
+    <message>
+        <source>Upstream / Downstream</source>
+        <translation>Нагоре надолу</translation>
+    </message>
+    <message>
+        <source>River Survey Data Cross-section Names</source>
+        <translation>Имена на напречните сечения на данни от речни проучвания</translation>
+    </message>
+    <message>
+        <source>Boundary Condition Names</source>
+        <translation>Имена на гранични условия</translation>
+    </message>
+    <message>
+        <source>Visualization Windows</source>
+        <translation>Windows за визуализация</translation>
+    </message>
+    <message>
+        <source>Labels:</source>
+        <translation>Етикети:</translation>
+    </message>
+    <message>
+        <source>Chart Windows</source>
+        <translation>Прозорци за диаграми</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>Заглавие на диаграмата:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>Легенди:</translation>
+    </message>
+    <message>
+        <source>Axis Title:</source>
+        <translation>Заглавие на оста:</translation>
+    </message>
+    <message>
+        <source>Axis Ticks:</source>
+        <translation>Отметки на осите:</translation>
     </message>
 </context>
 <context>

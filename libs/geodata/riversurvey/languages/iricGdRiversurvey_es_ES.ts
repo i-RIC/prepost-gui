@@ -933,6 +933,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <source>Color:</source>
         <translation>Color:</translation>
     </message>
+    <message>
+        <source>Crosssection Names</source>
+        <translation>Nombres de secciones transversales</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyExporter</name>

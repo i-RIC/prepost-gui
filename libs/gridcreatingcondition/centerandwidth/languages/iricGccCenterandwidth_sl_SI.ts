@@ -85,6 +85,10 @@
         <source>Remove Center Line Vertex</source>
         <translation>Odstranite središčno črto</translation>
     </message>
+    <message>
+        <source>Display Setting</source>
+        <translation>Nastavitev zaslona</translation>
+    </message>
 </context>
 <context>
     <name>GridCreatingConditionCenterAndWidthDialog</name>

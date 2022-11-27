@@ -381,6 +381,10 @@
         <source>CSV &amp;Export</source>
         <translation>Xuất CSV (&amp;E)</translation>
     </message>
+    <message>
+        <source>&amp;Font Setting</source>
+        <translation>Cài đặt phông chữ (&amp;F)</translation>
+    </message>
 </context>
 <context>
     <name>Graph2dHybridWindowDataModel</name>
@@ -605,6 +609,37 @@
     <message>
         <source>External</source>
         <translation>Bên ngoài</translation>
+    </message>
+</context>
+<context>
+    <name>Graph2dHybridWindowFontSettingDialog</name>
+    <message>
+        <source>Chart Font Setting</source>
+        <translation>Cài đặt phông chữ biểu đồ</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>Tiêu đề biểu đồ:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>Truyền thuyết:</translation>
+    </message>
+    <message>
+        <source>X axis:</source>
+        <translation>trục X:</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Tiêu đề:</translation>
+    </message>
+    <message>
+        <source>Ticks:</source>
+        <translation>Bọ ve:</translation>
+    </message>
+    <message>
+        <source>Y axis:</source>
+        <translation>trục Y:</translation>
     </message>
 </context>
 <context>

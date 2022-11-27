@@ -43,6 +43,11 @@
        <string>Graphics Default</string>
       </attribute>
      </widget>
+     <widget class="PreferencePageFontDefault" name="fontTab">
+      <attribute name="title">
+       <string>Font Default</string>
+      </attribute>
+     </widget>
      <widget class="PreferencePageGridCheck" name="gridCheckTab">
       <attribute name="title">
        <string>Grid Checking</string>
@@ -140,6 +145,12 @@
    <class>PreferencePageRiverSurvey</class>
    <extends>QWidget</extends>
    <header>pref/preferencepageriversurvey.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>PreferencePageFontDefault</class>
+   <extends>QWidget</extends>
+   <header>preferencepagefontdefault.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

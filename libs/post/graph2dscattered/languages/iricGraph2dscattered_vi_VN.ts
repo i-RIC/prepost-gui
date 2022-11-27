@@ -158,6 +158,10 @@
         <source>Draw &amp;Setting</source>
         <translation>Vẽ thiết lập (&amp;S)</translation>
     </message>
+    <message>
+        <source>&amp;Font Setting</source>
+        <translation>Cài đặt phông chữ (&amp;F)</translation>
+    </message>
 </context>
 <context>
     <name>Graph2dScatteredWindowDataModel</name>
@@ -218,6 +222,37 @@
     <message>
         <source>Draw Setting</source>
         <translation>Vẽ thiết lập</translation>
+    </message>
+</context>
+<context>
+    <name>Graph2dScatteredWindowFontSettingDialog</name>
+    <message>
+        <source>Font Setting</source>
+        <translation>Cài đặt phông chữ</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>Tiêu đề biểu đồ:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>Truyền thuyết:</translation>
+    </message>
+    <message>
+        <source>X axis:</source>
+        <translation>trục X:</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Tiêu đề:</translation>
+    </message>
+    <message>
+        <source>Ticks:</source>
+        <translation>Bọ ve:</translation>
+    </message>
+    <message>
+        <source>Y axis:</source>
+        <translation>trục Y:</translation>
     </message>
 </context>
 <context>

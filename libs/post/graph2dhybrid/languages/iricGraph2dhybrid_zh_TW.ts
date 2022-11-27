@@ -381,6 +381,10 @@
         <source>CSV &amp;Export</source>
         <translation>CSV 導出 (&amp;E)</translation>
     </message>
+    <message>
+        <source>&amp;Font Setting</source>
+        <translation>字體設置 (&amp;F)</translation>
+    </message>
 </context>
 <context>
     <name>Graph2dHybridWindowDataModel</name>
@@ -605,6 +609,37 @@
     <message>
         <source>External</source>
         <translation>外部的</translation>
+    </message>
+</context>
+<context>
+    <name>Graph2dHybridWindowFontSettingDialog</name>
+    <message>
+        <source>Chart Font Setting</source>
+        <translation>圖表字體設置</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>圖表標題：</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>傳說：</translation>
+    </message>
+    <message>
+        <source>X axis:</source>
+        <translation>X軸：</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>標題：</translation>
+    </message>
+    <message>
+        <source>Ticks:</source>
+        <translation>滴答聲：</translation>
+    </message>
+    <message>
+        <source>Y axis:</source>
+        <translation>Y軸：</translation>
     </message>
 </context>
 <context>

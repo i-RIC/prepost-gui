@@ -507,6 +507,10 @@ Do you want to launch iRIC Maintainance?</source>
         <source>Background Grid</source>
         <translation>Mřížka na pozadí</translation>
     </message>
+    <message>
+        <source>Font Default</source>
+        <translation>Výchozí písmo</translation>
+    </message>
 </context>
 <context>
     <name>PreferencePageBackgroundGrid</name>
@@ -525,6 +529,81 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <source>Between Cross Sections:</source>
         <translation>Mezi příčnými řezy:</translation>
+    </message>
+</context>
+<context>
+    <name>PreferencePageFontDefault</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulář</translation>
+    </message>
+    <message>
+        <source>Common</source>
+        <translation>Společný</translation>
+    </message>
+    <message>
+        <source>Grid Shape / Grid Indices</source>
+        <translation>Tvar mřížky / Indexy mřížky</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>Barevný pruh</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Titul</translation>
+    </message>
+    <message>
+        <source>Labels</source>
+        <translation>Štítky</translation>
+    </message>
+    <message>
+        <source>Arrow Length Legend</source>
+        <translation>Legenda délky šipky</translation>
+    </message>
+    <message>
+        <source>Pre-processing Window</source>
+        <translation>Okno předběžného zpracování</translation>
+    </message>
+    <message>
+        <source>Upstream / Downstream</source>
+        <translation>Upstream / Downstream</translation>
+    </message>
+    <message>
+        <source>River Survey Data Cross-section Names</source>
+        <translation>Názvy průřezů dat z průzkumu řek</translation>
+    </message>
+    <message>
+        <source>Boundary Condition Names</source>
+        <translation>Názvy hraničních podmínek</translation>
+    </message>
+    <message>
+        <source>Visualization Windows</source>
+        <translation>Vizualizace Windows</translation>
+    </message>
+    <message>
+        <source>Labels:</source>
+        <translation>Štítky:</translation>
+    </message>
+    <message>
+        <source>Chart Windows</source>
+        <translation>Graf Windows</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>Název grafu:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>Legendy:</translation>
+    </message>
+    <message>
+        <source>Axis Title:</source>
+        <translation>Název osy:</translation>
+    </message>
+    <message>
+        <source>Axis Ticks:</source>
+        <translation>Axis Ticks:</translation>
     </message>
 </context>
 <context>

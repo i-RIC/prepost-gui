@@ -507,6 +507,10 @@ Do you want to launch iRIC Maintainance?</source>
         <source>Background Grid</source>
         <translation>Mreža pozadine</translation>
     </message>
+    <message>
+        <source>Font Default</source>
+        <translation>Font Default</translation>
+    </message>
 </context>
 <context>
     <name>PreferencePageBackgroundGrid</name>
@@ -525,6 +529,81 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <source>Between Cross Sections:</source>
         <translation>Između poprečnih presjeka:</translation>
+    </message>
+</context>
+<context>
+    <name>PreferencePageFontDefault</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Common</source>
+        <translation>Često</translation>
+    </message>
+    <message>
+        <source>Grid Shape / Grid Indices</source>
+        <translation>Oblik mreže / Indeksi mreže</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>Color Bar</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Naslov</translation>
+    </message>
+    <message>
+        <source>Labels</source>
+        <translation>Etikete</translation>
+    </message>
+    <message>
+        <source>Arrow Length Legend</source>
+        <translation>Legenda dužine strelice</translation>
+    </message>
+    <message>
+        <source>Pre-processing Window</source>
+        <translation>Prozor za prethodnu obradu</translation>
+    </message>
+    <message>
+        <source>Upstream / Downstream</source>
+        <translation>Uzvodno / Nizvodno</translation>
+    </message>
+    <message>
+        <source>River Survey Data Cross-section Names</source>
+        <translation>Nazivi presjeka podataka istraživanja rijeke</translation>
+    </message>
+    <message>
+        <source>Boundary Condition Names</source>
+        <translation>Nazivi graničnih uslova</translation>
+    </message>
+    <message>
+        <source>Visualization Windows</source>
+        <translation>Vizualizacija Windows</translation>
+    </message>
+    <message>
+        <source>Labels:</source>
+        <translation>Oznake:</translation>
+    </message>
+    <message>
+        <source>Chart Windows</source>
+        <translation>Chart Windows</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>Naziv grafikona:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>Legende:</translation>
+    </message>
+    <message>
+        <source>Axis Title:</source>
+        <translation>Naslov osi:</translation>
+    </message>
+    <message>
+        <source>Axis Ticks:</source>
+        <translation>Axis Ticks:</translation>
     </message>
 </context>
 <context>

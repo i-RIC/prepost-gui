@@ -507,6 +507,10 @@ Do you want to launch iRIC Maintainance?</source>
         <source>Background Grid</source>
         <translation>배경 격자</translation>
     </message>
+    <message>
+        <source>Font Default</source>
+        <translation>글꼴 기본값</translation>
+    </message>
 </context>
 <context>
     <name>PreferencePageBackgroundGrid</name>
@@ -525,6 +529,81 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <source>Between Cross Sections:</source>
         <translation>횡단면 사이:</translation>
+    </message>
+</context>
+<context>
+    <name>PreferencePageFontDefault</name>
+    <message>
+        <source>Form</source>
+        <translation>형태</translation>
+    </message>
+    <message>
+        <source>Common</source>
+        <translation>흔한</translation>
+    </message>
+    <message>
+        <source>Grid Shape / Grid Indices</source>
+        <translation>그리드 모양 / 그리드 인덱스</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>컬러 바</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>제목</translation>
+    </message>
+    <message>
+        <source>Labels</source>
+        <translation>레이블</translation>
+    </message>
+    <message>
+        <source>Arrow Length Legend</source>
+        <translation>화살표 길이 범례</translation>
+    </message>
+    <message>
+        <source>Pre-processing Window</source>
+        <translation>전처리 창</translation>
+    </message>
+    <message>
+        <source>Upstream / Downstream</source>
+        <translation>상류 하류</translation>
+    </message>
+    <message>
+        <source>River Survey Data Cross-section Names</source>
+        <translation>하천 측량 데이터 횡단면 이름</translation>
+    </message>
+    <message>
+        <source>Boundary Condition Names</source>
+        <translation>경계 조건 이름</translation>
+    </message>
+    <message>
+        <source>Visualization Windows</source>
+        <translation>시각화 창</translation>
+    </message>
+    <message>
+        <source>Labels:</source>
+        <translation>라벨:</translation>
+    </message>
+    <message>
+        <source>Chart Windows</source>
+        <translation>차트 창</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>차트 제목:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>전설:</translation>
+    </message>
+    <message>
+        <source>Axis Title:</source>
+        <translation>축 제목:</translation>
+    </message>
+    <message>
+        <source>Axis Ticks:</source>
+        <translation>축 틱:</translation>
     </message>
 </context>
 <context>

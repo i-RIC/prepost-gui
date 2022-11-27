@@ -70,10 +70,12 @@ HEADERS += gcc_centerandwidth_global.h \
            private/gridcreatingconditioncenterandwidth_coordinateseditor.h \
            private/gridcreatingconditioncenterandwidth_editcoordinatescommand.h \
            private/gridcreatingconditioncenterandwidth_finishdefiningcommand.h \
+           private/gridcreatingconditioncenterandwidth_impl.h \
            private/gridcreatingconditioncenterandwidth_movecommand.h \
            private/gridcreatingconditioncenterandwidth_movevertexcommand.h \
            private/gridcreatingconditioncenterandwidth_pushvertexcommand.h \
            private/gridcreatingconditioncenterandwidth_removevertexcommand.h \
+           private/gridcreatingconditioncenterandwidth_setting.h \
            private/gridcreatingconditioncenterandwidth_updateshapecommand.h
 FORMS += gridcreatingconditioncenterandwidthdialog.ui
 SOURCES += gridcreatingconditioncenterandwidth.cpp \
@@ -83,10 +85,12 @@ SOURCES += gridcreatingconditioncenterandwidth.cpp \
            private/gridcreatingconditioncenterandwidth_coordinateseditor.cpp \
            private/gridcreatingconditioncenterandwidth_editcoordinatescommand.cpp \
            private/gridcreatingconditioncenterandwidth_finishdefiningcommand.cpp \
+           private/gridcreatingconditioncenterandwidth_impl.cpp \
            private/gridcreatingconditioncenterandwidth_movecommand.cpp \
            private/gridcreatingconditioncenterandwidth_movevertexcommand.cpp \
            private/gridcreatingconditioncenterandwidth_pushvertexcommand.cpp \
            private/gridcreatingconditioncenterandwidth_removevertexcommand.cpp \
+           private/gridcreatingconditioncenterandwidth_setting.cpp \
            private/gridcreatingconditioncenterandwidth_updateshapecommand.cpp
 RESOURCES += centerandwidth.qrc
 TRANSLATIONS += languages/iricGccCenterandwidth_ar_EG.ts \

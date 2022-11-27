@@ -164,6 +164,7 @@ public:
 	vtkUnstructuredGrid* m_rightBankPointSet;
 
 	vtkStringArray* m_labelArray;
+	vtkLabeledDataMapper* m_labelMapper;
 	vtkActor2D* m_labelActor;
 
 	vtkSmartPointer<vtkStructuredGrid> m_backgroundGrid;

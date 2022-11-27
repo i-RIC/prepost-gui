@@ -507,6 +507,10 @@ Do you want to launch iRIC Maintainance?</source>
         <source>Background Grid</source>
         <translation>Arka Plan Izgarası</translation>
     </message>
+    <message>
+        <source>Font Default</source>
+        <translation>Yazı Tipi Varsayılanı</translation>
+    </message>
 </context>
 <context>
     <name>PreferencePageBackgroundGrid</name>
@@ -525,6 +529,81 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <source>Between Cross Sections:</source>
         <translation>Kesitler Arası:</translation>
+    </message>
+</context>
+<context>
+    <name>PreferencePageFontDefault</name>
+    <message>
+        <source>Form</source>
+        <translation>Biçim</translation>
+    </message>
+    <message>
+        <source>Common</source>
+        <translation>Yaygın</translation>
+    </message>
+    <message>
+        <source>Grid Shape / Grid Indices</source>
+        <translation>Izgara Şekli / Izgara İndeksleri</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>Renk barı</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Başlık</translation>
+    </message>
+    <message>
+        <source>Labels</source>
+        <translation>Etiketler</translation>
+    </message>
+    <message>
+        <source>Arrow Length Legend</source>
+        <translation>Ok Uzunluğu Göstergesi</translation>
+    </message>
+    <message>
+        <source>Pre-processing Window</source>
+        <translation>Ön işleme penceresi</translation>
+    </message>
+    <message>
+        <source>Upstream / Downstream</source>
+        <translation>Yukarı akıntı aşağı akıntı</translation>
+    </message>
+    <message>
+        <source>River Survey Data Cross-section Names</source>
+        <translation>Nehir Etüdü Veri Kesit Adları</translation>
+    </message>
+    <message>
+        <source>Boundary Condition Names</source>
+        <translation>Sınır Koşulu Adları</translation>
+    </message>
+    <message>
+        <source>Visualization Windows</source>
+        <translation>Görselleştirme Windows</translation>
+    </message>
+    <message>
+        <source>Labels:</source>
+        <translation>Etiketler:</translation>
+    </message>
+    <message>
+        <source>Chart Windows</source>
+        <translation>Grafik Pencereleri</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>Grafik başlığı:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>Efsaneler:</translation>
+    </message>
+    <message>
+        <source>Axis Title:</source>
+        <translation>Eksen Başlığı:</translation>
+    </message>
+    <message>
+        <source>Axis Ticks:</source>
+        <translation>Eksen Tikleri:</translation>
     </message>
 </context>
 <context>

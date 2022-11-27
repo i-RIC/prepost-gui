@@ -26,6 +26,7 @@
 
 #include <QDomNode>
 #include <QList>
+#include <QSettings>
 #include <QStandardItem>
 #include <QXmlStreamWriter>
 

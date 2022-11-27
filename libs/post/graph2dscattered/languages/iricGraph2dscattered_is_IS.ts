@@ -158,6 +158,10 @@
         <source>Draw &amp;Setting</source>
         <translation>Teiknistilling (&amp;S)</translation>
     </message>
+    <message>
+        <source>&amp;Font Setting</source>
+        <translation>Leturstilling (&amp;F)</translation>
+    </message>
 </context>
 <context>
     <name>Graph2dScatteredWindowDataModel</name>
@@ -218,6 +222,37 @@
     <message>
         <source>Draw Setting</source>
         <translation>Teiknistilling</translation>
+    </message>
+</context>
+<context>
+    <name>Graph2dScatteredWindowFontSettingDialog</name>
+    <message>
+        <source>Font Setting</source>
+        <translation>Leturstilling</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>Titill myndrits:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>Þjóðsögur:</translation>
+    </message>
+    <message>
+        <source>X axis:</source>
+        <translation>X ás:</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Titill:</translation>
+    </message>
+    <message>
+        <source>Ticks:</source>
+        <translation>Ticks:</translation>
+    </message>
+    <message>
+        <source>Y axis:</source>
+        <translation>Y ás:</translation>
     </message>
 </context>
 <context>

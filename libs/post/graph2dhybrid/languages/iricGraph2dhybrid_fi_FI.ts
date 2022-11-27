@@ -381,6 +381,10 @@
         <source>CSV &amp;Export</source>
         <translation>CSV -vienti (&amp;E)</translation>
     </message>
+    <message>
+        <source>&amp;Font Setting</source>
+        <translation>Fonttiasetus (&amp;F)</translation>
+    </message>
 </context>
 <context>
     <name>Graph2dHybridWindowDataModel</name>
@@ -605,6 +609,37 @@
     <message>
         <source>External</source>
         <translation>Ulkoinen</translation>
+    </message>
+</context>
+<context>
+    <name>Graph2dHybridWindowFontSettingDialog</name>
+    <message>
+        <source>Chart Font Setting</source>
+        <translation>Kaavion fonttiasetus</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>Kaavion otsikko:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>Legendat:</translation>
+    </message>
+    <message>
+        <source>X axis:</source>
+        <translation>X-akseli:</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Otsikko:</translation>
+    </message>
+    <message>
+        <source>Ticks:</source>
+        <translation>Tikit:</translation>
+    </message>
+    <message>
+        <source>Y axis:</source>
+        <translation>Y-akseli:</translation>
     </message>
 </context>
 <context>

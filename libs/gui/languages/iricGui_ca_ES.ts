@@ -507,6 +507,10 @@ Do you want to launch iRIC Maintainance?</source>
         <source>Background Grid</source>
         <translation>Graella de fons</translation>
     </message>
+    <message>
+        <source>Font Default</source>
+        <translation>Font per defecte</translation>
+    </message>
 </context>
 <context>
     <name>PreferencePageBackgroundGrid</name>
@@ -525,6 +529,81 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <source>Between Cross Sections:</source>
         <translation>Entre seccions transversals:</translation>
+    </message>
+</context>
+<context>
+    <name>PreferencePageFontDefault</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulari</translation>
+    </message>
+    <message>
+        <source>Common</source>
+        <translation>Comú</translation>
+    </message>
+    <message>
+        <source>Grid Shape / Grid Indices</source>
+        <translation>Forma de quadrícula / Índexs de quadrícula</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>Barra de colors</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Títol</translation>
+    </message>
+    <message>
+        <source>Labels</source>
+        <translation>Etiquetes</translation>
+    </message>
+    <message>
+        <source>Arrow Length Legend</source>
+        <translation>Llegenda de longitud de fletxa</translation>
+    </message>
+    <message>
+        <source>Pre-processing Window</source>
+        <translation>Finestra de preprocessament</translation>
+    </message>
+    <message>
+        <source>Upstream / Downstream</source>
+        <translation>Amunt / Avall</translation>
+    </message>
+    <message>
+        <source>River Survey Data Cross-section Names</source>
+        <translation>Noms de les seccions transversals de dades de l'enquesta fluvial</translation>
+    </message>
+    <message>
+        <source>Boundary Condition Names</source>
+        <translation>Noms de condicions de límit</translation>
+    </message>
+    <message>
+        <source>Visualization Windows</source>
+        <translation>Windows de visualització</translation>
+    </message>
+    <message>
+        <source>Labels:</source>
+        <translation>Etiquetes:</translation>
+    </message>
+    <message>
+        <source>Chart Windows</source>
+        <translation>Windows de gràfics</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>Títol del gràfic:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>Llegendes:</translation>
+    </message>
+    <message>
+        <source>Axis Title:</source>
+        <translation>Títol de l'eix:</translation>
+    </message>
+    <message>
+        <source>Axis Ticks:</source>
+        <translation>Ticks de l'eix:</translation>
     </message>
 </context>
 <context>

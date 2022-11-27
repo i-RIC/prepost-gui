@@ -85,6 +85,10 @@
         <source>Remove Center Line Vertex</source>
         <translation>Távolítsa el a középvonal csúcsát</translation>
     </message>
+    <message>
+        <source>Display Setting</source>
+        <translation>Kijelző beállítás</translation>
+    </message>
 </context>
 <context>
     <name>GridCreatingConditionCenterAndWidthDialog</name>

@@ -381,6 +381,10 @@
         <source>CSV &amp;Export</source>
         <translation>Izvoz CSV (&amp;E)</translation>
     </message>
+    <message>
+        <source>&amp;Font Setting</source>
+        <translation>Nastavitev pisave (&amp;F)</translation>
+    </message>
 </context>
 <context>
     <name>Graph2dHybridWindowDataModel</name>
@@ -605,6 +609,37 @@
     <message>
         <source>External</source>
         <translation>Zunanji</translation>
+    </message>
+</context>
+<context>
+    <name>Graph2dHybridWindowFontSettingDialog</name>
+    <message>
+        <source>Chart Font Setting</source>
+        <translation>Nastavitev pisave grafikona</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>Naslov grafikona:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>Legende:</translation>
+    </message>
+    <message>
+        <source>X axis:</source>
+        <translation>X os:</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Naslov:</translation>
+    </message>
+    <message>
+        <source>Ticks:</source>
+        <translation>Kljukice:</translation>
+    </message>
+    <message>
+        <source>Y axis:</source>
+        <translation>Y os:</translation>
     </message>
 </context>
 <context>

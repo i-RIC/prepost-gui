@@ -507,6 +507,10 @@ Do you want to launch iRIC Maintainance?</source>
         <source>Background Grid</source>
         <translation>背景網格</translation>
     </message>
+    <message>
+        <source>Font Default</source>
+        <translation>字體默認</translation>
+    </message>
 </context>
 <context>
     <name>PreferencePageBackgroundGrid</name>
@@ -525,6 +529,81 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <source>Between Cross Sections:</source>
         <translation>橫截面之間：</translation>
+    </message>
+</context>
+<context>
+    <name>PreferencePageFontDefault</name>
+    <message>
+        <source>Form</source>
+        <translation>形式</translation>
+    </message>
+    <message>
+        <source>Common</source>
+        <translation>常見的</translation>
+    </message>
+    <message>
+        <source>Grid Shape / Grid Indices</source>
+        <translation>網格形狀/網格索引</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>彩條</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>標題</translation>
+    </message>
+    <message>
+        <source>Labels</source>
+        <translation>標籤</translation>
+    </message>
+    <message>
+        <source>Arrow Length Legend</source>
+        <translation>箭頭長度圖例</translation>
+    </message>
+    <message>
+        <source>Pre-processing Window</source>
+        <translation>預處理窗口</translation>
+    </message>
+    <message>
+        <source>Upstream / Downstream</source>
+        <translation>上游/下游</translation>
+    </message>
+    <message>
+        <source>River Survey Data Cross-section Names</source>
+        <translation>河流調查數據斷面名稱</translation>
+    </message>
+    <message>
+        <source>Boundary Condition Names</source>
+        <translation>邊界條件名稱</translation>
+    </message>
+    <message>
+        <source>Visualization Windows</source>
+        <translation>可視化窗口</translation>
+    </message>
+    <message>
+        <source>Labels:</source>
+        <translation>標籤：</translation>
+    </message>
+    <message>
+        <source>Chart Windows</source>
+        <translation>圖表窗口</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>圖表標題：</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>傳說：</translation>
+    </message>
+    <message>
+        <source>Axis Title:</source>
+        <translation>軸標題：</translation>
+    </message>
+    <message>
+        <source>Axis Ticks:</source>
+        <translation>軸刻度：</translation>
     </message>
 </context>
 <context>

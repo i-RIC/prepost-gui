@@ -142,6 +142,7 @@ HEADERS += post3d_global.h \
            datamodel/private/post3dwindowcellcontourgroupdataitem_setsettingcommand.h \
            datamodel/private/post3dwindowcellcontourgrouptopdataitem_createcommand.h \
            datamodel/private/post3dwindowcontourgroupdataitem_setsettingcommand.h \
+           datamodel/private/post3dwindowgridshapedataitem_setsettingcommand.h \
            datamodel/private/post3dwindownodescalargroupdataitem_setsettingcommand.h \
            datamodel/private/post3dwindownodevectorarrowgroupdataitem_setsettingcommand.h \
            datamodel/private/post3dwindownodevectorarrowtopdataitem_createcommand.h \
@@ -212,6 +213,7 @@ SOURCES += post3dcellrangesettingcontainer.cpp \
            datamodel/private/post3dwindowcellcontourgroupdataitem_setsettingcommand.cpp \
            datamodel/private/post3dwindowcellcontourgrouptopdataitem_createcommand.cpp \
            datamodel/private/post3dwindowcontourgroupdataitem_setsettingcommand.cpp \
+           datamodel/private/post3dwindowgridshapedataitem_setsettingcommand.cpp \
            datamodel/private/post3dwindownodescalargroupdataitem_setsettingcommand.cpp \
            datamodel/private/post3dwindownodevectorarrowgroupdataitem_setsettingcommand.cpp \
            datamodel/private/post3dwindownodevectorarrowtopdataitem_createcommand.cpp \

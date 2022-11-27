@@ -507,6 +507,10 @@ Do you want to launch iRIC Maintainance?</source>
         <source>Background Grid</source>
         <translation>Taustavõrk</translation>
     </message>
+    <message>
+        <source>Font Default</source>
+        <translation>Vaikimisi font</translation>
+    </message>
 </context>
 <context>
     <name>PreferencePageBackgroundGrid</name>
@@ -525,6 +529,81 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <source>Between Cross Sections:</source>
         <translation>Ristlõigete vahel:</translation>
+    </message>
+</context>
+<context>
+    <name>PreferencePageFontDefault</name>
+    <message>
+        <source>Form</source>
+        <translation>Vorm</translation>
+    </message>
+    <message>
+        <source>Common</source>
+        <translation>Levinud</translation>
+    </message>
+    <message>
+        <source>Grid Shape / Grid Indices</source>
+        <translation>Ruudustiku kuju / ruudustikuindeksid</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>Värviriba</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Pealkiri</translation>
+    </message>
+    <message>
+        <source>Labels</source>
+        <translation>Sildid</translation>
+    </message>
+    <message>
+        <source>Arrow Length Legend</source>
+        <translation>Noole pikkuse legend</translation>
+    </message>
+    <message>
+        <source>Pre-processing Window</source>
+        <translation>Eeltöötluse aken</translation>
+    </message>
+    <message>
+        <source>Upstream / Downstream</source>
+        <translation>Ülesvoolu / allavoolu</translation>
+    </message>
+    <message>
+        <source>River Survey Data Cross-section Names</source>
+        <translation>Jõeuuringu andmete läbilõike nimed</translation>
+    </message>
+    <message>
+        <source>Boundary Condition Names</source>
+        <translation>Piirtingimuste nimed</translation>
+    </message>
+    <message>
+        <source>Visualization Windows</source>
+        <translation>Visualiseerimisaknad</translation>
+    </message>
+    <message>
+        <source>Labels:</source>
+        <translation>Sildid:</translation>
+    </message>
+    <message>
+        <source>Chart Windows</source>
+        <translation>Diagramm Windows</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>Diagrammi pealkiri:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>Legendid:</translation>
+    </message>
+    <message>
+        <source>Axis Title:</source>
+        <translation>Telje pealkiri:</translation>
+    </message>
+    <message>
+        <source>Axis Ticks:</source>
+        <translation>Teljemärgid:</translation>
     </message>
 </context>
 <context>

@@ -381,6 +381,10 @@
         <source>CSV &amp;Export</source>
         <translation>تصدير CSV (&amp;E)</translation>
     </message>
+    <message>
+        <source>&amp;Font Setting</source>
+        <translation>إعداد الخط (&amp;F)</translation>
+    </message>
 </context>
 <context>
     <name>Graph2dHybridWindowDataModel</name>
@@ -605,6 +609,37 @@
     <message>
         <source>External</source>
         <translation>خارجي</translation>
+    </message>
+</context>
+<context>
+    <name>Graph2dHybridWindowFontSettingDialog</name>
+    <message>
+        <source>Chart Font Setting</source>
+        <translation>إعداد خط الرسم البياني</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>عنوان التخطيط:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>أساطير:</translation>
+    </message>
+    <message>
+        <source>X axis:</source>
+        <translation>المحور س:</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>عنوان:</translation>
+    </message>
+    <message>
+        <source>Ticks:</source>
+        <translation>القراد:</translation>
+    </message>
+    <message>
+        <source>Y axis:</source>
+        <translation>المحور ص:</translation>
     </message>
 </context>
 <context>

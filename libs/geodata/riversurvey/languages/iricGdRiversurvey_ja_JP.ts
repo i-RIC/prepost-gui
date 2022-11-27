@@ -1030,6 +1030,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <source>Color:</source>
         <translation>色:</translation>
     </message>
+    <message>
+        <source>Crosssection Names</source>
+        <translation>断面の名前</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyExporter</name>

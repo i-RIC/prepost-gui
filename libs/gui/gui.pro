@@ -220,6 +220,7 @@ HEADERS += gui_api.h \
            pref/preferencedialog.h \
            pref/preferencepage.h \
            pref/preferencepagebackgroundgrid.h \
+           pref/preferencepagefontdefault.h \
            pref/preferencepagegeneral.h \
            pref/preferencepagegraphicsdefault.h \
            pref/preferencepagegridcheck.h \
@@ -267,6 +268,7 @@ FORMS += continuoussnapshot/continuoussnapshotfilepropertypage.ui \
          misc/projecttypeselectdialog.ui \
          pref/preferencedialog.ui \
          pref/preferencepagebackgroundgrid.ui \
+         pref/preferencepagefontdefault.ui \
          pref/preferencepagegeneral.ui \
          pref/preferencepagegraphicsdefault.ui \
          pref/preferencepagegridcheck.ui \
@@ -311,6 +313,7 @@ SOURCES += continuoussnapshot/continuoussnapshotconfirmpage.cpp \
            pref/preferencedialog.cpp \
            pref/preferencepage.cpp \
            pref/preferencepagebackgroundgrid.cpp \
+           pref/preferencepagefontdefault.cpp \
            pref/preferencepagegeneral.cpp \
            pref/preferencepagegraphicsdefault.cpp \
            pref/preferencepagegridcheck.cpp \

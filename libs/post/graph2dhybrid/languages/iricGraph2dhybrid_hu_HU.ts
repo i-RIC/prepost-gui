@@ -381,6 +381,10 @@
         <source>CSV &amp;Export</source>
         <translation>CSV export (&amp;E)</translation>
     </message>
+    <message>
+        <source>&amp;Font Setting</source>
+        <translation>Betűtípus beállítása (&amp;F)</translation>
+    </message>
 </context>
 <context>
     <name>Graph2dHybridWindowDataModel</name>
@@ -605,6 +609,37 @@
     <message>
         <source>External</source>
         <translation>Külső</translation>
+    </message>
+</context>
+<context>
+    <name>Graph2dHybridWindowFontSettingDialog</name>
+    <message>
+        <source>Chart Font Setting</source>
+        <translation>Diagram betűtípus beállítása</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>Diagram címe:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>Legendák:</translation>
+    </message>
+    <message>
+        <source>X axis:</source>
+        <translation>X tengely:</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Cím:</translation>
+    </message>
+    <message>
+        <source>Ticks:</source>
+        <translation>Kullancsok:</translation>
+    </message>
+    <message>
+        <source>Y axis:</source>
+        <translation>Y tengely:</translation>
     </message>
 </context>
 <context>

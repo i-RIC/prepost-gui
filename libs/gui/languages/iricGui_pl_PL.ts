@@ -507,6 +507,10 @@ Do you want to launch iRIC Maintainance?</source>
         <source>Background Grid</source>
         <translation>Siatka tła</translation>
     </message>
+    <message>
+        <source>Font Default</source>
+        <translation>Czcionka domyślna</translation>
+    </message>
 </context>
 <context>
     <name>PreferencePageBackgroundGrid</name>
@@ -525,6 +529,81 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <source>Between Cross Sections:</source>
         <translation>Między przekrojami:</translation>
+    </message>
+</context>
+<context>
+    <name>PreferencePageFontDefault</name>
+    <message>
+        <source>Form</source>
+        <translation>Formularz</translation>
+    </message>
+    <message>
+        <source>Common</source>
+        <translation>Wspólny</translation>
+    </message>
+    <message>
+        <source>Grid Shape / Grid Indices</source>
+        <translation>Kształt siatki / Indeksy siatki</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>Pasek kolorów</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Tytuł</translation>
+    </message>
+    <message>
+        <source>Labels</source>
+        <translation>Etykiety</translation>
+    </message>
+    <message>
+        <source>Arrow Length Legend</source>
+        <translation>Legenda długości strzały</translation>
+    </message>
+    <message>
+        <source>Pre-processing Window</source>
+        <translation>Okno przetwarzania wstępnego</translation>
+    </message>
+    <message>
+        <source>Upstream / Downstream</source>
+        <translation>Upstream / Downstream</translation>
+    </message>
+    <message>
+        <source>River Survey Data Cross-section Names</source>
+        <translation>Nazwy przekrojów danych geodezyjnych rzeki</translation>
+    </message>
+    <message>
+        <source>Boundary Condition Names</source>
+        <translation>Nazwy warunków brzegowych</translation>
+    </message>
+    <message>
+        <source>Visualization Windows</source>
+        <translation>Okna wizualizacji</translation>
+    </message>
+    <message>
+        <source>Labels:</source>
+        <translation>Etykiety:</translation>
+    </message>
+    <message>
+        <source>Chart Windows</source>
+        <translation>Okna wykresów</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>Tytuł wykresu:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>Legendy:</translation>
+    </message>
+    <message>
+        <source>Axis Title:</source>
+        <translation>Tytuł osi:</translation>
+    </message>
+    <message>
+        <source>Axis Ticks:</source>
+        <translation>Kleszcze osi:</translation>
     </message>
 </context>
 <context>

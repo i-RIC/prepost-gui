@@ -507,6 +507,10 @@ Do you want to launch iRIC Maintainance?</source>
         <source>Background Grid</source>
         <translation>Πλέγμα φόντου</translation>
     </message>
+    <message>
+        <source>Font Default</source>
+        <translation>Προεπιλογή γραμματοσειράς</translation>
+    </message>
 </context>
 <context>
     <name>PreferencePageBackgroundGrid</name>
@@ -525,6 +529,81 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <source>Between Cross Sections:</source>
         <translation>Μεταξύ διατομών:</translation>
+    </message>
+</context>
+<context>
+    <name>PreferencePageFontDefault</name>
+    <message>
+        <source>Form</source>
+        <translation>Μορφή</translation>
+    </message>
+    <message>
+        <source>Common</source>
+        <translation>Κοινός</translation>
+    </message>
+    <message>
+        <source>Grid Shape / Grid Indices</source>
+        <translation>Σχήμα Πλέγματος / Δείκτες Πλέγματος</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>Μπάρα χρώματος</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Τίτλος</translation>
+    </message>
+    <message>
+        <source>Labels</source>
+        <translation>Ετικέτες</translation>
+    </message>
+    <message>
+        <source>Arrow Length Legend</source>
+        <translation>Θρύλος μήκους βέλους</translation>
+    </message>
+    <message>
+        <source>Pre-processing Window</source>
+        <translation>Παράθυρο προεπεξεργασίας</translation>
+    </message>
+    <message>
+        <source>Upstream / Downstream</source>
+        <translation>Ανοδική ροή καθοδική ροή</translation>
+    </message>
+    <message>
+        <source>River Survey Data Cross-section Names</source>
+        <translation>Ονόματα διατομών δεδομένων έρευνας ποταμού</translation>
+    </message>
+    <message>
+        <source>Boundary Condition Names</source>
+        <translation>Ονόματα οριακών συνθηκών</translation>
+    </message>
+    <message>
+        <source>Visualization Windows</source>
+        <translation>Οπτικοποίηση Windows</translation>
+    </message>
+    <message>
+        <source>Labels:</source>
+        <translation>Ετικέτες:</translation>
+    </message>
+    <message>
+        <source>Chart Windows</source>
+        <translation>Διάγραμμα Windows</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>Τίτλος γραφήματος:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>Θρύλοι:</translation>
+    </message>
+    <message>
+        <source>Axis Title:</source>
+        <translation>Τίτλος άξονα:</translation>
+    </message>
+    <message>
+        <source>Axis Ticks:</source>
+        <translation>Κρότωνες άξονα:</translation>
     </message>
 </context>
 <context>

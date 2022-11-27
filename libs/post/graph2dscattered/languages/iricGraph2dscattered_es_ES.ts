@@ -158,6 +158,10 @@
         <source>Draw &amp;Setting</source>
         <translation>Configuracion &amp;de Dibujar</translation>
     </message>
+    <message>
+        <source>&amp;Font Setting</source>
+        <translation>Configuración de fuente (&amp;F)</translation>
+    </message>
 </context>
 <context>
     <name>Graph2dScatteredWindowDataModel</name>
@@ -218,6 +222,37 @@
     <message>
         <source>Draw Setting</source>
         <translation>Configuracion de Dibujo</translation>
+    </message>
+</context>
+<context>
+    <name>Graph2dScatteredWindowFontSettingDialog</name>
+    <message>
+        <source>Font Setting</source>
+        <translation>Configuración de fuente</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>Titulo del gráfico:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>Leyendas:</translation>
+    </message>
+    <message>
+        <source>X axis:</source>
+        <translation>eje X:</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Título:</translation>
+    </message>
+    <message>
+        <source>Ticks:</source>
+        <translation>garrapatas:</translation>
+    </message>
+    <message>
+        <source>Y axis:</source>
+        <translation>eje Y:</translation>
     </message>
 </context>
 <context>

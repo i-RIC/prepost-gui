@@ -2,6 +2,7 @@
 #define GRIDSHAPEEDITDIALOG_H
 
 #include "../guibase_global.h"
+#include "../vtktextpropertysettingcontainer.h"
 
 #include <misc/colorcontainer.h>
 #include <misc/boolcontainer.h>
@@ -39,7 +40,7 @@ public:
 		ColorContainer color;
 		EnumContainerT<GridShapeEditDialog::Shape> shape;
 		BoolContainer indexVisible;
-		ColorContainer indexColor;
+		vtkTextPropertySettingContainer indexTextSetting;
 	};
 
 	GridShapeEditDialog(QWidget* parent = nullptr);

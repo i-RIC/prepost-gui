@@ -507,6 +507,10 @@ Do you want to launch iRIC Maintainance?</source>
         <source>Background Grid</source>
         <translation>Atzeko planoko sareta</translation>
     </message>
+    <message>
+        <source>Font Default</source>
+        <translation>Letra-tipo lehenetsia</translation>
+    </message>
 </context>
 <context>
     <name>PreferencePageBackgroundGrid</name>
@@ -525,6 +529,81 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <source>Between Cross Sections:</source>
         <translation>Zeharkako atalen artean:</translation>
+    </message>
+</context>
+<context>
+    <name>PreferencePageFontDefault</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Common</source>
+        <translation>Ohikoa</translation>
+    </message>
+    <message>
+        <source>Grid Shape / Grid Indices</source>
+        <translation>Sarearen forma / Sarearen indizeak</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>Kolore Barra</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Izenburua</translation>
+    </message>
+    <message>
+        <source>Labels</source>
+        <translation>Etiketak</translation>
+    </message>
+    <message>
+        <source>Arrow Length Legend</source>
+        <translation>Geziaren luzera kondaira</translation>
+    </message>
+    <message>
+        <source>Pre-processing Window</source>
+        <translation>Aurreprozesatzeko leihoa</translation>
+    </message>
+    <message>
+        <source>Upstream / Downstream</source>
+        <translation>Gora / Ura behera</translation>
+    </message>
+    <message>
+        <source>River Survey Data Cross-section Names</source>
+        <translation>Ibai Inkestaren Datuak Zehar-ebakien izenak</translation>
+    </message>
+    <message>
+        <source>Boundary Condition Names</source>
+        <translation>Muga Baldintza Izenak</translation>
+    </message>
+    <message>
+        <source>Visualization Windows</source>
+        <translation>Bistaratzeko leihoak</translation>
+    </message>
+    <message>
+        <source>Labels:</source>
+        <translation>Etiketak:</translation>
+    </message>
+    <message>
+        <source>Chart Windows</source>
+        <translation>Diagrama leihoak</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>Diagramaren izenburua:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>Kondairak:</translation>
+    </message>
+    <message>
+        <source>Axis Title:</source>
+        <translation>Ardatzaren izenburua:</translation>
+    </message>
+    <message>
+        <source>Axis Ticks:</source>
+        <translation>Ardatz-tikinak:</translation>
     </message>
 </context>
 <context>

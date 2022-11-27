@@ -507,6 +507,10 @@ Do you want to launch iRIC Maintainance?</source>
         <source>Background Grid</source>
         <translation>Фон сітки</translation>
     </message>
+    <message>
+        <source>Font Default</source>
+        <translation>Шрифт за замовчуванням</translation>
+    </message>
 </context>
 <context>
     <name>PreferencePageBackgroundGrid</name>
@@ -525,6 +529,81 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <source>Between Cross Sections:</source>
         <translation>Між перетинами:</translation>
+    </message>
+</context>
+<context>
+    <name>PreferencePageFontDefault</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>Common</source>
+        <translation>Поширений</translation>
+    </message>
+    <message>
+        <source>Grid Shape / Grid Indices</source>
+        <translation>Форма сітки / Індекси сітки</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>Кольорова панель</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Назва</translation>
+    </message>
+    <message>
+        <source>Labels</source>
+        <translation>етикетки</translation>
+    </message>
+    <message>
+        <source>Arrow Length Legend</source>
+        <translation>Легенда довжини стрілки</translation>
+    </message>
+    <message>
+        <source>Pre-processing Window</source>
+        <translation>Вікно попередньої обробки</translation>
+    </message>
+    <message>
+        <source>Upstream / Downstream</source>
+        <translation>Вгору / вниз за течією</translation>
+    </message>
+    <message>
+        <source>River Survey Data Cross-section Names</source>
+        <translation>Назви перетинів річкових даних</translation>
+    </message>
+    <message>
+        <source>Boundary Condition Names</source>
+        <translation>Назви граничних умов</translation>
+    </message>
+    <message>
+        <source>Visualization Windows</source>
+        <translation>Windows візуалізації</translation>
+    </message>
+    <message>
+        <source>Labels:</source>
+        <translation>Мітки:</translation>
+    </message>
+    <message>
+        <source>Chart Windows</source>
+        <translation>Вікна діаграм</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>Назва діаграми:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>Легенди:</translation>
+    </message>
+    <message>
+        <source>Axis Title:</source>
+        <translation>Назва осі:</translation>
+    </message>
+    <message>
+        <source>Axis Ticks:</source>
+        <translation>Ціки осі:</translation>
     </message>
 </context>
 <context>

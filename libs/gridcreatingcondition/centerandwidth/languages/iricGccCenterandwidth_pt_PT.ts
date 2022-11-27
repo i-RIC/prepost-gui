@@ -85,6 +85,10 @@
         <source>Remove Center Line Vertex</source>
         <translation>Remover vértice da linha central</translation>
     </message>
+    <message>
+        <source>Display Setting</source>
+        <translation>Configuração de Exibição</translation>
+    </message>
 </context>
 <context>
     <name>GridCreatingConditionCenterAndWidthDialog</name>

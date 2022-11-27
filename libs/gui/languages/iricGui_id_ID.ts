@@ -507,6 +507,10 @@ Do you want to launch iRIC Maintainance?</source>
         <source>Background Grid</source>
         <translation>Kotak Latar Belakang</translation>
     </message>
+    <message>
+        <source>Font Default</source>
+        <translation>Default Font</translation>
+    </message>
 </context>
 <context>
     <name>PreferencePageBackgroundGrid</name>
@@ -525,6 +529,81 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <source>Between Cross Sections:</source>
         <translation>Antar Bagian:</translation>
+    </message>
+</context>
+<context>
+    <name>PreferencePageFontDefault</name>
+    <message>
+        <source>Form</source>
+        <translation>Membentuk</translation>
+    </message>
+    <message>
+        <source>Common</source>
+        <translation>Umum</translation>
+    </message>
+    <message>
+        <source>Grid Shape / Grid Indices</source>
+        <translation>Bentuk Kisi / Indeks Kisi</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>Diskriminasi rasial</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Judul</translation>
+    </message>
+    <message>
+        <source>Labels</source>
+        <translation>Label</translation>
+    </message>
+    <message>
+        <source>Arrow Length Legend</source>
+        <translation>Legenda Panjang Panah</translation>
+    </message>
+    <message>
+        <source>Pre-processing Window</source>
+        <translation>Jendela Pra-pemrosesan</translation>
+    </message>
+    <message>
+        <source>Upstream / Downstream</source>
+        <translation>Hulu / Hilir</translation>
+    </message>
+    <message>
+        <source>River Survey Data Cross-section Names</source>
+        <translation>Nama Penampang Data Survei Sungai</translation>
+    </message>
+    <message>
+        <source>Boundary Condition Names</source>
+        <translation>Nama Kondisi Batas</translation>
+    </message>
+    <message>
+        <source>Visualization Windows</source>
+        <translation>Jendela visualisasi</translation>
+    </message>
+    <message>
+        <source>Labels:</source>
+        <translation>Label:</translation>
+    </message>
+    <message>
+        <source>Chart Windows</source>
+        <translation>Bagan Jendela</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>Judul grafik:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>Legenda:</translation>
+    </message>
+    <message>
+        <source>Axis Title:</source>
+        <translation>Judul Sumbu:</translation>
+    </message>
+    <message>
+        <source>Axis Ticks:</source>
+        <translation>Kutu sumbu:</translation>
     </message>
 </context>
 <context>

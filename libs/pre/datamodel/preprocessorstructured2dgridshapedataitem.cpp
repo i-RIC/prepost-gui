@@ -1,6 +1,7 @@
 #include "preprocessorgriddataitem.h"
 #include "preprocessorstructured2dgridshapedataitem.h"
 
+#include <guibase/graphicsmisc.h>
 #include <guicore/pre/grid/grid.h>
 #include <guicore/pre/grid/structured2dgrid.h>
 #include <misc/stringtool.h>
@@ -66,14 +67,9 @@ void PreProcessorStructured2dGridShapeDataItem::setupActors()
 	m_indexMapper = vtkSmartPointer<vtkLabeledDataMapper>::New();
 	m_indexMapper->SetLabelModeToLabelFieldData();
 	m_indexMapper->SetFieldDataName(Grid::LABEL_NAME);
-	vtkTextProperty* textProp = m_indexMapper->GetLabelTextProperty();
-	textProp->SetColor(0, 0, 0);
-	textProp->SetFontSize(12);
-	textProp->BoldOff();
-	textProp->ItalicOff();
-	textProp->ShadowOff();
-	textProp->SetJustificationToLeft();
-	textProp->SetVerticalJustificationToCentered();
+    vtkTextProperty* textProp = m_indexMapper->GetLabelTextProperty();
+    iRIC::setupGridIndexTextProperty(textProp);
+    m_setting.indexTextSetting.applySetting(textProp);
 
 	m_indexActor->SetMapper(m_indexMapper);
 
@@ -128,7 +124,7 @@ void PreProcessorStructured2dGridShapeDataItem::updateActorSettings()
 	}
 
 	if (m_setting.indexVisible) {
-		m_indexMapper->GetLabelTextProperty()->SetColor(m_setting.indexColor);
+        m_setting.indexTextSetting.applySetting(m_indexMapper->GetLabelTextProperty());
 		m_actor2DCollection->AddItem(m_indexActor);
 	}
 	updateVisibilityWithoutRendering();

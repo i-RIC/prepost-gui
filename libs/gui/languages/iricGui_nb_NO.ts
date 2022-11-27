@@ -507,6 +507,10 @@ Do you want to launch iRIC Maintainance?</source>
         <source>Background Grid</source>
         <translation>Bakgrunnsnett</translation>
     </message>
+    <message>
+        <source>Font Default</source>
+        <translation>Font Standard</translation>
+    </message>
 </context>
 <context>
     <name>PreferencePageBackgroundGrid</name>
@@ -525,6 +529,81 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <source>Between Cross Sections:</source>
         <translation>Mellom tverrsnitt:</translation>
+    </message>
+</context>
+<context>
+    <name>PreferencePageFontDefault</name>
+    <message>
+        <source>Form</source>
+        <translation>Skjema</translation>
+    </message>
+    <message>
+        <source>Common</source>
+        <translation>Vanlig</translation>
+    </message>
+    <message>
+        <source>Grid Shape / Grid Indices</source>
+        <translation>Rutenettform / Rutenettindekser</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>Fargelinje</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Tittel</translation>
+    </message>
+    <message>
+        <source>Labels</source>
+        <translation>Etiketter</translation>
+    </message>
+    <message>
+        <source>Arrow Length Legend</source>
+        <translation>Pillengdeforklaring</translation>
+    </message>
+    <message>
+        <source>Pre-processing Window</source>
+        <translation>Forbehandlingsvindu</translation>
+    </message>
+    <message>
+        <source>Upstream / Downstream</source>
+        <translation>Oppstrøms nedstrøms</translation>
+    </message>
+    <message>
+        <source>River Survey Data Cross-section Names</source>
+        <translation>Navn på tverrsnitt av elveundersøkelsesdata</translation>
+    </message>
+    <message>
+        <source>Boundary Condition Names</source>
+        <translation>Navn på grensevilkår</translation>
+    </message>
+    <message>
+        <source>Visualization Windows</source>
+        <translation>Visualisering Windows</translation>
+    </message>
+    <message>
+        <source>Labels:</source>
+        <translation>Etiketter:</translation>
+    </message>
+    <message>
+        <source>Chart Windows</source>
+        <translation>Kartvinduer</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>Diagramtittel:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>Legender:</translation>
+    </message>
+    <message>
+        <source>Axis Title:</source>
+        <translation>Aksetittel:</translation>
+    </message>
+    <message>
+        <source>Axis Ticks:</source>
+        <translation>Aksemerker:</translation>
     </message>
 </context>
 <context>

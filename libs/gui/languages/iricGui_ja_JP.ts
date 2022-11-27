@@ -11673,6 +11673,10 @@ p, li { white-space: pre-wrap; }
         <source>Post(3D)</source>
         <translation type="obsolete">可視化ウィンドウ (3D)</translation>
     </message>
+    <message>
+        <source>Font Default</source>
+        <translation>フォントデフォルト</translation>
+    </message>
 </context>
 <context>
     <name>PreferenceEditDialog</name>
@@ -11698,6 +11702,81 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Between Cross Sections:</source>
         <translation>横断線の間:</translation>
+    </message>
+</context>
+<context>
+    <name>PreferencePageFontDefault</name>
+    <message>
+        <source>Form</source>
+        <translation>フォーム</translation>
+    </message>
+    <message>
+        <source>Common</source>
+        <translation>共通</translation>
+    </message>
+    <message>
+        <source>Grid Shape / Grid Indices</source>
+        <translation>格子形状 / 格子インデックス</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>カラーバー</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>タイトル</translation>
+    </message>
+    <message>
+        <source>Labels</source>
+        <translation>ラベル</translation>
+    </message>
+    <message>
+        <source>Arrow Length Legend</source>
+        <translation>ベクトル長さの凡例</translation>
+    </message>
+    <message>
+        <source>Pre-processing Window</source>
+        <translation>プリプロセッサー</translation>
+    </message>
+    <message>
+        <source>Upstream / Downstream</source>
+        <translation>Upstream / Downstream</translation>
+    </message>
+    <message>
+        <source>River Survey Data Cross-section Names</source>
+        <translation>河川測量データ 断面名</translation>
+    </message>
+    <message>
+        <source>Boundary Condition Names</source>
+        <translation>境界条件の名前</translation>
+    </message>
+    <message>
+        <source>Visualization Windows</source>
+        <translation>可視化ウィンドウ</translation>
+    </message>
+    <message>
+        <source>Labels:</source>
+        <translation>ラベル:</translation>
+    </message>
+    <message>
+        <source>Chart Windows</source>
+        <translation>グラフウィンドウ</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>グラフタイトル:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>凡例:</translation>
+    </message>
+    <message>
+        <source>Axis Title:</source>
+        <translation>軸タイトル:</translation>
+    </message>
+    <message>
+        <source>Axis Ticks:</source>
+        <translation>軸目盛り:</translation>
     </message>
 </context>
 <context>

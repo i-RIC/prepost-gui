@@ -49,6 +49,8 @@ HEADERS += anms.h \
            primitiveview.h \
            pythonutil.h \
            qfontcontainer.h \
+           qfontdisplaylabel.h \
+           qfonteditwidget.h \
            qpointfcompare.h \
            qpointfcontainer.h \
            qspinboxwithfocussignals.h \
@@ -89,7 +91,10 @@ HEADERS += anms.h \
            private/versionnumber_impl.h \
            private/xmlattributecontainer_impl.h \
            private/zdepthrange_impl.h
-FORMS += informationdialog.ui primitiveview.ui slowmotionspeededitdialog.ui
+FORMS += informationdialog.ui \
+         primitiveview.ui \
+         qfonteditwidget.ui \
+         slowmotionspeededitdialog.ui
 SOURCES += anms.cpp \
            boolcontainer.cpp \
            colorcontainer.cpp \
@@ -117,6 +122,8 @@ SOURCES += anms.cpp \
            primitiveview.cpp \
            pythonutil.cpp \
            qfontcontainer.cpp \
+           qfontdisplaylabel.cpp \
+           qfonteditwidget.cpp \
            qpointfcompare.cpp \
            qpointfcontainer.cpp \
            qspinboxwithfocussignals.cpp \

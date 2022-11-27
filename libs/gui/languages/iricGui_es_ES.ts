@@ -507,6 +507,10 @@ Do you want to launch iRIC Maintainance?</source>
         <source>Background Grid</source>
         <translation>Cuadrícula de fondo</translation>
     </message>
+    <message>
+        <source>Font Default</source>
+        <translation>Fuente predeterminada</translation>
+    </message>
 </context>
 <context>
     <name>PreferencePageBackgroundGrid</name>
@@ -525,6 +529,81 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <source>Between Cross Sections:</source>
         <translation>Entre secciones transversales:</translation>
+    </message>
+</context>
+<context>
+    <name>PreferencePageFontDefault</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Common</source>
+        <translation>Común</translation>
+    </message>
+    <message>
+        <source>Grid Shape / Grid Indices</source>
+        <translation>Forma de cuadrícula / Índices de cuadrícula</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>Barra de color</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Título</translation>
+    </message>
+    <message>
+        <source>Labels</source>
+        <translation>Etiquetas</translation>
+    </message>
+    <message>
+        <source>Arrow Length Legend</source>
+        <translation>Leyenda de longitud de flecha</translation>
+    </message>
+    <message>
+        <source>Pre-processing Window</source>
+        <translation>Ventana de preprocesamiento</translation>
+    </message>
+    <message>
+        <source>Upstream / Downstream</source>
+        <translation>Río arriba Río abajo</translation>
+    </message>
+    <message>
+        <source>River Survey Data Cross-section Names</source>
+        <translation>Nombres de las secciones transversales de los datos topográficos del río</translation>
+    </message>
+    <message>
+        <source>Boundary Condition Names</source>
+        <translation>Nombres de condiciones de contorno</translation>
+    </message>
+    <message>
+        <source>Visualization Windows</source>
+        <translation>Ventanas de visualización</translation>
+    </message>
+    <message>
+        <source>Labels:</source>
+        <translation>Etiquetas:</translation>
+    </message>
+    <message>
+        <source>Chart Windows</source>
+        <translation>Ventanas de gráfico</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>Titulo del gráfico:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>Leyendas:</translation>
+    </message>
+    <message>
+        <source>Axis Title:</source>
+        <translation>Título del eje:</translation>
+    </message>
+    <message>
+        <source>Axis Ticks:</source>
+        <translation>Marcas de eje:</translation>
     </message>
 </context>
 <context>

@@ -913,6 +913,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <source>Color:</source>
         <translation>Kolore:</translation>
     </message>
+    <message>
+        <source>Crosssection Names</source>
+        <translation>Zeharkako izenak</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyExporter</name>

@@ -158,6 +158,10 @@
         <source>Draw &amp;Setting</source>
         <translation>Zīmēšanas iestatījums (&amp;S)</translation>
     </message>
+    <message>
+        <source>&amp;Font Setting</source>
+        <translation>Fonta iestatījums (&amp;F)</translation>
+    </message>
 </context>
 <context>
     <name>Graph2dScatteredWindowDataModel</name>
@@ -218,6 +222,37 @@
     <message>
         <source>Draw Setting</source>
         <translation>Zīmēšanas iestatījums</translation>
+    </message>
+</context>
+<context>
+    <name>Graph2dScatteredWindowFontSettingDialog</name>
+    <message>
+        <source>Font Setting</source>
+        <translation>Fonta iestatījums</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>Diagrammas nosaukums:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>Leģendas:</translation>
+    </message>
+    <message>
+        <source>X axis:</source>
+        <translation>X ass:</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Nosaukums:</translation>
+    </message>
+    <message>
+        <source>Ticks:</source>
+        <translation>Ērces:</translation>
+    </message>
+    <message>
+        <source>Y axis:</source>
+        <translation>Y ass:</translation>
     </message>
 </context>
 <context>

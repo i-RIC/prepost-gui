@@ -507,6 +507,10 @@ Do you want to launch iRIC Maintainance?</source>
         <source>Background Grid</source>
         <translation>Háttérrács</translation>
     </message>
+    <message>
+        <source>Font Default</source>
+        <translation>Betűtípus alapértelmezett</translation>
+    </message>
 </context>
 <context>
     <name>PreferencePageBackgroundGrid</name>
@@ -525,6 +529,81 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <source>Between Cross Sections:</source>
         <translation>Keresztmetszetek között:</translation>
+    </message>
+</context>
+<context>
+    <name>PreferencePageFontDefault</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Common</source>
+        <translation>Gyakori</translation>
+    </message>
+    <message>
+        <source>Grid Shape / Grid Indices</source>
+        <translation>Rács alakja / rácsindexek</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>Színsáv</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Cím</translation>
+    </message>
+    <message>
+        <source>Labels</source>
+        <translation>Címkék</translation>
+    </message>
+    <message>
+        <source>Arrow Length Legend</source>
+        <translation>Nyíl hossza jelmagyarázat</translation>
+    </message>
+    <message>
+        <source>Pre-processing Window</source>
+        <translation>Előfeldolgozási ablak</translation>
+    </message>
+    <message>
+        <source>Upstream / Downstream</source>
+        <translation>Upstream / Downstream</translation>
+    </message>
+    <message>
+        <source>River Survey Data Cross-section Names</source>
+        <translation>Folyófelmérés adatai Keresztszelvények nevei</translation>
+    </message>
+    <message>
+        <source>Boundary Condition Names</source>
+        <translation>Peremfeltételek nevei</translation>
+    </message>
+    <message>
+        <source>Visualization Windows</source>
+        <translation>Vizualizációs ablakok</translation>
+    </message>
+    <message>
+        <source>Labels:</source>
+        <translation>Címkék:</translation>
+    </message>
+    <message>
+        <source>Chart Windows</source>
+        <translation>Windows diagram</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>Diagram címe:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>Legendák:</translation>
+    </message>
+    <message>
+        <source>Axis Title:</source>
+        <translation>Tengely címe:</translation>
+    </message>
+    <message>
+        <source>Axis Ticks:</source>
+        <translation>Tengelykulcsok:</translation>
     </message>
 </context>
 <context>

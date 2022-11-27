@@ -85,6 +85,10 @@
         <source>Remove Center Line Vertex</source>
         <translation>Orta Çizgi Tepe Noktasını Kaldır</translation>
     </message>
+    <message>
+        <source>Display Setting</source>
+        <translation>Ekran ayarı</translation>
+    </message>
 </context>
 <context>
     <name>GridCreatingConditionCenterAndWidthDialog</name>

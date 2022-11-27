@@ -507,6 +507,10 @@ Do you want to launch iRIC Maintainance?</source>
         <source>Background Grid</source>
         <translation>पृष्ठभूमि ग्रिड</translation>
     </message>
+    <message>
+        <source>Font Default</source>
+        <translation>फ़ॉन्ट डिफ़ॉल्ट</translation>
+    </message>
 </context>
 <context>
     <name>PreferencePageBackgroundGrid</name>
@@ -525,6 +529,81 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <source>Between Cross Sections:</source>
         <translation>क्रॉस सेक्शन के बीच:</translation>
+    </message>
+</context>
+<context>
+    <name>PreferencePageFontDefault</name>
+    <message>
+        <source>Form</source>
+        <translation>प्रपत्र</translation>
+    </message>
+    <message>
+        <source>Common</source>
+        <translation>सामान्य</translation>
+    </message>
+    <message>
+        <source>Grid Shape / Grid Indices</source>
+        <translation>ग्रिड आकार / ग्रिड सूचकांक</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>रंग रेखा</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>शीर्षक</translation>
+    </message>
+    <message>
+        <source>Labels</source>
+        <translation>लेबल</translation>
+    </message>
+    <message>
+        <source>Arrow Length Legend</source>
+        <translation>तीर की लंबाई किंवदंती</translation>
+    </message>
+    <message>
+        <source>Pre-processing Window</source>
+        <translation>प्री-प्रोसेसिंग विंडो</translation>
+    </message>
+    <message>
+        <source>Upstream / Downstream</source>
+        <translation>धारा के विरुद्ध धारा के साथ</translation>
+    </message>
+    <message>
+        <source>River Survey Data Cross-section Names</source>
+        <translation>नदी सर्वेक्षण डेटा क्रॉस-सेक्शन नाम</translation>
+    </message>
+    <message>
+        <source>Boundary Condition Names</source>
+        <translation>सीमा शर्त नाम</translation>
+    </message>
+    <message>
+        <source>Visualization Windows</source>
+        <translation>विज़ुअलाइज़ेशन विंडोज</translation>
+    </message>
+    <message>
+        <source>Labels:</source>
+        <translation>लेबल:</translation>
+    </message>
+    <message>
+        <source>Chart Windows</source>
+        <translation>चार्ट विंडोज़</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>चार्ट शीर्षक:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>दंतकथाएं:</translation>
+    </message>
+    <message>
+        <source>Axis Title:</source>
+        <translation>एक्सिस शीर्षक:</translation>
+    </message>
+    <message>
+        <source>Axis Ticks:</source>
+        <translation>एक्सिस टिक्स:</translation>
     </message>
 </context>
 <context>

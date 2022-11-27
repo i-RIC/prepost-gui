@@ -63,18 +63,13 @@ public:
 	void setMapped(bool mapped);
 	bool mapped() const;
 
+	void updateNameActorSettings();
+
 	QAction* editAction() const;
 	QAction* deleteAction() const;
 	QAction* assignAction() const;
 	QAction* releaseAction() const;
 	bool hideSetting() const;
-
-protected:
-	void doLoadFromProjectMainFile(const QDomNode& node) override;
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
-	void doApplyOffset(double x, double y) override;
-	virtual void loadExternalData(const QString& filename) override;
-	virtual void saveExternalData(const QString& filename) override;
 
 public slots:
 	bool showDialog();
@@ -87,17 +82,20 @@ private slots:
 signals:
 	void itemUpdated();
 
-protected:
-	void assignActorZValues(const ZDepthRange& range) override;
-
 private:
 	void setupActors();
 	void updateActorSettings();
-	void updateNameActorSettings();
 	void updateElements();
 	int buildNumber() const;
 	void setupIndicesAndEdges(const std::vector<int> indices);
 	void buildIndices(std::vector<int>* indices);
+
+	void assignActorZValues(const ZDepthRange& range) override;
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+	void doApplyOffset(double x, double y) override;
+	void loadExternalData(const QString& filename) override;
+	void saveExternalData(const QString& filename) override;
 
 	class Impl;
 	Impl* impl;

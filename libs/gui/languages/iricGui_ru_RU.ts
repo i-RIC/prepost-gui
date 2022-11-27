@@ -507,6 +507,10 @@ Do you want to launch iRIC Maintainance?</source>
         <source>Background Grid</source>
         <translation>Фоновая сетка</translation>
     </message>
+    <message>
+        <source>Font Default</source>
+        <translation>Шрифт по умолчанию</translation>
+    </message>
 </context>
 <context>
     <name>PreferencePageBackgroundGrid</name>
@@ -525,6 +529,81 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <source>Between Cross Sections:</source>
         <translation>Между поперечными сечениями:</translation>
+    </message>
+</context>
+<context>
+    <name>PreferencePageFontDefault</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>Common</source>
+        <translation>Общий</translation>
+    </message>
+    <message>
+        <source>Grid Shape / Grid Indices</source>
+        <translation>Форма сетки / индексы сетки</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>Цветная полоса</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Заголовок</translation>
+    </message>
+    <message>
+        <source>Labels</source>
+        <translation>Этикетки</translation>
+    </message>
+    <message>
+        <source>Arrow Length Legend</source>
+        <translation>Легенда длины стрелы</translation>
+    </message>
+    <message>
+        <source>Pre-processing Window</source>
+        <translation>Окно предварительной обработки</translation>
+    </message>
+    <message>
+        <source>Upstream / Downstream</source>
+        <translation>Вверх-вниз</translation>
+    </message>
+    <message>
+        <source>River Survey Data Cross-section Names</source>
+        <translation>Названия разрезов данных речных съемок</translation>
+    </message>
+    <message>
+        <source>Boundary Condition Names</source>
+        <translation>Имена граничных условий</translation>
+    </message>
+    <message>
+        <source>Visualization Windows</source>
+        <translation>Окна визуализации</translation>
+    </message>
+    <message>
+        <source>Labels:</source>
+        <translation>Ярлыки:</translation>
+    </message>
+    <message>
+        <source>Chart Windows</source>
+        <translation>Окна диаграммы</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>Название диаграммы:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>Легенды:</translation>
+    </message>
+    <message>
+        <source>Axis Title:</source>
+        <translation>Название оси:</translation>
+    </message>
+    <message>
+        <source>Axis Ticks:</source>
+        <translation>Тики оси:</translation>
     </message>
 </context>
 <context>

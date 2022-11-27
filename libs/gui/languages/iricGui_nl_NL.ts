@@ -507,6 +507,10 @@ Do you want to launch iRIC Maintainance?</source>
         <source>Background Grid</source>
         <translation>Achtergrondraster</translation>
     </message>
+    <message>
+        <source>Font Default</source>
+        <translation>Lettertype Standaard</translation>
+    </message>
 </context>
 <context>
     <name>PreferencePageBackgroundGrid</name>
@@ -525,6 +529,81 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <source>Between Cross Sections:</source>
         <translation>Tussen dwarsdoorsneden:</translation>
+    </message>
+</context>
+<context>
+    <name>PreferencePageFontDefault</name>
+    <message>
+        <source>Form</source>
+        <translation>Het formulier</translation>
+    </message>
+    <message>
+        <source>Common</source>
+        <translation>Gemeenschappelijk</translation>
+    </message>
+    <message>
+        <source>Grid Shape / Grid Indices</source>
+        <translation>Rastervorm / rasterindices</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>Kleuren balk</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Titel</translation>
+    </message>
+    <message>
+        <source>Labels</source>
+        <translation>Etiketten</translation>
+    </message>
+    <message>
+        <source>Arrow Length Legend</source>
+        <translation>Legenda pijllengte</translation>
+    </message>
+    <message>
+        <source>Pre-processing Window</source>
+        <translation>Voorverwerkingsvenster</translation>
+    </message>
+    <message>
+        <source>Upstream / Downstream</source>
+        <translation>Stroomopwaarts / stroomafwaarts</translation>
+    </message>
+    <message>
+        <source>River Survey Data Cross-section Names</source>
+        <translation>River Survey Data Dwarsdoorsnede Namen</translation>
+    </message>
+    <message>
+        <source>Boundary Condition Names</source>
+        <translation>Grensvoorwaarde Namen</translation>
+    </message>
+    <message>
+        <source>Visualization Windows</source>
+        <translation>Visualisatie Windows</translation>
+    </message>
+    <message>
+        <source>Labels:</source>
+        <translation>Etiketten:</translation>
+    </message>
+    <message>
+        <source>Chart Windows</source>
+        <translation>Grafiekvensters</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>Grafiektitel:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>legendes:</translation>
+    </message>
+    <message>
+        <source>Axis Title:</source>
+        <translation>As Titel:</translation>
+    </message>
+    <message>
+        <source>Axis Ticks:</source>
+        <translation>As-tikken:</translation>
     </message>
 </context>
 <context>

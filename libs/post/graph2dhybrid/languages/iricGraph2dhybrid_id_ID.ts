@@ -381,6 +381,10 @@
         <source>CSV &amp;Export</source>
         <translation>Ekspor CSV (&amp;E)</translation>
     </message>
+    <message>
+        <source>&amp;Font Setting</source>
+        <translation>Pengaturan Font (&amp;F)</translation>
+    </message>
 </context>
 <context>
     <name>Graph2dHybridWindowDataModel</name>
@@ -605,6 +609,37 @@
     <message>
         <source>External</source>
         <translation>Luar</translation>
+    </message>
+</context>
+<context>
+    <name>Graph2dHybridWindowFontSettingDialog</name>
+    <message>
+        <source>Chart Font Setting</source>
+        <translation>Pengaturan Font Bagan</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>Judul grafik:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>Legenda:</translation>
+    </message>
+    <message>
+        <source>X axis:</source>
+        <translation>Sumbu X:</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Judul:</translation>
+    </message>
+    <message>
+        <source>Ticks:</source>
+        <translation>Kutu:</translation>
+    </message>
+    <message>
+        <source>Y axis:</source>
+        <translation>Sumbu Y:</translation>
     </message>
 </context>
 <context>

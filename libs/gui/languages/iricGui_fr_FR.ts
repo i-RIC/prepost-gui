@@ -507,6 +507,10 @@ Do you want to launch iRIC Maintainance?</source>
         <source>Background Grid</source>
         <translation>Grille de fond</translation>
     </message>
+    <message>
+        <source>Font Default</source>
+        <translation>Police par défaut</translation>
+    </message>
 </context>
 <context>
     <name>PreferencePageBackgroundGrid</name>
@@ -525,6 +529,81 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <source>Between Cross Sections:</source>
         <translation>Entre les sections transversales :</translation>
+    </message>
+</context>
+<context>
+    <name>PreferencePageFontDefault</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulaire</translation>
+    </message>
+    <message>
+        <source>Common</source>
+        <translation>Commun</translation>
+    </message>
+    <message>
+        <source>Grid Shape / Grid Indices</source>
+        <translation>Forme de grille / Indices de grille</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>Barre de couleur</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Titre</translation>
+    </message>
+    <message>
+        <source>Labels</source>
+        <translation>Étiquettes</translation>
+    </message>
+    <message>
+        <source>Arrow Length Legend</source>
+        <translation>Légende de la longueur des flèches</translation>
+    </message>
+    <message>
+        <source>Pre-processing Window</source>
+        <translation>Fenêtre de prétraitement</translation>
+    </message>
+    <message>
+        <source>Upstream / Downstream</source>
+        <translation>Amont Aval</translation>
+    </message>
+    <message>
+        <source>River Survey Data Cross-section Names</source>
+        <translation>Noms des sections transversales des données d'enquête sur les rivières</translation>
+    </message>
+    <message>
+        <source>Boundary Condition Names</source>
+        <translation>Noms des conditions aux limites</translation>
+    </message>
+    <message>
+        <source>Visualization Windows</source>
+        <translation>Fenêtres de visualisation</translation>
+    </message>
+    <message>
+        <source>Labels:</source>
+        <translation>Étiquettes:</translation>
+    </message>
+    <message>
+        <source>Chart Windows</source>
+        <translation>Fenêtres de graphique</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>Titre du graphique :</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>Légendes:</translation>
+    </message>
+    <message>
+        <source>Axis Title:</source>
+        <translation>Titre de l'axe :</translation>
+    </message>
+    <message>
+        <source>Axis Ticks:</source>
+        <translation>Coches d'axe :</translation>
     </message>
 </context>
 <context>

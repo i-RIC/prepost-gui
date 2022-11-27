@@ -1,7 +1,9 @@
 #include "preprocessorbcdataitem.h"
 #include "preprocessorbcgroupdataitem.h"
+#include "preprocessorbcgroupsettingdialog.h"
 #include "preprocessorgriddataitem.h"
 #include "preprocessorgridtypedataitem.h"
+#include "private/preprocessorbcgroupdataitem_setsettingcommand.h"
 
 #include <guibase/objectbrowserview.h>
 #include <guibase/widget/itemmultiselectingdialog.h>
@@ -16,6 +18,7 @@
 #include <QMainWindow>
 #include <QMenu>
 #include <QMessageBox>
+#include <QSettings>
 #include <QStandardItem>
 #include <QXmlStreamWriter>
 
@@ -36,6 +39,14 @@ PreProcessorBCGroupDataItem::PreProcessorBCGroupDataItem(PreProcessorDataItem* p
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 	setSubPath("bc");
+
+	// setup default setting
+	m_nameSetting.addPrefix("nameSetting");
+	m_nameSetting.fontFamily = vtkTextPropertySettingContainer::ffArial;
+	m_nameSetting.fontSize = 14;
+
+	QSettings s;
+	m_nameSetting.loadSetting(s, "fontsetting/bc");
 
 	m_colorSource = new ColorSource(this);
 
@@ -60,6 +71,11 @@ PreProcessorBCGroupDataItem::PreProcessorBCGroupDataItem(PreProcessorDataItem* p
 PreProcessorBCGroupDataItem::~PreProcessorBCGroupDataItem()
 {
 	delete m_colorSource;
+}
+
+const vtkTextPropertySettingContainer& PreProcessorBCGroupDataItem::nameSetting() const
+{
+	return m_nameSetting;
 }
 
 int PreProcessorBCGroupDataItem::loadFromCgnsFile(const iRICLib::H5CgnsZone& zone)
@@ -113,6 +129,20 @@ const QList<QAction*> PreProcessorBCGroupDataItem::addActions() const
 	return m_addActions;
 }
 
+QDialog* PreProcessorBCGroupDataItem::propertyDialog(QWidget* parent)
+{
+	auto dialog = new PreProcessorBcGroupSettingDialog(parent);
+	dialog->setNameSetting(m_nameSetting);
+
+	return dialog;
+}
+
+void PreProcessorBCGroupDataItem::handlePropertyDialogAccepted(QDialog* propDialog)
+{
+	auto dialog = dynamic_cast<PreProcessorBcGroupSettingDialog*> (propDialog);
+	pushRenderCommand(new SetSettingCommand(dialog->nameSetting(), this), this);
+}
+
 void PreProcessorBCGroupDataItem::renumberItemsForCgns()
 {
 	// set numbers again.
@@ -141,6 +171,14 @@ void PreProcessorBCGroupDataItem::renumberItemsForCgns()
 	}
 }
 
+void PreProcessorBCGroupDataItem::updateNameActorSettingsOfChildren()
+{
+	for (auto c : m_childItems) {
+		auto c2 = dynamic_cast<PreProcessorBCDataItem*> (c);
+		c2->updateNameActorSettings();
+	}
+}
+
 void PreProcessorBCGroupDataItem::informGridUpdate()
 {
 
@@ -148,6 +186,8 @@ void PreProcessorBCGroupDataItem::informGridUpdate()
 
 void PreProcessorBCGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
+	m_nameSetting.load(node);
+
 	m_projectBuildNumber = projectData()->version().build();
 	PreProcessorGridTypeDataItem* gtItem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent()->parent());
 	QDomNodeList childNodes = node.childNodes();
@@ -169,6 +209,8 @@ void PreProcessorBCGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node
 
 void PreProcessorBCGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
+	m_nameSetting.save(writer);
+
 	renumberItemsForProject();
 	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
 		GraphicsWindowDataItem* item = *it;

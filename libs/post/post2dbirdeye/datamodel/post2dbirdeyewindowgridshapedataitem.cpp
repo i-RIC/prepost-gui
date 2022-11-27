@@ -1,12 +1,14 @@
 #include "post2dbirdeyewindowgridshapedataitem.h"
 #include "post2dbirdeyewindowzonedataitem.h"
 
+#include <guibase/graphicsmisc.h>
 #include <guibase/widget/gridshapeeditdialog.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/stringtool.h>
 
 #include <QIcon>
+#include <QSettings>
 #include <QUndoCommand>
 
 #include <vtkActor2DCollection.h>
@@ -95,14 +97,12 @@ void Post2dBirdEyeWindowGridShapeDataItem::setupActors()
 	m_indexMapper->SetInputConnection(m_indexTransformFilter->GetOutputPort());
 	m_indexMapper->SetLabelModeToLabelFieldData();
 	m_indexMapper->SetFieldDataName(iRIC::toStr(PostZoneDataContainer::labelName).c_str());
-	vtkTextProperty* prop = m_indexMapper->GetLabelTextProperty();
-	prop->SetColor(0, 0, 0);
-	prop->SetFontSize(12);
-	prop->BoldOff();
-	prop->ItalicOff();
-	prop->ShadowOff();
-	prop->SetJustificationToLeft();
-	prop->SetVerticalJustificationToCentered();
+    vtkTextProperty* textProp = m_indexMapper->GetLabelTextProperty();
+    iRIC::setupGridIndexTextProperty(textProp);
+    m_setting.indexTextSetting.applySetting(textProp);
+
+	QSettings settings;
+    m_setting.indexTextSetting.loadSetting(settings, "gridshape");
 
 	m_indexActor->SetMapper(m_indexMapper);
 	m_outlineActor->VisibilityOff();
@@ -168,7 +168,7 @@ void Post2dBirdEyeWindowGridShapeDataItem::updateActorSettings()
 
 		m_indexTransformFilter->SetInputData(tmpGrid);
 		m_indexTransformFilter->Update();
-		m_indexMapper->GetLabelTextProperty()->SetColor(m_setting.indexColor);
+        m_setting.indexTextSetting.applySetting(m_indexMapper->GetLabelTextProperty());
 		m_actor2DCollection->AddItem(m_indexActor);
 	}
 	updateVisibilityWithoutRendering();

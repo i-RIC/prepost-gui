@@ -381,6 +381,10 @@
         <source>CSV &amp;Export</source>
         <translation>Export CSV (&amp;E)</translation>
     </message>
+    <message>
+        <source>&amp;Font Setting</source>
+        <translation>Nastavení písma (&amp;F)</translation>
+    </message>
 </context>
 <context>
     <name>Graph2dHybridWindowDataModel</name>
@@ -605,6 +609,37 @@
     <message>
         <source>External</source>
         <translation>Externí</translation>
+    </message>
+</context>
+<context>
+    <name>Graph2dHybridWindowFontSettingDialog</name>
+    <message>
+        <source>Chart Font Setting</source>
+        <translation>Nastavení písma grafu</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>Název grafu:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>Legendy:</translation>
+    </message>
+    <message>
+        <source>X axis:</source>
+        <translation>Osa X:</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Titul:</translation>
+    </message>
+    <message>
+        <source>Ticks:</source>
+        <translation>Klíšťata:</translation>
+    </message>
+    <message>
+        <source>Y axis:</source>
+        <translation>osa Y:</translation>
     </message>
 </context>
 <context>

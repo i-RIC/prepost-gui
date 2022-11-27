@@ -158,6 +158,10 @@
         <source>Draw &amp;Setting</source>
         <translation>วาดการตั้งค่า (&amp;S)</translation>
     </message>
+    <message>
+        <source>&amp;Font Setting</source>
+        <translation>การตั้งค่าแบบอักษร (&amp;F)</translation>
+    </message>
 </context>
 <context>
     <name>Graph2dScatteredWindowDataModel</name>
@@ -218,6 +222,37 @@
     <message>
         <source>Draw Setting</source>
         <translation>วาดการตั้งค่า</translation>
+    </message>
+</context>
+<context>
+    <name>Graph2dScatteredWindowFontSettingDialog</name>
+    <message>
+        <source>Font Setting</source>
+        <translation>การตั้งค่าแบบอักษร</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>ชื่อแผนภูมิ:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>ตำนาน:</translation>
+    </message>
+    <message>
+        <source>X axis:</source>
+        <translation>แกน X:</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>ชื่อ:</translation>
+    </message>
+    <message>
+        <source>Ticks:</source>
+        <translation>เห็บ:</translation>
+    </message>
+    <message>
+        <source>Y axis:</source>
+        <translation>แกน Y:</translation>
     </message>
 </context>
 <context>

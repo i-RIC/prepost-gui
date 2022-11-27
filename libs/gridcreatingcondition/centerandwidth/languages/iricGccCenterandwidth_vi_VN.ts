@@ -85,6 +85,10 @@
         <source>Polyline Coordinates</source>
         <translation>Tọa độ Polyline</translation>
     </message>
+    <message>
+        <source>Display Setting</source>
+        <translation>Thiết lập màn hình</translation>
+    </message>
 </context>
 <context>
     <name>GridCreatingConditionCenterAndWidthDialog</name>

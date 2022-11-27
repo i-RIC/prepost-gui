@@ -381,6 +381,10 @@
         <source>CSV &amp;Export</source>
         <translation>Експорт CSV (&amp;E)</translation>
     </message>
+    <message>
+        <source>&amp;Font Setting</source>
+        <translation>Налаштування шрифту (&amp;F)</translation>
+    </message>
 </context>
 <context>
     <name>Graph2dHybridWindowDataModel</name>
@@ -605,6 +609,37 @@
     <message>
         <source>External</source>
         <translation>Зовнішні</translation>
+    </message>
+</context>
+<context>
+    <name>Graph2dHybridWindowFontSettingDialog</name>
+    <message>
+        <source>Chart Font Setting</source>
+        <translation>Налаштування шрифту діаграми</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>Назва діаграми:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>Легенди:</translation>
+    </message>
+    <message>
+        <source>X axis:</source>
+        <translation>Вісь X:</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Назва:</translation>
+    </message>
+    <message>
+        <source>Ticks:</source>
+        <translation>галочки:</translation>
+    </message>
+    <message>
+        <source>Y axis:</source>
+        <translation>Вісь Y:</translation>
     </message>
 </context>
 <context>

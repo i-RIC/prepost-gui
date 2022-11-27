@@ -158,6 +158,10 @@
         <source>Draw &amp;Setting</source>
         <translation>ड्रा सेटिंग (&amp;S)</translation>
     </message>
+    <message>
+        <source>&amp;Font Setting</source>
+        <translation>फ़ॉन्ट सेटिंग (&amp;F)</translation>
+    </message>
 </context>
 <context>
     <name>Graph2dScatteredWindowDataModel</name>
@@ -218,6 +222,37 @@
     <message>
         <source>Draw Setting</source>
         <translation>ड्रा सेटिंग</translation>
+    </message>
+</context>
+<context>
+    <name>Graph2dScatteredWindowFontSettingDialog</name>
+    <message>
+        <source>Font Setting</source>
+        <translation>फ़ॉन्ट सेटिंग</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>चार्ट शीर्षक:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>दंतकथाएं:</translation>
+    </message>
+    <message>
+        <source>X axis:</source>
+        <translation>एक्स अक्ष:</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>शीर्षक:</translation>
+    </message>
+    <message>
+        <source>Ticks:</source>
+        <translation>टिक्स:</translation>
+    </message>
+    <message>
+        <source>Y axis:</source>
+        <translation>वाई अक्ष:</translation>
     </message>
 </context>
 <context>

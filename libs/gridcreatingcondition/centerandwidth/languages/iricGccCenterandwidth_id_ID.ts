@@ -85,6 +85,10 @@
         <source>Polyline Coordinates</source>
         <translation>Koordinat Poliline</translation>
     </message>
+    <message>
+        <source>Display Setting</source>
+        <translation>Pengaturan tampilan</translation>
+    </message>
 </context>
 <context>
     <name>GridCreatingConditionCenterAndWidthDialog</name>

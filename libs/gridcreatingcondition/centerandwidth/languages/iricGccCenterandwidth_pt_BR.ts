@@ -85,6 +85,10 @@
         <source>Polyline Coordinates</source>
         <translation>Coordenadas do vertice  </translation>
     </message>
+    <message>
+        <source>Display Setting</source>
+        <translation>Configuração de Exibição</translation>
+    </message>
 </context>
 <context>
     <name>GridCreatingConditionCenterAndWidthDialog</name>

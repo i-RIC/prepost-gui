@@ -85,6 +85,10 @@
         <source>Remove Center Line Vertex</source>
         <translation>Eemaldage keskjoone tipp</translation>
     </message>
+    <message>
+        <source>Display Setting</source>
+        <translation>Ekraani seadistus</translation>
+    </message>
 </context>
 <context>
     <name>GridCreatingConditionCenterAndWidthDialog</name>

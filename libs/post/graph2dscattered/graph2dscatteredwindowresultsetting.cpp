@@ -12,6 +12,7 @@
 #include <qwt_plot.h>
 
 #include <QDomNode>
+#include <QSettings>
 
 const QString Graph2dScatteredWindowResultSetting::XAXIS_POSITION_X = "_positionX";
 const QString Graph2dScatteredWindowResultSetting::XAXIS_POSITION_Y = "_positionY";
@@ -20,31 +21,48 @@ const QString Graph2dScatteredWindowResultSetting::XAXIS_STREAM_WISE_DISTANCE = 
 
 ColorSource* Graph2dScatteredWindowResultSetting::m_colorSource = new ColorSource(0);
 
-Graph2dScatteredWindowResultSetting::Graph2dScatteredWindowResultSetting()
+Graph2dScatteredWindowResultSetting::Graph2dScatteredWindowResultSetting() :
+	m_xAxisAutoRange {true},
+	m_xAxisValueMin {0},
+	m_xAxisValueMax {0},
+	m_xAxisReverse {false},
+	m_xAxisLog {false},
+	m_yAxisLeftAutoRange {true},
+	m_yAxisLeftReverse {false},
+	m_yAxisLeftLog {false},
+	m_yAxisLeftTitle {""},
+	m_yAxisRightAutoRange {true},
+	m_yAxisRightReverse {false},
+	m_yAxisRightLog {false},
+	m_yAxisRightTitle {""},
+	m_addTimeToTitle {false},
+	m_chartTitleFont {"chartTitle"},
+	m_legendFont {"legend"},
+	m_xAxisTitleFont {"xAxisTitle"},
+	m_xAxisTickFont {"xAxisTick"},
+	m_yAxisTitleFont {"yAxisTitle"},
+	m_yAxisTickFont {"yAxisTick"}
 {
-	m_xAxisReverse = false;
-	m_xAxisLog = false;
+	QSettings settings;
+	QFont font;
 
-	m_yAxisLeftAutoRange = true;
-	m_yAxisLeftTitle = "";
-	m_yAxisLeftReverse = false;
-	m_yAxisLeftLog = false;
-	m_yAxisRightAutoRange = true;
-	m_yAxisRightTitle = "";
-	m_yAxisRightReverse = false;
-	m_yAxisRightLog = false;
+	font.fromString(settings.value("fontsetting/chart_title", QString("MS UI Gothic,12,-1,5,75,0,0,0,0,0")).toString());
+	m_chartTitleFont = font;
 
-	m_xAxisAutoRange = true;
-	m_xAxisValueMin = 0;
-	m_xAxisValueMax = 0;
+	font.fromString(settings.value("fontsetting/chart_legend", QString("MS UI Gothic,9,-1,5,50,0,0,0,0,0")).toString());
+	m_legendFont = font;
 
-	m_addTimeToTitle = false;
+	font.fromString(settings.value("fontsetting/chart_axistitle", QString("MS UI Gothic,12,-1,5,75,0,0,0,0,0")).toString());
+	m_xAxisTitleFont = font;
+	m_yAxisTitleFont = font;
+
+	font.fromString(settings.value("fontsetting/chart_axistick", QString("MS UI Gothic,10,-1,5,50,0,0,0,0,0")).toString());
+	m_xAxisTickFont = font;
+	m_yAxisTickFont = font;
 }
 
 Graph2dScatteredWindowResultSetting::~Graph2dScatteredWindowResultSetting()
-{
-
-}
+{}
 
 bool Graph2dScatteredWindowResultSetting::init(PostSolutionInfo* sol)
 {
@@ -62,6 +80,67 @@ bool Graph2dScatteredWindowResultSetting::init(PostSolutionInfo* sol)
 	m_zoneName = cont->zoneName();
 	return true;
 }
+
+QFont Graph2dScatteredWindowResultSetting::chartTitleFont() const
+{
+	return m_chartTitleFont;
+}
+
+void Graph2dScatteredWindowResultSetting::setChartTitleFont(const QFont& font)
+{
+	m_chartTitleFont = font;
+}
+
+QFont Graph2dScatteredWindowResultSetting::legendFont() const
+{
+	return m_legendFont;
+}
+
+void Graph2dScatteredWindowResultSetting::setLegendFont(const QFont& font)
+{
+	m_legendFont = font;
+}
+
+QFont Graph2dScatteredWindowResultSetting::xAxisTitleFont() const
+{
+	return m_xAxisTitleFont;
+}
+
+void Graph2dScatteredWindowResultSetting::setXAxisTitleFont(const QFont& font)
+{
+	m_xAxisTitleFont = font;
+}
+
+QFont Graph2dScatteredWindowResultSetting::xAxisTickFont() const
+{
+	return m_xAxisTickFont;
+}
+
+void Graph2dScatteredWindowResultSetting::setXAxisTickFont(const QFont& font)
+{
+	m_xAxisTickFont = font;
+}
+
+QFont Graph2dScatteredWindowResultSetting::yAxisTitleFont() const
+{
+	return m_yAxisTitleFont;
+}
+
+void Graph2dScatteredWindowResultSetting::setYAxisTitleFont(const QFont& font)
+{
+	m_yAxisTitleFont = font;
+}
+
+QFont Graph2dScatteredWindowResultSetting::yAxisTickFont() const
+{
+	return m_yAxisTickFont;
+}
+
+void Graph2dScatteredWindowResultSetting::setYAxisTickFont(const QFont& font)
+{
+	m_yAxisTickFont = font;
+}
+
 
 void Graph2dScatteredWindowResultSetting::loadFromProjectMainFile(const QDomNode& node)
 {
@@ -90,6 +169,13 @@ void Graph2dScatteredWindowResultSetting::loadFromProjectMainFile(const QDomNode
 
 	m_title = elem.attribute("title");
 	m_addTimeToTitle = iRIC::getBooleanAttribute(node, "addTimeToTitle");
+
+	m_chartTitleFont.load(node);
+	m_legendFont.load(node);
+	m_xAxisTitleFont.load(node);
+	m_xAxisTickFont.load(node);
+	m_yAxisTitleFont.load(node);
+	m_yAxisTickFont.load(node);
 
 	m_targetDatas.clear();
 	QDomNode datasNode = iRIC::getChildNode(node, "TargetDatas");
@@ -128,6 +214,13 @@ void Graph2dScatteredWindowResultSetting::saveToProjectMainFile(QXmlStreamWriter
 
 	writer.writeAttribute("title", m_title);
 	iRIC::setBooleanAttribute(writer, "addTimeToTitle", m_addTimeToTitle);
+
+	m_chartTitleFont.save(writer);
+	m_legendFont.save(writer);
+	m_xAxisTitleFont.save(writer);
+	m_xAxisTickFont.save(writer);
+	m_yAxisTitleFont.save(writer);
+	m_yAxisTickFont.save(writer);
 
 	// targetDatas
 	writer.writeStartElement("TargetDatas");

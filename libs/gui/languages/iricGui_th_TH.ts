@@ -507,6 +507,10 @@ Do you want to launch iRIC Maintainance?</source>
         <source>Background Grid</source>
         <translation>ตารางพื้นหลัง</translation>
     </message>
+    <message>
+        <source>Font Default</source>
+        <translation>แบบอักษรเริ่มต้น</translation>
+    </message>
 </context>
 <context>
     <name>PreferencePageBackgroundGrid</name>
@@ -525,6 +529,81 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <source>Between Cross Sections:</source>
         <translation>ระหว่างส่วนตัดขวาง:</translation>
+    </message>
+</context>
+<context>
+    <name>PreferencePageFontDefault</name>
+    <message>
+        <source>Form</source>
+        <translation>รูปร่าง</translation>
+    </message>
+    <message>
+        <source>Common</source>
+        <translation>ทั่วไป</translation>
+    </message>
+    <message>
+        <source>Grid Shape / Grid Indices</source>
+        <translation>รูปร่างกริด / ดัชนีกริด</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>แถบสี</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>ชื่อ</translation>
+    </message>
+    <message>
+        <source>Labels</source>
+        <translation>ป้ายกำกับ</translation>
+    </message>
+    <message>
+        <source>Arrow Length Legend</source>
+        <translation>ตำนานความยาวลูกศร</translation>
+    </message>
+    <message>
+        <source>Pre-processing Window</source>
+        <translation>หน้าต่างก่อนการประมวลผล</translation>
+    </message>
+    <message>
+        <source>Upstream / Downstream</source>
+        <translation>ต้นน้ำ/ปลายน้ำ</translation>
+    </message>
+    <message>
+        <source>River Survey Data Cross-section Names</source>
+        <translation>ชื่อส่วนข้อมูลการสำรวจแม่น้ำ</translation>
+    </message>
+    <message>
+        <source>Boundary Condition Names</source>
+        <translation>ชื่อเงื่อนไขขอบเขต</translation>
+    </message>
+    <message>
+        <source>Visualization Windows</source>
+        <translation>Windows การแสดงภาพ</translation>
+    </message>
+    <message>
+        <source>Labels:</source>
+        <translation>ป้ายกำกับ:</translation>
+    </message>
+    <message>
+        <source>Chart Windows</source>
+        <translation>หน้าต่างแผนภูมิ</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>ชื่อแผนภูมิ:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>ตำนาน:</translation>
+    </message>
+    <message>
+        <source>Axis Title:</source>
+        <translation>ชื่อแกน:</translation>
+    </message>
+    <message>
+        <source>Axis Ticks:</source>
+        <translation>ขีดแกน:</translation>
     </message>
 </context>
 <context>

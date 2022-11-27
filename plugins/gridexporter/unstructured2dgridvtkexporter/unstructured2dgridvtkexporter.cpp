@@ -34,12 +34,14 @@ QStringList Unstructured2DGridVTKExporter::fileDialogFilters() const
 bool Unstructured2DGridVTKExporter::doExport(Grid* grid, const QString& filename, const QString& /*selectedFilter*/, CoordinateSystem* /*cs*/, QWidget* /*parent*/)
 {
 	QString tempPath = QDir::tempPath();
-	QString tmpFile = iRIC::getTempFileName(tempPath);
+	QString tempFile = iRIC::getTempFileName(tempPath);
+	QFile f(filename);
+	f.copy(tempFile);
 
 	vtkUnstructuredGridWriter* writer = vtkUnstructuredGridWriter::New();
 	writer->SetInputData(vtkUnstructuredGrid::SafeDownCast(grid->vtkGrid()));
 	writer->SetFileTypeToASCII();
-	writer->SetFileName(iRIC::toStr(tmpFile).c_str());
+	writer->SetFileName(iRIC::toStr(tempFile).c_str());
 
 	// export data.
 	writer->Update();
@@ -50,14 +52,14 @@ bool Unstructured2DGridVTKExporter::doExport(Grid* grid, const QString& filename
 		// remove first.
 		if (! QFile::remove(filename)){
 			// unable to remove. fail.
-			QFile::remove(tmpFile);
+			QFile::remove(tempFile);
 			return false;
 		}
 	}
-	bool ok = QFile::rename(tmpFile, filename);
+	bool ok = QFile::rename(tempFile, filename);
 	if (! ok){
 		// rename failed.
-		QFile::remove(tmpFile);
+		QFile::remove(tempFile);
 		return false;
 	}
 	return true;

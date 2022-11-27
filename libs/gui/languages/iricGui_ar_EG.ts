@@ -507,6 +507,10 @@ Do you want to launch iRIC Maintainance?</source>
         <source>Background Grid</source>
         <translation>شبكة الخلفية</translation>
     </message>
+    <message>
+        <source>Font Default</source>
+        <translation>الخط الافتراضي</translation>
+    </message>
 </context>
 <context>
     <name>PreferencePageBackgroundGrid</name>
@@ -525,6 +529,81 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <source>Between Cross Sections:</source>
         <translation>بين المقاطع العرضية:</translation>
+    </message>
+</context>
+<context>
+    <name>PreferencePageFontDefault</name>
+    <message>
+        <source>Form</source>
+        <translation>استمارة</translation>
+    </message>
+    <message>
+        <source>Common</source>
+        <translation>مشترك</translation>
+    </message>
+    <message>
+        <source>Grid Shape / Grid Indices</source>
+        <translation>شكل الشبكة / مؤشرات الشبكة</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>شريط الألوان</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>عنوان</translation>
+    </message>
+    <message>
+        <source>Labels</source>
+        <translation>ملصقات</translation>
+    </message>
+    <message>
+        <source>Arrow Length Legend</source>
+        <translation>طول السهم وسيلة إيضاح</translation>
+    </message>
+    <message>
+        <source>Pre-processing Window</source>
+        <translation>نافذة ما قبل المعالجة</translation>
+    </message>
+    <message>
+        <source>Upstream / Downstream</source>
+        <translation>المنبع / المصب</translation>
+    </message>
+    <message>
+        <source>River Survey Data Cross-section Names</source>
+        <translation>أسماء المقاطع العرضية لبيانات مسح الأنهار</translation>
+    </message>
+    <message>
+        <source>Boundary Condition Names</source>
+        <translation>أسماء شروط الحدود</translation>
+    </message>
+    <message>
+        <source>Visualization Windows</source>
+        <translation>نوافذ التصور</translation>
+    </message>
+    <message>
+        <source>Labels:</source>
+        <translation>ملصقات:</translation>
+    </message>
+    <message>
+        <source>Chart Windows</source>
+        <translation>نوافذ الرسم البياني</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>عنوان التخطيط:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>أساطير:</translation>
+    </message>
+    <message>
+        <source>Axis Title:</source>
+        <translation>عنوان المحور:</translation>
+    </message>
+    <message>
+        <source>Axis Ticks:</source>
+        <translation>قراد المحور:</translation>
     </message>
 </context>
 <context>

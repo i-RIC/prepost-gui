@@ -507,6 +507,10 @@ Do you want to launch iRIC Maintainance?</source>
         <source>Background Grid</source>
         <translation>Фондук тор</translation>
     </message>
+    <message>
+        <source>Font Default</source>
+        <translation>Демейки шрифт</translation>
+    </message>
 </context>
 <context>
     <name>PreferencePageBackgroundGrid</name>
@@ -525,6 +529,81 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <source>Between Cross Sections:</source>
         <translation>Кесимдердин ортосунда:</translation>
+    </message>
+</context>
+<context>
+    <name>PreferencePageFontDefault</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>Common</source>
+        <translation>Жалпы</translation>
+    </message>
+    <message>
+        <source>Grid Shape / Grid Indices</source>
+        <translation>Тор формасы / Тор индекстери</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>Түс тилкеси</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Title</translation>
+    </message>
+    <message>
+        <source>Labels</source>
+        <translation>Энбелгилер</translation>
+    </message>
+    <message>
+        <source>Arrow Length Legend</source>
+        <translation>Жебе узундугу Легенда</translation>
+    </message>
+    <message>
+        <source>Pre-processing Window</source>
+        <translation>Алдын ала иштетүү терезеси</translation>
+    </message>
+    <message>
+        <source>Upstream / Downstream</source>
+        <translation>Жогорку/Төмөн агым</translation>
+    </message>
+    <message>
+        <source>River Survey Data Cross-section Names</source>
+        <translation>Дарыяларды изилдөө маалыматтары кесилишинин аталыштары</translation>
+    </message>
+    <message>
+        <source>Boundary Condition Names</source>
+        <translation>Чек ара шартынын аталыштары</translation>
+    </message>
+    <message>
+        <source>Visualization Windows</source>
+        <translation>Визуализация Windows</translation>
+    </message>
+    <message>
+        <source>Labels:</source>
+        <translation>Энбелгилер:</translation>
+    </message>
+    <message>
+        <source>Chart Windows</source>
+        <translation>Диаграмма Windows</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>Диаграмманын аталышы:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>Легендалар:</translation>
+    </message>
+    <message>
+        <source>Axis Title:</source>
+        <translation>Октун аталышы:</translation>
+    </message>
+    <message>
+        <source>Axis Ticks:</source>
+        <translation>Axis кенелери:</translation>
     </message>
 </context>
 <context>

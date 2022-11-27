@@ -158,6 +158,10 @@
         <source>Draw &amp;Setting</source>
         <translation>Ρύθμιση σχεδίασης (&amp;S)</translation>
     </message>
+    <message>
+        <source>&amp;Font Setting</source>
+        <translation>Ρύθμιση γραμματοσειράς (&amp;F)</translation>
+    </message>
 </context>
 <context>
     <name>Graph2dScatteredWindowDataModel</name>
@@ -218,6 +222,37 @@
     <message>
         <source>Draw Setting</source>
         <translation>Ρύθμιση σχεδίασης</translation>
+    </message>
+</context>
+<context>
+    <name>Graph2dScatteredWindowFontSettingDialog</name>
+    <message>
+        <source>Font Setting</source>
+        <translation>Ρύθμιση γραμματοσειράς</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>Τίτλος γραφήματος:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>Θρύλοι:</translation>
+    </message>
+    <message>
+        <source>X axis:</source>
+        <translation>Άξονας Χ:</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Τίτλος:</translation>
+    </message>
+    <message>
+        <source>Ticks:</source>
+        <translation>Κρότωνες:</translation>
+    </message>
+    <message>
+        <source>Y axis:</source>
+        <translation>Άξονας Υ:</translation>
     </message>
 </context>
 <context>

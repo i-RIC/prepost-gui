@@ -54,6 +54,7 @@ ArrowSettingContainer Post3dWindowNodeVectorArrowSettingDialog::arrowSetting() c
 	ret.standardValue = ui->stdValueSpinBox->value();
 	ret.legendLength = ui->legendLengthSpinBox->value();
 	ret.minimumValue = ui->minValueSpinBox->value();
+	ret.legendTextSetting = ui->legendTextWidget->setting();
 
 	return ret;
 }
@@ -71,6 +72,7 @@ void Post3dWindowNodeVectorArrowSettingDialog::setArrowSetting(const ArrowSettin
 	ui->stdValueSpinBox->setValue(setting.standardValue);
 	ui->legendLengthSpinBox->setValue(setting.legendLength);
 	ui->minValueSpinBox->setValue(setting.minimumValue);
+	ui->legendTextWidget->setSetting(setting.legendTextSetting);
 }
 
 std::vector<Post3dWindowNodeVectorArrowSettingDialog::FaceSetting> Post3dWindowNodeVectorArrowSettingDialog::faceSettings() const

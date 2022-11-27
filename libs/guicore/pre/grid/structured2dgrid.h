@@ -76,6 +76,7 @@ public:
 	unsigned int dimensionI() const;
 	unsigned int dimensionJ() const;
 	void setDimensions(unsigned int i, unsigned int j);
+	void setDimensionsFromVtkGrid();
 
 	const QStringList checkShape(QTextStream& stream) override;
 	bool isValid(QTextStream& stream) const override;

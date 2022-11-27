@@ -158,6 +158,10 @@
         <source>Draw &amp;Setting</source>
         <translation>Draw Setting (&amp;S)</translation>
     </message>
+    <message>
+        <source>&amp;Font Setting</source>
+        <translation>Font Setting (&amp;F)</translation>
+    </message>
 </context>
 <context>
     <name>Graph2dScatteredWindowDataModel</name>
@@ -218,6 +222,37 @@
     <message>
         <source>Draw Setting</source>
         <translation>Draw Setting</translation>
+    </message>
+</context>
+<context>
+    <name>Graph2dScatteredWindowFontSettingDialog</name>
+    <message>
+        <source>Font Setting</source>
+        <translation>Font Setting</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>Диаграмманын аталышы:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>Легендалар:</translation>
+    </message>
+    <message>
+        <source>X axis:</source>
+        <translation>X огу:</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Аталышы:</translation>
+    </message>
+    <message>
+        <source>Ticks:</source>
+        <translation>Кенелер:</translation>
+    </message>
+    <message>
+        <source>Y axis:</source>
+        <translation>Y огу:</translation>
     </message>
 </context>
 <context>

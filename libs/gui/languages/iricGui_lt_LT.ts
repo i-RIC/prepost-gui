@@ -507,6 +507,10 @@ Do you want to launch iRIC Maintainance?</source>
         <source>Background Grid</source>
         <translation>Fono tinklelis</translation>
     </message>
+    <message>
+        <source>Font Default</source>
+        <translation>Numatytasis šriftas</translation>
+    </message>
 </context>
 <context>
     <name>PreferencePageBackgroundGrid</name>
@@ -525,6 +529,81 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <source>Between Cross Sections:</source>
         <translation>Tarp skerspjūvių:</translation>
+    </message>
+</context>
+<context>
+    <name>PreferencePageFontDefault</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Common</source>
+        <translation>Dažnas</translation>
+    </message>
+    <message>
+        <source>Grid Shape / Grid Indices</source>
+        <translation>Tinklelio forma / tinklelio indeksai</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>Spalvų juosta</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Pavadinimas</translation>
+    </message>
+    <message>
+        <source>Labels</source>
+        <translation>Etiketės</translation>
+    </message>
+    <message>
+        <source>Arrow Length Legend</source>
+        <translation>Rodyklės ilgio legenda</translation>
+    </message>
+    <message>
+        <source>Pre-processing Window</source>
+        <translation>Išankstinio apdorojimo langas</translation>
+    </message>
+    <message>
+        <source>Upstream / Downstream</source>
+        <translation>Prieš srovę / pasroviui</translation>
+    </message>
+    <message>
+        <source>River Survey Data Cross-section Names</source>
+        <translation>Upių tyrimo duomenys Skerspjūvių pavadinimai</translation>
+    </message>
+    <message>
+        <source>Boundary Condition Names</source>
+        <translation>Ribinių sąlygų pavadinimai</translation>
+    </message>
+    <message>
+        <source>Visualization Windows</source>
+        <translation>Vizualizacijos langai</translation>
+    </message>
+    <message>
+        <source>Labels:</source>
+        <translation>Etiketės:</translation>
+    </message>
+    <message>
+        <source>Chart Windows</source>
+        <translation>„Windows“ diagrama</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>Diagramos pavadinimas:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>Legendos:</translation>
+    </message>
+    <message>
+        <source>Axis Title:</source>
+        <translation>Ašies pavadinimas:</translation>
+    </message>
+    <message>
+        <source>Axis Ticks:</source>
+        <translation>Ašies žymės:</translation>
     </message>
 </context>
 <context>

@@ -277,6 +277,7 @@ win32 {
 
 # Input
 HEADERS += pre_global.h \
+           datamodel/private/preprocessorbcgroupdataitem_setsettingcommand.h \
            preobjectbrowser.h \
            preobjectbrowserview.h \
            preprocessordatamodel.h \
@@ -292,6 +293,7 @@ HEADERS += pre_global.h \
            datamodel/preprocessorbackgroundimagesdataitem.h \
            datamodel/preprocessorbcdataitem.h \
            datamodel/preprocessorbcgroupdataitem.h \
+           datamodel/preprocessorbcgroupsettingdialog.h \
            datamodel/preprocessorbcsettingdataitem.h \
            datamodel/preprocessorbcsettinggroupdataitem.h \
            datamodel/preprocessorcustommappingsetting.h \
@@ -371,6 +373,7 @@ HEADERS += pre_global.h \
            subwindow/structured15dgridwithcrosssectioncrosssectionwindow/structured15dgridwithcrosssectioncrosssectionwindowprojectdataitem.h \
            subwindow/structured15dgridwithcrosssectioncrosssectionwindow/structured15dgridwithcrosssectioncrosssectionwindowtableview.h
 FORMS += bc/boundaryconditiondialog.ui \
+         datamodel/preprocessorbcgroupsettingdialog.ui \
          datamodel/preprocessorgridattributecelldisplaysettingdialog.ui \
          datamodel/preprocessorgridattributecustommappingdialog.ui \
          datamodel/preprocessorgridattributemappingsettingtopeditdialog.ui \
@@ -388,6 +391,7 @@ FORMS += bc/boundaryconditiondialog.ui \
          subwindow/structured15dgridwithcrosssectioncrosssectionwindow/structured15dgridwithcrosssectioncrosssectionaltitudemovedialog.ui \
          subwindow/structured15dgridwithcrosssectioncrosssectionwindow/structured15dgridwithcrosssectioncrosssectionwindow.ui
 SOURCES += preobjectbrowser.cpp \
+           datamodel/private/preprocessorbcgroupdataitem_setsettingcommand.cpp \
            preobjectbrowserview.cpp \
            preprocessordatamodel.cpp \
            preprocessorgraphicsview.cpp \
@@ -402,6 +406,7 @@ SOURCES += preobjectbrowser.cpp \
            datamodel/preprocessorbackgroundimagesdataitem.cpp \
            datamodel/preprocessorbcdataitem.cpp \
            datamodel/preprocessorbcgroupdataitem.cpp \
+           datamodel/preprocessorbcgroupsettingdialog.cpp \
            datamodel/preprocessorbcsettingdataitem.cpp \
            datamodel/preprocessorbcsettinggroupdataitem.cpp \
            datamodel/preprocessorcustommappingsetting.cpp \

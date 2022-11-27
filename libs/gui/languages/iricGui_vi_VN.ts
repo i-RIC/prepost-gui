@@ -507,6 +507,10 @@ Do you want to launch iRIC Maintainance?</source>
         <source>Background Grid</source>
         <translation>Lưới nền</translation>
     </message>
+    <message>
+        <source>Font Default</source>
+        <translation>Phông chữ Mặc định</translation>
+    </message>
 </context>
 <context>
     <name>PreferencePageBackgroundGrid</name>
@@ -525,6 +529,81 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <source>Between Cross Sections:</source>
         <translation>Giữa các phần chéo:</translation>
+    </message>
+</context>
+<context>
+    <name>PreferencePageFontDefault</name>
+    <message>
+        <source>Form</source>
+        <translation>Hình thức</translation>
+    </message>
+    <message>
+        <source>Common</source>
+        <translation>Phổ thông</translation>
+    </message>
+    <message>
+        <source>Grid Shape / Grid Indices</source>
+        <translation>Hình dạng lưới / Chỉ số lưới</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>Thanh màu</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Tiêu đề</translation>
+    </message>
+    <message>
+        <source>Labels</source>
+        <translation>nhãn</translation>
+    </message>
+    <message>
+        <source>Arrow Length Legend</source>
+        <translation>Chiều dài mũi tên</translation>
+    </message>
+    <message>
+        <source>Pre-processing Window</source>
+        <translation>Cửa sổ tiền xử lý</translation>
+    </message>
+    <message>
+        <source>Upstream / Downstream</source>
+        <translation>Ngược dòng hạ lưu</translation>
+    </message>
+    <message>
+        <source>River Survey Data Cross-section Names</source>
+        <translation>Dữ liệu khảo sát sông Tên mặt cắt ngang</translation>
+    </message>
+    <message>
+        <source>Boundary Condition Names</source>
+        <translation>Tên điều kiện ranh giới</translation>
+    </message>
+    <message>
+        <source>Visualization Windows</source>
+        <translation>Cửa sổ trực quan</translation>
+    </message>
+    <message>
+        <source>Labels:</source>
+        <translation>Nhãn:</translation>
+    </message>
+    <message>
+        <source>Chart Windows</source>
+        <translation>Cửa sổ biểu đồ</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>Tiêu đề biểu đồ:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>Truyền thuyết:</translation>
+    </message>
+    <message>
+        <source>Axis Title:</source>
+        <translation>Tiêu đề trục:</translation>
+    </message>
+    <message>
+        <source>Axis Ticks:</source>
+        <translation>Bọ ve trục:</translation>
     </message>
 </context>
 <context>

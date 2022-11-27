@@ -507,6 +507,10 @@ Do you want to launch iRIC Maintainance?</source>
         <source>Background Grid</source>
         <translation>Grella de fondo</translation>
     </message>
+    <message>
+        <source>Font Default</source>
+        <translation>Fonte predeterminada</translation>
+    </message>
 </context>
 <context>
     <name>PreferencePageBackgroundGrid</name>
@@ -525,6 +529,81 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <source>Between Cross Sections:</source>
         <translation>Entre seccións transversais:</translation>
+    </message>
+</context>
+<context>
+    <name>PreferencePageFontDefault</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulario</translation>
+    </message>
+    <message>
+        <source>Common</source>
+        <translation>Común</translation>
+    </message>
+    <message>
+        <source>Grid Shape / Grid Indices</source>
+        <translation>Forma de cuadrícula/Índices de cuadrícula</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>Barra de cores</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Título</translation>
+    </message>
+    <message>
+        <source>Labels</source>
+        <translation>Etiquetas</translation>
+    </message>
+    <message>
+        <source>Arrow Length Legend</source>
+        <translation>Lenda da lonxitude da frecha</translation>
+    </message>
+    <message>
+        <source>Pre-processing Window</source>
+        <translation>Ventá de preprocesamento</translation>
+    </message>
+    <message>
+        <source>Upstream / Downstream</source>
+        <translation>Aguas arriba / Abaixo</translation>
+    </message>
+    <message>
+        <source>River Survey Data Cross-section Names</source>
+        <translation>Nomes das seccións transversais de datos do levantamento fluvial</translation>
+    </message>
+    <message>
+        <source>Boundary Condition Names</source>
+        <translation>Nomes das condicións de límite</translation>
+    </message>
+    <message>
+        <source>Visualization Windows</source>
+        <translation>Windows de visualización</translation>
+    </message>
+    <message>
+        <source>Labels:</source>
+        <translation>Etiquetas:</translation>
+    </message>
+    <message>
+        <source>Chart Windows</source>
+        <translation>Windows gráfico</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>Título do gráfico:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>Lendas:</translation>
+    </message>
+    <message>
+        <source>Axis Title:</source>
+        <translation>Título do eixo:</translation>
+    </message>
+    <message>
+        <source>Axis Ticks:</source>
+        <translation>Ticks do eixe:</translation>
     </message>
 </context>
 <context>

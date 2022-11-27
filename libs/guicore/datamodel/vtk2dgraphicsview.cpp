@@ -77,11 +77,10 @@ void VTK2DGraphicsView::getDataRegion(double* xmin, double* xmax, double* ymin, 
 
 void VTK2DGraphicsView::getDrawnRegion(double* xmin, double* xmax, double* ymin, double* ymax)
 {
-	int* vtk_size = GetRenderWindow()->GetSize();
-	int sizeX = *vtk_size;
-	int sizeY = *(vtk_size + 1);
 
-	QSize windowsize = size();
+	QSize windowsize = size() * devicePixelRatioF();
+	int sizeX = windowsize.width();
+	int sizeY = windowsize.height();
 	// lowerleft
 	double x = 0;
 	double y = 0;

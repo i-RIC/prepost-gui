@@ -21,7 +21,8 @@ public:
 	void setColor(double* rgb);
 	void setLineWidth(double lineWidth);
 
-	vtkTextActor* textActor() const;
+	vtkTextActor* nameTextActor() const;
+	vtkTextActor* valueTextActor() const;
 	vtkActor2D* arrowActor() const;
 
 private:

@@ -381,6 +381,10 @@
         <source>CSV &amp;Export</source>
         <translation>CSV útflutningur (&amp;E)</translation>
     </message>
+    <message>
+        <source>&amp;Font Setting</source>
+        <translation>Leturstilling (&amp;F)</translation>
+    </message>
 </context>
 <context>
     <name>Graph2dHybridWindowDataModel</name>
@@ -605,6 +609,37 @@
     <message>
         <source>External</source>
         <translation>Ytri</translation>
+    </message>
+</context>
+<context>
+    <name>Graph2dHybridWindowFontSettingDialog</name>
+    <message>
+        <source>Chart Font Setting</source>
+        <translation>Myndleturstilling</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>Titill myndrits:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>Þjóðsögur:</translation>
+    </message>
+    <message>
+        <source>X axis:</source>
+        <translation>X ás:</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Titill:</translation>
+    </message>
+    <message>
+        <source>Ticks:</source>
+        <translation>Ticks:</translation>
+    </message>
+    <message>
+        <source>Y axis:</source>
+        <translation>Y ás:</translation>
     </message>
 </context>
 <context>

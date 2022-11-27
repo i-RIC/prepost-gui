@@ -507,6 +507,10 @@ Do you want to launch iRIC Maintainance?</source>
         <source>Background Grid</source>
         <translation>Bakgrund Grid</translation>
     </message>
+    <message>
+        <source>Font Default</source>
+        <translation>Typsnitt som standard</translation>
+    </message>
 </context>
 <context>
     <name>PreferencePageBackgroundGrid</name>
@@ -525,6 +529,81 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <source>Between Cross Sections:</source>
         <translation>Mellan tvärsnitt:</translation>
+    </message>
+</context>
+<context>
+    <name>PreferencePageFontDefault</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
+    </message>
+    <message>
+        <source>Common</source>
+        <translation>Allmänning</translation>
+    </message>
+    <message>
+        <source>Grid Shape / Grid Indices</source>
+        <translation>Grid Shape / Grid Index</translation>
+    </message>
+    <message>
+        <source>Color Bar</source>
+        <translation>Färgfält</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Titel</translation>
+    </message>
+    <message>
+        <source>Labels</source>
+        <translation>Etiketter</translation>
+    </message>
+    <message>
+        <source>Arrow Length Legend</source>
+        <translation>Pillängdsförklaring</translation>
+    </message>
+    <message>
+        <source>Pre-processing Window</source>
+        <translation>Förbehandlingsfönster</translation>
+    </message>
+    <message>
+        <source>Upstream / Downstream</source>
+        <translation>Uppströms nedströms</translation>
+    </message>
+    <message>
+        <source>River Survey Data Cross-section Names</source>
+        <translation>River Survey Data Tvärsnittsnamn</translation>
+    </message>
+    <message>
+        <source>Boundary Condition Names</source>
+        <translation>Namn på gränsvillkor</translation>
+    </message>
+    <message>
+        <source>Visualization Windows</source>
+        <translation>Visualisering Windows</translation>
+    </message>
+    <message>
+        <source>Labels:</source>
+        <translation>Etiketter:</translation>
+    </message>
+    <message>
+        <source>Chart Windows</source>
+        <translation>Karta Windows</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>Diagramtitel:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>Legender:</translation>
+    </message>
+    <message>
+        <source>Axis Title:</source>
+        <translation>Axeltitel:</translation>
+    </message>
+    <message>
+        <source>Axis Ticks:</source>
+        <translation>Axis Ticks:</translation>
     </message>
 </context>
 <context>

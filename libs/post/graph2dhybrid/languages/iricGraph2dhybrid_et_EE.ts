@@ -381,6 +381,10 @@
         <source>CSV &amp;Export</source>
         <translation>CSV eksport (&amp;E)</translation>
     </message>
+    <message>
+        <source>&amp;Font Setting</source>
+        <translation>Fondi seadistus (&amp;F)</translation>
+    </message>
 </context>
 <context>
     <name>Graph2dHybridWindowDataModel</name>
@@ -605,6 +609,37 @@
     <message>
         <source>External</source>
         <translation>Väline</translation>
+    </message>
+</context>
+<context>
+    <name>Graph2dHybridWindowFontSettingDialog</name>
+    <message>
+        <source>Chart Font Setting</source>
+        <translation>Diagrammi fondi seadistus</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>Diagrammi pealkiri:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>Legendid:</translation>
+    </message>
+    <message>
+        <source>X axis:</source>
+        <translation>X-telg:</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Pealkiri:</translation>
+    </message>
+    <message>
+        <source>Ticks:</source>
+        <translation>Puugid:</translation>
+    </message>
+    <message>
+        <source>Y axis:</source>
+        <translation>Y-telg:</translation>
     </message>
 </context>
 <context>

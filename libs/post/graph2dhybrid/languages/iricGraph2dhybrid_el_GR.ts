@@ -381,6 +381,10 @@
         <source>CSV &amp;Export</source>
         <translation>CSV Export (&amp;E)</translation>
     </message>
+    <message>
+        <source>&amp;Font Setting</source>
+        <translation>Ρύθμιση γραμματοσειράς (&amp;F)</translation>
+    </message>
 </context>
 <context>
     <name>Graph2dHybridWindowDataModel</name>
@@ -605,6 +609,37 @@
     <message>
         <source>External</source>
         <translation>Εξωτερικός</translation>
+    </message>
+</context>
+<context>
+    <name>Graph2dHybridWindowFontSettingDialog</name>
+    <message>
+        <source>Chart Font Setting</source>
+        <translation>Ρύθμιση γραμματοσειράς γραφήματος</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>Τίτλος γραφήματος:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>Θρύλοι:</translation>
+    </message>
+    <message>
+        <source>X axis:</source>
+        <translation>Άξονας Χ:</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Τίτλος:</translation>
+    </message>
+    <message>
+        <source>Ticks:</source>
+        <translation>Κρότωνες:</translation>
+    </message>
+    <message>
+        <source>Y axis:</source>
+        <translation>Άξονας Υ:</translation>
     </message>
 </context>
 <context>

@@ -913,6 +913,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <source>Color:</source>
         <translation>색상:</translation>
     </message>
+    <message>
+        <source>Crosssection Names</source>
+        <translation>횡단면 이름</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyExporter</name>

@@ -381,6 +381,10 @@
         <source>CSV &amp;Export</source>
         <translation>Exportar CSV (&amp;E)</translation>
     </message>
+    <message>
+        <source>&amp;Font Setting</source>
+        <translation>Configuração de fonte (&amp;F)</translation>
+    </message>
 </context>
 <context>
     <name>Graph2dHybridWindowDataModel</name>
@@ -609,6 +613,37 @@
     <message>
         <source>External</source>
         <translation>Externo</translation>
+    </message>
+</context>
+<context>
+    <name>Graph2dHybridWindowFontSettingDialog</name>
+    <message>
+        <source>Chart Font Setting</source>
+        <translation>Configuração da fonte do gráfico</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>Título do Gráfico:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>Legendas:</translation>
+    </message>
+    <message>
+        <source>X axis:</source>
+        <translation>eixo X:</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Título:</translation>
+    </message>
+    <message>
+        <source>Ticks:</source>
+        <translation>Carrapatos:</translation>
+    </message>
+    <message>
+        <source>Y axis:</source>
+        <translation>Eixo Y:</translation>
     </message>
 </context>
 <context>

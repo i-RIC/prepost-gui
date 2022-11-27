@@ -381,6 +381,10 @@
         <source>CSV &amp;Export</source>
         <translation>CSV esportazioa (&amp;E)</translation>
     </message>
+    <message>
+        <source>&amp;Font Setting</source>
+        <translation>Letra-tipoaren ezarpena (&amp;F)</translation>
+    </message>
 </context>
 <context>
     <name>Graph2dHybridWindowDataModel</name>
@@ -605,6 +609,37 @@
     <message>
         <source>External</source>
         <translation>Kanpokoa</translation>
+    </message>
+</context>
+<context>
+    <name>Graph2dHybridWindowFontSettingDialog</name>
+    <message>
+        <source>Chart Font Setting</source>
+        <translation>Diagramako letra-tipoaren ezarpena</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>Diagramaren izenburua:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>Kondairak:</translation>
+    </message>
+    <message>
+        <source>X axis:</source>
+        <translation>X ardatza:</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Izenburua:</translation>
+    </message>
+    <message>
+        <source>Ticks:</source>
+        <translation>Tikak:</translation>
+    </message>
+    <message>
+        <source>Y axis:</source>
+        <translation>Y ardatza:</translation>
     </message>
 </context>
 <context>

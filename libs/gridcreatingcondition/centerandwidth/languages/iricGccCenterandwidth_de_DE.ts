@@ -85,6 +85,10 @@
         <source>Remove Center Line Vertex</source>
         <translation>Mittellinien-Scheitelpunkt entfernen</translation>
     </message>
+    <message>
+        <source>Display Setting</source>
+        <translation>Bildschirmeinstellung</translation>
+    </message>
 </context>
 <context>
     <name>GridCreatingConditionCenterAndWidthDialog</name>

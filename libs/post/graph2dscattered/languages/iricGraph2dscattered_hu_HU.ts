@@ -158,6 +158,10 @@
         <source>Draw &amp;Setting</source>
         <translation>Rajz beállítás (&amp;S)</translation>
     </message>
+    <message>
+        <source>&amp;Font Setting</source>
+        <translation>Betűtípus beállítása (&amp;F)</translation>
+    </message>
 </context>
 <context>
     <name>Graph2dScatteredWindowDataModel</name>
@@ -218,6 +222,37 @@
     <message>
         <source>Draw Setting</source>
         <translation>Rajz beállítás</translation>
+    </message>
+</context>
+<context>
+    <name>Graph2dScatteredWindowFontSettingDialog</name>
+    <message>
+        <source>Font Setting</source>
+        <translation>Betűtípus beállítása</translation>
+    </message>
+    <message>
+        <source>Chart Title:</source>
+        <translation>Diagram címe:</translation>
+    </message>
+    <message>
+        <source>Legends:</source>
+        <translation>Legendák:</translation>
+    </message>
+    <message>
+        <source>X axis:</source>
+        <translation>X tengely:</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>Cím:</translation>
+    </message>
+    <message>
+        <source>Ticks:</source>
+        <translation>Kullancsok:</translation>
+    </message>
+    <message>
+        <source>Y axis:</source>
+        <translation>Y tengely:</translation>
     </message>
 </context>
 <context>
