@@ -6,8 +6,8 @@ QSpinBoxWithFocusSignals::QSpinBoxWithFocusSignals(QWidget* parent) :
 
 void QSpinBoxWithFocusSignals::stepBy(int steps)
 {
-	emit stepChanged(steps);
 	QSpinBox::stepBy(steps);
+	emit stepChanged(steps);
 }
 
 void QSpinBoxWithFocusSignals::focusInEvent(QFocusEvent* event)
