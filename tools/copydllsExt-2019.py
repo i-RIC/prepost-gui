@@ -1,14 +1,15 @@
 import iricdevtool as idev
 import sys
+import os
 import shutil
 import configparser
 import functools
 from pathlib import Path
 
-configFile = "./data/dirExt.prop"
+configFile = os.path.join(sys.path[0], "./data/dirExt.prop")
 
-debugDir = "../libdlls/debug"
-releaseDir = "../libdlls/release"
+debugDir = os.path.join(sys.path[0], "../libdlls/debug")
+releaseDir = os.path.join(sys.path[0], "../libdlls/release")
 
 def copydlls(file, dir):
   shutil.copy(file, dir)
