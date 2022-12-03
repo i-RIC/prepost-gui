@@ -2,6 +2,11 @@
 
 #define REAL double
 
+#include <vtkIdList.h>
+#include <vtkPoints.h>
+#include <vtkPolygon.h>
+#include <vtkSmartPointer.h>
+
 #include <triangle/triangle.h>
 
 #include <geos/geom/CoordinateSequence.h>
@@ -81,6 +86,12 @@ geos::geom::Polygon* PolygonUtil::getGeosPolygon(const QPolygonF& polygon)
 
 void PolygonUtil::triangulate(const QPolygonF& polygon, std::vector<unsigned int>* indices)
 {
+	// triangulateTriangle(polygon, indices);
+	triangulateVtk(polygon, indices);
+}
+
+void PolygonUtil::triangulateTriangle(const QPolygonF& polygon, std::vector<unsigned int>* indices)
+{
 	auto geosPolygon = getGeosPolygon(polygon);
 
 	const geos::geom::LineString* eLS = geosPolygon->getExteriorRing();
@@ -137,6 +148,27 @@ void PolygonUtil::triangulate(const QPolygonF& polygon, std::vector<unsigned int
 	trifree(out.trianglelist);
 
 	delete geosPolygon;
+}
+
+void PolygonUtil::triangulateVtk(const QPolygonF& polygon, std::vector<unsigned int>* indices)
+{
+	auto pol = vtkSmartPointer<vtkPolygon>::New();
+	auto points = pol->GetPoints();
+	auto ids = pol->GetPointIds();
+
+	auto firstP = polygon.at(0);
+	for (int i = 0; i < polygon.size() - 1; ++i) {
+		auto p = polygon.at(i);
+		points->InsertNextPoint(p.x() - firstP.x(), p.y() - firstP.y(), 0);
+		ids->InsertNextId(i);
+	}
+	auto triIds = vtkSmartPointer<vtkIdList>::New();
+	pol->Triangulate(triIds);
+
+	indices->clear();
+	for (int i = 0; i < triIds->GetNumberOfIds(); ++i) {
+		indices->push_back(triIds->GetId(i));
+	}
 }
 
 PolygonUtil::PolygonUtil()

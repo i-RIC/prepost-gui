@@ -56,6 +56,12 @@ win32 {
 	LIBS += -L$(SolutionDir)/libdlls/$(Configuration)
 }
 
+# VTK
+
+LIBS += \
+        -lvtkCommonCore-$${VTK_MAJ_MIN} \
+        -lvtkCommonDataModel-$${VTK_MAJ_MIN}
+
 # Input
 HEADERS += geoio_global.h \
            io.h \
