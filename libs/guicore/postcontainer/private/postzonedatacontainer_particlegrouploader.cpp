@@ -18,6 +18,8 @@ bool PostZoneDataContainer::ParticleGroupLoader::load(std::map<std::string, vtkS
 {
 	particleGroupMap->clear();
 
+	if (sol == nullptr) {return true;}
+
 	std::vector<std::string> groupNames;
 	int ier = sol->readGroupNames(&groupNames);
 	if (ier != 0) {return false;}
