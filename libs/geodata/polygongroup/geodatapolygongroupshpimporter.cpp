@@ -3,6 +3,7 @@
 #include "geodatapolygongroupshpimporter.h"
 #include "private/geodatapolygongroup_impl.h"
 
+#include <cs/coordinatesystemconverter.h>
 #include <misc/errormessage.h>
 #include <misc/informationdialog.h>
 #include <misc/stringtool.h>
@@ -62,7 +63,7 @@ struct RectIndexAreaReverseSorter
 	}
 };
 
-QPolygonF readPolygon(SHPObject* shpo, int partIndex)
+QPolygonF readPolygon(SHPObject* shpo, int partIndex, CoordinateSystemConverter* converter)
 {
 	QPolygonF ret;
 
@@ -74,6 +75,11 @@ QPolygonF readPolygon(SHPObject* shpo, int partIndex)
 	QPointF lastPoint;
 	for (int i = start; i < end; ++i) {
 		QPointF point(*(shpo->padfX + i), *(shpo->padfY + i));
+
+		if (converter != nullptr) {
+			point = converter->convert(point);
+		}
+
 		QPointF diff = lastPoint - point;
 		bool veryNear = (std::fabs(diff.x()) < LOCATION_DELTA && std::fabs(diff.y()) < LOCATION_DELTA);
 		if (i != start && veryNear) {continue;}
@@ -86,7 +92,7 @@ QPolygonF readPolygon(SHPObject* shpo, int partIndex)
 	return ret;
 }
 
-std::vector<PolygonShapeInfo> buildPolygonShapeInfos(const std::string& shpFileName)
+std::vector<PolygonShapeInfo> buildPolygonShapeInfos(const std::string& shpFileName, CoordinateSystemConverter* converter)
 {
 	SHPHandle shph = SHPOpen(shpFileName.c_str(), "rb");
 	int numEntities;
@@ -108,7 +114,7 @@ std::vector<PolygonShapeInfo> buildPolygonShapeInfos(const std::string& shpFileN
 		}
 
 		for (int j = 0; j < shpo->nParts; ++j){
-			QPolygonF tmppoly = readPolygon(shpo, j);
+			QPolygonF tmppoly = readPolygon(shpo, j, converter);
 			QRectF rect = tmppoly.boundingRect();
 			rectVec.push_back(RectIndex(rect, tmppoly, j));
 			holeVec.push_back(false);
@@ -161,7 +167,7 @@ bool GeoDataPolygonGroupShpImporter::importData(GeoData* data, int /*index*/, QW
 
 	std::string fname = iRIC::toStr(filename());
 
-	auto shapeInfos = buildPolygonShapeInfos(fname);
+	auto shapeInfos = buildPolygonShapeInfos(fname, m_converter);
 
 	SHPHandle shph = SHPOpen(fname.c_str(), "rb");
 
@@ -182,11 +188,11 @@ bool GeoDataPolygonGroupShpImporter::importData(GeoData* data, int /*index*/, QW
 	for (int i = 0; i < shapeInfos.size(); ++i) {
 		PolygonShapeInfo info = shapeInfos.at(i);
 		SHPObject* shpo = SHPReadObject(shph, info.item);
-		QPolygonF region = readPolygon(shpo, info.region);
+		QPolygonF region = readPolygon(shpo, info.region, m_converter);
 		std::vector<QPolygonF> holes;
 		for (int j = 0; j < info.holes.size(); ++j) {
 			int holeIndex = info.holes.at(j);
-			holes.push_back(readPolygon(shpo, holeIndex));
+			holes.push_back(readPolygon(shpo, holeIndex, m_converter));
 		}
 		try {
 			auto poly = new GeoDataPolygonGroupPolygon(region, holes, group);

@@ -1,15 +1,17 @@
 #ifndef COORDINATESYSTEMCONVERTER_H
 #define COORDINATESYSTEMCONVERTER_H
 
+#include "cs_api.h"
+
 #include <vector>
 
 class CoordinateSystem;
 class QPointF;
 
-class CoordinateSystemConverter
+class CS_API CoordinateSystemConverter
 {
 public:
-	CoordinateSystemConverter(const CoordinateSystem& src, const CoordinateSystem& tgt);
+	CoordinateSystemConverter(CoordinateSystem* src, CoordinateSystem* tgt);
 	~CoordinateSystemConverter();
 
 	QPointF convert(const QPointF& point);

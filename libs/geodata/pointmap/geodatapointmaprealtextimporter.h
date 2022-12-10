@@ -3,12 +3,15 @@
 
 #include <guicore/pre/geodata/geodataimporter.h>
 
+class CoordinateSystemConverter;
+
 class GeoDataPointmapRealTextImporter : public GeoDataImporter
 {
 	Q_OBJECT
 
 public:
 	GeoDataPointmapRealTextImporter(GeoDataCreator* creator);
+	~GeoDataPointmapRealTextImporter();
 
 	bool importData(GeoData *data, int index, QWidget *w) override;
 	const QStringList fileDialogFilters() override;
@@ -18,10 +21,16 @@ private slots:
 	void cancel();
 
 private:
+	bool doInit(const QString& filename, const QString& selectedFilter, int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemInterface* item, QWidget* w) override;
+
 	bool m_canceled;
 
-	class Values;
 	class LineParser;
+	LineParser* m_parser;
+
+	CoordinateSystemConverter* m_converter;
+
+	class Values;
 	class SettingDialog;
 };
 

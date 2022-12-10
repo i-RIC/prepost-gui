@@ -1,6 +1,7 @@
 #include "geodatapointmaplandxmlexporter.h"
 #include "geodatapointmapt.h"
 
+#include <cs/coordinatesystem.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
 #include <guibase/landxmlutil.h>
@@ -8,6 +9,7 @@
 #include <QDir>
 #include <QFile>
 #include <QMessageBox>
+#include <QRegExp>
 #include <QXmlStreamWriter>
 
 #include <vtkCellArray.h>
@@ -86,6 +88,15 @@ bool GeoDataPointmapLandXmlExporter::doExport(GeoData* data, const QString& file
 
 	writer.writeEndDocument();
 	file.close();
+
+	// export *.prj if project coordinate system is defined
+	auto cs = pd->mainfile()->coordinateSystem();
+	if (cs != nullptr) {
+			auto prjFilename = filename;
+			prjFilename.replace(QRegExp("\\.xml$"), ".prj");
+			cs->exportPlaneWkt(prjFilename);
+	}
+
 	return true;
 }
 

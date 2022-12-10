@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>652</width>
+    <width>246</width>
     <height>23</height>
    </rect>
   </property>
@@ -27,13 +27,6 @@
     <number>0</number>
    </property>
    <item>
-    <widget class="QCheckBox" name="convertCheckBox">
-     <property name="text">
-      <string>Convert</string>
-     </property>
-    </widget>
-   </item>
-   <item>
     <widget class="QLabel" name="csLabel">
      <property name="text">
       <string>Coordinate System</string>
@@ -47,13 +40,6 @@
      </property>
      <property name="text">
       <string>Edit...</string>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <widget class="QLabel" name="disabledLabel">
-     <property name="text">
-      <string>Conversion is possible only when the project coordinate system is specified.</string>
      </property>
     </widget>
    </item>
@@ -73,22 +59,5 @@
   </layout>
  </widget>
  <resources/>
- <connections>
-  <connection>
-   <sender>convertCheckBox</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>editButton</receiver>
-   <slot>setEnabled(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>31</x>
-     <y>12</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>203</x>
-     <y>12</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
 </ui>

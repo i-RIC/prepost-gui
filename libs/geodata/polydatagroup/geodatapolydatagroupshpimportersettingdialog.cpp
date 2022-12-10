@@ -36,6 +36,26 @@ GeoDataPolyDataGroupShpImporterSettingDialog::~GeoDataPolyDataGroupShpImporterSe
 	delete ui;
 }
 
+void GeoDataPolyDataGroupShpImporterSettingDialog::setCsEnabled(bool enabled)
+{
+	ui->csWidget->setEnabled(enabled);
+}
+
+void GeoDataPolyDataGroupShpImporterSettingDialog::setCsBuilder(CoordinateSystemBuilder* builder)
+{
+	ui->csWidget->setBuilder(builder);
+}
+
+CoordinateSystem* GeoDataPolyDataGroupShpImporterSettingDialog::coordinateSystem() const
+{
+	return ui->csWidget->coordinateSystem();
+}
+
+void GeoDataPolyDataGroupShpImporterSettingDialog::setCoordinateSystem(CoordinateSystem* cs)
+{
+	ui->csWidget->setCoordinateSystem(cs);
+}
+
 void GeoDataPolyDataGroupShpImporterSettingDialog::setLabels(const QStringList& labels)
 {
 	ui->nameComboBox->clear();

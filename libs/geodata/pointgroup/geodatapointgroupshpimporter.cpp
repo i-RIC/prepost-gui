@@ -3,6 +3,7 @@
 #include "geodatapointgroupshpimporter.h"
 #include "private/geodatapointgroup_impl.h"
 
+#include <cs/coordinatesystemconverter.h>
 #include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
 #include <misc/informationdialog.h>
@@ -61,6 +62,10 @@ bool GeoDataPointGroupShpImporter::importData(GeoData* data, int /*index*/, QWid
 	for (int i = 0; i < count; ++i) {
 		SHPObject* shpo = SHPReadObject(shph, i);
 		auto p = readPoint(shpo);
+
+		if (m_converter != nullptr) {
+			p = m_converter->convert(p);
+		}
 
 		auto point = new GeoDataPointGroupPoint(p, group);
 		// name

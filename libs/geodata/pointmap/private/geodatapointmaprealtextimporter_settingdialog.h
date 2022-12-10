@@ -12,6 +12,9 @@ namespace Ui {
 class GeoDataPointmapRealTextImporter_SettingDialog;
 }
 
+class CoordinateSystem;
+class CoordinateSystemBuilder;
+
 class GeoDataPointmapRealTextImporter::SettingDialog : public QDialog
 {
 	Q_OBJECT
@@ -24,8 +27,14 @@ public:
 	void setIsCsv(bool isCsv);
 	void setPreviewData(const std::vector<QByteArray>& data);
 
+	void setBuilder(CoordinateSystemBuilder* builder);
+	void setCsEnabled(bool enabled);
+
+	CoordinateSystem* coordinateSystem() const;
+	void setCoordinateSystem(CoordinateSystem* cs);
+
 	void updateComboBoxes();
-	LineParser buildParser(bool* ok, QString* error) const;
+	LineParser* buildParser(bool* ok, QString* error) const;
 
 private slots:
 	void csvToggled(bool toggled);

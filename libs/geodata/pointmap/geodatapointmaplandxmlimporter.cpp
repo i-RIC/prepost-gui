@@ -1,6 +1,14 @@
 #include "geodatapointmaplandxmlimporter.h"
 #include "geodatapointmapt.h"
 
+#include <cs/coordinatesystembuilder.h>
+#include <cs/coordinatesystemconvertdialog.h>
+#include <cs/coordinatesystemconverter.h>
+#include <cs/gdalutil.h>
+#include <guicore/base/iricmainwindowinterface.h>
+#include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
+#include <guicore/project/projectdata.h>
+#include <guicore/project/projectmainfile.h>
 #include <misc/xmlsupport.h>
 
 #include <vtkCellArray.h>
@@ -57,8 +65,14 @@ bool readUntilAndSkip(QXmlStreamReader& xml, const char* elemName)
 } // namespace
 
 GeoDataPointmapLandXmlImporter::GeoDataPointmapLandXmlImporter(GeoDataCreator* creator) :
-	GeoDataImporter("pointmap_landxml", tr("LandXML (*.xml)"), creator)
+	GeoDataImporter("pointmap_landxml", tr("LandXML (*.xml)"), creator),
+	m_converter {nullptr}
 {}
+
+GeoDataPointmapLandXmlImporter::~GeoDataPointmapLandXmlImporter()
+{
+	delete m_converter;
+}
 
 bool GeoDataPointmapLandXmlImporter::importData(GeoData* data, int /*index*/, QWidget* w)
 {
@@ -91,6 +105,46 @@ bool GeoDataPointmapLandXmlImporter::importData(GeoData* data, int /*index*/, QW
 	bool ret = this->importDataSAX(data, index, w);
 	qDebug() << "importDataSAX" << timer.elapsed() << "milliseconds";    // Floodplain Channels.xml -- 641 636 640
 	return ret;
+}
+
+bool GeoDataPointmapLandXmlImporter::doInit(const QString& filename, const QString& /*selectedFilter*/, int* /*count*/, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemInterface* item, QWidget* w)
+{
+	auto projectCs = item->projectData()->mainfile()->coordinateSystem();
+	if (projectCs == nullptr) {return true;}
+
+	auto csBuilder = item->projectData()->mainWindow()->coordinateSystemBuilder();
+	CoordinateSystemConvertDialog dialog(w);
+	dialog.setBuilder(csBuilder);
+	dialog.setEnabled(true);
+
+	auto prjFilename = filename;
+	prjFilename.replace(QRegExp("\\.xml"), ".prj");
+	if (QFile::exists(prjFilename)) {
+		// read and get EPSG code
+		QFile f(prjFilename);
+		f.open(QFile::ReadOnly);
+		auto wkt = f.readAll().toStdString();
+		int epsgCode = GdalUtil::wkt2Epsg(wkt.c_str());
+		if (epsgCode != 0) {
+			auto cs = csBuilder->system(QString("EPSG:%1").arg(epsgCode));
+			dialog.setCoordinateSystem(cs);
+		} else {
+			dialog.setCoordinateSystem(projectCs);
+		}
+	} else {
+		dialog.setCoordinateSystem(projectCs);
+	}
+
+	int ret = dialog.exec();
+	if (ret == QDialog::Rejected) {
+		return false;
+	}
+	auto cs = dialog.coordinateSystem();
+
+	if (projectCs != cs) {
+		m_converter = new CoordinateSystemConverter(cs, projectCs);
+	}
+	return true;
 }
 
 bool GeoDataPointmapLandXmlImporter::importDataDOM(GeoData* data, int /*index*/, QWidget* w)
@@ -208,7 +262,13 @@ bool GeoDataPointmapLandXmlImporter::importDataSAX(GeoData* data, int /*index*/,
 			double x = frags.at(1).toDouble();
 			double z = frags.at(2).toDouble();
 
-			points->InsertNextPoint(x, y, 0);
+			QPointF p(x, y);
+
+			if (m_converter != nullptr) {
+				p = m_converter->convert(p);
+			}
+
+			points->InsertNextPoint(p.x(), p.y(), 0);
 			values->InsertNextValue(z);
 
 			pointIdMap.insert({ pointId, numPoints });

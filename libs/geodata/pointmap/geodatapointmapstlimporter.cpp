@@ -1,6 +1,14 @@
 #include "geodatapointmapstlimporter.h"
 #include "geodatapointmapt.h"
 
+#include <cs/coordinatesystembuilder.h>
+#include <cs/coordinatesystemconvertdialog.h>
+#include <cs/coordinatesystemconverter.h>
+#include <cs/gdalutil.h>
+#include <guicore/base/iricmainwindowinterface.h>
+#include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
+#include <guicore/project/projectdata.h>
+#include <guicore/project/projectmainfile.h>
 #include <misc/stringtool.h>
 
 #include <QFile>
@@ -14,12 +22,56 @@
 #include <vtkVertex.h>
 
 GeoDataPointmapSTLImporter::GeoDataPointmapSTLImporter(GeoDataCreator* creator) :
-	GeoDataImporter("stl", tr("Stereolithography (STL)"), creator)
+	GeoDataImporter("stl", tr("Stereolithography (STL)"), creator),
+	m_converter {nullptr}
 {}
 
-bool GeoDataPointmapSTLImporter::doInit(const QString& filename, const QString& /*selectedFilter*/, int* /*count*/, SolverDefinitionGridAttribute* /*condition*/, PreProcessorGeoDataGroupDataItemInterface* /*item*/, QWidget* w)
+GeoDataPointmapSTLImporter::~GeoDataPointmapSTLImporter()
 {
-	return checkHeader(filename, w);
+	delete m_converter;
+}
+
+bool GeoDataPointmapSTLImporter::doInit(const QString& filename, const QString& /*selectedFilter*/, int* /*count*/, SolverDefinitionGridAttribute* /*condition*/, PreProcessorGeoDataGroupDataItemInterface* item, QWidget* w)
+{
+	bool ok = checkHeader(filename, w);
+	if (! ok) {return false;}
+
+	auto projectCs = item->projectData()->mainfile()->coordinateSystem();
+	if (projectCs == nullptr) {return true;}
+
+	auto csBuilder = item->projectData()->mainWindow()->coordinateSystemBuilder();
+	CoordinateSystemConvertDialog dialog(w);
+	dialog.setBuilder(csBuilder);
+	dialog.setEnabled(true);
+
+	auto prjFilename = filename;
+	prjFilename.replace(QRegExp("\\.stl$"), ".prj");
+	if (QFile::exists(prjFilename)) {
+		// read and get EPSG code
+		QFile f(prjFilename);
+		f.open(QFile::ReadOnly);
+		auto wkt = f.readAll().toStdString();
+		int epsgCode = GdalUtil::wkt2Epsg(wkt.c_str());
+		if (epsgCode != 0) {
+			auto cs = csBuilder->system(QString("EPSG:%1").arg(epsgCode));
+			dialog.setCoordinateSystem(cs);
+		} else {
+			dialog.setCoordinateSystem(projectCs);
+		}
+	} else {
+		dialog.setCoordinateSystem(projectCs);
+	}
+
+	int ret = dialog.exec();
+	if (ret == QDialog::Rejected) {
+		return false;
+	}
+	auto cs = dialog.coordinateSystem();
+
+	if (projectCs != cs) {
+		m_converter = new CoordinateSystemConverter(cs, projectCs);
+	}
+	return true;
 }
 
 bool GeoDataPointmapSTLImporter::importData(GeoData* data, int /*index*/, QWidget* /*w*/)
@@ -42,9 +94,15 @@ bool GeoDataPointmapSTLImporter::importData(GeoData* data, int /*index*/, QWidge
 	for (i = 0; i < numpoints; ++i) {
 		double tmpvec[3];
 		polydata->GetPoints()->GetPoint(i, tmpvec);
+
 		values->InsertNextValue(tmpvec[2]);
-		tmpvec[2] = 0;
-		points->InsertNextPoint(tmpvec);
+		QPointF p(tmpvec[0], tmpvec[1]);
+
+		if (m_converter != nullptr) {
+			p = m_converter->convert(p);
+		}
+
+		points->InsertNextPoint(p.x(), p.y(), 0);
 	}
 	points->Modified();
 	values->Modified();

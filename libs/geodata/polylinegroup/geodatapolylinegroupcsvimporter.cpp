@@ -2,6 +2,15 @@
 #include "geodatapolylinegroupcsvimporter.h"
 #include "geodatapolylinegrouppolyline.h"
 
+#include <cs/coordinatesystembuilder.h>
+#include <cs/coordinatesystemconvertdialog.h>
+#include <cs/coordinatesystemconverter.h>
+#include <cs/gdalutil.h>
+#include <guicore/base/iricmainwindowinterface.h>
+#include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
+#include <guicore/project/projectdata.h>
+#include <guicore/project/projectmainfile.h>
+
 #include <QDir>
 #include <QFile>
 #include <QMessageBox>
@@ -20,8 +29,14 @@ void addNewLine(GeoDataPolyLineGroup* group, const QString& name, double value, 
 } // namespace
 
 GeoDataPolyLineGroupCsvImporter::GeoDataPolyLineGroupCsvImporter(GeoDataCreator* creator) :
-	GeoDataImporter {"csv_polyline_group", tr("CSV file (Polylines)"), creator}
+	GeoDataImporter {"csv_polyline_group", tr("CSV file (Polylines)"), creator},
+	m_converter {nullptr}
 {}
+
+GeoDataPolyLineGroupCsvImporter::~GeoDataPolyLineGroupCsvImporter()
+{
+	delete m_converter;
+}
 
 const QStringList GeoDataPolyLineGroupCsvImporter::fileDialogFilters()
 {
@@ -99,6 +114,11 @@ bool GeoDataPolyLineGroupCsvImporter::importData(GeoData* data, int index, QWidg
 					QMessageBox::critical(w, tr("Error"), tr("Error occured while reading line %1. Line should have two points at least.").arg(lineno - 1));
 					return false;
 				}
+
+				if (m_converter != nullptr) {
+					points = m_converter->convert(points);
+				}
+
 				addNewLine(group, currentName, currentValue, points);
 				// successfully read all data
 				group->setupDataItem();
@@ -169,6 +189,11 @@ bool GeoDataPolyLineGroupCsvImporter::importData(GeoData* data, int index, QWidg
 					QMessageBox::critical(w, tr("Error"), tr("Error occured while reading line %1. Line should have two points at least.").arg(lineno - 1));
 					return false;
 				}
+
+				if (m_converter != nullptr) {
+					points = m_converter->convert(points);
+				}
+
 				addNewLine(group, currentName, currentValue, points);
 
 				currentLid = lid;
@@ -191,4 +216,41 @@ bool GeoDataPolyLineGroupCsvImporter::importData(GeoData* data, int index, QWidg
 
 		++ lineno;
 	}
+}
+
+
+bool GeoDataPolyLineGroupCsvImporter::doInit(const QString& filename, const QString& selectedFilter, int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemInterface* item, QWidget* w)
+{
+	auto projectCs = item->projectData()->mainfile()->coordinateSystem();
+	if (projectCs == nullptr) {return true;}
+
+	auto csBuilder = item->projectData()->mainWindow()->coordinateSystemBuilder();
+	CoordinateSystemConvertDialog dialog(w);
+	dialog.setBuilder(csBuilder);
+	dialog.setEnabled(true);
+
+	auto prjFilename = filename;
+	prjFilename.replace(QRegExp("\\.csv$"), ".prj");
+	if (QFile::exists(prjFilename)) {
+		// read and get EPSG code
+		QFile f(prjFilename);
+		f.open(QFile::ReadOnly);
+		auto wkt = f.readAll().toStdString();
+		int epsgCode = GdalUtil::wkt2Epsg(wkt.c_str());
+		auto cs = csBuilder->system(QString("EPSG:%1").arg(epsgCode));
+		dialog.setCoordinateSystem(cs);
+	} else {
+		dialog.setCoordinateSystem(projectCs);
+	}
+
+	int ret = dialog.exec();
+	if (ret == QDialog::Rejected) {
+		return false;
+	}
+	auto cs = dialog.coordinateSystem();
+
+	if (projectCs != cs) {
+		m_converter = new CoordinateSystemConverter(cs, projectCs);
+	}
+	return true;
 }

@@ -2,6 +2,7 @@
 #include "geodatapolylinegrouppolyline.h"
 #include "geodatapolylinegroupcsvexporter.h"
 
+#include <cs/coordinatesystem.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
 
@@ -54,6 +55,14 @@ bool GeoDataPolyLineGroupCsvExporter::doExport(GeoData* data, const QString& fil
 		++ lid;
 	}
 	file.close();
+
+	// export *.prj if project coordinate system is defined
+	auto cs = pd->mainfile()->coordinateSystem();
+	if (cs != nullptr) {
+			auto prjFilename = filename;
+			prjFilename.replace(".csv", ".prj");
+			cs->exportPlaneWkt(prjFilename);
+	}
 
 	return true;
 }

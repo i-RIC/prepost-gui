@@ -8,6 +8,10 @@ CoordinateSystemConvertWidget::CoordinateSystemConvertWidget(QWidget *parent) :
 	ui(new Ui::CoordinateSystemConvertWidget)
 {
 	ui->setupUi(this);
+	connect(ui->editButton, &QPushButton::clicked, this, &CoordinateSystemConvertWidget::edit);
+
+	setEnabled(false);
+	setCoordinateSystem(nullptr);
 }
 
 CoordinateSystemConvertWidget::~CoordinateSystemConvertWidget()
@@ -20,37 +24,30 @@ void CoordinateSystemConvertWidget::setBuilder(CoordinateSystemBuilder* builder)
 	m_builder = builder;
 }
 
-
 void CoordinateSystemConvertWidget::setEnabled(bool enabled)
 {
-	ui->convertCheckBox->show();
-	ui->csLabel->show();
-	ui->editButton->show();
-	ui->disabledLabel->show();
-
-	if (enabled) {
-		ui->disabledLabel->hide();
-	} else {
-		ui->convertCheckBox->hide();
-		ui->csLabel->hide();
-		ui->editButton->hide();
-	}
+	ui->editButton->setEnabled(enabled);
 }
 
 CoordinateSystem* CoordinateSystemConvertWidget::coordinateSystem() const
 {
-	return nullptr;
+	return m_coordinateSystem;
 }
 
 void CoordinateSystemConvertWidget::setCoordinateSystem(CoordinateSystem* cs)
 {
 	m_coordinateSystem = cs;
-	ui->csLabel->setText(cs->caption());
+	if (cs == nullptr) {
+		ui->csLabel->setText("-----");
+	} else {
+		ui->csLabel->setText(cs->caption());
+	}
 }
 
 void CoordinateSystemConvertWidget::edit()
 {
 	CoordinateSystemSelectDialog dialog(this);
+	dialog.setBuilder(m_builder);
 	dialog.setForceSelect(true);
 	dialog.setCoordinateSystem(m_coordinateSystem);
 

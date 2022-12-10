@@ -9,6 +9,8 @@ namespace Ui
 	class GeoDataPolyDataGroupShpImporterSettingDialog;
 }
 
+class CoordinateSystem;
+class CoordinateSystemBuilder;
 class GridAttributeEditWidget;
 
 class QStringList;
@@ -23,6 +25,12 @@ public:
 
 	GeoDataPolyDataGroupShpImporterSettingDialog(const QString& filename, GridAttributeEditWidget* widget, QWidget* parent = nullptr);
 	~GeoDataPolyDataGroupShpImporterSettingDialog();
+
+	void setCsEnabled(bool enabled);
+	void setCsBuilder(CoordinateSystemBuilder* builder);
+
+	CoordinateSystem* coordinateSystem() const;
+	void setCoordinateSystem(CoordinateSystem* cs);
 
 	void hideValueWidgets();
 
