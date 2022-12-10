@@ -65,15 +65,21 @@ win32 {
 # Input
 HEADERS += coordinatesystem.h \
            coordinatesystembuilder.h \
+           coordinatesystemconverter.h \
+           coordinatesystemconvertwidget.h \
            coordinatesystemselectdialog.h \
            cs_api.h \
            gdalutil.h \
+           private/coordinatesystemconverter_impl.h \
            webmercatorutil.h \
            private/coordinatesystem_impl.h \
            private/webmercatorutil_impl.h
-FORMS += coordinatesystemselectdialog.ui
+FORMS += coordinatesystemselectdialog.ui \
+    coordinatesystemconvertwidget.ui
 SOURCES += coordinatesystem.cpp \
            coordinatesystembuilder.cpp \
+           coordinatesystemconverter.cpp \
+           coordinatesystemconvertwidget.cpp \
            coordinatesystemselectdialog.cpp \
            gdalutil.cpp \
            webmercatorutil.cpp
