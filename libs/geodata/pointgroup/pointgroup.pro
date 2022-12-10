@@ -17,6 +17,13 @@ PRECOMPILED_HEADER = pointgroup_pch.h
 # Internal libraries #
 ######################
 
+# iricCs
+
+unix {
+        LIBS += -L"../../cs"
+}
+LIBS += -liricCs
+
 # iricGdPoint
 
 unix {

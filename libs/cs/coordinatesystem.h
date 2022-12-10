@@ -23,6 +23,9 @@ public:
 	const QString& proj4LonLatStr() const;
 	const QString& proj4PlaneStr() const;
 
+	std::string planeWkt() const;
+	bool exportPlaneWkt(const QString& fname);
+
 	void init();
 	void free();
 

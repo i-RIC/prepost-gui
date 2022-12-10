@@ -3,6 +3,12 @@
 
 #include <misc/stringtool.h>
 
+#include <ogr_spatialref.h>
+
+#include <QFile>
+#include <QRegExp>
+#include <QTextStream>
+
 CoordinateSystem::CoordinateSystem(const QString& name, const QString& caption, const QString& lonlat, const QString& plane) :
 	impl {new Impl{}}
 {
@@ -64,6 +70,40 @@ const QString& CoordinateSystem::proj4LonLatStr() const
 const QString& CoordinateSystem::proj4PlaneStr() const
 {
 	return impl->m_proj4PlaneStr;
+}
+
+
+std::string CoordinateSystem::planeWkt() const
+{
+	QRegExp re("EPSG:(\\d+)");
+	int pos = 0;
+	pos == re.indexIn(name(), pos);
+	if (pos == -1) {return "";}
+
+	int epsgCode = re.cap(1).toInt();
+
+	OGRSpatialReference ref;
+	ref.importFromEPSG(epsgCode);
+
+	char* buffer;
+	ref.exportToWkt(&buffer);
+	std::string ret = buffer;
+	CPLFree(buffer);
+
+	return ret;
+}
+
+bool CoordinateSystem::exportPlaneWkt(const QString& fname)
+{
+	QFile f(fname);
+	bool ok = f.open(QFile::WriteOnly);
+	if (! ok) {return false;}
+
+	QTextStream stream(&f);
+	stream << planeWkt().c_str();
+	f.close();
+
+	return true;
 }
 
 void CoordinateSystem::init()
