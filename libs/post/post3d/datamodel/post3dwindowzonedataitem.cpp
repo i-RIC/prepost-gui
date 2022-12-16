@@ -301,5 +301,8 @@ void Post3dWindowZoneDataItem::update()
 	if (m_particlesDataItem != nullptr) {
 		m_particlesDataItem->update();
 	}
+	if (m_particleGroupRootDataItem != nullptr) {
+		m_particleGroupRootDataItem->update();
+	}
 	m_stringDataItem->update();
 }
