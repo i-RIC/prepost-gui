@@ -23,25 +23,43 @@
 #include <QUndoCommand>
 #include <QVector2D>
 
+#include <vtkActor.h>
+#include <vtkActor2D.h>
 #include <vtkActor2DCollection.h>
+#include <vtkAppendPolyData.h>
 #include <vtkCamera.h>
+#include <vtkConeSource.h>
 #include <vtkDataSetMapper.h>
 #include <vtkGeometryFilter.h>
+#include <vtkHedgeHog.h>
 #include <vtkLine.h>
 #include <vtkLineSource.h>
+#include <vtkMaskPoints.h>
 #include <vtkPointData.h>
+#include <vtkPolyDataMapper.h>
 #include <vtkPolyDataMapper2D.h>
 #include <vtkProperty.h>
 #include <vtkProperty2D.h>
 #include <vtkRenderer.h>
 #include <vtkStructuredGrid.h>
+#include <vtkTextActor.h>
 #include <vtkTextProperty.h>
 #include <vtkTriangle.h>
+#include <vtkWarpVector.h>
 
 #include <cmath>
 
 Post2dWindowParticlesBaseVectorGroupDataItem::Post2dWindowParticlesBaseVectorGroupDataItem(Post2dWindowDataItem* p) :
-	Post2dWindowDataItem(tr("Vector"), QIcon(":/libs/guibase/images/iconFolder.svg"), p)
+	Post2dWindowDataItem(tr("Vector"), QIcon(":/libs/guibase/images/iconFolder.svg"), p),
+	m_arrowActor {vtkActor::New()},
+	m_arrowMapper {vtkPolyDataMapper::New()},
+	m_appendPolyData {vtkAppendPolyData::New()},
+	m_polyData {vtkPolyData::New()},
+	m_arrowMask {vtkMaskPoints::New()},
+	m_hedgeHog {vtkHedgeHog::New()},
+	m_arrowGlyph {vtkGlyph3D::New()},
+	m_warpVector {vtkWarpVector::New()},
+	m_arrowSource {vtkConeSource::New()}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 
@@ -57,7 +75,21 @@ Post2dWindowParticlesBaseVectorGroupDataItem::Post2dWindowParticlesBaseVectorGro
 
 Post2dWindowParticlesBaseVectorGroupDataItem::~Post2dWindowParticlesBaseVectorGroupDataItem()
 {
-	renderer()->RemoveActor(m_arrowActor);
+	auto r = renderer();
+	r->RemoveActor(m_arrowActor);
+	r->RemoveActor2D(m_legendActors.arrowActor());
+	r->RemoveActor2D(m_legendActors.nameTextActor());
+	r->RemoveActor2D(m_legendActors.valueTextActor());
+
+	m_arrowActor->Delete();
+	m_arrowMapper->Delete();
+	m_appendPolyData->Delete();
+	m_polyData->Delete();
+	m_arrowMask->Delete();
+	m_hedgeHog->Delete();
+	m_arrowGlyph->Delete();
+	m_warpVector->Delete();
+	m_arrowSource->Delete();
 }
 
 void Post2dWindowParticlesBaseVectorGroupDataItem::handleNamedItemChange(NamedGraphicWindowDataItem* item)
@@ -73,73 +105,43 @@ void Post2dWindowParticlesBaseVectorGroupDataItem::setupActors()
 	auto topItem = dynamic_cast<Post2dWindowParticlesBaseTopDataItem*> (parent());
 	if (topItem->particleData() == nullptr) {return;}
 
+	auto r = renderer();
 	updateScaleFactor();
 
-	m_arrowActor = vtkSmartPointer<vtkActor>::New();
-	renderer()->AddActor(m_arrowActor);
+	r->AddActor(m_arrowActor);
 	m_arrowActor->GetProperty()->LightingOff();
-
-	m_arrowMapper = vtkSmartPointer<vtkPolyDataMapper>::New();
 	m_arrowActor->SetMapper(m_arrowMapper);
 
-	m_hedgeHog = vtkSmartPointer<vtkHedgeHog>::New();
 	m_hedgeHog->SetVectorModeToUseVector();
 	m_hedgeHog->SetScaleFactor(m_scaleFactor);
 
-	m_warpVector = vtkSmartPointer<vtkWarpVector>::New();
-
-	m_arrowGlyph = vtkSmartPointer<vtkGlyph3D>::New();
 	m_arrowGlyph->SetScaleModeToDataScalingOff();
 	m_arrowGlyph->SetVectorModeToUseVector();
 	m_arrowGlyph->SetInputConnection(m_warpVector->GetOutputPort());
 
-	m_arrowSource = vtkSmartPointer<vtkConeSource>::New();
 	m_arrowGlyph->SetSourceConnection(m_arrowSource->GetOutputPort());
 
-	m_appendPolyData = vtkSmartPointer<vtkAppendPolyData>::New();
 	m_appendPolyData->AddInputConnection(m_hedgeHog->GetOutputPort());
 	m_appendPolyData->AddInputConnection(m_arrowGlyph->GetOutputPort());
 
-	m_polyData = vtkSmartPointer<vtkPolyData>::New();
 	m_arrowMapper->SetInputData(m_polyData);
 
 	m_arrowActor->VisibilityOff();
 
-	m_legendTextActor = vtkSmartPointer<vtkTextActor>::New();
-	m_legendTextActor->SetTextScaleModeToNone();
-	m_legendTextActor->GetPositionCoordinate()->SetCoordinateSystemToNormalizedViewport();
-	m_legendTextActor->SetPosition(0.75, 0.02);
-	vtkTextProperty* prop = m_legendTextActor->GetTextProperty();
-	prop->SetColor(0, 0, 0);
-	prop->SetFontFamilyToArial();
-	prop->SetJustificationToCentered();
-	prop->SetVerticalJustificationToBottom();
+	m_legendActors.setPosition(0.75, 0.06);
 
-	m_legendTextActor->VisibilityOff();
-	renderer()->AddActor2D(m_legendTextActor);
+	m_legendActors.nameTextActor()->VisibilityOff();
+	r->AddActor2D(m_legendActors.nameTextActor());
 
-	m_baseArrowPolyData = vtkSmartPointer<vtkUnstructuredGrid>::New();
+	m_legendActors.valueTextActor()->VisibilityOff();
+	r->AddActor2D(m_legendActors.valueTextActor());
 
-	vtkSmartPointer<vtkPolyDataMapper2D> mapper = vtkSmartPointer<vtkPolyDataMapper2D>::New();
-	vtkSmartPointer<vtkGeometryFilter> f = vtkSmartPointer<vtkGeometryFilter>::New();
-	f->SetInputData(m_baseArrowPolyData);
-	mapper->SetInputConnection(f->GetOutputPort());
+	r->AddActor(m_legendActors.arrowActor());
 
-	m_baseArrowActor = vtkSmartPointer<vtkActor2D>::New();
-	m_baseArrowActor->SetMapper(mapper);
-
-	m_baseArrowActor->GetPositionCoordinate()->SetCoordinateSystemToNormalizedViewport();
-	m_baseArrowActor->GetPositionCoordinate()->SetValue(.75, .02);
-	m_baseArrowActor->GetProperty()->SetColor(0, 0, 0);
-	m_baseArrowActor->VisibilityOff();
-
-	m_arrowMask = vtkSmartPointer<vtkMaskPoints>::New();
 	m_arrowMask->SetInputData(topItem->particleData());
 
 	m_hedgeHog->SetInputConnection(m_arrowMask->GetOutputPort());
 	m_warpVector->SetInputConnection(m_arrowMask->GetOutputPort());
-
-	renderer()->AddActor2D(m_baseArrowActor);
 }
 
 void Post2dWindowParticlesBaseVectorGroupDataItem::calculateStandardValue()
@@ -209,8 +211,9 @@ void Post2dWindowParticlesBaseVectorGroupDataItem::setTarget(const std::string& 
 void Post2dWindowParticlesBaseVectorGroupDataItem::updateActorSettings()
 {
 	m_arrowActor->VisibilityOff();
-	m_legendTextActor->VisibilityOff();
-	m_baseArrowActor->VisibilityOff();
+	m_legendActors.nameTextActor()->VisibilityOff();
+	m_legendActors.valueTextActor()->VisibilityOff();
+	m_legendActors.arrowActor()->VisibilityOff();
 
 	m_actorCollection->RemoveAllItems();
 	m_actor2DCollection->RemoveAllItems();
@@ -231,8 +234,9 @@ void Post2dWindowParticlesBaseVectorGroupDataItem::updateActorSettings()
 	updateLegendData();
 
 	m_actorCollection->AddItem(m_arrowActor);
-	m_actor2DCollection->AddItem(m_legendTextActor);
-	m_actor2DCollection->AddItem(m_baseArrowActor);
+	m_actor2DCollection->AddItem(m_legendActors.nameTextActor());
+	m_actor2DCollection->AddItem(m_legendActors.valueTextActor());
+	m_actor2DCollection->AddItem(m_legendActors.arrowActor());
 	updateVisibilityWithoutRendering();
 }
 
@@ -307,8 +311,11 @@ void Post2dWindowParticlesBaseVectorGroupDataItem::updatePolyData()
 {
 	auto topItem = dynamic_cast<Post2dWindowParticlesBaseTopDataItem*> (parent());
 	vtkPolyData* data = topItem->particleData();
+
 	if (data == nullptr) {return;}
 	if (m_setting.target == "") {return;}
+	m_arrowMask->SetInputData(data);
+
 	updateScaleFactor();
 	double height = dataModel()->graphicsView()->stdRadius(m_setting.arrowSize);
 	m_hedgeHog->SetScaleFactor(m_scaleFactor);
@@ -320,7 +327,6 @@ void Post2dWindowParticlesBaseVectorGroupDataItem::updatePolyData()
 	m_appendPolyData->Update();
 	m_polyData->DeepCopy(m_appendPolyData->GetOutput());
 	m_arrowActor->GetProperty()->SetLineWidth(m_setting.lineWidth);
-	m_baseArrowActor->GetProperty()->SetLineWidth(m_setting.lineWidth);
 }
 
 void Post2dWindowParticlesBaseVectorGroupDataItem::updateScaleFactor()
@@ -332,43 +338,20 @@ void Post2dWindowParticlesBaseVectorGroupDataItem::updateScaleFactor()
 
 void Post2dWindowParticlesBaseVectorGroupDataItem::updateLegendData()
 {
-	double vectorOffset = 18;
-	double arrowLen = m_setting.legendLength;
-	m_baseArrowPolyData->Initialize();
-	m_baseArrowPolyData->Allocate(3);
-
-	vtkSmartPointer<vtkPoints> points = vtkSmartPointer<vtkPoints>::New();
-	points->SetDataTypeToDouble();
-	m_baseArrowPolyData->SetPoints(points);
-	// add line
-	points->InsertNextPoint(- arrowLen * .5, vectorOffset, 0);
-	points->InsertNextPoint(arrowLen * .5, vectorOffset, 0);
-	vtkSmartPointer<vtkLine> line = vtkSmartPointer<vtkLine>::New();
-	line->GetPointIds()->SetId(0, 0);
-	line->GetPointIds()->SetId(1, 1);
-	m_baseArrowPolyData->InsertNextCell(line->GetCellType(), line->GetPointIds());
-
-	// add triangle
-	points->InsertNextPoint(arrowLen * .5 - 8, vectorOffset + 2, 0);
-	points->InsertNextPoint(arrowLen * .5 - 8, vectorOffset - 2, 0);
-	vtkSmartPointer<vtkTriangle> tri = vtkSmartPointer<vtkTriangle>::New();
-	tri->GetPointIds()->SetId(0, 1);
-	tri->GetPointIds()->SetId(1, 2);
-	tri->GetPointIds()->SetId(2, 2);
-	m_baseArrowPolyData->InsertNextCell(tri->GetCellType(), tri->GetPointIds());
-
 	const auto& s = m_setting;
-	QString lenStr = QString("%1\n\n%2").arg(s.target).arg(s.standardValue);
-	m_legendTextActor->SetInput(iRIC::toStr(lenStr).c_str());
+
+	double arrowLen = m_setting.legendLength;
+	m_legendActors.update(iRIC::toStr(s.target), s.legendLength, s.standardValue, s.arrowSize, 25.0);
 
 	if (s.colorMode == ArrowSettingContainer::ColorMode::Custom) {
 		// specified color.
-		const QColor& cColor = s.customColor;
-		m_baseArrowActor->GetProperty()->SetColor(cColor.red() / 255., cColor.green() / 255., cColor.blue() / 255.);
+		m_legendActors.arrowActor()->GetProperty()->SetColor(s.customColor);
 	} else if (s.colorMode == ArrowSettingContainer::ColorMode::ByScalar) {
 		// always black.
-		m_baseArrowActor->GetProperty()->SetColor(0, 0, 0);
+		m_legendActors.arrowActor()->GetProperty()->SetColor(0, 0, 0);
 	}
+	s.legendTextSetting.applySetting(m_legendActors.nameTextActor()->GetTextProperty());
+	s.legendTextSetting.applySetting(m_legendActors.valueTextActor()->GetTextProperty());
 }
 
 void Post2dWindowParticlesBaseVectorGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
@@ -412,7 +395,8 @@ void Post2dWindowParticlesBaseVectorGroupDataItem::mousePressEvent(QMouseEvent* 
 void Post2dWindowParticlesBaseVectorGroupDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
 	v->standardMouseReleaseEvent(event);
-	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->fixParticleResultAttributeBrowser(QPoint(event->x(), event->y()), v);
+	auto topItem = dynamic_cast<Post2dWindowParticlesBaseTopDataItem*> (parent());
+	topItem->zoneDataItem()->fixParticleResultAttributeBrowser(event->pos(), v);
 }
 
 void Post2dWindowParticlesBaseVectorGroupDataItem::addCustomMenuItems(QMenu* menu)

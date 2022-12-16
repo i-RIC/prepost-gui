@@ -10,6 +10,7 @@
 #include <guicore/named/namedgraphicswindowdataitemtool.h>
 #include <guicore/misc/targeted/targeteditemsettargetcommandtool.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
+#include <guicore/scalarstocolors/scalarstocolorscontainerutil.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/iricundostack.h>
 #include <misc/stringtool.h>
@@ -189,7 +190,7 @@ void Post2dWindowParticlesBaseScalarGroupDataItem::updateActorSettings()
 
 	auto topItem = dynamic_cast<Post2dWindowParticlesBaseTopDataItem*> (parent());
 	auto data = topItem->particleData();
-	if (data == 0) {return;}
+	if (data == nullptr) {return;}
 
 	auto tItem = dynamic_cast<Post2dWindowParticlesBaseTopDataItem*>(parent());
 
@@ -201,6 +202,8 @@ void Post2dWindowParticlesBaseScalarGroupDataItem::updateActorSettings()
 	} else {
 		auto gtItem = dynamic_cast<Post2dWindowGridTypeDataItem*> (topItem->zoneDataItem()->parent());
 		auto ltc = gtItem->particleLookupTable(target());
+		auto dataArray = data->GetPointData()->GetArray(target().c_str());
+		ScalarsToColorsContainerUtil::setValueRange(ltc, dataArray);
 		m_mapper->SetScalarModeToUsePointFieldData();
 		m_mapper->SelectColorArray(iRIC::toStr(m_setting.target).c_str());
 		m_mapper->UseLookupTableScalarRangeOn();

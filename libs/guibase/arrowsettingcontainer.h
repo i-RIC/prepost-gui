@@ -76,7 +76,7 @@ public:
 	IntContainer lineWidth;
 
 	ScalarBarSetting scalarBarSetting;
-    vtkTextPropertySettingContainer legendTextSetting;
+	vtkTextPropertySettingContainer legendTextSetting;
 	DoubleContainer oldCameraScale;
 };
 

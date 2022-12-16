@@ -4,21 +4,23 @@
 #include "../post2dwindowdataitem.h"
 
 #include <guibase/arrowsettingcontainer.h>
+#include <guibase/vtktool/vtkarrowlegendactors.h>
 #include <guicore/misc/targeted/targeteditemi.h>
 
-#include <vtkActor.h>
-#include <vtkSmartPointer.h>
-#include <vtkMaskPoints.h>
-#include <vtkTextActor.h>
-#include <vtkGlyph3D.h>
-#include <vtkAppendPolyData.h>
-#include <vtkUnstructuredGrid.h>
-#include <vtkPolyDataMapper.h>
-#include <vtkHedgeHog.h>
-#include <vtkWarpVector.h>
-#include <vtkConeSource.h>
-
 class NamedGraphicWindowDataItem;
+
+class vtkAppendPolyData;
+class vtkActor;
+class vtkActor2D;
+class vtkConeSource;
+class vtkGlyph3D;
+class vtkHedgeHog;
+class vtkMaskPoints;
+class vtkPolyData;
+class vtkPolyDataMapper;
+class vtkTextActor;
+class vtkUnstructuredGrid;
+class vtkWarpVector;
 
 class Post2dWindowParticlesBaseVectorGroupDataItem : public Post2dWindowDataItem, public TargetedItemI
 {
@@ -67,21 +69,18 @@ private:
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
 protected:
-	vtkSmartPointer<vtkActor> m_arrowActor;
-	vtkSmartPointer<vtkPolyDataMapper> m_arrowMapper;
-	vtkSmartPointer<vtkAppendPolyData> m_appendPolyData;
-	vtkSmartPointer<vtkPolyData> m_polyData;
+	vtkActor* m_arrowActor;
+	vtkPolyDataMapper* m_arrowMapper;
+	vtkAppendPolyData* m_appendPolyData;
+	vtkPolyData* m_polyData;
 
-	vtkSmartPointer<vtkMaskPoints> m_arrowMask;
-	vtkSmartPointer<vtkHedgeHog> m_hedgeHog;
-	vtkSmartPointer<vtkGlyph3D> m_arrowGlyph;
-	vtkSmartPointer<vtkWarpVector> m_warpVector;
-	vtkSmartPointer<vtkConeSource> m_arrowSource;
+	vtkMaskPoints* m_arrowMask;
+	vtkHedgeHog* m_hedgeHog;
+	vtkGlyph3D* m_arrowGlyph;
+	vtkWarpVector* m_warpVector;
+	vtkConeSource* m_arrowSource;
 
-	vtkSmartPointer<vtkTextActor> m_legendTextActor;
-
-	vtkSmartPointer<vtkUnstructuredGrid> m_baseArrowPolyData;
-	vtkSmartPointer<vtkActor2D> m_baseArrowActor;
+	vtkArrowLegendActors m_legendActors;
 
 	ArrowSettingContainer m_setting;
 

@@ -440,6 +440,11 @@ void Post2dWindowZoneDataItem::update(bool noparticle)
 		m_particlesDataItem->update();
 		qDebug("Solver Particles: %d", time.elapsed());
 	}
+	if (m_particleGroupRootDataItem != nullptr) {
+		time.restart();
+		m_particleGroupRootDataItem->update();
+		qDebug("Solver Particles: %d", time.elapsed());
+	}
 	if (m_polyDataDataItem != nullptr) {
 		time.restart();
 		m_polyDataDataItem->update();
@@ -1109,7 +1114,7 @@ void Post2dWindowZoneDataItem::updateParticleResultAttributeBrowser(const QPoint
 		return;
 	}
 	double vertex[3];
-	dataContainer()->particleData()->GetPoint(pid, vertex);
+	m_currentParticlesData->GetPoint(pid, vertex);
 
 	updateParticleResultAttributeBrowser(pid, vertex[0], vertex[1], v);
 }
