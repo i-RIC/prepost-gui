@@ -16,7 +16,9 @@
 
 bool PostZoneDataContainer::ParticleGroupLoader::load(std::map<std::string, vtkSmartPointer<vtkPolyData> >* particleGroupMap, iRICLib::H5CgnsParticleGroupSolution* sol, const QPointF& offset)
 {
-	particleGroupMap->clear();
+	for (auto& pair : *particleGroupMap) {
+		pair.second->Initialize();
+	}
 
 	if (sol == nullptr) {return true;}
 
@@ -25,11 +27,16 @@ bool PostZoneDataContainer::ParticleGroupLoader::load(std::map<std::string, vtkS
 	if (ier != 0) {return false;}
 
 	for (auto name : groupNames) {
-		auto polyData = vtkSmartPointer<vtkPolyData>::New();
-		int ret = loadParticleGroup(name, polyData.Get(), sol, offset);
+		vtkSmartPointer<vtkPolyData> data;
+		auto it = particleGroupMap->find(name);
+		if (it == particleGroupMap->end()) {
+			data = vtkSmartPointer<vtkPolyData>::New();
+			particleGroupMap->insert({name, data});
+		} else {
+			data = it->second;
+		}
+		int ret = loadParticleGroup(name, data.Get(), sol, offset);
 		if (ret != 0) {return false;}
-
-		particleGroupMap->insert({name, polyData});
 	}
 	return true;
 }
