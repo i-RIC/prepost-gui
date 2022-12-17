@@ -127,8 +127,8 @@ bool loadCrossSectionData(const QString& filename, std::vector<GeoDataRiverSurve
 
 		int flag = tokens.at(0).toInt(&ok);
 		if (! ok) {
-			QMessageBox::critical(w, GeoDataRiverSurveyMlitImporter::tr("Error"), GeoDataRiverSurveyMlitImporter::tr("%1 line %2: \"%3\": Flag data is invalid.").arg(fName).arg(linenum).arg(tokens.at(0)));
-			return false;
+			// flag can be null string now
+			flag = 0;
 		}
 		double dist = tokens.at(1).toDouble(&ok);
 		if (! ok) {
