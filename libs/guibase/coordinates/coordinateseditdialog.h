@@ -25,7 +25,7 @@ private:
 	static const int DEFAULT_ROW_HEIGHT = 20;
 
 public:
-	explicit CoordinatesEditDialog(QWidget *parent = 0);
+	explicit CoordinatesEditDialog(QWidget *parent = nullptr);
 	~CoordinatesEditDialog();
 
 	void setCoordinates(const std::vector<QPointF> coords);

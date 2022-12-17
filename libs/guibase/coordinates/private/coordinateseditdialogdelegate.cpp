@@ -12,6 +12,7 @@ void CoordinatesEditDialogDelegate::paint(QPainter *painter, const QStyleOptionV
 {
 	double val = index.model()->data(index, Qt::DisplayRole).toDouble();
 	static CoordinateEditWidget widget;
+	widget.resize(option.rect.size());
 	widget.setValue(val);
 
 	QPixmap pixmap(option.rect.size());
