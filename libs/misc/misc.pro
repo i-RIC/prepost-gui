@@ -26,7 +26,9 @@ HEADERS += anms.h \
            edge.h \
            enumcontainert.h \
            errormessage.h \
+           fileremover.h \
            filesystemfunction.h \
+           folderremover.h \
            informationdialog.h \
            intarraycontainer.h \
            intcontainer.h \
@@ -101,7 +103,9 @@ SOURCES += anms.cpp \
            compositecontainer.cpp \
            doublecontainer.cpp \
            errormessage.cpp \
+           fileremover.cpp \
            filesystemfunction.cpp \
+           folderremover.cpp \
            informationdialog.cpp \
            intarraycontainer.cpp \
            intcontainer.cpp \

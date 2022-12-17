@@ -11,6 +11,7 @@
 #include "private/inputconditioncgnsfile.h"
 #include "private/inputconditioncgnsfileselectdialog.h"
 
+#include <misc/fileremover.h>
 #include <misc/filesystemfunction.h>
 #include <misc/stringtool.h>
 #include <misc/xmlsupport.h>
@@ -140,12 +141,15 @@ bool InputConditionDialog::importFromCgns(const QString& filename)
 	bool bret = QFile::copy(filename, tmpname);
 	if (! bret) {return false;}
 
+	FileRemover remover(tmpname); // remove the tmpfile in destructor
+
 	// Check the compatibility.
 	std::string solverName;
 	VersionNumber versionNumber;
-	bret = ProjectCgnsFile::readSolverInfo(tmpname, &solverName, &versionNumber);
+	int ier;
+	ier= ProjectCgnsFile::readSolverInfo(tmpname, &solverName, &versionNumber);
 
-	if (bret == true) {
+	if (ier == IRIC_NO_ERROR) {
 		if (m_solverDefinition->name() != solverName || (! m_solverDefinition->version().compatibleWith(versionNumber))) {
 			QMessageBox::critical(parentWidget(), tr("Error"),
 					tr("This CGNS file is created for %1 version %2. It is not compatible with the current solver.").arg(solverName.c_str()).arg(versionNumber.toString()));
@@ -165,19 +169,17 @@ bool InputConditionDialog::importFromCgns(const QString& filename)
 		if (ccGroup == nullptr) {
 			// there is no calculation data in this CGNS file.
 			QMessageBox::critical(parentWidget(), tr("Error"),
-														tr("This CGNS file does not contain calculation condition data."));
+				tr("This CGNS file does not contain calculation condition data."));
+
 			return false;
 		}
 		ret = m_containerSet->load(*ccGroup);
 		if (ret == IRIC_NO_ERROR) {
 			m_modified = false;
 		}
-		QFile::remove(tmpname);
 		return ret == IRIC_NO_ERROR;
 	}  catch (...) {
 		QMessageBox::critical(parentWidget(), tr("Error"), tr("Opening the CGNS file failed."));
-
-		QFile::remove(tmpname);
 		return false;
 	}
 }
