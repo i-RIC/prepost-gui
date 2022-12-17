@@ -41,7 +41,7 @@
 #include <guicore/project/projectworkspace.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <guicore/tmsimage/tmsimagegroupdataitem.h>
-#include <misc/filesystemfunction.h>
+#include <misc/folderremover.h>
 #include <misc/iricundostack.h>
 #include <misc/lastiodirectory.h>
 #include <misc/mathsupport.h>
@@ -202,26 +202,23 @@ void PreProcessorDataModel::importCalcConditionFromOtherProject(const QString& f
 	// load the project data.
 	ProjectWorkspace* w = projectData()->mainWindow()->workspace();
 	QString tmpWorkfolder = ProjectData::newWorkfolderName(w->workspace());
-	ProjectData tmpProj(tmpWorkfolder, nullptr);
-	tmpProj.unzipFrom(fname);
+	FolderRemover folderRemover(tmpWorkfolder); // remove the folder in destructor
 
-	PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*>(projectData()->mainWindow()->preProcessorWindow());
-	// now it's loaded. find how many cgns files are included.
+	{
+		ProjectData tmpProj(tmpWorkfolder, nullptr);
+		tmpProj.unzipFrom(fname);
 
-	QString fullname = tmpProj.workCgnsFileName("Case1");
-	bool ret = pre->importInputCondition(fullname);
-	if (! ret) {
-		// not imported.
-		goto ERROR_CLEANING;
+		PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*>(projectData()->mainWindow()->preProcessorWindow());
+		// now it's loaded. find how many cgns files are included.
+
+		QString fullname = tmpProj.workCgnsFileName("Case1");
+		bool ret = pre->importInputCondition(fullname);
+		if (!ret) {return;}
 	}
-	iRIC::rmdirRecursively(tmpWorkfolder);
+
 	QMessageBox::information(projectData()->mainWindow(), tr("Success"), tr("Calculation Condition is successfully imported from the specified file."));
 	LastIODirectory::set(finfo.absolutePath());
 	setModified();
-	return;
-
-ERROR_CLEANING:
-	iRIC::rmdirRecursively(tmpWorkfolder);
 }
 
 void PreProcessorDataModel::importCalcConditionFromCGNS(const QString& fname)
