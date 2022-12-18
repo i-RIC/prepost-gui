@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ar_EG">
 <context>
     <name>GeoDataPolyDataGroup</name>
@@ -30,8 +32,8 @@
         <translation>هل أنت متأكد أنك تريد حذف المحدد %1 س؟</translation>
     </message>
     <message>
-        <source>There is no other data to merge in "%1" group.</source>
-        <translation>لا توجد بيانات أخرى لدمجها "%1" مجموعة.</translation>
+        <source>There is no other data to merge in &quot;%1&quot; group.</source>
+        <translation>لا توجد بيانات أخرى لدمجها &quot;%1&quot; مجموعة.</translation>
     </message>
     <message>
         <source>Edit name and value of polydatas</source>
@@ -173,6 +175,10 @@
         <source>For each</source>
         <translation>لكل</translation>
     </message>
+    <message>
+        <source>Name</source>
+        <translation type="unfinished">اسم</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolyDataGroupMergeSettingDialog</name>
@@ -253,6 +259,10 @@
     <message>
         <source>You cannot specify the same column for both Name and Value.</source>
         <translation>لا يمكنك تحديد نفس العمود لكل من الاسم والقيمة.</translation>
+    </message>
+    <message>
+        <source>Coordinate System:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

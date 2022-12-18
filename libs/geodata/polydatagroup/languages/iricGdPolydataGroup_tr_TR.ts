@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="tr_TR">
 <context>
     <name>GeoDataPolyDataGroup</name>
@@ -30,8 +32,8 @@
         <translation>Seçilenleri silmek istediğinizden emin misiniz? %1 s?</translation>
     </message>
     <message>
-        <source>There is no other data to merge in "%1" group.</source>
-        <translation>Birleştirilecek başka veri yok "%1"grup.</translation>
+        <source>There is no other data to merge in &quot;%1&quot; group.</source>
+        <translation>Birleştirilecek başka veri yok &quot;%1&quot;grup.</translation>
     </message>
     <message>
         <source>Edit name and value of polydatas</source>
@@ -173,6 +175,10 @@
         <source>For each</source>
         <translation>Her biri için</translation>
     </message>
+    <message>
+        <source>Name</source>
+        <translation type="unfinished">İsim</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolyDataGroupMergeSettingDialog</name>
@@ -253,6 +259,10 @@
     <message>
         <source>You cannot specify the same column for both Name and Value.</source>
         <translation>Hem Ad hem de Değer için aynı sütunu belirtemezsiniz.</translation>
+    </message>
+    <message>
+        <source>Coordinate System:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

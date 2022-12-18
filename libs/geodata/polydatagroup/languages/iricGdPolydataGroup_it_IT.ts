@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="it_IT">
 <context>
     <name>GeoDataPolyDataGroup</name>
@@ -30,8 +32,8 @@
         <translation>Sei sicuro di voler eliminare selezionato? %1 S?</translation>
     </message>
     <message>
-        <source>There is no other data to merge in "%1" group.</source>
-        <translation>Non ci sono altri dati da unire "%1"gruppo.</translation>
+        <source>There is no other data to merge in &quot;%1&quot; group.</source>
+        <translation>Non ci sono altri dati da unire &quot;%1&quot;gruppo.</translation>
     </message>
     <message>
         <source>Edit name and value of polydatas</source>
@@ -173,6 +175,10 @@
         <source>For each</source>
         <translation>Per ciascuno</translation>
     </message>
+    <message>
+        <source>Name</source>
+        <translation type="unfinished">Nome</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolyDataGroupMergeSettingDialog</name>
@@ -232,7 +238,7 @@
     </message>
     <message>
         <source>Load from Shape file attribute</source>
-        <translation>Carica dall'attributo del file Shape</translation>
+        <translation>Carica dall&apos;attributo del file Shape</translation>
     </message>
     <message>
         <source>Name is set automatically (ex. PolyData1)</source>
@@ -253,6 +259,10 @@
     <message>
         <source>You cannot specify the same column for both Name and Value.</source>
         <translation>Non è possibile specificare la stessa colonna sia per Nome che per Valore.</translation>
+    </message>
+    <message>
+        <source>Coordinate System:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

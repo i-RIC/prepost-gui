@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="pl_PL">
 <context>
     <name>GeoDataPolyDataGroup</name>
@@ -30,8 +32,8 @@
         <translation>Czy na pewno chcesz usunąć wybrane? %1 s?</translation>
     </message>
     <message>
-        <source>There is no other data to merge in "%1" group.</source>
-        <translation>Nie ma innych danych do scalenia w „ %1 " Grupa.</translation>
+        <source>There is no other data to merge in &quot;%1&quot; group.</source>
+        <translation>Nie ma innych danych do scalenia w „ %1 &quot; Grupa.</translation>
     </message>
     <message>
         <source>Edit name and value of polydatas</source>
@@ -173,6 +175,10 @@
         <source>For each</source>
         <translation>Dla każdego</translation>
     </message>
+    <message>
+        <source>Name</source>
+        <translation type="unfinished">Nazwa</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolyDataGroupMergeSettingDialog</name>
@@ -253,6 +259,10 @@
     <message>
         <source>You cannot specify the same column for both Name and Value.</source>
         <translation>Nie można określić tej samej kolumny zarówno dla nazwy, jak i wartości.</translation>
+    </message>
+    <message>
+        <source>Coordinate System:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

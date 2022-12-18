@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="eu_ES">
 <context>
     <name>GeoDataPolyDataGroup</name>
@@ -30,8 +32,8 @@
         <translation>Ziur zaude hautatutakoa ezabatu nahi duzula %1 s?</translation>
     </message>
     <message>
-        <source>There is no other data to merge in "%1" group.</source>
-        <translation>Ez dago batzeko beste daturik "%1"taldea.</translation>
+        <source>There is no other data to merge in &quot;%1&quot; group.</source>
+        <translation>Ez dago batzeko beste daturik &quot;%1&quot;taldea.</translation>
     </message>
     <message>
         <source>Edit name and value of polydatas</source>
@@ -173,6 +175,10 @@
         <source>For each</source>
         <translation>Bakoitzarentzako</translation>
     </message>
+    <message>
+        <source>Name</source>
+        <translation type="unfinished">Izena</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolyDataGroupMergeSettingDialog</name>
@@ -253,6 +259,10 @@
     <message>
         <source>You cannot specify the same column for both Name and Value.</source>
         <translation>Ezin duzu zutabe bera zehaztu bai Izenari bai Balioari dagokienez.</translation>
+    </message>
+    <message>
+        <source>Coordinate System:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

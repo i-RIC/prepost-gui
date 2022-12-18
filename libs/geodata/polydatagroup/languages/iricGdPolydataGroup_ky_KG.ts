@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ky_KG">
 <context>
     <name>GeoDataPolyDataGroup</name>
@@ -30,8 +32,8 @@
         <translation>Тандалгандарды чын эле жок кылгыңыз келеби? %1 с?</translation>
     </message>
     <message>
-        <source>There is no other data to merge in "%1" group.</source>
-        <translation>Биригүүгө башка маалымат жок "%1"тобу.</translation>
+        <source>There is no other data to merge in &quot;%1&quot; group.</source>
+        <translation>Биригүүгө башка маалымат жок &quot;%1&quot;тобу.</translation>
     </message>
     <message>
         <source>Edit name and value of polydatas</source>
@@ -173,6 +175,10 @@
         <source>For each</source>
         <translation>Ар бирине</translation>
     </message>
+    <message>
+        <source>Name</source>
+        <translation type="unfinished">Аты</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolyDataGroupMergeSettingDialog</name>
@@ -253,6 +259,10 @@
     <message>
         <source>You cannot specify the same column for both Name and Value.</source>
         <translation>Сиз бир эле мамычаны Аты жана Мааниси үчүн көрсөтө албайсыз.</translation>
+    </message>
+    <message>
+        <source>Coordinate System:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

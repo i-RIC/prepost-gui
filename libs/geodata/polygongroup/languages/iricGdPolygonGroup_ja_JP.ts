@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ja_JP">
 <context>
     <name>GeoDataPolygonGroup</name>
@@ -34,8 +36,8 @@
         <translation type="vanished">警告</translation>
     </message>
     <message>
-        <source>There is no other polygon or polygon group in "%1" group.</source>
-        <translation type="vanished">"%1" グループには、他にポリゴンやポリゴングループがありません。</translation>
+        <source>There is no other polygon or polygon group in &quot;%1&quot; group.</source>
+        <translation type="vanished">&quot;%1&quot; グループには、他にポリゴンやポリゴングループがありません。</translation>
     </message>
     <message>
         <source>Are you sure you want to delete selected polygons?</source>
@@ -112,6 +114,10 @@
     <message>
         <source>P&amp;olygons</source>
         <translation>ポリゴンデータ(&amp;O)</translation>
+    </message>
+    <message>
+        <source>&amp;Add New %1...</source>
+        <translation>新しい %1 の追加 (&amp;A)...</translation>
     </message>
 </context>
 <context>
@@ -268,7 +274,7 @@
         <translation>ヘッダ行の読み込み中にエラーが発生しました。ヘッダには5列以上データがなくてはいけません。</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
+        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
         <translation>ヘッダ行の読み込み中にエラーが発生しました。ヘッダには6列以上データがなくてはいけません。</translation>
     </message>
     <message>
@@ -277,7 +283,7 @@
     </message>
     <message>
         <source>Error occured while reading line %1. Polygon should have three points at least.</source>
-        <translation>ヘッダ行の読み込み中にエラーが発生しました。%1 列目の値は "%2" のはずですが、"%3" が指定されています。</translation>
+        <translation>ヘッダ行の読み込み中にエラーが発生しました。%1 列目の値は &quot;%2&quot; のはずですが、&quot;%3&quot; が指定されています。</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Make sure the file is saved in UTF-8 encoding.</source>
@@ -292,32 +298,32 @@
         <translation>%1行目の読み込み中にエラーが発生しました。6列以上データがなくてはいけません。</translation>
     </message>
     <message>
-        <source>Error occured while reading "pid" value in line %1. "pid" should be integer value but "%2" is specified.</source>
-        <translation>%1行目の "pid" の読み込み中にエラーが発生しました。 "pid" は整数値でなくてはいけませんが、 "%2" が指定されました。</translation>
+        <source>Error occured while reading &quot;pid&quot; value in line %1. &quot;pid&quot; should be integer value but &quot;%2&quot; is specified.</source>
+        <translation>%1行目の &quot;pid&quot; の読み込み中にエラーが発生しました。 &quot;pid&quot; は整数値でなくてはいけませんが、 &quot;%2&quot; が指定されました。</translation>
     </message>
     <message>
-        <source>Error occured while reading "vid" value in line %1. "vid" should be integer value but "%2" is specified.</source>
-        <translation>%1行目の "vid" の読み込み中にエラーが発生しました。 "vid" は整数値でなくてはいけませんが、 "%2" が指定されました。</translation>
+        <source>Error occured while reading &quot;vid&quot; value in line %1. &quot;vid&quot; should be integer value but &quot;%2&quot; is specified.</source>
+        <translation>%1行目の &quot;vid&quot; の読み込み中にエラーが発生しました。 &quot;vid&quot; は整数値でなくてはいけませんが、 &quot;%2&quot; が指定されました。</translation>
     </message>
     <message>
-        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
-        <translation>%1行目の "x" の読み込み中にエラーが発生しました。 "x" は実数値でなくてはいけませんが、 "%2" が指定されました。</translation>
+        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>%1行目の &quot;x&quot; の読み込み中にエラーが発生しました。 &quot;x&quot; は実数値でなくてはいけませんが、 &quot;%2&quot; が指定されました。</translation>
     </message>
     <message>
-        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
-        <translation>%1行目の "y" の読み込み中にエラーが発生しました。 "y" は実数値でなくてはいけませんが、 "%2" が指定されました。</translation>
+        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>%1行目の &quot;y&quot; の読み込み中にエラーが発生しました。 &quot;y&quot; は実数値でなくてはいけませんが、 &quot;%2&quot; が指定されました。</translation>
     </message>
     <message>
-        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
-        <translation>%1行目の "value" の読み込み中にエラーが発生しました。 "value" は実数値でなくてはいけませんが、 "%2" が指定されました。</translation>
+        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>%1行目の &quot;value&quot; の読み込み中にエラーが発生しました。 &quot;value&quot; は実数値でなくてはいけませんが、 &quot;%2&quot; が指定されました。</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. "name" should be the same for lines where "pid" values are the same.</source>
-        <translation>%1行目の読み込み中にエラーが発生しました。 "name" は同じ "pid" の行で共通である必要があります。</translation>
+        <source>Error occured while reading line %1. &quot;name&quot; should be the same for lines where &quot;pid&quot; values are the same.</source>
+        <translation>%1行目の読み込み中にエラーが発生しました。 &quot;name&quot; は同じ &quot;pid&quot; の行で共通である必要があります。</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. "value" should be the same for lines where "pid" values are the same.</source>
-        <translation>%1行目の読み込み中にエラーが発生しました。 "value" は同じ "pid" の行で共通である必要があります。</translation>
+        <source>Error occured while reading line %1. &quot;value&quot; should be the same for lines where &quot;pid&quot; values are the same.</source>
+        <translation>%1行目の読み込み中にエラーが発生しました。 &quot;value&quot; は同じ &quot;pid&quot; の行で共通である必要があります。</translation>
     </message>
 </context>
 <context>

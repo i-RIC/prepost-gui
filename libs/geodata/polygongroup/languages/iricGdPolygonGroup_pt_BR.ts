@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="pt_BR">
 <context>
     <name>GeoDataPolygonGroup</name>
@@ -18,8 +20,8 @@
         <translation type="vanished">Atencao</translation>
     </message>
     <message>
-        <source>There is no other polygon or polygon group in "%1" group.</source>
-        <translation type="vanished">Dentro do grupo de "%1", nao ha outro poligono ou grupo de poligono. </translation>
+        <source>There is no other polygon or polygon group in &quot;%1&quot; group.</source>
+        <translation type="vanished">Dentro do grupo de &quot;%1&quot;, nao ha outro poligono ou grupo de poligono. </translation>
     </message>
     <message>
         <source>Are you sure you want to delete selected polygons?</source>
@@ -52,6 +54,10 @@
     <message>
         <source>P&amp;olygons</source>
         <translation>Polígonos (&amp;O)</translation>
+    </message>
+    <message>
+        <source>&amp;Add New %1...</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -158,8 +164,8 @@
         <translation>Ocorreu um erro ao ler a linha do cabeçalho. O cabeçalho deve ter pelo menos 6 colunas.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
-        <translation>Ocorreu um erro ao ler a linha do cabeçalho. Coluna %1 deveria estar "%2", mas "%3" é dada.</translation>
+        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
+        <translation>Ocorreu um erro ao ler a linha do cabeçalho. Coluna %1 deveria estar &quot;%2&quot;, mas &quot;%3&quot; é dada.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. There is no data.</source>
@@ -182,32 +188,32 @@
         <translation>Ocorreu um erro ao ler a linha %1. Os dados devem ter pelo menos 6 colunas.</translation>
     </message>
     <message>
-        <source>Error occured while reading "pid" value in line %1. "pid" should be integer value but "%2" is specified.</source>
-        <translation>Ocorreu um erro ao ler o valor "pid" na linha %1. "pid" deve ser um valor inteiro, mas "%2" é especificado.</translation>
+        <source>Error occured while reading &quot;pid&quot; value in line %1. &quot;pid&quot; should be integer value but &quot;%2&quot; is specified.</source>
+        <translation>Ocorreu um erro ao ler o valor &quot;pid&quot; na linha %1. &quot;pid&quot; deve ser um valor inteiro, mas &quot;%2&quot; é especificado.</translation>
     </message>
     <message>
-        <source>Error occured while reading "vid" value in line %1. "vid" should be integer value but "%2" is specified.</source>
-        <translation>Ocorreu um erro ao ler o valor "vid" na linha %1. "vid" deve ser um valor inteiro, mas "%2" é especificado.</translation>
+        <source>Error occured while reading &quot;vid&quot; value in line %1. &quot;vid&quot; should be integer value but &quot;%2&quot; is specified.</source>
+        <translation>Ocorreu um erro ao ler o valor &quot;vid&quot; na linha %1. &quot;vid&quot; deve ser um valor inteiro, mas &quot;%2&quot; é especificado.</translation>
     </message>
     <message>
-        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
-        <translation>Ocorreu um erro ao ler o valor "x" na linha %1. "x" deve ser o valor real, mas "%2" é especificado.</translation>
+        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Ocorreu um erro ao ler o valor &quot;x&quot; na linha %1. &quot;x&quot; deve ser o valor real, mas &quot;%2&quot; é especificado.</translation>
     </message>
     <message>
-        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
-        <translation>Ocorreu um erro ao ler o valor "y" na linha %1. "y" deve ser um valor real, mas "%2" é especificado.</translation>
+        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Ocorreu um erro ao ler o valor &quot;y&quot; na linha %1. &quot;y&quot; deve ser um valor real, mas &quot;%2&quot; é especificado.</translation>
     </message>
     <message>
-        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
-        <translation>Ocorreu um erro ao ler o valor "valor" na linha %1. "valor" deve ser valor real, mas "%2" é especificado.</translation>
+        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Ocorreu um erro ao ler o valor &quot;valor&quot; na linha %1. &quot;valor&quot; deve ser valor real, mas &quot;%2&quot; é especificado.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. "name" should be the same for lines where "pid" values are the same.</source>
-        <translation>Ocorreu um erro ao ler a linha %1. "name" deve ser o mesmo para linhas onde os valores "pid" são iguais.</translation>
+        <source>Error occured while reading line %1. &quot;name&quot; should be the same for lines where &quot;pid&quot; values are the same.</source>
+        <translation>Ocorreu um erro ao ler a linha %1. &quot;name&quot; deve ser o mesmo para linhas onde os valores &quot;pid&quot; são iguais.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. "value" should be the same for lines where "pid" values are the same.</source>
-        <translation>Ocorreu um erro ao ler a linha %1. "valor" deve ser o mesmo para linhas onde os valores "pid" são iguais.</translation>
+        <source>Error occured while reading line %1. &quot;value&quot; should be the same for lines where &quot;pid&quot; values are the same.</source>
+        <translation>Ocorreu um erro ao ler a linha %1. &quot;valor&quot; deve ser o mesmo para linhas onde os valores &quot;pid&quot; são iguais.</translation>
     </message>
 </context>
 <context>

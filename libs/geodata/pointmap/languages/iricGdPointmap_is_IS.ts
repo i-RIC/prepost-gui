@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="is_IS">
 <context>
     <name>GeoDataPointMapDelPtsLessThanDialog</name>
@@ -229,8 +231,8 @@
         <translation>Sameina...</translation>
     </message>
     <message>
-        <source>There is no other data to merge in "%1" group.</source>
-        <translation>Það eru engin önnur gögn til að sameinast “ %1 "hópur.</translation>
+        <source>There is no other data to merge in &quot;%1&quot; group.</source>
+        <translation>Það eru engin önnur gögn til að sameinast “ %1 &quot;hópur.</translation>
     </message>
     <message>
         <source>%1 duplicate points were found in merge targets, and omitted.</source>
@@ -521,12 +523,12 @@
         <translation>Engin skilgreining tilgreind</translation>
     </message>
     <message>
-        <source>Not enough values to read "%1". "%1" column is %2 but %3 values input.</source>
-        <translation>Ekki nóg gildi til að lesa “ %1 "."%1"dálkurinn er %2 en %3 gildi inntak.</translation>
+        <source>Not enough values to read &quot;%1&quot;. &quot;%1&quot; column is %2 but %3 values input.</source>
+        <translation>Ekki nóg gildi til að lesa “ %1 &quot;.&quot;%1&quot;dálkurinn er %2 en %3 gildi inntak.</translation>
     </message>
     <message>
-        <source>Error occured while reading "%1" value. "%1" value should be real number, but "%2" specified.</source>
-        <translation>Villa kom upp við lestur "%1"verðmæti."%1"gildi ætti að vera rauntala, en" %2 “tilgreint.</translation>
+        <source>Error occured while reading &quot;%1&quot; value. &quot;%1&quot; value should be real number, but &quot;%2&quot; specified.</source>
+        <translation>Villa kom upp við lestur &quot;%1&quot;verðmæti.&quot;%1&quot;gildi ætti að vera rauntala, en&quot; %2 “tilgreint.</translation>
     </message>
     <message>
         <source>Text files (CSV, TSV, etc.)</source>
@@ -596,8 +598,8 @@
         <translation>Tilvitnunarpersóna:</translation>
     </message>
     <message>
-        <source>"</source>
-        <translation>"</translation>
+        <source>&quot;</source>
+        <translation>&quot;</translation>
     </message>
     <message>
         <source>When you want to specify multiple quote characters, please just input the characters only, no spaces or commas.</source>
@@ -666,6 +668,10 @@
     <message>
         <source>File name:</source>
         <translation>Skráarnafn:</translation>
+    </message>
+    <message>
+        <source>Coordinate System</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -882,8 +888,8 @@
         <translation>Takmarka brúnlengd:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Athugið &lt;/span&gt;: Þegar þú smellir á hnappinn Apply, verða þríhyrningarnir sem fjarlægðir verða málaðir dökkir grátt. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = &quot;font-weight: 600;&quot;&gt; Athugið &lt;/span&gt;: Þegar þú smellir á hnappinn Apply, verða þríhyrningarnir sem fjarlægðir verða málaðir dökkir grátt. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
 </context>
 </TS>
