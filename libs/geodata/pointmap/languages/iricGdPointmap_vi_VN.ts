@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="vi_VN">
 <context>
     <name>GeoDataPointMapDelPtsLessThanDialog</name>
@@ -229,8 +231,8 @@
         <translation>Hợp nhất...</translation>
     </message>
     <message>
-        <source>There is no other data to merge in "%1" group.</source>
-        <translation>Không có dữ liệu nào khác để hợp nhất trong "%1" tập đoàn.</translation>
+        <source>There is no other data to merge in &quot;%1&quot; group.</source>
+        <translation>Không có dữ liệu nào khác để hợp nhất trong &quot;%1&quot; tập đoàn.</translation>
     </message>
     <message>
         <source>%1 duplicate points were found in merge targets, and omitted.</source>
@@ -521,12 +523,12 @@
         <translation>Không có dấu phân cách nào được chỉ định</translation>
     </message>
     <message>
-        <source>Not enough values to read "%1". "%1" column is %2 but %3 values input.</source>
-        <translation>Không đủ giá trị để đọc "%1"."%1"cột là %2 nhưng %3 giá trị đầu vào.</translation>
+        <source>Not enough values to read &quot;%1&quot;. &quot;%1&quot; column is %2 but %3 values input.</source>
+        <translation>Không đủ giá trị để đọc &quot;%1&quot;.&quot;%1&quot;cột là %2 nhưng %3 giá trị đầu vào.</translation>
     </message>
     <message>
-        <source>Error occured while reading "%1" value. "%1" value should be real number, but "%2" specified.</source>
-        <translation>Đã xảy ra lỗi khi đọc "%1" giá trị. "%1"giá trị phải là số thực, nhưng"%2"được chỉ định.</translation>
+        <source>Error occured while reading &quot;%1&quot; value. &quot;%1&quot; value should be real number, but &quot;%2&quot; specified.</source>
+        <translation>Đã xảy ra lỗi khi đọc &quot;%1&quot; giá trị. &quot;%1&quot;giá trị phải là số thực, nhưng&quot;%2&quot;được chỉ định.</translation>
     </message>
     <message>
         <source>Text files (CSV, TSV, etc.)</source>
@@ -596,8 +598,8 @@
         <translation>Trích dẫn nhân vật:</translation>
     </message>
     <message>
-        <source>"</source>
-        <translation>"</translation>
+        <source>&quot;</source>
+        <translation>&quot;</translation>
     </message>
     <message>
         <source>When you want to specify multiple quote characters, please just input the characters only, no spaces or commas.</source>
@@ -666,6 +668,10 @@
     <message>
         <source>File name:</source>
         <translation>Tên tệp:</translation>
+    </message>
+    <message>
+        <source>Coordinate System</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -882,8 +888,8 @@
         <translation>Giới hạn chiều dài cạnh:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Lưu ý &lt;/span&gt;: Khi bạn nhấp vào nút áp dụng, các hình tam giác bị xóa sẽ được sơn màu tối xám. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;span style = &quot;font-weight: 600;&quot;&gt; Lưu ý &lt;/span&gt;: Khi bạn nhấp vào nút áp dụng, các hình tam giác bị xóa sẽ được sơn màu tối xám. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
 </context>
 </TS>

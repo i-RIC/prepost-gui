@@ -3,6 +3,7 @@
 #include "geodatapolylinegroupshpimporter.h"
 #include "private/geodatapolylinegroup_impl.h"
 
+#include <cs/coordinatesystemconverter.h>
 #include <misc/stringtool.h>
 
 #include <QDir>
@@ -75,6 +76,10 @@ bool GeoDataPolyLineGroupShpImporter::importData(GeoData* data, int /*index*/, Q
 	for (int i = 0; i < count; ++i) {
 		SHPObject* shpo = SHPReadObject(shph, i);
 		auto ls = readPolyLine(shpo);
+
+		if (m_converter != nullptr) {
+			ls = m_converter->convert(ls);
+		}
 
 		auto poly = new GeoDataPolyLineGroupPolyLine(ls, group);
 		// name

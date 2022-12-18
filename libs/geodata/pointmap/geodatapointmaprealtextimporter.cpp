@@ -4,7 +4,15 @@
 #include "private/geodatapointmaprealtextimporter_settingdialog.h"
 #include "private/geodatapointmaprealtextimporter_values.h"
 
+#include <cs/coordinatesystembuilder.h>
+#include <cs/coordinatesystemconvertdialog.h>
+#include <cs/coordinatesystemconverter.h>
+#include <cs/gdalutil.h>
 #include <guibase/widget/waitdialog.h>
+#include <guicore/base/iricmainwindowinterface.h>
+#include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
+#include <guicore/project/projectdata.h>
+#include <guicore/project/projectmainfile.h>
 
 #include <QApplication>
 #include <QDir>
@@ -51,39 +59,23 @@ bool operator <(const QPointF& a, const QPointF& b) {
 }
 
 GeoDataPointmapRealTextImporter::GeoDataPointmapRealTextImporter(GeoDataCreator* creator) :
-	GeoDataImporter("text", tr("Text files (CSV, TSV, etc.)"), creator)
+	GeoDataImporter("text", tr("Text files (CSV, TSV, etc.)"), creator),
+	m_parser {nullptr},
+	m_converter {nullptr}
 {}
+
+GeoDataPointmapRealTextImporter::~GeoDataPointmapRealTextImporter()
+{
+	delete m_parser;
+	delete m_converter;
+}
 
 bool GeoDataPointmapRealTextImporter::importData(GeoData *data, int /*index*/, QWidget *w)
 {
-	std::vector<QByteArray> lines;
-	QFile file_preview(filename());
-	if (! file_preview.open(QIODevice::ReadOnly)) {
-		QMessageBox::critical(w, tr("Error"), tr("File open error occured while opening %1.").arg(QDir::toNativeSeparators(filename())));
-		return false;
-	}
-	int linesRead = 0;
-	while (! file_preview.atEnd() && linesRead < PREVIEW_LINES) {
-		auto l = file_preview.readLine();
-		lines.push_back(l);
-		++ linesRead;
-	}
-	file_preview.close();
-
-	SettingDialog dialog(w);
-	dialog.setFileName(QDir::toNativeSeparators(filename()));
-	dialog.setIsCsv(filename().contains(".csv"));
-	dialog.setPreviewData(lines);
-
-	if (dialog.exec() != QDialog::Accepted) {return false;}
-
 	bool ok;
-	QString error;
 	int lineCount;
 
 	ok = countLines(filename(), &lineCount);
-
-	LineParser parser = dialog.buildParser(&ok, &error);
 
 	QFile file(filename());
 	if (! file.open(QIODevice::ReadOnly | QIODevice::Text)) {
@@ -92,7 +84,7 @@ bool GeoDataPointmapRealTextImporter::importData(GeoData *data, int /*index*/, Q
 	}
 	int lineNo = 1;
 	QTextStream stream(&file);
-	for (int i = 0; i < parser.headerLines(); ++i) {
+	for (int i = 0; i < m_parser->headerLines(); ++i) {
 		// skip header lines
 		stream.readLine();
 		if (stream.atEnd()) {
@@ -121,16 +113,22 @@ bool GeoDataPointmapRealTextImporter::importData(GeoData *data, int /*index*/, Q
 
 	do {
 		auto line = stream.readLine();
-		if (dataId % parser.skipRate() == 0) {
-			Values vals = parser.parseToValues(line, &ok, &error);
+		if (dataId % m_parser->skipRate() == 0) {
+			QString error;
+			Values vals = m_parser->parseToValues(line, &ok, &error);
 			if (! ok) {
 				QMessageBox::critical(w, tr("Error"), tr("Line %1: %2").arg(lineNo).arg(error));
 				return false;
 			}
 			QPointF p(vals.x, vals.y);
+
+			if (m_converter != nullptr) {
+				p = m_converter->convert(p);
+			}
+
 			auto it = pointSet.find(p);
 			if (it == pointSet.end()) {
-				points->InsertNextPoint(vals.x, vals.y, 0);
+				points->InsertNextPoint(p.x(), p.y(), 0);
 				values->InsertNextValue(vals.value);
 				pointSet.insert(p);
 			} else {
@@ -178,3 +176,62 @@ void GeoDataPointmapRealTextImporter::cancel()
 	m_canceled = true;
 }
 
+
+bool GeoDataPointmapRealTextImporter::doInit(const QString& filename, const QString& selectedFilter, int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemInterface* item, QWidget* w)
+{
+	std::vector<QByteArray> lines;
+	QFile file_preview(filename);
+	if (! file_preview.open(QIODevice::ReadOnly)) {
+		QMessageBox::critical(w, tr("Error"), tr("File open error occured while opening %1.").arg(QDir::toNativeSeparators(filename)));
+		return false;
+	}
+	int linesRead = 0;
+	while (! file_preview.atEnd() && linesRead < PREVIEW_LINES) {
+		auto l = file_preview.readLine();
+		lines.push_back(l);
+		++ linesRead;
+	}
+	file_preview.close();
+
+	auto projectCs = item->projectData()->mainfile()->coordinateSystem();
+	auto csBuilder = item->projectData()->mainWindow()->coordinateSystemBuilder();
+
+
+	SettingDialog dialog(w);
+	dialog.setFileName(QDir::toNativeSeparators(filename));
+	dialog.setIsCsv(filename.contains(".csv"));
+	dialog.setPreviewData(lines);
+	dialog.setCsEnabled(projectCs != nullptr);
+	dialog.setBuilder(csBuilder);
+
+	auto prjFilename = filename;
+	prjFilename.replace(QRegExp("\\.([a-z]+)$"), ".prj");
+	if (QFile::exists(prjFilename)) {
+			// read and get EPSG code
+			QFile f(prjFilename);
+			f.open(QFile::ReadOnly);
+			auto wkt = f.readAll().toStdString();
+			int epsgCode = GdalUtil::wkt2Epsg(wkt.c_str());
+			if (epsgCode != 0) {
+				auto cs = csBuilder->system(QString("EPSG:%1").arg(epsgCode));
+				dialog.setCoordinateSystem(cs);
+			} else {
+				dialog.setCoordinateSystem(projectCs);
+			}
+	} else {
+			dialog.setCoordinateSystem(projectCs);
+	}
+
+	if (dialog.exec() != QDialog::Accepted) {return false;}
+
+	bool ok;
+	QString error;
+
+	m_parser = dialog.buildParser(&ok, &error);
+	auto cs = dialog.coordinateSystem();
+	if (projectCs != nullptr && projectCs != cs) {
+		m_converter = new CoordinateSystemConverter(cs, projectCs);
+	}
+
+	return true;
+}

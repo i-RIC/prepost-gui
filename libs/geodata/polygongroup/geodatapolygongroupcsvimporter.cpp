@@ -2,6 +2,15 @@
 #include "geodatapolygongroupcsvimporter.h"
 #include "geodatapolygongrouppolygon.h"
 
+#include <cs/coordinatesystembuilder.h>
+#include <cs/coordinatesystemconvertdialog.h>
+#include <cs/coordinatesystemconverter.h>
+#include <cs/gdalutil.h>
+#include <guicore/base/iricmainwindowinterface.h>
+#include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
+#include <guicore/project/projectdata.h>
+#include <guicore/project/projectmainfile.h>
+
 #include <QDir>
 #include <QFile>
 #include <QMessageBox>
@@ -26,8 +35,14 @@ void addNewPolygon(GeoDataPolygonGroup* group, const QString& name, double value
 } // namespace
 
 GeoDataPolygonGroupCsvImporter::GeoDataPolygonGroupCsvImporter(GeoDataCreator* creator) :
-	GeoDataImporter {"csv_polygon_group", tr("CSV file (Polygons)"), creator}
+	GeoDataImporter {"csv_polygon_group", tr("CSV file (Polygons)"), creator},
+	m_converter {nullptr}
 {}
+
+GeoDataPolygonGroupCsvImporter::~GeoDataPolygonGroupCsvImporter()
+{
+	delete m_converter;
+}
 
 const QStringList GeoDataPolygonGroupCsvImporter::fileDialogFilters()
 {
@@ -162,12 +177,19 @@ bool GeoDataPolygonGroupCsvImporter::importData(GeoData* data, int index, QWidge
 				return false;
 			}
 		}
+
+		QPointF p(x, y);
+
+		if (m_converter != nullptr) {
+			p = m_converter->convert(p);
+		}
+
 		if (polygon.size() == 0) {
 			// this is the first data
 			currentPid = pid;
 			currentName = name;
 			currentValue = value;
-			polygon.push_back(QPointF(x, y));
+			polygon.push_back(p);
 		} else {
 			if (pid != currentPid) {
 				// old line finished
@@ -181,7 +203,7 @@ bool GeoDataPolygonGroupCsvImporter::importData(GeoData* data, int index, QWidge
 				currentName = name;
 				currentValue = value;
 				polygon.clear();
-				polygon.push_back(QPointF(x, y));
+				polygon.push_back(p);
 			} else {
 				if (currentName != name) {
 					QMessageBox::critical(w, tr("Error"), tr("Error occured while reading line %1. \"name\" should be the same for lines where \"pid\" values are the same.").arg(lineno));
@@ -191,10 +213,46 @@ bool GeoDataPolygonGroupCsvImporter::importData(GeoData* data, int index, QWidge
 					QMessageBox::critical(w, tr("Error"), tr("Error occured while reading line %1. \"value\" should be the same for lines where \"pid\" values are the same.").arg(lineno));
 					return false;
 				}
-				polygon.push_back(QPointF(x, y));
+				polygon.push_back(p);
 			}
 		}
 
 		++ lineno;
 	}
+}
+
+bool GeoDataPolygonGroupCsvImporter::doInit(const QString& filename, const QString& selectedFilter, int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemInterface* item, QWidget* w)
+{
+	auto projectCs = item->projectData()->mainfile()->coordinateSystem();
+	if (projectCs == nullptr) {return true;}
+
+	auto csBuilder = item->projectData()->mainWindow()->coordinateSystemBuilder();
+	CoordinateSystemConvertDialog dialog(w);
+	dialog.setBuilder(csBuilder);
+	dialog.setEnabled(true);
+
+	auto prjFilename = filename;
+	prjFilename.replace(QRegExp("\\.csv$"), ".prj");
+	if (QFile::exists(prjFilename)) {
+		// read and get EPSG code
+		QFile f(prjFilename);
+		f.open(QFile::ReadOnly);
+		auto wkt = f.readAll().toStdString();
+		int epsgCode = GdalUtil::wkt2Epsg(wkt.c_str());
+		auto cs = csBuilder->system(QString("EPSG:%1").arg(epsgCode));
+		dialog.setCoordinateSystem(cs);
+	} else {
+		dialog.setCoordinateSystem(projectCs);
+	}
+
+	int ret = dialog.exec();
+	if (ret == QDialog::Rejected) {
+		return false;
+	}
+	auto cs = dialog.coordinateSystem();
+
+	if (projectCs != cs) {
+		m_converter = new CoordinateSystemConverter(cs, projectCs);
+	}
+	return true;
 }

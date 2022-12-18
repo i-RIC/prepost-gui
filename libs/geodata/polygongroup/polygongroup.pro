@@ -17,6 +17,13 @@ PRECOMPILED_HEADER = polygongroup_pch.h
 # Internal libraries #
 ######################
 
+# iricCs
+
+unix {
+        LIBS += -L"../../cs"
+}
+LIBS += -liricCs
+
 # iricGdPolydata
 
 unix {

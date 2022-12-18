@@ -1,8 +1,15 @@
 #include "geodatapolydatagroupcreator.h"
 #include "geodatapolydatagroupshpimporter.h"
 
+#include <cs/coordinatesystem.h>
+#include <cs/coordinatesystembuilder.h>
+#include <cs/coordinatesystemconverter.h>
+#include <cs/gdalutil.h>
+#include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
 #include <guicore/pre/gridcond/base/gridattributeeditwidget.h>
+#include <guicore/project/projectdata.h>
+#include <guicore/project/projectmainfile.h>
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
 #include <misc/stringtool.h>
 
@@ -14,11 +21,14 @@
 
 GeoDataPolyDataGroupShpImporter::GeoDataPolyDataGroupShpImporter(const std::string& name, const QString& caption, GeoDataCreator* creator) :
 	GeoDataImporter {name, caption, creator},
-	m_codec {nullptr}
+	m_codec {nullptr},
+	m_converter {nullptr}
 {}
 
 GeoDataPolyDataGroupShpImporter::~GeoDataPolyDataGroupShpImporter()
-{}
+{
+	delete m_converter;
+}
 
 const QStringList GeoDataPolyDataGroupShpImporter::acceptableExtensions()
 {
@@ -94,6 +104,24 @@ bool GeoDataPolyDataGroupShpImporter::doInit(const QString& filename, const QStr
 		dialog.hideValueWidgets();
 	}
 
+	auto csBuilder = item->projectData()->mainWindow()->coordinateSystemBuilder();
+	dialog.setCsBuilder(csBuilder);
+	auto prjFilename = filename;
+	prjFilename.replace(QRegExp(".shp$"), ".prj");
+	auto projectCs = item->projectData()->mainfile()->coordinateSystem();
+	if (QFile::exists(prjFilename)) {
+		// read and get EPSG code
+		QFile f(prjFilename);
+		f.open(QFile::ReadOnly);
+		auto wkt = f.readAll().toStdString();
+		int epsgCode = GdalUtil::wkt2Epsg(wkt.c_str());
+		auto cs = csBuilder->system(QString("EPSG:%1").arg(epsgCode));
+		dialog.setCoordinateSystem(cs);
+	} else {
+		dialog.setCoordinateSystem(projectCs);
+	}
+	dialog.setCsEnabled(projectCs != nullptr);
+
 	int ret = dialog.exec();
 	if (ret == QDialog::Rejected) {
 		return false;
@@ -105,6 +133,11 @@ bool GeoDataPolyDataGroupShpImporter::doInit(const QString& filename, const QStr
 	m_valueAttribute = dialog.valueIndex();
 	m_specifiedValue = dialog.specifiedValue();
 	m_codec = QTextCodec::codecForName(dialog.codecName().toLatin1());
+	auto cs = dialog.coordinateSystem();
+
+	if (projectCs != nullptr && projectCs != cs) {
+		m_converter = new CoordinateSystemConverter(cs, projectCs);
+	}
 
 	return true;
 }

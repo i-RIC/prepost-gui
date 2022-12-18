@@ -1,12 +1,14 @@
 #include "geodatapointmaprealexporter.h"
 #include "geodatapointmapt.h"
 
+#include <cs/coordinatesystem.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
 #include <misc/tpoexporter.h>
 
 #include <QFile>
 #include <QMessageBox>
+#include <QRegExp>
 #include <QStringList>
 #include <QTextStream>
 
@@ -40,6 +42,15 @@ bool GeoDataPointmapRealExporter::doExport(GeoData* data, const QString& filenam
 		}
 		exporter.close();
 	}
+
+	// export *.prj if project coordinate system is defined
+	auto cs = pd->mainfile()->coordinateSystem();
+	if (cs != nullptr) {
+			auto prjFilename = filename;
+			prjFilename.replace(QRegExp("\\.tpo$"), ".prj");
+			cs->exportPlaneWkt(prjFilename);
+	}
+
 	return true;
 }
 

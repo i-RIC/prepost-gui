@@ -1,9 +1,12 @@
 #include "geodatapointmapstlexporter.h"
 #include "geodatapointmapt.h"
 
+#include <cs/coordinatesystem.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
 #include <misc/stringtool.h>
+
+#include <QRegExp>
 
 #include <vtkDoubleArray.h>
 #include <vtkPoints.h>
@@ -44,6 +47,15 @@ bool GeoDataPointmapSTLExporter::doExport(GeoData* data, const QString& filename
 
 	writer->Delete();
 	polydata->Delete();
+
+	// export *.prj if project coordinate system is defined
+	auto cs = pd->mainfile()->coordinateSystem();
+	if (cs != nullptr) {
+			auto prjFilename = filename;
+			prjFilename.replace(QRegExp("\\.stl$"), ".prj");
+			cs->exportPlaneWkt(prjFilename);
+	}
+
 	return true;
 }
 

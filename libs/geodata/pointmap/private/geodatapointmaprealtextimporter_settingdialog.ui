@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>537</width>
-    <height>746</height>
+    <width>535</width>
+    <height>782</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -56,6 +56,16 @@
         </spacer>
        </item>
       </layout>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="csLabel">
+       <property name="text">
+        <string>Coordinate System</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="CoordinateSystemConvertWidget" name="csWidget" native="true"/>
      </item>
     </layout>
    </item>
@@ -460,18 +470,6 @@
     </widget>
    </item>
    <item>
-    <widget class="QGroupBox" name="previewGroupBox">
-     <property name="title">
-      <string>Preview</string>
-     </property>
-     <layout class="QVBoxLayout" name="verticalLayout">
-      <item>
-       <widget class="QTableWidget" name="tableWidget"/>
-      </item>
-     </layout>
-    </widget>
-   </item>
-   <item>
     <widget class="QLabel" name="errorsLabel">
      <property name="font">
       <font>
@@ -482,6 +480,18 @@
      <property name="styleSheet">
       <string notr="true">color: red;</string>
      </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="previewGroupBox">
+     <property name="title">
+      <string>Preview</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QTableWidget" name="tableWidget"/>
+      </item>
+     </layout>
     </widget>
    </item>
    <item>
@@ -497,6 +507,12 @@
   </layout>
  </widget>
  <customwidgets>
+  <customwidget>
+   <class>CoordinateSystemConvertWidget</class>
+   <extends>QWidget</extends>
+   <header>cs/coordinatesystemconvertwidget.h</header>
+   <container>1</container>
+  </customwidget>
   <customwidget>
    <class>TooltipLabel</class>
    <extends>QLabel</extends>

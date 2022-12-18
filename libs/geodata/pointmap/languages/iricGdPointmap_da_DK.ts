@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="da_DK">
 <context>
     <name>GeoDataPointMapDelPtsLessThanDialog</name>
@@ -38,7 +40,7 @@
     </message>
     <message>
         <source>Remeshing TINs...</source>
-        <translation>Opfriskning af TIN'er...</translation>
+        <translation>Opfriskning af TIN&apos;er...</translation>
     </message>
     <message>
         <source>Information</source>
@@ -46,7 +48,7 @@
     </message>
     <message>
         <source>When you switch to this mode, you have to remesh TINs. Do you want to remesh now?</source>
-        <translation>Når du skifter til denne tilstand, skal du opgradere TIN'er. Vil du opfriske nu?</translation>
+        <translation>Når du skifter til denne tilstand, skal du opgradere TIN&apos;er. Vil du opfriske nu?</translation>
     </message>
     <message>
         <source>&amp;Add New Point</source>
@@ -90,7 +92,7 @@
     </message>
     <message>
         <source>Remesh &amp;TINs</source>
-        <translation>Remesh TIN'er (&amp;T)</translation>
+        <translation>Remesh TIN&apos;er (&amp;T)</translation>
     </message>
     <message>
         <source>Add &amp;Break Line</source>
@@ -118,7 +120,7 @@
     </message>
     <message>
         <source>Remeshing TINs finished.</source>
-        <translation>Remeshing TIN'er færdige.</translation>
+        <translation>Remeshing TIN&apos;er færdige.</translation>
     </message>
     <message>
         <source>When you add break line, you have to switch to show wireframes. Do you want to switch to show wireframes now?</source>
@@ -229,8 +231,8 @@
         <translation>Fusionere...</translation>
     </message>
     <message>
-        <source>There is no other data to merge in "%1" group.</source>
-        <translation>Der er ingen andre data at flette ind "%1"gruppe.</translation>
+        <source>There is no other data to merge in &quot;%1&quot; group.</source>
+        <translation>Der er ingen andre data at flette ind &quot;%1&quot;gruppe.</translation>
     </message>
     <message>
         <source>%1 duplicate points were found in merge targets, and omitted.</source>
@@ -521,12 +523,12 @@
         <translation>Ingen afgrænsning angivet</translation>
     </message>
     <message>
-        <source>Not enough values to read "%1". "%1" column is %2 but %3 values input.</source>
-        <translation>Ikke nok værdier til at læse "%1"."%1"kolonne er %2 men %3 værdier input.</translation>
+        <source>Not enough values to read &quot;%1&quot;. &quot;%1&quot; column is %2 but %3 values input.</source>
+        <translation>Ikke nok værdier til at læse &quot;%1&quot;.&quot;%1&quot;kolonne er %2 men %3 værdier input.</translation>
     </message>
     <message>
-        <source>Error occured while reading "%1" value. "%1" value should be real number, but "%2" specified.</source>
-        <translation>Der opstod en fejl under læsning "%1"værdi."%1"Værdien skal være det reelle tal, men"%2"specificeret.</translation>
+        <source>Error occured while reading &quot;%1&quot; value. &quot;%1&quot; value should be real number, but &quot;%2&quot; specified.</source>
+        <translation>Der opstod en fejl under læsning &quot;%1&quot;værdi.&quot;%1&quot;Værdien skal være det reelle tal, men&quot;%2&quot;specificeret.</translation>
     </message>
     <message>
         <source>Text files (CSV, TSV, etc.)</source>
@@ -596,8 +598,8 @@
         <translation>Citat karakter:</translation>
     </message>
     <message>
-        <source>"</source>
-        <translation>"</translation>
+        <source>&quot;</source>
+        <translation>&quot;</translation>
     </message>
     <message>
         <source>When you want to specify multiple quote characters, please just input the characters only, no spaces or commas.</source>
@@ -666,6 +668,10 @@
     <message>
         <source>File name:</source>
         <translation>Filnavn:</translation>
+    </message>
+    <message>
+        <source>Coordinate System</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -882,8 +888,8 @@
         <translation>Begræns kantlængde:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Bemærk &lt;/span&gt;: Når du klikker på anvend knappen, bliver de trekanter, der fjernes, malet med mørke grå. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = &quot;font-weight: 600;&quot;&gt; Bemærk &lt;/span&gt;: Når du klikker på anvend knappen, bliver de trekanter, der fjernes, malet med mørke grå. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
 </context>
 </TS>

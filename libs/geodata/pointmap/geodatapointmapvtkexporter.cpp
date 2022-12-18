@@ -1,6 +1,7 @@
 #include "geodatapointmapt.h"
 #include "geodatapointmapvtkexporter.h"
 
+#include <cs/coordinatesystem.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
 #include <misc/filesystemfunction.h>
@@ -59,6 +60,15 @@ bool GeoDataPointmapVTKExporter::doExport(GeoData* data, const QString& filename
 		QFile::remove(tmpFile);
 		return false;
 	}
+
+	// export *.prj if project coordinate system is defined
+	auto cs = pd->mainfile()->coordinateSystem();
+	if (cs != nullptr) {
+			auto prjFilename = filename;
+			prjFilename.replace(".vtk", ".prj");
+			cs->exportPlaneWkt(prjFilename);
+	}
+
 	return true;
 }
 

@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="cs_CZ">
 <context>
     <name>GeoDataPolyDataGroup</name>
@@ -30,8 +32,8 @@
         <translation>Opravdu chcete smazat vybrané %1 s?</translation>
     </message>
     <message>
-        <source>There is no other data to merge in "%1" group.</source>
-        <translation>Nejsou k dispozici žádná další data ke sloučení " %1 „skupina.</translation>
+        <source>There is no other data to merge in &quot;%1&quot; group.</source>
+        <translation>Nejsou k dispozici žádná další data ke sloučení &quot; %1 „skupina.</translation>
     </message>
     <message>
         <source>Edit name and value of polydatas</source>
@@ -173,6 +175,10 @@
         <source>For each</source>
         <translation>Pro každého</translation>
     </message>
+    <message>
+        <source>Name</source>
+        <translation type="unfinished">název</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolyDataGroupMergeSettingDialog</name>
@@ -253,6 +259,10 @@
     <message>
         <source>You cannot specify the same column for both Name and Value.</source>
         <translation>Nelze zadat stejný sloupec pro název i hodnotu.</translation>
+    </message>
+    <message>
+        <source>Coordinate System:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

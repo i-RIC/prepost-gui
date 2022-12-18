@@ -2,6 +2,7 @@
 #include "geodatapointgrouppoint.h"
 #include "geodatapointgroupshpexporter.h"
 
+#include <cs/coordinatesystem.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
 #include <guicore/solverdef/solverdefinitiongridattributereal.h>
@@ -46,6 +47,14 @@ bool GeoDataPointGroupShpExporter::doExport(GeoData* data, const QString& filena
 
 	SHPClose(shph);
 	DBFClose(dbfh);
+
+	// export *.prj if project coordinate system is defined
+	auto cs = pd->mainfile()->coordinateSystem();
+	if (cs != nullptr) {
+			auto prjFilename = filename;
+			prjFilename.replace(".shp", ".prj");
+			cs->exportPlaneWkt(prjFilename);
+	}
 
 	return true;
 }

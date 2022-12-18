@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="lt_LT">
 <context>
     <name>GeoDataPolyLineGroup</name>
@@ -12,6 +14,10 @@
     <message>
         <source>Line%1</source>
         <translation>Linija %1</translation>
+    </message>
+    <message>
+        <source>&amp;Add New %1...</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -83,8 +89,8 @@
         <translation>Skaitant antraštės eilutę įvyko klaida. Antraštėje turi būti bent 6 stulpeliai.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
-        <translation>Skaitant antraštės eilutę įvyko klaida. Stulpelis %1 turėtų būti "%2", bet"%3"yra duotas.</translation>
+        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
+        <translation>Skaitant antraštės eilutę įvyko klaida. Stulpelis %1 turėtų būti &quot;%2&quot;, bet&quot;%3&quot;yra duotas.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. There is no data.</source>
@@ -107,31 +113,31 @@
         <translation>Skaitant eilutę įvyko klaida %1. Duomenys turi turėti bent 6 stulpelius.</translation>
     </message>
     <message>
-        <source>Error occured while reading "lid" value in line %1. "lid" should be integer value but "%2" is specified.</source>
-        <translation>Klaida skaitant „dangčio“ reikšmę eilutėje %1. „dangtelis“ turi būti sveikasis skaičius, bet „ %2 "yra nurodyta.</translation>
+        <source>Error occured while reading &quot;lid&quot; value in line %1. &quot;lid&quot; should be integer value but &quot;%2&quot; is specified.</source>
+        <translation>Klaida skaitant „dangčio“ reikšmę eilutėje %1. „dangtelis“ turi būti sveikasis skaičius, bet „ %2 &quot;yra nurodyta.</translation>
     </message>
     <message>
-        <source>Error occured while reading "vid" value in line %1. "vid" should be integer value but "%2" is specified.</source>
-        <translation>Klaida skaitant „vid“ reikšmę eilutėje %1. „vid“ turėtų būti sveikasis skaičius, bet „ %2 "yra nurodyta.</translation>
+        <source>Error occured while reading &quot;vid&quot; value in line %1. &quot;vid&quot; should be integer value but &quot;%2&quot; is specified.</source>
+        <translation>Klaida skaitant „vid“ reikšmę eilutėje %1. „vid“ turėtų būti sveikasis skaičius, bet „ %2 &quot;yra nurodyta.</translation>
     </message>
     <message>
-        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
-        <translation>Klaida skaitant „x“ reikšmę eilutėje %1. „x“ turėtų būti tikroji vertė, bet %2 "yra nurodyta.</translation>
+        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Klaida skaitant „x“ reikšmę eilutėje %1. „x“ turėtų būti tikroji vertė, bet %2 &quot;yra nurodyta.</translation>
     </message>
     <message>
-        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
-        <translation>Klaida skaitant „y“ reikšmę eilutėje %1. „y“ turėtų būti tikroji vertė, bet %2 "yra nurodyta.</translation>
+        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Klaida skaitant „y“ reikšmę eilutėje %1. „y“ turėtų būti tikroji vertė, bet %2 &quot;yra nurodyta.</translation>
     </message>
     <message>
-        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
-        <translation>Klaida skaitant „vertės“ reikšmę eilutėje %1. „vertė“ turėtų būti tikroji vertė, bet „ %2 "yra nurodyta.</translation>
+        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Klaida skaitant „vertės“ reikšmę eilutėje %1. „vertė“ turėtų būti tikroji vertė, bet „ %2 &quot;yra nurodyta.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. "name" should be the same for lines where "lid" values are the same.</source>
+        <source>Error occured while reading line %1. &quot;name&quot; should be the same for lines where &quot;lid&quot; values are the same.</source>
         <translation>Skaitant eilutę įvyko klaida %1. „pavadinimas“ turėtų būti tas pats eilutėse, kuriose „dangtelio“ vertės yra vienodos.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. "value" should be the same for lines where "lid" values are the same.</source>
+        <source>Error occured while reading line %1. &quot;value&quot; should be the same for lines where &quot;lid&quot; values are the same.</source>
         <translation>Skaitant eilutę įvyko klaida %1. „vertė“ turėtų būti tokia pati eilutėse, kuriose „dangtelio“ vertės yra vienodos.</translation>
     </message>
     <message>

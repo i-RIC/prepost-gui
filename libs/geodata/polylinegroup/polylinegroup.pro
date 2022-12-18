@@ -18,6 +18,13 @@ PRECOMPILED_HEADER = polylinegroup_pch.h
 # Internal libraries #
 ######################
 
+# iricCs
+
+unix {
+        LIBS += -L"../../cs"
+}
+LIBS += -liricCs
+
 # iricGdPolydata
 
 unix {

@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="id_ID">
 <context>
     <name>GeoDataPointGroup</name>
@@ -12,6 +14,10 @@
     <message>
         <source>P&amp;oint</source>
         <translation>Titik (&amp;O)</translation>
+    </message>
+    <message>
+        <source>&amp;Add New %1...</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -83,8 +89,8 @@
         <translation>Terjadi kesalahan saat membaca baris header. Header harus memiliki setidaknya 4 kolom.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
-        <translation>Terjadi kesalahan saat membaca baris header. Kolom %1 seharusnya "%2", tetapi "%3" diberikan.</translation>
+        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
+        <translation>Terjadi kesalahan saat membaca baris header. Kolom %1 seharusnya &quot;%2&quot;, tetapi &quot;%3&quot; diberikan.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Make sure the file is saved in UTF-8 encoding.</source>
@@ -99,16 +105,16 @@
         <translation>Terjadi kesalahan saat membaca baris %1. Data harus memiliki setidaknya 4 kolom.</translation>
     </message>
     <message>
-        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
-        <translation>Terjadi kesalahan saat membaca nilai "x" di baris %1. "x" harus berupa nilai sebenarnya tetapi "%2" ditentukan.</translation>
+        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Terjadi kesalahan saat membaca nilai &quot;x&quot; di baris %1. &quot;x&quot; harus berupa nilai sebenarnya tetapi &quot;%2&quot; ditentukan.</translation>
     </message>
     <message>
-        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
-        <translation>Terjadi kesalahan saat membaca nilai "y" di baris %1. "y" seharusnya bernilai nyata tetapi "%2" ditentukan.</translation>
+        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Terjadi kesalahan saat membaca nilai &quot;y&quot; di baris %1. &quot;y&quot; seharusnya bernilai nyata tetapi &quot;%2&quot; ditentukan.</translation>
     </message>
     <message>
-        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
-        <translation>Terjadi kesalahan saat membaca nilai "nilai" di baris %1. "nilai" harus berupa nilai nyata tetapi "%2" ditentukan.</translation>
+        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Terjadi kesalahan saat membaca nilai &quot;nilai&quot; di baris %1. &quot;nilai&quot; harus berupa nilai nyata tetapi &quot;%2&quot; ditentukan.</translation>
     </message>
 </context>
 <context>

@@ -5,6 +5,8 @@
 #include <QPushButton>
 #include <QTextCodec>
 
+#include <memory>
+
 GeoDataPointmapRealTextImporter::SettingDialog::SettingDialog(QWidget *parent) :
 	QDialog(parent),
 	ui(new Ui::GeoDataPointmapRealTextImporter_SettingDialog)
@@ -71,6 +73,26 @@ void GeoDataPointmapRealTextImporter::SettingDialog::setPreviewData(const std::v
 	updatePreview();
 }
 
+void GeoDataPointmapRealTextImporter::SettingDialog::setBuilder(CoordinateSystemBuilder* builder)
+{
+	return ui->csWidget->setBuilder(builder);
+}
+
+void GeoDataPointmapRealTextImporter::SettingDialog::setCsEnabled(bool enabled)
+{
+	return ui->csWidget->setEnabled(enabled);
+}
+
+CoordinateSystem* GeoDataPointmapRealTextImporter::SettingDialog::coordinateSystem() const
+{
+	return ui->csWidget->coordinateSystem();
+}
+
+void GeoDataPointmapRealTextImporter::SettingDialog::setCoordinateSystem(CoordinateSystem* cs)
+{
+	ui->csWidget->setCoordinateSystem(cs);
+}
+
 void GeoDataPointmapRealTextImporter::SettingDialog::updateComboBoxes()
 {
 	std::vector<QComboBox*> comboBoxes;
@@ -88,7 +110,7 @@ void GeoDataPointmapRealTextImporter::SettingDialog::updateComboBoxes()
 	bool ok;
 	QString error;
 
-	auto parser = buildParser(&ok, &error);
+	std::unique_ptr<LineParser> parser(buildParser(&ok, &error));
 
 	if (! ok) {
 		for (QComboBox* c : comboBoxes) {
@@ -98,7 +120,7 @@ void GeoDataPointmapRealTextImporter::SettingDialog::updateComboBoxes()
 		}
 		return;
 	}
-	QStringList fields = getFields(&parser);
+	QStringList fields = getFields(parser.get());
 
 	for (int i = 0; i < comboBoxes.size(); ++i) {
 		QComboBox* c = comboBoxes.at(i);
@@ -116,15 +138,15 @@ void GeoDataPointmapRealTextImporter::SettingDialog::updateComboBoxes()
 	}
 }
 
-GeoDataPointmapRealTextImporter::LineParser GeoDataPointmapRealTextImporter::SettingDialog::buildParser(bool *ok, QString *error) const
+GeoDataPointmapRealTextImporter::LineParser* GeoDataPointmapRealTextImporter::SettingDialog::buildParser(bool *ok, QString *error) const
 {
 	*ok = true;
 	*error = "";
 
-	LineParser parser;
+	auto parser = new LineParser();
 
 	auto codec = QTextCodec::codecForName(ui->encodingComboBox->currentText().toLatin1());
-	parser.setTextCodec(codec);
+	parser->setTextCodec(codec);
 
 	std::vector<QChar> delimiters;
 
@@ -154,28 +176,28 @@ GeoDataPointmapRealTextImporter::LineParser GeoDataPointmapRealTextImporter::Set
 		*error = GeoDataPointmapRealTextImporter::tr("No delimiter specified");
 		return parser;
 	}
-	parser.setDelimiters(delimiters);
+	parser->setDelimiters(delimiters);
 
 	std::vector<QChar> quotes;
 	auto quoteStr = ui->quoteLineEdit->text();
 	for (int i = 0; i < quoteStr.size(); ++i) {
 		quotes.push_back(quoteStr.at(i));
 	}
-	parser.setQuoteChars(quotes);
+	parser->setQuoteChars(quotes);
 
 	QChar escape;
 	auto escapeStr = ui->escapeLineEdit->text();
 	if (escapeStr.size() > 0) {
 		escape = escapeStr.at(0);
 	}
-	parser.setEscapeChar(escape);
+	parser->setEscapeChar(escape);
 
-	parser.setHeaderLines(ui->headerLinesSpinBox->value());
-	parser.setIsFirstLineFieldNames(ui->fieldNameCheckBox->isChecked());
-	parser.setXColumn(ui->xFieldComboBox->currentIndex());
-	parser.setYColumn(ui->yFieldComboBox->currentIndex());
-	parser.setValueColumn(ui->valueFieldComboBox->currentIndex());
-	parser.setSkipRate(ui->skipRateSpinBox->value());
+	parser->setHeaderLines(ui->headerLinesSpinBox->value());
+	parser->setIsFirstLineFieldNames(ui->fieldNameCheckBox->isChecked());
+	parser->setXColumn(ui->xFieldComboBox->currentIndex());
+	parser->setYColumn(ui->yFieldComboBox->currentIndex());
+	parser->setValueColumn(ui->valueFieldComboBox->currentIndex());
+	parser->setSkipRate(ui->skipRateSpinBox->value());
 
 	return parser;
 }
@@ -220,13 +242,13 @@ void GeoDataPointmapRealTextImporter::SettingDialog::updatePreview()
 	bool ok;
 	QString error;
 
-	auto parser = buildParser(&ok, &error);
+	std::unique_ptr<LineParser> parser(buildParser(&ok, &error));
 	if (! ok) {
 		ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(false);
 		ui->errorsLabel->setText(error);
 	}
 
-	auto fields = getFields(&parser);
+	auto fields = getFields(parser.get());
 	auto lines = getDataLinesForPreview();
 
 	ui->tableWidget->setColumnCount(fields.size());
@@ -236,9 +258,9 @@ void GeoDataPointmapRealTextImporter::SettingDialog::updatePreview()
 
 	for (int i = 0; i < lines.size(); ++i) {
 		const auto& line = lines.at(i);
-		QString lineStr = parser.textCodec()->toUnicode(line);
+		QString lineStr = parser->textCodec()->toUnicode(line);
 
-		auto frags = parser.parseToStrs(lineStr, &ok, &error);
+		auto frags = parser->parseToStrs(lineStr, &ok, &error);
 		if (! ok) {
 			ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(false);
 			int lineNo = ui->headerLinesSpinBox->value() + i * (1 + ui->skipRateSpinBox->value()) + 1;
@@ -265,12 +287,12 @@ void GeoDataPointmapRealTextImporter::SettingDialog::autoDetectHeaderLines()
 
 	bool ok;
 	QString	error;
-	auto parser = buildParser(&ok, &error);
+	std::unique_ptr<LineParser> parser(buildParser(&ok, &error));
 	if (! ok) {return;}
 
 	for (int i = 0; i < m_previewData.size(); ++i) {
 		auto line = QString(m_previewData.at(i));
-		auto strs = parser.parseToStrs(line, &ok, &error);
+		auto strs = parser->parseToStrs(line, &ok, &error);
 		if (! ok) {
 			numColumns.push_back(0);
 		} else {

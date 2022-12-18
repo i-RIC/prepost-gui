@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ru_RU">
 <context>
     <name>GeoDataPolygonGroup</name>
@@ -12,6 +14,10 @@
     <message>
         <source>P&amp;olygons</source>
         <translation>Полигоны (&amp;O)</translation>
+    </message>
+    <message>
+        <source>&amp;Add New %1...</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -91,8 +97,8 @@
         <translation>Произошла ошибка при чтении строки заголовка. В заголовке должно быть не менее 6 столбцов.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
-        <translation>Произошла ошибка при чтении строки заголовка. Столбец %1 должно быть "%2", но "%3" дано.</translation>
+        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
+        <translation>Произошла ошибка при чтении строки заголовка. Столбец %1 должно быть &quot;%2&quot;, но &quot;%3&quot; дано.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. There is no data.</source>
@@ -115,32 +121,32 @@
         <translation>Произошла ошибка при чтении строки %1. В данных должно быть не менее 6 столбцов.</translation>
     </message>
     <message>
-        <source>Error occured while reading "pid" value in line %1. "pid" should be integer value but "%2" is specified.</source>
-        <translation>Произошла ошибка при чтении значения "pid" в строке %1. "pid" должно быть целым числом, но "%2"указано.</translation>
+        <source>Error occured while reading &quot;pid&quot; value in line %1. &quot;pid&quot; should be integer value but &quot;%2&quot; is specified.</source>
+        <translation>Произошла ошибка при чтении значения &quot;pid&quot; в строке %1. &quot;pid&quot; должно быть целым числом, но &quot;%2&quot;указано.</translation>
     </message>
     <message>
-        <source>Error occured while reading "vid" value in line %1. "vid" should be integer value but "%2" is specified.</source>
-        <translation>Произошла ошибка при чтении значения vid в строке %1. "vid" должно быть целым числом, но "%2"указано.</translation>
+        <source>Error occured while reading &quot;vid&quot; value in line %1. &quot;vid&quot; should be integer value but &quot;%2&quot; is specified.</source>
+        <translation>Произошла ошибка при чтении значения vid в строке %1. &quot;vid&quot; должно быть целым числом, но &quot;%2&quot;указано.</translation>
     </message>
     <message>
-        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
-        <translation>Произошла ошибка при чтении значения "x" в строке %1. "x" должно быть реальным значением, но "%2"указано.</translation>
+        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Произошла ошибка при чтении значения &quot;x&quot; в строке %1. &quot;x&quot; должно быть реальным значением, но &quot;%2&quot;указано.</translation>
     </message>
     <message>
-        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
-        <translation>Произошла ошибка при чтении значения "y" в строке %1. "y" должно быть реальным значением, но "%2"указано.</translation>
+        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Произошла ошибка при чтении значения &quot;y&quot; в строке %1. &quot;y&quot; должно быть реальным значением, но &quot;%2&quot;указано.</translation>
     </message>
     <message>
-        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
-        <translation>Произошла ошибка при чтении значения "значение" в строке %1. "значение" должно быть реальным значением, но "%2"указано.</translation>
+        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Произошла ошибка при чтении значения &quot;значение&quot; в строке %1. &quot;значение&quot; должно быть реальным значением, но &quot;%2&quot;указано.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. "name" should be the same for lines where "pid" values are the same.</source>
-        <translation>Произошла ошибка при чтении строки %1. "name" должно быть одинаковым для строк, в которых одинаковы значения "pid".</translation>
+        <source>Error occured while reading line %1. &quot;name&quot; should be the same for lines where &quot;pid&quot; values are the same.</source>
+        <translation>Произошла ошибка при чтении строки %1. &quot;name&quot; должно быть одинаковым для строк, в которых одинаковы значения &quot;pid&quot;.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. "value" should be the same for lines where "pid" values are the same.</source>
-        <translation>Произошла ошибка при чтении строки %1. "value" должно быть одинаковым для строк, в которых одинаковы значения "pid".</translation>
+        <source>Error occured while reading line %1. &quot;value&quot; should be the same for lines where &quot;pid&quot; values are the same.</source>
+        <translation>Произошла ошибка при чтении строки %1. &quot;value&quot; должно быть одинаковым для строк, в которых одинаковы значения &quot;pid&quot;.</translation>
     </message>
 </context>
 <context>

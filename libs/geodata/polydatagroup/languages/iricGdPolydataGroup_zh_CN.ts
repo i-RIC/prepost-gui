@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="zh_CN">
 <context>
     <name>GeoDataPolyDataGroup</name>
@@ -30,7 +32,7 @@
         <translation>您确定要删除选定的 %1 ?</translation>
     </message>
     <message>
-        <source>There is no other data to merge in "%1" group.</source>
+        <source>There is no other data to merge in &quot;%1&quot; group.</source>
         <translation>没有其他数据可以合并到“ %1 “ 团体。</translation>
     </message>
     <message>
@@ -173,6 +175,10 @@
         <source>For each</source>
         <translation>对于每个</translation>
     </message>
+    <message>
+        <source>Name</source>
+        <translation type="unfinished">姓名</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPolyDataGroupMergeSettingDialog</name>
@@ -253,6 +259,10 @@
     <message>
         <source>You cannot specify the same column for both Name and Value.</source>
         <translation>您不能为 Name 和 Value 指定相同的列。</translation>
+    </message>
+    <message>
+        <source>Coordinate System:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

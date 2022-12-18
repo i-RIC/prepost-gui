@@ -10,6 +10,8 @@
 
 #include <shapefil.h>
 
+class CoordinateSystemConverter;
+
 class QTextCodec;
 
 class GD_POLYDATAGROUP_EXPORT GeoDataPolyDataGroupShpImporter : public GeoDataImporter
@@ -36,6 +38,7 @@ protected:
 	int m_valueAttribute;
 	QVariant m_specifiedValue;
 	QTextCodec* m_codec;
+	CoordinateSystemConverter* m_converter;
 };
 
 #endif // GEODATAPOLYDATAGROUPSHPIMPORTER_H
