@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="lv_LV">
 <context>
     <name>GeoDataPolyLineGroup</name>
@@ -17,34 +15,34 @@
     </message>
     <message>
         <source>&amp;Add New Line...</source>
-        <translation type="unfinished"></translation>
+        <translation>Pievienot jaunu rindu (&amp;A)...</translation>
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Krāsu iestatījumu rediģēšana</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyLineGroupColorSettingDialog</name>
     <message>
         <source>Polyline Group Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Polyline Group displeja iestatījums</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Krāsa</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished"></translation>
+        <translation>Krāsa pēc vērtības</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Pielāgota krāsa</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Līnijas platums:</translation>
     </message>
 </context>
 <context>
@@ -116,8 +114,8 @@
         <translation>Lasot galvenes rindiņu, radās kļūda. Galvenē jābūt vismaz 6 kolonnām.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
-        <translation>Lasot galvenes rindiņu, radās kļūda. Sleja %1 vajadzētu būt &quot;%2&quot;, bet&quot;%3&quot; ir dots.</translation>
+        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
+        <translation>Lasot galvenes rindiņu, radās kļūda. Sleja %1 vajadzētu būt "%2", bet"%3" ir dots.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. There is no data.</source>
@@ -140,31 +138,31 @@
         <translation>Lasot rindiņu, radās kļūda %1. Datiem jābūt vismaz 6 slejām.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;lid&quot; value in line %1. &quot;lid&quot; should be integer value but &quot;%2&quot; is specified.</source>
-        <translation>Lasot rindas “vāks” vērtību, radās kļūda %1. &quot;vākam&quot; jābūt veselam skaitlim, bet &quot;%2&quot;ir norādīts.</translation>
+        <source>Error occured while reading "lid" value in line %1. "lid" should be integer value but "%2" is specified.</source>
+        <translation>Lasot rindas “vāks” vērtību, radās kļūda %1. "vākam" jābūt veselam skaitlim, bet "%2"ir norādīts.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;vid&quot; value in line %1. &quot;vid&quot; should be integer value but &quot;%2&quot; is specified.</source>
-        <translation>Lasot rindas “vid” vērtību, radās kļūda %1. &quot;vid&quot; ir jābūt veselam skaitlim, bet &quot;%2&quot;ir norādīts.</translation>
+        <source>Error occured while reading "vid" value in line %1. "vid" should be integer value but "%2" is specified.</source>
+        <translation>Lasot rindas “vid” vērtību, radās kļūda %1. "vid" ir jābūt veselam skaitlim, bet "%2"ir norādīts.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Lasot rindā “x” vērtību, radās kļūda %1. &quot;x&quot; ir jābūt reālai vērtībai, bet &quot;%2&quot;ir norādīts.</translation>
+        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
+        <translation>Lasot rindā “x” vērtību, radās kļūda %1. "x" ir jābūt reālai vērtībai, bet "%2"ir norādīts.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Lasot rindā “y” vērtību, radās kļūda %1. &quot;y&quot; ir jābūt reālai vērtībai, bet &quot;%2&quot;ir norādīts.</translation>
+        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
+        <translation>Lasot rindā “y” vērtību, radās kļūda %1. "y" ir jābūt reālai vērtībai, bet "%2"ir norādīts.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Kļūda, lasot vērtību &quot;vērtība&quot; rindā %1. &quot;Vērtībai&quot; jābūt reālai vērtībai, bet &quot;%2&quot;ir norādīts.</translation>
+        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
+        <translation>Kļūda, lasot vērtību "vērtība" rindā %1. "Vērtībai" jābūt reālai vērtībai, bet "%2"ir norādīts.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. &quot;name&quot; should be the same for lines where &quot;lid&quot; values are the same.</source>
+        <source>Error occured while reading line %1. "name" should be the same for lines where "lid" values are the same.</source>
         <translation>Lasot rindiņu, radās kļūda %1. “nosaukumam” jābūt tādam pašam rindās, kur “vāka” vērtības ir vienādas.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. &quot;value&quot; should be the same for lines where &quot;lid&quot; values are the same.</source>
+        <source>Error occured while reading line %1. "value" should be the same for lines where "lid" values are the same.</source>
         <translation>Lasot rindiņu, radās kļūda %1. “Vērtībai” jābūt vienādai rindās, kurās “vāka” vērtības ir vienādas.</translation>
     </message>
     <message>
@@ -176,7 +174,7 @@
     <name>GeoDataPolyLineGroupProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Rediģēt displeja iestatījumu</translation>
     </message>
 </context>
 <context>

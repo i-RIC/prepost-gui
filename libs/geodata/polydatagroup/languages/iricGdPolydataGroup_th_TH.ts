@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="th_TH">
 <context>
     <name>GeoDataPolyDataGroup</name>
@@ -32,8 +30,8 @@
         <translation>คุณแน่ใจหรือว่าต้องการลบรายการที่เลือก %1 NS?</translation>
     </message>
     <message>
-        <source>There is no other data to merge in &quot;%1&quot; group.</source>
-        <translation>ไม่มีข้อมูลอื่นที่จะรวมใน &quot;%1&quot; กลุ่ม.</translation>
+        <source>There is no other data to merge in "%1" group.</source>
+        <translation>ไม่มีข้อมูลอื่นที่จะรวมใน "%1" กลุ่ม.</translation>
     </message>
     <message>
         <source>Edit name and value of polydatas</source>
@@ -177,7 +175,7 @@
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished">ชื่อ</translation>
+        <translation>ชื่อ</translation>
     </message>
 </context>
 <context>
@@ -262,7 +260,7 @@
     </message>
     <message>
         <source>Coordinate System:</source>
-        <translation type="unfinished"></translation>
+        <translation>ระบบพิกัด:</translation>
     </message>
 </context>
 </TS>

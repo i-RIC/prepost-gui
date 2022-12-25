@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="is_IS">
 <context>
     <name>GeoDataPolyDataGroup</name>
@@ -32,8 +30,8 @@
         <translation>Ertu viss um að þú viljir eyða völdum %1 s?</translation>
     </message>
     <message>
-        <source>There is no other data to merge in &quot;%1&quot; group.</source>
-        <translation>Það eru engin önnur gögn til að sameinast “ %1 &quot;hópur.</translation>
+        <source>There is no other data to merge in "%1" group.</source>
+        <translation>Það eru engin önnur gögn til að sameinast “ %1 "hópur.</translation>
     </message>
     <message>
         <source>Edit name and value of polydatas</source>
@@ -177,7 +175,7 @@
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished">Nafn</translation>
+        <translation>Nafn</translation>
     </message>
 </context>
 <context>
@@ -262,7 +260,7 @@
     </message>
     <message>
         <source>Coordinate System:</source>
-        <translation type="unfinished"></translation>
+        <translation>Hnitkerfi:</translation>
     </message>
 </context>
 </TS>

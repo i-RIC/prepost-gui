@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="et_EE">
 <context>
     <name>GeoDataPolygonGroup</name>
@@ -17,34 +15,34 @@
     </message>
     <message>
         <source>&amp;Add New Polygon...</source>
-        <translation type="unfinished"></translation>
+        <translation>Lisa uus hulknurk (&amp;A)...</translation>
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Värviseade Redigeerimine</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolygonGroupColorSettingDialog</name>
     <message>
         <source>Polygon Group Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Hulknurkade rühma kuvamise seade</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Värv</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished"></translation>
+        <translation>Värv väärtuse järgi</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Kohandatud värv</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Joone laius:</translation>
     </message>
 </context>
 <context>
@@ -90,7 +88,7 @@
     </message>
     <message>
         <source>Some polygon in this data has holes, but holes are not exported to CSV file. If you want to export holes, please export to ESRI Shapefile.</source>
-        <translation>Mõnel nende andmete hulknurgal on augud, kuid auke CSV -faili ei ekspordita. Kui soovite auke eksportida, eksportige see ESRI Shapefile&apos;i.</translation>
+        <translation>Mõnel nende andmete hulknurgal on augud, kuid auke CSV -faili ei ekspordita. Kui soovite auke eksportida, eksportige see ESRI Shapefile'i.</translation>
     </message>
 </context>
 <context>
@@ -124,8 +122,8 @@
         <translation>Päise rea lugemisel ilmnes viga. Päises peaks olema vähemalt 6 veergu.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
-        <translation>Päise rea lugemisel ilmnes viga. Veerg %1 peaks olema &quot;%2&quot;, aga &quot;%3&quot;antakse.</translation>
+        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
+        <translation>Päise rea lugemisel ilmnes viga. Veerg %1 peaks olema "%2", aga "%3"antakse.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. There is no data.</source>
@@ -148,39 +146,39 @@
         <translation>Rida lugedes ilmnes viga %1. Andmetel peaks olema vähemalt 6 veergu.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;pid&quot; value in line %1. &quot;pid&quot; should be integer value but &quot;%2&quot; is specified.</source>
-        <translation>Viga &quot;pid&quot; väärtuse reas lugemisel ilmnes viga %1. &quot;pid&quot; peaks olema täisarv, kuid &quot;%2&quot;on täpsustatud.</translation>
+        <source>Error occured while reading "pid" value in line %1. "pid" should be integer value but "%2" is specified.</source>
+        <translation>Viga "pid" väärtuse reas lugemisel ilmnes viga %1. "pid" peaks olema täisarv, kuid "%2"on täpsustatud.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;vid&quot; value in line %1. &quot;vid&quot; should be integer value but &quot;%2&quot; is specified.</source>
-        <translation>Viga „vid” väärtuse reas lugemisel ilmnes viga %1. &quot;vid&quot; peaks olema täisarv, kuid &quot;%2&quot;on täpsustatud.</translation>
+        <source>Error occured while reading "vid" value in line %1. "vid" should be integer value but "%2" is specified.</source>
+        <translation>Viga „vid” väärtuse reas lugemisel ilmnes viga %1. "vid" peaks olema täisarv, kuid "%2"on täpsustatud.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Viga &quot;x&quot; väärtuse reas lugemisel ilmnes viga %1. &quot;x&quot; peaks olema tegelik väärtus, kuid &quot;%2&quot;on täpsustatud.</translation>
+        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
+        <translation>Viga "x" väärtuse reas lugemisel ilmnes viga %1. "x" peaks olema tegelik väärtus, kuid "%2"on täpsustatud.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Väärtuse &quot;y&quot; reas lugemisel ilmnes viga %1. &quot;y&quot; peaks olema tegelik väärtus, kuid &quot;%2&quot;on täpsustatud.</translation>
+        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
+        <translation>Väärtuse "y" reas lugemisel ilmnes viga %1. "y" peaks olema tegelik väärtus, kuid "%2"on täpsustatud.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Väärtuse väärtuse reas lugemisel ilmnes viga %1. &quot;väärtus&quot; peaks olema tegelik väärtus, kuid &quot;%2&quot;on täpsustatud.</translation>
+        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
+        <translation>Väärtuse väärtuse reas lugemisel ilmnes viga %1. "väärtus" peaks olema tegelik väärtus, kuid "%2"on täpsustatud.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. &quot;name&quot; should be the same for lines where &quot;pid&quot; values are the same.</source>
-        <translation>Rida lugedes ilmnes viga %1. &quot;nimi&quot; peaks olema sama ridade puhul, kus &quot;pid&quot; väärtused on samad.</translation>
+        <source>Error occured while reading line %1. "name" should be the same for lines where "pid" values are the same.</source>
+        <translation>Rida lugedes ilmnes viga %1. "nimi" peaks olema sama ridade puhul, kus "pid" väärtused on samad.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. &quot;value&quot; should be the same for lines where &quot;pid&quot; values are the same.</source>
-        <translation>Rida lugedes ilmnes viga %1. &quot;väärtus&quot; peaks olema sama ridade puhul, kus &quot;pid&quot; väärtused on samad.</translation>
+        <source>Error occured while reading line %1. "value" should be the same for lines where "pid" values are the same.</source>
+        <translation>Rida lugedes ilmnes viga %1. "väärtus" peaks olema sama ridade puhul, kus "pid" väärtused on samad.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolygonGroupProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Muutke kuvaseadet</translation>
     </message>
 </context>
 <context>

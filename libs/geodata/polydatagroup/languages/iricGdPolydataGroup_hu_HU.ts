@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="hu_HU">
 <context>
     <name>GeoDataPolyDataGroup</name>
@@ -32,8 +30,8 @@
         <translation>Biztosan törli a kijelöltet %1 s?</translation>
     </message>
     <message>
-        <source>There is no other data to merge in &quot;%1&quot; group.</source>
-        <translation>Nincs más egyesítendő adat &quot;%1&quot;csoport.</translation>
+        <source>There is no other data to merge in "%1" group.</source>
+        <translation>Nincs más egyesítendő adat "%1"csoport.</translation>
     </message>
     <message>
         <source>Edit name and value of polydatas</source>
@@ -177,7 +175,7 @@
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished">Név</translation>
+        <translation>Név</translation>
     </message>
 </context>
 <context>
@@ -262,7 +260,7 @@
     </message>
     <message>
         <source>Coordinate System:</source>
-        <translation type="unfinished"></translation>
+        <translation>Koordináta-rendszer:</translation>
     </message>
 </context>
 </TS>

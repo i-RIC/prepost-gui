@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="sl_SI">
 <context>
     <name>GeoDataPointGroup</name>
@@ -17,34 +15,34 @@
     </message>
     <message>
         <source>&amp;Add New Point...</source>
-        <translation type="unfinished"></translation>
+        <translation>Dodaj novo točko (&amp;A)...</translation>
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Urejanje barvnih nastavitev</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointGroupColorSettingDialog</name>
     <message>
         <source>Point Group Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastavitev prikaza skupine točk</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>barva</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished"></translation>
+        <translation>Barva po vrednosti</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Barva po meri</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Velikost točke:</translation>
     </message>
 </context>
 <context>
@@ -116,8 +114,8 @@
         <translation>Pri branju vrstice glave je prišlo do napake. Glava mora imeti vsaj 4 stolpce.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
-        <translation>Pri branju vrstice glave je prišlo do napake. Stolpec %1 moral bi biti &quot;%2&quot;, ampak&quot;%3&quot; je podan.</translation>
+        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
+        <translation>Pri branju vrstice glave je prišlo do napake. Stolpec %1 moral bi biti "%2", ampak"%3" je podan.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Make sure the file is saved in UTF-8 encoding.</source>
@@ -132,23 +130,23 @@
         <translation>Pri branju vrstice je prišlo do napake %1. Podatki morajo imeti vsaj 4 stolpce.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Pri branju vrednosti &quot;x&quot; v vrstici je prišlo do napake %1. &quot;x&quot; bi morala biti resnična vrednost, vendar &quot;%2&quot;je določeno.</translation>
+        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
+        <translation>Pri branju vrednosti "x" v vrstici je prišlo do napake %1. "x" bi morala biti resnična vrednost, vendar "%2"je določeno.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Pri branju vrednosti &quot;y&quot; v vrstici je prišlo do napake %1. &quot;y&quot; bi morala biti resnična vrednost, vendar &quot;%2&quot;je določeno.</translation>
+        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
+        <translation>Pri branju vrednosti "y" v vrstici je prišlo do napake %1. "y" bi morala biti resnična vrednost, vendar "%2"je določeno.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Pri branju vrednosti &quot;vrednost&quot; v vrstici je prišlo do napake %1. &quot;vrednost&quot; bi morala biti resnična vrednost, vendar &quot;%2&quot;je določeno.</translation>
+        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
+        <translation>Pri branju vrednosti "vrednost" v vrstici je prišlo do napake %1. "vrednost" bi morala biti resnična vrednost, vendar "%2"je določeno.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointGroupProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Uredi nastavitev zaslona</translation>
     </message>
 </context>
 <context>

@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="et_EE">
 <context>
     <name>GeoDataPointGroup</name>
@@ -17,34 +15,34 @@
     </message>
     <message>
         <source>&amp;Add New Point...</source>
-        <translation type="unfinished"></translation>
+        <translation>Lisa uus punkt (&amp;A)...</translation>
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Värviseade Redigeerimine</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointGroupColorSettingDialog</name>
     <message>
         <source>Point Group Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Punktide rühma kuvamise seade</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Värv</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished"></translation>
+        <translation>Värv väärtuse järgi</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Kohandatud värv</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Punkti suurus:</translation>
     </message>
 </context>
 <context>
@@ -116,8 +114,8 @@
         <translation>Päise rea lugemisel ilmnes viga. Päises peaks olema vähemalt 4 veergu.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
-        <translation>Päise rea lugemisel ilmnes viga. Veerg %1 peaks olema &quot;%2&quot;, aga &quot;%3&quot;antakse.</translation>
+        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
+        <translation>Päise rea lugemisel ilmnes viga. Veerg %1 peaks olema "%2", aga "%3"antakse.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Make sure the file is saved in UTF-8 encoding.</source>
@@ -132,23 +130,23 @@
         <translation>Rida lugedes ilmnes viga %1. Andmetel peaks olema vähemalt 4 veergu.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Viga &quot;x&quot; väärtuse reas lugemisel ilmnes viga %1. &quot;x&quot; peaks olema tegelik väärtus, kuid &quot;%2&quot;on täpsustatud.</translation>
+        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
+        <translation>Viga "x" väärtuse reas lugemisel ilmnes viga %1. "x" peaks olema tegelik väärtus, kuid "%2"on täpsustatud.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Väärtuse &quot;y&quot; reas lugemisel ilmnes viga %1. &quot;y&quot; peaks olema tegelik väärtus, kuid &quot;%2&quot;on täpsustatud.</translation>
+        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
+        <translation>Väärtuse "y" reas lugemisel ilmnes viga %1. "y" peaks olema tegelik väärtus, kuid "%2"on täpsustatud.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Väärtuse väärtuse reas lugemisel ilmnes viga %1. &quot;väärtus&quot; peaks olema tegelik väärtus, kuid &quot;%2&quot;on täpsustatud.</translation>
+        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
+        <translation>Väärtuse väärtuse reas lugemisel ilmnes viga %1. "väärtus" peaks olema tegelik väärtus, kuid "%2"on täpsustatud.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointGroupProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Muutke kuvaseadet</translation>
     </message>
 </context>
 <context>

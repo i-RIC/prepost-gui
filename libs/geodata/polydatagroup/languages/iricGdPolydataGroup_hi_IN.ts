@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="hi_IN">
 <context>
     <name>GeoDataPolyDataGroup</name>
@@ -32,8 +30,8 @@
         <translation>क्या आप वाकई चयनित को हटाना चाहते हैं %1 एस?</translation>
     </message>
     <message>
-        <source>There is no other data to merge in &quot;%1&quot; group.</source>
-        <translation>मर्ज करने के लिए कोई अन्य डेटा नहीं है&quot;%1&quot; समूह।</translation>
+        <source>There is no other data to merge in "%1" group.</source>
+        <translation>मर्ज करने के लिए कोई अन्य डेटा नहीं है"%1" समूह।</translation>
     </message>
     <message>
         <source>Edit name and value of polydatas</source>
@@ -177,7 +175,7 @@
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished">नाम</translation>
+        <translation>नाम</translation>
     </message>
 </context>
 <context>
@@ -262,7 +260,7 @@
     </message>
     <message>
         <source>Coordinate System:</source>
-        <translation type="unfinished"></translation>
+        <translation>समन्वय प्रणाली:</translation>
     </message>
 </context>
 </TS>

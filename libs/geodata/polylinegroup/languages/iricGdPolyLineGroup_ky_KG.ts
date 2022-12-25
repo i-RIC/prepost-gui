@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ky_KG">
 <context>
     <name>GeoDataPolyLineGroup</name>
@@ -17,34 +15,34 @@
     </message>
     <message>
         <source>&amp;Add New Line...</source>
-        <translation type="unfinished"></translation>
+        <translation>Жаңы сап кошуу (&amp;A)...</translation>
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Color Setting Edit</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyLineGroupColorSettingDialog</name>
     <message>
         <source>Polyline Group Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Polyline Group Display Setting</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Түс</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished"></translation>
+        <translation>Маани боюнча түс</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Ыңгайлаштырылган түс</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Сызыктын туурасы:</translation>
     </message>
 </context>
 <context>
@@ -116,8 +114,8 @@
         <translation>Башкы сапты окуп жатканда ката кетти. Аталышта жок дегенде 6 тилке болушу керек.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
-        <translation>Башкы сапты окуп жатканда ката кетти. Колонна %1 болушу керек &quot;%2&quot;, бирок&quot;%3&quot; берилген.</translation>
+        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
+        <translation>Башкы сапты окуп жатканда ката кетти. Колонна %1 болушу керек "%2", бирок"%3" берилген.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. There is no data.</source>
@@ -140,32 +138,32 @@
         <translation>Сапты окуу учурунда ката кетти %1. Маалыматтар жок дегенде 6 мамычадан турушу керек.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;lid&quot; value in line %1. &quot;lid&quot; should be integer value but &quot;%2&quot; is specified.</source>
-        <translation>&quot;Капкак&quot; маанисин сапта окуп жатканда ката кетти %1. &quot;Капкак&quot; бүтүн сан болушу керек, бирок &quot;%2&quot;деп көрсөтүлгөн.</translation>
+        <source>Error occured while reading "lid" value in line %1. "lid" should be integer value but "%2" is specified.</source>
+        <translation>"Капкак" маанисин сапта окуп жатканда ката кетти %1. "Капкак" бүтүн сан болушу керек, бирок "%2"деп көрсөтүлгөн.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;vid&quot; value in line %1. &quot;vid&quot; should be integer value but &quot;%2&quot; is specified.</source>
-        <translation>&quot;Vid&quot; маанисин сапта окуп жатканда ката кетти %1. &quot;vid&quot; бүтүн сан болушу керек, бирок &quot;%2&quot;деп көрсөтүлгөн.</translation>
+        <source>Error occured while reading "vid" value in line %1. "vid" should be integer value but "%2" is specified.</source>
+        <translation>"Vid" маанисин сапта окуп жатканда ката кетти %1. "vid" бүтүн сан болушу керек, бирок "%2"деп көрсөтүлгөн.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>&quot;X&quot; маанисин сапта окуп жатканда ката кетти %1. &quot;x&quot; чыныгы баалуулук болушу керек, бирок &quot;%2&quot;деп көрсөтүлгөн.</translation>
+        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
+        <translation>"X" маанисин сапта окуп жатканда ката кетти %1. "x" чыныгы баалуулук болушу керек, бирок "%2"деп көрсөтүлгөн.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>&quot;Y&quot; маанисин сапта окуп жатканда ката кетти %1. &quot;y&quot; чыныгы баалуулук болушу керек, бирок &quot;%2&quot;деп көрсөтүлгөн.</translation>
+        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
+        <translation>"Y" маанисин сапта окуп жатканда ката кетти %1. "y" чыныгы баалуулук болушу керек, бирок "%2"деп көрсөтүлгөн.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>&quot;Value&quot; маанисин сапта окуп жатканда ката кетти %1. &quot;баалуулук&quot; чыныгы баалуулук болушу керек, бирок &quot;%2&quot;деп көрсөтүлгөн.</translation>
+        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
+        <translation>"Value" маанисин сапта окуп жатканда ката кетти %1. "баалуулук" чыныгы баалуулук болушу керек, бирок "%2"деп көрсөтүлгөн.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. &quot;name&quot; should be the same for lines where &quot;lid&quot; values are the same.</source>
-        <translation>Сапты окуу учурунда ката кетти %1. &quot;капкак&quot; мааниси бирдей болгон саптар үчүн &quot;аты&quot; бирдей болушу керек.</translation>
+        <source>Error occured while reading line %1. "name" should be the same for lines where "lid" values are the same.</source>
+        <translation>Сапты окуу учурунда ката кетти %1. "капкак" мааниси бирдей болгон саптар үчүн "аты" бирдей болушу керек.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. &quot;value&quot; should be the same for lines where &quot;lid&quot; values are the same.</source>
-        <translation>Сапты окуу учурунда ката кетти %1. &quot;капкак&quot; мааниси бирдей болгон саптар үчүн &quot;маани&quot; бирдей болушу керек.</translation>
+        <source>Error occured while reading line %1. "value" should be the same for lines where "lid" values are the same.</source>
+        <translation>Сапты окуу учурунда ката кетти %1. "капкак" мааниси бирдей болгон саптар үчүн "маани" бирдей болушу керек.</translation>
     </message>
     <message>
         <source>CSV file (Lines) (*.csv)</source>
@@ -176,7 +174,7 @@
     <name>GeoDataPolyLineGroupProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Дисплей жөндөөсүн түзөтүү</translation>
     </message>
 </context>
 <context>

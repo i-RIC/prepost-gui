@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="uk_UA">
 <context>
     <name>GeoDataPolyLineGroup</name>
@@ -17,34 +15,34 @@
     </message>
     <message>
         <source>&amp;Add New Line...</source>
-        <translation type="unfinished"></translation>
+        <translation>Додати новий рядок (&amp;A)...</translation>
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Редагування налаштувань кольору</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyLineGroupColorSettingDialog</name>
     <message>
         <source>Polyline Group Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Налаштування відображення груп поліліній</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Колір</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished"></translation>
+        <translation>Розфарбуй за значенням</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Спеціальний колір</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ширина лінії:</translation>
     </message>
 </context>
 <context>
@@ -116,8 +114,8 @@
         <translation>Під час читання рядка заголовка сталася помилка. Заголовок повинен містити принаймні 6 стовпців.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
-        <translation>Під час читання рядка заголовка сталася помилка. Колонка %1 має бути &quot;%2&quot;, але&quot;%3&quot;дається.</translation>
+        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
+        <translation>Під час читання рядка заголовка сталася помилка. Колонка %1 має бути "%2", але"%3"дається.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. There is no data.</source>
@@ -140,32 +138,32 @@
         <translation>Під час читання рядка сталася помилка %1. Дані повинні мати принаймні 6 стовпців.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;lid&quot; value in line %1. &quot;lid&quot; should be integer value but &quot;%2&quot; is specified.</source>
-        <translation>Сталася помилка під час зчитування значення &quot;кришки&quot; у рядку %1. &quot;кришка&quot; має бути цілим числом, але &quot;%2&quot;зазначено.</translation>
+        <source>Error occured while reading "lid" value in line %1. "lid" should be integer value but "%2" is specified.</source>
+        <translation>Сталася помилка під час зчитування значення "кришки" у рядку %1. "кришка" має бути цілим числом, але "%2"зазначено.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;vid&quot; value in line %1. &quot;vid&quot; should be integer value but &quot;%2&quot; is specified.</source>
-        <translation>Сталася помилка під час читання значення &quot;vid&quot; у рядку %1. &quot;vid&quot; має бути цілим числом, але &quot;%2&quot;зазначено.</translation>
+        <source>Error occured while reading "vid" value in line %1. "vid" should be integer value but "%2" is specified.</source>
+        <translation>Сталася помилка під час читання значення "vid" у рядку %1. "vid" має бути цілим числом, але "%2"зазначено.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Під час читання значення &quot;x&quot; у рядку сталася помилка %1. &quot;x&quot; має бути реальним значенням, але &quot;%2&quot;зазначено.</translation>
+        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
+        <translation>Під час читання значення "x" у рядку сталася помилка %1. "x" має бути реальним значенням, але "%2"зазначено.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Сталася помилка під час читання значення &quot;y&quot; у рядку %1. &quot;y&quot; має бути реальним значенням, але &quot;%2&quot;зазначено.</translation>
+        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
+        <translation>Сталася помилка під час читання значення "y" у рядку %1. "y" має бути реальним значенням, але "%2"зазначено.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Сталася помилка під час читання значення &quot;value&quot; у рядку %1. &quot;значення&quot; має бути реальним значенням, але &quot;%2&quot;зазначено.</translation>
+        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
+        <translation>Сталася помилка під час читання значення "value" у рядку %1. "значення" має бути реальним значенням, але "%2"зазначено.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. &quot;name&quot; should be the same for lines where &quot;lid&quot; values are the same.</source>
-        <translation>Під час читання рядка сталася помилка %1. &quot;ім&apos;я&quot; має бути однаковим для рядків, де значення &quot;кришки&quot; однакові.</translation>
+        <source>Error occured while reading line %1. "name" should be the same for lines where "lid" values are the same.</source>
+        <translation>Під час читання рядка сталася помилка %1. "ім'я" має бути однаковим для рядків, де значення "кришки" однакові.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. &quot;value&quot; should be the same for lines where &quot;lid&quot; values are the same.</source>
-        <translation>Під час читання рядка сталася помилка %1. &quot;значення&quot; має бути однаковим для рядків, де значення &quot;кришки&quot; однакові.</translation>
+        <source>Error occured while reading line %1. "value" should be the same for lines where "lid" values are the same.</source>
+        <translation>Під час читання рядка сталася помилка %1. "значення" має бути однаковим для рядків, де значення "кришки" однакові.</translation>
     </message>
     <message>
         <source>CSV file (Lines) (*.csv)</source>
@@ -176,7 +174,7 @@
     <name>GeoDataPolyLineGroupProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Змінити налаштування дисплея</translation>
     </message>
 </context>
 <context>

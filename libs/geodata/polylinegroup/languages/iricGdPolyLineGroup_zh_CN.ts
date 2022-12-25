@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="zh_CN">
 <context>
     <name>GeoDataPolyLineGroup</name>
@@ -17,34 +15,34 @@
     </message>
     <message>
         <source>&amp;Add New Line...</source>
-        <translation type="unfinished"></translation>
+        <translation>添加新行 (&amp;A)...</translation>
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation type="unfinished"></translation>
+        <translation>颜色设置编辑</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyLineGroupColorSettingDialog</name>
     <message>
         <source>Polyline Group Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>折线组显示设置</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>颜色</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished"></translation>
+        <translation>按值着色</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished"></translation>
+        <translation>自定义颜色</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>行宽：</translation>
     </message>
 </context>
 <context>
@@ -116,7 +114,7 @@
         <translation>读取标题行时出错。标题至少应有 6 列。</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
+        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
         <translation>读取标题行时出错。柱子 %1 应该 ” %2 “， 但 ” %3 “ 给出。</translation>
     </message>
     <message>
@@ -140,31 +138,31 @@
         <translation>读取行时出错 %1.数据至少应有 6 列。</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;lid&quot; value in line %1. &quot;lid&quot; should be integer value but &quot;%2&quot; is specified.</source>
+        <source>Error occured while reading "lid" value in line %1. "lid" should be integer value but "%2" is specified.</source>
         <translation>在线读取“lid”值时发生错误 %1. “lid”应该是整数值，但“ %2 ”的规定。</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;vid&quot; value in line %1. &quot;vid&quot; should be integer value but &quot;%2&quot; is specified.</source>
+        <source>Error occured while reading "vid" value in line %1. "vid" should be integer value but "%2" is specified.</source>
         <translation>在线读取“vid”值时出错 %1. “vid”应该是整数值但“ %2 ”的规定。</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
         <translation>读取行中的“x”值时出错 %1. “x”应该是真实值，但“ %2 ”的规定。</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
         <translation>在线读取“y”值时发生错误 %1. “y”应该是真正的价值，但“ %2 ”的规定。</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
         <translation>在线读取“值”值时发生错误 %1. “价值”应该是真正的价值，但“ %2 ”的规定。</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. &quot;name&quot; should be the same for lines where &quot;lid&quot; values are the same.</source>
+        <source>Error occured while reading line %1. "name" should be the same for lines where "lid" values are the same.</source>
         <translation>读取行时出错 %1.对于“lid”值相同的行，“name”应该相同。</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. &quot;value&quot; should be the same for lines where &quot;lid&quot; values are the same.</source>
+        <source>Error occured while reading line %1. "value" should be the same for lines where "lid" values are the same.</source>
         <translation>读取行时出错 %1.对于“lid”值相同的行，“value”应该相同。</translation>
     </message>
     <message>
@@ -176,7 +174,7 @@
     <name>GeoDataPolyLineGroupProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation type="unfinished"></translation>
+        <translation>编辑显示设置</translation>
     </message>
 </context>
 <context>

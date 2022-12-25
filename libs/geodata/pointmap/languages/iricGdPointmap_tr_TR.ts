@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="tr_TR">
 <context>
     <name>GeoDataPointMapDelPtsLessThanDialog</name>
@@ -40,7 +38,7 @@
     </message>
     <message>
         <source>Remeshing TINs...</source>
-        <translation>TIN&apos;ler yeniden ağlanıyor...</translation>
+        <translation>TIN'ler yeniden ağlanıyor...</translation>
     </message>
     <message>
         <source>Information</source>
@@ -48,7 +46,7 @@
     </message>
     <message>
         <source>When you switch to this mode, you have to remesh TINs. Do you want to remesh now?</source>
-        <translation>Bu moda geçtiğinizde, TIN&apos;leri yeniden meshlemeniz gerekir. Şimdi yeniden ağ yapmak ister misin?</translation>
+        <translation>Bu moda geçtiğinizde, TIN'leri yeniden meshlemeniz gerekir. Şimdi yeniden ağ yapmak ister misin?</translation>
     </message>
     <message>
         <source>&amp;Add New Point</source>
@@ -92,7 +90,7 @@
     </message>
     <message>
         <source>Remesh &amp;TINs</source>
-        <translation>TIN&apos;leri yeniden ağla (&amp;T)</translation>
+        <translation>TIN'leri yeniden ağla (&amp;T)</translation>
     </message>
     <message>
         <source>Add &amp;Break Line</source>
@@ -120,7 +118,7 @@
     </message>
     <message>
         <source>Remeshing TINs finished.</source>
-        <translation>TIN&apos;leri yeniden ağ oluşturma işlemi tamamlandı.</translation>
+        <translation>TIN'leri yeniden ağ oluşturma işlemi tamamlandı.</translation>
     </message>
     <message>
         <source>When you add break line, you have to switch to show wireframes. Do you want to switch to show wireframes now?</source>
@@ -144,7 +142,7 @@
     </message>
     <message>
         <source>When you want to remove triangles with long edges, you have to switch Display Method to Wireframe or Surface. If you press OK button, Display Method is switched to Wireframe</source>
-        <translation>Uzun kenarlı üçgenleri kaldırmak istediğinizde, Görüntüleme Yöntemini Tel Kafes veya Yüzey olarak değiştirmelisiniz. OK düğmesine basarsanız, Görüntüleme Yöntemi Tel Kafes&apos;e geçer.</translation>
+        <translation>Uzun kenarlı üçgenleri kaldırmak istediğinizde, Görüntüleme Yöntemini Tel Kafes veya Yüzey olarak değiştirmelisiniz. OK düğmesine basarsanız, Görüntüleme Yöntemi Tel Kafes'e geçer.</translation>
     </message>
     <message>
         <source>When you edit points, you have to switch to show points. Do you want to switch to show points now?</source>
@@ -231,8 +229,8 @@
         <translation>Birleştirmek...</translation>
     </message>
     <message>
-        <source>There is no other data to merge in &quot;%1&quot; group.</source>
-        <translation>Birleştirilecek başka veri yok &quot;%1&quot;grup.</translation>
+        <source>There is no other data to merge in "%1" group.</source>
+        <translation>Birleştirilecek başka veri yok "%1"grup.</translation>
     </message>
     <message>
         <source>%1 duplicate points were found in merge targets, and omitted.</source>
@@ -348,7 +346,7 @@
     </message>
     <message>
         <source>Interpolation increment must be greater 0 and less than interpolation line length</source>
-        <translation>Enterpolasyon artışı 0&apos;dan büyük ve enterpolasyon hattı uzunluğundan küçük olmalıdır</translation>
+        <translation>Enterpolasyon artışı 0'dan büyük ve enterpolasyon hattı uzunluğundan küçük olmalıdır</translation>
     </message>
 </context>
 <context>
@@ -465,7 +463,7 @@
     </message>
     <message>
         <source>If you want to filter the dataset, specify value more than 1.</source>
-        <translation>Veri kümesini filtrelemek istiyorsanız, 1&apos;den büyük bir değer belirtin.</translation>
+        <translation>Veri kümesini filtrelemek istiyorsanız, 1'den büyük bir değer belirtin.</translation>
     </message>
     <message>
         <source>Filter:</source>
@@ -523,12 +521,12 @@
         <translation>Sınırlayıcı belirtilmedi</translation>
     </message>
     <message>
-        <source>Not enough values to read &quot;%1&quot;. &quot;%1&quot; column is %2 but %3 values input.</source>
-        <translation>Okumak için yeterli değer yok &quot;%1&quot;.&quot;%1&quot; sütun %2 ancak %3 değerler girişi.</translation>
+        <source>Not enough values to read "%1". "%1" column is %2 but %3 values input.</source>
+        <translation>Okumak için yeterli değer yok "%1"."%1" sütun %2 ancak %3 değerler girişi.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;%1&quot; value. &quot;%1&quot; value should be real number, but &quot;%2&quot; specified.</source>
-        <translation>Okurken hata oluştu&quot;%1&quot; değer. &quot;%1&quot;değer gerçek sayı olmalıdır, ancak&quot;%2&quot; belirtildi.</translation>
+        <source>Error occured while reading "%1" value. "%1" value should be real number, but "%2" specified.</source>
+        <translation>Okurken hata oluştu"%1" değer. "%1"değer gerçek sayı olmalıdır, ancak"%2" belirtildi.</translation>
     </message>
     <message>
         <source>Text files (CSV, TSV, etc.)</source>
@@ -598,8 +596,8 @@
         <translation>Alıntı karakteri:</translation>
     </message>
     <message>
-        <source>&quot;</source>
-        <translation>&quot;</translation>
+        <source>"</source>
+        <translation>"</translation>
     </message>
     <message>
         <source>When you want to specify multiple quote characters, please just input the characters only, no spaces or commas.</source>
@@ -663,7 +661,7 @@
     </message>
     <message>
         <source>When you want to skip lines in the file, please specify values larger than 1. For example, if you input 2, every other line is imported.</source>
-        <translation>Dosyadaki satırları atlamak istediğinizde lütfen 1&apos;den büyük değerler belirtin. Örneğin, 2 girerseniz, diğer tüm satırlar içe aktarılır.</translation>
+        <translation>Dosyadaki satırları atlamak istediğinizde lütfen 1'den büyük değerler belirtin. Örneğin, 2 girerseniz, diğer tüm satırlar içe aktarılır.</translation>
     </message>
     <message>
         <source>File name:</source>
@@ -671,7 +669,7 @@
     </message>
     <message>
         <source>Coordinate System</source>
-        <translation type="unfinished"></translation>
+        <translation>Koordinat sistemi</translation>
     </message>
 </context>
 <context>
@@ -717,7 +715,7 @@
     </message>
     <message>
         <source>ASCII STL (*.stl)</source>
-        <translation>ASCII STL&apos;si (*.stl)</translation>
+        <translation>ASCII STL'si (*.stl)</translation>
     </message>
 </context>
 <context>
@@ -888,8 +886,8 @@
         <translation>Kenar uzunluğunu sınırla:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Not&lt;/span&gt;: Uygula düğmesine tıkladığınızda kaldırılacak üçgenler koyu renkle boyanacaktır. gri.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Not&lt;/span&gt;: Uygula düğmesine tıkladığınızda kaldırılacak üçgenler koyu renkle boyanacaktır. gri.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 </TS>

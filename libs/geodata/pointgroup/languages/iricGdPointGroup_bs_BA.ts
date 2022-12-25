@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="bs_BA">
 <context>
     <name>GeoDataPointGroup</name>
@@ -17,34 +15,34 @@
     </message>
     <message>
         <source>&amp;Add New Point...</source>
-        <translation type="unfinished"></translation>
+        <translation>Dodaj novu tačku (&amp;A)...</translation>
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Uređivanje postavki boje</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointGroupColorSettingDialog</name>
     <message>
         <source>Point Group Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Postavka prikaza grupe tačaka</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Boja</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished"></translation>
+        <translation>Boja po vrijednosti</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Custom Color</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Veličina tačke:</translation>
     </message>
 </context>
 <context>
@@ -116,8 +114,8 @@
         <translation>Došlo je do greške pri čitanju zaglavlja. Zaglavlje treba imati najmanje 4 kolone.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
-        <translation>Došlo je do greške pri čitanju zaglavlja. Kolona %1 treba biti &quot;%2&quot;, ali&quot;%3&quot;je dato.</translation>
+        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
+        <translation>Došlo je do greške pri čitanju zaglavlja. Kolona %1 treba biti "%2", ali"%3"je dato.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Make sure the file is saved in UTF-8 encoding.</source>
@@ -132,23 +130,23 @@
         <translation>Došlo je do greške pri čitanju retka %1. Podaci trebaju imati najmanje 4 kolone.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Došlo je do greške pri čitanju vrijednosti &quot;x&quot; u redu %1. &quot;x&quot; bi trebala biti stvarna vrijednost, ali &quot;%2&quot;je navedeno.</translation>
+        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
+        <translation>Došlo je do greške pri čitanju vrijednosti "x" u redu %1. "x" bi trebala biti stvarna vrijednost, ali "%2"je navedeno.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Došlo je do greške pri čitanju vrijednosti &quot;y&quot; u redu %1. &quot;y&quot; bi trebala biti stvarna vrijednost, ali &quot;%2&quot;je navedeno.</translation>
+        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
+        <translation>Došlo je do greške pri čitanju vrijednosti "y" u redu %1. "y" bi trebala biti stvarna vrijednost, ali "%2"je navedeno.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Došlo je do greške pri čitanju vrijednosti &quot;value&quot; u redu %1. &quot;vrijednost&quot; bi trebala biti stvarna vrijednost, ali &quot;%2&quot;je navedeno.</translation>
+        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
+        <translation>Došlo je do greške pri čitanju vrijednosti "value" u redu %1. "vrijednost" bi trebala biti stvarna vrijednost, ali "%2"je navedeno.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointGroupProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Uredite postavku prikaza</translation>
     </message>
 </context>
 <context>

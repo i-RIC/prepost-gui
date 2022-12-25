@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ca_ES">
 <context>
     <name>GeoDataPointMapDelPtsLessThanDialog</name>
@@ -120,7 +118,7 @@
     </message>
     <message>
         <source>Remeshing TINs finished.</source>
-        <translation>S&apos;ha acabat la reparació dels TIN.</translation>
+        <translation>S'ha acabat la reparació dels TIN.</translation>
     </message>
     <message>
         <source>When you add break line, you have to switch to show wireframes. Do you want to switch to show wireframes now?</source>
@@ -144,7 +142,7 @@
     </message>
     <message>
         <source>When you want to remove triangles with long edges, you have to switch Display Method to Wireframe or Surface. If you press OK button, Display Method is switched to Wireframe</source>
-        <translation>Quan vulgueu eliminar triangles amb vores llargues, heu de canviar el mètode de visualització a Wireframe o Surface. Si premeu el botó D&apos;acord, el mètode de visualització canviarà a Wireframe</translation>
+        <translation>Quan vulgueu eliminar triangles amb vores llargues, heu de canviar el mètode de visualització a Wireframe o Surface. Si premeu el botó D'acord, el mètode de visualització canviarà a Wireframe</translation>
     </message>
     <message>
         <source>When you edit points, you have to switch to show points. Do you want to switch to show points now?</source>
@@ -176,7 +174,7 @@
     </message>
     <message>
         <source>Error occured while exporting to %1.</source>
-        <translation>S&apos;ha produït un error en exportar a %1.</translation>
+        <translation>S'ha produït un error en exportar a %1.</translation>
     </message>
     <message>
         <source>Delete points less than %1</source>
@@ -200,7 +198,7 @@
     </message>
     <message>
         <source>To add new points, select an existing point first. The value at that point will be used as the default value for new points. Then, click at any position you want to add points, and finish by double-clicking of pressing return key.</source>
-        <translation>Per afegir punts nous, seleccioneu primer un punt existent. El valor en aquest punt s&apos;utilitzarà com a valor predeterminat per als punts nous. A continuació, feu clic a qualsevol posició que vulgueu afegir punts i, a continuació, feu doble clic en prémer la tecla Retorn.</translation>
+        <translation>Per afegir punts nous, seleccioneu primer un punt existent. El valor en aquest punt s'utilitzarà com a valor predeterminat per als punts nous. A continuació, feu clic a qualsevol posició que vulgueu afegir punts i, a continuació, feu doble clic en prémer la tecla Retorn.</translation>
     </message>
     <message>
         <source>Add Break Line Point</source>
@@ -220,7 +218,7 @@
     </message>
     <message>
         <source>Add New Interp Line Point</source>
-        <translation>Afegiu un nou punt de línia d&apos;intervenció</translation>
+        <translation>Afegiu un nou punt de línia d'intervenció</translation>
     </message>
     <message>
         <source>Remove triangles with long edge</source>
@@ -231,16 +229,16 @@
         <translation>Combina...</translation>
     </message>
     <message>
-        <source>There is no other data to merge in &quot;%1&quot; group.</source>
-        <translation>No hi ha cap altra dada per combinar &quot;%1&quot;grup.</translation>
+        <source>There is no other data to merge in "%1" group.</source>
+        <translation>No hi ha cap altra dada per combinar "%1"grup.</translation>
     </message>
     <message>
         <source>%1 duplicate points were found in merge targets, and omitted.</source>
-        <translation>%1 s&apos;han trobat punts duplicats a objectius de combinació i s&apos;han omès.</translation>
+        <translation>%1 s'han trobat punts duplicats a objectius de combinació i s'han omès.</translation>
     </message>
     <message>
         <source>You must select one known point, and define at least one location for added points. Do you want to retry, or cancel the operation?</source>
-        <translation>Heu de seleccionar un punt conegut i definir almenys una ubicació per als punts afegits. Voleu tornar-ho a provar o cancel·lar l&apos;operació?</translation>
+        <translation>Heu de seleccionar un punt conegut i definir almenys una ubicació per als punts afegits. Voleu tornar-ho a provar o cancel·lar l'operació?</translation>
     </message>
     <message>
         <source>Add Points</source>
@@ -252,7 +250,7 @@
     </message>
     <message>
         <source>To interpolate points, you must specify more than two points, and the last point should be existing point. Do you want to retry, or cancel the operation?</source>
-        <translation>Per interpolar punts, heu d&apos;especificar més de dos punts i l&apos;últim punt hauria de ser un punt existent. Voleu tornar-ho a provar o cancel·lar l&apos;operació?</translation>
+        <translation>Per interpolar punts, heu d'especificar més de dos punts i l'últim punt hauria de ser un punt existent. Voleu tornar-ho a provar o cancel·lar l'operació?</translation>
     </message>
     <message>
         <source>P&amp;oint Cloud Data</source>
@@ -325,7 +323,7 @@
     <name>GeoDataPointmapInterpolatePoints</name>
     <message>
         <source>Interpolate Increment</source>
-        <translation>Interpolar l&apos;increment</translation>
+        <translation>Interpolar l'increment</translation>
     </message>
     <message>
         <source>Interpolation Setting</source>
@@ -363,7 +361,7 @@
     </message>
     <message>
         <source>Error occured while exporting to %1</source>
-        <translation>S&apos;ha produït un error en exportar a %1</translation>
+        <translation>S'ha produït un error en exportar a %1</translation>
     </message>
     <message>
         <source>LandXML file (*.xml)</source>
@@ -382,7 +380,7 @@
     </message>
     <message>
         <source>Parse error %1 at line %2 column %3</source>
-        <translation>Error d&apos;anàlisi %1 a la línia %2 columna %3</translation>
+        <translation>Error d'anàlisi %1 a la línia %2 columna %3</translation>
     </message>
     <message>
         <source>LandXML File (*.xml)</source>
@@ -431,7 +429,7 @@
     </message>
     <message>
         <source>Error occured while exporting to %1.</source>
-        <translation>S&apos;ha produït un error en exportar a %1.</translation>
+        <translation>S'ha produït un error en exportar a %1.</translation>
     </message>
     <message>
         <source>Point Cloud Data (DEM etc.)</source>
@@ -446,7 +444,7 @@
     </message>
     <message>
         <source>File open error occured while opening %1.</source>
-        <translation>S&apos;ha produït un error d&apos;obertura del fitxer en obrir-se %1.</translation>
+        <translation>S'ha produït un error d'obertura del fitxer en obrir-se %1.</translation>
     </message>
     <message>
         <source>DEM etc. (*.tpo)</source>
@@ -480,11 +478,11 @@
     </message>
     <message>
         <source>File open error occured while opening %1.</source>
-        <translation>S&apos;ha produït un error d&apos;obertura del fitxer en obrir-se %1.</translation>
+        <translation>S'ha produït un error d'obertura del fitxer en obrir-se %1.</translation>
     </message>
     <message>
         <source>Not enough header lines found in the file.</source>
-        <translation>No s&apos;han trobat prou línies de capçalera al fitxer.</translation>
+        <translation>No s'han trobat prou línies de capçalera al fitxer.</translation>
     </message>
     <message>
         <source>Line %1: %2</source>
@@ -496,7 +494,7 @@
     </message>
     <message>
         <source>%1 duplicate points found. If points with same x and y values found, the first point is imported</source>
-        <translation>%1 s&apos;han trobat punts duplicats. Si es troben punts amb els mateixos valors xy, s’importa el primer punt</translation>
+        <translation>%1 s'han trobat punts duplicats. Si es troben punts amb els mateixos valors xy, s’importa el primer punt</translation>
     </message>
     <message>
         <source>At column %1, %2 or %3 expected, but %4 specified.</source>
@@ -520,15 +518,15 @@
     </message>
     <message>
         <source>No delimiter specified</source>
-        <translation>No s&apos;ha especificat cap delimitador</translation>
+        <translation>No s'ha especificat cap delimitador</translation>
     </message>
     <message>
-        <source>Not enough values to read &quot;%1&quot;. &quot;%1&quot; column is %2 but %3 values input.</source>
-        <translation>No hi ha prou valors per llegir &quot;%1&quot;.&quot;%1&quot;la columna és %2 però %3 valors d&apos;entrada.</translation>
+        <source>Not enough values to read "%1". "%1" column is %2 but %3 values input.</source>
+        <translation>No hi ha prou valors per llegir "%1"."%1"la columna és %2 però %3 valors d'entrada.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;%1&quot; value. &quot;%1&quot; value should be real number, but &quot;%2&quot; specified.</source>
-        <translation>S&apos;ha produït un error en llegir &quot;%1&quot;valor&quot;. %1 &quot;el valor ha de ser un nombre real, però&quot;%2&quot;s&apos;ha especificat.</translation>
+        <source>Error occured while reading "%1" value. "%1" value should be real number, but "%2" specified.</source>
+        <translation>S'ha produït un error en llegir "%1"valor". %1 "el valor ha de ser un nombre real, però"%2"s'ha especificat.</translation>
     </message>
     <message>
         <source>Text files (CSV, TSV, etc.)</source>
@@ -547,7 +545,7 @@
     <name>GeoDataPointmapRealTextImporter_SettingDialog</name>
     <message>
         <source>Import Setting</source>
-        <translation>Configuració d&apos;importació</translation>
+        <translation>Configuració d'importació</translation>
     </message>
     <message>
         <source>Encoding:</source>
@@ -598,8 +596,8 @@
         <translation>Personatge de la cita:</translation>
     </message>
     <message>
-        <source>&quot;</source>
-        <translation>&quot;</translation>
+        <source>"</source>
+        <translation>"</translation>
     </message>
     <message>
         <source>When you want to specify multiple quote characters, please just input the characters only, no spaces or commas.</source>
@@ -607,7 +605,7 @@
     </message>
     <message>
         <source>Escape character:</source>
-        <translation>Personatge d&apos;escapament:</translation>
+        <translation>Personatge d'escapament:</translation>
     </message>
     <message>
         <source>\</source>
@@ -663,15 +661,15 @@
     </message>
     <message>
         <source>When you want to skip lines in the file, please specify values larger than 1. For example, if you input 2, every other line is imported.</source>
-        <translation>Quan vulgueu ometre línies al fitxer, especifiqueu valors superiors a 1. Per exemple, si introduïu 2, totes les altres línies s&apos;importen.</translation>
+        <translation>Quan vulgueu ometre línies al fitxer, especifiqueu valors superiors a 1. Per exemple, si introduïu 2, totes les altres línies s'importen.</translation>
     </message>
     <message>
         <source>File name:</source>
-        <translation>Nom de l&apos;arxiu:</translation>
+        <translation>Nom de l'arxiu:</translation>
     </message>
     <message>
         <source>Coordinate System</source>
-        <translation type="unfinished"></translation>
+        <translation>Sistema de coordenades</translation>
     </message>
 </context>
 <context>
@@ -736,7 +734,7 @@
     </message>
     <message>
         <source>File open error occured while opening %1.</source>
-        <translation>S&apos;ha produït un error d&apos;obertura del fitxer en obrir-se %1.</translation>
+        <translation>S'ha produït un error d'obertura del fitxer en obrir-se %1.</translation>
     </message>
     <message>
         <source>solid</source>
@@ -808,7 +806,7 @@
     </message>
     <message>
         <source>Region to import data is not selected yet. Please left drag on the map to select area.</source>
-        <translation>La regió per importar dades encara no està seleccionada. Arrossegueu el mapa cap a l&apos;esquerra per seleccionar l&apos;àrea.</translation>
+        <translation>La regió per importar dades encara no està seleccionada. Arrossegueu el mapa cap a l'esquerra per seleccionar l'àrea.</translation>
     </message>
 </context>
 <context>
@@ -888,8 +886,8 @@
         <translation>Longitud límit de vora:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;span style = &quot;font-weight: 600;&quot;&gt; Nota &lt;/span&gt;: Quan feu clic al botó Aplica, els triangles que s&apos;eliminaran es pintaran de color fosc gris. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Nota &lt;/span&gt;: Quan feu clic al botó Aplica, els triangles que s'eliminaran es pintaran de color fosc gris. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
 </context>
 </TS>

@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ky_KG">
 <context>
     <name>GeoDataPolyDataGroup</name>
@@ -32,8 +30,8 @@
         <translation>Тандалгандарды чын эле жок кылгыңыз келеби? %1 с?</translation>
     </message>
     <message>
-        <source>There is no other data to merge in &quot;%1&quot; group.</source>
-        <translation>Биригүүгө башка маалымат жок &quot;%1&quot;тобу.</translation>
+        <source>There is no other data to merge in "%1" group.</source>
+        <translation>Биригүүгө башка маалымат жок "%1"тобу.</translation>
     </message>
     <message>
         <source>Edit name and value of polydatas</source>
@@ -177,7 +175,7 @@
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished">Аты</translation>
+        <translation>аты</translation>
     </message>
 </context>
 <context>
@@ -262,7 +260,7 @@
     </message>
     <message>
         <source>Coordinate System:</source>
-        <translation type="unfinished"></translation>
+        <translation>Координаттар системасы:</translation>
     </message>
 </context>
 </TS>

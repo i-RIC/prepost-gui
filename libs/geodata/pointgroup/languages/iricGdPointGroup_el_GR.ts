@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="el_GR">
 <context>
     <name>GeoDataPointGroup</name>
@@ -17,34 +15,34 @@
     </message>
     <message>
         <source>&amp;Add New Point...</source>
-        <translation type="unfinished"></translation>
+        <translation>Προσθήκη νέου σημείου (&amp;A)...</translation>
     </message>
     <message>
         <source>Color Setting Edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Επεξεργασία ρύθμισης χρώματος</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointGroupColorSettingDialog</name>
     <message>
         <source>Point Group Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Ρύθμιση εμφάνισης ομάδας σημείων</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Χρώμα</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished"></translation>
+        <translation>Χρώμα ανά τιμή</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Προσαρμοσμένο χρώμα</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Μέγεθος σημείου:</translation>
     </message>
 </context>
 <context>
@@ -116,8 +114,8 @@
         <translation>Παρουσιάστηκε σφάλμα κατά την ανάγνωση της γραμμής κεφαλίδας. Η κεφαλίδα πρέπει να έχει τουλάχιστον 4 στήλες.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
-        <translation>Παρουσιάστηκε σφάλμα κατά την ανάγνωση της γραμμής κεφαλίδας. Στήλη %1 πρέπει να είναι &quot;%2&quot;, αλλά &quot;%3&quot; δίνεται.</translation>
+        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
+        <translation>Παρουσιάστηκε σφάλμα κατά την ανάγνωση της γραμμής κεφαλίδας. Στήλη %1 πρέπει να είναι "%2", αλλά "%3" δίνεται.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Make sure the file is saved in UTF-8 encoding.</source>
@@ -132,23 +130,23 @@
         <translation>Παρουσιάστηκε σφάλμα κατά την ανάγνωση της γραμμής %1 Το Τα δεδομένα πρέπει να έχουν τουλάχιστον 4 στήλες.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Παρουσιάστηκε σφάλμα κατά την ανάγνωση της τιμής &quot;x&quot; στη γραμμή %1 Το Το &quot;x&quot; πρέπει να είναι πραγματική τιμή αλλά &quot;%2&quot;καθορίζεται.</translation>
+        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
+        <translation>Παρουσιάστηκε σφάλμα κατά την ανάγνωση της τιμής "x" στη γραμμή %1 Το Το "x" πρέπει να είναι πραγματική τιμή αλλά "%2"καθορίζεται.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Παρουσιάστηκε σφάλμα κατά την ανάγνωση της τιμής &quot;y&quot; στη γραμμή %1 Το Το &quot;y&quot; πρέπει να έχει πραγματική αξία, αλλά &quot;%2&quot;καθορίζεται.</translation>
+        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
+        <translation>Παρουσιάστηκε σφάλμα κατά την ανάγνωση της τιμής "y" στη γραμμή %1 Το Το "y" πρέπει να έχει πραγματική αξία, αλλά "%2"καθορίζεται.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Παρουσιάστηκε σφάλμα κατά την ανάγνωση της τιμής &quot;τιμή&quot; στη γραμμή %1 Το Η &quot;αξία&quot; πρέπει να είναι πραγματική αξία αλλά &quot;%2&quot;καθορίζεται.</translation>
+        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
+        <translation>Παρουσιάστηκε σφάλμα κατά την ανάγνωση της τιμής "τιμή" στη γραμμή %1 Το Η "αξία" πρέπει να είναι πραγματική αξία αλλά "%2"καθορίζεται.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointGroupProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Επεξεργασία ρύθμισης οθόνης</translation>
     </message>
 </context>
 <context>
