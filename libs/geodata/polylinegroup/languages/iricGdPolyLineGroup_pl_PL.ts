@@ -16,7 +16,34 @@
         <translation>Linia %1</translation>
     </message>
     <message>
-        <source>&amp;Add New %1...</source>
+        <source>&amp;Add New Line...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color Setting Edit</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineGroupColorSettingDialog</name>
+    <message>
+        <source>Polyline Group Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -143,6 +170,13 @@
     <message>
         <source>CSV file (Lines) (*.csv)</source>
         <translation>Plik CSV (wiersze) (*.csv)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolyLineGroupProxy</name>
+    <message>
+        <source>Edit display setting</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

@@ -16,7 +16,34 @@
         <translation>觀點 (&amp;O)</translation>
     </message>
     <message>
-        <source>&amp;Add New %1...</source>
+        <source>&amp;Add New Point...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color Setting Edit</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroupColorSettingDialog</name>
+    <message>
+        <source>Point Group Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -115,6 +142,13 @@
     <message>
         <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
         <translation>在線讀取“值”值時發生錯誤 %1. “價值”應該是真正的價值，但“ %2 ”的規定。</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointGroupProxy</name>
+    <message>
+        <source>Edit display setting</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

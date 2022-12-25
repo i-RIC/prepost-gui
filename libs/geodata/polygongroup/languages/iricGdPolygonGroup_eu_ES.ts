@@ -16,7 +16,34 @@
         <translation>Poligonoak (&amp;O)</translation>
     </message>
     <message>
-        <source>&amp;Add New %1...</source>
+        <source>&amp;Add New Polygon...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color Setting Edit</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroupColorSettingDialog</name>
+    <message>
+        <source>Polygon Group Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -147,6 +174,13 @@
     <message>
         <source>Error occured while reading line %1. &quot;value&quot; should be the same for lines where &quot;pid&quot; values are the same.</source>
         <translation>Errore bat gertatu da lerroa irakurtzean %1. &quot;balioa&quot; berdina izan behar da &quot;pid&quot; balioak berdinak diren lerroetan.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroupProxy</name>
+    <message>
+        <source>Edit display setting</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

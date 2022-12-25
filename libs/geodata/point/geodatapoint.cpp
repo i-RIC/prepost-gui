@@ -77,6 +77,11 @@ GeoDataPoint::~GeoDataPoint()
 	delete impl;
 }
 
+void GeoDataPoint::setPointSize(int pointSize)
+{
+	impl->m_pointController.actor()->GetProperty()->SetPointSize(pointSize);
+}
+
 void GeoDataPoint::setupMenu()
 {
 	m_menu->setTitle(tr("Po&int"));

@@ -1,7 +1,10 @@
 #include "geodatapolygongroup.h"
+#include "geodatapolygongroupcolorsettingdialog.h"
 #include "geodatapolygongroupcreator.h"
 #include "geodatapolygongrouppolygon.h"
+#include "geodatapolygongroupproxy.h"
 #include "private/geodatapolygongroup_impl.h"
+#include "private/geodatapolygongroup_setcolorsettingcommand.h"
 
 #include <geodata/polydatagroup/geodatapolydatagroupcreator.h>
 #include <geodata/polygon/geodatapolygon.h>
@@ -54,7 +57,7 @@ GeoDataPolygonGroup::GeoDataPolygonGroup(ProjectDataItem* d, GeoDataCreator* gdc
 	GeoDataPolyDataGroup(d, gdcreator, condition),
 	impl {new Impl {this}}
 {
-	addAction()->setText(tr("&Add New %1...").arg(creator()->shapeNameCamelCase()));
+	addAction()->setText(tr("&Add New Polygon..."));
 
 	ScalarsToColorsContainer* stcc = scalarsToColorsContainer();
 	if (stcc != nullptr) {
@@ -82,6 +85,11 @@ GeoDataPolygonGroup::GeoDataPolygonGroup(ProjectDataItem* d, GeoDataCreator* gdc
 	renderer()->AddActor(impl->m_edgesActor);
 	renderer()->AddActor(impl->m_selectedPolygonsEdgesActor);
 	renderer()->AddActor(impl->m_selectedPolygonsPointsActor);
+
+	auto att = gridAttribute();
+	if (att && att->isReferenceInformation()) {
+		impl->m_colorSetting.mapping = GeoDataPolygonGroupColorSettingDialog::Arbitrary;
+	}
 
 	updateActorSetting();
 }
@@ -307,6 +315,40 @@ void GeoDataPolygonGroup::assignActorZValues(const ZDepthRange& range)
 	impl->m_selectedPolygonsPointsActor->SetPosition(0, 0, range.max());
 }
 
+QDialog* GeoDataPolygonGroup::propertyDialog(QWidget* parent)
+{
+	auto dialog = new GeoDataPolygonGroupColorSettingDialog(parent);
+	dialog->setSetting(impl->m_colorSetting);
+	auto gridAtt = gridAttribute();
+	if (gridAtt != nullptr) {
+		dialog->setIsReferenceInformation(gridAtt->isReferenceInformation());
+	}
+	return dialog;
+}
+
+void GeoDataPolygonGroup::handlePropertyDialogAccepted(QDialog* d)
+{
+	auto dialog = dynamic_cast<GeoDataPolygonGroupColorSettingDialog*> (d);
+	pushRenderCommand(new SetColorSettingCommand(dialog->setting(), this));
+}
+
+GeoDataProxy* GeoDataPolygonGroup::getProxy()
+{
+	return new GeoDataPolygonGroupProxy(this);
+}
+
+void GeoDataPolygonGroup::doLoadFromProjectMainFile(const QDomNode& node)
+{
+	GeoData::doLoadFromProjectMainFile(node);
+	impl->m_colorSetting.load(node);
+}
+
+void GeoDataPolygonGroup::doSaveToProjectMainFile(QXmlStreamWriter& writer)
+{
+	GeoData::doSaveToProjectMainFile(writer);
+	impl->m_colorSetting.save(writer);
+}
+
 GeoDataPolyDataGroupPolyData* GeoDataPolygonGroup::createNewData()
 {
 	return new GeoDataPolygonGroupPolygon(this);
@@ -324,7 +366,7 @@ GeoDataPolyData* GeoDataPolygonGroup::createEditTargetData()
 
 void GeoDataPolygonGroup::updateActorSetting()
 {
-	auto cs = colorSetting();
+	auto cs = impl->m_colorSetting;
 
 	// color
 	double rate = 0.8;
@@ -344,13 +386,18 @@ void GeoDataPolygonGroup::updateActorSetting()
 
 	// mapping
 	bool scalarVisibility = true;
-	if (cs.mapping == GeoDataPolyDataGroupColorSettingDialog::Arbitrary) {
+	if (cs.mapping == GeoDataPolygonGroupColorSettingDialog::Arbitrary) {
 		scalarVisibility = false;
 	}
 	impl->m_edgesActor->GetMapper()->SetScalarVisibility(scalarVisibility);
 	impl->m_paintActor->GetMapper()->SetScalarVisibility(scalarVisibility);
 	impl->m_selectedPolygonsEdgesActor->GetMapper()->SetScalarVisibility(scalarVisibility);
 	impl->m_selectedPolygonsPointsActor->GetMapper()->SetScalarVisibility(scalarVisibility);
+
+	// line width
+	impl->m_edgesActor->GetProperty()->SetLineWidth(cs.lineWidth);
+	impl->m_selectedPolygonsEdgesActor->GetProperty()->SetLineWidth(cs.lineWidth);
+	impl->m_selectedPolygonsPointsActor->GetProperty()->SetPointSize(cs.lineWidth * 5);
 
 	updateActorSettingForEditTargetPolyData();
 }
@@ -407,7 +454,7 @@ void GeoDataPolygonGroup::updateMenu()
 	m->addSeparator();
 	m->addAction(mergeAction());
 	m->addAction(copyAction());
-	m->addAction(editColorSettingAction());
+	m->addAction(editDisplaySettingAction());
 	m->addAction(attributeBrowserAction());
 
 	m->addSeparator();
@@ -454,9 +501,27 @@ void GeoDataPolygonGroup::updateMenu()
 	m->addSeparator();
 	m->addAction(mergeAction());
 	m->addAction(copyAction());
-	m->addAction(editColorSettingAction());
+	m->addAction(editDisplaySettingAction());
 	m->addAction(attributeBrowserAction());
 
 	m->addSeparator();
 	m->addAction(deleteAction());
+}
+
+void GeoDataPolygonGroup::updateActorSettingForEditTargetPolyData()
+{
+	auto t = editTargetData();
+	if (t == nullptr) {return;}
+
+	auto targetData = dynamic_cast<GeoDataPolygon*> (t);
+
+	const auto& cs = impl->m_colorSetting;
+	targetData->setColor(cs.color);
+	targetData->setOpacity(cs.opacity);
+	if (cs.mapping == GeoDataPolygonGroupColorSettingDialog::Arbitrary) {
+		targetData->setMapping(GeoDataPolyDataColorSettingDialog::Arbitrary);
+	} else {
+		targetData->setMapping(GeoDataPolyDataColorSettingDialog::Value);
+	}
+	targetData->setLineWidth(cs.lineWidth);
 }

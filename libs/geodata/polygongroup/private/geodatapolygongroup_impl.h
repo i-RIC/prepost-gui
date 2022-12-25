@@ -1,7 +1,8 @@
 #ifndef GEODATAPOLYGONGROUP_IMPL_H
 #define GEODATAPOLYGONGROUP_IMPL_H
 
-#include"../geodatapolygongroup.h"
+#include "../geodatapolygongroup.h"
+#include "../geodatapolygongroupcolorsettingdialog.h"
 
 class GeoDataPolygon;
 
@@ -34,6 +35,8 @@ public:
 	GeoDataPolygon* m_dummyPolygonForMenu;
 
 	GeoDataPolygonGroup* m_group;
+
+	GeoDataPolygonGroupColorSettingDialog::Setting m_colorSetting;
 };
 
 #endif // GEODATAPOLYGONGROUP_IMPL_H

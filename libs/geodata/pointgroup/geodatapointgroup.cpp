@@ -1,7 +1,10 @@
 #include "geodatapointgroup.h"
+#include "geodatapointgroupcolorsettingdialog.h"
 #include "geodatapointgroupcreator.h"
 #include "geodatapointgrouppoint.h"
+#include "geodatapointgroupproxy.h"
 #include "private/geodatapointgroup_impl.h"
+#include "private/geodatapointgroup_setcolorsettingcommand.h"
 
 #include <geodata/point/geodatapoint.h>
 #include <geodata/polydatagroup/geodatapolydatagroupcreator.h>
@@ -56,7 +59,7 @@ GeoDataPointGroup::GeoDataPointGroup(ProjectDataItem* d, GeoDataCreator* gdcreat
 GeoDataPolyDataGroup(d, gdcreater, condition),
 	impl {new Impl {this}}
 {
-	addAction()->setText(tr("&Add New %1...").arg(creator()->shapeNameCamelCase()) );
+	addAction()->setText(tr("&Add New Point..."));
 
 	ScalarsToColorsContainer* stcc = scalarsToColorsContainer();
 	if (stcc != nullptr) {
@@ -73,6 +76,11 @@ GeoDataPolyDataGroup(d, gdcreater, condition),
 
 	renderer()->AddActor(impl->m_pointsActor);
 	renderer()->AddActor(impl->m_selectedPointsPointsActor);
+
+	auto att = gridAttribute();
+	if (att && att->isReferenceInformation()) {
+		impl->m_colorSetting.mapping = GeoDataPointGroupColorSettingDialog::Arbitrary;
+	}
 
 	updateActorSetting();
 }
@@ -239,6 +247,41 @@ void GeoDataPointGroup::assignActorZValues(const ZDepthRange& range)
 	impl->m_selectedPointsPointsActor->SetPosition(0, 0, range.max());
 }
 
+
+QDialog* GeoDataPointGroup::propertyDialog(QWidget* parent)
+{
+	auto dialog = new GeoDataPointGroupColorSettingDialog(parent);
+	dialog->setSetting(impl->m_colorSetting);
+	auto gridAtt = gridAttribute();
+	if (gridAtt != nullptr) {
+		dialog->setIsReferenceInformation(gridAtt->isReferenceInformation());
+	}
+	return dialog;
+}
+
+void GeoDataPointGroup::handlePropertyDialogAccepted(QDialog* d)
+{
+	auto dialog = dynamic_cast<GeoDataPointGroupColorSettingDialog*> (d);
+	pushRenderCommand(new SetColorSettingCommand(dialog->setting(), this));
+}
+
+GeoDataProxy* GeoDataPointGroup::getProxy()
+{
+	return new GeoDataPointGroupProxy(this);
+}
+
+void GeoDataPointGroup::doLoadFromProjectMainFile(const QDomNode& node)
+{
+	GeoData::doLoadFromProjectMainFile(node);
+	impl->m_colorSetting.load(node);
+}
+
+void GeoDataPointGroup::doSaveToProjectMainFile(QXmlStreamWriter& writer)
+{
+	GeoData::doSaveToProjectMainFile(writer);
+	impl->m_colorSetting.save(writer);
+}
+
 GeoDataPolyDataGroupPolyData* GeoDataPointGroup::createNewData()
 {
 	return new GeoDataPointGroupPoint(this);
@@ -256,7 +299,7 @@ GeoDataPolyData* GeoDataPointGroup::createEditTargetData()
 
 void GeoDataPointGroup::updateActorSetting()
 {
-	auto cs = colorSetting();
+	auto cs = impl->m_colorSetting;
 
 	// color
 	QColor c = cs.color;
@@ -266,7 +309,7 @@ void GeoDataPointGroup::updateActorSetting()
 
 	// mapping
 	bool scalarVisibility = true;
-	if (cs.mapping == GeoDataPolyDataGroupColorSettingDialog::Arbitrary) {
+	if (cs.mapping == GeoDataPointGroupColorSettingDialog::Arbitrary) {
 		scalarVisibility = false;
 	}
 	impl->m_pointsActor->GetMapper()->SetScalarVisibility(scalarVisibility);
@@ -274,6 +317,9 @@ void GeoDataPointGroup::updateActorSetting()
 
 	// opacity
 	impl->m_pointsActor->GetProperty()->SetOpacity(cs.opacity);
+
+	// pointSize
+	impl->m_pointsActor->GetProperty()->SetPointSize(cs.pointSize);
 
 	updateActorSettingForEditTargetPolyData();
 }
@@ -324,7 +370,7 @@ void GeoDataPointGroup::updateMenu()
 	m->addSeparator();
 	m->addAction(mergeAction());
 	m->addAction(copyAction());
-	m->addAction(editColorSettingAction());
+	m->addAction(editDisplaySettingAction());
 	m->addAction(attributeBrowserAction());
 
 	m->addSeparator();
@@ -365,9 +411,27 @@ void GeoDataPointGroup::updateMenu()
 	m->addSeparator();
 	m->addAction(mergeAction());
 	m->addAction(copyAction());
-	m->addAction(editColorSettingAction());
+	m->addAction(editDisplaySettingAction());
 	m->addAction(attributeBrowserAction());
 
 	m->addSeparator();
 	m->addAction(deleteAction());
+}
+
+void GeoDataPointGroup::updateActorSettingForEditTargetPolyData()
+{
+	auto t = editTargetData();
+	if (t == nullptr) {return;}
+
+	auto targetData = dynamic_cast<GeoDataPoint*> (t);
+
+	const auto& cs = impl->m_colorSetting;
+	targetData->setColor(cs.color);
+	targetData->setOpacity(cs.opacity);
+	if (cs.mapping == GeoDataPointGroupColorSettingDialog::Arbitrary) {
+		targetData->setMapping(GeoDataPolyDataColorSettingDialog::Arbitrary);
+	} else {
+		targetData->setMapping(GeoDataPolyDataColorSettingDialog::Value);
+	}
+	targetData->setPointSize(cs.pointSize * 2);
 }

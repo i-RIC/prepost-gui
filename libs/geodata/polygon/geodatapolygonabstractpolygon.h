@@ -51,6 +51,9 @@ public:
 	void setColor(const QColor& color);
 	void setMapping(GeoDataPolyDataColorSettingDialog::Mapping m);
 
+	int lineWidth() const;
+	void setLineWidth(int lineWidth);
+
 protected:
 	const PolygonController& polygonController() const;
 

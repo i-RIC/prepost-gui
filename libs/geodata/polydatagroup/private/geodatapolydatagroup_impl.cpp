@@ -48,7 +48,7 @@ GeoDataPolyDataGroup::Impl::Impl(GeoDataPolyDataGroup* group) :
 	m_editNameAndValueAction {new QAction(GeoDataPolyDataGroup::tr("Edit &Name and Value..."), group)},
 	m_deleteAction {new QAction(QIcon(":/libs/guibase/images/iconDeleteItem.svg"), GeoDataPolyDataGroup::tr("&Delete"), group)},
 	m_mergeAction {new QAction(GeoDataPolyDataGroup::tr("&Merge..."), group)},
-	m_editColorSettingAction {new QAction(GeoDataPolyDataGroup::tr("Color &Setting..."), group)},
+	m_editDisplaySettingAction {new QAction(GeoDataPolyDataGroup::tr("Display &Setting..."), group)},
 	m_attributeBrowserAction {new QAction(GeoDataPolyDataGroup::tr("Show Attribute &Browser"), group)},
 	m_moveToTopAction {new QAction(QIcon(":/libs/guibase/images/iconItemMoveTop.svg"), GeoDataPolyDataGroup::tr("Move to top"), group)},
 	m_moveToBottomAction {new QAction(QIcon(":/libs/guibase/images/iconItemMoveBottom.svg"), GeoDataPolyDataGroup::tr("Move to bottom"), group)},

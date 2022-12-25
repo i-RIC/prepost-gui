@@ -57,7 +57,7 @@
     </message>
     <message>
         <source>&amp;Add New Polygon...</source>
-        <translation type="vanished">新しいポリゴンの追加 (&amp;A)...</translation>
+        <translation>新しいポリゴンの追加 (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Select...</source>
@@ -117,7 +117,11 @@
     </message>
     <message>
         <source>&amp;Add New %1...</source>
-        <translation>新しい %1 の追加 (&amp;A)...</translation>
+        <translation type="vanished">新しい %1 の追加 (&amp;A)...</translation>
+    </message>
+    <message>
+        <source>Color Setting Edit</source>
+        <translation>表示色設定の編集</translation>
     </message>
 </context>
 <context>
@@ -162,15 +166,23 @@
     </message>
     <message>
         <source>Color</source>
-        <translation type="vanished">色</translation>
+        <translation>色</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="vanished">値により自動設定</translation>
+        <translation>値により自動設定</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="vanished">色を指定</translation>
+        <translation>色を指定</translation>
+    </message>
+    <message>
+        <source>Polygon Group Display Setting</source>
+        <translation>ポリゴングループ表示設定</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>線の幅:</translation>
     </message>
 </context>
 <context>
@@ -343,6 +355,13 @@
     <message>
         <source>&amp;Unselect all</source>
         <translation type="vanished">すべて解除 (&amp;U)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroupProxy</name>
+    <message>
+        <source>Edit display setting</source>
+        <translation>表示設定の編集</translation>
     </message>
 </context>
 <context>

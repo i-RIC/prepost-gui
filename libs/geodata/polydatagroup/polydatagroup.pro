@@ -82,7 +82,6 @@ win32 {
 HEADERS += gd_polydatagroup_global.h \
            geodatapolydatagroup.h \
            geodatapolydatagroupattributebrowser.h \
-           geodatapolydatagroupcolorsettingdialog.h \
            geodatapolydatagroupcopysettingdialog.h \
            geodatapolydatagroupcreator.h \
            geodatapolydatagroupmergesettingdialog.h \
@@ -92,18 +91,15 @@ HEADERS += gd_polydatagroup_global.h \
            geodatapolydatagroupshpimportersettingdialog.h \
            private/geodatapolydatagroup_editnameandvaluecommand.h \
            private/geodatapolydatagroup_impl.h \
-           private/geodatapolydatagroup_setcolorsettingcommand.h \
            private/geodatapolydatagroup_sortcommand.h \
            private/geodatapolydatagroup_sortedittargetdatacommand.h \
            private/geodatapolydatagroupattributebrowser_tableitemdelegate.h \
            private/geodatapolydatagrouppolydata_impl.h
-FORMS += geodatapolydatagroupcolorsettingdialog.ui \
-         geodatapolydatagroupcopysettingdialog.ui \
+FORMS += geodatapolydatagroupcopysettingdialog.ui \
          geodatapolydatagroupmergesettingdialog.ui \
          geodatapolydatagroupshpimportersettingdialog.ui
 SOURCES += geodatapolydatagroup.cpp \
            geodatapolydatagroupattributebrowser.cpp \
-           geodatapolydatagroupcolorsettingdialog.cpp \
            geodatapolydatagroupcopysettingdialog.cpp \
            geodatapolydatagroupcreator.cpp \
            geodatapolydatagroupmergesettingdialog.cpp \
@@ -113,7 +109,6 @@ SOURCES += geodatapolydatagroup.cpp \
            geodatapolydatagroupshpimportersettingdialog.cpp \
            private/geodatapolydatagroup_editnameandvaluecommand.cpp \
            private/geodatapolydatagroup_impl.cpp \
-           private/geodatapolydatagroup_setcolorsettingcommand.cpp \
            private/geodatapolydatagroup_sortcommand.cpp \
            private/geodatapolydatagroup_sortedittargetdatacommand.cpp \
            private/geodatapolydatagroupattributebrowser_tableitemdelegate.cpp

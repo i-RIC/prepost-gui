@@ -155,6 +155,14 @@ GeoDataPolygon::~GeoDataPolygon()
 	delete impl;
 }
 
+void GeoDataPolygon::setLineWidth(int lineWidth)
+{
+	impl->m_regionPolygon->setLineWidth(lineWidth);
+	for (auto h : impl->m_holePolygons) {
+		h->setLineWidth(lineWidth);
+	}
+}
+
 void GeoDataPolygon::setupMenu()
 {
 	bool isRef = false;
@@ -999,6 +1007,7 @@ GeoDataPolygonHolePolygon* GeoDataPolygon::setupHolePolygon()
 	pol->setActive(true);
 	pol->setMapping(colorSetting().mapping);
 	pol->setColor(color());
+	pol->setLineWidth(impl->m_regionPolygon->lineWidth());
 
 	return pol;
 }

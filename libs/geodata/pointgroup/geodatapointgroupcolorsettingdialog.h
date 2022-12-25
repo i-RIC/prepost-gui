@@ -1,19 +1,20 @@
-#ifndef GEODATAPOLYDATAGROUPCOLORSETTINGDIALOG_H
-#define GEODATAPOLYDATAGROUPCOLORSETTINGDIALOG_H
+#ifndef GEODATAPOINTGROUPCOLORSETTINGDIALOG_H
+#define GEODATAPOINTGROUPCOLORSETTINGDIALOG_H
 
 #include <misc/compositecontainer.h>
 #include <misc/opacitycontainer.h>
 #include <misc/colorcontainer.h>
+#include <misc/intcontainer.h>
 #include <misc/enumcontainert.h>
 
 #include <QDialog>
 
 namespace Ui
 {
-	class GeoDataPolyDataGroupColorSettingDialog;
+	class GeoDataPointGroupColorSettingDialog;
 }
 
-class GeoDataPolyDataGroupColorSettingDialog : public QDialog
+class GeoDataPointGroupColorSettingDialog : public QDialog
 {
 	Q_OBJECT
 
@@ -29,10 +30,11 @@ public:
 		ColorContainer color;
 		OpacityContainer opacity;
 		EnumContainerT<Mapping> mapping;
+		IntContainer pointSize;
 	};
 
-	GeoDataPolyDataGroupColorSettingDialog(QWidget* parent = nullptr);
-	~GeoDataPolyDataGroupColorSettingDialog();
+	GeoDataPointGroupColorSettingDialog(QWidget* parent = nullptr);
+	~GeoDataPointGroupColorSettingDialog();
 
 	void setIsReferenceInformation(bool isRef);
 
@@ -40,7 +42,7 @@ public:
 	Setting setting() const;
 
 private:
-	Ui::GeoDataPolyDataGroupColorSettingDialog* ui;
+	Ui::GeoDataPointGroupColorSettingDialog* ui;
 };
 
-#endif // GEODATAPOLYDATAGROUPCOLORSETTINGDIALOG_H
+#endif // GEODATAPOINTGROUPCOLORSETTINGDIALOG_H

@@ -1,7 +1,8 @@
 #ifndef GEODATAPOLYLINEGROUP_IMPL_H
 #define GEODATAPOLYLINEGROUP_IMPL_H
 
-#include"../geodatapolylinegroup.h"
+#include "../geodatapolylinegroup.h"
+#include "../geodatapolylinegroupcolorsettingdialog.h"
 
 class vtkActor;
 class vtkPoints;
@@ -27,6 +28,8 @@ public:
 	vtkActor* m_selectedPolyLinesPointsActor;
 
 	GeoDataPolyLine* m_dummyPolyLineForMenu;
+
+	GeoDataPolyLineGroupColorSettingDialog::Setting m_colorSetting;
 };
 
 #endif // GEODATAPOLYLINEGROUP_IMPL_H

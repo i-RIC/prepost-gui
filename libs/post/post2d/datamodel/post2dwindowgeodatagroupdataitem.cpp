@@ -23,6 +23,11 @@ Post2dWindowGeoDataGroupDataItem::Post2dWindowGeoDataGroupDataItem(SolverDefinit
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 }
 
+SolverDefinitionGridAttribute* Post2dWindowGeoDataGroupDataItem::condition() const
+{
+	return m_condition;
+}
+
 void Post2dWindowGeoDataGroupDataItem::updateChildren()
 {
 	Post2dWindowGeoDataTopDataItem* tItem = dynamic_cast<Post2dWindowGeoDataTopDataItem*>(parent());
@@ -52,8 +57,8 @@ void Post2dWindowGeoDataGroupDataItem::updateChildren()
 		} else {
 			// try to add.
 			GeoDataProxy* proxy = geoData->getProxy();
-			connect(geoData, SIGNAL(graphicsUpdated()), proxy, SLOT(updateGraphics()));
 			if (proxy != nullptr) {
+				connect(geoData, SIGNAL(graphicsUpdated()), proxy, SLOT(updateGraphics()));
 				Post2dWindowGeoDataDataItem* pItem = new Post2dWindowGeoDataDataItem(this);
 				pItem->setGeoDataProxy(proxy);
 				proxy->setupDataItem();

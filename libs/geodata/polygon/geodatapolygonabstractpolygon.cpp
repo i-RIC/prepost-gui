@@ -223,6 +223,17 @@ void GeoDataPolygonAbstractPolygon::setMapping(GeoDataPolyDataColorSettingDialog
 	}
 }
 
+int GeoDataPolygonAbstractPolygon::lineWidth() const
+{
+	return static_cast<int> (impl->m_polygonController.linesActor()->GetProperty()->GetLineWidth());
+}
+
+void GeoDataPolygonAbstractPolygon::setLineWidth(int lineWidth)
+{
+	impl->m_polygonController.linesActor()->GetProperty()->SetLineWidth(lineWidth);
+	impl->m_polygonController.pointsActor()->GetProperty()->SetPointSize(lineWidth * 5);
+}
+
 const PolygonController& GeoDataPolygonAbstractPolygon::polygonController() const
 {
 	return impl->m_polygonController;

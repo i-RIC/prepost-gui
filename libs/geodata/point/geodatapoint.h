@@ -26,6 +26,8 @@ public:
 	GeoDataPoint(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGridAttribute* condition);
 	~GeoDataPoint() override;
 
+	void setPointSize(int pointSize);
+
 	void setupMenu() override;
 	bool addToolBarButtons(QToolBar* parent) override;
 	void informSelection(PreProcessorGraphicsViewInterface* v) override;

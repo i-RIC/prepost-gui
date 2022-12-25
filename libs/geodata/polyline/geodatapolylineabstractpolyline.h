@@ -46,6 +46,7 @@ public:
 	void setColor(const QColor& color);
 	void setOpacity(double opacity);
 	void setMapping(GeoDataPolyDataColorSettingDialog::Mapping m);
+	void setLineWidth(int lineWidth);
 
 protected:
 	const PolyLineController& polylineController() const;

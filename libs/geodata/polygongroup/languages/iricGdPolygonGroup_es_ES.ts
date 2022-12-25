@@ -52,7 +52,11 @@
         <translation>Polígonos (&amp;O)</translation>
     </message>
     <message>
-        <source>&amp;Add New %1...</source>
+        <source>&amp;Add New Polygon...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color Setting Edit</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -75,11 +79,11 @@
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="vanished">Color por Valor</translation>
+        <translation>Color por Valor</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="vanished">Color Personalizado</translation>
+        <translation>Color Personalizado</translation>
     </message>
     <message>
         <source>Polygon</source>
@@ -88,6 +92,18 @@
     <message>
         <source>Polygon%1</source>
         <translation type="vanished">Poligono%1</translation>
+    </message>
+    <message>
+        <source>Polygon Group Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -217,6 +233,13 @@
     <message>
         <source>Error occured while reading line %1. &quot;value&quot; should be the same for lines where &quot;pid&quot; values are the same.</source>
         <translation>Ocurrió un error al leer la línea %1. &quot;valor&quot; debe ser el mismo para las líneas donde los valores &quot;pid&quot; son los mismos.</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroupProxy</name>
+    <message>
+        <source>Edit display setting</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

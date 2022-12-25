@@ -56,7 +56,11 @@
         <translation>多边形 (&amp;O)</translation>
     </message>
     <message>
-        <source>&amp;Add New %1...</source>
+        <source>&amp;Add New Polygon...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color Setting Edit</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -79,15 +83,23 @@
     </message>
     <message>
         <source>Color</source>
-        <translation type="vanished">色彩</translation>
+        <translation>色彩</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="vanished">根据数值上色</translation>
+        <translation>根据数值上色</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="vanished">自定义颜色</translation>
+        <translation>自定义颜色</translation>
+    </message>
+    <message>
+        <source>Polygon Group Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -248,6 +260,13 @@
     <message>
         <source>&amp;Unselect all</source>
         <translation type="vanished">全不选 (&amp;U)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroupProxy</name>
+    <message>
+        <source>Edit display setting</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

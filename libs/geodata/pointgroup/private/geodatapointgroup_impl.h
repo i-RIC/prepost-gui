@@ -1,7 +1,8 @@
 #ifndef GEODATAPOINTGROUP_IMPL_H
 #define GEODATAPOINTGROUP_IMPL_H
 
-#include"../geodatapointgroup.h"
+#include "../geodatapointgroup.h"
+#include "../geodatapointgroupcolorsettingdialog.h"
 
 class vtkActor;
 class vtkPoints;
@@ -24,6 +25,8 @@ public:
 	vtkActor* m_selectedPointsPointsActor;
 
 	GeoDataPoint* m_dummyPointForMenu;
+
+	GeoDataPointGroupColorSettingDialog::Setting m_colorSetting;
 };
 
 #endif // GEODATAPOINTGROUP_IMPL_H

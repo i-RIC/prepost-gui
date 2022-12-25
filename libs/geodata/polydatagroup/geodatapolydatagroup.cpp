@@ -6,7 +6,6 @@
 #include "geodatapolydatagrouppolydata.h"
 #include "private/geodatapolydatagroup_impl.h"
 #include "private/geodatapolydatagroup_editnameandvaluecommand.h"
-#include "private/geodatapolydatagroup_setcolorsettingcommand.h"
 #include "private/geodatapolydatagroup_sortcommand.h"
 #include "private/geodatapolydatagroup_sortedittargetdatacommand.h"
 
@@ -77,11 +76,6 @@ GeoDataPolyDataGroup::GeoDataPolyDataGroup(ProjectDataItem* d, GeoDataCreator* c
 	impl->m_attributeBrowser->setPolyDataGroup(this);
 	preProcessorWindow()->addDockWidget(Qt::LeftDockWidgetArea, impl->m_attributeBrowser);
 	impl->m_attributeBrowser->hide();
-
-	auto att = gridAttribute();
-	if (att && att->isReferenceInformation()) {
-		impl->m_colorSetting.mapping = GeoDataPolyDataGroupColorSettingDialog::Arbitrary;
-	}
 
 	makeConnections();
 }
@@ -155,23 +149,6 @@ bool GeoDataPolyDataGroup::addToolBarButtons(QToolBar* /*parent*/)
 void GeoDataPolyDataGroup::showInitialDialog()
 {
 	addData();
-}
-
-QDialog* GeoDataPolyDataGroup::propertyDialog(QWidget* parent)
-{
-	auto dialog = new GeoDataPolyDataGroupColorSettingDialog(parent);
-	dialog->setSetting(impl->m_colorSetting);
-	auto gridAtt = gridAttribute();
-	if (gridAtt != nullptr) {
-		dialog->setIsReferenceInformation(gridAtt->isReferenceInformation());
-	}
-	return dialog;
-}
-
-void GeoDataPolyDataGroup::handlePropertyDialogAccepted(QDialog* d)
-{
-	auto dialog = dynamic_cast<GeoDataPolyDataGroupColorSettingDialog*> (d);
-	pushRenderCommand(new SetColorSettingCommand(dialog->setting(), this));
 }
 
 void GeoDataPolyDataGroup::viewOperationEnded(PreProcessorGraphicsViewInterface* /*v*/)
@@ -700,11 +677,6 @@ const ZDepthRange& GeoDataPolyDataGroup::depthRange() const
 	return impl->m_depthRange;
 }
 
-GeoDataPolyDataGroupColorSettingDialog::Setting GeoDataPolyDataGroup::colorSetting() const
-{
-	return impl->m_colorSetting;
-}
-
 QAction* GeoDataPolyDataGroup::addAction() const
 {
 	return impl->m_addAction;
@@ -730,9 +702,9 @@ QAction* GeoDataPolyDataGroup::mergeAction() const
 	return impl->m_mergeAction;
 }
 
-QAction* GeoDataPolyDataGroup::editColorSettingAction() const
+QAction* GeoDataPolyDataGroup::editDisplaySettingAction() const
 {
-	return impl->m_editColorSettingAction;
+	return impl->m_editDisplaySettingAction;
 }
 
 QAction* GeoDataPolyDataGroup::attributeBrowserAction() const
@@ -765,12 +737,7 @@ QAction* GeoDataPolyDataGroup::copyAction() const
 	return impl->m_copyAction;
 }
 
-void GeoDataPolyDataGroup::setColorSetting(const GeoDataPolyDataGroupColorSettingDialog::Setting& setting)
-{
-	impl->m_colorSetting = setting;
-	updateActorSetting();
-}
-
+/*
 void GeoDataPolyDataGroup::updateActorSettingForEditTargetPolyData()
 {
 	auto targetData = editTargetData();
@@ -785,6 +752,7 @@ void GeoDataPolyDataGroup::updateActorSettingForEditTargetPolyData()
 		targetData->setMapping(GeoDataPolyDataColorSettingDialog::Value);
 	}
 }
+*/
 
 void GeoDataPolyDataGroup::updateAttributeBrowser(bool force)
 {
@@ -798,7 +766,7 @@ void GeoDataPolyDataGroup::makeConnections()
 	connect(impl->m_deleteAction, SIGNAL(triggered()), this, SLOT(deleteSelectedData()));
 	connect(impl->m_editNameAction, SIGNAL(triggered()), this, SLOT(editName()));
 	connect(impl->m_editNameAndValueAction, SIGNAL(triggered()), this, SLOT(editNameAndValue()));
-	connect(impl->m_editColorSettingAction, SIGNAL(triggered()), this, SLOT(editColorSetting()));
+	connect(impl->m_editDisplaySettingAction, SIGNAL(triggered()), this, SLOT(editColorSetting()));
 	connect(impl->m_attributeBrowserAction, SIGNAL(triggered()), this, SLOT(showAttributeBrowser()));
 	connect(impl->m_moveToTopAction, SIGNAL(triggered()), this, SLOT(moveSelectedDataToTop()));
 	connect(impl->m_moveToBottomAction, SIGNAL(triggered()), this, SLOT(moveSelectedDataToBottom()));
@@ -927,18 +895,6 @@ void GeoDataPolyDataGroup::mergePolyDataGroup(GeoDataPolyDataGroup* group, int p
 	data.clear();
 }
 
-void GeoDataPolyDataGroup::doLoadFromProjectMainFile(const QDomNode& node)
-{
-	GeoData::doLoadFromProjectMainFile(node);
-	impl->m_colorSetting.load(node);
-}
-
-void GeoDataPolyDataGroup::doSaveToProjectMainFile(QXmlStreamWriter& writer)
-{
-	GeoData::doSaveToProjectMainFile(writer);
-	impl->m_colorSetting.save(writer);
-}
-
 void GeoDataPolyDataGroup::loadExternalData(const QString& filename)
 {
 	QFile f(filename);
@@ -1034,9 +990,4 @@ void GeoDataPolyDataGroup::panTo(int row)
 	}
 	auto v = graphicsView();
 	v->panTo((xmin + xmax) * 0.5, (ymin + ymax) * 0.5);
-}
-
-QColor GeoDataPolyDataGroup::color() const
-{
-	return colorSetting().color;
 }

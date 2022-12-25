@@ -56,7 +56,11 @@
         <translation>Polígonos (&amp;O)</translation>
     </message>
     <message>
-        <source>&amp;Add New %1...</source>
+        <source>&amp;Add New Polygon...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color Setting Edit</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -68,15 +72,23 @@
     </message>
     <message>
         <source>Color</source>
-        <translation type="vanished">Cor</translation>
+        <translation>Cor</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="vanished">Configuracao automatica pelo valor </translation>
+        <translation>Configuracao automatica pelo valor </translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="vanished">Especificacao de cor</translation>
+        <translation>Especificacao de cor</translation>
+    </message>
+    <message>
+        <source>Polygon Group Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -233,6 +245,13 @@
     <message>
         <source>&amp;Unselect all</source>
         <translation type="vanished">Limpar tudo (&amp;U)</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPolygonGroupProxy</name>
+    <message>
+        <source>Edit display setting</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
