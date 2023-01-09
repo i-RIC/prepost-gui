@@ -715,6 +715,19 @@ Graph2dHybridWindowResultSetting::XAxisTimeUnit Graph2dHybridWindowResultSetting
 	return m_xAxisTimeUnit;
 }
 
+double Graph2dHybridWindowResultSetting::xAxisTimeScale() const
+{
+	if (m_xAxisTimeUnit == tuMinutes) {
+		return 1.0 / 60;
+	} else if (m_xAxisTimeUnit == tuHours) {
+		return 1.0 / (60 * 60);
+	} else if (m_xAxisTimeUnit == tuDays) {
+		return 1.0 / (60 * 60 * 24);
+	} else {
+		return 1.0;
+	}
+}
+
 const QMap<Graph2dHybridWindowResultSetting::XAxisMode, QMap<Graph2dHybridWindowResultSetting::DimType, QList<Graph2dHybridWindowResultSetting::DataTypeInfo*> > >& Graph2dHybridWindowResultSetting::dataTypeInfoMap()
 {
 	return m_dataTypeInfoMap;

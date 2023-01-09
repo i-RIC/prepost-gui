@@ -56,15 +56,7 @@ void Graph2dHybridWindowDataItem::buildData(
 	} else {
 		srcxvals = xvals;
 		if (s1.xAxisMode() == Graph2dHybridWindowResultSetting::xaTime) {
-			double scale = 1.0;
-			auto tu = s1.xAxisTimeUnit();
-			if (tu == Graph2dHybridWindowResultSetting::tuMinutes) {
-				scale = 1.0 / 60;
-			} else if (tu == Graph2dHybridWindowResultSetting::tuHours) {
-				scale = 1.0 / (60 * 60);
-			} else if (tu == Graph2dHybridWindowResultSetting::tuDays) {
-				scale = 1.0 / (60 * 60 * 24);
-			}
+			double scale = s1.xAxisTimeScale();
 			for (int i = 0; i < srcxvals.size(); ++i) {
 				srcxvals[i] *= scale;
 			}

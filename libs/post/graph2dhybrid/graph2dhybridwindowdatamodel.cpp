@@ -1292,7 +1292,8 @@ void Graph2dHybridWindowDataModel::updateTime()
 		} else {
 			if (currentStep < timesteps.count()) {
 				if (m_setting.timeValueType() == Graph2dHybridWindowResultSetting::tvtTime) {
-					m_timeMarker->setXValue(timesteps.at(currentStep));
+					double time = timesteps.at(currentStep) * m_setting.xAxisTimeScale();
+					m_timeMarker->setXValue(time);
 				} else {
 					m_timeMarker->setXValue(currentStep + 1);
 				}

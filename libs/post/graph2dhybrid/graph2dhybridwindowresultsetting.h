@@ -233,6 +233,7 @@ public:
 	XAxisMode xAxisMode() const;
 	void setXAxisTimeUnit(XAxisTimeUnit tu);
 	XAxisTimeUnit xAxisTimeUnit() const;
+	double xAxisTimeScale() const;
 	const QMap<XAxisMode, QMap<DimType, QList<DataTypeInfo*> > >& dataTypeInfoMap();
 	DataTypeInfo* targetDataTypeInfo() const;
 	void setTargetDataTypeInfo(DataTypeInfo* type);
