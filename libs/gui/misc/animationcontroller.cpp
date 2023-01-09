@@ -376,8 +376,9 @@ void AnimationController::handleRenderingEnded()
 		// rendering consumed more time then the timer
 		// interval.
 		// wait just a little more.
-		m_timer->setInterval(10);
+		m_timer->setInterval(100);
 		m_timer->start();
+		qApp->processEvents();
 	}
 }
 
