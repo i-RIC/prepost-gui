@@ -206,6 +206,8 @@ void PreProcessorGridAndGridCreatingConditionDataItem::setupGridDataItem(Grid* g
 	m_gridDataItem->setBCGroupDataItem(m_bcGroupDataItem);
 	m_childItems.push_back(gridItem);
 
+	m_gridDataItem->updateActionStatus();
+
 	// put the grid data item after grid creating condition
 	m_standardItem->takeRow(gridItem->standardItem()->row());
 

@@ -26,6 +26,7 @@ public:
 	virtual void setBCGroupDataItem(PreProcessorBCGroupDataItem* item) = 0;
 	virtual void unsetBCGroupDataItem() = 0;
 	virtual bool gridIsDeleted() const = 0;
+	virtual void updateActionStatus() = 0;
 
 	friend class Grid;
 	friend class GridAttributeContainer;

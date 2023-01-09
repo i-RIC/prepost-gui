@@ -45,6 +45,8 @@ public:
 	int saveToCgnsFile(iRICLib::H5CgnsBase* base, const std::string& zoneName);
 	void closeCgnsFile() override;
 
+	void updateActionStatus() override;
+
 	void addCustomMenuItems(QMenu* menu) override;
 
 	// Standard mouse event handlers
@@ -171,8 +173,6 @@ private:
 	void informSelectedVerticesChanged();
 
 protected:
-	virtual void updateActionStatus();
-
 	PreProcessorGridShapeDataItem* m_shapeDataItem;
 	PreProcessorGridAttributeNodeGroupDataItem* m_nodeGroupDataItem;
 	PreProcessorGridAttributeCellGroupDataItem* m_cellGroupDataItem;
