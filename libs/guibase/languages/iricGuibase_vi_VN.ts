@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="vi_VN">
 <context>
     <name>AsciiOnlyLineEdit</name>
@@ -483,9 +485,9 @@
     </message>
     <message>
         <source>Specify the number format in printf format. For example:
-   "%5.2f" for 3.141592 --&gt; 3.14
-   "%4.2e" for 12300  --&gt; 1.23e+004</source>
-        <translation>Chỉ định định dạng số ở định dạng printf. Ví dụ: " %5.2f "cho 3,141592 -&gt; 3,14" %4.2e "cho 12300 -&gt; 1.23e + 004</translation>
+   &quot;%5.2f&quot; for 3.141592 --&gt; 3.14
+   &quot;%4.2e&quot; for 12300  --&gt; 1.23e+004</source>
+        <translation>Chỉ định định dạng số ở định dạng printf. Ví dụ: &quot; %5.2f &quot;cho 3,141592 -&gt; 3,14&quot; %4.2e &quot;cho 12300 -&gt; 1.23e + 004</translation>
     </message>
     <message>
         <source>Orientation :</source>
@@ -641,6 +643,10 @@
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can use following symbols to define custom time format:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Year: YYYY, YY&lt;/li&gt;&lt;li&gt;Month: M, MM, MMM, MMMM (MMM for Jan etc., MMMM for January etc.)&lt;/li&gt;&lt;li&gt;Day: d, dd, ddd, dddd (ddd for Mon etc., dddd for Monday etc.)&lt;/li&gt;&lt;li&gt;Hour: H, HH, h, hh (h, hh for AM / PM display)&lt;/li&gt;&lt;li&gt;Minute: m, mm&lt;/li&gt;&lt;li&gt;Second: s, ss&lt;/li&gt;&lt;li&gt;AM / PM: A, a&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Bạn có thể sử dụng các ký hiệu sau để xác định định dạng thời gian tùy chỉnh: &lt;/p&gt; &lt;ul&gt; &lt;li&gt; Năm: YYYY, YY &lt;/li&gt; &lt;li&gt; Tháng: M, MM, MMM, MMMM (MMM cho tháng 1, v.v., MMMM cho tháng 1, v.v.) &lt;/li&gt; &lt;li&gt; Ngày: d, dd, ddd, dddd (ddd cho Thứ Hai, v.v., dddd cho Thứ Hai, v.v.) &lt;/ li &gt; &lt;li&gt; Giờ: H, HH, h, hh (h, hh cho hiển thị AM / PM) &lt;/li&gt; &lt;li&gt; Phút: m, mm &lt;/li&gt; &lt;li&gt; Thứ hai: s, ss &lt;/ li &gt; &lt;li&gt; SA / CH: A, a &lt;/li&gt; &lt;/ul&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
+    <message>
+        <source>Show Time Zone</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>TooltipLabel</name>
@@ -665,6 +671,13 @@
     <message>
         <source>Please wait...</source>
         <translation>Vui lòng chờ...</translation>
+    </message>
+</context>
+<context>
+    <name>WaitDialogExecuterWatcher</name>
+    <message>
+        <source>Please wait...</source>
+        <translation type="unfinished">Vui lòng chờ...</translation>
     </message>
 </context>
 <context>

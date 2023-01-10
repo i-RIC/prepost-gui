@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="uk_UA">
 <context>
     <name>AsciiOnlyLineEdit</name>
@@ -483,9 +485,9 @@
     </message>
     <message>
         <source>Specify the number format in printf format. For example:
-   "%5.2f" for 3.141592 --&gt; 3.14
-   "%4.2e" for 12300  --&gt; 1.23e+004</source>
-        <translation>Укажіть формат числа у форматі printf. Наприклад: " %5.2f "для 3.141592 -&gt; 3.14" %4.2e "для 12300 -&gt; 1.23e+004</translation>
+   &quot;%5.2f&quot; for 3.141592 --&gt; 3.14
+   &quot;%4.2e&quot; for 12300  --&gt; 1.23e+004</source>
+        <translation>Укажіть формат числа у форматі printf. Наприклад: &quot; %5.2f &quot;для 3.141592 -&gt; 3.14&quot; %4.2e &quot;для 12300 -&gt; 1.23e+004</translation>
     </message>
     <message>
         <source>Orientation :</source>
@@ -641,6 +643,10 @@
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can use following symbols to define custom time format:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Year: YYYY, YY&lt;/li&gt;&lt;li&gt;Month: M, MM, MMM, MMMM (MMM for Jan etc., MMMM for January etc.)&lt;/li&gt;&lt;li&gt;Day: d, dd, ddd, dddd (ddd for Mon etc., dddd for Monday etc.)&lt;/li&gt;&lt;li&gt;Hour: H, HH, h, hh (h, hh for AM / PM display)&lt;/li&gt;&lt;li&gt;Minute: m, mm&lt;/li&gt;&lt;li&gt;Second: s, ss&lt;/li&gt;&lt;li&gt;AM / PM: A, a&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Ви можете використовувати такі символи для визначення користувацького формату часу: &lt;/p&gt; &lt;ul&gt; &lt;li&gt; Рік: РРРР, РР &lt;/li&gt; &lt;li&gt; Місяць: М, ММ, МММ, ММММ (МММ за січень тощо, ММММ за січень тощо) &lt;/li&gt; &lt;li&gt; День: д, дд, ддд, дддд (ддд для пн тощо, дддд для понеділка тощо) &lt;/li &gt; &lt;li&gt; Година: H, HH, h, hh (h, hh для AM/PM) &lt;/li&gt; &lt;li&gt; Хвилина: m, mm &lt;/li&gt; &lt;li&gt; Друга: s, ss &lt;/li &gt; &lt;li&gt; AM/PM: A, a &lt;/li&gt; &lt;/ul&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
+    <message>
+        <source>Show Time Zone</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>TooltipLabel</name>
@@ -665,6 +671,13 @@
     <message>
         <source>Please wait...</source>
         <translation>Будь ласка, зачекайте...</translation>
+    </message>
+</context>
+<context>
+    <name>WaitDialogExecuterWatcher</name>
+    <message>
+        <source>Please wait...</source>
+        <translation type="unfinished">Будь ласка, зачекайте...</translation>
     </message>
 </context>
 <context>
@@ -772,7 +785,7 @@
     </message>
     <message>
         <source>Courier</source>
-        <translation>Кур'єр</translation>
+        <translation>Кур&apos;єр</translation>
     </message>
     <message>
         <source>Times</source>

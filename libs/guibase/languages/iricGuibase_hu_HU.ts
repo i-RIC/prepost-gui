@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="hu_HU">
 <context>
     <name>AsciiOnlyLineEdit</name>
@@ -483,9 +485,9 @@
     </message>
     <message>
         <source>Specify the number format in printf format. For example:
-   "%5.2f" for 3.141592 --&gt; 3.14
-   "%4.2e" for 12300  --&gt; 1.23e+004</source>
-        <translation>Adja meg a számformátumot printf formátumban. Például: " %5.2f "3.141592 esetén -&gt; 3.14" %4.2e "12300 -&gt; 1,23e+004 esetén</translation>
+   &quot;%5.2f&quot; for 3.141592 --&gt; 3.14
+   &quot;%4.2e&quot; for 12300  --&gt; 1.23e+004</source>
+        <translation>Adja meg a számformátumot printf formátumban. Például: &quot; %5.2f &quot;3.141592 esetén -&gt; 3.14&quot; %4.2e &quot;12300 -&gt; 1,23e+004 esetén</translation>
     </message>
     <message>
         <source>Orientation :</source>
@@ -641,6 +643,10 @@
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can use following symbols to define custom time format:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Year: YYYY, YY&lt;/li&gt;&lt;li&gt;Month: M, MM, MMM, MMMM (MMM for Jan etc., MMMM for January etc.)&lt;/li&gt;&lt;li&gt;Day: d, dd, ddd, dddd (ddd for Mon etc., dddd for Monday etc.)&lt;/li&gt;&lt;li&gt;Hour: H, HH, h, hh (h, hh for AM / PM display)&lt;/li&gt;&lt;li&gt;Minute: m, mm&lt;/li&gt;&lt;li&gt;Second: s, ss&lt;/li&gt;&lt;li&gt;AM / PM: A, a&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; A következő szimbólumokkal határozhatja meg az egyéni időformátumot: &lt;/p&gt; &lt;ul&gt; &lt;li&gt; Év: ÉÉÉÉ, ÉÉ &lt;/li&gt; &lt;li&gt; Hónap: H, HH, MMM, MMMM (MMM január, stb., MMMM január stb.) &lt;/li&gt; &lt;li&gt; Nap: d, dd, ddd, dddd (ddd hétfőre, dddd hétfőre stb.) &lt;/Li &gt; &lt;li&gt; Óra: H, HH, h, hh (h, hh AM/PM kijelző esetén) &lt;/li&gt; &lt;li&gt; perc: m, mm &lt;/li&gt; &lt;li&gt; Második: s, ss &lt;/li &gt; &lt;li&gt; AM/PM: A, a &lt;/li&gt; &lt;/ul&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
+    <message>
+        <source>Show Time Zone</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>TooltipLabel</name>
@@ -665,6 +671,13 @@
     <message>
         <source>Please wait...</source>
         <translation>Kérlek várj...</translation>
+    </message>
+</context>
+<context>
+    <name>WaitDialogExecuterWatcher</name>
+    <message>
+        <source>Please wait...</source>
+        <translation type="unfinished">Kérlek várj...</translation>
     </message>
 </context>
 <context>

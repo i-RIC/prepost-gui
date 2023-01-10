@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ja_JP">
 <context>
     <name>AsciiOnlyLineEdit</name>
@@ -532,27 +534,27 @@
     </message>
     <message>
         <source>Specify the number format in printf format. For example:
-   "-%.3f" for 3.141592 --&gt; 3.141
-   "-%.2e" for 12300  --&gt; 1.23e+004</source>
+   &quot;-%.3f&quot; for 3.141592 --&gt; 3.141
+   &quot;-%.2e&quot; for 12300  --&gt; 1.23e+004</source>
         <translation type="vanished">数字の表示形式を、 printf のフォーマットで指定して下さい。例えば:
-   "-%3.f" を 値が 3.141592 の時に指定 --&gt; "3.141"
-   "-%.2e" を 値が 12300 の時に指定 --&gt; "1.23e+004"</translation>
+   &quot;-%3.f&quot; を 値が 3.141592 の時に指定 --&gt; &quot;3.141&quot;
+   &quot;-%.2e&quot; を 値が 12300 の時に指定 --&gt; &quot;1.23e+004&quot;</translation>
     </message>
     <message>
         <source>Specify the number format in printf format. For example:
-   "%-.3f" for 3.141592 --&gt; 3.141
-   "%-.2e" for 12300  --&gt; 1.23e+004</source>
+   &quot;%-.3f&quot; for 3.141592 --&gt; 3.141
+   &quot;%-.2e&quot; for 12300  --&gt; 1.23e+004</source>
         <translation type="vanished">数字の表示形式を、 printf のフォーマットで指定して下さい。例えば:
-   "%-3.f" を 値が 3.141592 の時に指定 --&gt; "3.141"
-   "%-.2e" を 値が 12300 の時に指定 --&gt; "1.23e+004"</translation>
+   &quot;%-3.f&quot; を 値が 3.141592 の時に指定 --&gt; &quot;3.141&quot;
+   &quot;%-.2e&quot; を 値が 12300 の時に指定 --&gt; &quot;1.23e+004&quot;</translation>
     </message>
     <message>
         <source>Specify the number format in printf format. For example:
-   "%5.2f" for 3.141592 --&gt; 3.14
-   "%4.2e" for 12300  --&gt; 1.23e+004</source>
+   &quot;%5.2f&quot; for 3.141592 --&gt; 3.14
+   &quot;%4.2e&quot; for 12300  --&gt; 1.23e+004</source>
         <translation>数字の表示形式を、 printf のフォーマットで指定して下さい。例えば:
-   "%5.2f" を 値が 3.141592 の時に指定 --&gt; "3.14"
-   "%4.2e" を 値が 12300 の時に指定 --&gt; "1.23e+004"</translation>
+   &quot;%5.2f&quot; を 値が 3.141592 の時に指定 --&gt; &quot;3.14&quot;
+   &quot;%4.2e&quot; を 値が 12300 の時に指定 --&gt; &quot;1.23e+004&quot;</translation>
     </message>
     <message>
         <source>Orientation :</source>
@@ -715,6 +717,10 @@
         <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;カスタム書式は、以下の記号を使って定義します。&lt;/p&gt;
 &lt;ul&gt;&lt;li&gt;年: YYYY, YY&lt;/li&gt;&lt;li&gt;月: M, MM, MMM, MMMM (MMM は Jan など, MMMM は January など)&lt;/li&gt;&lt;li&gt;日: D, DD, DDD, DDDD (DDD は Mon など, DDDD は Monday など)&lt;/li&gt;&lt;li&gt;時間: H, HH, h, hh (h, hh は AM / PM 表示用)&lt;/li&gt;&lt;li&gt;分: m, mm&lt;/li&gt;&lt;li&gt;秒: s, ss&lt;/li&gt;&lt;li&gt;AM / PM: A, a&lt;/li&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
+    <message>
+        <source>Show Time Zone</source>
+        <translation>タイムゾーンを表示</translation>
+    </message>
 </context>
 <context>
     <name>TooltipLabel</name>
@@ -745,7 +751,7 @@
     <name>WaitDialogExecuterWatcher</name>
     <message>
         <source>Please wait...</source>
-        <translation type="obsolete">お待ちください...</translation>
+        <translation>お待ちください...</translation>
     </message>
 </context>
 <context>
