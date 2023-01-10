@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>435</width>
-    <height>385</height>
+    <width>418</width>
+    <height>424</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -15,43 +15,78 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_2">
    <item>
-    <layout class="QHBoxLayout" name="horizontalLayout">
-     <item>
-      <widget class="QLabel" name="label">
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="0" column="0">
+      <widget class="QLabel" name="timeLabel">
        <property name="text">
         <string>Time for t = 0:</string>
        </property>
       </widget>
      </item>
-     <item>
-      <widget class="QDateTimeEdit" name="zeroTimeEdit">
-       <property name="enabled">
-        <bool>false</bool>
-       </property>
-      </widget>
+     <item row="0" column="1">
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item>
+        <widget class="QDateTimeEdit" name="zeroTimeEdit">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="zeroTimeDisableCheckBox">
+         <property name="text">
+          <string>Not specified</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
      </item>
-     <item>
-      <widget class="QCheckBox" name="zeroTimeDisableCheckBox">
+     <item row="1" column="0">
+      <widget class="QLabel" name="timeZoneLabel">
        <property name="text">
-        <string>Not specified</string>
-       </property>
-       <property name="checked">
-        <bool>true</bool>
+        <string>Time Zone:</string>
        </property>
       </widget>
      </item>
-     <item>
-      <spacer name="horizontalSpacer">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>40</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
+     <item row="1" column="1">
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QTimeZoneSelectComboBox" name="timeZoneComboBox">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
      </item>
     </layout>
    </item>
@@ -99,6 +134,11 @@
    <header>guibase/timeformat/timeformateditwidget.h</header>
    <container>1</container>
   </customwidget>
+  <customwidget>
+   <class>QTimeZoneSelectComboBox</class>
+   <extends>QComboBox</extends>
+   <header>misc/qtimezoneselectcombobox.h</header>
+  </customwidget>
  </customwidgets>
  <resources/>
  <connections>
@@ -109,8 +149,8 @@
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>227</x>
-     <y>469</y>
+     <x>236</x>
+     <y>414</y>
     </hint>
     <hint type="destinationlabel">
      <x>157</x>
@@ -125,8 +165,8 @@
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>295</x>
-     <y>475</y>
+     <x>304</x>
+     <y>414</y>
     </hint>
     <hint type="destinationlabel">
      <x>286</x>
@@ -141,12 +181,28 @@
    <slot>setDisabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>157</x>
-     <y>19</y>
+     <x>298</x>
+     <y>28</y>
     </hint>
     <hint type="destinationlabel">
      <x>104</x>
      <y>21</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>zeroTimeDisableCheckBox</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>timeZoneComboBox</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>240</x>
+     <y>18</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>147</x>
+     <y>51</y>
     </hint>
    </hints>
   </connection>

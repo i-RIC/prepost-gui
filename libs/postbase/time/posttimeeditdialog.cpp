@@ -19,6 +19,7 @@ void PostTimeEditDialog::setSetting(const PostTimeDataItem::Setting& setting)
 	ui->useProjectSettingCheckBox->setChecked(setting.useProjectSetting);
 	ui->timeFormatEditWidget->setTimeFormat(setting.timeFormat.value());
 	ui->timeFormatEditWidget->setCustomTimeFormat(setting.customTimeFormat.value());
+	ui->timeFormatEditWidget->setShowTimeZone(setting.showTimeZone);
 	ui->fontSettingWidget->setSetting(setting.fontSetting);
 }
 
@@ -28,6 +29,7 @@ PostTimeDataItem::Setting PostTimeEditDialog::setting() const
 	ret.useProjectSetting = ui->useProjectSettingCheckBox->isChecked();
 	ret.timeFormat = ui->timeFormatEditWidget->timeFormat();
 	ret.customTimeFormat = ui->timeFormatEditWidget->customTimeFormat();
+	ret.showTimeZone = ui->timeFormatEditWidget->showTimeZone();
 	ret.fontSetting = ui->fontSettingWidget->setting();
 	return ret;
 }

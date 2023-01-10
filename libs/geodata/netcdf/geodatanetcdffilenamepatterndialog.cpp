@@ -35,6 +35,16 @@ void GeoDataNetcdfFileNamePatternDialog::setPattern(const QString& pattern)
 	updateMatcher();
 }
 
+QTimeZone GeoDataNetcdfFileNamePatternDialog::timeZone() const
+{
+	return ui->timeZoneComboBox->timeZone();
+}
+
+void GeoDataNetcdfFileNamePatternDialog::setTimeZone(const QTimeZone& timeZone)
+{
+	ui->timeZoneComboBox->setTimeZone(timeZone);
+}
+
 GeoDataNetcdfFileNameMatcher* GeoDataNetcdfFileNamePatternDialog::matcher()
 {
 	auto m = m_matcher;

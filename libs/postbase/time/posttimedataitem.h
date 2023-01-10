@@ -33,6 +33,7 @@ public:
 		BoolContainer useProjectSetting;
 		EnumContainerT<TimeFormat> timeFormat;
 		StringContainer customTimeFormat;
+		BoolContainer showTimeZone;
 		vtkTextPropertySettingContainer fontSetting;
 	};
 

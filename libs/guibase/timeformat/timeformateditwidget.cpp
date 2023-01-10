@@ -8,12 +8,13 @@ TimeFormatEditWidget::TimeFormatEditWidget(QWidget *parent) :
 {
 	ui->setupUi(this);
 
-	connect(ui->actualYYYYMMDDHHHHMMSSRadioButton, SIGNAL(toggled(bool)), this, SLOT(actual_yyyy_mm_dd_HH_MM_SS_toggled(bool)));
-	connect(ui->actualYYYYMMDDHHHHMMRadioButton, SIGNAL(toggled(bool)), this, SLOT(actual_yyyy_mm_dd_HH_MM_toggled(bool)));
-	connect(ui->actualMMDDHHMMSSRadioButton, SIGNAL(toggled(bool)), this, SLOT(actual_mm_dd_HH_MM_SS_toggled(bool)));
-	connect(ui->actualMMDDHHMMRadioButton, SIGNAL(toggled(bool)), this, SLOT(actual_mm_dd_HH_MM_toggled(bool)));
-	connect(ui->actualHHMMSSRadioButton, SIGNAL(toggled(bool)), this, SLOT(actual_HH_MM_SS_toggled(bool)));
-	connect(ui->actualHHMMRadioButton, SIGNAL(toggled(bool)), this, SLOT(actual_HH_MM_toggled(bool)));
+	connect(ui->actualYYYYMMDDHHHHMMSSRadioButton, &QRadioButton::toggled, this, &TimeFormatEditWidget::actual_yyyy_mm_dd_HH_MM_SS_toggled);
+	connect(ui->actualYYYYMMDDHHHHMMRadioButton, &QRadioButton::toggled, this, &TimeFormatEditWidget::actual_yyyy_mm_dd_HH_MM_toggled);
+	connect(ui->actualMMDDHHMMSSRadioButton, &QRadioButton::toggled, this, &TimeFormatEditWidget::actual_mm_dd_HH_MM_SS_toggled);
+	connect(ui->actualMMDDHHMMRadioButton, &QRadioButton::toggled, this, &TimeFormatEditWidget::actual_mm_dd_HH_MM_toggled);
+	connect(ui->actualHHMMSSRadioButton, &QRadioButton::toggled, this, &TimeFormatEditWidget::actual_HH_MM_SS_toggled);
+	connect(ui->actualHHMMRadioButton, &QRadioButton::toggled, this, &TimeFormatEditWidget::actual_HH_MM_toggled);
+	connect(ui->showActualRadioButton, &QRadioButton::toggled, this, &TimeFormatEditWidget::setShowActualTime);
 }
 
 TimeFormatEditWidget::~TimeFormatEditWidget()
@@ -34,6 +35,13 @@ void TimeFormatEditWidget::setActualTimeAvailable(bool available)
 void TimeFormatEditWidget::setActualTimeNotAvailable(bool notAvailable)
 {
 	setActualTimeAvailable(! notAvailable);
+}
+
+void TimeFormatEditWidget::setShowActualTime(bool show)
+{
+	if (! show) {
+		ui->showTimeZoneCheckBox->setChecked(false);
+	}
 }
 
 TimeFormat TimeFormatEditWidget::timeFormat() const
@@ -114,6 +122,16 @@ QString TimeFormatEditWidget::customTimeFormat() const
 void TimeFormatEditWidget::setCustomTimeFormat(const QString& customFormat)
 {
 	ui->actualCustomLineEdit->setText(customFormat);
+}
+
+bool TimeFormatEditWidget::showTimeZone() const
+{
+	return ui->showTimeZoneCheckBox->isChecked();
+}
+
+void TimeFormatEditWidget::setShowTimeZone(bool show)
+{
+	return ui->showTimeZoneCheckBox->setChecked(show);
 }
 
 void TimeFormatEditWidget::actual_yyyy_mm_dd_HH_MM_SS_toggled(bool toggled)

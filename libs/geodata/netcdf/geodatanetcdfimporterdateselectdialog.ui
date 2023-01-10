@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>337</width>
-    <height>166</height>
+    <width>347</width>
+    <height>183</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -77,7 +77,7 @@
       </widget>
      </item>
      <item row="2" column="0">
-      <widget class="QLabel" name="unitsLabel_2">
+      <widget class="QLabel" name="timeLabel">
        <property name="text">
         <string>Original time:</string>
        </property>
@@ -85,6 +85,16 @@
      </item>
      <item row="2" column="1">
       <widget class="QDateTimeEdit" name="dateTimeEdit"/>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLabel" name="timeZoneLabel">
+       <property name="text">
+        <string>Time Zone:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QTimeZoneSelectComboBox" name="timeZoneComboBox"/>
      </item>
     </layout>
    </item>
@@ -116,6 +126,13 @@
   <zorder>warningLabel</zorder>
   <zorder>verticalSpacer</zorder>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QTimeZoneSelectComboBox</class>
+   <extends>QComboBox</extends>
+   <header>misc/qtimezoneselectcombobox.h</header>
+  </customwidget>
+ </customwidgets>
  <tabstops>
   <tabstop>importUnitsAsComboBox</tabstop>
   <tabstop>dateTimeEdit</tabstop>

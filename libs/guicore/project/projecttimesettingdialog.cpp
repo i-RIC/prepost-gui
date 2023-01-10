@@ -1,6 +1,9 @@
 #include "projecttimesettingdialog.h"
 #include "ui_projecttimesettingdialog.h"
 
+#include <QRegExp>
+#include <QTimeZone>
+
 ProjectTimeSettingDialog::ProjectTimeSettingDialog(QWidget *parent) :
 	QDialog(parent),
 	ui(new Ui::ProjectTimeSettingDialog)
@@ -20,7 +23,9 @@ QDateTime ProjectTimeSettingDialog::zeroDateTime() const
 	if (ui->zeroTimeDisableCheckBox->isChecked()) {
 		return QDateTime();
 	} else {
-		return ui->zeroTimeEdit->dateTime();
+		auto dt = ui->zeroTimeEdit->dateTime();
+		dt.setTimeZone(timeZone());
+		return dt.toUTC();
 	}
 }
 
@@ -36,6 +41,20 @@ void ProjectTimeSettingDialog::setZeroDateTime(const QDateTime& zeroDateTime)
 	} else {
 		ui->zeroTimeEdit->setDateTime(zeroDateTime);
 	}
+}
+
+QTimeZone ProjectTimeSettingDialog::timeZone() const
+{
+	return ui->timeZoneComboBox->timeZone();
+}
+
+void ProjectTimeSettingDialog::setTimeZone(const QTimeZone& timeZone)
+{
+	ui->timeZoneComboBox->setTimeZone(timeZone);
+	auto dt = ui->zeroTimeEdit->dateTime();
+	dt.setTimeZone(QTimeZone::utc());
+	auto dt2 = dt.toTimeZone(timeZone);
+	ui->zeroTimeEdit->setDateTime(dt2);
 }
 
 TimeFormat ProjectTimeSettingDialog::timeFormat() const
@@ -56,4 +75,14 @@ QString ProjectTimeSettingDialog::customTimeFormat() const
 void ProjectTimeSettingDialog::setCustomTimeFormat(const QString& format)
 {
 	ui->timeFormatWidget->setCustomTimeFormat(format);
+}
+
+bool ProjectTimeSettingDialog::showTimeZone() const
+{
+	return ui->timeFormatWidget->showTimeZone();
+}
+
+void ProjectTimeSettingDialog::setShowTimeZone(bool show)
+{
+	ui->timeFormatWidget->setShowTimeZone(show);
 }

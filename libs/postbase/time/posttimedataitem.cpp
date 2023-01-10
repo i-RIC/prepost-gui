@@ -20,10 +20,11 @@
 #include <vtkTextProperty.h>
 
 PostTimeDataItem::Setting::Setting() :
-	CompositeContainer ({&useProjectSetting, &timeFormat, &customTimeFormat, &fontSetting}),
+	CompositeContainer ({&useProjectSetting, &timeFormat, &customTimeFormat, &showTimeZone, &fontSetting}),
 	useProjectSetting {"useProjectSetting", true},
 	timeFormat {"format", TimeFormat::elapsed_SS_sec},
 	customTimeFormat {"customFormat", ""},
+	showTimeZone {"showTimeZone", false},
 	fontSetting {}
 {
 	fontSetting.fontSize = FONTSIZE;
@@ -111,6 +112,7 @@ QDialog* PostTimeDataItem::propertyDialog(QWidget* parent)
 	if (m_setting.useProjectSetting) {
 		m_setting.timeFormat = mainFile->timeFormat();
 		m_setting.customTimeFormat = mainFile->customTimeFormat();
+		m_setting.showTimeZone = mainFile->showTimeZone();
 	}
 
 	PostTimeEditDialog* dialog = new PostTimeEditDialog(parent);
@@ -137,14 +139,21 @@ void PostTimeDataItem::updateActorSettings()
 	QDateTime zeroDateTime = mainFile->zeroDateTime();
 	auto format = mainFile->timeFormat();
 	auto customFormat = mainFile->customTimeFormat();
+	auto showTimeZone = mainFile->showTimeZone();
 
 	double time = postSolutionInfo()->currentTimeStep();
 
 	if (! m_setting.useProjectSetting) {
 		format = m_setting.timeFormat.value();
 		customFormat = m_setting.customTimeFormat.value();
+		showTimeZone = m_setting.showTimeZone;
 	}
-	QString timeStr = QString("Time: %1").arg(TimeFormatUtil::formattedString(zeroDateTime, time, format, customFormat));
+	auto formattedStr = TimeFormatUtil::formattedString(zeroDateTime, time, format, customFormat);
+	if (showTimeZone) {
+		formattedStr += " (" + mainFile->timeZone().displayName(QTimeZone::StandardTime) + ")";
+	}
+
+	QString timeStr = QString("Time: %1").arg(formattedStr);
 
 	m_timeActor->SetInput(iRIC::toStr(timeStr).c_str());
 	m_timeActor->SetTextScaleModeToNone();

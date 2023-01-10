@@ -21,12 +21,15 @@ public:
 public slots:
 	void setActualTimeAvailable(bool available);
 	void setActualTimeNotAvailable(bool notAvailable);
+	void setShowActualTime(bool show);
 
 public:
 	TimeFormat timeFormat() const;
 	void setTimeFormat(TimeFormat timeFormat);
 	QString customTimeFormat() const;
 	void setCustomTimeFormat(const QString& customTimeFormat);
+	bool showTimeZone() const;
+	void setShowTimeZone(bool show);
 
 private slots:
 	void actual_yyyy_mm_dd_HH_MM_SS_toggled(bool toggled);

@@ -4,6 +4,7 @@
 #include <QWidget>
 
 class GridAttributeDimensionContainer;
+class ProjectMainFile;
 
 class GridAttributeDimensionSelectWidget : public QWidget
 {
@@ -15,6 +16,8 @@ public:
 
 	GridAttributeDimensionContainer* container() const;
 
+	void setProjectMainFile(ProjectMainFile* mainFile);
+
 protected slots:
 	void applyValues();
 	void setCurrentIndex(int newIndex);
@@ -22,11 +25,15 @@ protected slots:
 signals:
 	void currentIndexChanged(int newIndex);
 
+protected:
+	ProjectMainFile* projectMainFile() const;
+
 private:
 	virtual void doApplyValues() = 0;
 	virtual void doSetCurrentIndex(int newIndex) = 0;
 
 	GridAttributeDimensionContainer* m_container;
+	ProjectMainFile* m_projectMainFile;
 };
 
 #endif // GRIDATTRIBUTEDIMENSIONSELECTWIDGET_H

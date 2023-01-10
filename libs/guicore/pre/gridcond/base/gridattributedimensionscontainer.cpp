@@ -1,3 +1,5 @@
+#include "../../../project/projectdata.h"
+#include "../../../project/projectdataitem.h"
 #include "../../../solverdef/solverdefinitiongridattribute.h"
 #include "../../../solverdef/solverdefinitiongridattributedimension.h"
 #include "../../base/preprocessorgeodatagroupdataiteminterface.h"
@@ -5,14 +7,15 @@
 #include "gridattributedimensionscontainer.h"
 #include "private/gridattributedimensionscontainer_impl.h"
 
-GridAttributeDimensionsContainer::GridAttributeDimensionsContainer(SolverDefinitionGridAttribute* conddef, QObject* parent) :
-	QObject {parent},
+GridAttributeDimensionsContainer::GridAttributeDimensionsContainer(SolverDefinitionGridAttribute* conddef, ProjectDataItem* parent) :
+	ProjectDataItem {parent},
 	impl {new Impl {}}
 {
 	for (auto dim : conddef->dimensions()) {
 		GridAttributeDimensionContainer* cont = dim->buildContainer();
 		impl->m_containers.push_back(cont);
 		GridAttributeDimensionSelectWidget* widget = dim->buildSelectWidget(cont);
+		widget->setProjectMainFile(projectData()->mainfile());
 		impl->m_selectWidgets.push_back(widget);
 
 		connect(cont, SIGNAL(valuesChanged()), this, SIGNAL(valuesChanged()));
@@ -110,6 +113,12 @@ int GridAttributeDimensionsContainer::maxIndex() const
 	return max - 1;
 }
 
+
+ProjectData* GridAttributeDimensionsContainer::projectData()
+{
+	return ProjectDataItem::projectData();
+}
+
 int GridAttributeDimensionsContainer::calculateIndex(GridAttributeDimensionContainer* cont, int index, int size) const
 {
 	int ret = 0;
@@ -142,3 +151,9 @@ void GridAttributeDimensionsContainer::handleIndexChange(bool noDraw)
 		gItem->renderGraphicsView();
 	}
 }
+
+void GridAttributeDimensionsContainer::doLoadFromProjectMainFile(const QDomNode&)
+{}
+
+void GridAttributeDimensionsContainer::doSaveToProjectMainFile(QXmlStreamWriter&)
+{}
