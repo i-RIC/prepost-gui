@@ -14,6 +14,7 @@
 #include <QMenu>
 #include <QSlider>
 #include <QTimer>
+#include <QTimeZone>
 
 AnimationController::AnimationController(iRICMainWindow *parent) :
 	m_followLastStep {true},

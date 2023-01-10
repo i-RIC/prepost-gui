@@ -13,6 +13,7 @@
 #include <QIcon>
 #include <QSettings>
 #include <QStandardItem>
+#include <QTimeZone>
 #include <QXmlStreamWriter>
 
 #include <vtkActor2DCollection.h>
