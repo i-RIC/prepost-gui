@@ -217,6 +217,23 @@ bool readRivFile(const QString& fname, std::vector<GeoDataRiverSurveyImporter::R
 	}
 	f.close();
 
+	if (mode == 1) {
+		// there is not x-section data. create it automatically.
+
+		for (GeoDataRiverSurveyImporter::RivPathPoint* p : *points) {
+			auto length = iRIC::length(p->rightBank - p->leftBank);
+			GeoDataRiverSurveyImporter::Alt left;
+			left.distance = 0;
+			left.elevation = 0;
+			p->altitudes.push_back(left);
+			GeoDataRiverSurveyImporter::Alt right;
+			right.distance = length;
+			left.elevation = 0;
+			p->altitudes.push_back(right);
+		}
+		*with4points = false;
+	}
+
 	std::vector<GeoDataRiverSurveyImporter::ProblemsDialog::Problem> problems;
 	for (GeoDataRiverSurveyImporter::RivPathPoint* p : *points) {
 		GeoDataRiverSurveyImporter::ProblemsDialog::Problem problem;
@@ -247,7 +264,8 @@ bool readRivFile(const QString& fname, std::vector<GeoDataRiverSurveyImporter::R
 
 	GeoDataRiverSurveyImporter::removePointsWithoutBanks(points);
 	GeoDataRiverSurveyImporter::removePointsWithoutAltitudes(points);
-	return (mode == 2);
+
+	return true;
 }
 
 GeoDataRiverSurveyImporter::Alt lowestAlt(const std::vector<GeoDataRiverSurveyImporter::Alt>& alts)
