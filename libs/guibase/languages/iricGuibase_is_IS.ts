@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="is_IS">
 <context>
     <name>AsciiOnlyLineEdit</name>
@@ -483,9 +485,9 @@
     </message>
     <message>
         <source>Specify the number format in printf format. For example:
-   "%5.2f" for 3.141592 --&gt; 3.14
-   "%4.2e" for 12300  --&gt; 1.23e+004</source>
-        <translation>Tilgreindu númerasniðið á printf sniði. Til dæmis: " %5.2f "fyrir 3.141592 -&gt; 3.14" %4.2e "fyrir 12300 -&gt; 1.23e+004</translation>
+   &quot;%5.2f&quot; for 3.141592 --&gt; 3.14
+   &quot;%4.2e&quot; for 12300  --&gt; 1.23e+004</source>
+        <translation>Tilgreindu númerasniðið á printf sniði. Til dæmis: &quot; %5.2f &quot;fyrir 3.141592 -&gt; 3.14&quot; %4.2e &quot;fyrir 12300 -&gt; 1.23e+004</translation>
     </message>
     <message>
         <source>Orientation :</source>
@@ -641,6 +643,10 @@
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can use following symbols to define custom time format:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Year: YYYY, YY&lt;/li&gt;&lt;li&gt;Month: M, MM, MMM, MMMM (MMM for Jan etc., MMMM for January etc.)&lt;/li&gt;&lt;li&gt;Day: d, dd, ddd, dddd (ddd for Mon etc., dddd for Monday etc.)&lt;/li&gt;&lt;li&gt;Hour: H, HH, h, hh (h, hh for AM / PM display)&lt;/li&gt;&lt;li&gt;Minute: m, mm&lt;/li&gt;&lt;li&gt;Second: s, ss&lt;/li&gt;&lt;li&gt;AM / PM: A, a&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Þú getur notað eftirfarandi tákn til að skilgreina sérsniðið tímasnið: &lt;/p&gt; &lt;ul&gt; &lt;li&gt; Ár: YYYY, YY &lt;/li&gt; &lt;li&gt; Mánuður: M, MM, MMM, MMMM (MMM fyrir Jan o.fl., MMMM fyrir janúar osfrv.) &lt;/li&gt; &lt;li&gt; Dagur: d, dd, ddd, dddd (ddd fyrir mán o.fl., dddd fyrir mánudag o.s.frv.) &lt;/Li &gt; &lt;li&gt; Klukkustund: H, HH, h, hh (h, hh fyrir AM/PM skjá) &lt;/li&gt; &lt;li&gt; Mínúta: m, mm &lt;/li&gt; &lt;li&gt; Í öðru lagi: s, ss &lt;/li &gt; &lt;li&gt; AM/PM: A, a &lt;/li&gt; &lt;/ul&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
+    <message>
+        <source>Show Time Zone</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>TooltipLabel</name>
@@ -665,6 +671,13 @@
     <message>
         <source>Please wait...</source>
         <translation>Vinsamlegast bíðið...</translation>
+    </message>
+</context>
+<context>
+    <name>WaitDialogExecuterWatcher</name>
+    <message>
+        <source>Please wait...</source>
+        <translation type="unfinished">Vinsamlegast bíðið...</translation>
     </message>
 </context>
 <context>

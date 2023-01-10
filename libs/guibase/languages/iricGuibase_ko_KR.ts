@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ko_KR">
 <context>
     <name>AsciiOnlyLineEdit</name>
@@ -483,9 +485,9 @@
     </message>
     <message>
         <source>Specify the number format in printf format. For example:
-   "%5.2f" for 3.141592 --&gt; 3.14
-   "%4.2e" for 12300  --&gt; 1.23e+004</source>
-        <translation>숫자 형식을 printf 형식으로 지정합니다. 예를 들어: " %5.2f" 3.141592 --&gt; 3.14 " %4 12300의 경우.2e" --&gt; 1.23e+004</translation>
+   &quot;%5.2f&quot; for 3.141592 --&gt; 3.14
+   &quot;%4.2e&quot; for 12300  --&gt; 1.23e+004</source>
+        <translation>숫자 형식을 printf 형식으로 지정합니다. 예를 들어: &quot; %5.2f&quot; 3.141592 --&gt; 3.14 &quot; %4 12300의 경우.2e&quot; --&gt; 1.23e+004</translation>
     </message>
     <message>
         <source>Orientation :</source>
@@ -641,6 +643,10 @@
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can use following symbols to define custom time format:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Year: YYYY, YY&lt;/li&gt;&lt;li&gt;Month: M, MM, MMM, MMMM (MMM for Jan etc., MMMM for January etc.)&lt;/li&gt;&lt;li&gt;Day: d, dd, ddd, dddd (ddd for Mon etc., dddd for Monday etc.)&lt;/li&gt;&lt;li&gt;Hour: H, HH, h, hh (h, hh for AM / PM display)&lt;/li&gt;&lt;li&gt;Minute: m, mm&lt;/li&gt;&lt;li&gt;Second: s, ss&lt;/li&gt;&lt;li&gt;AM / PM: A, a&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;다음 기호를 사용하여 사용자 지정 시간 형식을 정의할 수 있습니다.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;연도: YYYY, YY&lt;/li&gt;&lt;li&gt;월: M, MM, MMM, MMMM(1월은 MMM, 1월은 MMMM 등)&lt;/li&gt;&lt;li&gt;요일: d, dd, ddd, dddd(월은 ddd, 월요일은 dddd 등)&lt;/li &gt;&lt;li&gt;시: H, HH, h, hh(AM/PM 디스플레이의 경우 h, hh)&lt;/li&gt;&lt;li&gt;분: m, mm&lt;/li&gt;&lt;li&gt;초: s, ss&lt;/li &gt;&lt;li&gt;오전/오후: 에이&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
+    <message>
+        <source>Show Time Zone</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>TooltipLabel</name>
@@ -665,6 +671,13 @@
     <message>
         <source>Please wait...</source>
         <translation>기다리세요...</translation>
+    </message>
+</context>
+<context>
+    <name>WaitDialogExecuterWatcher</name>
+    <message>
+        <source>Please wait...</source>
+        <translation type="unfinished">기다리세요...</translation>
     </message>
 </context>
 <context>

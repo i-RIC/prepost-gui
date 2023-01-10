@@ -52,6 +52,7 @@ void setupWaitDialog(WaitDialog* dialog, const std::vector<QString>& filenames)
 
 GeoDataNetcdfGdalImporter::GeoDataNetcdfGdalImporter(GeoDataCreator* creator) :
 	GeoDataImporter {"gdal", tr("GDAL"), creator},
+	m_timeZone {QTimeZone::utc()},
 	m_matcher	{nullptr}
 {}
 
@@ -154,6 +155,7 @@ bool GeoDataNetcdfGdalImporter::doInitForSingleMode(const QString& filename, con
 
 bool GeoDataNetcdfGdalImporter::doInitForTimeMode(const QString& filename, const QString& /*selectedFilter*/, int* count, SolverDefinitionGridAttribute* /*condition*/, PreProcessorGeoDataGroupDataItemInterface* item, QWidget* w)
 {
+	m_timeZone = item->projectData()->mainfile()->timeZone();
 
 	auto timeContainer = dynamic_cast<GridAttributeDimensionRealContainer*> (item->dimensions()->containers().at(0));
 	if (timeContainer->values().size() != 0) {
@@ -190,6 +192,7 @@ bool GeoDataNetcdfGdalImporter::doInitForTimeMode(const QString& filename, const
 		QFileInfo finfo(fname);
 		bool ok;
 		QDateTime dt = m_matcher->getDateTime(finfo.fileName(), &ok);
+		dt.setTimeZone(m_timeZone);
 		timeVals.push_back(dt.toMSecsSinceEpoch() / 1000.0);
 	}
 
@@ -422,6 +425,7 @@ bool GeoDataNetcdfGdalImporter::setupFileNamePattern(const QString& filename, QW
 	}
 
 	GeoDataNetcdfFileNamePatternDialog dialog(w);
+	dialog.setTimeZone(m_timeZone);
 	dialog.setFilename(filename);
 	if (m_matcher != nullptr) {
 		dialog.setPattern(m_matcher->pattern());
@@ -431,6 +435,7 @@ bool GeoDataNetcdfGdalImporter::setupFileNamePattern(const QString& filename, QW
 	if (ret == QDialog::Rejected) {return false;}
 
 	m_matcher = dialog.matcher();
+	m_timeZone = dialog.timeZone();
 
 	return (m_matcher != nullptr);
 }

@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="et_EE">
 <context>
     <name>AsciiOnlyLineEdit</name>
@@ -483,9 +485,9 @@
     </message>
     <message>
         <source>Specify the number format in printf format. For example:
-   "%5.2f" for 3.141592 --&gt; 3.14
-   "%4.2e" for 12300  --&gt; 1.23e+004</source>
-        <translation>Määrake numbrivorming printf -vormingus. Näiteks: " %5.2f "3.141592 jaoks -&gt; 3,14" %4.2e "12300 jaoks -&gt; 1,23e+004</translation>
+   &quot;%5.2f&quot; for 3.141592 --&gt; 3.14
+   &quot;%4.2e&quot; for 12300  --&gt; 1.23e+004</source>
+        <translation>Määrake numbrivorming printf -vormingus. Näiteks: &quot; %5.2f &quot;3.141592 jaoks -&gt; 3,14&quot; %4.2e &quot;12300 jaoks -&gt; 1,23e+004</translation>
     </message>
     <message>
         <source>Orientation :</source>
@@ -641,6 +643,10 @@
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can use following symbols to define custom time format:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Year: YYYY, YY&lt;/li&gt;&lt;li&gt;Month: M, MM, MMM, MMMM (MMM for Jan etc., MMMM for January etc.)&lt;/li&gt;&lt;li&gt;Day: d, dd, ddd, dddd (ddd for Mon etc., dddd for Monday etc.)&lt;/li&gt;&lt;li&gt;Hour: H, HH, h, hh (h, hh for AM / PM display)&lt;/li&gt;&lt;li&gt;Minute: m, mm&lt;/li&gt;&lt;li&gt;Second: s, ss&lt;/li&gt;&lt;li&gt;AM / PM: A, a&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Kohandatud ajavormingu määramiseks saate kasutada järgmisi sümboleid: &lt;/p&gt; &lt;ul&gt; &lt;li&gt; Aasta: AAAA, AAAA &lt;/li&gt; &lt;li&gt; Kuu: M, KK, KKM, KKMM (jaanuari MMM, jaanuari MMMM jne) &lt;/li&gt; &lt;li&gt; Päev: d, dd, ddd, dddd (ddd esmaspäeval jne, dddd esmaspäeval jne) &lt;/li &gt; &lt;li&gt; Tund: H, HH, h, hh (h, hh AM/PM kuva puhul) &lt;/li&gt; &lt;li&gt; Minut: m, mm &lt;/li&gt; &lt;li&gt; Teiseks: s, ss &lt;/li &gt; &lt;li&gt; AM/PM: A, a &lt;/li&gt; &lt;/ul&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
+    <message>
+        <source>Show Time Zone</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>TooltipLabel</name>
@@ -665,6 +671,13 @@
     <message>
         <source>Please wait...</source>
         <translation>Palun oota...</translation>
+    </message>
+</context>
+<context>
+    <name>WaitDialogExecuterWatcher</name>
+    <message>
+        <source>Please wait...</source>
+        <translation type="unfinished">Palun oota...</translation>
     </message>
 </context>
 <context>

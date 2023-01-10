@@ -20,6 +20,9 @@ public:
 	void setFilename(const QString& filename);
 	void setPattern(const QString& pattern);
 
+	QTimeZone timeZone() const;
+	void setTimeZone(const QTimeZone& timeZone);
+
 	GeoDataNetcdfFileNameMatcher* matcher();
 
 private slots:

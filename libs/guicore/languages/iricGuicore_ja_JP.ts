@@ -32,11 +32,11 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>警告</translation>
+        <translation type="vanished">警告</translation>
     </message>
     <message>
         <source>In file %1, x-coordinate increment per pixel and y-coordinate increment per pixel mismatches. It is acceptable, but it may be wrong.</source>
-        <translation>ファイル %1 で、X方向のピクセルごとの増分と、Y方向のピクセル方向の増分が一致していません。このままでも読み込むことはできますが、恐らく設定が間違っています。</translation>
+        <translation type="vanished">ファイル %1 で、X方向のピクセルごとの増分と、Y方向のピクセル方向の増分が一致していません。このままでも読み込むことはできますが、恐らく設定が間違っています。</translation>
     </message>
     <message>
         <source>Information</source>
@@ -2378,7 +2378,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>This project file cannot be read, because it was created by too old iRIC (version %1).</source>
-        <translation>このプロジェクトファイルを読み込むことができません。古い iRIC (バージョン %1) で作成されたファイルです。</translation>
+        <translation type="vanished">このプロジェクトファイルを読み込むことができません。古い iRIC (バージョン %1) で作成されたファイルです。</translation>
     </message>
     <message>
         <source>This project file cannot be read, because it was created by newer iRIC (version %1).</source>
@@ -2420,6 +2420,10 @@ Do you really want to import this file?</source>
         <source>Error occured while opening CGNS file in project file : Case1.cgn</source>
         <translation>プロジェクトファイル内のCGNSファイルを開けませんでした: Case1.cgn</translation>
     </message>
+    <message>
+        <source>Copying image %1 to %2 failed.</source>
+        <translation>画像 %1 を %2 にコピーする処理が失敗しました。</translation>
+    </message>
 </context>
 <context>
     <name>ProjectMainFile::Impl</name>
@@ -2449,6 +2453,14 @@ Do you really want to import this file?</source>
     <message>
         <source>Time display format</source>
         <translation>時間の表示書式</translation>
+    </message>
+    <message>
+        <source>TimeZone:</source>
+        <translation type="vanished">タイムゾーン:</translation>
+    </message>
+    <message>
+        <source>Time Zone:</source>
+        <translation>タイムゾーン:</translation>
     </message>
 </context>
 <context>

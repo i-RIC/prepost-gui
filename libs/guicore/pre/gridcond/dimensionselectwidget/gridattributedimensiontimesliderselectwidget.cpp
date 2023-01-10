@@ -1,4 +1,5 @@
 #include "../base/gridattributedimensioncontainer.h"
+#include "../../../project/projectmainfile.h"
 #include "gridattributedimensiontimesliderselectwidget.h"
 
 #include <guibase/irictoolbar.h>
@@ -91,16 +92,20 @@ void GridAttributeDimensionTimeSliderSelectWidget::doApplyValues()
 
 QString GridAttributeDimensionTimeSliderSelectWidget::stepLabel(int index) const
 {
+	if (index == -1) {return "";}
 	QVariant value = container()->variantValue(index);
 	if (m_isTime) {
 		double dblDatetime = value.toDouble();
 		int intDateTime = static_cast<int>(dblDatetime);
 		QDateTime dateTime = QDateTime::fromTime_t(intDateTime, Qt::UTC);
 		int msec = static_cast<int>((dblDatetime - intDateTime) * 1000);
+		dateTime.setTimeZone(QTimeZone::utc());
+		auto tz = projectMainFile()->timeZone();
+		auto datetime2 = dateTime.toTimeZone(tz);
 
 		QString ret;
 		QTextStream out(&ret);
-		out << dateTime.toString("yyyy-MM-dd HH:mm:ss");
+		out << datetime2.toString("yyyy-MM-dd HH:mm:ss") << " (" << tz.displayName(QTimeZone::StandardTime) << ")";
 		if (msec != 0) {
 			out << ".";
 			out.setFieldWidth(3);

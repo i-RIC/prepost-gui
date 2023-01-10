@@ -95,15 +95,19 @@ void ProjectPropertyBasicInfoWidget::showTimeDialog()
 
 	ProjectTimeSettingDialog dialog(this);
 	dialog.setZeroDateTime(mainFile->zeroDateTime());
+	dialog.setTimeZone(mainFile->timeZone());
 	dialog.setTimeFormat(mainFile->timeFormat());
 	dialog.setCustomTimeFormat(mainFile->customTimeFormat());
+	dialog.setShowTimeZone(mainFile->showTimeZone());
 
 	int ret = dialog.exec();
 	if (ret == QDialog::Rejected) {return;}
 
 	mainFile->setZeroDateTime(dialog.zeroDateTime());
+	mainFile->setTimeZone(dialog.timeZone());
 	mainFile->setTimeFormat(dialog.timeFormat());
 	mainFile->setCustomTimeFormat(dialog.customTimeFormat());
+	mainFile->setShowTimeZone(dialog.showTimeZone());
 
 	updateTimeString();
 }
@@ -142,9 +146,14 @@ void ProjectPropertyBasicInfoWidget::updateTimeString()
 	QString timeStr = tr("(Not specified)");
 	auto zdt = mainFile->zeroDateTime();
 	if (! zdt.isNull()) {
-		timeStr = TimeFormatUtil::formattedString(zdt, 0, TimeFormat::actual_yyyy_mm_dd_HH_MM_SS, "");
+		auto zdt2 = zdt.toTimeZone(mainFile->timeZone());
+		timeStr = TimeFormatUtil::formattedString(zdt2, 0, TimeFormat::actual_yyyy_mm_dd_HH_MM_SS, "");
+		timeStr += " (" + mainFile->timeZone().displayName(QTimeZone::StandardTime) + ")";
 	}
 	QString formatStr = TimeFormatUtil::formatString(mainFile->timeFormat(), mainFile->customTimeFormat());
+	if (mainFile->showTimeZone()) {
+		formatStr += " (" + mainFile->timeZone().displayName(QTimeZone::StandardTime) + ")";
+	}
 
 	ui->timeValueLabel->setText(QString("%1 : %2").arg(timeStr).arg(formatStr));
 }

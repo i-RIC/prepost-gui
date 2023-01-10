@@ -13,13 +13,23 @@ class GeoDataNetcdfImporterDateSelectDialog : public QDialog
 	Q_OBJECT
 
 public:
+	enum class TimeUnit {
+		Years,
+		Days,
+		Hours,
+		Minutes,
+		Seconds,
+	};
+
 	explicit GeoDataNetcdfImporterDateSelectDialog(QWidget* parent = 0);
 	~GeoDataNetcdfImporterDateSelectDialog();
 
 	void setUnit(const QString& unit);
 	void setOriginalDateTime(const QDateTime& orig);
 	QDateTime originalDateTime() const;
-	QString unit() const;
+	TimeUnit timeUnit() const;
+	QTimeZone timeZone() const;
+	static int timeUnitScale(TimeUnit unit);
 
 private:
 	Ui::GeoDataNetcdfImporterDateSelectDialog* ui;

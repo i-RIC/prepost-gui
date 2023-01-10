@@ -17,6 +17,7 @@
 #include <QRegExp>
 #include <QString>
 #include <QStringList>
+#include <QTimeZone>
 
 #include <udunits2.h>
 
@@ -453,22 +454,56 @@ std::vector<QVariant> GeoDataNetcdfImporter::convertTimeValues(QString units, co
 	ut_unit* second = ut_get_unit_by_name(unitSystem, "second");
 	ut_unit* unixTime = ut_offset_by_time(second, ut_encode_time(1970, 1, 1, 0, 0, 0.0));
 
-	std::vector<QVariant> ret;
 	auto unitsStr = iRIC::toStr(units);
 	ut_unit* unit = ut_parse(unitSystem, unitsStr.c_str(), UT_ASCII);
-	if (unit == nullptr) {
-		// error occured while parsing time units
-		QMessageBox::critical(parent, tr("Error"), tr("Error occured while parsing time definition: %1").arg(units));
-		*canceled = true;
+	if (unit != nullptr) {
+		std::vector<QVariant> ret;
+		cv_converter* converter = ut_get_converter(unit, unixTime);
+
+		for (int i = 0; i < values.size(); ++i) {
+			double val = values.at(i).toDouble();
+			double unixTimeVal = cv_convert_double(converter, val);
+			ret.push_back(unixTimeVal);
+		}
 		return ret;
 	}
 
-	cv_converter* converter = ut_get_converter(unit, unixTime);
+	GeoDataNetcdfImporterDateSelectDialog dialog(parent);
+	dialog.setUnit(units);
+	int result = dialog.exec();
 
-	for (int i = 0; i < values.size(); ++i) {
-		double val = values.at(i).toDouble();
-		double unixTimeVal = cv_convert_double(converter, val);
-		ret.push_back(unixTimeVal);
+	if (result == QDialog::Rejected) {
+		*canceled = true;
+		std::vector<QVariant> empty;
+		return empty;
 	}
+
+	QDateTime zeroDate = dialog.originalDateTime();
+	auto timeUnit = dialog.timeUnit();
+	auto timeZone = dialog.timeZone();
+
+	std::vector<QVariant> ret;
+	for (int i = 0; i < values.size(); ++i) {
+		QVariant val = values.at(i);
+		QDateTime d = zeroDate;
+		if (timeUnit == GeoDataNetcdfImporterDateSelectDialog::TimeUnit::Years) {
+			d = d.addYears(val.toInt());
+		} else if (timeUnit == GeoDataNetcdfImporterDateSelectDialog::TimeUnit::Days) {
+			qlonglong days = val.toLongLong();
+			int secs = static_cast<int>((val.toDouble() - days) * 24 * 60 * 60);
+			d = d.addDays(days);
+			d = d.addSecs(secs);
+		} else if (timeUnit == GeoDataNetcdfImporterDateSelectDialog::TimeUnit::Hours) {
+			d = d.addSecs(val.toDouble() * 60 * 60);
+		} else if (timeUnit == GeoDataNetcdfImporterDateSelectDialog::TimeUnit::Minutes) {
+			d = d.addSecs(val.toDouble() * 60);
+		} else if (timeUnit == GeoDataNetcdfImporterDateSelectDialog::TimeUnit::Seconds) {
+			d = d.addSecs(val.toDouble());
+		}
+		d.setTimeZone(timeZone);
+
+		ret.push_back(d.toTime_t());
+	}
+
 	return ret;
 }

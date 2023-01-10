@@ -16,9 +16,6 @@ namespace iRICLib {
 	class H5CgnsFile;
 } // namespace iRICLib
 
-class QDomDocument;
-class QPointF;
-
 class BackgroundImageInfo;
 class CoordinateSystem;
 class iRICMainWindowInterface;
@@ -30,6 +27,10 @@ class SolverDefinitionAbstract;
 class VersionNumber;
 
 class vtkRenderer;
+
+class QDomDocument;
+class QPointF;
+class QTimeZone;
 
 /// ProjectMainFile class represents the project main file ("project.xml") in project data.
 class GUICOREDLL_EXPORT ProjectMainFile : public ProjectDataItem
@@ -113,11 +114,15 @@ public:
 
 	const QDateTime& zeroDateTime() const;
 	void setZeroDateTime(const QDateTime& dt);
+	const QTimeZone& timeZone() const;
+	void setTimeZone(const QTimeZone& timeZone);
 
 	TimeFormat timeFormat() const;
 	void setTimeFormat(TimeFormat format);
 	QString customTimeFormat() const;
 	void setCustomTimeFormat(const QString& format);
+	bool showTimeZone() const;
+	void setShowTimeZone(bool show);
 
 	QPointF offset() const;
 	void setOffset(double x, double y);

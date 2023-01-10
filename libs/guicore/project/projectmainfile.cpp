@@ -111,7 +111,9 @@ ProjectMainFile::Impl::Impl(ProjectMainFile *parent) :
 	m_postProcessors {new ProjectPostProcessors(parent)},
 	m_coordinateSystem {nullptr},
 	m_zeroDateTime {},
+	m_timeZone {QTimeZone::utc()},
 	m_timeFormat {TimeFormat::elapsed_SS_sec},
+	m_showTimeZone {false},
 	m_separateResult {false},
 	m_offset {QPointF(0, 0)},
 	m_isModified {false},
@@ -385,6 +387,9 @@ void ProjectMainFile::doLoadFromProjectMainFile(const QDomNode& node)
 	if (! dt.isEmpty()) {
 		impl->m_zeroDateTime = QDateTime::fromString(dt, Qt::ISODate);
 	}
+	// time zone
+	impl->m_timeZone = QTimeZone(element.attribute("timeZoneOffsetSeconds", "0").toInt());
+
 	// time format
 	QString f = element.attribute("timeFormat", "");
 	impl->m_timeFormat = TimeFormatUtil::fromString(f);
@@ -431,6 +436,7 @@ void ProjectMainFile::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 
 	if (! impl->m_zeroDateTime.isNull()) {
 		writer.writeAttribute("zeroDateTime", impl->m_zeroDateTime.toString(Qt::ISODate));
+		writer.writeAttribute("timeZoneOffsetSeconds", QString::number(impl->m_timeZone.standardTimeOffset(impl->m_zeroDateTime)));
 	}
 	writer.writeAttribute("timeFormat", TimeFormatUtil::toString(impl->m_timeFormat));
 	writer.writeAttribute("customTimeFormat", impl->m_customTimeFormat);
@@ -1034,6 +1040,16 @@ void ProjectMainFile::setZeroDateTime(const QDateTime& dt)
 	impl->m_zeroDateTime = dt;
 }
 
+const QTimeZone& ProjectMainFile::timeZone() const
+{
+	return impl->m_timeZone;
+}
+
+void ProjectMainFile::setTimeZone(const QTimeZone& timeZone)
+{
+	impl->m_timeZone = timeZone;
+}
+
 TimeFormat ProjectMainFile::timeFormat() const
 {
 	return impl->m_timeFormat;
@@ -1052,6 +1068,16 @@ QString ProjectMainFile::customTimeFormat() const
 void ProjectMainFile::setCustomTimeFormat(const QString& format)
 {
 	impl->m_customTimeFormat = format;
+}
+
+bool ProjectMainFile::showTimeZone() const
+{
+	return impl->m_showTimeZone;
+}
+
+void ProjectMainFile::setShowTimeZone(bool show)
+{
+	impl->m_showTimeZone = show;
 }
 
 QPointF ProjectMainFile::offset() const

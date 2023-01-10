@@ -5,6 +5,8 @@
 
 #include <guicore/pre/geodata/geodataimporter.h>
 
+#include <QTimeZone>
+
 #include <vector>
 
 class CoordinateSystem;
@@ -59,6 +61,7 @@ private:
 	double m_transform[6];
 	std::vector<QString> m_filenames;
 	CoordinateSystem* m_coordinateSystem;
+	QTimeZone m_timeZone;
 	Mode m_mode;
 	GeoDataNetcdfFileNameMatcher* m_matcher;
 	bool m_canceled;

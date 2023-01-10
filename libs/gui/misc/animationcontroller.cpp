@@ -327,9 +327,15 @@ void AnimationController::updateStepLabel(int step)
 		auto mainFile = m_parent->projectData()->mainfile();
 		double time = m_timeSteps.at(step);
 		auto zt = mainFile->zeroDateTime();
+		zt.setTimeZone(QTimeZone::utc());
+		auto zt2 = zt.toTimeZone(mainFile->timeZone());
 		auto f = mainFile->timeFormat();
 		auto cf = mainFile->customTimeFormat();
-		m_currentLabel->setText(TimeFormatUtil::formattedString(zt, time, f, cf));
+		auto timeStr = TimeFormatUtil::formattedString(zt2, time, f, cf);
+		if (mainFile->showTimeZone()) {
+			timeStr += " (" + mainFile->timeZone().displayName(QTimeZone::StandardTime)  + ")";
+		}
+		m_currentLabel->setText(timeStr);
 	} else {
 		if (step >= m_iterationSteps.size()) {
 			m_currentLabel->setText("---");

@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="de_DE">
 <context>
     <name>AsciiOnlyLineEdit</name>
@@ -483,9 +485,9 @@
     </message>
     <message>
         <source>Specify the number format in printf format. For example:
-   "%5.2f" for 3.141592 --&gt; 3.14
-   "%4.2e" for 12300  --&gt; 1.23e+004</source>
-        <translation>Geben Sie das Zahlenformat im printf-Format an. Zum Beispiel: " %5.2f" für 3.141592 --&gt; 3.14" %4.2e" für 12300 --&gt; 1.23e+004</translation>
+   &quot;%5.2f&quot; for 3.141592 --&gt; 3.14
+   &quot;%4.2e&quot; for 12300  --&gt; 1.23e+004</source>
+        <translation>Geben Sie das Zahlenformat im printf-Format an. Zum Beispiel: &quot; %5.2f&quot; für 3.141592 --&gt; 3.14&quot; %4.2e&quot; für 12300 --&gt; 1.23e+004</translation>
     </message>
     <message>
         <source>Orientation :</source>
@@ -641,6 +643,10 @@
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can use following symbols to define custom time format:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Year: YYYY, YY&lt;/li&gt;&lt;li&gt;Month: M, MM, MMM, MMMM (MMM for Jan etc., MMMM for January etc.)&lt;/li&gt;&lt;li&gt;Day: d, dd, ddd, dddd (ddd for Mon etc., dddd for Monday etc.)&lt;/li&gt;&lt;li&gt;Hour: H, HH, h, hh (h, hh for AM / PM display)&lt;/li&gt;&lt;li&gt;Minute: m, mm&lt;/li&gt;&lt;li&gt;Second: s, ss&lt;/li&gt;&lt;li&gt;AM / PM: A, a&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Sie können die folgenden Symbole verwenden, um ein benutzerdefiniertes Zeitformat zu definieren:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Jahr: JJJJ, JJ&lt;/li&gt;&lt;li&gt;Monat: M, MM, MMM, MMMM (MMM für Jan usw., MMMM für Januar usw.)&lt;/li&gt;&lt;li&gt;Tag: d, dd, ddd, dddd (ddd für Mo usw., dddd für Montag usw.)&lt;/li &gt;&lt;li&gt;Stunde: H, HH, h, hh (h, hh für AM/PM-Anzeige)&lt;/li&gt;&lt;li&gt;Minute: m, mm&lt;/li&gt;&lt;li&gt;Sekunde: s, ss&lt;/li &gt;&lt;li&gt;AM / PM: A, a&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
+    <message>
+        <source>Show Time Zone</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>TooltipLabel</name>
@@ -665,6 +671,13 @@
     <message>
         <source>Please wait...</source>
         <translation>Warten Sie mal...</translation>
+    </message>
+</context>
+<context>
+    <name>WaitDialogExecuterWatcher</name>
+    <message>
+        <source>Please wait...</source>
+        <translation type="unfinished">Warten Sie mal...</translation>
     </message>
 </context>
 <context>

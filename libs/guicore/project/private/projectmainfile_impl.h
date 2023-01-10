@@ -8,6 +8,7 @@
 
 #include <QDateTime>
 #include <QPointF>
+#include <QTimeZone>
 
 #include <string>
 
@@ -37,8 +38,12 @@ public:
 
 	CoordinateSystem* m_coordinateSystem;
 	QDateTime m_zeroDateTime; // time that corresponds to t = 0
+	QTimeZone m_timeZone;
+
 	TimeFormat m_timeFormat;
 	QString m_customTimeFormat;
+	bool m_showTimeZone;
+
 	bool m_separateResult;
 
 	QPointF m_offset;
