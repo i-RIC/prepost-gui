@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="pl_PL">
 <context>
     <name>AsciiOnlyLineEdit</name>
@@ -485,9 +483,9 @@
     </message>
     <message>
         <source>Specify the number format in printf format. For example:
-   &quot;%5.2f&quot; for 3.141592 --&gt; 3.14
-   &quot;%4.2e&quot; for 12300  --&gt; 1.23e+004</source>
-        <translation>Określ format liczb w formacie printf. Na przykład: &quot; %5.2f&quot; dla 3.141592 --&gt; 3.14&quot; %4.2e&quot; dla 12300 --&gt; 1,23e+004</translation>
+   "%5.2f" for 3.141592 --&gt; 3.14
+   "%4.2e" for 12300  --&gt; 1.23e+004</source>
+        <translation>Określ format liczb w formacie printf. Na przykład: " %5.2f" dla 3.141592 --&gt; 3.14" %4.2e" dla 12300 --&gt; 1,23e+004</translation>
     </message>
     <message>
         <source>Orientation :</source>
@@ -645,7 +643,7 @@
     </message>
     <message>
         <source>Show Time Zone</source>
-        <translation type="unfinished"></translation>
+        <translation>Pokaż strefę czasową</translation>
     </message>
 </context>
 <context>
@@ -677,7 +675,7 @@
     <name>WaitDialogExecuterWatcher</name>
     <message>
         <source>Please wait...</source>
-        <translation type="unfinished">Proszę czekać...</translation>
+        <translation>Proszę czekać...</translation>
     </message>
 </context>
 <context>

@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="hi_IN">
 <context>
     <name>GeoDataNetcdf</name>
@@ -104,8 +102,8 @@
         <translation>परिणाम को पहचानें:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please use the following letters to define pattern:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Year: YYYY&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Month: MM&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Day: DD&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Hour: hh&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Minute: mm&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Second: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;पैटर्न को परिभाषित करने के लिए कृपया निम्नलिखित अक्षरों का प्रयोग करें:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; मार्जिन-नीचे: 0px; मार्जिन-बाएं: 0px; मार्जिन -राइट: 0 पीएक्स; -क्यूटी-लिस्ट-इंडेंट: 1;&quot;&gt;&lt;li स्टाइल=&quot; मार्जिन-टॉप: 12 पीएक्स; मार्जिन-बॉटम: 0 पीएक्स; मार्जिन-लेफ्ट: 0 पीएक्स; मार्जिन-राइट: 0 पीएक्स; -क्यूटी-ब्लॉक- इंडेंट:0; टेक्स्ट-इंडेंट:0px;&quot;&gt;वर्ष: YYYY&lt;/li&gt;&lt;li style=&quot; मार्जिन-टॉप: 0px; मार्जिन-बॉटम: 0px; मार्जिन-लेफ्ट: 0px; मार्जिन-राइट: 0px; -qt) -ब्लॉक-इंडेंट:0; टेक्स्ट-इंडेंट:0px;&quot;&gt;महीना: MM&lt;/li&gt;&lt;li style=&quot; मार्जिन-टॉप: 0px; मार्जिन-बॉटम: 0px; मार्जिन-लेफ्ट: 0px; मार्जिन-राइट: 0px) ; -qt-block-indent:0; text-indent:0px;&quot;&gt;दिन: DD&lt;/li&gt;&lt;li style=&quot; मार्जिन-टॉप: 0px; मार्जिन-बॉटम: 0px; मार्जिन-लेफ्ट: 0px; मार्जिन- दाएं: 0 पीएक्स; -क्यूटी-ब्लॉक-इंडेंट: 0; टेक्स्ट-इंडेंट: 0 पीएक्स;&quot;&gt; घंटा: एचएच&lt;/li&gt;&lt;li शैली = &quot;मार्जिन-टॉप: 0 पीएक्स; मार्जिन-नीचे: 0 पीएक्स; मार्जिन-बाएं: 0 पीएक्स&quot; ; मार्जिन-राइट: 0 पीएक्स; -क्यूटी-ब्लॉक-इंडेंट: 0; टेक्स्ट-इंडेंट: 0 पीएक्स;&quot;&gt;मिनट: मिमी&lt;/li&gt;&lt;li स्टाइल=&quot; मार्जिन-टॉप: 0 पीएक्स; मार्जिन-बॉटम: 12 पीएक्स; मार्जिन- बाएँ:0px; मार्जिन-दाएँ:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;दूसरा: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please use the following letters to define pattern:&lt;/p&gt;&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;"&gt;&lt;li style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Year: YYYY&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Month: MM&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Day: DD&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Hour: hh&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Minute: mm&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Second: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;पैटर्न को परिभाषित करने के लिए कृपया निम्नलिखित अक्षरों का प्रयोग करें:&lt;/p&gt;&lt;ul style="margin-top: 0px; मार्जिन-नीचे: 0px; मार्जिन-बाएं: 0px; मार्जिन -राइट: 0 पीएक्स; -क्यूटी-लिस्ट-इंडेंट: 1;"&gt;&lt;li स्टाइल=" मार्जिन-टॉप: 12 पीएक्स; मार्जिन-बॉटम: 0 पीएक्स; मार्जिन-लेफ्ट: 0 पीएक्स; मार्जिन-राइट: 0 पीएक्स; -क्यूटी-ब्लॉक- इंडेंट:0; टेक्स्ट-इंडेंट:0px;"&gt;वर्ष: YYYY&lt;/li&gt;&lt;li style=" मार्जिन-टॉप: 0px; मार्जिन-बॉटम: 0px; मार्जिन-लेफ्ट: 0px; मार्जिन-राइट: 0px; -qt) -ब्लॉक-इंडेंट:0; टेक्स्ट-इंडेंट:0px;"&gt;महीना: MM&lt;/li&gt;&lt;li style=" मार्जिन-टॉप: 0px; मार्जिन-बॉटम: 0px; मार्जिन-लेफ्ट: 0px; मार्जिन-राइट: 0px) ; -qt-block-indent:0; text-indent:0px;"&gt;दिन: DD&lt;/li&gt;&lt;li style=" मार्जिन-टॉप: 0px; मार्जिन-बॉटम: 0px; मार्जिन-लेफ्ट: 0px; मार्जिन- दाएं: 0 पीएक्स; -क्यूटी-ब्लॉक-इंडेंट: 0; टेक्स्ट-इंडेंट: 0 पीएक्स;"&gt; घंटा: एचएच&lt;/li&gt;&lt;li शैली = "मार्जिन-टॉप: 0 पीएक्स; मार्जिन-नीचे: 0 पीएक्स; मार्जिन-बाएं: 0 पीएक्स" ; मार्जिन-राइट: 0 पीएक्स; -क्यूटी-ब्लॉक-इंडेंट: 0; टेक्स्ट-इंडेंट: 0 पीएक्स;"&gt;मिनट: मिमी&lt;/li&gt;&lt;li स्टाइल=" मार्जिन-टॉप: 0 पीएक्स; मार्जिन-बॉटम: 12 पीएक्स; मार्जिन- बाएँ:0px; मार्जिन-दाएँ:0px; -qt-block-indent:0; text-indent:0px;"&gt;दूसरा: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body &lt;/html&gt;</translation>
     </message>
     <message>
         <source>File name does not match the pattern</source>
@@ -113,7 +111,7 @@
     </message>
     <message>
         <source>Time Zone:</source>
-        <translation type="unfinished"></translation>
+        <translation>समय क्षेत्र:</translation>
     </message>
 </context>
 <context>
@@ -131,8 +129,8 @@
         <translation>यह डेटा निर्यात नहीं किया जा सकता है। ऐसा लगता है कि इसे *.tif या *.asc से आयात नहीं किया गया था।</translation>
     </message>
     <message>
-        <source>This data cannot be exported. Data with &quot;Time&quot; dimension cannot be exported to *.tif or *.asc.</source>
-        <translation>यह डेटा निर्यात नहीं किया जा सकता है। &quot;समय&quot; आयाम वाले डेटा को *.tif या *.asc में निर्यात नहीं किया जा सकता है।</translation>
+        <source>This data cannot be exported. Data with "Time" dimension cannot be exported to *.tif or *.asc.</source>
+        <translation>यह डेटा निर्यात नहीं किया जा सकता है। "समय" आयाम वाले डेटा को *.tif या *.asc में निर्यात नहीं किया जा सकता है।</translation>
     </message>
     <message>
         <source>ArcInfo ASCII files(*.asc)</source>
@@ -205,8 +203,8 @@
         <translation>यह डेटा निर्यात नहीं किया जा सकता है। ऐसा लगता है कि इसे *.png से आयात नहीं किया गया था।</translation>
     </message>
     <message>
-        <source>This data cannot be exported. Data with &quot;Time&quot; dimension cannot be exported to *.png</source>
-        <translation>यह डेटा निर्यात नहीं किया जा सकता है। &quot;समय&quot; आयाम वाले डेटा को *.png. में निर्यात नहीं किया जा सकता</translation>
+        <source>This data cannot be exported. Data with "Time" dimension cannot be exported to *.png</source>
+        <translation>यह डेटा निर्यात नहीं किया जा सकता है। "समय" आयाम वाले डेटा को *.png. में निर्यात नहीं किया जा सकता</translation>
     </message>
     <message>
         <source>Error occured while opening %1</source>
@@ -347,7 +345,7 @@
     </message>
     <message>
         <source>Time Zone:</source>
-        <translation type="unfinished"></translation>
+        <translation>समय क्षेत्र:</translation>
     </message>
 </context>
 <context>
@@ -398,8 +396,8 @@
         <translation>चेतावनी</translation>
     </message>
     <message>
-        <source>X band MP rader data can be imported for grid conditions with dimension &quot;Time&quot;.</source>
-        <translation>एक्स बैंड एमपी रेडर डेटा &quot;समय&quot; आयाम के साथ ग्रिड स्थितियों के लिए आयात किया जा सकता है।</translation>
+        <source>X band MP rader data can be imported for grid conditions with dimension "Time".</source>
+        <translation>एक्स बैंड एमपी रेडर डेटा "समय" आयाम के साथ ग्रिड स्थितियों के लिए आयात किया जा सकता है।</translation>
     </message>
     <message>
         <source>Information</source>

@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ko_KR">
 <context>
     <name>AsciiOnlyLineEdit</name>
@@ -485,9 +483,9 @@
     </message>
     <message>
         <source>Specify the number format in printf format. For example:
-   &quot;%5.2f&quot; for 3.141592 --&gt; 3.14
-   &quot;%4.2e&quot; for 12300  --&gt; 1.23e+004</source>
-        <translation>숫자 형식을 printf 형식으로 지정합니다. 예를 들어: &quot; %5.2f&quot; 3.141592 --&gt; 3.14 &quot; %4 12300의 경우.2e&quot; --&gt; 1.23e+004</translation>
+   "%5.2f" for 3.141592 --&gt; 3.14
+   "%4.2e" for 12300  --&gt; 1.23e+004</source>
+        <translation>숫자 형식을 printf 형식으로 지정합니다. 예를 들어: " %5.2f" 3.141592 --&gt; 3.14 " %4 12300의 경우.2e" --&gt; 1.23e+004</translation>
     </message>
     <message>
         <source>Orientation :</source>
@@ -645,7 +643,7 @@
     </message>
     <message>
         <source>Show Time Zone</source>
-        <translation type="unfinished"></translation>
+        <translation>시간대 표시</translation>
     </message>
 </context>
 <context>
@@ -677,7 +675,7 @@
     <name>WaitDialogExecuterWatcher</name>
     <message>
         <source>Please wait...</source>
-        <translation type="unfinished">기다리세요...</translation>
+        <translation>기다리세요...</translation>
     </message>
 </context>
 <context>
