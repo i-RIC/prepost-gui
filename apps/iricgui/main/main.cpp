@@ -70,6 +70,16 @@ int main(int argc, char* argv[])
 		a.installTranslator(translator);
 	}
 
+	// Qt dictionary
+	QString transFolder = QDir(exeFolder).absoluteFilePath("translations");
+	auto locale_short = locale;
+	if (locale != "zh_TW") {
+		locale_short = locale.left(2);
+	}
+	QTranslator* translator = new QTranslator(&a);
+	translator->load(QString("qt_%1.qm").arg(locale_short), transFolder);
+	a.installTranslator(translator);
+
 	bool check = PeriodicalUpdateChecker::checkUpdate();
 	if (check) {return 0;}
 
