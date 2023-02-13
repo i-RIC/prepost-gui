@@ -1,4 +1,5 @@
 #include "../../solverdef/solverdefinition.h"
+#include "../../solverdef/solverdefinitionabstract.h"
 #include "../../solverdef/solverdefinitiontranslator.h"
 #include "inputconditioncontainerset.h"
 #include "inputconditiondependency.h"
