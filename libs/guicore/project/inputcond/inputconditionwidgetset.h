@@ -33,10 +33,9 @@ public:
 
 private:
 	void buildWidgets(const QDomNode& condNode, InputConditionContainerSet& cset, const SolverDefinition& def, const SolverDefinitionTranslator& t, bool forBC);
-	void buildWidgetsSimple(const QDomNode& contNode, InputConditionContainerSet& cset, const SolverDefinitionTranslator& t);
 	void buildWidgetsCustom(const QDomNode& contNode, InputConditionContainerSet& cset, const SolverDefinition& def, const SolverDefinitionTranslator& t);
 	void buildWidgetsCustomRec(const QDomNode& node, InputConditionContainerSet& cset, const SolverDefinition& def, const SolverDefinitionTranslator& t);
-	void buildWidget(QDomNode& itemNode, InputConditionContainerSet& cset, const SolverDefinitionTranslator& t);
+	void buildWidget(QDomNode& itemNode, InputConditionContainerSet& cset, const SolverDefinition& def, const SolverDefinitionTranslator& t);
 	void buildLabel(QDomNode& itemNode, const SolverDefinitionTranslator& t);
 	void buildImage(QDomNode& itemNode, const SolverDefinition& def, const SolverDefinitionTranslator& t);
 	void buildDeps(const QDomNode&, InputConditionContainerSet& cset, bool forBC);

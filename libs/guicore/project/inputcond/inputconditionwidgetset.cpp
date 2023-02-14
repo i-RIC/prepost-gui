@@ -1,4 +1,5 @@
 #include "../../solverdef/solverdefinition.h"
+#include "../../solverdef/solverdefinitionabstract.h"
 #include "../../solverdef/solverdefinitiontranslator.h"
 #include "inputconditioncontainerset.h"
 #include "inputconditiondependency.h"
@@ -93,18 +94,6 @@ void InputConditionWidgetSet::buildWidgets(const QDomNode& condNode, InputCondit
 	}
 }
 
-void InputConditionWidgetSet::buildWidgetsSimple(const QDomNode& contNode, InputConditionContainerSet& cset, const SolverDefinitionTranslator& t)
-{
-	// access items node
-	QDomNode itemsNode = iRIC::getChildNode(contNode, "Items");
-	if (itemsNode.isNull()) {return;}
-	QDomNodeList items = itemsNode.childNodes();
-	for (int i = 0; i < items.length(); ++i) {
-		QDomNode itemNode = items.item(i);
-		buildWidget(itemNode, cset, t);
-	}
-}
-
 void InputConditionWidgetSet::buildWidgetsCustom(const QDomNode& contNode, InputConditionContainerSet& cset, const SolverDefinition& def, const SolverDefinitionTranslator& t)
 {
 	// get Content Node.
@@ -119,7 +108,7 @@ void InputConditionWidgetSet::buildWidgetsCustomRec(const QDomNode& node, InputC
 		if (c.nodeType() == QDomNode::ElementNode) {
 			if (c.nodeName() == "Item") {
 				// build item.
-				buildWidget(c, cset, t);
+				buildWidget(c, cset, def, t);
 				if (c.toElement().attributes().contains("caption")) {
 					buildLabel(c, t);
 				}
@@ -136,7 +125,7 @@ void InputConditionWidgetSet::buildWidgetsCustomRec(const QDomNode& node, InputC
 	}
 }
 
-void InputConditionWidgetSet::buildWidget(QDomNode& itemNode, InputConditionContainerSet& cset, const SolverDefinitionTranslator& t)
+void InputConditionWidgetSet::buildWidget(QDomNode& itemNode, InputConditionContainerSet& cset, const SolverDefinition& def, const SolverDefinitionTranslator& t)
 {
 	// get the name;
 	QDomElement itemElem = itemNode.toElement();
@@ -177,7 +166,7 @@ void InputConditionWidgetSet::buildWidget(QDomNode& itemNode, InputConditionCont
 				widget = new InputConditionWidgetReal(defNode, t, &(cset.real(parameterName)));
 			}
 		} else if (valuetype == "string") {
-			widget = new InputConditionWidgetString(defNode, t, &(cset.string(parameterName)));
+			widget = new InputConditionWidgetString(defNode, t, &(cset.string(parameterName)), def.abstract().absoluteFolderName());
 		} else if (valuetype == "filename" || valuetype == "filename_all") {
 			widget = new InputConditionWidgetFilename(defNode, t, &(cset.string(parameterName)));
 		} else if (valuetype == "foldername") {
