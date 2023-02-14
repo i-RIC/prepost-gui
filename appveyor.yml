@@ -198,17 +198,27 @@ before_build:
   - ren c:\iricdev-2019-2019 iricdev-2019
   - cd \iricdev-2019
   - ps: |
-      if ($env:APPVEYOR_REPO_NAME -eq "i-RIC/prepost-gui") {
-        $access_token = $env:iric_access_token
-      }
-      if ($env:APPVEYOR_REPO_NAME -eq "scharlton2/prepost-gui") {
-        $access_token = $env:scharlton2_access_token
-      }
-      if ($env:APPVEYOR_REPO_NAME -eq "kskinoue0612/prepost-gui") {
-        $access_token = $env:kskinoue0612_access_token
+      if (!$env:APPVEYOR_PULL_REQUEST_NUMBER) {
+        if ($env:APPVEYOR_REPO_NAME -eq "i-RIC/prepost-gui") {
+          $t = $env:iric_access_token
+        }
+        if ($env:APPVEYOR_REPO_NAME -eq "scharlton2/prepost-gui") {
+          $t = $env:scharlton2_access_token
+        }
+        if ($env:APPVEYOR_REPO_NAME -eq "kskinoue0612/prepost-gui") {
+          $t = $env:kskinoue0612_access_token
+        }
+      } else {
+        # use read-only token
+        $b = ""
+        $b = $b + "Z2l0aHViX3BhdF8xMUFCWlFRRVkwNnB"
+        $b = $b + "hZklhZkRIZGcxX1BSR3BlcEFEU1JzNV"
+        $b = $b + "dnS002UFBqTWJ5aENtNFdudmlwZ09SY"
+        $b = $b + "zAzVTJYWHBISUxRUkhNTHRHRzdtOFpq"
+        $t = [System.Text.Encoding]::ASCII.GetString([System.Convert]::FromBase64String($b))
       }
       # create headers dictionary
-      $h = @{"Authorization" = "token $access_token"}
+      $h = @{"Authorization" = "token $t"}
       $releases_url = "https://api.github.com/repos/i-RIC/iricdev-2019/releases"
       $latest_response = Invoke-WebRequest -Uri $releases_url/latest -Headers $h -Method GET -UseBasicParsing
       $latest = $latest_response.Content | ConvertFrom-Json
