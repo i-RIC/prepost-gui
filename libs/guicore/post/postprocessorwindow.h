@@ -19,15 +19,14 @@ class GUICOREDLL_EXPORT PostProcessorWindow : public QMainWindow, public Snapsho
 public:
 	const static int MINWIDTH;
 	const static int MINHEIGHT;
-	/// Constructor
+
 	PostProcessorWindow(QWidget* parent, int index, PostProcessorWindowProjectDataItem* pdi);
-	/// Destructor
 	virtual ~PostProcessorWindow();
-	/// Set newly created project data.
-	const QIcon& icon() const {return m_icon;}
-	int index() const {return m_index;}
+
+	const QIcon& icon() const;
+	int index() const;
 	virtual void setupDefaultGeometry(int index) = 0;
-	virtual void applyOffset(double /*x_diff*/, double /*y_diff*/) {}
+	virtual void applyOffset(double x_diff, double y_diff);
 
 public slots:
 	// data is updated. re-render the graphics etc.

@@ -1,6 +1,7 @@
 #include "../bc/boundaryconditiondialog.h"
 #include "preprocessorbcdataitem.h"
 #include "preprocessorbcgroupdataitem.h"
+#include "preprocessorgraphicsview.h"
 #include "preprocessorgridandgridcreatingconditiondataitem.h"
 #include "preprocessorgriddataitem.h"
 #include "private/preprocessorbcdataitem_impl.h"
@@ -445,7 +446,8 @@ void PreProcessorBCDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsVi
 		if (impl->m_definingBoundingBox) {
 			bool selected = false;
 			if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pNode) {
-				tmpparent->nodeSelectingMouseReleaseEvent(event, v);
+				auto v2 = dynamic_cast<VTK2DGraphicsView*> (v);
+				tmpparent->nodeSelectingMouseReleaseEvent(event, v2);
 				selected = (tmpparent->selectedVertices().count() > 0);
 			} else if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pCell) {
 				tmpparent->cellSelectingMouseReleaseEvent(event, v);

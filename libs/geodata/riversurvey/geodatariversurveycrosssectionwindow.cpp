@@ -170,10 +170,6 @@ void GeoDataRiverSurveyCrosssectionWindow::setupMenu()
 
 void GeoDataRiverSurveyCrosssectionWindow::setupToolBars()
 {
-	ui->crossSectionToolBar->setFloatable(false);
-	ui->viewToolBar->setFloatable(false);
-	ui->displayToolBar->setFloatable(false);
-
 	// crossSectionToolBar
 	QLabel* l = nullptr;
 	QWidget* spacer = nullptr;

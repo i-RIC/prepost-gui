@@ -9,6 +9,7 @@
 #include "preprocessorgridtypedataitem.h"
 #include "preprocessorgeodatagroupdataitem.h"
 #include "preprocessorgeodatatopdataitem.h"
+#include "preprocessorgraphicsview.h"
 #include "private/preprocessorgridattributenodedataitem_propertydialog.h"
 
 #include <geodata/pointmap/geodatapointmaprealbuilder.h>
@@ -235,7 +236,8 @@ void PreProcessorGridAttributeNodeDataItem::mouseReleaseEvent(QMouseEvent* event
 	PreProcessorGridDataItem* tmpparent = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
 	if (event->button() == Qt::LeftButton) {
 		if (m_definingBoundingBox) {
-			tmpparent->nodeSelectingMouseReleaseEvent(event, v);
+			auto v2 = dynamic_cast<VTK2DGraphicsView*> (v);
+			tmpparent->nodeSelectingMouseReleaseEvent(event, v2);
 		}
 		m_definingBoundingBox = false;
 		dynamic_cast<PreProcessorGridAttributeNodeGroupDataItem*>(parent())->fixAttributeBrowser(QPoint(event->x(), event->y()), v);
@@ -391,52 +393,30 @@ ColorMapSettingContainerI* PreProcessorGridAttributeNodeDataItem::colorMapSettin
 
 void PreProcessorGridAttributeNodeDataItem::openCrossSectionWindow()
 {
-	PreProcessorGridDataItem* gItem = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
-	if (gItem->selectedVertices().count() > 1) {
-		QMessageBox::information(mainWindow(), tr("Information"), tr("To open a Cross Section Window, Please select only one grid node."));
-		return;
-	}
+	auto gItem = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
+
 	unsigned int index = gItem->selectedVertices().at(0);
 	unsigned int i, j;
 
 	Grid* g = gItem->grid();
-	Structured2DGrid* grid = dynamic_cast<Structured2DGrid*>(g);
+	auto grid = dynamic_cast<Structured2DGrid*>(g);
 	grid->getIJIndex(index, &i, &j);
-	PreProcessorGridCrosssectionWindowProjectDataItem* pdi = new PreProcessorGridCrosssectionWindowProjectDataItem(this, m_condition->name(), mainWindow());
 
-	pdi->window()->setTarget(PreProcessorGridCrosssectionWindow::dirJ, i);
-	m_crosssectionWindows.append(pdi);
-	QMdiArea* cent = dynamic_cast<QMdiArea*>(iricMainWindow()->centralWidget());
-	QMdiSubWindow* container = cent->addSubWindow(pdi->window());
-	container->setWindowIcon(pdi->window()->icon());
-
-	container->show();
-	container->setFocus();
-	pdi->window()->cameraFit();
+	gItem->openCrossSectionWindow(PreProcessorGridCrosssectionWindow2::Direction::I, i);
 }
 
 void PreProcessorGridAttributeNodeDataItem::openVerticalCrossSectionWindow()
 {
-	PreProcessorGridDataItem* gItem = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
-	if (gItem->selectedVertices().count() > 1) {
-		QMessageBox::information(mainWindow(), tr("Information"), tr("To open a Longitudinal Cross Section Window, Please select only one grid node."));
-		return;
-	}
+	auto gItem = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
+
 	unsigned int index = gItem->selectedVertices().at(0);
 	unsigned int i, j;
 
 	Grid* g = gItem->grid();
-	Structured2DGrid* grid = dynamic_cast<Structured2DGrid*>(g);
+	auto grid = dynamic_cast<Structured2DGrid*>(g);
 	grid->getIJIndex(index, &i, &j);
-	PreProcessorGridCrosssectionWindowProjectDataItem* pdi = new PreProcessorGridCrosssectionWindowProjectDataItem(this, m_condition->name(), mainWindow());
 
-	pdi->window()->setTarget(PreProcessorGridCrosssectionWindow::dirI, j);
-	m_crosssectionWindows.append(pdi);
-	QMdiArea* cent = dynamic_cast<QMdiArea*>(iricMainWindow()->centralWidget());
-	QMdiSubWindow* container = cent->addSubWindow(pdi->window());
-	container->show();
-	container->setFocus();
-	pdi->window()->cameraFit();
+	gItem->openCrossSectionWindow(PreProcessorGridCrosssectionWindow2::Direction::J, j);
 }
 
 void PreProcessorGridAttributeNodeDataItem::updateCrossectionWindows()

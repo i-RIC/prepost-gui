@@ -12,13 +12,18 @@
 #include <QPixmap>
 #include <QCursor>
 
+#include <vector>
+
+class PreProcessorGridCrosssectionWindow2;
 class GridBirdEyeWindow;
 
 class PreProcessorGridDataItem::Impl
 {
 public:
-	Impl();
+	Impl(PreProcessorGridDataItem* item);
 	~Impl();
+
+	PreProcessorGridCrosssectionWindow2* buildCrosssectionWindow();
 
 	Grid* m_grid;
 
@@ -30,6 +35,7 @@ public:
 	PreProcessorGridAttributeCellDataItem* m_cellDataItem;
 
 	GridBirdEyeWindow* m_birdEyeWindow;
+	std::vector<PreProcessorGridCrosssectionWindow2*> m_crosssectionWindows;
 
 	vtkSmartPointer<vtkPolyData> m_regionPolyData;
 	vtkSmartPointer<vtkPolyDataMapper> m_regionMapper;
@@ -73,6 +79,9 @@ public:
 
 	bool m_shiftPressed;
 	bool m_gridIsDeleted;
+
+private:
+	PreProcessorGridDataItem* m_item;
 };
 
 #endif // PREPROCESSORGRIDDATAITEM_IMPL_H

@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="fr_FR">
 <context>
     <name>ParticleArbitraryTimeEditDialog</name>
@@ -34,7 +36,7 @@
     </message>
     <message>
         <source>Grid Type:</source>
-        <translation>Type de grille :</translation>
+        <translation>Type de grille&#xa0;:</translation>
     </message>
     <message>
         <source>&amp;Region:</source>
@@ -80,7 +82,7 @@
     </message>
     <message>
         <source>Color by attribute value</source>
-        <translation type="vanished">Couleur par valeur d'attribut</translation>
+        <translation type="vanished">Couleur par valeur d&apos;attribut</translation>
     </message>
     <message>
         <source>Attribute:</source>
@@ -103,7 +105,7 @@
     </message>
     <message>
         <source>Attribute value:</source>
-        <translation type="vanished">Valeur de l'attribut :</translation>
+        <translation type="vanished">Valeur de l&apos;attribut&#xa0;:</translation>
     </message>
     <message>
         <source>Length</source>
@@ -123,7 +125,7 @@
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation type="vanished">Durée à l'écran :</translation>
+        <translation type="vanished">Durée à l&apos;écran&#xa0;:</translation>
     </message>
     <message>
         <source>[pixel]</source>
@@ -131,7 +133,7 @@
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation type="vanished">Valeur minimale à tirer :</translation>
+        <translation type="vanished">Valeur minimale à tirer&#xa0;:</translation>
     </message>
     <message>
         <source>Sampling</source>
@@ -143,7 +145,7 @@
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation type="vanished">Taux d'échantillonnage:</translation>
+        <translation type="vanished">Taux d&apos;échantillonnage:</translation>
     </message>
     <message>
         <source>Specify number of particles</source>
@@ -201,7 +203,7 @@
     </message>
     <message>
         <source>Color by attribute value</source>
-        <translation type="vanished">Couleur par valeur d'attribut</translation>
+        <translation type="vanished">Couleur par valeur d&apos;attribut</translation>
     </message>
     <message>
         <source>Attribute:</source>
@@ -231,22 +233,22 @@
     </message>
     <message>
         <source>Move label</source>
-        <translation>Déplacer l'étiquette</translation>
+        <translation>Déplacer l&apos;étiquette</translation>
     </message>
     <message>
         <source>Resize label</source>
-        <translation>Redimensionner l'étiquette</translation>
+        <translation>Redimensionner l&apos;étiquette</translation>
     </message>
     <message>
         <source>Edit Label Setting</source>
-        <translation>Modifier le paramètre d'étiquette</translation>
+        <translation>Modifier le paramètre d&apos;étiquette</translation>
     </message>
 </context>
 <context>
     <name>PostStringResultSettingDialog</name>
     <message>
         <source>Label Setting</source>
-        <translation>Paramètre d'étiquette</translation>
+        <translation>Paramètre d&apos;étiquette</translation>
     </message>
     <message>
         <source>Setting</source>
@@ -314,7 +316,7 @@
     </message>
     <message>
         <source>Background color:</source>
-        <translation>Couleur de l'arrière plan:</translation>
+        <translation>Couleur de l&apos;arrière plan:</translation>
     </message>
 </context>
 <context>
@@ -325,14 +327,14 @@
     </message>
     <message>
         <source>Edit time setting</source>
-        <translation>Modifier le réglage de l'heure</translation>
+        <translation>Modifier le réglage de l&apos;heure</translation>
     </message>
 </context>
 <context>
     <name>PostTimeEditDialog</name>
     <message>
         <source>Time Setting</source>
-        <translation>Réglage de l'heure</translation>
+        <translation>Réglage de l&apos;heure</translation>
     </message>
     <message>
         <source>Use project setting</source>
@@ -340,7 +342,7 @@
     </message>
     <message>
         <source>Time Format</source>
-        <translation>Format de l'heure</translation>
+        <translation>Format de l&apos;heure</translation>
     </message>
 </context>
 <context>

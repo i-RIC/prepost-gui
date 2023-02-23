@@ -1,5 +1,6 @@
 #include "../preprocessordatamodel.h"
 #include "../preprocessorwindow.h"
+#include "../subwindow/gridcrosssectionwindow2/preprocessorgridcrosssectionwindow2.h"
 #include "gridshape/preprocessorgridshapedeltadialog.h"
 #include "gridshape/preprocessorgridshapenewpositiondialog.h"
 #include "preprocessorgridattributenodedataitem.h"
@@ -22,22 +23,11 @@
 #include <misc/xmlsupport.h>
 
 #include <QAction>
-#include <QColor>
-#include <QColorDialog>
-#include <QComboBox>
-#include <QDialog>
 #include <QGraphicsItemGroup>
-#include <QGraphicsLineItem>
-#include <QHBoxLayout>
-#include <QLabel>
 #include <QMenu>
-#include <QPen>
-#include <QPushButton>
 #include <QSettings>
 #include <QStandardItem>
 #include <QString>
-#include <QUndoCommand>
-#include <QVBoxLayout>
 #include <QXmlStreamWriter>
 
 #include <vtkActorCollection.h>
@@ -176,7 +166,7 @@ void PreProcessorGridShapeDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphi
 		double radius = v2->stdRadius(iRIC::nearRadius());
 		double dist2;
 
-		vtkSmartPointer<vtkPointLocator> locator = vtkSmartPointer<vtkPointLocator>::New();
+		auto locator = vtkSmartPointer<vtkPointLocator>::New();
 		locator->SetDataSet(tmpparent->grid()->vtkGrid());
 		vtkIdType closestId = locator->FindClosestPointWithinRadius(radius, p, dist2);
 		if (closestId >= 0) {
@@ -227,10 +217,11 @@ void PreProcessorGridShapeDataItem::mousePressEvent(QMouseEvent* event, VTKGraph
 void PreProcessorGridShapeDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
 	static QMenu* menu = nullptr;
-	PreProcessorGridDataItem* tmpparent = dynamic_cast<PreProcessorGridDataItem*>(parent());
+	auto gItem = gridDataItem();
 	if (event->button() == Qt::LeftButton) {
 		if (m_definingBoundingBox) {
-			tmpparent->nodeSelectingMouseReleaseEvent(event, v);
+			auto v2 = dynamic_cast<VTK2DGraphicsView*> (v);
+			gItem->nodeSelectingMouseReleaseEvent(event, v2);
 		}
 		m_definingBoundingBox = false;
 		m_draggingSelectedPoints = false;
@@ -241,8 +232,8 @@ void PreProcessorGridShapeDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGra
 			menu = new QMenu(projectData()->mainWindow());
 			menu->addAction(m_editAction);
 
-			Structured2DGrid* grid2d = dynamic_cast<Structured2DGrid*>(tmpparent->grid());
-			if (grid2d != nullptr && grid2d->gridAttribute("Elevation") != nullptr) {
+			auto grid2d = dynamic_cast<Structured2DGrid*>(gItem->grid());
+			if (grid2d != nullptr) {
 				menu->addSeparator();
 
 				menu->addAction(m_openXsectionWindowAction);
@@ -257,14 +248,18 @@ void PreProcessorGridShapeDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGra
 
 void PreProcessorGridShapeDataItem::keyPressEvent(QKeyEvent* event, VTKGraphicsView* v)
 {
-	PreProcessorGridDataItem* tmpparent = dynamic_cast<PreProcessorGridDataItem*>(parent());
-	tmpparent->nodeSelectingKeyPressEvent(event, v);
+	gridDataItem()->nodeSelectingKeyPressEvent(event, v);
 }
 
 void PreProcessorGridShapeDataItem::keyReleaseEvent(QKeyEvent* event, VTKGraphicsView* v)
 {
 	PreProcessorGridDataItem* tmpparent = dynamic_cast<PreProcessorGridDataItem*>(parent());
 	tmpparent->nodeSelectingKeyReleaseEvent(event, v);
+}
+
+PreProcessorGridDataItem* PreProcessorGridShapeDataItem::gridDataItem() const
+{
+	return dynamic_cast<PreProcessorGridDataItem*> (parent());
 }
 
 void PreProcessorGridShapeDataItem::editShape()
@@ -333,24 +328,50 @@ void PreProcessorGridShapeDataItem::editShape()
 
 void PreProcessorGridShapeDataItem::openCrossSectionWindow()
 {
-	PreProcessorGridDataItem* gItem = dynamic_cast<PreProcessorGridDataItem*>(parent());
-	PreProcessorGridAttributeNodeDataItem* nItem = gItem->nodeGroupDataItem()->nodeDataItem("Elevation");
-	if (nItem != nullptr) {
-		nItem->openCrossSectionWindow();
-	}
+	auto gItem = gridDataItem();
+
+	// use the first selected point
+	unsigned int index = gItem->selectedVertices().at(0);
+	unsigned int i, j;
+
+	Grid* g = gItem->grid();
+	auto grid = dynamic_cast<Structured2DGrid*>(g);
+	grid->getIJIndex(index, &i, &j);
+
+	gItem->openCrossSectionWindow(PreProcessorGridCrosssectionWindow2::Direction::I, i);
 }
 
 void PreProcessorGridShapeDataItem::openVerticalCrossSectionWindow()
 {
-	PreProcessorGridDataItem* gItem = dynamic_cast<PreProcessorGridDataItem*>(parent());
-	PreProcessorGridAttributeNodeDataItem* nItem = gItem->nodeGroupDataItem()->nodeDataItem("Elevation");
-	if (nItem != nullptr) {
-		nItem->openVerticalCrossSectionWindow();
-	}
+	auto gItem = gridDataItem();
+
+	// use the first selected point
+	unsigned int index = gItem->selectedVertices().at(0);
+	unsigned int i, j;
+
+	Grid* g = gItem->grid();
+	auto grid = dynamic_cast<Structured2DGrid*>(g);
+	grid->getIJIndex(index, &i, &j);
+
+	gItem->openCrossSectionWindow(PreProcessorGridCrosssectionWindow2::Direction::J, j);
 }
 
 void PreProcessorGridShapeDataItem::addCustomMenuItems(QMenu* /*menu*/)
+{}
+
+QAction* PreProcessorGridShapeDataItem::editAction() const
 {
+	return m_editAction;
+}
+
+QAction* PreProcessorGridShapeDataItem::openXsectionWindowAction() const
+{
+	return m_openXsectionWindowAction;
+}
+
+QAction* PreProcessorGridShapeDataItem::openVXsectionWindowAction() const
+{
+	return m_openVXsectionWindowAction;
 }
 
 void PreProcessorGridShapeDataItem::updateActionStatus()

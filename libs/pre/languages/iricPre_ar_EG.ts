@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ar_EG">
 <context>
     <name>BoundaryConditionDialog</name>
@@ -112,7 +114,7 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>GridBirdEyeWindow</name>
     <message>
-        <source>Grid Bird's-Eye View Window</source>
+        <source>Grid Bird&apos;s-Eye View Window</source>
         <translation>نافذة عرض عين الطائر الشبكي</translation>
     </message>
 </context>
@@ -661,8 +663,8 @@ Do you really want to import grid from this file?</source>
         <translation>%1 لم يتم تعيينها بعد تعديلها في المرة الأخيرة. هل تريد تنفيذ التعيين الآن؟</translation>
     </message>
     <message>
-        <source>Boundary Condition Setting "%1" is not mapped after it is edited last time. Do you want to execute mapping now?</source>
-        <translation>إعداد حالة الحدود "%1"لم يتم تعيينه بعد تحريره آخر مرة. هل تريد تنفيذ التعيين الآن؟</translation>
+        <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
+        <translation>إعداد حالة الحدود &quot;%1&quot;لم يتم تعيينه بعد تحريره آخر مرة. هل تريد تنفيذ التعيين الآن؟</translation>
     </message>
     <message>
         <source>Information</source>
@@ -911,14 +913,14 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Note:
 
-When variation is enabled, variation named "Default" is created, and all geographic data is moved to that.
+When variation is enabled, variation named &quot;Default&quot; is created, and all geographic data is moved to that.
 
-You can add, rename, remove variations from "Object Browser".
+You can add, rename, remove variations from &quot;Object Browser&quot;.
 
 You can move, copy geographic data between variations.
 
-The grid attribute data created from the variation that you select with "Variation to pass to solver" is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
-        <translation>ملاحظة: عند تمكين التباين ، يتم إنشاء التباين المسمى "افتراضي" ، ويتم نقل جميع البيانات الجغرافية إليه. يمكنك إضافة أو إعادة تسمية أو إزالة الاختلافات من "Object Browser". يمكنك نقل ونسخ البيانات الجغرافية بين الاختلافات. يتم تمرير بيانات سمة الشبكة التي تم إنشاؤها من التباين الذي تحدده باستخدام "التباين للتمرير إلى الحل" إلى الحل. يمكنك إعداد أشكال متعددة ، وتبديلها إلى المحلل ، والتأكد من تأثير الاختلاف.</translation>
+The grid attribute data created from the variation that you select with &quot;Variation to pass to solver&quot; is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
+        <translation>ملاحظة: عند تمكين التباين ، يتم إنشاء التباين المسمى &quot;افتراضي&quot; ، ويتم نقل جميع البيانات الجغرافية إليه. يمكنك إضافة أو إعادة تسمية أو إزالة الاختلافات من &quot;Object Browser&quot;. يمكنك نقل ونسخ البيانات الجغرافية بين الاختلافات. يتم تمرير بيانات سمة الشبكة التي تم إنشاؤها من التباين الذي تحدده باستخدام &quot;التباين للتمرير إلى الحل&quot; إلى الحل. يمكنك إعداد أشكال متعددة ، وتبديلها إلى المحلل ، والتأكد من تأثير الاختلاف.</translation>
     </message>
 </context>
 <context>
@@ -1133,9 +1135,9 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>ينفذ (&amp;E)...</translation>
     </message>
     <message>
-        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".
+        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.
 </source>
-        <translation>لم يتم تعيين السمات التالية ، لأن قيم خرج مولد الشبكة لها. إذا كنت ترغب في تعيين البيانات الجغرافية لهم بالقوة ، يرجى التعيين يدويًا باستخدام القائمة "الشبكة" -&gt; "تعيين السمات" -&gt; "تنفيذ".</translation>
+        <translation>لم يتم تعيين السمات التالية ، لأن قيم خرج مولد الشبكة لها. إذا كنت ترغب في تعيين البيانات الجغرافية لهم بالقوة ، يرجى التعيين يدويًا باستخدام القائمة &quot;الشبكة&quot; -&gt; &quot;تعيين السمات&quot; -&gt; &quot;تنفيذ&quot;.</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1154,12 +1156,12 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>تم الانتهاء من تعيين البيانات الجغرافية</translation>
     </message>
     <message>
-        <source>The grid attribute "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>سمة الشبكة "%1"يتم تحريره يدويًا. عند تنفيذ التعيين ، سيتم تجاهل جميع التعديلات التي أجريتها. هل تريد حقًا تنفيذ التعيين؟</translation>
+        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>سمة الشبكة &quot;%1&quot;يتم تحريره يدويًا. عند تنفيذ التعيين ، سيتم تجاهل جميع التعديلات التي أجريتها. هل تريد حقًا تنفيذ التعيين؟</translation>
     </message>
     <message>
-        <source>The boundary condition "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>شرط الحدود "%1"يتم تحريره يدويًا. عند تنفيذ التعيين ، سيتم تجاهل جميع التعديلات التي أجريتها. هل تريد حقًا تنفيذ التعيين؟</translation>
+        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>شرط الحدود &quot;%1&quot;يتم تحريره يدويًا. عند تنفيذ التعيين ، سيتم تجاهل جميع التعديلات التي أجريتها. هل تريد حقًا تنفيذ التعيين؟</translation>
     </message>
 </context>
 <context>
@@ -1177,20 +1179,20 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>آلي</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p، li {white-space: pre-wrap؛ } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'؛ font-size: 9pt؛ font-weight: 400؛ font-style: normal؛"&gt; &lt;p style = "margin -top: 12px؛ margin-bottom: 12px؛ margin-left: 0px؛ margin-right: 0px؛ -qt-block-indent: 0؛ text-indent: 0px؛ "&gt; عند إنشاء الشبكة ، يتم سؤالك عما إذا لتنفيذ تعيين السمات في كل مرة. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p، li {white-space: pre-wrap؛ } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;؛ font-size: 9pt؛ font-weight: 400؛ font-style: normal؛&quot;&gt; &lt;p style = &quot;margin -top: 12px؛ margin-bottom: 12px؛ margin-left: 0px؛ margin-right: 0px؛ -qt-block-indent: 0؛ text-indent: 0px؛ &quot;&gt; عند إنشاء الشبكة ، يتم سؤالك عما إذا لتنفيذ تعيين السمات في كل مرة. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Manual</source>
         <translation>كتيب</translation>
     </message>
     <message>
-        <source>Attribute mapping is executed only when you manually select "Execute" menu.</source>
-        <translation>يتم تنفيذ تعيين السمات فقط عند تحديد قائمة "تنفيذ" يدويًا.</translation>
+        <source>Attribute mapping is executed only when you manually select &quot;Execute&quot; menu.</source>
+        <translation>يتم تنفيذ تعيين السمات فقط عند تحديد قائمة &quot;تنفيذ&quot; يدويًا.</translation>
     </message>
     <message>
         <source>Geographic data mapping</source>
@@ -1262,11 +1264,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>To open a Cross Section Window, Please select only one grid node.</source>
-        <translation>لفتح نافذة المقطع العرضي ، يرجى تحديد عقدة شبكة واحدة فقط.</translation>
+        <translation type="vanished">لفتح نافذة المقطع العرضي ، يرجى تحديد عقدة شبكة واحدة فقط.</translation>
     </message>
     <message>
         <source>To open a Longitudinal Cross Section Window, Please select only one grid node.</source>
-        <translation>لفتح نافذة المقطع العرضي الطولي ، يرجى تحديد عقدة شبكة واحدة فقط.</translation>
+        <translation type="vanished">لفتح نافذة المقطع العرضي الطولي ، يرجى تحديد عقدة شبكة واحدة فقط.</translation>
     </message>
     <message>
         <source>Topography File (*.tpo)</source>
@@ -1512,6 +1514,409 @@ This algorithm can be used only for structured grids.</source>
     </message>
 </context>
 <context>
+    <name>PreProcessorGridCrosssectionWindow2</name>
+    <message>
+        <source>Grid Crosssection Window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>View Setting Toolbar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Display Setting ToolBar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation type="unfinished">ضبط</translation>
+    </message>
+    <message>
+        <source>Auto rescale</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fix aspect ratio</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fix region</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Grid</source>
+        <translation type="unfinished">جريد</translation>
+    </message>
+    <message>
+        <source>Scale</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Left/right bank markers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Aspect ratio</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Display Setting</source>
+        <translation type="unfinished">إعداد عرض</translation>
+    </message>
+    <message>
+        <source>Controller</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Left Bank Side</source>
+        <translation type="unfinished">الجانب الأيسر من الضفة</translation>
+    </message>
+    <message>
+        <source>Right Bank Side</source>
+        <translation type="unfinished">جانب الضفة اليمنى</translation>
+    </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">خطأ</translation>
+    </message>
+    <message>
+        <source>Error occured while making %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Index</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Distance(m)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2::Controller</name>
+    <message>
+        <source>Upstream Side</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Downstream Side</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Right Side</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Left Side</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2::CsvExportController</name>
+    <message>
+        <source>Export CSV Files</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2::DisplaySettingTableController</name>
+    <message>
+        <source>Visible</source>
+        <translation type="unfinished">مرئي</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation type="unfinished">ضبط</translation>
+    </message>
+    <message>
+        <source>Grid Attribute Display Setting (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2::SnapshotSaveController</name>
+    <message>
+        <source>Save Snapshots</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2_Controller</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">استمارة</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>I</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>J</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation type="unfinished">موقع</translation>
+    </message>
+    <message>
+        <source>Cell Values</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Upstream side</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Downstream side</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Snapshot</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;CSV Export</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2_DisplaySettingDialog</name>
+    <message>
+        <source>Grid Crosssection Window Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Background grid</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Dots</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation type="unfinished">أفقي</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation type="unfinished">آلي</translation>
+    </message>
+    <message>
+        <source>Scale</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sub scale</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation type="unfinished">عمودي</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scales</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Font:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Left/right bank markers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Aspect ratio</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2_ExportSettingDialog</name>
+    <message>
+        <source>Export Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Folder &amp;&amp; Prefix</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Folder:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Prefix:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cross Section</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Current Only</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>I Min:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>I Max:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Skip Rate:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2_GridAttributeDisplaySettingEditDialog</name>
+    <message>
+        <source>Grid Attribute Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation type="unfinished">مرئي</translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Elevation chart</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Independent chart</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Elevation Chart Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Line Color:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation type="unfinished">عرض الخط:</translation>
+    </message>
+    <message>
+        <source>Show Points</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show Indices</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Font Color:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Font:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Skip Rate:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Independent Chart Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Chart Height:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>[pixels]</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Title Font:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Axis Color:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Axis Font:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation type="unfinished">إعداد خريطة الألوان</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use setting of Pre-processing window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show Title</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Title Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>PreProcessorGridCrosssectionWindowGraphicsView</name>
     <message>
         <source>&amp;Edit...</source>
@@ -1609,7 +2014,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>إعداد Scalarbar (&amp;U)...</translation>
     </message>
     <message>
-        <source>Open &amp;Bird's-Eye View Window</source>
+        <source>Open &amp;Bird&apos;s-Eye View Window</source>
         <translation>افتح نافذة عرض عين الطائر (&amp;B)</translation>
     </message>
     <message>

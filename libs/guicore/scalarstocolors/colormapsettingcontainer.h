@@ -34,6 +34,8 @@ public:
 
 	vtkMapper* buildCellDataMapper(vtkDataSet* data, bool ignoreTransparent) override;
 	vtkMapper* buildPointDataMapper(vtkDataSet* data) override;
+	void paintNodeData(double x1, double x2, double v1, double v2, double ymin, double ymax, QPainter* painter) override;
+	void paintCellData(double x1, double x2, double v, double ymin, double ymax, QPainter* painter) override;
 
 	ColorMapLegendSettingContainerI* legendSetting() override;
 	ColorMapLegendSettingContainerI* copyLegendSetting() override;
@@ -47,6 +49,7 @@ public:
 	void load(const QDomNode& node) override;
 	void save(QXmlStreamWriter& writer) const override;
 
+	void copy(const ColorMapSettingContainerI& c) override;
 	void copyValue(const XmlAttributeContainer& c) override;
 
 	EnumContainerT<TransitionMode> transitionMode;
