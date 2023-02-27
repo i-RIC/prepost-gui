@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="et_EE">
 <context>
     <name>Post2dBirdEyeObjectBrowser</name>
@@ -9,7 +11,7 @@
 <context>
     <name>Post2dBirdEyeWindow</name>
     <message>
-        <source>Bird's-Eye Post-processing (2D): %1</source>
+        <source>Bird&apos;s-Eye Post-processing (2D): %1</source>
         <translation>Linnulennuline järeltöötlus (2D): %1</translation>
     </message>
     <message>
@@ -56,80 +58,80 @@
     <name>Post2dBirdEyeWindowAxesDataItem</name>
     <message>
         <source>Axes</source>
-        <translation>Kirved</translation>
+        <translation type="vanished">Kirved</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
-        <translation>Scalar</translation>
+        <translation type="vanished">Scalar</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
-        <translation>Värskenda kontuuriseadet</translation>
+        <translation type="vanished">Värskenda kontuuriseadet</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowCellScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (cell center)</source>
-        <translation>Scalar (rakukeskus)</translation>
+        <translation type="vanished">Scalar (rakukeskus)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Hoiatus</translation>
+        <translation type="vanished">Hoiatus</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>Määrata saab maksimaalselt neli kontuuri.</translation>
+        <translation type="vanished">Määrata saab maksimaalselt neli kontuuri.</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowContourSettingDialog</name>
     <message>
         <source>Scalar Setting</source>
-        <translation>Skalaari seadistus</translation>
+        <translation type="vanished">Skalaari seadistus</translation>
     </message>
     <message>
         <source>Scalar value for elevation</source>
-        <translation>Kõrguse skalaarväärtus</translation>
+        <translation type="vanished">Kõrguse skalaarväärtus</translation>
     </message>
     <message>
         <source>Color Setting</source>
-        <translation>Värvi seadistus</translation>
+        <translation type="vanished">Värvi seadistus</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Kohandatud värv</translation>
+        <translation type="vanished">Kohandatud värv</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Skalaarväärtuse järgi</translation>
+        <translation type="vanished">Skalaarväärtuse järgi</translation>
     </message>
     <message>
         <source>Scalar Value:</source>
-        <translation>Skalaarväärtus:</translation>
+        <translation type="vanished">Skalaarväärtus:</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>Ekraani seadistus</translation>
+        <translation type="vanished">Ekraani seadistus</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>Piirkonna seadistus (&amp;R)</translation>
+        <translation type="vanished">Piirkonna seadistus (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Värviriba seadistus (&amp;C)</translation>
+        <translation type="vanished">Värviriba seadistus (&amp;C)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Viga</translation>
+        <translation type="vanished">Viga</translation>
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
-        <translation>Väärtusvahemiku puhul on maksimaalne väärtus väiksem kui minimaalne väärtus.</translation>
+        <translation type="vanished">Väärtusvahemiku puhul on maksimaalne väärtus väiksem kui minimaalne väärtus.</translation>
     </message>
 </context>
 <context>
@@ -144,7 +146,7 @@
     </message>
     <message>
         <source>Contour setting is not available, because this result does not contain cell scalar values.</source>
-        <translation>Kontuuri seadistus pole saadaval, kuna see tulemus ei sisalda lahtri skalaarseid väärtusi.</translation>
+        <translation type="vanished">Kontuuri seadistus pole saadaval, kuna see tulemus ei sisalda lahtri skalaarseid väärtusi.</translation>
     </message>
     <message>
         <source>Z-direction Scale</source>
@@ -163,6 +165,17 @@
     </message>
 </context>
 <context>
+    <name>Post2dBirdEyeWindowGridShapeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Shape Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scalar value for Elevation</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>Post2dBirdEyeWindowNodeScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
@@ -170,7 +183,42 @@
     </message>
     <message>
         <source>Update Contour Setting</source>
-        <translation>Värskenda kontuuriseadet</translation>
+        <translation type="vanished">Värskenda kontuuriseadet</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation type="unfinished">Kohandatud värv</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation type="unfinished">Skalaarväärtuse järgi</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -181,22 +229,22 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Hoiatus</translation>
+        <translation type="vanished">Hoiatus</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>Määrata saab maksimaalselt neli kontuuri.</translation>
+        <translation type="vanished">Määrata saab maksimaalselt neli kontuuri.</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
         <source>Create Contour</source>
-        <translation>Loo kontuur</translation>
+        <translation type="vanished">Loo kontuur</translation>
     </message>
     <message>
         <source>Update Grid Shape Setting</source>
-        <translation>Uuenda ruudustiku kuju seadistust</translation>
+        <translation type="vanished">Uuenda ruudustiku kuju seadistust</translation>
     </message>
     <message>
         <source>Edit Background Color</source>

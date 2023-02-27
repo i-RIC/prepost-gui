@@ -1,4 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="vi_VN">
+<context>
+    <name>ArrowsColorSettingEditSmallWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Mẫu đơn</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Màu sắc</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Edit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Colormap Setting (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsColorSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Mẫu đơn</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsGeneralFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="obsolete">Mẫu đơn</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsLegendSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Mẫu đơn</translation>
+    </message>
+    <message>
+        <source>Visibility</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>When selected</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Always</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Title :</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Font Setting:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Length</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Format:</source>
+        <translation type="unfinished">Sự sắp xếp:</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Màu sắc</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Length:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsLengthSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Mẫu đơn</translation>
+    </message>
+    <message>
+        <source>Length</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Standard value:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>[m/s]</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Length on screen:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>[pixel]</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Minimum value to draw:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Mẫu đơn</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Màu sắc</translation>
+    </message>
+    <message>
+        <source>Length Legend</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsShapeSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Mẫu đơn</translation>
+    </message>
+    <message>
+        <source>Arrow Shape</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Arrow size:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Line width:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
 <context>
     <name>AttributeBrowserTargetDataItem</name>
     <message>
@@ -104,6 +303,358 @@
     </message>
 </context>
 <context>
+    <name>ColorMapEnumerateLegendSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Mẫu đơn</translation>
+    </message>
+    <message>
+        <source>Visibility</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>When selected</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Always</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Title :</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Font Setting:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Màu sắc</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Label:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Mẫu đơn</translation>
+    </message>
+    <message>
+        <source>Ignore Color bar setting when importing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Colors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color Bar Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select file to import</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Colormap setting (*.cmsetting)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error occured while loading %1
+Parse error %2 at %3, column %4</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Lỗi</translation>
+    </message>
+    <message>
+        <source>Input file name to export</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error occured while opening %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation type="unfinished">Giá trị</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Màu sắc</translation>
+    </message>
+    <message>
+        <source>Transparent</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapLegendSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Mẫu đơn</translation>
+    </message>
+    <message>
+        <source>Visibility</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>When selected</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Always</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Title :</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Font Setting:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Format:</source>
+        <translation type="unfinished">Sự sắp xếp:</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Màu sắc</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Label:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation type="obsolete">Hộp thoại</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation type="unfinished">Cài đặt bản đồ màu</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Mẫu đơn</translation>
+    </message>
+    <message>
+        <source>Presets:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ignore Color bar setting when importing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Relationship between values and colors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Automatically adjust based on value range</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Setup Manually</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Value Range</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Automatic</source>
+        <translation type="unfinished">Tự động</translation>
+    </message>
+    <message>
+        <source>Max:</source>
+        <translation type="unfinished">Tối đa:</translation>
+    </message>
+    <message>
+        <source>Min:</source>
+        <translation type="unfinished">Tối thiểu:</translation>
+    </message>
+    <message>
+        <source>Colors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation type="unfinished">Thêm vào (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fill lower area</source>
+        <translation type="unfinished">Điền vào khu vực thấp hơn</translation>
+    </message>
+    <message>
+        <source>Fill upper area</source>
+        <translation type="unfinished">Điền vào khu vực phía trên</translation>
+    </message>
+    <message>
+        <source>Switch</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color Bar Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select file to import</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Colormap setting (*.cmsetting)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Input file name to export</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error occured while opening %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Lỗi</translation>
+    </message>
+    <message>
+        <source>Error occured while loading %1
+Parse error %2 at %3, column %4</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>(Please select item to apply)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Switch to Discrete Mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Switch to Gradation Mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Cảnh báo</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation type="unfinished">Giá trị</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Màu sắc</translation>
+    </message>
+    <message>
+        <source>Min value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Max value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Transparent</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget_SwitchToDiscreteDialog</name>
+    <message>
+        <source>Switch to Discrete Mode Dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Max:</source>
+        <translation type="unfinished">Tối đa:</translation>
+    </message>
+    <message>
+        <source>Min:</source>
+        <translation type="unfinished">Tối thiểu:</translation>
+    </message>
+    <message>
+        <source>Number of colors to insert at each section</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>ColorTransferFunctionEditWidget</name>
     <message>
         <source>Form</source>
@@ -135,6 +686,29 @@
     <message>
         <source>dstY</source>
         <translation>dstY</translation>
+    </message>
+</context>
+<context>
+    <name>GeneralFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Mẫu đơn</translation>
+    </message>
+    <message>
+        <source>Sampling</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All vertices</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sampling rate:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Specify number of vertices</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -331,7 +905,7 @@
     <name>GridCellAttributePropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Hộp thoại</translation>
+        <translation type="vanished">Hộp thoại</translation>
     </message>
 </context>
 <context>
@@ -425,11 +999,54 @@
     <name>GridNodeAttributePropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Hộp thoại</translation>
+        <translation type="vanished">Hộp thoại</translation>
     </message>
     <message>
         <source>Contour setting</source>
-        <translation>Thiết lập đường viền</translation>
+        <translation type="vanished">Thiết lập đường viền</translation>
+    </message>
+</context>
+<context>
+    <name>ImageSettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Mẫu đơn</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation type="unfinished">Chức vụ</translation>
+    </message>
+    <message>
+        <source>Horizontal Margin:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Vertical Margin:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Width:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Height:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Distance from left</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Distance from right</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Distance from top</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Distance from bottom</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -466,12 +1083,12 @@
         <translation>Nút định nghĩa không được lưu trữ</translation>
     </message>
     <message>
-        <source>Wrong valueType "%1" is set.</source>
-        <translation>Giá trị sai %1 "được thiết lập.</translation>
+        <source>Wrong valueType &quot;%1&quot; is set.</source>
+        <translation>Giá trị sai %1 &quot;được thiết lập.</translation>
     </message>
     <message>
-        <source>Wrong conditionType "%1"is set.</source>
-        <translation>Điều kiện sai %1 "được thiết lập.</translation>
+        <source>Wrong conditionType &quot;%1&quot;is set.</source>
+        <translation>Điều kiện sai %1 &quot;được thiết lập.</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
@@ -742,8 +1359,8 @@ Do you really want to import this file?</source>
         <translation>Thông tin</translation>
     </message>
     <message>
-        <source>You can copy and paste the values, with shortcut "Ctrl + C" and "Ctrl + V"</source>
-        <translation>Bạn có thể sao chép và dán các giá trị bằng phím tắt "Ctrl + C" và "Ctrl + V"</translation>
+        <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
+        <translation>Bạn có thể sao chép và dán các giá trị bằng phím tắt &quot;Ctrl + C&quot; và &quot;Ctrl + V&quot;</translation>
     </message>
     <message>
         <source>The following problems found: 
@@ -808,6 +1425,21 @@ Do you really want to import this file?</source>
     </message>
 </context>
 <context>
+    <name>InputConditionWidgetString</name>
+    <message>
+        <source>(Select template to import)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Cảnh báo</translation>
+    </message>
+    <message>
+        <source>The content in the text area is overwritten with the template</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>LookupTableEditWidget</name>
     <message>
         <source>Colormap Setting</source>
@@ -853,8 +1485,8 @@ Do you really want to import this file?</source>
         <translation>Đã xảy ra lỗi khi mở tệp.</translation>
     </message>
     <message>
-        <source>The first two columns must be "X" and "Y".</source>
-        <translation>Hai cột đầu tiên phải là "X" và "Y".</translation>
+        <source>The first two columns must be &quot;X&quot; and &quot;Y&quot;.</source>
+        <translation>Hai cột đầu tiên phải là &quot;X&quot; và &quot;Y&quot;.</translation>
     </message>
     <message>
         <source>The data file has to consist of only English characters.</source>
@@ -1019,8 +1651,8 @@ Do you really want to import this file?</source>
         <translation>Định nghĩa về biến</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Bạn có thể xác định biến bằng ngôn ngữ JavaScript. Vui lòng xem văn bản của &lt;a href="http://iric-gui-user-manual.readthedocs.io/vi/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = " -decoration: underline; color: # 0000ff; "&gt; tại đây &lt;/span&gt; &lt;/a&gt; để biết thêm chi tiết. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Bạn có thể xác định biến bằng ngôn ngữ JavaScript. Vui lòng xem văn bản của &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/vi/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot; -decoration: underline; color: # 0000ff; &quot;&gt; tại đây &lt;/span&gt; &lt;/a&gt; để biết thêm chi tiết. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -1098,8 +1730,8 @@ Do you really want to import this file?</source>
         <translation>Xuống (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Lưu ý &lt;/span&gt;: Thứ tự trong danh sách rất quan trọng. Trong định nghĩa, bạn có thể sử dụng giá trị của các phép tính hoạt động đơn giản như một biến, xuất hiện trước đó trong danh sách. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;span style = &quot;font-weight: 600;&quot;&gt; Lưu ý &lt;/span&gt;: Thứ tự trong danh sách rất quan trọng. Trong định nghĩa, bạn có thể sử dụng giá trị của các phép tính hoạt động đơn giản như một biến, xuất hiện trước đó trong danh sách. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
@@ -1452,8 +2084,8 @@ Do you really want to import this file?</source>
         <translation>Định nghĩa đầu ra</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Bạn có thể xác định biến bằng ngôn ngữ JavaScript. Vui lòng xem văn bản của &lt;a href="http://iric-gui-user-manual.readthedocs.io/vi/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = " -decoration: underline; color: # 0000ff; "&gt; tại đây &lt;/span&gt; &lt;/a&gt; để biết thêm chi tiết. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Bạn có thể xác định biến bằng ngôn ngữ JavaScript. Vui lòng xem văn bản của &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/vi/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot; -decoration: underline; color: # 0000ff; &quot;&gt; tại đây &lt;/span&gt; &lt;/a&gt; để biết thêm chi tiết. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -1707,8 +2339,8 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectWorkspace</name>
     <message>
-        <source>Workspace "%1" has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
-        <translation>Không gian làm việc "%1" có %2 thư mục dự án dường như không được sử dụng nữa. Bạn có muốn xóa chúng không?</translation>
+        <source>Workspace &quot;%1&quot; has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
+        <translation>Không gian làm việc &quot;%1&quot; có %2 thư mục dự án dường như không được sử dụng nữa. Bạn có muốn xóa chúng không?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1813,6 +2445,41 @@ Do you really want to import this file?</source>
     </message>
 </context>
 <context>
+    <name>Region2dSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Mẫu đơn</translation>
+    </message>
+    <message>
+        <source>Full Region</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Active Region</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom Region</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>I Min:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>I Max:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>J Min:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>J Max:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>ScalarsToColorsEditDialog</name>
     <message>
         <source>Color Setting</source>
@@ -1883,6 +2550,64 @@ Do you really want to import this file?</source>
     <message>
         <source>* Cells where variation of cell length along j-direction exceed %1</source>
         <translation>* Các ô mà sự thay đổi của chiều dài ô dọc theo hướng j vượt quá %1</translation>
+    </message>
+</context>
+<context>
+    <name>Structured2dFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Mẫu đơn</translation>
+    </message>
+    <message>
+        <source>Sampling</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All vertices</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sampling rate:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>I-direction</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>J-direction</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Structured3dFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Mẫu đơn</translation>
+    </message>
+    <message>
+        <source>Sampling</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All vertices</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sampling rate:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>I-direction</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>J-direction</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>K-direction</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

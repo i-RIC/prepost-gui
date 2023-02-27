@@ -6,10 +6,13 @@
 #include "preprocessorgeodatatopdataitem.h"
 #include "preprocessorhydraulicdatatopdataitem.h"
 #include "preprocessorrootdataitem.h"
+#include "private/preprocessorgridtypedataitem_applycolormapsettingandrendercommand.h"
 
+#include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
 #include <guicore/pre/grid/grid.h>
 #include <guicore/pre/gridcond/base/gridattributecontainer.h>
-#include <guicore/scalarstocolors/scalarstocolorscontainer.h>
+#include <guicore/scalarstocolors/colormapsettingcontaineri.h>
+#include <guicore/scalarstocolors/colormaplegendsettingcontaineri.h>
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
 #include <guicore/solverdef/solverdefinitiongridcomplexattribute.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
@@ -30,8 +33,7 @@ PreProcessorGridTypeDataItem::PreProcessorGridTypeDataItem(SolverDefinitionGridT
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 	setSubPath(type->name().c_str());
 
-	// setup ScalarsToColors instances
-	setupScalarsToColors(type);
+	setupColorMapSettingContainers();
 
 	// add raw data node and grid data node.
 	m_geoDataTop = new PreProcessorGeoDataTopDataItem(this);
@@ -63,8 +65,14 @@ PreProcessorGridTypeDataItem::PreProcessorGridTypeDataItem(SolverDefinitionGridT
 
 PreProcessorGridTypeDataItem::~PreProcessorGridTypeDataItem()
 {
-	for (auto it = m_scalarsToColors.begin(); it != m_scalarsToColors.end(); ++it) {
-		delete it.value();
+	for (const auto& pair : m_colorMapSettingContainers) {
+		delete pair.second;
+	}
+
+	auto r = renderer();
+	for (const auto& pair : m_colorMapLegendActors) {
+		r->RemoveActor2D(pair.second);
+		pair.second->Delete();
 	}
 }
 
@@ -206,9 +214,17 @@ bool PreProcessorGridTypeDataItem::isChildCaptionAvailable(const QString& captio
 	return true;
 }
 
-ScalarsToColorsContainer* PreProcessorGridTypeDataItem::scalarsToColors(const std::string& attName) const
+ColorMapSettingContainerI* PreProcessorGridTypeDataItem::colorMapSetting(const std::string& attName) const
 {
-	return m_scalarsToColors.value(attName, nullptr);
+	auto it = m_colorMapSettingContainers.find(attName);
+	if (it == m_colorMapSettingContainers.end()) {return nullptr;}
+
+	return it->second;
+}
+
+std::map<std::string, ColorMapSettingContainerI*> PreProcessorGridTypeDataItem::colorMapSettings() const
+{
+	return m_colorMapSettingContainers;
 }
 
 QAction* PreProcessorGridTypeDataItem::addNewGridAction() const
@@ -219,15 +235,15 @@ QAction* PreProcessorGridTypeDataItem::addNewGridAction() const
 void PreProcessorGridTypeDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	// load colormap data
-	QDomNode cmNode = iRIC::getChildNode(node, "ColorMaps");
+	QDomNode cmNode = iRIC::getChildNode(node, "ColormapSettings");
 	if (! cmNode.isNull()){
 		for (int i = 0; i < cmNode.childNodes().count(); ++i) {
 			QDomElement elem = cmNode.childNodes().at(i).toElement();
 			std::string name = iRIC::toStr(elem.attribute("name"));
-			ScalarsToColorsContainer* cont = m_scalarsToColors.value(name, nullptr);
-			if (cont == nullptr) {continue;}
-
-			cont->loadFromProjectMainFile(elem);
+			auto it = m_colorMapSettingContainers.find(name);
+			if (it != m_colorMapSettingContainers.end()) {
+				it->second->load(elem);
+			}
 		}
 	}
 
@@ -286,11 +302,11 @@ void PreProcessorGridTypeDataItem::doSaveToProjectMainFile(QXmlStreamWriter& wri
 	writer.writeAttribute("name", name().c_str());
 
 	// write colormap data.
-	writer.writeStartElement("ColorMaps");
-	for (auto c_it = m_scalarsToColors.begin(); c_it != m_scalarsToColors.end(); ++c_it) {
-		writer.writeStartElement("ColorMap");
-		writer.writeAttribute("name", c_it.key().c_str());
-		c_it.value()->saveToProjectMainFile(writer);
+	writer.writeStartElement("ColormapSettings");
+	for (const auto& pair : m_colorMapSettingContainers) {
+		writer.writeStartElement("ColormapSetting");
+		writer.writeAttribute("name", pair.first.c_str());
+		pair.second->save(writer);
 		writer.writeEndElement();
 	}
 	writer.writeEndElement();
@@ -313,32 +329,52 @@ void PreProcessorGridTypeDataItem::doSaveToProjectMainFile(QXmlStreamWriter& wri
 	}
 }
 
-void PreProcessorGridTypeDataItem::setupScalarsToColors(SolverDefinitionGridType* type)
+void PreProcessorGridTypeDataItem::setupColorMapSettingContainers()
 {
-	QList<SolverDefinitionGridAttribute*> conditions = type->gridAttributes();
-	QList<SolverDefinitionGridComplexAttribute*> conditions2 = type->gridComplexAttributes();
-	for (auto it = conditions.begin(); it != conditions.end(); ++it) {
-		ScalarsToColorsContainer* c = (*it)->createScalarsToColorsContainer(nullptr);
-		m_scalarsToColors.insert((*it)->name(), c);
+	auto r = renderer();
+
+	auto atts = m_gridType->gridAttributes();
+	for (auto att : atts) {
+		auto c = att->createColorMapSettingContainer();
+		c->legendSetting()->setTitle(att->caption());
+		c->legendSetting()->imgSetting()->controller()->setItem(this);
+		m_colorMapSettingContainers.insert({att->name(), c});
+
+		auto actor = vtkActor2D::New();
+		r->AddActor2D(actor);
+		c->legendSetting()->imgSetting()->setActor(actor);
+		m_colorMapLegendActors.insert({att->name(), actor});
 	}
-	for (auto it2 = conditions2.begin(); it2 != conditions2.end(); ++it2) {
-		ScalarsToColorsContainer* c = (*it2)->createScalarsToColorsContainer(nullptr);
-		m_scalarsToColors.insert((*it2)->name(), c);
+
+	// TODO complex　type test needed!
+	auto complexAtts = m_gridType->gridComplexAttributes();
+	for (auto att : complexAtts) {
+		auto c = att->createColorMapSettingContainer();
+		c->legendSetting()->setTitle(att->caption());
+		c->legendSetting()->imgSetting()->controller()->setItem(this);
+		m_colorMapSettingContainers.insert({att->name(), c});
+
+		auto actor = vtkActor2D::New();
+		r->AddActor2D(actor);
+		c->legendSetting()->imgSetting()->setActor(actor);
+		m_colorMapLegendActors.insert({att->name(), actor});
 	}
 }
 
 void PreProcessorGridTypeDataItem::changeValueRange(const std::string& name)
 {
-	auto stc = m_scalarsToColors.value(name, nullptr);
-	if (stc == nullptr) {return;}
+	auto it = m_colorMapSettingContainers.find(name);
+	if (it == m_colorMapSettingContainers.end()) {return;}
+	ColorMapSettingContainerI* colormap = it->second;
 
 	// The value range of the specified grid related condition is changed.
 	// Check the new min and max values.
 	bool valueExist = false;
 	double min = 0;
 	double max = 0;
+
 	// check raw data
-	PreProcessorGeoDataGroupDataItemInterface* i = m_geoDataTop->groupDataItem(name);
+	auto  i = m_geoDataTop->groupDataItem(name);
 	if (i == nullptr) {return;}
 	valueExist = i->getValueRange(&min, &max);
 
@@ -368,8 +404,21 @@ void PreProcessorGridTypeDataItem::changeValueRange(const std::string& name)
 	}
 
 	// Now, new min, max are stored.
-	stc->setValueRange(min, max);
+	colormap->setAutoValueRange(min, max);
+
+	applyColorMapSetting(name);
+
 	renderGraphicsView();
+}
+
+void PreProcessorGridTypeDataItem::applyColorMapSetting(const std::string& name)
+{
+	auto i = m_geoDataTop->groupDataItem(name);
+	i->applyColorMapSetting();
+
+	for (const auto c : m_conditions) {
+		c->gridDataItem()->applyColorMapSetting(name);
+	}
 }
 
 void PreProcessorGridTypeDataItem::assignActorZValues(const ZDepthRange& range)
@@ -429,5 +478,17 @@ void PreProcessorGridTypeDataItem::setGridEdited()
 {
 	for (auto cit = m_conditions.begin(); cit != m_conditions.end(); ++cit) {
 		(*cit)->setGridEdited();
+	}
+}
+
+QUndoCommand* PreProcessorGridTypeDataItem::createApplyColorMapSettingCommand(const std::string& name, QUndoCommand* command, bool apply)
+{
+	return new ApplyColorMapSettingAndRenderCommand(command, name, apply, this);
+}
+
+void PreProcessorGridTypeDataItem::handleResize(VTKGraphicsView* v)
+{
+	for (const auto& pair : m_colorMapSettingContainers) {
+		pair.second->legendSetting()->imgSetting()->controller()->handleResize(v);
 	}
 }

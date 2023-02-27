@@ -18,7 +18,6 @@
 #include <postbase/title/posttitledataitem.h>
 
 #include <QDomNode>
-#include <QStandardItemModel>
 #include <QXmlStreamWriter>
 
 #include <vtkRenderWindow.h>

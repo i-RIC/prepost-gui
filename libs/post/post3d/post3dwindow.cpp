@@ -193,9 +193,8 @@ QList<QString> Post3dWindow::particleDrawingZones()
 	QList<Post3dWindowGridTypeDataItem*> gtItems = rItem->gridTypeDataItems();
 	for (int i = 0; i < gtItems.count(); ++i) {
 		Post3dWindowGridTypeDataItem* gtItem = gtItems.at(i);
-		QList<Post3dWindowZoneDataItem*> zItems = gtItem->zoneDatas();
-		for (int j = 0; j < zItems.count(); ++j) {
-			Post3dWindowZoneDataItem* zItem = zItems.at(j);
+		auto zItems = gtItem->zoneDatas();
+		for (auto zItem : zItems) {
 			Post3dWindowNodeVectorParticleGroupDataItem* pItem = zItem->particleGroupDataItem();
 			if (pItem->standardItem()->checkState() == Qt::Checked && pItem->target() != "") {
 				ret.append(zItem->zoneName().c_str());

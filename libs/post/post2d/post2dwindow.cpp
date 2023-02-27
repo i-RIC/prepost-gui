@@ -172,28 +172,6 @@ bool Post2dWindow::exportParticles(const QString& filePrefix, int fileIndex, dou
 	return pItem->exportParticles(filePrefix, fileIndex, time);
 }
 
-QList<QString> Post2dWindow::contourFigureDrawingZones()
-{
-	QList<QString> ret;
-	Post2dWindowRootDataItem* rItem = dynamic_cast<Post2dWindowRootDataItem*>(m_dataModel->m_rootDataItem);
-	QList<Post2dWindowGridTypeDataItem*> gtItems = rItem->gridTypeDataItems();
-	for (int i = 0; i < gtItems.count(); ++i) {
-		Post2dWindowGridTypeDataItem* gtItem = gtItems.at(i);
-		QList<Post2dWindowZoneDataItem*> zItems = gtItem->zoneDatas();
-		for (Post2dWindowZoneDataItem* zItem : zItems) {
-			Post2dWindowNodeScalarGroupTopDataItem* sItem = zItem->scalarGroupTopDataItem();
-			for (auto item : sItem->childItems()) {
-				Post2dWindowNodeScalarGroupDataItem* typedi = dynamic_cast<Post2dWindowNodeScalarGroupDataItem*>(item);
-				if (typedi->contour() == ContourSettingWidget::ContourFigure) {
-					ret.append(zItem->zoneName().c_str());
-					break;
-				}
-			}
-		}
-	}
-	return ret;
-}
-
 QList<QString> Post2dWindow::particleDrawingZones()
 {
 	QList<QString> ret;
@@ -201,9 +179,7 @@ QList<QString> Post2dWindow::particleDrawingZones()
 	QList<Post2dWindowGridTypeDataItem*> gtItems = rItem->gridTypeDataItems();
 	for (int i = 0; i < gtItems.count(); ++i) {
 		Post2dWindowGridTypeDataItem* gtItem = gtItems.at(i);
-		QList<Post2dWindowZoneDataItem*> zItems = gtItem->zoneDatas();
-		for (int j = 0; j < zItems.count(); ++j) {
-			Post2dWindowZoneDataItem* zItem = zItems.at(j);
+		for (auto zItem : gtItem->zoneDatas()) {
 			Post2dWindowNodeVectorParticleGroupDataItem* pItem = zItem->particleDataItem();
 			if (pItem->standardItem()->checkState() == Qt::Checked && pItem->target() != "") {
 				ret.append(zItem->zoneName().c_str());
@@ -213,42 +189,44 @@ QList<QString> Post2dWindow::particleDrawingZones()
 	return ret;
 }
 
-bool Post2dWindow::checkShapeExportCondition(const QString& zoneName) const
+bool Post2dWindow::checkShapeExportCondition(const std::string& zoneName) const
 {
-	Post2dWindowRootDataItem* rItem = dynamic_cast<Post2dWindowRootDataItem*>(m_dataModel->m_rootDataItem);
-	Post2dWindowZoneDataItem* zItem = rItem->zoneDataItem(iRIC::toStr(zoneName));
-	Post2dWindowNodeScalarGroupTopDataItem* sItem = zItem->scalarGroupTopDataItem();
-	QList<QString> scalars = sItem->availableScalars();
-	if (scalars.count() == 0) {
+	auto rItem = dynamic_cast<Post2dWindowRootDataItem*>(m_dataModel->m_rootDataItem);
+	auto sItem = rItem->zoneDataItem(zoneName)->scalarGroupTopDataItem();
+	auto scalars = sItem->selectedScalars();
+	if (scalars.size() == 0) {
 		QMessageBox::warning(window(), tr("Error"), tr("No contours have been defined"));
 		return false;
-	} else if (scalars.count() == 1) {
-		m_exportScalarName = scalars.at(0);
-	} if (scalars.count() > 1) {
+	} else if (scalars.size() == 1) {
+		m_exportScalarName = scalars.at(0).c_str();
+	} if (scalars.size() > 1) {
 		ItemSelectingDialog dialog(sItem->mainWindow());
 		dialog.setMessage(tr("Please select which scalar to export:"));
-		dialog.setItems(scalars);
+		QStringList qstringScalars;
+		for (const auto& s : scalars) {
+			qstringScalars.append(s.c_str());
+		}
+		dialog.setItems(qstringScalars);
 		int ret = dialog.exec();
 		if (ret == QDialog::Rejected) {
 			return false;
 		}
-		m_exportScalarName = scalars.at(dialog.selectedIndex());
+		m_exportScalarName = scalars.at(dialog.selectedIndex()).c_str();
 	}
 	return sItem->checkShapeExportCondition(m_exportScalarName);
 }
 
-bool Post2dWindow::checkKmlExportCondition(const QString& zoneName) const
+bool Post2dWindow::checkKmlExportCondition(const std::string& zoneName) const
 {
-	Post2dWindowRootDataItem* rItem = dynamic_cast<Post2dWindowRootDataItem*>(m_dataModel->m_rootDataItem);
-	Post2dWindowZoneDataItem* zItem = rItem->zoneDataItem(iRIC::toStr(zoneName));
-	Post2dWindowNodeScalarGroupTopDataItem* sItem = zItem->scalarGroupTopDataItem();
-	QList<QString> scalars = sItem->selectedScalars();
-	if (scalars.count() == 0) {
+	auto rItem = dynamic_cast<Post2dWindowRootDataItem*>(m_dataModel->m_rootDataItem);
+	auto sItem = rItem->zoneDataItem(zoneName)->scalarGroupTopDataItem();
+	auto scalars = sItem->selectedScalars();
+	if (scalars.size() == 0) {
 		QMessageBox::warning(window(), tr("Error"), tr("No Contour Figure is drawn now."));
 		return false;
-	} else if (scalars.count() == 1) {
+	} else if (scalars.size() == 1) {
 		m_exportScalarName = scalars.at(0);
-	} if (scalars.count() > 1) {
+	} if (scalars.size() > 1) {
 		ItemSelectingDialog dialog(sItem->mainWindow());
 		dialog.setMessage(tr("Please select which scalar to export:"));
 		dialog.setItems(scalars);
@@ -261,27 +239,24 @@ bool Post2dWindow::checkKmlExportCondition(const QString& zoneName) const
 	return sItem->checkKmlExportCondition(m_exportScalarName);
 }
 
-bool Post2dWindow::exportKMLHeader(QXmlStreamWriter& writer, const QString& zonename)
+bool Post2dWindow::exportKMLHeader(QXmlStreamWriter& writer, const std::string& zonename)
 {
-	Post2dWindowRootDataItem* rItem = dynamic_cast<Post2dWindowRootDataItem*>(m_dataModel->m_rootDataItem);
-	Post2dWindowZoneDataItem* zItem = rItem->zoneDataItem(iRIC::toStr(zonename));
-	Post2dWindowNodeScalarGroupTopDataItem* sItem = zItem->scalarGroupTopDataItem();
+	auto rItem = dynamic_cast<Post2dWindowRootDataItem*>(m_dataModel->m_rootDataItem);
+	auto sItem = rItem->zoneDataItem(zonename)->scalarGroupTopDataItem();
 	return sItem->exportKMLHeader(writer, m_exportScalarName);
 }
 
-bool Post2dWindow::exportKMLFooter(QXmlStreamWriter& writer, const QString& zoneName)
+bool Post2dWindow::exportKMLFooter(QXmlStreamWriter& writer, const std::string& zoneName)
 {
-	Post2dWindowRootDataItem* rItem = dynamic_cast<Post2dWindowRootDataItem*>(m_dataModel->m_rootDataItem);
-	Post2dWindowZoneDataItem* zItem = rItem->zoneDataItem(iRIC::toStr(zoneName));
-	Post2dWindowNodeScalarGroupTopDataItem* sItem = zItem->scalarGroupTopDataItem();
+	auto rItem = dynamic_cast<Post2dWindowRootDataItem*>(m_dataModel->m_rootDataItem);
+	auto sItem = rItem->zoneDataItem(zoneName)->scalarGroupTopDataItem();
 	return sItem->exportKMLFooter(writer, m_exportScalarName);
 }
 
-bool Post2dWindow::exportKMLForTimestep(QXmlStreamWriter& writer, int index, double time, const QString& zoneName, bool oneShot)
+bool Post2dWindow::exportKMLForTimestep(QXmlStreamWriter& writer, int index, double time, const std::string& zoneName, bool oneShot)
 {
-	Post2dWindowRootDataItem* rItem = dynamic_cast<Post2dWindowRootDataItem*>(m_dataModel->m_rootDataItem);
-	Post2dWindowZoneDataItem* zItem = rItem->zoneDataItem(iRIC::toStr(zoneName));
-	Post2dWindowNodeScalarGroupTopDataItem* sItem = zItem->scalarGroupTopDataItem();
+	auto rItem = dynamic_cast<Post2dWindowRootDataItem*>(m_dataModel->m_rootDataItem);
+	auto sItem = rItem->zoneDataItem(zoneName)->scalarGroupTopDataItem();
 	return sItem->exportKMLForTimestep(writer, m_exportScalarName, index, time, oneShot);
 }
 
@@ -305,32 +280,29 @@ void Post2dWindow::updateTmsList()
 	dynamic_cast<Post2dWindowDataModel*> (m_dataModel)->updateTmsList();
 }
 
-bool Post2dWindow::exportContourFigureToShape(const QString& filePrefix, int index, double time, const QString& zoneName)
+bool Post2dWindow::exportContourFigureToShape(const QString& filePrefix, int index, double time, const std::string& zoneName)
 {
-	Post2dWindowRootDataItem* rItem = dynamic_cast<Post2dWindowRootDataItem*>(m_dataModel->m_rootDataItem);
-	Post2dWindowZoneDataItem* zItem = rItem->zoneDataItem(iRIC::toStr(zoneName));
-	Post2dWindowNodeScalarGroupTopDataItem* sItem = zItem->scalarGroupTopDataItem();
+	auto rItem = dynamic_cast<Post2dWindowRootDataItem*>(m_dataModel->m_rootDataItem);
+	auto sItem = rItem->zoneDataItem(zoneName)->scalarGroupTopDataItem();
 	QString filePrefix2 = filePrefix;
 	filePrefix2.append(QString("%1.shp").arg(index));
 	return sItem->exportContourFigureToShape(m_exportScalarName, filePrefix2, time);
 }
 
-QList<QString> Post2dWindow::contourDrawingZones()
+std::vector<std::string> Post2dWindow::discreteColorDrawingZones()
 {
-	QList<QString> ret;
-	Post2dWindowRootDataItem* rItem = dynamic_cast<Post2dWindowRootDataItem*>(m_dataModel->m_rootDataItem);
-	QList<Post2dWindowGridTypeDataItem*> gtItems = rItem->gridTypeDataItems();
-	for (int i = 0; i < gtItems.count(); ++i) {
-		Post2dWindowGridTypeDataItem* gtItem = gtItems.at(i);
-		QList<Post2dWindowZoneDataItem*> zItems = gtItem->zoneDatas();
-		for (int j = 0; j < zItems.count(); ++j) {
-			Post2dWindowZoneDataItem* zItem = zItems.at(j);
-			Post2dWindowNodeScalarGroupTopDataItem* sItem = zItem->scalarGroupTopDataItem();
+	std::vector<std::string> ret;
+	auto rItem = dynamic_cast<Post2dWindowRootDataItem*>(m_dataModel->m_rootDataItem);
+	auto gtItems = rItem->gridTypeDataItems();
+	for (int i = 0; i < gtItems.size(); ++i) {
+		auto zItems = gtItems.at(i)->zoneDatas();
+		for (int j = 0; j < zItems.size(); ++j) {
+			auto zItem = zItems.at(j);
+			auto sItem = zItem->scalarGroupTopDataItem();
 			for (auto item : sItem->childItems()) {
-				Post2dWindowNodeScalarGroupDataItem* typedi = dynamic_cast<Post2dWindowNodeScalarGroupDataItem*>(item);
+				auto typedi = dynamic_cast<Post2dWindowNodeScalarGroupDataItem*>(item);
 				if (typedi->standardItem()->checkState() == Qt::Checked) {
-					ret.append(zItem->zoneName().c_str());
-					break;
+					ret.push_back(zItem->zoneName());
 				}
 			}
 		}

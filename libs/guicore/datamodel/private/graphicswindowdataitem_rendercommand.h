@@ -11,7 +11,6 @@ class GraphicsWindowDataItem::RenderCommand : public QUndoCommand
 {
 public:
 	explicit RenderCommand(QUndoCommand *child, GraphicsWindowDataItem* item);
-	~RenderCommand();
 
 	void redo() override;
 	void undo() override;

@@ -20,6 +20,7 @@ class GridAttributeContainer;
 class PreProcessorGridDataItemInterface;
 
 class vtkAlgorithm;
+class vtkPolyDataAlgorithm;
 class vtkPointSet;
 
 namespace iRICLib {
@@ -56,9 +57,9 @@ public:
 
 	vtkPointSet* vtkGrid() const;
 
-	vtkAlgorithm* vtkFilteredShapeAlgorithm() const;
-	vtkAlgorithm* vtkFilteredPointsAlgorithm() const;
-	vtkAlgorithm* vtkFilteredCellsAlgorithm() const;
+	vtkPolyDataAlgorithm* vtkFilteredShapeAlgorithm() const;
+	vtkPolyDataAlgorithm* vtkFilteredPointsAlgorithm() const;
+	vtkPolyDataAlgorithm* vtkFilteredCellsAlgorithm() const;
 	virtual vtkAlgorithm* vtkFilteredIndexGridAlgorithm() const;
 
 	QList<GridAttributeContainer*>& gridAttributes();
@@ -89,9 +90,9 @@ protected:
 	int saveGridAttributes(iRICLib::H5CgnsGridAttributes* atts);
 
 	void setMasked(bool masked);
-	void setFilteredShapeAlgorithm(vtkAlgorithm* algo);
-	void setFilteredPointsAlgorithm(vtkAlgorithm* algo);
-	void setFilteredCellsAlgorithm(vtkAlgorithm* algo);
+	void setFilteredShapeAlgorithm(vtkPolyDataAlgorithm* algo);
+	void setFilteredPointsAlgorithm(vtkPolyDataAlgorithm* algo);
+	void setFilteredCellsAlgorithm(vtkPolyDataAlgorithm* algo);
 
 private:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;

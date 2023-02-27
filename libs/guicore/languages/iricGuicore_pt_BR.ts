@@ -1,4 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="pt_BR">
+<context>
+    <name>ArrowsColorSettingEditSmallWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Forma</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Cor</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Edit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Colormap Setting (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsColorSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Forma</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsGeneralFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="obsolete">Forma</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsLegendSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Forma</translation>
+    </message>
+    <message>
+        <source>Visibility</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>When selected</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Always</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Title :</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Font Setting:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Length</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Format:</source>
+        <translation type="unfinished">Formato de exibicao :</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Cor</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Length:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsLengthSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Forma</translation>
+    </message>
+    <message>
+        <source>Length</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Standard value:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>[m/s]</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Length on screen:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>[pixel]</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Minimum value to draw:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Forma</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Cor</translation>
+    </message>
+    <message>
+        <source>Length Legend</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsShapeSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Forma</translation>
+    </message>
+    <message>
+        <source>Arrow Shape</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Arrow size:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Line width:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
 <context>
     <name>AttributeBrowserTargetDataItem</name>
     <message>
@@ -104,6 +303,354 @@
     </message>
 </context>
 <context>
+    <name>ColorMapEnumerateLegendSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Forma</translation>
+    </message>
+    <message>
+        <source>Visibility</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>When selected</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Always</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Title :</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Font Setting:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Cor</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Label:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Forma</translation>
+    </message>
+    <message>
+        <source>Ignore Color bar setting when importing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Colors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color Bar Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select file to import</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Colormap setting (*.cmsetting)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error occured while loading %1
+Parse error %2 at %3, column %4</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Erro</translation>
+    </message>
+    <message>
+        <source>Input file name to export</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error occured while opening %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation type="unfinished">Valor</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Cor</translation>
+    </message>
+    <message>
+        <source>Transparent</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapLegendSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Forma</translation>
+    </message>
+    <message>
+        <source>Visibility</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>When selected</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Always</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Title :</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Font Setting:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Format:</source>
+        <translation type="unfinished">Formato de exibicao :</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Cor</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Label:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditDialog</name>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation type="unfinished">Configuracao do mapa colorido</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Forma</translation>
+    </message>
+    <message>
+        <source>Presets:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ignore Color bar setting when importing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Relationship between values and colors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Automatically adjust based on value range</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Setup Manually</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Value Range</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Automatic</source>
+        <translation type="unfinished">Automatico</translation>
+    </message>
+    <message>
+        <source>Max:</source>
+        <translation type="unfinished">Valor maximo :</translation>
+    </message>
+    <message>
+        <source>Min:</source>
+        <translation type="unfinished">Valor minimo :</translation>
+    </message>
+    <message>
+        <source>Colors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation type="unfinished">Adicionar(&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fill lower area</source>
+        <translation type="unfinished">Delinear menor que o valor minimo</translation>
+    </message>
+    <message>
+        <source>Fill upper area</source>
+        <translation type="unfinished">Delinear maior que o valor maximo</translation>
+    </message>
+    <message>
+        <source>Switch</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color Bar Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select file to import</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Colormap setting (*.cmsetting)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Input file name to export</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error occured while opening %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Erro</translation>
+    </message>
+    <message>
+        <source>Error occured while loading %1
+Parse error %2 at %3, column %4</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>(Please select item to apply)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Switch to Discrete Mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Switch to Gradation Mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation type="unfinished">Valor</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Cor</translation>
+    </message>
+    <message>
+        <source>Min value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Max value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Transparent</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget_SwitchToDiscreteDialog</name>
+    <message>
+        <source>Switch to Discrete Mode Dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Max:</source>
+        <translation type="unfinished">Valor maximo :</translation>
+    </message>
+    <message>
+        <source>Min:</source>
+        <translation type="unfinished">Valor minimo :</translation>
+    </message>
+    <message>
+        <source>Number of colors to insert at each section</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>ColorTransferFunctionEditWidget</name>
     <message>
         <source>Form</source>
@@ -135,6 +682,29 @@
     <message>
         <source>dstY</source>
         <translation>dstY</translation>
+    </message>
+</context>
+<context>
+    <name>GeneralFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Forma</translation>
+    </message>
+    <message>
+        <source>Sampling</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All vertices</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sampling rate:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Specify number of vertices</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -331,7 +901,7 @@
     <name>GridCellAttributePropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Dialogo</translation>
+        <translation type="vanished">Dialogo</translation>
     </message>
 </context>
 <context>
@@ -425,11 +995,54 @@
     <name>GridNodeAttributePropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Dialogo</translation>
+        <translation type="vanished">Dialogo</translation>
     </message>
     <message>
         <source>Contour setting</source>
-        <translation>Configuracao de contorno</translation>
+        <translation type="vanished">Configuracao de contorno</translation>
+    </message>
+</context>
+<context>
+    <name>ImageSettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Forma</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation type="unfinished">Posicao</translation>
+    </message>
+    <message>
+        <source>Horizontal Margin:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Vertical Margin:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Width:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Height:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Distance from left</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Distance from right</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Distance from top</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Distance from bottom</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -466,12 +1079,12 @@
         <translation>Elemento de definicao nao foi encontrado</translation>
     </message>
     <message>
-        <source>Wrong valueType "%1" is set.</source>
-        <translation>Foi especificado o invalido valueType "%1".</translation>
+        <source>Wrong valueType &quot;%1&quot; is set.</source>
+        <translation>Foi especificado o invalido valueType &quot;%1&quot;.</translation>
     </message>
     <message>
-        <source>Wrong conditionType "%1"is set.</source>
-        <translation>Foi especificada a invalida conditionType "%1".</translation>
+        <source>Wrong conditionType &quot;%1&quot;is set.</source>
+        <translation>Foi especificada a invalida conditionType &quot;%1&quot;.</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.</source>
@@ -763,8 +1376,8 @@ Do you really want to import this file?</source>
         <translation>Os valores são copiados para a área de transferência.</translation>
     </message>
     <message>
-        <source>You can copy and paste the values, with shortcut "Ctrl + C" and "Ctrl + V"</source>
-        <translation>Você pode copiar e colar os valores, com o atalho "Ctrl + C" e "Ctrl + V"</translation>
+        <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
+        <translation>Você pode copiar e colar os valores, com o atalho &quot;Ctrl + C&quot; e &quot;Ctrl + V&quot;</translation>
     </message>
     <message>
         <source>The following problems found: 
@@ -820,6 +1433,21 @@ Do you really want to import this file?</source>
     </message>
 </context>
 <context>
+    <name>InputConditionWidgetString</name>
+    <message>
+        <source>(Select template to import)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The content in the text area is overwritten with the template</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>LookupTableEditWidget</name>
     <message>
         <source>Colormap Setting</source>
@@ -865,8 +1493,8 @@ Do you really want to import this file?</source>
         <translation>Ocorreu um erro ao abrir o arquivo. </translation>
     </message>
     <message>
-        <source>The first two columns must be "X" and "Y".</source>
-        <translation>As primeiras duas colunas deverao ser "X", e  "Y" </translation>
+        <source>The first two columns must be &quot;X&quot; and &quot;Y&quot;.</source>
+        <translation>As primeiras duas colunas deverao ser &quot;X&quot;, e  &quot;Y&quot; </translation>
     </message>
     <message>
         <source>The data file has to consist of only English characters.</source>
@@ -1031,8 +1659,8 @@ Do you really want to import this file?</source>
         <translation>Definicao de numero variavel</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Voce podera definir o numero variavel com linguagem JavaScript. Por favor, veja &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;  &lt;/span&gt;&lt;/a&gt; para detalhes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Voce podera definir o numero variavel com linguagem JavaScript. Por favor, veja &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;  &lt;/span&gt;&lt;/a&gt; para detalhes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -1040,7 +1668,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can test the definition by clicking this. If error occurs while parsing the definition, the error message is shown. When the definition is parsed successfully, the value calculated using the &amp;quot;Value for testing&amp;quot; for each input is shown.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt; Clicando neste botao, voce podera verificar se a definicao e correta . Se ocorrer um erro ao analisar a definicao, a mensagem de erro sera exibida. Quando a definicao for analisada com exito, o valor sera calculado sendo utilizado o "valor de teste" e o mesmo sera exibida. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt; Clicando neste botao, voce podera verificar se a definicao e correta . Se ocorrer um erro ao analisar a definicao, a mensagem de erro sera exibida. Quando a definicao for analisada com exito, o valor sera calculado sendo utilizado o &quot;valor de teste&quot; e o mesmo sera exibida. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>----</source>
@@ -1110,8 +1738,8 @@ Do you really want to import this file?</source>
         <translation>Abaixo (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt; Atencao &lt;/span&gt;: A ordem na lista e importante. Na definicao do numero variavel, voce podera usar os itens que se encontram na parte superior da lista, assim como o numero variavel apresentado pelo solucionador. .&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt; Atencao &lt;/span&gt;: A ordem na lista e importante. Na definicao do numero variavel, voce podera usar os itens que se encontram na parte superior da lista, assim como o numero variavel apresentado pelo solucionador. .&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
@@ -1464,8 +2092,8 @@ Do you really want to import this file?</source>
         <translation>Definicao de Saida</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Voce podera definir o numero variavel com linguagem JavaScript. Por favor, veja &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt; &lt;/span&gt;&lt;/a&gt;  para detalhes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Voce podera definir o numero variavel com linguagem JavaScript. Por favor, veja &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt; &lt;/span&gt;&lt;/a&gt;  para detalhes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -1719,8 +2347,8 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectWorkspace</name>
     <message>
-        <source>Workspace "%1" has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
-        <translation>O espaco de trabalho %1 " contem %2 pastas de projeto que parecem nao ser mais usadas. Deseja remove-las ?</translation>
+        <source>Workspace &quot;%1&quot; has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
+        <translation>O espaco de trabalho %1 &quot; contem %2 pastas de projeto que parecem nao ser mais usadas. Deseja remove-las ?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1825,6 +2453,41 @@ Do you really want to import this file?</source>
     </message>
 </context>
 <context>
+    <name>Region2dSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Forma</translation>
+    </message>
+    <message>
+        <source>Full Region</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Active Region</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom Region</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>I Min:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>I Max:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>J Min:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>J Max:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>ScalarsToColorsEditDialog</name>
     <message>
         <source>Color Setting</source>
@@ -1895,6 +2558,64 @@ Do you really want to import this file?</source>
     <message>
         <source>* Cells where variation of cell length along j-direction exceed %1</source>
         <translation>* Celulas cuja variacao do comprimento lateral ao longo da direcao j excede% 1</translation>
+    </message>
+</context>
+<context>
+    <name>Structured2dFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Forma</translation>
+    </message>
+    <message>
+        <source>Sampling</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All vertices</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sampling rate:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>I-direction</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>J-direction</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Structured3dFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Forma</translation>
+    </message>
+    <message>
+        <source>Sampling</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All vertices</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sampling rate:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>I-direction</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>J-direction</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>K-direction</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

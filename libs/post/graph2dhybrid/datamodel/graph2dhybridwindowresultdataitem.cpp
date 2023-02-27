@@ -11,11 +11,6 @@
 
 #include <QStandardItem>
 
-//#include <vtkDoubleArray.h>
-//#include <vtkPointData.h>
-//#include <vtkSmartPointer.h>
-//#include <vtkStructuredGrid.h>
-
 #include <cmath>
 
 Graph2dHybridWindowResultDataItem::Graph2dHybridWindowResultDataItem(const QString& title, int index, const Graph2dHybridWindowResultSetting::Setting& setting, Graph2dWindowDataItem* parent) :

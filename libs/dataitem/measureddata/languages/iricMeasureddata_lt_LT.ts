@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="lt_LT">
 <context>
     <name>MeasuredDataFileDataItem</name>
@@ -38,34 +40,81 @@
     </message>
 </context>
 <context>
-    <name>MeasuredDataPointSettingDialog</name>
+    <name>MeasuredDataPointGroupDataItem_PropertyDialog</name>
     <message>
-        <source>Scalar Setting</source>
-        <translation>Skaliarinis nustatymas</translation>
-    </message>
-    <message>
-        <source>Measured Value:</source>
-        <translation>Išmatuota vertė:</translation>
+        <source>Points Display Setting Dialog</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>Ekrano nustatymas</translation>
+        <translation type="unfinished">Ekrano nustatymas</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Spalva</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="unfinished">Eksportuoti (&amp;E)...</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation>Taško dydis:</translation>
+        <translation type="unfinished">Taško dydis:</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataPointSettingDialog</name>
+    <message>
+        <source>Scalar Setting</source>
+        <translation type="vanished">Skaliarinis nustatymas</translation>
+    </message>
+    <message>
+        <source>Measured Value:</source>
+        <translation type="vanished">Išmatuota vertė:</translation>
+    </message>
+    <message>
+        <source>Display Setting</source>
+        <translation type="vanished">Ekrano nustatymas</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="vanished">Taško dydis:</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Spalvų juostos nustatymas (&amp;C)</translation>
+        <translation type="vanished">Spalvų juostos nustatymas (&amp;C)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Klaida</translation>
+        <translation type="vanished">Klaida</translation>
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
-        <translation>Reikšmių diapazone maksimali vertė yra mažesnė už min.</translation>
+        <translation type="vanished">Reikšmių diapazone maksimali vertė yra mažesnė už min.</translation>
     </message>
 </context>
 <context>
@@ -80,62 +129,69 @@
     </message>
     <message>
         <source>Update Arrow Setting</source>
-        <translation>Atnaujinkite rodyklės nustatymą</translation>
+        <translation type="vanished">Atnaujinkite rodyklės nustatymą</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataVectorGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Measured Data Arrow Setting</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>MeasuredDataVectorSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Rodyklės nustatymas</translation>
+        <translation type="vanished">Rodyklės nustatymas</translation>
     </message>
     <message>
         <source>Physical value:</source>
-        <translation>Fizinė vertė:</translation>
+        <translation type="vanished">Fizinė vertė:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Ilgis</translation>
+        <translation type="vanished">Ilgis</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Automatinis</translation>
+        <translation type="vanished">Automatinis</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Standartinė vertė:</translation>
+        <translation type="vanished">Standartinė vertė:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[m/s]</translation>
+        <translation type="vanished">[m/s]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Ilgis ekrane:</translation>
+        <translation type="vanished">Ilgis ekrane:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[pikselis]</translation>
+        <translation type="vanished">[pikselis]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Minimali nupiešiama vertė:</translation>
+        <translation type="vanished">Minimali nupiešiama vertė:</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Spalva</translation>
+        <translation type="vanished">Spalva</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Individualizuota spalva</translation>
+        <translation type="vanished">Individualizuota spalva</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Pagal skaliarinę vertę</translation>
+        <translation type="vanished">Pagal skaliarinę vertę</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Spalvų juostos nustatymas (&amp;C)</translation>
+        <translation type="vanished">Spalvų juostos nustatymas (&amp;C)</translation>
     </message>
 </context>
 </TS>

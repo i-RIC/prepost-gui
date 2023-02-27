@@ -72,12 +72,10 @@ void Post3dWindowNodeScalarGroupTopDataItem::doSaveToProjectMainFile(QXmlStreamW
 }
 
 void Post3dWindowNodeScalarGroupTopDataItem::updateZDepthRangeItemCount()
-{
-}
+{}
 
 void Post3dWindowNodeScalarGroupTopDataItem::assignActorZValues(const ZDepthRange& /*range*/)
-{
-}
+{}
 
 void Post3dWindowNodeScalarGroupTopDataItem::update()
 {
@@ -293,10 +291,4 @@ void Post3dWindowNodeScalarGroupTopDataItem::handleAddDialogAccepted(QDialog* pr
 void Post3dWindowNodeScalarGroupTopDataItem::innerUpdateZScale(double scale)
 {
 	m_zScale = scale;
-}
-
-void Post3dWindowNodeScalarGroupTopDataItem::undoableDeleteItem(GraphicsWindowDataItem* item, bool noDraw)
-{
-	Post3dWindowNodeScalarGroupDataItem* dataitem = dynamic_cast<Post3dWindowNodeScalarGroupDataItem*>(item);
-	iRICUndoStack::instance().push(new DeleteCommand(this, dataitem));
 }

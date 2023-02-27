@@ -22,7 +22,6 @@ class PreProcessorGraphicsViewInterface;
 class PreProcessorHydraulicDataTopDataItemInterface;
 class PreProcessorHydraulicDataGroupDataItemInterface;
 class ZDepthRange;
-class ScalarsToColorsContainer;
 class MouseBoundingBox;
 class GeoDataProxy;
 
@@ -90,6 +89,7 @@ public:
 	virtual void setupMenu();
 	virtual void showInitialDialog();
 	virtual bool addToolBarButtons(QToolBar* parent);
+	virtual void applyColorMapSetting();
 
 	QMenu* menu() const;
 
@@ -116,7 +116,7 @@ public:
 	virtual bool getValueRange(double* min, double* max);
 	virtual QDialog* propertyDialog(QWidget* parent);
 	virtual void handlePropertyDialogAccepted(QDialog* propDialog);
-	ScalarsToColorsContainer* scalarsToColorsContainer();
+	ColorMapSettingContainerI* colorMapSettingContainer() const;
 	virtual void update2Ds();
 
 	bool isVisible() const;

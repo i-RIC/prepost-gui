@@ -143,8 +143,6 @@ HEADERS += post2d_global.h \
            post2dwindowgraphicsview.h \
            post2dwindowprojectdataitem.h \
            scalarbari.h \
-           datamodel/post2dwindowarrowstructuredsettingdialog.h \
-           datamodel/post2dwindowarrowunstructuredsettingdialog.h \
            datamodel/post2dwindowbackgroundimagedataitem.h \
            datamodel/post2dwindowbackgroundimagesdataitem.h \
            datamodel/post2dwindowcellflagdataitem.h \
@@ -154,7 +152,6 @@ HEADERS += post2d_global.h \
            datamodel/post2dwindowcellscalargrouptopdataitem.h \
            datamodel/post2dwindowedgeiscalargrouptopdataitem.h \
            datamodel/post2dwindowedgejscalargrouptopdataitem.h \
-           datamodel/post2dwindowcontoursettingdialog.h \
            datamodel/post2dwindowgeodatadataitem.h \
            datamodel/post2dwindowgeodatagroupdataitem.h \
            datamodel/post2dwindowgeodatatopdataitem.h \
@@ -166,15 +163,11 @@ HEADERS += post2d_global.h \
            datamodel/post2dwindowgridtypedataitem.h \
            datamodel/post2dwindowmeasureddatatopdataitem.h \
            datamodel/post2dwindownodescalargroupdataitem.h \
-           datamodel/post2dwindownodescalargroupdataitem_shapeexporter.h \
            datamodel/post2dwindownodescalargrouptopdataitem.h \
            datamodel/post2dwindownodevectorarrowdataitem.h \
            datamodel/post2dwindownodevectorarrowgroupdataitem.h \
            datamodel/post2dwindownodevectorarrowgroupstructureddataitem.h \
            datamodel/post2dwindownodevectorarrowgroupunstructureddataitem.h \
-           datamodel/post2dwindownodevectorarrowsetting.h \
-           datamodel/post2dwindownodevectorarrowstructuredsetting.h \
-           datamodel/post2dwindownodevectorarrowunstructuredsetting.h \
            datamodel/post2dwindownodevectorparticledataitem.h \
            datamodel/post2dwindownodevectorparticlegroupdataitem.h \
            datamodel/post2dwindownodevectorparticlegroupstructureddataitem.h \
@@ -193,6 +186,7 @@ HEADERS += post2d_global.h \
            datamodel/post2dwindowparticlestopdataitem.h \
            datamodel/post2dwindowparticlestructuredsettingdialog.h \
            datamodel/post2dwindowparticleunstructuredsettingdialog.h \
+           datamodel/post2dwindowpointscalargrouptopdataitemi.h \
            datamodel/post2dwindowpolydatagroupdataitem.h \
            datamodel/post2dwindowpolydatatopdataitem.h \
            datamodel/post2dwindowpolydatavaluedataitem.h \
@@ -202,31 +196,48 @@ HEADERS += post2d_global.h \
            datamodel/post2dwindowstreamlineunstructuredsettingdialog.h \
            datamodel/post2dwindowzonedataitem.h \
            datamodel/private/post2dwindowcellflaggroupdataitem_setsettingcommand.h \
+           datamodel/private/post2dwindowcellscalargroupdataitem_propertydialog.h \
+           datamodel/private/post2dwindowcellscalargroupdataitem_updateactorsettingscommand.h \
            datamodel/private/post2dwindowgraphgroupdataitem_impl.h \
            datamodel/private/post2dwindowgraphgroupdataitem_setsettingcommand.h \
            datamodel/private/post2dwindowgraphsettingcustomregiondialog.h \
            datamodel/private/post2dwindowgraphsettingdialog_impl.h \
-           datamodel/private/post2dwindowgridshapedataitem_setsettingcommand.h \
-           datamodel/private/post2dwindownodevectorarrowgroupstructureddataitem_setsettingcommand.h \
-           datamodel/private/post2dwindownodevectorarrowgroupunstructureddataitem_setsettingcommand.h \
+           datamodel/private/post2dwindowgridshapedataitem_propertydialog.h \
+           datamodel/private/post2dwindowgridshapedataitem_updateactorsettingscommand.h \
+           datamodel/private/post2dwindownodescalargroupdataitem_propertydialog.h \
+           datamodel/private/post2dwindownodescalargroupdataitem_shapeexporter.h \
+           datamodel/private/post2dwindownodescalargroupdataitem_updateactorsettingscommand.h \
+           datamodel/private/post2dwindownodevectorarrowgroupdataitem_updateactorsettingscommand.h \
+           datamodel/private/post2dwindownodevectorarrowgroupstructureddataitem_propertydialog.h \
+           datamodel/private/post2dwindownodevectorarrowgroupstructureddataitem_propertydialog_additionalwidgets.h \
+           datamodel/private/post2dwindownodevectorarrowgroupunstructureddataitem_propertydialog.h \
+           datamodel/private/post2dwindownodevectorarrowgroupunstructureddataitem_propertydialog_additionalwidgets.h \
            datamodel/private/post2dwindownodevectorparticlegroupstructureddataitem_setsettingcommand.h \
            datamodel/private/post2dwindownodevectorparticlegroupunstructureddataitem_setsettingcommand.h \
-           datamodel/private/post2dwindowparticlesbasescalargroupdataitem_setsettingcommand.h \
-           datamodel/private/post2dwindowparticlesbasetopdataitem_setsettingcommand.h \
-           datamodel/private/post2dwindowparticlesbasevectorgroupdataitem_setsettingcommand.h \
-           datamodel/private/post2dwindowpolydatagroupdataitem_setbasicsettingcommand.h \
-           datamodel/private/post2dwindowpolydatagroupdataitem_setsettingcommand.h
+           datamodel/private/post2dwindowparticlesbasescalargroupdataitem_propertydialog.h \
+           datamodel/private/post2dwindowparticlesbasescalargroupdataitem_updateactorsettingscommand.h \
+           datamodel/private/post2dwindowparticlesbasevectorgroupdataitem_propertydialog.h \
+           datamodel/private/post2dwindowparticlesbasevectorgroupdataitem_updatesettingcommand.h \
+           datamodel/private/post2dwindowpolydatagroupdataitem_propertydialog.h \
+           datamodel/private/post2dwindowpolydatagroupdataitem_updateactorsettingscommand.h
 FORMS += post2dgridregionselectdialog.ui \
-         datamodel/post2dwindowarrowstructuredsettingdialog.ui \
-         datamodel/post2dwindowarrowunstructuredsettingdialog.ui \
          datamodel/post2dwindowcellflagsettingdialog.ui \
-         datamodel/post2dwindowcontoursettingdialog.ui \
          datamodel/post2dwindowgraphsettingdialog.ui \
          datamodel/post2dwindowparticlestructuredsettingdialog.ui \
          datamodel/post2dwindowparticleunstructuredsettingdialog.ui \
          datamodel/post2dwindowstreamlinestructuredsettingdialog.ui \
          datamodel/post2dwindowstreamlineunstructuredsettingdialog.ui \
-         datamodel/private/post2dwindowgraphsettingcustomregiondialog.ui
+         datamodel/private/post2dwindowcellscalargroupdataitem_propertydialog.ui \
+         datamodel/private/post2dwindowgraphsettingcustomregiondialog.ui \
+         datamodel/private/post2dwindowgridshapedataitem_propertydialog.ui \
+         datamodel/private/post2dwindownodescalargroupdataitem_propertydialog.ui \
+         datamodel/private/post2dwindownodevectorarrowgroupstructureddataitem_propertydialog.ui \
+         datamodel/private/post2dwindownodevectorarrowgroupstructureddataitem_propertydialog_additionalwidgets.ui \
+         datamodel/private/post2dwindownodevectorarrowgroupunstructureddataitem_propertydialog.ui \
+         datamodel/private/post2dwindownodevectorarrowgroupunstructureddataitem_propertydialog_additionalwidgets.ui \
+         datamodel/private/post2dwindowparticlesbasescalargroupdataitem_propertydialog.ui \
+         datamodel/private/post2dwindowparticlesbasevectorgroupdataitem_propertydialog.ui \
+         datamodel/private/post2dwindowpolydatagroupdataitem_propertydialog.ui
 SOURCES += post2dgridregionselectdialog.cpp \
            post2dobjectbrowser.cpp \
            post2dobjectbrowserview.cpp \
@@ -237,8 +248,6 @@ SOURCES += post2dgridregionselectdialog.cpp \
            post2dwindowdatamodel.cpp \
            post2dwindowgraphicsview.cpp \
            post2dwindowprojectdataitem.cpp \
-           datamodel/post2dwindowarrowstructuredsettingdialog.cpp \
-           datamodel/post2dwindowarrowunstructuredsettingdialog.cpp \
            datamodel/post2dwindowbackgroundimagedataitem.cpp \
            datamodel/post2dwindowbackgroundimagesdataitem.cpp \
            datamodel/post2dwindowcellflagdataitem.cpp \
@@ -248,7 +257,6 @@ SOURCES += post2dgridregionselectdialog.cpp \
            datamodel/post2dwindowcellscalargrouptopdataitem.cpp \
            datamodel/post2dwindowedgeiscalargrouptopdataitem.cpp \
            datamodel/post2dwindowedgejscalargrouptopdataitem.cpp \
-           datamodel/post2dwindowcontoursettingdialog.cpp \
            datamodel/post2dwindowgeodatadataitem.cpp \
            datamodel/post2dwindowgeodatagroupdataitem.cpp \
            datamodel/post2dwindowgeodatatopdataitem.cpp \
@@ -260,15 +268,11 @@ SOURCES += post2dgridregionselectdialog.cpp \
            datamodel/post2dwindowgridtypedataitem.cpp \
            datamodel/post2dwindowmeasureddatatopdataitem.cpp \
            datamodel/post2dwindownodescalargroupdataitem.cpp \
-           datamodel/post2dwindownodescalargroupdataitem_shapeexporter.cpp \
            datamodel/post2dwindownodescalargrouptopdataitem.cpp \
            datamodel/post2dwindownodevectorarrowdataitem.cpp \
            datamodel/post2dwindownodevectorarrowgroupdataitem.cpp \
            datamodel/post2dwindownodevectorarrowgroupstructureddataitem.cpp \
            datamodel/post2dwindownodevectorarrowgroupunstructureddataitem.cpp \
-           datamodel/post2dwindownodevectorarrowsetting.cpp \
-           datamodel/post2dwindownodevectorarrowstructuredsetting.cpp \
-           datamodel/post2dwindownodevectorarrowunstructuredsetting.cpp \
            datamodel/post2dwindownodevectorparticledataitem.cpp \
            datamodel/post2dwindownodevectorparticlegroupdataitem.cpp \
            datamodel/post2dwindownodevectorparticlegroupstructureddataitem.cpp \
@@ -296,18 +300,28 @@ SOURCES += post2dgridregionselectdialog.cpp \
            datamodel/post2dwindowstreamlineunstructuredsettingdialog.cpp \
            datamodel/post2dwindowzonedataitem.cpp \
            datamodel/private/post2dwindowcellflaggroupdataitem_setsettingcommand.cpp \
+           datamodel/private/post2dwindowcellscalargroupdataitem_propertydialog.cpp \
+           datamodel/private/post2dwindowcellscalargroupdataitem_updateactorsettingscommand.cpp \
            datamodel/private/post2dwindowgraphgroupdataitem_setsettingcommand.cpp \
            datamodel/private/post2dwindowgraphsettingcustomregiondialog.cpp \
-           datamodel/private/post2dwindowgridshapedataitem_setsettingcommand.cpp \
-           datamodel/private/post2dwindownodevectorarrowgroupstructureddataitem_setsettingcommand.cpp \
-           datamodel/private/post2dwindownodevectorarrowgroupunstructureddataitem_setsettingcommand.cpp \
+           datamodel/private/post2dwindowgridshapedataitem_propertydialog.cpp \
+           datamodel/private/post2dwindowgridshapedataitem_updateactorsettingscommand.cpp \
+           datamodel/private/post2dwindownodescalargroupdataitem_propertydialog.cpp \
+           datamodel/private/post2dwindownodescalargroupdataitem_shapeexporter.cpp \
+           datamodel/private/post2dwindownodescalargroupdataitem_updateactorsettingscommand.cpp \
+           datamodel/private/post2dwindownodevectorarrowgroupdataitem_updateactorsettingscommand.cpp \
+           datamodel/private/post2dwindownodevectorarrowgroupstructureddataitem_propertydialog.cpp \
+           datamodel/private/post2dwindownodevectorarrowgroupstructureddataitem_propertydialog_additionalwidgets.cpp \
+           datamodel/private/post2dwindownodevectorarrowgroupunstructureddataitem_propertydialog.cpp \
+           datamodel/private/post2dwindownodevectorarrowgroupunstructureddataitem_propertydialog_additionalwidgets.cpp \
            datamodel/private/post2dwindownodevectorparticlegroupstructureddataitem_setsettingcommand.cpp \
            datamodel/private/post2dwindownodevectorparticlegroupunstructureddataitem_setsettingcommand.cpp \
-           datamodel/private/post2dwindowparticlesbasescalargroupdataitem_setsettingcommand.cpp \
-           datamodel/private/post2dwindowparticlesbasetopdataitem_setsettingcommand.cpp \
-           datamodel/private/post2dwindowparticlesbasevectorgroupdataitem_setsettingcommand.cpp \
-           datamodel/private/post2dwindowpolydatagroupdataitem_setbasicsettingcommand.cpp \
-           datamodel/private/post2dwindowpolydatagroupdataitem_setsettingcommand.cpp
+           datamodel/private/post2dwindowparticlesbasescalargroupdataitem_propertydialog.cpp \
+           datamodel/private/post2dwindowparticlesbasescalargroupdataitem_updateactorsettingscommand.cpp \
+           datamodel/private/post2dwindowparticlesbasevectorgroupdataitem_propertydialog.cpp \
+           datamodel/private/post2dwindowparticlesbasevectorgroupdataitem_updatesettingcommand.cpp \
+           datamodel/private/post2dwindowpolydatagroupdataitem_propertydialog.cpp \
+           datamodel/private/post2dwindowpolydatagroupdataitem_updateactorsettingscommand.cpp
 RESOURCES += post2d.qrc
 TRANSLATIONS += languages/iricPost2d_ar_EG.ts \
                 languages/iricPost2d_bg_BG.ts \

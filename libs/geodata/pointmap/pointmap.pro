@@ -147,7 +147,9 @@ HEADERS += gd_pointmap_global.h \
            private/geodatapointmap_deletepointscommand.h \
            private/geodatapointmap_editpointscommand.h \
            private/geodatapointmap_editsinglepointcommand.h \
+           private/geodatapointmap_impl.h \
            private/geodatapointmap_interpolatelineaddpointcommand.h \
+           private/geodatapointmap_pointsmanager.h \
            private/geodatapointmap_removetrianglescommand.h \
            private/geodatapointmap_triangleswithlongedgeremover.h \
            private/geodatapointmap_triangleswithlongedgeremover_dialog.h \
@@ -206,7 +208,9 @@ SOURCES += geodatapointmap.cpp \
            private/geodatapointmap_deletepointscommand.cpp \
            private/geodatapointmap_editpointscommand.cpp \
            private/geodatapointmap_editsinglepointcommand.cpp \
+           private/geodatapointmap_impl.cpp \
            private/geodatapointmap_interpolatelineaddpointcommand.cpp \
+           private/geodatapointmap_pointsmanager.cpp \
            private/geodatapointmap_removetrianglescommand.cpp \
            private/geodatapointmap_triangleswithlongedgeremover.cpp \
            private/geodatapointmap_triangleswithlongedgeremover_dialog.cpp \

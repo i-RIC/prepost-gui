@@ -147,14 +147,14 @@ int iricActiveCellFilter::RequestData(
 				double d = *(da->GetTuple(cellId));
 				if (this->InsideOut)
 				{
-					if (d >= this->Value)
+					if (d > this->Value)
 					{
 						cellVis[cellId] = 0;
 					}
 				}
 				else
 				{
-					if (d <= this->Value)
+					if (d < this->Value)
 					{
 						cellVis[cellId] = 0;
 					}
@@ -382,14 +382,14 @@ void iricActiveCellFilter::PolyDataExecute(vtkDataSet *dataSetInput,
 				double d = *(da->GetTuple(cellId));
 				if (this->InsideOut)
 				{
-					if (d >= this->Value)
+					if (d > this->Value)
 					{
 						visible = 0;
 					}
 				}
 				else
 				{
-					if (d <= this->Value)
+					if (d < this->Value)
 					{
 						visible = 0;
 					}
@@ -521,14 +521,14 @@ void iricActiveCellFilter::UnstructuredGridExecute(vtkDataSet *dataSetInput,
 				double d = *(da->GetTuple(cellId));
 				if (this->InsideOut)
 				{
-					if (d >= this->Value)
+					if (d > this->Value)
 					{
 						cellVis[cellId] = 0;
 					}
 				}
 				else
 				{
-					if (d <= this->Value)
+					if (d < this->Value)
 					{
 						cellVis[cellId] = 0;
 					}

@@ -52,6 +52,7 @@ public:
 	void addCustomMenuItems(QMenu* menu) override;
 	PreProcessorBCDataItem* bcDataItem() const;
 	bool isMapped() const;
+	ColorMapSettingContainerI* colorMapSettingContainer() const override;
 
 	GeoData* geoData() const override;
 	void setGeoData(GeoData *) override;

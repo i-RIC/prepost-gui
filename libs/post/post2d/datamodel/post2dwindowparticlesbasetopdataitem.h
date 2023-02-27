@@ -3,8 +3,6 @@
 
 #include "../post2dwindowdataitem.h"
 
-#include <postbase/particle/postparticlebasicsetting.h>
-
 #include <vtkSmartPointer.h>
 #include <vtkActor.h>
 #include <vtkPolyDataMapper.h>
@@ -26,15 +24,8 @@ public:
 	Post2dWindowParticlesBaseScalarGroupDataItem* scalarGroupDataItem() const;
 	Post2dWindowParticlesBaseVectorGroupDataItem* vectorGroupDataItem() const;
 
-	QColor color() const;
-	void setColor(const QColor& c);
-
-	int size() const;
-	void setSize(int s);
-
 	QAction* showAttributeBrowserAction() const;
 
-	void updateActorSettings();
 	void updateZDepthRangeItemCount(ZDepthRange& range);
 	void assignActorZValues(const ZDepthRange& range) override;
 	void update();
@@ -50,19 +41,11 @@ private slots:
 private:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
-	void setupActors();
-
-	vtkSmartPointer<vtkActor> m_actor;
-	vtkSmartPointer<vtkPolyDataMapper> m_mapper;
 
 	Post2dWindowParticlesBaseScalarGroupDataItem* m_scalarGroupDataItem;
 	Post2dWindowParticlesBaseVectorGroupDataItem* m_vectorGroupDataItem;
 
-	PostParticleBasicSetting m_setting;
-
 	QAction* m_showAttributeBrowserAction;
-
-	class SetSettingCommand;
 };
 
 #endif // POST2DWINDOWPARTICLESBASETOPDATAITEM_H

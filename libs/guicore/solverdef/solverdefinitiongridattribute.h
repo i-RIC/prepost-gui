@@ -9,8 +9,11 @@
 #include <string>
 #include <vector>
 
-class QString;
-class QWidget;
+class ColorMapEngineI;
+class ColorMapFactoryI;
+class ColorMapSettingContainerI;
+class ColorMapSettingEditDialog;
+class ColorMapSettingEditWidgetI;
 class ColorTransferFunctionContainer;
 class Grid;
 class GridAttributeContainer;
@@ -21,13 +24,12 @@ class GridAttributeStringConverter;
 class GridAttributeVariationEditWidget;
 class GridAttributeVariationEditDialog;
 class GeoData;
-class LookupTableContainer;
 class ProjectDataItem;
-class ScalarsToColorsContainer;
-class ScalarsToColorsEditDialog;
-class ScalarsToColorsEditWidget;
 class SolverDefinition;
 class SolverDefinitionGridAttributeDimension;
+
+class QString;
+class QWidget;
 
 class GUICOREDLL_EXPORT SolverDefinitionGridAttribute : public SolverDefinitionNode
 {
@@ -75,19 +77,18 @@ public:
 
 	virtual GeoData* buildBackgroundGeoData(ProjectDataItem* parent) = 0;
 
-	virtual ScalarsToColorsContainer* createScalarsToColorsContainer(ProjectDataItem* d);
-	virtual ScalarsToColorsEditWidget* createScalarsToColorsEditWidget(QWidget* parent) const;
-	ScalarsToColorsEditDialog* createScalarsToColorsEditDialog(QWidget* parent) const;
+	ColorMapSettingContainerI* createColorMapSettingContainer() const;
+	ColorMapSettingEditWidgetI* createColorMapSettingEditWidget(QWidget* parent) const;
+	ColorMapSettingEditDialog* createColorMapSettingEditDialog(QWidget* parent) const;
+
 	//@}
 protected:
 	void setPosition(Position pos);
-
-	ColorTransferFunctionContainer* createColorTransferFunctionContainer(ProjectDataItem* d);
-	LookupTableContainer* createLookupTableContainer(ProjectDataItem* d) const;
-	ScalarsToColorsEditWidget* createColorTransferFunctionEditWidget(QWidget* parent) const;
-	ScalarsToColorsEditWidget* createLookupTableEditWidget(QWidget* parent) const;
+	void setColorMapFactory(ColorMapFactoryI* factory);
+	void setVariantDefaultValue(const QVariant& v);
 
 private:
+	virtual void setupColorMapSettingContainer(ColorMapSettingContainerI* c) const;
 	virtual GridAttributeContainer* buildContainer(Grid* grid) = 0;
 
 	class Impl;

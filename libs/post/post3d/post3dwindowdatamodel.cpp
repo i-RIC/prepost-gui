@@ -161,7 +161,6 @@ Post3dWindowZoneDataItem* Post3dWindowDataModel::getZoneDataItem()
 	// no appropriate zonedatatem found.
 	PostSolutionInfo* info = postSolutionInfo();
 	QList<PostZoneDataContainer*> containers = info->zoneContainers3D();
-	Post3dWindowZoneDataItem* zitem;
 	if (containers.count() == 0) {return nullptr;}
 	if (containers.count() > 1) {
 		PostZoneSelectingDialog dialog(mainWindow());
@@ -172,15 +171,13 @@ Post3dWindowZoneDataItem* Post3dWindowDataModel::getZoneDataItem()
 		std::string zone = dialog.zoneName();
 		Post3dWindowRootDataItem* root = dynamic_cast<Post3dWindowRootDataItem*>(m_rootDataItem);
 		Post3dWindowGridTypeDataItem* gt = root->gridTypeDataItem(gridType);
-		zitem = gt->zoneData(zone);
-		return zitem;
+		return gt->zoneData(zone);
 	} else {
 		Post3dWindowRootDataItem* root = dynamic_cast<Post3dWindowRootDataItem*>(m_rootDataItem);
 		QList<Post3dWindowGridTypeDataItem*> list = root->gridTypeDataItems();
 		Post3dWindowGridTypeDataItem* gt = list.at(0);
-		QList<Post3dWindowZoneDataItem*> zonelist = gt->zoneDatas();
-		zitem = zonelist.at(0);
-		return zitem;
+		auto zoneList = gt->zoneDatas();
+		return zoneList.at(0);
 	}
 }
 

@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="tr_TR">
 <context>
     <name>Post3dObjectBrowser</name>
@@ -67,34 +69,57 @@
     </message>
 </context>
 <context>
+    <name>Post3dWindowCellContourGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Contour Setting (cell center)</source>
+        <translation type="unfinished">Kontur Ayarı (hücre merkezi)</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Renk</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="unfinished">Menzil</translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowCellContourGroupSettingDialog</name>
     <message>
         <source>Contour Setting (cell center)</source>
-        <translation>Kontur Ayarı (hücre merkezi)</translation>
+        <translation type="vanished">Kontur Ayarı (hücre merkezi)</translation>
     </message>
     <message>
         <source>Value:</source>
-        <translation>Değer:</translation>
+        <translation type="vanished">Değer:</translation>
     </message>
     <message>
         <source>Regions</source>
-        <translation>Bölgeler</translation>
+        <translation type="vanished">Bölgeler</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Ekle (&amp;A)</translation>
+        <translation type="vanished">Ekle (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Kaldırmak (&amp;R)</translation>
+        <translation type="vanished">Kaldırmak (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Renk Çubuğu Ayarı (&amp;C)</translation>
+        <translation type="vanished">Renk Çubuğu Ayarı (&amp;C)</translation>
     </message>
     <message>
         <source>Range%1</source>
-        <translation>Menzil %1</translation>
+        <translation type="vanished">Menzil %1</translation>
     </message>
 </context>
 <context>
@@ -105,11 +130,30 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Uyarı</translation>
+        <translation type="vanished">Uyarı</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>En fazla dört kontur tanımlanabilir.</translation>
+        <translation type="vanished">En fazla dört kontur tanımlanabilir.</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowCellRangeListSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Biçim</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation type="unfinished">Ekle (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation type="unfinished">Kaldırmak (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Range%1</source>
+        <translation type="unfinished">Menzil %1</translation>
     </message>
 </context>
 <context>
@@ -152,45 +196,83 @@
     </message>
 </context>
 <context>
+    <name>Post3dWindowContourDataItem</name>
+    <message>
+        <source>Face</source>
+        <translation type="unfinished">Yüz</translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowContourGroupDataItem</name>
     <message>
         <source>Contour</source>
-        <translation>kontur</translation>
+        <translation type="vanished">kontur</translation>
     </message>
     <message>
         <source>Contour Setting</source>
-        <translation>Kontur Ayarı</translation>
+        <translation type="vanished">Kontur Ayarı</translation>
+    </message>
+    <message>
+        <source>Contour Setting (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Face%1</source>
+        <translation type="unfinished">Yüz %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowContourGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Contour Setting</source>
+        <translation type="unfinished">Kontur Ayarı</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Renk</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Faces</source>
+        <translation type="unfinished">yüzler</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowContourGroupSettingDialog</name>
     <message>
         <source>Contour Setting</source>
-        <translation>Kontur Ayarı</translation>
+        <translation type="vanished">Kontur Ayarı</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Fiziksel Değer:</translation>
+        <translation type="vanished">Fiziksel Değer:</translation>
     </message>
     <message>
         <source>Faces</source>
-        <translation>yüzler</translation>
+        <translation type="vanished">yüzler</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Ekle (&amp;A)</translation>
+        <translation type="vanished">Ekle (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Kaldırmak (&amp;R)</translation>
+        <translation type="vanished">Kaldırmak (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Renk Çubuğu Ayarı (&amp;C)</translation>
+        <translation type="vanished">Renk Çubuğu Ayarı (&amp;C)</translation>
     </message>
     <message>
         <source>Face%1</source>
-        <translation>Yüz %1</translation>
+        <translation type="vanished">Yüz %1</translation>
     </message>
 </context>
 <context>
@@ -201,11 +283,11 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Uyarı</translation>
+        <translation type="vanished">Uyarı</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>En fazla dört kontur tanımlanabilir.</translation>
+        <translation type="vanished">En fazla dört kontur tanımlanabilir.</translation>
     </message>
 </context>
 <context>
@@ -224,6 +306,80 @@
     <message>
         <source>Object Browser Item Change</source>
         <translation>Nesne Tarayıcı Öğe Değişikliği</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowFaceListSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Biçim</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation type="unfinished">Ekle (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation type="unfinished">Kaldırmak (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Face%1</source>
+        <translation type="unfinished">Yüz %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowFaceSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Biçim</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation type="unfinished">Yön</translation>
+    </message>
+    <message>
+        <source>I</source>
+        <translation type="unfinished">ben</translation>
+    </message>
+    <message>
+        <source>J</source>
+        <translation type="unfinished">J</translation>
+    </message>
+    <message>
+        <source>K</source>
+        <translation type="unfinished">K</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="unfinished">Menzil</translation>
+    </message>
+    <message>
+        <source>I Min</source>
+        <translation type="unfinished">Varım</translation>
+    </message>
+    <message>
+        <source>I Max</source>
+        <translation type="unfinished">ben max</translation>
+    </message>
+    <message>
+        <source>J Min</source>
+        <translation type="unfinished">J Min</translation>
+    </message>
+    <message>
+        <source>J Max</source>
+        <translation type="unfinished">J Maks</translation>
+    </message>
+    <message>
+        <source>K Min</source>
+        <translation type="unfinished">bin dakika</translation>
+    </message>
+    <message>
+        <source>K Max</source>
+        <translation type="unfinished">K Maks</translation>
+    </message>
+    <message>
+        <source>Enabled</source>
+        <translation type="unfinished">Etkinleştirilmiş</translation>
     </message>
 </context>
 <context>
@@ -286,6 +442,13 @@
     <message>
         <source>Grid shape</source>
         <translation>ızgara şekli</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowGridShapeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Shape Display Setting</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -484,7 +647,48 @@
     <name>Post3dWindowNodeVectorArrowDataItem</name>
     <message>
         <source>Face</source>
-        <translation>Yüz</translation>
+        <translation type="vanished">Yüz</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorArrowGroupDataItem</name>
+    <message>
+        <source>Face%1</source>
+        <translation type="unfinished">Yüz %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorArrowGroupDataItem::PropertyDialog</name>
+    <message>
+        <source>Face%1</source>
+        <translation type="unfinished">Yüz %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorArrowGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Arrows Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Length Legend</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Faces</source>
+        <translation type="unfinished">yüzler</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation type="unfinished">Ekle (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation type="unfinished">Kaldırmak (&amp;R)</translation>
     </message>
 </context>
 <context>
@@ -545,6 +749,10 @@
         <source>Face%1</source>
         <translation>Yüz %1</translation>
     </message>
+    <message>
+        <source>Length Legend</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Post3dWindowNodeVectorArrowTopDataItem</name>
@@ -554,11 +762,11 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Uyarı</translation>
+        <translation type="vanished">Uyarı</translation>
     </message>
     <message>
         <source>A maximum of four arrows may be defined.</source>
-        <translation>En fazla dört ok tanımlanabilir.</translation>
+        <translation type="vanished">En fazla dört ok tanımlanabilir.</translation>
     </message>
 </context>
 <context>
@@ -620,17 +828,17 @@
         <translation>Üretim zaman aralığı</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap;}
 p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p&gt;If you specify 1, particles are generated for every time steps.&lt;/p&gt;
 &lt;p&gt;If you specify 2, particles are generated twice equally separated, for every time steps,&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other time steps.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
         <extracomment>If you specify 1, particles are generated for every time steps. If you specify 2, particles are generated twice equally separated, for every time steps, If you specify 1/2, particles are generated for every other time steps.</extracomment>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>-</source>
@@ -705,16 +913,16 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <translation>Nesil uzay aralığı</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p&gt;If you specify 1, particles are generated at grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 2, particles are generated at grid nodes, and middle points of grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other grid nodes.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML KAMU "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;meta ad ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { boşluk: ön sarma; } p {kenar boşluğu: 3 piksel; margin-bottom: 3px;} &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p&gt;1 belirtirseniz, ızgara düğümlerinde parçacıklar oluşturulur.&lt;/p&gt; &lt;p&gt;2 belirtirseniz parçacıklar ızgara düğümlerinde ve ızgara düğümlerinin orta noktalarında oluşturulur.&lt;/p&gt; &lt;p&gt;Eğer 1/2 belirtin, diğer her ızgara düğümü için parçacıklar oluşturulur.&lt;/p&gt; &lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;!DOCTYPE HTML KAMU &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta ad =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { boşluk: ön sarma; } p {kenar boşluğu: 3 piksel; margin-bottom: 3px;} &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p&gt;1 belirtirseniz, ızgara düğümlerinde parçacıklar oluşturulur.&lt;/p&gt; &lt;p&gt;2 belirtirseniz parçacıklar ızgara düğümlerinde ve ızgara düğümlerinin orta noktalarında oluşturulur.&lt;/p&gt; &lt;p&gt;Eğer 1/2 belirtin, diğer her ızgara düğümü için parçacıklar oluşturulur.&lt;/p&gt; &lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Color:</source>
@@ -725,12 +933,12 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <translation>Boy:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML KAMU "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;meta ad ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { boşluk: ön sarma; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p style=" kenar boşluğu -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Ekranda bir piksel sayısı belirtin.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;!DOCTYPE HTML KAMU &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta ad =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { boşluk: ön sarma; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; kenar boşluğu -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Ekranda bir piksel sayısı belirtin.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -753,10 +961,45 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>Post3dWindowParticlesBaseScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Scalar Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Renk</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowParticlesBaseTopDataItem</name>
     <message>
         <source>Edit Particle Setting</source>
-        <translation>Parçacık Ayarını Düzenle</translation>
+        <translation type="vanished">Parçacık Ayarını Düzenle</translation>
     </message>
 </context>
 <context>
@@ -767,11 +1010,22 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Vector Attribute Select Change</source>
-        <translation>Vektör Özellik Seçimi Değiştir</translation>
+        <translation type="vanished">Vektör Özellik Seçimi Değiştir</translation>
     </message>
     <message>
         <source>Update Vector Setting</source>
-        <translation>Vektör Ayarını Güncelle</translation>
+        <translation type="vanished">Vektör Ayarını Güncelle</translation>
+    </message>
+    <message>
+        <source>Arrow Physical Value Change</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowParticlesBaseVectorGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Vector Setting</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -836,14 +1090,14 @@ p, li { white-space: pre-wrap; }
         <translation>Nesil uzay aralığı</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML KAMU "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;meta ad ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { boşluk: ön sarma; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p style=" kenar boşluğu -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;1 belirtirseniz, akış çizgileri ızgara düğümlerinde başlar.&lt;/p&gt; &lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;" &gt;2 belirtirseniz, akış çizgileri ızgara düğümlerinde ve ızgara düğümlerinin orta noktalarında başlar.&lt;/p&gt; &lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right: 0px; -qt-block-indent:0; text-indent:0px;"&gt;1/2 belirtirseniz, akış çizgileri diğer tüm ızgara düğümlerinde başlar.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;!DOCTYPE HTML KAMU &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta ad =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { boşluk: ön sarma; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; kenar boşluğu -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;1 belirtirseniz, akış çizgileri ızgara düğümlerinde başlar.&lt;/p&gt; &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot; &gt;2 belirtirseniz, akış çizgileri ızgara düğümlerinde ve ızgara düğümlerinin orta noktalarında başlar.&lt;/p&gt; &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right: 0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;1/2 belirtirseniz, akış çizgileri diğer tüm ızgara düğümlerinde başlar.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>-</source>
@@ -874,12 +1128,12 @@ p, li { white-space: pre-wrap; }
         <translation>Genişlik:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML KAMU "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;meta ad ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { boşluk: ön sarma; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p style=" kenar boşluğu -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Ekranda bir piksel sayısı belirtin.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;!DOCTYPE HTML KAMU &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta ad =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { boşluk: ön sarma; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; kenar boşluğu -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Ekranda bir piksel sayısı belirtin.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -894,15 +1148,15 @@ p, li { white-space: pre-wrap; }
     <name>QObject</name>
     <message>
         <source>Update</source>
-        <translation>Güncelleme</translation>
+        <translation type="vanished">Güncelleme</translation>
     </message>
     <message>
         <source>Create Contour</source>
-        <translation>Kontur Oluştur</translation>
+        <translation type="vanished">Kontur Oluştur</translation>
     </message>
     <message>
         <source>Update Grid Shape Setting</source>
-        <translation>Izgara Şekli Ayarını Güncelle</translation>
+        <translation type="vanished">Izgara Şekli Ayarını Güncelle</translation>
     </message>
     <message>
         <source>Create Isosurface</source>
@@ -910,7 +1164,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Delete Isosurface</source>
-        <translation>Isosurface'i Sil</translation>
+        <translation>Isosurface&apos;i Sil</translation>
     </message>
     <message>
         <source>Update Streamline Setting</source>
@@ -918,7 +1172,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Update Particles Scalar Setting</source>
-        <translation>Parçacık Skaler Ayarını Güncelle</translation>
+        <translation type="vanished">Parçacık Skaler Ayarını Güncelle</translation>
     </message>
 </context>
 </TS>

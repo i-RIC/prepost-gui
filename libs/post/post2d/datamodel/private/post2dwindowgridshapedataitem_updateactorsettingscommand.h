@@ -1,0 +1,26 @@
+#ifndef POST2DWINDOWGRIDSHAPEDATAITEM_UPDATEACTORSETTINGSCOMMAND_H
+#define POST2DWINDOWGRIDSHAPEDATAITEM_UPDATEACTORSETTINGSCOMMAND_H
+
+#include "../post2dwindowgridshapedataitem.h"
+
+#include <QUndoCommand>
+#include <memory>
+
+class Post2dWindowGridShapeDataItem::UpdateActorSettingsCommand : public QUndoCommand
+{
+public:
+	UpdateActorSettingsCommand(bool apply, QUndoCommand* command, Post2dWindowGridShapeDataItem* item);
+
+	void redo() override;
+	void undo() override;
+
+	int id() const override;
+	bool mergeWith(const QUndoCommand* other) override;
+
+private:
+	bool m_apply;
+	std::unique_ptr<QUndoCommand> m_command;
+	Post2dWindowGridShapeDataItem* m_item;
+};
+
+#endif // POST2DWINDOWGRIDSHAPEDATAITEM_UPDATEACTORSETTINGSCOMMAND_H

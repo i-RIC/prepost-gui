@@ -4,6 +4,7 @@
 #include <guicore/named/namedgraphicwindowdataitem.h>
 
 class Post2dWindowZoneDataItem;
+class Post2dWindowPolyDataGroupDataItem;
 
 class Post2dWindowPolyDataValueDataItem : public NamedGraphicWindowDataItem
 {
@@ -22,6 +23,7 @@ public:
 
 private:
 	Post2dWindowZoneDataItem* zoneDataItem() const;
+	Post2dWindowPolyDataGroupDataItem* polyDataGroupDataItem() const;
 };
 
 #endif // POST2DWINDOWPOLYDATAVALUEDATAITEM_H

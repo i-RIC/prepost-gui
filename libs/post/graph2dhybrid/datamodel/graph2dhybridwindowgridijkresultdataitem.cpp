@@ -61,13 +61,13 @@ void Graph2dHybridWindowGridIJKResultDataItem::updateValues()
 	vtkStructuredGrid* grid;
 	switch (info->gridLocation) {
 	case iRICLib::H5CgnsZone::SolutionPosition::Node: case iRICLib::H5CgnsZone::SolutionPosition::Cell:
-		grid = vtkStructuredGrid::SafeDownCast(cont->data());
+		grid = vtkStructuredGrid::SafeDownCast(cont->data()->data());
 		break;
 	case iRICLib::H5CgnsZone::SolutionPosition::IFace:
-		grid = vtkStructuredGrid::SafeDownCast(cont->ifacedata());	// use IFaceCenter grid
+		grid = cont->iFaceData()->concreteData();	// use IFaceCenter grid
 		break;
 	case iRICLib::H5CgnsZone::SolutionPosition::JFace:
-		grid = vtkStructuredGrid::SafeDownCast(cont->jfacedata());	// use JFaceCenter grid
+		grid = cont->jFaceData()->concreteData();	// use JFaceCenter grid
 		break;
 	default:
 		Q_ASSERT_X(false, "Graph2dHybridWindowGridIJKResultDataItem::updateValues", "Invalid GridLocation");

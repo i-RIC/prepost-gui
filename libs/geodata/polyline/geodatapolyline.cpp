@@ -19,7 +19,6 @@
 #include <guicore/pre/base/preprocessorwindowinterface.h>
 #include <guicore/pre/gridcond/base/gridattributedimensionscontainer.h>
 #include <guicore/project/projectdata.h>
-#include <guicore/scalarstocolors/scalarstocolorscontainer.h>
 #include <misc/informationdialog.h>
 #include <misc/iricundostack.h>
 #include <misc/keyboardsupport.h>
@@ -91,9 +90,9 @@ GeoDataPolyLine::GeoDataPolyLine(ProjectDataItem* d, GeoDataCreator* creator, So
 	setColor(Qt::black);
 	setOpacity(100);
 
-	ScalarsToColorsContainer* stcc = scalarsToColorsContainer();
-	if (stcc != nullptr) {
-		impl->m_polyLine->setLookupTable(stcc->vtkDarkObj());
+	auto cs = colorMapSettingContainer();
+	if (cs != nullptr) {
+		impl->m_polyLine->setColorMapSettingContainer(cs);
 	}
 
 	impl->m_mouseEventMode = meBeforeDefining;
@@ -116,7 +115,6 @@ void GeoDataPolyLine::setupMenu()
 {
 	m_menu->setTitle(tr("Poly&line"));
 	m_menu->addAction(m_editNameAction);
-//	m_menu->addAction(impl->m_editValueAction);
 	m_menu->addSeparator();
 	m_menu->addAction(impl->m_addVertexAction);
 	m_menu->addAction(impl->m_removeVertexAction);
@@ -126,8 +124,6 @@ void GeoDataPolyLine::setupMenu()
 	m_menu->addSeparator();
 	m_menu->addAction(deleteAction());
 
-//	impl->m_rightClickingMenu->addAction(impl->m_editValueAction);
-//	impl->m_rightClickingMenu->addSeparator();
 	impl->m_rightClickingMenu->addAction(impl->m_addVertexAction);
 	impl->m_rightClickingMenu->addAction(impl->m_removeVertexAction);
 	impl->m_rightClickingMenu->addAction(impl->m_coordEditAction);
@@ -416,10 +412,6 @@ void GeoDataPolyLine::removeVertexMode(bool on)
 
 void GeoDataPolyLine::loadExternalData(const QString& filename)
 {
-	ScalarsToColorsContainer* stcc = scalarsToColorsContainer();
-	if (stcc != nullptr) {
-		impl->m_polyLine->setLookupTable(stcc->vtkDarkObj());
-	}
 	iRICLib::Polyline* line = new iRICLib::Polyline();
 	GridAttributeDimensionsContainer* dims = dimensions();
 	bool noDim = true;

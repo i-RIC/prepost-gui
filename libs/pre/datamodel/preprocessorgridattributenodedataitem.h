@@ -9,6 +9,7 @@
 
 #include <QList>
 
+class ColorMapSettingContainerI;
 class GridComplexConditionGroupEditDialog;
 class PreProcessorGeoDataGroupDataItemInterface;
 class PreProcessorGridCrosssectionWindowProjectDataItem;
@@ -30,7 +31,6 @@ public:
 
 	QDialog* propertyDialog(QWidget* parent) override;
 	void handlePropertyDialogAccepted(QDialog* propDialog) override;
-	ContourSettingWidget::Contour contour() {return m_contour;}
 	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
@@ -41,7 +41,7 @@ public:
 	void informDeselection(VTKGraphicsView* v) override;
 	SolverDefinitionGridAttribute* condition() const;
 	void informDataChange();
-	int numberOfDivision() const;
+	ColorMapSettingContainerI* colorMapSettingContainer() const;
 
 	void updateCrossectionWindows();
 	void requestCrosssectionWindowDelete(PreProcessorGridCrosssectionWindowProjectDataItem* item);
@@ -83,15 +83,14 @@ private:
 	QAction* m_openXsectionWindowAction;
 	QAction* m_openVXsectionWindowAction;
 
-	int m_numberOfDivision;
-	ContourSettingWidget::Contour m_contour;
-
 	void saveContourToProjectMainFile(QXmlStreamWriter& writer);
 	void loadContourFromProjectMainFile(const QDomNode& node);
 
 	QList<PreProcessorGridCrosssectionWindowProjectDataItem*> m_crosssectionWindows;
 
 	GridComplexConditionGroupEditDialog* m_groupEditDialog;
+
+	class PropertyDialog;
 
 public:
 	friend class Structured2DGridCrosssectionEditCommand;

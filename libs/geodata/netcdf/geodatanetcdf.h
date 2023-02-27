@@ -74,12 +74,12 @@ public:
 	CoordinateSystemType coordinateSystemType() const;
 	QString coordinateSystemName() const;
 
-    bool geoTransformExists() const;
-    double* geoTransform();
-    void setGeoTransform(double* t);
+	bool geoTransformExists() const;
+	double* geoTransform();
+	void setGeoTransform(double* t);
 
 	bool baseAndResolutionExists() const;
-        void setBaseAndResolution(double base, double resolution);
+	void setBaseAndResolution(double base, double resolution);
 	double base() const;
 	double resolution() const;
 
@@ -98,6 +98,7 @@ public:
 
 	QDialog* propertyDialog(QWidget* parent) override;
 	void handlePropertyDialogAccepted(QDialog* d) override;
+	void applyColorMapSetting() override;
 
 public slots:
 	void handleDimensionCurrentIndexChange(int oldIndex, int newIndex) override;

@@ -43,9 +43,9 @@ Post2dWindowStreamlineStructuredSettingDialog::~Post2dWindowStreamlineStructured
 
 void Post2dWindowStreamlineStructuredSettingDialog::setZoneData(PostZoneDataContainer* zoneData)
 {
-	vtkStructuredGrid* g = dynamic_cast<vtkStructuredGrid*>(zoneData->data());
+	auto grid = dynamic_cast<vtkStructuredGrid*>(zoneData->data()->data());
 	int dim[3];
-	g->GetDimensions(dim);
+	grid->GetDimensions(dim);
 	ui->iminSlider->setRange(1, dim[0]);
 	ui->imaxSlider->setRange(1, dim[0]);
 	ui->jminSlider->setRange(1, dim[1]);
@@ -180,7 +180,7 @@ void Post2dWindowStreamlineStructuredSettingDialog::setupNominations()
 
 void Post2dWindowStreamlineStructuredSettingDialog::setupSolutionComboBox(PostZoneDataContainer* zoneData)
 {
-	vtkPointData* pd = zoneData->data()->GetPointData();
+	vtkPointData* pd = zoneData->data()->data()->GetPointData();
 	SolverDefinitionGridType* gt = zoneData->gridType();
 
 	m_solutions = vtkDataSetAttributesTool::getArrayNamesWithMultipleComponents(pd);

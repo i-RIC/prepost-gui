@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="fi_FI">
 <context>
     <name>ParticleArbitraryTimeEditDialog</name>
@@ -57,163 +59,170 @@
     <name>PostParticleBasicSettingDialog</name>
     <message>
         <source>Particles Setting</source>
-        <translation>Hiukkasten asetus</translation>
+        <translation type="vanished">Hiukkasten asetus</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Väri:</translation>
+        <translation type="vanished">Väri:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>Koko:</translation>
+        <translation type="vanished">Koko:</translation>
     </message>
 </context>
 <context>
     <name>PostParticleScalarPropertyDialog</name>
     <message>
         <source>Particle Scalar Setting</source>
-        <translation>Hiukkaskalariasetus</translation>
+        <translation type="vanished">Hiukkaskalariasetus</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Mukautettu väri</translation>
+        <translation type="vanished">Mukautettu väri</translation>
     </message>
     <message>
         <source>Color by attribute value</source>
-        <translation>Väritä määritteen arvon mukaan</translation>
+        <translation type="vanished">Väritä määritteen arvon mukaan</translation>
     </message>
     <message>
         <source>Attribute:</source>
-        <translation>Attribuutti:</translation>
+        <translation type="vanished">Attribuutti:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>Koko:</translation>
+        <translation type="vanished">Koko:</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Väripalkin asetus (&amp;C)</translation>
+        <translation type="vanished">Väripalkin asetus (&amp;C)</translation>
     </message>
 </context>
 <context>
     <name>PostParticleVectorPropertyDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Nuoliasetus</translation>
+        <translation type="vanished">Nuoliasetus</translation>
     </message>
     <message>
         <source>Attribute value:</source>
-        <translation>Attribuutin arvo:</translation>
+        <translation type="vanished">Attribuutin arvo:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Pituus</translation>
+        <translation type="vanished">Pituus</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Auto</translation>
+        <translation type="vanished">Auto</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Vakioarvo:</translation>
+        <translation type="vanished">Vakioarvo:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[neiti]</translation>
+        <translation type="vanished">[neiti]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Pituus näytöllä:</translation>
+        <translation type="vanished">Pituus näytöllä:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[pikseli]</translation>
+        <translation type="vanished">[pikseli]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Pienin piirrettävä arvo:</translation>
+        <translation type="vanished">Pienin piirrettävä arvo:</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>Näytteenotto</translation>
+        <translation type="vanished">Näytteenotto</translation>
     </message>
     <message>
         <source>All particles</source>
-        <translation>Kaikki hiukkaset</translation>
+        <translation type="vanished">Kaikki hiukkaset</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>Näytteenottotaajuus:</translation>
+        <translation type="vanished">Näytteenottotaajuus:</translation>
     </message>
     <message>
         <source>Specify number of particles</source>
-        <translation>Määritä hiukkasten määrä</translation>
+        <translation type="vanished">Määritä hiukkasten määrä</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Väri</translation>
+        <translation type="vanished">Väri</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Mukautettu väri</translation>
+        <translation type="vanished">Mukautettu väri</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Skalaarisen arvon mukaan</translation>
+        <translation type="vanished">Skalaarisen arvon mukaan</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>Nuolen muoto</translation>
+        <translation type="vanished">Nuolen muoto</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>Nuolen koko:</translation>
+        <translation type="vanished">Nuolen koko:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>Viivan leveys:</translation>
+        <translation type="vanished">Viivan leveys:</translation>
     </message>
 </context>
 <context>
     <name>PostPolyDataBasicSettingDialog</name>
     <message>
         <source>Polygon Setting</source>
-        <translation>Monikulmioasetus</translation>
+        <translation type="vanished">Monikulmioasetus</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Väri:</translation>
+        <translation type="vanished">Väri:</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Viivan leveys:</translation>
+        <translation type="vanished">Viivan leveys:</translation>
     </message>
 </context>
 <context>
     <name>PostPolyDataScalarPropertyDialog</name>
     <message>
         <source>Polygon Setting</source>
-        <translation>Monikulmioasetus</translation>
+        <translation type="vanished">Monikulmioasetus</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Mukautettu väri</translation>
+        <translation type="vanished">Mukautettu väri</translation>
     </message>
     <message>
         <source>Color by attribute value</source>
-        <translation>Väritä määritteen arvon mukaan</translation>
+        <translation type="vanished">Väritä määritteen arvon mukaan</translation>
     </message>
     <message>
         <source>Attribute:</source>
-        <translation>Attribuutti:</translation>
+        <translation type="vanished">Attribuutti:</translation>
     </message>
     <message>
         <source>Line Width</source>
-        <translation>Viivan leveys</translation>
+        <translation type="vanished">Viivan leveys</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Väripalkin asetus (&amp;C)</translation>
+        <translation type="vanished">Väripalkin asetus (&amp;C)</translation>
+    </message>
+</context>
+<context>
+    <name>PostSolutionSelectDialog</name>
+    <message>
+        <source>Select Target Result</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

@@ -5,8 +5,9 @@
 #include "preprocessornormal15dgridwithcrosssectionshapedataitem.h"
 
 #include <guicore/base/iricmainwindowinterface.h>
-#include <guicore/pre/grid/structured15dgridwithcrosssection.h>
+#include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
 #include <guicore/pre/base/preprocessorwindowinterface.h>
+#include <guicore/pre/grid/structured15dgridwithcrosssection.h>
 #include <guicore/project/projectdata.h>
 #include <misc/mathsupport.h>
 
@@ -38,9 +39,11 @@ PreProcessorNormal15DGridWithCrossSectionShapeDataItem::~PreProcessorNormal15DGr
 
 void PreProcessorNormal15DGridWithCrossSectionShapeDataItem::setupActors()
 {
+	auto v = dataModel()->graphicsView();
+
 	m_edgeActor = vtkSmartPointer<vtkActor>::New();
 	m_edgeActor->GetProperty()->SetLighting(false);
-	m_edgeActor->GetProperty()->SetLineWidth(normalLineWidth);
+	m_edgeActor->GetProperty()->SetLineWidth(normalLineWidth * v->devicePixelRatioF());
 	renderer()->AddActor(m_edgeActor);
 
 	m_edgeMapper = vtkSmartPointer<vtkDataSetMapper>::New();
@@ -48,7 +51,7 @@ void PreProcessorNormal15DGridWithCrossSectionShapeDataItem::setupActors()
 
 	m_vertexActor = vtkSmartPointer<vtkActor>::New();
 	m_vertexActor->GetProperty()->SetLighting(false);
-	m_vertexActor->GetProperty()->SetPointSize(normalPointSize);
+	m_vertexActor->GetProperty()->SetPointSize(normalPointSize * v->devicePixelRatioF());
 	renderer()->AddActor(m_vertexActor);
 
 	m_vertexMapper = vtkSmartPointer<vtkDataSetMapper>::New();
@@ -184,7 +187,7 @@ void PreProcessorNormal15DGridWithCrossSectionShapeDataItem::requestCrossSection
 void PreProcessorNormal15DGridWithCrossSectionShapeDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
 	static QMenu* menu = nullptr;
-	PreProcessorGridDataItem* tmpparent = dynamic_cast<PreProcessorGridDataItem*>(parent());
+	auto tmpparent = dynamic_cast<PreProcessorGridDataItem*>(parent());
 	if (event->button() == Qt::LeftButton) {
 		if (m_definingBoundingBox) {
 			tmpparent->nodeSelectingMouseReleaseEvent(event, v);

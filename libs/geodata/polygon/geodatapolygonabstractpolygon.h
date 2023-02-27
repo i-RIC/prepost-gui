@@ -7,6 +7,7 @@
 
 #include <QObject>
 
+class ColorMapSettingContainerI;
 class GeoDataPolygon;
 class PolygonController;
 
@@ -47,9 +48,10 @@ public:
 
 	virtual void finishDefinition();
 
-	void setLookupTable(vtkScalarsToColors* t);
+	void setColorMapSettingContainer(ColorMapSettingContainerI* c);
 	void setColor(const QColor& color);
-	void setMapping(GeoDataPolyDataColorSettingDialog::Mapping m);
+	void setMapping(GeoDataPolyDataColorSettingDialog::Mapping mapping);
+	void updateActorSetting();
 
 	int lineWidth() const;
 	void setLineWidth(int lineWidth);

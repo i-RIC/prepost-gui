@@ -121,7 +121,10 @@ ProjectDataItem* ProjectDataItem::parent() const
 
 iRICMainWindowInterface* ProjectDataItem::iricMainWindow() const
 {
-	return projectData()->mainWindow();
+	auto p = projectData();
+	if (p == nullptr) {return nullptr;}
+
+	return p->mainWindow();
 }
 
 void ProjectDataItem::setModified(bool modified)

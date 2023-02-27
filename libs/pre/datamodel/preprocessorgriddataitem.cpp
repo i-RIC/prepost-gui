@@ -1070,6 +1070,10 @@ void PreProcessorGridDataItem::informGridAttributeChange(const std::string& name
 	emit gridAttributeChanged(name);
 	auto nItem = m_nodeGroupDataItem->nodeDataItem(name);
 	if (nItem != nullptr) {nItem->updateCrossectionWindows();}
+
+	if (impl->m_birdEyeWindow != nullptr) {
+		impl->m_birdEyeWindow->updateGrid();
+	}
 }
 
 void PreProcessorGridDataItem::finishGridLoading()
@@ -1324,7 +1328,10 @@ void PreProcessorGridDataItem::closeBirdEyeWindow()
 	if (impl->m_birdEyeWindow == nullptr) {return;}
 	delete impl->m_birdEyeWindow->parent();
 	
-	iricMainWindow()->updateWindowList();
+	auto w = iricMainWindow();
+	if (w == nullptr) {return;}
+
+	w->updateWindowList();
 }
 
 void PreProcessorGridDataItem::informGridChange()
@@ -1562,6 +1569,16 @@ void PreProcessorGridDataItem::unsetBCGroupDataItem()
 	m_bcGroupDataItem->setParent(0);
 	m_standardItem->takeChild(m_bcGroupDataItem->standardItem()->row());
 	m_bcGroupDataItem = 0;
+}
+
+void PreProcessorGridDataItem::applyColorMapSetting(const std::string& name)
+{
+	m_nodeGroupDataItem->applyColorMapSetting(name);
+	m_cellGroupDataItem->applyColorMapSetting(name);
+
+	if (impl->m_birdEyeWindow != nullptr) {
+		impl->m_birdEyeWindow->updateGrid();
+	}
 }
 
 void PreProcessorGridDataItem::doViewOperationEndedGlobal(VTKGraphicsView* v)

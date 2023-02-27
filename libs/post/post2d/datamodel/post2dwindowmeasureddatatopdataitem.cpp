@@ -10,10 +10,7 @@
 #include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
-#include <guicore/scalarstocolors/colortransferfunctioncontainer.h>
-#include <guicore/scalarstocolors/lookuptablecontainer.h>
 #include <misc/stringtool.h>
-#include <pre/misc/preprocessorscalarbarlegendboxsettingdialog.h>
 
 #include <QAction>
 #include <QIcon>

@@ -12,8 +12,8 @@ public:
 	GridAttributeEditWidget* editWidget(QWidget* parent) override;
 	GridAttributeVariationEditWidget* variationEditWidget(QWidget* parent) override;
 
-	ScalarsToColorsEditWidget* createScalarsToColorsEditWidget(QWidget* parent) const override;
-	ScalarsToColorsContainer* createScalarsToColorsContainer(ProjectDataItem* d) override;
+private:
+	void setupColorMapSettingContainer(ColorMapSettingContainerI* c) const override;
 };
 
 #endif // SOLVERDEFINITIONINTEGEROPTIONNODEGRIDATTRIBUTE_H

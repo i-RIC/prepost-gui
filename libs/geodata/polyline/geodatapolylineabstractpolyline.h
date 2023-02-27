@@ -9,6 +9,7 @@
 
 #include <vector>
 
+class ColorMapSettingContainerI;
 class GeoDataPolyLine;
 class PolyLineController;
 
@@ -42,11 +43,12 @@ public:
 
 	virtual void finishDefinition();
 
-	void setLookupTable(vtkScalarsToColors* t);
+	void setColorMapSettingContainer(ColorMapSettingContainerI* c);
 	void setColor(const QColor& color);
 	void setOpacity(double opacity);
 	void setMapping(GeoDataPolyDataColorSettingDialog::Mapping m);
 	void setLineWidth(int lineWidth);
+	void updateActorSetting();
 
 protected:
 	const PolyLineController& polylineController() const;

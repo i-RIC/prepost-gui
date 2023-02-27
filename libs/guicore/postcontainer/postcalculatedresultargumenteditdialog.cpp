@@ -98,11 +98,11 @@ void PostCalculatedResultArgumentEditDialog::setupComboBox()
 
 	vtkDataSetAttributes* attrs = nullptr;
 	if (m_calculatedResult->dataType() == PostCalculatedResult::GridNode) {
-		attrs = m_zoneDataContainer->data()->GetPointData();
+		attrs = m_zoneDataContainer->data()->data()->GetPointData();
 	} else if (m_calculatedResult->dataType() == PostCalculatedResult::GridCell) {
-		attrs = m_zoneDataContainer->data()->GetCellData();
+		attrs = m_zoneDataContainer->data()->data()->GetCellData();
 	} else if (m_calculatedResult->dataType() == PostCalculatedResult::Particle) {
-		attrs = m_zoneDataContainer->particleData()->GetPointData();
+		attrs = m_zoneDataContainer->particleData()->concreteData()->GetPointData();
 	}
 
 	for (vtkIdType i = 0; i < attrs->GetNumberOfArrays(); ++i) {

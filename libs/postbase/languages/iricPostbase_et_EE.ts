@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="et_EE">
 <context>
     <name>ParticleArbitraryTimeEditDialog</name>
@@ -57,163 +59,170 @@
     <name>PostParticleBasicSettingDialog</name>
     <message>
         <source>Particles Setting</source>
-        <translation>Osakeste seadistamine</translation>
+        <translation type="vanished">Osakeste seadistamine</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Värv:</translation>
+        <translation type="vanished">Värv:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>Suurus:</translation>
+        <translation type="vanished">Suurus:</translation>
     </message>
 </context>
 <context>
     <name>PostParticleScalarPropertyDialog</name>
     <message>
         <source>Particle Scalar Setting</source>
-        <translation>Osakeste skalaari seadistus</translation>
+        <translation type="vanished">Osakeste skalaari seadistus</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Kohandatud värv</translation>
+        <translation type="vanished">Kohandatud värv</translation>
     </message>
     <message>
         <source>Color by attribute value</source>
-        <translation>Värvige atribuudi väärtuse järgi</translation>
+        <translation type="vanished">Värvige atribuudi väärtuse järgi</translation>
     </message>
     <message>
         <source>Attribute:</source>
-        <translation>Atribuut:</translation>
+        <translation type="vanished">Atribuut:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>Suurus:</translation>
+        <translation type="vanished">Suurus:</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Värviriba seadistus (&amp;C)</translation>
+        <translation type="vanished">Värviriba seadistus (&amp;C)</translation>
     </message>
 </context>
 <context>
     <name>PostParticleVectorPropertyDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Noole seadistus</translation>
+        <translation type="vanished">Noole seadistus</translation>
     </message>
     <message>
         <source>Attribute value:</source>
-        <translation>Atribuudi väärtus:</translation>
+        <translation type="vanished">Atribuudi väärtus:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Pikkus</translation>
+        <translation type="vanished">Pikkus</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Automaatne</translation>
+        <translation type="vanished">Automaatne</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Standardväärtus:</translation>
+        <translation type="vanished">Standardväärtus:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[Prl]</translation>
+        <translation type="vanished">[Prl]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Pikkus ekraanil:</translation>
+        <translation type="vanished">Pikkus ekraanil:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[piksel]</translation>
+        <translation type="vanished">[piksel]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Minimaalne joonistatav väärtus:</translation>
+        <translation type="vanished">Minimaalne joonistatav väärtus:</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>Proovide võtmine</translation>
+        <translation type="vanished">Proovide võtmine</translation>
     </message>
     <message>
         <source>All particles</source>
-        <translation>Kõik osakesed</translation>
+        <translation type="vanished">Kõik osakesed</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>Proovivõtu sagedus:</translation>
+        <translation type="vanished">Proovivõtu sagedus:</translation>
     </message>
     <message>
         <source>Specify number of particles</source>
-        <translation>Määrake osakeste arv</translation>
+        <translation type="vanished">Määrake osakeste arv</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Värv</translation>
+        <translation type="vanished">Värv</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Kohandatud värv</translation>
+        <translation type="vanished">Kohandatud värv</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Skalaarse väärtuse järgi</translation>
+        <translation type="vanished">Skalaarse väärtuse järgi</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>Noole kuju</translation>
+        <translation type="vanished">Noole kuju</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>Noole suurus:</translation>
+        <translation type="vanished">Noole suurus:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>Joone laius:</translation>
+        <translation type="vanished">Joone laius:</translation>
     </message>
 </context>
 <context>
     <name>PostPolyDataBasicSettingDialog</name>
     <message>
         <source>Polygon Setting</source>
-        <translation>Hulknurga seadistus</translation>
+        <translation type="vanished">Hulknurga seadistus</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Värv:</translation>
+        <translation type="vanished">Värv:</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Joone laius:</translation>
+        <translation type="vanished">Joone laius:</translation>
     </message>
 </context>
 <context>
     <name>PostPolyDataScalarPropertyDialog</name>
     <message>
         <source>Polygon Setting</source>
-        <translation>Hulknurga seadistus</translation>
+        <translation type="vanished">Hulknurga seadistus</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Kohandatud värv</translation>
+        <translation type="vanished">Kohandatud värv</translation>
     </message>
     <message>
         <source>Color by attribute value</source>
-        <translation>Värvige atribuudi väärtuse järgi</translation>
+        <translation type="vanished">Värvige atribuudi väärtuse järgi</translation>
     </message>
     <message>
         <source>Attribute:</source>
-        <translation>Atribuut:</translation>
+        <translation type="vanished">Atribuut:</translation>
     </message>
     <message>
         <source>Line Width</source>
-        <translation>Joone laius</translation>
+        <translation type="vanished">Joone laius</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Värviriba seadistus (&amp;C)</translation>
+        <translation type="vanished">Värviriba seadistus (&amp;C)</translation>
+    </message>
+</context>
+<context>
+    <name>PostSolutionSelectDialog</name>
+    <message>
+        <source>Select Target Result</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

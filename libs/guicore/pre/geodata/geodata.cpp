@@ -179,6 +179,9 @@ bool GeoData::addToolBarButtons(QToolBar*)
 	return false;
 }
 
+void GeoData::applyColorMapSetting()
+{}
+
 QMenu* GeoData::menu() const
 {
 	return m_menu;
@@ -241,14 +244,10 @@ QDialog* GeoData::propertyDialog(QWidget*)
 void GeoData::handlePropertyDialogAccepted(QDialog*)
 {}
 
-ScalarsToColorsContainer* GeoData::scalarsToColorsContainer()
+ColorMapSettingContainerI* GeoData::colorMapSettingContainer() const
 {
-	ProjectDataItem* groupdi1 = parent()->parent();
-	PreProcessorGeoDataGroupDataItemInterface* groupdi2 = dynamic_cast<PreProcessorGeoDataGroupDataItemInterface*>(groupdi1);
-	if (groupdi2 == nullptr) {return nullptr;}
-	PreProcessorGridTypeDataItemInterface* typedi = dynamic_cast<PreProcessorGridTypeDataItemInterface*>(groupdi1->parent()->parent());
-	ScalarsToColorsContainer* stc = typedi->scalarsToColors(groupdi2->condition()->name());
-	return stc;
+	auto di = dynamic_cast<PreProcessorGeoDataDataItemInterface*> (parent());
+	return di->colorMapSettingContainer();
 }
 
 void GeoData::update2Ds()

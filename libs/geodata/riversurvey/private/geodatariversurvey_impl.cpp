@@ -6,7 +6,7 @@
 #include <guibase/polyline/polylinecontrollerutil.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
 #include <guicore/pre/base/preprocessorwindowinterface.h>
-#include <guicore/scalarstocolors/scalarstocolorscontainer.h>
+#include <guicore/scalarstocolors/colormapsettingcontaineri.h>
 #include <misc/mathsupport.h>
 #include <misc/stringtool.h>
 
@@ -363,14 +363,16 @@ void GeoDataRiverSurvey::Impl::setupVtkObjects()
 	r->AddActor(m_labelActor);
 
 	// background color
+	/*
 	auto dsmapper = vtkSmartPointer<vtkDataSetMapper>::New();
 	dsmapper->SetInputData(m_backgroundGrid);
 	dsmapper->SetScalarModeToUsePointData();
 	dsmapper->SetLookupTable(m_rs->scalarsToColorsContainer()->vtkObj());
 	dsmapper->UseLookupTableScalarRangeOn();
 	dsmapper->SetScalarVisibility(true);
-
 	m_backgroundActor->SetMapper(dsmapper);
+	*/
+
 	m_backgroundActor->VisibilityOff();
 	r->AddActor(m_backgroundActor);
 }
@@ -807,6 +809,11 @@ void GeoDataRiverSurvey::Impl::updateVtkBackgroundObjects()
 	col->RemoveItem(m_backgroundActor);
 
 	if (! m_rs->m_setting.showBackground) {return;}
+
+	auto cs = m_rs->colorMapSettingContainer();
+	auto mapper = cs->buildPointDataMapper(m_backgroundGrid);
+	m_backgroundActor->SetMapper(mapper);
+	mapper->Delete();
 
 	col->AddItem(m_backgroundActor);
 	m_backgroundActor->GetProperty()->SetOpacity(m_rs->m_setting.opacity);

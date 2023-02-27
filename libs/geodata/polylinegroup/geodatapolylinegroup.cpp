@@ -8,14 +8,14 @@
 
 #include <geodata/polydatagroup/geodatapolydatagroupcreator.h>
 #include <geodata/polyline/geodatapolyline.h>
-#include <guicore/scalarstocolors/scalarstocolorscontainer.h>
 #include <geoio/polygonutil.h>
+#include <guibase/vtktool/vtkpolydatamapperutil.h>
 #include <guicore/pre/base/preprocessorgeodatadataiteminterface.h>
 #include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
 #include <guicore/pre/base/preprocessorwindowinterface.h>
 #include <guicore/pre/geodata/geodatafactoryinterface.h>
-#include <guicore/scalarstocolors/scalarstocolorscontainer.h>
+#include <guicore/scalarstocolors/colormapsettingcontaineri.h>
 #include <misc/mathsupport.h>
 #include <misc/zdepthrange.h>
 
@@ -63,21 +63,6 @@ GeoDataPolyDataGroup(d, gdcreater, condition),
 {
 	addAction()->setText(tr("&Add New Line..."));
 
-	ScalarsToColorsContainer* stcc = scalarsToColorsContainer();
-	if (stcc != nullptr) {
-		auto mapper = impl->m_edgesActor->GetMapper();
-		mapper->SetLookupTable(stcc->vtkDarkObj());
-		mapper->SetUseLookupTableScalarRange(true);
-
-		mapper = impl->m_selectedPolyLinesEdgesActor->GetMapper();
-		mapper->SetLookupTable(stcc->vtkDarkObj());
-		mapper->SetUseLookupTableScalarRange(true);
-
-		mapper = impl->m_selectedPolyLinesPointsActor->GetMapper();
-		mapper->SetLookupTable(stcc->vtkDarkObj());
-		mapper->SetUseLookupTableScalarRange(true);
-	}
-
 	actorCollection()->AddItem(impl->m_edgesActor);
 
 	renderer()->AddActor(impl->m_edgesActor);
@@ -88,8 +73,6 @@ GeoDataPolyDataGroup(d, gdcreater, condition),
 	if (att && att->isReferenceInformation()) {
 		impl->m_colorSetting.mapping = GeoDataPolyLineGroupColorSettingDialog::Arbitrary;
 	}
-
-	updateActorSetting();
 }
 
 GeoDataPolyLineGroup::~GeoDataPolyLineGroup()
@@ -363,6 +346,7 @@ GeoDataPolyDataGroupPolyData* GeoDataPolyLineGroup::createNewData()
 GeoDataPolyData* GeoDataPolyLineGroup::createEditTargetData()
 {
 	auto line = new GeoDataPolyLine(parent(), creator(), gridAttribute());
+	line->setVariantValue(gridAttribute()->variantDefaultValue());
 
 	line->assignActorZValues(depthRange());
 	connect(line, SIGNAL(nameAndValueEdited()), this, SLOT(updateAttributeBrowser()));
@@ -380,6 +364,7 @@ void GeoDataPolyLineGroup::updateActorSetting()
 	impl->m_edgesActor->GetProperty()->SetColor(c.redF(), c.greenF(), c.blueF());
 	impl->m_selectedPolyLinesEdgesActor->GetProperty()->SetColor(c.redF(), c.greenF(), c.blueF());
 	impl->m_selectedPolyLinesPointsActor->GetProperty()->SetColor(c.redF(), c.greenF(), c.blueF());
+	impl->m_selectedPolyLinesEdgesActor->GetProperty()->SetOpacity(cs.opacity);
 	impl->m_edgesActor->GetProperty()->SetOpacity(cs.opacity);
 
 	// mapping
@@ -387,13 +372,45 @@ void GeoDataPolyLineGroup::updateActorSetting()
 	if (cs.mapping == GeoDataPolyLineGroupColorSettingDialog::Arbitrary) {
 		scalarVisibility = false;
 	}
-	impl->m_edgesActor->GetMapper()->SetScalarVisibility(scalarVisibility);
-	impl->m_selectedPolyLinesEdgesActor->GetMapper()->SetScalarVisibility(scalarVisibility);
-	impl->m_selectedPolyLinesPointsActor->GetMapper()->SetScalarVisibility(scalarVisibility);
+	if (scalarVisibility) {
+		vtkMapper* mapper = nullptr;
+		auto cs = colorMapSettingContainer();
+
+		mapper = cs->buildCellDataMapper(impl->m_edgesPolyData, true);
+		impl->m_edgesActor->SetMapper(mapper);
+		mapper->Delete();
+
+		mapper = cs->buildCellDataMapper(impl->m_selectedPolyLinesEdgesPolyData, true);
+		impl->m_selectedPolyLinesEdgesActor->SetMapper(mapper);
+		mapper->Delete();
+
+		mapper = cs->buildCellDataMapper(impl->m_selectedPolyLinesPointsPolyData, true);
+		impl->m_selectedPolyLinesPointsActor->SetMapper(mapper);
+		mapper->Delete();
+	} else {
+		vtkPolyDataMapper* mapper = nullptr;
+
+		mapper = vtkPolyDataMapperUtil::createWithScalarVisibilityOff();
+		mapper->SetInputData(impl->m_edgesPolyData);
+		impl->m_edgesActor->SetMapper(mapper);
+		mapper->Delete();
+
+		mapper = vtkPolyDataMapperUtil::createWithScalarVisibilityOff();
+		mapper->SetInputData(impl->m_selectedPolyLinesEdgesPolyData);
+		impl->m_selectedPolyLinesEdgesActor->SetMapper(mapper);
+		mapper->Delete();
+
+		mapper = vtkPolyDataMapperUtil::createWithScalarVisibilityOff();
+		mapper->SetInputData(impl->m_selectedPolyLinesPointsPolyData);
+		impl->m_selectedPolyLinesPointsActor->SetMapper(mapper);
+		mapper->Delete();
+	}
+
 	impl->m_selectedPolyLinesEdgesActor->GetProperty()->SetOpacity(cs.opacity);
 
 	// line width and point sizes
 	impl->m_edgesActor->GetProperty()->SetLineWidth(cs.lineWidth);
+	impl->m_selectedPolyLinesEdgesActor->GetProperty()->SetLineWidth(cs.lineWidth * 2);
 	impl->m_selectedPolyLinesPointsActor->GetProperty()->SetPointSize(cs.lineWidth * 5);
 
 	updateActorSettingForEditTargetPolyData();

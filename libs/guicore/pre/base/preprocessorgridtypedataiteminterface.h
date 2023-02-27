@@ -4,12 +4,13 @@
 #include "preprocessordataitem.h"
 #include <QList>
 
-class QString;
-class ScalarsToColorsContainer;
+class ColorMapSettingContainerI;
 class SolverDefinitionGridType;
 class PreProcessorGeoDataTopDataItemInterface;
 class PreProcessorHydraulicDataTopDataItemInterface;
 class PreProcessorGridAndGridCreatingConditionDataItemInterface;
+
+class QString;
 
 class PreProcessorGridTypeDataItemInterface : public PreProcessorDataItem
 {
@@ -20,7 +21,8 @@ public:
 	{}
 	virtual ~PreProcessorGridTypeDataItemInterface() {}
 
-	virtual ScalarsToColorsContainer* scalarsToColors(const std::string& attName) const = 0;
+	virtual ColorMapSettingContainerI* colorMapSetting(const std::string& attName) const = 0;
+
 	virtual SolverDefinitionGridType* gridType() const = 0;
 	virtual const QList<PreProcessorGridAndGridCreatingConditionDataItemInterface*>& conditions() const = 0;
 	virtual PreProcessorGeoDataTopDataItemInterface* geoDataTop() const = 0;

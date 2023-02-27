@@ -12,7 +12,7 @@ namespace iRICLib {
 class PostZoneDataContainer::ParticleLoader
 {
 public:
-	static bool load(vtkSmartPointer<vtkPolyData>* data, iRICLib::H5CgnsParticleSolution* sol, const QPointF& offset);
+	static bool load(vtkPointSetAndValueRangeSetT<vtkPolyData>** data, iRICLib::H5CgnsParticleSolution* sol, const QPointF& offset);
 
 private:
 	ParticleLoader();

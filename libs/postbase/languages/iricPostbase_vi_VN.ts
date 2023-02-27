@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="vi_VN">
 <context>
     <name>ParticleArbitraryTimeEditDialog</name>
@@ -57,163 +59,170 @@
     <name>PostParticleBasicSettingDialog</name>
     <message>
         <source>Particles Setting</source>
-        <translation>Cài đặt hạt</translation>
+        <translation type="vanished">Cài đặt hạt</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Màu sắc:</translation>
+        <translation type="vanished">Màu sắc:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>Kích thước:</translation>
+        <translation type="vanished">Kích thước:</translation>
     </message>
 </context>
 <context>
     <name>PostParticleScalarPropertyDialog</name>
     <message>
         <source>Particle Scalar Setting</source>
-        <translation>Cài đặt vô hướng hạt</translation>
+        <translation type="vanished">Cài đặt vô hướng hạt</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Tự phối màu</translation>
+        <translation type="vanished">Tự phối màu</translation>
     </message>
     <message>
         <source>Color by attribute value</source>
-        <translation>Màu sắc theo giá trị thuộc tính</translation>
+        <translation type="vanished">Màu sắc theo giá trị thuộc tính</translation>
     </message>
     <message>
         <source>Attribute:</source>
-        <translation>Thuộc tính:</translation>
+        <translation type="vanished">Thuộc tính:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>Kích thước:</translation>
+        <translation type="vanished">Kích thước:</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Cài đặt thanh màu (&amp;C)</translation>
+        <translation type="vanished">Cài đặt thanh màu (&amp;C)</translation>
     </message>
 </context>
 <context>
     <name>PostParticleVectorPropertyDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Cài đặt mũi tên</translation>
+        <translation type="vanished">Cài đặt mũi tên</translation>
     </message>
     <message>
         <source>Attribute value:</source>
-        <translation>Giá trị thuộc tính:</translation>
+        <translation type="vanished">Giá trị thuộc tính:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Chiều dài</translation>
+        <translation type="vanished">Chiều dài</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Tự động</translation>
+        <translation type="vanished">Tự động</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Giá trị tiêu chuẩn:</translation>
+        <translation type="vanished">Giá trị tiêu chuẩn:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[bệnh đa xơ cứng]</translation>
+        <translation type="vanished">[bệnh đa xơ cứng]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Độ dài trên màn hình:</translation>
+        <translation type="vanished">Độ dài trên màn hình:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[pixel]</translation>
+        <translation type="vanished">[pixel]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Giá trị tối thiểu để rút ra:</translation>
+        <translation type="vanished">Giá trị tối thiểu để rút ra:</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>Lấy mẫu</translation>
+        <translation type="vanished">Lấy mẫu</translation>
     </message>
     <message>
         <source>All particles</source>
-        <translation>Tất cả các hạt</translation>
+        <translation type="vanished">Tất cả các hạt</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>Tỷ lệ lấy mẫu:</translation>
+        <translation type="vanished">Tỷ lệ lấy mẫu:</translation>
     </message>
     <message>
         <source>Specify number of particles</source>
-        <translation>Chỉ định số lượng hạt</translation>
+        <translation type="vanished">Chỉ định số lượng hạt</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Màu sắc</translation>
+        <translation type="vanished">Màu sắc</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Tự phối màu</translation>
+        <translation type="vanished">Tự phối màu</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Theo giá trị vô hướng</translation>
+        <translation type="vanished">Theo giá trị vô hướng</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>Hình mũi tên</translation>
+        <translation type="vanished">Hình mũi tên</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>Kích thước mũi tên:</translation>
+        <translation type="vanished">Kích thước mũi tên:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>Chiều rộng dòng:</translation>
+        <translation type="vanished">Chiều rộng dòng:</translation>
     </message>
 </context>
 <context>
     <name>PostPolyDataBasicSettingDialog</name>
     <message>
         <source>Polygon Setting</source>
-        <translation>Cài đặt đa giác</translation>
+        <translation type="vanished">Cài đặt đa giác</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Màu sắc:</translation>
+        <translation type="vanished">Màu sắc:</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Chiều rộng dòng:</translation>
+        <translation type="vanished">Chiều rộng dòng:</translation>
     </message>
 </context>
 <context>
     <name>PostPolyDataScalarPropertyDialog</name>
     <message>
         <source>Polygon Setting</source>
-        <translation>Cài đặt đa giác</translation>
+        <translation type="vanished">Cài đặt đa giác</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Tự phối màu</translation>
+        <translation type="vanished">Tự phối màu</translation>
     </message>
     <message>
         <source>Color by attribute value</source>
-        <translation>Màu sắc theo giá trị thuộc tính</translation>
+        <translation type="vanished">Màu sắc theo giá trị thuộc tính</translation>
     </message>
     <message>
         <source>Attribute:</source>
-        <translation>Thuộc tính:</translation>
+        <translation type="vanished">Thuộc tính:</translation>
     </message>
     <message>
         <source>Line Width</source>
-        <translation>Chiều rộng dòng</translation>
+        <translation type="vanished">Chiều rộng dòng</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Cài đặt thanh màu (&amp;C)</translation>
+        <translation type="vanished">Cài đặt thanh màu (&amp;C)</translation>
+    </message>
+</context>
+<context>
+    <name>PostSolutionSelectDialog</name>
+    <message>
+        <source>Select Target Result</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

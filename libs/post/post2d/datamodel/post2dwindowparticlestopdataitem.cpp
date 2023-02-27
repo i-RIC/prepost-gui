@@ -12,7 +12,7 @@ vtkPolyData* Post2dWindowParticlesTopDataItem::particleData() const
 	auto zone = zoneDataItem()->dataContainer();
 	if (zone == nullptr) {return nullptr;}
 
-	return zone->particleData();
+	return zone->particleData()->concreteData();
 }
 
 Post2dWindowZoneDataItem* Post2dWindowParticlesTopDataItem::zoneDataItem() const

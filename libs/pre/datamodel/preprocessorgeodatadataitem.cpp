@@ -13,6 +13,8 @@
 #include <guicore/pre/geodata/geodataimporter.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
+#include <guicore/scalarstocolors/colormapsettingcontaineri.h>
+#include <guicore/scalarstocolors/colormaplegendsettingcontaineri.h>
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
 #include <misc/lastiodirectory.h>
 #include <misc/stringtool.h>
@@ -173,12 +175,20 @@ void PreProcessorGeoDataDataItem::informSelection(VTKGraphicsView* v)
 {
 	// delegate to raw data.
 	m_geoData->informSelection(dynamic_cast<PreProcessorGraphicsViewInterface*>(v));
+
+	auto setting = colorMapSettingContainer();
+	if (setting == nullptr) {return;}
+	setting->legendSetting()->imgSetting()->controller()->handleSelection(v);
 }
 
 void PreProcessorGeoDataDataItem::informDeselection(VTKGraphicsView* v)
 {
 	// delegate to raw data.
 	m_geoData->informDeselection(dynamic_cast<PreProcessorGraphicsViewInterface*>(v));
+
+	auto setting = colorMapSettingContainer();
+	if (setting == nullptr) {return;}
+	setting->legendSetting()->imgSetting()->controller()->handleDeselection(v);
 }
 
 void PreProcessorGeoDataDataItem::viewOperationEnded(VTKGraphicsView* v)
@@ -247,6 +257,12 @@ bool PreProcessorGeoDataDataItem::getValueRange(double* min, double* max)
 	return m_geoData->getValueRange(min, max);
 }
 
+void PreProcessorGeoDataDataItem::applyColorMapSetting()
+{
+	if (m_geoData == nullptr) {return;}
+	m_geoData->applyColorMapSetting();
+}
+
 QDialog* PreProcessorGeoDataDataItem::propertyDialog(QWidget* parent)
 {
 	return m_geoData->propertyDialog(parent);
@@ -272,21 +288,7 @@ void PreProcessorGeoDataDataItem::moveDown()
 
 bool PreProcessorGeoDataDataItem::setupExportMenu(QMenu* /*menu*/)
 {
-	bool ok = false;
-	/*
-			if (m_exportSignalMapper != nullptr){delete m_exportSignalMapper;}
-			m_exportSignalMapper = new QSignalMapper(this);
-			const QList<GeoDataExporter*>& exporters = m_geoData->exporters();
-			for (auto exp_it = exporters.begin(); exp_it != exporters.end(); ++exp_it){
-					QString title = (*exp_it)->caption();
-					QAction* exportAction = menu->addAction(title.append("..."));
-					m_exportSignalMapper->setMapping(exportAction, *exp_it);
-					connect(exportAction, SIGNAL(triggered()), m_exportSignalMapper, SLOT(map()));
-					ok = true;
-			}
-			connect(m_exportSignalMapper, SIGNAL(mapped(QObject*)), this, SLOT(exportGeoData(QObject*)));
-	 */
-	return ok;
+	return false;
 }
 
 bool PreProcessorGeoDataDataItem::isExportAvailable()
@@ -318,4 +320,13 @@ void PreProcessorGeoDataDataItem::removeFile()
 {
 	if (m_geoData->filename().isEmpty()) {return;}
 	QFile::remove(m_geoData->filename());
+}
+
+ColorMapSettingContainerI* PreProcessorGeoDataDataItem::colorMapSettingContainer() const
+{
+	auto groupdi = dynamic_cast<PreProcessorGeoDataGroupDataItemInterface*> (parent());
+	if (groupdi == nullptr) {return nullptr;}
+
+	auto typedi = dynamic_cast<PreProcessorGridTypeDataItemInterface*>(groupdi->parent()->parent());
+	return typedi->colorMapSetting(groupdi->condition()->name());
 }

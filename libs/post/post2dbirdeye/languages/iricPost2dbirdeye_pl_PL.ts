@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="pl_PL">
 <context>
     <name>Post2dBirdEyeObjectBrowser</name>
@@ -9,7 +11,7 @@
 <context>
     <name>Post2dBirdEyeWindow</name>
     <message>
-        <source>Bird's-Eye Post-processing (2D): %1</source>
+        <source>Bird&apos;s-Eye Post-processing (2D): %1</source>
         <translation>Przetwarzanie z lotu ptaka (2D): %1</translation>
     </message>
     <message>
@@ -56,80 +58,80 @@
     <name>Post2dBirdEyeWindowAxesDataItem</name>
     <message>
         <source>Axes</source>
-        <translation>Osie</translation>
+        <translation type="vanished">Osie</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
-        <translation>Skalarny</translation>
+        <translation type="vanished">Skalarny</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
-        <translation>Aktualizuj ustawienia konturu</translation>
+        <translation type="vanished">Aktualizuj ustawienia konturu</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowCellScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (cell center)</source>
-        <translation>Skalar (centrum komórki)</translation>
+        <translation type="vanished">Skalar (centrum komórki)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Ostrzeżenie</translation>
+        <translation type="vanished">Ostrzeżenie</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>Można zdefiniować maksymalnie cztery kontury.</translation>
+        <translation type="vanished">Można zdefiniować maksymalnie cztery kontury.</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowContourSettingDialog</name>
     <message>
         <source>Scalar Setting</source>
-        <translation>Ustawienie skalarne</translation>
+        <translation type="vanished">Ustawienie skalarne</translation>
     </message>
     <message>
         <source>Scalar value for elevation</source>
-        <translation>Skalarna wartość wysokości</translation>
+        <translation type="vanished">Skalarna wartość wysokości</translation>
     </message>
     <message>
         <source>Color Setting</source>
-        <translation>Ustawienie koloru</translation>
+        <translation type="vanished">Ustawienie koloru</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Niestandardowy kolor</translation>
+        <translation type="vanished">Niestandardowy kolor</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Według wartości skalarnej</translation>
+        <translation type="vanished">Według wartości skalarnej</translation>
     </message>
     <message>
         <source>Scalar Value:</source>
-        <translation>Wartość skalarna:</translation>
+        <translation type="vanished">Wartość skalarna:</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>Ustawienia wyświetlania</translation>
+        <translation type="vanished">Ustawienia wyświetlania</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>Ustawienie regionu (&amp;R)</translation>
+        <translation type="vanished">Ustawienie regionu (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Ustawienie paska kolorów (&amp;C)</translation>
+        <translation type="vanished">Ustawienie paska kolorów (&amp;C)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Błąd</translation>
+        <translation type="vanished">Błąd</translation>
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
-        <translation>Dla zakresu wartości wartość maksymalna jest mniejsza niż wartość minimalna.</translation>
+        <translation type="vanished">Dla zakresu wartości wartość maksymalna jest mniejsza niż wartość minimalna.</translation>
     </message>
 </context>
 <context>
@@ -144,7 +146,7 @@
     </message>
     <message>
         <source>Contour setting is not available, because this result does not contain cell scalar values.</source>
-        <translation>Ustawienie konturu jest niedostępne, ponieważ ten wynik nie zawiera wartości skalarnych komórki.</translation>
+        <translation type="vanished">Ustawienie konturu jest niedostępne, ponieważ ten wynik nie zawiera wartości skalarnych komórki.</translation>
     </message>
     <message>
         <source>Z-direction Scale</source>
@@ -163,6 +165,17 @@
     </message>
 </context>
 <context>
+    <name>Post2dBirdEyeWindowGridShapeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Shape Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scalar value for Elevation</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>Post2dBirdEyeWindowNodeScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
@@ -170,7 +183,42 @@
     </message>
     <message>
         <source>Update Contour Setting</source>
-        <translation>Aktualizuj ustawienia konturu</translation>
+        <translation type="vanished">Aktualizuj ustawienia konturu</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation type="unfinished">Niestandardowy kolor</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation type="unfinished">Według wartości skalarnej</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -181,22 +229,22 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Ostrzeżenie</translation>
+        <translation type="vanished">Ostrzeżenie</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>Można zdefiniować maksymalnie cztery kontury.</translation>
+        <translation type="vanished">Można zdefiniować maksymalnie cztery kontury.</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
         <source>Create Contour</source>
-        <translation>Utwórz kontur</translation>
+        <translation type="vanished">Utwórz kontur</translation>
     </message>
     <message>
         <source>Update Grid Shape Setting</source>
-        <translation>Zaktualizuj ustawienie kształtu siatki</translation>
+        <translation type="vanished">Zaktualizuj ustawienie kształtu siatki</translation>
     </message>
     <message>
         <source>Edit Background Color</source>

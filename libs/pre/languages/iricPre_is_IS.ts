@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="is_IS">
 <context>
     <name>BoundaryConditionDialog</name>
@@ -112,7 +114,7 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>GridBirdEyeWindow</name>
     <message>
-        <source>Grid Bird's-Eye View Window</source>
+        <source>Grid Bird&apos;s-Eye View Window</source>
         <translation>Gluggi fyrir fugl og augu frá rist</translation>
     </message>
 </context>
@@ -139,69 +141,135 @@ Do you really want to import grid from this file?</source>
     <name>GridBirdEyeWindowAxesSettingDialog</name>
     <message>
         <source>Axes Setting</source>
-        <translation>Ásstilling</translation>
+        <translation type="vanished">Ásstilling</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>Sýnilegt</translation>
+        <translation type="vanished">Sýnilegt</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Litur:</translation>
+        <translation type="vanished">Litur:</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowColorSettingDialog</name>
     <message>
         <source>Display Setting</source>
-        <translation>Skjástilling</translation>
+        <translation type="vanished">Skjástilling</translation>
     </message>
     <message>
         <source>Grid Color</source>
-        <translation>Ristarlitur</translation>
+        <translation type="vanished">Ristarlitur</translation>
     </message>
     <message>
         <source>Node attribute</source>
-        <translation>Hnútur eiginleiki</translation>
+        <translation type="vanished">Hnútur eiginleiki</translation>
     </message>
     <message>
         <source>Cell attribute</source>
-        <translation>Eiginleiki frumu</translation>
+        <translation type="vanished">Eiginleiki frumu</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Sérsniðin litur</translation>
+        <translation type="vanished">Sérsniðin litur</translation>
     </message>
     <message>
         <source>Axes</source>
-        <translation>Ása</translation>
+        <translation type="vanished">Ása</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>Sýnilegt</translation>
+        <translation type="vanished">Sýnilegt</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Litur:</translation>
+        <translation type="vanished">Litur:</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowDataModel</name>
     <message>
         <source>Edit Z-direction Scale</source>
-        <translation>Breyta Z-áttavigt</translation>
+        <translation type="vanished">Breyta Z-áttavigt</translation>
     </message>
     <message>
         <source>Z-direction Scale</source>
-        <translation>Z-átt Mælikvarði</translation>
+        <translation type="vanished">Z-átt Mælikvarði</translation>
     </message>
     <message>
         <source>Input new Z-direction scale.</source>
-        <translation>Settu inn nýjan Z-áttavigt.</translation>
+        <translation type="vanished">Settu inn nýjan Z-áttavigt.</translation>
     </message>
     <message>
         <source>Edit Color Setting</source>
-        <translation>Breyta litastillingu</translation>
+        <translation type="vanished">Breyta litastillingu</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowGridDataItem</name>
+    <message>
+        <source>Edit Z-direction Scale</source>
+        <translation type="unfinished">Breyta Z-áttavigt</translation>
+    </message>
+    <message>
+        <source>Input new Z-direction scale.</source>
+        <translation type="unfinished">Settu inn nýjan Z-áttavigt.</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowGridDataItem_EditDisplaySettingDialog</name>
+    <message>
+        <source>Edit Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Elevation:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Grid Color</source>
+        <translation type="unfinished">Ristarlitur</translation>
+    </message>
+    <message>
+        <source>Cusom Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="unfinished">Flytja inn (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="unfinished">Útflutningur (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Axes</source>
+        <translation type="unfinished">Ása</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation type="unfinished">Sýnilegt</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished">Litur:</translation>
+    </message>
+    <message>
+        <source>Background Color:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Z-direction scale:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -287,6 +355,10 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Are you sure you want to delete all boundary conditions?</source>
         <translation>Ertu viss um að þú viljir eyða öllum skilyrðum landamæranna?</translation>
+    </message>
+    <message>
+        <source>Edit Display Setting</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -387,6 +459,17 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Are you sure you want to delete all background images?</source>
         <translation>Ertu viss um að þú viljir eyða öllum bakgrunnsmyndum?</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorBcGroupSettingDialog</name>
+    <message>
+        <source>Boundary Condition Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Font setting for names</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -580,8 +663,8 @@ Do you really want to import grid from this file?</source>
         <translation>%1 eru ekki kortlagðar eftir að þeim var breytt síðast. Viltu framkvæma kortlagningu núna?</translation>
     </message>
     <message>
-        <source>Boundary Condition Setting "%1" is not mapped after it is edited last time. Do you want to execute mapping now?</source>
-        <translation>Stilling marka "%1"er ekki kortlagt eftir að því var breytt síðast. Viltu framkvæma kortlagningu núna?</translation>
+        <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
+        <translation>Stilling marka &quot;%1&quot;er ekki kortlagt eftir að því var breytt síðast. Viltu framkvæma kortlagningu núna?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -666,7 +749,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Set Up Scalarbar...</source>
-        <translation>Setja upp skalastiku...</translation>
+        <translation type="vanished">Setja upp skalastiku...</translation>
     </message>
     <message>
         <source>Delete &amp;Selected...</source>
@@ -789,6 +872,56 @@ Do you really want to import grid from this file?</source>
         <source>To import the geographic data, specify coordinate system for the project first.</source>
         <translation>Til að flytja inn landfræðileg gögn skal fyrst tilgreina hnitakerfi fyrir verkefnið.</translation>
     </message>
+    <message>
+        <source>Edit &amp;Variation Setting...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGeoDataGroupDataItem_ColorMapSettingEditDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation type="unfinished">Dialog</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="unfinished">Flytja inn (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="unfinished">Útflutningur (&amp;E)...</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGeoDataGroupDataItem_VariationSettingDialog</name>
+    <message>
+        <source>Variation Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enable variation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Variation to pass to solver:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Note:
+
+When variation is enabled, variation named &quot;Default&quot; is created, and all geographic data is moved to that.
+
+You can add, rename, remove variations from &quot;Object Browser&quot;.
+
+You can move, copy geographic data between variations.
+
+The grid attribute data created from the variation that you select with &quot;Variation to pass to solver&quot; is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGeoDataTopDataItem</name>
@@ -848,7 +981,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Grid Cell Attribute Display Setting</source>
-        <translation>Stilling skjáa eiginleika ristafars</translation>
+        <translation type="vanished">Stilling skjáa eiginleika ristafars</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -928,6 +1061,21 @@ Do you really want to import grid from this file?</source>
     </message>
 </context>
 <context>
+    <name>PreProcessorGridAttributeCellDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Cell Attribute Display Setting</source>
+        <translation type="unfinished">Stilling skjáa eiginleika ristafars</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="unfinished">Flytja inn (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="unfinished">Útflutningur (&amp;E)...</translation>
+    </message>
+</context>
+<context>
     <name>PreProcessorGridAttributeCellDisplaySettingDialog</name>
     <message>
         <source>Dialog</source>
@@ -987,9 +1135,9 @@ Do you really want to import grid from this file?</source>
         <translation>Framkvæma (&amp;E)...</translation>
     </message>
     <message>
-        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".
+        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.
 </source>
-        <translation>Eftirfarandi eiginleikar voru ekki kortlagðir vegna þess að útgangsgildi ristafls fyrir þá. Ef þú vilt kortleggja landfræðileg gögn fyrir þau með valdi, vinsamlegast kortleggðu handvirkt með valmyndinni "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".</translation>
+        <translation>Eftirfarandi eiginleikar voru ekki kortlagðir vegna þess að útgangsgildi ristafls fyrir þá. Ef þú vilt kortleggja landfræðileg gögn fyrir þau með valdi, vinsamlegast kortleggðu handvirkt með valmyndinni &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1008,12 +1156,12 @@ Do you really want to import grid from this file?</source>
         <translation>Kortlagningu landfræðilegra gagna lokið</translation>
     </message>
     <message>
-        <source>The grid attribute "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Eiginleiki ristarinnar "%1"er breytt með höndunum. Þegar þú framkvæmir kortlagningu verður öllum breytingum sem þú gerðir fargað. Viltu virkilega framkvæma kortlagningu?</translation>
+        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Eiginleiki ristarinnar &quot;%1&quot;er breytt með höndunum. Þegar þú framkvæmir kortlagningu verður öllum breytingum sem þú gerðir fargað. Viltu virkilega framkvæma kortlagningu?</translation>
     </message>
     <message>
-        <source>The boundary condition "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Skilyrðin "%1"er breytt með höndunum. Þegar þú framkvæmir kortlagningu verður öllum breytingum sem þú gerðir fargað. Viltu virkilega framkvæma kortlagningu?</translation>
+        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Skilyrðin &quot;%1&quot;er breytt með höndunum. Þegar þú framkvæmir kortlagningu verður öllum breytingum sem þú gerðir fargað. Viltu virkilega framkvæma kortlagningu?</translation>
     </message>
 </context>
 <context>
@@ -1031,19 +1179,19 @@ Do you really want to import grid from this file?</source>
         <translation>Sjálfvirk</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Þegar ristið er búið til er spurt hvort til að framkvæma eiginleika kortlagningu hverju sinni. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Þegar ristið er búið til er spurt hvort til að framkvæma eiginleika kortlagningu hverju sinni. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Manual</source>
         <translation>Handbók</translation>
     </message>
     <message>
-        <source>Attribute mapping is executed only when you manually select "Execute" menu.</source>
+        <source>Attribute mapping is executed only when you manually select &quot;Execute&quot; menu.</source>
         <translation>Eignakortlagning er aðeins framkvæmd þegar þú velur valmyndina „Framkvæma“ handvirkt.</translation>
     </message>
     <message>
@@ -1096,7 +1244,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Grid Node Attribute Display Setting</source>
-        <translation>Stilling hnútareiginleika birtingarstillingar</translation>
+        <translation type="vanished">Stilling hnútareiginleika birtingarstillingar</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -1173,6 +1321,21 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Generate point cloud data</source>
         <translation>Búðu til punktaskýgögn</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeNodeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Node Attribute Display Setting</source>
+        <translation type="unfinished">Stilling hnútareiginleika birtingarstillingar</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="unfinished">Flytja inn (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="unfinished">Útflutningur (&amp;E)...</translation>
     </message>
 </context>
 <context>
@@ -1448,7 +1611,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>Setja upp skalastiku (&amp;U)...</translation>
     </message>
     <message>
-        <source>Open &amp;Bird's-Eye View Window</source>
+        <source>Open &amp;Bird&apos;s-Eye View Window</source>
         <translation>Opnaðu fuglaskoðunargluggann (&amp;B)</translation>
     </message>
     <message>
@@ -1727,26 +1890,26 @@ This algorithm can be used only for structured grids.</source>
     <name>PreProcessorScalarBarEditDialog</name>
     <message>
         <source>Color Legend Setting</source>
-        <translation>Stilling litasaga</translation>
+        <translation type="vanished">Stilling litasaga</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorScalarBarLegendBoxSettingDialog</name>
     <message>
         <source>Scalarbar Setting</source>
-        <translation>Stilla stigstigs</translation>
+        <translation type="vanished">Stilla stigstigs</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>Sýnilegt</translation>
+        <translation type="vanished">Sýnilegt</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>Verðmæti</translation>
+        <translation type="vanished">Verðmæti</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation>Breyta...</translation>
+        <translation type="vanished">Breyta...</translation>
     </message>
 </context>
 <context>
@@ -1825,99 +1988,99 @@ This algorithm can be used only for structured grids.</source>
     <name>PreProcessorWindowScalarBarSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation>Eyðublað</translation>
+        <translation type="vanished">Eyðublað</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>Sýnilegt</translation>
+        <translation type="vanished">Sýnilegt</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation>Titill</translation>
+        <translation type="vanished">Titill</translation>
     </message>
     <message>
         <source>Title :</source>
-        <translation>Titill:</translation>
+        <translation type="vanished">Titill:</translation>
     </message>
     <message>
         <source>Font Setting:</source>
-        <translation>Leturstilling:</translation>
+        <translation type="vanished">Leturstilling:</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation>Breyta...</translation>
+        <translation type="vanished">Breyta...</translation>
     </message>
     <message>
         <source>Label Display</source>
-        <translation>Merkisskjár</translation>
+        <translation type="vanished">Merkisskjár</translation>
     </message>
     <message>
         <source>Number of labels :</source>
-        <translation>Fjöldi merkimiða:</translation>
+        <translation type="vanished">Fjöldi merkimiða:</translation>
     </message>
     <message>
         <source>Format:</source>
-        <translation>Snið:</translation>
+        <translation type="vanished">Snið:</translation>
     </message>
     <message>
         <source>Orientation :</source>
-        <translation>Stefnumörkun:</translation>
+        <translation type="vanished">Stefnumörkun:</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation>Lóðrétt</translation>
+        <translation type="vanished">Lóðrétt</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation>Lárétt</translation>
+        <translation type="vanished">Lárétt</translation>
     </message>
     <message>
         <source>Size</source>
-        <translation>Stærð</translation>
+        <translation type="vanished">Stærð</translation>
     </message>
     <message>
         <source>Specify Color bar size as rate against window size.</source>
-        <translation>Tilgreindu litastikustærð sem hlutfall á móti gluggastærð.</translation>
+        <translation type="vanished">Tilgreindu litastikustærð sem hlutfall á móti gluggastærð.</translation>
     </message>
     <message>
         <source>Width :</source>
-        <translation>Breidd:</translation>
+        <translation type="vanished">Breidd:</translation>
     </message>
     <message>
         <source>If you specify 1, Color bar width is the same to window width.</source>
-        <translation>Ef þú tilgreinir 1 er breidd litastika sú sama og gluggabreidd.</translation>
+        <translation type="vanished">Ef þú tilgreinir 1 er breidd litastika sú sama og gluggabreidd.</translation>
     </message>
     <message>
         <source>Height :</source>
-        <translation>Hæð:</translation>
+        <translation type="vanished">Hæð:</translation>
     </message>
     <message>
         <source>If you specify 1, Color bar height is the same to window height.</source>
-        <translation>Ef þú tilgreinir 1 er hæð litastika sú sama og gluggahæð.</translation>
+        <translation type="vanished">Ef þú tilgreinir 1 er hæð litastika sú sama og gluggahæð.</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>Staða</translation>
+        <translation type="vanished">Staða</translation>
     </message>
     <message>
         <source>Specify Color bar left bottom position as rate against window size.</source>
-        <translation>Tilgreindu litastiku vinstri neðri stöðu sem hlutfall á móti gluggastærð.</translation>
+        <translation type="vanished">Tilgreindu litastiku vinstri neðri stöðu sem hlutfall á móti gluggastærð.</translation>
     </message>
     <message>
         <source>X :</source>
-        <translation>X:</translation>
+        <translation type="vanished">X:</translation>
     </message>
     <message>
         <source>If you specify 0, Color bar left edge is located at window left edge.</source>
-        <translation>Ef þú tilgreinir 0 er vinstri brún litastikunnar staðsett við vinstri brún glugga.</translation>
+        <translation type="vanished">Ef þú tilgreinir 0 er vinstri brún litastikunnar staðsett við vinstri brún glugga.</translation>
     </message>
     <message>
         <source>Y :</source>
-        <translation>Y:</translation>
+        <translation type="vanished">Y:</translation>
     </message>
     <message>
         <source>If you specify 0, Color bar bottom is located at window bottom.</source>
-        <translation>Ef þú tilgreinir 0 er botn litastika staðsettur neðst á glugganum.</translation>
+        <translation type="vanished">Ef þú tilgreinir 0 er botn litastika staðsettur neðst á glugganum.</translation>
     </message>
 </context>
 <context>

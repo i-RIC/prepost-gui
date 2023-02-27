@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ko_KR">
 <context>
     <name>Post2dGridRegionSelectDialog</name>
@@ -111,178 +113,178 @@
     <name>Post2dWindowArrowStructuredSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>화살표 설정</translation>
+        <translation type="vanished">화살표 설정</translation>
     </message>
     <message>
         <source>Physical value:</source>
-        <translation>물리적 가치:</translation>
+        <translation type="vanished">물리적 가치:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>길이</translation>
+        <translation type="vanished">길이</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>자동</translation>
+        <translation type="vanished">자동</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>표준 값:</translation>
+        <translation type="vanished">표준 값:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[m/s]</translation>
+        <translation type="vanished">[m/s]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>화면 길이:</translation>
+        <translation type="vanished">화면 길이:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[픽셀]</translation>
+        <translation type="vanished">[픽셀]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>그릴 최소값:</translation>
+        <translation type="vanished">그릴 최소값:</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>견본 추출</translation>
+        <translation type="vanished">견본 추출</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation>모든 정점</translation>
+        <translation type="vanished">모든 정점</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>샘플링 속도:</translation>
+        <translation type="vanished">샘플링 속도:</translation>
     </message>
     <message>
         <source>I-direction</source>
-        <translation>I 방향</translation>
+        <translation type="vanished">I 방향</translation>
     </message>
     <message>
         <source>J-direction</source>
-        <translation>J 방향</translation>
+        <translation type="vanished">J 방향</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>색상</translation>
+        <translation type="vanished">색상</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>사용자 정의 색상</translation>
+        <translation type="vanished">사용자 정의 색상</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>스칼라 값으로</translation>
+        <translation type="vanished">스칼라 값으로</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>화살표 모양</translation>
+        <translation type="vanished">화살표 모양</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>화살표 크기:</translation>
+        <translation type="vanished">화살표 크기:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>선폭:</translation>
+        <translation type="vanished">선폭:</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>지역 설정 (&amp;R)</translation>
+        <translation type="vanished">지역 설정 (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>컬러 바 설정 (&amp;C)</translation>
+        <translation type="vanished">컬러 바 설정 (&amp;C)</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowArrowUnstructuredSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>화살표 설정</translation>
+        <translation type="vanished">화살표 설정</translation>
     </message>
     <message>
         <source>Physical value:</source>
-        <translation>물리적 가치:</translation>
+        <translation type="vanished">물리적 가치:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>길이</translation>
+        <translation type="vanished">길이</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>자동</translation>
+        <translation type="vanished">자동</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>표준 값:</translation>
+        <translation type="vanished">표준 값:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[m/s]</translation>
+        <translation type="vanished">[m/s]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>화면 길이:</translation>
+        <translation type="vanished">화면 길이:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[픽셀]</translation>
+        <translation type="vanished">[픽셀]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>그릴 최소값:</translation>
+        <translation type="vanished">그릴 최소값:</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>견본 추출</translation>
+        <translation type="vanished">견본 추출</translation>
     </message>
     <message>
         <source>All vertices</source>
-        <translation>모든 정점</translation>
+        <translation type="vanished">모든 정점</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>샘플링 속도:</translation>
+        <translation type="vanished">샘플링 속도:</translation>
     </message>
     <message>
         <source>Specify number of vertices</source>
-        <translation>정점 수 지정</translation>
+        <translation type="vanished">정점 수 지정</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>색상</translation>
+        <translation type="vanished">색상</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>사용자 정의 색상</translation>
+        <translation type="vanished">사용자 정의 색상</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>스칼라 값으로</translation>
+        <translation type="vanished">스칼라 값으로</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>화살표 모양</translation>
+        <translation type="vanished">화살표 모양</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>화살표 크기:</translation>
+        <translation type="vanished">화살표 크기:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>선폭:</translation>
+        <translation type="vanished">선폭:</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>지역 설정 (&amp;R)</translation>
+        <translation type="vanished">지역 설정 (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>컬러 바 설정 (&amp;C)</translation>
+        <translation type="vanished">컬러 바 설정 (&amp;C)</translation>
     </message>
 </context>
 <context>
@@ -369,27 +371,54 @@
     <name>Post2dWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar (cell center)</source>
-        <translation>스칼라(세포 중심)</translation>
+        <translation type="vanished">스칼라(세포 중심)</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
-        <translation>윤곽 설정 업데이트</translation>
+        <translation type="vanished">윤곽 설정 업데이트</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>경고</translation>
+        <translation type="vanished">경고</translation>
     </message>
     <message>
         <source>To export KML for street view, display with Contour Figure.</source>
-        <translation>스트리트 뷰용 KML을 내보내려면 등고선 그림으로 표시합니다.</translation>
+        <translation type="vanished">스트리트 뷰용 KML을 내보내려면 등고선 그림으로 표시합니다.</translation>
     </message>
     <message>
         <source>To export KML for street view, value range should be set up manually.</source>
-        <translation>스트리트 뷰용 KML을 내보내려면 값 범위를 수동으로 설정해야 합니다.</translation>
+        <translation type="vanished">스트리트 뷰용 KML을 내보내려면 값 범위를 수동으로 설정해야 합니다.</translation>
     </message>
     <message>
         <source>To export KML for street view, coordinate system should be specified.</source>
-        <translation>스트리트 뷰용 KML을 내보내려면 좌표계를 지정해야 합니다.</translation>
+        <translation type="vanished">스트리트 뷰용 KML을 내보내려면 좌표계를 지정해야 합니다.</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowCellScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">색상</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="unfinished">수입 (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="unfinished">범위</translation>
     </message>
 </context>
 <context>
@@ -400,50 +429,50 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>경고</translation>
+        <translation type="vanished">경고</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>최대 4개의 윤곽을 정의할 수 있습니다.</translation>
+        <translation type="vanished">최대 4개의 윤곽을 정의할 수 있습니다.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>오류</translation>
+        <translation type="vanished">오류</translation>
     </message>
     <message>
-        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation>모양 파일을 내보내려면 "표시 설정"을 "색상 프린지" 또는 "등각선"이 아닌 "윤곽 그림"으로 전환하십시오.</translation>
+        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
+        <translation type="vanished">모양 파일을 내보내려면 &quot;표시 설정&quot;을 &quot;색상 프린지&quot; 또는 &quot;등각선&quot;이 아닌 &quot;윤곽 그림&quot;으로 전환하십시오.</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowContourSettingDialog</name>
     <message>
         <source>Scalar Setting</source>
-        <translation>스칼라 설정</translation>
+        <translation type="vanished">스칼라 설정</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>물리적 가치:</translation>
+        <translation type="vanished">물리적 가치:</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>디스플레이 설정</translation>
+        <translation type="vanished">디스플레이 설정</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>지역 설정 (&amp;R)</translation>
+        <translation type="vanished">지역 설정 (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>컬러 바 설정 (&amp;C)</translation>
+        <translation type="vanished">컬러 바 설정 (&amp;C)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>오류</translation>
+        <translation type="vanished">오류</translation>
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
-        <translation>값 범위의 경우 최대값이 최소값보다 작습니다.</translation>
+        <translation type="vanished">값 범위의 경우 최대값이 최소값보다 작습니다.</translation>
     </message>
 </context>
 <context>
@@ -500,6 +529,10 @@
     <message>
         <source>Geographic Data</source>
         <translation>지리 데이터</translation>
+    </message>
+    <message>
+        <source>Reference Information</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -635,6 +668,13 @@
     </message>
 </context>
 <context>
+    <name>Post2dWindowGridShapeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Shape Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>Post2dWindowMeasuredDataTopDataItem</name>
     <message>
         <source>Measured Values</source>
@@ -677,11 +717,11 @@
     <name>Post2dWindowNodeScalarGroupDataItem</name>
     <message>
         <source>Update Contour Setting</source>
-        <translation>윤곽 설정 업데이트</translation>
+        <translation type="vanished">윤곽 설정 업데이트</translation>
     </message>
     <message>
         <source>To export KML for street view, display with Contour Figure.</source>
-        <translation>스트리트 뷰용 KML을 내보내려면 등고선 그림으로 표시합니다.</translation>
+        <translation type="vanished">스트리트 뷰용 KML을 내보내려면 등고선 그림으로 표시합니다.</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -689,26 +729,65 @@
     </message>
     <message>
         <source>To export KML for street view, value range should be set up manually.</source>
-        <translation>스트리트 뷰용 KML을 내보내려면 값 범위를 수동으로 설정해야 합니다.</translation>
+        <translation type="vanished">스트리트 뷰용 KML을 내보내려면 값 범위를 수동으로 설정해야 합니다.</translation>
     </message>
     <message>
         <source>To export KML for street view, coordinate system should be specified.</source>
         <translation>스트리트 뷰용 KML을 내보내려면 좌표계를 지정해야 합니다.</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>To export KML for street view, Colormode needs to be &quot;Discrete Mode&quot;</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">색상</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="unfinished">수입 (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="unfinished">범위</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (node)</source>
-        <translation>스칼라(노드)</translation>
+        <translation type="vanished">스칼라(노드)</translation>
     </message>
     <message>
         <source>Error</source>
         <translation>오류</translation>
     </message>
     <message>
-        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation>모양 파일을 내보내려면 "표시 설정"을 "색상 프린지" 또는 "등각선"이 아닌 "윤곽 그림"으로 전환하십시오.</translation>
+        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
+        <translation type="vanished">모양 파일을 내보내려면 &quot;표시 설정&quot;을 &quot;색상 프린지&quot; 또는 &quot;등각선&quot;이 아닌 &quot;윤곽 그림&quot;으로 전환하십시오.</translation>
+    </message>
+    <message>
+        <source>Scalar</source>
+        <translation type="unfinished">스칼라</translation>
+    </message>
+    <message>
+        <source>To export shape file, switch color setting to &quot;Discrete Mode&quot;.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -719,21 +798,57 @@
     </message>
     <message>
         <source>Arrow Physical Value Change</source>
-        <translation>화살표 물리적 가치 변경</translation>
+        <translation type="vanished">화살표 물리적 가치 변경</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorArrowGroupStructuredDataItem</name>
     <message>
         <source>Update Arrow Setting</source>
-        <translation>화살표 설정 업데이트</translation>
+        <translation type="vanished">화살표 설정 업데이트</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupStructuredDataItem_PropertyDialog</name>
+    <message>
+        <source>Arrows Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupStructuredDataItem_PropertyDialog_AdditionalWidgets</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation type="unfinished">지역</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorArrowGroupUnstructuredDataItem</name>
     <message>
         <source>Update Arrow Setting</source>
-        <translation>화살표 설정 업데이트</translation>
+        <translation type="vanished">화살표 설정 업데이트</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupUnstructuredDataItem_PropertyDialog</name>
+    <message>
+        <source>Arrows Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupUnstructuredDataItem_PropertyDialog_AdditionalWidgets</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation type="unfinished">지역</translation>
     </message>
 </context>
 <context>
@@ -809,17 +924,17 @@
         <translation>생성 시간 간격</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap;}
 p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p&gt;If you specify 1, particles are generated for every time steps.&lt;/p&gt;
 &lt;p&gt;If you specify 2, particles are generated twice equally separated, for every time steps,&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other time steps.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
         <extracomment>If you specify 1, particles are generated for every time steps. If you specify 2, particles are generated twice equally separated, for every time steps, If you specify 1/2, particles are generated for every other time steps.</extracomment>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>-</source>
@@ -886,16 +1001,16 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <translation>생성 공간 간격</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p&gt;If you specify 1, particles are generated at grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 2, particles are generated at grid nodes, and middle points of grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other grid nodes.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;메타 이름 ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { 공백: 미리 포장; } p {여백 상단: 3px; margin-bottom: 3px;} &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI 고딕'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p&gt;1을 지정하면 그리드 노드에 파티클이 생성됩니다.&lt;/p&gt; &lt;p&gt;2를 지정하면 그리드 노드와 그리드 노드의 중간 지점에 파티클이 생성됩니다.&lt;/p&gt; &lt;p&gt; 1/2를 지정하면 다른 모든 그리드 노드에 대해 입자가 생성됩니다.&lt;/p&gt; &lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;메타 이름 =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { 공백: 미리 포장; } p {여백 상단: 3px; margin-bottom: 3px;} &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI 고딕&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p&gt;1을 지정하면 그리드 노드에 파티클이 생성됩니다.&lt;/p&gt; &lt;p&gt;2를 지정하면 그리드 노드와 그리드 노드의 중간 지점에 파티클이 생성됩니다.&lt;/p&gt; &lt;p&gt; 1/2를 지정하면 다른 모든 그리드 노드에 대해 입자가 생성됩니다.&lt;/p&gt; &lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Color:</source>
@@ -906,12 +1021,12 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <translation>크기:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;메타 이름 ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { 공백: 미리 포장; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI 고딕'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p style=" margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;표시할 픽셀 수를 지정합니다.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;메타 이름 =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { 공백: 미리 포장; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI 고딕&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;표시할 픽셀 수를 지정합니다.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -949,17 +1064,17 @@ p, li { white-space: pre-wrap; }
         <translation>생성 간격</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap;}
 p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p&gt;If you specify 1, particles are generated for every time steps.&lt;/p&gt;
 &lt;p&gt;If you specify 2, particles are generated twice equally separated, for every time steps,&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other time steps.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
         <extracomment>If you specify 1, particles are generated for every time steps. If you specify 2, particles are generated twice equally separated, for every time steps, If you specify 1/2, particles are generated for every other time steps.</extracomment>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>-</source>
@@ -1030,12 +1145,12 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <translation>크기:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;메타 이름 ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { 공백: 미리 포장; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI 고딕'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p style=" margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;표시할 픽셀 수를 지정합니다.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;메타 이름 =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { 공백: 미리 포장; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI 고딕&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;표시할 픽셀 수를 지정합니다.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -1062,10 +1177,45 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>Post2dWindowParticlesBaseScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Scalar Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">색상</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="unfinished">수입 (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>Post2dWindowParticlesBaseTopDataItem</name>
     <message>
         <source>Edit Particle Setting</source>
-        <translation>입자 설정 편집</translation>
+        <translation type="vanished">입자 설정 편집</translation>
     </message>
     <message>
         <source>Show Attribute Browser</source>
@@ -1080,11 +1230,22 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Vector Attribute Select Change</source>
-        <translation>벡터 속성 선택 변경</translation>
+        <translation type="vanished">벡터 속성 선택 변경</translation>
     </message>
     <message>
         <source>Update Vector Setting</source>
-        <translation>벡터 설정 업데이트</translation>
+        <translation type="vanished">벡터 설정 업데이트</translation>
+    </message>
+    <message>
+        <source>Arrow Physical Value Change</source>
+        <translation type="unfinished">화살표 물리적 가치 변경</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowParticlesBaseVectorGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Vector Setting</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1102,7 +1263,42 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Edit Polygon Setting</source>
-        <translation>다각형 설정 편집</translation>
+        <translation type="vanished">다각형 설정 편집</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowPolyDataGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Polygon Data Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">색상</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="unfinished">수입 (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1170,14 +1366,14 @@ p, li { white-space: pre-wrap; }
         <translation>생성 공간 간격</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;메타 이름 ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { 공백: 미리 포장; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI 고딕'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p style=" margin -top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;1을 지정하면 유선이 그리드 노드에서 시작됩니다..&lt;/p&gt; &lt;p 스타일=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;" &gt;2를 지정하면 유선이 그리드 노드에서 시작하고 그리드 노드의 중간 지점에서 시작됩니다.&lt;/p&gt; &lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right: 0px; -qt-block-indent:0; text-indent:0px;"&gt;1/2를 지정하면 유선이 다른 모든 그리드 노드에서 시작됩니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;메타 이름 =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { 공백: 미리 포장; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI 고딕&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;1을 지정하면 유선이 그리드 노드에서 시작됩니다..&lt;/p&gt; &lt;p 스타일=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot; &gt;2를 지정하면 유선이 그리드 노드에서 시작하고 그리드 노드의 중간 지점에서 시작됩니다.&lt;/p&gt; &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right: 0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;1/2를 지정하면 유선이 다른 모든 그리드 노드에서 시작됩니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>-</source>
@@ -1208,12 +1404,12 @@ p, li { white-space: pre-wrap; }
         <translation>너비:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;메타 이름 ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { 공백: 미리 포장; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI 고딕'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p style=" margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;표시할 픽셀 수를 지정합니다.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;메타 이름 =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { 공백: 미리 포장; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI 고딕&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;표시할 픽셀 수를 지정합니다.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -1279,12 +1475,12 @@ p, li { white-space: pre-wrap; }
         <translation>너비:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;메타 이름 ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { 공백: 미리 포장; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI 고딕'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p style=" margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;표시할 픽셀 수를 지정합니다.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;메타 이름 =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { 공백: 미리 포장; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI 고딕&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;표시할 픽셀 수를 지정합니다.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -1310,7 +1506,7 @@ p, li { white-space: pre-wrap; }
     <name>QObject</name>
     <message>
         <source>Update Grid Shape Setting</source>
-        <translation>그리드 모양 설정 업데이트</translation>
+        <translation type="vanished">그리드 모양 설정 업데이트</translation>
     </message>
     <message>
         <source>Update Streamline Setting</source>
@@ -1318,19 +1514,19 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Update Particles Scalar Setting</source>
-        <translation>입자 스칼라 설정 업데이트</translation>
+        <translation type="vanished">입자 스칼라 설정 업데이트</translation>
     </message>
     <message>
         <source>Create Contour</source>
-        <translation>윤곽 만들기</translation>
+        <translation type="vanished">윤곽 만들기</translation>
     </message>
     <message>
         <source>Create Cell Contour</source>
-        <translation>셀 윤곽 만들기</translation>
+        <translation type="vanished">셀 윤곽 만들기</translation>
     </message>
     <message>
         <source>Update Polygon Scalar Setting</source>
-        <translation>다각형 스칼라 설정 업데이트</translation>
+        <translation type="vanished">다각형 스칼라 설정 업데이트</translation>
     </message>
 </context>
 </TS>

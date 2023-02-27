@@ -277,7 +277,7 @@ win32 {
 
 # Input
 HEADERS += pre_global.h \
-           datamodel/private/preprocessorbcgroupdataitem_setsettingcommand.h \
+           datamodel/preprocessorgeodatavariationdataitem.h \
            preobjectbrowser.h \
            preobjectbrowserview.h \
            preprocessordatamodel.h \
@@ -347,20 +347,25 @@ HEADERS += pre_global.h \
            misc/gridattributegeneratorlauncher.h \
            misc/preprocessorgridattributemappingmode.h \
            misc/preprocessorlegendboxeditdialog.h \
-           misc/preprocessorscalarbareditdialog.h \
-           misc/preprocessorscalarbarlegendboxsettingdialog.h \
-           misc/preprocessorwindowscalarbarsettingwidget.h \
            datamodel/gridshape/preprocessorgridshapedeltadialog.h \
            datamodel/gridshape/preprocessorgridshapenewpositiondialog.h \
            datamodel/private/preprocessorbcdataitem_impl.h \
+           datamodel/private/preprocessorbcgroupdataitem_setsettingcommand.h \
+           datamodel/private/preprocessorgeodatagroupdataitem_colormapsettingeditdialog.h \
+           datamodel/private/preprocessorgeodatagroupdataitem_variationsettingdialog.h \
+           datamodel/private/preprocessorgridattributecelldataitem_propertydialog.h \
+           datamodel/private/preprocessorgridattributecellgroupdataitem_modifyopacityandupdateactorsettingscommand.h \
+           datamodel/private/preprocessorgridattributenodedataitem_propertydialog.h \
+           datamodel/private/preprocessorgridattributenodegroupdataitem_modifyopacityandupdateactorsettingscommand.h \
            datamodel/private/preprocessorgridcreatingconditiondataitem_impl.h \
            datamodel/private/preprocessorgriddataitem_impl.h \
+           datamodel/private/preprocessorgridtypedataitem_applycolormapsettingandrendercommand.h \
            subwindow/gridbirdeyewindow/gridbirdeyewindow.h \
            subwindow/gridbirdeyewindow/gridbirdeyewindowactionmanager.h \
-           subwindow/gridbirdeyewindow/gridbirdeyewindowaxessettingdialog.h \
-           subwindow/gridbirdeyewindow/gridbirdeyewindowcolorsettingdialog.h \
            subwindow/gridbirdeyewindow/gridbirdeyewindowdatamodel.h \
            subwindow/gridbirdeyewindow/gridbirdeyewindowgraphicsview.h \
+           subwindow/gridbirdeyewindow/gridbirdeyewindowgriddataitem.h \
+           subwindow/gridbirdeyewindow/gridbirdeyewindowsetting.h \
            subwindow/gridcrosssectionwindow/preprocessorgridcrosssectionwindow.h \
            subwindow/gridcrosssectionwindow/preprocessorgridcrosssectionwindowdelegate.h \
            subwindow/gridcrosssectionwindow/preprocessorgridcrosssectionwindowgraphicsview.h \
@@ -371,7 +376,10 @@ HEADERS += pre_global.h \
            subwindow/structured15dgridwithcrosssectioncrosssectionwindow/structured15dgridwithcrosssectioncrosssectionwindowdelegate.h \
            subwindow/structured15dgridwithcrosssectioncrosssectionwindow/structured15dgridwithcrosssectioncrosssectionwindowgraphicsview.h \
            subwindow/structured15dgridwithcrosssectioncrosssectionwindow/structured15dgridwithcrosssectioncrosssectionwindowprojectdataitem.h \
-           subwindow/structured15dgridwithcrosssectioncrosssectionwindow/structured15dgridwithcrosssectioncrosssectionwindowtableview.h
+           subwindow/structured15dgridwithcrosssectioncrosssectionwindow/structured15dgridwithcrosssectioncrosssectionwindowtableview.h \
+           subwindow/gridbirdeyewindow/private/gridbirdeyewindowgriddataitem_editdisplaysettingdialog.h \
+           subwindow/gridbirdeyewindow/private/gridbirdeyewindowgriddataitem_updateactorsettingcommand.h \
+           subwindow/gridbirdeyewindow/private/gridbirdeyewindowgriddataitem_updatedisplaysettingcommand.h
 FORMS += bc/boundaryconditiondialog.ui \
          datamodel/preprocessorbcgroupsettingdialog.ui \
          datamodel/preprocessorgridattributecelldisplaysettingdialog.ui \
@@ -380,18 +388,18 @@ FORMS += bc/boundaryconditiondialog.ui \
          datamodel/preprocessorgridattributetemplatemappingsettingdialog.ui \
          datamodel/preprocessorgridcreatingconditionalgorithmselectdialog.ui \
          misc/preprocessorlegendboxeditdialog.ui \
-         misc/preprocessorscalarbareditdialog.ui \
-         misc/preprocessorscalarbarlegendboxsettingdialog.ui \
-         misc/preprocessorwindowscalarbarsettingwidget.ui \
          datamodel/gridshape/preprocessorgridshapedeltadialog.ui \
          datamodel/gridshape/preprocessorgridshapenewpositiondialog.ui \
-         subwindow/gridbirdeyewindow/gridbirdeyewindowaxessettingdialog.ui \
-         subwindow/gridbirdeyewindow/gridbirdeyewindowcolorsettingdialog.ui \
+         datamodel/private/preprocessorgeodatagroupdataitem_colormapsettingeditdialog.ui \
+         datamodel/private/preprocessorgeodatagroupdataitem_variationsettingdialog.ui \
+         datamodel/private/preprocessorgridattributecelldataitem_propertydialog.ui \
+         datamodel/private/preprocessorgridattributenodedataitem_propertydialog.ui \
          subwindow/gridcrosssectionwindow/preprocessorgridcrosssectionwindow.ui \
          subwindow/structured15dgridwithcrosssectioncrosssectionwindow/structured15dgridwithcrosssectioncrosssectionaltitudemovedialog.ui \
-         subwindow/structured15dgridwithcrosssectioncrosssectionwindow/structured15dgridwithcrosssectioncrosssectionwindow.ui
+         subwindow/structured15dgridwithcrosssectioncrosssectionwindow/structured15dgridwithcrosssectioncrosssectionwindow.ui \
+         subwindow/gridbirdeyewindow/private/gridbirdeyewindowgriddataitem_editdisplaysettingdialog.ui
 SOURCES += preobjectbrowser.cpp \
-           datamodel/private/preprocessorbcgroupdataitem_setsettingcommand.cpp \
+           datamodel/preprocessorgeodatavariationdataitem.cpp \
            preobjectbrowserview.cpp \
            preprocessordatamodel.cpp \
            preprocessorgraphicsview.cpp \
@@ -460,17 +468,22 @@ SOURCES += preobjectbrowser.cpp \
            misc/gridattributegeneratorlauncher.cpp \
            misc/preprocessorgridattributemappingmode.cpp \
            misc/preprocessorlegendboxeditdialog.cpp \
-           misc/preprocessorscalarbareditdialog.cpp \
-           misc/preprocessorscalarbarlegendboxsettingdialog.cpp \
-           misc/preprocessorwindowscalarbarsettingwidget.cpp \
            datamodel/gridshape/preprocessorgridshapedeltadialog.cpp \
            datamodel/gridshape/preprocessorgridshapenewpositiondialog.cpp \
+           datamodel/private/preprocessorbcgroupdataitem_setsettingcommand.cpp \
+           datamodel/private/preprocessorgeodatagroupdataitem_colormapsettingeditdialog.cpp \
+           datamodel/private/preprocessorgeodatagroupdataitem_variationsettingdialog.cpp \
+           datamodel/private/preprocessorgridattributecelldataitem_propertydialog.cpp \
+           datamodel/private/preprocessorgridattributecellgroupdataitem_modifyopacityandupdateactorsettingscommand.cpp \
+           datamodel/private/preprocessorgridattributenodedataitem_propertydialog.cpp \
+           datamodel/private/preprocessorgridattributenodegroupdataitem_modifyopacityandupdateactorsettingscommand.cpp \
+           datamodel/private/preprocessorgridtypedataitem_applycolormapsettingandrendercommand.cpp \
            subwindow/gridbirdeyewindow/gridbirdeyewindow.cpp \
            subwindow/gridbirdeyewindow/gridbirdeyewindowactionmanager.cpp \
-           subwindow/gridbirdeyewindow/gridbirdeyewindowaxessettingdialog.cpp \
-           subwindow/gridbirdeyewindow/gridbirdeyewindowcolorsettingdialog.cpp \
            subwindow/gridbirdeyewindow/gridbirdeyewindowdatamodel.cpp \
            subwindow/gridbirdeyewindow/gridbirdeyewindowgraphicsview.cpp \
+           subwindow/gridbirdeyewindow/gridbirdeyewindowgriddataitem.cpp \
+           subwindow/gridbirdeyewindow/gridbirdeyewindowsetting.cpp \
            subwindow/gridcrosssectionwindow/preprocessorgridcrosssectionwindow.cpp \
            subwindow/gridcrosssectionwindow/preprocessorgridcrosssectionwindowdelegate.cpp \
            subwindow/gridcrosssectionwindow/preprocessorgridcrosssectionwindowgraphicsview.cpp \
@@ -481,7 +494,10 @@ SOURCES += preobjectbrowser.cpp \
            subwindow/structured15dgridwithcrosssectioncrosssectionwindow/structured15dgridwithcrosssectioncrosssectionwindowdelegate.cpp \
            subwindow/structured15dgridwithcrosssectioncrosssectionwindow/structured15dgridwithcrosssectioncrosssectionwindowgraphicsview.cpp \
            subwindow/structured15dgridwithcrosssectioncrosssectionwindow/structured15dgridwithcrosssectioncrosssectionwindowprojectdataitem.cpp \
-           subwindow/structured15dgridwithcrosssectioncrosssectionwindow/structured15dgridwithcrosssectioncrosssectionwindowtableview.cpp
+           subwindow/structured15dgridwithcrosssectioncrosssectionwindow/structured15dgridwithcrosssectioncrosssectionwindowtableview.cpp \
+           subwindow/gridbirdeyewindow/private/gridbirdeyewindowgriddataitem_editdisplaysettingdialog.cpp \
+           subwindow/gridbirdeyewindow/private/gridbirdeyewindowgriddataitem_updateactorsettingcommand.cpp \
+           subwindow/gridbirdeyewindow/private/gridbirdeyewindowgriddataitem_updatedisplaysettingcommand.cpp
 RESOURCES += pre.qrc
 TRANSLATIONS += languages/iricPre_ar_EG.ts \
                 languages/iricPre_bg_BG.ts \

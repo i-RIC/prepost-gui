@@ -1,4 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ko_KR">
+<context>
+    <name>ArrowsColorSettingEditSmallWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">형태</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">색상</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Edit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Colormap Setting (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsColorSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">형태</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsGeneralFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="obsolete">형태</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsLegendSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">형태</translation>
+    </message>
+    <message>
+        <source>Visibility</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>When selected</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Always</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Title :</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Font Setting:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Length</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Format:</source>
+        <translation type="unfinished">체재:</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">색상</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Length:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsLengthSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">형태</translation>
+    </message>
+    <message>
+        <source>Length</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Standard value:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>[m/s]</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Length on screen:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>[pixel]</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Minimum value to draw:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">형태</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">색상</translation>
+    </message>
+    <message>
+        <source>Length Legend</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsShapeSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">형태</translation>
+    </message>
+    <message>
+        <source>Arrow Shape</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Arrow size:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Line width:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
 <context>
     <name>AttributeBrowserTargetDataItem</name>
     <message>
@@ -104,6 +303,358 @@
     </message>
 </context>
 <context>
+    <name>ColorMapEnumerateLegendSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">형태</translation>
+    </message>
+    <message>
+        <source>Visibility</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>When selected</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Always</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Title :</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Font Setting:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">색상</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Label:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapEnumerateSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">형태</translation>
+    </message>
+    <message>
+        <source>Ignore Color bar setting when importing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Colors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color Bar Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select file to import</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Colormap setting (*.cmsetting)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error occured while loading %1
+Parse error %2 at %3, column %4</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">오류</translation>
+    </message>
+    <message>
+        <source>Input file name to export</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error occured while opening %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation type="unfinished">값</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">색상</translation>
+    </message>
+    <message>
+        <source>Transparent</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapLegendSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">형태</translation>
+    </message>
+    <message>
+        <source>Visibility</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>When selected</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Always</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Title :</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Font Setting:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Label Display</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Format:</source>
+        <translation type="unfinished">체재:</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">색상</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Label:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Size and Position</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation type="obsolete">대화</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation type="unfinished">컬러맵 설정</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">형태</translation>
+    </message>
+    <message>
+        <source>Presets:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ignore Color bar setting when importing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Relationship between values and colors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Automatically adjust based on value range</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Setup Manually</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Value Range</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Automatic</source>
+        <translation type="unfinished">자동적 인</translation>
+    </message>
+    <message>
+        <source>Max:</source>
+        <translation type="unfinished">최대:</translation>
+    </message>
+    <message>
+        <source>Min:</source>
+        <translation type="unfinished">최소:</translation>
+    </message>
+    <message>
+        <source>Colors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation type="unfinished">추가하다 (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fill lower area</source>
+        <translation type="unfinished">하단 영역 채우기</translation>
+    </message>
+    <message>
+        <source>Fill upper area</source>
+        <translation type="unfinished">상단 영역 채우기</translation>
+    </message>
+    <message>
+        <source>Switch</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color Bar Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select file to import</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Colormap setting (*.cmsetting)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Input file name to export</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error occured while opening %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">오류</translation>
+    </message>
+    <message>
+        <source>Error occured while loading %1
+Parse error %2 at %3, column %4</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>(Please select item to apply)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Switch to Discrete Mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Switch to Gradation Mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">경고</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation type="unfinished">값</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">색상</translation>
+    </message>
+    <message>
+        <source>Min value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Max value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Transparent</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget_SwitchToDiscreteDialog</name>
+    <message>
+        <source>Switch to Discrete Mode Dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Max:</source>
+        <translation type="unfinished">최대:</translation>
+    </message>
+    <message>
+        <source>Min:</source>
+        <translation type="unfinished">최소:</translation>
+    </message>
+    <message>
+        <source>Number of colors to insert at each section</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>ColorTransferFunctionEditWidget</name>
     <message>
         <source>Form</source>
@@ -135,6 +686,29 @@
     <message>
         <source>dstY</source>
         <translation>dstY</translation>
+    </message>
+</context>
+<context>
+    <name>GeneralFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">형태</translation>
+    </message>
+    <message>
+        <source>Sampling</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All vertices</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sampling rate:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Specify number of vertices</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -331,7 +905,7 @@
     <name>GridCellAttributePropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>대화</translation>
+        <translation type="vanished">대화</translation>
     </message>
 </context>
 <context>
@@ -425,11 +999,54 @@
     <name>GridNodeAttributePropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>대화</translation>
+        <translation type="vanished">대화</translation>
     </message>
     <message>
         <source>Contour setting</source>
-        <translation>윤곽 설정</translation>
+        <translation type="vanished">윤곽 설정</translation>
+    </message>
+</context>
+<context>
+    <name>ImageSettingWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">형태</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation type="unfinished">위치</translation>
+    </message>
+    <message>
+        <source>Horizontal Margin:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Vertical Margin:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Width:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Height:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Distance from left</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Distance from right</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Distance from top</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Distance from bottom</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -466,12 +1083,12 @@
         <translation>정의 노드가 저장되지 않았습니다.</translation>
     </message>
     <message>
-        <source>Wrong valueType "%1" is set.</source>
-        <translation>잘못된 값 유형 "%1"가 설정되어 있습니다.</translation>
+        <source>Wrong valueType &quot;%1&quot; is set.</source>
+        <translation>잘못된 값 유형 &quot;%1&quot;가 설정되어 있습니다.</translation>
     </message>
     <message>
-        <source>Wrong conditionType "%1"is set.</source>
-        <translation>잘못된 조건유형 "%1"가 설정되어 있습니다.</translation>
+        <source>Wrong conditionType &quot;%1&quot;is set.</source>
+        <translation>잘못된 조건유형 &quot;%1&quot;가 설정되어 있습니다.</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
@@ -742,8 +1359,8 @@ Do you really want to import this file?</source>
         <translation>정보</translation>
     </message>
     <message>
-        <source>You can copy and paste the values, with shortcut "Ctrl + C" and "Ctrl + V"</source>
-        <translation>단축키 "Ctrl + C" 및 "Ctrl + V"를 사용하여 값을 복사하여 붙여넣을 수 있습니다.</translation>
+        <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
+        <translation>단축키 &quot;Ctrl + C&quot; 및 &quot;Ctrl + V&quot;를 사용하여 값을 복사하여 붙여넣을 수 있습니다.</translation>
     </message>
     <message>
         <source>The following problems found: 
@@ -808,6 +1425,21 @@ Do you really want to import this file?</source>
     </message>
 </context>
 <context>
+    <name>InputConditionWidgetString</name>
+    <message>
+        <source>(Select template to import)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">경고</translation>
+    </message>
+    <message>
+        <source>The content in the text area is overwritten with the template</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>LookupTableEditWidget</name>
     <message>
         <source>Colormap Setting</source>
@@ -853,8 +1485,8 @@ Do you really want to import this file?</source>
         <translation>파일을 여는 동안 오류가 발생했습니다.</translation>
     </message>
     <message>
-        <source>The first two columns must be "X" and "Y".</source>
-        <translation>처음 두 열은 "X"와 "Y"여야 합니다.</translation>
+        <source>The first two columns must be &quot;X&quot; and &quot;Y&quot;.</source>
+        <translation>처음 두 열은 &quot;X&quot;와 &quot;Y&quot;여야 합니다.</translation>
     </message>
     <message>
         <source>The data file has to consist of only English characters.</source>
@@ -1019,8 +1651,8 @@ Do you really want to import this file?</source>
         <translation>변수의 정의</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;JavaScript 언어로 변수를 정의할 수 있습니다. &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" 텍스트를 참조하십시오. -장식: 밑줄, 색상:#0000ff;"&gt;여기&lt;/span&gt;&lt;/a&gt;에서 자세한 내용을 확인하세요.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;JavaScript 언어로 변수를 정의할 수 있습니다. &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; 텍스트를 참조하십시오. -장식: 밑줄, 색상:#0000ff;&quot;&gt;여기&lt;/span&gt;&lt;/a&gt;에서 자세한 내용을 확인하세요.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -1028,7 +1660,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can test the definition by clicking this. If error occurs while parsing the definition, the error message is shown. When the definition is parsed successfully, the value calculated using the &amp;quot;Value for testing&amp;quot; for each input is shown.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;이를 클릭하여 정의를 테스트할 수 있습니다. 정의를 파싱하는 동안 오류가 발생하면 오류 메시지가 표시됩니다. 정의가 성공적으로 구문 분석되면 "테스트를 위한 값"을 사용하여 계산된 값이 각 입력에 대해 표시됩니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;이를 클릭하여 정의를 테스트할 수 있습니다. 정의를 파싱하는 동안 오류가 발생하면 오류 메시지가 표시됩니다. 정의가 성공적으로 구문 분석되면 &quot;테스트를 위한 값&quot;을 사용하여 계산된 값이 각 입력에 대해 표시됩니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>----</source>
@@ -1098,8 +1730,8 @@ Do you really want to import this file?</source>
         <translation>아래에 (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;참고&lt;/span&gt;: 목록의 순서가 중요합니다. 정의에서 단순 연산 계산의 값을 목록의 앞부분에 나타나는 변수로 사용할 수 있습니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;참고&lt;/span&gt;: 목록의 순서가 중요합니다. 정의에서 단순 연산 계산의 값을 목록의 앞부분에 나타나는 변수로 사용할 수 있습니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
@@ -1452,8 +2084,8 @@ Do you really want to import this file?</source>
         <translation>출력의 정의</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;JavaScript 언어로 변수를 정의할 수 있습니다. &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" 텍스트를 참조하십시오. -장식: 밑줄, 색상:#0000ff;"&gt;여기&lt;/span&gt;&lt;/a&gt;에서 자세한 내용을 확인하세요.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;JavaScript 언어로 변수를 정의할 수 있습니다. &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; 텍스트를 참조하십시오. -장식: 밑줄, 색상:#0000ff;&quot;&gt;여기&lt;/span&gt;&lt;/a&gt;에서 자세한 내용을 확인하세요.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -1707,8 +2339,8 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectWorkspace</name>
     <message>
-        <source>Workspace "%1" has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
-        <translation>작업 공간 "%1" 가지다 %2 더 이상 사용하지 않는 것 같은 프로젝트 폴더. 제거하시겠습니까?</translation>
+        <source>Workspace &quot;%1&quot; has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
+        <translation>작업 공간 &quot;%1&quot; 가지다 %2 더 이상 사용하지 않는 것 같은 프로젝트 폴더. 제거하시겠습니까?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1813,6 +2445,41 @@ Do you really want to import this file?</source>
     </message>
 </context>
 <context>
+    <name>Region2dSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">형태</translation>
+    </message>
+    <message>
+        <source>Full Region</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Active Region</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom Region</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>I Min:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>I Max:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>J Min:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>J Max:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>ScalarsToColorsEditDialog</name>
     <message>
         <source>Color Setting</source>
@@ -1883,6 +2550,64 @@ Do you really want to import this file?</source>
     <message>
         <source>* Cells where variation of cell length along j-direction exceed %1</source>
         <translation>* j 방향에 따른 셀 길이의 변화가 초과하는 셀 %1</translation>
+    </message>
+</context>
+<context>
+    <name>Structured2dFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">형태</translation>
+    </message>
+    <message>
+        <source>Sampling</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All vertices</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sampling rate:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>I-direction</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>J-direction</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Structured3dFilteringSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">형태</translation>
+    </message>
+    <message>
+        <source>Sampling</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All vertices</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sampling rate:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>I-direction</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>J-direction</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>K-direction</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

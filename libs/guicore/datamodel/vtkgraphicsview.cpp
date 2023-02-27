@@ -27,8 +27,9 @@
 #include <QPixmap>
 #include <QCursor>
 #include <QInputEvent>
-#include <QUndoCommand>
 #include <QPainter>
+#include <QUndoCommand>
+#include <QVector3D>
 #include <vtkQImageToImageSource.h>
 
 VTKGraphicsView::Impl::Impl() :
@@ -101,6 +102,25 @@ VTKGraphicsView::~VTKGraphicsView()
 	delete impl;
 }
 
+double VTKGraphicsView::stdDistance(double pixels)
+{
+	double x0, y0, z0, x1, y1, z1;
+	x0 = 0; y0 = 0; z0 = 0;
+	x1 = pixels; y1 = 0; z1 = 0;
+	auto r = mainRenderer();
+	r->ViewportToNormalizedViewport(x0, y0);
+	r->NormalizedViewportToView(x0, y0, z0);
+	r->ViewToWorld(x0, y0, z0);
+
+	r->ViewportToNormalizedViewport(x1, y1);
+	r->NormalizedViewportToView(x1, y1, z1);
+	r->ViewToWorld(x1, y1, z1);
+
+	QVector3D v0(x0, y0, z0);
+	QVector3D v1(x1, y1, z1);
+
+	return (v1 - v0).length();
+}
 
 void VTKGraphicsView::setModel(GraphicsWindowSimpleDataModel* m)
 {
@@ -145,7 +165,7 @@ void VTKGraphicsView::keyReleaseEvent(QKeyEvent* event)
 void VTKGraphicsView::mouseDoubleClickEvent(QMouseEvent* event)
 {
 	if (impl->m_activeDataItem != nullptr) {
-		auto scaledEvent = createScaledEvant(*event);
+		auto scaledEvent = createScaledEvent(*event);
 		impl->m_activeDataItem->mouseDoubleClickEvent(&scaledEvent, this);
 	} else if (impl->m_interactive) {
 		QVTKOpenGLNativeWidget::mouseDoubleClickEvent(event);
@@ -168,7 +188,7 @@ void VTKGraphicsView::mousePressEvent(QMouseEvent* event)
 		impl->m_isViewChanging = true;
 
 		// give interactor the event information
-		auto scaledEvent = createScaledEvant(*event);
+		auto scaledEvent = createScaledEvent(*event);
 		iren->SetEventInformationFlipY(scaledEvent.x(), scaledEvent.y(), 0, 0, 0, event->type() == QEvent::MouseButtonDblClick ? 1 : 0);
 		switch (event->button()) {
 		case Qt::LeftButton:
@@ -198,7 +218,7 @@ void VTKGraphicsView::mousePressEvent(QMouseEvent* event)
 	} else {
 		// the mouse press event is informed to the active data item.
 		if (impl->m_activeDataItem != nullptr) {
-			auto scaledEvent = createScaledEvant(*event);
+			auto scaledEvent = createScaledEvent(*event);
 			impl->m_activeDataItem->mousePressEvent(&scaledEvent, this);
 		} else if (impl->m_interactive) {
 			vtkRenderWindowInteractor* i = GetRenderWindow()->GetInteractor();
@@ -230,10 +250,9 @@ void VTKGraphicsView::mouseReleaseEvent(QMouseEvent* event)
 				iren->SetInteractorStyle(impl->m_styleBackUp);
 			}
 			impl->m_activeDataItem->viewOperationEnded(this);
-			GraphicsWindowDataModel* m = dynamic_cast<GraphicsWindowDataModel*>(impl->m_model);
-			m->viewOperationEndedGlobal();
+			impl->m_model->viewOperationEndedGlobal();
 		} else {
-			auto scaledEvent = createScaledEvant(*event);
+			auto scaledEvent = createScaledEvent(*event);
 			impl->m_activeDataItem->mouseReleaseEvent(&scaledEvent, this);
 		}
 	} else if (impl->m_interactive) {
@@ -267,7 +286,7 @@ void VTKGraphicsView::mouseMoveEvent(QMouseEvent* event)
 		// do the QVTKWidget implementation.
 		QVTKOpenGLNativeWidget::mouseMoveEvent(event);
 	} else if (impl->m_activeDataItem != nullptr) {
-		auto scaledEvent = createScaledEvant(*event);
+		auto scaledEvent = createScaledEvent(*event);
 		impl->m_activeDataItem->mouseMoveEvent(&scaledEvent, this);
 	} else if (impl->m_interactive) {
 		vtkRenderWindowInteractor* i = GetRenderWindow()->GetInteractor();
@@ -310,7 +329,7 @@ void VTKGraphicsView::standardKeyReleaseEvent(QKeyEvent* event)
 
 void VTKGraphicsView::standardMouseDoubleClickEvent(QMouseEvent* event)
 {
-	auto scaledEvent = createReverseScaledEvant(*event);
+	auto scaledEvent = createReverseScaledEvent(*event);
 	vtkRenderWindowInteractor* i = GetRenderWindow()->GetInteractor();
 	vtkSmartPointer<vtkInteractorObserver> style = i->GetInteractorStyle();
 	i->SetInteractorStyle(nullptr);
@@ -320,7 +339,7 @@ void VTKGraphicsView::standardMouseDoubleClickEvent(QMouseEvent* event)
 
 void VTKGraphicsView::standardMousePressEvent(QMouseEvent* event)
 {
-	auto scaledEvent = createReverseScaledEvant(*event);
+	auto scaledEvent = createReverseScaledEvent(*event);
 	vtkRenderWindowInteractor* i = GetRenderWindow()->GetInteractor();
 	vtkSmartPointer<vtkInteractorObserver> style = i->GetInteractorStyle();
 	i->SetInteractorStyle(nullptr);
@@ -330,7 +349,7 @@ void VTKGraphicsView::standardMousePressEvent(QMouseEvent* event)
 
 void VTKGraphicsView::standardMouseReleaseEvent(QMouseEvent* event)
 {
-	auto scaledEvent = createReverseScaledEvant(*event);
+	auto scaledEvent = createReverseScaledEvent(*event);
 	vtkRenderWindowInteractor* i = GetRenderWindow()->GetInteractor();
 	vtkSmartPointer<vtkInteractorObserver> style = i->GetInteractorStyle();
 	i->SetInteractorStyle(nullptr);
@@ -340,7 +359,7 @@ void VTKGraphicsView::standardMouseReleaseEvent(QMouseEvent* event)
 
 void VTKGraphicsView::standardMouseMoveEvent(QMouseEvent* event)
 {
-	auto scaledEvent = createReverseScaledEvant(*event);
+	auto scaledEvent = createReverseScaledEvent(*event);
 	vtkRenderWindowInteractor* i = GetRenderWindow()->GetInteractor();
 	vtkSmartPointer<vtkInteractorObserver> style = i->GetInteractorStyle();
 	i->SetInteractorStyle(nullptr);
@@ -564,14 +583,14 @@ int VTKGraphicsView::moveWidth()
 	return 1;
 }
 
-QMouseEvent VTKGraphicsView::createScaledEvant(const QMouseEvent& event)
+QMouseEvent VTKGraphicsView::createScaledEvent(const QMouseEvent& event)
 {
 	double scale = devicePixelRatioF();
 
 	return QMouseEvent(event.type(), event.localPos() * scale, event.button(), event.buttons(), event.modifiers());
 }
 
-QMouseEvent VTKGraphicsView::createReverseScaledEvant(const QMouseEvent& event)
+QMouseEvent VTKGraphicsView::createReverseScaledEvent(const QMouseEvent& event)
 {
 	double scale = devicePixelRatioF();
 

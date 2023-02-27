@@ -2,6 +2,7 @@
 #define GRIDBIRDEYEWINDOWACTIONMANAGER_H
 
 #include <QObject>
+
 class QAction;
 class QMenu;
 class GridBirdEyeWindow;
@@ -11,8 +12,8 @@ class GridBirdEyeWindowActionManager : public QObject
 	Q_OBJECT
 
 public:
-	/// Constructor
 	GridBirdEyeWindowActionManager(GridBirdEyeWindow* parent);
+
 	QAction* drawDisplaySettingAction;
 	QAction* backgroundColorAction;
 	QAction* editZScaleAction;

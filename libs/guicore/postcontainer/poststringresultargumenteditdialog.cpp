@@ -64,12 +64,12 @@ void PostStringResultArgumentEditDialog::setZoneDataContainer(PostZoneDataContai
 		ui->positionComboBox->addItem(tr("Global"));
 	}
 
-	if (container->data()->GetPointData()->GetNumberOfArrays() > 0) {
+	if (container->data()->data()->GetPointData()->GetNumberOfArrays() > 0) {
 		m_types.push_back(PostStringResultArgument::Type::GridNode);
 		ui->positionComboBox->addItem(tr("Node"));
 	}
 	bool cellDataExists = false;
-	auto cd = container->data()->GetCellData();
+	auto cd = container->data()->data()->GetCellData();
 	for (int i = 0; i < cd->GetNumberOfArrays(); ++i) {
 		const char* name = cd->GetArrayName(i);
 		if (PostZoneDataContainer::hasInputDataPrefix(name)) {continue;}
@@ -124,7 +124,7 @@ void PostStringResultArgumentEditDialog::handlePositionChange()
 	auto type = m_types.at(idx);
 
 	ui->resultNameComboBox->clear();
-	auto data = m_zoneDataContainer->data();
+	auto data = m_zoneDataContainer->data()->data();
 	auto si = m_zoneDataContainer->solutionInfo();
 	auto st = vtkStructuredGrid::SafeDownCast(data);
 	auto ust = vtkStructuredGrid::SafeDownCast(data);
@@ -201,7 +201,7 @@ void PostStringResultArgumentEditDialog::handlePositionChange()
 			disableSpinBox(ui->kSpinBox);
 		}
 	} else if (type == PostStringResultArgument::Type::GridEdgeI) {
-		auto ed = m_zoneDataContainer->ifacedata()->GetPointData();
+		auto ed = m_zoneDataContainer->iFaceData()->data()->GetPointData();
 		setupComboBoxWithNames(ed, ui->resultNameComboBox);
 		if (st != nullptr) {
 			ui->iSpinBox->setMaximum(dim[0]);
@@ -216,7 +216,7 @@ void PostStringResultArgumentEditDialog::handlePositionChange()
 			disableSpinBox(ui->indexSpinBox);
 		}
 	} else if (type == PostStringResultArgument::Type::GridEdgeJ) {
-		auto ed = m_zoneDataContainer->jfacedata()->GetPointData();
+		auto ed = m_zoneDataContainer->jFaceData()->data()->GetPointData();
 		setupComboBoxWithNames(ed, ui->resultNameComboBox);
 		if (st != nullptr) {
 			if (dim[0] > 1) {

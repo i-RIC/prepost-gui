@@ -1,4 +1,5 @@
 #include "post2dwindownodevectorarrowdataitem.h"
+#include "post2dwindownodevectorarrowgroupdataitem.h"
 #include "post2dwindowzonedataitem.h"
 
 #include <guicore/datamodel/vtkgraphicsview.h>
@@ -14,35 +15,38 @@ Post2dWindowNodeVectorArrowDataItem::Post2dWindowNodeVectorArrowDataItem(const s
 Post2dWindowNodeVectorArrowDataItem::~Post2dWindowNodeVectorArrowDataItem()
 {}
 
-void Post2dWindowNodeVectorArrowDataItem::informSelection(VTKGraphicsView*)
+void Post2dWindowNodeVectorArrowDataItem::informSelection(VTKGraphicsView* v)
 {
-	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->initNodeResultAttributeBrowser();
+	groupDataItem()->informSelection(v);
 }
 
-void Post2dWindowNodeVectorArrowDataItem::informDeselection(VTKGraphicsView*)
+void Post2dWindowNodeVectorArrowDataItem::informDeselection(VTKGraphicsView* v)
 {
-	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->clearNodeResultAttributeBrowser();
+	groupDataItem()->informDeselection(v);
 }
 
 void Post2dWindowNodeVectorArrowDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	v->standardMouseMoveEvent(event);
-	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->updateNodeResultAttributeBrowser(QPoint(event->x(), event->y()), v);
+	groupDataItem()->mouseMoveEvent(event, v);
 }
 
 void Post2dWindowNodeVectorArrowDataItem::mousePressEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	v->standardMousePressEvent(event);
+	groupDataItem()->mousePressEvent(event, v);
 }
 
 void Post2dWindowNodeVectorArrowDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	v->standardMouseReleaseEvent(event);
-	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->fixNodeResultAttributeBrowser(QPoint(event->x(), event->y()), v);
+	groupDataItem()->mouseReleaseEvent(event, v);
 }
 
 void Post2dWindowNodeVectorArrowDataItem::addCustomMenuItems(QMenu* menu)
 {
 	QAction* abAction = dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->showAttributeBrowserActionForNodeResult();
 	menu->addAction(abAction);
+}
+
+Post2dWindowNodeVectorArrowGroupDataItem* Post2dWindowNodeVectorArrowDataItem::groupDataItem() const
+{
+	return dynamic_cast<Post2dWindowNodeVectorArrowGroupDataItem*> (parent());
 }

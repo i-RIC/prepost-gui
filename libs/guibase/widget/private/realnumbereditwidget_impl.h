@@ -15,6 +15,8 @@ public:
 
 	bool m_minimumIsSet;
 	double m_minimum;
+
+	bool m_acceptEvents;
 };
 
 #endif // REALNUMBEREDITWIDGET_IMPL_H

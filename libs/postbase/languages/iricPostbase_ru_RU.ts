@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ru_RU">
 <context>
     <name>ParticleArbitraryTimeEditDialog</name>
@@ -57,163 +59,170 @@
     <name>PostParticleBasicSettingDialog</name>
     <message>
         <source>Particles Setting</source>
-        <translation>Настройка частиц</translation>
+        <translation type="vanished">Настройка частиц</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Цвет:</translation>
+        <translation type="vanished">Цвет:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>Размер:</translation>
+        <translation type="vanished">Размер:</translation>
     </message>
 </context>
 <context>
     <name>PostParticleScalarPropertyDialog</name>
     <message>
         <source>Particle Scalar Setting</source>
-        <translation>Скалярная настройка частиц</translation>
+        <translation type="vanished">Скалярная настройка частиц</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Пользовательский цвет</translation>
+        <translation type="vanished">Пользовательский цвет</translation>
     </message>
     <message>
         <source>Color by attribute value</source>
-        <translation>Цвет по значению атрибута</translation>
+        <translation type="vanished">Цвет по значению атрибута</translation>
     </message>
     <message>
         <source>Attribute:</source>
-        <translation>Атрибут:</translation>
+        <translation type="vanished">Атрибут:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>Размер:</translation>
+        <translation type="vanished">Размер:</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Настройка цветовой шкалы (&amp;C)</translation>
+        <translation type="vanished">Настройка цветовой шкалы (&amp;C)</translation>
     </message>
 </context>
 <context>
     <name>PostParticleVectorPropertyDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Настройка стрелки</translation>
+        <translation type="vanished">Настройка стрелки</translation>
     </message>
     <message>
         <source>Attribute value:</source>
-        <translation>Значение атрибута:</translation>
+        <translation type="vanished">Значение атрибута:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Длина</translation>
+        <translation type="vanished">Длина</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Авто</translation>
+        <translation type="vanished">Авто</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Стандартное значение:</translation>
+        <translation type="vanished">Стандартное значение:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[РС]</translation>
+        <translation type="vanished">[РС]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Длина на экране:</translation>
+        <translation type="vanished">Длина на экране:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[пиксель]</translation>
+        <translation type="vanished">[пиксель]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Минимальное значение для рисования:</translation>
+        <translation type="vanished">Минимальное значение для рисования:</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>Отбор проб</translation>
+        <translation type="vanished">Отбор проб</translation>
     </message>
     <message>
         <source>All particles</source>
-        <translation>Все частицы</translation>
+        <translation type="vanished">Все частицы</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>Частота выборки:</translation>
+        <translation type="vanished">Частота выборки:</translation>
     </message>
     <message>
         <source>Specify number of particles</source>
-        <translation>Укажите количество частиц</translation>
+        <translation type="vanished">Укажите количество частиц</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Цвет</translation>
+        <translation type="vanished">Цвет</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Пользовательский цвет</translation>
+        <translation type="vanished">Пользовательский цвет</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>По скалярному значению</translation>
+        <translation type="vanished">По скалярному значению</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>Форма стрелки</translation>
+        <translation type="vanished">Форма стрелки</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>Размер стрелки:</translation>
+        <translation type="vanished">Размер стрелки:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>Ширина линии:</translation>
+        <translation type="vanished">Ширина линии:</translation>
     </message>
 </context>
 <context>
     <name>PostPolyDataBasicSettingDialog</name>
     <message>
         <source>Polygon Setting</source>
-        <translation>Настройка многоугольника</translation>
+        <translation type="vanished">Настройка многоугольника</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Цвет:</translation>
+        <translation type="vanished">Цвет:</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Ширина линии:</translation>
+        <translation type="vanished">Ширина линии:</translation>
     </message>
 </context>
 <context>
     <name>PostPolyDataScalarPropertyDialog</name>
     <message>
         <source>Polygon Setting</source>
-        <translation>Настройка многоугольника</translation>
+        <translation type="vanished">Настройка многоугольника</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Пользовательский цвет</translation>
+        <translation type="vanished">Пользовательский цвет</translation>
     </message>
     <message>
         <source>Color by attribute value</source>
-        <translation>Цвет по значению атрибута</translation>
+        <translation type="vanished">Цвет по значению атрибута</translation>
     </message>
     <message>
         <source>Attribute:</source>
-        <translation>Атрибут:</translation>
+        <translation type="vanished">Атрибут:</translation>
     </message>
     <message>
         <source>Line Width</source>
-        <translation>Ширина линии</translation>
+        <translation type="vanished">Ширина линии</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Настройка цветовой шкалы (&amp;C)</translation>
+        <translation type="vanished">Настройка цветовой шкалы (&amp;C)</translation>
+    </message>
+</context>
+<context>
+    <name>PostSolutionSelectDialog</name>
+    <message>
+        <source>Select Target Result</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

@@ -13,13 +13,14 @@
 #include "private/geodatapolygon_pushnewpointcommand.h"
 #include "private/geodatapolygon_removevertexcommand.h"
 
+#include <guibase/vtktool/vtkpolydatamapperutil.h>
 #include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
 #include <guicore/pre/base/preprocessorgeodatatopdataiteminterface.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
 #include <guicore/pre/base/preprocessorwindowinterface.h>
 #include <guicore/pre/gridcond/base/gridattributedimensionscontainer.h>
 #include <guicore/project/projectdata.h>
-#include <guicore/scalarstocolors/scalarstocolorscontainer.h>
+#include <guicore/scalarstocolors/colormapsettingcontaineri.h>
 #include <misc/informationdialog.h>
 #include <misc/iricundostack.h>
 #include <misc/keyboardsupport.h>
@@ -40,9 +41,10 @@
 #include <QStandardItem>
 #include <QToolBar>
 
+#include <vtkActor.h>
 #include <vtkCellArray.h>
 #include <vtkDoubleArray.h>
-#include <vtkPointData.h>
+#include <vtkCellData.h>
 #include <vtkPolyData.h>
 #include <vtkPolyDataMapper.h>
 #include <vtkProperty.h>
@@ -71,6 +73,7 @@ GeoDataPolygon::Impl::Impl(GeoDataPolygon* parent) :
 	m_bcSettingMode {false},
 	m_selectMode {smPolygon},
 	m_polyData {vtkPolyData::New()},
+	m_actor {vtkActor::New()},
 	m_scalarValues {vtkDoubleArray::New()},
 	m_rightClickingMenu {new QMenu()},
 	m_holeModeAction {new QAction(QIcon(":/libs/guibase/images/iconPolygonHole.svg"), GeoDataPolygon::tr("Add &Hole Region"), m_parent)},
@@ -104,8 +107,10 @@ GeoDataPolygon::Impl::Impl(GeoDataPolygon* parent) :
 
 GeoDataPolygon::Impl::~Impl()
 {
-	m_scalarValues->Delete();
 	m_polyData->Delete();
+	m_actor->Delete();
+	m_scalarValues->Delete();
+
 	delete m_rightClickingMenu;
 	delete m_regionPolygon;
 }
@@ -114,9 +119,9 @@ GeoDataPolygon::GeoDataPolygon(ProjectDataItem* d, GeoDataCreator* creator, Solv
 	GeoDataPolyData(d, creator, condition),
 	impl {new Impl {this}}
 {
-	ScalarsToColorsContainer* stcc = scalarsToColorsContainer();
-	if (stcc != nullptr) {
-		impl->m_regionPolygon->setLookupTable(stcc->vtkDarkObj());
+	auto cs = colorMapSettingContainer();
+	if (cs != nullptr) {
+		impl->m_regionPolygon->setColorMapSettingContainer(cs);
 	}
 
 	impl->m_mouseEventMode = meBeforeDefining;
@@ -125,18 +130,11 @@ GeoDataPolygon::GeoDataPolygon(ProjectDataItem* d, GeoDataCreator* creator, Solv
 	}
 
 	impl->m_scalarValues->SetName("polygonvalue");
-	impl->m_polyData->GetPointData()->AddArray(impl->m_scalarValues);
-	impl->m_polyData->GetPointData()->SetActiveScalars("polygonvalue");
+	impl->m_polyData->GetCellData()->AddArray(impl->m_scalarValues);
+	impl->m_polyData->GetCellData()->SetActiveScalars("polygonvalue");
 
-	auto mapper = impl->m_actor.mapper();
-	if (stcc != nullptr) {
-		mapper->SetLookupTable(stcc->vtkObj());
-	}
-	mapper->SetUseLookupTableScalarRange(true);
-	mapper->SetInputData(impl->m_polyData);
-
-	actorCollection()->AddItem(impl->m_actor.actor());
-	renderer()->AddActor(impl->m_actor.actor());
+	actorCollection()->AddItem(impl->m_actor);
+	renderer()->AddActor(impl->m_actor);
 
 	updateActorSettings();
 	updateActionStatus();
@@ -149,8 +147,7 @@ GeoDataPolygon::~GeoDataPolygon()
 	}
 	clearHolePolygons();
 
-	vtkRenderer* r = renderer();
-	r->RemoveActor(impl->m_actor.actor());
+	renderer()->RemoveActor(impl->m_actor);
 
 	delete impl;
 }
@@ -232,7 +229,7 @@ void GeoDataPolygon::informSelection(PreProcessorGraphicsViewInterface* v)
 {
 	impl->m_regionPolygon->setActive(true);
 	for (int i = 0; i < impl->m_holePolygons.size(); ++i) {
-		GeoDataPolygonHolePolygon* p = impl->m_holePolygons.at(i);
+		auto p = impl->m_holePolygons.at(i);
 		p->setActive(true);
 	}
 
@@ -616,10 +613,6 @@ void GeoDataPolygon::removeVertexMode(bool on)
 
 void GeoDataPolygon::loadExternalData(const QString& filename)
 {
-	ScalarsToColorsContainer* stcc = scalarsToColorsContainer();
-	if (stcc != nullptr) {
-		impl->m_regionPolygon->setLookupTable(stcc->vtkDarkObj());
-	}
 	if (projectData()->version().build() >= 3607) {
 		iRICLib::Polygon* pol = new iRICLib::Polygon();
 		GridAttributeDimensionsContainer* dims = dimensions();
@@ -651,6 +644,7 @@ void GeoDataPolygon::loadExternalData(const QString& filename)
 			holePol->setPolygon(qpol);
 			holePol->setActive(false);
 			holePol->setSelected(false);
+			holePol->setColorMapSettingContainer(colorMapSettingContainer());
 			impl->m_holePolygons.push_back(holePol);
 		}
 		delete pol;
@@ -753,7 +747,7 @@ void GeoDataPolygon::assignActorZValues(const ZDepthRange& range)
 		GeoDataPolygonHolePolygon* p = impl->m_holePolygons[i];
 		p->setZDepthRange(range.min(), range.max());
 	}
-	impl->m_actor.actor()->SetPosition(0, 0, range.min());
+	impl->m_actor->SetPosition(0, 0, range.min());
 }
 
 void GeoDataPolygon::getBoundingRect(double* xmin, double* xmax, double* ymin, double* ymax)
@@ -972,6 +966,8 @@ void GeoDataPolygon::clear()
 
 	impl->m_regionPolygon = new GeoDataPolygonRegionPolygon(this);
 	impl->m_regionPolygon->setSelected(true);
+	impl->m_regionPolygon->setColorMapSettingContainer(colorMapSettingContainer());
+	impl->m_regionPolygon->setMapping(colorSetting().mapping);
 	impl->m_regionPolygon->setZDepthRange(impl->m_depthRange.min(), impl->m_depthRange.max());
 	impl->m_mouseEventMode = meBeforeDefining;
 	impl->m_selectedPolygon = impl->m_regionPolygon;
@@ -1000,14 +996,14 @@ GeoDataPolygonHolePolygon* GeoDataPolygon::setupHolePolygon()
 	GeoDataPolygonHolePolygon* pol = new GeoDataPolygonHolePolygon(this);
 
 	pol->setZDepthRange(impl->m_depthRange.min(), impl->m_depthRange.max());
-	ScalarsToColorsContainer* stcc = scalarsToColorsContainer();
-	if (stcc != nullptr) {
-		pol->setLookupTable(scalarsToColorsContainer()->vtkDarkObj());
+	auto cs = colorMapSettingContainer();
+	if (cs != nullptr) {
+		pol->setColorMapSettingContainer(cs);
 	}
 	pol->setActive(true);
-	pol->setMapping(colorSetting().mapping);
 	pol->setColor(color());
 	pol->setLineWidth(impl->m_regionPolygon->lineWidth());
+	pol->setMapping(colorSetting().mapping);
 
 	return pol;
 }
@@ -1189,11 +1185,10 @@ void GeoDataPolygon::addHolePolygon(const QPolygonF& p)
 
 void GeoDataPolygon::updateScalarValues()
 {
-	vtkPoints* points = impl->m_polyData->GetPoints();
-	if (points == nullptr) {return;}
+	auto numPolys = impl->m_polyData->GetNumberOfPolys();
 	impl->m_scalarValues->Reset();
 	double doubleval = variantValue().toDouble();
-	for (int i = 0; i < points->GetNumberOfPoints(); ++i) {
+	for (int i = 0; i < numPolys; ++i) {
 		impl->m_scalarValues->InsertNextValue(doubleval);
 	}
 	impl->m_scalarValues->Modified();
@@ -1215,7 +1210,7 @@ void GeoDataPolygon::updatePolyData(bool noDraw)
 
 	impl->m_triangleThread->addJob(this, noDraw);
 	if (! noDraw){
-		impl->m_actor.actor()->SetVisibility(0);
+		impl->m_actor->VisibilityOff();
 	}
 }
 
@@ -1227,16 +1222,22 @@ void GeoDataPolygon::updateActorSettings()
 	for (auto hole : impl->m_holePolygons) {
 		hole->setColor(cs.color);
 	}
-	impl->m_actor.actor()->GetProperty()->SetColor(cs.color);
+	impl->m_actor->GetProperty()->SetColor(cs.color);
 
 	// opacity
-	impl->m_actor.actor()->GetProperty()->SetOpacity(cs.opacity);
+	impl->m_actor->GetProperty()->SetOpacity(cs.opacity);
 
 	// mapping
 	if (cs.mapping == GeoDataPolyDataColorSettingDialog::Arbitrary) {
-		impl->m_actor.mapper()->SetScalarVisibility(false);
+		auto mapper = vtkPolyDataMapperUtil::createWithScalarVisibilityOff();
+		mapper->SetInputData(impl->m_polyData);
+		impl->m_actor->SetMapper(mapper);
+		mapper->Delete();
 	} else {
-		impl->m_actor.mapper()->SetScalarVisibility(true);
+		auto cs = colorMapSettingContainer();
+		auto mapper = cs->buildCellDataMapper(impl->m_polyData, false);
+		impl->m_actor->SetMapper(mapper);
+		mapper->Delete();
 	}
 	impl->m_regionPolygon->setMapping(cs.mapping);
 	for (auto hole : impl->m_holePolygons) {
@@ -1247,7 +1248,7 @@ void GeoDataPolygon::updateActorSettings()
 void GeoDataPolygon::renderGraphics()
 {
 	int visibility = isVisible() ? 1 : 0;
-	impl->m_actor.actor()->SetVisibility(visibility);
+	impl->m_actor->SetVisibility(visibility);
 	renderGraphicsView();
 }
 
@@ -1263,15 +1264,15 @@ void GeoDataPolygon::updatePolygon(GeoDataPolygon* polygon, vtkPoints* points, v
 	impl->m_polyData->SetPolys(ca);
 	ca->Delete();
 
-	updateScalarValues();
-
 	impl->m_polyData->BuildCells();
 	impl->m_polyData->BuildLinks();
 	impl->m_polyData->Modified();
 
+	updateScalarValues();
+
 	unlockMutex();
 
-	impl->m_actor.actor()->GetProperty()->SetOpacity(colorSetting().opacity);
+	updateActorSettings();
 
 	if (noDraw) {return;}
 
@@ -1441,12 +1442,7 @@ QList<GeoDataPolygonHolePolygon*>& GeoDataPolygon::holePolygons()
 
 vtkActor* GeoDataPolygon::paintActor() const
 {
-	return impl->m_actor.actor();
-}
-
-vtkMapper* GeoDataPolygon::paintMapper() const
-{
-	return impl->m_actor.mapper();
+	return impl->m_actor;
 }
 
 QAction* GeoDataPolygon::addVertexAction() const

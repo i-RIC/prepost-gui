@@ -3,8 +3,6 @@
 
 #include "preferencepage.h"
 
-#include <post/post2d/datamodel/post2dwindownodevectorarrowstructuredsetting.h>
-
 #include <QSettings>
 
 namespace Ui

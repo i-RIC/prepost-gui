@@ -1,41 +1,20 @@
-#include "../post2dbirdeyewindowdatamodel.h"
-#include "../post2dbirdeyewindowgraphicsview.h"
 #include "post2dbirdeyewindowgridshapedataitem.h"
 #include "post2dbirdeyewindowgridtypedataitem.h"
 #include "post2dbirdeyewindownodescalargrouptopdataitem.h"
-#include "post2dbirdeyewindowcellscalargrouptopdataitem.h"
+// #include "post2dbirdeyewindowcellscalargrouptopdataitem.h"
 #include "post2dbirdeyewindowzonedataitem.h"
 
 #include <guicore/postcontainer/postsolutioninfo.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
-#include <guicore/project/projectdata.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/xmlsupport.h>
 
-#include <QAction>
-#include <QDomNode>
-#include <QFileDialog>
-#include <QGraphicsItem>
-#include <QIcon>
-#include <QMenu>
-#include <QMouseEvent>
-#include <QSignalMapper>
-#include <QStandardItem>
-#include <QTime>
-#include <QXmlStreamWriter>
-
-#include <vtkProperty.h>
-#include <vtkRenderWindow.h>
-#include <vtkRenderer.h>
-#include <vtkTriangle.h>
-#include <vtkVertex.h>
-
 Post2dBirdEyeWindowZoneDataItem::Post2dBirdEyeWindowZoneDataItem(const std::string& zoneName, int zoneNumber, GraphicsWindowDataItem* parent) :
 	Post2dBirdEyeWindowDataItem {zoneName.c_str(), QIcon(":/libs/guibase/images/iconFolder.svg"), parent},
+	m_scalarGroupTopDataItem {nullptr},
+	// m_cellScalarGroupTopDataItem {nullptr},
 	m_zoneName (zoneName),
-	m_zoneNumber {zoneNumber},
-	m_cellScalarGroupTopDataItem {nullptr},
-	m_scalarGroupTopDataItem {nullptr}
+	m_zoneNumber {zoneNumber}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 
@@ -46,17 +25,21 @@ Post2dBirdEyeWindowZoneDataItem::Post2dBirdEyeWindowZoneDataItem(const std::stri
 		m_scalarGroupTopDataItem = new Post2dBirdEyeWindowNodeScalarGroupTopDataItem(this);
 	}
 
+	/*
 	if (cont->cellScalarValueExists()) {
 		m_cellScalarGroupTopDataItem = new Post2dBirdEyeWindowCellScalarGroupTopDataItem(this);
 	}
+	*/
 
 	m_childItems.push_back(m_shapeDataItem);
 	if (cont->scalarValueExists()) {
 		m_childItems.push_back(m_scalarGroupTopDataItem);
 	}
+	/*
 	if (cont->cellScalarValueExists()) {
 		m_childItems.push_back(m_cellScalarGroupTopDataItem);
 	}
+	*/
 }
 
 void Post2dBirdEyeWindowZoneDataItem::doLoadFromProjectMainFile(const QDomNode& node)
@@ -75,10 +58,12 @@ void Post2dBirdEyeWindowZoneDataItem::doLoadFromProjectMainFile(const QDomNode& 
 	if (! contourGroupNode.isNull() && m_scalarGroupTopDataItem != nullptr) {
 		m_scalarGroupTopDataItem->loadFromProjectMainFile(contourGroupNode);
 	}
+	/*
 	QDomNode cellScalarNode = iRIC::getChildNode(node, "ScalarCellCenter");
 	if (!cellScalarNode.isNull() && m_cellScalarGroupTopDataItem != nullptr) {
 		m_cellScalarGroupTopDataItem->loadFromProjectMainFile(cellScalarNode);
 	}
+	*/
 }
 
 void Post2dBirdEyeWindowZoneDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
@@ -93,17 +78,17 @@ void Post2dBirdEyeWindowZoneDataItem::doSaveToProjectMainFile(QXmlStreamWriter& 
 		m_scalarGroupTopDataItem->saveToProjectMainFile(writer);
 		writer.writeEndElement();
 	}
+	/*
 	if (m_cellScalarGroupTopDataItem != nullptr) {
 		writer.writeStartElement("ScalarCellCenter");
 		m_cellScalarGroupTopDataItem->saveToProjectMainFile(writer);
 		writer.writeEndElement();
 	}
+	*/
 }
 
 void Post2dBirdEyeWindowZoneDataItem::addCustomMenuItems(QMenu* /*menu*/)
-{
-
-}
+{}
 
 void Post2dBirdEyeWindowZoneDataItem::informSelection(VTKGraphicsView* v)
 {
@@ -120,6 +105,16 @@ PostZoneDataContainer* Post2dBirdEyeWindowZoneDataItem::dataContainer()
 	return postSolutionInfo()->zoneContainer2D(m_zoneName);
 }
 
+int Post2dBirdEyeWindowZoneDataItem::zoneNumber() const
+{
+	return m_zoneNumber;
+}
+
+std::string Post2dBirdEyeWindowZoneDataItem::zoneName() const
+{
+	return m_zoneName;
+}
+
 void Post2dBirdEyeWindowZoneDataItem::update()
 {
 	QTime time;
@@ -132,12 +127,36 @@ void Post2dBirdEyeWindowZoneDataItem::update()
 		m_scalarGroupTopDataItem->update();
 		qDebug("Contour shape: %d", time.elapsed());
 	}
+	/*
 	if (m_cellScalarGroupTopDataItem != nullptr) {
 		time.restart();
 		m_cellScalarGroupTopDataItem->update();
 		qDebug("Cell Contour shape: %d", time.elapsed());
 	}
+	*/
 }
+
+Post2dBirdEyeWindowGridTypeDataItem* Post2dBirdEyeWindowZoneDataItem::gridTypeDataItem() const
+{
+	return dynamic_cast<Post2dBirdEyeWindowGridTypeDataItem*> (parent());
+}
+
+Post2dBirdEyeWindowGridShapeDataItem* Post2dBirdEyeWindowZoneDataItem::gridShapeDataItem() const
+{
+	return m_shapeDataItem;
+}
+
+Post2dBirdEyeWindowNodeScalarGroupTopDataItem* Post2dBirdEyeWindowZoneDataItem::scalarGroupTopDataItem() const
+{
+	return m_scalarGroupTopDataItem;
+}
+
+/*
+Post2dBirdEyeWindowCellScalarGroupTopDataItem* Post2dBirdEyeWindowZoneDataItem::cellScalarGroupTopDataItem() const
+{
+	return m_cellScalarGroupTopDataItem;
+}
+*/
 
 void Post2dBirdEyeWindowZoneDataItem::updateZDepthRangeItemCount()
 {

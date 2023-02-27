@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="tr_TR">
 <context>
     <name>AnimationController</name>
@@ -179,7 +181,7 @@
     </message>
     <message>
         <source>Output to the Google Earth</source>
-        <translation>Google Earth'e çıktı</translation>
+        <translation>Google Earth&apos;e çıktı</translation>
     </message>
     <message>
         <source>Please specify the properties of output files.</source>
@@ -416,11 +418,11 @@
     <message>
         <source>When you update iRIC, you need to close iRIC before launching iRIC Maintainance.
 When you have iRIC windows other than this, close them manually.</source>
-        <translation>iRIC'i güncellediğinizde, iRIC Bakımını başlatmadan önce iRIC'i kapatmanız gerekir. Bunun dışında iRIC pencereleriniz olduğunda, bunları manuel olarak kapatın.</translation>
+        <translation>iRIC&apos;i güncellediğinizde, iRIC Bakımını başlatmadan önce iRIC&apos;i kapatmanız gerekir. Bunun dışında iRIC pencereleriniz olduğunda, bunları manuel olarak kapatın.</translation>
     </message>
     <message>
         <source>Close iRIC and launch iRIC Maintainance</source>
-        <translation>iRIC'i kapatın ve iRIC Bakımını başlatın</translation>
+        <translation>iRIC&apos;i kapatın ve iRIC Bakımını başlatın</translation>
     </message>
 </context>
 <context>
@@ -449,8 +451,8 @@ This wizard will generate or update translation files for solver definition file
         <translation>Çözücü Seç</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
-        <translation>Yeni bir proje oluşturduğunuzda, hesaplama için kullanılacak çözücüyü seçmeniz gerekir. Lütfen bir çözücü seçin ve "Tamam" düğmesine basın.</translation>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
+        <translation>Yeni bir proje oluşturduğunuzda, hesaplama için kullanılacak çözücüyü seçmeniz gerekir. Lütfen bir çözücü seçin ve &quot;Tamam&quot; düğmesine basın.</translation>
     </message>
 </context>
 <context>
@@ -493,7 +495,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Network Proxy</source>
-        <translation>Ağ Proxy'si</translation>
+        <translation>Ağ Proxy&apos;si</translation>
     </message>
     <message>
         <source>Background Images (Internet)</source>
@@ -510,6 +512,10 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <source>Font Default</source>
         <translation>Yazı Tipi Varsayılanı</translation>
+    </message>
+    <message>
+        <source>Text Format</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -694,7 +700,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Working directory is changed, but the new working directory is used AFTER exiting iRIC GUI!</source>
-        <translation>Çalışma dizini değiştirilir, ancak yeni çalışma dizini iRIC GUI'den çıkıldıktan SONRA kullanılır!</translation>
+        <translation>Çalışma dizini değiştirilir, ancak yeni çalışma dizini iRIC GUI&apos;den çıkıldıktan SONRA kullanılır!</translation>
     </message>
     <message>
         <source>Python path</source>
@@ -702,7 +708,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Note: Used to run solvers written in Python.</source>
-        <translation>Not: Python'da yazılmış çözücüleri çalıştırmak için kullanılır.</translation>
+        <translation>Not: Python&apos;da yazılmış çözücüleri çalıştırmak için kullanılır.</translation>
     </message>
 </context>
 <context>
@@ -835,7 +841,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>HTTP Proxy: </source>
-        <translation>HTTP Proxy'si:</translation>
+        <translation>HTTP Proxy&apos;si:</translation>
     </message>
     <message>
         <source>Port:</source>
@@ -913,6 +919,37 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
 </context>
 <context>
+    <name>PreferencePageTextFormat</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Biçim</translation>
+    </message>
+    <message>
+        <source>Coordinates in Status Bar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Decimal places:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Attribute Browser</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Decimal places</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Coordinates:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>PreferencePageTms</name>
     <message>
         <source>Form</source>
@@ -948,7 +985,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Google Maps Platform now need API key to use Google Maps through iRIC. Please get your own Google Maps API key and input here, to use Google Maps images as background images on Pre-processor and on 2D Post-Processing Windows.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Google Haritalar Platformu, artık Google Haritalar'ı iRIC aracılığıyla kullanmak için API anahtarına ihtiyaç duyuyor. Lütfen kendi Google Haritalar API anahtarınızı alın ve Google Haritalar resimlerini Ön İşlemcide ve 2B İşlem Sonrası Windows'ta arka plan resimleri olarak kullanmak için buraya girin.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Google Haritalar Platformu, artık Google Haritalar&apos;ı iRIC aracılığıyla kullanmak için API anahtarına ihtiyaç duyuyor. Lütfen kendi Google Haritalar API anahtarınızı alın ve Google Haritalar resimlerini Ön İşlemcide ve 2B İşlem Sonrası Windows&apos;ta arka plan resimleri olarak kullanmak için buraya girin.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Background Image (Internet) Edit</source>
@@ -1285,9 +1322,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>Uyarı</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
+        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
 %2</source>
-        <translation>Çözücü tanım dosyası " klasörüne yüklenirken hata oluştu %1 ". Bu çözücü yoksayılır. %2</translation>
+        <translation>Çözücü tanım dosyası &quot; klasörüne yüklenirken hata oluştu %1 &quot;. Bu çözücü yoksayılır. %2</translation>
     </message>
 </context>
 <context>
@@ -1333,7 +1370,7 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <source>Welcome to iRIC!
 iRIC can simulate rivers from Colorado River to the Nile.</source>
-        <translation>iRIC'e hoş geldiniz! iRIC, Colorado Nehri'nden Nil'e nehirleri simüle edebilir.</translation>
+        <translation>iRIC&apos;e hoş geldiniz! iRIC, Colorado Nehri&apos;nden Nil&apos;e nehirleri simüle edebilir.</translation>
     </message>
     <message>
         <source>Start Simulation Project</source>
@@ -1406,7 +1443,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Bu proje başka bir iRIC GUI penceresi tarafından açılmış gibi görünüyor. Birden çok GUI penceresinden bir proje klasörü açamazsınız.</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation>Açılan proje çalışma dizinine kopyalanmaz ve bu projede yaptığınız değişiklikleri kaydetmek zorunda kalırsınız. Mevcut projeyi saklamak istiyorsanız, lütfen önce başka bir projeye kaydedin.</translation>
     </message>
     <message>
@@ -1566,12 +1603,12 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Şu anda aktif olan alt pencere, kontur figürünün dışa aktarılmasını desteklemiyor.</translation>
     </message>
     <message>
-        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation>Şekil dosyasını dışa aktarmak için, "Renk Fringe" veya "Isolines" yerine "Görüntü ayarı"nı "Kontur Figürü" olarak değiştirin.</translation>
+        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
+        <translation type="vanished">Şekil dosyasını dışa aktarmak için, &quot;Renk Fringe&quot; veya &quot;Isolines&quot; yerine &quot;Görüntü ayarı&quot;nı &quot;Kontur Figürü&quot; olarak değiştirin.</translation>
     </message>
     <message>
         <source>Export contour figure to ESRI Shapefiles</source>
-        <translation>Kontur figürünü ESRI Shapefiles'e aktarın</translation>
+        <translation>Kontur figürünü ESRI Shapefiles&apos;e aktarın</translation>
     </message>
     <message>
         <source>Export contour figure</source>
@@ -1591,7 +1628,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>Export Google Earth KMZ for street view</source>
-        <translation>Sokak görünümü için Google Earth KMZ'yi dışa aktarın</translation>
+        <translation>Sokak görünümü için Google Earth KMZ&apos;yi dışa aktarın</translation>
     </message>
     <message>
         <source>%1 can not be overwritten.</source>
@@ -1705,6 +1742,10 @@ Option -&gt; Preferences</source>
     <message>
         <source>Setting file (*.vgsetting *.xml)</source>
         <translation>Ayar dosyası (*.vgsetting *.xml)</translation>
+    </message>
+    <message>
+        <source>To export shape file, switch Color mode to &quot;Discrete Mode&quot;.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1870,7 +1911,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Geographic Data (from web)</source>
-        <translation type="vanished">Coğrafi Veriler (web'den)</translation>
+        <translation type="vanished">Coğrafi Veriler (web&apos;den)</translation>
     </message>
     <message>
         <source>&amp;Hydraulic Data</source>
@@ -2051,7 +2092,7 @@ Option -&gt; Preferences</source>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&amp;Solver Information...</source>
@@ -2078,7 +2119,7 @@ Option -&gt; Preferences</source>
         <translation>Yeni 2D İşlem Sonrası Penceresini Aç</translation>
     </message>
     <message>
-        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
+        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
         <translation>Yeni 2D Kuş Bakışı İşleme Sonrası Penceresini Aç</translation>
     </message>
     <message>
@@ -2191,7 +2232,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Geographic Data (Elevation from web)</source>
-        <translation>Coğrafi Veriler (Web'den Yükseklik)</translation>
+        <translation>Coğrafi Veriler (Web&apos;den Yükseklik)</translation>
     </message>
 </context>
 </TS>

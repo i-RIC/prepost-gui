@@ -43,12 +43,14 @@ HEADERS += anms.h \
            latitudelongitudeangle.h \
            linearinterpolator.h \
            mathsupport.h \
+           mergesupportedlistcommand.h \
            misc_global.h \
            multicelloperabletableview.h \
            networksetting.h \
            numericvaluecontainert.h \
            opacitycontainer.h \
            primitiveview.h \
+           private/valuemodifycommandt_detail.h \
            pythonutil.h \
            qfontcontainer.h \
            qfontdisplaylabel.h \
@@ -59,6 +61,7 @@ HEADERS += anms.h \
            qtimezoneselectcombobox.h \
            qttool.h \
            qundocommandhelper.h \
+           qwidgetcontainer.h \
            rangecontainert.h \
            simplevaluecontainert.h \
            slowmotionspeededitdialog.h \
@@ -70,6 +73,7 @@ HEADERS += anms.h \
            tpoexporter.h \
            valuearraycontainert.h \
            valuechangert.h \
+           valuemodifycommandt.h \
            valuerestorert.h \
            versionnumber.h \
            windowgeometrycontainer.h \
@@ -121,6 +125,7 @@ SOURCES += anms.cpp \
            latitudelongitudeangle.cpp \
            linearinterpolator.cpp \
            mathsupport.cpp \
+           mergesupportedlistcommand.cpp \
            multicelloperabletableview.cpp \
            networksetting.cpp \
            opacitycontainer.cpp \
@@ -135,6 +140,7 @@ SOURCES += anms.cpp \
            qtimezoneselectcombobox.cpp \
            qttool.cpp \
            qundocommandhelper.cpp \
+           qwidgetcontainer.cpp \
            slowmotionspeededitdialog.cpp \
            splineinterpolator.cpp \
            standarderrormessages.cpp \

@@ -9,12 +9,13 @@
 #include <geodata/point/geodatapoint.h>
 #include <geodata/polydatagroup/geodatapolydatagroupcreator.h>
 #include <geoio/polygonutil.h>
+#include <guibase/vtktool/vtkpolydatamapperutil.h>
 #include <guicore/pre/base/preprocessorgeodatadataiteminterface.h>
 #include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
 #include <guicore/pre/base/preprocessorwindowinterface.h>
 #include <guicore/pre/geodata/geodatafactoryinterface.h>
-#include <guicore/scalarstocolors/scalarstocolorscontainer.h>
+#include <guicore/scalarstocolors/colormapsettingcontaineri.h>
 #include <misc/mathsupport.h>
 #include <misc/zdepthrange.h>
 
@@ -60,17 +61,6 @@ GeoDataPolyDataGroup(d, gdcreater, condition),
 	impl {new Impl {this}}
 {
 	addAction()->setText(tr("&Add New Point..."));
-
-	ScalarsToColorsContainer* stcc = scalarsToColorsContainer();
-	if (stcc != nullptr) {
-		auto mapper = impl->m_pointsActor->GetMapper();
-		mapper->SetLookupTable(stcc->vtkObj());
-		mapper->SetUseLookupTableScalarRange(true);
-
-		mapper = impl->m_selectedPointsPointsActor->GetMapper();
-		mapper->SetLookupTable(stcc->vtkObj());
-		mapper->SetUseLookupTableScalarRange(true);
-	}
 
 	actorCollection()->AddItem(impl->m_pointsActor);
 
@@ -290,6 +280,7 @@ GeoDataPolyDataGroupPolyData* GeoDataPointGroup::createNewData()
 GeoDataPolyData* GeoDataPointGroup::createEditTargetData()
 {
 	auto point = new GeoDataPoint(parent(), creator(), gridAttribute());
+	point->setVariantValue(gridAttribute()->variantDefaultValue());
 
 	point->assignActorZValues(depthRange());
 	connect(point, SIGNAL(nameAndValueEdited()), this, SLOT(updateAttributeBrowser()));
@@ -312,14 +303,38 @@ void GeoDataPointGroup::updateActorSetting()
 	if (cs.mapping == GeoDataPointGroupColorSettingDialog::Arbitrary) {
 		scalarVisibility = false;
 	}
-	impl->m_pointsActor->GetMapper()->SetScalarVisibility(scalarVisibility);
-	impl->m_selectedPointsPointsActor->GetMapper()->SetScalarVisibility(scalarVisibility);
+	if (scalarVisibility) {
+		vtkMapper* mapper = nullptr;
+		auto cs = colorMapSettingContainer();
+
+		mapper = cs->buildCellDataMapper(impl->m_pointsPolyData, true);
+		impl->m_pointsActor->SetMapper(mapper);
+		mapper->Delete();
+
+		mapper = cs->buildCellDataMapper(impl->m_selectedPointsPointsPolyData, true);
+		impl->m_selectedPointsPointsActor->SetMapper(mapper);
+		mapper->Delete();
+	} else {
+		vtkPolyDataMapper* mapper = nullptr;
+
+		mapper = vtkPolyDataMapperUtil::createWithScalarVisibilityOff();
+		mapper->SetInputData(impl->m_pointsPolyData);
+		impl->m_pointsActor->SetMapper(mapper);
+		mapper->Delete();
+
+		mapper = vtkPolyDataMapperUtil::createWithScalarVisibilityOff();
+		mapper->SetInputData(impl->m_selectedPointsPointsPolyData);
+		impl->m_selectedPointsPointsActor->SetMapper(mapper);
+		mapper->Delete();
+	}
 
 	// opacity
 	impl->m_pointsActor->GetProperty()->SetOpacity(cs.opacity);
+	impl->m_selectedPointsPointsActor->GetProperty()->SetOpacity(cs.opacity);
 
 	// pointSize
 	impl->m_pointsActor->GetProperty()->SetPointSize(cs.pointSize);
+	impl->m_selectedPointsPointsActor->GetProperty()->SetPointSize(cs.pointSize * 2);
 
 	updateActorSettingForEditTargetPolyData();
 }

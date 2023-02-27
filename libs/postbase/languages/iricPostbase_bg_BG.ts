@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="bg_BG">
 <context>
     <name>ParticleArbitraryTimeEditDialog</name>
@@ -57,163 +59,170 @@
     <name>PostParticleBasicSettingDialog</name>
     <message>
         <source>Particles Setting</source>
-        <translation>Настройка на частиците</translation>
+        <translation type="vanished">Настройка на частиците</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Цвят:</translation>
+        <translation type="vanished">Цвят:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>Размер:</translation>
+        <translation type="vanished">Размер:</translation>
     </message>
 </context>
 <context>
     <name>PostParticleScalarPropertyDialog</name>
     <message>
         <source>Particle Scalar Setting</source>
-        <translation>Скаларна настройка на частиците</translation>
+        <translation type="vanished">Скаларна настройка на частиците</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Персонализиран цвят</translation>
+        <translation type="vanished">Персонализиран цвят</translation>
     </message>
     <message>
         <source>Color by attribute value</source>
-        <translation>Цвят по стойност на атрибута</translation>
+        <translation type="vanished">Цвят по стойност на атрибута</translation>
     </message>
     <message>
         <source>Attribute:</source>
-        <translation>Атрибут:</translation>
+        <translation type="vanished">Атрибут:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>Размер:</translation>
+        <translation type="vanished">Размер:</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Настройка на цветна лента (&amp;C)</translation>
+        <translation type="vanished">Настройка на цветна лента (&amp;C)</translation>
     </message>
 </context>
 <context>
     <name>PostParticleVectorPropertyDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Настройка на стрелка</translation>
+        <translation type="vanished">Настройка на стрелка</translation>
     </message>
     <message>
         <source>Attribute value:</source>
-        <translation>Стойност на атрибута:</translation>
+        <translation type="vanished">Стойност на атрибута:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Дължина</translation>
+        <translation type="vanished">Дължина</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Автоматичен</translation>
+        <translation type="vanished">Автоматичен</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Стандартна стойност:</translation>
+        <translation type="vanished">Стандартна стойност:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[Госпожица]</translation>
+        <translation type="vanished">[Госпожица]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Дължина на екрана:</translation>
+        <translation type="vanished">Дължина на екрана:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[пиксел]</translation>
+        <translation type="vanished">[пиксел]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Минимална стойност за теглене:</translation>
+        <translation type="vanished">Минимална стойност за теглене:</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>Вземане на проби</translation>
+        <translation type="vanished">Вземане на проби</translation>
     </message>
     <message>
         <source>All particles</source>
-        <translation>Всички частици</translation>
+        <translation type="vanished">Всички частици</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>Честота на вземане на проби:</translation>
+        <translation type="vanished">Честота на вземане на проби:</translation>
     </message>
     <message>
         <source>Specify number of particles</source>
-        <translation>Посочете броя на частиците</translation>
+        <translation type="vanished">Посочете броя на частиците</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Цвят</translation>
+        <translation type="vanished">Цвят</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Персонализиран цвят</translation>
+        <translation type="vanished">Персонализиран цвят</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>По скаларна стойност</translation>
+        <translation type="vanished">По скаларна стойност</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>Форма на стрела</translation>
+        <translation type="vanished">Форма на стрела</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>Размер на стрелката:</translation>
+        <translation type="vanished">Размер на стрелката:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>Ширина на линията:</translation>
+        <translation type="vanished">Ширина на линията:</translation>
     </message>
 </context>
 <context>
     <name>PostPolyDataBasicSettingDialog</name>
     <message>
         <source>Polygon Setting</source>
-        <translation>Настройка на многоъгълник</translation>
+        <translation type="vanished">Настройка на многоъгълник</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Цвят:</translation>
+        <translation type="vanished">Цвят:</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Ширина на линията:</translation>
+        <translation type="vanished">Ширина на линията:</translation>
     </message>
 </context>
 <context>
     <name>PostPolyDataScalarPropertyDialog</name>
     <message>
         <source>Polygon Setting</source>
-        <translation>Настройка на многоъгълник</translation>
+        <translation type="vanished">Настройка на многоъгълник</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Персонализиран цвят</translation>
+        <translation type="vanished">Персонализиран цвят</translation>
     </message>
     <message>
         <source>Color by attribute value</source>
-        <translation>Цвят по стойност на атрибута</translation>
+        <translation type="vanished">Цвят по стойност на атрибута</translation>
     </message>
     <message>
         <source>Attribute:</source>
-        <translation>Атрибут:</translation>
+        <translation type="vanished">Атрибут:</translation>
     </message>
     <message>
         <source>Line Width</source>
-        <translation>Ширина на линията</translation>
+        <translation type="vanished">Ширина на линията</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Настройка на цветна лента (&amp;C)</translation>
+        <translation type="vanished">Настройка на цветна лента (&amp;C)</translation>
+    </message>
+</context>
+<context>
+    <name>PostSolutionSelectDialog</name>
+    <message>
+        <source>Select Target Result</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

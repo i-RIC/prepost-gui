@@ -114,6 +114,7 @@ LIBS += \
 	-lvtkCommonDataModel-$${VTK_MAJ_MIN} \
 	-lvtkCommonExecutionModel-$${VTK_MAJ_MIN} \
 	-lvtkCommonMisc-$${VTK_MAJ_MIN} \
+	-lvtkCommonTransforms-$${VTK_MAJ_MIN} \
 	-lvtkFiltersCore-$${VTK_MAJ_MIN} \
 	-lvtkFiltersGeometry-$${VTK_MAJ_MIN} \
 	-lvtkFiltersGeneral-$${VTK_MAJ_MIN} \
@@ -165,6 +166,14 @@ win32 {
 
 # Input
 HEADERS += guicore_global.h \
+           arrows/arrowscolorsettingeditsmallwidget.h \
+           arrows/arrowscolorsettingeditwidget.h \
+           arrows/arrowslegendsettingcontainer.h \
+           arrows/arrowslegendsettingeditwidget.h \
+           arrows/arrowslengthsettingeditwidget.h \
+           arrows/arrowssettingcontainer.h \
+           arrows/arrowssettingeditwidget.h \
+           arrows/arrowsshapesettingeditwidget.h \
            base/additionalmenuwindowi.h \
            base/animationcontrollerinterface.h \
            base/clipboardoperatablewindowinterface.h \
@@ -193,10 +202,23 @@ HEADERS += guicore_global.h \
            datamodel/vtk3dgraphicsview.h \
            datamodel/vtkgraphicsview.h \
            executer/iricmainwindowexecuterwatcher.h \
+           filter/generalfilteringsettingcontainer.h \
+           filter/generalfilteringsettingeditwidget.h \
+           filter/structured2dfilteringsettingcontainer.h \
+           filter/structured2dfilteringsettingeditwidget.h \
+           filter/structured3dfilteringsettingcontainer.h \
+           filter/structured3dfilteringsettingeditwidget.h \
+           image/imagesettingcontainer.h \
+           image/imagesettingwidget.h \
            misc/cgnsutil.h \
            misc/iricmetadata.h \
            misc/mouseboundingbox.h \
            misc/mousepositionwidget.h \
+           misc/valuerangecontainer.h \
+           misc/valuerangecontainerutil.h \
+           misc/vtkpointsetandvaluerangeset.h \
+           misc/vtkpointsetandvaluerangesett.h \
+           misc/vtkpointsetvaluerangeset.h \
            named/namedgraphicswindowdataitemtool.h \
            named/namedgraphicwindowdataitem.h \
            post/postprocessorwindow.h \
@@ -238,10 +260,7 @@ HEADERS += guicore_global.h \
            project/gcptablemodel.h \
            project/gcptablerow.h \
            project/georeferenceview.h \
-           project/inputcond/private/inputconditiondependencysetsubenumerationsaction.h \
            project/offsetsettingdialog.h \
-           project/private/backgroundimageinfo_impl.h \
-           project/private/backgroundimageinfo_setting.h \
            project/projectcgnsfile.h \
            project/projectdata.h \
            project/projectdataitem.h \
@@ -250,16 +269,27 @@ HEADERS += guicore_global.h \
            project/projecttimesettingdialog.h \
            project/projectworkspace.h \
            project/workfolderinfo.h \
-           scalarstocolors/colortransferfunctioncontainer.h \
-           scalarstocolors/colortransferfunctioneditdialog.h \
-           scalarstocolors/colortransferfunctioneditwidget.h \
-           scalarstocolors/lookuptablecontainer.h \
-           scalarstocolors/lookuptableeditwidget.h \
-           scalarstocolors/scalarstocolorscontainer.h \
-           scalarstocolors/scalarstocolorscontainerutil.h \
-           scalarstocolors/scalarstocolorseditdialog.h \
-           scalarstocolors/scalarstocolorseditwidget.h \
-           scalarstocolors/scalarstocolorseditwidgetcontainer.h \
+           region/region2dsettingcontainer.h \
+           region/region2dsettingeditwidget.h \
+           scalarstocolors/colormapenumeratefactory.h \
+           scalarstocolors/colormapenumeratelegendsettingcontainer.h \
+           scalarstocolors/colormapenumeratelegendsettingeditwidget.h \
+           scalarstocolors/colormapenumeratesettingcontainer.h \
+           scalarstocolors/colormapenumeratesettingeditwidget.h \
+           scalarstocolors/colormapfactory.h \
+           scalarstocolors/colormapfactoryi.h \
+           scalarstocolors/colormaplegendsettingcontainer.h \
+           scalarstocolors/colormaplegendsettingcontaineri.h \
+           scalarstocolors/colormaplegendsettingeditwidget.h \
+           scalarstocolors/colormapsettingcontainer.h \
+           scalarstocolors/colormapsettingcontaineri.h \
+           scalarstocolors/colormapsettingcontainerutil.h \
+           scalarstocolors/colormapsettingeditdialog.h \
+           scalarstocolors/colormapsettingeditwidget.h \
+           scalarstocolors/colormapsettingeditwidgeti.h \
+           scalarstocolors/colormapsettingvaluecolorpaircontainer.h \
+           scalarstocolors/discretevaluesutil.h \
+           solverdef/enumloader.h \
            solverdef/enumloadert.h \
            solverdef/integerenumloader.h \
            solverdef/realenumloader.h \
@@ -286,12 +316,15 @@ HEADERS += guicore_global.h \
            solverdef/solverdefinitiongridcomplexattribute.h \
            solverdef/solverdefinitiongridtype.h \
            solverdef/solverdefinitionnode.h \
+           solverdef/solverdefinitionoutput.h \
            solverdef/solverdefinitiontranslator.h \
            tmsimage/tmsimagedataitem.h \
            tmsimage/tmsimagegroupdataitem.h \
            tmsimage/tmsimagesetting.h \
            tmsimage/tmsimagesettingmanager.h \
            tmsimage/tmsregionselectwidget.h \
+           arrows/private/arrowslegendsettingcontainer_imagebuilder.h \
+           arrows/private/arrowssettingeditwidget_modifycommand.h \
            bgcolor/private/backgroundcoloreditinterface_setbackgroundcolorcommand.h \
            datamodel/private/graphicswindowdataitem_modifycommand.h \
            datamodel/private/graphicswindowdataitem_rendercommand.h \
@@ -300,7 +333,13 @@ HEADERS += guicore_global.h \
            datamodel/private/graphicswindowrootdataitem_movedowncommand.h \
            datamodel/private/graphicswindowrootdataitem_moveupcommand.h \
            datamodel/private/vtkgraphicsview_impl.h \
+           image/private/imagesettingcontainer_movecommand.h \
+           image/private/imagesettingcontainer_resizecommand.h \
+           image/private/imagesettingcontainer_updatecommand.h \
+           image/public/imagesettingcontainer_controller.h \
+           image/public/imagesettingcontainer_imagebuilder.h \
            misc/private/cgnsutil_detail.h \
+           misc/private/vtkpointsetandvaluerangesett_detail.h \
            misc/targeted/targeteditemi.h \
            misc/targeted/targeteditemsettargetcommand.h \
            misc/targeted/targeteditemsettargetcommandtool.h \
@@ -368,8 +407,6 @@ HEADERS += guicore_global.h \
            pre/grid/structured15dgridwithcrosssection.h \
            pre/grid/structured2dgrid.h \
            pre/grid/unstructured2dgrid.h \
-           pre/gridcond/gridcellattributepropertydialog.h \
-           pre/gridcond/gridnodeattributepropertydialog.h \
            pre/gridcreatingcondition/gridcreatingcondition.h \
            pre/gridcreatingcondition/gridcreatingconditioncreator.h \
            pre/gridcreatingcondition/gridcreatingconditionfactoryi.h \
@@ -398,7 +435,9 @@ HEADERS += guicore_global.h \
            project/measured/measureddatacsvimporter.h \
            project/measured/measureddataexporteri.h \
            project/measured/measureddataimporteri.h \
+           project/private/backgroundimageinfo_impl.h \
            project/private/backgroundimageinfo_setactorpropertycommand.h \
+           project/private/backgroundimageinfo_setting.h \
            project/private/backgroundimageinfogeoreferencedialog_styleditemdelegate.h \
            project/private/cgnsfileentry_impl.h \
            project/private/colorsource_impl.h \
@@ -430,6 +469,14 @@ HEADERS += guicore_global.h \
            project/util/selectionhelpert_impl.h \
            project/util/viewhelpert.h \
            project/util/viewhelpert_detail.h \
+           scalarstocolors/private/colormapenumeratelegendsettingcontainer_imagebuilder.h \
+           scalarstocolors/private/colormapenumeratesettingeditwidget_colortablecontroller.h \
+           scalarstocolors/private/colormapenumeratesettingeditwidget_colortablecontroller_delegate.h \
+           scalarstocolors/private/colormaplegendsettingcontainer_imagebuilder.h \
+           scalarstocolors/private/colormapsettingeditwidget_colortablecontroller.h \
+           scalarstocolors/private/colormapsettingeditwidget_colortablecontroller_delegate.h \
+           scalarstocolors/private/colormapsettingeditwidget_switchtodiscretedialog.h \
+           scalarstocolors/private/colormapsettingeditwidget_switchtodiscretedialog_delegate.h \
            solverdef/private/enumloadert_detail.h \
            solverdef/private/solverdefinition_impl.h \
            solverdef/private/solverdefinitionabstract_impl.h \
@@ -440,6 +487,7 @@ HEADERS += guicore_global.h \
            solverdef/private/solverdefinitiongridattributet_detail.h \
            solverdef/private/solverdefinitiongridcomplexattribute_impl.h \
            solverdef/private/solverdefinitiongridtype_impl.h \
+           solverdef/private/solverdefinitionoutput_impl.h \
            solverdef/private/solverdefinitiontranslator_impl.h \
            tmsimage/private/tmsimagegroupdataitem_impl.h \
            tmsimage/private/tmsimagesetting_impl.h \
@@ -524,6 +572,7 @@ HEADERS += guicore_global.h \
            project/inputcond/private/inputconditiondependencyconditionnot.h \
            project/inputcond/private/inputconditiondependencyconditionor.h \
            project/inputcond/private/inputconditiondependencysetsubcaptionaction.h \
+           project/inputcond/private/inputconditiondependencysetsubenumerationsaction.h \
            project/inputcond/private/inputconditiondependencysetsubimageaction.h \
            project/inputcond/private/inputconditionwidgetcgnsbaseiterativeintegerresult.h \
            project/inputcond/private/inputconditionwidgetcgnsbaseiterativerealresult.h \
@@ -561,7 +610,17 @@ HEADERS += guicore_global.h \
            pre/gridcond/base/private/gridattributeeditwidgett_detail.h \
            pre/gridcond/base/private/gridattributenodecontainert_detail.h \
            pre/gridcond/base/private/gridattributevariationeditwidgett_detail.h
-FORMS += datamodel/propertybrowserview.ui \
+FORMS += arrows/arrowscolorsettingeditwidget.ui \
+         arrows/arrowscolorsettingeditsmallwidget.ui \
+         arrows/arrowslegendsettingeditwidget.ui \
+         arrows/arrowslengthsettingeditwidget.ui \
+         arrows/arrowssettingeditwidget.ui \
+         arrows/arrowsshapesettingeditwidget.ui \
+         datamodel/propertybrowserview.ui \
+         filter/generalfilteringsettingeditwidget.ui \
+         filter/structured2dfilteringsettingeditwidget.ui \
+         filter/structured3dfilteringsettingeditwidget.ui \
+         image/imagesettingwidget.ui \
          misc/mousepositionwidget.ui \
          post/postzoneselectingdialog.ui \
          postcontainer/postbaseselectingdialog.ui \
@@ -575,17 +634,19 @@ FORMS += datamodel/propertybrowserview.ui \
          project/backgroundimageinfogeoreferencedialog.ui \
          project/offsetsettingdialog.ui \
          project/projecttimesettingdialog.ui \
-         scalarstocolors/colortransferfunctioneditwidget.ui \
-         scalarstocolors/lookuptableeditwidget.ui \
-         scalarstocolors/scalarstocolorseditdialog.ui \
+         region/region2dsettingeditwidget.ui \
+         scalarstocolors/colormapenumeratelegendsettingeditwidget.ui \
+         scalarstocolors/colormapenumeratesettingeditwidget.ui \
+         scalarstocolors/colormaplegendsettingeditwidget.ui \
+         scalarstocolors/colormapsettingeditdialog.ui \
+         scalarstocolors/colormapsettingeditwidget.ui \
          pre/complex/gridcomplexconditiondialog.ui \
          pre/complex/gridcomplexconditiongroupeditdialog.ui \
          pre/complex/gridcomplexconditiongrouprealeditwidget.ui \
          pre/complex/gridcomplexconditionwidget.ui \
          pre/geodatabackground/geodatabackgroundeditdialog.ui \
-         pre/gridcond/gridcellattributepropertydialog.ui \
-         pre/gridcond/gridnodeattributepropertydialog.ui \
          project/inputcond/inputconditiondialog.ui \
+         scalarstocolors/private/colormapsettingeditwidget_switchtodiscretedialog.ui \
          pre/gridcond/base/gridattributeeditdialog.ui \
          pre/gridcond/base/gridattributeeditnameandvaluedialog.ui \
          pre/gridcond/base/gridattributevariationeditdialog.ui \
@@ -594,7 +655,15 @@ FORMS += datamodel/propertybrowserview.ui \
          project/inputcond/private/inputconditionwidgetcgnsfile.ui \
          project/inputcond/private/inputconditionwidgetfunctionaldialog.ui \
          project/inputcond/private/inputconditionwidgetfunctionaldownloaddialog.ui
-SOURCES += base/iricmainwindowinterface.cpp \
+SOURCES += arrows/arrowscolorsettingeditwidget.cpp \
+           arrows/arrowscolorsettingeditsmallwidget.cpp \
+           arrows/arrowslegendsettingcontainer.cpp \
+           arrows/arrowslegendsettingeditwidget.cpp \
+           arrows/arrowslengthsettingeditwidget.cpp \
+           arrows/arrowssettingcontainer.cpp \
+           arrows/arrowssettingeditwidget.cpp \
+           arrows/arrowsshapesettingeditwidget.cpp \
+           base/iricmainwindowinterface.cpp \
            base/propertybrowser.cpp \
            base/snapshotenabledwindowinterface.cpp \
            base/windowwithzindexinterface.cpp \
@@ -616,10 +685,22 @@ SOURCES += base/iricmainwindowinterface.cpp \
            datamodel/vtk3dgraphicsview.cpp \
            datamodel/vtkgraphicsview.cpp \
            executer/iricmainwindowexecuterwatcher.cpp \
+           filter/generalfilteringsettingcontainer.cpp \
+           filter/generalfilteringsettingeditwidget.cpp \
+           filter/structured2dfilteringsettingcontainer.cpp \
+           filter/structured2dfilteringsettingeditwidget.cpp \
+           filter/structured3dfilteringsettingcontainer.cpp \
+           filter/structured3dfilteringsettingeditwidget.cpp \
+           image/imagesettingcontainer.cpp \
+           image/imagesettingwidget.cpp \
            misc/cgnsutil.cpp \
            misc/iricmetadata.cpp \
            misc/mouseboundingbox.cpp \
            misc/mousepositionwidget.cpp \
+           misc/valuerangecontainer.cpp \
+           misc/valuerangecontainerutil.cpp \
+           misc/vtkpointsetandvaluerangeset.cpp \
+           misc/vtkpointsetvaluerangeset.cpp \
            named/namedgraphicswindowdataitemtool.cpp \
            named/namedgraphicwindowdataitem.cpp \
            post/postprocessorwindow.cpp \
@@ -660,10 +741,7 @@ SOURCES += base/iricmainwindowinterface.cpp \
            project/colorsource.cpp \
            project/gcptablemodel.cpp \
            project/georeferenceview.cpp \
-           project/inputcond/private/inputconditiondependencysetsubenumerationsaction.cpp \
            project/offsetsettingdialog.cpp \
-           project/private/backgroundimageinfo_impl.cpp \
-           project/private/backgroundimageinfo_setting.cpp \
            project/projectcgnsfile.cpp \
            project/projectdata.cpp \
            project/projectdataitem.cpp \
@@ -672,16 +750,24 @@ SOURCES += base/iricmainwindowinterface.cpp \
            project/projecttimesettingdialog.cpp \
            project/projectworkspace.cpp \
            project/workfolderinfo.cpp \
-           scalarstocolors/colortransferfunctioncontainer.cpp \
-           scalarstocolors/colortransferfunctioneditdialog.cpp \
-           scalarstocolors/colortransferfunctioneditwidget.cpp \
-           scalarstocolors/lookuptablecontainer.cpp \
-           scalarstocolors/lookuptableeditwidget.cpp \
-           scalarstocolors/scalarstocolorscontainer.cpp \
-           scalarstocolors/scalarstocolorscontainerutil.cpp \
-           scalarstocolors/scalarstocolorseditdialog.cpp \
-           scalarstocolors/scalarstocolorseditwidget.cpp \
-           scalarstocolors/scalarstocolorseditwidgetcontainer.cpp \
+           region/region2dsettingcontainer.cpp \
+           region/region2dsettingeditwidget.cpp \
+           scalarstocolors/colormapenumeratefactory.cpp \
+           scalarstocolors/colormapenumeratelegendsettingcontainer.cpp \
+           scalarstocolors/colormapenumeratelegendsettingeditwidget.cpp \
+           scalarstocolors/colormapenumeratesettingcontainer.cpp \
+           scalarstocolors/colormapenumeratesettingeditwidget.cpp \
+           scalarstocolors/colormapfactory.cpp \
+           scalarstocolors/colormaplegendsettingcontainer.cpp \
+           scalarstocolors/colormaplegendsettingeditwidget.cpp \
+           scalarstocolors/colormapsettingcontainer.cpp \
+           scalarstocolors/colormapsettingcontaineri.cpp \
+           scalarstocolors/colormapsettingcontainerutil.cpp \
+           scalarstocolors/colormapsettingeditdialog.cpp \
+           scalarstocolors/colormapsettingeditwidget.cpp \
+           scalarstocolors/colormapsettingeditwidgeti.cpp \
+           scalarstocolors/colormapsettingvaluecolorpaircontainer.cpp \
+           scalarstocolors/discretevaluesutil.cpp \
            solverdef/integerenumloader.cpp \
            solverdef/realenumloader.cpp \
            solverdef/solverdefinition.cpp \
@@ -705,12 +791,15 @@ SOURCES += base/iricmainwindowinterface.cpp \
            solverdef/solverdefinitiongridcomplexattribute.cpp \
            solverdef/solverdefinitiongridtype.cpp \
            solverdef/solverdefinitionnode.cpp \
+           solverdef/solverdefinitionoutput.cpp \
            solverdef/solverdefinitiontranslator.cpp \
            tmsimage/tmsimagedataitem.cpp \
            tmsimage/tmsimagegroupdataitem.cpp \
            tmsimage/tmsimagesetting.cpp \
            tmsimage/tmsimagesettingmanager.cpp \
            tmsimage/tmsregionselectwidget.cpp \
+           arrows/private/arrowslegendsettingcontainer_imagebuilder.cpp \
+           arrows/private/arrowssettingeditwidget_modifycommand.cpp \
            bgcolor/private/backgroundcoloreditinterface_setbackgroundcolorcommand.cpp \
            datamodel/private/graphicswindowdataitem_modifycommand.cpp \
            datamodel/private/graphicswindowdataitem_rendercommand.cpp \
@@ -718,6 +807,11 @@ SOURCES += base/iricmainwindowinterface.cpp \
            datamodel/private/graphicswindowdataitem_standarditemmodifycommand.cpp \
            datamodel/private/graphicswindowrootdataitem_movedowncommand.cpp \
            datamodel/private/graphicswindowrootdataitem_moveupcommand.cpp \
+           image/private/imagesettingcontainer_movecommand.cpp \
+           image/private/imagesettingcontainer_resizecommand.cpp \
+           image/private/imagesettingcontainer_updatecommand.cpp \
+           image/public/imagesettingcontainer_controller.cpp \
+           image/public/imagesettingcontainer_imagebuilder.cpp \
            misc/targeted/targeteditemsettargetcommand.cpp \
            misc/targeted/targeteditemsettargetcommandtool.cpp \
            postcontainer/exporter/postzonedatacsvexporter.cpp \
@@ -767,8 +861,6 @@ SOURCES += base/iricmainwindowinterface.cpp \
            pre/grid/structured15dgridwithcrosssection.cpp \
            pre/grid/structured2dgrid.cpp \
            pre/grid/unstructured2dgrid.cpp \
-           pre/gridcond/gridcellattributepropertydialog.cpp \
-           pre/gridcond/gridnodeattributepropertydialog.cpp \
            pre/gridcreatingcondition/gridcreatingcondition.cpp \
            pre/gridcreatingcondition/gridcreatingconditioncreator.cpp \
            pre/gridcreatingcondition/gridcreatingconditionio.cpp \
@@ -794,7 +886,9 @@ SOURCES += base/iricmainwindowinterface.cpp \
            project/measured/measureddata.cpp \
            project/measured/measureddatacsvexporter.cpp \
            project/measured/measureddatacsvimporter.cpp \
+           project/private/backgroundimageinfo_impl.cpp \
            project/private/backgroundimageinfo_setactorpropertycommand.cpp \
+           project/private/backgroundimageinfo_setting.cpp \
            project/private/backgroundimageinfogeoreferencedialog_styleditemdelegate.cpp \
            project/private/georeferenceview_imageinfo.cpp \
            project/private/projectdatacopythread.cpp \
@@ -813,6 +907,14 @@ SOURCES += base/iricmainwindowinterface.cpp \
            project/util/polygongeoreferenceviewhelper.cpp \
            project/util/rectgeoreferenceviewhelper.cpp \
            project/util/selectionhelper.cpp \
+           scalarstocolors/private/colormapenumeratelegendsettingcontainer_imagebuilder.cpp \
+           scalarstocolors/private/colormapenumeratesettingeditwidget_colortablecontroller.cpp \
+           scalarstocolors/private/colormapenumeratesettingeditwidget_colortablecontroller_delegate.cpp \
+           scalarstocolors/private/colormaplegendsettingcontainer_imagebuilder.cpp \
+           scalarstocolors/private/colormapsettingeditwidget_colortablecontroller.cpp \
+           scalarstocolors/private/colormapsettingeditwidget_colortablecontroller_delegate.cpp \
+           scalarstocolors/private/colormapsettingeditwidget_switchtodiscretedialog.cpp \
+           scalarstocolors/private/colormapsettingeditwidget_switchtodiscretedialog_delegate.cpp \
            pre/geodatabackground/private/geodatabackground_editvaluecommand.cpp \
            pre/grid/structured15dgrid/structured15dgridwithcrosssectioncrosssection.cpp \
            pre/gridcond/base/gridattributebaseobject.cpp \
@@ -859,6 +961,7 @@ SOURCES += base/iricmainwindowinterface.cpp \
            project/inputcond/private/inputconditiondependencyconditionnot.cpp \
            project/inputcond/private/inputconditiondependencyconditionor.cpp \
            project/inputcond/private/inputconditiondependencysetsubcaptionaction.cpp \
+           project/inputcond/private/inputconditiondependencysetsubenumerationsaction.cpp \
            project/inputcond/private/inputconditiondependencysetsubimageaction.cpp \
            project/inputcond/private/inputconditionwidgetcgnsbaseiterativeintegerresult.cpp \
            project/inputcond/private/inputconditionwidgetcgnsbaseiterativerealresult.cpp \

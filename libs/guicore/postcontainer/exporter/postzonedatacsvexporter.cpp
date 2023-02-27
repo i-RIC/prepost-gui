@@ -56,14 +56,14 @@ void exportStructuredGrid(PostZoneDataContainer* c, QTextStream& stream, vtkStru
 		QString name = cData->GetArrayName(i);
 		outputHeaders(name, comps, &(dim[0]), stream);
 	}
-	vtkPointData* ifData = c->ifacedata()->GetPointData();
+	vtkPointData* ifData = c->iFaceData()->data()->GetPointData();
 	for (int i = 0; i < ifData->GetNumberOfArrays(); ++i){
 		vtkDataArray* array = ifData->GetArray(i);
 		int comps = array->GetNumberOfComponents();
 		QString name = ifData->GetArrayName(i);
 		outputHeaders(name, comps, &(dim[0]), stream);
 	}
-	vtkPointData* jfData = c->jfacedata()->GetPointData();
+	vtkPointData* jfData = c->jFaceData()->data()->GetPointData();
 	for (int i = 0; i < jfData->GetNumberOfArrays(); ++i){
 		vtkDataArray* array = jfData->GetArray(i);
 		int comps = array->GetNumberOfComponents();
@@ -296,9 +296,9 @@ bool PostZoneDataCsvExporter::exportToFile(PostZoneDataContainer* c, const QStri
 	stream.setRealNumberPrecision(12);
 	stream << "iRIC output t = " << time << "\r\n";
 
-	vtkPointSet* ps = c->data();
-	vtkStructuredGrid* sgrid = vtkStructuredGrid::SafeDownCast(ps);
-	vtkUnstructuredGrid* ugrid = vtkUnstructuredGrid::SafeDownCast(ps);
+	vtkPointSet* ps = c->data()->data();
+	auto sgrid = vtkStructuredGrid::SafeDownCast(ps);
+	auto ugrid = vtkUnstructuredGrid::SafeDownCast(ps);
 	if (sgrid != 0){
 		vtkSmartPointer<vtkStructuredGrid> copy;
 		vtkStructuredGrid* grid = applyOffset<vtkStructuredGrid>(sgrid, copy, offset);

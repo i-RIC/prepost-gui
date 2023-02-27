@@ -6,6 +6,7 @@
 #include "geodatapointmapinterpolatepointsdialog.h"
 #include "geodatapointmapmergesettingdialog.h"
 #include "geodatapointmaprepresentationdialog.h"
+#include "private/geodatapointmap_impl.h"
 #include "private/geodatapointmap_addpointscommand.h"
 #include "private/geodatapointmap_breaklineaddcommand.h"
 #include "private/geodatapointmap_breaklineaddpointcommand.h"
@@ -29,7 +30,7 @@
 #include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
 #include <guicore/pre/base/preprocessorwindowinterface.h>
 #include <guicore/project/projectdata.h>
-#include <guicore/scalarstocolors/scalarstocolorscontainer.h>
+#include <guicore/scalarstocolors/colormapsettingcontaineri.h>
 #include <misc/informationdialog.h>
 #include <misc/iricundostack.h>
 #include <misc/keyboardsupport.h>
@@ -56,13 +57,13 @@
 #include <QToolBar>
 #include <QUndoCommand>
 #include <QVector2D>
-#include <QVector3D>
 #include <QXmlStreamWriter>
 
 #include <vtkCellArray.h>
 #include <vtkDoubleArray.h>
 #include <vtkIntArray.h>
 #include <vtkLODActor.h>
+#include <vtkMapperCollection.h>
 #include <vtkPointData.h>
 #include <vtkPoints.h>
 #include <vtkPolyDataReader.h>
@@ -106,24 +107,11 @@ GeoDataPointmap::GeoDataPointmap(ProjectDataItem* d, GeoDataCreator* creator, So
 	m_qTree {nullptr},
 	m_opacityPercent {50},
 	m_representation {GeoDataPointmapRepresentationDialog::Points},
-	m_addPixmap {":/libs/guibase/images/cursorAdd.png"},
-	m_addCursor {m_addPixmap, 0, 0},
-	m_removePixmap {":/libs/guibase/images/cursorRemove.png"},
-	m_removeCursor {m_removePixmap, 0, 0},
-	m_interpPointAddPixmap {":/libs/guibase/images/cursorAdd.png"},
-	m_interpPointAddCursor {m_interpPointAddPixmap, 0, 0},
-	m_interpPointCtrlAddPixmap {":/images/cursorCtrlAdd.png"},
-	m_interpPointCtrlAddCursor {m_interpPointCtrlAddPixmap, 0, 0},
 	lastInterpPointKnown {false},
 	doubleclick {false},
-	m_longEdgeRemover {nullptr}
+	m_longEdgeRemover {nullptr},
+	impl {new Impl {this}}
 {
-	m_vtkGrid = vtkSmartPointer<vtkPolyData>::New();
-	vtkPoints* points = vtkPoints::New();
-	points->SetDataTypeToDouble();
-	m_vtkGrid->SetPoints(points);
-	points->Delete();
-
 	m_selectedVerticesGrid = vtkSmartPointer<vtkPolyData>::New();
 	vtkPoints* points2 = vtkPoints::New();
 	points2->SetDataTypeToDouble();
@@ -134,9 +122,9 @@ GeoDataPointmap::GeoDataPointmap(ProjectDataItem* d, GeoDataCreator* creator, So
 	m_vtkDelaunayedPolyData->Initialize();
 
 	m_vtkPointLocator = vtkSmartPointer<vtkPointLocator>::New();
-	m_vtkPointLocator->SetDataSet(m_vtkGrid);
+	m_vtkPointLocator->SetDataSet(impl->m_pointsManager.points());
 
-	setupActions();
+	impl->setupActions();
 
 	m_activeBreakLine = 0;
 	selectionModePoint(true);
@@ -153,8 +141,8 @@ GeoDataPointmap::~GeoDataPointmap()
 	}
 
 	vtkRenderer* r = renderer();
-	r->RemoveActor(m_pointsActor);
-	r->RemoveActor(m_actor);
+	r->RemoveActor(impl->m_pointsManager.pointsActor());
+	r->RemoveActor(impl->m_pointsManager.delaunayedTrianglesActor());
 	r->RemoveActor(m_selectionPolygonController.linesActor());
 	r->RemoveActor(m_selectedActor);
 
@@ -166,7 +154,7 @@ GeoDataPointmap::~GeoDataPointmap()
 
 vtkPolyData* GeoDataPointmap::vtkGrid() const
 {
-	return m_vtkGrid;
+	return impl->m_pointsManager.points();
 }
 
 vtkPolyData* GeoDataPointmap::delaunayedPolyData() const
@@ -205,11 +193,11 @@ void GeoDataPointmap::loadExternalData(const QString& filename)
 			da = realDa;
 		}
 
-		m_vtkGrid->Initialize();
-		m_vtkGrid->SetPoints(points);
-		m_vtkGrid->GetPointData()->AddArray(da);
-		m_vtkGrid->GetPointData()->SetActiveScalars(VALUES);
-		m_vtkGrid->GetPointData()->Modified();
+		impl->m_pointsManager.points()->Initialize();
+		impl->m_pointsManager.points()->SetPoints(points);
+		impl->m_pointsManager.points()->GetPointData()->AddArray(da);
+		impl->m_pointsManager.points()->GetPointData()->SetActiveScalars(VALUES);
+		impl->m_pointsManager.points()->GetPointData()->Modified();
 
 		vtkIdType pts[3];
 		vtkCellArray* ca = vtkCellArray::New();
@@ -219,9 +207,9 @@ void GeoDataPointmap::loadExternalData(const QString& filename)
 			ca->InsertNextCell(1, pts);
 		}
 
-		m_vtkGrid->SetVerts(ca);
-		m_vtkGrid->BuildCells();
-		m_vtkGrid->Modified();
+		impl->m_pointsManager.points()->SetVerts(ca);
+		impl->m_pointsManager.points()->BuildCells();
+		impl->m_pointsManager.points()->Modified();
 
 		ca->Delete();
 
@@ -279,16 +267,16 @@ void GeoDataPointmap::loadExternalData(const QString& filename)
 			reader->SetFileName(iRIC::toStr(filename).c_str());
 			reader->Update();
 			vtkUnstructuredGrid* grid = reader->GetOutput();
-			m_vtkGrid->SetPoints(grid->GetPoints());
-			m_vtkGrid->GetPointData()->AddArray(grid->GetPointData()->GetArray(VALUES));
-			m_vtkGrid->GetPointData()->SetActiveScalars(VALUES);
+			impl->m_pointsManager.points()->SetPoints(grid->GetPoints());
+			impl->m_pointsManager.points()->GetPointData()->AddArray(grid->GetPointData()->GetArray(VALUES));
+			impl->m_pointsManager.points()->GetPointData()->SetActiveScalars(VALUES);
 
 			vtkCellArray* cells = vtkCellArray::New();
 			for (vtkIdType i = 0; i < grid->GetNumberOfCells(); ++i) {
 				vtkCell* cell = grid->GetCell(i);
 				cells->InsertNextCell(cell->GetPointIds());
 			}
-			m_vtkGrid->SetVerts(cells);
+			impl->m_pointsManager.points()->SetVerts(cells);
 			cells->Delete();
 			reader->Delete();
 		} else {
@@ -296,10 +284,10 @@ void GeoDataPointmap::loadExternalData(const QString& filename)
 			vtkPolyDataReader* reader = vtkPolyDataReader::New();
 			reader->SetFileName(iRIC::toStr(vtkFilename).c_str());
 			reader->Update();
-			m_vtkGrid->DeepCopy(reader->GetOutput());
+			impl->m_pointsManager.points()->DeepCopy(reader->GetOutput());
 			reader->Delete();
 		}
-		m_vtkGrid->Modified();
+		impl->m_pointsManager.points()->Modified();
 
 		// load delaunayed poly data.
 		QString delFilename = finfo.absolutePath().append(QString("/%1_del.vtk").arg(finfo.baseName()));
@@ -516,10 +504,10 @@ bool GeoDataPointmap::doDelaunay(bool allowCancel)
 			prevIndex = currIndex;
 		}
 	}
-	in.pointlist = new double[m_vtkGrid->GetPoints()->GetNumberOfPoints() * 2];
+	in.pointlist = new double[impl->m_pointsManager.points()->GetPoints()->GetNumberOfPoints() * 2];
 	in.pointattributelist = nullptr;
 	in.pointmarkerlist = nullptr;
-	in.numberofpoints = m_vtkGrid->GetPoints()->GetNumberOfPoints();
+	in.numberofpoints = impl->m_pointsManager.points()->GetPoints()->GetNumberOfPoints();
 	in.numberofpointattributes = 0;
 
 	in.trianglelist = nullptr;
@@ -550,9 +538,9 @@ bool GeoDataPointmap::doDelaunay(bool allowCancel)
 	in.normlist = nullptr;
 	in.numberofedges = 0;
 
-	for (vtkIdType i = 0; i < m_vtkGrid->GetPoints()->GetNumberOfPoints(); ++i) {
+	for (vtkIdType i = 0; i < impl->m_pointsManager.points()->GetPoints()->GetNumberOfPoints(); ++i) {
 		double v[3];
-		m_vtkGrid->GetPoints()->GetPoint(i, v);
+		impl->m_pointsManager.points()->GetPoints()->GetPoint(i, v);
 		*(in.pointlist + i * 2)     = v[0];
 		*(in.pointlist + i * 2 + 1) = v[1];
 	}
@@ -661,7 +649,7 @@ bool GeoDataPointmap::doDelaunay(bool allowCancel)
 		time.restart();
 		m_vtkDelaunayedPolyData->Reset();
 		m_vtkDelaunayedPolyData->Allocate(out.numberoftriangles);
-		m_vtkDelaunayedPolyData->SetPoints(m_vtkGrid->GetPoints());
+		m_vtkDelaunayedPolyData->SetPoints(impl->m_pointsManager.points()->GetPoints());
 		qDebug("m_vtkDelaunayedPolyData Memory preparing:%d", time.elapsed());
 		time.restart();
 		vtkSmartPointer<vtkCellArray> ca = vtkSmartPointer<vtkCellArray>::New();
@@ -676,7 +664,7 @@ bool GeoDataPointmap::doDelaunay(bool allowCancel)
 		qDebug("m_vtkDelaunayedPolyData InsertingCells:%d", time.elapsed());
 		time.restart();
 		m_vtkDelaunayedPolyData->GetPointData()->Initialize();
-		m_vtkDelaunayedPolyData->GetPointData()->AddArray(m_vtkGrid->GetPointData()->GetArray(VALUES));
+		m_vtkDelaunayedPolyData->GetPointData()->AddArray(impl->m_pointsManager.points()->GetPointData()->GetArray(VALUES));
 		m_vtkDelaunayedPolyData->GetPointData()->SetActiveScalars(VALUES);
 		m_vtkDelaunayedPolyData->Modified();
 		m_vtkDelaunayedPolyData->GetPointData()->Modified();
@@ -684,8 +672,6 @@ bool GeoDataPointmap::doDelaunay(bool allowCancel)
 		qDebug("m_vtkDelaunayedPolyData Preparing Memory:%d", time.elapsed());
 		time.restart();
 		qDebug("m_vtkDelaunayedPolyData Building Links:%d", time.elapsed());
-
-		m_vtkMapper->SetInputData(m_vtkDelaunayedPolyData);
 
 		clearPointsSelection();
 
@@ -706,99 +692,27 @@ bool GeoDataPointmap::doDelaunay(bool allowCancel)
 
 void GeoDataPointmap::buildGridFromPolydata()
 {
-	m_vtkGrid->Reset();
-	m_vtkGrid->SetPoints(m_vtkDelaunayedPolyData->GetPoints());
-	m_vtkGrid->GetPointData()->Reset();
-	m_vtkGrid->GetPointData()->AddArray(m_vtkDelaunayedPolyData->GetPointData()->GetArray(VALUES));
-	m_vtkGrid->GetPointData()->SetActiveScalars(VALUES);
+	impl->m_pointsManager.points()->Reset();
+	impl->m_pointsManager.points()->SetPoints(m_vtkDelaunayedPolyData->GetPoints());
+	impl->m_pointsManager.points()->GetPointData()->Reset();
+	impl->m_pointsManager.points()->GetPointData()->AddArray(m_vtkDelaunayedPolyData->GetPointData()->GetArray(VALUES));
+	impl->m_pointsManager.points()->GetPointData()->SetActiveScalars(VALUES);
 	vtkSmartPointer<vtkCellArray> ca = vtkSmartPointer<vtkCellArray>::New();
-	m_vtkGrid->SetVerts(ca);
-	for (int i = 0; i < m_vtkGrid->GetPoints()->GetNumberOfPoints(); ++i) {
+	impl->m_pointsManager.points()->SetVerts(ca);
+	for (int i = 0; i < impl->m_pointsManager.points()->GetPoints()->GetNumberOfPoints(); ++i) {
 		vtkSmartPointer<vtkVertex> vertex = vtkSmartPointer<vtkVertex>::New();
 		vertex->GetPointIds()->SetId(0, i);
-		m_vtkGrid->InsertNextCell(vertex->GetCellType(), vertex->GetPointIds());
+		impl->m_pointsManager.points()->InsertNextCell(vertex->GetCellType(), vertex->GetPointIds());
 	}
-	m_vtkGrid->BuildCells();
-	m_vtkGrid->Modified();
+	impl->m_pointsManager.points()->BuildCells();
+	impl->m_pointsManager.points()->Modified();
 }
 
 void GeoDataPointmap::setupActors()
 {
-	if (m_vtkMapper.Get() != nullptr) {
-		// already setup.
-		return;
-	}
+	auto v = dataModel()->graphicsView();
 
-	m_vtkMapper = vtkSmartPointer<vtkPolyDataMapper>::New();
-	m_vtkMapper->SetLookupTable(scalarsToColorsContainer()->vtkObj());
-	m_vtkMapper->SetUseLookupTableScalarRange(true);
-	m_vtkMapper->SetScalarVisibility(true);
-#if (VTK_MAJOR_VERSION == 6) && (VTK_MINOR_VERSION == 1)
-	m_vtkMapper->ImmediateModeRenderingOn();
-#endif
-
-	m_actor = vtkSmartPointer<vtkLODActor>::New();
-	vtkProperty* p = m_actor->GetProperty();
-	p->SetRepresentationToPoints();
-	p->SetLighting(false);
-	m_actor->SetMapper(m_vtkMapper);
-	m_actor->VisibilityOff();
-
-	m_pointsMapper = vtkSmartPointer<vtkPolyDataMapper>::New();
-	m_pointsMapper->SetLookupTable(scalarsToColorsContainer()->vtkObj());
-	m_pointsMapper->SetUseLookupTableScalarRange(true);
-	m_pointsMapper->SetScalarVisibility(true);
-	m_pointsMapper->SetScalarModeToUsePointData();
-#if (VTK_MAJOR_VERSION == 6) && (VTK_MINOR_VERSION == 1)
-	m_pointsMapper->ImmediateModeRenderingOn();
-#endif
-
-	m_pointsActor = vtkSmartPointer<vtkLODActor>::New();
-	p = m_pointsActor->GetProperty();
-	p->SetPointSize(m_pointSize);
-	p->SetRepresentationToPoints();
-	p->SetLighting(false);
-
-	m_pointsActor->SetMapper(m_pointsMapper);
-	m_actor->AddLODMapper(m_pointsMapper);
-
-	m_maskPoints10k = vtkSmartPointer<vtkMaskPoints>::New();
-	m_maskPoints10k->RandomModeOn();
-	m_maskPoints10k->SetMaximumNumberOfPoints(10000);
-	m_maskPoints10k->GenerateVerticesOn();
-	m_maskPoints10k->SetInputData(m_vtkGrid);
-
-	m_maskPoints40k = vtkSmartPointer<vtkMaskPoints>::New();
-	m_maskPoints40k->RandomModeOn();
-	m_maskPoints40k->SetMaximumNumberOfPoints(40000);
-	m_maskPoints40k->GenerateVerticesOn();
-	m_maskPoints40k->SetInputData(m_vtkGrid);
-
-	m_maskPoints10kMapper = vtkSmartPointer<vtkPolyDataMapper>::New();
-	m_maskPoints10kMapper->SetInputConnection(m_maskPoints10k->GetOutputPort());
-#if (VTK_MAJOR_VERSION == 6) && (VTK_MINOR_VERSION == 1)
-	m_maskPoints10kMapper->ImmediateModeRenderingOn();
-#endif
-	m_maskPoints10kMapper->SetLookupTable(scalarsToColorsContainer()->vtkObj());
-	m_maskPoints10kMapper->SetUseLookupTableScalarRange(true);
-	m_maskPoints10kMapper->SetScalarVisibility(true);
-	m_maskPoints10kMapper->SetScalarModeToUsePointData();
-
-	m_maskPoints40kMapper = vtkSmartPointer<vtkPolyDataMapper>::New();
-	m_maskPoints40kMapper->SetInputConnection(m_maskPoints40k->GetOutputPort());
-#if (VTK_MAJOR_VERSION == 6) && (VTK_MINOR_VERSION == 1)
-	m_maskPoints40kMapper->ImmediateModeRenderingOn();
-#endif
-	m_maskPoints40kMapper->SetLookupTable(scalarsToColorsContainer()->vtkObj());
-	m_maskPoints40kMapper->SetUseLookupTableScalarRange(true);
-	m_maskPoints40kMapper->SetScalarVisibility(true);
-	m_maskPoints40kMapper->SetScalarModeToUsePointData();
-
-	m_pointsActor->AddLODMapper(m_maskPoints40kMapper);
-	m_pointsActor->AddLODMapper(m_maskPoints10kMapper);
-
-	m_actor->AddLODMapper(m_maskPoints40kMapper);
-	m_actor->AddLODMapper(m_maskPoints10kMapper);
+	impl->m_pointsManager.delaunayedTrianglesActor()->VisibilityOff();
 
 	m_selectedMapper = vtkSmartPointer<vtkPolyDataMapper>::New();
 	m_selectedMapper->SetScalarVisibility(false);
@@ -808,7 +722,7 @@ void GeoDataPointmap::setupActors()
 #endif
 
 	m_selectedActor = vtkSmartPointer<vtkActor>::New();
-	m_selectedActor->GetProperty()->SetPointSize(9.);
+	m_selectedActor->GetProperty()->SetPointSize(9 * v->devicePixelRatioF());
 	m_selectedActor->GetProperty()->SetLighting(false);
 	m_selectedActor->GetProperty()->SetColor(0, 0, 0);
 	m_selectedActor->SetMapper(m_selectedMapper);
@@ -817,12 +731,12 @@ void GeoDataPointmap::setupActors()
 
 	m_selectedActor->VisibilityOn();
 
-	m_interpolatePointsController.pointsActor()->GetProperty()->SetPointSize(7);
-	m_selectionPolygonController.linesActor()->GetProperty()->SetLineWidth(2);
+	m_interpolatePointsController.pointsActor()->GetProperty()->SetPointSize(7 * v->devicePixelRatioF());
+	m_selectionPolygonController.linesActor()->GetProperty()->SetLineWidth(2 * v->devicePixelRatioF());
 
-	vtkRenderer* r = renderer();
-	r->AddActor(m_actor);
-	r->AddActor(m_pointsActor);
+	auto r = renderer();
+	r->AddActor(impl->m_pointsManager.delaunayedTrianglesActor());
+	r->AddActor(impl->m_pointsManager.pointsActor());
 	r->AddActor(m_selectionPolygonController.linesActor());
 	r->AddActor(m_interpolatePointsController.pointsActor());
 	r->AddActor(m_selectedActor);
@@ -839,88 +753,95 @@ void GeoDataPointmap::setupMenu()
 	m_menu->setTitle(tr("P&oint Cloud Data"));
 	m_menu->addAction(m_editNameAction);
 	m_menu->addSeparator();
-	m_menu->addAction(m_selectionModePolygon);
+	m_menu->addAction(impl->m_selectionModePolygon);
 	m_menu->addSeparator();
-	m_menu->addAction(m_editPointsAction);
-	m_menu->addAction(m_editPointsExportAction);
+	m_menu->addAction(impl->m_editPointsAction);
+	m_menu->addAction(impl->m_editPointsExportAction);
 	m_menu->addSeparator();
-	m_menu->addAction(m_addPointAction);
-	m_menu->addAction(m_interpolatePointAction);
+	m_menu->addAction(impl->m_addPointAction);
+	m_menu->addAction(impl->m_interpolatePointAction);
 	m_menu->addSeparator();
-	m_menu->addAction(m_editPointsDeleteAction);
-	m_menu->addAction(m_editPointsLessThanAction);
-	m_menu->addAction(m_editPointsGreaterThanAction);
+	m_menu->addAction(impl->m_editPointsDeleteAction);
+	m_menu->addAction(impl->m_editPointsLessThanAction);
+	m_menu->addAction(impl->m_editPointsGreaterThanAction);
 	m_menu->addSeparator();
-	m_menu->addAction(m_addBreakLineAction);
-	m_menu->addAction(m_removeBreakLineAction);
-	m_menu->addAction(m_removeAllBreakLinesAction);
+	m_menu->addAction(impl->m_addBreakLineAction);
+	m_menu->addAction(impl->m_removeBreakLineAction);
+	m_menu->addAction(impl->m_removeAllBreakLinesAction);
 	m_menu->addSeparator();
-	m_menu->addAction(m_remeshAction);
-	m_menu->addAction(m_removeTrianglesWithLongEdgeAction);
+	m_menu->addAction(impl->m_remeshAction);
+	m_menu->addAction(impl->m_removeTrianglesWithLongEdgeAction);
 	m_menu->addSeparator();
-	m_menu->addAction(m_mergeAction);
+	m_menu->addAction(impl->m_mergeAction);
 	m_menu->addSeparator();
-	m_menu->addAction(m_displaySettingAction);
+	m_menu->addAction(impl->m_displaySettingAction);
 	m_menu->addSeparator();
 	m_menu->addAction(deleteAction());
 
-	m_rightClickingMenu = new QMenu();
-	m_rightClickingMenu->addAction(m_selectionModePolygon);
-	m_rightClickingMenu->addSeparator();
-	m_rightClickingMenu->addAction(m_editPointsAction);
-	m_rightClickingMenu->addAction(m_editPointsExportAction);
-	m_rightClickingMenu->addSeparator();
-	m_rightClickingMenu->addAction(m_addPointAction);
-	m_rightClickingMenu->addAction(m_interpolatePointAction);
-	m_rightClickingMenu->addSeparator();
-	m_rightClickingMenu->addAction(m_editPointsDeleteAction);
-	m_rightClickingMenu->addAction(m_editPointsLessThanAction);
-	m_rightClickingMenu->addAction(m_editPointsGreaterThanAction);
-	m_rightClickingMenu->addSeparator();
-	m_rightClickingMenu->addAction(m_addBreakLineAction);
-	m_rightClickingMenu->addAction(m_removeBreakLineAction);
-	m_rightClickingMenu->addAction(m_removeAllBreakLinesAction);
-	m_rightClickingMenu->addSeparator();
-	m_rightClickingMenu->addAction(m_remeshAction);
-	m_rightClickingMenu->addAction(m_removeTrianglesWithLongEdgeAction);
-	m_rightClickingMenu->addSeparator();
-	m_rightClickingMenu->addAction(m_mergeAction);
-	m_rightClickingMenu->addSeparator();
-	m_rightClickingMenu->addAction(m_displaySettingAction);
-	m_rightClickingMenu->addSeparator();
-	m_rightClickingMenu->addAction(deleteAction());
+	impl->m_rightClickingMenu = new QMenu();
+	auto rMenu = impl->m_rightClickingMenu;
+
+	rMenu->addAction(impl->m_selectionModePolygon);
+	rMenu->addSeparator();
+	rMenu->addAction(impl->m_editPointsAction);
+	rMenu->addAction(impl->m_editPointsExportAction);
+	rMenu->addSeparator();
+	rMenu->addAction(impl->m_addPointAction);
+	rMenu->addAction(impl->m_interpolatePointAction);
+	rMenu->addSeparator();
+	rMenu->addAction(impl->m_editPointsDeleteAction);
+	rMenu->addAction(impl->m_editPointsLessThanAction);
+	rMenu->addAction(impl->m_editPointsGreaterThanAction);
+	rMenu->addSeparator();
+	rMenu->addAction(impl->m_addBreakLineAction);
+	rMenu->addAction(impl->m_removeBreakLineAction);
+	rMenu->addAction(impl->m_removeAllBreakLinesAction);
+	rMenu->addSeparator();
+	rMenu->addAction(impl->m_remeshAction);
+	rMenu->addAction(impl->m_removeTrianglesWithLongEdgeAction);
+	rMenu->addSeparator();
+	rMenu->addAction(impl->m_mergeAction);
+	rMenu->addSeparator();
+	rMenu->addAction(impl->m_displaySettingAction);
+	rMenu->addSeparator();
+	rMenu->addAction(deleteAction());
 }
 
 bool GeoDataPointmap::addToolBarButtons(QToolBar* tb)
 {
-	tb->addAction(m_selectionModePoint);
-	tb->addAction(m_selectionModePolygon);
+	tb->addAction(impl->m_selectionModePoint);
+	tb->addAction(impl->m_selectionModePolygon);
 	tb->addSeparator();
-	tb->addAction(m_addPointAction);
-	tb->addAction(m_interpolatePointAction);
+	tb->addAction(impl->m_addPointAction);
+	tb->addAction(impl->m_interpolatePointAction);
 	tb->addSeparator();
-	tb->addAction(m_addBreakLineAction);
-	tb->addAction(m_removeBreakLineAction);
+	tb->addAction(impl->m_addBreakLineAction);
+	tb->addAction(impl->m_removeBreakLineAction);
 	return true;
+}
+
+void GeoDataPointmap::applyColorMapSetting()
+{
+	updateActorSettings();
 }
 
 void GeoDataPointmap::setPoints(vtkPoints* points, vtkDataArray* values)
 {
-	m_vtkGrid->Reset();
-	m_vtkGrid->SetPoints(points);
+	impl->m_pointsManager.points()->Reset();
+	impl->m_pointsManager.points()->SetPoints(points);
 	vtkCellArray* vArr = vtkCellArray::New();
 	vArr->Allocate(points->GetNumberOfPoints());
 	for (vtkIdType i = 0; i < points->GetNumberOfPoints(); ++i) {
 		vtkIdType vertexId = i;
 		vArr->InsertNextCell(1, &vertexId);
 	}
-	m_vtkGrid->SetVerts(vArr);
-	m_vtkGrid->GetPointData()->Initialize();
+	impl->m_pointsManager.points()->SetVerts(vArr);
+	impl->m_pointsManager.points()->GetPointData()->Initialize();
 	values->SetName(VALUES);
-	m_vtkGrid->GetPointData()->AddArray(values);
-	m_vtkGrid->GetPointData()->SetActiveScalars(VALUES);
-	m_vtkGrid->Modified();
-	m_vtkGrid->GetPoints()->Modified();
+	impl->m_pointsManager.points()->GetPointData()->AddArray(values);
+	impl->m_pointsManager.points()->GetPointData()->SetActiveScalars(VALUES);
+	impl->m_pointsManager.points()->Modified();
+	impl->m_pointsManager.points()->GetPoints()->Modified();
 }
 
 void GeoDataPointmap::setSTLData(vtkPolyData* data, vtkDataArray* values)
@@ -961,14 +882,14 @@ void GeoDataPointmap::assignActorZValues(const ZDepthRange& range)
 		m_breakLines[i]->setZDepthRange(breakLineDepth, breakLineDepth);
 	}
 	if (m_representation == GeoDataPointmapRepresentationDialog::Points) {
-		m_pointsActor->SetPosition(0, 0,   0.5 * range.max() + 0.5 * range.min());
+		impl->m_pointsManager.pointsActor()->SetPosition(0, 0,   0.5 * range.max() + 0.5 * range.min());
 		m_selectedActor->SetPosition(0, 0, 0.3 * range.max() + 0.7 * range.min());
 	} else if (m_representation == GeoDataPointmapRepresentationDialog::Wireframe) {
 		m_selectedActor->SetPosition(0, 0, 0.5 * range.max() + 0.5 * range.min());
-		m_actor->SetPosition(0, 0,         0.3 * range.max() + 0.7 * range.min());
+		impl->m_pointsManager.delaunayedTrianglesActor()->SetPosition(0, 0,         0.3 * range.max() + 0.7 * range.min());
 	} else if (m_representation == GeoDataPointmapRepresentationDialog::Surface) {
 		m_selectedActor->SetPosition(0, 0, 0.5 * range.max() + 0.5 * range.min());
-		m_actor->SetPosition(0, 0,                                   range.min());
+		impl->m_pointsManager.delaunayedTrianglesActor()->SetPosition(0, 0,                                   range.min());
 	}
 }
 
@@ -1008,33 +929,66 @@ void GeoDataPointmap::handlePropertyDialogAccepted(QDialog* propDialog)
 
 void GeoDataPointmap::updateRepresentation()
 {
-	m_actor->VisibilityOff();
-	m_pointsActor->VisibilityOff();
-	actorCollection()->RemoveItem(m_actor);
-	actorCollection()->RemoveItem(m_pointsActor);
+	impl->m_pointsManager.delaunayedTrianglesActor()->VisibilityOff();
+	impl->m_pointsManager.pointsActor()->VisibilityOff();
+	actorCollection()->RemoveItem(impl->m_pointsManager.delaunayedTrianglesActor());
+	actorCollection()->RemoveItem(impl->m_pointsManager.pointsActor());
 
-	m_pointsActor->GetProperty()->SetPointSize(m_pointSize);
-	m_actor->GetProperty()->SetPointSize(m_pointSize);
+	impl->m_pointsManager.pointsActor()->GetProperty()->SetPointSize(m_pointSize);
+	impl->m_pointsManager.delaunayedTrianglesActor()->GetProperty()->SetPointSize(m_pointSize);
 	m_selectedActor->GetProperty()->SetPointSize(m_pointSize + 2);
+
+	impl->m_pointsManager.maskPoints10k()->Update();
+	impl->m_pointsManager.maskPoints40k()->Update();
+
+	auto cs = colorMapSettingContainer();
+	vtkMapper* mapper = nullptr;
+
 	switch (m_representation) {
 	case GeoDataPointmapRepresentationDialog::Points:
-		m_pointsMapper->SetInputData(m_vtkGrid);
-		actorCollection()->AddItem(m_pointsActor);
+		impl->m_pointsManager.pointsActor()->GetLODMappers()->RemoveAllItems();
+
+		mapper = cs->buildPointDataMapper(impl->m_pointsManager.points());
+		impl->m_pointsManager.pointsActor()->SetMapper(mapper);
+		mapper->Delete();
+
+		mapper = cs->buildPointDataMapper(impl->m_pointsManager.maskPoints10k()->GetOutput());
+		impl->m_pointsManager.pointsActor()->AddLODMapper(mapper);
+		mapper->Delete();
+
+		mapper = cs->buildPointDataMapper(impl->m_pointsManager.maskPoints40k()->GetOutput());
+		impl->m_pointsManager.pointsActor()->AddLODMapper(mapper);
+		mapper->Delete();
+
+		actorCollection()->AddItem(impl->m_pointsManager.pointsActor());
 		break;
 	case GeoDataPointmapRepresentationDialog::Surface:
-		m_vtkMapper->SetInputData(m_vtkDelaunayedPolyData);
-		m_actor->GetProperty()->SetRepresentationToSurface();
-		actorCollection()->AddItem(m_actor);
-		break;
 	case GeoDataPointmapRepresentationDialog::Wireframe:
-		m_vtkMapper->SetInputData(m_vtkDelaunayedPolyData);
-		m_actor->GetProperty()->SetRepresentationToWireframe();
-		actorCollection()->AddItem(m_actor);
+		impl->m_pointsManager.delaunayedTrianglesActor()->GetLODMappers()->RemoveAllItems();
+
+		mapper = cs->buildPointDataMapper(m_vtkDelaunayedPolyData);
+		impl->m_pointsManager.delaunayedTrianglesActor()->SetMapper(mapper);
+		mapper->Delete();
+
+		mapper = cs->buildPointDataMapper(impl->m_pointsManager.maskPoints10k()->GetOutput());
+		impl->m_pointsManager.delaunayedTrianglesActor()->AddLODMapper(mapper);
+		mapper->Delete();
+
+		mapper = cs->buildPointDataMapper(impl->m_pointsManager.maskPoints40k()->GetOutput());
+		impl->m_pointsManager.delaunayedTrianglesActor()->AddLODMapper(mapper);
+		mapper->Delete();
+
+		if (m_representation == GeoDataPointmapRepresentationDialog::Surface) {
+			impl->m_pointsManager.delaunayedTrianglesActor()->GetProperty()->SetRepresentationToSurface();
+		} else if (m_representation == GeoDataPointmapRepresentationDialog::Wireframe) {
+			impl->m_pointsManager.delaunayedTrianglesActor()->GetProperty()->SetRepresentationToWireframe();
+		}
+		actorCollection()->AddItem(impl->m_pointsManager.delaunayedTrianglesActor());
 		break;
 	}
 	updateVisibilityWithoutRendering();
 	assignActorZValues(m_zDepthRange);
-	m_actor->GetProperty()->SetOpacity(m_opacityPercent / 100.);
+	impl->m_pointsManager.delaunayedTrianglesActor()->GetProperty()->SetOpacity(m_opacityPercent / 100.);
 }
 
 void GeoDataPointmap::updateActorSettings()
@@ -1053,79 +1007,6 @@ void GeoDataPointmap::addCustomMenuItems(QMenu* menu)
 void GeoDataPointmap::showDisplaySetting()
 {
 	dynamic_cast<PreProcessorGeoDataDataItemInterface*>(parent())->showPropertyDialog();
-}
-
-void GeoDataPointmap::setupActions()
-{
-	m_addPointAction = new QAction(tr("&Add New Point"), this);
-	m_addPointAction->setIcon(QIcon(":/libs/geodata/pointmap/images/iconAddPoint.svg"));
-	m_addPointAction->setCheckable(true);
-	connect(m_addPointAction, SIGNAL(triggered(bool)), this, SLOT(addPoints(bool)));
-
-	m_interpolatePointAction = new QAction(tr("&Interpolate Points"), this);
-	m_interpolatePointAction->setIcon(QIcon(":/libs/geodata/pointmap/images/iconInterpolatePoint.svg"));
-	m_interpolatePointAction->setCheckable(true);
-	connect(m_interpolatePointAction, SIGNAL(triggered(bool)), this, SLOT(interpolatePoints(bool)));
-
-	m_displaySettingAction = new QAction(tr("Display &Setting..."), this);
-	connect(m_displaySettingAction, SIGNAL(triggered()), this, SLOT(showDisplaySetting()));
-
-	m_selectionModePoint = new QAction(QIcon(":/libs/geodata/pointmap/images/iconPointSelection.svg"), tr("Select point"), this);
-	connect(m_selectionModePoint, SIGNAL(triggered(bool)), this, SLOT(selectionModePoint(bool)));
-	m_selectionModePoint->setCheckable(true);
-
-	m_selectionModePolygon = new QAction(tr("Select Points With &Polygon"), this);
-	m_selectionModePolygon->setIcon(QIcon(":/libs/geodata/pointmap/images/iconPolygonSelection.svg"));
-	m_selectionModePolygon->setCheckable(true);
-	connect(m_selectionModePolygon, SIGNAL(triggered(bool)), this, SLOT(selectionModePolygon(bool)));
-
-	m_editPointsAction = new QAction(tr("&Edit Selected Points..."), this);
-	m_editPointsAction->setCheckable(false);
-	connect(m_editPointsAction, SIGNAL(triggered(bool)), this, SLOT(editPoints()));
-
-	m_editPointsDeleteAction = new QAction(tr("Delete Selected P&oints"), this);
-	m_editPointsDeleteAction->setIcon(QIcon(":/libs/guibase/images/iconDeleteItem.svg"));
-	m_editPointsDeleteAction->setCheckable(false);
-	connect(m_editPointsDeleteAction, SIGNAL(triggered(bool)), this, SLOT(editPointsDelete()));
-
-	m_editPointsExportAction = new QAction(tr("E&xport Selected Points..."), this);
-	m_editPointsExportAction->setIcon(QIcon(":/libs/guibase/images/iconExport.svg"));
-	m_editPointsExportAction->setCheckable(false);
-	connect(m_editPointsExportAction, SIGNAL(triggered(bool)), this, SLOT(editPointsExport()));
-
-	m_editPointsLessThanAction = new QAction(tr("Delete Selected Points &Less Than Value..."), this);
-	m_editPointsLessThanAction->setIcon(QIcon(":/libs/guibase/images/iconDeleteItem.svg"));
-	m_editPointsLessThanAction->setCheckable(false);
-	connect(m_editPointsLessThanAction, SIGNAL(triggered(bool)), this, SLOT(editPointsLessThan()));
-
-	m_editPointsGreaterThanAction = new QAction(QIcon(""), tr("Delete Selected Points &Greater Than Value..."), this);
-	m_editPointsGreaterThanAction->setIcon(QIcon(":/libs/guibase/images/iconDeleteItem.svg"));
-	m_editPointsGreaterThanAction->setCheckable(false);
-	connect(m_editPointsGreaterThanAction, SIGNAL(triggered(bool)), this, SLOT(editPointsGreaterThan()));
-
-	enablePointSelectedActions(false);
-
-	m_remeshAction = new QAction(tr("Remesh &TINs"), this);
-	connect(m_remeshAction, SIGNAL(triggered()), this, SLOT(remeshTINS()));
-
-	m_addBreakLineAction = new QAction(tr("Add &Break Line"), this);
-	m_addBreakLineAction->setIcon(QIcon(":/libs/geodata/pointmap/images/iconBreakLineAdd.svg"));
-	m_addBreakLineAction->setCheckable(true);
-	connect(m_addBreakLineAction, SIGNAL(triggered()), this, SLOT(addBreakLine()));
-
-	m_removeBreakLineAction = new QAction(tr("&Remove Break Line"), this);
-	m_removeBreakLineAction->setIcon(QIcon(":/libs/geodata/pointmap/images/iconBreakLineDelete.svg"));
-	m_removeBreakLineAction->setCheckable(true);
-	connect(m_removeBreakLineAction, SIGNAL(triggered()), this, SLOT(removeBreakLine()));
-
-	m_removeAllBreakLinesAction = new QAction(QIcon(":/libs/guibase/images/iconDeleteItem.svg"), tr("Re&move All Break Lines..."), this);
-	connect(m_removeAllBreakLinesAction, SIGNAL(triggered()), this, SLOT(removeAllBreakLines()));
-
-	m_removeTrianglesWithLongEdgeAction = new QAction(tr("Remove Triangles &with Long edge..."), this);
-	connect(m_removeTrianglesWithLongEdgeAction, SIGNAL(triggered()), this, SLOT(removeTrianglesWithLongEdgeStart()));
-
-	m_mergeAction = new QAction(tr("Merge..."), this);
-	connect(m_mergeAction, SIGNAL(triggered()), this, SLOT(mergePointmaps()));
 }
 
 void GeoDataPointmap::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
@@ -1151,7 +1032,7 @@ void GeoDataPointmap::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsVi
 			break;
 		case meSMInterpPointPrepare: {
 				double p[3];
-				m_vtkGrid->GetPoint(m_selectedVertexId, p);
+				impl->m_pointsManager.points()->GetPoint(m_selectedVertexId, p);
 				pushRenderCommand(new InterpolateLineAddPointCommand(p[0], p[1], m_selectedZPos, false, this));
 				m_mouseEventMode = meSMInterpPoint;
 			}
@@ -1171,7 +1052,7 @@ void GeoDataPointmap::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsVi
 		case meSMAddPointPrepare:
 			if (m_interpolatePointsController.polyLine().size() == 0) {
 				double p[3];
-				m_vtkGrid->GetPoint(m_selectedVertexId, p);
+				impl->m_pointsManager.points()->GetPoint(m_selectedVertexId, p);
 				m_addPointsValue = m_selectedZPos;
 				pushRenderCommand(new InterpolateLineAddPointCommand(p[0], p[1], 0, false, this));
 				m_mouseEventMode = meSMAddCtrlPoint;
@@ -1245,8 +1126,8 @@ void GeoDataPointmap::mouseReleaseEvent(QMouseEvent* event, PreProcessorGraphics
 	} else if (event->button() == Qt::RightButton) {
 		if (iRIC::isNear(m_dragStartPoint, event->pos())) {
 			// show right-clicking menu.
-			m_rightClickingMenu->move(event->globalPos());
-			m_rightClickingMenu->show();
+			impl->m_rightClickingMenu->move(event->globalPos());
+			impl->m_rightClickingMenu->show();
 		}
 	}
 }
@@ -1422,8 +1303,8 @@ void GeoDataPointmap::selectPointsInsideBox(MouseBoundingBox* box, bool xOr)
 		}
 	}
 	m_selectedVerticesGrid->Reset();
-	m_selectedVerticesGrid->Allocate(m_vtkGrid->GetNumberOfPoints() / 10 + 1);
-	m_selectedVerticesGrid->SetPoints(m_vtkGrid->GetPoints());
+	m_selectedVerticesGrid->Allocate(impl->m_pointsManager.points()->GetNumberOfPoints() / 10 + 1);
+	m_selectedVerticesGrid->SetPoints(impl->m_pointsManager.points()->GetPoints());
 
 	QVector<vtkIdType> newSelectedVertices;
 	vtkSmartPointer<vtkVertex> v = vtkSmartPointer<vtkVertex>::New();
@@ -1434,7 +1315,7 @@ void GeoDataPointmap::selectPointsInsideBox(MouseBoundingBox* box, bool xOr)
 		vtkCell* hintCell = 0;
 		double pcoords[3];
 		int subid;
-		m_vtkGrid->GetPoints()->GetPoint(idlist->GetId(i) , p);
+		impl->m_pointsManager.points()->GetPoints()->GetPoint(idlist->GetId(i) , p);
 		vtkIdType cellid = tmpg->FindCell(p, hintCell, 0, 1e-4, subid, pcoords, weights);
 		if (cellid >= 0) {
 			// this is inside the box!
@@ -1466,7 +1347,7 @@ void GeoDataPointmap::selectPointsInsideBox(MouseBoundingBox* box, bool xOr)
 //	qDebug("selectPointsInsideBox end");
 
 	m_selectedVerticesGrid->Modified();
-	enablePointSelectedActions(vArr->GetNumberOfCells() > 0);
+	impl->enablePointSelectedActions(vArr->GetNumberOfCells() > 0);
 	vArr->Delete();
 }
 
@@ -1475,7 +1356,7 @@ void GeoDataPointmap::selectPointsNearPoint(const QVector2D& pos, bool xOr)
 	double point[3] = {pos.x(), pos.y(), 0};
 	vtkIdType nearestId = m_vtkPointLocator->FindClosestPoint(point);
 	double point2[3];
-	m_vtkGrid->GetPoint(nearestId, point2);
+	impl->m_pointsManager.points()->GetPoint(nearestId, point2);
 	QVector2D vertexPos(point2[0], point2[1]);
 	double limitdist = graphicsView()->stdRadius(iRIC::nearRadius());
 	double dist = (vertexPos - pos).length();
@@ -1501,7 +1382,7 @@ void GeoDataPointmap::selectPointsNearPoint(const QVector2D& pos, bool xOr)
 	} else {
 		m_selectedVerticesGrid->Allocate(3, 3);
 	}
-	m_selectedVerticesGrid->SetPoints(m_vtkGrid->GetPoints());
+	m_selectedVerticesGrid->SetPoints(impl->m_pointsManager.points()->GetPoints());
 	if (pointToAdd != -1) {
 		if (oldSelectedVertices.contains(pointToAdd)) {
 			oldSelectedVertices.remove(pointToAdd);
@@ -1517,7 +1398,7 @@ void GeoDataPointmap::selectPointsNearPoint(const QVector2D& pos, bool xOr)
 	}
 	m_selectedVerticesGrid->SetVerts(vArr);
 	m_selectedVerticesGrid->Modified();
-	enablePointSelectedActions(vArr->GetNumberOfCells() > 0);
+	impl->enablePointSelectedActions(vArr->GetNumberOfCells() > 0);
 	vArr->Delete();
 }
 
@@ -1533,7 +1414,7 @@ void GeoDataPointmap::selectPointsInsidePolygon(bool xOr)
 		}
 	}
 	m_selectedVerticesGrid->Reset();
-	m_selectedVerticesGrid->SetPoints(m_vtkGrid->GetPoints());
+	m_selectedVerticesGrid->SetPoints(impl->m_pointsManager.points()->GetPoints());
 
 	for (int i = 0; i < m_selectedVerticesGrid->GetNumberOfPoints(); i++) {
 		double x[3];
@@ -1546,7 +1427,7 @@ void GeoDataPointmap::selectPointsInsidePolygon(bool xOr)
 		}
 	}
 	m_selectedVerticesGrid->Modified();
-	enablePointSelectedActions(true);
+	impl->enablePointSelectedActions(true);
 }
 void GeoDataPointmap::selectionModePoint(bool on)
 {
@@ -1572,65 +1453,65 @@ void GeoDataPointmap::selectionModePolygon(bool on)
 
 void GeoDataPointmap::updateActionStatus()
 {
-	m_selectionModePoint->setDisabled(true);
-	m_selectionModePoint->setChecked(false);
+	impl->m_selectionModePoint->setDisabled(true);
+	impl->m_selectionModePoint->setChecked(false);
 
-	m_selectionModePolygon->setDisabled(true);
-	m_selectionModePolygon->setChecked(false);
+	impl->m_selectionModePolygon->setDisabled(true);
+	impl->m_selectionModePolygon->setChecked(false);
 
-	m_addPointAction->setDisabled(true);
-	m_addPointAction->setChecked(false);
+	impl->m_addPointAction->setDisabled(true);
+	impl->m_addPointAction->setChecked(false);
 
-	m_interpolatePointAction->setDisabled(true);
-	m_interpolatePointAction->setChecked(false);
+	impl->m_interpolatePointAction->setDisabled(true);
+	impl->m_interpolatePointAction->setChecked(false);
 
-	m_addBreakLineAction->setDisabled(true);
-	m_addBreakLineAction->setChecked(false);
+	impl->m_addBreakLineAction->setDisabled(true);
+	impl->m_addBreakLineAction->setChecked(false);
 
-	m_removeBreakLineAction->setDisabled(true);
-	m_removeBreakLineAction->setChecked(false);
+	impl->m_removeBreakLineAction->setDisabled(true);
+	impl->m_removeBreakLineAction->setChecked(false);
 
-	m_removeAllBreakLinesAction->setDisabled(true);
-	m_removeAllBreakLinesAction->setChecked(false);
+	impl->m_removeAllBreakLinesAction->setDisabled(true);
+	impl->m_removeAllBreakLinesAction->setChecked(false);
 
 	switch (m_mouseEventMode) {
 	case meNormal:
 	case meNormalWithShift:
-		m_selectionModePoint->setEnabled(true);
-		m_selectionModePoint->setChecked(true);
+		impl->m_selectionModePoint->setEnabled(true);
+		impl->m_selectionModePoint->setChecked(true);
 
-		m_selectionModePolygon->setEnabled(true);
-		m_addPointAction->setEnabled(true);
-		m_interpolatePointAction->setEnabled(true);
-		m_addBreakLineAction->setEnabled(true);
-		m_addBreakLineAction->setEnabled(true);
-		m_removeBreakLineAction->setEnabled(true);
-		m_removeAllBreakLinesAction->setEnabled(true);
+		impl->m_selectionModePolygon->setEnabled(true);
+		impl->m_addPointAction->setEnabled(true);
+		impl->m_interpolatePointAction->setEnabled(true);
+		impl->m_addBreakLineAction->setEnabled(true);
+		impl->m_addBreakLineAction->setEnabled(true);
+		impl->m_removeBreakLineAction->setEnabled(true);
+		impl->m_removeAllBreakLinesAction->setEnabled(true);
 		break;
 	case meSMPolygonPrepare:
 	case meSMPolygon:
-		m_selectionModePoint->setEnabled(false);
+		impl->m_selectionModePoint->setEnabled(false);
 
-		m_selectionModePolygon->setEnabled(true);
-		m_selectionModePolygon->setChecked(true);
+		impl->m_selectionModePolygon->setEnabled(true);
+		impl->m_selectionModePolygon->setChecked(true);
 		break;
 	case meSMInterpPoint:
-		m_interpolatePointAction->setEnabled(true);
-		m_interpolatePointAction->setChecked(true);
+		impl->m_interpolatePointAction->setEnabled(true);
+		impl->m_interpolatePointAction->setChecked(true);
 		break;
 	case meSMAddPoint:
-		m_addPointAction->setEnabled(true);
-		m_addPointAction->setChecked(true);
+		impl->m_addPointAction->setEnabled(true);
+		impl->m_addPointAction->setChecked(true);
 		break;
 	case meBreakLineAdd:
 	case meBreakLineAddNotPossible:
-		m_addBreakLineAction->setEnabled(true);
-		m_addBreakLineAction->setChecked(true);
+		impl->m_addBreakLineAction->setEnabled(true);
+		impl->m_addBreakLineAction->setChecked(true);
 		break;
 	case meBreakLineRemove:
 	case meBreakLineRemoveNotPossible:
-		m_removeBreakLineAction->setEnabled(true);
-		m_removeBreakLineAction->setChecked(true);
+		impl->m_removeBreakLineAction->setEnabled(true);
+		impl->m_removeBreakLineAction->setChecked(true);
 		break;
 	default:
 		break;
@@ -1710,8 +1591,8 @@ bool GeoDataPointmap::isVertexSelectable(const QPointF& pos)
 	double point2[3] = {pos.x(), pos.y(), 0.0};
 	m_selectedVertexId = m_vtkPointLocator->FindClosestPoint(point2);
 	double point[3];
-	m_vtkGrid->GetPoint(m_selectedVertexId, point);
-	m_selectedZPos = m_vtkGrid->GetPointData()->GetArray(VALUES)->GetTuple1(m_selectedVertexId);
+	impl->m_pointsManager.points()->GetPoint(m_selectedVertexId, point);
+	m_selectedZPos = impl->m_pointsManager.points()->GetPointData()->GetArray(VALUES)->GetTuple1(m_selectedVertexId);
 	QPointF vertexPos(point[0], point[1]);
 	double limitdist = graphicsView()->stdRadius(iRIC::nearRadius());
 	double dist = iRIC::distance(pos, vertexPos);
@@ -1725,7 +1606,7 @@ void GeoDataPointmap::updateMouseCursor(PreProcessorGraphicsViewInterface* v)
 		v->setCursor(Qt::ArrowCursor);
 		break;
 	case meNormalWithShift:
-		v->setCursor(m_addCursor);
+		v->setCursor(impl->m_addCursor);
 		break;
 	case meSMBox:
 		v->setCursor(Qt::ArrowCursor);
@@ -1737,7 +1618,7 @@ void GeoDataPointmap::updateMouseCursor(PreProcessorGraphicsViewInterface* v)
 		v->setCursor(Qt::ArrowCursor);
 		break;
 	case meSMInterpPointPrepare:
-		v->setCursor(m_interpPointAddCursor);
+		v->setCursor(impl->m_interpPointAddCursor);
 		break;
 	case meSMInterpCtrlPoint:
 		v->setCursor(Qt::CrossCursor);
@@ -1749,7 +1630,7 @@ void GeoDataPointmap::updateMouseCursor(PreProcessorGraphicsViewInterface* v)
 		v->setCursor(Qt::ArrowCursor);
 		break;
 	case meSMAddPointPrepare:
-		v->setCursor(m_interpPointAddCursor);
+		v->setCursor(impl->m_interpPointAddCursor);
 		break;
 	case meSMAddCtrlPoint:
 		v->setCursor(Qt::CrossCursor);
@@ -1758,13 +1639,13 @@ void GeoDataPointmap::updateMouseCursor(PreProcessorGraphicsViewInterface* v)
 		v->setCursor(Qt::ArrowCursor);
 		break;
 	case meBreakLineAdd:
-		v->setCursor(m_addCursor);
+		v->setCursor(impl->m_addCursor);
 		break;
 	case meBreakLineRemoveNotPossible:
 		v->setCursor(Qt::ArrowCursor);
 		break;
 	case meBreakLineRemove:
-		v->setCursor(m_removeCursor);
+		v->setCursor(impl->m_removeCursor);
 		break;
 	default:
 		break;
@@ -1935,8 +1816,8 @@ void GeoDataPointmap::editPointsExport()
 	outs.setRealNumberPrecision(10);
 
 	outs << m_selectedVerticesGrid->GetNumberOfCells() << endl;
-	vtkPoints* points = m_vtkGrid->GetPoints();
-	vtkDoubleArray* values = vtkDoubleArray::SafeDownCast(m_vtkGrid->GetPointData()->GetArray(VALUES));
+	vtkPoints* points = impl->m_pointsManager.points()->GetPoints();
+	vtkDoubleArray* values = vtkDoubleArray::SafeDownCast(impl->m_pointsManager.points()->GetPointData()->GetArray(VALUES));
 	double v[3], val;
 	vtkIdType* pts = 0, npts2;
 	m_selectedVerticesGrid->GetVerts()->InitTraversal();
@@ -2032,9 +1913,9 @@ void GeoDataPointmap::mergePointmaps()
 	std::set<QPointF, QPointFCompare> pointSet;
 
 	// insert points in this data to pointSet first
-	auto myPoints = m_vtkGrid->GetPoints();
-	auto myValues = vtkDoubleArray::SafeDownCast(m_vtkGrid->GetPointData()->GetArray(VALUES));
-	auto myVerts = m_vtkGrid->GetVerts();
+	auto myPoints = impl->m_pointsManager.points()->GetPoints();
+	auto myValues = vtkDoubleArray::SafeDownCast(impl->m_pointsManager.points()->GetPointData()->GetArray(VALUES));
+	auto myVerts = impl->m_pointsManager.points()->GetVerts();
 
 	double v[3];
 	for (vtkIdType i = 0; i < myPoints->GetNumberOfPoints(); ++i) {
@@ -2047,8 +1928,8 @@ void GeoDataPointmap::mergePointmaps()
 		auto geoData = item->geoData();
 		auto pointMap = dynamic_cast<GeoDataPointmap*> (geoData);
 
-		auto points = pointMap->m_vtkGrid->GetPoints();
-		auto vals = vtkDoubleArray::SafeDownCast(pointMap->m_vtkGrid->GetPointData()->GetArray(VALUES));
+		auto points = pointMap->impl->m_pointsManager.points()->GetPoints();
+		auto vals = vtkDoubleArray::SafeDownCast(pointMap->impl->m_pointsManager.points()->GetPointData()->GetArray(VALUES));
 
 		double val;
 		vtkIdType vId;
@@ -2072,7 +1953,7 @@ void GeoDataPointmap::mergePointmaps()
 		item->setDeleteSilently(true);
 		delete item;
 	}
-	m_vtkGrid->Modified();
+	impl->m_pointsManager.points()->Modified();
 	myPoints->Modified();
 	myValues->Modified();
 	myVerts->Modified();
@@ -2093,7 +1974,7 @@ void GeoDataPointmap::clearPointsSelection()
 {
 	m_selectedVerticesGrid->Reset();
 	m_selectedVerticesGrid->Allocate(10, 10);
-	m_selectedVerticesGrid->SetPoints(m_vtkGrid->GetPoints());
+	m_selectedVerticesGrid->SetPoints(impl->m_pointsManager.points()->GetPoints());
 	m_selectedVerticesGrid->Modified();
 	renderGraphicsView();
 }
@@ -2143,15 +2024,6 @@ void GeoDataPointmap::addPoints(bool on)
 	}
 	updateActionStatus();
 	renderGraphicsView();
-}
-
-void GeoDataPointmap::enablePointSelectedActions(bool val)
-{
-	m_editPointsAction->setEnabled(val);
-	m_editPointsDeleteAction->setEnabled(val);
-	m_editPointsExportAction->setEnabled(val);
-	m_editPointsGreaterThanAction->setEnabled(val);
-	m_editPointsLessThanAction->setEnabled(val);
 }
 
 vtkPolyData* GeoDataPointmap::selectedVerticesGrid() const
@@ -2566,7 +2438,7 @@ vtkCell* GeoDataPointmap::findCell(double x, double y, double *weights)
 void GeoDataPointmap::doApplyOffset(double x, double y)
 {
 	vtkPoints* points = m_vtkDelaunayedPolyData->GetPoints();
-	vtkPoints* gridPoints = m_vtkGrid->GetPoints();
+	vtkPoints* gridPoints = impl->m_pointsManager.points()->GetPoints();
 	if (points == gridPoints) {
 		// opened file was (projectData()->version().build() >= 3607)
 		// see GeoDataPointmap::loadExternalData

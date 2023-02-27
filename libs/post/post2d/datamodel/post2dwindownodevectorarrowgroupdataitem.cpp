@@ -3,61 +3,46 @@
 #include "post2dwindownodevectorarrowdataitem.h"
 #include "post2dwindownodevectorarrowgroupdataitem.h"
 #include "post2dwindowzonedataitem.h"
+#include "private/post2dwindownodevectorarrowgroupdataitem_updateactorsettingscommand.h"
 
-#include <guibase/graphicsmisc.h>
 #include <guibase/vtkdatasetattributestool.h>
-#include <guicore/misc/targeted/targeteditemsettargetcommandtool.h>
+#include <guibase/vtktool/vtkpolydatamapperutil.h>
 #include <guicore/named/namedgraphicswindowdataitemtool.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
-#include <guicore/scalarstocolors/lookuptablecontainer.h>
+#include <guicore/scalarstocolors/colormapsettingcontainer.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
-#include <misc/iricundostack.h>
+#include <guicore/solverdef/solverdefinitionoutput.h>
 #include <misc/stringtool.h>
+#include <misc/valuemodifycommandt.h>
 
-#include <QFile>
-#include <QMenu>
-#include <QMouseEvent>
-#include <QSettings>
-#include <QStandardItem>
-#include <QTextStream>
-#include <QUndoCommand>
-#include <QVector2D>
-
-#include <vtkActor2DCollection.h>
-#include <vtkCamera.h>
-#include <vtkDataSetMapper.h>
-#include <vtkDiskSource.h>
-#include <vtkGeometryFilter.h>
-#include <vtkIdentityTransform.h>
-#include <vtkLine.h>
-#include <vtkLineSource.h>
-#include <vtkPointData.h>
-#include <vtkPolyDataMapper2D.h>
-#include <vtkProperty.h>
-#include <vtkProperty2D.h>
-#include <vtkRenderer.h>
-#include <vtkRenderWindow.h>
-#include <vtkScalarBarActor.h>
-#include <vtkStructuredGrid.h>
-#include <vtkTextProperty.h>
-#include <vtkTransform.h>
-#include <vtkTriangle.h>
-
-#include <cmath>
+#include <vtkActor.h>
+#include <vtkActor2D.h>
 
 Post2dWindowNodeVectorArrowGroupDataItem::Post2dWindowNodeVectorArrowGroupDataItem(Post2dWindowDataItem* p) :
-	Post2dWindowDataItem {tr("Arrow"), QIcon(":/libs/guibase/images/iconFolder.svg"), p}
+	Post2dWindowDataItem {tr("Arrow"), QIcon(":/libs/guibase/images/iconFolder.svg"), p},
+	m_actor {vtkActor::New()},
+	m_arrowLegendActor {vtkActor2D::New()},
+	m_colorLegendActor {vtkActor2D::New()}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 
-	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
+	m_setting.legend.visibilityMode = ArrowsLegendSettingContainer::VisibilityMode::Always;
+
+	PostZoneDataContainer* cont = zoneDataItem()->dataContainer();
 	SolverDefinitionGridType* gt = cont->gridType();
-	for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithMultipleComponents(cont->data()->GetPointData())) {
+	for (const auto& name : vtkDataSetAttributesTool::getArrayNamesWithMultipleComponents(cont->data()->data()->GetPointData())) {
 		auto item = new Post2dWindowNodeVectorArrowDataItem(name, gt->solutionCaption(name), this);
 		m_childItems.push_back(item);
 	}
-	for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(cont->data()->GetPointData())){
-		m_colorbarTitleMap.insert(name, name.c_str());
+
+	for (const auto& pair : cont->data()->valueRangeSet().pointDataValueRanges()) {
+		auto cs = new ColorMapSettingContainer();
+		auto caption = gt->output(pair.first)->caption();
+		cs->legend.visibilityMode = ColorMapLegendSettingContainer::VisibilityMode::Always;
+		cs->valueCaption = caption;
+		cs->legend.title = caption;
+		cs->setAutoValueRange(pair.second);
+		m_colorMapSettings.insert({pair.first, cs});
 	}
 
 	setupActors();
@@ -66,353 +51,271 @@ Post2dWindowNodeVectorArrowGroupDataItem::Post2dWindowNodeVectorArrowGroupDataIt
 Post2dWindowNodeVectorArrowGroupDataItem::~Post2dWindowNodeVectorArrowGroupDataItem()
 {
 	auto r = renderer();
-	r->RemoveActor(m_arrowActor);
-	r->RemoveActor2D(m_legendActors.arrowActor());
-	r->RemoveActor2D(m_legendActors.nameTextActor());
-	r->RemoveActor2D(m_legendActors.valueTextActor());
+	r->RemoveActor(m_actor);
+	r->RemoveActor2D(m_arrowLegendActor);
+	r->RemoveActor2D(m_colorLegendActor);
 
-	m_scalarBarWidget->SetInteractor(nullptr);
+	m_actor->Delete();
+	m_arrowLegendActor->Delete();
+	m_colorLegendActor->Delete();
+
+	for (const auto& pair : m_colorMapSettings) {
+		delete pair.second;
+	}
 }
 
 void Post2dWindowNodeVectorArrowGroupDataItem::handleNamedItemChange(NamedGraphicWindowDataItem* item)
 {
 	if (m_isCommandExecuting) {return;}
 
-	auto cmd = TargetedItemSetTargetCommandTool::buildFromNamedItem(item, this, tr("Arrow Physical Value Change"));
-	pushRenderCommand(cmd, this, true);
+	auto newSetting = m_setting;
+	if (item->standardItem()->checkState() == Qt::Checked) {
+		newSetting.target = item->name().c_str();
+		newSetting.legend.title = zoneDataItem()->gridTypeDataItem()->gridType()->output(item->name())->caption();
+	} else {
+		newSetting.target = "";
+	}
+	auto modifyCommand = new ValueModifyCommmand<ArrowsSettingContainer> ("Change target", newSetting, &m_setting);
+	auto updateCommand = new UpdateActorSettingsCommand(false, modifyCommand, this);
+	pushRenderCommand(updateCommand, this, true);
 }
 
 void Post2dWindowNodeVectorArrowGroupDataItem::setupActors()
 {
-	m_arrowActor = vtkSmartPointer<vtkActor>::New();
-	renderer()->AddActor(m_arrowActor);
-	m_arrowActor->GetProperty()->LightingOff();
+	vtkRenderer* r = renderer();
+	r->AddActor(m_actor);
+	r->AddActor2D(m_arrowLegendActor);
+	r->AddActor2D(m_colorLegendActor);
 
-	m_arrowMapper = vtkSmartPointer<vtkPolyDataMapper>::New();
-	m_arrowActor->SetMapper(m_arrowMapper);
+	m_actor->GetProperty()->SetLighting(false);
 
-	m_hedgeHog = vtkSmartPointer<vtkHedgeHog>::New();
-	m_hedgeHog->SetVectorModeToUseVector();
-	m_hedgeHog->SetScaleFactor(m_scaleFactor);
-
-	m_warpVector = vtkSmartPointer<vtkWarpVector>::New();
-
-	m_arrowGlyph = vtkSmartPointer<vtkGlyph3D>::New();
-	m_arrowGlyph->SetScaleModeToDataScalingOff();
-	m_arrowGlyph->SetVectorModeToUseVector();
-	m_arrowGlyph->SetInputConnection(m_warpVector->GetOutputPort());
-
-	m_arrowSource = vtkSmartPointer<vtkConeSource>::New();
-	m_arrowGlyph->SetSourceConnection(m_arrowSource->GetOutputPort());
-
-	m_appendPolyData = vtkSmartPointer<vtkAppendPolyData>::New();
-	m_appendPolyData->AddInputConnection(m_hedgeHog->GetOutputPort());
-	m_appendPolyData->AddInputConnection(m_arrowGlyph->GetOutputPort());
-
-	m_polyData = vtkSmartPointer<vtkPolyData>::New();
-	m_arrowMapper->SetInputData(m_polyData);
-
-	m_arrowActor->VisibilityOff();
-
-	m_legendActors.setPosition(0.75, 0.06);
-
-	m_legendActors.nameTextActor()->VisibilityOff();
-	renderer()->AddActor2D(m_legendActors.nameTextActor());
-
-	m_legendActors.valueTextActor()->VisibilityOff();
-	renderer()->AddActor2D(m_legendActors.valueTextActor());
-
-	m_activePoints = vtkSmartPointer<vtkPolyData>::New();
-
-	m_transformedActivePoints = vtkSmartPointer<vtkTransformFilter>::New();
-	vtkSmartPointer<vtkIdentityTransform> transform = vtkSmartPointer<vtkIdentityTransform>::New();
-	m_transformedActivePoints->SetTransform(transform);
-	m_transformedActivePoints->SetInputData(m_activePoints);
-
-	m_hedgeHog->SetInputConnection(m_transformedActivePoints->GetOutputPort());
-	m_warpVector->SetInputConnection(m_transformedActivePoints->GetOutputPort());
-
-	renderer()->AddActor2D(m_legendActors.arrowActor());
-
-	vtkRenderWindowInteractor* iren = renderer()->GetRenderWindow()->GetInteractor();
-	Q_ASSERT(iren != nullptr);
-	m_scalarBarWidget = vtkScalarBarWidget::New();
-	iRIC::setupScalarBarProperty(m_scalarBarWidget->GetScalarBarActor());
-	m_scalarBarWidget->SetInteractor(iren);
-	m_scalarBarWidget->SetEnabled(0);
+	m_setting.legend.imageSetting.setActor(m_arrowLegendActor);
+	m_setting.legend.imageSetting.controller()->setItem(this);
 }
 
-void Post2dWindowNodeVectorArrowGroupDataItem::calculateStandardValue()
+void Post2dWindowNodeVectorArrowGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
-	auto& s = setting();
+	auto childNodes = node.childNodes();
+	for (int i = 0; i < childNodes.size(); ++i) {
+		auto child = childNodes.at(i);
+		if (child.nodeName() == "ColorMapSetting") {
+			auto elem = child.toElement();
+			auto name = iRIC::toStr(elem.attribute("name"));
+			auto it = m_colorMapSettings.find(name);
+			if (it == m_colorMapSettings.end()) {continue;}
 
-	if (s.lengthMode == ArrowSettingContainer::LengthMode::Custom) {return;}
-
-	QVector<double> lenVec;
-	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
-	if (cont == nullptr || cont->data() == nullptr) {return;}
-	vtkPointSet* ps = cont->data();
-	if (s.target == "") {return;}
-
-	vtkPointData* pd = ps->GetPointData();
-	vtkDataArray* da = pd->GetArray(iRIC::toStr(s.target).c_str());
-	for (vtkIdType i = 0; i < da->GetNumberOfTuples(); ++i) {
-		double* v = da->GetTuple3(i);
-		QVector2D vec(*(v), *(v + 1));
-		lenVec.append(vec.length());
+			it->second->load(child);
+		}
 	}
-	qSort(lenVec);
-	double sum = 0;
-	int count = AUTO_AVERAGECOUNT;
-	if (count > lenVec.count()) {count = lenVec.count();}
-	for (int i = 0; i < count; ++i) {
-		sum += lenVec.at(lenVec.count() - i - 1);
-	}
-	double average = sum / count;
-	if (average == 0) {average = 1;}
-
-	int p = 0;
-	double p2 = 1;
-	while (average > 10) {
-		average /= 10.;
-		++ p;
-		p2 = 10;
-	}
-	while (average < 1) {
-		average *= 10;
-		++ p;
-		p2 = 0.1;
-	}
-	average = static_cast<int>(average);
-	for (int i = 0; i < p; ++i) {
-		average *= p2;
-	}
-	// now average is calculated.
-	s.standardValue = average;
-	// minimum value is always 0.001 * standard value when auto mode.
-	s.minimumValue = 0.001 * s.standardValue;
 }
 
-void Post2dWindowNodeVectorArrowGroupDataItem::setupScalarBarSetting()
+void Post2dWindowNodeVectorArrowGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	Post2dWindowGridTypeDataItem* typedi = dynamic_cast<Post2dWindowGridTypeDataItem*>(parent()->parent());
-
-	auto& s = setting();
-
-	vtkScalarBarActor* a = m_scalarBarWidget->GetScalarBarActor();
-	a->SetTitle(iRIC::toStr(m_colorbarTitleMap.value(iRIC::toStr(s.colorTarget))).c_str());
-	a->SetLookupTable(typedi->nodeLookupTable(s.colorTarget)->vtkObj());
-	a->SetNumberOfLabels(s.scalarBarSetting.numberOfLabels);
-	a->SetMaximumNumberOfColors(256);
-	s.scalarBarSetting.titleTextSetting.applySetting(a->GetTitleTextProperty());
-	s.scalarBarSetting.labelTextSetting.applySetting(a->GetLabelTextProperty());
-	s.scalarBarSetting.saveToRepresentation(m_scalarBarWidget->GetScalarBarRepresentation());
-}
-
-void Post2dWindowNodeVectorArrowGroupDataItem::innerUpdateZScale(double scale)
-{
-	vtkSmartPointer<vtkTransform> transform = vtkSmartPointer<vtkTransform>::New();
-	transform->Scale(1, scale, 1);
-	m_transformedActivePoints->SetTransform(transform);
-
-	updateActorSettings();
-}
-
-void Post2dWindowNodeVectorArrowGroupDataItem::informGridUpdate()
-{
-	updateActorSettings();
+	for (const auto& pair : m_colorMapSettings) {
+		writer.writeStartElement("ColorMapSetting");
+		writer.writeAttribute("name", pair.first.c_str());
+		pair.second->save(writer);
+		writer.writeEndElement();
+	}
 }
 
 void Post2dWindowNodeVectorArrowGroupDataItem::updateActorSettings()
 {
-	m_arrowActor->VisibilityOff();
-	m_legendActors.nameTextActor()->VisibilityOff();
-	m_legendActors.valueTextActor()->VisibilityOff();
-	m_legendActors.arrowActor()->VisibilityOff();
-	m_scalarBarWidget->GetScalarBarActor()->VisibilityOff();
-	m_scalarBarWidget->SetEnabled(0);
-
+	m_actor->VisibilityOff();
+	m_arrowLegendActor->VisibilityOff();
+	m_colorLegendActor->VisibilityOff();
 	m_actorCollection->RemoveAllItems();
 	m_actor2DCollection->RemoveAllItems();
 
-	auto& s = setting();
+	if (m_setting.target == "") {return;}
 
-	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
-	if (cont == nullptr || cont->data() == nullptr) {return;}
-	vtkPointSet* ps = cont->data();
-	setupScalarBarSetting();  // avoid a null vtkScalarBarActor::LookupTable when using color 'By scalar value'
-	if (s.target == "") {return;}
-	vtkPointData* pd = ps->GetPointData();
-	if (pd->GetNumberOfArrays() == 0) {return;}
-	pd->SetActiveVectors(iRIC::toStr(s.target).c_str());
+	auto data = buildFilteredData();
+	if (data == nullptr) {return;}
 
-	updateActivePoints();
+	auto view = dataModel()->graphicsView();
+	auto arrowsData = m_setting.buildArrowsPolygonData(data, view);
+	data->Delete();
+	auto v = dataModel()->graphicsView();
 
-	calculateStandardValue();
-	updateColorSetting();
-	updatePolyData();
-	updateLegendData();
+	if (m_setting.colorMode == ArrowsSettingContainer::ColorMode::Custom) {
+		auto mapper = vtkPolyDataMapperUtil::createWithScalarVisibilityOff();
+		auto gfilter = vtkSmartPointer<vtkGeometryFilter>::New();
+		gfilter->SetInputData(arrowsData);
+		mapper->SetInputConnection(gfilter->GetOutputPort());
+		m_actor->SetMapper(mapper);
+		mapper->Delete();
 
-	m_actorCollection->AddItem(m_arrowActor);
-	m_actor2DCollection->AddItem(m_legendActors.nameTextActor());
-	m_actor2DCollection->AddItem(m_legendActors.valueTextActor());
-	m_actor2DCollection->AddItem(m_legendActors.arrowActor());
+		m_actor->GetProperty()->SetColor(m_setting.customColor);
+	} else if (m_setting.colorMode == ArrowsSettingContainer::ColorMode::ByScalar) {
+		arrowsData->GetPointData()->SetActiveScalars(iRIC::toStr(m_setting.colorTarget).c_str());
+		auto colorTarget = iRIC::toStr(m_setting.colorTarget);
+		auto cs = colorMapSetting(colorTarget);
+		auto mapper = cs->buildPointDataMapper(arrowsData);
+		m_actor->SetMapper(mapper);
+		mapper->Delete();
+		cs->legend.imageSetting.setActor(m_colorLegendActor);
+		cs->legend.imageSetting.controller()->setItem(this);
+		cs->legend.imageSetting.controller()->handleSelection(v);
+	}
+	arrowsData->Delete();
+
+	m_actor->GetProperty()->SetLineWidth(m_setting.lineWidth * v->devicePixelRatioF());
+
+	m_actorCollection->AddItem(m_actor);
 	updateVisibilityWithoutRendering();
+
+	m_setting.legend.imageSetting.apply(v);
 }
 
-void Post2dWindowNodeVectorArrowGroupDataItem::updateColorSetting()
+void Post2dWindowNodeVectorArrowGroupDataItem::updateCheckState()
 {
-	Post2dWindowGridTypeDataItem* typedi = dynamic_cast<Post2dWindowGridTypeDataItem*>(parent()->parent());
+	NamedGraphicsWindowDataItemTool::checkItemWithName(m_setting.target, m_childItems, true);
+}
 
-	auto& s = setting();
+Post2dWindowZoneDataItem* Post2dWindowNodeVectorArrowGroupDataItem::zoneDataItem() const
+{
+	return dynamic_cast<Post2dWindowZoneDataItem*> (parent());
+}
 
-	switch (s.colorMode.value()) {
-	case ArrowSettingContainer::ColorMode::Custom:
-		m_arrowMapper->ScalarVisibilityOff();
-		m_arrowActor->GetProperty()->SetColor(s.customColor);
-		break;
-	case ArrowSettingContainer::ColorMode::ByScalar:
-		m_arrowMapper->ScalarVisibilityOn();
-		LookupTableContainer* stc = typedi->nodeLookupTable(s.colorTarget);
-		m_arrowMapper->SetScalarModeToUsePointFieldData();
-		m_arrowMapper->SelectColorArray(iRIC::toStr(s.colorTarget).c_str());
-		m_arrowMapper->SetLookupTable(stc->vtkObj());
-		m_arrowMapper->UseLookupTableScalarRangeOn();
-		break;
-	}
+ColorMapSettingContainer* Post2dWindowNodeVectorArrowGroupDataItem::colorMapSetting(const std::string& name) const
+{
+	return m_colorMapSettings.at(name);
 }
 
 void Post2dWindowNodeVectorArrowGroupDataItem::updateZDepthRangeItemCount()
 {
-	m_zDepthRange.setItemCount(2);
+	m_zDepthRange.setItemCount(1);
 }
 
 void Post2dWindowNodeVectorArrowGroupDataItem::assignActorZValues(const ZDepthRange& range)
 {
-	m_arrowActor->SetPosition(0, 0, range.max());
+	m_actor->SetPosition(0, 0, range.max());
 }
 
 void Post2dWindowNodeVectorArrowGroupDataItem::update()
 {
-	informGridUpdate();
+	auto gtItem = zoneDataItem()->gridTypeDataItem();
+	for (const auto& pair : m_colorMapSettings) {
+		auto range = gtItem->nodeValueRange(pair.first);
+		pair.second->setAutoValueRange(range);
+	}
+
+	updateActorSettings();
 }
 
 std::string Post2dWindowNodeVectorArrowGroupDataItem::target() const
 {
-	return const_cast<Post2dWindowNodeVectorArrowGroupDataItem*> (this)->setting().target;
-}
-
-std::string Post2dWindowNodeVectorArrowGroupDataItem::colorScalar() const
-{
-	return const_cast<Post2dWindowNodeVectorArrowGroupDataItem*> (this)->setting().colorTarget;
+	return iRIC::toStr(m_setting.target);
 }
 
 void Post2dWindowNodeVectorArrowGroupDataItem::setTarget(const std::string& target)
 {
 	NamedGraphicsWindowDataItemTool::checkItemWithName(target, m_childItems);
-	setting().target = target.c_str();
-	updateActorSettings();
-}
+	m_setting.target = target.c_str();
 
-void Post2dWindowNodeVectorArrowGroupDataItem::updateVisibility(bool visible)
-{
-	auto& s = setting();
-	bool v = (m_standardItem->checkState() == Qt::Checked) && visible;
-	m_scalarBarWidget->SetEnabled(s.scalarBarSetting.visible.value() && v && (s.colorMode == ArrowSettingContainer::ColorMode::ByScalar) && s.colorTarget != "");
-	Post2dWindowDataItem::updateVisibility(visible);
+	updateActorSettings();
 }
 
 void Post2dWindowNodeVectorArrowGroupDataItem::innerUpdate2Ds()
 {
-	auto& s = setting();
-
-	vtkCamera* cam = renderer()->GetActiveCamera();
-	double scale = cam->GetParallelScale();
-	if (scale != s.oldCameraScale) {
-		updatePolyData();
-		updateLegendData();
-	}
-	s.oldCameraScale = scale;
+	updateActorSettings();
 }
 
-void Post2dWindowNodeVectorArrowGroupDataItem::updatePolyData()
+void Post2dWindowNodeVectorArrowGroupDataItem::informSelection(VTKGraphicsView* v)
 {
-	auto& s = setting();
+	zoneDataItem()->initNodeResultAttributeBrowser();
 
-	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
-	if (cont == nullptr || cont->data() == nullptr) {return;}
-	if (s.target == "") {return;}
+	m_setting.legend.imageSetting.controller()->handleSelection(v);
 
-	updateScaleFactor();
-	double height = dataModel()->graphicsView()->stdRadius(s.arrowSize);
-	m_hedgeHog->SetScaleFactor(m_scaleFactor);
-	m_warpVector->SetScaleFactor(m_scaleFactor);
-	m_arrowSource->SetHeight(height);
-	m_arrowSource->SetAngle(15);
-	m_arrowSource->Modified();
+	if (m_setting.colorMode == ArrowsSettingContainer::ColorMode::Custom) {return;}
+	auto s = colorMapSetting(iRIC::toStr(m_setting.colorTarget));
+	if (s == nullptr) {return;}
 
-	m_appendPolyData->Update();
-	m_polyData->DeepCopy(m_appendPolyData->GetOutput());
-	m_arrowActor->GetProperty()->SetLineWidth(s.lineWidth);
-	m_legendActors.arrowActor()->GetProperty()->SetLineWidth(s.lineWidth);
+	s->legend.imageSetting.controller()->handleSelection(v);
 }
 
-void Post2dWindowNodeVectorArrowGroupDataItem::updateScaleFactor()
+void Post2dWindowNodeVectorArrowGroupDataItem::informDeselection(VTKGraphicsView* v)
 {
-	auto& s = setting();
-	double a = 1.0 / dataModel()->graphicsView()->stdRadius(1.0);
-	m_scaleFactor = s.legendLength / (a * s.standardValue);
+	zoneDataItem()->clearNodeResultAttributeBrowser();
+
+	m_setting.legend.imageSetting.controller()->handleDeselection(v);
+
+	if (m_setting.colorMode == ArrowsSettingContainer::ColorMode::Custom) {return;}
+	auto s = colorMapSetting(iRIC::toStr(m_setting.colorTarget));
+	if (s == nullptr) {return;}
+
+	s->legend.imageSetting.controller()->handleDeselection(v);
 }
 
-void Post2dWindowNodeVectorArrowGroupDataItem::updateLegendData()
+void Post2dWindowNodeVectorArrowGroupDataItem::handleResize(VTKGraphicsView* v)
 {
-	auto& s = setting();
+	m_setting.legend.imageSetting.controller()->handleResize(v);
 
-	double arrowLen = s.legendLength;
-	m_legendActors.update(iRIC::toStr(s.target), s.legendLength, s.standardValue, s.arrowSize, 25.0);
+	if (m_setting.colorMode == ArrowsSettingContainer::ColorMode::Custom) {return;}
+	auto s = colorMapSetting(iRIC::toStr(m_setting.colorTarget));
+	if (s == nullptr) {return;}
 
-	if (s.colorMode == ArrowSettingContainer::ColorMode::Custom) {
-		// specified color.
-		m_legendActors.arrowActor()->GetProperty()->SetColor(s.customColor);
-	} else if (s.colorMode == ArrowSettingContainer::ColorMode::ByScalar) {
-		// always black.
-		m_legendActors.arrowActor()->GetProperty()->SetColor(0, 0, 0);
-	}
-	s.legendTextSetting.applySetting(m_legendActors.nameTextActor()->GetTextProperty());
-	s.legendTextSetting.applySetting(m_legendActors.valueTextActor()->GetTextProperty());
-}
-
-void Post2dWindowNodeVectorArrowGroupDataItem::informSelection(VTKGraphicsView* /*v*/)
-{
-	m_scalarBarWidget->SetRepositionable(1);
-	dynamic_cast<Post2dWindowZoneDataItem*>(parent())->initNodeResultAttributeBrowser();
-}
-
-void Post2dWindowNodeVectorArrowGroupDataItem::informDeselection(VTKGraphicsView* /*v*/)
-{
-	m_scalarBarWidget->SetRepositionable(0);
-	dynamic_cast<Post2dWindowZoneDataItem*>(parent())->clearNodeResultAttributeBrowser();
+	s->legend.imageSetting.controller()->handleResize(v);
 }
 
 void Post2dWindowNodeVectorArrowGroupDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	v->standardMouseMoveEvent(event);
-	dynamic_cast<Post2dWindowZoneDataItem*>(parent())->updateNodeResultAttributeBrowser(QPoint(event->x(), event->y()), v);
+	zoneDataItem()->updateNodeResultAttributeBrowser(event->pos(), v);
+	std::vector<ImageSettingContainer::Controller*> controllers;
+
+	m_setting.legend.imageSetting.controller()->handleMouseMoveEvent(event, v, true);
+	controllers.push_back(m_setting.legend.imageSetting.controller());
+
+	if (m_setting.colorMode == ArrowsSettingContainer::ColorMode::ByScalar) {
+		auto s = colorMapSetting(iRIC::toStr(m_setting.colorTarget));
+		if (s != nullptr) {
+			s->legend.imageSetting.controller()->handleMouseMoveEvent(event, v, true);
+			controllers.push_back(s->legend.imageSetting.controller());
+		}
+	}
+
+	ImageSettingContainer::Controller::updateMouseCursor(v, controllers);
 }
 
 void Post2dWindowNodeVectorArrowGroupDataItem::mousePressEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	v->standardMousePressEvent(event);
+	std::vector<ImageSettingContainer::Controller*> controllers;
+
+	m_setting.legend.imageSetting.controller()->handleMousePressEvent(event, v, true);
+	controllers.push_back(m_setting.legend.imageSetting.controller());
+
+	if (m_setting.colorMode == ArrowsSettingContainer::ColorMode::ByScalar) {
+		auto s = colorMapSetting(iRIC::toStr(m_setting.colorTarget));
+		if (s != nullptr) {
+			s->legend.imageSetting.controller()->handleMousePressEvent(event, v, true);
+			controllers.push_back(s->legend.imageSetting.controller());
+		}
+	}
+
+	ImageSettingContainer::Controller::updateMouseCursor(v, controllers);
 }
 
 void Post2dWindowNodeVectorArrowGroupDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	v->standardMouseReleaseEvent(event);
-	dynamic_cast<Post2dWindowZoneDataItem*>(parent())->fixNodeResultAttributeBrowser(QPoint(event->x(), event->y()), v);
+	zoneDataItem()->fixNodeResultAttributeBrowser(event->pos(), v);
+	std::vector<ImageSettingContainer::Controller*> controllers;
+
+	m_setting.legend.imageSetting.controller()->handleMouseReleaseEvent(event, v, true);
+	controllers.push_back(m_setting.legend.imageSetting.controller());
+
+	if (m_setting.colorMode == ArrowsSettingContainer::ColorMode::ByScalar) {
+		auto s = colorMapSetting(iRIC::toStr(m_setting.colorTarget));
+		if (s != nullptr) {
+			s->legend.imageSetting.controller()->handleMouseReleaseEvent(event, v, true);
+			controllers.push_back(s->legend.imageSetting.controller());
+		}
+	}
+
+	ImageSettingContainer::Controller::updateMouseCursor(v, controllers);
 }
 
 void Post2dWindowNodeVectorArrowGroupDataItem::addCustomMenuItems(QMenu* menu)
 {
-	QAction* abAction = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->showAttributeBrowserActionForNodeResult();
+	QAction* abAction = zoneDataItem()->showAttributeBrowserActionForNodeResult();
 	menu->addAction(abAction);
 }

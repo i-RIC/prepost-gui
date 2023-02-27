@@ -15,6 +15,7 @@
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
+#include <guicore/solverdef/solverdefinitionoutput.h>
 #include <misc/filesystemfunction.h>
 #include <misc/iricundostack.h>
 #include <misc/stringtool.h>
@@ -79,8 +80,8 @@ Post2dWindowNodeVectorParticleGroupDataItem::Post2dWindowNodeVectorParticleGroup
 
 	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
 	SolverDefinitionGridType* gt = cont->gridType();
-	for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithMultipleComponents(cont->data()->GetPointData())) {
-		auto item = new Post2dWindowNodeVectorParticleDataItem(name, gt->solutionCaption(name), this);
+	for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithMultipleComponents(cont->data()->data()->GetPointData())) {
+		auto item = new Post2dWindowNodeVectorParticleDataItem(name, gt->output(name)->caption(), this);
 		m_childItems.push_back(item);
 	}
 }
@@ -108,7 +109,7 @@ void Post2dWindowNodeVectorParticleGroupDataItem::updateActorSettings()
 	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
 	if (cont == nullptr || cont->data() == nullptr) {return;}
 	if (m_setting.target == "") {return;}
-	vtkPointSet* ps = cont->data();
+	vtkPointSet* ps = cont->data()->data();
 	vtkPointData* pd = ps->GetPointData();
 	if (pd->GetNumberOfArrays() == 0) {return;}
 
@@ -277,7 +278,7 @@ void Post2dWindowNodeVectorParticleGroupDataItem::resetParticles()
 void Post2dWindowNodeVectorParticleGroupDataItem::addParticles()
 {
 	PostZoneDataContainer* zoneContainer = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
-	vtkPointSet* ps = zoneContainer->data();
+	vtkPointSet* ps = zoneContainer->data()->data();
 	ps->GetPointData()->SetActiveVectors(iRIC::toStr(m_setting.target).c_str());
 
 	unsigned int currentStep = zoneContainer->solutionInfo()->currentStep();
@@ -401,7 +402,7 @@ bool Post2dWindowNodeVectorParticleGroupDataItem::exportParticles(const QString&
 
 vtkPointSet* Post2dWindowNodeVectorParticleGroupDataItem::getRegion()
 {
-	vtkPointSet* ps = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer()->data();
+	vtkPointSet* ps = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer()->data()->data();
 	if (m_setting.regionMode == StructuredGridRegion::rmFull) {
 		return ps;
 	} else if (m_setting.regionMode == StructuredGridRegion::rmActive) {

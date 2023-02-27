@@ -28,6 +28,7 @@
 #include <QStandardItem>
 
 #include <vtkActorCollection.h>
+#include <vtkPolyDataMapper.h>
 #include <vtkRenderWindow.h>
 
 #include <geos/geom/Envelope.h>
@@ -126,6 +127,11 @@ bool GeoDataPolyDataGroup::getValueRange(double* min, double* max)
 	return true;
 }
 
+void GeoDataPolyDataGroup::applyColorMapSetting()
+{
+	updateActorSetting();
+}
+
 void GeoDataPolyDataGroup::updateFilename()
 {
 	setFilename(name().append(".dat"));
@@ -212,8 +218,6 @@ void GeoDataPolyDataGroup::mousePressEvent(QMouseEvent* event, PreProcessorGraph
 
 void GeoDataPolyDataGroup::mouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
 {
-	addAction()->setText(tr("Add New %1").arg(creator()->shapeNameCamelCase()));
-
 	if (impl->m_mode == Mode::EditingData) {
 		if (event->button() == Qt::LeftButton) {
 			editTargetData()->mouseReleaseEvent(event, v);
@@ -255,6 +259,7 @@ void GeoDataPolyDataGroup::mouseReleaseEvent(QMouseEvent* event, PreProcessorGra
 				updateMenu();
 			}
 			updateAttributeBrowser();
+			updateActorSetting();
 			renderGraphicsView();
 			impl->updateActionStatus();
 		}
@@ -789,7 +794,7 @@ void GeoDataPolyDataGroup::mergeEditTargetData(bool noUpdate)
 		pb->copyShapeFrom(p);
 
 		impl->m_data.insert(impl->m_data.begin() + impl->m_editTargetDataIndex, pb);
-		impl->m_selectedData.insert(pb);
+		impl->m_selectedData.clear();
 	} else {
 		delete impl->m_editTargetDataBackup;
 	}
@@ -806,6 +811,7 @@ void GeoDataPolyDataGroup::mergeEditTargetData(bool noUpdate)
 
 	updateVtkObjects();
 	updateSelectedDataVtkObjects();
+	updateActorSetting();
 	updateIndex();
 	updateMenu();
 	impl->updateAttributeBrowser();
@@ -851,8 +857,8 @@ void GeoDataPolyDataGroup::setupEditTargetDataFromSelectedData()
 	GeoDataPolyData* d = createEditTargetData();
 	impl->m_editTargetData = d;
 	d->setCaption(sel->name());
-	d->setVariantValue(sel->value());
 	sel->copyShapeTo(d);
+	d->setVariantValue(sel->value());
 	connect(d, SIGNAL(modified()), sel, SLOT(applyShape()));
 	d->informSelection(graphicsView());
 
@@ -863,6 +869,7 @@ void GeoDataPolyDataGroup::setupEditTargetDataFromSelectedData()
 	updateSelectedDataVtkObjects();
 	updateIndex();
 	updateMenu();
+	updateActorSetting();
 	updateActorSettingForEditTargetPolyData();
 	impl->updateAttributeBrowserSelection();
 

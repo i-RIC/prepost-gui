@@ -95,17 +95,17 @@ vtkPointSet* Grid::vtkGrid() const
 	return impl->m_vtkGrid;
 }
 
-vtkAlgorithm* Grid::vtkFilteredShapeAlgorithm() const
+vtkPolyDataAlgorithm* Grid::vtkFilteredShapeAlgorithm() const
 {
 	return impl->m_vtkFilteredShapeAlgorithm;
 }
 
-vtkAlgorithm* Grid::vtkFilteredPointsAlgorithm() const
+vtkPolyDataAlgorithm* Grid::vtkFilteredPointsAlgorithm() const
 {
 	return impl->m_vtkFilteredPointsAlgorithm;
 }
 
-vtkAlgorithm* Grid::vtkFilteredCellsAlgorithm() const
+vtkPolyDataAlgorithm* Grid::vtkFilteredCellsAlgorithm() const
 {
 	return impl->m_vtkFilteredCellsAlgorithm;
 }
@@ -238,17 +238,17 @@ void Grid::setMasked(bool masked)
 	impl->m_isMasked = masked;
 }
 
-void Grid::setFilteredShapeAlgorithm(vtkAlgorithm* algo)
+void Grid::setFilteredShapeAlgorithm(vtkPolyDataAlgorithm* algo)
 {
 	impl->m_vtkFilteredShapeAlgorithm = algo;
 }
 
-void Grid::setFilteredPointsAlgorithm(vtkAlgorithm* algo)
+void Grid::setFilteredPointsAlgorithm(vtkPolyDataAlgorithm* algo)
 {
 	impl->m_vtkFilteredPointsAlgorithm = algo;
 }
 
-void Grid::setFilteredCellsAlgorithm(vtkAlgorithm* algo)
+void Grid::setFilteredCellsAlgorithm(vtkPolyDataAlgorithm* algo)
 {
 	impl->m_vtkFilteredCellsAlgorithm = algo;
 }

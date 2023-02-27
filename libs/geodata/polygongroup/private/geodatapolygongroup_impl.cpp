@@ -36,26 +36,6 @@ GeoDataPolygonGroup::Impl::Impl(GeoDataPolygonGroup* group) :
 {
 	m_points->SetDataTypeToDouble();
 
-	auto mapper = vtkPolyDataMapper::New();
-	m_edgesActor->SetMapper(mapper);
-	mapper->SetInputData(m_edgesPolyData);
-	mapper->Delete();
-
-	mapper = vtkPolyDataMapper::New();
-	m_paintActor->SetMapper(mapper);
-	mapper->SetInputData(m_paintPolyData);
-	mapper->Delete();
-
-	mapper = vtkPolyDataMapper::New();
-	m_selectedPolygonsEdgesActor->SetMapper(mapper);
-	mapper->SetInputData(m_selectedPolygonsEdgesPolyData);
-	mapper->Delete();
-
-	mapper = vtkPolyDataMapper::New();
-	m_selectedPolygonsPointsActor->SetMapper(mapper);
-	mapper->SetInputData(m_selectedPolygonsPointsPolyData);
-	mapper->Delete();
-
 	m_selectedPolygonsEdgesActor->GetProperty()->SetLineWidth(2);
 	m_selectedPolygonsPointsActor->GetProperty()->SetPointSize(5);
 

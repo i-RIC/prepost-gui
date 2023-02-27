@@ -6,7 +6,6 @@
 #include "private/geodatapointgroupproxy_impl.h"
 #include "private/geodatapointgroupproxy_setsettingcommand.h"
 
-#include <guicore/scalarstocolors/scalarstocolorscontainer.h>
 #include <misc/zdepthrange.h>
 
 GeoDataPointGroupProxy::GeoDataPointGroupProxy(GeoDataPointGroup* geodata) :
@@ -29,6 +28,7 @@ void GeoDataPointGroupProxy::setupActors()
 	auto r = renderer();
 	auto col = actorCollection();
 
+	/*
 	auto stcc = points->scalarsToColorsContainer();
 
 	auto mapper = dynamic_cast<vtkPolyDataMapper*> (impl->m_pointsActor->GetMapper());
@@ -37,7 +37,7 @@ void GeoDataPointGroupProxy::setupActors()
 		mapper->SetLookupTable(stcc->vtkObj());
 		mapper->SetUseLookupTableScalarRange(true);
 	}
-
+	*/
 	r->AddActor(impl->m_pointsActor);
 	col->AddItem(impl->m_pointsActor);
 

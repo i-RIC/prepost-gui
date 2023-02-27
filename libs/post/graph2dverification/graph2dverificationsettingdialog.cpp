@@ -176,7 +176,7 @@ void Graph2dVerificationSettingDialog::selectZone(int zoneid)
 {
 	ui->physicalValueComboBox->clear();
 	PostZoneDataContainer* cont = m_postSolutionInfo->zoneContainers2D().at(zoneid);
-	vtkPointData* pd = cont->data()->GetPointData();
+	vtkPointData* pd = cont->data()->data()->GetPointData();
 
 	for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(pd)) {
 		auto arr = pd->GetArray(name.c_str());

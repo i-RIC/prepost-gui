@@ -3,11 +3,11 @@
 
 #include "../geodatapolygon.h"
 
-#include <guibase/vtktool/vtkpolydatapaintactor.h>
 #include <misc/zdepthrange.h>
 
 class GeoDataPolygonTriangleThread;
 
+class vtkActor;
 class vtkDoubleArray;
 
 class GeoDataPolygon::Impl
@@ -33,7 +33,7 @@ public:
 	MouseEventMode m_mouseEventMode;
 
 	vtkPolyData* m_polyData;
-	vtkPolyDataPaintActor m_actor;
+	vtkActor* m_actor;
 	vtkDoubleArray* m_scalarValues;
 
 	QPoint m_dragStartPoint;
@@ -54,7 +54,6 @@ public:
 	QCursor m_addCursor;
 	QCursor m_removeCursor;
 	QCursor m_movePointCursor;
-
 };
 
 #endif // GEODATAPOLYGON_IMPL_H

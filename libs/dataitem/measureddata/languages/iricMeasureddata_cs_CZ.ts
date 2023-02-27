@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="cs_CZ">
 <context>
     <name>MeasuredDataFileDataItem</name>
@@ -38,34 +40,81 @@
     </message>
 </context>
 <context>
-    <name>MeasuredDataPointSettingDialog</name>
+    <name>MeasuredDataPointGroupDataItem_PropertyDialog</name>
     <message>
-        <source>Scalar Setting</source>
-        <translation>Skalární nastavení</translation>
-    </message>
-    <message>
-        <source>Measured Value:</source>
-        <translation>Naměřená hodnota:</translation>
+        <source>Points Display Setting Dialog</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>Nastavení zobrazení</translation>
+        <translation type="unfinished">Nastavení zobrazení</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Barva</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="unfinished">Vývozní (&amp;E)...</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation>Velikost bodu:</translation>
+        <translation type="unfinished">Velikost bodu:</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataPointSettingDialog</name>
+    <message>
+        <source>Scalar Setting</source>
+        <translation type="vanished">Skalární nastavení</translation>
+    </message>
+    <message>
+        <source>Measured Value:</source>
+        <translation type="vanished">Naměřená hodnota:</translation>
+    </message>
+    <message>
+        <source>Display Setting</source>
+        <translation type="vanished">Nastavení zobrazení</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="vanished">Velikost bodu:</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Nastavení barevného pruhu (&amp;C)</translation>
+        <translation type="vanished">Nastavení barevného pruhu (&amp;C)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Chyba</translation>
+        <translation type="vanished">Chyba</translation>
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
-        <translation>Pro rozsah hodnot je maximální hodnota menší než minimální hodnota.</translation>
+        <translation type="vanished">Pro rozsah hodnot je maximální hodnota menší než minimální hodnota.</translation>
     </message>
 </context>
 <context>
@@ -80,62 +129,69 @@
     </message>
     <message>
         <source>Update Arrow Setting</source>
-        <translation>Aktualizovat nastavení šipky</translation>
+        <translation type="vanished">Aktualizovat nastavení šipky</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataVectorGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Measured Data Arrow Setting</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>MeasuredDataVectorSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Nastavení šipky</translation>
+        <translation type="vanished">Nastavení šipky</translation>
     </message>
     <message>
         <source>Physical value:</source>
-        <translation>Fyzická hodnota:</translation>
+        <translation type="vanished">Fyzická hodnota:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Délka</translation>
+        <translation type="vanished">Délka</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Auto</translation>
+        <translation type="vanished">Auto</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Standardní hodnota:</translation>
+        <translation type="vanished">Standardní hodnota:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[slečna]</translation>
+        <translation type="vanished">[slečna]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Délka na obrazovce:</translation>
+        <translation type="vanished">Délka na obrazovce:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[pixel]</translation>
+        <translation type="vanished">[pixel]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Minimální hodnota pro čerpání:</translation>
+        <translation type="vanished">Minimální hodnota pro čerpání:</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Barva</translation>
+        <translation type="vanished">Barva</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Vlastní barva</translation>
+        <translation type="vanished">Vlastní barva</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Podle skalární hodnoty</translation>
+        <translation type="vanished">Podle skalární hodnoty</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Nastavení barevného pruhu (&amp;C)</translation>
+        <translation type="vanished">Nastavení barevného pruhu (&amp;C)</translation>
     </message>
 </context>
 </TS>

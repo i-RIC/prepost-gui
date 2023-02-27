@@ -3,6 +3,7 @@
 #include "private/geodatanetcdf_editpropertycommand.h"
 
 #include <cs/coordinatesystem.h>
+#include <guibase/vtktool/vtkpolydatamapperutil.h>
 #include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
 #include <guicore/pre/gridcond/base/gridattributedimensionintegercontainer.h>
@@ -10,7 +11,7 @@
 #include <guicore/pre/gridcond/base/gridattributedimensionscontainer.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
-#include <guicore/scalarstocolors/scalarstocolorscontainer.h>
+#include <guicore/scalarstocolors/colormapsettingcontaineri.h>
 #include <guicore/solverdef/solverdefinitiongridattributeinteger.h>
 #include <guicore/solverdef/solverdefinitiongridattributeintegerdimension.h>
 #include <guicore/solverdef/solverdefinitiongridattributereal.h>
@@ -27,6 +28,7 @@
 #include <vtkProperty.h>
 #include <vtkRenderer.h>
 #include <vtkStructuredGrid.h>
+#include <vtkUnstructuredGrid.h>
 #include <vtkVersionMacros.h>
 
 #include <QDir>
@@ -203,18 +205,8 @@ void GeoDataNetcdf::setupActors()
 		m_threshold->ThresholdByLower(tVal);
 	}
 	m_threshold->SetInputArrayToProcess(0, 0, 0, vtkDataObject::FIELD_ASSOCIATION_CELLS, "values");
-	m_mapper = vtkSmartPointer<vtkDataSetMapper>::New();
-	m_mapper->SetInputConnection(m_threshold->GetOutputPort());
-	m_mapper->SetLookupTable(scalarsToColorsContainer()->vtkObj());
-	m_mapper->SetUseLookupTableScalarRange(true);
-	m_mapper->SetScalarVisibility(true);
-	m_mapper->SetScalarModeToUseCellData();
-#if (VTK_MAJOR_VERSION == 6) && (VTK_MINOR_VERSION == 1)
-	m_mapper->ImmediateModeRenderingOn();
-#endif
 
 	m_actor = vtkSmartPointer<vtkActor>::New();
-	m_actor->SetMapper(m_mapper);
 	vtkProperty* p = m_actor->GetProperty();
 	p->SetLighting(false);
 
@@ -918,6 +910,25 @@ void GeoDataNetcdf::updateActorSetting()
 	if (m_colorSetting.mapping == GeoDataNetcdfColorSettingDialog::Arbitrary) {
 		scalarVisibility = false;
 	}
+
+	if (scalarVisibility) {
+		vtkMapper* mapper = nullptr;
+		auto cs = colorMapSettingContainer();
+
+		m_threshold->Update();
+		mapper = cs->buildCellDataMapper(m_threshold->GetOutput(), false);
+		m_actor->SetMapper(mapper);
+		mapper->Delete();
+
+	} else {
+		vtkPolyDataMapper* mapper = nullptr;
+
+		mapper = vtkPolyDataMapperUtil::createWithScalarVisibilityOff();
+		mapper->SetInputConnection(m_threshold->GetOutputPort());
+		m_actor->SetMapper(mapper);
+		mapper->Delete();
+	}
+
 	m_actor->GetMapper()->SetScalarVisibility(scalarVisibility);
 }
 
@@ -951,6 +962,11 @@ void GeoDataNetcdf::handlePropertyDialogAccepted(QDialog* d)
 {
 	auto dialog = dynamic_cast<GeoDataNetcdfColorSettingDialog*> (d);
 	pushRenderCommand(new EditPropertyCommand(dialog->setting(), this));
+}
+
+void GeoDataNetcdf::applyColorMapSetting()
+{
+	updateActorSetting();
 }
 
 void GeoDataNetcdf::updateSimpifiedGrid(double xmin, double xmax, double ymin, double ymax)
@@ -1083,6 +1099,8 @@ void GeoDataNetcdf::updateSimpifiedGrid(double xmin, double xmax, double ymin, d
 	}
 	m_threshold->SetInputData(m_simplifiedGrid);
 	m_threshold->Modified();
+
+	updateActorSetting();
 }
 
 void GeoDataNetcdf::getIJIndex(vtkIdType id, unsigned int* i, unsigned int* j) const

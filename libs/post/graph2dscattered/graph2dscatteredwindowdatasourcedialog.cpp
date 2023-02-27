@@ -103,7 +103,7 @@ void Graph2dScatteredWindowDataSourceDialog::setup()
 	m_yAxisValues.clear();
 
 	// add data values.
-	vtkPointSet* ps = m_container->data();
+	vtkPointSet* ps = m_container->data()->data();
 	vtkPointData* pd = ps->GetPointData();
 	int arrs = pd->GetNumberOfArrays();
 	for (int i = 0; i < arrs; ++i) {

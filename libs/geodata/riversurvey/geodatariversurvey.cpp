@@ -531,6 +531,12 @@ void GeoDataRiverSurvey::updateShapeData()
 	impl->m_gridThread->update();
 }
 
+void GeoDataRiverSurvey::applyColorMapSetting()
+{
+	impl->updateVtkBackgroundObjects();
+	updateVisibilityWithoutRendering();
+}
+
 void GeoDataRiverSurvey::updateSelectionShapeData()
 {
 	impl->updateVtkSelectedObjects();
@@ -1355,11 +1361,7 @@ void GeoDataRiverSurvey::updateBackgroundGrid()
 		p = p->nextPoint();
 	}
 	impl->m_gridThread->finishBGGridCopy();
-	vtkDataSetMapper* mapper = vtkDataSetMapper::SafeDownCast(impl->m_backgroundActor->GetMapper());
-	mapper->SetInputData(impl->m_backgroundGrid);
-	if (isVisible() && m_setting.showBackground) {
-		impl->m_backgroundActor->VisibilityOn();
-	}
+	impl->updateVtkBackgroundObjects();
 	dynamic_cast<PreProcessorGeoDataDataItemInterface*>(parent())->informValueRangeChange();
 }
 

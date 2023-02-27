@@ -1,11 +1,14 @@
 #include "../pre/gridcond/container/gridattributeintegernodecontainer.h"
 #include "../pre/gridcond/editwidget/gridattributeintegereditwidget.h"
 #include "../pre/gridcond/editwidget/gridattributeintegervariationeditwidget.h"
+#include "../scalarstocolors/colormapfactory.h"
 #include "solverdefinitiongridattributeintegernode.h"
 
 SolverDefinitionGridAttributeIntegerNode::SolverDefinitionGridAttributeIntegerNode(const QDomElement& elem, SolverDefinition* solverDef, int order) :
 	SolverDefinitionGridAttributeInteger {elem, solverDef, Node, false, order}
-{}
+{
+	setColorMapFactory(new ColorMapFactory());
+}
 
 GridAttributeEditWidget* SolverDefinitionGridAttributeIntegerNode::editWidget(QWidget* parent)
 {

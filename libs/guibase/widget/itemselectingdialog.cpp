@@ -19,6 +19,16 @@ void ItemSelectingDialog::setMessage(const QString& message)
 	ui->messageLabel->setText(message);
 }
 
+void ItemSelectingDialog::setItems(const std::vector<std::string>& items)
+{
+	auto c = comboBox();
+	c->clear();
+	for (auto item : items) {
+		c->addItem(item.c_str());
+	}
+	c->setCurrentIndex(0);
+}
+
 void ItemSelectingDialog::setSelectedIndex(int index)
 {
 	ui->comboBox->setCurrentIndex(index);

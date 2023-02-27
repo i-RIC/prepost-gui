@@ -103,26 +103,6 @@ void VTK3DGraphicsView::getFocalPointAndDistance(double focal[3], double* distan
 	*distance = (focalVec - posVec).length();
 }
 
-double VTK3DGraphicsView::stdDistance(int pixels)
-{
-	double x0, y0, z0, x1, y1, z1;
-	x0 = 0; y0 = 0; z0 = 0;
-	x1 = pixels; y1 = 0; z1 = 0;
-	auto r = mainRenderer();
-	r->ViewportToNormalizedViewport(x0, y0);
-	r->NormalizedViewportToView(x0, y0, z0);
-	r->ViewToWorld(x0, y0, z0);
-
-	r->ViewportToNormalizedViewport(x1, y1);
-	r->NormalizedViewportToView(x1, y1, z1);
-	r->ViewToWorld(x1, y1, z1);
-
-	QVector3D v0(x0, y0, z0);
-	QVector3D v1(x1, y1, z1);
-
-	return (v1 - v0).length();
-}
-
 void VTK3DGraphicsView::translate(int x, int y)
 {
 	double position[3];

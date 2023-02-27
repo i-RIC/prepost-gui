@@ -53,7 +53,7 @@ void Post3dWindowParticleStructuredSettingDialog::setProjectMainFile(ProjectMain
 
 void Post3dWindowParticleStructuredSettingDialog::setZoneData(PostZoneDataContainer* zoneData)
 {
-	vtkStructuredGrid* g = dynamic_cast<vtkStructuredGrid*>(zoneData->data());
+	auto g = vtkStructuredGrid::SafeDownCast(zoneData->data()->data());
 	int dim[3];
 	g->GetDimensions(dim);
 	ui->iminSlider->setRange(1, dim[0]);
@@ -284,7 +284,7 @@ void Post3dWindowParticleStructuredSettingDialog::setupNominations()
 
 void Post3dWindowParticleStructuredSettingDialog::setupSolutionComboBox(PostZoneDataContainer* zoneData)
 {
-	vtkPointData* pd = zoneData->data()->GetPointData();
+	vtkPointData* pd = zoneData->data()->data()->GetPointData();
 	SolverDefinitionGridType* gt = zoneData->gridType();
 
 	m_solutions = vtkDataSetAttributesTool::getArrayNamesWithMultipleComponents(pd);

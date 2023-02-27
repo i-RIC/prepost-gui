@@ -25,6 +25,7 @@ public:
 	/// Set the message shown on the dialog
 	void setMessage(const QString& message);
 
+	void setItems(const std::vector<std::string>& items);
 	/// Set the items to select
 	template <typename STRCONTAINER>
 	void setItems(const STRCONTAINER& items);

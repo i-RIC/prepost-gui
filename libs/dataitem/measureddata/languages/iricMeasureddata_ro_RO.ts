@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ro_RO">
 <context>
     <name>MeasuredDataFileDataItem</name>
@@ -38,34 +40,81 @@
     </message>
 </context>
 <context>
-    <name>MeasuredDataPointSettingDialog</name>
+    <name>MeasuredDataPointGroupDataItem_PropertyDialog</name>
     <message>
-        <source>Scalar Setting</source>
-        <translation>Setarea scalară</translation>
-    </message>
-    <message>
-        <source>Measured Value:</source>
-        <translation>Valoare măsurată:</translation>
+        <source>Points Display Setting Dialog</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>Arata setarile</translation>
+        <translation type="unfinished">Arata setarile</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Culoare</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="unfinished">Export (&amp;E)...</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation>Dimensiunea punctului:</translation>
+        <translation type="unfinished">Dimensiunea punctului:</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataPointSettingDialog</name>
+    <message>
+        <source>Scalar Setting</source>
+        <translation type="vanished">Setarea scalară</translation>
+    </message>
+    <message>
+        <source>Measured Value:</source>
+        <translation type="vanished">Valoare măsurată:</translation>
+    </message>
+    <message>
+        <source>Display Setting</source>
+        <translation type="vanished">Arata setarile</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="vanished">Dimensiunea punctului:</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Setarea barei de culoare (&amp;C)</translation>
+        <translation type="vanished">Setarea barei de culoare (&amp;C)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Eroare</translation>
+        <translation type="vanished">Eroare</translation>
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
-        <translation>Pentru intervalul de valori, valoarea maximă este mai mică decât valoarea minimă.</translation>
+        <translation type="vanished">Pentru intervalul de valori, valoarea maximă este mai mică decât valoarea minimă.</translation>
     </message>
 </context>
 <context>
@@ -80,62 +129,69 @@
     </message>
     <message>
         <source>Update Arrow Setting</source>
-        <translation>Actualizați setarea săgeții</translation>
+        <translation type="vanished">Actualizați setarea săgeții</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataVectorGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Measured Data Arrow Setting</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>MeasuredDataVectorSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Setarea săgeții</translation>
+        <translation type="vanished">Setarea săgeții</translation>
     </message>
     <message>
         <source>Physical value:</source>
-        <translation>Valoare fizică:</translation>
+        <translation type="vanished">Valoare fizică:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Lungime</translation>
+        <translation type="vanished">Lungime</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Auto</translation>
+        <translation type="vanished">Auto</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Valoare standard:</translation>
+        <translation type="vanished">Valoare standard:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[Domnișoară]</translation>
+        <translation type="vanished">[Domnișoară]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Lungimea pe ecran:</translation>
+        <translation type="vanished">Lungimea pe ecran:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[pixel]</translation>
+        <translation type="vanished">[pixel]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Valoare minimă de trasat:</translation>
+        <translation type="vanished">Valoare minimă de trasat:</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Culoare</translation>
+        <translation type="vanished">Culoare</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Culoare personalizată</translation>
+        <translation type="vanished">Culoare personalizată</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>După valoarea scalară</translation>
+        <translation type="vanished">După valoarea scalară</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Setarea barei de culoare (&amp;C)</translation>
+        <translation type="vanished">Setarea barei de culoare (&amp;C)</translation>
     </message>
 </context>
 </TS>

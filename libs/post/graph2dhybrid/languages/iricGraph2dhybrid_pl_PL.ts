@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="pl_PL">
 <context>
     <name>Graph2dHybridSettingDialog</name>
@@ -485,7 +487,7 @@
         <translation>Konfiguracja okna wykresu nie powiodła się. Wynik obliczeń nie został prawidłowo załadowany.</translation>
     </message>
     <message>
-        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm "Create grid from from cross-section data"&lt;/li&gt;&lt;/ul&gt;</source>
+        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm &quot;Create grid from from cross-section data&quot;&lt;/li&gt;&lt;/ul&gt;</source>
         <translation>Ta funkcja może być używana, gdy spełnione są następujące warunki: &lt;ul&gt;&lt;li&gt;Wykres dla dwuwymiarowego wyniku siatki strukturalnej.&lt;/li&gt;&lt;li&gt;Oś X jest kierunkiem I w siatce.&lt;/li &gt;&lt;li&gt;Siatka jest tworzona za pomocą algorytmu „Utwórz siatkę z danych przekroju”&lt;/li&gt;&lt;/ul&gt;</translation>
     </message>
 </context>
@@ -580,7 +582,7 @@
         <translation>Błąd</translation>
     </message>
     <message>
-        <source>The title of the first column has to be "X"</source>
+        <source>The title of the first column has to be &quot;X&quot;</source>
         <translation>Tytuł pierwszej kolumny musi mieć postać „X”</translation>
     </message>
     <message>
@@ -660,7 +662,7 @@
         <translation>Błąd</translation>
     </message>
     <message>
-        <source>The title of the first column has to be "X"</source>
+        <source>The title of the first column has to be &quot;X&quot;</source>
         <translation>Tytuł pierwszej kolumny musi mieć postać „X”</translation>
     </message>
     <message>

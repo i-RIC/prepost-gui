@@ -240,7 +240,6 @@ Post2dWindowZoneDataItem* Post2dWindowDataModel::getZoneDataItem()
 	// no appropriate zonedatatem found.
 	PostSolutionInfo* info = postSolutionInfo();
 	QList<PostZoneDataContainer*> containers = info->zoneContainers2D();
-	Post2dWindowZoneDataItem* zitem;
 	if (containers.count() == 0) {
 		// No zone container exists.
 		return nullptr;
@@ -254,15 +253,12 @@ Post2dWindowZoneDataItem* Post2dWindowDataModel::getZoneDataItem()
 		std::string zone = dialog.zoneName();
 		Post2dWindowRootDataItem* root = dynamic_cast<Post2dWindowRootDataItem*>(m_rootDataItem);
 		Post2dWindowGridTypeDataItem* gt = root->gridTypeDataItem(gridType);
-		zitem = gt->zoneData(zone);
-		return zitem;
+		return gt->zoneData(zone);
 	} else {
 		Post2dWindowRootDataItem* root = dynamic_cast<Post2dWindowRootDataItem*>(m_rootDataItem);
 		QList<Post2dWindowGridTypeDataItem*> list = root->gridTypeDataItems();
 		Post2dWindowGridTypeDataItem* gt = list.at(0);
-		QList<Post2dWindowZoneDataItem*> zonelist = gt->zoneDatas();
-		zitem = zonelist.at(0);
-		return zitem;
+		return gt->zoneDatas().at(0);
 	}
 }
 

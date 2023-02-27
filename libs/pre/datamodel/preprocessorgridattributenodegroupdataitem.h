@@ -5,18 +5,14 @@
 #include <guicore/pre/base/preprocessordataitem.h>
 #include <misc/opacitycontainer.h>
 #include <QMap>
-#include <vtkActor.h>
-#include <vtkDataSetMapper.h>
-#include <vtkPolyData.h>
-#include <vtkPolyDataMapper.h>
-#include <vtkSmartPointer.h>
-#include <vtkContourFilter.h>
 
 #include <string>
 
 class QAction;
 class NamedGraphicWindowDataItem;
 class PreProcessorGridAttributeNodeDataItem;
+
+class vtkActor;
 
 class PreProcessorGridAttributeNodeGroupDataItem : public PreProcessorDataItem , public TargetedItemI
 {
@@ -31,7 +27,6 @@ public:
 
 	void updateActorSettings();
 	void informDataChange(const std::string& name);
-	void setupActors();
 	void updateZDepthRangeItemCount() override;
 	void informSelection(VTKGraphicsView* v) override;
 	void informDeselection(VTKGraphicsView* v) override;
@@ -40,18 +35,19 @@ public:
 	void assignActorZValues(const ZDepthRange& range) override;
 	void informGridUpdate();
 	const QList<PreProcessorGridAttributeNodeDataItem*> conditions() const;
-	PreProcessorGridAttributeNodeDataItem* nodeDataItem(const std::string& name) {return m_nameMap.value(name, 0);}
+	PreProcessorGridAttributeNodeDataItem* nodeDataItem(const std::string& name) const;
 	void handleStandardItemChange() override;
-	void setOpacity(int o) {m_opacity = o;}
-	int opacity() {return m_opacity;}
+	void setOpacityPercentAndUpdateActorSettings(int o, QUndoCommand* subcommand, bool renderOnRedoOnly = false);
+	int opacityPercent() const;
 	void informSelectedVerticesChanged(const QVector<vtkIdType>& vertices);
-	QAction* showAttributeBrowserAction() const {return m_showAttributeBrowserAction;}
+	QAction* showAttributeBrowserAction() const;
 	void addCustomMenuItems(QMenu* menu) override;
 	void initAttributeBrowser();
 	void clearAttributeBrowser();
 	void fixAttributeBrowser(const QPoint& p, VTKGraphicsView* v);
 	void updateAttributeBrowser(const QPoint& p, VTKGraphicsView* v);
 	bool addToolBarButtons(QToolBar* toolbar) override;
+	void applyColorMapSetting(const std::string& name);
 
 public slots:
 	void handleNamedItemChange(NamedGraphicWindowDataItem* item);
@@ -67,19 +63,15 @@ private:
 	vtkIdType findVertex(const QPoint& p, VTKGraphicsView* v);
 
 	std::string m_target;
-	vtkSmartPointer<vtkPolyData> m_contourPolyData;
-	vtkSmartPointer<vtkActor> m_contourActor;
-	vtkSmartPointer<vtkDataSetMapper> m_contourMapper;
-	vtkSmartPointer<vtkActor> m_isolineActor;
-	vtkSmartPointer<vtkPolyDataMapper> m_isolineMapper;
-	vtkSmartPointer<vtkContourFilter> m_isolineFilter;
-	vtkSmartPointer<vtkActor> m_fringeActor;
-	vtkSmartPointer<vtkDataSetMapper> m_fringeMapper;
+
+	vtkActor* m_actor;
 
 	QAction* m_showAttributeBrowserAction;
 	OpacityContainer m_opacity;
 	bool m_attributeBrowserFixed;
 	QMap<std::string, PreProcessorGridAttributeNodeDataItem*> m_nameMap;
+
+	class ModifyOpacityAndUpdateActorSettingsCommand;
 };
 
 #endif // PREPROCESSORGRIDATTRIBUTENODEGROUPDATAITEM_H

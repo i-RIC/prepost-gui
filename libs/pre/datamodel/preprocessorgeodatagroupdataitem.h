@@ -5,6 +5,9 @@
 
 #include <guibase/scalarbarsetting.h>
 #include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
+#include <misc/boolcontainer.h>
+#include <misc/compositecontainer.h>
+#include <misc/stringcontainer.h>
 
 class SolverDefinitionGridAttribute;
 class PreProcessorGeoDataDataItem;
@@ -26,6 +29,20 @@ class PREDLL_EXPORT PreProcessorGeoDataGroupDataItem : public PreProcessorGeoDat
 	Q_OBJECT
 
 public:
+
+	class VariationSetting : public CompositeContainer
+	{
+	public:
+		VariationSetting();
+		VariationSetting(const VariationSetting& s);
+
+		VariationSetting& operator=(const VariationSetting& s);
+		XmlAttributeContainer& operator=(const XmlAttributeContainer& c) override;
+
+		BoolContainer enabled;
+		StringContainer activeVariation;
+	};
+
 	PreProcessorGeoDataGroupDataItem(SolverDefinitionGridAttribute* cond, PreProcessorDataItem* parent);
 	~PreProcessorGeoDataGroupDataItem() override;
 
@@ -41,6 +58,7 @@ public:
 	void informValueRangeChange();
 	void informDataChange();
 	bool getValueRange(double* min, double* max) override;
+	void applyColorMapSetting() override;
 	void updateZDepthRangeItemCount() override;
 
 	bool importAvailable();
@@ -49,9 +67,6 @@ public:
 	void clearDimensionsIfNoDataExists();
 
 	const QList<PreProcessorGeoDataDataItemInterface*> geoDatas() const override;
-	void editScalarBarLegendBox(PreProcessorScalarBarLegendBoxSettingDialog* dialog);
-	ScalarBarSetting& scalarBarSetting();
-	const QString& scalarBarTitle() const;
 	bool addImportAction(QMenu* menu);
 	bool addImportFromWebAction(QMenu* menu);
 	QStringList getGeoDatasNotMapped();
@@ -69,6 +84,7 @@ public:
 	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
+
 	bool polygonExists() const;
 	int saveToCgnsFile() override;
 	virtual int saveComplexGroupsToCgnsFile();
@@ -99,6 +115,7 @@ private slots:
 	void deleteSelected();
 	void deleteAll();
 	void cancelImport();
+	void editVariationSetting();
 
 signals:
 	void selectGeoData(const QModelIndex& current);
@@ -118,7 +135,7 @@ protected:
 	QMenu* m_addMenu;
 	QAction* m_webImportAction;
 	QAction* m_editColorMapAction;
-	QAction* m_setupScalarBarAction;
+	QAction* m_editVariationSettingAction;
 	QAction* m_exportAllPolygonsAction;
 	QAction* m_deleteSelectedAction;
 	QAction* m_deleteAllAction;
@@ -127,15 +144,16 @@ protected:
 	SolverDefinitionGridAttribute* m_condition;
 	GridAttributeDimensionsContainer* m_dimensions;
 
-	ScalarBarSetting m_scalarBarSetting;
-	QString m_scalarBarTitle;
-
 	PreProcessorGeoDataDataItem* m_backgroundItem;
 
 private:
+	VariationSetting m_variationSetting;
 	QList<GeoDataRiverSurveyCrosssectionWindowProjectDataItem*> m_crosssectionWindows;
 
 	bool m_cancelImport;
+
+	class ColorMapSettingEditDialog;
+	class VariationSettingDialog;
 };
 
 #endif // PREPROCESSORGEODATAGROUPDATAITEM_H

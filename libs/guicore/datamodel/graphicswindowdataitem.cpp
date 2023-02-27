@@ -11,6 +11,7 @@
 #include "private/graphicswindowdataitem_renderredoonlycommand.h"
 #include "private/graphicswindowdataitem_standarditemmodifycommand.h"
 
+#include <guicore/base/iricmainwindowinterface.h>
 #include <misc/iricundostack.h>
 #include <misc/qttool.h>
 #include <memory>
@@ -33,24 +34,30 @@
 #include <iriclib_errorcodes.h>
 
 GraphicsWindowDataItem::GraphicsWindowDataItem(const QString& itemlabel, GraphicsWindowDataItem* parent) :
-	ProjectDataItem {parent},
-	m_standardItem {new QStandardItem(itemlabel)}
+	GraphicsWindowDataItem {parent}
 {
+	m_standardItem = new QStandardItem(itemlabel);
 	init();
 }
 GraphicsWindowDataItem::GraphicsWindowDataItem(const QString& itemlabel, const QIcon& icon, GraphicsWindowDataItem* parent) :
-	ProjectDataItem {parent},
-	m_standardItem {new QStandardItem(icon, itemlabel)}
+	GraphicsWindowDataItem {parent}
 {
+	m_standardItem = new QStandardItem(icon, itemlabel);
 	init();
 }
 
 GraphicsWindowDataItem::GraphicsWindowDataItem(ProjectDataItem* parent) :
 	ProjectDataItem {parent},
-	m_standardItem {nullptr}
-{
-	init();
-}
+	m_standardItem {nullptr},
+	m_standardItemCopy {nullptr},
+	m_isDeletable {true},
+	m_isReorderable {false},
+	m_isExpanded {false},
+	m_actorCollection {vtkActorCollection::New()},
+	m_actor2DCollection {vtkActor2DCollection::New()},
+	m_zDepthRange {},
+	m_isCommandExecuting {false}
+{}
 
 GraphicsWindowDataItem::~GraphicsWindowDataItem()
 {
@@ -139,8 +146,6 @@ void GraphicsWindowDataItem::init()
 		}
 		m_standardItem->setEditable(false);
 	}
-	m_actorCollection = vtkActorCollection::New();
-	m_actor2DCollection = vtkActor2DCollection::New();
 }
 
 void GraphicsWindowDataItem::innerUpdateItemMap(QMap<QStandardItem*, GraphicsWindowDataItem*>& map)
@@ -192,6 +197,28 @@ void GraphicsWindowDataItem::closeCgnsFile()
 		child->closeCgnsFile();
 	}
 }
+
+bool GraphicsWindowDataItem::isDeletable() const
+{
+	return m_isDeletable;
+}
+
+bool GraphicsWindowDataItem::isReorderable() const
+{
+	return m_isReorderable;
+}
+
+void GraphicsWindowDataItem::addCustomMenuItems(QMenu* /*menu*/)
+{}
+
+void GraphicsWindowDataItem::informSelection(VTKGraphicsView* /*v*/)
+{}
+
+void GraphicsWindowDataItem::informDeselection(VTKGraphicsView* /*v*/)
+{}
+
+void GraphicsWindowDataItem::viewOperationEnded(VTKGraphicsView* /*v*/)
+{}
 
 void GraphicsWindowDataItem::loadCheckState(const QDomNode& node)
 {
@@ -259,6 +286,16 @@ void GraphicsWindowDataItem::saveToProjectMainFile(QXmlStreamWriter& writer)
 	saveCheckState(writer);
 	saveExpandState(writer);
 	ProjectDataItem::saveToProjectMainFile(writer);
+}
+
+QStandardItem* GraphicsWindowDataItem::standardItem() const
+{
+	return m_standardItem;
+}
+
+void GraphicsWindowDataItem::updateItemMap()
+{
+	dynamic_cast<GraphicsWindowDataItem*>(parent())->updateItemMap();
 }
 
 void GraphicsWindowDataItem::updateVisibility()
@@ -347,6 +384,19 @@ bool GraphicsWindowDataItem::isAncientChecked() const
 	return dynamic_cast<GraphicsWindowDataItem*>(parent())->isAncientChecked();
 }
 
+void GraphicsWindowDataItem::undoableDeleteItem(GraphicsWindowDataItem* /*item*/, bool /*noDraw*/)
+{}
+
+bool GraphicsWindowDataItem::addToolBarButtons(QToolBar* /*parent*/)
+{
+	return false;
+}
+
+const std::vector<GraphicsWindowDataItem*>& GraphicsWindowDataItem::childItems() const
+{
+	return m_childItems;
+}
+
 void GraphicsWindowDataItem::moveUp()
 {
 	// reorder the standard item.
@@ -391,13 +441,7 @@ void GraphicsWindowDataItem::moveDown()
 
 void GraphicsWindowDataItem::showPropertyDialog()
 {
-	QDialog* propDialog = propertyDialog(mainWindow());
-	if (propDialog == nullptr) {return;}
-	int result = propDialog->exec();
-	if (result == QDialog::Accepted) {
-		handlePropertyDialogAccepted(propDialog);
-	}
-	delete propDialog;
+	showPropertyDialogModal();
 }
 
 void GraphicsWindowDataItem::showAddDialog()
@@ -409,6 +453,11 @@ void GraphicsWindowDataItem::showAddDialog()
 		handleAddDialogAccepted(dialog);
 	}
 	delete dialog;
+}
+
+const ZDepthRange& GraphicsWindowDataItem::zDepthRange() const
+{
+	return m_zDepthRange;
 }
 
 void GraphicsWindowDataItem::setZDepthRange(const ZDepthRange& newrange)
@@ -466,6 +515,16 @@ GraphicsWindowDataModel* GraphicsWindowDataItem::dataModel() const
 	return dynamic_cast<GraphicsWindowDataItem*>(parent())->dataModel();
 }
 
+vtkActorCollection* GraphicsWindowDataItem::actorCollection() const
+{
+	return m_actorCollection;
+}
+
+vtkActor2DCollection* GraphicsWindowDataItem::actor2DCollection() const
+{
+	return m_actor2DCollection;
+}
+
 QStringList GraphicsWindowDataItem::containedFiles() const
 {
 	QStringList ret;
@@ -486,6 +545,9 @@ void GraphicsWindowDataItem::updateZDepthRangeItemCount()
 	}
 	m_zDepthRange.setItemCount(sum);
 }
+
+void GraphicsWindowDataItem::updateMoveUpDownActions(ObjectBrowserView* /*view*/)
+{}
 
 void GraphicsWindowDataItem::setIsCommandExecuting(bool exec)
 {
@@ -517,6 +579,22 @@ bool GraphicsWindowDataItem::hasTransparentPart()
 	return hasTransparent;
 }
 
+QDialog* GraphicsWindowDataItem::propertyDialog(QWidget* /*parent*/)
+{
+	return nullptr;
+}
+
+void GraphicsWindowDataItem::handlePropertyDialogAccepted(QDialog* /*propDialog*/)
+{}
+
+QDialog* GraphicsWindowDataItem::addDialog(QWidget* /*parent*/)
+{
+	return nullptr;
+}
+
+void GraphicsWindowDataItem::handleAddDialogAccepted(QDialog* /*addDialog*/)
+{}
+
 PostSolutionInfo* GraphicsWindowDataItem::postSolutionInfo()
 {
 	return projectData()->mainfile()->postSolutionInfo();
@@ -537,6 +615,27 @@ void GraphicsWindowDataItem::handleResize(VTKGraphicsView* v)
 		child->handleResize(v);
 	}
 }
+
+void GraphicsWindowDataItem::keyPressEvent(QKeyEvent* /*event*/, VTKGraphicsView* /*v*/)
+{}
+
+void GraphicsWindowDataItem::keyReleaseEvent(QKeyEvent* /*event*/, VTKGraphicsView* /*v*/)
+{}
+
+void GraphicsWindowDataItem::mouseDoubleClickEvent(QMouseEvent* /*event*/, VTKGraphicsView* /*v*/)
+{}
+
+void GraphicsWindowDataItem::mouseMoveEvent(QMouseEvent* /*event*/, VTKGraphicsView* /*v*/)
+{}
+
+void GraphicsWindowDataItem::mousePressEvent(QMouseEvent* /*event*/, VTKGraphicsView* /*v*/)
+{}
+
+void GraphicsWindowDataItem::mouseReleaseEvent(QMouseEvent* /*event*/, VTKGraphicsView* /*v*/)
+{}
+
+void GraphicsWindowDataItem::wheelEvent(QWheelEvent* /*event*/, VTKGraphicsView* /*v*/)
+{}
 
 void GraphicsWindowDataItem::applyOffset(double x, double y)
 {
@@ -610,4 +709,27 @@ void GraphicsWindowDataItem::pushRenderRedoOnlyCommand(QUndoCommand* com, Graphi
 	} else {
 		pushCommand(com2);
 	}
+}
+
+void GraphicsWindowDataItem::showPropertyDialogModal()
+{
+	QDialog* propDialog = propertyDialog(mainWindow());
+	if (propDialog == nullptr) {return;}
+	int result = propDialog->exec();
+	if (result == QDialog::Accepted) {
+		handlePropertyDialogAccepted(propDialog);
+	}
+	delete propDialog;
+}
+
+void GraphicsWindowDataItem::showPropertyDialogModeless()
+{
+	QDialog* propDialog = propertyDialog(mainWindow());
+	if (propDialog == nullptr) {return;}
+	propDialog->setAttribute(Qt::WA_DeleteOnClose);
+	connect(propDialog, &QObject::destroyed, iricMainWindow(), &iRICMainWindowInterface::exitModelessDialogMode);
+
+	iricMainWindow()->enterModelessDialogMode();
+
+	propDialog->show();
 }

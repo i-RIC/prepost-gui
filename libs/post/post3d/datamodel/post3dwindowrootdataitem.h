@@ -6,15 +6,15 @@
 #include <QList>
 #include <QMap>
 
-//class Post3dWindowBackgroundImagesDataItem;
+class Axis3dDataItem;
+class Post3dWindow;
 class Post3dWindowGridTypeDataItem;
 class Post3dWindowZoneDataItem;
 class Post3dWindowDataModel;
-class QStandardItemModel;
 class PostTitleDataItem;
 class PostTimeDataItem;
-class Axis3dDataItem;
-class Post3dWindow;
+
+class QStandardItemModel;
 
 class Post3dWindowRootDataItem : public GraphicsWindowRootDataItem
 {

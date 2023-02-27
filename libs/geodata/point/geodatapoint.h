@@ -65,6 +65,7 @@ private:
 	void setMouseEventMode(MouseEventMode mode);
 
 	void updateMouseCursor(PreProcessorGraphicsViewInterface* v);
+	void updateScalarValues() override;
 	void updateActorSettings() override;
 	void updateMouseEventMode();
 
@@ -76,6 +77,8 @@ private:
 
 	class EditCoordinatesCommand;
 	class FinishPointDefiningCommand;
+	class MoveVertexCommand;
+	class SetVertexCommand;
 
 	class CoordinatesEditor;
 

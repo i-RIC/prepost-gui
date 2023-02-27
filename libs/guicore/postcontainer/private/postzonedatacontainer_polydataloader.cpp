@@ -118,9 +118,13 @@ int loadPolyData(const std::string& name, vtkPolyData* polyData, std::vector<int
 
 } // namespace
 
-bool PostZoneDataContainer::PolyDataLoader::load(std::map<std::string, vtkSmartPointer<vtkPolyData> >* polyDataMap, std::map<std::string, std::vector<int> >* polyDataCellIdsMap, iRICLib::H5CgnsPolyDataSolution* sol, const QPointF& offset)
+bool PostZoneDataContainer::PolyDataLoader::load(std::map<std::string, vtkPointSetAndValueRangeSetT<vtkPolyData>*>* polyDataMap, std::map<std::string, std::vector<int> >* polyDataCellIdsMap, iRICLib::H5CgnsPolyDataSolution* sol, const QPointF& offset)
 {
+	for (const auto& pair : *polyDataMap) {
+		delete pair.second;
+	}
 	polyDataMap->clear();
+
 	polyDataCellIdsMap->clear();
 
 	if (sol == nullptr) {
@@ -132,12 +136,14 @@ bool PostZoneDataContainer::PolyDataLoader::load(std::map<std::string, vtkSmartP
 	if (ier != 0) {return false;}
 
 	for (auto name : groupNames) {
-		auto polyData = vtkSmartPointer<vtkPolyData>::New();
+		auto polyData = vtkPolyData::New();
 		std::vector<int> ids;
-		int ret = loadPolyData(name, polyData.Get(), &ids, sol, offset);
+		int ret = loadPolyData(name, polyData, &ids, sol, offset);
 		if (ret != 0) {return false;}
 
-		polyDataMap->insert({name, polyData});
+		auto data = new vtkPointSetAndValueRangeSetT<vtkPolyData>(polyData);
+
+		polyDataMap->insert({name, data});
 		polyDataCellIdsMap->insert({name, ids});
 	}
 

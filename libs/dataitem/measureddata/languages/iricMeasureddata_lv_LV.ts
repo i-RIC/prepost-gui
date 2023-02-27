@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="lv_LV">
 <context>
     <name>MeasuredDataFileDataItem</name>
@@ -38,34 +40,81 @@
     </message>
 </context>
 <context>
-    <name>MeasuredDataPointSettingDialog</name>
+    <name>MeasuredDataPointGroupDataItem_PropertyDialog</name>
     <message>
-        <source>Scalar Setting</source>
-        <translation>Skalāra iestatīšana</translation>
-    </message>
-    <message>
-        <source>Measured Value:</source>
-        <translation>Izmērītā vērtība:</translation>
+        <source>Points Display Setting Dialog</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>Displeja iestatījums</translation>
+        <translation type="unfinished">Displeja iestatījums</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Krāsa</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="unfinished">Eksportēt (&amp;E)...</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation>Punkta izmērs:</translation>
+        <translation type="unfinished">Punkta izmērs:</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataPointSettingDialog</name>
+    <message>
+        <source>Scalar Setting</source>
+        <translation type="vanished">Skalāra iestatīšana</translation>
+    </message>
+    <message>
+        <source>Measured Value:</source>
+        <translation type="vanished">Izmērītā vērtība:</translation>
+    </message>
+    <message>
+        <source>Display Setting</source>
+        <translation type="vanished">Displeja iestatījums</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="vanished">Punkta izmērs:</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Krāsu joslas iestatīšana (&amp;C)</translation>
+        <translation type="vanished">Krāsu joslas iestatīšana (&amp;C)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Kļūda</translation>
+        <translation type="vanished">Kļūda</translation>
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
-        <translation>Vērtību diapazonam maksimālā vērtība ir mazāka par minimālo vērtību.</translation>
+        <translation type="vanished">Vērtību diapazonam maksimālā vērtība ir mazāka par minimālo vērtību.</translation>
     </message>
 </context>
 <context>
@@ -80,62 +129,69 @@
     </message>
     <message>
         <source>Update Arrow Setting</source>
-        <translation>Atjauniniet bultiņas iestatījumu</translation>
+        <translation type="vanished">Atjauniniet bultiņas iestatījumu</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataVectorGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Measured Data Arrow Setting</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>MeasuredDataVectorSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Bultas iestatīšana</translation>
+        <translation type="vanished">Bultas iestatīšana</translation>
     </message>
     <message>
         <source>Physical value:</source>
-        <translation>Fiziskā vērtība:</translation>
+        <translation type="vanished">Fiziskā vērtība:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Garums</translation>
+        <translation type="vanished">Garums</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Automātiski</translation>
+        <translation type="vanished">Automātiski</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Standarta vērtība:</translation>
+        <translation type="vanished">Standarta vērtība:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[jaunkundze]</translation>
+        <translation type="vanished">[jaunkundze]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Garums ekrānā:</translation>
+        <translation type="vanished">Garums ekrānā:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[pikseļi]</translation>
+        <translation type="vanished">[pikseļi]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Minimālā zīmējamā vērtība:</translation>
+        <translation type="vanished">Minimālā zīmējamā vērtība:</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Krāsa</translation>
+        <translation type="vanished">Krāsa</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Pielāgota krāsa</translation>
+        <translation type="vanished">Pielāgota krāsa</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Pēc skalārās vērtības</translation>
+        <translation type="vanished">Pēc skalārās vērtības</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Krāsu joslas iestatīšana (&amp;C)</translation>
+        <translation type="vanished">Krāsu joslas iestatīšana (&amp;C)</translation>
     </message>
 </context>
 </TS>

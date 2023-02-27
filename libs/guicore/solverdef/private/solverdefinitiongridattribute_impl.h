@@ -8,6 +8,8 @@
 
 #include <vector>
 
+class ColorMapFactoryI;
+
 class SolverDefinitionGridAttribute::Impl
 {
 public:
@@ -29,6 +31,7 @@ public:
 	int m_order {0};
 	bool m_isReferenceInformation;
 	std::vector<SolverDefinitionGridAttributeDimension*> m_dimensions;
+	ColorMapFactoryI* m_colorMapFactory;
 
 	SolverDefinitionGridAttribute* m_parent;
 };

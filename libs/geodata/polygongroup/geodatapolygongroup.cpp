@@ -9,11 +9,12 @@
 #include <geodata/polydatagroup/geodatapolydatagroupcreator.h>
 #include <geodata/polygon/geodatapolygon.h>
 #include <geoio/polygonutil.h>
+#include <guibase/vtktool/vtkpolydatamapperutil.h>
 #include <guicore/pre/base/preprocessorgeodatadataiteminterface.h>
 #include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
 #include <guicore/pre/base/preprocessorwindowinterface.h>
 #include <guicore/pre/geodata/geodatafactoryinterface.h>
-#include <guicore/scalarstocolors/scalarstocolorscontainer.h>
+#include <guicore/scalarstocolors/colormapsettingcontaineri.h>
 #include <misc/zdepthrange.h>
 
 #include <QMenu>
@@ -59,25 +60,6 @@ GeoDataPolygonGroup::GeoDataPolygonGroup(ProjectDataItem* d, GeoDataCreator* gdc
 {
 	addAction()->setText(tr("&Add New Polygon..."));
 
-	ScalarsToColorsContainer* stcc = scalarsToColorsContainer();
-	if (stcc != nullptr) {
-		auto mapper = impl->m_paintActor->GetMapper();
-		mapper->SetLookupTable(stcc->vtkObj());
-		mapper->SetUseLookupTableScalarRange(true);
-
-		mapper = impl->m_edgesActor->GetMapper();
-		mapper->SetLookupTable(stcc->vtkDarkObj());
-		mapper->SetUseLookupTableScalarRange(true);
-
-		mapper = impl->m_selectedPolygonsEdgesActor->GetMapper();
-		mapper->SetLookupTable(stcc->vtkDarkObj());
-		mapper->SetUseLookupTableScalarRange(true);
-
-		mapper = impl->m_selectedPolygonsPointsActor->GetMapper();
-		mapper->SetLookupTable(stcc->vtkDarkObj());
-		mapper->SetUseLookupTableScalarRange(true);
-	}
-
 	actorCollection()->AddItem(impl->m_paintActor);
 	actorCollection()->AddItem(impl->m_edgesActor);
 
@@ -90,8 +72,6 @@ GeoDataPolygonGroup::GeoDataPolygonGroup(ProjectDataItem* d, GeoDataCreator* gdc
 	if (att && att->isReferenceInformation()) {
 		impl->m_colorSetting.mapping = GeoDataPolygonGroupColorSettingDialog::Arbitrary;
 	}
-
-	updateActorSetting();
 }
 
 GeoDataPolygonGroup::~GeoDataPolygonGroup()
@@ -357,6 +337,7 @@ GeoDataPolyDataGroupPolyData* GeoDataPolygonGroup::createNewData()
 GeoDataPolyData* GeoDataPolygonGroup::createEditTargetData()
 {
 	auto polygon = new GeoDataPolygon(parent(), creator(), gridAttribute());
+	polygon->setVariantValue(gridAttribute()->variantDefaultValue());
 
 	polygon->assignActorZValues(depthRange());
 	connect(polygon, SIGNAL(nameAndValueEdited()), this, SLOT(updateAttributeBrowser()));
@@ -369,17 +350,12 @@ void GeoDataPolygonGroup::updateActorSetting()
 	auto cs = impl->m_colorSetting;
 
 	// color
-	double rate = 0.8;
 	QColor c = cs.color;
-	QColor darkColor;
-	darkColor.setRedF(c.redF() * rate);
-	darkColor.setGreenF(c.greenF() * rate);
-	darkColor.setBlueF(c.blueF() * rate);
 
-	impl->m_edgesActor->GetProperty()->SetColor(darkColor.redF(), darkColor.greenF(), darkColor.blueF());
+	impl->m_edgesActor->GetProperty()->SetColor(c.redF(), c.greenF(), c.blueF());
 	impl->m_paintActor->GetProperty()->SetColor(cs.color);
-	impl->m_selectedPolygonsEdgesActor->GetProperty()->SetColor(darkColor.redF(), darkColor.greenF(), darkColor.blueF());
-	impl->m_selectedPolygonsPointsActor->GetProperty()->SetColor(darkColor.redF(), darkColor.greenF(), darkColor.blueF());
+	impl->m_selectedPolygonsEdgesActor->GetProperty()->SetColor(c.redF(), c.greenF(), c.blueF());
+	impl->m_selectedPolygonsPointsActor->GetProperty()->SetColor(c.redF(), c.greenF(), c.blueF());
 
 	// opacity
 	impl->m_paintActor->GetProperty()->SetOpacity(cs.opacity);
@@ -389,14 +365,52 @@ void GeoDataPolygonGroup::updateActorSetting()
 	if (cs.mapping == GeoDataPolygonGroupColorSettingDialog::Arbitrary) {
 		scalarVisibility = false;
 	}
-	impl->m_edgesActor->GetMapper()->SetScalarVisibility(scalarVisibility);
-	impl->m_paintActor->GetMapper()->SetScalarVisibility(scalarVisibility);
-	impl->m_selectedPolygonsEdgesActor->GetMapper()->SetScalarVisibility(scalarVisibility);
-	impl->m_selectedPolygonsPointsActor->GetMapper()->SetScalarVisibility(scalarVisibility);
+	if (scalarVisibility) {
+		vtkMapper* mapper = nullptr;
+		auto cs = colorMapSettingContainer();
+
+		mapper = cs->buildCellDataMapper(impl->m_edgesPolyData, true);
+		impl->m_edgesActor->SetMapper(mapper);
+		mapper->Delete();
+
+		mapper = cs->buildCellDataMapper(impl->m_paintPolyData, false);
+		impl->m_paintActor->SetMapper(mapper);
+		mapper->Delete();
+
+		mapper = cs->buildCellDataMapper(impl->m_selectedPolygonsEdgesPolyData, true);
+		impl->m_selectedPolygonsEdgesActor->SetMapper(mapper);
+		mapper->Delete();
+
+		mapper = cs->buildCellDataMapper(impl->m_selectedPolygonsPointsPolyData, true);
+		impl->m_selectedPolygonsPointsActor->SetMapper(mapper);
+		mapper->Delete();
+	} else {
+		vtkPolyDataMapper* mapper = nullptr;
+
+		mapper = vtkPolyDataMapperUtil::createWithScalarVisibilityOff();
+		mapper->SetInputData(impl->m_edgesPolyData);
+		impl->m_edgesActor->SetMapper(mapper);
+		mapper->Delete();
+
+		mapper = vtkPolyDataMapperUtil::createWithScalarVisibilityOff();
+		mapper->SetInputData(impl->m_paintPolyData);
+		impl->m_paintActor->SetMapper(mapper);
+		mapper->Delete();
+
+		mapper = vtkPolyDataMapperUtil::createWithScalarVisibilityOff();
+		mapper->SetInputData(impl->m_selectedPolygonsEdgesPolyData);
+		impl->m_selectedPolygonsEdgesActor->SetMapper(mapper);
+		mapper->Delete();
+
+		mapper = vtkPolyDataMapperUtil::createWithScalarVisibilityOff();
+		mapper->SetInputData(impl->m_selectedPolygonsPointsPolyData);
+		impl->m_selectedPolygonsPointsActor->SetMapper(mapper);
+		mapper->Delete();
+	}
 
 	// line width
 	impl->m_edgesActor->GetProperty()->SetLineWidth(cs.lineWidth);
-	impl->m_selectedPolygonsEdgesActor->GetProperty()->SetLineWidth(cs.lineWidth);
+	impl->m_selectedPolygonsEdgesActor->GetProperty()->SetLineWidth(cs.lineWidth * 2);
 	impl->m_selectedPolygonsPointsActor->GetProperty()->SetPointSize(cs.lineWidth * 5);
 
 	updateActorSettingForEditTargetPolyData();

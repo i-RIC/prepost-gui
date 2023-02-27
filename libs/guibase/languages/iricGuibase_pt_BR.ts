@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="pt_BR">
 <context>
     <name>AsciiOnlyLineEdit</name>
@@ -257,6 +259,37 @@
     <message>
         <source>Visible</source>
         <translation>Exibicao  </translation>
+    </message>
+</context>
+<context>
+    <name>GridShapeSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Forma</translation>
+    </message>
+    <message>
+        <source>Grid Lines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation type="unfinished">Todos</translation>
+    </message>
+    <message>
+        <source>Outline Only</source>
+        <translation type="unfinished">Somente quadro externo</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished">Cor de exibicao:</translation>
+    </message>
+    <message>
+        <source>Grid Indices</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation type="unfinished">Exibicao  </translation>
     </message>
 </context>
 <context>
@@ -543,9 +576,9 @@
     </message>
     <message>
         <source>Specify the number format in printf format. For example:
-   "%5.2f" for 3.141592 --&gt; 3.14
-   "%4.2e" for 12300  --&gt; 1.23e+004</source>
-        <translation>Especifique o formato do número no formato printf. Por exemplo: " %5.2f "para 3,141592 -&gt; 3,14" %4.2e "para 12300 -&gt; 1,23e + 004</translation>
+   &quot;%5.2f&quot; for 3.141592 --&gt; 3.14
+   &quot;%4.2e&quot; for 12300  --&gt; 1.23e+004</source>
+        <translation>Especifique o formato do número no formato printf. Por exemplo: &quot; %5.2f &quot;para 3,141592 -&gt; 3,14&quot; %4.2e &quot;para 12300 -&gt; 1,23e + 004</translation>
     </message>
 </context>
 <context>

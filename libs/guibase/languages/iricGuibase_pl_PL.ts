@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="pl_PL">
 <context>
     <name>AsciiOnlyLineEdit</name>
@@ -260,6 +262,37 @@
     </message>
 </context>
 <context>
+    <name>GridShapeSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Formularz</translation>
+    </message>
+    <message>
+        <source>Grid Lines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation type="unfinished">Wszystko</translation>
+    </message>
+    <message>
+        <source>Outline Only</source>
+        <translation type="unfinished">Tylko konspekt</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished">Kolor:</translation>
+    </message>
+    <message>
+        <source>Grid Indices</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation type="unfinished">Widoczny</translation>
+    </message>
+</context>
+<context>
     <name>IntegerNumberDisplayLabel</name>
     <message>
         <source>------</source>
@@ -483,9 +516,9 @@
     </message>
     <message>
         <source>Specify the number format in printf format. For example:
-   "%5.2f" for 3.141592 --&gt; 3.14
-   "%4.2e" for 12300  --&gt; 1.23e+004</source>
-        <translation>Określ format liczb w formacie printf. Na przykład: " %5.2f" dla 3.141592 --&gt; 3.14" %4.2e" dla 12300 --&gt; 1,23e+004</translation>
+   &quot;%5.2f&quot; for 3.141592 --&gt; 3.14
+   &quot;%4.2e&quot; for 12300  --&gt; 1.23e+004</source>
+        <translation>Określ format liczb w formacie printf. Na przykład: &quot; %5.2f&quot; dla 3.141592 --&gt; 3.14&quot; %4.2e&quot; dla 12300 --&gt; 1,23e+004</translation>
     </message>
     <message>
         <source>Orientation :</source>

@@ -1,11 +1,14 @@
 #include "../pre/gridcond/container/gridattributerealnodecontainer.h"
 #include "../pre/gridcond/editwidget/gridattributerealeditwidget.h"
 #include "../pre/gridcond/editwidget/gridattributerealvariationeditwidget.h"
+#include "../scalarstocolors/colormapfactory.h"
 #include "solverdefinitiongridattributerealnode.h"
 
 SolverDefinitionGridAttributeRealNode::SolverDefinitionGridAttributeRealNode(const QDomElement& elem, SolverDefinition* solverDef, int order) :
 	SolverDefinitionGridAttributeReal {elem, solverDef, Node, false, order}
-{}
+{
+	setColorMapFactory(new ColorMapFactory());
+}
 
 GridAttributeEditWidget* SolverDefinitionGridAttributeRealNode::editWidget(QWidget* parent)
 {

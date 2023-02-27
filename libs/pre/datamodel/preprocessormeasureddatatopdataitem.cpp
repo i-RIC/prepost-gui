@@ -1,4 +1,3 @@
-#include "../misc/preprocessorscalarbarlegendboxsettingdialog.h"
 #include "../preprocessorgraphicsview.h"
 #include "preprocessormeasureddatatopdataitem.h"
 #include "preprocessorrootdataitem.h"
@@ -13,8 +12,6 @@
 #include <guicore/project/measured/measureddata.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
-#include <guicore/scalarstocolors/colortransferfunctioncontainer.h>
-#include <guicore/scalarstocolors/lookuptablecontainer.h>
 #include <misc/stringtool.h>
 
 #include <QAction>

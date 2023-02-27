@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="hu_HU">
 <context>
     <name>BoundaryConditionDialog</name>
@@ -112,7 +114,7 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>GridBirdEyeWindow</name>
     <message>
-        <source>Grid Bird's-Eye View Window</source>
+        <source>Grid Bird&apos;s-Eye View Window</source>
         <translation>Rács Madártávlatos ablak</translation>
     </message>
 </context>
@@ -139,69 +141,135 @@ Do you really want to import grid from this file?</source>
     <name>GridBirdEyeWindowAxesSettingDialog</name>
     <message>
         <source>Axes Setting</source>
-        <translation>Tengelyek beállítása</translation>
+        <translation type="vanished">Tengelyek beállítása</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>Látható</translation>
+        <translation type="vanished">Látható</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Szín:</translation>
+        <translation type="vanished">Szín:</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowColorSettingDialog</name>
     <message>
         <source>Display Setting</source>
-        <translation>Kijelző beállítás</translation>
+        <translation type="vanished">Kijelző beállítás</translation>
     </message>
     <message>
         <source>Grid Color</source>
-        <translation>Rács színe</translation>
+        <translation type="vanished">Rács színe</translation>
     </message>
     <message>
         <source>Node attribute</source>
-        <translation>Csomópont attribútum</translation>
+        <translation type="vanished">Csomópont attribútum</translation>
     </message>
     <message>
         <source>Cell attribute</source>
-        <translation>Cella attribútum</translation>
+        <translation type="vanished">Cella attribútum</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Egyedi szín</translation>
+        <translation type="vanished">Egyedi szín</translation>
     </message>
     <message>
         <source>Axes</source>
-        <translation>Balták</translation>
+        <translation type="vanished">Balták</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>Látható</translation>
+        <translation type="vanished">Látható</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Szín:</translation>
+        <translation type="vanished">Szín:</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowDataModel</name>
     <message>
         <source>Edit Z-direction Scale</source>
-        <translation>Z-irányú skála szerkesztése</translation>
+        <translation type="vanished">Z-irányú skála szerkesztése</translation>
     </message>
     <message>
         <source>Z-direction Scale</source>
-        <translation>Z-irányú skála</translation>
+        <translation type="vanished">Z-irányú skála</translation>
     </message>
     <message>
         <source>Input new Z-direction scale.</source>
-        <translation>Adjon meg új Z-irányú skálát.</translation>
+        <translation type="vanished">Adjon meg új Z-irányú skálát.</translation>
     </message>
     <message>
         <source>Edit Color Setting</source>
-        <translation>Színbeállítás szerkesztése</translation>
+        <translation type="vanished">Színbeállítás szerkesztése</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowGridDataItem</name>
+    <message>
+        <source>Edit Z-direction Scale</source>
+        <translation type="unfinished">Z-irányú skála szerkesztése</translation>
+    </message>
+    <message>
+        <source>Input new Z-direction scale.</source>
+        <translation type="unfinished">Adjon meg új Z-irányú skálát.</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowGridDataItem_EditDisplaySettingDialog</name>
+    <message>
+        <source>Edit Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Elevation:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Grid Color</source>
+        <translation type="unfinished">Rács színe</translation>
+    </message>
+    <message>
+        <source>Cusom Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="unfinished">Importálás (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="unfinished">Export (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Axes</source>
+        <translation type="unfinished">Balták</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation type="unfinished">Látható</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished">Szín:</translation>
+    </message>
+    <message>
+        <source>Background Color:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Z-direction scale:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -287,6 +355,10 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Are you sure you want to delete all boundary conditions?</source>
         <translation>Biztosan törli az összes határfeltételt?</translation>
+    </message>
+    <message>
+        <source>Edit Display Setting</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -387,6 +459,17 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Are you sure you want to delete all background images?</source>
         <translation>Biztosan törli az összes háttérképet?</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorBcGroupSettingDialog</name>
+    <message>
+        <source>Boundary Condition Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Font setting for names</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -580,8 +663,8 @@ Do you really want to import grid from this file?</source>
         <translation>%1 a legutóbbi szerkesztés után nem kerülnek feltérképezésre. Most szeretné végrehajtani a leképezést?</translation>
     </message>
     <message>
-        <source>Boundary Condition Setting "%1" is not mapped after it is edited last time. Do you want to execute mapping now?</source>
-        <translation>Határfeltétel beállítása "%1"nincs feltérképezve a legutóbbi szerkesztés után. Szeretné most végrehajtani a leképezést?</translation>
+        <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
+        <translation>Határfeltétel beállítása &quot;%1&quot;nincs feltérképezve a legutóbbi szerkesztés után. Szeretné most végrehajtani a leképezést?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -666,7 +749,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Set Up Scalarbar...</source>
-        <translation>Scalarbar beállítása...</translation>
+        <translation type="vanished">Scalarbar beállítása...</translation>
     </message>
     <message>
         <source>Delete &amp;Selected...</source>
@@ -789,6 +872,56 @@ Do you really want to import grid from this file?</source>
         <source>To import the geographic data, specify coordinate system for the project first.</source>
         <translation>A földrajzi adatok importálásához először adja meg a projekt koordinátarendszerét.</translation>
     </message>
+    <message>
+        <source>Edit &amp;Variation Setting...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGeoDataGroupDataItem_ColorMapSettingEditDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation type="unfinished">Párbeszéd</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="unfinished">Importálás (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="unfinished">Export (&amp;E)...</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGeoDataGroupDataItem_VariationSettingDialog</name>
+    <message>
+        <source>Variation Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enable variation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Variation to pass to solver:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Note:
+
+When variation is enabled, variation named &quot;Default&quot; is created, and all geographic data is moved to that.
+
+You can add, rename, remove variations from &quot;Object Browser&quot;.
+
+You can move, copy geographic data between variations.
+
+The grid attribute data created from the variation that you select with &quot;Variation to pass to solver&quot; is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGeoDataTopDataItem</name>
@@ -848,7 +981,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Grid Cell Attribute Display Setting</source>
-        <translation>Rács cella attribútum megjelenítési beállítás</translation>
+        <translation type="vanished">Rács cella attribútum megjelenítési beállítás</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -928,6 +1061,21 @@ Do you really want to import grid from this file?</source>
     </message>
 </context>
 <context>
+    <name>PreProcessorGridAttributeCellDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Cell Attribute Display Setting</source>
+        <translation type="unfinished">Rács cella attribútum megjelenítési beállítás</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="unfinished">Importálás (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="unfinished">Export (&amp;E)...</translation>
+    </message>
+</context>
+<context>
     <name>PreProcessorGridAttributeCellDisplaySettingDialog</name>
     <message>
         <source>Dialog</source>
@@ -987,9 +1135,9 @@ Do you really want to import grid from this file?</source>
         <translation>Végrehajtás (&amp;E)...</translation>
     </message>
     <message>
-        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".
+        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.
 </source>
-        <translation>A következő attribútumok nem lettek leképezve, mert rácsgenerátor kimeneti értékei vannak rájuk. Ha erőszakkal szeretné leképezni a földrajzi adatokat, kérjük, manuálisan térképezze le a "Rács" -&gt; "Attribútumleképezés" -&gt; "Végrehajtás" menüben.</translation>
+        <translation>A következő attribútumok nem lettek leképezve, mert rácsgenerátor kimeneti értékei vannak rájuk. Ha erőszakkal szeretné leképezni a földrajzi adatokat, kérjük, manuálisan térképezze le a &quot;Rács&quot; -&gt; &quot;Attribútumleképezés&quot; -&gt; &quot;Végrehajtás&quot; menüben.</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1008,12 +1156,12 @@ Do you really want to import grid from this file?</source>
         <translation>A földrajzi adatok feltérképezése befejeződött</translation>
     </message>
     <message>
-        <source>The grid attribute "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>A rács attribútum "%1"kézzel szerkesztik. Amikor leképezést hajt végre, az összes módosítást elveti. Valóban végrehajtani szeretné a leképezést?</translation>
+        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>A rács attribútum &quot;%1&quot;kézzel szerkesztik. Amikor leképezést hajt végre, az összes módosítást elveti. Valóban végrehajtani szeretné a leképezést?</translation>
     </message>
     <message>
-        <source>The boundary condition "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>A határfeltétel "%1"kézzel szerkesztik. Amikor leképezést hajt végre, az összes módosítást elveti. Valóban végrehajtani szeretné a leképezést?</translation>
+        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>A határfeltétel &quot;%1&quot;kézzel szerkesztik. Amikor leképezést hajt végre, az összes módosítást elveti. Valóban végrehajtani szeretné a leképezést?</translation>
     </message>
 </context>
 <context>
@@ -1031,20 +1179,20 @@ Do you really want to import grid from this file?</source>
         <translation>Automatikus</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // HU" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta név = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; A rács létrehozásakor a rendszer megkérdezi, hogy hogy minden alkalommal végrehajtsa az attribútumleképezést. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // HU&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta név = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; A rács létrehozásakor a rendszer megkérdezi, hogy hogy minden alkalommal végrehajtsa az attribútumleképezést. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Manual</source>
         <translation>Kézikönyv</translation>
     </message>
     <message>
-        <source>Attribute mapping is executed only when you manually select "Execute" menu.</source>
-        <translation>Az attribútumleképezés csak akkor hajtódik végre, ha manuálisan választja ki a "Végrehajtás" menüt.</translation>
+        <source>Attribute mapping is executed only when you manually select &quot;Execute&quot; menu.</source>
+        <translation>Az attribútumleképezés csak akkor hajtódik végre, ha manuálisan választja ki a &quot;Végrehajtás&quot; menüt.</translation>
     </message>
     <message>
         <source>Geographic data mapping</source>
@@ -1096,7 +1244,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Grid Node Attribute Display Setting</source>
-        <translation>Rácscsomópont attribútum kijelző beállítása</translation>
+        <translation type="vanished">Rácscsomópont attribútum kijelző beállítása</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -1173,6 +1321,21 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Generate point cloud data</source>
         <translation>Pontfelhő -adatok generálása</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeNodeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Node Attribute Display Setting</source>
+        <translation type="unfinished">Rácscsomópont attribútum kijelző beállítása</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="unfinished">Importálás (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="unfinished">Export (&amp;E)...</translation>
     </message>
 </context>
 <context>
@@ -1448,7 +1611,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>Scalarbar beállítása (&amp;U)...</translation>
     </message>
     <message>
-        <source>Open &amp;Bird's-Eye View Window</source>
+        <source>Open &amp;Bird&apos;s-Eye View Window</source>
         <translation>Nyissa meg a Madártávlat ablakot (&amp;B)</translation>
     </message>
     <message>
@@ -1727,26 +1890,26 @@ This algorithm can be used only for structured grids.</source>
     <name>PreProcessorScalarBarEditDialog</name>
     <message>
         <source>Color Legend Setting</source>
-        <translation>Színjelzés beállítása</translation>
+        <translation type="vanished">Színjelzés beállítása</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorScalarBarLegendBoxSettingDialog</name>
     <message>
         <source>Scalarbar Setting</source>
-        <translation>Scalarbar beállítás</translation>
+        <translation type="vanished">Scalarbar beállítás</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>Látható</translation>
+        <translation type="vanished">Látható</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>Érték</translation>
+        <translation type="vanished">Érték</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation>Szerkesztés...</translation>
+        <translation type="vanished">Szerkesztés...</translation>
     </message>
 </context>
 <context>
@@ -1825,99 +1988,99 @@ This algorithm can be used only for structured grids.</source>
     <name>PreProcessorWindowScalarBarSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation>Forma</translation>
+        <translation type="vanished">Forma</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>Látható</translation>
+        <translation type="vanished">Látható</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation>Cím</translation>
+        <translation type="vanished">Cím</translation>
     </message>
     <message>
         <source>Title :</source>
-        <translation>Cím:</translation>
+        <translation type="vanished">Cím:</translation>
     </message>
     <message>
         <source>Font Setting:</source>
-        <translation>Betűtípus beállítása:</translation>
+        <translation type="vanished">Betűtípus beállítása:</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation>Szerkesztés...</translation>
+        <translation type="vanished">Szerkesztés...</translation>
     </message>
     <message>
         <source>Label Display</source>
-        <translation>Címke kijelző</translation>
+        <translation type="vanished">Címke kijelző</translation>
     </message>
     <message>
         <source>Number of labels :</source>
-        <translation>Címkék száma:</translation>
+        <translation type="vanished">Címkék száma:</translation>
     </message>
     <message>
         <source>Format:</source>
-        <translation>Formátum:</translation>
+        <translation type="vanished">Formátum:</translation>
     </message>
     <message>
         <source>Orientation :</source>
-        <translation>Orientáció :</translation>
+        <translation type="vanished">Orientáció :</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation>Függőleges</translation>
+        <translation type="vanished">Függőleges</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation>Vízszintes</translation>
+        <translation type="vanished">Vízszintes</translation>
     </message>
     <message>
         <source>Size</source>
-        <translation>Méret</translation>
+        <translation type="vanished">Méret</translation>
     </message>
     <message>
         <source>Specify Color bar size as rate against window size.</source>
-        <translation>Adja meg a színsáv méretét az ablak méretéhez viszonyítva.</translation>
+        <translation type="vanished">Adja meg a színsáv méretét az ablak méretéhez viszonyítva.</translation>
     </message>
     <message>
         <source>Width :</source>
-        <translation>Szélesség:</translation>
+        <translation type="vanished">Szélesség:</translation>
     </message>
     <message>
         <source>If you specify 1, Color bar width is the same to window width.</source>
-        <translation>Ha 1 -et ad meg, a színsáv szélessége megegyezik az ablak szélességével.</translation>
+        <translation type="vanished">Ha 1 -et ad meg, a színsáv szélessége megegyezik az ablak szélességével.</translation>
     </message>
     <message>
         <source>Height :</source>
-        <translation>Magasság:</translation>
+        <translation type="vanished">Magasság:</translation>
     </message>
     <message>
         <source>If you specify 1, Color bar height is the same to window height.</source>
-        <translation>Ha 1 -et ad meg, a színsáv magassága megegyezik az ablak magasságával.</translation>
+        <translation type="vanished">Ha 1 -et ad meg, a színsáv magassága megegyezik az ablak magasságával.</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>Pozíció</translation>
+        <translation type="vanished">Pozíció</translation>
     </message>
     <message>
         <source>Specify Color bar left bottom position as rate against window size.</source>
-        <translation>Adja meg a színsáv bal alsó helyzetét az ablak méretéhez viszonyítva.</translation>
+        <translation type="vanished">Adja meg a színsáv bal alsó helyzetét az ablak méretéhez viszonyítva.</translation>
     </message>
     <message>
         <source>X :</source>
-        <translation>X :</translation>
+        <translation type="vanished">X :</translation>
     </message>
     <message>
         <source>If you specify 0, Color bar left edge is located at window left edge.</source>
-        <translation>Ha 0 értéket ad meg, a színsáv bal széle az ablak bal szélén található.</translation>
+        <translation type="vanished">Ha 0 értéket ad meg, a színsáv bal széle az ablak bal szélén található.</translation>
     </message>
     <message>
         <source>Y :</source>
-        <translation>Y:</translation>
+        <translation type="vanished">Y:</translation>
     </message>
     <message>
         <source>If you specify 0, Color bar bottom is located at window bottom.</source>
-        <translation>Ha 0 értéket ad meg, a színsáv alja az ablak alján található.</translation>
+        <translation type="vanished">Ha 0 értéket ad meg, a színsáv alja az ablak alján található.</translation>
     </message>
 </context>
 <context>

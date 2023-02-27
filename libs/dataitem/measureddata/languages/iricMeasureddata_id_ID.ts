@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="id_ID">
 <context>
     <name>MeasuredDataFileDataItem</name>
@@ -38,34 +40,81 @@
     </message>
 </context>
 <context>
-    <name>MeasuredDataPointSettingDialog</name>
+    <name>MeasuredDataPointGroupDataItem_PropertyDialog</name>
     <message>
-        <source>Scalar Setting</source>
-        <translation>Pengaturan Skalar</translation>
-    </message>
-    <message>
-        <source>Measured Value:</source>
-        <translation>Nilai yang terukur:</translation>
+        <source>Points Display Setting Dialog</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>Pengaturan tampilan</translation>
+        <translation type="unfinished">Pengaturan tampilan</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Warna</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="unfinished">Ekspor (&amp;E)...</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation>Ukuran Poin:</translation>
+        <translation type="unfinished">Ukuran Poin:</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataPointSettingDialog</name>
+    <message>
+        <source>Scalar Setting</source>
+        <translation type="vanished">Pengaturan Skalar</translation>
+    </message>
+    <message>
+        <source>Measured Value:</source>
+        <translation type="vanished">Nilai yang terukur:</translation>
+    </message>
+    <message>
+        <source>Display Setting</source>
+        <translation type="vanished">Pengaturan tampilan</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="vanished">Ukuran Poin:</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Pengaturan Bilah Warna (&amp;C)</translation>
+        <translation type="vanished">Pengaturan Bilah Warna (&amp;C)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Kesalahan</translation>
+        <translation type="vanished">Kesalahan</translation>
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
-        <translation>Untuk rentang nilai, nilai maks lebih kecil dari nilai min.</translation>
+        <translation type="vanished">Untuk rentang nilai, nilai maks lebih kecil dari nilai min.</translation>
     </message>
 </context>
 <context>
@@ -80,62 +129,69 @@
     </message>
     <message>
         <source>Update Arrow Setting</source>
-        <translation>Perbarui Pengaturan Panah</translation>
+        <translation type="vanished">Perbarui Pengaturan Panah</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataVectorGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Measured Data Arrow Setting</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>MeasuredDataVectorSettingDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Pengaturan Panah</translation>
+        <translation type="vanished">Pengaturan Panah</translation>
     </message>
     <message>
         <source>Physical value:</source>
-        <translation>Nilai fisik:</translation>
+        <translation type="vanished">Nilai fisik:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Panjang</translation>
+        <translation type="vanished">Panjang</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Mobil</translation>
+        <translation type="vanished">Mobil</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Nilai standar:</translation>
+        <translation type="vanished">Nilai standar:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[MS]</translation>
+        <translation type="vanished">[MS]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Panjang di layar:</translation>
+        <translation type="vanished">Panjang di layar:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[piksel]</translation>
+        <translation type="vanished">[piksel]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Nilai minimum untuk menggambar:</translation>
+        <translation type="vanished">Nilai minimum untuk menggambar:</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Warna</translation>
+        <translation type="vanished">Warna</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Warna kustom</translation>
+        <translation type="vanished">Warna kustom</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Dengan nilai skalar</translation>
+        <translation type="vanished">Dengan nilai skalar</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Pengaturan Bilah Warna (&amp;C)</translation>
+        <translation type="vanished">Pengaturan Bilah Warna (&amp;C)</translation>
     </message>
 </context>
 </TS>

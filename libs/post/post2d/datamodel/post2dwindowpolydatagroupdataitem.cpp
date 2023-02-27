@@ -1,61 +1,68 @@
+#include "../post2dwindowgraphicsview.h"
 #include "post2dwindowgridtypedataitem.h"
 #include "post2dwindowpolydatagroupdataitem.h"
 #include "post2dwindowpolydatavaluedataitem.h"
 #include "post2dwindowzonedataitem.h"
-#include "private/post2dwindowpolydatagroupdataitem_setbasicsettingcommand.h"
-#include "private/post2dwindowpolydatagroupdataitem_setsettingcommand.h"
+#include "private/post2dwindowpolydatagroupdataitem_propertydialog.h"
 
-#include <guibase/graphicsmisc.h>
-#include <guibase/vtkCustomScalarBarActor.h>
-#include <guicore/datamodel/vtkgraphicsview.h>
+#include <guibase/vtkdatasetattributestool.h>
+#include <guibase/vtktool/vtkpolydatamapperutil.h>
 #include <guicore/named/namedgraphicswindowdataitemtool.h>
 #include <guicore/misc/targeted/targeteditemsettargetcommandtool.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
+#include <guicore/scalarstocolors/colormapsettingcontainer.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
+#include <guicore/solverdef/solverdefinitionoutput.h>
 #include <misc/stringtool.h>
-#include <postbase/polydata/postpolydatabasicsettingdialog.h>
-#include <postbase/polydata/postpolydatascalarpropertydialog.h>
 
-#include <QDomNodeList>
 #include <QMenu>
 #include <QMouseEvent>
 #include <QStandardItem>
-#include <QXmlStreamWriter>
 
-#include <vtkCellData.h>
+#include <vtkActor.h>
+#include <vtkActor2D.h>
 #include <vtkProperty.h>
 #include <vtkRenderer.h>
-#include <vtkRenderWindow.h>
-#include <vtkScalarBarWidget.h>
 
 Post2dWindowPolyDataGroupDataItem::Post2dWindowPolyDataGroupDataItem(const std::string& name, Post2dWindowDataItem* p) :
 	Post2dWindowDataItem {name.c_str(), QIcon(":/libs/guibase/images/iconFolder.svg"), p},
-	m_scalarBarWidget {vtkScalarBarWidget::New()}
+	m_actor {vtkActor::New()},
+	m_legendActor {vtkActor2D::New()},
+	m_setting {}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 
-	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->dataContainer();
-	auto data = cont->polyData(name);
-	auto cd = data->GetCellData();
-	int num = cd->GetNumberOfArrays();
+	auto cont = zoneDataItem()->dataContainer();
 
 	SolverDefinitionGridType* gt = cont->gridType();
-	for (int i = 0; i < num; ++i) {
-		auto a = cd->GetArray(i);
-		if (a == nullptr) {continue;}
 
-		auto item = new Post2dWindowPolyDataValueDataItem(a->GetName(), gt->solutionCaption(std::string(a->GetName())), this);
+	for (const auto& name : vtkDataSetAttributesTool::getArrayNames(cont->polyData(name)->data()->GetCellData())) {
+		auto item = new Post2dWindowPolyDataValueDataItem(name, gt->solutionCaption(name), this);
 		m_childItems.push_back(item);
-		m_scalarbarTitleMap.insert({a->GetName(), a->GetName()});
+		auto cs = new ColorMapSettingContainer();
+		auto caption = gt->output(name)->caption();
+		cs->valueCaption = caption;
+		cs->legend.title = caption;
+		cs->legend.visibilityMode = ColorMapLegendSettingContainer::VisibilityMode::Always;
+		m_colorMapSettings.insert({name, cs});
 	}
+
 	setupActors();
+	updateActorSettings();
 }
 
 Post2dWindowPolyDataGroupDataItem::~Post2dWindowPolyDataGroupDataItem()
 {
-	renderer()->RemoveActor(m_pair.actor());
-	m_scalarBarWidget->SetInteractor(nullptr);
-	m_scalarBarWidget->Delete();
+	auto r = renderer();
+	r->RemoveActor(m_actor);
+	r->RemoveActor2D(m_legendActor);
+
+	m_actor->Delete();;
+	m_legendActor->Delete();
+
+	for (const auto& pair : m_colorMapSettings) {
+		delete pair.second;
+	}
 }
 
 std::string Post2dWindowPolyDataGroupDataItem::name() const
@@ -63,114 +70,92 @@ std::string Post2dWindowPolyDataGroupDataItem::name() const
 	return iRIC::toStr(m_standardItem->text());
 }
 
-QColor Post2dWindowPolyDataGroupDataItem::color() const
-{
-	return m_setting.color;
-}
-
-void Post2dWindowPolyDataGroupDataItem::setColor(const QColor& c)
-{
-	m_setting.color = c;
-}
-
 std::string Post2dWindowPolyDataGroupDataItem::target() const
 {
-	return std::string(m_scalarSetting.target);
+	return std::string(m_setting.value);
 }
 
 void Post2dWindowPolyDataGroupDataItem::setTarget(const std::string& target)
 {
 	NamedGraphicsWindowDataItemTool::checkItemWithName(target, m_childItems);
-	m_scalarSetting.target = target.c_str();
+	m_setting.value = target.c_str();
+	if (m_setting.value == "") {
+		m_setting.mapping = PolyDataSetting::Mapping::Arbitrary;
+	} else {
+		m_setting.mapping = PolyDataSetting::Mapping::Value;
+	}
+
 	updateActorSettings();
 }
 
 void Post2dWindowPolyDataGroupDataItem::setupActors()
 {
-	renderer()->AddActor(m_pair.actor());
+	auto r = renderer();
+	r->AddActor(m_actor);
+	r->AddActor2D(m_legendActor);
 
-	m_scalarBarWidget->SetScalarBarActor(vtkCustomScalarBarActor::New());
-	iRIC::setupScalarBarProperty(m_scalarBarWidget->GetScalarBarActor());
-	auto iren = renderer()->GetRenderWindow()->GetInteractor();
-	m_scalarBarWidget->SetInteractor(iren);
-	m_scalarBarWidget->SetEnabled(0);
 	updateActorSettings();
 }
 
 void Post2dWindowPolyDataGroupDataItem::update()
 {
+	auto gtItem = zoneDataItem()->gridTypeDataItem();
+	for (const auto& pair : m_colorMapSettings) {
+		auto range = gtItem->polyDataValueRange(pair.first);
+		pair.second->setAutoValueRange(range);
+	}
+
 	updateActorSettings();
 }
 
 void Post2dWindowPolyDataGroupDataItem::updateActorSettings()
 {
-	m_pair.actor()->VisibilityOff();
+	m_actor->VisibilityOff();
+	m_legendActor->VisibilityOff();
+
 	m_actorCollection->RemoveAllItems();
+	m_actor2DCollection->RemoveAllItems();
 
-	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->dataContainer();
-	if (cont == nullptr || cont->polyData(name()) == nullptr) {return;}
+	auto data = polyData();
+	if (data == nullptr) {return;}
 
-	if (target() == "") {
-		QColor c = m_setting.color;
-		m_pair.actor()->GetProperty()->SetColor(c.redF(), c.greenF(), c.blueF());
-		auto mapper = m_pair.mapper();
-		mapper->ScalarVisibilityOff();
-		mapper->SetScalarModeToDefault();
+	if (m_setting.mapping == PolyDataSetting::Mapping::Arbitrary) {
+		auto mapper = vtkPolyDataMapperUtil::createWithScalarVisibilityOff();
+		mapper->SetInputData(data);
+		m_actor->SetMapper(mapper);
+		mapper->Delete();;
+
+		m_actor->GetProperty()->SetColor(m_setting.color);
 	} else {
-		Post2dWindowGridTypeDataItem* gtItem = dynamic_cast<Post2dWindowGridTypeDataItem*> (parent()->parent()->parent());
-		LookupTableContainer* ltc = gtItem->polyDataLookupTable(target());
-		auto mapper = m_pair.mapper();
-		mapper->ScalarVisibilityOn();
-		mapper->SetScalarModeToUseCellFieldData();
-		mapper->SelectColorArray(iRIC::toStr(m_scalarSetting.target).c_str());
-		mapper->UseLookupTableScalarRangeOn();
-		mapper->SetLookupTable(ltc->vtkObj());
+		auto value = iRIC::toStr(m_setting.value);
+		data->GetCellData()->SetActiveScalars(value.c_str());
+		auto cs = m_colorMapSettings.at(value);
+		auto mapper = cs->buildCellDataMapper(data, false);
+		m_actor->SetMapper(mapper);
+		mapper->Delete();
 
-		m_scalarBarWidget->GetScalarBarActor()->SetLookupTable(ltc->vtkObj());
-		m_scalarBarWidget->GetScalarBarActor()->SetTitle(iRIC::toStr(m_scalarbarTitleMap[target()]).c_str());
+		auto& is = cs->legend.imageSetting;
+		is.setActor(m_legendActor);
+		is.controller()->setItem(this);
+		is.controller()->handleSelection(dataModel()->graphicsView());
 	}
-	m_pair.actor()->GetProperty()->SetLineWidth(m_setting.lineWidth);
-	m_pair.mapper()->SetInputData(cont->polyData(name()));
+	auto v = dataModel()->graphicsView();
+	m_actor->GetProperty()->SetLineWidth(m_setting.lineWidth * v->devicePixelRatioF());
+	m_actor->GetProperty()->SetOpacity(m_setting.opacity);
+	m_actorCollection->AddItem(m_actor);
 
-	m_actorCollection->AddItem(m_pair.actor());
+	updateCheckState();
 	updateVisibilityWithoutRendering();
+}
+
+void Post2dWindowPolyDataGroupDataItem::showPropertyDialog()
+{
+	showPropertyDialogModeless();
 }
 
 QDialog* Post2dWindowPolyDataGroupDataItem::propertyDialog(QWidget* p)
 {
-	if (m_childItems.size() > 0) {
-		m_scalarSetting.scalarBarSetting.loadFromRepresentation(m_scalarBarWidget->GetScalarBarRepresentation());
-		m_scalarSetting.scalarBarSetting.titleTextSetting.getSetting(m_scalarBarWidget->GetScalarBarActor()->GetTitleTextProperty());
-		m_scalarSetting.scalarBarSetting.labelTextSetting.getSetting(m_scalarBarWidget->GetScalarBarActor()->GetLabelTextProperty());
-
-		auto dialog = new PostPolyDataScalarPropertyDialog(p);
-		Post2dWindowGridTypeDataItem* gtItem = dynamic_cast<Post2dWindowGridTypeDataItem*> (parent()->parent()->parent());
-		dialog->setGridTypeDataItem(gtItem);
-		PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->dataContainer();
-		vtkPolyData* polyData = cont->polyData(name());
-		dialog->setPolyData(polyData);
-		dialog->setScalarBarTitleMap(m_scalarbarTitleMap);
-
-		dialog->setSetting(m_scalarSetting);
-		dialog->setLineWidth(m_setting.lineWidth);
-		dialog->setCustomColor(m_setting.color);
-		return dialog;
-	} else {
-		auto dialog = new PostPolyDataBasicSettingDialog(mainWindow());
-		dialog->setSetting(m_setting);
-		return dialog;
-	}
-}
-
-void Post2dWindowPolyDataGroupDataItem::handlePropertyDialogAccepted(QDialog* propDialog)
-{
-	if (m_childItems.size() > 0) {
-		auto d = dynamic_cast<PostPolyDataScalarPropertyDialog*>(propDialog);
-		pushRenderCommand(new SetSettingCommand(d->setting(), d->lookupTable(), d->lineWidgh(), d->customColor(), d->scalarBarTitle(), this), this, true);
-	} else {
-		auto d = dynamic_cast<PostPolyDataBasicSettingDialog*>(propDialog);
-		pushRenderCommand(new SetBasicSettingCommand(d->setting(), this), this);
-	}
+	return new PropertyDialog(this, p);
 }
 
 void Post2dWindowPolyDataGroupDataItem::updateZDepthRangeItemCount()
@@ -180,35 +165,62 @@ void Post2dWindowPolyDataGroupDataItem::updateZDepthRangeItemCount()
 
 void Post2dWindowPolyDataGroupDataItem::assignActorZValues(const ZDepthRange& range)
 {
-	m_pair.actor()->SetPosition(0, 0, range.min());
+	m_actor->SetPosition(0, 0, range.min());
 }
 
 void Post2dWindowPolyDataGroupDataItem::informSelection(VTKGraphicsView* v)
 {
-	m_scalarBarWidget->SetRepositionable(1);
+	auto s = activeSetting();
+	if (s != nullptr) {
+		s->legend.imageSetting.controller()->handleSelection(v);
+	}
+
 	zoneDataItem()->initPolyDataResultAttributeBrowser();
 }
 
 void Post2dWindowPolyDataGroupDataItem::informDeselection(VTKGraphicsView* v)
 {
-	m_scalarBarWidget->SetRepositionable(0);
+	auto s = activeSetting();
+	if (s != nullptr) {
+		s->legend.imageSetting.controller()->handleDeselection(v);
+	}
+
 	zoneDataItem()->clearPolyDataResultAttributeBrowser();
+}
+
+void Post2dWindowPolyDataGroupDataItem::handleResize(VTKGraphicsView* v)
+{
+	auto s = activeSetting();
+	if (s != nullptr) {
+		s->legend.imageSetting.controller()->handleResize(v);
+	}
 }
 
 void Post2dWindowPolyDataGroupDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	v->standardMouseMoveEvent(event);
+	auto s = activeSetting();
+	if (s != nullptr) {
+		s->legend.imageSetting.controller()->handleMouseMoveEvent(event, v);
+	}
+
 	zoneDataItem()->updatePolyDataResultAttributeBrowser(name(), event->pos(), v);
 }
 
 void Post2dWindowPolyDataGroupDataItem::mousePressEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	v->standardMousePressEvent(event);
+	auto s = activeSetting();
+	if (s != nullptr) {
+		s->legend.imageSetting.controller()->handleMousePressEvent(event, v);
+	}
 }
 
 void Post2dWindowPolyDataGroupDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	v->standardMouseReleaseEvent(event);
+	auto s = activeSetting();
+	if (s != nullptr) {
+		s->legend.imageSetting.controller()->handleMouseReleaseEvent(event, v);
+	}
+
 	zoneDataItem()->fixPolyDataResultAttributeBrowser(name(), event->pos(), v);
 }
 
@@ -229,41 +241,65 @@ void Post2dWindowPolyDataGroupDataItem::handleNamedItemChange(NamedGraphicWindow
 void Post2dWindowPolyDataGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	m_setting.load(node);
-	m_scalarSetting.load(node);
-	m_scalarSetting.scalarBarSetting.saveToRepresentation(m_scalarBarWidget->GetScalarBarRepresentation());
+	auto childNodes = node.childNodes();
+	for (int i = 0; i < childNodes.size(); ++i) {
+		auto child = childNodes.at(i);
+		if (child.nodeName() == "ColorMapSetting") {
+			auto elem = child.toElement();
+			auto name = iRIC::toStr(elem.attribute("name"));
+			auto it = m_colorMapSettings.find(name);
+			if (it == m_colorMapSettings.end()) {continue;}
 
-	QDomNodeList titles = node.childNodes();
-	for (int i = 0; i < titles.count(); ++i) {
-		QDomElement titleElem = titles.at(i).toElement();
-		std::string val = iRIC::toStr(titleElem.attribute("value"));
-		QString title = titleElem.attribute("title");
-		m_scalarbarTitleMap[val] = title;
+			it->second->load(child);
+		}
 	}
-	setTarget(iRIC::toStr(m_scalarSetting.target));
+
+	updateCheckState();
+	updateActorSettings();
 }
 
 void Post2dWindowPolyDataGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	m_scalarSetting.scalarBarSetting.loadFromRepresentation(m_scalarBarWidget->GetScalarBarRepresentation());
 	m_setting.save(writer);
-	m_scalarSetting.save(writer);
 
-	for (const auto& pair : m_scalarbarTitleMap) {
-		writer.writeStartElement("ScalarBarTitle");
-		writer.writeAttribute("value", pair.first.c_str());
-		writer.writeAttribute("title", pair.second);
+	for (const auto& pair : m_colorMapSettings) {
+		writer.writeStartElement("ColorMapSetting");
+		writer.writeAttribute("name", pair.first.c_str());
+		pair.second->save(writer);
 		writer.writeEndElement();
 	}
 }
 
-void Post2dWindowPolyDataGroupDataItem::updateVisibility(bool visible)
+ColorMapSettingContainer* Post2dWindowPolyDataGroupDataItem::activeSetting() const
 {
-	bool v = (m_standardItem->checkState() == Qt::Checked) && visible;
-	m_scalarBarWidget->SetEnabled(m_scalarSetting.scalarBarSetting.visible && v && target() != "");
-	Post2dWindowDataItem::updateVisibility(visible);
+	if (m_setting.mapping == PolyDataSetting::Mapping::Arbitrary) {return nullptr;}
+
+	return m_colorMapSettings.at(iRIC::toStr(m_setting.value));
+}
+
+Post2dWindowGridTypeDataItem* Post2dWindowPolyDataGroupDataItem::gridTypeDataItem() const
+{
+	return dynamic_cast<Post2dWindowGridTypeDataItem*> (zoneDataItem()->parent());
 }
 
 Post2dWindowZoneDataItem* Post2dWindowPolyDataGroupDataItem::zoneDataItem() const
 {
 	return dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent());
+}
+
+vtkPolyData* Post2dWindowPolyDataGroupDataItem::polyData() const
+{
+	auto cont = zoneDataItem()->dataContainer();
+	if (cont == nullptr) {return nullptr;}
+
+	return cont->polyData(name())->concreteData();
+}
+
+void Post2dWindowPolyDataGroupDataItem::updateCheckState()
+{
+	if (m_setting.mapping == PolyDataSetting::Mapping::Arbitrary) {
+		NamedGraphicsWindowDataItemTool::checkItemWithName("", m_childItems, true);
+	} else if (m_setting.mapping == PolyDataSetting::Mapping::Value) {
+		NamedGraphicsWindowDataItemTool::checkItemWithName(m_setting.value, m_childItems, true);
+	}
 }

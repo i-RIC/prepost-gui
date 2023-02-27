@@ -260,7 +260,7 @@ void Post2dWindowStreamlineUnstructuredSettingDialog::apply()
 
 void Post2dWindowStreamlineUnstructuredSettingDialog::setupSolutionComboBox(PostZoneDataContainer* zoneData)
 {
-	vtkPointData* pd = zoneData->data()->GetPointData();
+	vtkPointData* pd = zoneData->data()->data()->GetPointData();
 	SolverDefinitionGridType* gt = zoneData->gridType();
 
 	m_solutions = vtkDataSetAttributesTool::getArrayNamesWithMultipleComponents(pd);

@@ -175,7 +175,7 @@ QJSValue PostStringResultArgument::baseIterativeJsValue() const
 QJSValue PostStringResultArgument::nodeJsValue() const
 {
 	auto z = zoneDataContainer();
-	auto pd = z->data()->GetPointData();
+	auto pd = z->data()->data()->GetPointData();
 	int index = arrayIndex();
 	vtkDataArray* da = pd->GetArray(name().c_str());
 	return *(da->GetTuple(index));
@@ -184,7 +184,7 @@ QJSValue PostStringResultArgument::nodeJsValue() const
 QJSValue PostStringResultArgument::cellJsValue() const
 {
 	auto z = zoneDataContainer();
-	auto pd = z->data()->GetCellData();
+	auto pd = z->data()->data()->GetCellData();
 	int index = arrayIndex();
 	vtkDataArray* da = pd->GetArray(name().c_str());
 	return *(da->GetTuple(index));
@@ -193,7 +193,7 @@ QJSValue PostStringResultArgument::cellJsValue() const
 QJSValue PostStringResultArgument::edgeIJsValue() const
 {
 	auto z = zoneDataContainer();
-	auto pd = z->ifacedata()->GetPointData();
+	auto pd = z->iFaceData()->data()->GetPointData();
 	int index = arrayIndex();
 	vtkDataArray* da = pd->GetArray(name().c_str());
 	return *(da->GetTuple(index));
@@ -202,11 +202,10 @@ QJSValue PostStringResultArgument::edgeIJsValue() const
 QJSValue PostStringResultArgument::edgeJJsValue() const
 {
 	auto z = zoneDataContainer();
-	auto pd = z->jfacedata()->GetPointData();
+	auto pd = z->jFaceData()->data()->GetPointData();
 	int index = arrayIndex();
 	vtkDataArray* da = pd->GetArray(name().c_str());
 	return *(da->GetTuple(index));
-
 }
 
 QJSValue PostStringResultArgument::edgeKJsValue() const
@@ -247,8 +246,10 @@ int PostStringResultArgument::arrayIndex() const
 void PostStringResultArgument::fixNodeIndexIfNeeded(bool* fixed)
 {
 	auto z = zoneDataContainer();
-	auto st = vtkStructuredGrid::SafeDownCast(z->data());
-	auto ust = vtkUnstructuredGrid::SafeDownCast(z->data());
+	vtkPointSet* data = z->data()->data();
+	auto st = vtkStructuredGrid::SafeDownCast(data);
+	auto ust = vtkUnstructuredGrid::SafeDownCast(data);
+
 	*fixed = false;
 	if (st != nullptr) {
 		int dim[3];
@@ -276,8 +277,10 @@ void PostStringResultArgument::fixNodeIndexIfNeeded(bool* fixed)
 void PostStringResultArgument::fixCellIndexIfNeeded(bool* fixed)
 {
 	auto z = zoneDataContainer();
-	auto st = vtkStructuredGrid::SafeDownCast(z->data());
-	auto ust = vtkUnstructuredGrid::SafeDownCast(z->data());
+	vtkPointSet* data = z->data()->data();
+	auto st = vtkStructuredGrid::SafeDownCast(data);
+	auto ust = vtkUnstructuredGrid::SafeDownCast(data);
+
 	*fixed = false;
 	if (st != nullptr) {
 		int dim[3];
@@ -305,7 +308,9 @@ void PostStringResultArgument::fixCellIndexIfNeeded(bool* fixed)
 void PostStringResultArgument::fixEdgeIIndexIfNeeded(bool* fixed)
 {
 	auto z = zoneDataContainer();
-	auto st = vtkStructuredGrid::SafeDownCast(z->data());
+	vtkPointSet* data = z->data()->data();
+
+	auto st = vtkStructuredGrid::SafeDownCast(data);
 	*fixed = false;
 	if (st != nullptr) {
 		int dim[3];
@@ -328,7 +333,9 @@ void PostStringResultArgument::fixEdgeIIndexIfNeeded(bool* fixed)
 void PostStringResultArgument::fixEdgeJIndexIfNeeded(bool* fixed)
 {
 	auto z = zoneDataContainer();
-	auto st = vtkStructuredGrid::SafeDownCast(z->data());
+	vtkPointSet* data = z->data()->data();
+
+	auto st = vtkStructuredGrid::SafeDownCast(data);
 	if (st != nullptr) {
 		int dim[3];
 		st->GetDimensions(dim);
@@ -351,7 +358,9 @@ void PostStringResultArgument::fixEdgeJIndexIfNeeded(bool* fixed)
 void PostStringResultArgument::fixEdgeKIndexIfNeeded(bool* fixed)
 {
 	auto z = zoneDataContainer();
-	auto st = vtkStructuredGrid::SafeDownCast(z->data());
+	vtkPointSet* data = z->data()->data();
+
+	auto st = vtkStructuredGrid::SafeDownCast(data);
 	if (st != nullptr) {
 		int dim[3];
 		st->GetDimensions(dim);

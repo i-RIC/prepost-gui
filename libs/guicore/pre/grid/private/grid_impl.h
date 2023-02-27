@@ -6,7 +6,7 @@
 #include <QList>
 #include <QMap>
 
-#include <vtkAlgorithm.h>
+#include <vtkPolyDataAlgorithm.h>
 #include <vtkSmartPointer.h>
 
 class Grid::Impl
@@ -23,9 +23,9 @@ public:
 	QList<GridAttributeContainer*> m_gridAttributes;
 	QMap<std::string, GridAttributeContainer*> m_gridAttributeNameMap;
 
-	vtkSmartPointer<vtkAlgorithm> m_vtkFilteredShapeAlgorithm;
-	vtkSmartPointer<vtkAlgorithm> m_vtkFilteredPointsAlgorithm;
-	vtkSmartPointer<vtkAlgorithm> m_vtkFilteredCellsAlgorithm;
+	vtkSmartPointer<vtkPolyDataAlgorithm> m_vtkFilteredShapeAlgorithm;
+	vtkSmartPointer<vtkPolyDataAlgorithm> m_vtkFilteredPointsAlgorithm;
+	vtkSmartPointer<vtkPolyDataAlgorithm> m_vtkFilteredCellsAlgorithm;
 
 	PreProcessorGridDataItemInterface* m_dataItem;
 

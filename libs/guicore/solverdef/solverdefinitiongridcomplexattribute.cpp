@@ -2,7 +2,7 @@
 #include "../pre/gridcond/complex/gridcomplexattributecontainer.h"
 #include "../pre/gridcond/complex/gridcomplexattributeeditwidget.h"
 #include "../pre/geodatabackground/geodatabackgroundcomplexcreator.h"
-#include "../scalarstocolors/colortransferfunctioncontainer.h"
+#include "../scalarstocolors/colormapenumeratefactory.h"
 #include "solverdefinitiongridcomplexattribute.h"
 #include "private/solverdefinitiongridcomplexattribute_impl.h"
 
@@ -26,7 +26,10 @@ void SolverDefinitionGridComplexAttribute::Impl::load(const QDomElement& elem, S
 SolverDefinitionGridComplexAttribute::SolverDefinitionGridComplexAttribute(QDomElement node, SolverDefinition* solverDef, int order) :
 	SolverDefinitionGridAttributeInteger {node, solverDef, Node, false, order},
 	impl {new Impl {node, this}}
-{}
+{
+	setColorMapFactory(new ColorMapEnumerateFactory());
+	setVariantDefaultValue(QVariant(1));
+}
 
 SolverDefinitionGridComplexAttribute::~SolverDefinitionGridComplexAttribute()
 {
@@ -53,16 +56,6 @@ GridAttributeVariationEditWidget* SolverDefinitionGridComplexAttribute::variatio
 GeoData* SolverDefinitionGridComplexAttribute::buildBackgroundGeoData(ProjectDataItem* parent)
 {
 	return GeoDataBackgroundComplexCreator::instance()->create(parent, this);
-}
-
-ScalarsToColorsContainer* SolverDefinitionGridComplexAttribute::createScalarsToColorsContainer(ProjectDataItem* d)
-{
-	return createColorTransferFunctionContainer(d);
-}
-
-ScalarsToColorsEditWidget* SolverDefinitionGridComplexAttribute::createScalarsToColorsEditWidget(QWidget* parent) const
-{
-	return createColorTransferFunctionEditWidget(parent);
 }
 
 QString SolverDefinitionGridComplexAttribute::undefinedString() const

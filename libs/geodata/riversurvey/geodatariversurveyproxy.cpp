@@ -4,7 +4,6 @@
 #include "private/geodatariversurvey_impl.h"
 #include "private/geodatariversurveyproxy_setsettingcommand.h"
 
-#include <guicore/scalarstocolors/scalarstocolorscontainer.h>
 #include <misc/mathsupport.h>
 #include <misc/zdepthrange.h>
 
@@ -63,7 +62,7 @@ void GeoDataRiverSurveyProxy::setupActors()
 	auto dsmapper = vtkSmartPointer<vtkDataSetMapper>::New();
 	dsmapper->SetInputData(rs->backgroundGrid());
 	dsmapper->SetScalarModeToUsePointData();
-	dsmapper->SetLookupTable(rs->scalarsToColorsContainer()->vtkObj());
+	//dsmapper->SetLookupTable(rs->scalarsToColorsContainer()->vtkObj());
 	dsmapper->UseLookupTableScalarRangeOn();
 	dsmapper->SetScalarVisibility(true);
 

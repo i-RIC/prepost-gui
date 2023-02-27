@@ -268,7 +268,7 @@ void Graph2dVerificationWindowDataModel::exportData()
 
 void Graph2dVerificationWindowDataModel::setType(int type)
 {
-	vtkPointSet* ps = m_setting.activePostData()->data();
+	vtkPointSet* ps = m_setting.activePostData()->data()->data();
 	vtkStructuredGrid* sgrid = vtkStructuredGrid::SafeDownCast(ps);
 
 	if (sgrid == nullptr) {
@@ -324,7 +324,7 @@ void Graph2dVerificationWindowDataModel::updateGraph()
 	if (cont == nullptr) {
 		return;
 	}
-	vtkPointSet* ps = m_setting.activePostData()->data();
+	vtkPointSet* ps = m_setting.activePostData()->data()->data();
 	if (ps == nullptr) {
 		return;
 	}

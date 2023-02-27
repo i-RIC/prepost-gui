@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="is_IS">
 <context>
     <name>Post2dBirdEyeObjectBrowser</name>
@@ -9,7 +11,7 @@
 <context>
     <name>Post2dBirdEyeWindow</name>
     <message>
-        <source>Bird's-Eye Post-processing (2D): %1</source>
+        <source>Bird&apos;s-Eye Post-processing (2D): %1</source>
         <translation>Fugla-auga eftirvinnsla (2D): %1</translation>
     </message>
     <message>
@@ -56,80 +58,80 @@
     <name>Post2dBirdEyeWindowAxesDataItem</name>
     <message>
         <source>Axes</source>
-        <translation>Ása</translation>
+        <translation type="vanished">Ása</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
-        <translation>Scalar</translation>
+        <translation type="vanished">Scalar</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
-        <translation>Uppfæra útlínustillingu</translation>
+        <translation type="vanished">Uppfæra útlínustillingu</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowCellScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (cell center)</source>
-        <translation>Scalar (frumumiðstöð)</translation>
+        <translation type="vanished">Scalar (frumumiðstöð)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Viðvörun</translation>
+        <translation type="vanished">Viðvörun</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>Að hámarki má skilgreina fjórar útlínur.</translation>
+        <translation type="vanished">Að hámarki má skilgreina fjórar útlínur.</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowContourSettingDialog</name>
     <message>
         <source>Scalar Setting</source>
-        <translation>Skalarstilling</translation>
+        <translation type="vanished">Skalarstilling</translation>
     </message>
     <message>
         <source>Scalar value for elevation</source>
-        <translation>Skalargildi fyrir hækkun</translation>
+        <translation type="vanished">Skalargildi fyrir hækkun</translation>
     </message>
     <message>
         <source>Color Setting</source>
-        <translation>Litastilling</translation>
+        <translation type="vanished">Litastilling</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Sérsniðin litur</translation>
+        <translation type="vanished">Sérsniðin litur</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Eftir kvarðagildi</translation>
+        <translation type="vanished">Eftir kvarðagildi</translation>
     </message>
     <message>
         <source>Scalar Value:</source>
-        <translation>Skalargildi:</translation>
+        <translation type="vanished">Skalargildi:</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>Sýnastilling</translation>
+        <translation type="vanished">Sýnastilling</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>Svæðisstilling (&amp;R)</translation>
+        <translation type="vanished">Svæðisstilling (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Litastikustilling (&amp;C)</translation>
+        <translation type="vanished">Litastikustilling (&amp;C)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Villa</translation>
+        <translation type="vanished">Villa</translation>
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
-        <translation>Fyrir gildissvið er hámarksgildi minna en lágmarksgildi.</translation>
+        <translation type="vanished">Fyrir gildissvið er hámarksgildi minna en lágmarksgildi.</translation>
     </message>
 </context>
 <context>
@@ -144,7 +146,7 @@
     </message>
     <message>
         <source>Contour setting is not available, because this result does not contain cell scalar values.</source>
-        <translation>Staðsetning útlínunnar er ekki tiltæk vegna þess að þessi niðurstaða inniheldur ekki frumustigagildi.</translation>
+        <translation type="vanished">Staðsetning útlínunnar er ekki tiltæk vegna þess að þessi niðurstaða inniheldur ekki frumustigagildi.</translation>
     </message>
     <message>
         <source>Z-direction Scale</source>
@@ -163,6 +165,17 @@
     </message>
 </context>
 <context>
+    <name>Post2dBirdEyeWindowGridShapeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Shape Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scalar value for Elevation</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>Post2dBirdEyeWindowNodeScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
@@ -170,7 +183,42 @@
     </message>
     <message>
         <source>Update Contour Setting</source>
-        <translation>Uppfæra útlínustillingu</translation>
+        <translation type="vanished">Uppfæra útlínustillingu</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation type="unfinished">Sérsniðin litur</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation type="unfinished">Eftir kvarðagildi</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -181,22 +229,22 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Viðvörun</translation>
+        <translation type="vanished">Viðvörun</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>Að hámarki má skilgreina fjórar útlínur.</translation>
+        <translation type="vanished">Að hámarki má skilgreina fjórar útlínur.</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
         <source>Create Contour</source>
-        <translation>Búðu til útlínur</translation>
+        <translation type="vanished">Búðu til útlínur</translation>
     </message>
     <message>
         <source>Update Grid Shape Setting</source>
-        <translation>Uppfæra stillingu fyrir ristform</translation>
+        <translation type="vanished">Uppfæra stillingu fyrir ristform</translation>
     </message>
     <message>
         <source>Edit Background Color</source>

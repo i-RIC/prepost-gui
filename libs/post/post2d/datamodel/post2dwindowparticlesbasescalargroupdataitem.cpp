@@ -1,56 +1,67 @@
+#include "../post2dwindowgraphicsview.h"
 #include "post2dwindowgridtypedataitem.h"
 #include "post2dwindowparticlesbasescalardataitem.h"
 #include "post2dwindowparticlesbasescalargroupdataitem.h"
 #include "post2dwindowparticlesbasetopdataitem.h"
 #include "post2dwindowzonedataitem.h"
-#include "private/post2dwindowparticlesbasescalargroupdataitem_setsettingcommand.h"
+#include "private/post2dwindowparticlesbasescalargroupdataitem_propertydialog.h"
 
-#include <guibase/vtkCustomScalarBarActor.h>
 #include <guibase/vtkdatasetattributestool.h>
-#include <guicore/named/namedgraphicswindowdataitemtool.h>
+#include <guibase/vtktool/vtkpolydatamapperutil.h>
 #include <guicore/misc/targeted/targeteditemsettargetcommandtool.h>
+#include <guicore/named/namedgraphicswindowdataitemtool.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
-#include <guicore/scalarstocolors/scalarstocolorscontainerutil.h>
+#include <guicore/scalarstocolors/colormapsettingcontainer.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
-#include <misc/iricundostack.h>
+#include <guicore/solverdef/solverdefinitionoutput.h>
 #include <misc/stringtool.h>
-#include <guicore/datamodel/vtkgraphicsview.h>
-#include <guibase/graphicsmisc.h>
-#include <postbase/particle/postparticlescalarpropertydialog.h>
-
-#include <QDomElement>
-#include <QMenu>
-#include <QMouseEvent>
-#include <QStandardItem>
-#include <QXmlStreamWriter>
-
-#include <vtkPointData.h>
-#include <vtkProperty.h>
-#include <vtkRenderer.h>
-#include <vtkRenderWindow.h>
 
 Post2dWindowParticlesBaseScalarGroupDataItem::Post2dWindowParticlesBaseScalarGroupDataItem(Post2dWindowDataItem* p) :
-	Post2dWindowDataItem(tr("Scalar"), QIcon(":/libs/guibase/images/iconFolder.svg"), p)
+	Post2dWindowDataItem(tr("Scalar"), QIcon(":/libs/guibase/images/iconFolder.svg"), p),
+	m_actor {vtkActor::New()},
+	m_setting {}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 
-	setupActors();
-	auto topItem = dynamic_cast<Post2dWindowParticlesBaseTopDataItem*> (parent());
+	auto topItem = topDataItem();
+	auto cont = topItem->zoneDataItem()->dataContainer();
+	auto gt = cont->gridType();
 
-	PostZoneDataContainer* cont = topItem->zoneDataItem()->dataContainer();
-	SolverDefinitionGridType* gt = cont->gridType();
 	for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(topItem->particleData()->GetPointData())){
-		auto item = new Post2dWindowParticlesBaseScalarDataItem(name, gt->solutionCaption(name), this);
+		auto item = new Post2dWindowParticlesBaseScalarDataItem(name, gt->output(name)->caption(), this);
 		m_childItems.push_back(item);
-		m_scalarbarTitleMap.insert(name, name.c_str());
 	}
+
+	setupActors();
+	updateCheckState();
 }
 
 Post2dWindowParticlesBaseScalarGroupDataItem::~Post2dWindowParticlesBaseScalarGroupDataItem()
 {
-	vtkRenderer* r = renderer();
+	auto r = renderer();
 	r->RemoveActor(m_actor);
-	m_scalarBarWidget->SetInteractor(nullptr);
+
+	m_actor->Delete();
+}
+
+void Post2dWindowParticlesBaseScalarGroupDataItem::update()
+{
+	for (auto child : m_childItems) {
+		auto item = dynamic_cast<Post2dWindowParticlesBaseScalarDataItem*> (child);
+		item->update();
+	}
+
+	updateActorSettings();
+}
+
+void Post2dWindowParticlesBaseScalarGroupDataItem::showPropertyDialog()
+{
+	showPropertyDialogModeless();
+}
+
+QDialog* Post2dWindowParticlesBaseScalarGroupDataItem::propertyDialog(QWidget* p)
+{
+	return new PropertyDialog(this, p);
 }
 
 void Post2dWindowParticlesBaseScalarGroupDataItem::updateZDepthRangeItemCount()
@@ -63,82 +74,97 @@ void Post2dWindowParticlesBaseScalarGroupDataItem::assignActorZValues(const ZDep
 	m_actor->SetPosition(0, 0, range.min());
 }
 
-void Post2dWindowParticlesBaseScalarGroupDataItem::update()
-{
-	updateActorSettings();
-}
-
-QDialog* Post2dWindowParticlesBaseScalarGroupDataItem::propertyDialog(QWidget* p)
-{
-	m_setting.scalarBarSetting.loadFromRepresentation(m_scalarBarWidget->GetScalarBarRepresentation());
-	m_setting.scalarBarSetting.titleTextSetting.getSetting(m_scalarBarWidget->GetScalarBarActor()->GetTitleTextProperty());
-	m_setting.scalarBarSetting.labelTextSetting.getSetting(m_scalarBarWidget->GetScalarBarActor()->GetLabelTextProperty());
-
-	auto tItem = dynamic_cast<Post2dWindowParticlesBaseTopDataItem*> (parent());
-	auto gtItem = dynamic_cast<Post2dWindowGridTypeDataItem*> (tItem->zoneDataItem()->parent());
-
-	auto dialog = new PostParticleScalarPropertyDialog(p);
-	dialog->setGridTypeDataItem(gtItem);
-	dialog->setData(tItem->particleData());
-	dialog->setScalarBarTitleMap(m_scalarbarTitleMap);
-
-	dialog->setSetting(m_setting);
-	dialog->setParticleSize(tItem->size());
-	dialog->setCustomColor(tItem->color());
-
-	return dialog;
-}
-
-void Post2dWindowParticlesBaseScalarGroupDataItem::handlePropertyDialogAccepted(QDialog* propDialog)
-{
-	auto d = dynamic_cast<PostParticleScalarPropertyDialog*> (propDialog);
-	auto cmd = new SetSettingCommand(d->setting(), d->lookupTable(), d->particleSize(), d->customColor(), d->scalarBarTitle(), this);
-	pushRenderCommand(cmd, this, true);
-}
-
 std::string Post2dWindowParticlesBaseScalarGroupDataItem::target() const
 {
-	return iRIC::toStr(m_setting.target);
+	return iRIC::toStr(m_setting.value);
 }
 
 void Post2dWindowParticlesBaseScalarGroupDataItem::setTarget(const std::string& target)
 {
 	NamedGraphicsWindowDataItemTool::checkItemWithName(target, m_childItems);
-	m_setting.target = target.c_str();
+	m_setting.value = target.c_str();
+	if (m_setting.value == "") {
+		m_setting.mapping = ParticleDataSetting::Mapping::Arbitrary;
+	} else {
+		m_setting.mapping = ParticleDataSetting::Mapping::Value;
+	}
 	updateActorSettings();
 }
 
-void Post2dWindowParticlesBaseScalarGroupDataItem::informSelection(VTKGraphicsView*)
+ColorMapSettingContainer* Post2dWindowParticlesBaseScalarGroupDataItem::colorMapSetting(const std::string& name) const
 {
-	m_scalarBarWidget->SetRepositionable(1);
-	auto topItem = dynamic_cast<Post2dWindowParticlesBaseTopDataItem*> (parent());
-	topItem->zoneDataItem()->initParticleResultAttributeBrowser(topItem->particleData());
+	auto child = childDataItem(name);
+	if (child == nullptr) {return nullptr;}
+
+	return &child->colorMapSetting();
 }
 
-void Post2dWindowParticlesBaseScalarGroupDataItem::informDeselection(VTKGraphicsView*)
+std::unordered_map<std::string, ColorMapSettingContainer*> Post2dWindowParticlesBaseScalarGroupDataItem::colorMapSettings() const
 {
-	m_scalarBarWidget->SetRepositionable(0);
-	auto topItem = dynamic_cast<Post2dWindowParticlesBaseTopDataItem*> (parent());
-	topItem->zoneDataItem()->clearParticleResultAttributeBrowser();
+	std::unordered_map<std::string, ColorMapSettingContainer*> ret;
+	for (auto child : m_childItems) {
+		auto item = dynamic_cast<Post2dWindowParticlesBaseScalarDataItem*> (child);
+		auto& cm = item->colorMapSetting();
+		ret.insert({item->name(), &cm});
+	}
+
+	return ret;
+}
+
+void Post2dWindowParticlesBaseScalarGroupDataItem::informSelection(VTKGraphicsView* v)
+{
+	auto s = activeSetting();
+	if (s != nullptr) {
+		s->legend.imageSetting.controller()->handleSelection(v);
+	}
+
+	zoneDataItem()->initParticleResultAttributeBrowser(particleData());
+}
+
+void Post2dWindowParticlesBaseScalarGroupDataItem::informDeselection(VTKGraphicsView* v)
+{
+	auto s = activeSetting();
+	if (s != nullptr) {
+		s->legend.imageSetting.controller()->handleDeselection(v);
+	}
+
+	zoneDataItem()->clearParticleResultAttributeBrowser();
+}
+
+void Post2dWindowParticlesBaseScalarGroupDataItem::handleResize(VTKGraphicsView* v)
+{
+	auto s = activeSetting();
+	if (s != nullptr) {
+		s->legend.imageSetting.controller()->handleResize(v);
+	}
 }
 
 void Post2dWindowParticlesBaseScalarGroupDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	v->standardMouseMoveEvent(event);
-	auto topItem = dynamic_cast<Post2dWindowParticlesBaseTopDataItem*> (parent());
-	topItem->zoneDataItem()->updateParticleResultAttributeBrowser(event->pos(), v);
+	auto s = activeSetting();
+	if (s != nullptr) {
+		s->legend.imageSetting.controller()->handleMouseMoveEvent(event, v);
+	}
+
+	zoneDataItem()->updateParticleResultAttributeBrowser(event->pos(), v);
 }
 
 void Post2dWindowParticlesBaseScalarGroupDataItem::mousePressEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	v->standardMousePressEvent(event);
+	auto s = activeSetting();
+	if (s != nullptr) {
+		s->legend.imageSetting.controller()->handleMousePressEvent(event, v);
+	}
 }
 
 void Post2dWindowParticlesBaseScalarGroupDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	v->standardMouseReleaseEvent(event);
-	auto topItem = dynamic_cast<Post2dWindowParticlesBaseTopDataItem*> (parent());
-	topItem->zoneDataItem()->fixParticleResultAttributeBrowser(event->pos(), v);
+	auto s = activeSetting();
+	if (s != nullptr) {
+		s->legend.imageSetting.controller()->handleMouseReleaseEvent(event, v);
+	}
+
+	zoneDataItem()->fixParticleResultAttributeBrowser(event->pos(), v);
 }
 
 void Post2dWindowParticlesBaseScalarGroupDataItem::addCustomMenuItems(QMenu* menu)
@@ -155,117 +181,142 @@ void Post2dWindowParticlesBaseScalarGroupDataItem::handleNamedItemChange(NamedGr
 	pushRenderCommand(cmd, this, true);
 }
 
-void Post2dWindowParticlesBaseScalarGroupDataItem::updateVisibility(bool visible)
-{
-	bool v = (m_standardItem->checkState() == Qt::Checked) && visible;
-	m_scalarBarWidget->SetEnabled(m_setting.scalarBarSetting.visible && v && target() != "");
-	Post2dWindowDataItem::updateVisibility(visible);
-}
-
 void Post2dWindowParticlesBaseScalarGroupDataItem::setupActors()
 {
-	m_actor = vtkSmartPointer<vtkActor>::New();
-	renderer()->AddActor(m_actor);
-	m_actor->GetProperty()->LightingOff();
+	auto r = renderer();
+	r->AddActor(m_actor);
 
-	m_mapper = vtkSmartPointer<vtkPolyDataMapper>::New();
-	m_actor->SetMapper(m_mapper);
-
-	vtkRenderWindowInteractor* iren = renderer()->GetRenderWindow()->GetInteractor();
-
-	m_scalarBarWidget = vtkSmartPointer<vtkScalarBarWidget>::New();
-	m_scalarBarWidget->SetScalarBarActor(vtkCustomScalarBarActor::New());
-	iRIC::setupScalarBarProperty(m_scalarBarWidget->GetScalarBarActor());
-	m_scalarBarWidget->SetInteractor(iren);
-	m_scalarBarWidget->SetEnabled(0);
-
-	m_setting.scalarBarSetting.saveToRepresentation(m_scalarBarWidget->GetScalarBarRepresentation());
-	updateActorSettings();
+	update();
 }
 
 void Post2dWindowParticlesBaseScalarGroupDataItem::updateActorSettings()
 {
 	m_actor->VisibilityOff();
+
 	m_actorCollection->RemoveAllItems();
 
-	auto topItem = dynamic_cast<Post2dWindowParticlesBaseTopDataItem*> (parent());
-	auto data = topItem->particleData();
+	auto data = particleData();
 	if (data == nullptr) {return;}
 
-	auto tItem = dynamic_cast<Post2dWindowParticlesBaseTopDataItem*>(parent());
+	auto v = dataModel()->graphicsView();
+	if (m_setting.mapping == ParticleDataSetting::Mapping::Arbitrary) {
+		auto mapper = vtkPolyDataMapperUtil::createWithScalarVisibilityOff();
+		mapper->SetInputData(data);
+		m_actor->SetMapper(mapper);
+		mapper->Delete();
 
-	m_actor->GetProperty()->SetPointSize(tItem->size());
-	if (target() == "") {
-		QColor c = tItem->color();
-		m_actor->GetProperty()->SetColor(c.redF(), c.greenF(), c.blueF());
-		m_mapper->SetScalarModeToDefault();
+		m_actor->GetProperty()->SetColor(m_setting.color);
 	} else {
-		auto gtItem = dynamic_cast<Post2dWindowGridTypeDataItem*> (topItem->zoneDataItem()->parent());
-		auto ltc = gtItem->particleLookupTable(target());
-		auto dataArray = data->GetPointData()->GetArray(target().c_str());
-		ScalarsToColorsContainerUtil::setValueRange(ltc, dataArray);
-		m_mapper->SetScalarModeToUsePointFieldData();
-		m_mapper->SelectColorArray(iRIC::toStr(m_setting.target).c_str());
-		m_mapper->UseLookupTableScalarRangeOn();
-		m_mapper->SetLookupTable(ltc->vtkObj());
+		auto value = iRIC::toStr(m_setting.value);
+		if (value != "") {
+			data->GetPointData()->SetActiveScalars(value.c_str());
+			auto cs = activeSetting();
+			auto mapper = cs->buildPointDataMapper(data);
+			m_actor->SetMapper(mapper);
+			mapper->Delete();
 
-		m_scalarBarWidget->GetScalarBarActor()->SetLookupTable(ltc->vtkObj());
-		m_scalarBarWidget->GetScalarBarActor()->SetTitle(iRIC::toStr(m_scalarbarTitleMap[target()]).c_str());
+			cs->legend.imageSetting.apply(v);
+		}
 	}
-	m_mapper->SetInputData(tItem->particleData());
-
+	m_actor->GetProperty()->SetPointSize(m_setting.particleSize * v->devicePixelRatioF());
+	m_actor->GetProperty()->SetOpacity(m_setting.opacity);
 	m_actorCollection->AddItem(m_actor);
+
+	updateCheckState();
 	updateVisibilityWithoutRendering();
-}
-
-void Post2dWindowParticlesBaseScalarGroupDataItem::setupScalarBarSetting()
-{
-	auto topItem = dynamic_cast<Post2dWindowParticlesBaseTopDataItem*> (parent());
-	auto typedi = dynamic_cast<Post2dWindowGridTypeDataItem*>(topItem->zoneDataItem()->parent());
-	auto stc = typedi->particleLookupTable(target());
-	if (stc == nullptr) {return;}
-
-	vtkScalarBarActor* a = m_scalarBarWidget->GetScalarBarActor();
-	a->SetTitle(iRIC::toStr(m_scalarbarTitleMap.value(target())).c_str());
-	a->SetLookupTable(stc->vtkObj());
-	a->SetNumberOfLabels(m_setting.scalarBarSetting.numberOfLabels);
-	a->SetMaximumNumberOfColors(256);
-	m_setting.scalarBarSetting.titleTextSetting.applySetting(a->GetTitleTextProperty());
-	m_setting.scalarBarSetting.labelTextSetting.applySetting(a->GetLabelTextProperty());
 }
 
 void Post2dWindowParticlesBaseScalarGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	m_setting.load(node);
 
-	m_setting.scalarBarSetting.saveToRepresentation(m_scalarBarWidget->GetScalarBarRepresentation());
-
-	QDomNodeList titles = node.childNodes();
-	for (int i = 0; i < titles.count(); ++i) {
-		QDomElement titleElem = titles.at(i).toElement();
-		std::string val = iRIC::toStr(titleElem.attribute("value"));
-		QString title = titleElem.attribute("title");
-		m_scalarbarTitleMap[val] = title;
+	std::unordered_map<std::string, Post2dWindowParticlesBaseScalarDataItem*> itemMap;
+	for (auto item : m_childItems) {
+		auto item2 = dynamic_cast<Post2dWindowParticlesBaseScalarDataItem*> (item);
+		itemMap.insert({item2->name(), item2});
 	}
-	updateActorSettings();
 
-	setTarget(iRIC::toStr(m_setting.target));
+	QDomNodeList children = node.childNodes();
+	for (int i = 0; i < children.count(); ++i) {
+		QDomElement childElem = children.at(i).toElement();
+		if (childElem.nodeName() == "Scalar") {
+			auto name = iRIC::toStr(childElem.attribute("name"));
+			auto it = itemMap.find(name);
+			if (it == itemMap.end()) {continue;}
+
+			it->second->loadFromProjectMainFile(childElem);
+		}
+	}
+
+	updateCheckState();
+	updateActorSettings();
 }
 
 void Post2dWindowParticlesBaseScalarGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	m_setting.scalarBarSetting.loadFromRepresentation(m_scalarBarWidget->GetScalarBarRepresentation());
 	m_setting.save(writer);
 
-	// scalar bar titles
-	QMapIterator<std::string, QString> i(m_scalarbarTitleMap);
-	while (i.hasNext()) {
-		i.next();
-		if (i.key().size() > 0) {
-			writer.writeStartElement("ScalarBarTitle");
-			writer.writeAttribute("value", i.key().c_str());
-			writer.writeAttribute("title", i.value());
-			writer.writeEndElement();
+	for (auto item : m_childItems) {
+		auto item2 = dynamic_cast<Post2dWindowParticlesBaseScalarDataItem*> (item);
+		writer.writeStartElement("Scalar");
+		writer.writeAttribute("name", item2->name().c_str());
+		item2->saveToProjectMainFile(writer);
+		writer.writeEndElement();
+	}
+}
+
+ColorMapSettingContainer* Post2dWindowParticlesBaseScalarGroupDataItem::activeSetting() const
+{
+	if (m_setting.mapping ==  ParticleDataSetting::Mapping::Arbitrary) {return nullptr;}
+	if (m_setting.value == "") {return nullptr;}
+
+	return &activeChildDataItem()->colorMapSetting();
+}
+
+Post2dWindowGridTypeDataItem* Post2dWindowParticlesBaseScalarGroupDataItem::gridTypeDataItem() const
+{
+	return dynamic_cast<Post2dWindowGridTypeDataItem*> (zoneDataItem()->parent());
+}
+
+Post2dWindowParticlesBaseTopDataItem* Post2dWindowParticlesBaseScalarGroupDataItem::topDataItem() const
+{
+	return dynamic_cast<Post2dWindowParticlesBaseTopDataItem*> (parent());
+}
+
+Post2dWindowZoneDataItem* Post2dWindowParticlesBaseScalarGroupDataItem::zoneDataItem() const
+{
+	return topDataItem()->zoneDataItem();
+}
+
+Post2dWindowParticlesBaseScalarDataItem* Post2dWindowParticlesBaseScalarGroupDataItem::activeChildDataItem() const
+{
+	if (m_setting.value == "") {return nullptr;}
+
+	return childDataItem(iRIC::toStr(m_setting.value));
+}
+
+Post2dWindowParticlesBaseScalarDataItem* Post2dWindowParticlesBaseScalarGroupDataItem::childDataItem(const std::string& name) const
+{
+	for (auto child : m_childItems) {
+		auto item = dynamic_cast<Post2dWindowParticlesBaseScalarDataItem*> (child);
+		if (name == item->name()) {
+			return item;
 		}
+	}
+
+	return nullptr;
+}
+
+vtkPolyData* Post2dWindowParticlesBaseScalarGroupDataItem::particleData() const
+{
+	return topDataItem()->particleData();
+}
+
+void Post2dWindowParticlesBaseScalarGroupDataItem::updateCheckState()
+{
+	if (m_setting.mapping == ParticleDataSetting::Mapping::Arbitrary) {
+		NamedGraphicsWindowDataItemTool::checkItemWithName("", m_childItems, true);
+	} else if (m_setting.mapping == ParticleDataSetting::Mapping::Value) {
+		NamedGraphicsWindowDataItemTool::checkItemWithName(m_setting.value, m_childItems, true);
 	}
 }

@@ -30,7 +30,6 @@
 #include <dataitem/measureddata/measureddatafiledataitem.h>
 #include <dataitem/measureddata/measureddatapointgroupdataitem.h>
 #include <dataitem/measureddata/measureddatavectorgroupdataitem.h>
-#include <guibase/widget/itemselectingdialog.h>
 #include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/misc/mouseboundingbox.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
@@ -69,8 +68,8 @@
 #include <cmath>
 #include <vector>
 
-PreProcessorDataModel::PreProcessorDataModel(PreProcessorWindow* w, ProjectDataItem* parent)
-	: PreProcessorDataModelInterface(w, parent)
+PreProcessorDataModel::PreProcessorDataModel(PreProcessorWindow* w, ProjectDataItem* parent) :
+	PreProcessorDataModelInterface(w, parent)
 {
 	m_objectBrowserView = nullptr;
 	init();

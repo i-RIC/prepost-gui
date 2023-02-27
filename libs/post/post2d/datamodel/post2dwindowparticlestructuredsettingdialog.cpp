@@ -52,9 +52,9 @@ void Post2dWindowParticleStructuredSettingDialog::setProjectMainFile(ProjectMain
 
 void Post2dWindowParticleStructuredSettingDialog::setZoneData(PostZoneDataContainer* zoneData)
 {
-	vtkStructuredGrid* g = dynamic_cast<vtkStructuredGrid*>(zoneData->data());
+	auto grid = dynamic_cast<vtkStructuredGrid*>(zoneData->data()->data());
 	int dim[3];
-	g->GetDimensions(dim);
+	grid->GetDimensions(dim);
 	ui->iminSlider->setRange(1, dim[0]);
 	ui->imaxSlider->setRange(1, dim[0]);
 	ui->jminSlider->setRange(1, dim[1]);
@@ -246,7 +246,7 @@ void Post2dWindowParticleStructuredSettingDialog::setupNominations()
 
 void Post2dWindowParticleStructuredSettingDialog::setupSolutionComboBox(PostZoneDataContainer* zoneData)
 {
-	vtkPointData* pd = zoneData->data()->GetPointData();
+	vtkPointData* pd = zoneData->data()->data()->GetPointData();
 	SolverDefinitionGridType* gt = zoneData->gridType();
 
 	m_solutions = vtkDataSetAttributesTool::getArrayNamesWithMultipleComponents(pd);

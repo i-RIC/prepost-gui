@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="sl_SI">
 <context>
     <name>Post2dBirdEyeObjectBrowser</name>
@@ -9,7 +11,7 @@
 <context>
     <name>Post2dBirdEyeWindow</name>
     <message>
-        <source>Bird's-Eye Post-processing (2D): %1</source>
+        <source>Bird&apos;s-Eye Post-processing (2D): %1</source>
         <translation>Post-obdelava ptičje oko (2D): %1</translation>
     </message>
     <message>
@@ -56,80 +58,80 @@
     <name>Post2dBirdEyeWindowAxesDataItem</name>
     <message>
         <source>Axes</source>
-        <translation>Osi</translation>
+        <translation type="vanished">Osi</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
-        <translation>Skalarno</translation>
+        <translation type="vanished">Skalarno</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
-        <translation>Posodobi nastavitev konture</translation>
+        <translation type="vanished">Posodobi nastavitev konture</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowCellScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (cell center)</source>
-        <translation>Skalarno (središče celice)</translation>
+        <translation type="vanished">Skalarno (središče celice)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Opozorilo</translation>
+        <translation type="vanished">Opozorilo</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>Določijo se lahko največ štiri konture.</translation>
+        <translation type="vanished">Določijo se lahko največ štiri konture.</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowContourSettingDialog</name>
     <message>
         <source>Scalar Setting</source>
-        <translation>Skalarna nastavitev</translation>
+        <translation type="vanished">Skalarna nastavitev</translation>
     </message>
     <message>
         <source>Scalar value for elevation</source>
-        <translation>Skalarna vrednost za višino</translation>
+        <translation type="vanished">Skalarna vrednost za višino</translation>
     </message>
     <message>
         <source>Color Setting</source>
-        <translation>Nastavitev barve</translation>
+        <translation type="vanished">Nastavitev barve</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Barva po meri</translation>
+        <translation type="vanished">Barva po meri</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Po skalarni vrednosti</translation>
+        <translation type="vanished">Po skalarni vrednosti</translation>
     </message>
     <message>
         <source>Scalar Value:</source>
-        <translation>Skalarna vrednost:</translation>
+        <translation type="vanished">Skalarna vrednost:</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>Nastavitev zaslona</translation>
+        <translation type="vanished">Nastavitev zaslona</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>Nastavitev regije (&amp;R)</translation>
+        <translation type="vanished">Nastavitev regije (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Nastavitev barvne vrstice (&amp;C)</translation>
+        <translation type="vanished">Nastavitev barvne vrstice (&amp;C)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Napaka</translation>
+        <translation type="vanished">Napaka</translation>
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
-        <translation>Za obseg vrednosti je največja vrednost manjša od najmanjše vrednosti.</translation>
+        <translation type="vanished">Za obseg vrednosti je največja vrednost manjša od najmanjše vrednosti.</translation>
     </message>
 </context>
 <context>
@@ -144,7 +146,7 @@
     </message>
     <message>
         <source>Contour setting is not available, because this result does not contain cell scalar values.</source>
-        <translation>Nastavitev konture ni na voljo, ker ta rezultat ne vsebuje skalarnih vrednosti celice.</translation>
+        <translation type="vanished">Nastavitev konture ni na voljo, ker ta rezultat ne vsebuje skalarnih vrednosti celice.</translation>
     </message>
     <message>
         <source>Z-direction Scale</source>
@@ -163,6 +165,17 @@
     </message>
 </context>
 <context>
+    <name>Post2dBirdEyeWindowGridShapeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Shape Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scalar value for Elevation</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>Post2dBirdEyeWindowNodeScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
@@ -170,7 +183,42 @@
     </message>
     <message>
         <source>Update Contour Setting</source>
-        <translation>Posodobi nastavitev konture</translation>
+        <translation type="vanished">Posodobi nastavitev konture</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation type="unfinished">Barva po meri</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation type="unfinished">Po skalarni vrednosti</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -181,22 +229,22 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>Opozorilo</translation>
+        <translation type="vanished">Opozorilo</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>Določijo se lahko največ štiri konture.</translation>
+        <translation type="vanished">Določijo se lahko največ štiri konture.</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
         <source>Create Contour</source>
-        <translation>Ustvari konturo</translation>
+        <translation type="vanished">Ustvari konturo</translation>
     </message>
     <message>
         <source>Update Grid Shape Setting</source>
-        <translation>Posodobi nastavitev oblike mreže</translation>
+        <translation type="vanished">Posodobi nastavitev oblike mreže</translation>
     </message>
     <message>
         <source>Edit Background Color</source>

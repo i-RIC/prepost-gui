@@ -226,7 +226,7 @@ bool PostZoneDataShapeExporter::exportToFile(PostZoneDataContainer* data, const 
 {
 	std::string tmpFile = iRIC::toStr(iRIC::getTempFileName(m_workDir));
 
-	vtkPointSet* ps = data->data();
+	vtkPointSet* ps = data->data()->data();
 	vtkStructuredGrid* sgrid = vtkStructuredGrid::SafeDownCast(ps);
 	bool ok;
 	if (sgrid != 0) {

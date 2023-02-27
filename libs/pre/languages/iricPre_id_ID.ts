@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="id_ID">
 <context>
     <name>BoundaryConditionDialog</name>
@@ -112,7 +114,7 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>GridBirdEyeWindow</name>
     <message>
-        <source>Grid Bird's-Eye View Window</source>
+        <source>Grid Bird&apos;s-Eye View Window</source>
         <translation>Jendela Pemandangan Mata Burung Grid</translation>
     </message>
 </context>
@@ -139,69 +141,135 @@ Do you really want to import grid from this file?</source>
     <name>GridBirdEyeWindowAxesSettingDialog</name>
     <message>
         <source>Axes Setting</source>
-        <translation>Pengaturan Sumbu</translation>
+        <translation type="vanished">Pengaturan Sumbu</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>Bisa dilihat</translation>
+        <translation type="vanished">Bisa dilihat</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Warna:</translation>
+        <translation type="vanished">Warna:</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowColorSettingDialog</name>
     <message>
         <source>Display Setting</source>
-        <translation>Pengaturan tampilan</translation>
+        <translation type="vanished">Pengaturan tampilan</translation>
     </message>
     <message>
         <source>Grid Color</source>
-        <translation>Warna Kotak</translation>
+        <translation type="vanished">Warna Kotak</translation>
     </message>
     <message>
         <source>Node attribute</source>
-        <translation>Atribut simpul</translation>
+        <translation type="vanished">Atribut simpul</translation>
     </message>
     <message>
         <source>Cell attribute</source>
-        <translation>Atribut sel</translation>
+        <translation type="vanished">Atribut sel</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Warna Kustom</translation>
+        <translation type="vanished">Warna Kustom</translation>
     </message>
     <message>
         <source>Axes</source>
-        <translation>Sumbu</translation>
+        <translation type="vanished">Sumbu</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>Bisa dilihat</translation>
+        <translation type="vanished">Bisa dilihat</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Warna:</translation>
+        <translation type="vanished">Warna:</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowDataModel</name>
     <message>
         <source>Edit Z-direction Scale</source>
-        <translation>Edit Skala arah Z</translation>
+        <translation type="vanished">Edit Skala arah Z</translation>
     </message>
     <message>
         <source>Z-direction Scale</source>
-        <translation>Skala arah Z</translation>
+        <translation type="vanished">Skala arah Z</translation>
     </message>
     <message>
         <source>Input new Z-direction scale.</source>
-        <translation>Masukkan skala arah-Z baru.</translation>
+        <translation type="vanished">Masukkan skala arah-Z baru.</translation>
     </message>
     <message>
         <source>Edit Color Setting</source>
-        <translation>Edit Pengaturan Warna</translation>
+        <translation type="vanished">Edit Pengaturan Warna</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowGridDataItem</name>
+    <message>
+        <source>Edit Z-direction Scale</source>
+        <translation type="unfinished">Edit Skala arah Z</translation>
+    </message>
+    <message>
+        <source>Input new Z-direction scale.</source>
+        <translation type="unfinished">Masukkan skala arah-Z baru.</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowGridDataItem_EditDisplaySettingDialog</name>
+    <message>
+        <source>Edit Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Elevation:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Grid Color</source>
+        <translation type="unfinished">Warna Kotak</translation>
+    </message>
+    <message>
+        <source>Cusom Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="unfinished">Impor (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="unfinished">Ekspor (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Axes</source>
+        <translation type="unfinished">Sumbu</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation type="unfinished">Bisa dilihat</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished">Warna:</translation>
+    </message>
+    <message>
+        <source>Background Color:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Z-direction scale:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -287,6 +355,10 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Are you sure you want to delete all boundary conditions?</source>
         <translation>Apakah Anda yakin ingin menghapus semua kondisi batas?</translation>
+    </message>
+    <message>
+        <source>Edit Display Setting</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -387,6 +459,17 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Are you sure you want to delete all background images?</source>
         <translation>Anda yakin ingin menghapus semua gambar latar belakang?</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorBcGroupSettingDialog</name>
+    <message>
+        <source>Boundary Condition Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Font setting for names</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -580,8 +663,8 @@ Do you really want to import grid from this file?</source>
         <translation>%1 tidak dipetakan setelah diedit terakhir kali. Apakah Anda ingin menjalankan pemetaan sekarang?</translation>
     </message>
     <message>
-        <source>Boundary Condition Setting "%1" is not mapped after it is edited last time. Do you want to execute mapping now?</source>
-        <translation>Pengaturan Kondisi Batas "%1" tidak dipetakan setelah diedit terakhir kali. Apakah Anda ingin menjalankan pemetaan sekarang?</translation>
+        <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
+        <translation>Pengaturan Kondisi Batas &quot;%1&quot; tidak dipetakan setelah diedit terakhir kali. Apakah Anda ingin menjalankan pemetaan sekarang?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -666,7 +749,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Set Up Scalarbar...</source>
-        <translation>Siapkan Skalarbar...</translation>
+        <translation type="vanished">Siapkan Skalarbar...</translation>
     </message>
     <message>
         <source>Delete &amp;Selected...</source>
@@ -789,6 +872,56 @@ Do you really want to import grid from this file?</source>
         <source>To import the geographic data, specify coordinate system for the project first.</source>
         <translation>Untuk mengimpor data geografis, tentukan sistem koordinat untuk proyek terlebih dahulu.</translation>
     </message>
+    <message>
+        <source>Edit &amp;Variation Setting...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGeoDataGroupDataItem_ColorMapSettingEditDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation type="unfinished">Dialog</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="unfinished">Impor (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="unfinished">Ekspor (&amp;E)...</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGeoDataGroupDataItem_VariationSettingDialog</name>
+    <message>
+        <source>Variation Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enable variation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Variation to pass to solver:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Note:
+
+When variation is enabled, variation named &quot;Default&quot; is created, and all geographic data is moved to that.
+
+You can add, rename, remove variations from &quot;Object Browser&quot;.
+
+You can move, copy geographic data between variations.
+
+The grid attribute data created from the variation that you select with &quot;Variation to pass to solver&quot; is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGeoDataTopDataItem</name>
@@ -848,7 +981,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Grid Cell Attribute Display Setting</source>
-        <translation>Pengaturan Tampilan Atribut Sel Grid</translation>
+        <translation type="vanished">Pengaturan Tampilan Atribut Sel Grid</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -928,6 +1061,21 @@ Do you really want to import grid from this file?</source>
     </message>
 </context>
 <context>
+    <name>PreProcessorGridAttributeCellDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Cell Attribute Display Setting</source>
+        <translation type="unfinished">Pengaturan Tampilan Atribut Sel Grid</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="unfinished">Impor (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="unfinished">Ekspor (&amp;E)...</translation>
+    </message>
+</context>
+<context>
     <name>PreProcessorGridAttributeCellDisplaySettingDialog</name>
     <message>
         <source>Dialog</source>
@@ -987,9 +1135,9 @@ Do you really want to import grid from this file?</source>
         <translation>Menjalankan (&amp;E)...</translation>
     </message>
     <message>
-        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".
+        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.
 </source>
-        <translation>Atribut berikut tidak dipetakan, karena nilai keluaran generator grid untuk atribut tersebut. Jika Anda ingin memetakan data geografis untuk mereka secara paksa, silakan petakan secara manual dengan menu "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".</translation>
+        <translation>Atribut berikut tidak dipetakan, karena nilai keluaran generator grid untuk atribut tersebut. Jika Anda ingin memetakan data geografis untuk mereka secara paksa, silakan petakan secara manual dengan menu &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -1008,12 +1156,12 @@ Do you really want to import grid from this file?</source>
         <translation>Pemetaan data geografis selesai</translation>
     </message>
     <message>
-        <source>The grid attribute "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Atribut kisi "%1" diedit dengan tangan. Saat Anda menjalankan pemetaan, semua modifikasi yang Anda buat akan dibuang. Apakah Anda benar-benar ingin menjalankan pemetaan?</translation>
+        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Atribut kisi &quot;%1&quot; diedit dengan tangan. Saat Anda menjalankan pemetaan, semua modifikasi yang Anda buat akan dibuang. Apakah Anda benar-benar ingin menjalankan pemetaan?</translation>
     </message>
     <message>
-        <source>The boundary condition "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Kondisi batas"%1" diedit dengan tangan. Saat Anda menjalankan pemetaan, semua modifikasi yang Anda buat akan dibuang. Apakah Anda benar-benar ingin menjalankan pemetaan?</translation>
+        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Kondisi batas&quot;%1&quot; diedit dengan tangan. Saat Anda menjalankan pemetaan, semua modifikasi yang Anda buat akan dibuang. Apakah Anda benar-benar ingin menjalankan pemetaan?</translation>
     </message>
 </context>
 <context>
@@ -1031,20 +1179,20 @@ Do you really want to import grid from this file?</source>
         <translation>Mobil</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;meta name ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p style=" margin -top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Saat kisi dibuat, Anda akan ditanya apakah untuk mengeksekusi Pemetaan Atribut setiap saat.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Saat kisi dibuat, Anda akan ditanya apakah untuk mengeksekusi Pemetaan Atribut setiap saat.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Manual</source>
         <translation>manual</translation>
     </message>
     <message>
-        <source>Attribute mapping is executed only when you manually select "Execute" menu.</source>
-        <translation>Pemetaan atribut dijalankan hanya ketika Anda memilih menu "Jalankan" secara manual.</translation>
+        <source>Attribute mapping is executed only when you manually select &quot;Execute&quot; menu.</source>
+        <translation>Pemetaan atribut dijalankan hanya ketika Anda memilih menu &quot;Jalankan&quot; secara manual.</translation>
     </message>
     <message>
         <source>Geographic data mapping</source>
@@ -1084,7 +1232,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Grid Node Attribute Display Setting</source>
-        <translation>Pengaturan Tampilan Atribut Node Grid</translation>
+        <translation type="vanished">Pengaturan Tampilan Atribut Node Grid</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -1173,6 +1321,21 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Generate point cloud data</source>
         <translation>Hasilkan data cloud titik</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeNodeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Node Attribute Display Setting</source>
+        <translation type="unfinished">Pengaturan Tampilan Atribut Node Grid</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="unfinished">Impor (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="unfinished">Ekspor (&amp;E)...</translation>
     </message>
 </context>
 <context>
@@ -1452,7 +1615,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>Mengatur Skalarbar (&amp;U)...</translation>
     </message>
     <message>
-        <source>Open &amp;Bird's-Eye View Window</source>
+        <source>Open &amp;Bird&apos;s-Eye View Window</source>
         <translation>Buka Jendela Pemandangan Mata Burung (&amp;B)</translation>
     </message>
     <message>
@@ -1727,26 +1890,26 @@ This algorithm can be used only for structured grids.</source>
     <name>PreProcessorScalarBarEditDialog</name>
     <message>
         <source>Color Legend Setting</source>
-        <translation>Pengaturan Legenda Warna</translation>
+        <translation type="vanished">Pengaturan Legenda Warna</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorScalarBarLegendBoxSettingDialog</name>
     <message>
         <source>Scalarbar Setting</source>
-        <translation>Pengaturan Skalar</translation>
+        <translation type="vanished">Pengaturan Skalar</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>Bisa dilihat</translation>
+        <translation type="vanished">Bisa dilihat</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>Nilai</translation>
+        <translation type="vanished">Nilai</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation>Sunting...</translation>
+        <translation type="vanished">Sunting...</translation>
     </message>
 </context>
 <context>
@@ -1825,99 +1988,99 @@ This algorithm can be used only for structured grids.</source>
     <name>PreProcessorWindowScalarBarSettingWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation type="vanished">Membentuk</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>Bisa dilihat</translation>
+        <translation type="vanished">Bisa dilihat</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation>Judul</translation>
+        <translation type="vanished">Judul</translation>
     </message>
     <message>
         <source>Title :</source>
-        <translation>Judul :</translation>
+        <translation type="vanished">Judul :</translation>
     </message>
     <message>
         <source>Font Setting:</source>
-        <translation>Pengaturan Font:</translation>
+        <translation type="vanished">Pengaturan Font:</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation>Sunting...</translation>
+        <translation type="vanished">Sunting...</translation>
     </message>
     <message>
         <source>Label Display</source>
-        <translation>Tampilan Label</translation>
+        <translation type="vanished">Tampilan Label</translation>
     </message>
     <message>
         <source>Number of labels :</source>
-        <translation>Jumlah label:</translation>
+        <translation type="vanished">Jumlah label:</translation>
     </message>
     <message>
         <source>Format:</source>
-        <translation>Format:</translation>
+        <translation type="vanished">Format:</translation>
     </message>
     <message>
         <source>Orientation :</source>
-        <translation>Orientasi:</translation>
+        <translation type="vanished">Orientasi:</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation>Vertikal</translation>
+        <translation type="vanished">Vertikal</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation>Horisontal</translation>
+        <translation type="vanished">Horisontal</translation>
     </message>
     <message>
         <source>Size</source>
-        <translation>Ukuran</translation>
+        <translation type="vanished">Ukuran</translation>
     </message>
     <message>
         <source>Specify Color bar size as rate against window size.</source>
-        <translation>Tentukan ukuran bilah Warna sebagai rasio terhadap ukuran jendela.</translation>
+        <translation type="vanished">Tentukan ukuran bilah Warna sebagai rasio terhadap ukuran jendela.</translation>
     </message>
     <message>
         <source>Width :</source>
-        <translation>Lebar :</translation>
+        <translation type="vanished">Lebar :</translation>
     </message>
     <message>
         <source>If you specify 1, Color bar width is the same to window width.</source>
-        <translation>Jika Anda menentukan 1, Lebar bilah warna sama dengan lebar jendela.</translation>
+        <translation type="vanished">Jika Anda menentukan 1, Lebar bilah warna sama dengan lebar jendela.</translation>
     </message>
     <message>
         <source>Height :</source>
-        <translation>Tinggi :</translation>
+        <translation type="vanished">Tinggi :</translation>
     </message>
     <message>
         <source>If you specify 1, Color bar height is the same to window height.</source>
-        <translation>Jika Anda menentukan 1, Tinggi bilah warna sama dengan tinggi jendela.</translation>
+        <translation type="vanished">Jika Anda menentukan 1, Tinggi bilah warna sama dengan tinggi jendela.</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>Posisi</translation>
+        <translation type="vanished">Posisi</translation>
     </message>
     <message>
         <source>Specify Color bar left bottom position as rate against window size.</source>
-        <translation>Tentukan posisi kiri bawah bilah Warna sebagai rasio terhadap ukuran jendela.</translation>
+        <translation type="vanished">Tentukan posisi kiri bawah bilah Warna sebagai rasio terhadap ukuran jendela.</translation>
     </message>
     <message>
         <source>X :</source>
-        <translation>X :</translation>
+        <translation type="vanished">X :</translation>
     </message>
     <message>
         <source>If you specify 0, Color bar left edge is located at window left edge.</source>
-        <translation>Jika Anda menentukan 0, Tepi kiri bilah warna terletak di tepi kiri jendela.</translation>
+        <translation type="vanished">Jika Anda menentukan 0, Tepi kiri bilah warna terletak di tepi kiri jendela.</translation>
     </message>
     <message>
         <source>Y :</source>
-        <translation>Y :</translation>
+        <translation type="vanished">Y :</translation>
     </message>
     <message>
         <source>If you specify 0, Color bar bottom is located at window bottom.</source>
-        <translation>Jika Anda menentukan 0, bagian bawah bilah warna terletak di bagian bawah jendela.</translation>
+        <translation type="vanished">Jika Anda menentukan 0, bagian bawah bilah warna terletak di bagian bawah jendela.</translation>
     </message>
 </context>
 <context>

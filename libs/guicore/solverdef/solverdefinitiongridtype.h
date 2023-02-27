@@ -12,6 +12,7 @@ class SolverDefinitionGridAttribute;
 class SolverDefinitionGridComplexAttribute;
 class SolverDefinitionBoundaryCondition;
 class SolverDefinitionTranslator;
+class SolverDefinitionOutput;
 class Grid;
 class QStringList;
 
@@ -72,6 +73,7 @@ public:
 	/// Returns the caption for the solution (calculation result)
 	QString solutionCaption(const std::string& name) const;
 	QStringList solutionCaptions(const std::vector<std::string>& names) const;
+	SolverDefinitionOutput* output(const std::string& name);
 
 private:
 	class Impl;

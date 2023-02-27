@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="sv_SE">
 <context>
     <name>ParticleArbitraryTimeEditDialog</name>
@@ -57,163 +59,170 @@
     <name>PostParticleBasicSettingDialog</name>
     <message>
         <source>Particles Setting</source>
-        <translation>Inställning av partiklar</translation>
+        <translation type="vanished">Inställning av partiklar</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Färg:</translation>
+        <translation type="vanished">Färg:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>Storlek:</translation>
+        <translation type="vanished">Storlek:</translation>
     </message>
 </context>
 <context>
     <name>PostParticleScalarPropertyDialog</name>
     <message>
         <source>Particle Scalar Setting</source>
-        <translation>Partikelskalarinställning</translation>
+        <translation type="vanished">Partikelskalarinställning</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Anpassad färg</translation>
+        <translation type="vanished">Anpassad färg</translation>
     </message>
     <message>
         <source>Color by attribute value</source>
-        <translation>Färg efter attributvärde</translation>
+        <translation type="vanished">Färg efter attributvärde</translation>
     </message>
     <message>
         <source>Attribute:</source>
-        <translation>Attribut:</translation>
+        <translation type="vanished">Attribut:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>Storlek:</translation>
+        <translation type="vanished">Storlek:</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Färgfältinställning (&amp;C)</translation>
+        <translation type="vanished">Färgfältinställning (&amp;C)</translation>
     </message>
 </context>
 <context>
     <name>PostParticleVectorPropertyDialog</name>
     <message>
         <source>Arrow Setting</source>
-        <translation>Pilinställning</translation>
+        <translation type="vanished">Pilinställning</translation>
     </message>
     <message>
         <source>Attribute value:</source>
-        <translation>Attributvärde:</translation>
+        <translation type="vanished">Attributvärde:</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Längd</translation>
+        <translation type="vanished">Längd</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Bil</translation>
+        <translation type="vanished">Bil</translation>
     </message>
     <message>
         <source>Standard value:</source>
-        <translation>Standardvärde:</translation>
+        <translation type="vanished">Standardvärde:</translation>
     </message>
     <message>
         <source>[m/s]</source>
-        <translation>[Fröken]</translation>
+        <translation type="vanished">[Fröken]</translation>
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation>Längd på skärmen:</translation>
+        <translation type="vanished">Längd på skärmen:</translation>
     </message>
     <message>
         <source>[pixel]</source>
-        <translation>[pixel]</translation>
+        <translation type="vanished">[pixel]</translation>
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation>Minsta värde att dra:</translation>
+        <translation type="vanished">Minsta värde att dra:</translation>
     </message>
     <message>
         <source>Sampling</source>
-        <translation>Provtagning</translation>
+        <translation type="vanished">Provtagning</translation>
     </message>
     <message>
         <source>All particles</source>
-        <translation>Alla partiklar</translation>
+        <translation type="vanished">Alla partiklar</translation>
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation>Samplingshastighet:</translation>
+        <translation type="vanished">Samplingshastighet:</translation>
     </message>
     <message>
         <source>Specify number of particles</source>
-        <translation>Ange antal partiklar</translation>
+        <translation type="vanished">Ange antal partiklar</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Färg</translation>
+        <translation type="vanished">Färg</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Anpassad färg</translation>
+        <translation type="vanished">Anpassad färg</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Med skalvärde</translation>
+        <translation type="vanished">Med skalvärde</translation>
     </message>
     <message>
         <source>Arrow Shape</source>
-        <translation>Pilform</translation>
+        <translation type="vanished">Pilform</translation>
     </message>
     <message>
         <source>Arrow size:</source>
-        <translation>Pilstorlek:</translation>
+        <translation type="vanished">Pilstorlek:</translation>
     </message>
     <message>
         <source>Line width:</source>
-        <translation>Linjebredd:</translation>
+        <translation type="vanished">Linjebredd:</translation>
     </message>
 </context>
 <context>
     <name>PostPolyDataBasicSettingDialog</name>
     <message>
         <source>Polygon Setting</source>
-        <translation>Polygoninställning</translation>
+        <translation type="vanished">Polygoninställning</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Färg:</translation>
+        <translation type="vanished">Färg:</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Linjebredd:</translation>
+        <translation type="vanished">Linjebredd:</translation>
     </message>
 </context>
 <context>
     <name>PostPolyDataScalarPropertyDialog</name>
     <message>
         <source>Polygon Setting</source>
-        <translation>Polygoninställning</translation>
+        <translation type="vanished">Polygoninställning</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Anpassad färg</translation>
+        <translation type="vanished">Anpassad färg</translation>
     </message>
     <message>
         <source>Color by attribute value</source>
-        <translation>Färg efter attributvärde</translation>
+        <translation type="vanished">Färg efter attributvärde</translation>
     </message>
     <message>
         <source>Attribute:</source>
-        <translation>Attribut:</translation>
+        <translation type="vanished">Attribut:</translation>
     </message>
     <message>
         <source>Line Width</source>
-        <translation>Linjebredd</translation>
+        <translation type="vanished">Linjebredd</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>Färgfältinställning (&amp;C)</translation>
+        <translation type="vanished">Färgfältinställning (&amp;C)</translation>
+    </message>
+</context>
+<context>
+    <name>PostSolutionSelectDialog</name>
+    <message>
+        <source>Select Target Result</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

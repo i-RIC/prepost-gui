@@ -28,7 +28,6 @@
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
 #include <guicore/pre/base/preprocessorgridcreatingconditiondataiteminterface.h>
 #include <guicore/pre/base/preprocessorwindowinterface.h>
-#include <guicore/scalarstocolors/scalarstocolorscontainer.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/errormessage.h>
 #include <misc/informationdialog.h>

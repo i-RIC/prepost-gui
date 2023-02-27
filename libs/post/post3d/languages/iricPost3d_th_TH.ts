@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="th_TH">
 <context>
     <name>Post3dObjectBrowser</name>
@@ -67,34 +69,57 @@
     </message>
 </context>
 <context>
+    <name>Post3dWindowCellContourGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Contour Setting (cell center)</source>
+        <translation type="unfinished">การตั้งค่า Contour (ศูนย์เซลล์)</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">สี</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="unfinished">พิสัย</translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowCellContourGroupSettingDialog</name>
     <message>
         <source>Contour Setting (cell center)</source>
-        <translation>การตั้งค่า Contour (ศูนย์เซลล์)</translation>
+        <translation type="vanished">การตั้งค่า Contour (ศูนย์เซลล์)</translation>
     </message>
     <message>
         <source>Value:</source>
-        <translation>ค่า:</translation>
+        <translation type="vanished">ค่า:</translation>
     </message>
     <message>
         <source>Regions</source>
-        <translation>ภูมิภาค</translation>
+        <translation type="vanished">ภูมิภาค</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>เพิ่ม (&amp;A)</translation>
+        <translation type="vanished">เพิ่ม (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>ลบ (&amp;R)</translation>
+        <translation type="vanished">ลบ (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>การตั้งค่าแถบสี (&amp;C)</translation>
+        <translation type="vanished">การตั้งค่าแถบสี (&amp;C)</translation>
     </message>
     <message>
         <source>Range%1</source>
-        <translation>พิสัย %1</translation>
+        <translation type="vanished">พิสัย %1</translation>
     </message>
 </context>
 <context>
@@ -105,11 +130,30 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>คำเตือน</translation>
+        <translation type="vanished">คำเตือน</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>สามารถกำหนดรูปทรงได้สูงสุดสี่เส้น</translation>
+        <translation type="vanished">สามารถกำหนดรูปทรงได้สูงสุดสี่เส้น</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowCellRangeListSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">รูปร่าง</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation type="unfinished">เพิ่ม (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation type="unfinished">ลบ (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Range%1</source>
+        <translation type="unfinished">พิสัย %1</translation>
     </message>
 </context>
 <context>
@@ -152,45 +196,83 @@
     </message>
 </context>
 <context>
+    <name>Post3dWindowContourDataItem</name>
+    <message>
+        <source>Face</source>
+        <translation type="unfinished">ใบหน้า</translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowContourGroupDataItem</name>
     <message>
         <source>Contour</source>
-        <translation>คอนทัวร์</translation>
+        <translation type="vanished">คอนทัวร์</translation>
     </message>
     <message>
         <source>Contour Setting</source>
-        <translation>การตั้งค่าคอนทัวร์</translation>
+        <translation type="vanished">การตั้งค่าคอนทัวร์</translation>
+    </message>
+    <message>
+        <source>Contour Setting (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Face%1</source>
+        <translation type="unfinished">ใบหน้า %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowContourGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Contour Setting</source>
+        <translation type="unfinished">การตั้งค่าคอนทัวร์</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">สี</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Faces</source>
+        <translation type="unfinished">ใบหน้า</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowContourGroupSettingDialog</name>
     <message>
         <source>Contour Setting</source>
-        <translation>การตั้งค่าคอนทัวร์</translation>
+        <translation type="vanished">การตั้งค่าคอนทัวร์</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>มูลค่าทางกายภาพ:</translation>
+        <translation type="vanished">มูลค่าทางกายภาพ:</translation>
     </message>
     <message>
         <source>Faces</source>
-        <translation>ใบหน้า</translation>
+        <translation type="vanished">ใบหน้า</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>เพิ่ม (&amp;A)</translation>
+        <translation type="vanished">เพิ่ม (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>ลบ (&amp;R)</translation>
+        <translation type="vanished">ลบ (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
-        <translation>การตั้งค่าแถบสี (&amp;C)</translation>
+        <translation type="vanished">การตั้งค่าแถบสี (&amp;C)</translation>
     </message>
     <message>
         <source>Face%1</source>
-        <translation>ใบหน้า %1</translation>
+        <translation type="vanished">ใบหน้า %1</translation>
     </message>
 </context>
 <context>
@@ -201,11 +283,11 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>คำเตือน</translation>
+        <translation type="vanished">คำเตือน</translation>
     </message>
     <message>
         <source>A maximum of four contours may be defined.</source>
-        <translation>สามารถกำหนดรูปทรงได้สูงสุดสี่เส้น</translation>
+        <translation type="vanished">สามารถกำหนดรูปทรงได้สูงสุดสี่เส้น</translation>
     </message>
 </context>
 <context>
@@ -224,6 +306,80 @@
     <message>
         <source>Object Browser Item Change</source>
         <translation>วัตถุเบราว์เซอร์รายการเปลี่ยน</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowFaceListSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">รูปร่าง</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation type="unfinished">เพิ่ม (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation type="unfinished">ลบ (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Face%1</source>
+        <translation type="unfinished">ใบหน้า %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowFaceSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">รูปร่าง</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation type="unfinished">ทิศทาง</translation>
+    </message>
+    <message>
+        <source>I</source>
+        <translation type="unfinished">ผม</translation>
+    </message>
+    <message>
+        <source>J</source>
+        <translation type="unfinished">NS</translation>
+    </message>
+    <message>
+        <source>K</source>
+        <translation type="unfinished">K</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="unfinished">พิสัย</translation>
+    </message>
+    <message>
+        <source>I Min</source>
+        <translation type="unfinished">ไอ มิน</translation>
+    </message>
+    <message>
+        <source>I Max</source>
+        <translation type="unfinished">ไอแม็กซ์</translation>
+    </message>
+    <message>
+        <source>J Min</source>
+        <translation type="unfinished">เจ มิน</translation>
+    </message>
+    <message>
+        <source>J Max</source>
+        <translation type="unfinished">เจ แม็กซ์</translation>
+    </message>
+    <message>
+        <source>K Min</source>
+        <translation type="unfinished">K Min</translation>
+    </message>
+    <message>
+        <source>K Max</source>
+        <translation type="unfinished">เค แม็กซ์</translation>
+    </message>
+    <message>
+        <source>Enabled</source>
+        <translation type="unfinished">เปิดใช้งาน</translation>
     </message>
 </context>
 <context>
@@ -286,6 +442,13 @@
     <message>
         <source>Grid shape</source>
         <translation>รูปร่างกริด</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowGridShapeDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Shape Display Setting</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -484,7 +647,48 @@
     <name>Post3dWindowNodeVectorArrowDataItem</name>
     <message>
         <source>Face</source>
-        <translation>ใบหน้า</translation>
+        <translation type="vanished">ใบหน้า</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorArrowGroupDataItem</name>
+    <message>
+        <source>Face%1</source>
+        <translation type="unfinished">ใบหน้า %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorArrowGroupDataItem::PropertyDialog</name>
+    <message>
+        <source>Face%1</source>
+        <translation type="unfinished">ใบหน้า %1</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorArrowGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Arrows Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Basic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Length Legend</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Faces</source>
+        <translation type="unfinished">ใบหน้า</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation type="unfinished">เพิ่ม (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation type="unfinished">ลบ (&amp;R)</translation>
     </message>
 </context>
 <context>
@@ -545,6 +749,10 @@
         <source>Face%1</source>
         <translation>ใบหน้า %1</translation>
     </message>
+    <message>
+        <source>Length Legend</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Post3dWindowNodeVectorArrowTopDataItem</name>
@@ -554,11 +762,11 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation>คำเตือน</translation>
+        <translation type="vanished">คำเตือน</translation>
     </message>
     <message>
         <source>A maximum of four arrows may be defined.</source>
-        <translation>สามารถกำหนดลูกศรได้สูงสุดสี่ลูกศร</translation>
+        <translation type="vanished">สามารถกำหนดลูกศรได้สูงสุดสี่ลูกศร</translation>
     </message>
 </context>
 <context>
@@ -620,17 +828,17 @@
         <translation>ช่วงเวลาในการสร้าง</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap;}
 p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p&gt;If you specify 1, particles are generated for every time steps.&lt;/p&gt;
 &lt;p&gt;If you specify 2, particles are generated twice equally separated, for every time steps,&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other time steps.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
         <extracomment>If you specify 1, particles are generated for every time steps. If you specify 2, particles are generated twice equally separated, for every time steps, If you specify 1/2, particles are generated for every other time steps.</extracomment>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>-</source>
@@ -705,16 +913,16 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <translation>ช่วงพื้นที่การสร้าง</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p&gt;If you specify 1, particles are generated at grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 2, particles are generated at grid nodes, and middle points of grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other grid nodes.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;meta name ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { white-space: pre-wrap; } p {ขอบบน: 3px; margin-bottom: 3px;} &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p&gt;หากคุณระบุ 1 อนุภาคจะถูกสร้างขึ้นที่โหนดกริด&lt;/p&gt; &lt;p&gt;หากคุณระบุ 2 อนุภาคจะถูกสร้างขึ้นที่โหนดกริด และจุดกึ่งกลางของโหนดกริด&lt;/p&gt; &lt;p&gt;หากคุณ ระบุ 1/2 อนุภาคจะถูกสร้างขึ้นสำหรับโหนดกริดอื่น ๆ ทุกโหนด&lt;/p&gt; &lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } p {ขอบบน: 3px; margin-bottom: 3px;} &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p&gt;หากคุณระบุ 1 อนุภาคจะถูกสร้างขึ้นที่โหนดกริด&lt;/p&gt; &lt;p&gt;หากคุณระบุ 2 อนุภาคจะถูกสร้างขึ้นที่โหนดกริด และจุดกึ่งกลางของโหนดกริด&lt;/p&gt; &lt;p&gt;หากคุณ ระบุ 1/2 อนุภาคจะถูกสร้างขึ้นสำหรับโหนดกริดอื่น ๆ ทุกโหนด&lt;/p&gt; &lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Color:</source>
@@ -725,12 +933,12 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <translation>ขนาด:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;meta name ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p style=" margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;ระบุจำนวนพิกเซลที่แสดง&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;ระบุจำนวนพิกเซลที่แสดง&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -753,10 +961,45 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>Post3dWindowParticlesBaseScalarGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Scalar Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">สี</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowParticlesBaseTopDataItem</name>
     <message>
         <source>Edit Particle Setting</source>
-        <translation>แก้ไขการตั้งค่าอนุภาค</translation>
+        <translation type="vanished">แก้ไขการตั้งค่าอนุภาค</translation>
     </message>
 </context>
 <context>
@@ -767,11 +1010,22 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Vector Attribute Select Change</source>
-        <translation>แอตทริบิวต์เวกเตอร์เลือกการเปลี่ยนแปลง</translation>
+        <translation type="vanished">แอตทริบิวต์เวกเตอร์เลือกการเปลี่ยนแปลง</translation>
     </message>
     <message>
         <source>Update Vector Setting</source>
-        <translation>อัปเดตการตั้งค่าเวกเตอร์</translation>
+        <translation type="vanished">อัปเดตการตั้งค่าเวกเตอร์</translation>
+    </message>
+    <message>
+        <source>Arrow Physical Value Change</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowParticlesBaseVectorGroupDataItem_PropertyDialog</name>
+    <message>
+        <source>Particles Vector Setting</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -836,14 +1090,14 @@ p, li { white-space: pre-wrap; }
         <translation>ช่วงพื้นที่การสร้าง</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;meta name ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p style=" margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;หากคุณระบุ 1 ความคล่องตัวจะเริ่มต้นที่โหนดกริด.&lt;/p&gt; &lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;" &gt;หากคุณระบุ 2 การปรับปรุงจะเริ่มต้นที่โหนดกริด และจุดกึ่งกลางของโหนดกริด&lt;/p&gt; &lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right: 0px; -qt-block-indent:0; text-indent:0px;"&gt;หากคุณระบุ 1/2 ความคล่องตัวจะเริ่มต้นที่โหนดกริดอื่นๆ ทุกโหนด&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;หากคุณระบุ 1 ความคล่องตัวจะเริ่มต้นที่โหนดกริด.&lt;/p&gt; &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot; &gt;หากคุณระบุ 2 การปรับปรุงจะเริ่มต้นที่โหนดกริด และจุดกึ่งกลางของโหนดกริด&lt;/p&gt; &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right: 0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;หากคุณระบุ 1/2 ความคล่องตัวจะเริ่มต้นที่โหนดกริดอื่นๆ ทุกโหนด&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>-</source>
@@ -874,12 +1128,12 @@ p, li { white-space: pre-wrap; }
         <translation>ความกว้าง:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;meta name ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p style=" margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;ระบุจำนวนพิกเซลที่แสดง&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;ระบุจำนวนพิกเซลที่แสดง&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -894,7 +1148,7 @@ p, li { white-space: pre-wrap; }
     <name>QObject</name>
     <message>
         <source>Update Grid Shape Setting</source>
-        <translation>อัปเดตการตั้งค่ารูปร่างกริด</translation>
+        <translation type="vanished">อัปเดตการตั้งค่ารูปร่างกริด</translation>
     </message>
     <message>
         <source>Update Streamline Setting</source>
@@ -902,15 +1156,15 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Update Particles Scalar Setting</source>
-        <translation>อัปเดตการตั้งค่าสเกลาร์อนุภาค</translation>
+        <translation type="vanished">อัปเดตการตั้งค่าสเกลาร์อนุภาค</translation>
     </message>
     <message>
         <source>Update</source>
-        <translation>อัปเดต</translation>
+        <translation type="vanished">อัปเดต</translation>
     </message>
     <message>
         <source>Create Contour</source>
-        <translation>สร้างคอนทัวร์</translation>
+        <translation type="vanished">สร้างคอนทัวร์</translation>
     </message>
     <message>
         <source>Create Isosurface</source>

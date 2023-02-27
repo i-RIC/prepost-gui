@@ -789,7 +789,7 @@ void PostSolutionInfo::exportCalculationResult()
 	expDialog.setFormat(m_exportFormat);
 	expDialog.setProjectMainFile(projectData()->mainfile());
 
-	vtkStructuredGrid* sGrid = vtkStructuredGrid::SafeDownCast(zoneC->data());
+	auto sGrid = vtkStructuredGrid::SafeDownCast(zoneC->data()->data());
 	if (sGrid != nullptr) {
 		// structured grid
 		int dim[3];
@@ -883,7 +883,7 @@ void PostSolutionInfo::exportCalculationResult(const std::string& folder, const 
 	PostZoneDataContainer* cont = firstZoneContainer();
 	int iMin, iMax, jMin, jMax, kMin, kMax;
 
-	vtkStructuredGrid* sGrid = vtkStructuredGrid::SafeDownCast(cont->data());
+	auto sGrid = vtkStructuredGrid::SafeDownCast(cont->data()->data());
 	if (sGrid != nullptr) {
 		// structured grid
 		int dim[3];

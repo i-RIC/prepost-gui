@@ -4,14 +4,18 @@
 #include "../pre_global.h"
 #include <guicore/pre/base/preprocessorgridtypedataiteminterface.h>
 
+#include <guicore/image/imagesettingcontainer.h>
+
 #include <QList>
 #include <QMap>
 
-class QAction;
 class SolverDefinitionGridType;
 class PreProcessorGeoDataTopDataItemInterface;
 class PreProcessorGridAndGridCreatingConditionDataItemInterface;
-class ScalarsToColorsContainer;
+
+class vtkActor2D;
+
+class QAction;
 
 class PREDLL_EXPORT PreProcessorGridTypeDataItem : public PreProcessorGridTypeDataItemInterface
 {
@@ -33,14 +37,20 @@ public:
 	bool isChildDeletable(const PreProcessorGridAndGridCreatingConditionDataItemInterface* child) const;
 	void addCustomMenuItems(QMenu* menu) override;
 	bool isChildCaptionAvailable(const QString& caption);
-	ScalarsToColorsContainer* scalarsToColors(const std::string& attName) const override;
+	ColorMapSettingContainerI* colorMapSetting(const std::string& attName) const override;
+	std::map<std::string, ColorMapSettingContainerI*> colorMapSettings() const;
+
 	QAction* addNewGridAction() const;
 	bool isGridEdited() const;
 	void setGridEdited();
+	QUndoCommand* createApplyColorMapSettingCommand(const std::string& name, QUndoCommand* command, bool apply = false);
+
+	void handleResize(VTKGraphicsView* v) override;
 
 public slots:
 	void addNewCondition();
 	void changeValueRange(const std::string& name);
+	void applyColorMapSetting(const std::string& name);
 
 protected:
 	void unregisterChild(GraphicsWindowDataItem* child) override;
@@ -50,17 +60,21 @@ protected:
 
 private:
 	void updateNewGridActionStatus();
-	void setupScalarsToColors(SolverDefinitionGridType* type);
+	void setupColorMapSettingContainers();
+
 	QString nextChildCaption();
 	std::string nextChildZonename();
 
 	SolverDefinitionGridType* m_gridType;
 	PreProcessorGeoDataTopDataItemInterface* m_geoDataTop;
 	PreProcessorHydraulicDataTopDataItemInterface* m_hydraulicDataTop;
-	QMap<std::string, ScalarsToColorsContainer*> m_scalarsToColors;
+	std::map<std::string, ColorMapSettingContainerI*> m_colorMapSettingContainers;
+	std::map<std::string, vtkActor2D*> m_colorMapLegendActors;
 	QList<PreProcessorGridAndGridCreatingConditionDataItemInterface*> m_conditions;
 	/// Action to add new condition.
 	QAction* m_addNewGridAction;
+
+	class ApplyColorMapSettingAndRenderCommand;
 };
 
 #endif // PREPROCESSORGRIDTYPEDATAITEM_H

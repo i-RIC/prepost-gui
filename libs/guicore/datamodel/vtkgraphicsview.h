@@ -22,6 +22,8 @@ public:
 	VTKGraphicsView(QWidget* parent);
 	virtual ~VTKGraphicsView();
 
+	double stdDistance(double pixels);
+
 	/// @name Model related functions
 	//@{
 	void setModel(GraphicsWindowSimpleDataModel* m);
@@ -56,6 +58,9 @@ public:
 
 	QImage getImage();
 
+	QMouseEvent createScaledEvent(const QMouseEvent& event);
+	QMouseEvent createReverseScaledEvent(const QMouseEvent& event);
+
 public slots:
 	void cameraFit();
 	void cameraZoomIn();
@@ -78,8 +83,6 @@ private:
 	void moveCenter(int x, int y);
 	int moveWidth();
 	//@}
-	QMouseEvent createScaledEvant(const QMouseEvent& event);
-	QMouseEvent createReverseScaledEvant(const QMouseEvent& event);
 
 protected:
 	virtual void resizeEvent(QResizeEvent* event) override;

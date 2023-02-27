@@ -59,6 +59,7 @@ public:
 	bool getValueRange(double* min, double* max) override;
 	QDialog* propertyDialog(QWidget* parent) override;
 	void handlePropertyDialogAccepted(QDialog* d) override;
+	void applyColorMapSetting() override;
 
 	void showInitialDialog() override;
 

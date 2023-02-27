@@ -17,7 +17,7 @@
 #include <guicore/project/inputcond/inputconditionwidgetfilename.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
-#include <guicore/scalarstocolors/colortransferfunctioncontainer.h>
+#include <guicore/scalarstocolors/colormapenumeratesettingcontainer.h>
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
 #include <guicore/solverdef/solverdefinitiongridcomplexattribute.h>
 #include <misc/iricundostack.h>
@@ -65,6 +65,7 @@ PreProcessorGeoDataComplexGroupDataItem::PreProcessorGeoDataComplexGroupDataItem
 	connect(m_editGroupAction, SIGNAL(triggered()), this, SLOT(showEditGroupDialog()));
 	createDefaultGroup();
 	addBackground();
+	updateColorMap();
 }
 
 PreProcessorGeoDataComplexGroupDataItem::~PreProcessorGeoDataComplexGroupDataItem()
@@ -177,7 +178,6 @@ void PreProcessorGeoDataComplexGroupDataItem::addCustomMenuItems(QMenu* menu)
 	if (! m_condition->isReferenceInformation()) {
 		menu->addSeparator();
 		menu->addAction(m_editColorMapAction);
-		menu->addAction(m_setupScalarBarAction);
 	}
 	menu->addSeparator();
 	menu->addAction(m_deleteSelectedAction);
@@ -192,26 +192,27 @@ ProjectData* PreProcessorGeoDataComplexGroupDataItem::projectData() const
 void PreProcessorGeoDataComplexGroupDataItem::updateColorMap()
 {
 	PreProcessorGridTypeDataItem* tItem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent());
-	ScalarsToColorsContainer* c = tItem->scalarsToColors(m_condition->name());
-	ColorTransferFunctionContainer* c2 = dynamic_cast<ColorTransferFunctionContainer*>(c);
+	auto s = tItem->colorMapSetting(m_condition->name());
+	auto es = dynamic_cast<ColorMapEnumerateSettingContainer*>(s);
 
-	QMap<double, QString> enums;
-	QMap<double, QString> englishEnums;
-	QMap<double, QColor> colors;
+	std::vector<ColorMapSettingValueColorPairContainer> cols;
+	std::map<double, QString> captions;
 
 	for (int i = 0; i < m_groups.size(); ++i) {
 		auto g = m_groups.at(i);
-		double val = i + 1;
-		colors.insert(val, g->color());
-		enums.insert(val, g->caption());
-		englishEnums.insert(val, g->caption());
-	}
-	c2->setColors(colors);
-	c2->setEnumerations(enums);
-	c2->setEnglishEnumerations(englishEnums);
-	c2->update();
 
-	applySettingsToScalarBar();
+		double val = i + 1;
+		captions.insert({val, g->caption()});
+
+		ColorMapSettingValueColorPairContainer pair;
+		pair.value = val;
+		pair.color = g->color();
+		cols.push_back(pair);
+	}
+	es->colors = cols;
+	es->valueCaptions = captions;
+
+	informValueRangeChange();
 }
 
 void PreProcessorGeoDataComplexGroupDataItem::showEditGroupDialog()
@@ -365,26 +366,19 @@ void PreProcessorGeoDataComplexGroupDataItem::editScalarsToColors()
 {
 	PreProcessorGeoDataGroupDataItem::editScalarsToColors();
 	applyScalarsToColorsSetting();
-	applySettingsToScalarBar();
 }
 
 void PreProcessorGeoDataComplexGroupDataItem::applyScalarsToColorsSetting()
 {
 	PreProcessorGridTypeDataItem* tItem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent());
-	ScalarsToColorsContainer* c = tItem->scalarsToColors(m_condition->name());
-	ColorTransferFunctionContainer* c2 = dynamic_cast<ColorTransferFunctionContainer*>(c);
+	auto s = tItem->colorMapSetting(m_condition->name());
+	auto es = dynamic_cast<ColorMapEnumerateSettingContainer*>(s);
 
-	QMap<double, QColor> colors = c2->colors();
-	for (int i = 0; i < m_groups.size(); ++i) {
+	for (int i = 0; i < es->colors.size(); ++i) {
+		const auto& c = es->colors.at(i);
 		auto g = m_groups[i];
-		g->setColor(colors.value(i + 1));
+		g->setColor(c.color.value());
 	}
-}
-
-void PreProcessorGeoDataComplexGroupDataItem::applySettingsToScalarBar()
-{
-	PreProcessorGeoDataTopDataItem* tItem = dynamic_cast<PreProcessorGeoDataTopDataItem*>(parent());
-	tItem->updateLegendBoxItems();
 }
 
 void PreProcessorGeoDataComplexGroupDataItem::createDefaultGroup()

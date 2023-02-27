@@ -41,7 +41,6 @@ public:
 	void update();
 	QDialog* addDialog(QWidget* parent) override;
 	void handleAddDialogAccepted(QDialog* propDialog) override;
-	void undoableDeleteItem(GraphicsWindowDataItem* item, bool noDraw) override;
 
 protected:
 	void addCustomMenuItems(QMenu* menu) override;

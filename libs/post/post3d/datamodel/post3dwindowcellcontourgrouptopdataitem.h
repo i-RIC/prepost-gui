@@ -25,10 +25,7 @@ private:
 	QDialog* addDialog(QWidget* p) override;
 	void handleAddDialogAccepted(QDialog* propDialog) override;
 
-	QMap<std::string, QString> m_colorBarTitleMap;
 	double m_zScale;
-
-	class CreateCommand;
 
 public:
 	friend class Post3dWindowCellContourGroupDataItem;

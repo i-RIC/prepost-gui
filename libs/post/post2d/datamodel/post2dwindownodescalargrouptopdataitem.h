@@ -1,29 +1,16 @@
 #ifndef POST2DWINDOWNODESCALARGROUPTOPDATAITEM_H
 #define POST2DWINDOWNODESCALARGROUPTOPDATAITEM_H
 
-#include "post2dwindowscalargrouptopdataitem.h"
+#include "../post2dwindowdataitem.h"
+#include "post2dwindowpointscalargrouptopdataitemi.h"
 
-#include <guicore/misc/targeted/targeteditemi.h>
-#include <postbase/post2dwindowcontoursetting.h>
+#include <string>
+#include <vector>
 
-#include <vtkPolyData.h>
-#include <vtkSmartPointer.h>
-#include <vtkLODActor.h>
-#include <vtkScalarBarWidget.h>
-
-#include <QMap>
-#include <QList>
-
-class NamedGraphicWindowDataItem;
 class Post2dWindowNodeScalarGroupDataItem;
-class vtkLODActor;
-class vtkActor;
-class vtkAlgorithm;
-class vtkDataSetMapper;
-class vtkPolyDataMapper;
-class vtkContourFilter;
+class Post2dWindowZoneDataItem;
 
-class Post2dWindowNodeScalarGroupTopDataItem : public Post2dWindowScalarGroupTopDataItem
+class Post2dWindowNodeScalarGroupTopDataItem : public Post2dWindowDataItem, public Post2dWindowPointScalarGroupTopDataItemI
 {
 	Q_OBJECT
 public:
@@ -33,37 +20,32 @@ public:
 	void updateZDepthRangeItemCount() override;
 	void assignActorZValues(const ZDepthRange& range) override;
 	void update();
+	Post2dWindowZoneDataItem* zoneDataItem() const override;
 	bool hasTransparentPart() override;
 
 	void informSelection(VTKGraphicsView* v) override;
 	void informDeselection(VTKGraphicsView* v) override;
 	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;
-	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 
-	QList<QString> selectedScalars();
-	bool checkKmlExportCondition(const QString& target);
-	bool exportKMLHeader(QXmlStreamWriter& writer, const QString& target);
-	bool exportKMLFooter(QXmlStreamWriter& writer, const QString& target);
-	bool exportKMLForTimestep(QXmlStreamWriter& writer, const QString& target, int index, double time, bool oneShot);
+	std::vector<std::string> selectedScalars() const;
+	bool checkKmlExportCondition(const std::string& target);
+	bool exportKMLHeader(QXmlStreamWriter& writer, const std::string& target);
+	bool exportKMLFooter(QXmlStreamWriter& writer, const std::string& target);
+	bool exportKMLForTimestep(QXmlStreamWriter& writer, const std::string& target, int index, double time, bool oneShot);
 
-	QList<QString> availableScalars();
-	bool checkShapeExportCondition(const QString& target);
-	bool exportContourFigureToShape(const QString& target, const QString& filename, double time);
-
-protected:
-	void addCustomMenuItems(QMenu* menu) override;
-	QDialog* addDialog(QWidget* parent) override;
-	void doLoadFromProjectMainFile(const QDomNode& node) override;
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
-	void handleAddDialogAccepted(QDialog* propDialog) override;
+	bool checkShapeExportCondition(const std::string& target);
+	bool exportContourFigureToShape(const std::string& target, const QString& filename, double time);
 
 private:
-	std::map<std::string, Post2dWindowNodeScalarGroupDataItem*> m_scalarmap; // only used by ctor and doLoadFromProjectMainFile
+	void addCustomMenuItems(QMenu* menu) override;
+	QDialog* addDialog(QWidget* parent) override;
+	void handleAddDialogAccepted(QDialog* propDialog) override;
+
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
 	friend class Post2dWindowNodeScalarGroupDataItem;
-
-	class CreateCommand;
 };
 
 #endif // POST2DWINDOWNODESCALARGROUPTOPDATAITEM_H

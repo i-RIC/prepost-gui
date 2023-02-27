@@ -194,6 +194,7 @@ void GeoDataPolyDataGroupAttributeBrowser::applySelectionToPolyData()
 
 	m_group->updateVtkObjects();
 	m_group->updateSelectedDataVtkObjects();
+	m_group->updateActorSetting();
 	m_group->updateIndex();
 
 	m_group->impl->updateActionStatus();

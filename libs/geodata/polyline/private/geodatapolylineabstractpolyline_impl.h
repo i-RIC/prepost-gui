@@ -5,12 +5,14 @@
 
 #include <guibase/polyline/polylinecontroller.h>
 
+class vtkActor;
 class vtkDoubleArray;
 
 class GeoDataPolyLineAbstractPolyLine::Impl
 {
 public:
 	Impl(GeoDataPolyLine* parent);
+	~Impl();
 
 	void setupScalarValues();
 
@@ -18,8 +20,14 @@ public:
 	int m_selectedEdgeId;
 
 	GeoDataPolyLine* m_parent;
+	vtkActor* m_linesActor;
+	vtkActor* m_pointsActor;
+	ColorMapSettingContainerI* m_colorMapSettingContiner;
+	GeoDataPolyDataColorSettingDialog::Mapping m_mapping;
+
 	PolyLineController m_polylineController;
-	vtkDoubleArray* m_scalarValues;
+	vtkDoubleArray* m_linesScalarValues;
+	vtkDoubleArray* m_pointsScalarValues;
 };
 
 #endif // GEODATAPOLYLINEABSTRACTPOLYLINE_IMPL_H

@@ -18,7 +18,7 @@ class vtkPolyData;
 class PostZoneDataContainer::ParticleGroupLoader
 {
 public:
-	static bool load(std::map<std::string, vtkSmartPointer<vtkPolyData> >* particleGroupMap, iRICLib::H5CgnsParticleGroupSolution* sol, const QPointF& offset);
+	static bool load(std::map<std::string, vtkPointSetAndValueRangeSetT<vtkPolyData>*>* particleGroupMap, iRICLib::H5CgnsParticleGroupSolution* sol, const QPointF& offset);
 
 private:
 	static int loadParticleGroup(const std::string& name, vtkPolyData* polyData, iRICLib::H5CgnsParticleGroupSolution* sol, const QPointF& offset);

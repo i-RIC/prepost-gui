@@ -12,7 +12,8 @@ RealNumberEditWidget::Impl::Impl() :
 	m_maximumIsSet {false},
 	m_maximum {0},
 	m_minimumIsSet {false},
-	m_minimum {0}
+	m_minimum {0},
+	m_acceptEvents {false}
 {}
 
 // public interfaces
@@ -91,12 +92,19 @@ void RealNumberEditWidget::clearMaximum()
 	impl->m_maximumIsSet = false;
 }
 
+void RealNumberEditWidget::setAcceptEvents(bool accept)
+{
+	impl->m_acceptEvents = accept;
+}
+
 void RealNumberEditWidget::closeEvent(QCloseEvent* e)
 {
 	if (updateValue(true)) {
 		QLineEdit::closeEvent(e);
 	} else {
-		e->ignore();
+		if (! impl->m_acceptEvents) {
+			e->ignore();
+		}
 	}
 }
 
@@ -105,8 +113,10 @@ void RealNumberEditWidget::focusOutEvent(QFocusEvent* e)
 	if (updateValue()) {
 		QLineEdit::focusOutEvent(e);
 	} else {
-		e->ignore();
-		setFocus();
+		if (! impl->m_acceptEvents) {
+			e->ignore();
+			setFocus();
+		}
 	}
 }
 

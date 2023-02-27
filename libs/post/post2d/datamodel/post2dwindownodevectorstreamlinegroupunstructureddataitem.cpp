@@ -91,6 +91,7 @@ void Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::setupDefaultValu
 
 void Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::setupTmpSource()
 {
+	auto v = dataModel()->graphicsView();
 	m_previewPoints = vtkSmartPointer<vtkUnstructuredGrid>::New();
 	m_previewMapper = vtkSmartPointer<vtkDataSetMapper>::New();
 	m_previewMapper ->SetInputData(m_previewPoints);
@@ -98,7 +99,7 @@ void Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::setupTmpSource()
 	m_previewActor->SetMapper(m_previewMapper);
 	vtkProperty* prop = m_previewActor->GetProperty();
 	prop->SetRepresentationToPoints();
-	prop->SetPointSize(3);
+	prop->SetPointSize(3 * v->devicePixelRatioF());
 	prop->SetLighting(false);
 	prop->SetColor(0, 0, 0);
 
@@ -127,20 +128,21 @@ void Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::setupActors()
 			v = setting.point1 + param * diffVec;
 			points->InsertNextPoint(v.x(), v.y(), 0);
 		}
-		vtkUnstructuredGrid* grid = vtkUnstructuredGrid::New();
+		auto grid = vtkUnstructuredGrid::New();
 		grid->SetPoints(points);
 		for (int j = 0; j <setting.numberOfPoints; ++j) {
-			vtkSmartPointer<vtkVertex> vertex = vtkSmartPointer<vtkVertex>::New();
+			auto vertex = vtkSmartPointer<vtkVertex>::New();
 			vertex->GetPointIds()->SetId(0, j);
 			grid->InsertNextCell(vertex->GetCellType(), vertex->GetPointIds());
 		}
 		m_sourcePoints.push_back(grid);
 
+		auto view = dataModel()->graphicsView();
 		vtkActor* actor = vtkActor::New();
 		vtkProperty* prop = actor->GetProperty();
 		prop->SetLighting(false);
 		prop->SetColor(setting.color);
-		prop->SetLineWidth(setting.width);
+		prop->SetLineWidth(setting.width * view->devicePixelRatioF());
 		actor->SetScale(1, m_zScale, 1);
 
 		renderer()->AddActor(actor);
@@ -213,24 +215,24 @@ void Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::showPropertyDial
 
 void Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::setSetting(const QPointF &v1, const QPointF &v2, int num)
 {
+	auto v = dataModel()->graphicsView();
 	m_point1 = v1;
 	m_point2 = v2;
 	m_numberOfPoints = num;
-	m_previewActor->GetProperty()->SetPointSize(3);
+	m_previewActor->GetProperty()->SetPointSize(3 * v->devicePixelRatioF());
 
 	m_previewPoints->Reset();
-	vtkSmartPointer<vtkPoints> points = vtkSmartPointer<vtkPoints>::New();
+	auto points = vtkSmartPointer<vtkPoints>::New();
 	points->SetDataTypeToDouble();
 	QPointF diffVec = m_point2 - m_point1;
-	QPointF v;
 	for (int i = 0; i < m_numberOfPoints; ++i) {
 		double param = i / (double)(m_numberOfPoints - 1);
-		v = m_point1 + param * diffVec;
-		points->InsertNextPoint(v.x(), v.y(), 0);
+		auto point = m_point1 + param * diffVec;
+		points->InsertNextPoint(point.x(), point.y(), 0);
 	}
 	m_previewPoints->SetPoints(points);
 	for (int i = 0; i < m_numberOfPoints; ++i) {
-		vtkSmartPointer<vtkVertex> vertex = vtkSmartPointer<vtkVertex>::New();
+		auto vertex = vtkSmartPointer<vtkVertex>::New();
 		vertex->GetPointIds()->SetId(0, i);
 		m_previewPoints->InsertNextCell(vertex->GetCellType(), vertex->GetPointIds());
 	}

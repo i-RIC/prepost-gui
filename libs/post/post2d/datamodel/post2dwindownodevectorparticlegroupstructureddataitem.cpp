@@ -1,3 +1,4 @@
+#include "../post2dwindowgraphicsview.h"
 #include "post2dwindownodevectorparticlegroupstructureddataitem.h"
 #include "post2dwindowparticlestructuredsettingdialog.h"
 #include "post2dwindowzonedataitem.h"
@@ -68,8 +69,8 @@ void Post2dWindowNodeVectorParticleGroupStructuredDataItem::setDefaultValues()
 {
 	m_stSettings.clear();
 
-	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
-	vtkStructuredGrid* grid = dynamic_cast<vtkStructuredGrid*>(cont->data());
+	auto cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
+	auto grid = vtkStructuredGrid::SafeDownCast(cont->data()->data());
 	int dim[3];
 	grid->GetDimensions(dim);
 
@@ -96,9 +97,9 @@ void Post2dWindowNodeVectorParticleGroupStructuredDataItem::setupParticleSources
 	for (int i = 0; i < m_stSettings.count(); ++i) {
 		const Setting& s = m_stSettings[i];
 		vtkExtractGrid* ext = vtkExtractGrid::New();
-		ext->SetInputData(zoneContainer->data());
+		ext->SetInputData(zoneContainer->data()->data());
 		vtkSubdivideGrid* div = vtkSubdivideGrid::New();
-		div->SetInputData(zoneContainer->data());
+		div->SetInputData(zoneContainer->data()->data());
 
 		auto& r = s.range;
 		ext->SetVOI(r.iMin, r.iMax, r.jMin, r.jMax, 0, 0);
@@ -118,13 +119,14 @@ void Post2dWindowNodeVectorParticleGroupStructuredDataItem::setupParticleSources
 
 void Post2dWindowNodeVectorParticleGroupStructuredDataItem::setupActors()
 {
+	auto v = dataModel()->graphicsView();
 	for (int i = 0; i < m_stSettings.count(); ++i) {
 		const Setting& s = m_stSettings[i];
 		vtkSmartPointer<vtkActor> actor = vtkSmartPointer<vtkActor>::New();
 		vtkProperty* prop = actor->GetProperty();
 		prop->SetLighting(false);
 		prop->SetColor(s.color);
-		prop->SetPointSize(s.size);
+		prop->SetPointSize(s.size * v->devicePixelRatioF());
 		actor->SetScale(1, m_zScale, 1);
 
 		renderer()->AddActor(actor);

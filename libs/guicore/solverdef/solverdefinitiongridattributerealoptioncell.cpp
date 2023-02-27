@@ -1,6 +1,7 @@
 #include "../pre/gridcond/editwidget/gridattributerealoptioneditwidget.h"
 #include "../pre/gridcond/stringconverter/gridattributestringconverterenumerate.h"
-#include "../scalarstocolors/colortransferfunctioncontainer.h"
+#include "../scalarstocolors/colormapenumeratefactory.h"
+#include "../scalarstocolors/colormapenumeratesettingcontainer.h"
 #include "solverdefinition.h"
 #include "solverdefinitiongridattributerealoptioncell.h"
 
@@ -8,6 +9,7 @@ SolverDefinitionGridAttributeRealOptionCell::SolverDefinitionGridAttributeRealOp
 	SolverDefinitionGridAttributeRealCell {elem, solverDef, true, order}
 {
 	loadEnumeration(elem, solverDef->buildTranslator());
+	setColorMapFactory(new ColorMapEnumerateFactory());
 }
 
 GridAttributeVariationEditWidget* SolverDefinitionGridAttributeRealOptionCell::variationEditWidget(QWidget*)
@@ -30,12 +32,8 @@ GridAttributeEditWidget* SolverDefinitionGridAttributeRealOptionCell::editWidget
 	return w;
 }
 
-ScalarsToColorsEditWidget* SolverDefinitionGridAttributeRealOptionCell::createScalarsToColorsEditWidget(QWidget* parent) const
+void SolverDefinitionGridAttributeRealOptionCell::setupColorMapSettingContainer(ColorMapSettingContainerI* c) const
 {
-	return createColorTransferFunctionEditWidget(parent);
-}
-
-ScalarsToColorsContainer* SolverDefinitionGridAttributeRealOptionCell::createScalarsToColorsContainer(ProjectDataItem* d)
-{
-	return createColorTransferFunctionContainer(d);
+	auto cont = dynamic_cast<ColorMapEnumerateSettingContainer*> (c);
+	cont->setup(this);
 }

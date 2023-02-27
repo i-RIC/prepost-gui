@@ -1,85 +1,86 @@
+#include "../post3dwindowgraphicsview.h"
 #include "post3dwindownodevectorarrowdataitem.h"
 #include "post3dwindownodevectorarrowgroupdataitem.h"
-#include "post3dwindownodevectorarrowsettingdialog.h"
 #include "post3dwindownodevectorarrowtopdataitem.h"
 #include "post3dwindowzonedataitem.h"
-#include "private/post3dwindownodevectorarrowgroupdataitem_setsettingcommand.h"
+#include "private/post3dwindownodevectorarrowgroupdataitem_propertydialog.h"
 
 #include <guibase/objectbrowserview.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
+#include <guicore/scalarstocolors/colormapsettingcontainer.h>
+#include <guicore/solverdef/solverdefinitiongridtype.h>
+#include <guicore/solverdef/solverdefinitionoutput.h>
 #include <misc/stringtool.h>
 
 #include <vtkActor2D.h>
-#include <vtkRenderer.h>
-#include <vtkTextActor.h>
+#include <vtkAppendPolyData.h>
+#include <vtkGeometryFilter.h>
+#include <vtkSmartPointer.h>
 
-#include <QDomElement>
-#include <QDomNode>
-#include <QDomNodeList>
-#include <QStandardItem>
-#include <QXmlStreamWriter>
-
-Post3dWindowNodeVectorArrowGroupDataItem::Post3dWindowNodeVectorArrowGroupDataItem(Post3dWindowDataItem* p) :
-	Post3dWindowDataItem {"test", QIcon(":/libs/guibase/images/iconFolder.svg"), p}
+Post3dWindowNodeVectorArrowGroupDataItem::Post3dWindowNodeVectorArrowGroupDataItem(const std::string& target, Post3dWindowDataItem* p) :
+	Post3dWindowDataItem {"test", QIcon(":/libs/guibase/images/iconFolder.svg"), p},
+	m_target {target},
+	m_legendActor {vtkActor2D::New()}
 {
 	setupStandardItem(Checked, NotReorderable, Deletable);
 
 	auto r = renderer();
-	r->AddActor2D(m_legendActors.arrowActor());
-	r->AddActor2D(m_legendActors.nameTextActor());
-	r->AddActor2D(m_legendActors.valueTextActor());
+	r->AddActor2D(m_legendActor);
 
-	m_legendActors.setPosition(0.75, 0.06);
-	m_legendActors.setColor(0, 0, 0);
+	m_setting.target = target.c_str();
+	auto gt = data()->gridType();
+	m_setting.legend.imageSetting.setActor(m_legendActor);
+	m_setting.legend.imageSetting.controller()->setItem(this);
+	m_setting.legend.title = gt->output(target)->caption();
+	m_setting.legend.visibilityMode = ArrowsLegendSettingContainer::VisibilityMode::Always;
+
+	for (const auto& pair : data()->data()->valueRangeSet().pointDataValueRanges()) {
+		auto cs = new ColorMapSettingContainer();
+		auto caption = gt->output(pair.first)->caption();
+		cs->legend.visibilityMode = ColorMapLegendSettingContainer::VisibilityMode::Always;
+		cs->valueCaption = caption;
+		cs->legend.title = caption;
+		cs->setAutoValueRange(pair.second);
+
+		auto actor = vtkActor2D::New();
+		r->AddActor2D(actor);
+
+		cs->legend.imageSetting.setActor(actor);
+		cs->legend.imageSetting.controller()->setItem(this);
+
+		m_colorMapSettings.insert({pair.first, cs});
+		m_colorMapActors.push_back(actor);
+	}
 }
 
 Post3dWindowNodeVectorArrowGroupDataItem::~Post3dWindowNodeVectorArrowGroupDataItem()
 {
 	auto r = renderer();
-	r->RemoveActor2D(m_legendActors.arrowActor());
-	r->RemoveActor2D(m_legendActors.nameTextActor());
-	r->RemoveActor2D(m_legendActors.valueTextActor());
-}
+	r->RemoveActor2D(m_legendActor);
+	m_legendActor->Delete();
 
-void Post3dWindowNodeVectorArrowGroupDataItem::setSetting(const ArrowSettingContainer& arrowSetting, const std::vector<Post3dWindowNodeVectorArrowSettingDialog::FaceSetting>& faceSettings)
-{
-	clearChildItems();
-
-	Post3dWindowNodeVectorArrowTopDataItem* tItem = dynamic_cast<Post3dWindowNodeVectorArrowTopDataItem*> (parent());
-	m_setting = arrowSetting;
-	if (faceSettings.size() > 0) {
-		// use the arrow size and width setting of the first item;
-		const auto& first = faceSettings.at(0).arrowSetting;
-		m_setting.arrowSize = first.arrowSize;
-		m_setting.lineWidth = first.lineWidth;
+	for (const auto& pair : m_colorMapSettings) {
+		delete pair.second;
 	}
-
-	for (auto fs : faceSettings) {
-		auto item = new Post3dWindowNodeVectorArrowDataItem(this);
-		item->setSetting(fs);
-		item->updateZScale(tItem->zScale());
-
-		m_childItems.push_back(item);
+	for (const auto actor : m_colorMapActors) {
+		r->RemoveActor2D(actor);
+		actor->Delete();
 	}
-
-	updateItemMap();
-	updateActorSettings();
-
-	ObjectBrowserView* oview = dataModel()->objectBrowserView();
-	oview->expand(standardItem()->index());
-}
-
-const ArrowSettingContainer& Post3dWindowNodeVectorArrowGroupDataItem::setting() const
-{
-	return m_setting;
 }
 
 void Post3dWindowNodeVectorArrowGroupDataItem::update()
 {
-	for (auto item : m_childItems) {
-		auto child = dynamic_cast<Post3dWindowNodeVectorArrowDataItem*> (item);
-		child->update();
-	}
+	updateActorSettings();
+}
+
+const std::string& Post3dWindowNodeVectorArrowGroupDataItem::target() const
+{
+	return m_target;
+}
+
+ColorMapSettingContainer* Post3dWindowNodeVectorArrowGroupDataItem::colorMapSetting(const std::string& name) const
+{
+	return m_colorMapSettings.at(name);
 }
 
 void Post3dWindowNodeVectorArrowGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
@@ -87,15 +88,17 @@ void Post3dWindowNodeVectorArrowGroupDataItem::doLoadFromProjectMainFile(const Q
 	m_setting.load(node);
 
 	QDomNodeList children = node.childNodes();
+	int idx = 1;
 	for (int i = 0; i < children.size(); ++i) {
 		QDomElement childElem = children.at(i).toElement();
 		if (childElem.nodeName() == "Arrow") {
-			auto item = new Post3dWindowNodeVectorArrowDataItem(this);
+			auto label = QString("Face%1").arg(idx);
+			auto item = new Post3dWindowNodeVectorArrowDataItem(label, this);
 			item->loadFromProjectMainFile(childElem);
 			m_childItems.push_back(item);
+			++ idx;
 		}
 	}
-
 	updateActorSettings();
 }
 
@@ -110,41 +113,187 @@ void Post3dWindowNodeVectorArrowGroupDataItem::doSaveToProjectMainFile(QXmlStrea
 	}
 }
 
-QDialog* Post3dWindowNodeVectorArrowGroupDataItem::propertyDialog(QWidget* p)
+std::vector<Post3dWindowNodeVectorArrowDataItem::Setting> Post3dWindowNodeVectorArrowGroupDataItem::faceSettings()
 {
-	PostZoneDataContainer* zoneData = dynamic_cast<Post3dWindowZoneDataItem*>(parent()->parent())->dataContainer();
-	if (zoneData == nullptr) {return nullptr;}
-	if (zoneData->data() == nullptr) {return nullptr;}
+	std::vector<Post3dWindowNodeVectorArrowDataItem::Setting> ret;
 
-	std::vector<Post3dWindowNodeVectorArrowSettingDialog::FaceSetting> faceSettings;
-	for (auto child : m_childItems) {
-		auto child2 = dynamic_cast<Post3dWindowNodeVectorArrowDataItem*> (child);
-		faceSettings.push_back(child2->setting());
+	for (auto item : m_childItems) {
+		auto item2 = dynamic_cast<Post3dWindowNodeVectorArrowDataItem*> (item);
+		ret.push_back(item2->setting());
 	}
 
-	auto dialog = new Post3dWindowNodeVectorArrowSettingDialog(p);
-	dialog->setZoneData(zoneData);
-	dialog->setArrowSetting(m_setting);
-	dialog->setFaceSettings(faceSettings);
-	return dialog;
+	return ret;
 }
 
-void Post3dWindowNodeVectorArrowGroupDataItem::handlePropertyDialogAccepted(QDialog* d)
+void Post3dWindowNodeVectorArrowGroupDataItem::setFaceSettings(const std::vector<Post3dWindowNodeVectorArrowDataItem::Setting>& settings)
 {
-	auto dialog = dynamic_cast<Post3dWindowNodeVectorArrowSettingDialog*> (d);
+	clearChildItems();
+	updateItemMap();
 
-	pushRenderCommand(new SetSettingCommand(dialog->arrowSetting(), dialog->faceSettings(), this), this);
+	auto tItem = topDataItem();
+	int idx = 1;
+	for (const auto& s : settings) {
+		auto label = tr("Face%1").arg(idx);
+		auto item = new Post3dWindowNodeVectorArrowDataItem(label, this);
+		item->setSetting(s);
+		item->updateZScale(tItem->zScale());
+
+		m_childItems.push_back(item);
+		++ idx;
+	}
+
+	updateItemMap();
+
+	auto oview = dataModel()->objectBrowserView();
+	oview->expand(standardItem()->index());
+}
+
+void Post3dWindowNodeVectorArrowGroupDataItem::informSelection(VTKGraphicsView* v)
+{
+	m_setting.legend.imageSetting.controller()->handleSelection(v);
+	for (const auto cm : activeColorMaps()) {
+		cm->legend.imageSetting.controller()->handleSelection(v);
+	}
+}
+
+void Post3dWindowNodeVectorArrowGroupDataItem::informDeselection(VTKGraphicsView* v)
+{
+	m_setting.legend.imageSetting.controller()->handleDeselection(v);
+	for (const auto cm : activeColorMaps()) {
+		cm->legend.imageSetting.controller()->handleDeselection(v);
+	}
+}
+
+void Post3dWindowNodeVectorArrowGroupDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
+{
+	std::vector<ImageSettingContainer::Controller*> controllers;
+
+	m_setting.legend.imageSetting.controller()->handleMouseMoveEvent(event, v, true);
+	controllers.push_back(m_setting.legend.imageSetting.controller());
+	for (const auto cm : activeColorMaps()) {
+		cm->legend.imageSetting.controller()->handleMouseMoveEvent(event, v, true);
+		controllers.push_back(cm->legend.imageSetting.controller());
+	}
+
+	ImageSettingContainer::Controller::updateMouseCursor(v, controllers);
+}
+
+void Post3dWindowNodeVectorArrowGroupDataItem::mousePressEvent(QMouseEvent* event, VTKGraphicsView* v)
+{
+	std::vector<ImageSettingContainer::Controller*> controllers;
+
+	m_setting.legend.imageSetting.controller()->handleMousePressEvent(event, v, true);
+	controllers.push_back(m_setting.legend.imageSetting.controller());
+	for (const auto cm : activeColorMaps()) {
+		cm->legend.imageSetting.controller()->handleMousePressEvent(event, v, true);
+		controllers.push_back(cm->legend.imageSetting.controller());
+	}
+
+	ImageSettingContainer::Controller::updateMouseCursor(v, controllers);
+}
+
+void Post3dWindowNodeVectorArrowGroupDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
+{
+	std::vector<ImageSettingContainer::Controller*> controllers;
+
+	m_setting.legend.imageSetting.controller()->handleMouseReleaseEvent(event, v, true);
+	controllers.push_back(m_setting.legend.imageSetting.controller());
+	for (const auto cm : activeColorMaps()) {
+		cm->legend.imageSetting.controller()->handleMouseReleaseEvent(event, v, true);
+		controllers.push_back(cm->legend.imageSetting.controller());
+	}
+
+	ImageSettingContainer::Controller::updateMouseCursor(v, controllers);
+}
+
+void Post3dWindowNodeVectorArrowGroupDataItem::doHandleResize(VTKGraphicsView* v)
+{
+	m_setting.legend.imageSetting.controller()->handleResize(v);
+	for (const auto cm : activeColorMaps()) {
+		cm->legend.imageSetting.controller()->handleResize(v);
+	}
+}
+
+void Post3dWindowNodeVectorArrowGroupDataItem::showPropertyDialog()
+{
+	return showPropertyDialogModeless();
+}
+
+QDialog* Post3dWindowNodeVectorArrowGroupDataItem::propertyDialog(QWidget* p)
+{
+	return new PropertyDialog(this, p);
 }
 
 void Post3dWindowNodeVectorArrowGroupDataItem::updateActorSettings()
 {
-	const auto& s = m_setting;
+	m_legendActor->VisibilityOff();
+	for (auto actor : m_colorMapActors) {
+		actor->VisibilityOff();
+	}
+	m_actor2DCollection->RemoveAllItems();
 
-	m_legendActors.update(iRIC::toStr(s.target), s.legendLength, s.standardValue, s.arrowSize, 25.0);
-	m_legendActors.setLineWidth(s.lineWidth);
-	s.legendTextSetting.applySetting(m_legendActors.nameTextActor()->GetTextProperty());
-	s.legendTextSetting.applySetting(m_legendActors.valueTextActor()->GetTextProperty());
+	if (m_childItems.size() == 0) {return;}
 
-	m_standardItem->setText(s.target);
-	m_standardItemCopy->setText(s.target);
+	// update shape and color setting with that of the first face;
+	auto firstSetting = dynamic_cast<Post3dWindowNodeVectorArrowDataItem*>(m_childItems.at(0))->setting().arrow;
+	m_setting.arrowSize = firstSetting.arrowSize;
+	m_setting.lineWidth = firstSetting.lineWidth;
+	m_setting.colorMode = firstSetting.colorMode;
+	m_setting.customColor = firstSetting.customColor;
+
+	// update standard length
+	auto mergedData = vtkSmartPointer<vtkAppendPolyData>::New();
+	for (auto child : m_childItems) {
+		auto item = dynamic_cast<Post3dWindowNodeVectorArrowDataItem*> (child);
+		auto grid = item->faceGrid();
+		auto filter = vtkSmartPointer<vtkGeometryFilter>::New();
+		filter->SetInputData(grid);
+		filter->Update();
+		grid->Delete();
+		mergedData->AddInputData(filter->GetOutput());
+	}
+	mergedData->Update();
+
+	m_setting.updateStandardValueIfNeeded(mergedData->GetOutput()->GetPointData());
+
+	auto v = dataModel()->graphicsView();
+	m_setting.legend.imageSetting.apply(v);
+	for (const auto cm : activeColorMaps()) {
+		cm->legend.imageSetting.apply(v);
+	}
+
+	for (auto child : m_childItems) {
+		auto item = dynamic_cast<Post3dWindowNodeVectorArrowDataItem*> (child);
+		item->update();
+	}
+}
+
+Post3dWindowNodeVectorArrowTopDataItem* Post3dWindowNodeVectorArrowGroupDataItem::topDataItem() const
+{
+	return dynamic_cast<Post3dWindowNodeVectorArrowTopDataItem*> (parent());
+}
+
+const ArrowsSettingContainer& Post3dWindowNodeVectorArrowGroupDataItem::setting() const
+{
+	return m_setting;
+}
+
+PostZoneDataContainer* Post3dWindowNodeVectorArrowGroupDataItem::data() const
+{
+	auto zItem = dynamic_cast<Post3dWindowZoneDataItem*> (parent()->parent());
+	return zItem->dataContainer();
+}
+
+std::set<ColorMapSettingContainer*> Post3dWindowNodeVectorArrowGroupDataItem::activeColorMaps() const
+{
+	std::set<ColorMapSettingContainer*> ret;
+
+	for (auto child : m_childItems) {
+		auto item = dynamic_cast<Post3dWindowNodeVectorArrowDataItem*> (child);
+		if (item->setting().arrow.colorMode == ArrowsSettingContainer::ColorMode::ByScalar) {
+			ret.insert(m_colorMapSettings.at(iRIC::toStr(item->setting().arrow.colorTarget)));
+		}
+	}
+
+	return ret;
 }

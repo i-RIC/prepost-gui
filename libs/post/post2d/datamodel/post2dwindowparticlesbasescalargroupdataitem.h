@@ -3,20 +3,24 @@
 
 #include "../post2dwindowdataitem.h"
 
-#include <guibase/scalarsettingcontainer.h>
 #include <guicore/misc/targeted/targeteditemi.h>
+#include <postbase/particle/particledatasetting.h>
 
-#include <QMap>
+#include <unordered_map>
 
-#include <vtkActor.h>
-#include <vtkPolyDataMapper.h>
-#include <vtkSmartPointer.h>
-#include <vtkScalarBarWidget.h>
-
+class ColorMapSettingContainer;
 class NamedGraphicWindowDataItem;
+class Post2dWindowGridTypeDataItem;
+class Post2dWindowParticlesBaseScalarDataItem;
+class Post2dWindowParticlesBaseTopDataItem;
+class Post2dWindowZoneDataItem;
 
 class QMenu;
 class QMenuEvent;
+
+class vtkActor;
+class vtkActor2D;
+class vtkPolyData;
 
 class Post2dWindowParticlesBaseScalarGroupDataItem : public Post2dWindowDataItem, public TargetedItemI
 {
@@ -29,13 +33,18 @@ public:
 	std::string target() const override;
 	void setTarget(const std::string& target) override;
 
+	ColorMapSettingContainer* colorMapSetting(const std::string& name) const;
+	std::unordered_map<std::string, ColorMapSettingContainer*> colorMapSettings() const;
+
+	void update();
+	void showPropertyDialog() override;
+	QDialog* propertyDialog(QWidget* parent) override;
+
 	void updateZDepthRangeItemCount() override;
 	void assignActorZValues(const ZDepthRange& range) override;
-	void update();
-	QDialog* propertyDialog(QWidget* parent) override;
-	void handlePropertyDialogAccepted(QDialog* propDialog) override;
 	void informSelection(VTKGraphicsView* v) override;
 	void informDeselection(VTKGraphicsView* v) override;
+	void handleResize(VTKGraphicsView* v) override;
 	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
@@ -47,22 +56,29 @@ public slots:
 private:
 	void setupActors();
 	void updateActorSettings();
-	void setupScalarBarSetting();
 
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
-	void updateVisibility(bool visible) override;
 
-	ScalarSettingContainer m_setting;
-	QMap<std::string, QString> m_scalarbarTitleMap;
+	ColorMapSettingContainer* activeSetting() const;
+	Post2dWindowGridTypeDataItem* gridTypeDataItem() const;
+	Post2dWindowParticlesBaseTopDataItem* topDataItem() const;
+	Post2dWindowZoneDataItem* zoneDataItem() const;
+	Post2dWindowParticlesBaseScalarDataItem* activeChildDataItem() const;
+	Post2dWindowParticlesBaseScalarDataItem* childDataItem(const std::string& name) const;
 
-	vtkSmartPointer<vtkActor> m_actor;
-	vtkSmartPointer<vtkPolyDataMapper> m_mapper;
+	vtkPolyData* particleData() const;
+	void updateCheckState();
 
-	vtkSmartPointer<vtkScalarBarWidget> m_scalarBarWidget;
+	vtkActor* m_actor;
 
-	class SetSettingCommand;
+	ParticleDataSetting m_setting;
+
+	class UpdateActorSettingsCommand;
+	class PropertyDialog;
+
+public:
+	friend class Post2dWindowParticlesBaseScalarDataItem;
 };
-
 
 #endif // POST2DWINDOWPARTICLESBASESCALARGROUPDATAITEM_H

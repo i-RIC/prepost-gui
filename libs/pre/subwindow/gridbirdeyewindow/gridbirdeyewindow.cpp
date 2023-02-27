@@ -25,6 +25,9 @@ GridBirdEyeWindow::~GridBirdEyeWindow()
 	PreProcessorGridDataItem* gItem = dynamic_cast<PreProcessorGridDataItem*>(m_dataModel->parent());
 	gItem->informBirdEyeWindowClose();
 	delete m_dataModel;
+
+	// Closing the window is not undoable
+	iRICUndoStack::instance().clear();
 }
 
 void GridBirdEyeWindow::init(PreProcessorGridDataItem* item)
@@ -34,11 +37,6 @@ void GridBirdEyeWindow::init(PreProcessorGridDataItem* item)
 	m_icon = QIcon(":/libs/pre/images/iconBirdEyeWindow.svg");
 	// set default central widget.
 	m_graphicsView = new GridBirdEyeWindowGraphicsView(this);
-
-	// set default background color to be black.
-	m_graphicsView->mainRenderer()->SetBackground(1, 1, 1);
-
-	m_graphicsView->setActiveDataItem(0);
 	m_graphicsView->setInteractive(true);
 	setCentralWidget(m_graphicsView);
 	m_dataModel = new GridBirdEyeWindowDataModel(this, item);
@@ -62,7 +60,6 @@ vtkRenderWindow* GridBirdEyeWindow::getVtkRenderWindow() const
 void GridBirdEyeWindow::updateGrid()
 {
 	m_dataModel->updateGrid();
-	cameraFit();
 }
 
 const QIcon& GridBirdEyeWindow::icon() const
@@ -137,9 +134,9 @@ void GridBirdEyeWindow::editBackgroundColor()
 	BackgroundColorEditInterface::editBackgroundColor(this);
 }
 
-void GridBirdEyeWindow::displaySetting()
+void GridBirdEyeWindow::editDisplaySetting()
 {
-	m_dataModel->displaySetting();
+	m_dataModel->editDisplaySetting();
 }
 
 void GridBirdEyeWindow::editZScale()

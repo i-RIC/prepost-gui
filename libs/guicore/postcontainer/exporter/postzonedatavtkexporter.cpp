@@ -31,9 +31,9 @@ QString PostZoneDataVtkExporter::filename(const QString& prefix, int index) cons
 bool PostZoneDataVtkExporter::exportToFile(PostZoneDataContainer* data, const QString& filename, double time, int imin, int imax, int jmin, int jmax, int kmin, int kmax, ProjectData*, const QPointF& offset) const
 {
 	std::string tmpFile = iRIC::toStr(iRIC::getTempFileName(m_workDir));
-	vtkPointSet* ps = data->data();
-	vtkStructuredGrid* sgrid = vtkStructuredGrid::SafeDownCast(ps);
-	vtkUnstructuredGrid* ugrid = vtkUnstructuredGrid::SafeDownCast(ps);
+	auto ps = data->data()->data();
+	auto sgrid = vtkStructuredGrid::SafeDownCast(ps);
+	auto ugrid = vtkUnstructuredGrid::SafeDownCast(ps);
 	if (sgrid != 0) {
 		vtkSmartPointer<vtkStructuredGrid> copy;
 		vtkStructuredGrid* grid = applyOffset<vtkStructuredGrid>(sgrid, copy, offset);

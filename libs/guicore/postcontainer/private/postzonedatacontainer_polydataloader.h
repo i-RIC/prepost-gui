@@ -18,7 +18,7 @@ class vtkPolyData;
 class PostZoneDataContainer::PolyDataLoader
 {
 public:
-	static bool load(std::map<std::string, vtkSmartPointer<vtkPolyData> >* polyDataMap, std::map<std::string, std::vector<int> >* polyDataCellIdsMap, iRICLib::H5CgnsPolyDataSolution* sol, const QPointF& offset);
+	static bool load(std::map<std::string, vtkPointSetAndValueRangeSetT<vtkPolyData>*>* polyDataMap, std::map<std::string, std::vector<int> >* polyDataCellIdsMap, iRICLib::H5CgnsPolyDataSolution* sol, const QPointF& offset);
 
 private:
 	PolyDataLoader();

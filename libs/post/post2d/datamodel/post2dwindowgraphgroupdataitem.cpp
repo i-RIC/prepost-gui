@@ -9,6 +9,7 @@
 #include <guicore/named/namedgraphicswindowdataitemtool.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
+#include <guicore/solverdef/solverdefinitionoutput.h>
 #include <guicore/misc/targeted/targeteditemsettargetcommandtool.h>
 #include <misc/errormessage.h>
 #include <misc/mathsupport.h>
@@ -197,8 +198,8 @@ Post2dWindowGraphGroupDataItem::Post2dWindowGraphGroupDataItem(Post2dWindowDataI
 
 	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
 	SolverDefinitionGridType* gt = cont->gridType();
-	for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(cont->data()->GetPointData())) {
-		auto item = new Post2dWindowGraphDataItem(name, gt->solutionCaption(name), this);
+	for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(cont->data()->data()->GetPointData())) {
+		auto item = new Post2dWindowGraphDataItem(name, gt->output(name)->caption(), this);
 		m_childItems.push_back(item);
 	}
 
@@ -206,7 +207,7 @@ Post2dWindowGraphGroupDataItem::Post2dWindowGraphGroupDataItem(Post2dWindowDataI
 	r->AddActor(impl->m_baseLinesActor.actor());
 	r->AddActor(impl->m_graphLinesActor.linesActor());
 
-	vtkPoints* basePoints = cont->data()->GetPoints();
+	vtkPoints* basePoints = cont->data()->data()->GetPoints();
 	impl->m_baseLinesPolyData->SetPoints(basePoints);
 
 	setDefaultSetting();
@@ -234,16 +235,16 @@ void Post2dWindowGraphGroupDataItem::update()
 
 	if (impl->m_setting.graphTarget == "") {return;}
 
-	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
-	vtkStructuredGrid* grid = dynamic_cast<vtkStructuredGrid*> (cont->data());
-	vtkPoints* basePoints = cont->data()->GetPoints();
+	auto cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
+	auto grid = dynamic_cast<vtkStructuredGrid*> (cont->data());
+	auto basePoints = cont->data()->data()->GetPoints();
 
 	int dims[3];
 	grid->GetDimensions(dims);
 
 	std::vector<std::vector<QPointF> > lines;
 
-	vtkDataArray *da = cont->data()->GetPointData()->GetArray(iRIC::toStr(impl->m_setting.graphTarget).c_str());
+	vtkDataArray *da = cont->data()->data()->GetPointData()->GetArray(iRIC::toStr(impl->m_setting.graphTarget).c_str());
 	if (da == nullptr) {throw ErrorMessage("data not found");}
 
 	vtkSmartPointer<vtkCellArray> cellsBase = vtkSmartPointer<vtkCellArray>::New();

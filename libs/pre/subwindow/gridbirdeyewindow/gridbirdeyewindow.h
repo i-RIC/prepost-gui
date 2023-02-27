@@ -9,10 +9,11 @@
 #include <guicore/base/snapshotenabledwindowinterface.h>
 #include <guicore/bgcolor/backgroundcoloreditvtkinterface.h>
 
-class QAction;
 class GridBirdEyeWindowGraphicsView;
 class GridBirdEyeWindowActionManager;
 class GridBirdEyeWindowDataModel;
+
+class QAction;
 
 /// This class represents the two-dimensional post-processing window.
 class GridBirdEyeWindow :
@@ -24,10 +25,9 @@ class GridBirdEyeWindow :
 	Q_OBJECT
 
 public:
-	/// Constructor
 	GridBirdEyeWindow(QWidget* parent, PreProcessorGridDataItem* item);
-	/// Destructor
 	~GridBirdEyeWindow();
+
 	QPixmap snapshot() override;
 	vtkRenderWindow* getVtkRenderWindow() const override;
 
@@ -51,8 +51,9 @@ public slots:
 	void cameraParallelProjection();
 	void cameraPerspectiveProjection();
 	void updateProjectionMenu(QAction* parallel, QAction* perspective);
+
 	void editBackgroundColor();
-	void displaySetting();
+	void editDisplaySetting();
 	void editZScale();
 
 private:
