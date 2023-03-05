@@ -1227,6 +1227,11 @@ void GeoDataPolygon::updateActorSettings()
 	// opacity
 	impl->m_actor->GetProperty()->SetOpacity(cs.opacity);
 
+	auto cm = colorMapSettingContainer();
+	if (cm == nullptr) {
+		cs.mapping = GeoDataPolyDataColorSettingDialog::Arbitrary;
+	}
+
 	// mapping
 	if (cs.mapping == GeoDataPolyDataColorSettingDialog::Arbitrary) {
 		auto mapper = vtkPolyDataMapperUtil::createWithScalarVisibilityOff();
@@ -1234,8 +1239,7 @@ void GeoDataPolygon::updateActorSettings()
 		impl->m_actor->SetMapper(mapper);
 		mapper->Delete();
 	} else {
-		auto cs = colorMapSettingContainer();
-		auto mapper = cs->buildCellDataMapper(impl->m_polyData, false);
+		auto mapper = cm->buildCellDataMapper(impl->m_polyData, false);
 		impl->m_actor->SetMapper(mapper);
 		mapper->Delete();
 	}
